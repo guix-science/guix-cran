@@ -15473,16 +15473,16 @@ See docs for limitations.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "0rd0f0fnvjv3y7pkkdlm8fi5708nx4v78xw9r0k6b7rr2ww70hrr"))))
+        (base32 "0l0ydqbhzkzfigqmshgsxbrffizv3pq24gv1r8lpvfydzisjfg2n"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-litedown))
     (home-page "https://shikokuchuo.net/nanonext/")
     (synopsis "NNG (Nanomsg Next Gen) Lightweight Messaging Library")
     (description

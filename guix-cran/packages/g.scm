@@ -1589,13 +1589,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "0vq6dzwvlnqdiin76icbi0yidw1cwrg5aj2cxg88hii228lgr8ym"))))
+        (base32 "1ihbh5gm029n7g8041l7wrsd1wph7cl4hvx3bmd9669lv9w8476d"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1990,13 +1990,13 @@ as Kendall tau correlation or sensitivity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gt" version))
        (sha256
-        (base32 "1jg9kg2b1qig1awfgnb5fi54qjmvl2qw1ny0l4vsqh87c2f3yij3"))))
+        (base32 "0njzpj57afvbi7jsbpb0j1mgm1nz01bd25668gsmvpd7lajm7ig0"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6169,21 +6169,21 @@ expression data to test the performance of genomic analyses.")
 (define-public r-graphql
   (package
     (name "r-graphql")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphql" version))
        (sha256
-        (base32 "10zpibqh1vsin60pl5dnk4z2kzrfc3aqrhijcn36zq7f97629wv8"))))
+        (base32 "0b9j7hv45ml7xl29w7s2m63qc96rm6v746yy6ckpz25y1zv3j2aq"))))
     (properties `((upstream-name . "graphql")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite))
-    (home-page "https://docs.ropensci.org/graphql/")
+    (home-page "https://cran.r-project.org/package=graphql")
     (synopsis "GraphQL Query Parser")
     (description
-     "Bindings to the libgraphqlparser C++ library.  Parses @code{GraphQL} syntax and
-exports the AST in JSON format.")
+     "Bindings to the libgraphqlparser C++ library.  Parses @code{GraphQL}
+<https://graphql.org> syntax and exports the AST in JSON format.")
     (license license:expat)))
 
 (define-public r-graphpaf
@@ -9642,6 +9642,34 @@ estimators for gamma, inverse Gaussian and generalized Pareto distributions.")
 and shiny packages.  Runtime examples are provided in the package function as
 well as at <https://predanalyticssessions1.shinyapps.io/@code{ChiSquareGOF/>}.")
     (license license:gpl2)))
+
+(define-public r-gofreg
+  (package
+    (name "r-gofreg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gofreg" version))
+       (sha256
+        (base32 "0jy3vb8xm35waqzbj1px5nnm9ld7hdni28qwwciqsxsgpyb1n92z"))))
+    (properties `((upstream-name . "gofreg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-r6 r-ggplot2 r-dplyr r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gkremling/gofreg")
+    (synopsis
+     "Bootstrap-Based Goodness-of-Fit Tests for Parametric Regression")
+    (description
+     "This package provides statistical methods to check if a parametric family of
+conditional density functions fits to some given dataset of covariates and
+response variables.  Different test statistics can be used to determine the
+goodness-of-fit of the assumed model, see Andrews (1997) <doi:10.2307/2171880>,
+Bierens & Wang (2012) <doi:10.1017/S0266466611000168>, Dikta & Scheer (2021)
+<doi:10.1007/978-3-030-73480-0> and Kremling & Dikta (2024)
+<doi:10.48550/@code{arXiv.2409.20262>}.  As proposed in these papers, the
+corresponding p-values are approximated using a parametric bootstrap method.")
+    (license license:expat)))
 
 (define-public r-gofkmt
   (package
@@ -14822,13 +14850,13 @@ queries can be accessed according the following scheme:
 (define-public r-gifski
   (package
     (name "r-gifski")
-    (version "1.12.0-2")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gifski" version))
        (sha256
-        (base32 "0ybv0fm4p23zfxnyjj97bym09r4brg9z26298ibxzl58j6r624r8"))))
+        (base32 "14208894ghrfr4j46z1rdwj23gqq5swms17plwy831i1ab0hmlfi"))))
     (properties `((upstream-name . "gifski")))
     (build-system r-build-system)
     (inputs (list))
@@ -15331,13 +15359,13 @@ genome data and visualising the output and results.  Beissinger et al., (2018)
 (define-public r-ghapps
   (package
     (name "r-ghapps")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ghapps" version))
        (sha256
-        (base32 "0dv48rd7yw4l927p25x26whh2x2g30b0g4afcx6hzj6mghgg0xyn"))))
+        (base32 "18m4kzz3vhkqbsdgj3k0cywsl7lvf6r6whwsaww480fazx7vwfk5"))))
     (properties `((upstream-name . "ghapps")))
     (build-system r-build-system)
     (propagated-inputs (list r-openssl r-jose r-gh))

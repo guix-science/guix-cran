@@ -1280,13 +1280,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "av" version))
        (sha256
-        (base32 "0j2ajlkncdw181i2psmpahgmpxjkcg4ph2zp6iqb3nx5cyj441a3"))))
+        (base32 "1mavhwz7lmhnrx0s4jhw15h6hm9paqfmmgq7jhw8ns5730canbcl"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -3511,13 +3511,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2024.9.25")
+    (version "2024.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "0nxdks274b9bd5dq0z4xdka0rspjxcpq2c2lqascwg20f29xjmvz"))))
+        (base32 "1nz35aszl0ap6gjqp1yd2b6rckk7y5ads4i79j233y3pff48g2b7"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
@@ -14399,6 +14399,37 @@ algorithm after Ryan et al. (1988) <doi:10.1016/0168-583X(88)90063-8>, 4S Peak
 Filling after Liland (2015) <doi:10.1016/j.mex.2015.02.009> and more.")
     (license license:gpl3+)))
 
+(define-public r-alignlv
+  (package
+    (name "r-alignlv")
+    (version "0.1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AlignLV" version))
+       (sha256
+        (base32 "1sxa6jhml1wb7p7hpdy1w8zlirynfdd9z8s5xw7mr1g5m71hhdcg"))))
+    (properties `((upstream-name . "AlignLV")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-mirt
+                             r-magrittr
+                             r-lavaan
+                             r-dplyr
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=AlignLV")
+    (synopsis
+     "Multiple Group Item Response Theory Alignment Helpers for 'lavaan' and 'mirt'")
+    (description
+     "Allows for multiple group item response theory alignment a la Mplus to be
+applied to lists of single-group models estimated in lavaan or mirt'.  Allows
+item sets that are overlapping but not identical, facilitating alignment in
+secondary data analysis where not all items may be shared across assessments.")
+    (license license:expat)))
+
 (define-public r-align
   (package
     (name "r-align")
@@ -15751,13 +15782,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "0acm2nffrpqbli358cbpl0sd7bq9m5qbnnrk01xd7h9l63xzs67c"))))
+        (base32 "0vd8sbqn4kk815pxwhrnrn0c7h0j4413ja5y8y9hfhk2fxjjphy7"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))
@@ -15765,12 +15796,12 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
     (home-page "https://packages.tesselle.org/aion/")
     (synopsis "Archaeological Time Series")
     (description
-     "This package provides a toolkit for archaeological time series.  This package
-provides a system of classes and methods to represent and work with
-archaeological time series.  Dates are represented as \"rata die\" and can be
-converted to (virtually) any calendar defined by Reingold and Dershowitz (2018)
-<doi:10.1017/9781107415058>.  This packages offers a simple API that can be used
-by other specialized packages.")
+     "This package provides a toolkit for archaeological time series and time
+intervals.  This package provides a system of classes and methods to represent
+and work with archaeological time series and time intervals.  Dates are
+represented as \"rata die\" and can be converted to (virtually) any calendar
+defined by Reingold and Dershowitz (2018) <doi:10.1017/9781107415058>.  This
+packages offers a simple API that can be used by other specialized packages.")
     (license license:gpl3+)))
 
 (define-public r-aimsir17

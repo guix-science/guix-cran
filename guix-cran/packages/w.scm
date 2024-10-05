@@ -4999,13 +4999,13 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "1dlwx63rzphlqlfs0s8jjsqqg88fwm256ngjw4fhqyv26rxdcv5q"))))
+        (base32 "07jggiindvgy9j0x0bmc3pmzamxlzllb6my2ny2k5c4k96aqbbp5"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -5886,13 +5886,13 @@ online at <https://webpower.psychstat.org>.")
 (define-public r-webp
   (package
     (name "r-webp")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webp" version))
        (sha256
-        (base32 "0srmqrjff3c15d2921rd3b203c6qq170gschbp92fi3d3qshv0fk"))))
+        (base32 "1ppwjlmpy43d6v789v4vvp5p0wxrkzrjghcgr1qqmk3f5vj30sbq"))))
     (properties `((upstream-name . "webp")))
     (build-system r-build-system)
     (inputs (list libwebp))

@@ -781,6 +781,37 @@ and Stupfler (2020) <arxiv:2007.08944>, Daouia et al. (2018)
 <doi:10.1007/s00780-015-0287-6>.")
     (license license:gpl2+)))
 
+(define-public r-extrememix
+  (package
+    (name "r-extrememix")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "extrememix" version))
+       (sha256
+        (base32 "0v5ghhazcv0j19a9klddnbwgq05ij0nsb4rskdks6mb7686w2qys"))))
+    (properties `((upstream-name . "extrememix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-threshr
+                             r-rcppprogress
+                             r-rcpp
+                             r-mixtools
+                             r-gridextra
+                             r-ggplot2
+                             r-evd))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/manueleleonelli/extrememix")
+    (synopsis "Bayesian Estimation of Extreme Value Mixture Models")
+    (description
+     "Fits extreme value mixture models, which are models for tails not requiring
+selection of a threshold, for continuous data.  It includes functions for model
+comparison, estimation of quantity of interest in extreme value analysis and
+plotting.  Reference: CN Behrens, HF Lopes, D Gamerman (2004)
+<doi:10.1191/1471082X04st075oa>.  FF do Nascimento, D. Gamerman, HF Lopes
+<doi:10.1007/s11222-011-9270-z>.")
+    (license license:expat)))
+
 (define-public r-extremeindex
   (package
     (name "r-extremeindex")
@@ -1214,18 +1245,18 @@ criteria.")
 (define-public r-extbatchmarking
   (package
     (name "r-extbatchmarking")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extBatchMarking" version))
        (sha256
-        (base32 "0ls0h5zfnd5k4r90adzpq39l5lmb6k1nb90d58c4mfzfnms2zhji"))))
+        (base32 "112rb9qdykdkgh9qwrlzkm5q4mxq80sfdw2zp0y83rjkhhv1pjgv"))))
     (properties `((upstream-name . "extBatchMarking")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-optimbase r-foreach
                              r-doparallel))
-    (home-page "https://github.com/Olobatuyi/extBatchMarking")
+    (home-page "https://github.com/Olobatuyi/extBatchMarking_cov")
     (synopsis "Extended Batch Marking Models")
     (description
      "This package provides a system for batch-marking data analysis to estimate
@@ -10474,13 +10505,13 @@ or monthly outcome data.")
 (define-public r-epicontacttrace
   (package
     (name "r-epicontacttrace")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiContactTrace" version))
        (sha256
-        (base32 "0s3mfv1djrq1kp75f94z4fhrx3jha4vvil30daxkw5b0iy3mvf5q"))))
+        (base32 "1qi60w26yr0aixdjhlsn3rp8vp22wjnz4ch8q9i9r84wmyvsmc6r"))))
     (properties `((upstream-name . "EpiContactTrace")))
     (build-system r-build-system)
     (home-page "https://github.com/stewid/EpiContactTrace")

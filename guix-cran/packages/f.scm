@@ -526,15 +526,16 @@ dealing with multicollinearity.  Initially described in Barbosa (2015)
 (define-public r-fuzzyresampling
   (package
     (name "r-fuzzyresampling")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyResampling" version))
        (sha256
-        (base32 "1gic7la5ks7v37f3h4azazz4sv650sp6pl199wk4021blkah5r56"))))
+        (base32 "0j5ypz93p7scvww69qgjsazj2zw1v2c4h6lmzb2rsfglb6873mqk"))))
     (properties `((upstream-name . "FuzzyResampling")))
     (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/mroman-ibs/FuzzyResampling")
     (synopsis
      "Resampling Methods for Triangular and Trapezoidal Fuzzy Numbers")
@@ -9472,13 +9473,13 @@ DLNM methodology in Gasparrini et al. <doi:10.1002/sim.3940> (DLNMs),
 (define-public r-fluidsynth
   (package
     (name "r-fluidsynth")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluidsynth" version))
        (sha256
-        (base32 "1vqi9p69wjsh9shhjg0rk025hf4rawj0piw5037y97ml3n858k2l"))))
+        (base32 "1b9csw8kq3dy8lmz6a4cb0yzgyn6c3dc9vwdv8qwnpdz00p5fmb4"))))
     (properties `((upstream-name . "fluidsynth")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs r-av))
@@ -16939,13 +16940,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "10rzrhsi5hg0liawf6yvn55yzcmi3accp1941l0whwf6ccqbpkac"))))
+        (base32 "14d46sq4rwp2xd24jq9fhgclcf9r6gyfpls2sv58412avaalv0g8"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -19138,13 +19139,13 @@ available from <https://github.com/randy408/libspng/>.")
 (define-public r-fastplyr
   (package
     (name "r-fastplyr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastplyr" version))
        (sha256
-        (base32 "0x1fgswximj83kbkaq5iy2hzdqn4sz642igg4ylgkfqybnqyphqk"))))
+        (base32 "008qkynwavspw3dcpsbfcawj715nvci37kbi32i9k5zv990lsmch"))))
     (properties `((upstream-name . "fastplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

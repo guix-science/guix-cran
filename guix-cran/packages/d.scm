@@ -12818,18 +12818,23 @@ analysis using the spherical Cauchy and the Poisson-kernel based distribution\".
 (define-public r-directeffects
   (package
     (name "r-directeffects")
-    (version "0.2.1")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DirectEffects" version))
        (sha256
-        (base32 "0cjqp4gam1psd11d6h99pi3ramnaybp6bij86wbgqji2icqlvghg"))))
+        (base32 "181m5xhlgrpmj4c9zdr70sn8gwxlpd54cc5yjngyx5j0l9mfi5a3"))))
     (properties `((upstream-name . "DirectEffects")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-glue r-formula))
+    (propagated-inputs (list r-rlang
+                             r-matching
+                             r-glue
+                             r-generics
+                             r-formula
+                             r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://www.mattblackwell.org/software/direct-effects/")
+    (home-page "https://mattblackwell.github.io/DirectEffects/")
     (synopsis
      "Estimating Controlled Direct Effects for Explaining Causal Findings")
     (description
@@ -12837,7 +12842,8 @@ analysis using the spherical Cauchy and the Poisson-kernel based distribution\".
 effect of treatment fixing a potential mediator to a specific value.  Implements
 the sequential g-estimation estimator described in Vansteelandt (2009)
 <doi:10.1097/EDE.0b013e3181b6f4c9> and Acharya, Blackwell, and Sen (2016)
-<doi:10.1017/S0003055416000216>.")
+<doi:10.1017/S0003055416000216> and the telescope matching estimator described
+in Blackwell and Strezhnev (2020) <doi:10.1111/rssa.12759>.")
     (license license:gpl2+)))
 
 (define-public r-directedclustering
@@ -22247,13 +22253,13 @@ Election.\" Survey estimates from the Cooperative Congressional Election Study
 (define-public r-ddhfm
   (package
     (name "r-ddhfm")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDHFm" version))
        (sha256
-        (base32 "1xkjbhqipz6kqd6kw9682q5sbrvbpq4jn8nms3cv63b8x9nl1k55"))))
+        (base32 "0cjwig5hr2y59csfwcmlinpp2qfvngwbb5anj7iyydp4j0ywdgqk"))))
     (properties `((upstream-name . "DDHFm")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh r-lokern))

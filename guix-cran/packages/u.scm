@@ -1721,13 +1721,13 @@ Informations-, Dokumentations- und Administrations-System'), see
 (define-public r-unrtf
   (package
     (name "r-unrtf")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unrtf" version))
        (sha256
-        (base32 "17n9n9ld6ylg20p8zw57jc4q22h7plrhf1zk0ca7pxr099g8pj6r"))))
+        (base32 "0p3yc1in53rhcs4gqz815ygqjj25cwfxg11bixmiykfb8yi9wjlc"))))
     (properties `((upstream-name . "unrtf")))
     (build-system r-build-system)
     (inputs (list pcre2))
@@ -1928,13 +1928,13 @@ building block for workflows within more applied projects.")
 (define-public r-unix
   (package
     (name "r-unix")
-    (version "1.5.8")
+    (version "1.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unix" version))
        (sha256
-        (base32 "0jjy4vhxvyd7i85g50xz392m7blqai8crfrnyf7kbgzkbibr7jb0"))))
+        (base32 "0jbbdrrcb13w7c3rb2f3z4mja2cw0lf2c45pf4294qzsrnkq422j"))))
     (properties `((upstream-name . "unix")))
     (build-system r-build-system)
     (inputs (list apparmor))

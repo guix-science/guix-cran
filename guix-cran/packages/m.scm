@@ -13089,19 +13089,19 @@ the database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "2.8.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolite" version))
        (sha256
-        (base32 "0hmh7rvzjrmmq0rxs510lw0829h4fqrfhpszi7sz48zl2yp85zwn"))))
+        (base32 "0745ahm8ckmw7r3a72h4kjsndgwbk7jwi7i0z0i8aww2k3z8v37z"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssl))
     (propagated-inputs (list r-openssl r-mime r-jsonlite))
     (native-inputs (list pkg-config))
-    (home-page "https://cran.r-project.org/package=mongolite")
+    (home-page "https://jeroen.r-universe.dev/mongolite")
     (synopsis "Fast and Simple 'MongoDB' Client for R")
     (description
      "High-performance @code{MongoDB} client based on mongo-c-driver and jsonlite'.
@@ -33400,6 +33400,49 @@ test, and Sobel's test under the composite null hypothesis.  Du et al (2023)
 <doi:10.1002/gepi.22510>.")
     (license license:gpl3)))
 
+(define-public r-medrxivr
+  (package
+    (name "r-medrxivr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "medrxivr" version))
+       (sha256
+        (base32 "03p5rz6a362wvlcaq2khzyhjivvw62i50846db8p6rj9rwqba228"))))
+    (properties `((upstream-name . "medrxivr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-data-table
+                             r-curl
+                             r-bib2df))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/medrxivr")
+    (synopsis "Access and Search MedRxiv and BioRxiv Preprint Data")
+    (description
+     "An increasingly important source of health-related bibliographic content are
+preprints - preliminary versions of research articles that have yet to undergo
+peer review.  The two preprint repositories most relevant to health-related
+sciences are @code{medRxiv} <https://www.medrxiv.org/> and @code{bioRxiv}
+<https://www.biorxiv.org/>, both of which are operated by the Cold Spring Harbor
+Laboratory.  medrxivr provides programmatic access to the Cold Spring Harbour
+Laboratory (CSHL) API <https://api.biorxiv.org/>, allowing users to easily
+download @code{medRxiv} and @code{bioRxiv} preprint metadata (e.g. title,
+abstract, publication date, author list, etc) into R. medrxivr also provides
+functions to search the downloaded preprint records using regular expressions
+and Boolean logic, as well as helper functions that allow users to export their
+search results to a .BIB file for easy import to a reference manager and to
+download the full-text PDFs of preprints matching their search criteria.")
+    (license license:gpl2)))
+
 (define-public r-medparser
   (package
     (name "r-medparser")
@@ -35024,6 +35067,36 @@ to a binary backup hosted in the Digital Ocean cloud service and allows
 individual or batch download of any mammal species in the mdd taxonomy by
 providing the scientific species name.")
     (license license:gpl3+)))
+
+(define-public r-mddc
+  (package
+    (name "r-mddc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MDDC" version))
+       (sha256
+        (base32 "1c02qzf8hpvjpjqkkcmxw0c3vb7wv0hnq6cwpfyfj1ry7a1phfiw"))))
+    (properties `((upstream-name . "MDDC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-mass
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/niuniular/MDDC")
+    (synopsis
+     "Modified Detecting Deviating Cells Algorithm in Pharmacovigilance")
+    (description
+     "This package provides methods for detecting signals related to (adverse event,
+medical product e.g. drugs, vaccines) pairs, a data generation function for
+simulating pharmacovigilance datasets, and various utility functions.  For more
+details please see Liu A., Mukhopadhyay R., and Markatou M.
+<doi:10.48550/@code{arXiv.2410.01168>}.")
+    (license license:gpl3)))
 
 (define-public r-mdbr
   (package
@@ -42005,6 +42078,31 @@ build-in functions provided in mapping or with other packages already available.
 each level set.  3.  Generate a complex from the clustering results.")
     (license license:expat)))
 
+(define-public r-mapper
+  (package
+    (name "r-mapper")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mappeR" version))
+       (sha256
+        (base32 "1rbir2gqlkx8i9dcqxhfynzplgbx2kh55ic2gcfll5c27vsayfq0"))))
+    (properties `((upstream-name . "mappeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcy3 r-igraph r-fastcluster))
+    (home-page "https://github.com/Uiowa-Applied-Topology/mappeR")
+    (synopsis "Construct and Visualize TDA Mapper Graphs")
+    (description
+     "Topological data analysis (TDA) is a method of data analysis that uses
+techniques from topology to analyze high-dimensional data.  Here we implement
+Mapper, an algorithm from this area developed by Singh, MÃ©moli and Carlsson
+(2007) which generalizes the concept of a Reeb graph
+<https://en.wikipedia.org/wiki/Reeb_graph>.  The output graph is able to be
+visualized in R using igraph or using a free network analysis software called
+Cytoscape', available for download from at <https://cytoscape.org/>.")
+    (license license:expat)))
+
 (define-public r-mapmixture
   (package
     (name "r-mapmixture")
@@ -42799,13 +42897,13 @@ visualizing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "0p46znq1s0czaf5rqr4ra5q6jyp77xxn0kxplwg3f8sm63db6z6g"))))
+        (base32 "19gxwxjl29323dq5idgwyirkzwszy3bqdh9lv8i3938bjkh8bz3y"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply
@@ -43774,13 +43872,13 @@ starting at 1 and allowing users to customise suffix format.")
 (define-public r-maketools
   (package
     (name "r-maketools")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maketools" version))
        (sha256
-        (base32 "06n14v9wrvbdplb42w7yqjjf8r995335fs2pn2b5848m0mrknsbv"))))
+        (base32 "03ng6lfs1phi41zvpdc2mp336c4smb7882hh76nis5qn8njmpf3b"))))
     (properties `((upstream-name . "maketools")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys))

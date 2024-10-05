@@ -6283,19 +6283,19 @@ the JSON file.")
 (define-public r-opencv
   (package
     (name "r-opencv")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencv" version))
        (sha256
-        (base32 "0bplljn5qpgb3yp3jlmr99vrffqr53q8hlznbzpmj78kn5f1j71y"))))
+        (base32 "087vjygs446lw10nizl14kq27n668wqky3jr6ks28mqmcvk1wgqx"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
     (inputs (list zlib))
     (propagated-inputs (list r-rcpp r-magrittr))
     (native-inputs (list pkg-config))
-    (home-page "https://ropensci.r-universe.dev/opencv")
+    (home-page "https://cran.r-project.org/package=opencv")
     (synopsis "Bindings to 'OpenCV' Computer Vision Library")
     (description
      "Exposes some of the available @code{OpenCV} <https://opencv.org/> algorithms,
@@ -6430,6 +6430,41 @@ address of a location (reverse geocoding), see <https://opencagedata.com/>.")
      "This package creates a client with queries for the UK Open Banking ('Open Data')
 API.")
     (license license:gpl3)))
+
+(define-public r-openappr
+  (package
+    (name "r-openappr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openappr" version))
+       (sha256
+        (base32 "1icdv5cr39xrv0nyqaz6727ffzh7zc84j1lb9jbz7bai8ky9k3w1"))))
+    (properties `((upstream-name . "openappr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rsqlite
+                             r-rpostgres
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=openappr")
+    (synopsis "Retrieve App Data from 'OpenAppBuilder'")
+    (description
+     "This package provides an interface to connect R with the
+<https://github.com/IDEMSInternational/open-app-builder> @code{OpenAppBuilder}
+platform, enabling users to retrieve and work with user and notification data
+for analysis and processing.  It is designed for developers and analysts to
+seamlessly integrate data from @code{OpenAppBuilder} into R workflows via a
+Postgres database connection, allowing direct querying and import of app data
+into R.")
+    (license license:lgpl3+)))
 
 (define-public r-openalexr
   (package
@@ -10184,13 +10219,13 @@ method is described by Surmann, Ligges, and Weihs (2014)
 (define-public r-odeguts
   (package
     (name "r-odeguts")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odeGUTS" version))
        (sha256
-        (base32 "0ra9svfwdvsil5hqbmyxhnz80zm905v1m2lm8s5cbkjkfs5fsnls"))))
+        (base32 "0bk2ahk9qigqx00rdppgml4fb1czibhqal8wymqgs1bifixxb5wy"))))
     (properties `((upstream-name . "odeGUTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-tidyr r-magrittr r-dplyr r-desolve))

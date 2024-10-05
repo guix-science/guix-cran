@@ -5537,18 +5537,18 @@ of values of the penalty parameter.  This package is based on Noah Simon, et al.
 (define-public r-trinroc
   (package
     (name "r-trinroc")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trinROC" version))
        (sha256
-        (base32 "0jpnr3l8f057k334sx803cc7kxgi8mxvxjgli88f8682ax9z47k3"))))
+        (base32 "1jk494hm3rl2xy7gq010l9b9akms1ddkip9niwmz1zvy9924j3pj"))))
     (properties `((upstream-name . "trinROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-gridextra r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://math.uzh.ch/pages/trinROC/")
+    (home-page "https://www.math.uzh.ch/pages/trinROC/")
     (synopsis "Statistical Tests for Assessing Trinormal ROC Data")
     (description
      "Several statistical test functions as well as a function for exploratory data
@@ -5556,7 +5556,9 @@ analysis to investigate classifiers allocating individuals to one of three
 disjoint and ordered classes.  In a single classifier assessment the
 discriminatory power is compared to classification by chance.  In a comparison
 of two classifiers the null hypothesis corresponds to equal discriminatory power
-of the two classifiers.")
+of the two classifiers.  See also \"ROC Analysis for Classification and
+Prediction in Practice\" by Nakas, Bantis and Gatsonis (2023), ISBN
+9781482233704.")
     (license license:lgpl2.1)))
 
 (define-public r-trimr
@@ -8611,13 +8613,13 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1y89v0n0ipjhnl2shh9pygy8wlql3lx48zisyrf6jkpx7dxs3ia9"))))
+        (base32 "1k5r7y4j9mfik5jfvaf8y2wvy9p4sfs2dqzxnq91a8a06ak723k4"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -14481,13 +14483,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.30.0")
+    (version "0.30.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "0js51pix6p7fi3gf2i036bl4mj1gbqaj2w07vyikl92wf85821pi"))))
+        (base32 "0b6130y039ppc5b748rzhbivrd44z5rpbnxw8cqdfivfcbfxv734"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -15731,32 +15733,25 @@ str_detect2().")
 (define-public r-tidyplate
   (package
     (name "r-tidyplate")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplate" version))
        (sha256
-        (base32 "0gkjncv23cq4mmlr1s9vsddy3dm1gkg6ch8sk8j9shhs5cv011zz"))))
+        (base32 "09gclxyhmgqlqxcnjsx13bgx944v2f68z427sw0pshpgg9mh3fw6"))))
     (properties `((upstream-name . "tidyplate")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-purrr
-                             r-janitor
-                             r-dplyr))
+    (propagated-inputs (list r-tibble r-rlang r-readxl r-openxlsx r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/shubhamdutta26/tidyplate")
-    (synopsis "Transform Microplate Data into Tidy Dataframes")
+    (synopsis "Transform Microplate Data into Tibbles")
     (description
      "The goal of tidyplate is to help researchers convert different types of
-microplates into tidy dataframes which can be used in data analysis.  It accepts
-xlsx and csv files formatted in a specific way as input.  It supports all types
-of standard microplate formats such as 6-well, 12-well, 24-well, 48-well,
-96-well, 384-well, and, 1536-well plates.")
+microplates into tibbles which can be used in data analysis.  It accepts xlsx
+and csv files formatted in a specific way as input.  It supports all types of
+standard microplate formats such as 6-well, 12-well, 24-well, 48-well, 96-well,
+384-well, and, 1536-well plates.")
     (license license:expat)))
 
 (define-public r-tidypaleo
@@ -16148,13 +16143,13 @@ describing the methodology can be found at
 (define-public r-tidyhydat
   (package
     (name "r-tidyhydat")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyhydat" version))
        (sha256
-        (base32 "0rcb3q17ckp7l7xrjf3r32dlnxm6ykwlk20w5h7amnc2vimjnir9"))))
+        (base32 "16y5n5pi4lhn20dmxavis2nvfbzxqd21lixvr5gsaz6wb08z194n"))))
     (properties `((upstream-name . "tidyhydat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16163,7 +16158,7 @@ describing the methodology can be found at
                              r-readr
                              r-rappdirs
                              r-lubridate
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-dbplyr
                              r-dbi
@@ -18680,6 +18675,47 @@ Theia (<https://theia.cnes.fr>), download it, and manage it.  Data can be
 downloaded based on a search result or from a cart file downloaded from Theia
 website.")
     (license license:gpl3+)))
+
+(define-public r-theftdlc
+  (package
+    (name "r-theftdlc")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "theftdlc" version))
+       (sha256
+        (base32 "0gc5xfizqdljkg4cqz6a0zp981804sfcjd07zrqc8pkjvq8489j8"))))
+    (properties `((upstream-name . "theftdlc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-umap
+                             r-tidyr
+                             r-tibble
+                             r-theft
+                             r-scales
+                             r-rtsne
+                             r-rlang
+                             r-reshape2
+                             r-purrr
+                             r-normaliser
+                             r-mclust
+                             r-mass
+                             r-janitor
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-correctr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://hendersontrent.github.io/theftdlc/")
+    (synopsis "Analyse and Interpret Time Series Features")
+    (description
+     "This package provides a suite of functions for analysing, interpreting, and
+visualising time-series features calculated from different feature sets from the
+theft package.  Implements statistical learning methodologies described in
+Henderson, T., Bryant, A., and Fulcher, B. (2023)
+<doi:10.48550/@code{arXiv.2303.17809>}.")
+    (license license:expat)))
 
 (define-public r-theft
   (package
@@ -21423,20 +21459,19 @@ nonlinear associations between cognition and demographic variables.")
 (define-public r-tesseract
   (package
     (name "r-tesseract")
-    (version "5.2.1")
+    (version "5.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tesseract" version))
        (sha256
-        (base32 "1zhpl6pbi7gwwc9y1d8cd7hb21ljcs561lyysjva4cfmqm0sdazz"))))
+        (base32 "0mbsa1djfmx1c6hrxs14wdzv0kqc56dlr3yzsij2d0vnjgyjrhis"))))
     (properties `((upstream-name . "tesseract")))
     (build-system r-build-system)
     (inputs (list zlib))
     (propagated-inputs (list r-rcpp r-rappdirs r-pdftools r-digest r-curl))
     (native-inputs (list pkg-config r-knitr))
-    (home-page
-     "https://docs.ropensci.org/tesseract/https://github.com/ropensci/tesseract")
+    (home-page "https://cran.r-project.org/package=tesseract")
     (synopsis "Open Source OCR Engine")
     (description
      "Bindings to Tesseract': a powerful optical character recognition (OCR) engine
@@ -26319,13 +26354,13 @@ detailed overview of tacmagic functions.")
 (define-public r-tabxplor
   (package
     (name "r-tabxplor")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabxplor" version))
        (sha256
-        (base32 "0dfv2zwlx43b941izxd0d4h3cvmrh0vmzgh01p3ka994anrhvsyk"))))
+        (base32 "0navimnpj93n1gxv7cr83xj3c28rrd1zzg1rjs78rxidci4lhcxm"))))
     (properties `((upstream-name . "tabxplor")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

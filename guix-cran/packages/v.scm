@@ -5846,13 +5846,13 @@ information in a collection of time series.")
 (define-public r-vcrpart
   (package
     (name "r-vcrpart")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcrpart" version))
        (sha256
-        (base32 "1h3p95gmy9lymnhw061awrxfn3xsadcmdr84azyn6c4p2l2qk5b6"))))
+        (base32 "0vz8wss290q6m0234syqwxnrk6c3jm64r2rccsj44sypbf887db5"))))
     (properties `((upstream-name . "vcrpart")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

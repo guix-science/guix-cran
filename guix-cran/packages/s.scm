@@ -2986,32 +2986,33 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svdnf
   (package
     (name "r-svdnf")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVDNF" version))
        (sha256
-        (base32 "0r5720nkz2qib4b5nzyj5czka34wx617dbc3v46zxl83v6c0jxyk"))))
+        (base32 "00jrdj6shbkihvnjldhiwn976nadsxw9b7lj5ivlbbfbd2ah4x1r"))))
     (properties `((upstream-name . "SVDNF")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-rcpp))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=SVDNF")
     (synopsis "Discrete Nonlinear Filtering for Stochastic Volatility Models")
     (description
      "This package implements the discrete nonlinear filter (DNF) of Kitagawa (1987)
 <doi:10.1080/01621459.1987.10478534> to a wide class of stochastic volatility
 (SV) models with return and volatility jumps following the work of BÃ©gin and
-Boudreault (2021) <doi:10.1080/10618600.2020.1840995>.  Offers several built-in
+Boudreault (2021) <doi:10.1080/10618600.2020.1840995> to obtain likelihood
+evaluations and maximum likelihood parameter estimates.  Offers several built-in
 SV models and a flexible framework for users to create customized models by
-specifying drift and diffusion functions along with a jump arrival distribution
-for the return and volatility dynamics.  Allows for the estimation of factor
-models with stochastic volatility (e.g., heteroskedastic volatility CAPM) by
-incorporating expected return predictors. `Includes functions to compute
-likelihood evaluations, filtering and prediction distribution estimates, maximum
-likelihood parameter estimates, to simulate data from built-in and custom SV
-models with jumps, and to forecast future returns and volatility values using
-Monte Carlo simulation from a given SV model.")
+specifying drift and diffusion functions along with an arrival distribution for
+the return and volatility jumps.  Allows for the estimation of factor models
+with stochastic volatility (e.g., heteroskedastic volatility CAPM) by
+incorporating expected return predictors.  Also includes functions to compute
+filtering and prediction distribution estimates, to simulate data from built-in
+and custom SV models with jumps, and to forecast future returns and volatility
+values using Monte Carlo simulation from a given SV model.")
     (license license:gpl3)))
 
 (define-public r-svdialogstcltk
@@ -4318,16 +4319,17 @@ reclassification index (NRI).")
 (define-public r-survhe
   (package
     (name "r-survhe")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survHE" version))
        (sha256
-        (base32 "00h7jjwynhg75d6f4j0c9d1mivw7ycln5ymcsvx2lfy7i22widk9"))))
+        (base32 "02nznc00jwgvpfyn95fhaxr2hsznmdplwjysi0bg722lhlp2w2bn"))))
     (properties `((upstream-name . "survHE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
+                             r-tidyr
                              r-tibble
                              r-rms
                              r-ggplot2
@@ -8720,16 +8722,16 @@ to create dyadic data sets.")
 (define-public r-stratpal
   (package
     (name "r-stratpal")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StratPal" version))
        (sha256
-        (base32 "0si4fmrplzzm7r8vmwrfzrpc3kisa9va7mv0hlk600smzwmra1j6"))))
+        (base32 "0bmlblmd5lm203b5zqf20akc24xd9ra4kas9kd16pxw482s7fvyw"))))
     (properties `((upstream-name . "StratPal")))
     (build-system r-build-system)
-    (propagated-inputs (list r-admtools))
+    (propagated-inputs (list r-paleots r-admtools))
     (native-inputs (list r-knitr))
     (home-page "https://mindthegap-erc.github.io/StratPal/")
     (synopsis "Stratigraphic Paleobiology Modeling Pipelines")
@@ -31612,13 +31614,13 @@ visualization of immune cell abundance of samples in different mutation status..
 (define-public r-smdi
   (package
     (name "r-smdi")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smdi" version))
        (sha256
-        (base32 "0grgj1wf2pdcz1wangnsni5x6idqz19plr7jghq6p0a7w9b89d6q"))))
+        (base32 "17l5620pjwyfwl1p0h5zv264nllca3gzcnw94hbfvb79kyls9x2s"))))
     (properties `((upstream-name . "smdi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31642,7 +31644,7 @@ visualization of immune cell abundance of samples in different mutation status..
                              r-caret
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://janickweberpals.gitlab-pages.partners.org/smdi")
+    (home-page "https://janickweberpals.gitlab-pages.partners.org/smdi/")
     (synopsis "Perform Structural Missing Data Investigations")
     (description
      "An easy to use implementation of routine structural missing data diagnostics
@@ -42437,13 +42439,13 @@ poorly predicted points.")
 (define-public r-shinymobile
   (package
     (name "r-shinymobile")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyMobile" version))
        (sha256
-        (base32 "0n678q4rqf2fxv8mv683byd9zjl7hg6rlvycf3g519griksba5mn"))))
+        (base32 "0vsmvd30n4i2gqzywl0h11v5zrrcf40gmr12fvngxm3baxa5v3xc"))))
     (properties `((upstream-name . "shinyMobile")))
     (build-system r-build-system)
     (arguments

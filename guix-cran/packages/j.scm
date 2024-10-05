@@ -870,13 +870,13 @@ provides RStudio addins for the same purpose.")
 (define-public r-jsonld
   (package
     (name "r-jsonld")
-    (version "2.2")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsonld" version))
        (sha256
-        (base32 "0bplz2s97wl9yp383jazykh5647iw6kbr1zanqai2s0sxp1xbwn8"))))
+        (base32 "1jjshi7bb2sxs6is5130ayqz6k1adn5w2yi7pnbjbvlpnpx2hdgx"))))
     (properties `((upstream-name . "jsonld")))
     (build-system r-build-system)
     (arguments
@@ -897,14 +897,14 @@ provides RStudio addins for the same purpose.")
                                   '())))))))
     (propagated-inputs (list r-v8 r-jsonlite r-curl))
     (native-inputs (list esbuild))
-    (home-page "https://docs.ropensci.org/jsonld")
+    (home-page "https://docs.ropensci.org/jsonld/")
     (synopsis "JSON for Linking Data")
     (description
-     "JSON-LD is a light-weight syntax for expressing linked data.  It is primarily
-intended for web-based programming environments, interoperable web services and
-for storing linked data in JSON-based databases.  This package provides bindings
-to the @code{JavaScript} library for converting, expanding and compacting
-JSON-LD documents.")
+     "JSON-LD <https://www.w3.org/TR/json-ld/> is a light-weight syntax for expressing
+linked data.  It is primarily intended for web-based programming environments,
+interoperable web services and for storing linked data in JSON-based databases.
+This package provides bindings to the @code{JavaScript} library for converting,
+expanding and compacting JSON-LD documents.")
     (license license:bsd-3)))
 
 (define-public r-json64
@@ -1230,13 +1230,13 @@ selected lines.  This is useful to test the code.")
 (define-public r-js
   (package
     (name "r-js")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "js" version))
        (sha256
-        (base32 "0s5rj845255a4fzv4h76gcnnqyl5cg3c03r2ay3f00jxnxvvigcg"))))
+        (base32 "1k4linb8r0a5wqm66qy8xiw465yl4558sj3nk77g9dq5prjkps2w"))))
     (properties `((upstream-name . "js")))
     (build-system r-build-system)
     (arguments
@@ -1257,7 +1257,7 @@ selected lines.  This is useful to test the code.")
                                   '())))))))
     (propagated-inputs (list r-v8))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/jeroen/js")
+    (home-page "https://jeroen.r-universe.dev/js")
     (synopsis "Tools for Working with JavaScript in R")
     (description
      "This package provides a set of utilities for working with @code{JavaScript}
@@ -1616,13 +1616,13 @@ Covariance Matrices.")
 (define-public r-jpcity
   (package
     (name "r-jpcity")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpcity" version))
        (sha256
-        (base32 "1wpznczyx9vmhyznzph0f4lc2rl5x3nhdygp2yfq3hl0kwxrgzfz"))))
+        (base32 "0lm748kch50k9fh87z9r4pv0rcgb98hgshknm4wv3gmb4bm9zmlz"))))
     (properties `((upstream-name . "jpcity")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1746,25 +1746,27 @@ version histories.")
 (define-public r-jose
   (package
     (name "r-jose")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jose" version))
        (sha256
-        (base32 "09k6wnnqlsbmlag4156rcsnavph52grqagkax9kd1sxgpknril3v"))))
+        (base32 "0si1mg325fwx9zgjdbqspw9v6prl5mn3iccg7vki4bpzmwhd953q"))))
     (properties `((upstream-name . "jose")))
     (build-system r-build-system)
     (propagated-inputs (list r-openssl r-jsonlite))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=jose")
+    (home-page "https://r-lib.r-universe.dev/jose")
     (synopsis "JavaScript Object Signing and Encryption")
     (description
      "Read and write JSON Web Keys (JWK, rfc7517), generate and verify JSON Web
-Signatures (JWS, rfc7515) and encode/decode JSON Web Tokens (JWT, rfc7519).
-These standards provide modern signing and encryption formats that are natively
-supported by browsers via the @code{JavaScript} @code{WebCryptoAPI}, and used by
-services like OAuth 2.0, @code{LetsEncrypt}, and Github Apps.")
+Signatures (JWS, rfc7515) and encode/decode JSON Web Tokens (JWT, rfc7519)
+<https://datatracker.ietf.org/wg/jose/documents/>.  These standards provide
+modern signing and encryption formats that are natively supported by browsers
+via the @code{JavaScript} @code{WebCryptoAPI}
+<https://www.w3.org/TR/@code{WebCryptoAPI/#jose>}, and used by services like
+OAuth 2.0, @code{LetsEncrypt}, and Github Apps.")
     (license license:expat)))
 
 (define-public r-josaplay

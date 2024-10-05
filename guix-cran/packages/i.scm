@@ -3110,13 +3110,13 @@ Interface.")
 (define-public r-irtest
   (package
     (name "r-irtest")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRTest" version))
        (sha256
-        (base32 "0fnz98kn463cqp7yp63w1zasp131a448pr4hmkp1y3dpgclfdcva"))))
+        (base32 "1rnpdba06104kqild065w01jr188dmp3v7vs4zkakqpgrf1lf7jj"))))
     (properties `((upstream-name . "IRTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis r-ggplot2 r-dcurver r-betafunctions))

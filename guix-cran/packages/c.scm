@@ -8681,13 +8681,13 @@ pairs of individuals whose predicted survival times are correctly ordered.")
 (define-public r-cpd
   (package
     (name "r-cpd")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpd" version))
        (sha256
-        (base32 "049df4ip3x7v9zviw7b4m1hp2w4gpfi6cq066mqal41frgvfmwdb"))))
+        (base32 "0rffkw87j77k1r1ipi8avibbkfsp97g52amawz2nj1mrkgamj2g2"))))
     (properties `((upstream-name . "cpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-hypergeo r-dgof))
@@ -13052,13 +13052,13 @@ the data into separate modules.")
 (define-public r-corbouli
   (package
     (name "r-corbouli")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corbouli" version))
        (sha256
-        (base32 "048il7yvlsz39ph76hw5qa4fpknpvp11h1fsg0y623ykk9cava93"))))
+        (base32 "1r9fvbc1r65rsw96pxhlixm0c0k2r265yf85skdz99kmr09l4adx"))))
     (properties `((upstream-name . "corbouli")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
@@ -24452,24 +24452,24 @@ Ziqiang et al. (2022) <doi:10.1016/j.jad.2021.12.019>.")
 (define-public r-cmmr
   (package
     (name "r-cmmr")
-    (version "0.1.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmmr" version))
        (sha256
-        (base32 "0nik1pzd1rckalvn7xh6s699kkdjnra3q3bn5x16c1lmpz5bp2s4"))))
+        (base32 "1qqwg139an072nm2szyk219id8nvqfrq3vb9z813aszmn9h6a16l"))))
     (properties `((upstream-name . "cmmr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rjsonio r-progress r-httr))
-    (home-page "https://github.com/lzyacht/cmmr")
+    (propagated-inputs (list r-rjsonio r-progress r-httr r-cli))
+    (home-page "https://github.com/YaoxiangLi/cmmr")
     (synopsis "CEU Mass Mediator RESTful API")
     (description
      "CEU (CEU San Pablo University) Mass Mediator is an on-line tool for aiding
 researchers in performing metabolite annotation.  cmmr (CEU Mass Mediator
 RESTful API) allows for programmatic access in R: batch search, batch advanced
 search, MS/MS (tandem mass spectrometry) search, etc.  For more information
-about the API Endpoint please go to <https://github.com/lzyacht/cmmr>.")
+about the API Endpoint please go to <https://github.com/@code{YaoxiangLi/cmmr>}.")
     (license license:gpl3)))
 
 (define-public r-cmm
@@ -28817,13 +28817,13 @@ filters that maximize the between-class and minimize the within-class distances.
 (define-public r-cld3
   (package
     (name "r-cld3")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cld3" version))
        (sha256
-        (base32 "0vgqg0sslj5dni9cpdfq7vbjy7wg48hdk8xa2bg7sd558apnns3c"))))
+        (base32 "0zxl4h2bx4kkhz4jax2nlx2bqf0vfy41ibds4iasv848jqifnxfs"))))
     (properties `((upstream-name . "cld3")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -28842,18 +28842,17 @@ Bayesian classifier results from cld2'.  See
 (define-public r-cld2
   (package
     (name "r-cld2")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cld2" version))
        (sha256
-        (base32 "0nv17v1sjdx4xballagm5cfafswj4bqc0h550q29hal16vl4vq3r"))))
+        (base32 "1mzsr6rmqhvvk5p38y3kwd5hmyiaxgg60ay2gvh4d8psn7fx9cyv"))))
     (properties `((upstream-name . "cld2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (home-page
-     "https://docs.ropensci.org/cld2/https://github.com/ropensci/cld2https://github.com/cld2owners/cld2")
+    (home-page "https://cran.r-project.org/package=cld2")
     (synopsis "Google's Compact Language Detector 2")
     (description
      "Bindings to Google's C++ library Compact Language Detector 2 (see
@@ -30658,13 +30657,13 @@ data.  For dev version and change history, see @code{GitHub} assaforon/cir.")
 (define-public r-cipostselect
   (package
     (name "r-cipostselect")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CIpostSelect" version))
        (sha256
-        (base32 "199rci0cm584zfqv264vvid0bmc8k6dj3nknia4i6c18331jg5sx"))))
+        (base32 "1yqdwb11bi4a7kg3xvh3liq0f77fyfri5sv7ksq71wwshzzr4f8q"))))
     (properties `((upstream-name . "CIpostSelect")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -34978,23 +34977,21 @@ Data, <@code{arXiv:1805.06923>} for details.")
 (define-public r-cfilt
   (package
     (name "r-cfilt")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFilt" version))
        (sha256
-        (base32 "1iah41s0pd8s4vmg7r6npsgmfr6mvyp5wfnyimx51fqr2f3narwf"))))
+        (base32 "0gngc6z9ssrniycn1p2apjdhlz78ykbv51nxxr85rvqiiz1lx515"))))
     (properties `((upstream-name . "CFilt")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CFilt")
-    (synopsis "Collaborative Filtering by Reference Classes")
+    (synopsis "Recommendation by Collaborative Filtering")
     (description
-     "The collaborative Filtering methodology has been widely used in recommendation
-systems, which uses similarities between users or items to make recommendations.
- A class called CF was implemented, where it is structured by matrices and
-composed of recommendation and database manipulation functions.  See Aggarwal
-(2016) <doi:10.1007/978-3-319-29659-3> for an overview.")
+     "This package provides methods and functions to implement a Recommendation System
+based on Collaborative Filtering Methodology.  See Aggarwal (2016)
+<doi:10.1007/978-3-319-29659-3> for an overview.")
     (license license:gpl3)))
 
 (define-public r-cfid

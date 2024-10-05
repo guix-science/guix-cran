@@ -95,13 +95,13 @@ decoding.  The method is fully described in Druet and Gautier (2017)
 (define-public r-rzmq
   (package
     (name "r-rzmq")
-    (version "0.9.13")
+    (version "0.9.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rzmq" version))
        (sha256
-        (base32 "1wb3nhgik436nq2518npy7z8c1nh0c6ck5a95csph2rsn91kaq4d"))))
+        (base32 "1ngyjlr30lfab7q2z9dw1q7jhagjn29z6jilld0k6i97rpl6kagc"))))
     (properties `((upstream-name . "rzmq")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -2102,16 +2102,16 @@ queues, local caching, and sophisticated error handling.")
 (define-public r-runuran
   (package
     (name "r-runuran")
-    (version "0.39")
+    (version "0.40")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Runuran" version))
        (sha256
-        (base32 "13bqv8y5472bx2hn5ph7g532jrqwigqc3pijs5bw4y0zv4fklpy3"))))
+        (base32 "1ws0za51p3w9ky8f763b0x82iil21cd01w4334jb2daxjhl58071"))))
     (properties `((upstream-name . "Runuran")))
     (build-system r-build-system)
-    (home-page "https://statmath.wu.ac.at/unuran/")
+    (home-page "https://github.com/unuran/Runuran/")
     (synopsis "R Interface to the 'UNU.RAN' Random Variate Generators")
     (description
      "Interface to the UNU.RAN library for Universal Non-Uniform RANdom variate
@@ -28842,26 +28842,32 @@ for making predictions.  This function is based on Jackson (2016)
 (define-public r-resin
   (package
     (name "r-resin")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResIN" version))
        (sha256
-        (base32 "0m40s7qsxpphja4cw8d6f7aq5vphqzkqzy61jpa17bnyfq0v9v2d"))))
+        (base32 "0by098xmbikvprbp2x860jvvdic3w1x09n2qcg1ipdj1pcdppz0g"))))
     (properties `((upstream-name . "ResIN")))
     (build-system r-build-system)
     (propagated-inputs (list r-wcorr
+                             r-shadowtext
+                             r-readr
                              r-qgraph
+                             r-psych
+                             r-parallelly
                              r-matrix
                              r-igraph
                              r-ggplot2
+                             r-foreach
                              r-fastdummies
                              r-dplyr
+                             r-dosnow
                              r-directedclustering))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pwarncke77/ResIN")
-    (synopsis "Response Item Networks ('ResIN')")
+    (synopsis "Response Item Networks")
     (description
      "This package contains various tools to perform and visualize Response Item
 Networks ('@code{ResIN's}'). @code{ResIN} binarizes ordered-categorical and
@@ -41283,13 +41289,13 @@ package in the R Commander GUI for R.")
 (define-public r-rcmdr
   (package
     (name "r-rcmdr")
-    (version "2.9-2")
+    (version "2.9-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcmdr" version))
        (sha256
-        (base32 "175c5iqgp2j7x5vjijnklc35nbnyz0s83rzmf7qq8kxv8fv2jmw8"))))
+        (base32 "19qknvrsw6pffqklghvaz42f8v7mlsq7h1m7d0v8jzn0c3py4sbg"))))
     (properties `((upstream-name . "Rcmdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tcltk2
@@ -41299,7 +41305,7 @@ package in the R Commander GUI for R.")
                              r-effects
                              r-car
                              r-abind))
-    (home-page "https://r-forge.r-project.org/projects/rcmdr/")
+    (home-page "https://github.com/RCmdr-Project/rcmdr")
     (synopsis "R Commander")
     (description
      "This package provides a platform-independent basic-statistics GUI (graphical
@@ -45605,13 +45611,13 @@ created, rapport templates can be exported to various external formats (HTML,
 (define-public r-rapparmor
   (package
     (name "r-rapparmor")
-    (version "3.2.4")
+    (version "3.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAppArmor" version))
        (sha256
-        (base32 "1dg9ykmgb2bzqyh08jhfm1wv6zniqg6p49k8mfgxb534sqv5wdn4"))))
+        (base32 "12l4acr1vrn8rga4072yrp5hkwxl4llm8232gwzpihl3qlfj4121"))))
     (properties `((upstream-name . "RAppArmor")))
     (build-system r-build-system)
     (inputs (list))

@@ -6902,13 +6902,13 @@ the Rprof and pprof file formats.")
 (define-public r-proffer
   (package
     (name "r-proffer")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proffer" version))
        (sha256
-        (base32 "0y94rwhg3gr63avmmwvfv84cgg08fya6vc7q535xjv1wspiyvjnl"))))
+        (base32 "1qg3yx6dhlsvvqdvcbypngfjb59zja0k32d824vgphsciz1bycia"))))
     (properties `((upstream-name . "proffer")))
     (build-system r-build-system)
     (inputs (list graphviz))
@@ -6929,8 +6929,7 @@ to interpret.  Behind the scenes, the profile package converts native Rprof()
 data to a protocol buffer that pprof understands.  For the documentation of
 proffer', visit <https://r-prof.github.io/proffer/>.  To learn about the
 implementations and methodologies of pprof', profile', and protocol buffers,
-visit <https://github.com/google/pprof>.
-<https://developers.google.com/protocol-buffers>, and
+visit <https://github.com/google/pprof>. <https://protobuf.dev>, and
 <https://github.com/r-prof/profile>, respectively.")
     (license license:expat)))
 
@@ -8044,13 +8043,13 @@ optional).")
 (define-public r-prismjs
   (package
     (name "r-prismjs")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prismjs" version))
        (sha256
-        (base32 "032m8brgsvgdry8y1hsigl8pnckh13d23ylsj4hsga6dbyvkj7lf"))))
+        (base32 "0m655x662r29c5s5yzb6p268lp60rp5y3lxkiar5mrrg96j6g44i"))))
     (properties `((upstream-name . "prismjs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-v8))

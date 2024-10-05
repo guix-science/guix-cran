@@ -1596,6 +1596,26 @@ scoring, and plotting for the BG/BB (Fader, Hardie, and Shang 2010
 Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
     (license license:gpl3)))
 
+(define-public r-bttl
+  (package
+    (name "r-bttl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BTTL" version))
+       (sha256
+        (base32 "0vkp85mmdzch26l1y28ngd1mq5d7disha5jp01r2ranpb5whqjmr"))))
+    (properties `((upstream-name . "BTTL")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=BTTL")
+    (synopsis "Bradley-Terry Transfer Learning")
+    (description
+     "This package implements the methodological developments found in Hermes, van
+Heerwaarden, and Behrouzi (2024) <doi:10.48550/@code{arXiv.2408.10558>}, and
+allows for the statistical modeling of multi-attribute pairwise comparison data.")
+    (license license:gpl3)))
+
 (define-public r-bttest
   (package
     (name "r-bttest")
@@ -3425,22 +3445,22 @@ convert file to appropriate format, or to extract data from a file.  See
 (define-public r-brotli
   (package
     (name "r-brotli")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brotli" version))
        (sha256
-        (base32 "0zivyhyf6g7lb8r919a1cc2xvi36g6cszpl9rr200nfvvw6r6zf1"))))
+        (base32 "0ihrf472ynjiby4k032cnj7383wvd5fi6rm19snjxmzxx7yc6xl7"))))
     (properties `((upstream-name . "brotli")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp r-knitr))
-    (home-page
-     "https://www.rfc-editor.org/rfc/rfc7932https://github.com/google/brotli#readmehttps://github.com/jeroen/brotli#read")
+    (home-page "https://jeroen.r-universe.dev/brotli")
     (synopsis "Compression Format Optimized for the Web")
     (description
      "This package provides a lossless compressed data format that uses a combination
-of the LZ77 algorithm and Huffman coding.  Brotli is similar in speed to deflate
+of the LZ77 algorithm and Huffman coding
+<https://www.rfc-editor.org/rfc/rfc7932>.  Brotli is similar in speed to deflate
 (gzip) but offers more dense compression.")
     (license license:expat)))
 
@@ -5938,13 +5958,13 @@ ensure consistent coding standards.")
 (define-public r-boutroslab-plotting-general
   (package
     (name "r-boutroslab-plotting-general")
-    (version "7.1.0")
+    (version "7.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoutrosLab.plotting.general" version))
        (sha256
-        (base32 "1rmd050sla0d3m2q4cadw84v7p9v05v0ifcbzind771sibr3vcji"))))
+        (base32 "0q5l0w0nlclz3k13mxwqd2j4q8hqy9lhywz6d7jx5lk3jq72gf5i"))))
     (properties `((upstream-name . "BoutrosLab.plotting.general")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass
@@ -10811,22 +10831,26 @@ computes the estimators based on the method of moments.")
 (define-public r-bivariatemaps
   (package
     (name "r-bivariatemaps")
-    (version "1.3")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bivariatemaps" version))
        (sha256
-        (base32 "0fqp5r86j6c6221lm9g2glw0k2fivsnqijc5a566vhxk3vbw0hk4"))))
+        (base32 "0glhpdn1v1sgm83gyga63b9yx5a1gflg7rqj9awm0nwr2c11ak63"))))
     (properties `((upstream-name . "bivariatemaps")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-classint))
+    (propagated-inputs (list r-terra
+                             r-picante
+                             r-commecol
+                             r-classint
+                             r-caper
+                             r-betapart
+                             r-ape))
     (home-page "https://cran.r-project.org/package=bivariatemaps")
     (synopsis "Creates Bivariate Maps")
     (description
-     "This package contains functions to plot bivariate maps.  For more info, see:
-Hidasi-Neto, J (2015)
-<https://rfunctions.blogspot.com/2015/03/bivariate-maps-bivariatemap-function.html>.")
+     "This package contains functions mainly focused to plotting bivariate maps.")
     (license license:gpl3)))
 
 (define-public r-bivariate-pareto
@@ -19722,20 +19746,21 @@ process mixture model in order to induce clustering.")
 (define-public r-bcrypt
   (package
     (name "r-bcrypt")
-    (version "1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcrypt" version))
        (sha256
-        (base32 "1wwdin8x09y8n8zrwj1ylh5ikcz0v0la4wmrsvbdr61cg336wzx4"))))
+        (base32 "0n1zkhjq4q16smp672617w6bb506f74ifljaddn50djk0s1cb8ca"))))
     (properties `((upstream-name . "bcrypt")))
     (build-system r-build-system)
     (propagated-inputs (list r-openssl))
-    (home-page "https://cran.r-project.org/package=bcrypt")
-    (synopsis "'Blowfish' Password Hashing Algorithm")
+    (home-page "https://jeroen.r-universe.dev/bcrypt")
+    (synopsis "'Blowfish' Key Derivation and Password Hashing")
     (description
-     "Bindings to the blowfish password hashing algorithm derived from the
+     "Bindings to the blowfish password hashing algorithm
+<https://www.openbsd.org/papers/bcrypt-paper.pdf> derived from the
 @code{OpenBSD} implementation.")
     (license license:bsd-2)))
 
@@ -23339,13 +23364,13 @@ criterion.")
 (define-public r-bayesianfactorzoo
   (package
     (name "r-bayesianfactorzoo")
-    (version "0.0.0.2")
+    (version "0.0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianFactorZoo" version))
        (sha256
-        (base32 "1w06hizaj4vxrhxv4jgr0s5ak1w0rr3j2zcdz7cf0mnrbg600dfd"))))
+        (base32 "026mfyfx8dzj1y97v7gi0kx3iq2fnrlyjd3pcszz1324fi87rpa5"))))
     (properties `((upstream-name . "BayesianFactorZoo")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries
@@ -27834,17 +27859,17 @@ Pages.")
 (define-public r-badgen
   (package
     (name "r-badgen")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "badgen" version))
        (sha256
-        (base32 "0gbafiah9bsxjq2av25003d752w5s9bh7syphl58rsr34l57qkja"))))
+        (base32 "140hmw036966hff9wjqykixxjvs5c0s2zq5yfwafl8il0k10s3y1"))))
     (properties `((upstream-name . "badgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-jsonlite))
-    (home-page "https://github.com/jeroen/badgen/")
+    (home-page "https://jeroen.r-universe.dev/badgen")
     (synopsis "Fast and Simple Badge Generator")
     (description
      "Bindings to badgen <https://www.npmjs.com/package/badgen> to generate beautiful
