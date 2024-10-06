@@ -18513,13 +18513,13 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.4.0")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "0x8apd4pyyg5i326z7259y604yqcw02l1537nm83rdczrs5c9r3z"))))
+        (base32 "1sn9ij9jjzdda4qwm144rvd8vi9mv1maqfpxm1nbshpa9q2ij2qf"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp))
@@ -24495,13 +24495,13 @@ from <https://www.gurobi.com> after obtaining a license.")
 (define-public r-milag
   (package
     (name "r-milag")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miLAG" version))
        (sha256
-        (base32 "03krcr0l9clafjghpnic0wds1h3zn6ighncip7c2555ql75b0g79"))))
+        (base32 "16bkab769ip0xcyjk4mfxb9p4481819jyarvsqd4yqkm01xbkzr8"))))
     (properties `((upstream-name . "miLAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-nlsmicrobio r-minpack-lm r-ggplot2
@@ -41301,13 +41301,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.22.0")
+    (version "0.23.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "1xb1s8vkqk8jykpmngv26knc0c32lkxj7z4iiryyjbj1zd9v7gx5"))))
+        (base32 "0q6zqasb99rlp4nnmbbnlpipl2xwqnpzlz3a85x6jvws050pj4ll"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -42843,13 +42843,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.1.0")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "0wm62y7kdp1j39asrgj51qy90yfsqw5qhmcraw6ym0jh07jd8vi7"))))
+        (base32 "191jbsj9bxiblvrj469ms5dfr7xxsdsdn13ffi9p41n1hlymklpf"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph

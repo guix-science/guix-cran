@@ -10443,18 +10443,19 @@ with the Maximum Likelihood Estimator (MLE) implemented in Hector.")
 (define-public r-gmvjoint
   (package
     (name "r-gmvjoint")
-    (version "0.4.0")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmvjoint" version))
        (sha256
-        (base32 "1gycj6b51irzkv2rg6vvlanaiar8z54pqwd9qswlrw48wk2q074w"))))
+        (base32 "1kalq3w70ixzw7anwbalfnyzxa0vap81bk05b91sk2aw98n36qq1"))))
     (properties `((upstream-name . "gmvjoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
                              r-survival
                              r-statmod
+                             r-reformulas
                              r-rcpparmadillo
                              r-rcpp
                              r-pracma

@@ -8677,13 +8677,13 @@ for 3-dimensional trajectories. @code{McLean} & Skowron Volponi (2018)
 (define-public r-trajmsm
   (package
     (name "r-trajmsm")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajmsm" version))
        (sha256
-        (base32 "019aa2cdnccsws7wf3ks49pfk7szc8m5lly5br4j15bwig8z1b1y"))))
+        (base32 "1rjg89qh4ljaz1pspwx6njfbc5b1i4b5mka0vlypm2i5pljk71wa"))))
     (properties `((upstream-name . "trajmsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-sandwich r-ggplot2 r-flexmix r-e1071))
@@ -13297,13 +13297,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "03cr5fgl6s8sqd6fi777b3m8319xqzihikn3zygwd7xnis6x3bc0"))))
+        (base32 "1a25zjbx19z9vsmw1752g70vnb74p4gvns45f0cmh8g5dgg22cfc"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")

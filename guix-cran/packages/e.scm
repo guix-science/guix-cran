@@ -22633,13 +22633,13 @@ terra', sf', etc.).")
 (define-public r-earth
   (package
     (name "r-earth")
-    (version "5.3.3")
+    (version "5.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "earth" version))
        (sha256
-        (base32 "0wpmsa2r85g7z0k7kjcvncq105vyrg61x9jb1873xc9xpg50yskq"))))
+        (base32 "1g6ywsmdp7qlp0rql6f07j9hih45w9jm7b90sgkjpylqan94zy9s"))))
     (properties `((upstream-name . "earth")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotmo r-formula))

@@ -27151,16 +27151,16 @@ package implements dann and sub_dann from Hastie (1996)
 (define-public r-danielbiostatistics10th
   (package
     (name "r-danielbiostatistics10th")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DanielBiostatistics10th" version))
        (sha256
-        (base32 "0vr0mni4qafcpl70lxszi4yic6ha291jpzw3nnkvi3jkbcx0nj3r"))))
+        (base32 "03amr8vf9ps6rwn0kkh8dg3ngihddwaxfb7fg8ifli5nz63d08y0"))))
     (properties `((upstream-name . "DanielBiostatistics10th")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-e1071))
+    (propagated-inputs (list r-pracma r-e1071 r-cli))
     (home-page "https://cran.r-project.org/package=DanielBiostatistics10th")
     (synopsis "Functions for Wayne W. Daniel's Biostatistics, Tenth Edition")
     (description

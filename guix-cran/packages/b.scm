@@ -386,13 +386,13 @@ bounded-variable least squares.")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "098swv96rhxjf1k6q8xww479cq3v0m9991li9zqs3yd2irzlimly"))))
+        (base32 "14kbk7kp3jha5abnadvd7620b5mrxxgz7j9xvfcnwkvbbq8hp7i9"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -26331,13 +26331,13 @@ expanded by models for other bark beetle species in the future.")
 (define-public r-bark
   (package
     (name "r-bark")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bark" version))
        (sha256
-        (base32 "16bfws2ffcqn848vfa586z3gwjh5jfb2x887pwk05hpyd1ny9cm9"))))
+        (base32 "0kmxklp4l3yfyvh3g72zh5g1y04ahz1h7b1z3kx360yxv97098gx"))))
     (properties `((upstream-name . "bark")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

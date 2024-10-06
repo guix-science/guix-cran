@@ -10816,13 +10816,13 @@ functions to access the pre-commit executable.")
 (define-public r-precmed
   (package
     (name "r-precmed")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "precmed" version))
        (sha256
-        (base32 "1hkdm1fqq9fswfii9ac016xfnbggdvxcvazi5l8ir0vna9jfkcwb"))))
+        (base32 "0clla6wpkclmx2v3mwzcwz95jm7i2802pc6v001g5gjgqzvzyp9q"))))
     (properties `((upstream-name . "precmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10831,14 +10831,13 @@ functions to access the pre-commit executable.")
                              r-rlang
                              r-randomforestsrc
                              r-mgcv
-                             r-mess
                              r-mass
                              r-glmnet
                              r-ggplot2
                              r-gbm
                              r-gam
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=precmed")
+    (home-page "https://github.com/smartdata-analysis-and-statistics/precmed")
     (synopsis "Precision Medicine")
     (description
      "This package provides a doubly robust precision medicine approach to fit,

@@ -4988,13 +4988,13 @@ bivariate distribution, either on the original time scale or as copula.")
 (define-public r-survcompare
   (package
     (name "r-survcompare")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survcompare" version))
        (sha256
-        (base32 "15x37k5zrydak6aby5b1x0q9pnxmk6crxpbfpqjkb3g86b4kpm0q"))))
+        (base32 "1g5gzs61srzx4glrxgfr70vwmx96mvf6lbca43srskn1f8n93k14"))))
     (properties `((upstream-name . "survcompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc r-survival r-randomforestsrc r-glmnet
@@ -5002,7 +5002,7 @@ bivariate distribution, either on the original time scale or as copula.")
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=survcompare")
     (synopsis
-     "Compares Cox and Survival Random Forests to Quantify Nonlinearity")
+     "Nested Cross-Validation to Compare Cox-PH, Cox-Lasso, Survival Random Forests")
     (description
      "This package performs repeated nested cross-validation for Cox Proportionate
 Hazards, Cox Lasso, Survival Random Forest, and their ensemble.  Returns
@@ -26509,13 +26509,13 @@ interactions on different spatial scales.")
 (define-public r-spabundance
   (package
     (name "r-spabundance")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spAbundance" version))
        (sha256
-        (base32 "1xgva4kyxz6rb4my6lkis2fadb5qfy64bvmmqzx6vrr0vxqzvhrj"))))
+        (base32 "1705pq18bnycx06inbr29z7gcmn1381l44x56ncrmbdigj0i0lsk"))))
     (properties `((upstream-name . "spAbundance")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -40836,6 +40836,38 @@ al. (2020) <doi:10.3390/econometrics8020020> and Knaus and FrÃ¼hwirth-Schnatte
 (2023) <doi:10.48550/@code{arXiv.2312.10487>}.  For details on the package,
 please see Knaus et al. (2021) <doi:10.18637/jss.v100.i13>.")
     (license license:gpl2+)))
+
+(define-public r-shrinkem
+  (package
+    (name "r-shrinkem")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shrinkem" version))
+       (sha256
+        (base32 "0frnmri4ycmfjj6375iwjxldfcspfyhfvr1wyaxpqcxqa0c7gdxh"))))
+    (properties `((upstream-name . "shrinkem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrixcalc r-extradistr r-cholwishart
+                             r-brms))
+    (home-page "https://cran.r-project.org/package=shrinkem")
+    (synopsis "Approximate Bayesian Regularization for Parsimonious Estimates")
+    (description
+     "Approximate Bayesian regularization using Gaussian approximations.  The input is
+a vector of estimates and a Gaussian error covariance matrix of the key
+parameters.  Bayesian shrinkage is then applied to obtain parsimonious
+solutions.  The method is described on Karimova, van Erp, Leenders, and Mulder
+(2024) <DOI:10.31234/osf.io/2g8qm>.  Gibbs samplers are used for model fitting.
+The shrinkage priors that are supported are Gaussian (ridge) priors, Laplace
+(lasso) priors (Park and Casella, 2008 <DOI:10.1198/016214508000000337>), and
+horseshoe priors (Carvalho, et al., 2010; <DOI:10.1093/biomet/asq017>).  These
+priors include an option for grouped regularization of different subsets of
+parameters (Meier et al., 2008; <DOI:10.1111/j.1467-9868.2007.00627.x>).  F
+priors are used for the penalty parameters lambda^2 (Mulder and Pericchi, 2018
+<DOI:10.1214/17-BA1092>).  This correspond to half-Cauchy priors on lambda
+(Carvalho, Polson, Scott, 2010 <DOI:10.1093/biomet/asq017>).")
+    (license license:gpl3+)))
 
 (define-public r-shrinkdsm
   (package
@@ -61652,13 +61684,13 @@ example datasets are shipped with the package as well as some new functions.")
 (define-public r-safevote
   (package
     (name "r-safevote")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SafeVote" version))
        (sha256
-        (base32 "1shv5l0grx3bsb0md5ann5dyh18w9i4q2nsar0qmd6cgl87ml4qn"))))
+        (base32 "01gkk16ynrimjyygma2dg7azgj7ag1bwd22w39rpjlfhaavkysza"))))
     (properties `((upstream-name . "SafeVote")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -61669,7 +61701,7 @@ example datasets are shipped with the package as well as some new functions.")
                              r-fields
                              r-dplyr
                              r-data-table))
-    (home-page "https://cthombor.github.io/SafeVote/")
+    (home-page "https://cran.r-project.org/package=SafeVote")
     (synopsis "Election Vote Counting with Safety Features")
     (description
      "Fork of vote_2.3-2', Raftery et al. (2021) <DOI:10.32614/RJ-2021-086>, with

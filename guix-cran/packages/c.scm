@@ -18110,19 +18110,19 @@ events in hydrology and climatology.  Please see Hao Zengchao et al. (2019)
 (define-public r-compound-cox
   (package
     (name "r-compound-cox")
-    (version "3.30")
+    (version "3.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compound.Cox" version))
        (sha256
-        (base32 "0yl2c51kl6q2j50av1acyaqcj37y4qhk9mjp7niqzq9s9zj2hnp0"))))
+        (base32 "0ynv2mpsph40dpkkf6fxw3kvk9x41wdfrk6332ghvfm7xn1aa97h"))))
     (properties `((upstream-name . "compound.Cox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv r-mass))
     (home-page "https://cran.r-project.org/package=compound.Cox")
     (synopsis
-     "Univariate Feature Selection and Compound Covariate for Predicting Survival")
+     "Univariate Feature Selection and Compound Covariate for Predicting Survival, Including Copula-Based Analyses for Dependent Censoring")
     (description
      "Univariate feature selection and compound covariate methods under the Cox model
 with high-dimensional features (e.g., gene expressions).  Available are survival
@@ -18133,8 +18133,9 @@ Stat Methods Med Res) <DOI:10.1177/0962280214533378>, and Emura et al
 (2019)<DOI:10.1016/j.cmpb.2018.10.020>.  Algorithms for generating correlated
 gene expressions are also available.  Estimation of survival functions via
 copula-graphic (CG) estimators is also implemented, which is useful for
-sensitivity analyses under dependent censoring (Yeh et al 2023)
-<DOI:10.3390/biomedicines11030797>.")
+sensitivity analyses under dependent censoring (Yeh et al 2023 Biomedicines)
+<DOI:10.3390/biomedicines11030797> and factorial survival analyses (Emura et al
+2024 Stat Methods Med Res) <DOI:10.1177/09622802231215805>.")
     (license license:gpl2)))
 
 (define-public r-compositionalrf
