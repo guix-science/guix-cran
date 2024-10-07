@@ -6142,26 +6142,6 @@ input amount.  The details about input data and parameters are available in the
 vignette.")
     (license license:expat)))
 
-(define-public r-dpcc
-  (package
-    (name "r-dpcc")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dpcc" version))
-       (sha256
-        (base32 "1f4c68bvkwg82k1zanjhqqika2bfjv83mbr2khl5lhvfjwvpi1m0"))))
-    (properties `((upstream-name . "dpcc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=dpcc")
-    (synopsis "Dynamic Programming for Convex Clustering")
-    (description
-     "Use dynamic programming method to solve l1 convex clustering with identical
-weights.")
-    (license license:expat)))
-
 (define-public r-dpbbm
   (package
     (name "r-dpbbm")

@@ -2799,13 +2799,13 @@ of the methods used in the package to calculate the indicator.")
 (define-public r-lpdensity
   (package
     (name "r-lpdensity")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpdensity" version))
        (sha256
-        (base32 "1vbbvg2wb2jggqls185bwpm8c8ky6693kai3lr5xz4r8f6ivdm29"))))
+        (base32 "15w6paw8kd0sblmsif7bg0g6zm47c87x8isjj0a36gs65fwx5mad"))))
     (properties `((upstream-name . "lpdensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -5147,13 +5147,13 @@ used to illustrate log-concave density estimation are made available.")
 (define-public r-logconcens
   (package
     (name "r-logconcens")
-    (version "0.17-3")
+    (version "0.17-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logconcens" version))
        (sha256
-        (base32 "1a9p4pr8pva2bpqbq4wzrcisfffjvaigbvk6ixm2klys0nkwlbhp"))))
+        (base32 "0z0cd2sa4p27f8hyklg80l1vv3nahkr3q4ipjz31cpnkgc8flmxa"))))
     (properties `((upstream-name . "logconcens")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=logconcens")
@@ -17852,13 +17852,13 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
 (define-public r-l1centrality
   (package
     (name "r-l1centrality")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1centrality" version))
        (sha256
-        (base32 "1dcdkd0l9i8bpyc5clp0yb8zg2nrwklha3p814jpbi9chpm2010v"))))
+        (base32 "19kbq768r5zcnqlqw00llalsa1mwkq2x9ds54k2jxiqgpqi5m697"))))
     (properties `((upstream-name . "L1centrality")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rcpp r-igraph))

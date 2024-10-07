@@ -3433,13 +3433,13 @@ KHQ5D scores; and also calculates the utility index of the KHQ5D.")
 (define-public r-khisr
   (package
     (name "r-khisr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "khisr" version))
        (sha256
-        (base32 "00l4iabxysj1g3fwxvnbi96gafyw6szj4s95kd845rk19198pyjx"))))
+        (base32 "14z9h4msddq36kf79hrqyqlq956vbyn9jxqc02w56z9b91mrkjgm"))))
     (properties `((upstream-name . "khisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

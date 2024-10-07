@@ -37992,13 +37992,13 @@ DDI Codebook 2.5 with flexible API creation.")
 (define-public r-rddensity
   (package
     (name "r-rddensity")
-    (version "2.5")
+    (version "2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rddensity" version))
        (sha256
-        (base32 "07pzj4gi94nl4zd75xxkhiqfzy75zfwl8ps7x5whpg7qp1j48dqh"))))
+        (base32 "0a72cfy1y2q4hkq66h0xcwiincvj9x1dlzi4j9cmxn0689hsy2rr"))))
     (properties `((upstream-name . "rddensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpdensity r-ggplot2))

@@ -881,13 +881,13 @@ users to customize all aspects of the analysis.")
 (define-public r-extremaldep
   (package
     (name "r-extremaldep")
-    (version "0.0.4-1")
+    (version "0.0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtremalDep" version))
        (sha256
-        (base32 "141pf0yvcfds2a0lzcmw99rzb1v75bsgapxppjcdnr66fb0bsqh1"))))
+        (base32 "0kq61mpdl3634kpp8bmdw9c7i6dpyjra1vbs4sq5s47xmpqin3y9"))))
     (properties `((upstream-name . "ExtremalDep")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -908,9 +908,10 @@ users to customize all aspects of the analysis.")
 modelling of the dependence structure of multivariate extreme-values is
 provided.  The statistical inference is performed with non-parametric
 estimators, likelihood-based estimators and Bayesian techniques.  It adapts the
-methodologies of Beranger and Padoan (2015) <arxiv:1508.05561>, Marcon et al.
-(2016) <doi:10.1214/16-EJS1162>, Marcon et al. (2017) <doi:10.1002/sta4.145>,
-Marcon et al. (2017) <doi:10.1016/j.jspi.2016.10.004> and Beranger et al. (2021)
+methodologies of Beranger and Padoan (2015)
+<doi:10.48550/@code{arXiv.1508.05561>}, Marcon et al. (2016)
+<doi:10.1214/16-EJS1162>, Marcon et al. (2017) <doi:10.1002/sta4.145>, Marcon et
+al. (2017) <doi:10.1016/j.jspi.2016.10.004> and Beranger et al. (2021)
 <doi:10.1007/s10687-019-00364-0>.  This package also allows for the modelling of
 spatial extremes using flexible max-stable processes.  It provides simulation
 algorithms and fitting procedures relying on the Stephenson-Tawn likelihood as

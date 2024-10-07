@@ -15259,13 +15259,13 @@ with others or used to report statistics in scientific papers.")
 (define-public r-tidysq
   (package
     (name "r-tidysq")
-    (version "1.1.3")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysq" version))
        (sha256
-        (base32 "1k4ws5zymrc93rlh8118xxfgjdwr7g99cyhzjp34abcsip1c3g21"))))
+        (base32 "1b2nf68dlfmnqghxi35kig79sgyvab5rjkdklvnf278swb6ajhk2"))))
     (properties `((upstream-name . "tidysq")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

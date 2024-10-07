@@ -18833,13 +18833,13 @@ BEAST use by other R packages using CRAN.")
 (define-public r-beastier
   (package
     (name "r-beastier")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beastier" version))
        (sha256
-        (base32 "1crdi1pmz7gf75089czvvfi31i67i6z0zak9vdppc9bwyrcj1j7f"))))
+        (base32 "1gn1yjy6d0wkvablwa4yz5qvjgrmx5lwn8kzmkbkzhd9xj1299q1"))))
     (properties `((upstream-name . "beastier")))
     (build-system r-build-system)
     (inputs (list))

@@ -5510,13 +5510,13 @@ and read tabular-data-resources to and from disk.")
 (define-public r-fqar
   (package
     (name "r-fqar")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fqar" version))
        (sha256
-        (base32 "08cz7bax680kgxcyw8gyk6b206n310a8p1zx9kzlq5sb2a1c1ivr"))))
+        (base32 "0gjf7k1rz2rlaqbmhg4sifan6x49alk8wvxracqmzkgggkp82sbw"))))
     (properties `((upstream-name . "fqar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

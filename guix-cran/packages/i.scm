@@ -10295,13 +10295,13 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence2" version))
        (sha256
-        (base32 "01ydgnbal5y7b85smqf27qksbz9p9jqb1185l1s3f9x90064y3dk"))))
+        (base32 "1dskablvqrc6plh1fszmldbpk802sk7x72avqxw4g32qlsviynf5"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ympes

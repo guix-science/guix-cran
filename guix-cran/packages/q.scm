@@ -4623,13 +4623,13 @@ ISBN:978-0972072427).")
 (define-public r-qgisprocess
   (package
     (name "r-qgisprocess")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgisprocess" version))
        (sha256
-        (base32 "0dshfyfhn9lwr8rx1d0ys0bg6m1y99wma0v07h5r8gz8h7zzm1hb"))))
+        (base32 "0l3rql8w12kqgaz6fczmm4b7mxxagm60d3fvw1i2sv1wdqwlb269"))))
     (properties `((upstream-name . "qgisprocess")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4646,7 +4646,7 @@ ISBN:978-0972072427).")
     (home-page "https://r-spatial.github.io/qgisprocess/")
     (synopsis "Use 'QGIS' Processing Algorithms")
     (description
-     "This package provides seamless access to the QGIS (<https://qgis.org/en/site/>)
+     "This package provides seamless access to the QGIS (<https://qgis.org>)
 processing toolbox using the standalone qgis_process command-line utility.  Both
 native and third-party (plugin) processing providers are supported.  Beside
 referring data sources from file, also common objects from sf', terra and stars

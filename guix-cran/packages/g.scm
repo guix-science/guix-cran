@@ -16082,13 +16082,13 @@ Risk and Solvency Assessment).")
 (define-public r-ggsoccer
   (package
     (name "r-ggsoccer")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsoccer" version))
        (sha256
-        (base32 "13icxd9w3dfwpjl4yaw0gp09mviwf7xrrfs30z66nga459h6gf1d"))))
+        (base32 "0ps1xr878arwyy0h6py62ibnhrrq3wimqkyay1acxb1pl2dfz26d"))))
     (properties `((upstream-name . "ggsoccer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2))

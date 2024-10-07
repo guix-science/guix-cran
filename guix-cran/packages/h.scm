@@ -7292,13 +7292,13 @@ Hidradenitis Suppurativa Severity Score System (IHS4) (Zouboulis, et al. (2017)
 (define-public r-hidimda
   (package
     (name "r-hidimda")
-    (version "0.2-6")
+    (version "0.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiDimDA" version))
        (sha256
-        (base32 "1128xf7jf2jwbkpczc9d56kzkn41m9hvqys4qawv3z80hpm91is5"))))
+        (base32 "0133bvj3a9ab8frl8r1xrgdpwc6rp2nfyfa2pnabd62sdvp0axvn"))))
     (properties `((upstream-name . "HiDimDA")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

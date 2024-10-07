@@ -43693,13 +43693,13 @@ for an example implementation.")
 (define-public r-shinycox
   (package
     (name "r-shinycox")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyCox" version))
        (sha256
-        (base32 "055v9mxy3z0ks5fvfqs1qf7cb8mavxd2p55790ndj3k04vf6mwd2"))))
+        (base32 "16hba9y3629x0vvl6gal70nffssmy04p7xsrnq2j0gk7gk1p6gbg"))))
     (properties `((upstream-name . "shinyCox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-shiny))
@@ -46014,13 +46014,13 @@ own student growth percentiles (SGP) analyses.")
 (define-public r-sgp
   (package
     (name "r-sgp")
-    (version "2.1-0.0")
+    (version "2.2-0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SGP" version))
        (sha256
-        (base32 "1msz3ccgmmwwla70gwwichgzjhzym942wa6hw0imr5cgkm4hk0kq"))))
+        (base32 "08gxwixrhnhsxf3xhx612d05jpiz7d5wl9csi612afhy3psblysq"))))
     (properties `((upstream-name . "SGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-toordinal
@@ -46030,7 +46030,6 @@ own student growth percentiles (SGP) analyses.")
                              r-rngtools
                              r-randomnames
                              r-quantreg
-                             r-plotly
                              r-matrixstats
                              r-jsonlite
                              r-iterators
@@ -46043,6 +46042,7 @@ own student growth percentiles (SGP) analyses.")
                              r-data-table
                              r-crayon
                              r-colorspace
+                             r-collapse
                              r-callr
                              r-cairo))
     (native-inputs (list r-knitr))

@@ -8370,16 +8370,16 @@ distribution from the original data.")
 (define-public r-cpmr
   (package
     (name "r-cpmr")
-    (version "0.0.9")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpmr" version))
        (sha256
-        (base32 "0hy6h32ga7gadc01z24a8ccld0bszzjw939gbhbqbmm672k728mc"))))
+        (base32 "0scjp3v6li9hr7pbvmlci2qmdbmd1yzlcpr748bdm9cp548cjpqg"))))
     (properties `((upstream-name . "cpmr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rfast))
+    (propagated-inputs (list r-tibble r-rfast r-generics))
     (home-page "https://github.com/psychelzh/cpmr")
     (synopsis "Connectome Predictive Modelling in R")
     (description
@@ -23117,13 +23117,13 @@ product model.")
 (define-public r-cocorresp
   (package
     (name "r-cocorresp")
-    (version "0.4-4")
+    (version "0.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocorresp" version))
        (sha256
-        (base32 "1njn1zwlm0ibn2vc20q99ih3iqlbks0psq7vrhqak6rmnsvjqjia"))))
+        (base32 "02qzcaf9i55ncr71l9iapzdziqd76s9hljvn819kpvgscdhxdfhn"))))
     (properties `((upstream-name . "cocorresp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan))
