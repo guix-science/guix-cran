@@ -2031,6 +2031,34 @@ provides several methods which infer these values with as little input from the
 user as possible.")
     (license license:gpl3+)))
 
+(define-public r-autometric
+  (package
+    (name "r-autometric")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autometric" version))
+       (sha256
+        (base32 "02xmxp2cvvzhvgwcq2vsf89yylndsnvcm25vhrkamhr2j9ah1hr3"))))
+    (properties `((upstream-name . "autometric")))
+    (build-system r-build-system)
+    (home-page "https://wlandau.github.io/autometric/")
+    (synopsis "Background Resource Logging")
+    (description
+     "Intense parallel workloads can be difficult to monitor.  Packages crew.cluster',
+clustermq', and future.batchtools distribute hundreds of worker processes over
+multiple computers.  If a worker process exhausts its available memory, it may
+terminate silently, leaving the underlying problem difficult to detect or
+troubleshoot.  Using the autometric package, a worker can proactively monitor
+itself in a detached background thread.  The worker process itself runs
+normally, and the thread writes to a log every few seconds.  If the worker
+terminates unexpectedly, autometric can read and visualize the log file to
+reveal potential resource-related reasons for the crash.  The autometric package
+borrows heavily from the methods of packages ps <doi:10.32614/CRAN.package.ps>
+and psutil'.")
+    (license license:expat)))
+
 (define-public r-automagic
   (package
     (name "r-automagic")
@@ -5530,13 +5558,13 @@ finance, and statistics.")
 (define-public r-arutools
   (package
     (name "r-arutools")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARUtools" version))
        (sha256
-        (base32 "136nbn8p19agckjnaa5ggs039c5ya6a9qpnkgq0w4m2pkz6ljs6j"))))
+        (base32 "1c5l6ykn7zrk9j2lgsxphs5kn113rjax5qdi65wga7cvdixrkxab"))))
     (properties `((upstream-name . "ARUtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -9792,25 +9820,25 @@ transcription errors and reduces the number commands needed by the user.")
 (define-public r-apackoftheclones
   (package
     (name "r-apackoftheclones")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APackOfTheClones" version))
        (sha256
-        (base32 "1wirzf37n5xl0y3g9n9ic6vyaiyzmx9sip1qg4bilaqn7nazmq90"))))
+        (base32 "0rg41v9lmh0hvfhsn1ak69qy1xb4bk2cziy28w4k0g1r1miqixsb"))))
     (properties `((upstream-name . "APackOfTheClones")))
     (build-system r-build-system)
     (propagated-inputs (list r-seuratobject
                              r-seurat
                              r-rlang
                              r-rcpp
-                             r-magrittr
                              r-lifecycle
                              r-hash
                              r-ggplot2
                              r-ggforce
-                             r-dplyr))
+                             r-dplyr
+                             r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://qile0317.github.io/APackOfTheClones/")
     (synopsis
@@ -17621,13 +17649,13 @@ Prabhash et al.(2016) <doi:10.21307/stattrans-2016-046>.")
 (define-public r-aftgee
   (package
     (name "r-aftgee")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aftgee" version))
        (sha256
-        (base32 "01mjgahs6wfd47imnw0zni57ilcy76gh5lpsihxyd3grwd9jkki7"))))
+        (base32 "1gbrk0rjz1ryvbkvh4p4mm3lfc5bfrrwg4k3whxlwy30xg7549hx"))))
     (properties `((upstream-name . "aftgee")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -19492,13 +19520,13 @@ and specificity as well as AUC and AUCPR can be evaluated.")
 (define-public r-adjclust
   (package
     (name "r-adjclust")
-    (version "0.6.9")
+    (version "0.6.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjclust" version))
        (sha256
-        (base32 "1iq0pfw0kdi792iigpj4vq8phbcs9bid09bdvpxwwxcq65djni41"))))
+        (base32 "1hdgkbsl0vng609rkb9n1sfp4vl6my3knaxgk6z1k08fdprayn5v"))))
     (properties `((upstream-name . "adjclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsematrixstats

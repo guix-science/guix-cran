@@ -16380,13 +16380,13 @@ information).")
 (define-public r-bglr
   (package
     (name "r-bglr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGLR" version))
        (sha256
-        (base32 "0942navssynfjl6ka7ii1khv1y7idvl5sbcy6xd911mx74vnyirr"))))
+        (base32 "0850mzfbdbrhaahl4gv9rgw2lsbarhz783q15m18ws2a17v918p9"))))
     (properties `((upstream-name . "BGLR")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-mass))

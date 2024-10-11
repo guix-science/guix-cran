@@ -779,13 +779,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.3.0")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "1f7v4a552qkgdjwpdacgz7r45c9ipfqpxyswjz31gm4jfdx72rx0"))))
+        (base32 "1rjf0d827nmm0cp48im6b24az62a2s50hf8w96ryc8id6cymny5x"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-vim r-missforest r-miceranger r-fuzzysimres
@@ -4851,6 +4851,31 @@ FRBS modeling to the R community.")
 cumulative distribution, and quantiles of fractional binomial distributions.
 (Lee, J. (2023) <@code{arXiv:2209.01516>}.).")
     (license license:expat)))
+
+(define-public r-frb
+  (package
+    (name "r-frb")
+    (version "2.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FRB" version))
+       (sha256
+        (base32 "0j8qf0m2rdyy2zmwgaba7n3a0xxrhi879fd7wwwcg1ay9g62sz0j"))))
+    (properties `((upstream-name . "FRB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rrcov r-corpcor))
+    (home-page "https://cran.r-project.org/package=FRB")
+    (synopsis "Fast and Robust Bootstrap")
+    (description
+     "Perform robust inference based on applying Fast and Robust Bootstrap on robust
+estimators (Van Aelst and Willems (2013) <doi:10.18637/jss.v053.i03>).  This
+method constitutes an alternative to ordinary bootstrap or asymptotic inference.
+ procedures when using robust estimators such as S-, MM- or GS-estimators.  The
+available methods are multivariate regression, principal component analysis and
+one-sample and two-sample Hotelling tests.  It provides both the robust point
+estimates and uncertainty measures based on the fast and robust bootstrap.")
+    (license license:gpl3+)))
 
 (define-public r-frapplot
   (package
@@ -12143,13 +12168,13 @@ Distributions are fitted when overdispersion is available.")
 (define-public r-fitodbod
   (package
     (name "r-fitodbod")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitODBOD" version))
        (sha256
-        (base32 "1gmpdg07vadc0f17l7g9p5gda347bd183d26dlzi4pnx6ywjl4k8"))))
+        (base32 "0jcbgfr5dycglfnkcc3f5cw4vr17fqm4r1v7fizwycqyds01p3rf"))))
     (properties `((upstream-name . "fitODBOD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mvtnorm r-mass r-hypergeo r-bbmle))
@@ -18536,13 +18561,13 @@ performing wavelet decomposition of time series.  See Quilty and Adamowski
 (define-public r-fastverse
   (package
     (name "r-fastverse")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastverse" version))
        (sha256
-        (base32 "03jcgwsaxwx564dn7qmynah0l48hjs8nfx0wmv9a9x9sqw7aqknb"))))
+        (base32 "1w2b79ik58kbs3a9284ylcxqj38g684kdk1vzj1nwr9sgfsjy046"))))
     (properties `((upstream-name . "fastverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-kit r-data-table r-collapse))

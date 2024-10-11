@@ -3651,16 +3651,16 @@ with distance sampling at <http://distancesampling.org/>.")
 (define-public r-dsi
   (package
     (name "r-dsi")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSI" version))
        (sha256
-        (base32 "0i8035zw2a8d8l9qm4zcm73102k89sifma3pdk3q6mdm1iqgxjxg"))))
+        (base32 "1pwsmql0d8grwm5whhf6gav14i9wj057msdshliwi52c2rvh2m9l"))))
     (properties `((upstream-name . "DSI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-progress))
+    (propagated-inputs (list r-r6 r-progress r-cli))
     (home-page "https://github.com/datashield/DSI/")
     (synopsis "'DataSHIELD' Interface")
     (description
@@ -4954,16 +4954,16 @@ to the software and explicitly not to the included data.")
 (define-public r-drdid
   (package
     (name "r-drdid")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRDID" version))
        (sha256
-        (base32 "1x9sy9srzslhjzc8ybczpn1hkvmxihqjqpwannj9hb6zlaa1lc95"))))
+        (base32 "0sjjg4i9lq48na3xwsk0jv8s2jh5b70052ymlkxgha4hpvg9kh4y"))))
     (properties `((upstream-name . "DRDID")))
     (build-system r-build-system)
-    (propagated-inputs (list r-trust r-rcpp r-parglm r-fastglm r-bmisc))
+    (propagated-inputs (list r-trust r-rcpp r-fastglm r-bmisc))
     (home-page "https://psantanna.com/DRDID/")
     (synopsis "Doubly Robust Difference-in-Differences Estimators")
     (description
@@ -5898,13 +5898,13 @@ Mueller, Telesca (2016) <doi:10.1111/biom.12482>.")
 (define-public r-dppack
   (package
     (name "r-dppack")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPpack" version))
        (sha256
-        (base32 "1r82lmzqyis781pqsj8y2nmdilsrwai4bhsi0jamak25hi2y66rl"))))
+        (base32 "1qhrxy676i13mqxzmgmd82n2hrjdck9scr95kgnpxydwyml2pybp"))))
     (properties `((upstream-name . "DPpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil
@@ -6140,6 +6140,26 @@ and c-means (Bezdek et al. (1981) <doi:10.1007/978-1-4757-0450-1>) algorithms.
 The analysis is independent of multiplexing geometry, @code{dPCR} system, and
 input amount.  The details about input data and parameters are available in the
 vignette.")
+    (license license:expat)))
+
+(define-public r-dpcc
+  (package
+    (name "r-dpcc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dpcc" version))
+       (sha256
+        (base32 "1f4c68bvkwg82k1zanjhqqika2bfjv83mbr2khl5lhvfjwvpi1m0"))))
+    (properties `((upstream-name . "dpcc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=dpcc")
+    (synopsis "Dynamic Programming for Convex Clustering")
+    (description
+     "Use dynamic programming method to solve l1 convex clustering with identical
+weights.")
     (license license:expat)))
 
 (define-public r-dpbbm
@@ -10633,13 +10653,13 @@ univariate distributions.")
 (define-public r-distory
   (package
     (name "r-distory")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distory" version))
        (sha256
-        (base32 "1ljrs91h4v1h5lb295hjki8bmra2lg3d1bn5x731pnv43pf3ck06"))))
+        (base32 "16il7ymwapjps1nscf7h22crzgxqs9alh84dhgrl07v83aq37ivb"))))
     (properties `((upstream-name . "distory")))
     (build-system r-build-system)
     (propagated-inputs (list r-ape))
@@ -12385,18 +12405,18 @@ published by Ghannoum et.  al. (2019) <doi:10.1101/700989>.")
 (define-public r-discauc
   (package
     (name "r-discauc")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discAUC" version))
        (sha256
-        (base32 "1lw4ikrgb0w88k7gjyjv3qq0xy4h588rq7sgqk1w6zhv3qr8k34z"))))
+        (base32 "1b0pk75jk7z9hcrv3pnci4709cvc2givwdbisd6yhanlg9vsz545"))))
     (properties `((upstream-name . "discAUC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-glue r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=discAUC")
+    (home-page "https://github.com/jefriedel/discAUC")
     (synopsis "Linear and Non-Linear AUC for Discounting Data")
     (description
      "Area under the curve (AUC; Myerson et al., 2001) <doi:10.1901/jeab.2001.76-235>
@@ -15776,13 +15796,13 @@ detail: J Cai, RJB Goudie, C Starr, BDM Tom (2023)
 (define-public r-dgof
   (package
     (name "r-dgof")
-    (version "1.4")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dgof" version))
        (sha256
-        (base32 "0pbggby27av3nqbkp1b7xyn3zkjglanvl2d3wwmwwzdridjnaqfm"))))
+        (base32 "0530k0isqq26xal2smp1kf6fi7vs1r6g4bbhdnzpiwlij8a7c8zs"))))
     (properties `((upstream-name . "dgof")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=dgof")

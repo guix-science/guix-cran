@@ -6280,6 +6280,31 @@ the JSON file.")
 (<https://open.toronto.ca>) directly from R.")
     (license license:expat)))
 
+(define-public r-opendataformat
+  (package
+    (name "r-opendataformat")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opendataformat" version))
+       (sha256
+        (base32 "14j1wpi9kmyms6ag0zdirfjqq7xbkj89ynffnhybkg8pfj4rh8pw"))))
+    (properties `((upstream-name . "opendataformat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip r-xml2 r-magrittr r-data-table r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/opendataformat/r-package-opendataformat")
+    (synopsis "Reading and Writing Open Data Format Files")
+    (description
+     "The Open Data Format (ODF) is a new, non-proprietary, multilingual, metadata
+enriched, and zip-compressed data format with metadata structured in the Data
+Documentation Initiative (DDI) Codebook standard.  This package allows reading
+and writing of data files in the Open Data Format (ODF) in R, and displaying
+metadata in different languages.  For further information on the Open Data
+Format, see <https://opendataformat.github.io/>.")
+    (license license:expat)))
+
 (define-public r-opencv
   (package
     (name "r-opencv")
@@ -9547,6 +9572,39 @@ functions to estimate the standard limited dependent variable models are also
 included.")
     (license license:gpl2)))
 
+(define-public r-oglcnac
+  (package
+    (name "r-oglcnac")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oglcnac" version))
+       (sha256
+        (base32 "1r8agkpfkvr6ix6286dap4489pq3ym8maqigkhwby83l2p3s30c1"))))
+    (properties `((upstream-name . "oglcnac")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-readxl
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dt
+                             r-cli
+                             r-bslib))
+    (home-page "https://cran.r-project.org/package=oglcnac")
+    (synopsis "Processing and Analysis of O-GlcNAcAtlas Data")
+    (description
+     "This package provides tools for processing and analyzing data from the
+O-@code{GlcNAcAtlas} database <https://oglcnac.org/>, as described in Ma (2021)
+<doi:10.1093/glycob/cwab003>.  It integrates @code{UniProt}
+<https://www.uniprot.org/> API calls to retrieve additional information.  It is
+specifically designed for research workflows involving O-@code{GlcNAcAtlas}
+data, providing a flexible and user-friendly interface for customizing and
+downloading processed results.  Interactive elements allow users to easily
+adjust parameters and handle various biological datasets.")
+    (license license:gpl2)))
+
 (define-public r-ogi
   (package
     (name "r-ogi")
@@ -11765,6 +11823,29 @@ models.")
     (synopsis "Arrays with Arbitrary Offsets")
     (description "Generalise the starting point of the array index.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-oaqc
+  (package
+    (name "r-oaqc")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oaqc" version))
+       (sha256
+        (base32 "0f777a8i03mb4f4q2zdacglyn0lbmf5b7c6682ssw2dlnm14jhz9"))))
+    (properties `((upstream-name . "oaqc")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/schochastics/oaqc")
+    (synopsis "Computation of the Orbit-Aware Quad Census")
+    (description
+     "This package implements the efficient algorithm by Ortmann and Brandes (2017)
+<doi:10.1007/s41109-017-0027-2> to compute the orbit-aware frequency
+distribution of induced and non-induced quads, i.e.  subgraphs of size four.
+Given an edge matrix, data frame, or a graph object (e.g., igraph'), the
+orbit-aware counts are computed respective each of the edges and nodes.")
+    (license license:gpl3+)))
 
 (define-public r-oaplots
   (package

@@ -1246,13 +1246,13 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
 (define-public r-iswr
   (package
     (name "r-iswr")
-    (version "2.0-8")
+    (version "2.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISwR" version))
        (sha256
-        (base32 "1bay7na68awq68bw82dwhcfxp2d3di2dg33islq0mgrhd4sfdfza"))))
+        (base32 "1yc7awlmmsbddpdyz1gdfwyr2k3qmjfbblzr5bza8im7wahh75j2"))))
     (properties `((upstream-name . "ISwR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ISwR")
@@ -7751,16 +7751,17 @@ are described in Gastaldelli (2022). <doi:10.1002/oby.23503> and Lorenzo (2010).
 (define-public r-insurancerating
   (package
     (name "r-insurancerating")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "insurancerating" version))
        (sha256
-        (base32 "1bfl5khi70cfqg1kx0fa7ym6nxqhvk1rjff91kvxbc8q2nxj6wda"))))
+        (base32 "1s71g9663s44ixnp9wn9isciwxkdnyn1ywx8p9rr4s2vs69ywwjz"))))
     (properties `((upstream-name . "insurancerating")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
+                             r-scam
                              r-scales
                              r-patchwork
                              r-mgcv
@@ -7775,17 +7776,14 @@ are described in Gastaldelli (2022). <doi:10.1002/oby.23503> and Lorenzo (2010).
                              r-colorspace
                              r-classint
                              r-citools))
-    (home-page "https://github.com/mharinga/insurancerating")
+    (home-page "https://mharinga.github.io/insurancerating/")
     (synopsis "Analytic Insurance Rating Techniques")
     (description
-     "This package provides methods for insurance rating.  It helps actuaries to
-implement GLMs within all relevant steps needed to construct a risk premium from
-raw data.  It provides a data driven strategy for the construction of insurance
-tariff classes.  This strategy is based on the work by Antonio and Valdez (2012)
-<doi:10.1007/s10182-011-0152-7>.  It also provides recipes on how to easily
-perform one-way, or univariate, analyses on an insurance portfolio.  In addition
-it adds functionality to include reference categories in the levels of the
-coefficients in the output of a generalized linear regression analysis.")
+     "This package provides functions to build, evaluate, and visualize insurance
+rating models.  It simplifies the process of modeling premiums, and allows to
+analyze insurance risk factors effectively.  The package employs a data-driven
+strategy for constructing insurance tariff classes, drawing on the work of
+Antonio and Valdez (2012) <doi:10.1007/s10182-011-0152-7>.")
     (license license:gpl2+)))
 
 (define-public r-insurancedata
@@ -14134,17 +14132,17 @@ Electroencephalography (@code{iEEG}) and deep-brain stimulation (DBS) study.")
 (define-public r-ieeeround
   (package
     (name "r-ieeeround")
-    (version "0.2-0")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieeeround" version))
        (sha256
-        (base32 "0xaxrlalyn8w0w4fva8fd86306nvw3iyz44r0hvay3gsrmgn3fjh"))))
+        (base32 "0dbvrfw5qp2cqqgys4k37kcnrm343599w2j3ajkl6hf9pwlsp5xp"))))
     (properties `((upstream-name . "ieeeround")))
     (build-system r-build-system)
-    (home-page "http://www.sci.unich.it/~amato")
-    (synopsis "Functions to set and get the IEEE rounding mode")
+    (home-page "https://github.com/jandom-devel/ieeeround")
+    (synopsis "Functions to Set and Get the IEEE Rounding Mode")
     (description
      "This package provides a pair of functions for getting and setting the IEEE
 rounding mode for floating point computations.")

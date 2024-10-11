@@ -806,6 +806,28 @@ impact of different sources of uncertainties (e.g.positional uncertainty) on
 performance of species distribution models (SDMs).).")
     (license license:gpl3+)))
 
+(define-public r-usdatasets
+  (package
+    (name "r-usdatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usdatasets" version))
+       (sha256
+        (base32 "0gr4284pzzf2l2h0kxd9i1zj0jx9h874zllzp6ng01fazsyajb3p"))))
+    (properties `((upstream-name . "usdatasets")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/usdatasets")
+    (synopsis "Comprehensive Collection of U.S. Datasets")
+    (description
+     "This package provides a diverse collection of U.S. datasets encompassing various
+fields such as crime, economics, education, finance, energy, healthcare, and
+more.  It serves as a valuable resource for researchers and analysts seeking to
+perform in-depth analyses and derive insights from U.S.-specific data.")
+    (license license:gpl3)))
+
 (define-public r-usdata
   (package
     (name "r-usdata")

@@ -1274,13 +1274,13 @@ Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
 (define-public r-hydflood
   (package
     (name "r-hydflood")
-    (version "0.5.8")
+    (version "0.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydflood" version))
        (sha256
-        (base32 "02v71lb2y0a5ybmzfs10p2x6gcl20ih4ynyfxwyf35dnf6zbriz5"))))
+        (base32 "1275r7wqkbzcqf5ha5kxj4bf7mcqw9gki0s2m9i4mkq8dfhirlq8"))))
     (properties `((upstream-name . "hydflood")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -7598,17 +7598,17 @@ associated with the package: Waggoner, Philip D. (2018)
 (define-public r-hhh4contacts
   (package
     (name "r-hhh4contacts")
-    (version "0.13.3")
+    (version "0.13.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hhh4contacts" version))
        (sha256
-        (base32 "1hxdf8mkcaimglpq6z2gk523w7xh3ih0c2m9mlqbgrgnysb22biy"))))
+        (base32 "04mfdc8ksxkcrg24ww3chmpjzcbwb5r0sn9qsdyrwykk410hnn0d"))))
     (properties `((upstream-name . "hhh4contacts")))
     (build-system r-build-system)
     (propagated-inputs (list r-surveillance r-sp))
-    (home-page "https://cran.r-project.org/package=hhh4contacts")
+    (home-page "https://codeberg.org/EE-hub/hhh4contacts")
     (synopsis
      "Age-Structured Spatio-Temporal Models for Infectious Disease Counts")
     (description
@@ -8112,13 +8112,13 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
 (define-public r-hexdensity
   (package
     (name "r-hexdensity")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexDensity" version))
        (sha256
-        (base32 "1z54w8a3skfias45il2clarskwzck4s98mf9k8iaa3fx36bqwbpk"))))
+        (base32 "08viz39hxb34w8xycs6r1qdrb2rfxai4frxc3vjlgg97b5lcnl0q"))))
     (properties `((upstream-name . "hexDensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom r-hexbin))
@@ -9326,6 +9326,32 @@ detect change points which not only largely improves the computing efficiency
 but also accounts for the rate of change of the flow variation.  More details
 <doi:10.1016/j.jhydrol.2021.126392>.")
     (license license:expat)))
+
+(define-public r-heckmange
+  (package
+    (name "r-heckmange")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heckmanGE" version))
+       (sha256
+        (base32 "1brkxdasmb62vq8295qvaiz5c1sgj4qhsdyg9mxv96945r0z2rw6"))))
+    (properties `((upstream-name . "heckmanGE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-misctools r-maxlik r-glm2))
+    (home-page "https://github.com/fsbmat-ufv/heckmanGE")
+    (synopsis
+     "Estimation and Inference for Heckman Selection Models with Cluster-Robust Variance")
+    (description
+     "This package provides tools for the estimation of Heckman selection models with
+robust variance-covariance matrices.  It includes functions for computing the
+bread and meat matrices, as well as clustered standard errors for generalized
+Heckman models, see Fernando de Souza Bastos and Wagner Barreto-Souza and Marc
+G. Genton (2022, ISSN: <https://www.jstor.org/stable/27164235>).  The package
+also offers cluster-robust inference with sandwich estimators, and tools for
+handling issues related to eigenvalues in covariance matrices.")
+    (license license:gpl3)))
 
 (define-public r-heckmanem
   (package
@@ -10834,31 +10860,31 @@ more information, see the reference manual
 (define-public r-hdflex
   (package
     (name "r-hdflex")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdflex" version))
        (sha256
-        (base32 "1f02gkgry8zilrk3sl4dl2jkbnvqn9700lv8k5zlh4cangq5jp9n"))))
+        (base32 "19ncn1nks93g3xgdnnsxd72lzyxx9qsxj4m8sd7sdlz7azccpm51"))))
     (properties `((upstream-name . "hdflex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-roll
+    (propagated-inputs (list r-reshape2
+                             r-rcppthread
                              r-rcpparmadillo
                              r-rcpp
-                             r-dplyr
+                             r-ggplot2
                              r-checkmate))
-    (home-page "https://cran.r-project.org/package=hdflex")
+    (home-page "https://github.com/lehmasve/hdflex")
     (synopsis "High-Dimensional Aggregate Density Forecasts")
     (description
-     "This package provides a forecasting method that maps vast numbers of
-(scalar-valued) signals of any type into an aggregate density forecast in a
-time-varying and computationally fast manner.  The method proceeds in two steps:
-First, it transforms a predictive signal into a density forecast.  Second, it
-combines the generated candidate density forecasts into an ultimate density
-forecast.  The methods are explained in detail in Adaemmer et al. (2023)
-<doi:10.2139/ssrn.4342487>.")
+     "This package provides a forecasting method that efficiently maps vast numbers of
+(scalar-valued) signals into an aggregate density forecast in a time-varying and
+computationally fast manner.  The method proceeds in two steps: First, it
+transforms a predictive signal into a density forecast and, second, it combines
+the resulting candidate density forecasts into an ultimate aggregate density
+forecast.  For a detailed explanation of the method, please refer to Adaemmer et
+al. (2023) <doi:10.2139/ssrn.4342487>.")
     (license license:gpl2+)))
 
 (define-public r-hdf5r-extra
@@ -12884,13 +12910,13 @@ shiny app for handwriter'.")
 (define-public r-handwriter
   (package
     (name "r-handwriter")
-    (version "3.1.1")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriter" version))
        (sha256
-        (base32 "1gwxp5nsw38f368z586hixk4i7b87vg0fcmxxdl2zldawv1sx0v9"))))
+        (base32 "04hlsl2zky9dgw5f59bm09h7b055lf4alg3w9x49faifwljaj75f"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -2603,6 +2603,28 @@ Uniform and a shifted Binomial distributions); Simulation routines, plotting
 facilities and fitting measures are also provided.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-cuadramelo
+  (package
+    (name "r-cuadramelo")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cuadramelo" version))
+       (sha256
+        (base32 "08n1g32lfbm8mjg1m9brxbqbjlxxbpfv8gfwzqv6mjdsiri00qiw"))))
+    (properties `((upstream-name . "cuadramelo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr r-cvxr))
+    (native-inputs (list r-knitr))
+    (home-page "https://mserrano-ine.github.io/cuadramelo/")
+    (synopsis "Matrix Balancing and Rounding")
+    (description
+     "Balancing and rounding matrices subject to restrictions.  Adjustment of matrices
+so that columns and rows add up to given vectors, rounding of a matrix while
+keeping the column and/or row totals, performing these by blocks...")
+    (license license:gpl3+)))
+
 (define-public r-ctxr
   (package
     (name "r-ctxr")
@@ -13979,13 +14001,13 @@ marginal likelihood, and distributional transform), for three types of outcomes
 (define-public r-copbasic
   (package
     (name "r-copbasic")
-    (version "2.2.4")
+    (version "2.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copBasic" version))
        (sha256
-        (base32 "0wydq03c9pvbvmcrxqw2n86ny655lhkd40ag60k6d3hjvmmv5vn6"))))
+        (base32 "01yi81v1s893b8wqwkwz5613a7j7dcb41mdnd7hbxfg3s443w8iv"))))
     (properties `((upstream-name . "copBasic")))
     (build-system r-build-system)
     (propagated-inputs (list r-randtoolbox r-lmomco))
@@ -18199,13 +18221,13 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "7.0")
+    (version "7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "1ldw7v8jil7cs1kxgx78r69wlvc6x5y5hjccyfm26qwr5yih8gq6"))))
+        (base32 "0x3q2cb2b6jgzczjxlw619q5id3ysldp8a3qvp937a212nqpvqks"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -18227,7 +18249,8 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
                              r-energy
                              r-emplik
                              r-doparallel
-                             r-cluster))
+                             r-cluster
+                             r-bigstatsr))
     (home-page "https://cran.r-project.org/package=Compositional")
     (synopsis "Compositional Data Analysis")
     (description
@@ -21796,13 +21819,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "1yfsg2h6hpgql21pmz5w66ygbbpp6qrz84kf383qxjjdi3m4y8fg"))))
+        (base32 "0sh9i7bv64zdqjzdb3hh3kkixahw465j30ryg79gvlsyrj2h41as"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31982,13 +32005,13 @@ Collaborative Health Outcomes Information Registry.")
 (define-public r-choicemodelr
   (package
     (name "r-choicemodelr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChoiceModelR" version))
        (sha256
-        (base32 "1i8025av3k24zv1ll98l1526v2pdkzda23gjy6c30vknvyrcxkc0"))))
+        (base32 "0kn64wa2da0kimg92nn9hw96yr6li69k309b7kh5g1dsz9p30bki"))))
     (properties `((upstream-name . "ChoiceModelR")))
     (build-system r-build-system)
     (home-page "https://www.decisionanalyst.com/")
@@ -32684,13 +32707,13 @@ to build a forecast.")
 (define-public r-chevron
   (package
     (name "r-chevron")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chevron" version))
        (sha256
-        (base32 "05h8bjgjh8nj81yynidywvahhnxjnjpd3l248kxs503dhj9flqi9"))))
+        (base32 "15kqs0lcsfka159s1divhnji571dgrqc0n32h3mk9l05gznclsnk"))))
     (properties `((upstream-name . "chevron")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -32702,6 +32725,7 @@ to build a forecast.")
                              r-purrr
                              r-nestcolor
                              r-magrittr
+                             r-lubridate
                              r-lifecycle
                              r-glue
                              r-ggplot2
@@ -35302,6 +35326,47 @@ Jackson (2020) <DOI:10.1017/pan.2019.38> to compute clustered standard errors of
 linear coefficients in regression models with grouped data.")
     (license license:expat)))
 
+(define-public r-certara-vpcresults
+  (package
+    (name "r-certara-vpcresults")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Certara.VPCResults" version))
+       (sha256
+        (base32 "0gvrvj8yx41h9kmrm8q02pwgrfz63a1f8cm8s98xcqbmqfh5bn40"))))
+    (properties `((upstream-name . "Certara.VPCResults")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyvpc
+                             r-sortable
+                             r-shinywidgets
+                             r-shinymeta
+                             r-shinyjs
+                             r-shinyjqui
+                             r-shinycssloaders
+                             r-shinyace
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-plotly
+                             r-htmltools
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-colourpicker
+                             r-bslib))
+    (home-page "https://certara.github.io/R-VPCResults/")
+    (synopsis "Generate Visual Predictive Checks (VPC) Using 'shiny'")
+    (description
+     "Utilize the shiny interface to parameterize a Visual Predictive Check (VPC),
+including selecting from different binning or binless methods and performing
+stratification, censoring, and prediction correction.  Generate the underlying
+tidyvpc and ggplot2 code directly from the user interface and download R or Rmd
+scripts to reproduce the VPCs in R.")
+    (license license:lgpl3)))
+
 (define-public r-certara-r
   (package
     (name "r-certara-r")
@@ -35686,13 +35751,13 @@ The reference article for these datasets is Mayer and Zignago (2011)
 (define-public r-cepa
   (package
     (name "r-cepa")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CePa" version))
        (sha256
-        (base32 "1wjm6nyjaz3z0g2dxk1k82va86qxx2xsgx02y9ipyzf1ldxclm1s"))))
+        (base32 "1nhcr9pyn2swv8jmqm26gl9plxr7qln3mjylmyawc94ayhnj45g0"))))
     (properties `((upstream-name . "CePa")))
     (build-system r-build-system)
     (arguments
@@ -36666,13 +36731,13 @@ EM algorithms are used for modeling.")
 (define-public r-cec
   (package
     (name "r-cec")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CEC" version))
        (sha256
-        (base32 "02jk68lxx1gszpi7awi6c1qvc4bsjz8bjxq4rdka9fxj7ql27raf"))))
+        (base32 "17s3npc7bm18f95rcly6sp15f8bjvf5zsjcms6wdrlcybx7pn42v"))))
     (properties `((upstream-name . "CEC")))
     (build-system r-build-system)
     (home-page "https://github.com/swarm-lab/cec")
@@ -36818,6 +36883,38 @@ to various satellite imagery archives.  It allows you to access raw satellite
 data, rendered images, statistical analysis, and other features.  This package
 is in no way officially related to or endorsed by Copernicus.")
     (license license:agpl3)))
+
+(define-public r-cdsampling
+  (package
+    (name "r-cdsampling")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CDsampling" version))
+       (sha256
+        (base32 "19hgjcdqs56kldvn7xpkraadyzkxvcqh76gzn7dljmrjz22rrjvh"))))
+    (properties `((upstream-name . "CDsampling")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rglpk r-lpsolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CDsampling")
+    (synopsis "'CDsampling': Constraint Sampling in Paid Research Studies")
+    (description
+     "In the context of paid research studies and clinical trials, budget
+considerations and patient sampling from available populations are subject to
+inherent constraints.  We introduce the CDsampling package, which integrates
+optimal design theories within the framework of constrained sampling.  This
+package offers the possibility to find both D-optimal approximate and exact
+allocations for samplings with or without constraints.  Additionally, it
+provides functions to find constrained uniform sampling as a robust sampling
+strategy with limited model information.  Our package offers functions for the
+computation of the Fisher information matrix under generalized linear models
+(including regular linear regression model) and multinomial logistic models.To
+demonstrate the applications, we also provide a simulated dataset and a real
+dataset embedded in the package.  Yifei Huang, Liping Tong, and Jie Yang
+(2025)<doi:10.5705/ss.202022.0414>.")
+    (license license:expat)))
 
 (define-public r-cds
   (package
@@ -40159,28 +40256,27 @@ views).")
 (define-public r-cata
   (package
     (name "r-cata")
-    (version "0.1.0.6")
+    (version "0.1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cata" version))
        (sha256
-        (base32 "077sk9gd84b6vnp25bm6bxbbqjsmigvzndrpgh3p7a11i8377xqc"))))
+        (base32 "049wrqbmw77jlcwcikgjqjsnw4s3f6w4hvhilp2kvljpflmvjymf"))))
     (properties `((upstream-name . "cata")))
     (build-system r-build-system)
     (home-page "https://CRAN.R-project.org/package=cata")
     (synopsis "Analysis of Check-All-that-Apply (CATA) Data")
     (description
-     "This package provides functions for analyzing check-all-that-apply (CATA) data
-from consumer and sensory tests.  Cochran's Q test, @code{McNemar's} test, and
-Penalty-Lift analysis provided, as described in for CATA data analysis by
-Meyners, Castura & Carr (2013) <doi:10.1016/j.foodqual.2013.06.010>.  Cluster
-analysis can be performed using b-cluster analysis.  The quality of cluster
-analysis solutions can be evaluated using various measures.  The methods related
-to b-cluster analysis are described in a manuscript by Castura, Meyners, Varela
-& NÃ¦s (2022) <doi:10.1016/j.foodqual.2022.104564>.  Methods are adapted to
-product-related hedonic responses by Castura, Meyners, Pohjanheimo, Varela &
-NÃ¦s (2023) <doi:10.1111/joss.12860>.")
+     "Package contains functions for analyzing check-all-that-apply (CATA) data from
+consumer and sensory tests.  Cochran's Q test, @code{McNemar's} test, and
+Penalty-Lift analysis are provided; for details, see Meyners, Castura & Carr
+(2013) <doi:10.1016/j.foodqual.2013.06.010>.  Cluster analysis can be performed
+using b-cluster analysis, then evaluated using various measures; for details,
+see Castura, Meyners, Varela & NÃ¦s (2022) <doi:10.1016/j.foodqual.2022.104564>.
+ Methods are adapted to cluster consumers based on their product-related hedonic
+responses; for details, see Castura, Meyners, Pohjanheimo, Varela & NÃ¦s (2023)
+<doi:10.1111/joss.12860>.")
     (license license:gpl2+)))
 
 (define-public r-cat2cat

@@ -1739,6 +1739,38 @@ and standard errors when observed scores contain variation from one or more
 measurement facets (e.g., items and raters).")
     (license license:gpl3)))
 
+(define-public r-gtfstools
+  (package
+    (name "r-gtfstools")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtfstools" version))
+       (sha256
+        (base32 "1gdizd3lkli60jkkfs7xd7yak8nc4w9sy21sjikdxbhh3xwks775"))))
+    (properties `((upstream-name . "gtfstools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-units
+                             r-sfheaders
+                             r-sf
+                             r-processx
+                             r-parallelly
+                             r-gtfsio
+                             r-data-table
+                             r-curl
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://ipeagit.github.io/gtfstools/")
+    (synopsis
+     "General Transit Feed Specification (GTFS) Editing and Analysing Tools")
+    (description
+     "Utility functions to read, manipulate, analyse and write transit feeds in the
+General Transit Feed Specification (GTFS) data format.")
+    (license license:expat)))
+
 (define-public r-gtfsrouter
   (package
     (name "r-gtfsrouter")
@@ -1785,6 +1817,40 @@ functions to read and write GTFS feeds while sticking to this standard.  Defines
 a basic gtfs class which is meant to be extended by packages that depend on it.
 And offers utility functions that support checking the structure of GTFS
 objects.")
+    (license license:expat)))
+
+(define-public r-gtfs2gps
+  (package
+    (name "r-gtfs2gps")
+    (version "2.1-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtfs2gps" version))
+       (sha256
+        (base32 "0g1mklndk3y49h1ydxmzrmiz2098k1w4b053b6dcr8dsj2gga8wr"))))
+    (properties `((upstream-name . "gtfs2gps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-terra
+                             r-sfheaders
+                             r-sf
+                             r-rcpp
+                             r-progressr
+                             r-lwgeom
+                             r-gtfstools
+                             r-future
+                             r-furrr
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ipeaGIT/gtfs2gps")
+    (synopsis "Converting Transport Data from GTFS Format to GPS-Like Records")
+    (description
+     "Convert general transit feed specification (GTFS) data to global positioning
+system (GPS) records in data.table format.  It also has some functions to subset
+GTFS data in time and space and to convert both representations to simple
+feature format.")
     (license license:expat)))
 
 (define-public r-gtexture
@@ -1964,6 +2030,30 @@ and generates random samples from the GTDL distribution given by Mackenzie, G.
 normally transformed randomized survival probability (Li,L., et al. (2021)
 <doi:10.1002/sim.8852>) residuals are obtained for the GTDL model.")
     (license license:gpl3+)))
+
+(define-public r-gtbasedim
+  (package
+    (name "r-gtbasedim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GTbasedIM" version))
+       (sha256
+        (base32 "0im2s0n08kah2g9yg3f4l8y75jq1674liy6mffkd9xg7z6ad25q5"))))
+    (properties `((upstream-name . "GTbasedIM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rweka r-coopgame))
+    (home-page "https://cran.r-project.org/package=GTbasedIM")
+    (synopsis "Game Theory-Based Influence Measures")
+    (description
+     "Understanding how features influence a specific response variable becomes
+crucial in classification problems, with applications ranging from medical
+diagnosis to customer behavior analysis.  This packages provides tools to
+compute such an influence measure grounded on game theory concepts.  In
+particular, the influence measures presented in Davila-Pena, Saavedra-Nieves,
+and Casas-MÃ©ndez (2024) <doi:10.48550/@code{arXiv.2408.02481>} can be obtained.")
+    (license license:gpl2)))
 
 (define-public r-gt4ireval
   (package
@@ -6934,13 +7024,13 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
 (define-public r-grain
   (package
     (name "r-grain")
-    (version "1.4.2")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRain" version))
        (sha256
-        (base32 "0x6fmjc6hxmvy1v661gkm6j6cwy7zx27fccnvpl77d6qw63m4za8"))))
+        (base32 "1bjf7a7lpki1vwjx8i8sxlqrwlvqwdh8nzzn0j9nqzmdxzvgk52a"))))
     (properties `((upstream-name . "gRain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -10759,13 +10849,13 @@ Information on @code{oTree} is found in Chen, D. L., Schonger, M., & Wickens, C.
 (define-public r-gmoip
   (package
     (name "r-gmoip")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMOIP" version))
        (sha256
-        (base32 "159rqd65g17m2mh93jpkapk4r6n8gmf43vrxhv8aqyggwl0ifdkx"))))
+        (base32 "0ssmrc25caqdwcs16msippdbakd1q8i8fss7jx20dphr5by7rhdl"))))
     (properties `((upstream-name . "gMOIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11896,13 +11986,13 @@ performance of global optimization algorithms.")
 (define-public r-globalkinhom
   (package
     (name "r-globalkinhom")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "globalKinhom" version))
        (sha256
-        (base32 "12y9pc78mw5ry7plb86a4af6lycyn177biqcdrxs1s90qx7fmp4b"))))
+        (base32 "0j07vlr8df9amb90cdg09yypz41878nhrbxv5mplyyjj76d8szlq"))))
     (properties `((upstream-name . "globalKinhom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-univar r-spatstat-random
@@ -16725,22 +16815,23 @@ raincloud plots.")
 (define-public r-ggragged
   (package
     (name "r-ggragged")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggragged" version))
        (sha256
-        (base32 "17hpzqslns2y7kpfjpw9lnwzilzshlkbhy69k0ql8k6xs2zaxn9m"))))
+        (base32 "0b97k8cs5v0zlny6spcn4amgvih6px5n6w8lmm8068siah1d1bzy"))))
     (properties `((upstream-name . "ggragged")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-gtable r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mikmart/ggragged")
     (synopsis "Ragged Grids for 'ggplot2'")
     (description
      "Extend ggplot2 facets to panel layouts arranged in a grid with ragged edges.
-facet_ragged_rows() groups panels in rows of (potentially) varying lengths,
-facet_ragged_cols() does the same for columns.  These can be useful, for
+facet_ragged_rows() groups panels into rows that can vary in length,
+facet_ragged_cols() does the same but for columns.  These can be useful, for
 example, to represent nested or partially crossed relationships between faceting
 variables.")
     (license license:expat)))
@@ -19298,13 +19389,13 @@ respectively.")
 (define-public r-ggcompare
   (package
     (name "r-ggcompare")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggcompare" version))
        (sha256
-        (base32 "074zg2bnalfy0in9cz83b0di23hnapzq1rfap08dwn36g7clr938"))))
+        (base32 "0pdby6vjxg50zhxbi7vybfgf8i484bxgaj7y4cqv50gvywcpsns6"))))
     (properties `((upstream-name . "ggcompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -21436,6 +21527,33 @@ techniques for evaluate the seed germination process in ecophysiological studies
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-gerefer
+  (package
+    (name "r-gerefer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gerefer" version))
+       (sha256
+        (base32 "0jvy2m6bgdp7isgblj0vlrx0piyfzhib0wihwxg08v754x4xnwi3"))))
+    (properties `((upstream-name . "gerefer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bibliorefer))
+    (home-page "https://cran.r-project.org/package=gerefer")
+    (synopsis
+     "Preparer of Main Scientific References for Automatic Insertion in Academic Papers")
+    (description
+     "Generates a file, containing the main scientific references, prepared to be
+automatically inserted into an academic paper.  The articles present in the list
+are chosen from the main references generated, by function principal_lister(),
+of the package bibliorefer'.  The generated file contains the list of metadata
+of the principal references in @code{BibTex} format.  Massimo Aria, Corrado
+Cuccurullo. (2017) <doi:10.1016/j.joi.2017.08.007>.  Caibo Zhou, Wenyan Song.
+(2021) <doi:10.1016/j.jclepro.2021.126943>.  Hamid DerviÅ. (2019)
+<doi:10.5530/jscires.8.3.32>.")
+    (license license:gpl3)))
+
 (define-public r-gerbil
   (package
     (name "r-gerbil")
@@ -22484,13 +22602,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "10kr33vjzlp5013s2z4mk3xxx1iwcg3yxyha3yhx5anc13ssdsik"))))
+        (base32 "1r917r9khllm5qhjlqx0xn6j2j1lk8k9z5w5ww7pn6z348qksqs2"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -23707,13 +23825,13 @@ topology.")
 (define-public r-geobayes
   (package
     (name "r-geobayes")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoBayes" version))
        (sha256
-        (base32 "14h3iwc0i8y205wvh81zmgz7x4qd605g7w2d3s4s4whnsmi7wf0q"))))
+        (base32 "1d32c9f9wk1x3s89v957f8pb98m6qq5j084p35skbppkmc60y5lp"))))
     (properties `((upstream-name . "geoBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-optimx r-coda))
@@ -23849,6 +23967,33 @@ pertinent for, though not limited to, genome scans for selection based on
 variability between populations (e.g. using Wright's fixations index, Fst, which
 measures variability in subpopulations relative to the total population).")
     (license license:expat)))
+
+(define-public r-genular
+  (package
+    (name "r-genular")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genular" version))
+       (sha256
+        (base32 "0ikgc2nljccznvsmhlf3ahf0m9xxw2ym4kqlm077lhpkzl432w33"))))
+    (properties `((upstream-name . "genular")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-jsonlite r-httr r-dplyr))
+    (home-page "https://github.com/atomiclaboratory/genular-database")
+    (synopsis "'Genular' Database API")
+    (description
+     "This package provides an interface to the Genular database API
+(<https://genular.atomic-lab.org>), allowing efficient retrieval and integration
+of genomic, proteomic, and single-cell data.  It supports operations like
+fetching gene annotations, cell expression profiles, and other information as
+defined in the Genular database, enabling seamless incorporation of biological
+data into R workflows.  With functions tailored for bioinformatics and machine
+learning, the package facilitates exploration of cellular heterogeneity,
+gene-disease relationships, and pathway analysis, streamlining multi-omics data
+analysis.")
+    (license license:gpl3)))
 
 (define-public r-gentwoarmstrialsize
   (package
@@ -24993,6 +25138,39 @@ includes robust versions of the AMMI model ('Rodrigues 2016,
 specifically developed for this kind of data ('Arciniegas-AlarcÃ³n 2014,
 <doi:10.2478/bile-2014-0006>).")
     (license license:gpl2)))
+
+(define-public r-genetic-algo-optimizer
+  (package
+    (name "r-genetic-algo-optimizer")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genetic.algo.optimizeR" version))
+       (sha256
+        (base32 "14s8cwx7bx6a206cxm2i7rp8kisqz620qrgzj3cn1qg0pxd49ixj"))))
+    (properties `((upstream-name . "genetic.algo.optimizeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tinytex
+                             r-stringr
+                             r-rsconnect
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-diagrammer
+                             r-biocviews))
+    (native-inputs (list r-knitr))
+    (home-page "https://danymukesha.github.io/genetic.algo.optimizeR/")
+    (synopsis "Genetic Algorithm Optimization")
+    (description
+     "Genetic algorithm are a class of optimization algorithms inspired by the process
+of natural selection and genetics.  This package is for learning purposes and
+allows users to optimize various functions or parameters by mimicking biological
+evolution processes such as selection, crossover, and mutation.  Ideal for tasks
+like machine learning parameter tuning, mathematical function optimization, and
+solving an optimization problem that involves finding the best solution in a
+discrete space.")
+    (license license:expat)))
 
 (define-public r-genesysr
   (package
@@ -27037,13 +27215,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.0-3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "0qr0b73zxrf14i6psq5ryinffn7knpn7gblqq0sdx2xpykqmjizk"))))
+        (base32 "1rnpamxanjyxvmamk6i6hk52ys50npncw712b0jx559g6gzbvd8l"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27060,8 +27238,7 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
                              r-ggplot2
                              r-geosphere
                              r-forcats
-                             r-dplyr
-                             r-classint))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://ausgis.github.io/gdverse/")
     (synopsis "Analysis of Spatial Stratified Heterogeneity")
@@ -29624,13 +29801,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "0xzib4g6rivfnnsz6c752cnzcf2yv1h98gyspcfb7mpak65ycizg"))))
+        (base32 "04h07fnvhvrg7c0ycv2pzlvd902cxi42fcvlpqqffx25krnrakb0"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))

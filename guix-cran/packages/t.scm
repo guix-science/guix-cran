@@ -1045,6 +1045,30 @@ nonresponse weighting, and diagnosis of the weights.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-tvtools
+  (package
+    (name "r-tvtools")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tvtools" version))
+       (sha256
+        (base32 "1wczllprcjfc21am9m9bg7mb5mn4aplh952y0ls1wh9q6z0x7mz5"))))
+    (properties `((upstream-name . "tvtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dtwrappers r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tvtools")
+    (synopsis "Comprehensive Tools for Panel Data Analysis - 'tvtools'")
+    (description
+     "Longitudinal data offers insights into population changes over time but often
+requires a flexible structure, especially with varying follow-up intervals.
+Panel data is one way to store such records, though it adds complexity to
+analysis.  The tvtools package for R simplifies exploring and analyzing panel
+data.")
+    (license license:gpl3)))
+
 (define-public r-tvthemes
   (package
     (name "r-tvthemes")
@@ -3732,13 +3756,13 @@ organizes data from the Tehran Stock Exchange (TSE).")
 (define-public r-tseriestarma
   (package
     (name "r-tseriestarma")
-    (version "0.3-4")
+    (version "0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tseriesTARMA" version))
        (sha256
-        (base32 "00ch7dg9fia7yh9q502wndi72nhz5ywqhhla9qgpgg08sfj2414f"))))
+        (base32 "1dgsxsykfj2xgk730751v7gkrzdjjss9n6vqv7cm9bjbp6wr33ik"))))
     (properties `((upstream-name . "tseriesTARMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3747,15 +3771,22 @@ organizes data from the Tehran Stock Exchange (TSE).")
                              r-rdpack
                              r-matrix
                              r-mathjaxr
-                             r-lbfgsb3c))
+                             r-lbfgsb3c
+                             r-fitdistrplus))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=tseriesTARMA")
-    (synopsis "Analysis of Nonlinear Time Series Through TARMA Models")
+    (synopsis
+     "Analysis of Nonlinear Time Series Through Threshold Autoregressive Moving Average Models (TARMA) Models")
     (description
      "Routines for nonlinear time series analysis based on Threshold Autoregressive
-Moving Average models.  It provides functions and methods for: TARMA model
-fitting and forecasting, tests for threshold effects, unit-root tests based on
-TARMA models.")
+Moving Average (TARMA) models.  It provides functions and methods for: TARMA
+model fitting and forecasting, including robust estimators, see Goracci et al.
+JBES (2025) <doi:10.1080/07350015.2024.2412011>; tests for threshold effects,
+see Giannerini et al. @code{JoE} (2024) <doi:10.1016/j.jeconom.2023.01.004>,
+Goracci et al.  Statistica Sinica (2023) <doi:10.5705/ss.202021.0120>, Angelini
+et al. (2024) <doi:10.48550/@code{arXiv.2308.00444>}; unit-root tests based on
+TARMA models, see Chan et al.  Statistica Sinica (2024)
+<doi:10.5705/ss.202022.0125>.")
     (license license:gpl2+)))
 
 (define-public r-tseriesmma
@@ -15733,13 +15764,13 @@ str_detect2().")
 (define-public r-tidyplate
   (package
     (name "r-tidyplate")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplate" version))
        (sha256
-        (base32 "09gclxyhmgqlqxcnjsx13bgx944v2f68z427sw0pshpgg9mh3fw6"))))
+        (base32 "1vm8ilfrzq3fx1fgl95x71pavkxydfjzxcn1qrpi145y9a244ygn"))))
     (properties `((upstream-name . "tidyplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-readxl r-openxlsx r-data-table))
@@ -16038,6 +16069,42 @@ particular, here we use the method outlined in Monroe, Colaresi, and Quinn
 (2008) <doi:10.1093/pan/mpn018> to weight the log odds ratio by a prior.  By
 default, the prior is estimated from the data itself, an empirical Bayes
 approach, but an uninformative prior is also available.")
+    (license license:expat)))
+
+(define-public r-tidyllm
+  (package
+    (name "r-tidyllm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyllm" version))
+       (sha256
+        (base32 "1g2hd82zph2k6k72r6qkx27dk6cv0ba0yhrhvlvk1hk7sdw0glk9"))))
+    (properties `((upstream-name . "tidyllm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-pdftools
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tidyllm")
+    (synopsis "Tidy Integration of Large Language Models")
+    (description
+     "This package provides a tidy interface for integrating large language model
+(LLM) APIs such as Claude', @code{ChatGPT}', Groq', and local models via Ollama
+into R workflows.  The package supports text and media-based interactions,
+interactive message history, stateful rate limit handling, and a tidy,
+pipeline-oriented interface for streamlined integration into data workflows.
+Web services are available at <https://www.anthropic.com>, <https://openai.com>,
+<https://groq.com>, and <https://ollama.com>.")
     (license license:expat)))
 
 (define-public r-tidylda
@@ -21904,13 +21971,13 @@ exponential random graph models, implemented in the tergm package.")
 (define-public r-tergm
   (package
     (name "r-tergm")
-    (version "4.2.0")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tergm" version))
        (sha256
-        (base32 "0sfszgvm38y2j0j6hnwg2llf6djgxbw0ibq6cxv6blf4q9na5xfw"))))
+        (base32 "1mv01rhd6ddsfcnzrv0lcb982fqswmzs932m23snpm76a11w074a"))))
     (properties `((upstream-name . "tergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -24244,13 +24311,13 @@ independently to support analysis for diverse chemical screening efforts.")
 (define-public r-tcpl
   (package
     (name "r-tcpl")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcpl" version))
        (sha256
-        (base32 "0s35j9ky49d2f58hg93a47l6j855vm95a3qzwq3i8wd0p2zh1x7b"))))
+        (base32 "0ah6yb7pi7h4hkkmp475p84dsaqnq9ni5cvwjy8j8pqak4g4w1nz"))))
     (properties `((upstream-name . "tcpl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24258,6 +24325,7 @@ independently to support analysis for diverse chemical screening efforts.")
                              r-stringr
                              r-sqldf
                              r-rmariadb
+                             r-rlang
                              r-rcolorbrewer
                              r-plotly
                              r-numderiv
@@ -24265,15 +24333,17 @@ independently to support analysis for diverse chemical screening efforts.")
                              r-ggplot2
                              r-dplyr
                              r-dbi
-                             r-data-table))
+                             r-data-table
+                             r-ctxr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/USEPA/CompTox-ToxCast-tcpl")
     (synopsis "ToxCast Data Analysis Pipeline")
     (description
-     "This package provides a set of tools for processing and modeling high-throughput
-and high-content chemical screening data.  The package was developed for the the
-chemical screening data generated by the US EPA @code{ToxCast} program, but can
-be used for diverse chemical screening efforts.")
+     "The @code{ToxCast} Data Analysis Pipeline ('tcpl') is an R package that manages,
+curve-fits, plots, and stores @code{ToxCast} data to populate its linked
+@code{MySQL} database, invitrodb'.  The package was developed for the chemical
+screening data curated by the US EPA's Toxicity Forecaster (@code{ToxCast})
+program, but tcpl can be used to support diverse chemical screening efforts.")
     (license license:expat)))
 
 (define-public r-tcomp

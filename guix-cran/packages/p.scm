@@ -498,13 +498,13 @@ analysis of variance design with mixed classification.")
 (define-public r-pwrgsd
   (package
     (name "r-pwrgsd")
-    (version "2.3.7")
+    (version "2.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PwrGSD" version))
        (sha256
-        (base32 "0gxyx2z4yjqvivwslb31ai2vpg664p6pvyhz23s9n43wlqahvjg1"))))
+        (base32 "0rz0an16g3dwzbjcr0iln05cdpzx0rl0fiaj30y79n5f38di5ac2"))))
     (properties `((upstream-name . "PwrGSD")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -1207,13 +1207,13 @@ purrr'.")
 (define-public r-purpleair
   (package
     (name "r-purpleair")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PurpleAir" version))
        (sha256
-        (base32 "0xsqd839x55m7wmr2knznqyrmvpa5kcxi16izxl5h2539diqssjx"))))
+        (base32 "17ir79f5r8c9lv4gx9mr9iv26xapygd2azgw6gdm3lcl99r36cgm"))))
     (properties `((upstream-name . "PurpleAir")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2007,13 +2007,13 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
 (define-public r-pubh
   (package
     (name "r-pubh")
-    (version "1.3.7")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubh" version))
        (sha256
-        (base32 "16z0icqzcjz28wqjjmgv66v5x4m8kdf6vakqq1ihvghz5dyv1j8c"))))
+        (base32 "1z575vb9b4774p42dyqbbf14dynnym0377zr5i0c6whr67dcz99q"))))
     (properties `((upstream-name . "pubh")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -2023,15 +2023,11 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
                              r-sjlabelled
                              r-sandwich
                              r-performance
-                             r-moonbook
                              r-lmtest
                              r-jtools
-                             r-huxtable
-                             r-gtsummary
                              r-ggplot2
                              r-ggformula
                              r-epitools
-                             r-epir
                              r-epi
                              r-emmeans
                              r-dplyr
@@ -8929,13 +8925,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "1k55brhkmcx5xc2sw3yllcm67a7x8kaldy5wm73i78vk09lp1s2p"))))
+        (base32 "0f4d5lq1jm3fyafrwypgpp637kizqnkkh6sx0y6sncd610iv0jfg"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -10336,13 +10332,13 @@ covariates to predict outcomes under treatment and control.")
 (define-public r-predicts
   (package
     (name "r-predicts")
-    (version "0.1-11")
+    (version "0.1-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predicts" version))
        (sha256
-        (base32 "1jvaayy7qwi2l8q8m8r42b6rj3945z9vrpgdds6dz8qz35clrpir"))))
+        (base32 "0fnmqb60cgyfwlybydd36lbg3yv5k9bhz4byiwp4sh7lrw02klvg"))))
     (properties `((upstream-name . "predicts")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -14869,13 +14865,13 @@ objects (from package Epi') and other computations achieved using data.table'.")
 (define-public r-poped
   (package
     (name "r-poped")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopED" version))
        (sha256
-        (base32 "0s8lr17s6w8isjig4z8jzgpnpsb1kg98d32y7kslbwzl08cbnza0"))))
+        (base32 "10aja60d72ql1fz67xwbi4qf9z8jdz7smdm97avc1d5jqvw3fwhn"))))
     (properties `((upstream-name . "PopED")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -15441,13 +15437,13 @@ the accuracy of ABC estimates and model choice.  Carvalho et al., (2022)
 (define-public r-pool
   (package
     (name "r-pool")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pool" version))
        (sha256
-        (base32 "1v0w396cszpyi6p59bmvbbpzb8gk0qj0s5hq42jj9rf351lzjqf4"))))
+        (base32 "0xynrvcybsfa0chfw2ljld5dmikas22azhgcrji44sm7k3x90hqc"))))
     (properties `((upstream-name . "pool")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-later r-dbi))
@@ -23064,13 +23060,13 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
 (define-public r-pins
   (package
     (name "r-pins")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pins" version))
        (sha256
-        (base32 "1jbry96ac19i2g61pdb2r997b450bgi98szi3dgwgvnhfq4sidjp"))))
+        (base32 "07hggz1yjhcgvknhsp183gwd4lzqwwsvw7vdv2rn8rx8yh23ylcp"))))
     (properties `((upstream-name . "pins")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -23087,17 +23083,16 @@ et al. (2019) <DOI: 10.1093/bioinformatics/bty1049>, Nguyen et al. (2017)<DOI:
                              r-glue
                              r-generics
                              r-fs
-                             r-ellipsis
                              r-digest
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://pins.rstudio.com/")
-    (synopsis "Pin, Discover and Share Resources")
+    (synopsis "Pin, Discover, and Share Resources")
     (description
      "Publish data sets, models, and other R objects, making it easy to share them
 across projects and with your colleagues.  You can pin objects to a variety of
 \"boards\", including local folders (to share on a networked drive or with
-@code{DropBox}'), RStudio connect, Amazon S3, and more.")
+@code{DropBox}'), Posit Connect', AWS S3', and more.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-pinp
@@ -34035,16 +34030,16 @@ Enriched Pathways in Omics Data Through Active Subnetworks.  Front.  Genet.
 (define-public r-path-chain
   (package
     (name "r-path-chain")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "path.chain" version))
        (sha256
-        (base32 "1p28mcar4krgvkgn02xrlwcpzchnppn2l2k2iwh511c3qrfpy653"))))
+        (base32 "16mpdms639hnzdarn8vkwr1rm8irjl55zgk0h3ia5y8r5yh1vpqh"))))
     (properties `((upstream-name . "path.chain")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-rlang r-logger))
+    (propagated-inputs (list r-stringi r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/krzjoa/path.chain")
     (synopsis "Concise Structure for Chainable Paths")
@@ -34778,13 +34773,13 @@ al. (2019) <doi:10.1111/2041-210X.13285>.")
 (define-public r-partition
   (package
     (name "r-partition")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "partition" version))
        (sha256
-        (base32 "0nbhkzx4rp8zm6n49sf2kdzqkyfjh9032qbkpp4f4mnk5434z1qk"))))
+        (base32 "1m02743l6sl33qyv862xm9c7g009n4c969rjbm74dd1svqk678f3"))))
     (properties `((upstream-name . "partition")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -37708,13 +37703,13 @@ mixed-effect regression from Heegaard et al (2005)
 (define-public r-pakret
   (package
     (name "r-pakret")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pakret" version))
        (sha256
-        (base32 "0m1a1zsb3rclhxapbm184arrjyd1mbdyrdvp14prwkrrgcnrmn72"))))
+        (base32 "05qdw4yv8w9wxgbdh3xqr540svhszl74m06c0v6xnpkhsnvd578g"))))
     (properties `((upstream-name . "pakret")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rmarkdown r-readr r-knitr))

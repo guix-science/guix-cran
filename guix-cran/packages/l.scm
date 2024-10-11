@@ -511,20 +511,22 @@ modelling in R.")
 (define-public r-lulab-utils
   (package
     (name "r-lulab-utils")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lulab.utils" version))
        (sha256
-        (base32 "1mq27pgvmydcfwz3cidgd6kpicvv1lr4f96zcwc7l0f1iya1hmvf"))))
+        (base32 "0rll4x1fjxr1308fhymi40cml31ysh0z45vzq8hprplr9f5fqrqc"))))
     (properties `((upstream-name . "lulab.utils")))
     (build-system r-build-system)
     (propagated-inputs (list r-table1
                              r-stringr
+                             r-rappdirs
                              r-purrr
                              r-openxlsx
                              r-magrittr
+                             r-httr2
                              r-dplyr
                              r-descr
                              r-car
@@ -11097,13 +11099,13 @@ and produces plots similar to the ones in the manual.")
 (define-public r-lfproqc
   (package
     (name "r-lfproqc")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfproQC" version))
        (sha256
-        (base32 "0c5q12fq1v1qa8a4h1j86zwafhzkr4wzqq7wgrkpq0fz50zciqjb"))))
+        (base32 "0ga5zwgqj5249kx7psnjzxj46v64npq6qvn8gl7hi7177r5ysgn9"))))
     (properties `((upstream-name . "lfproQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-vsn
@@ -11676,16 +11678,18 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.3.7")
+    (version "4.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "0f5y80n661p7wyf84vwq671kqgvnwp3l22zajvdh2kaqkrfs036k"))))
+        (base32 "1p3921xgvjiydnr8ikvyqn9haxwzgqmsrm9hdslzf51g1bi0nva4"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-shiny
                              r-robustbase
                              r-openxlsx
                              r-leaps
@@ -11698,18 +11702,18 @@ package is heavily inspired by the
     (home-page "https://cran.r-project.org/package=lessR")
     (synopsis "Less Code, More Results")
     (description
-     "Each function accomplishes the work of multiple standard R functions.  For
-example, two function calls, Read() and @code{CountAll}(), read the data and
-generate summary statistics for all variables in the data frame, plus histograms
-and bar charts as appropriate.  Other functions provide for comprehensive
-summary statistics via pivot tables, a comprehensive regression analysis, ANOVA
-and t-test, visualizations including the Violin/Box/Scatter plot for a numerical
-variable, bar chart, histogram, box plot, density curves, calibrated power
-curve, reading multiple data formats with the same function call, variable
-labels, color themes, and Trellis graphics.  Also includes a confirmatory factor
-analysis of multiple indicator measurement models, pedagogical routines for data
-simulation such as for the Central Limit Theorem, generation and rendering of
-regression instructions for interpretative output, and interactive
+     "Each function replaces multiple standard R functions.  For example, two function
+calls, Read() and @code{CountAll}(), generate summary statistics for all
+variables in the data frame, plus histograms and bar charts as appropriate.
+Other functions provide for summary statistics via pivot tables, a comprehensive
+regression analysis, ANOVA and t-test, visualizations including the
+Violin/Box/Scatter plot for a numerical variable, bar chart, histogram, box
+plot, density curves, calibrated power curve, reading multiple data formats with
+the same function call, variable labels, time series with aggregation and
+forecasting, color themes, and Trellis graphics.  Also includes a confirmatory
+factor analysis of multiple indicator measurement models, pedagogical routines
+for data simulation such as for the Central Limit Theorem, generation and
+rendering of regression instructions for interpretative output, and interactive
 visualizations.")
     (license license:gpl2+)))
 
@@ -15142,47 +15146,47 @@ are supported.")
 (define-public r-latticekrig
   (package
     (name "r-latticekrig")
-    (version "8.4")
+    (version "9.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LatticeKrig" version))
        (sha256
-        (base32 "153yaf0k4l5za8f13yh2mzjv66bnmi5kp6zaxq9vrisld4vdp58h"))))
+        (base32 "0spkbbpf6x990mv4s1dk9mhhavkjnn30m5q70gl34763flnbr0vm"))))
     (properties `((upstream-name . "LatticeKrig")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spam r-fields))
+    (propagated-inputs (list r-spam64 r-spam r-fields r-fftwtools))
     (native-inputs (list gfortran))
     (home-page "https://www.r-project.org")
     (synopsis "Multi-Resolution Kriging Based on Markov Random Fields")
     (description
      "This package provides methods for the interpolation of large spatial datasets.
-This package follows a \"fixed rank Kriging\" approach but provides a surface
-fitting method that can approximate standard spatial data models.  Using a large
-number of basis functions allows for estimates that can come close to
-interpolating the observations (a spatial model with a small nugget variance.)
-Moreover, the covariance model for this method can approximate the Matern
-covariance family but also allows for a multi-resolution model and supports
-efficient computation of the profile likelihood for estimating covariance
-parameters.  This is accomplished through compactly supported basis functions
-and a Markov random field model for the basis coefficients.  These features lead
-to sparse matrices for the computations and this package makes of the R spam
-package for sparse linear algebra.  An extension of this version over previous
-ones ( < 5.4 ) is the support for different geometries besides a rectangular
-domain.  The Markov random field approach combined with a basis function
-representation makes the implementation of different geometries simple where
-only a few specific R functions need to be added with most of the computation
-and evaluation done by generic routines that have been tuned to be efficient.
-One benefit of this package's model/approach is the facility to do unconditional
-and conditional simulation of the field for large numbers of arbitrary points.
-There is also the flexibility for estimating non-stationary covariances and also
-the case when the observations are a linear combination (e.g. an integral) of
-the spatial process.  Included are generic methods for prediction, standard
-errors for prediction, plotting of the estimated surface and conditional and
-unconditional simulation.  See the @code{LatticeKrig} @code{GitHub} repository
-for a vignette of this package.  Development of this package was supported in
-part by the National Science Foundation Grant 1417857 and the National Center
-for Atmospheric Research.")
+This package uses a basis function approach that provides a surface fitting
+method that can approximate standard spatial data models.  Using a large number
+of basis functions allows for estimates that can come close to interpolating the
+observations (a spatial model with a small nugget variance.) Moreover, the
+covariance model for this method can approximate the Matern covariance family
+but also allows for a multi-resolution model and supports efficient computation
+of the profile likelihood for estimating covariance parameters.  This is
+accomplished through compactly supported basis functions and a Markov random
+field model for the basis coefficients.  These features lead to sparse matrices
+for the computations and this package makes of the R spam package for sparse
+linear algebra.  An extension of this version over previous ones ( < 5.4 ) is
+the support for different geometries besides a rectangular domain.  The Markov
+random field approach combined with a basis function representation makes the
+implementation of different geometries simple where only a few specific R
+functions need to be added with most of the computation and evaluation done by
+generic routines that have been tuned to be efficient.  One benefit of this
+package's model/approach is the facility to do unconditional and conditional
+simulation of the field for large numbers of arbitrary points.  There is also
+the flexibility for estimating non-stationary covariances and also the case when
+the observations are a linear combination (e.g. an integral) of the spatial
+process.  Included are generic methods for prediction, standard errors for
+prediction, plotting of the estimated surface and conditional and unconditional
+simulation.  See the @code{LatticeKrigRPackage} @code{GitHub} repository for a
+vignette of this package.  Development of this package was supported in part by
+the National Science Foundation Grant 1417857 and the National Center for
+Atmospheric Research.")
     (license license:gpl2+)))
 
 (define-public r-latticedesign

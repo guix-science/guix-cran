@@ -1053,13 +1053,13 @@ directory within functions and wrap console messages around other functions.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrappedtools" version))
        (sha256
-        (base32 "1rpbfsh8cs07icc8440rmcmgwzjwrax86hk7hx7zwmsjigap3pxi"))))
+        (base32 "0bp21x84rbmv5v0kv6bw41m6lq8mck24xv4ngkn2jywdjfpw3f8n"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1068,6 +1068,7 @@ directory within functions and wrap console messages around other functions.")
                              r-rlist
                              r-rlang
                              r-purrr
+                             r-nortest
                              r-lifecycle
                              r-knitr
                              r-kableextra
@@ -2049,13 +2050,13 @@ guess different words.")
 (define-public r-wordpredictor
   (package
     (name "r-wordpredictor")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordpredictor" version))
        (sha256
-        (base32 "0079nkjimzz07yzqx8ksgk7isi0b5j1nxmisicbc8qvsamirm68v"))))
+        (base32 "0gr04si037rwnmkb2i9p4cc75lrshjfwh3chbgl86dxyxryx9mdy"))))
     (properties `((upstream-name . "wordpredictor")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2072,10 +2073,10 @@ guess different words.")
 prediction.  It provides data cleaning, data sampling, extracting tokens from
 text, model generation, model evaluation and word prediction.  For information
 on how n-gram models work we referred to: \"Speech and Language Processing\"
-<https://web.stanford.edu/~jurafsky/slp3/3.pdf>.  For optimizing R code and
-using R6 classes we referred to \"Advanced R\" <https://adv-r.hadley.nz/r6.html>.
-For writing R extensions we referred to \"R Packages\",
-<https://r-pkgs.org/index.html>.")
+<https://web.archive.org/web/20240919222934/https%3A%2F%2Fweb.stanford.edu%2F~jurafsky%2Fslp3%2F3.pdf>.
+ For optimizing R code and using R6 classes we referred to \"Advanced R\"
+<https://adv-r.hadley.nz/r6.html>.  For writing R extensions we referred to \"R
+Packages\", <https://r-pkgs.org/index.html>.")
     (license license:expat)))
 
 (define-public r-wordpools
@@ -6126,13 +6127,13 @@ to web development.")
 (define-public r-webdav
   (package
     (name "r-webdav")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webdav" version))
        (sha256
-        (base32 "0pjciivgpvrqrfq7y3ccpnyz13hyqhb298sf7rvgfz9h1b5zm3li"))))
+        (base32 "1ixn7ziy2w45agk6k58y44sivwym5205dfdj28h58adqn02dv897"))))
     (properties `((upstream-name . "webdav")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6423,18 +6424,17 @@ calculate extreme climate index.")
 (define-public r-wdpar
   (package
     (name "r-wdpar")
-    (version "1.3.7")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdpar" version))
        (sha256
-        (base32 "0z7p5gcz4fzaga1z5k8q3rnrwzd2iliq0bixsvnqhaddy5aznpms"))))
+        (base32 "0mn05wg755xkj3pw6qv0g50p4h5v6n0if31gr9a2i04zjza5nr86"))))
     (properties `((upstream-name . "wdpar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-withr
-                             r-webdriver
                              r-tibble
                              r-sf
                              r-rappdirs
@@ -6445,6 +6445,7 @@ calculate extreme climate index.")
                              r-curl
                              r-countrycode
                              r-cli
+                             r-chromote
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://prioritizr.github.io/wdpar/")
@@ -6454,8 +6455,8 @@ calculate extreme climate index.")
 World Database on Other Effective Area-Based Conservation Measures (WDOECM).
 Data is obtained from Protected Planet <https://www.protectedplanet.net/en>.  To
 augment data cleaning procedures, users can install the prepr R package
-(available at <https://github.com/dickoa/prepr>).  For more information on this
-package, see Hanson (2022) <doi:10.21105/joss.04594>.")
+(available at <https://github.com/prioritizr/prepr>).  For more information on
+this package, see Hanson (2022) <doi:10.21105/joss.04594>.")
     (license license:gpl3)))
 
 (define-public r-wdnr-gis

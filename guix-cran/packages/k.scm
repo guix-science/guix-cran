@@ -1288,13 +1288,13 @@ hazard functions.")
 (define-public r-konfound
   (package
     (name "r-konfound")
-    (version "0.5.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "konfound" version))
        (sha256
-        (base32 "0gyz5n6x0brkv7c7j1k1fgna8bm1xl9i32qyxsl6h3lhqqi185dh"))))
+        (base32 "1w5ki55hd47w8za46gvdxr7jxb6qw1jczpi1zccafj0j7km99x5p"))))
     (properties `((upstream-name . "konfound")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3043,13 +3043,13 @@ with various criteria, and kinship for the X chromosome.")
 (define-public r-kinmixlite
   (package
     (name "r-kinmixlite")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KinMixLite" version))
        (sha256
-        (base32 "17kjb12r35b42ghkv6mp0jk115gn2dlwc8cdf92cm9jjn4k9am9a"))))
+        (base32 "1yq7wkim0cm6p1nm49km5izabkp1cid9z8df7wndnx048kb37qv4"))))
     (properties `((upstream-name . "KinMixLite")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common

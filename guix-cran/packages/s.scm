@@ -2027,13 +2027,13 @@ Embedding Association Test (Caliskan et al., 2017),
 (define-public r-swdpwr
   (package
     (name "r-swdpwr")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swdpwr" version))
        (sha256
-        (base32 "0qvzv03i70f0ma8p50r9w396avxw50k324mc1wjpbn0yvdvdzyxa"))))
+        (base32 "1c1l0qmphd2xjm7v8fkvr354yn5blm7w8n8s3xg3vidnr9x39ysx"))))
     (properties `((upstream-name . "swdpwr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random))
@@ -2135,13 +2135,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swarmverse
   (package
     (name "r-swarmverse")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swaRmverse" version))
        (sha256
-        (base32 "1z14ys2y42griwbwcjilk552haczlfbazjzwa5g6kvlxjibm1dq0"))))
+        (base32 "1c5mwncc4ms651gcil2yskm1fzkcj9na0y25k3q9bp56cf0vvmbx"))))
     (properties `((upstream-name . "swaRmverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-trackdf r-swarm r-rtsne r-pbapply r-geosphere))
@@ -4416,16 +4416,20 @@ linear models.  For further details, see Hanson et al. (2022)
 (define-public r-surveytable
   (package
     (name "r-surveytable")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveytable" version))
        (sha256
-        (base32 "0prfr3y7xbx6fylc5xpyg74biiqim4sjsfbc4f8khm57nznpg91v"))))
+        (base32 "1l76dqg6dansl47fqc55yq70hd43cjqwqjkd1sfpg0n75jdcsbaa"))))
     (properties `((upstream-name . "surveytable")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survey r-magrittr r-kableextra r-huxtable
+    (propagated-inputs (list r-survey
+                             r-magrittr
+                             r-lifecycle
+                             r-kableextra
+                             r-huxtable
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cdcgov.github.io/surveytable/")
@@ -12055,13 +12059,13 @@ the balance between two groups before and after propensity score matching.")
 (define-public r-stcpr6
   (package
     (name "r-stcpr6")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stcpR6" version))
        (sha256
-        (base32 "0liwx2y5lyvf8dd0vkhfa6bffs4fk0r38jn5mar89nbq5m65f0lb"))))
+        (base32 "0li5n6z56r5h1d43q3x43rpqjwm35m654z3qmkmj4n42pl9a39jw"))))
     (properties `((upstream-name . "stcpR6")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6))
@@ -15464,13 +15468,13 @@ are included.")
 (define-public r-ssmutpa
   (package
     (name "r-ssmutpa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssMutPA" version))
        (sha256
-        (base32 "15nrv2yzs5ydzm7030cznyqxdisg68hld28z3060bvq4ad3a9wvq"))))
+        (base32 "1mpkxg3pi8v31a5vbfj0m7wdnk0gyzbid7b9lvqv43f0qfri1xxg"))))
     (properties `((upstream-name . "ssMutPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -16149,33 +16153,33 @@ information to a Sweave report.")
 (define-public r-ssdtools
   (package
     (name "r-ssdtools")
-    (version "1.0.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssdtools" version))
        (sha256
-        (base32 "13pyl9cscs6zsbfjg2x7gfk568mnrnhv7n5fkl0r47r6x94vbr0s"))))
+        (base32 "13lm4nf2k89f89dvcr5j0jgxp3hf2wdffvf6vbrx4xz5wkhs642s"))))
     (properties `((upstream-name . "ssdtools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vgam
+    (propagated-inputs (list r-withr
                              r-universals
                              r-tmb
                              r-tibble
                              r-stringr
                              r-ssddata
                              r-scales
+                             r-rlang
                              r-rcppeigen
                              r-rcpp
                              r-purrr
                              r-plyr
                              r-lifecycle
                              r-goftest
+                             r-glue
                              r-ggplot2
                              r-generics
                              r-furrr
-                             r-foreach
-                             r-dofuture
                              r-chk
                              r-abind))
     (native-inputs (list r-r-rsp r-knitr))
@@ -16186,9 +16190,9 @@ information to a Sweave report.")
 are fitted to toxicity concentrations for different species as described by
 Posthuma et al.(2001) <isbn:9781566705783>.  The ssdtools package uses Maximum
 Likelihood to fit distributions such as the gamma, log-logistic, log-normal and
-Weibull to censored and/or weighted data.  Multiple distributions can be
-averaged using Akaike Information Criteria.  Confidence intervals on hazard
-concentrations and proportions are produced by parametric bootstrapping.")
+log-normal log-normal mixture.  Multiple distributions can be averaged using
+Akaike Information Criteria.  Confidence intervals on hazard concentrations and
+proportions are produced by parametric bootstrapping.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -17414,13 +17418,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.18.1")
+    (version "1.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "1mlmpi1yywsxc6famid6ndwm9xs9w2ilkc1id3h824hk4qj636g9"))))
+        (base32 "1mq3v5ab8k6drnsfhlc0n01iif315jd4h84vcs0chaq5p4mq5zgb"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -17433,7 +17437,7 @@ including the model's response function.")
 translates into different SQL dialects.  These dialects include Microsoft SQL
 Server', Oracle', @code{PostgreSql}', Amazon @code{RedShift}', Apache Impala',
 IBM Netezza', Google @code{BigQuery}', Microsoft PDW', Snowflake', Azure Synapse
-Analytics Dedicated', Apache Spark', and SQLite'.")
+Analytics Dedicated', Apache Spark', SQLite', and @code{InterSystems} IRIS'.")
     (license license:asl2.0)))
 
 (define-public r-sqlparser
@@ -18056,13 +18060,13 @@ models can be found in next references Minguez, R., Lopez, F.A., and Mur, J.
 (define-public r-spstack
   (package
     (name "r-spstack")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spStack" version))
        (sha256
-        (base32 "1g8ycya1i979v3k5kmybz07h3wfr0d097337zzyplwf9vnddp5v8"))))
+        (base32 "11ikxhm7iqb3pk6q2nw2mym23znvlxqfzs9b1569hh33znki2p7m"))))
     (properties `((upstream-name . "spStack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -20766,6 +20770,39 @@ L-BFGS-B optimization.  This algorithm is implemented in Kolkiewicz, A., Rice,
 G., & Xie, Y. (2020) <doi:10.1016/j.jspi.2020.07.001>.")
     (license license:gpl3)))
 
+(define-public r-spheredata
+  (package
+    (name "r-spheredata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spheredata" version))
+       (sha256
+        (base32 "0wmh6y43vgh8wd627a79qhbz33jdavcx1qvk6y9nx6jdsmgii0cz"))))
+    (properties `((upstream-name . "spheredata")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=spheredata")
+    (synopsis
+     "Students' Performance Dataset in Physics Education Research (SPHERE)")
+    (description
+     "This package provides a multidimensional dataset of students performance
+assessment in high school physics.  The SPHERE dataset was collected from 497
+students in four public high schools specifically measuring their conceptual
+understanding, scientific ability, and attitude toward physics from Santoso et
+al. (2024) <doi:10.17632/88d7m2fv7p.1>.  The data collection was conducted using
+some research based assessments (RBAs) developed by the physics education
+research (PER) community.  They include the Force Concept Inventory, the Force
+and Motion Conceptual Evaluation, the Rotational and Rolling Motion Conceptual
+Survey, the Fluid Mechanics Concept Inventory, the Mechanical Waves Conceptual
+Survey, the Thermal Concept Evaluation, the Survey of Thermodynamic Processes
+and First and Second Laws, the Scientific Abilities Assessment Rubrics, and the
+Colorado Learning Attitudes about Science Survey.  Students attributes related
+to gender, age, socioeconomic status, domicile, literacy, physics identity, and
+test results administered using teachers developed items are also reported in
+this dataset.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-spgwr
   (package
     (name "r-spgwr")
@@ -22048,13 +22085,13 @@ available.")
 (define-public r-speccurvier
   (package
     (name "r-speccurvier")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speccurvieR" version))
        (sha256
-        (base32 "186vhcw2m6xn3a6pggh9pha37y21pg0bqyh5g3g10lawhf4p75fk"))))
+        (base32 "1iyylk1fvb4fk7wq81qkwd9wwnxd8v1rq3xhjgbf45k84f34iman"))))
     (properties `((upstream-name . "speccurvieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27160,13 +27197,13 @@ constraints\".  Biometrics, 75, 539-550. <doi:10.1111/biom.12997>.")
 (define-public r-sorcering
   (package
     (name "r-sorcering")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sorcering" version))
        (sha256
-        (base32 "195m83n57fsxg3w59y8q33b4hl9ng752lxdnvmvfb1m7iy1yaj49"))))
+        (base32 "1w0kwc7wbkdl41kcjgdc68hscklg10byzbk309r13s1101xn6g3v"))))
     (properties `((upstream-name . "sorcering")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-mathjaxr))
@@ -32405,13 +32442,13 @@ methods are only available for one-mode data (symmetric dissimilarity matrices).
 (define-public r-smacof
   (package
     (name "r-smacof")
-    (version "2.1-6")
+    (version "2.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smacof" version))
        (sha256
-        (base32 "06mdvkbc9q8b5sbqnx4c5mq06jkqspvc4bb7zn15byz8ybv5h7aa"))))
+        (base32 "0fj9r6x3bn5kjb2v37prmba4brzjammcxrvswc0ixvx20r75m5ks"))))
     (properties `((upstream-name . "smacof")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -32425,8 +32462,7 @@ methods are only available for one-mode data (symmetric dissimilarity matrices).
                              r-ellipse
                              r-e1071
                              r-doparallel
-                             r-colorspace
-                             r-candisc))
+                             r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=smacof")
     (synopsis "Multidimensional Scaling")
@@ -33757,13 +33793,13 @@ analyses more reproducible.  For details, see Morgan-Wall et al. (2021)
 (define-public r-sknn
   (package
     (name "r-sknn")
-    (version "4.0")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SKNN" version))
        (sha256
-        (base32 "0dsc85ndk9nn998ijq4xiksgc38adpdsmqxwv9gfmagkr17f6nf0"))))
+        (base32 "1iigrps3knwij2z87rbd60si7x19mrfi298l18imqkp8axydmyp2"))))
     (properties `((upstream-name . "SKNN")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SKNN")
@@ -37349,13 +37385,13 @@ receive the same anonymised factor even if located in different datasets.")
 (define-public r-simplace
   (package
     (name "r-simplace")
-    (version "5.0.13")
+    (version "5.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simplace" version))
        (sha256
-        (base32 "0cxhva0hypvjxck1dwajpymrjvmk9h7yvxdbiws8axdcmrwgmq76"))))
+        (base32 "1249z5fh7z3n25bazkn9jky9j50gmi3l3mavxd53fc11jry038l2"))))
     (properties `((upstream-name . "simplace")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -47581,6 +47617,50 @@ penalty implemented here, see, Ugba (2021) <doi:10.21105/joss.03705> and Ugba et
 al. (2021) <doi:10.3390/stats4030037>.")
     (license license:gpl2)))
 
+(define-public r-serosv
+  (package
+    (name "r-serosv")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "serosv" version))
+       (sha256
+        (base32 "1n6dcm2bsdwfcqd2kil4agwk2qabwxzxqvxr91xgn0g9c4kxrkbn"))))
+    (properties `((upstream-name . "serosv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-patchwork
+                             r-mixdist
+                             r-mgcv
+                             r-magrittr
+                             r-locfit
+                             r-ggplot2
+                             r-dplyr
+                             r-desolve
+                             r-boot
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://oucru-modelling.github.io/serosv/")
+    (synopsis "Model Infectious Disease Parameters from Serosurveys")
+    (description
+     "An easy-to-use and efficient tool to estimate infectious diseases parameters
+using serological data.  Implemented models include SIR models
+(basic_sir_model(), static_sir_model(), mseir_model(), sir_subpops_model()),
+parametric models (polynomial_model(), fp_model()), nonparametric models
+(lp_model()), semiparametric models (penalized_splines_model()), hierarchical
+models (hierarchical_bayesian_model()).  The package is based on the book
+\"Modeling Infectious Disease Parameters Based on Serological and Social Contact
+Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
+& Faes, Christel & Damme, Pierre & Beutels, Philippe., 2013)
+<doi:10.1007/978-1-4614-4072-7>.")
+    (license license:expat)))
+
 (define-public r-serocalculator
   (package
     (name "r-serocalculator")
@@ -53064,20 +53144,22 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "0w0gj8858wxbmzr8m00v1z6ac4gxhag7r1jk5bzf8g5bnbxwflhx"))))
+        (base32 "1fx9askdq749ajg6fhahpn39lpibxlknx4zbnlryhfjiq490dr7b"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-spdep
                              r-sf
+                             r-rcpparmadillo
                              r-rcpp
                              r-purrr
+                             r-pander
                              r-magrittr
                              r-geosphere
                              r-dplyr))

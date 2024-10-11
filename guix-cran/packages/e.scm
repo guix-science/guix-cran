@@ -14,7 +14,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages java)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages mpi)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -454,13 +453,13 @@ between metric length and visual degrees.")
 (define-public r-eyelinkreader
   (package
     (name "r-eyelinkreader")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyelinkReader" version))
        (sha256
-        (base32 "0gbppd017dc93g3z3b9l885rr1r470jh7gvi89hd7nn5asba5zgz"))))
+        (base32 "1vx02qaaw56qdb7kiz2zs17s4x7yxcrlkhwvb2xi3khp9smmx2vi"))))
     (properties `((upstream-name . "eyelinkReader")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -468,6 +467,7 @@ between metric length and visual degrees.")
                              r-rlang
                              r-rcppprogress
                              r-rcpp
+                             r-purrr
                              r-ggplot2
                              r-fs
                              r-dplyr))
@@ -3039,13 +3039,13 @@ scanned, and automatically evaluated.")
 (define-public r-exampletestr
   (package
     (name "r-exampletestr")
-    (version "1.7.2")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exampletestr" version))
        (sha256
-        (base32 "1npsvx9ibg0v4v1pw89jk46sg1rqj58yxjgramz3rjf9d9dp9x61"))))
+        (base32 "1zqvws95xqnnddvjxy140n370mbglqwnnab8dga3ldh2yvh9mbmd"))))
     (properties `((upstream-name . "exampletestr")))
     (build-system r-build-system)
     (arguments
@@ -6952,13 +6952,13 @@ seismic data, and generate reports of the processing history.")
 (define-public r-esdm
   (package
     (name "r-esdm")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eSDM" version))
        (sha256
-        (base32 "1k4d4craw59z318cylvwlaqnaljj1bn28rxf45n87wzmwandj5zn"))))
+        (base32 "0sm5xr93i785082bwiprbkxhbb94vwha7jfd3w5xvz2a28axgpxj"))))
     (properties `((upstream-name . "eSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -7624,13 +7624,13 @@ attributes.")
 (define-public r-ergmgp
   (package
     (name "r-ergmgp")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergmgp" version))
        (sha256
-        (base32 "0463wg1g1vd14fwgnvm8aa20vvklvpaqdv4wn6jaybmn8y7kxi16"))))
+        (base32 "0lml2nah642g05mcayanblxzj8aawlkszlqkb638rqh3c7c6jgyg"))))
     (properties `((upstream-name . "ergmgp")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common r-networkdynamic r-network
@@ -7797,16 +7797,15 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.6.0")
+    (version "4.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm" version))
        (sha256
-        (base32 "1xx767l4z38wkxlxwq62y4khjjsz10fsy36x0s74fnzb746acwdl"))))
+        (base32 "18l173y21ahvnia6m8irq2ppg7zp714053rlhp743rhixcy55wn9"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
-    (inputs (list openmpi))
     (propagated-inputs (list r-trust
                              r-tibble
                              r-stringr
@@ -7818,8 +7817,6 @@ networks whose edge weights are counts.  See Krivitsky (2012)
                              r-purrr
                              r-network
                              r-memoise
-                             r-matrix
-                             r-mass
                              r-magrittr
                              r-lpsolveapi
                              r-knitr
@@ -8313,13 +8310,13 @@ corresponding @code{LaTeX} code for the model.")
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateMultiple" version))
        (sha256
-        (base32 "14310xmbqvyr398w051naycc3vikdyryi8hcipqyyjgbd1ljsf8f"))))
+        (base32 "0rv4jiv4bih8lwb1qb4kyhcp50r6qxxhpnphd6zfhp99vb2gpavv"))))
     (properties `((upstream-name . "equateMultiple")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -9255,13 +9252,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.1-0")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "0jwb4p3cpsq0m2wlmhqs1dxxvqf7s6x1fw1wrffbw93gf4j4pyx3"))))
+        (base32 "1r5r7n62sk3dwqgin4pmafb5g3hfw3ikyfwxc15gyxgx3v4cs52h"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -14746,13 +14743,13 @@ fetching and parsing Associated Press election results.")
 (define-public r-elevdistr
   (package
     (name "r-elevdistr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ElevDistr" version))
        (sha256
-        (base32 "119r06ijd72z2f9asydlcy6i7sqgzfapy02wn13x5zf1cp459n8a"))))
+        (base32 "1cr6pgr1b5aqf78b053v96nr511yz7r25bvfd3z21a8bvqlnq7bi"))))
     (properties `((upstream-name . "ElevDistr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rann r-ggplot2 r-ggmap))
@@ -17421,16 +17418,21 @@ potential EEG data.")
 (define-public r-eefanalytics
   (package
     (name "r-eefanalytics")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eefAnalytics" version))
        (sha256
-        (base32 "1mgbdsmbv5s87b2334rf057di4l36qmr1kw12qvmb8yz1pqrsx4w"))))
+        (base32 "0i9lncslx020zbwf7jryqvgpr75yl93ml05vg46qk0mhgdvg3zhm"))))
     (properties `((upstream-name . "eefAnalytics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstanarm r-mvtnorm r-lme4 r-ggplot2))
+    (propagated-inputs (list r-r2jags
+                             r-mvtnorm
+                             r-mcmcvis
+                             r-lme4
+                             r-ggplot2
+                             r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/germaine86/eefAnalytics")
     (synopsis
@@ -17693,6 +17695,52 @@ both dissolution profile populations is statistically significantly smaller than
 equivalence analyses of dissolution profiles is the similarity factor f2.  The
 statistical hypotheses underlying EDNE.EQ.dissolution.profiles() coincide with
 the hypotheses for f2 (see Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
+    (license license:gpl3)))
+
+(define-public r-ednajoint
+  (package
+    (name "r-ednajoint")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eDNAjoint" version))
+       (sha256
+        (base32 "0iwgrh18aaij88j9hxv0bq7hvdml339rmcz7pm21hrskv7j7gvk3"))))
+    (properties `((upstream-name . "eDNAjoint")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stanheaders
+                             r-scales
+                             r-rstantools
+                             r-rstan
+                             r-rlist
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-magrittr
+                             r-loo
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-bh
+                             r-bayestestr))
+    (home-page "https://github.com/ropensci/eDNAjoint")
+    (synopsis
+     "Joint Modeling of Traditional and Environmental DNA Survey Data in a Bayesian Framework")
+    (description
+     "Models integrate environmental DNA (@code{eDNA}) detection data and traditional
+survey data to jointly estimate species catch rate (see package vignette:
+<https://bookdown.org/abigailkeller/@code{eDNAjoint_vignette/>}).  Models can be
+used with count data via traditional survey methods (i.e., trapping,
+electrofishing, visual) and replicated @code{eDNA} detection/nondetection data
+via polymerase chain reaction (i.e., PCR or @code{qPCR}) from multiple survey
+locations.  Estimated parameters include probability of a false positive
+@code{eDNA} detection, a site-level covariates that scale the sensitivity of
+@code{eDNA} surveys relative to traditional surveys, and catchability
+coefficients for traditional gear types.  Models are implemented with a Bayesian
+framework (Markov chain Monte Carlo) using the Stan probabilistic programming
+language.")
     (license license:gpl3)))
 
 (define-public r-edmeasure
@@ -21524,13 +21572,13 @@ and Arnold (2016) <doi: 10.1080/00949655.2015.1125901>.")
 (define-public r-eatgads
   (package
     (name "r-eatgads")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatGADS" version))
        (sha256
-        (base32 "10d9np84zb5jrak03iq72imj02c55jag121hf4g0yfpplaqnc85q"))))
+        (base32 "1rbgs04rk7rdgyvvx9bcs9g0ir9rlx0ilkdj0dzfdyh6ba4jbkp3"))))
     (properties `((upstream-name . "eatGADS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

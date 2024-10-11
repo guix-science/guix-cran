@@ -283,13 +283,13 @@ where possible (or a modified string, if not a valid formula in R).")
 (define-public r-juliaconnector
   (package
     (name "r-juliaconnector")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JuliaConnectoR" version))
        (sha256
-        (base32 "005l0i06whz6q7vx79pr9p6xbc01h9mngdr01gkkwrz78vi9xns9"))))
+        (base32 "1f1bh6acf88gxlkx3mzv0lrxz1ys4a55lbjw8aivqx8yvgk9ymb9"))))
     (properties `((upstream-name . "JuliaConnectoR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=JuliaConnectoR")
@@ -2961,13 +2961,13 @@ functionalities for interfacing with Julia from R powered by the
 (define-public r-jlme
   (package
     (name "r-jlme")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jlme" version))
        (sha256
-        (base32 "0w51szi6w6bpp1lzypr7kg0vx8z39vxyp55948bib9mzgrxn2b45"))))
+        (base32 "1jqdxsc2r6392n3flqiizyr8skr994y76g11f4kam3iyg6z9gzm1"))))
     (properties `((upstream-name . "jlme")))
     (build-system r-build-system)
     (inputs (list julia))
@@ -3495,16 +3495,16 @@ reduce user dependencies.")
 (define-public r-jdcruncher
   (package
     (name "r-jdcruncher")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JDCruncheR" version))
        (sha256
-        (base32 "08289a1pvhdx1bp76il18z6xr4nfk1pffbbjcwdvr2km147yfvmz"))))
+        (base32 "0csallnxd59a0pi1qprjr0d1bwnrjh0nkqks71p7rjn4jnrbaid5"))))
     (properties `((upstream-name . "JDCruncheR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xlconnect))
+    (propagated-inputs (list r-openxlsx))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/InseeFr/JDCruncheR")
     (synopsis
@@ -3750,13 +3750,13 @@ BÃ¶schen, I. (2021) <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
 (define-public r-jarbes
   (package
     (name "r-jarbes")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jarbes" version))
        (sha256
-        (base32 "1gpm7by9wmqgr69876wqd1w3nrzmzsgchh2xlsf37jxz2m5827c0"))))
+        (base32 "12w0qh06n7p6xj5krlm8jqgrswcjspsp3yd5rrr0vgj2csk3jpck"))))
     (properties `((upstream-name . "jarbes")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -3772,7 +3772,6 @@ BÃ¶schen, I. (2021) <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
                              r-ggextra
                              r-ggally
                              r-bookdown))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=jarbes")
     (synopsis "Just a Rather Bayesian Evidence Synthesis")
     (description

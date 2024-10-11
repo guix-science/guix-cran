@@ -95,13 +95,13 @@ fundamentally different from qwraps'.")
 (define-public r-qwdap
   (package
     (name "r-qwdap")
-    (version "1.1.18")
+    (version "1.1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QWDAP" version))
        (sha256
-        (base32 "1i1g83k2fr0c7kchwpsyxxfhi6kvbdqg8caff9ly0crdzar5xrc4"))))
+        (base32 "1rqbj4m90x1cg32hjzck4gmpvfmz28pgqk83vr527bvhaxbr4vmb"))))
     (properties `((upstream-name . "QWDAP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-pls r-corelearn))
@@ -112,7 +112,8 @@ fundamentally different from qwraps'.")
 continuous time quantum walk.  This software is mainly used for feature
 extraction, modeling, prediction and result evaluation of GATS, including
 continuous time quantum walk simulation, feature selection, regression analysis,
-time series prediction, and series fit calculation.")
+time series prediction, and series fit calculation.  A paper is attached to the
+package for reference.")
     (license license:gpl2)))
 
 (define-public r-qwalkr
@@ -1366,18 +1367,18 @@ simulation studies. (Toshio Honda, Ching-Kang Ing, Wei-Ying Wu, 2019,
 (define-public r-quantregforest
   (package
     (name "r-quantregforest")
-    (version "1.3-7")
+    (version "1.3-7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantregForest" version))
        (sha256
-        (base32 "0lk7r02i6zpx9sdl2rp0r7fc3a84s8qhg49nh2x7k3vxwa095pjz"))))
+        (base32 "0b1xmjcv0wrad7il1gg1gaggq19v37akp8zh31dvsnnpmrk05zsp"))))
     (properties `((upstream-name . "quantregForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-randomforest))
     (native-inputs (list gfortran))
-    (home-page "http://github.com/lorismichel/quantregForest")
+    (home-page "https://github.com/lorismichel/quantregForest")
     (synopsis "Quantile Regression Forests")
     (description
      "Quantile Regression Forests is a tree-based ensemble method for estimation of
@@ -4404,16 +4405,16 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
 (define-public r-qindex
   (package
     (name "r-qindex")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qindex" version))
        (sha256
-        (base32 "1186k9yapq6ax2y6pyk3pjhsdsnzifwv94mawgzw8fcsz7wq83q7"))))
+        (base32 "1syi87w2s2yf0kks48i4pwayp90xdh22yvndzr9rww4wawwzz4cb"))))
     (properties `((upstream-name . "Qindex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rpart r-pracma r-mgcv r-matrixstats))
+    (propagated-inputs (list r-survival r-rpart r-plotly r-mgcv r-matrixstats))
     (home-page "https://cran.r-project.org/package=Qindex")
     (synopsis
      "Continuous and Dichotomized Index Predictors Based on Distribution Quantiles")

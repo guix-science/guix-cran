@@ -25040,13 +25040,13 @@ function for authorization and loading reports.")
 (define-public r-rgof
   (package
     (name "r-rgof")
-    (version "1.2.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rgof" version))
        (sha256
-        (base32 "0csya8lkjj3w1pwr6g0avs17na07rfnfpx5z9s01vcql92v8aii0"))))
+        (base32 "1x1agjbil78mnydhmkm5r4fvmzx6ahlk3png0gps4z1h8lnk58j5"))))
     (properties `((upstream-name . "Rgof")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -29249,13 +29249,13 @@ Ed.  2011, 2nd Ed.  2018) by Laura Chihara and Tim Hesterberg.")
 (define-public r-rereg
   (package
     (name "r-rereg")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reReg" version))
        (sha256
-        (base32 "1p1rbj88bc5qz909w2q6mnzkscz2djdm8w3lcfj1pzka6699jz8z"))))
+        (base32 "0irf6x03w1hb5mh30nffwpdiy7sg7m4aypwg1bbcmbwcyb1n6fx8"))))
     (properties `((upstream-name . "reReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -30833,6 +30833,42 @@ and qualitative comparisons between different network models.  Shaffer, D.W.,
 Collier, W., & Ruis, A.R. (2016).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-ren
+  (package
+    (name "r-ren")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "REN" version))
+       (sha256
+        (base32 "0cw22p8qy5fv3y3xwplwj0ydfr12l8nymsnyg1iksyqa6jah01y2"))))
+    (properties `((upstream-name . "REN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tictoc
+                             r-reshape2
+                             r-quadprog
+                             r-matrix
+                             r-lubridate
+                             r-glmnet
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=REN")
+    (synopsis "Regularization Ensemble for Robust Portfolio Optimization")
+    (description
+     "Portfolio optimization is achieved through a combination of regularization
+techniques and ensemble methods that are designed to generate stable
+out-of-sample return predictions, particularly in the presence of strong
+correlations among assets.  The package includes functions for data preparation,
+parallel processing, and portfolio analysis using methods such as Mean-Variance,
+James-Stein, LASSO, Ridge Regression, and Equal Weighting.  It also provides
+visualization tools and performance metrics, such as the Sharpe ratio,
+volatility, and maximum drawdown, to assess the results.")
+    (license license:agpl3+)))
 
 (define-public r-remstimate
   (package
@@ -36988,6 +37024,41 @@ high variability of the RDS process.")
 power calculation in Respondent-Driven Sampling.")
     (license license:gpl3)))
 
+(define-public r-rdss
+  (package
+    (name "r-rdss")
+    (version "1.0.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdss" version))
+       (sha256
+        (base32 "0b3k646zyfqnr4k0lhd4nmy04cp2k33kikww5hfbha3wgwq633qs"))))
+    (properties `((upstream-name . "rdss")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-randomizr
+                             r-purrr
+                             r-marginaleffects
+                             r-ggplot2
+                             r-generics
+                             r-estimatr
+                             r-dplyr
+                             r-dataverse
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=rdss")
+    (synopsis
+     "Companion Datasets and Functions for Research Design in the Social Sciences")
+    (description
+     "Helper functions to accompany the Blair, Coppock, and Humphreys (2022) \"Research
+Design in the Social Sciences: Declaration, Diagnosis, and Redesign\"
+<https://book.declaredesign.org>.  rdss includes datasets, helper functions, and
+plotting components to enable use and replication of the book.")
+    (license license:expat)))
+
 (define-public r-rdsdp
   (package
     (name "r-rdsdp")
@@ -38119,13 +38190,13 @@ and cleaning public datasets, and then stores them in a local database.")
 (define-public r-rdatapipeline
   (package
     (name "r-rdatapipeline")
-    (version "0.54.1")
+    (version "0.60.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rDataPipeline" version))
        (sha256
-        (base32 "0i0vb7gsjshh1wn0lksdma51xdyn6qw54j02cb0xmzcg896gl2p9"))))
+        (base32 "0b161pixwfr0dx0xdrdwnixyxzfkmgalmznkcmasx6mlw81frbhg"))))
     (properties `((upstream-name . "rDataPipeline")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -40017,55 +40088,6 @@ objects from the Matrix package class hierarchy.")
 Edwards<https://edge.sagepub.com/pollock>, \"An R Companion to Political
 Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
     (license license:cc0)))
-
-(define-public r-rcpa
-  (package
-    (name "r-rcpa")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RCPA" version))
-       (sha256
-        (base32 "0jk53sqcjy6a2ydv4b2ai57lbpjpva1ssmfqgzb3nl7j8iqk2ggl"))))
-    (properties `((upstream-name . "RCPA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-summarizedexperiment
-                             r-stringr
-                             r-scales
-                             r-robustrankaggreg
-                             r-rlang
-                             r-limma
-                             r-jsonlite
-                             r-irdisplay
-                             r-httr
-                             r-graph
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggpattern
-                             r-ggnewscale
-                             r-geoquery
-                             r-edger
-                             r-dplyr
-                             r-deseq2
-                             r-biocmanager
-                             r-biobase
-                             r-annotationdbi))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=RCPA")
-    (synopsis "Consensus Pathway Analysis")
-    (description
-     "This package provides a set of functions to perform pathway analysis and meta
-analysis from multiple gene expression datasets, as well as visualization of the
-results (Nguyen et al. (2024) <doi:10.1002/cpz1.1036>).  The package is a
-wrapper of the following packages: Ritchie et al. (2015)
-<doi:10.1093/nar/gkv007>, Love et al. (2014) <doi:10.1186/s13059-014-0550-8>,
-Robinson et al. (2010) <doi:10.1093/bioinformatics/btp616>, Korotkevich et al.
-(2016) <arxiv:10.1101/060012>, Efron et al. (2015)
-<https://CRAN.R-project.org/package=GSA>, and Gu, Z. (2012)
-<https://CRAN.R-project.org/package=@code{CePa>}.")
-    (license license:gpl3)))
 
 (define-public r-rcorpora
   (package
@@ -47059,13 +47081,13 @@ Parallel Analysis.  Also weighted correlation matrices may be considered for PA.
 (define-public r-random-cdisc-data
   (package
     (name "r-random-cdisc-data")
-    (version "0.3.15")
+    (version "0.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "random.cdisc.data" version))
        (sha256
-        (base32 "05hq7hvypc4nm72f879pjyf2iyvj9hgrr1gwjyvwj8by7pkyyw2y"))))
+        (base32 "1q5krsak9vaajdv5prh2qx9jb8hqnbmhcs657rxscq87xp300z8q"))))
     (properties `((upstream-name . "random.cdisc.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -47078,8 +47100,8 @@ Parallel Analysis.  Also weighted correlation matrices may be considered for PA.
                              r-lifecycle
                              r-dplyr
                              r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=random.cdisc.data")
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://insightsengineering.github.io/random.cdisc.data/")
     (synopsis "Create Random ADaM Datasets")
     (description
      "This package provides a set of functions to create random Analysis Data Model
@@ -47293,13 +47315,13 @@ kernel learning.  C. Zhang, Y. Liu, J. Wang and H. Zhu. (2016)
 (define-public r-rams
   (package
     (name "r-rams")
-    (version "1.4.0")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RaMS" version))
        (sha256
-        (base32 "0bhp4sibym8gbzcqzhplfkln31z7b06v4ycd46rg4167yivm2xxc"))))
+        (base32 "14sclcyvvjlxgcqf8qkxlmci3haxpn87gn25gxvlpxkkd5ff44ss"))))
     (properties `((upstream-name . "RaMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-data-table r-base64enc))

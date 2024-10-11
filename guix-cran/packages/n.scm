@@ -661,13 +661,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "1ijlzcp42bhb2qpnnv9gi3nm87pprgs54m8s6vl7lgqv2njdasdg"))))
+        (base32 "04a7ddjgn6jwqafaj2lym3c7nb7395y5w8y5kyl0kpm92kac8i87"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5458,13 +5458,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnlib2rcpp
   (package
     (name "r-nnlib2rcpp")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnlib2Rcpp" version))
        (sha256
-        (base32 "06fb4wh39gdlywpyj86hnys87mrwrx2m6dw16zkrs1kawg4z5gvm"))))
+        (base32 "0jckh6krzydcam78zyf34jm23781alla2r11sw640bhw3j71amxc"))))
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-class))
@@ -6476,13 +6476,13 @@ transform.  It has applications in wavelet shrinkage.")
 (define-public r-nlsylinks
   (package
     (name "r-nlsylinks")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NlsyLinks" version))
        (sha256
-        (base32 "19w7jgvdz77lmwks0a4icrkarjfnwx6bcjkj4ss90zjs7nsfyafb"))))
+        (base32 "1qc6d45whj89darnsn09dklppamg27bz8md38lc94ikimigpdsnj"))))
     (properties `((upstream-name . "NlsyLinks")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))
@@ -7202,13 +7202,13 @@ nlmixr2 objects.")
 (define-public r-nlmixr2lib
   (package
     (name "r-nlmixr2lib")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2lib" version))
        (sha256
-        (base32 "1clar5nw77dc07q1l014ajc5avfdd2n82chdpbv1gcs2mfyrwr9r"))))
+        (base32 "1026kc00slcx7frbi46mqa506fnm5syy0ks11cam4vnzk554mx9r"))))
     (properties `((upstream-name . "nlmixr2lib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2 r-nlmixr2est r-cli r-checkmate))
@@ -7679,22 +7679,24 @@ shapefiles.")
 (define-public r-nixtlar
   (package
     (name "r-nixtlar")
-    (version "0.5.2")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nixtlar" version))
        (sha256
-        (base32 "0r0vcrwpx7gyndbp6wwvlzvvl1ivk2js13m7lgpkdhriwy4bws9v"))))
+        (base32 "0q1626ymillj329xk7cfh54p17cilbfvjga5jk5df3slzqyhk77x"))))
     (properties `((upstream-name . "nixtlar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tsibble
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-rlang
+                             r-purrr
                              r-lubridate
                              r-httr2
                              r-ggplot2
+                             r-future-apply
+                             r-future
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://nixtla.github.io/nixtlar/")
@@ -10966,13 +10968,13 @@ analysis features.")
 (define-public r-netutils
   (package
     (name "r-netutils")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netUtils" version))
        (sha256
-        (base32 "0laha093wxkvs06wh2hsmyxypn89n7vlh183zw6k26d67vl15a6j"))))
+        (base32 "1wqy57s2frnylbk9fw58cmx1734zrfc85x7wdz69bsfiyb4rgj7h"))))
     (properties `((upstream-name . "netUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
@@ -12812,13 +12814,13 @@ considered very experimental currently.")
 (define-public r-neojags
   (package
     (name "r-neojags")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neojags" version))
        (sha256
-        (base32 "10z5x78a3mjy5jbxlzfzsixp6w8y0v0mkxnwf5bq3rk5dgnga0g0"))))
+        (base32 "095m133almpw84yaw0sh1qngjsf30gl6yxp83gyaaysrjmz3i9yq"))))
     (properties `((upstream-name . "neojags")))
     (build-system r-build-system)
     (propagated-inputs (list r-runjags r-rjags r-coda))
@@ -15901,13 +15903,13 @@ provides a name to the latent variable.")
 (define-public r-naijr
   (package
     (name "r-naijr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naijR" version))
        (sha256
-        (base32 "1108fz4rhckmb2d9s63rjb44dpfazhvhsqprgx82akbssr7xf9br"))))
+        (base32 "189sqj8dfjyphhg5dys58lixhhqfvy9d2ycrv1qaj7p4ikl6bgpi"))))
     (properties `((upstream-name . "naijR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -15919,7 +15921,7 @@ provides a name to the latent variable.")
                              r-lifecycle
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://brovic.github.io/naijR/")
+    (home-page "https://docs.ropensci.org/naijR/")
     (synopsis "Operations to Ease Data Analyses Specific to Nigeria")
     (description
      "This package provides a set of convenience functions as well as

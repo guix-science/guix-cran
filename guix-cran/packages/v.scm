@@ -1609,13 +1609,13 @@ are tidyverse compatible.")
 (define-public r-volesti
   (package
     (name "r-volesti")
-    (version "1.1.2-7")
+    (version "1.1.2-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "volesti" version))
        (sha256
-        (base32 "1x730da30y763j6dcdahspbpf81zqaazqzfvfznsi0kq05856z2n"))))
+        (base32 "0g8p2y1awjdxfnghcsj91ws2kdgczlhgwg3dd2dxwhfv2ch2693n"))))
     (properties `((upstream-name . "volesti")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-bh))
@@ -3041,13 +3041,13 @@ actions.")
 (define-public r-vise
   (package
     (name "r-vise")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ViSe" version))
        (sha256
-        (base32 "0ki23qgb3xisfiq8fz0xgj6azqmjn1xcm3j87v7qfshs1yq2rk47"))))
+        (base32 "1xiim4cj4cx885fidp0xy2bgy7wv9scak0v64v9agkifhvdhx05f"))))
     (properties `((upstream-name . "ViSe")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4718,19 +4718,20 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "0hs6g09cd5c7ysxrcspkz2b3iq9iz790yb7ykf2fk3nmz3p8a961"))))
+        (base32 "1g9qi5yyqy30q0s4klsjv6fb6fn7b0yfi6gj834s91m7bzi8a3g6"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-reticulate
                              r-rappdirs
                              r-png
+                             r-plotly
                              r-igraph
                              r-gifti
                              r-fs

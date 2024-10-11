@@ -12,6 +12,8 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages cmake)
+  #:use-module (gnu packages version-control)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
@@ -412,13 +414,13 @@ Journal of Statistical Theory and Practice, 5:4, 627-648,
 (define-public r-mxfda
   (package
     (name "r-mxfda")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mxfda" version))
        (sha256
-        (base32 "0msfkyxdyy8p3rwxqyzqy9jmsjnv3ra7qspm1cfql3azpmhs8k4s"))))
+        (base32 "1fzbnsfyqav87lhc8w910wzqilw429x8swm5s6a4991p5dy19pvr"))))
     (properties `((upstream-name . "mxfda")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2863,44 +2865,53 @@ S., Narasimhan, B., Tibshirani, R. (2021) <doi:10.1073/pnas.2202113119>).")
 (define-public r-multiverse
   (package
     (name "r-multiverse")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiverse" version))
        (sha256
-        (base32 "0l3h4pg450brw27n0jhc3k5fsl57kczxsmzzs3ffj9lwrpnvvn7z"))))
+        (base32 "070d4giyf14kphb987nd7v2pry1y4h8w4mk8hl01z0128z2ks3h1"))))
     (properties `((upstream-name . "multiverse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-styler
                              r-rstudioapi
                              r-rlang
+                             r-readr
                              r-r6
                              r-purrr
                              r-magrittr
                              r-knitr
-                             r-future-apply
+                             r-jsonlite
+                             r-furrr
                              r-formatr
                              r-evaluate
                              r-dplyr
+                             r-distributional
                              r-collections
                              r-berryfunctions))
     (native-inputs (list r-knitr))
     (home-page "https://mucollective.github.io/multiverse/")
-    (synopsis "'Explorable Multiverse' Data Analysis and Reports")
+    (synopsis "Create 'multiverse analysis' in R")
     (description
      "Implement multiverse style analyses (Steegen S., Tuerlinckx F, Gelman A.,
-Vanpaemal, W., 2016) <doi:10.1177/1745691616658637>, (Dragicevic P., Jansen Y.,
-Sarma A., Kay M., Chevalier F., 2019) <doi:10.1145/3290605.3300295> to show the
-robustness of statistical inference.  Multiverse analysis is a philosophy of
-statistical reporting where paper authors report the outcomes of many different
-statistical analyses in order to show how fragile or robust their findings are.
-The multiverse package (Sarma A., Kale A., Moon M., Taback N., Chevalier F.,
-Hullman J., Kay M., 2021) <doi:10.31219/osf.io/yfbwm> allows users to concisely
-and flexibly implement multiverse-style analysis, which involve declaring
-alternate ways of performing an analysis step, in R and R Notebooks.")
+Vanpaemal, W., 2016) <doi:10.1177/1745691616658637> to show the robustness of
+statistical inference.  Multiverse analysis is a philosophy of statistical
+reporting where paper authors report the outcomes of many different statistical
+analyses in order to show how fragile or robust their findings are.  The
+multiverse package (Sarma A., Kale A., Moon M., Taback N., Chevalier F., Hullman
+J., Kay M., 2021) <doi:10.31219/osf.io/yfbwm> allows users to concisely and
+flexibly implement multiverse-style analysis, which involve declaring alternate
+ways of performing an analysis step, in R and R Notebooks.")
     (license license:gpl3+)))
 
 (define-public r-multivator
@@ -10728,6 +10739,42 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
     (description
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
+
+(define-public r-mpcr
+  (package
+    (name "r-mpcr")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MPCR" version))
+       (sha256
+        (base32 "157614jz041imn2clbrq9wf6chhcgg4gvx37xm5kcy5rv2abjkqh"))))
+    (properties `((upstream-name . "MPCR")))
+    (build-system r-build-system)
+    (inputs (list git cmake))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/stsds/MPCR")
+    (synopsis "Multi- And Mixed-Precision Computations")
+    (description
+     "Designed for multi- and mixed-precision computations, accommodating 64-bit and
+32-bit data structures.  This flexibility enables fast execution across various
+applications.  The package enhances performance by optimizing operations in both
+precision levels, which is achieved by integrating with high-speed BLAS and
+LAPACK libraries like MKL and @code{OpenBLAS}'.  Including a 32-bit option
+caters to applications where high precision is unnecessary, accelerating
+computational processes whenever feasible.  The package also provides support
+for tile-based algorithms in three linear algebra operations: CHOL(), TRSM(),
+and GEMM().  The tile-based algorithm splits the matrix into smaller tiles,
+facilitating parallelization through a predefined Directed Acyclic Graph (DAG)
+for each operation.  Enabling @code{OpenMP} enhances the efficiency of these
+operations, leveraging multi-core parallelism.  In this case, MPCR facilitates
+mixed-precision execution by permitting varying precision levels for different
+tiles.  This approach is advantageous in numerous applications, as it maintains
+the accuracy of the application while accelerating execution in scenarios where
+single-precision alone does not significantly affect the accuracy of the
+application.")
+    (license license:gpl3+)))
 
 (define-public r-mpci
   (package
@@ -19937,13 +19984,13 @@ tests, and generation of similarity matrices.")
 (define-public r-mkmeans
   (package
     (name "r-mkmeans")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKMeans" version))
        (sha256
-        (base32 "0x6jbipz7mvm969jb88v20x07i57xqik6h6dyvl2yj4mvcmvs1df"))))
+        (base32 "1gfh53v65g7c102w787wvjzdnw3n1ifx0f5hf8mwz4l6s6nfz3r3"))))
     (properties `((upstream-name . "MKMeans")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=MKMeans")
@@ -20907,13 +20954,13 @@ normal and t mixture models.")
 (define-public r-mixlm
   (package
     (name "r-mixlm")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixlm" version))
        (sha256
-        (base32 "04dy72yr9q6n4k1bzrwqpcmpy04fqnxadpv2j4rwlc77pprpd30h"))))
+        (base32 "0ghs818zdlrjs390223qrr69amx3ca9zfdc7w1sapj5np70wmljb"))))
     (properties `((upstream-name . "mixlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-pls r-multcomp r-leaps r-car))
@@ -22754,13 +22801,13 @@ default values for important parameters.")
 (define-public r-miscmetabar
   (package
     (name "r-miscmetabar")
-    (version "0.9.3")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiscMetabar" version))
        (sha256
-        (base32 "0jfdb7qnhv6y8swrlb3npjkin5glrmn1x5fh0p5bravfsq9d4jlk"))))
+        (base32 "0x00g5yyl4w4dj8wsdba7s9jr03makxrbl3wywvjwh3qaa3lv5v7"))))
     (properties `((upstream-name . "MiscMetabar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -23327,24 +23374,24 @@ MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "18x7imacq8gj44afjh77pq4cvnqnjfcnvqdp7hkmh19qbl708cpk"))))
+        (base32 "1zyf9higa7c9bnbzxz10xbqd66yhb3w9y5lfgc97mkmgnmd2y685"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-litedown))
     (home-page "https://shikokuchuo.net/mirai/")
     (synopsis "Minimalist Async Evaluation Framework for R")
     (description
      "Designed for simplicity, a mirai evaluates an R expression asynchronously in a
 parallel process, locally or distributed over the network, with the result
 automatically available upon completion.  Modern networking and concurrency
-built on nanonext and NNG (Nanomsg Next Gen) ensures reliable and efficient
+built on nanonext and NNG (Nanomsg Next Gen) ensure reliable and efficient
 scheduling, over fast inter-process communications or TCP/IP secured by TLS.
 Advantages include being inherently queued thus handling many more tasks than
 available processes, no storage on the file system, support for otherwise
@@ -26939,13 +26986,13 @@ hidden state sequence for each individual using the Viterbi algorithm.")
 (define-public r-mhda
   (package
     (name "r-mhda")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MHDA" version))
        (sha256
-        (base32 "1m8lz8jxf2bs8np4pwjh70yn955qa8g9xi1blwbwp8s72yjs78ll"))))
+        (base32 "17cbkvwirn2lhcq2w45pqx0c1sqvcgaqq3rm6k3jnjby4vkw5d94"))))
     (properties `((upstream-name . "MHDA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=MHDA")
@@ -42081,13 +42128,13 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "0.1.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "1rbir2gqlkx8i9dcqxhfynzplgbx2kh55ic2gcfll5c27vsayfq0"))))
+        (base32 "1qc46cw12z82plncqfwnq25vfypfglvm9yfp9x8vqfxk4g0h24l3"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcy3 r-igraph r-fastcluster))
@@ -42166,13 +42213,13 @@ looking maps in R, with support for map projections.  See Brown (2016)
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapme.biodiversity" version))
        (sha256
-        (base32 "16czhahg97ysz4ga5r200p8krw7hs3r3i6d8fssnvnkarq50qxvp"))))
+        (base32 "031s6nnylrxa60in27vzjw3hvak360sxwim4v6j7d7x90kgcinl1"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (inputs (list proj gdal))
