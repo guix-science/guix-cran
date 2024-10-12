@@ -3240,13 +3240,13 @@ are described in Robin, Josse, Moulines and Sardy (2019)
 (define-public r-lorenzregression
   (package
     (name "r-lorenzregression")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorenzRegression" version))
        (sha256
-        (base32 "1j5xfc56zw801qdkh6z19053qsiln15b6zyvxvvfnslj1ds3z70f"))))
+        (base32 "1npv0dcw16fm8k03wd4cnxxim4nc4qs81smhzg5np8bix4df36bx"))))
     (properties `((upstream-name . "LorenzRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -4015,17 +4015,17 @@ data.")
 (define-public r-longitudinaldata
   (package
     (name "r-longitudinaldata")
-    (version "2.4.5.1")
+    (version "2.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longitudinalData" version))
        (sha256
-        (base32 "1x7n2jlmils9iw0ynq1hvixvrqzpzh37xi6wx0qawab1wm9igc5m"))))
+        (base32 "12saa9ycmh2ysap0k36fgwcf2skjkrhdf3pk67xsh6qpw1h65dhc"))))
     (properties `((upstream-name . "longitudinalData")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-misc3d r-clv r-class))
-    (home-page "https://www.r-project.org")
+    (home-page "https://cran.r-project.org/package=longitudinalData")
     (synopsis "Longitudinal Data")
     (description
      "This package provides tools for longitudinal data and joint longitudinal data

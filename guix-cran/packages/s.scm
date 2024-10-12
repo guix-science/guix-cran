@@ -404,13 +404,13 @@ experiences.  Reference: Avanzi B, Taylor G, Wang M, Wong B (2020)
 (define-public r-synthesizer
   (package
     (name "r-synthesizer")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synthesizer" version))
        (sha256
-        (base32 "00n21mh9yyfdxlwrmawi950dmikh0iq10a4yrmbpj2l255qns6hh"))))
+        (base32 "0x1px8dzihrrr5gg0pzwjnxda5zfhck3c3rj605wrgjps16zdj41"))))
     (properties `((upstream-name . "synthesizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest))
@@ -24126,39 +24126,6 @@ Future updates broaden the scope to other least cost path algorithms and to
 centrality measures.")
     (license license:expat)))
 
-(define-public r-spathial
-  (package
-    (name "r-spathial")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spathial" version))
-       (sha256
-        (base32 "1vwzcwpmx8kwv821vjf940qd5am3k0shf1s14jva71mgxs70ddmb"))))
-    (properties `((upstream-name . "spathial")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rtsne
-                             r-rmarkdown
-                             r-pracma
-                             r-matrixstats
-                             r-mass
-                             r-knitr
-                             r-irlba
-                             r-igraph
-                             r-class))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=spathial")
-    (synopsis "Evolutionary Analysis")
-    (description
-     "This package provides a generic tool for manifold analysis.  It allows to infer
-a relevant transition or evolutionary path which can highlights the features
-involved in a specific process.  spathial can be useful in all the scenarios
-where the temporal (or pseudo-temporal) evolution is the main problem (e.g.
-tumor progression).  The algorithm for finding the principal path is described
-in: Ferrarotti et al., (2019) <doi:10.1109/TNNLS.2018.2884792>.\".")
-    (license license:gpl3)))
-
 (define-public r-spatgrid
   (package
     (name "r-spatgrid")
@@ -45301,13 +45268,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapviz" version))
        (sha256
-        (base32 "078jrbi0830x1x98wa19sxmchbjhd10q5qaq0iq53fqb3m93kq9a"))))
+        (base32 "14p24c9pxbqiagy27gd6iam4dgh7rbgnzp04w49y337pd99m4qj7"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -59792,6 +59759,36 @@ web server space has been provided by Ricardo Energy & Environment.")
      "This package provides functions for statistical analysis of point processes.")
     (license license:gpl2+)))
 
+(define-public r-sapo
+  (package
+    (name "r-sapo")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sapo" version))
+       (sha256
+        (base32 "0x6hd2747v2w8hv87ymdk5xzxk57dh7zjibpgygli1y10sd2v0v7"))))
+    (properties `((upstream-name . "sapo")))
+    (build-system r-build-system)
+    (inputs (list proj geos gdal))
+    (propagated-inputs (list r-sf))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lcgodoy/sapo/")
+    (synopsis "Spatial Association of Different Types of Polygon")
+    (description
+     "In ecology, spatial data is often represented using polygons.  These polygons
+can represent a variety of spatial entities, such as ecological patches, animal
+home ranges, or gaps in the forest canopy.  Researchers often need to determine
+if two spatial processes, represented by these polygons, are independent of each
+other.  For instance, they might want to test if the home range of a particular
+animal species is influenced by the presence of a certain type of vegetation.
+To address this, Godoy et al. (2022) (<doi:10.1016/j.spasta.2022.100695>)
+developed conditional Monte Carlo tests.  These tests are designed to assess
+spatial independence while taking into account the shape and size of the
+polygons.")
+    (license license:gpl3+)))
+
 (define-public r-sapfluxnetr
   (package
     (name "r-sapfluxnetr")
@@ -62838,32 +62835,6 @@ analyze the spatial scale, degree of anisotropy and preferred direction in each
 field.  These structural attributes are compared by a series of scores.  An
 experimental algorithm for the correction of these errors is included as well.")
     (license license:expat)))
-
-(define-public r-sacrebleu
-  (package
-    (name "r-sacrebleu")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sacRebleu" version))
-       (sha256
-        (base32 "0piapn7srrfc4qmwkpjrsfyhz253pl69ppm3y9flqlffki5b5zx1"))))
-    (properties `((upstream-name . "sacRebleu")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-tok r-rcpp r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/LazerLambda/sacRebleu")
-    (synopsis "Metrics for Assessing the Quality of Generated Text")
-    (description
-     "Implementation of the BLEU-Score in C++ to evaluate the quality of generated
-text.  The BLEU-Score, introduced by Papineni et al. (2002)
-<doi:10.3115/1073083.1073135>, is a metric for evaluating the quality of
-generated text.  It is based on the n-gram overlap between the generated text
-and reference texts.  Additionally, the package provides some smoothing methods
-as described in Chen and Cherry (2014) <doi:10.3115/v1/W14-3346>.")
-    (license license:gpl2+)))
 
 (define-public r-saccr
   (package

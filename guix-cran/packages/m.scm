@@ -207,6 +207,36 @@ defaults.")
      "The chi-squared test for goodness of fit and independence test.")
     (license license:gpl3)))
 
+(define-public r-mycaas
+  (package
+    (name "r-mycaas")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mycaas" version))
+       (sha256
+        (base32 "1gjpn8mz8vp3410s6fbl3ndkasfzywzmyp33qzf5f29sirk2cn4m"))))
+    (properties `((upstream-name . "mycaas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rpref r-rlang r-igraph r-ggplot2))
+    (home-page "https://cran.r-project.org/package=mycaas")
+    (synopsis "My Computerized Adaptive Assessment")
+    (description
+     "Implementation of adaptive assessment procedures based on Knowledge Space Theory
+(KST, Doignon & Falmagne, 1999 <ISBN:9783540645016>) and Formal Psychological
+Assessment (FPA, Spoto, Stefanutti & Vidotto, 2010 <doi:10.3758/BRM.42.1.342>)
+frameworks.  An adaptive assessment is a type of evaluation that adjusts the
+difficulty and nature of subsequent questions based on the test taker's
+responses to previous ones.  The package contains functions to perform and
+simulate an adaptive assessment.  Moreover, it is integrated with two Shiny
+interfaces, making it both accessible and user-friendly.  The package has been
+partially funded by the European Union - @code{NextGenerationEU} and by the
+Ministry of University and Research (MUR), National Recovery and Resilience Plan
+(NRRP), Mission 4, Component 2, Investment 1.5, project âRAISE - Robotics and
+AI for Socio-economic Empowermentâ (ECS00000035).")
+    (license license:expat)))
+
 (define-public r-my-stepwise
   (package
     (name "r-my-stepwise")
@@ -10153,16 +10183,17 @@ data.")
 (define-public r-mpt
   (package
     (name "r-mpt")
-    (version "0.8-0")
+    (version "1.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpt" version))
        (sha256
-        (base32 "02m92dn9y5q4ql7ydn01nn5irm82kknd2dqc0bcnxsn7kdbglnid"))))
+        (base32 "1gv3gfak0mdng15md78fg57dfylskvdrhr6aycw0hyss40gpglvq"))))
     (properties `((upstream-name . "mpt")))
     (build-system r-build-system)
-    (home-page "http://www.mathpsy.uni-tuebingen.de/wickelmaier/")
+    (native-inputs (list r-knitr))
+    (home-page "https://www.mathpsy.uni-tuebingen.de/wickelmaier/")
     (synopsis "Multinomial Processing Tree Models")
     (description
      "Fitting and testing multinomial processing tree (MPT) models, a class of

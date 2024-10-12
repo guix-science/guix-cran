@@ -1239,6 +1239,37 @@ low false positive rate when utilizing WQS regression (Day et al. (2022)
 index and estimated component weights.")
     (license license:gpl2+)))
 
+(define-public r-wqm
+  (package
+    (name "r-wqm")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WQM" version))
+       (sha256
+        (base32 "108cpsm7m8s4irh2k737hiljsznk98i9z4iaiv35sq1626ljalcg"))))
+    (properties `((upstream-name . "WQM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waveletcomp r-mbc r-matrixstats r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=WQM")
+    (synopsis
+     "Wavelet-Based Quantile Mapping for Postprocessing Numerical Weather Predictions")
+    (description
+     "The wavelet-based quantile mapping (WQM) technique is designed to correct biases
+in spatio-temporal precipitation forecasts across multiple time scales.  The WQM
+method effectively enhances forecast accuracy by generating an ensemble of
+precipitation forecasts that account for uncertainties in the prediction
+process.  For a comprehensive overview of the methodologies employed in this
+package, please refer to Jiang, Z., and Johnson, F. (2023)
+<doi:10.1029/2022EF003350>.  The package relies on two packages for continuous
+wavelet transforms: @code{WaveletComp}', which can be installed automatically,
+and wmtsa', which is optional and available from the CRAN archive
+<https://cran.r-project.org/src/contrib/Archive/wmtsa/>.  Users need to manually
+install wmtsa from this archive if they prefer to use wmtsa based decomposition.")
+    (license license:gpl3+)))
+
 (define-public r-wql
   (package
     (name "r-wql")

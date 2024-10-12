@@ -3495,13 +3495,13 @@ reduce user dependencies.")
 (define-public r-jdcruncher
   (package
     (name "r-jdcruncher")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JDCruncheR" version))
        (sha256
-        (base32 "0csallnxd59a0pi1qprjr0d1bwnrjh0nkqks71p7rjn4jnrbaid5"))))
+        (base32 "1bizsg3j29zf79qngxs17pvm0z2ivf664xlg89snzfnq6vcgkcxl"))))
     (properties `((upstream-name . "JDCruncheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx))

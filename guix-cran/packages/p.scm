@@ -575,6 +575,30 @@ will give biased results due to using the pooled standard deviation, unlike the
 Welch's t-test.")
     (license license:gpl3+)))
 
+(define-public r-pwr4exp
+  (package
+    (name "r-pwr4exp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pwr4exp" version))
+       (sha256
+        (base32 "081ci87idiqxfr0xa0mws0lzqg2rd4hq0yq6y7izr1al6nfiwffj"))))
+    (properties `((upstream-name . "pwr4exp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lmertest r-lme4 r-emmeans r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/an-ethz/pwr4exp")
+    (synopsis "Power Analysis for Research Experiments")
+    (description
+     "This package provides tools for calculating statistical power and determining
+sample size for a variety of experimental designs used in agricultural and
+biological research, including completely randomized, block, and split-plot
+designs.  Supports customized designs and allows specification of main effects,
+interactions, and contrasts for accurate power analysis.")
+    (license license:expat)))
+
 (define-public r-pwr2ppl
   (package
     (name "r-pwr2ppl")
@@ -12444,6 +12468,30 @@ Value, Pearson III (Gamma 2), Mielke's Kappa, Rayleigh or Generalized Logistic
 Distribution.  The PPCC test is performed with a fast Monte-Carlo simulation.")
     (license license:gpl3)))
 
+(define-public r-ppca
+  (package
+    (name "r-ppca")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pPCA" version))
+       (sha256
+        (base32 "0xr8n5v50q9wsx3ki8xsyxjdmx6kgdzzpv3fbq53n4i6x0381b0f"))))
+    (properties `((upstream-name . "pPCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra r-rcpp r-matrix))
+    (home-page "https://cran.r-project.org/package=pPCA")
+    (synopsis
+     "Partial Principal Component Analysis of Partitioned Large Sparse Matrices")
+    (description
+     "This package performs partial principal component analysis of a large sparse
+matrix.  The matrix may be stored as a list of matrices to be concatenated
+(implicitly) horizontally.  Useful application includes cases where the number
+of total nonzero entries exceed the capacity of 32 bit integers (e.g., with
+large Single Nucleotide Polymorphism data).")
+    (license license:gpl3)))
+
 (define-public r-ppbigdata
   (package
     (name "r-ppbigdata")
@@ -20255,6 +20303,43 @@ functions for visualization and diagnostic.")
      "This package performs bivariate composite likelihood and full information
 maximum likelihood estimation for polytomous logit-normit (graded logistic) item
 response theory (IRT) models.")
+    (license license:gpl3)))
+
+(define-public r-plmmr
+  (package
+    (name "r-plmmr")
+    (version "4.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plmmr" version))
+       (sha256
+        (base32 "12b31wx4n4sl8gx59qfkfki4j2sli7gx5qh9z22mpak8brycy8ld"))))
+    (properties `((upstream-name . "plmmr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-ncvreg
+                             r-matrix
+                             r-glmnet
+                             r-data-table
+                             r-bigmemory
+                             r-biglasso
+                             r-bigalgebra
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://pbreheny.github.io/plmmr/")
+    (synopsis "Penalized Linear Mixed Models for Correlated Data")
+    (description
+     "Fits penalized linear mixed models that correct for unobserved confounding
+factors.  plmmr infers and corrects for the presence of unobserved confounding
+effects such as population stratification and environmental heterogeneity.  It
+then fits a linear model via penalized maximum likelihood.  Originally designed
+for the multivariate analysis of single nucleotide polymorphisms (SNPs) measured
+in a genome-wide association study (GWAS), plmmr eliminates the need for
+subpopulation-specific analyses and post-analysis p-value adjustments.
+Functions for the appropriate processing of PLINK files are also supplied.  For
+examples, see the package homepage. <https://pbreheny.github.io/plmmr/>.")
     (license license:gpl3)))
 
 (define-public r-plmixed
@@ -38467,13 +38552,13 @@ graphics.")
 (define-public r-pagedown
   (package
     (name "r-pagedown")
-    (version "0.20")
+    (version "0.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pagedown" version))
        (sha256
-        (base32 "1900694r5l289y9yn176hbngiyk26jrslshqf5saq8zdxa67ad0x"))))
+        (base32 "1hb4h2bq3gvlmbwbbhkn2c5cbdfi8jmbv4gb4xssc9z37297v56k"))))
     (properties `((upstream-name . "pagedown")))
     (build-system r-build-system)
     (inputs (list pandoc))

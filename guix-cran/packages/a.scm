@@ -3539,13 +3539,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2024.10.3")
+    (version "2024.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "1nz35aszl0ap6gjqp1yd2b6rckk7y5ads4i79j233y3pff48g2b7"))))
+        (base32 "0sch016xdr6ifhf45j8jhbiqm0505mh2gmkx9fvgbcxd6x2bc14j"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
@@ -13275,13 +13275,13 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
 (define-public r-amadeus
   (package
     (name "r-amadeus")
-    (version "1.0.7")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amadeus" version))
        (sha256
-        (base32 "08wzcmg1dcl1a2fkbs10asm1kcp9liyw8749xp0bfxfym0sagrxx"))))
+        (base32 "0a72hnc63c1six8wp89pcvb8knr41nk2hib8cnhfbfvinxp6gwfp"))))
     (properties `((upstream-name . "amadeus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14612,6 +14612,55 @@ See <https://community.algolia.com/places/>.")
      "Two unordered pairs of data of two different snips positions is haplotyped by
 resolving a small number ob closed equations.")
     (license license:gpl2)))
+
+(define-public r-algaeclassify
+  (package
+    (name "r-algaeclassify")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "algaeClassify" version))
+       (sha256
+        (base32 "0rqfvjd4sbj85mvnhx1lpmx973cjz44y834p7dr0jnm3dbj1fs3g"))))
+    (properties `((upstream-name . "algaeClassify")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ritis r-rcurl r-lubridate r-jsonlite r-curl))
+    (home-page "https://doi.org/10.5066/F7S46Q3F")
+    (synopsis
+     "Tools to Query the Algaebase Online Database, Standardize Phytoplankton Taxonomic Data, and Perform Functional Group Classifications")
+    (description
+     "This package provides functions that facilitate the use of accepted taxonomic
+nomenclature, collection of functional trait data, and assignment of functional
+group classifications to phytoplankton species.  Possible classifications
+include Morpho-functional group (MFG; Salmaso et al.  2015
+<doi:10.1111/fwb.12520>) and CSR (Reynolds 1988; Functional morphology and the
+adaptive strategies of phytoplankton.  In C.D. Sandgren (ed).  Growth and
+reproductive strategies of freshwater phytoplankton, 388-433.  Cambridge
+University Press, New York).  Versions 2.0.0 and later includes new functions
+for querying the algaebase online taxonomic database (www.algaebase.org),
+however these functions require a valid API key that must be acquired from the
+algaebase admin.  Note that none of the @code{algaeClassify} authors are
+affiliated with algaebase in any way.  Taxonomic names can also be checked
+against a variety of taxonomic databases using the Global Names Resolver service
+via its API (<https://resolver.globalnames.org/api>).  In addition, currently
+accepted and outdated synonyms, and higher taxonomy, can be extracted for lists
+of species from the ITIS database using wrapper functions for the ritis package.
+ The @code{algaeClassify} package is a product of the GEISHA (Global Evaluation
+of the Impacts of Storms on freshwater Habitat and Structure of phytoplankton
+Assemblages), funded by CESAB (Centre for Synthesis and Analysis of
+Biodiversity) and the USGS John Wesley Powell Center for Synthesis and Analysis,
+with data and other support provided by members of GLEON (Global Lake Ecology
+Observation Network).  DISCLAIMER: This software has been approved for release
+by the U.S. Geological Survey (USGS).  Although the software has been subjected
+to rigorous review, the USGS reserves the right to update the software as needed
+pursuant to further analysis and review.  No warranty, expressed or implied, is
+made by the USGS or the U.S. Government as to the functionality of the software
+and related material nor shall the fact of release constitute any such warranty.
+ Furthermore, the software is released on condition that neither the USGS nor
+the U.S. Government shall be held liable for any damages resulting from its
+authorized or unauthorized use.")
+    (license license:cc0)))
 
 (define-public r-alfred
   (package
@@ -18413,6 +18462,50 @@ latitude-longitude grids by averaging all stations in grid-boxes.")
 coefficients, under classical normal and independent error assumptions, taking
 into account variable selection.")
     (license (license:fsdg-compatible "Unlimited"))))
+
+(define-public r-adverseevents
+  (package
+    (name "r-adverseevents")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AdverseEvents" version))
+       (sha256
+        (base32 "01dcfzgsxm12cf6j4d4nn3pwpq0dl78n3aiaijxll7qb0paw5qgh"))))
+    (properties `((upstream-name . "AdverseEvents")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-survminer
+                             r-survival
+                             r-skimr
+                             r-shinythemes
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shiny
+                             r-rio
+                             r-lubridate
+                             r-janitor
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AdverseEvents")
+    (synopsis
+     "'shiny' Application for Adverse Event Analysis of 'OnCore' Data")
+    (description
+     "An application for analysis of Adverse Events, as described in Chen, et al.,
+(2023) <doi:10.3390/cancers15092521>.  The required data for the application
+includes demographics, follow up, adverse event, drug administration and
+optional tumor measurement data.  The app can produce swimmers plots of adverse
+events, Kaplan-Meier plots and Cox Proportional Hazards model results for the
+association of adverse event biomarkers and overall survival and progression
+free survival.  The adverse event biomarkers include occurrence of grade 3, low
+grade (1-2), and treatment related adverse events.  Plots and tables of results
+are downloadable.")
+    (license license:gpl3)))
 
 (define-public r-adventr
   (package

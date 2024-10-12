@@ -4758,13 +4758,13 @@ Wikipedia; (<https://en.wikipedia.org/wiki/Classical_cipher>).")
 (define-public r-crypto2
   (package
     (name "r-crypto2")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crypto2" version))
        (sha256
-        (base32 "06q8znxzw8ff28gk1jgihwdjg0cc0k7h9nnza3wnzcz6pibcd2rh"))))
+        (base32 "1pszqigymlj4sdyi5hhfpdag9zarjgrf3z51q27x9fvzcn9ccgm6"))))
     (properties `((upstream-name . "crypto2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7073,13 +7073,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.9.5")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "1js1znvvp650v8zpsh0vy58m5plylhq5h4x26pijk3vr6w3bl7q2"))))
+        (base32 "0xrl4wpwl8jpdlxvvsh4nqb3wg08r3wz8qia4lpbp4ranngzz7sc"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -7094,7 +7094,8 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
                              r-later
                              r-getip
                              r-data-table
-                             r-cli))
+                             r-cli
+                             r-autometric))
     (native-inputs (list r-knitr))
     (home-page "https://wlandau.github.io/crew/")
     (synopsis "Distributed Worker Launcher Framework")

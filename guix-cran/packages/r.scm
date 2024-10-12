@@ -12019,6 +12019,39 @@ functions that produce output that is similar to output from other statistical
 packages, thereby facilitating software-agnostic teaching of statistics.")
     (license license:gpl3+)))
 
+(define-public r-roserf
+  (package
+    (name "r-roserf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "roseRF" version))
+       (sha256
+        (base32 "1fc8vj765haf7fjldapsy8my950y2n67pbp4q60wxbcql14si6na"))))
+    (properties `((upstream-name . "roseRF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-tuneranger
+                             r-rpart
+                             r-ranger
+                             r-paramhelpers
+                             r-mlr
+                             r-mgcv
+                             r-keras
+                             r-grf
+                             r-glmnet
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=roseRF")
+    (synopsis
+     "ROSE Random Forests for Robust Semiparametric Efficient Estimation")
+    (description
+     "ROSE (RObust Semiparametric Efficient) random forests for robust semiparametric
+efficient estimation in partially parametric models (containing generalised
+partially linear models).  Details can be found in the paper by Young and Shah
+(2024) <doi:10.48550/@code{arXiv.2410.03471>}.")
+    (license license:gpl3)))
+
 (define-public r-rosenbrock
   (package
     (name "r-rosenbrock")
@@ -48533,13 +48566,13 @@ functionality in radiant.data'.")
 (define-public r-radiant-model
   (package
     (name "r-radiant-model")
-    (version "1.6.6")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.model" version))
        (sha256
-        (base32 "0y1qvngicw279m9065pr6kj2yp80iz88bf4jqj1dawjvcbrl27wv"))))
+        (base32 "0442pwj623qrrhiv8yp1r1dhi0jrnkmxd7cydmp87q65fj1xvvyy"))))
     (properties `((upstream-name . "radiant.model")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

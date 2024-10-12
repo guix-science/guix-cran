@@ -2776,21 +2776,16 @@ Modelsâ. @code{arXiv} preprint <@code{arXiv:2105.11659>}.")
 (define-public r-kiwisr
   (package
     (name "r-kiwisr")
-    (version "0.2.0")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kiwisR" version))
        (sha256
-        (base32 "14fzf72swy221jcbiplss9dh7g03idrpbbyvbxp4bcqpxwr6hbsa"))))
+        (base32 "07sg5qxfgff99kv800q6g1ivs7l29r1fy1s3q84z4da61csdpxk6"))))
     (properties `((upstream-name . "kiwisR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-purrr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
+    (propagated-inputs (list r-tibble r-purrr r-lubridate r-httr2 r-dplyr))
     (home-page "https://github.com/rywhale/kiwisR")
     (synopsis
      "Wrapper for Querying KISTERS 'WISKI' Databases via the 'KiWIS' API")
@@ -2799,10 +2794,10 @@ Modelsâ. @code{arXiv} preprint <@code{arXiv:2105.11659>}.")
 @code{KiWIS} REST API. WISKI is an SQL relational database used for the
 collection and storage of water data developed by KISTERS and @code{KiWIS} is a
 REST service that provides access to WISKI databases via HTTP requests
-(<https://water.kisters.de/en/technology-trends/kisters-and-open-data/>).
-Contains a list of default databases (called hubs') and also allows users to
-provide their own @code{KiWIS} URL. Supports the entire query process- from
-metadata to specific time series values.  All data is returned as tidy tibbles.")
+(<https://www.kisters.eu/water-weather-and-environment/>).  Contains a list of
+default databases (called hubs') and also allows users to provide their own
+@code{KiWIS} URL. Supports the entire query process- from metadata to specific
+time series values.  All data is returned as tidy tibbles.")
     (license license:expat)))
 
 (define-public r-kitagawa
@@ -3258,6 +3253,32 @@ within the section describing the relevant functions.  Many functions in this
 package rely heavily on these two popular R packages: Dowle et al. (2021)
 <https://CRAN.R-project.org/package=data.table>.  Wickham et al. (2021)
 <https://CRAN.R-project.org/package=ggplot2>.")
+    (license license:gpl3)))
+
+(define-public r-kifidi
+  (package
+    (name "r-kifidi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Kifidi" version))
+       (sha256
+        (base32 "059yi549ab580ph0r8nj0igkhdlsy40qrzqnszyf9s969p2x493l"))))
+    (properties `((upstream-name . "Kifidi")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Kifidi")
+    (synopsis "Summary Table and Means Plots")
+    (description
+     "Optimized for handling complex datasets in environmental and ecological
+research, this package offers functionality that is not fully met by
+general-purpose packages.  It provides two key functions, summarize_data()',
+which summarizes datasets, and plot_means()', which creates plots with error
+bars.  The plot_means() function incorporates error bars by default, allowing
+quick visualization of uncertainties, crucial in ecological studies.  It also
+streamlines workflows for grouped datasets (e.g., by species or treatment),
+making it particularly user-friendly and reducing the complexity and time
+required for data summarization and visualization.")
     (license license:gpl3)))
 
 (define-public r-kidsides

@@ -3537,13 +3537,13 @@ and Kattuman (2020) <doi:10.1162/99608f92.828f40de>, Harvey and Kattuman (2021)
 (define-public r-tsgarch
   (package
     (name "r-tsgarch")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsgarch" version))
        (sha256
-        (base32 "1hlbz6iycq9fvmcrdf238a48dl9hdpdrvxa5vfz1j28061r3sp8f"))))
+        (base32 "0ivrn2lm41dggld9dh8ag9r9pxpfc3gmh53gzzlw13vn0snbpk49"))))
     (properties `((upstream-name . "tsgarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3554,7 +3554,6 @@ and Kattuman (2020) <doi:10.1162/99608f92.828f40de>, Harvey and Kattuman (2021)
                              r-sandwich
                              r-rdpack
                              r-rcppeigen
-                             r-rcpparmadillo
                              r-rcpp
                              r-progressr
                              r-numderiv
@@ -11525,29 +11524,6 @@ obtained from text analyses (e.g., topic modeling, word scaling) can be used to
 annotate the texts.")
     (license license:gpl3)))
 
-(define-public r-tok
-  (package
-    (name "r-tok")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tok" version))
-       (sha256
-        (base32 "0912zzi0sjd2ad5qhnglrlbvcxcvba1v0hrbaxrrfz23f3i6ic4s"))))
-    (properties `((upstream-name . "tok")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-r6 r-cli))
-    (home-page "https://github.com/mlverse/tok")
-    (synopsis "Fast Text Tokenization")
-    (description
-     "Interfaces with the Hugging Face tokenizers library to provide implementations
-of today's most used tokenizers such as the Byte-Pair Encoding algorithm
-<https://huggingface.co/docs/tokenizers/index>.  It's extremely fast for both
-training new vocabularies and tokenizing texts.")
-    (license license:expat)))
-
 (define-public r-tohm
   (package
     (name "r-tohm")
@@ -19099,17 +19075,16 @@ Fourier basis.")
 (define-public r-tfrmtbuilder
   (package
     (name "r-tfrmtbuilder")
-    (version "0.0.6")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmtbuilder" version))
        (sha256
-        (base32 "0c5x0sva90q7ghfz64fjy4w83a549ism6hwl6a1j4j81l9w6p8f7"))))
+        (base32 "010vb839fkzj17mivyxjd3vbk7jhm2wrrdk7s7giy57dwmcyql5c"))))
     (properties `((upstream-name . "tfrmtbuilder")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
-                             r-tidyr
                              r-tfrmt
                              r-stringr
                              r-sortable

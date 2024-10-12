@@ -9567,13 +9567,13 @@ easy to install and load multiple healthyverse packages in a single step.")
 (define-public r-healthyr-ts
   (package
     (name "r-healthyr-ts")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR.ts" version))
        (sha256
-        (base32 "1h8x47k239f8mmylpiydw7yf9r0synrzjhdk12a3nnbxbajn6iab"))))
+        (base32 "139y1xjnb2803gk191mhi1ib8m9ivaf64zqcqxs3dnd7blbdxvj6"))))
     (properties `((upstream-name . "healthyR.ts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -9595,7 +9595,7 @@ easy to install and load multiple healthyverse packages in a single step.")
                              r-dplyr
                              r-cowplot))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/spsanderson/healthyR.ts")
+    (home-page "https://www.spsanderson.com/healthyR.ts/")
     (synopsis "The Time Series Modeling Companion to 'healthyR'")
     (description
      "Hospital time series data analysis workflow tools, modeling, and automations.

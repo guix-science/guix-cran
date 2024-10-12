@@ -9860,13 +9860,13 @@ on network and epidemic parameters, given epidemic data.")
 (define-public r-epimodel
   (package
     (name "r-epimodel")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiModel" version))
        (sha256
-        (base32 "0bwi7rkiv2cg1srmzbyly89w6p9xppk90vjmbw6h5k9481gn097h"))))
+        (base32 "0sybpf1bzrw2n1gl23kp1frzzlglgnmldwfz7lckv0nykr4wsh6g"))))
     (properties `((upstream-name . "EpiModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9881,16 +9881,15 @@ on network and epidemic parameters, given epidemic data.")
                              r-lazyeval
                              r-ggplot2
                              r-foreach
-                             r-ergm-ego
                              r-ergm
-                             r-egor
                              r-dplyr
                              r-doparallel
                              r-desolve
+                             r-collections
                              r-coda
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "http://www.epimodel.org/")
+    (home-page "https://www.epimodel.org/")
     (synopsis "Mathematical Modeling of Infectious Disease Dynamics")
     (description
      "This package provides tools for simulating mathematical models of infectious
@@ -20575,13 +20574,13 @@ Statistics at
 (define-public r-ecgoftestdx
   (package
     (name "r-ecgoftestdx")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECGofTestDx" version))
        (sha256
-        (base32 "0y8bw1k9spwxyzc7vsi2iblnmjsidxbybjrzzh2j6frjmv3rk4g1"))))
+        (base32 "0mg5snwnlwy2vdkj8zdy0ji790ws6fvy4yr9918mridr43pn77ap"))))
     (properties `((upstream-name . "ECGofTestDx")))
     (build-system r-build-system)
     (propagated-inputs (list r-orthopolynom r-bootstrap))
@@ -20590,8 +20589,8 @@ Statistics at
      "Goodness-of-Fit Test for Elliptical Distributions with Diagnostic Capabilities")
     (description
      "This package provides a goodness-of-fit test for elliptical distributions with
-diagnostic capabilities.  Gilles R. Ducharme, Pierre Lafaye de Micheaux (2019)
-<@code{arXiv:1902.03622>}.")
+diagnostic capabilities.  Gilles R. Ducharme, Pierre Lafaye de Micheaux (2020)
+<doi:10.1016/j.jmva.2020.104602>.")
     (license license:gpl2+)))
 
 (define-public r-ecfun
@@ -21469,13 +21468,13 @@ models (Tversky & Sattath, 1979 <doi:10.1037/0033-295X.86.6.542>).")
 (define-public r-eattools
   (package
     (name "r-eattools")
-    (version "0.7.6")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatTools" version))
        (sha256
-        (base32 "0l9ip4y2b18qmb760xmjx174c7pp8crqmwiq7plark82q6p7ybfw"))))
+        (base32 "00w39z9jjgrqsg0fn7y07m3znpm6bv780g3v8hkmrslxw7cxfc51"))))
     (properties `((upstream-name . "eatTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-data-table r-checkmate))

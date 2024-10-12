@@ -5737,6 +5737,36 @@ Organiscak et al. (2023) <doi:10.1016/j.tsc.2023.101356>.  With it, you can
 score your own data directly from an R script.")
     (license license:expat)))
 
+(define-public r-openrouteservice
+  (package
+    (name "r-openrouteservice")
+    (version "0.5.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openrouteservice" version))
+       (sha256
+        (base32 "195bd7admszp1x0kyha9bxdqw2913qwj4ax7lxmkbq1ky3pjgnbp"))))
+    (properties `((upstream-name . "openrouteservice")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-v8
+                             r-leaflet
+                             r-keyring
+                             r-jsonvalidate
+                             r-jsonlite
+                             r-httr
+                             r-geojsonsf))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GIScience/openrouteservice-r")
+    (synopsis "An 'openrouteservice' API Client")
+    (description
+     "The client streamlines access to the services provided by
+<https://api.openrouteservice.org>.  It allows you to painlessly query for
+directions, isochrones, time-distance matrices, geocoding, elevation, points of
+interest, and more.")
+    (license license:asl2.0)))
+
 (define-public r-openrepgrid-ic
   (package
     (name "r-openrepgrid-ic")

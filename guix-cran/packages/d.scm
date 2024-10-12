@@ -2738,13 +2738,13 @@ design, i.e.  when each test is applied to each subject in the study.")
 (define-public r-dtcomb
   (package
     (name "r-dtcomb")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtComb" version))
        (sha256
-        (base32 "1ww0lw7j77ww1scd99ddasnxp7icbwbadiv3sl4zm8i1bb2mqmyr"))))
+        (base32 "0zfcbwl40hxva5282qplr27idclickid0p4a8vnz5559abygl5aa"))))
     (properties `((upstream-name . "dtComb")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc
@@ -26504,6 +26504,26 @@ user-inputted query.")
      "Validate dataset by columns and rows using convenient predicates inspired by
 assertr package.  Generate good looking HTML report or print console output to
 display in logs of your data processing pipeline.")
+    (license license:expat)))
+
+(define-public r-data-table-threads
+  (package
+    (name "r-data-table-threads")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "data.table.threads" version))
+       (sha256
+        (base32 "0mcma4386vg8zzqnhk80fny9z8dimpp6q89cv6ga29z39nq2iq5b"))))
+    (properties `((upstream-name . "data.table.threads")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-microbenchmark r-ggplot2 r-data-table))
+    (home-page "https://github.com/Anirban166/data.table.threads")
+    (synopsis "Analyze Multi-Threading Performance for 'data.table' Functions")
+    (description
+     "Assists in finding the most suitable thread count for the various data.table
+routines that support parallel processing.")
     (license license:expat)))
 
 (define-public r-dat

@@ -1796,16 +1796,16 @@ nominated start station to all other stations.")
 (define-public r-gtfsio
   (package
     (name "r-gtfsio")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfsio" version))
        (sha256
-        (base32 "06kw2r00y277a822qqgjifmrz0l6gfq1dx8znrc2yhrk0ynadsjz"))))
+        (base32 "0dzmlq7x8zlvljfgyj5hs7f7ivgml0j4j9fl6zkdbg3dqwmrrysb"))))
     (properties `((upstream-name . "gtfsio")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zip r-data-table))
+    (propagated-inputs (list r-zip r-jsonlite r-fs r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://r-transit.github.io/gtfsio/")
     (synopsis "Read and Write General Transit Feed Specification (GTFS) Files")
@@ -3484,13 +3484,13 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 (define-public r-grpnet
   (package
     (name "r-grpnet")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpnet" version))
        (sha256
-        (base32 "131g08gwvsiaxlsz7ihrhd6n33rjjczh72fh9wfa2ibc247g48w5"))))
+        (base32 "0ivkk669ycgghmbqzbkg6nz94y9gicixnyxd0np4bmrv62knz1h2"))))
     (properties `((upstream-name . "grpnet")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -4294,13 +4294,13 @@ phylogenetic trees, but may apply to a diversity of scenarios.")
 (define-public r-groc
   (package
     (name "r-groc")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groc" version))
        (sha256
-        (base32 "19ki9i9w0lfbcf9h7fff6vkav74ixmazn1k8lqcirplidhs0r23j"))))
+        (base32 "1q95j7yp8iv1545gqgkq139i08ky5ga32krkr1vy67j3qs4zkiwm"))))
     (properties `((upstream-name . "groc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-pls r-mgcv r-mass))
@@ -5930,13 +5930,13 @@ exploring periodicity in the data.")
 (define-public r-graven
   (package
     (name "r-graven")
-    (version "1.1.8")
+    (version "1.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRaven" version))
        (sha256
-        (base32 "0nmnmn5ni4ml5r7ah7kl8n51r5bcd9r6ncg7yz4qypbdqdamqx87"))))
+        (base32 "136s54cgxi8dyy0zpjcag9b02lgqgdxa39lpzsk4fndz9h45wp9c"))))
     (properties `((upstream-name . "gRaven")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-grbase r-grain))

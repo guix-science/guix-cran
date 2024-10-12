@@ -386,13 +386,13 @@ bounded-variable least squares.")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "14kbk7kp3jha5abnadvd7620b5mrxxgz7j9xvfcnwkvbbq8hp7i9"))))
+        (base32 "171ngw5a8zbq2vaxs3ipr76jnan4614fxr8ka28fhlx6qh6fy703"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27002,13 +27002,13 @@ background of the package can be found in SoberÃ³n and Osorio-Olvera (2023)
 (define-public r-bamlss
   (package
     (name "r-bamlss")
-    (version "1.2-4")
+    (version "1.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamlss" version))
        (sha256
-        (base32 "1prx8mw3n9a66s1fk616g12s0wwbxf3239256skys66csd9wzmh8"))))
+        (base32 "0p7gi5biydv73mmscizxd193fzx60cd8zwv0i5gsshspi9cwfmw6"))))
     (properties `((upstream-name . "bamlss")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

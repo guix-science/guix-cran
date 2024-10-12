@@ -661,13 +661,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "04a7ddjgn6jwqafaj2lym3c7nb7395y5w8y5kyl0kpm92kac8i87"))))
+        (base32 "0iacdswg8jbj7rli6kl6gp77990cl69y7iy0plrsc1w1366mkr94"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9925,6 +9925,26 @@ M., Vantini, S. (2021) \"Multiscale null hypothesis testing for network-valued
 data: Analysis of brain networks of patients with autism\"
 <doi:10.1111/rssc.12463>.")
     (license license:gpl3+)))
+
+(define-public r-neutrostat
+  (package
+    (name "r-neutrostat")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neutrostat" version))
+       (sha256
+        (base32 "1n5baw6rha49sjir9346d1dyjxq2sd4y1ahikb6x5x7qqdgdigr9"))))
+    (properties `((upstream-name . "neutrostat")))
+    (build-system r-build-system)
+    (home-page "https://github.com/kzst/neutrostat")
+    (synopsis "Neutrosophic Statistics")
+    (description
+     "Analyzes data involving imprecise and vague information.  Provides summary
+statistics and describes the characteristics of neutrosophic data, as defined by
+Florentin Smarandache (2013).<ISBN:9781599732749>.")
+    (license license:gpl2+)))
 
 (define-public r-neutralitytestr
   (package
