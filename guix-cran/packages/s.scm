@@ -11293,13 +11293,13 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "1sm8lzn2pin86srs9kq6d44kam85ydk056mbigca89jn8v7y70fb"))))
+        (base32 "0rhqds2rxrllpbwdifyni4f16lk16fyy0fgzgvq2sj4q7x62i565"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18817,13 +18817,13 @@ Roberts (1999) <doi:10.1109/IJCNN.1999.832603>.")
 (define-public r-spork
   (package
     (name "r-spork")
-    (version "0.3.3")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spork" version))
        (sha256
-        (base32 "035s59y1jfjyjmi7352yj04nzv29q6v48maifikdzn4b7l6mlsbg"))))
+        (base32 "1qigb3m98rrsz2ggf23dxcr79zmri8safdkly7iwzm14lysjzl7p"))))
     (properties `((upstream-name . "spork")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-latexpdf r-kableextra r-ggplot2))
@@ -19184,13 +19184,13 @@ are defined by spdep package.")
 (define-public r-spmoran
   (package
     (name "r-spmoran")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmoran" version))
        (sha256
-        (base32 "1fi59jggzbiz3r2j6gnim7ys3qg5vvjnkivw9414jv17s6lhbzvp"))))
+        (base32 "04w6k7lkrnfxspxg42dqgrkbg6a0427lb0xrll80r329irkk9rqp"))))
     (properties `((upstream-name . "spmoran")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -19209,10 +19209,18 @@ are defined by spdep package.")
     (synopsis
      "Fast Spatial and Spatio-Temporal Regression using Moran Eigenvectors")
     (description
-     "This package provides functions for estimating spatio-temporally varying
-coefficient models, mixed models, and other spatial regression models for
-Gaussian and non-Gaussian data.  Moran eigenvectors are used to approximate
-spatial and spatio-temporal processes in residuals and regression coefficients.")
+     "This package provides a collection of functions for estimating spatial and
+spatio-temporal regression models.  Moran eigenvectors are used as spatial basis
+functions to efficiently approximate spatially dependent Gaussian processes
+(i.e., random effects eigenvector spatial filtering; see Murakami and Griffith
+2015 <doi: 10.1007/s10109-015-0213-7>).  The implemented models include linear
+regression with residual spatial dependence, spatially/spatio-temporally varying
+coefficient models (Murakami et al., 2017, 2024;
+<doi:10.1016/j.spasta.2016.12.001>,<doi:10.48550/@code{arXiv.2410.07229>}),
+spatially filtered unconditional quantile regression (Murakami and Seya, 2019
+<doi:10.1002/env.2556>), Gaussian and non-Gaussian spatial mixed models through
+compositionally-warping (Murakami et al.  2021,
+<doi:10.1016/j.spasta.2021.100520>).")
     (license license:gpl2+)))
 
 (define-public r-spmodel
@@ -20773,27 +20781,27 @@ G., & Xie, Y. (2020) <doi:10.1016/j.jspi.2020.07.001>.")
 (define-public r-spheredata
   (package
     (name "r-spheredata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spheredata" version))
        (sha256
-        (base32 "0wmh6y43vgh8wd627a79qhbz33jdavcx1qvk6y9nx6jdsmgii0cz"))))
+        (base32 "1wy90kv7r3q7sxca8w6c66kxxqhnp9ylsz16wafdsxm64003m1b7"))))
     (properties `((upstream-name . "spheredata")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=spheredata")
+    (home-page "https://github.com/santosoph/spheredata")
     (synopsis
      "Students' Performance Dataset in Physics Education Research (SPHERE)")
     (description
      "This package provides a multidimensional dataset of students performance
 assessment in high school physics.  The SPHERE dataset was collected from 497
 students in four public high schools specifically measuring their conceptual
-understanding, scientific ability, and attitude toward physics from Santoso et
-al. (2024) <doi:10.17632/88d7m2fv7p.1>.  The data collection was conducted using
-some research based assessments (RBAs) developed by the physics education
-research (PER) community.  They include the Force Concept Inventory, the Force
-and Motion Conceptual Evaluation, the Rotational and Rolling Motion Conceptual
+understanding, scientific ability, and attitude toward physics [see Santoso et
+al. (2024) <doi:10.17632/88d7m2fv7p.1>].  The data collection was conducted
+using some research based assessments established by the physics education
+research community.  They include the Force Concept Inventory, the Force and
+Motion Conceptual Evaluation, the Rotational and Rolling Motion Conceptual
 Survey, the Fluid Mechanics Concept Inventory, the Mechanical Waves Conceptual
 Survey, the Thermal Concept Evaluation, the Survey of Thermodynamic Processes
 and First and Second Laws, the Scientific Abilities Assessment Rubrics, and the

@@ -4960,13 +4960,13 @@ packages needed to run the examples are also loaded.")
 (define-public r-weightsvm
   (package
     (name "r-weightsvm")
-    (version "1.7-13")
+    (version "1.7-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightSVM" version))
        (sha256
-        (base32 "19dai6v14h644dwa1054kmkhp4p24qvvkpzf45zz942ki24n2day"))))
+        (base32 "0cbcfdn76cq54rs9qdbmji8zkbb7rb5r1dllc3f0qsv4jv9dabaw"))))
     (properties `((upstream-name . "WeightSVM")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

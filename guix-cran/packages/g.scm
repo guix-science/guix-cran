@@ -8334,13 +8334,13 @@ preprint <doi:10.48550/@code{arXiv.2105.03454>}.")
 (define-public r-gpbstat
   (package
     (name "r-gpbstat")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpbStat" version))
        (sha256
-        (base32 "07zjc033jazpmax7x96zd5g4z1rz9qmmfwzssl7p3d9ff7aiayvx"))))
+        (base32 "18yzwa07grj5mqhl4y5p4gq9fqi8mrvv8mp886fjw6c3r5s84c6j"))))
     (properties `((upstream-name . "gpbStat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-purrr r-magrittr r-dplyr))
@@ -19986,25 +19986,24 @@ other available packages.")
 (define-public r-ggalign
   (package
     (name "r-ggalign")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggalign" version))
        (sha256
-        (base32 "173slwijh4ni4yrp41mr01iqy19fij9fh8hzysd3hk6ybbv7csnh"))))
+        (base32 "1yk36738ccnig6npq4z8v5liji2vpajigk7flrj6j0zpnaz883m0"))))
     (properties `((upstream-name . "ggalign")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-vctrs
                              r-rlang
                              r-gtable
                              r-ggplot2
-                             r-ggh4x
+                             r-data-table
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Yunuuuu/ggalign")
-    (synopsis "Align Multiple 'ggplot' Objects")
+    (synopsis "'ggplot2' Extension for Consistent Axis Alignment")
     (description
      "This package provides a ggplot2 extension offers various tools for organizing
 and arranging plots.  It is designed to consistently align a specific axis

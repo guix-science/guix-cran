@@ -4594,13 +4594,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "0cf51abcypl3a3xl0lhvb614ja83s6nkcc0glws9x112wwm2dgs4"))))
+        (base32 "0pmviwqsyb4lj8l4m359c2rynbb57k6ljsbvy3kg4nld9yyq9wa0"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6482,37 +6482,6 @@ cubic spline or generalized additive models with exogenous covariates.  This
 algorithm is specially tailored for climate data with missing measurements from
 several monitors along a given region.")
     (license license:gpl2+)))
-
-(define-public r-mtscr
-  (package
-    (name "r-mtscr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mtscr" version))
-       (sha256
-        (base32 "1cx2j10v89n2i4pml0m82xlx77pid5sw3737h09ak0hhr1l0p4x4"))))
-    (properties `((upstream-name . "mtscr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-lifecycle
-                             r-glue
-                             r-glmmtmb
-                             r-dplyr
-                             r-cli
-                             r-broom-mixed))
-    (home-page "https://cran.r-project.org/package=mtscr")
-    (synopsis "Multidimensional Top Scoring for Creativity Research")
-    (description
-     "Implementation of Multidimensional Top Scoring method for creativity assessment
-proposed in Boris Forthmann, Maciej Karwowski, Roger E. Beaty (2023)
-<doi:10.1037/aca0000571>.")
-    (license license:expat)))
 
 (define-public r-mts
   (package
@@ -10450,13 +10419,13 @@ Aerobic Plate Count (APC) for similar microbial enumeration experiments.")
 (define-public r-mpmsim
   (package
     (name "r-mpmsim")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpmsim" version))
        (sha256
-        (base32 "1bbbprdx2z7sm6m6419vcd4kz194p98n3xrk1y918jas5mi75i95"))))
+        (base32 "0qvjicciqd3zgkz6s9pnp6z98g0irwz0bbmj0pvvy8bhjcs7yln4"))))
     (properties `((upstream-name . "mpmsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape
@@ -12175,30 +12144,6 @@ diaphysis.  Calculate two and three-dimensional morphometric maps,
 cross-sectional geometric parameters, and semilandmarks on the periosteal and
 endosteal contours of each cross section.")
     (license license:gpl2)))
-
-(define-public r-morpheus
-  (package
-    (name "r-morpheus")
-    (version "1.0-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "morpheus" version))
-       (sha256
-        (base32 "0y9immrs87yghp0j1h0vp1fhiah5wddfj6pj2hgcqch1imxprhy7"))))
-    (properties `((upstream-name . "morpheus")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-mass r-jointdiag))
-    (home-page "https://github.com/yagu0/morpheus")
-    (synopsis "Estimate Parameters of Mixtures of Logistic Regressions")
-    (description
-     "Mixture of logistic regressions parameters (H)estimation with (U)spectral
-methods.  The main methods take d-dimensional inputs and a vector of binary
-outputs, and return parameters according to the GLMs mixture model (General
-Linear Model).  For more details see chapter 3 in the @code{PhD} thesis of
-Mor-Absa Loum: <https://www.theses.fr/s156435>, available here
-<https://theses.hal.science/tel-01877796/document>.")
-    (license license:expat)))
 
 (define-public r-morphemepiece-data
   (package

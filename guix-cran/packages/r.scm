@@ -706,13 +706,13 @@ retrieving a time series based on spatial location and temporal filters.")
 (define-public r-rwsearch
   (package
     (name "r-rwsearch")
-    (version "5.1.4")
+    (version "5.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RWsearch" version))
        (sha256
-        (base32 "09rkq84ppy6f6ak229wim5y0zd295saabh3q4lmv23zi6z3a9ngh"))))
+        (base32 "046z49yrsm1rsqvz3xf0fb3qy53xdzm95qs9q24pgzyz5s4rjm8f"))))
     (properties `((upstream-name . "RWsearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

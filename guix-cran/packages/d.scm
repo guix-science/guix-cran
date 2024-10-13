@@ -15543,33 +15543,6 @@ Sampling and Household Listing Manual\" (ICF International 2012,
 <https://dhsprogram.com/pubs/pdf/DHSM4/DHS6_Sampling_Manual_Sept2012_DHSM4.pdf>).")
     (license license:gpl2)))
 
-(define-public r-dhlabr
-  (package
-    (name "r-dhlabr")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dhlabR" version))
-       (sha256
-        (base32 "185gp7bgaw0rhl29f2gijsqx3da3mzzp06hmi187ywv8i6lsi750"))))
-    (properties `((upstream-name . "dhlabR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tibble
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=dhlabR")
-    (synopsis "National Library of Norway Quantitative Text Data API Tools")
-    (description
-     "This package provides tools for accessing data from National Library of Norway's
-dhlab (digital humanities laboratory).  Provides wrappers for accessing our API
-services at <https://api.nb.no/dhlab/>.  To learn more about dhlab, visit out
-site <https://www.nb.no/dh-lab/>.")
-    (license license:gpl3+)))
-
 (define-public r-dhh
   (package
     (name "r-dhh")

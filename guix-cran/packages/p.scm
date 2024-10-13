@@ -30160,13 +30160,13 @@ styles can be customized via optional columns in the pedigree data frame.")
 (define-public r-pedigreetools
   (package
     (name "r-pedigreetools")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedigreeTools" version))
        (sha256
-        (base32 "048lpzg0mmbzdc5cd52ssvzlji5293xz7bpqy3cjjszwcfjppc6c"))))
+        (base32 "03kmpizrjsr1x4av7zis2swrz0wr6b708bpss545mvjwm7zq3wc4"))))
     (properties `((upstream-name . "pedigreeTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))

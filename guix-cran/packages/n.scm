@@ -5887,13 +5887,13 @@ workflows by users to help with analyzing and interpreting NMR data.")
 (define-public r-nmrphasing
   (package
     (name "r-nmrphasing")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMRphasing" version))
        (sha256
-        (base32 "0rg2y26bnksp2hjbjn3xplnpi2hgc4ghlw796rqhjkmnrq9h1hrs"))))
+        (base32 "16ri24gkm2pqdrmrfifm9fqgpbl82300xb0a945zg8k71w2si2qn"))))
     (properties `((upstream-name . "NMRphasing")))
     (build-system r-build-system)
     (propagated-inputs (list r-massspecwavelet r-baseline))
