@@ -3427,49 +3427,6 @@ provides graphical summaries for assessing the algorithm convergence and fitting
 results.")
     (license license:gpl2+)))
 
-(define-public r-qrlabelr
-  (package
-    (name "r-qrlabelr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qrlabelr" version))
-       (sha256
-        (base32 "1bv76d3fkficcaqg4kzkkxjq1p24c6hxd25jyfia96nkmxyds44m"))))
-    (properties `((upstream-name . "qrlabelr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uuid
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinycssloaders
-                             r-shinybs
-                             r-shiny
-                             r-readxl
-                             r-reactable
-                             r-raster
-                             r-qrencoder
-                             r-qbms
-                             r-purrr
-                             r-ggplot2
-                             r-dplyr
-                             r-desplot
-                             r-bslib
-                             r-assertthat
-                             r-argonr
-                             r-argondash))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=qrlabelr")
-    (synopsis
-     "Generate Machine- And Human-Readable Plot Labels for Experiments")
-    (description
-     "This package provides a no-frills open-source solution for designing plot labels
-affixed with QR codes.  It features @code{EasyQrlabelr}', a
-@code{BrAPI-compliant} shiny app that simplifies the process of plot label
-design for non-R users.  It builds on the methods described by Wu et al. (2020)
-<doi:10.1111/2041-210X.13405>.")
-    (license license:gpl3+)))
-
 (define-public r-qrjoint
   (package
     (name "r-qrjoint")

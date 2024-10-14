@@ -25016,13 +25016,13 @@ multidimensional contexts.")
 (define-public r-clvtools
   (package
     (name "r-clvtools")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CLVTools" version))
        (sha256
-        (base32 "102r2p8y9pr03gj3s7pn0chy56300gxffmnadm0qfklwl0mlv63g"))))
+        (base32 "143c9b23xaqi9pxq416a2d1hbpjqdcnvz6nzl77s4kgfn5whabsl"))))
     (properties `((upstream-name . "CLVTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -27041,27 +27041,6 @@ rate methods build on prior work from Lambert A. (2018)
 <doi:10.1016/j.tpb.2018.04.005> and Stadler T. (2009)
 <doi:10.1016/j.jtbi.2009.07.018>.")
     (license license:expat)))
-
-(define-public r-clogitlasso
-  (package
-    (name "r-clogitlasso")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clogitLasso" version))
-       (sha256
-        (base32 "1j2kscd6d1jham6yqx5rp78x5vfj2faylkxkbcjaqbynlnqbbxd0"))))
-    (properties `((upstream-name . "clogitLasso")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lassoshooting r-foreach))
-    (home-page "https://cran.r-project.org/package=clogitLasso")
-    (synopsis "Sparse Conditional Logistic Regression for Matched Studies")
-    (description
-     "Fit a sequence of conditional logistic regression models with lasso, for small
-to large sized samples.  Avalos, M., Pouyes, H., Grandvalet, Y., Orriols, L., &
-Lagarde, E. (2015) <doi:10.1186/1471-2105-16-S6-S1>.")
-    (license license:gpl2+)))
 
 (define-public r-clogitl1
   (package
@@ -36888,13 +36867,13 @@ is in no way officially related to or endorsed by Copernicus.")
 (define-public r-cdsampling
   (package
     (name "r-cdsampling")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDsampling" version))
        (sha256
-        (base32 "19hgjcdqs56kldvn7xpkraadyzkxvcqh76gzn7dljmrjz22rrjvh"))))
+        (base32 "17npsagvgw47bfi9y2gbdx5dr688bbsxrq8rmay0x2la0xqil445"))))
     (properties `((upstream-name . "CDsampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-lpsolve))

@@ -8870,26 +8870,6 @@ evaluation.  The rrapply() function builds upon rapply()'s native C
 implementation and requires no other package dependencies.")
     (license license:lgpl3)))
 
-(define-public r-rrap
-  (package
-    (name "r-rrap")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rRAP" version))
-       (sha256
-        (base32 "1nzvs8bjkbjraa33azxf9mrxsxh87qhh3qlldrcs5y4fq4ancyqb"))))
-    (properties `((upstream-name . "rRAP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-lassoshooting r-lars))
-    (home-page "https://cran.r-project.org/package=rRAP")
-    (synopsis "Real-Time Adaptive Penalization for Streaming Lasso Models")
-    (description
-     "An implementation of the Real-time Adaptive Penalization (RAP) algorithm through
-which to iteratively update a regularization parameter in a streaming context.")
-    (license license:gpl2)))
-
 (define-public r-rrandvec
   (package
     (name "r-rrandvec")
@@ -50310,13 +50290,13 @@ interval functionality, download bootmlm from
 (define-public r-r2jags
   (package
     (name "r-r2jags")
-    (version "0.8-5")
+    (version "0.8-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2jags" version))
        (sha256
-        (base32 "1k895xmlrq8k34s0yc06mjkay8gj2r80sfn4rpqql09j6vr1za3i"))))
+        (base32 "0k71ms7xnj8yrqc1i8yn6hki863p6dzbx6x2pijxvn7f37wvh1nz"))))
     (properties `((upstream-name . "R2jags")))
     (build-system r-build-system)
     (inputs (list jags))

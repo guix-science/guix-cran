@@ -15688,28 +15688,6 @@ convergence rate under certain sparsity conditions for the multiple index
 models.")
     (license license:gpl3)))
 
-(define-public r-lassoshooting
-  (package
-    (name "r-lassoshooting")
-    (version "0.1.5-1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lassoshooting" version))
-       (sha256
-        (base32 "1hc05irjwcw54hdrdbwsxfr5b0qq7dysvybzm04jyixqs5b2m8wx"))))
-    (properties `((upstream-name . "lassoshooting")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=lassoshooting")
-    (synopsis
-     "L1 Regularized Regression (Lasso) Solver using the Cyclic Coordinate Descent Algorithm aka Lasso Shooting")
-    (description
-     "L1 regularized regression (Lasso) solver using the Cyclic Coordinate Descent
-algorithm aka Lasso Shooting is fast.  This implementation can choose which
-coefficients to penalize.  It support coefficient-specific penalties and it can
-take X'X and X'y instead of X and y.")
-    (license license:lgpl3)))
-
 (define-public r-lassonet
   (package
     (name "r-lassonet")

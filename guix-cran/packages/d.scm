@@ -1258,26 +1258,6 @@ inequality constraints.  See Dykstra (1983) <doi:10.1080/01621459.1983.10477029>
 for details.")
     (license license:gpl2+)))
 
-(define-public r-dydea
-  (package
-    (name "r-dydea")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dydea" version))
-       (sha256
-        (base32 "15alr3f6wkkpjd5wmcjazi58yc8gwcqr662mjwlfg15r94fzqrlg"))))
-    (properties `((upstream-name . "dydea")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-chaos01))
-    (home-page "https://cran.r-project.org/package=dydea")
-    (synopsis "Detection of Chaotic and Regular Intervals in the Data")
-    (description
-     "Finds regular and chaotic intervals in the data using the 0-1 test for chaos
-proposed by Gottwald and Melbourne (2004) <DOI:10.1137/080718851>.")
-    (license license:gpl3)))
-
 (define-public r-dycdtools
   (package
     (name "r-dycdtools")
@@ -9935,13 +9915,13 @@ and installs all these related packages in a single step.")
 (define-public r-divemove
   (package
     (name "r-divemove")
-    (version "1.6.2")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diveMove" version))
        (sha256
-        (base32 "04naajbri3jrdcggh7ja1niyqb4l2afawpcw5nay0bx7823i5nhq"))))
+        (base32 "18g335912rx49vwdjw577v0jxc25y204whzb48cpg51ihrc91ngf"))))
     (properties `((upstream-name . "diveMove")))
     (build-system r-build-system)
     (propagated-inputs (list r-unireg r-quantreg r-plotly r-kernsmooth

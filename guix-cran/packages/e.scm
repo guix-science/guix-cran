@@ -9002,33 +9002,6 @@ guidelines.  The guidelines used are the evidence-based KDIGO guidelines, see
 kidney injury (AKI), anemia, and chronic kidney disease (CKD).")
     (license license:expat)))
 
-(define-public r-epoc
-  (package
-    (name "r-epoc")
-    (version "0.2.6-1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epoc" version))
-       (sha256
-        (base32 "1qlj4cl7mh5k52v2ippfs3cish5iadnix5w46p25hjqiriksclna"))))
-    (properties `((upstream-name . "epoc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-matrix r-lassoshooting r-irr
-                             r-elasticnet))
-    (home-page "https://cran.r-project.org/package=epoc")
-    (synopsis "Endogenous Perturbation Analysis of Cancer")
-    (description
-     "Estimates sparse matrices A or G using fast lasso regression from @code{mRNA}
-transcript levels Y and CNA profiles U. Two models are provided, E@code{PoC} A
-where AY + U + R = 0 and E@code{PoC} G where Y = GU + E, the matrices R and E
-are so far treated as noise.  For details see the manual page of lassoshooting
-and the article Rebecka JÃ¶rnsten, Tobias Abenius, Teresia Kling, LinnÃ©a
-Schmidt, Erik Johansson, TorbjÃ¶rn E M Nordling, Bodil Nordlander, Chris Sander,
-Peter Gennemark, Keiko Funa, BjÃ¶rn Nilsson, Linda Lindahl, Sven Nelander (2011)
-<doi:10.1038/msb.2011.17>.")
-    (license license:lgpl3)))
-
 (define-public r-epo
   (package
     (name "r-epo")

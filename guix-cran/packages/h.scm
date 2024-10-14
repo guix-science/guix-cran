@@ -2837,13 +2837,13 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 (define-public r-htetree
   (package
     (name "r-htetree")
-    (version "0.1.18")
+    (version "0.1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htetree" version))
        (sha256
-        (base32 "144jn5b79xqr4h190c06wwpa5679125xa9qmnaxqh371h45263gd"))))
+        (base32 "16wjx56c5h9vbbh9gw9j646q0hdylcbgc70v6x3fdvis457nxv7a"))))
     (properties `((upstream-name . "htetree")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

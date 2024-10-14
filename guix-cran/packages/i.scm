@@ -10253,13 +10253,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.7.4")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "172difb7qikd8390zyn5cgl6m598wyn1bh8wpra9gih3f3kg40j7"))))
+        (base32 "0fzv5zvzl2bd2g0wgbc5mjrfghwqgvha2zx16q4673zkc08kdxic"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -10271,7 +10271,6 @@ delay distribution.")
                              r-omopgenerics
                              r-magrittr
                              r-lubridate
-                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-dbplyr

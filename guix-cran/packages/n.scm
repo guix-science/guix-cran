@@ -15522,13 +15522,13 @@ signalled by concurrent threads.")
 (define-public r-nanoarrow
   (package
     (name "r-nanoarrow")
-    (version "0.5.0.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanoarrow" version))
        (sha256
-        (base32 "0rd2nd5b3zhfb4i8gygp9nrn9hbvzqqra0rzdp4msr11r4nkgh15"))))
+        (base32 "0wad6dvc7f4z9ll0v5mvqlvk2waf2wfhpnd3sckxsjfpg2s1an6b"))))
     (properties `((upstream-name . "nanoarrow")))
     (build-system r-build-system)
     (home-page "https://arrow.apache.org/nanoarrow/latest/r/")

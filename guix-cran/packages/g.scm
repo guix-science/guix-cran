@@ -14941,13 +14941,13 @@ queries can be accessed according the following scheme:
 (define-public r-gifski
   (package
     (name "r-gifski")
-    (version "1.32.0")
+    (version "1.32.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gifski" version))
        (sha256
-        (base32 "14208894ghrfr4j46z1rdwj23gqq5swms17plwy831i1ab0hmlfi"))))
+        (base32 "1vak4chf3cxy6dq7i7asxbs6byn6gqwl8iafrfpg12bkc71b4rhb"))))
     (properties `((upstream-name . "gifski")))
     (build-system r-build-system)
     (inputs (list))

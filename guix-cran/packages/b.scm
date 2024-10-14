@@ -546,13 +546,13 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
 (define-public r-buysetest
   (package
     (name "r-buysetest")
-    (version "3.0.4")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BuyseTest" version))
        (sha256
-        (base32 "17nf1wy5dyxigr7w2bfj34kx94y7qdh60ra2j6f4kkpy7q0awl3y"))))
+        (base32 "0lv9yj7r9sj1i67zfca6wagjjvxcvf8vv2i7475aaf9w5rlxpd9r"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -575,15 +575,14 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
 (2018) <doi:10.1177/0962280216658320> to deal with right-censoring.  GPC compare
 two groups of observations (intervention vs. control group) regarding several
 prioritized endpoints to estimate the probability that a random observation
-drawn from one group performs better than a random observation drawn from the
-other group (Mann-Whitney parameter).  The net benefit and win ratio statistics,
-i.e.  the difference and ratio between the probabilities relative to the
-intervention and control groups, can then also be estimated.  Confidence
-intervals and p-values are obtained based on asymptotic results (Ozenne 2021
-<doi:10.1177/09622802211037067>), non-parametric bootstrap, or permutations.
-The software enables the use of thresholds of minimal importance difference,
-stratification, non-prioritized endpoints (O Brien test), and can handle
-right-censoring and competing-risks.")
+drawn from one group performs better/worse/equivalently than a random
+observation drawn from the other group.  Summary statistics such as the net
+treatment benefit, win ratio, or win odds are then deduced from these
+probabilities.  Confidence intervals and p-values are obtained based on
+asymptotic results (Ozenne 2021 <doi:10.1177/09622802211037067>), non-parametric
+bootstrap, or permutations.  The software enables the use of thresholds of
+minimal importance difference, stratification, non-prioritized endpoints (O
+Brien test), and can handle right-censoring and competing-risks.")
     (license license:gpl3)))
 
 (define-public r-butterflyoptions

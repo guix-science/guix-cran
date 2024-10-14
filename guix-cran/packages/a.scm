@@ -18345,18 +18345,18 @@ models, consult Henrik Madsen and Poul Thyregod's book (2011), ISBN:
 (define-public r-aebdata
   (package
     (name "r-aebdata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aebdata" version))
        (sha256
-        (base32 "1l49ldz2qgdcw66q221g2k0kny77px807337cj96zbll8cic4lxa"))))
+        (base32 "1yjp2rf1pw4bff8wq5v2vz0g03arbm9zh5js4ykwixhywkiscnm5"))))
     (properties `((upstream-name . "aebdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvest r-readr r-httr2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/hhmacedo/aebdata")
+    (home-page "https://github.com/ipea/aebdata")
     (synopsis "Access Data from the Atlas do Estado Brasileiro")
     (description
      "Facilitates access to the data from the Atlas do Estado Brasileiro

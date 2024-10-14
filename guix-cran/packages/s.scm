@@ -49999,13 +49999,13 @@ Semiparametric Regression.  Cambridge University Press.")
 (define-public r-seminr
   (package
     (name "r-seminr")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminr" version))
        (sha256
-        (base32 "0y9lf8ik8rdq3j4hqw86zwaa4xsizgdryxsc8njxfzaw51z57ljm"))))
+        (base32 "0zh5slwrsv20z1irfy944cd0x7940yv84p5mjj7jj9isgr9a8wbz"))))
     (properties `((upstream-name . "seminr")))
     (build-system r-build-system)
     (propagated-inputs (list r-webp
@@ -63142,13 +63142,13 @@ Elastic-Net.")
 (define-public r-s2dv
   (package
     (name "r-s2dv")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s2dv" version))
        (sha256
-        (base32 "0lgkdb1gphqsggqnyrl1hlfx1x5zxbhb9msr6xyj4hhp03m16z9x"))))
+        (base32 "0bs46hgvryaydf0hmdn02cpfc3b3schx26gpw11b78j6by95z0yw"))))
     (properties `((upstream-name . "s2dv")))
     (build-system r-build-system)
     (inputs (list cdo))
