@@ -1371,13 +1371,13 @@ the topology of a membrane protein.  This package allows one to use
 (define-public r-puremoe
   (package
     (name "r-puremoe")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "puremoe" version))
        (sha256
-        (base32 "18sjbsaljhwzmw2sbmb5hb9w9s3i3qfppizk74fpqnm720rbcfd1"))))
+        (base32 "119pndm7s343vmgac3jx64f66ax1gk4831svc9b8f54bgk2gqvdx"))))
     (properties `((upstream-name . "puremoe")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1387,8 +1387,7 @@ the topology of a membrane protein.  This package allows one to use
                              r-pbapply
                              r-jsonlite
                              r-httr
-                             r-data-table
-                             r-curl))
+                             r-data-table))
     (home-page "https://github.com/jaytimm/puremoe")
     (synopsis "Pubmed Unified REtrieval for Multi-Output Exploration")
     (description
@@ -11395,13 +11394,13 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
 (define-public r-praatpicture
   (package
     (name "r-praatpicture")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praatpicture" version))
        (sha256
-        (base32 "1gbarx2s59k1nz78g3g3l4mj586v75pyw16h33kwrfhhpfd3sxd7"))))
+        (base32 "1w7gzkkdjy2m5p82b9q7vksdakycay33kc7w3jvvp633b7pa0grp"))))
     (properties `((upstream-name . "praatpicture")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrassp
@@ -18714,13 +18713,13 @@ phylogeny informative? Measuring the power of comparative methods, Evolution 66
 (define-public r-pmartr
   (package
     (name "r-pmartr")
-    (version "2.4.5")
+    (version "2.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmartR" version))
        (sha256
-        (base32 "07996a2xs3rwxaa8dw53pm07n2052lq223prqd4lbf8ijy3za765"))))
+        (base32 "0ay61ypvhc04r6j91h4jc5iqjxshk0dzcbqhxamrjdwmrs6yyzng"))))
     (properties `((upstream-name . "pmartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24098,6 +24097,33 @@ concordance between the input matrices.  The methods builds upon the Distatis
 approach (Abdi et al. (2005) <doi:10.1101/2021.09.08.459421>), a generalization
 of classical multidimensional scaling to multiple distance matrices.")
     (license license:gpl2+)))
+
+(define-public r-phylotypr
+  (package
+    (name "r-phylotypr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phylotypr" version))
+       (sha256
+        (base32 "1p7k7qw89ihwzpkdvr5zcrrbj6j3n7vclch1miggs7mwb92apabq"))))
+    (properties `((upstream-name . "phylotypr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-rfast r-readr r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mothur/phylotypr")
+    (synopsis "Classifying DNA Sequences to Taxonomic Groupings")
+    (description
+     "Classification based analysis of DNA sequences to taxonomic groupings.  This
+package primarily implements Naive Bayesian Classifier from the Ribosomal
+Database Project.  This approach has traditionally been used to classify 16S
+@code{rRNA} gene sequences to bacterial taxonomic outlines; however, it can be
+used for any type of gene sequence.  The method was originally described by
+Wang, Garrity, Tiedje, and Cole in Applied and Environmental Microbiology
+73(16):5261-7 <doi:10.1128/AEM.00062-07>.  The package also provides functions
+to read in FASTA'-formatted sequence data.")
+    (license license:expat)))
 
 (define-public r-phylotop
   (package
@@ -30184,13 +30210,13 @@ pedigree structure ('Vazquez et al., 2010') <doi:10.2527/jas.2009-1952>.")
 (define-public r-pedigreemm
   (package
     (name "r-pedigreemm")
-    (version "0.3-4")
+    (version "0.3-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedigreemm" version))
        (sha256
-        (base32 "1fy9fq5g94p7v2s0yih1kj4in5gqmip8dd96pls0k9ixbgcqj95v"))))
+        (base32 "1bnvd25z8ff0d00wijp2vw9xw11fczqrlblw3ag39pjzn98a1zf7"))))
     (properties `((upstream-name . "pedigreemm")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lme4))
@@ -37711,18 +37737,19 @@ ashr (<https://github.com/stephens999/ashr>) and @code{CorShrink}
 (define-public r-palaeoverse
   (package
     (name "r-palaeoverse")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palaeoverse" version))
        (sha256
-        (base32 "1qfi5cv2xg89azax1v4hvajv1g6m59shp5q9db44rn65idxld7x5"))))
+        (base32 "1i2dqlql24nsgnz0i3lc9f0s1lr2wig6xyp7la9dk2pzm16ars7g"))))
     (properties `((upstream-name . "palaeoverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist
                              r-sf
                              r-pbapply
+                             r-lifecycle
                              r-httr
                              r-h3jsr
                              r-geosphere

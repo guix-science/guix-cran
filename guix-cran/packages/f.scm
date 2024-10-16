@@ -16542,23 +16542,33 @@ Mustapha, K. B. (2018).  Finite Element Computations in Mechanics with R. [ISBN
 (define-public r-fdx
   (package
     (name "r-fdx")
-    (version "1.0.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FDX" version))
        (sha256
-        (base32 "16d2gwdiqv3i37ad33mvad8hsni0i7zf3y85z9sgxvabhs5igva1"))))
+        (base32 "1kp95rkvx28i4i0m2781gn7qyss87n0dw8jz0ij3kyx071v1a0ca"))))
     (properties `((upstream-name . "FDX")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-pracma r-poissonbinomial r-discretefdr))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-poissonbinomial
+                             r-lifecycle
+                             r-discretefdr
+                             r-checkmate))
     (home-page "https://github.com/DISOhda/FDX")
     (synopsis
      "False Discovery Exceedance Controlling Multiple Testing Procedures")
     (description
      "Multiple testing procedures for heterogeneous and discrete tests as described in
-DÃ¶hler and Roquain (2019) <@code{arXiv:1912.04607v1>}.  The main algorithms of
-the paper are available as continuous, discrete and weighted versions.")
+DÃ¶hler and Roquain (2020) <doi:10.1214/20-EJS1771>.  The main algorithms of the
+paper are available as continuous, discrete and weighted versions.  They take as
+input the results of a test procedure from package @code{DiscreteTests}', or a
+set of observed p-values and their discrete support under their nulls.  A
+shortcut function to obtain such p-values and supports is also provided, along
+with wrappers allowing to apply discrete procedures directly to data.")
     (license license:gpl3)))
 
 (define-public r-fdwasserstein

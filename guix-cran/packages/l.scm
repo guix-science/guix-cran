@@ -6989,13 +6989,13 @@ diagnostic plots for the model class.")
 (define-public r-lmhelprs
   (package
     (name "r-lmhelprs")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmhelprs" version))
        (sha256
-        (base32 "1q7awxnl0ll3ds8hshflw1s1mwdrw7d4nh8ibjci4ds2lgvhyjgm"))))
+        (base32 "1ari7wmg5xfwp7902zi0yfi6hlicwvl0h098h8090rsklsz65mvp"))))
     (properties `((upstream-name . "lmhelprs")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12363,6 +12363,30 @@ from basic concepts.  The primary purpose is to serve as a self-study resource
 for anyone wishing to understand PCA better.  A few convenience functions are
 provided as well.")
     (license license:gpl3)))
+
+(define-public r-learnnonparam
+  (package
+    (name "r-learnnonparam")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LearnNonparam" version))
+       (sha256
+        (base32 "0b9w04yj4sr3im990flb21vhcjrja9npqcigp7rmywambjzhjkxg"))))
+    (properties `((upstream-name . "LearnNonparam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-r6))
+    (home-page "https://github.com/qddyy/LearnNonparam")
+    (synopsis "R6-Based Flexible Framework for Permutation Tests")
+    (description
+     "This package implements non-parametric tests from Higgins (2004,
+ISBN:0534387756), including tests for one-sample, two-sample, k-sample, paired,
+randomized complete block design, correlation and contingency tables.  Built
+with Rcpp for efficiency and R6 for flexible, object-oriented design, the
+package provides a unified framework for performing or creating custom
+permutation tests.")
+    (license license:gpl2+)))
 
 (define-public r-learningtower
   (package

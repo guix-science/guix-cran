@@ -8465,13 +8465,13 @@ more information, documentation and examples.")
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "1pggf9r4l453hbijbirabvymc2x1iy6p6yx79scpf4g035xxnnm6"))))
+        (base32 "173j68hc6wbr4893sfmjhp2lahkhzvsa058zgny03ryygi42c55v"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -8535,13 +8535,13 @@ common data model.")
 (define-public r-omock
   (package
     (name "r-omock")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omock" version))
        (sha256
-        (base32 "06ap41g7kgscqcpa1ylzash699xbxm2asp9vh8pbdpr9lwk6d4jv"))))
+        (base32 "13p5ms9c3lpbc8n2a4vjx6pfayv6pfllspyifxsq53pn9cfm2z6z"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
     (propagated-inputs (list r-snakecase

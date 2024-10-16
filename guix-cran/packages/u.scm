@@ -113,6 +113,38 @@ generalized ensembles).")
 reporting summary statistics.")
     (license license:gpl3)))
 
+(define-public r-utsf
+  (package
+    (name "r-utsf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utsf" version))
+       (sha256
+        (base32 "195b7s4mjlrhgg87xp3bh4z2c6y1rsjcpi06xgnxihh5sqrj9sgl"))))
+    (properties `((upstream-name . "utsf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctsfr
+                             r-rpart
+                             r-ranger
+                             r-ipred
+                             r-ggplot2
+                             r-forecast
+                             r-fnn
+                             r-cubist))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/franciscomartinezdelrio/utsf")
+    (synopsis "Univariate Time Series Forecasting")
+    (description
+     "An engine for univariate time series forecasting using different regression
+models in an autoregressive way.  The engine provides an uniform interface for
+applying the different models.  Furthermore, it is extensible so that users can
+easily apply their own regression models to univariate time series forecasting
+and benefit from all the features of the engine, such as preprocessings or
+estimation of forecast accuracy.")
+    (license license:expat)))
+
 (define-public r-utiml
   (package
     (name "r-utiml")

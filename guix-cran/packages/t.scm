@@ -8808,37 +8808,6 @@ the k-means clustering algorithm to identify clusters of trajectories.")
 developed in Maitner et al (2021) <doi:10.22541/au.162196147.76797968/v1>.")
     (license license:expat)))
 
-(define-public r-traits
-  (package
-    (name "r-traits")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "traits" version))
-       (sha256
-        (base32 "1jkap9qh3m2hxwib0h3vqzs2rc0dfnk875nbsr682sad8mx8i01h"))))
-    (properties `((upstream-name . "traits")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-taxize
-                             r-rvest
-                             r-readr
-                             r-jsonlite
-                             r-httr
-                             r-hoardr
-                             r-data-table
-                             r-crul))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/traits/")
-    (synopsis "Species Trait Data from Around the Web")
-    (description
-     "Species trait data from many different sources, including sequence data from
-NCBI (<https://www.ncbi.nlm.nih.gov/>), plant trait data from BETYdb', data from
-EOL Traitbank', Birdlife International, and more.")
-    (license license:expat)))
-
 (define-public r-traipse
   (package
     (name "r-traipse")
@@ -19113,13 +19082,13 @@ import, modify, and export tables and templates with little to no code.")
 (define-public r-tfrmt
   (package
     (name "r-tfrmt")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmt" version))
        (sha256
-        (base32 "19ymfvz9pdlrgz2z6mnwz6w4wk7v3mj1pnfzddsy997ii4qh8y5k"))))
+        (base32 "1hjjxagcmr3rrg105mbnhddajicm0q8vxgzq72f8gkf5yhsbi9w5"))))
     (properties `((upstream-name . "tfrmt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -19880,6 +19849,38 @@ found in the paper from Mihalcea, Rada & Tarau, Paul (2004)
 <https://www.aclweb.org/anthology/W04-3252/>.")
     (license (license:fsdg-compatible "MPL-2.0"))))
 
+(define-public r-textpress
+  (package
+    (name "r-textpress")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "textpress" version))
+       (sha256
+        (base32 "1wxsqgpqrcwr3p3w2csq3g9312dfnv6nfygbirs3l12j4pr3aykj"))))
+    (properties `((upstream-name . "textpress")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-stringi
+                             r-rvest
+                             r-pbapply
+                             r-matrix
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-data-table))
+    (home-page "https://github.com/jaytimm/textpress")
+    (synopsis "Lightweight and Versatile NLP Toolkit")
+    (description
+     "This package provides a simple Natural Language Processing (NLP) toolkit focused
+on search-centric workflows with minimal dependencies.  The package offers key
+features for web scraping, text processing, corpus search, and text embedding
+generation via the @code{HuggingFace} API
+<https://huggingface.co/docs/api-inference/index>.")
+    (license license:expat)))
+
 (define-public r-textometry
   (package
     (name "r-textometry")
@@ -20510,13 +20511,13 @@ discriminant analyses.")
 (define-public r-texor
   (package
     (name "r-texor")
-    (version "1.3.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texor" version))
        (sha256
-        (base32 "12sjrxg82ynjs3s4mah5mhm011d9qmmv1s10kbna69n84j4a6vlc"))))
+        (base32 "15r8a7m46cv6s80rjhmafiff4zs34n4m5nkcdgg9s1zhrwd3pc0j"))))
     (properties `((upstream-name . "texor")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -20529,6 +20530,7 @@ discriminant analyses.")
                              r-rebib
                              r-pdftools
                              r-logger
+                             r-desc
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Abhi-1U/texor")
@@ -22644,13 +22646,13 @@ represented by characters in R, or can themselves be R-expressions or functions.
 (define-public r-templateicar
   (package
     (name "r-templateicar")
-    (version "0.6.4")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templateICAr" version))
        (sha256
-        (base32 "15f2bv4vcsnqcb2rnpa1ylhxj8a511ab3mil3b8n9icffpzgahy0"))))
+        (base32 "03bdfzw8fs43nqb0zpsl2qbqzbvch2g3fna4aqmj2y9hs3ajn67m"))))
     (properties `((upstream-name . "templateICAr")))
     (build-system r-build-system)
     (propagated-inputs (list r-squarem
@@ -22660,7 +22662,9 @@ represented by characters in R, or can themselves be R-expressions or functions.
                              r-matrixstats
                              r-matrix
                              r-ica
+                             r-foreach
                              r-fmritools
+                             r-fmriscrub
                              r-expm
                              r-excursions
                              r-abind))
@@ -25122,46 +25126,6 @@ backups from resulting R-objects.  Also quick displays are implemented as
 summary-methods.")
     (license license:gpl2+)))
 
-(define-public r-taxize
-  (package
-    (name "r-taxize")
-    (version "0.9.100.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "taxize" version))
-       (sha256
-        (base32 "171si04r4lnnf0layfx6g2592wk27grinlmkzw3mbhvqsn3qbq7s"))))
-    (properties `((upstream-name . "taxize")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xml2
-                             r-worrms
-                             r-wikitaxa
-                             r-tibble
-                             r-rredlist
-                             r-rotl
-                             r-ritis
-                             r-r6
-                             r-phangorn
-                             r-natserv
-                             r-jsonlite
-                             r-foreach
-                             r-data-table
-                             r-crul
-                             r-crayon
-                             r-conditionz
-                             r-cli
-                             r-ape))
-    (home-page "https://docs.ropensci.org/taxize/")
-    (synopsis "Taxonomic Information from Around the Web")
-    (description
-     "Interacts with a suite of web APIs for taxonomic tasks, such as getting database
-specific taxonomic identifiers, verifying species names, getting taxonomic
-hierarchies, fetching downstream and upstream taxonomic names, getting taxonomic
-synonyms, converting scientific to common names and vice versa, and more.")
-    (license license:expat)))
-
 (define-public r-taxicabca
   (package
     (name "r-taxicabca")
@@ -25364,13 +25328,13 @@ performances over time.")
 (define-public r-tau
   (package
     (name "r-tau")
-    (version "0.0-25")
+    (version "0.0-26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tau" version))
        (sha256
-        (base32 "144fpmxzwr7jn8l6mpma2w835y89vwih476vxkh7jx4m6fkd88pz"))))
+        (base32 "00pwc479a8d0clvqxq1byzv2j54mlr3mmxhza0knrmg4dlwwz26v"))))
     (properties `((upstream-name . "tau")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=tau")

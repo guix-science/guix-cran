@@ -4839,18 +4839,18 @@ what) and clauses (who did what).  Method proposed in Van Atteveldt et al.
 (define-public r-rsyncrosim
   (package
     (name "r-rsyncrosim")
-    (version "1.5.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsyncrosim" version))
        (sha256
-        (base32 "0pg7i40m8qjcfwamb9prhkzyf4571jgnamqibxzd35n6vm6s9npy"))))
+        (base32 "0s5nprv5nij08d5ha55q71j4lqbybk2g70n2sb5g88dlcq71xfqm"))))
     (properties `((upstream-name . "rsyncrosim")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-terra r-rsqlite r-lifecycle r-gtools r-dbi))
-    (home-page "<https://syncrosim.github.io/rsyncrosim/>")
+    (propagated-inputs (list r-terra r-rsqlite r-gtools r-dbi))
+    (home-page "https://syncrosim.github.io/rsyncrosim/")
     (synopsis "The R Interface to 'SyncroSim'")
     (description
      "@code{SyncroSim} is a generalized framework for managing scenario-based datasets
@@ -8968,6 +8968,28 @@ and Analysis of the Randomized Response Technique, Journal of the American
 Statistical Association <https://graemeblair.com/papers/randresp.pdf>.")
     (license license:gpl3+)))
 
+(define-public r-rquest
+  (package
+    (name "r-rquest")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rquest" version))
+       (sha256
+        (base32 "08hyalcj8836ix830kr2ma2gaaq6cjn55kyish81wjmxzgl3sqal"))))
+    (properties `((upstream-name . "rquest")))
+    (build-system r-build-system)
+    (home-page "https://github.com/shenal-dkumara/rquest")
+    (synopsis "Hypothesis Tests for Quantiles and Quantile-Based Measures")
+    (description
+     "This package provides functions to conduct hypothesis tests and derive
+confidence intervals for quantiles, linear combinations of quantiles, ratios of
+dependent linear combinations and differences and ratios of all of the above for
+comparisons between independent samples.  Additionally, quantile-based measures
+of inequality are also considered.")
+    (license license:gpl3+)))
+
 (define-public r-rquery
   (package
     (name "r-rquery")
@@ -11302,13 +11324,13 @@ display summary plots that are easy to interpret for a clinician.")
 (define-public r-roxytypes
   (package
     (name "r-roxytypes")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roxytypes" version))
        (sha256
-        (base32 "1r789frfxg803a7as5ih6g93q3hi4l2ws7g55yxagr3aysvjy33m"))))
+        (base32 "0cb6i93f9rramlzpcqb4g4mi2967fm0jp6qbmgxrwzh4ih1n8977"))))
     (properties `((upstream-name . "roxytypes")))
     (build-system r-build-system)
     (propagated-inputs (list r-roxygen2 r-glue r-cli))
@@ -21805,13 +21827,13 @@ network and associated properties.")
 (define-public r-riverdist
   (package
     (name "r-riverdist")
-    (version "0.16.3")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riverdist" version))
        (sha256
-        (base32 "0ai29wb3ah27v58xqzhip3kaj7zhkzrsi4300n9kf7yvb2y018gp"))))
+        (base32 "1l01b7j3bas5swxl8vjk62g7br4ifg58p4x0pmgd2d4v9vm3ibc1"))))
     (properties `((upstream-name . "riverdist")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
@@ -35497,13 +35519,13 @@ taxonomic name.")
 (define-public r-rebib
   (package
     (name "r-rebib")
-    (version "0.3.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rebib" version))
        (sha256
-        (base32 "15ydvw4nbdw885y99a4g4zc6xvzaxjl8q3rriwrg7fbilib8i8pz"))))
+        (base32 "17ps6369gk4rx30y9kk9ddary6v05x9nvr01rmyyhc7y9hvswdvs"))))
     (properties `((upstream-name . "rebib")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-whisker r-stringr r-logger r-cli))
@@ -39621,13 +39643,13 @@ vtreat package.")
 (define-public r-rcppdate
   (package
     (name "r-rcppdate")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppDate" version))
        (sha256
-        (base32 "1nwb4fdjxwn0c1ckj1fpsxl2hxk5z3sk3y5giwgdag6nfv7yfplw"))))
+        (base32 "1cnhvbgqfcjrwm1rx6bhhj4yf4dipcp6g1hjv1qa86pmxzyjp3dn"))))
     (properties `((upstream-name . "RcppDate")))
     (build-system r-build-system)
     (home-page "https://github.com/eddelbuettel/rcppdate")
@@ -44905,16 +44927,17 @@ algorithm attributed to Wylie et al. (1967) <doi:10.1145/1465611.1465619>.")
 (define-public r-rasterdiv
   (package
     (name "r-rasterdiv")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterdiv" version))
        (sha256
-        (base32 "1pq9xsm6yyb97b8nvqlmb4s3kmd72a9mqxqqd31225qjnm6gv9pz"))))
+        (base32 "1fji357xp6di5l6r7ynq2vln69vblwkxbdv2pcv61lb8qrh0nvms"))))
     (properties `((upstream-name . "rasterdiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
+                             r-twdtw
                              r-terra
                              r-proxy
                              r-progress
@@ -44922,6 +44945,7 @@ algorithm attributed to Wylie et al. (1967) <doi:10.1145/1465611.1465619>.")
                              r-ggforce
                              r-foreach
                              r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://mattmar.github.io/rasterdiv/")
     (synopsis "Diversity Indices for Numerical Matrices")
     (description

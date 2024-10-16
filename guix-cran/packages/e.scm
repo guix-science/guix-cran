@@ -5388,13 +5388,13 @@ crosswalks to other habitat typologies.")
 (define-public r-eummd
   (package
     (name "r-eummd")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eummd" version))
        (sha256
-        (base32 "05c3c471picsfpkphf39wfh95vvmfmncwrnn04zizlgcp9b7z7ws"))))
+        (base32 "0rdx4gynr0369ax7q8sgrla0fzqc82vg27npz4g3qixam1y50vvk"))))
     (properties `((upstream-name . "eummd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -8310,13 +8310,13 @@ corresponding @code{LaTeX} code for the model.")
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateMultiple" version))
        (sha256
-        (base32 "0rv4jiv4bih8lwb1qb4kyhcp50r6qxxhpnphd6zfhp99vb2gpavv"))))
+        (base32 "08mm3yqn2jbzvc7fd7z42cq141891dfnhpv93jf3rwkbcf4k8fq1"))))
     (properties `((upstream-name . "equateMultiple")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
@@ -10585,6 +10585,31 @@ the endemic channel method (Bortman, M. (1999)
      "Offers a tidy solution for epidemiological data.  It houses a range of functions
 for epidemiologists and public health data wizards for data management and
 cleaning.")
+    (license license:expat)))
+
+(define-public r-epichains
+  (package
+    (name "r-epichains")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epichains" version))
+       (sha256
+        (base32 "1a3pgaqns729z8x7582da14ps18p09dpvi3l2lkxpl9cpxpkn89h"))))
+    (properties `((upstream-name . "epichains")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epiverse-trace/epichains")
+    (synopsis
+     "Simulating and Analysing Transmission Chain Statistics Using Branching Process Models")
+    (description
+     "This package provides methods to simulate and analyse the size and length of
+branching processes with an arbitrary offspring distribution.  These can be
+used, for example, to analyse the distribution of chain sizes or length of
+infectious disease outbreaks, as discussed in Farrington et al. (2003)
+<doi:10.1093/biostatistics/4.2.279>.")
     (license license:expat)))
 
 (define-public r-epicasting
@@ -13692,16 +13717,16 @@ in both of unsupervised and semi-supervised learning.")
 (define-public r-emc2
   (package
     (name "r-emc2")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMC2" version))
        (sha256
-        (base32 "0aiamalnnmdh052870vjwyycg38kw4sa5z6cfy1i634wxp5xl5x7"))))
+        (base32 "1rv2m7v8mhbwfrl3cwipnaxm1yxcs1mycp2vvhz5k9fbn9c0nwqk"))))
     (properties `((upstream-name . "EMC2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rtdists
+    (propagated-inputs (list r-wienr
                              r-rcpp
                              r-psych
                              r-mvtnorm
@@ -13717,7 +13742,8 @@ in both of unsupervised and semi-supervised learning.")
                              r-coda
                              r-brobdingnag
                              r-abind))
-    (home-page "https://cran.r-project.org/package=EMC2")
+    (native-inputs (list r-knitr))
+    (home-page "https://ampl-psych.github.io/EMC2/")
     (synopsis "Bayesian Hierarchical Analysis of Cognitive Models of Choice")
     (description
      "Fit Bayesian (hierarchical) cognitive models using a linear modeling language

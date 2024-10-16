@@ -1290,13 +1290,13 @@ are computed in parallel via @code{OpenMP}'.")
 (define-public r-swtools
   (package
     (name "r-swtools")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SWTools" version))
        (sha256
-        (base32 "134kmw30xxw90wnzb3z6s6j21vjrxfp2q0alvy2abpmgl6wmhlvp"))))
+        (base32 "10d9wgw2h1kykl46apaymfrriypf8xpixvk6za427xgya7krkz6l"))))
     (properties `((upstream-name . "SWTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -1307,7 +1307,6 @@ are computed in parallel via @code{OpenMP}'.")
                              r-segmented
                              r-rmarkdown
                              r-rlang
-                             r-reshape2
                              r-readr
                              r-prettymapr
                              r-magrittr
@@ -1316,6 +1315,7 @@ are computed in parallel via @code{OpenMP}'.")
                              r-hydrotsm
                              r-httr
                              r-ggspatial
+                             r-ggpubr
                              r-ggplot2
                              r-forcats
                              r-dplyr))
@@ -2353,6 +2353,28 @@ base weighting functionality in survey.'.")
      "This package provides inference based on the survey package for the wide range
 of parametric models in the VGAM package.")
     (license license:gpl3)))
+
+(define-public r-svyvarsel
+  (package
+    (name "r-svyvarsel")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svyVarSel" version))
+       (sha256
+        (base32 "1sfgifyjnfmf8piwpzhgnl0vdrv6nj1raab2aj6ajrxr6va780kh"))))
+    (properties `((upstream-name . "svyVarSel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey r-glmnet))
+    (home-page "https://cran.r-project.org/package=svyVarSel")
+    (synopsis "Variable Selection for Complex Survey Data")
+    (description
+     "Fit design-based linear and logistic elastic nets with complex survey data
+considering the sampling design when defining training and test sets using
+replicate weights.  Methods implemented in this package are described in: A.
+Iparragirre, T. Lumley, I. Barrio, I. Arostegui (2024) <doi:10.1002/sta4.578>.")
+    (license license:gpl3+)))
 
 (define-public r-svynom
   (package
@@ -12764,13 +12786,13 @@ between graphs, and clustering of graphs.  References: Takahashi et al. (2012)
 (define-public r-statgensta
   (package
     (name "r-statgensta")
-    (version "1.0.13")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenSTA" version))
        (sha256
-        (base32 "1pnb13psnyqj4mjry6g78pjc4qz642wjnxi9ki8i4h73i335ixxv"))))
+        (base32 "0mj314ikqrhjjs2dcri0da8sbmar7acnh2rnpx99ylk32i6l6lrl"))))
     (properties `((upstream-name . "statgenSTA")))
     (build-system r-build-system)
     (inputs (list))
@@ -12796,7 +12818,7 @@ components.  One of a series of statistical genetic packages for streamlining
 the analysis of typical plant breeding experiments developed by Biometris.  Some
 functions have been created to be used in conjunction with the R package asreml
 for the ASReml software, which can be obtained upon purchase from VSN
-international (<https://vsni.co.uk/software/asreml-r>).")
+international (<https://vsni.co.uk/software/asreml-r/>).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-statgenqtlxt
@@ -12896,13 +12918,13 @@ developed by Biometris.")
 (define-public r-statgenhtp
   (package
     (name "r-statgenhtp")
-    (version "1.0.6.1")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenHTP" version))
        (sha256
-        (base32 "1lhs72y9p98vas7iv1zgqb9zac6plzgv5lffccyg75r88784xn1s"))))
+        (base32 "0ia3xw8cnh4hyx31w2hzgqx2mp9fipk59rq6pvc8n33r3byzph9p"))))
     (properties `((upstream-name . "statgenHTP")))
     (build-system r-build-system)
     (propagated-inputs (list r-spats
@@ -12930,7 +12952,7 @@ parameter estimation.  The package is being developed within the EPPN2020
 project (<https://eppn2020.plant-phenotyping.eu/>).  Some functions have been
 created to be used in conjunction with the R package asreml for the ASReml
 software, which can be obtained upon purchase from VSN international
-(<https://vsni.co.uk/software/asreml>).")
+(<https://vsni.co.uk/software/asreml-r/>).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-statgengxe
@@ -13600,13 +13622,13 @@ are involved.")
 (define-public r-starter
   (package
     (name "r-starter")
-    (version "0.1.15")
+    (version "0.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starter" version))
        (sha256
-        (base32 "0lzaiw4m6wxniv8bgri33z8np49mqbgip4jhibsw0xa717anlqa4"))))
+        (base32 "12yxsvqharj15ynh1m4p37bvkxpp9xfzxaqrcy680jjyzd7aiwpf"))))
     (properties `((upstream-name . "starter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -15468,13 +15490,13 @@ are included.")
 (define-public r-ssmutpa
   (package
     (name "r-ssmutpa")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssMutPA" version))
        (sha256
-        (base32 "1mpkxg3pi8v31a5vbfj0m7wdnk0gyzbid7b9lvqv43f0qfri1xxg"))))
+        (base32 "1gdjw84n10ii2crdwv6yr0y4x72b2rkknigzfm8jvpwkvslprxsk"))))
     (properties `((upstream-name . "ssMutPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -19687,13 +19709,13 @@ together to form the final fit.")
 (define-public r-splitknockoff
   (package
     (name "r-splitknockoff")
-    (version "1.2")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SplitKnockoff" version))
        (sha256
-        (base32 "1ywh86gkkcc2dddqfgs5w8w9wyjfqmvcr31jga41ddvj5rb8zkhx"))))
+        (base32 "13s40w98rm5bfd58272wm927nwsngydwag9pdpajhrz2lkbagnkz"))))
     (properties `((upstream-name . "SplitKnockoff")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -19704,7 +19726,7 @@ together to form the final fit.")
                              r-glmnet
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/wanghaoxue0/SplitKnockoff")
+    (home-page "https://cran.r-project.org/package=SplitKnockoff")
     (synopsis "Split Knockoffs for Structural Sparsity")
     (description
      "Split Knockoff is a data adaptive variable selection framework for controlling
@@ -19712,10 +19734,8 @@ the (directional) false discovery rate (FDR) in structural sparsity, where
 variable selection on linear transformation of parameters is of concern.  This
 proposed scheme relaxes the linear subspace constraint to its neighborhood,
 often known as variable splitting in optimization.  Simulation experiments can
-be reproduced following the Vignette.  We include data (both .mat and .csv
-format) and application with our method of Alzheimer's Disease study in this
-package.  Split Knockoffs is first defined in Cao et al. (2021)
-<@code{arXiv:2103.16159>}.")
+be reproduced following the Vignette.  Split Knockoffs is first defined in Cao
+et al. (2021) <doi:10.48550/@code{arXiv.2103.16159>}.")
     (license license:expat)))
 
 (define-public r-splithalfr
@@ -43728,13 +43748,13 @@ visualization and presentation of predicted survival curves.")
 (define-public r-shinycohortbuilder
   (package
     (name "r-shinycohortbuilder")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyCohortBuilder" version))
        (sha256
-        (base32 "0fvn2azapa4vqd4kby2j2kspj5vf22jlb2wmwa4dnnm50k4v7gdr"))))
+        (base32 "0l22fwq6mk9z8bv3vpxbf6gfimknwidbx55gjxjsww85v7qmh6r5"))))
     (properties `((upstream-name . "shinyCohortBuilder")))
     (build-system r-build-system)
     (arguments
@@ -44068,13 +44088,13 @@ package for a Grammar of Graphics declarative HTML syntax to create
 (define-public r-shiny-telemetry
   (package
     (name "r-shiny-telemetry")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny.telemetry" version))
        (sha256
-        (base32 "190cpxx9ddapixv8ci6xkabmyb0i8qb1kak49c286p43psm6dy66"))))
+        (base32 "1kn89gfz9a8j3ymmv2mpgazixyig6g1vxjd1a5incnj5qd58inv5"))))
     (properties `((upstream-name . "shiny.telemetry")))
     (build-system r-build-system)
     (arguments
@@ -57291,6 +57311,40 @@ facilitates type-2 history for data-warehouses and provides a number of Quality
 of life improvements for working on SQL databases with R. For reference see
 Ralph Kimball and Margy Ross (2013, ISBN 9781118530801).")
     (license license:gpl3)))
+
+(define-public r-scda
+  (package
+    (name "r-scda")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SCDA" version))
+       (sha256
+        (base32 "12r8rw6fs5wgrk38z31m7s7asj4w6adlk5abrbf0vhmh5v3ahfha"))))
+    (properties `((upstream-name . "SCDA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep
+                             r-spatialreg
+                             r-sp
+                             r-rlang
+                             r-performance
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=SCDA")
+    (synopsis "Spatially-Clustered Data Analysis")
+    (description
+     "This package contains functions for statistical data analysis based on
+spatially-clustered techniques.  The package allows estimating the
+spatially-clustered spatial regression models presented in Cerqueti, Maranzano
+\\& Mattera (2024), \"Spatially-clustered spatial autoregressive models with
+application to agricultural market concentration in Europe\", @code{arXiv}
+preprint 2407.15874 <doi:10.48550/@code{arXiv.2407.15874>}.  Specifically, the
+current release allows the estimation of the spatially-clustered linear
+regression model (SCLM), the spatially-clustered spatial autoregressive model
+(SCSAR), the spatially-clustered spatial Durbin model (SCSEM), and the
+spatially-clustered linear regression model with spatially-lagged exogenous
+covariates (SCSLX).")
+    (license license:gpl2+)))
 
 (define-public r-sccs
   (package

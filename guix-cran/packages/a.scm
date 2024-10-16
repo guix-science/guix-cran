@@ -1912,17 +1912,17 @@ which are the clusters most defining genes.")
 (define-public r-autonewsmd
   (package
     (name "r-autonewsmd")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autonewsmd" version))
        (sha256
-        (base32 "1wax4npyzkxjl1avgg6m275744nnpbv3qk8sbjg0dkqp58cb33lx"))))
+        (base32 "0pf6z420rdl7w1f8pp75qds4cnsyrc6py99h8xl39c7rcgg1lcn3"))))
     (properties `((upstream-name . "autonewsmd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-quarto r-magrittr r-git2r r-data-table))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-r6 r-quarto r-magrittr r-data-table))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/kapsner/autonewsmd")
     (synopsis "Auto-Generate Changelog using Conventional Commits")
     (description
@@ -7834,32 +7834,6 @@ other utilities pertaining to geometry and Esri type conversions.  To support
 @code{ArcGIS} Pro users, authorization can be done via arcgisbinding'.
 Installation instructions for arcgisbinding can be found at
 <https://r.esri.com/r-bridge-site/docs/installation.html>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-arcgisplaces
-  (package
-    (name "r-arcgisplaces")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "arcgisplaces" version))
-       (sha256
-        (base32 "09xfwahdqf8v772g7gxalgzyd77diwzy6snlfjsrnli4f0svlzwi"))))
-    (properties `((upstream-name . "arcgisplaces")))
-    (build-system r-build-system)
-    (inputs (list openssl openssl))
-    (propagated-inputs (list r-wk r-rlang r-httr2 r-cli r-arcgisutils))
-    (home-page "https://cran.r-project.org/package=arcgisplaces")
-    (synopsis "Search for POIs using ArcGIS 'Places Service'")
-    (description
-     "The @code{ArcGIS} Places service is a ready-to-use location service that can
-search for businesses and geographic locations around the world.  It allows you
-to find, locate, and discover detailed information about each place.  Query for
-places near a point, within a bounding box, filter based on categories, or
-provide search text.  arcgisplaces integrates with sf for out of the box
-compatibility with other spatial libraries.  Learn more in the Places service
-API reference <https://developers.arcgis.com/rest/places/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arcgislayers
@@ -17974,6 +17948,31 @@ to use for simple georeferencing of images.  Methods used are available from
 <https://en.wikipedia.org/wiki/World_file> and
 <https://gdal.org/user/raster_data_model.html>.")
     (license license:gpl3)))
+
+(define-public r-affiner
+  (package
+    (name "r-affiner")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "affiner" version))
+       (sha256
+        (base32 "1ksx4bpi73aramkxl5gg0w493srwl76zv6w9hxrkh63ni58hx1w0"))))
+    (properties `((upstream-name . "affiner")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6))
+    (native-inputs (list r-rmarkdown r-ragg r-knitr))
+    (home-page "https://trevorldavis.com/R/affiner/")
+    (synopsis
+     "Finer Way to Render 3D Illustrated Objects in 'grid' Using Affine Transformations")
+    (description
+     "Dilate, permute, project, reflect, rotate, shear, and translate 2D and 3D
+points.  Supports parallel projections including oblique projections such as the
+cabinet projection as well as axonometric projections such as the isometric
+projection.  Use grid's \"affine transformation\" feature to render illustrated
+flat surfaces.")
+    (license license:expat)))
 
 (define-public r-affect
   (package

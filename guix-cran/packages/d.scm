@@ -14,11 +14,12 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages libreoffice)
   #:use-module (gnu packages docker)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages python)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages tls)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages haskell-xyz)
@@ -1257,6 +1258,26 @@ projection algorithm.  Routine allows for a combination of equality and
 inequality constraints.  See Dykstra (1983) <doi:10.1080/01621459.1983.10477029>
 for details.")
     (license license:gpl2+)))
+
+(define-public r-dydea
+  (package
+    (name "r-dydea")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dydea" version))
+       (sha256
+        (base32 "15alr3f6wkkpjd5wmcjazi58yc8gwcqr662mjwlfg15r94fzqrlg"))))
+    (properties `((upstream-name . "dydea")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-chaos01))
+    (home-page "https://cran.r-project.org/package=dydea")
+    (synopsis "Detection of Chaotic and Regular Intervals in the Data")
+    (description
+     "Finds regular and chaotic intervals in the data using the 0-1 test for chaos
+proposed by Gottwald and Melbourne (2004) <DOI:10.1137/080718851>.")
+    (license license:gpl3)))
 
 (define-public r-dycdtools
   (package
@@ -4381,16 +4402,15 @@ Ulf-Dietrich Reips (2002) \"Standards for Internet-Based Experimenting\"
 (define-public r-dropout
   (package
     (name "r-dropout")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dropout" version))
        (sha256
-        (base32 "11clanskb3w0v1ahx6q8d7nxqfsck4zbcyrkb8db1ykbdakdq1xs"))))
+        (base32 "09rcmxcdl8g7fcgv86c4mv5gd0399vd17a8g58x039s7yz52ys3j"))))
     (properties `((upstream-name . "dropout")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-rcpp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hendr1km/dropout")
     (synopsis "Handling Incomplete Responses in Survey Data Analysis")
@@ -6337,13 +6357,13 @@ modelling.  See Marsh et.  al. (2018) <doi:10.18637/jss.v086.c03>.")
 (define-public r-downloadthis
   (package
     (name "r-downloadthis")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "downloadthis" version))
        (sha256
-        (base32 "0hl0xgvlami8q265kyc9nfi916qyr5wh3422rzz3pl5razv09pdp"))))
+        (base32 "09hbcb9yj45l6v9iyv5pr4wz01l8624b34x45107d7a62djil1x9"))))
     (properties `((upstream-name . "downloadthis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9727,16 +9747,17 @@ systems.")
 (define-public r-divest
   (package
     (name "r-divest")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divest" version))
        (sha256
-        (base32 "1qm2m4dxh1rlxbr9y1vpyhngxyawi2ll72s5ayiaik6rgr5jd2cp"))))
+        (base32 "15d1bfdmav5hdvl1x0vfp6k0ab0apw8kqb3xc05ng9ys0557xz1z"))))
     (properties `((upstream-name . "divest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-rcpp))
+    (native-inputs (list pkg-config))
     (home-page "https://github.com/jonclayden/divest")
     (synopsis "Get Images Out of DICOM Format Quickly")
     (description
@@ -18507,6 +18528,41 @@ R-forge.  See Visser et al. (2009, <DOI:10.1007/978-0-387-95922-1_13>) for
 examples and applications.")
     (license license:gpl3)))
 
+(define-public r-deploid
+  (package
+    (name "r-deploid")
+    (version "0.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DEploid" version))
+       (sha256
+        (base32 "1ljha520yjbzyrw4h77y1r29rymzk2x8z8hczc0lh539mfi4jll6"))))
+    (properties `((upstream-name . "DEploid")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-scales
+                             r-rmarkdown
+                             r-rcpp
+                             r-plotly
+                             r-magrittr
+                             r-htmlwidgets))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DEploid-dev/DEploid-r")
+    (synopsis "Deconvolute Mixed Genomes with Unknown Proportions")
+    (description
+     "Traditional phasing programs are limited to diploid organisms.  Our method
+modifies Li and Stephens algorithm with Markov chain Monte Carlo (MCMC)
+approaches, and builds a generic framework that allows haplotype searches in a
+multiple infection setting.  This package is primarily developed as part of the
+Pf3k project, which is a global collaboration using the latest sequencing
+technologies to provide a high-resolution view of natural variation in the
+malaria parasite Plasmodium falciparum.  Parasite DNA are extracted from patient
+blood sample, which often contains more than one parasite strain, with unknown
+proportions.  This package is used for deconvoluting mixed haplotypes, and
+reporting the mixture proportions from each sample.")
+    (license license:gpl3+)))
+
 (define-public r-deplogo
   (package
     (name "r-deplogo")
@@ -19198,6 +19254,30 @@ Attakpa, NoÃ«l H. Fonton and Kouami Kokou (2013) <doi:10.3390/d5010099> and W.
 Bonou, R. Glele KakaÃ¯, A.E. Assogbadjo, H.N. Fonton, B. Sinsin (2009)
 <doi:10.1016/j.foreco.2009.05.032> .")
     (license license:gpl3)))
+
+(define-public r-dendrometer
+  (package
+    (name "r-dendrometer")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dendrometeR" version))
+       (sha256
+        (base32 "1lnnra7hnaxdpck2nkdg30ywq4k9wjv6h1zbkqmm369pw21n3x2b"))))
+    (properties `((upstream-name . "dendrometeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-pspline r-forecast))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/smiljanicm/dendrometeR")
+    (synopsis "Analyzing Dendrometer Data")
+    (description
+     "Various functions to import, verify, process and plot high-resolution
+dendrometer data using daily and stem-cycle approaches as described in
+Deslauriers et al, 2007 <doi:10.1016/j.dendro.2007.05.003>.  For more details
+about the package please see: Van der Maaten et al.  2016
+<doi:10.1016/j.dendro.2016.06.001>.")
+    (license license:gpl2+)))
 
 (define-public r-dendroextras
   (package
@@ -24151,13 +24231,13 @@ your computer.  Routines for both single pixel data downloads and gridded
 (define-public r-dawai
   (package
     (name "r-dawai")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dawai" version))
        (sha256
-        (base32 "1pfvbd3d182f5pfpc1pj00dd8bsrcaw7lb7k5i0br1i70xlali5w"))))
+        (base32 "0n6wb88i5p84afy2zq52pizmmgxiicm0dmfxcmmdaiq7a0p3gv3y"))))
     (properties `((upstream-name . "dawai")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-boot))
@@ -27124,16 +27204,16 @@ package implements dann and sub_dann from Hastie (1996)
 (define-public r-danielbiostatistics10th
   (package
     (name "r-danielbiostatistics10th")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DanielBiostatistics10th" version))
        (sha256
-        (base32 "03amr8vf9ps6rwn0kkh8dg3ngihddwaxfb7fg8ifli5nz63d08y0"))))
+        (base32 "0qgakqybrg7knpgvl5v0126h9mpah5a392hl1sm7hprwvqm4xg5f"))))
     (properties `((upstream-name . "DanielBiostatistics10th")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-e1071 r-cli))
+    (propagated-inputs (list r-vcd r-pracma r-e1071 r-cli))
     (home-page "https://cran.r-project.org/package=DanielBiostatistics10th")
     (synopsis "Functions for Wayne W. Daniel's Biostatistics, Tenth Edition")
     (description

@@ -1936,6 +1936,71 @@ for web-based authoring such as linked text for inline citations.  Cite using a
 DOI', URL, or bibtex file key.  See the package URL for details.")
     (license license:expat)))
 
+(define-public r-knfi
+  (package
+    (name "r-knfi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "knfi" version))
+       (sha256
+        (base32 "0bgp8bcplsi7yr35na9ii3d7dn7qj6jrfsalpmkwn3dfb0xk263b"))))
+    (properties `((upstream-name . "knfi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-stringr
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-readxl
+                             r-plotrix
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-drat
+                             r-dplyr
+                             r-data-table
+                             r-cowplot
+                             r-cellranger
+                             r-broom
+                             r-biodiversityr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SYOUNG9836/knfi")
+    (synopsis "Analysis of Korean National Forest Inventory Database")
+    (description
+     "Understanding the current status of forest resources is essential for monitoring
+changes in forest ecosystems and generating related statistics.  In South Korea,
+the National Forest Inventory (NFI) surveys over 4,500 sample plots nationwide
+every five years and records 70 items, including forest stand, forest resource,
+and forest vegetation surveys.  Many researchers use NFI as the primary data for
+research, such as biomass estimation or analyzing the importance value of each
+species over time and space, depending on the research purpose.  However, the
+large volume of accumulated forest survey data from across the country can make
+it challenging to manage and utilize such a vast dataset.  To address this
+issue, we developed an R package that efficiently handles large-scale NFI data
+across time and space.  The package offers a comprehensive workflow for NFI data
+analysis.  It starts with data processing, where read_nfi() function
+reconstructs NFI data according to the researcher's needs while performing basic
+integrity checks for data quality.Following this, the package provides
+analytical tools that operate on the verified data.  These include functions
+like summary_nfi() for summary statistics, diversity_nfi() for biodiversity
+analysis, iv_nfi() for calculating species importance value, and biomass_nfi()
+and cwd_biomass_nfi() for biomass estimation.  Finally, for visualization, the
+tsvis_nfi() function generates graphs and maps, allowing users to visualize
+forest ecosystem changes across various spatial and temporal scales.  This
+integrated approach and its specialized functions can enhance the efficiency of
+processing and analyzing NFI data, providing researchers with insights into
+forest ecosystems.  The NFI Excel files (.xlsx) are not included in the R
+package and must be downloaded separately.  Users can access these NFI Excel
+files by visiting the Korea Forest Service Forestry Statistics Platform
+<https://kfss.forest.go.kr/stat/ptl/article/@code{articleList.do?curMenu=11694&bbsId=microdataboard>}
+to download the annual NFI Excel files, which are bundled in .zip archives.
+Please note that this website is only available in Korean, and direct download
+links can be found in the notes section of the read_nfi() function.")
+    (license license:gpl3)))
+
 (define-public r-kneearrower
   (package
     (name "r-kneearrower")

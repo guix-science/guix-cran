@@ -560,13 +560,13 @@ random matrix theory.  This is an implementation of Koev & Edelman's algorithm
 (define-public r-hypergeo2
   (package
     (name "r-hypergeo2")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypergeo2" version))
        (sha256
-        (base32 "0h42xl4yq88jzyk99rr7lfljm9rw3ln0bglq93p6g6fc1wfg6yqv"))))
+        (base32 "1xc4yva1k93j01x061pa0g4smlbbqmwlcg8gfax9k2ry4pj1p339"))))
     (properties `((upstream-name . "hypergeo2")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
@@ -4546,6 +4546,29 @@ Rohart,BenoÃ®t Gautier,Amrit Singh,Kim-Anh LÃª Cao (2017)
      "This package provides pipe-friendly (%>%) wrapper functions for MASS::mvrnorm()
 to create simulated multivariate data sets with groups of variables with
 different degrees of variance, covariance, and effect size.")
+    (license license:expat)))
+
+(define-public r-hollr
+  (package
+    (name "r-hollr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hollr" version))
+       (sha256
+        (base32 "0ygnhzy2pf3gkayxcmv2rrapwp6xj9s33x71bczwchy6iipvmnml"))))
+    (properties `((upstream-name . "hollr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-pbapply r-jsonlite r-httr
+                             r-data-table))
+    (home-page "https://github.com/jaytimm/hollr")
+    (synopsis
+     "Chat Completion and Text Annotation with Local and OpenAI Models")
+    (description
+     "Enables chat completion and text annotation with local and @code{OpenAI}
+<https://openai.com/> language models, supporting batch processing, multiple
+annotators, and consistent output formats.")
     (license license:expat)))
 
 (define-public r-holland

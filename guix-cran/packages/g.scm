@@ -2682,6 +2682,43 @@ manually.  Google Sheets is the new name for Google Docs Spreadsheets
 <https://www.google.com/sheets/about>.")
     (license license:gpl3)))
 
+(define-public r-gsema
+  (package
+    (name "r-gsema")
+    (version "0.99.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GSEMA" version))
+       (sha256
+        (base32 "1ynbjm61v1j3m06ixbzil0rxcmvfxpz27dcfiif8bkk9g5mkfs2d"))))
+    (properties `((upstream-name . "GSEMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-singscore
+                             r-scales
+                             r-rdpack
+                             r-rcolorbrewer
+                             r-progress
+                             r-plyr
+                             r-pheatmap
+                             r-pbapply
+                             r-metafor
+                             r-limma
+                             r-impute
+                             r-gsva
+                             r-doparallel
+                             r-biocparallel
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GSEMA")
+    (synopsis "Gene Set Enrichment Meta-Analysis")
+    (description
+     "Performing the different steps of gene set enrichment meta-analysis.  It
+provides different functions that allow the application of meta-analysis based
+on the combination of effect sizes from different pathways in different studies
+to obtain significant pathways that are common to all of them.")
+    (license license:gpl2)))
+
 (define-public r-gselection
   (package
     (name "r-gselection")
@@ -4518,13 +4555,13 @@ Details of the method can be found in Dufey (2017) <@code{arXiv:1703.00070>}.")
 (define-public r-grim
   (package
     (name "r-grim")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRim" version))
        (sha256
-        (base32 "126ip5bvqipfrclmclv0gskf2a1d0z7m5965c477q831s3a1wbb8"))))
+        (base32 "17rbvf69p5vzfb1s550sf6793bd7wgs8482hm60y9d6d10iicj60"))))
     (properties `((upstream-name . "gRim")))
     (build-system r-build-system)
     (arguments
@@ -5776,13 +5813,13 @@ responses in surveys.")
 (define-public r-grc
   (package
     (name "r-grc")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRc" version))
        (sha256
-        (base32 "12fz7aiddzc3pxvglin265z30ihcmy18nsw02zg7vb27bz5ldvqp"))))
+        (base32 "1l067jz2631x7kbmzr1zjyy3bbzr5qcyrrvw52sdplg1flald22c"))))
     (properties `((upstream-name . "gRc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-igraph r-grbase))
@@ -7390,16 +7427,22 @@ ordering proposed in Guinness (2018) <@code{arXiv:1609.05372>}.")
 (define-public r-gpvam
   (package
     (name "r-gpvam")
-    (version "3.1-0")
+    (version "3.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPvam" version))
        (sha256
-        (base32 "0mmwg5m85rzaaj8wdxsdn1yqpl08pr3ydmxpfwmm2f7xw0k2k29g"))))
+        (base32 "0qd71rab04qnk8z1x6p4p9y3yx9vs2dn7xm5l44xmq2xyv6bcyab"))))
     (properties `((upstream-name . "GPvam")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-matrix))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-patchwork
+                             r-numderiv
+                             r-matrix
+                             r-mass
+                             r-ggplot2))
     (home-page "https://cran.r-project.org/package=GPvam")
     (synopsis
      "Maximum Likelihood Estimation of Multiple Membership Mixed Models Used in Value-Added Modeling")
@@ -11851,6 +11894,56 @@ a way compatible with both Latex and HTML outputs.")
      "Add glossaries to markdown and quarto documents by tagging individual words.
 Definitions can be provided inline or in a separate file.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-glossa
+  (package
+    (name "r-glossa")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glossa" version))
+       (sha256
+        (base32 "17b9iir51a9vavd3bpg3448wpcmb9ib2kcf08qa29f68xy8fglgz"))))
+    (properties `((upstream-name . "glossa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-waiter
+                             r-tidyterra
+                             r-terra
+                             r-svglite
+                             r-sparkline
+                             r-shinywidgets
+                             r-shiny
+                             r-sf
+                             r-proc
+                             r-mcp
+                             r-markdown
+                             r-leaflet
+                             r-jsonlite
+                             r-htmltools
+                             r-ggplot2
+                             r-geothinner
+                             r-dt
+                             r-dplyr
+                             r-dbarts
+                             r-bs4dash))
+    (home-page "https://github.com/iMARES-group/glossa")
+    (synopsis
+     "User-Friendly 'shiny' App for Bayesian Species Distribution Models")
+    (description
+     "This package provides a user-friendly shiny application for Bayesian machine
+learning analysis of marine species distributions.  GLOSSA (Global Species
+Spatiotemporal Analysis) uses Bayesian Additive Regression Trees (BART; Chipman,
+George, and @code{McCulloch} (2010) <doi:10.1214/09-AOAS285>) to model species
+distributions with intuitive workflows for data upload, processing, model
+fitting, and result visualization.  It supports presence-absence and
+presence-only data (with pseudo-absence generation), spatial thinning,
+cross-validation, and scenario-based projections.  GLOSSA is designed to
+facilitate ecological research by providing easy-to-use tools for analyzing and
+visualizing marine species distributions across different spatial and temporal
+scales.")
+    (license license:gpl3)))
 
 (define-public r-glogis
   (package
@@ -30665,45 +30758,6 @@ generate the gambin distribution and for calculating likelihood statistics.")
      "Data sets and scripts used in the book Generalized Additive Models: An
 Introduction with R', Wood (2006,2017) CRC.")
     (license license:gpl2+)))
-
-(define-public r-gamabiomd
-  (package
-    (name "r-gamabiomd")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GaMaBioMD" version))
-       (sha256
-        (base32 "15rx6xycnxldaxyjhcgysfz7zj6cjwlfkjjm6jyhxxvw4h2nw75m"))))
-    (properties `((upstream-name . "GaMaBioMD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-traits
-                             r-reshape2
-                             r-magrittr
-                             r-heatmaply
-                             r-ggplot2
-                             r-dplyr
-                             r-dendextend
-                             r-biostrings
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=GaMaBioMD")
-    (synopsis "Diversity Analysis for Sequence Data")
-    (description
-     "The full form is Garai and Mantri Biological Material Diversity.  It is an R
-package designed for the calculation of biological diversity using sequence
-data.  It simplifies the process by requiring only sample IDs and accession
-numbers.  Whether you're analyzing genetic or microbial diversity, It provides
-efficient tools for diversity analysis.  Serially one should go for the
-functions as presented here expand_accession_ranges(),
-get_sequence_information(), preprocess_for_alignment(), write_fasta(),
-@code{SampleID_vs_NumSequences}(), data_sampling(), alignment_info(),
-compute_average_similarity_matrix(), generate_heatmaps(),
-clustering_average_similarity(), clustering_percent_similarity(),
-bubble_plot_count(), bubble_plot_percentage(), tree_average_similarity(),
-tree_percent_similarity().  Till date there are total 15 functions.  More
-details can be found in Faith (1992) <doi:10.1016/0006-3207(92)91201-3>.")
-    (license license:gpl3)))
 
 (define-public r-gam-hp
   (package

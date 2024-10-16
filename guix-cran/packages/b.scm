@@ -3466,13 +3466,13 @@ of the LZ77 algorithm and Huffman coding
 (define-public r-broom-mixed
   (package
     (name "r-broom-mixed")
-    (version "0.2.9.5")
+    (version "0.2.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broom.mixed" version))
        (sha256
-        (base32 "1css1g9r1345dwww9v56m7d9r74i4d27si7fsc4d8nhk4v6sd7wm"))))
+        (base32 "134qwdwhm0ih55n26hbyqb1hxj8d5k5jpc6gagpn9ny2vryzsszh"))))
     (properties `((upstream-name . "broom.mixed")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4560,13 +4560,13 @@ calculated statistics on the Parquet files and returns easy-to-use data.frames."
 (define-public r-brcal
   (package
     (name "r-brcal")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BRcal" version))
        (sha256
-        (base32 "05d0m9rjl8y103lz3jv3gh83pa6cmil4q56z3fdx0pk7yzikzn7y"))))
+        (base32 "1z8mr76rj8xdqsgny6hskbs3czgy23xqrjrhw9006y4mdhd39hbr"))))
     (properties `((upstream-name . "BRcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr r-lifecycle r-ggplot2 r-fields))
@@ -20961,28 +20961,23 @@ methods.")
 (define-public r-baystability
   (package
     (name "r-baystability")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baystability" version))
        (sha256
-        (base32 "1zv4bf5a4p21w2qpr6lcsgsxb0xv15v8p33031rsypmnbs9i80dp"))))
+        (base32 "11ac74mb9dasf4m3qqd0j89bbjq2zk2jynljs86c2mlqack3jivj"))))
     (properties `((upstream-name . "baystability")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-scales
                              r-rstiefel
                              r-rlang
-                             r-reshape2
-                             r-matrixstats
                              r-mass
-                             r-magrittr
                              r-lme4
                              r-ggplot2
-                             r-ggfortify
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=baystability")
     (synopsis
@@ -24640,13 +24635,13 @@ Kelter (2019) <@code{arXiv:1906.07524>}.")
 (define-public r-bayesammi
   (package
     (name "r-bayesammi")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesammi" version))
        (sha256
-        (base32 "1vfcmk47x71c5akj3ppxzb74293pikspknkkv08f8p15v0chk7fs"))))
+        (base32 "1vff8gbfp9nsxrv43fhc02vsl935cv2cff3jih0i5rj0pwz5gvhf"))))
     (properties `((upstream-name . "bayesammi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -25116,6 +25111,43 @@ generated across several batches.  See Coleman et al. (2022)
      "This package provides consistent batch means estimation of Monte Carlo standard
 errors.")
     (license license:gpl2+)))
+
+(define-public r-batchllm
+  (package
+    (name "r-batchllm")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "batchLLM" version))
+       (sha256
+        (base32 "0y7s0m2gdynqcnnf4yar8ga7y53km7a03izaf4ds254349dhkk0y"))))
+    (properties `((upstream-name . "batchLLM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spscomps
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shiny
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-openai
+                             r-jsonlite
+                             r-httr
+                             r-gemini-r
+                             r-dt
+                             r-dplyr
+                             r-digest))
+    (home-page "https://github.com/dylanpieper/batchLLM")
+    (synopsis "Batch Process LLM Text Completions Using a Data Frame")
+    (description
+     "Batch process large language model (LLM) text completions using data frame rows,
+with support for @code{OpenAI's} GPT (<https://chat.openai.com>), Anthropic's
+Claude (<https://claude.ai>), and Google's Gemini (<https://gemini.google.com>).
+ Includes features such as local storage, metadata logging, API rate limiting
+delays, and a shiny app addin.")
+    (license license:expat)))
 
 (define-public r-batchgetsymbols
   (package

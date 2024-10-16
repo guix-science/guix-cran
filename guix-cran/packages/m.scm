@@ -5711,13 +5711,13 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "0.3.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "01q1r593v111wqaa2bqlrmsqgjpk39kfdxx6vj7ni9prbypxnbxm"))))
+        (base32 "0a52vkyydlvimqc9x6plx71k6fk639am57l54xbxdnzd5l899zql"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-wrapr r-pracma r-hablar r-ggplot2))
@@ -5731,8 +5731,7 @@ macroeconomic risk framework from Joslin, Priebsch, and Singleton (2014, JF)
 <doi:10.1111/jofi.12131>.  Multicountry extensions such as the ones of
 Jotikasthira, Le, and Lundblad (2015, JFE) <doi:10.1016/j.jfineco.2014.09.004>,
 Candelon and Moura (2023, EM) <doi:10.1016/j.econmod.2023.106453>, and Candelon
-and Moura (Forthcoming, JFEC) <http://hdl.handle.net/2078.1/249985> are also
-available.")
+and Moura (Forthcoming, JFEC) <doi:10.1093/jjfinec/nbae008> are also available.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-multiassetoptions
@@ -9861,31 +9860,6 @@ ratio-formatted hypotheses and the corresponding confidence interval are
 provided assuming homogeneous or heterogeneous group variances.")
     (license license:gpl2)))
 
-(define-public r-mra
-  (package
-    (name "r-mra")
-    (version "2.16.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mra" version))
-       (sha256
-        (base32 "0268msdy4cs2ifpagmwiabi6aav54ckn214ai18aqv2h97hmixw0"))))
-    (properties `((upstream-name . "mra")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=mra")
-    (synopsis "Mark-Recapture Analysis")
-    (description
-     "Accomplishes mark-recapture analysis with covariates.  Models available include
-the Cormack-Jolly-Seber open population (Cormack (1972) <doi:10.2307/2556151>;
-Jolly (1965) <doi:10.2307/2333826>; Seber (1965) <doi:10.2307/2333827>) and
-Huggin's (1989) <doi:10.2307/2336377> closed population.  Link functions include
-logit, sine, and hazard.  Model selection, model averaging, plot, and simulation
-routines included.  Open population size by the Horvitz-Thompson (1959)
-<doi:10.2307/2280784> estimator.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-mr-rgm
   (package
     (name "r-mr-rgm")
@@ -13545,13 +13519,13 @@ Used by MOLGENIS packages.")
 (define-public r-molgenisarmadillo
   (package
     (name "r-molgenisarmadillo")
-    (version "2.6.3")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MolgenisArmadillo" version))
        (sha256
-        (base32 "11xy9cwnhacrxnyxhr8zs25yr20f27vqnh9nfm7x1180g1b2b4fr"))))
+        (base32 "12js86ys9d80cf69qjl30q01i9a9nki500nq173hn4xym9sc2pcy"))))
     (properties `((upstream-name . "MolgenisArmadillo")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -18024,13 +17998,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3torch
   (package
     (name "r-mlr3torch")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3torch" version))
        (sha256
-        (base32 "1j1hzpacs79cannsjq4qp6qr8130gp01d6k7sj7v81kv92r5yga7"))))
+        (base32 "1q6jdyy0jyvjg3hab0i77p53iznx4z2hhxzx1rdj82n3q61wi8v2"))))
     (properties `((upstream-name . "mlr3torch")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -20216,13 +20190,13 @@ Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
 (define-public r-mizer
   (package
     (name "r-mizer")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mizer" version))
        (sha256
-        (base32 "0s6vjvik0qcnrsb7f976cx623xg9jspkiskpzly2w9wbs6bbmnbg"))))
+        (base32 "03awz9nr4gfiq7dbpxad2vzih2babdp65fl06flyy47b0aqsvcwm"))))
     (properties `((upstream-name . "mizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -20375,13 +20349,13 @@ separately on two latent parameters.  It reports local false discovery rates
 (define-public r-mixturemissing
   (package
     (name "r-mixturemissing")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixtureMissing" version))
        (sha256
-        (base32 "15pz1rhbsaz5ml9swxqm6aifzb88qjpx0z5h2z229ddb0v9hxh29"))))
+        (base32 "1qlkj37znl7zjaq6hxqkwpnalg7npr8ig8lnh8bfx0cc4mix8aw4"))))
     (properties `((upstream-name . "MixtureMissing")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv
@@ -26962,13 +26936,13 @@ hidden state sequence for each individual using the Viterbi algorithm.")
 (define-public r-mhda
   (package
     (name "r-mhda")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MHDA" version))
        (sha256
-        (base32 "17cbkvwirn2lhcq2w45pqx0c1sqvcgaqq3rm6k3jnjby4vkw5d94"))))
+        (base32 "0l0ifw2slk5wx9nv6i6xqj79ccpgirk7qzzssy7mvhd249d9ybzb"))))
     (properties `((upstream-name . "MHDA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=MHDA")
@@ -28840,13 +28814,13 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.15.0")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metR" version))
        (sha256
-        (base32 "17qhx6jx8h9dxfzxgg4nx3nx4xjnjpz9r0cix0qqbgngri55lap0"))))
+        (base32 "0pimgvgxq494qlh339hq0v38y444i9syc46vl4r071bv15nar5dp"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -30715,62 +30689,6 @@ analytical workflow by simplifying the download of data and metadata from
 @code{DataONE} (<https://www.dataone.org>) and easily importing this information
 into R.")
     (license license:asl2.0)))
-
-(define-public r-metaintegrator
-  (package
-    (name "r-metaintegrator")
-    (version "2.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MetaIntegrator" version))
-       (sha256
-        (base32 "1763in7zcfr4abhwc0sy27c1qbzbhkyjsasrhwdjjmsc645sqxlx"))))
-    (properties `((upstream-name . "MetaIntegrator")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-stringr
-                             r-rsqlite
-                             r-rocr
-                             r-rmysql
-                             r-rmisc
-                             r-rmeta
-                             r-rmarkdown
-                             r-reshape2
-                             r-readr
-                             r-preprocesscore
-                             r-pracma
-                             r-plyr
-                             r-plotly
-                             r-pheatmap
-                             r-multtest
-                             r-metrics
-                             r-manhattanly
-                             r-magrittr
-                             r-httpuv
-                             r-hgnchelper
-                             r-gplots
-                             r-ggpubr
-                             r-ggplot2
-                             r-geoquery
-                             r-dt
-                             r-dplyr
-                             r-dbi
-                             r-data-table
-                             r-coconut
-                             r-boot
-                             r-biocmanager
-                             r-biobase
-                             r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "http://biorxiv.org/content/early/2016/08/25/071514")
-    (synopsis "Meta-Analysis of Gene Expression Data")
-    (description
-     "This package provides a pipeline for the meta-analysis of gene expression data.
-We have assembled several analysis and plot functions to perform integrated
-multi-cohort analysis of gene expression data (meta- analysis).  Methodology
-described in: <http://biorxiv.org/content/early/2016/08/25/071514>.")
-    (license license:lgpl2.0+)))
 
 (define-public r-metaintegration
   (package
@@ -32659,13 +32577,13 @@ HTML theme will be added in the future.")
 (define-public r-memoir
   (package
     (name "r-memoir")
-    (version "1.2-9")
+    (version "1.2-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memoiR" version))
        (sha256
-        (base32 "0asaw2xfnbn0g37y0h4lz223hh4xkaa6z8679mbvp4pk7p86b95s"))))
+        (base32 "1lqaw3a4wlfvbgxphzr6fwykl3b4glj3cmb7jywcdhbik2lngjfn"))))
     (properties `((upstream-name . "memoiR")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -34635,6 +34553,38 @@ more sophisticated ones such as dihedral angle maps, hydrogen bonds, cluster bar
 plots and DSSP (Definition of Secondary Structure of Proteins) analysis.
 Currently able to load GROMOS, GROMACS and AMBER formats, respectively.")
     (license license:gpl3)))
+
+(define-public r-mdpiexplorer
+  (package
+    (name "r-mdpiexplorer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MDPIexploreR" version))
+       (sha256
+        (base32 "1amndzpmm739cnhk66acpv50xmklc5pcxaqvfcsfhd2d7pxyvw8g"))))
+    (properties `((upstream-name . "MDPIexploreR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-scales
+                             r-rvest
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://pgomba.github.io/MDPI_explorer/")
+    (synopsis "Web Scraping and Bibliometric Analysis of MDPI Journals")
+    (description
+     "This package provides comprehensive tools to scrape and analyze data from the
+MDPI journals.  It allows users to extract metrics such as
+submission-to-acceptance times, article types, and whether articles are part of
+special issues.  The package can also visualize this information through plots.
+Additionally, MDP@code{IexploreR} offers tools to explore patterns of
+self-citations within articles and provides insights into guest-edited special
+issues.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-mdpeer
   (package
@@ -39923,13 +39873,13 @@ and the house allocation problem (Shapley and Scarf, 1974)
 (define-public r-matching
   (package
     (name "r-matching")
-    (version "4.10-14")
+    (version "4.10-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Matching" version))
        (sha256
-        (base32 "1c56yqr6zlbgjjw61c10fwbxxh4i5ng2krny9p6cz7d2bmm2id5z"))))
+        (base32 "1l6ygj6jqb7w4n6x87j02bhd7411mh4zf7ajr9414frwj1dqzv9h"))))
     (properties `((upstream-name . "Matching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

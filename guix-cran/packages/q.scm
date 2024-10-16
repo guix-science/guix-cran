@@ -67,13 +67,13 @@ precision of LAPACK library (version 3.10.0 or later).")
 (define-public r-qwraps2
   (package
     (name "r-qwraps2")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qwraps2" version))
        (sha256
-        (base32 "06i3h6ydjfvy7qrhzznsb272r843fgvykfsgaviq83gi8k5c5i00"))))
+        (base32 "1zv3yg5b32irh3paz2qwwhj2cn3a9laqi4d5gwlk8qmjiacxq6bh"))))
     (properties `((upstream-name . "qwraps2")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-rcpparmadillo r-rcpp r-knitr r-ggplot2))
@@ -3427,6 +3427,49 @@ provides graphical summaries for assessing the algorithm convergence and fitting
 results.")
     (license license:gpl2+)))
 
+(define-public r-qrlabelr
+  (package
+    (name "r-qrlabelr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qrlabelr" version))
+       (sha256
+        (base32 "1bv76d3fkficcaqg4kzkkxjq1p24c6hxd25jyfia96nkmxyds44m"))))
+    (properties `((upstream-name . "qrlabelr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shinybs
+                             r-shiny
+                             r-readxl
+                             r-reactable
+                             r-raster
+                             r-qrencoder
+                             r-qbms
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-desplot
+                             r-bslib
+                             r-assertthat
+                             r-argonr
+                             r-argondash))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=qrlabelr")
+    (synopsis
+     "Generate Machine- And Human-Readable Plot Labels for Experiments")
+    (description
+     "This package provides a no-frills open-source solution for designing plot labels
+affixed with QR codes.  It features @code{EasyQrlabelr}', a
+@code{BrAPI-compliant} shiny app that simplifies the process of plot label
+design for non-R users.  It builds on the methods described by Wu et al. (2020)
+<doi:10.1111/2041-210X.13405>.")
+    (license license:gpl3+)))
+
 (define-public r-qrjoint
   (package
     (name "r-qrjoint")
@@ -4296,13 +4339,13 @@ recoding of nominal data.")
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.12")
+    (version "0.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlcal" version))
        (sha256
-        (base32 "1q8944agv3wdd1ylssk7p11mms0s3jpy3ai0rnhafdj4spycwgp2"))))
+        (base32 "0gp16hc3fbq07f1qai9sy1bwzjmmrf0gkb8xnnszqapiv2b1m96x"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))

@@ -2317,13 +2317,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "0wgj0pb0h4f1n6gaml0hgbxs5pdwq6dhlmc40nk80zh95shfbhj6"))))
+        (base32 "0p2y119aqy947jkagw89hvy44pzwx3rhd1ipylpilhj57lzl4l63"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -2336,7 +2336,7 @@ of GPU-accelerated machine learning libraries powered by CUDA
                              r-fs
                              r-dplyr
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/jakubsob/cucumber")
     (synopsis "Behavior-Driven Development for R")
     (description
@@ -10915,13 +10915,13 @@ their own methods for randomization.  Rosenthal and Rubin (1994)
 (define-public r-counterfactuals
   (package
     (name "r-counterfactuals")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "counterfactuals" version))
        (sha256
-        (base32 "1sv7gswhwnhci07lvgvcnfvb7zav76r3576ymp704l6llhs44ybm"))))
+        (base32 "12nzq3a59vzjnc4r0awhzgacr3c8pfrkwyibdhmqfr79bwzc79cb"))))
     (properties `((upstream-name . "counterfactuals")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmatch
@@ -22813,17 +22813,16 @@ data frame.")
 (define-public r-codebook
   (package
     (name "r-codebook")
-    (version "0.9.2")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codebook" version))
        (sha256
-        (base32 "0hxyzwpjbvfzad8h2428q94m961mmwvv28nagw2d36qxd10awh16"))))
+        (base32 "1jh5qm2qzsvs9pzb67c3z0v5shdzhmqklzp7a9zq9izr9385ilmy"))))
     (properties `((upstream-name . "codebook")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
-                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -22840,10 +22839,11 @@ data frame.")
                              r-haven
                              r-glue
                              r-ggplot2
+                             r-future
                              r-forcats
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rubenarslan/codebook")
+    (home-page "https://rubenarslan.github.io/codebook/")
     (synopsis
      "Automatic Codebooks from Metadata Encoded in Dataset Attributes")
     (description
@@ -23209,13 +23209,13 @@ samples to obtain bias-free, inter-dataset corrected data.")
 (define-public r-cocons
   (package
     (name "r-cocons")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocons" version))
        (sha256
-        (base32 "0km96f23svwraab6z4zcngq024hmgdwb18j10pna7izm4gd8ndn5"))))
+        (base32 "164iw0hs6l2i6z2lbar0m8szshgfg0lq7daax0zl3fyhmxcmzyrw"))))
     (properties `((upstream-name . "cocons")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -23229,9 +23229,12 @@ samples to obtain bias-free, inter-dataset corrected data.")
     (synopsis
      "Covariate-Based Covariance Functions for Nonstationary Spatial Modeling")
     (description
-     "Estimation and prediction of nonstationary Gaussian process with modular
-covariate-based covariance functions.  Routines for handling large datasets are
-also provided.")
+     "Estimation, prediction, and simulation of nonstationary Gaussian process with
+modular covariate-based covariance functions.  Sources of nonstationarity, such
+as trend, variance, geometric anisotropy, smoothness, and nugget, can be
+considered based on spatial characteristics.  An induced compact-supported
+nonstationary covariance function is provided, enabling fast and
+memory-efficient computations when handling densely sampled domains.")
     (license license:gpl3+)))
 
 (define-public r-coconots
@@ -25175,6 +25178,39 @@ defined as a local or directional cluster, is associated with a latent variable.
  External variables measured on the same observations or/and additional
 information on the variables can be taken into account.  A \"noise\" cluster or
 sparse latent variables can also be defined.")
+    (license license:gpl3)))
+
+(define-public r-clusttmb
+  (package
+    (name "r-clusttmb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clustTMB" version))
+       (sha256
+        (base32 "0dzqchr66cwcmvvaz1yfxfh46kd5f2qhlaivynyxww4rix5grlhy"))))
+    (properties `((upstream-name . "clustTMB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb
+                             r-sf
+                             r-reformulas
+                             r-rcppeigen
+                             r-moeclust
+                             r-mclust
+                             r-matrix
+                             r-lme4
+                             r-fmesher
+                             r-clustmixtype
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Andrea-Havron/clustTMB")
+    (synopsis "Spatio-Temporal Finite Mixture Model using 'TMB'")
+    (description
+     "Fits a spatio-temporal finite mixture model using TMB'.  Covariate, spatial and
+temporal random effects can be incorporated into the gating formula using
+multinomial logistic regression, the expert formula using a generalized linear
+mixed model framework, or both.")
     (license license:gpl3)))
 
 (define-public r-clustshiny
@@ -33580,13 +33616,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "0lgnsaq2p9vxi1fshnziag57fy9ajr5jxykkhk6dbx88z4if9dxq"))))
+        (base32 "0354a3yn56a6m4f0zf9hxv0cany3aivh4d265jh7b6zyk498h26y"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-collapse))
@@ -34895,17 +34931,23 @@ survival analysis models.")
 (define-public r-cfo
   (package
     (name "r-cfo")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFO" version))
        (sha256
-        (base32 "12qbg1b3gad3bhqcqnhgqnb3hnpk6bwxpnza1wb9qw6hlkfdxgz4"))))
+        (base32 "1dixm7xg341yw8qpbdz5gx0d8lnil02fcpz4n37pkgx42qd3qxmh"))))
     (properties `((upstream-name . "CFO")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-pbapply r-iso r-ggplot2 r-dplyr))
-    (home-page "https://cran.r-project.org/package=CFO")
+    (propagated-inputs (list r-survival
+                             r-scales
+                             r-rcolorbrewer
+                             r-pbapply
+                             r-iso
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://clinicaltrialdesign.shinyapps.io/cfoapp")
     (synopsis "CFO-Type Designs in Phase I/II Clinical Trials")
     (description
      "In phase I clinical trials, the primary objective is to ascertain the maximum
@@ -34915,24 +34957,25 @@ drug based on the MTD obtained from the phase I trials, with the aim of
 identifying the optimal biological dose (OBD).  The CFO package facilitates the
 implementation of dose-finding trials by utilizing calibration-free odds type
 (CFO-type) designs.  Specifically, it encompasses the calibration-free odds
-(CFO) (Jin and Yin (2022) <doi:10.1177/09622802221079353>), two-dimensional CFO
-(2@code{dCFO}) (Wang et al. (2023) <doi:10.3389/fonc.2023.1294258>),
-time-to-event CFO (TITE-CFO) (Jin and Yin (2023) <doi:10.1002/pst.2304>),
-fractional CFO (@code{fCFO}), accumulative CFO (@code{aCFO}), TITE-@code{aCFO},
-and f-@code{aCFO} designs (Fang and Yin (2024) <doi: 10.1002/sim.10127>).  It
-supports phase I/II trials for the CFO design and only phase I trials for the
-other CFO-type designs.  The âCFO package accommodates diverse CFO-type
-designs, allowing users to tailor the approach based on factors such as dose
-information inclusion, handling of late-onset toxicity, and the nature of the
-target drug (single-drug or drug-combination).  The functionalities embedded in
-CFO package include the determination of the dose level for the next cohort, the
-selection of the MTD for a real trial, and the execution of single or multiple
-simulations to obtain operating characteristics.  Moreover, these functions are
-equipped with early stopping and dose elimination rules to address safety
-considerations.  Users have the flexibility to choose different distributions,
-thresholds, and cohort sizes among others for their specific needs.  The output
-of the CFO package can be summary statistics as well as various plots for better
-visualization.")
+(CFO) (Jin and Yin (2022) <doi:10.1177/09622802221079353>), randomized CFO
+(@code{rCFO}), two-dimensional CFO (2@code{dCFO}) (Wang et al. (2023)
+<doi:10.3389/fonc.2023.1294258>), time-to-event CFO (TITE-CFO) (Jin and Yin
+(2023) <doi:10.1002/pst.2304>), fractional CFO (@code{fCFO}), accumulative CFO
+(@code{aCFO}), TITE-@code{aCFO}, and f-@code{aCFO} designs (Fang and Yin (2024)
+<doi: 10.1002/sim.10127>).  It supports phase I/II trials for the CFO design and
+only phase I trials for the other CFO-type designs.  The âCFO package
+accommodates diverse CFO-type designs, allowing users to tailor the approach
+based on factors such as dose information inclusion, handling of late-onset
+toxicity, and the nature of the target drug (single-drug or drug-combination).
+The functionalities embedded in CFO package include the determination of the
+dose level for the next cohort, the selection of the MTD for a real trial, and
+the execution of single or multiple simulations to obtain operating
+characteristics.  Moreover, these functions are equipped with early stopping and
+dose elimination rules to address safety considerations.  Users have the
+flexibility to choose different distributions, thresholds, and cohort sizes
+among others for their specific needs.  The output of the CFO package can be
+summary statistics as well as various plots for better visualization.  An
+interactive web application for CFO is available at the provided URL.")
     (license license:gpl2)))
 
 (define-public r-cfmortality
@@ -35392,13 +35435,13 @@ installation of packages from non-standard repositories.")
 (define-public r-certara-nlme8
   (package
     (name "r-certara-nlme8")
-    (version "1.2.4")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Certara.NLME8" version))
        (sha256
-        (base32 "10zmzfx2aqxj5gpingl6hkq6vb7q0shhkzar2jr30br7nzfll1sd"))))
+        (base32 "0ddwlrkb1cxjkpq12fy7ig3vp1wyxgvfa6lsvdbm111r6xbwz79j"))))
     (properties `((upstream-name . "Certara.NLME8")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-reshape r-data-table r-batchtools))
@@ -38234,20 +38277,20 @@ robust and nonparametric methods.")
 (define-public r-ccamlrgis
   (package
     (name "r-ccamlrgis")
-    (version "4.1.1")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCAMLRGIS" version))
        (sha256
-        (base32 "0ldgmkfjw16ncrjc1jglvq63zs7iwc67b9c4wxbrw8na344mvk94"))))
+        (base32 "1yx589sfc3amwgq68cwbs4p4n3nn1i1kgd1hakvmpv10zn2v8fqa"))))
     (properties `((upstream-name . "CCAMLRGIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
-                             r-stars
                              r-sf
                              r-magrittr
                              r-lwgeom
+                             r-isoband
                              r-dplyr
                              r-bezier))
     (native-inputs (list r-knitr))

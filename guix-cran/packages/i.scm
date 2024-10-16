@@ -13563,13 +13563,13 @@ Project <https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al.
 (define-public r-iglu
   (package
     (name "r-iglu")
-    (version "4.1.6")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglu" version))
        (sha256
-        (base32 "1v73715hjmmyn1264m0q1skirvgfjwx316vlslysr5bvbcwggljf"))))
+        (base32 "09ky2mg1x8kqxb87qs8piwmbbkd3z56f46k0bvpxz8sj1c1pq2vj"))))
     (properties `((upstream-name . "iglu")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -17455,13 +17455,13 @@ Insights service output.")
 (define-public r-ibmpopsim
   (package
     (name "r-ibmpopsim")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IBMPopSim" version))
        (sha256
-        (base32 "0dxw3ibvfnqva3f0nk5w9q8y2sx0hla619f6yq6b31apxnbxp72p"))))
+        (base32 "1n2zxk6i1xk7ksc1qnhwb63f1plj6jyagf0qdahym8chai9igv6w"))))
     (properties `((upstream-name . "IBMPopSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

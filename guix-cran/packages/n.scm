@@ -2723,15 +2723,16 @@ multivariate observations.")
 (define-public r-npcox
   (package
     (name "r-npcox")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NPCox" version))
        (sha256
-        (base32 "0l3nrs7mqcpbh8qjzn6ckr6r12zzawb6jsmqb52ljhamrvskmg9j"))))
+        (base32 "19yrbq88z8gx0gbjrcfs2mqzdyjp82ldsgrqac9xkfjmdaj22zzs"))))
     (properties `((upstream-name . "NPCox")))
     (build-system r-build-system)
+    (propagated-inputs (list r-progress))
     (home-page "https://cran.r-project.org/package=NPCox")
     (synopsis "Nonparametric and Semiparametric Proportional Hazards Model")
     (description
@@ -5367,13 +5368,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.9.2")
+    (version "10.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "1qz810jj63wfkbwqrkd90x6m08j1k8c66mk01hx4bha6vqx48cww"))))
+        (base32 "0vdr9pdv0qrjdjv318wyrfx0dhlmsvrr5s9ynsnzpn699k1szr1l"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -11316,6 +11317,36 @@ predict the graph structure at a future time point Kandanaarachchi (2024)
 <doi:10.48550/@code{arXiv.2401.04280>}.")
     (license license:gpl3+)))
 
+(define-public r-netsci
+  (package
+    (name "r-netsci")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetSci" version))
+       (sha256
+        (base32 "1fpx8vzylhfqw6hh9c4jm94wkq8l0zj1wv7ayp7p6ipamcm2az0l"))))
+    (properties `((upstream-name . "NetSci")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wto
+                             r-rfast
+                             r-magrittr
+                             r-igraph
+                             r-dplyr
+                             r-cubature
+                             r-binr))
+    (home-page "https://cran.r-project.org/package=NetSci")
+    (synopsis
+     "Calculates Basic Network Measures Commonly Used in Network Medicine")
+    (description
+     "Calculates network measures commonly used in Network Medicine.  Measures such as
+the Largest Connected Component, the Relative Largest Connected Component,
+Proximity and Separation are calculated along with their statistical
+significance.  Significance can be computed both using a degree-preserving
+randomization and non-degree preserving.")
+    (license license:gpl2)))
+
 (define-public r-nets
   (package
     (name "r-nets")
@@ -13651,20 +13682,22 @@ onward), the package can retrieve the aspatial Gini Index based Gini (1921)
 (define-public r-nda
   (package
     (name "r-nda")
-    (version "0.1.13")
+    (version "0.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nda" version))
        (sha256
-        (base32 "1v3nfjq0v0vjv3871qsx7sxl5b6p74187cvacj3jfjyxbzghb8pc"))))
+        (base32 "18kl1c12anhladf2cr5wyxm67mxd83ykj52fig57gs806xzcafac"))))
     (properties `((upstream-name . "nda")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
+                             r-rfast
                              r-psych
                              r-ppcor
                              r-matrix
                              r-mass
+                             r-leidenalg
                              r-igraph
                              r-energy))
     (home-page "https://github.com/kzst/nda")
@@ -13673,7 +13706,7 @@ onward), the package can retrieve the aspatial Gini Index based Gini (1921)
     (description
      "Non-parametric dimensionality reduction function.  Reduction with and without
 feature selection.  Plot functions.  Automated feature selections.  Kosztyan et.
- al. (2022) <doi:10.1016/j.knosys.2022.109180>.")
+ al. (2024) <doi:10.1016/j.eswa.2023.121779>.")
     (license license:gpl2+)))
 
 (define-public r-ncvreg
@@ -13940,24 +13973,24 @@ files.")
 (define-public r-ncdfcf
   (package
     (name "r-ncdfcf")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncdfCF" version))
        (sha256
-        (base32 "1q6q36zml4lm3yznsb245ll80a1mdgykmrk6chq0ymn64azbd73l"))))
+        (base32 "0fqn438yi85i17xkgxd9i63fsfxfwz99mghi6bp687hp4g6vh5fd"))))
     (properties `((upstream-name . "ncdfCF")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rnetcdf r-cftime))
+    (propagated-inputs (list r-stringr r-rnetcdf r-r6 r-cftime))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ncdfCF")
+    (home-page "https://github.com/pvanlaake/ncdfCF")
     (synopsis "Easy Access to NetCDF Files with CF Metadata Conventions")
     (description
-     "Network Common Data Form (@code{NetCDF}) files are widely used for scientific
+     "Network Common Data Form ('@code{netCDF}') files are widely used for scientific
 data.  Library-level access in R is provided through packages R@code{NetCDF} and
 ncdf4'.  Package @code{ncdfCF} is built on top of R@code{NetCDF} and makes the
-data and its attributes available as a set of S4 classes that are informed by
+data and its attributes available as a set of R6 classes that are informed by
 the Climate and Forecasting Metadata Conventions.  Access to the data uses
 standard R subsetting operators and common function forms.")
     (license license:expat)))
@@ -15952,13 +15985,13 @@ and information that are specific to the country.")
 (define-public r-naflex
   (package
     (name "r-naflex")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naflex" version))
        (sha256
-        (base32 "18fqfhm6p38z4h8dznac5v8yz53n86cw2x6ma29kvcbvdp4r3yd2"))))
+        (base32 "0h5dciabqqqsy8m7f8h6jmhp35c7hphk5pp2csxlg31x75jjs79d"))))
     (properties `((upstream-name . "naflex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
