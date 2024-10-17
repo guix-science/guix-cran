@@ -111,13 +111,13 @@ regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
 (define-public r-lwfbrook90r
   (package
     (name "r-lwfbrook90r")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LWFBrook90R" version))
        (sha256
-        (base32 "1hh0b21czf1sib05y67x5qajkhig25b2mpxccj2hq69wkfdw2spz"))))
+        (base32 "1hh633ax4l4hvb09bqyx5j3v71v7n5n0v93pi49nisl48dsbpq2i"))))
     (properties `((upstream-name . "LWFBrook90R")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegperiod
@@ -7284,13 +7284,13 @@ or gls models.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.31")
+    (version "1.0.40")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "0by3cvnlap50fhag9vsqxpsbi4ywk1cf72v8p48ckx31x130vh1p"))))
+        (base32 "1dlgdpd1gzwkkvijqg479r6fx4jbzg6ifv0hwrxqlilxva84fya0"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lme4 r-crayon))
@@ -7872,13 +7872,13 @@ potentially a limited number of times.")
 (define-public r-litedown
   (package
     (name "r-litedown")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "litedown" version))
        (sha256
-        (base32 "1c60bmw02yqq96106q227sjw6nly8r0fhs2yvm32zhhzs4j5ldcj"))))
+        (base32 "1324iw339img4nacpp79n1md6argxzcxhlr5kccscldwzx6q9a6a"))))
     (properties `((upstream-name . "litedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-commonmark))
@@ -7886,16 +7886,16 @@ potentially a limited number of times.")
     (synopsis "Lightweight Version of R Markdown")
     (description
      "Render R Markdown to Markdown (without using knitr'), and Markdown to
-lightweight HTML/@code{LaTeX} documents with the commonmark package (instead of
-Pandoc').  Some missing Markdown features in commonmark are also supported, such
-as raw HTML/@code{LaTeX} blocks, @code{LaTeX} math, superscripts, subscripts,
-footnotes, element attributes, and appendices, but not all Pandoc Markdown
-features are (or will be) supported.  With additional @code{JavaScript} and CSS,
-you can also create HTML slides and articles.  This package can be viewed as a
-trimmed-down version of R Markdown and knitr'.  It does not aim at rich Markdown
-features or a large variety of output formats (the primary formats are HTML and
-@code{LaTeX}).  Book and website projects of multiple input documents are also
-supported.")
+lightweight HTML or @code{LaTeX} documents with the commonmark package (instead
+of Pandoc').  Some missing Markdown features in commonmark are also supported,
+such as raw HTML or @code{LaTeX} blocks, @code{LaTeX} math, superscripts,
+subscripts, footnotes, element attributes, and appendices, but not all Pandoc
+Markdown features are (or will be) supported.  With additional @code{JavaScript}
+and CSS, you can also create HTML slides and articles.  This package can be
+viewed as a trimmed-down version of R Markdown and knitr'.  It does not aim at
+rich Markdown features or a large variety of output formats (the primary formats
+are HTML and @code{LaTeX}').  Book and website projects of multiple input
+documents are also supported.")
     (license license:expat)))
 
 (define-public r-lite
@@ -15060,25 +15060,23 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaangui
   (package
     (name "r-lavaangui")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaangui" version))
        (sha256
-        (base32 "075zly1my5jhs4n7ylqx0lm4mky3z6ylirsd7smih3nkxn2y854m"))))
+        (base32 "03vql5cip31zvj657k77analql9sj5kw2737z7jsjwggdm393p2x"))))
     (properties `((upstream-name . "lavaangui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
                              r-readxl
                              r-readr
-                             r-qgraph
                              r-promises
                              r-plyr
                              r-lavaan
                              r-jsonlite
                              r-igraph
-                             r-htmlwidgets
                              r-haven
                              r-future
                              r-dt
@@ -15093,9 +15091,8 @@ lavaan path model without having to write the DOT language graph specification."
 for latent variables from the lavaan package.  It offers two core functions:
 first, lavaangui() launches a web application that allows users to specify
 models by drawing path diagrams, fitting them, assessing model fit, and more;
-second, plot_interactive() creates interactive path diagrams from models
-specified in lavaan'.  Karch (2024) <doi: 10.31234/osf.io/f4ary> contains a
-tutorial.")
+second, plot_lavaan() creates interactive path diagrams from models specified in
+lavaan'.  Karch (2024) <doi: 10.31234/osf.io/f4ary> contains a tutorial.")
     (license license:gpl3+)))
 
 (define-public r-lavaanextra

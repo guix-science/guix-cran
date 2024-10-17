@@ -2441,13 +2441,13 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "4.1.2")
+    (version "4.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSODR" version))
        (sha256
-        (base32 "1kaz9pwrbzjwa5q0k6xhzm2x0hfldz9flckx6kd1i5ddqmlhfh92"))))
+        (base32 "0zqc0md2h2r0f0h9k8q70kdjnx35lvn8dnmzpxq0vwlkd0vzfyrn"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-r-utils r-data-table r-curl
@@ -5518,13 +5518,13 @@ Tree Method is implemented, as is presented in Hull, J. C. (2017).")
 (define-public r-greekletters
   (package
     (name "r-greekletters")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greekLetters" version))
        (sha256
-        (base32 "0c52lfpm0awd3hc6ggnjqz5ymcbbm74qlj9iznkd5gln85q29vqc"))))
+        (base32 "1bsdxzfz8ipa4c8xl2gjjymy20skqf5x52lqkn5wyxiln3dyx3vn"))))
     (properties `((upstream-name . "greekLetters")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-assertthat))
@@ -7588,13 +7588,13 @@ API, see <https://platform.openai.com/docs/introduction>.")
 (define-public r-gptreeo
   (package
     (name "r-gptreeo")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPTreeO" version))
        (sha256
-        (base32 "0nwvylx9sazc4dv1mca1lfkz482f2vn591ajafwip61mkjkf6mac"))))
+        (base32 "0526qy3d067nh5753rqyfgmylz7fc27hc0nfvzxisx8kifmjbzcv"))))
     (properties `((upstream-name . "GPTreeO")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-mlegp r-hash r-dicekriging))
@@ -8136,13 +8136,13 @@ von der Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
 (define-public r-gpgp
   (package
     (name "r-gpgp")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GpGp" version))
        (sha256
-        (base32 "0rx22sc911s2wkqapsgzwmspmxshm84rrwp70rlpczgvylyvzh53"))))
+        (base32 "13hkni4w39rkb6ki03i9nfz2cgz8yr7kxcha3n8ivz834gsfzj77"))))
     (properties `((upstream-name . "GpGp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-fnn r-bh))
@@ -8159,7 +8159,7 @@ and spheres are provided.  The original approximation is due to Vecchia (1988)
 <http://www.jstor.org/stable/2345768>, and the reordering and grouping methods
 are from Guinness (2018) <doi:10.1080/00401706.2018.1437476>.  Model fitting
 employs a Fisher scoring algorithm described in Guinness (2019)
-<@code{arXiv:1905.08374>}.")
+<doi:10.48550/@code{arXiv.1905.08374>}.")
     (license license:expat)))
 
 (define-public r-gpgame
@@ -21737,21 +21737,22 @@ A. (2009) <doi:10.48550/@code{arXiv.0807.4052>}.")
 (define-public r-gepaf
   (package
     (name "r-gepaf")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gepaf" version))
        (sha256
-        (base32 "0n36w40jrq3qkgmhz9wrnhp6fczw7bm96g950sa4nq33872xhfgm"))))
+        (base32 "1fmxm8dzz8jx9qc7q9rwxh8zm8flwb9xkbpbv50526klsixp0qs3"))))
     (properties `((upstream-name . "gepaf")))
     (build-system r-build-system)
     (propagated-inputs (list r-bitops))
-    (home-page "https://github.com/mthh/gepaf")
+    (home-page "https://github.com/riatelab/gepaf")
     (synopsis "Google Encoded Polyline Algorithm Format")
     (description
-     "Encode and decode the Google Encoded Polyline Algorithm Format
-(<https://developers.google.com/maps/documentation/utilities/polylinealgorithm>).")
+     "Encode and decode the Google Encoded Polyline Algorithm Format.  See
+<https://developers.google.com/maps/documentation/utilities/polylinealgorithm>
+for more information.")
     (license license:gpl3)))
 
 (define-public r-geozoo

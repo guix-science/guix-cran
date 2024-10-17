@@ -23048,13 +23048,13 @@ for GPS data.")
 (define-public r-spats
   (package
     (name "r-spats")
-    (version "1.0-18")
+    (version "1.0-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpATS" version))
        (sha256
-        (base32 "1p7ibi4593a6f5ww02l74afxaxgk2nh8h67l43vm2p7zfmdxx2b3"))))
+        (base32 "06fyns1g1iapps0f3g2555rl2cval91icc1ydszh6zv0zhq7m0la"))))
     (properties `((upstream-name . "SpATS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam r-fields r-data-table))
@@ -29247,13 +29247,13 @@ refers to the key units of computation: spin vector s and orbit normal vector n.
 (define-public r-snsmart
   (package
     (name "r-snsmart")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snSMART" version))
        (sha256
-        (base32 "0d05wn2w9x7gapaz94zpf251rh2mld8agsir3hqbzjyil14xrpv6"))))
+        (base32 "0sy8wvrjw1cbdlcdsjqk08k00v7bk1szkzv0a4xff56dis7z2hz3"))))
     (properties `((upstream-name . "snSMART")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -29276,7 +29276,7 @@ trial) designs under one library.  See Wei, B., Braun, T.M., Tamura, R.N. and
 Kidwell, K.M. \"A Bayesian analysis of small n sequential multiple assignment
 randomized trials (@code{snSMARTs}).\" (2018) Statistics in medicine, 37(26),
 pp.3723-3732 <doi:10.1002/sim.7900>.")
-    (license license:gpl2)))
+    (license license:gpl2+)))
 
 (define-public r-snsfdatasets
   (package
@@ -31606,13 +31606,13 @@ Amazon Web Service @code{CodeBuild} <https://aws.amazon.com/codebuild/>.")
 (define-public r-smdic
   (package
     (name "r-smdic")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMDIC" version))
        (sha256
-        (base32 "1dx6k67cbk863l9vvp870syn23l7vwxylgs980mp418nfj3d1s23"))))
+        (base32 "1g1q079krf0a5aqbfgzv7kg1vv0r3q3m4kfh1fcvn0wj02drsfjx"))))
     (properties `((upstream-name . "SMDIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -34955,17 +34955,17 @@ matching, @code{sitepickR} uses the @code{MatchIt} R package
 (define-public r-sit
   (package
     (name "r-sit")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIT" version))
        (sha256
-        (base32 "0s6fqw6gh96d0a194jh6qnph90zjvgjbh9fhprwncb4k2zma40rm"))))
+        (base32 "1hy5a74kp4xpmhw3cip8ccjbhdzfndnppmsk97zzxlblkl46kj3m"))))
     (properties `((upstream-name . "SIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=SIT")
+    (home-page "https://github.com/canyi-chen/SIT")
     (synopsis "Association Measurement Through Sliced Independence Test (SIT)")
     (description
      "Computes the sit coefficient between two vectors x and y, possibly all paired
@@ -37656,13 +37656,13 @@ networks.")
 (define-public r-simmr
   (package
     (name "r-simmr")
-    (version "0.5.1.216")
+    (version "0.5.1.217")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simmr" version))
        (sha256
-        (base32 "0rvf6b0x6iivgp1czj98972p8gr1g96sc3g55p30gnw08b48i1x5"))))
+        (base32 "15b24mmmljajfp5yrgfbnk9wm53vrky9sza3hsl4i77pvikdpf9q"))))
     (properties `((upstream-name . "simmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -53139,13 +53139,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "1fx9askdq749ajg6fhahpn39lpibxlknx4zbnlryhfjiq490dr7b"))))
+        (base32 "00armg1ly0xd0p4n2b63sb2rj0rwinqx7c6cilh1j5z9s1ib1z9k"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

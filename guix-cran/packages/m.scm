@@ -2714,6 +2714,39 @@ using latent effects based on the Chib and Winkelmann (2001)
 <http://www.jstor.org/stable/1392277> proposal.")
     (license license:expat)))
 
+(define-public r-multpois
+  (package
+    (name "r-multpois")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multpois" version))
+       (sha256
+        (base32 "16y3dw9hsslafxznqpmnksvsf0wrnddfgzyghz1b34yxrbvsq5yg"))))
+    (properties `((upstream-name . "multpois")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plyr r-lme4 r-dplyr r-dfidx r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wobbrock/multpois/")
+    (synopsis
+     "Analyze Nominal Response Data with the Multinomial-Poisson Trick")
+    (description
+     "Dichotomous responses having two categories can be analyzed with stats::glm() or
+lme4::glmer() using the family=binomial option.  Unfortunately, polytomous
+responses with three or more unordered categories cannot be analyzed similarly
+because there is no analogous family=multinomial option.  For between-subjects
+data, nnet::multinom() can address this need, but it cannot handle random
+factors and therefore cannot handle repeated measures.  To address this gap, we
+implement the multinomial-Poisson trick (Baker 1994) <doi:10.2307/2348134>,
+which transforms nominal response data into counts for each categorical
+alternative.  These counts are then analyzed using (mixed) Poisson regression.
+Omnibus analyses of variance can be run along with post hoc pairwise
+comparisons.  For users wishing to analyze nominal responses from surveys or
+experiments, the functions in this package essentially act as though
+stats::glm() or lme4::glmer() had a family=multinomial option.")
+    (license license:gpl2+)))
+
 (define-public r-multordrs
   (package
     (name "r-multordrs")
@@ -42054,16 +42087,16 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "1qc46cw12z82plncqfwnq25vfypfglvm9yfp9x8vqfxk4g0h24l3"))))
+        (base32 "1ybwpyh2qk9ik0wqc42yg0zkdpavxxvar94ar9k3xw3g6ivq3dzw"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcy3 r-igraph r-fastcluster))
+    (propagated-inputs (list r-igraph r-fastcluster))
     (home-page "https://github.com/Uiowa-Applied-Topology/mappeR")
     (synopsis "Construct and Visualize TDA Mapper Graphs")
     (description

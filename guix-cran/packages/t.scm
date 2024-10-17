@@ -4652,13 +4652,13 @@ developed using the algorithm of Paul and Garai (2021)
 (define-public r-tsallisqexp
   (package
     (name "r-tsallisqexp")
-    (version "0.9-4")
+    (version "0.9-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsallisqexp" version))
        (sha256
-        (base32 "07ymkrik1vwblcj5i0crihbrrxkrn8xjkap3lrzxy4vidgqalw3f"))))
+        (base32 "0227qyz2s4nyrbz5ci8v1rg97pfsm143b99g3m8hw09vswj2b29q"))))
     (properties `((upstream-name . "tsallisqexp")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=tsallisqexp")
@@ -26773,13 +26773,13 @@ tidymodels ecosystem.")
 (define-public r-tablexlsx
   (package
     (name "r-tablexlsx")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablexlsx" version))
        (sha256
-        (base32 "11xnazwsmm3gwmwqnqjv2yc3bwcz5na168dkl8i2g7p983z4999p"))))
+        (base32 "05vbm0s96m6jm7idxqgpfa4yz0zmpkjz3dxr7ygd9ph1dv8z1frg"))))
     (properties `((upstream-name . "tablexlsx")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx r-magrittr r-cli))

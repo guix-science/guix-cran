@@ -20287,13 +20287,13 @@ functions for visualization and diagnostic.")
 (define-public r-pln
   (package
     (name "r-pln")
-    (version "0.2-2")
+    (version "0.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pln" version))
        (sha256
-        (base32 "03jjmfr1dwz6p652y917g9rv2alyam9ws6xh9ig02d3w78b0rsv9"))))
+        (base32 "1fasqp3dgspj0my1b1p4w8csq4jdb7089690c4gf5clg20qq0mmg"))))
     (properties `((upstream-name . "pln")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pln")
@@ -25554,32 +25554,6 @@ proportional hazards model.")
 Mendelian disease and rare genetic variants.  See Bastarache et al.  2018
 <doi:10.1126/science.aal4043>.")
     (license license:gpl2)))
-
-(define-public r-phenthauproc
-  (package
-    (name "r-phenthauproc")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PHENTHAUproc" version))
-       (sha256
-        (base32 "1bhd147mhv1xj4q6yqz92n8vi6nji093y78pi1jkav1plwx2qf3c"))))
-    (properties `((upstream-name . "PHENTHAUproc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-rlang r-lubridate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PHENTHAUproc")
-    (synopsis "Phenology Modelling of Thaumetopoea Processionea")
-    (description
-     "This package provides methods to calculate and present PHENTHAUproc', an early
-warning and decision support system for hazard assessment and control of oak
-processionary moth (OPM) using local and spatial temperature data.  It was
-created by Halbig et al.  2024 (<doi:10.1016/j.foreco.2023.121525>) at FVA
-(<https://www.fva-bw.de/en/homepage/>) Forest Research Institute
-Baden-Wuerttemberg, Germany and at BOKU - University of Natural Ressources and
-Life Sciences, Vienna, Austria.")
-    (license license:expat)))
 
 (define-public r-phenotypesimulator
   (package
@@ -38960,13 +38934,13 @@ in web applications, and much more.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "0k5lby2gfvqa6d9r0js3n9k6s62cnj2b31vrpik6wf4nbrps709m"))))
+        (base32 "0psm8y3x4ndcjppbxhgznvvv8rlgipabnklg13jkds05dzdlq316"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-sugrrants
@@ -38983,7 +38957,7 @@ in web applications, and much more.")
                              r-cranlogs))
     (home-page "https://github.com/lindbrook/packageRank")
     (synopsis
-     "Computation and Visualization of Package Download Counts and Percentiles")
+     "Computation and Visualization of Package Download Counts and Percentile Ranks")
     (description
      "Compute and visualize the cross-sectional and longitudinal number and rank
 percentile of package downloads from Posit/RStudio's CRAN mirror.")

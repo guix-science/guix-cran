@@ -8023,6 +8023,28 @@ and output values in user-defined functions, resulting in tidier and less
 verbose functions.")
     (license license:expat)))
 
+(define-public r-inspectionplanner
+  (package
+    (name "r-inspectionplanner")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InspectionPlanner" version))
+       (sha256
+        (base32 "0fk4s7qgp1v29kfa0v8q8j2rb3j9cjz1mmd4i3qgw1gf0dwz9cki"))))
+    (properties `((upstream-name . "InspectionPlanner")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rmarkdown r-htmltools))
+    (home-page "https://cran.r-project.org/package=InspectionPlanner")
+    (synopsis "Phytosanitary Inspection Sampling Planner")
+    (description
+     "This package provides a shiny application to assist in phytosanitary
+inspections.  It generates a diagram of pallets in a lot, highlights the units
+to be sampled, and documents them based on the selected sampling method (simple
+random or systematic sampling).")
+    (license license:gpl3)))
+
 (define-public r-inspectdf
   (package
     (name "r-inspectdf")
@@ -8464,13 +8486,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlaspacetime
   (package
     (name "r-inlaspacetime")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAspacetime" version))
        (sha256
-        (base32 "06wn4za5lbcj135xrh4pxcll3wwm1g5yjs61wngp98yhlik8i1hl"))))
+        (base32 "0kdcpy6dzzkp1j5x6b4shfd8xn248ryh6mq7j522i3a1vn1v3pjc"))))
     (properties `((upstream-name . "INLAspacetime")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sp r-sf r-matrix r-fmesher))

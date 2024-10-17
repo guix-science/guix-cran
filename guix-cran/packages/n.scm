@@ -1126,6 +1126,30 @@ ISBN:9781906698003).  Homogeneity tests from Hosking and Wallis (1993)
 are available.")
     (license license:gpl2+)))
 
+(define-public r-nsr
+  (package
+    (name "r-nsr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NSR" version))
+       (sha256
+        (base32 "0s9vdwnq19n0vh7mr337l34nrmgiv4d4fj34sx4b5kz5njyv2kl4"))))
+    (properties `((upstream-name . "NSR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NSR")
+    (synopsis "'Native Status Resolver'")
+    (description
+     "This package provides access to the Native Status Resolver (NSR)
+<https://github.com/ojalaquellueva/nsr> API through R. The user supplies plant
+taxonomic names and political divisions and the package returns information
+about their likely native status (e.g., native, non-native,endemic), along with
+information on how those decisions were made.")
+    (license license:expat)))
+
 (define-public r-nspmix
   (package
     (name "r-nspmix")
@@ -3916,13 +3940,13 @@ equilibrium along a one-dimensional space.")
 (define-public r-nopaco
   (package
     (name "r-nopaco")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nopaco" version))
        (sha256
-        (base32 "09k7kljk8anv83pms8wm9fs9iakhpn16a75a0ds11m3khqlb3nvz"))))
+        (base32 "1n2jqjlsssk116dziw8fbr9p74yil2fxzj0yi3nkphlw5bhqy8qa"))))
     (properties `((upstream-name . "nopaco")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))

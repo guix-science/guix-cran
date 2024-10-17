@@ -1943,13 +1943,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "09z3grv2g8frzr5cffsifjkvwq85lbgz5b0y0kxr8a5rb7c4bpws"))))
+        (base32 "06scj60z277mhilhsq2b9mlcbryrwhqvph1rkd2rgpq231qarj3s"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -4422,13 +4422,13 @@ datasets, thereby enhancing the quality and reliability of research findings.")
 (define-public r-dromics
   (package
     (name "r-dromics")
-    (version "2.6-0")
+    (version "2.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRomics" version))
        (sha256
-        (base32 "0av2n2f70b55xx4v2yhx3srs7dzz75yj1xhabckvln3lxrm3p57l"))))
+        (base32 "0bhs89hwzylg6w86s89i96l36k8z3k496w2nq38bri1b7vy22hbi"))))
     (properties `((upstream-name . "DRomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

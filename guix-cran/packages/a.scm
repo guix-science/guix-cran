@@ -14015,6 +14015,30 @@ can generate holidays within a particular year, can detect if a date is a
 holiday, can respect holiday observance rules, and allows for custom holidays.")
     (license license:expat)))
 
+(define-public r-allspicer
+  (package
+    (name "r-allspicer")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ALLSPICER" version))
+       (sha256
+        (base32 "1cx8l03333jzzb2h1ai222j0qn69x6hdjpqy7pibwv5c3fdx3z0g"))))
+    (properties `((upstream-name . "ALLSPICER")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr r-mvtnorm r-magrittr r-dplyr))
+    (home-page "https://cran.r-project.org/package=ALLSPICER")
+    (synopsis "ALLelic Spectrum of Pleiotropy Informed Correlated Effects")
+    (description
+     "This package provides statistical tools to analyze heterogeneous effects of rare
+variants within genes that are associated with multiple traits.  The package
+implements methods for assessing pleiotropic effects and identifying allelic
+heterogeneity, which can be useful in large-scale genetic studies.  Methods
+include likelihood-based statistical tests to assess these effects.  For more
+details, see Lu et al. (2024) <doi:10.1101/2024.10.01.614806>.")
+    (license license:expat)))
+
 (define-public r-allspice
   (package
     (name "r-allspice")

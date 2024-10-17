@@ -21799,6 +21799,26 @@ conducting statistical analysis by accessing summary results, model fit indices,
 and visualizations with minimal programming.")
     (license license:expat)))
 
+(define-public r-easysimdata
+  (package
+    (name "r-easysimdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easySimData" version))
+       (sha256
+        (base32 "19jf7j91ynsibrjsd9m7i18sqhj89md7rwc753618sjhdrdfvrww"))))
+    (properties `((upstream-name . "easySimData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-simdata r-gridextra r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=easySimData")
+    (synopsis "Wrapper of 'simdata' Package")
+    (description
+     "Simulating data according to marginal distributions and pairwise correlation.
+This is a wrapper for the simdata package to make it easier to use.")
+    (license license:expat)))
+
 (define-public r-easysdctable
   (package
     (name "r-easysdctable")

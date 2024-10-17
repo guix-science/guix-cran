@@ -1129,6 +1129,37 @@ asymptotic test and Krishnamoorthy and Lee's (2014)
 vignette for more, including full details of citations.")
     (license license:expat)))
 
+(define-public r-cvdprevent
+  (package
+    (name "r-cvdprevent")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cvdprevent" version))
+       (sha256
+        (base32 "15r9p55pa55qy7dzaffzi1fg4c7nm3fh3qfj7pi9mwm03crqk4dm"))))
+    (properties `((upstream-name . "cvdprevent")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/craig-parylo/cvdprevent")
+    (synopsis
+     "Wrapper for the 'CVD Prevent' Application Programming Interface")
+    (description
+     "This package provides an R wrapper to the CVD Prevent application programming
+interface (API).  Users can make API requests through built-in R functions.  The
+Cardiovascular Disease Prevention Audit (CVDPREVENT) is an England-wide primary
+care audit that automatically extracts routinely held GP health data.
+<https://bmchealthdocs.atlassian.net/wiki/spaces/CP/pages/317882369/CVDPREVENT+API+Documentation>.")
+    (license license:expat)))
+
 (define-public r-cvd
   (package
     (name "r-cvd")
@@ -2624,6 +2655,30 @@ facilities and fitting measures are also provided.")
 so that columns and rows add up to given vectors, rounding of a matrix while
 keeping the column and/or row totals, performing these by blocks...")
     (license license:gpl3+)))
+
+(define-public r-ctypesio
+  (package
+    (name "r-ctypesio")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ctypesio" version))
+       (sha256
+        (base32 "0flgxsby1nazs3dwnjwzkz1p964qygyivmifnrb2b2sy7smda41f"))))
+    (properties `((upstream-name . "ctypesio")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/ctypesio")
+    (synopsis
+     "Read and Write Standard C Types from Files, Connections and Raw Vectors")
+    (description
+     "Interacting with binary files can be difficult because R's types are a subset of
+what is generally supported by C'.  This package provides a suite of functions
+for reading and writing binary data (with files, connections, and raw vectors)
+using C type descriptions.  These functions convert data between C types and R
+types while checking for values outside the type limits, NA values, etc.")
+    (license license:expat)))
 
 (define-public r-ctxr
   (package
@@ -14437,17 +14492,17 @@ in the following text.  Richard G. Brereton (2003) <ISBN:9780471489771>.")
 (define-public r-convey
   (package
     (name "r-convey")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convey" version))
        (sha256
-        (base32 "1v9rd5270cwr5dygh8xdyqc093qf743j8jvy3f3hds0q9ydx14jh"))))
+        (base32 "1i85j4wam81iskmynjr81xh065gh2d0wi01gprs7vg5dsvshxfh9"))))
     (properties `((upstream-name . "convey")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey))
-    (home-page "https://guilhermejacob.github.io/context/")
+    (home-page "https://www.convey-r.org/")
     (synopsis "Income Concentration Analysis with Complex Survey Samples")
     (description
      "Variance estimation on indicators of income concentration and poverty using
@@ -20201,18 +20256,17 @@ to ensure command line output looks nice on dark as well as light consoles.")
 (define-public r-cols4all
   (package
     (name "r-cols4all")
-    (version "0.7-1")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols4all" version))
        (sha256
-        (base32 "0qjmrafzx7gw8glbpxsmrb2qkddgbqq3rvb16jzcq5jm5m77klns"))))
+        (base32 "19r7b9ndq80sbzfnksh6869ffbwx5jvlqvccwrijczbls1xhhnlr"))))
     (properties `((upstream-name . "cols4all")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-spacesxyz r-png r-colorspace
                              r-abind))
-    (native-inputs (list r-knitr))
     (home-page "https://mtennekes.github.io/cols4all/")
     (synopsis "Colors for all")
     (description
@@ -20221,23 +20275,23 @@ Popular color palette series have been organized by type and have been scored on
 several properties such as color-blind-friendliness and fairness (i.e.  do
 colors stand out equally?).  Own palettes can also be loaded and analysed.
 Besides the common palette types (categorical, sequential, and diverging) it
-also includes bivariate color palettes.  Furthermore, a color for missing values
-is assigned to each palette.")
+also includes cyclic and bivariate color palettes.  Furthermore, a color for
+missing values is assigned to each palette.")
     (license license:gpl3)))
 
 (define-public r-cols
   (package
     (name "r-cols")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols" version))
        (sha256
-        (base32 "1rf27b1xqxqyd99574hj1nv65r08z5ap8rai64baw1skzr5aznkk"))))
+        (base32 "00r3dniz5n4mx8cwsyixs1v88pdjx0a460zcq420z5wrav23jbdl"))))
     (properties `((upstream-name . "cols")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rfast2 r-quadprog))
+    (propagated-inputs (list r-rfast2 r-rfast r-quadprog))
     (home-page "https://cran.r-project.org/package=cols")
     (synopsis "Constrained Ordinary Least Squares")
     (description
@@ -22711,29 +22765,31 @@ search strategy, a candidate code list will be returned.")
 (define-public r-codecountr
   (package
     (name "r-codecountr")
-    (version "0.0.4.0")
+    (version "0.0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codecountR" version))
        (sha256
-        (base32 "0b8qz3lzjc8r9ddjspjhc7azwh0i1v8mx9wrk959fafyracq68fk"))))
+        (base32 "1vhmgnhhpf409gy1db4n5hsvgcmbdamp7mzcvn6b85imf6wlk60y"))))
     (properties `((upstream-name . "codecountR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=codecountR")
     (synopsis "Counting Codes in a Text and Preparing Data for Analysis")
     (description
-     "Data analysis frequently requires coding, in particular when data are collected
-by interviews, by observations or even by questionnaires.  Therefore, code
-counting and data preparation are necessary phases to carry out the analysis.
-Thus, the analysts will wish to count the codes inserted in a text (tokenization
-and counting of a list of pre-established codes) and to carry out the
-preparation of the data (feature scaling min-max normalization, Zscore, Box and
-Cox transformation, non parametric bootstrap).  For Box and Cox (1964)
-<https://www.jstor.org/stable/2984418> transformation, optimal Lambda is
-calculated by log-likelihood.  Non parametric bootstrap is based on randomly
-sampling data with replacement.  Package for educational purposes.")
+     "Data analysis often requires coding, especially when data are collected through
+interviews, observations, or questionnaires.  As a result, code counting and
+data preparation are essential steps in the analysis process.  Analysts may need
+to count the codes in a text (tokenization and counting of pre-established
+codes) and prepare the data (e.g., min-max normalization, Z-score, robust
+scaling, Box-Cox transformation, and non-parametric bootstrap).  For the Box-Cox
+transformation (Box & Cox, 1964, <https://www.jstor.org/stable/2984418>), the
+optimal Lambda is determined using the log-likelihood method.  Non-parametric
+bootstrap involves randomly sampling data with replacement.  Two random number
+generators are also integrated: a Lehmer congruential generator for uniform
+distribution and a Box-Muller generator for normal distribution.  Package for
+educational purposes.")
     (license license:gpl3)))
 
 (define-public r-codecollection
@@ -23742,13 +23798,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "0z3m3kzn2ffk872xql3k6qsg2lraf5sbizkhav0b0wbs8qk0dda2"))))
+        (base32 "1wpxn4cvcaip6gs9cs59qb3fns1crfv361mx8fvxdnrsxiqbqac8"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaps r-ggplot2))
@@ -41692,6 +41748,51 @@ distribution of the number of fatalities based on the number of carcasses found
 and the estimated detection probability.")
     (license license:gpl2)))
 
+(define-public r-carbonr
+  (package
+    (name "r-carbonr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "carbonr" version))
+       (sha256
+        (base32 "173yy0rf5sahncvghz1nh74k2qhzvx3mpa8gwyz6acnfg08m0ygj"))))
+    (properties `((upstream-name . "carbonr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sp
+                             r-shinydashboard
+                             r-shiny
+                             r-rlang
+                             r-readxl
+                             r-magrittr
+                             r-lubridate
+                             r-htmltools
+                             r-ggpp
+                             r-ggplot2
+                             r-emojifont
+                             r-dplyr
+                             r-cowplot
+                             r-checkmate
+                             r-airportr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=carbonr")
+    (synopsis "Calculate Carbon-Equivalent Emissions")
+    (description
+     "This package provides a flexible tool for calculating carbon-equivalent
+emissions.  Mostly using data from the UK Government's Greenhouse Gas Conversion
+Factors report
+<https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2023>,
+it facilitates transparent emissions calculations for various sectors, including
+travel, accommodation, and clinical activities.  The package is designed for
+easy integration into R workflows, with additional support for shiny
+applications and community-driven extensions.")
+    (license license:lgpl3+)))
+
 (define-public r-carbondate
   (package
     (name "r-carbondate")
@@ -43254,13 +43355,13 @@ Graphical methods are also available.")
 (define-public r-calidad
   (package
     (name "r-calidad")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calidad" version))
        (sha256
-        (base32 "170ijr5kxaqwbvv8p1vs3jsld61kflicyycnjy640d28byj4lpmc"))))
+        (base32 "1i69m14xzls4wgvq4ids6f61mwkygz92h72sxhc0cwwiha6231ry"))))
     (properties `((upstream-name . "calidad")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -43279,8 +43380,8 @@ Graphical methods are also available.")
      "Assesses the quality of estimates made by complex sample designs, following the
 methodology developed by the National Institute of Statistics Chile (2020,
 <https://www.ine.cl/docs/default-source/institucionalidad/buenas-pr%C3%A1cticas/clasificaciones-y-estandares/est%C3%A1ndar-evaluaci%C3%B3n-de-calidad-de-estimaciones-publicaci%C3%B3n-27022020.pdf>)
-and by Economic Commission for Latin America and Caribbean (2020,
-<https://repositorio.cepal.org/bitstream/handle/11362/45681/1/S2000293_es.pdf>).")
+and by Economic Commission for Latin America and Caribbean (2024,
+chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://repositorio.cepal.org/server/api/core/bitstreams/f04569e6-4f38-42e7-a32b-e0b298e0ab9c/content).")
     (license license:gpl3)))
 
 (define-public r-calibratr

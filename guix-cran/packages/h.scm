@@ -4548,6 +4548,41 @@ to create simulated multivariate data sets with groups of variables with
 different degrees of variance, covariance, and effect size.")
     (license license:expat)))
 
+(define-public r-holobiont
+  (package
+    (name "r-holobiont")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "holobiont" version))
+       (sha256
+        (base32 "1m22x1la59kh7z57s05rsmxf44y2fzk32159wjnfs4wvqdfskzkl"))))
+    (properties `((upstream-name . "holobiont")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-phytools
+                             r-phyloseq
+                             r-ggplot2
+                             r-dplyr
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=holobiont")
+    (synopsis "Microbiome Analysis Tools")
+    (description
+     "We provide functions for identifying the core community phylogeny in any
+microbiome, drawing phylogenetic Venn diagrams, calculating the core Faithâs
+PD for a set of communities, and calculating the core @code{UniFrac} distance
+between two sets of communities.  All functions rely on construction of a core
+community phylogeny, which is a phylogeny where branches are defined based on
+their presence in multiple samples from a single type of habitat.  Our package
+provides two options for constructing the core community phylogeny, a tip-based
+approach, where the core community phylogeny is identified based on incidence of
+leaf nodes and a branch-based approach, where the core community phylogeny is
+identified based on incidence of individual branches.  We suggest use of the
+@code{microViz} package, which can be downloaded from the website provided under
+Additional repositories.")
+    (license license:gpl2)))
+
 (define-public r-hollr
   (package
     (name "r-hollr")
@@ -11403,6 +11438,37 @@ capabilities.  Comprehensive information on the API functionality and usage is
 available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
     (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
 
+(define-public r-hdanova
+  (package
+    (name "r-hdanova")
+    (version "0.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDANOVA" version))
+       (sha256
+        (base32 "1w6c2pwngx1f55zzxsvxnmg2bv5i0ywirchvdncl3iy7mpcsm6vm"))))
+    (properties `((upstream-name . "HDANOVA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra
+                             r-progress
+                             r-pracma
+                             r-pls
+                             r-mixlm
+                             r-lme4
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/khliland/HDANOVA/")
+    (synopsis "High-Dimensional Analysis of Variance")
+    (description
+     "This package provides functions and datasets to support Smilde, Marini,
+Westerhuis and Liland (2025, ISBN: 978-1-394-21121-0) \"Analysis of Variance for
+High-Dimensional Data - Applications in Life, Food and Chemical Sciences\".  This
+implements and imports a collection of methods for HD-ANOVA data analysis with
+common interfaces, result- and plotting functions, multiple real data sets and
+four vignettes covering a range different applications.")
+    (license license:gpl2+)))
+
 (define-public r-hda
   (package
     (name "r-hda")
@@ -11696,13 +11762,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.6.3")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "0ywyj2c97p125y1sjik4zbdlcswc1x0zxwksl3jlrx68zbc0xpff"))))
+        (base32 "1zivik69va92mbqhv46xh3pj98jxbc6z3x5i4isb07k8incv4wcy"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11710,8 +11776,8 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
     (synopsis "Design and Analysis of Hierarchical Composite Endpoints")
     (description
      "Simulate and analyze hierarchical composite endpoints.  Win odds is the main
-analysis method, but other win statistics (win ratio, net benefit) are
-implemented as well in case of no censoring.  See Gasparyan SB et al (2023)
+analysis method, but other win statistics (win ratio, net benefit) are also
+implemented, provided there is no censoring.  See Gasparyan SB et al (2023)
 \"Hierarchical Composite Endpoints in COVID-19: The DARE-19 Trial.\" Case Studies
 in Innovative Clinical Trials, 95-148.  Chapman; Hall/CRC.
 <doi:10.1201/9781003288640-7>.")

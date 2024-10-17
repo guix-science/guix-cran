@@ -9954,13 +9954,13 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "18fvzkykn5m39shvzhj3jlgndbzkdfpdfakv5ydgcalhmlk003cs"))))
+        (base32 "0pnf7xb803xm2b2hzvgzrvmdcz09mkdrzzqc3xdz6j7kwdy5jwsc"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis

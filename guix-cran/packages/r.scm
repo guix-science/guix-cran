@@ -4414,13 +4414,13 @@ distributions underlying the drift rate.")
 (define-public r-rtde
   (package
     (name "r-rtde")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTDE" version))
        (sha256
-        (base32 "1dkv0g760384jmyypffl5kbnsancjx272j91ffpgmg3lmsy8nhqq"))))
+        (base32 "1hf5jr071wzj5ms5s2a5cbwr32iycx8h1wlnbmd6p9biljawbpwd"))))
     (properties `((upstream-name . "RTDE")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RTDE")
@@ -40306,13 +40306,13 @@ Biological Statistics.  Vignettes are available at <https://rcompanion.org>.")
 (define-public r-rcompadre
   (package
     (name "r-rcompadre")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcompadre" version))
        (sha256
-        (base32 "0ca82svcycz2qwk1hx808pm4d86z7i61hc427fkvknjj73vaiz5a"))))
+        (base32 "1r9krnrxpnz3pqfj4ir22gsbpdbsdyi5liwa5kfmn9xsz8jnf5qx"))))
     (properties `((upstream-name . "Rcompadre")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-popdemo))
@@ -42899,27 +42899,16 @@ text files and more...")
 (define-public r-rbmi
   (package
     (name "r-rbmi")
-    (version "1.2.6")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbmi" version))
        (sha256
-        (base32 "0yy5yz9ld74wvljvpfz4gh7xzq9b60nf9lc97s1zvmwjgrzp77v4"))))
+        (base32 "0swc3vp6301kp5d9y488mp32p7k67hswg7x7gxsicg4991wvrcqz"))))
     (properties `((upstream-name . "rbmi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-r6
-                             r-pkgload
-                             r-mmrm
-                             r-matrix
-                             r-bh
-                             r-assertthat))
+    (propagated-inputs (list r-r6 r-pkgload r-mmrm r-matrix r-assertthat))
     (native-inputs (list r-r-rsp))
     (home-page "https://insightsengineering.github.io/rbmi/")
     (synopsis "Reference Based Multiple Imputation")
