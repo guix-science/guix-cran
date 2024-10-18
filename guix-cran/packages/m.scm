@@ -12771,6 +12771,31 @@ and Turlach (2013) <doi:10.1007/s00180-012-0390-5> and Murray, Mueller and
 Turlach (2016) <doi:10.1080/00949655.2016.1139582>.")
     (license license:gpl2+)))
 
+(define-public r-monophy
+  (package
+    (name "r-monophy")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MonoPhy" version))
+       (sha256
+        (base32 "131bvqz7gcdh8q4a670dbn20ms7hgykb1gmxb66qm4hi1mzi8hg1"))))
+    (properties `((upstream-name . "MonoPhy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcolorbrewer r-phytools r-phangorn r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MonoPhy")
+    (synopsis "Explore Monophyly of Taxonomic Groups in a Phylogeny")
+    (description
+     "Requires rooted phylogeny as input and creates a table of genera, their
+monophyly-status, which taxa cause problems in monophyly etc.  Different
+information can be extracted from the output and a plot function allows
+visualization of the results in a number of ways. \"@code{MonoPhy}: a simple R
+package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
+(2016) <doi:10.7717/peerj-cs.56>.")
+    (license license:gpl3)))
+
 (define-public r-monomvn
   (package
     (name "r-monomvn")
@@ -18564,13 +18589,13 @@ learning algorithms.  See also Curtin et al. (2023) <doi:10.21105/joss.05026>.")
 (define-public r-mlogitbma
   (package
     (name "r-mlogitbma")
-    (version "0.1-7")
+    (version "0.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlogitBMA" version))
        (sha256
-        (base32 "0q8c5897z8f519nf6p55ksc610a9dbpnah2rr4srij4gs9a4clx1"))))
+        (base32 "1c9v2q4nbd3rm3whm4gv3kn32nv40m6mgr5hivimrv559q68msmj"))))
     (properties `((upstream-name . "mlogitBMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-maxlik r-bma r-abind))
@@ -20223,13 +20248,13 @@ Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
 (define-public r-mizer
   (package
     (name "r-mizer")
-    (version "2.5.2")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mizer" version))
        (sha256
-        (base32 "03awz9nr4gfiq7dbpxad2vzih2babdp65fl06flyy47b0aqsvcwm"))))
+        (base32 "01yb00mrp17cihms80nd5qnmmrvik9m2mvnq623fw3038ipbfkb1"))))
     (properties `((upstream-name . "mizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -20956,6 +20981,34 @@ text-book statistics for higher education is also included, e.g. modifications
 of the functions lm(), glm() and associated summaries from the package stats'.")
     (license license:gpl2+)))
 
+(define-public r-mixlfa
+  (package
+    (name "r-mixlfa")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MixLFA" version))
+       (sha256
+        (base32 "1vp157cppsd6izag8vhadw6z1s4bay3jvq7wsw2mja7wvgc3p5kq"))))
+    (properties `((upstream-name . "MixLFA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-pheatmap
+                             r-gparotation
+                             r-ggplot2
+                             r-ggally
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=MixLFA")
+    (synopsis "Mixture of Longitudinal Factor Analysis Methods")
+    (description
+     "This package provides a function for the estimation of mixture of longitudinal
+factor analysis models using the iterative expectation-maximization algorithm
+(Ounajim, Slaoui, Louis, Billot, Frasca, Rigoard (2023) <doi:10.1002/sim.9804>)
+and several tools for visualizing and interpreting the models parameters.")
+    (license license:gpl3)))
+
 (define-public r-mixl
   (package
     (name "r-mixl")
@@ -21150,13 +21203,13 @@ tools for evaluating the quality of the imputed values.")
 (define-public r-mixfmri
   (package
     (name "r-mixfmri")
-    (version "0.1-3")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixfMRI" version))
        (sha256
-        (base32 "1cpkqvjkhr3l4y522xgjx2mwsvpzivf2h9wxslhgsqwds52ij0ad"))))
+        (base32 "1y09q50fc8kj08nv30d87z1vqxfp85rnjkgn0bgyad2rwsm59f5l"))))
     (properties `((upstream-name . "MixfMRI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -29194,13 +29247,13 @@ Ecology (METE).")
 (define-public r-meteospain
   (package
     (name "r-meteospain")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteospain" version))
        (sha256
-        (base32 "16y3ay7bfjwf5f2nl63fhfs9j040zx5w9jfv45fbqksfcdhkcid1"))))
+        (base32 "1bbnq9b03r2njqphdkg43zfgf2hv2qy7zrfzy2nbzj784f599z3h"))))
     (properties `((upstream-name . "meteospain")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -29288,13 +29341,13 @@ modeling, particularly crop and crop disease modeling.")
 (define-public r-meteoland
   (package
     (name "r-meteoland")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteoland" version))
        (sha256
-        (base32 "1543ka7yd7v1yca7my1114mb5j6wmn7dsj3kcr7gj8z99v8mxadk"))))
+        (base32 "1p08bm1hp6m5086g41wpri85j1y8z3lq2bb6xs3aamp85rjja70z"))))
     (properties `((upstream-name . "meteoland")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -29313,7 +29366,7 @@ modeling, particularly crop and crop disease modeling.")
                              r-cli
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://emf-creaf.github.io/meteoland/index.html")
+    (home-page "https://emf-creaf.github.io/meteoland/")
     (synopsis "Landscape Meteorology Tools")
     (description
      "This package provides functions to estimate weather variables at any position of
@@ -37919,13 +37972,13 @@ distributions used in insurance modeling as described in Bernegger (1997)
 (define-public r-mbbefd
   (package
     (name "r-mbbefd")
-    (version "0.8.11")
+    (version "0.8.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mbbefd" version))
        (sha256
-        (base32 "0yhrbyydbxibxxffk5y35yv7k0i8aq8qdkkzgpvzfmyipl1lgbnv"))))
+        (base32 "107mld5bq62zj7rar0g7402xiiy6rx2xwg4mhna0pdjq31plb27b"))))
     (properties `((upstream-name . "mbbefd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp

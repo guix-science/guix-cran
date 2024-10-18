@@ -1239,16 +1239,17 @@ and sections in the appropriate files required for package development.")
 (define-public r-fusedmgm
   (package
     (name "r-fusedmgm")
-    (version "0.1.0.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fusedMGM" version))
        (sha256
-        (base32 "126h8jvmx1y1n49p4s2h3qn7qfzf6q98k7b7rwjn6rn9hjvwd45j"))))
+        (base32 "113qzv4wyh76nhidk4kdcrqaczcand1ihhgcvvm9jj3nbbh8xqkh"))))
     (properties `((upstream-name . "fusedMGM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-gplots r-fastdummies r-bigmemory))
+    (propagated-inputs (list r-gplots r-fastdummies r-bigmemory r-biganalytics
+                             r-bigalgebra))
     (home-page "https://cran.r-project.org/package=fusedMGM")
     (synopsis "Implementation of Fused MGM to Infer 2-Class Networks")
     (description
@@ -1257,7 +1258,7 @@ functions include building mixed graphical model (MGM) objects from data,
 inference of networks using FMGM, stable edge-specific penalty selection
 (@code{StEPS}) for the determination of penalization parameters, and the
 visualization.  For details, please refer to Park and Won (2022)
-<@code{arXiv:2208.14959>}.")
+<doi:10.48550/@code{arXiv.2208.14959>}.")
     (license license:expat)))
 
 (define-public r-furniture

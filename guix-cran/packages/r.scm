@@ -14579,13 +14579,13 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustmatrix
   (package
     (name "r-robustmatrix")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustmatrix" version))
        (sha256
-        (base32 "1lq7gniz41sidc6i6clbrq7hyw6dj2y886a24w90ls7f5cgyd0dl"))))
+        (base32 "1qhb2wxzb0wh0b9c7jj42aanmyxd22b0hn5gip3s9q2ypdzhnllc"))))
     (properties `((upstream-name . "robustmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
@@ -15242,13 +15242,13 @@ ensemble.")
 (define-public r-robstattm
   (package
     (name "r-robstattm")
-    (version "1.0.8")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobStatTM" version))
        (sha256
-        (base32 "1qbbh3ykba50ivka1h7b2cyw2km0dk3gl1rgjwaq5rqlmfdwl0nn"))))
+        (base32 "06lh20b2wgz9b8imwddfcypxvrsprzn9hjn5sm68qbgvfs5ck2fs"))))
     (properties `((upstream-name . "RobStatTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-pyinit))
@@ -23886,13 +23886,13 @@ available through the online app @code{QuickPed} at
 (define-public r-rib
   (package
     (name "r-rib")
-    (version "0.20.0")
+    (version "0.23.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rib" version))
        (sha256
-        (base32 "03nj88x8zbspadprqhzcs8781cmp5bkl4gdrncbl4lzcjdi4mn0h"))))
+        (base32 "17wjqyhjz2rdqg7vhcms50pjhm1k4vprwy14p5k8i8p90f7p5hwf"))))
     (properties `((upstream-name . "rib")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -28956,6 +28956,39 @@ Zhu, J., and Bandeen-Roche, K (2023), Biostatistics (To appear).")
  The data stems from several publicly funded research projects of the Chair of
 Information Systems and Energy Efficient Systems at the University of Bamberg.")
     (license license:cc-by-sa4.0)))
+
+(define-public r-reside
+  (package
+    (name "r-reside")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RESIDE" version))
+       (sha256
+        (base32 "1f0llk8g8flirh5kwjfbnba1np6bm6jqs16sgsymz8f2jcx23mni"))))
+    (properties `((upstream-name . "RESIDE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-simstudy
+                             r-rdp
+                             r-matrixcalc
+                             r-magrittr
+                             r-dplyr
+                             r-bestnormalize))
+    (native-inputs (list r-knitr))
+    (home-page "https://hehta.github.io/RESIDE/")
+    (synopsis "Rapid Easy Synthesis to Inform Data Extraction")
+    (description
+     "Developed to assist researchers with planning analysis, prior to obtaining data
+from Trusted Research Environments (TREs) also known as safe havens.  With
+functionality to export and import marginal distributions as well as synthesise
+data, both with and without correlations from these marginal distributions.
+Using a multivariate cumulative distribution (COPULA).  Additionally the
+International Stroke Trial (IST) is included as an example dataset under ODC-By
+licence Sandercock et al. (2011) <doi:10.7488/ds/104>, Sandercock et al. (2011)
+<doi:10.1186/1745-6215-12-101>.")
+    (license license:gpl3+)))
 
 (define-public r-resi
   (package
@@ -34360,21 +34393,23 @@ al (2019) <doi:10.1016/j.jbi.2019.103208>).")
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.9.1")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redcapAPI" version))
        (sha256
-        (base32 "1zz5dwd1i7j0d9qf79zmlqb5i4d4qk59sg7qqzb6y8vmp1ldqwm7"))))
+        (base32 "0c7pp0cwbchmrr07diiacdnr77jny0l9gfahp3g742z8rzr8zb04"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
+                             r-mime
                              r-lubridate
                              r-labelvector
                              r-keyring
-                             r-httr
+                             r-jsonlite
                              r-getpass
+                             r-curl
                              r-chron
                              r-checkmate))
     (home-page "https://github.com/vubiostat/redcapAPI")
@@ -43545,13 +43580,13 @@ MIT license from the Bitcoin Unlimited website
 (define-public r-rbcc
   (package
     (name "r-rbcc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbcc" version))
        (sha256
-        (base32 "1v99cpbq7wd9kfjfanyxfmxifvnr73882hh0zyrp6n3nvj7l85rz"))))
+        (base32 "1d828libsnrs94zz9zy6m9dr48vasbab2641806hhihq190hs98n"))))
     (properties `((upstream-name . "rbcc")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-qcc r-pracma r-pearsonds r-ggplot2))

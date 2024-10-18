@@ -1198,13 +1198,13 @@ Research, <doi:10.1029/2020WR029001>.")
 (define-public r-gumbel
   (package
     (name "r-gumbel")
-    (version "1.10-2")
+    (version "1.10-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gumbel" version))
        (sha256
-        (base32 "0s9idcrssnl683abwky9zvqylciy0b51z935yfvb2bm8b0b0b4ij"))))
+        (base32 "1ifvr284h1pwg2883qhzwi4a52l8sgdji1hk6la1h509aw2agv74"))))
     (properties `((upstream-name . "gumbel")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=gumbel")
@@ -7061,13 +7061,13 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
 (define-public r-grain
   (package
     (name "r-grain")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRain" version))
        (sha256
-        (base32 "1bjf7a7lpki1vwjx8i8sxlqrwlvqwdh8nzzn0j9nqzmdxzvgk52a"))))
+        (base32 "02wh9lwg7ky8yl58rxj2f7fay1gg0q0wf3j8gkb7381cn7d4c6xk"))))
     (properties `((upstream-name . "gRain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -7078,7 +7078,7 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://people.math.aau.dk/~sorenh/software/gR/")
-    (synopsis "Graphical Independence Networks")
+    (synopsis "Bayesian Networks")
     (description
      "Probability propagation in Bayesian networks, also known as graphical
 independence networks.  Documentation of the package is provided in vignettes
@@ -10465,13 +10465,13 @@ study the properties of risk measures.")
 (define-public r-gne
   (package
     (name "r-gne")
-    (version "0.99-5")
+    (version "0.99-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GNE" version))
        (sha256
-        (base32 "0a796zppqvjgymh03xh7wdb26m0ir2gsavm37278liaj3nzk2jkz"))))
+        (base32 "163jhkz2gxzq8ji3fgk1337rhnjhmwz55ai5mhgsbyyrgd5dayii"))))
     (properties `((upstream-name . "GNE")))
     (build-system r-build-system)
     (propagated-inputs (list r-squarem r-nleqslv r-bb r-alabama))
@@ -22197,13 +22197,13 @@ simple features access like sf but running on Spark distributed system.")
 (define-public r-geosimilarity
   (package
     (name "r-geosimilarity")
-    (version "3.6")
+    (version "3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosimilarity" version))
        (sha256
-        (base32 "0ix0hj85ssw7ir4if847ba4p7yqkaqapjldh1kas7z1g4jb34jjq"))))
+        (base32 "10hdll5niqd1k5kgqzp44dipqwp6mvbq00h0x9h16yswvxrx6ji9"))))
     (properties `((upstream-name . "geosimilarity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -27308,13 +27308,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.1.0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "1rnpamxanjyxvmamk6i6hk52ys50npncw712b0jx559g6gzbvd8l"))))
+        (base32 "0a8biv930198037a2qnkx4x0nxh1lp5jrcxazy4x93shrwxjrcg0"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27333,7 +27333,7 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
                              r-forcats
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://ausgis.github.io/gdverse/")
+    (home-page "https://stscl.github.io/gdverse/")
     (synopsis "Analysis of Spatial Stratified Heterogeneity")
     (description
      "Analyzing spatial factors and exploring spatial associations based on the
@@ -27891,18 +27891,18 @@ Press 2015).")
 (define-public r-gd
   (package
     (name "r-gd")
-    (version "10.3")
+    (version "10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GD" version))
        (sha256
-        (base32 "1qgkwqszc90b5aygqh28gfasqbsxy08inj9vm9b2id9z1rg69p8m"))))
+        (base32 "0gyl2ss1kqkh1g1sbjhp5j67wsidlhwzyvvdls7aids2r57vrs4r"))))
     (properties `((upstream-name . "GD")))
     (build-system r-build-system)
     (propagated-inputs (list r-bammtools))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GD")
+    (home-page "https://github.com/ausgis/GD")
     (synopsis "Geographical Detectors for Assessing Spatial Factors")
     (description
      "Geographical detectors for measuring spatial stratified heterogeneity, as
@@ -27916,7 +27916,7 @@ methods and case datasets, please cite Yongze Song (2020)
 exploration of road performance and multi-scale spatial segmentation for network
 data, as described in Yongze Song (2018) <doi:10.3390/rs10111696> and Yongze
 Song (2020) <doi:10.1109/TITS.2020.3001193>, respectively.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-gcxgclab
   (package

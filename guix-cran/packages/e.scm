@@ -254,6 +254,38 @@ exploration patterns.  Some of the ideas in this package are motivated by Fox
 (2015, ISBN:1938377052).")
     (license license:expat)))
 
+(define-public r-ezecm
+  (package
+    (name "r-ezecm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ezECM" version))
+       (sha256
+        (base32 "0nkydysrnjr7ihs9m5if0czfqd30q7acbbv2l81dig5bgdvrwyg8"))))
+    (properties `((upstream-name . "ezECM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack
+                             r-mvnfast
+                             r-mcmcpack
+                             r-lhs
+                             r-klar
+                             r-ellipse))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lanl/ezECM")
+    (synopsis
+     "Event Categorization Matrix Classification for Nuclear Detonations")
+    (description
+     "Implementation of an Event Categorization Matrix (ECM) detonation detection
+model and a Bayesian variant.  Functions are provided for importing and
+exporting data, fitting models, and applying decision criteria for categorizing
+new events.  This package implements methods described in the paper \"Bayesian
+Event Categorization Matrix Approach for Nuclear Detonations\" Koermer,
+Carmichael, and Williams (2024) available on @code{arXiv} at
+<doi:10.48550/@code{arXiv.2409.18227>}.")
+    (license license:gpl3+)))
+
 (define-public r-ezec
   (package
     (name "r-ezec")
@@ -22392,13 +22424,13 @@ functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:
 (define-public r-easybgm
   (package
     (name "r-easybgm")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybgm" version))
        (sha256
-        (base32 "10z8p9bslpnz3cp7lq7qadrpj6jm8k7rwakvak73qppvmpza7rfr"))))
+        (base32 "0v54vqi7hc28spfbb2mbq8hjcxp1p5dwr1476qkifvm9src6ja53"))))
     (properties `((upstream-name . "easybgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph

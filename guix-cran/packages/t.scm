@@ -5042,6 +5042,28 @@ more information on the API, see
 <https://isd.digital.nhs.uk/trud/users/guest/filters/0/api>.")
     (license license:expat)))
 
+(define-public r-trtswitch
+  (package
+    (name "r-trtswitch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trtswitch" version))
+       (sha256
+        (base32 "1d888qpp7gcsrn3624q2ppdihdyy7879w3lng1nzi78fgng5cdpv"))))
+    (properties `((upstream-name . "trtswitch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=trtswitch")
+    (synopsis "Treatment Switching")
+    (description
+     "This package implements rank-preserving structural failure time model (RPSFTM),
+iterative parameter estimation (IPE), inverse probability of censoring weights
+(IPCW), and two-stage estimation (TSE) methods for treatment switching in
+randomized clinical trials.")
+    (license license:gpl2+)))
+
 (define-public r-trtf
   (package
     (name "r-trtf")
@@ -17224,13 +17246,13 @@ packages.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.6.6")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "0p6r174y4axpi9rqkc0rhhx34zilk911g3n3gq8b470h9p8g4r8l"))))
+        (base32 "163l25li5smywz91ndcw2v7m7dcya309wkmb6pkjj7jqcyhlfv74"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -22060,6 +22082,38 @@ discussed in Li et al (2021) <doi:10.48550/@code{arXiv.2110.00928>}, Chen et al
 <DOI:10.1016/j.jeconom.2020.07.015>, and Xiao et al (2020)
 <doi:10.48550/@code{arXiv.2006.02611>}.")
     (license license:gpl2+)))
+
+(define-public r-tensortools
+  (package
+    (name "r-tensortools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TensorTools" version))
+       (sha256
+        (base32 "0x16raj8xhjzjhrpj9l5rz66rfiy8hf6ap3l7gqmx53vfk3fpsqq"))))
+    (properties `((upstream-name . "TensorTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wavethresh
+                             r-raster
+                             r-png
+                             r-matrixcalc
+                             r-matrix
+                             r-gsignal))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TensorTools")
+    (synopsis "Multilinear Algebra")
+    (description
+     "This package provides a set of tools for basic tensor operators.  A tensor in
+the context of data analysis in a multidimensional array.  The tools in this
+package rely on using any discrete transformation (e.g. Fast Fourier Transform
+(FFT)).  Standard tools included are the Eigenvalue decomposition of a tensor,
+the QR decomposition and LU decomposition.  Other functionality includes the
+inverse of a tensor and the transpose of a symmetric tensor.  Functionality in
+the package is outlined in Kernfeld, E., Kilmer, M., and Aeron, S. (2015)
+<doi:10.1016/j.laa.2015.07.021>.")
+    (license license:gpl3)))
 
 (define-public r-tensortest2d
   (package

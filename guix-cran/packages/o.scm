@@ -5512,13 +5512,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "0wgwswmzi071j9j28x0yh0hpcvgqr977xxyxzh2bid1a7aib4ps0"))))
+        (base32 "0wras02gv7yxkjb75clxbf7wpn2vrnvwhk57birn79cz4ix9drhx"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
@@ -7544,13 +7544,13 @@ very first time.")
 (define-public r-onestep
   (package
     (name "r-onestep")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneStep" version))
        (sha256
-        (base32 "1mnmji4pb2qbg0amgy5kkgyn8xg8ny0n7fi8xqr9pgi5zx5c63r4"))))
+        (base32 "0fm8gpdwzdx4s23gg615a6r58mrjrx2k3pcbh8dq4z4067lr880w"))))
     (properties `((upstream-name . "OneStep")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-fitdistrplus r-extradistr))

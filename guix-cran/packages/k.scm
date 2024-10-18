@@ -1288,13 +1288,13 @@ hazard functions.")
 (define-public r-konfound
   (package
     (name "r-konfound")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "konfound" version))
        (sha256
-        (base32 "1w5ki55hd47w8za46gvdxr7jxb6qw1jczpi1zccafj0j7km99x5p"))))
+        (base32 "03p7rsrag1xskccg42rx4dz1f42dah1bjqkfca64cs0rxvq4g2yk"))))
     (properties `((upstream-name . "konfound")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1322,14 +1322,15 @@ variety of quantitative sciences.  A series of recent works, including Frank
 considering the characteristics of omitted variables or unobserved cases that
 would change an inference if such variables or cases were observed.  These
 analyses generate statements such as \"an omitted variable would have to be
-correlated at xx with the predictor of interest (e.g., treatment) and outcome to
-invalidate an inference of a treatment effect\".  Or \"one would have to replace
-pp percent of the observed data with null hypothesis cases to invalidate the
-inference\".  We implement these recent developments of sensitivity analysis and
-provide modules to calculate these two robustness indices and generate such
-statements in R. In particular, the functions konfound(), pkonfound() and
-mkonfound() allow users to calculate the robustness of inferences for a user's
-own model, a single published study and multiple studies respectively.")
+correlated at xx with the predictor of interest (e.g., the treatment) and
+outcome to invalidate an inference of a treatment effect\".  Or \"one would have
+to replace pp percent of the observed data with nor which the treatment had no
+effect to invalidate the inference\".  We implement these recent developments of
+sensitivity analysis and provide modules to calculate these two robustness
+indices and generate such statements in R. In particular, the functions
+konfound(), pkonfound() and mkonfound() allow users to calculate the robustness
+of inferences for a user's own model, a single published study and multiple
+studies respectively.")
     (license license:expat)))
 
 (define-public r-komaletter
@@ -4811,6 +4812,25 @@ development of this R package.  This project and network are lead by ACTA
 (French Technical Institute for Agriculture) and was funded by a grant from the
 Ministry of Agriculture and Fishing of France.")
     (license license:lgpl3)))
+
+(define-public r-keng
+  (package
+    (name "r-keng")
+    (version "2024.10.16")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Keng" version))
+       (sha256
+        (base32 "0v0p3zsm5202pxkl769hhs0b8xhvs2a02bm2kn3v7n3fmic1s4w3"))))
+    (properties `((upstream-name . "Keng")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Keng")
+    (synopsis "Keng's Axe and Firewood")
+    (description
+     "Miscellaneous functions and data used in Qingyao's psychological research and
+teaching.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-kendallrandomwalks
   (package

@@ -10618,6 +10618,29 @@ estimating the volume of coniferous trees.  This package has been developed
 using the algorithm of Sharma et al. (2017) <doi:10.13140/RG.2.2.33786.62407>.")
     (license license:gpl3)))
 
+(define-public r-imuf
+  (package
+    (name "r-imuf")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imuf" version))
+       (sha256
+        (base32 "0vskycl2v70cdvvanmy32sv3nac85yzq57kw0nifa5hba7mzfdsx"))))
+    (properties `((upstream-name . "imuf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-bh))
+    (home-page "https://github.com/gitboosting/imuf")
+    (synopsis "Estimate Orientation of an Inertial Measurement Unit")
+    (description
+     "Estimate the orientation of an inertial measurement unit (IMU) with a 3-axis
+accelerometer and a 3-axis gyroscope using a complementary filter.  imuf takes
+an IMU's accelerometer and gyroscope readings, time duration, its initial
+orientation, and a gain factor as inputs, and returns an estimate of the IMU's
+final orientation.")
+    (license license:gpl3+)))
+
 (define-public r-imtest
   (package
     (name "r-imtest")

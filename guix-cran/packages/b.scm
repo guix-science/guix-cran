@@ -15,6 +15,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
   #:use-module (gnu packages geo)
@@ -3399,23 +3400,28 @@ optionally used to sort the heatmap.")
 (define-public r-brpop
   (package
     (name "r-brpop")
-    (version "0.3.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brpop" version))
        (sha256
-        (base32 "0wbs0r775g185q0zrlyskj5zrdkf6dbivi7lrychj9dpidl9i61i"))))
+        (base32 "0zklcvzygps99xz9qk4k2jqnk4p5pxhrkf7pjh98b6d12mq84hcw"))))
     (properties `((upstream-name . "brpop")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-multidplyr r-magrittr r-future r-dplyr))
+    (propagated-inputs (list r-zendown
+                             r-tibble
+                             r-rlang
+                             r-magrittr
+                             r-dtplyr
+                             r-dplyr
+                             r-data-table
+                             r-checkmate))
     (home-page "https://rfsaldanha.github.io/brpop/")
     (synopsis "Brazilian Population Estimatives")
     (description
-     "Datasets with yearly (2000 to 2021) Brazilian population estimates from
-@code{DataSUS/Brazilian} Health Ministry, aggregated by state, municipality,
-sex, and age groups.  The data in this package is manually downloaded from the
-@code{DataSUS} website and converted to tibbles.")
+     "This package provides functions to handle and aggregate population estimates for
+Brazilian municipalities by sex and age groups.")
     (license license:expat)))
 
 (define-public r-browndog
@@ -14599,15 +14605,16 @@ utilizes the Julia package Bigsimr.jl for its core routines.")
 (define-public r-bigrquerystorage
   (package
     (name "r-bigrquerystorage")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigrquerystorage" version))
        (sha256
-        (base32 "1bfn9w0jw40iplpwz9x2wwv8xvwc2kx2pgqa8gbl2k1w21479chi"))))
+        (base32 "1x48msnh3lhi5x74n1v7icd3vzxwqw9yaq8llcr0a79mj6abiwar"))))
     (properties `((upstream-name . "bigrquerystorage")))
     (build-system r-build-system)
+    (inputs (list zlib openssl))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-rcpp
@@ -15865,13 +15872,13 @@ analysis and visualization.")
 (define-public r-biascorrector
   (package
     (name "r-biascorrector")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiasCorrector" version))
        (sha256
-        (base32 "0a6iiy4iw8w8s4kbjf6r0gji6izf1zdb99r8vfbvgzzwg2pxx4h4"))))
+        (base32 "1ligmx7c44faqpzfvcwp841wqbrbwwyh2xdr0hgp7g30qmlb5m1y"))))
     (properties `((upstream-name . "BiasCorrector")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs

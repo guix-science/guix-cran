@@ -6934,19 +6934,20 @@ in two sample populations.")
 (define-public r-highlightr
   (package
     (name "r-highlightr")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "highlightr" version))
        (sha256
-        (base32 "14as9gqikswfpwzvq0v9s03r6rwzdsa0k9wad6f6zs416a65v1i4"))))
+        (base32 "1n4jb1snl9riqkfhzn84rq1czyg5r5v41m3fk78wc0fi2wacxwil"))))
     (properties `((upstream-name . "highlightr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-stringi
                              r-quanteda-textstats
                              r-quanteda
                              r-purrr

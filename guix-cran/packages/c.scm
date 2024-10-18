@@ -10970,13 +10970,13 @@ their own methods for randomization.  Rosenthal and Rubin (1994)
 (define-public r-counterfactuals
   (package
     (name "r-counterfactuals")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "counterfactuals" version))
        (sha256
-        (base32 "12nzq3a59vzjnc4r0awhzgacr3c8pfrkwyibdhmqfr79bwzc79cb"))))
+        (base32 "0qa6a2kp8w1na35i0qcyxpk99b4qw6si1pfvjamjz1qvr2xa8rhz"))))
     (properties `((upstream-name . "counterfactuals")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmatch
@@ -13353,13 +13353,13 @@ dependence structure of the original data but with a shifted mean vector.")
 (define-public r-copularemada
   (package
     (name "r-copularemada")
-    (version "1.6.2")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopulaREMADA" version))
        (sha256
-        (base32 "101ys5mqr51cj1rcvqc2mzanxil3z3pb4m1y3kwlzw3jz4cygrmk"))))
+        (base32 "1kfw3q3i5nzha6bn74m3xvbv67d24w0m43mhad402wdcyx6rvh8v"))))
     (properties `((upstream-name . "CopulaREMADA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensor r-statmod r-mc2d r-matlab))
@@ -13382,9 +13382,12 @@ quadrivariate D-vine copula mixed model for meta-analysis of diagnostic tests
 with non-evaluable subjects in Nikoloulopoulos (2020)
 <doi:10.1177/0962280220913898>.  The one-factor copula mixed model for joint
 meta-analysis of multiple diagnostic tests in Nikoloulopoulos (2022)
-<doi:10.1111/rssa.12838>.  The multinomial six-variate 1-truncated vine copula
+<doi:10.1111/rssa.12838>.  The multinomial six-variate 1-truncated D-vine copula
 mixed model for meta-analysis of two diagnostic tests accounting for within and
-between studies dependence in Nikoloulopoulos (2024).")
+between studies dependence in Nikoloulopoulos (2024)
+<doi:10.1177/09622802241269645>.  The 1-truncated D-vine copula mixed models for
+meta-analysis of diagnostic accuracy studies without a gold standard
+(Nikoloulopoulos, 2024).")
     (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
 
 (define-public r-copulareg
@@ -20128,29 +20131,34 @@ Heard & Rubin-Delanchy (2017) <@code{arXiv:1707.06897>}.")
 (define-public r-combat-enigma
   (package
     (name "r-combat-enigma")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "combat.enigma" version))
        (sha256
-        (base32 "1hz1fbjfsmz5m6mzhq7pyvx2pdm0v6f3afpzjnz0xnz30ckfgshr"))))
+        (base32 "1skrjssp8gfqfi3pjb1aawqwdh066fiz0ssal43jlx1wbkmk65m8"))))
     (properties `((upstream-name . "combat.enigma")))
     (build-system r-build-system)
+    (propagated-inputs (list r-nlme r-matrix r-caret r-car))
     (home-page "https://cran.r-project.org/package=combat.enigma")
-    (synopsis "Fit and Apply ComBat Harmonization for ENIGMA")
+    (synopsis
+     "Fit and Apply ComBat, LMM, or Prescaling Harmonization for ENIGMA and Other Multisite MRI Data")
     (description
-     "Fit and apply @code{ComBat} to harmonize magnetic resonance imaging (MRI) data
-from different sites.  Briefly, @code{ComBat} is a batch adjustment method that
-removes additive and multiplicative differences between sites due to the use of
-different scanning devices.  As detailed in the manual, the original function
-was first modified for the harmonization of MRI data (Fortin et al. (2017)
+     "Fit and apply @code{ComBat}, linear mixed-effects models (LMM), or prescaling to
+harmonize magnetic resonance imaging (MRI) data from different sites.  Briefly,
+these methods remove differences between sites due to using different scanning
+devices, and LMM additionally tests linear hypotheses.  As detailed in the
+manual, the original @code{ComBat} function was first modified for the
+harmonization of MRI data (Fortin et al. (2017)
 <doi:10.1016/j.neuroimage.2017.11.024>) and then modified again to create
 separate functions for fitting and applying the harmonization and allow missing
 values and constant rows for its use within the Enhancing Neuro Imaging Genetics
 through Meta-Analysis (ENIGMA) Consortium (Radua et al. (2020)
-<doi:10.1016/j.neuroimage.2017.11.024>).  This package includes the latter
-version.")
+<doi:10.1016/j.neuroimage.2017.11.024>); this package includes the latter
+version.  LMM calls \"lme\" massively considering specific brain imaging details.
+Finally, prescaling is a good option for @code{fMRI}, where different devices
+can have varying units of measurement.")
     (license (license:fsdg-compatible "Artistic License 2.0"))))
 
 (define-public r-combat
@@ -22726,13 +22734,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "1s96r05dilyb3g4f8vikh7fr2jpjqz8n7layck94nrx2xswhccd6"))))
+        (base32 "08hlz46s90qv8nj55a1z3rn0x6xpa7fsf2i22n4vyj7n21vxh43g"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -30543,6 +30551,33 @@ test and Pycke test is also included as described in Landler et al. (2019)
 to calculate circular-circular and circular-linear distance correlations.")
     (license license:gpl2+)))
 
+(define-public r-circlus
+  (package
+    (name "r-circlus")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "circlus" version))
+       (sha256
+        (base32 "0jwmsqm08crbmbbpbj0dn2vm33z1zsr18420cl09kjyz4yixwzb0"))))
+    (properties `((upstream-name . "circlus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-torch r-tinflex r-rcpparmadillo r-rcpp
+                             r-flexmix))
+    (home-page "https://cran.r-project.org/package=circlus")
+    (synopsis "Clustering and Simulation of Spherical Cauchy and PKBD Models")
+    (description
+     "This package provides tools for estimation and clustering of spherical data,
+seamlessly integrated with the flexmix package.  Includes the necessary M-step
+implementations for both Poisson Kernel-Based Distribution (PKBD) and spherical
+Cauchy distribution.  Additionally, the package provides random number
+generators for PKBD and spherical Cauchy distribution.  Methods are based on
+Golzy M., Markatou M. (2020) <doi:10.1080/10618600.2020.1740713>, Kato S.,
+@code{McCullagh} P. (2020) <doi:10.3150/20-bej1222> and Sablica L., Hornik K.,
+Leydold J. (2023) <doi:10.1214/23-ejs2149>.")
+    (license license:gpl3)))
+
 (define-public r-circletyper
   (package
     (name "r-circletyper")
@@ -33849,25 +33884,24 @@ and the available API calls to streamline the process.")
 (define-public r-charlatan
   (package
     (name "r-charlatan")
-    (version "0.5.1")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "charlatan" version))
        (sha256
-        (base32 "1f83yrvc0qnxlvcpl41718vv3c26x131q285c1mgys1xwk3s97s7"))))
+        (base32 "19vrav1yhbfag2j2fc9hbrjhv79w0gxfzaml66b374q76cjji1nz"))))
     (properties `((upstream-name . "charlatan")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker r-tibble r-r6))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/charlatan/https://github.com/ropensci/charlatan")
+    (home-page "https://docs.ropensci.org/charlatan/")
     (synopsis "Make Fake Data")
     (description
-     "Make fake data, supporting addresses, person names, dates, times, colors,
-coordinates, currencies, digital object identifiers ('DOIs'), jobs, phone
-numbers, DNA sequences, doubles and integers from distributions and within a
-range.")
+     "Make fake data that looks realistic, supporting addresses, person names, dates,
+times, colors, coordinates, currencies, digital object identifiers ('DOIs'),
+jobs, phone numbers, DNA sequences, doubles and integers from distributions and
+within a range.")
     (license license:expat)))
 
 (define-public r-charcuterie
@@ -38740,17 +38774,17 @@ statistical description and bivariate analysis.")
 (define-public r-cbbinom
   (package
     (name "r-cbbinom")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cbbinom" version))
        (sha256
-        (base32 "0g6yn5zg4yijh24yjf4i8i2zx4brr8ppax44r8l7q22aq0c0mb0f"))))
+        (base32 "0n0qyzlsm54dl71n5rdrim6rvmsbk3g8n5r0i2q91yk9fayaz9ly"))))
     (properties `((upstream-name . "cbbinom")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=cbbinom")
+    (propagated-inputs (list r-rcpp r-hypergeo2 r-bh))
+    (home-page "https://github.com/zhuxr11/cbbinom")
     (synopsis "Continuous Analog of a Beta-Binomial Distribution")
     (description
      "Implementation of the d/p/q/r family of functions for a continuous analog to the
@@ -39161,13 +39195,13 @@ the help files.")
 (define-public r-causaloptim
   (package
     (name "r-causaloptim")
-    (version "0.9.8")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causaloptim" version))
        (sha256
-        (base32 "0daghglhk4jngv242s1vdi8l1dwcp23gn47vacrs55in5mmpqraj"))))
+        (base32 "18rms13kwkai4yj1h8npb3dgnpy884i8vznn4cbma2frqal0rqyn"))))
     (properties `((upstream-name . "causaloptim")))
     (build-system r-build-system)
     (arguments
@@ -39186,9 +39220,9 @@ the help files.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-shiny r-rcpp r-rcdd r-igraph))
+    (propagated-inputs (list r-shiny r-rcdd r-igraph))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/sachsmc/causaloptim")
+    (home-page "https://sachsmc.github.io/causaloptim/")
     (synopsis
      "An Interface to Specify Causal Graphs and Compute Bounds on Causal Effects")
     (description

@@ -974,13 +974,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.5.8")
+    (version "1.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "0lzinsgyz6pbiivdpi4bj7gfnnn72va47ipc0xi9c40j3rr87ns5"))))
+        (base32 "0vb2n7shvnawj36cyacd8pnbr2lxpjjmcfagixcm00n8q74i81y7"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc

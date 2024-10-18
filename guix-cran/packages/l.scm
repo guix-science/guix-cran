@@ -14512,13 +14512,13 @@ convergence issues.")
 (define-public r-lbi
   (package
     (name "r-lbi")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBI" version))
        (sha256
-        (base32 "1s96gpf032yi489r33bnlcz0k0fq32i9yqwvf9fsiz44pyd4b5mk"))))
+        (base32 "0n3vgivjrns7bpdp8hf9z1gd55ja9pv98w2g7g1kr0dsrjfwwrbj"))))
     (properties `((upstream-name . "LBI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=LBI")

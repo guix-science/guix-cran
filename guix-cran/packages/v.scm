@@ -604,13 +604,13 @@ levels (levels seen during application, but not during training).  Reference:
 (define-public r-vtable
   (package
     (name "r-vtable")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vtable" version))
        (sha256
-        (base32 "1via6iz6ykw02wh5aagr9vqbzlqjvc5iyzfjr13yzyxarpi8zpdr"))))
+        (base32 "1pjcvyid8i5j86jw0l6r3sd7gr6lc41vskiwbmi369g7k4fpgl6y"))))
     (properties `((upstream-name . "vtable")))
     (build-system r-build-system)
     (propagated-inputs (list r-sjlabelled r-rstudioapi r-knitr r-kableextra
@@ -3507,13 +3507,13 @@ populations.")
 (define-public r-viraldomain
   (package
     (name "r-viraldomain")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viraldomain" version))
        (sha256
-        (base32 "0cm6k88jr1vyc2k61cpkj49kcha1v9cpkafslzdh8zy5ngbsfy1j"))))
+        (base32 "1g5872l0vgv3dx2ilkk75rzrvp2df7c7avx9n51dzfxkm82s41hi"))))
     (properties `((upstream-name . "viraldomain")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows

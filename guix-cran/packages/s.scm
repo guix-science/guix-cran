@@ -7895,13 +7895,13 @@ identification and anomaly detection.")
 (define-public r-strucchangercpp
   (package
     (name "r-strucchangercpp")
-    (version "1.5-3-1.0.4")
+    (version "1.5-4-1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strucchangeRcpp" version))
        (sha256
-        (base32 "0vfqbhck0qwc8dsnm5ggc0if03vx4ma53qidi7qsqjyfjfszq1pm"))))
+        (base32 "15csz77hfii23dv8rrsabwilq8z0fa5f0vp6nhwh2nmww4y2fm7v"))))
     (properties `((upstream-name . "strucchangeRcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-sandwich r-rcpparmadillo r-rcpp))
@@ -15245,24 +15245,23 @@ sociometric status categorization.")
 (define-public r-ssra
   (package
     (name "r-ssra")
-    (version "0.1-0")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSRA" version))
        (sha256
-        (base32 "1d0lg2dz8vf1d63366s5apm0ygrsfxivbrsij907r244zj6i1c37"))))
+        (base32 "1xsjwwy1lpm5aqjs1cym34c73k3n6j7z9q3nh2xha57ai4g0drlw"))))
     (properties `((upstream-name . "SSRA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-shape))
     (home-page "https://cran.r-project.org/package=SSRA")
     (synopsis "Sakai Sequential Relation Analysis")
     (description
-     "Takeya Semantic Structure Analysis (TSSA) and Sakai Sequential Relation Analysis
-(SSRA) for polytomous items for examining whether each pair of items has a
-sequential or equal relation.  Package includes functions for generating a
-sequential relation table and a treegram to visualize sequential or equal
-relations between pairs of items.")
+     "Takea Semantic Structure Analysis (TSSA) and Sakai Sequential Relation Analysis
+(SSRA) for polytomous items.  Package includes functions for generating a
+sequential relation table and a treegram to visualize the sequential relations
+between pairs of items.")
     (license license:gpl3)))
 
 (define-public r-ssr
@@ -45413,13 +45412,13 @@ variables in linear regression with avoiding the collinearity.")
 (define-public r-shapleyoutlier
   (package
     (name "r-shapleyoutlier")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShapleyOutlier" version))
        (sha256
-        (base32 "1qdb872cppq1dh33l75pxw4l7isp8nlsinbipygm989f1sf24xkh"))))
+        (base32 "0k96jf8p5h6m81v900rj6110gq7jg3imxvlqsp4a93y67rgx58vn"))))
     (properties `((upstream-name . "ShapleyOutlier")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -45440,7 +45439,7 @@ variables in linear regression with avoiding the collinearity.")
     (description
      "Based on Shapley values to explain multivariate outlyingness and to detect and
 impute cellwise outliers.  Includes implementations of methods described in
-Mayrhofer and Filzmoser (2022) <doi:10.48550/ARXIV.2210.10063>.")
+Mayrhofer and Filzmoser (2023) <doi:10.1016/j.ecosta.2023.04.003>.")
     (license license:gpl3)))
 
 (define-public r-shapley

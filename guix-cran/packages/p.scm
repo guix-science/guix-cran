@@ -13512,13 +13512,13 @@ parallelized to improve their efficiency.")
 (define-public r-pot
   (package
     (name "r-pot")
-    (version "1.1-10")
+    (version "1.1-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POT" version))
        (sha256
-        (base32 "1gd76xc4gs7v3gcqaidnchm60gd2w7x0p6sqrvy38sfr4wbazz1s"))))
+        (base32 "0dkcikrz4xf8r49a0fap8nw8ydkz56kdmc7wjn9jannngl010z6v"))))
     (properties `((upstream-name . "POT")))
     (build-system r-build-system)
     (home-page "https://pot.r-forge.r-project.org/")
@@ -25555,6 +25555,32 @@ Mendelian disease and rare genetic variants.  See Bastarache et al.  2018
 <doi:10.1126/science.aal4043>.")
     (license license:gpl2)))
 
+(define-public r-phenthauproc
+  (package
+    (name "r-phenthauproc")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PHENTHAUproc" version))
+       (sha256
+        (base32 "1bhd147mhv1xj4q6yqz92n8vi6nji093y78pi1jkav1plwx2qf3c"))))
+    (properties `((upstream-name . "PHENTHAUproc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-rlang r-lubridate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PHENTHAUproc")
+    (synopsis "Phenology Modelling of Thaumetopoea Processionea")
+    (description
+     "This package provides methods to calculate and present PHENTHAUproc', an early
+warning and decision support system for hazard assessment and control of oak
+processionary moth (OPM) using local and spatial temperature data.  It was
+created by Halbig et al.  2024 (<doi:10.1016/j.foreco.2023.121525>) at FVA
+(<https://www.fva-bw.de/en/homepage/>) Forest Research Institute
+Baden-Wuerttemberg, Germany and at BOKU - University of Natural Ressources and
+Life Sciences, Vienna, Austria.")
+    (license license:expat)))
+
 (define-public r-phenotypesimulator
   (package
     (name "r-phenotypesimulator")
@@ -36160,13 +36186,13 @@ visualization of economic inequalities.")
 (define-public r-parabar
   (package
     (name "r-parabar")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parabar" version))
        (sha256
-        (base32 "1hhhcxaap1ih4chf5l2c8mqkv9i4bsqml64ak3nfydsi4znymha4"))))
+        (base32 "0kxf9xnippw59pxcgww3aihk78h84vfs0jpmm5zh55fvw947bavn"))))
     (properties `((upstream-name . "parabar")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-progress r-filelock r-callr))
@@ -37559,13 +37585,13 @@ missing data for all analyses.")
 (define-public r-paleodiv
   (package
     (name "r-paleodiv")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paleoDiv" version))
        (sha256
-        (base32 "1gj26y0ipc6rvf39293blxchnvm89pbmcwhqbnjz81cgp2zrw514"))))
+        (base32 "1v4dmx00vh3qpbw7pwvrr3sh4v6262b5y2h5nz2kgg9n4mfakc7n"))))
     (properties `((upstream-name . "paleoDiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-ape))

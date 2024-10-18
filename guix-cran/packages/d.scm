@@ -14965,6 +14965,35 @@ visualizations such as heatmaps, and significance testing for the existence of
 clusters.")
     (license license:expat)))
 
+(define-public r-diceplot
+  (package
+    (name "r-diceplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diceplot" version))
+       (sha256
+        (base32 "1jynszk534xsinc0sv4217s7i75804wp4nf3ry91374p1qz1zjc7"))))
+    (properties `((upstream-name . "diceplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-cowplot))
+    (home-page "https://cran.r-project.org/package=diceplot")
+    (synopsis "High Dimensional Categorical Data Visualization")
+    (description
+     "Easy visualization for datasets with more than two categorical variables and
+additional continuous variables.  diceplot is particularly useful for exploring
+complex categorical data in the context of pathway analysis across multiple
+conditions.  For a detailed documentation please visit
+<https://dice-and-domino-plot.readthedocs.io/en/latest/>.")
+    (license license:gpl2+)))
+
 (define-public r-diceoptim
   (package
     (name "r-diceoptim")
@@ -18693,13 +18722,13 @@ Liebscher (2019, submitted).")
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depCensoring" version))
        (sha256
-        (base32 "1dqimkmh9aiz94dhx37cx8krgz4dbmx3aywpazqr9kbqhs3qgiwb"))))
+        (base32 "0wsdwsv09k55ipbpps5aaf81a4p5mp9r63p36bvhj91f7ckvnwg0"))))
     (properties `((upstream-name . "depCensoring")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
