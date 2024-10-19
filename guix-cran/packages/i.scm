@@ -18201,13 +18201,13 @@ documentation and examples.  Data source: Iowa Data portal
 (define-public r-iai
   (package
     (name "r-iai")
-    (version "1.10.1")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iai" version))
        (sha256
-        (base32 "1fqa3gig417yc72yvw0phaiv799f91yf9c4yvj0biw1midw6fmcb"))))
+        (base32 "12a08dszd3d1d6dm56jcgw00k1qykk7a45g4ijlzgwb2q24dlpjf"))))
     (properties `((upstream-name . "iai")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

@@ -7192,18 +7192,17 @@ as demonstrated in 2018 by Hill et al. (<doi:10.3390/rs10071052>).")
 (define-public r-foresthes
   (package
     (name "r-foresthes")
-    (version "1.0-1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestHES" version))
        (sha256
-        (base32 "05l04ly3l8xkdz3rnnrfa4y0wfmh1am2ixbz1vfarnqkc0zppwpj"))))
+        (base32 "05gj7qwar6l7r6hh16dyfp1qlb259kwj1jbxg727f6bzhqbkg6hh"))))
     (properties `((upstream-name . "forestHES")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=forestHES")
-    (synopsis
-     "Forest Health Evaluation System at the Forest Stand Level in China")
+    (synopsis "Forest Health Evaluation System at the Forest Stand Level")
     (description
      "Assessing forest ecosystem health is an effective way for forest resource
 management.The national forest health evaluation system at the forest stand
@@ -7211,7 +7210,7 @@ level using analytic hierarchy process, has a high application value and
 practical significance.  The package can effectively and easily realize the
 total assessment process, and help foresters to further assess and management
 forest resources.")
-    (license license:gpl2+)))
+    (license license:gpl2)))
 
 (define-public r-forestgapr
   (package
@@ -16396,13 +16395,13 @@ from the actual target variable.  S. Chatterjee, A. S. Hadi (2006)
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.7.1")
+    (version "3.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "1qv9qqhwgjgcbla91ma2k9q9n1hzyjg8gy8qvf39ss1fq6y0ynv3"))))
+        (base32 "166czf41pnv3s0sw4sag2lnnnai7fzhkx5l10g3dnmv8rqhppvrk"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqlrender

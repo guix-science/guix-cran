@@ -10394,13 +10394,13 @@ Kronecker product of sub-Hadamard matrices.")
 (define-public r-hdnra
   (package
     (name "r-hdnra")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDNRA" version))
        (sha256
-        (base32 "17c2bck5s68kn7b67g5pgxd14n13313899waynn79vnkl319czq9"))))
+        (base32 "0j3przdam19w8n8yix73ac6xc8ggfvscaamk05ginii291l1z9pl"))))
     (properties `((upstream-name . "HDNRA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-rdpack r-rcpparmadillo r-rcpp r-expm))
@@ -10949,17 +10949,16 @@ al. (2023) <doi:10.2139/ssrn.4342487>.")
 (define-public r-hdf5r-extra
   (package
     (name "r-hdf5r-extra")
-    (version "0.0.6")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5r.Extra" version))
        (sha256
-        (base32 "0k8rvwxr30pbx0svikfar40465ff2daipsf91yp2px7hrgb4y129"))))
+        (base32 "1kfpa8i697f0ksa0pd726g6bf0j2injlbwkjg71k6apv3sq8aqxg"))))
     (properties `((upstream-name . "hdf5r.Extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
-                             r-matrixextra
                              r-matrix
                              r-hdf5r
                              r-easy-utils

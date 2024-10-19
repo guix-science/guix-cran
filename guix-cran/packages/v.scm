@@ -3464,28 +3464,27 @@ and computational biology for the benefit of understanding HIV dynamics.")
 (define-public r-viralmodels
   (package
     (name "r-viralmodels")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viralmodels" version))
        (sha256
-        (base32 "0azpydlvbkbsaj7zcvl95s5y8d8pj72rkv4zna2851046yz170jl"))))
+        (base32 "0ryjymbry92278sacbnfbkzl90i58cfk10dradkzp6rxl1ik9ryf"))))
     (properties `((upstream-name . "viralmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
                              r-workflows
-                             r-vdiffr
                              r-tune
                              r-tidyselect
                              r-rsample
                              r-recipes
+                             r-purrr
                              r-parsnip
-                             r-nnet
-                             r-kknn
-                             r-earth
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=viralmodels")
+                             r-hardhat
+                             r-dplyr
+                             r-dials))
+    (home-page "https://github.com/juanv66x/viralmodels")
     (synopsis "Viral Load and CD4 Lymphocytes Regression Models")
     (description
      "This package provides a comprehensive framework for building, evaluating, and
@@ -3502,7 +3501,7 @@ into disease dynamics.  The main focus is on improving the understanding of the
 relationships between viral load, CD4 lymphocytes, and other relevant covariates
 to contribute to HIV research and the visibility of vulnerable seropositive
 populations.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-viraldomain
   (package

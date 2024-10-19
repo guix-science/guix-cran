@@ -10774,6 +10774,29 @@ In addition, this package provides tools to monitor the compliance of the model
 code with modular coding guidelines.")
     (license license:bsd-2)))
 
+(define-public r-gmresls
+  (package
+    (name "r-gmresls")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gmresls" version))
+       (sha256
+        (base32 "1xzry0z02qb54ygvrykq3jyfrrs39zq0as8f54i7sdzx7nryxas3"))))
+    (properties `((upstream-name . "gmresls")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=gmresls")
+    (synopsis "Solve Least Squares with GMRES(k)")
+    (description
+     "Solves a least squares system Ax~=b (dim(A)=(m,n) with m >= n) with a
+precondition matrix B: BAx=Bb (dim(B)=(n,m)).  Implemented method is based on
+GMRES (Saad, Youcef; Schultz, Martin H. (1986). \"GMRES: A Generalized Minimal
+Residual Algorithm for Solving Nonsymmetric Linear Systems\"
+<doi:10.1137/0907058>) with callback functions, i.e.  no explicit A, B or b are
+required.")
+    (license license:gpl3+)))
+
 (define-public r-gmptzcurve
   (package
     (name "r-gmptzcurve")
@@ -22798,13 +22821,13 @@ Kriging technique.")
 (define-public r-geommc
   (package
     (name "r-geommc")
-    (version "0.0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geommc" version))
        (sha256
-        (base32 "0jc5fm2qrbhdk2dnh00yffjr07j8bg20h5dm0vj6qy1xkq7mrpx0"))))
+        (base32 "172iv017p5lfsy0436sqmvf8r1grwyb146czp6x6cyzn2n9qxhqx"))))
     (properties `((upstream-name . "geommc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -24064,13 +24087,13 @@ measures variability in subpopulations relative to the total population).")
 (define-public r-genular
   (package
     (name "r-genular")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genular" version))
        (sha256
-        (base32 "0ikgc2nljccznvsmhlf3ahf0m9xxw2ym4kqlm077lhpkzl432w33"))))
+        (base32 "0i77sxynwanm2rwc0dw3yq1j0vmha6mbjjcvmv1vkgdf8xq1aqmz"))))
     (properties `((upstream-name . "genular")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-jsonlite r-httr r-dplyr))
@@ -25326,33 +25349,6 @@ terms and conditions available at
 estimating bird and bat mortality at wind and solar power facilities, following
 Dalthorp, et al. (2018) <doi:10.3133/tm7A2>.")
     (license license:cc0)))
-
-(define-public r-geneslope
-  (package
-    (name "r-geneslope")
-    (version "0.38.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geneSLOPE" version))
-       (sha256
-        (base32 "08fbrssj03ak6xqm9fmb9v6ir7229qds891088wznvg58k81yslv"))))
-    (properties `((upstream-name . "geneSLOPE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-slope r-ggplot2 r-bigmemory))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/psobczyk/geneSLOPE")
-    (synopsis "Genome-Wide Association Study with SLOPE")
-    (description
-     "Genome-wide association study (GWAS) performed with SLOPE, short for Sorted
-L-One Penalized Estimation, a method for estimating the vector of coefficients
-in a linear model.  In the first step of GWAS, single nucleotide polymorphisms
-(SNPs) are clumped according to their correlations and distances.  Then, SLOPE
-is performed on the data where each clump has one representative.  Malgorzata
-Bogdan, Ewout van den Berg, Chiara Sabatti, Weijie Su and Emmanuel Candes (2014)
-\"SLOPE - Adaptive Variable Selection via Convex Optimization\"
-<@code{arXiv:1407.3824>}.")
-    (license license:gpl3)))
 
 (define-public r-geneset
   (package

@@ -9318,13 +9318,13 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
 (define-public r-mrgsolve
   (package
     (name "r-mrgsolve")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsolve" version))
        (sha256
-        (base32 "0bzvzj346ssys7wl7pb0mddg8k0la2sw0q2dxapwvlmasbj4x81g"))))
+        (base32 "19c3bq58sca4i3iizpnvkgig62bhnq4c4lwi8gxihv00vrl9lil2"))))
     (properties `((upstream-name . "mrgsolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9337,7 +9337,7 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
                              r-glue
                              r-dplyr
                              r-bh))
-    (home-page "https://github.com/metrumresearchgroup/mrgsolve")
+    (home-page "https://mrgsolve.org/docs/")
     (synopsis "Simulate from ODE-Based Models")
     (description
      "Fast simulation from ordinary differential equation (ODE) based models typically
@@ -22923,24 +22923,24 @@ Models with time dependent misclassification may also be fitted.")
 (define-public r-miscfuncs
   (package
     (name "r-miscfuncs")
-    (version "1.5-8")
+    (version "1.5-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miscFuncs" version))
        (sha256
-        (base32 "1inx03ga2dqwh6pxcf9wdkh847f0abfkmxn91xdj612c66r4r0aq"))))
+        (base32 "119im7av5skmqcyf1lsywbpq3kckka2z8kn5hgd9vkrjcj2qnnd7"))))
     (properties `((upstream-name . "miscFuncs")))
     (build-system r-build-system)
     (propagated-inputs (list r-roxygen2 r-mvtnorm r-extradistr))
     (home-page "https://cran.r-project.org/package=miscFuncs")
     (synopsis
-     "Miscellaneous Useful Functions Including LaTeX Tables, Kalman Filtering, QQplots with Simulation-Based Confidence Intervals and Development Tools")
+     "Miscellaneous Useful Functions Including LaTeX Tables, Kalman Filtering, QQplots with Simulation-Based Confidence Intervals, Linear Regression Diagnostics and Development Tools")
     (description
      "Implementing various things including functions for @code{LaTeX} tables, the
-Kalman filter, QQ-plots with simulation-based confidence intervals, web
-scraping, development tools, relative risk and odds rati, GARCH(1,1)
-Forecasting.")
+Kalman filter, QQ-plots with simulation-based confidence intervals, linear
+regression diagnostics, web scraping, development tools, relative risk and odds
+rati, GARCH(1,1) Forecasting.")
     (license license:gpl3)))
 
 (define-public r-miscf
@@ -33896,13 +33896,13 @@ including spatial processes such as lateral water transfer and seed dispersal.")
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "4.4.0")
+    (version "4.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfate" version))
        (sha256
-        (base32 "19ljklfvzxvf3pxpx88r0im9f8kw261d6drhyj3njiv0ykxy19qq"))))
+        (base32 "0fxzvqvg879ps59b7469cp4mhjs5hj7d55hl4q80p2zv31dc84k3"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-meteoland r-ggplot2))

@@ -2711,13 +2711,13 @@ and Yang Feng, 2021).")
 (define-public r-npcp
   (package
     (name "r-npcp")
-    (version "0.2-5")
+    (version "0.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npcp" version))
        (sha256
-        (base32 "0mh5z4flksj7v1klylwqn2dxn5sbvs16sdy46l7y7n93i4v3pqvi"))))
+        (base32 "0xlbl5155dv4ngfr8b98rrsjjbb5pih8lil1bfw42vkqcz7s64dd"))))
     (properties `((upstream-name . "npcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich))
@@ -12130,13 +12130,13 @@ interventions.  They have been developed and applied in Langendorf and Burgess
 (define-public r-netcoin
   (package
     (name "r-netcoin")
-    (version "2.0.48")
+    (version "2.0.84")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netCoin" version))
        (sha256
-        (base32 "03rmi75rjjy03jy0cv6qzz46q06027zvbwy4vp13748vq49aql1s"))))
+        (base32 "0mkks87k4m4khd9ykw6fhy7f1naildms1h7s0wdr4d6r63a8fhzs"))))
     (properties `((upstream-name . "netCoin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rd3plot

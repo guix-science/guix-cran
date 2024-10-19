@@ -14989,17 +14989,18 @@ common support calculations, and plotting useful summaries of these.")
 (define-public r-tidytransit
   (package
     (name "r-tidytransit")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytransit" version))
        (sha256
-        (base32 "0n5iy7cpj94r396rf6rzx2n258836rjf7906hrdj58rgc28qhacm"))))
+        (base32 "174h4ly85bn7c4sr9nnzdfybnm2nm33hw8rvk6j9xwj78bg5m0k7"))))
     (properties `((upstream-name . "tidytransit")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
                              r-rlang
+                             r-jsonlite
                              r-hms
                              r-gtfsio
                              r-geodist

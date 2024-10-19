@@ -4073,13 +4073,13 @@ bidding sequences.")
 (define-public r-bridgedist
   (package
     (name "r-bridgedist")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bridgedist" version))
        (sha256
-        (base32 "1bsvwh2c1i9z37d363gk5nzrbg9bcjfkarr0a2l8xrv4r1zwj43j"))))
+        (base32 "06y4c4ym27dh39ysr5sf4ymad0bk7wxyf8kmj1y560p7h97f5d32"))))
     (properties `((upstream-name . "bridgedist")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9012,18 +9012,18 @@ analyzing them with a Bayesian model averaging approach.")
 (define-public r-bma
   (package
     (name "r-bma")
-    (version "3.18.17")
+    (version "3.18.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMA" version))
        (sha256
-        (base32 "1xfsfyjwsk5bp2j50qfhfm1yla4fl2l53d85466a9y3rl57m333d"))))
+        (base32 "0hldrbl7bcf5rchc5vl8v1y679yjbxq8pca79pgc3g607pnddsh9"))))
     (properties `((upstream-name . "BMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rrcov r-robustbase r-leaps r-inline))
     (native-inputs (list gfortran))
-    (home-page "http://stats.research.att.com/volinsky/bma.html")
+    (home-page "https://github.com/hanase/BMA")
     (synopsis "Bayesian Model Averaging")
     (description
      "Package for Bayesian model averaging and variable selection for linear models,

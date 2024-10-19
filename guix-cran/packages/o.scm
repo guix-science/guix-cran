@@ -6200,6 +6200,35 @@ stresses.  To our knowledge this the first multiclass classifier for predicting
 histone modification in plants. <doi:10.1186/s12864-019-5489-4>.")
     (license license:gpl3)))
 
+(define-public r-openfda
+  (package
+    (name "r-openfda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openFDA" version))
+       (sha256
+        (base32 "1z5mljnn4f6hasc207spiz5yvhrssb09mfnbnfdi8p7di0wg8szw"))))
+    (properties `((upstream-name . "openFDA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/simpar1471/openFDA")
+    (synopsis "'openFDA' API")
+    (description
+     "The @code{openFDA} API facilitates access to Federal Drug Agency (FDA) data on
+drugs, devices, foodstuffs, tobacco, and more with httr2'.  This package makes
+the API easily accessible, returning objects which the user can convert to JSON
+data and parse.  Kass-Hout TA, Xu Z, Mohebbi M et al. (2016)
+<doi:10.1093/jamia/ocv153>.")
+    (license license:gpl3+)))
+
 (define-public r-openeo
   (package
     (name "r-openeo")
@@ -10032,6 +10061,45 @@ KÃ¶ning, R., Wimmer, G. and WitkovskÃ½, V. (2014)
      "Search and extract data from the Organization for Economic Cooperation and
 Development (OECD).")
     (license license:cc0)))
+
+(define-public r-odt
+  (package
+    (name "r-odt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ODT" version))
+       (sha256
+        (base32 "0gwjnx99g2r3fhysp0in8dby5syvnpzs3lysgagsdd38pfhizq9h"))))
+    (properties `((upstream-name . "ODT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsvg
+                             r-partykit
+                             r-matrixstats
+                             r-magick
+                             r-diagrammersvg
+                             r-diagrammer
+                             r-data-tree))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ODT")
+    (synopsis "Optimal Decision Trees Algorithm")
+    (description
+     "This package implements a tree-based method specifically designed for
+personalized medicine applications.  By using genomic and mutational data, ODT
+efficiently identifies optimal drug recommendations tailored to individual
+patient profiles.  The ODT algorithm constructs decision trees that bifurcate at
+each node, selecting the most relevant markers (discrete or continuous) and
+corresponding treatments, thus ensuring that recommendations are both
+personalized and statistically robust.  This iterative approach enhances
+therapeutic decision-making by refining treatment suggestions until a predefined
+group size is achieved.  Moreover, the simplicity and interpretability of the
+resulting trees make the method accessible to healthcare professionals.
+Includes functions for training the decision tree, making predictions on new
+samples or patients, and visualizing the resulting tree.  For detailed insights
+into the methodology, please refer to Gimeno et al. (2023)
+<doi:10.1093/bib/bbad200>.")
+    (license license:artistic2.0)))
 
 (define-public r-ods
   (package

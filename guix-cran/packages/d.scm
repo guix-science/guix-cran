@@ -15662,13 +15662,13 @@ Lumley (2019) <@code{arXiv:1912.04435>} is based on the methods in this package.
 (define-public r-dharma
   (package
     (name "r-dharma")
-    (version "0.4.6")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DHARMa" version))
        (sha256
-        (base32 "0wsb59w6z8mwag2wfiqs8237sk5rf2w7z7araxa6pzslsdf3vz9j"))))
+        (base32 "0mfywr4pshnd13xs2zdhd8xvbc43qxaj075jhy8lrlg1agmc6gya"))))
     (properties `((upstream-name . "DHARMa")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgam
@@ -15685,8 +15685,9 @@ Lumley (2019) <@code{arXiv:1912.04435>} is based on the methods in this package.
      "The DHARMa package uses a simulation-based approach to create readily
 interpretable scaled (quantile) residuals for fitted (generalized) linear mixed
 models.  Currently supported are linear and generalized linear (mixed) models
-from lme4 (classes @code{lmerMod}', @code{glmerMod}'), @code{glmmTMB}
-GLMMadaptive and @code{spaMM}', generalized additive models ('gam from mgcv'),
+from lme4 (classes @code{lmerMod}', @code{glmerMod}'), @code{glmmTMB}',
+GLMMadaptive', and @code{spaMM}'; phylogenetic linear models from phylolm
+(classes phylolm and phyloglm'); generalized additive models ('gam from mgcv');
 glm (including negbin from MASS', but excluding quasi-distributions) and lm
 model classes.  Moreover, externally created simulations, e.g. posterior
 predictive simulations from Bayesian software such as JAGS', STAN', or BUGS can
@@ -15694,7 +15695,7 @@ be processed as well.  The resulting residuals are standardized to values
 between 0 and 1 and can be interpreted as intuitively as residuals from a linear
 regression.  The package also provides a number of plot and test functions for
 typical model misspecification problems, such as over/underdispersion,
-zero-inflation, and residual spatial and temporal autocorrelation.")
+zero-inflation, and residual spatial, phylogenetic and temporal autocorrelation.")
     (license license:gpl3+)))
 
 (define-public r-dgumbel
@@ -20217,17 +20218,17 @@ indexes downloaded from the Brazilian Institute for Applied Economic Research.")
 (define-public r-defit
   (package
     (name "r-defit")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deFit" version))
        (sha256
-        (base32 "0z4lc9s3wb7gab7cg1xr9gkggd2dxy8qbqqvbz1yxvnm86n2ai79"))))
+        (base32 "0vsixnjz531i8m3qbv1cx1nv8gyjvvy2ys6i48zc9ncb56issjad"))))
     (properties `((upstream-name . "deFit")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-ggplot2 r-desolve))
-    (home-page "https://github.com/yueqinhu/defit")
+    (home-page "https://cran.r-project.org/package=deFit")
     (synopsis "Fitting Differential Equations to Time Series Data")
     (description
      "Use numerical optimization to fit ordinary differential equations (ODEs) to time

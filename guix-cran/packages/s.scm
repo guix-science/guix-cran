@@ -11366,13 +11366,13 @@ accessibility.")
 (define-public r-stepr
   (package
     (name "r-stepr")
-    (version "2.1-9")
+    (version "2.1-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stepR" version))
        (sha256
-        (base32 "1dw402p49j2m076b7ybmnfhxhxb4i8fnalqqblxq2ax7rl69i2vz"))))
+        (base32 "08v9blxqyha4phk90f09vdq8vh9czprfvsiwk06l8am01cspdj4j"))))
     (properties `((upstream-name . "stepR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r-cache r-lowpassfilter r-digest))
@@ -22351,13 +22351,13 @@ in C++20 or later).")
 (define-public r-spdesign
   (package
     (name "r-spdesign")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spdesign" version))
        (sha256
-        (base32 "0kc73mv7fpz0anzr9q2l5zd3g127igi5kbmfn0m19x3hpwh3qfyj"))))
+        (base32 "01lmbclp4g813zjdv3cb2bqh836q844cvn537vvgj6s9dl6sxivi"))))
     (properties `((upstream-name . "spdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -28956,23 +28956,22 @@ Tahar Allouche, Bruno Escoffier, Stefano Moretti and Meltem ÃztÃ¼rk (2020,
 (define-public r-socialmixr
   (package
     (name "r-socialmixr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socialmixr" version))
        (sha256
-        (base32 "1gj7gsjzrx170i8ifnpi38pas5k952nrm1bx59zbjz46wc2h3n2h"))))
+        (base32 "1drmcvkma3xym17mkpzswjxfcna1vn6r8ym7i21ws0m2whha1wwy"))))
     (properties `((upstream-name . "socialmixr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-wpp2017
                              r-oai
+                             r-memoise
                              r-lubridate
-                             r-lifecycle
                              r-jsonlite
                              r-httr
-                             r-fields
                              r-data-table
                              r-curl
                              r-countrycode))
@@ -47614,13 +47613,13 @@ al. (2021) <doi:10.3390/stats4030037>.")
 (define-public r-serosv
   (package
     (name "r-serosv")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serosv" version))
        (sha256
-        (base32 "1n6dcm2bsdwfcqd2kil4agwk2qabwxzxqvxr91xgn0g9c4kxrkbn"))))
+        (base32 "11nwpbbzcp6lch79kfz2v63l899dvjdg58qdlc4z2r1c68yxk4vp"))))
     (properties `((upstream-name . "serosv")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

@@ -19659,13 +19659,13 @@ Y. Luo (2023) <doi:10.14708/ma.v51i2.7259>.")
 (define-public r-rmacrostrat
   (package
     (name "r-rmacrostrat")
-    (version "0.0.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmacrostrat" version))
        (sha256
-        (base32 "175b2bzdvi1nfh7yppb598cym7b90ivb10ayj81yfsf02v4mi916"))))
+        (base32 "19q9azaskbnd8bph8lb7fpvmgn0mb1b2xsmfm1iq8mjd18iigv60"))))
     (properties `((upstream-name . "rmacrostrat")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite r-httr r-geojsonsf r-curl))
@@ -23120,13 +23120,13 @@ convert them to spatstat (<https://spatstat.org/>) spatial patterns.")
 (define-public r-rim
   (package
     (name "r-rim")
-    (version "0.6.4")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rim" version))
        (sha256
-        (base32 "0i4xb56kj4w9hd5i4g42y1ml6yy3p94lsmfm5mlkwixg8f25hhwj"))))
+        (base32 "05bi61zwrmwd3nm5jvmlaq8cxwabpb3xfji45q2wggvbgj63wm9f"))))
     (properties `((upstream-name . "rim")))
     (build-system r-build-system)
     (inputs (list maxima))
@@ -28072,16 +28072,16 @@ compound in a given disease.")
 (define-public r-rethnicity
   (package
     (name "r-rethnicity")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rethnicity" version))
        (sha256
-        (base32 "0v2v2vajidw9nv1c9drglyyy4smxz740zx3kvl77pn9djf2im85v"))))
+        (base32 "1wmy0anrcz2ww028k5i7fcfa5vyl7gzb1qyymh6xdpgijk4b32rr"))))
     (properties `((upstream-name . "rethnicity")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppthread r-rcppeigen r-rcpp r-cli))
+    (propagated-inputs (list r-rlang r-rcppthread r-rcppeigen r-rcpp r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fangzhou-xie/rethnicity")
     (synopsis "Predicting Ethnic Group from Names")
@@ -38364,13 +38364,13 @@ Evolution,13: 782-788 <DOI:10.1111/2041-210X.13800>.")
 (define-public r-rd3plot
   (package
     (name "r-rd3plot")
-    (version "1.0.68")
+    (version "1.1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rD3plot" version))
        (sha256
-        (base32 "03zcmxjpa6zz1aw6yaijdhzxv3sar04w3kaz59asmcg8f8r0ghys"))))
+        (base32 "1jjfr1ncfv0dxlzhlyfkdvx19cdxixzv89xl7y2piyvx1rbi14j6"))))
     (properties `((upstream-name . "rD3plot")))
     (build-system r-build-system)
     (arguments

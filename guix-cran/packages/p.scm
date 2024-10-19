@@ -19560,6 +19560,30 @@ relationships in latent regression models using structural equation mixture
 models (SEMMs).")
     (license license:gpl2+)))
 
+(define-public r-plotscaper
+  (package
+    (name "r-plotscaper")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plotscaper" version))
+       (sha256
+        (base32 "1r5fpdfldm5mc1qkma6d713fr2p00k3zb586slimk7s4p91rm4d0"))))
+    (properties `((upstream-name . "plotscaper")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid r-knitr r-jsonlite r-httpuv r-htmlwidgets))
+    (native-inputs (list r-knitr))
+    (home-page "https://bartonicek.github.io/plotscaper/")
+    (synopsis "Explore Your Data with Interactive Figures")
+    (description
+     "This package provides a framework for creating interactive figures for data
+exploration.  All plots are automatically linked and support several kinds of
+interactive features, including selection, zooming, panning, and parameter
+manipulation.  The figures can be interacted with either manually, using a mouse
+and a keyboard, or by running code from inside an active R session.")
+    (license license:expat)))
+
 (define-public r-plotscale
   (package
     (name "r-plotscale")
@@ -20999,6 +21023,54 @@ which gets data from FBref <https://fbref.com/en>, Transfermarkt
 <https://www.transfermarkt.com/>, Understat <https://understat.com/>, and fotmob
 <https://www.fotmob.com/>.")
     (license license:expat)))
+
+(define-public r-platypus
+  (package
+    (name "r-platypus")
+    (version "3.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Platypus" version))
+       (sha256
+        (base32 "03sws767aih5yihqr9vfnixp0njgzfgflvajf3sbhrzpj29dpkgg"))))
+    (properties `((upstream-name . "Platypus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-useful
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-seuratobject
+                             r-seurat
+                             r-seqinr
+                             r-reshape2
+                             r-plyr
+                             r-matrix
+                             r-magrittr
+                             r-knitr
+                             r-jsonlite
+                             r-ggtree
+                             r-ggseqlogo
+                             r-ggplot2
+                             r-ggalluvial
+                             r-dplyr
+                             r-cowplot
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Platypus")
+    (synopsis "Single-Cell Immune Repertoire and Gene Expression Analysis")
+    (description
+     "We present Platypus', an open-source software platform providing a user-friendly
+interface to investigate B-cell receptor and T-cell receptor repertoires from
+@code{scSeq} experiments.  Platypus provides a framework to automate and ease
+the analysis of single-cell immune repertoires while also incorporating
+transcriptional information involving unsupervised clustering, gene expression
+and gene ontology.  This R version of Platypus is part of the @code{ePlatypus}
+ecosystem for computational analysis of immunogenomics data: Yermanos et al.
+(2021) <doi:10.1093/nargab/lqab023>, Cotet et al. (2023)
+<doi:10.1093/bioinformatics/btad553>.")
+    (license license:gpl2)))
 
 (define-public r-plattice
   (package
