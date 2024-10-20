@@ -7378,13 +7378,13 @@ in the approach.")
 (define-public r-cre
   (package
     (name "r-cre")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRE" version))
        (sha256
-        (base32 "19clbz7x4sf8jxj0s77ym9k1k5hgd64myvvn5f3m6pxpnx7hskhl"))))
+        (base32 "0pbdbzxwgc3k03ki1kdzr3n57p0g0dd2c819bzwcg3i18h4ssc04"))))
     (properties `((upstream-name . "CRE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -28094,6 +28094,34 @@ climate change as a series of time slices.  The methods follow Owens and
 Guralnick <doi:10.17161/bi.v14i0.9786> Biodiversity Informatics.")
     (license license:gpl3)))
 
+(define-public r-climate
+  (package
+    (name "r-climate")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "climate" version))
+       (sha256
+        (base32 "16fwli2dhj9rf9qz3h6iy7g06y7z3vi7mndbhf4vx110iyjsh2wa"))))
+    (properties `((upstream-name . "climate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-stringi r-httr r-data-table r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bczernecki/climate")
+    (synopsis
+     "Interface to Download Meteorological (and Hydrological) Datasets")
+    (description
+     "Automatize downloading of meteorological and hydrological data from publicly
+available repositories: OGIMET (<http://ogimet.com/index.phtml.en>), University
+of Wyoming - atmospheric vertical profiling data
+(<http://weather.uwyo.edu/upperair/>), Polish Institute of Meteorology and Water
+Management - National Research Institute (<https://danepubliczne.imgw.pl>), and
+National Oceanic & Atmospheric Administration (NOAA).  This package also allows
+for searching geographical coordinates for each observation and calculate
+distances to the nearest stations.")
+    (license license:expat)))
+
 (define-public r-clikcorr
   (package
     (name "r-clikcorr")
@@ -38265,13 +38293,13 @@ Journal of Statistical Theory Practice, 16(3): 47.
 (define-public r-cccrm
   (package
     (name "r-cccrm")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccrm" version))
        (sha256
-        (base32 "0lgmj3x3l0bv39is0hl1q6r7964wagafbzaxx9z7aysk1f1b06wl"))))
+        (base32 "15a797d9m90pwxc9lpa836dd3mml11pfmx256sgqysmd5rkn13fx"))))
     (properties `((upstream-name . "cccrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

@@ -1815,13 +1815,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "6.3")
+    (version "6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "0rf39zbkliayxvpb5lgg2c0r9j50f0x5xrsj97qfa0a5n5h29m1z"))))
+        (base32 "0pkj5ai1c2j15kfk41f3pri5vsw9qrq8viihnbdfib3yq5nin0s6"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (arguments
@@ -1842,7 +1842,7 @@ normal profiles.")
                                   '())))))))
     (propagated-inputs (list r-shinylight r-isoplotr))
     (native-inputs (list esbuild))
-    (home-page "https://www.ucl.ac.uk/~ucfbpve/isoplotr/")
+    (home-page "https://github.com/pvermees/IsoplotRgui/")
     (synopsis "Web Interface to 'IsoplotR'")
     (description
      "This package provides a graphical user interface to the @code{IsoplotR} package
@@ -1854,17 +1854,17 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "6.3")
+    (version "6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "0a109xgs16wwjjvzvm5x9kqsc0ic4zsfbmsgcclxs8bq1w4maj70"))))
+        (base32 "0rba6zfw2ilkm0l9pcr35dv8cfvnnvpirhla9pnc4hg1bza5mgcn"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
-    (home-page "https://www.ucl.ac.uk/~ucfbpve/isoplotr/")
+    (home-page "https://github.com/pvermees/IsoplotR/")
     (synopsis "Statistical Toolbox for Radiometric Geochronology")
     (description
      "Plots U-Pb data on Wetherill and Tera-Wasserburg concordia diagrams.  Calculates

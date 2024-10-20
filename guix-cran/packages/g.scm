@@ -25350,6 +25350,33 @@ estimating bird and bat mortality at wind and solar power facilities, following
 Dalthorp, et al. (2018) <doi:10.3133/tm7A2>.")
     (license license:cc0)))
 
+(define-public r-geneslope
+  (package
+    (name "r-geneslope")
+    (version "0.38.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geneSLOPE" version))
+       (sha256
+        (base32 "08fbrssj03ak6xqm9fmb9v6ir7229qds891088wznvg58k81yslv"))))
+    (properties `((upstream-name . "geneSLOPE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-slope r-ggplot2 r-bigmemory))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/psobczyk/geneSLOPE")
+    (synopsis "Genome-Wide Association Study with SLOPE")
+    (description
+     "Genome-wide association study (GWAS) performed with SLOPE, short for Sorted
+L-One Penalized Estimation, a method for estimating the vector of coefficients
+in a linear model.  In the first step of GWAS, single nucleotide polymorphisms
+(SNPs) are clumped according to their correlations and distances.  Then, SLOPE
+is performed on the data where each clump has one representative.  Malgorzata
+Bogdan, Ewout van den Berg, Chiara Sabatti, Weijie Su and Emmanuel Candes (2014)
+\"SLOPE - Adaptive Variable Selection via Convex Optimization\"
+<@code{arXiv:1407.3824>}.")
+    (license license:gpl3)))
+
 (define-public r-geneset
   (package
     (name "r-geneset")

@@ -8360,20 +8360,16 @@ APHA(2017,ISBN:9780875532875).")
 (define-public r-aqp
   (package
     (name "r-aqp")
-    (version "2.0.4")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aqp" version))
        (sha256
-        (base32 "0p43q6xvvks0f424h1rgzwx3ykpb4wrh5xd24khpkxwwigmm5jc4"))))
+        (base32 "0gwq6r92swhjv2iaakqf3w6ha2y9kyxmshvjxvlzz2mq8xrla8ck"))))
     (properties `((upstream-name . "aqp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sp
-                             r-lattice
-                             r-farver
-                             r-data-table
+    (propagated-inputs (list r-stringr r-lattice r-farver r-data-table
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ncss-tech/aqp")

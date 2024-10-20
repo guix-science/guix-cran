@@ -8554,13 +8554,13 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
 (define-public r-equalden-hd
   (package
     (name "r-equalden-hd")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Equalden.HD" version))
        (sha256
-        (base32 "1lwqnm2xg7x79xajjb4fx5b5yaqs0rn8myb2h52pfgm0v37lzvmb"))))
+        (base32 "17rv3ccnki6s31s2f31m1cshbsd1zim55zi5l9f66lycj1svcym4"))))
     (properties `((upstream-name . "Equalden.HD")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Equalden.HD")
@@ -21096,13 +21096,13 @@ Stephens (2021) <@code{arXiv:2110.00152>}.")
 (define-public r-ebmstate
   (package
     (name "r-ebmstate")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebmstate" version))
        (sha256
-        (base32 "1jbkzf7zn844jg10cy9kv3v569n82718iqaz7id4jfbcq31p7l8v"))))
+        (base32 "1f1rb6mzpmsh317gjfpyg9fhankyjpd8xixlhfp8m6cgmv6dgvfc"))))
     (properties `((upstream-name . "ebmstate")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-mstate r-hdinterval))

@@ -9503,13 +9503,13 @@ Marble, and Tanigawa-Lau (2023) <doi:10.31235/osf.io/c9fkg>.")
 (define-public r-blocktools
   (package
     (name "r-blocktools")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blockTools" version))
        (sha256
-        (base32 "0372ca7mgzz6j0gp2yn2mjpj0kq01jg3pyhd33s65srap2n0wg0d"))))
+        (base32 "0c62s4p477d9lxxninn18hrf348rph7w8w1jsqzqpm333dcamvhi"))))
     (properties `((upstream-name . "blockTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-mass r-dplyr))
@@ -9522,7 +9522,8 @@ creating a measure of multivariate distance between all possible pairs of units.
  Maximum, minimum, or an allowable range of differences between units on one
 variable can be set.  Randomly assign units to treatment conditions.  Diagnose
 potential interference between units assigned to different treatment conditions.
- Write outputs to .tex and .csv files.")
+ Write outputs to .tex and .csv files.  For more information on the methods
+implemented, see Moore (2012) <doi:10.1093/pan/mps025>.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 

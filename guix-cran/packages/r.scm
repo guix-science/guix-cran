@@ -10856,13 +10856,13 @@ of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
 (define-public r-rpdbapi
   (package
     (name "r-rpdbapi")
-    (version "2.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPDBapi" version))
        (sha256
-        (base32 "1cbzmzrh8v6lzq7l8kijaviqkr7nii4g18d00nsjkgs69vhry496"))))
+        (base32 "06l24wff8ym3ksr6j01bph7lrnar7cwwlm0jp1kfshjdbmxqbb0n"))))
     (properties `((upstream-name . "rPDBapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -33148,13 +33148,13 @@ Some of the functions are applicable to image data.")
 (define-public r-refugees
   (package
     (name "r-refugees")
-    (version "2023.12.0")
+    (version "2024.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refugees" version))
        (sha256
-        (base32 "11isc2q3y3syi1hkvxg8rgism9qynskxypsivcvjdpdhw4sfh263"))))
+        (base32 "1lgxkcc4hv2nnndirp70hpn5mahcsv65nj289ms4qh3wdg89h9pb"))))
     (properties `((upstream-name . "refugees")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))

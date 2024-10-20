@@ -18107,13 +18107,13 @@ summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
 (define-public r-pmxcode
   (package
     (name "r-pmxcode")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxcode" version))
        (sha256
-        (base32 "1zh8461zxdrp6xf7795ivgjhhjvnlyhkif8cqmijnjjylvami09g"))))
+        (base32 "1m183y1pfd7as9j3ph1in52fi1fi82f9y7fphbjh4r0ch3pl4dws"))))
     (properties `((upstream-name . "pmxcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -18149,13 +18149,13 @@ for various modeling and simulation software platforms.")
 (define-public r-pmwr
   (package
     (name "r-pmwr")
-    (version "0.19-5")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PMwR" version))
        (sha256
-        (base32 "1yhqbp5f6a7rkxxljqw5xsl1v0yysxjlx2r99w3h2hka44mksm21"))))
+        (base32 "0qcxsz2szgjh437ykr5hc3yml85mw3kp5nj4dg6n6cbvk3sk8dq0"))))
     (properties `((upstream-name . "PMwR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -18171,7 +18171,7 @@ for various modeling and simulation software platforms.")
 portfolios: backtesting investment and trading strategies, computing profit/loss
 and returns, analysing trades, handling lists of transactions, reporting, and
 more.  The package provides a small set of reliable, efficient and convenient
-tools for processing and analysing trade/portfolio data.  The Manual provides
+tools for processing and analysing trade/portfolio data.  The manual provides
 all the details; it is available from
 <https://enricoschumann.net/R/packages/P@code{MwR/manual/PMwR.html>}.  Examples
 and descriptions of new features are provided at

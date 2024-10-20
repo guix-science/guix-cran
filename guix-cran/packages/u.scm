@@ -1885,13 +1885,13 @@ method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.
 (define-public r-unnest
   (package
     (name "r-unnest")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unnest" version))
        (sha256
-        (base32 "188la0g80ihcisb0gwnxbgxy882i74ngjgaa304kx8bq8sn6x4cz"))))
+        (base32 "091vmhk31i2qh7jzbpv03arnjs14zgz8z540w5vjvnm58yc7gnri"))))
     (properties `((upstream-name . "unnest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

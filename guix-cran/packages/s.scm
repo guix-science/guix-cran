@@ -39051,13 +39051,13 @@ reduced Reparameterized Unified Model ('@code{rRUM}') from Culpepper and Hudson
 (define-public r-simcausal
   (package
     (name "r-simcausal")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simcausal" version))
        (sha256
-        (base32 "0r87i5m8sd9bf8ddlkgq9dl0pglhxl9pj5b0vx79va9r5wb55vgk"))))
+        (base32 "1k9qq4xr4xznqzw668z49bw3nw4q1vb87v134dwr8b1zns5r5a4v"))))
     (properties `((upstream-name . "simcausal")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -52657,13 +52657,13 @@ SPY, BTC-USD, and ETH-USD etc).")
 (define-public r-seasonal
   (package
     (name "r-seasonal")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seasonal" version))
        (sha256
-        (base32 "0kpmqix7lxlsnhacrhk5aa9gvzng3fg024ngpk5apmhai7m2bp20"))))
+        (base32 "11d67bwkhrsphv7nb1ilimpcfv6n89ykd5sbx8p123dr3h02sgss"))))
     (properties `((upstream-name . "seasonal")))
     (build-system r-build-system)
     (propagated-inputs (list r-x13binary))
