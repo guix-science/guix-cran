@@ -18787,13 +18787,13 @@ well-known data sets from the multilevel modelling literature.")
 (define-public r-mlmpower
   (package
     (name "r-mlmpower")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmpower" version))
        (sha256
-        (base32 "0sakpiqi220j00w8s251ajaknm2lcg9jf9kif4l4qnz6z2vzn7y2"))))
+        (base32 "1y7vvawgzp8gw287jrcfam1izimy4il3vzanx0mqd5x88n76mpbp"))))
     (properties `((upstream-name . "mlmpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-vartestnlme r-lmertest r-lme4 r-cli))
@@ -20754,17 +20754,16 @@ function that provides average theta values for each class in a mixture model.")
 (define-public r-mixr
   (package
     (name "r-mixr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixR" version))
        (sha256
-        (base32 "1iarsys7jyi3zck01y7415xwyd1knnh1fkc8z4ipfd63nnlm2pqc"))))
+        (base32 "0n279sinm3b1cx7dsnp72pv8ipmhvf61f1rdjmngvvx1ql8i60xh"))))
     (properties `((upstream-name . "mixR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mixR")
     (synopsis "Finite Mixture Modeling for Raw and Binned Data")
     (description
@@ -29147,17 +29146,17 @@ get higher conservation scores.")
 (define-public r-methcomp
   (package
     (name "r-methcomp")
-    (version "1.30.0")
+    (version "1.30.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethComp" version))
        (sha256
-        (base32 "1vmwb4zw4gm2x0j2nzm2vjfj7x19ws8njr6dcglzjpbbha7nxjp6"))))
+        (base32 "1apbp47l3izxgki1yyzlsrh0xiwhsvvk1rwmywpbw0jy4kf1dxdf"))))
     (properties `((upstream-name . "MethComp")))
     (build-system r-build-system)
     (inputs (list jags))
-    (propagated-inputs (list r-rjags r-nlme r-coda))
+    (propagated-inputs (list r-nlme r-coda))
     (home-page "http://BendixCarstensen.com/MethComp/")
     (synopsis "Analysis of Agreement in Method Comparison Studies")
     (description
@@ -33858,13 +33857,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfateland
   (package
     (name "r-medfateland")
-    (version "2.4.6")
+    (version "2.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfateland" version))
        (sha256
-        (base32 "1mq70p0j3a2vff4ybl8lgqflp4fbl4clg4y266hm6d0wnali6a1r"))))
+        (base32 "0fkpzz92ai7wfqx7ajdldba2mmcwxvgjq5yvdhzjkznnab7lhlj2"))))
     (properties `((upstream-name . "medfateland")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyterra
@@ -40141,25 +40140,25 @@ used to infer seed production by each individual plant.")
 (define-public r-masswater
   (package
     (name "r-masswater")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MassWateR" version))
        (sha256
-        (base32 "0hfjddm19r53hig48sfxkkjqib4ip651q2asfgp3639w4akn8pzx"))))
+        (base32 "0rpasijp7jrxxcl9v41cpaw4aqavbby51mm0rplrggxsqi8dk7ld"))))
     (properties `((upstream-name . "MassWateR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
                              r-units
+                             r-tidyterra
                              r-tidyr
                              r-tibble
                              r-sf
                              r-rmarkdown
                              r-readxl
                              r-rcolorbrewer
-                             r-raster
-                             r-prettymapr
+                             r-maptiles
                              r-lubridate
                              r-httr
                              r-ggspatial
@@ -45605,13 +45604,13 @@ Estimating Mediation Effects under Correlated Errors with an Application to
 (define-public r-macbehaviour
   (package
     (name "r-macbehaviour")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MacBehaviour" version))
        (sha256
-        (base32 "0i11vvc66zw2r1gnphp0j65q9ar92m5f890bd6c0b31mm49ca6pk"))))
+        (base32 "1dinvr7fxcb36898mg2zx5sxcpcs68l4j0sq2ds16jlchqckl8lg"))))
     (properties `((upstream-name . "MacBehaviour")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-openxlsx r-httr r-dplyr))

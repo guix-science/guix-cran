@@ -19174,13 +19174,13 @@ available from <https://github.com/randy408/libspng/>.")
 (define-public r-fastplyr
   (package
     (name "r-fastplyr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastplyr" version))
        (sha256
-        (base32 "008qkynwavspw3dcpsbfcawj715nvci37kbi32i9k5zv990lsmch"))))
+        (base32 "18b478028ipn8wcwsnzvins7fmdfsqczilhrp3bcn28d3kr2w225"))))
     (properties `((upstream-name . "fastplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -19188,6 +19188,7 @@ available from <https://github.com/randy408/libspng/>.")
                              r-stringr
                              r-rlang
                              r-magrittr
+                             r-lifecycle
                              r-dplyr
                              r-cpp11
                              r-collapse

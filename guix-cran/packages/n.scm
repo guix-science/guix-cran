@@ -5941,16 +5941,16 @@ Ernst (1969) <doi:10.1016/0022-2364(69)90003-1>, Liland et al. (2010)
 (define-public r-nmof
   (package
     (name "r-nmof")
-    (version "2.8-0")
+    (version "2.10-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMOF" version))
        (sha256
-        (base32 "12n2dsgng39q9jn8m6q7bx2va389ham869yb5ydkwrqywjdkmibd"))))
+        (base32 "0nlll6icaav6c4s4mrd345ib3gkg47k1zxv76j4rjm05mcrq7fha"))))
     (properties `((upstream-name . "NMOF")))
     (build-system r-build-system)
-    (home-page "http://enricoschumann.net/NMOF.htm")
+    (home-page "https://enricoschumann.net/NMOF.htm")
     (synopsis "Numerical Methods and Optimization in Finance")
     (description
      "Functions, examples and data from the first and the second edition of \"Numerical

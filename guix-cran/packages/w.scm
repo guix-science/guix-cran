@@ -2236,13 +2236,13 @@ where available, or direct download from
 (define-public r-wordmap
   (package
     (name "r-wordmap")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordmap" version))
        (sha256
-        (base32 "1wqrl2m8a6icvls9ski5k474y0v7l9jdkk8jz2fqgksaqq4y94z1"))))
+        (base32 "1hvnf5r82gymlyr08gkmyd2y8q51a66b9k47pzgagmv5fi1bpilm"))))
     (properties `((upstream-name . "wordmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-quanteda r-matrix r-ggrepel r-ggplot2))

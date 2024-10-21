@@ -42732,13 +42732,13 @@ adapted both to continuous and categorical data.")
 (define-public r-rbtc
   (package
     (name "r-rbtc")
-    (version "0.1-6")
+    (version "0.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbtc" version))
        (sha256
-        (base32 "1z5p1jn5b0hzwcbdpiwj224h45x01bbsgkskllir5j13l416561p"))))
+        (base32 "12sl7ng8z3ncxv4vw5qg045757fry2qpyxjhq4174fhq8z8vrgs7"))))
     (properties `((upstream-name . "rbtc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-openssl r-httr r-gmp))

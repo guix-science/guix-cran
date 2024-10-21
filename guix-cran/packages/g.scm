@@ -810,13 +810,13 @@ comprehensive report.")
 (define-public r-gwasinlps
   (package
     (name "r-gwasinlps")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWASinlps" version))
        (sha256
-        (base32 "1q5gaam554r2wxwsdgxjx6hngs2q850hbrkz8y5248i46pz16pcc"))))
+        (base32 "06bd6cyjvihcj166f20wdycww6b2xqb9nvh078sys52fi9nwzwcc"))))
     (properties `((upstream-name . "GWASinlps")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -22962,13 +22962,13 @@ is approximately 12 MB.")
 (define-public r-geomarchetypal
   (package
     (name "r-geomarchetypal")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeomArchetypal" version))
        (sha256
-        (base32 "072llxc2chj5acbpyg5h9hyi9mrwr0s7xg508bs2sxjx4s77kf5l"))))
+        (base32 "1v3jgwv45bzyya578z6hqjj6jzwgh1gsbin67sqf1i735c0lms05"))))
     (properties `((upstream-name . "GeomArchetypal")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

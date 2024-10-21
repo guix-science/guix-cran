@@ -27553,13 +27553,13 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.3.5")
+    (version "4.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "0lhbrv4m44zgd178xpm5h0qdn54ldfjz7c96mmhm41pz0zn97h5h"))))
+        (base32 "1px2d66gzdymp0bvaf3xs240i2ikbfmy87v8xmsdnpnarq568y8c"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -33684,39 +33684,6 @@ from the current graphics device, R objects, and upload files.")
 orientation of archaeological structures, following Silva (2020)
 <doi:10.1016/j.jas.2020.105138>.")
     (license license:gpl2+)))
-
-(define-public r-skynet
-  (package
-    (name "r-skynet")
-    (version "1.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "skynet" version))
-       (sha256
-        (base32 "08a5p3rk0qhsxawdxj5sfw07rdk56x6viy37w1b0hxqaxxxv239i"))))
-    (properties `((upstream-name . "skynet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rcurl
-                             r-maps
-                             r-leaflet
-                             r-igraph
-                             r-httr
-                             r-ggrepel
-                             r-ggplot2
-                             r-geosphere
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/skynet")
-    (synopsis "Generates Networks from BTS Data")
-    (description
-     "This package provides a flexible tool that allows generating bespoke air
-transport statistics for urban studies based on publicly available data from the
-Bureau of Transport Statistics (BTS) in the United States
-<https://www.transtats.bts.gov/databases.asp?Z1qr_VQ=E&Z1qr_Qr5p=N8vn6v10&f7owrp6_VQF=D>.")
-    (license license:expat)))
 
 (define-public r-skylight
   (package
@@ -55559,13 +55526,13 @@ model to identify the true quantitative trait nucleotide.")
 (define-public r-scoredec
   (package
     (name "r-scoredec")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoredec" version))
        (sha256
-        (base32 "02dypr3kakha8rfhjmp5pzqlxd9mz0p1x5gk4hfc0ps8vn226xwh"))))
+        (base32 "1974qxhbf8bwd3b864ng5bzc1j7byjkrwgqf78yp8pm5w51m1y59"))))
     (properties `((upstream-name . "scoredec")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-rcpp r-igraph))
@@ -62895,36 +62862,6 @@ analyze the spatial scale, degree of anisotropy and preferred direction in each
 field.  These structural attributes are compared by a series of scores.  An
 experimental algorithm for the correction of these errors is included as well.")
     (license license:expat)))
-
-(define-public r-saccr
-  (package
-    (name "r-saccr")
-    (version "3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SACCR" version))
-       (sha256
-        (base32 "1sp8hjpwzyczj85saps6a6yw30yh5098ig2xmlf79jvzv86nqgn1"))))
-    (properties `((upstream-name . "SACCR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-trading r-jsonlite r-data-tree))
-    (home-page "https://openriskcalculator.com/")
-    (synopsis "SA Counterparty Credit Risk under CRR2")
-    (description
-     "Computes the Exposure-At-Default based on the standardized approach of CRR2
-(SA-CCR).  The simplified version of SA-CCR has been included, as well as the
-OEM methodology.  Multiple trade types of all the five major asset classes are
-being supported including the Other Exposure and, given the inheritance- based
-structure of the application, the addition of further trade types is
-straightforward.  The application returns a list of trees per Counterparty and
-CSA after automatically separating the trades based on the Counterparty, the
-CSAs, the hedging sets, the netting sets and the risk factors.  The basis and
-volatility transactions are also identified and treated in specific hedging sets
-whereby the corresponding penalty factors are applied.  All the examples
-appearing on the regulatory papers (both for the margined and the un-margined
-workflow) have been implemented including the latest CRR2 developments.")
-    (license license:gpl3)))
 
 (define-public r-saccadr
   (package

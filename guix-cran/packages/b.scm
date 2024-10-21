@@ -6096,25 +6096,25 @@ expansion, following the article Derumigny, Girard, Guyonvarch (2021)
 (define-public r-boundarystats
   (package
     (name "r-boundarystats")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoundaryStats" version))
        (sha256
-        (base32 "06kz1d5fwiilqidiz2iry0fg7c5265fc40yrdgddd0aia75cf9jv"))))
+        (base32 "18a0xjs2qg8lfxh5riqdh8c6pwpg72r2m1bl1p4qgcclrkcvdsx7"))))
     (properties `((upstream-name . "BoundaryStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-terra
                              r-sf
                              r-scales
-                             r-rgeoda
                              r-pdqr
                              r-magrittr
                              r-igraph
                              r-ggplot2
-                             r-fields))
+                             r-fields
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BoundaryStats")
     (synopsis "Boundary Overlap Statistics")
@@ -16292,13 +16292,13 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.3.1")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "0ylvr1sbn2mq2cc7lkgf8qfw08qyg2xvcwa29964qwdjl76dl05g"))))
+        (base32 "0b29wcif75s35mi11cv413i0g1fsg27ax3cjrmpcpa37vnff73z2"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcppprogress r-rcpp))
@@ -16309,8 +16309,8 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
     (description
      "Bayesian variable selection methods for analyzing the structure of a Markov
 Random Field model for a network of binary and/or ordinal variables.  Details of
-the implemented methods can be found in: Marsman and Haslbeck (2023)
-<doi:10.31234/osf.io/ukwrf>.")
+the implemented methods can be found in: Marsman, van den Bergh, and Haslbeck
+(in press) <doi:10.31234/osf.io/ukwrf>.")
     (license license:gpl2+)))
 
 (define-public r-bgmm

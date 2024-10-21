@@ -17448,13 +17448,13 @@ potential EEG data.")
 (define-public r-eefanalytics
   (package
     (name "r-eefanalytics")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eefAnalytics" version))
        (sha256
-        (base32 "0i9lncslx020zbwf7jryqvgpr75yl93ml05vg46qk0mhgdvg3zhm"))))
+        (base32 "1xrrrizzs23vm0s1ysiz2f527vb2jw90jwcwsypcna2sjmbldy48"))))
     (properties `((upstream-name . "eefAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2jags

@@ -11672,16 +11672,16 @@ See <https://www.myroms.org/> for more information about ROMS'.")
 (define-public r-angstromate
   (package
     (name "r-angstromate")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "angstromATE" version))
        (sha256
-        (base32 "0chmzliwd9ygcjvvd20vfp1immmrnhxwdc83la11l8v0ind10syl"))))
+        (base32 "1mxm5xq08yj1ah4n3sd50fa1z6m97i6c5fzvw92fr1fkzrlfqlqk"))))
     (properties `((upstream-name . "angstromATE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml))
+    (propagated-inputs (list r-xml r-stringr))
     (home-page "https://cran.r-project.org/package=angstromATE")
     (synopsis "Imports Log Files from Angstrom Engineering Thermal Evaporator")
     (description

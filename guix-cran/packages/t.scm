@@ -9026,43 +9026,6 @@ traffic speed or the car entries for a selected time date.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-trading
-  (package
-    (name "r-trading")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Trading" version))
-       (sha256
-        (base32 "1xf3qr6g8vxdwrx57pazr79k86d3mdhqaps0vj8iz4dr172gms8k"))))
-    (properties `((upstream-name . "Trading")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reticulate
-                             r-readxl
-                             r-rcppalgos
-                             r-performanceanalytics
-                             r-ggplot2
-                             r-data-table))
-    (home-page "https://openriskcalculator.com/")
-    (synopsis "CCR, Advanced Correlation & Beta Estimates, Betting Strategies")
-    (description
-     "This package contains performance analysis metrics of track records including
-entropy-based correlation and dynamic beta based on the Kalman filter.  The
-normalized sample entropy method has been implemented which produces accurate
-entropy estimation even on smaller datasets while for the dynamic beta
-calculation the Kalman filter methodology has been utilized.  On a separate
-stream, trades from the five major assets classes and also functionality to use
-pricing curves, rating tables, CSAs and add-on tables.  The implementation
-follows an object oriented logic whereby each trade inherits from more abstract
-classes while also the curves/tables are objects.  Furthermore, odds calculators
-and P&L back-testing functionality has been implemented for the most widely used
-betting/trading strategies including martingale, DAlembert, Labouchere and
-Fibonacci.  Back-testing has also been included for the @code{EuroMillions} and
-@code{EuroJackpot} lotteries.  Furthermore, some basic functionality about
-climate risk has been included.")
-    (license license:gpl3)))
-
 (define-public r-tradestatistics
   (package
     (name "r-tradestatistics")

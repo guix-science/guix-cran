@@ -5061,13 +5061,13 @@ IP2Location to install the module.")
 (define-public r-ip
   (package
     (name "r-ip")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IP" version))
        (sha256
-        (base32 "155nrx5ika5vl1gxfqa13fr3w05449vgijm8xdqd68982bsvcp10"))))
+        (base32 "0m2xmash5371iaw1mdf6245702mwaahv2ds5995f9q8ys3h4kspj"))))
     (properties `((upstream-name . "IP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))

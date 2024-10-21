@@ -5898,13 +5898,13 @@ Mueller, Telesca (2016) <doi:10.1111/biom.12482>.")
 (define-public r-dppack
   (package
     (name "r-dppack")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPpack" version))
        (sha256
-        (base32 "1qhrxy676i13mqxzmgmd82n2hrjdck9scr95kgnpxydwyml2pybp"))))
+        (base32 "0nyxdy2h6d7r8s1pl9wqzxr8zwjyl3ry0aqys708b5hxvcd7naxf"))))
     (properties `((upstream-name . "DPpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil
@@ -9747,13 +9747,13 @@ systems.")
 (define-public r-divest
   (package
     (name "r-divest")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divest" version))
        (sha256
-        (base32 "15d1bfdmav5hdvl1x0vfp6k0ab0apw8kqb3xc05ng9ys0557xz1z"))))
+        (base32 "19r95llk0znr02lin39jwhidgzfnr8bigg74gi1zb69x3xp6h5v6"))))
     (properties `((upstream-name . "divest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-rcpp))

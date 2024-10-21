@@ -14442,6 +14442,35 @@ functionality for ridge-type estimation of the generalized linear model (as
 presented in van Wieringen, Binder, 2022, <doi:10.1080/10618600.2022.2035231>).")
     (license license:gpl2+)))
 
+(define-public r-popvar
+  (package
+    (name "r-popvar")
+    (version "1.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PopVar" version))
+       (sha256
+        (base32 "0gzm74mq2xp50zagnl76pq8lkpk3r4a97pqwyks4qc067icn6d9r"))))
+    (properties `((upstream-name . "PopVar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rrblup r-qtl r-bglr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/UMN-BarleyOatSilphium/PopVar")
+    (synopsis
+     "Genomic Breeding Tools: Genetic Variance Prediction and Cross-Validation")
+    (description
+     "The main attribute of @code{PopVar} is the prediction of genetic variance in
+bi-parental populations, from which the package derives its name. @code{PopVar}
+contains a set of functions that use phenotypic and genotypic data from a set of
+candidate parents to 1) predict the mean, genetic variance, and superior progeny
+value of all, or a defined set of pairwise bi-parental crosses, and 2) perform
+cross-validation to estimate genome-wide prediction accuracy of multiple
+statistical models.  More details are available in Mohammadi, Tiede, and Smith
+(2015, <doi:10.2135/cropsci2015.01.0030>).  A dataset think_barley.rda is
+included for reference and examples.")
+    (license license:gpl3)))
+
 (define-public r-poputils
   (package
     (name "r-poputils")

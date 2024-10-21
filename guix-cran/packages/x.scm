@@ -144,32 +144,6 @@ predefined features and allows for quantile weighting.  Method implemented as
 presented in van den Boom et al. (2018) <doi:10.1093/bioinformatics/bty120>.")
     (license license:expat)))
 
-(define-public r-xva
-  (package
-    (name "r-xva")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "xVA" version))
-       (sha256
-        (base32 "06y9qhly14y5r8d1g85jdzz8x5lwzfjkiy5zak6146mknl4nzz11"))))
-    (properties `((upstream-name . "xVA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-trading r-saccr r-data-table))
-    (home-page "https://openriskcalculator.com/")
-    (synopsis "Calculates Credit Risk Valuation Adjustments")
-    (description
-     "Calculates a number of valuation adjustments including CVA, DVA, FBA, FCA, MVA
-and KVA. A two-way margin agreement has been implemented.  For the KVA
-calculation three regulatory frameworks are supported: CEM, (simplified) SA-CCR,
-OEM and IMM. The probability of default is implied through the credit spreads
-curve.  The package supports an exposure calculation based on SA-CCR which
-includes several trade types and a simulated path which is currently available
-only for IRSwaps.  The latest regulatory capital charge methodologies have been
-implementing including BA-CVA & SA-CVA.")
-    (license license:gpl3)))
-
 (define-public r-xutils
   (package
     (name "r-xutils")
