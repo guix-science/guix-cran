@@ -1939,13 +1939,13 @@ measures are also provided.")
 (define-public r-humanleague
   (package
     (name "r-humanleague")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "humanleague" version))
        (sha256
-        (base32 "0nkpn7cafy2rk6181g4z90kg9il99p40h0wa2hjgi0kg6y16wmgg"))))
+        (base32 "0xfbah1lwj2izdky1b37ycislqr13fnarfz07dqi24sfvn17qm1s"))))
     (properties `((upstream-name . "humanleague")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -10394,13 +10394,13 @@ Kronecker product of sub-Hadamard matrices.")
 (define-public r-hdnra
   (package
     (name "r-hdnra")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDNRA" version))
        (sha256
-        (base32 "0j3przdam19w8n8yix73ac6xc8ggfvscaamk05ginii291l1z9pl"))))
+        (base32 "1yjgms82419v073ahi381nhrppmwrlncjqwl42ahlf7agp1pv48m"))))
     (properties `((upstream-name . "HDNRA")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-rdpack r-rcpparmadillo r-rcpp r-expm))
@@ -12999,13 +12999,13 @@ shiny app for handwriter'.")
 (define-public r-handwriter
   (package
     (name "r-handwriter")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriter" version))
        (sha256
-        (base32 "04hlsl2zky9dgw5f59bm09h7b055lf4alg3w9x49faifwljaj75f"))))
+        (base32 "09xmaraqlsv7469wm9sw8g48pxl3p2iv2d4d6hp833g3gs4zjxj4"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

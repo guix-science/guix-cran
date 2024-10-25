@@ -553,13 +553,13 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
 (define-public r-dynforest
   (package
     (name "r-dynforest")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DynForest" version))
        (sha256
-        (base32 "0x78gbgzl4dad5g6w27cdfpngsykanv3lz3xffpqndd971wkzhiy"))))
+        (base32 "0yj7s5z8vnwpcspan77ywxj3zgwfc6afmhgk10h0yd2bisric49r"))))
     (properties `((upstream-name . "DynForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -574,7 +574,8 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
                              r-dorng
                              r-doparallel
                              r-desctools
-                             r-cmprsk))
+                             r-cmprsk
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/anthonydevaux/DynForest")
     (synopsis "Random Forest with Multivariate Longitudinal Predictors")
@@ -2439,13 +2440,13 @@ Linked Data) format to make it machine readable.")
 (define-public r-dtrackr
   (package
     (name "r-dtrackr")
-    (version "0.4.4")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtrackr" version))
        (sha256
-        (base32 "0biwciv8f8rd6psydiriyylklw7q954dsr3rrax5a2fc3gn9adbz"))))
+        (base32 "0rm93mwazp36mp26r4phl9s8iskzsa32zn66pjq95z0znqhl1v9l"))))
     (properties `((upstream-name . "dtrackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
@@ -2458,6 +2459,7 @@ Linked Data) format to make it machine readable.")
                              r-png
                              r-pdftools
                              r-magrittr
+                             r-lifecycle
                              r-htmltools
                              r-glue
                              r-fs
@@ -6217,13 +6219,13 @@ covariates.")
 (define-public r-dparser
   (package
     (name "r-dparser")
-    (version "1.3.1-12")
+    (version "1.3.1-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dparser" version))
        (sha256
-        (base32 "108hzzcvczfbcf3ldl3dg51cf9mr8sdpn9m0chiz48awngvjc9hh"))))
+        (base32 "126q30byc5li11xz22k6d6gxccy9hgh89v078hg0qq996bpz7p0a"))))
     (properties `((upstream-name . "dparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
@@ -6272,13 +6274,13 @@ visualization.")
 (define-public r-dowser
   (package
     (name "r-dowser")
-    (version "2.2.0")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dowser" version))
        (sha256
-        (base32 "05fjca2zfa66fq360swywmncjxz7pvjp0d5h7a0axinvy9wiccg6"))))
+        (base32 "0bd8bnz98g4jawfgbacssngw3ind41zbqdv79g8d3z8rxkndcpjb"))))
     (properties `((upstream-name . "dowser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6296,7 +6298,8 @@ visualization.")
                              r-dplyr
                              r-biostrings
                              r-ape
-                             r-alakazam))
+                             r-alakazam
+                             r-airr))
     (native-inputs (list r-knitr))
     (home-page "https://dowser.readthedocs.io")
     (synopsis "B Cell Receptor Phylogenetics Toolkit")
@@ -10301,13 +10304,13 @@ name.")
 (define-public r-distrmod
   (package
     (name "r-distrmod")
-    (version "2.9.4")
+    (version "2.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrMod" version))
        (sha256
-        (base32 "15wjizl3kbv39ri3bnikrdzf61vbvfgq9r1vln8663y0da0sv7d8"))))
+        (base32 "0fhsg944qfb5irpy9w4sc065mz31l0p0vdj2rjz9jpmk75mh2b7w"))))
     (properties `((upstream-name . "distrMod")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg
@@ -10571,13 +10574,13 @@ explored and visualized.")
 (define-public r-distrdoc
   (package
     (name "r-distrdoc")
-    (version "2.8.2")
+    (version "2.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrDoc" version))
        (sha256
-        (base32 "0acbmh2lxf82527gm4i3vvh8gqfdnycsmdnf0s5pwz29zs6ql12z"))))
+        (base32 "0r3ic7v0z6wmd1r3i7zhfzv5wnsirgxdnf5g3g1hnrsf3dx7l0mc"))))
     (properties `((upstream-name . "distrDoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg
@@ -11087,13 +11090,13 @@ metrics.")
 (define-public r-distance
   (package
     (name "r-distance")
-    (version "1.0.9")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Distance" version))
        (sha256
-        (base32 "05krzbk1dzlsx00vaghz1ny0wf00giglwvdy29c3xa9353pfgyix"))))
+        (base32 "1q3xv5wvpmck19ziq7md8q274br7dbwm3xizbdgj5rq18n1yfcsr"))))
     (properties `((upstream-name . "Distance")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-mrds r-dplyr))
@@ -11899,13 +11902,13 @@ and Ward (2011) <doi:10.1016/j.amc.2011.03.124>.")
 (define-public r-discretefdr
   (package
     (name "r-discretefdr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteFDR" version))
        (sha256
-        (base32 "02yj9pfxh1f4fgij4gq29aijd42im9b6npyhw4jirdpl7zkh0j8i"))))
+        (base32 "086fxsyd57gp353s2plq88f0wjpa94jx0s987av4ks58qplnx92f"))))
     (properties `((upstream-name . "DiscreteFDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -14968,13 +14971,13 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "1jynszk534xsinc0sv4217s7i75804wp4nf3ry91374p1qz1zjc7"))))
+        (base32 "1imgg3cdfvlndih7hrfbgw5d22gd59ylgp026r9vlpg3jbdxhfj6"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14984,7 +14987,7 @@ clusters.")
                              r-dplyr
                              r-data-table
                              r-cowplot))
-    (home-page "https://cran.r-project.org/package=diceplot")
+    (home-page "https://dice-and-domino-plot.readthedocs.io/en/latest/")
     (synopsis "High Dimensional Categorical Data Visualization")
     (description
      "Easy visualization for datasets with more than two categorical variables and
@@ -17490,13 +17493,13 @@ experiments that are laid out in grids.  See Ryder (1981)
 (define-public r-despair
   (package
     (name "r-despair")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "despair" version))
        (sha256
-        (base32 "03lsyfqbywrqa8jnnybjvacgmxy12kqnsql8y7iqmh770i602qp1"))))
+        (base32 "00yy5icda5sqzcr7x924n2aqrxrriza42h3qbg0nvvjf7dg3ahi2"))))
     (properties `((upstream-name . "despair")))
     (build-system r-build-system)
     (home-page "https://github.com/jpmonteagudo28/despair")
@@ -26253,6 +26256,50 @@ sets do not match, but isn't intended to replace all.equal() as a way to test
 for equality.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-datacompare
+  (package
+    (name "r-datacompare")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dataCompare" version))
+       (sha256
+        (base32 "080zrvz9rih7rd7c81rgp1l70wc8y3f4zk4njzbnajvc3wsfz34k"))))
+    (properties `((upstream-name . "dataCompare")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom
+                             r-skimr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinydashboardplus
+                             r-shinydashboard
+                             r-shiny
+                             r-pins
+                             r-magrittr
+                             r-lubridate
+                             r-htmltools
+                             r-golem
+                             r-dt
+                             r-dplyr
+                             r-devtools
+                             r-data-table
+                             r-config
+                             r-arsenal))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/seewe/dataCompare")
+    (synopsis "'shiny' App to Compare Two Data Frames")
+    (description
+     "This package provides a tool developed with the Golem framework which provides
+an easier way to check cells differences between two data frames.  The user
+provides two data frames for comparison, selects IDs variables identifying each
+row of input data, then clicks a button to perform the comparison.  Several R
+package functions are used to describe the data and perform the comparison in
+the server of the application.  The main ones are comparedf() from arsenal and
+skim() from skimr'.  For more details see the description of comparedf() from
+the arsenal package and that of skim() from the skimr package.")
+    (license license:expat)))
 
 (define-public r-datacombine
   (package

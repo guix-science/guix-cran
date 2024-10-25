@@ -5183,13 +5183,13 @@ Prisonniere\", \"Albertine disparue\", and \"Le Temps retrouve\".")
 (define-public r-protti
   (package
     (name "r-protti")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protti" version))
        (sha256
-        (base32 "1lnlikkgw0cvyw6sh49fzzwin31vya3dgq6zyash51vf6i3nc992"))))
+        (base32 "15ww485y1dn7cx7w3ffjpvmd3xfwzw0qi1jlls95rb62p06bnc95"))))
     (properties `((upstream-name . "protti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6515,16 +6515,16 @@ subdirectories for specific components, templates for manuscripts, and so on.")
 (define-public r-projectmanagement
   (package
     (name "r-projectmanagement")
-    (version "1.5.2")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProjectManagement" version))
        (sha256
-        (base32 "04i1rz5dwgkgy6da12v3vhq3skqmnqlb3dry99hycjrfql0v4wsr"))))
+        (base32 "1lwhi542h1mq1r4501pz0xpf1plzg44zzj04bk9yinvbaqddavmm"))))
     (properties `((upstream-name . "ProjectManagement")))
     (build-system r-build-system)
-    (propagated-inputs (list r-triangle r-plotly r-lpsolveapi r-kappalab
+    (propagated-inputs (list r-tuvalues r-triangle r-plotly r-lpsolveapi
                              r-igraph))
     (home-page "https://cran.r-project.org/package=ProjectManagement")
     (synopsis "Management of Deterministic and Stochastic Projects")
@@ -7873,13 +7873,13 @@ models.")
 (define-public r-proae
   (package
     (name "r-proae")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProAE" version))
        (sha256
-        (base32 "1sgd5ws1jpnjsnx1daywsn3ygl6lmg048fgvc7i4nkkryq7zls6b"))))
+        (base32 "1gm71m536chp7gp3c08vwccfrp073bd74jwnf9706kx7kn200p3a"))))
     (properties `((upstream-name . "ProAE")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -10039,29 +10039,6 @@ given a fixed sample size.  Finally, analysis functions are provided to test
 each effect using either summary data (i.e.  means, variances) or raw study data
 <doi:10.18637/jss.v094.c02>.")
     (license license:lgpl2.0)))
-
-(define-public r-preferably
-  (package
-    (name "r-preferably")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "preferably" version))
-       (sha256
-        (base32 "11xvh0a8m2lpmrrrrn95axqgz9rdipn63zd7c505a8spzwf6dvm5"))))
-    (properties `((upstream-name . "preferably")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pkgdown r-knitr))
-    (native-inputs (list r-knitr))
-    (home-page "https://preferably.amirmasoudabdol.name")
-    (synopsis "'pkgdown' Template")
-    (description
-     "This is an accessible template for pkgdown'.  It uses two bootstrap themes,
-Flatly and Darkly and utilizes the prefers-color-scheme CSS variable to
-automatically serve either of the two based on userâs operating system
-setting, or allowing them to manually toggle between them.")
-    (license license:expat)))
 
 (define-public r-prefer
   (package
@@ -12470,13 +12447,13 @@ Distribution.  The PPCC test is performed with a fast Monte-Carlo simulation.")
 (define-public r-ppca
   (package
     (name "r-ppca")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pPCA" version))
        (sha256
-        (base32 "0xr8n5v50q9wsx3ki8xsyxjdmx6kgdzzpv3fbq53n4i6x0381b0f"))))
+        (base32 "1kciyg8frjryq7wd2k0lgv2c8n4xgwij1bc2xcs7fy5xbfybd9pr"))))
     (properties `((upstream-name . "pPCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-rcpp r-matrix))
@@ -16442,6 +16419,36 @@ distribution.  More information on the implementation can be found at Conrad J.
 Burden (2014) <@code{arXiv:1406.2780>}.")
     (license license:gpl2+)))
 
+(define-public r-poly4at
+  (package
+    (name "r-poly4at")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Poly4AT" version))
+       (sha256
+        (base32 "11dx99x6iya6liw60gwa0w7y6k3ghhhzxyvmdja43a5wgi6g4vla"))))
+    (properties `((upstream-name . "Poly4AT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboard
+                             r-shiny
+                             r-sf
+                             r-readxl
+                             r-leaflet-extras
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-geojsonsf
+                             r-dt))
+    (home-page "https://github.com/farmse988/Poly4AT")
+    (synopsis "Access 'INVEKOS' API for Field Polygons")
+    (description
+     "This package provides a shiny app that allows to access and use the INVEKOS API
+for field polygons in Austria.  API documentation is available at
+<https://gis.lfrz.gv.at/api/geodata/i009501/ogc/features/v1/>.")
+    (license license:expat)))
+
 (define-public r-polminer
   (package
     (name "r-polminer")
@@ -17064,6 +17071,28 @@ the law of large numbers.  Details about the methods are available in Lin, Wang,
 and Hong (2022) <DOI:10.1007/s00180-022-01299-0>.")
     (license license:gpl2+)))
 
+(define-public r-poissoned
+  (package
+    (name "r-poissoned")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poissoned" version))
+       (sha256
+        (base32 "0v4yzl690ns7i4zh0a05qrj6ybzdfhfil7licrd0s71a3pa124kf"))))
+    (properties `((upstream-name . "poissoned")))
+    (build-system r-build-system)
+    (home-page "https://github.com/coolbutuseless/poissoned")
+    (synopsis "Poisson Disk Sampling in 2D and 3D")
+    (description
+     "Poisson disk sampling is a method of generating blue noise sample patterns where
+all samples are at least a specified distance apart.  Poisson samples may be
+generated in two or three dimensions with this package.  The algorithm used is
+an implementation of Bridson's \"Fast Poisson disk sampling in arbitrary
+dimensions\" <doi:10.1145%2F1278780.1278807>.")
+    (license license:expat)))
+
 (define-public r-poissonbinomial
   (package
     (name "r-poissonbinomial")
@@ -17491,13 +17520,13 @@ in the neighborhood.")
 (define-public r-pointblank
   (package
     (name "r-pointblank")
-    (version "0.12.1")
+    (version "0.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pointblank" version))
        (sha256
-        (base32 "1wwb9ncji7450rbbmrh9mznl4pnpmxq8ibx785bz9dsswdglzfhq"))))
+        (base32 "0p02alcjbhxz5dzj7bs5ijdwyn2gl9fdhhzxs7jhck7rm3xlinf6"))))
     (properties `((upstream-name . "pointblank")))
     (build-system r-build-system)
     (arguments
@@ -20360,13 +20389,13 @@ response theory (IRT) models.")
 (define-public r-plmmr
   (package
     (name "r-plmmr")
-    (version "4.0.0")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plmmr" version))
        (sha256
-        (base32 "12b31wx4n4sl8gx59qfkfki4j2sli7gx5qh9z22mpak8brycy8ld"))))
+        (base32 "1x3g170sx6nh68mvd3l66rzzaslsh3s6k3fy7vhs368d298nlvwr"))))
     (properties `((upstream-name . "plmmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -23522,6 +23551,26 @@ creation directly within the R environment.")
 Pijavski method, which was published in Pijavski (1972)
 <DOI:10.1016/0041-5553(72)90115-2>.")
     (license license:lgpl3)))
+
+(define-public r-pii
+  (package
+    (name "r-pii")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pii" version))
+       (sha256
+        (base32 "1pibrfycgci331bpkgj4qn7b2w1vdwg9gvgkjnw7mxdfgr8f4qxm"))))
+    (properties `((upstream-name . "pii")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid r-stringr r-dplyr))
+    (home-page "https://github.com/jacobpstein/pii")
+    (synopsis "Search Data Frames for Personally Identifiable Information")
+    (description
+     "Check a data frame for personal information, including names, location,
+disability status, and geo-coordinates.")
+    (license license:expat)))
 
 (define-public r-piggyback
   (package
@@ -27477,19 +27526,20 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "6.0.3")
+    (version "6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "0kp213ig73vj34qgwpc1zsnvz2hf8j0mjcqnsbb541s92zv2x4y7"))))
+        (base32 "095ddfgq424j3hfkbh4f2hjy93z098yyqa3ld28zj9x3skwpbbs0"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-scales
                              r-rmarkdown
                              r-rcpp
+                             r-purrr
                              r-pracma
                              r-matrix
                              r-knitr
@@ -34389,13 +34439,13 @@ thus bypassing the intermediate @code{TeX} file.")
 (define-public r-patchdvi
   (package
     (name "r-patchdvi")
-    (version "1.11.0")
+    (version "1.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patchDVI" version))
        (sha256
-        (base32 "1cxgbrwb2qz39b9q1afz2i1pbnqyyi0hz8zc6j1i0llayyd6pgxk"))))
+        (base32 "0jqh9d9pwk3an59glkj3rhkhxb7cchih5yij402v521yaf9pl46h"))))
     (properties `((upstream-name . "patchDVI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmdconcord))
@@ -37916,13 +37966,13 @@ mixed-effect regression from Heegaard et al (2005)
 (define-public r-pakret
   (package
     (name "r-pakret")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pakret" version))
        (sha256
-        (base32 "05qdw4yv8w9wxgbdh3xqr540svhszl74m06c0v6xnpkhsnvd578g"))))
+        (base32 "0gv6kjgz0zcxjqmchlp9rkj91d915wdy86lcgw1cjgzjnsjxyj46"))))
     (properties `((upstream-name . "pakret")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rmarkdown r-readr r-knitr))

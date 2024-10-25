@@ -1083,13 +1083,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "16a1v5vs9hdsyp5x0r237lc4vh7mdvylplb6ad2c9q09xdglrgs6"))))
+        (base32 "00a0ggcm26gb0m1zm46ascd9hrd99mh83gqr858f4m3lj4p4fa6h"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3515,6 +3515,25 @@ series scores).  The latest version of the cruncher can be downloaded here:
 <https://github.com/jdemetra/jwsacruncher/releases>.")
     (license (license:fsdg-compatible "EUPL"))))
 
+(define-public r-jcvrisk
+  (package
+    (name "r-jcvrisk")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Jcvrisk" version))
+       (sha256
+        (base32 "0n4lb1y3h4lwslrfb8shaaxfr4yb5b9b1045aplnirl31wvap5wq"))))
+    (properties `((upstream-name . "Jcvrisk")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Jcvrisk")
+    (synopsis "Risk Calculator for Cardiovascular Disease in Japan")
+    (description
+     "This package provides a calculation tool to obtain the 10-year risk of
+cardiovascular disease from various risk models (Hisayama, Suita, EPOCH Japan).")
+    (license license:expat)))
+
 (define-public r-jcrimpactfactor
   (package
     (name "r-jcrimpactfactor")
@@ -3969,13 +3988,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagshelper" version))
        (sha256
-        (base32 "0i8gvah3ig9y8ywg3yfbrfjfhkn1f5iaj5lm68pzm3v5iv213dr4"))))
+        (base32 "1rsc1jlas4b6bxgjvwbxqj8khvsflx0hni5dlifdnvjmc08x18x1"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))

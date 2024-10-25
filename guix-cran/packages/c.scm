@@ -14,10 +14,10 @@
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages maths)
+  #:use-module (gnu packages geo)
+  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
@@ -3219,6 +3219,31 @@ instantiation, like the vanilla/scalable variable-selection C-TMLE (Ju et al.
 (2017) <doi:10.1177/0962280217729845>) and the glmnet-C-TMLE algorithm (Ju et
 al. (2017) <@code{arXiv:1706.10029>}).")
     (license license:gpl2)))
+
+(define-public r-ctmed
+  (package
+    (name "r-ctmed")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cTMed" version))
+       (sha256
+        (base32 "12jnpr240462yig9cdja0rl5smc1rkp50nmrlz5xc68jpg0chzkf"))))
+    (properties `((upstream-name . "cTMed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-simstatespace r-rcpparmadillo r-rcpp r-numderiv
+                             r-ctsem))
+    (home-page "https://github.com/jeksterslab/cTMed")
+    (synopsis "Continuous Time Mediation")
+    (description
+     "Calculates standard errors and confidence intervals for effects in
+continuous-time mediation models.  This package extends the work of Deboeck and
+Preacher (2015) <doi:10.1080/10705511.2014.973960> and Ryan and Hamaker (2021)
+<doi:10.1007/s11336-021-09767-0> by providing methods to generate standard
+errors and confidence intervals for the total, direct, and indirect effects in
+these models.")
+    (license license:gpl3+)))
 
 (define-public r-ctmcmove
   (package
@@ -8306,6 +8331,29 @@ shiny application.  Cppcheck can spot many error types and it can also give some
 recommendations on the code.")
     (license license:gpl3)))
 
+(define-public r-cpp11tesseract
+  (package
+    (name "r-cpp11tesseract")
+    (version "5.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpp11tesseract" version))
+       (sha256
+        (base32 "1vpfx3crgcxgnavd0qb4pkw5zgvqnn40563b1vvydwgcp5q5yja2"))))
+    (properties `((upstream-name . "cpp11tesseract")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-pdftools r-digest r-curl r-cpp11))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://pacha.dev/cpp11tesseract/")
+    (synopsis "Open Source OCR Engine")
+    (description
+     "Bindings to Tesseract': a powerful optical character recognition (OCR) engine
+that supports over 100 languages.  The engine is highly configurable in order to
+tune the detection algorithms and obtain the best possible results.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-cpp11eigen
   (package
     (name "r-cpp11eigen")
@@ -10316,6 +10364,31 @@ Inspiration thanks to:
 attributes like Foliage Cover and Leaf Area Index.  Detailed description of the
 methods in Chianucci et al. (2022) <doi:10.1007/s00468-018-1666-3>.")
     (license license:expat)))
+
+(define-public r-cover
+  (package
+    (name "r-cover")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "COveR" version))
+       (sha256
+        (base32 "0mbiz2jf1krjcdjjgr2i986aw41fv345j6b1j0ldd0rpcqmp2y82"))))
+    (properties `((upstream-name . "COveR")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (home-page "https://cran.r-project.org/package=COveR")
+    (synopsis "Clustering with Overlaps")
+    (description
+     "Provide functions for overlaps clustering, fuzzy clustering and interval-valued
+data manipulation.  The package implement the following algorithms: OKM
+(Overlapping Kmeans) from Cleuziou, G. (2007) <doi:10.1109/icpr.2008.4761079> ;
+NEOKM (Non-exhaustive overlapping Kmeans) from Whang, J. J., Dhillon, I. S., and
+Gleich, D. F. (2015) <doi:10.1137/1.9781611974010.105> ; Fuzzy Cmeans from
+Bezdek, J. C. (1981) <doi:10.1007/978-1-4757-0450-1> ; Fuzzy I-Cmeans from de
+A.T. De Carvalho, F. (2005) <doi:10.1016/j.patrec.2006.08.014>.")
+    (license license:gpl2+)))
 
 (define-public r-covequal
   (package
@@ -20431,6 +20504,48 @@ palette of the most frequent colours used in the image.  Also provides some
 custom colour palettes.")
     (license license:gpl2+)))
 
+(define-public r-colossus
+  (package
+    (name "r-colossus")
+    (version "1.1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Colossus" version))
+       (sha256
+        (base32 "1544qyqxwyw3hdqx0prpp79lla8h9h05r8ypvkcvh1gdwxh9cr3x"))))
+    (properties `((upstream-name . "Colossus")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-testthat
+                             r-stringr
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-processx
+                             r-data-table
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ericgiunta.github.io/Colossus/")
+    (synopsis
+     "\"Risk Model Regression and Analysis with Complex Non-Linear Models\"")
+    (description
+     "This package performs survival analysis using general non-linear models.  Risk
+models can be the sum or product of terms.  Each term is the product of
+exponential/linear functions of covariates.  Additionally sub-terms can be
+defined as a sum of exponential, linear threshold, and step functions.  Cox
+Proportional hazards <https://en.wikipedia.org/wiki/Proportional_hazards_model>,
+Poisson <https://en.wikipedia.org/wiki/Poisson_regression>, and Fine-Grey
+competing risks
+<https://www.publichealth.columbia.edu/research/population-health-methods/competing-risk-analysis>
+regression are supported.  This work was sponsored by NASA Grant 80NSSC19M0161
+through a subcontract from the National Council on Radiation Protection and
+Measurements (NCRP).  The computing for this project was performed on the Beocat
+Research Cluster at Kansas State University, which is funded in part by NSF
+grants CNS-1006860, EPS-1006860, EPS-0919443, ACI-1440548, CHE-1726332, and NIH
+P20GM113109.")
+    (license license:gpl3+)))
+
 (define-public r-colorspec
   (package
     (name "r-colorspec")
@@ -25938,13 +26053,13 @@ and mouse cell identity markers sourced from a variety of databases.")
 (define-public r-clustermi
   (package
     (name "r-clustermi")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterMI" version))
        (sha256
-        (base32 "0irc1fcsvwkyv1g9zyjk9l6hmr1mj78rlndkd2ggg44r22mc1p0m"))))
+        (base32 "0sn4jadkn8iy2801zz37vdc0b03bmk9f30zxhskgrff11k02n4qa"))))
     (properties `((upstream-name . "clusterMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -30816,13 +30931,13 @@ data.  For dev version and change history, see @code{GitHub} assaforon/cir.")
 (define-public r-cipostselect
   (package
     (name "r-cipostselect")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CIpostSelect" version))
        (sha256
-        (base32 "1yqdwb11bi4a7kg3xvh3liq0f77fyfri5sv7ksq71wwshzzr4f8q"))))
+        (base32 "1fmkdjgnkqmm369n1lg7zbm3ccpq9cv105m18418q1qp4zdjfz8a"))))
     (properties `((upstream-name . "CIpostSelect")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc
@@ -31348,13 +31463,13 @@ implemented for comparison.")
 (define-public r-cici
   (package
     (name "r-cici")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICI" version))
        (sha256
-        (base32 "0dd152f3ffasmwrhjgkd4i480cp2jkp2qy7w22xbzjm3c22mpbvz"))))
+        (base32 "1nqajm6rglm62yhjdycm3ik0bvm1cfmyjz34s1vkddh5r2m1dwmg"))))
     (properties `((upstream-name . "CICI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rngtools
@@ -31370,8 +31485,8 @@ implemented for comparison.")
     (description
      "Estimation of counterfactual outcomes for multiple values of continuous
 interventions at different time points, and plotting of causal dose-response
-curves.  Details are given in Schomaker, @code{McIlleron}, Denti, Diaz (2023)
-<@code{arXiv:2305.06645>}.")
+curves.  Details are given in Schomaker, @code{McIlleron}, Denti, Diaz (2024)
+<doi:10.48550/@code{arXiv.2305.06645>}.")
     (license license:gpl2)))
 
 (define-public r-cicerone
@@ -39552,13 +39667,13 @@ used for evaluating performance of causal discovery procedures.")
 (define-public r-causaldata
   (package
     (name "r-causaldata")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causaldata" version))
        (sha256
-        (base32 "1v5apihm9005j1kf3p1d28v6jaqx87ryc43kjhwd5mvvm10rmflc"))))
+        (base32 "0jb5n24hlm2mnpl93aybjn1ras903gx7sa60z8zif7gwj9p65kx3"))))
     (properties `((upstream-name . "causaldata")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -39566,10 +39681,10 @@ used for evaluating performance of causal discovery procedures.")
     (synopsis "Example Data Sets for Causal Inference Textbooks")
     (description
      "Example data sets to run the example problems from causal inference textbooks.
-Currently, contains data sets for Huntington-Klein, Nick (2021) \"The Effect\"
-<https://theeffectbook.net>, Cunningham, Scott (2021, ISBN-13:
-978-0-300-25168-5) \"Causal Inference: The Mixtape\", and HernÃ¡n, Miguel and
-James Robins (2020) \"Causal Inference: What If\"
+Currently, contains data sets for Huntington-Klein, Nick (2021 and 2025) \"The
+Effect\" <https://theeffectbook.net>, first and second edition, Cunningham, Scott
+(2021 and 2025, ISBN-13: 978-0-300-25168-5) \"Causal Inference: The Mixtape\", and
+HernÃ¡n, Miguel and James Robins (2020) \"Causal Inference: What If\"
 <https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/>.")
     (license license:expat)))
 
@@ -40874,6 +40989,27 @@ algorithms, the package enables users to compare their performance with CASCORE
 in community detection tasks.")
     (license license:gpl2)))
 
+(define-public r-cascadess
+  (package
+    (name "r-cascadess")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cascadess" version))
+       (sha256
+        (base32 "0yf431qx4alvvsr2mq4kkz3sy0f0789wm63vdm0mxdciabfgmz39"))))
+    (properties `((upstream-name . "cascadess")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-magrittr r-htmltools))
+    (home-page "https://nteetor.github.io/cascadess/")
+    (synopsis "Style Pronoun for 'htmltools' Tags")
+    (description
+     "Apply styles to tag elements directly and with the .style pronoun.  Using the
+pronoun, styles are created within the context of a tag element.  Change
+borders, backgrounds, text, margins, layouts, and more.")
+    (license license:expat)))
+
 (define-public r-cascadeselect
   (package
     (name "r-cascadeselect")
@@ -41202,13 +41338,13 @@ research, such as basic characteristic tables or descriptive statistics.")
 (define-public r-caroline
   (package
     (name "r-caroline")
-    (version "0.9.2")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caroline" version))
        (sha256
-        (base32 "15q2cqfrfvy934cdfg886sp6lzmfp1bqddjpkv0bhqzpnmscbpq4"))))
+        (base32 "0ylgryaylki22m54wrra9gsa34pal64n196s100ng4q02fl7z1lk"))))
     (properties `((upstream-name . "caroline")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=caroline")
@@ -41217,12 +41353,13 @@ research, such as basic characteristic tables or descriptive statistics.")
     (description
      "The caroline R library contains dozens of functions useful for: database
 migration (@code{dbWriteTable2}), database style joins & aggregation (nerge,
-@code{groupBy} & @code{bestBy}), data structure conversion (nv, tab2df), legend
-table making (sstable & leghead), plot annotation (labsegs & mvlabs), data
-visualization (pies, sparge, & @code{raPlot}), character string manipulation (m
-& pad), file I/O (write.delim), batch scripting and more.  The package's
-greatest contributions lie in the database style merge, aggregation and
-interface functions as well as in it's extensive use and propagation of row,
+@code{groupBy}, & @code{bestBy}), data structure conversion (nv, tab2df), legend
+table making (sstable & leghead), automatic legend positioning for scatter and
+box plots (), plot annotation (labsegs & mvlabs), data visualization (pies,
+sparge, confound.grid & @code{raPlot}), character string manipulation (m & pad),
+file I/O (write.delim), batch scripting, data exploration, and more.  The
+package's greatest contributions lie in the database style merge, aggregation
+and interface functions as well as in it's extensive use and propagation of row,
 column and vector names in most functions.")
     (license license:artistic2.0)))
 

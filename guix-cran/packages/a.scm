@@ -1302,6 +1302,37 @@ This package interfaces directly to the C API and does not require any command
 line utilities.")
     (license license:expat)))
 
+(define-public r-autowmm
+  (package
+    (name "r-autowmm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AutoWMM" version))
+       (sha256
+        (base32 "1ci2j65nzgckf70qp500xw943s7xgv18qiw2c9w3cfrg9ay1xnrs"))))
+    (properties `((upstream-name . "AutoWMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-rlang
+                             r-mass
+                             r-magrittr
+                             r-gtools
+                             r-dplyr
+                             r-diagrammer
+                             r-data-tree))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/malfly/AutoWMM")
+    (synopsis "Perform the Weighted Multiplier Method on Trees")
+    (description
+     "When many possible multiplier method estimates of a target population are
+available, a weighted sum of estimates from each back-calculated path can be
+achieved with this package.  Variance-minimizing weights are used and with any
+admissible tree-structured data.  The methodological basis used to create this
+package can be found in Flynn (2023) <http://hdl.handle.net/2429/86174>.")
+    (license license:gpl2+)))
+
 (define-public r-autoweatherindices
   (package
     (name "r-autoweatherindices")
@@ -5697,6 +5728,31 @@ classification including the algorithms CBA, CMAR, CPAR, C4.5, FOIL, PART, PRM,
 RCAR, and RIPPER to build associative classifiers.  Hahsler et al (2019)
 <doi:10.32614/RJ-2019-048>.")
     (license license:gpl3)))
+
+(define-public r-arttransfer
+  (package
+    (name "r-arttransfer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARTtransfer" version))
+       (sha256
+        (base32 "0n0xz64kff7inc9b9jlrka0rpn3amrls12635wvfycdxf9p0ymx9"))))
+    (properties `((upstream-name . "ARTtransfer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomforest r-nnet r-glmnet r-gbm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ARTtransfer")
+    (synopsis "Adaptive and Robust Pipeline for Transfer Learning")
+    (description
+     "Adaptive and Robust Transfer Learning (ART) is a flexible framework for transfer
+learning that integrates information from auxiliary data sources to improve
+model performance on primary tasks.  It is designed to be robust against
+negative transfer by including the non-transfer model in the candidate pool,
+ensuring stable performance even when auxiliary datasets are less informative.
+See the paper, Wang, Wu, and Ye (2023) <doi:10.1002/sta4.582>.")
+    (license license:gpl2)))
 
 (define-public r-artsy
   (package
@@ -14223,16 +14279,21 @@ all_glm(), and Cox proportional hazards regression: all_cox().")
 (define-public r-allelicseries
   (package
     (name "r-allelicseries")
-    (version "0.0.4.1")
+    (version "0.1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AllelicSeries" version))
        (sha256
-        (base32 "1i9p2hzi61mvl5gxcs7rlavcl70pvjscnqjlxms35n4ziq3hzrk0"))))
+        (base32 "0vb03a6zyp9xv6wycdsx0r9fsd8bfjnqiqrj1xqp8vidkmzafgyr"))))
     (properties `((upstream-name . "AllelicSeries")))
     (build-system r-build-system)
-    (propagated-inputs (list r-skat r-rnomni r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-skat
+                             r-rnomni
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-glue
+                             r-compquadform))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AllelicSeries")
     (synopsis "Allelic Series Test")
@@ -14245,9 +14306,9 @@ protein truncating variants (PTVs) within a gene.  COAST uses a set of
 adjustable weights that tailor the test towards rejecting the null hypothesis
 for genes where the average magnitude of effect increases monotonically from
 BMVs to DMVs to PTVs.  See @code{McCaw} ZR, OâDushlaine C, Somineni H, Bereket
-M, Klein C, Karaletsos T, Casale FP, Koller D, Soare TW. (2022) \"An allelic
+M, Klein C, Karaletsos T, Casale FP, Koller D, Soare TW. (2023) \"An allelic
 series rare variant association test for candidate gene discovery\"
-<doi:10.1101/2022.12.23.521658>.")
+<doi:10.1016/j.ajhg.2023.07.001>.")
     (license license:bsd-3)))
 
 (define-public r-alleleshift
@@ -14366,17 +14427,16 @@ deterministically calculated.")
 (define-public r-allcontributors
   (package
     (name "r-allcontributors")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allcontributors" version))
        (sha256
-        (base32 "043li7wdm3m66k69ijjmak53pk8f6q3a89snncv36g82zwbpfvpp"))))
+        (base32 "0yxk7433g9n62ff08cg9zcqng553kyhswc7yb15qwx4wynn376f3"))))
     (properties `((upstream-name . "allcontributors")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
-                             r-httr2
                              r-gitcreds
                              r-gh
                              r-gert
@@ -14384,7 +14444,7 @@ deterministically calculated.")
                              r-clipr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropenscilabs/allcontributors")
+    (home-page "https://github.com/ropensci/allcontributors")
     (synopsis "Acknowledge all Contributors to a Project")
     (description
      "Acknowledge all contributors to a project via a single function call.  The
@@ -19133,39 +19193,43 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.1-3")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "0h6saazz2p8pliznn2ggbi6zj5ib00ylghfxj5i9nk21p4y0s59s"))))
+        (base32 "1id7fsq4lkjp0ar2p4097wlsh3spvrlvi30rsm740i7ny8d7nsns"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp
+    (propagated-inputs (list r-rdpack
+                             r-rcpp
                              r-pracma
                              r-orthopolynom
                              r-mass
                              r-iso
                              r-fdrtool
+                             r-envstats
                              r-cubature))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/XavierMilhaud/admix")
+    (home-page "https://github.com/XavierMilhaud/admix-Rpackage")
     (synopsis "Package Admix for Admixture (aka Contamination) Models")
     (description
      "This package implements techniques to estimate the unknown quantities related to
 two-component admixture models, where the two components can belong to any
 distribution (note that in the case of multinomial mixtures, the two components
 must belong to the same family).  Estimation methods depend on the assumptions
-made on the unknown component density (see Bordes and Vandekerkhove (2010)
-<doi:10.3103/S1066530710010023>; Patra and Sen (2016) <doi:10.1111/rssb.12148>);
-Milhaud, Pommeret, Salhi and Vandekerkhove (2022)
-<doi:10.1016/j.jspi.2021.05.010>).  In practice, one can estimate both the
-mixture weight and the unknown component density in a wide variety of
-frameworks.  On top of that, hypothesis tests can be performed in one and
-two-sample contexts to test the unknown component density (see Milhaud,
-Pommeret, Salhi, Vandekerkhove (2023)).  Finally, clustering of unknown mixture
-components is also feasible in a K-samples setting.")
+made on the unknown component density; see Bordes and Vandekerkhove (2010)
+<doi:10.3103/S1066530710010023>, Patra and Sen (2016) <doi:10.1111/rssb.12148>,
+and Milhaud, Pommeret, Salhi, Vandekerkhove (2024) <doi:10.3150/23-BEJ1593>.  In
+practice, one can estimate both the mixture weight and the unknown component
+density in a wide variety of frameworks.  On top of that, hypothesis tests can
+be performed in one and two-sample contexts to test the unknown component
+density (see Milhaud, Pommeret, Salhi and Vandekerkhove (2022)
+<doi:10.1016/j.jspi.2021.05.010>, and Milhaud, Pommeret, Salhi, Vandekerkhove
+(2024) <doi:10.3150/23-BEJ1593>).  Finally, clustering of unknown mixture
+components is also feasible in a K-sample setting (see Milhaud, Pommeret, Salhi,
+Vandekerkhove (2024) <https://jmlr.org/papers/v25/23-0914.html>).")
     (license license:gpl3+)))
 
 (define-public r-admit
@@ -20988,13 +21052,13 @@ U.S. Food and Drug Administration.")
 (define-public r-adaptivetau
   (package
     (name "r-adaptivetau")
-    (version "2.3-1")
+    (version "2.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaptivetau" version))
        (sha256
-        (base32 "0krv2pw7gg0nch96h0ffy6wli1cjscfl424jy04q0zvvqfghkvqd"))))
+        (base32 "0q6fxni66f8dsrzjrp54mpddvf0vbaji4a2sjlp9gnia5gvi9z27"))))
     (properties `((upstream-name . "adaptivetau")))
     (build-system r-build-system)
     (home-page "https://github.com/plfjohnson/adaptivetau")
@@ -21766,13 +21830,13 @@ arbitrary text input.")
 (define-public r-acro
   (package
     (name "r-acro")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acro" version))
        (sha256
-        (base32 "1mipd7p47b3m2klmxfpdy04dm3sk5yaiyz0wgmd5zmci5ha2jvp8"))))
+        (base32 "0vgwzjwxhfs287k0jg8lbmggnanli69jig1wfsxph26yy4hddxfk"))))
     (properties `((upstream-name . "acro")))
     (build-system r-build-system)
     (inputs (list python))
@@ -22318,13 +22382,13 @@ ISBN: 978-0387310732).")
 (define-public r-accelstab
   (package
     (name "r-accelstab")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccelStab" version))
        (sha256
-        (base32 "072wm4421bir8ij1g5zj0rn26h28vz7np6glmvapv18q4kfz1x88"))))
+        (base32 "1abnydhn86g5vg5fpv711887a4nr1xzlrqi45bgy00gfag00pqih"))))
     (properties `((upstream-name . "AccelStab")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-mvtnorm r-minpack-lm r-ggplot2 r-dplyr))

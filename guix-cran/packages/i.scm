@@ -4779,6 +4779,36 @@ improved upon the approach proposed by Guyot (2012) <doi:10.1186/1471-2288-12-9>
 with some modifications.")
     (license license:gpl2)))
 
+(define-public r-ipd
+  (package
+    (name "r-ipd")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ipd" version))
+       (sha256
+        (base32 "14n07m3s4kwwzacvwx957m6b99kbfx1z2sf0852q3piwdr090zkr"))))
+    (properties `((upstream-name . "ipd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger
+                             r-randomforest
+                             r-mass
+                             r-generics
+                             r-gam
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ipd-tools/ipd")
+    (synopsis "Inference on Predicted Data")
+    (description
+     "This package performs valid statistical inference on predicted data (IPD) using
+recent methods, where for a subset of the data, the outcomes have been predicted
+by an algorithm.  Provides a wrapper function with specified defaults for the
+type of model and method to be used for estimation and inference.  Further
+provides methods for tidying and summarizing results.  Salerno et al., (2024)
+<doi:10.48550/@code{arXiv.2410.09665>}.")
+    (license license:expat)))
+
 (define-public r-ipcwswitch
   (package
     (name "r-ipcwswitch")
@@ -16185,24 +16215,71 @@ ICES assessments.  ICES is an organization facilitating international
 collaboration in marine science.")
     (license license:gpl3)))
 
+(define-public r-icessd
+  (package
+    (name "r-icessd")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesSD" version))
+       (sha256
+        (base32 "016x8rn4v2bi81nfpid9x88zyn1k5f40idv15qwwlyzidgjdyyas"))))
+    (properties `((upstream-name . "icesSD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-icesconnect r-httr))
+    (home-page "https://sd.ices.dk")
+    (synopsis "Stock Database Web Services")
+    (description
+     "R interface to access the web services of the ICES Stock Database
+<https://sd.ices.dk>.")
+    (license license:gpl2+)))
+
 (define-public r-icessag
   (package
     (name "r-icessag")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icesSAG" version))
        (sha256
-        (base32 "0dsjsn3qx3k7grjgqsj120valzga7vjlj6jb8mfwmi85gmvlx329"))))
+        (base32 "0y4jmvy7b91jzyc39b4cfakr9xs82icyna91aqizgh038bcn7wy9"))))
     (properties `((upstream-name . "icesSAG")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-png r-openssl r-icesvocab r-httr))
+    (propagated-inputs (list r-xml2
+                             r-rlang
+                             r-memoise
+                             r-icesvocab
+                             r-icesconnect
+                             r-httr
+                             r-cachem))
     (home-page "https://sg.ices.dk")
     (synopsis "Stock Assessment Graphs Database Web Services")
     (description
      "R interface to access the web services of the ICES Stock Assessment Graphs
 database <https://sg.ices.dk>.")
+    (license license:gpl2+)))
+
+(define-public r-icesdatsu
+  (package
+    (name "r-icesdatsu")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesDatsu" version))
+       (sha256
+        (base32 "0kjnc2z0yyxln7axq9k1x652phjvq22pxqiz2a8s2v4c1iffy1j3"))))
+    (properties `((upstream-name . "icesDatsu")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-icesconnect r-httr))
+    (home-page "https://datsu.ices.dk/web/index.aspx")
+    (synopsis
+     "Functions to Interact with the ICES Data Submission Utility (DATSU)")
+    (description
+     "This package provides functions to Interact with the ICES Data Submission
+Utility (DATSU) <https://datsu.ices.dk/web/index.aspx>.")
     (license license:gpl2+)))
 
 (define-public r-icesdatras
@@ -16792,6 +16869,29 @@ extended Hausdorff distances (Min et al.  2007) <doi:10.1080/13658810601073315>
 and the discrete FrÃ©chet distance (Magdy et al.  2015)
 <doi:10.1109/@code{IntelCIS.2015.7397286>}.")
     (license license:gpl2+)))
+
+(define-public r-iccmult
+  (package
+    (name "r-iccmult")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iccmult" version))
+       (sha256
+        (base32 "1x1yaxvr7117yyri77j8dlp43vyfc3rmbm0q640p3idi2r7ih3xp"))))
+    (properties `((upstream-name . "iccmult")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lme4 r-iccbin r-gtools r-dirmult))
+    (home-page "https://cran.r-project.org/package=iccmult")
+    (synopsis
+     "Intracluster Correlation Coefficient (ICC) in Clustered Categorical Data")
+    (description
+     "Assists in generating categorical clustered outcome data, estimating the
+Intracluster Correlation Coefficient (ICC) for nominal or ordinal data with 2+
+categories under the resampling and method of moments (@code{MoM}) methods, with
+confidence intervals.")
+    (license license:expat)))
 
 (define-public r-iccforest
   (package

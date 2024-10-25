@@ -5740,13 +5740,13 @@ score your own data directly from an R script.")
 (define-public r-openrouteservice
   (package
     (name "r-openrouteservice")
-    (version "0.5.3")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openrouteservice" version))
        (sha256
-        (base32 "195bd7admszp1x0kyha9bxdqw2913qwj4ax7lxmkbq1ky3pjgnbp"))))
+        (base32 "18la6cy6xs0rlp4b40cri4fzs9xl4ddh8y1hq5kziv9rswckv6bv"))))
     (properties `((upstream-name . "openrouteservice")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6391,13 +6391,13 @@ camera device.")
 (define-public r-opencr
   (package
     (name "r-opencr")
-    (version "2.2.6")
+    (version "2.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openCR" version))
        (sha256
-        (base32 "08cqv6xxv35hzllab0glb42h54racgqk0x3dvam6lk7c561kbas4"))))
+        (base32 "13z547bfbnmlnlmnir98j26gn82ksfhfzbqdgcfnb768w33hjv7v"))))
     (properties `((upstream-name . "openCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -8491,6 +8491,50 @@ functions.  See the ompr website <https://dirkschumacher.github.io/ompr/> for
 more information, documentation and examples.")
     (license license:expat)))
 
+(define-public r-omopviewer
+  (package
+    (name "r-omopviewer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmopViewer" version))
+       (sha256
+        (base32 "1g9jjg5gqsq7zwk094z5nzfgf6icpnasjdjjnky4l14cfwy5ykca"))))
+    (properties `((upstream-name . "OmopViewer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-yaml
+                             r-visomopresults
+                             r-vctrs
+                             r-usethis
+                             r-tidyr
+                             r-styler
+                             r-stringr
+                             r-snakecase
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-omopgenerics
+                             r-markdown
+                             r-glue
+                             r-dt
+                             r-dplyr
+                             r-cli
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/OmopViewer/")
+    (synopsis "Visualise OMOP Results using 'shiny' Applications")
+    (description
+     "Visualise results obtained from analysing data mapped to the Observational
+Medical Outcomes Partnership (OMOP) common data model using shiny applications.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
@@ -9629,39 +9673,6 @@ models by allowing the user to specify a model for the variance.  Furthermore,
 the package includes functions to calculate the marginal effects.  Wrapper
 functions to estimate the standard limited dependent variable models are also
 included.")
-    (license license:gpl2)))
-
-(define-public r-oglcnac
-  (package
-    (name "r-oglcnac")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oglcnac" version))
-       (sha256
-        (base32 "1r8agkpfkvr6ix6286dap4489pq3ym8maqigkhwby83l2p3s30c1"))))
-    (properties `((upstream-name . "oglcnac")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-readxl
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-dt
-                             r-cli
-                             r-bslib))
-    (home-page "https://cran.r-project.org/package=oglcnac")
-    (synopsis "Processing and Analysis of O-GlcNAcAtlas Data")
-    (description
-     "This package provides tools for processing and analyzing data from the
-O-@code{GlcNAcAtlas} database <https://oglcnac.org/>, as described in Ma (2021)
-<doi:10.1093/glycob/cwab003>.  It integrates @code{UniProt}
-<https://www.uniprot.org/> API calls to retrieve additional information.  It is
-specifically designed for research workflows involving O-@code{GlcNAcAtlas}
-data, providing a flexible and user-friendly interface for customizing and
-downloading processed results.  Interactive elements allow users to easily
-adjust parameters and handle various biological datasets.")
     (license license:gpl2)))
 
 (define-public r-ogi

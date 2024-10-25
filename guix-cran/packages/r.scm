@@ -5192,13 +5192,13 @@ numbers from different sources.")
 (define-public r-rstrava
   (package
     (name "r-rstrava")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rStrava" version))
        (sha256
-        (base32 "1kn2x208iyz235zf64r2wz4jqgas5srzzjf6gpckqh8dkc6s234f"))))
+        (base32 "0fclv44qjhca61xlwykvp82w4w2c0q5gcdryvyawgbhvmdryqnyy"))))
     (properties `((upstream-name . "rStrava")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5207,10 +5207,10 @@ numbers from different sources.")
                              r-tidyr
                              r-tibble
                              r-rvest
-                             r-rcurl
                              r-purrr
                              r-maptiles
                              r-magrittr
+                             r-jsonlite
                              r-httr
                              r-googleway
                              r-ggspatial
@@ -6742,13 +6742,13 @@ An overview of these models is given in Snijders (2017),
 (define-public r-rsi
   (package
     (name "r-rsi")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsi" version))
        (sha256
-        (base32 "1d71nfal751xa5inairgh7qhmm1qfpbnvhz9vhdnzwffwfbdz9m9"))))
+        (base32 "0gcyzpr7am9hzc3741y90l70df32m0j744x2na0c9lv4pkp1a92k"))))
     (properties `((upstream-name . "rsi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7352,13 +7352,13 @@ linear models.")
 (define-public r-rscorecard
   (package
     (name "r-rscorecard")
-    (version "0.29.0")
+    (version "0.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rscorecard" version))
        (sha256
-        (base32 "0h895yrbgc9xbl7kaxhi0yrykj3px1pzjml9zk67bn5gvam4xmiq"))))
+        (base32 "0vlm35ibaam4zasdya7b3jkgil1ysigq54rva8zzsn14cn6r7992"))))
     (properties `((upstream-name . "rscorecard")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9022,13 +9022,13 @@ reasoning and checking.")
 (define-public r-rquefts
   (package
     (name "r-rquefts")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rquefts" version))
        (sha256
-        (base32 "14p9g0bqkaslr3164a58crhj024xphp9ig24mvs2ad8vxvf1gsf0"))))
+        (base32 "144hmgapzk8w2cv0gmyr67ivs683djv7k8i0ciihb4gl7rp55ppg"))))
     (properties `((upstream-name . "Rquefts")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-meteor))
@@ -18636,13 +18636,13 @@ existing @code{MiniZinc} models and also create their own models.")
 (define-public r-rminer
   (package
     (name "r-rminer")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rminer" version))
        (sha256
-        (base32 "1xydc43is756cy4vsm4k4micj88hhqgyrhb8cmvgv1y8zfrzg2qz"))))
+        (base32 "12dp2nakdbqjqjwq25vy26lhc19d9hh8mmzlxf0r3j140f8vv44y"))))
     (properties `((upstream-name . "rminer")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -18666,7 +18666,8 @@ existing @code{MiniZinc} models and also create their own models.")
     (description
      "Facilitates the use of data mining algorithms in classification and regression
 (including time series forecasting) tasks by presenting a short and coherent set
-of functions.  Versions: 1.4.6 / 1.4.5 / 1.4.4 new automated machine learning
+of functions.  Versions: 1.4.7 improved Importance function and examples, minor
+error fixes; 1.4.6 / 1.4.5 / 1.4.4 new automated machine learning
 (@code{AutoML}) and ensembles, via improved fit(), mining() and mparheuristic()
 functions, and new categorical preprocessing, via improved delevels() function;
 1.4.3 new metrics (e.g., macro precision, explained variance), new \"lssvm\" model
@@ -20576,13 +20577,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.3.0")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "01arnz3q2x0amgx6qqkg7wbpk66nq2abj9s9lbssi7wqw79hwgqy"))))
+        (base32 "06ddz7qv1v4v3w3iwy2k5m6f90bc7xrkkcvpji145scdrm50ml4a"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -23794,13 +23795,13 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "08m1d79zjr47x6zvy4n11hs5p4a897fn9dn2ks0ihyrrx75ynw69"))))
+        (base32 "0rrnrgszsrwpp9dz6n9jsp60ii09w3l032galg3cl33b245mgfb5"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnaturalearthdata r-rnaturalearth r-rlang
@@ -25075,13 +25076,13 @@ function for authorization and loading reports.")
 (define-public r-rgof
   (package
     (name "r-rgof")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rgof" version))
        (sha256
-        (base32 "1x1agjbil78mnydhmkm5r4fvmzx6ahlk3png0gps4z1h8lnk58j5"))))
+        (base32 "0iplhy2rwkbwbkdipj52iwvjakmwc4klj1sj7clq55z83ayq6m9h"))))
     (properties `((upstream-name . "Rgof")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -25543,30 +25544,6 @@ On the one hand, it scales the dimension of our data, on the other it performs
 inference.  The method is fully described in the paper \"Scalable Geometric
 Density Estimation\" by Y. Wang, A. Canale, D. Dunson (2016)
 <http://proceedings.mlr.press/v51/wang16e.pdf>.")
-    (license license:gpl2+)))
-
-(define-public r-rgeoda
-  (package
-    (name "r-rgeoda")
-    (version "0.0.10-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rgeoda" version))
-       (sha256
-        (base32 "18rcrlah1iaqvf90cymh71c8wpgy3yxlwlq84waxilpccwhd68x0"))))
-    (properties `((upstream-name . "rgeoda")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rcpp r-digest r-bh))
-    (home-page "https://github.com/geodacenter/rgeoda/")
-    (synopsis "R Library for Spatial Data Analysis")
-    (description
-     "This package provides spatial data analysis functionalities including
-Exploratory Spatial Data Analysis, Spatial Cluster Detection and Clustering
-Analysis, Regionalization, etc.  based on the C++ source code of @code{GeoDa}',
-which is an open-source software tool that serves as an introduction to spatial
-data analysis.  The @code{GeoDa} software and its documentation are available at
-<https://geodacenter.github.io>.")
     (license license:gpl2+)))
 
 (define-public r-rgeoboundaries
@@ -30300,13 +30277,13 @@ in Muller et al., (2014) <doi: 10.1093/nar/gkt878>.")
 (define-public r-replicationsuccess
   (package
     (name "r-replicationsuccess")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReplicationSuccess" version))
        (sha256
-        (base32 "0li1sza6afxizfgcczdi8916mb5z63agpx828a48f50ldc25rlvd"))))
+        (base32 "1vw6g7manxzndhnvn86k8cwyb5hnjqljbvxvj55vll4q42dyq6d0"))))
     (properties `((upstream-name . "ReplicationSuccess")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -34212,13 +34189,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapTidieR" version))
        (sha256
-        (base32 "0a7q2mfnjfyfkdafvvl7y69c52qh8wsqrygv77wnrjl4kjf80gwv"))))
+        (base32 "0f4d7xk3n9gjslk23g3f2jckdcj4fyprxnafhpwl8ap1ni3mvvgx"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -34234,6 +34211,7 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
                              r-pillar
                              r-lubridate
                              r-lobstr
+                             r-glue
                              r-formattable
                              r-dplyr
                              r-cli
@@ -34249,13 +34227,13 @@ instruments and event arms.")
 (define-public r-redcapr
   (package
     (name "r-redcapr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapR" version))
        (sha256
-        (base32 "01nkyv3fkzgvycn236i0jj45k0jb259v2wfyi8hwaviyvhqa8qln"))))
+        (base32 "1xk7blqibnl2n9q10rjgx6vfblpm9qj6sfdcvfm245kpbj65vxc9"))))
     (properties `((upstream-name . "REDCapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -34450,6 +34428,29 @@ comprehensive taxonomic, geographic, and conservation information about Peru's
 endemic plant species.  It includes functions to verify species inclusion,
 obtain updated taxonomic details, and explore the dataset.")
     (license license:expat)))
+
+(define-public r-redatam
+  (package
+    (name "r-redatam")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "redatam" version))
+       (sha256
+        (base32 "1zrsgadkj03h8iw01v1988mi6cyphdja73ggyi5591wf07ra5lq8"))))
+    (properties `((upstream-name . "redatam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-janitor r-data-table r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/litalbarkai/open-redatam")
+    (synopsis "Import 'REDATAM' Files")
+    (description
+     "Import REDATAM files into R. REDATAM is a software for the manipulation of
+microdata from censuses and surveys.  This package provides functions to import
+REDATAM files into R. It is based on De Grande (2016)
+<https://www.jstor.org/stable/24890658>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-redas
   (package
@@ -41381,13 +41382,13 @@ package in the R Commander GUI for R.")
 (define-public r-rcmdr
   (package
     (name "r-rcmdr")
-    (version "2.9-4")
+    (version "2.9-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcmdr" version))
        (sha256
-        (base32 "19qknvrsw6pffqklghvaz42f8v7mlsq7h1m7d0v8jzn0c3py4sbg"))))
+        (base32 "06yy14iimc54w1j0wgjslnrb1qkqqnaaq0kx3by815i0kxq7v9dx"))))
     (properties `((upstream-name . "Rcmdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tcltk2
@@ -42533,13 +42534,13 @@ and time, such as age-specific trends, bar chart and period-cohort trends.")
 (define-public r-rcali
   (package
     (name "r-rcali")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCALI" version))
        (sha256
-        (base32 "1w9g5wph5l6agrlzrb8axv4ldv4aid745vkm1r5ndsmssrbgf7v9"))))
+        (base32 "0p8cvxxrnwwhd2025hdwwhaa1bk8yhsd8dcmrwv2kj13aqdywq3g"))))
     (properties `((upstream-name . "RCALI")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs))
@@ -43940,35 +43941,6 @@ Accepts both filename inputs and in-memory array representations of images and
 matrices.  Includes functions to perform 2D convolutions, reorient and resize
 images/matrices, add image overlays, generate camera vignette effects, and add
 titles to images.")
-    (license license:gpl3)))
-
-(define-public r-raybevel
-  (package
-    (name "r-raybevel")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "raybevel" version))
-       (sha256
-        (base32 "0431mk0lslqwffknarb7zm2nbgv564d3karf9davc7w1xgnf11fj"))))
-    (properties `((upstream-name . "raybevel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-rcppthread
-                             r-rcppcgal
-                             r-rcpp
-                             r-rayvertex
-                             r-progress
-                             r-digest
-                             r-decido
-                             r-bh))
-    (home-page "https://www.raybevel.com")
-    (synopsis "Generates Polygon Straight Skeletons and 3D Bevels")
-    (description
-     "Generates polygon straight skeletons and 3D models.  Provides functions to
-create and visualize interior polygon offsets, 3D beveled polygons, and 3D roof
-models.")
     (license license:gpl3)))
 
 (define-public r-raws-profile
@@ -46678,13 +46650,13 @@ classification task on the projected data.")
 (define-public r-randomwalker
   (package
     (name "r-randomwalker")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RandomWalker" version))
        (sha256
-        (base32 "0yv6bkfm0dqp5zwxr3k38m57434pfsrpfq9qckfslkxwydmhf074"))))
+        (base32 "0x1d1s4mylfl0jgx94kvl26vgkndx6gc1bcfxqwq1ayckpsvld84"))))
     (properties `((upstream-name . "RandomWalker")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -46692,6 +46664,7 @@ classification task on the projected data.")
                              r-purrr
                              r-patchwork
                              r-nns
+                             r-ggiraph
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://www.spsanderson.com/RandomWalker/")
@@ -50055,24 +50028,24 @@ using the package in question.")
 (define-public r-r2sample
   (package
     (name "r-r2sample")
-    (version "1.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2sample" version))
        (sha256
-        (base32 "18v7i0h4jbnyd08c24sr8fydk209fp76hc2k7yivva616m5c4s2d"))))
+        (base32 "11p3kw9v8lag06akdx8a50laxzgs14micv2baq3asgsbm983g5lx"))))
     (properties `((upstream-name . "R2sample")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rcpp r-microbenchmark r-ggplot2))
+    (propagated-inputs (list r-shiny r-rcpp r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=R2sample")
-    (synopsis "Two Sample Problem Routines using Permutation")
+    (synopsis "Various Methods for the Two Sample Problem")
     (description
      "The routine twosample_test() in this package runs the two sample test using
-various test statistic.  The p values are found via permutation.  The routine
-twosample_power() allows the calculation of the power in various cases, and
-plot_power() draws the corresponding power graphs.")
+various test statistic.  The p values are found via permutation or large sample
+theory.  The routine twosample_power() allows the calculation of the power in
+various cases, and plot_power() draws the corresponding power graphs.")
     (license license:gpl2+)))
 
 (define-public r-r2rtf
@@ -50608,17 +50581,17 @@ based htmlwidgets in R packages.")
 (define-public r-r2d2
   (package
     (name "r-r2d2")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2d2" version))
        (sha256
-        (base32 "1956p9xr9as8v4673d6fsdyas3racfzh6a5pafqz56r8ai1ssbyq"))))
+        (base32 "0ff5624g1hzckfw4kf6hih4s8n8nnymjb8snd415g38k733q0ihn"))))
     (properties `((upstream-name . "r2d2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-mass r-kernsmooth))
-    (home-page "https://cran.r-project.org/package=r2d2")
+    (home-page "https://github.com/arni-magnusson/r2d2")
     (synopsis
      "Bivariate (Two-Dimensional) Confidence Region and Frequency Distribution")
     (description

@@ -2535,13 +2535,13 @@ format, wide format and transposed wide format data to various file types.")
 (define-public r-tstests
   (package
     (name "r-tstests")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tstests" version))
        (sha256
-        (base32 "00gjmvg1b7v2cdrv95l9ic9j50wch8y23qxkiqmrp1nznjjicpsy"))))
+        (base32 "0771k05gmbag61q429yvqwn1xh2l1y87z68szg3njrbnabrihpmb"))))
     (properties `((upstream-name . "tstests")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -4583,13 +4583,13 @@ Virta and Taskinen (2021) <doi:10.18637/jss.v098.i15>.")
 (define-public r-tsbox
   (package
     (name "r-tsbox")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsbox" version))
        (sha256
-        (base32 "1amv1rwa78phrgi5njq66kz42wkk0n1b6wzg232m4znq2jj2b6s7"))))
+        (base32 "12m0b8000r8b2ik0p3kd612lng8i98hc8yicvr5162vw9v9vxki2"))))
     (properties `((upstream-name . "tsbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-anytime))
@@ -5507,13 +5507,13 @@ summaries binned by time interval from Markov Chain Monte Carlo simulations.")
 (define-public r-tripack
   (package
     (name "r-tripack")
-    (version "1.3-9.1")
+    (version "1.3-9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tripack" version))
        (sha256
-        (base32 "1ghza4by6shalsnqybn5qgv076dxh59b6vycg9v6ii216zbgi0kz"))))
+        (base32 "0in9jlqni00qy9czpw7lnhm846ijxqbm02z8dy5bhgmh9v048brv"))))
     (properties `((upstream-name . "tripack")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -5522,7 +5522,9 @@ summaries binned by time interval from Markov Chain Monte Carlo simulations.")
     (description
      "This package provides a constrained two-dimensional Delaunay triangulation
 package providing both triangulation and generation of voronoi mosaics of
-irregular spaced data.")
+irregular spaced data.  Please note that most of the functions are now also
+covered in package interp, which is a re-implementation from scratch under a
+free license based on a different triangulation algorithm.")
     (license (list (license:fsdg-compatible "ACM")
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -7859,34 +7861,6 @@ principle of transx is to keep the number of observations the same.  Operations
 that reduce this number have to fill the observations gap.")
     (license license:gpl3)))
 
-(define-public r-transurv
-  (package
-    (name "r-transurv")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tranSurv" version))
-       (sha256
-        (base32 "17rvzjcn76z5niw1jappiadbkf66a9x0m7p3251lgb7qrnvpx3gk"))))
-    (properties `((upstream-name . "tranSurv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncsp r-survival r-squarem r-rootsolve))
-    (home-page "https://github.com/stc04003/tranSurv")
-    (synopsis
-     "Transformation Model Based Estimation of Survival and Regression Under Dependent Truncation and Independent Censoring")
-    (description
-     "This package provides a latent, quasi-independent truncation time is assumed to
-be linked with the observed dependent truncation time, the event time, and an
-unknown transformation parameter via a structural transformation model.  The
-transformation parameter is chosen to minimize the conditional Kendall's tau
-(Martin and Betensky, 2005) <doi:10.1198/016214504000001538> or the regression
-coefficient estimates (Jones and Crowley, 1992) <doi:10.2307/2336782>.  The
-marginal distribution for the truncation time and the event time are completely
-left unspecified.  The methodology is applied to survival curve estimation and
-regression analysis.")
-    (license license:gpl3+)))
-
 (define-public r-transtggm
   (package
     (name "r-transtggm")
@@ -10188,6 +10162,34 @@ some values may be missing in future cases to be predicted.  Based on the notion
 of regression averaging (Matloff (2017, ISBN: 9781498710916)).")
     (license license:gpl2+)))
 
+(define-public r-tower
+  (package
+    (name "r-tower")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tower" version))
+       (sha256
+        (base32 "1bajsrn6jj9jxjqc7jlprh1kmbm96vaskbp9r7bmrjvl6v7zgrr6"))))
+    (properties `((upstream-name . "tower")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-glue
+                             r-curl))
+    (home-page "https://github.com/ixpantia/tower")
+    (synopsis "Easy Middle Ware Library for 'shiny'")
+    (description
+     "The best way to implement middle ware for shiny Applications.  tower is designed
+to make implementing behavior on top of shiny easy with a layering model for
+incoming HTTP requests and server sessions.  tower is a very minimal package
+with little overhead, it is mainly meant for other package developers to
+implement new behavior.")
+    (license license:expat)))
+
 (define-public r-tourr
   (package
     (name "r-tourr")
@@ -11004,13 +11006,13 @@ Dieng, Francisco J. R. Ruiz, David M. Blei (2019), available at
 (define-public r-topiclabels
   (package
     (name "r-topiclabels")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topiclabels" version))
        (sha256
-        (base32 "0x56bgm609xzx844j0qamyix3nr8ziqzj5rd33qgj023gfgrhg8i"))))
+        (base32 "1njmcbmk7d3yappvmavm1nd5xxqdjm3mikb1nfl2p93wqbsv86ik"))))
     (properties `((upstream-name . "topiclabels")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress r-jsonlite r-httr r-checkmate))
@@ -15221,13 +15223,13 @@ with others or used to report statistics in scientific papers.")
 (define-public r-tidysq
   (package
     (name "r-tidysq")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysq" version))
        (sha256
-        (base32 "1b2nf68dlfmnqghxi35kig79sgyvab5rjkdklvnf278swb6ajhk2"))))
+        (base32 "1v92jpifcjh51igh3izr7r0x0dz7xmc6mx6rz0xndylgi4418wcf"))))
     (properties `((upstream-name . "tidysq")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -23488,17 +23490,17 @@ and accurate reports.")
 (define-public r-teal-logger
   (package
     (name "r-teal-logger")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.logger" version))
        (sha256
-        (base32 "1kji87sajwh06r2gqbj6gyg7q4kcw6am9cf2clwr39qg9srq2lri"))))
+        (base32 "05841x1g48av438hja6x6vd2wdzx385qnxyjp2v9x2aqhf2492cq"))))
     (properties `((upstream-name . "teal.logger")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-shiny r-logger r-lifecycle r-glue))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.logger/")
     (synopsis "Logging Setup for the 'teal' Family of Packages")
     (description

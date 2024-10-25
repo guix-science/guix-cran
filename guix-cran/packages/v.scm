@@ -3067,6 +3067,29 @@ a causal claim for between group differences.  Number needed to treat formula
 from Kraemer H.C. & Kupfer D.J. (2006) <doi:10.1016/j.biopsych.2005.09.014>.")
     (license license:lgpl3)))
 
+(define-public r-viscov
+  (package
+    (name "r-viscov")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VisCov" version))
+       (sha256
+        (base32 "0rcypw7szbs5x9wcdihcj87i7kic2dz8c56zdxq3pfrqsligm86b"))))
+    (properties `((upstream-name . "VisCov")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scatterplot3d r-kernsmooth r-clustergeneration
+                             r-bayesm))
+    (home-page "https://cran.r-project.org/package=VisCov")
+    (synopsis "Visualizing of Distributions of Covariance Matrices")
+    (description
+     "Visualizing of distributions of covariance matrices.  The package implements the
+methodology described in Tokuda, T., Goodrich, B., Van Mechelen, I., Gelman, A.,
+& Tuerlinckx, F. (2012)
+<https://stat.columbia.edu/~gelman/research/unpublished/Visualization.pdf>.")
+    (license license:gpl3+)))
+
 (define-public r-viscomplexr
   (package
     (name "r-viscomplexr")
@@ -5635,6 +5658,32 @@ please see Qin,Y.and Wang,L. (2021) \"Visualization of Model Selection
 Uncertainty\" <https://homepages.uc.edu/~qinyn/VDSM/VDSM.html>.")
     (license license:gpl2+)))
 
+(define-public r-vdpo
+  (package
+    (name "r-vdpo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VDPO" version))
+       (sha256
+        (base32 "0x3sv4f4v2wnnhs02dq3fw9lrqif4qkq9bl16rs804vlmw8npb47"))))
+    (properties `((upstream-name . "VDPO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sop r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://pavel-hernadez-amaro.github.io/VDPO/")
+    (synopsis "Working with and Analyzing Functional Data of Varying Lengths")
+    (description
+     "Comprehensive set of tools for analyzing and manipulating functional data with
+non-uniform lengths.  This package addresses two common scenarios in functional
+data analysis: Variable Domain Data, where the observation domain differs across
+samples, and Partially Observed Data, where observations are incomplete over the
+domain of interest.  VDPO enhances the flexibility and applicability of
+functional data analysis in R'.  See Amaro et al. (2024)
+<doi:10.48550/@code{arXiv.2401.05839>}.")
+    (license license:expat)))
+
 (define-public r-vdjgermlines
   (package
     (name "r-vdjgermlines")
@@ -5693,30 +5742,6 @@ allows visualization of the diversity motifs (index and its variants â majo
 minor and unique) for elucidation of the underlying inherent dynamics.  Please
 refer <https://vdiver-manual.readthedocs.io/en/latest/> for more information.")
     (license license:expat)))
-
-(define-public r-vdgraph
-  (package
-    (name "r-vdgraph")
-    (version "2.2-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Vdgraph" version))
-       (sha256
-        (base32 "0kqcwlw8dsxb1jlp412m9a372kz26sampv56saxalf8rcyd3s2jp"))))
-    (properties `((upstream-name . "Vdgraph")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=Vdgraph")
-    (synopsis
-     "Variance Dispersion Graphs and Fraction of Design Space Plots for Response Surface Designs")
-    (description
-     "Uses a modification of the published FORTRAN code in \"A Computer Program for
-Generating Variance Dispersion Graphs\" by G. Vining, Journal of Quality
-Technology, Vol.  25 No.  1 January 1993, to produce variance dispersion graphs.
- Also produces fraction of design space plots, and contains data frames for
-several minimal run response surface designs.")
-    (license license:gpl2)))
 
 (define-public r-vdg
   (package

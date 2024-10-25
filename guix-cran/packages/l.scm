@@ -45,13 +45,13 @@
 (define-public r-lzstring
   (package
     (name "r-lzstring")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lzstring" version))
        (sha256
-        (base32 "1wp822my088gzp8n1w97rk081qijls3p0lx749l1y68j44mhk8w9"))))
+        (base32 "1vyh0lbnz2mpz2zs3pbh9dbabh9k774hz5qv3ir84blmkmfi1hmf"))))
     (properties `((upstream-name . "lzstring")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -6126,13 +6126,13 @@ analysis discriminant analysis (RCCA-DA) (Yamamoto, H. et al. (2008)
 (define-public r-loader
   (package
     (name "r-loader")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loadeR" version))
        (sha256
-        (base32 "0hxvmhl0xyyxjiinbh55clwdzihpxyw61k1gm6wcvj8hs21y8sl0"))))
+        (base32 "06jzk5mdp5cx6aj71lb0g8zwrqv4r7m0gckn8aq5vd244nr53l5r"))))
     (properties `((upstream-name . "loadeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -7500,6 +7500,32 @@ extraction research.")
 L-Logistic distribution with parameters m and phi.  The parameter m is the
 median of the distribution.")
     (license license:gpl3)))
+
+(define-public r-llmr
+  (package
+    (name "r-llmr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LLMR" version))
+       (sha256
+        (base32 "0ydsh92lcp3vd3b81j59flqwi4y7y4d12p8978dv8ach2ip9djgp"))))
+    (properties `((upstream-name . "LLMR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-purrr r-httr2))
+    (home-page "https://cran.r-project.org/package=LLMR")
+    (synopsis "Interface for Large Language Model APIs in R")
+    (description
+     "This package provides a unified interface to interact with various Large
+Language Model (LLM) APIs such as @code{OpenAI} (see
+<https://platform.openai.com/docs/quickstart> for details), Anthropic (see
+<https://docs.anthropic.com/en/api/getting-started> for details), Groq (see
+<https://console.groq.com/docs/api-reference> for details), and Together AI (see
+<https://docs.together.ai/docs/quickstart> for details).  Allows users to
+configure API parameters, send messages, and retrieve responses seamlessly
+within R.")
+    (license license:expat)))
 
 (define-public r-llm
   (package
@@ -9784,13 +9810,13 @@ and plot.likert() functions to get started.")
 (define-public r-likelihoodr
   (package
     (name "r-likelihoodr")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "likelihoodR" version))
        (sha256
-        (base32 "0ixgqan4606bfsgvnsg2h0kvq112518gjw784w0mif2z5xxkj7x5"))))
+        (base32 "126s7qs9mn3apjdnl6vmiqlms1c075wcj44wr8a0cyjfich7ajnh"))))
     (properties `((upstream-name . "likelihoodR")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4))
@@ -11186,17 +11212,18 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
 (define-public r-lfl
   (package
     (name "r-lfl")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfl" version))
        (sha256
-        (base32 "02kd7fz12v6xl1f3lv7kkxccln4fm8dmvbn7m9prbiawrbmy16dx"))))
+        (base32 "0x7lwbpigfbfmwr5mynrkb8d0x4wvl1w0kj68dgbqg46mwh7v0mi"))))
     (properties `((upstream-name . "lfl")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-tseries
+                             r-tibble
                              r-rcpp
                              r-plyr
                              r-forecast

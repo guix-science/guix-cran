@@ -7293,13 +7293,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "15mf94sa489y9fcbrc669i9df8pfbjrx98y3ffqi5lkgsf97birr"))))
+        (base32 "1mfj91zc9ijq3629rfdyz0xxr026qxzkgwkypizkb1z9xgnfd11v"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -8757,17 +8757,18 @@ dedicated SCAN function.")
 (define-public r-nhppp
   (package
     (name "r-nhppp")
-    (version "0.1.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhppp" version))
        (sha256
-        (base32 "0822xcv2yq6f12naphh6d29q0215nwamf342fji6nffj6flfhh8d"))))
+        (base32 "1v85by6jlnvn49061jxkx9ba7rgvcp5hh4pnyp45q30lf6xba2wp"))))
     (properties `((upstream-name . "nhppp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstream r-rcpp r-lifecycle))
-    (home-page "https://github.com/bladder-ca/nhppp")
+    (native-inputs (list r-knitr))
+    (home-page "https://bladder-ca.github.io/nhppp/")
     (synopsis "Simulating Nonhomogeneous Poisson Point Processes")
     (description
      "Simulates events from one dimensional nonhomogeneous Poisson point processes

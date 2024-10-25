@@ -5386,6 +5386,45 @@ functions for time-splitting a dataset when modeling non-proportional hazards in
 Cox regressions.")
     (license license:gpl3+)))
 
+(define-public r-greenfeedr
+  (package
+    (name "r-greenfeedr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "greenfeedr" version))
+       (sha256
+        (base32 "10ff1isnkc6qi0d3gf6ijg1k8mpi196fl71b6lzp6l41faqk8rzs"))))
+    (properties `((upstream-name . "greenfeedr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rmarkdown
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://gmbog.github.io/greenfeedr/")
+    (synopsis "Process and Report 'GreenFeed' Data")
+    (description
+     "Downloading, Processing, and Reporting @code{GreenFeed} Data.  The
+@code{GreenFeed} system generates substantial amounts of daily data, which can
+be overwhelming for users.  This package facilitates data retrieval and
+reporting from the @code{GreenFeed} system using a streamlined process.  Users
+can retrieve data from the C-Lock Inc.  system via an API using the get_gfdata()
+function.  Additionally, the report_gfdata() function allows users to generate
+both daily and final reports from @code{GreenFeed} data.  The process_gfdata()
+function further processes this data for analysis.  For pellet intake processing
+and visit checks, the package also provides the pellin() and viseat() functions,
+ensuring a comprehensive toolset for managing and analyzing @code{GreenFeed}
+data.")
+    (license license:gpl3+)))
+
 (define-public r-greener
   (package
     (name "r-greener")
@@ -5837,13 +5876,13 @@ Hojsgaard and Lauritzen (2008, <doi:10.1111/j.1467-9868.2008.00666.x>).")
 (define-public r-grbase
   (package
     (name "r-grbase")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRbase" version))
        (sha256
-        (base32 "15rfl3wib8gq90fy1rr1p7cvdbiqg3qkp6vc71k02difp14hwwin"))))
+        (base32 "18hvdwr3pi5pn2bw6hd4vaqy1ybgsxqkw3y5zg9yn6rzd2zhriia"))))
     (properties `((upstream-name . "gRbase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-matrix
@@ -9076,16 +9115,16 @@ zip-up and ready to be published in Public Data Explorer'.")
 (define-public r-googlepolylines
   (package
     (name "r-googlepolylines")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googlePolylines" version))
        (sha256
-        (base32 "1qrigccfnv6g2jii2kfdhnxnvx0mjpxq78pg8g8nza33w9lrmrrq"))))
+        (base32 "0vhq0cl7zs2gazds6ciwykdhz92ayqyaqhzn4zcxfsfg42gsvxk9"))))
     (properties `((upstream-name . "googlePolylines")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=googlePolylines")
     (synopsis "Encoding Coordinates into 'Google' Polylines")
@@ -9425,13 +9464,13 @@ Multi-Channel Funnel API.")
 (define-public r-goodreader
   (package
     (name "r-goodreader")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Goodreader" version))
        (sha256
-        (base32 "14bsgjqy2is5wimrz0biaw882p2zyna1p6lv1py8p0xgcxadg4a1"))))
+        (base32 "1zcsfhp8h1qk67y421ayj7nm5lz03cm5zax9zilyy6pin2azqzpv"))))
     (properties `((upstream-name . "Goodreader")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
@@ -9450,7 +9489,7 @@ Multi-Channel Funnel API.")
                              r-dplyr
                              r-cld2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Goodreader")
+    (home-page "https://github.com/chaoliu-cl/Goodreader")
     (synopsis "Scrape and Analyze 'Goodreads' Book Data")
     (description
      "This package provides a comprehensive toolkit for scraping and analyzing book
@@ -12514,13 +12553,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.5-3")
+    (version "0.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "1kk0wf59blxjr35wcamb7wfggnskk3q02mx3z8lcjlrhmbdl6mm4"))))
+        (base32 "0wd8ga9cabz9alzs6fpvpig9d0m4qlfasi7p7xv19n20hzd2106d"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -15976,16 +16015,21 @@ a light, pastel aesthetic.  Syntax follows the viridis package.")
 (define-public r-ggtangle
   (package
     (name "r-ggtangle")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtangle" version))
        (sha256
-        (base32 "0wgz6hffpmnvrs0kkxmgc6mnmjh4w6a5ifik8bz7axc3adlwyk5z"))))
+        (base32 "0xg3r9d4qfl5y9dbvwyfvp36dvp4jwgbr258y957kx393mi57cgd"))))
     (properties `((upstream-name . "ggtangle")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yulab-utils r-rlang r-igraph r-ggplot2 r-ggfun))
+    (propagated-inputs (list r-yulab-utils
+                             r-rlang
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggfun))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggtangle")
     (synopsis "Draw Network with Data")
@@ -21545,6 +21589,28 @@ Gene-based segregation method for identifying rare variants for family-based
 sequencing studies.  Genet Epidemiol 41(4):309-319.  More details can be found
 at <http://scholar.harvard.edu/dqiao/gese>.")
     (license license:gpl2)))
+
+(define-public r-gesca
+  (package
+    (name "r-gesca")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gesca" version))
+       (sha256
+        (base32 "0s3ncb9gvaww92jpiidsp6v7lmgqqdv4rrrxlfv0rpjddpnvaixk"))))
+    (properties `((upstream-name . "gesca")))
+    (build-system r-build-system)
+    (home-page "https://quantmm.github.io/gesca/")
+    (synopsis
+     "Generalized Structured Component Analysis Structural Equation Modeling")
+    (description
+     "Implementing generalized structured component analysis (GSCA) and its basic
+extensions, including constrained single and multiple group analysis, and second
+order latent variable modeling.  For a comprehensive overview of GSCA, see Hwang
+& Takane (2014, ISBN: 9780367738754).")
+    (license license:gpl2+)))
 
 (define-public r-gernika
   (package

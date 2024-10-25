@@ -4711,6 +4711,43 @@ They can be used in combination with functionalities provided by the
      "This package provides functions for setting up and analyzing event history data.")
     (license license:gpl2)))
 
+(define-public r-evenbreak
+  (package
+    (name "r-evenbreak")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evenBreak" version))
+       (sha256
+        (base32 "0mpn8pcfyziv9wxh9q0dg1hv0m8wbzihvdq8a4vqr3jq488jpa9j"))))
+    (properties `((upstream-name . "evenBreak")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-combinat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=evenBreak")
+    (synopsis "Posteriori Probs of Suits Breaking Evenly Across Four Hands")
+    (description
+     "We quantitatively evaluated the assertion that says if one suit is found to be
+evenly distributed among the 4 players, the rest of the suits are more likely to
+be evenly distributed.  Our mathematical analyses show that, if one suit is
+found to be evenly distributed, then a second suit has a slightly elevated
+probability (ranging between 10% to 15%) of being evenly distributed.  If two
+suits are found to be evenly distributed, then a third suit has a substantially
+elevated probability (ranging between 30% to 50%) of being evenly
+distributed.This package refers to methods and authentic data from Ely
+Culbertson <https://www.bridgebum.com/law_of_symmetry.php>, Gregory Stoll
+<https://gregstoll.com/~gregstoll/bridge/math.html>, and details of performing
+the probability calculations from Jeremy L. Martin
+<https://jlmartin.ku.edu/~jlmartin/bridge/basics.pdf>, Emile Borel and Andre
+Cheron (1954) \"The Mathematical Theory of Bridge\",Antonio Vivaldi and Gianni
+Barracho (2001, ISBN:0 7134 8663 5) \"Probabilities and Alternatives in Bridge\",
+Ken Monzingo (2005) \"Hand and Suit Patterns\"
+<http://web2.acbl.org/documentlibrary/teachers/celebritylessons/handpatternsrevised.pdf>Ken
+Monzingo (2005) \"Hand and Suit Patterns\"
+<http://web2.acbl.org/documentlibrary/teachers/celebritylessons/handpatternsrevised.pdf>.")
+    (license license:gpl2+)))
+
 (define-public r-evdbayes
   (package
     (name "r-evdbayes")
@@ -14214,31 +14251,6 @@ Naimi, B., Hamm, N. A., Groen, T. A., Skidmore, A. K., Toxopeus, A. G., &
 Alibakhshi, S. (2019) <doi:10.1016/j.spasta.2018.10.001>.")
     (license license:gpl3+)))
 
-(define-public r-elrm
-  (package
-    (name "r-elrm")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "elrm" version))
-       (sha256
-        (base32 "1kqwr0nfmnb729h01p14a24kd9scsw7j7qj133kpg0ppcfsnygld"))))
-    (properties `((upstream-name . "elrm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-coda))
-    (home-page "https://cran.r-project.org/package=elrm")
-    (synopsis "Exact Logistic Regression via MCMC")
-    (description
-     "This package implements a Markov Chain Monte Carlo algorithm to approximate
-exact conditional inference for logistic regression models.  Exact conditional
-inference is based on the distribution of the sufficient statistics for the
-parameters of interest given the sufficient statistics for the remaining
-nuisance parameters.  Using model formula notation, users specify a logistic
-model and model terms of interest for exact inference.  See Zamar et al. (2007)
-<doi:10.18637/jss.v021.i03> for more details.")
-    (license license:gpl2+)))
-
 (define-public r-elosteepness
   (package
     (name "r-elosteepness")
@@ -18601,26 +18613,28 @@ Collection and Processing\" course.")
 (define-public r-edcimport
   (package
     (name "r-edcimport")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDCimport" version))
        (sha256
-        (base32 "1s1i7dxbr64487nwrwz65vvyb21fz1gbqa51jdqz8spbim328jvp"))))
+        (base32 "0hwp2q8xi4d7yilxqmcgz2sv96lvbk3ppnyv3rwx0lfyq6qhc0rd"))))
     (properties `((upstream-name . "EDCimport")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-scales
                              r-rlang
                              r-readr
                              r-purrr
-                             r-labelled
+                             r-lifecycle
                              r-haven
                              r-glue
                              r-ggplot2
+                             r-fs
                              r-forcats
                              r-dplyr
                              r-cli))
@@ -20623,6 +20637,27 @@ Statistics at
 diagnostic capabilities.  Gilles R. Ducharme, Pierre Lafaye de Micheaux (2020)
 <doi:10.1016/j.jmva.2020.104602>.")
     (license license:gpl2+)))
+
+(define-public r-ecg
+  (package
+    (name "r-ecg")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ECG" version))
+       (sha256
+        (base32 "0p08zd1jqy5gqd7hb2qc60k5qk62zwsdb7l3vcbq17bhb34sdcd9"))))
+    (properties `((upstream-name . "ECG")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=ECG")
+    (synopsis "Center of Gravity Methods")
+    (description
+     "Implementation of the Centre of Gravity method and the Extrapolated Centre of
+Gravity method.  It supports replicated observations.  Cameron, D.G., et al
+(1982) <doi:10.1366/0003702824638610> JCGM (2008) <doi:10.59161/JCGM100-2008E>.")
+    (license license:gpl3+)))
 
 (define-public r-ecfun
   (package

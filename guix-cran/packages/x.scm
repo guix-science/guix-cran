@@ -1902,6 +1902,31 @@ shrinkage estimation of covariance matrices by Ledoit and Wolf (2004,2015,2016).
 <doi:10.1016/j.jmva.2015.04.006>).")
     (license license:gpl2+)))
 
+(define-public r-xcertainty
+  (package
+    (name "r-xcertainty")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Xcertainty" version))
+       (sha256
+        (base32 "0lj0s13zycff754127545wh8j5r17bpwrr6rsm9n8p8r3qrvgzff"))))
+    (properties `((upstream-name . "Xcertainty")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-nimble r-dplyr r-coda))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/MMI-CODEX/Xcertainty")
+    (synopsis
+     "Estimating Lengths and Uncertainty from Photogrammetric Imagery")
+    (description
+     "Implementation of Bayesian models for estimating object lengths and
+morphological relationships between object lengths using photographic data
+collected from drones.  The Bayesian model is described in \"Bayesian approach
+for predicting photogrammetric uncertainty in morphometric measurements derived
+from drones\" (Bierlich et al., 2021, <doi:10.3354/meps13814>).")
+    (license license:expat)))
+
 (define-public r-xbrl
   (package
     (name "r-xbrl")

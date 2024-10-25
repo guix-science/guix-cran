@@ -903,6 +903,36 @@ multi-objective decision analysis to measure purchasing characteristics and uses
 this information to place products and services within the Kraljic Matrix.")
     (license license:expat)))
 
+(define-public r-krakenr
+  (package
+    (name "r-krakenr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KrakenR" version))
+       (sha256
+        (base32 "1h384z16iknccpfvaz6ybzfbr8nkfcmcxrwhi2fxgxgnbp19lpf9"))))
+    (properties `((upstream-name . "KrakenR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr
+                             r-anytime))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nathanael-g-durst/KrakenR")
+    (synopsis
+     "Comprehensive R Interface for Accessing Kraken Cryptocurrency Exchange REST API")
+    (description
+     "This package provides a comprehensive R interface to access data from the Kraken
+cryptocurrency exchange REST API <https://docs.kraken.com/api/>.  It allows
+users to retrieve various market data, such as asset information, trading pairs,
+and price data.  The package is designed to facilitate efficient data access for
+analysis, strategy development, and monitoring of cryptocurrency market trends.")
+    (license license:gpl3+)))
+
 (define-public r-kpodclustr
   (package
     (name "r-kpodclustr")
@@ -2130,17 +2160,17 @@ datasets.")
 (define-public r-kml3d
   (package
     (name "r-kml3d")
-    (version "2.4.6.1")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kml3d" version))
        (sha256
-        (base32 "1nah82m97kg6s6yh1aqdgypda6dj0cx6r2b2rdcz0mwkh55dqh74"))))
+        (base32 "1y265nkz2fpwrvvljnl75qgrm0nl1kck7912cgm6y2vw2b46s4l4"))))
     (properties `((upstream-name . "kml3d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-misc3d r-longitudinaldata r-kml r-clv))
-    (home-page "https://www.r-project.org")
+    (home-page "https://cran.r-project.org/package=kml3d")
     (synopsis "K-Means for Joint Longitudinal Data")
     (description
      "An implementation of k-means specifically design to cluster joint trajectories
@@ -2155,17 +2185,17 @@ exported through @code{LaTeX} in a 3D dynamic rotating PDF graph.")
 (define-public r-kml
   (package
     (name "r-kml")
-    (version "2.4.6.1")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kml" version))
        (sha256
-        (base32 "01wy3w4bczn5fa22rq5ibys44nif7260flshwsjghpk4hh6qz759"))))
+        (base32 "1qaiffqcfgqaygvxvp980q8kcag4bddckmbsllj7dyy72l87566g"))))
     (properties `((upstream-name . "kml")))
     (build-system r-build-system)
     (propagated-inputs (list r-longitudinaldata r-clv))
-    (home-page "https://www.r-project.org")
+    (home-page "https://cran.r-project.org/package=kml")
     (synopsis "K-Means for Longitudinal Data")
     (description
      "An implementation of k-means specifically design to cluster longitudinal data.

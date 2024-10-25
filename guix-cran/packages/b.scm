@@ -1673,13 +1673,13 @@ and Pumi et al. (2022) <@code{arXiv:2211.02097>}.")
 (define-public r-btspas
   (package
     (name "r-btspas")
-    (version "2024.5.9")
+    (version "2024.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTSPAS" version))
        (sha256
-        (base32 "0gc0ik2257zk6bjhwc78z53jg9a34s32wbwdqk25a6m5wvjp2qlj"))))
+        (base32 "105hpyja93rjpfhxdr80fyx7nrsli0l113fr7nfwqbmsdyr96cgl"))))
     (properties `((upstream-name . "BTSPAS")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -1972,13 +1972,13 @@ workflows, and code structure with the R package bsvars by WoÅºniak (2024)
 (define-public r-bsvars
   (package
     (name "r-bsvars")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsvars" version))
        (sha256
-        (base32 "138810300y0lfmzbch5syp3sd2cfcvqvgnnvvy4xlbys9p6aif5a"))))
+        (base32 "06ap666qjqj14x5378442j3k3llq58v4dfyy3kl9v0f6ja9z0d54"))))
     (properties `((upstream-name . "bsvars")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol
@@ -1988,7 +1988,8 @@ workflows, and code structure with the R package bsvars by WoÅºniak (2024)
                              r-rcpp
                              r-r6
                              r-gigrvg))
-    (home-page "https://bsvars.github.io/bsvars/")
+    (native-inputs (list r-knitr))
+    (home-page "https://bsvars.org/bsvars/")
     (synopsis "Bayesian Estimation of Structural Vector Autoregressive Models")
     (description
      "This package provides fast and efficient procedures for Bayesian analysis of
@@ -2003,11 +2004,16 @@ impulse responses, forecast error variance and historical decompositions,
 forecasting, verification of heteroskedasticity, non-normality, and hypotheses
 on autoregressive parameters, as well as analyses of structural shocks,
 volatilities, and fitted values.  Beautiful plots, informative summary
-functions, and extensive documentation complement all this.  The implemented
+functions, and extensive documentation including the vignette by WoÅºniak (2024)
+<doi:10.48550/@code{arXiv.2410.15090>} complement all this.  The implemented
 techniques align closely with those presented in LÃ¼tkepohl, Shang, Uzeda, &
 WoÅºniak (2024) <doi:10.48550/@code{arXiv.2404.11057>}, LÃ¼tkepohl & WoÅºniak
 (2020) <doi:10.1016/j.jedc.2020.103862>, and Song & WoÅºniak (2021)
-<doi:10.1093/acrefore/9780190625979.013.174>.")
+<doi:10.1093/acrefore/9780190625979.013.174>.  The bsvars package is aligned
+regarding objects, workflows, and code structure with the R package
+@code{bsvarSIGNs} by Wang & WoÅºniak (2024)
+<doi:10.32614/CRAN.package.@code{bsvarSIGNs>}, and they constitute an integrated
+toolset.")
     (license license:gpl3+)))
 
 (define-public r-bsub
@@ -6092,41 +6098,6 @@ function of a standardized sum of random variables and its first-order Edgeworth
 expansion, following the article Derumigny, Girard, Guyonvarch (2021)
 <@code{arXiv:2101.05780>}.")
     (license license:gpl3)))
-
-(define-public r-boundarystats
-  (package
-    (name "r-boundarystats")
-    (version "2.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BoundaryStats" version))
-       (sha256
-        (base32 "18a0xjs2qg8lfxh5riqdh8c6pwpg72r2m1bl1p4qgcclrkcvdsx7"))))
-    (properties `((upstream-name . "BoundaryStats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-terra
-                             r-sf
-                             r-scales
-                             r-pdqr
-                             r-magrittr
-                             r-igraph
-                             r-ggplot2
-                             r-fields
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BoundaryStats")
-    (synopsis "Boundary Overlap Statistics")
-    (description
-     "Analysis workflow for finding geographic boundaries of ecological or landscape
-traits and comparing the placement of geographic boundaries of two traits.  If
-data are trait values, trait data are transformed to boundary intensities based
-on approximate first derivatives across latitude and longitude.  The package
-includes functions to create custom null models based on the input data.  The
-boundary statistics are described in: Fortin, Drapeau, and Jacquez (1996)
-<doi:10.2307/3545584>.")
-    (license license:gpl3+)))
 
 (define-public r-botor
   (package
@@ -14861,6 +14832,27 @@ using a parallelized implementation of the t-Stochastic Neighboring Embedding
 algorithm (Garriga J. and Bartumeus F. (2018), <@code{arXiv:1812.09869>}).")
     (license license:gpl3)))
 
+(define-public r-biglmm
+  (package
+    (name "r-biglmm")
+    (version "0.9-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biglmm" version))
+       (sha256
+        (base32 "1fbrp6gmk0cxd7021pwarq20sjv1jrv6ri67hz0wjragh7zak272"))))
+    (properties `((upstream-name . "biglmm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dbi))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=biglmm")
+    (synopsis "Bounded Memory Linear and Generalized Linear Models")
+    (description
+     "Regression for data too large to fit in memory.  This package functions exactly
+like the biglm package, but works with later versions of R.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-bigleaf
   (package
     (name "r-bigleaf")
@@ -14983,13 +14975,13 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
 (define-public r-bigergm
   (package
     (name "r-bigergm")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigergm" version))
        (sha256
-        (base32 "1gcb4hz399fdcrvjhmimsvzlf2rp6k79mq2jgq5hahgbc76xdg71"))))
+        (base32 "1cwp7vqcspfg8xgjfrk8517xwnfpn1hphz16bfprjmwrr3xg5b2x"))))
     (properties `((upstream-name . "bigergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16861,13 +16853,13 @@ summaries of hypothesis tests that can be easily aggregated across studies.")
 (define-public r-bfast
   (package
     (name "r-bfast")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfast" version))
        (sha256
-        (base32 "1vjklk7d9b0q7j348aqvspm7rn80bh06hz66r2z1qs9436ppkx5a"))))
+        (base32 "1i6rhzxj6c8hfg9pfzcnwc98lm3jj4fx8ybldjg0gxl1p1h9yy9n"))))
     (properties `((upstream-name . "bfast")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-strucchangercpp r-rdpack r-rcpp
@@ -18186,13 +18178,13 @@ Rozenholc/Mildenberger/Gather (2010) <doi:10.1016/j.csda.2010.04.021>.")
 (define-public r-bellreg
   (package
     (name "r-bellreg")
-    (version "0.0.2.1")
+    (version "0.0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bellreg" version))
        (sha256
-        (base32 "0576yipaj3a7j159nvp5hmlarvrkxm8pa990iasymg5s4vjfi3n7"))))
+        (base32 "1p162lw3hcwza59a7b99sy6yn9injvclm674ligxfxwa63x8f8qi"))))
     (properties `((upstream-name . "bellreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -18509,13 +18501,13 @@ want to know when it is ready.")
 (define-public r-beeguts
   (package
     (name "r-beeguts")
-    (version "1.1.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeGUTS" version))
        (sha256
-        (base32 "1880bsgwal06i7q3la1f8alrhj43mnsim6n8inrnaqcbqgi69v3n"))))
+        (base32 "0sdd5k10hq6winh2jhlh87ramryfkrp608nhrhm6pc871g2fmg2r"))))
     (properties `((upstream-name . "BeeGUTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18529,7 +18521,9 @@ want to know when it is ready.")
                              r-magrittr
                              r-gridextra
                              r-ggplot2
+                             r-foreach
                              r-dplyr
+                             r-doparallel
                              r-data-table
                              r-cowplot
                              r-bh))
@@ -18541,8 +18535,10 @@ want to know when it is ready.")
      "This package provides tools to calibrate, validate, and make predictions with
 the General Unified Threshold model of Survival adapted for Bee species.  The
 model is presented in the publication from Baas, J., Goussen, B., Miles, M.,
-Preuss, T.G., Roessing, I. (2022) <doi:10.1002/etc.5423> and is based on the
-GUTS framework Jager, T., Albert, C., Preuss, T.G. and Ashauer, R. (2011)
+Preuss, T.G., Roessing, I. (2022) <doi:10.1002/etc.5423> and Baas, J., Goussen,
+B., Taenzler, V., Roeben, V., Miles, M., Preuss, T.G., van den Berg, S.,
+Roessink, I. (2024) <doi:10.1002/etc.5871>, and is based on the GUTS framework
+Jager, T., Albert, C., Preuss, T.G. and Ashauer, R. (2011)
 <doi:10.1021/es103092a>.  The authors are grateful to Bayer A.G. for its
 financial support.")
     (license license:gpl3)))
