@@ -1905,13 +1905,13 @@ shrinkage estimation of covariance matrices by Ledoit and Wolf (2004,2015,2016).
 (define-public r-xcertainty
   (package
     (name "r-xcertainty")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Xcertainty" version))
        (sha256
-        (base32 "0lj0s13zycff754127545wh8j5r17bpwrr6rsm9n8p8r3qrvgzff"))))
+        (base32 "1qflwsigxxy0gljqa6vjr1i4gqznf7pa9j4jp6irrazx39ixp043"))))
     (properties `((upstream-name . "Xcertainty")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-nimble r-dplyr r-coda))

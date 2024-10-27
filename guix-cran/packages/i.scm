@@ -11708,6 +11708,49 @@ functions.  Preprint is available at @code{bioRxiv} (Weber et al., 2019
 <doi:10.1101/759795>).")
     (license license:gpl3)))
 
+(define-public r-immunaut
+  (package
+    (name "r-immunaut")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "immunaut" version))
+       (sha256
+        (base32 "0vnc32v7igazyn63jm2lrp27arrg6dgyv73pvw482rnfc2cyxy7s"))))
+    (properties `((upstream-name . "immunaut")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtsne
+                             r-rlang
+                             r-rcolorbrewer
+                             r-r-utils
+                             r-prroc
+                             r-proc
+                             r-plyr
+                             r-mclust
+                             r-igraph
+                             r-ggplot2
+                             r-fpc
+                             r-fnn
+                             r-dplyr
+                             r-doparallel
+                             r-dbscan
+                             r-clustersim
+                             r-cluster
+                             r-caret))
+    (home-page "https://github.com/atomiclaboratory/immunaut")
+    (synopsis "Machine Learning Immunogenicity and Vaccine Response Analysis")
+    (description
+     "Used for analyzing immune responses and predicting vaccine efficacy using
+machine learning and advanced data processing techniques.  Immunaut integrates
+both unsupervised and supervised learning methods, managing outliers and
+capturing immune response variability.  It performs multiple rounds of
+predictive model testing to identify robust immunogenicity signatures that can
+predict vaccine responsiveness.  The platform is designed to handle
+high-dimensional immune data, enabling researchers to uncover immune predictors
+and refine personalized vaccination strategies across diverse populations.")
+    (license license:gpl3)))
+
 (define-public r-immunarch
   (package
     (name "r-immunarch")
@@ -16259,6 +16302,26 @@ collaboration in marine science.")
     (description
      "R interface to access the web services of the ICES Stock Assessment Graphs
 database <https://sg.ices.dk>.")
+    (license license:gpl2+)))
+
+(define-public r-icesdatsuqc
+  (package
+    (name "r-icesdatsuqc")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icesDatsuQC" version))
+       (sha256
+        (base32 "1nlz8lsy0hk7zq6hjl5dp1f06ii4pnfn701zd3vcpbfrid6ayff7"))))
+    (properties `((upstream-name . "icesDatsuQC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sqldf r-icesvocab r-icesdatsu r-glue))
+    (home-page "https://datsu.ices.dk")
+    (synopsis "Run Quality Checks on Data Prior to Submission to ICES")
+    (description
+     "Run quality checks on data sets using the same checks that are conducted on the
+ICES Data Submission Utility (DATSU) <https://datsu.ices.dk>.")
     (license license:gpl2+)))
 
 (define-public r-icesdatsu

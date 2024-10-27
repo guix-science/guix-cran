@@ -6165,13 +6165,13 @@ mode, normality test, histogram and correlation.")
 (define-public r-loa
   (package
     (name "r-loa")
-    (version "0.2.48.3")
+    (version "0.2.49.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loa" version))
        (sha256
-        (base32 "1fa1yxpsydx2kjbnj00vn9zv4dw9awng4lxrcllcgzkir9bikgq0"))))
+        (base32 "0j7m460nhgl0b8g7q7ysd6pzmc4zvqnv593wkwhsd9q2bf9b21fk"))))
     (properties `((upstream-name . "loa")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -12892,6 +12892,34 @@ layers, creation of new layers through drawing of shapes (points, lines,
 polygons), deletion of shapes as well as cutting holes into existing shapes.
 Provides control over options to e.g. prevent self-intersection of polygons and
 lines or to enable/disable snapping to align shapes.")
+    (license license:expat)))
+
+(define-public r-leafletzh
+  (package
+    (name "r-leafletzh")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "leafletZH" version))
+       (sha256
+        (base32 "18rivs27irld9pvrk8nkqcz65lff865my6rxamykysijmqwp441m"))))
+    (properties `((upstream-name . "leafletZH")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-sf
+                             r-leaflet-extras
+                             r-leaflet
+                             r-htmlwidgets
+                             r-htmltools
+                             r-geojsonsf))
+    (home-page "https://cran.r-project.org/package=leafletZH")
+    (synopsis "Adds a Chinese Choropleth Leaflet Map")
+    (description
+     "This package provides sf data for Chinese provinces and cities, methods for
+plotting shape maps of Chinese provinces and cities, and a layer for leaflet
+with Gaode tiles.  It is designed to facilitate geographical data visualization
+in China.")
     (license license:expat)))
 
 (define-public r-leaflet-minicharts

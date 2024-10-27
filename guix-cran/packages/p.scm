@@ -3204,6 +3204,28 @@ dimension reduction update procedure using the principal least squares support
 vector machine (Artemiou et al. (2021) <doi:10.1016/j.patcog.2020.107768>).")
     (license license:gpl2)))
 
+(define-public r-psvd
+  (package
+    (name "r-psvd")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psvd" version))
+       (sha256
+        (base32 "1j6qlmzpqdjh2vzmn8xyry739rpnfpb57y3gpgv1lg93wcinchhq"))))
+    (properties `((upstream-name . "psvd")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=psvd")
+    (synopsis "Eigendecomposition, Singular-Values and the Power Method")
+    (description
+     "For a data matrix with m rows and n columns (m>=n), the power method is used to
+compute, simultaneously, the eigendecomposition of a square symmetric matrix.
+This result is used to obtain the singular value decomposition (SVD) and the
+principal component analysis (PCA) results.  Compared to the classical SVD
+method, the first r singular values can be computed.")
+    (license license:gpl2+)))
+
 (define-public r-pstrata
   (package
     (name "r-pstrata")
@@ -12528,13 +12550,13 @@ test-taker is needed.")
 (define-public r-powriclpm
   (package
     (name "r-powriclpm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powRICLPM" version))
        (sha256
-        (base32 "1l6gdafy5mmfdixn7wsjz1lnaqibfjy0zdsr1cjmvik93x173l9w"))))
+        (base32 "0apnaszi8whj5sad9jmwc52jsgcav9zx8af7r7mxh2czkcwaavs0"))))
     (properties `((upstream-name . "powRICLPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -21223,13 +21245,13 @@ submitted for publication.  For additional references: Dunnett, C. W. (1955)
 (define-public r-plater
   (package
     (name "r-plater")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plater" version))
        (sha256
-        (base32 "0k2ha44ydcf180y44cgxd1haq55k96df39lahs6fji04imh75fii"))))
+        (base32 "05bchpb667a9fakj8vzb62qylh22g9nkif33y4z9nfwc798p8k3l"))))
     (properties `((upstream-name . "plater")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-dplyr))
@@ -23144,6 +23166,61 @@ symbol to enable complex function evaluation with the base R |> pipe.")
 Escalation (PIPE) design for dual-agent Phase I trials as described in Mander
 AP, Sweeting MJ (2015) <DOI:10.1002/sim.6434>.")
     (license license:gpl2+)))
+
+(define-public r-pioneer
+  (package
+    (name "r-pioneer")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pioneeR" version))
+       (sha256
+        (base32 "1bfmr69bpm4xdffrx7qqlggqalpwfvcmbhx82jdq7h3p40lvh7pr"))))
+    (properties `((upstream-name . "pioneeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-writexl
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-readxl
+                             r-reactable
+                             r-markdown
+                             r-lpsolveapi
+                             r-htmltools
+                             r-haven
+                             r-ggplot2
+                             r-cli
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list esbuild))
+    (home-page "https://riksrevisjonen.github.io/pioneeR/")
+    (synopsis "Productivity and Efficiency Analysis using DEA")
+    (description
+     "Measure productivity and efficiency using Data Envelopment Analysis (DEA).
+Available methods include DEA under different technology assumptions,
+bootstrapping of efficiency scores and calculation of the Malmquist productivity
+index.  Analyses can be performed either in the console or with the provided
+shiny app.  See Banker, R.; Charnes, A.; Cooper, W.W. (1984)
+<doi:10.1287/mnsc.30.9.1078>, FÃ¤re, R.; Grosskopf, S. (1996)
+<doi:10.1007/978-94-009-1816-0>.")
+    (license license:gpl3)))
 
 (define-public r-pinyin
   (package
@@ -26715,13 +26792,13 @@ used to interface Python from R.")
 (define-public r-pharmaversesdtm
   (package
     (name "r-pharmaversesdtm")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaversesdtm" version))
        (sha256
-        (base32 "0nd6v6lg8a05z83f1h2wqan5vq7p26hvkrjh36f6521aakw4if74"))))
+        (base32 "19bf2nrwh04bnjczzgq1vqqnbmj1b0qfmbym37xcz88xdyky7w6n"))))
     (properties `((upstream-name . "pharmaversesdtm")))
     (build-system r-build-system)
     (home-page "https://pharmaverse.github.io/pharmaversesdtm/")
@@ -26730,21 +26807,21 @@ used to interface Python from R.")
      "This package provides a set of Study Data Tabulation Model (SDTM) datasets from
 the Clinical Data Interchange Standards Consortium (CDISC) pilot project used
 for testing and developing Analysis Data Model (A@code{DaM}) datasets inside the
-pharmaverse family of packages.  SDTM dataset specifications are described in:
-CDISC Submission Data Standards Team (2021)
-<https://www.cdisc.org/system/files/members/standard/foundational/SDTMIG%20v3.4-FINAL_2022-07-21.pdf>.")
+pharmaverse family of packages.  SDTM dataset specifications are described in
+the CDISC SDTM implementation guide, accessible by creating a free account on
+<https://www.cdisc.org/>.")
     (license license:asl2.0)))
 
 (define-public r-pharmaverseadam
   (package
     (name "r-pharmaverseadam")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseadam" version))
        (sha256
-        (base32 "1nwm0mbaaca5ry449h1llvv44wcy2lgd4bs3wfacb9ag2pfgglc8"))))
+        (base32 "1h5d5ky5pb83rrss16mg8l9s8mk6l1alw3jga5mx5xmg5ii8w6jf"))))
     (properties `((upstream-name . "pharmaverseadam")))
     (build-system r-build-system)
     (home-page "https://pharmaverse.github.io/pharmaverseadam/")
@@ -26753,9 +26830,9 @@ CDISC Submission Data Standards Team (2021)
      "This package provides a set of Analysis Data Model (A@code{DaM}) datasets
 constructed using the Study Data Tabulation Model (SDTM) datasets contained in
 the pharmaversesdtm package and the template scripts from the admiral family of
-packages.  A@code{DaM} dataset specifications are described in: CDISC Analysis
-Data Model Team (2021)
-<https://www.cdisc.org/system/files/members/standard/foundational/A@code{DaMIG_v1.3.pdf>}.")
+packages.  A@code{DaM} dataset specifications are described in the CDISC
+A@code{DaM} implementation guide, accessible by creating a free account on
+<https://www.cdisc.org/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-pharmaverse
@@ -33974,13 +34051,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0h3vcn17aa0gy0iff70grw4kd6mrmjzyq7d0iypzkxjzkrvjs16c"))))
+        (base32 "0ykvnr99mjl3c1vy8w1i2adnpad0b63ivr27ap3n17ffbrhmy6h4"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults

@@ -3543,6 +3543,29 @@ chosen aesthetics into each tab, and the package leverages modules to generate
 all map tabs.")
     (license license:gpl3+)))
 
+(define-public r-atlasapprox
+  (package
+    (name "r-atlasapprox")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "atlasapprox" version))
+       (sha256
+        (base32 "060zqnx4b8zswg8nk5h6w1n9bry2pmcwpvgfimrs5dqqxazxkvfc"))))
+    (properties `((upstream-name . "atlasapprox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://atlasapprox.readthedocs.io/en/latest/R/index.html")
+    (synopsis "Cell Atlas Approximations")
+    (description
+     "This package provides an interface in R to cell atlas approximations.  See the
+vignette under \"Getting started\" for instructions.  You can also explore the
+reference documentation for specific functions.  Additional interfaces and
+resources are available at <https://atlasapprox.readthedocs.io>.")
+    (license license:expat)))
+
 (define-public r-atlas
   (package
     (name "r-atlas")
@@ -12801,13 +12824,13 @@ into more contemporary data.")
 (define-public r-ami
   (package
     (name "r-ami")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ami" version))
        (sha256
-        (base32 "0gcbwhbk3lzxcp35841pdipbifhk445x2r0ch6999n1y0h7rsca7"))))
+        (base32 "1v00nw5rn89rdk00rfwk24b6qha9xs83wbqssjaay3lazl3nqpsz"))))
     (properties `((upstream-name . "ami")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-rlang r-lifecycle r-glue r-curl))
@@ -22718,6 +22741,31 @@ LASSO Estimator for Dynamic Linear Panel Models\". @code{arXiv} preprint
 aims to investigate and promote the use of statistics and probability in the
 study of Law and its institutions.  This package has a set of datasets commonly
 used in our book.")
+    (license license:expat)))
+
+(define-public r-abima
+  (package
+    (name "r-abima")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "abima" version))
+       (sha256
+        (base32 "03bpp5fkg748h4skwqlrjl3rj0j68x9m3mjjjx5xfv0j0hzs0360"))))
+    (properties `((upstream-name . "abima")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-boot))
+    (home-page "https://websites.umich.edu/~songlab/software.html#ABIMA")
+    (synopsis
+     "Adaptive Bootstrap Inference for Mediation Analysis with Enhanced Statistical Power")
+    (description
+     "Assess whether and how a specific continuous or categorical exposure affects the
+outcome of interest through one- or multi-dimensional mediators using an
+adaptive bootstrap (AB) approach.  The AB method allows to make inference for
+composite null hypotheses of no mediation effect, providing valid type I error
+control and thus optimizes statistical power.  For more technical details, refer
+to He, Song and Xu (2024) <doi:10.1093/jrsssb/qkad129>.")
     (license license:expat)))
 
 (define-public r-abglasso

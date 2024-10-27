@@ -4096,13 +4096,13 @@ platform for device management, data collection, processing and visualization.")
 (define-public r-rtgstat
   (package
     (name "r-rtgstat")
-    (version "0.3.2")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtgstat" version))
        (sha256
-        (base32 "1alvs2gd0kp11vlnk6ql2hk6fm1mn5wdkm6p9c8amb1n6i3c097x"))))
+        (base32 "1mvl19a66z5bmm3vwk89vdwdznm96kazmxr2rndwngz94dsyc79y"))))
     (properties `((upstream-name . "rtgstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5027,16 +5027,16 @@ Available at: <http://epitools.ausvet.com.au>.")
 (define-public r-rsurv
   (package
     (name "r-rsurv")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsurv" version))
        (sha256
-        (base32 "1xin45sc6zlap0w2ydq0ji4w3kz4ksvhark7vgim6vb1d1zv3py0"))))
+        (base32 "005fyfgmaf4rhx12fxv5rinc8v076qfj7f2i38d45rzs2lag4hgc"))))
     (properties `((upstream-name . "rsurv")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stabledist r-rdpack r-dplyr))
+    (propagated-inputs (list r-stabledist r-rdpack r-mass r-dplyr r-bellreg))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fndemarqui/rsurv")
     (synopsis "Random Generation of Survival Data")
@@ -10969,6 +10969,30 @@ used for dynamic flux balance analysis (@code{dFBA}) to deal with metabolic
 networks.  See also Charles et al. (2022) <doi:10.1101/2022.04.29.490045>.")
     (license license:expat)))
 
+(define-public r-rpatternjoin
+  (package
+    (name "r-rpatternjoin")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RPatternJoin" version))
+       (sha256
+        (base32 "1v14bm286blwrw3g9b1cz3mnxac94jg0mskg6r9fnfl7iix52h1q"))))
+    (properties `((upstream-name . "RPatternJoin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=RPatternJoin")
+    (synopsis "String Similarity Joins for Hamming and Levenshtein Distances")
+    (description
+     "This project is a tool for words edit similarity joins (a.k.a.  all-pairs
+similarity search) under small (< 3) edit distance constraints.  It works for
+Levenshtein/Hamming distances and words from any alphabet.  The software was
+originally developed for joining amino-acid/nucleotide sequences from Adaptive
+Immune Repertoires, where the number of words is relatively large (10^5-10^6)
+and the average length of words is relatively small (10-100).")
+    (license license:expat)))
+
 (define-public r-rpartscore
   (package
     (name "r-rpartscore")
@@ -16887,32 +16911,6 @@ registration are supported, in two and three dimensions.")
 a focus on analytical laboratory data.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-rngsetseed
-  (package
-    (name "r-rngsetseed")
-    (version "0.3-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rngSetSeed" version))
-       (sha256
-        (base32 "1ymhrfv83nr2mkqncbi7k8h43xxz53r50vp215hakh093n5im71k"))))
-    (properties `((upstream-name . "rngSetSeed")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=rngSetSeed")
-    (synopsis "Seeding the Default RNG with a Numeric Vector")
-    (description
-     "This package provides a function @code{setVectorSeed}() is provided.  Its
-argument is a numeric vector of an arbitrary nonzero length, whose components
-have integer values from [0, 2^32-1].  The input vector is transformed using AES
-(Advanced Encryption Standard) algorithm into an initial state of
-Mersenne-Twister random number generator.  The function provides a better
-alternative to the R base function set.seed(), if the input vector is a single
-integer.  Initializing a stream of random numbers with a vector is a convenient
-way to obtain several streams, each of which is identified by several integer
-indices.")
-    (license license:gpl3)))
 
 (define-public r-rngforgpd
   (package
@@ -32606,6 +32604,37 @@ Continuous, binary, and survival response are supported.  Robust network-based
 methods are available for continuous and survival responses.")
     (license license:gpl2)))
 
+(define-public r-regmmd
+  (package
+    (name "r-regmmd")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regMMD" version))
+       (sha256
+        (base32 "0ph2vs8xbjwsgin13pnpjagqqcj025k7vcv134h1g3djjmk10k63"))))
+    (properties `((upstream-name . "regMMD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack))
+    (home-page "https://cran.r-project.org/package=regMMD")
+    (synopsis
+     "Robust Regression and Estimation Through Maximum Mean Discrepancy Minimization")
+    (description
+     "The functions in this package compute robust estimators by minimizing a
+kernel-based distance known as MMD (Maximum Mean Discrepancy) between the sample
+and a statistical model.  Recent works proved that these estimators enjoy a
+universal consistency property, and are extremely robust to outliers.  Various
+optimization algorithms are implemented: stochastic gradient is available for
+most models, but the package also allows gradient descent in a few models for
+which an exact formula is available for the gradient.  In terms of distribution
+fit, a large number of continuous and discrete distributions are available:
+Gaussian, exponential, uniform, gamma, Poisson, geometric, etc.  In terms of
+regression, the models available are: linear, logistic, gamma, beta and Poisson.
+ Alquier, P. and Gerber, M. (2024) <doi:10.1093/biomet/asad031>
+Cherief-Abdellatif, B.-E. and Alquier, P. (2022) <doi:10.3150/21-BEJ1338>.")
+    (license license:gpl3+)))
+
 (define-public r-regmhmm
   (package
     (name "r-regmhmm")
@@ -37094,41 +37123,6 @@ high variability of the RDS process.")
      "This package provides functionality for carrying out sample size estimation and
 power calculation in Respondent-Driven Sampling.")
     (license license:gpl3)))
-
-(define-public r-rdss
-  (package
-    (name "r-rdss")
-    (version "1.0.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rdss" version))
-       (sha256
-        (base32 "0b3k646zyfqnr4k0lhd4nmy04cp2k33kikww5hfbha3wgwq633qs"))))
-    (properties `((upstream-name . "rdss")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-readr
-                             r-randomizr
-                             r-purrr
-                             r-marginaleffects
-                             r-ggplot2
-                             r-generics
-                             r-estimatr
-                             r-dplyr
-                             r-dataverse
-                             r-broom))
-    (home-page "https://cran.r-project.org/package=rdss")
-    (synopsis
-     "Companion Datasets and Functions for Research Design in the Social Sciences")
-    (description
-     "Helper functions to accompany the Blair, Coppock, and Humphreys (2022) \"Research
-Design in the Social Sciences: Declaration, Diagnosis, and Redesign\"
-<https://book.declaredesign.org>.  rdss includes datasets, helper functions, and
-plotting components to enable use and replication of the book.")
-    (license license:expat)))
 
 (define-public r-rdsdp
   (package
@@ -49041,13 +49035,13 @@ of landscapeâ used in the domain of landscape ecology.")
 (define-public r-raceid
   (package
     (name "r-raceid")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RaceID" version))
        (sha256
-        (base32 "0jmgc2nf65ymhk88mzlmh96wwygr0gs3ca1mc0all0a5c6vxyj8b"))))
+        (base32 "0zqas0dfsvcbjzv2b83zy13pxyzfhh81xrfbzxq8a7ykk0nyrx26"))))
     (properties `((upstream-name . "RaceID")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

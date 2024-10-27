@@ -5691,13 +5691,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.5.3")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "0hqcb3adzl3m6cyvj2khqdpvj5akkwr4vsbas8v88476mp48q1wn"))))
+        (base32 "1i63lsx0q47wvc59hk28bxhz3mvqc4gnsqijli6zd10zr1znfiyz"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-lifecycle r-dplyr))
@@ -15392,13 +15392,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.8.8")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "0fksigmpps5xrxqk2v7afm1zsg87mc11bfid160f84wixfk7hqw6"))))
+        (base32 "1y1ywc53xifc7df0c0vc5db1qxbi3k6ckbk7yk2i2dyv6adnvkn2"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -23755,6 +23755,31 @@ to the @code{minMSE-method} as proposed by Schneider and Schlather (2017)
 <DOI:10419/161931>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-minired
+  (package
+    (name "r-minired")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minired" version))
+       (sha256
+        (base32 "0qznm1g2z6vylys49ngbrs3n0yp46jxzlnnccia88g32w8fx8932"))))
+    (properties `((upstream-name . "minired")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://cran.r-project.org/package=minired")
+    (synopsis "R Interface to 'Redatam' Library")
+    (description
+     "This package provides an API to work with Redatam (see
+<https://www.redatam.org>) databases in both formats: RXDB (new format) and DICX
+(old format) and running Redatam programs written in SPC language.  It's a
+wrapper around Redatam core and provides functions to open a database
+('redatam_open()'), list entities and variables from the database
+('redatam_entities()', redatam_variables()') and execute a SPC program and gets
+the results as data frames ('redatam_query()'/'redatam_run()').")
+    (license license:gpl3+)))
+
 (define-public r-minirand
   (package
     (name "r-minirand")
@@ -25952,13 +25977,13 @@ incorporated and updated over a discrete time step.")
 (define-public r-micromapst
   (package
     (name "r-micromapst")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromapST" version))
        (sha256
-        (base32 "0zg0wgqlk9z9k3qhcnd8y8swa7p3g8q30fvw3g0n71dd4vqxzdcl"))))
+        (base32 "0h3fysynvy5gkydpjsklvas7hm5sidhjkdi674sw2789qdwyn1v2"))))
     (properties `((upstream-name . "micromapST")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -31462,21 +31487,16 @@ clinical programming workflow.")
 (define-public r-metaconvert
   (package
     (name "r-metaconvert")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaConvert" version))
        (sha256
-        (base32 "0akn9y8h2f7fnxi9sbvnhqzvvnysr4q9rssj4gysnj9b9pqb7gra"))))
+        (base32 "0fcqb1dqkrk1fygrncvid14kv4v5ih2q43dbf17mc5l4n5gqn3bm"))))
     (properties `((upstream-name . "metaConvert")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rio
-                             r-numderiv
-                             r-mvtnorm
-                             r-metafor
-                             r-estimraw
-                             r-comparedf))
+    (propagated-inputs (list r-rio r-metafor r-estimraw r-comparedf))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=metaConvert")
     (synopsis

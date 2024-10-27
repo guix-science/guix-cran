@@ -2716,6 +2716,33 @@ EPA Computational Toxicology and Exposure Online Resources
 <https://www.epa.gov/comptox-tools>.")
     (license license:gpl3+)))
 
+(define-public r-ctxcc
+  (package
+    (name "r-ctxcc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CTxCC" version))
+       (sha256
+        (base32 "10rn4fckk57xjhxb666gg3lypsyl00428mgakwzbbnhrzn0rdlws"))))
+    (properties `((upstream-name . "CTxCC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrixcalc r-expm r-compquadform
+                             r-combinat))
+    (home-page "https://cran.r-project.org/package=CTxCC")
+    (synopsis
+     "Multivariate Normal Mean Monitoring Through Critical-to-X Control Chart")
+    (description
+     "This package provides a comprehensive set of functions designed for multivariate
+mean monitoring using the Critical-to-X Control Chart.  These functions enable
+the determination of optimal control limits based on a specified in-control
+Average Run Length (ARL), the calculation of out-of-control ARL for a given
+control limit, and post-signal analysis to identify the specific variable
+responsible for a detected shift in the mean.  This suite of tools provides
+robust support for precise and effective process monitoring and analysis.")
+    (license license:gpl2+)))
+
 (define-public r-ctv
   (package
     (name "r-ctv")
@@ -13649,15 +13676,16 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "177m79nc9gwnfxai0gdw7id0212rxp34rpcp0b7j79r3zncwnb6i"))))
+        (base32 "1qmgbizmrjsprimlx2d32fx2w51xy021jq62fl9r7nwxfjgr3rak"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
+    (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=Copula.surv")
     (synopsis "Analysis of Bivariate Survival Data Based on Copulas")
     (description
@@ -26399,6 +26427,39 @@ coefficient modeling, and curves in functional data analysis.  Sottile G. and
 Adelfio G. (2019) <doi:10.1007/s00180-018-0817-8>.")
     (license license:gpl2)))
 
+(define-public r-clustcurv
+  (package
+    (name "r-clustcurv")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clustcurv" version))
+       (sha256
+        (base32 "1pmh9xm37shdw74ivis6ynwd8az57nj5pk9c1m70da7ajjr6isb4"))))
+    (properties `((upstream-name . "clustcurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rcolorbrewer
+                             r-npregfast
+                             r-gmedian
+                             r-ggplot2
+                             r-ggfortify
+                             r-foreach
+                             r-dorng
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/noramvillanueva/clustcurv")
+    (synopsis "Determining Groups in Multiples Curves")
+    (description
+     "This package provides a method for determining groups in multiple curves with an
+automatic selection of their number based on k-means or k-medians algorithms.
+The selection of the optimal number is provided by bootstrap methods.  The
+methodology can be applied both in regression and survival framework.
+Implemented methods are: Grouping multiple survival curves described by
+Villanueva et al. (2018) <doi:10.1002/sim.8016>.")
+    (license license:expat)))
+
 (define-public r-clustcr2
   (package
     (name "r-clustcr2")
@@ -32457,13 +32518,13 @@ posterior', cmdstanr', and bayesplot'.")
 (define-public r-chisquare
   (package
     (name "r-chisquare")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chisquare" version))
        (sha256
-        (base32 "1vjhsi520p9m46xay9dh0la5ypyhi19gyg5i568d2ywka4g2ssac"))))
+        (base32 "1rdnyzfw3v7xkr045dvfqrm3rkgn12aq3d45z6ax93i6sr4lzp5l"))))
     (properties `((upstream-name . "chisquare")))
     (build-system r-build-system)
     (propagated-inputs (list r-gt))
@@ -32477,12 +32538,11 @@ compute permutation and Monte Carlo p-value, and provides measures of
 association for tables of any size such as Phi, Phi corrected, odds ratio with
 95 percent CI and p-value, Yule Q and Y, adjusted contingency coefficient,
 Cramer's V, V corrected, V standardised, bias-corrected V, W, Cohen's w,
-Goodman-Kruskal's lambda, gamma, tau, Cohen's k.  It also calculates
-standardised, moment-corrected standardised, and adjusted standardised
-residuals, and their significance, as well as the Quetelet Index, IJ association
-factor, and adjusted standardised counts.  It also computes the
-chi-square-maximising version of the input table.  Different outputs are
-returned in nicely formatted tables.")
+Goodman-Kruskal's lambda, and tau.  It also calculates standardised,
+moment-corrected standardised, and adjusted standardised residuals, and their
+significance, as well as the Quetelet Index, IJ association factor, and adjusted
+standardised counts.  It also computes the chi-square-maximising version of the
+input table.  Different outputs are returned in nicely formatted tables.")
     (license license:gpl2+)))
 
 (define-public r-chisq-posthoc-test
@@ -33734,22 +33794,23 @@ been applied.")
 (define-public r-checked
   (package
     (name "r-checked")
-    (version "0.2.0")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checked" version))
        (sha256
-        (base32 "0yzg8y236w72694raz0x7ic70a0fzn9c3pl2x868rfyvq3ivsv7d"))))
+        (base32 "09l82y9gmz1q5m1mjql31nvid8dsc9hhalzp7fpb1pdcwdas994i"))))
     (properties `((upstream-name . "checked")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcmdcheck
                              r-r6
+                             r-options
                              r-jsonlite
                              r-igraph
                              r-cli
                              r-callr))
-    (home-page "https://github.com/Genentech/checked")
+    (home-page "https://Genentech.github.io/checked/")
     (synopsis "Systematically Run R CMD Checks")
     (description
      "Systematically Run R checks against multiple packages.  Checks are run in

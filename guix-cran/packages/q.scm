@@ -143,15 +143,16 @@ spectral decomposition of the Hamiltonian.  E. Farhi (1997):
 (define-public r-qvirus
   (package
     (name "r-qvirus")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qvirus" version))
        (sha256
-        (base32 "07c113xh7qvg58xmxn6fvqgg25q8ficfsq2w3f4sky1v17r2phwq"))))
+        (base32 "12hw8r6liknirdmyiarhjbhvj00dp9ybc2z8qfrgz11p56gnawmh"))))
     (properties `((upstream-name . "qvirus")))
     (build-system r-build-system)
+    (propagated-inputs (list r-gridextra r-ggplot2 r-factoextra r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/juanv66x/qvirus")
     (synopsis

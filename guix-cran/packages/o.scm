@@ -66,6 +66,26 @@ the original sources but with sufficient detail to allow mapping of a local
 municipality.")
     (license license:gpl3)))
 
+(define-public r-ozbabynames
+  (package
+    (name "r-ozbabynames")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ozbabynames" version))
+       (sha256
+        (base32 "1aknsdik18jgifz9l4hd37xd67lpdl1sgg71yqzs8f8kz5xg1xmw"))))
+    (properties `((upstream-name . "ozbabynames")))
+    (build-system r-build-system)
+    (home-page "https://github.com/robjhyndman/ozbabynames")
+    (synopsis "Australian Popular Baby Names")
+    (description
+     "Data on the most popular baby names by sex and year, and for each state in
+Australia, as provided by the state and territory governments.  The quality and
+quantity of the data varies with the state.")
+    (license license:gpl3)))
+
 (define-public r-oz
   (package
     (name "r-oz")
@@ -9565,13 +9585,13 @@ a high-dimensional linear regression model via OGA+HDIC+Trim.")
 (define-public r-ohenery
   (package
     (name "r-ohenery")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ohenery" version))
        (sha256
-        (base32 "0i7cc110c30y7dm86srh2xkikkmlr28mvy0kkjxywxmiwnrsmzjq"))))
+        (base32 "14f46s2d75313d7vkshlnan40452pyxnj02cz98dkpk6mis6y751"))))
     (properties `((upstream-name . "ohenery")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-maxlik r-magrittr r-dplyr))

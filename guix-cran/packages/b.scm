@@ -6099,6 +6099,41 @@ expansion, following the article Derumigny, Girard, Guyonvarch (2021)
 <@code{arXiv:2101.05780>}.")
     (license license:gpl3)))
 
+(define-public r-boundarystats
+  (package
+    (name "r-boundarystats")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BoundaryStats" version))
+       (sha256
+        (base32 "18a0xjs2qg8lfxh5riqdh8c6pwpg72r2m1bl1p4qgcclrkcvdsx7"))))
+    (properties `((upstream-name . "BoundaryStats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-terra
+                             r-sf
+                             r-scales
+                             r-pdqr
+                             r-magrittr
+                             r-igraph
+                             r-ggplot2
+                             r-fields
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BoundaryStats")
+    (synopsis "Boundary Overlap Statistics")
+    (description
+     "Analysis workflow for finding geographic boundaries of ecological or landscape
+traits and comparing the placement of geographic boundaries of two traits.  If
+data are trait values, trait data are transformed to boundary intensities based
+on approximate first derivatives across latitude and longitude.  The package
+includes functions to create custom null models based on the input data.  The
+boundary statistics are described in: Fortin, Drapeau, and Jacquez (1996)
+<doi:10.2307/3545584>.")
+    (license license:gpl3+)))
+
 (define-public r-botor
   (package
     (name "r-botor")
@@ -22448,13 +22483,13 @@ rank normalization, which are proposed in Vehtari et al. (2021)
 (define-public r-bayesmultimode
   (package
     (name "r-bayesmultimode")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMultiMode" version))
        (sha256
-        (base32 "0ij1igdnbk3wy01mdimk9k5ajxmx2plla0ykvsmijzz5mcmqyrii"))))
+        (base32 "1dhhclzm7xqckwwsviarxhh16rqcrmrs5yfyfjpynwwdn48n4ww4"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27138,13 +27173,13 @@ be found here <https://documentation.bamboohr.com/docs>.")
 (define-public r-bambi
   (package
     (name "r-bambi")
-    (version "2.3.5")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAMBI" version))
        (sha256
-        (base32 "16pb04n30y8sl6m6qgrdxk7sck98233cravpbzw4fzl2j8h0mm3r"))))
+        (base32 "1w6jhh9f336cmwjvchc0j05pn1q716644rr654937x5ify0l8y6i"))))
     (properties `((upstream-name . "BAMBI")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

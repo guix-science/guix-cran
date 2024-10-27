@@ -13150,13 +13150,13 @@ EDGAR in an automated and scalable manner.  See
 (define-public r-finnts
   (package
     (name "r-finnts")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finnts" version))
        (sha256
-        (base32 "1cx9kl6dzkmrxb4i7vlkligx5p1q2jxinybmi1367hlpgafhv6js"))))
+        (base32 "1345zd9l58jg8bgcpvlvk6byh1jy6j1ry0n7j1ck4wlhzm5kzsb0"))))
     (properties `((upstream-name . "finnts")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -13170,6 +13170,7 @@ EDGAR in an automated and scalable manner.  See
                              r-snakecase
                              r-rules
                              r-rsample
+                             r-rlang
                              r-recipes
                              r-purrr
                              r-plyr
@@ -16593,13 +16594,13 @@ Mustapha, K. B. (2018).  Finite Element Computations in Mechanics with R. [ISBN
 (define-public r-fdx
   (package
     (name "r-fdx")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FDX" version))
        (sha256
-        (base32 "1kp95rkvx28i4i0m2781gn7qyss87n0dw8jz0ij3kyx071v1a0ca"))))
+        (base32 "05a200k1i9qial2mvpbvfqn808nahcvxpajpb01a92y3azsh8vvj"))))
     (properties `((upstream-name . "FDX")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -18242,6 +18243,28 @@ algorithms as well as the subsampling counterpart described in Lachmann et al.
 (2022) <doi:10.1016/j.ijar.2022.08.018> for flexible Bayesian model selection
 and model averaging.")
     (license license:gpl2)))
+
+(define-public r-fbglm
+  (package
+    (name "r-fbglm")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fbglm" version))
+       (sha256
+        (base32 "0nfv7jjgxx5441p8qp0vfifn761pqyqhslbssvf8vp4n3faiqysr"))))
+    (properties `((upstream-name . "fbglm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pscl r-frbinom r-bbmle r-agridat))
+    (home-page "https://cran.r-project.org/package=fbglm")
+    (synopsis "Fractional Binomial Regression Model")
+    (description
+     "Fit a fractional binomial regression model and extended zero-inflated negative
+binomial regression model to count data with excess zeros using maximum
+likelihood estimation.  Compare zero-inflated regression models via Vuong
+closeness test.")
+    (license license:expat)))
 
 (define-public r-fbfsearch
   (package

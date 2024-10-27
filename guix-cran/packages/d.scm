@@ -895,17 +895,17 @@ visualizations in video format.")
 (define-public r-dynarer
   (package
     (name "r-dynarer")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DynareR" version))
        (sha256
-        (base32 "0ph57kwinv9nqla82glg0bj1iaqrnw2y8a8invq1qy9yabldl798"))))
+        (base32 "1m3zpj9jalgw3hs93m3hyhwr25fp1cqrzbwr84z5mafd55zsn1mz"))))
     (properties `((upstream-name . "DynareR")))
     (build-system r-build-system)
     (inputs (list octave))
-    (propagated-inputs (list r-magrittr r-knitr))
+    (propagated-inputs (list r-magrittr r-magick r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=DynareR")
     (synopsis
@@ -2974,6 +2974,31 @@ works for the developed functions are: @code{funGP}() - Prakash et al. (2022)
      "This package provides functions for direct surrogate variable analysis, which
 can identify hidden factors in high-dimensional biomedical data.")
     (license license:gpl2+)))
+
+(define-public r-dstidyverse
+  (package
+    (name "r-dstidyverse")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsTidyverse" version))
+       (sha256
+        (base32 "0148pphkyyw6pflk5bhlcapzml5kw2xqw94q6gxsk2p15nm050dp"))))
+    (properties `((upstream-name . "dsTidyverse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-cli))
+    (home-page "https://cran.r-project.org/package=dsTidyverse")
+    (synopsis "'DataSHIELD' 'Tidyverse' Serverside Package")
+    (description
+     "Implementation of selected Tidyverse functions within @code{DataSHIELD}', an
+open-source federated analysis solution in R. Currently, @code{DataSHIELD}
+contains very limited tools for data manipulation, so the aim of this package is
+to improve the researcher experience by implementing essential functions for
+data manipulation, including subsetting, filtering, grouping, and renaming
+variables.  For more information, see <https://www.tidyverse.org/> and
+<https://datashield.org/>.")
+    (license license:lgpl2.1+)))
 
 (define-public r-dstem
   (package
@@ -11873,6 +11898,38 @@ generation and parameter estimation for the discrete inverse Weibull
 distribution.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-discretegapstatistic
+  (package
+    (name "r-discretegapstatistic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiscreteGapStatistic" version))
+       (sha256
+        (base32 "05jq7x6qs57r2fk1nxyi0yiggq3dmdijjm4dla0x8070pp2z3r0f"))))
+    (properties `((upstream-name . "DiscreteGapStatistic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-polychrome
+                             r-pheatmap
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-cultevo
+                             r-complexheatmap))
+    (home-page "https://github.com/ecortesgomez/DiscreteGapStatistic")
+    (synopsis "An Extension of the Gap Statistic for Ordinal/Categorical Data")
+    (description
+     "The gap statistic approach is extended to estimate the number of clusters for
+categorical response format data.  This approach and accompanying software is
+designed to be used with the output of any clustering algorithm and with
+distances specifically designed for categorical (i.e.  multiple choice) or
+ordinal survey response data.")
+    (license license:expat)))
+
 (define-public r-discretefit
   (package
     (name "r-discretefit")
@@ -16878,6 +16935,46 @@ educational and psychological tests.")
 analysis of data from educational and psychological tests.")
     (license license:lgpl3)))
 
+(define-public r-dexisensitivity
+  (package
+    (name "r-dexisensitivity")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dexisensitivity" version))
+       (sha256
+        (base32 "0m970p3lnwrcjpabwv3467vda6ry2dfar8wbblvdzs74hz8c92s0"))))
+    (properties `((upstream-name . "dexisensitivity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-xml
+                             r-testthat
+                             r-plotrix
+                             r-ggplot2
+                             r-genalg
+                             r-dplyr
+                             r-algdesign))
+    (home-page "https://cran.r-project.org/package=dexisensitivity")
+    (synopsis "'DEXi' Decision Tree Analysis and Visualization")
+    (description
+     "This package provides a versatile toolkit for analyzing and visualizing DEXi
+(Decision EXpert for education) decision trees, facilitating multi-criteria
+decision analysis directly within R. Users can read .dxi files, manipulate
+decision trees, and evaluate various scenarios.  It supports sensitivity
+analysis through Monte Carlo simulations, one-at-a-time approaches, and
+variance-based methods, helping to discern the impact of input variations.
+Additionally, it includes functionalities for generating sampling plans and an
+array of visualization options for decision trees and analysis results.  A
+distinctive feature is the synoptic table plot, aiding in the efficient
+comparison of scenarios.  Whether for in-depth decision modeling or sensitivity
+analysis, this package stands as a comprehensive solution.  Definition of
+sensitivity analyses available in Carpani, Bergez and Monod (2012)
+<doi:10.1016/j.envsoft.2011.10.002> and detailed description of the package soon
+available in Alaphilippe, Allart, Carpani, Cavan, Monod and Bergez (submitted to
+Software Impacts).")
+    (license license:gpl2+)))
+
 (define-public r-dexir
   (package
     (name "r-dexir")
@@ -20411,16 +20508,35 @@ transformation ensembles (Kook et al, 2022,
 <doi:10.48550/@code{arXiv.2205.12729>}) are implemented.")
     (license license:gpl3)))
 
+(define-public r-deeptimedata
+  (package
+    (name "r-deeptimedata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deeptimedata" version))
+       (sha256
+        (base32 "19ipdn8r344xnxaz1n3jyhxr8n8xqx9aiwz7g0bfgj8cgn7gg85r"))))
+    (properties `((upstream-name . "deeptimedata")))
+    (build-system r-build-system)
+    (home-page "http://williamgearty.com/deeptimedata/")
+    (synopsis "Geologic Pattern Data from FGDC Used in 'deeptime'")
+    (description
+     "Geologic pattern data from <https://ngmdb.usgs.gov/fgdc_gds/geolsymstd.php>.
+Access functions are provided in the accompanying package deeptime'.")
+    (license license:gpl3+)))
+
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeptime" version))
        (sha256
-        (base32 "1hk5c7x0wrinmi51xgnh9srisfm2n98xbzaxp7i2lpz4fvphd7im"))))
+        (base32 "1sv4vqg1q31nkk8aq8dz3nk3q9jfdm2c5b3b2n0355z31zpqg3gq"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -20431,8 +20547,10 @@ transformation ensembles (Kook et al, 2022,
                              r-grimport2
                              r-gridextra
                              r-ggplot2
+                             r-ggh4x
                              r-ggforce
                              r-ggfittext
+                             r-deeptimedata
                              r-curl
                              r-cli))
     (native-inputs (list r-knitr))

@@ -6520,6 +6520,34 @@ Pareto distributions on graphical structures as described in the paper Graphical
 Models for Extremes by Engelke and Hitz (2020) <doi:10.1111/rssb.12355>.")
     (license license:gpl3)))
 
+(define-public r-graphicalevidence
+  (package
+    (name "r-graphicalevidence")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "graphicalEvidence" version))
+       (sha256
+        (base32 "0wdn9jcc7qhr9igng091fdi63105na81wvpafsw0axvj683y3c3q"))))
+    (properties `((upstream-name . "graphicalEvidence")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=graphicalEvidence")
+    (synopsis "Graphical Evidence")
+    (description
+     "Computes marginal likelihood in Gaussian graphical models through a novel
+telescoping block decomposition of the precision matrix which allows estimation
+of model evidence.  The top level function used to estimate marginal likelihood
+is called evidence, which expects the prior name, data, and relevant prior
+specific parameters.  This package also provides an MCMC prior sampler using the
+same underlying approach, implemented in prior_sampling, which expects a prior
+name and prior specific parameters.  Both functions also expect the number of
+burn-in iterations and the number of sampling iterations for the underlying MCMC
+sampler.")
+    (license license:gpl3)))
+
 (define-public r-graphhopper
   (package
     (name "r-graphhopper")
@@ -10009,22 +10037,22 @@ bootstrapping tasks.  The package provides an interface to perform new
 (define-public r-gofcens
   (package
     (name "r-gofcens")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GofCens" version))
        (sha256
-        (base32 "1xixv05wlwlyga5br9jzrg68rhc71ibhfbyjkmiy0dh9xwyrygsy"))))
+        (base32 "1mpsg3ia3212silxj5fd77pvbkbh8x615isblwyzmzkd7l4wi2bw"))))
     (properties `((upstream-name . "GofCens")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survminer
-                             r-survival
+    (propagated-inputs (list r-survival
                              r-gridextra
                              r-ggplot2
                              r-fitdistrplus
                              r-boot
                              r-actuar))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GofCens")
     (synopsis "Goodness-of-Fit Methods for Complete and Right-Censored Data")
     (description
@@ -10954,13 +10982,13 @@ Information on @code{oTree} is found in Chen, D. L., Schonger, M., & Wickens, C.
 (define-public r-gmoip
   (package
     (name "r-gmoip")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMOIP" version))
        (sha256
-        (base32 "0ssmrc25caqdwcs16msippdbakd1q8i8fss7jx20dphr5by7rhdl"))))
+        (base32 "1vjzn2r3qfwvrvh74ly8sbsarx86r2sfhxh31zkbqnwh12465dgm"))))
     (properties `((upstream-name . "gMOIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -10973,12 +11001,12 @@ Information on @code{oTree} is found in Chen, D. L., Schonger, M., & Wickens, C.
                              r-purrr
                              r-png
                              r-plyr
+                             r-moocore
                              r-matrix
                              r-mass
                              r-ggrepel
                              r-ggplot2
                              r-geometry
-                             r-eaf
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://relund.github.io/gMOIP/")
@@ -13044,13 +13072,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.1-5")
+    (version "0.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm.hp" version))
        (sha256
-        (base32 "0jmjh219klgmz28ds0kjy1kzcz9jwjcz12bnp5l9cmh4l1jhzpmb"))))
+        (base32 "1lrda4b6v22r3fq4p42p237hivjfmgd9h3wn49982j2gvbfna227"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mumin r-lme4 r-ggplot2))
@@ -13894,13 +13922,13 @@ distributions.")
 (define-public r-gjrm
   (package
     (name "r-gjrm")
-    (version "0.2-6.5")
+    (version "0.2-6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GJRM" version))
        (sha256
-        (base32 "0j69lh8hbdcmgj6bwg67s1mlgffcmc045z6sm6p3jifcg8ri18sw"))))
+        (base32 "1zzbjss0xfnmf8q445wfrkvpgp4x33nmcnfxm2wizpfj7jgxprqg"))))
     (properties `((upstream-name . "GJRM")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula
@@ -13920,6 +13948,7 @@ distributions.")
                              r-ggplot2
                              r-gamlss-dist
                              r-evd
+                             r-distrex
                              r-copula))
     (home-page "https://www.ucl.ac.uk/statistics/people/giampieromarra")
     (synopsis "Generalised Joint Regression Modelling")
@@ -14052,6 +14081,38 @@ of the data store, and each snapshot links to the underlying commit of the
 source code.  That way, when the user rolls back the code to a previous branch
 or commit, gittargets can recover the data contemporaneous with that commit so
 that all targets remain up to date.")
+    (license license:expat)))
+
+(define-public r-gitstats
+  (package
+    (name "r-gitstats")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GitStats" version))
+       (sha256
+        (base32 "1rfz56fidblzf4pixj0a2szkzi8fnr6zanhk05qggmwb6g6nfpmf"))))
+    (properties `((upstream-name . "GitStats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://r-world-devs.github.io/GitStats/")
+    (synopsis "Get Statistics from 'GitHub' and 'GitLab'")
+    (description
+     "Obtain statistics in a standardized way from multiple Git services:
+@code{GitHub} and @code{GitLab} for the time-being.  Its main purpose is to help
+teams, whose activities are spread across multiple git platforms, get their
+repository metadata in a standardized way from all these platforms.")
     (license license:expat)))
 
 (define-public r-gitr
@@ -18187,6 +18248,28 @@ ordinary Lorenz curve (Lorenz 1905) <doi:10.2307/2276207> and generalized Lorenz
 curve (Shorrocks 1983) <doi:10.2307/2554117>.")
     (license license:expat)))
 
+(define-public r-gglogger
+  (package
+    (name "r-gglogger")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gglogger" version))
+       (sha256
+        (base32 "1hhpv5vvpb635hb27v64h92x7ga9m4yvrldd61qa0jzjhnmp1623"))))
+    (properties `((upstream-name . "gglogger")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-cli))
+    (home-page "https://github.com/pwwang/gglogger/")
+    (synopsis "Track 'ggplot2' Calls")
+    (description
+     "This package provides a way to log ggplot component calls, which can be useful
+for debugging and understanding how ggplot objects are created.  The logged
+calls can be printed, saved, and re-executed to reproduce the original ggplot
+object.")
+    (license license:expat)))
+
 (define-public r-gglm
   (package
     (name "r-gglm")
@@ -18286,24 +18369,32 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "0kad21xqwb2c4phg4mq7480qvki5frn2c2slfbcfj9paxxl4ha16"))))
+        (base32 "0qd13y9hg63qabn4z8z8qxqj34gwf763wvw7zdfq2df0ik5ipg55"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-matlab r-bitops))
+    (propagated-inputs (list r-readxl
+                             r-rcpp
+                             r-matlab
+                             r-jsonlite
+                             r-data-table
+                             r-bitops))
     (home-page "https://github.com/wadpac/GGIRread/")
     (synopsis "Wearable Accelerometer Data File Readers")
     (description
      "Reads data collected from wearable acceleratometers as used in sleep and
 physical activity research.  Currently supports file formats: binary data from
 GENEActiv <https://activinsights.com/>, .bin-format from GENEA devices (not for
-sale), and .cwa-format from Axivity <https://axivity.com>.  Primarily designed
-to complement R package GGIR <https://CRAN.R-project.org/package=GGIR>.")
+sale), and .cwa-format from Axivity <https://axivity.com>.  Further, it has
+functions for reading text files with epoch level aggregates from Actical',
+Fitbit', Actiwatch', @code{ActiGraph}', and @code{PhilipsHealthBand}'.
+Primarily designed to complement R package GGIR
+<https://CRAN.R-project.org/package=GGIR>.")
     (license license:asl2.0)))
 
 (define-public r-ggiraphextra
@@ -22784,13 +22875,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1r917r9khllm5qhjlqx0xn6j2j1lk8k9z5w5ww7pn6z348qksqs2"))))
+        (base32 "1d8q22vqqsd37g47ic5dkf7gz9pz8lxv7s7imicpwdm26gc7fd1i"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -22805,6 +22896,7 @@ classes and functions.")
                              r-plotrix
                              r-pbivnorm
                              r-nabor
+                             r-minqa
                              r-mapproj
                              r-lamw
                              r-hypergeo
@@ -25518,6 +25610,28 @@ enrichment analysis as described by Thomas PD et al. (2022)
 @code{simplifyEnrichment} (Gu, Huebschmann, 2021)
 <doi:10.1016/j.gpb.2022.04.008>.  This combination of methodologies optimizes
 computational and biological insights for analyzing complex RNAseq datasets.")
+    (license license:expat)))
+
+(define-public r-genescorer
+  (package
+    (name "r-genescorer")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeneScoreR" version))
+       (sha256
+        (base32 "1zf1imf9q85qazn176lzgxfgim4rni4hpzbsaiaqgh70i0g74qrl"))))
+    (properties `((upstream-name . "GeneScoreR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=GeneScoreR")
+    (synopsis "Gene Scoring from Count Tables")
+    (description
+     "This package provides two methods for automatic calculation of gene scores from
+gene count tables: the z-score method, which requires a table of samples being
+scored and a count table with control samples, and the geometric mean method,
+which does not rely on control samples.  The mathematical methods implemented
+are described by Kim et al. (2018) <doi:10.1089/jir.2017.0127>.")
     (license license:expat)))
 
 (define-public r-genescape

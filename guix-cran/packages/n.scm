@@ -968,21 +968,23 @@ computing properties of the New Topp-Leone Kumaraswamy Inverse Exponential
 (define-public r-ntdr
   (package
     (name "r-ntdr")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ntdr" version))
        (sha256
-        (base32 "1s4zqfi9nyr1sksiq0bpdjgnv32qp1yk3igqs5jsrzdrgzbda1z9"))))
+        (base32 "0a2k1vlmknlj2d8xg73rp7985mnrxzivdbqqkxzwpplz1yfqxpdn"))))
     (properties `((upstream-name . "ntdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rvest
+                             r-rlang
                              r-readxl
+                             r-rappdirs
                              r-purrr
                              r-lubridate
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))
@@ -4224,13 +4226,13 @@ modified Polak-Ribiere-Polyak formula as described in (Li, Can, 2013,
 (define-public r-nonmemica
   (package
     (name "r-nonmemica")
-    (version "1.0.8")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmemica" version))
        (sha256
-        (base32 "000pjp7zk3pw7xhg0w8363b1q52l6ikqjpvdxjd1kb61y99bi6m2"))))
+        (base32 "097lglq9xns7kbrlz8p36hx68p8zysdg58nbxyl9rp3x7hjkspzp"))))
     (properties `((upstream-name . "nonmemica")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

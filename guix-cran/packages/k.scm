@@ -4353,18 +4353,18 @@ particularly for high-dimensional data.  Song, H. and Chen, H. (2022)
 (define-public r-kerntools
   (package
     (name "r-kerntools")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kerntools" version))
        (sha256
-        (base32 "13vzpjwgjqc9529lfxzf72mzc4pjc6p16fv6y05xkawy67mvkqib"))))
+        (base32 "0jgwqjkvxb8m3748h9x8a8kj1lpkhran1v7vymjblayk1hizqm2r"))))
     (properties `((upstream-name . "kerntools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-reshape2 r-kernlab r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=kerntools")
+    (home-page "https://github.com/elies-ramon/kerntools")
     (synopsis "Kernel Functions and Tools for Machine Learning Applications")
     (description
      "Kernel functions for diverse types of data (including, but not restricted to:

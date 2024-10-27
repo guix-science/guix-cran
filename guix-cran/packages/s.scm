@@ -2376,6 +2376,32 @@ replicate weights.  Methods implemented in this package are described in: A.
 Iparragirre, T. Lumley, I. Barrio, I. Arostegui (2024) <doi:10.1002/sta4.578>.")
     (license license:gpl3+)))
 
+(define-public r-svyroc
+  (package
+    (name "r-svyroc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svyROC" version))
+       (sha256
+        (base32 "0pyxrcjww4q0wv2g135hvrd46h661nz5fyqamppdx8x6gwchcdwb"))))
+    (properties `((upstream-name . "svyROC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-svyvarsel r-survey))
+    (home-page "https://cran.r-project.org/package=svyROC")
+    (synopsis
+     "Estimation of the ROC Curve and the AUC for Complex Survey Data")
+    (description
+     "Estimate the receiver operating characteristic (ROC) curve, area under the curve
+(AUC) and optimal cut-off points for individual classification taking into
+account complex sampling designs when working with complex survey data.  Methods
+implemented in this package are described in: A. Iparragirre, I. Barrio, I.
+Arostegui (2024) <doi:10.1002/sta4.635>; A. Iparragirre, I. Barrio, J. Aramendi,
+I. Arostegui (2022) <doi:10.2436/20.8080.02.121>; A. Iparragirre, I. Barrio
+(2024) <doi:10.1007/978-3-031-65723-8_7>.")
+    (license license:gpl3+)))
+
 (define-public r-svynom
   (package
     (name "r-svynom")
@@ -6296,13 +6322,13 @@ dissimilarity measures.")
 (define-public r-supercell
   (package
     (name "r-supercell")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SuperCell" version))
        (sha256
-        (base32 "01zdh9fz174rys9vixcpskxyva511p7xww3xlkmsp01j4prg0gba"))))
+        (base32 "0y0mqg1vzlcll9wd5wq0fiimlzbdhwwfcyr6zpwz45nq8r8wizvq"))))
     (properties `((upstream-name . "SuperCell")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights
@@ -8034,16 +8060,18 @@ Modern Concepts, Methods and Applications, CRC Press.")
 (define-public r-stroke
   (package
     (name "r-stroke")
-    (version "23.9.1")
+    (version "24.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stRoke" version))
        (sha256
-        (base32 "0rlhi8cj1gb5cpvpds4hr6m1g4g53yqlzrvl5gzn3xkiyd5i3kx3"))))
+        (base32 "0pbhnfvj35v1di8dsm3m9qzdq9v9rq34b0drs3mgcy8nqd4kkavp"))))
     (properties `((upstream-name . "stRoke")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
                              r-rankinplot
                              r-mass
                              r-lubridate
@@ -8055,15 +8083,15 @@ Modern Concepts, Methods and Applications, CRC Press.")
     (home-page "https://agdamsbo.github.io/stRoke/")
     (synopsis "Clinical Stroke Research")
     (description
-     "This is an R-toolbox of custom functions for convenient data management and
-analysis in clinical health research and teaching.  The package is mainly
-collected for personal use, but any use beyond that is encouraged.  This package
-has migrated functions from agdamsbo/@code{daDoctoR}', and new functions has
-been added.  Version follows months and year.  See NEWS/Changelog for release
-notes.  This package includes sampled data from the TALOS trial (Kraglund et al
-(2018) <doi:10.1161/STROKEAHA.117.020067>).  The win_prob() function is based on
-work by Zou et al (2022) <doi:10.1161/STROKEAHA.121.037744>.  The age_calc()
-function is based on work by Becker (2020) <doi:10.18637/jss.v093.i02>.")
+     "This package provides a collection of tools for clinical trial data management
+and analysis in research and teaching.  The package is mainly collected for
+personal use, but any use beyond that is encouraged.  This package has migrated
+functions from agdamsbo/@code{daDoctoR}', and new functions has been added.
+Version follows months and year.  See NEWS/Changelog for release notes.  This
+package includes sampled data from the TALOS trial (Kraglund et al (2018)
+<doi:10.1161/STROKEAHA.117.020067>).  The win_prob() function is based on work
+by Zou et al (2022) <doi:10.1161/STROKEAHA.121.037744>.  The age_calc() function
+is based on work by Becker (2020) <doi:10.18637/jss.v093.i02>.")
     (license license:gpl3)))
 
 (define-public r-strmps
@@ -11191,13 +11219,13 @@ return values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevedata" version))
        (sha256
-        (base32 "0ggfgf3g240r69g4wnhyxvzp46by9b79hzhhpbs1rmh2pzd6zj96"))))
+        (base32 "0zhgagvndzjimbg03xfdm7ndqsxb75abdyng41caw8i9wjina90i"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (home-page "http://svmiller.com/stevedata/")
@@ -22776,6 +22804,37 @@ and Piersimoni F (2017) <doi:10.1002/bimj.201600194>, and Benedetti R and
 Piersimoni F (2017) <@code{arXiv:1710.09116>}.  The implementation has been done
 in C++ through the use of Rcpp and @code{RcppArmadillo}'.")
     (license license:gpl3)))
+
+(define-public r-spbps
+  (package
+    (name "r-spbps")
+    (version "0.0-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spBPS" version))
+       (sha256
+        (base32 "10xq277c5pcchq25p5xg98khzvnc1lncdvggn61b4ka20jjm7xma"))))
+    (properties `((upstream-name . "spBPS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mniw r-cvxr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spBPS")
+    (synopsis
+     "Bayesian Predictive Stacking for Scalable Geospatial Transfer Learning")
+    (description
+     "This package provides functions for Bayesian Predictive Stacking within the
+Bayesian transfer learning framework for geospatial artificial systems, as
+introduced in \"Bayesian Transfer Learning for Artificially Intelligent
+Geospatial Systems: A Predictive Stacking Approach\" (Presicce and Banerjee,
+2024) <doi:10.48550/@code{arXiv.2410.09504>}.  This methodology enables
+efficient Bayesian geostatistical modeling, utilizing predictive stacking to
+improve inference across spatial datasets.  The core functions leverage C++ for
+high-performance computation, making the framework well-suited for large-scale
+spatial data analysis in parallel and distributed computing environments.
+Designed for scalability, it allows seamless application in computationally
+demanding scenarios.")
+    (license license:gpl3+)))
 
 (define-public r-spbfa
   (package
@@ -35168,13 +35227,13 @@ as described in <doi:10.1002/sam.11705>.")
 (define-public r-sisal
   (package
     (name "r-sisal")
-    (version "0.48")
+    (version "0.49")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sisal" version))
        (sha256
-        (base32 "1fh35ndra58dryw222ng7ys3gx1izyk5789k30lyd4n8wqy6sjjd"))))
+        (base32 "179yrdi1wzkpmm1yhgr1qhrizirwkrg8b889d2kansjnjlavy7ww"))))
     (properties `((upstream-name . "sisal")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-methodss3

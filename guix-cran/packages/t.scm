@@ -8433,30 +8433,6 @@ resolves the issues of multiple TRFLP profiles within a species, and shared
 TRFLP profiles across species.")
     (license license:gpl2)))
 
-(define-public r-trampoline
-  (package
-    (name "r-trampoline")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "trampoline" version))
-       (sha256
-        (base32 "05inq5j8gvnpww6z21dzc57vilsm4gx3m274fpsamp54q85mi68s"))))
-    (properties `((upstream-name . "trampoline")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-fastmap r-coro))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rdinnager/trampoline")
-    (synopsis "Make Functions that Can Recurse Infinitely")
-    (description
-     "This package implements a trampoline algorithm for R that let's users write
-recursive functions that get around R's stack call limitations, enabling
-theoretically infinite recursion.  The algorithm is based around generator
-function as implemented in the coro package, and is based almost completely on
-the trampoline module from Python <https://gitlab.com/ferreum/trampoline>.")
-    (license license:expat)))
-
 (define-public r-tramnet
   (package
     (name "r-tramnet")
@@ -9507,13 +9483,13 @@ object of the package and is extremely short to type.")
 (define-public r-tr-iatgen
   (package
     (name "r-tr-iatgen")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tr.iatgen" version))
        (sha256
-        (base32 "0bwr6c5mg41avsjj55wql0nyvb9pix8n5rpzlqjsq93xwixapy5s"))))
+        (base32 "0ljamadndnigbxa55y0wab085qqm46brk7nqvd7s5jmxjci8awds"))))
     (properties `((upstream-name . "tr.iatgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
@@ -16917,32 +16893,6 @@ functions giving a tidier representation of the underlying data structures and
 functionality using a header-only implementation without additional
 dependencies.")
     (license license:gpl2+)))
-
-(define-public r-tidycountries
-  (package
-    (name "r-tidycountries")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidycountries" version))
-       (sha256
-        (base32 "1785nvw2jhnslyib6zgxvdv2kzj3r5hiagplrv12i490sdqsj47j"))))
-    (properties `((upstream-name . "tidycountries")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-dplyr))
-    (home-page "https://github.com/denironyx/tidycountries")
-    (synopsis
-     "Access and Manipulate Comprehensive Country Level Data in Tidy Format")
-    (description
-     "This package provides a comprehensive and user-friendly interface for accessing,
-manipulating, and analyzing country-level data from around the world.  It allows
-users to retrieve detailed information on countries, including names, regions,
-continents, populations, currencies, calling codes, and more, all in a tidy data
-format.  The package is designed to work seamlessly within the tidyverse
-ecosystem, making it easy to filter, arrange, and visualize country-level data
-in R.")
-    (license license:expat)))
 
 (define-public r-tidyconsultant
   (package
@@ -26836,13 +26786,13 @@ data into machine-readable @code{LongForm} Dataframes.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.6.8")
+    (version "0.6.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablet" version))
        (sha256
-        (base32 "0yg58dh8k32155pm16ai327a33i0bx7qkrd4jvj7mf4qy9ava6v3"))))
+        (base32 "02sc5raig8llrvchpl4x6wqqdyzrg0pmjs3snia8gbyvmz2n87n9"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yamlet

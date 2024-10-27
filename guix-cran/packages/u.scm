@@ -1775,13 +1775,13 @@ Informations-, Dokumentations- und Administrations-System'), see
 (define-public r-unrtf
   (package
     (name "r-unrtf")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unrtf" version))
        (sha256
-        (base32 "0p3yc1in53rhcs4gqz815ygqjj25cwfxg11bixmiykfb8yi9wjlc"))))
+        (base32 "1z5bdck8ykj9dh6ngr3qf88ad209hx8xizv02z7iil0jgycriqqr"))))
     (properties `((upstream-name . "unrtf")))
     (build-system r-build-system)
     (inputs (list pcre2))
@@ -1819,6 +1819,31 @@ tools.  Many of these methods are described in Daniel C. (1959)
 <doi:10.1080/00401706.1989.10488595>, but some new approaches are added and
 integrated in one package.")
     (license license:gpl2+)))
+
+(define-public r-unplansimon
+  (package
+    (name "r-unplansimon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UnplanSimon" version))
+       (sha256
+        (base32 "193vanpin2fxqnvjjc631593dqskz99zn4wbgrmysabqc0s6baqn"))))
+    (properties `((upstream-name . "UnplanSimon")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UnplanSimon")
+    (synopsis
+     "Methods for Managing Enrollment Deviation in Simon's Two-Stage Design")
+    (description
+     "This package provides methods for managing under- and over-enrollment in Simon's
+Two-Stage Design are offered by providing adaptive threshold adjustments and
+sample size recalibration.  It also includes post-inference analysis tools to
+support clinical trial design and evaluation.  The package is designed to
+enhance flexibility and accuracy in trial design, ensuring better outcomes in
+oncology and other clinical studies.  Yunhe Liu, Haitao Pan (2024).  Submitted.")
+    (license license:gpl3+)))
 
 (define-public r-unpivotr
   (package
