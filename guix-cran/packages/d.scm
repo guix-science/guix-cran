@@ -6908,13 +6908,13 @@ settings for some computer programs.")
 (define-public r-dotgen
   (package
     (name "r-dotgen")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dotgen" version))
        (sha256
-        (base32 "12dvn52ggmkj2q6whi8s2hh9fpg7jcg20bgx32jxzh4cb1zxnksz"))))
+        (base32 "0ali0kybxmx0gwjmvj6zadx9s1j81yby1d88y88rh4j9s40cc59d"))))
     (properties `((upstream-name . "dotgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -11809,13 +11809,13 @@ distributions.")
 (define-public r-discretetests
   (package
     (name "r-discretetests")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteTests" version))
        (sha256
-        (base32 "18257srwfz99531wks60isi1dg95yv1xvpb4hhxh9qw9wijw08sp"))))
+        (base32 "1ii0jqq2k0in11dhmw1mzhwbxijnd6inhwfi0j43cpxzddnbg8bs"))))
     (properties `((upstream-name . "DiscreteTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-lifecycle r-checkmate))

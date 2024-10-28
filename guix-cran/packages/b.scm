@@ -17986,43 +17986,6 @@ functions for generating simulated data of naloxone kit use and functions for
 generating samples from the posterior.")
     (license license:expat)))
 
-(define-public r-benmmi
-  (package
-    (name "r-benmmi")
-    (version "4.3-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BENMMI" version))
-       (sha256
-        (base32 "1v96g4l1zkpvvx8jdifnafyaz4ml8v1bxbl97r1n5n6mgw88gk77"))))
-    (properties `((upstream-name . "BENMMI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-tidyr
-                             r-readr
-                             r-purrr
-                             r-markdown
-                             r-knitr
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr
-                             r-benthos))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BENMMI")
-    (synopsis "Benthic Multi-Metric Index")
-    (description
-     "Analysis tool for evaluating benthic multimetric indices (BENMMIs).  It
-generates reproducible reports on the analysis of benthic data, e.g., validation
-and correction of species names, sample pooling, automatic conversion of genus
-to species names, outlier detection, benthic indicator calculation, optimization
-of single and multimetric indicators against a pressure gradient, and spatial
-aggregation of benthic indicators.  One of its use cases was the development of
-a common benthic indicator for <https://www.ospar.org> (publication accepted by
-Ecological Indicators).  See Van Loon et al. (2018)
-<doi:10.1016/j.ecolind.2017.09.029> for details.")
-    (license license:gpl3+)))
-
 (define-public r-benfordtests
   (package
     (name "r-benfordtests")

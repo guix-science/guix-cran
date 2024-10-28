@@ -16894,6 +16894,32 @@ functionality using a header-only implementation without additional
 dependencies.")
     (license license:gpl2+)))
 
+(define-public r-tidycountries
+  (package
+    (name "r-tidycountries")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidycountries" version))
+       (sha256
+        (base32 "190yy49j3vxlv703ikrnrfl83kr5p9qrf8fkx7r8qr4bqraw99pg"))))
+    (properties `((upstream-name . "tidycountries")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-sf r-dplyr))
+    (home-page "https://github.com/denironyx/tidycountries")
+    (synopsis
+     "Access and Manipulate Comprehensive Country Level Data in Tidy Format")
+    (description
+     "This package provides a comprehensive and user-friendly interface for accessing,
+manipulating, and analyzing country-level data from around the world.  It allows
+users to retrieve detailed information on countries, including names, regions,
+continents, populations, currencies, calling codes, and more, all in a tidy data
+format.  The package is designed to work seamlessly within the tidyverse
+ecosystem, making it easy to filter, arrange, and visualize country-level data
+in R.")
+    (license license:expat)))
+
 (define-public r-tidyconsultant
   (package
     (name "r-tidyconsultant")

@@ -2586,16 +2586,16 @@ computation of evaluation criteria.")
 (define-public r-visualizesimon2stage
   (package
     (name "r-visualizesimon2stage")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisualizeSimon2Stage" version))
        (sha256
-        (base32 "1sjnmxbd3k139rcnwnnjz0js929smdlrrrffn8mhcgrw77zl3ljy"))))
+        (base32 "0dkbkc1cprri9kkzsl47651n03h2hdlq34b4w6p4j3x14d102dgx"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-ggplot2 r-geomtextpath))
     (home-page "https://cran.r-project.org/package=VisualizeSimon2Stage")
     (synopsis "Visualize Simon's Two-Stage Design")
     (description

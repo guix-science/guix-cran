@@ -32518,13 +32518,13 @@ posterior', cmdstanr', and bayesplot'.")
 (define-public r-chisquare
   (package
     (name "r-chisquare")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chisquare" version))
        (sha256
-        (base32 "1rdnyzfw3v7xkr045dvfqrm3rkgn12aq3d45z6ax93i6sr4lzp5l"))))
+        (base32 "00ykim1p71lw5wby59nmsd7xxnw3cav3lmn522c4qmsc14nzdly3"))))
     (properties `((upstream-name . "chisquare")))
     (build-system r-build-system)
     (propagated-inputs (list r-gt))
@@ -32533,12 +32533,12 @@ posterior', cmdstanr', and bayesplot'.")
      "Chi-Square and G-Square Test of Independence, Power and Residual Analysis, Measures of Categorical Association")
     (description
      "This package provides the facility to perform the chi-square and G-square test
-of independence, calculates the power of the traditional chi-square test,
-compute permutation and Monte Carlo p-value, and provides measures of
-association for tables of any size such as Phi, Phi corrected, odds ratio with
-95 percent CI and p-value, Yule Q and Y, adjusted contingency coefficient,
-Cramer's V, V corrected, V standardised, bias-corrected V, W, Cohen's w,
-Goodman-Kruskal's lambda, and tau.  It also calculates standardised,
+of independence, calculates the retrospective power of the traditional
+chi-square test, compute permutation and Monte Carlo p-value, and provides
+measures of association for tables of any size such as Phi, Phi corrected, odds
+ratio with 95 percent CI and p-value, Yule Q and Y, adjusted contingency
+coefficient, Cramer's V, V corrected, V standardised, bias-corrected V, W,
+Cohen's w, Goodman-Kruskal's lambda, and tau.  It also calculates standardised,
 moment-corrected standardised, and adjusted standardised residuals, and their
 significance, as well as the Quetelet Index, IJ association factor, and adjusted
 standardised counts.  It also computes the chi-square-maximising version of the

@@ -4830,13 +4830,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.38")
+    (version "4.4.40")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "16hgzbdx7jaq7jkil97iwx1r4agbw34jcz7iap3ir18v8jp19y2c"))))
+        (base32 "1k8zyk4jdndsmkm5cfx9lyg2j7hqlrjxkzga9yx9rm3avmk8g3f5"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (inputs (list))
@@ -17126,13 +17126,13 @@ Haralick (1973) <doi:10.1109/TSMC.1973.4309314>.")
 (define-public r-agridat
   (package
     (name "r-agridat")
-    (version "1.23")
+    (version "1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agridat" version))
        (sha256
-        (base32 "17xq0ihjg2z61dy1nrz5vwxwzmwrk3wmc01n2c6rwgyfa5ijfplq"))))
+        (base32 "0bnc2dr5lz2lqjlic8c8siwfcv63864fn857a6pi6zblfv5cfsza"))))
     (properties `((upstream-name . "agridat")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

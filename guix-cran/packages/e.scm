@@ -21307,13 +21307,13 @@ Bayes method.")
 (define-public r-eben
   (package
     (name "r-eben")
-    (version "5.1")
+    (version "5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBEN" version))
        (sha256
-        (base32 "13cvdx2mg1jhymvq49wm2rm1pajsd4ji274r7zaklcwy4lw5bml4"))))
+        (base32 "1lkq9zdqpyjr59bij0ajpw69r0qdlpk29ps8pkhvvci84f5sd0bi"))))
     (properties `((upstream-name . "EBEN")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=EBEN")

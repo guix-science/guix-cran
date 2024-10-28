@@ -19748,13 +19748,13 @@ obter a ANOVA, testes de medias e anÃ¡lise de regressao)
 (define-public r-splitsoftening
   (package
     (name "r-splitsoftening")
-    (version "2.1-0")
+    (version "2.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SplitSoftening" version))
        (sha256
-        (base32 "1fgcqax81zpknw642fm9dx1f6dpdgbcf3va0m1bhj6kl98yq7dqd"))))
+        (base32 "12hg2cm3y50rcqqa1fk40xf4z99cwc5x411lgp0w204qdzgfjddj"))))
     (properties `((upstream-name . "SplitSoftening")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SplitSoftening")
@@ -24868,13 +24868,13 @@ parameter.")
 (define-public r-sparsesem
   (package
     (name "r-sparsesem")
-    (version "4.0")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparseSEM" version))
        (sha256
-        (base32 "15pgh5x01inyl8kxaqsz9hf7iv3splzarch89yz1nappv86c7khq"))))
+        (base32 "1kxw4q7rqs3h5q2b1x3hpkc13g1v77fpwj4m3qws6y1s6qk2pfvx"))))
     (properties `((upstream-name . "sparseSEM")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -58338,13 +58338,13 @@ variability in the data.")
 (define-public r-sc2sc
   (package
     (name "r-sc2sc")
-    (version "0.0.1-12")
+    (version "0.0.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sc2sc" version))
        (sha256
-        (base32 "0cdfx47vlcqqbl6d75zr91x8j4ayar7wdk5mkdilgw0izcxwscjf"))))
+        (base32 "1z7k2n30c7k5lz3gb4khgy16lqj6lmhadwip78k44x91i5mrnbm7"))))
     (properties `((upstream-name . "sc2sc")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=sc2sc")
@@ -58358,10 +58358,12 @@ into force in a moment of time is transferred to the census sections of another
 partition/division employing the geometric approach (also known as areal
 weighting or polygon overlay).  References: Goerlich (2022)
 <doi:10.12842/WPIVIE_0322>.  PavÃ­a and Cantarino (2017a, b)
-<doi:10.1111/gean.12112>, <doi:10.1016/j.apgeog.2017.06.021>.  Acknowledgements:
-The authors wish to thank ConsellerÃ­a de EducaciÃ³n, Universidades y Empleo,
-Generalitat Valenciana (grant AICO/2021/257) and Ministerio de EconomÃ­a e
-InnovaciÃ³n (grant PID2021-128228NB-I00) for supporting this research.")
+<doi:10.1111/gean.12112>, <doi:10.1016/j.apgeog.2017.06.021>.  PÃ©rez and PavÃ­a
+(2024a, b) <doi:10.4995/CARMA2024.2024.17796>, <doi:10.38191/iirr-jorr.24.057>.
+Acknowledgements: The authors wish to thank ConsellerÃ­a de EducaciÃ³n,
+Universidades y Empleo, Generalitat Valenciana (grant AICO/2021/257), Ministerio
+de EconomÃ­a e InnovaciÃ³n (grant PID2021-128228NB-I00) and FundaciÃ³n Mapfre
+for supporting this research.")
     (license license:gpl2+)))
 
 (define-public r-sc2api
