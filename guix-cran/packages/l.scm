@@ -7666,13 +7666,13 @@ in R.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.16")
+    (version "1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "0vwrzl34yfm1117ylfdxi2aw803yvj89xpv48f8rkkk42nz6m8wx"))))
+        (base32 "07xq7h8y2nf1cjbns1kcp0xnj5vkn4nay6zj4412mcbl3par0bbc"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-class))
@@ -8814,13 +8814,13 @@ allows to visualize the clustering results returned by the server.")
 (define-public r-link2gi
   (package
     (name "r-link2gi")
-    (version "0.6-1")
+    (version "0.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "link2GI" version))
        (sha256
-        (base32 "0ivzbmvwxx2v0pk7f1y84jxad5pvpl4m6czmjkga52wnk0y5dnn1"))))
+        (base32 "01k15a88x574vcmgclglfrm5lm1jb97hgjwy13w388y4r45x27wk"))))
     (properties `((upstream-name . "link2GI")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -8832,7 +8832,6 @@ allows to visualize the clustering results returned by the server.")
                              r-roxygen2
                              r-renv
                              r-r-utils
-                             r-git2r
                              r-devtools
                              r-brew))
     (native-inputs (list r-knitr))

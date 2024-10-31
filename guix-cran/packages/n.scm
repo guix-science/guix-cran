@@ -612,13 +612,13 @@ related according to a provided pedigree.")
 (define-public r-numberize
   (package
     (name "r-numberize")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "numberize" version))
        (sha256
-        (base32 "1p3zcknlrv4ayyxk79vd021r9jwk2dxwp3saryzn4vgj8fnac8iy"))))
+        (base32 "1mvr9lnlph054j343rjqlfiagpfx5f1sx3pbrmbhd2fw6vnv1pz2"))))
     (properties `((upstream-name . "numberize")))
     (build-system r-build-system)
     (home-page "https://github.com/epiverse-trace/numberize")
@@ -7253,13 +7253,13 @@ composition and modification functions to make model updates easier.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2extra" version))
        (sha256
-        (base32 "1n2f9x8k6nbmsdiv2gmpa59nwxnpp5jfy85r9rzvwpbf56k9ba4b"))))
+        (base32 "04w119h03xk6fdn008pbrn6p8lpma9ip669vrmw4wrypxjw2knz2"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -7361,13 +7361,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2" version))
        (sha256
-        (base32 "06za2hn8rd8plmphp0j1y82hzqhpqjb1mj2r6gc92lpyc2dd5a6a"))))
+        (base32 "1s5q6ik5y6yz127rra0xq5qafwjrk2z342wx3w72m3bn38jzisjm"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2
@@ -7706,13 +7706,13 @@ shapefiles.")
 (define-public r-nixtlar
   (package
     (name "r-nixtlar")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nixtlar" version))
        (sha256
-        (base32 "0q1626ymillj329xk7cfh54p17cilbfvjga5jk5df3slzqyhk77x"))))
+        (base32 "0gi8v0l3032di8ph7x0x9yqsmip7fyams8bpznphg75h4wlalvlv"))))
     (properties `((upstream-name . "nixtlar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

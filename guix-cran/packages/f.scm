@@ -494,17 +494,17 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.10.7")
+    (version "4.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1xfq2il2d44a99yp2lnsmmna52spqk92sv29farmxwppfvghg942"))))
+        (base32 "187aj0kl8kmz9s2zsrpkxpjd5qpwaf90s9ivy3hyv1gjl0ra8njs"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-modeva))
-    (home-page "fuzzysim.r-forge.r-project.org")
+    (propagated-inputs (list r-stringi r-modeva))
+    (home-page "http://fuzzysim.r-forge.r-project.org/")
     (synopsis "Fuzzy Similarity in Species Distributions")
     (description
      "This package provides functions to compute fuzzy versions of species occurrence
@@ -779,13 +779,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "1rjf0d827nmm0cp48im6b24az62a2s50hf8w96ryc8id6cymny5x"))))
+        (base32 "1f6p28kzy87gd3wl24w7cj2a9wza9dz92igci2a6h6x8ji3y09mr"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-vim r-missforest r-miceranger r-fuzzysimres
@@ -8420,13 +8420,13 @@ data analysis, compositional data analysis, diversity measurement, etc.).")
 (define-public r-folda
   (package
     (name "r-folda")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "folda" version))
        (sha256
-        (base32 "1zk0zzcyrxik2c3hgabaifa4s3kl2rx7v3w9mlg3nlgw4dqjhpmf"))))
+        (base32 "01ppv6470k0bybzmmv0nf9ln1rgc09k8ckjdy4a80rhh0qrmjii9"))))
     (properties `((upstream-name . "folda")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-ggplot2))
@@ -11597,13 +11597,13 @@ Journal of Statistical Software <doi:10.18637/jss.v101.i03>.")
 (define-public r-fkf-sp
   (package
     (name "r-fkf-sp")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FKF.SP" version))
        (sha256
-        (base32 "01vwb274nxnaljqw187vdf4w2j7m2b2ns3d47k0a2fg2v73abyjz"))))
+        (base32 "0jv08qqcqqqs73gzj3v7wd45zfhf12qn3ahnb9a39h9rs3ipc15l"))))
     (properties `((upstream-name . "FKF.SP")))
     (build-system r-build-system)
     (propagated-inputs (list r-mathjaxr))
@@ -13277,16 +13277,16 @@ under Creative Commons 4.0 <https://creativecommons.org/licenses/by/4.0/>.")
 (define-public r-finnet
   (package
     (name "r-finnet")
-    (version "0.1.2")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FinNet" version))
        (sha256
-        (base32 "1pfzdxprjh7nz2p7gvlss9hbkxb50l9v9z37hmf6xx4983a62z9z"))))
+        (base32 "0c9bl71vcz0yasq179dbm2gbkq1cc4b5p16xi8i7q6c11k23ncrx"))))
     (properties `((upstream-name . "FinNet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
+    (propagated-inputs (list r-rcpp r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://fatelarico.github.io/FinNet.html")
     (synopsis "Quickly Build and Manipulate Financial Networks")
@@ -13298,7 +13298,9 @@ such as rvest and RSelenium'.  Moreover, the package assists in creating various
 types of financial networks depending on the type of relation between its units
 depending on the relation under scrutiny (ownership, board interlocks, etc.),
 the desired tie type (valued or binary), and renders them in the most common
-formats (adjacency matrix, incidence matrix, edge list, igraph', network').")
+formats (adjacency matrix, incidence matrix, edge list, igraph', network').
+There are also ad-hoc functions for the Fiedler value, global network
+efficiency, and cascade-failure analysis.")
     (license license:gpl3+)))
 
 (define-public r-finity
@@ -19957,6 +19959,36 @@ high and scales linearly by object size; memory usage is constant and
 negligible.")
     (license license:artistic2.0)))
 
+(define-public r-fastdid
+  (package
+    (name "r-fastdid")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastdid" version))
+       (sha256
+        (base32 "19p0nnb27axgvsichxq6is6njnkmmqsj6d88a1kyx4kjqk36zkrl"))))
+    (properties `((upstream-name . "fastdid")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-parglm
+                             r-ggplot2
+                             r-dreamerr
+                             r-data-table
+                             r-collapse
+                             r-bmisc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TsaiLintung/fastdid")
+    (synopsis "Fast Staggered Difference-in-Difference Estimators")
+    (description
+     "This package provides a fast and flexible implementation of Callaway and
+Sant'Anna's (2021)<doi:10.1016/j.jeconom.2020.12.001> staggered
+Difference-in-Differences (@code{DiD}) estimators, fastdid reduces the
+computation time from hours to seconds, and incorporates extensions such as
+time-varying covariates and multiple events.")
+    (license license:expat)))
+
 (define-public r-fastcub
   (package
     (name "r-fastcub")
@@ -20047,13 +20079,13 @@ The package is an implementation of Yang, Y. and Zou, H. (2013) DOI:
 (define-public r-fastcmprsk
   (package
     (name "r-fastcmprsk")
-    (version "1.24.5")
+    (version "1.24.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcmprsk" version))
        (sha256
-        (base32 "1ymg79y913h4s55h1pbmbx0hx40khc0mq6348awzqjy8pjhz1mdl"))))
+        (base32 "0vjlfjjgnnbg1apsvsfdv0qm0qg4sl9ihz2ngqhxklw6cy38annm"))))
     (properties `((upstream-name . "fastcmprsk")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-matrix r-foreach r-dynpred))

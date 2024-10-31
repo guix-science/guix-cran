@@ -1774,16 +1774,16 @@ General Transit Feed Specification (GTFS) data format.")
 (define-public r-gtfsrouter
   (package
     (name "r-gtfsrouter")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfsrouter" version))
        (sha256
-        (base32 "1v8b3yr7c7yaavy3ivj7ik2hmbdyjasmkxkbrs3f943m9fbkngwi"))))
+        (base32 "02vgx456z8d3yf5lklf7cddypkpxqxyv745xlax7y2fkanbinh3v"))))
     (properties `((upstream-name . "gtfsrouter")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-geodist r-data-table r-cli))
+    (propagated-inputs (list r-rcpp r-geodist r-fs r-data-table r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/UrbanAnalyst/gtfsrouter")
     (synopsis "Routing with 'GTFS' (General Transit Feed Specification) Data")
@@ -16076,13 +16076,13 @@ a light, pastel aesthetic.  Syntax follows the viridis package.")
 (define-public r-ggtangle
   (package
     (name "r-ggtangle")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtangle" version))
        (sha256
-        (base32 "0xg3r9d4qfl5y9dbvwyfvp36dvp4jwgbr258y957kx393mi57cgd"))))
+        (base32 "0drw2m6marf7msnghxpxbi6y3zzns0x8ybr5x34q53q25bbkr4m2"))))
     (properties `((upstream-name . "ggtangle")))
     (build-system r-build-system)
     (propagated-inputs (list r-yulab-utils
@@ -16473,13 +16473,13 @@ geom_glowpoint() add a neon glow around lines to get a steampunk style.")
 (define-public r-ggseqplot
   (package
     (name "r-ggseqplot")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseqplot" version))
        (sha256
-        (base32 "0h4v5lxwr8rflxmxrv324axz6m1girib6gdh4p3k5hk48ilglwj0"))))
+        (base32 "012hpnrj921bxc5s2dvjks8iri322lkn21rl87gwgrh23pvhrn83"))))
     (properties `((upstream-name . "ggseqplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -17595,6 +17595,39 @@ implementation also incorporates categorical variables into the plots in a
 principled manner.  By separating the data managing part from the visual
 rendering, we give full access to the users while keeping the number of
 parameters manageably low.")
+    (license license:gpl3)))
+
+(define-public r-ggpca
+  (package
+    (name "r-ggpca")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggpca" version))
+       (sha256
+        (base32 "13b3iks81mhjvjpghfamiyr3nbj63hg6jgl6922fclqml5i0rbdy"))))
+    (properties `((upstream-name . "ggpca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-umap
+                             r-shiny
+                             r-rtsne
+                             r-rlang
+                             r-golem
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggpca")
+    (synopsis "Publication-Ready PCA, t-SNE, and UMAP Plots")
+    (description
+     "This package provides tools for creating publication-ready dimensionality
+reduction plots, including Principal Component Analysis (PCA), t-Distributed
+Stochastic Neighbor Embedding (t-SNE), and Uniform Manifold Approximation and
+Projection (UMAP).  This package helps visualize high-dimensional data with
+options for custom labels, density plots, and faceting, using the ggplot2
+framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
     (license license:gpl3)))
 
 (define-public r-ggpath
@@ -19381,13 +19414,13 @@ remember ggplot2 sequences.")
 (define-public r-gge
   (package
     (name "r-gge")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gge" version))
        (sha256
-        (base32 "1c8f8g4nw245cjxpx3fjw03cgwc1q13k9ly9jx1jcc6k6hsdkx9k"))))
+        (base32 "0n33dpqvmf3iqr3bimx91zzla5m83nhyf0ldm9hrflxgnnmlnzhg"))))
     (properties `((upstream-name . "gge")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-nipals))
@@ -28094,13 +28127,13 @@ Press 2015).")
 (define-public r-gd
   (package
     (name "r-gd")
-    (version "10.5")
+    (version "10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GD" version))
        (sha256
-        (base32 "0gyl2ss1kqkh1g1sbjhp5j67wsidlhwzyvvdls7aids2r57vrs4r"))))
+        (base32 "1xk7s0b8xz3rialrwfzf3x2ggq5cpsqk6qn3193f3brvl1y4jsgr"))))
     (properties `((upstream-name . "GD")))
     (build-system r-build-system)
     (propagated-inputs (list r-bammtools))
@@ -28533,13 +28566,13 @@ Multilevel Factor Model.\" Lin and Shin (2023) <doi:10.2139/ssrn.4295429>.")
 (define-public r-gcbd
   (package
     (name "r-gcbd")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcbd" version))
        (sha256
-        (base32 "1dvnly0aljv2c4x7sn3q55ncvfdfjfgp7w0k2900p77h4w8nixia"))))
+        (base32 "1yprp56y15d3z48s9qk0dl9qcy9hg7caqlqnd30k47rpigxszwii"))))
     (properties `((upstream-name . "gcbd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite
@@ -28548,7 +28581,7 @@ Multilevel Factor Model.\" Lin and Shin (2023) <doi:10.2139/ssrn.4295429>.")
                              r-matrix
                              r-lattice
                              r-dbi))
-    (home-page "https://cran.r-project.org/package=gcbd")
+    (home-page "https://github.com/eddelbuettel/gcbd")
     (synopsis "'GPU'/CPU Benchmarking in Debian-Based Systems")
     (description
      "GPU'/CPU Benchmarking on Debian-package based systems This package benchmarks

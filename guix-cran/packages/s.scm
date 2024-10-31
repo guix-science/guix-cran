@@ -3034,13 +3034,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svdnf
   (package
     (name "r-svdnf")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVDNF" version))
        (sha256
-        (base32 "00jrdj6shbkihvnjldhiwn976nadsxw9b7lj5ivlbbfbd2ah4x1r"))))
+        (base32 "1gzszsgn5dm7n2y4slwjb77hbf11ky2r290i3dj3nqk0mjjazlry"))))
     (properties `((upstream-name . "SVDNF")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-rcpp))
@@ -3744,25 +3744,33 @@ Research, 35(6), 892â894.")
 (define-public r-survml
   (package
     (name "r-survml")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survML" version))
        (sha256
-        (base32 "10fz2k7c3q94qb5rvhabcyxpyn1flj0xjfsf7h5pxqz6hx221hpn"))))
+        (base32 "0pqsyqz4d34p11g4s0qw6bl9qi3bfc8fvv2cafgjr9ydd0mvyiy2"))))
     (properties `((upstream-name . "survML")))
     (build-system r-build-system)
-    (propagated-inputs (list r-superlearner r-iso))
+    (propagated-inputs (list r-survival
+                             r-superlearner
+                             r-mboost
+                             r-iso
+                             r-haldensify
+                             r-gtools
+                             r-fdrtool
+                             r-dplyr
+                             r-chernoffdist))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cwolock/survML")
-    (synopsis
-     "Flexible Estimation of Conditional Survival Functions Using Machine Learning")
+    (synopsis "Tools for Flexible Survival Analysis Using Machine Learning")
     (description
-     "This package provides tools for flexible estimation of conditional survival
-functions using off-the-shelf machine learning tools.  Implements both global
-and local survival stacking.  See Wolock CJ, Gilbert PB, Simon N, and Carone M
-(2024) <doi:10.1080/10618600.2024.2304070>.")
+     "Statistical tools for analyzing time-to-event data using machine learning.
+Implements survival stacking for conditional survival estimation, standardized
+survival function estimation for current status data, and methods for
+algorithm-agnostic variable importance.  See Wolock CJ, Gilbert PB, Simon N, and
+Carone M (2024) <doi:10.1080/10618600.2024.2304070>.")
     (license license:gpl3+)))
 
 (define-public r-survmixer
@@ -10297,13 +10305,13 @@ approximation.  The models are fitted via TMB (Template Model Builder)
 (define-public r-stochvol
   (package
     (name "r-stochvol")
-    (version "3.2.4")
+    (version "3.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochvol" version))
        (sha256
-        (base32 "1cr8rn4nzdbvgjhsahyijn2kgbndiyvycbn6rjxc0x5prc99j52w"))))
+        (base32 "1adzkd7m1lpcqbqqr39v558qfwjgs23h600z0dm2p1rf4cs51f5f"))))
     (properties `((upstream-name . "stochvol")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-coda))
@@ -12930,13 +12938,13 @@ Biometris.")
 (define-public r-statgenmpp
   (package
     (name "r-statgenmpp")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenMPP" version))
        (sha256
-        (base32 "1qpf9gic9671hr6zyj56sqwx9wl51qr6gj84rfssdla718h766im"))))
+        (base32 "1if034avq7j5jxsppmxrvam0wl17bfnhmj9yzb5qv54zn6gpnr2f"))))
     (properties `((upstream-name . "statgenMPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -12944,6 +12952,7 @@ Biometris.")
                              r-statgengwas
                              r-spam
                              r-scales
+                             r-rlang
                              r-matrix
                              r-lmmsolver
                              r-gridextra
@@ -14170,13 +14179,13 @@ averaging by leave future-out validation.")
 (define-public r-standby
   (package
     (name "r-standby")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "standby" version))
        (sha256
-        (base32 "05kn866ibk0a0ncbsmfb31nhj7cfdidd8smvnpyrvw9rjs8k37hv"))))
+        (base32 "04gqgjj38z9gggfmza8aqq7hdiilszvg023a1b9f3pga3rlc54y8"))))
     (properties `((upstream-name . "standby")))
     (build-system r-build-system)
     (arguments
@@ -28782,13 +28791,13 @@ corresponding illustrative demo.")
 (define-public r-softclassval
   (package
     (name "r-softclassval")
-    (version "1.0-20160527")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "softclassval" version))
        (sha256
-        (base32 "1f5qj5sajy3dg0mgss6f9w6v5a2prcypld9jcv457bd4n4a409kr"))))
+        (base32 "0avffzxp5w6ahk8i98arky2jwr14b0iqii1iqwdgz09a2kbim93y"))))
     (properties `((upstream-name . "softclassval")))
     (build-system r-build-system)
     (propagated-inputs (list r-svunit r-arrayhelpers))
@@ -28797,7 +28806,7 @@ corresponding illustrative demo.")
     (description
      "An extension of sensitivity, specificity, positive and negative predictive value
 to continuous predicted and reference memberships in [0, 1].")
-    (license (list license:gpl2+ license:gpl3+))))
+    (license license:gpl3+)))
 
 (define-public r-softbib
   (package
@@ -29751,13 +29760,13 @@ analyses.")
 (define-public r-snpassoc
   (package
     (name "r-snpassoc")
-    (version "2.1-0")
+    (version "2.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SNPassoc" version))
        (sha256
-        (base32 "0ffsxlvdpd77sav5jjzv6vx5vwhh5gmw55ndzvf4299nnx5l2xka"))))
+        (base32 "17qlgk5s579bv1a9h19aclnf5sgc8f9x2zp61cx9id7lai4c35zf"))))
     (properties `((upstream-name . "SNPassoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31058,25 +31067,25 @@ self-explaining structure.")
 (define-public r-smof
   (package
     (name "r-smof")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smof" version))
        (sha256
-        (base32 "1029vziss8is702d384fql78mpvl047xidrmn4qji31lnak6rkkk"))))
+        (base32 "1fd6xfdxp714fg79n2mr3gb6rs9x8k3p31dca1dvf18d3776vbb9"))))
     (properties `((upstream-name . "smof")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=smof")
     (synopsis "Scoring Methodology for Ordered Factors")
     (description
      "Starting from a given object representing a fitted model (within a certain set
-of model classes) whose linear predictor includes some ordered factor(s) among
-the explanatory variables, a new model is constructed and fitted where each
-named factor is replaced by a single numeric score, suitably chosen so that the
-new variable produces a fit comparable with the standard methodology based on a
-set of polynomial contrasts.  Two variants of the present approach have been
-developed, one in each of the next references: Azzalini (2023)
+of model classes) whose (non-)linear predictor includes some ordered factor(s)
+among the explanatory variables, a new model is constructed and fitted where
+each named factor is replaced by a single numeric score, suitably chosen so that
+the new variable produces a fit comparable with the standard methodology based
+on a set of polynomial contrasts.  Two variants of the present approach have
+been developed, one in each of the next references: Azzalini (2023)
 <doi:10.1002/sta4.624>, (2024) <doi:10.48550/@code{arXiv.2406.15933>}.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -32463,13 +32472,13 @@ methodology is described in Langsrud and Heldal (2018)
 (define-public r-smacpod
   (package
     (name "r-smacpod")
-    (version "2.6")
+    (version "2.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smacpod" version))
        (sha256
-        (base32 "193mqxk17ygr518p2mvk9wnj3hnckxay9jz85ng00kz2kaykdpd6"))))
+        (base32 "0rbmibwx7gkhalkza08jbxqii8ab1gpy6pb5wmxnnrs64q4hhql7"))))
     (properties `((upstream-name . "smacpod")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
@@ -41401,6 +41410,28 @@ Pleiad() which is fast and flexible correlogram.")
 like a bivariate slider.  It allows to pick up a pair of numbers.")
     (license license:gpl3)))
 
+(define-public r-shinywizard
+  (package
+    (name "r-shinywizard")
+    (version "1.1.3.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ShinyWizard" version))
+       (sha256
+        (base32 "17lpn2fi97q92f0xxyj0z30apap4yxxq2pj609zhlphsg4hqdjr1"))))
+    (properties `((upstream-name . "ShinyWizard")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi))
+    (home-page "https://cran.r-project.org/package=ShinyWizard")
+    (synopsis
+     "An Interactive Wizard to Design, Build, and Deploy R Packages Demo Presentation")
+    (description
+     "Design, build, and deploy R packages demo presentations by an interactive
+wizard.  Set up unique title, logo and themes.  Add personalized tabs exposing
+applicability.  And deploy as a part of a package or an independent app.")
+    (license license:gpl3+)))
+
 (define-public r-shinywidgets
   (package
     (name "r-shinywidgets")
@@ -47178,13 +47209,13 @@ reference system information is maintained in a standard metadata format.")
 (define-public r-sfar
   (package
     (name "r-sfar")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfaR" version))
        (sha256
-        (base32 "1c7rnnsmdlhby765avb8134f7424qf0b8gdl5q6vz3ialalfg49d"))))
+        (base32 "0sxfg5gj22j3dr3mjb46vq16ybzz08ybd2wclwcmh05ygnfnxdrv"))))
     (properties `((upstream-name . "sfaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -61436,13 +61467,13 @@ Ying Yuan, Beibei Guo, Mark Munsell, Karen Lu, Amir Jazaeri (2016)
 (define-public r-samc
   (package
     (name "r-samc")
-    (version "3.3.0")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samc" version))
        (sha256
-        (base32 "0vr6f63phzki3wsq3c4db00wzzfbfnbym33skvxn41c3xggvl324"))))
+        (base32 "0hmsna94q373hq92nlgswclda2f1007ssip8nl1hqyrhxvfswwn5"))))
     (properties `((upstream-name . "samc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

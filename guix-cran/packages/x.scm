@@ -667,13 +667,13 @@ for examples.")
 (define-public r-xplorerr
   (package
     (name "r-xplorerr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xplorerr" version))
        (sha256
-        (base32 "0sca6nngjs6f51di4dgzx868p75bzas0msr0kgivavsv6rj5fz0r"))))
+        (base32 "0qff0ng5grigwq0185s7dl4k4xzfwwry9ssad3bd6nnvrnpggs29"))))
     (properties `((upstream-name . "xplorerr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp))
@@ -1851,16 +1851,22 @@ supporting in other packages maintained by Shichen Xie'.")
 (define-public r-xdnuts
   (package
     (name "r-xdnuts")
-    (version "1.2")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XDNUTS" version))
        (sha256
-        (base32 "1jjz64859fg9rydr1k3i4sbmnnignpa9hiacgl8yfh6x7fdxya5q"))))
+        (base32 "1ii0rpgr4c1xrzb39l94lwyk66kqprspd9mkivlbjmnx7np9c1kd"))))
     (properties `((upstream-name . "XDNUTS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-purrr r-coda))
+    (propagated-inputs (list r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-gridextra
+                             r-ggplot2
+                             r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=XDNUTS")
     (synopsis

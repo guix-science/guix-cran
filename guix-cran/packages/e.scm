@@ -455,6 +455,43 @@ the approach see Mirman, Dixon & Magnuson (2008)
 <doi:10.1016/j.jml.2007.09.002>.")
     (license license:expat)))
 
+(define-public r-eyetools
+  (package
+    (name "r-eyetools")
+    (version "0.7.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eyetools" version))
+       (sha256
+        (base32 "0mzy88x4z6gxs6qqsrcm9bnvqd1frn0dkk637dmz0nf27dnvpgqr"))))
+    (properties `((upstream-name . "eyetools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-rlang
+                             r-rdist
+                             r-pbapply
+                             r-magick
+                             r-lifecycle
+                             r-hdf5r
+                             r-glue
+                             r-ggplot2
+                             r-ggforce))
+    (native-inputs (list r-knitr))
+    (home-page "https://tombeesley.github.io/eyetools/")
+    (synopsis "Analyse Eye Data")
+    (description
+     "Enables the automation of actions across the pipeline, including initial steps
+of transforming binocular data and gap repair to event-based processing such as
+fixations, saccades, and entry/duration in Areas of Interest (AOIs).  It also
+offers visualisation of eye movement and AOI entries.  These tools take
+relatively raw (trial, time, x, and y form) data and can be used to return
+fixations, saccades, and AOI entries and time spent in AOIs.  As the tools rely
+on this basic data format, the functions can work with data from any eye
+tracking device.  Implements fixation and saccade detection using methods
+proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
+    (license license:gpl3)))
+
 (define-public r-eyeread
   (package
     (name "r-eyeread")
@@ -12486,6 +12523,38 @@ variables in observational study or mediators in experiments.  The details of
 the models are discussed in Peng (2023) <doi:10.1287/isre.2022.1113>.")
     (license license:gpl3+)))
 
+(define-public r-enderecobr
+  (package
+    (name "r-enderecobr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "enderecobr" version))
+       (sha256
+        (base32 "0w15dic7mci1nc80d7bfpgxghnqwxihpas1vmrgq2svl8z5a7dys"))))
+    (properties `((upstream-name . "enderecobr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ipeaGIT/enderecobr")
+    (synopsis
+     "Padronizador de EndereÃ§os Brasileiros (Brazilian Addresses Standardizer)")
+    (description
+     "Padroniza endereÃ§os brasileiros a partir de diferentes critÃ©rios.  Os mÃ©todos
+de padronizaÃ§Ã£o incluem apenas manipulaÃ§Ãµes bÃ¡sicas de strings, nÃ£o
+oferecendo suporte a correspondÃªncias probabilÃ­sticas entre strings.
+(Standardizes brazilian addresses using different criteria.  Standardization
+methods include only basic string manipulation, not supporting probabilistic
+matches between strings.).")
+    (license license:expat)))
+
 (define-public r-encryptr
   (package
     (name "r-encryptr")
@@ -13094,13 +13163,13 @@ designs; visual fast count estimation.")
 (define-public r-emoji
   (package
     (name "r-emoji")
-    (version "15.0")
+    (version "16.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emoji" version))
        (sha256
-        (base32 "1xscypzz17a7nrajnl7isy2nrm9cyr97l0mi9vp0daqvzgyfajba"))))
+        (base32 "0128bwg5qraa4qiapy9cmvxgq6fdjm2xl7f2291j5cg4xhpwqjw0"))))
     (properties `((upstream-name . "emoji")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-glue))
@@ -14697,13 +14766,13 @@ there are more than one batches of ELISAs.  Feng (2018) <doi:10.1101/483800>.")
 (define-public r-elhmc
   (package
     (name "r-elhmc")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elhmc" version))
        (sha256
-        (base32 "0wnw76247kxq7i4nrq2nmx4dywaanw04l8gi18k5gmqj0hq3a2dy"))))
+        (base32 "19911czg6x9kb4c514w65fhjljrfm4src6hd3zai004w72h1ysb2"))))
     (properties `((upstream-name . "elhmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-mass r-emplik))
@@ -15248,15 +15317,16 @@ the one-sided/two-sided EL tests.")
 (define-public r-el
   (package
     (name "r-el")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EL" version))
        (sha256
-        (base32 "1ygvb8m33szf2xl6fcvyqhgpj7ppn4kc9wd1fcaq4ppbvv6c17ka"))))
+        (base32 "1ci1nb9ajw2qgirmi66r06dlsmhkzjw0kgvyvgys6c286i2sad05"))))
     (properties `((upstream-name . "EL")))
     (build-system r-build-system)
+    (propagated-inputs (list r-nleqslv r-ggplot2))
     (home-page "https://cran.r-project.org/package=EL")
     (synopsis "Two-Sample Empirical Likelihood")
     (description
@@ -20641,13 +20711,13 @@ diagnostic capabilities.  Gilles R. Ducharme, Pierre Lafaye de Micheaux (2020)
 (define-public r-ecg
   (package
     (name "r-ecg")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECG" version))
        (sha256
-        (base32 "0p08zd1jqy5gqd7hb2qc60k5qk62zwsdb7l3vcbq17bhb34sdcd9"))))
+        (base32 "00gxjsy20clwab19h982hnwz2xiqi619wkfc0w3s9c8vy8215x1n"))))
     (properties `((upstream-name . "ECG")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

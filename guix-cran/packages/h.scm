@@ -6481,13 +6481,13 @@ forecasting, not for planning your flight!")
 (define-public r-hima
   (package
     (name "r-hima")
-    (version "2.2.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HIMA" version))
        (sha256
-        (base32 "0fkp232fy2g6d9i3z8cqixi0pixw1lsrm7z6mzxpjzwp31kxgpyd"))))
+        (base32 "0cvzbcwavhb38ab603wqbgmbhhgwh9jh7gx6lkps3js3rbc58f4y"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

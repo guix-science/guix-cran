@@ -480,6 +480,27 @@ analysis methods are in the refund package
 summary functions are from the spatstat package <https://spatstat.org/>.")
     (license license:expat)))
 
+(define-public r-mxcc
+  (package
+    (name "r-mxcc")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mxcc" version))
+       (sha256
+        (base32 "1dlard1w925mgppx21d8a44l1pplglk9gkr5p394dsnf9fb20x54"))))
+    (properties `((upstream-name . "mxcc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shotgroups r-chi))
+    (home-page "https://github.com/kzst/mxcc")
+    (synopsis "Maxwell Control Charts")
+    (description
+     "Computes Control limits, coefficients of control limits, various performance
+metrics and depicts control charts for monitoring Maxwell-distributed quality
+characteristics.")
+    (license license:gpl2+)))
+
 (define-public r-mwtensor
   (package
     (name "r-mwtensor")
@@ -7149,13 +7170,13 @@ thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
 (define-public r-mstest
   (package
     (name "r-mstest")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSTest" version))
        (sha256
-        (base32 "0ad28aj9pmy9vn6z9fhzvap4cbxafbk09amhgp178hvw9rdp48zf"))))
+        (base32 "0r0dnayybpiq75fkwgwvwa6bviawylqjv6j95gns5p5hw03w4j7i"))))
     (properties `((upstream-name . "MSTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -7175,7 +7196,7 @@ thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
 <doi:10.1002/jae.3950070506>, Carrasco, Hu, & Ploberger (2014)
 <doi:10.3982/ECTA8609>, Dufour & Luger (2017)
 <doi:10.1080/07474938.2017.1307548>, and Rodriguez Rondon & Dufour (2022)
-<https://grodriguezrondon.com/files/@code{RodriguezRondon_Dufour_MonteCarlo_LikelihoodRatioTest_MarkovSwitchingModels.pdf>}
+<https://grodriguezrondon.com/files/@code{RodriguezRondon_Dufour_2024_MonteCarlo_LikelihoodRatioTest_MarkovSwitchingModels_20241015.pdf>}
 that can be used to identify the number of regimes in Markov switching models.")
     (license license:gpl2+)))
 
@@ -8311,13 +8332,13 @@ Allman, Banos, and Rhodes (2019) <@code{arXiv:1908.01424>}.")
 (define-public r-mscquartets
   (package
     (name "r-mscquartets")
-    (version "2.0.1")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCquartets" version))
        (sha256
-        (base32 "1d1bgvwz88q2sipqzhiybwflixb45nc1fw9isf7xbhq18msr9vmh"))))
+        (base32 "1a2ba47lwdxzv358y10ni6nv2pc037q5ybi8gl3myl6vl6cxxfll"))))
     (properties `((upstream-name . "MSCquartets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -8343,10 +8364,12 @@ presented by Allman et al. (2020) <doi:10.1101/2020.02.13.948083>, species tree
 inference methods based on quartet distances of Rhodes (2019)
 <doi:10.1109/TCBB.2019.2917204> and Yourdkhani and Rhodes (2019)
 <doi:10.1007/s11538-020-00773-4>, the NANUQ algorithm for inference of level-1
-species networks of Allman et al. (2019) <doi:10.1186/s13015-019-0159-2>, and
-the TINNIK algorithm for inference of the tree of blobs of an arbitrary network
-of Allman et al.(2022) <doi:10.1007/s00285-022-01838-9>.  Software announcement
-by Rhodes et al. (2020) <doi:10.1093/bioinformatics/btaa868>.")
+species networks of Allman et al. (2019) <doi:10.1186/s13015-019-0159-2>, the
+TINNIK algorithm for inference of the tree of blobs of an arbitrary network of
+Allman et al.(2022) <doi:10.1007/s00285-022-01838-9>, and NANUQ+ routines for
+resolving multifurcations in the tree of blobs to cycles as in Allman et
+al.(2024) (forthcoming).  Software announcement by Rhodes et al. (2020)
+<doi:10.1093/bioinformatics/btaa868>.")
     (license license:expat)))
 
 (define-public r-mscp
@@ -9408,13 +9431,13 @@ parallel using mclapply() or future_lapply()
 (define-public r-mrg
   (package
     (name "r-mrg")
-    (version "0.2.14")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRG" version))
        (sha256
-        (base32 "07db15gpxpyq5ai5gj292kywissw42czm2l2wdnr6xczw6wjpmq8"))))
+        (base32 "1n72qcmc7fn4rbxhkdjj1nxkq82kq3rsflg64dry31misfss41qy"))))
     (properties `((upstream-name . "MRG")))
     (build-system r-build-system)
     (propagated-inputs (list r-vardpoor
@@ -13379,6 +13402,29 @@ modelling emergent mobility patterns akin to structural patterns known from the
 statistical analysis of social networks.")
     (license license:gpl3+)))
 
+(define-public r-monad
+  (package
+    (name "r-monad")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "monad" version))
+       (sha256
+        (base32 "1mwvwmpsz3miaybj4bw5www35h8xnhca91g77ax8mjjkdjrzlj0j"))))
+    (properties `((upstream-name . "monad")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s7))
+    (home-page "https://github.com/mikmart/monad")
+    (synopsis "Operators and Generics for Monads")
+    (description
+     "Compose generic monadic function pipelines with %>>% and %>-% based on
+implementing the S7 generics fmap() and bind().  Methods are provided for the
+built-in list type and the maybe class from the maybe package.  The concepts are
+modelled directly after the Monad typeclass in Haskell, but adapted for
+idiomatic use in R.")
+    (license license:expat)))
+
 (define-public r-monaco
   (package
     (name "r-monaco")
@@ -13422,13 +13468,13 @@ HTML rendering of Markdown code, and to view and resize SVG images.")
 (define-public r-momtrunc
   (package
     (name "r-momtrunc")
-    (version "6.0")
+    (version "6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MomTrunc" version))
        (sha256
-        (base32 "0nfvq6ry1c5g1xjvf2qyr5pzpnsy420m6xgj0n3aj00wi0ifdyiz"))))
+        (base32 "1ack3cs27q0zva8nf009rvs09qma2hdjzmci81c2yhmqzsl2zdjm"))))
     (properties `((upstream-name . "MomTrunc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tlrmvnmvt r-rcpparmadillo r-rcpp r-mvtnorm
@@ -14473,13 +14519,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.18.2")
+    (version "3.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "176m1r3ml30iqsk4mrhsi994ymnpqs2yk1pg0z6lk6vhxgnjrzn1"))))
+        (base32 "0rlb1qxfldfnfy7n846x53nfa0s2hiw18qajxbpznw7c1pnskhxc"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -17616,13 +17662,13 @@ factors\", published on Spatial and Spatio-temporal Epidemiology, 21, 13-23.")
 (define-public r-mm4lmm
   (package
     (name "r-mm4lmm")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MM4LMM" version))
        (sha256
-        (base32 "02a553pncv7q0zczy6rvj4avjpryv01n2mhr9cr0ir7607k1jllx"))))
+        (base32 "11kib76r7arnjgc07x55bdaig4bg0qakvcmv9v51z7l4p5db8q2y"))))
     (properties `((upstream-name . "MM4LMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -26029,13 +26075,13 @@ in US State Data., Journal of Statistical Software, 63(3), 1-25.,
 (define-public r-micromap
   (package
     (name "r-micromap")
-    (version "1.9.9")
+    (version "1.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromap" version))
        (sha256
-        (base32 "1qbc2v3h46csca88y1n820hk2j2pc67z2gwf83f2lrsa7mim00x2"))))
+        (base32 "0kyi4amnmjrgicyg2nj3aranxpzv68kr990syhj81pzsfigmishn"))))
     (properties `((upstream-name . "micromap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-rcolorbrewer r-ggplot2))
@@ -26135,13 +26181,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.9.1")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "0xi9idvlsyazqqd0zvvjy32ggvwnc9jm0997p7q4w1cix2p7nh31"))))
+        (base32 "0iqy5pnikd2b4kf39imi3d4ksl91wqy53a97qzqyxxqg1xarigpr"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -37526,13 +37572,13 @@ Cauchy distributions.")
 (define-public r-mcartest
   (package
     (name "r-mcartest")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCARtest" version))
        (sha256
-        (base32 "0vcw8ysxkv2ajiv44cf6pf8dgn6bmjzs01fsdijs29ky9467alw5"))))
+        (base32 "1j2p43jd1l5di93mf3arfnvg3jz4jzz1f917y2xbvgvgim2s2zmv"))))
     (properties `((upstream-name . "MCARtest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -37541,7 +37587,6 @@ Cauchy distributions.")
                              r-rcdd
                              r-pracma
                              r-norm
-                             r-misty
                              r-missmethods
                              r-matrix
                              r-mass
@@ -42341,13 +42386,13 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "0gai5zcxl4yizf8ipd1247lnjr75yqq72w9n54a170qqmayasxww"))))
+        (base32 "11j696xds77dhvx351vlb968p4mari21yqpsidhvcmzrpdr1kbn4"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-fastcluster))
@@ -43101,13 +43146,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.2.6")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "191jbsj9bxiblvrj469ms5dfr7xxsdsdn13ffi9p41n1hlymklpf"))))
+        (base32 "0vpgsjm8iqx1v4y5lj38bwvksljvg1q7wx80a229mcm4wg6q87w8"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph

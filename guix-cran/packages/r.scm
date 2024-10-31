@@ -502,13 +502,13 @@ estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "0nspvz7l1dppkwvljzp9ka0pz5yd7p51h7r0lhz9xrmsx3ylrr6j"))))
+        (base32 "0qib3jkxaklpvjwx1zxwshfy0aby1b6flb9z75zfa3a29q8y0zk5"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
@@ -3531,13 +3531,13 @@ by SkÃ¸ien et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
 (define-public r-rtoot
   (package
     (name "r-rtoot")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtoot" version))
        (sha256
-        (base32 "0zil9zkmgwmncw1q4nxrnz93bmjg0lfa34qbrf6a5yj63x4dmwar"))))
+        (base32 "1fdr1v7v7828gfd9mh0br2fzqx6p7rpy2avr58brli4i3lq25rgx"))))
     (properties `((upstream-name . "rtoot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -5891,13 +5891,13 @@ format.  See rsppfp website for more information, documentation an examples.")
 (define-public r-rspm
   (package
     (name "r-rspm")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rspm" version))
        (sha256
-        (base32 "0jr4zqz0jw8i5zvp8sf5irsz08sbcs8d8jdvqlda9ajv42qmqhna"))))
+        (base32 "15ypr6r4kxi73dg3h6kssn5r3sq8q1fc2fxpj28h69qx9d9yryhl"))))
     (properties `((upstream-name . "rspm")))
     (build-system r-build-system)
     (home-page "https://cran4linux.github.io/rspm/")
@@ -9172,13 +9172,13 @@ Partial Least Squares (PLS), and Random Forest algorithms.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqPen" version))
        (sha256
-        (base32 "112x6y6ykmd1isw19xdpzn8alf5llz6jp7l5pfi6vp22w27z852w"))))
+        (base32 "1fdl7s76kii0vwy69506h2nnjnq079zw8wjkrx41w3hg10pmiipd"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -10188,13 +10188,13 @@ performance.  For more information see, Markowitz, H.M. (1952),
 (define-public r-rpolyhedra
   (package
     (name "r-rpolyhedra")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rpolyhedra" version))
        (sha256
-        (base32 "00wmxk8j89lyzbb7fws4g8znnqbw5dh64vqhxjg5rxjdpr3vibl8"))))
+        (base32 "01rw6lw7krhv2k9fnr7sr5nrd4gbmz8zza6q5fpd2ma9bhqvnlj2"))))
     (properties `((upstream-name . "Rpolyhedra")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -10202,7 +10202,7 @@ performance.  For more information see, Markowitz, H.M. (1952),
                              r-rgl
                              r-r6
                              r-lgr
-                             r-git2r
+                             r-jsonlite
                              r-geometry
                              r-digest))
     (native-inputs (list r-knitr))
@@ -18634,13 +18634,13 @@ existing @code{MiniZinc} models and also create their own models.")
 (define-public r-rminer
   (package
     (name "r-rminer")
-    (version "1.4.7")
+    (version "1.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rminer" version))
        (sha256
-        (base32 "12dp2nakdbqjqjwq25vy26lhc19d9hh8mmzlxf0r3j140f8vv44y"))))
+        (base32 "1z2nfnsj8k066amawnydhhmjzhni4w6hjw7xzhvikfdwzxhq2kjx"))))
     (properties `((upstream-name . "rminer")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -18664,19 +18664,20 @@ existing @code{MiniZinc} models and also create their own models.")
     (description
      "Facilitates the use of data mining algorithms in classification and regression
 (including time series forecasting) tasks by presenting a short and coherent set
-of functions.  Versions: 1.4.7 improved Importance function and examples, minor
-error fixes; 1.4.6 / 1.4.5 / 1.4.4 new automated machine learning
-(@code{AutoML}) and ensembles, via improved fit(), mining() and mparheuristic()
-functions, and new categorical preprocessing, via improved delevels() function;
-1.4.3 new metrics (e.g., macro precision, explained variance), new \"lssvm\" model
-and improved mparheuristic() function; 1.4.2 new \"NMAE\" metric, \"xgboost\" and
-\"cv.glmnet\" models (16 classification and 18 regression models); 1.4.1 new
-tutorial and more robust version; 1.4 - new classification and regression
-models, with a total of 14 classification and 15 regression methods, including:
-Decision Trees, Neural Networks, Support Vector Machines, Random Forests,
-Bagging and Boosting; 1.3 and 1.3.1 - new classification and regression metrics;
-1.2 - new input importance methods via improved Importance() function; 1.0 -
-first version.")
+of functions.  Versions: 1.4.8 improved help, several warning and error code
+fixes (more stable version, all examples run correctly); 1.4.7 improved
+Importance function and examples, minor error fixes; 1.4.6 / 1.4.5 / 1.4.4 new
+automated machine learning (@code{AutoML}) and ensembles, via improved fit(),
+mining() and mparheuristic() functions, and new categorical preprocessing, via
+improved delevels() function; 1.4.3 new metrics (e.g., macro precision,
+explained variance), new \"lssvm\" model and improved mparheuristic() function;
+1.4.2 new \"NMAE\" metric, \"xgboost\" and \"cv.glmnet\" models (16 classification and
+18 regression models); 1.4.1 new tutorial and more robust version; 1.4 - new
+classification and regression models, with a total of 14 classification and 15
+regression methods, including: Decision Trees, Neural Networks, Support Vector
+Machines, Random Forests, Bagging and Boosting; 1.3 and 1.3.1 - new
+classification and regression metrics; 1.2 - new input importance methods via
+improved Importance() function; 1.0 - first version.")
     (license license:gpl2)))
 
 (define-public r-rmidas
@@ -23793,13 +23794,13 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "0rrnrgszsrwpp9dz6n9jsp60ii09w3l032galg3cl33b245mgfb5"))))
+        (base32 "1hzgm5fip9ircf2nzr5zmyw7vjr4nl7i13wyabh7p2qivcb93y6w"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnaturalearthdata r-rnaturalearth r-rlang
@@ -33228,13 +33229,13 @@ update the original object when they are changed.")
 (define-public r-refseqr
   (package
     (name "r-refseqr")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refseqR" version))
        (sha256
-        (base32 "09zh4fq232arcykaflgjy2bmjikfqhrqbwfy6pdhj48ixwxbwdbf"))))
+        (base32 "1i3gbyi5a49a9pz99asb5gpi7zvws9cxkx3lyhhzy2rwwv4cvaqr"))))
     (properties `((upstream-name . "refseqR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rentrez r-iranges r-biostrings))
@@ -34457,6 +34458,31 @@ comprehensive taxonomic, geographic, and conservation information about Peru's
 endemic plant species.  It includes functions to verify species inclusion,
 obtain updated taxonomic details, and explore the dataset.")
     (license license:expat)))
+
+(define-public r-redatamx
+  (package
+    (name "r-redatamx")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "redatamx" version))
+       (sha256
+        (base32 "17fpbxl658rkccq969hjc8psqzn7qqp5c12x1x1dllimr1pz3syr"))))
+    (properties `((upstream-name . "redatamx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://cran.r-project.org/package=redatamx")
+    (synopsis "R Interface to 'Redatam' Library")
+    (description
+     "This package provides an API to work with Redatam (see <https://redatam.org>)
+databases in both formats: RXDB (new format) and DICX (old format) and running
+Redatam programs written in SPC language.  It's a wrapper around Redatam core
+and provides functions to open/close a database
+(redatam_open()/redatam_close()), list entities and variables from the database
+(redatam_entities(), redatam_variables()) and execute a SPC program and gets the
+results as data frames (redatam_query(), redatam_run()).")
+    (license license:gpl3+)))
 
 (define-public r-redatam
   (package
@@ -36788,13 +36814,13 @@ into cells.  Save the final table output as a static image or interactive file."
 (define-public r-reactable-extras
   (package
     (name "r-reactable-extras")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reactable.extras" version))
        (sha256
-        (base32 "16cfldbfcz34jp0kfxiaz8l49ri2s9fr1r9kissqzs0xzjrp78in"))))
+        (base32 "06027fyv3mp8vs5dv8ac590za65kl46ny2ibkfhimcxpz8l34izp"))))
     (properties `((upstream-name . "reactable.extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -37777,16 +37803,16 @@ for Guardian articles and retrieve both the content and metadata.")
 (define-public r-rdiagnosislist
   (package
     (name "r-rdiagnosislist")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdiagnosislist" version))
        (sha256
-        (base32 "0jnjqwqvaj6brgpmd9xj04ax5dbwqpbb89hhn1m2bd3v9673k1v3"))))
+        (base32 "1b4gj0m5m3av6p16dys69sb2cw679js9y2vwxrylif8z90p8mssh"))))
     (properties `((upstream-name . "Rdiagnosislist")))
     (build-system r-build-system)
-    (propagated-inputs (list r-data-table r-bit64))
+    (propagated-inputs (list r-readxl r-data-table r-bit64))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Rdiagnosislist")
     (synopsis "Manipulate SNOMED CT Diagnosis Lists")
@@ -41085,13 +41111,13 @@ ha desarrollado como un Plugin del programa R-Commander.")
 (define-public r-rcmdrplugin-doe
   (package
     (name "r-rcmdrplugin-doe")
-    (version "0.12-5")
+    (version "0.12-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DoE" version))
        (sha256
-        (base32 "0nsaj3wis8fn73spyv90j0magcl3lq4pznfxzdr62rg8w7likqx7"))))
+        (base32 "0q9sihnaibpyh115rysg1j55vlg6wnvmll44qcz76cbjj4pk1xhh"))))
     (properties `((upstream-name . "RcmdrPlugin.DoE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcmdrmisc r-rcmdr r-frf2 r-doe-wrapper
@@ -46499,13 +46525,13 @@ diversity maps on hexagonal or square grids.  Valcu et al.(2012)
 (define-public r-rangebuilder
   (package
     (name "r-rangebuilder")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rangeBuilder" version))
        (sha256
-        (base32 "1r82rmmfwbfl2lxcsnl9xwyr2932jv43cjlvlihi5172irpfgvpw"))))
+        (base32 "1g4vd20926rbjvr31wfhydfv0jplmyjs55gdjca7fg3wnskvvmsb"))))
     (properties `((upstream-name . "rangeBuilder")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

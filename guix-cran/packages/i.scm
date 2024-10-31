@@ -16041,6 +16041,36 @@ design.  Zhou, Q., Cai, J., and Zhou, H. (2018) <doi:10.1111/biom.12744>; Zhou,
 Q., Zhou, H., and Cai, J. (2017) <doi:10.1093/biomet/asw067>.")
     (license license:gpl2)))
 
+(define-public r-icmstate
+  (package
+    (name "r-icmstate")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icmstate" version))
+       (sha256
+        (base32 "07s04wxd8s49scxkcg3dlri8kvqni0y8f953idhnj026yhr86f84"))))
+    (properties `((upstream-name . "icmstate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp
+                             r-prodlim
+                             r-mstate
+                             r-msm
+                             r-igraph
+                             r-ggplot2
+                             r-desolve
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=icmstate")
+    (synopsis "Interval Censored Multi-State Models")
+    (description
+     "Allows for the non-parametric estimation of transition intensities in
+interval-censored multi-state models using the approach of Gomon and Putter
+(2024) <doi:10.48550/@code{arXiv.2409.07176>} or Gu et al. (2023)
+<doi:10.1093/biomet/asad073>.")
+    (license license:gpl2+)))
+
 (define-public r-icmm
   (package
     (name "r-icmm")

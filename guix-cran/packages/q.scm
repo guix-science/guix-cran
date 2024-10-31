@@ -1065,13 +1065,13 @@ Electronic Journal of Statistics.  13 (2) 4849 - 4883 <doi:10.1214/19-EJS1640>."
 (define-public r-quaxnat
   (package
     (name "r-quaxnat")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quaxnat" version))
        (sha256
-        (base32 "0indrll8yqj95lx3f30sic2w5730r5my44sqn59mwhgvdh5rw693"))))
+        (base32 "0aicg3b840rai7m6hkm5kanzj1zfq5qx9n2pkdxz4m205gy44xdj"))))
     (properties `((upstream-name . "quaxnat")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -1082,7 +1082,7 @@ Electronic Journal of Statistics.  13 (2) 4849 - 4883 <doi:10.1214/19-EJS1640>."
 species using regeneration densities and dispersal distances to nearest seed
 trees.  A quantile regression is implemented to determine the dispersal
 potential.  Spatial prediction can be used to identify natural regeneration
-potential for forest restoration as described in Axer et al. (2021)
+potential for forest restoration as described in Axer et al (2021)
 <doi:10.1016/j.foreco.2020.118802>.")
     (license license:gpl2+)))
 
@@ -2127,45 +2127,40 @@ equation.")
 (define-public r-quadratik
   (package
     (name "r-quadratik")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuadratiK" version))
        (sha256
-        (base32 "0pjg0j0hb5v6gxlg4lv1ddrwbrvp91ah3rxm6y7mjclg3ff47g16"))))
+        (base32 "1mpz90vww1vp0as70yfyv6p9sg9gnggzs4c5qld3ig4krzal7d3j"))))
     (properties `((upstream-name . "QuadratiK")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tinflex
-                             r-sn
+    (propagated-inputs (list r-sn
+                             r-scatterplot3d
                              r-rrcov
                              r-rlecuyer
-                             r-rgl
                              r-rcppeigen
                              r-rcpp
                              r-mvtnorm
-                             r-movmf
                              r-moments
-                             r-mclust
                              r-ggpubr
-                             r-ggpp
                              r-ggplot2
                              r-foreach
-                             r-doparallel
-                             r-clusterrepro
-                             r-cluster))
+                             r-doparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=QuadratiK")
+    (home-page "https://CRAN.R-project.org/package=QuadratiK")
     (synopsis
      "Collection of Methods Constructed using Kernel-Based Quadratic Distances")
     (description
-     "It includes test for multivariate normality, test for uniformity on the Sphere,
-non-parametric two- and k-sample tests, random generation of points from the
-Poisson kernel-based density and clustering algorithm for spherical data.  For
-more information see Saraceno, G., Markatou, M., Mukhopadhyay, R., Golzy, M.
-(2024) <doi:10.48550/@code{arXiv.2402.02290>}, Ding, Y., Markatou, M., Saraceno,
-G. (2023) <doi:10.5705/ss.202022.0347>, and Golzy, M., Markatou, M. (2020)
-<doi:10.1080/10618600.2020.1740713>.")
+     "It includes test for multivariate normality, test for uniformity on the
+d-dimensional Sphere, non-parametric two- and k-sample tests, random generation
+of points from the Poisson kernel-based density and clustering algorithm for
+spherical data.  For more information see Saraceno G., Markatou M., Mukhopadhyay
+R. and Golzy M. (2024) <doi:10.48550/@code{arXiv.2402.02290>} Markatou, M. and
+Saraceno, G. (2024) <doi:10.48550/@code{arXiv.2407.16374>}, Ding, Y., Markatou,
+M. and Saraceno, G. (2023) <doi:10.5705/ss.202022.0347>, and Golzy, M. and
+Markatou, M. (2020) <doi:10.1080/10618600.2020.1740713>.")
     (license license:gpl3+)))
 
 (define-public r-quadraticsd

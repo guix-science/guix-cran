@@ -18,7 +18,6 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages graphviz)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages gettext)
@@ -1934,6 +1933,47 @@ implements a variant of the p-value based selection model of Hedges (1992)
 implements the mixture of truncated normals model for p-hacking described in
 Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
     (license license:gpl3)))
+
+(define-public r-publicworksfinanceit
+  (package
+    (name "r-publicworksfinanceit")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PublicWorksFinanceIT" version))
+       (sha256
+        (base32 "1b4shyr3snh5ghx7q7h4dfv0vhrl89qjlcnihvjz0axg1b7zqmxn"))))
+    (properties `((upstream-name . "PublicWorksFinanceIT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-spdep
+                             r-sf
+                             r-scales
+                             r-rvest
+                             r-rlang
+                             r-plotly
+                             r-magrittr
+                             r-lubridate
+                             r-leaflet
+                             r-knitr
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=PublicWorksFinanceIT")
+    (synopsis
+     "Soil Defense Investments in Italy: Data Retrieval, Analysis, Visualization")
+    (description
+     "Facilitates the retrieval and analysis of financial data related to public works
+in Italy, focusing on soil defense investments.  It extracts data from
+@code{OpenCoesione}', @code{OpenBDAP}', and the @code{ReNDiS} database,
+eliminating the need for direct access to these platforms.  The package boasts a
+user-friendly design, featuring real time updates and a set of functions
+tailored for data retrieval and visualization.  See the webpages for further
+information <http://www.rendis.isprambiente.it/rendisweb/>,
+<https://opencoesione.gov.it/en/>, and <https://bdap-opendata.rgs.mef.gov.it/>.")
+    (license license:gpl3+)))
 
 (define-public r-publicationbias
   (package
@@ -5245,6 +5285,32 @@ al. (2014) <doi:10.1038/nbt.2999>) and regular bottom-up proteomics experiments.
 Proteome Discover can be easily used due to flexibility of functions.")
     (license license:expat)))
 
+(define-public r-protrackr2
+  (package
+    (name "r-protrackr2")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProTrackR2" version))
+       (sha256
+        (base32 "0mz2q6h5ayn4nzyck4gzqs3cc8lmzik4pr0m1q6zyrki0i9x9yc9"))))
+    (properties `((upstream-name . "ProTrackR2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11 r-audio))
+    (native-inputs (list r-knitr))
+    (home-page "https://pepijn-devries.github.io/ProTrackR2/")
+    (synopsis "Manipulate and Play 'ProTracker' Modules")
+    (description
+     "@code{ProTracker} is a popular music tracker to sequence music on a Commodore
+Amiga machine.  This package offers the opportunity to import, export,
+manipulate and play @code{ProTracker} module files.  Even though the file format
+could be considered archaic, it still remains popular to this date.  This
+package intends to contribute to this popularity and therewith keeping the
+legacy of @code{ProTracker} and the Commodore Amiga alive.  This package is the
+successor of @code{ProTrackR} providing better performance.")
+    (license license:gpl3+)))
+
 (define-public r-protrackr
   (package
     (name "r-protrackr")
@@ -6943,16 +7009,16 @@ the Rprof and pprof file formats.")
 (define-public r-proffer
   (package
     (name "r-proffer")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proffer" version))
        (sha256
-        (base32 "1qg3yx6dhlsvvqdvcbypngfjb59zja0k32d824vgphsciz1bycia"))))
+        (base32 "12qh4k9zm2a2fv6hb66phl13qx7mp9xzzrzmhsbhzf4xpjm519d7"))))
     (properties `((upstream-name . "proffer")))
     (build-system r-build-system)
-    (inputs (list graphviz))
+    (inputs (list))
     (propagated-inputs (list r-withr
                              r-rprotobuf
                              r-profile
@@ -8842,6 +8908,36 @@ datasets are made available via drivers and connection functions.  Additionally
 we provide several functions and examples to facilitate the merging and
 aggregation of these tabular inputs.")
     (license (license:fsdg-compatible "Apache License"))))
+
+(define-public r-primarycensored
+  (package
+    (name "r-primarycensored")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "primarycensored" version))
+       (sha256
+        (base32 "133hk9z7m5zarky18arjdm6b6himjb54x3d41yddcj4kxkl4iz7a"))))
+    (properties `((upstream-name . "primarycensored")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma))
+    (native-inputs (list r-knitr))
+    (home-page "https://primarycensored.epinowcast.org")
+    (synopsis "Primary Event Censored Distributions")
+    (description
+     "This package provides functions for working with primary event censored
+distributions and Stan implementations for use in Bayesian modeling.  Primary
+event censored distributions are useful for modeling delayed reporting scenarios
+in epidemiology and other fields (Charniga et al. (2024)
+<doi:10.48550/@code{arXiv.2405.08841>}).  It also provides support for arbitrary
+delay distributions, a range of common primary distributions, and allows for
+truncation and secondary event censoring to be accounted for (Park et al. (2024)
+<doi:10.1101/2024.01.12.24301247>).  A subset of common distributions also have
+analytical solutions implemented, allowing for faster computation.  In addition,
+it provides multiple methods for fitting primary event censored distributions to
+data via optional dependencies.")
+    (license license:expat)))
 
 (define-public r-primal
   (package
@@ -23481,13 +23577,13 @@ The parametric bootstrap and Kenward-Roger-type adjustment by Noma et al. (2022)
 (define-public r-pingr
   (package
     (name "r-pingr")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pingr" version))
        (sha256
-        (base32 "0qyqmv3anrdh9416rnq1l0mnhdwfl3x603rcg8kfwgwcb2zc0a9w"))))
+        (base32 "0wq7xaawbks12a1089920p4s9xgrywcicy3096gh1zg3wcmkr92l"))))
     (properties `((upstream-name . "pingr")))
     (build-system r-build-system)
     (propagated-inputs (list r-processx))
@@ -23906,6 +24002,34 @@ methodology featured in this package is based on Flores (2021)
 \"A new class of information criteria for improved prediction in the presence of
 training/validation data heterogeneity\".")
     (license license:gpl3+)))
+
+(define-public r-picohdr
+  (package
+    (name "r-picohdr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "picohdr" version))
+       (sha256
+        (base32 "1lx6x0crxbiz8pp7rm4zk263q7lxjaw6dsppkax90x57ll0xzcic"))))
+    (properties `((upstream-name . "picohdr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ctypesio))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/picohdr")
+    (synopsis "Read, Write and Manipulate High Dynamic Range Images")
+    (description
+     "High Dynamic Range (HDR) images support a large range in luminosity between the
+lightest and darkest regions of an image.  To capture this range, data in HDR
+images is often stored as floating point numbers and in formats that capture
+more data and channels than standard image types.  This package supports reading
+and writing two types of HDR images; PFM (Portable Float Map) and @code{OpenEXR}
+images.  HDR images can be converted to lower dynamic ranges (for viewing) using
+tone-mapping.  A number of tone-mapping algorithms are included which are based
+on Reinhard (2002) \"Photographic tone reproduction for digital images\"
+<doi:10.1145/566654.566575>.")
+    (license license:expat)))
 
 (define-public r-picker
   (package
@@ -29312,32 +29436,42 @@ level) tables in Latex, and plotting by factor.")
 (define-public r-pepbvs
   (package
     (name "r-pepbvs")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PEPBVS" version))
        (sha256
-        (base32 "1v0pl5jj2bh5iq45xgs35wzfz5hdklsnb72j4rnipy3qbm7zzliy"))))
+        (base32 "1wsxrana0560qh2nh7n26kq6xr3s521y863k5q6l5zdnrazhpihw"))))
     (properties `((upstream-name . "PEPBVS")))
     (build-system r-build-system)
     (inputs (list gsl))
-    (propagated-inputs (list r-rcppgsl r-rcpparmadillo r-rcpp r-matrix))
+    (propagated-inputs (list r-rcppgsl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-mcmcse
+                             r-matrix
+                             r-bayesvarsel
+                             r-bas))
     (home-page "https://cran.r-project.org/package=PEPBVS")
     (synopsis
      "Bayesian Variable Selection using Power-Expected-Posterior Prior")
     (description
      "This package performs Bayesian variable selection under normal linear models for
-the data with the model parameters following as prior either the
+the data with the model parameters following as prior distributions either the
 power-expected-posterior (PEP) or the intrinsic (a special case of the former)
 (Fouskakis and Ntzoufras (2022) <doi: 10.1214/21-BA1288>, Fouskakis and
 Ntzoufras (2020) <doi: 10.3390/econometrics8020017>).  The prior distribution on
-model space is the uniform on model space or the uniform on model dimension (a
-special case of the beta-binomial prior).  The selection can be done either with
-full enumeration of all possible models or using the Markov Chain Monte Carlo
-Model Composition (MC3) algorithm (Madigan and York (1995) <doi:
-10.2307/1403615>).  Complementary functions for making predictions, as well as
-plotting and printing the results are also provided.")
+model space is the uniform over all models or the uniform on model dimension (a
+special case of the beta-binomial prior).  The selection is performed by either
+implementing a full enumeration and evaluation of all possible models or using
+the Markov Chain Monte Carlo Model Composition (MC3) algorithm (Madigan and York
+(1995) <doi: 10.2307/1403615>).  Complementary functions for hypothesis testing,
+estimation and predictions under Bayesian model averaging, as well as, plotting
+and printing the results are also provided.  The results can be compared to the
+ones obtained under other well-known priors on model parameters and model
+spaces.")
     (license license:gpl2+)))
 
 (define-public r-pepa
@@ -31274,13 +31408,13 @@ contain proper extension.")
 (define-public r-pdp
   (package
     (name "r-pdp")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdp" version))
        (sha256
-        (base32 "0v1pr8fvx1z11kci6rna5bd8bk280p6lqrpxr3akflspbmpbcgg2"))))
+        (base32 "06xbjk8ynavfpcrkxm6r60smk465wxqm6j1xflwgpcgp81rzsfhl"))))
     (properties `((upstream-name . "pdp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lattice r-ggplot2 r-foreach))
@@ -33613,13 +33747,13 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
 (define-public r-pbdslap
   (package
     (name "r-pbdslap")
-    (version "0.3-5")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pbdSLAP" version))
        (sha256
-        (base32 "0l6w1kxn0clqi36lqg494d71dd3rv77v94nzqn0rp7zv33n63cnp"))))
+        (base32 "02cgwzb8nssql4azbif3cnmxf9wbdz2zy4g6yb29rvzw1gwg7ffl"))))
     (properties `((upstream-name . "pbdSLAP")))
     (build-system r-build-system)
     (inputs (list))

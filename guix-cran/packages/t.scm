@@ -11807,6 +11807,28 @@ illustrated the superior performance in terms of various criteria (e.g. mixing
 and integrated auto-correlation time).")
     (license license:gpl2)))
 
+(define-public r-tmti
+  (package
+    (name "r-tmti")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TMTI" version))
+       (sha256
+        (base32 "1mn0nh03w288zviikbacqasj7pv0j16svbklnwxccvksdvdcc1lw"))))
+    (properties `((upstream-name . "TMTI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=TMTI")
+    (synopsis "Too Many, Too Improbable (TMTI) Test Procedures")
+    (description
+     "This package provides methods for computing joint tests, controlling the
+Familywise Error Rate (FWER) and getting lower bounds on the number of false
+hypotheses in a set.  The methods implemented here are described in Mogensen and
+Markussen (2021) <doi:10.48550/@code{arXiv.2108.04731>}.")
+    (license license:expat)))
+
 (define-public r-tmt
   (package
     (name "r-tmt")
@@ -12459,26 +12481,24 @@ and the transformed space of the variables.")
 (define-public r-tlic
   (package
     (name "r-tlic")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TLIC" version))
        (sha256
-        (base32 "0dddz4zdhvg238ycaa7zn6xn383ydd4ay8va6qr1wlsh3ggy7myz"))))
+        (base32 "0li3qh0jn9sw8p0cq8wdr529nsldv0ff22yrbc5l9g0jbf0h6zby"))))
     (properties `((upstream-name . "TLIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-laplacesdemon r-fbasics))
     (home-page "https://cran.r-project.org/package=TLIC")
     (synopsis "The LIC for T Distribution Regression Analysis")
     (description
-     "This comprehensive toolkit for T-distribution regression, known as the analysis
-of \"TLIC\" (T-distribution Linear regression Integrated Corrector), adopts
-ordinary least squares method and assumes that errors follow a T-distribution.
-This approach gives it an advantage when dealing with small samples or
-non-normal error distributions, and can provide more robust parameter estimation
-and hypothesis testing results.The philosophy of the package is described in Guo
-G. (2020) <doi:10.1080/02664763.2022.2053949>.")
+     "This comprehensive toolkit for T-distributed regression is designated as \"TLIC\"
+(The LIC for T Distribution Regression Analysis) analysis.  It is predicated on
+the assumption that the error term adheres to a T-distribution.  The philosophy
+of the package is described in Guo G. (2020)
+<doi:10.1080/02664763.2022.2053949>.")
     (license license:expat)))
 
 (define-public r-tldr
@@ -24114,13 +24134,13 @@ Wadhwa et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdapplied
   (package
     (name "r-tdapplied")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDApplied" version))
        (sha256
-        (base32 "112zkkmi2677kyxkrk2669xdcr7g3f7saqa4iy2qi8k36all87l7"))))
+        (base32 "1l6rvx5jfyapmkrl8b02xdkwbpsf975zi1phqqivnvw2l5dwzfwg"))))
     (properties `((upstream-name . "TDApplied")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdist
@@ -25681,6 +25701,39 @@ Vazquez, D.P. (2021) Quantitative prediction of interactions in bipartite
 networks based on traits, abundances, and phylogeny.  The American Naturalist,
 in press.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-taplock
+  (package
+    (name "r-taplock")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tapLock" version))
+       (sha256
+        (base32 "0ks57nwdhxgvc81a312m0jvqqj3xjd7f72szn4pnfj3qn44x2z6s"))))
+    (properties `((upstream-name . "tapLock")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tower
+                             r-stringr
+                             r-shiny
+                             r-purrr
+                             r-promises
+                             r-lubridate
+                             r-jose
+                             r-httr2
+                             r-glue
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ixpantia/tapLock")
+    (synopsis "Seamless Single Sign-on for 'shiny'")
+    (description
+     "Swift and seamless Single Sign-On (SSO) integration.  Designed for effortless
+compatibility with popular Single Sign-On providers like Google and Microsoft,
+it streamlines authentication, enhancing both user experience and application
+security.  Elevate your shiny applications for a simplified, unified, and secure
+authentication process.")
+    (license license:expat)))
 
 (define-public r-tapkee
   (package

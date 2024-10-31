@@ -3164,13 +3164,13 @@ monotone incremental forward stagewise method.")
 (define-public r-ordinalforest
   (package
     (name "r-ordinalforest")
-    (version "2.4-3")
+    (version "2.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalForest" version))
        (sha256
-        (base32 "06blmwmn42dv6sri3j3473arrql5rihdlp7kgh56b2w1j2wdqq7s"))))
+        (base32 "105pblsn182qdbb7qvr6izri19vlxlc53h3kl68h56mcnpmwiqi4"))))
     (properties `((upstream-name . "ordinalForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-verification r-rcpp r-nnet r-combinat))
@@ -11402,13 +11402,13 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
 (define-public r-occcite
   (package
     (name "r-occcite")
-    (version "0.5.8")
+    (version "0.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occCite" version))
        (sha256
-        (base32 "0147c89yppj4mq3s2r49bwl64kw7nlsa81p7ljhiqzh80scq8fg3"))))
+        (base32 "17msmwh1rlyf4a2jkz36856bmvy2v636jmg3f8c4xingmfgdi94i"))))
     (properties `((upstream-name . "occCite")))
     (build-system r-build-system)
     (propagated-inputs (list r-waffle
@@ -11418,6 +11418,7 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
                              r-rpostgresql
                              r-rlang
                              r-rgbif
+                             r-refmanager
                              r-rcolorbrewer
                              r-lubridate
                              r-leaflet
@@ -11427,7 +11428,8 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
                              r-dbi
                              r-curl
                              r-bien
-                             r-bib2df))
+                             r-bib2df
+                             r-ape))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://docs.ropensci.org/occCite/")
     (synopsis "Querying and Managing Large Biodiversity Occurrence Datasets")

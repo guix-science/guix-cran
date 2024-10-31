@@ -2065,13 +2065,13 @@ user as possible.")
 (define-public r-autometric
   (package
     (name "r-autometric")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autometric" version))
        (sha256
-        (base32 "02xmxp2cvvzhvgwcq2vsf89yylndsnvcm25vhrkamhr2j9ah1hr3"))))
+        (base32 "0ba4ci7g0fa7596812l4aw7lal3m7n9mjc4dh1dysjib5p3smvhc"))))
     (properties `((upstream-name . "autometric")))
     (build-system r-build-system)
     (home-page "https://wlandau.github.io/autometric/")
@@ -18568,13 +18568,13 @@ into account variable selection.")
 (define-public r-adverseevents
   (package
     (name "r-adverseevents")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdverseEvents" version))
        (sha256
-        (base32 "01dcfzgsxm12cf6j4d4nn3pwpq0dl78n3aiaijxll7qb0paw5qgh"))))
+        (base32 "15nk1szfhh9j85qkl4ra9ssr1xazrc65kg27j7kjg9kdvrv5pidv"))))
     (properties `((upstream-name . "AdverseEvents")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

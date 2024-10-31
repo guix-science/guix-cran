@@ -1944,13 +1944,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "06scj60z277mhilhsq2b9mlcbryrwhqvph1rkd2rgpq231qarj3s"))))
+        (base32 "098q3ickj8v3md98h66kffqc64adxf6w51fivn3qn76wnffy650y"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -12600,28 +12600,28 @@ et al. (2023) <doi:10.18637/jss.v106.i11>.")
 (define-public r-disaggregatets
   (package
     (name "r-disaggregatets")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DisaggregateTS" version))
        (sha256
-        (base32 "17d9mvznxysyybmnl5yz0sx15dxxry4vxpafp35s3sdlarg5jv39"))))
+        (base32 "0xl32kjss4cr6wk255pywvp06yjk1ma2iy9r8d3r63l0k3g1x7cb"))))
     (properties `((upstream-name . "DisaggregateTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-withr r-rdpack r-matrix r-lars))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DisaggregateTS")
     (synopsis "High-Dimensional Temporal Disaggregation")
     (description
-     "First - Generates (potentially high-dimensional) high-frequency and
-low-frequency series for simulation studies in temporal disaggregation; Second -
-a toolkit utilizing temporal disaggregation and benchmarking techniques with a
-low-dimensional matrix of indicator series previously proposed in Dagum and
-Cholette (2006, ISBN:978-0-387-35439-2) ; and Third - novel techniques proposed
-by Mosley, Gibberd and Eckley (2021) <@code{arXiv:2108.05783>} for
-disaggregating low-frequency series in the presence of high-dimensional
-indicator matrices.")
-    (license license:gpl3+)))
+     "This package provides tools for temporal disaggregation, including: (1)
+High-dimensional and low-dimensional series generation for simulation studies;
+(2) A toolkit for temporal disaggregation and benchmarking using low-dimensional
+indicator series as proposed by Dagum and Cholette (2006,
+ISBN:978-0-387-35439-2); (3) Novel techniques by Mosley, Gibberd, and Eckley
+(2022, <doi:10.1111/rssa.12952>) for disaggregating low-frequency series in the
+presence of high-dimensional indicator matrices.")
+    (license license:gpl3)))
 
 (define-public r-disaggr
   (package
@@ -12826,13 +12826,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "6.8")
+    (version "6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "0ncr8ihzmmk3yw5393mlj3k536nqx1wm2vl045m4drjp1845dqdy"))))
+        (base32 "111nk0fc1x9mwmzm6mpg96p95pr8z3v0sgyv860sw89xydshj2wn"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -12854,7 +12854,7 @@ massive data, with millions of observations) analysis.  Hypothesis testing,
 discriminant and regression analysis, MLE of distributions and more are
 included.  The standard textbook for such data is the \"Directional Statistics\"
 by Mardia, K. V. and Jupp, P. E. (2000).  Other references include a) Phillip J.
-Paine, Simon P. Preston Michail Tsagris and Andrew T. A. Wood (2018). \"An
+Paine, Simon P. Preston, Michail Tsagris and Andrew T. A. Wood (2018). \"An
 elliptically symmetric angular Gaussian distribution\".  Statistics and Computing
 28(3): 689-697. <doi:10.1007/s11222-017-9756-4>.  b) Tsagris M. and Alenazi A.
 (2019). \"Comparison of discriminant analysis methods on the sphere\".
@@ -12865,15 +12865,15 @@ with general covariates and anisotropic errors\".  Statistics and Computing
 30(1): 153--165. <doi:10.1007/s11222-019-09872-2>.  d) Tsagris M. and Alenazi A.
 (2024). \"An investigation of hypothesis testing procedures for circular and
 spherical mean vectors\".  Communications in Statistics-Simulation and
-Computation, 53(3): 1387--1408. <doi:10.1080/03610918.2022.2045499>.  e) Tsagris
-M. and Alzeley O. (2023). \"Circular and spherical projected Cauchy
-distributions: A Novel Framework for Circular and Directional Data Modeling\".
-<doi:10.48550/@code{arXiv.2302.02468>}.  f) Zehao Yu and Xianzheng Huang (2024).
- A new parameterization for elliptically symmetric angular Gaussian
-distributions of arbitrary dimension.  Electronic Journal of Statistics, 18(1):
-301--334. <doi:10.1214/23-EJS2210>.  g) Tsagris M. (2024). \"Directional data
-analysis using the spherical Cauchy and the Poisson-kernel based distribution\".
-<doi:10.48550/@code{arXiv.2409.03292>}.")
+Computation, 53(3): 1387--1408. <doi:10.1080/03610918.2022.2045499>.  e) Zehao
+Yu and Xianzheng Huang (2024).  A new parameterization for elliptically
+symmetric angular Gaussian distributions of arbitrary dimension.  Electronic
+Journal of Statistics, 18(1): 301--334. <doi:10.1214/23-EJS2210>.  f) Tsagris M.
+and Alzeley O. (2024). \"Circular and spherical projected Cauchy distributions: A
+Novel Framework for Circular and Directional Data Modeling\".
+<doi:10.48550/@code{arXiv.2302.02468>}.  g) Tsagris M. and Papastamoulis P.
+(2024). \"Directional data analysis using the spherical Cauchy and the Poisson
+kernel-based distribution\". <doi:10.48550/@code{arXiv.2409.03292>}.")
     (license license:gpl2+)))
 
 (define-public r-directeffects
@@ -15028,18 +15028,19 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "1imgg3cdfvlndih7hrfbgw5d22gd59ylgp026r9vlpg3jbdxhfj6"))))
+        (base32 "0rwgfgfrp967rc36a4g7ap68a89hivgid010z454hl2s4iwrzd3f"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
+                             r-rcolorbrewer
                              r-ggplot2
                              r-dplyr
                              r-data-table
@@ -15052,7 +15053,7 @@ additional continuous variables.  diceplot is particularly useful for exploring
 complex categorical data in the context of pathway analysis across multiple
 conditions.  For a detailed documentation please visit
 <https://dice-and-domino-plot.readthedocs.io/en/latest/>.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-diceoptim
   (package
@@ -15632,6 +15633,27 @@ methodology of estimating the sampling errors indicators outlined in the \"DHS
 Sampling and Household Listing Manual\" (ICF International 2012,
 <https://dhsprogram.com/pubs/pdf/DHSM4/DHS6_Sampling_Manual_Sept2012_DHSM4.pdf>).")
     (license license:gpl2)))
+
+(define-public r-dhis2r
+  (package
+    (name "r-dhis2r")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dhis2r" version))
+       (sha256
+        (base32 "1y6hzzwkwil7xvmbncr1mwxvb8kbsq3fyyhqm7s3y9409amyb8mr"))))
+    (properties `((upstream-name . "dhis2r")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-httr2 r-dplyr r-curl r-attempt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/amanyiraho/dhis2r")
+    (synopsis "Client for the 'DHIS2' Web API")
+    (description
+     "Connect and pull data from a DHIS2 (District Health Information Software 2)
+instance into R.")
+    (license license:expat)))
 
 (define-public r-dhh
   (package
@@ -16938,13 +16960,13 @@ analysis of data from educational and psychological tests.")
 (define-public r-dexisensitivity
   (package
     (name "r-dexisensitivity")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexisensitivity" version))
        (sha256
-        (base32 "0m970p3lnwrcjpabwv3467vda6ry2dfar8wbblvdzs74hz8c92s0"))))
+        (base32 "04avsh79xhcm66rl0nzyg5d9llmm6k0jyqza3crvpj6hi9k9scdx"))))
     (properties `((upstream-name . "dexisensitivity")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -18000,13 +18022,13 @@ Statistical Office of Germany.")
 (define-public r-desctoolsaddins
   (package
     (name "r-desctoolsaddins")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DescToolsAddIns" version))
        (sha256
-        (base32 "160xd95njj1pk11grdrs2mzx1h98q8fin46yg8jiyi16rlyvxm4l"))))
+        (base32 "0jav7xwhrlhlkya5avp4zcnqr5glci67np2dyxmjsancjks1fxbx"))))
     (properties `((upstream-name . "DescToolsAddIns")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl r-rstudioapi r-manipulate r-foreign
@@ -27305,13 +27327,13 @@ outliers,...), or focus on the relation amongst several activity log entries
 (define-public r-dapper
   (package
     (name "r-dapper")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dapper" version))
        (sha256
-        (base32 "06s78b80215lxsi68isaha6kfrr0490s4bg0y9yf5v5ns9a6x0wv"))))
+        (base32 "0hlmndwd80s8a5y7l8c92n57xzbgy56gsv6ziwxya28ba9lf7ncx"))))
     (properties `((upstream-name . "dapper")))
     (build-system r-build-system)
     (propagated-inputs (list r-progressr
@@ -27331,7 +27353,7 @@ four independent modules, allowing for easy comparison between different privacy
 mechanisms by only swapping out the relevant modules.  Probability mass
 functions for the discrete Gaussian and discrete Laplacian are provided to
 facilitate analyses dealing with privatized count data.  The output of
-dapper_sample() can be analyzed using many of the same tools from the `rstan`
+dapper_sample() can be analyzed using many of the same tools from the rstan
 ecosystem.  For methodological details on the sampler see Ju et al. (2022)
 <doi:10.48550/@code{arXiv.2206.00710>}, and for details on the discrete Gaussian
 and discrete Laplacian distributions see Canonne et al. (2020)

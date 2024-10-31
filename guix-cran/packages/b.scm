@@ -255,13 +255,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.10")
+    (version "2.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "0irr0imyni5m43mzlyd4fymj78nbwmmvbqrs8ksk5hyznjcfn9wp"))))
+        (base32 "1wjwcmskyf6m2nadkqpmpviz8kx4g1vw0xdv7bc6krd6rqqdji0h"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -4665,13 +4665,13 @@ analysis more parsimonious.")
 (define-public r-bravo
   (package
     (name "r-bravo")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bravo" version))
        (sha256
-        (base32 "0q7qm5jsj92sras5z5xr4hkz73l202xl8f0izhg2hiv3kam0z8rf"))))
+        (base32 "16k4rsmc0nl3vvylwr55mb5vlib8x5dlkjg99b7dr99l9a0fxqps"))))
     (properties `((upstream-name . "bravo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -11797,13 +11797,13 @@ The package also includes 19 datasets which are used in the tutorials.")
 (define-public r-biostat3
   (package
     (name "r-biostat3")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biostat3" version))
        (sha256
-        (base32 "0g3phkzkidxrf0ajxywvw77x0cpcyhmgp9wqw13p2nnp38lak9l5"))))
+        (base32 "0gggiqnbflqx4h89wk17k556ifn26mz07czfpy5zq2pr2y6qfqjd"))))
     (properties `((upstream-name . "biostat3")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mass))
@@ -16753,6 +16753,29 @@ the bfsl solution.")
      "Search and download data from the Swiss Federal Statistical Office (BFS) APIs
 <https://www.bfs.admin.ch/>.")
     (license license:gpl3+)))
+
+(define-public r-bfpwr
+  (package
+    (name "r-bfpwr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bfpwr" version))
+       (sha256
+        (base32 "1vh70vqf0g4q2n4kkkq10g2917qry4bykrzvwcr5pwh3p34g87vp"))))
+    (properties `((upstream-name . "bfpwr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lamw))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SamCH93/bfpwr")
+    (synopsis "Power and Sample Size Calculations for Bayes Factor Analysis")
+    (description
+     "This package implements z-test, t-test, and normal moment prior Bayes factors
+based on summary statistics, along with functionality to perform corresponding
+power and sample size calculations as described in Pawel and Held (2024)
+<doi:10.48550/@code{arXiv.2406.19940>}.")
+    (license license:gpl3)))
 
 (define-public r-bfpack
   (package

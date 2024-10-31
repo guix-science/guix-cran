@@ -1994,13 +1994,13 @@ hazard model proposed by Boussari et al. (2020) <doi:10.1111/biom.13361>.")
 (define-public r-cureplots
   (package
     (name "r-cureplots")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cureplots" version))
        (sha256
-        (base32 "1ikjx4bhazqba9p9sd375mrn0321cwb84d7pj7kk1my6grkd123y"))))
+        (base32 "10nr5w0qxnn1lzm6gpyj1scspz1sbjsrf7p97ynjmxpk2y3d7aji"))))
     (properties `((upstream-name . "cureplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-glue r-ggplot2 r-dplyr))
@@ -5462,13 +5462,13 @@ extending the splines beyond their endpoints.")
 (define-public r-crrstep
   (package
     (name "r-crrstep")
-    (version "2023.1.1")
+    (version "2024.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crrstep" version))
        (sha256
-        (base32 "0x4fvsvcxb529c7vp5fh6vp7l0sj1wszpqzbrk1da7kmf5454ki6"))))
+        (base32 "16pgsqgj1cx3iw4p1rrk7fwvi3jh2m80xs6ysyl1kj451xdzrkrc"))))
     (properties `((upstream-name . "crrstep")))
     (build-system r-build-system)
     (propagated-inputs (list r-cmprsk))
@@ -19253,13 +19253,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.9.0")
+    (version "4.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareGroups" version))
        (sha256
-        (base32 "1kfnwyi41l11nvmjjays23k8lwc1wzh6q65rmjff2s7sxx994cin"))))
+        (base32 "0n67avlikmvn2lin7g677cibijfgyy22a26byxw806wznbczb9cy"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -19757,16 +19757,16 @@ and be free of commas (for that call).")
 (define-public r-comma
   (package
     (name "r-comma")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COMMA" version))
        (sha256
-        (base32 "1yaac6kgx3912l8iac4ybhm9drs7hy5x4wxiyc4w35clkg6r76vc"))))
+        (base32 "0bxb3bv2zr0n1fzxskwpjpbz04lf4561h7jdvwyif76wlxr7qwjr"))))
     (properties `((upstream-name . "COMMA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-turboem r-matrix))
+    (propagated-inputs (list r-turboem r-matrix r-foreach r-dplyr r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=COMMA")
     (synopsis "Correcting Misclassified Mediation Analysis")
@@ -20004,13 +20004,13 @@ community assembly processes.  Includes a vignette outlining usage.")
 (define-public r-combo
   (package
     (name "r-combo")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COMBO" version))
        (sha256
-        (base32 "0073cwbggmqgm13nmg8b6lq3gb5qid73nhh0jb0ldmabwn1bw3hk"))))
+        (base32 "1wvbiva8bvvfi6ph0lcfsf8g91kxa8qgzjpgkrra1sc8wi5sjjh9"))))
     (properties `((upstream-name . "COMBO")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -20232,13 +20232,13 @@ Heard & Rubin-Delanchy (2017) <@code{arXiv:1707.06897>}.")
 (define-public r-combat-enigma
   (package
     (name "r-combat-enigma")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "combat.enigma" version))
        (sha256
-        (base32 "1skrjssp8gfqfi3pjb1aawqwdh066fiz0ssal43jlx1wbkmk65m8"))))
+        (base32 "1pbd598xdk5xfckjy9pab4q9l48c88ynz4bjhg7pcyfjg77w3x14"))))
     (properties `((upstream-name . "combat.enigma")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-matrix r-caret r-car))
@@ -20256,7 +20256,7 @@ harmonization of MRI data (Fortin et al. (2017)
 separate functions for fitting and applying the harmonization and allow missing
 values and constant rows for its use within the Enhancing Neuro Imaging Genetics
 through Meta-Analysis (ENIGMA) Consortium (Radua et al. (2020)
-<doi:10.1016/j.neuroimage.2017.11.024>); this package includes the latter
+<doi:10.1016/j.neuroimage.2020.116956>); this package includes the latter
 version.  LMM calls \"lme\" massively considering specific brain imaging details.
 Finally, prescaling is a good option for @code{fMRI}, where different devices
 can have varying units of measurement.")
@@ -21107,13 +21107,13 @@ blog post at <http://www.vis4.net/blog/2018/02/automate-colorblind-checking/>.")
 (define-public r-colopendata
   (package
     (name "r-colopendata")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ColOpenData" version))
        (sha256
-        (base32 "10nb1mgxxxwbbq9s39dml89q8rk6xnfanklcrvqcphgafm91sf8d"))))
+        (base32 "1432552jj0mszpmm5n21a4phf5i54v8g5wvh1wzyn6svq480hisj"))))
     (properties `((upstream-name . "ColOpenData")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -29289,6 +29289,25 @@ density, accuracy, precision, recall and calibration plots, all using ggplot2
 for easy modification.  Debug your binary classifiers faster and easier!")
     (license (license:fsdg-compatible "BSD 3-clause License + file LICENSE"))))
 
+(define-public r-classicaltest
+  (package
+    (name "r-classicaltest")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "classicaltest" version))
+       (sha256
+        (base32 "0wqkqnyj6xdb6qsv03qz002g2b0f7s2vy33f3dm8kpajapdprvnk"))))
+    (properties `((upstream-name . "classicaltest")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=classicaltest")
+    (synopsis "Classical Test Theory (CTT) Analysis")
+    (description
+     "This package provides functions for classical test theory analysis, following
+methods presented by Wu et al. (2006) <doi:10.1007/978-981-10-3302-5>.")
+    (license license:gpl2+)))
+
 (define-public r-classgraph
   (package
     (name "r-classgraph")
@@ -30507,29 +30526,22 @@ base glm() function.")
 (define-public r-circumplex
   (package
     (name "r-circumplex")
-    (version "0.3.10")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circumplex" version))
        (sha256
-        (base32 "1g0r004c7y51mcv7iiymgzhdy9v8y9bk814bzaam4d8fxp7qzqlr"))))
+        (base32 "19jka0bmp5fgy65vby67ih60ka86jwiq07r90piwjplffm35qlxp"))))
     (properties `((upstream-name . "circumplex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-scales
-                             r-rlang
+    (propagated-inputs (list r-rlang
                              r-rcpparmadillo
                              r-rcpp
-                             r-purrr
-                             r-magrittr
                              r-htmltable
                              r-ggplot2
                              r-ggforce
-                             r-dplyr
-                             r-boot
-                             r-assertthat))
+                             r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jmgirard/circumplex")
     (synopsis "Analysis and Visualization of Circular Data")
