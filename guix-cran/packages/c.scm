@@ -5875,13 +5875,13 @@ ISBN:978-1-118-14640-8).")
 (define-public r-crosstable
   (package
     (name "r-crosstable")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crosstable" version))
        (sha256
-        (base32 "134aadk2smdy6nwk2883840h4fjwb58hdr92pbf9djj237g2sq3v"))))
+        (base32 "0wddk7wngmmjgnxrdadqakxaqs72612h02yaia6yasmmn2pl1snm"))))
     (properties `((upstream-name . "crosstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8773,13 +8773,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.1-5")
+    (version "1.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "0bga39lipzcam6pr9sm1rij31b5la59arjjhsydh826gdfmnlqg9"))))
+        (base32 "1kwi5bvzppsls97wsqpl7q6rzycdhp31bdq6bcisqybplp4zryj4"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -14288,29 +14288,6 @@ measure the influence of individual voters within a voting body.  There are
 routines for visualizing both set-valued and point-valued solutions in the case
 of three or four players.")
     (license license:gpl2)))
-
-(define-public r-coop
-  (package
-    (name "r-coop")
-    (version "0.6-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coop" version))
-       (sha256
-        (base32 "0ww99ssgawsgn6rqy838wbx6iirzdrzyxirvz084ih8j50blx420"))))
-    (properties `((upstream-name . "coop")))
-    (build-system r-build-system)
-    (home-page "https://github.com/wrathematics/coop")
-    (synopsis
-     "Co-Operation: Fast Covariance, Correlation, and Cosine Similarity Operations")
-    (description
-     "Fast implementations of the co-operations: covariance, correlation, and cosine
-similarity.  The implementations are fast and memory-efficient and their use is
-resolved automatically based on the input data, handled by R's S3 methods.  Full
-descriptions of the algorithms and benchmarks are available in the package
-vignettes.")
-    (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
 (define-public r-cooltools
   (package
@@ -31536,13 +31513,13 @@ implemented for comparison.")
 (define-public r-cici
   (package
     (name "r-cici")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICI" version))
        (sha256
-        (base32 "1nqajm6rglm62yhjdycm3ik0bvm1cfmyjz34s1vkddh5r2m1dwmg"))))
+        (base32 "1qfj7achaac0c9pi5v80d978g3y7jk9i8pga0p7cwdmxmdrqs1xw"))))
     (properties `((upstream-name . "CICI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rngtools
@@ -37474,13 +37451,13 @@ removed.  See Adamic, P. (2015)
 (define-public r-cdghmm
   (package
     (name "r-cdghmm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDGHMM" version))
        (sha256
-        (base32 "18gf8p5h006h125dfygghxbkdbg26p77k632l2plhrpcgd3iszbw"))))
+        (base32 "0c43gfxgx2izs7hx2lkn4kws1nm94409258as72zdg123nf52hp8"))))
     (properties `((upstream-name . "CDGHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-ramify r-mvtnorm r-mass r-cluster))
@@ -37489,10 +37466,10 @@ removed.  See Adamic, P. (2015)
     (description
      "Estimates hidden Markov models from the family of Cholesky-decomposed Gaussian
 hidden Markov models (CDGHMM) under various missingness schemes.  This family
-improves upon estimation of traditional Gaussian HMMs by directly modelling the
-distinct correlation structures that arise from longitudinal data, as well as,
-controlling for dropped out observations and non-random missingness.  See Neal,
-Sochaniwsky and @code{McNicholas} (2024) <DOI:10.48550/@code{arXiv.2404.04122>}.")
+improves upon estimation of traditional Gaussian HMMs by introducing parsimony,
+as well as, controlling for dropped out observations and non-random missingness.
+ See Neal, Sochaniwsky and @code{McNicholas} (2024)
+<DOI:10.1007/s11222-024-10462-0>.")
     (license license:gpl2+)))
 
 (define-public r-cdgd
@@ -38610,28 +38587,6 @@ functions.  Load functions are used to import existing spatial layers from the
 online CCAMLR GIS such as the ASD boundaries.  Create functions are used to
 create layers from user data such as polygons and grids.")
     (license license:gpl3)))
-
-(define-public r-cca
-  (package
-    (name "r-cca")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CCA" version))
-       (sha256
-        (base32 "0r1f7m64608hq6bpw36wsw6fr4s8bj26x4062brqgn5dbpqlgczk"))))
-    (properties `((upstream-name . "CCA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-fields r-fda))
-    (home-page "https://cran.r-project.org/package=CCA")
-    (synopsis "Canonical Correlation Analysis")
-    (description
-     "This package provides a set of functions that extend the cancor function with
-new numerical and graphical outputs.  It also include a regularized extension of
-the canonical correlation analysis to deal with datasets with more variables
-than observations.")
-    (license license:gpl2+)))
 
 (define-public r-cc
   (package
@@ -43908,27 +43863,6 @@ predictions can be made at any landmark time.  Please see Pate et al. (2024)
 <https://alexpate30.github.io/calibmsm/articles/Overview.html>.")
     (license license:expat)))
 
-(define-public r-caliberrfimpute
-  (package
-    (name "r-caliberrfimpute")
-    (version "1.0-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CALIBERrfimpute" version))
-       (sha256
-        (base32 "1fspn6wgr0kc7j4ixx24c706kzrgjhi1b1w28izpfxm4r89zk08s"))))
-    (properties `((upstream-name . "CALIBERrfimpute")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-randomforest r-mvtnorm r-mice))
-    (home-page "https://cran.r-project.org/package=CALIBERrfimpute")
-    (synopsis "Multiple Imputation Using MICE and Random Forest")
-    (description
-     "This package provides functions to impute using random forest under full
-conditional specifications (multivariate imputation by chained equations).  The
-methods are described in Shah and others (2014) <doi:10.1093/aje/kwt312>.")
-    (license license:gpl3)))
-
 (define-public r-calf
   (package
     (name "r-calf")
@@ -44387,6 +44321,30 @@ covariate X is passed to the procedure, then an ordinary ADF test is performed.
 The p-values of the test are computed using the procedure illustrated in Lupi
 (2009).")
     (license license:gpl2+)))
+
+(define-public r-cadf
+  (package
+    (name "r-cadf")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CADF" version))
+       (sha256
+        (base32 "19wf16hcqrfrx595fzl6s3xx3chzyfwahqnzmkss803zz9sdxavw"))))
+    (properties `((upstream-name . "CADF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CADF")
+    (synopsis "Customer Analytics Data Formatting")
+    (description
+     "Converts customer transaction data (ID, purchase date) into a R6 class called
+customer.  The class stores various customer analytics calculations at the
+customer level.  The package also contains functionality to convert data in the
+R6 class to data.frames that can serve as inputs for various customer analytics
+models.")
+    (license license:gpl3)))
 
 (define-public r-cadence
   (package

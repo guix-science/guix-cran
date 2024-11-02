@@ -8906,13 +8906,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.19")
+    (version "1.1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "1z0rivwklmfd2g3xl8kcllpm9416hfp1dd4p12a9j4cgss43j950"))))
+        (base32 "02xhk9ncgsgqygwszdzkrzlkg2zikfhlfan00wh0w0h0d6gd6z47"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-leaflet-minicharts r-leaflet
@@ -12157,6 +12157,34 @@ Smoothing (VES, de Silva et al., 2010, <doi:10.1177/1471082X0901000401>), Vector
 ETS and simulation function for VES.")
     (license license:gpl2+)))
 
+(define-public r-legendry
+  (package
+    (name "r-legendry")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "legendry" version))
+       (sha256
+        (base32 "0yyc4pd7cmrx4irbm543x1jk0ay7ppwcw9g9gs9yx6d4fiirgx8q"))))
+    (properties `((upstream-name . "legendry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-scales
+                             r-rlang
+                             r-lifecycle
+                             r-gtable
+                             r-ggplot2
+                             r-cli))
+    (home-page "https://teunbrand.github.io/legendry/")
+    (synopsis "Extended Legends and Axes for 'ggplot2'")
+    (description
+     "This package provides a ggplot2 extension that focusses on expanding the
+plotter's arsenal of guides.  Guides in ggplot2 include axes and legends.
+legendry offers new axes and annotation options, as well as new legends and
+colour displays.")
+    (license license:expat)))
+
 (define-public r-lefko3
   (package
     (name "r-lefko3")
@@ -13666,26 +13694,26 @@ ISBN-13:978-0387954578), and Christensen et al. (2018) <doi:10.1002/ecy.2373>.")
 (define-public r-ldatree
   (package
     (name "r-ldatree")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LDATree" version))
        (sha256
-        (base32 "1cn1b6wbfmgg1agjl2jwwshfdg1nmg8y46z00ascnp5myxylcga1"))))
+        (base32 "0y3jc7xflhz4b6fhjmi7zqdd5j3bzmrgrrw6f7v7r7ap4d737lcz"))))
     (properties `((upstream-name . "LDATree")))
     (build-system r-build-system)
-    (propagated-inputs (list r-visnetwork r-scales r-magrittr r-lifecycle
-                             r-ggplot2))
+    (propagated-inputs (list r-visnetwork r-magrittr r-ggplot2 r-folda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Moran79/LDATree")
     (synopsis
-     "Classification Trees with Linear Discriminant Analysis at Terminal Nodes")
+     "Oblique Classification Trees with Uncorrelated Linear Discriminant Analysis Splits")
     (description
-     "This package provides a classification tree method that uses LDA (Linear
-Discriminant Analysis) for variable selection, split determination, and model
-fitting in terminal nodes.  It automatically handles missing values and offers
-visualization tools.")
+     "This package provides a classification tree method that uses Uncorrelated Linear
+Discriminant Analysis (ULDA) for variable selection, split determination, and
+model fitting in terminal nodes.  It automatically handles missing values and
+offers visualization tools.  For more details, see Wang (2024)
+<doi:10.48550/@code{arXiv.2410.23147>}.")
     (license license:expat)))
 
 (define-public r-ldashiny
@@ -15861,6 +15889,30 @@ de Gonzalez et al. (2012) <doi:10.1088/0952-4746/32/3/205>, National Research
 Council (2006, ISBN:978-0-309-09156-5).")
     (license license:lgpl3)))
 
+(define-public r-largevars
+  (package
+    (name "r-largevars")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Largevars" version))
+       (sha256
+        (base32 "0i4jxhg3ccv3d5spy7vbfmhwn5wcq4h9l2bv9a7gzhv1y0pnfnwb"))))
+    (properties `((upstream-name . "Largevars")))
+    (build-system r-build-system)
+    (home-page "https://github.com/eszter-kiss/Largevars")
+    (synopsis "Testing Large VARs for the Presence of Cointegration")
+    (description
+     "Conducts a cointegration test for high-dimensional vector autoregressions (VARs)
+of order k based on the large N,T asymptotics of Bykhovskaya and Gorin, 2022
+(<doi:10.48550/@code{arXiv.2202.07150>}).  The implemented test is a
+modification of the Johansen likelihood ratio test.  In the absence of
+cointegration the test converges to the partial sum of the Airy-1 point process.
+ This package contains simulated quantiles of the first ten partial sums of the
+Airy-1 point process that are precise up to the first three digits.")
+    (license license:expat)))
+
 (define-public r-larf
   (package
     (name "r-larf")
@@ -16170,16 +16222,16 @@ Barrett, Peter H Thrall (2018) <doi:10.1371/journal.pcbi.1006067>.")
 (define-public r-landscaper
   (package
     (name "r-landscaper")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landscapeR" version))
        (sha256
-        (base32 "1zm5mj861ycbc2m28yjqnkifx8grc4l718mf8r422m78jfakvcjy"))))
+        (base32 "1q9ylzslaxx9rz9fwskx326ywca3yw3gmgv5b5a6bzzbxh7a68w8"))))
     (properties `((upstream-name . "landscapeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-raster))
+    (propagated-inputs (list r-terra r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dariomasante/landscapeR")
     (synopsis "Categorical Landscape Simulation Facility")
@@ -16193,7 +16245,7 @@ theoretical space.  The basic algorithm currently implemented uses a simple
 agent style/cellular automata growth model, with no rules (apart from areas of
 exclusion) and von Neumann neighbourhood (four cells, aka Rook case).  Outputs
 are raster dataset exportable to any common GIS format.")
-    (license license:gpl3+)))
+    (license license:gpl2+)))
 
 (define-public r-landscapemetrics
   (package

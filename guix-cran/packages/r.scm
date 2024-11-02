@@ -2170,29 +2170,6 @@ code has already been run and its output has already been saved, it just reads
 the result from the stored file instead of running the code again.")
     (license license:gpl3)))
 
-(define-public r-runner
-  (package
-    (name "r-runner")
-    (version "0.4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "runner" version))
-       (sha256
-        (base32 "0vhqjnwcx3z3i74p26divx6palx1rwvk4jpqn64jrqlzaw9qich4"))))
-    (properties `((upstream-name . "runner")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=runner")
-    (synopsis "Running Operations for Vectors")
-    (description
-     "Lightweight library for rolling windows operations.  Package enables full
-control over the window length, window lag and a time indices.  With a runner
-one can apply any R function on a rolling windows.  The package eases work with
-equally and unequally spaced time series.")
-    (license license:gpl2+)))
-
 (define-public r-runmcmcbtadjust
   (package
     (name "r-runmcmcbtadjust")
@@ -5676,13 +5653,13 @@ citation(\"Rssa\") for details.")
 (define-public r-rsrd
   (package
     (name "r-rsrd")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rSRD" version))
        (sha256
-        (base32 "1srvv49xxkq2nx7fvbn3d2hr4v6ypkxgz6ms1l89zgd0ypdgmypa"))))
+        (base32 "0jnjdd3glzxc1dk7pz6mnhqnmd14mnq16xmc5zr9s8ml2j36cqp2"))))
     (properties `((upstream-name . "rSRD")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -5711,9 +5688,9 @@ solutions to the SRD scores of randomly generated rankings.  The second
 validation option is cross-validation that checks whether the rankings generated
 from the solutions come from the same distribution or not.  For a detailed
 analysis about the cross-validation process see Sziklai, Baranyi and HÃ©berger
-(2021) <@code{arXiv:2105.11939>}.  The package offers a wide array of features
-related to SRD including the computation of the SRD scores, validation options,
-input preprocessing and plotting tools.")
+(2021) <doi:10.48550/@code{arXiv.2105.11939>}.  The package offers a wide array
+of features related to SRD including the computation of the SRD scores,
+validation options, input preprocessing and plotting tools.")
     (license license:gpl3)))
 
 (define-public r-rsquaredmi
@@ -14528,29 +14505,6 @@ bibliographic data as an uncertainty interval.  Classification / ACM - 2012:
 Information systems ~ Similarity measures, Theory of computation ~
 Quadratic	programming, Applied computing ~ Digital libraries and archives.")
     (license license:gpl3)))
-
-(define-public r-robustrankaggreg
-  (package
-    (name "r-robustrankaggreg")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RobustRankAggreg" version))
-       (sha256
-        (base32 "0p2nbgxv2132gcyx7zq2gzl6ipsxndx64i7y8v9nh5awcdy8v44p"))))
-    (properties `((upstream-name . "RobustRankAggreg")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=RobustRankAggreg")
-    (synopsis "Methods for Robust Rank Aggregation")
-    (description
-     "This package provides methods for aggregating ranked lists, especially lists of
-genes.  It implements the Robust Rank Aggregation Kolde et al (2012)
-<doi:10.1093/bioinformatics/btr709> and some other simple algorithms for the
-task.  RRA method uses a probabilistic model for aggregation that is robust to
-noise and also facilitates the calculation of significance probabilities for all
-the elements in the final ranking.")
-    (license license:gpl2)))
 
 (define-public r-robustrank
   (package
@@ -31604,13 +31558,13 @@ of useful Tcl/Tk widgets.")
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaGrowR" version))
        (sha256
-        (base32 "1ml5k9ya4xf0a3d6i73323riyr6hn09dyvgaf3yjv0mpjx2ci506"))))
+        (base32 "15d8530id8j5m9awzm5621j4zg28vchdgm6yk3ym0wqyg5lcj30c"))))
     (properties `((upstream-name . "ReliaGrowR")))
     (build-system r-build-system)
     (propagated-inputs (list r-segmented))
@@ -40424,6 +40378,37 @@ color selection function, which will help users make a beautiful figure.")
 ggplot', reflecting the color schemes associated with @code{ConesaLab}'.")
     (license license:expat)))
 
+(define-public r-rcollectadhd
+  (package
+    (name "r-rcollectadhd")
+    (version "0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcollectadhd" version))
+       (sha256
+        (base32 "0dvfj1mhsdjb8rl3h85ypvsn6gzlk43yxx0x4vdavkrcdzv7qdkz"))))
+    (properties `((upstream-name . "rcollectadhd")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=rcollectadhd")
+    (synopsis "Collection of Data Sets Containing ADHD Related Data")
+    (description
+     "This package provides a collection of data sets relating to ADHD (Attention
+Deficit Hyperactivity Disorder) which have been sourced from other packages on
+CRAN or from publications on other websites such as Kaggle
+<http://www.kaggle.com/>.The package also includes some simple functions for
+analysing data sets.  The data sets and descriptions of the data sets may differ
+from what is on CRAN or other source websites.  The aim of this package is to
+bring together data sets from a variety of ADHD research publications.  This
+package would be useful for those interested in finding out what research has
+been done on the topic of ADHD, or those interested in comparing the results
+from different existing works.  I started this project because I wanted to put
+together a collection of the data sets relevant to ADHD research, which I have a
+personal interest in.  This work was conducted with the support of my mentor
+within the Global Talent Mentoring platform.
+<https://globaltalentmentoring.org/>.")
+    (license license:gpl3+)))
+
 (define-public r-rcoletum
   (package
     (name "r-rcoletum")
@@ -49057,56 +49042,6 @@ Nowosad (2020) <doi:10.1016/j.apgeog.2020.102239>).  It is a reimagined approach
 for analyzing residential segregation and racial diversity based on the concept
 of landscapeâ used in the domain of landscape ecology.")
     (license license:expat)))
-
-(define-public r-raceid
-  (package
-    (name "r-raceid")
-    (version "0.3.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RaceID" version))
-       (sha256
-        (base32 "0zqas0dfsvcbjzv2b83zy13pxyzfhh81xrfbzxq8a7ykk0nyrx26"))))
-    (properties `((upstream-name . "RaceID")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-umap
-                             r-runner
-                             r-rtsne
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-randomforest
-                             r-quadprog
-                             r-princurve
-                             r-pheatmap
-                             r-matrixstats
-                             r-matrix
-                             r-mass
-                             r-locfit
-                             r-leiden
-                             r-irlba
-                             r-igraph
-                             r-ica
-                             r-harmony
-                             r-ggplot2
-                             r-fpc
-                             r-fnn
-                             r-fateid
-                             r-coop
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RaceID")
-    (synopsis
-     "Identification of Cell Types, Inference of Lineage Trees, and Prediction of Noise Dynamics from Single-Cell RNA-Seq Data")
-    (description
-     "Application of @code{RaceID} allows inference of cell types and prediction of
-lineage trees by the @code{StemID2} algorithm (Herman, J.S., Sagar, Grun D.
-(2018) <DOI:10.1038/nmeth.4662>). @code{VarID2} is part of this package and
-allows quantification of biological gene expression noise at single-cell
-resolution (Rosales-Alvarez, R.E., Rettkowski, J., Herman, J.S., Dumbovic, G.,
-Cabezas-Wallscheid, N., Grun, D. (2023) <DOI:10.1186/s13059-023-02974-1>).")
-    (license license:gpl3)))
 
 (define-public r-racademyocean
   (package

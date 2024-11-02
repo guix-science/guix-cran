@@ -4070,13 +4070,13 @@ Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
 (define-public r-tsdyn
   (package
     (name "r-tsdyn")
-    (version "11.0.4.1")
+    (version "11.0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsDyn" version))
        (sha256
-        (base32 "04w7kf66q9bspyh62g8r9xzcb6mj6nd11za63b0h5jyj6rv6kbrq"))))
+        (base32 "0v60h5f8302izj6vbgandmr923nf5ygrygbwzapgn83rh80wcj77"))))
     (properties `((upstream-name . "tsDyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -4088,6 +4088,7 @@ Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
                              r-mgcv
                              r-matrix
                              r-mass
+                             r-generics
                              r-forecast
                              r-foreach))
     (home-page "https://github.com/MatthieuStigler/tsDyn/wiki")
@@ -5045,16 +5046,17 @@ more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "1d888qpp7gcsrn3624q2ppdihdyy7879w3lng1nzi78fgng5cdpv"))))
+        (base32 "185y3rbvqxah9vw7f7jrgy726akjm16zm8df3vp90w4c2l7yngg5"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=trtswitch")
     (synopsis "Treatment Switching")
     (description
@@ -5182,13 +5184,13 @@ Simplifies working with structures commonly encountered in combinatorics.")
 (define-public r-tropfishr
   (package
     (name "r-tropfishr")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TropFishR" version))
        (sha256
-        (base32 "0y4bqy27f5ngpz9z24fbl209gg9mlrj8gryn8774abvhvv62z6k0"))))
+        (base32 "16n5zi1a0mjfdnm54b52f32v7542qi0akqwznd9i61cv7qszi0bj"))))
     (properties `((upstream-name . "TropFishR")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -5207,7 +5209,7 @@ Simplifies working with structures commonly encountered in combinatorics.")
 analysis of length-frequency data in the context of data-poor fisheries.
 Includes methods and examples included in the FAO Manual by P. Sparre and S.C.
 Venema (1998), \"Introduction to tropical fish stock assessment\"
-(<https://www.fao.org/documents/card/en/c/9bb12a06-2f05-5dcb-a6ca-2d6dd3080f65/>),
+(<https://openknowledge.fao.org/server/api/core/bitstreams/bc7c37b6-30df-49c0-b5b4-8367a872c97e/content>),
 as well as other more recent methods.")
     (license license:gpl3)))
 

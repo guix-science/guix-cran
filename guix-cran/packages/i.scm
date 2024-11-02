@@ -5061,6 +5061,32 @@ from IP2Proxy BIN Data file.  You may visit <https://lite.ip2location.com> for
 free database download.")
     (license license:expat)))
 
+(define-public r-ip2locationio
+  (package
+    (name "r-ip2locationio")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ip2locationio" version))
+       (sha256
+        (base32 "1wkyb3655n0ly9whgpnad3p1xwksn07b54jcpjcni8daqqjwlcv8"))))
+    (properties `((upstream-name . "ip2locationio")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-jsonlite))
+    (home-page "https://cran.r-project.org/package=ip2locationio")
+    (synopsis
+     "Lookup Geolocation and Proxy Information using 'IP2Location.io' API")
+    (description
+     "Query for enriched data such as country, region, city, latitude & longitude, ZIP
+code, time zone, Autonomous System, Internet Service Provider, domain, net
+speed, International direct dialing (IDD) code, area code, weather station data,
+mobile data, elevation, usage type, address type, advertisement category, and
+proxy data with an IP address.  This package uses the IP2Location.io API to
+query this data.  To get started with a free API key, sign up here
+<https://www.ip2location.io/sign-up?ref=1>.")
+    (license license:expat)))
+
 (define-public r-ip2location
   (package
     (name "r-ip2location")
@@ -8543,13 +8569,13 @@ provided in the available vignettes and from the URL bellow.")
 (define-public r-inlamemi
   (package
     (name "r-inlamemi")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlamemi" version))
        (sha256
-        (base32 "0l18skd43kl99xjyw59pil9rmm60jlkgr7iklghrid280p2984zj"))))
+        (base32 "0djsk1yl7zpqbhxag073dmw7527amicb5hzb6pnq6gf3ypmn1jyb"))))
     (properties `((upstream-name . "inlamemi")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-ggplot2 r-dplyr))
@@ -10305,13 +10331,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "0fzv5zvzl2bd2g0wgbc5mjrfghwqgvha2zx16q4673zkc08kdxic"))))
+        (base32 "1xc3w6kvss6fb3fp8pi92iy1xbavl7ahwmk049ifcv6mqn0qmkrs"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -10647,29 +10673,6 @@ professionals, researchers, and resource managers engaged in assessing and
 estimating the volume of coniferous trees.  This package has been developed
 using the algorithm of Sharma et al. (2017) <doi:10.13140/RG.2.2.33786.62407>.")
     (license license:gpl3)))
-
-(define-public r-imuf
-  (package
-    (name "r-imuf")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "imuf" version))
-       (sha256
-        (base32 "0vskycl2v70cdvvanmy32sv3nac85yzq57kw0nifa5hba7mzfdsx"))))
-    (properties `((upstream-name . "imuf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://github.com/gitboosting/imuf")
-    (synopsis "Estimate Orientation of an Inertial Measurement Unit")
-    (description
-     "Estimate the orientation of an inertial measurement unit (IMU) with a 3-axis
-accelerometer and a 3-axis gyroscope using a complementary filter.  imuf takes
-an IMU's accelerometer and gyroscope readings, time duration, its initial
-orientation, and a gain factor as inputs, and returns an estimate of the IMU's
-final orientation.")
-    (license license:gpl3+)))
 
 (define-public r-imtest
   (package
@@ -13211,13 +13214,13 @@ origin, with the three functions of @code{iGini}(), @code{iTheiT}(), and
 (define-public r-iimi
   (package
     (name "r-iimi")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iimi" version))
        (sha256
-        (base32 "05v6j1mmygr67jsgv68b506xabpnl912hxyrz02l87xfb69c5cv8"))))
+        (base32 "1q8kzc9b032axhjg28igbpys02ryfj89x8ksa7sr266nyk3dmz1w"))))
     (properties `((upstream-name . "iimi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -13955,13 +13958,13 @@ association data, especially with large controls re-sequenced data.")
 (define-public r-iforecast
   (package
     (name "r-iforecast")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iForecast" version))
        (sha256
-        (base32 "065jgpm8cv7r9856ag9l8ps0i7fmblmi66q41kjcf5wj1sj49f8l"))))
+        (base32 "184nfvh7syrhsifpdk3ma4spsmil52q0lih5l4sc02gx06za5drb"))))
     (properties `((upstream-name . "iForecast")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-caret))
@@ -14212,13 +14215,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "1zgj67dwrp5n9gmwihhx180yw9dhzp492qqs6mjmxsrsc32yih8w"))))
+        (base32 "0jja6laclbvza77s1c92f0z4c75hvjb137pddqlx4k7jmnq1dlig"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -15886,13 +15889,13 @@ techniques.")
 (define-public r-icr
   (package
     (name "r-icr")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icr" version))
        (sha256
-        (base32 "1plkqhz6kgsykvpx1m4n515s1idzmp6qx2xc8rq3x5080yavz278"))))
+        (base32 "1z6nhpnnixn4ib1ighr4caf6dnxgzan9j7j0nnrllmr6l1z5bv3n"))))
     (properties `((upstream-name . "icr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16966,17 +16969,17 @@ and the discrete FrÃ©chet distance (Magdy et al.  2015)
 (define-public r-iccmult
   (package
     (name "r-iccmult")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iccmult" version))
        (sha256
-        (base32 "1x1yaxvr7117yyri77j8dlp43vyfc3rmbm0q640p3idi2r7ih3xp"))))
+        (base32 "0jspirbiad1w39xdbkivqd5qyj4v043hk16wmfck5q06xhk9sk03"))))
     (properties `((upstream-name . "iccmult")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4 r-iccbin r-gtools r-dirmult))
-    (home-page "https://cran.r-project.org/package=iccmult")
+    (home-page "https://github.com/ncs14/iccmult")
     (synopsis
      "Intracluster Correlation Coefficient (ICC) in Clustered Categorical Data")
     (description

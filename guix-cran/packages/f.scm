@@ -10989,13 +10989,13 @@ trait metric, as described by Feuerstahler (2019)
 (define-public r-flexlsx
   (package
     (name "r-flexlsx")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexlsx" version))
        (sha256
-        (base32 "1h78gzq1nlz0d8m9l63d5mjxrqwzwh21l444az58d9y48zsgrrzv"))))
+        (base32 "1widk2qzisqq2j22hzw0cmw7l3p5jkcyhxcgjjgirmdw7bg771r1"))))
     (properties `((upstream-name . "flexlsx")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13277,13 +13277,13 @@ under Creative Commons 4.0 <https://creativecommons.org/licenses/by/4.0/>.")
 (define-public r-finnet
   (package
     (name "r-finnet")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FinNet" version))
        (sha256
-        (base32 "0c9bl71vcz0yasq179dbm2gbkq1cc4b5p16xi8i7q6c11k23ncrx"))))
+        (base32 "1rnmb072f40sp7cdib5afb02xh0r3293vxwqrab17917nrbjdg0q"))))
     (properties `((upstream-name . "FinNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -14301,13 +14301,13 @@ complex, integer, logical, and raw).")
 (define-public r-file2meco
   (package
     (name "r-file2meco")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "file2meco" version))
        (sha256
-        (base32 "15k3yg7kx63bwfj21xa8raca06bcc6sa2n1c0qkw5wz07apqmyvk"))))
+        (base32 "0aa8m954yswqhzqc5mzs1wlgs38fiwwvvvvr716r24dbzqfp92s9"))))
     (properties `((upstream-name . "file2meco")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -18445,6 +18445,29 @@ display the favicon in an HTML document or web application, especially if the
 website is behind a firewall.")
     (license license:expat)))
 
+(define-public r-favawesome
+  (package
+    (name "r-favawesome")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "favawesome" version))
+       (sha256
+        (base32 "07bj708dxv6hmzhlb71z2cpfqcy4jlfjwj0ylw29z7rn1r302mrz"))))
+    (properties `((upstream-name . "favawesome")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsvg r-rlang r-jsonlite r-htmltools
+                             r-fontawesome))
+    (home-page "https://favawesome.shinyworks.org")
+    (synopsis "'Font Awesome' Icons as 'shiny' 'favicons'")
+    (description
+     "Easily use Font Awesome icons as shiny favicons (the icons that appear on
+browser tabs).  Font Awesome (<https://fontawesome.com/>) is a popular set of
+icons that can be used in web pages.  favawesome provides a simple way to use
+these icons as favicons in shiny applications and other HTML pages.")
+    (license license:expat)))
+
 (define-public r-favar
   (package
     (name "r-favar")
@@ -18567,36 +18590,6 @@ neuroscience and other disciplines.  Two algorithms to estimate with a high
 accuracy distribution parameters, quantiles, value-at-risk and expected
 shortfall.  Include power hyperbolas and power hyperbolic functions.")
     (license license:gpl2)))
-
-(define-public r-fateid
-  (package
-    (name "r-fateid")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FateID" version))
-       (sha256
-        (base32 "0sgvaqhqkmmkcsl53bm1jlfpzrvzfb5cz8k513nizfsi638vydlm"))))
-    (properties `((upstream-name . "FateID")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-umap
-                             r-som
-                             r-rtsne
-                             r-rcolorbrewer
-                             r-randomforest
-                             r-princurve
-                             r-pheatmap
-                             r-matrixstats
-                             r-locfit))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FateID")
-    (synopsis "Quantification of Fate Bias in Multipotent Progenitors")
-    (description
-     "Application of @code{FateID} allows computation and visualization of cell fate
-bias for multi-lineage single cell transcriptome data.  Herman, J.S., Sagar,
-GrÃ¼n D. (2018) <DOI:10.1038/nmeth.4662>.")
-    (license license:gpl3)))
 
 (define-public r-fat2lpoly
   (package

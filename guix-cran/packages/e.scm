@@ -9844,13 +9844,13 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
 (define-public r-epinow2
   (package
     (name "r-epinow2")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiNow2" version))
        (sha256
-        (base32 "106g3k6w4zzgz8kw8bkdfxp5h10fhb6pwi53myv9mf4adpl8bgl6"))))
+        (base32 "1061438cjx36kvvqv3s7s02y2zzp913wi4f30j1ss6gcx4s5dzsq"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -18683,13 +18683,13 @@ Collection and Processing\" course.")
 (define-public r-edcimport
   (package
     (name "r-edcimport")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDCimport" version))
        (sha256
-        (base32 "0hwp2q8xi4d7yilxqmcgz2sv96lvbk3ppnyv3rwx0lfyq6qhc0rd"))))
+        (base32 "0q1ivywbv4wjpjv1ya4kc07kxkz4qi2ljid353fgdbp0imy1g2sz"))))
     (properties `((upstream-name . "EDCimport")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

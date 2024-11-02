@@ -19379,13 +19379,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.16.2")
+    (version "2.17.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0mqyssdvp0ccfclmjh7ms8v86vgzirq0vm0bs3zr77as6bz1rqca"))))
+        (base32 "14cv4r6qsjdivj9nbj45gaqy879d09kbr9rz811641cngrvsnh86"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -23848,13 +23848,13 @@ groups and any allocation ratios by minimization algorithms.")
 (define-public r-minipch
   (package
     (name "r-minipch")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniPCH" version))
        (sha256
-        (base32 "1z8zsagas50ndwygkxfdi933x5vq3dmq5kwmi3lg28hqdaf2hcnm"))))
+        (base32 "0kv6dg6wfbhs7z8g59kbgiq36rbkyc6bb5iy01dzlkdb34z7q3yc"))))
     (properties `((upstream-name . "miniPCH")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate))
@@ -23863,7 +23863,9 @@ groups and any allocation ratios by minimization algorithms.")
     (description
      "Density, distribution function, ...  hazard function, cumulative hazard
 function, survival function for survival distributions with piece-wise constant
-hazards and multiple states.")
+hazards and multiple states and methods to plot and summarise those
+distributions.  A derivation of the used algorithms can be found in my masters
+thesis <doi:10.25365/thesis.76098>.")
     (license license:gpl3+)))
 
 (define-public r-minioclient
@@ -32138,13 +32140,13 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "7.0-0")
+    (version "8.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meta" version))
        (sha256
-        (base32 "0zfyjyaabwgzlnws8ny2r7f1qr6h827kba4fddv44aqd9z4xksnq"))))
+        (base32 "09m7qbc04lmfz7hk79dhps53jh2czrblxq0var5cgnkkb2sdnls4"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -42606,6 +42608,33 @@ correlative species distribution models, by mixing environmental and
 process-based predictors.  Caetano et al (2020) <doi:10.1111/oik.07123>.")
     (license license:gpl2)))
 
+(define-public r-mapindiatools
+  (package
+    (name "r-mapindiatools")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapindiatools" version))
+       (sha256
+        (base32 "1i3cczpsc7xviw4fghiwqsc9s3np3kfd3ymc261i73khfcxdzcbf"))))
+    (properties `((upstream-name . "mapindiatools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-dplyr))
+    (home-page "https://github.com/shubhamdutta26/mapindiatools")
+    (synopsis "Mapping Data for 'mapindia' Package")
+    (description
+     "This package provides a container for data used by the mapindia package.  The
+data used by mapindia has been extracted into this package so that the file size
+of the mapindia package can be reduced considerably.  The data in this package
+will be updated when latest data is available.")
+    (license license:expat)))
+
 (define-public r-mapi
   (package
     (name "r-mapi")
@@ -42631,15 +42660,31 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "0rkj2zvf2hjq8pxbhd8j7nijms5hss5zawy4mnwgbx6vv7qbwcb2"))))
+        (base32 "1xs2csjagz7brlfjc7msnhs9csbfw61lfvbs1682wj4hnmzn0mmg"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-terra
                              r-sf
                              r-rlang
@@ -42648,8 +42693,9 @@ samples.")
                              r-geojsonsf
                              r-classint
                              r-base64enc))
+    (native-inputs (list esbuild))
     (home-page "https://walker-data.com/mapgl/")
-    (synopsis "Interactive Maps with 'Mapbox GL JS' and 'MapLibre GL JS' in R")
+    (synopsis "Interactive Maps with 'Mapbox GL JS' and 'MapLibre GL JS'")
     (description
      "This package provides an interface to the Mapbox GL JS
 (<https://docs.mapbox.com/mapbox-gl-js/guides>) and the @code{MapLibre} GL JS

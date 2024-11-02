@@ -6025,6 +6025,30 @@ meta-analysis methods.  For details see: Statistical Methods for Psychologists,
 Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
     (license license:gpl3)))
 
+(define-public r-vchartr
+  (package
+    (name "r-vchartr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vchartr" version))
+       (sha256
+        (base32 "0dcw8bhhynmn15xwas4qwzzvm1pmil7sdh7wvfvghkjfa6nibf5v"))))
+    (properties `((upstream-name . "vchartr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rlang r-magrittr r-htmlwidgets
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://dreamrs.github.io/vchartr/")
+    (synopsis "Interactive Charts with the 'JavaScript' 'VChart' Library")
+    (description
+     "This package provides an htmlwidgets interface to VChart.js'.  VChart', more
+than just a cross-platform charting library, but also an expressive data
+storyteller.  VChart examples and documentation are available here:
+<https://www.visactor.io/vchart>.")
+    (license license:expat)))
+
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")

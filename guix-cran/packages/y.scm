@@ -478,13 +478,13 @@ likelihoods or log-predictive likelihoods as in Ando, T., & Tsay, R. (2010)
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ympes" version))
        (sha256
-        (base32 "01skbm8y5hck7xr97d6h3v38rawpnxww0y8rc4nswnrbdlri7580"))))
+        (base32 "0c1pgg0iwz63anjcn794r8xawdvb1i7vf1gsplswmflh89imh389"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
     (native-inputs (list r-litedown))

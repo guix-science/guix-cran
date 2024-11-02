@@ -5860,13 +5860,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "1ykq7sf8qqylwlyr687ckd1yxvd3xpsqm6sy884k4bw1w2rg2n78"))))
+        (base32 "0g3pc3bnyn1rcb3mmrx8yw4ki3avciczfpp5kzy6d8yx8n3msj52"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -5875,7 +5875,7 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
                              r-mass
                              r-fst
                              r-data-table))
-    (home-page "https://philipdelff.github.io/NMsim/")
+    (home-page "https://NMautoverse.github.io/NMsim/")
     (synopsis "Seamless 'Nonmem' Simulation Platform")
     (description
      "This package provides a complete and seamless Nonmem simulation interface within
@@ -6124,17 +6124,17 @@ the updating process.  See e.g. TomÃ© et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "148d427b0brni7rab6rrln4d7afdd4qs7dbmx4b8fv46zjvnbcfi"))))
+        (base32 "0hz04rb6bkhkxln89wwjr31s1gdl4kjhryb9yfgr67nvw1fhmxz7"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-fst r-data-table))
-    (home-page "https://philipdelff.github.io/NMdata/")
+    (home-page "https://nmautoverse.github.io/NMdata/")
     (synopsis
      "Preparation, Checking and Post-Processing Data for PK/PD Modeling")
     (description
@@ -10618,28 +10618,31 @@ Bernard, H. R., Shelley, G. A., and Johnsen, E. C. (1998)
 (define-public r-networkreg
   (package
     (name "r-networkreg")
-    (version "1.1")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NetworkReg" version))
        (sha256
-        (base32 "19z5m5hn2frqrfv3lymjwfy6b2vp6mfyanynzbb6g3xkafh6mnad"))))
+        (base32 "0dqv1si5s8zi6x832hmf0mawnqs52b1a318qxsa2lcxks4rc6a50"))))
     (properties `((upstream-name . "NetworkReg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rspectra r-randnet r-matrix))
+    (propagated-inputs (list r-rspectra r-randnet))
     (home-page "https://cran.r-project.org/package=NetworkReg")
     (synopsis
-     "Regression Model on Network-Linked Data with Statistical Inference")
+     "Generalized Linear Regression Models on Network-Linked Data with Statistical Inference")
     (description
-     "Linear regression model with nonparametric network effects on network-linked
-observations.  The model is proposed by Le and Li (2022)
-<@code{arXiv:2007.00803>} and is assumed on observations that are connected by a
-network or similar relational data structure.  The model does not assume that
-the relational data or network structure to be precisely observed; thus, the
-method is provably robust to a certain level of perturbation of the network
-structure.  The package contains the estimation and inference function for the
-model.")
+     "Linear regression model and generalized linear models with nonparametric network
+effects on network-linked observations.  The model is originally proposed by Le
+and Li (2022) <doi:10.48550/@code{arXiv.2007.00803>} and is assumed on
+observations that are connected by a network or similar relational data
+structure.  A more recent work by Wang, Le and Li (2024)
+<doi:10.48550/@code{arXiv.2410.01163>} further extends the framework to
+generalized linear models.  All these models are implemented in the current
+package.  The model does not assume that the relational data or network
+structure to be precisely observed; thus, the method is provably robust to a
+certain level of perturbation of the network structure.  The package contains
+the estimation and inference function for the model.")
     (license license:gpl2+)))
 
 (define-public r-networkr

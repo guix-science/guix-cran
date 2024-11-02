@@ -5389,13 +5389,13 @@ Cox regressions.")
 (define-public r-greenfeedr
   (package
     (name "r-greenfeedr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenfeedr" version))
        (sha256
-        (base32 "10ff1isnkc6qi0d3gf6ijg1k8mpi196fl71b6lzp6l41faqk8rzs"))))
+        (base32 "075kv3ir9pffsx6asxq73laniyx2rz02i4rd73x5vv4sy64vrvb1"))))
     (properties `((upstream-name . "greenfeedr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5412,17 +5412,8 @@ Cox regressions.")
     (home-page "https://gmbog.github.io/greenfeedr/")
     (synopsis "Process and Report 'GreenFeed' Data")
     (description
-     "Downloading, Processing, and Reporting @code{GreenFeed} Data.  The
-@code{GreenFeed} system generates substantial amounts of daily data, which can
-be overwhelming for users.  This package facilitates data retrieval and
-reporting from the @code{GreenFeed} system using a streamlined process.  Users
-can retrieve data from the C-Lock Inc.  system via an API using the get_gfdata()
-function.  Additionally, the report_gfdata() function allows users to generate
-both daily and final reports from @code{GreenFeed} data.  The process_gfdata()
-function further processes this data for analysis.  For pellet intake processing
-and visit checks, the package also provides the pellin() and viseat() functions,
-ensuring a comprehensive toolset for managing and analyzing @code{GreenFeed}
-data.")
+     "This package provides tools for downloading, processing, and reporting daily and
+finalized @code{GreenFeed} data.")
     (license license:gpl3+)))
 
 (define-public r-greener
@@ -9918,6 +9909,31 @@ be available at the later version.")
      "Tests of goodness-of-fit based on a kernel smoothing of the data.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-gofig
+  (package
+    (name "r-gofig")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gofIG" version))
+       (sha256
+        (base32 "0243pag8ky7ja78dmcxnkjl5ijkxp4ga3zfiq1aq8zi0w097hkxv"))))
+    (properties `((upstream-name . "gofIG")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmutil r-pracma))
+    (home-page "https://cran.r-project.org/package=gofIG")
+    (synopsis "Goodness-of-Fit Tests for the Inverse Gaussian Distribution")
+    (description
+     "We implement various tests for the composite hypothesis of testing the fit to
+the family of inverse Gaussian distributions.  Included are methods presented by
+Allison, J.S., Betsch, S., Ebner, B., and Visagie, I.J.H. (2022)
+<doi:10.48550/@code{arXiv.1910.14119>}, as well as two tests from Henze and Klar
+(2002) <doi:10.1023/A:1022442506681>.  Additionally, the package implements a
+test proposed by Baringhaus and Gaigall (2015) <doi:10.1016/j.jmva.2015.05.013>.
+ For each test a parametric bootstrap procedure is implemented.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-gofgamma
   (package
     (name "r-gofgamma")
@@ -13016,13 +13032,13 @@ Yu (2018) <@code{arXiv:1805.08423v1>}.")
 (define-public r-glmmcosinor
   (package
     (name "r-glmmcosinor")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLMMcosinor" version))
        (sha256
-        (base32 "098r9l5m26ld8frxjzc6rr7ahw2z22njnskn06kqchxjqxv6amqw"))))
+        (base32 "1s631xl56ix0xah8kq55lxw6273f5bc1md3zw7y5gvismfdlicwm"))))
     (properties `((upstream-name . "GLMMcosinor")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -13036,10 +13052,10 @@ Yu (2018) <@code{arXiv:1805.08423v1>}.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/GLMMcosinor")
     (synopsis
-     "Fit a Cosinor Model Using a Generalised Mixed Modelling Framework")
+     "Fit a Cosinor Model Using a Generalized Mixed Modeling Framework")
     (description
      "Allows users to fit a cosinor model using the @code{glmmTMB} framework.  This
-extends on existing cosinor modelling packages, including cosinor and
+extends on existing cosinor modeling packages, including cosinor and
 circacompare', by including a wide range of available link functions and the
 capability to fit mixed models.  The cosinor model is described by Cornelissen
 (2014) <doi:10.1186/1742-4682-11-16>.")
@@ -14195,13 +14211,13 @@ or used on <https://about.gitlab.com>.")
 (define-public r-gitignore
   (package
     (name "r-gitignore")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gitignore" version))
        (sha256
-        (base32 "047626a31rksyqcxfkvn1rpyv6gbls0b72blaifmy37nhrmwgykz"))))
+        (base32 "0gfh6szw9lycp6z8j5nghfz75lnilschg3n1yk6r6a8g4668k296"))))
     (properties `((upstream-name . "gitignore")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -16563,13 +16579,13 @@ atlases.  Mowinckel & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
 (define-public r-ggsector
   (package
     (name "r-ggsector")
-    (version "1.6.6")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsector" version))
        (sha256
-        (base32 "0qaf8wl1mmwl3razyif08sh329p9j1jgqc0ls5szqirq3db4315i"))))
+        (base32 "0gcmk9gh51gli6dhdczjgj3sblr3ybdr2xm0byq23f8a3znscilj"))))
     (properties `((upstream-name . "ggsector")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18928,26 +18944,6 @@ dplyr'-style verbs to manipulate the underlying data.  It implements a layout
 concept inspired by ggraph and introduces tracks to bring tidiness to the mess
 that is genomics data.")
     (license license:expat)))
-
-(define-public r-gggenes
-  (package
-    (name "r-gggenes")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gggenes" version))
-       (sha256
-        (base32 "08s0fhk2kz3ks64nfmdbd8p3swkn62cbw7dpbqgk9ydpmh5gpjbj"))))
-    (properties `((upstream-name . "gggenes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-ggplot2 r-ggfittext))
-    (native-inputs (list r-knitr))
-    (home-page "https://wilkox.org/gggenes/")
-    (synopsis "Draw Gene Arrow Maps in 'ggplot2'")
-    (description
-     "This package provides a ggplot2 extension for drawing gene arrow maps.")
-    (license license:gpl2)))
 
 (define-public r-gggap
   (package
@@ -27694,13 +27690,13 @@ components required for a given reconstruction accuracy.")
 (define-public r-gdm
   (package
     (name "r-gdm")
-    (version "1.6.0-2")
+    (version "1.6.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdm" version))
        (sha256
-        (base32 "0m8jr7l5vif1p119pqb9kj101gi44pjl64gsz0qshrwhgn55fk2w"))))
+        (base32 "1zjcciily8xf4jlsrbjxgv64j0fv1h86605hf2df77aj6sndinkk"))))
     (properties `((upstream-name . "gdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

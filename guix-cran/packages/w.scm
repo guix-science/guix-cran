@@ -169,13 +169,13 @@ smart summaries that allows you to focus on dysfunctional cases.")
 (define-public r-wxgenr
   (package
     (name "r-wxgenr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wxgenR" version))
        (sha256
-        (base32 "057wvdkanzwc900fcfn26bs29sq4xsbvmp4xm6bvh21iy2ijj96d"))))
+        (base32 "1m879478lvidcs1f844f5552kbgdxxbphk67w9pxgjx9mx8cmcxn"))))
     (properties `((upstream-name . "wxgenR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sm
@@ -3036,13 +3036,13 @@ survival, species richness and distance measures.")
 (define-public r-wintime
   (package
     (name "r-wintime")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wintime" version))
        (sha256
-        (base32 "19zm8k1n2idi42vih61rbdhgdcvly6a1k0mb1p210i1iyqn3zvnn"))))
+        (base32 "12ghq92mqr76jvld47cy4hh1gqs8kvjd0afb39qyx24l5abcl4nc"))))
     (properties `((upstream-name . "wintime")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))

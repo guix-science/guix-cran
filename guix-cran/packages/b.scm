@@ -2039,6 +2039,45 @@ toolset.")
 R. There is also an interactive shiny app for monitoring the job status.")
     (license license:expat)))
 
+(define-public r-bstzinb
+  (package
+    (name "r-bstzinb")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BSTZINB" version))
+       (sha256
+        (base32 "1zjvwvbldmr02lc3lyq1gggqfp62z6153za4rq18p45bj7r555vg"))))
+    (properties `((upstream-name . "BSTZINB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-spam
+                             r-reshape
+                             r-msm
+                             r-mcmcpack
+                             r-matrixcalc
+                             r-maps
+                             r-gtsummary
+                             r-gt
+                             r-ggplot2
+                             r-dplyr
+                             r-coda
+                             r-boot
+                             r-bayeslogit))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SumanM47/BSTZINB")
+    (synopsis
+     "Association Among Disease Counts and Socio-Environmental Factors")
+    (description
+     "Estimation of association between disease or death counts (e.g. COVID-19) and
+socio-environmental risk factors using a zero-inflated Bayesian spatiotemporal
+model.  Non-spatiotemporal models and/or models without zero-inflation are also
+included for comparison.  Functions to produce corresponding maps are also
+included.  See Chakraborty et al. (2022) <doi:10.1007/s13253-022-00487-1> for
+more details on the method.")
+    (license license:gpl3+)))
+
 (define-public r-bsts
   (package
     (name "r-bsts")
@@ -9767,13 +9806,13 @@ data.  BMC Bioinformatics 20:358. <doi:10.1186/s12859-019-2942-y>.")
 (define-public r-blockcv
   (package
     (name "r-blockcv")
-    (version "3.1-4")
+    (version "3.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blockCV" version))
        (sha256
-        (base32 "00fhsiqwf6d7i48b59rgg0iw3bslg19aglzpic80gp8dgdrsrvmf"))))
+        (base32 "1ngjr7z7ivm12dijywvca776bpgagszn2aipl7d3kfzs9z3x12hg"))))
     (properties `((upstream-name . "blockCV")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rcpp))
@@ -22469,13 +22508,13 @@ rank normalization, which are proposed in Vehtari et al. (2021)
 (define-public r-bayesmultimode
   (package
     (name "r-bayesmultimode")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMultiMode" version))
        (sha256
-        (base32 "1dhhclzm7xqckwwsviarxhh16rqcrmrs5yfyfjpynwwdn48n4ww4"))))
+        (base32 "10bvfhb5jrxhl5y6yqic6kh0mjfi5biy5f1x7cg4zlraqaj56f72"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -25884,13 +25923,13 @@ that can be used within the caret package pipeline.")
 (define-public r-basemaps
   (package
     (name "r-basemaps")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basemaps" version))
        (sha256
-        (base32 "19cw01qs0wmrxcypr71ssbsj5266zgkxsxakig014x1wr592d3v6"))))
+        (base32 "1z8v8w95y6gic360cy8dg38c56l64yvnx5sa1ga5m47c37a1dvkz"))))
     (properties `((upstream-name . "basemaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

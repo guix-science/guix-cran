@@ -5180,13 +5180,13 @@ microarray data.")
 (define-public r-optbin
   (package
     (name "r-optbin")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optbin" version))
        (sha256
-        (base32 "09pdmbvhwj7g13bqcql70x1c6l1islyasbhxcbqdf1cr7r6ylysz"))))
+        (base32 "15ami2m95sn0axdnjn3kn6rxdw8ip8zn4fanshfsxw9vfmygyvln"))))
     (properties `((upstream-name . "optbin")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=optbin")
@@ -5265,6 +5265,38 @@ minimized.  Produces an approximate solution based on local time arguments.")
 logistic models.  The optimal designs are obtained based on the numerical
 algorithm in Hyun, Wong, Yang (2018) <doi:10.18637/jss.v083.i05>.")
     (license license:gpl2)))
+
+(define-public r-opsr
+  (package
+    (name "r-opsr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPSR" version))
+       (sha256
+        (base32 "13gcl93lgmrv224nsi1cvp11hp4pkm6b418bhcsak62z7ga4ly0p"))))
+    (properties `((upstream-name . "OPSR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-texreg
+                             r-sandwich
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-maxlik
+                             r-mass
+                             r-formula
+                             r-car))
+    (home-page "https://github.com/dheimgartner/OPSR")
+    (synopsis "Ordinal Probit Switching Regression")
+    (description
+     "Estimates ordinal probit switching regression models - a Heckman type selection
+model with an ordinal selection and continuous outcomes.  Different model
+specifications are allowed for each treatment/regime.  For more details on the
+method, see Wang & Mokhtarian (2024) <doi:10.1016/j.tra.2024.104072> or Chiburis
+& Lokshin (2007) <doi:10.1177/1536867X0700700202>.")
+    (license license:gpl3+)))
 
 (define-public r-oppr
   (package

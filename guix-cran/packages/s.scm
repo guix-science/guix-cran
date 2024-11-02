@@ -4640,6 +4640,49 @@ distributions, and plots by categorical variables and to integrate survey
 weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
     (license license:expat)))
 
+(define-public r-surveydown
+  (package
+    (name "r-surveydown")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surveydown" version))
+       (sha256
+        (base32 "0xfv7jc39kjgmjgca62ds436hsc4qwiwr82wps5sbbiz97yid27b"))))
+    (properties `((upstream-name . "surveydown")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-usethis
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shiny
+                             r-rvest
+                             r-rstudioapi
+                             r-rpostgres
+                             r-quarto
+                             r-pool
+                             r-markdown
+                             r-htmltools
+                             r-dt
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://pkg.surveydown.org")
+    (synopsis "Markdown-Based Surveys Using 'Quarto' and 'shiny'")
+    (description
+     "Generate surveys using markdown and R code chunks.  Surveys are composed of two
+files: a survey.qmd Quarto file defining the survey content (pages, questions,
+etc), and an app.R file defining a shiny app with global settings (libraries,
+database configuration, etc.) and server configuration options (e.g.,
+conditional skipping / display, etc.).  Survey data collected from respondents
+is stored in a @code{PostgreSQL} database.  Features include controls for
+conditional skip logic (skip to a page based on an answer to a question),
+conditional display logic (display a question based on an answer to a question),
+a customizable progress bar, and a wide variety of question types, including
+multiple choice (single choice and multiple choices), select, text, numeric,
+multiple choice buttons, text area, and dates.")
+    (license license:expat)))
+
 (define-public r-surveydefense
   (package
     (name "r-surveydefense")
@@ -6997,6 +7040,29 @@ Alaska'), and the subpolar North Atlantic ('Subpolar North Atlantic').  Users
 can supply their own environmental data for regions currently not built into the
 package to generate corrections for those regions.")
     (license license:expat)))
+
+(define-public r-sudokudesigns
+  (package
+    (name "r-sudokudesigns")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SudokuDesigns" version))
+       (sha256
+        (base32 "18a5wz4qxppz0j5v2rc3pmrp4hxm2y0616g5pls76ka2yn0jak3b"))))
+    (properties `((upstream-name . "SudokuDesigns")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SudokuDesigns")
+    (synopsis "Sudoku as an Experimental Design")
+    (description
+     "Sudoku designs (Bailey et al., 2008<doi:10.1080/00029890.2008.11920542>) can be
+used as experimental designs which tackle one extra source of variation than
+conventional Latin square designs.  Although Sudoku designs are similar to Latin
+square designs, only addition is the region concept.  Some very important
+functions related to row-column designs as well as block designs along with
+basic functions are included in this package.")
+    (license license:gpl2+)))
 
 (define-public r-sudokualt
   (package
@@ -14896,6 +14962,36 @@ visualization technique which illustrates the trade-off between stability and
 predictiveness of individual predictors.")
     (license license:gpl3)))
 
+(define-public r-stabilityapp
+  (package
+    (name "r-stabilityapp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StabilityApp" version))
+       (sha256
+        (base32 "1c8yfmm63rg4mp7fhyia2szhdwwd9g5lzqnx88px7hchglsf12jf"))))
+    (properties `((upstream-name . "StabilityApp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stability
+                             r-shinydashboardplus
+                             r-shinybs
+                             r-shiny
+                             r-patchwork
+                             r-gridextra
+                             r-dt
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=StabilityApp")
+    (synopsis "Stability Analysis App for GEI in Multi-Environment Trials")
+    (description
+     "This package provides tools for Genotype by Environment Interaction (GEI)
+analysis, using statistical models and visualizations to assess genotype
+performance across environments.  It helps researchers explore interaction
+effects, stability, and adaptability in multi-environment trials, identifying
+the best-performing genotypes in different conditions.  Which Win Where!")
+    (license license:gpl3)))
+
 (define-public r-stability
   (package
     (name "r-stability")
@@ -16849,6 +16945,38 @@ of normalization on the relative frequencies of OTUs.  OTUs with identical Cfrag
 as well as Cint are sampled randomly without replacement.  See Beule & Karlovsky
 (2020) <doi:10.7717/peerj.9593> for details.")
     (license license:cc-by-sa4.0)))
+
+(define-public r-srppp
+  (package
+    (name "r-srppp")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "srppp" version))
+       (sha256
+        (base32 "12fxyy7g52d4hhx3g4x3cps8rbnx5s9xw8h5cv3dqr5i1pgcnrxb"))))
+    (properties `((upstream-name . "srppp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-dplyr
+                             r-dm
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://agroscope-ch.github.io/srppp/")
+    (synopsis "Read the Swiss Register of Plant Protection Products")
+    (description
+     "Generate data objects from XML versions of the Swiss Register of Plant
+Protection Products.  An online version of the register can be accessed at
+<https://www.psm.admin.ch/de/produkte>.  There is no guarantee of correspondence
+of the data read in using this package with that online version, or with the
+original registration documents.  Also, the Federal Food Safety and Veterinary
+Office, coordinating the authorisation of plant protection products in
+Switzerland, does not answer requests regarding this package.")
+    (license license:gpl3+)))
 
 (define-public r-srp
   (package
@@ -24124,13 +24252,13 @@ statistical exploratory tools and raster-based metrics.")
 (define-public r-spatialddls
   (package
     (name "r-spatialddls")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialDDLS" version))
        (sha256
-        (base32 "1wnyy7wi7bqlm2wjmjw18b7fxyi0ngfry4rzdb4q0fl6x0lkl0hj"))))
+        (base32 "1l9rbc5k2fxr7qrv8hhki603bnmg7wbwf2vbizqkl4zk87f33rx4"))))
     (properties `((upstream-name . "SpatialDDLS")))
     (build-system r-build-system)
     (inputs (list tensorflow python))
@@ -33587,17 +33715,17 @@ a model checking plot to help assess the adequacy of the fitted model.")
 (define-public r-slca
   (package
     (name "r-slca")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slca" version))
        (sha256
-        (base32 "0wllwz9cn9wvxwb4gd4g3blwhaplmfdxx06jki41ii64sq9cxbyq"))))
+        (base32 "1cv3ylj1jcx22jaabmya84z4v3anz11kdgg1qdlfng0shrda4kzf"))))
     (properties `((upstream-name . "slca")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass r-magrittr r-diagrammer))
-    (home-page "https://cran.r-project.org/package=slca")
+    (home-page "https://kim0sun.github.io/slca/")
     (synopsis "Structural Modeling for Multiple Latent Class Variables")
     (description
      "This package provides comprehensive tools for the implementation of Structural
@@ -45398,41 +45526,6 @@ mainly based on Plotkin et al. (2000) <doi:10.1006/jtbi.2000.2158> and Harms et
 al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
     (license license:gpl3+)))
 
-(define-public r-shapviz
-  (package
-    (name "r-shapviz")
-    (version "0.9.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shapviz" version))
-       (sha256
-        (base32 "14p24c9pxbqiagy27gd6iam4dgh7rbgnzp04w49y337pd99m4qj7"))))
-    (properties `((upstream-name . "shapviz")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xgboost
-                             r-rlang
-                             r-patchwork
-                             r-ggrepel
-                             r-ggplot2
-                             r-gggenes
-                             r-ggfittext))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ModelOriented/shapviz")
-    (synopsis "SHAP Visualizations")
-    (description
-     "Visualizations for SHAP (SHapley Additive @code{exPlanations}), such as
-waterfall plots, force plots, various types of importance plots, dependence
-plots, and interaction plots.  These plots act on a shapviz object created from
-a matrix of SHAP values and a corresponding feature dataset.  Wrappers for the R
-packages xgboost', lightgbm', fastshap', shapr', h2o', treeshap', DALEX', and
-kernelshap are added for convenience.  By separating visualization and
-computation, it is possible to display factor variables in graphs, even if the
-SHAP values are calculated by a model that requires numerical features.  The
-plots are inspired by those provided by the shap package in Python, but there is
-no dependency on it.")
-    (license license:gpl2+)))
-
 (define-public r-shapr
   (package
     (name "r-shapr")
@@ -49515,6 +49608,39 @@ uncertainty (different topologies and/or branch lengths). (iii) Data uncertainty
      "This package provides an interface to the Sensibo Sky API which allows to
 remotely control non-smart air conditioning units.  See <https://sensibo.com>
 for more informations.")
+    (license license:expat)))
+
+(define-public r-sensiat
+  (package
+    (name "r-sensiat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SensIAT" version))
+       (sha256
+        (base32 "1ky1k49mgfmf2d6c5czyj3hszjwi611qs8hy4rg40hgkx00m4bsn"))))
+    (properties `((upstream-name . "SensIAT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-pracma
+                             r-orthogonalsplinebasis
+                             r-mass
+                             r-kernsmooth
+                             r-glue
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://github.com/UofUEpiBio/SensIAT")
+    (synopsis "Sensitivity Analysis for Irregular Assessment Times")
+    (description
+     "Sensitivity analysis for trials with irregular and informative assessment times,
+based on a new influence function-based, augmented inverse intensity-weighted
+estimator.")
     (license license:expat)))
 
 (define-public r-sensemakr
@@ -55479,40 +55605,34 @@ Robins (1997) <doi:10.2307/2670119>.")
 (define-public r-scoringutils
   (package
     (name "r-scoringutils")
-    (version "1.2.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringutils" version))
        (sha256
-        (base32 "1ylw7ql5ayfn6fcxnmmmr3zpvczax6mhmis28r03kwm8val5q233"))))
+        (base32 "0p9cvy66srqvp9f9birzb001x009jfp7bgh60jbrr0prfk0la30w"))))
     (properties `((upstream-name . "scoringutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-scoringrules
-                             r-rlang
-                             r-lifecycle
+                             r-purrr
+                             r-metrics
                              r-ggplot2
-                             r-ggdist
-                             r-data-table))
+                             r-data-table
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://doi.org/10.48550/arXiv.2205.07090")
     (synopsis "Utilities for Scoring and Assessing Predictions")
     (description
-     "This package provides a collection of metrics and proper scoring rules (Tilmann
-Gneiting & Adrian E Raftery (2007) <doi:10.1198/016214506000001437>, Jordan, A.,
-KrÃ¼ger, F., & Lerch, S. (2019) <doi:10.18637/jss.v090.i12>) within a consistent
-framework for evaluation, comparison and visualisation of forecasts.  In
-addition to proper scoring rules, functions are provided to assess bias,
-sharpness and calibration (Sebastian Funk, Anton Camacho, Adam J. Kucharski,
-Rachel Lowe, Rosalind M. Eggo, W. John Edmunds (2019)
-<doi:10.1371/journal.pcbi.1006785>) of forecasts.  Several types of predictions
-(e.g. binary, discrete, continuous) which may come in different formats (e.g.
-forecasts represented by predictive samples or by quantiles of the predictive
-distribution) can be evaluated.  Scoring metrics can be used either through a
-convenient data.frame format, or can be applied as individual functions in a
-vector / matrix format.  All functionality has been implemented with a focus on
-performance and is robustly tested.  Find more information about the package in
-the accompanying paper (<doi:10.48550/@code{arXiv.2205.07090>}).")
+     "Facilitate the evaluation of forecasts in a convenient framework based on
+data.table.  It allows user to to check their forecasts and diagnose issues, to
+visualise forecasts and missing data, to transform data before scoring, to
+handle missing forecasts, to aggregate scores, and to visualise the results of
+the evaluation.  The package mostly focuses on the evaluation of probabilistic
+forecasts and allows evaluating several different forecast types and input
+formats.  Find more information about the package in the Vignettes as well as in
+the accompanying paper, <doi:10.48550/@code{arXiv.2205.07090>}.")
     (license license:expat)))
 
 (define-public r-scoringrules
@@ -56537,13 +56657,13 @@ Observational Studies using R. Chapman & Hall/CRC.")
 (define-public r-scicomptools
   (package
     (name "r-scicomptools")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scicomptools" version))
        (sha256
-        (base32 "193byqr8sjb0hk1k4qj26pnqr5dgqfsxn47ckddgcvzk6ybd6cpl"))))
+        (base32 "0v3a8spx199rqs3y861kh8syax02f0pcvnyg5ivxm4zzhvfnmcvx"))))
     (properties `((upstream-name . "scicomptools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyxl
@@ -56560,7 +56680,8 @@ Observational Studies using R. Chapman & Hall/CRC.")
                              r-ggwordcloud
                              r-ggplot2
                              r-dplyr
-                             r-data-tree))
+                             r-data-tree
+                             r-chromote))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/NCEAS/scicomptools")
     (synopsis "Tools Developed by the NCEAS Scientific Computing Support Team")

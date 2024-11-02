@@ -1746,13 +1746,13 @@ absolute quantification under uncertainty.  See Comoglio et al. (2013)
 (define-public r-dunlin
   (package
     (name "r-dunlin")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dunlin" version))
        (sha256
-        (base32 "10xfps9b2dxw4w6c5z5djsp7ssz1rnpccvnai471r1zppyv14hy7"))))
+        (base32 "1bhl64g5x14bqw5flbcb5vhshwp1dmw04fakmdkvkswnl258m6gx"))))
     (properties `((upstream-name . "dunlin")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -2974,6 +2974,35 @@ works for the developed functions are: @code{funGP}() - Prakash et al. (2022)
      "This package provides functions for direct surrogate variable analysis, which
 can identify hidden factors in high-dimensional biomedical data.")
     (license license:gpl2+)))
+
+(define-public r-dstidyverseclient
+  (package
+    (name "r-dstidyverseclient")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsTidyverseClient" version))
+       (sha256
+        (base32 "13ya0n31nkpvamrv6nmswx45npbl5yv07lqmfwccinzm6kzv39c2"))))
+    (properties `((upstream-name . "dsTidyverseClient")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-dsi r-cli r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dsTidyverseClient")
+    (synopsis "'DataSHIELD' 'Tidyverse' Clientside Package")
+    (description
+     "Implementation of selected Tidyverse functions within @code{DataSHIELD}', an
+open-source federated analysis solution in R. Currently, @code{DataSHIELD}
+contains very limited tools for data manipulation, so the aim of this package is
+to improve the researcher experience by implementing essential functions for
+data manipulation, including subsetting, filtering, grouping, and renaming
+variables.  This is the clientside package which should be installed locally,
+and is used in conjuncture with the serverside package @code{dsTidyverse} which
+is installed on the remote server holding the data.  For more information, see
+<https://www.tidyverse.org/>, <https://datashield.org/> and
+<https://github.com/molgenis/ds-tidyverse>.")
+    (license license:lgpl2.1+)))
 
 (define-public r-dstidyverse
   (package
@@ -12600,13 +12629,13 @@ et al. (2023) <doi:10.18637/jss.v106.i11>.")
 (define-public r-disaggregatets
   (package
     (name "r-disaggregatets")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DisaggregateTS" version))
        (sha256
-        (base32 "0xl32kjss4cr6wk255pywvp06yjk1ma2iy9r8d3r63l0k3g1x7cb"))))
+        (base32 "1wd6jxdi1ib24hpkn2ghrv91gyi0qmpgvvhdscmx58w6vxlk1rsz"))))
     (properties `((upstream-name . "DisaggregateTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-withr r-rdpack r-matrix r-lars))
@@ -24401,6 +24430,35 @@ your computer.  Routines for both single pixel data downloads and gridded
 (@code{netCDF}) data are provided.")
     (license license:agpl3)))
 
+(define-public r-dawar
+  (package
+    (name "r-dawar")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dawaR" version))
+       (sha256
+        (base32 "0i7pb2byfds4l7h8lr9dbzhsb089hghz0hmaymlfx6mxifvfdgmq"))))
+    (properties `((upstream-name . "dawaR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyrss
+                             r-sf
+                             r-rlang
+                             r-memoise
+                             r-httr2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://dawar.aleksanderbl.dk/")
+    (synopsis "An API Wrapper for 'DAWA' - 'The Danish Address Web API'")
+    (description
+     "This package provides functions for interacting with all sections of the
+official Danish Address Web API (also known as DAWA')
+<https://api.dataforsyningen.dk>.  The development of this package is completely
+independent from the government agency, Klimadatastyrelsen, who maintains the
+API.")
+    (license license:gpl3+)))
+
 (define-public r-dawai
   (package
     (name "r-dawai")
@@ -25444,13 +25502,13 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.16")
+    (version "2.7.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "11hwk81vyzn6jx0z3flhh7gfwmfr1irysxghsbb2sgdqdffs6vh1"))))
+        (base32 "1y8c30qvnh4jr9dim4ym82l4rig8jd5lldhv9j7v45q516jsaxv1"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

@@ -2065,13 +2065,13 @@ user as possible.")
 (define-public r-autometric
   (package
     (name "r-autometric")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autometric" version))
        (sha256
-        (base32 "0ba4ci7g0fa7596812l4aw7lal3m7n9mjc4dh1dysjib5p3smvhc"))))
+        (base32 "17cg9rw5mbdvr2y394zj46d1bqxapnwmb9q25fi24bsf0k06pqmk"))))
     (properties `((upstream-name . "autometric")))
     (build-system r-build-system)
     (home-page "https://wlandau.github.io/autometric/")
@@ -5097,18 +5097,18 @@ model fitting engines, and running custom Markov Chain Monte Carlo.")
 (define-public r-asmap
   (package
     (name "r-asmap")
-    (version "1.0-7")
+    (version "1.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ASMap" version))
        (sha256
-        (base32 "04byjdz3dzgf06bmmpvslihya23lanl8dmjbq22vvwlhi82f88im"))))
+        (base32 "1v8gcs5vykmxjanh4s4pxmv7qx7nmn182ygpffiq23jfdqgzqjag"))))
     (properties `((upstream-name . "ASMap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-qtl r-lattice r-gtools r-fields))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ASMap")
+    (home-page "https://github.com/DrJ001/ASMap")
     (synopsis "Linkage Map Construction using the MSTmap Algorithm")
     (description
      "This package provides functions for Accurate and Speedy linkage map
@@ -13704,13 +13704,13 @@ symmetric stable and mixture of Cauchy distributions.")
 (define-public r-alphasimr
   (package
     (name "r-alphasimr")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AlphaSimR" version))
        (sha256
-        (base32 "02cz2kppvw9ccx99r0i5afhqcprv1qsdbjq14r9v6b3pcpvsdvia"))))
+        (base32 "1ca9n5hfxiapy9nhcapsca4w4qxc8nwjdlysfjc8r68fgbm4m1aq"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-r6 r-bh))

@@ -285,25 +285,24 @@ are described in Tobler Waldo R. (1979) <doi:10.1080/01621459.1979.10481647>.")
 (define-public r-pxwebapidata
   (package
     (name "r-pxwebapidata")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PxWebApiData" version))
        (sha256
-        (base32 "0xch2l9c3dana419p9zfs6vwcqgacxamzjx1c6v8bpnb49gc3dp8"))))
+        (base32 "14a4w1hd1f1mws8cjc0x32ayjswiyd725zi49j4c7b49mlr4cag4"))))
     (properties `((upstream-name . "PxWebApiData")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjstat r-pxweb r-jsonlite r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/statisticsnorway/PxWebApiData")
+    (home-page "https://statisticsnorway.github.io/ssb-pxwebapidata/")
     (synopsis "PX-Web Data by API")
     (description
      "Function to read PX-Web data into R via API. The example code reads data from
 the three national statistical institutes, Statistics Norway, Statistics Sweden
 and Statistics Finland.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license license:expat)))
 
 (define-public r-pxweb
   (package
@@ -8341,13 +8340,13 @@ visualizations are also provided.")
 (define-public r-priorsense
   (package
     (name "r-priorsense")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorsense" version))
        (sha256
-        (base32 "1lmqwby7j8x5y2g7pmrd5770drck4xhwx8ajn1kxw23b9hbx5wxs"))))
+        (base32 "0a3jpacd1560jb26rhm0yq2swdhwh8l2h069y0r5fgj6bv7ydigp"))))
     (properties `((upstream-name . "priorsense")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10515,17 +10514,16 @@ given in Gonzalo and Pitarakis (2023) <doi:10.1016/j.ijforecast.2023.10.005>.")
 (define-public r-predictor
   (package
     (name "r-predictor")
-    (version "3.0.10")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predictoR" version))
        (sha256
-        (base32 "0lj13rn9dpx0rqxb03abisa06ihphmrq5shpv6q2p0qb857pgmkf"))))
+        (base32 "1x7sg15pwsgb5x0my8farhav0gmm8p7sz5d926wv6las7h85asxf"))))
     (properties `((upstream-name . "predictoR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-xgboost
+    (propagated-inputs (list r-xgboost
                              r-trainer
                              r-shinyjs
                              r-shinydashboardplus
@@ -13579,6 +13577,28 @@ package.  potions makes it straightforward to update and retrieve options,
 either in the workspace or during package development, without overwriting
 global options.")
     (license (license:fsdg-compatible "MPL-2.0"))))
+
+(define-public r-poth
+  (package
+    (name "r-poth")
+    (version "0.2-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poth" version))
+       (sha256
+        (base32 "0jm9sgd9w8d0c0zlabd57amg70yy6xsal2hzdl13v02ib5nd1iy2"))))
+    (properties `((upstream-name . "poth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-netmeta r-ggplot2))
+    (home-page "https://github.com/augustinewigle/poth")
+    (synopsis "Precision of Treatment Hierarchy (POTH)")
+    (description
+     "Calculate POTH for treatment hierarchies from frequentist and Bayesian network
+meta-analysis.  POTH quantifies the certainty in a treatment hierarchy.  Subset
+POTH, POTH residuals, and cumulative POTH can also be calculated to improve
+interpretation of treatment hierarchies.")
+    (license license:gpl2+)))
 
 (define-public r-potential
   (package
@@ -38519,17 +38539,16 @@ Pakistan (<http://www.mics.unicef.org/surveys>).")
 (define-public r-pakpc2023
   (package
     (name "r-pakpc2023")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PakPC2023" version))
        (sha256
-        (base32 "1vih3bkz6sy7bkw18c1d7a85xj112zagg65i7sfhy8dgwx7m78f1"))))
+        (base32 "05x3xqbhd0jw5l39x4dlhjgi66627aqjs006n3w4h873jfac7458"))))
     (properties `((upstream-name . "PakPC2023")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools r-dt))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PakPC2023")
     (synopsis "Pakistan Population Census 2023")
     (description
