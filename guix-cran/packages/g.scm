@@ -19389,13 +19389,13 @@ the archived package GGE@code{BiplotGUI}'.")
 (define-public r-ggeasy
   (package
     (name "r-ggeasy")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggeasy" version))
        (sha256
-        (base32 "1dppcffkyr6ybpz17zkq97g0p2hs1f8iwg6vwrw124pbgr065dr0"))))
+        (base32 "1inxk15lmdjpfzf46xdn6yrgz6h45i6rhv2qpcyb2rvf4v6cfm96"))))
     (properties `((upstream-name . "ggeasy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggplot2))

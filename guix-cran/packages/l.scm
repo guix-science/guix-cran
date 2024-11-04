@@ -17000,13 +17000,13 @@ Furthermore, an opened file can be accessed as one would an ordinary data.frame.
 (define-public r-ladderfuelsr
   (package
     (name "r-ladderfuelsr")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LadderFuelsR" version))
        (sha256
-        (base32 "0amdnn0n8rb5dmm9cmj7bw9kidal3agd6m3655xal2ay62rxq6mn"))))
+        (base32 "1zz76kpbf6nibwhsssgpis7wv90jnrilcxjv3xglwak9hm18a6f1"))))
     (properties `((upstream-name . "LadderFuelsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

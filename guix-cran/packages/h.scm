@@ -1737,13 +1737,13 @@ one-liners to print data to a new document.")
 (define-public r-hutilscpp
   (package
     (name "r-hutilscpp")
-    (version "0.10.5")
+    (version "0.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hutilscpp" version))
        (sha256
-        (base32 "1f4ywd8ibg2349fvp7ypiqyslb64gdqi64fwhnag7d6qhrhm563b"))))
+        (base32 "0yvrzkpgjdk0pq8p2v771rl6nj5yszzlr8k6ajif62qndvxkwc64"))))
     (properties `((upstream-name . "hutilscpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-hutils r-data-table))
@@ -12964,6 +12964,38 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
 <doi:10.1093/bioinformatics/btr330> or plink Chang et al (2015)
 <doi:10.1186/s13742-015-0047-8>.")
     (license license:expat)))
+
+(define-public r-handwriterrf
+  (package
+    (name "r-handwriterrf")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "handwriterRF" version))
+       (sha256
+        (base32 "1a3q74kjgzfriikk739sib7jmzq0dgvab0l5k4wh4xyb4z0s1z99"))))
+    (properties `((upstream-name . "handwriterRF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-reshape2
+                             r-ranger
+                             r-purrr
+                             r-magrittr
+                             r-handwriter
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CSAFE-ISU/handwriterRF")
+    (synopsis "Handwriting Analysis with Random Forests")
+    (description
+     "Perform forensic handwriting analysis of two scanned handwritten documents.
+This package implements the statistical method described by Madeline Johnson and
+Danica Ommen (2021) <doi:10.1002/sam.11566>.  Similarity measures and a random
+forest produce a score-based likelihood ratio that quantifies the strength of
+the evidence in favor of the documents being written by the same writer or
+different writers.")
+    (license license:gpl3+)))
 
 (define-public r-handwriterapp
   (package

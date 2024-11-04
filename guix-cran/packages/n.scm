@@ -5943,13 +5943,13 @@ Ernst (1969) <doi:10.1016/0022-2364(69)90003-1>, Liland et al. (2010)
 (define-public r-nmof
   (package
     (name "r-nmof")
-    (version "2.10-0")
+    (version "2.10-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMOF" version))
        (sha256
-        (base32 "0nlll6icaav6c4s4mrd345ib3gkg47k1zxv76j4rjm05mcrq7fha"))))
+        (base32 "1y2069kfig1rvp7px2iv7knnj9a0qgv48x1lwbmkfp2mzkrcs9fb"))))
     (properties `((upstream-name . "NMOF")))
     (build-system r-build-system)
     (home-page "https://enricoschumann.net/NMOF.htm")
@@ -10237,27 +10237,6 @@ decoding analyses.  For more information on neural decoding see Meyers & Kreiman
 (2011) <doi:10.7551/mitpress/8404.003.0024>.")
     (license license:gpl3)))
 
-(define-public r-neurocinstall
-  (package
-    (name "r-neurocinstall")
-    (version "0.12.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neurocInstall" version))
-       (sha256
-        (base32 "1fkb6ji9gigqdjl50hbgdgfidqpjgqlh1aidf6vn4qnfr92bsvqf"))))
-    (properties `((upstream-name . "neurocInstall")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-devtools))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=neurocInstall")
-    (synopsis "'Neuroconductor' Installer")
-    (description
-     "Installs Neuroconductor packages from the release repository
-<https://neuroconductor.org/releases/> or from @code{GitHub}'.")
-    (license license:gpl2)))
-
 (define-public r-neuroblastoma
   (package
     (name "r-neuroblastoma")
@@ -10423,17 +10402,18 @@ decision-making should be based on accountable and interpretable algorithms.")
 (define-public r-neuralestimators
   (package
     (name "r-neuralestimators")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeuralEstimators" version))
        (sha256
-        (base32 "1bxmw4abrhqvfs5jhga9d8y5c3m2ps4lk6wcr1dac6xhvx2yf58z"))))
+        (base32 "08f1g4mwb17f7wjr6bvbbhw2fbkjhphknbpi8pqzm55x16qqr0nn"))))
     (properties `((upstream-name . "NeuralEstimators")))
     (build-system r-build-system)
     (inputs (list julia))
     (propagated-inputs (list r-magrittr r-juliaconnector))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=NeuralEstimators")
     (synopsis "Likelihood-Free Parameter Estimation using Neural Networks")
     (description

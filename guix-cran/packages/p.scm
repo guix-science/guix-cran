@@ -791,22 +791,25 @@ indicators.")
 (define-public r-pvstatem
   (package
     (name "r-pvstatem")
-    (version "0.0.4")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PvSTATEM" version))
        (sha256
-        (base32 "18jk2kwzd2avym5mslagvxvs31m0awqnafl21ad8mva0gr5c8shc"))))
+        (base32 "0klg9rlagygvfcm2k116mkp1d259yhmwxfz04yw4kk2glrypqid5"))))
     (properties `((upstream-name . "PvSTATEM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-svglite
+                             r-stringr
                              r-stringi
                              r-readxl
                              r-readr
                              r-r6
+                             r-r-utils
                              r-png
                              r-nplr
+                             r-lubridate
                              r-ggrepel
                              r-ggplot2
                              r-dplyr))
@@ -816,7 +819,7 @@ indicators.")
      "Reading, Quality Control and Preprocessing of MBA (Multiplex Bead Assay) Data")
     (description
      "Speeds up the process of loading raw data from MBA (Multiplex Bead Assay)
-examinations, performs quality control checks, and automatically normalizes the
+examinations, performs quality control checks, and automatically normalises the
 data, preparing it for more advanced, downstream tasks.  The main objective of
 the package is to create a simple environment for a user, who does not
 necessarily have experience with R language.  The package is developed within
@@ -17902,6 +17905,31 @@ translocations, harvesting, mortality, and other processes, as well as defining
 the sequence order for the simulator processes.  The framework could also be
 adapted for use with other model simulators by utilizing its extendable
 (inheritable) base classes.")
+    (license license:gpl3)))
+
+(define-public r-podes
+  (package
+    (name "r-podes")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PODES" version))
+       (sha256
+        (base32 "095nv66a5ayikw1sv8xcjpr1jd6f8qdm7qx7i7z3k1jwd1pci9rs"))))
+    (properties `((upstream-name . "PODES")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl))
+    (home-page "https://cran.r-project.org/package=PODES")
+    (synopsis "Village Potential Statistics of Indonesia")
+    (description
+     "Village potential statistics (PODES) collects various information on village
+potential and challenges faced by villages in Indonesia.  Information related to
+village potential includes economy, security, health, employment, communication
+and information, sports, entertainment, development, community empowerment,
+education, socio-culture, transportation in the village.  Information related to
+challenges includes natural disasters, public health, environmental pollution,
+social problems and security disturbances that occur in the village.")
     (license license:gpl3)))
 
 (define-public r-podcleaner

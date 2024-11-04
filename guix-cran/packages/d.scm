@@ -3708,13 +3708,13 @@ with distance sampling at <http://distancesampling.org/>.")
 (define-public r-dsi
   (package
     (name "r-dsi")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSI" version))
        (sha256
-        (base32 "1pwsmql0d8grwm5whhf6gav14i9wj057msdshliwi52c2rvh2m9l"))))
+        (base32 "1jd6pa5k3dwh51ysg68rk2n9gxxc2c7malb7n2j0vllzy1casm1s"))))
     (properties `((upstream-name . "DSI")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-progress r-cli))
@@ -5370,28 +5370,6 @@ screenshots, upload their own images and maybe make a scientific figure.")
      "This package provides a set of user-friendly wrapper functions for creating
 consistent graphics and diagrams with lines, common shapes, text, and page
 settings.  Compatible with and based on the R grid package.")
-    (license license:expat)))
-
-(define-public r-drape
-  (package
-    (name "r-drape")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "drape" version))
-       (sha256
-        (base32 "0y4y6vvskizghqf78d1vr0skac0ks3yb83m9fgn8i3wmgqrhws19"))))
-    (properties `((upstream-name . "drape")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=drape")
-    (synopsis "Doubly Robust Average Partial Effects")
-    (description
-     "Doubly robust average partial effect estimation.  This implementation contains
-methods for adding additional smoothness to plug-in regression procedures and
-for estimating score functions using smoothing splines.  Details of the method
-can be found in Harvey Klyne and Rajen D. Shah (2023) <@code{arXiv:2308.09207>}.")
     (license license:expat)))
 
 (define-public r-dramaanalysis
@@ -26458,13 +26436,13 @@ for equality.")
 (define-public r-datacompare
   (package
     (name "r-datacompare")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataCompare" version))
        (sha256
-        (base32 "080zrvz9rih7rd7c81rgp1l70wc8y3f4zk4njzbnajvc3wsfz34k"))))
+        (base32 "1i8bay5xsll30vr1d7c53ng96adh40b8c0m80a9irsd5jpyfkngj"))))
     (properties `((upstream-name . "dataCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -27808,13 +27786,13 @@ libraries.  Information on Experiment Line is based on Ogasawara et al. (2009)
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.0.767")
+    (version "1.0.787")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "02rhbcgjwlx45y0641yjlamzgl2swm60hmvwppr4nk24hb0hjczs"))))
+        (base32 "1bw3cmijpvbqxgzcpqackpgzkwgzh83vsrmarbavwyn1mz3809vs"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-tree

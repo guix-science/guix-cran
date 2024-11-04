@@ -1915,44 +1915,6 @@ analysis and randomized complete block design, to be made available in the
 future and making them easily accessible to users.")
     (license license:expat)))
 
-(define-public r-mverse
-  (package
-    (name "r-mverse")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mverse" version))
-       (sha256
-        (base32 "1qj77s98j05j8d1k1w3h56c7z2i1j973mflhklxhb3xxc7plyk3y"))))
-    (properties `((upstream-name . "mverse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-multiverse
-                             r-magrittr
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mverseanalysis/mverse/")
-    (synopsis "Tidy Multiverse Analysis Made Simple")
-    (description
-     "Extends multiverse package (Sarma A., Kale A., Moon M., Taback N., Chevalier F.,
-Hullman J., Kay M., 2021) <doi:10.31219/osf.io/yfbwm>, which allows users
-perform to create explorable multiverse analysis in R. This extension provides
-an additional level of abstraction to the multiverse package with the aim of
-creating user friendly syntax to researchers, educators, and students in
-statistics.  The mverse syntax is designed to allow piping and takes hints from
-the tidyverse grammar.  The package allows users to define and inspect
-multiverse analysis using familiar syntax in R.")
-    (license license:gpl3+)))
-
 (define-public r-mvdfa
   (package
     (name "r-mvdfa")
@@ -4344,13 +4306,13 @@ to igraph'.")
 (define-public r-multinet
   (package
     (name "r-multinet")
-    (version "4.2")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinet" version))
        (sha256
-        (base32 "1rrb03nl658r28sjn4d1g7hdwz5jsg8hgwhygy79xfsqf1pykmy8"))))
+        (base32 "0nwxy55ab5bb2sbcmf4kx9k6a1faxm11ax5i855nkbyv2wy3pgbj"))))
     (properties `((upstream-name . "multinet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rcolorbrewer r-igraph))
@@ -28543,17 +28505,18 @@ by Li, Xiao, and Luo (2020) <doi: 10.1002/sta4.245>.")
 (define-public r-mf-beta4
   (package
     (name "r-mf-beta4")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MF.beta4" version))
        (sha256
-        (base32 "13k9jqspg42hgis0svad76yvzb8bh5cm4qynkpn0ga0an2lww6gs"))))
+        (base32 "0fa4145bqap461v1my1bk3xg5zjqrdlnw9iqdbzb5ldkq3dk1pf8"))))
     (properties `((upstream-name . "MF.beta4")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
                              r-tidyr
+                             r-reshape2
                              r-purrr
                              r-patchwork
                              r-lmertest
@@ -28569,12 +28532,12 @@ by Li, Xiao, and Luo (2020) <doi: 10.1002/sta4.245>.")
     (description
      "Provide simple functions to (i) compute a class of multi-functionality measures
 for a single ecosystem for given function weights, (ii) decompose gamma
-multi-functionality for multiple ecosystems into a within-ecosystem component
-(alpha multi-functionality) and an among-ecosystem component (beta
-multi-functionality).  In each case, the correlation between functions can be
-corrected for.  Based on biodiversity and ecosystem function data, this software
-also facilitates graphics for assessing biodiversity-ecosystem functioning
-relationships across scales.")
+multi-functionality for pairs of ecosystems and K ecosystems (K can be greater
+than 2) into a within-ecosystem component (alpha multi-functionality) and an
+among-ecosystem component (beta multi-functionality).  In each case, the
+correlation between functions can be corrected for.  Based on biodiversity and
+ecosystem function data, this software also facilitates graphics for assessing
+biodiversity-ecosystem functioning relationships across scales.")
     (license license:gpl3+)))
 
 (define-public r-mexplorer
@@ -38507,13 +38470,13 @@ Calculator\" <https://gml.noaa.gov/grad/solcalc/>.")
 (define-public r-mazamaspatialutils
   (package
     (name "r-mazamaspatialutils")
-    (version "0.8.6")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaSpatialUtils" version))
        (sha256
-        (base32 "18dpnal2rkj2lkrlnr6wn4rc4n2xb7w6g6kywppc9d1qd29b0njk"))))
+        (base32 "1qszrjk8nmww390xaghi9i9cfl2ww8a9j2pffphybmi4p2g9fpir"))))
     (properties `((upstream-name . "MazamaSpatialUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

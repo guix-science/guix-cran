@@ -22748,6 +22748,33 @@ created by k-means.  See Walvoort et al. (2010)
 <doi:10.1016/j.cageo.2010.04.005> for details.")
     (license license:gpl3+)))
 
+(define-public r-spconf
+  (package
+    (name "r-spconf")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spconf" version))
+       (sha256
+        (base32 "1ah99q7bdsf49ldsn4y6jqsr3blihxxm29sgzi8cmrdd5n5j4imv"))))
+    (properties `((upstream-name . "spconf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mgcv r-flexclust))
+    (home-page "https://cran.r-project.org/package=spconf")
+    (synopsis
+     "Computing Scales of Spatial Smoothing for Confounding Adjustment")
+    (description
+     "Computes the effective range of a smoothing matrix, which is a measure of the
+distance to which smoothing occurs.  This is motivated by the application of
+spatial splines for adjusting for unmeasured spatial confounding in regression
+models, but the calculation of effective range can be applied to smoothing
+matrices in other contexts.  For algorithmic details, see Rainey and Keller
+(2024) \"@code{spconfShiny}: an R Shiny application...\"
+<doi:10.1371/journal.pone.0311440> and Keller and Szpiro (2020) \"Selecting a
+Scale for Spatial Confounding Adjustment\" <doi:10.1111/rssa.12556>.")
+    (license license:gpl3)))
+
 (define-public r-spcompute
   (package
     (name "r-spcompute")
@@ -50508,13 +50535,13 @@ forests.")
 (define-public r-semhelpinghands
   (package
     (name "r-semhelpinghands")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semhelpinghands" version))
        (sha256
-        (base32 "1v6gyjk2awlpz8zpczkxifb2pdnd7js6l75kmrh9lbyy5s7q9xxi"))))
+        (base32 "1czk7id5ah1s38jqc8sgq5j42dyf8062gqnb4y3gy27s5i5gkrbi"))))
     (properties `((upstream-name . "semhelpinghands")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lavaan r-ggrepel r-ggplot2 r-boot))

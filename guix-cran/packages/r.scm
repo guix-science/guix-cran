@@ -15680,13 +15680,13 @@ random effect in the linear predictor of the generalized linear model.")
 (define-public r-robmedextra
   (package
     (name "r-robmedextra")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robmedExtra" version))
        (sha256
-        (base32 "12ld19f7hc7xdslyd3z75h54lqg3p5saliz4pgk3m7rj3m3i24if"))))
+        (base32 "0k7w9hjz760wam4kakcmibqf0lynnv8ks782bc5fzirsqdgpdd0w"))))
     (properties `((upstream-name . "robmedExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -15711,13 +15711,13 @@ various bootstrap procedures for mediation analysis on simulated data.")
 (define-public r-robmed
   (package
     (name "r-robmed")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robmed" version))
        (sha256
-        (base32 "0ajr7ybaf4d0nwj0cbbdrbydidr9vbp33bv21iwcqr0cpgn80dwj"))))
+        (base32 "1l4svmlgzsi7nja75l6m5pffvi3hl4cbmy46x5wb28crrr8dacli"))))
     (properties `((upstream-name . "robmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn r-robustbase r-quantreg r-ggplot2 r-boot))
@@ -19852,13 +19852,13 @@ weight, variable weight, tracking subjects used in each tree, etc.")
 (define-public r-rloptimal
   (package
     (name "r-rloptimal")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLoptimal" version))
        (sha256
-        (base32 "12ac1py0sayhlmnbxahrqzj71kf4z078fxk65k69jhi5rg3hbd61"))))
+        (base32 "01v2fs1rr6lw976hcqcysh7dfrz00y9ynyk554xjxbq11c1zxrkh"))))
     (properties `((upstream-name . "RLoptimal")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-r6 r-glue r-dosefinding))
@@ -33274,13 +33274,13 @@ data.  Full mathematical details can be found in <doi:10.1002/sim.9163> and
 (define-public r-reformulas
   (package
     (name "r-reformulas")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reformulas" version))
        (sha256
-        (base32 "0p8v8j0xw4np84vvkbd41r4n1rvj5awlrnpbvqccgjasspl07smh"))))
+        (base32 "0d5zda1a355xl935kgbqzbk1mpsdfafa92pgfqhfrap8wnwxjkq4"))))
     (properties `((upstream-name . "reformulas")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix))

@@ -6694,13 +6694,13 @@ user input for use in downstream applications.")
 (define-public r-crm12comb
   (package
     (name "r-crm12comb")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crm12Comb" version))
        (sha256
-        (base32 "08jbalbz43qjwjk9lmibp7fyhic41zvfc1frmkdar7p6fnzb8xc4"))))
+        (base32 "0dp9gqgcvm6x37a8pbjj1bmica9a93xyrrh28vw6dwv50xjkslf7"))))
     (properties `((upstream-name . "crm12Comb")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-ggforce r-dplyr))
@@ -7180,13 +7180,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "0xrl4wpwl8jpdlxvvsh4nqb3wg08r3wz8qia4lpbp4ranngzz7sc"))))
+        (base32 "0cpqg0xa22lb8dqa5p4hzipvg7q31l24csq9hd4gwgwi98s77nvl"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16747,6 +16747,41 @@ will also reflect the relative uncertainty in the Bayesian model, using the
 locally-weighted conformal methods of Lei et al. (2018)
 <doi:10.1080/01621459.2017.1307116>.")
     (license license:expat)))
+
+(define-public r-confmatrix
+  (package
+    (name "r-confmatrix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConfMatrix" version))
+       (sha256
+        (base32 "0f7wk0sdfqbrbnyjdjx0vssmf03ddp9b64jl7scmv5lfvy2y6zk2"))))
+    (properties `((upstream-name . "ConfMatrix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-r6 r-gridextra r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ConfMatrix")
+    (synopsis "Confusion Matrix")
+    (description
+     "Thematic quality indices are provided to facilitate the evaluation and quality
+control of geospatial data products (e.g. thematic maps, remote sensing
+classifications, etc.).  The indices offered are based on the so-called
+confusion matrix.  This matrix is constructed by comparing the assigned classes
+or attributes of a set of pairs of positions or objects in the product and the
+ground truth.  In this package it is considered that the classes of the ground
+truth correspond to the columns and that the classes of the product to be valued
+correspond to the rows.  The package offers two object classes with their
+methods: @code{ConfMatrix} (Confusion matrix) and QCCS (Quality Control Columns
+Set).  The @code{ConfMatrix} class of objects offers more than 20 methods based
+on the confusion matrix.  The QCCS class of objects offers a different
+perspective in which the ground truth is considered to allow the values of the
+column marginals to be fixed, see Ariza LÃ³pez et al. (2019)
+<doi:10.3390/app9204240> and Canran Liu et al. (2007)
+<doi:10.1016/j.rse.2006.10.010> for more details.  The package was created with
+R6'.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-conflr
   (package

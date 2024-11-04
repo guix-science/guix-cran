@@ -4096,13 +4096,13 @@ and write both files and in-memory raw vectors.")
 (define-public r-qmvs
   (package
     (name "r-qmvs")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qmvs" version))
        (sha256
-        (base32 "0mmz0f62n5yip3h7knagc3rp7kb5jyfr9a24ih6knya5lri5d70h"))))
+        (base32 "11m42xw10vll9l1ij73f48ig9cwirnnz1rphpckfc33bm43vpn27"))))
     (properties `((upstream-name . "qmvs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qmvs")

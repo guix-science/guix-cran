@@ -9663,13 +9663,13 @@ streamline their data preparation processes.")
 (define-public r-ogrdbstats
   (package
     (name "r-ogrdbstats")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ogrdbstats" version))
        (sha256
-        (base32 "140i4wippqr1260a1c4syg6lfspkf9q8rifnalf6iaaqx2bz4yfq"))))
+        (base32 "1dppd0jzzrifclic1bs6asjl2rbzygvbrjbc922xsz95wazgfmww"))))
     (properties `((upstream-name . "ogrdbstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tigger

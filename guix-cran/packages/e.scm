@@ -12101,13 +12101,13 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.1.6")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmSdmX" version))
        (sha256
-        (base32 "0hwj7xa19inifajqbgzyxcjgi0gz49yqyfbdvgdwmh8f81i99hip"))))
+        (base32 "1z791qw9m03rf8m81xf4qzxn53glh9faq37ywbsl7714lsalg2m3"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -15795,13 +15795,13 @@ and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
 (define-public r-eientropy
   (package
     (name "r-eientropy")
-    (version "0.0.1.1")
+    (version "0.0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EIEntropy" version))
        (sha256
-        (base32 "1vw7y3i3qpxaj4m7s8yxi0c4bzipm5ggp2b1f0251xzlhffiisb7"))))
+        (base32 "1jrfmwyh2avz627w5waars5f738sm5y6vmv6nnb1kzmfmkb8v854"))))
     (properties `((upstream-name . "EIEntropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-dplyr))

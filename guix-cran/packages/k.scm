@@ -83,13 +83,13 @@ Transforms.")
 (define-public r-kyotil
   (package
     (name "r-kyotil")
-    (version "2024.7-31")
+    (version "2024.11-01")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kyotil" version))
        (sha256
-        (base32 "0m0ivjf8masizgljq9l913r0qakwdc38p146nw2p8d4kzzkisx2k"))))
+        (base32 "15h5h732zr3k441naj86wmzz5z9zx22gpljp2w6494l57ig6irsz"))))
     (properties `((upstream-name . "kyotil")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))

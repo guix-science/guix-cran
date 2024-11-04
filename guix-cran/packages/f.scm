@@ -3695,13 +3695,13 @@ are directly influenced by a number of variables (Battese and Coelli, 1995,
 (define-public r-fromo
   (package
     (name "r-fromo")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fromo" version))
        (sha256
-        (base32 "0srq13j0xqbyrmm8n93b5qwc25nz921z45yf467d7gfhxsbgy3hm"))))
+        (base32 "03bg9q2sqy7208chyim6brp1idx3y44sc54qm0zkz3434v4na05r"))))
     (properties `((upstream-name . "fromo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
