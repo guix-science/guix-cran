@@ -14,10 +14,10 @@
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages compression)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
@@ -3657,13 +3657,13 @@ names.")
 (define-public r-csvread
   (package
     (name "r-csvread")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csvread" version))
        (sha256
-        (base32 "0cbsdlrbdgq039cyr42isqbg8w65dpia1rdwbfppnv2x0f6x0fwr"))))
+        (base32 "1d3mjpcy2idrniksinmrw237zmdvz7mgd1zyw73z9gb4vxcgwpls"))))
     (properties `((upstream-name . "csvread")))
     (build-system r-build-system)
     (home-page "https://github.com/jabiru/csvread")
@@ -4808,13 +4808,13 @@ Linux.")
 (define-public r-cryptoquotes
   (package
     (name "r-cryptoquotes")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cryptoQuotes" version))
        (sha256
-        (base32 "0fyhnba1h3vf802rab96hch6gdkggz040yvfry9ya2i74xl972pi"))))
+        (base32 "0q236w753hw5ckd1d81w1wz9ivkwmmkb3lvmi2m9gxy1y8yyj534"))))
     (properties `((upstream-name . "cryptoQuotes")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4828,16 +4828,14 @@ Linux.")
     (native-inputs (list r-knitr))
     (home-page "https://serkor1.github.io/cryptoQuotes/")
     (synopsis
-     "Streamlined Access to Cryptocurrency OHLC-V Market Data and Sentiment Indicators")
+     "Open Access to Cryptocurrency Market Data, Sentiment Indicators and Interactive Charts")
     (description
-     "This high-level API client offers a streamlined access to public cryptocurrency
-market data and sentiment indicators.  It features OHLC-V (Open, High, Low,
-Close, Volume) that comes with granularity ranging from seconds to months and
-essential sentiment indicators to develop and backtest trading strategies, or
-conduct detailed market analysis.  By interacting directly with the major
-cryptocurrency exchanges this package ensures a reliable, and stable, flow of
-market information, eliminating the need for complex, low-level API interactions
-or webcrawlers.")
+     "This high-level API client provides open access to cryptocurrency market data,
+sentiment indicators, and interactive charting tools.  The data is sourced from
+major cryptocurrency exchanges via curl and returned in xts'-format.  The data
+comes in open, high, low, and close (OHLC) format with flexible granularity,
+ranging from seconds to months.  This flexibility makes it ideal for developing
+and backtesting trading strategies or conducting detailed market analysis.")
     (license license:gpl2+)))
 
 (define-public r-cryptography
@@ -6647,13 +6645,13 @@ Chemistry <doi:10.1021/ac901143w> and other normalization algorithms.")
 (define-public r-crmetrics
   (package
     (name "r-crmetrics")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRMetrics" version))
        (sha256
-        (base32 "1abrbkhhn5s3h4dam2pgmvqpqw0bpqzhj0521p7v48gsyfg224bw"))))
+        (base32 "1y70wpd553f75hq5hdv9y2hnb1p30bmsmmrf9vklrqwjj5q98fxg"))))
     (properties `((upstream-name . "CRMetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7083,28 +7081,6 @@ classification of any category you have in mind.  Next to training, a small web
 application is included in the package to allow you to easily construct training
 data.")
     (license license:bsd-3)))
-
-(define-public r-crf
-  (package
-    (name "r-crf")
-    (version "0.4-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CRF" version))
-       (sha256
-        (base32 "0jlcc1ffd2z7sz1szbi4vrp5rihmcp18bsw27x02ivi6l21nyivf"))))
-    (properties `((upstream-name . "CRF")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/wulingyun/CRF")
-    (synopsis "Conditional Random Fields")
-    (description
-     "This package implements modeling and computational tools for conditional random
-fields (CRF) model as well as other probabilistic undirected graphical models of
-discrete data with pairwise and unary potentials.")
-    (license license:gpl2+)))
 
 (define-public r-crew-cluster
   (package
@@ -8357,29 +8333,6 @@ pane as a formatted HTML file.  It is also possible to get this report with a
 shiny application.  Cppcheck can spot many error types and it can also give some
 recommendations on the code.")
     (license license:gpl3)))
-
-(define-public r-cpp11tesseract
-  (package
-    (name "r-cpp11tesseract")
-    (version "5.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cpp11tesseract" version))
-       (sha256
-        (base32 "1vpfx3crgcxgnavd0qb4pkw5zgvqnn40563b1vvydwgcp5q5yja2"))))
-    (properties `((upstream-name . "cpp11tesseract")))
-    (build-system r-build-system)
-    (inputs (list zlib))
-    (propagated-inputs (list r-pdftools r-digest r-curl r-cpp11))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://pacha.dev/cpp11tesseract/")
-    (synopsis "Open Source OCR Engine")
-    (description
-     "Bindings to Tesseract': a powerful optical character recognition (OCR) engine
-that supports over 100 languages.  The engine is highly configurable in order to
-tune the detection algorithms and obtain the best possible results.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cpp11eigen
   (package
@@ -10391,31 +10344,6 @@ Inspiration thanks to:
 attributes like Foliage Cover and Leaf Area Index.  Detailed description of the
 methods in Chianucci et al. (2022) <doi:10.1007/s00468-018-1666-3>.")
     (license license:expat)))
-
-(define-public r-cover
-  (package
-    (name "r-cover")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "COveR" version))
-       (sha256
-        (base32 "0mbiz2jf1krjcdjjgr2i986aw41fv345j6b1j0ldd0rpcqmp2y82"))))
-    (properties `((upstream-name . "COveR")))
-    (build-system r-build-system)
-    (inputs (list gsl))
-    (home-page "https://cran.r-project.org/package=COveR")
-    (synopsis "Clustering with Overlaps")
-    (description
-     "Provide functions for overlaps clustering, fuzzy clustering and interval-valued
-data manipulation.  The package implement the following algorithms: OKM
-(Overlapping Kmeans) from Cleuziou, G. (2007) <doi:10.1109/icpr.2008.4761079> ;
-NEOKM (Non-exhaustive overlapping Kmeans) from Whang, J. J., Dhillon, I. S., and
-Gleich, D. F. (2015) <doi:10.1137/1.9781611974010.105> ; Fuzzy Cmeans from
-Bezdek, J. C. (1981) <doi:10.1007/978-1-4757-0450-1> ; Fuzzy I-Cmeans from de
-A.T. De Carvalho, F. (2005) <doi:10.1016/j.patrec.2006.08.014>.")
-    (license license:gpl2+)))
 
 (define-public r-covequal
   (package
@@ -12635,33 +12563,6 @@ Science and Engineering (JHU CCSE) Coronavirus
 <https://systems.jhu.edu/research/public-health/ncov/>.")
     (license license:expat)))
 
-(define-public r-coronanetr
-  (package
-    (name "r-coronanetr")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CoronaNetR" version))
-       (sha256
-        (base32 "1qqlkcbwmr9g8rnsgb7dd1npd09sva11y6fy1g7l4wdvmpw07ymh"))))
-    (properties `((upstream-name . "CoronaNetR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-readr r-r-utils r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CoronaNetDataScience/CoronaNetR")
-    (synopsis "API Access to 'CoronaNet' Data")
-    (description
-     "Offers access to a database on government responses to the COVID-19 pandemic.
-To date, the @code{CoronaNet} dataset provides the most comprehensive and
-granular documentation of such government policies in the world, capturing data
-for 20 broad policy categories alongside many other dimensions, including the
-initiator, target, and timing of a policy.  This package is a programmatic
-front-end to up-to-date @code{CoronaNet} policy records and the @code{CoronaNet}
-policy intensity index scores.  For more information, see Cheng et al. (2020)
-<doi:10.1038/s41562-020-0909-7>.")
-    (license license:expat)))
-
 (define-public r-corona
   (package
     (name "r-corona")
@@ -13024,13 +12925,13 @@ the file AUTHORS for a list of copyright holders and contributors.")
 (define-public r-corelearn
   (package
     (name "r-corelearn")
-    (version "1.57.3")
+    (version "1.57.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CORElearn" version))
        (sha256
-        (base32 "1kgnjl8g2njrc4xnsvz76mjzp2z93klps6k1msni1fsjbg0vvl05"))))
+        (base32 "1w7x6fc130df1sj5jymahdnzc457iajjz75cv00gr5nj6as4bfpf"))))
     (properties `((upstream-name . "CORElearn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart-plot r-plotrix r-nnet r-cluster))
@@ -13274,28 +13175,6 @@ set of efficient methods to generate high-dimensional binary data with specified
 correlation structures.\" The American Statistician.  See
 <doi:10.1080/00031305.2020.1816213> for a detailed presentation of the method.")
     (license license:gpl3)))
-
-(define-public r-corbi
-  (package
-    (name "r-corbi")
-    (version "0.6-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Corbi" version))
-       (sha256
-        (base32 "13lbh6fcfrpgz459mjdnfkd8kys2350s8j0vv9ps18092264gh42"))))
-    (properties `((upstream-name . "Corbi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-mass r-igraph r-crf))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/wulingyun/Corbi")
-    (synopsis "Collection of Rudimentary Bioinformatics Tools")
-    (description
-     "This package provides a bundle of basic and fundamental bioinformatics tools,
-such as network querying and alignment, subnetwork extraction and search,
-network biomarker identification.")
-    (license license:gpl2+)))
 
 (define-public r-corazon
   (package
@@ -18931,13 +18810,13 @@ to uncover insightful growth dynamics and make informed decisions.")
 (define-public r-compexpdes
   (package
     (name "r-compexpdes")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompExpDes" version))
        (sha256
-        (base32 "0asr1ghsdqnxp7bvzypx3zyr0i1gcx1c0g973zz9gizpvym6q5j8"))))
+        (base32 "11nkcmygcmmk2df159ngbqaq6v3fwv87gvk5hjwfmni5h8dnxsc1"))))
     (properties `((upstream-name . "CompExpDes")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CompExpDes")
@@ -21345,17 +21224,17 @@ Toth (1980) <doi:10.1145/355873.355883>.")
 (define-public r-collocinfer
   (package
     (name "r-collocinfer")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CollocInfer" version))
        (sha256
-        (base32 "1iwf5g2y7i0j8dc19hdhya4m6g47jj968glnclj7a2yaq2yx37cj"))))
+        (base32 "1yfaslk2p1fzfsqbd71y40iahcf1vj5zwmsbiiw4abnx7lly4a3i"))))
     (properties `((upstream-name . "CollocInfer")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam r-matrix r-mass r-fda r-desolve))
-    (home-page "http://www.bscb.cornell.edu/~hooker")
+    (home-page "http://www.gileshooker.com")
     (synopsis "Collocation Inference for Dynamic Systems")
     (description
      "These functions implement collocation-inference for continuous-time and
@@ -23405,6 +23284,28 @@ feature.  The respective R package rkward cannot be installed directly from a
 repository, as it is a part of RKWard.")
     (license license:gpl3+)))
 
+(define-public r-cocoon
+  (package
+    (name "r-cocoon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cocoon" version))
+       (sha256
+        (base32 "0dmpvdflwns02mf499nxsqraygbaxhgjp6b1kqylrf7vf3is8hzi"))))
+    (properties `((upstream-name . "cocoon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lifecycle r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JeffreyRStevens/cocoon")
+    (synopsis "Extract, Format, and Print Statistical Output")
+    (description
+     "This package provides functions that format statistical output in a way that can
+be inserted into R Markdown documents.  This is analogous to the apa_print()
+functions in the papaja package but prints Markdown or @code{LaTeX} syntax.")
+    (license license:gpl3+)))
+
 (define-public r-coconut
   (package
     (name "r-coconut")
@@ -23961,13 +23862,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.3.1")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "1wpxn4cvcaip6gs9cs59qb3fns1crfv361mx8fvxdnrsxiqbqac8"))))
+        (base32 "0pkaf00a4z19xbnkcxpgciakbzcshdbsgjf76irvgdd5lpwh4j6r"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaps r-ggplot2))
@@ -24821,13 +24722,13 @@ Non-Parametric ANOVA. The package also contains the data sets used in that text.
 (define-public r-cmhc
   (package
     (name "r-cmhc")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmhc" version))
        (sha256
-        (base32 "1rjwc58f43iv3ri7z42z3gzfxcpkrzbd20r07rm6m14d7d5wqw0w"))))
+        (base32 "1dy8f0d6af1bqr16xk2sxxx2zyfs2dg0r34q1baqcfgqn12dffr9"))))
     (properties `((upstream-name . "cmhc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -26287,34 +26188,6 @@ symmetric dissimilarity matrix using the anti-Robinson matrix properties.
 Different data sets are obtained to describe and plot the clustered mutations
 information.")
     (license license:gpl3)))
-
-(define-public r-clustercons
-  (package
-    (name "r-clustercons")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clusterCons" version))
-       (sha256
-        (base32 "1k1y6cqpb5fyi2mbx2i4jbiwz0fni44lnq0xnv3pl0x3dpscwh6q"))))
-    (properties `((upstream-name . "clusterCons")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer r-lattice r-cluster r-apcluster))
-    (home-page "https://github.com/biomedicalinformaticsgroup/clusterCons")
-    (synopsis "Consensus Clustering using Multiple Algorithms and Parameters")
-    (description
-     "This package provides functions for calculation of robustness measures for
-clusters and cluster membership based on generating consensus matrices from
-bootstrapped clustering experiments in which a random proportion of rows of the
-data set are used in each individual clustering.  This allows the user to
-prioritise clusters and the members of clusters based on their consistency in
-this regime.  The functions allow the user to select several algorithms to use
-in the re-sampling scheme and with any of the parameters that the algorithm
-would normally take.  See Simpson, T. I., Armstrong, J. D. & Jarman, A. P.
-(2010) <doi:10.1186/1471-2105-11-590> and Monti, S., Tamayo, P., Mesirov, J. &
-Golub, T. (2003) <doi:10.1023/a:1023949509487>.")
-    (license license:gpl3+)))
 
 (define-public r-clusterbootstrap
   (package
@@ -34135,13 +34008,13 @@ within a range.")
 (define-public r-charcuterie
   (package
     (name "r-charcuterie")
-    (version "0.0.4")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "charcuterie" version))
        (sha256
-        (base32 "12yw4p3ffdl7pzyxqyg1gmwd387m5wxaj9vq4ix6b2cmfvmzsc1c"))))
+        (base32 "1gq4sqywi1rcp0a3wd55w4xd4gn7fzpca8ai6flr1an72sgbbdzr"))))
     (properties `((upstream-name . "charcuterie")))
     (build-system r-build-system)
     (propagated-inputs (list r-generics))
@@ -38186,23 +38059,23 @@ for an overview.")
 (define-public r-ccmmr
   (package
     (name "r-ccmmr")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCMMR" version))
        (sha256
-        (base32 "0y1lfjicyw0gs2r5nrqhkzyzkdbs6brdrzgc98k5fam79nj7kcbv"))))
+        (base32 "02dd0qc3i2y7ir39wardzq6y9cdhwigiqbr9xpm8la5csyc0w3kh"))))
     (properties `((upstream-name . "CCMMR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-rann r-r2r))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-rann))
     (home-page "https://github.com/djwtouw/CCMMR/")
     (synopsis "Minimization of the Convex Clustering Loss Function")
     (description
      "This package implements the convex clustering through majorization-minimization
 (CCMM) algorithm described in Touw, Groenen, and Terada (2022)
-<@code{arXiv:2211.01877>} to perform minimization of the convex clustering loss
-function.")
+<doi:10.48550/@code{arXiv.2211.01877>} to perform minimization of the convex
+clustering loss function.")
     (license license:gpl3+)))
 
 (define-public r-ccmm
@@ -38850,45 +38723,6 @@ nonlinear systems.  For details, see Watson & Silva (2022)
 <@code{arXiv:2205.05715>}.")
     (license license:gpl3+)))
 
-(define-public r-cbioportalr
-  (package
-    (name "r-cbioportalr")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cbioportalR" version))
-       (sha256
-        (base32 "0vr8sjp2fkz24zcws6i46kmswf30yj147y3108i6sk7ncc2mavr5"))))
-    (properties `((upstream-name . "cbioportalR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-glue
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/karissawhiting/cbioportalR")
-    (synopsis "Browse and Query Clinical and Genomic Data from cBioPortal")
-    (description
-     "This package provides R users with direct access to genomic and clinical data
-from the @code{cBioPortal} web resource via user-friendly functions that wrap
-@code{cBioPortal's} existing API endpoints
-<https://www.cbioportal.org/api/swagger-ui/index.html>.  Users can browse and
-query genomic data on mutations, copy number alterations and fusions, as well as
-data on tumor mutational burden ('TMB'), microsatellite instability status
-('MSI'), FACETS and select clinical data points (depending on the study).  See
-<https://www.cbioportal.org/> and Gao et al., (2013)
-<doi:10.1126/scisignal.2004088> for more information on the @code{cBioPortal}
-web resource.")
-    (license license:expat)))
-
 (define-public r-cbinom
   (package
     (name "r-cbinom")
@@ -39284,13 +39118,13 @@ effects.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "0bivanhgimfnw1dn16ggyj6yjjq1j3jv05xwixqcg96zdnw5va4z"))))
+        (base32 "11n2xhnrigphhqx9y72kqbal7sjch7ffbfwnp6g3265bimk12wi5"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -39304,24 +39138,20 @@ effects.")
                              r-lifecycle
                              r-latex2exp
                              r-knitr
+                             r-ggraph
                              r-ggplot2
-                             r-ggdag
                              r-dplyr
                              r-dirmult
-                             r-dagitty
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CausalQueries")
+    (home-page "https://integrated-inferences.github.io/CausalQueries/")
     (synopsis "Make, Update, and Query Binary Causal Models")
     (description
-     "Users can declare binary causal models, update beliefs about causal types given
-data and calculate arbitrary estimands.  Model definition makes use of dagitty
-functionality.  Updating is implemented in stan'.  The approach used in
-@code{CausalQueries} is a generalization of the biqq models described in \"Mixing
-Methods: A Bayesian Approach\" (Humphreys and Jacobs, 2015,
-<DOI:10.1017/S0003055415000453>).  The conceptual extension makes use of work on
-probabilistic causal models described in Pearl's Causality (Pearl, 2009,
-<DOI:10.1017/CBO9780511803161>).")
+     "Users can declare causal models over binary nodes, update beliefs about causal
+types given data, and calculate arbitrary queries.  Updating is implemented in
+stan'.  See Humphreys and Jacobs, 2023, Integrated Inferences (<DOI:
+10.1017/9781316718636>) and Pearl, 2009 Causality
+(<DOI:10.1017/CBO9780511803161>).")
     (license license:expat)))
 
 (define-public r-causalpaf
@@ -41941,48 +41771,32 @@ JQuery <https://jquery.com> and CSS styles to improve the card functionality.")
 (define-public r-card
   (package
     (name "r-card")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "card" version))
        (sha256
-        (base32 "1api0j06fp5av5a48vnnm1wvwdcskynf0xsj9pb41njxdh9v8daf"))))
+        (base32 "1vl87zdhxakhw0fh4zcrx2ngz4n1wzqg6y9csxwhnh9pidk6wj7w"))))
     (properties `((upstream-name . "card")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-survival
-                             r-stringr
-                             r-sf
                              r-rlang
-                             r-recipes
-                             r-readr
                              r-purrr
-                             r-magrittr
-                             r-lutz
-                             r-lubridate
-                             r-hmisc
+                             r-parsnip
                              r-hardhat
-                             r-ggrepel
                              r-ggplot2
                              r-generics
-                             r-dplyr
-                             r-data-table
-                             r-broom))
+                             r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/asshah4/card")
-    (synopsis "Cardiovascular and Autonomic Research Design")
+    (home-page "https://cran.r-project.org/package=card")
+    (synopsis "Cardiovascular Applications in Research Data")
     (description
-     "This package provides tools that can aid in the assessment of the autonomic
-regulation of cardiovascular physiology.  The aims of this package are to: 1)
-study electrocardiography (both intervals and morphology) as extensions of
-signal processing, 2) study circadian rhythms and how it effects autonomic
-physiology, 3) assess clinical risk of autonomic dysfunction on cardiovascular
-health through the perspective of epidemiology and causality.  The analysis of
-circadian rhythms through cosinor analysis are built upon the methods by
-Cornelissen (2014) <doi:10.1186/1742-4682-11-16> and Refinetti, Cornelissen,
-Halberg (2014) <doi:10.1080/09291010600903692>.")
+     "This package provides a collection of cardiovascular research datasets and
+analytical tools, including methods for cardiovascular procedural data, such as
+electrocardiography, echocardiography, and catheterization data.  Additional
+methods exist for analysis of procedural billing codes.")
     (license license:expat)))
 
 (define-public r-carcass
@@ -42690,13 +42504,13 @@ and produce the resulting merge by time period and geographical region.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.3.16")
+    (version "0.3.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cansim" version))
        (sha256
-        (base32 "144p7zc44xb0szslsrxg1q1lhn5rizlgc0rvsinwzglnkzl478p2"))))
+        (base32 "0lnc9idpcz043p3wb0l0x2042xx7j9mmfbx6sqkvrmi1gilsm7jx"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -44776,27 +44590,28 @@ classes).")
 (define-public r-c212
   (package
     (name "r-c212")
-    (version "0.98")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "c212" version))
        (sha256
-        (base32 "0pzg239602iq56nhxfdvlk26z58lz6vvlbwsdpwhmich0by4gx4x"))))
+        (base32 "0inkjnfbcak34c96wwa65sh8h1bhy27p9vj6v62af25xjrzz59ch"))))
     (properties `((upstream-name . "c212")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda))
-    (home-page "https://cran.r-project.org/package=c212")
+    (home-page "https://github.com/rcarragh/c212")
     (synopsis
      "Methods for Detecting Safety Signals in Clinical Trials Using Body-Systems (System Organ Classes)")
     (description
-     "This package provides methods for detecting safety signals in clinical trials
-using groupings of adverse events by body-system or system organ class.  This
-work was supported by the Engineering and Physical Sciences Research Council
-(UK) (EPSRC) [award reference 1521741] and Frontier Science (Scotland) Ltd.  The
+     "This package provides a self-contained set of methods to aid clinical trial
+safety investigators, statisticians and researchers, in the early detection of
+adverse events using groupings by body-system or system organ class.  This work
+was supported by the Engineering and Physical Sciences Research Council (UK)
+(EPSRC) [award reference 1521741] and Frontier Science (Scotland) Ltd.  The
 package title c212 is in reference to the original Engineering and Physical
 Sciences Research Council (UK) funded project which was named CASE 2/12.")
-    (license license:gpl2+)))
+    (license license:gpl3)))
 
 (define-public r-c19dnuts
   (package

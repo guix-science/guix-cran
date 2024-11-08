@@ -15,6 +15,7 @@
   #:use-module (gnu packages libreoffice)
   #:use-module (gnu packages docker)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages python)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
@@ -22,7 +23,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages tcl)
   #:use-module (guix-cran packages z)
@@ -1639,6 +1639,28 @@ in 2 Gy fractions (EQD2), normal tissue complication probability (NTCP), and
 tumor control probability (TCP).  Show DVH diagrams, check and visualize quality
 assurance constraints for the DVH. Includes web-based graphical user interface.")
     (license license:gpl2+)))
+
+(define-public r-dverse
+  (package
+    (name "r-dverse")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dverse" version))
+       (sha256
+        (base32 "0d59dsz7cdr8inmpw0gphv3pwgpqjygp319wff27y7vpz3cymxrl"))))
+    (properties `((upstream-name . "dverse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-rlang r-glue r-dplyr r-cli))
+    (home-page "https://github.com/maurolepore/dverse")
+    (synopsis "Document a Universe of Packages")
+    (description
+     "This package creates a data frame containing the metadata associated with the
+documentation of a collection of R packages.  It allows for linking topic names
+to their corresponding documentation online.  If you maintain a universe
+meta-package, it helps create a comprehensive reference for its website.")
+    (license license:expat)))
 
 (define-public r-durga
   (package
@@ -5372,6 +5394,28 @@ consistent graphics and diagrams with lines, common shapes, text, and page
 settings.  Compatible with and based on the R grid package.")
     (license license:expat)))
 
+(define-public r-drape
+  (package
+    (name "r-drape")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drape" version))
+       (sha256
+        (base32 "0y4y6vvskizghqf78d1vr0skac0ks3yb83m9fgn8i3wmgqrhws19"))))
+    (properties `((upstream-name . "drape")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=drape")
+    (synopsis "Doubly Robust Average Partial Effects")
+    (description
+     "Doubly robust average partial effect estimation.  This implementation contains
+methods for adding additional smoothness to plug-in regression procedures and
+for estimating score functions using smoothing splines.  Details of the method
+can be found in Harvey Klyne and Rajen D. Shah (2023) <@code{arXiv:2308.09207>}.")
+    (license license:expat)))
+
 (define-public r-dramaanalysis
   (package
     (name "r-dramaanalysis")
@@ -6113,6 +6157,35 @@ manipulation.")
      "Perform tree-ring analyses such as detrending, chronology building, and cross
 dating.  Read and write standard file formats used in dendrochronology.")
     (license license:gpl2+)))
+
+(define-public r-dpkg
+  (package
+    (name "r-dpkg")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dpkg" version))
+       (sha256
+        (base32 "1ah4b2znqikr9llw6rmmwranswr0dbw2c2y31cj972c8h7fvn0mi"))))
+    (properties `((upstream-name . "dpkg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-cli
+                             r-arrow))
+    (home-page "https://github.com/cole-brokamp/dpkg")
+    (synopsis "Create, Stow, and Read Data Packages")
+    (description
+     "Data frame, tibble, or tbl objects are converted to data package objects using
+specific metadata labels (name, version, title, homepage, description).  A data
+package object ('dpkg') can be written to disk as a parquet file or released to
+a @code{GitHub} repository.  Data package objects can be read into R from online
+repositories and downloaded files are cached locally across R sessions.")
+    (license license:expat)))
 
 (define-public r-dpit
   (package
@@ -9968,6 +10041,40 @@ arbitrary glyphs through ggmulti'.  The @code{diveR} package gathers together
 and installs all these related packages in a single step.")
     (license license:gpl2)))
 
+(define-public r-divent
+  (package
+    (name "r-divent")
+    (version "0.4-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "divent" version))
+       (sha256
+        (base32 "0p51xpxc05w0f4djab84pcp7hi8g9lsdrrxdb3mi84qj6b5smbk4"))))
+    (properties `((upstream-name . "divent")))
+    (build-system r-build-system)
+    (inputs (list pandoc))
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rdpack
+                             r-rcolorbrewer
+                             r-ggplot2
+                             r-entropyestimation
+                             r-dplyr
+                             r-cli
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://ericmarcon.github.io/divent/")
+    (synopsis "Entropy Partitioning to Measure Diversity")
+    (description
+     "Measurement and partitioning of diversity, based on Tsallis entropy, following
+Marcon and Herault (2015) <doi:10.18637/jss.v067.i08>.  divent provides
+functions to estimate alpha, beta and gamma diversity of communities, including
+phylogenetic and functional diversity.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-divemove
   (package
     (name "r-divemove")
@@ -13648,13 +13755,13 @@ sensitivity and the copy number per well in the initial dilute.")
 (define-public r-digirhythm
   (package
     (name "r-digirhythm")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "digiRhythm" version))
        (sha256
-        (base32 "1z8arjp4pk8iq7jwigyh7bxfd33dhdxc9blmy1j8kssml152ilhn"))))
+        (base32 "0h0kn1xbclk5h5q1rpsqsmn1m1qwkvz26ar7srj54zq0nqrbspc9"))))
     (properties `((upstream-name . "digiRhythm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15035,13 +15142,13 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "0rwgfgfrp967rc36a4g7ap68a89hivgid010z454hl2s4iwrzd3f"))))
+        (base32 "0k4gkaksk5wkyp39yhz08h7yvh4hjw9bnhj8fyqpfdyyn75zpgjx"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15644,13 +15751,13 @@ Sampling and Household Listing Manual\" (ICF International 2012,
 (define-public r-dhis2r
   (package
     (name "r-dhis2r")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dhis2r" version))
        (sha256
-        (base32 "1y6hzzwkwil7xvmbncr1mwxvb8kbsq3fyyhqm7s3y9409amyb8mr"))))
+        (base32 "0nrnq6czqg96v8lf3vhmjsrddnxhzkb92dyagqdmgjyycixm5d0z"))))
     (properties `((upstream-name . "dhis2r")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-httr2 r-dplyr r-curl r-attempt))
@@ -16225,36 +16332,6 @@ is dichotomized and observed sparsely.  This package provides smooth estimations
 of functional regression coefficients and principal components for the
 dichotomized functional response regression (dfrr) model.")
     (license license:gpl3)))
-
-(define-public r-dfr
-  (package
-    (name "r-dfr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dfr" version))
-       (sha256
-        (base32 "1n8k7v2hwcva8pjx3bxld87iy6crf0ca03d0pay1xcryf6knk3zp"))))
-    (properties `((upstream-name . "dfr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sgs r-matrix r-faux r-caret))
-    (home-page "https://github.com/ff1201/dfr")
-    (synopsis "Dual Feature Reduction for SGL")
-    (description
-     "Implementation of the Dual Feature Reduction (DFR) approach for the Sparse Group
-Lasso (SGL) and the Adaptive Sparse Group Lasso (@code{aSGL}) (Feser and
-Evangelou (2024) <doi:10.48550/@code{arXiv.2405.17094>}).  The DFR approach is a
-feature reduction approach that applies strong screening to reduce the feature
-space before optimisation, leading to speed-up improvements for fitting SGL
-(Simon et al. (2013) <doi:10.1080/10618600.2012.681250>) and @code{aSGL}
-(Mendez-Civieta et al. (2020) <doi:10.1007/s11634-020-00413-8> and Poignard
-(2020) <doi:10.1007/s10463-018-0692-7>) models.  DFR is implemented using the
-Adaptive Three Operator Splitting (ATOS) (Pedregosa and Gidel (2018)
-<doi:10.48550/@code{arXiv.1804.02339>}) algorithm, with linear and logistic SGL
-models supported, both of which can be fit using k-fold cross-validation.  Dense
-and sparse input matrices are supported.")
-    (license license:gpl3+)))
 
 (define-public r-dfphase1
   (package
@@ -26113,31 +26190,6 @@ a data frame, collection of data frames and sequences of data frames and
 individual vectors.  For more information see
 <https://community.visualdatatools.com/datagraph/knowledge-base/r-package/>.")
     (license license:gpl2+)))
-
-(define-public r-datagovsgr
-  (package
-    (name "r-datagovsgr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "datagovsgR" version))
-       (sha256
-        (base32 "1z3zrvz9dc9a06kp8agrgvx1l6g5hq2cmmn6xpabp68pkw4jdpc6"))))
-    (properties `((upstream-name . "datagovsgR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-purrr r-httr r-dplyr r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=datagovsgR")
-    (synopsis "Call Real Time APIs from Data Gov Singapore")
-    (description
-     "This package provides a wrapper for the Data.gov.sg developer resources, which
-provide real time and historical information, ranging from carpark availability
-to weather forecasts.  The functions makes the API calls for a given date and
-time, before returning the relevant information in a data frame.  All APIs are
-supported, less the IPOS one which is not returning any data.  Relevant
-information can be found here <https://data.gov.sg/developer>.")
-    (license license:expat)))
 
 (define-public r-datafsm
   (package

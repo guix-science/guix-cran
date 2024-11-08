@@ -3695,13 +3695,13 @@ are directly influenced by a number of variables (Battese and Coelli, 1995,
 (define-public r-fromo
   (package
     (name "r-fromo")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fromo" version))
        (sha256
-        (base32 "03bg9q2sqy7208chyim6brp1idx3y44sc54qm0zkz3434v4na05r"))))
+        (base32 "18ai6b6c2b2ifwrahkvprga7s2vwr0d1jhlp0kajwi6p2vrkrc7h"))))
     (properties `((upstream-name . "fromo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -5502,13 +5502,13 @@ group, hence the name.  To cite in publications please use Hankin (2023)
 (define-public r-fr
   (package
     (name "r-fr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fr" version))
        (sha256
-        (base32 "0kj7qjv6jdrp8wm7ynpi4mjm4sx9b2aqnhqb0pn1xnpbsj9x7557"))))
+        (base32 "1n32f9lc7j1sdxjrlvxsg0cli1a95mf1l30241hzssd45kzgli9v"))))
     (properties `((upstream-name . "fr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -8974,18 +8974,17 @@ up the calculation of distances between observations.")
 (define-public r-fmesher
   (package
     (name "r-fmesher")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmesher" version))
        (sha256
-        (base32 "1kwy04qs8pkjyd9ad55x8dr006z2nv0dyvgvhx15s3p3qhxgg6mm"))))
+        (base32 "17cpq6yxpa4jwwq8s4s5nd1lvh4jqyxnnqz7bay63vq53g0b4c12"))))
     (properties `((upstream-name . "fmesher")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-tibble
-                             r-sp
                              r-sf
                              r-rlang
                              r-rcpp
@@ -9035,13 +9034,13 @@ effects-model formulation proposed by Li et al. (2021)
 (define-public r-fmeffects
   (package
     (name "r-fmeffects")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmeffects" version))
        (sha256
-        (base32 "0hw3jsq4s4rh66n9j3sll9sarnnbxp90ma6sqs9q4gjkm1qi1d1p"))))
+        (base32 "190v2qkm91pxfwkfwsdb9xi7cazkbg5020cbc9flw1kg36ym4vgn"))))
     (properties `((upstream-name . "fmeffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -9752,30 +9751,6 @@ many other agencies.")
      "An application to calculate the daily environmental costs of river flow
 regulation by dams based on GarcÃ­a de Jalon et al.  2017
 <doi:10.1007/s11269-017-1663-0>.")
-    (license license:expat)))
-
-(define-public r-flowr
-  (package
-    (name "r-flowr")
-    (version "0.9.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flowr" version))
-       (sha256
-        (base32 "1cbbfrvgzqclvbhy20vjwgxbvnn3ljh0k1k54jf2si10bfw3zzi5"))))
-    (properties `((upstream-name . "flowr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-whisker r-readr r-params r-diagram))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/flow-r/flowr")
-    (synopsis "Streamlining Design and Deployment of Complex Workflows")
-    (description
-     "This framework allows you to design and implement complex pipelines, and deploy
-them on your institution's computing cluster.  This has been built keeping in
-mind the needs of bioinformatics workflows.  However, it is easily extendable to
-any field where a series of steps (shell commands) are to be executed in a
-(work)flow.")
     (license license:expat)))
 
 (define-public r-flowml
@@ -13825,13 +13800,13 @@ Systems\" (@code{NeurIPS}).")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "12ss8ixs2ncyvavb4cckyk9dsky8zfipb9f3vldy19n3dwrpqxys"))))
+        (base32 "0fc9kkpbl0d5j6z6ch2k5wdajmfx5cwgrmbckqfbyfg3ligqhciq"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-lutz r-httr r-digest))
@@ -18517,34 +18492,6 @@ these icons as favicons in shiny applications and other HTML pages.")
 multiple values to be replaced with NA using a single function.")
     (license license:expat)))
 
-(define-public r-faux
-  (package
-    (name "r-faux")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "faux" version))
-       (sha256
-        (base32 "143yc71cfsxnczi719ygrsynxry60nh8263gg8vwp3qrc80j80lh"))))
-    (properties `((upstream-name . "faux")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-rlang
-                             r-lme4
-                             r-jsonlite
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/debruine/faux")
-    (synopsis "Simulation for Factorial Designs")
-    (description
-     "Create datasets with factorial structure through simulation by specifying
-variable parameters.  Extended documentation at
-<https://debruine.github.io/faux/>.  Described in @code{DeBruine} (2020)
-<doi:10.5281/zenodo.2669586>.")
-    (license license:expat)))
-
 (define-public r-faulttree
   (package
     (name "r-faulttree")
@@ -19955,13 +19902,13 @@ negligible.")
 (define-public r-fastdid
   (package
     (name "r-fastdid")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastdid" version))
        (sha256
-        (base32 "19p0nnb27axgvsichxq6is6njnkmmqsj6d88a1kyx4kjqk36zkrl"))))
+        (base32 "1rb3lvp9s5jj34643c5njsi16hl7q67hjvyzcfw1gxdrz46nv444"))))
     (properties `((upstream-name . "fastdid")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -20009,13 +19956,13 @@ computational point of view.")
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.14.3")
+    (version "0.14.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "0b5xlx80nlbmkp8h4rnz0367zxn2hlwpcb4zid5jq3q32rv8r6sz"))))
+        (base32 "0ycmyph5p2r74gdry5smwwwqxsrvj4ql0v3zcvafx71jfkcyna2p"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -22898,13 +22845,13 @@ components (remainder, level, trend and seasonal).")
 (define-public r-fable
   (package
     (name "r-fable")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fable" version))
        (sha256
-        (base32 "0dlxvfyxvphbzlr4w2kfqk2icb15p415ld9p7lpws25yv4p7gnhd"))))
+        (base32 "04z47b8cfyr1pbbh3djn6z11vhpzfd7pm6vrhhdw3scliqd3d73m"))))
     (properties `((upstream-name . "fable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble

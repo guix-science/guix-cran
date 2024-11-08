@@ -5949,13 +5949,13 @@ parameters.")
 (define-public r-trialsize
   (package
     (name "r-trialsize")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialSize" version))
        (sha256
-        (base32 "0k162n3jr2ixdl3pp90izdr83z14hj70jb9mrfw3iqz0pczp2cpj"))))
+        (base32 "0hrzm6v6bjnln0zyzbvgdgrsan2mg4carcy6jrms726ml2nj1n4c"))))
     (properties `((upstream-name . "TrialSize")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=TrialSize")
@@ -8117,27 +8117,6 @@ can be estimated, along with the corresponding standard errors and P values.")
      "This package provides a robust and user-friendly solution for transliterating
 Ukrainian strings into Latin symbols.")
     (license license:expat)))
-
-(define-public r-translated
-  (package
-    (name "r-translated")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "translated" version))
-       (sha256
-        (base32 "12jd0dzbhliajg2x88kqwxpvrd1xy64sd551rsvbklfc3n7fqx09"))))
-    (properties `((upstream-name . "translated")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-glue))
-    (home-page "https://github.com/ttscience/translated")
-    (synopsis "Simple and Robust Translation System")
-    (description
-     "Allows translating with formatted string literals, grouped entries, and
-configurable system of plurals.  Have a separate file for each locale and use
-inheritance to handle dialect differences.")
-    (license license:gpl3+)))
 
 (define-public r-translate-logit
   (package
@@ -14819,6 +14798,41 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
 get tidy data frames in response, and cache data in a local database.")
     (license license:expat)))
 
+(define-public r-tidywater
+  (package
+    (name "r-tidywater")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidywater" version))
+       (sha256
+        (base32 "1jjy2zk08n6bnsd3ppplxd3wsiv5zsfjdj32sh7abqrzj9zrv7jy"))))
+    (properties `((upstream-name . "tidywater")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-knitr
+                             r-ggrepel
+                             r-ggplot2
+                             r-furrr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BrownandCaldwell-Public/tidywater")
+    (synopsis "Water Quality Models for Drinking Water Treatment Processes")
+    (description
+     "This package provides multiple water chemistry-based models and published
+empirical models in one standard format.  Functions can be chained together to
+model a complete treatment process and are designed to work in a tidyverse
+workflow.  Models are primarily based on these sources: Benjamin, M. M. (2002,
+ISBN:147862308X), Crittenden, J. C., Trussell, R., Hand, D., Howe, J. K., &
+Tchobanoglous, G., Borchardt, J. H. (2012, ISBN:9781118131473), USEPA. (2001)
+<https://www.epa.gov/sites/default/files/2017-03/documents/wtp_model_v._2.0_manual_508.pdf>.")
+    (license (list (license:fsdg-compatible "Apache License (>= 2)")
+                   license:expat))))
+
 (define-public r-tidyvpc
   (package
     (name "r-tidyvpc")
@@ -16005,13 +16019,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidyllm
   (package
     (name "r-tidyllm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyllm" version))
        (sha256
-        (base32 "1g2hd82zph2k6k72r6qkx27dk6cv0ba0yhrhvlvk1hk7sdw0glk9"))))
+        (base32 "0ykjs91bnmfvmjqdx3rnrc2vfvaqc2ip6znybccnmlk1p0hy1km8"))))
     (properties `((upstream-name . "tidyllm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -16019,23 +16033,27 @@ approach, but an uninformative prior is also available.")
                              r-rlang
                              r-r6
                              r-purrr
+                             r-png
                              r-pdftools
                              r-lubridate
+                             r-lifecycle
                              r-jsonlite
                              r-httr2
                              r-glue
+                             r-curl
+                             r-cli
                              r-base64enc))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tidyllm")
+    (home-page "https://edubruell.github.io/tidyllm/")
     (synopsis "Tidy Integration of Large Language Models")
     (description
      "This package provides a tidy interface for integrating large language model
-(LLM) APIs such as Claude', @code{ChatGPT}', Groq', and local models via Ollama
+(LLM) APIs such as Claude', Openai', Groq','Mistral and local models via Ollama
 into R workflows.  The package supports text and media-based interactions,
-interactive message history, stateful rate limit handling, and a tidy,
-pipeline-oriented interface for streamlined integration into data workflows.
-Web services are available at <https://www.anthropic.com>, <https://openai.com>,
-<https://groq.com>, and <https://ollama.com>.")
+interactive message history, batch request APIs, and a tidy, pipeline-oriented
+interface for streamlined integration into data workflows.  Web services are
+available at <https://www.anthropic.com>, <https://openai.com>,
+<https://groq.com>, <https://mistral.ai/> and <https://ollama.com>.")
     (license license:expat)))
 
 (define-public r-tidylda
@@ -18122,6 +18140,67 @@ and treatment groups (three-group) experiments with non-compliance proposed by
 Gerber, Green, Kaplan, and Kern (2010).")
     (license license:gpl2)))
 
+(define-public r-threebrain
+  (package
+    (name "r-threebrain")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "threeBrain" version))
+       (sha256
+        (base32 "113lbz8h6vrqbg3ppqhj8k400hhhmk8a4v8f1hdwhc1z48hjqbks"))))
+    (properties `((upstream-name . "threeBrain")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-shiny
+                             r-servr
+                             r-r6
+                             r-png
+                             r-oro-nifti
+                             r-knitr
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-gifti
+                             r-freesurferformats
+                             r-dipsaus
+                             r-digest))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://dipterix.org/threeBrain/")
+    (synopsis "Your Advanced 3D Brain Visualization")
+    (description
+     "This package provides a fast, interactive cross-platform, and easy to share
+@code{WebGL'-based} 3D brain viewer that visualizes @code{FreeSurfer} and/or
+AFNI/SUMA surfaces.  The viewer widget can be either standalone or embedded into
+R-shiny applications.  The standalone version only require a web browser with
+@code{WebGL2} support (for example, Chrome', Firefox', Safari'), and can be
+inserted into any websites.  The R-shiny support allows the 3D viewer to be
+dynamically generated from reactive user inputs.  Please check the publication
+by Wang, Magnotti, Zhang, and Beauchamp (2023,
+<doi:10.1523/ENEURO.0328-23.2023>) for electrode localization.  This viewer has
+been fully adopted by RAVE <https://openwetware.org/wiki/RAVE>, an interactive
+toolbox to analyze @code{iEEG} data by Magnotti, Wang, and Beauchamp (2020,
+<doi:10.1016/j.neuroimage.2020.117341>).  Please check
+citation(\"@code{threeBrain}\") for details.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
+
 (define-public r-thredds
   (package
     (name "r-thredds")
@@ -18424,30 +18503,6 @@ Subtype-Free Average Causal Effect For Heterogeneous Disease Etiology\" (soon on
      "Temperature measurement data, equations and methods for thermocouples, wire RTD,
 thermistors, IC thermometers, bimetallic strips and the ITS-90.")
     (license license:gpl3+)))
-
-(define-public r-thermistor
-  (package
-    (name "r-thermistor")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Thermistor" version))
-       (sha256
-        (base32 "0jdc5x3pylqbfxyhxhfsfd5lqiqd9qpn08w6svm0w7clbsp54bph"))))
-    (properties `((upstream-name . "Thermistor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
-    (home-page "https://cran.r-project.org/package=Thermistor")
-    (synopsis "The Simulation of the Thermistor Network")
-    (description
-     "Given the circuit topology, simulating the Voltage vs. Temperature curve with a
-set of Resistors (R1, R2, R3 and R4) and Thermistors values (TH1 and TH2) for a
-given thermistor network shown in Seth @code{DeLand} (2024) \"Optimal Component
-Selection Using the Mixed-Integer Genetic Algorithm\"
-<https://ww2.mathworks.cn/matlabcentral/fileexchange/35810-optimal-component-selection-using-the-mixed-integer-genetic-algorithm>
-and the application in Mak and Wu (2019) <doi:10.1080/00401706.2019.1593246>.")
-    (license license:gpl3)))
 
 (define-public r-thermindex
   (package
@@ -27237,27 +27292,6 @@ v1.2 - fixed \"missing \"no visible global function definition for ..\".")
      "Create HTML tables of descriptive statistics, as one would expect to see as the
 first table (i.e. \"Table 1\") in a medical/epidemiological journal article.")
     (license license:gpl3)))
-
-(define-public r-table-glue
-  (package
-    (name "r-table-glue")
-    (version "0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "table.glue" version))
-       (sha256
-        (base32 "05d77b9mw99w2pdqhk0dis70znafcnz60mf1l1cjpcx02k8bgbjr"))))
-    (properties `((upstream-name . "table.glue")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-glue))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bcjaeger/table.glue")
-    (synopsis "Make and Apply Customized Rounding Specifications for Tables")
-    (description
-     "Translate double and integer valued data into character values formatted for
-tabulation in manuscripts or other types of academic reports.")
-    (license license:expat)))
 
 (define-public r-table-express
   (package

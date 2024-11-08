@@ -705,6 +705,30 @@ of a rare disease assuming independence or simple dependence of genetic and
 non-genetic covariates.")
     (license license:gpl2)))
 
+(define-public r-lubrilog
+  (package
+    (name "r-lubrilog")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lubrilog" version))
+       (sha256
+        (base32 "166787agrp4a0gnm8vs72q6cgr1vha1g3d6yhdsla76l394rzq5n"))))
+    (properties `((upstream-name . "lubrilog")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lubridate r-cli))
+    (home-page "https://github.com/arrismo/lubrilog")
+    (synopsis "Get Insights on 'lubridate' Operations")
+    (description
+     "This package provides a set of tools designed to enhance transparency and
+understanding of date-time manipulation functions from the lubridate package.
+It provides detailed feedback about the operations performed by lubridate
+functions, allowing users to better comprehend and debug their code.  These
+insights serve as both a learning tool for newcomers and a debugging aid for
+programmers working with date-time data.")
+    (license license:gpl3+)))
+
 (define-public r-luajr
   (package
     (name "r-luajr")
@@ -7107,13 +7131,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.2.2")
+    (version "3.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMest" version))
        (sha256
-        (base32 "10qb4v76ky86cy3lyq3b4v76l8hafp3h4zkqmyhqar3fq7yalcq5"))))
+        (base32 "0bi1yd5kbqcyqzahny5naaarbbn08jqcw8x3knjijbwsfgq0adg1"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
@@ -7898,13 +7922,13 @@ potentially a limited number of times.")
 (define-public r-litedown
   (package
     (name "r-litedown")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "litedown" version))
        (sha256
-        (base32 "1324iw339img4nacpp79n1md6argxzcxhlr5kccscldwzx6q9a6a"))))
+        (base32 "1fm0932z35flb7rwx3pydifrfmw62b7hrm6qr7b0wv9gcqvi6pxx"))))
     (properties `((upstream-name . "litedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-commonmark))
@@ -10626,13 +10650,13 @@ penalty.")
 (define-public r-libr
   (package
     (name "r-libr")
-    (version "1.3.4")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libr" version))
        (sha256
-        (base32 "16q65f1slbzlysqcn5mzj7ws8cm59qk3yxgippwhcjmrswrfk5y2"))))
+        (base32 "0baak1x27rj36jr3sswwyia0mav274wiywblzd22173hbmbxwpln"))))
     (properties `((upstream-name . "libr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10640,6 +10664,7 @@ penalty.")
                              r-readr
                              r-rcpp
                              r-openxlsx
+                             r-nanoparquet
                              r-haven
                              r-dplyr
                              r-data-table
@@ -11244,13 +11269,13 @@ integrals and fuzzy transform.")
 (define-public r-lfe
   (package
     (name "r-lfe")
-    (version "3.0-0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfe" version))
        (sha256
-        (base32 "16838gqglnc2l5hnyv46fpikh6h0l5yy59rmbisxpl1j571hab9l"))))
+        (base32 "0lj4xz5m9hvsfi5pyfrlbap64s3yxzsddv9qhr9l9gjpfk6phyw8"))))
     (properties `((upstream-name . "lfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-sandwich r-matrix r-formula))

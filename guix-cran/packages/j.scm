@@ -3988,13 +3988,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagshelper" version))
        (sha256
-        (base32 "1rsc1jlas4b6bxgjvwbxqj8khvsflx0hni5dlifdnvjmc08x18x1"))))
+        (base32 "1i214hkg0g2zbln5cy9s175w1jf3akz3jpzf9wydd9wcbl9j0qa2"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))

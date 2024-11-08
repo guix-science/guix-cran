@@ -2107,13 +2107,13 @@ facilitate the model interpretation.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "0095jhb5zfl4nix9n26mb1xdrc4fgi8mvn1l3z4m90mzrk39vsk2"))))
+        (base32 "0kwzqcxy4dxkfy5l44ilzld72ghizch27a5an9prql76kwpm1235"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2134,13 +2134,13 @@ multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "1d1gh8wxwy3pddamhfgiy1l89swi8i9mi5i782cwd3gi2q6w6jf3"))))
+        (base32 "0618n5rmhjza9cw8mnlkiqw8cli3bf62vp3hld9byr4pr4x2ww8n"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -3744,13 +3744,13 @@ datasets for calculating efficiency and cross efficiency.")
 (define-public r-multiplex
   (package
     (name "r-multiplex")
-    (version "3.7")
+    (version "3.8-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiplex" version))
        (sha256
-        (base32 "0j941parx94iik14nf2kxixdnwang2clvj7g1b5x08sp96lh6wr9"))))
+        (base32 "0ninfd1gf7w2b97l8r7nbgnk8v8312qymfvqbzdarynlxz6qbdlv"))))
     (properties `((upstream-name . "multiplex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6758,13 +6758,13 @@ reliability of scenarios with equal or different probabilities of occurrence
 (define-public r-mtdesign
   (package
     (name "r-mtdesign")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtdesign" version))
        (sha256
-        (base32 "0fnyw6zcls12b6mmr9pxj3b9vs8pv1ik3h671kmxfgv1k6dwn6b9"))))
+        (base32 "1fk48z40yg3pgdbf9bqivw33k88m2ns8y2cjxszp5686h68nn01v"))))
     (properties `((upstream-name . "mtdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6772,8 +6772,8 @@ reliability of scenarios with equal or different probabilities of occurrence
                              r-rlang
                              r-rcpp
                              r-magrittr
-                             r-logger
                              r-ggplot2
+                             r-futile-logger
                              r-dplyr
                              r-bh))
     (home-page "https://github.com/openpharma/mtdesign")
@@ -9058,13 +9058,13 @@ tests its significance.")
 (define-public r-mrmre
   (package
     (name "r-mrmre")
-    (version "2.1.2.1")
+    (version "2.1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mRMRe" version))
        (sha256
-        (base32 "1nbz2rq6fzzy01vhizpszw47c8yha1rvks6hf5dh0dx4h8p3jg6m"))))
+        (base32 "02cj6dvh463f80alb4qchflvgssid56i220yi7s63ypclr9knb0x"))))
     (properties `((upstream-name . "mRMRe")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-igraph))
@@ -11711,34 +11711,6 @@ effect size, or required sample size of a factorial or fractional factorial
 experiment, for main effects or interactions, given several possible choices of
 effect size metric, and allowing pretests and clustering.")
     (license license:gpl2+)))
-
-(define-public r-moss
-  (package
-    (name "r-moss")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MOSS" version))
-       (sha256
-        (base32 "0gjsyv74hhjknlnplc8157mmypnfy1yjrs400pz0p4744k5c8c7s"))))
-    (properties `((upstream-name . "MOSS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rtsne r-dbscan r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/agugonrey/MOSS")
-    (synopsis "Multi-Omic Integration via Sparse Singular Value Decomposition")
-    (description
-     "High dimensionality, noise and heterogeneity among samples and features
-challenge the omic integration task.  Here we present an omic integration method
-based on sparse singular value decomposition (SVD) to deal with these
-limitations, by: a.  obtaining the main axes of variation of the combined omics,
-b.  imposing sparsity constraints at both subjects (rows) and features (columns)
-levels using Elastic Net type of shrinkage, and c.  allowing both linear and
-non-linear projections (via t-Stochastic Neighbor Embedding) of the omic data to
-detect clusters in very convoluted data (Gonzalez-Reymundez et.  al, 2022)
-<doi:10.1093/bioinformatics/btac179>.")
-    (license license:gpl2)))
 
 (define-public r-mosqcontrol
   (package
@@ -23766,26 +23738,27 @@ to the @code{minMSE-method} as proposed by Schneider and Schlather (2017)
 (define-public r-minired
   (package
     (name "r-minired")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minired" version))
        (sha256
-        (base32 "0qznm1g2z6vylys49ngbrs3n0yp46jxzlnnccia88g32w8fx8932"))))
+        (base32 "068jwb37d7dpqx9xxp6c56rk20aks89063hbx0gwxivc6rrsvyja"))))
     (properties `((upstream-name . "minired")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
     (home-page "https://cran.r-project.org/package=minired")
     (synopsis "R Interface to 'Redatam' Library")
     (description
-     "This package provides an API to work with Redatam (see
-<https://www.redatam.org>) databases in both formats: RXDB (new format) and DICX
-(old format) and running Redatam programs written in SPC language.  It's a
-wrapper around Redatam core and provides functions to open a database
-('redatam_open()'), list entities and variables from the database
-('redatam_entities()', redatam_variables()') and execute a SPC program and gets
-the results as data frames ('redatam_query()'/'redatam_run()').")
+     "This package is deprecated.  Please use redatamx instead.  Provides an API to
+work with Redatam (see <https://redatam.org>) databases in both formats: RXDB
+(new format) and DICX (old format) and running Redatam programs written in SPC
+language.  It's a wrapper around Redatam core and provides functions to
+open/close a database (redatam_open()/redatam_close()), list entities and
+variables from the database (redatam_entities(), redatam_variables()) and
+execute a SPC program and gets the results as data frames (redatam_query(),
+redatam_run()).")
     (license license:gpl3+)))
 
 (define-public r-minirand
@@ -24137,6 +24110,40 @@ slow (or zero) Internet access.")
 only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
 (2023), <doi:10.1007/s12532-023-00238-4>).")
     (license license:gpl2+)))
+
+(define-public r-minfactorial
+  (package
+    (name "r-minfactorial")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minFactorial" version))
+       (sha256
+        (base32 "1m48jqvhvz2cbj8imfja2sp2a4lcb5qiy3fxbb0c6rl3fk7hszg8"))))
+    (properties `((upstream-name . "minFactorial")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fmc))
+    (home-page "https://cran.r-project.org/package=minFactorial")
+    (synopsis "All Possible Minimally Changed Factorial Run Orders")
+    (description
+     "In many agricultural, engineering, industrial, post-harvest and processing
+experiments, the number of factor level changes and hence the total number of
+changes is of serious concern as such experiments may consists of hard-to-change
+factors where it is physically very difficult to change levels of some factors
+or sometime such experiments may require normalization time to obtain adequate
+operating condition.  For this reason, run orders that offer the minimum number
+of factor level changes and at the same time minimize the possible influence of
+systematic trend effects on the experimentation have been sought.  Factorial
+designs with minimum changes in factors level may be preferred for such
+situations as these minimally changed run orders will minimize the cost of the
+experiments.  For method details see, Bhowmik, A.,Varghese, E., Jaggi, S. and
+Varghese, C. (2017)<doi:10.1080/03610926.2016.1152490>.This package used to
+construct all possible minimally changed factorial run orders for different
+experimental set ups along with different statistical criteria to measure the
+performance of these designs.  It consist of the function
+@code{minFactDesign}().")
+    (license license:gpl3)))
 
 (define-public r-minesweepr
   (package
@@ -25006,13 +25013,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "1iz2xnf8r9w0swqpjwgaais85qlk3l1n7r5qwg5pxjmv2h1bwj7k"))))
+        (base32 "0r6j9hgiqfh3dki5ksi0wz2nfzxd9v8aqik31qmaz1kjkfkm97j8"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -27779,13 +27786,13 @@ Bombrun, Tourneret and Berthoumieu (2013) <doi:10.1109/TSP.2013.2282909>).")
 (define-public r-mgee2
   (package
     (name "r-mgee2")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgee2" version))
        (sha256
-        (base32 "0p4601z2dyg2yjyjdcl0ry7fda89rjl6kilk8977z8p4n7d1kynj"))))
+        (base32 "19h1y6bnqgvvdd9hp1dgvyjmiqd3xpbd1bpxfq0j6hnwr7mwjmp1"))))
     (properties `((upstream-name . "mgee2")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -30409,20 +30416,20 @@ procedure.")
 (define-public r-metanlp
   (package
     (name "r-metanlp")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaNLP" version))
        (sha256
-        (base32 "0ya8hi7bpxnz1a8vjni5sg68yf86bn72wh8676x6xqf6z1qvha18"))))
+        (base32 "1aahcwpy1vxxlbkhk6q1fq23nq1h7d5k0yvr2s9fa40i5a3jhk3p"))))
     (properties `((upstream-name . "MetaNLP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-textstem r-lexicon r-glmnet))
     (home-page "https://github.com/imbi-heidelberg/MetaNLP")
     (synopsis "Natural Language Processing for Meta Analysis")
     (description
-     "Given a CSV file with titles and abstracts, the package creates a word count
+     "Given a CSV file with titles and abstracts, the package creates a document-term
 matrix that is lemmatized and stemmed and can directly be used to train machine
 learning methods for automatic title-abstract screening in the preparation of a
 meta analysis.")
@@ -32605,6 +32612,30 @@ ensures the generated code is optimized for performance and accuracy.  mergen
 features a user-friendly chat interface, enabling users to interact with the AI
 agent and extract valuable insights from their data effortlessly.")
     (license license:expat)))
+
+(define-public r-mergedblocks
+  (package
+    (name "r-mergedblocks")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mergedblocks" version))
+       (sha256
+        (base32 "06d7n3qck9n3g4hbwlhxamgqvjl9a9zfb9f9wbdzgx4hgs57v5ga"))))
+    (properties `((upstream-name . "mergedblocks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomizer))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mergedblocks")
+    (synopsis "Merged Block Randomization")
+    (description
+     "Package to carry out merged block randomization (Van der Pas (2019),
+<doi:10.1177/1740774519827957>), a restricted randomization method designed for
+small clinical trials (at most 100 subjects) or trials with small strata, for
+example in multicentre trials.  It can be used for more than two groups or
+unequal randomization ratios.")
+    (license license:gpl3)))
 
 (define-public r-merderiv
   (package
@@ -35193,28 +35224,6 @@ page for more information and examples.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-mdfs
-  (package
-    (name "r-mdfs")
-    (version "1.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MDFS" version))
-       (sha256
-        (base32 "0gazmcgkgz915s3ljjdksm0bw4z6f4fz9qfzibdq6wscwcg9kfjn"))))
-    (properties `((upstream-name . "MDFS")))
-    (build-system r-build-system)
-    (home-page "https://www.mdfs.it/")
-    (synopsis "MultiDimensional Feature Selection")
-    (description
-     "This package provides functions for @code{MultiDimensional} Feature Selection
-(MDFS): calculating multidimensional information gains, scoring variables,
-finding important variables, plotting selection results.  This package includes
-an optional CUDA implementation that speeds up information gain calculation
-using NVIDIA GPGPUs.  R. Piliszek et al. (2019) <doi:10.32614/RJ-2019-019>.")
-    (license license:gpl3)))
-
 (define-public r-mdendro
   (package
     (name "r-mdendro")
@@ -36787,6 +36796,33 @@ values for correlation and principal component/coordinate analysis.  Walkthrough
 and examples:
 http://www.bio.utexas.edu/research/matz_lab/matzlab/Methods_files/@code{walkthroughExample_mcmcOTU_R.txt}.")
     (license license:gpl3)))
+
+(define-public r-mcmapper
+  (package
+    (name "r-mcmapper")
+    (version "0.0.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcmapper" version))
+       (sha256
+        (base32 "083s6dj8qfpnarplia571r782i3ncq4qjw9fbdl5wryi0310sjvm"))))
+    (properties `((upstream-name . "mcmapper")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=mcmapper")
+    (synopsis
+     "Mapping First Moment and C-Statistic to the Parameters of Distributions for Risk")
+    (description
+     "This package provides a series of numerical methods for extracting parameters of
+distributions for risks based on knowing the expected value and c-statistics
+(e.g., from a published report on the performance of a risk prediction model).
+This package implements the methodology described in Sadatsafavi et al (2024)
+<doi:10.48550/@code{arXiv.2409.09178>}.  The core of the package is mcmap(),
+which takes a pair of (mean, c-statistic) and the distribution type requested.
+This function provides a generic interface to more customized functions
+(mcmap_beta(), mcmap_logitnorm(), mcmap_probitnorm()) for specific
+distributions.")
+    (license license:expat)))
 
 (define-public r-mcm
   (package
@@ -41810,37 +41846,6 @@ based on Markov Chain Monte Carlo.  The core algorithms of the package have been
 developed in C++'.")
     (license license:gpl2)))
 
-(define-public r-maraca
-  (package
-    (name "r-maraca")
-    (version "0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "maraca" version))
-       (sha256
-        (base32 "0sy5vmgkbcr1gi7l0hkdzdmibkgs1yvbgj14sfi4jc8zabwbpkz2"))))
-    (properties `((upstream-name . "maraca")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-patchwork
-                             r-lifecycle
-                             r-hce
-                             r-ggplot2
-                             r-dplyr
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AstraZeneca/maraca")
-    (synopsis
-     "The Maraca Plot: Visualization of Hierarchical Composite Endpoints in Clinical Trials")
-    (description
-     "Library that supports visual interpretation of hierarchical composite endpoints
-(HCEs).  HCEs are complex constructs used as primary endpoints in clinical
-trials, combining outcomes of different types into ordinal endpoints, in which
-each patient contributes the most clinically important event (one and only one)
-to the analysis.  See Karpefors M et al. (2022) <doi:10.1177/17407745221134949>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-mar1s
   (package
     (name "r-mar1s")
@@ -43155,13 +43160,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "0vpgsjm8iqx1v4y5lj38bwvksljvg1q7wx80a229mcm4wg6q87w8"))))
+        (base32 "1nspzw0q80nr5w6pmjaggxy1mim872m36ik9caq2h1lydsaqm6vj"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph

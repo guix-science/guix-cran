@@ -3002,6 +3002,28 @@ format required by Sakai'.")
 based on R/exams exercises.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-exams2forms
+  (package
+    (name "r-exams2forms")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exams2forms" version))
+       (sha256
+        (base32 "05z8a0nlhz5hmzhgnahlqrrm7n9by687yjjmsd6nch11yy0kh10a"))))
+    (properties `((upstream-name . "exams2forms")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown r-knitr r-exams))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.R-exams.org/")
+    (synopsis
+     "Embedding 'exams' Exercises as Forms in 'rmarkdown' or 'quarto' Documents")
+    (description
+     "Automatic generation of quizzes or individual questions as (interactive) forms
+within rmarkdown or quarto documents based on R/exams exercises.")
+    (license license:gpl3)))
+
 (define-public r-exams-mylearn
   (package
     (name "r-exams-mylearn")
@@ -5239,28 +5261,6 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
 <https://ec.europa.eu/eurostat> together with search and manipulation utilities.")
     (license license:bsd-2)))
 
-(define-public r-eurosarcbayes
-  (package
-    (name "r-eurosarcbayes")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EurosarcBayes" version))
-       (sha256
-        (base32 "12311s6ibw9q6kykhh689r93r7mwjhwrhkzdpc75grvw6ilgjmpm"))))
-    (properties `((upstream-name . "EurosarcBayes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam r-shiny r-plyr r-data-table r-clinfun))
-    (home-page "https://cran.r-project.org/package=EurosarcBayes")
-    (synopsis "Bayesian Single Arm Sample Size Calculation Software")
-    (description
-     "Bayesian sample size calculation software and examples for @code{EuroSARC}
-clinical trials which utilise Bayesian methodology.  These trials rely on
-binomial based endpoints so the majority of programs found here relate to this
-sort of endpoint.  Developed as part of the @code{EuroSARC} FP7 grant.")
-    (license license:gpl2)))
-
 (define-public r-europop
   (package
     (name "r-europop")
@@ -5759,6 +5759,52 @@ risk management in the forward market, see F. Black (1976)
 <https://@code{EconPapers.repec.org/RePEc:oxp:obooks:9780199574742>}, F. Black
 and R. W. Jones (1987) <doi:10.3905/jpm.1987.409131> and H. E. Leland (1980)
 <http://www.jstor.org/stable/2327419>.")
+    (license license:expat)))
+
+(define-public r-etrep
+  (package
+    (name "r-etrep")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ETRep" version))
+       (sha256
+        (base32 "1yq34l655ydy4wx9b23kp37fkl5zffzic2nk87rqw2wbf085c75w"))))
+    (properties `((upstream-name . "ETRep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-sphericalcubature
+                             r-shapes
+                             r-rvcg
+                             r-rspincalc
+                             r-rotations
+                             r-riembase
+                             r-rgl
+                             r-reshape2
+                             r-ptinpoly
+                             r-pracma
+                             r-morpho
+                             r-matrix
+                             r-matlib
+                             r-ggplot2
+                             r-fields
+                             r-dplyr))
+    (home-page "https://github.com/MohsenTaheriShalmani/Elliptical_Tubes")
+    (synopsis
+     "Analysis of Elliptical Tubes Under the Relative Curvature Condition")
+    (description
+     "Analysis of elliptical tubes with applications in biological modeling.  The
+package is based on the references: Taheri, M., Pizer, S. M., & Schulz, J.
+(2024) \"The Mean Shape under the Relative Curvature Condition.\" @code{arXiv}
+<doi:10.48550/@code{arXiv.2404.01043>}.  Mohsen Taheri Shalmani (2024) \"Shape
+Statistics via Skeletal Structures\", @code{PhD} Thesis, University of Stavanger,
+Norway <doi:10.13140/RG.2.2.34500.23685>.  Key features include constructing
+discrete elliptical tubes, calculating transformations, validating structures
+under the Relative Curvature Condition, computing means, and generating
+simulations.  Supports intrinsic and non-intrinsic mean calculations and
+transformations, size estimation, plotting, and random sample generation based
+on a reference tube.")
     (license license:expat)))
 
 (define-public r-etree
@@ -7815,13 +7861,13 @@ networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
 (define-public r-ergm-multi
   (package
     (name "r-ergm-multi")
-    (version "0.2.1")
+    (version "0.2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.multi" version))
        (sha256
-        (base32 "00hrl0cz81kjfp49sc3ma4jxxxgnjc6aald2drs190ks43bx17g0"))))
+        (base32 "122yl6g4rbfdw0pscahr3p93kga8nifb2gdrpicikynpqb6dhqdn"))))
     (properties `((upstream-name . "ergm.multi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7849,13 +7895,13 @@ Krivitsky, Coletti, and Hens (2023) <doi:10.1080/01621459.2023.2242627>.")
 (define-public r-ergm-ego
   (package
     (name "r-ergm-ego")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.ego" version))
        (sha256
-        (base32 "1wflvj946xkiy0xzq53x13v9iqj64hc7wcqzqazkvlngigibh5gl"))))
+        (base32 "0q9kmymli0056d4r2vgr94wc2zcc1vi5z617cpg7fmcnjnkfd489"))))
     (properties `((upstream-name . "ergm.ego")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7903,13 +7949,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.7.1")
+    (version "4.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm" version))
        (sha256
-        (base32 "18l173y21ahvnia6m8irq2ppg7zp714053rlhp743rhixcy55wn9"))))
+        (base32 "15icc5m4q8w6fmlf71cpzgzymvnnnkydqb7qz9s4yngr8kgnixzl"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust
@@ -11416,13 +11462,13 @@ environmental analysis.")
 (define-public r-envi
   (package
     (name "r-envi")
-    (version "0.1.19")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "envi" version))
        (sha256
-        (base32 "04hh4fgkaw8zzsjf2bzwwy3iyknfaipqd7p5icysx6il5i8hd79y"))))
+        (base32 "1xmv25m87si45dqz889cmis41djyx0ay1ad83f3rf9838i9qrlhp"))))
     (properties `((upstream-name . "envi")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -15795,13 +15841,13 @@ and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
 (define-public r-eientropy
   (package
     (name "r-eientropy")
-    (version "0.0.1.2")
+    (version "0.0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EIEntropy" version))
        (sha256
-        (base32 "1jrfmwyh2avz627w5waars5f738sm5y6vmv6nnb1kzmfmkb8v854"))))
+        (base32 "13lxw10lx440301rms7fwqm875smc10gy1r5sz8yqnnvgwc56slg"))))
     (properties `((upstream-name . "EIEntropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-dplyr))

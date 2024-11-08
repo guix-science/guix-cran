@@ -757,13 +757,13 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "1mb3ymcgr3i48sybwx9zpxhppampijvj0q6xb9jyw0zwk1jj6zg0"))))
+        (base32 "0wfy21p76xk1s3f9sj7p7gw6bdcwhxs9bns2x9xxfrsjh429adx8"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-polychrome r-fitdistrplus))
@@ -5998,31 +5998,30 @@ to R6, Q7 is simpler and more flexible, and is more friendly in syntax.")
 (define-public r-q2q
   (package
     (name "r-q2q")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Q2q" version))
        (sha256
-        (base32 "1n97axhcq64fg92cbndqw70c8awknjap91bh2h6i5cvd0c80pb85"))))
+        (base32 "0i72p3hga75fm42svnyfwc5x4viv6pq6js7wx8h01kamiv5yl8hz"))))
     (properties `((upstream-name . "Q2q")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Q2q")
     (synopsis "Interpolating Age-Specific Mortality Rates at All Ages")
     (description
-     "Mortality Rates are usually published following an abridged description, i.e.,
-by age groups 0, [1, 5[, [5, 10[, [10, 15[ and so on.  For some applications, a
-detailed (single) ages description is required.  Despite the huge number of the
-proposed methods in the literature, there is a limited number of methods
-ensuring a high performance at lower and higher ages in the same time.  For
-example, the 6-terms Lagrange interpolation function is well adapted to
-mortality interpolation at lower ages (with unequal intervals) but is not
-adapted to higher ages.  On the other hand, the Karup-King method allows a good
-performance at higher ages but not adapted to lower ages.  Interested readers
-can refer to the book of Shryock, Siegel and Associates (1993) for a detailed
-overview of the two cited methods.The package Q2q allows combining both the two
-methods to allow interpolating mortality rates at all ages.  First, it starts by
-implementing each method separately, then the resulted curves are joined based
-on a 5-age averaged error between the two curves.")
+     "Mortality rates are typically provided in an abridged format, i.e., by age
+groups 0, [1, 5], [5, 10]', [10, 15]', and so on.  Some applications necessitate
+a detailed (single) age description.  Despite the large number of proposed
+approaches in the literature, only a few methods ensure great performance at
+both younger and higher ages.  For example, the 6-term Lagrange interpolation
+function is well suited to mortality interpolation at younger ages (with
+irregular intervals), but not at older ages.  The Karup-King method, on the
+other hand, performs well at older ages but is not suitable for younger ones.
+Interested readers can find a full discussion of the two stated methods in the
+book Shryock, Siegel, and Associates (1993).The Q2q package combines the two
+methods to allow for the interpolation of mortality rates across all age groups.
+ It begins by implementing each method independently, and then the resulting
+curves are linked using a 5-age averaged error between the two partial curves.")
     (license license:gpl2+)))
 

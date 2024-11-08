@@ -3563,29 +3563,6 @@ brms', which facilitates a range of regression specifications, including
 hierarchical, dynamic and multivariate modeling.")
     (license license:expat)))
 
-(define-public r-orcutt
-  (package
-    (name "r-orcutt")
-    (version "2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "orcutt" version))
-       (sha256
-        (base32 "0pj7pqzbcg4gp35nsz3avyawmx69dgj0l2w0x8ypw5qwl4zhmnyk"))))
-    (properties `((upstream-name . "orcutt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lmtest))
-    (home-page "https://cran.r-project.org/package=orcutt")
-    (synopsis "Estimate Procedure in Case of First Order Autocorrelation")
-    (description
-     "Solve first order autocorrelation problems using an iterative method.  This
-procedure estimates both autocorrelation and beta coefficients recursively until
-we reach the convergence (8th decimal as default).  The residuals are computed
-after estimating Beta using EGLS approach and Rho is estimated using the
-previous residuals.")
-    (license license:gpl2)))
-
 (define-public r-orcs
   (package
     (name "r-orcs")
@@ -5687,13 +5664,13 @@ graphics, or ggplot2.  This package is not affiliated with the
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSpecy" version))
        (sha256
-        (base32 "1vg3z7rqwlx4dfab8ka8a4mvpvrdp2mmh86xxlhiyqcgabycm6ry"))))
+        (base32 "15vnbg7h0ijrypi7i6g5kfq4zasxc9fywsyzih0p5f6wkqavmhqg"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -9093,13 +9070,13 @@ the resampling processes.")
 (define-public r-olsrr
   (package
     (name "r-olsrr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "olsrr" version))
        (sha256
-        (base32 "1jnp7dirjgg49v958fwcmcz1nalkgmr15kr4pqbxylmi45bqkqr6"))))
+        (base32 "0hvz8kab1bwnm36npdsk54yav3ga268a54rirjh1xij0nvc9hwp9"))))
     (properties `((upstream-name . "olsrr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xplorerr
@@ -11969,6 +11946,33 @@ et al. (2020) <@code{arXiv:2004.04341>}.")
      "An implementation of the Blinder-Oaxaca decomposition for linear regression
 models.")
     (license license:gpl2+)))
+
+(define-public r-oasisr
+  (package
+    (name "r-oasisr")
+    (version "3.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OasisR" version))
+       (sha256
+        (base32 "062m3ivs09kl6jclv4djfvji275w46w4jh6w03ydiiazlcsy20h8"))))
+    (properties `((upstream-name . "OasisR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep r-sf r-outliers r-measurements))
+    (home-page "https://cran.r-project.org/package=OasisR")
+    (synopsis
+     "Outright Tool for the Analysis of Spatial Inequalities and Segregation")
+    (description
+     "This package provides a comprehensive set of indexes and tests for social
+segregation analysis, as described in Tivadar (2019) - @code{OasisR}': An R
+Package to Bring Some Order to the World of Segregation Measurement
+<doi:10.18637/jss.v089.i07>.  The package is the most complete existing tool and
+it clarifies many ambiguities and errors regarding the definition of segregation
+indices.  Additionally, @code{OasisR} introduces several resampling methods that
+enable testing their statistical significance (randomization tests,
+bootstrapping, and jackknife methods).")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-oarray
   (package

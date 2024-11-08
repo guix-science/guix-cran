@@ -2256,51 +2256,6 @@ output, runtime statistics and static code analysis.  The latter feature is made
 possible by representing R expressions using a tree structure.")
     (license license:expat)))
 
-(define-public r-autogo
-  (package
-    (name "r-autogo")
-    (version "0.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autoGO" version))
-       (sha256
-        (base32 "19gy5gk214vqnil2wky2fpia1dlhcc4vwnws4fl2f0xq9as2nrq9"))))
-    (properties `((upstream-name . "autoGO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-textshape
-                             r-summarizedexperiment
-                             r-stringr
-                             r-reshape2
-                             r-readr
-                             r-rcolorbrewer
-                             r-purrr
-                             r-openxlsx
-                             r-imgur
-                             r-gsva
-                             r-ggrepel
-                             r-ggplot2
-                             r-enrichr
-                             r-dplyr
-                             r-dichromat
-                             r-deseq2
-                             r-complexheatmap
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=autoGO")
-    (synopsis
-     "Auto-GO: Reproducible, Robust and High Quality Ontology Enrichment Visualizations")
-    (description
-     "Auto-GO is a framework that enables automated, high quality Gene Ontology
-enrichment analysis visualizations.  It also features a handy wrapper for
-Differential Expression analysis around the DESeq2 package described in Love et
-al. (2014) <doi:10.1186/s13059-014-0550-8>.  The whole framework is structured
-in different, independent functions, in order to let the user decide which steps
-of the analysis to perform and which plot to produce.")
-    (license license:expat)))
-
 (define-public r-autogam
   (package
     (name "r-autogam")
@@ -5780,13 +5735,13 @@ See the paper, Wang, Wu, and Ye (2023) <doi:10.1002/sta4.582>.")
 (define-public r-artsy
   (package
     (name "r-artsy")
-    (version "0.2.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aRtsy" version))
        (sha256
-        (base32 "08982646gd7m0f7zcj31jq7wmjh0lrl2gys5ma6v6ikqq06piy0c"))))
+        (base32 "0pmzv7qm00lwf8p33blzq3k4k4xfwc8s3bcaggxm2ww5l7p93zif"))))
     (properties `((upstream-name . "aRtsy")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -6565,13 +6520,13 @@ El-Moussaoui et al. (2021) <doi:10.1007/978-3-030-66840-2_3>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkhe" version))
        (sha256
-        (base32 "1ray8scf2w9bgxkrkwi11iashphg4xbbgb7crbxcw7zf1pk03zi8"))))
+        (base32 "0ilw5mz9p67vpvr76asr9ck4prykr02qyvf4kznhazyv1h6lly18"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/arkhe/")
@@ -9321,13 +9276,13 @@ exposure/outcome, or both.  See <https://cran.r-project.org/package=episensr>.")
 (define-public r-apis
   (package
     (name "r-apis")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APIS" version))
        (sha256
-        (base32 "13q8bynli3ajdbv95p2c73m693fh6js7x4gwb2lkw31vqy3m0q8x"))))
+        (base32 "041bxpnbds64x8jq1i50pj1bzfn9hix21xg85ffh00y0szhq3w49"))))
     (properties `((upstream-name . "APIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -10224,6 +10179,28 @@ for the S4 class system and two alternative new implementations.  One is an
 experimental version built around S4 and the other one makes it more convenient
 to work with lists as objects.")
     (license license:expat)))
+
+(define-public r-aods3
+  (package
+    (name "r-aods3")
+    (version "0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aods3" version))
+       (sha256
+        (base32 "0vpnn36qqmkna3rdm88fgxbrbhf529p1qpfm0phig9jpj232a9rj"))))
+    (properties `((upstream-name . "aods3")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=aods3")
+    (synopsis "Analysis of Overdispersed Data using S3 Methods")
+    (description
+     "This package provides functions to analyse overdispersed counts or proportions.
+These functions should be considered as complements to more sophisticated
+methods such as generalized estimating equations (GEE) or generalized linear
+mixed effect models (GLMM).  aods3 is an S3 re-implementation of the deprecated
+S4 package aod.")
+    (license license:gpl2+)))
 
 (define-public r-aoboot
   (package
@@ -11446,13 +11423,13 @@ a second model trained on the classes of interest.")
 (define-public r-animint2
   (package
     (name "r-animint2")
-    (version "2024.1.24")
+    (version "2024.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animint2" version))
        (sha256
-        (base32 "03zff0c7iz819js5iknx33kbfnqisfqbdji16bzd047y0s767rck"))))
+        (base32 "0sapq1qjwsdbw4l5yg88q6djnrljj3sgawfm1g9cwhx6zfjlvhg4"))))
     (properties `((upstream-name . "animint2")))
     (build-system r-build-system)
     (arguments
@@ -12972,13 +12949,13 @@ Ozgur, Jaideep Srivastava (2003) <doi:10.1137/1.9781611972733.3>.")
 (define-public r-amelia
   (package
     (name "r-amelia")
-    (version "1.8.2")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Amelia" version))
        (sha256
-        (base32 "0gpw6aki06ji6yszp7n9mfy8zbxvdwv1xwjlx11aj2x2ghj4mcjg"))))
+        (base32 "0zwnaqis7dx07q1iinpqgrclmwp3xj2r3ihfmmhbvnp9ldf4b6bn"))))
     (properties `((upstream-name . "Amelia")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-foreign))
@@ -14171,13 +14148,13 @@ Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
 (define-public r-allofus
   (package
     (name "r-allofus")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allofus" version))
        (sha256
-        (base32 "0lxds215ar26z28jv5kxp61vhg0yy73q7xj0dbdkiqnqhq7z8dhd"))))
+        (base32 "198cibnh0x9s1cfkjyz99i8d878z6ds08zfwfp22i2r4pzanhi7w"))))
     (properties `((upstream-name . "allofus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16686,13 +16663,13 @@ the nonnegative garrote technique used for variable selection.")
 (define-public r-ahaz
   (package
     (name "r-ahaz")
-    (version "1.15")
+    (version "1.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ahaz" version))
        (sha256
-        (base32 "0k6i8s2miic2y1dgwjlpkhmaw6k3phn772p0600gcnjqxbqajznh"))))
+        (base32 "1739qx2jnsxkzlllrhcfa57xbbc1p32qplix7fhqh7653nr6yhj3"))))
     (properties `((upstream-name . "ahaz")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-matrix))
@@ -18143,6 +18120,31 @@ golden standard but can estimate it using the attributable fraction.")
 help meet accessibility guidance.")
     (license license:expat)))
 
+(define-public r-afcharts
+  (package
+    (name "r-afcharts")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "afcharts" version))
+       (sha256
+        (base32 "1bgm5sq9q8qn6764p7xwb7igg4akx652zb9vi57c3caxybhyir6f"))))
+    (properties `((upstream-name . "afcharts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rlang r-ggplot2 r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/best-practice-and-impact/afcharts")
+    (synopsis
+     "Produce Charts Following UK Government Analysis Function Guidance")
+    (description
+     "Colour palettes and a ggplot2 theme to follow the UK Government Analysis
+Function best practice guidance for producing data visualisations, available at
+<https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/>.
+ Includes continuous and discrete colour and fill scales, as well as a ggplot2
+theme.")
+    (license license:expat)))
+
 (define-public r-afc
   (package
     (name "r-afc")
@@ -18568,13 +18570,13 @@ into account variable selection.")
 (define-public r-adverseevents
   (package
     (name "r-adverseevents")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdverseEvents" version))
        (sha256
-        (base32 "15nk1szfhh9j85qkl4ra9ssr1xazrc65kg27j7kjg9kdvrv5pidv"))))
+        (base32 "19vjfnabh977gcf517wa58613jgi0yfagnpikmp6d8adqz45b0mm"))))
     (properties `((upstream-name . "AdverseEvents")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -19216,13 +19218,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "1id7fsq4lkjp0ar2p4097wlsh3spvrlvi30rsm740i7ny8d7nsns"))))
+        (base32 "02gwhahx3gj2b1lf6mfbicr6dl6fh4f733r3xyxjq3r6i6r686pj"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -22620,6 +22622,33 @@ details we refer the reader to the paper Savino, M. E. and LÃ©vy-Leduc, C.
 <https://github.com/abseil/abseil-cpp>.  Patches are located at
 <https://github.com/doccstat/abseil-r/tree/main/local/patches>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-abrsqol
+  (package
+    (name "r-abrsqol")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ABRSQOL" version))
+       (sha256
+        (base32 "1r3jd109ykcmwvpqs7l85r9ka7718iag21vsygjg0j8nmdbsicdz"))))
+    (properties `((upstream-name . "ABRSQOL")))
+    (build-system r-build-system)
+    (home-page "https://github.com/Ahlfeldt/ABRSQOL-toolkit#readme")
+    (synopsis
+     "Quality-of-Life Solver for \"Measuring Quality of Life under Spatial Frictions\"")
+    (description
+     "This toolkit implements a numerical solution algorithm to invert a quality of
+life measure from observed data.  Unlike the traditional Rosen-Roback measure,
+this measure accounts for mobility frictionsâgenerated by idiosyncratic tastes
+and local ties â and trade frictions â generated by trade costs and
+non-tradable services, thereby reducing non-classical measurement error.  The
+@code{QoL} measure is based on Ahlfeldt, Bald, Roth, Seidel (2024)
+<https://econpapers.repec.org/@code{RePEc:boc:bocode:s459382>} \"Measuring
+Quality of Life under Spatial Frictions\".  When using this programme or the
+toolkit in your work, please cite the paper.")
+    (license license:expat)))
 
 (define-public r-abmr
   (package

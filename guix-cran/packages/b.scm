@@ -9545,33 +9545,6 @@ continuous variable.  The package implements methods described in Grimmer,
 Marble, and Tanigawa-Lau (2023) <doi:10.31235/osf.io/c9fkg>.")
     (license license:gpl3+)))
 
-(define-public r-blocktools
-  (package
-    (name "r-blocktools")
-    (version "0.6.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blockTools" version))
-       (sha256
-        (base32 "0c62s4p477d9lxxninn18hrf348rph7w8w1jsqzqpm333dcamvhi"))))
-    (properties `((upstream-name . "blockTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-mass r-dplyr))
-    (home-page "https://www.ryantmoore.org/html/software.blockTools.html")
-    (synopsis
-     "Block, Assign, and Diagnose Potential Interference in Randomized Experiments")
-    (description
-     "Blocks units into experimental blocks, with one unit per treatment condition, by
-creating a measure of multivariate distance between all possible pairs of units.
- Maximum, minimum, or an allowable range of differences between units on one
-variable can be set.  Randomly assign units to treatment conditions.  Diagnose
-potential interference between units assigned to different treatment conditions.
- Write outputs to .tex and .csv files.  For more information on the methods
-implemented, see Moore (2012) <doi:10.1093/pan/mps025>.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-blocksdesign
   (package
     (name "r-blocksdesign")
@@ -12205,13 +12178,13 @@ estimated.  Furthermore, confidence intervals are provided.")
 (define-public r-biopred
   (package
     (name "r-biopred")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioPred" version))
        (sha256
-        (base32 "04v38zsg5n5pzg817pkz2jg8sgg1ckd909ckrapbdncyh3wsawan"))))
+        (base32 "077pll9a224mi2g5za3l6a01h4azmw3ikp0pp9yig1lmrrc8c7lq"))))
     (properties `((upstream-name . "BioPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -12228,9 +12201,8 @@ estimated.  Furthermore, confidence intervals are provided.")
     (synopsis "An R Package for Biomarkers Analysis in Precision Medicine")
     (description
      "This package provides functions for training extreme gradient boosting model
-using propensity score A-learning and weight-learning methods.  For details on
-the A-learning and weight-learning methods, see Chen et al. (2017)
-<doi:10.1111/biom.12676>.")
+using propensity score A-learning and weight-learning methods.  For further
+details, see Liu et al. (2024) <doi:10.1093/bioinformatics/btae592>.")
     (license license:gpl3)))
 
 (define-public r-biopixr
@@ -18630,13 +18602,13 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "1x2inx2rvlskzpjgivw0wndihsbbbw85nm0avg2csfk8388qwx9c"))))
+        (base32 "10gqj889m931m80ir5m5qz7mh2j5g8d2yc4yxakvjq4ipncvjvkm"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -22006,18 +21978,18 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 (define-public r-bayesrecon
   (package
     (name "r-bayesrecon")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesRecon" version))
        (sha256
-        (base32 "1vnnf709m5mq2bbf9z2287paymv25pm6jzncm99zkpwqjilq9rh2"))))
+        (base32 "05x6x95dka571pidm4bs531qbnfrj59x81ji9h2n8iccfnqx38yl"))))
     (properties `((upstream-name . "bayesRecon")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bayesRecon")
+    (home-page "https://github.com/IDSIA/bayesRecon")
     (synopsis "Probabilistic Reconciliation via Conditioning")
     (description
      "This package provides methods for probabilistic reconciliation of hierarchical
@@ -26373,13 +26345,13 @@ outcomes.  For more information see Sparapani, Spanbauer and @code{McCulloch}
 (define-public r-barrks
   (package
     (name "r-barrks")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "barrks" version))
        (sha256
-        (base32 "0idaq93alsjry7v63xm3mq3ap840vap8b7saanr286ssm26p61hd"))))
+        (base32 "1rj69p5s8w191haavjind42kr36jf4pcv3l43qsqwkndnn0f253w"))))
     (properties `((upstream-name . "barrks")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -28323,13 +28295,13 @@ Bayesian phylogenetics easily and reproducibly from R'.")
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babelmixr2" version))
        (sha256
-        (base32 "1dkc6i7dcxqc5v7w8sn54zy582dhgl5nakzndvh25qylhkakp4bc"))))
+        (base32 "0qa4hmlan67gqbgmggzkqmiw307yqfwsm968bsqh8yb2z006lmbb"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2
@@ -28346,7 +28318,6 @@ Bayesian phylogenetics easily and reproducibly from R'.")
                              r-digest
                              r-cli
                              r-checkmate))
-    (native-inputs (list r-knitr))
     (home-page "https://nlmixr2.github.io/babelmixr2/")
     (synopsis
      "Use 'nlmixr2' to Interact with Open Source and Commercial Software")

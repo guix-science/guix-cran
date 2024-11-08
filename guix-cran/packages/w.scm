@@ -2786,6 +2786,34 @@ Macmillian et al (2000)
 <https://www.ngdc.noaa.gov/geomag/WMM/data/WMMReports/wmm2000.pdf>.")
     (license license:expat)))
 
+(define-public r-wmap
+  (package
+    (name "r-wmap")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WMAP" version))
+       (sha256
+        (base32 "11w5qax759a8h86s7ws0c9xj8y2nh8yrqlz00kd3ih5xga8mxjb3"))))
+    (properties `((upstream-name . "WMAP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zeallot
+                             r-randomforest
+                             r-pkgcond
+                             r-ggplot2
+                             r-forcats
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=WMAP")
+    (synopsis "Weighted Meta-Analysis with Pseudo-Populations")
+    (description
+     "Implementation of integrative weighting approaches for multiple observational
+studies and causal inferences.  The package features three weighting approaches,
+each representing a special case of the unified weighting framework, introduced
+by Guha and Li (2024) <doi:10.1093/biomtc/ujae070>, which includes an extension
+of inverse probability weights for data integration settings.")
+    (license license:gpl3)))
+
 (define-public r-wlreg
   (package
     (name "r-wlreg")
@@ -5068,13 +5096,13 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "07jggiindvgy9j0x0bmc3pmzamxlzllb6my2ny2k5c4k96aqbbp5"))))
+        (base32 "05mp6d7rwvqnxzml2zmxr3ffkx8z8hl5i9cik8b1vz7v3gd6h5q9"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -5103,13 +5131,13 @@ Supporting Packages\" for instructions on how to install any package
 (define-public r-weightedtreemaps
   (package
     (name "r-weightedtreemaps")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightedTreemaps" version))
        (sha256
-        (base32 "1jbbf915jny6lpbhv4m0grkadgjmw7vh1izql4kdbn3w5p5j8m1x"))))
+        (base32 "05vw0a2y4279f04q3y8vjk3rf2mcj9asq8k2nnv0ar2k65m5hb41"))))
     (properties `((upstream-name . "WeightedTreemaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -5443,18 +5471,18 @@ analysis.")
 (define-public r-weibullr-plotly
   (package
     (name "r-weibullr-plotly")
-    (version "0.2.1")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.plotly" version))
        (sha256
-        (base32 "1hhcr31kn3bcaj562x8hdh5gg7nkmwcbish8yq4faj9bhrm0lg6h"))))
+        (base32 "1y8w3sgkraqjbmzrrm933574iqj75zn40niga32nn399yxqa9wnv"))))
     (properties `((upstream-name . "WeibullR.plotly")))
     (build-system r-build-system)
-    (propagated-inputs (list r-weibullr r-plotly))
+    (propagated-inputs (list r-weibullr r-reliagrowr r-plotly))
     (home-page "https://paulgovan.github.io/WeibullR.plotly/")
-    (synopsis "Interactive Weibull Probability Plots with 'WeibullR'")
+    (synopsis "Interactive Weibull Probability Plots")
     (description
      "Build interactive Weibull Probability Plots with @code{WeibullR} by David
 Silkworth and Jurgen Symynck (2022)
@@ -5466,16 +5494,16 @@ interactive web-based graphing library.")
 (define-public r-weibullr-learnr
   (package
     (name "r-weibullr-learnr")
-    (version "0.1.3")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.learnr" version))
        (sha256
-        (base32 "14v64jr4z8j9gv4qqpwk013d6rjc5g3yisqn8lkibccgb78ifdxn"))))
+        (base32 "0zifz7wbgl2al9av97r5yy5p0vlyfq34s3328l16r9z9ri02hhli"))))
     (properties `((upstream-name . "WeibullR.learnr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-weibullr r-learnr))
+    (propagated-inputs (list r-weibullr-alt r-weibullr r-reliagrowr r-learnr))
     (home-page "https://paulgovan.github.io/WeibullR.learnr/")
     (synopsis "An Interactive Introduction to Life Data Analysis")
     (description
@@ -6935,13 +6963,13 @@ function for computing bootstrap p-values is provided.")
 (define-public r-wbs
   (package
     (name "r-wbs")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbs" version))
        (sha256
-        (base32 "0ibrf30riavy6shaxgiznwh4gmnkx92260gsl0d74jkys98mlxdj"))))
+        (base32 "1xrkh51xrvri1m48ndx9szj661ymjb23xgf0l4k8iggd9dllz9nl"))))
     (properties `((upstream-name . "wbs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=wbs")
@@ -7736,13 +7764,13 @@ The @code{WaveD} Transform in R, Journal of Statistical Software Volume 21, No.
 (define-public r-waveband
   (package
     (name "r-waveband")
-    (version "4.7.3")
+    (version "4.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waveband" version))
        (sha256
-        (base32 "08pa6vasv5miyw492ybwlszhk12ws61qd7a1rwjm1xkl838ca7kp"))))
+        (base32 "0z0a273z3gaqfhpjgqlxql2faz794xpr3yhnzd26r9r5680niq3a"))))
     (properties `((upstream-name . "waveband")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh))
@@ -8053,6 +8081,34 @@ A., & Johnson, F. (2020) <doi:10.1029/2019WR026962>, Jiang, Z., Rashid, M. M.,
 Johnson, F., & Sharma, A. (2020) <doi:10.1016/j.envsoft.2020.104907>, and Jiang,
 Z., Sharma, A., & Johnson, F. (2021) <doi:10.1016/J.JHYDROL.2021.126816>.")
     (license license:gpl3)))
+
+(define-public r-washr
+  (package
+    (name "r-washr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "washr" version))
+       (sha256
+        (base32 "0c8rvgbiqfn6n36rhp9i8czzbb3qywddj97x9vixr53vq22m96gz"))))
+    (properties `((upstream-name . "washr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-rlang
+                             r-pkgdown
+                             r-devtools
+                             r-desc
+                             r-cffr))
+    (native-inputs (list r-knitr))
+    (home-page "https://openwashdata.github.io/washr/")
+    (synopsis
+     "Publication Toolkit for Water, Sanitation and Hygiene (WASH) Data")
+    (description
+     "This package provides a toolkit to set up an R data package in a consistent
+structure.  Automates tasks like tidy data export, data dictionary
+documentation, README and website creation, and citation management.")
+    (license license:gpl3+)))
 
 (define-public r-washi
   (package

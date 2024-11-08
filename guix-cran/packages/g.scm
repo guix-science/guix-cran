@@ -1361,25 +1361,6 @@ section of @code{GitHub} README.md
 <https://github.com/rikenbit/@code{guidedPLS>}.")
     (license license:expat)))
 
-(define-public r-guide
-  (package
-    (name "r-guide")
-    (version "1.2.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GUIDE" version))
-       (sha256
-        (base32 "0klaczmn3jnlzyh45yaqlc897irjfk467f4w03awmflaiwan3h6v"))))
-    (properties `((upstream-name . "GUIDE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tkrplot r-rpanel))
-    (home-page "https://cran.r-project.org/package=GUIDE")
-    (synopsis "GUI for DErivatives in R")
-    (description
-     "This package provides a nice GUI for financial DErivatives in R.")
-    (license license:gpl2)))
-
 (define-public r-guest
   (package
     (name "r-guest")
@@ -5248,17 +5229,17 @@ networks, as described in Bar-hen, Barbillon and Donnet (2020)
 (define-public r-gremlin
   (package
     (name "r-gremlin")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gremlin" version))
        (sha256
-        (base32 "1pi1bksxmjmzclppgbqqg93swf4d72d2mr8bsxv7ndcdjr69xd5r"))))
+        (base32 "164rql775rhfri3ih188lci4lwi5lzykdxhz3lypfvf5mr588ic9"))))
     (properties `((upstream-name . "gremlin")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-matrix))
-    (home-page "http://github.com/matthewwolak/gremlin")
+    (home-page "https://github.com/matthewwolak/gremlin")
     (synopsis "Mixed-Effects REML Incorporating Generalized Inverses")
     (description
      "Fit linear mixed-effects models using restricted (or residual) maximum
@@ -6514,13 +6495,13 @@ Models for Extremes by Engelke and Hitz (2020) <doi:10.1111/rssb.12355>.")
 (define-public r-graphicalevidence
   (package
     (name "r-graphicalevidence")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphicalEvidence" version))
        (sha256
-        (base32 "0wdn9jcc7qhr9igng091fdi63105na81wvpafsw0axvj683y3c3q"))))
+        (base32 "123zqij3rhc4jwms9jgv8vnw6ib37r84d848kk7iyr3aavbb7rq9"))))
     (properties `((upstream-name . "graphicalEvidence")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-foreach
@@ -6531,9 +6512,9 @@ Models for Extremes by Engelke and Hitz (2020) <doi:10.1111/rssb.12355>.")
      "Computes marginal likelihood in Gaussian graphical models through a novel
 telescoping block decomposition of the precision matrix which allows estimation
 of model evidence.  The top level function used to estimate marginal likelihood
-is called evidence, which expects the prior name, data, and relevant prior
+is called evidence(), which expects the prior name, data, and relevant prior
 specific parameters.  This package also provides an MCMC prior sampler using the
-same underlying approach, implemented in prior_sampling, which expects a prior
+same underlying approach, implemented in prior_sampling(), which expects a prior
 name and prior specific parameters.  Both functions also expect the number of
 burn-in iterations and the number of sampling iterations for the underlying MCMC
 sampler.")
@@ -8360,6 +8341,39 @@ described in Bachoc et al. (2020) <doi:10.1007/S10898-020-00920-0>.  Important
 functions : gpcm(), predict.gpcm(), update.gpcm().")
     (license license:gpl3)))
 
+(define-public r-gpcp
+  (package
+    (name "r-gpcp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gpcp" version))
+       (sha256
+        (base32 "17gywg1rs9nbds6zaw6yq6a57ccg8jrw1b161jcp338s86ghgajs"))))
+    (properties `((upstream-name . "gpcp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variantannotation
+                             r-sommer
+                             r-snpstats
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-magrittr
+                             r-dplyr
+                             r-biocmanager
+                             r-aghmatrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=gpcp")
+    (synopsis "Genomic Prediction of Cross Performance")
+    (description
+     "This function performs genomic prediction of cross performance using genotype
+and phenotype data.  It processes data in several steps including loading
+necessary software, converting genotype data, processing phenotype data, fitting
+mixed models, and predicting cross performance based on weighted marker effects.
+ For more information, see Labroo et al. (2023)
+<doi:10.1007/s00122-023-04377-z>.")
+    (license license:gpl3+)))
+
 (define-public r-gpcmlasso
   (package
     (name "r-gpcmlasso")
@@ -9619,28 +9633,6 @@ Erdos-Renyi (ER) and Beta versions.")
 Includes functions for tracking, smoothing, cleaning, plotting and exporting
 muscle fibers.  Also calculates basic fiber properties (e.g., length and
 curvature).")
-    (license license:gpl2+)))
-
-(define-public r-good
-  (package
-    (name "r-good")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "good" version))
-       (sha256
-        (base32 "06lzr8kb0pb5k10md23dlzkzx4qk8ajriwinj4mqhgd51manm3nk"))))
-    (properties `((upstream-name . "good")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-maxlik r-copula))
-    (home-page "https://cran.r-project.org/package=good")
-    (synopsis "Good Regression")
-    (description
-     "Fit Good regression models to count data (Tur et al., 2021)
-<doi:10.48550/@code{arXiv.2105.01557>}.  The package provides functions for
-model estimation and model prediction.  Density, distribution function, quantile
-function and random generation for the Good distribution are also provided.")
     (license license:gpl2+)))
 
 (define-public r-gontr
@@ -13188,13 +13180,13 @@ for Rao's score test.  See Wald (1943) <doi:10.2307/1990256> for Wald's test.")
 (define-public r-glmertree
   (package
     (name "r-glmertree")
-    (version "0.2-5")
+    (version "0.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmertree" version))
        (sha256
-        (base32 "0qwfracqrxs471fmz2rcnaw6kc0b2csldm2n4vfc5jlq1k46fljk"))))
+        (base32 "05kks3wqzw1qn8cy5jnfddnza0vj5hr1q7bx435p1pg7p5dwrdj4"))))
     (properties `((upstream-name . "glmertree")))
     (build-system r-build-system)
     (propagated-inputs (list r-partykit r-lme4 r-formula))
@@ -13204,7 +13196,9 @@ for Rao's score test.  See Wald (1943) <doi:10.2307/1990256> for Wald's test.")
      "Recursive partitioning based on (generalized) linear mixed models (GLMMs)
 combining lmer()/glmer() from lme4 and lmtree()/glmtree() from partykit'.  The
 fitting algorithm is described in more detail in Fokkema, Smits, Zeileis,
-Hothorn & Kelderman (2018; <DOI:10.3758/s13428-017-0971-x>).")
+Hothorn & Kelderman (2018; <DOI:10.3758/s13428-017-0971-x>).  For detecting and
+modeling subgroups in growth curves with GLMM trees see Fokkema & Zeileis (2024;
+<DOI:10.3758/s13428-024-02389-1>).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-glme
@@ -13843,13 +13837,13 @@ fit using local scoring algorithms described in Hastie and Tibshirani (1990)
 (define-public r-gkrls
   (package
     (name "r-gkrls")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gKRLS" version))
        (sha256
-        (base32 "0di8hczllxrww6xhcl6hi67p8ihxa09dgd9nbkcx39akv3cwxa8q"))))
+        (base32 "1x6db22zib76xfzqxygcyxlcalg9c3f9bcyi10qsvi3sg5f77l6j"))))
     (properties `((upstream-name . "gKRLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -16528,6 +16522,36 @@ sequence data.  Resulting plots are of class ggplot', i.e.  components can be
 added and tweaked using + and regular ggplot2 functions.")
     (license license:gpl3+)))
 
+(define-public r-ggsem
+  (package
+    (name "r-ggsem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggsem" version))
+       (sha256
+        (base32 "07cjqaxn1p45qb3xhyhya6lnf3rmfc1kf2lb1cdqi633phkxi6zl"))))
+    (properties `((upstream-name . "ggsem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-svglite
+                             r-shiny
+                             r-lavaan
+                             r-igraph
+                             r-ggplot2
+                             r-dt
+                             r-colourpicker))
+    (home-page "https://smin95.github.io/ggsem/")
+    (synopsis "Interactively Visualize Structural Equation Modeling Diagrams")
+    (description
+     "It allows users to perform interactive and reproducible visualizations of path
+diagrams for structural equation modeling (SEM) and small-to-medium sized
+networks using the ggplot2 engine.  Its shiny app provides an interface that
+allows extensive customization, and creates CSV outputs, which can then be used
+to recreate the figures either using the shiny app or in a typical ggplot2
+workflow.")
+    (license license:gpl2)))
+
 (define-public r-ggseg3d
   (package
     (name "r-ggseg3d")
@@ -18532,13 +18556,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.1-4")
+    (version "3.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "07d64kq788w4xsy51f0g5iw0cwknk106fs2qywfrq1bc29mm1lmj"))))
+        (base32 "1shcm0v3mjscf5kc2lhn9y2vwdffsx3kgawh7ddpklrgf250vzpx"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -27540,13 +27564,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.1-1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "0a8biv930198037a2qnkx4x0nxh1lp5jrcxazy4x93shrwxjrcg0"))))
+        (base32 "0023xwv9glf5xpkzbcrhwm1cxhlng5lyxw02zk5grsj03f9b76zw"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

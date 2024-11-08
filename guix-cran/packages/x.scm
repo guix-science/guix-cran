@@ -624,13 +624,13 @@ CDISC compliance.")
 (define-public r-xplortext
   (package
     (name "r-xplortext")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Xplortext" version))
        (sha256
-        (base32 "1pmynw9zxfflzhw3iqf1gfv0c3fz2nj308hxzwjgpcds7fm2sqzm"))))
+        (base32 "0s7kv7dycjprjgdgq3p9ipw31sm1i5ci4hnwhw71p01nfq5smi5p"))))
     (properties `((upstream-name . "Xplortext")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -639,15 +639,20 @@ CDISC compliance.")
                              r-stringi
                              r-slam
                              r-plotly
+                             r-patchwork
                              r-mass
                              r-gridextra
                              r-ggrepel
+                             r-ggpubr
                              r-ggplot2
                              r-ggforce
                              r-ggdendro
                              r-flexclust
                              r-flashclust
-                             r-factominer))
+                             r-factominer
+                             r-dendextend
+                             r-cluster
+                             r-ape))
     (home-page "https://xplortext.unileon.es")
     (synopsis "Statistical Analysis of Textual Data")
     (description

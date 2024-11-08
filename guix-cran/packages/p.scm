@@ -3947,6 +3947,39 @@ facilitate the data preparation process, transforming raw PSID files into a
 well-organized format ready for further analysis.")
     (license license:gpl3+)))
 
+(define-public r-psidr
+  (package
+    (name "r-psidr")
+    (version "2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psidR" version))
+       (sha256
+        (base32 "0vljs69q51qw1dbvybrwjyh507q35qy3pg25lrzl1ajl51xmbq6l"))))
+    (properties `((upstream-name . "psidR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sascii
+                             r-rcurl
+                             r-openxlsx
+                             r-futile-logger
+                             r-foreign
+                             r-data-table))
+    (home-page "https://github.com/floswald/psidR")
+    (synopsis "Build Panel Data Sets from PSID Raw Data")
+    (description
+     "Makes it easy to build panel data in wide format from Panel Survey of Income
+Dynamics (PSID) delivered raw data.  Downloads data directly from the PSID
+server using the SAScii package. @code{psidR} takes care of merging data from
+each wave onto a cross-period index file, so that individuals can be followed
+over time.  The user must specify which years they are interested in, and the
+PSID variable names (e.g. ER21003) for each year (they differ in each year).
+The package offers helper functions to retrieve variable names from different
+waves.  There are different panel data designs and sample subsetting criteria
+implemented (\"SRC\", \"SEO\", \"immigrant\" and \"latino\" samples).  More information
+about the PSID can be obtained at <https://simba.isr.umich.edu/data/data.aspx>.")
+    (license license:gpl3)))
+
 (define-public r-psica
   (package
     (name "r-psica")
@@ -7866,13 +7899,13 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.4.2")
+    (version "1.0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "05rzc77swaig5k9nyzgswm6nn8p9ifhhfycwwla9lm6rrlxjzdmx"))))
+        (base32 "03zzbkwpx594wrqwg7jh5z5jinbhvjkci9gp83gwnb145q0cl7mr"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -8170,33 +8203,6 @@ built with modern web standards in mind.  This package provides server-side
 rendering in R using V8 such that no @code{JavaScript} library is required in
 the resulting HTML documents.  Over 400 languages are supported.")
     (license license:expat)))
-
-(define-public r-prismastatement
-  (package
-    (name "r-prismastatement")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PRISMAstatement" version))
-       (sha256
-        (base32 "1vvab8h71g8c910s2h4d12qafqdncfzmsh5f1b4m79plpqi3s49z"))))
-    (properties `((upstream-name . "PRISMAstatement")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-diagrammer))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jackwasey/PRISMAstatement")
-    (synopsis "Plot Flow Charts According to the \"PRISMA\" Statement")
-    (description
-     "Plot a PRISMA <http://prisma-statement.org/> flow chart describing the
-identification, screening, eligibility and inclusion or studies in systematic
-reviews.  The PRISMA statement defines an evidence-based, minimal set of items
-for reporting in systematic reviews and meta-analyses.  PRISMA should be used
-for the reporting of studies evaluating randomized clinical trials (RCT), and is
-also for reporting on systematic reviews of other types of research.  There is
-also a function to generate flow charts describing exclusions and inclusions for
-any kind of study.")
-    (license license:gpl3)))
 
 (define-public r-prismadiagramr
   (package
@@ -8541,13 +8547,13 @@ binomial experiment.")
 (define-public r-priorcon
   (package
     (name "r-priorcon")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorCON" version))
        (sha256
-        (base32 "1dy0n57hlii7p5gna3jbr0xq7yacvcc3qxvngq00m21s6vxza1ic"))))
+        (base32 "0w1s488jiky9qk6lkz3dp5kysbdjipsvwm8mxz8zqfaq5lsq6ip9"))))
     (properties `((upstream-name . "priorCON")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
@@ -8576,13 +8582,13 @@ problems.")
 (define-public r-prior3d
   (package
     (name "r-prior3d")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prior3D" version))
        (sha256
-        (base32 "1l3ikdkgzlgqqk48hkfz5z37jnf54ws7b0zfcdl51zcmv43yra19"))))
+        (base32 "05ra445r9w1f5cq4khkis1l7y5b7dlsgndxfs1sldcz58lsgdf18"))))
     (properties `((upstream-name . "prior3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -8599,10 +8605,10 @@ problems.")
     (description
      "Three-dimensional systematic conservation planning, conducting nested
 prioritization analyses across multiple depth levels and ensuring efficient
-resource allocation throughout the water column (Doxa et al.  2024
-<doi:10.1111/gcb.16268>).  It provides a structured workflow designed to address
-biodiversity conservation and management challenges in the 3 dimensions, while
-facilitating usersâ choices and parameterization.")
+resource allocation throughout the water column.  It provides a structured
+workflow designed to address biodiversity conservation and management challenges
+in the 3 dimensions, while facilitating usersâ choices and parameterization
+(Doxa et al.  2024 <doi:10.1016/j.ecolmodel.2024.110919>).")
     (license license:gpl3)))
 
 (define-public r-priogene
@@ -17749,13 +17755,13 @@ Tzeng, J-Y. (2019) <doi:10.1371/journal.pcbi.1006722>.")
 (define-public r-poilog
   (package
     (name "r-poilog")
-    (version "0.4.2")
+    (version "0.4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poilog" version))
        (sha256
-        (base32 "0dk2c65b7aac2ak3ajgh3wa2jhqyfv1qp90flw8xcx3f5w5gyv7s"))))
+        (base32 "1m1zw8r98h863c3qr729vsl06lfdnfhcl1si3ik16jcz6g4wx77f"))))
     (properties `((upstream-name . "poilog")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=poilog")
@@ -18643,13 +18649,13 @@ pure error sample independent from the data is used.")
 (define-public r-pmlbr
   (package
     (name "r-pmlbr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmlbr" version))
        (sha256
-        (base32 "06kac7h4skccs48ixyjnxxry38dci9cgkckfvkpzaqhzzlbvmn0g"))))
+        (base32 "0d9mfy46vqhjy8dn884337ry06n6lh5y96azrlbwawq3ksi3g2jb"))))
     (properties `((upstream-name . "pmlbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-fnn))
@@ -19759,6 +19765,50 @@ color space based tools to modify colors or palettes.")
 the base graphics plotting tools; and manipulate irregular polygons.")
     (license license:gpl2+)))
 
+(define-public r-plotthis
+  (package
+    (name "r-plotthis")
+    (version "0.3.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plotthis" version))
+       (sha256
+        (base32 "1d06piy84r5x5wdjkd17jxya214ih1chh6s2cfs6ijqbjj1qhw2m"))))
+    (properties `((upstream-name . "plotthis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-reshape2
+                             r-patchwork
+                             r-gtable
+                             r-gridtext
+                             r-glue
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggnewscale
+                             r-forcats
+                             r-dplyr
+                             r-cowplot
+                             r-circlize))
+    (home-page "https://cran.r-project.org/package=plotthis")
+    (synopsis
+     "High-Level Plotting Built Upon 'ggplot2' and Other Plotting Packages")
+    (description
+     "This package provides high-level API and a wide range of options to create
+stunning, publication-quality plots effortlessly.  It is built upon ggplot2 and
+other plotting packages, and is designed to be easy to use and to work
+seamlessly with ggplot2 objects.  It is particularly useful for creating complex
+plots with multiple layers, facets, and annotations.  It also provides a set of
+functions to create plots for specific types of data, such as Venn diagrams,
+alluvial diagrams, and phylogenetic trees.  The package is designed to be
+flexible and customizable, and to work well with the ggplot2 ecosystem.  The API
+can be found at <https://pwwang.github.io/plotthis/reference/index.html>.")
+    (license license:gpl3+)))
+
 (define-public r-plotsemm
   (package
     (name "r-plotsemm")
@@ -20850,33 +20900,39 @@ the curve and ROC curve are provided.")
 (define-public r-pliman
   (package
     (name "r-pliman")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pliman" version))
        (sha256
-        (base32 "0pgv7ayb78k481yd071hjvympikhdw6q8wqb9d5fazp9avmjlfz7"))))
+        (base32 "17bklypca08r4p1cczvmy6pf9awp1hc04vjyr8d06nyw23yr13b7"))))
     (properties `((upstream-name . "pliman")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
-                             r-stars
                              r-sf
                              r-rcpparmadillo
                              r-rcpp
+                             r-purrr
+                             r-future
                              r-foreach
-                             r-doparallel))
-    (home-page "https://github.com/TiagoOlivoto/pliman")
+                             r-exactextractr
+                             r-dplyr
+                             r-dofuture))
+    (home-page "https://nepem-ufsc.github.io/pliman/")
     (synopsis "Tools for Plant Image Analysis")
     (description
-     "This package provides tools for single or batch image manipulation and analysis
-as described by Olivoto (2022) <doi:10.1111/2041-210X.13803> that can be used to
-quantify plant leaf area, assess disease severity, count objects, obtain shape
-measures, object landmarks, and compute Elliptical Fourier Analysis of the
-object outline, as described by Claude (2008) <doi:10.1007/978-0-387-77789-4>.
-Additionally, the package includes tools for analyzing grids, which enables high
-throughput field phenotyping using RGB imagery captured by unmanned aerial
-vehicles.")
+     "This package provides tools for both single and batch image manipulation and
+analysis (Olivoto, 2022 <doi:10.1111/2041-210X.13803>) and phytopathometry
+(Olivoto et al., 2022 <doi:10.1007/S40858-021-00487-5>).  The tools can be used
+for the quantification of leaf area, object counting, extraction of image
+indexes, shape measurement, object landmark identification, and Elliptical
+Fourier Analysis of object outlines (Claude (2008)
+<doi:10.1007/978-0-387-77789-4>).  The package also provides a comprehensive
+pipeline for generating shapefiles with complex layouts and supports
+high-throughput phenotyping of RGB, multispectral, and hyperspectral
+orthomosaics.  This functionality facilitates field phenotyping using UAV- or
+satellite-based imagery.")
     (license license:gpl3+)))
 
 (define-public r-plgraphics
@@ -21643,40 +21699,6 @@ al.(1978)<doi:10.1071/AR9780897>, STI by Fernandez
 (1984)<doi:10.2135/cropsci1984.0011183X002400050026x>, Yield index by Gavuzzi et
 al.(1997)<doi:10.4141/P96-130>.")
     (license license:gpl3+)))
-
-(define-public r-plantecowrap
-  (package
-    (name "r-plantecowrap")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plantecowrap" version))
-       (sha256
-        (base32 "0syxf63xy5whzw03ys5cxyw7689mr7ihgmqddv53jb8rlbwm84p8"))))
-    (properties `((upstream-name . "plantecowrap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-plantecophys r-minpack-lm r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jstinzi/plantecowrap")
-    (synopsis "Enhancing Capabilities of 'plantecophys'")
-    (description
-     "This package provides wrapping functions to add to capabilities to plantecophys
-(Duursma, 2015, <doi:10.1371/journal.pone.0143346>).  Key added capabilities
-include temperature responses of mesophyll conductance (gm, gmeso), apparent
-Michaelis-Menten constant for rubisco carboxylation in air (Km, Kcair),and
-photorespiratory CO2 compensation point (@code{GammaStar}) for fitting A-Ci or
-A-Cc curves for C3 plants (for temperature responses of gm, Km, &
-@code{GammaStar}, see Bernacchi et al., 2002, <doi:10.1104/pp.008250>; for
-theory on fitting A-Ci or A-Cc curves, see Farquhar et al., 1980;
-<doi:10.1007/BF00386231>, von Caemmerer, 2000, ISBN:064306379X; Ethier &
-Livingston, 2004 <doi:10.1111/j.1365-3040.2004.01140.x>; and Gu et al., 2010,
-<doi:10.1111/j.1365-3040.2010.02192.x>).  Includes the ability to fit the
-Arrhenius and modified Arrhenius temperature response functions (see Medlyn et
-al., 2002, <doi:10.1046/j.1365-3040.2002.00891.x>) for maximum rubisco
-carboxylation rates (Vcmax) and maximum electron transport rates (Jmax) (see
-Farquhar et al., 1980; <doi:10.1007/BF00386231>).")
-    (license license:expat)))
 
 (define-public r-plantecophys
   (package
@@ -22821,6 +22843,28 @@ comparing PK values.  This package provides an easy-to-use API for calculating
 and comparing PK values in R.")
     (license license:expat)))
 
+(define-public r-pk-unit-trans
+  (package
+    (name "r-pk-unit-trans")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pk.unit.trans" version))
+       (sha256
+        (base32 "1z5xbybjd8zm7xmx3kh0jd53dhnm32za41hpl0616vkz7fn0ri12"))))
+    (properties `((upstream-name . "pk.unit.trans")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-maditr))
+    (home-page "https://cran.r-project.org/package=pk.unit.trans")
+    (synopsis
+     "Achieve Numerical Conversion Between Units Commonly Used in Pharmacokinetics")
+    (description
+     "Achieve internal conversions of mass units, molar units, and volume units
+commonly used in pharmacokinetics, as well as conversions between mass units and
+molar units.")
+    (license license:expat)))
+
 (define-public r-pk
   (package
     (name "r-pk")
@@ -22837,6 +22881,39 @@ and comparing PK values in R.")
     (synopsis "Basic Non-Compartmental Pharmacokinetics")
     (description
      "Estimation of pharmacokinetic parameters using non-compartmental theory.")
+    (license license:gpl2)))
+
+(define-public r-pjfm
+  (package
+    (name "r-pjfm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PJFM" version))
+       (sha256
+        (base32 "1xxiix4kvz1y8rjjxbm00ya4lvqg0ra6mdbvryljy6v1m6wx7wyf"))))
+    (properties `((upstream-name . "PJFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-statmod
+                             r-rcppensmallen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-matrix))
+    (home-page "https://cran.r-project.org/package=PJFM")
+    (synopsis "Variational Inference for High-Dimensional Joint Frailty Model")
+    (description
+     "Joint frailty models have been widely used to study the associations between
+recurrent events and a survival outcome.  However, existing joint frailty models
+only consider one or a few recurrent events and cannot deal with
+high-dimensional recurrent events.  This package can be used to fit our recently
+developed penalized joint frailty model that can handle high-dimensional
+recurrent events.  Specifically, an adaptive lasso penalty is imposed on the
+parameters for the effects of the recurrent events on the survival outcome,
+which allows for variable selection.  Also, our algorithm is computationally
+efficient, which is based on the Gaussian variational approximation method.")
     (license license:gpl2)))
 
 (define-public r-pixiedust
@@ -24347,32 +24424,6 @@ format.  Allows for the fast and flexible screening (within a tree) of Exclusive
 clades that comprise only the target taxa and/or Non- Exclusive clades that
 includes a defined portion of non-target taxa.")
     (license license:gpl3+)))
-
-(define-public r-physiology
-  (package
-    (name "r-physiology")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "physiology" version))
-       (sha256
-        (base32 "1z7xymwgj7bqn0yvcz3q8pvwhpr5vx5qd0x8sayal1vgpqc0nccb"))))
-    (properties `((upstream-name . "physiology")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://jackwasey.github.io/physiology/")
-    (synopsis
-     "Calculate physiologic characteristics of awake and anesthetized adults, children and infants")
-    (description
-     "This package provides a variety of formulae are provided for estimation of
-physiologic characteristics of infants, children, and adults.  Calculations
-include: body surface area, ideal weight, airway dead-space, the alveolar gas
-equation, and GFR. Each formula is referenced to the original publication.
-Future functions will cover more material with a focus on anaesthesia, critical
-care and peri-operative medicine.")
-    (license license:gpl3)))
 
 (define-public r-physactbedrest
   (package
@@ -31877,13 +31928,13 @@ websites: <https://github.com/Penncil/pda>, and <https://pdamethods.org/>.")
 (define-public r-pcvr
   (package
     (name "r-pcvr")
-    (version "1.0.0")
+    (version "1.1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcvr" version))
        (sha256
-        (base32 "12zkw3xlzclms5bj477aarxxnl28p77hakvf38y2r09vzbjhs0bv"))))
+        (base32 "1hlfbddi54hrr3s15vrbpxc8jvnhvrlifp632qpninf9lfik23js"))))
     (properties `((upstream-name . "pcvr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -33842,13 +33893,13 @@ birth-death model of diversification.  See Etienne, R.S. & J. Rosindell 2012
 (define-public r-pbcc
   (package
     (name "r-pbcc")
-    (version "0.0.5")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pbcc" version))
        (sha256
-        (base32 "09yx6p0v8pa049l85kwm0rw15amyna9r35kbbahby3lfb212syb2"))))
+        (base32 "0vm4lq0x996d4fd7f33n27km0z92jmqzd6qwf90l2wr61h6hsrf7"))))
     (properties `((upstream-name . "pbcc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgenoud r-qcc r-ggpubr r-ggplot2))
@@ -36219,27 +36270,6 @@ that after a single trial or a few more, one won't find the precise parameters.
 This enables one to look for the ideal RNG setting for a simulation that will
 accurately duplicate the desired parameters.")
     (license license:gpl2+)))
-
-(define-public r-params
-  (package
-    (name "r-params")
-    (version "0.7.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "params" version))
-       (sha256
-        (base32 "0zii9nxgl2z46vyqn2l0kdjmib90534ybpizck74mp2wp1vh9ndj"))))
-    (properties `((upstream-name . "params")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-whisker r-readr r-rcpptoml r-purrr r-glue))
-    (home-page "https://github.com/sahilseth/params")
-    (synopsis "Simplify Parameters")
-    (description
-     "An interface to simplify organizing parameters used in a package, using external
-configuration files.  This attempts to provide a cleaner alternative to
-options().")
-    (license license:gpl2)))
 
 (define-public r-paramlink2
   (package

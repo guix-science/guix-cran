@@ -615,6 +615,33 @@ et al. (2011) <doi:10.1109/TSP.2011.2181836> and Lee et al. (2007)
 <doi:10.1016/j.sigpro.2007.01.010>.")
     (license license:gpl3+)))
 
+(define-public r-iucnr
+  (package
+    (name "r-iucnr")
+    (version "0.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iucnr" version))
+       (sha256
+        (base32 "17psqmw9qh8x5b9f0ziwk7p8xq2wz8kc24pnsh4vg0kxcsrhzi1w"))))
+    (properties `((upstream-name . "iucnr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-dplyr r-cli))
+    (home-page "https://github.com/PaulESantos/iucnr")
+    (synopsis "IUCN Red List Data")
+    (description
+     "Facilitates access to the International Union for Conservation of Nature (IUCN)
+Red List of Threatened Species, a comprehensive global inventory of species at
+risk of extinction.  This package streamlines the process of determining
+conservation status by matching species names with Red List data, providing
+tools to easily query and retrieve conservation statuses.  Designed to support
+biodiversity research and conservation planning, this package relies on data
+from the iucnrdata package, available on @code{GitHub}
+<https://github.com/@code{PaulESantos/iucnrdata>}.  To install the data package,
+use pak::pak('@code{PaulESantos/iucnrdata}').")
+    (license license:expat)))
+
 (define-public r-itsmr
   (package
     (name "r-itsmr")
@@ -1609,13 +1636,13 @@ using different splitting criteria.")
 (define-public r-isotracer
   (package
     (name "r-isotracer")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotracer" version))
        (sha256
-        (base32 "0yapaaycakxzq6h3r2zp72zwf514qs64lhygiy3ix0dwxzafnh3b"))))
+        (base32 "0ijnjm2hhhk29kllmdmb4rhmmfiavgijsiqvmsp6d77j8i0p2f7r"))))
     (properties `((upstream-name . "isotracer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5037,6 +5064,28 @@ address spaces.  It is specifically designed to work well with the tidyverse'.")
      "Converts character vectors between phonetic representations.  Supports IPA
 (International Phonetic Alphabet), X-SAMPA (Extended Speech Assessment Methods
 Phonetic Alphabet), and ARPABET (used by the CMU Pronouncing Dictionary).")
+    (license license:expat)))
+
+(define-public r-ip2whois
+  (package
+    (name "r-ip2whois")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ip2whois" version))
+       (sha256
+        (base32 "0gkjqddkm5l93l89pdjnf9p5kdfi50rffaagdjq5a4ir40cswwql"))))
+    (properties `((upstream-name . "ip2whois")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-jsonlite))
+    (home-page "https://cran.r-project.org/package=ip2whois")
+    (synopsis "Lookup 'WHOIS' Information for a Particular Domain")
+    (description
+     "Easily implement the checking of WHOIS information for a particular domain.
+IP2WHOIS supports the query for 1113 Top-level Domains(TLDs) and 634 Country
+Code Top-level Domains(@code{ccTLDs}).  To get started with a free API key, you
+may sign up at here <https://www.ip2whois.com/register>.")
     (license license:expat)))
 
 (define-public r-ip2proxy
@@ -8994,29 +9043,6 @@ multiple cores.  The package also supports exploration for uplift models (NWOE
 and NIV).")
     (license license:gpl3+)))
 
-(define-public r-infoelectoral
-  (package
-    (name "r-infoelectoral")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "infoelectoral" version))
-       (sha256
-        (base32 "1ni00y4wni9dgpaj6x2p50bgmzfh2ybr350ywqmnwz5q30r9kjsm"))))
-    (properties `((upstream-name . "infoelectoral")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-httr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rOpenSpain/infoelectoral")
-    (synopsis "Download Spanish Election Results")
-    (description
-     "Download official election results for Spain at polling station, municipality
-and province level from the Ministry of Interior
-(<https://infoelectoral.interior.gob.es/es/elecciones-celebradas/area-de-descargas/>),
-format them and import them to the R environment.")
-    (license license:gpl2)))
-
 (define-public r-infodecompute
   (package
     (name "r-infodecompute")
@@ -10673,6 +10699,29 @@ professionals, researchers, and resource managers engaged in assessing and
 estimating the volume of coniferous trees.  This package has been developed
 using the algorithm of Sharma et al. (2017) <doi:10.13140/RG.2.2.33786.62407>.")
     (license license:gpl3)))
+
+(define-public r-imuf
+  (package
+    (name "r-imuf")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imuf" version))
+       (sha256
+        (base32 "1r4fgy3jdd0jiiial8wsq3krksd19n85qpz2rfv56mdi0476v55g"))))
+    (properties `((upstream-name . "imuf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (home-page "https://github.com/gitboosting/imuf")
+    (synopsis "Estimate Orientation of an Inertial Measurement Unit")
+    (description
+     "Estimate the orientation of an inertial measurement unit (IMU) with a 3-axis
+accelerometer and a 3-axis gyroscope using a complementary filter.  imuf takes
+an IMU's accelerometer and gyroscope readings, time duration, its initial
+orientation, and a gain factor as inputs, and returns an estimate of the IMU's
+final orientation.")
+    (license license:gpl3+)))
 
 (define-public r-imtest
   (package
@@ -14662,55 +14711,6 @@ For more information on our model, see Chen et al. (2019)
 <doi:10.1038/s41540-019-0116-1>, and Cao et al. (2022)
 <doi:10.1080/19490976.2022.2106103>.")
     (license license:gpl3+)))
-
-(define-public r-idmodelr
-  (package
-    (name "r-idmodelr")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "idmodelr" version))
-       (sha256
-        (base32 "11h7l1iv21jxmjwmg0klwiadvwpn1bj055y4a7fqfgsbbqraxlsj"))))
-    (properties `((upstream-name . "idmodelr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-dplyr
-                             r-desolve))
-    (native-inputs (list r-knitr))
-    (home-page "https://samabbott.co.uk/idmodelr/")
-    (synopsis "Infectious Disease Model Library and Utilities")
-    (description
-     "Explore a range of infectious disease models in a consistent framework.  The
-primary aim of idmodelr is to provide a library of infectious disease models for
-researchers, students, and other interested individuals.  These models can be
-used to understand the underlying dynamics and as a reference point when
-developing models for research.  idmodelr also provides a range of utilities.
-These include: plotting functionality; a simulation wrapper; scenario analysis
-tooling; an interactive dashboard; tools for handling mult-dimensional models;
-and both model and parameter look up tables.  Unlike other modelling packages
-such as pomp (<https://kingaa.github.io/pomp/>), libbi (<http://libbi.org>) and
-@code{EpiModel} (<http://www.epimodel.org>), idmodelr serves primarily as an
-educational resource.  It is most comparable to epirecipes
-(<http://epirecip.es/epicookbook/chapters/simple>) but provides a more
-consistent framework, an R based workflow, and additional utility tooling.
-After users have explored model dynamics with idmodelr they may then implement
-their model using one of these packages in order to utilise the model fitting
-tools they provide.  For newer modellers, this package reduces the barrier to
-entry by containing multiple infectious disease models, providing a consistent
-framework for simulation and visualisation, and signposting towards other, more
-research focussed, resources.")
-    (license license:gpl3)))
 
 (define-public r-idmir
   (package

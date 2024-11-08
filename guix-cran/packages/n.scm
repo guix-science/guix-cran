@@ -16,7 +16,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages c)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages cmake)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages pkg-config)
@@ -965,6 +964,29 @@ computing properties of the New Topp-Leone Kumaraswamy Inverse Exponential
 (2023) <doi:10.1515/phys-2023-0151> for details.")
     (license license:gpl2)))
 
+(define-public r-ntfy
+  (package
+    (name "r-ntfy")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ntfy" version))
+       (sha256
+        (base32 "18j64bs44h3gr6q9znm26pw1lz83c9xa6jd3rn5mznarfvgaafsm"))))
+    (properties `((upstream-name . "ntfy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr2))
+    (home-page "https://github.com/jonocarroll/ntfy")
+    (synopsis "Lightweight Wrapper to the 'ntfy.sh' Service")
+    (description
+     "The ntfy (pronounce: notify) service is a simple HTTP-based pub-sub notification
+service.  It allows you to send notifications to your phone or desktop via
+scripts from any computer, entirely without signup, cost or setup.  It's also
+open source if you want to run your own.  Visit <https://ntfy.sh> for more
+details.")
+    (license license:expat)))
+
 (define-public r-ntdr
   (package
     (name "r-ntdr")
@@ -1247,13 +1269,13 @@ textbook, 3rd edition.")
 (define-public r-nsm3
   (package
     (name "r-nsm3")
-    (version "1.18")
+    (version "1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NSM3" version))
        (sha256
-        (base32 "0m0ijafjlw9pili0hxfrv5blj9ysxhhwj6c4hpnp5ry97a4gkib9"))))
+        (base32 "1pm4h8khl6vrspwbdbl13m83xm672x30xyzr3cqdqqgsz740bpn4"))))
     (properties `((upstream-name . "NSM3")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim
@@ -2554,6 +2576,29 @@ applications.  Method is detailed in: Hejblum, Alkhassimn, Gottardo, Caron &
 Thiebaut (2019) <doi: 10.1214/18-AOAS1209>.")
     (license (list license:lgpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-npfd
+  (package
+    (name "r-npfd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPFD" version))
+       (sha256
+        (base32 "08yim6328xfrpacc43l9ayl3rkrqrwv2s5jqc32z0n6fh0i5zqaj"))))
+    (properties `((upstream-name . "NPFD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam r-siggenes r-kernsmooth))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NPFD")
+    (synopsis "N-Power Fourier Deconvolution")
+    (description
+     "This package provides tools for non-parametric Fourier deconvolution using the
+N-Power Fourier Deconvolution (NPFD) method.  This package includes methods for
+density estimation (densprf()) and sample generation (@code{createSample}()),
+enabling users to perform statistical analyses on mixed or replicated data sets.")
+    (license license:gpl3)))
 
 (define-public r-npexact
   (package
@@ -10058,30 +10103,6 @@ For more advanced users it is possible to use the low-level functions and
 manipulate the arguments.  See Welvaert et al. (2011)
 <doi:10.18637/jss.v044.i10>.")
     (license license:gpl2+)))
-
-(define-public r-neuronorm
-  (package
-    (name "r-neuronorm")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neuronorm" version))
-       (sha256
-        (base32 "1bypspygib963n255q6j5pmm14sw67ipmkq54faz8w2i3mdb845v"))))
-    (properties `((upstream-name . "neuronorm")))
-    (build-system r-build-system)
-    (inputs (list cmake))
-    (propagated-inputs (list r-oro-nifti r-knitr r-fslr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=neuronorm")
-    (synopsis
-     "Preprocessing of Structural MRI for Multiple Neurodegenerative Diseases")
-    (description
-     "Preprocessing pipeline for normalizing and cleaning T1-weighted, T2-weighted and
-FLAIR MRI images coming from different sources, diseases, patients, scanners and
-sites.")
-    (license license:gpl2)))
 
 (define-public r-neuromplex
   (package

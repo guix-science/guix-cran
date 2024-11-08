@@ -1488,13 +1488,13 @@ information as well as data that requires an API token.")
 (define-public r-kodama
   (package
     (name "r-kodama")
-    (version "2.4")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KODAMA" version))
        (sha256
-        (base32 "1rw5xjv5sblhj5mr31hgv472gial5bl4f288db07ysgkjqsymwkq"))))
+        (base32 "09wn4giikxpw6phks3nyd69zs7v4zw3rw6xqlwvdcy2gd3vinasz"))))
     (properties `((upstream-name . "KODAMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-umap r-rtsne r-rcpparmadillo r-rcpp r-minerva))
@@ -4846,20 +4846,23 @@ Ministry of Agriculture and Fishing of France.")
 (define-public r-keng
   (package
     (name "r-keng")
-    (version "2024.10.16")
+    (version "2024.11.02")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Keng" version))
        (sha256
-        (base32 "0v0p3zsm5202pxkl769hhs0b8xhvs2a02bm2kn3v7n3fmic1s4w3"))))
+        (base32 "15q50pd5rc0hcmkr2w8a08dsvpa3zap828vv2w3iy7dwyvx3n3kl"))))
     (properties `((upstream-name . "Keng")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=Keng")
-    (synopsis "Keng's Axe and Firewood")
+    (home-page "https://github.com/qyaozh/Keng")
+    (synopsis "Knock Errors Off Nice Guesses")
     (description
      "Miscellaneous functions and data used in Qingyao's psychological research and
-teaching.")
+teaching.  Keng currently could test the significance and compute the cut-off
+values of Pearson's r without raw data.  Keng could also compare lm()'s fitted
+outputs using R-squared and PRE (Proportional Reduction in Error, also called
+partial R-squared or partial Eta-squared).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-kendallrandomwalks

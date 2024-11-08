@@ -837,13 +837,13 @@ processing and post-processing tool for hydrological and hydraulic modellers.")
 (define-public r-hydrotsm
   (package
     (name "r-hydrotsm")
-    (version "0.7-0")
+    (version "0.7-0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroTSM" version))
        (sha256
-        (base32 "13jaz7mrjmfvankncfmnwxa0m2r78a9p686h0my3m3sv9bvz1qd6"))))
+        (base32 "0gan9f46lbnaa9993lgyi2p70c2dlrb8xf6if5n320hy2h98mlh6"))))
     (properties `((upstream-name . "hydroTSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-lattice r-e1071 r-classint))
@@ -1082,13 +1082,13 @@ Leiserson (2022) <ISBN:9780262046305> and Verdin and Verdin (1999)
 (define-public r-hydrogof
   (package
     (name "r-hydrogof")
-    (version "0.6-0")
+    (version "0.6-0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroGOF" version))
        (sha256
-        (base32 "17i68al88d4xvam1fq63knsqgd29s4wvpd31z6zhnbbcbpd3j67v"))))
+        (base32 "0vg9cm2xjayhi1xsr6x8cl1ix5dk7x9p0wn0nhrf31nlvmpwh0c1"))))
     (properties `((upstream-name . "hydroGOF")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-hydrotsm))
@@ -7725,17 +7725,17 @@ included in the scripts directory of the package.")
 (define-public r-hgwrr
   (package
     (name "r-hgwrr")
-    (version "0.5-0")
+    (version "0.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hgwrr" version))
        (sha256
-        (base32 "03ma8g0qz6hpp2m1ys3c6mnkbpjbmpf60pxl0cggaj5d9aymjs1c"))))
+        (base32 "1v0lgkm3ny5mbx2wn1xf3wqj88mcwyypbrlp804m956mwjlxlwyd"))))
     (properties `((upstream-name . "hgwrr")))
     (build-system r-build-system)
     (inputs (list gsl))
-    (propagated-inputs (list r-sf r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-sf r-rcpparmadillo r-rcpp r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HPDell/hgwrr/")
     (synopsis "Hierarchical and Geographically Weighted Regression")
@@ -8652,6 +8652,33 @@ analyze and assess data heterogeneity and climate variability in spatial
 datasets.  This package is specifically designed to address the challenges
 associated with characterizing and understanding complex spatial patterns in
 environmental and climate-related data.")
+    (license license:gpl3+)))
+
+(define-public r-heterocop
+  (package
+    (name "r-heterocop")
+    (version "0.1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heterocop" version))
+       (sha256
+        (base32 "0bb56pq2cc3vi5c2kskn76dgrsn5f32dlhrxfpblaq3a5fg0w445"))))
+    (properties `((upstream-name . "heterocop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-mvtnorm
+                             r-matrixcalc
+                             r-igraph
+                             r-foreach
+                             r-dosnow))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=heterocop")
+    (synopsis "Semi-Parametric Estimation with Gaussian Copula")
+    (description
+     "This package provides a method for generating random vectors which are linked by
+a Gaussian copula.  It also enables to estimate the correlation matrix of the
+Gaussian copula in order to identify independencies within the data.")
     (license license:gpl3+)))
 
 (define-public r-heterfunctionaldata
@@ -11364,6 +11391,28 @@ described in Cho and Fryzlewicz (2014) <doi:10.1111/rssb.12079> and Cho (2016)
 <doi:10.1214/16-EJS1155>.")
     (license license:gpl3+)))
 
+(define-public r-hdbcp
+  (package
+    (name "r-hdbcp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdbcp" version))
+       (sha256
+        (base32 "0wl19v18aj3mr9bdfjax7x516swvbmsl5s6sqspwlid06zqszd8m"))))
+    (properties `((upstream-name . "hdbcp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dplyr))
+    (home-page "https://github.com/JaeHoonKim98/hdbcp")
+    (synopsis "Bayesian Change Point Detection for High-Dimensional Data")
+    (description
+     "This package provides functions implementing change point detection methods
+using the maximum pairwise Bayes factor approach.  Additionally, the package
+includes tools for generating simulated datasets for comparing and evaluating
+change point detection techniques.")
+    (license license:gpl3)))
+
 (define-public r-hdbayes
   (package
     (name "r-hdbayes")
@@ -12864,37 +12913,6 @@ and visualization of identified crossovers in the gametes.")
 function (OLS) with interpretation, optional bootstrapping, effect size
 calculation and all tested requirements.")
     (license license:gpl3+)))
-
-(define-public r-hansard
-  (package
-    (name "r-hansard")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hansard" version))
-       (sha256
-        (base32 "00mcy58nhlphb0v0wchbaw1qamm0435s09nxxw6rr5z872rhyf5a"))))
-    (properties `((upstream-name . "hansard")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-snakecase
-                             r-lubridate
-                             r-jsonlite
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.evanodell.com/hansard")
-    (synopsis
-     "Provides Easy Downloading Capabilities for the UK Parliament API")
-    (description
-     "This package provides functions to download data from the
-<http://www.data.parliament.uk/> APIs.  Because of the structure of the API,
-there is a named function for each type of available data for ease of use, as
-well as some functions designed to retrieve specific pieces of commonly used
-data.  Functions for each new API will be added as and when they become
-available.")
-    (license license:expat)))
 
 (define-public r-hans
   (package

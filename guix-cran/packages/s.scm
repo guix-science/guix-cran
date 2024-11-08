@@ -4917,13 +4917,13 @@ possibility of crossings or alternative orderings among the survival functions."
 (define-public r-surveillance
   (package
     (name "r-surveillance")
-    (version "1.24.0")
+    (version "1.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveillance" version))
        (sha256
-        (base32 "0lqh2c1qkf3qgxdyvrziha9hpl7xgmd40szd4adp5jgn3lvi0zng"))))
+        (base32 "0wzjv9pb8nl1almd0qmn5xqfms2026pg21jvcqd73ij053w4vz1a"))))
     (properties `((upstream-name . "surveillance")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -7456,6 +7456,36 @@ assess the local independence assumption of IRT with Yen's Q3 statistic (Yen,
 <doi:10.1111/j.1745-3984.1993.tb00423.x>).")
     (license license:gpl2+)))
 
+(define-public r-subsampling
+  (package
+    (name "r-subsampling")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "subsampling" version))
+       (sha256
+        (base32 "1c6xz59n902w413wc3hs84p44l4imln93x90y947rbp53iglabx4"))))
+    (properties `((upstream-name . "subsampling")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quantreg
+                             r-nnet
+                             r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dqksnow/Subsampling")
+    (synopsis "Optimal Subsampling Methods for Statistical Models")
+    (description
+     "Balancing computational and statistical efficiency, subsampling techniques offer
+a practical solution for handling large-scale data analysis.  Subsampling
+methods enhance statistical modeling for massive datasets by efficiently drawing
+representative subsamples from full dataset based on tailored sampling
+probabilities.  These probabilities are optimized for specific goals, such as
+minimizing the variance of coefficient estimates or reducing prediction error.")
+    (license license:gpl3)))
+
 (define-public r-subrank
   (package
     (name "r-subrank")
@@ -7893,13 +7923,13 @@ genetic algorithms, brute force, or random sampling.  Schultze (2017)
 (define-public r-sts
   (package
     (name "r-sts")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sts" version))
        (sha256
-        (base32 "10jza1c0813yhjybw4g9fq21m7ypwhzzp1v9yf26ah4b828zb2m8"))))
+        (base32 "06zdpp1nisps3sq4d553wn6qa3cx4hkmlj2aq9mcx7dl9j2njb2c"))))
     (properties `((upstream-name . "sts")))
     (build-system r-build-system)
     (propagated-inputs (list r-stm
@@ -7910,6 +7940,7 @@ genetic algorithms, brute force, or random sampling.  Schultze (2017)
                              r-matrixstats
                              r-matrix
                              r-glmnet
+                             r-ggplot2
                              r-foreach
                              r-doparallel))
     (home-page "https://cran.r-project.org/package=sts")
@@ -7923,8 +7954,8 @@ document-level latent variable for each topic that modulates the word frequency
 within a topic.  These latent topic sentiment-discourse variables are controlled
 by the document-level metadata.  The STS model can be useful for regression
 analysis with text data in addition to topic modelingâs traditional use of
-descriptive analysis.  The method was developed in Li and Mankad (2024)
-<doi:10.2139/ssrn.4020651>.")
+descriptive analysis.  The method was developed in Chen and Mankad (2024)
+<doi:10.1287/mnsc.2022.00261>.")
     (license license:expat)))
 
 (define-public r-strvalidator
@@ -11466,13 +11497,13 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "0rhqds2rxrllpbwdifyni4f16lk16fyy0fgzgvq2sj4q7x62i565"))))
+        (base32 "12wq9ifxg5909h2qc67wfisixbksfwbjd49vppbd2ch58f2vhgq1"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14760,21 +14791,26 @@ model performance and robustness.")
 (define-public r-staccuracy
   (package
     (name "r-staccuracy")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "staccuracy" version))
        (sha256
-        (base32 "0ghf7d53dm205jbf7nyw7n77k1cgsq83mr43wbdjj0h3sj3grzps"))))
+        (base32 "0nqnrkb7b5a892q9dsy7vqdk9aa1f9pbapg2m7pqwrbgcw6xnbph"))))
     (properties `((upstream-name . "staccuracy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-purrr r-dplyr r-cli))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/tripartio/staccuracy")
     (synopsis "Standardized Accuracy and Other Model Performance Metrics")
     (description
      "Standardized accuracy (staccuracy) is framework for expressing accuracy scores
-such that 50% represents a reference level of performance and 100% is perfect
+such that 50% represents a reference level of performance and 100% is a perfect
 prediction.  The staccuracy package provides tools for creating staccuracy
 functions as well as some recommended staccuracy measures.  It also provides
 functions for some classic performance metrics such as mean absolute error
@@ -19491,13 +19527,13 @@ compositionally-warping (Murakami et al.  2021,
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "1kywpczgj1iiml7h1c3l7x9yc557iwnfypjqq8fvh2p7sl8c68cx"))))
+        (base32 "14zp5p9518p1divavcy2ydwm1fw3n0l0a5r2nxbxn2n25gbmpdky"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-matrix r-generics))
@@ -21550,6 +21586,29 @@ files with the readroper package.  Most functions require only the name of the
 dataset and the code will be automatically written.  Some convenience functions
 useful for converting ASCII files are also included.")
     (license license:gpl3)))
+
+(define-public r-speedybbt
+  (package
+    (name "r-speedybbt")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "speedyBBT" version))
+       (sha256
+        (base32 "18iwjmj05vngxa1vx40nhkv35sryi34fcm0lg2na21hcpcs5qq9f"))))
+    (properties `((upstream-name . "speedyBBT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-bayeslogit))
+    (home-page "https://cran.r-project.org/package=speedyBBT")
+    (synopsis "Efficient Bayesian Inference for the Bradley--Terry Model")
+    (description
+     "This package provides a suite of functions that allow a full, fast, and
+efficient Bayesian treatment of the Bradley--Terry model.  Prior assumptions
+about the model parameters can be encoded through a multivariate normal prior
+distribution.  Inference is performed using a latent variable representation of
+the model.")
+    (license license:gpl3+)))
 
 (define-public r-speechbr
   (package
@@ -25831,16 +25890,23 @@ F. Bithell (1991) <doi:10.1002/sim.4780101112>.")
 (define-public r-sparrafairness
   (package
     (name "r-sparrafairness")
-    (version "0.0.0.1")
+    (version "0.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPARRAfairness" version))
        (sha256
-        (base32 "0nyixdddqq3cmzj00gm637dm64iwb63mgp34wvmway5cflqr8yck"))))
+        (base32 "1kfjrwbwqigzjpzczqm6vm7yirkz46p054iic4q1yidv9m4xa3pf"))))
     (properties `((upstream-name . "SPARRAfairness")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ranger r-mvtnorm r-matrixstats r-cvauc))
+    (propagated-inputs (list r-scales
+                             r-ranger
+                             r-patchwork
+                             r-mvtnorm
+                             r-matrixstats
+                             r-ggrepel
+                             r-ggplot2
+                             r-cvauc))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SPARRAfairness")
     (synopsis
@@ -28763,13 +28829,13 @@ distribution by Perfect et al. (1992)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.4")
+    (version "2.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "122vwi9149xd8cadm4lrbq1fdxvdxzh3vs23zdvcbsm4dmzqhr6k"))))
+        (base32 "01q563q8yzb62hzznh8gk7lvgk87isfbcgvvvmhw3y91ggsbz8hy"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi r-data-table r-curl r-aqp))
@@ -32068,13 +32134,13 @@ Relationship Management, Wiley: New York.")
 (define-public r-smcfcs
   (package
     (name "r-smcfcs")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smcfcs" version))
        (sha256
-        (base32 "0l658ynkf3lb1nckfrgysj19m6735fi2k48r7l5qaf6jq7f3l3bh"))))
+        (base32 "0kam72y8qqkgv1dby6pznzxg0yhiz07pd7dj6p8r4a5blws2afxi"))))
     (properties `((upstream-name . "smcfcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -33836,13 +33902,13 @@ linear regression model described in Centofanti et al. (2020)
 (define-public r-slapmeg
   (package
     (name "r-slapmeg")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SlaPMEG" version))
        (sha256
-        (base32 "0ikhx14czcavfxppsaf0b6506l4gwhwk4p3wilr9zykw17s8ghzm"))))
+        (base32 "1w5iq0hkr1bx493cjzzaaxfypkvqf50nhidhxgxm337z05j55np7"))))
     (properties `((upstream-name . "SlaPMEG")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -35568,16 +35634,17 @@ the 2013-2014 and 2014-2015 seasons\" <doi:10.1002/sim.9181>.")
 (define-public r-siren
   (package
     (name "r-siren")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "siren" version))
        (sha256
-        (base32 "1w4a1dkhph0ai5faxvgmvf0phnpqapmp6wlax5r38ry5p11s0ljq"))))
+        (base32 "1n6ni8yz3106qff7mjml6szjbfjcd04nr6qs6bbsv114dvy9m9s2"))))
     (properties `((upstream-name . "siren")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-lavaan r-efa-mrfa))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=siren")
     (synopsis
      "Hybrid FA-CFA for Controlling Acquiescence in Restricted Factorial Solutions")
@@ -39091,16 +39158,16 @@ which can generate even more complex longitudinal data.")
 (define-public r-simctest
   (package
     (name "r-simctest")
-    (version "2.6")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simctest" version))
        (sha256
-        (base32 "0igwn82zfx6ajv42gpyx6969aldygldkpdc9ik6601511sscvf2a"))))
+        (base32 "0f2lmbvhd8j0can7bh1qddbwr9778ms8k17nc4pf2isa9kpgjr9q"))))
     (properties `((upstream-name . "simctest")))
     (build-system r-build-system)
-    (home-page "http://www2.imperial.ac.uk/~agandy")
+    (home-page "https://www.ma.imperial.ac.uk/~agandy/")
     (synopsis "Safe Implementation of Monte Carlo Tests")
     (description
      "Algorithms for the implementation and evaluation of Monte Carlo tests, as well
@@ -40729,6 +40796,30 @@ the implementation can be found in J. Peters and P. BÃ¼hlmann: \"Structural
 intervention distance (SID) for evaluating causal graphs\", Neural Computation
 27, pages 771-799, 2015 <doi:10.1162/NECO_a_00708>.")
     (license (license:fsdg-compatible "FreeBSD"))))
+
+(define-public r-sicure
+  (package
+    (name "r-sicure")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sicure" version))
+       (sha256
+        (base32 "096ynmqdsc6nwj5kp9p5s13fgq8vrrzasl2nrxpwrp7y1hqzqpzm"))))
+    (properties `((upstream-name . "sicure")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmatch r-npcure r-fda r-doby r-catools))
+    (home-page "https://cran.r-project.org/package=sicure")
+    (synopsis "Single-Index Mixture Cure Models")
+    (description
+     "Single-index mixture cure models allow estimating the probability of cure and
+the latency depending on a vector (or functional) covariate, avoiding the curse
+of dimensionality.  The vector of parameters that defines the model can be
+estimated by maximum likelihood.  A nonparametric estimator for the conditional
+density of the susceptible population is provided.  For more details, see
+PiÃ±eiro-Lamas (2024) (<https://ruc.udc.es/dspace/handle/2183/37035>).")
+    (license license:gpl2+)))
 
 (define-public r-siconvr
   (package
@@ -45044,6 +45135,33 @@ References: David Hartshorne (2019, ISBN: 978-1-5272-5139-7).  Stefan H.
 Steiner, R. Jock @code{MacKay} (2005, ISBN: 0873896467).")
     (license license:expat)))
 
+(define-public r-shelter
+  (package
+    (name "r-shelter")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shelter" version))
+       (sha256
+        (base32 "0nvq96i0i4gcp8p81zk48b936gmz5sxag41pcajxr9gwkhpnkqwb"))))
+    (properties `((upstream-name . "shelter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-sodium
+                             r-rappdirs
+                             r-getpass
+                             r-filelock
+                             r-checkmate))
+    (home-page "https://github.com/vubiostat/shelter")
+    (synopsis "Support for Secure API Key Management")
+    (description
+     "Secure handling of API keys can be difficult.  This package provides secure
+convenience functions for entering / handling API keys and opening connections
+via inversion of control on those keys.  Works seamlessly between production and
+developer environments.")
+    (license license:gpl3)))
+
 (define-public r-shelltrace
   (package
     (name "r-shelltrace")
@@ -46053,43 +46171,6 @@ assess and augment existing sample networks in the context of data distributions
 and conditions.  ALS data is the primary intended use case, however any
 rasterized remote sensing data can be used, enabling data-driven stratifications
 and sampling approaches.")
-    (license license:gpl3+)))
-
-(define-public r-sgs
-  (package
-    (name "r-sgs")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sgs" version))
-       (sha256
-        (base32 "0n8vyia3k3lafl7kd6dqrrgp6vjr954jxc74kchncaqx8p7ays3d"))))
-    (properties `((upstream-name . "sgs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-slope
-                             r-rlab
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-faux
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ff1201/sgs")
-    (synopsis
-     "Sparse-Group SLOPE: Adaptive Bi-Level Selection with FDR Control")
-    (description
-     "Implementation of Sparse-group SLOPE (SGS) (Feser and Evangelou (2023)
-<doi:10.48550/@code{arXiv.2305.09467>}) models.  Linear and logistic regression
-models are supported, both of which can be fit using k-fold cross-validation.
-Dense and sparse input matrices are supported.  In addition, a general adaptive
-three operator splitting (ATOS) implementation is provided.  Group SLOPE
-(@code{gSLOPE}) (Brzyski et al. (2019) <doi:10.1080/01621459.2017.1411269>) and
-group-based OSCAR models (Feser and Evangelou (2024)
-<doi:10.48550/@code{arXiv.2405.15357>}) are also implemented.  All models are
-available with strong screening rules (Feser and Evangelou (2024)
-<doi:10.48550/@code{arXiv.2405.15357>}) for computational speed-up.")
     (license license:gpl3+)))
 
 (define-public r-sgraph
@@ -52661,13 +52742,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "5.0.0")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "1s34k8z91dq3iijgwnm2w3mcapf4mmcfyc17w518wsynpir7k576"))))
+        (base32 "1dy1mxbh6gag540165990g0qmmab13c366rgxxkq5pvgn214xh37"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -52739,32 +52820,6 @@ collection for fisheries, aquaculture and the processing industry at EU level).
 They are aimed at identifying correlations between costs and transversal
 variables by metier using individual vessel data and for disaggregating variable
 costs from fleet segment to metier level.")
-    (license license:gpl2)))
-
-(define-public r-secdim
-  (package
-    (name "r-secdim")
-    (version "3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SecDim" version))
-       (sha256
-        (base32 "04l4qpw409dj5i494vmf7vmksis6910599gh259nbyv0pdfw5svr"))))
-    (properties `((upstream-name . "SecDim")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SecDim")
-    (synopsis "The Second Dimension of Spatial Association")
-    (description
-     "Most of the current methods explore spatial association using observations at
-sample locations, which are defined as the first dimension of spatial
-association (FDA).  The proposed concept of the second dimension of spatial
-association (SDA), as described in Yongze Song (2022)
-<doi:10.1016/j.jag.2022.102834>, aims to extract in-depth information about the
-geographical environment from locations outside sample locations for exploring
-spatial association.")
     (license license:gpl2)))
 
 (define-public r-sebr
@@ -60815,13 +60870,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "136g14lbdn07d24v46crbbmws3y2aj0qp8d0afazb0yqkb67nzxw"))))
+        (base32 "1dh2jazf7sc7c0cj9wbiph3ci9r00avqw7mivdlsnp9nd6m2dsmm"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -61833,13 +61888,13 @@ Dahl, Johnson, MÃ¼ller (2022) <doi:10.1080/10618600.2022.2069779>.")
 (define-public r-salesforcer
   (package
     (name "r-salesforcer")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salesforcer" version))
        (sha256
-        (base32 "19z4q5k0k1c1s2piqjg0z6nrwabap016nbx3jpf51lvmh5lp8ycf"))))
+        (base32 "065bnvvzxsq13bivbkz4kpskl0xwawjsavgzvssdkk49v99c4j6q"))))
     (properties `((upstream-name . "salesforcer")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -61867,7 +61922,7 @@ Dahl, Johnson, MÃ¼ller (2022) <doi:10.1080/10618600.2022.2069779>.")
     (description
      "This package provides functions connecting to the Salesforce Platform APIs
 (REST, SOAP, Bulk 1.0, Bulk 2.0, Metadata, Reports and Dashboards)
-<https://trailhead.salesforce.com/en/content/learn/modules/api_basics/api_basics_overview>.
+<https://trailhead.salesforce.com/content/learn/modules/api_basics/api_basics_overview>.
 \"API\" is an acronym for \"application programming interface\".  Most all calls
 from these APIs are supported as they use CSV, XML or JSON data that can be
 parsed into R data structures.  For more details please see the Salesforce API
@@ -61902,13 +61957,13 @@ paths of the sparse and coupled sparse asymmetric least squares, including the
 (define-public r-salad
   (package
     (name "r-salad")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salad" version))
        (sha256
-        (base32 "1fcs6g1ld514gkr5rxbawpxd81p9ywfxfhrh3jjwd3807gc9l2r4"))))
+        (base32 "1pd6g24k4d1vhk5nssck47dxaw2wl8lx4airpqqpfxvy5q9gy7qi"))))
     (properties `((upstream-name . "salad")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -63306,17 +63361,17 @@ sequencing (WGS), whole exome sequencing (WES) and SNP array data.")
 (define-public r-s7
   (package
     (name "r-s7")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "S7" version))
        (sha256
-        (base32 "0r3v586xbcrww63jifdbfh2fgdkr5f2mgp72f2zljg4x70zn3sfw"))))
+        (base32 "16yllj1a2m9akli5z2q8fv7jlgc2y0z3bk919d96wfbsmizmlrxq"))))
     (properties `((upstream-name . "S7")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rconsortium/S7/")
+    (home-page "https://rconsortium.github.io/S7/")
     (synopsis
      "An Object Oriented System Meant to Become a Successor to S3 and S4")
     (description
