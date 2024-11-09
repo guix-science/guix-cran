@@ -15706,6 +15706,46 @@ functions that provide alternative behaviors such as if_else2() and
 str_detect2().")
     (license license:expat)))
 
+(define-public r-tidyplots
+  (package
+    (name "r-tidyplots")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyplots" version))
+       (sha256
+        (base32 "1p5bsyzdakj3yfrnznmmqyqk7930ymvvkla58gky25av2nc5i77m"))))
+    (properties `((upstream-name . "tidyplots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-patchwork
+                             r-lifecycle
+                             r-htmltools
+                             r-hmisc
+                             r-glue
+                             r-ggrepel
+                             r-ggrastr
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggbeeswarm
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jbengler/tidyplots")
+    (synopsis "Tidy Plots for Scientific Papers")
+    (description
+     "The goal of tidyplots is to streamline the creation of publication-ready plots
+for scientific papers.  It allows to gradually add, remove and adjust plot
+components using a consistent and intuitive syntax.")
+    (license license:expat)))
+
 (define-public r-tidyplate
   (package
     (name "r-tidyplate")
@@ -21000,13 +21040,13 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
 (define-public r-testgenerator
   (package
     (name "r-testgenerator")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGenerator" version))
        (sha256
-        (base32 "15jgcknxdc1nh3325rzlax3q69dgfxb2a3xm2bzpi7fb7ryv5grz"))))
+        (base32 "0x4rmmxmvn9wmxl9gj1fx938k3a60hn9xmsa79xnd6arfdl882fq"))))
     (properties `((upstream-name . "TestGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -21015,6 +21055,7 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
                              r-rlang
                              r-readxl
                              r-readr
+                             r-openxlsx
                              r-jsonlite
                              r-glue
                              r-ggplot2
@@ -21023,7 +21064,8 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
                              r-dbi
                              r-cli
                              r-checkmate
-                             r-cdmconnector))
+                             r-cdmconnector
+                             r-arrow))
     (home-page "https://github.com/darwin-eu/TestGenerator")
     (synopsis "Integration Unit Tests for Pharmacoepidemiological Studies")
     (description
@@ -21468,13 +21510,13 @@ finding the optimal argument combinations with respect to each diagnostic.")
 (define-public r-testanaapp
   (package
     (name "r-testanaapp")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestAnaAPP" version))
        (sha256
-        (base32 "074nvgdfpd98ycnykj03hvnz9nnpnk7s8w25p4mc9vba8g11xjza"))))
+        (base32 "19rp8a98ir5q96n5ja6f4h1qjb9cjbbxbmhy8sk08x1xvs8nn2dn"))))
     (properties `((upstream-name . "TestAnaAPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

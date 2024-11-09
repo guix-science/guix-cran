@@ -9900,13 +9900,13 @@ style-polymorphic plant populations.\".")
 (define-public r-flowchart
   (package
     (name "r-flowchart")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowchart" version))
        (sha256
-        (base32 "1znq9l3i4szib2qnz4y3vm9z4nyk2a7n1bpy17f80y89h55gc7j6"))))
+        (base32 "0ll0s7ci5ml269i0ccabyy8kn1w7gxidd27mysnd42xmdss05qyb"))))
     (properties `((upstream-name . "flowchart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -13186,13 +13186,13 @@ financial forecasters.  Happy forecasting!")
 (define-public r-finnsurveytext
   (package
     (name "r-finnsurveytext")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finnsurveytext" version))
        (sha256
-        (base32 "0f3gf5qdmkc1psdsvx5nkzxic2cx9hja4sisxnmwza4cb56lasi5"))))
+        (base32 "0ypa3ylkn7acby7pr651ji16wpbzpi8nfl622gq007q6v4rj14qp"))))
     (properties `((upstream-name . "finnsurveytext")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -14253,13 +14253,13 @@ convenient file sharing on the web.")
 (define-public r-filearray
   (package
     (name "r-filearray")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filearray" version))
        (sha256
-        (base32 "0z3sl2lg9nyfd45w0d19ni9a0x8iqr79j2jn9b05bkc6qsh1qc4g"))))
+        (base32 "16caqi2il8qghhicjgy9nh9nf0x4xbyad0mf3yyyvdr8ng0rrxcl"))))
     (properties `((upstream-name . "filearray")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-rcpp r-fastmap r-digest r-bh))
@@ -14874,6 +14874,29 @@ endorsement of this product by HL7.")
      "Impute general multivariate missing data with the fractional hot deck imputation
 based on Jaekwang Kim (2011) <doi:10.1093/biomet/asq073>.")
     (license license:gpl2+)))
+
+(define-public r-fgrepo
+  (package
+    (name "r-fgrepo")
+    (version "1.3.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FGRepo" version))
+       (sha256
+        (base32 "04wflncns7dr07j29inrfbn4c6wy0y3c6v7nzk7raj52c2pchha5"))))
+    (properties `((upstream-name . "FGRepo")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=FGRepo")
+    (synopsis "Functional Genomics Repository for POST-GWAS Analysis")
+    (description
+     "This package provides a collection of datasets essential for functional genomic
+analysis.  Gene names, gene positions, cytoband information, sourced from
+Ensembl and phenotypes association graph prepared from GWAScatalog are included.
+ Data is available in both GRCh37 and 38 builds.  These datasets facilitate a
+wide range of genomic studies, including the identification of genetic variants,
+exploration of genomic features, and post-GWAS functional analysis.")
+    (license license:gpl3)))
 
 (define-public r-fgmutils
   (package

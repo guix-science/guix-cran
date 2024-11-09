@@ -7577,13 +7577,13 @@ which can be then easily used for further analysis.")
 (define-public r-archive
   (package
     (name "r-archive")
-    (version "1.1.9")
+    (version "1.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archive" version))
        (sha256
-        (base32 "134ydd85saczsanklxwj4pwzgc328xm9fksc3wrpg4zp337rlkkx"))))
+        (base32 "0040r873hydba7n55n561x2hjh4pwv55clkbnpc389dk073071si"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
     (inputs (list zlib openssl libarchive libarchive libarchive))
@@ -14822,13 +14822,13 @@ validated and demonstrated on a synthetic sample.")
 (define-public r-alfam2
   (package
     (name "r-alfam2")
-    (version "4.1.3")
+    (version "4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ALFAM2" version))
        (sha256
-        (base32 "1l2l792zv8njg7iii7yzr8fksfijmp6r45a421bamg5r1wa3v1rx"))))
+        (base32 "15m4lqh40ylfgxb92v1ch3m2f7m15k90416w34x68i0i0fvx81nn"))))
     (properties `((upstream-name . "ALFAM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -15433,6 +15433,44 @@ See the reference: Mengyang Gu, Yue He, Xubo Liu and Yimin Luo (2023),
      "Nonparametric estimation of additive isotonic covariate effects for proportional
 hazards model.")
     (license license:gpl2+)))
+
+(define-public r-aiscreenr
+  (package
+    (name "r-aiscreenr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AIscreenR" version))
+       (sha256
+        (base32 "1zppz5gv980a8vijh6j5bbwddyzjacqysbpym0sl9dqnhmvrhcww"))))
+    (properties `((upstream-name . "AIscreenR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-furrr
+                             r-dplyr
+                             r-curl
+                             r-askpass))
+    (native-inputs (list r-knitr))
+    (home-page "https://mikkelvembye.github.io/AIscreenR/")
+    (synopsis "AI Screening Tools in R for Systematic Reviewing")
+    (description
+     "This package provides functions to conduct title and abstract screening in
+systematic reviews using large language models, such as the Generative
+Pre-trained Transformer (GPT) models from @code{OpenAI}
+<https://platform.openai.com/>.  These functions can enhance the quality of
+title and abstract screenings while reducing the total screening time
+significantly.  In addition, the package includes tools for quality assessment
+of title and abstract screenings, as described in Vembye, Christensen,
+MÃ¸lgaard, and Schytt (2024) <DOI:10.31219/osf.io/yrhzm>.")
+    (license license:gpl3+)))
 
 (define-public r-airthermo
   (package
@@ -18449,13 +18487,13 @@ models, consult Henrik Madsen and Poul Thyregod's book (2011), ISBN:
 (define-public r-aebdata
   (package
     (name "r-aebdata")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aebdata" version))
        (sha256
-        (base32 "1yjp2rf1pw4bff8wq5v2vz0g03arbm9zh5js4ykwixhywkiscnm5"))))
+        (base32 "0y15179vy547wsi0bjycnx0fffc46vb769dvi99a4j5dr4gfsdaj"))))
     (properties `((upstream-name . "aebdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvest r-readr r-httr2))
@@ -19218,13 +19256,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "02gwhahx3gj2b1lf6mfbicr6dl6fh4f733r3xyxjq3r6i6r686pj"))))
+        (base32 "05s72p7gbpm689sm6vvrb830m43zhsm5gg015brdcggqpvf9kj9a"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack

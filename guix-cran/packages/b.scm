@@ -11377,13 +11377,13 @@ data.frame, data.table, or tbl_df) and adjacency matrices (class matrix or
 (define-public r-biplotgui
   (package
     (name "r-biplotgui")
-    (version "0.0-7")
+    (version "0.0-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiplotGUI" version))
        (sha256
-        (base32 "0vfig7hp6k0b117w764jzj8z2b279sr0k5vyz3v6kh7bsdfxx74a"))))
+        (base32 "17pv5rccqqql178i94iic7504pf56aidg6kpkfl85adzl15dq7ns"))))
     (properties `((upstream-name . "BiplotGUI")))
     (build-system r-build-system)
     (propagated-inputs (list r-tkrplot
@@ -11399,7 +11399,7 @@ data.frame, data.table, or tbl_df) and adjacency matrices (class matrix or
     (description
      "This package provides a GUI with which users can construct and interact with
 biplots.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-biplotez
   (package
@@ -12646,13 +12646,13 @@ component analyses are limited to 3 or fewer dimensions.")
 (define-public r-biogrowth
   (package
     (name "r-biogrowth")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogrowth" version))
        (sha256
-        (base32 "19czyp7n4ip01psl8hbiihfhj52vdp6nsq0h7cnl7p9h0ax9wcj5"))))
+        (base32 "0cybc5qcpk1mka4ilkhy0iyjx9xy618byz9qfkb5mw4l30pmnky0"))))
     (properties `((upstream-name . "biogrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15162,16 +15162,16 @@ et al (2018, submitted); Martos et al (2018, submitted).")
 (define-public r-bigd
   (package
     (name "r-bigd")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigD" version))
        (sha256
-        (base32 "0pzzqqazn1nv2b613vzdyhxvr454lyqq8235jydia6r3k86fpadw"))))
+        (base32 "1807m3ma7h7k7m7c8g7qrjf77limvy6q4mkfkn4nrv1rgsnq7kbq"))))
     (properties `((upstream-name . "bigD")))
     (build-system r-build-system)
-    (home-page "https://github.com/rich-iannone/bigD")
+    (home-page "https://rstudio.github.io/bigD/")
     (synopsis "Flexibly Format Dates and Times to a Given Locale")
     (description
      "Format dates and times flexibly and to whichever locales make sense.  Parses
@@ -21434,13 +21434,13 @@ distribution functions.")
 (define-public r-bayestfr
   (package
     (name "r-bayestfr")
-    (version "7.4-2")
+    (version "7.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesTFR" version))
        (sha256
-        (base32 "09fbyc4656dil6mqfzx7nlxxp0b95fmc73ibci60jbbzggafb51s"))))
+        (base32 "1ydizzc0pp3rwkkr6lbsxkcq1kihsqn8hsiamy2sxlghdzzdkk5b"))))
     (properties `((upstream-name . "bayesTFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2019

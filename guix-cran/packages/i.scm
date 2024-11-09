@@ -9733,6 +9733,39 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 <https://www.inegi.org.mx/servicios/api_indicadores.html>.")
     (license license:cc0)))
 
+(define-public r-ineatlas
+  (package
+    (name "r-ineatlas")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ineAtlas" version))
+       (sha256
+        (base32 "07yqgj20zal40m1vbz8r98ddxnfm9dxhpf3j2d4c9pj9299ncdxz"))))
+    (properties `((upstream-name . "ineAtlas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-stringr
+                             r-sf
+                             r-readr
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pablogguz/ineAtlas")
+    (synopsis "Access to Spanish Household Income Distribution Atlas Data")
+    (description
+     "This package provides access to granular socioeconomic indicators from the
+Spanish Statistical Office (INE) Household Income Distribution Atlas.  The
+package downloads and processes data from a companion @code{GitHub} repository
+(<https://github.com/pablogguz/@code{ineAtlas.data/>}) which contains processed
+versions of the official INE Atlas data.  Functions are provided to fetch data
+at multiple geographic levels (municipalities, districts, and census tracts),
+including income indicators, demographic characteristics, and inequality
+metrics.  The data repository is updated every year when new releases are
+published by INE.")
+    (license license:expat)))
+
 (define-public r-industrial
   (package
     (name "r-industrial")
@@ -13059,6 +13092,29 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
 (2021) <doi:10.1080/07350015.2019.1635486>.")
     (license license:gpl3)))
 
+(define-public r-ilsamerge
+  (package
+    (name "r-ilsamerge")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ILSAmerge" version))
+       (sha256
+        (base32 "1qwchhii59c91za0y5h2gxp5hw8wl3hdsvf8j17khxxyzf4lqlqs"))))
+    (properties `((upstream-name . "ILSAmerge")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-haven))
+    (home-page "https://github.com/dopatendo/ILSAmerge")
+    (synopsis
+     "Merge and Download International Large-Scale Assessments (ILSA) Data")
+    (description
+     "Merges and downloads SPSS data from different International Large-Scale
+Assessments (ILSA), including: Trends in International Mathematics and Science
+Study (TIMSS), Progress in International Reading Literacy Study (PIRLS),
+Programme for International Student Assessment (PISA), and others.")
+    (license license:gpl3+)))
+
 (define-public r-ils
   (package
     (name "r-ils")
@@ -14068,6 +14124,26 @@ References describing the methods: JefmaÅski (2020)
 <doi:10.1007/978-3-030-52348-0_4>; JefmaÅski, Roszkowska, Kusterka-JefmaÅska
 (2021) <doi:10.3390/e23121636>.")
     (license license:gpl2+)))
+
+(define-public r-ife
+  (package
+    (name "r-ife")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ife" version))
+       (sha256
+        (base32 "08v2ab0wdyng9y3m75118d7pgck07hym2y8b7cz8xpzbwysgsba4"))))
+    (properties `((upstream-name . "ife")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s7 r-generics r-cli))
+    (home-page "https://cran.r-project.org/package=ife")
+    (synopsis "Influence Function Based Estimate Objects")
+    (description
+     "This package implements an S7 class for estimates based on influence functions.
+Standard arithmetic operations are defined for the class.")
+    (license license:gpl3+)))
 
 (define-public r-ifctools
   (package
@@ -16047,13 +16123,13 @@ Q., Zhou, H., and Cai, J. (2017) <doi:10.1093/biomet/asw067>.")
 (define-public r-icmstate
   (package
     (name "r-icmstate")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icmstate" version))
        (sha256
-        (base32 "07s04wxd8s49scxkcg3dlri8kvqni0y8f953idhnj026yhr86f84"))))
+        (base32 "0nkvfa03vzmq1sh95fbc16820666afs16v60iprw1n3426gxiyls"))))
     (properties `((upstream-name . "icmstate")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp

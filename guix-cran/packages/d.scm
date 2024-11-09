@@ -2272,6 +2272,31 @@ Date/times are considered discrete and are floored whenever encountered.  Times
 are wrapped and time zones are maintained unless explicitly altered by the user.")
     (license license:expat)))
 
+(define-public r-dtsr
+  (package
+    (name "r-dtsr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DTSR" version))
+       (sha256
+        (base32 "0im249drx2d2jpiswmv9dx42drfzcqd82fb10gxqady128ndkcxx"))))
+    (properties `((upstream-name . "DTSR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvdalab r-mass r-dmwr2 r-cluster))
+    (home-page "https://cran.r-project.org/package=DTSR")
+    (synopsis
+     "Distributed Trimmed Scores Regression for Handling Missing Data")
+    (description
+     "This package provides functions for handling missing data using Distributed
+Trimmed Scores Regression and other imputation methods.  It includes facilities
+for data imputation, evaluation metrics, and clustering analysis.  It is
+designed to work in distributed computing environments to handle large datasets
+efficiently.  The philosophy of the package is described in Guo G. (2024)
+<doi:10.1080/03610918.2022.2091779>.")
+    (license license:gpl3)))
+
 (define-public r-dtsg
   (package
     (name "r-dtsg")
@@ -13587,13 +13612,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "1vdmd2lzmj246jaamkxda2w899yxrzhbj7mk01rzd8zysqjdkbj9"))))
+        (base32 "05670xa45s1rqxidv2hznv1xcm40mhvmf6mrf7xm01knfq4h3by4"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (propagated-inputs (list r-khroma r-arkhe))
@@ -18279,17 +18304,16 @@ tables to console and saving table objects for later use.")
 (define-public r-descriptr
   (package
     (name "r-descriptr")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "descriptr" version))
        (sha256
-        (base32 "1shqcykp8ahgarsam56zv4gcbj0mmfm7jy1i9fgbmy5ddksnific"))))
+        (base32 "0y91n0znpzf98nnz3ajn9z33lzn1hdc4dkacq0kxakk9jxjdkp5d"))))
     (properties `((upstream-name . "descriptr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-scales
                              r-rlang
                              r-magrittr

@@ -2450,29 +2450,28 @@ sampling probabilities are specified or can be calculated.")
 (define-public r-svydiags
   (package
     (name "r-svydiags")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svydiags" version))
        (sha256
-        (base32 "13rmy02f5d2ysbi5r9w9mhnyqrsvikhqwjk1d3dgkxgvz9lyqas0"))))
+        (base32 "1pbv991fyz66rvmzpc36qcl9q6q8lxr5qydpikc915xmszjx2f01"))))
     (properties `((upstream-name . "svydiags")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=svydiags")
     (synopsis "Regression Model Diagnostics for Survey Data")
     (description
-     "Diagnostics for fixed effects linear regression models fitted with survey data.
-Extensions of standard diagnostics to complex survey data are included:
-standardized residuals, leverages, Cook's D, dfbetas, dffits, condition indexes,
-and variance inflation factors as found in Li and Valliant (Surv.  Meth., 2009,
-35(1), pp.  15-24; Jnl.  of Off.  Stat., 2011, 27(1), pp.  99-119; Jnl.  of Off.
- Stat., 2015, 31(1), pp.  61-75); Liao and Valliant (Surv.  Meth., 2012, 38(1),
-pp.  53-62; Surv.  Meth., 2012, 38(2), pp.  189-202).  Variance inflation
-factors are also computed for some general linear models (binomial, gaussian,
-poisson, quasibinomial, and quasipoisson) as described in Liao (U. Maryland
-thesis, 2010).")
+     "Diagnostics for fixed effects linear and general linear regression models fitted
+with survey data.  Extensions of standard diagnostics to complex survey data are
+included: standardized residuals, leverages, Cook's D, dfbetas, dffits,
+condition indexes, and variance inflation factors as found in Li and Valliant
+(Surv.  Meth., 2009, 35(1), pp.  15-24; Jnl.  of Off.  Stat., 2011, 27(1), pp.
+99-119; Jnl.  of Off.  Stat., 2015, 31(1), pp.  61-75); Liao and Valliant (Surv.
+ Meth., 2012, 38(1), pp.  53-62; Surv.  Meth., 2012, 38(2), pp.  189-202).
+Variance inflation factors and condition indexes are also computed for some
+general linear models as described in Liao (U. Maryland thesis, 2010).")
     (license license:gpl3)))
 
 (define-public r-svycdiff
@@ -37060,6 +37059,29 @@ time model with risk-free intervals and possibly a competing event.  Possibility
 to cut the data to an interim data set.  Data can be plotted.  Details about the
 method can be found in Jahn-Eimermacher, A. et al. (2015)
 <doi:10.1186/s12874-015-0005-2>.")
+    (license license:gpl2)))
+
+(define-public r-simrds
+  (package
+    (name "r-simrds")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimRDS" version))
+       (sha256
+        (base32 "1kig2mzwcqzf8vdal42hm2847b8dffma2idv8lrs8dqdxqnpk5ck"))))
+    (properties `((upstream-name . "SimRDS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rds r-e1071))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SimRDS")
+    (synopsis "Simulation of Respondent Driven Samples")
+    (description
+     "Simulate populations with desired properties and extract respondent driven
+samples.  To better understand the usage of the package and the algorithm used,
+please refer to Perera, A., and Ramanayake, A. (2019)
+<https://www.aimr.tirdiconference.com/assets/images/portfolio/Conference-Proceeding-AIMR-19.pdf>.")
     (license license:gpl2)))
 
 (define-public r-simputation

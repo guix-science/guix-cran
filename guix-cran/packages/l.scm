@@ -5309,6 +5309,31 @@ etymology.")
      "Logger to keep track of informational events and errors useful for debugging.")
     (license license:agpl3)))
 
+(define-public r-lofifonts
+  (package
+    (name "r-lofifonts")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lofifonts" version))
+       (sha256
+        (base32 "162l0ijgam1jykpdzrmhscqai67m9dlarxnqjzaq932g3aib9bqg"))))
+    (properties `((upstream-name . "lofifonts")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/lofifonts")
+    (synopsis "Text Rendering with Bitmap and Vector Fonts")
+    (description
+     "Alternate font rendering is useful when rendering text to novel graphics outputs
+where modern font rendering is not available or where bespoke text positioning
+is required.  Bitmap and vector fonts allow for custom layout and rendering
+using pixel coordinates and line drawing.  Formatted text is created as a
+data.frame of pixel coordinates (for bitmap fonts) or stroke coordinates (for
+vector fonts).  All text can be easily previewed as a matrix or raster image.  A
+selection of fonts is included with this package.")
+    (license license:expat)))
+
 (define-public r-loewesadditivity
   (package
     (name "r-loewesadditivity")

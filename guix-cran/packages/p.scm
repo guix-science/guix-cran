@@ -791,13 +791,13 @@ indicators.")
 (define-public r-pvstatem
   (package
     (name "r-pvstatem")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PvSTATEM" version))
        (sha256
-        (base32 "0klg9rlagygvfcm2k116mkp1d259yhmwxfz04yw4kk2glrypqid5"))))
+        (base32 "1951md1r40y9axrkrhp0996663psjlnx3wsqhgy94ccrvv2fsh3r"))))
     (properties `((upstream-name . "PvSTATEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite

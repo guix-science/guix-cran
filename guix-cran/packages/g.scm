@@ -6438,18 +6438,18 @@ regularization.  See also Epskamp, Waldorp, Mottus & Borsboom (2018)
 (define-public r-graphicalmcp
   (package
     (name "r-graphicalmcp")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphicalMCP" version))
        (sha256
-        (base32 "0bs4d1fz6l2rwssh8wq5sakkl478lr6vsx6lb1jz8qnryk6cb3wy"))))
+        (base32 "1ffhxifncj5v4fm0kkfdnl3qgg9g13xy9kih6sf5rhiww3cs4haz"))))
     (properties `((upstream-name . "graphicalMCP")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixstats))
     (native-inputs (list r-knitr))
-    (home-page "https://gilead-biostats.github.io/graphicalMCP/")
+    (home-page "https://github.com/openpharma/graphicalMCP")
     (synopsis "Graphical Multiple Comparison Procedures")
     (description
      "Multiple comparison procedures (MCPs) control the familywise error rate in

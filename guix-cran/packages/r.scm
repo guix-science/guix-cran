@@ -2761,13 +2761,13 @@ packages who wish to use the 2bit C library in their own C'/'C++ code.")
 (define-public r-rtwig
   (package
     (name "r-rtwig")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTwig" version))
        (sha256
-        (base32 "1v8xm7xnla335aijwbr3nmkx8ayf2p0d3qln47xh9smr2vrm88b4"))))
+        (base32 "1w4j6ly7wf8n708zxkxzr0p9f6jgfpk82dmg9la6jfv43jr7h8m7"))))
     (properties `((upstream-name . "rTwig")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
@@ -2776,14 +2776,11 @@ packages who wish to use the 2bit C library in their own C'/'C++ code.")
                              r-rgl
                              r-rdpack
                              r-rcppsimdjson
+                             r-rcpparmadillo
                              r-rcpp
                              r-r-matlab
-                             r-progressr
                              r-igraph
                              r-geometry
-                             r-future
-                             r-foreach
-                             r-dofuture
                              r-colourvalues
                              r-cobs))
     (native-inputs (list r-knitr))
@@ -2793,9 +2790,9 @@ packages who wish to use the 2bit C library in their own C'/'C++ code.")
      "Real Twig is a method to correct branch overestimation in quantitative structure
 models.  Overestimated cylinders are correctly tapered using measured twig
 diameters of corresponding tree species.  Supported quantitative structure
-modeling software includes @code{TreeQSM}', @code{SimpleForest} and Treegraph'.
-Also included is a novel database of twig diameters and tools for fractal
-analysis of point clouds.")
+modeling software includes @code{TreeQSM}', @code{SimpleForest}', Treegraph',
+and @code{aRchi}'.  Also included is a novel database of twig diameters and
+tools for fractal analysis of point clouds.")
     (license license:gpl3+)))
 
 (define-public r-rtwalk
@@ -34225,6 +34222,35 @@ gridded datasets of daily precipitation.")
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
+(define-public r-redcas
+  (package
+    (name "r-redcas")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "redcas" version))
+       (sha256
+        (base32 "04icmr0bz8hyyfn842vhj30y0i8zfyvawwzwaznflbfqpdihbw6b"))))
+    (properties `((upstream-name . "redcas")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=redcas")
+    (synopsis "An Interface to the Computer Algebra System 'REDUCE'")
+    (description
+     "REDUCE is a portable general-purpose computer algebra system supporting scalar,
+vector, matrix and tensor algebra, symbolic differential and integral calculus,
+arbitrary precision numerical calculations and output in @code{LaTeX} format.
+REDUCE is based on Lisp and is available on the two dialects Portable Standard
+Lisp ('PSL') and Codemist Standard Lisp ('CSL').  The redcas package provides an
+interface for executing arbitrary REDUCE code interactively from R', returning
+output as character vectors.  R code and REDUCE code can be interspersed.  It
+also provides a specialized function for calling the REDUCE feature for solving
+systems of equations, returning the output as an R object designed for the
+purpose.  A further specialized function uses REDUCE features to generate
+@code{LaTeX} output and post-processes this for direct use in @code{LaTeX}
+documents, e.g. using Sweave'.")
+    (license license:gpl3)))
+
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
@@ -44164,13 +44190,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "0vy466xyzc22bwhr719znph2hd1xf74r9vzi7zb6pdqycjn11mgl"))))
+        (base32 "0c1gafx2kwkzss3s8bwdk0pnk5c9q8lqg67fzlz7fdiqzbx0j506"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (inputs (list pkg-config fftw))
@@ -44184,7 +44210,7 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
                              r-filearray
                              r-digest))
     (native-inputs (list pkg-config))
-    (home-page "https://dipterix.org/ravetools/")
+    (home-page "https://rave.wiki")
     (synopsis
      "Signal and Image Processing Toolbox for Analyzing Intracranial Electroencephalography Data")
     (description
@@ -44192,8 +44218,8 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 wavelet spectrogram for minutes of high-resolution signals, fast 3D convolution,
 image registration, 3D mesh manipulation; providing fundamental toolbox for
 intracranial Electroencephalography (@code{iEEG}) pipelines.  Documentation and
-examples about RAVE project are provided at <https://openwetware.org/wiki/RAVE>,
-and the paper by John F. Magnotti, Zhengjia Wang, Michael S. Beauchamp (2020)
+examples about RAVE project are provided at <https://rave.wiki>, and the paper
+by John F. Magnotti, Zhengjia Wang, Michael S. Beauchamp (2020)
 <doi:10.1016/j.neuroimage.2020.117341>; see citation(\"ravetools\") for details.")
     (license license:gpl2+)))
 
@@ -50214,13 +50240,13 @@ to assess the 95% CI and p-value of the R2 difference.")
 (define-public r-r2r
   (package
     (name "r-r2r")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2r" version))
        (sha256
-        (base32 "0vp0ak88m3ssca8b8kxf9w6qkxsdy0qs6cngrr9gqvbrnx0gh9j6"))))
+        (base32 "06xniycac43i330y0cmbpmp3bn32910gqp9zn2f0yyb7fn83300z"))))
     (properties `((upstream-name . "r2r")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-digest))

@@ -11053,13 +11053,13 @@ representations of multidimensional data sets.")
 (define-public r-movieroc
   (package
     (name "r-movieroc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movieROC" version))
        (sha256
-        (base32 "0znqdqdl7hszg0q9a5sbaj5m9h0lglk33jrxbvfhyw1dfkg29v93"))))
+        (base32 "0f65p8b9agpq0ym9xrnbvc5hspir0810ksfk4jjr0l2gbm024xkk"))))
     (properties `((upstream-name . "movieROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -19090,13 +19090,13 @@ performance.")
 (define-public r-mlmc
   (package
     (name "r-mlmc")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmc" version))
        (sha256
-        (base32 "177ih6x701pnjnwrs34pwj8376s6177a1xkmr8zkcgx2wjwjiv4x"))))
+        (base32 "1brfxfky2zlav2jp0azp4pzqqic5c0864sabkwg6glr09kkc1h52"))))
     (properties `((upstream-name . "mlmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -29984,6 +29984,57 @@ meta-analysis using Stan'.  Includes binomial-normal hierarchical models and
 option to use weakly informative priors for the heterogeneity parameter and the
 treatment effect parameter which are described in Guenhan, Roever, and Friede
 (2020) <doi:10.1002/jrsm.1370>.")
+    (license license:gpl3+)))
+
+(define-public r-metasnf
+  (package
+    (name "r-metasnf")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metasnf" version))
+       (sha256
+        (base32 "0jydlpq10kfp7h425z1rmm24jlj9vdz1cjldw6158dy2ggawmph2"))))
+    (properties `((upstream-name . "metasnf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-snftool
+                             r-rlang
+                             r-purrr
+                             r-progressr
+                             r-mclust
+                             r-mass
+                             r-ggplot2
+                             r-dplyr
+                             r-digest
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://branchlab.github.io/metasnf/")
+    (synopsis "Meta Clustering with Similarity Network Fusion")
+    (description
+     "Framework to facilitate patient subtyping with similarity network fusion and
+meta clustering.  The similarity network fusion (SNF) algorithm was introduced
+by Wang et al. (2014) in <doi:10.1038/nmeth.2810>.  SNF is a data integration
+approach that can transform high-dimensional and diverse data types into a
+single similarity network suitable for clustering with minimal loss of
+information from each initial data source.  The meta clustering approach was
+introduced by Caruana et al. (2006) in <doi:10.1109/ICDM.2006.103>.  Meta
+clustering involves generating a wide range of cluster solutions by adjusting
+clustering hyperparameters, then clustering the solutions themselves into a
+manageable number of qualitatively similar solutions, and finally characterizing
+representative solutions to find ones that are best for the user's specific
+context.  This package provides a framework to easily transform multi-modal data
+into a wide range of similarity network fusion-derived cluster solutions as well
+as to visualize, characterize, and validate those solutions.  Core package
+functionality includes easy customization of distance metrics, clustering
+algorithms, and SNF hyperparameters to generate diverse clustering solutions;
+calculation and plotting of associations between features, between patients, and
+between cluster solutions; and standard cluster validation approaches including
+resampled measures of cluster stability, standard metrics of cluster quality,
+and label propagation to evaluate generalizability in unseen data.  Associated
+vignettes guide the user through using the package to identify patient subtypes
+while adhering to best practices for unsupervised learning.")
     (license license:gpl3+)))
 
 (define-public r-metasens

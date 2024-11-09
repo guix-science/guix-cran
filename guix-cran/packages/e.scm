@@ -10704,6 +10704,47 @@ the endemic channel method (Bortman, M. (1999)
 <https://iris.paho.org/handle/10665.2/8562>).")
     (license license:expat)))
 
+(define-public r-epicmodel
+  (package
+    (name "r-epicmodel")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epicmodel" version))
+       (sha256
+        (base32 "1l1vppgmh6s7h558b7cq1civm27z543iwxpm2mlf952jkq0wf9nh"))))
+    (properties `((upstream-name . "epicmodel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-spsutil
+                             r-shinythemes
+                             r-shinyjs
+                             r-shinyalert
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-prompter
+                             r-magrittr
+                             r-gtools
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-diagrammer
+                             r-dagitty
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://forsterepi.github.io/epicmodel/")
+    (synopsis "Causal Modeling in Epidemiology")
+    (description
+     "Create causal models for use in epidemiological studies, including
+sufficient-component cause models as introduced by Rothman (1976)
+<doi:10.1093/oxfordjournals.aje.a112335>.")
+    (license license:gpl3+)))
+
 (define-public r-epicleanr
   (package
     (name "r-epicleanr")

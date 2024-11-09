@@ -2719,13 +2719,13 @@ EPA Computational Toxicology and Exposure Online Resources
 (define-public r-ctxcc
   (package
     (name "r-ctxcc")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CTxCC" version))
        (sha256
-        (base32 "10rn4fckk57xjhxb666gg3lypsyl00428mgakwzbbnhrzn0rdlws"))))
+        (base32 "0igh3lrvsbgw8xjwf6nkypshasq0i4mh78x4i5k2m2k227bxak7k"))))
     (properties `((upstream-name . "CTxCC")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixcalc r-expm r-compquadform
@@ -15980,13 +15980,13 @@ connectedness papers.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "02vrsfwzwsr0nnb26yp1bfgjzl7cgwdakl1m0gp6s4zirg9nhj9d"))))
+        (base32 "0pyga0ma190vf8l3iyys9j3b4qc76j4pap30x9g1vixjirc2xqzw"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15995,6 +15995,7 @@ connectedness papers.")
                              r-rlang
                              r-r6
                              r-purrr
+                             r-mime
                              r-magrittr
                              r-lifecycle
                              r-jsonlite
@@ -21245,27 +21246,28 @@ gradient-matching, generalized profiling and forwards prediction error methods."
 (define-public r-collinear
   (package
     (name "r-collinear")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collinear" version))
        (sha256
-        (base32 "1vflihmpbqhfl9y8a2s5pnj4pjdj9m20mk80lm6lvff1pjwj2sbp"))))
+        (base32 "1r51qsr09bgz7kwvwspkkhrql6mih7jymv7sgnkvfapyridvw7am"))))
     (properties `((upstream-name . "collinear")))
     (build-system r-build-system)
-    (propagated-inputs (list r-dplyr))
+    (propagated-inputs (list r-rpart r-ranger r-progressr r-mgcv
+                             r-future-apply))
     (home-page "https://blasbenito.github.io/collinear/")
-    (synopsis "Seamless Multicollinearity Management")
+    (synopsis "Automated Multicollinearity Management")
     (description
-     "System for seamless management of multicollinearity in data frames with numeric
-and/or categorical variables for statistical analysis and machine learning
-modeling.  The package combines bivariate correlation (Pearson, Spearman, and
-Cramer's V) with variance inflation factor analysis, target encoding to
-transform categorical variables into numeric (Micci-Barreca, D. 2001
-<DOI:10.1145/507533.507538>), and a flexible feature prioritization method, to
-deliver a comprehensive multicollinearity management tool covering a wide range
-of use cases.")
+     "Effortless multicollinearity management in data frames with both numeric and
+categorical variables for statistical and machine learning applications.  The
+package simplifies multicollinearity analysis by combining four robust methods:
+1) target encoding for categorical variables (Micci-Barreca, D. 2001
+<doi:10.1145/507533.507538>); 2) automated feature prioritization to prevent key
+variable loss during filtering; 3) pairwise correlation for all variable
+combinations (numeric-numeric, numeric-categorical, categorical-categorical);
+and 4) fast computation of variance inflation factors.")
     (license license:expat)))
 
 (define-public r-collin
@@ -30155,13 +30157,13 @@ set in log returns or levels, and making a Dynamic graph.")
 (define-public r-citmic
   (package
     (name "r-citmic")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CITMIC" version))
        (sha256
-        (base32 "0zq2gkayspb6bffrpjnhwb4njkm6iz3yg740njabdlszr53l3ayd"))))
+        (base32 "1vshnwbskhfz9kz041k5awwg8f3l1hpcnw57j1hnjw1jkidrbayr"))))
     (properties `((upstream-name . "CITMIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-fastmatch))
