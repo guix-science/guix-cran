@@ -1154,18 +1154,18 @@ Mukherjee, G. (2017) <doi:10.1111/rssb.12226> and T.Banerjee et al. (2017)
 (define-public r-fusionchartsr
   (package
     (name "r-fusionchartsr")
-    (version "0.0.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fusionchartsR" version))
        (sha256
-        (base32 "09l5kckgkp2l0zvfnqhbzy65bi23aavas9m74nddhjh6di8xndh8"))))
+        (base32 "0bbaciwgjrv85arakghbjfg50ghbyc3dnbz451g97i6kacpaaamy"))))
     (properties `((upstream-name . "fusionchartsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-magrittr r-jsonlite r-htmlwidgets))
-    (home-page "https://cran.r-project.org/package=fusionchartsR")
-    (synopsis "Embedding 'FusionCharts Javascript' Library in R")
+    (home-page "https://alexym1.github.io/fusionchartsR/")
+    (synopsis "Embedding FusionCharts in R")
     (description
      "@code{FusionCharts} provides awesome and minimalist functions to make beautiful
 interactive charts <https://www.fusioncharts.com/>.")
@@ -17504,19 +17504,20 @@ the assumption of strong functional white noise.")
 (define-public r-fda-usc
   (package
     (name "r-fda-usc")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fda.usc" version))
        (sha256
-        (base32 "1s13zssm7x3hg1k928r5jkjz35bflb1nzz4c7b4xr0x1j8qg3d60"))))
+        (base32 "04mw03xnp4azn40i3cgfr4jjza2p643clq65k7q1bigdy3l2a4s9"))))
     (properties `((upstream-name . "fda.usc")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme
                              r-mgcv
                              r-mass
                              r-ksamples
+                             r-knitr
                              r-iterators
                              r-foreach
                              r-fda

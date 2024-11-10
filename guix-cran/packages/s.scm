@@ -50031,13 +50031,13 @@ associated R code, which provided the base for the development of this package."
 (define-public r-semptools
   (package
     (name "r-semptools")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semptools" version))
        (sha256
-        (base32 "1mg0h27i5gfwl6rfpqh546njhsf3ygp86b4ph4jmqb5n6bnxfri3"))))
+        (base32 "0hyf1zr592hrl45xd678vma3g6wa3qdj4bchr3a7bvvr42nhcsyf"))))
     (properties `((upstream-name . "semptools")))
     (build-system r-build-system)
     (propagated-inputs (list r-semplot r-rlang r-lavaan))

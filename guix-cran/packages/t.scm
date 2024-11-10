@@ -11310,66 +11310,6 @@ strings, pasting and combining rows together across columns, etc.")
 particular for Canadian census data from different censuses.")
     (license license:expat)))
 
-(define-public r-tomicsvis
-  (package
-    (name "r-tomicsvis")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TOmicsVis" version))
-       (sha256
-        (base32 "0s46i8wnvvs15xwb0g62rpn864b27hbx0lrjpcv2wb1s27iz1wv3"))))
-    (properties `((upstream-name . "TOmicsVis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wgcna
-                             r-venn
-                             r-vegan
-                             r-upsetr
-                             r-umap
-                             r-tidyr
-                             r-survminer
-                             r-survival
-                             r-stringr
-                             r-shiny
-                             r-rtsne
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-randomcolor
-                             r-plotrix
-                             r-pheatmap
-                             r-mfuzz
-                             r-igraph
-                             r-ggsci
-                             r-ggrepel
-                             r-ggpubr
-                             r-ggpolypath
-                             r-ggplotify
-                             r-ggplot2
-                             r-ggnewscale
-                             r-ggforce
-                             r-ggcorrplot
-                             r-ggally
-                             r-factoextra
-                             r-enrichplot
-                             r-enhancedvolcano
-                             r-e1071
-                             r-dplyr
-                             r-cowplot
-                             r-complexheatmap
-                             r-clusterprofiler
-                             r-circlize
-                             r-biobase))
-    (native-inputs (list r-knitr))
-    (home-page "https://benben-miao.github.io/TOmicsVis/")
-    (synopsis "Transcriptome Visualization Process Scheme")
-    (description
-     "Transcriptome visualization from sample trait statistics to gene expression
-analysis.  Six categories include \"Samples Statistics\", \"Traits Analysis\",
-\"Differential Expression Analysis\", \"Advanced Analysis\", \"GO and KEGG
-Enrichment\", \"Tables Operations\", with complete sample data.")
-    (license license:expat)))
-
 (define-public r-tomba
   (package
     (name "r-tomba")

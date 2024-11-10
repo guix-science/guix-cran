@@ -14172,13 +14172,13 @@ using NCA metrics.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NCA" version))
        (sha256
-        (base32 "0r7m6aklidi6dplv42xmaq38ifxs8zj495rs7pfidwx7z5iw0n84"))))
+        (base32 "0lwrks09pskgc23sl174bvkh3zypqpgq3ia2hp1gnbaxwcf0h3zr"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

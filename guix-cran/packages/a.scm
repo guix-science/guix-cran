@@ -1280,13 +1280,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "av" version))
        (sha256
-        (base32 "1mavhwz7lmhnrx0s4jhw15h6hm9paqfmmgq7jhw8ns5730canbcl"))))
+        (base32 "13x64g0ha6xxdd2cdx7d8mqbhz0z29i9ang5zirqx104n75gjypw"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (inputs (list zlib))

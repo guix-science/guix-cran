@@ -3920,13 +3920,13 @@ different ways (i.e., model structures).")
 (define-public r-viewscape
   (package
     (name "r-viewscape")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viewscape" version))
        (sha256
-        (base32 "1hjr6r6p5n4knmbdd38dpdlwdpycq8k5im0i0rfk28xnix7769mv"))))
+        (base32 "0vc4n0wdgyfmgng9ajzyaamvlwczkmzkvymz9fiapk8j5ish2vd5"))))
     (properties `((upstream-name . "viewscape")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

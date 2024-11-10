@@ -1586,13 +1586,13 @@ richness, graphics of species discoveries and nomenclatural changes over time.")
 (define-public r-exposr
   (package
     (name "r-exposr")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExposR" version))
        (sha256
-        (base32 "0vsjq1l1kjzhqmixdqsv960riqglc0sg5lp7y27j0k54frnkbxik"))))
+        (base32 "01nkysl3igjhv73s9n90kf8zbrgw92aa105h91ivnlxhgcx4abbs"))))
     (properties `((upstream-name . "ExposR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -16667,13 +16667,13 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.0.8")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "0d16j27znwi94bpyirs63inl5lalqdc4b6gj33wpj437750b99cn"))))
+        (base32 "0pmd672h96ddh955ia85dsm74f5ksa0wxl4cll1jnfnjva623f9y"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna

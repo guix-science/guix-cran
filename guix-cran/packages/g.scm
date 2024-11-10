@@ -10045,13 +10045,13 @@ bootstrapping tasks.  The package provides an interface to perform new
 (define-public r-gofcens
   (package
     (name "r-gofcens")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GofCens" version))
        (sha256
-        (base32 "1mpsg3ia3212silxj5fd77pvbkbh8x615isblwyzmzkd7l4wi2bw"))))
+        (base32 "1svkizyw1rc9mllax4swgjlp079wq5vr5zrx33ir8hsg1vl9jnjl"))))
     (properties `((upstream-name . "GofCens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -10061,16 +10061,16 @@ bootstrapping tasks.  The package provides an interface to perform new
                              r-boot
                              r-actuar))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GofCens")
+    (home-page "https://arnaugarciagrbio.github.io/GofCens/")
     (synopsis "Goodness-of-Fit Methods for Complete and Right-Censored Data")
     (description
      "Graphical tools and goodness-of-fit tests for complete and right-censored data:
-1.  Kolmogorov-Smirnov, CramÃ©r-von Mises, and Anderson-Darling tests, which use
-the empirical distribution function for complete data and are extended for
-right-censored data.  2.  Generalized chi-squared-type test, which is based on
-the squared differences between observed and expected counts using random cells
-with right-censored data.  3.  A series of graphical tools such as probability
-or cumulative hazard plots to guide the decision about the most suitable
+1.  Kolmogorov-Smirnov, CramÃ©r-von Mises, and Anderson-Darling tests, which
+utilize the empirical distribution function for complete data and are extended
+to handle right-censored data.  2.  Generalized chi-squared-type test, which is
+based on the squared differences between observed and expected counts using
+random cells with right-censored data.  3.  Graphical tools, such as probability
+and cumulative hazard plots, to help guide decisions about the most appropriate
 parametric model for the data.")
     (license license:gpl2+)))
 

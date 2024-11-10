@@ -18694,13 +18694,13 @@ assessing model adequacy.")
 (define-public r-bed
   (package
     (name "r-bed")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BED" version))
        (sha256
-        (base32 "0js227vn6mvn7zk2q0vw9w9cp2ayjzqja6mrmpw9wnx82fp0amcg"))))
+        (base32 "0hma6wmrb6vqzhfsx5qgbsyw2kawpl80mmjac89xvfy1kmaz18qj"))))
     (properties `((upstream-name . "BED")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -22700,16 +22700,17 @@ within a Bayesian framework.")
 (define-public r-bayesmig
   (package
     (name "r-bayesmig")
-    (version "0.4-6")
+    (version "1.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesMig" version))
        (sha256
-        (base32 "1b4pxg22fx898s529gigdfcdsmzlrpqhpnq96lghvsvmv5802z4n"))))
+        (base32 "1byyrqgw6nbjyvcarm5zhpaz8xfrcchnqf5dvq0814a5rfbn59an"))))
     (properties `((upstream-name . "bayesMig")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wpp2019 r-truncnorm r-coda r-bayestfr))
+    (propagated-inputs (list r-wpp2019 r-truncnorm r-data-table r-coda
+                             r-bayestfr))
     (home-page "http://bayespop.csss.washington.edu")
     (synopsis "Bayesian Projection of Migration")
     (description

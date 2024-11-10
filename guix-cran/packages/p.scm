@@ -5323,13 +5323,13 @@ Proteome Discover can be easily used due to flexibility of functions.")
 (define-public r-protrackr2
   (package
     (name "r-protrackr2")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProTrackR2" version))
        (sha256
-        (base32 "0mz2q6h5ayn4nzyck4gzqs3cc8lmzik4pr0m1q6zyrki0i9x9yc9"))))
+        (base32 "0rl0qs7q4jpc90q47fvcf3j8rx6j6kbw8j2lwn4w3ll9g33gigkb"))))
     (properties `((upstream-name . "ProTrackR2")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-audio))
@@ -22483,13 +22483,13 @@ CRAN/Bioconductor ecosystems for many old R versions.")
 (define-public r-pkglite
   (package
     (name "r-pkglite")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkglite" version))
        (sha256
-        (base32 "1ldz68c09192qy8k52fcx1k714dzwcjck9gla16z2g3zcyijizyi"))))
+        (base32 "1163hjqlpryzrjnsxylsr7s50bxhb6y679dyhhkxak045l922c4a"))))
     (properties `((upstream-name . "pkglite")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes r-magrittr r-crayon))
@@ -38911,13 +38911,13 @@ Fisher's product method is included as well.")
 (define-public r-pagfl
   (package
     (name "r-pagfl")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAGFL" version))
        (sha256
-        (base32 "0as4azrg4hmh5slljjasvq248r0qylvgyqcz1myfxgja9lpzd604"))))
+        (base32 "1yh4bcrn373g0fsrdv6a59l1jnqkm45cdyd5vjs54232rxr63v51"))))
     (properties `((upstream-name . "PAGFL")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-lifecycle
