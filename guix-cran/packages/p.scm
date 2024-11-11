@@ -7899,13 +7899,13 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.4.3")
+    (version "1.0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "03zzbkwpx594wrqwg7jh5z5jinbhvjkci9gp83gwnb145q0cl7mr"))))
+        (base32 "047c6090mbj6kfgfl9mv50b0hvgfi5hqdbwsbh93dqqns60ivc4v"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -38471,13 +38471,13 @@ in the household (<http://www.mics.unicef.org/surveys>).")
 (define-public r-pakpmics2018
   (package
     (name "r-pakpmics2018")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PakPMICS2018" version))
        (sha256
-        (base32 "0r72gbsaprcxnw88z4gg852gg8k18bg6xid3y5rh5y9dr988mnvk"))))
+        (base32 "1fgwddkc9yb86lqyskr41yh3jw497bf6dipccavs49np6mxmdlm6"))))
     (properties `((upstream-name . "PakPMICS2018")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -38504,7 +38504,7 @@ caretakers) of all children under 5 living in the household; and (6) a
 questionnaire for children age 5-17 years, administered to the mother (or
 caretaker) of one randomly selected child age 5-17 years living in the
 household.")
-    (license (list license:gpl2 license:gpl3))))
+    (license license:gpl3)))
 
 (define-public r-pakpmics2014wm
   (package

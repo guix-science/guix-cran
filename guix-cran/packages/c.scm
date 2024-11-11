@@ -21745,13 +21745,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "02p0n7nhwa50z3w3q20nx2pp6sdkbyqwmk7ix7s2cc8i7qxxhlfl"))))
+        (base32 "0rkiyc54inxvmxnmm9cxfdbc2ri2r0ys4b29vdiiqgv4q7cbcl2n"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -21766,6 +21766,7 @@ Common Data Model.")
                              r-omopgenerics
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-dplyr
                              r-dbplyr
                              r-dbi
@@ -22770,13 +22771,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.2.1")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "08hlz46s90qv8nj55a1z3rn0x6xpa7fsf2i22n4vyj7n21vxh43g"))))
+        (base32 "0l0vdb3flc0b68ijkr94fzwz0pw64zbdvvykw8lqnwwyl0q8rlr2"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -22791,7 +22792,6 @@ utilities to generate this metadata with a minimum of dependencies.")
                              r-omopgenerics
                              r-magrittr
                              r-lubridate
-                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-dbi

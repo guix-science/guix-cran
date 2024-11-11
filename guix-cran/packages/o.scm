@@ -1084,13 +1084,13 @@ with the OTTR Template repository to create courses.")
 (define-public r-ottr
   (package
     (name "r-ottr")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ottr" version))
        (sha256
-        (base32 "1b1p957plsx09xfa4qwqk2bnib1hnbikrsdn2cll17b8pfwrp29k"))))
+        (base32 "0ixvisvzxfdznmdgy3jjknqmldryagp7nynvszf99lbxbnxcvdhj"))))
     (properties `((upstream-name . "ottr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-testthat r-r6 r-jsonlite))

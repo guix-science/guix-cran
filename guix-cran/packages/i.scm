@@ -1935,21 +1935,23 @@ soil texture charts, ceramic phase diagram).")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "2.0")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopam" version))
        (sha256
-        (base32 "1d05hcnz8pvgfsbj7hwf9jgcqnxf1rd3h1c0kw4450xhn63jbsbk"))))
+        (base32 "1sl2z73133wilgrs68gsnkszg7rhqsn2jifnnj0nmig1rp13abr1"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-tibble
+                             r-ps
                              r-proxy
                              r-ggplot2
                              r-future-apply
                              r-future
+                             r-fastkmedoids
                              r-cluster))
     (home-page "https://cran.r-project.org/package=isopam")
     (synopsis "Clustering of Sites with Species Data")

@@ -6444,18 +6444,19 @@ number of robust (or super) biclusters with none or low overlap.")
 (define-public r-superb
   (package
     (name "r-superb")
-    (version "0.95.15")
+    (version "0.95.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "superb" version))
        (sha256
-        (base32 "1lirfmsrkbssfg0kwlfw67g8hi4j2g71c7q177hvahpw90ajr6gf"))))
+        (base32 "003b7r79kc3sx3jp661f3p974jgczchd7b9f3jw89xrh0jh3214a"))))
     (properties `((upstream-name . "superb")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-shinybs
                              r-shiny
+                             r-rrapply
                              r-rdpack
                              r-plyr
                              r-mass
@@ -35973,13 +35974,13 @@ improve feature extraction.  Benjamin B.Risk, Irina Gaynanova (2021)
 (define-public r-singlercapture
   (package
     (name "r-singlercapture")
-    (version "0.2.1.2")
+    (version "0.2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singleRcapture" version))
        (sha256
-        (base32 "18h10ms9xh97c4s9sa33bcvv341img73b9vh4ppgyk1lpissa1mb"))))
+        (base32 "0nybr15cdwzgz69jk28nxb609jf7ncyhly43nd73xlr5fknxfczm"))))
     (properties `((upstream-name . "singleRcapture")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-mathjaxr r-lamw r-foreach
@@ -51912,6 +51913,29 @@ outcome (e.g. if a participant is pressing the key multiple times in
 succession).  Further functions are included, such as plotting the results.")
     (license license:gpl3+)))
 
+(define-public r-segenvineq
+  (package
+    (name "r-segenvineq")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SegEnvIneq" version))
+       (sha256
+        (base32 "1jnn1ix1v07094cy9m4rx0zs46yay2ab5ijnjl4ddd53py60imbh"))))
+    (properties `((upstream-name . "SegEnvIneq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep r-sf r-outliers r-oasisr))
+    (home-page "https://cran.r-project.org/package=SegEnvIneq")
+    (synopsis "Environmental Inequality Indices Based on Segregation Measures")
+    (description
+     "This package provides a set of segregation-based indices and randomization
+methods to make robust environmental inequality assessments, as described in
+Schaeffer and Tivadar (2019) \"Measuring Environmental Inequalities: Insights
+from the Residential Segregation Literature\"
+<doi:10.1016/j.ecolecon.2019.05.009>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-segen
   (package
     (name "r-segen")
@@ -55767,13 +55791,13 @@ found in the package vignettes <doi:10.18637/jss.v090.i12>,
 (define-public r-scoringfunctions
   (package
     (name "r-scoringfunctions")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringfunctions" version))
        (sha256
-        (base32 "05bxqj8pq8halwljsy89l2p8hq8gghvivyhk1078w6yrrn8w18lq"))))
+        (base32 "1vhd5jid2mn8nm5ylxsr9v3fxxgax0j5avf0gnywn47y4y0llx7z"))))
     (properties `((upstream-name . "scoringfunctions")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=scoringfunctions")
@@ -61516,13 +61540,13 @@ bounds for simple, stratified and cluster sample designs.")
 (define-public r-sampcompr
   (package
     (name "r-sampcompr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sampcompR" version))
        (sha256
-        (base32 "0jxs8kv844l5jlqzlwpa1wy5wklqqpdja1pm2fba4hw9jzq98fr9"))))
+        (base32 "02v0lqav2cx1y5zwl362hmcvqhp52rb2qj448db04nigkc2wbpdb"))))
     (properties `((upstream-name . "sampcompR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -61543,7 +61567,6 @@ bounds for simple, stratified and cluster sample designs.")
                              r-forcats
                              r-dplyr
                              r-data-table
-                             r-boot-pval
                              r-boot))
     (home-page "https://bjoernrohr.github.io/sampcompR/")
     (synopsis "Comparing and Visualizing Differences Between Surveys")
@@ -61561,7 +61584,7 @@ significant differences in model coefficients between the surveys of comparison.
 more detailed information on the methods and example use see Rohr, B., Silber,
 H., & Felderer, B. (2024).  âComparing the Accuracy of Univariate, Bivariate,
 and Multivariate Estimates across Probability and Non-Probability Surveys with
-Population Benchmarksâ <doi:10.31235/osf.io/n6ehf> .")
+Population Benchmarksâ <doi:10.31235/osf.io/n6ehf>.")
     (license license:gpl3)))
 
 (define-public r-sampbias

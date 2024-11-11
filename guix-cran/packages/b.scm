@@ -6858,13 +6858,13 @@ modelling and multivariate normal distribution.")
 (define-public r-bootes
   (package
     (name "r-bootes")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootES" version))
        (sha256
-        (base32 "05brahlh7jk9n1wv4l429vf048x51v1ivvchlxfcqvky06zjwk1z"))))
+        (base32 "1qc01drxrmzclb2cwby475pmymwg86iq8zm3jq3fzxzi6kyfwf61"))))
     (properties `((upstream-name . "bootES")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))

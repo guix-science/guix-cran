@@ -38775,13 +38775,13 @@ each category.  Athey, Susan, and Guido W. Imbens (2017)
 (define-public r-rcssplot
   (package
     (name "r-rcssplot")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcssplot" version))
        (sha256
-        (base32 "0hnzwjwk9zh4zbzy8sa0z6amikvpd9k1p1abd38khr8q8k1k8jiv"))))
+        (base32 "135npf1i1wn72b9z9g9jz6jby7w9liy1zm94zcc43iix29ia5732"))))
     (properties `((upstream-name . "Rcssplot")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -50306,13 +50306,13 @@ soon to be archived from CRAN.")
 (define-public r-r2pmml
   (package
     (name "r-r2pmml")
-    (version "0.28.0")
+    (version "0.29.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2pmml" version))
        (sha256
-        (base32 "110hr4cj4xlm050hmhag0v32jw6g5ka2ws0jibjw58zm4fg3c0x0"))))
+        (base32 "11z3imzsghd2z85i52mynqi0jz9hgxm22jl2jwn5zv5rp1hhkz1l"))))
     (properties `((upstream-name . "r2pmml")))
     (build-system r-build-system)
     (inputs (list openjdk))

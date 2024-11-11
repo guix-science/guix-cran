@@ -3920,13 +3920,13 @@ different ways (i.e., model structures).")
 (define-public r-viewscape
   (package
     (name "r-viewscape")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viewscape" version))
        (sha256
-        (base32 "0vc4n0wdgyfmgng9ajzyaamvlwczkmzkvymz9fiapk8j5ish2vd5"))))
+        (base32 "19hqxy260dmy6scwag3wd7kis0f5f3lchqx4cr4h4lpi6h2v6lnh"))))
     (properties `((upstream-name . "viewscape")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -3938,7 +3938,7 @@ different ways (i.e., model structures).")
                              r-foresttools
                              r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=viewscape")
+    (home-page "https://github.com/land-info-lab/viewscape")
     (synopsis "Viewscape Analysis")
     (description
      "This package provides a collection of functions to make R a more effective

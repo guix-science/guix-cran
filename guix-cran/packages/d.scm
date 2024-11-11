@@ -26871,13 +26871,13 @@ display in logs of your data processing pipeline.")
 (define-public r-data-table-threads
   (package
     (name "r-data-table-threads")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "data.table.threads" version))
        (sha256
-        (base32 "0mcma4386vg8zzqnhk80fny9z8dimpp6q89cv6ga29z39nq2iq5b"))))
+        (base32 "1cjcf9920iqsb3w5c7mvpqlg6g0lzr34k96y6wx4nb6kav3dslrh"))))
     (properties `((upstream-name . "data.table.threads")))
     (build-system r-build-system)
     (propagated-inputs (list r-microbenchmark r-ggplot2 r-data-table))

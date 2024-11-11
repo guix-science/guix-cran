@@ -1420,13 +1420,13 @@ Up-and-Down, see Oron et al. (2022) <doi:10.1097/ALN.0000000000004282>.")
 (define-public r-upg
   (package
     (name "r-upg")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UPG" version))
        (sha256
-        (base32 "0yyyyjxrw9833w0iwnp2c3y853h8c5kj8rbkalg5rsmxk5m0fjgn"))))
+        (base32 "1drfcmxfk16gvcgnmb5m8pnqxjhs2ai10rr1nzrzpid610b01r54"))))
     (properties `((upstream-name . "UPG")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

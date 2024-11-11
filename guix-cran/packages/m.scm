@@ -44728,6 +44728,36 @@ pane, and send (draft) email using gmailr'.")
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
+(define-public r-maicplus
+  (package
+    (name "r-maicplus")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maicplus" version))
+       (sha256
+        (base32 "1bz4w0z8kmxkwq4fnrjjc6lkbmkr6d65pxr7jaljjncsvgnvpyxn"))))
+    (properties `((upstream-name . "maicplus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-stringr
+                             r-sandwich
+                             r-mass
+                             r-lubridate
+                             r-lmtest
+                             r-desctools
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hta-pharma/maicplus/")
+    (synopsis "Matching Adjusted Indirect Comparison")
+    (description
+     "Facilitates performing matching adjusted indirect comparison (MAIC) analysis
+where the endpoint of interest is either time-to-event (e.g. overall survival)
+or binary (e.g. objective tumor response).  The method is described by
+Signorovitch et al (2012) <doi:10.1016/j.jval.2012.05.004>.")
+    (license license:asl2.0)))
+
 (define-public r-maicchecks
   (package
     (name "r-maicchecks")
@@ -45391,13 +45421,13 @@ variables.  Automatic differentiation is via forward accumulation'.")
 (define-public r-maditr
   (package
     (name "r-maditr")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maditr" version))
        (sha256
-        (base32 "15jhchxa5ckir6n2gz4vlsvlz64mxqlry11zqpma32wj901d18r4"))))
+        (base32 "0f0l25l3j84akswmbk0gxl5jrp6grs8vp24dqnaxrhqimz6iy8i1"))))
     (properties `((upstream-name . "maditr")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-data-table))

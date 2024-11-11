@@ -16873,19 +16873,18 @@ Zoubeidi, T. (2020) <DOI:10.1080/00949655.2020.1803320>.")
 (define-public r-ggreveal
   (package
     (name "r-ggreveal")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggreveal" version))
        (sha256
-        (base32 "1dgm33y6swc75p6d992wv5m47kgl36g0fvp2s79byl51llm6940k"))))
+        (base32 "1999p7rkiz8bbq8c83phhdb21qf24x8wqv6g54kcwnmrdlp66w0c"))))
     (properties `((upstream-name . "ggreveal")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
-                             r-lemon
                              r-ggplotify
                              r-ggplot2
                              r-dplyr
@@ -22928,13 +22927,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1d8q22vqqsd37g47ic5dkf7gz9pz8lxv7s7imicpwdm26gc7fd1i"))))
+        (base32 "0bkwbkkmwdxw8l4sgxdhk1i2ichn86z01jk0ma9mi2rrxxdaclv6"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -22959,7 +22958,6 @@ classes and functions.")
                              r-fastgp
                              r-dotcall64
                              r-dofuture
-                             r-data-table
                              r-codetools))
     (native-inputs (list gfortran))
     (home-page "https://vmoprojs.github.io/GeoModels-page/")

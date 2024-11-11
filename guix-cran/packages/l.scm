@@ -12974,29 +12974,35 @@ lines or to enable/disable snapping to align shapes.")
 (define-public r-leafletzh
   (package
     (name "r-leafletzh")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leafletZH" version))
        (sha256
-        (base32 "18rivs27irld9pvrk8nkqcz65lff865my6rxamykysijmqwp441m"))))
+        (base32 "02q5znqjx5mhw469j5zfkhb518hv54vhc9lds8zc27m9i4jwpyfa"))))
     (properties `((upstream-name . "leafletZH")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-sf
+                             r-scales
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
                              r-leaflet-extras
                              r-leaflet
                              r-htmlwidgets
                              r-htmltools
+                             r-geosphere
                              r-geojsonsf))
-    (home-page "https://cran.r-project.org/package=leafletZH")
-    (synopsis "Adds a Chinese Choropleth Leaflet Map")
+    (native-inputs (list r-knitr))
+    (home-page "https://damonsoul.github.io/leafletZH/")
+    (synopsis "Chinese Leaflet Map Relate Operation")
     (description
      "This package provides sf data for Chinese provinces and cities, methods for
-plotting shape maps of Chinese provinces and cities, and a layer for leaflet
-with Gaode tiles.  It is designed to facilitate geographical data visualization
-in China.")
+plotting shape maps of Chinese provinces and cities, Convert Coordinates Between
+Different Systems, and a layer for leaflet with Gaode tiles.  It is designed to
+facilitate geographical data visualization in China.")
     (license license:expat)))
 
 (define-public r-leaflet-minicharts
@@ -16601,6 +16607,33 @@ linear latent variable models for Poisson, negative-binomial and normal
 distributions.  Supports a combination of binary, ordinal, count and continuous
 observed variables and multiple	group models.")
     (license license:gpl2+)))
+
+(define-public r-laminr
+  (package
+    (name "r-laminr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "laminr" version))
+       (sha256
+        (base32 "1prprl267103c8vi27s6hvs8qpcwmli81yrvs3wc994xajc1crmg"))))
+    (properties `((upstream-name . "laminr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-r6
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://laminr.lamin.ai")
+    (synopsis "Interface for 'LaminDB'")
+    (description
+     "Interact with @code{LaminDB}'. @code{LaminDB} is an open-source data framework
+for biology.  This package allows you to query and download data from
+@code{LaminDB} instances.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-lambdr
   (package
