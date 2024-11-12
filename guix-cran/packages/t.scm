@@ -286,13 +286,13 @@ relationships between exposures and outcomes.")
 (define-public r-twowaytests
   (package
     (name "r-twowaytests")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twowaytests" version))
        (sha256
-        (base32 "1blzifflmkcvjysw4bbn81fgydczg9rkcqchw832d322dymh2hzn"))))
+        (base32 "1xyr7q8i4hni1vcb61wnr8xpshrvzaw9m5ndmp97rwgl7apb3r5r"))))
     (properties `((upstream-name . "twowaytests")))
     (build-system r-build-system)
     (propagated-inputs (list r-wesanderson
@@ -306,12 +306,12 @@ relationships between exposures and outcomes.")
     (description
      "This package performs two-way tests in independent groups designs.  These are
 two-way ANOVA, two-way ANOVA under heteroscedasticity: parametric bootstrap
-based generalized test and generalized pivotal quantity based generalized test
-(Ananda et al., 2022) <doi:10.1080/03610926.2022.2059682>, two-way ANOVA for
-medians, trimmed means, M-estimators (Wilcox, 2011; ISBN:978-0-12-386983-8).
-The package performs descriptive statistics and graphical approaches.  Moreover,
-it assesses variance homogeneity and normality of data in each group via tests
-and plots.  All twowaytests functions are designed for two-way layout.")
+based generalized test and generalized pivotal quantity based generalized test,
+two-way ANOVA for medians, trimmed means, M-estimators.  The package performs
+descriptive statistics and graphical approaches.  Moreover, it assesses variance
+homogeneity and normality of data in each group via tests and plots.  All
+twowaytests functions are designed for two-way layout (Dag et al., 2024,
+<doi:10.1016/j.softx.2024.101862>).")
     (license license:gpl2+)))
 
 (define-public r-twowayfeweights
@@ -565,13 +565,13 @@ on interim data.")
 (define-public r-twn
   (package
     (name "r-twn")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twn" version))
        (sha256
-        (base32 "084l15y6zj2sqx2jkzjc0c1f9wgb56aw2slrzwic1g3zs00ym4ij"))))
+        (base32 "1bgjy63fb4dj3zz2by0bwz75dkp8qzhr8jhcl66wr68yd9szh8hf"))))
     (properties `((upstream-name . "twn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-rlang r-dplyr r-crayon))
@@ -7570,16 +7570,16 @@ measures based on the work of Li et al. (2019) <@code{arXiv:1906.10845>}.")
 (define-public r-treats
   (package
     (name "r-treats")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treats" version))
        (sha256
-        (base32 "16ahw46wkjhvxhkiy4313ky9vvzjrg2bhxw1pz0j4hasdkd9xq1s"))))
+        (base32 "1s96pazw6l7gak4fy5ba5wiw8ff9zb07ghd7xhx2mpllkaph4x1l"))))
     (properties `((upstream-name . "treats")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-mass r-disprity r-ape))
+    (propagated-inputs (list r-rgl r-mass r-geiger r-disprity r-ape))
     (home-page "https://github.com/TGuillerme/treats")
     (synopsis "Trees and Traits Simulations")
     (description
@@ -7589,7 +7589,8 @@ parameters (e.g. changing starting parameters or algorithm rules).  Traits can
 be simulated in any way designed by the user.  The growth of the tree and the
 traits can influence each other through modifiers objects providing rules for
 affecting each other.  Finally, events can be created to modify both the tree
-and the traits under specific conditions.")
+and the traits under specific conditions ( Guillerme, 2024
+<DOI:10.1111/2041-210X.14306>).")
     (license license:gpl3)))
 
 (define-public r-treatmentselection
@@ -10829,26 +10830,6 @@ and Summers (2010) <doi:10.1111/j.1365-294X.2009.04465.x>).  Functions can map
 topographic paths on colored or hill shade maps and plot topographic cross
 sections (elevation profiles) for the paths.")
     (license license:gpl3)))
-
-(define-public r-topmodel
-  (package
-    (name "r-topmodel")
-    (version "0.7.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "topmodel" version))
-       (sha256
-        (base32 "1bhzjy2ja4953a5wx8s3cz3v0ip6lym193faqxxabxjklgbsp416"))))
-    (properties `((upstream-name . "topmodel")))
-    (build-system r-build-system)
-    (home-page "https://github.com/ICHydro/topmodel")
-    (synopsis "Implementation of the Hydrological Model TOPMODEL in R")
-    (description
-     "Set of hydrological functions including an R implementation of the hydrological
-model TOPMODEL, which is based on the 1995 FORTRAN version by Keith Beven.  From
-version 0.7.0, the package is put into maintenance mode.")
-    (license license:gpl2+)))
 
 (define-public r-topksignal
   (package
@@ -21119,24 +21100,6 @@ using roxygen2 tags.  Tools are also provided for facilitating package
 configuration and use with testthat'.")
     (license license:expat)))
 
-(define-public r-tester
-  (package
-    (name "r-tester")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tester" version))
-       (sha256
-        (base32 "02q2l0c38ddzlh2jwbzkcyhh2k5a4gnfm8khl8cqvjkjhldi9j5y"))))
-    (properties `((upstream-name . "tester")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://fbertran.github.io/tester/")
-    (synopsis "Tests and Checks Characteristics of R Objects")
-    (description "Allows users to test characteristics of common R objects.")
-    (license license:gpl3)))
-
 (define-public r-testequavar
   (package
     (name "r-testequavar")
@@ -24019,29 +23982,6 @@ single-group and multigroup TDCM, summarize results of interest including item
 parameters, growth proportions, transition probabilities, transitional
 reliability, attribute correlations, model fit, and growth plots.")
     (license license:expat)))
-
-(define-public r-tdboost
-  (package
-    (name "r-tdboost")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TDboost" version))
-       (sha256
-        (base32 "1lx5g6yrp43m0dhhs0iig9chlvqbbim5xq5i2bxy4frs2afka22g"))))
-    (properties `((upstream-name . "TDboost")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lattice))
-    (home-page "https://cran.r-project.org/package=TDboost")
-    (synopsis "Boosted Tweedie Compound Poisson Model")
-    (description
-     "An implementation of a boosted Tweedie compound Poisson model proposed by Yang,
-Y., Qian, W. and Zou, H. (2018) <doi:10.1080/07350015.2016.1200981>.  It is
-capable of fitting a flexible nonlinear Tweedie compound Poisson model (or a
-gamma model) and capturing high-order interactions among predictors.  This
-package is based on the gbm package originally developed by Greg Ridgeway.")
-    (license license:gpl3)))
 
 (define-public r-tdbook
   (package

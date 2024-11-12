@@ -1720,6 +1720,57 @@ and standard errors when observed scores contain variation from one or more
 measurement facets (e.g., items and raters).")
     (license license:gpl3)))
 
+(define-public r-gtfswizard
+  (package
+    (name "r-gtfswizard")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GTFSwizard" version))
+       (sha256
+        (base32 "01gklymwqzq32xkmbsds9vlqzhs4x9237grn96bj70kl567zjyvw"))))
+    (properties `((upstream-name . "GTFSwizard")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytransit
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stplanr
+                             r-shiny
+                             r-sfnetworks
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-lubridate
+                             r-leaflet-extras
+                             r-leaflet
+                             r-hrbrthemes
+                             r-hms
+                             r-gtfstools
+                             r-gtfsio
+                             r-glue
+                             r-ggplot2
+                             r-geosphere
+                             r-forcats
+                             r-dplyr
+                             r-data-table
+                             r-crayon
+                             r-checkmate))
+    (home-page "https://github.com/nelsonquesado/GTFSwizard")
+    (synopsis "Exploring and Manipulating 'GTFS' Files")
+    (description
+     "Exploring, analyzing, and manipulating General Transit Feed Specification (GTFS)
+files, which represent public transportation schedules and geographic data.  The
+package allows users to filter data by routes, trips, stops, and time, generate
+spatial visualizations, and perform detailed analyses of transit networks,
+including headway, dwell times, and route frequencies.  Designed for transit
+planners, researchers, and data analysts, GTFSwizard integrates functionalities
+from popular packages to enable efficient GTFS data manipulation and
+visualization.")
+    (license license:gpl3)))
+
 (define-public r-gtfstools
   (package
     (name "r-gtfstools")
@@ -18022,13 +18073,13 @@ et al. (2021) <doi:10.1038/s43586-021-00056-9>.")
 (define-public r-ggmselect
   (package
     (name "r-ggmselect")
-    (version "0.1-12.7")
+    (version "0.1-12.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGMselect" version))
        (sha256
-        (base32 "1l90viinjfbjwl7229aqbzv72d0jgjbcidv0ll770qsd1hc1p70r"))))
+        (base32 "0zv2g8vdwz02hkw199zj95bsdp93nbwkc6zdkbsvcqnanqr4akx6"))))
     (properties `((upstream-name . "GGMselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-lars r-gtools))
@@ -23981,13 +24032,13 @@ at the University of Chicago.  Datasets are stored as sf objects.")
 (define-public r-geocomplexity
   (package
     (name "r-geocomplexity")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocomplexity" version))
        (sha256
-        (base32 "1b5sbr973nqc6jkv6lmdlp3ry9gx52hsp77sg8pxy041plx0hk69"))))
+        (base32 "1zmfr4lsjh9k55gn4kvm4rgaaw1f771bskns2l32wjivivia5rwv"))))
     (properties `((upstream-name . "geocomplexity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

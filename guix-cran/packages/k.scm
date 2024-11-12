@@ -5002,24 +5002,6 @@ redundancy in the spirit of the \"Don't repeat yourself\" principle of software
 development (<https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>).")
     (license license:gpl3+)))
 
-(define-public r-kdpee
-  (package
-    (name "r-kdpee")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kdpee" version))
-       (sha256
-        (base32 "1vrpr1rkk0ypl5yi3cjgw0fglyx9r2fbcq21n172ax0w3kdyflgk"))))
-    (properties `((upstream-name . "kdpee")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-checkmate))
-    (home-page "https://cran.r-project.org/package=kdpee")
-    (synopsis "Fast Multidimensional Entropy Estimation by k-d Partitioning")
-    (description "Estimate entropy of multidimensional data set.")
-    (license license:gpl3+)))
-
 (define-public r-kdml
   (package
     (name "r-kdml")

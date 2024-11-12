@@ -8715,26 +8715,6 @@ Draper and H. Smith (3rd Ed., 1998) including all the accompanying datasets.")
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
-(define-public r-approxot
-  (package
-    (name "r-approxot")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "approxOT" version))
-       (sha256
-        (base32 "1l0grr9158d0lscnxd191h3vbal93sl25r982c5w32iyajcjn71h"))))
-    (properties `((upstream-name . "approxOT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-bh))
-    (home-page "https://github.com/ericdunipace/approxOT")
-    (synopsis "Approximate and Exact Optimal Transport Methods")
-    (description
-     "R and C++ functions to perform exact and approximate optimal transport.  All C++
-methods can be linked to other R packages via their header files.")
-    (license (license:fsdg-compatible "GPL (== 3.0)"))))
-
 (define-public r-approxmatch
   (package
     (name "r-approxmatch")
@@ -10524,17 +10504,17 @@ divergence, with facilities for trait selection and graphical representations
 (define-public r-anthroplus
   (package
     (name "r-anthroplus")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anthroplus" version))
        (sha256
-        (base32 "1wnj2idgdnh2gdw34x40adijf2sxp3k72j45pqqxg4aqc1wrvvv1"))))
+        (base32 "041aa61yi3jkaal11faf06q7iqafi2npa5ayk5gwpfbh0pscaj7h"))))
     (properties `((upstream-name . "anthroplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-anthro))
-    (home-page "https://cran.r-project.org/package=anthroplus")
+    (home-page "https://github.com/WorldHealthOrganization/anthroplus")
     (synopsis
      "Computation of the WHO 2007 References for School-Age Children and Adolescents (5 to 19 Years)")
     (description

@@ -1018,30 +1018,6 @@ Google Drive to minimise the computing power and storage demands associated with
 species distribution modelling at high spatio-temporal resolution.")
     (license license:gpl3+)))
 
-(define-public r-dynamicgp
-  (package
-    (name "r-dynamicgp")
-    (version "1.1-9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DynamicGP" version))
-       (sha256
-        (base32 "00hf3r39b9xid129kzgdnwdfrwrspxkz7dydgna3c5lrl7670paz"))))
-    (properties `((upstream-name . "DynamicGP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lhs))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=DynamicGP")
-    (synopsis "Modelling and Analysis of Dynamic Computer Experiments")
-    (description
-     "Emulating and solving inverse problems for dynamic computer experiments.  It
-contains two major functionalities: (1) localized GP model for large-scale
-dynamic computer experiments using the algorithm proposed by Zhang et al. (2018)
-<@code{arXiv:1611.09488>}; (2) solving inverse problems in dynamic computer
-experiments.  The current version only supports 64-bit version of R.")
-    (license license:gpl2+)))
-
 (define-public r-dynamic
   (package
     (name "r-dynamic")
@@ -11037,6 +11013,28 @@ such as a monotonic cubic spline is used; the tails are approximated by a
 location-scale family.")
     (license license:gpl3+)))
 
+(define-public r-distfreereg
+  (package
+    (name "r-distfreereg")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distfreereg" version))
+       (sha256
+        (base32 "18grgnj25qa1vfp5xibdikbanrkyav2h7fp9l1sry3c39abv49cy"))))
+    (properties `((upstream-name . "distfreereg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-clue))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=distfreereg")
+    (synopsis "Distribution-Free Goodness-of-Fit Testing for Regression")
+    (description
+     "This package implements distribution-free goodness-of-fit regression testing for
+the mean structure of parametric models introduced in Khmaladze (2021)
+<doi:10.1007/s10463-021-00786-3>.")
+    (license license:gpl3)))
+
 (define-public r-distfree-cr
   (package
     (name "r-distfree-cr")
@@ -18765,29 +18763,6 @@ manipulating input raster files, shipping routes and for analyzing sound
 propagated from ships.")
     (license license:gpl3)))
 
-(define-public r-depmix
-  (package
-    (name "r-depmix")
-    (version "0.9.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "depmix" version))
-       (sha256
-        (base32 "1vi9fi131ni34z9p3x6pdp6y9v0y0nx71zg1q8898frhqwbwhd9c"))))
-    (properties `((upstream-name . "depmix")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=depmix")
-    (synopsis "Dependent Mixture Models")
-    (description
-     "Fits (multigroup) mixtures of latent or hidden Markov models on mixed
-categorical and continuous (timeseries) data.  The Rdonlp2 package can
-optionally be used for optimization of the log-likelihood and is available from
-R-forge.  See Visser et al. (2009, <DOI:10.1007/978-0-387-95922-1_13>) for
-examples and applications.")
-    (license license:gpl3)))
-
 (define-public r-deploid
   (package
     (name "r-deploid")
@@ -26512,13 +26487,13 @@ for equality.")
 (define-public r-datacompare
   (package
     (name "r-datacompare")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataCompare" version))
        (sha256
-        (base32 "1i8bay5xsll30vr1d7c53ng96adh40b8c0m80a9irsd5jpyfkngj"))))
+        (base32 "1wlcaiwvxxkvy2mk5xqw92a06iclv1kn198nfiqw7j3mmd56m2d6"))))
     (properties `((upstream-name . "dataCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom

@@ -5761,13 +5761,13 @@ patterns).  Ludwig & Reynolds (1988, ISBN:0471832359).")
 (define-public r-nn2poly
   (package
     (name "r-nn2poly")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nn2poly" version))
        (sha256
-        (base32 "03p3asvx1913lkmi6f1bq71wxm83qc0lbniv4s9s9fcv13md3xml"))))
+        (base32 "1qcgcg9pwx6x6ffrqlmyc7wazx2zhmfq221dr5x04abrr58zx6yr"))))
     (properties `((upstream-name . "nn2poly")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-pracma r-matrixstats
@@ -15958,13 +15958,13 @@ particular clusters and clones within a repertoire.  Yang et al. (2023)
 (define-public r-nailer
   (package
     (name "r-nailer")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NaileR" version))
        (sha256
-        (base32 "0lqrspf7zjnhsna4x2c2iyiik68vbjccg6yvyizgpqc36scwa2si"))))
+        (base32 "11akkz0knfjhair6p163qnhjdmrrzdmpkxlr4rbz3hwwdw29x260"))))
     (properties `((upstream-name . "NaileR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

@@ -2617,13 +2617,13 @@ provided in the RStudio Markers pane.  Lives in the spirit of lintr and styler'.
 (define-public r-origamiplot
   (package
     (name "r-origamiplot")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OrigamiPlot" version))
        (sha256
-        (base32 "1p2fzv8bx3pxhskf1h9b6mk72b15g0l0ribp4da1vq58xn9cjgil"))))
+        (base32 "046rdyla5a4qf8wpk8lkmvsbrr85prcdr2k459bamnyvy5bgxzdl"))))
     (properties `((upstream-name . "OrigamiPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotrix r-fmsb))
@@ -3062,13 +3062,13 @@ Technometrics paper.")
 (define-public r-ordinalpattern
   (package
     (name "r-ordinalpattern")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalpattern" version))
        (sha256
-        (base32 "0vczxz0z3ixn0gv694dy31ywcx0iz8x821129jisy1x79yi36f29"))))
+        (base32 "19kakwb2p5lqqzc7lgc0y9js90nnb2427y702p2z79bzfprrvqn9"))))
     (properties `((upstream-name . "ordinalpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gtools))

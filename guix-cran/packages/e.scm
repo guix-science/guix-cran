@@ -8075,30 +8075,6 @@ distribution, together with an automatic threshold selection algorithm.  See del
 Castillo, J, Daoudi, J and Lockhart, R (2014) <doi:10.1111/sjos.12037>.")
     (license license:gpl2+)))
 
-(define-public r-erboost
-  (package
-    (name "r-erboost")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "erboost" version))
-       (sha256
-        (base32 "1fq55pq4y6b4jdjagg8b9q05hx7l5i51z98bdgbmn5b7y99vm0hy"))))
-    (properties `((upstream-name . "erboost")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lattice))
-    (home-page "https://cran.r-project.org/package=erboost")
-    (synopsis "Nonparametric Multiple Expectile Regression via ER-Boost")
-    (description
-     "Expectile regression is a nice tool for estimating the conditional expectiles of
-a response variable given a set of covariates.  This package implements a
-regression tree based gradient boosting estimator for nonparametric multiple
-expectile regression, proposed by Yang, Y., Qian, W. and Zou, H. (2018)
-<doi:10.1080/00949655.2013.876024>.  The code is based on the gbm package
-originally developed by Greg Ridgeway.")
-    (license license:gpl3)))
-
 (define-public r-eratosthenes
   (package
     (name "r-eratosthenes")
@@ -17942,33 +17918,6 @@ framework (Markov chain Monte Carlo) using the Stan probabilistic programming
 language.")
     (license license:gpl3)))
 
-(define-public r-edmeasure
-  (package
-    (name "r-edmeasure")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EDMeasure" version))
-       (sha256
-        (base32 "1gyv86vip0a3939dbbwz29xkqzncw24r68fzykdjnv3b995510iv"))))
-    (properties `((upstream-name . "EDMeasure")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rbayesianoptimization r-energy r-dhsic))
-    (home-page "https://cran.r-project.org/package=EDMeasure")
-    (synopsis "Energy-Based Dependence Measures")
-    (description
-     "Implementations of (1) mutual dependence measures and mutual independence tests
-in Jin, Z., and Matteson, D. S. (2017) <@code{arXiv:1709.02532>}; (2)
-independent component analysis methods based on mutual dependence measures in
-Jin, Z., and Matteson, D. S. (2017) <@code{arXiv:1709.02532>} and Pfister, N.,
-et al. (2018) <doi:10.1111/rssb.12235>; (3) conditional mean dependence measures
-and conditional mean independence tests in Shao, X., and Zhang, J. (2014)
-<doi:10.1080/01621459.2014.887012>, Park, T., et al. (2015)
-<doi:10.1214/15-EJS1047>, and Lee, C. E., and Shao, X. (2017)
-<doi:10.1080/01621459.2016.1240083>.")
-    (license license:gpl2+)))
-
 (define-public r-edmdata
   (package
     (name "r-edmdata")
@@ -21406,33 +21355,6 @@ observations collected by member of the public. @code{eBird} Status and Trends
 uses these data to model global bird distributions, abundances, and population
 trends at a high spatial and temporal resolution.")
     (license license:gpl3)))
-
-(define-public r-ebglmnet
-  (package
-    (name "r-ebglmnet")
-    (version "6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EBglmnet" version))
-       (sha256
-        (base32 "014rpci2lcrqaldir2ds1fvzbvkj6n00n9xzl5m0f60zzg9cckjm"))))
-    (properties `((upstream-name . "EBglmnet")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://sites.google.com/site/anhuihng/")
-    (synopsis
-     "Empirical Bayesian Lasso and Elastic Net Methods for Generalized Linear Models")
-    (description
-     "This package provides empirical Bayesian lasso and elastic net algorithms for
-variable selection and effect estimation.  Key features include sparse variable
-selection and effect estimation via generalized linear regression models, high
-dimensionality with p>>n, and significance test for nonzero effects.  This
-package outperforms other popular methods such as lasso and elastic net methods
-in terms of power of detection, false discovery rate, and power of detecting
-grouping effects.  Please reference its use as A Huang and D Liu (2016) <doi:
-10.1093/bioinformatics/btw143>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-ebgenotyping
   (package

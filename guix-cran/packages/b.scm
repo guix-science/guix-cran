@@ -9431,23 +9431,18 @@ integration methods and optimization routines.")
 (define-public r-blorr
   (package
     (name "r-blorr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blorr" version))
        (sha256
-        (base32 "1ynvg6ar7c7p01225q9czy4gxks0p1vw3sx207l7vzqxw20wb1bn"))))
+        (base32 "098z71gyrf7b76g36p87mipmwakgwm4s56f97vfqi13llr3gqir5"))))
     (properties `((upstream-name . "blorr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp
-                             r-lest
-                             r-gridextra
-                             r-ggplot2
-                             r-data-table
-                             r-car))
+    (propagated-inputs (list r-rcpp r-gridextra r-ggplot2 r-data-table r-car))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rsquaredacademy/blorr")
+    (home-page "https://blorr.rsquaredacademy.com/")
     (synopsis "Tools for Developing Binary Logistic Regression Models")
     (description
      "This package provides tools designed to make it easier for beginner and
@@ -12071,13 +12066,13 @@ bioassays for one or several strains/lines/populations.")
 (define-public r-bioregion
   (package
     (name "r-bioregion")
-    (version "1.1.1")
+    (version "1.1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioregion" version))
        (sha256
-        (base32 "03qjyaw1kiqn9q4wc49rzy6vp83pf5567y07ih4rgp1r3pamnif0"))))
+        (base32 "17i7cbaf0pzjja71z5c3gr8s9hjkj74z6xcdk3h3wpm4wi3lm9z2"))))
     (properties `((upstream-name . "bioregion")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12208,13 +12203,13 @@ details, see Liu et al. (2024) <doi:10.1093/bioinformatics/btae592>.")
 (define-public r-biopixr
   (package
     (name "r-biopixr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biopixR" version))
        (sha256
-        (base32 "0avdpg73s9hqkyfgrfmprhcc5hpxf4in6s3221n5gf3pcii8jw0c"))))
+        (base32 "0npbdbyxm2p2iv0lhgy7bxgpx8mqiw38b5z4gklkk1qvccmz7js7"))))
     (properties `((upstream-name . "biopixR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magick r-imager r-data-table r-cluster))
@@ -17192,6 +17187,36 @@ these time series.")
 with leverage (one-component, two-component, skewed versions).")
     (license license:gpl2)))
 
+(define-public r-betaselectr
+  (package
+    (name "r-betaselectr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "betaselectr" version))
+       (sha256
+        (base32 "1v8920wi74fjjklai7cc1dsm2xmb98r2phf997wlxclk2ga1qy1s"))))
+    (properties `((upstream-name . "betaselectr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pbapply
+                             r-numderiv
+                             r-manymome
+                             r-lavaan-printer
+                             r-lavaan
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfcheung.github.io/betaselectr/")
+    (synopsis "Betas-Select in Structural Equation Models and Linear Models")
+    (description
+     "It computes betas-select, coefficients after standardization in structural
+equation models and regression models, standardizing only selected variables.
+Supports models with moderation, with product terms formed after
+standardization.  It also offers confidence intervals that account for
+standardization, including bootstrap confidence intervals as proposed by Cheung
+et al. (2022) <doi:10.1037/hea0001188>.")
+    (license license:gpl3+)))
+
 (define-public r-betasandwich
   (package
     (name "r-betasandwich")
@@ -20634,33 +20659,6 @@ sampling method or S3M surveys) is implemented.  See Cameron et al (2008)
 See Aaron et al (2016) <doi:10.1371/journal.pone.0163176> and Aaron et al (2016)
 <doi:10.1371/journal.pone.0162462> for application of the blocked weighted
 bootstrap to estimate indicators from two-stage cluster sampled surveys.")
-    (license license:gpl3)))
-
-(define-public r-bbssl
-  (package
-    (name "r-bbssl")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BBSSL" version))
-       (sha256
-        (base32 "0vb3afbx8p3frliy92sf2wlmx32rasxj39i8d023m2dvsblbh50x"))))
-    (properties `((upstream-name . "BBSSL")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-svmisc
-                             r-statmod
-                             r-rmutil
-                             r-mvnfast
-                             r-matrix
-                             r-greybox
-                             r-glmnet))
-    (home-page "https://cran.r-project.org/package=BBSSL")
-    (synopsis "Bayesian Bootstrap Spike-and-Slab LASSO")
-    (description
-     "Posterior sampling for Spike-and-Slab LASSO prior in linear models from Nie and
-Rockova <@code{arXiv:2011.14279>}.")
     (license license:gpl3)))
 
 (define-public r-bbreg

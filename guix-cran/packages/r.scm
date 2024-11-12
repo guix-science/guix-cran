@@ -20585,13 +20585,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.4.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "06ddz7qv1v4v3w3iwy2k5m6f90bc7xrkkcvpji145scdrm50ml4a"))))
+        (base32 "1y03dmn9z721i2syhw99imcxap4hrjdh1y93jb1d4dm0nhff84ia"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -21619,6 +21619,44 @@ or Excel output files.  The methods are illustrated with several included
 datasets from the author's collaborations.  This update includes improvements to
 the code, some as a result of user-reported bugs and new feature requests, and
 others discovered during ongoing testing and code simplification.")
+    (license license:gpl3)))
+
+(define-public r-rjaf
+  (package
+    (name "r-rjaf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjaf" version))
+       (sha256
+        (base32 "1hcd45c9l1d5n2n935wb9in208p3knh9hz56advgna6v7sab3ryb"))))
+    (properties `((upstream-name . "rjaf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ranger
+                             r-randomforest
+                             r-mass
+                             r-magrittr
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://github.com/wustat/rjaf")
+    (synopsis
+     "Regularized Joint Assignment Forest with Treatment Arm Clustering")
+    (description
+     "Personalized assignment to one of many treatment arms via regularized and
+clustered joint assignment forests as described in Ladhania, Spiess, Ungar, and
+Wu (2023) <doi:10.48550/@code{arXiv.2311.00577>}.  The algorithm pools
+information across treatment arms: it considers a regularized forest-based
+assignment algorithm based on greedy recursive partitioning that shrinks effect
+estimates across arms; and it incorporates a clustering scheme that combines
+treatment arms with consistently similar outcomes.")
     (license license:gpl3)))
 
 (define-public r-rjade
@@ -26013,27 +26051,6 @@ getting species occurrence records, getting counts of occurrence records, and
 using the GBIF tile map service to make rasters summarizing huge amounts of
 data.")
     (license license:expat)))
-
-(define-public r-rgb
-  (package
-    (name "r-rgb")
-    (version "1.7.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rgb" version))
-       (sha256
-        (base32 "1hj7hxvj785qg4j52bvwgczv21fhz2fjncvxn2fahsb4hdkrvfrm"))))
-    (properties `((upstream-name . "Rgb")))
-    (build-system r-build-system)
-    (home-page "https://bioinformatics.ovsa.fr/Rgb")
-    (synopsis "The R Genome Browser")
-    (description
-     "This package provides classes and methods to efficiently handle (slice,
-annotate, draw ...) genomic features (such as genes or transcripts), and an
-interactive interface to browse them.  Performances and main features are
-highlighted in Mareschal et al (2014) <doi:10.1093/bioinformatics/btu185>.")
-    (license license:gpl3+)))
 
 (define-public r-rgap
   (package
@@ -41914,13 +41931,13 @@ change-points is not required.  The code is written in Go and interfaced with R.
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.4.1.0")
+    (version "4.4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "1k49z9czxdksvc7m7767q52l613lv7fsfykx0yaajjlvp67ac4ly"))))
+        (base32 "1gswy1vyd895ndslznvdkhbib4zjr846f2z9fgd15cc1vigqzixy"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (home-page "https://github.com/hughjonesd/rcheology")
@@ -48900,6 +48917,45 @@ radiant.model', and radiant.multivariate'.")
      "Shiny-based interactive gadgets of radial visualization methods and extensions
 thereof.")
     (license license:expat)))
+
+(define-public r-radero
+  (package
+    (name "r-radero")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RadEro" version))
+       (sha256
+        (base32 "0hhirbplvd12fldqcqc5g99ilhy4q2wpij9hf3b7pv7v3n36jjga"))))
+    (properties `((upstream-name . "RadEro")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-roxygen2
+                             r-rcpp
+                             r-patchwork
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr
+                             r-devtools
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=RadEro")
+    (synopsis "Cs-137 Conversion Model")
+    (description
+     "This package provides a straightforward model to estimate soil migration rates
+across various soil contexts.  Based on the compartmental, vertically-resolved,
+physically-based mass balance model of Soto and Navas (2004)
+<doi:10.1016/j.jaridenv.2004.02.003> and Soto and Navas (2008)
+<doi:10.1016/j.radmeas.2008.02.024>. @code{RadEro} provides a user-friendly
+interface in R, utilizing input data such as 137Cs inventories and parameters
+directly derived from soil samples (e.g., fine fraction density, effective
+volume) to accurately capture the 137Cs distribution within the soil profile.
+The model simulates annual 137Cs fallout, radioactive decay, and vertical
+diffusion, with the diffusion coefficient calculated from 137Cs reference
+inventory profiles.  Additionally, it allows users to input custom parameters as
+calibration coefficients.  This tool and its code are openly accessible,
+facilitating usage in soil erosion studies.")
+    (license license:gpl2+)))
 
 (define-public r-raddata
   (package

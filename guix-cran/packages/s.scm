@@ -6544,13 +6544,13 @@ Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 (define-public r-sundialr
   (package
     (name "r-sundialr")
-    (version "0.1.4.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sundialr" version))
        (sha256
-        (base32 "1qzak0zrdj2ygw4h6cn28z6q5qxaam8dybqblmf17xq2lkvn2bpn"))))
+        (base32 "1rqcl6m6p06j3c3i9m33mc2bs489c27jqarqlxcgmh5jnsbrs08r"))))
     (properties `((upstream-name . "sundialr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -10371,34 +10371,6 @@ Financial Analyst Program Curriculum 2020 Level I Volumes 1-6. (Vol.  4, pp.
 (Vol.  4, pp.  197-447)\", 2019, ISBN: 9781119593614).")
     (license license:gpl3)))
 
-(define-public r-stochvoltmb
-  (package
-    (name "r-stochvoltmb")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stochvolTMB" version))
-       (sha256
-        (base32 "07m3qz8j1sw37lrxzmbkbifd3nsdvd2blbca8vr1aq5bbafr1g1b"))))
-    (properties `((upstream-name . "stochvolTMB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmb
-                             r-sn
-                             r-rcppeigen
-                             r-mass
-                             r-ggplot2
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JensWahl/stochvolTMB")
-    (synopsis "Likelihood Estimation of Stochastic Volatility Models")
-    (description
-     "Parameter estimation for stochastic volatility models using maximum likelihood.
-The latent log-volatility is integrated out of the likelihood using the Laplace
-approximation.  The models are fitted via TMB (Template Model Builder)
-(Kristensen, Nielsen, Berg, Skaug, and Bell (2016) <doi:10.18637/jss.v070.i05>).")
-    (license license:gpl3)))
-
 (define-public r-stochvol
   (package
     (name "r-stochvol")
@@ -12121,13 +12093,13 @@ test.")
 (define-public r-steadyica
   (package
     (name "r-steadyica")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "steadyICA" version))
        (sha256
-        (base32 "0mcalbsgajdpk45k9vpyavn079063hw4ihkw72n9wcy5nb0da14g"))))
+        (base32 "0hknrjwcp0zy11fyf0c1qr9fcin34335pkjgygdhrzlmrapf02cc"))))
     (properties `((upstream-name . "steadyICA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass r-combinat r-clue))
@@ -50893,6 +50865,28 @@ analysis.  The output from the kernel is a square, symmetric matrix that gives
 proximity values between pairs of observations.")
     (license license:gpl2)))
 
+(define-public r-semaphore
+  (package
+    (name "r-semaphore")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semaphore" version))
+       (sha256
+        (base32 "157csk2ivmxhmf90gigycgfgr08kjxa7rdnn56r858z1vqqn2p4p"))))
+    (properties `((upstream-name . "semaphore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-bh))
+    (home-page "https://cmmr.github.io/semaphore/")
+    (synopsis "Shared Memory Atomic Operations")
+    (description
+     "This package implements named semaphores from the boost C++ library
+<https://www.boost.org/>.  A semaphore object is shared amongst several
+processes.  This integer value can be safely incremented or decremented by each
+processes.  Processes can also wait (blocking) for the value to become non-zero.")
+    (license license:expat)))
+
 (define-public r-semantic-dashboard
   (package
     (name "r-semantic-dashboard")
@@ -53188,6 +53182,28 @@ graphics.")
 aforementioned search results.")
     (license license:gpl2+)))
 
+(define-public r-seamless
+  (package
+    (name "r-seamless")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seAMLess" version))
+       (sha256
+        (base32 "0yx09scpvc1n8998j4gqkss11vl9snp146ssdsnjzffrkki2mflb"))))
+    (properties `((upstream-name . "seAMLess")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-optparse r-ggplot2 r-data-table r-biobase))
+    (home-page "https://github.com/eonurk/seAMLess")
+    (synopsis
+     "Single Cell Transcriptomics Based Deconvolution Pipeline for Leukemia")
+    (description
+     "Given a bulk transcriptomic (RNA-seq) sample of an Myeloid Leukemia patient
+calculates immune composition and drug resistance for different small-molecule
+inhibitors.  Published in <https://www.nature.com/articles/s41698-024-00596-9>.")
+    (license license:gpl3)))
+
 (define-public r-sealasso
   (package
     (name "r-sealasso")
@@ -53468,13 +53484,13 @@ generalizable, actionable, and meaningful for analysis.")
 (define-public r-sdtm-oak
   (package
     (name "r-sdtm-oak")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdtm.oak" version))
        (sha256
-        (base32 "0sldjys6aam6kg3jq2sz6m3i71k5hf1ydhxmfmg9kdk5hmnf7f1j"))))
+        (base32 "130rbc36j3y75cfrfx9n5bryablb43a1w3aafji41n8ac0wa629y"))))
     (properties `((upstream-name . "sdtm.oak")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -53530,13 +53546,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "00armg1ly0xd0p4n2b63sb2rj0rwinqx7c6cilh1j5z9s1ib1z9k"))))
+        (base32 "17j1gbk74akmcs3lg21r9wcl0wp85filp19ciqf9ngb3gydsq40f"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -55455,13 +55471,13 @@ sequencing) data <https://github.com/fumi-github/@code{scPloidy>}.")
 (define-public r-scpi
   (package
     (name "r-scpi")
-    (version "2.2.5")
+    (version "2.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scpi" version))
        (sha256
-        (base32 "12wr7kk57qv28kypk5czr0gv2xfib040m8k5047kdgd4fj3i6fhr"))))
+        (base32 "1xfw0paa05c9pzizyqpnxph0wwbv6ryvlxph35f9xfcs6fm97nl8"))))
     (properties `((upstream-name . "scpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -55492,9 +55508,10 @@ Uncertainty is quantified with prediction intervals as developed in Cattaneo,
 Feng, and Titiunik (2021)
 <https://nppackages.github.io/references/Cattaneo-Feng-Titiunik_2021_JASA.pdf>
 for a single treated unit and in Cattaneo, Feng, Palomba, and Titiunik (2023)
-<@code{arXiv:2210.05026>} for multiple treated units and staggered adoption.
-More details about the software implementation can be found in Cattaneo, Feng,
-Palomba, and Titiunik (2022) <@code{arXiv:2202.05984>}.")
+<doi:10.48550/@code{arXiv.2210.05026>} for multiple treated units and staggered
+adoption.  More details about the software implementation can be found in
+Cattaneo, Feng, Palomba, and Titiunik (2024)
+<doi:10.48550/@code{arXiv.2202.05984>}.")
     (license license:gpl2)))
 
 (define-public r-scperturbr

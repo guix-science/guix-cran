@@ -517,39 +517,6 @@ plans at a set of time varying alternatives.  See Izmirlian, G. (2014)
 <doi:10.4310/SII.2014.v7.n1.a4>.")
     (license license:gpl2+)))
 
-(define-public r-pwrfdr
-  (package
-    (name "r-pwrfdr")
-    (version "2.8.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pwrFDR" version))
-       (sha256
-        (base32 "16qlxwhljhf878a7jif2kjj7hvga01bgr8zb6bh555yacxxh4yiz"))))
-    (properties `((upstream-name . "pwrFDR")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=pwrFDR")
-    (synopsis "FDR Power")
-    (description
-     "This is a package for calculating two differing notions of power, or deriving
-sample sizes for specified requisite power in multiple testing experiments under
-a variety of methods for control of the distribution of the False Discovery
-Proportion (FDP).  More specifically, one can choose to control the FDP
-distribution according to control of its (i) mean, e.g. the usual BH-FDR
-procedure, or via the probability that it exceeds a given value, delta, via (ii)
-the Romano procedure, or via (iii) my procedure based upon asymptotic
-approximation.  Likewise, we can think of the power in multiple testing
-experiments in terms of a summary of the distribution of the True Positive
-Proportion (TPP).  The package will compute power, sample size or any other
-missing parameter required for power based upon (i) the mean of the TPP which is
-the average power (ii) the probability that the TPP exceeds a given value,
-lambda, via my asymptotic approximation procedure.  The theoretical results are
-described in Izmirlian, G. (2020) Stat.  and Prob.  letters,
-<doi:10.1016/j.spl.2020.108713>, and an applied paper describing the methodology
-with a simulation study is in preparation.")
-    (license license:gpl2+)))
-
 (define-public r-pwrab
   (package
     (name "r-pwrab")
@@ -13489,13 +13456,13 @@ al. (2019b) <doi:10.1016/j.humimm.2019.05.018>.")
 (define-public r-pottsutils
   (package
     (name "r-pottsutils")
-    (version "0.3-3")
+    (version "0.3-3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PottsUtils" version))
        (sha256
-        (base32 "165k4sjh3kqkb8bzi68wx00yl77yfbgs70fcbpzmsmcw4g4hdpzn"))))
+        (base32 "1wszkvc3h72g1b8962749bg0gjh3nhcf6ydfd7471srkh9qhg4a0"))))
     (properties `((upstream-name . "PottsUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-miscf))
@@ -25327,6 +25294,33 @@ Further it transforms the received JSON objects into a data frame, which can be
 used for the final data analysis.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
+(define-public r-photon
+  (package
+    (name "r-photon")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "photon" version))
+       (sha256
+        (base32 "0gl6v57g1d2p6h90yhilqh0gy044lm8mm65dx7rjiam7r8zpii6z"))))
+    (properties `((upstream-name . "photon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-r6
+                             r-processx
+                             r-httr2
+                             r-countrycode
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jslth/photon/")
+    (synopsis "High-Performance Geocoding using 'photon'")
+    (description
+     "Features unstructured, structured and reverse geocoding using the photon
+geocoding API <https://photon.komoot.io/>.  Facilitates the setup of local
+photon instances to enable offline geocoding.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-photobiologywavebands
   (package
     (name "r-photobiologywavebands")
@@ -34354,13 +34348,13 @@ biomarker of prognostic and predictive for cancer immunotherapy.")
 (define-public r-pathwayspace
   (package
     (name "r-pathwayspace")
-    (version "0.99.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PathwaySpace" version))
        (sha256
-        (base32 "1wfml9krib7x0l4016hsn5n8s2p9v9v3sh7kfk0c4da5czsc52i0"))))
+        (base32 "1mf76xclm2qqg10m23nybdadlq5z44qhp21r6h0fjs8n9aqygb5q"))))
     (properties `((upstream-name . "PathwaySpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -36786,6 +36780,63 @@ information).  You can use it to plan astronomical observations, make guidance
 pictures, find magnitudes in five broadband filters (g, r, i, z, y) and more.")
     (license license:expat)))
 
+(define-public r-pannotator
+  (package
+    (name "r-pannotator")
+    (version "1.0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pannotator" version))
+       (sha256
+        (base32 "06062z1idszmxkfy7wqj6yn8svb3fgh5421246dxw5yw0mr0kpq7"))))
+    (properties `((upstream-name . "pannotator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinyjs
+                             r-shinyhelper
+                             r-shinyfiles
+                             r-shiny
+                             r-sf
+                             r-scales
+                             r-readr
+                             r-magrittr
+                             r-leafpm
+                             r-leaflet-extras
+                             r-leaflet
+                             r-jsonlite
+                             r-jsonify
+                             r-jpeg
+                             r-htmlwidgets
+                             r-golem
+                             r-ggplot2
+                             r-geojsonsf
+                             r-exiftoolr
+                             r-dplyr
+                             r-configr
+                             r-config
+                             r-colourpicker
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NunzioKnerr/pannotator_package_source")
+    (synopsis "Visualisation and Annotation of 360 Degree Imagery")
+    (description
+     "This package provides a customisable R shiny app for immersively visualising,
+mapping and annotating panospheric (360 degree) imagery.  The flexible interface
+allows annotation of any geocoded images using up to 4 user specified dropdown
+menus.  The app uses leaflet to render maps that display the geo-locations of
+images and panellum <https://pannellum.org/>, a lightweight panorama viewer for
+the web, to render images in virtual 360 degree viewing mode.  Key functions
+include the ability to draw on & export parts of 360 images for downstream
+applications.  Users can also draw polygons and points on map imagery related to
+the panoramic images and export them for further analysis.  Downstream
+applications include using annotations to train Artificial Intelligence/Machine
+Learning (AI/ML) models and geospatial modelling and analysis of camera based
+survey data.")
+    (license license:gpl3+)))
+
 (define-public r-panjen
   (package
     (name "r-panjen")
@@ -38634,6 +38685,74 @@ Population Census 2023 (<https://www.pbs.gov.pk/>).")
      "This package provides data sets and functions for exploration of Pakistan
 Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
     (license license:gpl2)))
+
+(define-public r-pakpc
+  (package
+    (name "r-pakpc")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PakPC" version))
+       (sha256
+        (base32 "01vff15b6ipq6xmkwdwz7k7f39scnb32xsjnwaxkqcm77l68kq10"))))
+    (properties `((upstream-name . "PakPC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboardplus
+                             r-shinydashboard
+                             r-shiny
+                             r-rpivottable
+                             r-pakpc2023
+                             r-pakpc2017
+                             r-magrittr
+                             r-htmltools
+                             r-dt))
+    (home-page "https://cran.r-project.org/package=PakPC")
+    (synopsis "'shiny' App to Analyze Pakistan's Population Census Data")
+    (description
+     "This package provides tools for analyzing Pakistan's Population Censuses data
+via the @code{PakPC2023} and @code{PakPC2017} R packages.  Designed for
+researchers, policymakers, and professionals, the app enables in-depth numerical
+and graphical analysis, including detailed cross-tabulations and insights.  With
+diverse statistical models and visualization options, it supports informed
+decision-making in social and economic policy.  This tool enhances users ability
+to explore and interpret census data, providing valuable insights for effective
+planning and analysis across various fields.")
+    (license license:gpl3)))
+
+(define-public r-paknacc
+  (package
+    (name "r-paknacc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PakNAcc" version))
+       (sha256
+        (base32 "11lhjjayjk5516gjgj6czg10prl21yyaslb4idj7r7x01l6qaghc"))))
+    (properties `((upstream-name . "PakNAcc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboardplus
+                             r-shinydashboard
+                             r-shiny
+                             r-rpivottable
+                             r-magrittr
+                             r-htmltools
+                             r-dt
+                             r-collapse))
+    (home-page "https://cran.r-project.org/package=PakNAcc")
+    (synopsis "'shiny' App for National Accounts")
+    (description
+     "This package provides a comprehensive suite of tools for analyzing Pakistan's
+Quarterly National Accounts data.  Users can gain detailed insights into
+Pakistan's economic performance, visualize quarterly trends, and detect patterns
+and anomalies in key economic indicators.  Compare sector
+contributionsâincluding agriculture, industry, and servicesâto understand
+their influence on economic growth or decline.  Customize analyses by filtering
+and manipulating data to focus on specific areas of interest.  Ideal for
+policymakers, researchers, and analysts aiming to make informed, data-driven
+decisions based on timely and detailed economic insights.")
+    (license license:gpl3)))
 
 (define-public r-pak
   (package

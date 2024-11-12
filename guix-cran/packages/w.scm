@@ -1296,53 +1296,6 @@ feature of many legacy data sets.  Most of the functions should be useful for
 analysis of similar-frequency time series regardless of the subject matter.")
     (license license:gpl2)))
 
-(define-public r-wpproj
-  (package
-    (name "r-wpproj")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WpProj" version))
-       (sha256
-        (base32 "17vczldqgqc8wl6yyz06zc3jdkgcxdf2s28bh83vzj98i1521ls2"))))
-    (properties `((upstream-name . "WpProj")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-slam
-                             r-rspectra
-                             r-rqpen
-                             r-roi-plugin-lpsolve
-                             r-roi-plugin-ecos
-                             r-roi
-                             r-rlang
-                             r-rcppprogress
-                             r-rcppeigen
-                             r-rcppcgal
-                             r-rcpp
-                             r-quantreg
-                             r-oem
-                             r-matrix
-                             r-magrittr
-                             r-lifecycle
-                             r-glmnet
-                             r-ggsci
-                             r-ggridges
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-dorng
-                             r-doparallel
-                             r-bh))
-    (home-page "https://github.com/ericdunipace/WpProj")
-    (synopsis "Linear p-Wasserstein Projections")
-    (description
-     "This package performs Wasserstein projections from the predictive distributions
-of any model into the space of predictive distributions of linear models.  We
-utilize L1 penalties to also reduce the complexity of the model space.  This
-package employs the methods as described in Dunipace, Eric and Lorenzo Trippa
-(2020) <@code{arXiv:2012.09999>}.")
-    (license (license:fsdg-compatible "GPL (== 3.0)"))))
-
 (define-public r-wppexplorer
   (package
     (name "r-wppexplorer")

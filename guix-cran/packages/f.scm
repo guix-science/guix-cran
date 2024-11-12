@@ -24,6 +24,7 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages base)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages geo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -6950,6 +6951,32 @@ functions for detecting treetops from canopy models, outlining tree crowns, and
 calculating textural metrics.")
     (license license:gpl3)))
 
+(define-public r-forestsas
+  (package
+    (name "r-forestsas")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestSAS" version))
+       (sha256
+        (base32 "06y1rlfjy9dyi4k23yzx4a0wrvrp3pgqna3lh339j53qpp7v6w94"))))
+    (properties `((upstream-name . "forestSAS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-random r-spatstat-geom r-spatstat-data
+                             r-spatstat))
+    (home-page "https://cran.r-project.org/package=forestSAS")
+    (synopsis "Forest Spatial Structure Analysis Systems")
+    (description
+     "Recent years have seen significant interest in neighborhood-based structural
+parameters that effectively represent the spatial characteristics of tree
+populations and forest communities, and possess strong applicability for guiding
+forestry practices.  This package provides valuable information that enhances
+our understanding and analysis of the fine-scale spatial structure of tree
+populations and forest stands.  Reference: Yan L, Tan W, Chai Z, et al (2019)
+<doi:10.13323/j.cnki.j.fafu(nat.sci.).2019.03.007>.")
+    (license license:gpl2)))
+
 (define-public r-forestry
   (package
     (name "r-forestry")
@@ -7036,6 +7063,36 @@ References: Atkins et al.  2018 <doi:10.1111/2041-210X.13061>; Hardiman et al.
 2013 <doi:10.3390/f4030537>; Parker et al.  2004
 <doi:10.1111/j.0021-8901.2004.00925.x>.")
     (license license:gpl3)))
+
+(define-public r-forestpsd
+  (package
+    (name "r-forestpsd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestPSD" version))
+       (sha256
+        (base32 "1n5axvkj3sdm6196kg5vm4g33djf17cqkqql2vmmqjyzh9hqc8as"))))
+    (properties `((upstream-name . "forestPSD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ttr r-reshape2 r-modelr r-minpack-lm r-ggplot2))
+    (home-page "https://cran.r-project.org/package=forestPSD")
+    (synopsis "Forest Population Structure and Numeric Dynamics")
+    (description
+     "Analysis of forest population structure and quantitative dynamics is the
+research and evaluation of the composition, distribution, age structure and
+changes in quantity over time of various populations in the forest.  By deeply
+understanding these characteristics of forest populations, scientific basis can
+be provided for the management, protection and sustainable utilization of forest
+resources.  This R package conducts a systematic analysis of forest population
+structure and quantitative dynamics through analyzing age structure, compiling
+life tables, population quantitative dynamic change indices and time series
+models, in order to provide support for forest population protection and
+sustainable management.  References: Zhang Y, Wang J, Wang X, et
+al(2024)<doi:10.3390/plants13070946>.  Yuan G, Guo Q, Xie N, et
+al(2023)<doi:10.1007/s11629-022-7429-z>.")
+    (license license:gpl2)))
 
 (define-public r-forestploter
   (package
@@ -10200,30 +10257,6 @@ integer-mode as little endian, saved as the single element of a named list
 being coerced into a blob.  Flobs are useful for writing and reading files to
 and from databases.")
     (license license:expat)))
-
-(define-public r-fllat
-  (package
-    (name "r-fllat")
-    (version "1.2-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FLLat" version))
-       (sha256
-        (base32 "0306bpwp2az4x4m5sv88hlh7vs0y5isfby7lxrn2gjnk76gg6mw1"))))
-    (properties `((upstream-name . "FLLat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-gplots))
-    (home-page "https://cran.r-project.org/package=FLLat")
-    (synopsis "Fused Lasso Latent Feature Model")
-    (description
-     "Fits the Fused Lasso Latent Feature model, which is used for modeling
-multi-sample @code{aCGH} data to identify regions of copy number variation
-(CNV).  Produces a set of features that describe the patterns of CNV and a set
-of weights that describe the composition of each sample.  Also provides
-functions for choosing the optimal tuning parameters and the appropriate number
-of features, and for estimating the false discovery rate.")
-    (license license:gpl2+)))
 
 (define-public r-flipscores
   (package
@@ -16183,6 +16216,65 @@ application is included.")
 <https://www.federalregister.gov/developers/api/v1>.")
     (license license:gpl2)))
 
+(define-public r-feddata
+  (package
+    (name "r-feddata")
+    (version "4.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FedData" version))
+       (sha256
+        (base32 "01lr1dlbd14y7xvx77i7z556b5az44239av6rsr7hr69an2kv2rx"))))
+    (properties `((upstream-name . "FedData")))
+    (build-system r-build-system)
+    (inputs (list gdal))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-igraph
+                             r-httr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-curl
+                             r-arcgislayers))
+    (home-page "https://docs.ropensci.org/FedData/")
+    (synopsis
+     "Download Geospatial Data Available from Several Federated Data Sources")
+    (description
+     "Download geospatial data available from several federated data sources (mainly
+sources maintained by the US Federal government).  Currently, the package
+enables extraction from nine datasets: The National Elevation Dataset digital
+elevation models (<https://www.usgs.gov/3d-elevation-program> 1 and 1/3
+arc-second; USGS); The National Hydrography Dataset
+(<https://www.usgs.gov/national-hydrography/national-hydrography-dataset>;
+USGS); The Soil Survey Geographic (SSURGO) database from the National
+Cooperative Soil Survey (<https://websoilsurvey.sc.egov.usda.gov/>; NCSS), which
+is led by the Natural Resources Conservation Service (NRCS) under the USDA; the
+Global Historical Climatology Network
+(<https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily>;
+GHCN), coordinated by National Climatic Data Center at NOAA; the Daymet gridded
+estimates of daily weather parameters for North America, version 4, available
+from the Oak Ridge National Laboratory's Distributed Active Archive Center
+(<https://daymet.ornl.gov/>; DAAC); the International Tree Ring Data Bank; the
+National Land Cover Database (<https://www.mrlc.gov/>; NLCD); the Cropland Data
+Layer from the National Agricultural Statistics Service
+(<https://www.nass.usda.gov/Research_and_Science/Cropland/SARS1a.php>; NASS);
+and the PAD-US dataset of protected area boundaries
+(<https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview>;
+USGS).")
+    (license license:expat)))
+
 (define-public r-fect
   (package
     (name "r-fect")
@@ -16594,13 +16686,13 @@ Mustapha, K. B. (2018).  Finite Element Computations in Mechanics with R. [ISBN
 (define-public r-fdx
   (package
     (name "r-fdx")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FDX" version))
        (sha256
-        (base32 "05a200k1i9qial2mvpbvfqn808nahcvxpajpb01a92y3azsh8vvj"))))
+        (base32 "18z1fnqkqbrkcn0qmdaicvp8vm9q57bzqmca7xk4ckrll8zfcvq8"))))
     (properties `((upstream-name . "FDX")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -19898,30 +19990,6 @@ way, many matrices to be computed are retained as triangular matrices which can
 eventually speed up the computation.  The fitting algorithm for Elastic Net is
 written in C++ using Armadillo linear algebra library.")
     (license license:gpl2+)))
-
-(define-public r-fastdigest
-  (package
-    (name "r-fastdigest")
-    (version "0.6-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastdigest" version))
-       (sha256
-        (base32 "1809y57cvck6gssrwnycgqjnka6jxx17dbf927cvwih4v58abdmj"))))
-    (properties `((upstream-name . "fastdigest")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=fastdigest")
-    (synopsis "Fast, Low Memory Footprint Digests of R Objects")
-    (description
-     "This package provides an R interface to Bob Jenkin's streaming,
-non-cryptographic @code{SpookyHash} hash algorithm for use in digest-based
-comparisons of R objects.  fastdigest plugs directly into R's internal
-serialization machinery, allowing digests of all R objects the serialize()
-function supports, including reference-style objects via custom hooks.  Speed is
-high and scales linearly by object size; memory usage is constant and
-negligible.")
-    (license license:artistic2.0)))
 
 (define-public r-fastdid
   (package

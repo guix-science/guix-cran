@@ -18763,26 +18763,6 @@ Pareto (2016) <doi:10.1007/s11205-015-0998-2>, Van Puyenbroeck and Rogge
 <doi:10.1016/j.ejor.2016.07.038> and other authors.")
     (license license:gpl3)))
 
-(define-public r-comphclust
-  (package
-    (name "r-comphclust")
-    (version "1.0-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "compHclust" version))
-       (sha256
-        (base32 "0agay7rn5mrw07imz4l547b7m9pfcg3rhz4krfxrvg1q2z2kryvj"))))
-    (properties `((upstream-name . "compHclust")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=compHclust")
-    (synopsis "Complementary Hierarchical Clustering")
-    (description
-     "This package performs the complementary hierarchical clustering procedure and
-returns X (the expected residual matrix) and a vector of the relative gene
-importances.")
-    (license license:gpl2+)))
-
 (define-public r-compgr
   (package
     (name "r-compgr")
@@ -21919,13 +21899,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "0sh9i7bv64zdqjzdb3hh3kkixahw465j30ryg79gvlsyrj2h41as"))))
+        (base32 "0sqnc38sx6mrkslwam931gkj648wpv4cs5ryyad4qp7h6dspm2qw"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21937,6 +21917,7 @@ profiles.")
                              r-glue
                              r-dplyr
                              r-dbplyr
+                             r-clock
                              r-cli
                              r-checkmate
                              r-cdmconnector))
@@ -33810,13 +33791,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.9.9")
+    (version "0.9.91")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "0354a3yn56a6m4f0zf9hxv0cany3aivh4d265jh7b6zyk498h26y"))))
+        (base32 "0fmqmsjzhcvc66vp7ks8kmmk0gsgxz61z3j456q567gbwm6pa6ji"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-collapse))

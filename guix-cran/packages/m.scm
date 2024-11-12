@@ -19090,13 +19090,13 @@ performance.")
 (define-public r-mlmc
   (package
     (name "r-mlmc")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmc" version))
        (sha256
-        (base32 "1brfxfky2zlav2jp0azp4pzqqic5c0864sabkwg6glr09kkc1h52"))))
+        (base32 "0hmy9j75wra9sgjxqx1gn7p1nc938094lqar8zvdlf5391a67fni"))))
     (properties `((upstream-name . "mlmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -37841,13 +37841,13 @@ using Cliffâs delta, as described in Pham & Sokolova (2023)
 (define-public r-mbreaks
   (package
     (name "r-mbreaks")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mbreaks" version))
        (sha256
-        (base32 "1vnrn7f19j52jn707ps9mjz5p0rgcm7mmwbq585hf4c4mbyglrbz"))))
+        (base32 "0fy5m5vmhbjcz79qj3z42ag97dpspzldnkz42wsv0dl7kgmzcigk"))))
     (properties `((upstream-name . "mbreaks")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

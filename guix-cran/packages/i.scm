@@ -3782,28 +3782,6 @@ Applications include robust generalized linear models and robust accelerated
 failure time models.  Wang (2021) <doi:10.48550/@code{arXiv.2101.07718>}.")
     (license license:gpl3+)))
 
-(define-public r-irafnet
-  (package
-    (name "r-irafnet")
-    (version "1.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iRafNet" version))
-       (sha256
-        (base32 "0w9bry49apkrrrabglnv5w9l47jakmc30jh8q22a8gazwss293fb"))))
-    (properties `((upstream-name . "iRafNet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rocr))
-    (home-page "https://www.r-project.org")
-    (synopsis
-     "Integrative Random Forest for Gene Regulatory Network Inference")
-    (description
-     "This package provides a flexible integrative algorithm that allows information
-from prior data, such as protein protein interactions and gene knock-down, to be
-jointly considered for gene regulatory network inference.")
-    (license license:gpl2+)))
-
 (define-public r-iraceplot
   (package
     (name "r-iraceplot")
@@ -6803,34 +6781,6 @@ and paired samples and proportion difference.  Plot the confidence intervals.
 Generate documents explaining the statistical result step by step.")
     (license license:gpl3)))
 
-(define-public r-interpret
-  (package
-    (name "r-interpret")
-    (version "0.1.33")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "interpret" version))
-       (sha256
-        (base32 "17619lyfbvkssls5l3ymlvq72b2162w0n9r7xa5n8wjnnx8mlipz"))))
-    (properties `((upstream-name . "interpret")))
-    (build-system r-build-system)
-    (home-page "https://github.com/interpretml/interpret")
-    (synopsis "Fit Interpretable Machine Learning Models")
-    (description
-     "Package for training interpretable machine learning models.  Historically, the
-most interpretable machine learning models were not very accurate, and the most
-accurate models were not very interpretable.  Microsoft Research has developed
-an algorithm called the Explainable Boosting Machine (EBM) which has both high
-accuracy and interpretable characteristics.  EBM uses machine learning
-techniques like bagging and boosting to breathe new life into traditional GAMs
-(Generalized Additive Models).  This makes them as accurate as random forests
-and gradient boosted trees, and also enhances their intelligibility and
-editability.  Details on the EBM algorithm can be found in the paper by Rich
-Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
-(2015, <doi:10.1145/2783258.2788613>).")
-    (license license:expat)))
-
 (define-public r-interpolators
   (package
     (name "r-interpolators")
@@ -9421,13 +9371,13 @@ properties.")
 (define-public r-inferr
   (package
     (name "r-inferr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferr" version))
        (sha256
-        (base32 "1ma90f31jcd65l5v3wqbx4x61gw3iay1a2hwjsd5aln1ivbgmzsv"))))
+        (base32 "05rxccfa420dllj4kgb68gvpigcy9h14fsfvyxwyqaddn3016m4q"))))
     (properties `((upstream-name . "inferr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr r-data-table))
@@ -14000,6 +13950,32 @@ Instagram is a web photo sharing service.  It can be found at:
 <https://instagram.com/developer/>.")
     (license license:cc0)))
 
+(define-public r-ig-degree-betweenness
+  (package
+    (name "r-ig-degree-betweenness")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ig.degree.betweenness" version))
+       (sha256
+        (base32 "0h42476jir5xih6lmd63f53p233lihv4h2gfx5rms6vxfks2dm25"))))
+    (properties `((upstream-name . "ig.degree.betweenness")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlist r-qgraph r-igraphdata r-igraph r-bbmisc))
+    (home-page "https://github.com/benyamindsmith/ig.degree.betweenness")
+    (synopsis
+     "\"Smith-Pittman Community Detection Algorithm for 'igraph' Objects (2024)\"")
+    (description
+     "This package implements the \"Smith-Pittman\" community detection algorithm for
+network analysis using igraph objects.  This algorithm combines node degree and
+betweenness centrality measures to identify communities within networks, with a
+gradient evident in social partitioning.  The package provides functions for
+community detection, visualization, and analysis of the resulting community
+structure.  Methods are based on results from Smith, Pittman and Xu (2024)
+<doi:10.48550/@code{arXiv.2411.01394>}.")
+    (license license:expat)))
+
 (define-public r-ifs
   (package
     (name "r-ifs")
@@ -15919,28 +15895,6 @@ framework that accommodates sequentially administered, error-prone self-reports
 or laboratory based diagnostic tests.  The original Random Survival Forests
 algorithm is modified by the introduction of a new splitting criterion based on
 a likelihood ratio test statistic.")
-    (license license:gpl2+)))
-
-(define-public r-icrf
-  (package
-    (name "r-icrf")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "icrf" version))
-       (sha256
-        (base32 "1apd9klng8dhd9z9nzqzpx8i84rvpwgyam9mzyh8jk6vd49cgjaf"))))
-    (properties `((upstream-name . "icrf")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=icrf")
-    (synopsis "Interval Censored Recursive Forests")
-    (description
-     "This package implements interval censored recursive forests (ICRF) based on Cho,
-Jewell, and Kosorok (2021+).  ICRF is a variant of random forests where the
-outcome variable is interval censored survival data.  It can be used for usual
-right censored data and current status data as well.  A recursion technique is
-used to improve accuracy and smoothed survival curves are provided.")
     (license license:gpl2+)))
 
 (define-public r-icranks
