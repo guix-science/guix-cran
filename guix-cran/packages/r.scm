@@ -14202,6 +14202,30 @@ useful for mixture distributions too.  The output of this function is a real
 value as an exact draw from the posterior distribution.")
     (license license:expat)))
 
+(define-public r-rocean
+  (package
+    (name "r-rocean")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rOCEAN" version))
+       (sha256
+        (base32 "1vw3v9idc26sfbd14fl0vjg0svxqn4s6cj19klkn8qrigyixh3hh"))))
+    (properties `((upstream-name . "rOCEAN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ff))
+    (home-page "https://cran.r-project.org/package=rOCEAN")
+    (synopsis "Two-Way Feature Set Testing for Multi-Omics")
+    (description
+     "For any two way feature-set from a pair of pre-processed omics data, 3 different
+true discovery proportions (TDP), namely pairwise-TDP, column-TDP and row-TDP
+are calculated.  Due to embedded closed testing procedure, the choice of
+feature-sets can be changed infinite times and even after seeing the data
+without any change in type I error rate.  For more details refer to Ebrahimpoor
+et al., (2024) <doi:10.48550/@code{arXiv.2410.19523>}.")
+    (license license:gpl2+)))
+
 (define-public r-roccv
   (package
     (name "r-roccv")
@@ -24872,13 +24896,13 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "1rdq9gnmc2znlpq60n3sn8zpir3wfa2k2ds63pcw1v4w921dmz55"))))
+        (base32 "05k532mwvsm9kjid69xk6pp87bgfh1hrwzq6h4gp9aphbm97nys5"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-igraph r-ggplot2))
@@ -33529,13 +33553,13 @@ Additional guidance on the usage of the algorithm is given in Ammer et al.
 (define-public r-reffectivepred
   (package
     (name "r-reffectivepred")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REffectivePred" version))
        (sha256
-        (base32 "1ahaxwgbyfnq2gii24gg8kzhy5822v5hvdmsw2g7p9jndz7xrrkg"))))
+        (base32 "1gxiphrfmw76zvdvq8qqi1cd8n7ywyqrv0dxdx7gcm864a1af7nj"))))
     (properties `((upstream-name . "REffectivePred")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-yaml r-config))
@@ -33554,7 +33578,8 @@ curve to observed data.  The easiest way to pass arguments to the functions is
 via a config file, which contains input settings required for prediction, and
 the package offers two methods, navigate_to_config() which points the user to
 the configuration file, and re_predict() for starting the fit-predict process.
-Razvan G. Romanescu et al. (2023) <doi:10.1016/j.epidem.2023.100708>.")
+The main model was published in Razvan G. Romanescu et al.
+<doi:10.1016/j.epidem.2023.100708>.")
     (license license:gpl2+)))
 
 (define-public r-referenceintervals

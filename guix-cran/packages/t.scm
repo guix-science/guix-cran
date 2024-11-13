@@ -20201,6 +20201,40 @@ then offsets are computed to add to the y values for each curve, that results in
 sufficient space to add all of the text labels.")
     (license license:gpl2+)))
 
+(define-public r-textannotator
+  (package
+    (name "r-textannotator")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "textAnnotatoR" version))
+       (sha256
+        (base32 "113lmlww135gwv6l3230vfh8vgwfhiw96inlyanwwc13bhq331dk"))))
+    (properties `((upstream-name . "textAnnotatoR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinyjs
+                             r-shinyfiles
+                             r-shinydashboard
+                             r-shiny
+                             r-readtext
+                             r-magrittr
+                             r-jsonlite
+                             r-dt
+                             r-data-tree))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chaoliu-cl/textAnnotatoR")
+    (synopsis "Interactive Text Annotation Tool with 'shiny' GUI")
+    (description
+     "This package provides a comprehensive text annotation tool built with shiny'.
+Provides an interactive graphical user interface for coding text documents,
+managing code hierarchies, creating memos, and analyzing coding patterns.
+Features include code co-occurrence analysis, visualization of coding patterns,
+comparison of multiple coding sets, and export capabilities.  Supports
+collaborative qualitative research through standardized annotation formats and
+analysis tools.")
+    (license license:gpl3)))
+
 (define-public r-textab
   (package
     (name "r-textab")

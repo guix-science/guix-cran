@@ -11319,22 +11319,23 @@ computational companion to Bojanowski & Corten (2014)
 (define-public r-netseer
   (package
     (name "r-netseer")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netseer" version))
        (sha256
-        (base32 "0bqwiv7n396myk73rqycx1d4i0nak9gsrda5pxqzr0j82k62vkqx"))))
+        (base32 "1ivkd13w896sf3rdqrklxxabylm9rjp6hbygp51lgshv9mqvps5c"))))
     (properties `((upstream-name . "netseer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
-                             r-tidyr
                              r-tibble
                              r-rlang
                              r-matrix
                              r-lpsolve
                              r-igraph
+                             r-future
+                             r-forecast
                              r-fabletools
                              r-fable
                              r-dplyr))

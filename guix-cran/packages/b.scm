@@ -891,13 +891,13 @@ and visualization of process maps.  See also packages
 (define-public r-bundle
   (package
     (name "r-bundle")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bundle" version))
        (sha256
-        (base32 "1b3l14khp6fblb47sy9p5wh78izsbj1xjjj2r55hp2hcx2f1isjz"))))
+        (base32 "1q8wyzbgxhn0bsc5h2mr53kfk45019x6naxq591glrkv2m02m7ll"))))
     (properties `((upstream-name . "bundle")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rlang r-purrr r-glue))
@@ -5571,6 +5571,27 @@ the pm4py and @code{bupaRminer} packages.  Part of the @code{bupaR} ecosystem.")
 methylation Infinium 450K array data) without reference samples.")
     (license license:gpl2+)))
 
+(define-public r-bplsr
+  (package
+    (name "r-bplsr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bplsr" version))
+       (sha256
+        (base32 "17sbipby951l28hjvmyrs1ascxhb551n4llxw95sw4awzk10kc9b"))))
+    (properties `((upstream-name . "bplsr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod r-progress r-coda))
+    (home-page "https://cran.r-project.org/package=bplsr")
+    (synopsis "Bayesian partial least squares regression")
+    (description
+     "Fits the Bayesian partial least squares regression model introduced in Urbas et
+al. (2024) <doi:10.1214/24-AOAS1947>.  Suitable for univariate and multivariate
+regression with high-dimensional data.")
+    (license license:gpl3+)))
+
 (define-public r-bpgmm
   (package
     (name "r-bpgmm")
@@ -6944,19 +6965,20 @@ example of combining conditional prevalences.")
 (define-public r-bootcluster
   (package
     (name "r-bootcluster")
-    (version "0.3.2")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootcluster" version))
        (sha256
-        (base32 "0wkc9li0hqgns7pz72fby187q81yzrgl62qs8w5llayghf8lhaml"))))
+        (base32 "0f1zw39c4dr0j6clxg4iay0vd3jb9k2nm6rjkvx32pnvmhbdkhvn"))))
     (properties `((upstream-name . "bootcluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
                              r-plyr
                              r-network
                              r-mclust
+                             r-kernlab
                              r-intergraph
                              r-igraph
                              r-gridextra
@@ -6978,7 +7000,11 @@ of the non-parametric bootstrap approach to assessing the stability of module
 detection in a graph, the extension for the selection of a parameter set that
 defines a graph from data in a way that optimizes stability and the
 corresponding visualization functions, as introduced by Tian et al (2021)
-<doi:10.1002/sam.11495>.")
+<doi:10.1002/sam.11495>.  Implemented out-of-bag stability estimation function
+and k-select Smin-based k-selection function as introduced by Liu et al (2022)
+<doi:10.1002/sam.11593>.  Implemented ensemble clustering method based-on
+k-means clustering method, spectral clustering method and hierarchical
+clustering method.")
     (license license:gpl2)))
 
 (define-public r-boot-pval
@@ -7533,13 +7559,13 @@ Wood (2016b) <doi:10.1109/TNNLS.2015.2425898>.")
 (define-public r-bolstad
   (package
     (name "r-bolstad")
-    (version "0.2-41")
+    (version "0.2.42")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bolstad" version))
        (sha256
-        (base32 "0rrx254wmr4i57h097ahba151chm8l2287qfg01p1lg47znld21h"))))
+        (base32 "0ldy6w911lcf8z0rckdbsn9246wlwiq8mnmqiq2pb8j5is6rqvn9"))))
     (properties `((upstream-name . "Bolstad")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -16325,13 +16351,13 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.4")
+    (version "0.1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "0b29wcif75s35mi11cv413i0g1fsg27ax3cjrmpcpa37vnff73z2"))))
+        (base32 "0d5aaiwb0xayw7kr25klmjxrh1rzg967r9qlxzvkg260iryn8g0g"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcppprogress r-rcpp))
@@ -18603,13 +18629,13 @@ financial support.")
 (define-public r-beeca
   (package
     (name "r-beeca")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beeca" version))
        (sha256
-        (base32 "1q20chw6l690fjpyaagl8h12dzna2kjyfq3l676s3w65sba7gyh0"))))
+        (base32 "0alqfi8srm3vnljgpj4510zr0da1qb8aabl0x2nqwvg17pplhyrs"))))
     (properties `((upstream-name . "beeca")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-lifecycle r-dplyr))
@@ -23565,6 +23591,44 @@ with Bayesian length-at-age models\".  PLOS ONE 16(2): e0246734
      "Bayesian inferences on nonparametric regression via Gaussian Processes with a
 modified exponential square kernel using a basis expansion approach.")
     (license license:gpl2)))
+
+(define-public r-bayesgp
+  (package
+    (name "r-bayesgp")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesGP" version))
+       (sha256
+        (base32 "10nhb5dc5y2hkr06rvdddchanbglz2qvjzqsfvk1kxhxciy7bb0a"))))
+    (properties `((upstream-name . "BayesGP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmbstan
+                             r-tmb
+                             r-sfsmisc
+                             r-rstan
+                             r-rcppeigen
+                             r-numderiv
+                             r-matrix
+                             r-laplacesdemon
+                             r-fda
+                             r-aghq))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BayesGP")
+    (synopsis
+     "Efficient Implementation of Gaussian Process in Bayesian Hierarchical Models")
+    (description
+     "This package implements Bayesian hierarchical models with flexible Gaussian
+process priors, focusing on Extended Latent Gaussian Models and incorporating
+various Gaussian process priors for Bayesian smoothing.  Computations leverage
+finite element approximations and adaptive quadrature for efficient inference.
+Methods are detailed in Zhang, Stringer, Brown, and Stafford (2023)
+<doi:10.1177/09622802221134172>; Zhang, Stringer, Brown, and Stafford (2024)
+<doi:10.1080/10618600.2023.2289532>; Zhang, Brown, and Stafford (2023)
+<doi:10.48550/@code{arXiv.2305.09914>}; and Stringer, Brown, and Stafford (2021)
+<doi:10.1111/biom.13329>.")
+    (license license:gpl3+)))
 
 (define-public r-bayesgof
   (package

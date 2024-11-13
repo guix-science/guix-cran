@@ -29529,13 +29529,13 @@ level) tables in Latex, and plotting by factor.")
 (define-public r-pepbvs
   (package
     (name "r-pepbvs")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PEPBVS" version))
        (sha256
-        (base32 "1wsxrana0560qh2nh7n26kq6xr3s521y863k5q6l5zdnrazhpihw"))))
+        (base32 "1b8f096xw1580q6zn2gxz14nl92vhy7gyzvhlh2c4wm4xf7db0yy"))))
     (properties `((upstream-name . "PEPBVS")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -39518,13 +39518,13 @@ in web applications, and much more.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "0psm8y3x4ndcjppbxhgznvvv8rlgipabnklg13jkds05dzdlq316"))))
+        (base32 "1l2ybm7684hmw2jzxkl29vd9nkysn2v1k0zv2ggvzn9nz90s4cr3"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-sugrrants

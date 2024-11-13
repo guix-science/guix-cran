@@ -8567,13 +8567,13 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "173j68hc6wbr4893sfmjhp2lahkhzvsa058zgny03ryygi42c55v"))))
+        (base32 "1lgh0cyd5qpg4bzs1s6iwvfif7mwwjwxn3wjqhidpg6nhhiv1dga"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -8585,7 +8585,10 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
                              r-patientprofiles
                              r-omopgenerics
                              r-omock
+                             r-gt
                              r-ggplot2
+                             r-flextable
+                             r-duckdb
                              r-dplyr
                              r-cohortconstructor
                              r-cohortcharacteristics

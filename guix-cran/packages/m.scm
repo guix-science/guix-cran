@@ -14303,13 +14303,13 @@ downloads of MODIS time series directly to your R workspace or your computer.")
 (define-public r-modisfast
   (package
     (name "r-modisfast")
-    (version "0.9.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modisfast" version))
        (sha256
-        (base32 "1h3r5iwqrjzvfavsmvr6i5x2gvl76g44d712gnir9jl8sdhk0ynr"))))
+        (base32 "1shdhvc1bcfrmr8gxqx7qqphq0kj0lmc20sggq3bvs82yml77jda"))))
     (properties `((upstream-name . "modisfast")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -14322,7 +14322,8 @@ downloads of MODIS time series directly to your R workspace or your computer.")
                              r-lubridate
                              r-httr
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-cli))
     (home-page "https://github.com/ptaconet/modisfast")
     (synopsis "Fast and Efficient Access to MODIS Earth Observation Data")
     (description
@@ -23015,13 +23016,13 @@ Models with time dependent misclassification may also be fitted.")
 (define-public r-miscfuncs
   (package
     (name "r-miscfuncs")
-    (version "1.5-9")
+    (version "1.5-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miscFuncs" version))
        (sha256
-        (base32 "119im7av5skmqcyf1lsywbpq3kckka2z8kn5hgd9vkrjcj2qnnd7"))))
+        (base32 "1g0fz17da09rych0sxdbs660bpa1zjmigcw618ybwd1niyqjm0bi"))))
     (properties `((upstream-name . "miscFuncs")))
     (build-system r-build-system)
     (propagated-inputs (list r-roxygen2 r-mvtnorm r-extradistr))
@@ -38223,13 +38224,13 @@ ISBN:9781108644181).")
 (define-public r-mbc
   (package
     (name "r-mbc")
-    (version "0.10-6")
+    (version "0.10-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBC" version))
        (sha256
-        (base32 "1680lnzga21qk5yddrciiaifxkkb9kk744m9fbj0hg5xw6v9dxic"))))
+        (base32 "07k9y0k2h3jwip18szr5ivpm31jqv08czmpjvwpjdcz653qrmqbh"))))
     (properties `((upstream-name . "MBC")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-fnn r-energy))
@@ -42531,13 +42532,13 @@ regions were intervention is most duly needed.")
 (define-public r-maplegend
   (package
     (name "r-maplegend")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maplegend" version))
        (sha256
-        (base32 "1jngbampps5gn3xdy292466qq4nhx0k7c08mams84xmmb9jbq0h0"))))
+        (base32 "0phf116pf8hfs7di7hwjj7777wjzlw00hmn25ldkg7s8dbhsjhy6"))))
     (properties `((upstream-name . "maplegend")))
     (build-system r-build-system)
     (home-page "https://github.com/riatelab/maplegend/")

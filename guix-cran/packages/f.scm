@@ -7269,6 +7269,36 @@ total assessment process, and help foresters to further assess and management
 forest resources.")
     (license license:gpl2)))
 
+(define-public r-forestgym
+  (package
+    (name "r-forestgym")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestGYM" version))
+       (sha256
+        (base32 "11x6kmvlm4nnkdv57f6p4pcaq6sskiak3f29n87vjrblspbcm590"))))
+    (properties `((upstream-name . "forestGYM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gtools))
+    (home-page "https://cran.r-project.org/package=forestGYM")
+    (synopsis "Forest Growth and Yield Model Based on Clutter Model")
+    (description
+     "The Clutter model is a significant forest growth simulation tool.  Grounded on
+individual trees and comprehensively considering factors such as competition
+among trees and the impact of environmental elements on growth, it can
+accurately reflect the growth process of forest stands.  It can be applied in
+areas like forest resource management, harvesting planning, and ecological
+research.  With the help of the Clutter model, people can better understand the
+dynamic changes of forests and provide a scientific basis for rational forest
+management and protecting the ecological environment.  This R package can
+effectively realize the construction of forest growth and harvest models based
+on the Clutter model and achieve optimized forest management.References: Farias
+A, Soares C, Leite H et al(2021)<doi:10.1007/s10342-021-01380-1>.  Guera O,
+Silva J, Ferreira R, et al(2019)<doi:10.1590/2179-8087.038117>.")
+    (license license:gpl2)))
+
 (define-public r-forestgapr
   (package
     (name "r-forestgapr")
@@ -8581,13 +8611,13 @@ dependence\" <@code{arXiv:1910.12327>}.")
 (define-public r-fntl
   (package
     (name "r-fntl")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fntl" version))
        (sha256
-        (base32 "0rl7bx2mvjwnl1r53ja7v2nvdic5jssm8q4lvkp33l02krjfjsmi"))))
+        (base32 "183j435bfx4k5vb7iplkf7544lm0mr00vy26bv4b6fc2jfixa4bx"))))
     (properties `((upstream-name . "fntl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -12650,13 +12680,13 @@ visualization.")
 (define-public r-fishresp
   (package
     (name "r-fishresp")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FishResp" version))
        (sha256
-        (base32 "16my9pyzxyz3l087hq2r60fm08rgah3pg4arlqrwk1nn423cbr5v"))))
+        (base32 "1vgpv8jr9j6mj7qxd8glj6b6yrdk8qny06c07grq8mfzkr93s9k1"))))
     (properties `((upstream-name . "FishResp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmr r-respirometry r-mclust r-lattice r-chron))
@@ -19426,6 +19456,34 @@ paper \"A comparison of event models for Naive Bayes anti-spam e-mail filtering\
 written by K.M. Schneider (2003) <doi:10.3115/1067807.1067848>.  Any issues can
 be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
     (license license:gpl3)))
+
+(define-public r-fastml
+  (package
+    (name "r-fastml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastml" version))
+       (sha256
+        (base32 "0py8xwi41vp9030481i7iqgmzsrmbaqyhq61hpk8hj1cqdyasv4i"))))
+    (properties `((upstream-name . "fastml")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2
+                             r-proc
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=fastml")
+    (synopsis "Fast Machine Learning Model Training and Evaluation")
+    (description
+     "Streamlines the training, evaluation, and comparison of multiple machine
+learning models with minimal code by providing comprehensive data preprocessing
+and support for a wide range of algorithms with hyperparameter tuning.  It
+offers performance metrics and visualization tools to facilitate efficient and
+effective machine learning workflows.")
+    (license license:gpl2+)))
 
 (define-public r-fastmit
   (package

@@ -3331,6 +3331,37 @@ domain from a variety of prominent services, provides passive DNS information,
 among other things.  See <http://www.virustotal.com> for more information.")
     (license license:expat)))
 
+(define-public r-virusparies
+  (package
+    (name "r-virusparies")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Virusparies" version))
+       (sha256
+        (base32 "0n7am416gyxk0akbpabcw2x4skqqa3jj4vd3j7zrhbhhq8qfd8fx"))))
+    (properties `((upstream-name . "Virusparies")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-gt
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-chromote))
+    (home-page "https://github.com/SergejRuff/Virusparies")
+    (synopsis "Visualize and Process Output from 'VirusHunterGatherer'")
+    (description
+     "This package provides a collection of tools for downstream analysis of
+@code{VirusHunterGatherer} output.  Processing of hittables and plotting of
+results, enabling better interpretation, is made easier with the provided
+functions.")
+    (license license:gpl3+)))
+
 (define-public r-virtuoso
   (package
     (name "r-virtuoso")

@@ -43212,13 +43212,13 @@ resulting metrics.")
 (define-public r-shinylive
   (package
     (name "r-shinylive")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinylive" version))
        (sha256
-        (base32 "16r3fbzgv9qjdr08cdazddjxanliymi2mhlx56p0bdrn10miiyp9"))))
+        (base32 "1pzv8c1vhdff6r39ig6xxqhf22kcldp1vsbk3jv1y6ppqs8mvs3f"))))
     (properties `((upstream-name . "shinylive")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -47107,6 +47107,30 @@ Francisco data portal (@code{DataSF})
 of classes and functions that enable a seamless interaction between the network
 analysis package tidygraph and the spatial analysis package sf'.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-sfm
+  (package
+    (name "r-sfm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SFM" version))
+       (sha256
+        (base32 "1szs75bn808z17853kibjsvr39kfc5pdlfd2b826qnh0qmgh5wxk"))))
+    (properties `((upstream-name . "SFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sopc r-sn r-matrixcalc r-mass))
+    (home-page "https://cran.r-project.org/package=SFM")
+    (synopsis "Package for Analyzing Skew Factor Models")
+    (description
+     "Generates Skew Factor Models data and applies Sparse Online Principal Component
+(SOPC) method to estimate model parameters.  It includes capabilities for
+calculating mean squared error, relative error, and sparsity of the loading
+matrix.  Additionally, it includes robust regression methods such as adaptive
+Huber regression.The philosophy of the package is described in Guo G. (2023)
+<doi:10.1007/s00180-022-01270-z>.")
+    (license license:expat)))
 
 (define-public r-sfislands
   (package

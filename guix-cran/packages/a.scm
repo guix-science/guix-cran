@@ -20348,13 +20348,13 @@ complete re-implementation of the functions available in the ade4 package.")
 (define-public r-adea
   (package
     (name "r-adea")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adea" version))
        (sha256
-        (base32 "0wjklmd1r5vhp32syn9dpn5j05y9nfb0c8cnrdc2xcdsi8dzdkap"))))
+        (base32 "0n5n9wbc46iksa66pbw1lxh4yyhgprqgy3l4cs6p406swiyyn32a"))))
     (properties `((upstream-name . "adea")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam
@@ -20368,7 +20368,7 @@ complete re-implementation of the functions available in the ade4 package.")
                              r-knitr
                              r-combinat))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=adea")
+    (home-page "http://knuth.uca.es/dea/")
     (synopsis "Alternate DEA Package")
     (description
      "The meaning of adea is \"alternate DEA\".  This package is devoted to provide the

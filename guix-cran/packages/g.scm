@@ -5190,17 +5190,19 @@ differential equations.  This is an extension to the greta software, Golding
 (define-public r-greta
   (package
     (name "r-greta")
-    (version "0.4.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greta" version))
        (sha256
-        (base32 "0ky2d0i2s768na50940b733rr1fmmbpkdw1a8r21wbr5h43n8xf2"))))
+        (base32 "01cpa5125h0a9hxqrccfbsxkqvv8y4bdw0fgn43gyfgns90g3g8h"))))
     (properties `((upstream-name . "greta")))
     (build-system r-build-system)
     (propagated-inputs (list r-yesno
+                             r-whisker
                              r-tensorflow
+                             r-rlang
                              r-reticulate
                              r-r6
                              r-progress
@@ -14147,13 +14149,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "1rfz56fidblzf4pixj0a2szkzi8fnr6zanhk05qggmwb6g6nfpmf"))))
+        (base32 "1wh5vz2vy1b1fqqjz20mdv9fckdxx1076bs4a74lddjn4q7m6xif"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -14168,12 +14170,12 @@ that all targets remain up to date.")
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://r-world-devs.github.io/GitStats/")
-    (synopsis "Get Statistics from 'GitHub' and 'GitLab'")
+    (synopsis "Standardized Git Repository Data")
     (description
-     "Obtain statistics in a standardized way from multiple Git services:
-@code{GitHub} and @code{GitLab} for the time-being.  Its main purpose is to help
-teams, whose activities are spread across multiple git platforms, get their
-repository metadata in a standardized way from all these platforms.")
+     "Obtain standardized data from multiple Git services, including @code{GitHub} and
+@code{GitLab}'.  Designed to be Git service-agnostic, this package assists teams
+with activities spread across various Git platforms by providing a unified way
+to access repository data.")
     (license license:expat)))
 
 (define-public r-gitr
@@ -16576,13 +16578,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "07cjqaxn1p45qb3xhyhya6lnf3rmfc1kf2lb1cdqi633phkxi6zl"))))
+        (base32 "096wqinvvv7mr15nk5ymvk6qkbnv833m3yiz9kv06b4gnzfl5m2i"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -26111,13 +26113,13 @@ design for GWAS studies.")
 (define-public r-genenmf
   (package
     (name "r-genenmf")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneNMF" version))
        (sha256
-        (base32 "1szmkfijy84dl0zbr08cw7likqmziwm85dhvhzqvhybd17g9ahlj"))))
+        (base32 "1955d39fbqnqp7j2878v7qd4wm9pjp315mgigsk3g4pnivgml2a4"))))
     (properties `((upstream-name . "GeneNMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -26127,6 +26129,7 @@ design for GWAS studies.")
                              r-matrix
                              r-lsa
                              r-irlba
+                             r-dendextend
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/carmonalab/GeneNMF")
@@ -27142,13 +27145,13 @@ variance corrections.")
 (define-public r-geeverse
   (package
     (name "r-geeverse")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeVerse" version))
        (sha256
-        (base32 "04hfw7y3bfgngiv5cahx3hckfl1i83x2vjc5vabqqk2nq400c4x5"))))
+        (base32 "1z3lfi9n7jrnh62wjhkmy1xqaxw3xmfm69djw0wgbd9l3k4n2lpd"))))
     (properties `((upstream-name . "geeVerse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen

@@ -15098,13 +15098,13 @@ processing for reading and saving DICOM images.")
 (define-public r-diceview
   (package
     (name "r-diceview")
-    (version "2.2-0")
+    (version "3.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiceView" version))
        (sha256
-        (base32 "1a7jlj7nmj41zfmpb54iwi8c9g44d376cc353ybr8dq8vkyq0vss"))))
+        (base32 "1zrb3n3jd072am52whfm2ahrgvjwhgaadj2alxn39r1c5i3a4my1"))))
     (properties `((upstream-name . "DiceView")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d r-r-cache r-geometry r-foreach

@@ -12471,25 +12471,24 @@ provided as well.")
 (define-public r-learnnonparam
   (package
     (name "r-learnnonparam")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LearnNonparam" version))
        (sha256
-        (base32 "0b9w04yj4sr3im990flb21vhcjrja9npqcigp7rmywambjzhjkxg"))))
+        (base32 "03barm0d2q5b82gc02g29zh7rcp7wkgr2dznmqf30y476wn7ylr0"))))
     (properties `((upstream-name . "LearnNonparam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6))
     (home-page "https://github.com/qddyy/LearnNonparam")
-    (synopsis "R6-Based Flexible Framework for Permutation Tests")
+    (synopsis "'R6'-Based Flexible Framework for Permutation Tests")
     (description
      "This package implements non-parametric tests from Higgins (2004,
-ISBN:0534387756), including tests for one-sample, two-sample, k-sample, paired,
-randomized complete block design, correlation and contingency tables.  Built
-with Rcpp for efficiency and R6 for flexible, object-oriented design, the
-package provides a unified framework for performing or creating custom
-permutation tests.")
+ISBN:0534387756), including tests for one sample, two samples, k samples, paired
+comparisons, blocked designs, trends and association.  Built with Rcpp for
+efficiency and R6 for flexible, object-oriented design, the package provides a
+unified framework for performing or creating custom permutation tests.")
     (license license:gpl2+)))
 
 (define-public r-learningtower
@@ -16697,40 +16696,42 @@ on Torch'.")
 (define-public r-lama
   (package
     (name "r-lama")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LaMa" version))
        (sha256
-        (base32 "02s13hpkw9h123wmcgawypqrskd0ivciwabv9djw9l66yk79rjix"))))
+        (base32 "0142z6h2vnw1crkx5lvgx5qwm8qngms74l3n5vqbgj9b1raxx1kx"))))
     (properties `((upstream-name . "LaMa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mgcv))
+    (propagated-inputs (list r-rtmb
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-circular
+                             r-circstats))
     (native-inputs (list r-knitr))
-    (home-page "https://janoleko.github.io/software/")
+    (home-page "https://janoleko.github.io/LaMa/")
     (synopsis
      "Fast Numerical Maximum Likelihood Estimation for Latent Markov Models")
     (description
-     "The class of latent Markov models, including hidden Markov models, hidden
-semi-Markov models, state space models, and point processes, is a very popular
-and powerful framework for inference of time series driven by latent processes.
-Furthermore, all these models can be fitted using direct numerical maximum
-likelihood estimation using the so-called forward algorithm as discussed in
-Zucchini et al. (2016) <doi:10.1201/b20790>.  However, due to their great
-flexibility, researchers using these models in applied work often need to build
-highly customized models for which standard software implementation is lacking,
-or the construction of such models in said software is as complicated as writing
-fully tailored R code.  While providing greater flexibility and control, the
-latter suffers from slow estimation speeds that make custom solutions
-inconvenient.  We address the above issues in two ways.  First, standard blocks
-of code, common to all these model classes, are implemented as simple-to-use
-functions that can be added like Lego blocks to an otherwise fully custom
-likelihood function, making writing custom code much easier.  Second, under the
-hood, these functions are written in C++', allowing for 10-20 times faster
-evaluation time, and thus drastically speeding up model estimation.  To aid in
-building fully custom likelihood functions, several vignettes are included that
-show how to simulate data from and estimate all the above model classes.")
+     "This package provides a variety of latent Markov models, including hidden Markov
+models, hidden semi-Markov models, state-space models and continuous-time
+variants can be formulated and estimated within the same framework via directly
+maximising the likelihood function using the so-called forward algorithm.
+Applied researchers often need custom models that standard software does not
+easily support.  Writing tailored R code offers flexibility but suffers from
+slow estimation speeds.  We address these issues by providing easy-to-use
+functions (written in C++ for speed) for common tasks like the forward
+algorithm.  These functions can be combined into custom models in a Lego-type
+approach, offering up to 10-20 times faster estimation via standard numerical
+optimisers.  To aid in building fully custom likelihood functions, several
+vignettes are included that show how to simulate data from and estimate all the
+above model classes.")
     (license license:gpl3)))
 
 (define-public r-lam

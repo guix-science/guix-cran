@@ -1679,13 +1679,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "0blsv9qi9gfzmldkmqnwi191iagqmya56j7l3ybmka1lpi4vmnni"))))
+        (base32 "1p8g85nv29lr8ncih7mh6x43xcahh1fb7y43b7kywgg85i2w257z"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -20768,20 +20768,21 @@ Gravity method.  It supports replicated observations.  Cameron, D.G., et al
 (define-public r-ecfun
   (package
     (name "r-ecfun")
-    (version "0.3-2")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ecfun" version))
        (sha256
-        (base32 "1q0mx70hy18rabpabxghaixkb3r1432cxln844cac4dqxhvzcqgy"))))
+        (base32 "0651vbb040y17sizh927vq4jfidpxilmwdgkhmr7z8p24yb588rc"))))
     (properties `((upstream-name . "Ecfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tis
-                             r-teachingdemos
                              r-stringi
+                             r-rworldmap
                              r-rvest
+                             r-readr
                              r-mvtnorm
                              r-mass
                              r-jpeg

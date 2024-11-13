@@ -8271,13 +8271,13 @@ Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
 (define-public r-cppdoubles
   (package
     (name "r-cppdoubles")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cppdoubles" version))
        (sha256
-        (base32 "1m5d4lwji6yrbzb68m61zkrkchj9mv7m0sdqg2vnxzr5799whckh"))))
+        (base32 "0f4fdq24gamr1vl92mnganx6q4hjr7sv0riwqzn9hhhjh9g9lpvs"))))
     (properties `((upstream-name . "cppdoubles")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -17201,13 +17201,13 @@ Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-condor
   (package
     (name "r-condor")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "condor" version))
        (sha256
-        (base32 "0v8crlg5pjqa2d37pb6744srn60cqzcih2100y3xh2a7wjml2d4w"))))
+        (base32 "0aix4v1ninz4hk3qwdgpicr3l94sa2n0rzcj4p4ld9mcwahxf5bk"))))
     (properties `((upstream-name . "condor")))
     (build-system r-build-system)
     (inputs (list))
@@ -31194,6 +31194,38 @@ learner.  For more details, see the paper by Hu et al.
 <doi:10.1177/0962280220921909>.")
     (license license:expat)))
 
+(define-public r-cimple
+  (package
+    (name "r-cimple")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CIMPLE" version))
+       (sha256
+        (base32 "0dd3p7p8zqyxvrwdy8yb15fgixi84k89wxbfcnjygcxws3a8kvjj"))))
+    (properties `((upstream-name . "CIMPLE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-statmod
+                             r-nlme
+                             r-nleqslv
+                             r-mice
+                             r-lme4
+                             r-jmbayes2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=CIMPLE")
+    (synopsis
+     "Analysis of Longitudinal Electronic Health Record (EHR) Data with Possibly Informative Observational Time")
+    (description
+     "Analyzes longitudinal Electronic Health Record (EHR) data with possibly
+informative observational time.  These methods are grouped into two classes
+depending on the inferential task.  One group focuses on estimating the effect
+of an exposure on a longitudinal biomarker while the other group assesses the
+impact of a longitudinal biomarker on time-to-diagnosis outcomes.  The
+accompanying paper is Du et al (2024) <doi:10.48550/@code{arXiv.2410.13113>}.")
+    (license license:gpl3+)))
+
 (define-public r-cimir
   (package
     (name "r-cimir")
@@ -32274,13 +32306,13 @@ thermodynamic properties of proteins.")
 (define-public r-chngpt
   (package
     (name "r-chngpt")
-    (version "2023.11-29")
+    (version "2024.11-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chngpt" version))
        (sha256
-        (base32 "1zz0wgard6a1y36r78pfp5gqfjm12xlvh5cmdq3297m4d7jvrn34"))))
+        (base32 "0svjrdliv0i2903nz8ai1zhvxgrrfg4rpxjpc05y46fzz18kvw41"))))
     (properties `((upstream-name . "chngpt")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
