@@ -11410,13 +11410,13 @@ implemented.")
 (define-public r-disprity
   (package
     (name "r-disprity")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dispRity" version))
        (sha256
-        (base32 "0hng3g5mq75b7rvdypnz816xahbfa4fgyi2n6drxma258qskyd68"))))
+        (base32 "1di9n7jsbd7kdn0bidyadn6nxlh4c6dilqn163g0z45rhffjrflf"))))
     (properties `((upstream-name . "dispRity")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -11568,13 +11568,13 @@ implementation of the algorithm supports both directed and undirected networks."
 (define-public r-disordr
   (package
     (name "r-disordr")
-    (version "0.9-8.2")
+    (version "0.9-8-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disordR" version))
        (sha256
-        (base32 "07ydnyifqdsan0kp74mlxaviwj4ccnsh77z36gsh2cpyhda2la8d"))))
+        (base32 "00c9glxzabcprnzh60qq9zsjp3psm4a09s5psn9jl9720ckjngcp"))))
     (properties `((upstream-name . "disordR")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-digest))
@@ -11582,12 +11582,11 @@ implementation of the algorithm supports both directed and undirected networks."
     (home-page "https://github.com/RobinHankin/disordR")
     (synopsis "Non-Ordered Vectors")
     (description
-     "Functionality for manipulating values of associative maps.  The package is
-designed to be used with the mvp class of packages that use the STL map class:
-its purpose is to trap plausible idiom that is ill-defined
-(implementation-specific) and return an informative error, rather than returning
-a possibly incorrect result.  To cite the package in publications please use
-Hankin (2022) <doi:10.48550/ARXIV.2210.03856>.")
+     "Functionality for manipulating values of associative maps.  The package is a
+dependency for mvp-type packages that use the STL map class: it traps plausible
+idiom that is ill-defined (implementation-specific) and returns an informative
+error, rather than returning a possibly incorrect result.  To cite the package
+in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.03856>.")
     (license license:gpl2+)))
 
 (define-public r-disk-frame
@@ -28023,13 +28022,13 @@ al. (2015) <doi:10.1111/ele.12461>.")
 (define-public r-dair
   (package
     (name "r-dair")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daiR" version))
        (sha256
-        (base32 "110car64pgpg71dcqnbkj91md0xwikpmd6iy90nj84nglycc5v00"))))
+        (base32 "1l62qlnn6xkdkqazxkx6qzv4wp3rw3pi6l6f6y6b1n2k9vz4b5za"))))
     (properties `((upstream-name . "daiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

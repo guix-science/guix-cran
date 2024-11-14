@@ -2500,13 +2500,13 @@ but without notable impact on computing speed.")
 (define-public r-bspcov
   (package
     (name "r-bspcov")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspcov" version))
        (sha256
-        (base32 "1zxdcqydhzisfp2bkvw585z3qfcpy0yjra91qyxwdf0lvdvqwbqx"))))
+        (base32 "15dgkn1m3wrdci98qrrx0hr8c2lbn7p124gjp45mgwkjn9rgi2qb"))))
     (properties `((upstream-name . "bspcov")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -4140,6 +4140,42 @@ The conditional and marginal regression coefficients are a scalar multiple of
 each other.  Such is not the case if the random intercept distribution was
 Gaussian.")
     (license license:gpl2+)))
+
+(define-public r-brickster
+  (package
+    (name "r-brickster")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brickster" version))
+       (sha256
+        (base32 "0xglzh73vyfwfvd4k2dwrp06ynxxxfak6aqk4gsv2y3jy4qrz451"))))
+    (properties `((upstream-name . "brickster")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-reticulate
+                             r-r6
+                             r-purrr
+                             r-jsonlite
+                             r-ini
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-curl
+                             r-cli
+                             r-base64enc
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/databrickslabs/brickster")
+    (synopsis "R Toolkit for 'Databricks'")
+    (description
+     "Collection of utilities that improve using Databricks from R. Primarily
+functions that wrap specific Databricks APIs
+(<https://docs.databricks.com/api>), RStudio connection pane support, quality of
+life functions to make Databricks simpler to use.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-brickset
   (package
@@ -11425,13 +11461,13 @@ biplots.")
 (define-public r-biplotez
   (package
     (name "r-biplotez")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biplotEZ" version))
        (sha256
-        (base32 "195hccdark20b0gmddm7nnx63nk4bpdvds2vjv3g44pxq5nhfna4"))))
+        (base32 "0cpp0b898qlzpkf50ggd8g5lz7hswibvc9kqqgavncw6n5rqzkpk"))))
     (properties `((upstream-name . "biplotEZ")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-plotrix))
@@ -23044,13 +23080,13 @@ of specific algorithms.")
 (define-public r-bayesianvars
   (package
     (name "r-bayesianvars")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesianVARs" version))
        (sha256
-        (base32 "1c9m45b6szcxy1igi0vs9gpnxyn23a6s376zhl3m72c7x5ghyhz6"))))
+        (base32 "0q4kvw1z529yi1vjb69qj4d69chgvq6c1dfrmhyvmpx0n6igrppj"))))
     (properties `((upstream-name . "bayesianVARs")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol

@@ -13153,17 +13153,17 @@ create symbols to plot on maps.")
 (define-public r-leafgl
   (package
     (name "r-leafgl")
-    (version "0.1.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leafgl" version))
        (sha256
-        (base32 "042jps6zh4xr0xj19a7fbgrcb6q6gsw2q5f191lyskr8iajdrz1h"))))
+        (base32 "12l9aa97jp1hhqfnp7700za85x2n0r34b4878cnj2hg4k6r3vs19"))))
     (properties `((upstream-name . "leafgl")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-leaflet r-jsonify r-htmltools r-geojsonsf))
-    (home-page "https://cran.r-project.org/package=leafgl")
+    (home-page "https://github.com/r-spatial/leafgl")
     (synopsis "High-Performance 'WebGl' Rendering for Package 'leaflet'")
     (description
      "This package provides bindings to the Leaflet.glify @code{JavaScript} library
@@ -16696,13 +16696,13 @@ on Torch'.")
 (define-public r-lama
   (package
     (name "r-lama")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LaMa" version))
        (sha256
-        (base32 "0142z6h2vnw1crkx5lvgx5qwm8qngms74l3n5vqbgj9b1raxx1kx"))))
+        (base32 "0wghjfys68dlgcmm6q03a3rd60xcrwps7j3vv27f4w4w6k7sxb8x"))))
     (properties `((upstream-name . "LaMa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtmb

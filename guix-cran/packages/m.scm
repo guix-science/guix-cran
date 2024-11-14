@@ -2107,13 +2107,13 @@ facilitate the model interpretation.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "0kwzqcxy4dxkfy5l44ilzld72ghizch27a5an9prql76kwpm1235"))))
+        (base32 "17jlzf5dhfnwbn8p8q8k600xs9wvfcfvg1pcyx0fqmiifhx4ml4c"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2134,13 +2134,13 @@ multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "0618n5rmhjza9cw8mnlkiqw8cli3bf62vp3hld9byr4pr4x2ww8n"))))
+        (base32 "1sppa448hfwblssagacp9vc2kff4zdk74b8c7g0k61k8awf48p5y"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -11034,13 +11034,13 @@ representations of multidimensional data sets.")
 (define-public r-movmf
   (package
     (name "r-movmf")
-    (version "0.2-8")
+    (version "0.2-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movMF" version))
        (sha256
-        (base32 "1rxi0qk5lg4nyhsbmpdkfj9ygnhx8zdkamb6s5hyjgw5z6lm6ni6"))))
+        (base32 "06k5hz7zkn78591349m8xzsrasqgv0da363b3ahbc3gamki3r2kx"))))
     (properties `((upstream-name . "movMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-skmeans r-clue))
@@ -36928,13 +36928,13 @@ detailed description, see Meila, M. (2005) <doi:10.1145/1102351.1102424>.")
 (define-public r-mclustaddons
   (package
     (name "r-mclustaddons")
-    (version "0.9")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mclustAddons" version))
        (sha256
-        (base32 "0vj84i1lrk6kxz1ymi164mb2hkjga6kydi6d0vb4c269kr7gi38j"))))
+        (base32 "1h68l64xjbn94scxlwiv0lzv3wvh06hzi7vb74v5vni1gk4dpdr6"))))
     (properties `((upstream-name . "mclustAddons")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown
@@ -36956,7 +36956,8 @@ modeling by including: density estimation for data with bounded support
 (Scrucca, 2019 <doi:10.1002/bimj.201800174>); modal clustering using MEM (Modal
 EM) algorithm for Gaussian mixtures (Scrucca, 2021 <doi:10.1002/sam.11527>);
 entropy estimation via Gaussian mixture modeling (Robin & Scrucca, 2023
-<doi:10.1016/j.csda.2022.107582>).")
+<doi:10.1016/j.csda.2022.107582>); Gaussian mixtures modeling of financial
+log-returns (Scrucca, 2024 <doi:10.3390/e26110907>).")
     (license license:gpl2+)))
 
 (define-public r-mclm
@@ -40171,13 +40172,13 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.5.5")
+    (version "4.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchIt" version))
        (sha256
-        (base32 "17l5b6i4bmg3gjjhzagy451zcv2i5xj4j6zzxgiqf955sgywlfdf"))))
+        (base32 "05d8ms2q26jyis7i5jzh67y5wdf2hma81syg3np0mxmjninwfxvs"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcppprogress r-rcpp r-chk r-backports))
@@ -41261,13 +41262,13 @@ described in Zempleni et al. (2004) <doi:10.1002/asmb.521>, Dobi and Zempleni
 (define-public r-markovchain
   (package
     (name "r-markovchain")
-    (version "0.9.5")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markovchain" version))
        (sha256
-        (base32 "0z67i4j676gwvxyf1gw73x7jib7jm5jgyzqvami47mfvc3b2dygf"))))
+        (base32 "0lrvyd9m2i3bva6m7r2x905jrjkxd9xsaqin2v2w55a7ndr4zm7v"))))
     (properties `((upstream-name . "markovchain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -41285,8 +41286,7 @@ time Markov chains more easily.  In addition functions to perform statistical
 (fitting and drawing random variates) and probabilistic (analysis of their
 structural proprieties) analysis are provided.  See Spedicato (2017)
 <doi:10.32614/RJ-2017-036>.  Some functions for continuous times Markov chains
-depends on the suggested ctmcd package, that, as May 2023, can be retrieved from
-<https://cran.r-project.org/src/contrib/Archive/ctmcd/ctmcd_1.4.2.tar.gz>.")
+depend on the suggested ctmcd package.")
     (license license:expat)))
 
 (define-public r-markophylo

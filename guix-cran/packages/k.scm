@@ -3673,13 +3673,13 @@ application <https://keser-mental-health.parse-health.org/> based on Hong C.
 (define-public r-kgrams
   (package
     (name "r-kgrams")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kgrams" version))
        (sha256
-        (base32 "09py3p85ffa03m3xjvwscz4w61k1yxkxqy96im06509bx51qha0q"))))
+        (base32 "0783im4bj2jxpvicy5kvg05pmaiyr5nwhjfdswdnh3mpdzm4jx7b"))))
     (properties `((upstream-name . "kgrams")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rdpack r-rcppprogress r-rcpp))

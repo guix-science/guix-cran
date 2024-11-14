@@ -20162,13 +20162,13 @@ labeled text data sets for classification and analysis.")
 (define-public r-textcat
   (package
     (name "r-textcat")
-    (version "1.0-8")
+    (version "1.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textcat" version))
        (sha256
-        (base32 "17kl76m6065ci84p4ii7fxhwg1fckwf8690m71w9rbkbax3h2rfb"))))
+        (base32 "1pr5fyhwgkf4yqkgqid8pk3rq3b3xlc8h45a7phz3fggw0nzixnw"))))
     (properties `((upstream-name . "textcat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tau r-slam))

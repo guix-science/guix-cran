@@ -10948,13 +10948,13 @@ parameter space.")
 (define-public r-sticsrfiles
   (package
     (name "r-sticsrfiles")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SticsRFiles" version))
        (sha256
-        (base32 "1afn65z2pz99k3a1fq8w9jjy05bvsdy7p8f829iap1jaahnbz14m"))))
+        (base32 "0aw1crzji95dik556q29kxrjph80x2gx6ba1rm47l9301k6scj1k"))))
     (properties `((upstream-name . "SticsRFiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt
@@ -34084,13 +34084,13 @@ testing sample.")
 (define-public r-skmeans
   (package
     (name "r-skmeans")
-    (version "0.2-17")
+    (version "0.2-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skmeans" version))
        (sha256
-        (base32 "0686i48xpcis3m4352lhygff15j5dvd91f7q7dfkkbsnasl17ivw"))))
+        (base32 "1ilrz24yp7w7jc1683brmfzsvskakms2l02hwmqj9c24cvp9h7y6"))))
     (properties `((upstream-name . "skmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-cluster r-clue))
@@ -41715,6 +41715,73 @@ applicability.  And deploy as a part of a package or an independent app.")
 applications.  Give your applications a unique and colorful style !")
     (license license:gpl3)))
 
+(define-public r-shinywgd
+  (package
+    (name "r-shinywgd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyWGD" version))
+       (sha256
+        (base32 "1kpqq413pxkkbabbnpgrvy37z739avp41wrhll30yn2zw5gqss2m"))))
+    (properties `((upstream-name . "shinyWGD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (inputs (list pandoc pandoc))
+    (propagated-inputs (list r-vroom
+                             r-tidyr
+                             r-stringr
+                             r-shinyalert
+                             r-shiny
+                             r-seqinr
+                             r-mclust
+                             r-ks
+                             r-jsonlite
+                             r-httr
+                             r-htmltools
+                             r-fs
+                             r-dplyr
+                             r-data-table
+                             r-ape))
+    (native-inputs (list esbuild))
+    (home-page "https://cran.r-project.org/package=shinyWGD")
+    (synopsis "'Shiny' Application for Whole Genome Duplication Analysis")
+    (description
+     "This package provides a comprehensive Shiny application for analyzing Whole
+Genome Duplication ('WGD') events.  This package provides a user-friendly Shiny
+web application for non-experienced researchers to prepare input data and
+execute command lines for several well-known WGD analysis tools, including wgd',
+ksrates', i-AD@code{HoRe}', @code{OrthoFinder}', and Whale'.  This package also
+provides the source code for experienced researchers to adjust and install the
+package to their own server.  Key Features 1) Input Data Preparation This
+package allows users to conveniently upload and format their data, making it
+compatible with various WGD analysis tools.  2) Command Line Generation This
+package automatically generates the necessary command lines for selected WGD
+analysis tools, reducing manual errors and saving time.  3) Visualization This
+package offers interactive visualizations to explore and interpret WGD results,
+facilitating in-depth WGD analysis.  4) Comparative Genomics Users can study and
+compare WGD events across different species, aiding in evolutionary and
+comparative genomics studies.  5) User-Friendly Interface This Shiny web
+application provides an intuitive and accessible interface, making WGD analysis
+accessible to researchers and bioinformaticians of all levels.")
+    (license license:gpl3)))
+
 (define-public r-shinyvalidate
   (package
     (name "r-shinyvalidate")
@@ -48424,13 +48491,13 @@ Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
 (define-public r-seqimpute
   (package
     (name "r-seqimpute")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqimpute" version))
        (sha256
-        (base32 "1g60drnx12j6wzkisxlmhidvqzzgsrmmmmp8dljq94bb5iv8xjmz"))))
+        (base32 "0acagq51d2fs6sf59xxlvfkf3f6qbaki9mgylfrdyfsxjjj42bc1"))))
     (properties `((upstream-name . "seqimpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminerextras
@@ -48450,7 +48517,7 @@ Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
                              r-cluster
                              r-amelia))
     (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=seqimpute")
+    (home-page "https://github.com/emerykevin/seqimpute")
     (synopsis "Imputation of Missing Data in Sequence Analysis")
     (description
      "Multiple imputation of missing data present in a dataset through the prediction
@@ -50892,13 +50959,13 @@ proximity values between pairs of observations.")
 (define-public r-semaphore
   (package
     (name "r-semaphore")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semaphore" version))
        (sha256
-        (base32 "157csk2ivmxhmf90gigycgfgr08kjxa7rdnn56r858z1vqqn2p4p"))))
+        (base32 "1rkm0q7zvw9vz3gwy2h4yaz9mf50zxp8rgv0f3mlwwi5jabl6x01"))))
     (properties `((upstream-name . "semaphore")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))

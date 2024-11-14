@@ -20161,6 +20161,33 @@ plot_mix_comps function, usage most often will be specifying the \"fun\" argumen
 within \"stat_function\" in a ggplot2 object.")
     (license license:expat)))
 
+(define-public r-plotftir
+  (package
+    (name "r-plotftir")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PlotFTIR" version))
+       (sha256
+        (base32 "0wqkc11fks99nx391xigvzqciwsskzrhx3dj7j5yz0bqf7s461ww"))))
+    (properties `((upstream-name . "PlotFTIR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rlang r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NRCan/PlotFTIR")
+    (synopsis "Plot FTIR Spectra")
+    (description
+     "The goal of @code{PlotFTIR} is to easily and quickly kick-start the production
+of journal-quality Fourier Transform Infra-Red (FTIR) spectral plots in R using
+ggplot2'.  The produced plots can be published directly or further modified by
+ggplot2 functions.  L'objectif de @code{PlotFTIR} est de dÃ©marrer facilement et
+rapidement la production des tracÃ©s spectraux de spectroscopie infrarouge Ã 
+transformÃ©e de Fourier (IRTF) de qualitÃ© journal dans R Ã  l'aide de ggplot2'.
+ Les tracÃ©s produits peuvent Ãªtre publiÃ©s directement ou modifiÃ©s davantage
+par les fonctions ggplot2'.")
+    (license license:gpl3+)))
+
 (define-public r-plotdk
   (package
     (name "r-plotdk")
@@ -20845,13 +20872,13 @@ plots, information plots, and comparison plots for examining parameter drift.")
 (define-public r-plindleyroc
   (package
     (name "r-plindleyroc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLindleyROC" version))
        (sha256
-        (base32 "09skjwl71p8374h48mqdgwlbqivgjalgbf69nfqaz7p0cifal6lc"))))
+        (base32 "1djxgxipja4r4y5md2c0c6sqnnlp5ci5d4c8j61g4mv2jc3fys6m"))))
     (properties `((upstream-name . "PLindleyROC")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -24850,6 +24877,28 @@ metrics particularly to detect binary trait influence on diversification, as
 well as a function to simulate trees with fixed number of sampled taxa and trait
 prevalence.")
     (license license:gpl2+)))
+
+(define-public r-phylolm-hp
+  (package
+    (name "r-phylolm-hp")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phylolm.hp" version))
+       (sha256
+        (base32 "1kwda9pbl863fvnimlwvp432sn6apnc7nh5jsxq8xsb18g5ww5r2"))))
+    (properties `((upstream-name . "phylolm.hp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan r-rr2 r-phylolm r-ggplot2))
+    (home-page "https://github.com/laijiangshan/phylolm.hp")
+    (synopsis
+     "Hierarchical Partitioning of R2 for Phylogenetic Linear Regression")
+    (description
+     "Conducts hierarchical partitioning to calculate individual contributions of
+phylogenetic tree and predictors towards total R2 for phylogenetic linear
+regression models.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-phylolm
   (package
@@ -29481,6 +29530,45 @@ implemented model can be found in Demarqui et al. (2008)
 <doi:10.1007/s10985-008-9086-0>.")
     (license license:gpl2+)))
 
+(define-public r-pepmapviz
+  (package
+    (name "r-pepmapviz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PepMapViz" version))
+       (sha256
+        (base32 "0akn8m97ngs5bhnvs6qwhg2sjwfwhcbd5q4yqns6r6h0dfzq4248"))))
+    (properties `((upstream-name . "PepMapViz")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggh4x
+                             r-ggforce
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PepMapViz")
+    (synopsis
+     "Versatile Toolkit for Peptide Mapping, Visualization, and Comparative Exploration")
+    (description
+     "This package provides a versatile R visualization package that empowers
+researchers with comprehensive visualization tools for seamlessly mapping
+peptides to protein sequences, identifying distinct domains and regions of
+interest, accentuating mutations, and highlighting post-translational
+modifications, all while enabling comparisons across diverse experimental
+conditions.  Potential applications of @code{PepMapViz} include the
+visualization of cross-software mass spectrometry results at the peptide level
+for specific protein and domain details in a linearized format and
+post-translational modification coverage across different experimental
+conditions; unraveling insights into disease mechanisms.  It also enables
+visualization of major histocompatibility complex-presented peptides in
+different antibody regions predicting immunogenicity in antibody drug
+development.")
+    (license license:expat)))
+
 (define-public r-peperr
   (package
     (name "r-peperr")
@@ -30341,13 +30429,13 @@ estimate.")
 (define-public r-peerperformance
   (package
     (name "r-peerperformance")
-    (version "2.2.5")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeerPerformance" version))
        (sha256
-        (base32 "0cdv7ndbjxzaayxkrxh99jsyivlipbnipv21d4rmf8j8ssfq74r5"))))
+        (base32 "1mk7iylmzb1rr8vdxckkv0q2sm11qmransh17g53na0ihxbb42kj"))))
     (properties `((upstream-name . "PeerPerformance")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-lmtest))
@@ -33840,13 +33928,13 @@ elimination of heterogeneity.  R. C. Bose and K. R. Nair (1939)
 (define-public r-pbdslap
   (package
     (name "r-pbdslap")
-    (version "0.3-6")
+    (version "0.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pbdSLAP" version))
        (sha256
-        (base32 "02cgwzb8nssql4azbif3cnmxf9wbdz2zy4g6yb29rvzw1gwg7ffl"))))
+        (base32 "1cdrd7cvrmd9jw32m988hbc5dhn7n2lrifn9l5v54g77h42v43ch"))))
     (properties `((upstream-name . "pbdSLAP")))
     (build-system r-build-system)
     (inputs (list))

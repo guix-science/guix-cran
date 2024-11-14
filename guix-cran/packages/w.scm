@@ -1752,13 +1752,13 @@ Atmospheric Administration (NOAA) Integrated Surface Database (ISD).")
 (define-public r-worldmapr
   (package
     (name "r-worldmapr")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WorldMapR" version))
        (sha256
-        (base32 "01mfwmd99pfbxii3nbzi83jfr7141f5i7mn52jngh3m8i2zksvdr"))))
+        (base32 "10j9xnkr9hr666njna8m0id846vw8q8rqp2qk2lzbykvcldj91ir"))))
     (properties `((upstream-name . "WorldMapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -5401,19 +5401,24 @@ bounds to existing plots are supported.")
 (define-public r-weibullr-shiny
   (package
     (name "r-weibullr-shiny")
-    (version "0.2.1")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.shiny" version))
        (sha256
-        (base32 "0p4vsc153x96w73bg9s0bcnfnk70qmfi9n2d57vcw0z4ppm1gdr4"))))
+        (base32 "1iadi0gzbyj359kbn9ycv4l3jzbrn2wfas7412hgbh51ahhkqblh"))))
     (properties `((upstream-name . "WeibullR.shiny")))
     (build-system r-build-system)
-    (propagated-inputs (list r-weibullr-plotly r-weibullr r-shinydashboard
-                             r-shiny))
+    (propagated-inputs (list r-weibullr-plotly
+                             r-weibullr
+                             r-shinywidgets
+                             r-shinydashboard
+                             r-shiny
+                             r-reliagrowr
+                             r-magrittr))
     (home-page "https://paulgovan.github.io/WeibullR.shiny/")
-    (synopsis "'Shiny' App for Weibull Analysis from 'WeibullR'")
+    (synopsis "'Shiny' App for Weibull Analysis")
     (description
      "This package provides a Shiny web application for life data analysis that
 depends on @code{WeibullR} by David Silkworth and Jurgen Symynck (2022)

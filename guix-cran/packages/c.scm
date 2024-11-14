@@ -13,9 +13,9 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages check)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -8288,6 +8288,30 @@ Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
 equality operations are calculated using cpp11'.")
     (license license:expat)))
 
+(define-public r-cppcontainers
+  (package
+    (name "r-cppcontainers")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cppcontainers" version))
+       (sha256
+        (base32 "05wi4vws0yk3qglc5rywr8fwcy8fnajq44zik38vkk83z63jds84"))))
+    (properties `((upstream-name . "cppcontainers")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cdueben/cppcontainers")
+    (synopsis "'C++' Standard Template Library Containers")
+    (description
+     "Use C++ Standard Template Library containers interactively in R. Includes sets,
+unordered sets, multisets, unordered multisets, maps, unordered maps, multimaps,
+unordered multimaps, stacks, queues, priority queues, vectors, deques, forward
+lists, and lists.")
+    (license license:expat)))
+
 (define-public r-cppcheckr
   (package
     (name "r-cppcheckr")
@@ -10344,6 +10368,31 @@ Inspiration thanks to:
 attributes like Foliage Cover and Leaf Area Index.  Detailed description of the
 methods in Chianucci et al. (2022) <doi:10.1007/s00468-018-1666-3>.")
     (license license:expat)))
+
+(define-public r-cover
+  (package
+    (name "r-cover")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "COveR" version))
+       (sha256
+        (base32 "1didrpz284xdsq55j8sfg6ibx1g4k9m3dgfvx1798hgcr0n44hn0"))))
+    (properties `((upstream-name . "COveR")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (home-page "https://cran.r-project.org/package=COveR")
+    (synopsis "Clustering with Overlaps")
+    (description
+     "Provide functions for overlaps clustering, fuzzy clustering and interval-valued
+data manipulation.  The package implement the following algorithms: OKM
+(Overlapping Kmeans) from Cleuziou, G. (2007) <doi:10.1109/icpr.2008.4761079> ;
+NEOKM (Non-exhaustive overlapping Kmeans) from Whang, J. J., Dhillon, I. S., and
+Gleich, D. F. (2015) <doi:10.1137/1.9781611974010.105> ; Fuzzy Cmeans from
+Bezdek, J. C. (1981) <doi:10.1007/978-1-4757-0450-1> ; Fuzzy I-Cmeans from de
+A.T. De Carvalho, F. (2005) <doi:10.1016/j.patrec.2006.08.014>.")
+    (license license:gpl2+)))
 
 (define-public r-covequal
   (package
@@ -31598,6 +31647,39 @@ isotopic abundances with the associated uncertainties using multivariate
 meta-regression approach for consensus building.")
     (license (license:fsdg-compatible "Unlimited"))))
 
+(define-public r-cia
+  (package
+    (name "r-cia")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cia" version))
+       (sha256
+        (base32 "17w1hx3rbbil2zkcgx4c20pjsqw51i297xnnkhr1db5zg6cqqvff"))))
+    (properties `((upstream-name . "cia")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-patchwork
+                             r-igraph
+                             r-grain
+                             r-foreach
+                             r-fastmatch
+                             r-dplyr
+                             r-doparallel
+                             r-bnlearn
+                             r-arrangements))
+    (home-page "https://spaceodyssey.github.io/cia/")
+    (synopsis "Learn and Apply Directed Acyclic Graphs for Causal Inference")
+    (description
+     "Causal Inference Assistance (CIA) for performing causal inference within the
+structural causal modelling framework.  Structure learning is performed using
+partition Markov chain Monte Carlo (Kuipers & Moffa, 2017) and several
+additional functions have been added to help with causal inference.  Kuipers and
+Moffa (2017) <doi:10.1080/01621459.2015.1133426>.")
+    (license license:expat)))
+
 (define-public r-chyper
   (package
     (name "r-chyper")
@@ -37289,13 +37371,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "1ma5hjldcnsw6h007s1yyzv5iix8z8vz5yfxx5g3z74kwlpa4jjy"))))
+        (base32 "15395b3kf5ns238ijd4m6kdhqf9a87lf3gjicz96zm0b83zrkk4n"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -38600,6 +38682,34 @@ information, see Lee, Glaze, Bradlow, and Kable
 browsed and downloaded.  The client uses the open data API of Statistics
 Netherlands.")
     (license license:gpl2)))
+
+(define-public r-cbrt
+  (package
+    (name "r-cbrt")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CBRT" version))
+       (sha256
+        (base32 "1jrb71ri2am3pa8cy78ddliysrzi1m7yf5zsic8xaxisdh5yg8ch"))))
+    (properties `((upstream-name . "CBRT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/etaymaz/CBRT")
+    (synopsis "CBRT Data on Turkish Economy")
+    (description
+     "The Central Bank of the Republic of Turkey (CBRT) provides one of the most
+comprehensive time series databases on the Turkish economy.  The CBRT package
+provides functions for accessing the CBRT's electronic data delivery system
+<https://evds2.tcmb.gov.tr/>.  It contains the lists of all data categories and
+data groups for searching the available variables (data series).  As of November
+3, 2024, there were 40,826 variables in the dataset.  The lists of data
+categories and data groups can be updated by the user at any time.  A specific
+variable, a group of variables, or all variables in a data group can be
+downloaded at different frequencies using a variety of aggregation methods.")
+    (license license:gpl3)))
 
 (define-public r-cbq
   (package

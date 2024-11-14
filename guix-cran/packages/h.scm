@@ -4975,6 +4975,37 @@ algorithms as the population engines.  References: J. Sawicki, M. ÅoÅ, M.
 SmoÅka, J. Alvarez-Aramberri (2022) <doi:10.1007/s11047-020-09836-w>.")
     (license license:expat)))
 
+(define-public r-hmsidwr
+  (package
+    (name "r-hmsidwr")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmsidwR" version))
+       (sha256
+        (base32 "067hkf1brnspvzldjibbi0xq1xyczijga9srp8x0231g2ry6v700"))))
+    (properties `((upstream-name . "hmsidwR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-sysfonts
+                             r-showtext
+                             r-purrr
+                             r-gstat
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Fgazzelloni/hmsidwR")
+    (synopsis "Health Metrics and the Spread of Infectious Diseases")
+    (description
+     "This package provides a collection of datasets and supporting functions
+accompanying Health Metrics and the Spread of Infectious Diseases by Federica
+Gazzelloni (2024).  This package provides data for health metrics calculations,
+including Disability-Adjusted Life Years (DALYs), Years of Life Lost (YLLs), and
+Years Lived with Disability (YLDs), as well as additional tools for analyzing
+and visualizing health data.  Federica Gazzelloni (2024)
+<doi:10.5281/zenodo.10818338>.")
+    (license license:expat)))
+
 (define-public r-hmsc
   (package
     (name "r-hmsc")
@@ -13018,13 +13049,13 @@ different writers.")
 (define-public r-handwriterapp
   (package
     (name "r-handwriterapp")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriterApp" version))
        (sha256
-        (base32 "1b5pszazz03lv6fvj6fkczdsmv0ykmk8s80119wdwmg8vd53k79r"))))
+        (base32 "19b5vki2l9hj8s20bymfcjjiliflk31qxhg91x9yd3b9ri1fiz65"))))
     (properties `((upstream-name . "handwriterApp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13036,7 +13067,9 @@ different writers.")
                              r-rmarkdown
                              r-magrittr
                              r-magick
+                             r-handwriterrf
                              r-handwriter
+                             r-ggplot2
                              r-dplyr
                              r-bslib))
     (home-page "https://github.com/CSAFE-ISU/handwriterApp")

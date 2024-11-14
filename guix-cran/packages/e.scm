@@ -18716,41 +18716,6 @@ side length of a Durfee square <https://en.wikipedia.org/wiki/Durfee_square>.")
 Collection and Processing\" course.")
     (license license:expat)))
 
-(define-public r-edcimport
-  (package
-    (name "r-edcimport")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EDCimport" version))
-       (sha256
-        (base32 "0q1ivywbv4wjpjv1ya4kc07kxkz4qi2ljid353fgdbp0imy1g2sz"))))
-    (properties `((upstream-name . "EDCimport")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-lifecycle
-                             r-haven
-                             r-glue
-                             r-ggplot2
-                             r-fs
-                             r-forcats
-                             r-dplyr
-                             r-cli))
-    (home-page "https://github.com/DanChaltiel/EDCimport")
-    (synopsis "Import Data from EDC Software")
-    (description
-     "This package provides a convenient toolbox to import data exported from
-Electronic Data Capture (EDC) software @code{TrialMaster}'.")
-    (license license:gpl3)))
-
 (define-public r-eda4treer
   (package
     (name "r-eda4treer")

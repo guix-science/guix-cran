@@ -13281,13 +13281,13 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
 (define-public r-amadeus
   (package
     (name "r-amadeus")
-    (version "1.1.3")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amadeus" version))
        (sha256
-        (base32 "0a72hnc63c1six8wp89pcvb8knr41nk2hib8cnhfbfvinxp6gwfp"))))
+        (base32 "09r0zx7l9x2g8cm1bpfk504yzdh96qqp0phygz0l3lwls17lz49p"))))
     (properties `((upstream-name . "amadeus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13319,11 +13319,11 @@ with large scale, publicly available environmental data in R. The package
 contains functions for downloading raw data files from web URLs
 (download_data()), processing the raw data files into clean spatial objects
 (process_covariates()), and extracting values from the spatial data objects at
-point and polygon locations (calc_covariates()).  These functions call a series
-of source-specific functions which are tailored to each data sources/datasets
-particular URL structure, data format, and spatial/temporal resolution.  The
-functions are tested, versioned, and open source and open access.  For
-calc_sedc() method details, see Messier, Akita, and Serre (2012)
+point and polygon locations (calculate_covariates()).  These functions call a
+series of source-specific functions which are tailored to each data
+sources/datasets particular URL structure, data format, and spatial/temporal
+resolution.  The functions are tested, versioned, and open source and open
+access.  For sum_edc() method details, see Messier, Akita, and Serre (2012)
 <doi:10.1021/es203152a>.")
     (license license:expat)))
 
@@ -15031,15 +15031,16 @@ age-structured population dynamics models described in Erguler and others (2016)
 (define-public r-albi
   (package
     (name "r-albi")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aLBI" version))
        (sha256
-        (base32 "03xh0m6nn81sig20p3k24zx131fmi9q5wqx2d4qjlx0wzrmf36px"))))
+        (base32 "0gp19brxr59w2zf7cqk3397h33m6qwkcfa41vlj2rbzym1yvhsrk"))))
     (properties `((upstream-name . "aLBI")))
     (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ataher76/aLBI")
     (synopsis "Estimating Length-Based Indicators for Fish Stock")
@@ -15049,20 +15050,26 @@ frequency data to assess fish stock status and manage fisheries sustainably.
 Implements methods from Cope and Punt (2009) <doi:10.1577/C08-025.1> for
 data-limited stock assessment and Froese (2004)
 <doi:10.1111/j.1467-2979.2004.00144.x> for detecting overfishing using simple
-indicators.  Key functions include: @code{CalPar}(): Calculates various lengths
-used in fish stock assessment as biological length indicators such as asymptotic
-length (Linf), maximum length (Lmax), length at sexual maturity (Lm), and
-optimal length (Lopt). @code{FishPar}(): Calculates length-based indicators
-(LBIs) proposed by Froese (2004) <doi:10.1111/j.1467-2979.2004.00144.x> such as
-the percentage of mature fish (Pmat), percentage of optimal length fish (Popt),
-percentage of mega spawners (Pmega), and the sum of these as Pobj.  This
-function also estimates confidence intervals for different lengths, visualizes
-length frequency distributions, and provides data frames containing calculated
-values. @code{FishSS}(): Makes decisions based on input from Cope and Punt
-(2009) <doi:10.1577/C08-025.1> and parameters calculated by @code{FishPar}()
-(e.g., Pobj, Pmat, Popt, LM_ratio) to determine stock status as target spawning
-biomass (TSB40) and limit spawning biomass (LSB25).  These tools support
-fisheries management decisions by providing robust, data-driven insights.")
+indicators.  Key functions include: @code{FrequencyTable}(): Calculate the
+frequency table from the collected and also the extract the length frequency
+data from the frequency table with the upper length_range.  A numeric value
+specifying the bin width for class intervals.  If not provided, the bin width is
+automatically calculated using Sturges (1926)
+<doi:10.1080/01621459.1926.10502161> formula. @code{CalPar}(): Calculates
+various lengths used in fish stock assessment as biological length indicators
+such as asymptotic length (Linf), maximum length (Lmax), length at sexual
+maturity (Lm), and optimal length (Lopt). @code{FishPar}(): Calculates
+length-based indicators (LBIs) proposed by Froese (2004)
+<doi:10.1111/j.1467-2979.2004.00144.x> such as the percentage of mature fish
+(Pmat), percentage of optimal length fish (Popt), percentage of mega spawners
+(Pmega), and the sum of these as Pobj.  This function also estimates confidence
+intervals for different lengths, visualizes length frequency distributions, and
+provides data frames containing calculated values. @code{FishSS}(): Makes
+decisions based on input from Cope and Punt (2009) <doi:10.1577/C08-025.1> and
+parameters calculated by @code{FishPar}() (e.g., Pobj, Pmat, Popt, LM_ratio) to
+determine stock status as target spawning biomass (TSB40) and limit spawning
+biomass (LSB25).  These tools support fisheries management decisions by
+providing robust, data-driven insights.")
     (license license:gpl3)))
 
 (define-public r-albatross
@@ -15931,13 +15938,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "0vd8sbqn4kk815pxwhrnrn0c7h0j4413ja5y8y9hfhk2fxjjphy7"))))
+        (base32 "0d3mv42v2i1xj93la35ld8dp14x3f29n00z4zq3sibsk2dyr4lic"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))

@@ -624,13 +624,13 @@ CDISC compliance.")
 (define-public r-xplortext
   (package
     (name "r-xplortext")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Xplortext" version))
        (sha256
-        (base32 "0s7kv7dycjprjgdgq3p9ipw31sm1i5ci4hnwhw71p01nfq5smi5p"))))
+        (base32 "0j7a603c5240fc16fmjyzrgjgrxay0mn1bam7ikwfw7g0bmah4s0"))))
     (properties `((upstream-name . "Xplortext")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

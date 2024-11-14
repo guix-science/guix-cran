@@ -5143,16 +5143,16 @@ traditional methods are also implemented, as described in Yang, Knoke (2001)
 (define-public r-greta-gp
   (package
     (name "r-greta-gp")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greta.gp" version))
        (sha256
-        (base32 "0r33lbg9zjgq4pkzllr9vadfk8jm24avf68dnhm1n5j5ahzpc242"))))
+        (base32 "0mfz958yinhnddai9k3hsg2zb20b1v8csxxfw2q3fgfqz7p2y3i1"))))
     (properties `((upstream-name . "greta.gp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tensorflow r-greta r-glue r-cli))
+    (propagated-inputs (list r-tensorflow r-rlang r-greta r-glue r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/greta-dev/greta.gp")
     (synopsis "Gaussian Process Modelling in 'greta'")
@@ -16315,13 +16315,13 @@ draw the scatter plot.")
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
-    (version "0.3.13")
+    (version "0.3.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggspectra" version))
        (sha256
-        (base32 "08kvym2h07093jfnc12ivr04275931qrczvfqyrsfp718s8nwnn7"))))
+        (base32 "0yxy06aa6w9hyjk4p6y7d72ypx3kzkj8zak2wbld4avlc457341m"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -18681,18 +18681,18 @@ spaces.")
 (define-public r-gginnards
   (package
     (name "r-gginnards")
-    (version "0.2.0")
+    (version "0.2.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gginnards" version))
        (sha256
-        (base32 "0xhnn0kcmlggyx50dv4avhs4ngfnya2m928dqpix8km4c3y140qg"))))
+        (base32 "062xdhq8pgbvwl8zy7kzfgdgzfaf4zd3bnw8l4201xcl3nq6v9l3"))))
     (properties `((upstream-name . "gginnards")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr r-rlang r-magrittr r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://www.r4photobiology.info")
+    (home-page "https://docs.r4photobiology.info/gginnards/")
     (synopsis "Explore the Innards of 'ggplot2' Objects")
     (description
      "Extensions to ggplot2 providing low-level debug tools: statistics and geometries
@@ -24619,17 +24619,17 @@ untruncated Gaussian graphical models from Lin et al. (2016)
 (define-public r-genridge
   (package
     (name "r-genridge")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genridge" version))
        (sha256
-        (base32 "1f7yvq3g1bgxkkbklklfirk4nqiyh6csvygfbp3z57zywrbp1019"))))
+        (base32 "0fjd1j9vsl2gn33791x92rfcrncg7yz32mdy3wb0dfbi51ic837d"))))
     (properties `((upstream-name . "genridge")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-car))
-    (home-page "https://friendly.github.io/genridge/")
+    (propagated-inputs (list r-rgl r-colorspace r-car))
+    (home-page "https://github.com/friendly/genridge")
     (synopsis "Generalized Ridge Trace Plots for Ridge Regression")
     (description
      "The genridge package introduces generalizations of the standard univariate ridge

@@ -8520,50 +8520,6 @@ functions.  See the ompr website <https://dirkschumacher.github.io/ompr/> for
 more information, documentation and examples.")
     (license license:expat)))
 
-(define-public r-omopviewer
-  (package
-    (name "r-omopviewer")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OmopViewer" version))
-       (sha256
-        (base32 "1g9jjg5gqsq7zwk094z5nzfgf6icpnasjdjjnky4l14cfwy5ykca"))))
-    (properties `((upstream-name . "OmopViewer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-yaml
-                             r-visomopresults
-                             r-vctrs
-                             r-usethis
-                             r-tidyr
-                             r-styler
-                             r-stringr
-                             r-snakecase
-                             r-shiny
-                             r-rlang
-                             r-purrr
-                             r-omopgenerics
-                             r-markdown
-                             r-glue
-                             r-dt
-                             r-dplyr
-                             r-cli
-                             r-bslib))
-    (native-inputs (list r-knitr))
-    (home-page "https://ohdsi.github.io/OmopViewer/")
-    (synopsis "Visualise OMOP Results using 'shiny' Applications")
-    (description
-     "Visualise results obtained from analysing data mapped to the Observational
-Medical Outcomes Partnership (OMOP) common data model using shiny applications.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
@@ -9355,13 +9311,13 @@ Kumam, P., Khan, D.M., Khalil, U., Sulaiman, M. and Khan, Z. (2020)
 (define-public r-ojsr
   (package
     (name "r-ojsr")
-    (version "0.1.2")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ojsr" version))
        (sha256
-        (base32 "0nwdws9kqnya9qjc939b7ksrf7ri6d25zzcdxhyhabirhnrqdg7m"))))
+        (base32 "0jmz9zmzbaass3l8w5gvcg2ywa2mwmz7ngq5xb11in8gckbpn7cs"))))
     (properties `((upstream-name . "ojsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -9369,11 +9325,12 @@ Kumam, P., Khan, D.M., Khalil, U., Sulaiman, M. and Khan, Z. (2020)
                              r-tidyr
                              r-rvest
                              r-rlang
+                             r-rcurl
                              r-purrr
                              r-magrittr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ojsr")
+    (home-page "https://github.com/gastonbecerra/ojsr")
     (synopsis "Crawler and Data Scraper for Open Journal System ('OJS')")
     (description
      "Crawler for OJS pages and scraper for meta-data from articles.  You can crawl
@@ -12059,13 +12016,13 @@ transmission and processing, making it effortless to interact with the
 (define-public r-oaiharvester
   (package
     (name "r-oaiharvester")
-    (version "0.3-4")
+    (version "0.3-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OAIHarvester" version))
        (sha256
-        (base32 "0b5v275w0c7y073fgwiy966djrw6p1zggzqlywa2fsdn2p0aq56w"))))
+        (base32 "0758pi2rwyxlg3dldfbz2lg7a0w5zsn61ixr2psc4hb2d6niyb25"))))
     (properties `((upstream-name . "OAIHarvester")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-curl))

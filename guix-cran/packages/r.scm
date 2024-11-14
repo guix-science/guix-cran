@@ -39114,6 +39114,35 @@ analysis application.  For details see Khalil and Fakir (2017)
 <DOI:10.1016/j.softx.2017.04.004>.")
     (license license:gpl2+)))
 
+(define-public r-rcprd
+  (package
+    (name "r-rcprd")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcprd" version))
+       (sha256
+        (base32 "0l1j85pkbkpivh811b6rf6q1ji9ddvm1gw10bx0gfhw3bmfwxdaj"))))
+    (properties `((upstream-name . "rcprd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rsqlite r-fastmatch r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://alexpate30.github.io/rcprd/")
+    (synopsis
+     "Extraction and Management of Clinical Practice Research Datalink Data")
+    (description
+     "Simplify the process of extracting and processing Clinical Practice Research
+Datalink (CPRD) data in order to build datasets ready for statistical analysis.
+This process is difficult in R', as the raw data is very large and cannot be
+read into the R workspace.  rcprd utilises RSQLite to create SQLite databases
+which are stored on the hard disk.  These are then queried to extract the
+required information for a cohort of interest, and create datasets ready for
+statistical analysis.  The processes follow closely that from the @code{rEHR}
+package, see Springate et al., (2017) <doi:10.1371/journal.pone.0171784>.")
+    (license license:expat)))
+
 (define-public r-rcppxts
   (package
     (name "r-rcppxts")
@@ -40580,6 +40609,27 @@ within the Global Talent Mentoring platform.
      "Get your data (forms, structures, answers) from Coletum <https://coletum.com> to
 handle and analyse.")
     (license license:lgpl3)))
+
+(define-public r-rcognito
+  (package
+    (name "r-rcognito")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RCognito" version))
+       (sha256
+        (base32 "0b8mhclwp5lx948nlglnx5h5hdykixs1fz6big5liz88218phxg4"))))
+    (properties `((upstream-name . "RCognito")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-paws))
+    (home-page "https://cran.r-project.org/package=RCognito")
+    (synopsis "Simplified Interface for 'Amazon Cognito'")
+    (description
+     "Simplifies integration with Amazon Cognito (<https://aws.amazon.com/cognito/>)
+for R developers, enabling easy management of user authentication, registration,
+and password flows.")
+    (license license:expat)))
 
 (define-public r-rcoder
   (package
