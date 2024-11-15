@@ -7076,13 +7076,13 @@ values of a moderator.")
 (define-public r-interfacer
   (package
     (name "r-interfacer")
-    (version "0.2.3")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interfacer" version))
        (sha256
-        (base32 "0ymmm5ij5q8jg1la1k7wfdhb8p8c6kzwf6jqcsa86snz3ssmlrvm"))))
+        (base32 "1jbcjny61n5wql1igxz0l75pi47wdzykl9dmlxnvqsscf9qhmkfn"))))
     (properties `((upstream-name . "interfacer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16129,42 +16129,6 @@ regression which sparse coefficients.  This package allows incorporating the
 Ising prior to capture structure of predictors in the modeling process.  More
 information can be found in the papers listed in the URL below.")
     (license license:gpl2+)))
-
-(define-public r-iclustervb
-  (package
-    (name "r-iclustervb")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iClusterVB" version))
-       (sha256
-        (base32 "0iwlxz1xcfziqigkr2lkcdmk1zdg09pkbxy0vxh26nyn2gz3nf4w"))))
-    (properties `((upstream-name . "iClusterVB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-varsellcm
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r-utils
-                             r-polca
-                             r-pheatmap
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-mclust
-                             r-ggplot2
-                             r-cowplot
-                             r-clustmixtype
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AbdalkarimA/iClusterVB")
-    (synopsis
-     "Fast Integrative Clustering and Feature Selection for High Dimensional Data")
-    (description
-     "This package provides a variational Bayesian approach for fast integrative
-clustering and feature selection, facilitating the analysis of multi-view, mixed
-type, high-dimensional datasets with applications in fields like cancer
-research, genomics, and more.")
-    (license license:expat)))
 
 (define-public r-iclick
   (package

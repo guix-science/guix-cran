@@ -12703,6 +12703,34 @@ methods, amongst them prominently the TOST procedure (two one-sided t-tests).
 See README and NEWS for further information.")
     (license license:gpl2+)))
 
+(define-public r-powertools
+  (package
+    (name "r-powertools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "powertools" version))
+       (sha256
+        (base32 "1i7k44ds3x8dc8kzihhvwr6ziqrjay3nxkc3c2cz3hrm9lkfj17c"))))
+    (properties `((upstream-name . "powertools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-powertost r-mvtnorm r-knitr r-hmisc))
+    (home-page "https://github.com/powerandsamplesize/powertools")
+    (synopsis "Power and Sample Size Tools")
+    (description
+     "Power and sample size calculations for a variety of study designs and outcomes.
+Methods include t tests, ANOVA (including tests for interactions, simple effects
+and contrasts), proportions, categorical data (chi-square tests and proportional
+odds), linear, logistic and Poisson regression, alternative and coprimary
+endpoints, power for confidence intervals, correlation coefficient tests,
+cluster randomized trials, individually randomized group treatment trials,
+multisite trials, treatment-by-covariate interaction effects and nonparametric
+tests of location.  Utilities are provided for computing various effect sizes.
+Companion package to the book \"Power and Sample Size in R\", Crespi (2025,
+ISBN:9781138591622).")
+    (license license:expat)))
+
 (define-public r-powersurvepi
   (package
     (name "r-powersurvepi")
@@ -24367,13 +24395,13 @@ analyses that phylogenetic biologists might find useful in their research.")
 (define-public r-phytoclass
   (package
     (name "r-phytoclass")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phytoclass" version))
        (sha256
-        (base32 "12b1xmzwcp90km4irjsrnks44b1rd82p8yn9cn4m6hsaiq6mb45c"))))
+        (base32 "17yd1ns6mvk8kr60jp818hnfivfag6qmgf9jkgvp37fya4k2x287"))))
     (properties `((upstream-name . "phytoclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24384,7 +24412,7 @@ analyses that phylogenetic biologists might find useful in their research.")
                              r-dplyr
                              r-bestnormalize))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/AndyMcKenzieFromNZ/phytoclass")
+    (home-page "https://github.com/phytoclass/phytoclass/")
     (synopsis "Estimate Chla Concentrations of Phytoplankton Groups")
     (description
      "Determine the chlorophyll a (Chl a) concentrations of different phytoplankton
@@ -28689,6 +28717,31 @@ regression models.")
 prediction error estimation with minimal programming effort and assist users
 with model selection in regression problems.")
     (license license:gpl2+)))
+
+(define-public r-perregmod
+  (package
+    (name "r-perregmod")
+    (version "4.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PerRegMod" version))
+       (sha256
+        (base32 "1ky5c94sk4faarf1fjw449b27lwg98xpdwr0bilb9ah1k1vnklnd"))))
+    (properties `((upstream-name . "PerRegMod")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sn r-readxl r-expm))
+    (home-page "https://doi.org/10.1080/03610918.2024.2314662")
+    (synopsis "Fitting Periodic Coefficients Linear Regression Models")
+    (description
+     "This package provides tools for fitting periodic coefficients regression models
+to data where periodicity plays a crucial role.  It allows users to model and
+analyze relationships between variables that exhibit cyclical or seasonal
+patterns, offering functions for estimating parameters and testing the
+periodicity of coefficients in linear regression models.  For simple periodic
+coefficient regression model see Regui et al. (2024)
+<doi:10.1080/03610918.2024.2314662>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-perplexr
   (package

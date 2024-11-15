@@ -23371,13 +23371,13 @@ two-dimensional Penalised spline (P-spline) models.")
 (define-public r-spatpomp
   (package
     (name "r-spatpomp")
-    (version "0.36.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatPomp" version))
        (sha256
-        (base32 "1dg7f65mk8mrspccb8kbssbswpx3dmp15q6mksdis8k0mk4br9qz"))))
+        (base32 "017m5y1zcnviv9vbcsvmxp50dvl7f8d3aw5b5ig5qi56rqf1fj99"))))
     (properties `((upstream-name . "spatPomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -23389,7 +23389,7 @@ two-dimensional Penalised spline (P-spline) models.")
                              r-foreach
                              r-dplyr
                              r-abind))
-    (home-page "https://github.com/kidusasfaw/spatPomp")
+    (home-page "https://github.com/spatPomp-org/spatPomp")
     (synopsis
      "Inference for Spatiotemporal Partially Observed Markov Processes")
     (description
@@ -26256,13 +26256,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.23.0")
+    (version "2.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "0z0wlw937c1a1m3wc36gzhnzyl84344wij0rsyjgjvh7haax2biy"))))
+        (base32 "1a7n29lz6j1pqfl8k58b0gj3plw2289zar22qfla2p2pzrklrl1q"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -35004,6 +35004,45 @@ utilizes various Machine Learning methods that have embedded feature reduction
 in order to shrink down the feature space into a small and yet robust set.")
     (license license:gpl3)))
 
+(define-public r-sivirep
+  (package
+    (name "r-sivirep")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sivirep" version))
+       (sha256
+        (base32 "0a1ldwc6cwhdmz2cp1sw4jnfjv70xim6wb870xx2cj4zvsmin5p6"))))
+    (properties `((upstream-name . "sivirep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-sysfonts
+                             r-stringr
+                             r-showtext
+                             r-sf
+                             r-rlang
+                             r-readxl
+                             r-kableextra
+                             r-httr2
+                             r-ggplot2
+                             r-epitrix
+                             r-dplyr
+                             r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiverse-trace.github.io/sivirep/")
+    (synopsis "Data Wrangling and Automated Reports from 'SIVIGILA' Source")
+    (description
+     "Data wrangling, pre-processing, and generating automated reports from Colombia's
+epidemiological surveillance system, SIVIGILA
+<https://portalsivigila.ins.gov.co/>.  It provides a customizable R Markdown
+template for analysis and automatic generation of epidemiological reports that
+can be adapted to local, regional, and national contexts.  This tool offers a
+standardized and reproducible workflow that helps to reduce manual labor and
+potential errors in report generation, improving their efficiency and
+consistency.")
+    (license license:expat)))
+
 (define-public r-sits
   (package
     (name "r-sits")
@@ -42998,6 +43037,49 @@ tested either on Spark or H2O frameworks to suit your regression and
 classification tasks.  Implementation of available machine learning models on R
 has been done by Lantz (2013, ISBN:9781782162148).")
     (license license:gpl3)))
+
+(define-public r-shinymixr
+  (package
+    (name "r-shinymixr")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyMixR" version))
+       (sha256
+        (base32 "1z73wdv8vc71x3rp0axm3ad8wqj3fz4g9bdvzd3d4m6gblvydvpq"))))
+    (properties `((upstream-name . "shinyMixR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xfun
+                             r-whisker
+                             r-stringi
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyace
+                             r-shiny
+                             r-r3port
+                             r-ps
+                             r-plotly
+                             r-patchwork
+                             r-nlmixr2est
+                             r-nlmixr2
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-fresh
+                             r-dt
+                             r-collapsibletree
+                             r-cli
+                             r-bs4dash))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=shinyMixR")
+    (synopsis "Interactive 'shiny' Dashboard for 'nlmixr2'")
+    (description
+     "An R shiny user interface for the nlmixr2 (Fidler et al (2019)
+<doi:10.1002/psp4.12445>) package, designed to simplify the modeling process for
+users.  Additionally, this package includes supplementary functions to further
+enhances the usage of nlmixr2'.")
+    (license license:expat)))
 
 (define-public r-shinymgr
   (package
@@ -57099,13 +57181,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "0mgxhj5xz9nf7if7qiif3x4dbjjblvb96riyn327s920pzwy9f2l"))))
+        (base32 "0zcbl1dhdw3bkm58ska9m12d3ilw3ljp99bpp099bika622b661c"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

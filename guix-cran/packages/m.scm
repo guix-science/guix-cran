@@ -23194,13 +23194,13 @@ simulations for studying test item banks.")
 (define-public r-mirt
   (package
     (name "r-mirt")
-    (version "1.42")
+    (version "1.43")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirt" version))
        (sha256
-        (base32 "15yzgph7957wvrfnxwc9p27hckamkkxmi0c02x6p5i505ya16lly"))))
+        (base32 "18lqlpcw16bs9qkxdzgbhp7r1mgihkn5798amall341bpym8y1lc"))))
     (properties `((upstream-name . "mirt")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -23216,7 +23216,7 @@ simulations for studying test item banks.")
                              r-deriv
                              r-dcurver))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/philchalmers/mirt")
+    (home-page "https://philchalmers.github.io/mirt/")
     (synopsis "Multidimensional Item Response Theory")
     (description
      "Analysis of discrete response data using unidimensional and multidimensional
@@ -41942,22 +41942,22 @@ autoregressive models.")
 (define-public r-maq
   (package
     (name "r-maq")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maq" version))
        (sha256
-        (base32 "1rfwnwx9qglr49ymhhpglywrc6w2ilryiwxykxy0rdawml4zcw3j"))))
+        (base32 "0k9rhvwrljxsjdjjiniln22i3cl7nn33yc4snpdkx85s1fjni9w5"))))
     (properties `((upstream-name . "maq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/grf-labs/maq")
     (synopsis "Multi-Armed Qini")
     (description
-     "Evaluate treatment rules for costly and mutually exclusive treatment arms with
-Qini curves as proposed in Sverdrup, Wu, Athey, and Wager (2023)
-<doi:10.48550/@code{arXiv.2306.11979>}.")
+     "Policy evaluation using generalized Qini curves: Evaluate data-driven treatment
+targeting rules for one or more treatment arms over different budget constraints
+in experimental or observational settings under unconfoundedness.")
     (license license:expat)))
 
 (define-public r-mapview
@@ -42653,6 +42653,29 @@ process-based predictors.  Caetano et al (2020) <doi:10.1111/oik.07123>.")
 data used by mapindia has been extracted into this package so that the file size
 of the mapindia package can be reduced considerably.  The data in this package
 will be updated when latest data is available.")
+    (license license:expat)))
+
+(define-public r-mapindia
+  (package
+    (name "r-mapindia")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapindia" version))
+       (sha256
+        (base32 "1549d2w5nhrpj0zjv7h0x2z8cykkixdgcbmjsyfp0clp51769qn2"))))
+    (properties `((upstream-name . "mapindia")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vdiffr r-sf r-rlang r-mapindiatools r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shubhamdutta26/mapindia")
+    (synopsis "Plot Map of the Indian Subcontinent")
+    (description
+     "Get map data frames for the Indian subcontinent with different region levels
+(e.g., district, state).  The package also offers convenience functions for
+plotting choropleths, visualizing spatial data, and handling state/district
+codes.")
     (license license:expat)))
 
 (define-public r-mapi

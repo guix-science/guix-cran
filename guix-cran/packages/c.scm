@@ -5076,13 +5076,13 @@ team members, managers, and clients who prefer a point-and-click interface.")
 (define-public r-crumble
   (package
     (name "r-crumble")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crumble" version))
        (sha256
-        (base32 "1yiq4fjx605802h570bk90m1160lyj8ffsvcp8js5cnp86xw4k7s"))))
+        (base32 "0h4vib3vv26bgxvi02q5mrci09bs1sy42918kpyzwa82j2jvmdh5"))))
     (properties `((upstream-name . "crumble")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch
@@ -5094,6 +5094,7 @@ team members, managers, and clients who prefer a point-and-click interface.")
                              r-mlr3superlearner
                              r-matrix
                              r-lmtp
+                             r-ife
                              r-generics
                              r-data-table
                              r-coro
@@ -8291,13 +8292,13 @@ equality operations are calculated using cpp11'.")
 (define-public r-cppcontainers
   (package
     (name "r-cppcontainers")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cppcontainers" version))
        (sha256
-        (base32 "05wi4vws0yk3qglc5rywr8fwcy8fnajq44zik38vkk83z63jds84"))))
+        (base32 "0r7580rlc84zfqh8cj1bhinz0sdsamcw80xkky1cbrwczwmjhxy9"))))
     (properties `((upstream-name . "cppcontainers")))
     (build-system r-build-system)
     (inputs (list))
@@ -13536,13 +13537,13 @@ Longitudinal Study (NELS) of 1988 and nursing home data from Wisconsin.")
 (define-public r-copulacenr
   (package
     (name "r-copulacenr")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopulaCenR" version))
        (sha256
-        (base32 "1z1a9hrb5v784j46yc2dsbizbis8pb5zdbc4cky8yws7swiax5m1"))))
+        (base32 "107d49bsym7jwfikrq6i6r35nsbfxf3fcdga3aqag7p22nw0nvps"))))
     (properties `((upstream-name . "CopulaCenR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula
@@ -25332,6 +25333,35 @@ information on the variables can be taken into account.  A \"noise\" cluster or
 sparse latent variables can also be defined.")
     (license license:gpl3)))
 
+(define-public r-clustur
+  (package
+    (name "r-clustur")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clustur" version))
+       (sha256
+        (base32 "08fpli9z6ihawh0709g36plsvb5a34vwy5c7fdc21nsr92ai3v94"))))
+    (properties `((upstream-name . "clustur")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat r-rcpp r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "http://www.schlosslab.org/clustur/")
+    (synopsis "Clustering")
+    (description
+     "This package provides a tool that implements the clustering algorithms from
+mothur (Schloss PD et al. (2009) <doi:10.1128/AEM.01541-09>).  clustur make use
+of the cluster() and make.shared() command from mothur'.  Our cluster() function
+has five different algorithms implemented: @code{OptiClust}', furthest',
+nearest', average', and weighted'. @code{OptiClust} is an optimized clustering
+method for Operational Taxonomic Units, and you can learn more here, (Westcott
+SL, Schloss PD (2017) <doi:10.1128/mspheredirect.00073-17>).  The make.shared()
+command is always applied at the end of the clustering command.  This
+functionality allows us to generate and create clustering and abundance data
+efficiently.")
+    (license license:expat)))
+
 (define-public r-clusttmb
   (package
     (name "r-clusttmb")
@@ -32687,13 +32717,13 @@ Some convenient tools are also supplied.")
 (define-public r-chillr
   (package
     (name "r-chillr")
-    (version "0.75")
+    (version "0.76")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chillR" version))
        (sha256
-        (base32 "0b8r8s7vqgpb6jjbqaf24yig2adagfl6rnnppx15mdhz8bmjc5aq"))))
+        (base32 "0ywanyrcfy7gkhlim7zs5sbm145kfqd3gl9k3gv52k342rrn0psn"))))
     (properties `((upstream-name . "chillR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -32716,6 +32746,7 @@ Some convenient tools are also supplied.")
                              r-metr
                              r-magrittr
                              r-lubridate
+                             r-keyring
                              r-kendall
                              r-jsonlite
                              r-httr

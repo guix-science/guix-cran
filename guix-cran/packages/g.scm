@@ -2938,13 +2938,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.4")
+    (version "3.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "1lknw7n2zd9mfr13lyn9ny3d0lgla56hkdvqmgmvkjsv19jpaq5r"))))
+        (base32 "02rc0b69ay7gr3s91kqfy56n5laxxdirj61krll3p074123j9a65"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -5166,16 +5166,16 @@ processes.  This is an extension to the greta software, Golding (2019)
 (define-public r-greta-dynamics
   (package
     (name "r-greta-dynamics")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greta.dynamics" version))
        (sha256
-        (base32 "143ixhi2hxxgb10lp9c8b2xdp63rpbhqbxzbbbzhigf9aflpmh62"))))
+        (base32 "0pv74j4j0ggad5akv318bmc14vjgx4fqw3p8dsdi4447ks5z68l7"))))
     (properties `((upstream-name . "greta.dynamics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tensorflow r-greta r-glue r-cli))
+    (propagated-inputs (list r-tensorflow r-rlang r-greta r-glue r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/greta-dev/greta.dynamics")
     (synopsis "Modelling Structured Dynamical Systems in 'greta'")
@@ -6517,13 +6517,13 @@ graphical MCPs.")
 (define-public r-graphicalextremes
   (package
     (name "r-graphicalextremes")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphicalExtremes" version))
        (sha256
-        (base32 "18gyfynx9rd06168vv1qxa8hg7ibwv0h2mx1ppizrnrl7ciwwis1"))))
+        (base32 "11g036kbh3qr76irvsk126jbqha4miyzk0627s6cscdipvshr5cl"))))
     (properties `((upstream-name . "graphicalExtremes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -6532,7 +6532,6 @@ graphical MCPs.")
                              r-igraph
                              r-glmnet
                              r-glassofast
-                             r-edmcr
                              r-cvxr
                              r-corpcor))
     (native-inputs (list r-knitr))
@@ -20342,20 +20341,20 @@ other available packages.")
 (define-public r-ggalign
   (package
     (name "r-ggalign")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggalign" version))
        (sha256
-        (base32 "1yk36738ccnig6npq4z8v5liji2vpajigk7flrj6j0zpnaz883m0"))))
+        (base32 "17zcfwglgrn6lmjzym7q7qqgvy8fq97qc74mkmlwi0zgy6vnlb4g"))))
     (properties `((upstream-name . "ggalign")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-rlang
+                             r-lifecycle
                              r-gtable
                              r-ggplot2
-                             r-data-table
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Yunuuuu/ggalign")

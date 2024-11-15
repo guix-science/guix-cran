@@ -2584,6 +2584,48 @@ computation of evaluation criteria.")
     (description "Visualizes vowel variation in f0, F1, F2, F3 and duration.")
     (license (license:fsdg-compatible "GNU General Public License (>= 2)"))))
 
+(define-public r-visvar
+  (package
+    (name "r-visvar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visvaR" version))
+       (sha256
+        (base32 "1kxydr8inciq7285xrhwzi8hxim0bg4ckpzh8dhzp9q3iwd2jp0d"))))
+    (properties `((upstream-name . "visvaR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-shiny
+                             r-rlang
+                             r-readxl
+                             r-patchwork
+                             r-officer
+                             r-htmltools
+                             r-ggplot2
+                             r-ggcorrplot
+                             r-flextable
+                             r-dt
+                             r-dplyr
+                             r-corrplot
+                             r-bslib
+                             r-agricolae))
+    (home-page "https://github.com/rameshram96/visvaR")
+    (synopsis "Shiny-Based Statistical Solutions for Agricultural Research")
+    (description
+     "Visualize Variance is an intuitive shiny applications tailored for agricultural
+research data analysis, including one-way and two-way analysis of variance,
+correlation, and other essential statistical tools.  Users can easily upload
+their datasets, perform analyses, and download the results as a well-formatted
+document, streamlining the process of data analysis and reporting in
+agricultural research.The experimental design methods are based on classical
+work by Fisher (1925) and Scheffe (1959).  The correlation visualization
+approaches follow methods developed by Wei & Simko (2021) and Friendly (2002)
+<doi:10.1198/000313002533>.")
+    (license license:agpl3+)))
+
 (define-public r-visualpred
   (package
     (name "r-visualpred")
@@ -5583,6 +5625,43 @@ counting purposes.  For ease of use, all functions in vecsets have an argument
 multiple which, when set to FALSE, reverts them to the base::sets (alias for all
 the items) tools functionality.")
     (license license:lgpl3)))
+
+(define-public r-vecdep
+  (package
+    (name "r-vecdep")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VecDep" version))
+       (sha256
+        (base32 "1zm1ri2lmh5qxi4lnla7xgrj0vjihv6nkvhbzf63x20gh4c1sw0v"))))
+    (properties `((upstream-name . "VecDep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sets
+                             r-rmpfr
+                             r-reticulate
+                             r-pbapply
+                             r-magic
+                             r-hash
+                             r-hac
+                             r-gtools
+                             r-expm
+                             r-elliptcopulas
+                             r-covglasso))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StevenDeKeyser98/VecDep")
+    (synopsis "Measuring Copula-Based Dependence Between Random Vectors")
+    (description
+     "This package provides functions for estimation (parametric, semi-parametric and
+non-parametric) of copula-based dependence coefficients between a finite
+collection of random vectors, including phi-dependence measures and
+Bures-Wasserstein dependence measures.  An algorithm for agglomerative
+hierarchical variable clustering is also implemented.  Following the articles De
+Keyser & Gijbels (2024) <doi:10.1016/j.jmva.2024.105336>, De Keyser & Gijbels
+(2024) <doi:10.1016/j.ijar.2023.109090>, and De Keyser & Gijbels (2024)
+<doi:10.48550/@code{arXiv.2404.07141>}.")
+    (license license:gpl3)))
 
 (define-public r-vecctmvn
   (package

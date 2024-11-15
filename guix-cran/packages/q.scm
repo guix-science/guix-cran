@@ -4402,13 +4402,13 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
 (define-public r-qindex
   (package
     (name "r-qindex")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qindex" version))
        (sha256
-        (base32 "1syi87w2s2yf0kks48i4pwayp90xdh22yvndzr9rww4wawwzz4cb"))))
+        (base32 "0dx812cvpkhl8gz6wql6kmkcjx4dwdbmjr6gz1ddh1axldwdiy6b"))))
     (properties `((upstream-name . "Qindex")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rpart r-plotly r-mgcv r-matrixstats))

@@ -3869,6 +3869,44 @@ formatting.")
 deep-neural networks using tensorflow'.")
     (license license:gpl3)))
 
+(define-public r-jane
+  (package
+    (name "r-jane")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JANE" version))
+       (sha256
+        (base32 "1rf1alz45lc1k1wj8c9r56g3lmc0y0k54ql36g91pc3i0368nd2f"))))
+    (properties `((upstream-name . "JANE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringdist
+                             r-scales
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-progress
+                             r-mclust
+                             r-matrix
+                             r-igraph
+                             r-future-apply
+                             r-future
+                             r-extradistr
+                             r-aricode))
+    (home-page "https://github.com/a1arakkal/JANE")
+    (synopsis "Just Another Latent Space Network Clustering Algorithm")
+    (description
+     "Fit and simulate latent space network cluster models using an
+expectation-maximization algorithm.  Enables flexible modeling of unweighted
+network data, supporting both directed and undirected networks, with or without
+degree heterogeneity.  Designed to handle large networks efficiently, it allows
+users to explore network structure through latent space representations,
+identify clusters within network data, and simulate models with varying
+clustering and connectivity patterns.")
+    (license license:gpl3+)))
+
 (define-public r-jamendor
   (package
     (name "r-jamendor")

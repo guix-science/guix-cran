@@ -6989,24 +6989,23 @@ criteria are implemented.")
 (define-public r-treeringshape
   (package
     (name "r-treeringshape")
-    (version "3.0.3")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeRingShape" version))
        (sha256
-        (base32 "0vk58ngvx362070nzg06g2130xlz4crcpmfxgxvjvr4w3pc7iqxi"))))
+        (base32 "1a4yh78128zs40dr29v22lrkmqjwb2r89n6ihxfpk14sa9q4gk46"))))
     (properties `((upstream-name . "TreeRingShape")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf))
+    (propagated-inputs (list r-tibble r-sf))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ishidamgm/TreeRingShape")
+    (home-page "https://CRAN.R-project.org/package=TreeRingShape")
     (synopsis
      "Recording Tree-Ring Shapes of Tree Disks with Manual Digitizing and Interpolating Model")
     (description
-     "Record all tree-ring Shapefile of tree disk with GIS soft
-('Qgis'<https://www.qgis.org/en/site/>) and interpolating model from high
-resolution tree disk image.")
+     "Record all tree-ring Shapefile of tree disk with GIS soft Qgis and interpolating
+model from high resolution tree disk image.")
     (license license:gpl2+)))
 
 (define-public r-treeplotarea
@@ -19264,6 +19263,33 @@ Neural ordinary differential equations comes from Chen et al. (2018)
 solving differential systems.")
     (license license:expat)))
 
+(define-public r-tfm
+  (package
+    (name "r-tfm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TFM" version))
+       (sha256
+        (base32 "1pr020rxl8fzp55l3g23aizjpk4zz1r69pdx0wsmw3fxh8s3hr22"))))
+    (properties `((upstream-name . "TFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sopc r-relliptical r-mvtnorm r-mass))
+    (home-page "https://cran.r-project.org/package=TFM")
+    (synopsis "Sparse Online Principal Component for TFM")
+    (description
+     "The Truncated Factor Model is a statistical model designed to handle specific
+data structures in data analysis.  This R package focuses on the Sparse Online
+Principal Component Estimation method, which is used to calculate data such as
+the loading matrix and specific variance matrix for truncated data, thereby
+better explaining the relationship between common factors and original
+variables.  Additionally, the R package also provides other equations for
+comparison with the Sparse Online Principal Component Estimation method.The
+philosophy of the package is described in Guangbao Guo. (2023)
+<doi:10.1007/s00180-022-01270-z>.")
+    (license license:expat)))
+
 (define-public r-tfio
   (package
     (name "r-tfio")
@@ -26878,13 +26904,13 @@ data into machine-readable @code{LongForm} Dataframes.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.6.11")
+    (version "0.6.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablet" version))
        (sha256
-        (base32 "02sc5raig8llrvchpl4x6wqqdyzrg0pmjs3snia8gbyvmz2n87n9"))))
+        (base32 "18szlxhmxflskab60n4hdjl8w5pqmc54ipadckd4xmjyz67y9xxp"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yamlet

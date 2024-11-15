@@ -2898,13 +2898,13 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
 (define-public r-lpcde
   (package
     (name "r-lpcde")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpcde" version))
        (sha256
-        (base32 "0gb130x8177bcw3snrndm87p21na6v3zayqcn9z16rviiyy1nscg"))))
+        (base32 "06hfgqh4fdzajd1h9nc9bzb8qnpiajv7cjw3655ml7lr0r51c1pq"))))
     (properties `((upstream-name . "lpcde")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -2922,8 +2922,8 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
     (description
      "This package provides tools for estimation and inference of conditional
 densities, derivatives and functions.  This is the companion software for
-Cattaneo, Chandak, Jansson and Ma (2024) <doi:10.48550/@code{arXiv.2204.10359>}.")
-    (license license:gpl2)))
+Cattaneo, Chandak, Jansson and Ma (2024) <doi:10.3150/23-BEJ1711>.")
+    (license license:expat)))
 
 (define-public r-lpc
   (package
@@ -3096,6 +3096,25 @@ kernel of lowpass filters can be computed.")
     (description
      "This package performs the trimmed k-means clustering algorithm with lower memory
 use.  It also provides a number of utility functions such as BIC calculations.")
+    (license license:gpl3+)))
+
+(define-public r-lovecraftr
+  (package
+    (name "r-lovecraftr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lovecraftr" version))
+       (sha256
+        (base32 "0nr7avgg18pxmbsf1j589kraksjgmcxk6nrkvky2smnlrmxjpm20"))))
+    (properties `((upstream-name . "lovecraftr")))
+    (build-system r-build-system)
+    (home-page "https://github.com/SergejRuff/lovecraftr")
+    (synopsis "Collection of Lovecraftian Tales and Texts")
+    (description
+     "This package provides a curated collection of Howard Phillips Lovecraft's
+complete stories, collected for the purpose of text analysis.")
     (license license:gpl3+)))
 
 (define-public r-lotterybr
@@ -12471,13 +12490,13 @@ provided as well.")
 (define-public r-learnnonparam
   (package
     (name "r-learnnonparam")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LearnNonparam" version))
        (sha256
-        (base32 "03barm0d2q5b82gc02g29zh7rcp7wkgr2dznmqf30y476wn7ylr0"))))
+        (base32 "0nz6l0lxx9f0kxvspbgzl4179ry5szlw1kk6zb1bm9dlxhshy2pm"))))
     (properties `((upstream-name . "LearnNonparam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6))

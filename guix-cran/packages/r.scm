@@ -1584,13 +1584,13 @@ licensed under the GNU GPL version 3.")
 (define-public r-rvif
   (package
     (name "r-rvif")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvif" version))
        (sha256
-        (base32 "0aqzh8n889avbjdf4244h4a5y5a6w9hxxgm15ygxvysrw5rjb37f"))))
+        (base32 "0w7any6km13jnad9jx1a8gkfmzbz345dwkhm5mxi06zfk65yv65r"))))
     (properties `((upstream-name . "rvif")))
     (build-system r-build-system)
     (propagated-inputs (list r-multicoll))
@@ -1605,10 +1605,10 @@ scatterplot between the variance inflation factor and the coefficient of
 variation.  For more details see SalmerÃ³n R., GarcÃ­a C.B. and GarcÃ­a J.
 (2018) <doi:10.1080/00949655.2018.1463376>, SalmerÃ³n, R., RodrÃ­guez, A. and
 GarcÃ­a C. (2020) <doi:10.1007/s00180-019-00922-x>, SalmerÃ³n, R., GarcÃ­a, C.B,
-RodrÃ­guez, A. and GarcÃ­a, C. \"Limitations in Detecting Multicollinearity due
-to Scaling Issues in the mcvis Package\" (2022, to appear in The R Journal) and
+RodrÃ­guez, A. and GarcÃ­a, C. (2022) <doi:10.32614/RJ-2023-010>, SalmerÃ³n, R.,
+GarcÃ­a, C.B. and GarcÃ­a, J. (2024) <doi:10.1007/s10614-024-10575-8> and
 SalmerÃ³n, R., GarcÃ­a, C.B, GarcÃ­a J. (2023, working paper)
-<@code{arXiv:2005.02245>}.")
+<doi:10.48550/@code{arXiv.2005.02245>}.")
     (license license:gpl2+)))
 
 (define-public r-rviewgraph
@@ -8149,13 +8149,13 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
 (define-public r-rrpp
   (package
     (name "r-rrpp")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRPP" version))
        (sha256
-        (base32 "1dd2v1zsi1hgb73a4fjd54k2mg43sb26h9l45nq9phsn8rnrfw7z"))))
+        (base32 "021f1d90rqr8yhgkhg9adym5lkm6gkyi6fyd1dh4caffm0g69281"))))
     (properties `((upstream-name . "RRPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-ggplot2 r-ape))
@@ -14572,6 +14572,37 @@ Quadratic	programming, Applied computing ~ Digital libraries and archives.")
 <doi:10.1093/biostatistics/kxx039>) and modified Wilcoxon-Mann-Whitney two
 sample location test, also known as the Fligner-Policello test.")
     (license license:gpl2)))
+
+(define-public r-robustprediction
+  (package
+    (name "r-robustprediction")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobustPrediction" version))
+       (sha256
+        (base32 "15v33n7ic3scah1c9pjk77i3c3fvmjxj2j4sm8sgg98znq68l8by"))))
+    (properties `((upstream-name . "RobustPrediction")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger
+                             r-proc
+                             r-mlr
+                             r-mboost
+                             r-glmnet
+                             r-e1071))
+    (home-page "https://github.com/Yuting-He/RobustPrediction")
+    (synopsis "Robust Tuning and Training for Cross-Source Prediction")
+    (description
+     "This package provides robust parameter tuning and model training for predictive
+models across data sources.  This package implements three primary tuning
+methods: cross-validation-based internal tuning, external tuning, and the
+@code{RobustTuneC} method.  It supports Lasso, Ridge, Random Forest, Boosting,
+and Support Vector Machine classifiers.  The tuning methods are based on the
+paper by Nicole Ellenbach, Anne-Laure Boulesteix, Bernd Bischl, Kristian Unger,
+and Roman Hornung (2021) \"Improved Outcome Prediction Across Data Sources
+Through Robust Parameter Tuning\" <doi:10.1007/s00357-020-09368-z>.")
+    (license license:gpl3)))
 
 (define-public r-robustmeta
   (package
@@ -28159,6 +28190,48 @@ supported by the U.S. National Science Foundation under Grants No.  SES-1921523
 and DMS-2015552.")
     (license license:gpl3+)))
 
+(define-public r-resurv
+  (package
+    (name "r-resurv")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReSurv" version))
+       (sha256
+        (base32 "0xvy7n1nk67bvv95ipzvr4kf1xgfj52xyc4xn05cxybl5kq9aimv"))))
+    (properties `((upstream-name . "ReSurv")))
+    (build-system r-build-system)
+    (inputs (list python))
+    (propagated-inputs (list r-xgboost
+                             r-tidyverse
+                             r-tidyr
+                             r-tibble
+                             r-synthetic
+                             r-survival
+                             r-shapforxgboost
+                             r-rpart
+                             r-reticulate
+                             r-reshape2
+                             r-purrr
+                             r-ggplot2
+                             r-forecast
+                             r-fastdummies
+                             r-dtplyr
+                             r-dplyr
+                             r-data-table
+                             r-bshazard))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/edhofman/ReSurv")
+    (synopsis "Machine Learning Models for Predicting Claim Counts")
+    (description
+     "Prediction of claim counts using the feature based development factors
+introduced in the manuscript Hiabu M., Hofman E. and Pittarello G. (2023)
+<doi:10.48550/@code{arXiv.2312.14549>}.  Implementation of Neural Networks,
+Extreme Gradient Boosting, and Cox model with splines to optimise the partial
+log-likelihood of proportional hazard models.")
+    (license license:gpl2+)))
+
 (define-public r-resumer
   (package
     (name "r-resumer")
@@ -32506,6 +32579,40 @@ linear unbiased predictors, BLUPs).  Clifford and @code{McCullagh} (2006)
 patterns containing named groups.  It allows easy retrieval of matched portions
 and targeted replacements by group name, improving both code clarity and
 maintainability.")
+    (license license:expat)))
+
+(define-public r-regrcoeffsexplorer
+  (package
+    (name "r-regrcoeffsexplorer")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RegrCoeffsExplorer" version))
+       (sha256
+        (base32 "08xglcibfff5wg4347n8yj008wfw8yw54fyz5cgwyx7y70bzz927"))))
+    (properties `((upstream-name . "RegrCoeffsExplorer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-magrittr
+                             r-gridextra
+                             r-glmnet
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://vadimtyuryaev.github.io/RegrCoeffsExplorer/")
+    (synopsis
+     "Efficient Visualization of Regression Coefficients for lm(), glm(), and glmnet() Objects")
+    (description
+     "The visualization tool offers a nuanced understanding of regression dynamics,
+going beyond traditional per-unit interpretation of continuous variables versus
+categorical ones.  It highlights the impact of unit changes as well as larger
+shifts like interquartile changes, acknowledging the distribution of empirical
+data.  Furthermore, it generates visualizations depicting alterations in Odds
+Ratios for predictors across minimum, first quartile, median, third quartile,
+and maximum values, aiding in comprehending predictor-outcome interplay within
+empirical data distributions, particularly in logistic regression frameworks.")
     (license license:expat)))
 
 (define-public r-regrap

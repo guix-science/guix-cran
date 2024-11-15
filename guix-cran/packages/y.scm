@@ -893,13 +893,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yamlet" version))
        (sha256
-        (base32 "1cz2b37f5y7zf706dhnmf51wgvlr8w8r4cs5nm5s9vfn636vsbi8"))))
+        (base32 "1b7ljgxa0s31b12hawhmazpy1b9hmmzfqpxal2y70xjzm5vi2pkh"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -979,13 +979,13 @@ and building ensemble imputations, and mapping results.")
 (define-public r-yahoofinancer
   (package
     (name "r-yahoofinancer")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yahoofinancer" version))
        (sha256
-        (base32 "197pidwi69hqrw6qpjg5d2y5mqp2rma4p8wsr2h51957qqql4z5d"))))
+        (base32 "1qs358lxl3pycy64f3dxc74g5kz5yrl8m2lq0w6kn0zdbligy459"))))
     (properties `((upstream-name . "yahoofinancer")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

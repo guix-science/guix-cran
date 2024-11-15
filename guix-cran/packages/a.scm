@@ -20767,18 +20767,18 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.14.0")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1xda25z4dmli07bi6kfzda0zhb4nkma98n19206qmgvjbb6klf18"))))
+        (base32 "0gp8p1pp3nsnx4nv1ag7q0qkx4wqrmqmwn56czz2wjf68zxfdx3i"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (inputs (list sqlite))
     (propagated-inputs (list r-adbcdrivermanager))
-    (home-page "https://github.com/apache/arrow-adbc")
+    (home-page "https://arrow.apache.org/adbc/current/r/adbcsqlite/")
     (synopsis "'Arrow' Database Connectivity ('ADBC') 'SQLite' Driver")
     (description
      "This package provides a developer-facing interface to the Arrow Database
@@ -20791,19 +20791,19 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.14.0")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "1lfvn7gcx5g84rqh400zbs7qlc39r2nz7nw7s1dij7yh9hdysdj0"))))
+        (base32 "1pyhgnbgy41z1wylzrh24x0l44aram7ssp675bsadwym0mc9dcpm"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
     (propagated-inputs (list r-adbcdrivermanager))
     (native-inputs (list pkg-config))
-    (home-page "https://github.com/apache/arrow-adbc")
+    (home-page "https://arrow.apache.org/adbc/current/r/adbcpostgresql/")
     (synopsis "'Arrow' Database Connectivity ('ADBC') 'PostgreSQL' Driver")
     (description
      "This package provides a developer-facing interface to the Arrow Database
@@ -20816,17 +20816,17 @@ and query parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.14.0")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "1qhwx1ywqyr0arladcyh58xq69mgvqj35a4pcq0i0mf048xpsly3"))))
+        (base32 "0n556snnm8i5a4njq75sazp0wz0cajcgddzjm3w4378pamxmmm79"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow))
-    (home-page "https://github.com/apache/arrow-adbc")
+    (home-page "https://arrow.apache.org/adbc/current/r/adbcdrivermanager/")
     (synopsis "'Arrow' Database Connectivity ('ADBC') Driver Manager")
     (description
      "This package provides a developer-facing interface to Arrow Database

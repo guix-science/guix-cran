@@ -4028,13 +4028,13 @@ further details, see the paper by John R.J. Thompson (2024)
 (define-public r-nonprobsvy
   (package
     (name "r-nonprobsvy")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonprobsvy" version))
        (sha256
-        (base32 "0p5x88dgas0hy3xydn5803pybf5ryxc85gzn9fb2c5kdrv2v0pcr"))))
+        (base32 "0sckbj0src1skhdyikr1gk2aim3sbh9s8ha0pbf2yqyy8bmcga2s"))))
     (properties `((upstream-name . "nonprobsvy")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -5904,13 +5904,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "0g3pc3bnyn1rcb3mmrx8yw4ki3avciczfpp5kzy6d8yx8n3msj52"))))
+        (base32 "0whkcvw888i72r11rp46jy15355xs99ilca0q34dqwnf9j88qn8h"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -15559,13 +15559,13 @@ See docs for limitations.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "1q098kbjchi7x23n5xanxhqzq3hiy02r9qck47f2i5710f1y3n3c"))))
+        (base32 "0wjdmmdj3njh18fwh07dwa9j1yj6nb59clyqiv8lvm1m4s9nys55"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (native-inputs (list r-litedown))

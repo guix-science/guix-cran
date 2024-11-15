@@ -26486,13 +26486,13 @@ for equality.")
 (define-public r-datacompare
   (package
     (name "r-datacompare")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataCompare" version))
        (sha256
-        (base32 "1wlcaiwvxxkvy2mk5xqw92a06iclv1kn198nfiqw7j3mmd56m2d6"))))
+        (base32 "1i5g9cvc3bww52h8i4fngwsck8hxqnbngkhk61bariw6synj0dc6"))))
     (properties `((upstream-name . "dataCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom

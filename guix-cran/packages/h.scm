@@ -5695,13 +5695,13 @@ using either lmer in the lme4 package or lme in the nlme package.")
 (define-public r-hlatools
   (package
     (name "r-hlatools")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HLAtools" version))
        (sha256
-        (base32 "1sy8zxdb90av9fy06gx2c7pj66w1s1kyy4i7ndq3nx0305bl3b2m"))))
+        (base32 "0k2hj0cqwsjbkgb98zm11c1ng278zi8gpk6yndi93fkcq3lmqdkj"))))
     (properties `((upstream-name . "HLAtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -7206,6 +7206,40 @@ functions to plot R objects.  Highcharts <https://www.highcharts.com/> is a
 charting library offering numerous chart types with a simple configuration
 syntax.")
     (license license:expat)))
+
+(define-public r-higarrote
+  (package
+    (name "r-higarrote")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HiGarrote" version))
+       (sha256
+        (base32 "0v7dd9sd9dkqylb53vx5f0npwpcyh0fd9b39havn99l1bzyl1cx5"))))
+    (properties `((upstream-name . "HiGarrote")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-scales
+                             r-rlist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quadprog
+                             r-purrr
+                             r-nloptr
+                             r-maxpro
+                             r-matrix))
+    (home-page "https://cran.r-project.org/package=HiGarrote")
+    (synopsis
+     "Nonnegative Garrote Method Incorporating Hierarchical Relationships")
+    (description
+     "An implementation of the nonnegative garrote method that incorporates
+hierarchical relationships among variables.  The core function,
+@code{HiGarrote}(), offers an automated approach for analyzing experiments while
+respecting hierarchical structures among effects.  For methodological details,
+refer to Yu and Joseph (2024) <doi:10.48550/@code{arXiv.2411.01383>}.  This work
+is supported by U.S. National Science Foundation grant DMS-2310637.")
+    (license license:gpl2+)))
 
 (define-public r-hiersdr
   (package

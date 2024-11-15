@@ -2779,13 +2779,13 @@ Qualtrics datasets.")
 (define-public r-excessmort
   (package
     (name "r-excessmort")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excessmort" version))
        (sha256
-        (base32 "13hmdad8l88anj7akyv7ii2hw31v4dgnsgar67ks2zlmw2hhjyj1"))))
+        (base32 "0jpwvni5x066d9hb0fjiq212rmrl5mfb1dmvasv5xvn013j9qbm0"))))
     (properties `((upstream-name . "excessmort")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18715,6 +18715,41 @@ side length of a Durfee square <https://en.wikipedia.org/wiki/Durfee_square>.")
      "This is the course package for the exercise portion of the \"Ecological Data
 Collection and Processing\" course.")
     (license license:expat)))
+
+(define-public r-edcimport
+  (package
+    (name "r-edcimport")
+    (version "0.5.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EDCimport" version))
+       (sha256
+        (base32 "1c000mmy5krlq5203xjhhnwi44isqbph627cbg2j38ygw5ilvp50"))))
+    (properties `((upstream-name . "EDCimport")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-haven
+                             r-glue
+                             r-ggplot2
+                             r-fs
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/DanChaltiel/EDCimport")
+    (synopsis "Import Data from EDC Software")
+    (description
+     "This package provides a convenient toolbox to import data exported from
+Electronic Data Capture (EDC) software @code{TrialMaster}'.")
+    (license license:gpl3)))
 
 (define-public r-eda4treer
   (package

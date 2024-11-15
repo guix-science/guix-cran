@@ -3175,13 +3175,13 @@ and from one library to another without changing function or syntax.")
 (define-public r-umx
   (package
     (name "r-umx")
-    (version "4.20.0")
+    (version "4.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "umx" version))
        (sha256
-        (base32 "1b0xkwy9b8sq686smjjl08wmvijnkvm0rh3gy31lamcbw7k0b60w"))))
+        (base32 "0iyrpqv8z49vcnv021j1iwxpahc2gflfq9nfx7clr7gjnbkxx98k"))))
     (properties `((upstream-name . "umx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -3731,16 +3731,16 @@ analyses.")
 (define-public r-ukbnmr
   (package
     (name "r-ukbnmr")
-    (version "2.2")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ukbnmr" version))
        (sha256
-        (base32 "05bcsz74aayi5rk9nv7izj4xz9mmf1yw933syvvp2g0ly6z8l66w"))))
+        (base32 "0ajdnc75bqbc1i2x157h59sj7x8xwickf6llc8iwzzacs1hnj481"))))
     (properties `((upstream-name . "ukbnmr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-data-table r-bit64))
+    (propagated-inputs (list r-mass r-lubridate r-data-table r-bit64))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ukbnmr")
     (synopsis
