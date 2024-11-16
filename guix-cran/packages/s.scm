@@ -13147,16 +13147,20 @@ from VSN international (<https://vsni.co.uk/software/asreml-r/>).")
 (define-public r-statgengwas
   (package
     (name "r-statgengwas")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenGWAS" version))
        (sha256
-        (base32 "0isjzb83vwml654b1azgvnwiijpihdk24b3jamls976is359qvrv"))))
+        (base32 "0dyp357vi4ng68zcdx7kxwxq1k1ndydc6cj82j1q4n255ray34i6"))))
     (properties `((upstream-name . "statgenGWAS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sommer r-rcpparmadillo r-rcpp r-ggplot2
+    (propagated-inputs (list r-sommer
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggplot2
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://biometris.github.io/statgenGWAS/index.html")
@@ -53719,13 +53723,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "17j1gbk74akmcs3lg21r9wcl0wp85filp19ciqf9ngb3gydsq40f"))))
+        (base32 "1snczmwyajdqi3j0zi3livw7z71sf4bcvilsrdl69crpvpz8i6hk"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

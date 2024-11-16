@@ -30014,6 +30014,29 @@ Marie-Sainte and is included in the package.")
 using \"Sweave\".")
     (license license:gpl2+)))
 
+(define-public r-reportsubtotal
+  (package
+    (name "r-reportsubtotal")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReportSubtotal" version))
+       (sha256
+        (base32 "01qkhkm85fs31dhawjqg1bcbw38fp28l69hgvbs5m2v5wkgvddfq"))))
+    (properties `((upstream-name . "ReportSubtotal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect r-magrittr r-dplyr))
+    (home-page "https://cran.r-project.org/package=ReportSubtotal")
+    (synopsis "Adds Subtotals to Data Reports")
+    (description
+     "Adds subtotal rows / sections (a la the SAS \"Proc Tabulate\" \"All\" option) to a
+Group By output by running a series of Group By functions with partial sets of
+the same variables and combining the results with the original.  Can be used to
+add comprehensive information to a data report or to quickly aggregate Group By
+outputs used to gain a greater understanding of data.")
+    (license license:expat)))
+
 (define-public r-reportroc
   (package
     (name "r-reportroc")
@@ -32411,13 +32434,13 @@ becomes stronger/weaker as Z increases).")
 (define-public r-regressor
   (package
     (name "r-regressor")
-    (version "3.0.2")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regressoR" version))
        (sha256
-        (base32 "0c7kxhkcy02vlb0fabf70bzkrk6l7rsvj7ppx3nxhjrhfp7p8j2m"))))
+        (base32 "06azxr11pb779nkabrklxpjndvjvjbpidm5gjfq7m4iqfd7kw95c"))))
     (properties `((upstream-name . "regressoR")))
     (build-system r-build-system)
     (arguments
@@ -32445,11 +32468,13 @@ becomes stronger/weaker as Z increases).")
                              r-shiny
                              r-rpart-plot
                              r-rlang
+                             r-psych
                              r-pls
                              r-loader
                              r-htmltools
                              r-golem
                              r-glmnet
+                             r-gbm
                              r-echarts4r
                              r-dt
                              r-dplyr))
@@ -34670,6 +34695,33 @@ and provides functions to open/close a database
 (redatam_entities(), redatam_variables()) and execute a SPC program and gets the
 results as data frames (redatam_query(), redatam_run()).")
     (license license:gpl3+)))
+
+(define-public r-redatam
+  (package
+    (name "r-redatam")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "redatam" version))
+       (sha256
+        (base32 "1fb6v1vsgnjnzg666njcn5ph3lz6f0cfnvcr2xhia5c0qkj4wpi3"))))
+    (properties `((upstream-name . "redatam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringi
+                             r-janitor
+                             r-data-table
+                             r-cpp11))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/litalbarkai/open-redatam")
+    (synopsis "Import 'REDATAM' Files")
+    (description
+     "Import REDATAM formats into R via the Open REDATAM C++ library
+<https://github.com/litalbarkai/open-redatam> based on De Grande (2016)
+<https://www.jstor.org/stable/24890658>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-redas
   (package

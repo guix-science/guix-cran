@@ -6939,6 +6939,37 @@ multiple change-points in the piecewise constant function plus Gaussian noise
 model.")
     (license license:gpl2)))
 
+(define-public r-wbids
+  (package
+    (name "r-wbids")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wbids" version))
+       (sha256
+        (base32 "0sx9w1y7hwhzjcswz0a1mjlzifqrhb9wmv5rwmfkpxba590hpv4h"))))
+    (properties `((upstream-name . "wbids")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://teal-insights.github.io/r-wbids/")
+    (synopsis
+     "Seamless Access to World Bank International Debt Statistics (IDS)")
+    (description
+     "Access and analyze the World Bankâs International Debt Statistics (IDS)
+<https://datacatalog.worldbank.org/search/dataset/0038015>.  IDS provides
+creditor-debtor relationships between countries, regions, and institutions.
+wbids enables users to download, process and work with IDS series across
+multiple geographies, counterparts, and time periods.")
+    (license license:expat)))
+
 (define-public r-wbacon
   (package
     (name "r-wbacon")

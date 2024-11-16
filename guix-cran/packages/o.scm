@@ -5071,6 +5071,42 @@ D-augments any design with a controlled efficiency.  An efficient rounding
 function has been provided to transform approximate designs to exact designs.")
     (license license:gpl3)))
 
+(define-public r-optecd
+  (package
+    (name "r-optecd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPTeCD" version))
+       (sha256
+        (base32 "051ljpb89clqfwpzn6k69jd30sw8zw3f09kdj8ynfmb0bqlzs1df"))))
+    (properties `((upstream-name . "OPTeCD")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=OPTeCD")
+    (synopsis "Optimal Partial Tetra-Allele Cross Designs")
+    (description
+     "Tetra-allele cross often referred as four-way cross or double cross or four-line
+cross are those type of mating designs in which every cross is obtained by
+mating amongst four inbred lines.  A tetra-allele cross can be obtained by
+crossing the resultant of two unrelated diallel crosses.  A common triallel
+cross involving four inbred lines A, B, C and D can be symbolically represented
+as (A X B) X (C X D) or (A, B, C, D) or (A B C D) etc.  Tetra-allele cross can
+be broadly categorized as Complete Tetra-allele Cross (C@code{TaC}) and Partial
+Tetra-allele Crosses (P@code{TaC}).  Rawlings and Cockerham
+(1962)<doi:10.2307/2527461> firstly introduced and gave the method of analysis
+for tetra-allele cross hybrids using the analysis method of single cross hybrids
+under the assumption of no linkage.  The set of all possible four-way mating
+between several genotypes (individuals, clones, homozygous lines, etc.) leads to
+a C@code{TaC}.  If there are N number of inbred lines involved in a C@code{TaC},
+the the total number of crosses, T = N*(N-1)*(N-2)*(N-3)/8.  When more number of
+lines are to be considered, the total number of crosses in C@code{TaC} also
+increases.  Thus, it is almost impossible for the investigator to carry out the
+experimentation with limited available resource material.  This situation lies
+in taking a fraction of C@code{TaC} with certain underlying properties, known as
+P@code{TaC}.")
+    (license license:gpl2+)))
+
 (define-public r-optdesignslopeint
   (package
     (name "r-optdesignslopeint")

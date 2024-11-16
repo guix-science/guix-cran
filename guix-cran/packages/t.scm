@@ -26664,13 +26664,13 @@ special handling for the format currently in use.")
 (define-public r-tabulapdf
   (package
     (name "r-tabulapdf")
-    (version "1.0.5-3")
+    (version "1.0.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabulapdf" version))
        (sha256
-        (base32 "1cavgzchfpwa8mg7g4di5sys41909iwvy6sj0ah7p8cd623k9f7g"))))
+        (base32 "0vi4djizwmzbvyq4808nh7cc29xhk9z14h34jypjxfbrsrm9p19i"))))
     (properties `((upstream-name . "tabulapdf")))
     (build-system r-build-system)
     (inputs (list))

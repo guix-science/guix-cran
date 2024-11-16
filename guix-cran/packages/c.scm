@@ -7157,13 +7157,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.10.1")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "0cpqg0xa22lb8dqa5p4hzipvg7q31l24csq9hd4gwgwi98s77nvl"))))
+        (base32 "1ldvhh8yh8nd905hp651p0yc7f119ggbavqxadc13g6v6j8365x3"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -7178,8 +7178,7 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
                              r-later
                              r-getip
                              r-data-table
-                             r-cli
-                             r-autometric))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://wlandau.github.io/crew/")
     (synopsis "Distributed Worker Launcher Framework")
@@ -17985,13 +17984,13 @@ referenced at Environmental Protection Agency, United States as follows: EPA
 (define-public r-comtradr
   (package
     (name "r-comtradr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comtradr" version))
        (sha256
-        (base32 "1ljqw9i32p06yq16sbww1la7gnfgbajbs8l5hqbhxqgxk1qfxr0a"))))
+        (base32 "1lh6j5w1arkginnc8f7175b3bqbqa57ghd0rszk1pqq3wwfhpsw2"))))
     (properties `((upstream-name . "comtradr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -21735,13 +21734,13 @@ data.")
 (define-public r-cohortsymmetry
   (package
     (name "r-cohortsymmetry")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSymmetry" version))
        (sha256
-        (base32 "15rmz8r3q52mmmr7h639az3ayiylxwiqny5kl6ksdlg4pb0hiw9q"))))
+        (base32 "1pbyx0c42c3h35y068fbxxhw2x5addsq0dfq7fn3iwswm0418zw3"))))
     (properties `((upstream-name . "CohortSymmetry")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -21752,10 +21751,8 @@ data.")
                              r-patientprofiles
                              r-omopgenerics
                              r-omock
-                             r-magrittr
                              r-here
                              r-gt
-                             r-ggplot2
                              r-flextable
                              r-duckdb
                              r-drugutilisation
@@ -21763,7 +21760,7 @@ data.")
                              r-codelistgenerator
                              r-cdmconnector))
     (native-inputs (list r-knitr))
-    (home-page "https://oxford-pharmacoepi.github.io/CohortSymmetry/")
+    (home-page "https://ohdsi.github.io/CohortSymmetry/")
     (synopsis
      "Sequence Symmetry Analysis Using the Observational Medical Outcomes Partnership Common Data Model")
     (description
@@ -35250,13 +35247,13 @@ survival analysis models.")
 (define-public r-cfo
   (package
     (name "r-cfo")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFO" version))
        (sha256
-        (base32 "1dixm7xg341yw8qpbdz5gx0d8lnil02fcpz4n37pkgx42qd3qxmh"))))
+        (base32 "1pkswzqpkh9x72h2i6a3i6d55awq2qknq7gd0k6l6gdn70g0x3df"))))
     (properties `((upstream-name . "CFO")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -35277,24 +35274,25 @@ identifying the optimal biological dose (OBD).  The CFO package facilitates the
 implementation of dose-finding trials by utilizing calibration-free odds type
 (CFO-type) designs.  Specifically, it encompasses the calibration-free odds
 (CFO) (Jin and Yin (2022) <doi:10.1177/09622802221079353>), randomized CFO
-(@code{rCFO}), two-dimensional CFO (2@code{dCFO}) (Wang et al. (2023)
-<doi:10.3389/fonc.2023.1294258>), time-to-event CFO (TITE-CFO) (Jin and Yin
-(2023) <doi:10.1002/pst.2304>), fractional CFO (@code{fCFO}), accumulative CFO
-(@code{aCFO}), TITE-@code{aCFO}, and f-@code{aCFO} designs (Fang and Yin (2024)
-<doi: 10.1002/sim.10127>).  It supports phase I/II trials for the CFO design and
-only phase I trials for the other CFO-type designs.  The âCFO package
-accommodates diverse CFO-type designs, allowing users to tailor the approach
-based on factors such as dose information inclusion, handling of late-onset
-toxicity, and the nature of the target drug (single-drug or drug-combination).
-The functionalities embedded in CFO package include the determination of the
-dose level for the next cohort, the selection of the MTD for a real trial, and
-the execution of single or multiple simulations to obtain operating
-characteristics.  Moreover, these functions are equipped with early stopping and
-dose elimination rules to address safety considerations.  Users have the
-flexibility to choose different distributions, thresholds, and cohort sizes
-among others for their specific needs.  The output of the CFO package can be
-summary statistics as well as various plots for better visualization.  An
-interactive web application for CFO is available at the provided URL.")
+(@code{rCFO}), precision CFO (@code{pCFO}), two-dimensional CFO (2@code{dCFO})
+(Wang et al. (2023) <doi:10.3389/fonc.2023.1294258>), time-to-event CFO
+(TITE-CFO) (Jin and Yin (2023) <doi:10.1002/pst.2304>), fractional CFO
+(@code{fCFO}), accumulative CFO (@code{aCFO}), TITE-@code{aCFO}, and
+f-@code{aCFO} (Fang and Yin (2024) <doi: 10.1002/sim.10127>).  It supports phase
+I/II trials for the CFO design and only phase I trials for the other CFO-type
+designs.  The âCFO package accommodates diverse CFO-type designs, allowing
+users to tailor the approach based on factors such as dose information
+inclusion, handling of late-onset toxicity, and the nature of the target drug
+(single-drug or drug-combination).  The functionalities embedded in CFO package
+include the determination of the dose level for the next cohort, the selection
+of the MTD for a real trial, and the execution of single or multiple simulations
+to obtain operating characteristics.  Moreover, these functions are equipped
+with early stopping and dose elimination rules to address safety considerations.
+ Users have the flexibility to choose different distributions, thresholds, and
+cohort sizes among others for their specific needs.  The output of the CFO
+package can be summary statistics as well as various plots for better
+visualization.  An interactive web application for CFO is available at the
+provided URL.")
     (license license:gpl2)))
 
 (define-public r-cfmortality

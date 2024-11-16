@@ -13353,6 +13353,38 @@ package tm'.  Niklas Kuehl (2016) <doi:10.1007/978-3-319-32689-4_14> wrote an
 introduction to the topic of needmining.")
     (license license:gpl3)))
 
+(define-public r-necountries
+  (package
+    (name "r-necountries")
+    (version "0.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "necountries" version))
+       (sha256
+        (base32 "1wqn0n3qzjsblwzprhxs99c4z9pwcy11s7iiai0pn7ki7vx2k8g2"))))
+    (properties `((upstream-name . "necountries")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringi
+                             r-sf
+                             r-rlang
+                             r-rdpack
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-classint))
+    (native-inputs (list r-quarto))
+    (home-page "https://www.R-project.org")
+    (synopsis "Countries of the World")
+    (description
+     "Based on Natural Earth <https://www.naturalearthdata.com/>, a subset of
+countries can easily be selected with their administrative boundaries, joined
+with an external data frame and plotted as a thematic map.")
+    (license license:gpl2+)))
+
 (define-public r-necklaces
   (package
     (name "r-necklaces")

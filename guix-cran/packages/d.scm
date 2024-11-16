@@ -944,13 +944,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.5.2")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamite" version))
        (sha256
-        (base32 "1gbhrswczs1lb7qwv2wgiapl5xax2z5indfmzvq8f4d45cd4wn2v"))))
+        (base32 "1fby4z8xxz7qy3hyn016c4fap5wwsj0h6p9azk5ld51kb5blk2zh"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -965,7 +965,7 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
                              r-data-table
                              r-cli
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://docs.ropensci.org/dynamite/")
     (synopsis
      "Bayesian Modeling and Causal Inference for Multivariate Longitudinal Data")

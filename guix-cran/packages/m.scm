@@ -5448,13 +5448,13 @@ training methodology in each line.  Reference: Marzouka & Eriksson (2021)
 (define-public r-multichull
   (package
     (name "r-multichull")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multichull" version))
        (sha256
-        (base32 "17c2hwgnlw67s2209ran6gz0mdg66kzxzp6d484dp53gggnpdw0l"))))
+        (base32 "109359jc79w9yr479x2jwwzg75i10sw5rhk11q9xfcbdsm69i6yl"))))
     (properties `((upstream-name . "multichull")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes r-shiny r-plotly r-igraph r-dt))
@@ -6029,13 +6029,13 @@ Allocation Problems.")
 (define-public r-mult-latent-reg
   (package
     (name "r-mult-latent-reg")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mult.latent.reg" version))
        (sha256
-        (base32 "1fghkzzz5p8fvnk3ckfnrp2yr3dlr1w7zbd4gwazh17y46hi434x"))))
+        (base32 "02xnmx6p501mkmm33p165kw3x6inxffjxvgm67i9hk45izcvcimh"))))
     (properties `((upstream-name . "mult.latent.reg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixstats r-lme4))
@@ -14084,13 +14084,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1fh0nw5vckfpl3s6jjl87dc6yidv97x8q6l29qz3avlkgjhd1j6a"))))
+        (base32 "1bi1g46ylggrnv5qq6w0agymsiv7y7kxyj8kpqhy5xshcc41fxbw"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -14107,7 +14107,7 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
                              r-fastghquad
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Kss2k/modsem")
+    (home-page "https://modsem.org")
     (synopsis
      "Latent Interaction (and Moderation) Analysis in Structural Equation Models (SEM)")
     (description
@@ -23503,13 +23503,13 @@ MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "1zyf9higa7c9bnbzxz10xbqd66yhb3w9y5lfgc97mkmgnmd2y685"))))
+        (base32 "0gyhbipql7gsd9mb2ks334k44zs8pmc0bvxkwg80wmbai0h5576d"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))

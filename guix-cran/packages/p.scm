@@ -7011,18 +7011,19 @@ the Rprof and pprof file formats.")
 (define-public r-proffer
   (package
     (name "r-proffer")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proffer" version))
        (sha256
-        (base32 "12qh4k9zm2a2fv6hb66phl13qx7mp9xzzrzmhsbhzf4xpjm519d7"))))
+        (base32 "16pih26cyali8ljw7z5qhwxjpfs079khbvkjqz2vd99g036799v0"))))
     (properties `((upstream-name . "proffer")))
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-withr
                              r-rprotobuf
+                             r-r-utils
                              r-profile
                              r-processx
                              r-pingr
@@ -8549,13 +8550,13 @@ problems.")
 (define-public r-prior3d
   (package
     (name "r-prior3d")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prior3D" version))
        (sha256
-        (base32 "05ra445r9w1f5cq4khkis1l7y5b7dlsgndxfs1sldcz58lsgdf18"))))
+        (base32 "0x0wnxvjqc6b7ig9i1g8xgq2gzdjj2365myzka8aggq5knx9jxy5"))))
     (properties `((upstream-name . "prior3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis

@@ -575,6 +575,38 @@ details.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-quicr
+  (package
+    (name "r-quicr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quicR" version))
+       (sha256
+        (base32 "1q5d8v8a704pjgwf6n228qiqaqpfw488ylkzzvmzg5zznbgbh2d0"))))
+    (properties `((upstream-name . "quicR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-slider
+                             r-reshape2
+                             r-readxl
+                             r-openxlsx
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=quicR")
+    (synopsis "RT-QuIC Data Formatting and Analysis")
+    (description
+     "Designed for the curation and analysis of data generated from real-time
+quaking-induced conversion (RT-@code{QuIC}) assays first described by Atarashi
+et al. (2011) <doi:10.1038/nm.2294>. @code{quicR} calculates useful metrics such
+as maxpoint ratio: Rowden et al. (2023) <doi:10.1099/vir.0.069906-0>;
+time-to-threshold: Shi et al. (2013) <doi:10.1186/2051-5960-1-44>; and maximum
+slope.  Integration with the output from plate readers allows for seamless input
+of raw data into the R environment.")
+    (license license:gpl3)))
+
 (define-public r-quickregression
   (package
     (name "r-quickregression")

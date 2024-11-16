@@ -2900,13 +2900,13 @@ Cellwise and Casewise Contamination and Missing Data.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign2" version))
        (sha256
-        (base32 "0kyj5pv5cr8ljbhzsly70115czhgx5wrpcgpd0jvv2djjf21klh2"))))
+        (base32 "11bd2l0vi1xa8hx59i543csqyphmqbg2jax9gcsjrgjfn2pjm2cm"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4897,13 +4897,13 @@ Aggregated projection method.")
 (define-public r-grf
   (package
     (name "r-grf")
-    (version "2.3.2")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grf" version))
        (sha256
-        (base32 "0za2c9hlvp1s2h25vr6f0qlw92r9wp0vbmfdsp38q190drpjnff0"))))
+        (base32 "1ibb2ylqrvgji899sraywklsq63i65y7hvm4km7hwblxgarbjgxm"))))
     (properties `((upstream-name . "grf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -8525,13 +8525,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.1.2")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "04vq8vic040id09052l732pw231maghpja9j01whil9cvj5k97sj"))))
+        (base32 "0alnlypk4bkmph3i2739vwx8j7c5drqbjfsi6a3xcya2lghc43a8"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -22194,6 +22194,39 @@ regression model is based on G. Roerink, M. Menenti and W. Verhoef (2000)
 <doi:10.1080/014311600209814>.")
     (license license:gpl2+)))
 
+(define-public r-geotox
+  (package
+    (name "r-geotox")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeoTox" version))
+       (sha256
+        (base32 "0q4jkcj7zmh1hsn9izv09p0wzb4amsxfqc22lr28jw2df17r0ym6"))))
+    (properties `((upstream-name . "GeoTox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-ggridges
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://niehs.github.io/GeoTox/")
+    (synopsis "Spatiotemporal Mixture Risk Assessment")
+    (description
+     "Connecting spatiotemporal exposure to individual and population-level risk via
+source-to-outcome continuum modeling.  The package, methods, and case-studies
+are described in Messier, Reif, and Marvel (2024)
+<doi:10.1101/2024.09.23.24314096> and Eccles et al. (2023)
+<doi:10.1016/j.scitotenv.2022.158905>.")
+    (license license:expat)))
+
 (define-public r-geotopbricks
   (package
     (name "r-geotopbricks")
@@ -22926,13 +22959,13 @@ in polar co-ordinates.")
 (define-public r-geomorph
   (package
     (name "r-geomorph")
-    (version "4.0.8")
+    (version "4.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomorph" version))
        (sha256
-        (base32 "0m8c1y3mi794k7b8zrnkvs098gjmaq3lvp1ds3kxjn7v0ddavd0l"))))
+        (base32 "0rshmlz9ccljl7c9fsz18jajdsdgm7zgiarx1sk2d85j31bfdhmb"))))
     (properties `((upstream-name . "geomorph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrpp

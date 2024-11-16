@@ -5060,13 +5060,13 @@ Gaussian frailty models.")
 (define-public r-frailtypack
   (package
     (name "r-frailtypack")
-    (version "3.6.3")
+    (version "3.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frailtypack" version))
        (sha256
-        (base32 "1f9ic740f449777h2wn0mf01sxdfhycmmjq25zw1sz0i667fx49i"))))
+        (base32 "0y7144kkcfyg7i5aljsbxdd9cg9wk6szj68bx49n2i4b92kpwycz"))))
     (properties `((upstream-name . "frailtypack")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -9896,16 +9896,21 @@ re-producibility in the context of machine-learning.")
 (define-public r-flowmapper
   (package
     (name "r-flowmapper")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowmapper" version))
        (sha256
-        (base32 "11jj09bdkdiss10xmzmyk68bsqr6jljwzmrabc3mq8qqx8qwpgml"))))
+        (base32 "0zz42c733hzk1q93qxvjidrs2jvh2cdbphd2hqlvfnddk57zhx3a"))))
     (properties `((upstream-name . "flowmapper")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-scales r-ggplot2 r-forcats r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-purrr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
     (home-page "https://github.com/JohMast/flowmapper")
     (synopsis
      "Draw Flows (Migration, Goods, Money, Information) on 'ggplot2' Plots")
@@ -19336,13 +19341,13 @@ available from <https://github.com/randy408/libspng/>.")
 (define-public r-fastplyr
   (package
     (name "r-fastplyr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastplyr" version))
        (sha256
-        (base32 "18b478028ipn8wcwsnzvins7fmdfsqczilhrp3bcn28d3kr2w225"))))
+        (base32 "0m926irgwr843i1v0sy0smrl887kixbhw10l85mykmf99cvsyhfy"))))
     (properties `((upstream-name . "fastplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

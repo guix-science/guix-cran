@@ -5152,6 +5152,36 @@ approximation, allowing for fast inference and flexible covariate effects
 package is described by Michelot (2022) <@code{arXiv:2211.14139>}.")
     (license license:gpl3)))
 
+(define-public r-hmmrel
+  (package
+    (name "r-hmmrel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMMRel" version))
+       (sha256
+        (base32 "16lgwpdy63blmqh8im8nmx2v5h4xlr1p1l1jpljk833m08z38lls"))))
+    (properties `((upstream-name . "HMMRel")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=HMMRel")
+    (synopsis "Hidden Markov Models for Reliability and Maintenance")
+    (description
+     "Reliability Analysis and Maintenance Optimization using Hidden Markov Models
+(HMM).  The use of HMMs to model the state of a system which is not directly
+observable and instead certain indicators (signals) of the true situation are
+provided via a control system.  A hidden model can provide key information about
+the system dependability, such as the reliability of the system and related
+measures.  An estimation procedure is implemented based on the Baum-Welch
+algorithm.  Classical structures such as K-out-of-N systems and Shock models are
+illustrated.  Finally, the maintenance of the system is considered in the HMM
+context and two functions for new preventive maintenance strategies are
+considered.  Maintenance efficiency is measured in terms of expected cost.
+Maintenance efficiency is measured in terms of expected cost.  Methods are
+described in Gamiz, Limnios, and Segovia-Garcia (2023)
+<doi:10.1016/j.ejor.2022.05.006>.")
+    (license license:gpl2)))
+
 (define-public r-hmmr
   (package
     (name "r-hmmr")
@@ -13709,13 +13739,13 @@ methods and structural plots of Hierarchical Archimedean Copulae (HAC).")
 (define-public r-habtools
   (package
     (name "r-habtools")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "habtools" version))
        (sha256
-        (base32 "1y0pjx16272dknmp2lpc69fmj5h4s4hsl2kchlrcwxpdyfyz7yb2"))))
+        (base32 "1283ng0ypn6b9smi9jca04sl4s4xrsap76rx7w4inc7vfi2h2xvj"))))
     (properties `((upstream-name . "habtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

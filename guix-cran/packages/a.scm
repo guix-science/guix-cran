@@ -2065,13 +2065,13 @@ user as possible.")
 (define-public r-autometric
   (package
     (name "r-autometric")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autometric" version))
        (sha256
-        (base32 "17cg9rw5mbdvr2y394zj46d1bqxapnwmb9q25fi24bsf0k06pqmk"))))
+        (base32 "1dk2k78niqx9n8pq95cyx4qw00cmic47lyrg5ac0ghr25539jrld"))))
     (properties `((upstream-name . "autometric")))
     (build-system r-build-system)
     (home-page "https://wlandau.github.io/autometric/")
@@ -12781,13 +12781,13 @@ into more contemporary data.")
 (define-public r-ami
   (package
     (name "r-ami")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ami" version))
        (sha256
-        (base32 "1v00nw5rn89rdk00rfwk24b6qha9xs83wbqssjaay3lazl3nqpsz"))))
+        (base32 "03yhfn0qfwb8z1qnnsb7lvn6d71brhqd1blskhyza07hmlxbqzmd"))))
     (properties `((upstream-name . "ami")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-rlang r-lifecycle r-glue r-curl))

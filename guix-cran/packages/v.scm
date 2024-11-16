@@ -3303,13 +3303,13 @@ is an implementation of Zishu Zhan and Jingxiao Zhang. (2022+).")
 (define-public r-visachartr
   (package
     (name "r-visachartr")
-    (version "3.3.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visachartR" version))
        (sha256
-        (base32 "1yr6mb4vgzqn1g32grq681yrnx5dzm4b1fzh7lv0pggaga3h61m8"))))
+        (base32 "1a0jvdkmkk86p7xl16mpwibkrxbk4zsas6yrmjg9zwincsf3xx81"))))
     (properties `((upstream-name . "visachartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))
