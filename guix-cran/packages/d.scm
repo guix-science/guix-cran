@@ -16355,6 +16355,36 @@ of functional regression coefficients and principal components for the
 dichotomized functional response regression (dfrr) model.")
     (license license:gpl3)))
 
+(define-public r-dfr
+  (package
+    (name "r-dfr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dfr" version))
+       (sha256
+        (base32 "18p31h1bh7h2s2jdi0lvn2m23smayj26kl5291rnvk47v41i0vh4"))))
+    (properties `((upstream-name . "dfr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sgs r-matrix r-mass r-caret))
+    (home-page "https://github.com/ff1201/dfr")
+    (synopsis "Dual Feature Reduction for SGL")
+    (description
+     "Implementation of the Dual Feature Reduction (DFR) approach for the Sparse Group
+Lasso (SGL) and the Adaptive Sparse Group Lasso (@code{aSGL}) (Feser and
+Evangelou (2024) <doi:10.48550/@code{arXiv.2405.17094>}).  The DFR approach is a
+feature reduction approach that applies strong screening to reduce the feature
+space before optimisation, leading to speed-up improvements for fitting SGL
+(Simon et al. (2013) <doi:10.1080/10618600.2012.681250>) and @code{aSGL}
+(Mendez-Civieta et al. (2020) <doi:10.1007/s11634-020-00413-8> and Poignard
+(2020) <doi:10.1007/s10463-018-0692-7>) models.  DFR is implemented using the
+Adaptive Three Operator Splitting (ATOS) (Pedregosa and Gidel (2018)
+<doi:10.48550/@code{arXiv.1804.02339>}) algorithm, with linear and logistic SGL
+models supported, both of which can be fit using k-fold cross-validation.  Dense
+and sparse input matrices are supported.")
+    (license license:gpl3+)))
+
 (define-public r-dfphase1
   (package
     (name "r-dfphase1")
@@ -16869,16 +16899,16 @@ these adjustments.")
 (define-public r-dfa-cancor
   (package
     (name "r-dfa-cancor")
-    (version "0.2.8")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DFA.CANCOR" version))
        (sha256
-        (base32 "1i0bf9w4f0djwqsmwjiyfxnvsj220bmk4vfvz3l4l0wmdxil9cda"))))
+        (base32 "0fvrzsj1drc08bnfi2n636ps6wq09hniz457fvhhj3siagafd7ls"))))
     (properties `((upstream-name . "DFA.CANCOR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvn r-bayesfactor))
+    (propagated-inputs (list r-mvoutlier r-mvn r-mass r-bayesfactor))
     (home-page "https://cran.r-project.org/package=DFA.CANCOR")
     (synopsis
      "Linear Discriminant Function and Canonical Correlation Analysis")

@@ -11825,13 +11825,13 @@ calculus.")
 (define-public r-mortcast
   (package
     (name "r-mortcast")
-    (version "2.7-0")
+    (version "2.8-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MortCast" version))
        (sha256
-        (base32 "1hw20wb0sl8q09vv68hid90ma2ml866kglsjf38kqky1whmihfbc"))))
+        (base32 "1m22d80bmr0a4j94r9n5v5wg4jlx62lb0xlnz5vp8dq1ra2hhsqg"))))
     (properties `((upstream-name . "MortCast")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpp2017))

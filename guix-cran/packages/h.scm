@@ -7820,13 +7820,13 @@ included in the scripts directory of the package.")
 (define-public r-hgwrr
   (package
     (name "r-hgwrr")
-    (version "0.6-0")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hgwrr" version))
        (sha256
-        (base32 "1v0lgkm3ny5mbx2wn1xf3wqj88mcwyypbrlp804m956mwjlxlwyd"))))
+        (base32 "19lx5xnxvvxq7yax1i9pn19vjvn5ak6s2khm9bi8h43rj08wc4ck"))))
     (properties `((upstream-name . "hgwrr")))
     (build-system r-build-system)
     (inputs (list gsl))

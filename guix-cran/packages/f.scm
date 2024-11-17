@@ -6551,13 +6551,13 @@ packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "6.2.0")
+    (version "6.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forsearch" version))
        (sha256
-        (base32 "02k3k9pv55aymym8p60xl071161zigr7m8m3vpna68rril8laq8i"))))
+        (base32 "0z8d6mr9yswribbcx0wwgldzvwjbzg8wjwqvy6g65kkklnyrj46w"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -6574,11 +6574,12 @@ packages such as dplyr and tidyr'.")
      "Diagnostic Analysis Using Forward Search Procedure for Various Models")
     (description
      "Identifies potential data outliers and their impact on estimates and analyses.
-Uses the forward search approach of Atkinson and Riani, \"Robust Diagnostic
-Regression Analysis\", 2000,<ISBN: o-387-95017-6> to prepare descriptive
-statistics of a dataset that is to be analyzed by stats::lm(), stats::glm(),
-stats::nls(), nlme::lme() or survival::coxph().  Includes graphics functions to
-display the descriptive statistics.")
+Tool for evaluation of study credibility.  Uses the forward search approach of
+Atkinson and Riani, \"Robust Diagnostic Regression Analysis\", 2000,<ISBN:
+o-387-95017-6> to prepare descriptive statistics of a dataset that is to be
+analyzed by functions lm {stats}, glm {stats}, nls {stats}, lme {nlme}, or coxph
+{survival}, or their equivalent in another language.  Includes graphics
+functions to display the descriptive statistics.")
     (license license:gpl3+)))
 
 (define-public r-forrel

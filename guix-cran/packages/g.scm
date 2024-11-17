@@ -22383,18 +22383,19 @@ Theoretical background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostan" version))
        (sha256
-        (base32 "0s35rcjcimc00fsaiy7dbpg2nncyy4y2h8bpqgdcy3933xsz3jqm"))))
+        (base32 "083p56ij3w14ixrbcndqywbhhffc56ry5gkq2pp0npfrj9cs6430"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
                              r-stanheaders
                              r-spdep
+                             r-spdata
                              r-signs
                              r-sf
                              r-rstantools
@@ -22412,10 +22413,10 @@ Theoretical background and worked examples are available at
     (synopsis "Bayesian Spatial Analysis")
     (description
      "For spatial data analysis; provides exploratory spatial analysis tools, spatial
-regression models, disease mapping models, model diagnostics, and special
-methods for inference with small area survey data (e.g., the America Community
-Survey (ACS)) and censored population health surveillance data.  Models are
-pre-specified using the Stan programming language, a platform for Bayesian
+regression, spatial econometric, and disease mapping models, model diagnostics,
+and special methods for inference with small area survey data (e.g., the America
+Community Survey (ACS)) and censored population health monitoring data.  Models
+are pre-specified using the Stan programming language, a platform for Bayesian
 inference using Markov chain Monte Carlo (MCMC).  References: Carpenter et al.
 (2017) <doi:10.18637/jss.v076.i01>; Donegan (2021) <doi:10.31219/osf.io/3ey65>;
 Donegan (2022) <doi:10.21105/joss.04716>; Donegan, Chun and Hughes (2020)
@@ -27648,13 +27649,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "0023xwv9glf5xpkzbcrhwm1cxhlng5lyxw02zk5grsj03f9b76zw"))))
+        (base32 "0l64v55pq3kyvd4bkmy9xrh9vhiw3fwy12ivbc2vc8nrnn4996g4"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27669,7 +27670,6 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
                              r-patchwork
                              r-magrittr
                              r-ggplot2
-                             r-geosphere
                              r-forcats
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -27677,10 +27677,10 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
     (synopsis "Analysis of Spatial Stratified Heterogeneity")
     (description
      "Analyzing spatial factors and exploring spatial associations based on the
-concept of spatial stratified heterogeneity, and also takes into account local
-spatial dependencies, spatial interpretability, potential spatial interactions,
-and robust spatial stratification.  Additionally, it supports geographical
-detector models established in academic literature.")
+concept of spatial stratified heterogeneity, while also taking into account
+local spatial dependencies, spatial interpretability, complex spatial
+interactions, and robust spatial stratification.  Additionally, it supports the
+spatial stratified heterogeneity family established in academic literature.")
     (license license:gpl3)))
 
 (define-public r-gdsarm

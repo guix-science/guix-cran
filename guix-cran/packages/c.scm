@@ -38386,13 +38386,13 @@ rec().  LÃ¼decke D (2018). \"sjmisc: Data and Variable Transformation Function
 (define-public r-cchs
   (package
     (name "r-cchs")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cchs" version))
        (sha256
-        (base32 "14qmh4jb9i0imjkb33x61q074zsrng3acy52cw9p0zsxrbh4gdf5"))))
+        (base32 "1idc6jm5vmgl6ixcx4hz5xf82z30dkkg6f4s95ii9xp8ly9amnh1"))))
     (properties `((upstream-name . "cchs")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))

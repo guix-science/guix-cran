@@ -31750,13 +31750,13 @@ of useful Tcl/Tk widgets.")
 (define-public r-reliagrowr
   (package
     (name "r-reliagrowr")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliaGrowR" version))
        (sha256
-        (base32 "15d8530id8j5m9awzm5621j4zg28vchdgm6yk3ym0wqyg5lcj30c"))))
+        (base32 "1inzsp8y6d2hp9wjw89rc4hisafxz36f8fnd285nj6vpariy8h7p"))))
     (properties `((upstream-name . "ReliaGrowR")))
     (build-system r-build-system)
     (propagated-inputs (list r-segmented))

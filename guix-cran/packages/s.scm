@@ -25218,13 +25218,13 @@ Erichson et al. (2018) <@code{arXiv:1804.00341>}.")
 (define-public r-sparsenet
   (package
     (name "r-sparsenet")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsenet" version))
        (sha256
-        (base32 "1r3p14qbwkmb8hmgfh0ymzz52lqxgc9cnp8yh8y8la1sm3hxc92n"))))
+        (base32 "004f852ayq467pv135k0q5nn2wsz4pylx61qxpn1x3iy9rm80j0h"))))
     (properties `((upstream-name . "sparsenet")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-matrix))
@@ -46319,6 +46319,43 @@ assess and augment existing sample networks in the context of data distributions
 and conditions.  ALS data is the primary intended use case, however any
 rasterized remote sensing data can be used, enabling data-driven stratifications
 and sampling approaches.")
+    (license license:gpl3+)))
+
+(define-public r-sgs
+  (package
+    (name "r-sgs")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgs" version))
+       (sha256
+        (base32 "07b3136rv2gqc4hdcrl8pg3yv4sysbxdnrvhcdd6p89qah0zrzh7"))))
+    (properties `((upstream-name . "sgs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-slope
+                             r-rlab
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ff1201/sgs")
+    (synopsis
+     "Sparse-Group SLOPE: Adaptive Bi-Level Selection with FDR Control")
+    (description
+     "Implementation of Sparse-group SLOPE (SGS) (Feser and Evangelou (2023)
+<doi:10.48550/@code{arXiv.2305.09467>}) models.  Linear and logistic regression
+models are supported, both of which can be fit using k-fold cross-validation.
+Dense and sparse input matrices are supported.  In addition, a general Adaptive
+Three Operator Splitting (ATOS) (Pedregosa and Gidel (2018)
+<doi:10.48550/@code{arXiv.1804.02339>}) implementation is provided.  Group SLOPE
+(@code{gSLOPE}) (Brzyski et al. (2019) <doi:10.1080/01621459.2017.1411269>) and
+group-based OSCAR models (Feser and Evangelou (2024)
+<doi:10.48550/@code{arXiv.2405.15357>}) are also implemented.  All models are
+available with strong screening rules (Feser and Evangelou (2024)
+<doi:10.48550/@code{arXiv.2405.15357>}) for computational speed-up.")
     (license license:gpl3+)))
 
 (define-public r-sgraph

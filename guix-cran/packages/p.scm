@@ -36102,13 +36102,13 @@ without compiling with a multithreaded LAPACK or BLAS.")
 (define-public r-pargasite
   (package
     (name "r-pargasite")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pargasite" version))
        (sha256
-        (base32 "0jna1mjq4k8zfnszw3yarn6s0bhc70awins3nz4kmply01jy5jfi"))))
+        (base32 "0q04kyfnsxyr2myddrblisbd11v7szqpas5v5scvj9j1p8j9z6hz"))))
     (properties `((upstream-name . "pargasite")))
     (build-system r-build-system)
     (propagated-inputs (list r-stars
