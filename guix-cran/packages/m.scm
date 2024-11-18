@@ -31557,16 +31557,16 @@ clinical programming workflow.")
 (define-public r-metaconvert
   (package
     (name "r-metaconvert")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaConvert" version))
        (sha256
-        (base32 "0fcqb1dqkrk1fygrncvid14kv4v5ih2q43dbf17mc5l4n5gqn3bm"))))
+        (base32 "0h2gr1ixcbjykhs0f9i09l910ixj4x9jsa393c8x7jffprxcvjy7"))))
     (properties `((upstream-name . "metaConvert")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rio r-metafor r-estimraw r-comparedf))
+    (propagated-inputs (list r-rio r-mvtnorm r-metafor r-estimraw r-comparedf))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=metaConvert")
     (synopsis

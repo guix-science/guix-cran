@@ -9545,13 +9545,13 @@ function, and maximum likelihood estimation.")
 (define-public r-tpn
   (package
     (name "r-tpn")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tpn" version))
        (sha256
-        (base32 "1jhddrgkzlwmljqzy4hgday4ydyc76fskk2ahnz9x2abfm21dx7g"))))
+        (base32 "0zw7973dpm71l6ncvh1n2wapfkvgpks9afkzpih690qdda7p4nmm"))))
     (properties `((upstream-name . "tpn")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-skewmlrm r-rbe3 r-pracma r-moments))

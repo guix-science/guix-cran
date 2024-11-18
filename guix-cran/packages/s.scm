@@ -26727,19 +26727,19 @@ difference metrics are included.")
 (define-public r-spacesrgb
   (package
     (name "r-spacesrgb")
-    (version "1.5-0")
+    (version "1.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spacesRGB" version))
        (sha256
-        (base32 "1v4az4qn965p0xds10ff7f4565j5n9pqc44501l6fi5j7h819hsc"))))
+        (base32 "0qb9w4igmrjf2qx8wrlvhpfmy3cz44635xgcn39fa59zm3s7krj0"))))
     (properties `((upstream-name . "spacesRGB")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=spacesRGB")
     (synopsis
-     "Standard and User-Defined RGB Color Spaces, with Conversion Between RGB and CIE XYZ")
+     "Standard and User-Defined RGB Color Spaces, with Conversion Between RGB and CIE XYZ and Lab")
     (description
      "Standard RGB spaces included are @code{sRGB}, Adobe RGB, @code{ProPhoto} RGB,
 BT.709, and others.  User-defined RGB spaces are also possible.  There is
@@ -49930,13 +49930,13 @@ for more informations.")
 (define-public r-sensiat
   (package
     (name "r-sensiat")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SensIAT" version))
        (sha256
-        (base32 "1ky1k49mgfmf2d6c5czyj3hszjwi611qs8hy4rg40hgkx00m4bsn"))))
+        (base32 "0327bb7zkw07qs7lq5nqh845yb65m9b5xx7wjy8pfa2f7mxwg7f2"))))
     (properties `((upstream-name . "SensIAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -4846,23 +4846,25 @@ Ministry of Agriculture and Fishing of France.")
 (define-public r-keng
   (package
     (name "r-keng")
-    (version "2024.11.02")
+    (version "2024.11.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Keng" version))
        (sha256
-        (base32 "15q50pd5rc0hcmkr2w8a08dsvpa3zap828vv2w3iy7dwyvx3n3kl"))))
+        (base32 "1nfaywsrkzi8xwba9ljflix9msz7474dz0zcczhvxlgmfl8va5y3"))))
     (properties `((upstream-name . "Keng")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/qyaozh/Keng")
     (synopsis "Knock Errors Off Nice Guesses")
     (description
      "Miscellaneous functions and data used in Qingyao's psychological research and
-teaching.  Keng currently could test the significance and compute the cut-off
-values of Pearson's r without raw data.  Keng could also compare lm()'s fitted
-outputs using R-squared and PRE (Proportional Reduction in Error, also called
-partial R-squared or partial Eta-squared).")
+teaching.  Keng currently has a built-in dataset depress, and could (1) scale a
+vector, (2) test the significance and compute the cut-off values of Pearson's r
+without raw data, (3) compare lm()'s fitted outputs using R-squared and PRE
+(Proportional Reduction in Error, also called partial R-squared or partial
+Eta-squared).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-kendallrandomwalks

@@ -15038,13 +15038,13 @@ resource utilisation.")
 (define-public r-electionsbr
   (package
     (name "r-electionsbr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "electionsBR" version))
        (sha256
-        (base32 "0sqdrh7q24dwgz418gbv7i8fhy6vlf4dwals13prsjrn24zp0fj3"))))
+        (base32 "0d50hlbrby2frqvyl12y7jcy6cg7s1fqzav0cic5sllfhbk3kwdp"))))
     (properties `((upstream-name . "electionsBR")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr
@@ -15055,14 +15055,14 @@ resource utilisation.")
                              r-data-table
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "http://electionsbr.com/")
+    (home-page "https://electionsbr.com/novo/")
     (synopsis "R Functions to Download and Clean Brazilian Electoral Data")
     (description
      "Offers a set of functions to easily download and clean Brazilian electoral data
-from the Superior Electoral Court website.  Among others, the package retrieves
-data on local and federal elections for all positions (city councilor, mayor,
-state deputy, federal deputy, governor, and president) aggregated by state,
-city, and electoral zones.")
+from the Superior Electoral Court and @code{CepespData} websites.  Among other
+features, the package retrieves data on local and federal elections for all
+positions (city councilor, mayor, state deputy, federal deputy, governor, and
+president) aggregated by state, city, and electoral zones.")
     (license license:gpl2+)))
 
 (define-public r-elections-dtree

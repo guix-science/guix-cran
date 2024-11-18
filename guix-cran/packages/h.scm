@@ -7845,17 +7845,16 @@ this model to reach better fitness.")
 (define-public r-hgutils
   (package
     (name "r-hgutils")
-    (version "0.2.11")
+    (version "0.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hgutils" version))
        (sha256
-        (base32 "0l288fqymh2i4dngy909gi8b4c9hdis02gqwyyvy6r8xzisk4m44"))))
+        (base32 "12sylpfjzh8avlk9b51vcz5dm8097z9k90n043pv3g5jzywd4wxd"))))
     (properties `((upstream-name . "hgutils")))
     (build-system r-build-system)
-    (propagated-inputs (list r-usethis
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-magrittr
                              r-lubridate
                              r-limsolve
