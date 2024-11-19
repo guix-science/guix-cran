@@ -17888,13 +17888,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.6-0")
+    (version "1.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "0d0ca5ap0lh69fgqri9cjlw52ca9z582bvmq843fi686cplrkv9w"))))
+        (base32 "0zkvacasi4alqi1ag2dsppi5qj7a6ljv5nrldzgy0lb0gixw8j2r"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -17916,7 +17916,9 @@ likely transformation approach described in Hothorn et al. (2018)
 <DOI:10.1111/sjos.12291> and Hothorn (2020) <DOI:10.18637/jss.v092.i01>.
 Shift-scale (Siegfried et al, 2023, <DOI:10.1080/00031305.2023.2203177>) and
 multivariate (Klein et al, 2022, <DOI:10.1111/sjos.12501>) transformation models
-are part of this package.")
+are part of this package.  A package vignette is available from
+<DOI:10.32614/CRAN.package.mlt.docreg> and more convenient user interfaces to
+many models from <DOI:10.32614/CRAN.package.tram>.")
     (license license:gpl2)))
 
 (define-public r-mlsurvlrnrs

@@ -1364,13 +1364,13 @@ A. Lama and B. Gurung in Mausam, vol.  72, pp.879-886,
 (define-public r-autovi
   (package
     (name "r-autovi")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autovi" version))
        (sha256
-        (base32 "1f0pmcqjzb4w10693khakva84dn32k01a655c5r4xf1n86vvq2jv"))))
+        (base32 "1zhvbjs3i8i7bx7q5jxx0fxw3f15xqfraanfx8dd338sny25hqnn"))))
     (properties `((upstream-name . "autovi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3548,13 +3548,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2024.10.5")
+    (version "2024.11.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "0sch016xdr6ifhf45j8jhbiqm0505mh2gmkx9fvgbcxd6x2bc14j"))))
+        (base32 "0n90m0ml06zlr39zrv86gabqaq9qpx0197x9bibqc536bd3fb7rv"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
@@ -9804,13 +9804,13 @@ transcription errors and reduces the number commands needed by the user.")
 (define-public r-apackoftheclones
   (package
     (name "r-apackoftheclones")
-    (version "1.2.1")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APackOfTheClones" version))
        (sha256
-        (base32 "0rg41v9lmh0hvfhsn1ak69qy1xb4bk2cziy28w4k0g1r1miqixsb"))))
+        (base32 "16c99d404ppzhgkj7g816h24fpfpfyqis21gdsbi6wcizh6w90qz"))))
     (properties `((upstream-name . "APackOfTheClones")))
     (build-system r-build-system)
     (propagated-inputs (list r-seuratobject

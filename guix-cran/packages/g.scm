@@ -7518,16 +7518,17 @@ ordering proposed in Guinness (2018) <@code{arXiv:1609.05372>}.")
 (define-public r-gpvam
   (package
     (name "r-gpvam")
-    (version "3.1-1")
+    (version "3.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPvam" version))
        (sha256
-        (base32 "0qd71rab04qnk8z1x6p4p9y3yx9vs2dn7xm5l44xmq2xyv6bcyab"))))
+        (base32 "0rk3h767rpgdcjhy73kk77mcqbnl1g2x0f505cknp61i3fc5djaf"))))
     (properties `((upstream-name . "GPvam")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
                              r-rcpp
                              r-patchwork
                              r-numderiv
@@ -21906,13 +21907,13 @@ techniques for evaluate the seed germination process in ecophysiological studies
 (define-public r-gerefer
   (package
     (name "r-gerefer")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gerefer" version))
        (sha256
-        (base32 "0jvy2m6bgdp7isgblj0vlrx0piyfzhib0wihwxg08v754x4xnwi3"))))
+        (base32 "10l4s44amz0pc9nmwh3j7bbysyn2rwfa6a95w3xpf6qdgjkxgfnw"))))
     (properties `((upstream-name . "gerefer")))
     (build-system r-build-system)
     (propagated-inputs (list r-bibliorefer))

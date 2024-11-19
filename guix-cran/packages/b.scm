@@ -255,13 +255,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.11")
+    (version "2.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "1wjwcmskyf6m2nadkqpmpviz8kx4g1vw0xdv7bc6krd6rqqdji0h"))))
+        (base32 "1fs3rhnijyirc8zcjjadkjvgp2qbhc0bnlzxvhdglz9a1xy9yyyi"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -270,8 +270,8 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
     (description
      "Whole-genome regression methods on Bayesian framework fitted via EM or Gibbs
 sampling, single step (<doi:10.1534/g3.119.400728>), univariate and multivariate
-(<doi:10.1186/s12711-022-00730-w>), with optional kernel term and sampling
-techniques (<doi:10.1186/s12859-017-1582-3>).")
+(<doi:10.1186/s12711-022-00730-w>, <doi:10.1093/genetics/iyae179>), with
+optional kernel term and sampling techniques (<doi:10.1186/s12859-017-1582-3>).")
     (license license:gpl3)))
 
 (define-public r-bwd
@@ -16976,6 +16976,32 @@ alternative hypotheses.  Plots of BFFs versus effect size provide informative
 summaries of hypothesis tests that can be easily aggregated across studies.")
     (license license:gpl2+)))
 
+(define-public r-bfboinet
+  (package
+    (name "r-bfboinet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bfboinet" version))
+       (sha256
+        (base32 "03s4b0x7lfka09rm5a5fr9aiahk846znc6ag73s8gygmls58mvx5"))))
+    (properties `((upstream-name . "bfboinet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect r-magrittr r-iso r-dplyr r-copula))
+    (home-page "https://cran.r-project.org/package=bfboinet")
+    (synopsis
+     "Backfill Bayesian Optimal Interval Design Using Efficacy and Toxicity")
+    (description
+     "The backfill Bayesian optimal interval design using efficacy and toxicity
+outcomes for dose optimization (BF-BOIN-ET) design is a novel clinical trial
+design to allow patients to be backfilled at lower doses during a dose-finding
+trial while prioritizing the dose-escalation cohort to explore a higher dose.
+The advantages compared to the other designs in terms of the percentage of
+correct optimal dose (OD) selection, reducing the sample size, and shortening
+the duration of the trial, in various realistic setting.")
+    (license license:gpl3)))
+
 (define-public r-bfast
   (package
     (name "r-bfast")
@@ -27490,13 +27516,13 @@ which a statistical decision can be made.  See Berg and Popescu for details
 (define-public r-balancedsampling
   (package
     (name "r-balancedsampling")
-    (version "2.0.6")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BalancedSampling" version))
        (sha256
-        (base32 "1qkbsihk776h5na7dv68kab6qqbymfci9yvq0pnrlb5zb92fw32b"))))
+        (base32 "19a4fb2jnd2h6234radcylgbvmf6mf40hkqn9r2nmrmydvw883hq"))))
     (properties `((upstream-name . "BalancedSampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -27512,7 +27538,7 @@ by GrafstrÃ¶m (2012) <doi:10.1016/j.jspi.2011.07.003> are included.  Also the
 cube method (for balanced sampling) and the local cube method (for doubly
 balanced sampling) are included, see GrafstrÃ¶m and TillÃ© (2013)
 <doi:10.1002/env.2194>.")
-    (license license:gpl2+)))
+    (license license:agpl3)))
 
 (define-public r-balancecheck
   (package

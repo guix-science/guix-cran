@@ -431,13 +431,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "0.9.25")
+    (version "0.9.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "0m9vfpydihkfpg8pmdqx70p54nv61578kcazzcwcbcblc1gs2wxm"))))
+        (base32 "0k443q3xr98y6wkz2b81d156swv1v9w6ms8gxbjsrzig4ggx31p4"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3254,13 +3254,13 @@ analytical needs.")
 (define-public r-lori
   (package
     (name "r-lori")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lori" version))
        (sha256
-        (base32 "1153ilp1i849rwbbms4vfc6c1mxgpav04zfqm2sdj7s63nvknx6r"))))
+        (base32 "06x6p2f315aw3a3j377ay1slhryg7nb14lb9qpchx9cg4qq0f8nv"))))
     (properties `((upstream-name . "lori")))
     (build-system r-build-system)
     (propagated-inputs (list r-svd r-rarpack r-data-table))
@@ -3277,7 +3277,7 @@ penalized by a Lasso type penalty and a nuclear norm.  LORI returns estimates of
 main effects, covariate effects and interactions, as well as an imputed count
 table.  The package also contains a multiple imputation procedure.  The methods
 are described in Robin, Josse, Moulines and Sardy (2019)
-<@code{arXiv:1703.02296v4>}.")
+<doi:10.1016/j.jmva.2019.04.004>.")
     (license license:gpl3)))
 
 (define-public r-lorenzregression

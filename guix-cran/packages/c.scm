@@ -7086,13 +7086,13 @@ data.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "1n40rl1z64ig7jp637xrydnvzmpjad76xsd2avhb8nkbcima89f8"))))
+        (base32 "1a6ix0fnpg41bpdrdgas0z066789gj3mxvv6k0hf1d2i6vxqpwv9"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -7122,13 +7122,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew-aws-batch
   (package
     (name "r-crew-aws-batch")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.aws.batch" version))
        (sha256
-        (base32 "06q06jc53w0yh91vs45r8g9q13avcfi6s30h2bwqbdsqsx6rk54r"))))
+        (base32 "0vgjrqdm6xcallx8mdwk3g9h3fv4shq2zv7pz2mf0z9drlyaw4lb"))))
     (properties `((upstream-name . "crew.aws.batch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -13294,13 +13294,13 @@ records match based on id.")
 (define-public r-cor
   (package
     (name "r-cor")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COR" version))
        (sha256
-        (base32 "0flir1mwqqs418hwcwdg72a1r89hamf6zd8jaf8g7hm4lp3i1cgf"))))
+        (base32 "1a6zfapk91qqzn11ap11m2dwv04919j7kykylmsqrmrfxw5irwhq"))))
     (properties `((upstream-name . "COR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=COR")
@@ -41720,6 +41720,31 @@ Mahalanobis distance, and intra-individual response variability (also termed
 inter-item standard deviation).  For a review of these methods, see Curran
 (2016) <doi:10.1016/j.jesp.2015.07.006>.")
     (license license:expat)))
+
+(define-public r-caredensity
+  (package
+    (name "r-caredensity")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CareDensity" version))
+       (sha256
+        (base32 "1pgjb2qr0d7zlrr1iay4dn348snf607jf75m09p6kfdkihpiflqv"))))
+    (properties `((upstream-name . "CareDensity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrixextra r-igraph r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RobinDenz1/CareDensity")
+    (synopsis
+     "Calculate the Care Density or Fragmented Care Density Given a Patient-Sharing Network")
+    (description
+     "Given a patient-sharing network, calculate either the classic care density as
+proposed by Pollack et al. (2013) <doi:10.1007/s11606-012-2104-7> or the
+fragmented care density as proposed by Engels et al. (2024)
+<doi:10.1186/s12874-023-02106-0>.  By utilizing the igraph and data.table
+packages, the provided functions scale well for very large graphs.")
+    (license license:gpl3+)))
 
 (define-public r-carecall
   (package

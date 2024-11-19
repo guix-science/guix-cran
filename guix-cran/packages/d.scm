@@ -4606,17 +4606,17 @@ genes using somatic genomics data.  BMC Bioinformatics
 (define-public r-drip
   (package
     (name "r-drip")
-    (version "2.0")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRIP" version))
        (sha256
-        (base32 "18cais2n8kx1hpb66kqpjlvjx750rhgfvx4h4jjixmb8aqnf7p48"))))
+        (base32 "0pg09ly1g0hjl1aizhknfqkcc7kdymcb7jkfzhg4b7jpdnkhwxsf"))))
     (properties `((upstream-name . "DRIP")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=DRIP")
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://miamioh.edu/fsb/directory/?up=/directory/kangy10")
     (synopsis "Discontinuous Regression and Image Processing")
     (description
      "This package provides a collection of functions that perform jump regression and
@@ -11016,13 +11016,13 @@ location-scale family.")
 (define-public r-distfreereg
   (package
     (name "r-distfreereg")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distfreereg" version))
        (sha256
-        (base32 "18grgnj25qa1vfp5xibdikbanrkyav2h7fp9l1sry3c39abv49cy"))))
+        (base32 "1vly5yiqfc68wvijrsa5c14yv4h5rwqrhq4isi3k5ck1sldpdfv5"))))
     (properties `((upstream-name . "distfreereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-clue))
@@ -15769,27 +15769,6 @@ methodology of estimating the sampling errors indicators outlined in the \"DHS
 Sampling and Household Listing Manual\" (ICF International 2012,
 <https://dhsprogram.com/pubs/pdf/DHSM4/DHS6_Sampling_Manual_Sept2012_DHSM4.pdf>).")
     (license license:gpl2)))
-
-(define-public r-dhis2r
-  (package
-    (name "r-dhis2r")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dhis2r" version))
-       (sha256
-        (base32 "0nrnq6czqg96v8lf3vhmjsrddnxhzkb92dyagqdmgjyycixm5d0z"))))
-    (properties `((upstream-name . "dhis2r")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-httr2 r-dplyr r-curl r-attempt))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/amanyiraho/dhis2r")
-    (synopsis "Client for the 'DHIS2' Web API")
-    (description
-     "Connect and pull data from a DHIS2 (District Health Information Software 2)
-instance into R.")
-    (license license:expat)))
 
 (define-public r-dhh
   (package

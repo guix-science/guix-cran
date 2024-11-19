@@ -1213,13 +1213,13 @@ and accompanying documentation by @code{McKay} and Fischenich (2011,
 (define-public r-hydraulics
   (package
     (name "r-hydraulics")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydraulics" version))
        (sha256
-        (base32 "0aw84gr2fcqgf20bjf9658wqyhlp40v3pkvsj72l27s39wma94xf"))))
+        (base32 "0hjvs57zl51b2f49ryawpfnhw1gw27p2dkzpac8k14zwvxq3kjif"))))
     (properties `((upstream-name . "hydraulics")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -2437,43 +2437,6 @@ variables and the response in general metric space of strong negative type.  The
 algorithm has superior performance compared to other tree models in type I
 error, power, prediction accuracy, and complexity.")
     (license license:gpl3)))
-
-(define-public r-htssip
-  (package
-    (name "r-htssip")
-    (version "1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HTSSIP" version))
-       (sha256
-        (base32 "1j2f6f3i4di4bvsk44gxz0narg45ld2rahfn23wpgni5bszy0vb3"))))
-    (properties `((upstream-name . "HTSSIP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tidyr
-                             r-stringr
-                             r-plyr
-                             r-phyloseq
-                             r-magrittr
-                             r-lazyeval
-                             r-igraph
-                             r-ggplot2
-                             r-dplyr
-                             r-deseq2
-                             r-coenocliner
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=HTSSIP")
-    (synopsis
-     "High Throughput Sequencing of Stable Isotope Probing Data Analysis")
-    (description
-     "This package provides functions for analyzing high throughput sequencing stable
-isotope probing (HTS-SIP) data.  Analyses include high resolution stable isotope
-probing (HR-SIP), multi-window high resolution stable isotope probing
-(MW-HR-SIP), and quantitative stable isotope probing (q-SIP).")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-htsr
   (package

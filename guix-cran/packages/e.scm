@@ -12589,13 +12589,13 @@ the models are discussed in Peng (2023) <doi:10.1287/isre.2022.1113>.")
 (define-public r-enderecobr
   (package
     (name "r-enderecobr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enderecobr" version))
        (sha256
-        (base32 "0w15dic7mci1nc80d7bfpgxghnqwxihpas1vmrgq2svl8z5a7dys"))))
+        (base32 "1svh49l60hnng9d10xkkhbqc7gr8h0dgxwpg0bq2b4lygx1c1d8l"))))
     (properties `((upstream-name . "enderecobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -16926,6 +16926,32 @@ design.")
 motifs of interest using regular expression searches and hidden Markov models
 (HMM) based in Haas et al. (2009) <doi:10.1038/nature08358>.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-effectplots
+  (package
+    (name "r-effectplots")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "effectplots" version))
+       (sha256
+        (base32 "0q79yv08ly33kpswr49lzlz704rcpx14d9ghclzq39js6alsvbld"))))
+    (properties `((upstream-name . "effectplots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-plotly r-patchwork r-ggplot2 r-collapse))
+    (home-page "https://github.com/mayer79/effectplots")
+    (synopsis "Effect Plots")
+    (description
+     "High-performance implementation of various effect plots useful for regression
+and probabilistic classification tasks.  The package includes partial dependence
+plots (Friedman, 2021, <doi:10.1214/aos/1013203451>), accumulated local effect
+plots and M-plots (both from Apley and Zhu, 2016, <doi:10.1111/rssb.12377>), as
+well as plots that describe the statistical associations between model response
+and features.  It supports visualizations with either ggplot2 or plotly', and is
+compatible with most models, including Tidymodels', models wrapped in DALEX
+explainers, or models with case weights.")
+    (license license:gpl3+)))
 
 (define-public r-effectliter
   (package

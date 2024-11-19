@@ -19512,13 +19512,13 @@ properties of all detected events and exceedances.")
 (define-public r-rmariadb
   (package
     (name "r-rmariadb")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMariaDB" version))
        (sha256
-        (base32 "0a38hbc9nc25x9a8z91wc24h4llmyhjim6vavmwrx2r14c3fz1vw"))))
+        (base32 "0b8qqg4pgz5fm21zp3jslrgmx0100rhg27lxpia3yl514pdnyvy6"))))
     (properties `((upstream-name . "RMariaDB")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -49155,13 +49155,13 @@ thereof.")
 (define-public r-radero
   (package
     (name "r-radero")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RadEro" version))
        (sha256
-        (base32 "0hhirbplvd12fldqcqc5g99ilhy4q2wpij9hf3b7pv7v3n36jjga"))))
+        (base32 "1gpmhqw0rpipvzgadwh20l4sfhz86vjy1vnh9x02l67q5phsvc5n"))))
     (properties `((upstream-name . "RadEro")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -49187,8 +49187,10 @@ volume) to accurately capture the 137Cs distribution within the soil profile.
 The model simulates annual 137Cs fallout, radioactive decay, and vertical
 diffusion, with the diffusion coefficient calculated from 137Cs reference
 inventory profiles.  Additionally, it allows users to input custom parameters as
-calibration coefficients.  This tool and its code are openly accessible,
-facilitating usage in soil erosion studies.")
+calibration coefficients.  The @code{RadEro} user manual and protocol, including
+detailed instructions on how to format input data and configuration files, can
+be found at the following link:
+<https://github.com/eead-csic-eesa/@code{RadEro>}.")
     (license license:gpl2+)))
 
 (define-public r-raddata

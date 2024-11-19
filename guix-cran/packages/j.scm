@@ -3690,26 +3690,28 @@ custom theme.")
 (define-public r-jaya
   (package
     (name "r-jaya")
-    (version "0.1.9")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Jaya" version))
        (sha256
-        (base32 "0b23l7xp4waxjy1vkk09xaali5axr5900v9hkki4f75wh4gb1l53"))))
+        (base32 "0qyszpw9bvz29dgf3wqx61h4rzpp0v7y63k214dz53jbrcd2wak0"))))
     (properties `((upstream-name . "Jaya")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ga))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Jaya")
-    (synopsis "Jaya, a Gradient-Free Optimization Algorithm")
+    (home-page "https://github.com/neerajdhanraj/Jaya")
+    (synopsis
+     "Gradient-Free Optimization Algorithm for Single and Multi-Objective Problems")
     (description
-     "Maximization or Minimization of a fitness function using Jaya Algorithm (JA).  A
-population based method which repeatedly modifies a population of individual
-solutions.  Capable of solving both constrained and unconstrained optimization
-problems.  It does not contain any hyperparameters.  For further details: R.V.
-Rao (2016) <doi:10.5267/j.ijiec.2015.8.004> .")
-    (license license:gpl2+)))
+     "An implementation of the Jaya optimization algorithm for both single-objective
+and multi-objective problems.  Jaya is a population-based, gradient-free
+optimization algorithm capable of solving constrained and unconstrained
+optimization problems without hyperparameters.  This package includes features
+such as multi-objective Pareto optimization, adaptive population adjustment, and
+early stopping.  For further details, see R.V. Rao (2016)
+<doi:10.5267/j.ijiec.2015.8.004>.")
+    (license license:expat)))
 
 (define-public r-javagd
   (package
@@ -4018,13 +4020,13 @@ found in Flynn (2023) <http://hdl.handle.net/2429/86174>.")
 (define-public r-jagstargets
   (package
     (name "r-jagstargets")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagstargets" version))
        (sha256
-        (base32 "1n407kacc1ws9sh486wncilbklyrdjjq389sc5a9id1zd23v26va"))))
+        (base32 "1nhlqn30p2hzpvr9wspccmd68fkc192pcfanvi059ry1zn31iwvh"))))
     (properties `((upstream-name . "jagstargets")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4036,7 +4038,7 @@ found in Flynn (2023) <http://hdl.handle.net/2429/86174>.")
                              r-rlang
                              r-rjags
                              r-r2jags
-                             r-qs
+                             r-qs2
                              r-purrr
                              r-posterior
                              r-fst

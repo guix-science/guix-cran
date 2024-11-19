@@ -18642,34 +18642,6 @@ Normal, Laplace or Beta distributed error.  For unknown error distribution, a
 pure error sample independent from the data is used.")
     (license license:gpl3+)))
 
-(define-public r-pmlbr
-  (package
-    (name "r-pmlbr")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pmlbr" version))
-       (sha256
-        (base32 "0d9mfy46vqhjy8dn884337ry06n6lh5y96azrlbwawq3ksi3g2jb"))))
-    (properties `((upstream-name . "pmlbr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-fnn))
-    (home-page "https://github.com/EpistasisLab/pmlbr")
-    (synopsis
-     "Interface to the Penn Machine Learning Benchmarks Data Repository")
-    (description
-     "Check available classification and regression data sets from the PMLB repository
-and download them.  The PMLB repository
-(<https://github.com/@code{EpistasisLab/pmlbr>}) contains a curated collection
-of data sets for evaluating and comparing machine learning algorithms.  These
-data sets cover a range of applications, and include binary/multi-class
-classification problems and regression problems, as well as combinations of
-categorical, ordinal, and continuous features.  There are currently over 150
-datasets included in the PMLB repository.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-pmhtutorial
   (package
     (name "r-pmhtutorial")
@@ -22639,13 +22611,13 @@ Network (CRAN).")
 (define-public r-pkgdepr
   (package
     (name "r-pkgdepr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdepR" version))
        (sha256
-        (base32 "098fcj1s5rcjxmn57449f4zk9z2w4mqwxkvxxjazd1nj7wa45z8p"))))
+        (base32 "1dbc7iqhhq6ccbrjkfm25dz513kd87y2hp0wm2c3f3i3pv3p737x"))))
     (properties `((upstream-name . "pkgdepR")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork r-viridislite r-scales r-magrittr
@@ -32233,30 +32205,6 @@ visualization of phylogenetic tree, and functional enrichment analysis.  With a
 progressive approach, the package offers a range of analysis methods to explore
 and understand the complex communities.  It is designed to support researchers
 and practitioners in conducting in-depth and professional omics data analysis.")
-    (license license:gpl3)))
-
-(define-public r-pct
-  (package
-    (name "r-pct")
-    (version "0.9.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pct" version))
-       (sha256
-        (base32 "15rshwdrfkr0ahnywss0qqbcyfxakknv9ffvb58nzc960c97zmy8"))))
-    (properties `((upstream-name . "pct")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stplanr r-sf r-readr r-crul r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://itsleeds.github.io/pct/")
-    (synopsis "Propensity to Cycle Tool")
-    (description
-     "This package provides functions and example data to teach and increase the
-reproducibility of the methods and code underlying the Propensity to Cycle Tool
-(PCT), a research project and web application hosted at <https://www.pct.bike/>.
- For an academic paper on the methods, see Lovelace et al (2017)
-<doi:10.5198/jtlu.2016.862>.")
     (license license:gpl3)))
 
 (define-public r-pcsteiner

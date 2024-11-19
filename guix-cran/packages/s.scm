@@ -18944,13 +18944,13 @@ spreads as illustrated in the examples.")
 (define-public r-spotoroo
   (package
     (name "r-spotoroo")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spotoroo" version))
        (sha256
-        (base32 "004pjlad31xkxvl9bm4ga33ikmph93blb0qd1rpvs8s0lgi7v6pn"))))
+        (base32 "0ziwbhc87y05cp7fx8ffsgxr3w2z14kz2wl6mxpbbpln623kyr2i"))))
     (properties `((upstream-name . "spotoroo")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -21027,13 +21027,13 @@ G., & Xie, Y. (2020) <doi:10.1016/j.jspi.2020.07.001>.")
 (define-public r-spheredata
   (package
     (name "r-spheredata")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spheredata" version))
        (sha256
-        (base32 "1wy90kv7r3q7sxca8w6c66kxxqhnp9ylsz16wafdsxm64003m1b7"))))
+        (base32 "1j7jrvgkdvbs98afa28bj7hk1ynrbsc6v9l9scy5w121prika8a7"))))
     (properties `((upstream-name . "spheredata")))
     (build-system r-build-system)
     (home-page "https://github.com/santosoph/spheredata")
@@ -33605,13 +33605,13 @@ to detect when animals are dead.")
 (define-public r-sleeperapi
   (package
     (name "r-sleeperapi")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleeperapi" version))
        (sha256
-        (base32 "1lmpcpd407bz7fwb20c8m5vaxq7l7sgna7jmh6mjy579az0fzllj"))))
+        (base32 "0304v06gaa4lw5jjz5j009acf43d1wdq96nvq1qc108whm542sm0"))))
     (properties `((upstream-name . "sleeperapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -35757,44 +35757,6 @@ function.  Please see W., Y., Y. (2010) <doi:10.1016/j.jmva.2010.02.003> for
 details.")
     (license license:gpl3)))
 
-(define-public r-sipmg
-  (package
-    (name "r-sipmg")
-    (version "1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SIPmg" version))
-       (sha256
-        (base32 "1f3jirfnxxbrkala5kk0hkkm8gn2zciva6xy459vc80y058hr7z1"))))
-    (properties `((upstream-name . "SIPmg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-plyr
-                             r-phyloseq
-                             r-mass
-                             r-magrittr
-                             r-lazyeval
-                             r-htssip
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr
-                             r-deseq2
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://zielslab.github.io/SIPmg.github.io/")
-    (synopsis "Statistical Analysis to Identify Isotope Incorporating MAGs")
-    (description
-     "Statistical analysis as part of a stable isotope probing (SIP) metagenomics
-study to identify isotope incorporating taxa recovered as metagenome-assembled
-genomes (MAGs).  Helpful reading and a vignette in bookdown format is provided
-on the package site <https://zielslab.github.io/SIPmg.github.io/>.")
-    (license license:gpl2)))
-
 (define-public r-siplab
   (package
     (name "r-siplab")
@@ -36423,19 +36385,19 @@ linked to via the URL below.")
 (define-public r-simtrial
   (package
     (name "r-simtrial")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simtrial" version))
        (sha256
-        (base32 "1gsd7ykqws7y5ggblbjjrg3yid9fj7samrnbk7fb4dnknvv8lgls"))))
+        (base32 "1wwx9z10ycl06s0v3farfk2hkbw4xpsgvhg1rdzl7p2cr3s5840m"))))
     (properties `((upstream-name . "simtrial")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
-                             r-rlang
                              r-rcpp
                              r-mvtnorm
+                             r-gsdesign2
                              r-future
                              r-foreach
                              r-dofuture
@@ -62878,13 +62840,13 @@ provincial levels.")
 (define-public r-saens
   (package
     (name "r-saens")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saens" version))
        (sha256
-        (base32 "1gswj0gny6q8cds36134qhm4l9vzfwbn0dkk6b3cgjhd47y48ydq"))))
+        (base32 "1rl4s2g18z5q2xf1365xvfp7yxp8jf70v186azywpvc6ciw255na"))))
     (properties `((upstream-name . "saens")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-dplyr r-cli))
@@ -62902,25 +62864,23 @@ ISBN:978-1-118-73578-7) and Anisa et al. (2013) <doi:10.9790/5728-10121519>.")
 (define-public r-saemspe
   (package
     (name "r-saemspe")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeMSPE" version))
        (sha256
-        (base32 "086nmcx14sjwnydka805il11lc02jv9l39kk9j1h2j5p9gz0b3gp"))))
+        (base32 "0jzgqlwjpbjiv3h9f6vggsbxaa5zn9qqvfwdhk5sirq5ajdzazgr"))))
     (properties `((upstream-name . "saeMSPE")))
     (build-system r-build-system)
     (propagated-inputs (list r-smallarea r-rcpparmadillo r-rcpp r-matrix))
     (home-page "https://cran.r-project.org/package=saeMSPE")
-    (synopsis
-     "Compute MSPE Estimates for the Fay Herriot Model and Nested Error Regression Model")
+    (synopsis "Computing MSPE Estimates in Small Area Estimation")
     (description
-     "We describe a new R package entitled @code{saeMSPE} for the well-known Fay
-Herriot model and nested error regression model in small area estimation.  Based
-on this package, it is possible to easily compute various common mean squared
-predictive error (MSPE) estimators, as well as several existing variance
-component predictors as a byproduct, for these two models.")
+     "Compute various common mean squared predictive error (MSPE) estimators, as well
+as several existing variance component predictors as a byproduct, for FH model
+(Fay and Herriot, 1979) and NER model (Battese et al., 1988) in small area
+estimation.")
     (license license:gpl2+)))
 
 (define-public r-saemix

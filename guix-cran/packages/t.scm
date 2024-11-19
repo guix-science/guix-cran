@@ -3198,6 +3198,49 @@ more detailed description is available at
 implemented methods in the tsmodels framework.")
     (license license:gpl2)))
 
+(define-public r-tsmarch
+  (package
+    (name "r-tsmarch")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsmarch" version))
+       (sha256
+        (base32 "0ppw92jaxs396gjvn17z0z8m6idjhchvy80h0gh881ds4v0qh8v8"))))
+    (properties `((upstream-name . "tsmarch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tsmethods
+                             r-tsgarch
+                             r-tsdistributions
+                             r-shape
+                             r-sandwich
+                             r-rsolnp
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcppbessel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-nloptr
+                             r-lubridate
+                             r-future-apply
+                             r-future
+                             r-data-table
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tsmodels/tsmarch")
+    (synopsis "Multivariate ARCH Models")
+    (description
+     "Feasible Multivariate Generalized Autoregressive Conditional Heteroscedasticity
+(GARCH) models including Dynamic Conditional Correlation (DCC), Copula GARCH and
+Generalized Orthogonal GARCH with Generalized Hyperbolic distribution.  A review
+of some of these models can be found in Boudt, Galanos, Payseur and Zivot (2019)
+<doi:10.1016/bs.host.2019.01.001>.")
+    (license license:gpl2)))
+
 (define-public r-tslstmx
   (package
     (name "r-tslstmx")
@@ -13157,13 +13200,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.5.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "1a25zjbx19z9vsmw1752g70vnb74p4gvns45f0cmh8g5dgg22cfc"))))
+        (base32 "07ffil0s846sbqk1znr2qk2gc02hb99hri0c03nsbb7hcj7l5yz8"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")
@@ -15669,18 +15712,23 @@ components using a consistent and intuitive syntax.")
 (define-public r-tidyplate
   (package
     (name "r-tidyplate")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplate" version))
        (sha256
-        (base32 "1vm8ilfrzq3fx1fgl95x71pavkxydfjzxcn1qrpi145y9a244ygn"))))
+        (base32 "19zrs9z3yjhgxpx33r18jjy76d1gz0gj1y9ar3qs70bjllas9xqz"))))
     (properties `((upstream-name . "tidyplate")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-rlang r-readxl r-openxlsx r-data-table))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-readxl
+                             r-openxlsx
+                             r-lifecycle
+                             r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/shubhamdutta26/tidyplate")
+    (home-page "https://www.shubhamdutta.com/tidyplate/")
     (synopsis "Transform Microplate Data into Tibbles")
     (description
      "The goal of tidyplate is to help researchers convert different types of
