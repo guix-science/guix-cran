@@ -4185,6 +4185,34 @@ representative points, or pseudohouseholds, that can be used for travel burden
 analysis.  Parallel processing is supported.")
     (license license:expat)))
 
+(define-public r-pseudobiber
+  (package
+    (name "r-pseudobiber")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pseudobibeR" version))
+       (sha256
+        (base32 "1a6n9a46n8k3ycxlqhlxi26m2yqjc97yxhz2m9vdyzfi0881x44c"))))
+    (properties `((upstream-name . "pseudobibeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-quanteda-textstats
+                             r-quanteda
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=pseudobibeR")
+    (synopsis "Aggregate Counts of Linguistic Features")
+    (description
+     "Calculates the lexicogrammatical and functional features described by Biber
+(1985) <doi:10.1515/ling.1985.23.2.337> and widely used for text-type, register,
+and genre classification tasks.")
+    (license license:expat)))
+
 (define-public r-pseudo
   (package
     (name "r-pseudo")
@@ -15454,13 +15482,13 @@ the package also includes utilities to manipulate standard allele count data
 (define-public r-pooledpeaks
   (package
     (name "r-pooledpeaks")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pooledpeaks" version))
        (sha256
-        (base32 "1q9ycn19rn8g1yfccrljmh7s0b192z40k02cy74l684sipafbra1"))))
+        (base32 "10nk65iyar9skh0dfz5mzh3alrmg55ysiyzbvxbc1jxvxj5msgfh"))))
     (properties `((upstream-name . "pooledpeaks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22611,13 +22639,13 @@ Network (CRAN).")
 (define-public r-pkgdepr
   (package
     (name "r-pkgdepr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdepR" version))
        (sha256
-        (base32 "1dbc7iqhhq6ccbrjkfm25dz513kd87y2hp0wm2c3f3i3pv3p737x"))))
+        (base32 "0khydf9229zlfxkvp2s95ql0nn8fj5878yrh8wgxm4v0kp12hj5k"))))
     (properties `((upstream-name . "pkgdepR")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork r-viridislite r-scales r-magrittr

@@ -4455,6 +4455,26 @@ commands or RStudio console, source editor, Rmarkdown document and a Shiny
 application.")
     (license license:expat)))
 
+(define-public r-where
+  (package
+    (name "r-where")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "where" version))
+       (sha256
+        (base32 "11i91wqr64ginwzy8flv7d3z4wsnha223mjnpjljj98x7ixx3xm2"))))
+    (properties `((upstream-name . "where")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KiwiMateo/where")
+    (synopsis "Vectorised Substitution and Evaluation")
+    (description
+     "This package provides a clean syntax for vectorising the use of Non-Standard
+Evaluation (NSE), for example in ggplot2', dplyr', or data.table'.")
+    (license license:expat)))
+
 (define-public r-when
   (package
     (name "r-when")
@@ -7804,13 +7824,13 @@ modulation (PCM), signed 12, 16, 24 and 32 bit PCM and other encodings.")
 (define-public r-watson
   (package
     (name "r-watson")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watson" version))
        (sha256
-        (base32 "02wf4nh8gqq0ks9mzv4w1ly194syiixrfr8b6c61m90qwswglx1l"))))
+        (base32 "030ybj5cxgg17gixar9hggwyd2sgv3yli0pwpca698wz2b0mypnm"))))
     (properties `((upstream-name . "watson")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinflex r-rcpparmadillo r-rcpp))

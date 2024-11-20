@@ -8639,13 +8639,13 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.1-2")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1k5r7y4j9mfik5jfvaf8y2wvy9p4sfs2dqzxnq91a8a06ak723k4"))))
+        (base32 "1awqv33j82rkl2s64hw9his0bxrz50cgys3cdb7v1j2xbzn3syx1"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -8662,13 +8662,14 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
     (synopsis "Transformation Models")
     (description
      "Formula-based user-interfaces to specific transformation models implemented in
-package mlt'.  Available models include Cox models, some parametric survival
-models (Weibull, etc.), models for ordered categorical variables, normal and
-non-normal (Box-Cox type) linear models, and continuous outcome logistic
-regression (Lohse et al., 2017, <DOI:10.12688/f1000research.12934.1>).  The
-underlying theory is described in Hothorn et al. (2018)
-<DOI:10.1111/sjos.12291>.  An extension to transformation models for clustered
-data is provided (Barbanti and Hothorn, 2022,
+package mlt (<DOI:10.32614/CRAN.package.mlt>,
+<DOI:10.32614/CRAN.package.mlt.docreg>).  Available models include Cox models,
+some parametric survival models (Weibull, etc.), models for ordered categorical
+variables, normal and non-normal (Box-Cox type) linear models, and continuous
+outcome logistic regression (Lohse et al., 2017,
+<DOI:10.12688/f1000research.12934.1>).  The underlying theory is described in
+Hothorn et al. (2018) <DOI:10.1111/sjos.12291>.  An extension to transformation
+models for clustered data is provided (Barbanti and Hothorn, 2022,
 <DOI:10.1093/biostatistics/kxac048>).  Multivariate conditional transformation
 models (Klein et al, 2022, <DOI:10.1111/sjos.12501>) and shift-scale
 transformation models (Siegfried et al, 2023,
@@ -26099,6 +26100,36 @@ System, medication timing and medication amount or dosage.  Tools for
 summarizing, illustrating and manipulating the cluster objects are also
 available.")
     (license license:expat)))
+
+(define-public r-talkr
+  (package
+    (name "r-talkr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "talkr" version))
+       (sha256
+        (base32 "1pf45vhp0jnqxja16fgng5jbxq8dgkl6yi89vgvs1vqqmsjd1br7"))))
+    (properties `((upstream-name . "talkr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-knitr
+                             r-ggthemes
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=talkr")
+    (synopsis "Plotting Conversation Data")
+    (description
+     "Visualisation, analysis and quality control of conversational data.  Rapid and
+visual insights into the nature, timing and quality of time-aligned annotations
+in conversational corpora.  For more details, see Dingemanse et al., (2022)
+<doi:10.18653/v1/2022.acl-long.385>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-takos
   (package

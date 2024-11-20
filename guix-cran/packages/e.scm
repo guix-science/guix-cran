@@ -9773,13 +9773,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.76")
+    (version "2.0.77")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "1lzcqm77yq5vijnwhahnjdgqk39vjrprva5m4p0qqq4f89b8j3xi"))))
+        (base32 "01xn2jr8npsl68nj1kh772gjmidv0ygyzf0sl2j4qqi1nargs1kp"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -11168,13 +11168,13 @@ functions for cleaning and aggregating the financial data.")
 (define-public r-eoa3
   (package
     (name "r-eoa3")
-    (version "1.0.0.1")
+    (version "1.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eoa3" version))
        (sha256
-        (base32 "1qqdkxg4jsnqn6j0pa73g3as3hv9y2xh2jg2axj0i11jr5x68ars"))))
+        (base32 "1fydkmz7f4wmlc5f0ihg5n98dyv7r2r9ny27n3qai6l47hf4k4x1"))))
     (properties `((upstream-name . "eoa3")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -17176,13 +17176,13 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
 (define-public r-efafactors
   (package
     (name "r-efafactors")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAfactors" version))
        (sha256
-        (base32 "0g6xg8pgayn11rpxm808i6048dsdvgvyz4v3back2s0kl24znh5v"))))
+        (base32 "073fy8fnr8546i5bjq4aap6bhhkns77mgggw6r5jkvfpmz6g5av8"))))
     (properties `((upstream-name . "EFAfactors")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -17200,7 +17200,7 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
                              r-ineq
                              r-ddpcr
                              r-bbmisc))
-    (home-page "https://cran.r-project.org/package=EFAfactors")
+    (home-page "https://haijiangqin.com/EFAfactors/")
     (synopsis
      "Determining the Number of Factors in Exploratory Factor Analysis")
     (description
@@ -20911,6 +20911,35 @@ tailed data, specifically data with power law decay on the tails.  Routines for
 annotating the plot, comparing data to a model, fitting a nonparametric model,
 and some multivariate extensions are given.")
     (license license:gpl3+)))
+
+(define-public r-ecdata
+  (package
+    (name "r-ecdata")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecdata" version))
+       (sha256
+        (base32 "11pmcl5f376xm56v4g2fhkfaf7safg1r5chqf3n2475pzc0nypz5"))))
+    (properties `((upstream-name . "ecdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-rlang
+                             r-piggyback
+                             r-memoise
+                             r-glue
+                             r-curl
+                             r-cli
+                             r-cachem
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Executive-Communications-Dataset/ecdata")
+    (synopsis "Loads Data from the Executive Communications Dataset")
+    (description
+     "This package provides a minimal package for downloading data from @code{GitHub}
+repositories of the Executive Communications Database.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-ecdat
   (package

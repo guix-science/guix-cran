@@ -8729,13 +8729,13 @@ alternative to ALS are available (Simonacci and Gallo (2019)
 (define-public r-rrboost
   (package
     (name "r-rrboost")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRBoost" version))
        (sha256
-        (base32 "0zp3csrpi0awk88m6sq5sf5v7j32q5sd4mwv61x6bblg991k404k"))))
+        (base32 "1n13aj4lf6550gx6sxv7h7xjjwi4r46pbnigbchaxm8whlzmizk8"))))
     (properties `((upstream-name . "RRBoost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-robstattm))
@@ -8745,11 +8745,10 @@ alternative to ALS are available (Simonacci and Gallo (2019)
      "An implementation of robust boosting algorithms for regression in R. This
 includes the RRBoost method proposed in the paper \"Robust Boosting for
 Regression Problems\" (Ju X and Salibian-Barrera M. 2020)
-<doi:10.1016/j.csda.2020.107065> (to appear in Computational Statistics and Data
-Science).  It also implements previously proposed boosting algorithms in the
-simulation section of the paper: L2Boost, LADBoost, MBoost (Friedman, J. H.
-(2001) <doi:10.1214/aos/1013203451>) and Robloss (Lutz et al. (2008)
-<doi:10.1016/j.csda.2007.11.006>).")
+<doi:10.1016/j.csda.2020.107065>.  It also implements previously proposed
+boosting algorithms in the simulation section of the paper: L2Boost, LADBoost,
+MBoost (Friedman, J. H. (2001) <doi:10.1214/aos/1013203451>) and Robloss (Lutz
+et al. (2008) <doi:10.1016/j.csda.2007.11.006>).")
     (license license:gpl3+)))
 
 (define-public r-rrblup

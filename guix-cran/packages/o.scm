@@ -676,6 +676,31 @@ of the pull and stochastic motion to vary across selective regimes.  Beaulieu et
 al (2012).")
     (license license:gpl2+)))
 
+(define-public r-outseekr
+  (package
+    (name "r-outseekr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OutSeekR" version))
+       (sha256
+        (base32 "0a1skaj2qchg7pnl2rpadpfmvdiiazy4q791bv2pxc8y60b1dwnp"))))
+    (properties `((upstream-name . "OutSeekR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm r-lsa r-gamlss-dist r-gamlss
+                             r-future-apply))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OutSeekR")
+    (synopsis
+     "Statistical Approach to Outlier Detection in RNA-Seq and Related Data")
+    (description
+     "An approach to outlier detection in RNA-seq and related data based on five
+statistics. @code{OutSeekR} implements an outlier test by comparing the
+distributions of these statistics in observed data with those of simulated null
+data.")
+    (license license:gpl2)))
+
 (define-public r-outreg
   (package
     (name "r-outreg")
@@ -6407,16 +6432,21 @@ the JSON file.")
 (define-public r-opendataformat
   (package
     (name "r-opendataformat")
-    (version "1.3.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opendataformat" version))
        (sha256
-        (base32 "14j1wpi9kmyms6ag0zdirfjqq7xbkj89ynffnhybkg8pfj4rh8pw"))))
+        (base32 "04957rzdilahwigi9jpv03wyw0xbkgc2h0mdg69ndx7776vh4xvj"))))
     (properties `((upstream-name . "opendataformat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zip r-xml2 r-magrittr r-data-table r-cli))
+    (propagated-inputs (list r-zip
+                             r-xml2
+                             r-tibble
+                             r-magrittr
+                             r-data-table
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/opendataformat/r-package-opendataformat")
     (synopsis "Reading and Writing Open Data Format Files")
@@ -6661,13 +6691,13 @@ the @code{OpenAI} platform documentation at
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openairmaps" version))
        (sha256
-        (base32 "1g3jxks2qvys3rv5z4lz0889fq5b5wyjmzfgcj6pl3l67lgy5yj1"))))
+        (base32 "0f56qpfjrx620qmlcad6d69rf02kvdh9fbb3p1ip4j9swshcl1a6"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

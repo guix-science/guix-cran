@@ -685,13 +685,13 @@ hyperbolic distribution, including fitting of the hyperbolic to data.")
 (define-public r-hyperbolicdea
   (package
     (name "r-hyperbolicdea")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyperbolicDEA" version))
        (sha256
-        (base32 "05iqbkg3id7ysfmandan416mczzc76qq6kz5lm7s9444a6101agf"))))
+        (base32 "1fj5sch366jbdy21by25rqmcxk66p8iishdsg06ckwfmfachd864"))))
     (properties `((upstream-name . "hyperbolicDEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr
@@ -5118,13 +5118,13 @@ package is described by Michelot (2022) <@code{arXiv:2211.14139>}.")
 (define-public r-hmmrel
   (package
     (name "r-hmmrel")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMMRel" version))
        (sha256
-        (base32 "16lgwpdy63blmqh8im8nmx2v5h4xlr1p1l1jpljk833m08z38lls"))))
+        (base32 "07s4h9b5msk5pv1cbqmny0xqjh4d3cq094wmpy3b4dm1s630w04a"))))
     (properties `((upstream-name . "HMMRel")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HMMRel")
@@ -5140,8 +5140,7 @@ algorithm.  Classical structures such as K-out-of-N systems and Shock models are
 illustrated.  Finally, the maintenance of the system is considered in the HMM
 context and two functions for new preventive maintenance strategies are
 considered.  Maintenance efficiency is measured in terms of expected cost.
-Maintenance efficiency is measured in terms of expected cost.  Methods are
-described in Gamiz, Limnios, and Segovia-Garcia (2023)
+Methods are described in Gamiz, Limnios, and Segovia-Garcia (2023)
 <doi:10.1016/j.ejor.2022.05.006>.")
     (license license:gpl2)))
 
@@ -9109,13 +9108,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "6.2")
+    (version "6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "0q887lgyb92lii1x83saz2jjwh25h6l26jfkhjblfma37615cbj9"))))
+        (base32 "1qv127pa1zki42a4riw2lb05sajwp1mdschxlalvf5hfdhrq7i3g"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))
@@ -11451,13 +11450,13 @@ described in Cho and Fryzlewicz (2014) <doi:10.1111/rssb.12079> and Cho (2016)
 (define-public r-hdbcp
   (package
     (name "r-hdbcp")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdbcp" version))
        (sha256
-        (base32 "0wl19v18aj3mr9bdfjax7x516swvbmsl5s6sqspwlid06zqszd8m"))))
+        (base32 "1c2mjfv7d93zn29dr0rcd5ym109qznfyjj45c8608qpaj8g6jqkx"))))
     (properties `((upstream-name . "hdbcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-dplyr))
@@ -11516,13 +11515,13 @@ package.")
 (define-public r-hdar
   (package
     (name "r-hdar")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdar" version))
        (sha256
-        (base32 "0xk1kf3dwkhlid5lp3yfvprgwzxg2j3wlampadrdfd20b6g20n0c"))))
+        (base32 "1hx1jrxi8jmls5xi7mnpw06192l60i3ksrjbsmr7qz4ww8r8s31m"))))
     (properties `((upstream-name . "hdar")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

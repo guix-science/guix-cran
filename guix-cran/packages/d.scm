@@ -20164,6 +20164,43 @@ data based on a negative binomial regression model, as described by Keene et al
 (2014) <doi:10.1002/pst.1624>.")
     (license license:gpl2+)))
 
+(define-public r-deident
+  (package
+    (name "r-deident")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deident" version))
+       (sha256
+        (base32 "1sw410lzbpfxbwwbnhv9qjm4rzl46sjcywcpr70zs1lsasnisf54"))))
+    (properties `((upstream-name . "deident")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-withr
+                             r-tidyselect
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-r6
+                             r-purrr
+                             r-openxlsx
+                             r-openssl
+                             r-lemon
+                             r-glue
+                             r-fs
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=deident")
+    (synopsis "Persistent Data Anonymization Pipeline")
+    (description
+     "This package provides a framework for the replicable removal of personally
+identifiable data (PID) in data sets.  The package implements a suite of methods
+to suit different data types based on the suggestions of Garfinkel (2015)
+<doi:10.6028/NIST.IR.8053> and the ICO \"Guidelines on Anonymization\" (2012)
+<https://ico.org.uk/media/1061/anonymisation-code.pdf>.")
+    (license license:expat)))
+
 (define-public r-dehogt
   (package
     (name "r-dehogt")
@@ -26438,18 +26475,19 @@ directly to Excel.")
 (define-public r-datacutr
   (package
     (name "r-datacutr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datacutr" version))
        (sha256
-        (base32 "1qgmc2r1g5zlvfq84qrmmfp6dv3458zhv741aa5wf1nkw2sv656y"))))
+        (base32 "0y8ygc8pmska561pdrdz8k4plk3ja78p1r29yx8pnhmd66jdv7hf"))))
     (properties `((upstream-name . "datacutr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
+                             r-reactable
                              r-purrr
                              r-magrittr
                              r-lubridate
@@ -26457,7 +26495,7 @@ directly to Excel.")
                              r-assertthat
                              r-admiraldev))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=datacutr")
+    (home-page "https://pharmaverse.github.io/datacutr/")
     (synopsis "SDTM Datacut")
     (description
      "Supports the process of applying a cut to Standard Data Tabulation Model (SDTM),

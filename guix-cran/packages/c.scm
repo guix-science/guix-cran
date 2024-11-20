@@ -3859,6 +3859,32 @@ especially with regards to the creation and validation of panel data from
 individual level surveillance data.")
     (license license:expat)))
 
+(define-public r-cste
+  (package
+    (name "r-cste")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CSTE" version))
+       (sha256
+        (base32 "1wjw81sval74wndiz178fr759qgl673clv69kjyvra2hrq902ayf"))))
+    (properties `((upstream-name . "CSTE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcpp r-locpol r-fda r-dfoptim))
+    (home-page "https://cran.r-project.org/package=CSTE")
+    (synopsis "Covariate Specific Treatment Effect (CSTE) Curve")
+    (description
+     "This package provides a uniform statistical inferential tool in making
+individualized treatment decisions, which implements the methods of Ma et al.
+(2017)<DOI:10.1177/0962280214541724> and Guo et al.
+(2021)<DOI:10.1080/01621459.2020.1865167>.  It uses a flexible semiparametric
+modeling strategy for heterogeneous treatment effect estimation in
+high-dimensional settings and can gave valid confidence bands.  Based on it, one
+can find the subgroups of patients that benefit from each treatment, thereby
+making individualized treatment selection.")
+    (license license:gpl2+)))
+
 (define-public r-cstab
   (package
     (name "r-cstab")
@@ -20312,13 +20338,13 @@ missing values is assigned to each palette.")
 (define-public r-cols
   (package
     (name "r-cols")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols" version))
        (sha256
-        (base32 "00r3dniz5n4mx8cwsyixs1v88pdjx0a460zcq420z5wrav23jbdl"))))
+        (base32 "10f65sys91jsdiq1qa0b5wyfnds77dd7jrmb1g5aywx973p8yl35"))))
     (properties `((upstream-name . "cols")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast2 r-rfast r-quadprog))
@@ -24215,16 +24241,17 @@ that are not included in that handbook.")
 (define-public r-cmstatr
   (package
     (name "r-cmstatr")
-    (version "0.9.3")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmstatr" version))
        (sha256
-        (base32 "1hi3zyw73jxrl2spfbbfk5xnyg31jqlslz1342p5s45k4ydvqikm"))))
+        (base32 "0n2jqm0qp8aayl2ajrka69244d6kzhyaw479d9inf3dvir1fwx22"))))
     (properties `((upstream-name . "cmstatr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-rlang
                              r-purrr
                              r-mass
@@ -28897,13 +28924,13 @@ issues when doing spatial data processing.")
 (define-public r-cleaner
   (package
     (name "r-cleaner")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cleaner" version))
        (sha256
-        (base32 "1rkyrp8pa5sznjszxfwgkiymmdwrm87k56ghgk39yp8f919ifkpl"))))
+        (base32 "06big2ngx0j3b7r2dm01niv3jdh5fm07ax1cna0s1m2qm5zq1s3q"))))
     (properties `((upstream-name . "cleaner")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -37227,13 +37254,13 @@ is in no way officially related to or endorsed by Copernicus.")
 (define-public r-cdsampling
   (package
     (name "r-cdsampling")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDsampling" version))
        (sha256
-        (base32 "17npsagvgw47bfi9y2gbdx5dr688bbsxrq8rmay0x2la0xqil445"))))
+        (base32 "1gv3yxakhj3qxl19fyf5xdgxr81fn7m3vcz0nff6kzpp1vhs2m1a"))))
     (properties `((upstream-name . "CDsampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-lpsolve))

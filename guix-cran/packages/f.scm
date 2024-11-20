@@ -7460,6 +7460,38 @@ evaluating the effect of competitor species identity using permutation tests,
 and evaluating model performance using spatial cross-validation.")
     (license license:expat)))
 
+(define-public r-forestdynr
+  (package
+    (name "r-forestdynr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestdynR" version))
+       (sha256
+        (base32 "03bpq34wh5ja1hfsgkqvhm0fxr38sc7am5r06b8j9d3pmbclpy7h"))))
+    (properties `((upstream-name . "forestdynR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biomass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/higuchip/forestdynR")
+    (synopsis "Calculate Forest Dynamics")
+    (description
+     "Determines the dynamics of tree species communities (mortality rates,
+recruitment, loss and gain in basal area, net changes and turnover).  Important
+notes are a) The forest_df argument (data) must contain the columns plot (plot
+identification), spp (species identification), DBH_1 (Diameter at breast height
+in first year of measure) and DBH_2 (Diameter at breast height in second year of
+measure).  DBH_1 and DBH_2 must be numeric values; b) example input file in
+data(forest_df_example)'; c) The argument inv_time represents the time between
+inventories, in years; d) The coord argument must be of the type c(longitude,
+latitude)', with decimal degree values; e) Argument add_wd represents a
+dataframe with wood density values (g cm-3) format with three columns ('genus',
+species', wd').  This argument is set to NULL by default, and if isn't provided,
+the wood density will be estimated with the @code{getWoodDensity}() function
+from the BIOMASS package.")
+    (license license:gpl2+)))
+
 (define-public r-forestdisc
   (package
     (name "r-forestdisc")
@@ -14345,13 +14377,13 @@ complex, integer, logical, and raw).")
 (define-public r-file2meco
   (package
     (name "r-file2meco")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "file2meco" version))
        (sha256
-        (base32 "0aa8m954yswqhzqc5mzs1wlgs38fiwwvvvvr716r24dbzqfp92s9"))))
+        (base32 "16667nj152qh5ibbq84xk8y22qhvf3sphbsswzb5i25lab5532jb"))))
     (properties `((upstream-name . "file2meco")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

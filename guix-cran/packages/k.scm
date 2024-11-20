@@ -4622,13 +4622,13 @@ Reference: Wang and Zou (2018) <doi:10.1111/rssb.12244>.")
 (define-public r-kergp
   (package
     (name "r-kergp")
-    (version "0.5.7")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kergp" version))
        (sha256
-        (base32 "0cf6acz09cbzhnl26x2z0s674mvikl9lq31mdl2s10y6ah00cpsk"))))
+        (base32 "1w8rglzl32k1006gdaxh3nxd23mnnddkznksyw3xqcznm4rz8k11"))))
     (properties `((upstream-name . "kergp")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat

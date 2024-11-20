@@ -4562,6 +4562,47 @@ Antonio J. Silva Neto; Pedro P.G.W. Rodrigues 2008)
 C. Santana 2008) <doi:10.1080/17415970802082922>.")
     (license license:gpl3)))
 
+(define-public r-grin2
+  (package
+    (name "r-grin2")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GRIN2" version))
+       (sha256
+        (base32 "17q26vwz8mmdq649pmb6n4q210912f8q7qcc2imq10ri9ssaw295"))))
+    (properties `((upstream-name . "GRIN2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl
+                             r-tidyselect
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-magrittr
+                             r-gviz
+                             r-gridgraphics
+                             r-ggplot2
+                             r-genomeinfodb
+                             r-forcats
+                             r-ensembldb
+                             r-ensdb-hsapiens-v75
+                             r-dplyr
+                             r-data-table
+                             r-complexheatmap
+                             r-circlize
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/abdel-elsayed87/GRIN2")
+    (synopsis "Genomic Random Interval (GRIN)")
+    (description
+     "Improved version of GRIN software that streamlines its use in practice to
+analyze genomic lesion data, accelerate its computing, and expand its analysis
+capabilities to answer additional scientific questions including a rigorous
+evaluation of the association of genomic lesions with RNA expression.  Pounds,
+Stan, et al. (2013) <DOI:10.1093/bioinformatics/btt372>.")
+    (license license:gpl3+)))
+
 (define-public r-grimr
   (package
     (name "r-grimr")
@@ -18563,13 +18604,13 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.8.10")
+    (version "0.8.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggiraph" version))
        (sha256
-        (base32 "17vdw9xaizcdf6fcbyhz9l514kk4w4dz9yvikbz9bvfx93a9z5ps"))))
+        (base32 "13mz5y9djiydz715zpa6n9jgfp9rh5rgsaialrl6nwc3smq77gni"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (arguments
@@ -31334,13 +31375,13 @@ al. (2015) <doi:10.18637/jss.v067.i01>) and PLmixed (Rockwood and Jeon (2019)
 (define-public r-galah
   (package
     (name "r-galah")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galah" version))
        (sha256
-        (base32 "1z4z403b3jf0rj3gjrmsgjc4niab6jxdwb01rw0pzdblc8a2y4f1"))))
+        (base32 "0byf7hh34grhar8nf6lqpsnhmj59wmz8ww6h9b9c2bimlg3s0h20"))))
     (properties `((upstream-name . "galah")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

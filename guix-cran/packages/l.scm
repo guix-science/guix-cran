@@ -1327,16 +1327,16 @@ book.")
 (define-public r-lst
   (package
     (name "r-lst")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LST" version))
        (sha256
-        (base32 "0vmdd4mvpm1mkb2qffkjpzwsg7xiw8sr2q4a69694bsy59vk43cd"))))
+        (base32 "16fgbj8i2j87b5r2qrq75r0l6gk56zy62i5g0jx7h078kan5vvvp"))))
     (properties `((upstream-name . "LST")))
     (build-system r-build-system)
-    (propagated-inputs (list r-raster))
+    (propagated-inputs (list r-terra))
     (home-page "https://cran.r-project.org/package=LST")
     (synopsis "Land Surface Temperature Retrieval for Landsat 8")
     (description
@@ -9824,24 +9824,26 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LikertMakeR" version))
        (sha256
-        (base32 "0hxyrgm88wvaa6b1cggm45f851sg7rzsbcz7745lcl9zmmkw5w1d"))))
+        (base32 "0ilj94vr7wga1aal0z7x6s3g977b6p7r4wwzc3x8irnwwsimzjcm"))))
     (properties `((upstream-name . "LikertMakeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-gtools r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/WinzarH/LikertMakeR")
-    (synopsis "Synthesise and Correlate Rating-Scale Data")
+    (synopsis
+     "Synthesise and Correlate Likert Scale and Related Rating-Scale Data")
     (description
-     "Synthesise rating-scale data with predefined first & second moments (mean &
-standard deviation) and, optionally, correlate multiple vectors with predefined
-correlation matrix.  Also generate synthetic rating-scale data with predefined
-Cronbach's Alpha, or generate rating-scale items from a predefined scale.")
+     "Synthesise Likert scale and related rating-scale data with predefined first and
+second moments (mean and standard deviation), and, optionally, correlate
+multiple vectors using a predefined correlation matrix.  Additionally, generate
+synthetic rating-scale items with a predefined Cronbach's Alpha, or create
+rating-scale items based on a predefined summated scale.")
     (license license:expat)))
 
 (define-public r-likert
@@ -11276,6 +11278,37 @@ times faster than the existing GEA approaches, then our previous version of the
 LFMM program present in the LEA package (Frichot and Francois, 2015,
 <doi:10.1111/2041-210X.12382>).")
     (license license:gpl3)))
+
+(define-public r-lfm
+  (package
+    (name "r-lfm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LFM" version))
+       (sha256
+        (base32 "1lnwwh0v2a8qzx2nql9993a3qh4bqcy2mfkg5f3rlpcca44wzkip"))))
+    (properties `((upstream-name . "LFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sopc
+                             r-relliptical
+                             r-matrixcalc
+                             r-mass
+                             r-laplacesdemon
+                             r-farmtest))
+    (home-page "https://cran.r-project.org/package=LFM")
+    (synopsis "Laplace Factor Model Analysis and Evaluation")
+    (description
+     "Enables the generation of Laplace factor models across diverse Laplace
+distributions and facilitates the application of Sparse Online Principal
+Component (SOPC), Incremental Principal Component (IPC), Parallel Principal
+Component (PPC), Sparse Approximate Principal Component (SAPC), Standard
+Principal Component (SPC), and Farm Test methods to these models.  Evaluates the
+efficacy of these methods within the context of Laplace factor models by
+scrutinizing parameter estimation accuracy, mean square error, and the degree of
+sparsity.")
+    (license license:expat)))
 
 (define-public r-lfl
   (package

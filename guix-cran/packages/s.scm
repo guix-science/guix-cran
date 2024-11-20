@@ -46993,37 +46993,6 @@ Values files.  This package also downloads a list of restaurants and bars of
 Ushuaia city, Argentina.")
     (license license:expat)))
 
-(define-public r-sgapi
-  (package
-    (name "r-sgapi")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sgapi" version))
-       (sha256
-        (base32 "0q0qamhzsn4421wzbjfqlwrs2w4qj61ynvjh9pjv7fkk89szh7xx"))))
-    (properties `((upstream-name . "sgapi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-sf
-                             r-readr
-                             r-magrittr
-                             r-httr
-                             r-dplyr))
-    (home-page
-     "https://defra-data-science-centre-of-excellence.github.io/sgapi/")
-    (synopsis
-     "Aid Querying 'nomis' and 'Office for National Statistics Open Geography' APIs")
-    (description
-     "Facilitates extraction of geospatial data from the Office for National
-Statistics Open Geography and nomis Application Programming Interfaces (APIs).
-Simplifies process of querying nomis datasets <https://www.nomisweb.co.uk/> and
-extracting desired datasets in dataframe format.  Extracts area shapefiles at
-chosen resolution from Office for National Statistics Open Geography
-<https://geoportal.statistics.gov.uk/>.")
-    (license license:expat)))
-
 (define-public r-sg
   (package
     (name "r-sg")
@@ -57137,13 +57106,13 @@ series of all time.")
 (define-public r-schorsch
   (package
     (name "r-schorsch")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "schoRsch" version))
        (sha256
-        (base32 "0bf4lahfzi6dchqfnykh4saiagcka12h82d9mvd1ddv5phmbyi10"))))
+        (base32 "06q4basin2mdbl4ibb0hp68ipk4n7v6vy1ms60c22r65iyqqj79x"))))
     (properties `((upstream-name . "schoRsch")))
     (build-system r-build-system)
     (home-page "https://www.tqmp.org/RegularArticles/vol12-2/p147/index.html")
