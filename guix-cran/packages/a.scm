@@ -18546,13 +18546,13 @@ into account variable selection.")
 (define-public r-adverseevents
   (package
     (name "r-adverseevents")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdverseEvents" version))
        (sha256
-        (base32 "19vjfnabh977gcf517wa58613jgi0yfagnpikmp6d8adqz45b0mm"))))
+        (base32 "0qmwjrl57r6l7424x5nhncm4gc9xi87czp64d0yb7l7qzr571q7s"))))
     (properties `((upstream-name . "AdverseEvents")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -18572,7 +18572,7 @@ into account variable selection.")
                              r-ggnewscale
                              r-dt))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=AdverseEvents")
+    (home-page "https://github.com/dungtsa/AdverseEvents")
     (synopsis
      "'shiny' Application for Adverse Event Analysis of 'OnCore' Data")
     (description

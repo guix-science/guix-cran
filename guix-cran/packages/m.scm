@@ -11278,13 +11278,13 @@ units where possible.  Data import directly from movebank
 (define-public r-move
   (package
     (name "r-move")
-    (version "4.2.5")
+    (version "4.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move" version))
        (sha256
-        (base32 "01yc69xy35byl0mnr8f9578175zvil2z201bwzf0zkw1m72jwjzc"))))
+        (base32 "1s6zzfrr7c28fikqnzikvd8m234vvawq64jhjzn1ngx69pfdn9na"))))
     (properties `((upstream-name . "move")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -24164,13 +24164,13 @@ X11-compatible devices with `@code{grDevices::x11()`}.")
 (define-public r-minesweeper
   (package
     (name "r-minesweeper")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minesweeper" version))
        (sha256
-        (base32 "17f4phqayjl82y8p80y0bmmigs244lj7c0jyl8mpa89vib5vnpr7"))))
+        (base32 "0333kp0scmlypxa6ny97h3jpi8gnd8rfp6lgdhz464dla6v0h1wd"))))
     (properties `((upstream-name . "minesweeper")))
     (build-system r-build-system)
     (home-page "https://github.com/hrryt/minesweeper")
@@ -37867,84 +37867,6 @@ penalty term to minimize the differences between the total sub-annual flows and
 the annual flow.  The method is described in Nguyen et al (2020)
 <DOI:10.1002/essoar.10504791.1>.")
     (license license:gpl2+)))
-
-(define-public r-mbnmatime
-  (package
-    (name "r-mbnmatime")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MBNMAtime" version))
-       (sha256
-        (base32 "1ny438dy62zrafyf7nng2hq5v311l1zc5xd39452fgq6ij0rnrni"))))
-    (properties `((upstream-name . "MBNMAtime")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-rjags
-                             r-reshape2
-                             r-rdpack
-                             r-r2jags
-                             r-magrittr
-                             r-knitr
-                             r-gridextra
-                             r-dplyr
-                             r-checkmate))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://hugaped.github.io/MBNMAtime/")
-    (synopsis
-     "Run Time-Course Model-Based Network Meta-Analysis (MBNMA) Models")
-    (description
-     "Fits Bayesian time-course models for model-based network meta-analysis (MBNMA)
-that allows inclusion of multiple time-points from studies.  Repeated measures
-over time are accounted for within studies by applying different time-course
-functions, following the method of Pedder et al. (2019) <doi:10.1002/jrsm.1351>.
- The method allows synthesis of studies with multiple follow-up measurements
-that can account for time-course for a single or multiple treatment comparisons.
- Several general time-course functions are provided; others may be added by the
-user.  Various characteristics can be flexibly added to the models, such as
-correlation between time points and shared class effects.  The consistency of
-direct and indirect evidence in the network can be assessed using unrelated mean
-effects models and/or by node-splitting.")
-    (license license:gpl3)))
-
-(define-public r-mbnmadose
-  (package
-    (name "r-mbnmadose")
-    (version "0.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MBNMAdose" version))
-       (sha256
-        (base32 "1dqh7z6wpnryl9djfsacbdm4b4my08kh4l63vd31xs742sywv6i0"))))
-    (properties `((upstream-name . "MBNMAdose")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-scales
-                             r-rjags
-                             r-reshape2
-                             r-rdpack
-                             r-r2jags
-                             r-magrittr
-                             r-igraph
-                             r-dplyr
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://hugaped.github.io/MBNMAdose/")
-    (synopsis "Dose-Response MBNMA Models")
-    (description
-     "Fits Bayesian dose-response model-based network meta-analysis (MBNMA) that
-incorporate multiple doses within an agent by modelling different dose-response
-functions, as described by Mawdsley et al. (2016) <doi:10.1002/psp4.12091>.  By
-modelling dose-response relationships this can connect networks of evidence that
-might otherwise be disconnected, and can improve precision on treatment
-estimates.  Several common dose-response functions are provided; others may be
-added by the user.  Various characteristics and assumptions can be flexibly
-added to the models, such as shared class effects.  The consistency of direct
-and indirect evidence in the network can be assessed using unrelated mean
-effects models and/or by node-splitting at the treatment level.")
-    (license license:gpl3)))
 
 (define-public r-mbmixture
   (package

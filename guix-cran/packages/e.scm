@@ -8136,13 +8136,13 @@ Package implementation is described in Domingo-Almenara et al. (2016)
 (define-public r-era
   (package
     (name "r-era")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "era" version))
        (sha256
-        (base32 "10hrbdxdvfgz8namczzfwwdhzwf5gsfv6jp9ikiasmjdlyn9jpps"))))
+        (base32 "1g3423pdp8l79zzihcmb0pz78k0h3l1zn5y90j67h514qpvkf8g8"))))
     (properties `((upstream-name . "era")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-rlang r-pillar))
@@ -8755,13 +8755,13 @@ data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.15.4")
+    (version "0.15.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5d" version))
        (sha256
-        (base32 "1y01v5mxgj30halsslhc8rhkz6g8jri8ackpsmxc7l18fj6nnvms"))))
+        (base32 "1n0g7jsxyhhrh2ls391lrk79a0dx35x7nyp48q1lh12s7r8xj050"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8783,12 +8783,12 @@ scale.  Frequently the scores on these five dimensions are converted to a single
 utility index using country specific value sets, which can be used in the
 clinical and economic evaluation of health care as well as in population health
 surveys.  The eq5d package provides methods to calculate index scores from a
-subject's dimension scores.  31 TTO and 11 VAS EQ-5D-3L value sets including
+subject's dimension scores.  32 TTO and 11 VAS EQ-5D-3L value sets including
 those for countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and
-Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 43 EQ-5D-5L EQ-VT value
+Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 44 EQ-5D-5L EQ-VT value
 sets, the EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
-<doi:10.1016/j.jval.2012.02.008>, the crosswalk value sets for Bermuda and
-Russia and the reverse crosswalk value sets.  10 EQ-5D-Y value sets are also
+<doi:10.1016/j.jval.2012.02.008>, the crosswalk value sets for Bermuda, Jordan
+and Russia and the reverse crosswalk value sets.  10 EQ-5D-Y value sets are also
 included as are the NICE DSU age-sex based EQ-5D-3L to EQ-5D-5L and EQ-5D-5L to
 EQ-5D-3L mappings.  Methods are also included for the analysis of EQ-5D
 profiles, including those from the book \"Methods for Analyzing and Reporting
@@ -16434,13 +16434,13 @@ uncertainty and confidence interval calculations is Hirsch et al. (2015)
 (define-public r-egret
   (package
     (name "r-egret")
-    (version "3.0.9")
+    (version "3.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGRET" version))
        (sha256
-        (base32 "1if22yq5wyfd0sx5b38xw3fbj8qlmbnkikjq77ihxd3pzfjpdl14"))))
+        (base32 "04apfhwczdwh6kq0ww4hbbfd4ymkvxzbm0r0kk97x96i5nvrk5fs"))))
     (properties `((upstream-name . "EGRET")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

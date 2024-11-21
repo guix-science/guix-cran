@@ -11647,6 +11647,35 @@ actually looking at, while the indices summarise different aspects of the web's
 topology.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-biovizseq
+  (package
+    (name "r-biovizseq")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioVizSeq" version))
+       (sha256
+        (base32 "0q08rgvdvybpv6m9mv8wcycjsczcgpsmks60f2d0359a56r2idf1"))))
+    (properties `((upstream-name . "BioVizSeq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-seqinr
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=BioVizSeq")
+    (synopsis "Visualizing the Elements Within Bio-Sequences")
+    (description
+     "Visualizing the types and distribution of elements within bio-sequences.  At the
+same time, We have developed a geom layer, geom_rrect(), that can generate
+rounded rectangles.  No external references are used in the development of this
+package.")
+    (license license:artistic2.0)))
+
 (define-public r-biovenn
   (package
     (name "r-biovenn")

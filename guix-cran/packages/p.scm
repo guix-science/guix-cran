@@ -4399,6 +4399,28 @@ load (AL).  Provides a wrapper to calculate the @code{MetSSS} on new data using
 the Healthy Hearts formula.")
     (license license:lgpl3)))
 
+(define-public r-psc
+  (package
+    (name "r-psc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psc" version))
+       (sha256
+        (base32 "0v0v57pixxpmgwgm9m8wvxl2q3abyqa59nxlz7m7zv5vw05n2lr4"))))
+    (properties `((upstream-name . "psc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-mvtnorm r-flexsurv r-enrichwith))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richjjackson/psc/")
+    (synopsis "Personalised Synthetic Controls")
+    (description
+     "Allows the comparison of data cohorts (DC) against a Counter Factual Model (CFM)
+and measures the difference in terms of an efficacy parameter.  Allows the
+application of Personalised Synthetic Controls.")
+    (license license:gpl3)))
+
 (define-public r-psborrow2
   (package
     (name "r-psborrow2")
@@ -8049,15 +8071,16 @@ that governs neural spiking in response to optogenetic stimulation.")
 (define-public r-prnsamplr
   (package
     (name "r-prnsamplr")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prnsamplr" version))
        (sha256
-        (base32 "1qhrk6am6irp5m0gh61vv6612738p0kwjcvgdnza50731rias8v7"))))
+        (base32 "0m6j0wr66kwx51q89352hidvdjzq2vp3ans5vf1dzxrjs6ghm2qm"))))
     (properties `((upstream-name . "prnsamplr")))
     (build-system r-build-system)
+    (propagated-inputs (list r-rlang))
     (home-page "https://cran.r-project.org/package=prnsamplr")
     (synopsis "Permanent Random Number Sampling")
     (description
@@ -8066,7 +8089,7 @@ problem of unknown overlap between survey samples, which leads to a low
 precision in estimates when the survey is repeated or combined with other
 surveys.  The PRN solution is to supply the U(0, 1) random numbers to the
 sampling procedure, instead of having the sampling procedure generate them.  In
-Lindblom (2014) <doi:10.2478/jos-2014-0047>, and therein cited articles, it is
+Lindblom (2014) <doi:10.2478/jos-2014-0047>, and therein cited papers, it is
 shown how this is carried out and how it improves the estimates.  This package
 supports two common fixed-size sampling procedures (simple random sampling and
 probability-proportional-to-size sampling) and includes a function for
@@ -19833,13 +19856,13 @@ models (SEMMs).")
 (define-public r-plotscaper
   (package
     (name "r-plotscaper")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotscaper" version))
        (sha256
-        (base32 "1r5fpdfldm5mc1qkma6d713fr2p00k3zb586slimk7s4p91rm4d0"))))
+        (base32 "1hsqya9ffm26sff9rcnvn76gw9viimi34srynci9m5w7191i5ra0"))))
     (properties `((upstream-name . "plotscaper")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-knitr r-jsonlite r-httpuv r-htmlwidgets))

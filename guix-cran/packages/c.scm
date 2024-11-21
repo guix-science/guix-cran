@@ -13206,13 +13206,13 @@ the data into separate modules.")
 (define-public r-corbouli
   (package
     (name "r-corbouli")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corbouli" version))
        (sha256
-        (base32 "1r9fvbc1r65rsw96pxhlixm0c0k2r265yf85skdz99kmr09l4adx"))))
+        (base32 "0hdl5f426wp2f5k8nc9fhc1g1rbpqsm6kjkvyfk120anvcj09nyk"))))
     (properties `((upstream-name . "corbouli")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
@@ -35516,20 +35516,23 @@ or and with any mediator (any variable type and distribution).  See Sudharsanan
 (define-public r-cfda
   (package
     (name "r-cfda")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfda" version))
        (sha256
-        (base32 "03w2vfgjf29qn40slqfpd54dmvzql53lc9j7n51ggg7bjchrg2x0"))))
+        (base32 "1i3c6586x8g1vv8pkp9d23l4pzv7wapvhq4xsj98xl3fj3ngss52"))))
     (properties `((upstream-name . "cfda")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pbapply
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-pbapply
                              r-msm
                              r-mgcv
                              r-ggplot2
                              r-fda
+                             r-dplyr
                              r-diagram))
     (native-inputs (list r-knitr))
     (home-page "https://modal-inria.github.io/cfda/")
@@ -35732,6 +35735,36 @@ including selecting from different binning or binless methods and performing
 stratification, censoring, and prediction correction.  Generate the underlying
 tidyvpc and ggplot2 code directly from the user interface and download R or Rmd
 scripts to reproduce the VPCs in R.")
+    (license license:lgpl3)))
+
+(define-public r-certara-rsnlme
+  (package
+    (name "r-certara-rsnlme")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Certara.RsNLME" version))
+       (sha256
+        (base32 "1b531ilcmlz4h538a3jp3lywmsp2ibdfhrwpxms8wrpmpfwvkpdx"))))
+    (properties `((upstream-name . "Certara.RsNLME")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-ssh
+                             r-jsonlite
+                             r-data-table
+                             r-certara-nlme8
+                             r-assertthat))
+    (home-page "https://certara.github.io/R-RsNLME/")
+    (synopsis "Pharmacometric Modeling")
+    (description
+     "Facilitate Pharmacokinetic (PK) and Pharmacodynamic (PD) modeling and simulation
+with powerful tools for Nonlinear Mixed-Effects (NLME) modeling.  The package
+provides access to the same advanced Maximum Likelihood algorithms used by the
+NLME-Engine in the Phoenix platform.  These tools support a range of analyses,
+from parametric methods to individual and pooled data analysis
+<https://www.certara.com/app/uploads/2020/06/BR_@code{PhoenixNLME-v4.pdf>}.
+Execution is supported both locally or on remote machines.")
     (license license:lgpl3)))
 
 (define-public r-certara-r
@@ -36836,6 +36869,32 @@ and Anne L. Plant, which is in press in the Journal of Theoretical Biology.  In
 order to reproduce the analysis used to obtain Table 1 in the paper, execute the
 command \"example(@code{fitVolDist})\".")
     (license license:gpl2+)))
+
+(define-public r-cellularautomata
+  (package
+    (name "r-cellularautomata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cellularautomata" version))
+       (sha256
+        (base32 "07j0bv8bj20jjh4zdxgqnpkxm0pb2aia6045rp23i3x18n18zf42"))))
+    (properties `((upstream-name . "cellularautomata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-purrr r-patchwork r-ggplot2 r-gganimate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cellularautomata")
+    (synopsis "Cellular Automata")
+    (description
+     "Create cellular automata from Wolfram rules.  Allows the creation of Wolfram
+style plots, as well as of animations.  Easy to create multiple plots, for
+example the output of a rule with different initial states, or the output of
+many different rules from the same state.  The output of a cellular automaton is
+given as a matrix, making it easy to try to explore the possibility of
+predicting its time evolution using various statistical tools available in R.
+Wolfram S. (2002, ISBN:1579550088) \"A New Kind of Science\".")
+    (license license:expat)))
 
 (define-public r-celltrackr
   (package
@@ -38903,6 +38962,45 @@ with respect to a so-called \"lazy oracle\", and works with both linear and
 nonlinear systems.  For details, see Watson & Silva (2022)
 <@code{arXiv:2205.05715>}.")
     (license license:gpl3+)))
+
+(define-public r-cbioportalr
+  (package
+    (name "r-cbioportalr")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cbioportalR" version))
+       (sha256
+        (base32 "0cd6n4gg1sg4y3chsypr2k8y9nbc4ncisi45zxw1vmfkc2cq8bn0"))))
+    (properties `((upstream-name . "cbioportalR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/karissawhiting/cbioportalR")
+    (synopsis "Browse and Query Clinical and Genomic Data from cBioPortal")
+    (description
+     "This package provides R users with direct access to genomic and clinical data
+from the @code{cBioPortal} web resource via user-friendly functions that wrap
+@code{cBioPortal's} existing API endpoints
+<https://www.cbioportal.org/api/swagger-ui/index.html>.  Users can browse and
+query genomic data on mutations, copy number alterations and fusions, as well as
+data on tumor mutational burden ('TMB'), microsatellite instability status
+('MSI'), FACETS and select clinical data points (depending on the study).  See
+<https://www.cbioportal.org/> and Gao et al., (2013)
+<doi:10.1126/scisignal.2004088> for more information on the @code{cBioPortal}
+web resource.")
+    (license license:expat)))
 
 (define-public r-cbinom
   (package

@@ -13304,13 +13304,13 @@ S, Lou P, Mockler TC and @code{McClung} CR. @code{eLife}.  2020 Sep 30;9(4).
 (define-public r-dint
   (package
     (name "r-dint")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dint" version))
        (sha256
-        (base32 "1hkbvf4aidjqmcq79bh2k0lg6ayrrhq60zl1vv93zc6a792i55ka"))))
+        (base32 "0qfvxzix6k24xnjxh9nhz9dq3qfwl14mnd7rp03l8yvh6frws8fh"))))
     (properties `((upstream-name . "dint")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -15164,13 +15164,13 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "0k4gkaksk5wkyp39yhz08h7yvh4hjw9bnhj8fyqpfdyyn75zpgjx"))))
+        (base32 "0f9dqqg176bqvydq3bbnaz73655gml64faa1l3b74nwgw9bss22r"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18747,13 +18747,13 @@ special, roxygen'-style comments.")
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DEPONS2R" version))
        (sha256
-        (base32 "1l09nl6dvm0h005m7wpic95d710qv0v7q4ac67cr5zsr2l0prj1z"))))
+        (base32 "0nzjjc62z6szy2wi1bzackd0ij66msfbjg7kaa79za96k71hvhxg"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

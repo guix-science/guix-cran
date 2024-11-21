@@ -1319,6 +1319,28 @@ periodograms for univariate and multivariate time series.  See Kley (2016)
 <doi:10.18637/jss.v070.i03> for a description and tutorial.")
     (license license:gpl2+)))
 
+(define-public r-quantsig
+  (package
+    (name "r-quantsig")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantsig" version))
+       (sha256
+        (base32 "0mvlbhx74jjpqcyz032sgc4rz27sv4ppi4a29ql496ix0q22xsv2"))))
+    (properties `((upstream-name . "quantsig")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=quantsig")
+    (synopsis "Sigmoidal Quantile Function Estimator")
+    (description
+     "This package provides a sigmoidal quantile function estimator based on a newly
+defined generalized expectile function.  The generalized sigmoidal quantile
+function can estimate quantiles beyond the range of the data, which is important
+for certain applications given smaller sample sizes.  The package is based on
+the method introduced in Hutson (2024) <doi:10.1080/03610918.2022.2032161>.")
+    (license license:gpl3)))
+
 (define-public r-quantregranger
   (package
     (name "r-quantregranger")

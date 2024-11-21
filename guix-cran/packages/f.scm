@@ -12295,13 +12295,13 @@ Distributions are fitted when overdispersion is available.")
 (define-public r-fitodbod
   (package
     (name "r-fitodbod")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitODBOD" version))
        (sha256
-        (base32 "0jcbgfr5dycglfnkcc3f5cw4vr17fqm4r1v7fizwycqyds01p3rf"))))
+        (base32 "0m4ndbs9kbwhiqw461blr7c206bqnf6kgyvnm045fiphd4f11zd2"))))
     (properties `((upstream-name . "fitODBOD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mvtnorm r-mass r-hypergeo r-bbmle))

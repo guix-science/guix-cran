@@ -145,6 +145,34 @@ to plot-level SVAT simulations, as well as multi-run and large-scale
 applications.")
     (license license:gpl3)))
 
+(define-public r-lwc2022
+  (package
+    (name "r-lwc2022")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lwc2022" version))
+       (sha256
+        (base32 "0w05bsin1wl00h0s1na2acf37jwdh4x9f09p9kr1nz1kvax861k8"))))
+    (properties `((upstream-name . "lwc2022")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/C-Monaghan/lwc2022")
+    (synopsis
+     "Langa-Weir Classification of Cognitive Function for 2022 HRS Data")
+    (description
+     "Generates the Langa-Weir classification of cognitive function for the 2022
+Health and Retirement Study (HRS) cognition data.  It is particularly useful for
+researchers studying cognitive aging who wish to work with the most recent
+release of HRS data.  The package provides user-friendly functions for data
+preprocessing, scoring, and classification allowing users to easily apply the
+Langa-Weir classification system.  For details regarding the; HRS
+<https://hrsdata.isr.umich.edu/> and Langa-Weir classifications
+<https://hrsdata.isr.umich.edu/data-products/langa-weir-classification-cognitive-function-1995-2020>.")
+    (license license:expat)))
+
 (define-public r-lw1949
   (package
     (name "r-lw1949")
@@ -7031,13 +7059,13 @@ mixed models\".  Dept.  of Statistics, The Pennsylvania State University.")
 (define-public r-lmls
   (package
     (name "r-lmls")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmls" version))
        (sha256
-        (base32 "0gv7mawdpcqvvf3f61aa1l0yi32z9bs41i36ggn1nwga837g33k3"))))
+        (base32 "165wr49fnmd1xv33hic4b20nfmv4j86y7z90prlgjqhh8cdnk7nm"))))
     (properties `((upstream-name . "lmls")))
     (build-system r-build-system)
     (propagated-inputs (list r-generics))
@@ -14421,13 +14449,13 @@ approach is described in
 (define-public r-lccr
   (package
     (name "r-lccr")
-    (version "1.3")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LCCR" version))
        (sha256
-        (base32 "07hrbras7721rb2q9c8qd9k6cn3ba16i06b30xnyjzq6my1wzpd5"))))
+        (base32 "0rls4l6z2x52crs046x8dbbk9ij7jr0d669lmr4pkzr8kpa72jlm"))))
     (properties `((upstream-name . "LCCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -14435,7 +14463,9 @@ approach is described in
     (synopsis "Latent Class Capture-Recapture Models")
     (description
      "Estimation of latent class models with individual covariates for
-capture-recapture data.  See Forcina and Bartolucci (2021)<arxiv:2106.03811>.")
+capture-recapture data.  See Bartolucci, F. and Forcina, A. (2022), Estimating
+the size of a closed population by modeling latent and observed heterogeneity,
+Biometrics, 80(2), ujae017.")
     (license license:gpl2+)))
 
 (define-public r-lcc
@@ -16662,16 +16692,17 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "1prprl267103c8vi27s6hvs8qpcwmli81yrvs3wc994xajc1crmg"))))
+        (base32 "0ib9a1136lppz63c930n882ppynq058zr8x9fkddpbm2d6xm1k05"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-tibble
+                             r-rlang
                              r-r6
                              r-purrr
                              r-jsonlite
@@ -16748,13 +16779,13 @@ on Torch'.")
 (define-public r-lama
   (package
     (name "r-lama")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LaMa" version))
        (sha256
-        (base32 "0wghjfys68dlgcmm6q03a3rd60xcrwps7j3vv27f4w4w6k7sxb8x"))))
+        (base32 "0hcmcal187azpz3hzhmr1damwyiqmn9aqa4mh100qq5cg7k9vwjw"))))
     (properties `((upstream-name . "LaMa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtmb

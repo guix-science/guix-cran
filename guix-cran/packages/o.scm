@@ -5936,6 +5936,28 @@ Fransella', Bell', & Bannister', 2004, ISBN: 978-0-470-09080-0).  The package is
 part of the The package is part of the <https://openrepgrid.org/> project.")
     (license license:gpl2+)))
 
+(define-public r-openoise
+  (package
+    (name "r-openoise")
+    (version "0.2-18")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpeNoise" version))
+       (sha256
+        (base32 "1awwyam8jz0vh0dlwx23r96g5mvfclnwa3a4j97ng8k5w3hcwisi"))))
+    (properties `((upstream-name . "OpeNoise")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-pracma r-lubridate r-ggplot2))
+    (home-page "https://arpapiemonte.github.io/openoise-analysis/")
+    (synopsis "Environmental Noise Pollution Data Analysis")
+    (description
+     "This package provides analyse, interpret and understand noise pollution data.
+Data are typically regular time series measured with sound meter.  The package
+is partially described in Fogola, Grasso, Masera and Scordino (2023,
+<DOI:10.61782/fa.2023.0063>).")
+    (license license:gpl3+)))
+
 (define-public r-opennlpdata
   (package
     (name "r-opennlpdata")
@@ -9029,13 +9051,13 @@ of @code{OmegaG} do not necessarily represent the policy of the ALSAC.")
 (define-public r-olympicrshiny
   (package
     (name "r-olympicrshiny")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlympicRshiny" version))
        (sha256
-        (base32 "1pal80qcj8jb0a0yd95qb56mkm99m9kyfcn44d63k769hkfx43fi"))))
+        (base32 "10aq9mcnb7yp2jwz897qmng3p0vwrm1rzny8nc9lzm6gisw50lby"))))
     (properties `((upstream-name . "OlympicRshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarytools

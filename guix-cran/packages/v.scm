@@ -6503,24 +6503,26 @@ W., & Bondell, H. D. (2023) <doi:10.1080/01621459.2023.2169701>.")
 (define-public r-vaxpmx
   (package
     (name "r-vaxpmx")
-    (version "0.0.3")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaxpmx" version))
        (sha256
-        (base32 "0slbp5iaafwa3bw8mrzraq8yvklvyji1r4bvmvwlmgr99yk2kgk4"))))
+        (base32 "1vjc2bm3i41di1nxjplgb347cghnv9ymv43c83dydkywa3wzqx1d"))))
     (properties `((upstream-name . "vaxpmx")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-dplyr))
+    (propagated-inputs (list r-survival r-mass r-dplyr))
     (home-page "https://cran.r-project.org/package=vaxpmx")
     (synopsis "Vaccines Pharmacometrics")
     (description
      "Estimate vaccine efficacy (VE) using immunogenicity data.  The inclusion of
 immunogenicity data in regression models can increase precision in VE. The
-methods are described in the publication \"Elucidating vaccine efficacy using a
-correlate of protection, demographics, and logistic regression\" by Julie
-Dudasova, Zdenek Valenta, and Jeffrey R. Sachs (2024).")
+methods are described in the publications \"Elucidating vaccine efficacy using a
+correlate of protection, demographics, and logistic regression\" and \"Improving
+precision of vaccine efficacy evaluation using immune correlate data in
+time-to-event models\" by Julie Dudasova, Zdenek Valenta, and Jeffrey R. Sachs
+(2024).")
     (license license:gpl3)))
 
 (define-public r-vaultr

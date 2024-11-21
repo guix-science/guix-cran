@@ -232,13 +232,13 @@ remotes::install_github(\"tlverse/sl3\")'.")
 (define-public r-tww
   (package
     (name "r-tww")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TWW" version))
        (sha256
-        (base32 "1i3blld1irp5j6i2dgafxg1f9g08g62ml3ybbx5z6fds1z97yhng"))))
+        (base32 "012axqhd6h5zibhjaxzqngnhi9kn7jdfhxxgkci6mlzp2bhnqhwj"))))
     (properties `((upstream-name . "TWW")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=TWW")
@@ -21430,13 +21430,13 @@ stepdown versions, and four FDR procedures.")
 (define-public r-testcomparer
   (package
     (name "r-testcomparer")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testCompareR" version))
        (sha256
-        (base32 "0864zih2r10777z3ig2vf5p5nl6k2x4id1jcimvq9ifrbpj75cxm"))))
+        (base32 "0aq7k964r14pgccwzxpc3kc8ahwhj1g60rr8naqjwhpp6yfjrf6d"))))
     (properties `((upstream-name . "testCompareR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

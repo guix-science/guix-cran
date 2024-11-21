@@ -3030,6 +3030,33 @@ Analysis of systematic and random differences between paired ordinal categorical
 data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
     (license license:gpl3)))
 
+(define-public r-svemnet
+  (package
+    (name "r-svemnet")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SVEMnet" version))
+       (sha256
+        (base32 "1l0lnzk9ghmfjnzrrj7g25njww4wrnrmdhad6bx7a887v1xcgfcy"))))
+    (properties `((upstream-name . "SVEMnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lhs r-glmnet r-ggplot2 r-gamlss-dist r-gamlss))
+    (home-page "https://cran.r-project.org/package=SVEMnet")
+    (synopsis "Self-Validated Ensemble Models with Elastic Net Regression")
+    (description
+     "This package implements Self-Validated Ensemble Models (SVEM, Lemkus et al.
+(2021) <doi:10.1016/j.chemolab.2021.104439>) using Elastic Net regression via
+glmnet (Friedman et al. <doi:10.18637/jss.v033.i01>).  SVEM averages predictions
+from multiple models fitted to fractionally weighted bootstraps of the data,
+tuned with anti-correlated validation weights.  Also implements the randomized
+permutation whole model test for SVEM (Karl (2024)
+<doi:10.1016/j.chemolab.2024.105122>).  Code for the whole model test was taken
+from the supplementary material of Karl (2024).  Development of this package was
+assisted by GPT o1-preview for code structure and documentation.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-svdnf
   (package
     (name "r-svdnf")
@@ -27101,13 +27128,13 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
 (define-public r-soundshape
   (package
     (name "r-soundshape")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoundShape" version))
        (sha256
-        (base32 "12v0r42vcbmxznqlrsag59zdrkjsb86hxjn890j59n4bqnz7blr8"))))
+        (base32 "1wp52p5a2b5dm3pa99n85ampmqn4l8g2dwywnhyp2naznmn2hpgw"))))
     (properties `((upstream-name . "SoundShape")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner
@@ -30148,13 +30175,13 @@ package.")
 (define-public r-snotelr
   (package
     (name "r-snotelr")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snotelr" version))
        (sha256
-        (base32 "1972rnaxxhv3jns4y5chy3x2qqyh6fixay0irpn1yk70ka6r6jga"))))
+        (base32 "03gk7w3axi1z7zccnzf54kixjvx48l5my8g2lsnf67mf6q9zgnrl"))))
     (properties `((upstream-name . "snotelr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rvest r-memoise r-httr r-dplyr))
@@ -56108,13 +56135,13 @@ model to identify the true quantitative trait nucleotide.")
 (define-public r-scoredec
   (package
     (name "r-scoredec")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoredec" version))
        (sha256
-        (base32 "1974qxhbf8bwd3b864ng5bzc1j7byjkrwgqf78yp8pm5w51m1y59"))))
+        (base32 "0xs51bgv2kvq4c3r3w6hsnrk4aya3klwwjhvpf8lpc0yd63d1pzg"))))
     (properties `((upstream-name . "scoredec")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-rcpp r-igraph))
@@ -61698,6 +61725,29 @@ a random sample, missing by strata, duplicated within a dataset; and perform
 data analysis, including proportions, margins of error and upper and lower
 bounds for simple, stratified and cluster sample designs.")
     (license license:expat)))
+
+(define-public r-sampledatasets
+  (package
+    (name "r-sampledatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sampledatasets" version))
+       (sha256
+        (base32 "1j8ss1qx1czg2sw8apx03v0d835pkm5r57ldm27crl41f7dgy9a0"))))
+    (properties `((upstream-name . "sampledatasets")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/sampledatasets")
+    (synopsis "Collection of Sample Datasets")
+    (description
+     "This package provides a collection of sample datasets on various fields such as
+automotive performance and safety data to historical demographics and
+socioeconomic indicators, as well as recreational data.  It serves as a resource
+for researchers and analysts seeking to perform analyses and derive insights
+from classic data sets in R.")
+    (license license:gpl3)))
 
 (define-public r-sampcompr
   (package

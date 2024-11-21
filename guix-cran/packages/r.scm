@@ -3988,17 +3988,17 @@ provided in vignettes.  Theoretical background can be found in Butler (2011)
 (define-public r-rtide
   (package
     (name "r-rtide")
-    (version "0.0.10")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtide" version))
        (sha256
-        (base32 "0911i51sy3pgqcx5al3nf18ncmwafl1xdxhj46j8rmblzqz2iras"))))
+        (base32 "17hr3s28im9hb9xzcwakqvm57s6y5sjz0l42dx5syh8yrskbf93c"))))
     (properties `((upstream-name . "rtide")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-dttr2 r-chk r-abind))
-    (home-page "https://github.com/poissonconsulting/rtide")
+    (home-page "https://github.com/millerlp/rtide")
     (synopsis "Tide Heights")
     (description
      "Calculates tide heights based on tide station harmonics.  It includes the
@@ -29307,27 +29307,6 @@ learning (MBL, a.k.a local modeling) in complex spectral data sets.  Most of
 these functions are based on the methods presented in Ramirez-Lopez et al.
 (2013) <doi:10.1016/j.geoderma.2012.12.014>.")
     (license license:expat)))
-
-(define-public r-researchassociate
-  (package
-    (name "r-researchassociate")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ResearchAssociate" version))
-       (sha256
-        (base32 "00j339ngc72gn2gyn1irjmazrv6l5nbsy3z25r6j1zrjwsbay15p"))))
-    (properties `((upstream-name . "ResearchAssociate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml r-rentrez r-plyr r-ggplot2))
-    (home-page "https://cran.r-project.org/package=ResearchAssociate")
-    (synopsis
-     "Retrieving Publications from PubMed Database Based on User Query")
-    (description
-     "Connects to Pubmed <https://pubmed.ncbi.nlm.nih.gov/> to retrieve publications
-related to user-defined search query.")
-    (license license:gpl3)))
 
 (define-public r-resde
   (package

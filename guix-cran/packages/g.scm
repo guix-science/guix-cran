@@ -6255,13 +6255,13 @@ tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "11014vf4w7l5hsx9r9c6r6y5vn1i3avrgs58wsymxrq9nhpphcbk"))))
+        (base32 "1xglxba5i31hmam49mvklp17vwzagqc0gj05v61aq48ay0kj7pbv"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -21972,6 +21972,34 @@ Cuccurullo. (2017) <doi:10.1016/j.joi.2017.08.007>.  Caibo Zhou, Wenyan Song.
 <doi:10.5530/jscires.8.3.32>.")
     (license license:gpl3)))
 
+(define-public r-gerda
+  (package
+    (name "r-gerda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gerda" version))
+       (sha256
+        (base32 "1s9li84ph5wxpl6j696ysfi2km62s03231avwk36hp74fxj1sgwr"))))
+    (properties `((upstream-name . "gerda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-stringdist r-readr r-knitr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hhilbig/gerda")
+    (synopsis "German Election Database (GERDA)")
+    (description
+     "This package provides tools to download comprehensive datasets of local, state,
+and federal election results in Germany from 1990 to 2021.  The package
+facilitates access to data on turnout, vote shares for major parties, and
+demographic information across different levels of government (municipal, state,
+and federal).  It offers access to geographically harmonized datasets that
+account for changes in municipal boundaries over time and incorporate mail-in
+voting districts.  Users can easily retrieve, clean, and standardize German
+electoral data, making it ready for analysis.  Data is sourced from
+<http://www.german-elections.com>.")
+    (license license:expat)))
+
 (define-public r-gerbil
   (package
     (name "r-gerbil")
@@ -28273,13 +28301,13 @@ Press 2015).")
 (define-public r-gd
   (package
     (name "r-gd")
-    (version "10.6")
+    (version "10.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GD" version))
        (sha256
-        (base32 "1xk7s0b8xz3rialrwfzf3x2ggq5cpsqk6qn3193f3brvl1y4jsgr"))))
+        (base32 "102y9q8lpmvad0ih82r3pqg8qy7sq61j5wzd6lj6b6dp6pnv8s2r"))))
     (properties `((upstream-name . "GD")))
     (build-system r-build-system)
     (propagated-inputs (list r-bammtools))
