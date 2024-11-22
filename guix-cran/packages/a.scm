@@ -7314,18 +7314,17 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
 (define-public r-ardeco
   (package
     (name "r-ardeco")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARDECO" version))
        (sha256
-        (base32 "0jdkrv53h71r068rp8kbakz86ahif1jqhmcjp5lwyaj97gw7ssgf"))))
+        (base32 "0y6npim17k8vy05ix06j6kwza8n7149zz93cvcjrshjqlwkxd0w8"))))
     (properties `((upstream-name . "ARDECO")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
-                             r-rjstat
                              r-jsonlite
                              r-httr
                              r-ghql
@@ -7340,7 +7339,9 @@ completely transparent to the user and the provided functions provide a direct
 access to the ARDECO data.  The ARDECO database is a collection of variables
 related to demography, employment, labour market, domestic product, capital
 formation.  Each variable can be exposed in one or more units of measure as well
-as refers to total values plus economic sectors.  The description of the ARDECO
+as refers to total values plus additional dimensions like economic sectors,
+gender, age classes.  Data can be also aggregated at country level according to
+the tercet classes as defined by EUROSTAT. The description of the ARDECO
 database can be found at the following URL
 <https://urban.jrc.ec.europa.eu/ardeco>.")
     (license license:gpl3)))
@@ -10870,6 +10871,35 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
 method to test the difference and equivalence of two effects with summary
 statistics from two studies.")
     (license license:gpl3)))
+
+(define-public r-anomalyscore
+  (package
+    (name "r-anomalyscore")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AnomalyScore" version))
+       (sha256
+        (base32 "0nxfl0fhkbz0cix82b5ial6cibrh22by4liqcnxgq8hillhfvnaf"))))
+    (properties `((upstream-name . "AnomalyScore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsa
+                             r-transport
+                             r-rann
+                             r-mvlsw
+                             r-mass
+                             r-marima
+                             r-dtw
+                             r-class
+                             r-astsa))
+    (home-page "https://cran.r-project.org/package=AnomalyScore")
+    (synopsis "Anomaly Scoring for Multivariate Time Series")
+    (description
+     "Compute an anomaly score for multivariate time series based on the k-nearest
+neighbors algorithm.  Different computations of distances between time series
+are provided.")
+    (license license:gpl3+)))
 
 (define-public r-anomaly
   (package
@@ -14982,13 +15012,13 @@ age-structured population dynamics models described in Erguler and others (2016)
 (define-public r-albi
   (package
     (name "r-albi")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aLBI" version))
        (sha256
-        (base32 "0gp19brxr59w2zf7cqk3397h33m6qwkcfa41vlj2rbzym1yvhsrk"))))
+        (base32 "15pa431l58w3dym4v0wsma9zjmlw4xwcvjsyw0fd996ckzj1g15j"))))
     (properties `((upstream-name . "aLBI")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))

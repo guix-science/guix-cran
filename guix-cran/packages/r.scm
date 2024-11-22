@@ -473,13 +473,13 @@ study with RNA-seq data.")
 (define-public r-rxode2ll
   (package
     (name "r-rxode2ll")
-    (version "2.0.11")
+    (version "2.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2ll" version))
        (sha256
-        (base32 "0fj5lbs67g1adjywfnav88rsj0sy3lwwf4gyimdh89rbm1glrrs3"))))
+        (base32 "18ymbl472wiinnnk2s4z3z6awsr16mmjd0cqbhbm3rnkqyhr7c2v"))))
     (properties `((upstream-name . "rxode2ll")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -492,11 +492,11 @@ study with RNA-seq data.")
     (synopsis "Log-Likelihood Functions for 'rxode2'")
     (description
      "This package provides the log-likelihoods with gradients from stan (Carpenter et
-al (2015), <@code{arXiv:1509.07164>}) needed for generalized log-likelihood
-estimation in nlmixr2 (Fidler et al (2019) <doi:10.1002/psp4.12445>).  This is
-split of to reduce computational burden of recompiling rxode2 (Wang, Hallow and
-James (2016) <doi:10.1002/psp4.12052>) which runs the nlmixr2 models during
-estimation.")
+al (2015), <doi:10.48550/@code{arXiv.1509.07164>}) needed for generalized
+log-likelihood estimation in nlmixr2 (Fidler et al (2019)
+<doi:10.1002/psp4.12445>).  This is split of to reduce computational burden of
+recompiling rxode2 (Wang, Hallow and James (2016) <doi:10.1002/psp4.12052>)
+which runs the nlmixr2 models during estimation.")
     (license license:gpl3+)))
 
 (define-public r-rxode2
@@ -2761,13 +2761,13 @@ packages who wish to use the 2bit C library in their own C'/'C++ code.")
 (define-public r-rtwig
   (package
     (name "r-rtwig")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTwig" version))
        (sha256
-        (base32 "1w4j6ly7wf8n708zxkxzr0p9f6jgfpk82dmg9la6jfv43jr7h8m7"))))
+        (base32 "1pkczwr4j9dm37b1hsgczdv0rkpjqkzz879xjld1rjgabphcmdfy"))))
     (properties `((upstream-name . "rTwig")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
@@ -11458,6 +11458,26 @@ tags.")
     (description "Converts elements of roxygen documentation to markdown'.")
     (license license:gpl3)))
 
+(define-public r-roxy-shinylive
+  (package
+    (name "r-roxy-shinylive")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "roxy.shinylive" version))
+       (sha256
+        (base32 "1fa2c5d4cby193ls50n57im4iadv1kghkpm1a56bshgpgzc9ivph"))))
+    (properties `((upstream-name . "roxy.shinylive")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-roxygen2 r-lzstring r-jsonlite r-glue))
+    (home-page "https://github.com/insightsengineering/roxy.shinylive/")
+    (synopsis "'roxygen2' Extension for 'Shinylive'")
+    (description
+     "An extension for roxygen2 to embed Shinylive applications in the package
+documentation.")
+    (license license:asl2.0)))
+
 (define-public r-roxut
   (package
     (name "r-roxut")
@@ -19961,13 +19981,13 @@ weight, variable weight, tracking subjects used in each tree, etc.")
 (define-public r-rloptimal
   (package
     (name "r-rloptimal")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLoptimal" version))
        (sha256
-        (base32 "01v2fs1rr6lw976hcqcysh7dfrz00y9ynyk554xjxbq11c1zxrkh"))))
+        (base32 "1id1124wgr2qw67a7yfr1z6l3w8czg8wmw1xq6zlcpb8gs5mj9jd"))))
     (properties `((upstream-name . "RLoptimal")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-r6 r-glue r-dosefinding))
@@ -25395,13 +25415,13 @@ type, and taxonomic name.")
 (define-public r-rgl2gltf
   (package
     (name "r-rgl2gltf")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgl2gltf" version))
        (sha256
-        (base32 "1idly42kc1qbaiziwdzk3ka0lc6gwi7xzanq9kf3h4wkx3882rsv"))))
+        (base32 "0vipb7zal7svz4rrnzzf4qiijfd832f363aibhr2xs8bdsli7g3q"))))
     (properties `((upstream-name . "rgl2gltf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-r6 r-jsonlite r-base64enc))
@@ -34652,17 +34672,17 @@ obtain updated taxonomic details, and explore the dataset.")
 (define-public r-redatamx
   (package
     (name "r-redatamx")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatamx" version))
        (sha256
-        (base32 "17fpbxl658rkccq969hjc8psqzn7qqp5c12x1x1dllimr1pz3syr"))))
+        (base32 "193ywbrbvgj5wwxpy8n28lw7rpbcdxvmcx6026bv497msw8g99j7"))))
     (properties `((upstream-name . "redatamx")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
-    (home-page "https://cran.r-project.org/package=redatamx")
+    (home-page "https://ideasybits.github.io/redatamx4r/")
     (synopsis "R Interface to 'Redatam' Library")
     (description
      "This package provides an API to work with Redatam (see <https://redatam.org>)
@@ -43720,13 +43740,13 @@ distribution and random vectors from the Dirichlet distribution.")
 (define-public r-rbest
   (package
     (name "r-rbest")
-    (version "1.7-3")
+    (version "1.7-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RBesT" version))
        (sha256
-        (base32 "19bhn1j03qsmc20xndyls0ynhqbwb3kis6mxm7wh9k87zcm1lvla"))))
+        (base32 "1zi8fk712fjwv51rfzv1wx8m0is753v2b813g38hpdfadh8arfx3"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
     (inputs (list pngquant pandoc))

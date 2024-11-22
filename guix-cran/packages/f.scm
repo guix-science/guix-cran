@@ -5230,16 +5230,16 @@ for Polymerase Chain Reaction) in biparental populations such as F1, F2, BC
 (define-public r-fragility
   (package
     (name "r-fragility")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fragility" version))
        (sha256
-        (base32 "0das343cjixmlsdbx9i897yf3fcaj55f2dxh0wd6jsqypf67lk0q"))))
+        (base32 "0y832d7r5q35pq0jnhfabzmhxfaw7xmzk5s0f7n4cz54gg6804sf"))))
     (properties `((upstream-name . "fragility")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plotrix r-netmeta r-metafor))
+    (propagated-inputs (list r-plotrix r-netmeta r-metafor r-meta))
     (home-page "https://cran.r-project.org/package=fragility")
     (synopsis
      "Assessing and Visualizing Fragility of Clinical Results with Binary Outcomes")
@@ -16164,44 +16164,6 @@ explore them.")
      "An API for automatic data queries to the fedstat <https://www.fedstat.ru>, using
 a small set of functions with a common interface.")
     (license license:expat)))
-
-(define-public r-fedregs
-  (package
-    (name "r-fedregs")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fedregs" version))
-       (sha256
-        (base32 "171j6r6qxnx9gk9x9gpdyh51ssrgmf7sczc4889qr3qqw15sm4bn"))))
-    (properties `((upstream-name . "fedregs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidytext
-                             r-tidyr
-                             r-stringi
-                             r-rvest
-                             r-purrr
-                             r-magrittr
-                             r-httr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=fedregs")
-    (synopsis "Text Analysis of the US Code of Federal Regulations")
-    (description
-     "The Code of Federal Regulations (CFR) annual edition is the codification of the
-general and permanent rules published in the Federal Register by the departments
-and agencies of the Federal Government of the United States of America.  Simply,
-the fedregs package facilitates word processing and sentiment analysis of the
-CFR using tidy principles.  Note: According to the Code of Federal Regulations
-XML Rendition User Guide Document: \"In general, there are no restrictions on
-re-use of information in Code of Federal Regulations material because U.S.
-Government works are not subject to copyright.  OFR and GPO do not restrict
-downstream uses of Code of Federal Regulations data, except that independent
-providers should be aware that only the OFR and GPO are entitled to represent
-that they are the providers of the official versions of the Code of Federal
-Regulations and related Federal Register publications.\".")
-    (license license:gpl3)))
 
 (define-public r-fedmatch
   (package

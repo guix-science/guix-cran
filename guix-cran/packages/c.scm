@@ -2764,6 +2764,27 @@ and installing the associated packages (client-side tools), generating HTML
 pages and storing task view information in the repository (server-side tools).")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-cttvis
+  (package
+    (name "r-cttvis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CTTvis" version))
+       (sha256
+        (base32 "0blhy34jxf1g24b2iaynsb35y3hnkzim1gw835ynfh1l755lrcgn"))))
+    (properties `((upstream-name . "CTTvis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ctt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TaridWong/CTTvis")
+    (synopsis "Visualize Item Metrics of the Classical Test Theory Framework")
+    (description
+     "Visualizes results of item analysis such as item difficulty, item
+discrimination, and coefficient alpha for ease of result communication.")
+    (license license:gpl3)))
+
 (define-public r-cttshiny
   (package
     (name "r-cttshiny")
@@ -10579,6 +10600,41 @@ selecting a class of space-time covariance functions
 <doi:10.18637/jss.v094.i01>.")
     (license license:gpl2+)))
 
+(define-public r-covalchemy
+  (package
+    (name "r-covalchemy")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covalchemy" version))
+       (sha256
+        (base32 "164wjjr32gbzqfpplqr54vcqmqgnxpr0ngv2np5bhqfibfsay0rp"))))
+    (properties `((upstream-name . "covalchemy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm
+                             r-mass
+                             r-interp
+                             r-gridextra
+                             r-ggplot2
+                             r-ggextra
+                             r-dplyr
+                             r-desctools
+                             r-clue))
+    (home-page "https://github.com/namanlab/covalchemy")
+    (synopsis
+     "Constructing Joint Distributions with Control Over Statistical Properties")
+    (description
+     "Synthesizing joint distributions from marginal densities, focusing on
+controlling key statistical properties such as correlation for continuous data,
+mutual information for categorical data, and inducing Simpson's Paradox.
+Generate datasets with specified correlation structures for continuous
+variables, adjust mutual information between categorical variables, and
+manipulate subgroup correlations to intentionally create Simpson's Paradox.  Joe
+(1997) <doi:10.1201/b13150> Sklar (1959)
+<https://en.wikipedia.org/wiki/Sklar%27s_theorem>.")
+    (license license:gpl3)))
+
 (define-public r-covafillr
   (package
     (name "r-covafillr")
@@ -15506,6 +15562,29 @@ of values of the fundamental physical constants.  This package contains the
 David B. Newell, and Barry N. Taylor (2020)
 <https://physics.nist.gov/cuu/Constants/>.")
     (license license:expat)))
+
+(define-public r-consrq
+  (package
+    (name "r-consrq")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "consrq" version))
+       (sha256
+        (base32 "1rc6gibb2nmvfhha5wdx6gplyhqyqmdfp5pgxj54siq5iqkypiqr"))))
+    (properties `((upstream-name . "consrq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast r-quantreg))
+    (home-page "https://cran.r-project.org/package=consrq")
+    (synopsis "Constrained Quantile Regression")
+    (description
+     "Constrained quantile regression is performed.  One constraint is that all beta
+coefficients (including the constant) cannot be negative, they can be either 0
+or strictly positive.  Another constraint is that the beta coefficients lie
+within an interval.  References: Koenker R. (2005) Quantile Regression,
+Cambridge University Press. <doi:10.1017/CBO9780511754098>.")
+    (license license:gpl2+)))
 
 (define-public r-consreg
   (package
@@ -22095,6 +22174,30 @@ previously instantiated cohorts.  It employs interval algebra operators such as
 UNION, INTERSECT, and MINUS to manipulate the data within the instantiated
 cohorts and create new cohorts.")
     (license (license:fsdg-compatible "Apache License"))))
+
+(define-public r-cohetsurr
+  (package
+    (name "r-cohetsurr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cohetsurr" version))
+       (sha256
+        (base32 "148cccy7xb537jpqlrxwq9ysgc3am0vm3k0w9h55pjbana6k6cv6"))))
+    (properties `((upstream-name . "cohetsurr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrixstats))
+    (home-page "https://cran.r-project.org/package=cohetsurr")
+    (synopsis "Assessing Complex Heterogeneity in Surrogacy")
+    (description
+     "This package provides functions to assess and test for complex heterogeneity in
+the utility of a surrogate marker with respect to multiple baseline covariates,
+using both a parametric model and a semiparametric two-step model.  More details
+will be available in the future in: Knowlton, R., Tian, L., Parast, L. (2024)
+``A General Framework to Assess Complex Heterogeneity in the Strength of a
+Surrogate Marker.\".")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-cohensdplibrary
   (package
@@ -30424,6 +30527,40 @@ continuous or binary and is not limited to a single variable but may be a design
 matrix representing multiple variables.")
     (license license:artistic2.0)))
 
+(define-public r-cisp
+  (package
+    (name "r-cisp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cisp" version))
+       (sha256
+        (base32 "01i421rdh7n7m44sqsc2rzh2d9mpmvca8kgc2060fxi4sj116gb5"))))
+    (properties `((upstream-name . "cisp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-sdsfun
+                             r-rcolorbrewer
+                             r-purrr
+                             r-magrittr
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-gdverse
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://stscl.github.io/cisp/")
+    (synopsis "Correlation Indicator Based on Spatial Patterns")
+    (description
+     "Use the spatial association marginal contributions derived from spatial
+stratified heterogeneity to capture the degree of correlation between spatial
+patterns.")
+    (license license:gpl3)))
+
 (define-public r-cis-dglm
   (package
     (name "r-cis-dglm")
@@ -32279,6 +32416,40 @@ Component Analysis. <doi:10.1007/b98835> and Mardia K.V., Kent J.T. and Bibby
 J.M. (1979).  Multivariate Analysis.  ISBN: 978-0124712522.  London: Academic
 Press.")
     (license license:gpl2+)))
+
+(define-public r-choosegcm
+  (package
+    (name "r-choosegcm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chooseGCM" version))
+       (sha256
+        (base32 "1458dl21d0pslwcmqr791y3gk36l3pisn62pprf2akzwmyba08cl"))))
+    (properties `((upstream-name . "chooseGCM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usedist
+                             r-terra
+                             r-reshape2
+                             r-httr
+                             r-ggplot2
+                             r-ggcorrplot
+                             r-factoextra
+                             r-cowplot
+                             r-cluster
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://luizesser.github.io/chooseGCM/")
+    (synopsis
+     "Selecting General Circulation Models for Species Distribution Modeling")
+    (description
+     "This package provides methods to help selecting General Circulation Models
+(GCMs) in the context of projecting models to future scenarios.  It is provided
+clusterization algorithms, distance and correlation metrics, as well as a
+tailor-made algorithm to detect the optimum subset of GCMs that recreate the
+environment of all GCMs.")
+    (license license:expat)))
 
 (define-public r-cholwishart
   (package
@@ -35628,16 +35799,16 @@ algorithm.")
 (define-public r-ceterisparibus
   (package
     (name "r-ceterisparibus")
-    (version "0.4.2")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ceterisParibus" version))
        (sha256
-        (base32 "0hxklydsqb69y5sv2hanp5ja9k0063swf5si1j6gcj15lp7phpif"))))
+        (base32 "1jjrrb5v61kmprivc1r4ixcq9nmgqfvz7075nhcb76jrxjgf9ik3"))))
     (properties `((upstream-name . "ceterisParibus")))
     (build-system r-build-system)
-    (propagated-inputs (list r-knitr r-gower r-ggplot2 r-dalex))
+    (propagated-inputs (list r-gower r-ggplot2 r-dalex))
     (home-page "https://pbiecek.github.io/ceterisParibus/")
     (synopsis "Ceteris Paribus Profiles")
     (description

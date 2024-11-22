@@ -12133,13 +12133,13 @@ and crafting scientific manuscripts).")
 (define-public r-lehdr
   (package
     (name "r-lehdr")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lehdr" version))
        (sha256
-        (base32 "0jkfnda7dpkhvlam6l4r5b80yrrhnvlx61frxi56qr7mws5z2h1w"))))
+        (base32 "16d5kmzn59ykdgbjrf3h1psxawwbzxdijzfc21j4kmh2z3ldc4xh"))))
     (properties `((upstream-name . "lehdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

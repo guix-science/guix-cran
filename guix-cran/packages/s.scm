@@ -600,13 +600,13 @@ classify participant data as valid or invalid.")
 (define-public r-synmicrodata
   (package
     (name "r-synmicrodata")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synMicrodata" version))
        (sha256
-        (base32 "03fx8lzg90p8cw237lgn6yqxnxlknximpyafx6jnd9yh2sc3ccjb"))))
+        (base32 "08p2ikghjypn6qc5zv7cp8cqf9d7adj894n9hjyf8nnm21n9j7qn"))))
     (properties `((upstream-name . "synMicrodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -941,31 +941,6 @@ mapping algorithms and additional functions described in Kang et al
 distribution.  Computes a standard representation, @code{LateX} code, and values
 at specified mean and covariance matrices.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-symmetry
-  (package
-    (name "r-symmetry")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "symmetry" version))
-       (sha256
-        (base32 "01sk0v6kh9qi3phl51wk83c5v413ab23qmcqjd3hl2x4hn2rv2z6"))))
-    (properties `((upstream-name . "symmetry")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=symmetry")
-    (synopsis "Testing for Symmetry of Data and Model Residuals")
-    (description
-     "Implementations of a large number of tests for symmetry and their bootstrap
-variants, which can be used for testing the symmetry of random samples around a
-known or unknown mean.  Functions are also there for testing the symmetry of
-model residuals around zero.  Currently, the supported models are linear models
-and generalized autoregressive conditional heteroskedasticity (GARCH) models
-(fitted with the @code{fGarch} package).  All tests are implemented using the
-Rcpp package which ensures great performance of the code.")
-    (license license:expat)))
 
 (define-public r-symengine
   (package
@@ -8957,13 +8932,13 @@ to create dyadic data sets.")
 (define-public r-stratpal
   (package
     (name "r-stratpal")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StratPal" version))
        (sha256
-        (base32 "0bmlblmd5lm203b5zqf20akc24xd9ra4kas9kd16pxw482s7fvyw"))))
+        (base32 "1ic4dfkkqpwanr8i4ycalrynryy60k8fckv7q1n4gk3x9jxdj3w4"))))
     (properties `((upstream-name . "StratPal")))
     (build-system r-build-system)
     (propagated-inputs (list r-paleots r-admtools))
@@ -55336,6 +55311,39 @@ Zappia et al. (2017)
 use with Rscript'.")
     (license license:expat)))
 
+(define-public r-scregclust
+  (package
+    (name "r-scregclust")
+    (version "0.1.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scregclust" version))
+       (sha256
+        (base32 "0acqqbdrnch7mjagpw3z5vi58i4aaql0q5f4fv3575dw3g1l1jsp"))))
+    (properties `((upstream-name . "scregclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-reshape
+                             r-rcppeigen
+                             r-rcpp
+                             r-prettyunits
+                             r-matrix
+                             r-igraph
+                             r-ggplot2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://scmethods.github.io/scregclust/")
+    (synopsis
+     "Reconstructing the Regulatory Programs of Target Genes in scRNA-Seq Data")
+    (description
+     "Implementation of the scregclust algorithm described in Larsson, Held, et al.
+(2024) <doi:10.1038/s41467-024-53954-3> which reconstructs regulatory programs
+of target genes in @code{scRNA-seq} data.  Target genes are clustered into
+modules and each module is associated with a linear model describing the
+regulatory program.")
+    (license license:gpl3+)))
+
 (define-public r-screenshot
   (package
     (name "r-screenshot")
@@ -55754,6 +55762,28 @@ by introducing the target values of the SPE and T^2, SCOUTer returns a new set
 of observations with the desired target properties.  Authors: Alba GonzÃ¡lez,
 Abel Folch-Fortuny, Francisco Arteaga and Alberto Ferrer (2020).")
     (license license:gpl3)))
+
+(define-public r-scoutbar
+  (package
+    (name "r-scoutbar")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scoutbaR" version))
+       (sha256
+        (base32 "1pmyawanqcyyc623g5g2rh2a049x55063bqnnjf2y2fmx0dlnmkz"))))
+    (properties `((upstream-name . "scoutbaR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-reactr r-htmltools))
+    (home-page "https://cran.r-project.org/package=scoutbaR")
+    (synopsis "Spotlight 'React' Widget for 'shiny' Apps")
+    (description
+     "This package creates a contextual menu that can be triggered with keyboard
+shortcuts or programmatically.  This can replace traditional sidebars or
+navigation bars, thereby enhancing the user experience with lighter user
+interfaces.")
+    (license license:expat)))
 
 (define-public r-scout
   (package

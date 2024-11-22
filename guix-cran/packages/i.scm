@@ -8627,19 +8627,17 @@ reliable inference technique implemented in the INLA package for joint modeling.
 (define-public r-inlabru
   (package
     (name "r-inlabru")
-    (version "2.11.1")
+    (version "2.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlabru" version))
        (sha256
-        (base32 "07iwi0m8wa1hybl5pjsdkq21zbchm6pimjvpxma72lpdcbmijfxy"))))
+        (base32 "19njs1ji1w2gnn25jkis3qk2xd0zgb9kfz6p6k8h83lc2852ipp3"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-tibble
-                             r-terra
-                             r-sp
                              r-sf
                              r-rlang
                              r-plyr
@@ -13047,16 +13045,17 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
 (define-public r-ilsamerge
   (package
     (name "r-ilsamerge")
-    (version "1.0.0")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAmerge" version))
        (sha256
-        (base32 "1qwchhii59c91za0y5h2gxp5hw8wl3hdsvf8j17khxxyzf4lqlqs"))))
+        (base32 "0gfa126ksmqfl3a5d6x81k9rfgp8bcwik5p01grahi7pvxwrka86"))))
     (properties `((upstream-name . "ILSAmerge")))
     (build-system r-build-system)
     (propagated-inputs (list r-haven))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/dopatendo/ILSAmerge")
     (synopsis
      "Merge and Download International Large-Scale Assessments (ILSA) Data")

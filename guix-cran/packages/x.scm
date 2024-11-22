@@ -525,6 +525,51 @@ identification and model comparison.  The methods are described in Keizer et al.
 <doi:10.1016/s0169-2607(98)00067-4>.")
     (license license:lgpl3+)))
 
+(define-public r-xpose-xtras
+  (package
+    (name "r-xpose-xtras")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xpose.xtras" version))
+       (sha256
+        (base32 "0zrwjm2m692f4lv1wiyjmmyc7qcr1wihf3fygp0n8jvb590wspk6"))))
+    (properties `((upstream-name . "xpose.xtras")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xpose
+                             r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-pmxcv
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-ggplot2
+                             r-ggally
+                             r-forcats
+                             r-dplyr
+                             r-conflicted
+                             r-colorspace
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://jprybylski.github.io/xpose.xtras/")
+    (synopsis "Extra Functionality for the 'xpose' Package")
+    (description
+     "Adding some at-present missing functionality, or functions unlikely to be added
+to the base xpose package.  This includes some diagnostic plots that have been
+missing in translation from xpose4', but also some useful features that truly
+extend the capabilities of what can be done with xpose'.  These extensions
+include the concept of a set of xpose objects, and diagnostics for
+likelihood-based models.")
+    (license license:expat)))
+
 (define-public r-xpose-nlmixr2
   (package
     (name "r-xpose-nlmixr2")

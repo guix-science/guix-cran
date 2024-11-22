@@ -925,6 +925,31 @@ outliers, e.g. by realistic values found via predictive mean matching.  Once the
 method is trained on a reference data, it can be applied to new data.")
     (license license:gpl2+)))
 
+(define-public r-outcomeweights
+  (package
+    (name "r-outcomeweights")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OutcomeWeights" version))
+       (sha256
+        (base32 "11kcx26as5ncb2yikal5fy228ib84m9q3kgjrr9rvwmf54h3mvnr"))))
+    (properties `((upstream-name . "OutcomeWeights")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-grf r-ggplot2))
+    (home-page "https://github.com/MCKnaus/OutcomeWeights")
+    (synopsis "Outcome Weights of Treatment Effect Estimators")
+    (description
+     "Many treatment effect estimators can be written as weighted outcomes.  These
+weights have established use cases like checking covariate balancing via
+packages like cobalt'.  This package takes the original estimator objects and
+outputs these outcome weights.  It builds on the general framework of Knaus
+(2024) <doi:10.48550/@code{arXiv.2411.11559>}.  This version is compatible with
+the grf package and provides an internal implementation of Double Machine
+Learning.")
+    (license license:gpl3)))
+
 (define-public r-outcomerate
   (package
     (name "r-outcomerate")

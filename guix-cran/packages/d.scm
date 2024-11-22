@@ -1942,13 +1942,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "098q3ickj8v3md98h66kffqc64adxf6w51fivn3qn76wnffy650y"))))
+        (base32 "0bvxc10pmh4k2arh1ixkgn286ll20gyjggcgjfggdvij6bx029k1"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -4606,13 +4606,13 @@ genes using somatic genomics data.  BMC Bioinformatics
 (define-public r-drip
   (package
     (name "r-drip")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRIP" version))
        (sha256
-        (base32 "0pg09ly1g0hjl1aizhknfqkcc7kdymcb7jkfzhg4b7jpdnkhwxsf"))))
+        (base32 "0g1qx77zwazg2109nmxm12bsma9nvacydxl5g8rq23dvl2khpkx3"))))
     (properties `((upstream-name . "DRIP")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -10124,13 +10124,13 @@ richness) in a population.")
 (define-public r-divdyn
   (package
     (name "r-divdyn")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divDyn" version))
        (sha256
-        (base32 "1rqk7ih0j6d3ykx7d0r0c33bcbksw4paman5f92ragw2a96d04cf"))))
+        (base32 "0jvx5nmmb06vp9w4zv04xwdqa4ppfv712si8c69bs06kid5iq8lh"))))
     (properties `((upstream-name . "divDyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -15769,6 +15769,27 @@ methodology of estimating the sampling errors indicators outlined in the \"DHS
 Sampling and Household Listing Manual\" (ICF International 2012,
 <https://dhsprogram.com/pubs/pdf/DHSM4/DHS6_Sampling_Manual_Sept2012_DHSM4.pdf>).")
     (license license:gpl2)))
+
+(define-public r-dhis2r
+  (package
+    (name "r-dhis2r")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dhis2r" version))
+       (sha256
+        (base32 "1q2ahch1rv4bp8c5nci2jqsrwr5y252ngv2v958623xd9rfh97kq"))))
+    (properties `((upstream-name . "dhis2r")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-httr2 r-dplyr r-curl r-attempt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/amanyiraho/dhis2r")
+    (synopsis "Client for the 'DHIS2' Web API")
+    (description
+     "Connect and pull data from a DHIS2 (District Health Information Software 2)
+instance into R.")
+    (license license:expat)))
 
 (define-public r-dhh
   (package
@@ -26472,38 +26493,6 @@ environment.  You can opt to add variable labels.  You can write the object
 directly to Excel.")
     (license license:expat)))
 
-(define-public r-datacutr
-  (package
-    (name "r-datacutr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "datacutr" version))
-       (sha256
-        (base32 "0y8ygc8pmska561pdrdz8k4plk3ja78p1r29yx8pnhmd66jdv7hf"))))
-    (properties `((upstream-name . "datacutr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rlang
-                             r-reactable
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-dplyr
-                             r-assertthat
-                             r-admiraldev))
-    (native-inputs (list r-knitr))
-    (home-page "https://pharmaverse.github.io/datacutr/")
-    (synopsis "SDTM Datacut")
-    (description
-     "Supports the process of applying a cut to Standard Data Tabulation Model (SDTM),
-as part of the analysis of specific points in time of the data, normally as part
-of investigation into clinical trials.  The functions support different
-approaches of cutting to the different domains of SDTM normally observed.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-datacomparer
   (package
     (name "r-datacomparer")
@@ -26533,27 +26522,25 @@ for equality.")
 (define-public r-datacompare
   (package
     (name "r-datacompare")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataCompare" version))
        (sha256
-        (base32 "1i5g9cvc3bww52h8i4fngwsck8hxqnbngkhk61bariw6synj0dc6"))))
+        (base32 "07psxbij9v3dy20hxfb05cyawc9qi3ibfskgd705m28h47wl2g24"))))
     (properties `((upstream-name . "dataCompare")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vroom
-                             r-skimr
+    (propagated-inputs (list r-skimr
                              r-shinywidgets
-                             r-shinyjs
                              r-shinydashboardplus
                              r-shinydashboard
+                             r-shinycssloaders
                              r-shiny
-                             r-pins
                              r-magrittr
-                             r-lubridate
                              r-htmltools
                              r-golem
+                             r-explore
                              r-dt
                              r-dplyr
                              r-devtools

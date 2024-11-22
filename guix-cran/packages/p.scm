@@ -5613,13 +5613,13 @@ distributions available for the latent variable.")
 (define-public r-proteomicscv
   (package
     (name "r-proteomicscv")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proteomicsCV" version))
        (sha256
-        (base32 "0gvjl47x1wca2y386if2fgzp8k7a1xn9qxlq82ml66n193bp4k6a"))))
+        (base32 "1gn06x5apjhjq9n1vflr2mil26dp8w9axl90mkc9w7vwwpvf46hw"))))
     (properties `((upstream-name . "proteomicsCV")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=proteomicsCV")
@@ -5629,8 +5629,7 @@ distributions available for the latent variable.")
      "Calculates the percentage coefficient of variation (CV) for mass
 spectrometry-based proteomic data.  The CV can be calculated with the
 traditional formula for raw (non log transformed) intensity data, or log
-transformed data.  This package currently does not reference any academic
-publication.")
+transformed data.")
     (license license:expat)))
 
 (define-public r-proteobayes
@@ -12758,13 +12757,13 @@ See README and NEWS for further information.")
 (define-public r-powertools
   (package
     (name "r-powertools")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powertools" version))
        (sha256
-        (base32 "1i7k44ds3x8dc8kzihhvwr6ziqrjay3nxkc3c2cz3hrm9lkfj17c"))))
+        (base32 "06sdbd7m4q470xrn91npml2yzcab0nch26lg4s69bd7xrjdch2jw"))))
     (properties `((upstream-name . "powertools")))
     (build-system r-build-system)
     (propagated-inputs (list r-powertost r-mvtnorm r-knitr r-hmisc))
@@ -39391,18 +39390,18 @@ Financial Data with R\" by Marcelo Perlin (2017) available at
 (define-public r-padr
   (package
     (name "r-padr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "padr" version))
        (sha256
-        (base32 "0mgjdva2yj9m0mps69gafy3w1c4zhik002b5b2j2zvbv3m34mw97"))))
+        (base32 "0jr04cwcwzrk9yqbainpkr9qrfhdjppsar3p85dq79zw4rib4ds6"))))
     (properties `((upstream-name . "padr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-lubridate r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/EdwinTh/padr")
+    (home-page "https://edwinth.github.io/padr/")
     (synopsis "Quickly Get Datetime Data Ready for Analysis")
     (description
      "Transforms datetime data into a format ready for analysis.  It offers two core

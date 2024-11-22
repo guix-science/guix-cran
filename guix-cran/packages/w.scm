@@ -905,13 +905,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.7")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "127s4i73ww817q9k7x463633rlk8fj0kjvpwqwcaxswdc7a3ks7b"))))
+        (base32 "13wnj9260nchac59spg7k9vw073pa50kj98hvq5snr1j33nrxzgr"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-rcolorbrewer r-lattice))

@@ -5194,6 +5194,27 @@ al.(2021)<doi:10.2174/1567205018666210831145825>.")
 under the curve.  Outputs are well suited for nested dataframes.")
     (license license:gpl3)))
 
+(define-public r-eva3dm
+  (package
+    (name "r-eva3dm")
+    (version "0.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eva3dm" version))
+       (sha256
+        (base32 "0zk9vki4lcmj4jvvvm1nwzp2fx367bvhi4v57l04hp1rnz39018w"))))
+    (properties `((upstream-name . "eva3dm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-ncdf4))
+    (home-page "https://schuch666.github.io/eva3dm/")
+    (synopsis "Evaluation of 3D Meteorological and Air Quality Models")
+    (description
+     "This package provides tools for post-process, evaluate and visualize results
+from 3d Meteorological and Air Quality models against point observations (i.e.
+surface stations) and grid (i.e.  satellite) observations.")
+    (license license:expat)))
+
 (define-public r-eva
   (package
     (name "r-eva")

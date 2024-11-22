@@ -8405,6 +8405,30 @@ classification model pipelines can be implemented using their model name from
 <https://huggingface.co/models?pipeline_tag=zero-shot-classification>.")
     (license license:gpl3+)))
 
+(define-public r-transda
+  (package
+    (name "r-transda")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transDA" version))
+       (sha256
+        (base32 "0v2ldrv5h35xbj9k76dx4ygfqn5j9ni2h22jj2l61sp2bfh1crbf"))))
+    (properties `((upstream-name . "transDA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=transDA")
+    (synopsis "Transformation Discriminant Analysis")
+    (description
+     "This package performs transformation discrimination analysis and
+non-transformation discrimination analysis.  It also includes functions for
+Linear Discriminant Analysis, Quadratic Discriminant Analysis, and Mixture
+Discriminant Analysis.  In the context of mixture discriminant analysis, it
+offers options for both common covariance matrix (common sigma) and individual
+covariance matrices (uncommon sigma) for the mixture components.")
+    (license license:gpl2+)))
+
 (define-public r-tramvs
   (package
     (name "r-tramvs")
@@ -14163,6 +14187,28 @@ Reichert, P. (2022), timedeppar: An R package for inferring stochastic,
 time-dependent model parameters, in preparation.")
     (license license:gpl3)))
 
+(define-public r-timedepfrail
+  (package
+    (name "r-timedepfrail")
+    (version "0.0.0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TimeDepFrail" version))
+       (sha256
+        (base32 "01b2lw40ycym3n2rjwpvhwrlip19vxhq8ywcx19wmc4bf1b1nrai"))))
+    (properties `((upstream-name . "TimeDepFrail")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=TimeDepFrail")
+    (synopsis "Time Dependent Shared Frailty Cox Model")
+    (description
+     "Fits time-dependent shared frailty Cox model (specifically the adapted Paik et
+al.'s Model) based on the paper \"Centre-Effect on Survival After Bone Marrow
+Transplantation: Application of Time-Dependent Frailty Models\", by C.M.
+Wintrebert, H. Putter, A.H. Zwinderman and J.C. van Houwelingen (2004)
+<doi:10.1002/bimj.200310051>.")
+    (license license:gpl3+)))
+
 (define-public r-timedelay
   (package
     (name "r-timedelay")
@@ -14800,13 +14846,13 @@ Tchobanoglous, G., Borchardt, J. H. (2012, ISBN:9781118131473), USEPA. (2001)
 (define-public r-tidyvpc
   (package
     (name "r-tidyvpc")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyvpc" version))
        (sha256
-        (base32 "1i7dsmji1kjjs7lncpdxg5kpy0r4rc9ylb197fnbgkkz8yxjb8q3"))))
+        (base32 "0wlq423mirs2jcjfb1bqxrl923dkwkswhj0ib08z3k8al4dq2y65"))))
     (properties `((upstream-name . "tidyvpc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -14819,7 +14865,7 @@ Tchobanoglous, G., Borchardt, J. H. (2012, ISBN:9781118131473), USEPA. (2001)
                              r-data-table
                              r-cluster
                              r-classint))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/certara/tidyvpc")
     (synopsis "VPC Percentiles and Prediction Intervals")
     (description
@@ -22773,18 +22819,16 @@ represented by characters in R, or can themselves be R-expressions or functions.
 (define-public r-templateicar
   (package
     (name "r-templateicar")
-    (version "0.8.8")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templateICAr" version))
        (sha256
-        (base32 "03bdfzw8fs43nqb0zpsl2qbqzbvch2g3fna4aqmj2y9hs3ajn67m"))))
+        (base32 "19273x2z6shyd737zx65jwfxqi21p49gszkvbfgcvf6d9c0y90ri"))))
     (properties `((upstream-name . "templateICAr")))
     (build-system r-build-system)
     (propagated-inputs (list r-squarem
-                             r-rcppeigen
-                             r-rcpp
                              r-pesel
                              r-matrixstats
                              r-matrix
@@ -22792,8 +22836,6 @@ represented by characters in R, or can themselves be R-expressions or functions.
                              r-foreach
                              r-fmritools
                              r-fmriscrub
-                             r-expm
-                             r-excursions
                              r-abind))
     (home-page "https://github.com/mandymejia/templateICAr")
     (synopsis
@@ -27353,6 +27395,27 @@ v1.2 - fixed \"missing \"no visible global function definition for ..\".")
      "Create HTML tables of descriptive statistics, as one would expect to see as the
 first table (i.e. \"Table 1\") in a medical/epidemiological journal article.")
     (license license:gpl3)))
+
+(define-public r-table-glue
+  (package
+    (name "r-table-glue")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "table.glue" version))
+       (sha256
+        (base32 "1d9qz39vmnn2jhhxp68fwc3fz2bhdi0rjjdi0zlpr53lqfp1zlv9"))))
+    (properties `((upstream-name . "table.glue")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-glue))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bcjaeger/table.glue")
+    (synopsis "Make and Apply Customized Rounding Specifications for Tables")
+    (description
+     "Translate double and integer valued data into character values formatted for
+tabulation in manuscripts or other types of academic reports.")
+    (license license:expat)))
 
 (define-public r-table-express
   (package

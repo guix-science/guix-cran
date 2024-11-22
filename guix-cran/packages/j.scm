@@ -1911,13 +1911,13 @@ to choose a base or source file and columns to merge or minus on.")
 (define-public r-jointvip
   (package
     (name "r-jointvip")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jointVIP" version))
        (sha256
-        (base32 "1m1fqngc2000i7mfp6rcs5js0bg0kzspmavi55ksrb1kybf8rh7k"))))
+        (base32 "0297n9n5n6mjkc5lhbxy8ab5k5b23anj8kwhx73i4zzxbdh7y2h1"))))
     (properties `((upstream-name . "jointVIP")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggrepel r-ggplot2))
@@ -1935,11 +1935,11 @@ comparisons via unadjusted bias curves derived under the omitted variable bias
 framework.  The plots translate variable importance into recommended values for
 tuning parameters in existing methods.  Post-matching and/or weighting plots can
 also be used to visualize and assess the quality of the observational study
-design.  The method motivation and derivation is presented in \"Using Joint
-Variable Importance Plots to Prioritize Variables in Assessing the Impact of
-Glyburide on Adverse Birth Outcomes\" by Liao et al. (2023)
-<@code{arXiv:2301.09754>}.  See the package paper by Liao and Pimentel (2023)
-<arxiv:2302.10367> for a beginner friendly user introduction.")
+design.  The method motivation and derivation is presented in \"Prioritizing
+Variables for Observational Study Design using the Joint Variable Importance
+Plot\" by Liao et al. (2024) <doi:10.1080/00031305.2024.2303419>.  See the
+package paper by Liao and Pimentel (2024) <doi:10.21105/joss.06093> for a
+beginner friendly user introduction.")
     (license license:expat)))
 
 (define-public r-jointseg

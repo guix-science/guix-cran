@@ -1970,13 +1970,13 @@ DOI', URL, or bibtex file key.  See the package URL for details.")
 (define-public r-knfi
   (package
     (name "r-knfi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "knfi" version))
        (sha256
-        (base32 "0bgp8bcplsi7yr35na9ii3d7dn7qj6jrfsalpmkwn3dfb0xk263b"))))
+        (base32 "11811ic3pigv351zlqda6vbni60s4p2fmc1vxxv8lg61q63sf4fh"))))
     (properties `((upstream-name . "knfi")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -1984,8 +1984,10 @@ DOI', URL, or bibtex file key.  See the package URL for details.")
                              r-stringr
                              r-sp
                              r-sf
+                             r-scales
                              r-rlang
                              r-readxl
+                             r-purrr
                              r-plotrix
                              r-magrittr
                              r-ggpubr
@@ -4891,6 +4893,35 @@ these random walks and studying distributions related to them.  For more
 information about Kendall random walks see Jasiulis-GoÅdyn (2014)
 <@code{arXiv:1412.0220>}.")
     (license license:expat)))
+
+(define-public r-kendallknight
+  (package
+    (name "r-kendallknight")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kendallknight" version))
+       (sha256
+        (base32 "16b1hs3ck8l7j8v8nw6b6n0kn6i1r2drnsjj7rb4n3pqxxh881np"))))
+    (properties `((upstream-name . "kendallknight")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://pacha.dev/capybara/")
+    (synopsis
+     "Efficient Implementation of Kendall's Correlation Coefficient Computation")
+    (description
+     "The computational complexity of the implemented algorithm for Kendall's
+correlation is O(n log(n)), which is faster than the base R implementation with
+a computational complexity of O(n^2).  For small vectors (i.e., less than 100
+observations), the time difference is negligible.  However, for larger vectors,
+the speed difference can be substantial and the numerical difference is minimal.
+ The references are Knight (1966) <doi:10.2307/2282833>, Abrevaya (1999)
+<doi:10.1016/S0165-1765(98)00255-9>, Christensen (2005) <doi:10.1007/BF02736122>
+and Emara (2024) <https://learningcpp.org/>.  This implementation is described
+in Vargas Sepulveda (2024) <doi:10.48550/@code{arXiv.2408.09618>}.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-kelvin
   (package

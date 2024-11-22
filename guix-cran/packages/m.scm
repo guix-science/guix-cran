@@ -18842,6 +18842,43 @@ ISBN:978-0470009598).  Bates, D., MÃ¤chler, M., Bolker, B., & Walker, S. (2014
 <doi:10.18637/jss.v067.i01>.")
     (license license:gpl3+)))
 
+(define-public r-mlms
+  (package
+    (name "r-mlms")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlms" version))
+       (sha256
+        (base32 "1yijs5lda2yqly871lwxq5iw61zkig096jvvdkkvdviav75vklgx"))))
+    (properties `((upstream-name . "mlms")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi
+                             r-sf
+                             r-readxl
+                             r-plotrix
+                             r-jsonlite
+                             r-checkmate))
+    (home-page "https://code.usgs.gov/inl/mlms")
+    (synopsis
+     "Multilevel Monitoring System Data for Wells in the USGS INL Aquifer Monitoring Network")
+    (description
+     "Analysis-ready datasets detailing the Multilevel Monitoring System (MLMS) wells
+within the U.S. Geological Survey's (USGS) aquifer-monitoring network at the
+Idaho National Laboratory (INL) in Idaho, and the data collected within these
+wells.  Supported by the U.S. Department of Energy (DOE), the USGS collected
+discrete measurements of hydraulic head at various depths from wells in the
+eastern Snake River Plain (ESRP) aquifer over several years.  These measurements
+were derived from data on fluid pressure, fluid temperature, and atmospheric
+pressure.  Each well was equipped with an MLMS, which included valved
+measurement ports, packer bladders, casing segments, and couplers.  The MLMS
+facilitated monitoring at multiple hydraulically isolated depth intervals,
+reaching significant depths below the land surface.  Additionally, groundwater
+samples were collected from these wells over multiple years and analyzed for
+various chemical and physical parameters.")
+    (license license:cc0)))
+
 (define-public r-mlmrev
   (package
     (name "r-mlmrev")
@@ -40206,6 +40243,30 @@ large data collections\" and Bandelt, Maas, and Spieksma (2004)
 assignment problems with decomposable costs\".")
     (license license:gpl2)))
 
+(define-public r-matchedcc
+  (package
+    (name "r-matchedcc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "matchedcc" version))
+       (sha256
+        (base32 "1h5cms9r62z0j2a5bnrg0x5g588pdilfl20rm4i2ywq4mp3ca3kr"))))
+    (properties `((upstream-name . "matchedcc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cli r-checkmate r-binom))
+    (home-page "https://github.com/simpar1471/matchedcc/")
+    (synopsis "'Stata'-Like Matched Case-Control Analysis")
+    (description
+     "Calculate multiple statistics with confidence intervals for matched case-control
+data including risk difference, risk ratio, relative difference, and the odds
+ratio.  Results are equivalent to those from Stata', and you can choose how to
+format your input data.  Methods used are those described on page 56 the Stata
+documentation for \"Epitab - Tables for Epidemologists\"
+<https://www.stata.com/manuals/repitab.pdf>.")
+    (license license:gpl3+)))
+
 (define-public r-matahari
   (package
     (name "r-matahari")
@@ -45102,13 +45163,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "1z5x5gnkynl51116na8lzqqqwniskqpsdds5dy0mwh1qndi5j3c2"))))
+        (base32 "05yg432nq25awr4m5x9ynk38agd4a8c6ii4rsb3gd9hlyjifzlkv"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (propagated-inputs (list r-timechange
