@@ -5861,29 +5861,29 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
 (define-public r-vdiver
   (package
     (name "r-vdiver")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vDiveR" version))
        (sha256
-        (base32 "142zzjxzkjal1kq6id36ly93imyl99whpdlagv1zcbjlb4gsz68f"))))
+        (base32 "0xgazc1appn9z1qj7kqaydknskvcphz4y822sryygmngl9608xgz"))))
     (properties `((upstream-name . "vDiveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-stringdist
                              r-scales
                              r-rlang
                              r-rentrez
-                             r-plyr
                              r-maps
                              r-magrittr
-                             r-gridextra
                              r-ggtext
                              r-ggpubr
                              r-ggplot2
                              r-gghalves
-                             r-dplyr))
+                             r-dplyr
+                             r-cowplot))
     (home-page "https://cran.r-project.org/package=vDiveR")
     (synopsis "Visualization of Viral Protein Sequence Diversity Dynamics")
     (description

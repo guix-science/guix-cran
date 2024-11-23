@@ -942,6 +942,31 @@ distribution.  Computes a standard representation, @code{LateX} code, and values
 at specified mean and covariance matrices.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-symmetry
+  (package
+    (name "r-symmetry")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "symmetry" version))
+       (sha256
+        (base32 "01sk0v6kh9qi3phl51wk83c5v413ab23qmcqjd3hl2x4hn2rv2z6"))))
+    (properties `((upstream-name . "symmetry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=symmetry")
+    (synopsis "Testing for Symmetry of Data and Model Residuals")
+    (description
+     "Implementations of a large number of tests for symmetry and their bootstrap
+variants, which can be used for testing the symmetry of random samples around a
+known or unknown mean.  Functions are also there for testing the symmetry of
+model residuals around zero.  Currently, the supported models are linear models
+and generalized autoregressive conditional heteroskedasticity (GARCH) models
+(fitted with the @code{fGarch} package).  All tests are implemented using the
+Rcpp package which ensures great performance of the code.")
+    (license license:expat)))
+
 (define-public r-symengine
   (package
     (name "r-symengine")
@@ -2728,13 +2753,13 @@ essentially the same cost as a single SVM fit.")
 (define-public r-svmmaj
   (package
     (name "r-svmmaj")
-    (version "0.2.9.2")
+    (version "0.2.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVMMaj" version))
        (sha256
-        (base32 "11ii0kg47iwrc8aq7qbrg0hpd6aj30ra8rgjpv2nwq0ffsw5jwa2"))))
+        (base32 "1qr9hs857w5lv1601ksnb3z1g3ysjpp7idny2j4r4hi3nlh6pd55"))))
     (properties `((upstream-name . "SVMMaj")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -6481,6 +6506,27 @@ Cousineau & Laurencelle (2016) <doi:10.1037/met0000055>, Cousineau & O'Brien
 (2014) <doi:10.3758/s13428-013-0441-z>, Calderini & Harding
 <doi:10.20982/tqmp.15.1.p001> for specific references.")
     (license license:gpl3)))
+
+(define-public r-super
+  (package
+    (name "r-super")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "super" version))
+       (sha256
+        (base32 "0w6f5i655gjfba9dcs3bvc6w9v3n16wjslf4vrip168ss462gl7r"))))
+    (properties `((upstream-name . "super")))
+    (build-system r-build-system)
+    (native-inputs (list r-litedown))
+    (home-page "https://timtaylor.github.io/super/")
+    (synopsis "Interpreted String Literals")
+    (description
+     "An implementation of interpreted string literals.  Based on the glue package by
+Hester & Bryan (2024) <doi:10.32614/CRAN.package.glue> but with a focus on
+efficiency and simplicity at a cost of flexibility.")
+    (license license:expat)))
 
 (define-public r-supclust
   (package
@@ -24845,20 +24891,21 @@ Philippe (2021) <doi:10.1016/j.jas.2021.105431>.  seriograph(): Desachy Bruno
 (define-public r-sparta
   (package
     (name "r-sparta")
-    (version "0.8.4")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparta" version))
        (sha256
-        (base32 "109i8yhv8snhpccrhxy1k8xcy9jj8m3li2d7vaylvxbrlnc26d89"))))
+        (base32 "1k4f7z7grr38w127d9v23ni44nsn726389inqvysa9w15bmngzf9"))))
     (properties `((upstream-name . "sparta")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlindsk/sparta")
     (synopsis "Sparse Tables")
-    (description "Fast Multiplication and Marginalization of Sparse Tables.")
+    (description "Fast Multiplication and Marginalization of Sparse Tables
+<doi:10.18637/jss.v111.i02>.")
     (license license:expat)))
 
 (define-public r-sparsio
@@ -28250,13 +28297,13 @@ based Anomaly Detection (Liu, Ting and Zhou <doi:10.1145/2133360.2133363>).")
 (define-public r-solartime
   (package
     (name "r-solartime")
-    (version "0.0.2")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "solartime" version))
        (sha256
-        (base32 "1lg7sc3vxsqqiq6a3qsl14gcc1fdi15h1mqcfjmq2j5xna6s5msx"))))
+        (base32 "117ar6n8s2b6vsjdhjphcfixqqyyp77g93vqgvq18rglvzv3k307"))))
     (properties `((upstream-name . "solartime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))
@@ -33433,13 +33480,13 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "0.9.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slendr" version))
        (sha256
-        (base32 "1qqbi9rmby2v4q57sp6i64lk5h2srmriglc3m0f9isz34m0ivnzl"))))
+        (base32 "1kbxc6jnh3iqwmk3rfnfpriip9w7qx774qs0pdqp4ijnjxqjbqjr"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -33517,13 +33564,13 @@ described in Jetka et al. (2019) <doi:10.1371/journal.pcbi.1007132>.")
 (define-public r-sleev
   (package
     (name "r-sleev")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleev" version))
        (sha256
-        (base32 "0irc0k4asml5vfqwkv5rxw6xv1dj6sllravyggg49cdqfbhwcv3w"))))
+        (base32 "149324mvaixnrjrm20mfmvj3dy6rahaxdhdxq4iczkf3knv0hkbs"))))
     (properties `((upstream-name . "sleev")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp))
@@ -63070,6 +63117,32 @@ Bayesian Hierarchical approach.  See also Rao & Molina (2015,
 ISBN:978-1-118-73578-7) and Battese et al. (1988)
 <doi:10.1080/01621459.1988.10478561>.")
     (license license:expat)))
+
+(define-public r-saehb-spatial
+  (package
+    (name "r-saehb-spatial")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saeHB.spatial" version))
+       (sha256
+        (base32 "1gnw07aa8isgalry6v1apsy3sb95zzm13l0lpczxv0rrb387v1d6"))))
+    (properties `((upstream-name . "saeHB.spatial")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-stringr r-rjags r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/arinams/saeHB.spatial")
+    (synopsis "Small Area Estimation Hierarchical Bayes For Spatial Model")
+    (description
+     "This package provides several functions and datasets for area level of Small
+Area Estimation under Spatial Model using Hierarchical Bayesian (HB) Method.
+Model-based estimators include the HB estimators based on a Spatial Fay-Herriot
+model with univariate normal distribution for variable of interest.The rjags
+package is employed to obtain parameter estimates.  For the reference, see Rao
+and Molina (2015) <doi:10.1002/9781118735855>.")
+    (license license:gpl3)))
 
 (define-public r-saehb-panel-beta
   (package

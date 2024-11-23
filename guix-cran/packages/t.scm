@@ -10099,13 +10099,13 @@ all differences.  The vignettes download example files from
 (define-public r-toxeval
   (package
     (name "r-toxeval")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toxEval" version))
        (sha256
-        (base32 "1dyrbvb2l7bdz6d0lph7s8m3ydy6wz9k01qd9ilvkdqcf3y05ih0"))))
+        (base32 "0d3sa2f1irp6jxz8alalxjjfnd1wbsxrwl3kg41vhqgc93zqhw87"))))
     (properties `((upstream-name . "toxEval")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10981,6 +10981,47 @@ matrix W given A and D based on quadratic programming.  The details about the
 techniques are explained in the paper \"A new SVD approach to optimal topic
 estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
     (license license:expat)))
+
+(define-public r-topics
+  (package
+    (name "r-topics")
+    (version "0.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "topics" version))
+       (sha256
+        (base32 "12dn3qgrk13bl2wbqbiqkzj7dsrpaah325z83q3p5dgxkxg3b6np"))))
+    (properties `((upstream-name . "topics")))
+    (build-system r-build-system)
+    (inputs (list python))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-textminer
+                             r-text
+                             r-stringr
+                             r-stopwords
+                             r-rlang
+                             r-rjava
+                             r-readr
+                             r-purrr
+                             r-ngram
+                             r-matrix
+                             r-mallet
+                             r-ggwordcloud
+                             r-ggplot2
+                             r-effsize
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://r-topics.org/")
+    (synopsis
+     "Creating and Significance Testing Language Features for Visualisation")
+    (description
+     "This package implements differential language analysis with statistical tests
+and offers various language visualization techniques for n-grams and topics.  It
+also supports the text package.  For more information, visit
+<https://r-topics.org/> and <https://www.r-text.org/>.")
+    (license license:gpl3)))
 
 (define-public r-topicmodels-etm
   (package

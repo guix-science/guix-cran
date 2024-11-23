@@ -984,13 +984,13 @@ Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
 (define-public r-ltfhplus
   (package
     (name "r-ltfhplus")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LTFHPlus" version))
        (sha256
-        (base32 "0f8xww6n2r54c26idi6ixfk89dff7c14dljvpaa71yxm0rb0isff"))))
+        (base32 "1r1s3pckza8792342akmrpxin6sbj7i5y3abl144k0c0vhw3p313"))))
     (properties `((upstream-name . "LTFHPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -1014,12 +1014,11 @@ Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
 history (LT-FH) model.  LT-FH++ uses a Gibbs sampler for sampling from the
 truncated multivariate normal distribution and allows for flexible family
 structures.  LT-FH++ was first described in Pedersen, Emil M., et al. (2022)
-<https://pure.au.dk/ws/portalfiles/portal/353346245/> as an extension to LT-FH
-with more flexible family structures, and again as the age-dependent liability
-threshold (A@code{DuLT}) model Pedersen, Emil M., et al. (2023)
-<https://www.nature.com/articles/s41467-023-41210-z> as an alternative to
-traditional time-to-event genome-wide association studies, where family history
-was not considered.")
+<doi:10.1016/j.ajhg.2022.01.009> as an extension to LT-FH with more flexible
+family structures, and again as the age-dependent liability threshold
+(A@code{DuLT}) model Pedersen, Emil M., et al. (2023)
+<doi:10.1038/s41467-023-41210-z> as an alternative to traditional time-to-event
+genome-wide association studies, where family history was not considered.")
     (license license:gpl3)))
 
 (define-public r-ltertools
@@ -7762,13 +7761,13 @@ in R.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.17")
+    (version "1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "07xq7h8y2nf1cjbns1kcp0xnj5vkn4nay6zj4412mcbl3par0bbc"))))
+        (base32 "0lrqbdj0a3dbdl2xdn94jdc0sv3cns0bnkfd3z94c571z35xzx56"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-class))

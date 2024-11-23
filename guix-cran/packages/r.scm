@@ -1757,13 +1757,13 @@ to build expressions in a chain-like fashion.")
 (define-public r-rveg
   (package
     (name "r-rveg")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rveg" version))
        (sha256
-        (base32 "0avnsbddsls55q9c2cbfy103yxrkay7812a2wfij27y9s7p66v3x"))))
+        (base32 "0641n31dcxznrz5vi4lz12q6zbva5c49g2s20n63gpi5pq9nd3rb"))))
     (properties `((upstream-name . "Rveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -28744,13 +28744,13 @@ responses and identify those that may be problematic.  See Gottfried et al.
 (define-public r-respirometry
   (package
     (name "r-respirometry")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "respirometry" version))
        (sha256
-        (base32 "0z8600bwh8c7kg69qf4nab26sqbxs73h24dfwk2fiispxvs1c83k"))))
+        (base32 "10pa1jv08125r6jhly27ilp5pmnmwsdwsl21i5na5l3glidrzbdn"))))
     (properties `((upstream-name . "respirometry")))
     (build-system r-build-system)
     (propagated-inputs (list r-segmented
@@ -34568,16 +34568,17 @@ or settings within REDCap, such as importing or exporting data.")
 (define-public r-redcapcast
   (package
     (name "r-redcapcast")
-    (version "24.10.3")
+    (version "24.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapCAST" version))
        (sha256
-        (base32 "0xv1ry70q8dzvlrkl3a6vgfk6z2pkx4g86g59fa1wf4402z2qs5r"))))
+        (base32 "01d5bp09lz7dvkycsivd4rb68cfzs8qb72iz2dgrgfwn2bb8ivcg"))))
     (properties `((upstream-name . "REDCapCAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
+                             r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-shiny
@@ -34587,25 +34588,32 @@ or settings within REDCap, such as importing or exporting data.")
                              r-purrr
                              r-openxlsx2
                              r-keyring
+                             r-here
                              r-haven
+                             r-gt
+                             r-glue
+                             r-forcats
                              r-dplyr
+                             r-bslib
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/agdamsbo/REDCapCAST")
-    (synopsis "REDCap Castellated Data Handling")
+    (synopsis "REDCap Metadata Casting and Castellated Data Handling")
     (description
-     "Originally forked from the R part of RED@code{CapRITS} by Paul Egeler.  See
-<https://github.com/pegeler/RED@code{CapRITS>}.  REDCap database casting and
-handling of castellated data when using repeated instruments and longitudinal
-projects.  Keeps a focused data export approach, by allowing to only export
-required data from the database.  REDCap (Research Electronic Data Capture) is a
-secure, web-based software platform designed to support data capture for
-research studies, providing 1) an intuitive interface for validated data
-capture; 2) audit trails for tracking data manipulation and export procedures;
-3) automated export procedures for seamless data downloads to common statistical
-packages; and 4) procedures for data integration and interoperability with
-external sources (Harris et al (2009) <doi:10.1016/j.jbi.2008.08.010>; Harris et
-al (2019) <doi:10.1016/j.jbi.2019.103208>).")
+     "Casting metadata for REDCap database creation and handling of castellated data
+using repeated instruments and longitudinal projects in REDCap'.  Keeps a
+focused data export approach, by allowing to only export required data from the
+database.  Also for casting new REDCap databases based on datasets from other
+sources.  Originally forked from the R part of RED@code{CapRITS} by Paul Egeler.
+ See <https://github.com/pegeler/RED@code{CapRITS>}.  REDCap (Research
+Electronic Data Capture) is a secure, web-based software platform designed to
+support data capture for research studies, providing 1) an intuitive interface
+for validated data capture; 2) audit trails for tracking data manipulation and
+export procedures; 3) automated export procedures for seamless data downloads to
+common statistical packages; and 4) procedures for data integration and
+interoperability with external sources (Harris et al (2009)
+<doi:10.1016/j.jbi.2008.08.010>; Harris et al (2019)
+<doi:10.1016/j.jbi.2019.103208>).")
     (license license:gpl3+)))
 
 (define-public r-redcapapi

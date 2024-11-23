@@ -3187,6 +3187,37 @@ R.")
 <https://exampa.net/>.")
     (license license:expat)))
 
+(define-public r-exametrika
+  (package
+    (name "r-exametrika")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exametrika" version))
+       (sha256
+        (base32 "025lm577yr5730f3j544nszjyscw8yk2amdbm2cjc4kjkq2qcm7w"))))
+    (properties `((upstream-name . "exametrika")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-igraph))
+    (home-page "https://cran.r-project.org/package=exametrika")
+    (synopsis "Test Theory Analysis and Biclustering")
+    (description
+     "This package implements comprehensive test data engineering methods as described
+in Shojima (2022, ISBN:978-9811699856).  Provides statistical techniques for
+engineering and processing test data: Classical Test Theory (CTT) with
+reliability coefficients for continuous ability assessment; Item Response Theory
+(IRT) including Rasch, 2PL, and 3PL models with item/test information functions;
+Latent Class Analysis (LCA) for nominal clustering; Latent Rank Analysis (LRA)
+for ordinal clustering with automatic determination of cluster numbers;
+Biclustering methods including infinite relational models for simultaneous
+clustering of examinees and items without predefined cluster numbers; and
+Bayesian Network Models (BNM) for visualizing inter-item dependencies.  Features
+local dependence analysis through LRA and biclustering, parameter estimation,
+dimensionality assessment, and network structure visualization for educational,
+psychological, and social science research.")
+    (license license:expat)))
+
 (define-public r-exactmultinom
   (package
     (name "r-exactmultinom")
@@ -7108,7 +7139,6 @@ and Koenig, F. (2022). <doi:10.48550/@code{arXiv.2206.09639>}.")
                              r-rcpp
                              r-minpack-lm
                              r-matrixstats
-                             r-irisseismic
                              r-fftw
                              r-extradistr
                              r-colorspace
@@ -22537,13 +22567,13 @@ logratios are included in the package.")
 (define-public r-easyclimate
   (package
     (name "r-easyclimate")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyclimate" version))
        (sha256
-        (base32 "19gfajf4bhlz0mpq70xjy87xc3qi9kqs3869zm2jy4x0i3cingk6"))))
+        (base32 "1d617g1q32hhzssnspzgi24797259cy3jqar57bh7k6hfjmisyd5"))))
     (properties `((upstream-name . "easyclimate")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcurl r-r-utils))

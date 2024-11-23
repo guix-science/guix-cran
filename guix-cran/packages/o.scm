@@ -1690,13 +1690,13 @@ map projection.")
 (define-public r-osmextract
   (package
     (name "r-osmextract")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmextract" version))
        (sha256
-        (base32 "03q3ra119j8rxkqasyxg0m4dlcpb378milfa1mwihsmmq4qd6ak5"))))
+        (base32 "0n0c5zq7r5gckblxsrf5a1bc841dakhfgzhpf7ny9vfpk7zdla68"))))
     (properties `((upstream-name . "osmextract")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite r-httr))
@@ -8677,13 +8677,13 @@ counts and trends.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "0k98m4ibj4m2rqkirwkqkx91p08adjm3qqj86mhdalp4vhz9x3kg"))))
+        (base32 "0a2sdigf1gx8zzpcr926b6pysvz5haf79pmma74sw3ifg1i6kxma"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -8694,11 +8694,12 @@ counts and trends.")
                              r-purrr
                              r-lifecycle
                              r-glue
+                             r-generics
                              r-dplyr
                              r-dbplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://darwin-eu-dev.github.io/omopgenerics/")
+    (home-page "https://darwin-eu.github.io/omopgenerics/")
     (synopsis "Methods and Classes for the OMOP Common Data Model")
     (description
      "This package provides definitions of core classes and methods used by analytic
@@ -9270,13 +9271,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "0xb7dg4ncqvypl27rb8s05ck1zjxs2j49f4lnpl3hqjvh0da6p3x"))))
+        (base32 "0gwm63xibgyg6ra2zs128dc586vx73mbr60gply1jgws7h95c3b0"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

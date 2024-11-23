@@ -9141,13 +9141,13 @@ package.")
 (define-public r-nglviewer
   (package
     (name "r-nglviewer")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NGLVieweR" version))
        (sha256
-        (base32 "15azdlr3a6gaacjcjpi61rwmx7c3idfn3w1zpgbaqmhxd9a4m6f0"))))
+        (base32 "032cdsqhsx9pwaz190j0ji8l5j94lv07217bymgfzsasd96lx8qy"))))
     (properties `((upstream-name . "NGLVieweR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-magrittr r-htmlwidgets))
@@ -10001,15 +10001,16 @@ data: Analysis of brain networks of patients with autism\"
 (define-public r-neutrostat
   (package
     (name "r-neutrostat")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neutrostat" version))
        (sha256
-        (base32 "1n5baw6rha49sjir9346d1dyjxq2sd4y1ahikb6x5x7qqdgdigr9"))))
+        (base32 "15xp2aj480zp2gyylvakfs88ccpszk6jdqcxgzdq5f33gfbsiq8c"))))
     (properties `((upstream-name . "neutrostat")))
     (build-system r-build-system)
+    (propagated-inputs (list r-ntsdists r-moments r-ggplot2))
     (home-page "https://github.com/kzst/neutrostat")
     (synopsis "Neutrosophic Statistics")
     (description
@@ -10805,13 +10806,13 @@ objects.")
 (define-public r-networkdynamic
   (package
     (name "r-networkdynamic")
-    (version "0.11.4")
+    (version "0.11.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkDynamic" version))
        (sha256
-        (base32 "0ija33qxka8nw6rikvcz5b6648scmq7mcaayjbzq7wa4lhbf5wvb"))))
+        (base32 "1h55y95l23r1670aqgcfi0n9mymcnnv3wy8raa8j7yfpm06g8gx3"))))
     (properties `((upstream-name . "networkDynamic")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common r-networklite r-network))

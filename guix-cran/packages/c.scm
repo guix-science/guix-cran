@@ -1253,13 +1253,13 @@ identify the optimal estimator from among a prespecified set of candidates.")
 (define-public r-cvasi
   (package
     (name "r-cvasi")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvasi" version))
        (sha256
-        (base32 "0j4r92b8n4fqd16s2549a13098dwi76vsyb67n8jv6xcxy9yxw9w"))))
+        (base32 "0aab17g0pjbp6c22kyf7q7d2ka79nc05a9adsy1qzrvihi180rgz"))))
     (properties `((upstream-name . "cvasi")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -1271,16 +1271,13 @@ identify the optimal estimator from among a prespecified set of candidates.")
                              r-magrittr
                              r-lubridate
                              r-lifecycle
-                             r-lemna
                              r-gridextra
-                             r-glue
                              r-ggplot2
                              r-ggally
                              r-furrr
                              r-dplyr
                              r-desolve
-                             r-cli
-                             r-attempt))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cvasi-tktd/cvasi")
     (synopsis "Calibration, Validation, and Simulation of TKTD Models")
@@ -42070,13 +42067,13 @@ using recall number.")
 (define-public r-care4cmodel
   (package
     (name "r-care4cmodel")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "care4cmodel" version))
        (sha256
-        (base32 "0526z49v4mxfxjlpzjnqyzc8j2lvj1aw47f3izsk1vrs193vxnvw"))))
+        (base32 "1plllcw927w4svqma29d5vqbi9w0h5cm2bccl0g3bl3c8fv6af1r"))))
     (properties `((upstream-name . "care4cmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

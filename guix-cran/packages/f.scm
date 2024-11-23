@@ -10329,13 +10329,13 @@ and from databases.")
 (define-public r-flipscores
   (package
     (name "r-flipscores")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flipscores" version))
        (sha256
-        (base32 "17dmx7r29ngwz690x7p447pczh903swzpwmk5abvzjsqvfgikbi8"))))
+        (base32 "0idsd8xkly5k14wf06w2fqjfz1bg66qs6v25mdlf1hkrvsf5djfq"))))
     (properties `((upstream-name . "flipscores")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -20216,13 +20216,13 @@ categorical covariates.")
 (define-public r-fastbeta
   (package
     (name "r-fastbeta")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbeta" version))
        (sha256
-        (base32 "0s843plibqbx2lfi4npp3pxq30rkiz768yjgc9fgpawq1nlp3ii0"))))
+        (base32 "14w51gfbdc8xfaz5sy9lr8qcabpkj5zkdjc6ajz8wsp2svqskva8"))))
     (properties `((upstream-name . "fastbeta")))
     (build-system r-build-system)
     (home-page "https://github.com/davidearn/fastbeta")

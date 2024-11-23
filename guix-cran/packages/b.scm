@@ -24825,13 +24825,13 @@ Kelter (2019) <@code{arXiv:1906.07524>}.")
 (define-public r-bayesammi
   (package
     (name "r-bayesammi")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesammi" version))
        (sha256
-        (base32 "1vff8gbfp9nsxrv43fhc02vsl935cv2cff3jih0i5rj0pwz5gvhf"))))
+        (base32 "040bczymj43rkqz66w9nqgakj43ww1mhiy5kwg2by63gxw3kjpcy"))))
     (properties `((upstream-name . "bayesammi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -24840,10 +24840,13 @@ Kelter (2019) <@code{arXiv:1906.07524>}.")
                              r-scales
                              r-rstiefel
                              r-rlang
+                             r-purrr
                              r-mvtnorm
                              r-mass
                              r-magrittr
                              r-lme4
+                             r-ks
+                             r-ggrepel
                              r-ggplot2
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=bayesammi")
@@ -27259,13 +27262,13 @@ Simon, Zeileis (2021) <doi:10.18637/jss.v100.i04>.")
 (define-public r-bamdit
   (package
     (name "r-bamdit")
-    (version "3.4.2")
+    (version "3.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamdit" version))
        (sha256
-        (base32 "09gbli5jpzv9ndpbgmck8kfpb6gxafa8jnfkmsg7qls004qg6k7y"))))
+        (base32 "0qi31rd9wphnmx7snk6kwk8l7p7j7sirdgnh97zj98xb79hqj6gv"))))
     (properties `((upstream-name . "bamdit")))
     (build-system r-build-system)
     (inputs (list jags))

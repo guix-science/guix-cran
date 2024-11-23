@@ -1913,13 +1913,13 @@ as well as 230Th-U evolution plots.")
 (define-public r-isopleuros
   (package
     (name "r-isopleuros")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopleuros" version))
        (sha256
-        (base32 "1vqazdpg8whpx5nw8gq8bchh93dl04xmygs9as1k5yx1sijw164j"))))
+        (base32 "0bbhysxxcxnq5l9bwgx7j2ksnf623rf86xd3yfgrl3yyj0h03i2l"))))
     (properties `((upstream-name . "isopleuros")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/isopleuros/")
@@ -3483,65 +3483,6 @@ designs) can be done from the available incomplete block designs, viz., balanced
 incomplete block designs/ partially balanced incomplete block designs/
 t-designs. (Mcsorley, J.P., Phillips, N.C., Wallis, W.D. and Yucas, J.L.
 (2005).<doi:10.1007/s10623-003-6149-9>).")
-    (license license:gpl2+)))
-
-(define-public r-irisseismic
-  (package
-    (name "r-irisseismic")
-    (version "1.6.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IRISSeismic" version))
-       (sha256
-        (base32 "0da4bh5kvlp3dchsz0dyddwpwdvss7aij2xsi2kkppi3hrfwja7j"))))
-    (properties `((upstream-name . "IRISSeismic")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-stringr
-                             r-signal
-                             r-seismicroll
-                             r-rcurl
-                             r-pracma))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=IRISSeismic")
-    (synopsis "Classes and Methods for Seismic Data Analysis")
-    (description
-     "This package provides classes and methods for seismic data analysis.  The base
-classes and methods are inspired by the python code found in the @code{ObsPy}
-python toolbox <https://github.com/obspy/obspy>.  Additional classes and methods
-support data returned by web services provided by the IRIS DMC
-<http://service.iris.edu/>.")
-    (license license:gpl2+)))
-
-(define-public r-irismustangmetrics
-  (package
-    (name "r-irismustangmetrics")
-    (version "2.4.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IRISMustangMetrics" version))
-       (sha256
-        (base32 "08p1xg4mqi36647nzmlmmmvdgzc9xgz4sf4lh2lrlma99f7y8kzd"))))
-    (properties `((upstream-name . "IRISMustangMetrics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-stringr
-                             r-signal
-                             r-seismicroll
-                             r-rcurl
-                             r-pracma
-                             r-irisseismic
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=IRISMustangMetrics")
-    (synopsis "Statistics and Metrics for Seismic Data")
-    (description
-     "This package provides classes and functions for metrics calculation as part of
-the IRIS DMC MUSTANG project.  The functionality in this package builds upon the
-base classes of the IRISSeismic package.  Metrics include basic statistics as
-well as higher level health metrics that can help identify problematic
-seismometers.")
     (license license:gpl2+)))
 
 (define-public r-irishdirectorates
@@ -10379,13 +10320,13 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence2" version))
        (sha256
-        (base32 "1dskablvqrc6plh1fszmldbpk802sk7x72avqxw4g32qlsviynf5"))))
+        (base32 "0xciyrcrsnh00g8g56zn9xxhwdi3llvw0yr54ciiz6y9wq3p5hnn"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ympes

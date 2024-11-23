@@ -1619,13 +1619,13 @@ assurance constraints for the DVH. Includes web-based graphical user interface."
 (define-public r-dverse
   (package
     (name "r-dverse")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dverse" version))
        (sha256
-        (base32 "0d59dsz7cdr8inmpw0gphv3pwgpqjygp319wff27y7vpz3cymxrl"))))
+        (base32 "14iib9rc6s96i0a220cldbg6mz4dmjafslanl23yzq9iz60hfxn2"))))
     (properties `((upstream-name . "dverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-glue r-dplyr r-cli))
@@ -4207,13 +4207,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "1isn6q7k8ll2w9nbizj46c287hacwpc31a0kh20qrif9xa4akwp0"))))
+        (base32 "11bchwz3545l4w62q0zgs699g3ak86sm4l9d5adybnmf59a5ax0k"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -28453,13 +28453,13 @@ endpoints.")
 (define-public r-dad
   (package
     (name "r-dad")
-    (version "4.1.2")
+    (version "4.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dad" version))
        (sha256
-        (base32 "12jwfa1849mfjwplc57qw3lhn5zrqjrlxhisg9hykvhcpj6i0nfl"))))
+        (base32 "1bpjgwd739l661ri78a8iq3jhrawrn9g9awjrsdwmvw10gd9skmh"))))
     (properties `((upstream-name . "dad")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-e1071 r-desctools))

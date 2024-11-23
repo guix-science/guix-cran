@@ -25567,13 +25567,13 @@ r4photobiology suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologyinout
   (package
     (name "r-photobiologyinout")
-    (version "0.4.28-1")
+    (version "0.4.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyInOut" version))
        (sha256
-        (base32 "0c5smimj3jinw0h2fv0dqwq7rpklwm1r0mxzrs5wh0hfcinzc7wm"))))
+        (base32 "153yim3ggljxg4inijpsch0aipfgidy3xghjv2ap7rpzbdj6wmcb"))))
     (properties `((upstream-name . "photobiologyInOut")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

@@ -2064,13 +2064,13 @@ facilitate the model interpretation.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.2.4")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "17jlzf5dhfnwbn8p8q8k600xs9wvfcfvg1pcyx0fqmiifhx4ml4c"))))
+        (base32 "1zw9md0yhzc4sljignl87q40mpshbdj6shm8j7clis51c0i7dhhp"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2091,13 +2091,13 @@ multivariada.")
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.2.4")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "1sppa448hfwblssagacp9vc2kff4zdk74b8c7g0k61k8awf48p5y"))))
+        (base32 "0bkjc8a491f42gbq5k2ysipa03n34g0jd1gmy0zlhyix35zidz1j"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -8034,13 +8034,13 @@ Graphics''.")
 (define-public r-msetool
   (package
     (name "r-msetool")
-    (version "3.7.2")
+    (version "3.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSEtool" version))
        (sha256
-        (base32 "1k3df2xpzm41dsqxpvdki5hmar1azz24zfhkl9nlrr2jbb8p8pjr"))))
+        (base32 "07rrh70bp3wckhszv5hgqcbch3llp84gl22x45wvx167pmgvgxp6"))))
     (properties `((upstream-name . "MSEtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall
@@ -10865,13 +10865,13 @@ convenience functions to aid in data processing.")
 (define-public r-mpathr
   (package
     (name "r-mpathr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpathr" version))
        (sha256
-        (base32 "0804l3yw8hq4pvcp8gh24y68p4czcg4ck52h226xhbgv7jsagp08"))))
+        (base32 "1y5p3c86xs3fmdlbraf2048b6ylxbhziw5kjvasv5drk6hb25hzd"))))
     (properties `((upstream-name . "mpathr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -32457,41 +32457,6 @@ algorithm, the imputation aim to keep the original mean and standard deviation
 consistent after imputation.")
     (license license:gpl3)))
 
-(define-public r-merlin
-  (package
-    (name "r-merlin")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "merlin" version))
-       (sha256
-        (base32 "11in84pxgz76l2cfpd7m03fai1gwdhp2rzrn3pbwrpywgq210pmj"))))
-    (properties `((upstream-name . "merlin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-statmod r-randtoolbox r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.mjcrowther.co.uk/software/merlin")
-    (synopsis
-     "Mixed Effects Regression for Linear, Non-Linear and User-Defined Models")
-    (description
-     "Fits linear, non-linear, and user-defined mixed effects regression models
-following the framework developed by Crowther (2017) <@code{arXiv:1710.02223>}.
-merlin can fit multivariate outcome models of any type, each of which could be
-repeatedly measured (longitudinal), with any number of levels, and with any
-number of random effects at each level.  Standard distributions/models available
-include the Bernoulli, Gaussian, Poisson, beta, negative-binomial, and
-time-to-event/survival models include the exponential, Gompertz, Royston-Parmar,
-Weibull and general hazard model.  merlin provides a flexible predictor syntax,
-allowing the user to define variables, random effects, spline and fractional
-polynomial functions, functions of other outcome models, and any interaction
-between each of them.  Non-linear and time-dependent effects are seamlessly
-incorporated into the predictor.  merlin allows multivariate normal random
-effects, which are integrated out using Gaussian quadrature or Monte-Carlo
-integration.  Note, merlin is based on the Stata package of the same name,
-described in Crowther (2018) <@code{arXiv:1806.01615>}.")
-    (license license:gpl3+)))
-
 (define-public r-mergingtools
   (package
     (name "r-mergingtools")
@@ -44688,13 +44653,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-maicplus
   (package
     (name "r-maicplus")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maicplus" version))
        (sha256
-        (base32 "1bz4w0z8kmxkwq4fnrjjc6lkbmkr6d65pxr7jaljjncsvgnvpyxn"))))
+        (base32 "0qcfpr78gj625svgndclkyy2l482fr57jn8pcnx8n015jvib8mya"))))
     (properties `((upstream-name . "maicplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -45163,13 +45128,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "05yg432nq25awr4m5x9ynk38agd4a8c6ii4rsb3gd9hlyjifzlkv"))))
+        (base32 "086rmgiswpwy1d5zpcdrna8afgpa0b252xyllj5bvq1iv71sv1c5"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (propagated-inputs (list r-timechange

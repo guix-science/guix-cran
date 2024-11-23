@@ -574,6 +574,40 @@ constructing area-based index with geographical heterogeneities and variable
 selection: An application to gastric cancer screening <doi:10.1038/srep26582>.")
     (license license:expat)))
 
+(define-public r-gwlasso
+  (package
+    (name "r-gwlasso")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GWlasso" version))
+       (sha256
+        (base32 "1cpxaqk6z55fydd1b18pc90796fdig1ax0llvip60sn0wwbqhqpp"))))
+    (properties `((upstream-name . "GWlasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-rlang
+                             r-progress
+                             r-magrittr
+                             r-lifecycle
+                             r-gwmodel
+                             r-glmnet
+                             r-ggside
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nibortolum/GWlasso")
+    (synopsis "Geographically Weighted Lasso")
+    (description
+     "This package performs geographically weighted Lasso regressions.  Find optimal
+bandwidth, fit a geographically weighted lasso or ridge regression, and make
+predictions.  These methods are specially well suited for ecological inferences.
+ Bandwidth selection algorithm is from A. Comber and P. Harris (2018)
+<doi:10.1007/s10109-018-0280-7>.")
+    (license license:expat)))
+
 (define-public r-gwid
   (package
     (name "r-gwid")
@@ -20147,13 +20181,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "10.0.0")
+    (version "11.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "1ym4sv692ly1r16hf1cxkm6mjz6djik3hwsw2gj2ydchypkdsq3q"))))
+        (base32 "1r74czqsrr2s0vkblhln4spin5y1g2gpp27hy77yvgy4hjvkjda6"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -23784,13 +23818,13 @@ data aggregation (Mora-Herrera et al.  2020) <doi:10.1016/j.compag.2020.105624>.
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.0.16")
+    (version "1.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geofi" version))
        (sha256
-        (base32 "1hf8q6k41d2mj4k34yqy6a0mbhrjz9ci5iplfrcb3qy4nppns14w"))))
+        (base32 "1ihy8b94p6zqr7lpz6k5waqlhvpzyjp2sh73hh4kjmm4aazhx0x2"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

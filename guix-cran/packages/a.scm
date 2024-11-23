@@ -10186,13 +10186,13 @@ S4 package aod.")
 (define-public r-aoboot
   (package
     (name "r-aoboot")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AOboot" version))
        (sha256
-        (base32 "187kfm9sq0afc4086sw4rsyfq7zbhyqg2cmvx5x0iq38w2v2x5dr"))))
+        (base32 "159iy0c6hc0l4kp9zdy3s87d8xplva0y2b9xpwfx056dlc5rvnkw"))))
     (properties `((upstream-name . "AOboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-lsr r-emmeans r-cardata r-afex))
@@ -10871,6 +10871,34 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
 method to test the difference and equivalence of two effects with summary
 statistics from two studies.")
     (license license:gpl3)))
+
+(define-public r-anominate
+  (package
+    (name "r-anominate")
+    (version "0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "anominate" version))
+       (sha256
+        (base32 "0zy2gvn3pr01rfvh2bhgdk7a6lzmffldxy0vk2gidirhv4zvy3vr"))))
+    (properties `((upstream-name . "anominate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wnominate r-pscl r-mcmcpack r-coda))
+    (home-page "https://CRAN.R-project.org/package=anominate")
+    (synopsis "Alpha-NOMINATE Ideal Point Estimator")
+    (description
+     "This package provides functions to estimate and interpret the alpha-NOMINATE
+ideal point model developed in Carroll et al. (2013, <doi:10.1111/ajps.12029>).
+alpha-NOMINATE extends traditional spatial voting frameworks by allowing for a
+mixture of Gaussian and quadratic utility functions, providing flexibility in
+modeling political actors preferences.  The package uses Markov Chain Monte
+Carlo (MCMC) methods for parameter estimation, supporting robust inference about
+individuals ideological positions and the shape of their utility functions.  It
+also contains functions to simulate data from the model and to calculate the
+probability of a vote passing given the ideal points of the legislators/voters
+and the estimated location of the choice alternatives.")
+    (license license:gpl2)))
 
 (define-public r-anomalyscore
   (package
@@ -14289,13 +14317,13 @@ all_glm(), and Cox proportional hazards regression: all_cox().")
 (define-public r-allelicseries
   (package
     (name "r-allelicseries")
-    (version "0.1.0.2")
+    (version "0.1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AllelicSeries" version))
        (sha256
-        (base32 "0vb03a6zyp9xv6wycdsx0r9fsd8bfjnqiqrj1xqp8vidkmzafgyr"))))
+        (base32 "0lh6w38hipsw3gqxzphp5sagjkqn8ckip5gkzkhc8hw4z3pflvs4"))))
     (properties `((upstream-name . "AllelicSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-skat
@@ -14305,7 +14333,7 @@ all_glm(), and Cox proportional hazards regression: all_cox().")
                              r-glue
                              r-compquadform))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=AllelicSeries")
+    (home-page "https://github.com/insitro/AllelicSeries")
     (synopsis "Allelic Series Test")
     (description
      "Implementation of gene-level rare variant association tests targeting allelic
@@ -16157,13 +16185,13 @@ available as dataframes in R.")
 (define-public r-aid
   (package
     (name "r-aid")
-    (version "2.9")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AID" version))
        (sha256
-        (base32 "0s7020vh93rnyhcfsmsn1swffrbg1fx3pqq2bd043m4b90yrlzpc"))))
+        (base32 "0a3mw6m8saqqnmh500xgn975hp44bn3wn07nw30k3i22l4byyhix"))))
     (properties `((upstream-name . "AID")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
