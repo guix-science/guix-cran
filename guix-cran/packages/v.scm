@@ -3176,13 +3176,13 @@ methodology described in Tokuda, T., Goodrich, B., Van Mechelen, I., Gelman, A.,
 (define-public r-viscomplexr
   (package
     (name "r-viscomplexr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viscomplexr" version))
        (sha256
-        (base32 "1b45yi5xv4vq52pfa064ll3ghxgkwpbknzq94gg60vcvb7spd0if"))))
+        (base32 "03v49zhqfv2ifzyqhjhagvjk65hz0vzn61ax9w1lhgd751kpazha"))))
     (properties `((upstream-name . "viscomplexr")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

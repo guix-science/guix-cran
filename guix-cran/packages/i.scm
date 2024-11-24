@@ -8799,17 +8799,18 @@ hierarchical agglomerative clustering approach proposed by Gan et.  al. (2015)
 (define-public r-infoset
   (package
     (name "r-infoset")
-    (version "4.0.6")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INFOSET" version))
        (sha256
-        (base32 "1z91gy1zlpn25mm8gigiw1v74mzw3q3gal8y66w8cf2j0kg0si8n"))))
+        (base32 "1bybcjyvpn7rvvyccs99xzak5j5mm2ycb715pmkp0kszsrl8y3fc"))))
     (properties `((upstream-name . "INFOSET")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-mixtools r-matrix r-dendextend
                              r-colorspace))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=INFOSET")
     (synopsis "Computing a New Informative Distribution Set of Asset Returns")
     (description
@@ -8824,7 +8825,14 @@ sub-groups emerge when a significant change in the distribution occurs below the
 median of the financial returns, with their boundary termed as the âchange
 point\" of the mixture.  The process concludes when no further change points are
 detected.  The outcome encompasses parameters of the leftmost mixture
-distributions and change points of the analyzed financial time series.")
+distributions and change points of the analyzed financial time series.  The
+functionalities of the INFOSET package include: (i) modelling asset distribution
+detecting the parameters which describe left tail behaviour (infoset function),
+(ii) clustering, (iii) labeling of the financial series for predictive and
+classification purposes through a Left Risk measure based on the first change
+point (LR_cp function) (iv) portfolio construction (ptf_construction function).
+The package also provide a specific function to construct rolling windows of
+different length size and overlapping time.")
     (license license:gpl2+)))
 
 (define-public r-informedsen

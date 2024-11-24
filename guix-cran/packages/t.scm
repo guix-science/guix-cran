@@ -10985,20 +10985,19 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
 (define-public r-topics
   (package
     (name "r-topics")
-    (version "0.20.0")
+    (version "0.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topics" version))
        (sha256
-        (base32 "12dn3qgrk13bl2wbqbiqkzj7dsrpaah325z83q3p5dgxkxg3b6np"))))
+        (base32 "13s9lpsvqpzpcwwh426s331fv96vjx7bx7dsm9vx5n1mfqs7ni9w"))))
     (properties `((upstream-name . "topics")))
     (build-system r-build-system)
     (inputs (list python))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-textminer
-                             r-text
                              r-stringr
                              r-stopwords
                              r-rlang

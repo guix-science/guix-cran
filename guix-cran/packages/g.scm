@@ -23564,38 +23564,6 @@ delimited @code{GeoJSON}'; and serializing to/from Geobuf binary @code{GeoJSON}
 format.")
     (license license:expat)))
 
-(define-public r-geoidep
-  (package
-    (name "r-geoidep")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geoidep" version))
-       (sha256
-        (base32 "1cjga1s2ffxhk0ki7rfmacwr39qi738pxaphvfg6nfgxm09j42v8"))))
-    (properties `((upstream-name . "geoidep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-sf
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-cli
-                             r-archive))
-    (native-inputs (list r-knitr))
-    (home-page "https://geografo.pe/geoidep/")
-    (synopsis
-     "Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru")
-    (description
-     "This package provides R users with easy access to official cartographic data
-from Peru across a range of topics, including society, transport, environment,
-agriculture, climate, and more.  It also includes data from regional government
-entities and technical-scientific institutions, all managed by Peru's Spatial
-Data Infrastructure.  For more information, please visit:
-<https://www.geoidep.gob.pe/catalogos-de-metadatos>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-geoheatmap
   (package
     (name "r-geoheatmap")

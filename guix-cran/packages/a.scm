@@ -14317,13 +14317,13 @@ all_glm(), and Cox proportional hazards regression: all_cox().")
 (define-public r-allelicseries
   (package
     (name "r-allelicseries")
-    (version "0.1.1.1")
+    (version "0.1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AllelicSeries" version))
        (sha256
-        (base32 "0lh6w38hipsw3gqxzphp5sagjkqn8ckip5gkzkhc8hw4z3pflvs4"))))
+        (base32 "08kvj731m0jvdh8ay7hgnijdj5bzhk5jzwz52gg8s69cilsql410"))))
     (properties `((upstream-name . "AllelicSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-skat

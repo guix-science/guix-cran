@@ -4718,20 +4718,20 @@ supported.  Factors for any predictors must be numerically represented.")
 (define-public r-multilevelcoda
   (package
     (name "r-multilevelcoda")
-    (version "1.3.0.2")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevelcoda" version))
        (sha256
-        (base32 "0dd31bs1wfwfmi65aj8ycmipyszpl79cik5z2w7rkii4pl1zc6ja"))))
+        (base32 "1rakgj40zz526wsjgcbym5b31q2pdxk35z229xfpkhdc627w2954"))))
     (properties `((upstream-name . "multilevelcoda")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinystan
                              r-shiny
+                             r-posterior
                              r-plotly
                              r-loo
-                             r-insight
                              r-hrbrthemes
                              r-ggplot2
                              r-future
@@ -4755,7 +4755,9 @@ supported.  Factors for any predictors must be numerically represented.")
 framework.  Compute multilevel compositional data and Isometric log ratio (ILR)
 at between and within-person levels, fit Bayesian multilevel models for
 compositional predictors and outcomes, and run post-hoc analyses such as
-isotemporal substitution models.")
+isotemporal substitution models.  References: Le, Stanford, Dumuid, and Wiley
+(2024) <doi:10.48550/@code{arXiv.2405.03985>}, Le, Dumuid, Stanford, and Wiley
+(2024) <doi:10.48550/@code{arXiv.2411.12407>}.")
     (license license:gpl3+)))
 
 (define-public r-multilevel

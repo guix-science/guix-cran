@@ -2808,13 +2808,13 @@ to better handle high-dimensional data and complex cross designs.")
 (define-public r-qtl2fst
   (package
     (name "r-qtl2fst")
-    (version "0.28")
+    (version "0.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtl2fst" version))
        (sha256
-        (base32 "1dnbnpx1xbm8n7jgczh6fzwnns7biab8x742l8n8knh6zrksqn93"))))
+        (base32 "1n1abgqw5q0l731ypzl02aar8n2hwp6japwhwijm0mh3zwfppb8n"))))
     (properties `((upstream-name . "qtl2fst")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl2 r-fst))

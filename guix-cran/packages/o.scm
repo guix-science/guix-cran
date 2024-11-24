@@ -2307,35 +2307,6 @@ Stiefel manifold.  Parallel computing for approximating the gradient is enabled
 through @code{OpenMP}'.")
     (license license:gpl2+)))
 
-(define-public r-orthgs
-  (package
-    (name "r-orthgs")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "orthGS" version))
-       (sha256
-        (base32 "03hx6z6li49m8b51kqii6ixygw95h31fnvj7z29j8iyzjq96jqga"))))
-    (properties `((upstream-name . "orthGS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-treetools
-                             r-seqinr
-                             r-phytools
-                             r-phangorn
-                             r-igraph
-                             r-castor
-                             r-bio3d
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=orthGS")
-    (synopsis
-     "Orthology vs Paralogy Relationships among Glutamine Synthetase from Plants")
-    (description
-     "This package provides tools to analyze and infer orthology and paralogy
-relationships between glutamine synthetase proteins in seed plants.")
-    (license license:gpl2+)))
-
 (define-public r-orth-ord
   (package
     (name "r-orth-ord")

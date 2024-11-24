@@ -7339,13 +7339,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1mfj91zc9ijq3629rfdyz0xxr026qxzkgwkypizkb1z9xgnfd11v"))))
+        (base32 "1i4vdh5malwg4r81ik5n5p3b1iw2y8apvdnsy9r9fz39s4m4yia0"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine

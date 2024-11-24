@@ -521,13 +521,13 @@ models produced by the survey and lme4 packages are points of emphasis.")
 (define-public r-jti
   (package
     (name "r-jti")
-    (version "0.8.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jti" version))
        (sha256
-        (base32 "0jxqv3xa9yyzizx1rhxjv65c8b253shridy57skrd5kya701n460"))))
+        (base32 "1m7c0b4n9l8nbqgi4xgqkdxrn2k3zl0l2gi2gba03bgd6kdphq6j"))))
     (properties `((upstream-name . "jti")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparta r-rcpparmadillo r-rcpp r-igraph))
@@ -537,7 +537,8 @@ models produced by the survey and lme4 packages are points of emphasis.")
     (description
      "Minimal and memory efficient implementation of the junction tree algorithm using
 the Lauritzen-Spiegelhalter scheme; S. L. Lauritzen and D. J. Spiegelhalter
-(1988) <https://www.jstor.org/stable/2345762?seq=1>.")
+(1988) <https://www.jstor.org/stable/2345762?seq=1>.  The jti package is part of
+the paper <doi:10.18637/jss.v111.i02>.")
     (license license:gpl3)))
 
 (define-public r-jtdm
