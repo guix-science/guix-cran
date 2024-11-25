@@ -2612,13 +2612,13 @@ filter, organize and further analyze those ordinal relations.")
 (define-public r-origin
   (package
     (name "r-origin")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "origin" version))
        (sha256
-        (base32 "0gnq66zsnmnwsn0xaxavw4ipkcb91371g5rh7i9pk863q7fvzkc0"))))
+        (base32 "0cdr9lizkw09z0lnn07v8jjwyxz1z9277sn7ib0bhyjzxwc9h48c"))))
     (properties `((upstream-name . "origin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-cli))

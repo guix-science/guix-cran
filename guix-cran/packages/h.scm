@@ -8981,13 +8981,13 @@ routes and isolines are returned as sf objects.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heplots" version))
        (sha256
-        (base32 "0hkwfg2xfsmvxnzr2jdfxn93ny325rkhc2cakr4hvddvg65dckfx"))))
+        (base32 "0k9klz37ix3v3hwirznjxd0d73d9a6wbnvx9nlkdjv3lnsl9v03w"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8997,7 +8997,7 @@ routes and isolines are returned as sf objects.")
                              r-magrittr
                              r-car
                              r-broom))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "http://friendly.github.io/heplots/")
     (synopsis "Visualizing Hypothesis Tests in Multivariate Linear Models")
     (description

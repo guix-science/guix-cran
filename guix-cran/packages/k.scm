@@ -4848,13 +4848,13 @@ Ministry of Agriculture and Fishing of France.")
 (define-public r-keng
   (package
     (name "r-keng")
-    (version "2024.11.17")
+    (version "2024.11.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Keng" version))
        (sha256
-        (base32 "1nfaywsrkzi8xwba9ljflix9msz7474dz0zcczhvxlgmfl8va5y3"))))
+        (base32 "0r64w6zy49ggwphzwz3ibyiwhkw8y1zksddcsnsh6v8xw5pghvj5"))))
     (properties `((upstream-name . "Keng")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4864,9 +4864,12 @@ Ministry of Agriculture and Fishing of France.")
      "Miscellaneous functions and data used in Qingyao's psychological research and
 teaching.  Keng currently has a built-in dataset depress, and could (1) scale a
 vector, (2) test the significance and compute the cut-off values of Pearson's r
-without raw data, (3) compare lm()'s fitted outputs using R-squared and PRE
-(Proportional Reduction in Error, also called partial R-squared or partial
-Eta-squared).")
+without raw data, (3) compare lm()'s fitted outputs using R-squared, f_squared,
+post-hoc power, and PRE (Proportional Reduction in Error, also called partial
+R-squared or partial Eta-squared). (4) Calculate PRE from partial correlation,
+Cohen's f, or f_squared. (5) Compute the post-hoc power for one or a set of
+predictors in regression analysis without raw data, (6) Plan the sample size for
+one or a set of predictors in regression analysis.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-kendallrandomwalks

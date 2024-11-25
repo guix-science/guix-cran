@@ -254,6 +254,38 @@ exploration patterns.  Some of the ideas in this package are motivated by Fox
 (2015, ISBN:1938377052).")
     (license license:expat)))
 
+(define-public r-ezecm
+  (package
+    (name "r-ezecm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ezECM" version))
+       (sha256
+        (base32 "0nkydysrnjr7ihs9m5if0czfqd30q7acbbv2l81dig5bgdvrwyg8"))))
+    (properties `((upstream-name . "ezECM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack
+                             r-mvnfast
+                             r-mcmcpack
+                             r-lhs
+                             r-klar
+                             r-ellipse))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lanl/ezECM")
+    (synopsis
+     "Event Categorization Matrix Classification for Nuclear Detonations")
+    (description
+     "Implementation of an Event Categorization Matrix (ECM) detonation detection
+model and a Bayesian variant.  Functions are provided for importing and
+exporting data, fitting models, and applying decision criteria for categorizing
+new events.  This package implements methods described in the paper \"Bayesian
+Event Categorization Matrix Approach for Nuclear Detonations\" Koermer,
+Carmichael, and Williams (2024) available on @code{arXiv} at
+<doi:10.48550/@code{arXiv.2409.18227>}.")
+    (license license:gpl3+)))
+
 (define-public r-ezec
   (package
     (name "r-ezec")
@@ -7089,13 +7121,13 @@ and Koenig, F. (2022). <doi:10.48550/@code{arXiv.2206.09639>}.")
 (define-public r-eseis
   (package
     (name "r-eseis")
-    (version "0.7.3")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eseis" version))
        (sha256
-        (base32 "0fn55mb6yklwjh0ihczjchxrxvnblzbifq59158zfmz407rrfk5g"))))
+        (base32 "0yi7wyf1hapvkpkcwiqi3k1p06nic0glrzrn59lcy0ck98krvy09"))))
     (properties `((upstream-name . "eseis")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

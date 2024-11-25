@@ -3261,18 +3261,18 @@ hardware <https://quantum-computing.ibm.com/>.")
 (define-public r-qs2
   (package
     (name "r-qs2")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qs2" version))
        (sha256
-        (base32 "0aa5b2dcnkrmknki72frm3qvigz6z6yl14i174yzgxyzw6kgbs6c"))))
+        (base32 "1zdz4x7fzv067iczjgzz19qbkzmvla03i8a20w56qwbmpxqg4hdw"))))
     (properties `((upstream-name . "qs2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringfish r-rcppparallel r-rcpp))
     (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/traversc/qs2")
+    (home-page "https://github.com/qsbase/qs2")
     (synopsis "Efficient Serialization of R Objects")
     (description
      "Streamlines and accelerates the process of saving and loading R objects,

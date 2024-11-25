@@ -25310,13 +25310,13 @@ educational purpose as well as for text mining.")
 (define-public r-photosynthesis
   (package
     (name "r-photosynthesis")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photosynthesis" version))
        (sha256
-        (base32 "1bilhqzhwxanlxvn98piysv45bpw7zh7f5w56rvllxgrpmra68pq"))))
+        (base32 "0v57asd65sh1hg462vsbpmlda5daqdyz6wmwbmfcs6b1m1as3sih"))))
     (properties `((upstream-name . "photosynthesis")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

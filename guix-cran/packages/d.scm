@@ -24553,13 +24553,13 @@ your computer.  Routines for both single pixel data downloads and gridded
 (define-public r-dawar
   (package
     (name "r-dawar")
-    (version "0.2.4")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dawaR" version))
        (sha256
-        (base32 "0ki94zi1kk11plk60l8xsmrc756s2ikmhfqkhmvhjblxkiz9lnwx"))))
+        (base32 "1pv1njc56sjl69c8xg3i089phhn57f9yr3bxlbk3cykwpf79csrb"))))
     (properties `((upstream-name . "dawaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyrss
@@ -24567,6 +24567,7 @@ your computer.  Routines for both single pixel data downloads and gridded
                              r-rlang
                              r-memoise
                              r-httr2
+                             r-curl
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://dawar.aleksanderbl.dk/")

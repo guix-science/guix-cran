@@ -14437,13 +14437,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.20")
+    (version "3.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "0rlb1qxfldfnfy7n846x53nfa0s2hiw18qajxbpznw7c1pnskhxc"))))
+        (base32 "1xvkdmx9vywz2p807n98g2cx406iyz9rvfl8rwvqpgnbmzsmn81g"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
