@@ -9,8 +9,8 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages java)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages java)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages check)
   #:use-module (gnu packages maths)
@@ -606,27 +606,6 @@ service of its provision of fastest, quietest and balanced profiles.  These
 represent routes taken to minimise time, avoid traffic and compromise between
 the two, respectively.")
     (license license:gpl3)))
-
-(define-public r-cyclertools
-  (package
-    (name "r-cyclertools")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cycleRtools" version))
-       (sha256
-        (base32 "1l7w2lm4s149ndd85v41pkdrdig6l3nmhl14bdx56aw8q57fxmb0"))))
-    (properties `((upstream-name . "cycleRtools")))
-    (build-system r-build-system)
-    (inputs (list openjdk))
-    (propagated-inputs (list r-xml2 r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jmackie4/cycleRtools")
-    (synopsis "Tools for Cycling Data Analysis")
-    (description
-     "This package provides a suite of functions for analysing cycling data.")
-    (license license:expat)))
 
 (define-public r-cxxfunplus
   (package
@@ -2743,13 +2722,13 @@ robust support for precise and effective process monitoring and analysis.")
 (define-public r-ctv
   (package
     (name "r-ctv")
-    (version "0.9-5")
+    (version "0.9-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctv" version))
        (sha256
-        (base32 "1mr37p7mdv2p8rswz9clwj25ipm16pc4a7flwg3a4bgyj1n5mz55"))))
+        (base32 "0w300vcvn663zpi5whv3512wchwmhjn6aamynmb6fmayf7ahsmf5"))))
     (properties `((upstream-name . "ctv")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3268,13 +3247,13 @@ al. (2017) <@code{arXiv:1706.10029>}).")
 (define-public r-ctmed
   (package
     (name "r-ctmed")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cTMed" version))
        (sha256
-        (base32 "12jnpr240462yig9cdja0rl5smc1rkp50nmrlz5xc68jpg0chzkf"))))
+        (base32 "1zcm9njkl24rxqhq3x3raxj30fln5igx3l8s6mqac1nmixr7pn6l"))))
     (properties `((upstream-name . "cTMed")))
     (build-system r-build-system)
     (propagated-inputs (list r-simstatespace r-rcpparmadillo r-rcpp r-numderiv
@@ -8697,13 +8676,13 @@ plots, and multi-class stacked histograms.")
 (define-public r-cpi
   (package
     (name "r-cpi")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpi" version))
        (sha256
-        (base32 "1gz92jcl8wg2vp8qhnkn37l2xs8wjdbjvnga22v9n943k9zsk2kh"))))
+        (base32 "13qygq8f3nqm9s3xapyqwj4wqh75cjv6ffq92pg6njpki9al1viy"))))
     (properties `((upstream-name . "cpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-mlr3 r-lgr r-knockoff r-foreach))
@@ -22048,13 +22027,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "0sqnc38sx6mrkslwam931gkj648wpv4cs5ryyad4qp7h6dspm2qw"))))
+        (base32 "1cwwznd4si0ch50mplzycc33m5zcic7r0psvggds0wrhc6b4dqnq"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22081,13 +22060,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "017yflwvfnsvkm03m5p31hx1f4wmws14nab1n493ingmhmxaqbfs"))))
+        (base32 "04b3y7ar8wgjhzqs4dx0sdlqs2zfhcyhdpk4m6g09c4vx110vs6s"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -22103,7 +22082,7 @@ Outcomes Partnership Common Data Model.")
                              r-cli
                              r-cdmconnector))
     (native-inputs (list r-knitr))
-    (home-page "https://darwin-eu-dev.github.io/CohortCharacteristics/")
+    (home-page "https://darwin-eu.github.io/CohortCharacteristics/")
     (synopsis
      "Summarise and Visualise Characteristics of Patients in the OMOP CDM")
     (description
@@ -22925,13 +22904,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "0l0vdb3flc0b68ijkr94fzwz0pw64zbdvvykw8lqnwwyl0q8rlr2"))))
+        (base32 "1kd0d0jn6x3837va4ndd6k5ni1ikyhzn2vmnzgf08da8wyb8ni66"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -22944,7 +22923,6 @@ utilities to generate this metadata with a minimum of dependencies.")
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
-                             r-magrittr
                              r-lubridate
                              r-glue
                              r-dplyr
@@ -25460,13 +25438,13 @@ sparse latent variables can also be defined.")
 (define-public r-clustur
   (package
     (name "r-clustur")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustur" version))
        (sha256
-        (base32 "08fpli9z6ihawh0709g36plsvb5a34vwy5c7fdc21nsr92ai3v94"))))
+        (base32 "0pm8jzzd4002j8fkfni23h9506rbwb1scqw4ijd4ivmsxn1nd4sm"))))
     (properties `((upstream-name . "clustur")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rcpp r-matrix))
@@ -27664,6 +27642,31 @@ Fetch clinical trial data from sources like @code{ClinicalTrials.gov}
 downloads.  Also, you can generate HTML reports based on the data obtained from
 the sources!")
     (license license:asl2.0)))
+
+(define-public r-clintrialpredict
+  (package
+    (name "r-clintrialpredict")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClinTrialPredict" version))
+       (sha256
+        (base32 "0ib70qbggng1l7dflllggm1xpg3fglyd308apdc27mmk2pm29rr6"))))
+    (properties `((upstream-name . "ClinTrialPredict")))
+    (build-system r-build-system)
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=ClinTrialPredict")
+    (synopsis
+     "Predicting and Simulating Clinical Trial with Time-to-Event Endpoint")
+    (description
+     "Predict the course of clinical trial with a time-to-event endpoint for both
+two-arm and single-arm design.  Each of the four primary study design parameters
+(the expected number of observed events, the number of subjects enrolled, the
+observation time, and the censoring parameter) can be derived analytically given
+the other three parameters.  And the simulation datasets can be generated based
+on the design settings.")
+    (license license:expat)))
 
 (define-public r-clintools
   (package
@@ -43463,13 +43466,13 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "0d3bdfx4jcnpzbnz6ymgz10s4137van6bcg5s4a3yzf90f02lbns"))))
+        (base32 "0sxyx72iy1mjx6cjgags39543c36df3dxhgi3xd7q40rbhckih5n"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -43499,13 +43502,13 @@ mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "05ls3vgaplfjqs91gpzpwy5nhv7falxr14p1vz1waaqlj1qphyq9"))))
+        (base32 "172wgp87wlpd20600hcyyxdshpq7ak6zf59yjvqryni1wcrc3l1m"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -7531,13 +7531,13 @@ and Wallace (2001) <doi: 10.1287/mnsc.47.2.295.9834>.")
 (define-public r-forestdata
   (package
     (name "r-forestdata")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestdata" version))
        (sha256
-        (base32 "1030v2nc8c251cckrcbksszk52pm7h8iz5j99ix1da6k416wvbmm"))))
+        (base32 "0aw4sm3blby3d01l6r4g8p0r343ydwd0sn9hpgvl1hg8csqz6iq7"))))
     (properties `((upstream-name . "forestdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7971,13 +7971,13 @@ supported to evaluate model accuracy.")
 (define-public r-forecaster
   (package
     (name "r-forecaster")
-    (version "2.0.2")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forecasteR" version))
        (sha256
-        (base32 "0pwgkkzyfzjjp9qrx4xx3b68617a18i3an3gcpprkg4mwpsvcj0x"))))
+        (base32 "1pb1gyzzzshxiv7riccqliq3vhy3hpgi28bylc6917rglc0vxmdx"))))
     (properties `((upstream-name . "forecasteR")))
     (build-system r-build-system)
     (arguments
@@ -8006,7 +8006,6 @@ supported to evaluate model accuracy.")
                              r-shiny
                              r-rlang
                              r-lubridate
-                             r-keras
                              r-htmlwidgets
                              r-htmltools
                              r-golem
@@ -18003,13 +18002,13 @@ validity and visualizing fuzzy clustering results.")
 (define-public r-fcl
   (package
     (name "r-fcl")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fcl" version))
        (sha256
-        (base32 "1ha53zh55blgkw2njrgmd973bp3h2dx79h90lfdgq1czmvvbaf9r"))))
+        (base32 "1lqh4asy8qx2xippp7c7fsdw5y3rk6q4czqf9397f3dkdaydgv18"))))
     (properties `((upstream-name . "fcl")))
     (build-system r-build-system)
     (inputs (list))

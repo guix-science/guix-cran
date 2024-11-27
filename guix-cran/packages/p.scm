@@ -1196,6 +1196,30 @@ purrr'.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-purpleairapi
+  (package
+    (name "r-purpleairapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PurpleAirAPI" version))
+       (sha256
+        (base32 "1ba4ws226813h3wjlrmss4kka0nj3bhg1qrni4r75npf1gmqzbax"))))
+    (properties `((upstream-name . "PurpleAirAPI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/heba-razzak/PurpleAirAPI")
+    (synopsis "Historical Data Retrieval from 'PurpleAir' Sensors via API")
+    (description
+     "This package provides tools for retrieving and analyzing air quality data from
+@code{PurpleAir} sensors through their API. Functions enable downloading
+historical measurements, accessing sensor metadata, and managing API request
+limitations through chunked data retrieval.  For more information about the
+@code{PurpleAir} API, see <https://api.purpleair.com/>.")
+    (license license:expat)))
+
 (define-public r-purpleair
   (package
     (name "r-purpleair")
@@ -11377,16 +11401,16 @@ can be found in Ahn S et al (2023) <doi:10.1186/s12859-022-05123-w>.")
 (define-public r-prais
   (package
     (name "r-prais")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prais" version))
        (sha256
-        (base32 "16h3771lr6vn0g92bfpdq7r3wpdkspbhmrl5948p4isc5qxy2cgx"))))
+        (base32 "0mwg87z2rki1g50464h9q25i28zm0glhyzaar5xvls9xvqx96dvm"))))
     (properties `((upstream-name . "prais")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-pcse r-lmtest))
+    (propagated-inputs (list r-sandwich r-pcse))
     (home-page "https://github.com/franzmohr/prais")
     (synopsis "Prais-Winsten Estimator for AR(1) Serial Correlation")
     (description
@@ -21952,37 +21976,6 @@ quality level.  The specific plan operating curve (OC), is calculated by the
 binomial distribution.")
     (license license:gpl2+)))
 
-(define-public r-planegeometry
-  (package
-    (name "r-planegeometry")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PlaneGeometry" version))
-       (sha256
-        (base32 "0v4484kh8aqni0n6nfd9c1wiw62fj439647xb583pbmxi5ja58hq"))))
-    (properties `((upstream-name . "PlaneGeometry")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-uniformly
-                             r-stringr
-                             r-sdpt3r
-                             r-rcdd
-                             r-r6
-                             r-fitconic
-                             r-cvxr
-                             r-carlson))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/PlaneGeometry")
-    (synopsis "Plane Geometry")
-    (description
-     "An extensive set of plane geometry routines.  Provides R6 classes representing
-triangles, circles, circular arcs, ellipses, elliptical arcs, lines, hyperbolae,
-and their plot methods.  Also provides R6 classes representing transformations:
-rotations, reflections, homotheties, scalings, general affine transformations,
-inversions, MÃ¶bius transformations.")
-    (license license:gpl3)))
-
 (define-public r-plan
   (package
     (name "r-plan")
@@ -27845,6 +27838,27 @@ combines maximization of likelihood and backfitting algorithm.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-pgagev
+  (package
+    (name "r-pgagev")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PGaGEV" version))
+       (sha256
+        (base32 "111vr4wr5whqr4xzw5z3sw977kb98s3jvrry3pbp6p579blzys3b"))))
+    (properties `((upstream-name . "PGaGEV")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lambertw))
+    (home-page "https://cran.r-project.org/package=PGaGEV")
+    (synopsis "Power Garima-Generalized Extreme Value Distribution")
+    (description
+     "Density, distribution function, quantile function, and random generation
+function based on Kittipong Klinjan,Tipat Sottiwan and Sirinapa Aryuyuen
+(2024)<DOI:10.28919/cmbn/8833>.")
+    (license license:gpl3)))
+
 (define-public r-pg
   (package
     (name "r-pg")
@@ -28743,13 +28757,13 @@ with model selection in regression problems.")
 (define-public r-perregmod
   (package
     (name "r-perregmod")
-    (version "4.4.1")
+    (version "4.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PerRegMod" version))
        (sha256
-        (base32 "1ky5c94sk4faarf1fjw449b27lwg98xpdwr0bilb9ah1k1vnklnd"))))
+        (base32 "05cqikcqswhyzggnjcifihipni0jjwg2pl2rmsakpaprxjhkxvl0"))))
     (properties `((upstream-name . "PerRegMod")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn r-readxl r-expm))
@@ -37077,13 +37091,13 @@ unit or in aggregate.  For details, see <doi:10.18637/jss.v107.i07>.")
 (define-public r-panelvar
   (package
     (name "r-panelvar")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "panelvar" version))
        (sha256
-        (base32 "15bks8aqy29rslgbjp4w8xw7w2mcpgcc77bya7a9jcs5715j9xdb"))))
+        (base32 "0yzj8brm7snydk19x1vm0hyckx3n4fdzs3kiwwzimgrmc66yznam"))))
     (properties `((upstream-name . "panelvar")))
     (build-system r-build-system)
     (propagated-inputs (list r-texreg

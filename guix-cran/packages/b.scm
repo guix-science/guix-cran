@@ -4805,16 +4805,16 @@ run in their original form.")
 (define-public r-braqca
   (package
     (name "r-braqca")
-    (version "1.2.1.29")
+    (version "1.4.11.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "braQCA" version))
        (sha256
-        (base32 "0w1mg8lzl64mp5clinq3zai733iz3628zp4pw6vr51z24s56jg6i"))))
+        (base32 "10kz4hrs8c2wxnml8g2lsi950m0fx313j8qlvdiwza8i553h0xsw"))))
     (properties `((upstream-name . "braQCA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-qca r-dplyr r-bootstrap))
+    (propagated-inputs (list r-qca r-bootstrap))
     (home-page "https://cran.r-project.org/package=braQCA")
     (synopsis
      "Bootstrapped Robustness Assessment for Qualitative Comparative Analysis")
@@ -10133,6 +10133,35 @@ nine-tenths of the law,\" The American Naturalist).  Also includes a
 randomization method for assessing sources of model error.")
     (license (list license:gpl2 license:artistic2.0))))
 
+(define-public r-blend
+  (package
+    (name "r-blend")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Blend" version))
+       (sha256
+        (base32 "18dib7pb44z9kacmhsypvzpn3345m9wy042pf5vlli7wms5fz9zz"))))
+    (properties `((upstream-name . "Blend")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
+    (home-page "https://github.com/kunfa/Blend")
+    (synopsis
+     "Bayesian Longitudinal Regularized Semiparametric Quantile Mixed Models")
+    (description
+     "Our recently developed fully Bayesian semiparametric quantile mixed-effect model
+for high-dimensional longitudinal studies with heterogeneous observations can be
+implemented through this package.  This model can distinguish between
+time-varying interactions and constant-effect-only cases to avoid model
+misspecifications.  Facilitated by spike-and-slab priors, this model leads to
+superior performance in estimation, identification and statistical inference.
+In particular, robust Bayesian inferences in terms of valid Bayesian credible
+intervals on both parametric and nonparametric effects can be validated on
+finite samples.  The Markov chain Monte Carlo algorithms of the proposed and
+alternative models are efficiently implemented in C++'.")
+    (license license:gpl2)))
+
 (define-public r-blcop
   (package
     (name "r-blcop")
@@ -10445,13 +10474,13 @@ format and checked for compatibility.  Supports dataframes, tibbles and
 (define-public r-blackmarbler
   (package
     (name "r-blackmarbler")
-    (version "0.2.0")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blackmarbler" version))
        (sha256
-        (base32 "09h2vjbqnb3kfmnmsah9p00w1sff15csaw382lmzy2klxw8k5zgn"))))
+        (base32 "05wg5n7zbg7cpj44f3f7j889gbrcp155cza3csc4x43bflfbqgml"))))
     (properties `((upstream-name . "blackmarbler")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10461,6 +10490,7 @@ format and checked for compatibility.  Supports dataframes, tibbles and
                              r-readr
                              r-purrr
                              r-lubridate
+                             r-httr2
                              r-httr
                              r-hdf5r
                              r-exactextractr
@@ -13580,13 +13610,13 @@ whether a feature is selected more often than by random chance.")
 (define-public r-binomci
   (package
     (name "r-binomci")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binomCI" version))
        (sha256
-        (base32 "078qghb8svz7jfnmdc5j2npg2lvb00j4lal3ghszysarmw21nia1"))))
+        (base32 "0x4ga6935z85ki23lwna1am42mxvck1w0al5b1wpngyf86364lgk"))))
     (properties `((upstream-name . "binomCI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=binomCI")
@@ -14255,13 +14285,13 @@ al. (2009) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180/>,
 (define-public r-bimets
   (package
     (name "r-bimets")
-    (version "4.0.2")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bimets" version))
        (sha256
-        (base32 "155radkxpjqkpdyg52qck8yiffp29nk1bplalwqkvy50lz97wrai"))))
+        (base32 "172nwa96k94j68f477nh1bf33dajma3140fjfbj09zw6p6hl06ay"))))
     (properties `((upstream-name . "bimets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
@@ -14648,13 +14678,13 @@ compact format is also now available.")
 (define-public r-bigsnpr
   (package
     (name "r-bigsnpr")
-    (version "1.12.15")
+    (version "1.12.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigsnpr" version))
        (sha256
-        (base32 "1cs3i68fdbihyl2p2k4dbw6c0r8mq0m66bs42npyhkgazzg1q77j"))))
+        (base32 "0jlf1x7k6pjzdhm765jds3f19c3s00ya6vznxlykds89rfb24b29"))))
     (properties `((upstream-name . "bigsnpr")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -17067,13 +17097,13 @@ used to fit the time series data and detect structural changes (breaks).")
 (define-public r-beyondwhittle
   (package
     (name "r-beyondwhittle")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beyondWhittle" version))
        (sha256
-        (base32 "0lh496w6hsdcdkn51zlnm5vw0wx1a6d60h24zqzmsl1zr4y6667z"))))
+        (base32 "0vhd6vhxcx0chc71cnp9iwxp2x3sh7w0pxzjhxa6hdmxq2f1gpp7"))))
     (properties `((upstream-name . "beyondWhittle")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -17089,8 +17119,8 @@ used to fit the time series data and detect structural changes (breaks).")
 procedures for univariate and multivariate time series.  The package is based on
 the methods presented in C. Kirch et al (2018) <doi:10.1214/18-BA1126>, A. Meier
 (2018) <https://opendata.uni-halle.de//handle/1981185920/13470> and Y. Tang et
-al (2023) <@code{arXiv:2303.11561>}.  It was supported by DFG grants KI 1443/3-1
-and KI 1443/3-2.")
+al (2023) <doi:10.48550/@code{arXiv.2303.11561>}.  It was supported by DFG
+grants KI 1443/3-1 and KI 1443/3-2.")
     (license license:gpl3+)))
 
 (define-public r-beyondbenford
@@ -18466,13 +18496,13 @@ www.belex.rs.")
 (define-public r-bekks
   (package
     (name "r-bekks")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BEKKs" version))
        (sha256
-        (base32 "1ai475d1ya8j8kl4w6qdpdmsarz74p1799fc9hl0if2r3gv211vn"))))
+        (base32 "1gcbpmdbx9mq8nssl3bv4985v68j7p1d4ly21kg4fs2yy8z51m4x"))))
     (properties `((upstream-name . "BEKKs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -18497,7 +18527,8 @@ www.belex.rs.")
      "This package provides methods and tools for estimating, simulating and
 forecasting of so-called BEKK-models (named after Baba, Engle, Kraft and Kroner)
 based on the fast BerndtâHallâHallâHausman (BHHH) algorithm described in
-Hafner and Herwartz (2008) <doi:10.1007/s00184-007-0130-y>.")
+Hafner and Herwartz (2008) <doi:10.1007/s00184-007-0130-y>.  For an overview, we
+refer the reader to FÃ¼lle et al. (2024) <doi:10.18637/jss.v111.i04>.")
     (license license:expat)))
 
 (define-public r-behavr

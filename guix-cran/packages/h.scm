@@ -14,8 +14,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages bash)
-  #:use-module (gnu packages cmake)
   #:use-module (gnu packages java)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
@@ -4692,13 +4690,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hockeystick" version))
        (sha256
-        (base32 "0l5sk4x66zalmznksf9c099jn9i2i90bs57h2f44z105hzpdi606"))))
+        (base32 "1kfv5f2zzw9dr549carnjwa59xz69iy2dbldllqg99lpqhigs4z0"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemapify
@@ -6808,28 +6806,6 @@ December 2010, it became an ISO(International Organization for Standardization)
 standard.  The detailed procedure is described in Hong et al. (2006)
 <doi:10.1007/11894063_4>.")
     (license license:gpl3)))
-
-(define-public r-highs
-  (package
-    (name "r-highs")
-    (version "0.1-10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "highs" version))
-       (sha256
-        (base32 "1vjmzbfydlm434fa1mkwwfcdhmn6sq4ppib26nxfa9zakr7h7q2c"))))
-    (properties `((upstream-name . "highs")))
-    (build-system r-build-system)
-    (inputs (list cmake bash))
-    (propagated-inputs (list r-rcpp r-checkmate))
-    (native-inputs (list gfortran))
-    (home-page "https://gitlab.com/roigrp/solver/highs")
-    (synopsis "'HiGHS' Optimization Solver")
-    (description
-     "R interface to @code{HiGHS}', an optimization solver for solving mixed integer
-optimization problems with quadratic or linear objective and linear constraints.")
-    (license license:gpl2+)))
 
 (define-public r-highriskzone
   (package
@@ -9918,13 +9894,13 @@ ISBN:9780078025792).")
 (define-public r-healthequal
   (package
     (name "r-healthequal")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthequal" version))
        (sha256
-        (base32 "1n96x414pa3khgbvxczavddg2fzfjc3awrpnzd460x12lhw8lfgn"))))
+        (base32 "06vjiw526nvzb392pfsi9qs59yw5bsk5m5y2p88zyi2lny02k2fk"))))
     (properties `((upstream-name . "healthequal")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -13107,16 +13083,17 @@ shiny app for handwriter'.")
 (define-public r-handwriter
   (package
     (name "r-handwriter")
-    (version "3.2.1")
+    (version "3.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriter" version))
        (sha256
-        (base32 "09xmaraqlsv7469wm9sw8g48pxl3p2iv2d4d6hp833g3gs4zjxj4"))))
+        (base32 "1b17w22sc71h9gn20lvfwzh0i4jb58rg5vlzcjj82c2phz05cpxa"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-stringr
                              r-rjags
                              r-rfast

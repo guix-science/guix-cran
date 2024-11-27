@@ -3165,6 +3165,41 @@ for the course Multivariate analysis and for the course Computer intensive
 methods at the masters program of Applied Statistics at University of Ljubljana.")
     (license license:gpl2+)))
 
+(define-public r-multitraits
+  (package
+    (name "r-multitraits")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultiTraits" version))
+       (sha256
+        (base32 "0yi2xc23zxfj0vphw9dp5p2zy286765pgy5lcsf976isz2lczcmc"))))
+    (properties `((upstream-name . "MultiTraits")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-scatterplot3d
+                             r-igraph
+                             r-hmisc
+                             r-ggtern
+                             r-ggrepel
+                             r-ggplot2
+                             r-corrplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MultiTraits")
+    (synopsis "Analyzing and Visualizing Multidimensional Plant Traits")
+    (description
+     "This package implements analytical methods for multidimensional plant traits,
+including Competitors-Stress tolerators-Ruderals strategy analysis using leaf
+traits, Leaf-Height-Seed strategy analysis, Niche Periodicity Table analysis,
+and Trait Network analysis.  Provides functions for data analysis,
+visualization, and network metrics calculation.  Methods are based on Grime
+(1974) <doi:10.1038/250026a0>, Pierce et al. (2017)
+<doi:10.1111/1365-2435.12882>, Westoby (1998) <doi:10.1023/A:1004327224729>,
+Yang et al. (2022) <doi:10.1016/j.foreco.2022.120540>, Winemiller et al. (2015)
+<doi:10.1111/ele.12462>, He et al. (2020) <doi:10.1016/j.tree.2020.06.003>.")
+    (license license:gpl3)))
+
 (define-public r-multitool
   (package
     (name "r-multitool")
@@ -18514,13 +18549,13 @@ benchmark experiments, for mlr3 and beyond.")
 (define-public r-mlr3batchmark
   (package
     (name "r-mlr3batchmark")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3batchmark" version))
        (sha256
-        (base32 "1qirzjmb17y1rzq69x1lpl56qk5w63zjq30if97vfab3spsd2ilf"))))
+        (base32 "00y3hkr81s13qjz42q48fjfnj4hv6klklm0766sj9ay1bn2v5blj"))))
     (properties `((upstream-name . "mlr3batchmark")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -19336,13 +19371,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.17.2")
+    (version "2.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "14cv4r6qsjdivj9nbj45gaqy879d09kbr9rz811641cngrvsnh86"))))
+        (base32 "1rkf5xhscxkw3191xj3jh89nmbdm3mgkbn4aan8lv4sxx3adkryb"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -30784,36 +30819,6 @@ analysis.  The resulting format corresponds to input data of the Shiny app
 (<https://www.metaboextract.shiny.dkfz.de/@code{MetaboExtract/>}).")
     (license license:gpl3)))
 
-(define-public r-metalonda
-  (package
-    (name "r-metalonda")
-    (version "1.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MetaLonDA" version))
-       (sha256
-        (base32 "0nalkmsii2anw07r16zcpgafb01l87hgpfr1mwc7nggvhdfp3w2g"))))
-    (properties `((upstream-name . "MetaLonDA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-pracma
-                             r-plyr
-                             r-metagenomeseq
-                             r-gss
-                             r-ggplot2
-                             r-edger
-                             r-doparallel
-                             r-deseq2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/aametwally/MetaLonDA")
-    (synopsis "Metagenomics Longitudinal Differential Abundance Method")
-    (description
-     "Identify time intervals of differentially abundant metagenomic features in
-longitudinal studies (Metwally AA, et al., Microbiome, 2018
-<doi:10.1186/s40168-018-0402-y>).")
-    (license license:expat)))
-
 (define-public r-metalite-table1
   (package
     (name "r-metalite-table1")
@@ -38607,6 +38612,40 @@ to explicitly acknowledge the potential absence of a value, helping to avoid the
 existence of unexpected behaviour.")
     (license license:expat)))
 
+(define-public r-maxwik
+  (package
+    (name "r-maxwik")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MaxWiK" version))
+       (sha256
+        (base32 "04yaxc23m60jj1z24zkpw84g8fl7ayvbmfqqbhxa1q5am1fr3cfa"))))
+    (properties `((upstream-name . "MaxWiK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-ggplot2 r-abc))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MaxWiK")
+    (synopsis
+     "Machine Learning Method Based on Isolation Kernel Mean Embedding")
+    (description
+     "Incorporates Approximate Bayesian Computation to get a posterior distribution
+and to select a model optimal parameter for an observation point.  Additionally,
+the meta-sampling heuristic algorithm is realized for parameter estimation,
+which requires no model runs and is dimension-independent.  A sampling scheme is
+also presented that allows model runs and uses the meta-sampling for point
+generation.  A predictor is realized as the meta-sampling for the model output.
+All the algorithms leverage a machine learning method utilizing the maxima
+weighted Isolation Kernel approach, or @code{MaxWiK}'.  The method involves
+transforming raw data to a Hilbert space (mapping) and measuring the similarity
+between simulated points and the maxima weighted Isolation Kernel mapping
+corresponding to the observation point.  Comprehensive details of the
+methodology can be found in the papers Iurii Nagornov (2024)
+<doi:10.1007/978-3-031-66431-1_16> and Iurii Nagornov (2023)
+<doi:10.1007/978-3-031-29168-5_18>.")
+    (license license:gpl3+)))
+
 (define-public r-maxstablepca
   (package
     (name "r-maxstablepca")
@@ -41559,13 +41598,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.23.0")
+    (version "0.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "0q6zqasb99rlp4nnmbbnlpipl2xwqnpzlz3a85x6jvws050pj4ll"))))
+        (base32 "047whcdmky8kq75f6696441ih17kn26mgrzdkjp3zam5scqaqr7p"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -41583,7 +41622,8 @@ a conditional risk model.")
 (contrasts, risk ratios, odds, etc.) for over 100 classes of statistical and
 machine learning models in R. Conduct linear and non-linear hypothesis tests, or
 equivalence tests.  Calculate uncertainty estimates using the delta method,
-bootstrapping, or simulation-based inference.")
+bootstrapping, or simulation-based inference.  Details can be found in
+Arel-Bundock, Greifer, and Heiss (2024) <doi:10.18637/jss.v111.i09>.")
     (license license:gpl3+)))
 
 (define-public r-margcond

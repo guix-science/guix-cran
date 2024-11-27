@@ -555,16 +555,16 @@ compute Asymmetry Index (AI) and bilateral (L+R) measures and reshape the data."
 (define-public r-ymd
   (package
     (name "r-ymd")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ymd" version))
        (sha256
-        (base32 "08x5zcmz23wqy36zarfaqa6p4mfrvb1i455ba2kn6bv1sqdfnfpy"))))
+        (base32 "0xw8qf9dzih6jwrld45dhy47pmvsphk9fwkccygmm153x724aama"))))
     (properties `((upstream-name . "ymd")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list xz))
     (home-page "https://shrektan.github.io/ymd/")
     (synopsis "Parse 'YMD' Format Number or String to Date")
     (description
@@ -893,13 +893,13 @@ packages taxlist and vegtable'.")
 (define-public r-yamlet
   (package
     (name "r-yamlet")
-    (version "1.1.5")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yamlet" version))
        (sha256
-        (base32 "1b7ljgxa0s31b12hawhmazpy1b9hmmzfqpxal2y70xjzm5vi2pkh"))))
+        (base32 "0ia9z8410raa54fm2jzh95zr8szbwicp7jg80pj818mbg1xi8lhn"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

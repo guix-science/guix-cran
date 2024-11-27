@@ -5666,13 +5666,13 @@ Keyser & Gijbels (2024) <doi:10.1016/j.jmva.2024.105336>, De Keyser & Gijbels
 (define-public r-vecctmvn
   (package
     (name "r-vecctmvn")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VeccTMVN" version))
        (sha256
-        (base32 "0dicks108vxg40q9l8c63nb2ckahr2l1vvr3ik9gg7m0094m1fha"))))
+        (base32 "0ylpzdbq5c3cpmyciss9y60b5pg6fg7svv54ilb9ml589320zmax"))))
     (properties `((upstream-name . "VeccTMVN")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

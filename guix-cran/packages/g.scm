@@ -13546,35 +13546,32 @@ generated.")
 (define-public r-gllvm
   (package
     (name "r-gllvm")
-    (version "1.4.3")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gllvm" version))
        (sha256
-        (base32 "1k3yw1flqzj151kqx8wyh54a7crh62ya700x5n4989ngx5071dv3"))))
+        (base32 "00pyfylc75aaidk0qq8avls2dzghym7yvkx4xmjna16k9cz5vfl3"))))
     (properties `((upstream-name . "gllvm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
                              r-statmod
                              r-rcppeigen
                              r-nloptr
-                             r-mvabund
                              r-mgcv
                              r-matrix
                              r-mass
                              r-fishmod
                              r-alabama))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/JenniNiku/gllvm")
+    (home-page "https://jenniniku.github.io/gllvm/")
     (synopsis "Generalized Linear Latent Variable Models")
     (description
      "Analysis of multivariate data using generalized linear latent variable models
-(gllvm).  Estimation is performed using either Laplace approximation method or
-variational approximation method implemented via TMB (Kristensen et al., (2016),
-<doi:10.18637/jss.v070.i05>).  For details see Niku et al. (2019a)
-<doi:10.1371/journal.pone.0216129> and Niku et al. (2019b)
-<doi:10.1111/2041-210X.13303>.")
+(gllvm).  Estimation is performed using either the Laplace method, variational
+approximations, or extended variational approximations, implemented via TMB
+(Kristensen et al. (2016), <doi:10.18637/jss.v070.i05>).")
     (license license:gpl2)))
 
 (define-public r-gllm
@@ -14900,18 +14897,18 @@ and Zhang, J., (2018) <@code{arXiv:1809.09793>}.")
 (define-public r-ginidecomply
   (package
     (name "r-ginidecomply")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GiniDecompLY" version))
        (sha256
-        (base32 "0fvsj9z8hhaayi6k9rmcym9vda6vc0hfn59fmvk3qjj8ga8bsxaq"))))
+        (base32 "03nhqx5z5m918dw277hx390w66mrfb33kmijd7724blfgikgpfpa"))))
     (properties `((upstream-name . "GiniDecompLY")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GiniDecompLY")
+    (home-page "https://github.com/aambarek/GiniDecompLY")
     (synopsis "Gini Decomposition by Income Sources")
     (description
      "Estimation of the effect of each income source on income inequalities based on
@@ -24886,13 +24883,13 @@ distributions.")
 (define-public r-genopop
   (package
     (name "r-genopop")
-    (version "0.9.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenoPop" version))
        (sha256
-        (base32 "1vcd17x7bj0br31s8khiv6np2xmr5c1382lmlbyydfhj7407qzw4"))))
+        (base32 "1fn1ai67xwxrriiildqbd6hr63qxg1ykma1q50c07i1k8bbyzpbq"))))
     (properties `((upstream-name . "GenoPop")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsamtools
@@ -30967,13 +30964,13 @@ fitness of strategies in each generation.")
 (define-public r-gamer
   (package
     (name "r-gamer")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gameR" version))
        (sha256
-        (base32 "05bn53ryl48s2r212wqaxljimkgskyd4qxzc7algzbyvmalcg6rx"))))
+        (base32 "1p005k6l2zkfqrkjis99shrxazaidb4d74x4z3h984qp3ag0w8p8"))))
     (properties `((upstream-name . "gameR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

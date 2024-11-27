@@ -3807,24 +3807,6 @@ is licensed under the GNU GPL version 2 or later.  See file LICENSE.note for
 details.")
     (license license:gpl2+)))
 
-(define-public r-rtk
-  (package
-    (name "r-rtk")
-    (version "0.2.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rtk" version))
-       (sha256
-        (base32 "1xafmp5y5p8fnsh16wj8n08x69v2hawnsvsy7g4dcz1i5xkhyc0m"))))
-    (properties `((upstream-name . "rtk")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=rtk")
-    (synopsis "Rarefaction Tool Kit")
-    (description "Rarefy data, calculate diversity and plot the results.")
-    (license license:gpl2+)))
-
 (define-public r-rtist
   (package
     (name "r-rtist")
@@ -18783,6 +18765,34 @@ density estimators by W. Gao, et al. (2017) <doi:10.1109/ISIT.2017.8006749>.")
      "Feasible multivariate GARCH models including DCC, GO-GARCH and Copula-GARCH.")
     (license license:gpl3)))
 
+(define-public r-rmfm
+  (package
+    (name "r-rmfm")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RMFM" version))
+       (sha256
+        (base32 "0jibvgr0f9vkvxn1hc32j5i9pd281qw2xkf7fgcg8hy3w89f37v6"))))
+    (properties `((upstream-name . "RMFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mixmatrix
+                             r-laplacesdemon
+                             r-irlba
+                             r-coap))
+    (home-page "https://cran.r-project.org/package=RMFM")
+    (synopsis "Robust Matrix Factor Model")
+    (description
+     "We introduce a robust matrix factor model that explicitly incorporates tail
+behavior and employs a mean-shift term to avoid efficiency losses through
+pre-centering of observed matrices.  More details on the methods related to our
+paper are currently under submission.  A full reference to the paper will be
+provided in future versions once the paper is published.")
+    (license license:gpl3)))
+
 (define-public r-rmfanova
   (package
     (name "r-rmfanova")
@@ -25600,37 +25610,6 @@ inference.  The method is fully described in the paper \"Scalable Geometric
 Density Estimation\" by Y. Wang, A. Canale, D. Dunson (2016)
 <http://proceedings.mlr.press/v51/wang16e.pdf>.")
     (license license:gpl2+)))
-
-(define-public r-rgeoboundaries
-  (package
-    (name "r-rgeoboundaries")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rgeoboundaries" version))
-       (sha256
-        (base32 "1hw96fq781zfyy0gq0flpizd6aq0av2hpvrcsvyh43n3vjfhy2n3"))))
-    (properties `((upstream-name . "rgeoboundaries")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-memoise
-                             r-lifecycle
-                             r-jsonlite
-                             r-hoardr
-                             r-glue
-                             r-crul
-                             r-countrycode))
-    (home-page "https://github.com/wmgeolab/rgeoboundaries")
-    (synopsis "geoBoundaries Client")
-    (description
-     "This package provides access to the @code{geoBoundaries} international boundary
-database <https://www.geoboundaries.org>, a NSF and foundation supported dataset
-of subnational boundaries around the globe.  Methods allow you to access data
-directly from the API <https://www.geoboundaries.org/api/current/> to query for
-the geometric boundaries for any country, globally.  For more details, refer to
-the publication by Runfola et al. (2020) <doi:10.1371/journal.pone.0231866>.")
-    (license license:expat)))
 
 (define-public r-rgenoud
   (package
@@ -38630,13 +38609,13 @@ into a markdown version of the package reference manual.")
 (define-public r-rczechia
   (package
     (name "r-rczechia")
-    (version "1.12.2")
+    (version "1.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCzechia" version))
        (sha256
-        (base32 "0qkg307cik7bvhgi8rm8h27pv1247559ndk39r4mjf6wql7bylwb"))))
+        (base32 "160d4f8paqysm184vxqfz8zyy8jdfmxin1bmgd1v8130na0ynm7b"))))
     (properties `((upstream-name . "RCzechia")))
     (build-system r-build-system)
     (inputs (list proj geos gdal))
@@ -50434,13 +50413,13 @@ non-nested model.")
 (define-public r-r2resize
   (package
     (name "r-r2resize")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2resize" version))
        (sha256
-        (base32 "1s5mkgrq66kbwh8vm2dnbhn801b44ym3vr98nvv9bn81cbn4ifaf"))))
+        (base32 "0fckxlr3wmlz8pq52sq342c50jripc1fcb8059fa1h63nmvlx17r"))))
     (properties `((upstream-name . "r2resize")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-quickcode r-htmltools r-dt))

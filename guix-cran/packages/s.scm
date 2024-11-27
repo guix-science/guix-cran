@@ -3285,6 +3285,30 @@ be fit to large data sets (thousands of samples and hundreds of thousands of
 variables).")
     (license license:bsd-3)))
 
+(define-public r-susenas
+  (package
+    (name "r-susenas")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SUSENAS" version))
+       (sha256
+        (base32 "181d8gq8m45rw7xfpb7ic87y4ank4z8nrk0743k4jc896b3fnrrj"))))
+    (properties `((upstream-name . "SUSENAS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl))
+    (home-page "https://cran.r-project.org/package=SUSENAS")
+    (synopsis "National Socio-Economic Survey Data Collection Indonesia")
+    (description
+     "Survey to collect data about the social and economic conditions of Indonesian
+society.  This activity aims to include: As a data source for planning and
+evaluating national, sectoral development programs, and providing indicators for
+Sustainable Development Goals (TPB), National Medium Term Development Plan
+(RPJMN), and Nawacita, GDP/GRDP and annual Integrated Institutional Balance
+Sheet.")
+    (license license:gpl3)))
+
 (define-public r-survtrunc
   (package
     (name "r-survtrunc")
@@ -4669,16 +4693,17 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "0xfv7jc39kjgmjgca62ds436hsc4qwiwr82wps5sbbiz97yid27b"))))
+        (base32 "1mfvyq7hdq1jin6yh8g28rgdvph4zhna24kl4g99aznnmyrwx5n3"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-yaml
+                             r-xml2
                              r-usethis
                              r-shinywidgets
                              r-shinyjs
@@ -4690,6 +4715,7 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
                              r-pool
                              r-markdown
                              r-htmltools
+                             r-fs
                              r-dt
                              r-dbi))
     (native-inputs (list r-knitr))
@@ -4706,7 +4732,9 @@ conditional skip logic (skip to a page based on an answer to a question),
 conditional display logic (display a question based on an answer to a question),
 a customizable progress bar, and a wide variety of question types, including
 multiple choice (single choice and multiple choices), select, text, numeric,
-multiple choice buttons, text area, and dates.")
+multiple choice buttons, text area, and dates.  Because the surveys render into
+a shiny app, designers can also leverage the reactive capabilities of shiny to
+create dynamic and interactive surveys.")
     (license license:expat)))
 
 (define-public r-surveydefense
@@ -7971,13 +7999,13 @@ genetic algorithms, brute force, or random sampling.  Schultze (2017)
 (define-public r-sts
   (package
     (name "r-sts")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sts" version))
        (sha256
-        (base32 "06zdpp1nisps3sq4d553wn6qa3cx4hkmlj2aq9mcx7dl9j2njb2c"))))
+        (base32 "1sz2g4zclyq6s29zydv5pifq6pxmnkr19v654w3gpnzl8ngna0aw"))))
     (properties `((upstream-name . "sts")))
     (build-system r-build-system)
     (propagated-inputs (list r-stm
@@ -23602,13 +23630,13 @@ increase before an ecosystem undergoes a non-linear transition (Genin et al.
 (define-public r-spatialvx
   (package
     (name "r-spatialvx")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialVx" version))
        (sha256
-        (base32 "108mpxpk03gmak69fkd7snhls11hh31fwmva9kqh71rh5g3a47fw"))))
+        (base32 "1q16mslk52vn2j02ksivcjwfg7hzhsrgxzxknxbj1i037i9pyz4n"))))
     (properties `((upstream-name . "SpatialVx")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim
@@ -23625,7 +23653,7 @@ increase before an ecosystem undergoes a non-linear transition (Genin et al.
                              r-distillery
                              r-circstats
                              r-boot))
-    (home-page "https://projects.ral.ucar.edu/icp/SpatialVx/")
+    (home-page "https://cran.r-project.org/package=SpatialVx")
     (synopsis "Spatial Forecast Verification")
     (description
      "Spatial forecast verification refers to verifying weather forecasts when the
@@ -28926,46 +28954,6 @@ glass, mica, and platinum\".  Khasawneh FE (1971).
 growth\".")
     (license license:gpl3+)))
 
-(define-public r-soilassessment
-  (package
-    (name "r-soilassessment")
-    (version "0.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "soilassessment" version))
-       (sha256
-        (base32 "0cgyji88q3r6b57q32nk8xgxb4q29678h8zgh9ywxhr3mr40i0qv"))))
-    (properties `((upstream-name . "soilassessment")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-sp
-                             r-soiltexture
-                             r-sf
-                             r-raster
-                             r-randomforest
-                             r-png
-                             r-nnet
-                             r-hmisc
-                             r-googledrive
-                             r-fuzzyahp
-                             r-e1071
-                             r-desolve
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=soilassessment")
-    (synopsis
-     "Assessment Models for Agriculture Soil Conditions and Crop Suitability")
-    (description
-     "Soil assessment builds information for improved decision in soil management.  It
-analyzes soil conditions with regard to agriculture crop suitability
-requirements [such as those given by FAO
-<https://www.fao.org/land-water/databases-and-software/crop-information/en/>]
-soil fertility classes, soil erosion, and soil salinity classification
-[<doi:10.1002/ldr.4211>].  Suitability requirements are for crops grouped into
-cereal crops, nuts, legumes, fruits, vegetables, industrial crops, and root
-crops.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-soil
   (package
     (name "r-soil")
@@ -31334,6 +31322,39 @@ on a set of polynomial contrasts.  Two variants of the present approach have
 been developed, one in each of the next references: Azzalini (2023)
 <doi:10.1002/sta4.624>, (2024) <doi:10.48550/@code{arXiv.2406.15933>}.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-smnlmec
+  (package
+    (name "r-smnlmec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SMNlmec" version))
+       (sha256
+        (base32 "0z1a9l5yzxmap9g5lv610wan0d88cifaxd7ab8dra41gbyhf58pn"))))
+    (properties `((upstream-name . "SMNlmec")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncatednormal
+                             r-tmvtnorm
+                             r-stanheaders
+                             r-rstan
+                             r-numderiv
+                             r-mvtnorm
+                             r-mnormt
+                             r-mass
+                             r-laplacesdemon))
+    (home-page "https://github.com/KelinZhong/SMNlmec")
+    (synopsis
+     "Scale Mixture of Normal Distribution in Linear Mixed-Effects Model")
+    (description
+     "Bayesian analysis of censored linear mixed-effects models that replace Gaussian
+assumptions with a flexible class of distributions, such as the scale mixture of
+normal family distributions, considering a damped exponential correlation
+structure which was employed to account for within-subject autocorrelation among
+irregularly observed measures.  For more details, see Zhong et al. (2025,
+forthcoming in Statistics in Medicine).")
+    (license license:gpl3)))
 
 (define-public r-smncensreg
   (package
@@ -36721,13 +36742,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "072dyrzxpmp6i565162bpriviy47d59f3ssvkhpdpvs1d0g11j2a"))))
+        (base32 "0p8sy58c8b1v2xm8m661mdkg1zhxilaiwnxl4y9wijbq90vbpnw6"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -48078,33 +48099,32 @@ automate your keywords research or competitors analysis with this API wrapper.")
 (define-public r-serp
   (package
     (name "r-serp")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serp" version))
        (sha256
-        (base32 "0hd25rxknj636ssy2289xjvq5fflp2p561yb9w0siqihfc7cfjpc"))))
+        (base32 "0sm61v1jks41g4fl2scc78z89bbhpl48z1ncsp3smklwfcapxwpw"))))
     (properties `((upstream-name . "serp")))
     (build-system r-build-system)
     (propagated-inputs (list r-ordinal r-crayon))
     (home-page "https://github.com/ejikeugba/serp")
     (synopsis "Smooth Effects on Response Penalty for CLM")
     (description
-     "This package provides a regularization method for the cumulative link models.
-The smooth-effect-on-response penalty (SERP) provides flexible modelling of the
-ordinal model by enabling the smooth transition from the general cumulative link
-model to a coarser form of the same model.  In other words, as the tuning
-parameter goes from zero to infinity, the subject-specific effects associated
-with each variable in the model tend to a unique global effect.  The parameter
-estimates of the general cumulative model are mostly unidentifiable or at least
-only identifiable within a range of the entire parameter space.  Thus, by
-maximizing a penalized rather than the usual non-penalized log-likelihood, this
-and other numerical problems common with the general model are to a large extent
-eliminated.  Fitting is via a modified Newton's method.  Several standard model
-performance and descriptive methods are also available.  For more details on the
-penalty implemented here, see, Ugba (2021) <doi:10.21105/joss.03705> and Ugba et
-al. (2021) <doi:10.3390/stats4030037>.")
+     "This package implements a regularization method for cumulative link models using
+the Smooth-Effect-on-Response Penalty (SERP).  This method allows flexible
+modeling of ordinal data by enabling a smooth transition from a general
+cumulative link model to a simplified version of the same model.  As the tuning
+parameter increases from zero to infinity, the subject-specific effects for each
+variable converge to a single global effect.  The approach addresses common
+issues in cumulative link models, such as parameter unidentifiability and
+numerical instability, by maximizing a penalized log-likelihood instead of the
+standard non-penalized version.  Fitting is performed using a modified Newton's
+method.  Additionally, the package includes various model performance metrics
+and descriptive tools.  For details on the implemented penalty method, see Ugba
+(2021) <doi:10.21105/joss.03705> and Ugba et al. (2021)
+<doi:10.3390/stats4030037>.")
     (license license:gpl2)))
 
 (define-public r-serosv
@@ -48150,46 +48170,6 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
 & Faes, Christel & Damme, Pierre & Beutels, Philippe., 2013)
 <doi:10.1007/978-1-4614-4072-7>.")
     (license license:expat)))
-
-(define-public r-serocalculator
-  (package
-    (name "r-serocalculator")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "serocalculator" version))
-       (sha256
-        (base32 "1cxwii35gp9dybjp2989wbmsrv9f3s1qxrrsl4s57lj3q1by2kpk"))))
-    (properties `((upstream-name . "serocalculator")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-scales
-                             r-rngtools
-                             r-rlang
-                             r-rcpp
-                             r-mixtools
-                             r-magrittr
-                             r-lifecycle
-                             r-ggpubr
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-cli))
-    (home-page "https://github.com/UCD-SERG/serocalculator")
-    (synopsis "Estimating Infection Rates from Serological Data")
-    (description
-     "Translates antibody levels measured in cross-sectional population samples into
-estimates of the frequency with which seroconversions (infections) occur in the
-sampled populations.  Replaces the previous seroincidence package.  Methods
-originally published in Simonsen et al. (2009) <doi:10.1002/sim.3592> and Teunis
-et al. (2012) <doi:10.1002/sim.5322>, and further developed in subsequent
-publications by de Graaf et al. (2014) <doi:10.1016/j.epidem.2014.08.002>,
-Teunis et al. (2016) <doi:10.1016/j.epidem.2016.04.001>, and Teunis et al.
-(2020) <doi:10.1002/sim.8578>.")
-    (license license:gpl3)))
 
 (define-public r-serieslcb
   (package
@@ -53740,13 +53720,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "1snczmwyajdqi3j0zi3livw7z71sf4bcvilsrdl69crpvpz8i6hk"))))
+        (base32 "1frncyb68w3c8dv4wpcxvdaknszafg2x112gj7h2b785m5fqxjjy"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -53794,33 +53774,6 @@ method proposed by Park et al. (2009) <doi:10.1198/jcgs.2009.08076> for
 estimating the TS-CMS. The package provides tools for estimating distances
 between subspaces and includes functions for selecting model parameters using
 the Fourier transformation method.")
-    (license (list license:gpl2 license:gpl3))))
-
-(define-public r-sdpt3r
-  (package
-    (name "r-sdpt3r")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sdpt3r" version))
-       (sha256
-        (base32 "02qv889mkzcilxzszzqcqgn9z5zmki0093mdriradbl1y8a27bp5"))))
-    (properties `((upstream-name . "sdpt3r")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (home-page "https://cran.r-project.org/package=sdpt3r")
-    (synopsis "Semi-Definite Quadratic Linear Programming Solver")
-    (description
-     "Solves the general Semi-Definite Linear Programming formulation using an R
-implementation of SDPT3 (K.C. Toh, M.J. Todd, and R.H. Tutuncu (1999)
-<doi:10.1080/10556789908805762>).  This includes problems such as the nearest
-correlation matrix problem (Higham (2002) <doi:10.1093/imanum/22.3.329>),
-D-optimal experimental design (Smith (1918) <doi:10.2307/2331929>), Distance
-Weighted Discrimination (Marron and Todd (2012)
-<doi:10.1198/016214507000001120>), as well as graph theory problems including
-the maximum cut problem.  Technical details surrounding SDPT3 can be found in
-R.H Tutuncu, K.C. Toh, and M.J. Todd (2003) <doi:10.1007/s10107-002-0347-5>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-sdprism2d
@@ -58374,6 +58327,37 @@ one-dimensional clustering technique called 1D distribution cluster algorithm
      "This package creates D3 @code{JavaScript} scatterplots from R with interactive
 features : panning, zooming, tooltips, etc.")
     (license license:gpl3+)))
+
+(define-public r-scatterbar
+  (package
+    (name "r-scatterbar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scatterbar" version))
+       (sha256
+        (base32 "1ir5mva0hwq6v9zbh1n9jdna4b4v2dc8bq52g9i9ydkcw5zlrpzw"))))
+    (properties `((upstream-name . "scatterbar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-magrittr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JEFworks-Lab/scatterbar")
+    (synopsis "Scattered Stacked Bar Chart Plots")
+    (description
+     "This package provides a powerful and flexible tool for visualizing proportional
+data across spatially resolved contexts.  By combining the concepts of scatter
+plots and stacked bar charts, scatterbar allows users to create scattered bar
+chart plots, which effectively display the proportions of different categories
+at each (x, y) location.  This visualization is particularly useful for
+applications where understanding the distribution of categories across spatial
+coordinates is essential.  This package features automatic determination of
+optimal scaling factors based on data, customizable scaling and padding options
+for both x and y axes, flexibility to specify custom colors for each category,
+options to customize the legend title, and integration with ggplot2 for robust
+and high-quality visualizations.  For more details, see Velazquez et al. (2024)
+<doi:10.1101/2024.08.14.606810>.")
+    (license license:gpl3)))
 
 (define-public r-scatr
   (package
@@ -62960,13 +62944,13 @@ ISBN:978-1-118-73578-7) and Anisa et al. (2013) <doi:10.9790/5728-10121519>.")
 (define-public r-saemspe
   (package
     (name "r-saemspe")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeMSPE" version))
        (sha256
-        (base32 "0jzgqlwjpbjiv3h9f6vggsbxaa5zn9qqvfwdhk5sirq5ajdzazgr"))))
+        (base32 "1k3b400jhhsd2k4ryzjac43nxlxk9jpn28mm39h61cgd8pvr3rs7"))))
     (properties `((upstream-name . "saeMSPE")))
     (build-system r-build-system)
     (propagated-inputs (list r-smallarea r-rcpparmadillo r-rcpp r-matrix))

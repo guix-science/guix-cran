@@ -3770,16 +3770,21 @@ with user-provided data.")
 (define-public r-irace
   (package
     (name "r-irace")
-    (version "3.5")
+    (version "4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irace" version))
        (sha256
-        (base32 "1x0b0qr1ccq3s4d6k3z6dz94z4caxsmaywwdalw4isd7lm28d4nr"))))
+        (base32 "1c5gdmfgr2b4d3pv3cqk724ckm499bx1xadzqwr7nwcgkwz6njr6"))))
     (properties `((upstream-name . "irace")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6))
+    (propagated-inputs (list r-withr
+                             r-spacefillr
+                             r-r6
+                             r-matrixstats
+                             r-fs
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://mlopez-ibanez.github.io/irace/")
     (synopsis "Iterated Racing for Automatic Algorithm Configuration")
@@ -8356,13 +8361,13 @@ vectors, matrices, and lists.")
 (define-public r-innsight
   (package
     (name "r-innsight")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "innsight" version))
        (sha256
-        (base32 "17di0a7jff4rg944h247kjbd76vai2hsg9gif1q871c7lq04fw4s"))))
+        (base32 "1624wn4z1s8ai6dbc4kabxwhzgx7x7vdvjjvqf2bsyy01650kbqa"))))
     (properties `((upstream-name . "innsight")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch r-r6 r-ggplot2 r-cli r-checkmate))
@@ -8377,10 +8382,11 @@ are, e.g., Connection Weights described by Olden et al. (2004)
 <doi:10.1016/j.ecolmodel.2004.03.013>, layer-wise relevance propagation ('LRP')
 described by Bach et al. (2015) <doi:10.1371/journal.pone.0130140>, deep
 learning important features ('@code{DeepLIFT}') described by Shrikumar et al.
-(2017) <@code{arXiv:1704.02685>} and gradient-based methods like
-@code{SmoothGrad} described by Smilkov et al. (2017) <@code{arXiv:1706.03825>},
-Gradient x Input described by Baehrens et al. (2009) <@code{arXiv:0912.1128>} or
-Vanilla Gradient'.")
+(2017) <doi:10.48550/@code{arXiv.1704.02685>} and gradient-based methods like
+@code{SmoothGrad} described by Smilkov et al. (2017)
+<doi:10.48550/@code{arXiv.1706.03825>}, Gradient x Input or Vanilla Gradient'.
+Details can be found in the accompanying scientific paper: Koenen & Wright
+(2024, Journal of Statistical Software, <doi:10.18637/jss.v111.i08>).")
     (license license:expat)))
 
 (define-public r-inlpubs
@@ -12994,13 +13000,13 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
 (define-public r-ilsamerge
   (package
     (name "r-ilsamerge")
-    (version "1.2.5")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAmerge" version))
        (sha256
-        (base32 "0gfa126ksmqfl3a5d6x81k9rfgp8bcwik5p01grahi7pvxwrka86"))))
+        (base32 "14r2wrn617dii8pdvpab73bi6akmvgv06rnrkf1bd0823kaispdr"))))
     (properties `((upstream-name . "ILSAmerge")))
     (build-system r-build-system)
     (propagated-inputs (list r-haven))

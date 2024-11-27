@@ -9134,13 +9134,13 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dm" version))
        (sha256
-        (base32 "0ngh74kkzngpq6qrz8aabsv7jgmbxggbplin5jbgjalyi21gfm40"))))
+        (base32 "1jv9r5h3p4ci0d809fhzkc17xh6iliavkzkzcnkq7y4xahkk45rj"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
     (arguments
@@ -9638,20 +9638,22 @@ intertemporal budgeting, etc.")
 (define-public r-dizutils
   (package
     (name "r-dizutils")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIZutils" version))
        (sha256
-        (base32 "1kra2b1qbbs6yf5aqlianszqbybni4iqzks0gxg5hdmdzphzb0hb"))))
+        (base32 "18rdv0qzlk93p0pdngqbj58bjsgy68n114fnl6nzc56x89570vx7"))))
     (properties `((upstream-name . "DIZutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-rpresto
                              r-rpostgres
                              r-rjsonio
                              r-rjdbc
                              r-psych
+                             r-httr
                              r-hmisc
                              r-diztools
                              r-dbi
@@ -12847,6 +12849,32 @@ bandwidth selectors in Hall, Watson and Cabrera (1987)
 GarcÃ­a-PortuguÃ©s (2013) <doi:10.1214/13-ejs821>.")
     (license license:gpl3)))
 
+(define-public r-dirmr
+  (package
+    (name "r-dirmr")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DIRMR" version))
+       (sha256
+        (base32 "0j089k7ylyfyw9xrimhkkc79xafkcfv0bcz6albc1i6xnq5fqhpa"))))
+    (properties `((upstream-name . "DIRMR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-mass r-lava))
+    (home-page "https://cran.r-project.org/package=DIRMR")
+    (synopsis
+     "Distributed Imputation for Random Effects Models with Missing Responses")
+    (description
+     "By adding over-relaxation factor to PXEM (Parameter Expanded Expectation
+Maximization) method, the MOPXEM (Monotonically Overrelaxed Parameter Expanded
+Expectation Maximization) method is obtained.  Compare it with the existing EM
+(Expectation-Maximization)-like methods.  Then, distribute and process five
+methods and compare them, achieving good performance in convergence speed and
+result quality.The philosophy of the package is described in Guo G. (2022)
+<doi:10.1007/s00180-022-01270-z>.")
+    (license license:gpl2)))
+
 (define-public r-dirmcmc
   (package
     (name "r-dirmcmc")
@@ -14107,46 +14135,6 @@ contains Bass, Gompertz, Gamma/Shifted Gompertz and Weibull curves.  See Meade
 and Islam (2006) <doi:10.1016/j.ijforecast.2006.01.005>.")
     (license license:lgpl2.1)))
 
-(define-public r-diffudist
-  (package
-    (name "r-diffudist")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diffudist" version))
-       (sha256
-        (base32 "0s8k949l7fvdy0c1zlrk4zr5dnxksq67spwg8mpdsyc2xchh7b5c"))))
-    (properties `((upstream-name . "diffudist")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-rlang
-                             r-reshape2
-                             r-rcppeigen
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-matrix
-                             r-igraph
-                             r-ggplot2
-                             r-ggdendro
-                             r-expm))
-    (native-inputs (list r-knitr))
-    (home-page "https://gbertagnolli.github.io/diffudist/")
-    (synopsis "Diffusion Distance for Complex Networks")
-    (description
-     "Enables the evaluation of diffusion distances for complex single-layer networks.
- Given a network one can define different types of Laplacian (or transition)
-matrices corresponding to different continuous-time random walks dynamics on the
-network.  This package enables the evaluation of Laplacians, stochastic
-matrices, and the corresponding diffusion distance matrices.  The metric
-structure induced by the network-driven process is richer and more robust than
-the one given by shortest-paths and allows to study the geometry induced by
-different types of diffusion-like communication mechanisms taking place on
-complex networks.  For more details see: De Domenico, M. (2017)
-<doi:10.1103/physrevlett.118.168301> and Bertagnolli, G. and De Domenico, M.
-(2021) <doi:10.1103/@code{PhysRevE.103.042301>}.")
-    (license license:gpl2+)))
-
 (define-public r-diffr
   (package
     (name "r-diffr")
@@ -14610,28 +14598,6 @@ method DIFboost as proposed by Schauberger and Tutz (2016)
 metadata from the ZEIT archive and from ZEIT ONLINE. A personal API key is
 required for usage.")
     (license license:expat)))
-
-(define-public r-dietr
-  (package
-    (name "r-dietr")
-    (version "1.1.5-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dietr" version))
-       (sha256
-        (base32 "10b290iccx5wa3krjssy29j4p2wz0qkks0a8ih4mhxnry554xjb7"))))
-    (properties `((upstream-name . "dietr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rfishbase))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sborstein/dietr")
-    (synopsis "Diet Estimated Trophic Levels")
-    (description
-     "Estimates fractional trophic level from quantitative and qualitative diet data
-and calculates electivity indices in R. Borstein (2020)
-<doi:10.1007/s10750-020-04417-5>.")
-    (license license:gpl2+)))
 
 (define-public r-diemr
   (package
@@ -27871,13 +27837,13 @@ libraries.  Information on Experiment Line is based on Ogasawara et al. (2009)
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.0.787")
+    (version "1.1.727")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "1bw3cmijpvbqxgzcpqackpgzkwgzh83vsrmarbavwyn1mz3809vs"))))
+        (base32 "0lqiamyg4h2wdv1yfjz1fbw6w78hlp4f8h7ssrcr8pz4qnkgwfgl"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-tree

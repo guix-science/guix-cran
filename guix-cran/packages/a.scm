@@ -3548,13 +3548,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2024.11.15")
+    (version "2024.11.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "0n90m0ml06zlr39zrv86gabqaq9qpx0197x9bibqc536bd3fb7rv"))))
+        (base32 "10r6bglpdlfngs8153gf16wf6xdxdnzfrdkpmv6gq1q6w1kr383k"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
@@ -15433,13 +15433,13 @@ hazards model.")
 (define-public r-aiscreenr
   (package
     (name "r-aiscreenr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIscreenR" version))
        (sha256
-        (base32 "1zppz5gv980a8vijh6j5bbwddyzjacqysbpym0sl9dqnhmvrhcww"))))
+        (base32 "16rbkncjy6gcf9q6qxmar2z1l46wgj43bkg4bdd38495rjh8nsmk"))))
     (properties `((upstream-name . "AIscreenR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

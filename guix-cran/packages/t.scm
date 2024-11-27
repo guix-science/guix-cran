@@ -11601,13 +11601,13 @@ rmarkdown HTML documents.")
 (define-public r-tntpr
   (package
     (name "r-tntpr")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tntpr" version))
        (sha256
-        (base32 "082yz37kisxl8zn39b3r0s7nbw31hm0cjgnxi3g3qmzvgdrnkgvi"))))
+        (base32 "0qvga8f72ylh3rxqdsqq5y1b24f7ds96rbwsxf2nfqxi2cmsz47n"))))
     (properties `((upstream-name . "tntpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11619,7 +11619,7 @@ rmarkdown HTML documents.")
                              r-rlang
                              r-readr
                              r-purrr
-                             r-magrittr
+                             r-microsoft365r
                              r-lubridate
                              r-labelled
                              r-keyring
@@ -21924,6 +21924,38 @@ region.  Includes a Shiny user interface for point-and-click ternary plotting.
 An alternative to ggtern', which uses the ggplot2 family of plotting functions.")
     (license license:gpl2+)))
 
+(define-public r-tern-rbmi
+  (package
+    (name "r-tern-rbmi")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tern.rbmi" version))
+       (sha256
+        (base32 "1z9jl7agfhrvbjpxb80mrlpn8xhavzlkywwsfdnn1fhb1n4yapzy"))))
+    (properties `((upstream-name . "tern.rbmi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tern
+                             r-rtables
+                             r-rbmi
+                             r-magrittr
+                             r-lifecycle
+                             r-formatters
+                             r-checkmate
+                             r-broom))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/insightsengineering/tern.rbmi")
+    (synopsis "Create Interface for 'RBMI' and 'tern'")
+    (description
+     "RBMI implements standard and reference based multiple imputation methods for
+continuous longitudinal endpoints (Gower-Page et al. (2022)
+<doi:10.21105/joss.04251>).  This package provides an interface for RBMI uses
+the tern <https://cran.r-project.org/package=tern> framework by Zhu et al.
+(2023) and tabulate results easily using rtables
+<https://cran.r-project.org/package=rtables> by Becker et al. (2023).")
+    (license license:asl2.0)))
+
 (define-public r-tern-mmrm
   (package
     (name "r-tern-mmrm")
@@ -25931,13 +25963,13 @@ for fast dimension reduction, see package?tapkee and
 (define-public r-tapes
   (package
     (name "r-tapes")
-    (version "0.12.1")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TapeS" version))
        (sha256
-        (base32 "1f6g8hz4bj7192kh5s7a1vc6kh4niw4pw3d259mwfklmkbc26m4f"))))
+        (base32 "1j2xqv99sganr3byi1zscg20h28ajg7192dpyppzlv39lgzqxg8c"))))
     (properties `((upstream-name . "TapeS")))
     (build-system r-build-system)
     (propagated-inputs (list r-taper r-rcpparmadillo r-rcpp))

@@ -9457,13 +9457,13 @@ analysis in ggplot2 plots and gt tables.")
 (define-public r-nflfastr
   (package
     (name "r-nflfastr")
-    (version "4.6.1")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflfastR" version))
        (sha256
-        (base32 "0b9pn53kzgf0bni98j6f06piwp21wxkm15k9hvhbq0g3x9sj0zqg"))))
+        (base32 "0bpgkl5gxh3brm8wiqpx0m1ky4w8czadzrjhjw1p478yaldn9xx5"))))
     (properties `((upstream-name . "nflfastR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -9475,6 +9475,7 @@ analysis in ggplot2 plots and gt tables.")
                              r-progressr
                              r-nflreadr
                              r-mgcv
+                             r-lifecycle
                              r-janitor
                              r-glue
                              r-future

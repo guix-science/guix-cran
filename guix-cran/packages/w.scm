@@ -1752,13 +1752,13 @@ Atmospheric Administration (NOAA) Integrated Surface Database (ISD).")
 (define-public r-worldmapr
   (package
     (name "r-worldmapr")
-    (version "0.1.3")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WorldMapR" version))
        (sha256
-        (base32 "10j9xnkr9hr666njna8m0id846vw8q8rqp2qk2lzbykvcldj91ir"))))
+        (base32 "1lhhm7f7fqm4rnamcvcq0927bkk138kby4bgngacrhr79161z1mj"))))
     (properties `((upstream-name . "WorldMapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf

@@ -5228,13 +5228,13 @@ under the curve.  Outputs are well suited for nested dataframes.")
 (define-public r-eva3dm
   (package
     (name "r-eva3dm")
-    (version "0.99")
+    (version "0.99.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eva3dm" version))
        (sha256
-        (base32 "0zk9vki4lcmj4jvvvm1nwzp2fx367bvhi4v57l04hp1rnz39018w"))))
+        (base32 "1czvgnrykzll9dbq6ccgj34d5cpbk5rl6mrgp3kkl927dfs4gh2x"))))
     (properties `((upstream-name . "eva3dm")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-ncdf4))
@@ -6823,13 +6823,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "0lrsgk1nqjky56m1smf5xhb9yz5r5g2i5gba5cgp77hsa6yjd1j4"))))
+        (base32 "0dy9knx2ihq8xfkiikfv0havwb4l51403pn09hhkg06955ypixm0"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-sodium
@@ -16148,16 +16148,16 @@ Problem. (1997).  Princeton University Press.  ISBN 978-0691012407.")
 (define-public r-ehymet
   (package
     (name "r-ehymet")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ehymet" version))
        (sha256
-        (base32 "1ywsv8dlkp9fpvfgdpv27yjpa2wyzfx0bq6cb7fbd90b89j59lpp"))))
+        (base32 "0zk8akdn2sprnh1xfd0a67nrbr1dy955hsf6agakvasy7kk5bjjx"))))
     (properties `((upstream-name . "ehymet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tf r-kernlab))
+    (propagated-inputs (list r-tf r-kernlab r-clustercrit))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bpulidob/ehymet")
     (synopsis
@@ -16174,7 +16174,9 @@ dimensions in multidimensional cases.  This approach extends traditional
 multivariate data analysis techniques to the functional data setting.  A key
 application of this package is the E@code{HyClus} method, which enhances
 clustering analysis for functional data across one or multiple dimensions using
-the epigraph and hypograph indices.")
+the epigraph and hypograph indices.  See Pulido et al. (2023)
+<doi:10.1007/s11222-023-10213-7> and Pulido et al. (2024)
+<doi:10.48550/@code{arXiv.2307.16720>}.")
     (license license:expat)))
 
 (define-public r-ehrtemporalvariability
@@ -18024,47 +18026,6 @@ Chen et al. (2021) <doi:10.1007/s11336-021-09750-9>, Yinyin Chen et al. (2020)
 <doi:10.3102/1076998615595403>.")
     (license license:expat)))
 
-(define-public r-edmcr
-  (package
-    (name "r-edmcr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "edmcr" version))
-       (sha256
-        (base32 "06ms8zyygkgq3divall8paiiw5blqxfgml8iy339zfyiwfxabw5a"))))
-    (properties `((upstream-name . "edmcr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-truncnorm
-                             r-sdpt3r
-                             r-nloptr
-                             r-matrix
-                             r-mass
-                             r-lbfgs
-                             r-igraph))
-    (home-page "https://github.com/great-northern-diver/edmcr")
-    (synopsis "Euclidean Distance Matrix Completion Tools")
-    (description
-     "This package implements various general algorithms to estimate missing elements
-of a Euclidean (squared) distance matrix.  Includes optimization methods based
-on semi-definite programming found in Alfakih, Khadani, and Wolkowicz
-(1999)<doi:10.1023/A:1008655427845>, a non-convex position formulation by Fang
-and O'Leary (2012)<doi:10.1080/10556788.2011.643888>, and a dissimilarity
-parameterization formulation by Trosset (2000)<doi:10.1023/A:1008722907820>.
-When the only non-missing distances are those on the minimal spanning tree, the
-guided random search algorithm will complete the matrix while preserving the
-minimal spanning tree following Rahman and Oldford
-(2018)<doi:10.1137/16M1092350>.  Point configurations in specified dimensions
-can be determined from the completions.  Special problems such as the sensor
-localization problem, as for example in Krislock and Wolkowicz
-(2010)<doi:10.1137/090759392>, as well as reconstructing the geometry of a
-molecular structure, as for example in Hendrickson (1995)<doi:10.1137/0805040>,
-can also be solved.  These and other methods are described in the thesis of Adam
-Rahman(2018)<https://hdl.handle.net/10012/13365>.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-edma
   (package
     (name "r-edma")
@@ -19427,6 +19388,38 @@ multivariate linear models.  Datasets mentioned in the package are included here
 (where not available elsewhere) and there is a vignette for each chapter of the
 text with solutions to exercises.")
     (license license:lgpl2.1+)))
+
+(define-public r-ecostate
+  (package
+    (name "r-ecostate")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecostate" version))
+       (sha256
+        (base32 "1brnqksy53fz7l4pvrbny7amh0sb6xwii9f0s22v9qqkql7pm1ir"))))
+    (properties `((upstream-name . "ecostate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb
+                             r-rtmb
+                             r-mass
+                             r-igraph
+                             r-ggplot2
+                             r-ggnetwork
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://james-thorson-noaa.github.io/ecostate/")
+    (synopsis "State-Space Mass-Balance Model for Marine Ecosystems")
+    (description
+     "Fits a state-space mass-balance model for marine ecosystems, which implements
+dynamics derived from Ecopath with Ecosim <https://ecopath.org/> while fitting
+to time-series of fishery catch, biomass indices, age-composition samples, and
+weight-at-age data.  Package ecostate fits biological parameters (e.g.,
+equilibrium mass) and measurement parameters (e.g., catchability coefficients)
+jointly with residual variation in process errors, and can include Bayesian
+priors for parameters.")
+    (license license:gpl3)))
 
 (define-public r-ecospat
   (package
