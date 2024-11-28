@@ -4412,13 +4412,13 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "134828h3ibypam0k0xxmj7pj6pzx084in06rmbcxgc900ibbqgb4"))))
+        (base32 "0y51r8v2kzhiac3d1zkh5z0gw87hcfx7cr1xdfsnzjdxckcgvmhv"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -8604,6 +8604,51 @@ functions.  See the ompr website <https://dirkschumacher.github.io/ompr/> for
 more information, documentation and examples.")
     (license license:expat)))
 
+(define-public r-omopviewer
+  (package
+    (name "r-omopviewer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmopViewer" version))
+       (sha256
+        (base32 "18s9k2fc9lzzn3skyfvsl8w3lqgwl902isy02qixwpas1qdv285v"))))
+    (properties `((upstream-name . "OmopViewer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-yaml
+                             r-visomopresults
+                             r-usethis
+                             r-tidyr
+                             r-styler
+                             r-stringr
+                             r-snakecase
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-omopgenerics
+                             r-markdown
+                             r-lifecycle
+                             r-gt
+                             r-glue
+                             r-dt
+                             r-dplyr
+                             r-cli
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/OmopViewer/")
+    (synopsis "Visualise OMOP Results using 'shiny' Applications")
+    (description
+     "Visualise results obtained from analysing data mapped to the Observational
+Medical Outcomes Partnership (OMOP) common data model using shiny applications.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
@@ -10068,17 +10113,16 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "0pnf7xb803xm2b2hzvgzrvmdcz09mkdrzzqc3xdz6j7kwdy5jwsc"))))
+        (base32 "00qyrkrpd1lp1mcjsj12qil58zgwk0p6mgqyng20a6vlxqmvd96p"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
-    (propagated-inputs (list r-usethis
-                             r-testthat
+    (propagated-inputs (list r-testthat
                              r-sysfonts
                              r-simmulticorrdata
                              r-showtext

@@ -3726,13 +3726,13 @@ failure time models.  Wang (2021) <doi:10.48550/@code{arXiv.2101.07718>}.")
 (define-public r-iraceplot
   (package
     (name "r-iraceplot")
-    (version "1.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iraceplot" version))
        (sha256
-        (base32 "19scipjkxf08wmsv7vwscx3j120444l5ncin9l8fq1i3jq5w6pjy"))))
+        (base32 "0j8im2x4zb2pzp8ichcrkv0xxqxvrrvhnm8r68g2mwlbp1dc8s93"))))
     (properties `((upstream-name . "iraceplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3750,9 +3750,11 @@ failure time models.  Wang (2021) <doi:10.48550/@code{arXiv.2101.07718>}.")
                              r-gridextra
                              r-ggplot2
                              r-ggforce
+                             r-fs
                              r-forcats
                              r-dt
                              r-dplyr
+                             r-data-table
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://auto-optimization.github.io/iraceplot/")
@@ -9829,13 +9831,13 @@ et al. (2011) <doi:10.1111/J.1600-0706.2011.19679.x>].")
 (define-public r-indicator
   (package
     (name "r-indicator")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Indicator" version))
        (sha256
-        (base32 "0dwrg23qaqj39vvzhk20plr64br1y5dn61w9xk1arl22qlc2b011"))))
+        (base32 "16z7kxr0lpszkdx47d5985prljmr6sqvqnc5mmyq2an64b42fwrr"))))
     (properties `((upstream-name . "Indicator")))
     (build-system r-build-system)
     (propagated-inputs (list r-norm r-missmethods r-factominer))
@@ -10295,24 +10297,23 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "1xc3w6kvss6fb3fp8pi92iy1xbavl7ahwmk049ifcv6mqn0qmkrs"))))
+        (base32 "196kghflwndvd8mnki2z8ai14758cl50r86gm9pq32qir8482vmm"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
-    (propagated-inputs (list r-visomopresults
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
                              r-magrittr
-                             r-lubridate
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-dbplyr

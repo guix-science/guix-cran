@@ -3964,6 +3964,38 @@ Agent-based modeling.")
 of landmark data files (TPS), shape plotting and distances plotting functions.")
     (license license:gpl2+)))
 
+(define-public r-evolved
+  (package
+    (name "r-evolved")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evolved" version))
+       (sha256
+        (base32 "105jxqv4gaqk7f0y99r21cnsiy5wgwzx803gnccy8xramrhhlc50"))))
+    (properties `((upstream-name . "evolved")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-phytools r-diversitree r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/Auler-J/evolved>")
+    (synopsis
+     "Open Software for Teaching Evolutionary Biology at Multiple Scales Through Virtual Inquiries")
+    (description
+     "\"Evolutionary Virtual Education\" - evolved - provides multiple tools to help
+educators (especially at the graduate level or in advanced undergraduate level
+courses) apply inquiry-based learning in general evolution classes.  In
+particular, the tools provided include functions that simulate evolutionary
+processes (e.g., genetic drift, natural selection within a single locus) or
+concepts (e.g. Hardy-Weinberg equilibrium, phylogenetic distribution of traits).
+ More than only simulating, the package also provides tools for students to
+analyze (e.g., measuring, testing, visualizing) datasets with characteristics
+that are common to many fields related to evolutionary biology.  Importantly,
+the package is heavily oriented towards providing tools for inquiry-based
+learning - where students follow scientific practices to actively construct
+knowledge.  For additional details, see package's vignettes.")
+    (license license:gpl3+)))
+
 (define-public r-evolvability
   (package
     (name "r-evolvability")

@@ -8994,27 +8994,6 @@ available in the NHDPlus documentation available from the US Environmental
 Protection Agency <https://www.epa.gov/waterdata/basic-information>.")
     (license license:cc0)))
 
-(define-public r-nhanesa
-  (package
-    (name "r-nhanesa")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nhanesA" version))
-       (sha256
-        (base32 "10vbgwz0m94yqjydrylyl699j92yr1f7j9cc23q9v4grg7zspk0b"))))
-    (properties `((upstream-name . "nhanesA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-stringr r-rvest r-plyr r-foreign))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=nhanesA")
-    (synopsis "NHANES Data Retrieval")
-    (description
-     "Utility to retrieve data from the National Health and Nutrition Examination
-Survey (NHANES) website <https://www.cdc.gov/nchs/nhanes/index.htm>.")
-    (license license:gpl2+)))
-
 (define-public r-nhanes
   (package
     (name "r-nhanes")

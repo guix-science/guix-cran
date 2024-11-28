@@ -37880,13 +37880,13 @@ the annual flow.  The method is described in Nguyen et al (2020)
 (define-public r-mbmixture
   (package
     (name "r-mbmixture")
-    (version "0.4")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mbmixture" version))
        (sha256
-        (base32 "0g74jzhdf8grrp7pipj1m6hvyv4akycabm0ingy505a5a546ddzg"))))
+        (base32 "12p1sap4rhl4fyz0y0v4xh9zl3askfb703vinz17kp9wapm3l0a6"))))
     (properties `((upstream-name . "mbmixture")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))

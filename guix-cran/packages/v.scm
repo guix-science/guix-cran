@@ -4296,6 +4296,36 @@ determine which groups share a common within-group variance in a one-way random
 effects model <10.31234/osf.io/hpq7w>.")
     (license license:gpl2)))
 
+(define-public r-vicatmix
+  (package
+    (name "r-vicatmix")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VICatMix" version))
+       (sha256
+        (base32 "0wkzl7km9sm26m95ngd58vlsfwpzbvx3wjaw66lmzapjjxn9801s"))))
+    (properties `((upstream-name . "VICatMix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mcclust
+                             r-matrixstats
+                             r-klar
+                             r-gtools))
+    (home-page "https://github.com/j-ackierao/VICatMix")
+    (synopsis "Variational Mixture Models for Clustering Categorical Data")
+    (description
+     "This package provides a variational Bayesian finite mixture model for the
+clustering of categorical data, and can implement variable selection and
+semi-supervised outcome guiding if desired.  Incorporates an option to perform
+model averaging over multiple initialisations to reduce the effects of local
+optima and improve the automatic estimation of the true number of clusters.  For
+further details, see the paper by Rao and Kirk (2024)
+<doi:10.48550/@code{arXiv.2406.16227>}.")
+    (license license:gpl3+)))
+
 (define-public r-vic5
   (package
     (name "r-vic5")

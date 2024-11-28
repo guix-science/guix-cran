@@ -42133,13 +42133,13 @@ coefficients.  Both shrinkage as well as empirical estimators are available.")
 (define-public r-cardx
   (package
     (name "r-cardx")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardx" version))
        (sha256
-        (base32 "0p10sm10b4d7qnpn96yq4akvx3m5wrczg3zz12jlx8776x33m6vq"))))
+        (base32 "0jsqldsmpfgm9hvsrb833l119xsmkm8nqwdbsl7p1vhn2km0f5dv"))))
     (properties `((upstream-name . "cardx")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -32162,13 +32162,13 @@ regression models.  S. Kucheryavskiy (2023) <doi:10.1016/j.aca.2023.341096>.")
 (define-public r-pcutils
   (package
     (name "r-pcutils")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcutils" version))
        (sha256
-        (base32 "1732qrr9f419a2g4wi7dnf97209k57qk9myb839sybdb3irvra9j"))))
+        (base32 "0ncj8gwi6axpbg02gq6jnwxp4zh0f4r94iky8b5m8hfhbkm15gxb"))))
     (properties `((upstream-name . "pcutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

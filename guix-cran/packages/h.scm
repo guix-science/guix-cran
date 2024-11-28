@@ -354,13 +354,13 @@ Hediger & Michel & Naef (2022).")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "02svacsfqva5kfjypy0ilarig1gbla9jcsprmvyb5aqmh4rhfa92"))))
+        (base32 "0p8ph11rsj8j5b3khisza48kj1b2qiyd2wxhcdv2vvk5a8mrc6bw"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8922,13 +8922,13 @@ Arabidopsis thaliana.")
 (define-public r-herer
   (package
     (name "r-herer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hereR" version))
        (sha256
-        (base32 "0la67qdsq72x8k19v27g73fh6w04fdgfj1cxbd3a6w1sfvjvvy6z"))))
+        (base32 "0nl8k58syhkbwdmy4jxc7as99bv8j5k9j87bqmr0y2jlfi9ny2d2"))))
     (properties `((upstream-name . "hereR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

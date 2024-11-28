@@ -2963,13 +2963,13 @@ functionalities for interfacing with Julia from R powered by the
 (define-public r-jlme
   (package
     (name "r-jlme")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jlme" version))
        (sha256
-        (base32 "1jqdxsc2r6392n3flqiizyr8skr994y76g11f4kam3iyg6z9gzm1"))))
+        (base32 "1xfz8x6vxfcia12vwyzfz4zwyh75fd37bjwwykwa8ap3hidf85zj"))))
     (properties `((upstream-name . "jlme")))
     (build-system r-build-system)
     (inputs (list julia))

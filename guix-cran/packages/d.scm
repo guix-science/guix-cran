@@ -5732,13 +5732,13 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
 (define-public r-dqastats
   (package
     (name "r-dqastats")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQAstats" version))
        (sha256
-        (base32 "0slp3kq2g4djdfxqx40afxcycyncmdxw757pyrm8anfnpxx4rdvz"))))
+        (base32 "163xjysvh8h06qc0yz4z21xf2w8angj05i50kfzsi4mwyiai8qd9"))))
     (properties `((upstream-name . "DQAstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytex
@@ -12067,6 +12067,36 @@ designed to be used with the output of any clustering algorithm and with
 distances specifically designed for categorical (i.e.  multiple choice) or
 ordinal survey response data.")
     (license license:expat)))
+
+(define-public r-discretefwer
+  (package
+    (name "r-discretefwer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiscreteFWER" version))
+       (sha256
+        (base32 "0iixxn96qcma3ky9sy5l0p8dk5nvrknlrr6zk6dg7xvwm22ala3b"))))
+    (properties `((upstream-name . "DiscreteFWER")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-discretefdr r-checkmate))
+    (home-page "https://github.com/DISOhda/DiscreteFWER")
+    (synopsis
+     "FWER-Based Multiple Testing Procedures with Adaptation for Discrete Tests")
+    (description
+     "Implementations of several multiple testing procedures that control the
+family-wise error rate (FWER) designed specifically for discrete tests.
+Included are discrete adaptations of the Bonferroni, Holm, Hochberg and Å idÃ¡k
+procedures as described in the papers DÃ¶hler (2010) \"Validation of credit
+default probabilities using multiple-testing procedures\"
+<doi:10.21314/JRMV.2010.062> and Zhu & Guo (2019) \"Family-Wise Error Rate
+Controlling Procedures for Discrete Data\" <doi:10.1080/19466315.2019.1654912>.
+The main procedures of this package take as input the results of a test
+procedure from package @code{DiscreteTests} or a set of observed p-values and
+their discrete support under their nulls.  A shortcut function to apply discrete
+procedures directly to data is also provided.")
+    (license license:gpl2+)))
 
 (define-public r-discretefit
   (package

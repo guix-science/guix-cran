@@ -18730,6 +18730,30 @@ performing wavelet decomposition of time series.  See Quilty and Adamowski
 (2018) <doi:10.1016/j.jhydrol.2018.05.003>.")
     (license license:expat)))
 
+(define-public r-fastvoter
+  (package
+    (name "r-fastvoter")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastVoteR" version))
+       (sha256
+        (base32 "05wd9s057zg9wsm2cpnwvkq0n3nwhlhm80jh0whccw7ph157xhq7"))))
+    (properties `((upstream-name . "fastVoteR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-data-table r-checkmate))
+    (home-page "https://bblodfon.github.io/fastVoteR/")
+    (synopsis "Efficient Voting Methods for Committee Selection")
+    (description
+     "This package provides a fast Rcpp'-based implementation of
+polynomially-computable voting theory methods for committee ranking and scoring.
+ The package includes methods such as Approval Voting (AV), Satisfaction
+Approval Voting (SAV), sequential Proportional Approval Voting (PAV), and
+sequential Phragmen's Rule.  Weighted variants of these methods are also
+provided, allowing for differential voter influence.")
+    (license license:lgpl3+)))
+
 (define-public r-fastverse
   (package
     (name "r-fastverse")

@@ -7662,13 +7662,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.6.9")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "11fh2c53v286y5v2hh6w9vkbhf50fr7lyi0b75wapxi19kn3yxak"))))
+        (base32 "12l5y4d9a1734ir1kaw1q7plhiirrm3lrpfwc7jdqsii3iss8hpj"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7679,6 +7679,7 @@ details.")
                              r-r6
                              r-networkd3
                              r-htmlwidgets
+                             r-ggplot2
                              r-dplyr
                              r-checkmate
                              r-andromeda))
@@ -7690,7 +7691,7 @@ details.")
      "Computes treatment patterns within a given cohort using the Observational
 Medical Outcomes Partnership (OMOP) common data model (CDM).  As described in
 Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
-    (license license:asl2.0)))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-treasury
   (package
@@ -9048,13 +9049,13 @@ traffic speed or the car entries for a selected time date.")
 (define-public r-trader
   (package
     (name "r-trader")
-    (version "1.2-4")
+    (version "1.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TRADER" version))
        (sha256
-        (base32 "0r1mv76biy0zc8ksq0dvqgspph5gxjlpvh6pv7lw2wgcn5zid79d"))))
+        (base32 "1zy48a7lrbw1kx8mrdlsjhkqba5nc2dvq9hw6n7bqd7z3iv3gl0f"))))
     (properties `((upstream-name . "TRADER")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplr))

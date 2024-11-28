@@ -4805,13 +4805,13 @@ run in their original form.")
 (define-public r-braqca
   (package
     (name "r-braqca")
-    (version "1.4.11.26")
+    (version "1.4.11.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "braQCA" version))
        (sha256
-        (base32 "10kz4hrs8c2wxnml8g2lsi950m0fx313j8qlvdiwza8i553h0xsw"))))
+        (base32 "1237xajdqr6xpvq210drzakcfw390pa7h7mgv92bwbggyirida1r"))))
     (properties `((upstream-name . "braQCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-qca r-bootstrap))
@@ -11680,13 +11680,13 @@ topology.")
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioVizSeq" version))
        (sha256
-        (base32 "0q08rgvdvybpv6m9mv8wcycjsczcgpsmks60f2d0359a56r2idf1"))))
+        (base32 "0xyws7rmq4cp5mjmnkswfkbl9sfcnzjpgs4rycap3wsch6c2dg97"))))
     (properties `((upstream-name . "BioVizSeq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16850,13 +16850,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.10")
+    (version "0.5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFS" version))
        (sha256
-        (base32 "1g7zx4qy3zb2xrblywxfxc2xgg8mzgg4l406nxw0d6s634ds41hi"))))
+        (base32 "19zizch8k142c94x8i47v10hn1cz3w85ksnxp5ip83bvxdvmmrd6"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

@@ -4693,13 +4693,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "1mfvyq7hdq1jin6yh8g28rgdvph4zhna24kl4g99aznnmyrwx5n3"))))
+        (base32 "139ym9gd6s0mk22sn60c37j9vymmq4vn7z8239alw2xfljvlj1vw"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -9474,6 +9474,35 @@ stratified baseline factors.  Our package explores various methods for
 calculating combined test statistics, estimating joint distributions, and
 determining the p-values.")
     (license license:gpl2)))
+
+(define-public r-strata
+  (package
+    (name "r-strata")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "strata" version))
+       (sha256
+        (base32 "0yb9wchf31810yz24r135cwmbyjdzyzc0pm0m3simdgwi26szyab"))))
+    (properties `((upstream-name . "strata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://github.com/asenetcky/strata")
+    (synopsis "Simple Framework for Simple Automation")
+    (description
+     "This package provides a tool suite for building project frameworks for users
+with access to only the most basic of automation tools.")
+    (license license:expat)))
 
 (define-public r-strat
   (package
@@ -41522,13 +41551,13 @@ refer to Epifania, Anselmi & Robusto (2022) <doi:10.1007/978-3-031-27781-8_7>.")
 (define-public r-shortform
   (package
     (name "r-shortform")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShortForm" version))
        (sha256
-        (base32 "14qypmb51w5k6xndjdgrwawyr3ccnp9llsh93sah7xkwl1hkkbdl"))))
+        (base32 "1q81sw875n9bqc6wxagsd9f400zzci1xs0911agkxs7pijyndgkn"))))
     (properties `((upstream-name . "ShortForm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -43579,13 +43608,13 @@ matching.  Please see the project page for more details.")
 (define-public r-shinyitemanalysis
   (package
     (name "r-shinyitemanalysis")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShinyItemAnalysis" version))
        (sha256
-        (base32 "12knai3ar8c091pwba34dz74yhnx7kd0f6si0hcwamdcnvb6i324"))))
+        (base32 "1hk04dkmk5f11m8wgr9gm02dhrzxwp2skfwgxq80y1gyqyhiywda"))))
     (properties `((upstream-name . "ShinyItemAnalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -55234,16 +55263,16 @@ scripts.")
 (define-public r-script
   (package
     (name "r-script")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "script" version))
        (sha256
-        (base32 "1ba0mr77g4v4nv7yfs5yaj7x8yqrl3q8a1yia105pclgwq9ybs8i"))))
+        (base32 "1xm30c0dqc92agc3wflvzd76zd3pr7cfjpcjm70vzr6hvfsxr41p"))))
     (properties `((upstream-name . "script")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi))
+    (propagated-inputs (list r-rstudioapi r-knitr))
     (home-page "https://cran.r-project.org/package=script")
     (synopsis "Identify Script Name")
     (description
