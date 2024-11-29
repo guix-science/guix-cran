@@ -3533,13 +3533,13 @@ multiple time points (Gallo, Mao, and Shih, 2014,
 (define-public r-grpsel
   (package
     (name "r-grpsel")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpsel" version))
        (sha256
-        (base32 "0b901si4xm6306mzfk3nmwg2h8pk9rhvv2m08v3qnbnxaw06my2h"))))
+        (base32 "1jcf1h3jbczin6qxjs9f1yjbm83rlkih23zgfj2j0yxhxk9b7vfj"))))
     (properties `((upstream-name . "grpsel")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
@@ -8281,24 +8281,6 @@ and extends many of the methods in Balk (2008, <doi:10.1017/CBO9780511720758>),
 von der Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
 <doi:10.5089/9781484354841.069>).")
     (license license:expat)))
-
-(define-public r-gpic
-  (package
-    (name "r-gpic")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GPIC" version))
-       (sha256
-        (base32 "1v44hkzf3wh09j5pcfmsc8h5jzmqa501bwkmdwwjb7pz64976r23"))))
-    (properties `((upstream-name . "GPIC")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=GPIC")
-    (synopsis "Quantifying Group Performance in Individual Competitions")
-    (description
-     "Compute the GPIC index as described in Pham (2020) <doi:10.35542/osf.io/ajz5v>.")
-    (license license:gpl3)))
 
 (define-public r-gpgp
   (package

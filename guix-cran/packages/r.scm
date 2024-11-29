@@ -6244,6 +6244,37 @@ Oscillation data, North Atlantic Oscillation and Arctic Oscillation.  Data
 sources are described in the help files for each function.")
     (license license:gpl3)))
 
+(define-public r-rsofun
+  (package
+    (name "r-rsofun")
+    (version "5.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsofun" version))
+       (sha256
+        (base32 "1d32bp9gq9if11g0qn25rjhj9rdffbh4s6cb8bvbn3091skakhaq"))))
+    (properties `((upstream-name . "rsofun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-purrr
+                             r-multidplyr
+                             r-magrittr
+                             r-gensa
+                             r-dplyr
+                             r-bayesiantools))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://github.com/geco-bern/rsofun")
+    (synopsis "The P-Model and BiomeE Modelling Framework")
+    (description
+     "This package implements the Simulating Optimal FUNctioning framework for
+site-scale simulations of ecosystem processes, including model calibration.  It
+contains Fortran 90 modules for the P-model (Stocker et al. (2020)
+<doi:10.5194/gmd-13-1545-2020>), SPLASH (Davis et al. (2017)
+<doi:10.5194/gmd-10-689-2017>) and @code{BiomeE} (Weng et al. (2015)
+<doi:10.5194/bg-12-2655-2015>).")
+    (license license:gpl3)))
+
 (define-public r-rsocrata
   (package
     (name "r-rsocrata")
@@ -22883,13 +22914,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rintcal" version))
        (sha256
-        (base32 "1n757cibw87gsy3dviv1l5h6inalwan156kbi509ldyhh0y02mf3"))))
+        (base32 "08a3rd2irfswg4cc3rs74sgsvgf7chkbgsyh5w13fzbgfxkp2kwy"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-data-table))
@@ -22900,7 +22931,8 @@ Algorithms and Applications, for a reference.")
      "The @code{IntCal20} radiocarbon calibration curves (Reimer et al.  2020
 <doi:10.1017/RDC.2020.68>) are provided as a data package, together with
 previous @code{IntCal} curves (@code{IntCal13}, @code{IntCal09},
-@code{IntCal04}, @code{IntCal98}) and postbomb curves.  Also provided are
+@code{IntCal04}, @code{IntCal98}), other curves (e.g., NOTCal04 [van der Plicht
+et al.  2004], Arnold & Libby 1951) and postbomb curves.  Also provided are
 functions to copy the curves into memory, and to read, query and plot the data
 underlying the @code{IntCal20} curves.")
     (license license:gpl2+)))
@@ -30087,13 +30119,13 @@ parameterisation and provision of helper functions to manage dependencies.")
 (define-public r-reporterscore
   (package
     (name "r-reporterscore")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReporterScore" version))
        (sha256
-        (base32 "0h56g0mdyldn4j7v3qs0qgspi3gv3jfxf9w5s05sg8rhis64z947"))))
+        (base32 "07kr0myak7vazwlayl6sl8sm12g95pj03qhdggh2ys0i9q2d3gph"))))
     (properties `((upstream-name . "ReporterScore")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

@@ -7647,6 +7647,34 @@ within R.")
 Caigny et al., (2018) <DOI:10.1016/j.ejor.2018.02.009>).")
     (license license:gpl3+)))
 
+(define-public r-llic
+  (package
+    (name "r-llic")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LLIC" version))
+       (sha256
+        (base32 "0nvzhwv4g0vicv082vp7fl63gkn3zphggzpim2rvnkps9msygqs3"))))
+    (properties `((upstream-name . "LLIC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-rlang
+                             r-relliptical
+                             r-laplacesdemon
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=LLIC")
+    (synopsis
+     "Likelihood Criterion (LIC) Analysis for Laplace Regression Model")
+    (description
+     "This package performs likelihood criterion analysis using the Laplace regression
+model to determine its optimal subset of variables.  The methodology is based on
+Guo et al. (2023), LIC criterion for optimal subset selection in distributed
+interval estimation <doi:10.1080/02331888.2020.1823979>.")
+    (license license:expat)))
+
 (define-public r-llbayesireg
   (package
     (name "r-llbayesireg")

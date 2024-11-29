@@ -7120,13 +7120,13 @@ package to generate corrections for those regions.")
 (define-public r-sudokudesigns
   (package
     (name "r-sudokudesigns")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SudokuDesigns" version))
        (sha256
-        (base32 "18a5wz4qxppz0j5v2rc3pmrp4hxm2y0616g5pls76ka2yn0jak3b"))))
+        (base32 "1yf864gcd2jm1iwj1dyghgf26q9ag39cm1kcvkhhv87879jgvs3w"))))
     (properties `((upstream-name . "SudokuDesigns")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SudokuDesigns")
@@ -31099,16 +31099,16 @@ M-estimator, and the median, main function is smoothm), and Pitman estimator.")
 (define-public r-smoothie
   (package
     (name "r-smoothie")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoothie" version))
        (sha256
-        (base32 "1ari4av4vsydaxg56vsfifc50kxsqy8xlxl7by32capc6pcjwvq8"))))
+        (base32 "1fvnpldxani93h2pjlg7gr36phsg1461krl2rqs9ld4k60xb1bq8"))))
     (properties `((upstream-name . "smoothie")))
     (build-system r-build-system)
-    (home-page "https://ral.ucar.edu/staff/ericg/")
+    (home-page "https://cran.r-project.org/package=smoothie")
     (synopsis "Two-Dimensional Field Smoothing")
     (description
      "Perform two-dimensional smoothing for spatial fields using FFT and the
@@ -46385,13 +46385,13 @@ and sampling approaches.")
 (define-public r-sgs
   (package
     (name "r-sgs")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgs" version))
        (sha256
-        (base32 "07b3136rv2gqc4hdcrl8pg3yv4sysbxdnrvhcdd6p89qah0zrzh7"))))
+        (base32 "1rlpgd0b5fa7pl56kijivjy3d47p0ig95qimn8bl9kfql4bavb3z"))))
     (properties `((upstream-name . "sgs")))
     (build-system r-build-system)
     (propagated-inputs (list r-slope
@@ -61522,6 +61522,32 @@ efficient data structures such as k-d trees that easily scale to several million
 rows on a modern desktop computer.")
     (license license:gpl2+)))
 
+(define-public r-samplezoo
+  (package
+    (name "r-samplezoo")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "samplezoo" version))
+       (sha256
+        (base32 "10ic66gnx1bzfwn5yg4id40k9nc9s2a25hpvb5xvk09p9hxacm45"))))
+    (properties `((upstream-name . "samplezoo")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nvietto/samplezoo")
+    (synopsis "Generate Samples with a Variety of Probability Distributions")
+    (description
+     "The samplezoo package streamlines the process of generating samples from various
+probability distributions, enabling users to quickly create data frames for
+demonstrations, troubleshooting, or teaching.  By prioritizing simplicity and
+efficiency,'samplezoo reduces the need for repetitive code, making it
+particularly useful for beginners or anyone seeking to save time.  The package
+implements standard methods for generating random samples from probability
+distributions commonly available in base R, with no specific external
+references.  For more details, visit the package documentation.")
+    (license license:expat)))
+
 (define-public r-samplevadir
   (package
     (name "r-samplevadir")
@@ -63130,6 +63156,37 @@ Bayesian Hierarchical approach.  See also Rao & Molina (2015,
 ISBN:978-1-118-73578-7) and Battese et al. (1988)
 <doi:10.1080/01621459.1988.10478561>.")
     (license license:expat)))
+
+(define-public r-saehb-twofold
+  (package
+    (name "r-saehb-twofold")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saeHB.twofold" version))
+       (sha256
+        (base32 "0rvqdc5iiav4hq17pj07jmavzhjsg5ibvm8jwlcv81sg94g19l10"))))
+    (properties `((upstream-name . "saeHB.twofold")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-stringr r-rjags r-data-table r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/reymath99/saeHB.twofold")
+    (synopsis "Hierarchical Bayes Twofold Subarea Level Model SAE")
+    (description
+     "We designed this package to provides several functions for area and subarea
+level of small area estimation under Twofold Subarea Level Model using
+hierarchical Bayesian (HB) method with Univariate Normal distribution for
+variables of interest.  Some dataset simulated by a data generation are also
+provided.  The rjags package is employed to obtain parameter estimates using
+Gibbs Sampling algorithm.  Model-based estimators involves the HB estimators
+which include the mean, the variation of mean, and the quantile.  For the
+reference, see Rao and Molina (2015) <doi:10.1002/9781118735855>, Torabi and Rao
+(2014) <doi:10.1016/j.jmva.2014.02.001>, Leyla Mohadjer et al.(2007)
+<http://www.asasrms.org/Proceedings/y2007/Files/JSM2007-000559.pdf>, and
+Erciulescu et al.(2019) <doi:10.1111/rssa.12390>.")
+    (license license:gpl3)))
 
 (define-public r-saehb-spatial
   (package

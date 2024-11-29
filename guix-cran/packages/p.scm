@@ -8589,13 +8589,13 @@ binomial experiment.")
 (define-public r-priorcon
   (package
     (name "r-priorcon")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorCON" version))
        (sha256
-        (base32 "0w1s488jiky9qk6lkz3dp5kysbdjipsvwm8mxz8zqfaq5lsq6ip9"))))
+        (base32 "11ibhwz655q2xwma9d8010d6rkrirg0f3hy1sc45gj5k0bjk55if"))))
     (properties `((upstream-name . "priorCON")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
@@ -9018,13 +9018,13 @@ simplex method, see Haotian Pang (2017)
 (define-public r-prim
   (package
     (name "r-prim")
-    (version "1.0.21")
+    (version "1.0.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prim" version))
        (sha256
-        (base32 "085dwmflag45qg0p4w2f9v000zj2kfaijp6jm11dj85swxmx7vjm"))))
+        (base32 "1gan4y5mkqvhvcpqdzw6wgvq32w9yq7fs3cxnmrjzyrz5dyyizc8"))))
     (properties `((upstream-name . "prim")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-plot3d))
@@ -34431,28 +34431,26 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0ykvnr99mjl3c1vy8w1i2adnpad0b63ivr27ap3n17ffbrhmy6h4"))))
+        (base32 "0sc6f5mdnhiifq28vr8r4agd817nx6g2x29n2hbnl2c2m1hq4m8k"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
-    (propagated-inputs (list r-visomopresults
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
                              r-purrr
                              r-omopgenerics
-                             r-magrittr
                              r-lifecycle
                              r-dplyr
                              r-cli
                              r-cdmconnector))
     (native-inputs (list r-knitr))
-    (home-page "https://darwin-eu-dev.github.io/PatientProfiles/")
+    (home-page "https://darwin-eu.github.io/PatientProfiles/")
     (synopsis
      "Identify Characteristics of Patients in the OMOP Common Data Model")
     (description

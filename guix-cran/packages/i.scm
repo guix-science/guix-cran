@@ -2078,13 +2078,13 @@ Gneiting (2020) <@code{arXiv:1909.03725>}.")
 (define-public r-isocountry
   (package
     (name "r-isocountry")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isocountry" version))
        (sha256
-        (base32 "0n2sx731jy42g3yr3c6jba1x3fx42rczq95cwi94f4i78vsphl4f"))))
+        (base32 "0rzw08gpp0lh3flnxc03wqq4qpdyk02pqr3gskw8kdrfhi7n3sqm"))))
     (properties `((upstream-name . "isocountry")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -6728,6 +6728,34 @@ ionization mode.")
 and paired samples and proportion difference.  Plot the confidence intervals.
 Generate documents explaining the statistical result step by step.")
     (license license:gpl3)))
+
+(define-public r-interpret
+  (package
+    (name "r-interpret")
+    (version "0.1.34")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interpret" version))
+       (sha256
+        (base32 "0fclf4nfa27n90d08f92svalyyw1vp452lkz9qydzkw7w98m645p"))))
+    (properties `((upstream-name . "interpret")))
+    (build-system r-build-system)
+    (home-page "https://github.com/interpretml/interpret")
+    (synopsis "Fit Interpretable Machine Learning Models")
+    (description
+     "Package for training interpretable machine learning models.  Historically, the
+most interpretable machine learning models were not very accurate, and the most
+accurate models were not very interpretable.  Microsoft Research has developed
+an algorithm called the Explainable Boosting Machine (EBM) which has both high
+accuracy and interpretable characteristics.  EBM uses machine learning
+techniques like bagging and boosting to breathe new life into traditional GAMs
+(Generalized Additive Models).  This makes them as accurate as random forests
+and gradient boosted trees, and also enhances their intelligibility and
+editability.  Details on the EBM algorithm can be found in the paper by Rich
+Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad
+(2015, <doi:10.1145/2783258.2788613>).")
+    (license license:expat)))
 
 (define-public r-interpolators
   (package
@@ -14016,16 +14044,16 @@ models.")
 (define-public r-ifo
   (package
     (name "r-ifo")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ifo" version))
        (sha256
-        (base32 "0f2c7c6z1h7b5c0g21yr2drb7yqk68ivnxaa8m3ck2xlm226fa5g"))))
+        (base32 "0zi89cwyr7pvws4b9brb2zcyy9sxjh61px9hkni0pf8m39kxzqkg"))))
     (properties `((upstream-name . "ifo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rvest r-readxl))
+    (propagated-inputs (list r-tidyr r-rvest r-readxl r-curl))
     (home-page "https://m-muecke.github.io/ifo/")
     (synopsis "Client for the Ifo Institute Time Series")
     (description

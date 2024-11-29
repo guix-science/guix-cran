@@ -2472,6 +2472,40 @@ error, power, prediction accuracy, and complexity.")
 and meteorology time-series stored in a Sqlite data base.")
     (license license:gpl2)))
 
+(define-public r-htseedglm
+  (package
+    (name "r-htseedglm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTSeedGLM" version))
+       (sha256
+        (base32 "0nrd53rbd09jz3q54qa6r9gl5xv46n5c4fnmjq7gda4vdchcnah9"))))
+    (properties `((upstream-name . "HTSeedGLM")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=HTSeedGLM")
+    (synopsis
+     "Hydro Thermal Time Analysis of Seed Germination Using Generalised Linear Model")
+    (description
+     "Seed germinates through the physical process of water uptake by dry seed driven
+by the difference in water potential between the seed and the water.  There
+exists seed-to-seed variability in the base seed water potential.  Hence, there
+is a need for a distribution such that a viable seed with its base seed water
+potential germinates if and only if the soil water potential is more than the
+base seed water potential.  This package estimates the stress tolerance and
+uniformity parameters of the seed lot for germination under various temperatures
+by using the hydro-time model of counts of germinated seeds under various water
+potentials.  The distribution of base seed water potential has been considered
+to follow Normal, Logistic and Extreme value distribution.  The estimated
+proportion of germinated seeds along with the estimates of stress and uniformity
+parameters are obtained using a generalised linear model.  The significance test
+of the above parameters for within and between temperatures is also performed in
+the analysis.  Details can be found in Kebreab and Murdoch (1999)
+<doi:10.1093/jxb/50.334.655> and Bradford (2002)
+<https://www.jstor.org/stable/4046371>.")
+    (license license:gpl3)))
+
 (define-public r-htseed
   (package
     (name "r-htseed")

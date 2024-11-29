@@ -5676,13 +5676,13 @@ plots.  The App is called using eufmdis.adapt::run_adapt().")
 (define-public r-eudract
   (package
     (name "r-eudract")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eudract" version))
        (sha256
-        (base32 "10fnxgkaplc1cz2b6cx0pnhmv5g9mxa9y7pna6kasqjih0dfaplp"))))
+        (base32 "1gqsm9nhl6ap7q9v1794yv4qvnhq7ikszvjd9cgyq4375jahlkmp"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt
@@ -9916,6 +9916,27 @@ Laurence V. Madden, Gareth Hughes, Franck van den Bosch (2007)
 data sets that were mainly published in plant disease epidemiology literature
 are also included in this package.")
     (license license:expat)))
+
+(define-public r-epiparameterdb
+  (package
+    (name "r-epiparameterdb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiparameterDB" version))
+       (sha256
+        (base32 "0c8r7qgmqqiyvb1c2z6rs5g3pyk1rr1gadn8bambrna11mkwk0ag"))))
+    (properties `((upstream-name . "epiparameterDB")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epiverse-trace/epiparameterDB/")
+    (synopsis "Database of Epidemiological Parameters")
+    (description
+     "This package provides a data package containing a database of epidemiological
+parameters.  It stores the data for the epiparameter R package.  Epidemiological
+parameter estimates are extracted from the literature.")
+    (license license:cc0)))
 
 (define-public r-epiomics
   (package

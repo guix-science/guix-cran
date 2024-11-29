@@ -4302,13 +4302,13 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2rx" version))
        (sha256
-        (base32 "033anh6cb54yj3s42zs01695qbmj2qcrdjgnk72svqd08gkw2bz9"))))
+        (base32 "1gw4bw83a1d77y3nj0glqik1j59az30iga53qaci8wxadx95k9lk"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4327,7 +4327,7 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://nlmixr2.github.io/nonmem2rx/")
-    (synopsis "'nonmem2rx' Converts 'NONMEM' Models to 'rxode2'")
+    (synopsis "Converts 'NONMEM' Models to 'rxode2'")
     (description
      "NONMEM has been a tool for running nonlinear mixed effects models since the 80s
 and is still used today (Bauer 2019 <doi:10.1002/psp4.12404>).  This tool allows

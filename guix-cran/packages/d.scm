@@ -5398,13 +5398,13 @@ settings.  Compatible with and based on the R grid package.")
 (define-public r-drape
   (package
     (name "r-drape")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drape" version))
        (sha256
-        (base32 "0y4y6vvskizghqf78d1vr0skac0ks3yb83m9fgn8i3wmgqrhws19"))))
+        (base32 "0ypfghb9qv8rnhh1qs181yhdb85a4854hsicz0sb92wn3as3kc7w"))))
     (properties `((upstream-name . "drape")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5414,7 +5414,8 @@ settings.  Compatible with and based on the R grid package.")
      "Doubly robust average partial effect estimation.  This implementation contains
 methods for adding additional smoothness to plug-in regression procedures and
 for estimating score functions using smoothing splines.  Details of the method
-can be found in Harvey Klyne and Rajen D. Shah (2023) <@code{arXiv:2308.09207>}.")
+can be found in Harvey Klyne and Rajen D. Shah (2023)
+<doi:10.48550/@code{arXiv.2308.09207>}.")
     (license license:expat)))
 
 (define-public r-dramaanalysis
@@ -5764,13 +5765,13 @@ Publication: Kapsner et al. (2021) <doi:10.1055/s-0041-1733847>.")
 (define-public r-dqagui
   (package
     (name "r-dqagui")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQAgui" version))
        (sha256
-        (base32 "05qik0zm7ghrn75msrkfi20lxdk9bqjvwwf765ajpfaph5wmmxk5"))))
+        (base32 "0b2qy3h01k8v3l3bbnhij9ibr9gyzh8lnihqwmwnwqvrdgnypv6l"))))
     (properties `((upstream-name . "DQAgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -5823,13 +5824,13 @@ non-parametric Bayesian method, Dirichlet-based Polya Tree.  See Ning (2018)
 (define-public r-dptm
   (package
     (name "r-dptm")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPTM" version))
        (sha256
-        (base32 "1qjk6q4kx7mlzmp15gz468ky6jia3pf16jxyzjhf857z4yi5szl6"))))
+        (base32 "058b9sm41ns1393r0j9n932qc5bk32ddzlidzv7brrxyrz4zpd37"))))
     (properties `((upstream-name . "DPTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -16354,13 +16355,13 @@ dichotomized functional response regression (dfrr) model.")
 (define-public r-dfr
   (package
     (name "r-dfr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfr" version))
        (sha256
-        (base32 "18p31h1bh7h2s2jdi0lvn2m23smayj26kl5291rnvk47v41i0vh4"))))
+        (base32 "0fcm9b347pc8s54kgj2wkgxby32y8ph1wihwbca8gp7715y26227"))))
     (properties `((upstream-name . "dfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sgs r-matrix r-mass r-caret))
@@ -26519,13 +26520,13 @@ for equality.")
 (define-public r-datacompare
   (package
     (name "r-datacompare")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataCompare" version))
        (sha256
-        (base32 "07psxbij9v3dy20hxfb05cyawc9qi3ibfskgd705m28h47wl2g24"))))
+        (base32 "1akg6y31wrffhc5b68h664dsj8xrmpblggwcizg4kmqsz9lwj2fi"))))
     (properties `((upstream-name . "dataCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-skimr

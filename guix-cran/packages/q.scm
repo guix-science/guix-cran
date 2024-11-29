@@ -191,6 +191,32 @@ efficacy.")
 measures of approximation error.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-qvarsel
+  (package
+    (name "r-qvarsel")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qVarSel" version))
+       (sha256
+        (base32 "0nvfl4nkm5fwziba7cligr2xg18w2h7ibj5bff2zh189n87n3ly9"))))
+    (properties `((upstream-name . "qVarSel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-lpsolveapi))
+    (home-page "https://cran.r-project.org/package=qVarSel")
+    (synopsis "Select Variables for Optimal Clustering")
+    (description
+     "Finding hidden clusters in structured data can be hindered by the presence of
+masking variables.  If not detected, masking variables are used to calculate the
+overall similarities between units, and therefore the cluster attribution is
+more imprecise.  The algorithm q-vars implements an optimization method to find
+the variables that most separate units between clusters.  In this way, masking
+variables can be discarded from the data frame and the clustering is more
+accurate.  Tests can be found in Benati et al.(2017)
+<doi:10.1080/01605682.2017.1398206>.")
+    (license license:gpl2+)))
+
 (define-public r-qval
   (package
     (name "r-qval")

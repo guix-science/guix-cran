@@ -23086,6 +23086,36 @@ and conditional) are provided.")
 He and Lopes (2018) <@code{arXiv:1806.05738>}.")
     (license license:lgpl2.0+)))
 
+(define-public r-bayeslist
+  (package
+    (name "r-bayeslist")
+    (version "0.0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayeslist" version))
+       (sha256
+        (base32 "11b0dq1gc3qsv6qy5hdrf5jzbw5g8alqgp6nj5x1bramhnrc9mia"))))
+    (properties `((upstream-name . "bayeslist")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-ggplot2
+                             r-formula
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=bayeslist")
+    (synopsis "Bayesian Analysis of List Experiments with Prior Information")
+    (description
+     "Estimates Bayesian models of list experiments with informative priors.  It
+includes functionalities to estimate different types of list experiment models
+with varying prior information.  See Lu and TraunmÃ¼ller (2021)
+<doi:10.2139/ssrn.3871089> for examples and details of estimation.")
+    (license license:expat)))
+
 (define-public r-bayeslife
   (package
     (name "r-bayeslife")
@@ -26284,13 +26314,13 @@ shrinking and diffusing priors studied in Narisetty & He (2014)
 (define-public r-bas
   (package
     (name "r-bas")
-    (version "1.7.3")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAS" version))
        (sha256
-        (base32 "0f34mna1h0wc3b8qc76jjgwjddfkasq7b2rvg2y93dyz9bq33cpc"))))
+        (base32 "1h11lllvk9dhj63kzaibr71jvrlf944sy39grbg997r1z81g245g"))))
     (properties `((upstream-name . "BAS")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))

@@ -21325,13 +21325,13 @@ intervals.")
 (define-public r-familial
   (package
     (name "r-familial")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "familial" version))
        (sha256
-        (base32 "079dw3rwh8p0g3x5n8bc6rvkjfxa9r1179vl9dpyv186zmi1palv"))))
+        (base32 "1vsxl1a001wfmwf7bwcq2zc898y8y8bf354jndqmacci7zy6l38g"))))
     (properties `((upstream-name . "familial")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats r-ggplot2 r-depthproc))

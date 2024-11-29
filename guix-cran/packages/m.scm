@@ -12896,13 +12896,13 @@ and student-t errors (from Geweke) is also provided.")
 (define-public r-monolix2rx
   (package
     (name "r-monolix2rx")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monolix2rx" version))
        (sha256
-        (base32 "08895xsd5swxa6zv67z8bkn4ih3zp310x7a81ykp1xr5skdxarxl"))))
+        (base32 "0ij28qrk28s2hcdifvmlnbprfl6nivgx3fbmp7zhclm9i23a793g"))))
     (properties `((upstream-name . "monolix2rx")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

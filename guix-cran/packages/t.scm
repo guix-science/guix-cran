@@ -26589,6 +26589,37 @@ applications.")
 package roulette that is designed to facilitate learning about new packages.")
     (license license:expat)))
 
+(define-public r-tad
+  (package
+    (name "r-tad")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TAD" version))
+       (sha256
+        (base32 "0ab1jb1yfm7s12ivmywr3cnh5aq5ccfrnkb56izzbbsdbc3vd31l"))))
+    (properties `((upstream-name . "TAD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mblm r-foreach r-dofuture))
+    (native-inputs (list r-knitr))
+    (home-page "https://forgemia.inra.fr/urep/data_processing/tad")
+    (synopsis "Realize the Trait Abundance Distribution")
+    (description
+     "This analytical framework is based on an analysis of the shape of the trait
+abundance distributions to better understand community assembly processes, and
+predict community dynamics under environmental changes.  This framework
+mobilized a study of the relationship between the moments describing the shape
+of the distributions: the skewness and the kurtosis (SKR).  The SKR allows the
+identification of commonalities in the shape of trait distributions across
+contrasting communities.  Derived from the SKR, we developed mathematical
+parameters that summarise the complex pattern of distributions by assessing (i)
+the RÂ², (ii) the Y-intercept, (iii) the slope, (iv) the functional stability of
+community (TADstab), and, (v) the distance from specific distribution families
+(i.e., the distance from the skew-uniform family a limit to the highest degree
+of evenness: TADeve).")
+    (license license:bsd-3)))
+
 (define-public r-tactile
   (package
     (name "r-tactile")

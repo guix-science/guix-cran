@@ -5989,13 +5989,13 @@ as well as from literature and a GUI to access them.")
 (define-public r-crossnma
   (package
     (name "r-crossnma")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crossnma" version))
        (sha256
-        (base32 "0ma07lvf56z1ya587lb4zv8rbhzi8crnsgvh3xsz80livx9cdvp5"))))
+        (base32 "1z3q831769cd25fpnzbp6jvya872zdq56bxqpk1iav2gwp0m1kfn"))))
     (properties `((upstream-name . "crossnma")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18921,13 +18921,13 @@ to uncover insightful growth dynamics and make informed decisions.")
 (define-public r-compexpdes
   (package
     (name "r-compexpdes")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompExpDes" version))
        (sha256
-        (base32 "11nkcmygcmmk2df159ngbqaq6v3fwv87gvk5hjwfmni5h8dnxsc1"))))
+        (base32 "0m2a0yw07aq89ji5gif3dxp9lbn594igbqmmc2dn9dbwwj3czhyh"))))
     (properties `((upstream-name . "CompExpDes")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CompExpDes")
@@ -21853,21 +21853,19 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "0rkiyc54inxvmxnmm9cxfdbc2ri2r0ys4b29vdiiqgv4q7cbcl2n"))))
+        (base32 "1x6pnji3x7wflrgc4yspwib53fa9mf4q00cbd6zq4yka8gx0jj8v"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
-    (propagated-inputs (list r-visomopresults
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-survival
                              r-stringr
-                             r-scales
                              r-rlang
                              r-purrr
                              r-patientprofiles
@@ -43857,18 +43855,18 @@ vocal behaviour.")
 (define-public r-callme
   (package
     (name "r-callme")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "callme" version))
        (sha256
-        (base32 "1agyflf9ch5xyxmfdcv6shxz8h7ibp6rd3d6x1g7gk1cblvshlar"))))
+        (base32 "035fg1llsprv7qlww4qggzj2g1b234zrjn32bgjkn3kmqnk522bd"))))
     (properties `((upstream-name . "callme")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://github.com/coolbutuseless/callme")
-    (synopsis "Easily Compile and Call Inline C Functions")
+    (synopsis "Easily Compile and Call Inline 'C' Functions")
     (description
      "Compile inline C code and easily call with automatically generated wrapper
 functions.  By allowing user-defined headers and compilation flags

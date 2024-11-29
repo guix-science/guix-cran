@@ -5057,13 +5057,13 @@ series x 3 replicates + no template controls (NTC) x 3 replicates).")
 (define-public r-verification
   (package
     (name "r-verification")
-    (version "1.42")
+    (version "1.44")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verification" version))
        (sha256
-        (base32 "0pdqvg7cm9gam49lhc2xy42w788hh2zd06apydc95q2gj95xnaiw"))))
+        (base32 "095b0s2i2j655xfwjrddlz9pia0a1njzh7r3cjnfk84dp43a03hl"))))
     (properties `((upstream-name . "verification")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-fields r-dtw r-circstats r-boot))
