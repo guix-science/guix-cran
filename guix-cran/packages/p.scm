@@ -10637,16 +10637,17 @@ Net Monetary Benefit.  Details can be viewed in Parsons et al. (2023)
 (define-public r-predictmeans
   (package
     (name "r-predictmeans")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predictmeans" version))
        (sha256
-        (base32 "1010s79c55vndv3v4my0xrmdxvgpy7vhp46j1anxvr3xzgx1279q"))))
+        (base32 "0kizp3d4xq576b97m3x8jgfnxfhgr8ldgiv72ykf4ns07743nzix"))))
     (properties `((upstream-name . "predictmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
+                             r-reformulas
                              r-plyr
                              r-plotly
                              r-pbkrtest
@@ -16913,6 +16914,29 @@ Harvard's Institute for Quantitative Social Science for support.")
 introduce yourself, ask for permission, take slowly and never ask twice.")
     (license license:expat)))
 
+(define-public r-polisher
+  (package
+    (name "r-polisher")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PolisheR" version))
+       (sha256
+        (base32 "0fmjkjhdss980vx4p5j9yw0nkrydyjga2k2gv5gw3jri8335ky37"))))
+    (properties `((upstream-name . "PolisheR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-nailer r-dplyr))
+    (home-page "https://cran.r-project.org/package=PolisheR")
+    (synopsis "Interfacing 'NaileR' with 'Shiny'")
+    (description
+     "This package provides a very small package for more convenient use of
+@code{NaileR}'.  You provide a data set containing a latent variable you want to
+understand.  It generates a description and an interpretation of this latent
+variable using a Large Language Model.  For perceptual data, it describes the
+stimuli used in the experiment.")
+    (license license:gpl2+)))
+
 (define-public r-polished
   (package
     (name "r-polished")
@@ -23175,6 +23199,28 @@ styling/formatting.")
 software-as-a-service that provides a REST API. This package provides an R
 interface to that API, allowing you to query it and work with its responses.")
     (license license:expat)))
+
+(define-public r-pivotalp
+  (package
+    (name "r-pivotalp")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PivotalP" version))
+       (sha256
+        (base32 "1fsr806djbwrp9vwks51hxy2j6kqa6r7zdh1cnvzisa6shgx7g4x"))))
+    (properties `((upstream-name . "PivotalP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zipfr))
+    (home-page "https://cran.r-project.org/package=PivotalP")
+    (synopsis
+     "Prediction for Future Data from Mixture Distributions Gamma, Beta, Weibull and Normal")
+    (description
+     "This package provides functions to get prediction intervals and prediction
+points of future observations from mixture distributions like gamma, beta,
+Weibull and normal.")
+    (license license:gpl2+)))
 
 (define-public r-pivmet
   (package
@@ -36211,6 +36257,44 @@ of reinsurance layers with a layer-independent collective risk model.  The
 theoretical background of the matching algorithm and most other methods are
 described in Ulrich Riegel (2018) <doi:10.1007/s13385-018-0177-3>.")
     (license license:gpl2+)))
+
+(define-public r-pare
+  (package
+    (name "r-pare")
+    (version "0.1.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PaRe" version))
+       (sha256
+        (base32 "1r33dd1cj51bzxdn09v7smk3g5b0qzy5iihkbkr1jizmwsycljn0"))))
+    (properties `((upstream-name . "PaRe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rsvg
+                             r-rmarkdown
+                             r-r6
+                             r-pak
+                             r-magrittr
+                             r-lintr
+                             r-igraph
+                             r-glue
+                             r-git2r
+                             r-dplyr
+                             r-diagrammersvg
+                             r-diagrammer
+                             r-desc
+                             r-cyclocomp
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/darwin-eu-dev/PaRe")
+    (synopsis "Way to Perform Code Review or QA on Other Packages")
+    (description
+     "Reviews other packages during code review by looking at their dependencies, code
+style, code complexity, and how internally defined functions interact with one
+another.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-pardnacopy
   (package

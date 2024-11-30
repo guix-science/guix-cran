@@ -3033,16 +3033,17 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "1.0.3")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "1l0lnzk9ghmfjnzrrj7g25njww4wrnrmdhad6bx7a887v1xcgfcy"))))
+        (base32 "1nnkm178jzyrc1w0wvnz82lpzalkrmd91rym6rirv8aqwd7jwnw0"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-lhs r-glmnet r-ggplot2 r-gamlss-dist r-gamlss))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SVEMnet")
     (synopsis "Self-Validated Ensemble Models with Elastic Net Regression")
     (description
@@ -3052,7 +3053,7 @@ glmnet (Friedman et al. <doi:10.18637/jss.v033.i01>).  SVEM averages predictions
 from multiple models fitted to fractionally weighted bootstraps of the data,
 tuned with anti-correlated validation weights.  Also implements the randomized
 permutation whole model test for SVEM (Karl (2024)
-<doi:10.1016/j.chemolab.2024.105122>).  Code for the whole model test was taken
+<doi:10.1016/j.chemolab.2024.105122>). \\\\Code for the whole model test was taken
 from the supplementary material of Karl (2024).  Development of this package was
 assisted by GPT o1-preview for code structure and documentation.")
     (license (list license:gpl2 license:gpl3))))
@@ -13463,6 +13464,31 @@ methods are described in Reimann, Filzmoser, Garrett, Dutter (2008,
 ISBN:978-0-470-98581-6).")
     (license license:gpl3+)))
 
+(define-public r-statcuber
+  (package
+    (name "r-statcuber")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "STATcubeR" version))
+       (sha256
+        (base32 "1j5q0kll16csbwpvfaxs2g907i1g98lz5sd6zwbfpqq7908am5jb"))))
+    (properties `((upstream-name . "STATcubeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-pillar r-jsonlite r-httr r-cli))
+    (home-page "https://statistikat.github.io/STATcubeR/")
+    (synopsis
+     "R Interface for the 'STATcube' REST API and Open Government Data")
+    (description
+     "Import data from the STATcube REST API or from the open data portal of
+Statistics Austria.  This package includes a client for API requests as well as
+parsing utilities for data which originates from STATcube'.  Documentation about
+STA@code{TcubeR} is provided by several vignettes included in the package as
+well as on the public pkgdown page at
+<https://statistikat.github.io/STA@code{TcubeR/>}.")
+    (license license:gpl2+)))
+
 (define-public r-statconfr
   (package
     (name "r-statconfr")
@@ -15340,13 +15366,13 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "16ans039cx5kj0l1l8108jfplgz4mq5bbqhixks2dqmlsn5qn34m"))))
+        (base32 "1vqwz8gmjhn127bcsgclrk30mviffy351i35rimw1idg5cccmssi"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (inputs (list lapack))
@@ -17807,13 +17833,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.19.0")
+    (version "1.19.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "1mq3v5ab8k6drnsfhlc0n01iif315jd4h84vcs0chaq5p4mq5zgb"))))
+        (base32 "1vhc134qvjdzxn78b71skvxsjy1pyyyswzhyyz2av16dpp17c8wi"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (inputs (list openjdk))

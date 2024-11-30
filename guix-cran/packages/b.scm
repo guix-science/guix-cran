@@ -27071,6 +27071,30 @@ devtools::install_github(\"uni-Arya/fdpbandsdata\") in R and restarting R after
 installation.  The size of this data is roughly 81Mb.")
     (license license:expat)))
 
+(define-public r-banditsci
+  (package
+    (name "r-banditsci")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "banditsCI" version))
+       (sha256
+        (base32 "167myv0cd3bygypnvib0nbphcwr8sxwgj6h4fpvhkwyskdwyrnhn"))))
+    (properties `((upstream-name . "banditsCI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-mvtnorm r-mass r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/UChicago-pol-methods/banditsCI")
+    (synopsis "Bandit-Based Experiments and Policy Evaluation")
+    (description
+     "Frequentist inference on adaptively generated data.  The methods implemented are
+based on Zhan et al. (2021) <doi:10.48550/@code{arXiv.2106.02029>} and Hadad et
+al. (2021) <doi:10.48550/@code{arXiv.1911.02768>}.  For illustration, several
+functions for simulating non-contextual and contextual adaptive experiments
+using Thompson sampling are also supplied.")
+    (license license:gpl3+)))
+
 (define-public r-banditpam
   (package
     (name "r-banditpam")

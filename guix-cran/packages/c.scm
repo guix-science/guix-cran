@@ -21815,26 +21815,23 @@ data.")
 (define-public r-cohortsymmetry
   (package
     (name "r-cohortsymmetry")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSymmetry" version))
        (sha256
-        (base32 "1pbyx0c42c3h35y068fbxxhw2x5addsq0dfq7fn3iwswm0418zw3"))))
+        (base32 "09q5vgxppba5hfhcs1dhybc89xh3pb5wlq5a6d76a7gnybxhmmyq"))))
     (properties `((upstream-name . "CohortSymmetry")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
                              r-tidyr
                              r-tibble
-                             r-stringr
                              r-rlang
                              r-patientprofiles
                              r-omopgenerics
                              r-omock
                              r-here
-                             r-gt
-                             r-flextable
                              r-duckdb
                              r-drugutilisation
                              r-dplyr
@@ -37655,13 +37652,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "15395b3kf5ns238ijd4m6kdhqf9a87lf3gjicz96zm0b83zrkk4n"))))
+        (base32 "100mgicli60fwzk5bgzs1f2c3kshwvllqdn31v6hczqihwxwjjq0"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

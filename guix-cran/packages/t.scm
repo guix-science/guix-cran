@@ -6061,20 +6061,24 @@ a method you would like implemented, please get in touch.")
 (define-public r-trialemulation
   (package
     (name "r-trialemulation")
-    (version "0.0.3.9")
+    (version "0.0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialEmulation" version))
        (sha256
-        (base32 "0ygagg6f2a0wvqslgs2jq5qrlbmwn8avxjhvir801s6cj0i1s0rn"))))
+        (base32 "1dd7gzi4lqbcfpv3q0am2pvlj8d64j9rxpi1lh1hi2pyd6xaqlmm"))))
     (properties `((upstream-name . "TrialEmulation")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
                              r-rcpp
                              r-parglm
                              r-mvtnorm
+                             r-lmtest
+                             r-lifecycle
                              r-formula-tools
+                             r-duckdb
+                             r-dbi
                              r-data-table
                              r-checkmate
                              r-broom))
@@ -8523,13 +8527,13 @@ al. (2016) <arxiv:1703.03373>, respectively.")
 (define-public r-tramme
   (package
     (name "r-tramme")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramME" version))
        (sha256
-        (base32 "00i0813czlwlb6lxsljhsp644mpz3zwcy068lb1z7qkxncic377d"))))
+        (base32 "150fh6a7dw5bh240m2dlv3insssdv2qfyngm1faa8rfkcqwbb2p1"))))
     (properties `((upstream-name . "tramME")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables

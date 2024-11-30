@@ -15725,13 +15725,13 @@ visualisation.")
 (define-public r-fertilmodel
   (package
     (name "r-fertilmodel")
-    (version "1.1")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fertilmodel" version))
        (sha256
-        (base32 "0q0mf8n3fc53bqjsv5c4mcfm4vjhyy2hw8rh1bsjsj71xmih50a4"))))
+        (base32 "0bh259lgs3fbv2mkij1md1gxzx7qclbhvcb6nydcd9f7n5x15zhk"))))
     (properties `((upstream-name . "fertilmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog))

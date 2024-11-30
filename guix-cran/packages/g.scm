@@ -5262,6 +5262,31 @@ differential equations.  This is an extension to the greta software, Golding
 (2019) <doi:10.21105/joss.01601>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-greta-censored
+  (package
+    (name "r-greta-censored")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "greta.censored" version))
+       (sha256
+        (base32 "0j4bfbwsx0hrm6ni64wzmj6sb2696cbn1g9yyp0d69xa41da5194"))))
+    (properties `((upstream-name . "greta.censored")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensorflow r-reticulate r-greta r-glue))
+    (home-page "https://github.com/mtwesley/greta.censored")
+    (synopsis "Censored Distributions for 'greta'")
+    (description
+     "This package provides additional censored distributions for use with greta', a
+probabilistic programming framework for Bayesian modeling.  Includes censored
+versions of Normal, Log-Normal, Student's T, Gamma, Exponential, Weibull,
+Pareto, and Beta distributions with support for right, left, and interval
+censoring.  For details on greta', see Golding (2019) <doi:10.21105/joss.01601>.
+ The methods are implemented using @code{TensorFlow} and @code{TensorFlow}
+Probability for efficient computation.")
+    (license license:asl2.0)))
+
 (define-public r-greta
   (package
     (name "r-greta")
@@ -16193,13 +16218,13 @@ a light, pastel aesthetic.  Syntax follows the viridis package.")
 (define-public r-ggtangle
   (package
     (name "r-ggtangle")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtangle" version))
        (sha256
-        (base32 "0drw2m6marf7msnghxpxbi6y3zzns0x8ybr5x34q53q25bbkr4m2"))))
+        (base32 "07hlg2ygq9fbyzvfp1brvpxl1gr1hd10py73w2wsz95p91j9q3gr"))))
     (properties `((upstream-name . "ggtangle")))
     (build-system r-build-system)
     (propagated-inputs (list r-yulab-utils

@@ -18259,13 +18259,13 @@ importances and effects, and fairness metrics.")
 (define-public r-mlr3spatiotempcv
   (package
     (name "r-mlr3spatiotempcv")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3spatiotempcv" version))
        (sha256
-        (base32 "04n5bzppkj9fmdhd54qk8738id0sfd3ij7p31l3hxmjbak5inh83"))))
+        (base32 "06kb8v0g1kn1z2107g1ik2r2hydcxljs8hb77cffhz2l7ac5cnq2"))))
     (properties `((upstream-name . "mlr3spatiotempcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -18279,10 +18279,11 @@ importances and effects, and fairness metrics.")
     (home-page "https://mlr3spatiotempcv.mlr-org.com/")
     (synopsis "Spatiotemporal Resampling Methods for 'mlr3'")
     (description
-     "Extends the mlr3 ML framework with spatio-temporal resampling methods to account
-for the presence of spatiotemporal autocorrelation (STAC) in predictor
-variables.  STAC may cause highly biased performance estimates in
-cross-validation if ignored.")
+     "Extends the mlr3 machine learning framework with spatio-temporal resampling
+methods to account for the presence of spatiotemporal autocorrelation (STAC) in
+predictor variables.  STAC may cause highly biased performance estimates in
+cross-validation if ignored.  A JSS article is available at
+<doi:10.18637/jss.v111.i07>.")
     (license license:lgpl3)))
 
 (define-public r-mlr3spatial
@@ -41035,13 +41036,13 @@ least-cost paths.")
 (define-public r-marlod
   (package
     (name "r-marlod")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marlod" version))
        (sha256
-        (base32 "1sncr219jbkl4vfazdrjj2rv714zy2jvzmywdfaxv7d1aakl2s5l"))))
+        (base32 "1xz8ax946mg7mhhm47hpv5s0jgvw9c3idanmgd6sch4ihz5d29yf"))))
     (properties `((upstream-name . "marlod")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-miwqs r-mass r-knitr))
@@ -41051,8 +41052,9 @@ least-cost paths.")
     (description
      "This package provides functions of marginal mean and quantile regression models
 are used to analyze environmental exposure and biomonitoring data with repeated
-measurements and non-detects, as well as longitudinal exposure data that include
-non-detects and time-dependent covariates.")
+measurements and non-detects (i.e., values below the limit of detection (LOD)),
+as well as longitudinal exposure data that include non-detects and
+time-dependent covariates.")
     (license license:gpl3)))
 
 (define-public r-markowitzr

@@ -15509,13 +15509,13 @@ Valeinis, E. Cers (2011)
 (define-public r-eks
   (package
     (name "r-eks")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eks" version))
        (sha256
-        (base32 "11hg9zqb5j2dswj7lx6ah2xfrxdak8xxdwml7xzkf9m3d36xjgha"))))
+        (base32 "1l4ciysx20i5a9vp8364znbnflxsg2id52yj8ispibn5k3g5y3w0"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -15530,7 +15530,7 @@ Valeinis, E. Cers (2011)
     (description
      "Extensions of the kernel smoothing functions from the ks package for
 compatibility with the tidyverse and geospatial ecosystems
-<doi:10.48550/@code{arXiv.2203.01686>}.")
+<doi:10.1007/s00180-024-01543-9>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ekmcmc

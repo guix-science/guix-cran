@@ -65,6 +65,46 @@ Originally published by the New Zealand Police at
 <http://www.police.govt.nz/about-us/publication/road-policing-driver-offence-data-january-2009-december-2017>.")
     (license license:cc0)))
 
+(define-public r-nzilbb-vowels
+  (package
+    (name "r-nzilbb-vowels")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nzilbb.vowels" version))
+       (sha256
+        (base32 "1yjh9pyw3f4fqjx25ahmqjz0jq696idjfxvaghg021drlakhgm3n"))))
+    (properties `((upstream-name . "nzilbb.vowels")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-smacof
+                             r-rstudioapi
+                             r-rsample
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-ggrepel
+                             r-ggplot2
+                             r-gghalves
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://nzilbb.github.io/nzilbb_vowels/")
+    (synopsis "Vowel Covariation Tools")
+    (description
+     "This package provides tools to support research on vowel covariation.  Methods
+are provided to support Principal Component Analysis workflows (as in Brand et
+al. (2021) <doi:10.1016/j.wocn.2021.101096> and Wilson Black et al. (2023)
+<doi:10.1515/lingvan-2022-0086>).")
+    (license license:expat)))
+
 (define-public r-nzilbb-labbcat
   (package
     (name "r-nzilbb-labbcat")

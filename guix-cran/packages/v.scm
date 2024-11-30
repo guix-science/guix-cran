@@ -8600,6 +8600,37 @@ models and enhancing Visual Predictive Checks (VPC) by integrating data into
 cohesive plots that can highlight model misspecification.")
     (license license:lgpl3)))
 
+(define-public r-vaccineff
+  (package
+    (name "r-vaccineff")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vaccineff" version))
+       (sha256
+        (base32 "1cvcfp8a229i3i1s725i9g5qgbaj22h9k69yyfpwmbjbp14lmgm7"))))
+    (properties `((upstream-name . "vaccineff")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-scales
+                             r-rlang
+                             r-matchit
+                             r-linelist
+                             r-ggplot2
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epiverse-trace/vaccineff")
+    (synopsis
+     "Estimate Vaccine Effectiveness Based on Different Study Designs")
+    (description
+     "This package provides tools for estimating vaccine effectiveness and related
+metrics.  The vaccineff_data class manages key features for preparing,
+visualizing, and organizing cohort data, as well as estimating vaccine
+effectiveness.  The results and model performance are assessed using the
+vaccineff class.")
+    (license license:expat)))
+
 (define-public r-vaccine
   (package
     (name "r-vaccine")

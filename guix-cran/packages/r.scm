@@ -40283,13 +40283,13 @@ C++20'.")
 (define-public r-rcppapt
   (package
     (name "r-rcppapt")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppAPT" version))
        (sha256
-        (base32 "03q2i1b9lrb0sn0vq4jyqjiy2zwi2ydhzlnw1b8nj9xdfxx804mx"))))
+        (base32 "0ma9457xsdpq0sc50lw99x3pmw3yvajcssqpiswcp4bzpa9l52xn"))))
     (properties `((upstream-name . "RcppAPT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
