@@ -1604,13 +1604,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "1ihbh5gm029n7g8041l7wrsd1wph7cl4hvx3bmd9669lv9w8476d"))))
+        (base32 "1vh9lffll6l1d6wbzhmci9zy9m6kq6wbnc8x4ydplagr5nigdh05"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

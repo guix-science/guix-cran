@@ -2742,13 +2742,13 @@ Macmillian et al (2000)
 (define-public r-wmap
   (package
     (name "r-wmap")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WMAP" version))
        (sha256
-        (base32 "11w5qax759a8h86s7ws0c9xj8y2nh8yrqlz00kd3ih5xga8mxjb3"))))
+        (base32 "11fd1g83i2qvp9814zk3qq8bz5gir1j5gsz5x5zrqgygyla2xpbw"))))
     (properties `((upstream-name . "WMAP")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot

@@ -3696,13 +3696,13 @@ are directly influenced by a number of variables (Battese and Coelli, 1995,
 (define-public r-fromo
   (package
     (name "r-fromo")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fromo" version))
        (sha256
-        (base32 "18ai6b6c2b2ifwrahkvprga7s2vwr0d1jhlp0kajwi6p2vrkrc7h"))))
+        (base32 "017s0h2nvg5xqc4r91brwjabryacnwkry5zivpcic512bvckglsj"))))
     (properties `((upstream-name . "fromo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -19484,21 +19484,30 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "0py8xwi41vp9030481i7iqgmzsrmbaqyhq61hpk8hj1cqdyasv4i"))))
+        (base32 "18ddpwkxy2ms4b6l2yp9r3bicnwymh5bxhifrvacbdm9s381f8rq"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2
-                             r-proc
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tune
+                             r-tibble
+                             r-rsample
+                             r-rlang
+                             r-reshape2
+                             r-recipes
+                             r-parsnip
+                             r-magrittr
                              r-ggplot2
                              r-foreach
+                             r-dplyr
                              r-doparallel
-                             r-caret))
+                             r-dials))
     (home-page "https://cran.r-project.org/package=fastml")
     (synopsis "Fast Machine Learning Model Training and Evaluation")
     (description

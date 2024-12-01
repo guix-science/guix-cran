@@ -25666,13 +25666,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.11.3")
+    (version "0.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "1n5hilm5i2hyb9ksfhz88fv65n70gbc2j2xqjxlqhhzmvyz26ikc"))))
+        (base32 "08qq7yc5gdflagg58f5g357ajrlhbyy87ici3z7r9pzanw7v6n09"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

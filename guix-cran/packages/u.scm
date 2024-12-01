@@ -1848,13 +1848,13 @@ oncology and other clinical studies.  Yunhe Liu, Haitao Pan (2024).  Submitted."
 (define-public r-unpivotr
   (package
     (name "r-unpivotr")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unpivotr" version))
        (sha256
-        (base32 "0j3vlh9g0zkm4gql4myisbmkhpvyqa0sb1dkc0xvvqczs93pzzax"))))
+        (base32 "0rkkq4m0w8pcya1yvxvilpdxmn0wjg7xfz6d06026zlhx8c4xm9s"))))
     (properties `((upstream-name . "unpivotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

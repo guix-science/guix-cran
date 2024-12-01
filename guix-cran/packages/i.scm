@@ -9671,13 +9671,13 @@ squared coefficient of variation is based on Garcia-Penalosa, C., & Orgiazzi, E.
 (define-public r-ineatlas
   (package
     (name "r-ineatlas")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ineAtlas" version))
        (sha256
-        (base32 "07yqgj20zal40m1vbz8r98ddxnfm9dxhpf3j2d4c9pj9299ncdxz"))))
+        (base32 "0i20f2n3p3kix62fpqxyk4lfvlccg86a2rb986f7rrxplid7qiv8"))))
     (properties `((upstream-name . "ineAtlas")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

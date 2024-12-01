@@ -9660,39 +9660,6 @@ flexible tpn model.")
 three-state progressive model.")
     (license license:gpl3)))
 
-(define-public r-tpmplt
-  (package
-    (name "r-tpmplt")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TPMplt" version))
-       (sha256
-        (base32 "17nnymcaxh294fz8kbiazzfqf1pn09a3kzjznqxflqbxlxin8kl9"))))
-    (properties `((upstream-name . "TPMplt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vbtree
-                             r-rgl
-                             r-rcolorbrewer
-                             r-metr
-                             r-ggplot2
-                             r-e1071
-                             r-dlm))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CubicZebra/TPMplt")
-    (synopsis
-     "Tool-Kit for Dynamic Materials Model and Thermal Processing Maps")
-    (description
-     "This package provides a simple approach for constructing dynamic materials
-modeling suggested by Prasad and Gegel (1984) <doi:10.1007/BF02664902>.  It can
-easily generate various processing-maps based on this model as well.  The
-calculation result in this package contains full materials constants,
-information about power dissipation efficiency factor, and rheological
-properties, can be exported completely also, through which further analysis and
-customized plots will be applicable as well.")
-    (license license:gpl3)))
-
 (define-public r-tpm
   (package
     (name "r-tpm")
