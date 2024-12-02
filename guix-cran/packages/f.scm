@@ -7140,13 +7140,13 @@ functions such as stats::lm(), stats::glm() and survival::coxph().")
 (define-public r-forestmangr
   (package
     (name "r-forestmangr")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestmangr" version))
        (sha256
-        (base32 "05zfxdcj12yc61qiz4s6y8akah743hfmr5wd76kqnp3hcphiigja"))))
+        (base32 "1am8z2ghy6303m57rp72mm3blcknx05yj9kvf6233icw9yz1nzyd"))))
     (properties `((upstream-name . "forestmangr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18820,13 +18820,13 @@ are designed to be readable, with longer names possessing short aliases.")
 (define-public r-fastts
   (package
     (name "r-fastts")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTS" version))
        (sha256
-        (base32 "16icpdhrqx34q189iqkdpbxd95lhvsb39z4xz2b3lq80pbcri0i0"))))
+        (base32 "11h022367f7m5xxyqw9v2yqw4y0fv4p4i58fbjpbd9nvl5a4vyh9"))))
     (properties `((upstream-name . "fastTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick r-rlang r-rcpproll r-ncvreg r-dplyr))

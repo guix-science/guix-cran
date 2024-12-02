@@ -56065,13 +56065,13 @@ found in the package vignettes <doi:10.18637/jss.v090.i12>,
 (define-public r-scoringfunctions
   (package
     (name "r-scoringfunctions")
-    (version "0.0.7")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringfunctions" version))
        (sha256
-        (base32 "1vhd5jid2mn8nm5ylxsr9v3fxxgax0j5avf0gnywn47y4y0llx7z"))))
+        (base32 "031aki5f8idcclbybvdqpwisl02b98l8sq97d48k630lmizfpbxs"))))
     (properties `((upstream-name . "scoringfunctions")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=scoringfunctions")

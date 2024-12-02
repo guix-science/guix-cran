@@ -42302,36 +42302,6 @@ Additionally, it takes profit from multi-core processing to enable optimization
 of time-consuming functions.")
     (license license:gpl2+)))
 
-(define-public r-rcdt
-  (package
-    (name "r-rcdt")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RCDT" version))
-       (sha256
-        (base32 "1k27kydqzxqdhjbygq5a8mdhwlvbc32j1hg4vr223rwwc94864w6"))))
-    (properties `((upstream-name . "RCDT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rvcg
-                             r-rgl
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-polychrome
-                             r-gplots
-                             r-colorsgen
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/RCDT")
-    (synopsis "Fast 2D Constrained Delaunay Triangulation")
-    (description
-     "This package performs 2D Delaunay triangulation, constrained or unconstrained,
-with the help of the C++ library CDT'.  A function to plot the triangulation is
-provided.  The constrained Delaunay triangulation has applications in geographic
-information systems.")
-    (license license:gpl3)))
-
 (define-public r-rcdklibs
   (package
     (name "r-rcdklibs")
@@ -46778,15 +46748,16 @@ algorithm, and a brute force algorithm (for small problems).")
 (define-public r-rank
   (package
     (name "r-rank")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rank" version))
        (sha256
-        (base32 "1pbi2s7361v6jzv9574dhcvdryachrw8s25vk2ca5jjvp9yrj2li"))))
+        (base32 "1b2rrnwcaz10anb9fni3hxkk42iy3wkpvliidz271gfmnh2660j9"))))
     (properties `((upstream-name . "rank")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/selkamand/rank")
     (synopsis "Customisable Ranking of Numerical and Categorical Data")
     (description

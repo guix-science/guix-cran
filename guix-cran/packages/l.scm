@@ -10058,13 +10058,13 @@ included.  View a demo online at <https://daattali.com/shiny/lightsout/>.")
 (define-public r-lightr
   (package
     (name "r-lightr")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lightr" version))
        (sha256
-        (base32 "0wbrwkkz11cp4n0ikxc541y9hpav5kvr4fv9s9llrd1ammpkzfw3"))))
+        (base32 "0pw2kdw4izhnlzis6mn52c3m8x3nhrhknlh6mk7i5ri8phv237w8"))))
     (properties `((upstream-name . "lightr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-progressr r-future-apply))
@@ -10076,8 +10076,7 @@ included.  View a demo online at <https://daattali.com/shiny/lightsout/>.")
 extract spectral data and metadata, as described in Gruson, White & Maia (2019)
 <doi:10.21105/joss.01857>.  Among other formats, it can import files from
 Avantes <https://www.avantes.com/>, CRAIC <https://www.microspectra.com/>, and
-@code{OceanInsight} (formerly @code{OceanOptics}')
-<https://www.oceaninsight.com/> brands.")
+@code{OceanOptics'/'OceanInsight} <https://www.oceanoptics.com/> brands.")
     (license license:gpl2+)))
 
 (define-public r-lightparser
