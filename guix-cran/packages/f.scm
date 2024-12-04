@@ -458,7 +458,7 @@ value phi-wabl given a sample of trapezoidal fuzzy numbers.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -559,7 +559,7 @@ dealing with multicollinearity.  Initially described in Barbosa (2015)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -821,7 +821,7 @@ provided in the \"inst/examples\" folder.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -1145,7 +1145,7 @@ mirai_multisession', provided here, can run more than 125 parallel R processes."
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -3765,7 +3765,7 @@ exploratory data analysis.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -5323,7 +5323,7 @@ Computational Statistics & Data Analysis, Volume 70, 2014, Pages 88-100, ISSN
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -7782,7 +7782,7 @@ hierarchy of data tree, and reform the structure of data tree.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -8024,7 +8024,7 @@ generation.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -8855,7 +8855,6 @@ model accuracy.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -9394,7 +9393,6 @@ Population Health center.  References : Reshef et al. (2011)
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -10462,7 +10460,7 @@ ISBN:9780080557816).")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -11022,7 +11020,6 @@ bidirectional half-arrows.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -11130,7 +11127,7 @@ way.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -11557,7 +11554,6 @@ with the convenience of htmlwidgets'.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -12864,7 +12860,7 @@ topic: <https://sdmx.org/wp-content/uploads/CL_OBS_STATUS_v2_1.docx>,
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -13723,7 +13719,7 @@ integration <doi:10.1186/1752-0509-5-85>.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -16330,7 +16326,6 @@ in C++ for scalability.  fido replaces the previous package stray'.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -18768,7 +18763,7 @@ with a focus on consistency , punctuality and completeness of data.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -24968,7 +24963,7 @@ Learning by Christoph Molnar, Giuseppe Casalicchio, and Bernd Bischl (2018)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -25186,7 +25181,6 @@ published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)

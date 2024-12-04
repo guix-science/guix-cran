@@ -505,7 +505,6 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -644,7 +643,7 @@ Variable trees display information about nested subsets of a data frame.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -1634,7 +1633,6 @@ Requires installation of Vorteks software.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2460,7 +2458,6 @@ based in Russia.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2819,7 +2816,7 @@ computation of evaluation criteria.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -3485,20 +3482,20 @@ from Kraemer H.C. & Kupfer D.J. (2006) <doi:10.1016/j.biopsych.2005.09.014>.")
 (define-public r-viscov
   (package
     (name "r-viscov")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisCov" version))
        (sha256
-        (base32 "0rcypw7szbs5x9wcdihcj87i7kic2dz8c56zdxq3pfrqsligm86b"))))
+        (base32 "1vxal6kqryawg5z6vanggbrxyk7qkm7091lcir3smwdi6qakwm4z"))))
     (properties `((upstream-name . "VisCov")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scatterplot3d r-kernsmooth r-clustergeneration
-                             r-bayesm))
+    (propagated-inputs (list r-trialr r-scatterplot3d r-kernsmooth
+                             r-clustergeneration r-bayesm))
     (home-page "https://cran.r-project.org/package=VisCov")
     (synopsis "Visualizing of Distributions of Covariance Matrices")
     (description
@@ -4536,7 +4533,7 @@ select steps in a convenient way.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -4590,7 +4587,6 @@ diacritics and different spellings.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5145,7 +5141,6 @@ treatment of patients.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5413,7 +5408,7 @@ Factorization algorithms - Random generators of diferent types of integers.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -5977,7 +5972,6 @@ composition (De Caceres et al, 2013) <doi:10.1111/2041-210X.12116>.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6049,7 +6043,6 @@ analysis, especially with the vegan package.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)

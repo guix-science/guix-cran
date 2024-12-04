@@ -1854,7 +1854,7 @@ the package.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -2533,7 +2533,7 @@ performance.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -2859,7 +2859,6 @@ dynamically sortable tables.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2965,7 +2964,6 @@ obsolete are not included.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4045,7 +4043,6 @@ imputations are needed, following the work of von Hippel (2020)
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4501,7 +4498,7 @@ of squares.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -5439,7 +5436,7 @@ and visualizing health data.  Federica Gazzelloni (2024)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -7520,7 +7517,7 @@ methodology', Mahling et al. (2013) <doi:10.1111/j.1467-9876.2012.01055.x>.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -7829,7 +7826,6 @@ test.  Some references are: Chen S.X. and Qin Y.L. (2010).
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -9859,7 +9855,7 @@ routes and isolines are returned as sf objects.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -12901,7 +12897,7 @@ description of some of our methods.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -13017,7 +13013,6 @@ Larsen et al. (2019) <doi:10.1145/3338286.3340115>; Lilija et al. (2019)
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)

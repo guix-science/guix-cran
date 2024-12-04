@@ -2052,7 +2052,6 @@ normal profiles.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2993,7 +2992,7 @@ sparse principal component analysis.  Journal of Multivariate Analysis,
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -4124,7 +4123,7 @@ L1-regularization.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -4646,7 +4645,7 @@ combination therapies to overcome resistance mechanisms.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -6965,7 +6964,7 @@ Deng, 2019, <doi:10.1007/s41060-018-0144-8>).")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -8517,7 +8516,7 @@ censored survival data as well as area under the curve (AUC).")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -9551,7 +9550,7 @@ package.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -11640,7 +11639,7 @@ counts from scratch for each time point.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -12048,7 +12047,7 @@ found here:
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -12204,7 +12203,7 @@ methods like PCA and PLS.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -12343,7 +12342,7 @@ the imputation functions.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -13963,7 +13962,6 @@ distributions for claim amounts.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -14005,7 +14003,7 @@ through @code{WebGL} filters and performing basic high-pass/low-pass filtering."
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -14127,7 +14125,7 @@ background of the methods.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -15841,7 +15839,6 @@ for a list of copyright holders and authors.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -16715,7 +16712,6 @@ performance and to calibrate their outputs into Log-Likelihood Ratios.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -17062,7 +17058,6 @@ freely delivered under formal request through the official web page
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -19702,7 +19697,6 @@ splines, Duchon splines or low rank splines.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)

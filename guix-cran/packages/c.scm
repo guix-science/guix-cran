@@ -453,7 +453,6 @@ movement data and copulas.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -620,13 +619,13 @@ be visualised with any appropriate graphics function in R.")
 (define-public r-cyclestreets
   (package
     (name "r-cyclestreets")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cyclestreets" version))
        (sha256
-        (base32 "0sci6bg9xb7044sm41ycykdwah9rn4227m9140dx0rhbn60i1y7m"))))
+        (base32 "1d83vxzc303vmrrlpwzv20z8xxhdwnp8ffc274axfn8mx7z21la1"))))
     (properties `((upstream-name . "cyclestreets")))
     (build-system r-build-system)
     (arguments
@@ -2711,7 +2710,6 @@ is tested with yeast genome and gene expression data of Yassour, et al. (2009)
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -3643,7 +3641,7 @@ model fitting possible within a Poisson GLM framework.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -4501,7 +4499,7 @@ Rao, and Junho Yang.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -5256,7 +5254,7 @@ Conicyt-Regional R08C1002 is gratefully acknowledged.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -7872,7 +7870,7 @@ also be used to analyze team performances.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -8087,7 +8085,7 @@ Default Swap - CDS - spreads) and price Credit Default Swaps - CDS.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -9308,7 +9306,6 @@ lists, and lists.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -12099,7 +12096,7 @@ matrix are from a Poisson or a negative binomial distribution.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -12386,7 +12383,7 @@ their own methods for randomization.  Rosenthal and Rubin (1994)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -12658,7 +12655,7 @@ to multi-species distribution models <DOI:10.48550/@code{arXiv.2201.13095>}.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -13806,7 +13803,7 @@ correlations from two samples in a single correlation matrix or corrgram.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -14033,7 +14030,6 @@ valuation methods, loan amortization schedules, and Capital Asset Pricing Model.
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -14624,7 +14620,7 @@ machines, or submitting grid engine jobs.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -15332,7 +15328,7 @@ copula adopted in particular.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -15660,7 +15656,7 @@ methods based on L2 distance from empirical copula function are also included.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -15945,7 +15941,6 @@ Bioconductor.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -16191,7 +16186,7 @@ complex sample survey designs.  Wrapper around the survey package.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -17738,7 +17733,6 @@ the methods are general and useful for terrestrial systems as well.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -20634,7 +20628,7 @@ Zero-inflated CMP regression (Sellers & Raim, 2016)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -20937,7 +20931,7 @@ the analysed objects.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -21972,7 +21966,7 @@ presence of a misclassified binary mediator\"
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -22092,7 +22086,7 @@ etc.  More functions will be added later.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -24734,7 +24728,7 @@ P. (2024) <@code{arXiv:2403.18602>}.  Build multiple networks using the
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -27270,7 +27264,7 @@ students of the Center for Mathematical Research, Stankin, Moscow.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -30683,7 +30677,7 @@ the sources!")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -31075,7 +31069,6 @@ posterior predictive distributions derived from these references.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -31297,7 +31290,7 @@ the statistical models.  Details are given in Paciorek, Stone, and Wehner (2018)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -32296,7 +32289,7 @@ the outcomes of each cleaning task.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -34314,7 +34307,6 @@ Leydold J. (2023) <doi:10.1214/23-ejs2149>.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -35201,7 +35193,6 @@ curves.  Details are given in Schomaker, @code{McIlleron}, Denti, Diaz (2024)
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -36212,7 +36203,7 @@ thermodynamic properties of proteins.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -40326,7 +40317,6 @@ The reference article for these datasets is Mayer and Zignago (2011)
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -40392,7 +40382,7 @@ and gene-set analysis procedure. <doi:10.1093/bioinformatics/btt008>.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -44059,7 +44049,6 @@ the help files.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -44329,7 +44318,7 @@ Augmented Inverse Propensity Weighted Estimator.\" Political Analysis.  18:
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -45964,7 +45953,7 @@ Maumy-Bertrand, M. (2014) <doi:10.1093/bioinformatics/btt705>.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -46865,7 +46854,6 @@ developments) in ecological time series using fitted Weibull functions.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -47622,7 +47610,6 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -48129,7 +48116,7 @@ Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -48948,7 +48935,7 @@ simulated model outputs is provided.  See
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -49856,7 +49843,6 @@ microarray expression data using C3NET.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)

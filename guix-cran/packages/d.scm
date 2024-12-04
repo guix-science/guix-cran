@@ -5875,7 +5875,6 @@ random walk with restarts, performed on the above subnetwork.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5995,13 +5994,13 @@ behind it are described in Reiter et al. (2017) <doi:10.18420/in2017_119>.")
 (define-public r-drake
   (package
     (name "r-drake")
-    (version "7.13.10")
+    (version "7.13.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drake" version))
        (sha256
-        (base32 "1nd8vqlc2hzxlh8vlqjvgls3gc2ya8vmx7nyci5g1nib1l07gxrq"))))
+        (base32 "0iabxbc9xb12kpa00yml61d6hhmhv47zsl46mb0lrbv808hkxsad"))))
     (properties `((upstream-name . "drake")))
     (build-system r-build-system)
     (arguments
@@ -6044,7 +6043,6 @@ and more, is available at the reference website
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6629,7 +6627,7 @@ exponential mechanism (@code{McSherry} & Talwar, 2007)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -8963,7 +8961,7 @@ rendering can be sometimes different from the original documents.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -10100,7 +10098,6 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -11806,7 +11803,6 @@ package distr').")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -12101,7 +12097,6 @@ Saarinen, Jasjeet S. Sekhon, Simon Walter.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -13421,7 +13416,7 @@ and Ward (2011) <doi:10.1016/j.amc.2011.03.124>.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -13612,7 +13607,7 @@ Analysis, Hierarchical Clustering and the K-Means Method.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -14845,7 +14840,7 @@ handle weights and/or missings.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -15573,7 +15568,6 @@ changes than first-order differences across heterogeneous patterns.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -15666,7 +15660,6 @@ and Islam (2006) <doi:10.1016/j.ijforecast.2006.01.005>.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -16691,7 +16684,7 @@ processing for reading and saving DICOM images.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -17089,7 +17082,6 @@ approach.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -17127,7 +17119,6 @@ approach.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -17844,7 +17835,7 @@ the paper linked to via the URL below.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -18820,7 +18811,6 @@ profile analysis.  See Robert J. Zwitser and Gunter Maris
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -19949,7 +19939,6 @@ other functionality, we provide an implementation for OSAT score by Yan et al.
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -23964,7 +23953,6 @@ alternative in the objects of class \"declared\".")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -24254,7 +24242,7 @@ classes in data frames in the context of double-entry bookkeeping.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -24297,7 +24285,7 @@ of the posterior distributions of model parameters and trajectories.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -25866,7 +25854,7 @@ the @code{dChip} software.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -27212,7 +27200,7 @@ API.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -27590,7 +27578,6 @@ nominal durations such as seconds, hours, days, and weeks.  See ?datetime and
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -27745,7 +27732,6 @@ Brazilian Amazon region from a variety of official sources.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -28497,7 +28483,6 @@ information.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -31832,7 +31817,6 @@ management (upload/update/deletion/sharing), and listing of stored resources.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -31875,7 +31859,6 @@ used as a reactive filter of structured data.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -31920,7 +31903,6 @@ fast and beautiful interactive visualization for Markdown and Shiny'.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -31960,7 +31942,6 @@ examples provided here are taken from the official D3Plus website
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -32005,7 +31986,7 @@ partition chart, ...")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -32039,7 +32020,6 @@ item-level analysis as well as test development.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)

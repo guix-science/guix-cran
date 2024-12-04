@@ -463,6 +463,32 @@ Autoregressive (VAR), VHAR, Bayesian VAR (BVAR), and Bayesian VHAR (BVHAR)
 models.")
     (license license:gpl3+)))
 
+(define-public r-bvarverse
+  (package
+    (name "r-bvarverse")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BVARverse" version))
+       (sha256
+        (base32 "00nghvd5bavmn5hw89pcz20x5kbpxr707r5yvvsakn77rdis37ig"))))
+    (properties `((upstream-name . "BVARverse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-generics r-bvar))
+    (home-page "https://github.com/nk027/bvarverse")
+    (synopsis "Tidy Bayesian Vector Autoregression")
+    (description
+     "This package provides functions to prepare tidy objects from estimated models
+via BVAR (see Kuschnig & Vashold, 2019 <doi:10.13140/RG.2.2.25541.60643>) and
+visualisation thereof.  Bridges the gap between estimating models with BVAR and
+plotting the results in a more sophisticated way with ggplot2 as well as passing
+them on in a tidy format.")
+    (license license:gpl3)))
+
 (define-public r-bvartools
   (package
     (name "r-bvartools")
@@ -589,7 +615,7 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -1437,7 +1463,7 @@ customised to contain more panels by the user.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -1843,7 +1869,7 @@ and Pumi et al. (2022) <@code{arXiv:2211.02097>}.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -2363,7 +2389,7 @@ more at <https://getbootstrap.com/>.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -3024,7 +3050,7 @@ simple interface.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -3082,7 +3108,6 @@ growth rate as a function of age).")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -3293,7 +3318,6 @@ faster lookups on sorted vectors.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -3438,7 +3462,6 @@ trials with the objective of equivalence assessment.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -3834,7 +3857,7 @@ convert file to appropriate format, or to extract data from a file.  See
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -6023,7 +6046,6 @@ NuÃ±ez-Antonio & GuttiÃ©rez-PeÃ±a (2014) <doi:10.1016/j.csda.2012.07.025>.
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6063,7 +6085,6 @@ with the bpmn-visualization @code{TypeScript} library.")
     (arguments
      (list
       #:tests? #f
-      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -7944,7 +7965,7 @@ explanation of the Gaussian case.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -9029,7 +9050,7 @@ by a tree.  Method described in Ochoa and Storey (2021)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -9856,7 +9877,7 @@ models and equivalence testing features may be added over time.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -10555,7 +10576,7 @@ Marble, and Tanigawa-Lau (2023) <doi:10.31235/osf.io/c9fkg>.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -11632,7 +11653,7 @@ datasets that exhibit upper boundary structures.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -13975,7 +13996,7 @@ Carlo method for a Bayesian approach to parameter estimation.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -15546,7 +15567,7 @@ by Metropolis-Hastings algorithm.  More details can be seen in Sung et al (2017)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -18517,7 +18538,7 @@ modeling).")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -23372,7 +23393,7 @@ implementations of the methods of Oh and Raftery (2001)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -23930,7 +23951,7 @@ and KomÃ¡rek (2016, Biometrics) <doi:10.1111/biom.12424>.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -24131,7 +24152,7 @@ Bayesian models.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -25224,7 +25245,7 @@ split population survival estimator is described in Bagozzi et al. (2019)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -27112,7 +27133,7 @@ meta-analysis.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -28130,7 +28151,7 @@ Rebke (2012) <doi:10.1111/j.2041-210X.2012.00186.x> and Colchero et al. (2021)
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -29967,7 +29988,7 @@ on flat priors as input.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -31482,7 +31503,7 @@ of setting up command line usage.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
