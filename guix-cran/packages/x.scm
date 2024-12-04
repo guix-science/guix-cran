@@ -55,6 +55,9 @@
         (base32 "0b8yv8ixmcjiv9hlvpfdknx815smy7df7f2ixifnvhxxafgf1fwq"))))
     (properties `((upstream-name . "xxIRT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-lpsolveapi r-glpkapi r-ggplot2))
     (home-page "https://github.com/xluo11/xxIRT")
     (synopsis "Item Response Theory and Computer-Based Testing in R")
@@ -80,6 +83,9 @@ multistage testing.  The full documentation and tutorials are at
         (base32 "088cndqrwgqx2yxc6qsfvfqlxw2404ycdajgz9maz15p7h3sjh9z"))))
     (properties `((upstream-name . "xxhashlite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/coolbutuseless/xxhashlite")
     (synopsis
      "Extremely Fast Hashing of R Objects, Raw Data and Files using 'xxHash' Algorithms")
@@ -103,6 +109,9 @@ available from <https://github.com/Cyan4973/@code{xxHash>}.")
         (base32 "07yjq9f6dw1xvd5map5aj42qhbgdqyla270vqn0h8x2h8wfqjfgq"))))
     (properties `((upstream-name . "xxdi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-matrix r-ggplot2 r-dplyr r-agop))
     (home-page "https://cran.r-project.org/package=xxdi")
     (synopsis "Calculate Expertise Indices")
@@ -134,6 +143,9 @@ allocation decisions.  Lathabai, H.H., Nandy, A., and Singh, V.K. (2021)
         (base32 "1byj6vjk2abm9j919107xsa3nd40zbsvxaldvv4ml3c47k1fg3kc"))))
     (properties `((upstream-name . "xwf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv))
     (home-page "https://cran.r-project.org/package=xwf")
     (synopsis "Extrema-Weighted Feature Extraction")
@@ -156,6 +168,9 @@ presented in van den Boom et al. (2018) <doi:10.1093/bioinformatics/bty120>.")
         (base32 "1h07gs8pj7hn64r35ld1j1zakc243aiiwdrz92viqrg7z75czdzl"))))
     (properties `((upstream-name . "xutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fangzhou-xie/xutils")
@@ -178,6 +193,9 @@ in character vectors by Rcpp routine.")
         (base32 "0k5cf7n84j73cdxzfr7ijjxc65h6lx6fjry81rsxa80fn0sn8qiz"))))
     (properties `((upstream-name . "xtune")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-selectiveinference r-lbfgs r-glmnet r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JingxuanH/xtune")
@@ -205,6 +223,9 @@ majorization-minimization algorithm is employed for implementation.")
         (base32 "0vq3rm0rwmqyilq7056swlwg2vqq2rpmqsx5apg0imkjq1p26vcb"))))
     (properties `((upstream-name . "xtsum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sampleselection
                              r-rlang
                              r-plm
@@ -235,6 +256,9 @@ Porter (2023) <https://stephenporter.org/files/xtsum_handout.pdf>,
         (base32 "1gv0kc1gj305iwwhv7wrfrh45rqwaks696q6q39a55m2vxw11xl1"))))
     (properties `((upstream-name . "xtranat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fdepaolis/xtranat")
     (synopsis "Network Metrics Based on Random Walks")
@@ -259,6 +283,9 @@ main reference is @code{DePaolis} at al (2022) <doi:10.1007/s41109-022-00519-2>.
         (base32 "07mib63zbvffr4w8klpv017d13wvqy3mwrpssr0vydcj8475gjfx"))))
     (properties `((upstream-name . "xSub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcurl r-haven r-countrycode))
     (home-page "https://github.com/zhukovyuri/xSub")
     (synopsis "Cross-National Data on Sub-National Violence")
@@ -279,6 +306,9 @@ conflict, violence and protests from <http://www.x-sub.org>.")
         (base32 "1jbmxa234v52qji8sz4bkg24c2n65b0zh9py1wyyfzw9n1wx5w0r"))))
     (properties `((upstream-name . "xsp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggplot2))
     (home-page "https://cran.r-project.org/package=xsp")
     (synopsis "The Chi-Square Periodogram")
@@ -299,6 +329,9 @@ significance of the periodicity are calculated using the chi-square periodogram.
         (base32 "1vdnzmlcqmjj68jdgxpasdkxk8a7bk8an8xfsvc7jjz5k88ahn8w"))))
     (properties `((upstream-name . "xslt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib libxml2))
     (propagated-inputs (list r-xml2 r-rcpp))
     (native-inputs (list pkg-config))
@@ -321,13 +354,17 @@ style-sheet.")
         (base32 "0hs2whjsd02avaz79zkrd8gjw9qd7l6ysxmhx4w1r7gb1cj9rr7c"))))
     (properties `((upstream-name . "XRSCC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=XRSCC")
     (synopsis "Statistical Quality Control Simulation")
     (description
      "This is a set of statistical quality control functions, that allows plotting
 control charts and its iterations, process capability for variable and attribute
-control, highlighting the xrs_gr() function, like a first iteration for variable
-chart, meanwhile the we_rules() function detects non random patterns in sample.")
+control, highlighting the @code{xrs_gr()} function, like a first iteration for
+variable chart, meanwhile the @code{we_rules()} function detects non random
+patterns in sample.")
     (license license:gpl2+)))
 
 (define-public r-xrpython
@@ -342,6 +379,9 @@ chart, meanwhile the we_rules() function detects non random patterns in sample."
         (base32 "0alg33spiaqf3jwg1qn543nxvbfaqv8gvf5px3grhbgrcmi5mcmj"))))
     (properties `((upstream-name . "XRPython")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xr r-reticulate))
     (home-page "https://cran.r-project.org/package=XRPython")
     (synopsis "Structured Interface to 'Python'")
@@ -362,6 +402,9 @@ form described in package XR and in the book \"Extending R\".")
         (base32 "04zcpxzam4avsc8qxvd5ssjxzg07xf2wjx90y6df4df2dpm7sr6i"))))
     (properties `((upstream-name . "xrnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-foreach r-bigmemory r-bh))
     (home-page "https://github.com/USCbiostats/xrnet")
     (synopsis "Hierarchical Regularized Regression")
@@ -386,6 +429,9 @@ sparse matrices and big.matrix objects.")
         (base32 "0mm9cv2nsgkrpjv0kb5vzfy1aszdyawk7mdinv4gby78bdvvl0k5"))))
     (properties `((upstream-name . "XRJulia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list julia))
     (propagated-inputs (list r-xr))
     (native-inputs (list r-knitr))
@@ -408,6 +454,9 @@ described in package XR and in the book \"Extending R\".")
         (base32 "1k4yhqvmixnjvzbw1ymq4brwn9n71vqsqpqw33p79kn98n4fj7z0"))))
     (properties `((upstream-name . "xRing")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tkrplotr r-tcltk2 r-imager r-dplr))
     (home-page "https://cran.r-project.org/package=xRing")
     (synopsis
@@ -431,6 +480,9 @@ profiles and correct tree-ring borders.  Campelo F, Mayer K, Grabner M. (2019)
         (base32 "0917chdkl6b20fdbwwj5b6wyihn9p444anwjspd0zqxmp8ag0i5f"))))
     (properties `((upstream-name . "xrf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-rlang
                              r-matrix
@@ -463,6 +515,9 @@ handle tens of thousands of dimensions.")
         (base32 "1ibj92ljlj8a5rmbrci691yhpd4kwrfyl944nzl2dcbf58l01dzq"))))
     (properties `((upstream-name . "xray")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-lubridate r-ggplot2 r-foreach r-dplyr))
     (home-page "https://github.com/sicarul/xray/")
     (synopsis "X Ray Vision on your Datasets")
@@ -484,6 +539,9 @@ understanding the distribution of the data.")
         (base32 "0j8rkjw9y7mb0yj24nlisfd84148pnnakz8i2y35y2b8gmh5zhvz"))))
     (properties `((upstream-name . "XR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (home-page "https://cran.r-project.org/package=XR")
     (synopsis "Structure for Interfaces from R")
@@ -506,6 +564,9 @@ Described in the book \"Extending R\".")
         (base32 "0w670g9y8nsdjcdxnvwpx8j9yfr7xhb5x3a171z1xizdfgpcpjxz"))))
     (properties `((upstream-name . "xpose4")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survival
                              r-readr
@@ -537,6 +598,9 @@ identification and model comparison.  The methods are described in Keizer et al.
         (base32 "0zrwjm2m692f4lv1wiyjmmyc7qcr1wihf3fygp0n8jvb590wspk6"))))
     (properties `((upstream-name . "xpose.xtras")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xpose
                              r-vctrs
                              r-tidyselect
@@ -582,6 +646,9 @@ likelihood-based models.")
         (base32 "0scq6brd7sn1ybmacxlpdlmkwxbn9sc2gpzw6438fwfjss6sza8s"))))
     (properties `((upstream-name . "xpose.nlmixr2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xpose
                              r-vpc
                              r-tidyr
@@ -614,6 +681,9 @@ diagnostics.")
         (base32 "18l8dcg9zng47gzmyxf3ksz22xqxsyqz64bqlxg2yl6d068sk3k9"))))
     (properties `((upstream-name . "xpose")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vpc
                              r-tidyr
                              r-tibble
@@ -646,6 +716,9 @@ graphics for data exploration and model diagnostics.")
         (base32 "1s0wz7zs8g2j88a0vxi2zywb4a8sysjk5h71fslg5xnxkqm5jx2m"))))
     (properties `((upstream-name . "xportr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-stringr
                              r-rlang
@@ -678,6 +751,9 @@ CDISC compliance.")
         (base32 "0j7a603c5240fc16fmjyzrgjgrxay0mn1bam7ikwfw7g0bmah4s0"))))
     (properties `((upstream-name . "Xplortext")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tm
                              r-stringr
@@ -708,8 +784,8 @@ constrained agglomerative hierarchical clustering enriched with
 labelled-by-words trees is offered.  Given a division of the corpus into parts,
 their characteristic words and documents are identified.  Further, accessing to
 @code{FactoMineR} functions is very easy.  Two of them are relevant in textual
-domain.  MFA() addresses multiple lexical table allowing applications such as
-dealing with multilingual corpora as well as simultaneously analyzing both
+domain. @code{MFA()} addresses multiple lexical table allowing applications such
+as dealing with multilingual corpora as well as simultaneously analyzing both
 open-ended and closed questions in surveys.  See <http://xplortext.unileon.es>
 for examples.")
     (license license:gpl2+)))
@@ -726,6 +802,9 @@ for examples.")
         (base32 "0qff0ng5grigwq0185s7dl4k4xzfwwry9ssad3bd6nnvrnpggs29"))))
     (properties `((upstream-name . "xplorerr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rcpp))
     (home-page "https://github.com/rsquaredacademy/xplorerr")
     (synopsis "Tools for Interactive Data Exploration")
@@ -748,6 +827,9 @@ and RFM analysis.")
         (base32 "152a83ckmhns6yniy87mmjva5bkv5x3phv63l1kkcmrr9bclfgz0"))))
     (properties `((upstream-name . "xplain")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-readr r-rcurl r-httr))
     (home-page "https://github.com/jsugarelli/xplain/")
     (synopsis
@@ -774,6 +856,9 @@ function.")
         (base32 "0qpv2r4dz5g37v2b6y5jscsxm1hdmimq8pm0dwwf8df0pp351r3b"))))
     (properties `((upstream-name . "xpectr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tibble
                              r-testthat
@@ -805,6 +890,9 @@ package by providing tools for generating expectations.")
         (base32 "0q1q43540qz97qad36dcwmcmgdci3sbhxk9li897gnjv9gjazdlr"))))
     (properties `((upstream-name . "xoi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qtl))
     (home-page "https://github.com/kbroman/xoi")
     (synopsis "Tools for Analyzing Crossover Interference")
@@ -826,6 +914,9 @@ regarding the gamma model.  See, for example, Broman and Weber (2000)
         (base32 "18lda1gv53awsbkk5p4bzrbilndgybdz8xc6lhl6wy647fw9q9hv"))))
     (properties `((upstream-name . "xnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/CenterForStatistics-UGent/xnet")
     (synopsis "Two-Step Kernel Ridge Regression for Network Predictions")
@@ -847,6 +938,9 @@ performance assessment (Stock et al, 2018 <doi:10.1093/bib/bby095> ).")
         (base32 "1kb4kzxb9rcx9fp1answln0sv9c3wdrk82gz79k0i9ypq7dls2ah"))))
     (properties `((upstream-name . "xmrr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -875,6 +969,9 @@ occurred.")
         (base32 "0pma8njk77ggpky6m4l9p7n7ardy41lsn0q67wkgr0mwgjjyil7w"))))
     (properties `((upstream-name . "xmpdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-rlang
                              r-r6
@@ -906,6 +1003,9 @@ pdftk <https://gitlab.com/pdftk-java/pdftk>.")
         (base32 "1gk74blg5ghnhk51lj3q6m5vzzpl19m5zqy1bg0lz6ibivzvy9mg"))))
     (properties `((upstream-name . "xmlwriter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://edwindj.github.io/xmlwriter/")
     (synopsis "Fast and Elegant XML Generation")
@@ -928,6 +1028,9 @@ package.")
         (base32 "13rfw0civp3hzi4hn31x1idliid1qb73495x4c31z5msd35lzxrs"))))
     (properties `((upstream-name . "xmlrpc2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-curl r-base64enc))
     (home-page "https://cran.r-project.org/package=xmlrpc2")
     (synopsis
@@ -950,6 +1053,9 @@ instead RCurl and XML'.")
         (base32 "00mxdb4899sx5py0ngzh3dvhz1sqsar2hmsrkm4jf0b3q9psc86w"))))
     (properties `((upstream-name . "xmlr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Alipsa/xmlr")
     (synopsis "Read, Write and Work with 'XML' Data")
@@ -970,6 +1076,9 @@ based on Reference Classes'.")
         (base32 "0vj5ar61i94if141jzqk7jq091mb2xwzl0x86dj7ddk8y3c1w9dv"))))
     (properties `((upstream-name . "xmlconvert")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-stringr
@@ -998,6 +1107,9 @@ converts XML data to R lists.")
         (base32 "05nykrmwqa43f9h6wpk6m1spmqr22r0ffiki4hp3jsyw8k7i78hv"))))
     (properties `((upstream-name . "xml2relational")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-stringr
@@ -1025,6 +1137,9 @@ different SQL flavors.")
         (base32 "1vssxy5bn46likkba8ycajkni14s7js31255swflr8007mc3pwmz"))))
     (properties `((upstream-name . "XML2R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-plyr r-httr))
     (home-page "https://github.com/cpsievert/XML2R")
     (synopsis "Easier XML Data Collection")
@@ -1045,6 +1160,9 @@ parent to child relationships.")
         (base32 "1by3w7mn3kk4942pbjyqb6hbrsxbxywfjy96cq0cmvwzq7aamhxm"))))
     (properties `((upstream-name . "xmeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotrix
                              r-numderiv
                              r-mvmeta
@@ -1076,6 +1194,9 @@ al(2020) <doi:10.1101/2020.07.27.20161562>.")
         (base32 "1rka5smm7yqnhhlblpihhciydfap4i6kjaa4a7isdg7qjmzm3h9p"))))
     (properties `((upstream-name . "xlsxjars")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjava))
     (home-page "https://cran.r-project.org/package=xlsxjars")
     (synopsis "Package required POI jars for the xlsx package")
@@ -1096,6 +1217,9 @@ package.  This release corresponds to POI 3.10.1.")
         (base32 "0bdawr80grks91sy221d33fsk75g20zh3wjg6gvd0zj0m1zvvwvd"))))
     (properties `((upstream-name . "xlsx2dfs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openxlsx))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=xlsx2dfs")
@@ -1119,6 +1243,9 @@ human readable format.")
         (base32 "01r1ngdm51w18bdan8h94r91m731knkf04zal4g67mx3fpa5x31p"))))
     (properties `((upstream-name . "xlsx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-xlsxjars r-rjava))
     (native-inputs (list r-knitr))
@@ -1141,6 +1268,9 @@ file formats.")
         (base32 "0a4jbfz9x9rn4k5v7qh3r9p7pal4piqg01469237lkq00m3lijy5"))))
     (properties `((upstream-name . "XLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mpoly))
     (home-page "https://cran.r-project.org/package=XLS")
     (synopsis
@@ -1164,6 +1294,9 @@ other's coefficients unrealistically.")
         (base32 "08v6acn6vpn8asn61ldqdryjz0xk5zyd2v63aqrc5xximpqwrp7d"))))
     (properties `((upstream-name . "xLLiM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest
                              r-progress
                              r-mixomics
@@ -1203,6 +1336,9 @@ for transcriptomic data).")
         (base32 "02ahgjampy92gcwhv269px5w8651a7j50dn1295zwqxj44lk4g9q"))))
     (properties `((upstream-name . "xlink")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/qiuanzhu/xlink")
@@ -1232,6 +1368,9 @@ Wei Xu (2019) <doi:10.1177/0962280219859037>.")
         (base32 "07gjsz8jab5f2c1v7rcfv9pva8hikdl94nzvixvg6v0a7sq7qa6h"))))
     (properties `((upstream-name . "xlcutter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyxl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Bisaloo/xlcutter")
@@ -1254,6 +1393,9 @@ output.")
         (base32 "0cn4xkmridbsm7yrbd7iag81vmakkj4ph40wmj8x51g7z3wg2irp"))))
     (properties `((upstream-name . "XLConnect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page "https://cran.r-project.org/package=XLConnect")
@@ -1275,6 +1417,9 @@ Excel data.")
         (base32 "0kh6d0b6wlsf41dc5pbb9yns416svx8a7ls3vh1dq4hrsaxw9wjh"))))
     (properties `((upstream-name . "xlcharts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list python conda))
     (propagated-inputs (list r-writexl r-reticulate))
     (home-page "https://felixluginbuhl.com/xlcharts/")
@@ -1297,6 +1442,9 @@ charts and work with Microsoft Excel files.")
         (base32 "1lx9frlbc549qrh4d3m79r3l9icfzqkgfgp8raa8x46a2havi0a5"))))
     (properties `((upstream-name . "XKCDdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-magrittr
                              r-jsonlite
@@ -1324,6 +1472,9 @@ charts and work with Microsoft Excel files.")
         (base32 "07fnjv01r3b951dqca2zs9b9f6hsgbpbpsrggvb8rps53kpid0i7"))))
     (properties `((upstream-name . "xkcdcolors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fnn))
     (home-page "https://cran.r-project.org/package=xkcdcolors")
     (synopsis "Color Names from the XKCD Color Survey")
@@ -1345,6 +1496,9 @@ This package lets you use them.")
         (base32 "1hpy1yls4hhlbf2hjyfjqrxcrcpbakk4irqzl795rarzm790hgfq"))))
     (properties `((upstream-name . "XiMpLe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://reaktanz.de/?c=hacking&s=XiMpLe")
     (synopsis "Simple XML Tree Parser and Generator")
@@ -1369,6 +1523,9 @@ make plugin development easier.")
         (base32 "0c9s0sriiasbdanmijgy41gvpwf8hlqy34avalvimyll7y206v1r"))))
     (properties `((upstream-name . "XICOR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psychtools))
     (home-page "https://cran.r-project.org/package=XICOR")
     (synopsis "Association Measurement Through Cross Rank Increments")
@@ -1391,6 +1548,9 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
         (base32 "0d91afvjrwgwf5h1p2z6q15psf3n9hvshb75jyxvyxnhq8c5darw"))))
     (properties `((upstream-name . "xhaz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-survexp-fr
                              r-stringr
@@ -1435,6 +1595,9 @@ Goungounga et al. (2023) <doi:10.1002/bimj.202100210>.")
         (base32 "0mmnh6zab7qllbfpl3vn5sd7hcznm83v5rxi1pw5zv96ax0ikagv"))))
     (properties `((upstream-name . "xgxr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-scales
@@ -1481,6 +1644,9 @@ pharmacokinetics and pharmacodynamics (PKPD) datasets.")
         (base32 "1x2fwg7n0k1lxjy53la5xacphx14ak49v3wd5cha2qsrsm9pdrl0"))))
     (properties `((upstream-name . "xgrove")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart-plot r-rpart r-gbm r-dplyr))
     (home-page "https://cran.r-project.org/package=xgrove")
     (synopsis "Explanation Groves")
@@ -1502,6 +1668,9 @@ Szepannek, G. and von Holt, B. (2023) <doi:10.1007/s41237-023-00205-2>.")
         (base32 "1gw5dw0ck5hip8mv347zaswrggk395bg2hgn02bvqs0d31jhmgvi"))))
     (properties `((upstream-name . "xgb2sql")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/chengjunhou/xgb2sql")
@@ -1528,6 +1697,9 @@ found in Chen & Guestrin (2016) <doi:10.1145/2939672.2939785>.")
         (base32 "1pvdx0mxg2f885bhy4hb3kqzcgva4q7hzzaipkfzyi5lnjdsbc81"))))
     (properties `((upstream-name . "xesreadR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xml
                              r-tidyr
@@ -1559,6 +1731,9 @@ sharing event data (see
         (base32 "03mjpafwfkmyj5ba84jydap9rp0i602izjlbd511xbxcw6dx2k0b"))))
     (properties `((upstream-name . "xergm.common")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-network r-ergm))
     (home-page "http://github.com/leifeld/xergm.common")
     (synopsis
@@ -1580,6 +1755,9 @@ package.")
         (base32 "1vrs5d1p6x1c3n9pv6556185rx1a01zdsjqx8y5vpa37f8di7iwk"))))
     (properties `((upstream-name . "xegaSelectGene")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "<https://github.com/ageyerschulz/xegaSelectGene>")
     (synopsis
      "Selection of Genes and Gene Representation Independent Functions")
@@ -1622,6 +1800,9 @@ ISBN:1-55860-066-3), Wickham, Hadley (2019, ISBN:978-815384571).")
         (base32 "0gzcmsbw0256m9fy7n520pwic3f4zwcw6nfhna8fc7abhnvyrdph"))))
     (properties `((upstream-name . "xegaPopulation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xegaselectgene r-xegagagene r-future-apply))
     (home-page "<https://github.com/ageyerschulz/xegaPopulation>")
     (synopsis "Genetic Population Level Functions")
@@ -1632,15 +1813,15 @@ support.  The population layer consists of functions for initializing, logging,
 observing, evaluating a population of genes, as well as of computing the next
 population.  For parallel evaluation of a population of genes 4 execution models
 - named Sequential, @code{MultiCore}, @code{FutureApply}, and Cluster - are
-provided.  They are implemented by configuring the lapply() function.  The
-execution model @code{FutureApply} can be externally configured as recommended
-by Bengtsson (2021) <doi:10.32614/RJ-2021-048>.  Configurable acceptance rules
-and cooling schedules (see Kirkpatrick, S., Gelatt, C. D. J, and Vecchi, M. P.
-(1983) <doi:10.1126/science.220.4598.671>, and Aarts, E., and Korst, J. (1989,
-ISBN:0-471-92146-7) offer simulated annealing or greedy randomized approximate
-search procedure elements.  Adaptive crossover and mutation rates depending on
-population statistics generalize the approach of Stanhope, S. A. and Daida, J.
-M. (1996, ISBN:0-18-201-031-7).")
+provided.  They are implemented by configuring the @code{lapply()} function.
+The execution model @code{FutureApply} can be externally configured as
+recommended by Bengtsson (2021) <doi:10.32614/RJ-2021-048>.  Configurable
+acceptance rules and cooling schedules (see Kirkpatrick, S., Gelatt, C. D. J,
+and Vecchi, M. P. (1983) <doi:10.1126/science.220.4598.671>, and Aarts, E., and
+Korst, J. (1989, ISBN:0-471-92146-7) offer simulated annealing or greedy
+randomized approximate search procedure elements.  Adaptive crossover and
+mutation rates depending on population statistics generalize the approach of
+Stanhope, S. A. and Daida, J. M. (1996, ISBN:0-18-201-031-7).")
     (license license:expat)))
 
 (define-public r-xegapermgene
@@ -1655,6 +1836,9 @@ M. (1996, ISBN:0-18-201-031-7).")
         (base32 "02f97ddz9lzkc762qazn9ybrvl4qya9m02c7cs0l7wmpgl93mbx6"))))
     (properties `((upstream-name . "xegaPermGene")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xegaselectgene))
     (home-page "<https://github.com/ageyerschulz/xegaPermGene>")
     (synopsis "Operations on Permutation Genes")
@@ -1683,6 +1867,9 @@ randomly.")
         (base32 "058sp2w1mhrnbcq3r5fgkmrq7b0mp4kbkf3v3q7k0i3akr95vrci"))))
     (properties `((upstream-name . "xegaGpGene")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xegaselectgene r-xegaderivationtrees r-xegabnf))
     (home-page "<https://github.com/ageyerschulz/xegaGpGene>")
     (synopsis "Genetic Operations for Grammar-Based Genetic Programming")
@@ -1710,6 +1897,9 @@ ISBN:978-3-7908-0830-X).")
         (base32 "15ng9n6fi0cbk8zda7cwbs5niiy3fb8h941fws4xcli3h6l5krwg"))))
     (properties `((upstream-name . "xegaGeGene")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xegaselectgene r-xegaderivationtrees r-xegabnf
                              r-numbers))
     (home-page "<https://github.com/ageyerschulz/xegaGeGene>")
@@ -1734,6 +1924,9 @@ O'Neill, M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>.")
         (base32 "110nhig9jp79mk9mq3pk3imqyg05pmd45r2b7bdr0wl6y6v7j9zm"))))
     (properties `((upstream-name . "xegaGaGene")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xegaselectgene))
     (home-page "<https://github.com/ageyerschulz/xegaGaGene>")
     (synopsis "Binary Gene Operations for Genetic Algorithms")
@@ -1761,6 +1954,9 @@ ISBN:0-18-201-031-7).")
         (base32 "1xvq7grff6iz9254shhjakwaba1qlfii361ydarzsxsjwgx4b8al"))))
     (properties `((upstream-name . "xegaDfGene")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xegaselectgene))
     (home-page "<https://github.com/ageyerschulz/xegaDfGene>")
     (synopsis "Gene Operations for Real-Coded Genes")
@@ -1786,6 +1982,9 @@ Jouni A. (2005) <doi:10.1007/3-540-31306-0>.")
         (base32 "0wkv14k73xf4sc86jj4zpbv99ic4q45bbyafmz4mrff85c33srlh"))))
     (properties `((upstream-name . "xegaDerivationTrees")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xegabnf))
     (home-page "<https://github.com/ageyerschulz/xegaDerivationTrees>")
     (synopsis "Generating and Manipulating Derivation Trees")
@@ -1819,6 +2018,9 @@ introduced in Ryan, C., Collins, J. J., and O'Neill, M. (1998)
         (base32 "0r1ac8h0ah3jsphrh8lbvm8gphkprycs9nib2nih6l522par4pma"))))
     (properties `((upstream-name . "xegaBNF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "<https://github.com/ageyerschulz/xegaBNF>")
     (synopsis
      "Compile a Backus-Naur Form Specification into an R Grammar Object")
@@ -1828,10 +2030,10 @@ into an R grammar object which consists of the start symbol, the symbol table,
 the production table, and a short production table.  The short production table
 is non-recursive.  The grammar object contains the file name from which it was
 generated (without a path).  In addition, it provides functions to determine the
-type of a symbol (@code{isTerminal}() and @code{isNonterminal}()) and functions
-to access the production table (rules() and derives()).  For the BNF
-specification, see Backus, John et al. (1962) \"Revised Report on the Algorithmic
-Language ALGOL 60\". (ALGOL60 standards page
+type of a symbol @code{(isTerminal()} and @code{isNonterminal()}) and functions
+to access the production table @code{(rules()} and @code{derives()}).  For the
+BNF specification, see Backus, John et al. (1962) \"Revised Report on the
+Algorithmic Language ALGOL 60\". (ALGOL60 standards page
 <http://www.algol60.org/2standards.htm>, html-edition
 <https://www.masswerk.at/algol60/report.htm>) The grammar compiler is based on
 the APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
@@ -1849,6 +2051,9 @@ the APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).
         (base32 "1zkmlh04h66xg4r21m8n1hl5c6z4jrbriqm32yhgaxfb8c0kysqv"))))
     (properties `((upstream-name . "xega")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xegaselectgene
                              r-xegapopulation
                              r-xegapermgene
@@ -1890,6 +2095,9 @@ computing environments) is available for all algorithms.  See
         (base32 "0rzd9xi5hxxbydzg67h17zb1q9qmw1y9790vy04k6kj444apxc2j"))))
     (properties `((upstream-name . "xefun")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://github.com/ShichenXie/xefun")
     (synopsis "X-Engineering or Supporting Functions")
@@ -1910,6 +2118,9 @@ supporting in other packages maintained by Shichen Xie'.")
         (base32 "1dbg27h6f37pp4r9nzd8fs59micz06glpsspc8wspwxa200bnxmx"))))
     (properties `((upstream-name . "XDNUTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-rcpparmadillo
                              r-rcpp
@@ -1943,6 +2154,9 @@ Hamiltonian Monte Carlo termination criteria.")
         (base32 "1j8wsidwmfjygqlwavxinv4bqc6rddy42jdmlknsjfrrs49yj8kn"))))
     (properties `((upstream-name . "xdcclarge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-nlshrink))
     (home-page "https://cran.r-project.org/package=xdcclarge")
     (synopsis "Estimating a (c)DCC-GARCH Model in Large Dimensions")
@@ -1970,6 +2184,9 @@ shrinkage estimation of covariance matrices by Ledoit and Wolf (2004,2015,2016).
         (base32 "1qflwsigxxy0gljqa6vjr1i4gqznf7pa9j4jp6irrazx39ixp043"))))
     (properties `((upstream-name . "Xcertainty")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-nimble r-dplyr r-coda))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/MMI-CODEX/Xcertainty")
@@ -1995,6 +2212,9 @@ from drones\" (Bierlich et al., 2021, <doi:10.3354/meps13814>).")
         (base32 "0mwpk84kp6r7f6fmlby0ka58fj50y592afxzp0wcrzmx65abp7md"))))
     (properties `((upstream-name . "XBRL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib libxml2 libxml2))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=XBRL")
@@ -2019,6 +2239,9 @@ associated collection of files that defines its Discoverable Taxonomy Set
         (base32 "006cqs42r4i6s73kf59n9yg7zwpliq9wsxac473rq48yal7nja46"))))
     (properties `((upstream-name . "xaringanthemer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-whisker r-purrr r-glue r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://pkg.garrickadenbuie.com/xaringanthemer/")
@@ -2045,6 +2268,8 @@ script.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2086,6 +2311,9 @@ whole lot more!")
         (base32 "0gz52xwxa1w5im3rns805mgfagaqg9f8whjsrsk0yv9kc3j7mc5i"))))
     (properties `((upstream-name . "xaringan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xfun r-servr r-rmarkdown r-knitr r-htmltools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yihui/xaringan")
@@ -2107,6 +2335,9 @@ whole lot more!")
         (base32 "0vrk40q9nn40aisvgj3pq9q6z5kb68j614wpg7bx98fx3gqnxzxv"))))
     (properties `((upstream-name . "xadmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-tidyr
                              r-stringr
@@ -2135,6 +2366,9 @@ genomic admixture data and generating customizable stacked barplots.")
         (base32 "1gl7bpbkww98c8khcyjbydsfg55fa08wcsxf5f0jk1i49ap2q1ii"))))
     (properties `((upstream-name . "x3ptools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-xml2
@@ -2171,6 +2405,9 @@ to the 3D surface measurements.")
         (base32 "0v7cwgq3xkz4k9l2drxa4bjgam1drs43chfwvs8hbcl1ybrxi2h4"))))
     (properties `((upstream-name . "x13binary")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://github.com/x13org/x13binary")
     (synopsis "Provide the 'x13ashtml' Seasonal Adjustment Binary")
@@ -2194,6 +2431,9 @@ packages.")
         (base32 "0f0bbnnv4wbrx6c90rg8s284mh8i3mfcfpbwscv0xviaa7fvlsm6"))))
     (properties `((upstream-name . "x12")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-x13binary r-stringr))
     (home-page "https://github.com/statistikat/x12")
     (synopsis
@@ -2217,6 +2457,9 @@ binaries are provided by the R package x13binary'.")
         (base32 "15qra77dqhj27g3qx92gram4mq4n9fdidygdpvxfmcx7ww3vc6yh"))))
     (properties `((upstream-name . "x.ent")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list perl))
     (propagated-inputs (list r-xtable r-stringr r-statmod r-jsonlite r-ggplot2))
     (home-page "https://github.com/win-stub/x.ent")

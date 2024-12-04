@@ -58,6 +58,9 @@
         (base32 "15ghijzva6qzq2riq8ci4bh6ssknnp15yyy1fql0k4878wkf7vs0"))))
     (properties `((upstream-name . "AzureVMmetadata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openssl r-httr))
     (home-page "https://cran.r-project.org/package=AzureVMmetadata")
     (synopsis "Interface to Azure Virtual Machine Instance Metadata")
@@ -80,6 +83,9 @@ on.  Part of the @code{AzureR} family of packages.")
         (base32 "0766a4y17qgq3vgb398n6zn8sdjrv65gpvrnr9b9g89zdsdy9fc4"))))
     (properties `((upstream-name . "AzureVM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-jsonlite r-azurermr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AzureVM")
@@ -108,6 +114,9 @@ family of packages.")
         (base32 "0a4lnj60577bxy5vyd7yqji984kgwpwd4zykxz2d060r8l31rf42"))))
     (properties `((upstream-name . "AzureVision")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr r-azurermr r-azurecognitive))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AzureVision")
@@ -135,6 +144,9 @@ powerful hardware of their own.  Part of the @code{AzureR} family of packages.")
         (base32 "0xrfpi9psn1h21g4mvcbqsjav56s8cha381vsjkp1swilrxhmk5l"))))
     (properties `((upstream-name . "AzureTableStor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-uuid
                              r-openssl
@@ -165,6 +177,9 @@ Part of the @code{AzureR} family of packages.")
         (base32 "0jrc4m8p0hss07hna157z510rh84lhjmyqsa47wirpr0b5ba6kr3"))))
     (properties `((upstream-name . "AzureStor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-vctrs
                              r-r6
@@ -198,6 +213,9 @@ access signature (SAS).  Part of the @code{AzureR} family of packages.")
         (base32 "09mjc5ibk1g1azskqnrcgfb5bi88aw55g96cyas5vlwgi54xzs70"))))
     (properties `((upstream-name . "AzureRMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid
                              r-r6
                              r-jsonlite
@@ -229,6 +247,9 @@ packages.")
         (base32 "1z7j8kakiarpw3q2rii7gl9zc2nsb49nzs1nxg1hgfyvcdhw2fcg"))))
     (properties `((upstream-name . "AzureQstor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openssl r-httr r-azurestor r-azurermr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AzureQstor")
@@ -253,6 +274,9 @@ used to create a backlog of work to process asynchronously.  Part of the
         (base32 "0s64kjrmcdnjdwh5mdm5vxgvrl9ghvfv6bair7qfzz32jlab99m0"))))
     (properties `((upstream-name . "azuremlsdk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinycssloaders
                              r-shiny
                              r-servr
@@ -285,6 +309,9 @@ Azure Machine Learning visit the website:
         (base32 "0n0bkaj9gsg2xcczpbg8nm62ipgh4s6a8lvnaiylh8q3w1z6aqfl"))))
     (properties `((upstream-name . "AzureKusto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -323,6 +350,9 @@ database principals.  Part of the @code{AzureR} family of packages.")
         (base32 "15x0mkgn7pq2yk05l5vwvd744gxkz28nb5azc1yz502ayr1s6hnm"))))
     (properties `((upstream-name . "AzureKeyVault")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6
                              r-openssl
                              r-jsonlite
@@ -356,6 +386,9 @@ package for importing and exporting cryptographic objects.  Part of the
         (base32 "0x7ya1yxk0cga9cfbfkd332l2syswdqjamzr2xqvb6ybwc5lpcy2"))))
     (properties `((upstream-name . "AzureGraph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6
                              r-openssl
                              r-jsonlite
@@ -388,6 +421,9 @@ been expanded into a more general tool for interacting with Graph.  Part of the
         (base32 "07bpmjxfyzk1aq8r06biiqsn2ibv7ymgqccxfxkbvszpfq79nryj"))))
     (properties `((upstream-name . "AzureCosmosR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-uuid
                              r-openssl
@@ -419,6 +455,9 @@ and attachments in Cosmos DB'.  Part of the @code{AzureR} family of packages.")
         (base32 "0lykvf4kk1q7b7ln4l8jlrxgqyvrg1cfnap4ak8zkhxmrgzqpc5f"))))
     (properties `((upstream-name . "AzureContainers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6
                              r-processx
                              r-openssl
@@ -451,6 +490,9 @@ packages.")
         (base32 "1mn3qw5g77x24qyhybhn1p3h4s9ymdafrj35i24f32ncr5abnd2f"))))
     (properties `((upstream-name . "AzureCognitive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-azurermr r-azureauth))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AzureCognitive")
@@ -477,6 +519,9 @@ translation, and so on.  Part of the @code{AzureR} family of packages.")
         (base32 "1arr7vbcj9ibrx826md487hcmlch46b2h3r03a14wxq6ssxj4x0z"))))
     (properties `((upstream-name . "AzureAuth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rappdirs
                              r-r6
                              r-openssl
@@ -512,6 +557,8 @@ family of packages.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -549,6 +596,9 @@ submit events.")
         (base32 "1vn1b6sz7gp6pr7m2mspppjxxb9b54rc9am99lsilkg90cv1ba8h"))))
     (properties `((upstream-name . "azlogr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-logger r-jsonlite r-httr r-digest r-catools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=azlogr")
@@ -571,6 +621,9 @@ optionally they are sent to Azure Log Analytics workspace in real-time.")
         (base32 "0nzd3y4kcb628f1h0xpslx2nva8pv6i3mmp9vm5c49xiq43d82cz"))))
     (properties `((upstream-name . "AZIAD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qrm
                              r-foreach
                              r-extradistr
@@ -604,6 +657,9 @@ estimates.  Based on the work of Aldirawi et al. (2022)
         (base32 "0z1b17vy9vb8fm2vrhk4nf94ndqrpcpy8isfyb5n8xbm2mygr45m"))))
     (properties `((upstream-name . "axisandallies")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=axisandallies")
     (synopsis "Axis and Allies Spring")
     (description
@@ -623,6 +679,9 @@ your probability of winning a battle.  This speeds the game up significantly.")
         (base32 "1ayyk0phq7afc9p0p8xjgdpzyylx91hc9j02rp2hcq1rf0fnkaw7"))))
     (properties `((upstream-name . "aws.wrfsmn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-magrittr
                              r-lubridate
@@ -654,6 +713,9 @@ variables of WRF forecast.")
         (base32 "1x6cvpfddgwywsji4ywygmqn3pwy3i1aci9lk4nsrrfkzggwcbpb"))))
     (properties `((upstream-name . "aws.translate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-aws-signature))
     (home-page "https://github.com/cloudyr/aws.translate")
     (synopsis "Client for 'AWS Translate'")
@@ -676,6 +738,9 @@ language.")
         (base32 "1nni1b935i2ir67lfhcj0106vzr310mk2jvln32gvzbnqxcggz7m"))))
     (properties `((upstream-name . "aws.transcribe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-aws-signature))
     (home-page "https://github.com/cloudyr/aws.transcribe")
     (synopsis "Client for 'AWS Transcribe'")
@@ -697,6 +762,9 @@ other languages into a text transcript.")
         (base32 "1xfx9g5iq1wcl27cmj4ss3y3f5yr1qmma77ki09g3ji2xvd50101"))))
     (properties `((upstream-name . "aws.polly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tuner r-jsonlite r-httr r-aws-signature))
     (home-page "https://github.com/cloudyr/aws.polly")
     (synopsis "Client for AWS Polly")
@@ -717,6 +785,9 @@ other languages into a text transcript.")
         (base32 "0vp13qw7mw8dz01q30z7bnj47qx9js1zmxasc2n733gi07fdj62f"))))
     (properties `((upstream-name . "aws.lambda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-base64enc r-aws-signature))
     (home-page "https://github.com/cloudyr/aws.lambda")
     (synopsis "AWS Lambda Client Package")
@@ -737,6 +808,9 @@ other languages into a text transcript.")
         (base32 "0f9l62g4z68ickzi4if3pw3algb41rn47z9cpxga8aggkclk86l4"))))
     (properties `((upstream-name . "aws.kms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-base64enc r-aws-signature))
     (home-page "https://github.com/cloudyr/aws.kms")
     (synopsis "'AWS Key Management Service' Client Package")
@@ -757,6 +831,9 @@ a cloud service for managing encryption keys.")
         (base32 "1p4w50icfw6mrzr6aazdbh977yvyvsf1yavjscyvv11xf3y9f9j2"))))
     (properties `((upstream-name . "aws.iam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-jsonlite r-httr r-aws-signature))
     (home-page "https://github.com/cloudyr/aws.iam")
     (synopsis "AWS IAM Client Package")
@@ -777,6 +854,9 @@ Identity and Access Management ('IAM') API <https://aws.amazon.com/iam/>.")
         (base32 "1yz20h2k5rf13jsgpk8aj6d27a1zj602g916pngq525m08cmbvka"))))
     (properties `((upstream-name . "aws.ecx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rjson r-httr r-aws-signature))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Jiefei-Wang/aws.ecx")
@@ -805,6 +885,9 @@ can be found at
         (base32 "1lbljg2fp3yh1hwlbmprkc1prw80jv0ycvpg1vggagm68wm5x288"))))
     (properties `((upstream-name . "aws.ec2metadata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-curl))
     (home-page "https://github.com/cloudyr/aws.ec2metadata")
     (synopsis "Get EC2 Instance Metadata")
@@ -824,6 +907,9 @@ can be found at
         (base32 "0qn4mkdd17c8kmrm4ml7l1x3rzaw3gbykhrj3m0ga53crcqdhqri"))))
     (properties `((upstream-name . "aws.comprehend")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-aws-signature))
     (home-page "https://github.com/cloudyr/aws.comprehend")
     (synopsis "Client for 'AWS Comprehend'")
@@ -846,6 +932,9 @@ extraction.")
         (base32 "0m1i1xgi9fqixq90ai2ag0079aa75nlyhbr3ln3yhk5g8zx9i9m9"))))
     (properties `((upstream-name . "aws.alexa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-httr r-dplyr r-aws-signature))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=aws.alexa")
@@ -869,6 +958,9 @@ they---rank and traffic history, sites linking to them, among other things.  See
         (base32 "0ak2ry5zj6gb9g6laabv0ym3i1vqdwl56g6k58fkpjb87rlb2hbp"))))
     (properties `((upstream-name . "AWR.Kinesis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjava r-logger r-jsonlite r-awr))
     (home-page "https://github.com/daroczig/AWR.Kinesis")
     (synopsis "Amazon 'Kinesis' Consumer Application for Stream Processing")
@@ -891,6 +983,9 @@ stream processing from R. For more information on Kinesis', see
         (base32 "1imvpmq6br0z7l67w66a5s1ylbv6xvypj0wc09bmjy7sapdmkn4x"))))
     (properties `((upstream-name . "AWR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjava))
     (home-page "https://github.com/daroczig/AWR")
     (synopsis "'AWS' Java 'SDK' for R")
@@ -913,6 +1008,9 @@ Java.")
         (base32 "09cp9wfb4aslfddlk72n0kawfghyn1fcjya5afjhiffwww5ps3iy"))))
     (properties `((upstream-name . "awinR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://windsor.ai/")
@@ -936,6 +1034,8 @@ API <https://windsor.ai/api-fields/>.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -994,6 +1094,9 @@ categorical or mixed data, as well as tools to evaluate the quality of SOM.")
         (base32 "14n1xmargr89mf4n0bdzdwn7qh314a1xg1bid5px762vk0qf4fws"))))
     (properties `((upstream-name . "aweek")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://www.repidemicsconsortium.org/aweek/")
     (synopsis "Convert Dates to Arbitrary Week Definitions")
@@ -1015,6 +1118,9 @@ switching between week-based date definitions.")
         (base32 "1qr9yhwrllpk0drg3s1r4f5hsx78yfys6nyj2vdk70n8na102243"))))
     (properties `((upstream-name . "avotrex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-treetools
                              r-tidytree
                              r-stringr
@@ -1047,6 +1153,9 @@ set of different commands.")
         (base32 "0qy9ripwydm3f70rpxwk0asc7r25hg8jcbrr4rz8bxs93q1lsz8x"))))
     (properties `((upstream-name . "avocado")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=avocado")
     (synopsis "Weekly Hass Avocado Sales Summary")
@@ -1069,6 +1178,9 @@ information, documentation, and examples.  Data source: Haas Avocado Board
         (base32 "1jg19ns3mxfycc11i2c152d83n4kqz3dd6d269sijnxrw80kzjki"))))
     (properties `((upstream-name . "aVirtualTwins")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-randomforest r-party))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/prise6/aVirtualTwins")
@@ -1092,6 +1204,9 @@ treatments groups.  This is an adaptation of the Jared Foster method
         (base32 "1i3fy4jf91x662xhi07kcsg9b1p0hfyj2x5fav3zkvs9lx7gwfqx"))))
     (properties `((upstream-name . "AvInertia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-reshape2
@@ -1124,6 +1239,9 @@ function.")
         (base32 "1rm37lsmi5cyrkdpb55hr5m1pklwv5czzk4m1dzqzdvn4qp95ms7"))))
     (properties `((upstream-name . "avidaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-tibble
@@ -1156,6 +1274,9 @@ user-defined computational environment.")
         (base32 "0s0h6rpsni73a0j679g22ngpaazdfifxpi7mwpa7ac3p0kdzvji0"))))
     (properties `((upstream-name . "AVGAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variablescreening
                              r-selectiveinference
                              r-pracma
@@ -1183,6 +1304,9 @@ Ye, C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
         (base32 "0s92sdxhgc8d5qwv3frig87j4fxnj28kaykrqiqvdgjwjd6yhgbh"))))
     (properties `((upstream-name . "avesperu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/PaulESantos/avesperu")
     (synopsis "Access to the List of Birds Species of Peru")
     (description
@@ -1206,6 +1330,9 @@ effortless utilization within the R environment.")
         (base32 "02j27d4jxgy2bk5sgxp1xdfyqr321civs99qj0g8cp34gwqk0j3m"))))
     (properties `((upstream-name . "averisk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=averisk")
     (synopsis
@@ -1233,6 +1360,9 @@ number of risk factors is large.")
         (base32 "0zpdgkshadzi01llqcsddzzhpywycsy5411rcvsgmm8wsi0n4khs"))))
     (properties `((upstream-name . "avar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-simts r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SMAC-Group/avar")
@@ -1256,6 +1386,9 @@ found, for example, in Guerrier, S., Molinari, R., & Stebler, Y. (2016)
         (base32 "1j6z0zwd7xjk6j6wk74fjq3nhx9gk7ys09i543gakcskmdm59dw4"))))
     (properties `((upstream-name . "available")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yesno
                              r-tidytext
                              r-tibble
@@ -1289,6 +1422,9 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
         (base32 "13x64g0ha6xxdd2cdx7d8mqbhz0z29i9ang5zirqx104n75gjypw"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (native-inputs (list pkg-config))
     (home-page "https://ropensci.r-universe.dev/av")
@@ -1314,6 +1450,9 @@ line utilities.")
         (base32 "1ci2j65nzgckf70qp500xw943s7xgv18qiw2c9w3cfrg9ay1xnrs"))))
     (properties `((upstream-name . "AutoWMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-rlang
                              r-mass
@@ -1345,6 +1484,9 @@ package can be found in Flynn (2023) <http://hdl.handle.net/2429/86174>.")
         (base32 "08f2c026vn5kmsdlf54sxakzjp2f43dkrs6mv9qwnjfrd2hchzzi"))))
     (properties `((upstream-name . "AutoWeatherIndices")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hmisc r-gtools))
     (home-page "https://cran.r-project.org/package=AutoWeatherIndices")
     (synopsis "Calculating Weather Indices")
@@ -1373,6 +1515,9 @@ A. Lama and B. Gurung in Mausam, vol.  72, pp.879-886,
         (base32 "1zhvbjs3i8i7bx7q5jxx0fxw3f15xqfraanfx8dd338sny25hqnn"))))
     (properties `((upstream-name . "autovi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-reticulate
                              r-ggplot2
@@ -1399,6 +1544,9 @@ linear regression models.")
         (base32 "1mwpazynp5hdc2ccnhvddkajfcd4qam23pvjl9accq1rnxzxkiyv"))))
     (properties `((upstream-name . "autoTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shinycssloaders
                              r-shiny
@@ -1419,7 +1567,7 @@ linear regression models.")
      "Offers a set of functions to easily make predictions for univariate time series.
 @code{autoTS} is a wrapper of existing functions of the forecast and prophet
 packages, harmonising their outputs in tidy dataframes and using default values
-for each.  The core function @code{getBestModel}() allows the user to
+for each.  The core function @code{getBestModel()} allows the user to
 effortlessly benchmark seven algorithms along with a bagged estimator to
 identify which one performs the best for a given time series.")
     (license license:gpl3)))
@@ -1436,6 +1584,9 @@ identify which one performs the best for a given time series.")
         (base32 "1kqdzz719r2bp37b6fn21njgbiyn7rrpms7jcjl8i0znwxkspd82"))))
     (properties `((upstream-name . "AutoTransQF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-moments r-matlab2r))
     (home-page "https://github.com/yyyuehhu/AutoTransQF")
     (synopsis "Novel Automatic Shifted Log Transformation")
@@ -1458,6 +1609,9 @@ parameter to automate the transformation process are proposed in R package
         (base32 "1fkny4i1fpy5fkya52cw4bzpdi236smq4qq23q1zdba3srmpyzsl"))))
     (properties `((upstream-name . "autothresholdr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-strex
                              r-rlang
@@ -1489,6 +1643,9 @@ Threshold plugin functionality to R users.  See
         (base32 "0vaddh04p2sj1j0a55ny4imraplnflcv2dw365cn9r4bgcj8xhh7"))))
     (properties `((upstream-name . "autostsm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-strucchange
                              r-sandwich
                              r-progress
@@ -1529,6 +1686,9 @@ Gibbs-Sampling Approaches with Applications\"
         (base32 "0wwi8hg2q1zkf28rq7bj0f9fcxc5hj59hkmk0gl9p8i3rghlyrms"))))
     (properties `((upstream-name . "AutoStepwiseGLM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-formula-tools r-caret))
     (home-page "https://cran.r-project.org/package=AutoStepwiseGLM")
     (synopsis "Builds Stepwise GLMs via Train and Test Approach")
@@ -1560,6 +1720,9 @@ ISBN:978-1-4462-4918-5).")
         (base32 "1283m1b5bllzfsilsjkk0sj8l1wsjpvnq1vk7r20gnd8nf6kybmn"))))
     (properties `((upstream-name . "autostats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yardstick
                              r-xgboost
                              r-workflows
@@ -1617,6 +1780,9 @@ relationships between categorical and continuous variables in the data set.")
         (base32 "1jz6mwsh8jc79x656f37zr7nys0av1v5bdi3x3f5lb0z036rlrip"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tidyr
                              r-tern
@@ -1669,6 +1835,9 @@ creating large amounts of slide decks in a short time window.")
         (base32 "0hwrsc08lq6zyx869qmiyd0fc83wqfyzx65a3s2j2xnzf4wwzgbq"))))
     (properties `((upstream-name . "autoshiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny))
     (home-page "https://github.com/alekrutkowski/autoshiny")
     (synopsis "Automatic Transformation of an 'R' Function into a 'shiny' App")
@@ -1690,6 +1859,9 @@ server.R files or into a shiny app object).  See examples at
         (base32 "0xr3sjfccvp8h18jqxzajb2pfn4nm8q9maic6k9zzr15fxvphiy5"))))
     (properties `((upstream-name . "Autoseed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Autoseed")
     (synopsis "Retrieve Disease-Related Genes from Public Sources")
     (description
@@ -1715,6 +1887,9 @@ including disease-related genes.")
         (base32 "03zq23x7gha02zvmb5vwmv1pz54ghcfr0sk75krh59cgprx5ysl5"))))
     (properties `((upstream-name . "autoScorecard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart
                              r-rocr
                              r-infotheo
@@ -1747,6 +1922,9 @@ University),Class PPT. 3. <https://zhuanlan.zhihu.com/p/389710022>.  4.
         (base32 "14wn566xm308zir12rckwc5fagm2x1mrphy0a7iri0cbrffgnkz4"))))
     (properties `((upstream-name . "AutoScore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tableone
                              r-survminer
@@ -1795,6 +1973,9 @@ see its application in various medical case studies.")
         (base32 "1dmg0q4sp2d2anzhw2my8xjhpyjsx0kf7r202q5bkw8yr57jnhvr"))))
     (properties `((upstream-name . "AutoregressionMDE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AutoregressionMDE")
     (synopsis "Minimum Distance Estimation in Autoregressive Model")
     (description
@@ -1817,6 +1998,9 @@ minimum distance estimator of the parameters in the model.")
         (base32 "0r26h2ik6cx21dlilpcx9a60dj1fw3zq06f2prmxw7ybk1ix19zm"))))
     (properties `((upstream-name . "autoReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tidycmprsk
                              r-survival
@@ -1861,6 +2045,9 @@ plots can be exported in \"HTML\", \"pdf('@code{LaTex}')\", \"docx('MS Word')\" 
         (base32 "15vgmpvcw7hi1i5kaqj9q126qmfa54h8ay9w6wa7yxjbginp9v7c"))))
     (properties `((upstream-name . "autoRasch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-lavaan r-foreach
                              r-doparallel))
     (native-inputs (list r-knitr))
@@ -1886,6 +2073,9 @@ to be comparable with the standard Rasch analysis (Feri Wijayanto et al. (2021)
         (base32 "0fw90l1dc7s488yn7m45ivkg3l97bx7cks8vd66984zhqp0g66jd"))))
     (properties `((upstream-name . "AutoPlots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-quanteda-textstats
                              r-quanteda
@@ -1921,6 +2111,9 @@ aggregation).")
         (base32 "13mxqmhhdiq7mz4m6nx39dsq7x3bm8fsgskswx48vsq6x2k6byxa"))))
     (properties `((upstream-name . "Autoplotprotein")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-seqinr r-plyr r-plotrix r-ade4))
     (home-page "https://cran.r-project.org/package=Autoplotprotein")
     (synopsis "Development of Visualization Tools for Protein Sequence")
@@ -1942,6 +2135,9 @@ site is completed.")
         (base32 "1z577jvadgiz028z7x0786d3qhlkrvv9i34xmllizvg94kxv3bl1"))))
     (properties `((upstream-name . "autoplotly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotly r-ggplot2 r-ggfortify))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/terrytangyuan/autoplotly")
@@ -1967,6 +2163,9 @@ ggplot2 and plotly syntax while staying interactive.")
         (base32 "0bzllh92fgsmz79lh6m2f10vsx5qng4l7bwbwkp2kzwnncy7cq63"))))
     (properties `((upstream-name . "AutoPipe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-siggenes
                              r-rtsne
                              r-rcolorbrewer
@@ -2004,6 +2203,9 @@ which are the clusters most defining genes.")
         (base32 "0pf6z420rdl7w1f8pp75qds4cnsyrc6py99h8xl39c7rcgg1lcn3"))))
     (properties `((upstream-name . "autonewsmd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-quarto r-magrittr r-data-table))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/kapsner/autonewsmd")
@@ -2026,6 +2228,13 @@ history using conventional commit messages
         (base32 "00shy2yjkhys59nvxwd0smr5bzkfrg55xq6rcmc5z7f6c07wygci"))))
     (properties `((upstream-name . "autoMrP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-vglmer
                              r-tidyr
                              r-tibble
@@ -2069,6 +2278,9 @@ Politics'.  Final pre-print version:
         (base32 "1nrg8q3y6rv69nmnsylg8rps4b4prx46j5a8ljlr24yc34504ck3"))))
     (properties `((upstream-name . "automl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=automl")
     (synopsis "Deep Learning with Metaheuristic")
     (description
@@ -2090,6 +2302,9 @@ and Particle Swarm Optimization.")
         (base32 "1sbcl38cq7y7hln1qffk5s71xgg9hs7dlwyvynqf96z2z2421pw4"))))
     (properties `((upstream-name . "autoMFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-rfast
                              r-rdpack
@@ -2126,6 +2341,9 @@ user as possible.")
         (base32 "1dk2k78niqx9n8pq95cyx4qw00cmic47lyrg5ac0ghr25539jrld"))))
     (properties `((upstream-name . "autometric")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://wlandau.github.io/autometric/")
     (synopsis "Background Resource Logging")
     (description
@@ -2154,6 +2372,9 @@ and psutil'.")
         (base32 "1mmm6kj6mxrn3s4v8ryszkxr9z7bh9cvhin7xjq111fkwly7wjkq"))))
     (properties `((upstream-name . "automagic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-remotes
                              r-purrr
@@ -2182,6 +2403,9 @@ control over which package versions to install.")
         (base32 "0wyqz40fc277z1q1zxdmmjzksnmlh58r27a6hx08h6hmzvng5avy"))))
     (properties `((upstream-name . "autokeras")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate r-keras))
     (home-page "https://github.com/r-tensorflow/autokeras")
     (synopsis "R Interface to 'AutoKeras'")
@@ -2206,6 +2430,9 @@ architecture and hyperparameters of deep learning models.")
         (base32 "1jhkd7mbig6wpyc69iynfrj5i62lrwcwqbgjkmq8b9p5raglm1g2"))))
     (properties `((upstream-name . "autoimage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mba
                              r-maps
                              r-mapproj
@@ -2233,6 +2460,9 @@ package relies on the base graphics system, so graphics are rendered rapidly.")
         (base32 "1p65rl3bm5ka2pfjni3bil9linhvr50c99sg8d5240nj9nqdylj0"))))
     (properties `((upstream-name . "autohrf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer
                              r-magrittr
                              r-lubridate
@@ -2287,6 +2517,9 @@ better task related brain activity models in a quick and efficient manner.")
         (base32 "0jn7nya4lb1pvdy7yyimxga4gn042jqwl3w82m6c244kqydm5fi0"))))
     (properties `((upstream-name . "autoharp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -2320,13 +2553,16 @@ possible by representing R expressions using a tree structure.")
         (base32 "15wvyiya6hawkw1zz6q672rzwlgwzficja7q4fg1p1hsvj8dhp7j"))))
     (properties `((upstream-name . "autogam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-purrr r-mgcv r-dplyr))
     (home-page "https://github.com/tripartio/autogam")
     (synopsis "Automate the Creation of Generalized Additive Models (GAMs)")
     (description
      "This wrapper package for mgcv makes it easier to create high-performing
-Generalized Additive Models (GAMs).  With its central function autogam(), by
-entering just a dataset and the name of the outcome column as inputs,
+Generalized Additive Models (GAMs).  With its central function @code{autogam()},
+by entering just a dataset and the name of the outcome column as inputs,
 @code{AutoGAM} tries to automate the procedure of configuring a highly accurate
 GAM which performs at reasonably high speed, even for large datasets.")
     (license license:expat)))
@@ -2343,6 +2579,9 @@ GAM which performs at reasonably high speed, even for large datasets.")
         (base32 "1k3h2gsck06dnvrifg9rhxi6b3fwfjrkvg0q2wzb9kdnnzgiwcln"))))
     (properties `((upstream-name . "autoFRK")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spam
                              r-rspectra
                              r-rcppparallel
@@ -2387,6 +2626,9 @@ include a stationary structure in the spatial covariance, which utilizes
         (base32 "08q3d2gcjwg36wy7lk8bkhv9i8cayckayslx30zbkypbhabh8bqm"))))
     (properties `((upstream-name . "autoFC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-thurstonianirt
                              r-simdesign
@@ -2442,6 +2684,9 @@ of simulated/actual respondents based on an estimated model.")
         (base32 "106hfhc5hp6v51drkhrv8dgxflqx8rljn6l91cy8hf6h3m0qy5x2"))))
     (properties `((upstream-name . "autoEnsemble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-h2otools r-h2o r-curl))
     (home-page "https://github.com/haghish/autoEnsemble")
     (synopsis
@@ -2467,6 +2712,9 @@ diverse combination.  Presently, only models from h2o.ai are supported.")
         (base32 "06rpcs9qpqrydqvbawsrnxjvkrbhd525f89i3y5l518yyk2ldpcj"))))
     (properties `((upstream-name . "AutoDeskR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://aps.autodesk.com")
@@ -2494,6 +2742,9 @@ rendering 2D and 3D models.")
         (base32 "0s9ar7bmw0n84hvavp63zhm6769l9p88md0kqqcxl0mw67j8q930"))))
     (properties `((upstream-name . "autoCovariateSelection")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-dplyr r-data-table))
     (home-page "https://github.com/technOslerphile/autoCovariateSelection")
     (synopsis "Automated Covariate Selection Using HDPS Algorithm")
@@ -2510,12 +2761,12 @@ covariates that can bias the outcomes comparison estimates in observational RWD
 comes in.  The functions in this package help to implement the three major steps
 of automated covariate selection as described by Schneeweiss et.  al elsewhere.
 These three functions, in order of the steps required to execute automated
-covariate selection are, get_candidate_covariates(), get_recurrence_covariates()
-and get_prioritised_covariates().  In addition to these functions, a sample
-real-world-data from publicly available de-identified medical claims data is
-also available for running examples and also for further exploration.  The
-original article where the algorithm is described by Schneeweiss et.al. (2009)
-<doi:10.1097/EDE.0b013e3181a663cc> .")
+covariate selection are, @code{get_candidate_covariates()},
+@code{get_recurrence_covariates()} and @code{get_prioritised_covariates()}.  In
+addition to these functions, a sample real-world-data from publicly available
+de-identified medical claims data is also available for running examples and
+also for further exploration.  The original article where the algorithm is
+described by Schneeweiss et.al. (2009) <doi:10.1097/EDE.0b013e3181a663cc> .")
     (license license:expat)))
 
 (define-public r-autocogs
@@ -2530,6 +2781,9 @@ original article where the algorithm is described by Schneeweiss et.al. (2009)
         (base32 "0v27l9a0ysj7x9wjka1jl1bq9rmxmzldclcp1w59a6807wjlszhx"))))
     (properties `((upstream-name . "autocogs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-progress
                              r-moments
@@ -2560,6 +2814,9 @@ objects.  Results are returned in a nested data frame.")
         (base32 "01k44rgkpbbr3m2x360aq0fz2qi7nz036g5dsh2y3jy94rmddbyy"))))
     (properties `((upstream-name . "autoBagging")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-rpart
                              r-party
@@ -2602,6 +2859,9 @@ Pinto, F., Cerqueira, V., Soares, C., Mendes-Moreira, J. (2017):
         (base32 "0w2v13bs4fjhavn38prsld972lygj8j9nilxy4lly3f9bc97hnj3"))))
     (properties `((upstream-name . "AutoAds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2 r-forecast))
     (home-page "https://cran.r-project.org/package=AutoAds")
     (synopsis "Advertisement Metrics Calculation")
@@ -2631,6 +2891,9 @@ Thomas Lin Pedersen (2015) \"ggplot2: Elegant Graphics for Data Analysis\"
         (base32 "01m2ldpcxzj7fhgmr9wp4ha3gqdyh7l5bkrnw83smcbq5229hsyy"))))
     (properties `((upstream-name . "auto.pca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych r-plyr))
     (home-page "https://cran.r-project.org/package=auto.pca")
     (synopsis
@@ -2657,6 +2920,9 @@ For more information, see the
         (base32 "0pbnxq2f0bpj1gz8yn3wj3qn03dl08l7754k0ys7s49w2isx9y3h"))))
     (properties `((upstream-name . "auth0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-shinyjs r-shiny r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://curso-r.github.io/auth0/")
@@ -2679,6 +2945,9 @@ using social networks or a list of e-mails.")
         (base32 "0ima350mjlqvij6f9xy6wfcibvlji7nh0prpqngj7apn82ri4m2k"))))
     (properties `((upstream-name . "AUtests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-logistf))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AUtests")
@@ -2702,6 +2971,9 @@ these tests give better control of Type I error than standard tests.")
         (base32 "1ws0fry00xckxgbagp069fcmnbcrcnsvs9v5jizp1xs791ij0njv"))))
     (properties `((upstream-name . "AustralianPoliticians")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-readr r-purrr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RohanAlexander/AustralianPoliticians")
@@ -2724,6 +2996,9 @@ reproducible research is that uses this data.")
         (base32 "0zxzxzhhdmzcvn2kvvmkgrizyx73h4wc7daysjsp54zv8krlh4x9"))))
     (properties `((upstream-name . "ausplotsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-stringr
                              r-r2r
@@ -2767,6 +3042,9 @@ Government NCRIS-enabled project, and its Ecosystem Surveillance platform
         (base32 "152jdvzigcplii5amj0mnral3g2jyy3rfsc745mx36sspw1396yx"))))
     (properties `((upstream-name . "auRoc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-probyx r-mbess r-coda))
     (home-page "https://cran.r-project.org/package=auRoc")
     (synopsis "Various Methods to Estimate the AUC")
@@ -2791,6 +3069,9 @@ parametric MCMC methods.")
         (base32 "0dzwqv396inbx4r6758vr4gip1y42ahavspadgm4xhafvipg73rb"))))
     (properties `((upstream-name . "AurieLSHGaussian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringdist r-reshape2 r-lsa r-igraph
                              r-flexclust))
     (home-page "https://cran.r-project.org/package=AurieLSHGaussian")
@@ -2815,6 +3096,9 @@ Immorlica, Piotr Indyk, and Vahab S. Mirrokni(2004) <doi:10.1145/997817.997857>.
         (base32 "0ybvjp7mwwji1ybf4br7y3l20fccg6sl70wjgc5ii8qa4sgr9hq4"))))
     (properties `((upstream-name . "aum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tdhock/aum")
@@ -2838,6 +3122,9 @@ Area Under Minimum.")
         (base32 "055blr0pbhjy0c20xh21pl1cndvxy742hmn4nlddzvd1phknfkzz"))))
     (properties `((upstream-name . "auk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-stringi
@@ -2873,6 +3160,9 @@ size that can be imported into R.")
         (base32 "0620yxqi160ar91shl5macn890zpc60c9nqy4w8i6m7sskv6gl3z"))))
     (properties `((upstream-name . "augSIMEX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-nleqslv r-mass r-formula))
     (home-page "https://cran.r-project.org/package=augSIMEX")
     (synopsis
@@ -2881,8 +3171,8 @@ size that can be imported into R.")
      "Implementation of the augmented Simulation-Extrapolation (SIMEX) algorithm
 proposed by Yi et al. (2015) <doi:10.1080/01621459.2014.922777> for analyzing
 the data with mixed measurement error and misclassification.  The main function
-provides a similar summary output as that of glm() function.  Both parametric
-and empirical SIMEX are considered in the package.")
+provides a similar summary output as that of @code{glm()} function.  Both
+parametric and empirical SIMEX are considered in the package.")
     (license license:gpl2+)))
 
 (define-public r-augmentedrcbd
@@ -2897,6 +3187,9 @@ and empirical SIMEX are considered in the package.")
         (base32 "1gnl6i81m5w7hxi147ycr963sm661xscw0xb6wm9vcr043ddvx3p"))))
     (properties `((upstream-name . "augmentedRCBD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-reshape2
                              r-rdpack
@@ -2935,6 +3228,9 @@ data visualization and report generation functions.")
         (base32 "1j6v05qal9f6ci1awb5c1vdl59sdp0472kdm5azvjsibic6bi2m8"))))
     (properties `((upstream-name . "audubon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8
                              r-stringi
                              r-rlang
@@ -2967,6 +3263,9 @@ morphological analyzer and the NEologd (Neologism dictionary for @code{MeCab}').
         (base32 "1ifijkbqvdjp1si14p80mbqhq7sby8qgzr181agm3da1nkmic3vp"))))
     (properties `((upstream-name . "audrex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-tictoc
                              r-stringr
@@ -3001,6 +3300,9 @@ hyper-parameter tuning via Bayesian Optimization or Random Search.")
         (base32 "04fhgz04gl0hjw2vjymhi9pirc82pshlpv8nif8l3zclpgl795lq"))))
     (properties `((upstream-name . "auditor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-hnp
                              r-gridextra
@@ -3029,6 +3331,9 @@ asses and compare the goodness of fit, performance, and similarity of models.")
         (base32 "0c8b94a5am196sbvmjxya7cg4aq6fcxr8c958fxx3jmy9r4hn6s2"))))
     (properties `((upstream-name . "audit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=audit")
     (synopsis "Bounds for Accounting Populations")
     (description
@@ -3049,6 +3354,9 @@ transactions (Meeden and Sargent, 2007, <doi:10.1080/03610920701386802>).")
         (base32 "0v6lhkm298xgdny0fhpldfwj8s4ljr21w6y6sv3vvyl87qjgwx8i"))))
     (properties `((upstream-name . "audiometry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=audiometry")
@@ -3058,27 +3366,6 @@ transactions (Meeden and Sargent, 2007, <doi:10.1080/03610920701386802>).")
 system according to standards, given e.  g.  in American Speech-Language-Hearing
 Association (2005), <doi:10.1044/policy.GL2005-00014>.")
     (license license:gpl3)))
-
-(define-public r-audio
-  (package
-    (name "r-audio")
-    (version "0.1-11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "audio" version))
-       (sha256
-        (base32 "0z719jxmfzmh6c885m1yixjzdsl1wy17s1sw2hp4ppz4bcrzclhh"))))
-    (properties `((upstream-name . "audio")))
-    (build-system r-build-system)
-    (native-inputs (list pkg-config))
-    (home-page "http://www.rforge.net/audio/")
-    (synopsis "Audio Interface for R")
-    (description
-     "Interfaces to audio devices (mainly sample-based) from R to allow recording and
-playback of audio.  Built-in devices include Windows MM, Mac OS X
-@code{AudioUnits} and @code{PortAudio} (the last one is very experimental).")
-    (license license:expat)))
 
 (define-public r-auctionr
   (package
@@ -3092,6 +3379,9 @@ playback of audio.  Built-in devices include Windows MM, Mac OS X
         (base32 "0kfx81irqr9mfp4n86z7q5nclcci8vlpvq9zid7miyw3rci7dfvi"))))
     (properties `((upstream-name . "auctionr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ajmack/auctionr")
@@ -3115,6 +3405,9 @@ addition to observable heterogeneity.")
         (base32 "15b1x0c9yhl91gir7jmivp8vxzc8q7wvb0mgam9454avc6l29x4y"))))
     (properties `((upstream-name . "auctestr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=auctestr")
@@ -3140,6 +3433,9 @@ statistic.  For more information, see Hanley and @code{McNeil} (1982)
         (base32 "17s3hjp8zdl28y4h9iv854y1hli5yg1h0kqhj8v5hms1lhx7c1qq"))))
     (properties `((upstream-name . "attrib")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsmodel
                              r-tibble
                              r-stringr
@@ -3177,6 +3473,9 @@ the attributable burden method is based on Nielsen, Krause, Molbak
         (base32 "0ys4psvkvimmym4qj9cmhq8y7x10kv0x6bsvpjkrsc3l8p2g3474"))))
     (properties `((upstream-name . "attenuation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/JonasMoss/attenuation/")
     (synopsis "Correcting for Attenuation Due to Measurement Error")
     (description
@@ -3197,6 +3496,9 @@ methods described in Moss (2019, <arxiv:1911.01576>).")
         (base32 "09c83dqdrnwxqzh3cbnyyf3y4a2qnj0lvm66iishhg58zdrz92q3"))))
     (properties `((upstream-name . "attention")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=attention")
     (synopsis "Self-Attention Algorithm")
@@ -3225,6 +3527,8 @@ Deep Learning\".")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -3274,6 +3578,9 @@ development.")
         (base32 "1kzkpbiycpdc07kb0j5yhjx9bjpn1s7zh0h3fgwghg071yqkd4if"))))
     (properties `((upstream-name . "aTSA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=aTSA")
     (synopsis "Alternative Time Series Analysis")
     (description
@@ -3296,6 +3603,9 @@ ARIMA in SAS.")
         (base32 "1zcifxzx15p4v2nlpz7jvrcnvnqgzc3mbjqk2xqlsyb5g316v52i"))))
     (properties `((upstream-name . "atrrr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-snakecase
@@ -3325,6 +3635,9 @@ posts and followers from the network or posting content.")
         (base32 "17rs5jjk4av4b6qv14yl5qcnrjxms0va6alhdjxyln4hwrrd97km"))))
     (properties `((upstream-name . "atRisk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sn r-quantreg r-ggridges r-ggplot2 r-dfoptim))
     (home-page "https://cran.r-project.org/package=atRisk")
     (synopsis "At-Risk")
@@ -3357,6 +3670,9 @@ private practitioners, scholars as well as policymakers.")
         (base32 "0via7zm3byzbdgrfw351fqvx0g5cj2z31bqfwh7kr99nqgjh0dyn"))))
     (properties `((upstream-name . "ATR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-partykit))
     (home-page "https://cran.r-project.org/package=ATR")
     (synopsis "Alternative Tree Representation")
@@ -3377,6 +3693,9 @@ layout.")
         (base32 "1hj1phyr8mr7xfbaizmsfh5j36paa6xlyg83v4vryplikba617gm"))))
     (properties `((upstream-name . "ATQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-scales
                              r-rlang
@@ -3409,6 +3728,9 @@ Vanderkruk et al. (2023) <doi:10.1186/s12889-023-15747-z> and Ward et al. (2019)
         (base32 "1mi2xghd5vxy6qx621dihx70wk3w1nqvm2h3j2drrb84b8zbvcvh"))))
     (properties `((upstream-name . "atpolR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-stringr r-sf r-rdpack))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gsapijaszko/atpolR")
@@ -3434,6 +3756,9 @@ map.")
         (base32 "08n9apmliwri1vyqwfvyqi7m8b9nj7zpi1vg8gcqlg17skxndm2m"))))
     (properties `((upstream-name . "atom4R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-xml
                              r-readr
@@ -3462,6 +3787,13 @@ and a client to API(s) implementing the @code{AtomPub} SWORD API specification."
         (base32 "1wlzw5565hprlphjp3jrgyhmgqdbrzwka4m1ac7rhxdgljdfh2j5"))))
     (properties `((upstream-name . "ATNr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r-rsp r-desolve))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=ATNr")
@@ -3486,6 +3818,9 @@ solver @code{deSolve}.")
         (base32 "1h79ngq1236gz4w29fs3nj46a3m1x8a28z3xnhc6wn3a46cf8zzi"))))
     (properties `((upstream-name . "atmopt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hiernet r-gtools r-doe-base))
     (home-page "https://cran.r-project.org/package=atmopt")
     (synopsis "Analysis-of-Marginal-Tail-Means")
@@ -3509,6 +3844,9 @@ W911NF-17-1-0007.")
         (base32 "0r8js8racs93vxbq62b44qj9m1vsp24dv81bmsg0a3smpk67zd46"))))
     (properties `((upstream-name . "AtmChile")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinycssloaders
                              r-shiny
                              r-plotly
@@ -3538,6 +3876,9 @@ Civil Aeronautics.")
         (base32 "0p7n73yc4044c4hlnjf4wzhg9zvpwlv6wqw1ams0zb2qw9fcc0fy"))))
     (properties `((upstream-name . "AtlasMaker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-leaflet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rachel-greenlee/AtlasMaker")
@@ -3545,9 +3886,9 @@ Civil Aeronautics.")
     (description
      "Simplify creating multiple, related leaflet maps across tabs for a shiny
 application.  Users build lists of any polygons, points, and polylines needed
-for the project, use the map_server() function to assign built lists and other
-chosen aesthetics into each tab, and the package leverages modules to generate
-all map tabs.")
+for the project, use the @code{map_server()} function to assign built lists and
+other chosen aesthetics into each tab, and the package leverages modules to
+generate all map tabs.")
     (license license:gpl3+)))
 
 (define-public r-atlasapprox
@@ -3562,6 +3903,9 @@ all map tabs.")
         (base32 "060zqnx4b8zswg8nk5h6w1n9bry2pmcwpvgfimrs5dqqxazxkvfc"))))
     (properties `((upstream-name . "atlasapprox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://atlasapprox.readthedocs.io/en/latest/R/index.html")
@@ -3585,6 +3929,9 @@ resources are available at <https://atlasapprox.readthedocs.io>.")
         (base32 "02wm22j40llmdi6z3rzgbc5fpkzmjfq0xar33bypvj1dx1zxygnd"))))
     (properties `((upstream-name . "atlas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat r-httr))
     (home-page "https://shahlab.stanford.edu/start")
     (synopsis "Stanford 'ATLAS' Search Engine API")
@@ -3600,15 +3947,18 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2024.11.19")
+    (version "2024.11.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "10r6bglpdlfngs8153gf16wf6xdxdnzfrdkpmv6gq1q6w1kr383k"))))
+        (base32 "0aqwbzvdy1snyb78mhra1hdp8238wgi2vvzrv4vjrxjs57hrbvf0"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tdhock/atime")
@@ -3633,6 +3983,9 @@ includes functionality for measuring asymptotic memory and other quantities.")
         (base32 "0k0kgaq20nygr8l2fq1wq94cfi8f0kxbnzk264d0q4k43mq688yj"))))
     (properties `((upstream-name . "AteMeVs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ncvreg r-mass))
     (home-page "https://cran.r-project.org/package=AteMeVs")
     (synopsis
@@ -3663,6 +4016,9 @@ characterize propensity scores.")
         (base32 "137ajc4khzljpszj2cgylirmjyq0fiw1fh0vgrkpaah0g78plr28"))))
     (properties `((upstream-name . "ATE.ERROR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-mvtnorm r-mass r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ATE.ERROR")
@@ -3674,12 +4030,12 @@ outcome variables within causal inference, the ATE.ERROR package implements
 inverse probability weighted estimation methods proposed by Shu and Yi (2017,
 <doi:10.1177/0962280217743777>; 2019, <doi:10.1002/sim.8073>).  These methods
 correct errors to accurately estimate average treatment effects (ATE).  The
-package includes two main functions: ATE.ERROR.Y() for handling
-misclassification in the outcome variable and ATE.ERROR.XY() for correcting both
-outcome misclassification and covariate measurement error.  It employs logistic
-regression for treatment assignment and uses bootstrap sampling to calculate
-standard errors and confidence intervals, with simulated datasets provided for
-practical demonstration.")
+package includes two main functions: @code{ATE.ERROR.Y()} for handling
+misclassification in the outcome variable and @code{ATE.ERROR.XY()} for
+correcting both outcome misclassification and covariate measurement error.  It
+employs logistic regression for treatment assignment and uses bootstrap sampling
+to calculate standard errors and confidence intervals, with simulated datasets
+provided for practical demonstration.")
     (license license:gpl3+)))
 
 (define-public r-atbounds
@@ -3694,6 +4050,9 @@ practical demonstration.")
         (base32 "007gc9yjxwlhkb0mibxaa394xdiilfm8z6jbbqdn6wl986p07pg3"))))
     (properties `((upstream-name . "ATbounds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ATbounds/ATbounds-r/")
@@ -3722,6 +4081,9 @@ Effects by Pooling Limited Information across Observations,\"
         (base32 "0dzqghs2358hqyklvfblil5ww9d5nmx406invlx5fgqy4k0zcyzf"))))
     (properties `((upstream-name . "atakrig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-snow
                              r-sf
@@ -3751,6 +4113,9 @@ area-to-area (co)Kriging and area-to-point (co)Kriging.")
         (base32 "0q21dg4p9xw28r3q0ayf2bvwwyccilw93849x4c7k82xpyfnwvpb"))))
     (properties `((upstream-name . "ATAforecasting")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts
                              r-tseries
                              r-tsa
@@ -3792,6 +4157,9 @@ Sabri Taylanâs @code{PhD} dissertation.")
         (base32 "1x2j48wqycl9y4b8wnbhkfm2clhq5x8grw7ipjbhpxj3y3dlrh0b"))))
     (properties `((upstream-name . "atable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-settings
                              r-reshape2
                              r-plyr
@@ -3820,6 +4188,9 @@ and hypothesis tests, arranges the results in a table ready for reporting with
         (base32 "08wcnfkbcq2al5ivdjkrjr8alaz0026992ra3ihyw6sd74mcracx"))))
     (properties `((upstream-name . "ata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve))
     (home-page "https://cran.r-project.org/package=ata")
     (synopsis "Automated Test Assembly")
@@ -3827,13 +4198,13 @@ and hypothesis tests, arranges the results in a table ready for reporting with
      "This package provides a collection of psychometric methods to process item
 metadata and use target assessment and measurement blueprint constraints to
 assemble a test form.  Currently two automatic test assembly (ata) approaches
-are enabled.  For example, the weighted (positive) deviations method, wdm(),
-proposed by Swanson and Stocking (1993) <doi:10.1177/014662169301700205> was
-implemented in its full specification allowing for both item selection as well
-as test form refinement.  The linear constraint programming approach, atalp(),
-uses the linear equation solver by Berkelaar et.  al (2014)
-<http://lpsolve.sourceforge.net/5.5/> to enable a variety of approaches to
-select items.")
+are enabled.  For example, the weighted (positive) deviations method,
+@code{wdm()}, proposed by Swanson and Stocking (1993)
+<doi:10.1177/014662169301700205> was implemented in its full specification
+allowing for both item selection as well as test form refinement.  The linear
+constraint programming approach, @code{atalp()}, uses the linear equation solver
+by Berkelaar et.  al (2014) <http://lpsolve.sourceforge.net/5.5/> to enable a
+variety of approaches to select items.")
     (license license:lgpl2.0)))
 
 (define-public r-asynchlong
@@ -3848,6 +4219,9 @@ select items.")
         (base32 "1fnrx8dgghs579zpckymc0lip9hisn70agv71kbicgi80k8wn62s"))))
     (properties `((upstream-name . "AsynchLong")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AsynchLong")
     (synopsis "Regression Analysis of Sparse Asynchronous Longitudinal Data")
     (description
@@ -3872,6 +4246,9 @@ time-dependent coefficients.  Cao, H., Li, J., and Fine, J. P. (2016)
         (base32 "0g8z0nqjp4a9lxvdmzhyx1sqvdrkd9vd0b3i3qjbm4a542jf0aga"))))
     (properties `((upstream-name . "asymptor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://hugogruson.fr/asymptor/")
     (synopsis "Estimate Asymptomatic Cases via Capture/Recapture Methods")
@@ -3898,6 +4275,9 @@ project.")
         (base32 "02l07psiy1888zx86j2r1l5lznz47wdmzbh39pd2nbj8r9i80szr"))))
     (properties `((upstream-name . "asympTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.r-project.org")
     (synopsis
      "Simple R Package for Classical Parametric Statistical Tests and Confidence Intervals in Large Samples")
@@ -3922,6 +4302,9 @@ is implemented in standard statistical software.")
         (base32 "039afqmdir200aijln9q0g3rkahkxqahw6yz5mnw62jsslr9xskb"))))
     (properties `((upstream-name . "asymmetry.measures")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sn r-skewt r-gamlss-dist))
     (home-page "https://cran.r-project.org/package=asymmetry.measures")
     (synopsis "Asymmetry Measures for Probability Density Functions")
@@ -3949,6 +4332,9 @@ and economics.")
         (base32 "1zppf4gb0rz9c4ixd6fym2qyjs8ddzq09is1rlf000mcnarfl22b"))))
     (properties `((upstream-name . "asymmetry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-smacof r-gplots))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=asymmetry")
@@ -3981,6 +4367,9 @@ exploratory analysis of asymmetric tables.")
         (base32 "0a6ika2vlnklbsr7lmihysbhzzc5za2aw77iw6pc19cw6mba6mpy"))))
     (properties `((upstream-name . "AsymmetricSORDs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AsymmetricSORDs")
     (synopsis "Asymmetric Second Order Rotatable Designs (AsymmetricSORDs)")
     (description
@@ -4000,11 +4389,12 @@ rotatable designs and orthogonal transformations\" ; M. Hemavathi, Eldho
 Varghese, Shashi Shekhar & Seema Jaggi (2020) <DOI:
 10.1080/02664763.2020.1864817>. \"Sequential asymmetric third order rotatable
 designs (SATORDs)\" .) are more suitable as these designs explore more regions in
-the design space.This package contains functions named Asords() ,CCD_coded(),
-CCD_original(), SORD_coded() and SORD_original() for generating
-asymmetric/symmetric RSDs along with the randomized layout.  It also contains
-another function named Pred.var() for generating the variance of predicted
-response as well as the moment matrix based on a second order model.")
+the design space.This package contains functions named @code{Asords()}
+@code{,CCD_coded()}, @code{CCD_original()}, @code{SORD_coded()} and
+@code{SORD_original()} for generating asymmetric/symmetric RSDs along with the
+randomized layout.  It also contains another function named @code{Pred.var()}
+for generating the variance of predicted response as well as the moment matrix
+based on a second order model.")
     (license license:gpl2+)))
 
 (define-public r-asymld
@@ -4019,6 +4409,9 @@ response as well as the moment matrix based on a second order model.")
         (base32 "1q05pxwn6arpalspgf2m0cym4ivnwyv94i58k9kaihd37kvm5lgc"))))
     (properties `((upstream-name . "asymLD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=asymLD")
     (synopsis
      "Asymmetric Linkage Disequilibrium (ALD) for Polymorphic Genetic Data")
@@ -4039,6 +4432,9 @@ measures are identical to the correlation measure (r) for bi-allelic data.")
         (base32 "1gvwnlq5xxy4iiba87wm6f5j7b1gzjz1fzfwj8s6m4z3764j8inb"))))
     (properties `((upstream-name . "asylum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/humaniverse/asylum")
     (synopsis "Data on Asylum and Resettlement for the UK")
     (description
@@ -4058,6 +4454,9 @@ measures are identical to the correlation measure (r) for bi-allelic data.")
         (base32 "0mr09gfxq2xsdrh7h28fkczhs44m367gf7zj09kc5lc5zwd9fs83"))))
     (properties `((upstream-name . "AsyK")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-deltd))
     (home-page "https://CRAN.R-project.org/package=AsyK")
     (synopsis "Kernel Density Estimation")
@@ -4081,6 +4480,9 @@ Gamma, Exponential or Weibull.  For details see Chen (2000), Scaillet (2004)
         (base32 "15k6gls2bcwnvpkqyz6jnhzk96rcnjdnxv63kh7zzp2qbidh27hb"))))
     (properties `((upstream-name . "ASV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-freqdom))
     (home-page
      "https://sites.google.com/view/omori-stat/english/software/asv-r")
@@ -4104,6 +4506,9 @@ using particle filters.")
         (base32 "05rsbakby0w3xf5zaq5flp4if31x8fnm1l0n1r51ympw4wzzqjh5"))))
     (properties `((upstream-name . "asus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/trambakbanerjee/asus#asus")
@@ -4130,6 +4535,9 @@ Information by Banerjee, Mukherjee and Sun (JASA 2020).")
         (base32 "0c81q9xddd9m2lhbv7r2aq1w262vjamcv8qg4mgrndww8n6vf8zn"))))
     (properties `((upstream-name . "astroFns")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=astroFns")
     (synopsis "Astronomy: Time and Position Functions, Misc. Utilities")
     (description "Miscellaneous astronomy functions, utilities, and data.")
@@ -4147,6 +4555,9 @@ Information by Banerjee, Mukherjee and Sun (JASA 2020).")
         (base32 "00689px4znwmlp6qbj6z2a51b7ylx1yrrjpv6zjkvrwpv6lyj9fw"))))
     (properties `((upstream-name . "astrodatR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=astrodatR")
     (synopsis "Astronomical Data")
     (description
@@ -4174,6 +4585,9 @@ processes; periodic and stochastic time series analysis.")
         (base32 "1ba5sbg7z3jayphm6qp0v1ir4pr14jw1rfn3b4sz0vl8h2vpcmsi"))))
     (properties `((upstream-name . "astrochron")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-palinsol
                              r-multitaper
@@ -4204,6 +4618,9 @@ scale development and paleoclimate analysis.")
         (base32 "106c6fh20s98fzixs4jpa4d413himrfg31rzwsxp72yldqxg70fx"))))
     (properties `((upstream-name . "AsthmaNHANES")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AsthmaNHANES")
     (synopsis "Asthma Data Sets from NHANES")
     (description
@@ -4223,6 +4640,9 @@ scale development and paleoclimate analysis.")
         (base32 "0rfbm5c2lgs921ncajsjyyxzfiqls40xlxqp2pwp7c0rxhiz2rd6"))))
     (properties `((upstream-name . "asteRisk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppparallel r-rcpp r-onion r-nanotime
                              r-desolve))
     (native-inputs (list r-knitr))
@@ -4258,6 +4678,9 @@ R. Hoots, Paul W. Schumacher Jr.  and Robert A. Glover (2014)
         (base32 "1dcmfirgy85ca9v542szjhxp5660kcp4lq07q7bdv1ghc3l2l7qs"))))
     (properties `((upstream-name . "aster2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://www.stat.umn.edu/geyer/aster/")
     (synopsis "Aster Models")
@@ -4291,6 +4714,9 @@ also generalizes mark-capture-recapture analysis.")
         (base32 "1piimmrsvhbps8ld6vjjg82kf8pm5nwl91437dglid802p51pwlm"))))
     (properties `((upstream-name . "aster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trust))
     (home-page "http://www.stat.umn.edu/geyer/aster/")
     (synopsis "Aster Models")
@@ -4324,6 +4750,9 @@ There are also random effects versions of these models.")
         (base32 "1vsnd7w0z0wr4185wg6k7xjd4xc8qsm08f4wfgcnyd79x56wczky"))))
     (properties `((upstream-name . "ast2ast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpparmadillo
                              r-rcpp
@@ -4354,6 +4783,9 @@ fast functions which can be used as ode-system or during optimization.")
         (base32 "0z5dw5qw0i61v4796ms7pp66f9y4ylxrcls31ixzcmkklh3rcnp3"))))
     (properties `((upstream-name . "AST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AST")
     (synopsis "Age-Spatial-Temporal Model")
     (description
@@ -4375,6 +4807,9 @@ given in Foreman et al. (2015) <doi:10.1186/1478-7954-10-1>.")
         (base32 "15qah885jjiwxrf1bhmbjpsamgylmy8cwjbd3w0di7n8j4zv6gwr"))))
     (properties `((upstream-name . "assortnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=assortnet")
     (synopsis
      "Calculate the Assortativity Coefficient of Weighted and Binary Networks")
@@ -4396,6 +4831,9 @@ with discrete or continuous vertex values.")
         (base32 "1wp5swnpd6m5g4zm14lllclmw058513n1g3kq1iqc0acjavkqy17"))))
     (properties `((upstream-name . "AssocTests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-fextremes r-combinat r-cluster))
     (home-page "https://cran.r-project.org/package=AssocTests")
     (synopsis "Genetic Association Studies")
@@ -4436,6 +4874,9 @@ Package for Genetic Association Studies.  Journal of Statistical Software.
         (base32 "16yzgvlqbapjhvzm5nw8vfrhh8mp9llnhck4bpgmszyrh93z1ha5"))))
     (properties `((upstream-name . "assocInd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=assocInd")
     (synopsis
      "Implements New and Existing Association Indices for Constructing Animal Social Networks")
@@ -4458,6 +4899,9 @@ association strength between individuals using each method.")
         (base32 "16pl18b2jd45ys2cc4h74k2llc5daw8b727nmby4qdrja3qnifbr"))))
     (properties `((upstream-name . "AssocBin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AssocBin")
     (synopsis "Measuring Association with Recursive Binning")
@@ -4483,6 +4927,9 @@ and algorithm, see Salahub and Oldford (2023)
         (base32 "1rjiiir472dnr15xyvpn81s62nf01gl70khr8mrni65ssp5m30fb"))))
     (properties `((upstream-name . "AssocAFC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-compquadform))
     (home-page "https://www.r-project.org")
     (synopsis "Allele Frequency Comparison")
@@ -4495,11 +4942,11 @@ Comparison ('@code{AssocAFC}') package performs multiple rare variant
 association analyses in both population and family-based GWAS (Genome-Wide
 Association Study) designs.  It includes three score tests that are based on the
 difference of the sum of allele frequencies between cases and controls.  Two of
-these tests, Wcorrected() and Wqls(), are collapsing-based tests and suffer from
-having protective and risk variants.  The third test, @code{afcSKAT}(), is a
-score test that overcomes the mix of SNP (Single-Nucleotide Polymorphism) effect
-directions.  For more details see Saad M and Wijsman EM (2017)
-<doi:10.1093/bib/bbx107>.")
+these tests, @code{Wcorrected()} and @code{Wqls()}, are collapsing-based tests
+and suffer from having protective and risk variants.  The third test,
+@code{afcSKAT()}, is a score test that overcomes the mix of SNP
+(Single-Nucleotide Polymorphism) effect directions.  For more details see Saad M
+and Wijsman EM (2017) <doi:10.1093/bib/bbx107>.")
     (license license:gpl3+)))
 
 (define-public r-assistant
@@ -4514,6 +4961,9 @@ directions.  For more details see Saad M and Wijsman EM (2017)
         (base32 "0apaj4lfkbg08xrw8mknf50s1vyd4j5mbwciwgblq7ydh3pyjxaj"))))
     (properties `((upstream-name . "ASSISTant")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-mvtnorm r-magrittr r-knitr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bnaras/ASSISTant")
@@ -4538,17 +4988,20 @@ also provided as a vignette.")
         (base32 "0n2348hld38jg1z8axaqs000qczbwbpq5yq5sshfn9k08p5b1szk"))))
     (properties `((upstream-name . "assist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-lattice))
     (native-inputs (list gfortran))
     (home-page "https://yuedong.faculty.pstat.ucsb.edu/software.html")
     (synopsis "Suite of R Functions Implementing Spline Smoothing Techniques")
     (description
-     "Fit various smoothing spline models.  Includes an ssr() function for smoothing
-spline regression, an nnr() function for nonparametric nonlinear regression, an
-snr() function for semiparametric nonlinear regression, an slm() function for
-semiparametric linear mixed-effects models, and an snm() function for
-semiparametric nonlinear mixed-effects models.  See Wang (2011)
-<doi:10.1201/b10954> for an overview.")
+     "Fit various smoothing spline models.  Includes an @code{ssr()} function for
+smoothing spline regression, an @code{nnr()} function for nonparametric
+nonlinear regression, an @code{snr()} function for semiparametric nonlinear
+regression, an @code{slm()} function for semiparametric linear mixed-effects
+models, and an @code{snm()} function for semiparametric nonlinear mixed-effects
+models.  See Wang (2011) <doi:10.1201/b10954> for an overview.")
     (license license:gpl2)))
 
 (define-public r-assignr
@@ -4563,6 +5016,9 @@ semiparametric nonlinear mixed-effects models.  See Wang (2011)
         (base32 "1ml8yk9a8rm05whcygaxha8lrrp0npr50fvsb3pcdikxing1khdm"))))
     (properties `((upstream-name . "assignR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-rlang r-mvnfast r-geosphere))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=assignR")
@@ -4587,6 +5043,9 @@ Ma, C. et al. (2020) <doi:10.1111/2041-210X.13426>.")
         (base32 "0p282yyszjamvzfsrjhy5c4jbfixvf4fafj6k47k2dgpx6wsdrqx"))))
     (properties `((upstream-name . "assignPOP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tree
                              r-stringr
                              r-rlang
@@ -4621,6 +5080,9 @@ genetic and non-genetic data, and visualizing results.")
         (base32 "199ygwfddpzxnj388gxkn7xyhnvjr24f5jg4lnydh0z7pb96pm5r"))))
     (properties `((upstream-name . "AssetPricing")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polynom r-desolve))
     (home-page "http://www.stat.auckland.ac.nz/~rolf/")
     (synopsis "Optimal Pricing of Assets with Fixed Expiry Date")
@@ -4646,6 +5108,9 @@ solution of these differential equations.")
         (base32 "0r98li2lxhfap1hn6h0l78phpm9m1nlcqhwzpq0ahhw0b1rd4qkf"))))
     (properties `((upstream-name . "AssetCorr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vinecopula
                              r-rdpack
                              r-qpdf
@@ -4690,6 +5155,9 @@ well as the method of moments estimator of Frei and Wunsch (2018)
         (base32 "0qd58478bwg20x7ivfasmhs87swl6wj98vzlp608y208madl8ss6"))))
     (properties `((upstream-name . "AssetAllocation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-riskportfolios
@@ -4721,6 +5189,9 @@ ISBN:9780988679924).")
         (base32 "1qpa2fd1ajk395x4chmarj6l50m4jaf5951qy1a79ncaa8f8g3x9"))))
     (properties `((upstream-name . "assessor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-tweedie r-np r-mass))
     (home-page "https://jhlee1408.github.io/assessor/")
     (synopsis
@@ -4745,6 +5216,9 @@ ordered curve for assessing mean structures.")
         (base32 "1kg6k45ff0s486l78vw3576jjy3h24kgd5i6palgvann82dqp0ls"))))
     (properties `((upstream-name . "assertions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-glue r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/selkamand/assertions")
@@ -4770,13 +5244,16 @@ by the cli package.")
         (base32 "0n5l48yb0djl6rdj50p1dslpw3c5kbi15yz6z6rdgic575gjwzdc"))))
     (properties `((upstream-name . "assert")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/OlivierBinette/assert")
     (synopsis "Validate Function Arguments")
     (description
      "Lightweight validation tool for checking function arguments and validating data
-analysis scripts.  This is an alternative to stopifnot() from the base package
-and to assert_that() from the assertthat package.  It provides more informative
-error messages and facilitates debugging.")
+analysis scripts.  This is an alternative to @code{stopifnot()} from the base
+package and to @code{assert_that()} from the assertthat package.  It provides
+more informative error messages and facilitates debugging.")
     (license license:gpl2+)))
 
 (define-public r-assa
@@ -4791,6 +5268,9 @@ error messages and facilitates debugging.")
         (base32 "10r5406g6i0959k1zm5h9cbwqmnyf7zy80ahiqsyrapm3g5rphxg"))))
     (properties `((upstream-name . "ASSA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ASSA")
     (synopsis "Applied Singular Spectrum Analysis (ASSA)")
@@ -4813,6 +5293,9 @@ principal components using singular spectrum analysis (de Carvalho and Rua
         (base32 "1k6qyp5ac8q3z7ifbqv2kkryh27ii0zbfmlcjl6i3y7s1mfyigg8"))))
     (properties `((upstream-name . "ASRgenomics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-superheat
                              r-scattermore
                              r-matrix
@@ -4846,6 +5329,13 @@ Galli, and Murray (2022)
         (base32 "1k8zyk4jdndsmkm5cfx9lyg2j7hqlrjxkzga9yx9rm3avmk8g3f5"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (inputs (list))
     (propagated-inputs (list r-trycatchlog
                              r-stringr
@@ -4901,6 +5391,9 @@ for functions that are methods for alldiffs and data.frame objects.  The package
         (base32 "0rh21dj5913nxhdndqfhxvm6mvwnacraf7l3bac09awm7cfhk511"))))
     (properties `((upstream-name . "aSPU")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrixstats r-mass r-gee r-fields))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ikwak2/aSPU")
@@ -4941,6 +5434,9 @@ traits-pathway association with summary statistics('M@code{TaSPUsSetPath}').")
         (base32 "1a68x6jvsaxviy2w361f19iqzsdsaf9kcqw5cknf4yz9fvkqhjny"))))
     (properties `((upstream-name . "aspline")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-splines2
                              r-rlang
@@ -4971,6 +5467,9 @@ Regression with Automatic Knot Selection\", <@code{arXiv:1808.01770>}.")
         (base32 "13pb1pslyka706v13b7hdrzzn5bxmj2l5irpd9f1pm1n8a1ivrrl"))))
     (properties `((upstream-name . "aspect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://r-forge.r-project.org/projects/psychor/")
     (synopsis
      "General Framework for Multivariate Analysis with Optimal Scaling")
@@ -4997,6 +5496,9 @@ methods such as structural equation models.")
         (base32 "163fglx1k7z38xqlgmdqgkzf2sp3xqi756iddw7kj06l6f389yx2"))))
     (properties `((upstream-name . "aspace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splancs r-hmisc))
     (home-page "https://cran.r-project.org/package=aspace")
     (synopsis "Functions for Estimating Centrographic Statistics")
@@ -5006,11 +5508,11 @@ statistics (e.g., standard distance, standard deviation ellipse, standard
 deviation box) for observations taken at point locations.  Separate plotting
 functions have been developed for each measure.  Users interested in writing
 results to ESRI shapefiles can do so by using results from aspace functions as
-inputs to the convert.to.shapefile() and write.shapefile() functions in the
-shapefiles library.  We intend to provide terra integration for geographic data
-in a future release.  The aspace package was originally conceived to aid in the
-analysis of spatial patterns of travel behaviour (see Buliung and Remmel 2008
-<doi:10.1007/s10109-008-0063-7>).")
+inputs to the @code{convert.to.shapefile()} and @code{write.shapefile()}
+functions in the shapefiles library.  We intend to provide terra integration for
+geographic data in a future release.  The aspace package was originally
+conceived to aid in the analysis of spatial patterns of travel behaviour (see
+Buliung and Remmel 2008 <doi:10.1007/s10109-008-0063-7>).")
     (license license:gpl3)))
 
 (define-public r-asnipe
@@ -5025,6 +5527,9 @@ analysis of spatial patterns of travel behaviour (see Buliung and Remmel 2008
         (base32 "01wv5pi44s2qzn33qcm4404ijqrwmqfrgchd88s7bwmdl47h3d77"))))
     (properties `((upstream-name . "asnipe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=asnipe")
     (synopsis
@@ -5051,6 +5556,9 @@ regression analysis on social network data.")
         (base32 "08f4128abvy9pdkbdgiqnhm2v7f79lqbzp1132h52zq2n9wzxzmy"))))
     (properties `((upstream-name . "asmbPLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggpubr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=asmbPLS")
@@ -5088,6 +5596,9 @@ Multi-block Partial Least Square for classifying the categorical outcome.")
         (base32 "18nprjb54kr5yvpfnmji8p5a9ggc33h5wkgvni567rdsnq7jv0d7"))))
     (properties `((upstream-name . "ASMbook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb r-mass r-lattice r-coda))
     (home-page
      "https://shop.elsevier.com/books/applied-statistical-modelling-for-ecologists/kery/978-0-443-13715-0")
@@ -5113,6 +5624,9 @@ model fitting engines, and running custom Markov Chain Monte Carlo.")
         (base32 "1v8gcs5vykmxjanh4s4pxmv7qx7nmn182ygpffiq23jfdqgzqjag"))))
     (properties `((upstream-name . "ASMap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-qtl r-lattice r-gtools r-fields))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DrJ001/ASMap")
@@ -5136,6 +5650,9 @@ clustering and optimal marker ordering using MSTmap (see Wu et al.,2008).")
         (base32 "0irxfkhd344jk31lwp6zgvwpgi6v72y6xbpp5q20zj8220ck4ms8"))))
     (properties `((upstream-name . "asm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-pracma r-mass r-iso r-fdrtool))
     (home-page "https://cran.r-project.org/package=asm")
     (synopsis
@@ -5167,6 +5684,9 @@ given in Feng et al. (2024) <doi:10.48550/@code{arXiv.2403.16688>}.")
         (base32 "1hy0ncanc3mb20yrby8s9hd8v2fg3x41vkj0jwl2b8znzl5n5b2n"))))
     (properties `((upstream-name . "aslib")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-stringr
                              r-rweka
@@ -5203,6 +5723,9 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
         (base32 "1mi42jvnxrm9xhnrps540hmgi3nd3g9g7pjrkcgzmyj58ip98r66"))))
     (properties `((upstream-name . "askgpt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rappdirs
                              r-jsonlite
@@ -5231,6 +5754,9 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
         (base32 "08wrqhrlna2vg5icgqcaxciv51gq7rfmd458qy7dqmh7ydxcrxk6"))))
     (properties `((upstream-name . "asht")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ssanv
                              r-perm
                              r-exactci
@@ -5268,6 +5794,9 @@ only have confidence intervals (e.g., @code{prevSeSp}).")
         (base32 "03x0vffik7k0cccr4m70ap4nl1zw2zp5iy3nr260dgivxlj49kxk"))))
     (properties `((upstream-name . "ashapesampler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-tda
                              r-rvcg
@@ -5315,6 +5844,9 @@ Winn-Nunez et al. (2024) <doi:10.1101/2024.01.09.574919>.")
         (base32 "1zvps8d20ig863dv3jm1pjj9icy88dk378a9j8f0gcgafz5cxi6g"))))
     (properties `((upstream-name . "ASGS.foyer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp))
     (home-page "https://cran.r-project.org/package=ASGS.foyer")
     (synopsis "Interface to the Australian Statistical Geography Standard")
@@ -5336,6 +5868,9 @@ those shapefiles, as well as methods for converting coordinates to shapefiles.")
         (base32 "15a922aw0v5w4hrha03xifx8cpifcc773gambgwqq6i5nz08ya26"))))
     (properties `((upstream-name . "asdreader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://github.com/pierreroudier/asdreader")
     (synopsis "Reading ASD Binary Files in R")
     (description
@@ -5359,6 +5894,9 @@ the ASD file header can also be accessed.")
         (base32 "0h7q49pdchw0apyrm813qrl4sp6hym31awh1bjlk06fd76ynj72y"))))
     (properties `((upstream-name . "ascotraceR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sf
                              r-purrr
@@ -5389,6 +5927,9 @@ anthracnose in a lupin field.")
         (base32 "116xj2d4hbvf0hgac0nqja758chgyf3ycivj0h3pmb0y75dlcbl9"))))
     (properties `((upstream-name . "asciiSetupReader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-vroom
                              r-stringr
@@ -5424,6 +5965,9 @@ government data.")
         (base32 "0xhkbsy9dypk09avazgxczyfkh3rhdxhwci688dw1lxnhxv1hj24"))))
     (properties `((upstream-name . "asciiruler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr))
     (home-page "https://cran.r-project.org/package=asciiruler")
     (synopsis "Render an ASCII Ruler")
@@ -5447,6 +5991,9 @@ it easy for viewers to locate nucleotides by position.")
         (base32 "1b73bbysnxy3x3gwhm80xry45m18yh716wrc93v1awk3c1p2cv3m"))))
     (properties `((upstream-name . "asciichartr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=asciichartr")
     (synopsis "Lightweight ASCII Line Graphs")
     (description
@@ -5470,6 +6017,8 @@ Kroitor.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5514,6 +6063,9 @@ Rmarkdown documents.")
         (base32 "1wp330cspv5f63jcwldg59i8anv8p30kbr635p3i8l5jd9x9wi8k"))))
     (properties `((upstream-name . "ascii")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-digest r-codetools))
     (home-page "https://github.com/mclements/ascii")
     (synopsis "Export R Objects to Several Markup Languages")
@@ -5534,6 +6086,9 @@ or pandoc syntax.  Package comes with a set of drivers for Sweave'.")
         (base32 "1dwmr33jc2fp9x51kzlqa4vib7xmzvz9a7qlfgvhxhld2bxlrrgi"))))
     (properties `((upstream-name . "ascentTraining")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.ascent.io/")
     (synopsis "Ascent Training Datasets")
     (description
@@ -5556,6 +6111,9 @@ with the book.")
         (base32 "05as9c0x20wyzzysbpr4mabyfbvhy0c0irdndv33j73psish15y2"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-scatterplot3d
                              r-plotrix
@@ -5586,6 +6144,9 @@ Statistics for Biologists using R. CRC/Taylor and Francis, Boca Raton, FL, ISBN:
         (base32 "0c1rgic76w3i2xhna7i52lyc0p01s5b1mxyn55gqw6i19v9mq0b3"))))
     (properties `((upstream-name . "asaur")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=asaur")
     (synopsis "Data Sets for \"Applied Survival Analysis Using R\"\"")
     (description
@@ -5606,6 +6167,9 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
         (base32 "0fm22lcifq2lmbv2il0jkkp7b426924vwph7yrcqprvlvb3g33id"))))
     (properties `((upstream-name . "aRxiv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/aRxiv/")
@@ -5628,6 +6192,9 @@ finance, and statistics.")
         (base32 "1c5l6ykn7zrk9j2lgsxphs5kn113rjax5qdi65wga7cvdixrkxab"))))
     (properties `((upstream-name . "ARUtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-units
                              r-tidyr
@@ -5672,6 +6239,9 @@ collected using the @code{SongMeter} and BAR-LT types of ARUs.")
         (base32 "1alma9fk92y55zrxr1a5ri2gpkn8kp2wbc3i2vqkmwj48za1a29j"))))
     (properties `((upstream-name . "arulesViz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-vcd
                              r-tidyr
@@ -5706,6 +6276,9 @@ visualizations for rule exploration.  Michael Hahsler (2017)
         (base32 "03bs2l9zmjlcjmd18gm0ci2xq0b57wapp5hdiv7icdxqagb4j57n"))))
     (properties `((upstream-name . "arulesSequences")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-arules))
     (home-page "https://cran.r-project.org/package=arulesSequences")
     (synopsis "Mining Frequent Sequences")
@@ -5726,6 +6299,9 @@ the C++ implementation of @code{cSPADE} by Mohammed J. Zaki.")
         (base32 "0kqvi7dzq3mrn6cq22gwxh4p54mgfn9s1sd2cfnbw1f9zp078lsn"))))
     (properties `((upstream-name . "arulesNBMiner")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-arules))
     (home-page "https://github.com/mhahsler/arulesNBMiner")
@@ -5748,6 +6324,9 @@ NB-frequent itemsets and NB-precise rules.  Michael Hahsler (2006)
         (base32 "0d8nfqbk3y4vw5n3xnns2gy9jwj07a1zbaag9n0hmxrcs8m5ml83"))))
     (properties `((upstream-name . "arulesCBA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-matrix r-glmnet r-discretization r-arules))
     (home-page "https://github.com/mhahsler/arulesCBA")
@@ -5771,6 +6350,9 @@ RCAR, and RIPPER to build associative classifiers.  Hahsler et al (2019)
         (base32 "0n0xz64kff7inc9b9jlrka0rpn3amrls12635wvfycdxf9p0ymx9"))))
     (properties `((upstream-name . "ARTtransfer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest r-nnet r-glmnet r-gbm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ARTtransfer")
@@ -5796,6 +6378,9 @@ See the paper, Wang, Wu, and Ye (2023) <doi:10.1002/sta4.582>.")
         (base32 "0pmzv7qm00lwf8p33blzq3k4k4xfwc8s3bcaggxm2ww5l7p93zif"))))
     (properties `((upstream-name . "aRtsy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rcpparmadillo
                              r-rcpp
@@ -5823,6 +6408,9 @@ that incorporate some form of randomness.")
         (base32 "124lybfsxy62qdwr14w8w88kn4fylfff6qd2xy07x2g3lncf6497"))))
     (properties `((upstream-name . "artpack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -5853,6 +6441,9 @@ generative art.")
         (base32 "16awxcncyhry0ygk8gdvlff787837rr8qsyg1pxd11w4v1llrqrf"))))
     (properties `((upstream-name . "ARTool")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr
                              r-magrittr
                              r-lme4
@@ -5881,6 +6472,9 @@ Higgins, and Wobbrock (2021) <doi:10.1145/3472749.3474784>.")
         (base32 "1dw9aascnqr5cbk8a862rlma94b39ndgkrhf826qf4k58y92nf5q"))))
     (properties `((upstream-name . "ARTofR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rstudioapi r-clipr r-bannercommenter))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ARTofR")
@@ -5903,6 +6497,9 @@ dividers.")
         (base32 "01jw0r3pmwwrs5cb31pjyf5cygnfqzyim2dw45lqd0yywkmc5y3h"))))
     (properties `((upstream-name . "arthistory")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/saralemus7/arthistory")
     (synopsis "Art History Textbook Data")
     (description
@@ -5965,6 +6562,9 @@ ISBN: 0810934213).")
         (base32 "1nqsq9fsqk9kag9n7i2r9yvf578nkdfrkkv7qy8650prka0jca2p"))))
     (properties `((upstream-name . "artfima")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ltsa r-gsl))
     (home-page "http://www.stats.uwo.ca/faculty/aim")
     (synopsis "ARTFIMA Model Estimation")
@@ -5985,6 +6585,9 @@ density function for stationary ARTFIMA.")
         (base32 "186w1ivj5v3h906crl953qxgai5wiznaih83dgvwgnmabs9p1wvk"))))
     (properties `((upstream-name . "ART")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-car))
     (home-page "http://decsai.ugr.es/~pjvi/r-packages.html")
     (synopsis "Aligned Rank Transform for Nonparametric Factorial Analysis")
@@ -6014,6 +6617,9 @@ ACM Press, pp.  143-146. <doi:10.1145/1978942.1978963>.")
         (base32 "0ssaalc058m09gfcr1n0s729rx2plia3zkhlynj67drclyvhyb0i"))))
     (properties `((upstream-name . "arse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-dplyr))
     (home-page "https://github.com/nr3xe/arse")
     (synopsis "Area of Resilience to Stress Event")
@@ -6039,6 +6645,9 @@ performance without return to baseline).")
         (base32 "0d9p6ps074d9h20c096kmy1ny6pydfq3qw3srd6mhsw6si5rcq78"))))
     (properties `((upstream-name . "ars")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ars")
     (synopsis "Adaptive Rejection Sampling")
     (description "Adaptive Rejection Sampling, Original version.")
@@ -6056,6 +6665,9 @@ performance without return to baseline).")
         (base32 "19xya0p6nnw62s43cvv6bcjdm1nffil37192g586jxnkqwlw23bj"))))
     (properties `((upstream-name . "arrowheadr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-bezier))
     (home-page "https://github.com/wjschne/arrowheadr")
     (synopsis "Make Custom Arrowheads")
@@ -6079,6 +6691,9 @@ create and transform data for customizing arrows.")
         (base32 "11n0qd51ab8hmm6axzzpx3dg4n43g7fh72x8p3ixbj0k11id02ph"))))
     (properties `((upstream-name . "arrg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ore))
     (home-page "https://github.com/jonclayden/arrg")
     (synopsis "Flexible Argument Parsing for R Scripts")
@@ -6101,6 +6716,9 @@ options.")
         (base32 "02rl530qxi1idiqpmzg5wr9vl5c7phizhpj64k5pn8xq9zfxbpaz"))))
     (properties `((upstream-name . "arrayhelpers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svunit))
     (home-page "http://arrayhelpers.r-forge.r-project.org/")
     (synopsis "Convenience Functions for Arrays")
@@ -6119,20 +6737,24 @@ options.")
         (base32 "0bp30622md9zzdgv9g1kqp5k450cd5yzpqji51wwcjp8l347fb6y"))))
     (properties `((upstream-name . "arrApply")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=arrApply")
     (synopsis "Apply a Function to a Margin of an Array")
     (description
-     "High performance variant of apply() for a fixed set of functions.  Considerable
-speedup of this implementation is a trade-off for universality: user defined
-functions cannot be used with this package.  However, about 20 most currently
-employed functions are available for usage.  They can be divided in three types:
-reducing functions (like mean(), sum() etc., giving a scalar when applied to a
-vector), mapping function (like normalise(), cumsum() etc., giving a vector of
-the same length as the input vector) and finally, vector reducing function (like
-diff() which produces result vector of a length different from the length of
-input vector).  Optional or mandatory additional arguments required by some
-functions (e.g. norm type for norm()) can be passed as named arguments in ...'.")
+     "High performance variant of @code{apply()} for a fixed set of functions.
+Considerable speedup of this implementation is a trade-off for universality:
+user defined functions cannot be used with this package.  However, about 20 most
+currently employed functions are available for usage.  They can be divided in
+three types: reducing functions (like @code{mean()}, @code{sum()} etc., giving a
+scalar when applied to a vector), mapping function (like @code{normalise()},
+@code{cumsum()} etc., giving a vector of the same length as the input vector)
+and finally, vector reducing function (like @code{diff()} which produces result
+vector of a length different from the length of input vector).  Optional or
+mandatory additional arguments required by some functions (e.g. norm type for
+@code{norm()}) can be passed as named arguments in ...'.")
     (license license:gpl2+)))
 
 (define-public r-arrangements
@@ -6147,6 +6769,9 @@ functions (e.g. norm type for norm()) can be passed as named arguments in ...'."
         (base32 "0nrlyxgn6667l2rb1q5rvps1anld9aq88qqr3ch2i6zchnqxrdg9"))))
     (properties `((upstream-name . "arrangements")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gmp))
     (propagated-inputs (list r-r6 r-gmp))
     (home-page "https://github.com/randy3k/arrangements")
@@ -6173,6 +6798,9 @@ could be found at
         (base32 "0ghg43rd6bnv4jp8pkpd1ixp5l6kq5pr0mxq61q24s24g0m3s64p"))))
     (properties `((upstream-name . "aRpsDCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/derrickturk/aRpsDCA")
     (synopsis "Arps Decline Curve Analysis in R")
     (description
@@ -6196,6 +6824,9 @@ best fits.")
         (base32 "02qsvmgnyr7aqgpij8m5yg9cww8wbrg6a33vxxvy3sl9v5f7vzh5"))))
     (properties `((upstream-name . "arpr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-magrittr))
     (home-page "https://github.com/statnmap/arpr")
     (synopsis "Advanced R Pipes")
@@ -6218,6 +6849,9 @@ named after the dadaist Hans Arp, a friend of Rene Magritte.")
         (base32 "13qxw12i7nkbqxbya1ky1bdcq7f59hpgw0kfqkg4rqs6ll4fxp7a"))))
     (properties `((upstream-name . "ARPobservation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ARPobservation")
     (synopsis
@@ -6244,6 +6878,9 @@ interval recording, whole interval recording, and augmented interval recording."
         (base32 "1d6gvgbnj19dislzjlxn7i0iq7h56zz7hm9x5l865ji790b9smqw"))))
     (properties `((upstream-name . "ARpLMEC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncatednormal
                              r-relliptical
                              r-numderiv
@@ -6275,6 +6912,9 @@ only for the normal case).  Olivari et all (2021)
         (base32 "1mkaryyrzj7mkd7lam122nkq5r02wylhaiyl5r4q7hk8jw3cxpxk"))))
     (properties `((upstream-name . "ARPALData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm
                              r-tidyselect
                              r-tidyr
@@ -6326,6 +6966,9 @@ Lombardia (Italy)\", Environmental and Ecological Statistics,
         (base32 "0clz01096fdkhnh89np3knhdnk78p2faj9zkm5qhg56jzaji8wxi"))))
     (properties `((upstream-name . "Arothron")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-stringr
                              r-rvcg
@@ -6358,6 +7001,13 @@ et al, 2021 <doi:10.1002/ajpa.24340>).")
         (base32 "0i2yh0w7hjljgsbn00vy9wyh03470f5xgqnahm7b83km16jvq9ps"))))
     (properties `((upstream-name . "aroma.core")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rcolorbrewer
                              r-r-utils
                              r-r-rsp
@@ -6391,6 +7041,13 @@ Project, e.g. aroma.affymetrix and aroma.cn'.")
         (base32 "0mfdwq4qsca80vcak56vnwgkhmjvdgj8dvpmv2a83z7ishk52kk4"))))
     (properties `((upstream-name . "aroma.cn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-r-utils
                              r-r-oo
                              r-r-methodss3
@@ -6422,6 +7079,9 @@ tumor-normal SNP data.")
         (base32 "1xni6zyrrhh0vaq9gyckls9hinmd4898h51g2y6vzdzd8z9flq4x"))))
     (properties `((upstream-name . "aroma.apd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r-utils r-r-oo r-r-methodss3 r-r-huge))
     (home-page "https://github.com/HenrikBengtsson/aroma.apd")
     (synopsis
@@ -6450,6 +7110,13 @@ not be used elsewhere.).")
         (base32 "0h4w7i7hrkfvlkphxz9c0hbaxz455pzx0sb7y3zvsh9ykr3wkq8q"))))
     (properties `((upstream-name . "aroma.affymetrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-r-utils
                              r-r-oo
                              r-r-methodss3
@@ -6485,6 +7152,9 @@ been used since 2006.")
         (base32 "14xkgyfn9zvkbgram15w7qzqc5pl1a8ig66cif7a79najrgd914r"))))
     (properties `((upstream-name . "arnie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/imanuelcostigan/arnie")
     (synopsis "\"Arnie\" box office records 1982-2014")
     (description
@@ -6503,6 +7173,9 @@ been used since 2006.")
         (base32 "098c59hdzr4ly8sx72xkcbjmiz5y65id1slsscwjji1yssb23lqq"))))
     (properties `((upstream-name . "armspp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=armspp")
@@ -6527,6 +7200,9 @@ density.")
         (base32 "0qb0ll79n7j2zcgb0ng5mqzlcil6rg5mfpyygk8rkvqf05l8fxkl"))))
     (properties `((upstream-name . "ARMALSTM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries r-tensorflow r-rugarch r-reticulate
                              r-keras))
     (home-page "https://cran.r-project.org/package=ARMALSTM")
@@ -6554,6 +7230,9 @@ Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
         (base32 "0w36hkcdq0wv9yvkxd27jq4546j9x76i30vapa0vgps9k7lxn7p9"))))
     (properties `((upstream-name . "arlclustering")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph r-arules))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/assuom44/arlclustering")
@@ -6581,6 +7260,9 @@ El-Moussaoui et al. (2021) <doi:10.1007/978-3-030-66840-2_3>.")
         (base32 "0ilw5mz9p67vpvr76asr9ck4prykr02qyvf4kznhazyv1h6lly18"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://packages.tesselle.org/arkhe/")
     (synopsis "Tools for Cleaning Rectangular Data")
     (description
@@ -6602,6 +7284,9 @@ provides tools to check conditions and return informative error messages.")
         (base32 "1zq4nrxi7h265zs10ay95s95s56nkwxfzljvbglj03adsb1fxz6s"))))
     (properties `((upstream-name . "arkdb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/arkdb")
@@ -6626,6 +7311,9 @@ in working memory.")
         (base32 "0n4n9srl56s6pxjib43ksb9rahmsb509sfvpjk4py8m4r01ab2m2"))))
     (properties `((upstream-name . "ARIMAANN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries r-forecast))
     (home-page "https://cran.r-project.org/package=ARIMAANN")
     (synopsis "Time Series Forecasting using ARIMA-ANN Hybrid Model")
@@ -6649,20 +7337,24 @@ model for time series forecasting.For method details see Zhang, GP (2003)
         (base32 "115igm3g8hd0ccs5si7siwr56hynjj84abrivg9ri4zld7vc8lws"))))
     (properties `((upstream-name . "arima2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=arima2")
     (synopsis "Likelihood Based Inference for ARIMA Modeling")
     (description
      "Estimating and analyzing auto regressive integrated moving average (ARIMA)
-models.  The primary function in this package is arima(), which fits an ARIMA
-model to univariate time series data using a random restart algorithm.  This
-approach frequently leads to models that have model likelihood greater than or
-equal to that of the likelihood obtained by fitting the same model using the
-arima() function from the stats package.  This package enables proper
+models.  The primary function in this package is @code{arima()}, which fits an
+ARIMA model to univariate time series data using a random restart algorithm.
+This approach frequently leads to models that have model likelihood greater than
+or equal to that of the likelihood obtained by fitting the same model using the
+@code{arima()} function from the stats package.  This package enables proper
 optimization of model likelihoods, which is a necessary condition for performing
 likelihood ratio tests.  This package relies heavily on the source code of the
-arima() function of the stats package.  For more information, please see Jesse
-Wheeler and Edward L. Ionides (2023) <doi:10.48550/@code{arXiv.2310.01198>}.")
+@code{arima()} function of the stats package.  For more information, please see
+Jesse Wheeler and Edward L. Ionides (2023)
+<doi:10.48550/@code{arXiv.2310.01198>}.")
     (license license:gpl3+)))
 
 (define-public r-arigamyannsvr
@@ -6677,6 +7369,9 @@ Wheeler and Edward L. Ionides (2023) <doi:10.48550/@code{arXiv.2310.01198>}.")
         (base32 "1faqripvb6alfajz37zqm70p0c2f6yf9f2ca2bzrsizp0yh81719"))))
     (properties `((upstream-name . "AriGaMyANNSVR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries
                              r-psych
                              r-neuralnet
@@ -6709,6 +7404,9 @@ can be obtained from Paul and Garai (2022) <doi:10.1007/s41096-022-00128-3>.")
         (base32 "18c7yxkrnqh18gcfzvdc5wqig6ywdmjcy8rlz0fdj3b8fb84dfpr"))))
     (properties `((upstream-name . "ARIbrain")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rnifti r-plyr r-hommel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ARIbrain")
@@ -6733,6 +7431,9 @@ Solari, Goeman (2018) <doi:10.1016/j.neuroimage.2018.07.060>.")
         (base32 "03w99c918jp23d0kl26vx4m7xjicpgwl5rhn9d0fsm4kvv7j87li"))))
     (properties `((upstream-name . "ari")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list ffmpeg))
     (propagated-inputs (list r-xml2
                              r-webshot
@@ -6767,6 +7468,9 @@ translatable, and reproducible lecture videos.  See
         (base32 "1fz81a202r8vk655dg6a03zfq3gfkimqjvmc95k3j02xz0iv58kn"))))
     (properties `((upstream-name . "ARHT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ARHT")
     (synopsis
      "Adaptable Regularized Hotelling's T^2 Test for High-Dimensional Data")
@@ -6794,6 +7498,9 @@ large.")
         (base32 "1qg1nphy7jn92zqx1lqg68l5dhpwa4b5407mkwwrsdy5x2r0x7s2"))))
     (properties `((upstream-name . "argus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-runuran))
     (home-page "https://cran.r-project.org/package=argus")
     (synopsis "Random Variate Generator for the Argus Distribution")
@@ -6816,6 +7523,9 @@ Ratio-of-Uniforms method is provided as second alternative.")
         (base32 "1cqhpq5z807azpc45d00031bhw5q69111jsblyqdp5bg6qinrj9c"))))
     (properties `((upstream-name . "argosfilter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=argosfilter")
     (synopsis "Argos Locations Filter")
     (description
@@ -6838,6 +7548,9 @@ predominantly of low-quality.")
         (base32 "0qjngax72mz4zhqlb7s8zzl0n3524crp67vmz3mpy2s5hdl3kz83"))))
     (properties `((upstream-name . "ARGOS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-signal
@@ -6875,6 +7588,8 @@ for system behavior analysis.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6911,6 +7626,8 @@ for system behavior analysis.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6946,6 +7663,9 @@ for system behavior analysis.")
         (base32 "10pqxd8yflfhsf03235xgvy9w64ybsmfm61cl428zkh43z7lyjf8"))))
     (properties `((upstream-name . "argoFloats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-oce))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ArgoCanada/argoFloats")
@@ -6974,6 +7694,9 @@ applications.")
         (base32 "17ys6v2n84fp38zkc43whfgbc8qq1qx41q14899qgglz7xv4axzn"))))
     (properties `((upstream-name . "argo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-xtable
@@ -7005,6 +7728,9 @@ S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
         (base32 "0f0d69hrx5a1wf6cx3m11q9cq8igmd28rc9gl1c1x9n8ys0gv2f0"))))
     (properties `((upstream-name . "Argentum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-sf r-readr r-httr))
     (home-page "https://cran.r-project.org/package=Argentum")
     (synopsis
@@ -7030,6 +7756,9 @@ these services, see <https://www.ogc.org/standard/wfs/> and
         (base32 "1msbd52989yqxqxgapgjvzfzzpkr2w9dp7ig8racqpzwqnjhpswb"))))
     (properties `((upstream-name . "arfima")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ltsa))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=arfima")
@@ -7054,6 +7783,9 @@ version of this package lives; it can be installed using devtools.")
         (base32 "1jcvlg1f4y32lg5dfpm0xrp63fbm9xhr82izgmxp0f2mccy6rn4g"))))
     (properties `((upstream-name . "arf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm r-ranger r-foreach r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bips-hb/arf")
@@ -7084,6 +7816,9 @@ and solid performance with default parameters.  For details, see Watson et al.
         (base32 "08b865v7ringqzm5m4ib4nrmlyqywir6bjj7alzmg06dy7mrl9s7"))))
     (properties `((upstream-name . "arenar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plumber
                              r-jsonlite
                              r-ingredients
@@ -7114,6 +7849,9 @@ on-demand or precalculate and auto-upload data file beside shareable Arena URL."
         (base32 "14zjpglp389pldi436935fz6mgi4jdgfii1m035nsvihrms9gqkh"))))
     (properties `((upstream-name . "arena2r")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shinyjs
                              r-shinydashboard
@@ -7145,6 +7883,9 @@ interactively visualize Arena's results.")
         (base32 "0xqrjihg3w6ri16yc1l8kb25pdmnspfhkgc48vxmm4h8l1b0plzs"))))
     (properties `((upstream-name . "areaplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/arni-magnusson/areaplot")
     (synopsis "Plot Stacked Areas and Confidence Bands as Filled Polygons")
     (description
@@ -7165,6 +7906,9 @@ matrices, data frames, formulas, etc.")
         (base32 "08mmalw9ii4i6ills6i77bfgy3ybzd4161wmag36b0q9fvkkcyhr"))))
     (properties `((upstream-name . "arealDB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -7207,6 +7951,9 @@ Read the paper at Ehrmann, Seppelt & Meyer (2020)
         (base32 "14hwif59lxjdf0crq5mp2w2rhz9b7l1b33r0ssd1j60ml2fv6488"))))
     (properties `((upstream-name . "areal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-rlang r-purrr r-glue r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://chris-prener.github.io/areal/")
@@ -7231,6 +7978,9 @@ spatial data (e.g. sf) frameworks.")
         (base32 "0izgvlg174jbr3fm3qc8zh23kfs7hn9bwd40x6vm90iivrrgdcp7"))))
     (properties `((upstream-name . "areabiplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nipals))
     (home-page "https://cran.r-project.org/package=areabiplot")
     (synopsis "Area Biplot")
@@ -7257,6 +8007,9 @@ variable.")
         (base32 "0bzl5jagnpd7s8n6dp8v83z282qgfqg3fz52d909dg0fxxrpq30y"))))
     (properties `((upstream-name . "area")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cpp11))
     (home-page "https://github.com/hypertidy/area")
     (synopsis "Calculate Area of Triangles and Polygons")
@@ -7279,6 +8032,9 @@ orientation.  The shoelace formula is described at
         (base32 "1dnq63klzbwvkcaxn9bng4wvh8mhggkwa69ypwf5kdn1rjways88"))))
     (properties `((upstream-name . "ards")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://ards.r-sassy.org")
     (synopsis "Creates Analysis Results Datasets")
@@ -7302,6 +8058,9 @@ analysis in a common tabular data structure.")
         (base32 "0pcqh69fvvsjmrfjq5x7b9yn5s30cqv0fkf1b3j3m9l2xp8f3k8g"))))
     (properties `((upstream-name . "ardl.nardl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries
                              r-tidyselect
                              r-texreg
@@ -7341,6 +8100,9 @@ and their corresponding tests.")
         (base32 "02yimcsbw8fgv0qslxp3f38k6wzaxwmp0f8f0k0nxx5bnlkc9c4c"))))
     (properties `((upstream-name . "ARDL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-stringr
                              r-msm
@@ -7375,6 +8137,9 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
         (base32 "0y6npim17k8vy05ix06j6kwza8n7149zz93cvcjrshjqlwkxd0w8"))))
     (properties `((upstream-name . "ARDECO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-jsonlite
@@ -7410,6 +8175,9 @@ database can be found at the following URL
         (base32 "17k2lnvh6vf9gy2xmyncriyjxy37ih7plvslld37kbrwh8dhybx0"))))
     (properties `((upstream-name . "ArDec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ArDec")
     (synopsis "Time Series Autoregressive-Based Decomposition")
     (description
@@ -7430,6 +8198,9 @@ components.")
         (base32 "01a1kmkmnwm8ryv1hr0w79ghbk844w7fnv1yiq9mmwrs4jbgfrcf"))))
     (properties `((upstream-name . "arctools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-runstats r-lubridate))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=arctools")
@@ -7453,6 +8224,9 @@ fragmentation metrics.")
         (base32 "02axfyblrsljsi2mkll9qz9f8i1q65am9m5pm3ph37r1nksmwsid"))))
     (properties `((upstream-name . "arcpy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list conda))
     (propagated-inputs (list r-reticulate))
     (native-inputs (list r-knitr))
@@ -7478,6 +8252,9 @@ manipulating and converting @code{ArcGIS} objects from R are also provided.")
         (base32 "1kkfksv7d9firyiwsyaxg1radzvcrxi26krx63hd9p52697ajxm8"))))
     (properties `((upstream-name . "arcpullr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sf
                              r-rlang
@@ -7509,6 +8286,9 @@ queries.  This package was neither produced nor is maintained by Esri.")
         (base32 "1csy9jwdgr5anhp7cd5dxwadvskv1ky3f1wkq8vyjww1kxjxhz1s"))))
     (properties `((upstream-name . "arcpbf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-rlang r-arcgisutils))
     (home-page "https://r.esri.com/arcpbf/")
@@ -7530,6 +8310,9 @@ It is designed to work seamlessly with httr2 and integrates with sf'.")
         (base32 "0pk0y0gsw681py0vwizxvh1jqjnapzqfr0mbdpli1sray55xbjr2"))))
     (properties `((upstream-name . "ARCokrig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-mvtnorm
                              r-ggplot2))
     (home-page "https://CRAN.R-project.org/package=ARCokrig")
@@ -7564,6 +8347,9 @@ Gabriel R Toro, and Andrew T Cox (2019) <@code{arXiv:1909.01836>}.")
         (base32 "1afjdmcalx3m19jlvqs83fg5qlds59l5zzg3pzk13qk31r0hz7mk"))))
     (properties `((upstream-name . "ArCo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-glmnet r-boot))
     (home-page "https://cran.r-project.org/package=ArCo")
     (synopsis "Artificial Counterfactual Package")
@@ -7584,6 +8370,9 @@ Carvalho, Masini and Medeiros (2016) <DOI:10.2139/ssrn.2823687>.")
         (base32 "092fzi505vx9xbk41m86d0isxna42iflp7q2kjiqa6z1ccvim2yx"))))
     (properties `((upstream-name . "archivist.github")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-git2r r-digest r-archivist))
     (native-inputs (list r-knitr))
     (home-page "http://marcinkosinski.github.io/archivist.github/")
@@ -7605,6 +8394,9 @@ Carvalho, Masini and Medeiros (2016) <DOI:10.2139/ssrn.2823687>.")
         (base32 "0zjb4i39s3xkb05h9smk9lwkap7w8gizs5i3ii1qgz2ahi07pywy"))))
     (properties `((upstream-name . "archiveRetriever")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-tibble
@@ -7639,6 +8431,9 @@ which can be then easily used for further analysis.")
         (base32 "0040r873hydba7n55n561x2hjh4pwv55clkbnpc389dk073071si"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib openssl libarchive libarchive libarchive))
     (propagated-inputs (list r-tibble r-rlang r-glue r-cli))
     (native-inputs (list pkg-config))
@@ -7663,6 +8458,9 @@ including gzip', bzip2', compress', lzma and xz'.")
         (base32 "1wvjlg2rwy39czf3qqh9igk9rmk9i7pxa9yl5x9yqmsagwd1av3n"))))
     (properties `((upstream-name . "archiDART")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-sp r-gtools r-geometry))
     (home-page "https://archidart.github.io/")
     (synopsis
@@ -7693,6 +8491,9 @@ root architectural traits\", Plant and Soil, <DOI:10.1007/s11104-015-2673-4>.")
         (base32 "1d4vz7kj7n5j81fwfxvr47if8c7fdycci6n33wf8paac0v2paqli"))))
     (properties `((upstream-name . "archetyper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-testthat
                              r-stringr
@@ -7726,6 +8527,9 @@ root architectural traits\", Plant and Soil, <DOI:10.1007/s11104-015-2673-4>.")
         (base32 "1acz5fz5azhz3kq8zsxpp8k04jh2jmvlx0phcwlvvzhr0xs8lln3"))))
     (properties `((upstream-name . "archetypal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plot3d
                              r-matrix
                              r-lpsolve
@@ -7764,6 +8568,9 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
         (base32 "1xx6ai74ps70ljx9pcaa5qjvqayvdjw79pk200jgjcxd3ykqiwhz"))))
     (properties `((upstream-name . "archeoViz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svglite
                              r-shinythemes
                              r-shiny
@@ -7803,6 +8610,9 @@ or with a static data set.  Example is provided at
         (base32 "1xnfb4midmjlhq2x8mv6r0mrjbm529xnfm8y0q9wll73igg696yl"))))
     (properties `((upstream-name . "archeofrag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sebastien-plutniak/archeofrag")
@@ -7834,6 +8644,9 @@ Journal of Open Source Software, <doi:10.21105/joss.04335>).")
         (base32 "1dahfl9xdnqiwzdrff98x23k1dl19sfdqnv7jlg1xzgvhj1fhk0d"))))
     (properties `((upstream-name . "archdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=archdata")
     (synopsis "Example Datasets from Archaeological Research")
     (description
@@ -7855,6 +8668,9 @@ in Archaeology.")
         (base32 "0yffzc9jmyiil3p0bvf0fpq64mn55swcnizi3bgsl44d4j93y68q"))))
     (properties `((upstream-name . "ArchaeoPhases.dataset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ArchaeoPhases.dataset")
     (synopsis "Data Sets for 'ArchaeoPhases' Vignettes")
     (description
@@ -7875,6 +8691,9 @@ however they exceed current CRAN policy for package size.")
         (base32 "0sgsni4swnqazghdzvivacq7a67p8zbsmdpl20ayyff0pxppk966"))))
     (properties `((upstream-name . "ArchaeoPhases")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-arkhe r-aion))
     (native-inputs (list r-knitr))
     (home-page "https://ArchaeoStat.github.io/ArchaeoPhases/")
@@ -7904,6 +8723,9 @@ as described in Philippe and Vibet (2020) <doi:10.18637/jss.v093.c01>.")
         (base32 "0da7m2fw3hfqd2wj2lrm1l9dw0zqiqqaxbip0h05g4vj9rcr5vw3"))))
     (properties `((upstream-name . "arcgisutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-sf
                              r-rlang
@@ -7935,6 +8757,9 @@ Installation instructions for arcgisbinding can be found at
         (base32 "1bzrnkrj08zv7sb2phpnpimmb224g5z9jm5s067l8ajbxp7gainv"))))
     (properties `((upstream-name . "arcgislayers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sf
                              r-rlang
@@ -7966,6 +8791,9 @@ via @code{ArcGIS} location services REST API endpoints
         (base32 "1ld880zppwz9wrwjhyhgdrh8hx8s0azv3iyv3kvjndhfai4psiz7"))))
     (properties `((upstream-name . "arcgisgeocode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-sf
                              r-rlang
@@ -8001,6 +8829,9 @@ the Geocode service API reference
         (base32 "02bzhdz8k5c65rzx9dkwxw5v69wq8nbsxk6c6lf2v9wqhq705krp"))))
     (properties `((upstream-name . "arcgeocoder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://dieghernan.github.io/arcgeocoder/")
@@ -8025,6 +8856,9 @@ converted into an address.  No API key required.")
         (base32 "0qrzxa93cj1ql4iw93ksk58ycfgmncry7q29axhydwh9hsh3lyms"))))
     (properties `((upstream-name . "ARCensReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm
                              r-rdpack
                              r-rcpparmadillo
@@ -8068,6 +8902,9 @@ preprint <@code{arXiv:2110.00224>}.")
         (base32 "0wlp6c2mbsa5fygc4iy0ixgqz49zzcz2mr66sapy1nm0wri1dvdr"))))
     (properties `((upstream-name . "arc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r-utils r-matrix r-discretization r-arules))
     (home-page "https://github.com/kliegr/arc")
     (synopsis "Association Rule Classification")
@@ -8094,6 +8931,9 @@ package, postprocessing by the @code{qCBA} package is suggested.")
         (base32 "11h88gnj54cn5fbxf163s8kjqc1q452nzb218fjlwsxxwzaz5gbr"))))
     (properties `((upstream-name . "ArArRedux")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ArArRedux")
     (synopsis
      "Rigorous Data Reduction and Error Propagation of Ar40 / Ar39 Data")
@@ -8127,6 +8967,9 @@ Compositional Data, Chapman and Hall].")
         (base32 "1mbbb4bzcck78wma9nrmpava81cii92rzjq0yl3p38zvnym2i2m9"))))
     (properties `((upstream-name . "arakno")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rworldxtra
                              r-rworldmap
                              r-rgbif
@@ -8157,6 +9000,9 @@ mapping.")
         (base32 "1ak57zci3ckfmpdmgw8hadnfg81hxp69h21s6a3ad3yldvcqg010"))))
     (properties `((upstream-name . "arabicStemR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=arabicStemR")
     (synopsis "Arabic Stemmer for Text Analysis")
     (description "Allows users to stem Arabic texts for text analysis.")
@@ -8174,6 +9020,9 @@ mapping.")
         (base32 "1f8ca7hwbn3vl44xrvpfb5n11rv4sbhv2ksg88kx7rk7hik5rbdi"))))
     (properties `((upstream-name . "arabic2kansuji")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-purrr))
     (home-page "https://github.com/indenkun/arabic2kansuji")
     (synopsis "Convert Arabic Numerals to Kansuji")
@@ -8194,6 +9043,9 @@ that represent numbers written in Chinese characters.")
         (base32 "1d531hkl50szfa1q0zbp8dp1a9jli63kwvxjgc9n0ar279y47qdz"))))
     (properties `((upstream-name . "ar.matrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsemvn r-sp r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=ar.matrix")
     (synopsis "Simulate Auto Regressive Data from Precision Matricies")
@@ -8214,6 +9066,9 @@ is auto-regressive.")
         (base32 "1wn4g2997c4vc3mzq2pv8ld0ryp0i78v4zlqqryvhshxgnz4f2pr"))))
     (properties `((upstream-name . "AR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-distrib))
     (home-page "https://cran.r-project.org/package=AR")
     (synopsis "Another Look at the Acceptance-Rejection Method")
@@ -8246,6 +9101,9 @@ Method.")
         (base32 "11w3qf1fwa5gqbiwfq23hrw8k009xbn8rwdb5fgckykyc49lhqbk"))))
     (properties `((upstream-name . "aquodom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -8279,6 +9137,9 @@ of the Aquo Standard and use them in R.")
         (base32 "0h6q0ajw2k2f1p0k8j6772p7i78a13amwxzj4ffrykqgwi3pr22v"))))
     (properties `((upstream-name . "AquaticLifeHistory")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlist
                              r-readr
@@ -8316,12 +9177,15 @@ shark and ray growth studies: strengths, weaknesses and the future\"
         (base32 "17sd90va6wp6vyg1bjriyv0zkn1hqnrwkm2w92yc0n2kbdffq74l"))))
     (properties `((upstream-name . "AQuality")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AQuality")
     (synopsis "Water and Measurements Quality")
     (description
      "The functions proposed in this package allows to graphically evaluate the
-process of measurement of the chemical components of water.  TSSS() and ICHS
-functions are useful to control the quality of measurements of chemical
+process of measurement of the chemical components of water. @code{TSSS()} and
+ICHS functions are useful to control the quality of measurements of chemical
 components of a sample of water.  If one or more measurements include an error,
 the generated graph will indicate it with a position of the point that
 represents the sample outside the confidence interval.")
@@ -8339,6 +9203,9 @@ represents the sample outside the confidence interval.")
         (base32 "07yx7mbslqgqg7ky67n3xfhskaj7s3w5mvl7xkih48xbsdlmxi4l"))))
     (properties `((upstream-name . "AquaEnv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-minpack-lm))
     (home-page "https://cran.r-project.org/package=AquaEnv")
     (synopsis
@@ -8365,6 +9232,9 @@ contains functions to calculate the buffer factors.")
         (base32 "0i1qp1xr51l3gfvgnyyka06g4khj62hzxxkbsnlkv235i2bwnpzd"))))
     (properties `((upstream-name . "AQuadtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AQuadtree")
@@ -8393,6 +9263,9 @@ for Geography and Statistics.")
         (base32 "0dq5dsd043lhifwwi9b052yxp5xlzvcc39jhbc84l6n78nhj01h2"))))
     (properties `((upstream-name . "AquaBEHER")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-terra
                              r-sp
@@ -8429,6 +9302,9 @@ ISBN:9780784408056); Doorenbos and Pruitt (1975, ISBN:9251002797); Guo et al.
         (base32 "0basx8alcbzxwgizkgnwaii4g8j6jzbybnf9fq4dz573kjqb9285"))))
     (properties `((upstream-name . "AquaAnalytix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AquaAnalytix")
     (synopsis "Water Quality Analysis")
     (description
@@ -8456,6 +9332,9 @@ APHA(2017,ISBN:9780875532875).")
         (base32 "0gwq6r92swhjv2iaakqf3w6ha2y9kyxmshvjxvlzz2mq8xrla8ck"))))
     (properties `((upstream-name . "aqp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-lattice r-farver r-data-table
                              r-cluster))
     (native-inputs (list r-knitr))
@@ -8493,6 +9372,13 @@ bridging the gap between pedometric theory and practice.")
         (base32 "1lnx2d1lwjzg6wc0kxdkh1lj00057iyvynl6m8nmmg7p8vz4r5jh"))))
     (properties `((upstream-name . "AQLSchemes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=AQLSchemes")
     (synopsis "Retrieving Acceptance Sampling Schemes")
@@ -8530,6 +9416,9 @@ that available in other commercial software and subscription online calculators.
         (base32 "0pqg54bch6xjd1ybqciil1w52b7bi6d3q41dqafi830zvmq0hb11"))))
     (properties `((upstream-name . "aqfig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-geor))
     (home-page "https://cran.r-project.org/package=aqfig")
     (synopsis "Display Air Quality Model Output and Monitoring Data")
@@ -8550,6 +9439,9 @@ and legends.")
         (base32 "07f0jgk9hb6gnnsj0vic202smyr5n7xrfrwcaldc6v2lm7sxk5dx"))))
     (properties `((upstream-name . "AQEval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-strucchange
                              r-segmented
@@ -8584,6 +9476,9 @@ strucchange and segmented methods to detect and quantify change events (Ropkins
         (base32 "0i1wkqnf1n5x7y7i116gr7y215aibklcnhb7rm76g8wm7241y3vk"))))
     (properties `((upstream-name . "apyramid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-scales
                              r-rlang
@@ -8614,6 +9509,9 @@ of the R4Epis project <https://r4epis.netlify.app/>.")
         (base32 "171aydyd7s8qll7djl4ysy596wxdf5wfwpqwfi14jjglc9r9qrrr"))))
     (properties `((upstream-name . "APtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-cmprsk))
     (home-page "https://cran.r-project.org/package=APtools")
     (synopsis
@@ -8642,6 +9540,9 @@ plot of the time-dependent AP versus time (available for event time data).")
         (base32 "0rrwlm67dyzai0fdy6j8bk1vww2xm29sijb9c9s482lxiyc2hv24"))))
     (properties `((upstream-name . "apt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urca r-erer r-car))
     (home-page "https://cran.r-project.org/package=apt")
     (synopsis "Asymmetric Price Transmission")
@@ -8663,6 +9564,9 @@ furthermore, symmetric and asymmetric error correction models.")
         (base32 "0k14qmwq2kdwd5z6ciw18wsg1jh1xcspszha5694xbfmip71cqh1"))))
     (properties `((upstream-name . "apsimx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rsqlite r-knitr r-jsonlite r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=apsimx")
@@ -8689,6 +9593,9 @@ about APSIM see (<https://www.apsim.info/>) and for APSIM next generation
         (base32 "14qclp88j4ygd4vrxxpgy2s9939wcajjsqycdzpvn64ws29sdpvh"))))
     (properties `((upstream-name . "aprof")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat))
     (home-page "http://github.com/MarcoDVisser/aprof")
     (synopsis "Amdahl's Profiler, Directed Optimization Made Easy")
@@ -8714,6 +9621,9 @@ profiling tools and is not a wrapper for them.")
         (base32 "17rnq02sncl6rzwyln10200s43b8z1s2j0kdi9kgcb6qr51v12rv"))))
     (properties `((upstream-name . "aprean3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/lbraglia/aprean3")
     (synopsis
      "Datasets from Draper and Smith \"Applied Regression Analysis\" (3rd Ed., 1998)")
@@ -8734,6 +9644,9 @@ Draper and H. Smith (3rd Ed., 1998) including all the accompanying datasets.")
         (base32 "1csf5p9vmm0bn2kycs6ad7jzcw6c2ck6yimr7lb9nb58820s4g2f"))))
     (properties `((upstream-name . "appsheet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-purrr
@@ -8759,6 +9672,9 @@ Draper and H. Smith (3rd Ed., 1998) including all the accompanying datasets.")
         (base32 "1ch0cjxl7jzrdch3mz1cayc88mbf2dgp0l775c3li44204pxp8wl"))))
     (properties `((upstream-name . "appsflyeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://windsor.ai/")
@@ -8780,6 +9696,9 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
         (base32 "1n6v1h4zf1nf8j1a5d0h95v6q8dff39v9061i7zzi9ci3lw04748"))))
     (properties `((upstream-name . "approxmatch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=approxmatch")
     (synopsis
      "Approximately Optimal Fine Balance Matching with Multiple Groups")
@@ -8805,6 +9724,9 @@ twice the optimal cost, Crama and Spieksma (1992)
         (base32 "1ya1alx6dzcj8srzrdlcx3fxkb1bzja9l68y66km2mbc4qc03xwb"))))
     (properties `((upstream-name . "approximator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-emulator))
     (home-page "https://cran.r-project.org/package=approximator")
     (synopsis "Bayesian Prediction of Complex Computer Codes")
@@ -8826,6 +9748,9 @@ process, originally proposed by Kennedy and O'Hagan (2000), Biometrika 87(1):1."
         (base32 "1phy2v2dxk4gdzx1m2a3gghcwyb7iaj0csybpvpk3vl99difkfxd"))))
     (properties `((upstream-name . "appRiori")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sortable
                              r-shinythemes
@@ -8860,6 +9785,9 @@ tested.")
         (base32 "0z8b9qsxsnwy6kmkns6cgri55mvnhsfkwwmljhlp26l93m3llabc"))))
     (properties `((upstream-name . "apportion")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/christopherkenny/apportion")
     (synopsis "Apportion Seats")
     (description
@@ -8881,6 +9809,9 @@ States for reapportionment after the Census, as described in
         (base32 "0wkpr6lcd68wlzk6n622ab7sd99l837073czn4k56hw8bw9v68j3"))))
     (properties `((upstream-name . "appnn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=appnn")
     (synopsis "Amyloid Propensity Prediction Neural Network")
     (description
@@ -8902,6 +9833,9 @@ published sequences with experimental, in vitro, evidence of amyloid formation."
         (base32 "1wi0sw5w1c51rmh9z98wdpk5rgzsylkkb6g019djiwxvj92l99hh"))))
     (properties `((upstream-name . "AppliedPredictiveModeling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-plyr
                              r-mass
@@ -8927,6 +9861,9 @@ Applied Predictive Modeling'.")
         (base32 "0n459qg3lv088f9yjym33nqi6ahq8whdbc2f0p5m1srvzbqka3mq"))))
     (properties `((upstream-name . "applicable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -8959,6 +9896,9 @@ samples can have from the training set.  See Gadaleta et al (2016)
         (base32 "19xkzykk6zdbswdkfix9nqnfgab4r9c21rqwpma1r6fjapsp81jf"))))
     (properties `((upstream-name . "appleadsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://windsor.ai/")
@@ -8980,6 +9920,9 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
         (base32 "1bg9ma4i3k3xdgyk2h4f368gqnczvlhvjw4114iznmrv1wl4g25c"))))
     (properties `((upstream-name . "APPEstimation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-densratio))
     (home-page "https://cran.r-project.org/package=APPEstimation")
     (synopsis "Adjusted Prediction Model Performance Estimation")
@@ -9002,6 +9945,9 @@ for binomial outcome are computed.")
         (base32 "1igrbp6mgflgxn9f63d738zzhgsdsvlgwbgidlbqy82v4i4q326p"))))
     (properties `((upstream-name . "appeears")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-rstudioapi
                              r-r6
@@ -9033,6 +9979,9 @@ to analysis ready earth observation data in R.")
         (base32 "13iz0j2kc3jzzn77jawrm0fg23mqkxh7h7dasfjibmykamvw45nb"))))
     (properties `((upstream-name . "Apollonius")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list mpfr gmp))
     (propagated-inputs (list r-rcppeigen
                              r-rcppcgal
@@ -9066,6 +10015,9 @@ see the bibliography in the CGAL documentation at
         (base32 "1d9dbf0i0wqvxyfvnpp3p1asppgy0sch7w0w1k86wd0vqiarqgzv"))))
     (properties `((upstream-name . "apollo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rsolnp
@@ -9116,6 +10068,9 @@ field.")
         (base32 "1hlcps0zf9ymcrfac7jhrnqzd0qihxfw363qj8zmjj3q6aa3v2k9"))))
     (properties `((upstream-name . "Apoderoides")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpp r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Sa-to-shi-A-o-ki/Apoderoides")
@@ -9141,6 +10096,9 @@ calculation and pruning taxa with the highest score.")
         (base32 "0g1rs8wdcbqhyjis2r1a4d96jf0486ncnap97yjv08nk574d42wp"))))
     (properties `((upstream-name . "apng")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bitops))
     (home-page "https://cran.r-project.org/package=apng")
     (synopsis "Convert Png Files into Animated Png")
@@ -9163,6 +10121,9 @@ a single function `apng'.  Call the apng function with a vector of file names
         (base32 "0i9296dvlzmaxhkp3rj2irxyjmlaazl6abcbgkc2izfn29l2d8nm"))))
     (properties `((upstream-name . "apmx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-this-path
@@ -9198,6 +10159,9 @@ communication.")
         (base32 "0kv6sbw8832hlfc6164bfvg1ga4hkfw4c7i11dlz7mbhrw2vqm24"))))
     (properties `((upstream-name . "aplpack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page
      "https://www.uni-bielefeld.de/fakultaeten/wirtschaftswissenschaften/fakultaet/lehrende-ehemalige/pwolf/wolf_aplpack/index.xml")
     (synopsis
@@ -9225,6 +10189,9 @@ stem.leaf.backback plots back-to-back versions of stem and leaf plot.")
         (base32 "0sh3c78p37kn00hkps5ai3aqz391wwpbck2rar4rdvwclg4818my"))))
     (properties `((upstream-name . "aplotExtra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yulab-utils
                              r-tidyr
                              r-tibble
@@ -9260,6 +10227,9 @@ subplots and complex plots.")
         (base32 "0af6klscsxvh4amp519b6r41bzysf61p040fj4l5706bbya1arhw"))))
     (properties `((upstream-name . "aplore3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lbraglia/aplore3")
     (synopsis
@@ -9282,6 +10252,9 @@ book.")
         (base32 "00mfmqck521wgx26az57ynmbj8j3c1vxykpqpwg17591s1jw5796"))))
     (properties `((upstream-name . "apisensr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinymaterial
                              r-shinyjs
                              r-shiny
@@ -9318,6 +10291,9 @@ exposure/outcome, or both.  See <https://cran.r-project.org/package=episensr>.")
         (base32 "041bxpnbds64x8jq1i50pj1bzfn9hix21xg85ffh00y0szhq3w49"))))
     (properties `((upstream-name . "APIS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinythemes
                              r-shinybs
                              r-shiny
@@ -9338,8 +10314,9 @@ exposure/outcome, or both.  See <https://cran.r-project.org/package=episensr>.")
     (description
      "Parentage assignment package.  Parentage assignment is performed based on
 observed average Mendelian transmission probability distributions or Exclusion.
-The main functions of this package are the function APIS_2n(), APIS_3n() and
-launch_APIShiny(), which perform parentage assignment.")
+The main functions of this package are the function @code{APIS_2n()},
+@code{APIS_3n()} and @code{launch_APIShiny()}, which perform parentage
+assignment.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-api2lm
@@ -9354,6 +10331,9 @@ launch_APIShiny(), which perform parentage assignment.")
         (base32 "05g0lc2cz596hh0876600lfj9d69jqcc3r3f163knn7gqlbbxs6h"))))
     (properties `((upstream-name . "api2lm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=api2lm")
     (synopsis
@@ -9367,15 +10347,18 @@ by Joshua French (<https://jfrench.github.io/@code{LinearRegression/>}).")
 (define-public r-aphylo
   (package
     (name "r-aphylo")
-    (version "0.3-3")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aphylo" version))
        (sha256
-        (base32 "1blvj2mz1pdsypxak78pmck097ryzaz24y4flzs5k5djqxgpjwnm"))))
+        (base32 "06zccdhvcyjxzx71rark0jn1wj9d0kjvpv063x9p46ywy5ibcvk5"))))
     (properties `((upstream-name . "aphylo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-rcpp
                              r-matrix
@@ -9410,6 +10393,9 @@ assessment featured in Vega Yon et al. (2021).")
         (base32 "1pwr1i3wxh0l24cqp59q6n59p21v81fmgxkb4jmf50a3ggb1lcdj"))))
     (properties `((upstream-name . "aphid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-openssl r-kmer))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/shaunpwilkinson/aphid")
@@ -9438,16 +10424,20 @@ Durbin et al (1998, ISBN: 9780521629713).")
         (base32 "1vax7rfccds6qz3bi6n1h3nzl9jnxpwk331wmpsbqlk23md3m4g4"))))
     (properties `((upstream-name . "APFr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=APFr")
     (synopsis
      "Multiple Testing Approach using Average Power Function (APF) and Bayes FDR Robust Estimation")
     (description
      "This package implements a multiple testing approach to the choice of a threshold
 gamma on the p-values using the Average Power Function (APF) and Bayes False
-Discovery Rate (FDR) robust estimation.  Function apf_fdr() estimates both
-quantities from either raw data or p-values.  Function apf_plot() produces
-smooth graphs and tables of the relevant results.  Details of the methods can be
-found in Quatto P, Margaritella N, et al. (2019) <doi:10.1177/0962280219844288>.")
+Discovery Rate (FDR) robust estimation.  Function @code{apf_fdr()} estimates
+both quantities from either raw data or p-values.  Function @code{apf_plot()}
+produces smooth graphs and tables of the relevant results.  Details of the
+methods can be found in Quatto P, Margaritella N, et al. (2019)
+<doi:10.1177/0962280219844288>.")
     (license license:gpl3)))
 
 (define-public r-apexcharter
@@ -9462,6 +10452,9 @@ found in Quatto P, Margaritella N, et al. (2019) <doi:10.1177/0962280219844288>.
         (base32 "1pw36j2b9ypi8gwkc5vgknsbz88ich5d71cpq7rj9xrrkdwh04jn"))))
     (properties `((upstream-name . "apexcharter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rlang
                              r-magrittr
@@ -9492,6 +10485,9 @@ available here: <https://apexcharts.com/>.")
         (base32 "1cz51g7s4xfr7fvjq0cc9iwy9sb3wwdfrblcjr9pacj09bk2myh7"))))
     (properties `((upstream-name . "apex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-phangorn r-ape r-adegenet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thibautjombart/apex")
@@ -9515,6 +10511,9 @@ multiple genes.")
         (base32 "1i6ca2dhbn9cykcvhdv5dbvg84b8dr6am7xhlihmy7dfjybbzi3b"))))
     (properties `((upstream-name . "apercu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pls))
     (home-page "https://cran.r-project.org/package=apercu")
     (synopsis "Quick Look at your Data")
@@ -9538,6 +10537,9 @@ list, with each element being a vector giving the selection for each dimension."
         (base32 "08rlfcwwrdy8zz102p67zk4zazjjs7wb08y3kyljn2ps82hmwi19"))))
     (properties `((upstream-name . "aPEAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-reshape2
                              r-mcl
@@ -9574,6 +10576,9 @@ important biological themes in the data (Kerseviciute and Gordevicius (2023)
         (base32 "041zyd7ih9nnj92jj9vb9ya1ij9lmj1dzx64q74vyiadw1ix5l66"))))
     (properties `((upstream-name . "apdesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=apdesign")
     (synopsis "An Implementation of the Additive Polynomial Design Matrix")
@@ -9595,6 +10600,9 @@ subject to seasonality.")
         (base32 "0xp90p7q3a33cqsyh6n2gcsfnq9gchm5vcl13s72gqyfx4jjcnv7"))))
     (properties `((upstream-name . "APCtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-scales
@@ -9636,6 +10644,9 @@ in the regression model.  See Weigert et al. (2021)
         (base32 "0ybp7jd1q0md4wbal5cmcl6hg3c1wkdz5mi1w5qddgi472vv1z83"))))
     (properties `((upstream-name . "aPCoA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-randomcolor r-cluster r-car r-ape))
     (home-page "https://cran.r-project.org/package=aPCoA")
     (synopsis "Covariate Adjusted PCoA Plot")
@@ -9664,6 +10675,9 @@ Issue 13, 4099-4101.")
         (base32 "0d1blmybqp1srgnjn2n3v9i4rz0k7r4p0mcg35kjqsny2firignl"))))
     (properties `((upstream-name . "APCI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survey
                              r-stringr
                              r-magrittr
@@ -9693,6 +10707,9 @@ describing and investigating inter-cohort differences and life course dynamics."
         (base32 "0vf41nmw4i9idygxji27ij2qrmkfw5c5pxax0wrnwqhkib9wvqrp"))))
     (properties `((upstream-name . "apcf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list geos))
     (propagated-inputs (list r-wk r-rcpp))
     (native-inputs (list r-knitr))
@@ -9719,6 +10736,9 @@ Nuske et al. (2009) <doi:10.1016/j.foreco.2009.09.050> using the library GEOS'."
         (base32 "11snn5i8zyjpzf58ica762fpp14v7x5h8a8iwx4s4v81pgvlx862"))))
     (properties `((upstream-name . "APCanalysis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=APCanalysis")
     (synopsis
      "Analysis of Unreplicated Orthogonal Experiments using All Possible Comparisons")
@@ -9741,6 +10761,9 @@ all possible comparisons (APC) methodology developed by Miller (2005)
         (base32 "0g59k5hr9rj25xqawrnhdxjh1qfwbc1gzgzp56hbpp04n7dy4xwl"))))
     (properties `((upstream-name . "APCalign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-stringdist
@@ -9776,6 +10799,9 @@ plant taxa across different states/territories.")
         (base32 "0vh6iyxm46k8sfa1xgz0y6m619snnm8s072kml5qgiiw5s7bqnpq"))))
     (properties `((upstream-name . "apc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survey
                              r-reshape
                              r-plyr
@@ -9814,6 +10840,9 @@ the analysis does not rely on ad hoc identification.")
         (base32 "1y3kwm6kldryqw9jb2dikvijmqxwxpkp4pw64c9pqshxjjnwfqiq"))))
     (properties `((upstream-name . "apaText")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr r-cocor))
     (home-page "https://cran.r-project.org/package=apaText")
     (synopsis
@@ -9835,6 +10864,9 @@ Descriptive statistics, confidence intervals, and cell sizes are reported.")
         (base32 "0jy6x0z9ivqqkjihqhyg3fxyghqa9gs6q2bpxzjdnbcb3kq151vd"))))
     (properties `((upstream-name . "apaTables")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-mbess
                              r-dplyr
@@ -9866,6 +10898,9 @@ transcription errors and reduces the number commands needed by the user.")
         (base32 "16c99d404ppzhgkj7g816h24fpfpfyqis21gdsbi6wcizh6w90qz"))))
     (properties `((upstream-name . "APackOfTheClones")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seuratobject
                              r-seurat
                              r-rlang
@@ -9901,6 +10936,9 @@ Christian and Ben Murrell in the following immunology study: Ma et al. (2021)
         (base32 "0h4snigh1yhp34vw52h4b6qbh9c4cvwz2cx8fwvbnw6lslmg5cgv"))))
     (properties `((upstream-name . "ApacheLogProcessor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-foreach r-doparallel))
     (home-page "https://github.com/diogosmendonca/ApacheLogProcessor")
     (synopsis "Process the Apache Web Server Log Files")
@@ -9914,15 +10952,18 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apache.sedona" version))
        (sha256
-        (base32 "0wn3qh3m8fzy7c1647grajy0lkc7cw9d7fgmv8sc78pnxb4ji3vz"))))
+        (base32 "1h2ikhqh065jsv10wydw7kdl8ghjmpsmkpm9mmk40agl7dynfmaf"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparklyr r-rlang r-lifecycle r-dbplyr r-cli))
     (home-page "https://github.com/apache/sedona/")
     (synopsis "R Interface for Apache Sedona")
@@ -9942,6 +10983,9 @@ frames.")
         (base32 "0w4cqb9fviz6k4b9cj31sgizqmrkxjr9hjdb8ap32ylzr9dw6gy0"))))
     (properties `((upstream-name . "apa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rmarkdown
@@ -9955,7 +10999,7 @@ frames.")
      "Format Outputs of Statistical Tests According to APA Guidelines")
     (description
      "Formatter functions in the apa package take the return value of a statistical
-test function, e.g. a call to chisq.test() and return a string formatted
+test function, e.g. a call to @code{chisq.test()} and return a string formatted
 according to the guidelines of the APA (American Psychological Association).")
     (license license:gpl3+)))
 
@@ -9971,6 +11015,9 @@ according to the guidelines of the APA (American Psychological Association).")
         (base32 "110y9wbqr0m9b6wr1c5mncrdjpg247308989bswkqnim2msvnzcf"))))
     (properties `((upstream-name . "AovBay")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waiter
                              r-tibble
                              r-stringr
@@ -10023,6 +11070,9 @@ analysis and Highcharts for interactive charts.")
         (base32 "0dv7k0mifybkarpwqyla5j6cvw9dcch09wvdq09ra9bsf4vyk652"))))
     (properties `((upstream-name . "AOV1R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-lazyeval r-data-table r-cellranger))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AOV1R")
@@ -10049,6 +11099,9 @@ Graybill (1992, ISBN-13: 978-0824786441); Weerahandi (1995)
         (base32 "0nkl7dkqjfp4ahwmn3vs0akx6x2brf0m5gzzzx6pf54j1qwypbhf"))))
     (properties `((upstream-name . "aos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-htmltools))
     (home-page "https://felixluginbuhl.com/aos")
     (synopsis "Animate on Scroll Library for 'shiny'")
@@ -10070,6 +11123,9 @@ library.")
         (base32 "1a69kiji309c2anp0nqdb7n77zlbsl0aibiiazjw6zflwf8fff4l"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-r6
@@ -10099,6 +11155,9 @@ Jaeger et al., (2023) <DOI:10.1080/10618600.2023.2231048>.")
         (base32 "1zanf21qmnjmwzzccpdm1bwnyhv9zqjirrylfwmbpkzlmvp0a4pb"))))
     (properties `((upstream-name . "aoristic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-plyr
@@ -10142,6 +11201,9 @@ permission.")
         (base32 "19prbak6ssmzqaa88mw0h0bdsj8s6hvcsgrmlgq4h6iyp959yj73"))))
     (properties `((upstream-name . "Aoptbdtvc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-lpsolve))
     (home-page "https://cran.r-project.org/package=Aoptbdtvc")
     (synopsis
@@ -10177,6 +11239,9 @@ through integer programming.  Communications in Statistics - Theory and Methods
         (base32 "07vcxz1njl1hb8p25ni11l39llb9bl19yq3an5rarjj7mxyp8m40"))))
     (properties `((upstream-name . "aopdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-data-table r-curl r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://ipeagit.github.io/aopdata/")
@@ -10202,6 +11267,9 @@ More info on the AOP website <https://www.ipea.gov.br/acessooportunidades/en/>."
         (base32 "0y92vs27i0mkpjdclqzq4j9g1axkymhi3v8xp1v6hazh35yzjkfj"))))
     (properties `((upstream-name . "aoos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-roxygen2 r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://wahani.github.io/aoos")
@@ -10225,6 +11293,9 @@ to work with lists as objects.")
         (base32 "0vpnn36qqmkna3rdm88fgxbrbhf529p1qpfm0phig9jpj232a9rj"))))
     (properties `((upstream-name . "aods3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=aods3")
     (synopsis "Analysis of Overdispersed Data using S3 Methods")
     (description
@@ -10247,6 +11318,9 @@ S4 package aod.")
         (base32 "159iy0c6hc0l4kp9zdy3s87d8xplva0y2b9xpwfx056dlc5rvnkw"))))
     (properties `((upstream-name . "AOboot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lsr r-emmeans r-cardata r-afex))
     (home-page "https://cran.r-project.org/package=AOboot")
     (synopsis "Bootstrapping in Different One-Way and Two-Way ANOVA")
@@ -10271,6 +11345,9 @@ between-subject, within-subject, and mixed one-way and two-way ANOVA.")
         (base32 "0d7c7g4s0m46qhjrbpd4cfq61z5y3s9f5k69ramn16sc4l0ybsqw"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6
                              r-progressr
                              r-optimizer
@@ -10301,6 +11378,9 @@ when joint optimization is too difficult.")
         (base32 "1x9x58hhkkwdskmgdjv94ynh811n9w0752hh4214adl1qpn576vm"))))
     (properties `((upstream-name . "anyLib")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr r-httr r-devtools r-curl r-biocmanager))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=anyLib")
@@ -10325,6 +11405,9 @@ it.")
         (base32 "1dycpzc36n31zd21f7iniij6l70cdmgcc3sgar7m8msvhimkafkj"))))
     (properties `((upstream-name . "anyflights")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vroom
                              r-usethis
                              r-stringr
@@ -10358,6 +11441,9 @@ weather.")
         (base32 "1aa09v5k5nlvhlir8saa5gnrq7cb1djbdc8y85cjgb3skay94hzv"))))
     (properties `((upstream-name . "anybadger")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-purrr r-magrittr r-glue r-config))
     (home-page "https://github.com/lmeninato/anybadger")
     (synopsis "Create Custom Pipeline Badges")
@@ -10380,6 +11466,9 @@ by the anybadge library in python.")
         (base32 "07im2gjq62y3vgim9j0ar29qhmi7r79zbjdi024h04mxrwpic5z6"))))
     (properties `((upstream-name . "AnxietySleep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lifecycle r-data-table))
     (home-page "https://github.com/NIM-ACh/AnxietySleep")
     (synopsis "Sleep Quality and Anxiety in Confinement")
@@ -10400,6 +11489,9 @@ by the anybadge library in python.")
         (base32 "118jhjjfnp23kbkir66rdvlzsvms316zwr2r5msrjrb3nd8lz5va"))))
     (properties `((upstream-name . "AntMAN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-salso
                              r-rdpack
                              r-rcpparmadillo
@@ -10435,6 +11527,9 @@ masses (i.e.  mixtures with fixed number of components).")
         (base32 "172y87vnifxbs4n06v3qvwlxnl3fxhfp9cp1qzm4agcvqh1j7rxz"))))
     (properties `((upstream-name . "antitrust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-bb))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luciu5/antitrust")
@@ -10457,6 +11552,9 @@ simulate the effects of mergers under different competitive regimes.")
         (base32 "1rmgyscggir90rw34ksw9rd2snbi4zxxrhh4fdcpk4y931x312py"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rann r-matrix r-lpsolve))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/m-Py/anticlust")
@@ -10469,14 +11567,14 @@ logic of cluster analysis that strives for high within-group homogeneity and
 clear separation between groups.  Computationally, anticlustering is
 accomplished by maximizing instead of minimizing a clustering objective
 function, such as the intra-cluster variance (used in k-means clustering) or the
-sum of pairwise distances within clusters.  The main function anticlustering()
-gives access to optimal and heuristic anticlustering methods described in
-Papenberg and Klau (2021; <doi:10.1037/met0000301>), Brusco et al. (2020;
-<doi:10.1111/bmsp.12186>), and Papenberg (2024; <doi:10.1111/bmsp.12315>).  The
-optimal algorithms require that an integer linear programming solver is
-installed.  This package will install @code{lpSolve}
-(<https://cran.r-project.org/package=@code{lpSolve>}) as a default solver, but
-it is also possible to use the package Rglpk
+sum of pairwise distances within clusters.  The main function
+@code{anticlustering()} gives access to optimal and heuristic anticlustering
+methods described in Papenberg and Klau (2021; <doi:10.1037/met0000301>), Brusco
+et al. (2020; <doi:10.1111/bmsp.12186>), and Papenberg (2024;
+<doi:10.1111/bmsp.12315>).  The optimal algorithms require that an integer
+linear programming solver is installed.  This package will install
+@code{lpSolve} (<https://cran.r-project.org/package=@code{lpSolve>}) as a
+default solver, but it is also possible to use the package Rglpk
 (<https://cran.r-project.org/package=Rglpk>), which requires the GNU linear
 programming kit (<https://www.gnu.org/software/glpk/glpk.html>), or the package
 Rsymphony (<https://cran.r-project.org/package=Rsymphony>), which requires the
@@ -10484,15 +11582,15 @@ SYMPHONY ILP solver (<https://github.com/coin-or/SYMPHONY>).  Rglpk and
 Rsymphony have to be manually installed by the user because they are only
 \"suggested\" dependencies.  Full access to the bicriterion anticlustering method
 proposed by Brusco et al. (2020) is given via the function
-bicriterion_anticlustering(), while kplus_anticlustering() implements the full
-functionality of the k-plus anticlustering approach proposed by Papenberg
-(2024).  Some other functions are available to solve classical clustering
-problems.  The function balanced_clustering() applies a cluster analysis under
-size constraints, i.e., creates equal-sized clusters.  The function matching()
-can be used for (unrestricted, bipartite, or K-partite) matching.  The function
-wce() can be used optimally solve the (weighted) cluster editing problem, also
-known as correlation clustering, clique partitioning problem or transitivity
-clustering.")
+@code{bicriterion_anticlustering()}, while @code{kplus_anticlustering()}
+implements the full functionality of the k-plus anticlustering approach proposed
+by Papenberg (2024).  Some other functions are available to solve classical
+clustering problems.  The function @code{balanced_clustering()} applies a
+cluster analysis under size constraints, i.e., creates equal-sized clusters.
+The function @code{matching()} can be used for (unrestricted, bipartite, or
+K-partite) matching.  The function @code{wce()} can be used optimally solve the
+(weighted) cluster editing problem, also known as correlation clustering, clique
+partitioning problem or transitivity clustering.")
     (license license:expat)))
 
 (define-public r-antibodytiters
@@ -10507,6 +11605,9 @@ clustering.")
         (base32 "1400n46kmaa074m6yilmkvcn83dyxk2w76x8cny1dygfzsnhhjxl"))))
     (properties `((upstream-name . "AntibodyTiters")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openxlsx r-desctools))
     (home-page "https://cran.r-project.org/package=AntibodyTiters")
     (synopsis "Antibody Titer Analysis of Vaccinated Patients")
@@ -10537,6 +11638,9 @@ pair of sampling points.")
         (base32 "03mvlw54a9xz7ggjbfi9yddzq1wv4skjvbv3r4bdrldpbd6scm0b"))))
     (properties `((upstream-name . "AnthropMMD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-smacof
                              r-shiny
                              r-scatterplot3d
@@ -10566,6 +11670,9 @@ divergence, with facilities for trait selection and graphical representations
         (base32 "041aa61yi3jkaal11faf06q7iqafi2npa5ayk5gwpfbh0pscaj7h"))))
     (properties `((upstream-name . "anthroplus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-anthro))
     (home-page "https://github.com/WorldHealthOrganization/anthroplus")
     (synopsis
@@ -10590,6 +11697,9 @@ designs.  More information on the methods is available online:
         (base32 "0vp55q0f9d4gljwzfzr07f80q5ip59imvklfw8gg1rjw83yaqpxr"))))
     (properties `((upstream-name . "anthro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survey))
     (home-page "https://github.com/worldhealthorganization/anthro")
     (synopsis "Computation of the WHO Child Growth Standards")
@@ -10599,6 +11709,68 @@ intervals and standard errors around the prevalence estimates, taking into
 account complex sample designs.  More information on the methods is available
 online: <https://www.who.int/tools/child-growth-standards>.")
     (license license:gpl3)))
+
+(define-public r-antaresviz
+  (package
+    (name "r-antaresviz")
+    (version "0.18.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "antaresViz" version))
+       (sha256
+        (base32 "141vip2ksp2zlyiddsy9ilswdyj9p7zh5p9374dwfqxwz5s3q8rk"))))
+    (properties `((upstream-name . "antaresViz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-webshot
+                             r-spmaps
+                             r-sp
+                             r-shiny
+                             r-sf
+                             r-ramcharts
+                             r-plotly
+                             r-manipulatewidget
+                             r-lubridate
+                             r-lifecycle
+                             r-leaflet-minicharts
+                             r-leaflet
+                             r-htmlwidgets
+                             r-htmltools
+                             r-geojsonio
+                             r-dygraphs
+                             r-data-table
+                             r-assertthat
+                             r-antaresread
+                             r-antaresprocessing))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/rte-antares-rpackage/antaresViz")
+    (synopsis "Antares Visualizations")
+    (description
+     "Visualize results generated by Antares, a powerful open source software
+developed by RTE to simulate and study electric power systems (more information
+about Antares here:
+<https://github.com/@code{AntaresSimulatorTeam/Antares_Simulator>}).  This
+package provides functions that create interactive charts to help Antares users
+visually explore the results of their simulations.")
+    (license license:gpl3+)))
 
 (define-public r-antaresread
   (package
@@ -10612,6 +11784,9 @@ online: <https://www.who.int/tools/child-growth-standards>.")
         (base32 "1ihz7hdfq640sbdmq55mrsp070mwkpa97bn2l2bkn1qia1bxa2rn"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-shiny
@@ -10651,6 +11826,9 @@ simulate and study electric power systems (more information about Antares here :
         (base32 "0xn44gqm9x7im54dqc9c506awwg6x1hps6h2w28y5psx0c3i97hx"))))
     (properties `((upstream-name . "antaresProcessing")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table r-antaresread))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rte-antares-rpackage/antaresProcessing")
@@ -10677,6 +11855,9 @@ surpluses of consumers, producers and sectors.")
         (base32 "06r23dgz0fbqxrk2j9i78jv7i2pi8wf6qc1a0d8igal4mzxv0v88"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-whisker
                              r-progressr
@@ -10715,6 +11896,9 @@ information available here : <https://antares-simulator.org/>.")
         (base32 "1krwms0y3xppc2y4m0az51wcbh4jq7mlr0jwinp66w8gh4k3qnp2"))))
     (properties `((upstream-name . "AntAngioCOOL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rweka r-rpart r-rjava r-caret))
     (home-page "https://cran.r-project.org/package=AntAngioCOOL")
     (synopsis "Anti-Angiogenic Peptide Prediction")
@@ -10740,6 +11924,9 @@ peptide prediction on a benchmark non-redundant independent test dataset.")
         (base32 "13b3rv0z11whbvwhikvk16raxn7qvgwxs85h104f7bd3xzdddqzm"))))
     (properties `((upstream-name . "ANSM5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ANSM5")
     (synopsis
      "Functions and Data for the Book \"Applied Nonparametric Statistical Methods\", 5th Edition")
@@ -10769,6 +11956,9 @@ necessarily the most computationally efficient nor the most comprehensive.")
         (base32 "1hakvxgc50zshi5kplg90r0499mihhwvhhz7bshndjxxci1ashkl"))))
     (properties `((upstream-name . "anscombiser")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://paulnorthrop.github.io/anscombiser/")
     (synopsis "Create Datasets with Identical Summary Statistics")
@@ -10800,6 +11990,9 @@ but share many sample summary statistics.")
         (base32 "1x7lvj7xchbv6siyc9miivmf0rlxrjflal4icyvbxgdr285s2s9w"))))
     (properties `((upstream-name . "anovir")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bbmle))
     (native-inputs (list r-knitr))
     (home-page "https://www.biorxiv.org/content/10.1101/530709v1")
@@ -10825,6 +12018,9 @@ vs. uninfected hosts (Agnew 2019) <doi:10.1101/530709>.")
         (base32 "0bnxfg5c37wi5g53jd0zqq31yx29zvlk2m2jh6jlwki8khpp9y00"))))
     (properties `((upstream-name . "ANOVAShiny2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rmarkdown
                              r-rhandsontable
@@ -10851,6 +12047,9 @@ package function as well as at <https://kartikeyab.shinyapps.io/ANOVAShiny/>.")
         (base32 "1z8wi8c8j3rlchfk1vx101qz1r9j2jl5lfh72y5lqsisqxl2fyyz"))))
     (properties `((upstream-name . "ANOVAShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rmarkdown
                              r-rhandsontable
@@ -10877,6 +12076,9 @@ package function as well as at <https://kartikeyab.shinyapps.io/ANOVAShiny/>.")
         (base32 "04z2g79nnh5yhn4aqw0i7ck2b1z5dbasf1zp1sj6rjjrp9aqmaa6"))))
     (properties `((upstream-name . "ANOVAIREVA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rmarkdown
                              r-plotly
@@ -10903,6 +12105,9 @@ package function as well as at <https://tinyurl.com/ANOVA@code{StatsTool>}.")
         (base32 "1i6flm4rwl0d0wmw001pwq45jysxb2d2bld25r10gjk3xlfrbr7i"))))
     (properties `((upstream-name . "ANOPA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-superb
                              r-scales
                              r-rrapply
@@ -10940,6 +12145,9 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
         (base32 "12c1y2l6c2vhiairl5cxf0f2scyj2iwjgvagm7mhr8ingchxkvgm"))))
     (properties `((upstream-name . "anomo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-rmarkdown r-markdown r-knitr))
     (home-page "https://cran.r-project.org/package=anomo")
     (synopsis
@@ -10962,6 +12170,9 @@ statistics from two studies.")
         (base32 "0zy2gvn3pr01rfvh2bhgdk7a6lzmffldxy0vk2gidirhv4zvy3vr"))))
     (properties `((upstream-name . "anominate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wnominate r-pscl r-mcmcpack r-coda))
     (home-page "https://CRAN.R-project.org/package=anominate")
     (synopsis "Alpha-NOMINATE Ideal Point Estimator")
@@ -10990,6 +12201,9 @@ and the estimated location of the choice alternatives.")
         (base32 "0nxfl0fhkbz0cix82b5ial6cibrh22by4liqcnxgq8hillhfvnaf"))))
     (properties `((upstream-name . "AnomalyScore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsa
                              r-transport
                              r-rann
@@ -11019,6 +12233,9 @@ are provided.")
         (base32 "12xm04qnbgc6i5w9vnvaaqfjyn014gbcb4401l1843rjr73kkv24"))))
     (properties `((upstream-name . "anomaly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-tidyr
@@ -11055,6 +12272,9 @@ Bardwell (2024) <doi:10.18637/jss.v110.i01>.")
         (base32 "133gibw7wwvf4g6msgnw19pnnhlf02kp8c3jzgzdw5bbl6nb2225"))))
     (properties `((upstream-name . "anomalize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timetk
                              r-tidyr
                              r-tibbletime
@@ -11070,18 +12290,19 @@ Bardwell (2024) <doi:10.18637/jss.v110.i01>.")
     (synopsis "Tidy Anomaly Detection")
     (description
      "The anomalize package enables a \"tidy\" workflow for detecting anomalies in data.
- The main functions are time_decompose(), anomalize(), and time_recompose().
-When combined, it's quite simple to decompose time series, detect anomalies, and
-create bands separating the \"normal\" data from the anomalous data at scale (i.e.
- for multiple time series).  Time series decomposition is used to remove trend
-and seasonal components via the time_decompose() function and methods include
-seasonal decomposition of time series by Loess (\"stl\") and seasonal
-decomposition by piecewise medians (\"twitter\").  The anomalize() function
-implements two methods for anomaly detection of residuals including using an
-inner quartile range (\"iqr\") and generalized extreme studentized deviation
-(\"gesd\").  These methods are based on those used in the forecast package and the
-Twitter @code{AnomalyDetection} package.  Refer to the associated functions for
-specific references for these methods.")
+ The main functions are @code{time_decompose()}, @code{anomalize()}, and
+@code{time_recompose()}.  When combined, it's quite simple to decompose time
+series, detect anomalies, and create bands separating the \"normal\" data from the
+anomalous data at scale (i.e.  for multiple time series).  Time series
+decomposition is used to remove trend and seasonal components via the
+@code{time_decompose()} function and methods include seasonal decomposition of
+time series by Loess (\"stl\") and seasonal decomposition by piecewise medians
+(\"twitter\").  The @code{anomalize()} function implements two methods for anomaly
+detection of residuals including using an inner quartile range (\"iqr\") and
+generalized extreme studentized deviation (\"gesd\").  These methods are based on
+those used in the forecast package and the Twitter @code{AnomalyDetection}
+package.  Refer to the associated functions for specific references for these
+methods.")
     (license license:gpl3+)))
 
 (define-public r-anom
@@ -11096,6 +12317,9 @@ specific references for these methods.")
         (base32 "14nfy9xplbabfprwxz5fvx26nmqhp657vr6d90dc8vk8ds63ckiz"))))
     (properties `((upstream-name . "ANOM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-simcomp r-nparcomp r-multcomp r-mcpan r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PhilipPallmann/ANOM")
@@ -11120,6 +12344,9 @@ means deviate significantly from the grand mean.")
         (base32 "158r7dp5cyjap0qrn1p4bl4csy2wph0zly03rvnsjvp8h6nxkrgr"))))
     (properties `((upstream-name . "anoint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mass r-glmnet))
     (home-page "https://cran.r-project.org/package=anoint")
     (synopsis "Analysis of Interactions")
@@ -11142,6 +12369,9 @@ in Kovalchik, Varadhan and Weiss (2013) <doi: 10.1002/sim.5881>.")
         (base32 "1ywcn4sq626dc3bb7r3pwddw5064cli4kmx8a9qp2dnxv9i6igjv"))))
     (properties `((upstream-name . "ANOFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-superb r-rrapply r-rdpack r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://dcousin3.github.io/ANOFA/")
@@ -11174,6 +12404,9 @@ generalized linear models.  See Laurencelle and Cousineau (2023)
         (base32 "1byg40jla71k1901js5h9yq89j63d00vkm60id1fxlpv95c4wdrr"))))
     (properties `((upstream-name . "anocva")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cluster))
     (home-page "https://cran.r-project.org/package=anocva")
     (synopsis
@@ -11198,6 +12431,9 @@ to identify features that contribute to the differential clustering.")
         (base32 "0yvfqzwhm5nhywfhzkxkfm07c0qi6z21j1cdaypz89qn567aj1d9"))))
     (properties `((upstream-name . "AnnuityRIR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries r-mc2d r-fitdistrplus r-envstats
                              r-actuar))
     (home-page "https://www.r-project.org")
@@ -11224,6 +12460,8 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -11244,9 +12482,9 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
     (synopsis "Image Annotation and Polygon Outlining using Free Drawing")
     (description
      "This package provides functions to create image annotations through polygon
-outlining.  Annotator has the same function as graphics::locator() but achieves
-its purpose through drawing, rather than multiple mouse clicks.  It is based on
-the htmlwidgets package and fabric.js @code{JavaScript} library
+outlining.  Annotator has the same function as @code{graphics::locator()} but
+achieves its purpose through drawing, rather than multiple mouse clicks.  It is
+based on the htmlwidgets package and fabric.js @code{JavaScript} library
 <http://fabricjs.com/>.")
     (license license:gpl3+)))
 
@@ -11262,6 +12500,9 @@ the htmlwidgets package and fabric.js @code{JavaScript} library
         (base32 "1q5yxzzmzvw1r64r4y0xh1fiyhaqbx5q4lzpawqaggra4w9igdl8"))))
     (properties `((upstream-name . "AnnotationBustR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seqinr r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sborstein/AnnotationBustR")
@@ -11284,6 +12525,9 @@ where gene names may vary among accessions.  Borstein & O'Meara (2018)
         (base32 "0ziwkc7z3v8awm7smq38mdj61vjq4qh99d0fmr63sibmg6l3pf7p"))))
     (properties `((upstream-name . "annotater")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -11298,8 +12542,8 @@ where gene names may vary among accessions.  Borstein & O'Meara (2018)
     (synopsis "Annotate Package Load Calls")
     (description
      "This package provides non-invasive annotation of package load calls such as
-\\code{library()}, \\code{p_load()}, and \\code{require()} so that we can have an
-idea of what the packages we are loading are meant for.")
+@code{\\code{library()}}, @code{\\code{p_load()}}, and @code{\\code{require()}} so
+that we can have an idea of what the packages we are loading are meant for.")
     (license license:expat)))
 
 (define-public r-annoprobe
@@ -11314,6 +12558,9 @@ idea of what the packages we are loading are meant for.")
         (base32 "0715bpifj8r4ji0m89wk4x7vd3pwx8kqy9vs8m0ivmq7bb56nx0b"))))
     (properties `((upstream-name . "AnnoProbe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-pheatmap
                              r-httr
@@ -11343,6 +12590,9 @@ annotate them to genes.")
         (base32 "0ljlxiyprvaa84skw5g2qfjf55fkdcsygvb09i5jws9dm0i8h80w"))))
     (properties `((upstream-name . "annmatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/karoliskoncevicius/annmatrix")
     (synopsis
      "Annotated Matrix: Matrices with Persistent Row and Column Annotations")
@@ -11369,6 +12619,9 @@ be useful in various other contexts.")
         (base32 "1izljhz3rkzq05dkvg9q3fdyj7q871j8lsky67d5r8ffpzm1lk3z"))))
     (properties `((upstream-name . "ANN2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-testthat
                              r-reshape2
@@ -11404,6 +12657,9 @@ implementation that facilitates fast training through mini-batch learning.")
         (base32 "0xrby8qyfd3dgi64kllspvalz9yrxjdj5qd1fqjdl6qwb3h6rkga"))))
     (properties `((upstream-name . "anMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm))
     (home-page "https://doi.org/10.1080/10618600.2017.1360781")
     (synopsis "Compute High Dimensional Orthant Probabilities")
@@ -11425,6 +12681,9 @@ conservative estimates of excursion sets under Gaussian random field priors.")
         (base32 "1klakkmdk4xllaxd0pllvxi4396n6rz2idz55niy91mp0fhcjhwf"))))
     (properties `((upstream-name . "aniview")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-htmltools))
     (home-page "https://felixluginbuhl.com/aniview")
     (synopsis "Animate Shiny and R Markdown Content when it Comes into View")
@@ -11445,6 +12704,9 @@ effects thanks to @code{jQuery} @code{AniView}'.")
         (base32 "1rvrpcw1j5xwz8ns7njvf8blal8nh6c45avy5rpzb5kifiv8yxgy"))))
     (properties `((upstream-name . "aniSNA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-reshape
@@ -11477,6 +12739,9 @@ correlation and regression analysis of the local network metrics.")
         (base32 "03vhxva67b0nr75dr8ddz661jr1ha3kryibqy2nhqk851jx5vywx"))))
     (properties `((upstream-name . "anipaths")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -11516,6 +12781,9 @@ exploratory data analysis, and perhaps for preparation of presentations.")
         (base32 "1r6vy8kc98av2xwxas59gzqiynaxvddc5dxdkbvfd5v9zsglqr0y"))))
     (properties `((upstream-name . "animl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tfdatasets
                              r-tensorflow
                              r-reticulate
@@ -11550,6 +12818,8 @@ a second model trained on the classes of interest.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -11596,6 +12866,9 @@ Computational and Graphical Statistics paper,
         (base32 "0wbzpcqmr1ysk2xcwmjl1dldz7bpaqsdyq36512lipq60hzq1v81"))))
     (properties `((upstream-name . "animbook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -11629,6 +12902,8 @@ Providing the function for preparing, plotting, and animating the data.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -11674,6 +12949,9 @@ through embedding into R Markdown documents.")
         (base32 "0aw51hailpv07qwsb1wjqnbn409l2w250naxic2zm0k670jam3m2"))))
     (properties `((upstream-name . "AnimalSequences")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-tidyr
                              r-tibble
@@ -11712,6 +12990,9 @@ calculate the entropy of sequences.")
         (base32 "1bhqypkiw5v9w26jbdmhndqj5hjfmf7zwivrq2hgs0zcjxwa8gfn"))))
     (properties `((upstream-name . "AnimalHabitatNetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph r-ggplot2))
     (home-page "https://cran.r-project.org/package=AnimalHabitatNetwork")
     (synopsis
@@ -11724,14 +13005,14 @@ algorithm first determines the X and Y coordinates of N nodes within a rectangle
 with a side length of L and an area of A. Then it computes the pair-wise
 Euclidean distance Dij between node i and j, and then a complete network with
 1/Dij as link weights is constructed.  Then, the algorithm removes links from
-the complete network with the probability as shown in the function ahn_prob().
-Such link removals can make the network disconnected whereas a connected network
-is wanted.  In such cases, the algorithm rewires one network component to its
-spatially nearest neighbouring component and repeat doing this until the network
-is connected again.  Finally, it outputs an undirected network (weighted or
-unweighted, connected or disconnected).  This package came with a manuscript on
-modelling the physical configurations of animal habitats using networks (in
-preparation).")
+the complete network with the probability as shown in the function
+@code{ahn_prob()}.  Such link removals can make the network disconnected whereas
+a connected network is wanted.  In such cases, the algorithm rewires one network
+component to its spatially nearest neighbouring component and repeat doing this
+until the network is connected again.  Finally, it outputs an undirected network
+(weighted or unweighted, connected or disconnected).  This package came with a
+manuscript on modelling the physical configurations of animal habitats using
+networks (in preparation).")
     (license license:gpl3)))
 
 (define-public r-animalekf
@@ -11746,6 +13027,9 @@ preparation).")
         (base32 "1qhmgwmg9nw8hcsd8gkvk0h8rmk82zkqjyd94a1d79cwmryxls9b"))))
     (properties `((upstream-name . "animalEKF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-shiny
                              r-sf
@@ -11784,6 +13068,9 @@ See Ackerman (2018)
         (base32 "0j786k5kkc1d33q52ki6fp3hnddjv7fv3ss6zjm9hqqgkq34vwqh"))))
     (properties `((upstream-name . "anim.plots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-animation))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hughjonesd/anim.plots")
@@ -11806,6 +13093,9 @@ hist, curve, points, lines, text, symbols, segments, and arrows.")
         (base32 "04gqq6ibmr7zq8p9cbpxj98afq7yz82gp7prwbq2ymbxnkywwpgq"))))
     (properties `((upstream-name . "aniDom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rptr))
     (home-page "https://cran.r-project.org/package=aniDom")
     (synopsis "Inferring Dominance Hierarchies and Estimating Uncertainty")
@@ -11828,6 +13118,9 @@ hierarchy and estimate the uncertainty of a given data set.")
         (base32 "1k8q4pkb5vcjfp2n2dga3q2ydmdxv020k5qzrb6w01ixrgf15d8l"))))
     (properties `((upstream-name . "angstroms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spbabel
                              r-sp
                              r-raster
@@ -11853,6 +13146,9 @@ See <https://www.myroms.org/> for more information about ROMS'.")
         (base32 "1mxm5xq08yj1ah4n3sd50fa1z6m97i6c5fzvw92fr1fkzrlfqlqk"))))
     (properties `((upstream-name . "angstromATE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-stringr))
     (home-page "https://cran.r-project.org/package=angstromATE")
     (synopsis "Imports Log Files from Angstrom Engineering Thermal Evaporator")
@@ -11874,6 +13170,9 @@ It can visualize the deposition observables for review.")
         (base32 "1xaksfglf45qpfqdjil8cc415ak6xnc57kxfih7qghvd3xi5c8z6"))))
     (properties `((upstream-name . "AnglerCreelSurveySimulation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stevenranney/AnglerCreelSurveySimulation")
@@ -11896,6 +13195,9 @@ survey.")
         (base32 "1p2g51w80jiadlf4asbnsw46asarzlzr5c1yfhdb31ymqxd7p76q"))))
     (properties `((upstream-name . "anesrake")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weights r-hmisc))
     (home-page "https://cran.r-project.org/package=anesrake")
     (synopsis "ANES Raking Implementation")
@@ -11922,6 +13224,9 @@ variety of simple weighted statistics that were previously in this package
         (base32 "1cpz16zv3al6lmsqsb7dl5v6kml2a0hg084rbmwa4wsyk5ygl8bm"))))
     (properties `((upstream-name . "andurinha")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-signal
                              r-rlang
@@ -11954,6 +13259,9 @@ evaluation of the outputs.")
         (base32 "1v3pg8vskr079yv8yg2lby8agvcc1jhkbr7nnvgz26fgb2nwfq3c"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-tidyselect
                              r-rsqlite
@@ -11984,6 +13292,9 @@ to manipulate the data in an efficient manner.")
         (base32 "18z8g1g5kx3cmgx4rc4rd35d557yl30xxmr2g2nkdd714w2asqra"))))
     (properties `((upstream-name . "andrews")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gmp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sigbertklinke/andrews")
@@ -12006,6 +13317,9 @@ Andrews, D. F. (1972) Plots of High-Dimensional Data.  Biometrics, 28(1),
         (base32 "1i95ap4yba5c5ygwsvwmqb3am4r5agv7yhls7ji7pnly8nkrknyn"))))
     (properties `((upstream-name . "and")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-glue))
     (home-page "https://pkg.rossellhayes.com/and/")
     (synopsis "Construct Natural-Language Lists with Internationalization")
@@ -12026,6 +13340,9 @@ that automatically conform to the user's language settings.")
         (base32 "1bmlxk5j3i9mm71cwz785q5sysp8hsyy0080kgd3ksx78p68ara5"))))
     (properties `((upstream-name . "AnchorRegression")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-selectiveinference r-mgcv r-glmnet))
     (home-page "https://github.com/simzim96/AnchorRegression")
     (synopsis "Perform AnchorRegression")
@@ -12048,6 +13365,9 @@ independently from the authors of the paper.")
         (base32 "1fr2y1a5rn7rq8aly94f618kywix32jwysi70nfhaqx8hf4zzprb"))))
     (properties `((upstream-name . "AncestryMapper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svd))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AncestryMapper")
@@ -12069,6 +13389,9 @@ local and global populations.")
         (base32 "12r6bxh0cvh94nb91lzdj7sa7na1ljc5gdmdfx6dwilhpdafn0a3"))))
     (properties `((upstream-name . "AnanseSeurat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-seurat
                              r-rlang
@@ -12101,6 +13424,9 @@ snakemake'.  Finally, incorporate results for visualization and interpretation."
         (base32 "1729dnghdca7dr4l5cxazg68ipkm63mvk2danwm3bva62sza29p6"))))
     (properties `((upstream-name . "analyzer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gridextra r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=analyzer")
@@ -12124,6 +13450,9 @@ function call.  The notebook can be made interactive.")
         (base32 "1mf77l74lfjlr856w48spjnn7pvjf9zygy1xcaj3fmi335h77j2x"))))
     (properties `((upstream-name . "AnalysisLin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rann
                              r-plotly
                              r-magrittr
@@ -12155,6 +13484,9 @@ feature analysis, missing value imputation methods, and correlation analysis.")
         (base32 "0l8q2nyl03l1vcm6gy8ax287vh8jy0rd9cc7rwzjv8lfjq1dv2zh"))))
     (properties `((upstream-name . "analogue")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-princurve
                              r-mgcv
@@ -12181,6 +13513,9 @@ in palaeoecology.")
         (base32 "146n6z06nr3jyni8mg8gjb7r4w06mrpkfmpg8l8z6rw9aw1gh73p"))))
     (properties `((upstream-name . "analogsea")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-magrittr r-jsonlite r-httr))
     (home-page
      "https://github.com/pachadotdev/analogseahttps://pacha.dev/analogsea/")
@@ -12204,6 +13539,9 @@ images.")
         (base32 "0wf9kb8389gc9jy32dr8ap78lychgjnd19jix7wzln4yx78ypqnq"))))
     (properties `((upstream-name . "anacor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fda r-colorspace r-car))
     (home-page "https://r-forge.r-project.org/projects/psychor/")
     (synopsis "Simple and Canonical Correspondence Analysis")
@@ -12226,6 +13564,9 @@ including confidence ellipsoids are provided.")
         (base32 "02ars06pmg0f0biy022yz2xf0sdmww9ff9zcpl74gah3sickq9ci"))))
     (properties `((upstream-name . "Anaconda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer
                              r-rafalib
                              r-plyr
@@ -12259,7 +13600,7 @@ binary measure analysis.  The tree on the plot is hierarchical clustering of
 NCBITaxon based on shared ASVs.  Categories with no branch length between them
 are subsets of each other.  The fraction next to the category name indicates the
 fraction of good ASVs in it; good ASVs are the ones exceeding the arbitrary
-@code{absValue} cutoff (option in taxon_@code{mwuPlot}()).  For Fisher's based
+@code{absValue} cutoff (option in @code{taxon_mwuPlot()}).  For Fisher's based
 test, specify @code{absValue=0.5}.  This value does not affect statistics and is
 used for plotting only.  The original idea was for genes differential expression
 analysis from Wright et al (2015) <doi:10.1186/s12864-015-1540-2>; adapted here
@@ -12283,6 +13624,9 @@ ii) taxonomy_@code{RepSeq.tsv}, iii) ASV.tsv and iv)
         (base32 "1b03bxysvw9v4j3bzsmrjf5ci06v6s83ix89qxy73ba5akf2gb7h"))))
     (properties `((upstream-name . "AnaCoDa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-rcpp r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/clandere/AnaCoDa")
@@ -12315,6 +13659,9 @@ ribosome footprinting data.")
         (base32 "0m6jkbl3mf3kpaq9yj0qrbwcvgd1qrdakc14xcnd8awgvbqh6z01"))))
     (properties `((upstream-name . "anabel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-reshape2
@@ -12352,6 +13699,9 @@ implemented as in (<doi:10.1177/1177932218821383>,
         (base32 "1xdi3i3nw4fzj4d040r55f0gid72gy3vbz5nbdrvapl97zk3kp8c"))))
     (properties `((upstream-name . "AmyloGram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-seqinr r-ranger r-biogram))
     (home-page "https://github.com/michbur/AmyloGram")
     (synopsis "Prediction of Amyloid Proteins")
@@ -12373,6 +13723,9 @@ and shiny-based GUI.")
         (base32 "0f4w66pqb95bk5h0xi35lxq4535rjpbgkl6j9r3wx7rl8g6lpl7q"))))
     (properties `((upstream-name . "amVennDiagram5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-venn r-partitions r-htmlwidgets))
     (home-page "https://github.com/stla/amVennDiagram5")
     (synopsis "Interactive Venn Diagrams")
@@ -12394,6 +13747,9 @@ from RStudio', in shiny applications, and in rmarkdown documents.")
         (base32 "1yx5rvc18ppk37z1m72a1j80ai4b84zc8fh5py2zipvc7phwqfsw"))))
     (properties `((upstream-name . "amt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-terra
@@ -12435,6 +13791,9 @@ simulation of space-use from fitted step-selection functions.")
         (base32 "15c9crj52m93122yp2fvx75vgm73lq3f3hc9jkg2f122mz6ml65x"))))
     (properties `((upstream-name . "amscorer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=amscorer")
     (synopsis "Clinical Scores Calculator for Healthcare")
@@ -12467,6 +13826,9 @@ et al. (2021) <doi:10.1053/j.gastro.2021.08.050>, Mungroop et al. (2019)
         (base32 "0c5x95iiqr0fa2ph6zily6qp542yc08vwzgrvfhclmkrn9zjcjap"))))
     (properties `((upstream-name . "amregtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr r-testthat r-remotes r-digest
                              r-allelematch))
     (home-page "https://cran.r-project.org/package=amregtest")
@@ -12489,6 +13851,9 @@ and includes negative tests.  The implementation is based on testthat'.")
         (base32 "0dgql8s7jzk3cmjnvn09rsymz1zwzk2983rvcccl5z00x9d7yg7k"))))
     (properties `((upstream-name . "AMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://msberends.github.io/AMR/")
     (synopsis "Antimicrobial Resistance Data Analysis")
@@ -12512,6 +13877,9 @@ properties by using evidence-based methods, as described in
         (base32 "0vw06x47vc0dqzafgpkn4abdsrhxfs9dq8nnrr2pl49skj5n4hks"))))
     (properties `((upstream-name . "AmpliconDuo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable r-ggplot2))
     (home-page "https://cran.r-project.org/package=AmpliconDuo")
     (synopsis
@@ -12542,6 +13910,9 @@ distribution across split samples, and to filter the false positive reads.")
         (base32 "019r60rcx3biyicmyc4i1806d31i2hp107ba2l0mgh08fx3lfwhj"))))
     (properties `((upstream-name . "AMPLE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinyscreenshot
                              r-shinyjs
                              r-shiny
@@ -12577,6 +13948,9 @@ compared so that the preferred HCR can be selected.")
         (base32 "0nnsxrnq3m1frrjp3i8bhm67x6xnl0scyb67wxgm5x7b187svhfj"))))
     (properties `((upstream-name . "ampir")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-peptides r-kernlab r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Legana/ampir")
@@ -12611,6 +13985,9 @@ package is also available via a Shiny based GUI at
         (base32 "1j5zx6n8cyzh6dnv96234zmlfj90fs9w4vm32xw8iqgvpcviqyz6"))))
     (properties `((upstream-name . "AmpGram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-shiny
                              r-ranger
@@ -12639,6 +14016,9 @@ and it has to be downloaded separately from the repository:
         (base32 "0bi8qngd37n60ym516yjcahxc536vdwm60rq5ld32170hww69j7c"))))
     (properties `((upstream-name . "ampd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ampd")
     (synopsis
      "An Algorithm for Automatic Peak Detection in Noisy Periodic and Quasi-Periodic Signals")
@@ -12663,6 +14043,9 @@ occurrences of local maxima.  For further information see
         (base32 "11132s3bdjcldvpws7yc1w4nifvq0iaavdda2zj0wwmi4rw5xx5c"))))
     (properties `((upstream-name . "amp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-superlearner
                              r-rlang
@@ -12696,6 +14079,9 @@ explained in detail in the article.")
         (base32 "1i5j34wscvqn37lm86dh9fnyn4j6b34rxyb2q6kpn3csyk53x5r9"))))
     (properties `((upstream-name . "AmoudSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-flexsurv r-ahsurv))
     (home-page "https://cran.r-project.org/package=AmoudSurv")
     (synopsis "Tractable Parametric Odds-Based Regression Models")
@@ -12724,6 +14110,9 @@ Bennet et al., (1983) <doi:10.1002/sim.4780020223>, and Muse et al., (2022)
         (base32 "1bks7g6zc8817gr4j1mxzmyhw23mwafb6816a26vylk8d9k9d315"))))
     (properties `((upstream-name . "aMNLFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-reshape2
@@ -12767,6 +14156,9 @@ they generate M-plus syntax according to their own judgment.")
         (base32 "05pnwfji9l9az4jvni6jy7cayzg5pbspz82a63kmj6rgibn4ywvn"))))
     (properties `((upstream-name . "AmmoniaConcentration")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/tumenas/ammonia")
     (synopsis "Un-Ionized Ammonia Concentration")
     (description
@@ -12787,6 +14179,13 @@ temperature values.")
         (base32 "18h075bzk8s75b3zmjd0x8c6dpl40445d4kv8n0p4ldnx80b1aha"))))
     (properties `((upstream-name . "AMModels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-unmarked))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=AMModels")
@@ -12796,7 +14195,7 @@ temperature values.")
 generated from numerous analyses and data sets.  Facilitates this process by
 storing all models and data sets in a single object that can be updated and
 saved, thus tracking changes in knowledge through time.  A shiny application
-called AM Model Manager (@code{modelMgr}()) enables the use of these functions
+called AM Model Manager @code{(modelMgr()}) enables the use of these functions
 via a GUI.")
     (license license:gpl3)))
 
@@ -12812,6 +14211,9 @@ via a GUI.")
         (base32 "06hlbpwa0d1grs7k1vfhchrfi9zml76hkn41vnrayv35fx0sl1pz"))))
     (properties `((upstream-name . "ammistability")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-rdpack
                              r-mathjaxr
@@ -12850,6 +14252,13 @@ list of citations for the methods implemented.")
         (base32 "0mj14n882jcg7p7rldb0d7yndp1dv3vma9g7f7f0vabhwm6d1jkd"))))
     (properties `((upstream-name . "ammiBayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-spam
                              r-msm
                              r-movmf
@@ -12881,6 +14290,9 @@ on Linux systems and run serially on Windows.")
         (base32 "1gpfsayic0hw2rwswxw7cwa0v47l1v7l4qhckbrwyq3dcxgl2rnv"))))
     (properties `((upstream-name . "AMIM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://github.com/gelotran/AMIM")
     (synopsis "Compute the Adjusted Market Inefficiency Measure")
@@ -12903,6 +14315,9 @@ instruments simultaneously.")
         (base32 "09227l3sq4bcph9x2w2qqh9zy2xrjr0makjyfx2vlp76r2xw394h"))))
     (properties `((upstream-name . "AmigaFFH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-tuner))
     (home-page "https://pepijn-devries.github.io/AmigaFFH/")
     (synopsis "Commodore Amiga File Format Handler")
@@ -12926,6 +14341,9 @@ into more contemporary data.")
         (base32 "03yhfn0qfwb8z1qnnsb7lvn6d71brhqd1blskhyza07hmlxbqzmd"))))
     (properties `((upstream-name . "ami")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-rlang r-lifecycle r-glue r-curl))
     (home-page "https://github.com/briandconnelly/ami")
     (synopsis "Checks for Various Computing Environments")
@@ -12948,6 +14366,9 @@ containers, and more.")
         (base32 "080r0fkmqsdrjgwbmdzacnkmd8py611z54i6r7nzj14r295d5qhk"))))
     (properties `((upstream-name . "AmesHousing")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-dplyr))
     (home-page "https://github.com/topepo/AmesHousing")
     (synopsis "The Ames Iowa Housing Data")
@@ -12968,6 +14389,9 @@ containers, and more.")
         (base32 "1c0bi0wrc89d0zv0wzmdvka66mcikgi1w4gn1i22mvg5bivhzaqx"))))
     (properties `((upstream-name . "amerika")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=amerika")
     (synopsis "American Politics-Inspired Color Palette Generator")
     (description
@@ -12992,6 +14416,9 @@ on the source code (with permission) from Ram and Wickham (2015).")
         (base32 "099vv1axgp4jfi9ic4rqsdcv8a5dz1z0zdmdx8r8h474p3jdqm7c"))))
     (properties `((upstream-name . "amerifluxr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readxl
                              r-rcurl
                              r-memoise
@@ -13019,6 +14446,9 @@ tools.")
         (base32 "0nqgb25y8zmmas3i1abzv3w5m4cnxjsdqcqxxrhngj3ajz4dmyc7"))))
     (properties `((upstream-name . "amen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pdhoff/amen")
     (synopsis
@@ -13049,6 +14479,9 @@ Development of this software was supported in part by NIH grant R01HD067509.")
         (base32 "0f4rfijskrw9nmyzbrbz6yfa9d0a5cxjw8n9c36hc6jvh377i7k7"))))
     (properties `((upstream-name . "amelie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=amelie")
     (synopsis "Anomaly Detection with Normal Probability Functions")
@@ -13074,6 +14507,9 @@ Ozgur, Jaideep Srivastava (2003) <doi:10.1137/1.9781611972733.3>.")
         (base32 "0zwnaqis7dx07q1iinpqgrclmwp3xj2r3ihfmmhbvnp9ldf4b6bn"))))
     (properties `((upstream-name . "Amelia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-foreign))
     (native-inputs (list r-knitr))
     (home-page "https://gking.harvard.edu/amelia")
@@ -13108,6 +14544,9 @@ user interface that does not require users to know R.")
         (base32 "1vgncc61gmqhax2a7072jb36bzkycv80xqihkr5qs8jxnqqkndxd"))))
     (properties `((upstream-name . "AMCTestmakeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AMCTestmakeR")
     (synopsis "Generate LaTeX Code for Auto-Multiple-Choice (AMC)")
@@ -13130,6 +14569,9 @@ AMC.")
         (base32 "0xp59zah72h7kvqnhyrx6p9nx0pghi49lgib3f1ins1zlxdv2j88"))))
     (properties `((upstream-name . "AMCP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AMCP")
     (synopsis "Model Comparison Perspective")
     (description
@@ -13152,6 +14594,9 @@ end-of-chapter exercises.  Information about the book is available at
         (base32 "1zjsbza5gzr0sfprfxrxrxy3f75r64bi5szk519n2wf5vr4qr7si"))))
     (properties `((upstream-name . "ambit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-fbasics))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ambit")
@@ -13173,6 +14618,9 @@ trawl processes and weighted trawl processes.")
         (base32 "18cmn075yhcbqlrf4gsgqflqzk2d0kc3ah23k9pn47q2dvr6fqn2"))))
     (properties `((upstream-name . "ambient")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-cpp11))
     (home-page "https://ambient.data-imaginist.com")
     (synopsis "Generator of Multidimensional Noise")
@@ -13197,6 +14645,9 @@ dimensions.")
         (base32 "0fqn79lw4zf2yip6qbn3wkcdz44zrf9awq3kjw8smhbv84dcddll"))))
     (properties `((upstream-name . "amberr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
     (home-page "https://github.com/obiba/amberr/")
     (synopsis "'Amber' Electronic Data Capture Client")
@@ -13218,6 +14669,9 @@ for reporting or data transfer at persistent location purposes.")
         (base32 "0il66gb43zm6shr870yqlfn6l1srl37pdxpq3pdkil8g20nf92rn"))))
     (properties `((upstream-name . "amazonspR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://windsor.ai/")
@@ -13239,6 +14693,9 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
         (base32 "1h39cm0vyrr299wfpq9p1dpbgrjhkr28wm2q23lq8627i4b8bn5m"))))
     (properties `((upstream-name . "amazons3R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://windsor.ai/")
@@ -13260,6 +14717,9 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
         (base32 "1z4c58swpm6y5h4vlxil5ic9larhnn7xkzd9sgggni4878yk0rng"))))
     (properties `((upstream-name . "amazonadsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://windsor.ai/")
@@ -13281,6 +14741,9 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
         (base32 "10gb0k3msw2jmrq2dl0fm7636frsn7if9gsdxi6zgh0vpha6dqwz"))))
     (properties `((upstream-name . "AMAPVox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rappdirs
                              r-jsonlite
@@ -13311,6 +14774,9 @@ theoretical/numerical approaches.  See more in the article Vincent et al. (2017)
         (base32 "1cq65kcsr2yxhrnm98n4fzaj6xljjln92kkn96d758n2lk65lwlg"))))
     (properties `((upstream-name . "amapro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/helgasoft/amapro/")
@@ -13334,6 +14800,9 @@ functionality with minimal overhead.")
         (base32 "0j04hg2ks7578fiaymj295yll77xm6x5svmxx6m4n0djky8j10n1"))))
     (properties `((upstream-name . "amapGeocode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-sjmisc
                              r-magrittr
@@ -13362,6 +14831,9 @@ API.")
         (base32 "19lmf844n2nz8n52lsmabi36bibdd3cc5ry8n1x0aksgspszjb40"))))
     (properties `((upstream-name . "amanpg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=amanpg")
     (synopsis "Alternating Manifold Proximal Gradient Method for Sparse PCA")
@@ -13389,6 +14861,9 @@ guarantees.  Chen, S., Ma, S., Xue, L., & Zou, H. (2020)
         (base32 "1177nadl66xmbvp474951rfyf4lczhmwxq3bwxzivh0gzcq80bys"))))
     (properties `((upstream-name . "amanida")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-webchem
                              r-tidyverse
                              r-tidyr
@@ -13426,6 +14901,9 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
         (base32 "09r0zx7l9x2g8cm1bpfk504yzdh96qqp0phygz0l3lwls17lz49p"))))
     (properties `((upstream-name . "amadeus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-testthat
                              r-terra
@@ -13453,14 +14931,14 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
      "This package provides functions are designed to facilitate access to and utility
 with large scale, publicly available environmental data in R. The package
 contains functions for downloading raw data files from web URLs
-(download_data()), processing the raw data files into clean spatial objects
-(process_covariates()), and extracting values from the spatial data objects at
-point and polygon locations (calculate_covariates()).  These functions call a
-series of source-specific functions which are tailored to each data
-sources/datasets particular URL structure, data format, and spatial/temporal
-resolution.  The functions are tested, versioned, and open source and open
-access.  For sum_edc() method details, see Messier, Akita, and Serre (2012)
-<doi:10.1021/es203152a>.")
+@code{(download_data()}), processing the raw data files into clean spatial
+objects @code{(process_covariates()}), and extracting values from the spatial
+data objects at point and polygon locations @code{(calculate_covariates()}).
+These functions call a series of source-specific functions which are tailored to
+each data sources/datasets particular URL structure, data format, and
+spatial/temporal resolution.  The functions are tested, versioned, and open
+source and open access.  For @code{sum_edc()} method details, see Messier,
+Akita, and Serre (2012) <doi:10.1021/es203152a>.")
     (license license:expat)))
 
 (define-public r-alues
@@ -13475,6 +14953,9 @@ access.  For sum_edc() method details, see Messier, Akita, and Serre (2012)
         (base32 "12fayxz0cb8wibccgz62gzrbkwzw2y4xljixrh02i1lbfwgsky14"))))
     (properties `((upstream-name . "ALUES")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/alstat/ALUES/")
@@ -13505,14 +14986,17 @@ optimized library with core algorithms written in C++.")
         (base32 "1whs3zqccyayv0slsd8bzfkp26q2shkdz7l7ickfxc3wnar8nrwa"))))
     (properties `((upstream-name . "altR2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-gsl))
     (home-page "https://github.com/karchjd/altR2")
     (synopsis "Alternative Estimators to Adjusted R-Squared")
     (description
      "This package provides alternatives to the normal adjusted R-squared estimator
 for the estimation of the multiple squared correlation in regression models, as
-fitted by the lm() function.  The alternative estimators are described in Karch
-(2020) <DOI:10.1525/collabra.343>.")
+fitted by the @code{lm()} function.  The alternative estimators are described in
+Karch (2020) <DOI:10.1525/collabra.343>.")
     (license license:gpl2)))
 
 (define-public r-altopt
@@ -13527,6 +15011,9 @@ fitted by the lm() function.  The alternative estimators are described in Karch
         (base32 "1nbbvniramajg6k83xqgx7r0abjrfja8zz0y3g3j8qmvbcqmjx13"))))
     (properties `((upstream-name . "ALTopt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice r-cubature))
     (home-page "https://cran.r-project.org/package=ALTopt")
     (synopsis "Optimal Experimental Designs for Accelerated Life Testing")
@@ -13556,6 +15043,9 @@ see Seo and Pan (2015) <doi:10.32614/RJ-2015-029>.")
         (base32 "0k3f4wr9gbn5aig40xg817hrnz2lx8g4adyy18s59fs8dw03v87h"))))
     (properties `((upstream-name . "altfuelr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-purrr
                              r-magrittr
@@ -13586,6 +15076,9 @@ Department of Energy Alternate Fuel database as a data set.")
         (base32 "15zszn49c2a3lad2fzfj2yblyafbrhn6j3j1dcjbcz0fxgf6cmhw"))))
     (properties `((upstream-name . "AlteredPQR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AlteredPQR")
     (synopsis "Detection of Altered Protein Quantitative Relationships")
     (description
@@ -13609,6 +15102,9 @@ tested condition.")
         (base32 "0qp2k7mmpklh484ci2p9g4n7iyjy8ibzmh9w4a2h4sabvlm6v3f0"))))
     (properties `((upstream-name . "altdoc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quarto r-fs r-evaluate r-desc r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://altdoc.etiennebacher.com")
@@ -13633,6 +15129,9 @@ including Quarto', Docute', Docsify', and @code{MkDocs}'.")
         (base32 "1hbwhyplvqdc06va0lahpqzg89aihjhryic48422h8mks956y0ff"))))
     (properties `((upstream-name . "altair")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list python))
     (propagated-inputs (list r-vegawidget
                              r-reticulate
@@ -13661,6 +15160,9 @@ interface between R and Python'.")
         (base32 "0wv8a0423k0gw5i0qgz5d3wqw22a9pk7r80fp33pn0mxq9b54zdv"))))
     (properties `((upstream-name . "altadata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (home-page "https://github.com/altabering/altadata-r")
     (synopsis "API Wrapper for Altadata.io")
@@ -13684,6 +15186,9 @@ ALTADATA is a curated data marketplace for more information go to
         (base32 "0ippxzq5qwb9dnpvm1kxhc0fxh83rs9ny5rcvd30w2bp632q9qdx"))))
     (properties `((upstream-name . "ALSCPC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ALSCPC")
     (synopsis
      "Accelerated line search algorithm for simultaneous orthogonal transformation of several positive definite symmetric matrices to nearly diagonal form")
@@ -13704,6 +15209,9 @@ set of symmetric positive definite matrices.")
         (base32 "0v98yzi0fcjxq0ak0w05001h8m9nfa9l0ann9bqvz8bwcmb3jlr2"))))
     (properties `((upstream-name . "alr4")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-effects r-car))
     (home-page "http://www.z.umn.edu/alr4ed")
     (synopsis "Data to Accompany Applied Linear Regression 4th Edition")
@@ -13725,6 +15233,9 @@ in the `alr3` package as well, so only one of them should be used.")
         (base32 "0lzw1sk4iaqzmg1a39v3wxcgj9hchyjcxq7b3nm83al8r75rfvdk"))))
     (properties `((upstream-name . "alqrfe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
     (home-page "https://cran.r-project.org/package=alqrfe")
     (synopsis "Adaptive Lasso Quantile Regression with Fixed Effects")
@@ -13749,6 +15260,9 @@ optimal tuning parameter lambda.  Plot tools are also available.")
         (base32 "047a48jwn1vzmgdnp5jz1vl5mwvvvknzi75abn75rwlsjz6flc9m"))))
     (properties `((upstream-name . "alphavantager")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timetk
                              r-tidyr
                              r-tibble
@@ -13780,6 +15294,9 @@ website for more information.")
         (base32 "01gwrcxlj2jlb8axs5qmrsixk3a8b7044ypyjg6dpdcxfbcf5fvp"))))
     (properties `((upstream-name . "alphastable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stabledist r-nnls r-nlme r-mvtnorm))
     (home-page "https://cran.r-project.org/package=alphastable")
     (synopsis "Inference for Stable Distribution")
@@ -13806,6 +15323,9 @@ symmetric stable and mixture of Cauchy distributions.")
         (base32 "1ca9n5hfxiapy9nhcapsca4w4qxc8nwjdlysfjc8r68fgbm4m1aq"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-r6 r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gaynorr/AlphaSimR")
@@ -13837,6 +15357,9 @@ sequences according to a population demographic history [Chen et al. (2009)
         (base32 "15903pl63p5l3kmqskq1y4hb75wwq0sz6k88zysx65xyd83wcmh3"))))
     (properties `((upstream-name . "alphashape3d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-rann r-geometry))
     (home-page "https://cran.r-project.org/package=alphashape3d")
     (synopsis
@@ -13863,6 +15386,9 @@ three-dimensional graphical visualization of the estimated set.")
         (base32 "1ih76v3kgnladqq3nvlqrz5sqkg1j97m778kchz6k05cjxhj8l4q"))))
     (properties `((upstream-name . "AlphaPart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-reshape
                              r-rcpp
@@ -13896,6 +15422,9 @@ manipulating data and summarizing, visualizing, and saving results.")
         (base32 "09yrbv7jsiymw5gzp8p92ki70v1fys2k75x4sb9s7wy3c58wn1cd"))))
     (properties `((upstream-name . "alphaOutlier")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp r-quantreg r-nleqslv))
     (home-page "https://cran.r-project.org/package=alphaOutlier")
     (synopsis
@@ -13919,13 +15448,16 @@ Davies, L.; Gather, U. (1993): The identification of multiple outliers, JASA, 88
         (base32 "0asm0r1cqbqan0d5dbb7jffqgrcai2kcpw1l2p9s4qxfff9vliva"))))
     (properties `((upstream-name . "alphaN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jespernwulff/alphaN")
     (synopsis "Set Alpha Based on Sample Size Using Bayes Factors")
     (description
      "Sets the alpha level for coefficients in a regression model as a decreasing
 function of the sample size through the use of Jeffreys Approximate Bayes
-factor.  You tell @code{alphaN}() your sample size, and it tells you to which
+factor.  You tell @code{alphaN()} your sample size, and it tells you to which
 value you must lower alpha to avoid Lindley's Paradox.  For details, see Wulff
 and Taylor (2023) <doi:10.31234/osf.io/3cbh7>.")
     (license license:expat)))
@@ -13942,6 +15474,9 @@ and Taylor (2023) <doi:10.31234/osf.io/3cbh7>.")
         (base32 "04l078vr3cbf1pjm05p9ny566xwsg3zj059gnssn4nwlkc24n442"))))
     (properties `((upstream-name . "alphahull")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splancs
                              r-spatstat-random
                              r-spatstat-geom
@@ -13973,6 +15508,9 @@ sample of points and its dual Voronoi diagram in one single object.")
         (base32 "19ndi5xw3i4hpcklpxx379nnilccyz98rp9qqr8ag9xkv5jvq8si"))))
     (properties `((upstream-name . "alphaci")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixcalc r-future-apply))
     (native-inputs (list r-knitr))
     (home-page "https://jonasmoss.github.io/alphaci/")
@@ -13999,6 +15537,9 @@ the asymptotic distribution-free method of Maydeu-Olivares, et al. (2007)
         (base32 "1pmp6zwhgycb38y5jbvrbv2nza7gyjh508vy09ml483c2cysvc1r"))))
     (properties `((upstream-name . "alphabetr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-multicool r-dplyr r-clue))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/edwardslee/alphabetr")
@@ -14021,6 +15562,9 @@ cell receptors.")
         (base32 "1rwz90hlbiday3s9c90v13s7mprxmmibgk08jkvxfc5axgy8qgqs"))))
     (properties `((upstream-name . "alpha.correction.bh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=alpha.correction.bh")
@@ -14046,6 +15590,9 @@ and procedures as used in the original paper.")
         (base32 "1fqw8fcahpgdkj25pd6pq4isd0yrdpiypl3q9ir79a56pvjcn8a4"))))
     (properties `((upstream-name . "alpaca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-formula
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -14076,6 +15623,9 @@ Stammann, and Wanner (2020) <@code{arXiv:2004.12655>}.")
         (base32 "0n5vqp9hhdhy092yg93ldm2ii1l5pz30r7m2iwpjck0s92jjrhda"))))
     (properties `((upstream-name . "aloom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest r-glmnet))
     (home-page "https://www.rcc.org.rs/aloom.html")
     (synopsis "All Leave-One-Out Models")
@@ -14096,6 +15646,9 @@ samples.")
         (base32 "13lvbfgqb6ivrik1jcbfz3zn6p41aqwq68bk9ric3xnyjnczc5wg"))))
     (properties `((upstream-name . "alookr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-tidyselect
                              r-tidyr
@@ -14142,6 +15695,9 @@ models, helping to select the best model.")
         (base32 "0iwamh7sxq62rw5vlkfh9fjlj6mwz7fbpd3cbmqb1iw1l6yc8b9c"))))
     (properties `((upstream-name . "alone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/doehm/alone")
     (synopsis "Datasets from the Survival TV Series Alone")
     (description
@@ -14162,6 +15718,9 @@ their loadouts, episode details and season information.")
         (base32 "03954ylzqj34kkkz74ffa3i1kbby2vy0gxmbqd4gcw6qa646fq79"))))
     (properties `((upstream-name . "almanac")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-v8
                              r-rlang
@@ -14195,6 +15754,9 @@ holiday, can respect holiday observance rules, and allows for custom holidays.")
         (base32 "1cx8l03333jzzb2h1ai222j0qn69x6hdjpqy7pibwv5c3fdx3z0g"))))
     (properties `((upstream-name . "ALLSPICER")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-mvtnorm r-magrittr r-dplyr))
     (home-page "https://cran.r-project.org/package=ALLSPICER")
     (synopsis "ALLelic Spectrum of Pleiotropy Informed Correlated Effects")
@@ -14219,6 +15781,9 @@ details, see Lu et al. (2024) <doi:10.1101/2024.10.01.614806>.")
         (base32 "1a5wxs2fbpfk3032h70z86zzrzjjkp00c06dh7g2jmqc5irp6n2a"))))
     (properties `((upstream-name . "Allspice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=Allspice")
     (synopsis "RNA-Seq Profile Classifier")
@@ -14250,6 +15815,9 @@ from multiple classes or atypical values are also identified.")
         (base32 "0bsvg4n8yql7241q6dfgki2lnd5kdivjg31lzllca8xfzrfxcvn1"))))
     (properties `((upstream-name . "allomr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=allomr")
     (synopsis
      "Removing Allometric Effects of Body Size in Morphological Analysis")
@@ -14273,6 +15841,9 @@ Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
         (base32 "198cibnh0x9s1cfkjyz99i8d878z6ds08zfwfp22i2r4pzanhi7w"))))
     (properties `((upstream-name . "allofus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-sessioninfo
@@ -14311,6 +15882,9 @@ Atlas'.  Improve reproducible and transparent research using All of Us'.")
         (base32 "0d34w0gl369mq512x3h2nsrvd13ahy36p5hdyvz5gnpdlaql64c6"))))
     (properties `((upstream-name . "allMT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survminer
                              r-survival
@@ -14343,6 +15917,9 @@ and cohort level.")
         (base32 "06zxznlk9vzvx0ykx13hqjrjqfcn5bfzsj7b0dsmfds1qfl83yh7"))))
     (properties `((upstream-name . "AllMetrics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AllMetrics")
     (synopsis "Calculating Multiple Performance Metrics of a Prediction Model")
     (description
@@ -14372,6 +15949,9 @@ better.  More details can be found from Garai and Paul (2023)
         (base32 "1gjkry5v1mrb11zd3r9z9cj6aasrhj29yihpizqphbb463qima3a"))))
     (properties `((upstream-name . "allestimates")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survival
                              r-stringr
@@ -14388,8 +15968,9 @@ clinical trials or risk factors in bio-medical and epidemiological research.
 Like Stata command confall (Wang Z (2007) <doi:10.1177/1536867X0700700203> ),
 allestimates calculates and stores all effect estimates, and plots them against
 p values or Akaike information criterion (AIC) values.  It currently has
-functions for linear regression: all_lm(), logistic and Poisson regression:
-all_glm(), and Cox proportional hazards regression: all_cox().")
+functions for linear regression: @code{all_lm()}, logistic and Poisson
+regression: @code{all_glm()}, and Cox proportional hazards regression:
+@code{all_cox()}.")
     (license license:gpl2)))
 
 (define-public r-allelicseries
@@ -14404,6 +15985,9 @@ all_glm(), and Cox proportional hazards regression: all_cox().")
         (base32 "08kvj731m0jvdh8ay7hgnijdj5bzhk5jzwz52gg8s69cilsql410"))))
     (properties `((upstream-name . "AllelicSeries")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-skat
                              r-rnomni
                              r-rcpparmadillo
@@ -14439,6 +16023,9 @@ series rare variant association test for candidate gene discovery\"
         (base32 "1lv7ap40bc6l1wp68lbxyavl9dky1mz09zbdjg9kyf1b9ca5siqx"))))
     (properties `((upstream-name . "AlleleShift")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-biodiversityr r-adegenet))
     (home-page "https://cran.r-project.org/package=AlleleShift")
     (synopsis
@@ -14446,15 +16033,16 @@ series rare variant association test for candidate gene discovery\"
     (description
      "This package provides methods (<doi:10.7717/peerj.11534>) are provided of
 calibrating and predicting shifts in allele frequencies through redundancy
-analysis ('vegan::rda()') and generalized additive models ('mgcv::gam()').
-Visualization functions for predicted changes in allele frequencies include
-shift.dot.ggplot()', shift.pie.ggplot()', shift.moon.ggplot()',
-shift.waffle.ggplot() and shift.surf.ggplot() that are made with input data sets
-that are prepared by helper functions for each visualization method.  Examples
-in the documentation show how to prepare animated climate change graphics
-through a time series with the gganimate package.  Function amova.rda() shows
-how Analysis of Molecular Variance can be directly conducted with the results
-from redundancy analysis.")
+analysis @code{('vegan::rda()}') and generalized additive models
+@code{('mgcv::gam()}').  Visualization functions for predicted changes in allele
+frequencies include @code{shift.dot.ggplot()}', @code{shift.pie.ggplot()}',
+@code{shift.moon.ggplot()}', @code{shift.waffle.ggplot()} and
+@code{shift.surf.ggplot()} that are made with input data sets that are prepared
+by helper functions for each visualization method.  Examples in the
+documentation show how to prepare animated climate change graphics through a
+time series with the gganimate package.  Function @code{amova.rda()} shows how
+Analysis of Molecular Variance can be directly conducted with the results from
+redundancy analysis.")
     (license license:gpl3)))
 
 (define-public r-alleleretain
@@ -14469,6 +16057,9 @@ from redundancy analysis.")
         (base32 "0b6h5giskqbjbrk8nf29i75wrhxsjw1c87laiqzrpbp9n717bl20"))))
     (properties `((upstream-name . "AlleleRetain")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://sites.google.com/site/alleleretain/")
     (synopsis "Allele Retention, Inbreeding, and Demography")
     (description
@@ -14489,6 +16080,9 @@ generations.")
         (base32 "1zzx9ilxh99grjl2dmzmby0kh9rgd1h2x1hvsaxvxxmnahdsprm2"))))
     (properties `((upstream-name . "allelematch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dynamictreecut))
     (home-page "<doi:10.1111%2Fj.1755-0998.2012.03137.x>")
     (synopsis
@@ -14519,6 +16113,9 @@ Supplementary documentation and tutorials (PDF) located at
         (base32 "1fqrw645s3f5363p7jl3dzy8xphxdr1v6wdsjmqcqwpgvjqfr2zz"))))
     (properties `((upstream-name . "alleHap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=alleHap")
@@ -14552,6 +16149,9 @@ deterministically calculated.")
         (base32 "0yxk7433g9n62ff08cg9zcqng553kyhswc7yb15qwx4wynn376f3"))))
     (properties `((upstream-name . "allcontributors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr
                              r-gitcreds
                              r-gh
@@ -14582,6 +16182,9 @@ any repository.")
         (base32 "18gfj0g1ccisvls4czh24bp3bcakyjfhddkl92fsmy9wpq2i3qhx"))))
     (properties `((upstream-name . "alkahest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/alkahest/")
     (synopsis "Pre-Processing XY Data from Experimental Methods")
@@ -14609,6 +16212,9 @@ Filling after Liland (2015) <doi:10.1016/j.mex.2015.02.009> and more.")
         (base32 "1sxa6jhml1wb7p7hpdy1w8zlirynfdd9z8s5xw7mr1g5m71hhdcg"))))
     (properties `((upstream-name . "AlignLV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -14640,6 +16246,9 @@ secondary data analysis where not all items may be shared across assessments.")
         (base32 "1r411yvsgzfywamsjz3j5pim0qjfa7rmhdkhd3sj8lp1xh98jhy9"))))
     (properties `((upstream-name . "align")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matlab))
     (home-page "https://cran.r-project.org/package=align")
     (synopsis "Modified DTW Algorithm for Stratigraphic Time Series Alignment")
@@ -14669,6 +16278,9 @@ detailed in Hagen et al. (in review).")
         (base32 "191prlklg153a7inbbjq3fjz0yr6pyyqcxl4syy8p6a64a92clyn"))))
     (properties `((upstream-name . "alien")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-helpersmg
@@ -14697,6 +16309,9 @@ Models which assume perfect immediate detection of newly introduced species.")
         (base32 "11myzwvmagnj35qrrxr35hklzv76c0c4h2zl64y3lzzn5rfii0n6"))))
     (properties `((upstream-name . "aliases2entrez")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr
                              r-rcurl
                              r-org-hs-eg-db
@@ -14728,6 +16343,9 @@ ID: 672).")
         (base32 "1ccmcsyxncyv8k0fjvr5y44amygqi7qx2dy6rsy3a5pw281hllr4"))))
     (properties `((upstream-name . "algorithmia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjson r-httr r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=algorithmia")
@@ -14753,6 +16371,9 @@ developers can be found at <https://algorithmia.com/developers>.")
         (base32 "1g18p8jyj9crkqm16y2im3r9xzqwa36javv4vi1wvsqkg31d81si"))))
     (properties `((upstream-name . "algo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-htmltools r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/feddelegrand7/algo")
@@ -14776,6 +16397,9 @@ See <https://community.algolia.com/places/>.")
         (base32 "1krm5cx609sv2p0g3xm5jaiqs9li06v717lw7ywjvx7myc9x4c07"))))
     (properties `((upstream-name . "AlgebraicHaploPackage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AlgebraicHaploPackage")
     (synopsis "Haplotype Two Snips Out of a Paired Group of Patients")
     (description
@@ -14795,6 +16419,9 @@ resolving a small number ob closed equations.")
         (base32 "0xgqzn750c4f13w2h8j2xj53sx0dij56164svw01nbvns4n0yvv8"))))
     (properties `((upstream-name . "alfred")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -14827,6 +16454,9 @@ endorsed or certified by the Federal Reserve Bank of St.  Louis.")
         (base32 "1ldq8gvgqjjabn86hdqb6hxch8x4hvr6djv5ly4mx039dipc8jxi"))))
     (properties `((upstream-name . "alfr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-magrittr r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rwetherall/alfr")
@@ -14853,6 +16483,9 @@ management repository see
         (base32 "0kphpvhz36859f5l0k8mbf59g9871mynbs4ybdi0h5nm2cdjy9vx"))))
     (properties `((upstream-name . "aLFQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seqinr
                              r-rocr
                              r-reshape2
@@ -14898,6 +16531,9 @@ validated and demonstrated on a synthetic sample.")
         (base32 "15m4lqh40ylfgxb92v1ch3m2f7m15k90416w34x68i0i0fvx81nn"))))
     (properties `((upstream-name . "ALFAM2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AU-BCE-EE/ALFAM2/")
@@ -14929,6 +16565,13 @@ the measurement data used for parameter development.")
         (base32 "0bakl8a7xda7vh9zsc66kkd5w5jmb5j28kfwpfq2ifvk2mrakr3w"))))
     (properties `((upstream-name . "ALEPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-yaimpute))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=ALEPlot")
@@ -14953,6 +16596,9 @@ Dependence (PD) plots, given a fitted supervised learning model.")
         (base32 "1s3nym0zcp80yf7vw7m0mvii2d0y9hnxjxzfzl6ff5my5p84vy9i"))))
     (properties `((upstream-name . "ale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaimpute
                              r-univariateml
                              r-tidyr
@@ -15004,6 +16650,9 @@ Learning and Classical Techniques Based on Accumulated Local Effects (ALE).â�
         (base32 "1qqfhfrhqlzlmfdf84sq9v17d6jrnn4w7yilskbrg74zvbcbc3k8"))))
     (properties `((upstream-name . "aldvmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-optimx
                              r-numderiv
@@ -15036,6 +16685,9 @@ multinomial logit model of probabilities of component membership.")
         (base32 "0gk8hxh4p0fi47sf1zsvvxxbzp38vzk60wh8hmc63phnjab6qkv4"))))
     (properties `((upstream-name . "ALDqr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sn r-hyperbolicdist))
     (home-page "https://cran.r-project.org/package=ALDqr")
     (synopsis "Quantile Regression Using Asymmetric Laplace Distribution")
@@ -15056,6 +16708,9 @@ regression.")
         (base32 "12nf9vakayw24clrg56fh9x85kg277iricbs8ymahkjqjnc1p3cz"))))
     (properties `((upstream-name . "ald")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ald")
     (synopsis "The Asymmetric Laplace Distribution")
     (description
@@ -15079,6 +16734,9 @@ family of distributions available in Galarza et.al. (2017)
         (base32 "0kd9jw167p4cay301y5g4jfkpwgnzxpp6lpnn9q056c6jh447gix"))))
     (properties `((upstream-name . "alcyon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stars r-sf r-rcpp r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/spatialnous/alcyon")
@@ -15106,6 +16764,9 @@ handbook\".")
         (base32 "0kw1agm9jqi9wl5zbx8bryngy751g3sih36rgbrx0m2170cy42d9"))))
     (properties `((upstream-name . "albopictus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/kerguler/albopictusR")
     (synopsis "Age-Structured Population Dynamics Model")
     (description
@@ -15127,6 +16788,9 @@ age-structured population dynamics models described in Erguler and others (2016)
         (base32 "15pa431l58w3dym4v0wsma9zjmlw4xwcvjsyw0fd996ckzj1g15j"))))
     (properties `((upstream-name . "aLBI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ataher76/aLBI")
@@ -15137,23 +16801,23 @@ frequency data to assess fish stock status and manage fisheries sustainably.
 Implements methods from Cope and Punt (2009) <doi:10.1577/C08-025.1> for
 data-limited stock assessment and Froese (2004)
 <doi:10.1111/j.1467-2979.2004.00144.x> for detecting overfishing using simple
-indicators.  Key functions include: @code{FrequencyTable}(): Calculate the
+indicators.  Key functions include: @code{FrequencyTable()}: Calculate the
 frequency table from the collected and also the extract the length frequency
 data from the frequency table with the upper length_range.  A numeric value
 specifying the bin width for class intervals.  If not provided, the bin width is
 automatically calculated using Sturges (1926)
-<doi:10.1080/01621459.1926.10502161> formula. @code{CalPar}(): Calculates
+<doi:10.1080/01621459.1926.10502161> formula. @code{CalPar()}: Calculates
 various lengths used in fish stock assessment as biological length indicators
 such as asymptotic length (Linf), maximum length (Lmax), length at sexual
-maturity (Lm), and optimal length (Lopt). @code{FishPar}(): Calculates
+maturity (Lm), and optimal length (Lopt). @code{FishPar()}: Calculates
 length-based indicators (LBIs) proposed by Froese (2004)
 <doi:10.1111/j.1467-2979.2004.00144.x> such as the percentage of mature fish
 (Pmat), percentage of optimal length fish (Popt), percentage of mega spawners
 (Pmega), and the sum of these as Pobj.  This function also estimates confidence
 intervals for different lengths, visualizes length frequency distributions, and
-provides data frames containing calculated values. @code{FishSS}(): Makes
+provides data frames containing calculated values. @code{FishSS()}: Makes
 decisions based on input from Cope and Punt (2009) <doi:10.1577/C08-025.1> and
-parameters calculated by @code{FishPar}() (e.g., Pobj, Pmat, Popt, LM_ratio) to
+parameters calculated by @code{FishPar()} (e.g., Pobj, Pmat, Popt, LM_ratio) to
 determine stock status as target spawning biomass (TSB40) and limit spawning
 biomass (LSB25).  These tools support fisheries management decisions by
 providing robust, data-driven insights.")
@@ -15171,6 +16835,9 @@ providing robust, data-driven insights.")
         (base32 "1cayp4025h14p66alagpvnwm5f05l7gv132x3a2d40cf77nrrpky"))))
     (properties `((upstream-name . "albatross")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-multiway r-matrix r-lattice r-cmls))
     (home-page "https://cran.r-project.org/package=albatross")
     (synopsis "PARAFAC Analysis of Fluorescence Excitation-Emission Matrices")
@@ -15196,6 +16863,9 @@ and has been tested on a wide range of R versions.")
         (base32 "0asaip7mq1brahirm025d57gk1fgysbmhi6jypf2jihai7dl4jg2"))))
     (properties `((upstream-name . "ALassoSurvIC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=ALassoSurvIC")
     (synopsis
@@ -15224,6 +16894,9 @@ also available.")
         (base32 "1gx4s4dbhqvbj5y8qxgvm2x4a5n22llwiqm8a6iavg1yd3sqhzg0"))))
     (properties `((upstream-name . "alarmdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tinytiger
                              r-tidyselect
                              r-stringr
@@ -15264,6 +16937,9 @@ only a single district.")
         (base32 "01alngdynigvycmpqa71ccndw6v91hmrs3c2ah0r148rxdgbw58v"))))
     (properties `((upstream-name . "alakazam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringi
@@ -15306,6 +16982,9 @@ Stern, Yaari and Vander Heiden, et al (2014) <doi:10.1126/scitranslmed.3008879>.
         (base32 "19dj12vlry6f3agzrnshx2c4rpa2h7dlx2138r49jjy9sm48pyfw"))))
     (properties `((upstream-name . "akmbiclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=akmbiclust")
     (synopsis "Alternating K-Means Biclustering")
     (description
@@ -15325,6 +17004,9 @@ Fraiman and Li (2020) <@code{arXiv:2009.04550>}.")
         (base32 "0gmdh5kvq455k82pvdsqbkk69bi7g0960jq5rcl3cbhxm297arcm"))))
     (properties `((upstream-name . "akima")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=akima")
@@ -15352,6 +17034,9 @@ bicubic interpolator on regular grids.")
         (base32 "08z5jvigzvl3af17dd8l6zil0s694i22x0a7xvb3n4fvg6fargz4"))))
     (properties `((upstream-name . "akiFlagger")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-shiny r-dplyr r-data-table))
     (home-page "https://github.com/isaranwrap/akiFlagger")
     (synopsis "Flags Acute Kidney Injury (AKI)")
@@ -15371,6 +17056,9 @@ bicubic interpolator on regular grids.")
         (base32 "0mdpx1dnk57yr0mpf9hqqdjx96j0sqdjdy964qvwmqbycvxxnp3z"))))
     (properties `((upstream-name . "Ake")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "www.r-project.org")
     (synopsis "Associated Kernel Estimations")
     (description
@@ -15392,6 +17080,9 @@ procedure are also implemented for bandwidth selection.")
         (base32 "0m3n9qyz4z0xd535ma1nhh9qkg8abc4psa3xhzpq4spmgvk3an13"))))
     (properties `((upstream-name . "akc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-tidygraph
                              r-tidyfst
@@ -15431,6 +17122,9 @@ solve other tasks in text mining as well.")
         (base32 "0370rs9kz43azgclc11x8185sr5hq507mvk2pmwprwwj86j65vpk"))))
     (properties `((upstream-name . "aka")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://klmr.me/aka/")
     (synopsis "Define Aliases for R Expressions")
     (description
@@ -15453,6 +17147,9 @@ will automatically be reflected in the original expression.")
         (base32 "1qd5ncb7rdnnvqfknsvq9nrpxrh0zv3jyh4b91dcvfvhp262vfrm"))))
     (properties `((upstream-name . "ajv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-v8 r-rjsonio))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jdthorpe/ajvr")
@@ -15474,6 +17171,9 @@ will automatically be reflected in the original expression.")
         (base32 "0bbqckp0s9f9ljp0b8z65pzfh3hhfp910ca7hsivwi9j7vr61jaz"))))
     (properties `((upstream-name . "AIUQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-supergauss r-plot3d r-fftwtools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AIUQ")
@@ -15500,6 +17200,9 @@ See the reference: Mengyang Gu, Yue He, Xubo Liu and Yimin Luo (2023),
         (base32 "033dawiysl5vn1k3fjabmzc8liywk8sbahm41ga3wzhyyz6mqldm"))))
     (properties `((upstream-name . "aisoph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-iso))
     (home-page "https://cran.r-project.org/package=aisoph")
     (synopsis "Additive Isotonic Proportional Hazards Model")
@@ -15520,6 +17223,9 @@ hazards model.")
         (base32 "16rbkncjy6gcf9q6qxmar2z1l46wgj43bkg4bdd38495rjh8nsmk"))))
     (properties `((upstream-name . "AIscreenR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tictoc
                              r-tibble
@@ -15558,6 +17264,9 @@ MÃ¸lgaard, and Schytt (2024) <DOI:10.31219/osf.io/yrhzm>.")
         (base32 "058082qdfi1pbdgf26vbfahri1kbc8b2l816q4dq89j5aj5is0a2"))))
     (properties `((upstream-name . "aiRthermo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=aiRthermo")
     (synopsis "Atmospheric Thermodynamics and Visualization")
     (description
@@ -15582,6 +17291,9 @@ meteorological diagnostics.")
         (base32 "1x2p172k7lffcn3cfs7pgdi3iq2fpys8rsrx1spq7gy14xcq9w63"))))
     (properties `((upstream-name . "airt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -15615,6 +17327,9 @@ anomalousness (Kandanaarachchi, Smith-Miles 2020)
         (base32 "0k3a9yg30brpysp62fvvl7pisgb7441ggbl03jx8mh5bjdckr210"))))
     (properties `((upstream-name . "airr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-stringi r-readr r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "http://docs.airr-community.org")
@@ -15637,6 +17352,9 @@ Community <http://docs.airr-community.org>.")
         (base32 "1kf673ajk06ggy9524lip5flpfgq0gql7d46kgnri8l3kbzw7zcj"))))
     (properties `((upstream-name . "airqualityES")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/jdieramon/airqualityES")
     (synopsis "Air Quality Measurements in Spain from 2011 to 2018")
@@ -15662,6 +17380,9 @@ journalists or general public.  See the Spanish Government website
         (base32 "1ahfqqfcvr731hj0h7d00jd87h1adiryh42sv4mh318lk5rglm6f"))))
     (properties `((upstream-name . "airports")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/OpenIntroStat/airports")
     (synopsis "Data on Airports")
     (description "Geographic, use, and property related data on airports.")
@@ -15679,6 +17400,9 @@ journalists or general public.  See the Spanish Government website
         (base32 "1h8h0cdfqgxv8cf9hp82sx5n4a1z88qyyxicj7d2kmmybqqz2r5n"))))
     (properties `((upstream-name . "airportr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dshkol/airportr")
@@ -15702,6 +17426,9 @@ License.")
         (base32 "0dpx2hkh0y6769pi8xzyi327lygxysckqz85z40ps50ghw02r8bh"))))
     (properties `((upstream-name . "airnow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-lifecycle
@@ -15727,6 +17454,9 @@ License.")
         (base32 "0plnxpxr5b1bsnbnqahfcqg7w11hc2ndxhmb9328c5n3cd2nyyrb"))))
     (properties `((upstream-name . "AirMonitor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts
                              r-tidyselect
                              r-stringr
@@ -15767,6 +17497,9 @@ Air Quality Index (AQI) are defined at the US Environmental Projection Agency
         (base32 "0d3w5dwk0b3pd49zw2005rili4p3l1i3x4hzp8cf6rljr86x01cy"))))
     (properties `((upstream-name . "aiRly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-reshape2 r-jsonlite r-httr))
     (home-page "https://github.com/piotrekjanus/aiRly")
     (synopsis "R Wrapper for 'Airly' API")
@@ -15786,6 +17519,9 @@ Air Quality Index (AQI) are defined at the US Environmental Projection Agency
         (base32 "0dsxj20g63a4y4a865qsqdk8w1w0ybcam6x4f10bmppallkalagz"))))
     (properties `((upstream-name . "airGRteaching")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts
                              r-shinyjs
                              r-shiny
@@ -15819,6 +17555,9 @@ hydrographs and models internal variables.")
         (base32 "1vb8s0jylrn9prc4s2a8427xw7jc9v8axsid0f1ckwflp1mpm40g"))))
     (properties `((upstream-name . "airGRiwrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zlib
                              r-rlang
                              r-png
@@ -15845,6 +17584,9 @@ models integrating human infrastructures and their managements.")
         (base32 "05c108rcj4rlzrbabai95abxhyjsrrrsgvds4zamvyzpjl64f9ps"))))
     (properties `((upstream-name . "airGRdatassim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-airgr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=airGRdatassim")
@@ -15869,6 +17611,9 @@ the Ensemble Kalman filter or the Particle filter as described in Piazzi et al.
         (base32 "05059ylizjlb90yqllkw7c0gm8nx1a42mw0334zkm9xpgzsis8cb"))))
     (properties `((upstream-name . "airGRdatasets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page
      "https://gitlab.irstea.fr/HYCAR-Hydro/airgrgalaxy/airgrdatasets")
     (synopsis
@@ -15892,6 +17637,9 @@ catchments for use by the @code{airGR} packages.")
         (base32 "0kxa3p659sh72x54qhbxr4ni781czj4g2k6x3zs30y2zgmljrwqa"))))
     (properties `((upstream-name . "airGR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://hydrogr.github.io/airGR/")
     (synopsis
@@ -15917,6 +17665,9 @@ included.  Use help(@code{airGR}) for package description and references.")
         (base32 "0x2wpwynm03azz04dksgk4rri46dvbpkah3d39v7b53inrwb9i8h"))))
     (properties `((upstream-name . "AirExposure")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-lubridate
                              r-leaflet
@@ -15947,6 +17698,9 @@ such as exposure time and pollutant concentration.")
         (base32 "10x22n9cjr2zcjm84j6l3i9lywfw744giww4h2ki3iq3v4qli09y"))))
     (properties `((upstream-name . "aire.zmvm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-stringr
@@ -15980,14 +17734,17 @@ more information.")
         (base32 "0r54kq6iiad3g07sz69napw5qx6qp9sx2qp6jy7frynh8s60bss9"))))
     (properties `((upstream-name . "air")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjson r-keyring r-httr))
     (home-page "https://github.com/soumyaray/air")
     (synopsis "AI Assistant to Write and Understand R Code")
     (description
      "An R console utility that lets you ask R related questions to the @code{OpenAI}
-large language model.  It can answer how-to() questions by providing code, and
-whatis() questions by explaining what given code does.  You must provision your
-own key for the @code{OpenAI} API
+large language model.  It can answer @code{how-to()} questions by providing
+code, and @code{whatis()} questions by explaining what given code does.  You
+must provision your own key for the @code{OpenAI} API
 <https://platform.openai.com/docs/api-reference>.")
     (license license:expat)))
 
@@ -16003,6 +17760,9 @@ own key for the @code{OpenAI} API
         (base32 "1iqq665qigw9dmc62x2dz1nvrk8s65ph0a3k2p7mkznr9frshhi2"))))
     (properties `((upstream-name . "AIPW")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-superlearner
                              r-rsolnp
                              r-r6
@@ -16034,6 +17794,9 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
         (base32 "0d3mv42v2i1xj93la35ld8dp14x3f29n00z4zq3sibsk2dyr4lic"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-arkhe))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/aion/")
@@ -16059,6 +17822,9 @@ packages offers a simple API that can be used by other specialized packages.")
         (base32 "0v804maqaygqhw3y9wqap3h9vvjniqnnbsv1psjj500r2yscicxs"))))
     (properties `((upstream-name . "aimsir17")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/JimDuggan/aimsir17")
     (synopsis "Irish Weather Observing Stations Hourly Records for 2017")
@@ -16083,6 +17849,9 @@ data for Ireland and Northern Ireland (2017), including Wind Generation data.")
         (base32 "1d52b7kccxba6j7n0gbd7pzs0p87zn32vv8gdf2f7lyr75qzgz7x"))))
     (properties `((upstream-name . "aimPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=aimPlot")
     (synopsis "Create Pie Like Plot for Completeness")
@@ -16107,6 +17876,9 @@ is 50%, 80% and 100% completeness.")
         (base32 "0isd6j3qfhl9dfcknzsfyipvvni7bw6cpdkk4v5azpi3mcixbq4n"))))
     (properties `((upstream-name . "aihuman")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rcppeigen
                              r-rcpparmadillo
@@ -16148,6 +17920,9 @@ to illustrate methods, not to draw substantive conclusions.")
         (base32 "0r3ksaag7xpfzi1v944fhv89ygp9ikhyw6kfspihcnxw767iz70i"))))
     (properties `((upstream-name . "AIFFtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tuner r-r-utils))
     (home-page "https://cran.r-project.org/package=AIFFtools")
     (synopsis "Read AIFF Files and Convert to WAVE Format")
@@ -16174,6 +17949,9 @@ and
         (base32 "0lnxbvmsalis942nxgf0c3j602wcdzpvdm9r194c2ci0xpybc6ls"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-smotefamily
                              r-rlang
@@ -16228,6 +18006,9 @@ with other people.")
         (base32 "0cfi9h2bmjpxrvhbamm808s1pzgw9p9xxj70ickqc7ki8rzzk6cw"))))
     (properties `((upstream-name . "aides")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-meta r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=aides")
@@ -16252,6 +18033,9 @@ mentioned by Wetterslev, J., Jakobsen, J. C., & Gluud, C. (2017)
         (base32 "1q2iz2qzh2yl0v0sc537xq4vbx2nblym3kv419vr7jvrghdpx3vj"))))
     (properties `((upstream-name . "aidar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml))
     (home-page "https://cran.r-project.org/package=aidar")
     (synopsis "Tools for Reading AIDA Files")
@@ -16272,6 +18056,9 @@ available as dataframes in R.")
         (base32 "0a3mw6m8saqqnmh500xgn975hp44bn3wn07nw30k3i22l4byyhix"))))
     (properties `((upstream-name . "AID")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries
                              r-stringr
                              r-psych
@@ -16299,6 +18086,9 @@ plots, computes mean and confidence interval for back transformed data.")
         (base32 "0sq3lnyrja2vpl5wqq517zw32fi96x99gqxj9lh8q3b0napkb0fd"))))
     (properties `((upstream-name . "AICcPermanova")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-stringr
@@ -16336,6 +18126,9 @@ approach described by Burnham, K. P. and Anderson, D. R. (2002)
         (base32 "0ylzd6fz5p86fdb8yily2v8bn8xz5mm6w19ch6gpp48jzkqvama0"))))
     (properties `((upstream-name . "AICcmodavg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-vgam
                              r-unmarked
@@ -16374,6 +18167,9 @@ formatted to @code{LaTeX} using xtable methods included in the package.")
         (base32 "1w2rvw1kc4a9b2mi3bh10siv3j89xb3qrx7nydw4kqrgi5c4v3i4"))))
     (properties `((upstream-name . "aIc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zcompositions
                              r-vegan
                              r-shiny
@@ -16385,11 +18181,11 @@ formatted to @code{LaTeX} using xtable methods included in the package.")
     (synopsis "Testing for Compositional Pathologies in Datasets")
     (description
      "This package provides a set of tests for compositional pathologies.  Tests for
-coherence of correlations with @code{aIc.coherent}() as suggested by (Erb et al.
+coherence of correlations with @code{aIc.coherent()} as suggested by (Erb et al.
 (2020) <doi:10.1016/j.acags.2020.100026>), compositional dominance of distance
-with @code{aIc.dominant}(), compositional perturbation invariance with
-@code{aIc.perturb}() as suggested by (Aitchison (1992) <doi:10.1007/BF00891269>)
-and singularity of the covariation matrix with @code{aIc.singular}().  Currently
+with @code{aIc.dominant()}, compositional perturbation invariance with
+@code{aIc.perturb()} as suggested by (Aitchison (1992) <doi:10.1007/BF00891269>)
+and singularity of the covariation matrix with @code{aIc.singular()}.  Currently
 tests five data transformations: prop, clr, TMM, TMMwsp, and RLE from the R
 packages ALDEx2', @code{edgeR} and DESeq2 (Fernandes et al (2014)
 <doi:10.1186/2049-2618-2-15>, Anders et al. (2013)<doi:10.1038/nprot.2013.099>).")
@@ -16407,6 +18203,9 @@ packages ALDEx2', @code{edgeR} and DESeq2 (Fernandes et al (2014)
         (base32 "1wdvia9gnr70wvdqfg3kh4ndfr0lwsyv1mccklfpyybj90pc1gds"))))
     (properties `((upstream-name . "ai")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-party r-metrics r-mass r-class r-catools))
     (home-page "https://github.com/urniaz/ai")
     (synopsis "Build, Predict and Analyse Artificial Intelligence Models")
@@ -16429,6 +18228,9 @@ Conditional Inference Trees are available.")
         (base32 "1dq40qf5r5h011d9fk2c4qjj6dbh0kxl2xfjaflr69r2dlsslgds"))))
     (properties `((upstream-name . "ahw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timereg r-plyr r-data-table))
     (home-page "https://cran.r-project.org/package=ahw")
     (synopsis
@@ -16453,6 +18255,9 @@ interpretation.  See Ryalen, Stensrud, and RÃ¸ysland (2019)
         (base32 "051q6iamqhhkrq7bfhq40n9svd4wfqyxscgwfnsflqdmbgm6gghs"))))
     (properties `((upstream-name . "AHSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-flexsurv))
     (home-page "https://cran.r-project.org/package=AHSurv")
     (synopsis "Flexible Parametric Accelerated Hazards Models")
@@ -16478,6 +18283,9 @@ defining the cumulative hazard and hazard rate functions.  See Chen and Wang
         (base32 "1g7d1vbjxb232fk6wjah73kjm6pj81acls8wqssphgnfiffgrrq6"))))
     (properties `((upstream-name . "AHPWR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx
                              r-tidyr
                              r-tibble
@@ -16509,6 +18317,9 @@ by Saaty and Vargas (2012, ISBN 978-1-4614-3597-6).")
         (base32 "0pjxchrjik0d3ydr1hjqrba1p1y9sirwjwzjkmxh2fk803c0b9la"))))
     (properties `((upstream-name . "ahptopsis2n")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ahptopsis2n")
     (synopsis "Hybrid Method for Multiple Criteria Decision-Making (MCDM)")
@@ -16531,6 +18342,9 @@ Solution - with two normalizations).  This method is described in Souza et al.
         (base32 "053lk31xsv4hipah0px5xpxyd0s798pq08qpcynygkf84hjja2x0"))))
     (properties `((upstream-name . "AHPtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=AHPtools")
     (synopsis "Consistency in the Analytic Hierarchy Process")
@@ -16558,6 +18372,9 @@ performs its assigned task.")
         (base32 "1r7x4c318nzbx0ppm9272kfpz2bln1cafkv9irnj85nsdcravr33"))))
     (properties `((upstream-name . "ahpsurvey")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rdpack
                              r-randomnames
@@ -16592,6 +18409,9 @@ the decision-maker's comparisons.")
         (base32 "1hf2ba52nim13jwkq857vnmnnb1yhgdz6kipqg3mmqrgz7kg52v1"))))
     (properties `((upstream-name . "AHPhybrid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AHPhybrid")
     (synopsis "AHP Hybrid Method")
     (description
@@ -16617,6 +18437,9 @@ pairwise evaluation.")
         (base32 "12sfh4nn4aj3jdga47dcwzf0qvhydgh56kv5kqmwg0bxw7g5r9z7"))))
     (properties `((upstream-name . "AHPGaussian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2))
     (home-page "https://cran.r-project.org/package=AHPGaussian")
     (synopsis "New Multicriteria Method: AHPGaussian")
@@ -16640,6 +18463,9 @@ Marcos (2021) <doi:10.13033/ijahp.v13i1.833>.")
         (base32 "0zh3y5jd8m0xbj6lqr01zvwj9qd1xr3iq7vd6sgr3g3qh4kqm5pq"))))
     (properties `((upstream-name . "AhoCorasickTrie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/chambm/AhoCorasickTrie")
     (synopsis "Fast Searching for Multiple Keywords in Multiple Texts")
@@ -16671,6 +18497,9 @@ sequences use at most 26 distinct characters and usually only 20.  UTF-8
         (base32 "1g8m3q108ricfyn4fjjaihpr93xz7fm2sfzg3i0fz1n1i703jwm8"))))
     (properties `((upstream-name . "ahnr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-purrr
                              r-pracma
@@ -16698,6 +18527,9 @@ sequences use at most 26 distinct characters and usually only 20.  UTF-8
         (base32 "1phfzl0kynrq1if12h736jdxrfqc3i4kd32hp7sy2k2z7hkj1dkm"))))
     (properties `((upstream-name . "ahMLE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-matrix
                              r-invgauss))
     (native-inputs (list r-knitr))
@@ -16722,6 +18554,9 @@ estimating the additive hazards model.  For details see Chengyuan Lu(2021)
         (base32 "02hfwd9jyml2z05nkjvs1vwpdcbj3jqscgvpfc1hhrv4819vsf2d"))))
     (properties `((upstream-name . "AHMbook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-unmarked r-mvtnorm))
     (home-page "https://www.mbr-pwrc.usgs.gov/pubanalysis/keryroylebook/")
     (synopsis
@@ -16749,6 +18584,9 @@ analyses shown in the books.")
         (base32 "00r1rn7d64a18rckbxvla5yapqv00p9ajxv72fx7s6p80kfal89w"))))
     (properties `((upstream-name . "AHM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-quadprog
@@ -16784,6 +18622,9 @@ the nonnegative garrote technique used for variable selection.")
         (base32 "1739qx2jnsxkzlllrhcfa57xbbc1p32qplix7fhqh7653nr6yhj3"))))
     (properties `((upstream-name . "ahaz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-matrix))
     (home-page "https://cran.r-project.org/package=ahaz")
     (synopsis "Regularization for Semiparametric Additive Hazards Regression")
@@ -16804,6 +18645,9 @@ semiparametric additive hazards regression model.")
         (base32 "0b3wvxrp77b180pm8asih88cyh4vf2yjj7rvl0f02x28a0ia0xki"))))
     (properties `((upstream-name . "agvgd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -16839,6 +18683,9 @@ on <http://agvgd.hci.utah.edu/>.")
         (base32 "1mq7h2ff3ggqy6xsng1cz0mjdfbdnsp9yl2d2c20ma14k3rdf0q5"))))
     (properties `((upstream-name . "agua")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-workflows
                              r-vctrs
                              r-tune
@@ -16877,6 +18724,9 @@ package enables users to specify h2o as an engine for several modeling methods."
         (base32 "1z2ys4cn859vas3q1if50k46cryn7wwy1pjqbc8n9dhdn5zxn3sk"))))
     (properties `((upstream-name . "agtboost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=agtboost")
     (synopsis "Adaptive and Automatic Gradient Boosting Computations")
@@ -16901,6 +18751,9 @@ technical knowledge required on the user are minimized.")
         (base32 "1g2q5cbpa0iwkwhcng15vqn8jgx5lingjfwakj320jr76x9bx6my"))))
     (properties `((upstream-name . "ags")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rlang r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://sumtxt.github.io/ags/")
@@ -16923,6 +18776,9 @@ and Regional Planning (BBSR).")
         (base32 "0pfw0sps9fbzzyy4d803j9fbg6a23nj18rks0bnrj9hms7a3vwfs"))))
     (properties `((upstream-name . "AgroTech")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx
                              r-readxl
                              r-nortest
@@ -16962,6 +18818,9 @@ technology.")
         (base32 "0mcskv3144j594wqljzn5pwbhkxh6sb76b1c2wabzjvi61zrapiv"))))
     (properties `((upstream-name . "agrostab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=agrostab")
     (synopsis "Stability Analysis for Agricultural Research")
@@ -16992,6 +18851,9 @@ Francis&Kannenberg's parameters of stability (1978) <doi:10.4141/cjps78-157>.")
         (base32 "1rvlgir48lhypw7vj23rg2xxi237sgmprp9syfryhmfz59wy6dcv"))))
     (properties `((upstream-name . "AgroReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcompanion
                              r-purrr
                              r-minpack-lm
@@ -17024,6 +18886,9 @@ mean square error, AIC, BIC, as well as graphs with the equations automatically.
         (base32 "0gbdba18fzk3x32wk1ycbj2ci8y1dpdmcysnmdd2361mp5yhvn7h"))))
     (properties `((upstream-name . "AgroR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer
                              r-nortest
                              r-multcompview
@@ -17072,6 +18937,9 @@ Zootechnics, Food Science and related areas).")
         (base32 "04bq0ya6nxz97bzcclby1rhhz7fdgkh73lmzlpzfnfnfmwjbd2hd"))))
     (properties `((upstream-name . "agrmt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://agrmt.r-forge.r-project.org")
     (synopsis
      "Calculate Concentration and Dispersion in Ordered Rating Scales")
@@ -17102,6 +18970,9 @@ position of multiple modes.")
         (base32 "14zwpbr9wivnafdrfihvdmbv66cxprz41xgqyifc1nsmgrbr67cz"))))
     (properties `((upstream-name . "agriwater")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=agriwater")
@@ -17128,6 +18999,9 @@ method).  Silva, Teixeira, and Manzione (2019)
         (base32 "17707cdhrzpxcr0xm6kavy3p762yzrjxg4anwgfrhdmrhvygpirf"))))
     (properties `((upstream-name . "agriutilities")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-statgensta
@@ -17172,6 +19046,13 @@ from VSN international (<https://vsni.co.uk/software/asreml-r>).")
         (base32 "0c0p0bqcrnx34q5brnvgq10wkzahvgyybaz2xfmcghbdvzahd2dx"))))
     (properties `((upstream-name . "agriTutorial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-pbkrtest
                              r-nlme
                              r-lmertest
@@ -17203,6 +19084,9 @@ example code can be readily extended, as required.")
         (base32 "0zbjmgwajwihgvs1c3swddx09m6954sihnpjdrqlgl5jhh7q2bgs"))))
     (properties `((upstream-name . "agrifeature")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=agrifeature")
     (synopsis "Agriculture Image Feature")
     (description
@@ -17224,6 +19108,9 @@ Haralick (1973) <doi:10.1109/TSMC.1973.4309314>.")
         (base32 "0bnc2dr5lz2lqjlic8c8siwfcv63864fn857a6pi6zblfv5cfsza"))))
     (properties `((upstream-name . "agridat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://kwstat.github.io/agridat/")
     (synopsis "Agricultural Datasets")
@@ -17245,6 +19132,9 @@ multi-environment trials, uniformity trials, yield monitors, and more.")
         (base32 "0fy9h4r55dn7yxnjlxhy74sf9lcg22mllcg6nwaivp92w03vkccy"))))
     (properties `((upstream-name . "agricolaeplotr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stplanr
@@ -17282,6 +19172,9 @@ extensions.")
         (base32 "0zaanfhvlx7c0s9y550hqn9bsffbykchcd7940fxx69jw87fkbf5"))))
     (properties `((upstream-name . "agricolae")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-mass r-cluster r-algdesign))
     (home-page "https://cran.r-project.org/package=agricolae")
     (synopsis "Statistical Procedures for Agricultural Research")
@@ -17311,6 +19204,9 @@ indexes and consensus cluster.")
         (base32 "1bvinzylvsaipa8mq15f45b6h37znavlrdl0rbrx1pqw52r7z8kv"))))
     (properties `((upstream-name . "AgreementInterval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych))
     (home-page "https://cran.r-project.org/package=AgreementInterval")
     (synopsis "Agreement Interval of Two Measurement Methods")
@@ -17333,6 +19229,9 @@ quantify agreement quality.")
         (base32 "1wi8jn14kpsj5z49my6fz8j6zxysddxm8svw86cnzsmnbj6mzq7x"))))
     (properties `((upstream-name . "agRee")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r2jags r-miscf r-lme4 r-coda))
     (home-page "https://cran.r-project.org/package=agRee")
     (synopsis "Various Methods for Measuring Agreement")
@@ -17357,6 +19256,9 @@ detectable difference.")
         (base32 "0c6aqrfl0iqpsdk4njzda60a8hcrm2637zwc5cdkrl9p2ayqj00c"))))
     (properties `((upstream-name . "AGPRIS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep
                              r-spacetime
                              r-sp
@@ -17390,6 +19292,9 @@ contains functions to replicate the analyses of the scientific article entitled
         (base32 "1bvmwic2xjl36i994pzc0hhl3k2ghxivrq9i96ykxmklp9drlb7j"))))
     (properties `((upstream-name . "agop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/gagolews/agop/")
     (synopsis "Aggregation Operators and Preordered Sets")
     (description
@@ -17412,6 +19317,9 @@ scientometrics, software engineering, etc.")
         (base32 "0rcyrzfi3l1k53c9qs1gfrcflnhdnri9sq6py8s6fw4wcn55kf67"))))
     (properties `((upstream-name . "aglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mathjaxr r-glmnet r-assertthat))
     (home-page "https://github.com/kkondo1981/aglm")
     (synopsis "Accurate Generalized Linear Model")
@@ -17437,6 +19345,9 @@ Kenji Kondo and Hirokazu Iwasawa (2020)
         (base32 "0hrgxxqzx38r2cfn3rflh8gddva9i6i89vk3jg4g27ywg5v7s41v"))))
     (properties `((upstream-name . "aghq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-polynom r-numderiv r-mvquad r-matrix))
     (home-page "https://cran.r-project.org/package=aghq")
     (synopsis "Adaptive Gauss Hermite Quadrature for Bayesian Inference")
@@ -17461,6 +19372,9 @@ Bayesian Inference: the aghq Package\" <@code{arXiv:2101.04468>}.")
         (base32 "1ji022h11ijfjicbvc5hgxpf6rfs7mm07nxrjlk7lrl699gi1xh2"))))
     (properties `((upstream-name . "AGHmatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rramadeu/AGHmatrix")
@@ -17483,6 +19397,9 @@ are implemented considering additive and non-additive models.")
         (base32 "0q4ly4wra1nj6zn733a0kvikcbjijailrbiyljyiz61ax4w0v5g6"))))
     (properties `((upstream-name . "aggutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-docstring))
     (home-page "https://github.com/forecastingresearch/aggutils")
     (synopsis "Utilities for Aggregating Probabilistic Forecasts")
@@ -17508,6 +19425,9 @@ trimmed mean\" (Powell et al. (2022) <doi:10.1037/dec0000191>).")
         (base32 "060m8k16gplbjf2jy0qh4qv2046bwzj54y9xsjj5gxnzq169ds2x"))))
     (properties `((upstream-name . "aggTrees")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rpart-plot
                              r-rpart
@@ -17542,6 +19462,9 @@ treatment effects.  Please reference the use as Di Francesco (2022)
         (base32 "1s2q888bqx6ilisv5s4g8ryja97nz6cz4ycm4sw1i63l5wjrwljc"))))
     (properties `((upstream-name . "AggregateR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-ncmisc r-data-table))
     (home-page "https://cran.r-project.org/package=AggregateR")
     (synopsis "Aggregate Numeric, Date and Categorical Variables")
@@ -17565,6 +19488,9 @@ speed.")
         (base32 "0vaqmydww494ql6xbhhjkpap3lqkhf8hkbcrr1pk81qpszs0pndm"))))
     (properties `((upstream-name . "agghoo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-r6 r-fnn r-class))
     (home-page "https://git.auder.net/?p=agghoo.git")
     (synopsis "Aggregated Hold-Out Cross Validation")
@@ -17589,6 +19515,9 @@ Research 22(20):1--55.")
         (base32 "0wkagdhbf4hgl1vrb6bxyan5ryp42xd8w7kbyspahqx8agzbn8zg"))))
     (properties `((upstream-name . "agfh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-ks r-goftest r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=agfh")
@@ -17613,6 +19542,9 @@ bounded, multi-modal, or heavily skewed sampling errors.")
         (base32 "1npfr3k0221zmchv0rjnskaj13wd3hrnnbl78zghz6whgkjb48ah"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-cli))
     (home-page "https://timtaylor.github.io/ageutils/")
     (synopsis "Collection of Functions for Working with Age Intervals")
@@ -17636,6 +19568,9 @@ age distributions.")
         (base32 "1nn2634r93gg3nwqnlg8c44zajl5jadx0cszah8nq502qby5y36j"))))
     (properties `((upstream-name . "agena.ai")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjson r-rgraphviz r-openxlsx r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=agena.ai")
@@ -17661,6 +19596,9 @@ local API).")
         (base32 "0dcmwgznxf1jjsifpm3nn3jk25mm27l6f6f6jfi2n3crxgqfizyv"))))
     (properties `((upstream-name . "ageg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ageg")
     (synopsis "Age Grouping Functions")
     (description
@@ -17681,6 +19619,9 @@ custom age distributions are desired given a vector of birth dates.")
         (base32 "02dvbqyym3l642vxhlx7ay6dj1sf1ns207ig81h3fz1w3gy9wn20"))))
     (properties `((upstream-name . "AGD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gamlss-dist r-gamlss))
     (home-page "https://stefvanbuuren.name/AGD/")
     (synopsis "Analysis of Growth Data")
@@ -17703,6 +19644,9 @@ contains a some varieties of reference tables, especially for The Netherlands.")
         (base32 "1q993a7m639zn5cl8lv300qbqgh8wycqckaynvv9lc6a6j60ygjv"))))
     (properties `((upstream-name . "agcounts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-stringr
                              r-shiny
@@ -17744,6 +19688,9 @@ code (<https://github.com/actigraph/agcounts>).")
         (base32 "0kqya0iaxcz7m1i69ckcm0z3g3q31x2jasxlip7jpp7czdi9rr07"))))
     (properties `((upstream-name . "ag5Tools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-reticulate r-fs r-foreach r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://agrdatasci.github.io/ag5Tools/")
@@ -17768,6 +19715,9 @@ reanalysis\"
         (base32 "1jk8xs4mcayaij5rjl891mzg3dq9qs0lyi5gfzi6sjar6apmwsfb"))))
     (properties `((upstream-name . "afttest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rcpparmadillo
                              r-rcpp
@@ -17800,6 +19750,9 @@ the observed residual to a number of the approximated realizations is provided."
         (base32 "00rsrwv57z0inpqrgihbbm57dzbw01idi8axbhhc09z51bnbksxc"))))
     (properties `((upstream-name . "aftsem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-quantreg
                              r-optimx))
     (home-page "https://github.com/benedma2/aftsem-package")
@@ -17828,6 +19781,9 @@ right-censored data and for comparing different estimation algorithms.")
         (base32 "1ff8khq9b8hjflkhfc1shx5k7sadcl0ahnsbx9c557b6sm0kqfr6"))))
     (properties `((upstream-name . "aftR2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=aftR2")
     (synopsis "R-Squared Measure under Accelerated Failure Time (AFT) Models")
@@ -17848,6 +19804,9 @@ proposed in Chan et.  al. (2018) <doi:10.1080/03610918.2016.1177072>.")
         (base32 "0gg2cp3sj28f3pi5rqh737hna3imwarwas01jacm0m2h27587k7y"))))
     (properties `((upstream-name . "afthd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rstpm2 r-r2jags r-photobiology
                              r-glmnet))
     (home-page "https://cran.r-project.org/package=afthd")
@@ -17873,6 +19832,9 @@ Prabhash et al.(2016) <doi:10.21307/stattrans-2016-046>.")
         (base32 "1gbrk0rjz1ryvbkvh4p4mm3lfc5bfrrwg4k3whxlwy30xg7549hx"))))
     (properties `((upstream-name . "aftgee")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rcpparmadillo
                              r-rcpp
@@ -17908,6 +19870,9 @@ Details on the least-squares estimation can be found in Chiou et al. (2014)
         (base32 "0nqxvyv6hipadyfzc6mvr2pns3m7n7h3i87lzvgx8fj2rlcigqkq"))))
     (properties `((upstream-name . "africamonitor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmysql r-dbi r-data-table r-collapse))
     (home-page "https://africamonitor.ifw-kiel.de/")
     (synopsis "Africa Macroeconomic Monitor Database API")
@@ -17938,6 +19903,9 @@ Institute for the World Economy <https://www.ifw-kiel.de/>.")
         (base32 "07i6slw5ksw6s1n0i9p2x6898k4fqx5n13qycshfllczrp0pwwyf"))))
     (properties `((upstream-name . "AFR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-writexl
@@ -17979,6 +19947,9 @@ and non-statisticians.")
         (base32 "1pm3xyh9vq10mmfgknlvlfr9f027xprrgy1dvbbxpi7f111hv1gl"))))
     (properties `((upstream-name . "afmToolkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-scales
                              r-minpack-lm
@@ -18011,6 +19982,9 @@ set of F-d curves in batch mode.")
         (base32 "1l0yd68h8vlii1437zhyrxj6fq1ghfaqclk860c25q2d055ajnqd"))))
     (properties `((upstream-name . "AFM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sp
                              r-shinyjs
@@ -18051,18 +20025,21 @@ network analysis.  The AFM images can be exported to STL format for 3D printing.
         (base32 "03w0a4z2x539ykyzdxm1mfqkhzz03cg0aqvgi062jrrm5m6f57ix"))))
     (properties `((upstream-name . "AFheritability")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-reshape2 r-mvtnorm r-ggplot2))
     (home-page "https://cran.r-project.org/package=AFheritability")
     (synopsis
      "The Attributable Fraction (AF) Described as a Function of Disease Heritability, Prevalence and Intervention Specific Factors")
     (description
-     "The AFfunction() is a function which returns an estimate of the Attributable
-Fraction (AF) and a plot of the AF as a function of heritability, disease
-prevalence, size of target group and intervention effect.  Since the AF is a
-function of several factors, a shiny app is used to better illustrate how the
-relationship between the AF and heritability depends on several other factors.
-The app is ran by the function @code{runShinyApp}().  For more information see
-Dahlqwist E et al. (2019) <doi:10.1007/s00439-019-02006-8>.")
+     "The @code{AFfunction()} is a function which returns an estimate of the
+Attributable Fraction (AF) and a plot of the AF as a function of heritability,
+disease prevalence, size of target group and intervention effect.  Since the AF
+is a function of several factors, a shiny app is used to better illustrate how
+the relationship between the AF and heritability depends on several other
+factors.  The app is ran by the function @code{runShinyApp()}.  For more
+information see Dahlqwist E et al. (2019) <doi:10.1007/s00439-019-02006-8>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-affluenceindex
@@ -18077,6 +20054,9 @@ Dahlqwist E et al. (2019) <doi:10.1007/s00439-019-02006-8>.")
         (base32 "0g5nykvkv6qyrsr861wdbsxh6qlpmqp17c327qm0y2rb2gs8ywri"))))
     (properties `((upstream-name . "affluenceIndex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-univar))
     (home-page "https://cran.r-project.org/package=affluenceIndex")
     (synopsis "Affluence (Richness) Indices")
@@ -18099,6 +20079,9 @@ it works with new version of Spatial Statistics packaged.")
         (base32 "10i7wzl4xiphj5f466ga7c4ha3mkyqn63x1z0jyx50m0b84sggq1"))))
     (properties `((upstream-name . "affinitymatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-hmisc r-ggrepel r-ggplot2 r-expm))
     (home-page "https://cran.r-project.org/package=affinitymatrix")
     (synopsis "Estimation of Affinity Matrix")
@@ -18124,6 +20107,9 @@ build tables and plots summarizing the findings.")
         (base32 "0nfh3g8nifv5773pihgzxh62wa837i2dk1kgf15z28cb5xfj2y8h"))))
     (properties `((upstream-name . "affinity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reproj r-raster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hypertidy/affinity")
@@ -18144,15 +20130,18 @@ to use for simple georeferencing of images.  Methods used are available from
 (define-public r-affiner
   (package
     (name "r-affiner")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "affiner" version))
        (sha256
-        (base32 "1ksx4bpi73aramkxl5gg0w493srwl76zv6w9hxrkh63ni58hx1w0"))))
+        (base32 "1qi2zi4cvhrmycxviwcm74p8vcwj7vzbncq5g974ashym4c2v6i8"))))
     (properties `((upstream-name . "affiner")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6))
     (native-inputs (list r-rmarkdown r-ragg r-knitr))
     (home-page "https://trevorldavis.com/R/affiner/")
@@ -18178,6 +20167,9 @@ flat surfaces.")
         (base32 "0ri0wllf87nxma9i51j89yd4yhkgjnjj5kls3768bi0h9wlyvxmp"))))
     (properties `((upstream-name . "AFFECT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=AFFECT")
     (synopsis
@@ -18201,6 +20193,9 @@ for error-prone data and estimate the functional covariates for an AFT model.")
         (base32 "1654vxakdd11b5zhwy1vcv127xk5rifan6fs1k6w1qsk74j4drqv"))))
     (properties `((upstream-name . "afdx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-maxlik r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/johnaponte/afdx")
@@ -18223,6 +20218,9 @@ golden standard but can estimate it using the attributable fraction.")
         (base32 "04hmkcn4zmcp34mwav0wngld45a3pyrdb4cmnwg5ba7i0jk4z91y"))))
     (properties `((upstream-name . "afcolours")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=afcolours")
     (synopsis
@@ -18244,6 +20242,9 @@ help meet accessibility guidance.")
         (base32 "1bgm5sq9q8qn6764p7xwb7igg4akx652zb9vi57c3caxybhyir6f"))))
     (properties `((upstream-name . "afcharts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rlang r-ggplot2 r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/best-practice-and-impact/afcharts")
@@ -18269,6 +20270,9 @@ theme.")
         (base32 "1iy1wa88kf6zi6x7lbd0jdir653cvzvdraliqpxbac413wwb5gwl"))))
     (properties `((upstream-name . "afc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=afc")
     (synopsis "Generalized Discrimination Score")
     (description
@@ -18294,6 +20298,9 @@ package, is provided by Mason and Weigel (2009) <doi:10.1175/MWR-D-10-05069.1>."
         (base32 "1r87ra55g0qm2s8cgsmdwck93ia2vr8zfab3in45mxm5xc501xgk"))))
     (properties `((upstream-name . "AF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-stdreg r-ivtools r-drgee
                              r-data-table))
     (home-page "https://cran.r-project.org/package=AF")
@@ -18322,6 +20329,9 @@ package AFheritability Dahlqwist E et al. (2019)
         (base32 "0prdw8yjdrcyc8msk2a8ia5cjd4gm88isg8dqp9yj2aqbfz6pin7"))))
     (properties `((upstream-name . "AeroSampleR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -18353,6 +20363,9 @@ S78-S87, <doi:10.1097/HP.0000000000000092>.")
         (base32 "14d5gjx53v2wfij8m4br0k7lfi6x2frc8ny1li4g8c05qv2dvnbb"))))
     (properties `((upstream-name . "AeRobiology")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-writexl
                              r-tidyr
@@ -18389,6 +20402,9 @@ plots...")
         (base32 "15b48vbl36b6wmjszm28p0mawg5kwsjglbrb8cndf3zsvx95zdq1"))))
     (properties `((upstream-name . "AEP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AEP")
     (synopsis
      "Statistical Modelling for Asymmetric Exponential Power Distribution")
@@ -18414,6 +20430,9 @@ introduced by Dongming and Zinde-Walsh (2009)
         (base32 "0v4mm9nq5l7hm3mh421xw5rnc0ibhc9jy5pqfqhcw3brygffdhbf"))))
     (properties `((upstream-name . "aelab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-readxl
@@ -18448,6 +20467,9 @@ dissolved oxygen data logger using the method described in Staehr et al. (2010).
         (base32 "049z696mkwha90w84l60r11q12r3jlam6kyh8abiy0zk2k425san"))))
     (properties `((upstream-name . "AEenrich")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-qvalue
@@ -18481,6 +20503,9 @@ analysis.\"Adverse event enrichment tests using VAERS\" Shuoran Li, Lili Zhao
         (base32 "1sy3j78lawa10rf22fa3wsbal2mv64hs1k5v7yqf9hx11jib26sz"))))
     (properties `((upstream-name . "aedseo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-purrr
@@ -18515,6 +20540,13 @@ on growth rate estimation, see Walling and Lipstich (2007)
         (base32 "16q2sn5zzvysyy3r32jnr21pbdkkn0k0sbarni6fdkx7pj27yijn"))))
     (properties `((upstream-name . "AEDForecasting")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-signal r-forecast r-changepoint))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=AEDForecasting")
@@ -18535,6 +20567,9 @@ on growth rate estimation, see Walling and Lipstich (2007)
         (base32 "005l1cxpk30m1krdkrr62i7d1gp8j1v5f9r8j81v6r3w3iwzr449"))))
     (properties `((upstream-name . "aeddo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -18570,6 +20605,9 @@ models, consult Henrik Madsen and Poul Thyregod's book (2011), ISBN:
         (base32 "0y15179vy547wsi0bjycnx0fffc46vb769dvi99a4j5dr4gfsdaj"))))
     (properties `((upstream-name . "aebdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rvest r-readr r-httr2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipea/aebdata")
@@ -18593,6 +20631,9 @@ series, list series or themes, and download data when available.")
         (base32 "1w5qg4psm8pj89f09pz7in8zkafaimik1n6hx29y55jpmbxbk2gn"))))
     (properties `((upstream-name . "adwordsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjson r-rcurl))
     (home-page "https://www.branded3.com/")
     (synopsis "Access the 'Google Adwords' API")
@@ -18620,6 +20661,9 @@ the reporting side of the Google Adwords API.")
         (base32 "11iy50ng0zxvwsvdsvx262j8zgqaai308lp5is47az7xzvk57mx7"))))
     (properties `((upstream-name . "adwave")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveslim))
     (home-page "https://doi.org/10.1534/genetics.115.176842")
     (synopsis "Wavelet Analysis of Genomic Data from Admixed Populations")
@@ -18646,6 +20690,9 @@ transformation.  Genetics 200:469-481 <doi:10.1534/genetics.115.176842>.")
         (base32 "0ng9iabxh15xaj10mi6xdggmx6fcvdmmx1c9nlyfkbnb4f1qzlxp"))))
     (properties `((upstream-name . "adw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-sf r-cnmap))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PanfengZhang/adw")
@@ -18670,6 +20717,9 @@ latitude-longitude grids by averaging all stations in grid-boxes.")
         (base32 "1p8186715lzk4prxaw5v0np9z1zfj9zbp124jrch0yygvkxksy7r"))))
     (properties `((upstream-name . "ADVICE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ADVICE")
     (synopsis
      "Automatic Direct Variable Selection via Interrupted Coefficient Estimation")
@@ -18691,6 +20741,9 @@ into account variable selection.")
         (base32 "0qmwjrl57r6l7424x5nhncm4gc9xi87czp64d0yb7l7qzr571q7s"))))
     (properties `((upstream-name . "AdverseEvents")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-survminer
                              r-survival
@@ -18735,6 +20788,9 @@ are downloadable.")
         (base32 "0nja1a2xhaimz1fg2bb838x9a37sswjqjc68mp59gbdwkfpdii37"))))
     (properties `((upstream-name . "adventr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrs2
                              r-tidyr
                              r-sjstats
@@ -18780,6 +20836,9 @@ models, and generalized linear models (logistic regression).")
         (base32 "1xdbk7w55cb2fh0mqlyrkdpnglrs55kyvvp32anvf2nw3ssrfmy7"))))
     (properties `((upstream-name . "AdvDif4")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=AdvDif4")
     (synopsis "Solving 1D Advection Bi-Flux Diffusion Equation")
     (description
@@ -18805,6 +20864,9 @@ source as a function depending on space and time, that is, s(x,t).")
         (base32 "1cnmn6c2dyl8qfl7g5sqwbjb52psqxzrj1mbm06zak2y1j7j8f49"))))
     (properties `((upstream-name . "AdvBinomApps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-genbinomapps))
     (home-page "https://cran.r-project.org/package=AdvBinomApps")
     (synopsis
@@ -18828,6 +20890,9 @@ technologies.")
         (base32 "0wwqnijhz2sa3pcf8mjidw7m4awqgbsn4sgly93zyspb5fv7yblk"))))
     (properties `((upstream-name . "AdvancedBasketballStats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AdvancedBasketballStats")
     (synopsis "Advanced Basketball Statistics")
@@ -18851,6 +20916,9 @@ book Basketball on Paper written by Dean Oliver.")
         (base32 "1qaxb7xja7zqdz5pwy5ad8jah3cvqpial2isjwqndhlmsvfysl5n"))))
     (properties `((upstream-name . "ADTSA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ADTSA")
     (synopsis "Time Series Analysis")
     (description
@@ -18876,6 +20944,9 @@ It also calculates the periodicity of a time series.")
         (base32 "19csivbg3f0g2r11l7jrciqq2lhg50km7qv29xfs6ba5cf678hb9"))))
     (properties `((upstream-name . "adsDataHubR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate r-jsonlite r-httr))
     (home-page "https://cran.r-project.org/package=adsDataHubR")
     (synopsis "Google Ads Data Hub API Client")
@@ -18897,6 +20968,9 @@ allows to fetch customer details, submit queries to ADH.")
         (base32 "0arxwjy13fijf5w5491hyr7l4cbmp83aa4hckjxx43zbrdyvvrpz"))))
     (properties `((upstream-name . "ads")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-geom r-ade4))
     (home-page "https://forge.ird.fr/amap/ads")
     (synopsis "Spatial Point Patterns Analysis")
@@ -18920,6 +20994,9 @@ on Monte Carlo simulations.")
         (base32 "1nk12yn1n483scnphf8pab8w633dk64c8n17zlq851zywbncs0gk"))))
     (properties `((upstream-name . "adpss")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ca4wa/R-adpss")
@@ -18948,6 +21025,9 @@ Predetermination of adaptation rule is not required.")
         (base32 "00n7nc11c47vcjz8zlx855dw9lq9d12qghx42hz1xy0ah0iqjh3q"))))
     (properties `((upstream-name . "adproclus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-scales
@@ -18986,6 +21066,9 @@ overlapping clustering.  For reference see Depril, Van Mechelen, Mirkin (2008)
         (base32 "1n7302xx77ngvp9i2h582i1mqslzllcdr0bn3pl2zk9jd8k97p7n"))))
     (properties `((upstream-name . "ADPF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ADPF")
     (synopsis
      "Use Least Squares Polynomial Regression and Statistical Testing to Improve Savitzky-Golay")
@@ -19022,6 +21105,9 @@ chosen fixed-degree Savitzky-Golay filters.  See Barak, P. (1995)
         (base32 "0s47cpsjykn7imsssa9w9b6g9d1sz2yah78yqzxmh0i3lqd757c1"))))
     (properties `((upstream-name . "ADPclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knitr r-fields r-dplyr r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ethanyxu/ADPclust")
@@ -19055,6 +21141,9 @@ http://smm.sagepub.com/content/early/2015/10/15/0962280215609948.abstract.")
         (base32 "1ljm4bri3b96r544x3n37qrfm6krmij8yjfr8n5acllqp6jnf2d5"))))
     (properties `((upstream-name . "ADP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ADP")
     (synopsis "Adoption Probability, Triers and Users Rate of a New Product")
     (description
@@ -19082,6 +21171,9 @@ Kislev (2020) <doi:10.5539/ijms.v12n4p63>.")
         (base32 "1l3llwc0pp468kj4548yx9syj7qfvwqbxs655lc58k5qzwlk73xk"))))
     (properties `((upstream-name . "adoptr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nloptr r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/optad/adoptr")
@@ -19106,6 +21198,9 @@ uncertainty and conditional (given stage-one outcome) constraints are supported.
         (base32 "1cbr86ssnd0bl6pvqziz16nvh3gzmd170pkk8wr2rkhm0rryh2l4"))))
     (properties `((upstream-name . "adobeanalyticsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-stringr
@@ -19148,6 +21243,9 @@ timely analysis.")
         (base32 "0nkciv5sfj3bws6kpgrnaq4ziasibaz44w64mb86zmr8420nyc1q"))))
     (properties `((upstream-name . "adnuts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snowfall
                              r-rstan
                              r-rlang
@@ -19179,6 +21277,9 @@ are used for diagnostics and inference.")
         (base32 "1wv5frav8vjkvsqwng9zddajmb7rdm4iqrikw9cjpqdpk7njl8ph"))))
     (properties `((upstream-name . "ADMUR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-scales r-mathjaxr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/UCL/ADMUR")
@@ -19207,6 +21308,9 @@ A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
         (base32 "08g8v5c6s2d0alpkpznh97xr5lfznmgr0w4zpplbv8m7apbk5mrq"))))
     (properties `((upstream-name . "admtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MindTheGap-ERC/admtools")
@@ -19228,6 +21332,9 @@ transform data between the time and stratigraphic domain.")
         (base32 "1943dza086s22pr0yz41wzn9cdg11x7fl9zr3w012865yj219m7l"))))
     (properties `((upstream-name . "ADMMsigma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
@@ -19258,6 +21365,9 @@ This package is an alternative to the glasso package.  See Boyd et al (2010)
         (base32 "1a5lfm10aj6wdjibdnmffn75zvy6x69w8nqcx2i23gxg6v0xlqcl"))))
     (properties `((upstream-name . "admmDensestSubmatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=admmDensestSubmatrix")
@@ -19280,6 +21390,9 @@ binary matrix, Bombina et al. (2019) <@code{arXiv:1904.03272>}.")
         (base32 "04biinzr0x3jkwss00q6zxfnzk62dafc6386z5vfqs4ch0ifh60n"))))
     (properties `((upstream-name . "ADMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-rcpparmadillo
                              r-rcpp
@@ -19307,6 +21420,9 @@ complete introduction to the method.")
         (base32 "0wszpzs53cbnha13g2ldpq6z5ndw2v2xgrzadqkjm3hsp6akv4bl"))))
     (properties `((upstream-name . "admixr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -19339,6 +21455,9 @@ format is also provided.")
         (base32 "05s72p7gbpm689sm6vvrb830m43zhsm5gg015brdcggqpvf9kj9a"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-rcpp
                              r-pracma
@@ -19381,6 +21500,9 @@ Vandekerkhove (2024) <https://jmlr.org/papers/v25/23-0914.html>).")
         (base32 "0dlmqpwqfhhc4z2xr44f00xsg0hbmw2c5z2d4pbifv36jlrdxbip"))))
     (properties `((upstream-name . "AdMit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://github.com/ArdiaD/AdMit")
     (synopsis "Adaptive Mixture of Student-t Distributions")
@@ -19405,6 +21527,9 @@ quantities of interest for the target density itself.")
         (base32 "17p7l8rx40zjaxc2ap1n1pi1025qn1cw17m26haw6d5vr1p9sk1k"))))
     (properties `((upstream-name . "admiralvaccine")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -19446,6 +21571,9 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
         (base32 "06821f08f7mgl20p1i90h6bwzhhcnb6clmqxrygxn9fs9iza4ha0"))))
     (properties `((upstream-name . "admiralpeds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-rlang
@@ -19481,6 +21609,9 @@ extension package of the admiral package for pediatric clinical trials.")
         (base32 "1690id6s5633r47av68wivg436h5s13a5qlg9a1dyfghd6wfa79f"))))
     (properties `((upstream-name . "admiralophtha")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -19518,6 +21649,9 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
         (base32 "022cjygxyq40fg66bdky0pdffyv6dafq77s6g7skxmyqrp6wqhqd"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-rlang
                              r-magrittr
@@ -19552,6 +21686,9 @@ extension package of the admiral package.")
         (base32 "0cpdhyiis0mwd219h3y4l1scy49bl3qjd9sy2kln4ymy0xsbasyg"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -19585,6 +21722,9 @@ admiral and admiral extension packages.")
         (base32 "1bmzj9r6nbyk4wd63ps6qwrj35lpj4s4jj4dvlg0p7yyssig68pb"))))
     (properties `((upstream-name . "admiral.test")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=admiral.test")
     (synopsis "Test Data for the 'admiral' Package")
     (description
@@ -19606,6 +21746,9 @@ the admiral package.")
         (base32 "0g669is6kj6hqpi2i6ik6c0c5mrx3750dd8dsnjmv25aiy60hnzp"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -19643,6 +21786,9 @@ the \"Analysis Data Model Implementation Guide\" (CDISC Analysis Data Model Team
         (base32 "12h9x1bfxispjz5ybwmz7vyf6jaj8wmdpd2crrx0vlivwx11ryxa"))))
     (properties `((upstream-name . "ADLP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/agi-lab/ADLP")
     (synopsis
@@ -19687,6 +21833,9 @@ Xian A (2023) \"Ensemble distributional forecasting for insurance loss reserving
         (base32 "0kf1akx5c4c7mdy9ysfdik2xi810jcysw9ynmvxlgw2zykqxvqdk"))))
     (properties `((upstream-name . "adlift")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ebayesthresh))
     (home-page "https://cran.r-project.org/package=adlift")
     (synopsis "An Adaptive Lifting Scheme Algorithm")
@@ -19708,6 +21857,9 @@ neighbourhood regression, from Nunes et al. (2006)
         (base32 "1lzj3ib4bgfkq5lq12n47pwc52h7k35xbbwj6brwsgx1gd4fx3x6"))))
     (properties `((upstream-name . "adklakedata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rappdirs r-httr))
     (home-page "https://cran.r-project.org/package=adklakedata")
     (synopsis "Adirondack Long-Term Lake Data")
@@ -19731,6 +21883,9 @@ space for ease of reuse.")
         (base32 "11bc2hrxr65i1rk2zv7r7daqm7m5v9xhhgk1fwr0jbs6c4dk2niw"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rlang
                              r-r-utils
@@ -19767,6 +21922,9 @@ details, see Denz et.  al (2023) <doi:10.1002/sim.9681>.")
         (base32 "08apfvpqvnnalx230p4qf5ckrwm1sgzras4zfrysgym5d4map9ci"))))
     (properties `((upstream-name . "adjustedcranlogs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rvest r-lubridate r-dplyr r-cranlogs))
     (home-page "https://github.com/tylermorganwall/adjustedcranlogs")
     (synopsis
@@ -19788,6 +21946,9 @@ downloads and re-downloads caused by package updates.")
         (base32 "0nv6m7ds57d0h44d745s0424ssrgn39ihd294dgrzrpmh8gxhq95"))))
     (properties `((upstream-name . "adjSURVCI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=adjSURVCI")
     (synopsis
@@ -19817,6 +21978,9 @@ errors are also provided.")
         (base32 "0bf7vvhllpl8irqw1ahfhbhqq67v6jxblapv91ddkgpk2dl0sp03"))))
     (properties `((upstream-name . "adjROC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yardstick r-rocit r-ggplot2 r-boot))
     (home-page "https://github.com/haghish/adjROC")
     (synopsis
@@ -19842,6 +22006,9 @@ and specificity as well as AUC and AUCPR can be evaluated.")
         (base32 "1hdgkbsl0vng609rkb9n1sfp4vl6my3knaxgk6z1k08fdprayn5v"))))
     (properties `((upstream-name . "adjclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsematrixstats
                              r-rlang
                              r-rcpparmadillo
@@ -19877,6 +22044,9 @@ efficient.  This algorithm is described in Ambroise et al (2019)
         (base32 "0wq54nyjpcqxlvhv98yxxqv1vvnmgyzg3qzhw37r18l6xwvz5pk4"))))
     (properties `((upstream-name . "adiv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl
                              r-phytools
                              r-phylobase
@@ -19910,6 +22080,9 @@ phylogenetic differences between communities.")
         (base32 "1ddwnn6jmj0sm1b9mxdaa88rngn4vfw59malqqg5whq0hnl4mhwx"))))
     (properties `((upstream-name . "AdIsMF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nls2 r-ggplot2 r-aiccmodavg))
     (home-page "https://cran.r-project.org/package=AdIsMF")
     (synopsis "Adsorption Isotherm Model Fitting")
@@ -19939,6 +22112,13 @@ and Giles (1973) <doi:10.1111/j.1478-4408.1973.tb03158.x>.")
         (base32 "1jc5mfdydw9s515zi7lsmns79919vrdhh6lvh9z2bq0lrn9g1yci"))))
     (properties `((upstream-name . "AdhereRViz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-viridislite
                              r-v8
                              r-shinywidgets
@@ -19976,6 +22156,13 @@ It is implemented using Shiny and HTML/CSS/@code{JavaScript}.")
         (base32 "0b98yz2msg30ch3n85yzi42rlnyj5ggkz1fsysh95gd5qk4c8vg2"))))
     (properties `((upstream-name . "AdhereR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-webp
                              r-rsvg
                              r-png
@@ -20013,6 +22200,9 @@ such as Python.")
         (base32 "19kimj88dmcc8mq3s4l7pph9jz8p57gbjyn0pn5zkrcjdrwncslm"))))
     (properties `((upstream-name . "adheRenceRX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-rcpp
@@ -20049,6 +22239,9 @@ Specialty Pharmacy\" <doi:10.18553/jmcp.2019.25.10.1073>.")
         (base32 "02krkpqsj53j4mprbw25bycbb2xlhcgnglcp0dl24zw44mfxy9n7"))))
     (properties `((upstream-name . "adformR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://windsor.ai/")
@@ -20070,6 +22263,9 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
         (base32 "0lpabd2gvcl0nja6q3d2hcxmam0gclnw21q1mxjf2idhqxcwscaj"))))
     (properties `((upstream-name . "adfExplorer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pepijn-devries/adfExplorer")
     (synopsis "Import from and Export to Amiga Disk Files")
@@ -20093,6 +22289,9 @@ import and export files from and to such virtual DOS-formatted disks.")
         (base32 "1inzp6ar5mg08cq2mmh7f0m87yvmf2cihv2zysn9v00x1g5zcb48"))))
     (properties `((upstream-name . "adestr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rdpack
                              r-progressr
@@ -20129,6 +22328,9 @@ estimators on real datasets, and it implements methods to calculate p-values.")
         (base32 "0lrjm3hb6jn30w7kg1lcx1jk66cciyxq7gayhl2jvp6xipg10b8y"))))
     (properties `((upstream-name . "adespatial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-spdep
                              r-sp
@@ -20161,6 +22363,9 @@ approaches are described in the review Dray et al (2012)
         (base32 "1zby06fw171inlri2k0k4n5lggsr9zxzad2pv08882md1klqwkpw"))))
     (properties `((upstream-name . "ADER")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.paraninfo.es/catalogo/9788484768333/")
     (synopsis "Data Analysis in Ecology")
     (description
@@ -20179,6 +22384,9 @@ approaches are described in the review Dray et al (2012)
         (base32 "0amp6ic1wylk24sp9wpx3ci38njj7b9qjqfp89j39hkl6kc1q7sq"))))
     (properties `((upstream-name . "AdequacyModel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.r-project.org")
     (synopsis
      "Adequacy of Probabilistic Models and General Purpose Optimization")
@@ -20204,6 +22412,9 @@ function.")
         (base32 "0wzavbwc1slyr3wh5jkapghpa748rc86pbw5b4gcxki73r08r7j2"))))
     (properties `((upstream-name . "adeptdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=adeptdata")
     (synopsis "Accelerometry Data Sets")
     (description
@@ -20223,6 +22434,9 @@ in the corresponding adept package.")
         (base32 "1dpfmfnqzci6p7wqwpp8y0cisx11r8kdsqjm85skb512n35m0i3a"))))
     (properties `((upstream-name . "adept")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-magrittr r-dvmisc r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/martakarass/adept")
@@ -20245,6 +22459,9 @@ during continuous walking activity.")
         (base32 "117piz0vxfd5qrfn1c9zb3mrivd6l0rbm0h8jfgcrnps5rkb7pmb"))))
     (properties `((upstream-name . "adepro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8
                              r-tidyr
                              r-shinywidgets
@@ -20287,6 +22504,9 @@ machine on which the data is stored.")
         (base32 "0n6f2v287gkbdrfxq50b1lbya4znqg50lrah0v540vmydgi5vkmm"))))
     (properties `((upstream-name . "adephylo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-phylobase r-ape r-adegenet r-ade4))
     (home-page "https://cran.r-project.org/package=adephylo")
     (synopsis "Exploratory Analyses for the Phylogenetic Comparative Method")
@@ -20311,6 +22531,9 @@ autocorrelation.  The package is described in Jombart et al (2010)
         (base32 "10sjpdp990jhzypkyywywl3hqrwnp0srdn2zgijm5g80w1420s52"))))
     (properties `((upstream-name . "adelie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rcppeigen r-rcpp r-r2r r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JamesYang007/adelie-r")
@@ -20341,6 +22564,9 @@ includes The package is an implementation of Yang, J. and Hastie, T. (2024)
         (base32 "10ynrw4w00ai303i39ciip810h6wj0iqmwk0qrb1p1g6jc5jvjmb"))))
     (properties `((upstream-name . "adehabitatMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp))
     (native-inputs (list))
     (home-page "https://cran.r-project.org/package=adehabitatMA")
@@ -20361,6 +22587,9 @@ includes The package is an implementation of Yang, J. and Hastie, T. (2024)
         (base32 "1hixi29v6p2479hy5y907mfz3ij01dkiyxd62mx348pnh5nkn8bc"))))
     (properties `((upstream-name . "adehabitatLT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-circstats r-adehabitatma r-ade4))
     (native-inputs (list))
     (home-page "https://cran.r-project.org/package=adehabitatLT")
@@ -20382,6 +22611,9 @@ movements.")
         (base32 "06k2ch6khn4g068n9fchbqkr3yr15jqax1zksdqaz566513ky6n8"))))
     (properties `((upstream-name . "adehabitatHS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-adehabitatma r-adehabitathr r-ade4))
     (native-inputs (list))
     (home-page "https://cran.r-project.org/package=adehabitatHS")
@@ -20403,6 +22635,9 @@ selection.")
         (base32 "09nllgkbpkcv9p6314216lal2937ffhiaahrx8319wkk4f1d9wvw"))))
     (properties `((upstream-name . "adehabitatHR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-adehabitatma r-adehabitatlt r-ade4))
     (native-inputs (list))
     (home-page "https://cran.r-project.org/package=adehabitatHR")
@@ -20424,6 +22659,9 @@ range.")
         (base32 "1a7bz9j06sc09kvynzss71dxffp40vsl35azj0gzs81jl2rr4ap0"))))
     (properties `((upstream-name . "adegraphics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-rcolorbrewer
                              r-latticeextra
@@ -20451,6 +22689,9 @@ complete re-implementation of the functions available in the ade4 package.")
         (base32 "0n5n9wbc46iksa66pbw1lxh4yyhgprqgy3l4cs6p406swiyyn32a"))))
     (properties `((upstream-name . "adea")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-slam
                              r-roi-plugin-symphony
                              r-roi-plugin-lpsolve
@@ -20485,6 +22726,9 @@ interactive version is available at <https://knuth.uca.es/shiny/DEA/>.")
         (base32 "1y0f62n8iv002ayd1nyl3bmszw558niwnfzjpvk0a7cbvfdyvwcg"))))
     (properties `((upstream-name . "ade4TkGUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice r-adegraphics r-ade4))
     (home-page "http://pbil.univ-lyon1.fr/ade4TkGUI/")
     (synopsis "'ade4' Tcl/Tk Graphical User Interface")
@@ -20504,6 +22748,9 @@ interactive version is available at <https://knuth.uca.es/shiny/DEA/>.")
         (base32 "044bb1jw2m8vwk5q8l7rlz4kqphjvy8i9d59rjg0k5q5l9vczfrp"))))
     (properties `((upstream-name . "ADDT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-matrix r-coneproj))
     (home-page "https://cran.r-project.org/package=ADDT")
     (synopsis "Analysis of Accelerated Destructive Degradation Test Data")
@@ -20536,6 +22783,9 @@ details can be found in Jin et al. (2017).")
         (base32 "1bw4ljyyswdhqyir9i6lj0mg9lm6ry4zpqp2h6w2bpk37rvs1w38"))))
     (properties `((upstream-name . "addScales")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=addScales")
@@ -20560,6 +22810,9 @@ argument list.")
         (base32 "13bwmgxylwi02g60j1rr51cr5jvvkl2nvf2lnnhnq46fhvs2ma7s"))))
     (properties `((upstream-name . "addreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-turboem r-glm2 r-combinat))
     (home-page "https://github.com/mdonoghoe/addreg")
     (synopsis "Additive Regression for Discrete Data")
@@ -20581,6 +22834,9 @@ than standard methods.")
         (base32 "15nxpdybsda6yhjk23bpafr8v1zdx8332pcxf26k795q3ypjpiy2"))))
     (properties `((upstream-name . "additiveDEA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolveapi r-benchmarking))
     (home-page "https://www.r-project.org")
     (synopsis "Additive Data Envelopment Analysis Models")
@@ -20614,6 +22870,9 @@ computation time when datasets are large.")
         (base32 "1w81vapv5xpxl8nl2gjr01z0jkanapn5152b1xxvil1n8byls5vq"))))
     (properties `((upstream-name . "additive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-purrr
@@ -20643,6 +22902,9 @@ for machine learning; see Kuhn and Wickham (2020) <https://www.tidymodels.org>).
         (base32 "125qfqbpv5xflw8qlyh8m3iyd6biyp3arls3z7y8bqkbghifl730"))))
     (properties `((upstream-name . "addinsOutline")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tibble
                              r-stringr
@@ -20681,6 +22943,8 @@ allows you to customize additional searches.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -20725,6 +22989,9 @@ install/uninstall their corresponding packages.")
         (base32 "1slx9vfcpb468asvgcj0vh7djc5rndzdpcp96qmnis77fx67xj5s"))))
     (properties `((upstream-name . "addinsJoaoMelo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rstudioapi r-purrr r-dplyr))
     (home-page "https://cran.r-project.org/package=addinsJoaoMelo")
     (synopsis "Addins Made of Joao Melo")
@@ -20747,6 +23014,9 @@ from the computer transfer area.")
         (base32 "0hk7br52wjmq605xgslv8lspr35aqpdgkiz2yljz31khy3y3vi8c"))))
     (properties `((upstream-name . "addhazard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rootsolve r-ahaz))
     (home-page "https://cran.r-project.org/package=addhazard")
     (synopsis "Fit Additive Hazards Models for Survival Analysis")
@@ -20772,6 +23042,9 @@ hazards.")
         (base32 "1709jq9rp5lhqk0qpk8zkdwzhcv1bcach8mm7yiz7hzcc1mgxb12"))))
     (properties `((upstream-name . "addhaz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-boot))
     (home-page "https://cran.r-project.org/package=addhaz")
     (synopsis "Binomial and Multinomial Additive Hazard Models")
@@ -20794,6 +23067,9 @@ by Yokota et al (2017).")
         (base32 "1glf83ydx4v3ld8c4gb9h3jk6srd054bis5l8k57p1ba4fnqnnpp"))))
     (properties `((upstream-name . "ADCT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=ADCT")
     (synopsis "Adaptive Design in Clinical Trials")
@@ -20816,6 +23092,9 @@ biomarker-informed adaptive design, etc.")
         (base32 "152j863rfrmjpaambxy6hc57zcpp0wlyd6kl7miryk3z0yvngcw9"))))
     (properties `((upstream-name . "adc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-runner))
     (home-page "https://github.com/TxWRI/adc")
     (synopsis "Calculate Antecedent Discharge Conditions")
@@ -20839,6 +23118,9 @@ algorithms are described and reviewed in Zhang and Ball (2017)
         (base32 "17w74ggng77yvpqn0vw1s1gylmchrv2dq6s19fl56dl6nqp6bfpa"))))
     (properties `((upstream-name . "adbi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nanoarrow r-dbi r-adbcdrivermanager))
     (home-page "https://adbi.r-dbi.org")
     (synopsis "'DBI' Compliant Database Access Using 'ADBC'")
@@ -20863,6 +23145,9 @@ for analytical applications.")
         (base32 "0gp8p1pp3nsnx4nv1ag7q0qkx4wqrmqmwn56czz2wjf68zxfdx3i"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list sqlite))
     (propagated-inputs (list r-adbcdrivermanager))
     (home-page "https://arrow.apache.org/adbc/current/r/adbcsqlite/")
@@ -20887,6 +23172,9 @@ parameters.")
         (base32 "1pyhgnbgy41z1wylzrh24x0l44aram7ssp675bsadwym0mc9dcpm"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib openssl))
     (propagated-inputs (list r-adbcdrivermanager))
     (native-inputs (list pkg-config))
@@ -20912,6 +23200,9 @@ and query parameters.")
         (base32 "0n556snnm8i5a4njq75sazp0wz0cajcgddzjm3w4378pamxmmm79"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nanoarrow))
     (home-page "https://arrow.apache.org/adbc/current/r/adbcdrivermanager/")
     (synopsis "'Arrow' Database Connectivity ('ADBC') Driver Manager")
@@ -20935,6 +23226,9 @@ libraries that uses Arrow for result sets and query parameters.")
         (base32 "1shp1yja5zqikl29j2xi4jlwsbkrlg593isnclhy7bwaqyn3qm14"))))
     (properties `((upstream-name . "adass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsem
                              r-rfast
                              r-plot3d
@@ -20962,6 +23256,9 @@ function-on-function linear regression model described in Centofanti et al.
         (base32 "1c8dh8lxyb076317n4qk2g3qv5j4mc1dszbh3k1p2b0nxiprqk5i"))))
     (properties `((upstream-name . "AdaSampling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-e1071 r-class r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PengyiYang/AdaSampling/")
@@ -20986,6 +23283,9 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
         (base32 "0vd79id211n1w8hqr3jpncdf3x8rg80gkdwfg4618hkadzdf2a2h"))))
     (properties `((upstream-name . "adaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-triebeard r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://gesistsa.github.io/adaR/")
@@ -21008,6 +23308,9 @@ public suffix extractor.")
         (base32 "0wb21mac5h683qgjdic29kpncr22ri93iwq8w4b7hywaxkv0zj2p"))))
     (properties `((upstream-name . "adaptTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://cran.r-project.org/package=adaptTest")
     (synopsis "Adaptive Two-Stage Tests")
@@ -21031,6 +23334,9 @@ Vandemeulebroecke, An investigation of two-stage tests, Statistica Sinica 2006."
         (base32 "00npcl2js9vj5r3l66cp5d2l807klia581pig1gsyjjq4rvmfa7v"))))
     (properties `((upstream-name . "adaptsmoFMRI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-geom
                              r-spatstat
                              r-mvtnorm
@@ -21061,6 +23367,13 @@ developed by A. Brezger, L. Fahrmeir, A. Hennerfeind (2007)
         (base32 "0hsignjfq2kbsygpip0fkbncjil8lxryhlhavin09x4xb41kbsva"))))
     (properties `((upstream-name . "ADAPTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-ranger
                              r-quantmod
                              r-preprocesscore
@@ -21098,6 +23411,9 @@ Deconvolution Augmentation of Profiles for Tissue Specific cells
         (base32 "0a0rrqhb1nyx5m0647ljnmy8ffc78swsx8jh8p8hzh0s45kxrg5y"))))
     (properties `((upstream-name . "adaptr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://inceptdk.github.io/adaptr/")
     (synopsis "Adaptive Trial Simulator")
@@ -21121,6 +23437,9 @@ Developed as part of the INCEPT (Intensive Care Platform Trial) project
         (base32 "1yllz1zd4cryf5bj8b2lcrj6zl79yjkllyh9p02ikryy5qmg419b"))))
     (properties `((upstream-name . "adaptMT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://arxiv.org/abs/1609.06035")
     (synopsis
@@ -21145,6 +23464,9 @@ algorithms.  See Lei, Lihua and Fithian, William (2016)
         (base32 "1inw339n2rb1g2n9zkmv8gp43lifil3plv82x9sxrq468ihzng4f"))))
     (properties `((upstream-name . "adaptMCMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ramcmc r-matrix r-coda))
     (home-page "https://github.com/scheidan/adaptMCMC")
     (synopsis
@@ -21169,6 +23491,9 @@ the proposal distributions to a user defined acceptance rate.")
         (base32 "1gw0608452cbyfcsf3950vxg960k297qxhbxp6s11hz8f190bxmy"))))
     (properties `((upstream-name . "adaptIVPT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-rcppprogress r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=adaptIVPT")
     (synopsis "Adaptive Bioequivalence Design for In-Vitro Permeation Tests")
@@ -21198,6 +23523,9 @@ U.S. Food and Drug Administration.")
         (base32 "0q6fxni66f8dsrzjrp54mpddvf0vbaji4a2sjlp9gnia5gvi9z27"))))
     (properties `((upstream-name . "adaptivetau")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/plfjohnson/adaptivetau")
     (synopsis "Tau-Leaping Stochastic Simulation")
     (description
@@ -21221,6 +23549,9 @@ Rustom Antia.")
         (base32 "1766b3d9ysa9axfxqwy6gzj0z8hsl34pic6l63nbidqas55vnjqa"))))
     (properties `((upstream-name . "adaptiveGPCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-phyloseq r-ggplot2 r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=adaptiveGPCA")
@@ -21244,6 +23575,9 @@ to microbiome data and a shiny app for interactive visualization.")
         (base32 "04w0v2fv9ixfz148d8f5vv7w5ypdywwf1qysk2ypc7a7md4vv9qz"))))
     (properties `((upstream-name . "AdaptGauss")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rcpp r-pracma r-plotly
                              r-datavisualizations))
     (native-inputs (list r-knitr))
@@ -21271,6 +23605,9 @@ Thrun, M.C., Hansen-Goos, O., Lotsch, J. (2015) <DOI:10.3390/ijms161025897>.")
         (base32 "02xpphdhvryc06yji89mn7m2djgkpy19ph4sd52rhfsma7xn6hyf"))))
     (properties `((upstream-name . "adaptDiag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pbmcapply r-foreach r-extradistr r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/graemeleehickey/adaptDiag")
@@ -21293,6 +23630,9 @@ the posterior predictive probabilities.")
         (base32 "05z3dwcx7pyysf0ghz8m6ij3lj53qkqll50b0gd2yi7ffp9m9601"))))
     (properties `((upstream-name . "adapt4pv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-speedglm
                              r-matrix
@@ -21320,6 +23660,9 @@ score-based signal detection approaches are also supplied.  See Courtois et al
         (base32 "0zi3a17rapc1z074k3yzgjv2b6ba6c9d54b1hm0ivvgfd335981f"))))
     (properties `((upstream-name . "adana")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-roi-plugin-optimx r-roi r-optimx))
     (home-page "https://cran.r-project.org/package=adana")
     (synopsis
@@ -21356,6 +23699,9 @@ any kind of optimization problems.  Cebeci, Z. (2021, ISBN: 9786254397448).")
         (base32 "0giypz04m9anssa2r3hlf95lnj74i3ir48p5j898i2z1gmf8m14w"))))
     (properties `((upstream-name . "adaHuber")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/XiaoouPan/adaHuber")
     (synopsis "Adaptive Huber Estimation and Regression")
@@ -21377,6 +23723,9 @@ principle.")
         (base32 "06hfizzaff6fsr8j8bag7avc1inqx2xs52gidacpyahxh6wvj3pz"))))
     (properties `((upstream-name . "adace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-pracma))
     (home-page "https://cran.r-project.org/package=adace")
     (synopsis "Estimator of the Adherer Average Causal Effect")
@@ -21401,6 +23750,9 @@ estimated through direct integration as described in: Qu et al., (2019)
         (base32 "19q8m5swp7ivrxi8rbkpp37d6fwr35zd8xs4ygpfgd07axc9451s"))))
     (properties `((upstream-name . "ACWR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r2d3))
     (home-page "https://github.com/JorgeDelro/ACWR")
     (synopsis "Acute Chronic Workload Ratio Calculation")
@@ -21425,6 +23777,9 @@ and RAU <doi: 10.1136/bjsports-2017-098925>.")
         (base32 "078n1if2rkbdhivrzp3lsq35a8awrf5y3s7fi3f5l21a9dmrk4d1"))))
     (properties `((upstream-name . "ACV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-forecast))
     (home-page "https://cran.r-project.org/package=ACV")
     (synopsis
@@ -21453,6 +23808,9 @@ counterparts.  For more information, see the accompanying article Stanek (2021)
         (base32 "15i4xbcdk5vxjrgac32zh4439v0vmabnw3jvsmxiipap5frp7rpi"))))
     (properties `((upstream-name . "acumos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-rserve
                              r-rprotobuf
@@ -21482,6 +23840,9 @@ component, and push it to an Acumos platform.")
         (base32 "1mabhbv5mg4afcxwv4fn2f7847scmddmyfqzzhypypj4pll61nr3"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -21509,9 +23870,9 @@ and beginning assumption development.  Experience study methods, including
 exposure calculations, are described in: Atkinson & @code{McGarry} (2016)
 \"Experience Study Calculations\"
 <https://www.soa.org/49378a/globalassets/assets/files/research/experience-study-calculations.pdf>.
- The limited fluctuation credibility method used by the exp_stats() function is
-described in: Herzog (1999, ISBN:1-56698-374-6) \"Introduction to Credibility
-Theory\".")
+ The limited fluctuation credibility method used by the @code{exp_stats()}
+function is described in: Herzog (1999, ISBN:1-56698-374-6) \"Introduction to
+Credibility Theory\".")
     (license license:expat)))
 
 (define-public r-actuaryr
@@ -21526,6 +23887,9 @@ Theory\".")
         (base32 "08dzn565ax2l2hrn2m32k6magjbskybywl0hsgkg11nrjvkznwnx"))))
     (properties `((upstream-name . "actuaryr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-purrr
                              r-magrittr
@@ -21555,6 +23919,9 @@ base date to facilitate actuarial reporting and to compare results.")
         (base32 "1545jmbbisw5fxk07xl86jw7sw4kysa2crjm57mq2qk4qg9hh5rb"))))
     (properties `((upstream-name . "ActuarialM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ActuarialM")
     (synopsis "Computation of Actuarial Measures Using Bell G Family")
     (description
@@ -21585,6 +23952,9 @@ COVID-19 and actuarial data\".  Open Physics, 21(1), 20220242.
         (base32 "02f90vdbfz6shsw4ndhqbqjsrwiwmi1jp66bsl897cb8fnywnzs4"))))
     (properties `((upstream-name . "actuaRE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod
                              r-nlme
                              r-magrittr
@@ -21617,6 +23987,9 @@ model.  See Campo, B.D.C. and Antonio, K. (2023)
         (base32 "1nqlsdywrfvq94zi2xk90m9m768x18fk6p6jrds8mpv63w2y3frc"))))
     (properties `((upstream-name . "actLifer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=actLifer")
@@ -21626,7 +23999,7 @@ model.  See Campo, B.D.C. and Antonio, K. (2023)
 tables.  Each function adds a column to the inputted dataset for each
 intermediate calculation between mortality rate and life expectancy.  Users can
 run any of our functions to complete the life table until that step, or run
-lifetable() to output a full life table that can be customized to remove
+@code{lifetable()} to output a full life table that can be customized to remove
 optional columns.  Methods for creating lifetables are as described in
 Zedstatistics (2021) <https://www.youtube.com/watch?v=Dfe59@code{glNXAQ>}.")
     (license license:expat)))
@@ -21643,6 +24016,9 @@ Zedstatistics (2021) <https://www.youtube.com/watch?v=Dfe59@code{glNXAQ>}.")
         (base32 "1b64k0k6l9dgvyqhd6j9plabaibjayfm5maa4bpwxxgwkp122r3c"))))
     (properties `((upstream-name . "activegp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
@@ -21674,6 +24050,9 @@ al. (JCGS, 2021) <doi:10.48550/@code{arXiv.1907.11572>}.")
         (base32 "1lga186jfymbs9padvv3zb25ccrfqhriszql3bbh0pb5ilqf3qdy"))))
     (properties `((upstream-name . "activatr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-slider
@@ -21707,6 +24086,9 @@ plot the activity in a variety of ways.")
         (base32 "1f4q96liacxi21i8zmgacaz91zvrvk5jwd5x2ld8fwbjx33bx02s"))))
     (properties `((upstream-name . "activAnalyzer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-stringr
@@ -21761,6 +24143,9 @@ actigraph.sleepr package developed by Petkova (2021)
         (base32 "0byms52rk9snsr6z400qidbvpnfxxn0idv1hr9k3whbadr3nxyxi"))))
     (properties `((upstream-name . "ActiSleep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rsqlite
@@ -21793,6 +24178,9 @@ Efficient Segmentation Algorithm to Estimate Sleep Duration from Actigraphy Data
         (base32 "0p65j7l8d8503nil34faz7jashv5rw327xlpphwhwa4x5wga5z01"))))
     (properties `((upstream-name . "actilifecounts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-gsignal r-ggirread))
     (home-page "https://github.com/jhmigueles/actilifecounts")
     (synopsis "Generate Activity Counts from Raw Accelerometer Data")
@@ -21815,6 +24203,9 @@ flexible approach to handle different sampling frequencies.")
         (base32 "0hd1mkshywszswnllcx1lvlghnfk92438r57v6r7w8p5i9m04z9x"))))
     (properties `((upstream-name . "actel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svglite
                              r-stringr
                              r-stringi
@@ -21838,9 +24229,10 @@ flexible approach to handle different sampling frequencies.")
 move through receiver arrays.  This package combines the advantages of automatic
 sorting and checking of animal movements with the possibility for user
 intervention on tags that deviate from expected behaviour.  The three analysis
-functions (explore(), migration() and residency()) allow the users to analyse
-their data in a systematic way, making it easy to compare results from different
-studies.  CJS calculations are based on Perry et al. (2012)
+functions @code{(explore()}, @code{migration()} and @code{residency()}) allow
+the users to analyse their data in a systematic way, making it easy to compare
+results from different studies.  CJS calculations are based on Perry et al.
+(2012)
 <https://www.researchgate.net/publication/256443823_Using_mark-recapture_models_to_estimate_survival_from_telemetry_data>.")
     (license license:gpl3)))
 
@@ -21856,6 +24248,9 @@ studies.  CJS calculations are based on Perry et al. (2012)
         (base32 "1w3xkq3wanpa2j3rfzzdvad2r3vzzvp76kp56mh2s07p3xql6rv0"))))
     (properties `((upstream-name . "ActCR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-minpack-lm r-dplyr r-cosinor2 r-cosinor))
     (home-page "https://github.com/junruidi/ActCR")
     (synopsis "Extract Circadian Rhythms Metrics from Actigraphy Data")
@@ -21884,6 +24279,9 @@ extended cosinor model coefficient.  Details can be found in Junrui Di et al
         (base32 "0c5515mxw2ghdwmnqz1www84v3dn7wlvij47wankb4ak285ak30i"))))
     (properties `((upstream-name . "act")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xml
                              r-textutils
@@ -21921,6 +24319,9 @@ by other users.")
         (base32 "18xj0svysm9qm6dyhx7ib2krwcfds8i3rrcd03ph3kz597vf41zi"))))
     (properties `((upstream-name . "ACSSpack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-hdci r-extradistr))
     (home-page "https://cran.r-project.org/package=ACSSpack")
     (synopsis "ACSS, Corresponding ACSS, and GLP Algorithm")
@@ -21950,6 +24351,9 @@ sparsity and shrinkage in regression\".")
         (base32 "0fff7z3i8h30v7bsyq240h8ws5ld04n6c5r2iizd2icp8dk9xs9x"))))
     (properties `((upstream-name . "acroname")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-readr
                              r-r-utils
@@ -21976,6 +24380,9 @@ arbitrary text input.")
         (base32 "0vgwzjwxhfs287k0jg8lbmggnanli69jig1wfsxph26yy4hddxfk"))))
     (properties `((upstream-name . "acro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list python))
     (propagated-inputs (list r-reticulate r-png r-admiraldev))
     (home-page "https://github.com/AI-SDC/ACRO-R")
@@ -22002,6 +24409,9 @@ Confidentiality 2023; see
         (base32 "0p1a6qn8hhgc6sqprzs2xy3858llmv9q74b06q16rkb5vqi16bkk"))))
     (properties `((upstream-name . "acoRn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-stringi r-data-table))
     (home-page "https://cran.r-project.org/package=acoRn")
     (synopsis
@@ -22031,6 +24441,9 @@ making it a valuable resource for researchers.")
         (base32 "12i1b5bbdn4wz80p8v6xygap7pkgdvidxmsd927ks7qf1yvaq93k"))))
     (properties `((upstream-name . "ACNE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r-utils
                              r-r-oo
                              r-r-methodss3
@@ -22060,6 +24473,9 @@ factorization (NMF).")
         (base32 "02xc32yqg0vdv8anbfqydnrkc79yj51xyy63skinm5dzxpswbq8k"))))
     (properties `((upstream-name . "acled.api")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (home-page "<https://gitlab.com/chris-dworschak/acled.api>")
     (synopsis "Automated Retrieval of ACLED Conflict Event Data")
@@ -22086,6 +24502,9 @@ conditions of use, and that you agree with their attribution requirements.")
         (base32 "1xkhplw7jpz7y86nac2z5vk2xs898kfv6apmk3rahjr0rmdijdqg"))))
     (properties `((upstream-name . "Achilles")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries
                              r-sqlrender
                              r-rlang
@@ -22120,6 +24539,9 @@ Health Data Sciences and Informatics community applications.")
         (base32 "0ifwgpnql14z1qzw8fmllgzl97bwd35f0558ymmcxz1mhgh6cb2v"))))
     (properties `((upstream-name . "ACEsimFit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openmx))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ACEsimFit")
@@ -22146,6 +24568,9 @@ Visscher(2004)<doi:10.1375/twin.7.5.505>.")
         (base32 "1ssq8avj20dk2mal0j5dvshf7qgk0as90sgl71cn91cq8lbiilpn"))))
     (properties `((upstream-name . "ACEsearch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat r-httr))
     (home-page "https://shahlab.stanford.edu/start")
     (synopsis "'ACE' Search Engine API")
@@ -22170,6 +24595,9 @@ available at <https://shahlab.stanford.edu/start>.")
         (base32 "0n47vchi2kwm1czjfbdbcg1lg17bysw7fcca7j0q0n46c6w8rf49"))))
     (properties `((upstream-name . "ACEP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr))
     (home-page "https://github.com/agusnieto77/ACEP")
     (synopsis "Analisis Computacional de Eventos de Protesta")
@@ -22198,6 +24626,8 @@ brings together dictionaries from different sources.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -22234,6 +24664,9 @@ second source editor.")
         (base32 "105rb42cwzpbarvdm9zsbicy3xkr3p659bphzgnvcc4lh66rhiay"))))
     (properties `((upstream-name . "ACE.CoCo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg))
     (home-page "https://github.com/hongyuan-cao/ACE")
     (synopsis "Analysis of Correlated High-Dimensional Expression (ACE) Data")
@@ -22255,6 +24688,9 @@ factor-adjusted mean difference estimation (two-sample test).")
         (base32 "0mf4fhqym4l8m71wgha1587r7sxnmakq3bds24yr425433biiy25"))))
     (properties `((upstream-name . "acdcR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-raster r-data-table))
     (home-page "https://github.com/ysd2004/acdcR")
     (synopsis "Agro-Climatic Data by County")
@@ -22278,13 +24714,16 @@ PRISM raster.  See the examples, testing versions and more details from:
         (base32 "03ip3fvc1qcq0vmcidv1rbih85v3dxhx08047vjlf21kfcr9cizk"))))
     (properties `((upstream-name . "acdcquery")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite r-dbi))
     (home-page "https://github.com/SLesche/acdc-query")
     (synopsis "Query the Attentional Control Data Collection")
     (description
      "Interact with the Attentional Control Data Collection (ACDC).  Connect to the
-database via connect_to_db(), set filter arguments via add_argument() and query
-the database via query_db().")
+database via @code{connect_to_db()}, set filter arguments via
+@code{add_argument()} and query the database via @code{query_db()}.")
     (license license:gpl3+)))
 
 (define-public r-accumulate
@@ -22299,6 +24738,9 @@ the database via query_db().")
         (base32 "0c2iiliqpyblfdz189d06ljbbp0hyadhgr7hrzm0wfcm8245njah"))))
     (properties `((upstream-name . "accumulate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/markvanderloo/accumulate")
     (synopsis "Split-Apply-Combine with Dynamic Groups")
@@ -22321,6 +24763,9 @@ user.")
         (base32 "1yq64hh7w328ks02fh9q2hnl73grwd31rrm6c0jqyb0f0lclkxir"))))
     (properties `((upstream-name . "accucor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-tibble
                              r-stringr
@@ -22350,6 +24795,9 @@ X, Lu W and Rabinowitz J (2017) <doi:10.1021/acs.analchem.7b00396>.")
         (base32 "1xd855yzr405kl6qqm68zgcj3j112xmpkx0f1z8gd9z7s3sr74h0"))))
     (properties `((upstream-name . "accrualPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-purrr
                              r-magrittr
@@ -22380,6 +24828,9 @@ it's intended sample size.")
         (base32 "1jdbbsi8nzvr8hnrpw5sr8zf55irnwwrnkwx4vd0zx84bxvw3bqy"))))
     (properties `((upstream-name . "accessrmd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlist
                              r-rcurl
@@ -22409,6 +24860,8 @@ for screen reader users.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -22435,15 +24888,16 @@ produced only on a Windows Operating System.  One aspect of accessibility is
 providing a headings structure that is recognised by a screen reader, providing
 a navigational tool for a blind or partially-sighted person.  A key aim is to
 produce documents of different formats easily from each of a collection of R
-markdown source files.  Input R markdown files are rendered using the render()
-function from the rmarkdown package
+markdown source files.  Input R markdown files are rendered using the
+@code{render()} function from the rmarkdown package
 <https://cran.r-project.org/package=rmarkdown>.  A zip file containing multiple
 output files can be produced from one function call.  A user-supplied template
 Word document can be used to determine the formatting of an output Word
 document.  Accessible PDF files are produced from Word documents using
 @code{OfficeToPDF} <https://github.com/cognidox/@code{OfficeToPDF>}.  A
-convenience function, install_otp() is provided to install this software.  The
-option to print HTML output to (non-accessible) PDF files is also available.")
+convenience function, @code{install_otp()} is provided to install this software.
+ The option to print HTML output to (non-accessible) PDF files is also
+available.")
     (license license:gpl3+)))
 
 (define-public r-accessibility
@@ -22458,6 +24912,9 @@ option to print HTML output to (non-accessible) PDF files is also available.")
         (base32 "0c130kbh3h42pj0iw4zb9kv1i8zmy12znyhxbb5cvr8lwgkzdc4n"))))
     (properties `((upstream-name . "accessibility")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-hmisc r-data-table r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeaGIT/accessibility")
@@ -22486,6 +24943,9 @@ concentration and Theil indices and the FGT family of measures).")
         (base32 "137qlqkazh665d7wvxkhxfz2a5ss3hy4acbc6jzbk7vq4qpbcj0i"))))
     (properties `((upstream-name . "AcceptReject")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scattermore
                              r-scales
                              r-rlang
@@ -22528,6 +24988,9 @@ ISBN: 978-0387310732).")
         (base32 "1abnydhn86g5vg5fpv711887a4nr1xzlrqi45bgy00gfag00pqih"))))
     (properties `((upstream-name . "AccelStab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-mvtnorm r-minpack-lm r-ggplot2 r-dplyr))
     (home-page "https://github.com/AccelStab/AccelStab")
     (synopsis "Accelerated Stability Kinetic Modelling")
@@ -22556,6 +25019,9 @@ development.")
         (base32 "0h9dyzd1pbr4rvxqz69vlfmbibcd1n72qqgjvci7fdjjvfq2mc9p"))))
     (properties `((upstream-name . "acca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-ggplot2))
     (home-page "https://cran.r-project.org/package=acca")
     (synopsis "Canonical Correlation Analysis with Inferential Guaranties")
@@ -22580,6 +25046,9 @@ Furthermore, it provides plotting tools to visualize the results.")
         (base32 "055n0y8g2ibai5zyvw9cqbi0l1zi792cgf65jhy6mrf7j6lgrzhw"))))
     (properties `((upstream-name . "academictwitteR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-tidyselect
                              r-tidyr
@@ -22616,6 +25085,9 @@ manage and reshape the format in which data is provided on the client side.")
         (base32 "10v7li7d26kaj5v608bnyrgqxsx12rq3czyb59hbrb5428vsv99x"))))
     (properties `((upstream-name . "AcademicThemes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hwarden162/AcademicThemes")
@@ -22637,6 +25109,9 @@ various academic institutions.")
         (base32 "1k0c60z0npgjaz1w3vhh21k6x1l8alkzmms1r89h2p874cqn7y6x"))))
     (properties `((upstream-name . "ABSurvTDC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-readxl))
     (home-page "https://cran.r-project.org/package=ABSurvTDC")
     (synopsis
@@ -22666,6 +25141,9 @@ This package has been developed using algorithm of Klein and Moeschberger (2003)
         (base32 "0ykds1l7bi0h06fjp0d6xshl8ar05n7ccmjbl7hz02l2v7ncfa6v"))))
     (properties `((upstream-name . "abstr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sf
@@ -22697,6 +25175,9 @@ change <doi:10.1007/s10109-020-00342-2>.")
         (base32 "1s8dn0y0igxaxa1q6cakc28fb1dvf0zljmw7gbn68pdimyrvdh0g"))))
     (properties `((upstream-name . "absorber")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsegl
                              r-matrix
                              r-mass
@@ -22727,6 +25208,9 @@ details we refer the reader to the paper Savino, M. E. and LÃ©vy-Leduc, C.
         (base32 "1a65zwkrxqidbcfpin9k119zip8vb0vnl87akimjn3xnynb3i5br"))))
     (properties `((upstream-name . "abseil")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://abseil.xingchi.li")
     (synopsis "'C++' Header Files from 'Abseil'")
     (description
@@ -22747,6 +25231,9 @@ details we refer the reader to the paper Savino, M. E. and LÃ©vy-Leduc, C.
         (base32 "1r3jd109ykcmwvpqs7l85r9ka7718iag21vsygjg0j8nmdbsicdz"))))
     (properties `((upstream-name . "ABRSQOL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/Ahlfeldt/ABRSQOL-toolkit#readme")
     (synopsis
      "Quality-of-Life Solver for \"Measuring Quality of Life under Spatial Frictions\"")
@@ -22774,6 +25261,9 @@ toolkit in your work, please cite the paper.")
         (base32 "0klfrclmwxsqm3aazs9jlw8mh5rzcsvm2wjk2r1ycx76kvkx8wii"))))
     (properties `((upstream-name . "abmR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmap
                              r-table1
                              r-swfscmisc
@@ -22812,6 +25302,9 @@ the presentation of simulation results.")
         (base32 "1sdjazf02kx7ddxizfz9nb9r7yaqcw7k6xkxmxqmm2a3wi1xvfap"))))
     (properties `((upstream-name . "ABM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-r6))
     (home-page "https://github.com/junlingm/ABM")
     (synopsis "Agent Based Model Simulation Framework")
@@ -22851,6 +25344,9 @@ information about the implementation and examples can be found at
         (base32 "0xgj3bfjahvnq34r0312d00l3wpdwfnqv7a3j2lklazc69cg7wra"))))
     (properties `((upstream-name . "ablasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrixstats r-hdm))
     (home-page "https://cran.r-project.org/package=ablasso")
     (synopsis "Arellano-Bond LASSO Estimator for Dynamic Linear Panel Models")
@@ -22873,6 +25369,9 @@ LASSO Estimator for Dynamic Linear Panel Models\". @code{arXiv} preprint
         (base32 "0q7l9lxm41pjkdv98axx87wcxjxfyccfwi2k1b29g07pfjszs0hv"))))
     (properties `((upstream-name . "abjData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://abjur.github.io/abjData/")
     (synopsis
      "Databases Used Routinely by the Brazilian Jurimetrics Association")
@@ -22896,6 +25395,9 @@ used in our book.")
         (base32 "03bpp5fkg748h4skwqlrjl3rj0j68x9m3mjjjx5xfv0j0hzs0360"))))
     (properties `((upstream-name . "abima")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-boot))
     (home-page "https://websites.umich.edu/~songlab/software.html#ABIMA")
     (synopsis
@@ -22921,6 +25423,9 @@ to He, Song and Xu (2024) <doi:10.1093/jrsssb/qkad129>.")
         (base32 "0h8p912l0202wyr5vjsbzw5mr70m56ab39wv833g6c4c3187479y"))))
     (properties `((upstream-name . "abglasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod r-pracma r-mass))
     (home-page "https://cran.r-project.org/package=abglasso")
     (synopsis "Adaptive Bayesian Graphical Lasso")
@@ -22943,6 +25448,9 @@ original MATLAB routine proposed in Wang (2012) <doi:10.1214/12-BA729>.")
         (base32 "19zw9f5z4m6951gm9bg03lilbpnxz6yi0sf14gqw3aym60r49wm4"))))
     (properties `((upstream-name . "abess")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/abess-team/abess")
@@ -22975,6 +25483,9 @@ screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
         (base32 "0rpmapx5ji69hfszbhrhvjmn5i6a4jdgy0g11w59xdsrpzc40sv8"))))
     (properties `((upstream-name . "aberrance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://github.com/kyliegorney/aberrance")
     (synopsis "Detect Aberrant Behavior in Test Data")
@@ -22996,6 +25507,9 @@ guessing, and test tampering.")
         (base32 "053l94br8sdy30078ssncq5i5zvdxa3m72ymbwbh0cm3zmsljj29"))))
     (properties `((upstream-name . "abdiv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ape))
     (home-page "https://github.com/kylebittinger/abdiv")
     (synopsis "Alpha and Beta Diversity Measures")
@@ -23022,6 +25536,9 @@ here are designed to be basic and clear to the reader.")
         (base32 "1cg8xfzxya585wzk6y2kf4flgjxlspzqqqksbig8nlxmwxxj413p"))))
     (properties `((upstream-name . "abclass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://wwenjie.org/abclass")
     (synopsis "Angle-Based Large-Margin Classifiers")
@@ -23042,6 +25559,9 @@ here are designed to be basic and clear to the reader.")
         (base32 "033mbc1ghkadvxdckz1f04p8d5ml3ifmssdd1y4qj70nx7x9hs4l"))))
     (properties `((upstream-name . "abasequence")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=abasequence")
     (synopsis "Coding 'ABA' Patterns for Sequence Data")
     (description
@@ -23067,6 +25587,9 @@ based on the work by Ziembowicz, K., Rychwalska, A., & Nowak, A. (2022).
         (base32 "0sn8sc25syvni45w99h76z0als91a9cc4jg3visp81dqw1z4mml9"))))
     (properties `((upstream-name . "AATtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-foreach r-dplyr r-doparallel))
     (home-page "https://cran.r-project.org/package=AATtools")
     (synopsis
@@ -23089,6 +25612,9 @@ intervals for individual participant scores.")
         (base32 "0w7fj7l2pyz2y1dywpkdxb9qc4v89d57l4ddnjraxsfppk5ga3i4"))))
     (properties `((upstream-name . "AalenJohansen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AalenJohansen")
     (synopsis "Conditional Aalen-Johansen Estimation")

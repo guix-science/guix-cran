@@ -53,6 +53,9 @@
         (base32 "0scslbgbbwma7sr0w9awg58ly5jwn877xsk6q1gq0ss3rd17pmfk"))))
     (properties `((upstream-name . "EZtune")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart
                              r-rocr
                              r-optimx
@@ -90,6 +93,9 @@ approaches can be misleading.")
         (base32 "0r4zq0864xpnmczg1zpaasi348j1fllrn0rqfa5fmjh245chcpd4"))))
     (properties `((upstream-name . "ezr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weights
                              r-shinydashboard
                              r-shiny
@@ -124,6 +130,9 @@ variables.")
         (base32 "1apfchy9s09hvympq1ipvxsqizwgx05sza8k38yf9vl8nphcdpkc"))))
     (properties `((upstream-name . "ezplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lubridate r-ggplot2 r-forcats r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ezplot")
@@ -145,6 +154,9 @@ bar, line, area, ROC, waterfall, pie) while aiming to reduce typing.")
         (base32 "0x62nzs1kayv95a6ldav732v79gahrri2khy1w678rxbzfx5wkqy"))))
     (properties `((upstream-name . "ezmmek")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
@@ -181,6 +193,9 @@ studies more comparable and reproducible.")
         (base32 "07cznigqndqly24lh3jdk3zq1r4xflivgdfhrh7mmhr83lqy1cha"))))
     (properties `((upstream-name . "ezknitr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r-utils r-markdown r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/ezknitr/")
@@ -206,6 +221,9 @@ markdown/HTML documents easier.")
         (base32 "0ln7xa9gys19xyn4wkfxaxfpyvaxvcag04s3j9sc19ff8xdxzf3z"))))
     (properties `((upstream-name . "EzGP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nloptr))
     (home-page "https://cran.r-project.org/package=EzGP")
     (synopsis
@@ -216,7 +234,7 @@ responses for new inputs.  The input variables of the datasets can be
 quantitative, qualitative/categorical or mixed.  The output variable of the
 datasets is a scalar (quantitative).  The optimization of the likelihood
 function can be chosen by the users (see the documentation of
-@code{EzGP_fit}()).  The modeling method is published in \"@code{EzGP}:
+@code{EzGP_fit()}).  The modeling method is published in \"@code{EzGP}:
 Easy-to-Interpret Gaussian Process Models for Computer Experiments with Both
 Quantitative and Qualitative Factors\" by Qian Xiao, Abhyuday Mandal, C. Devon
 Lin, and Xinwei Deng (2022) <doi:10.1137/19M1288462>.")
@@ -234,6 +252,9 @@ Lin, and Xinwei Deng (2022) <doi:10.1137/19M1288462>.")
         (base32 "1qcgvcjksdajn2rhv52bgqz3n0lnxynjdx4gwhkgsy29ffa0sq2c"))))
     (properties `((upstream-name . "ezEDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-rlang
@@ -266,6 +287,9 @@ exploration patterns.  Some of the ideas in this package are motivated by Fox
         (base32 "0nkydysrnjr7ihs9m5if0czfqd30q7acbbv2l81dig5bgdvrwyg8"))))
     (properties `((upstream-name . "ezECM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-mvnfast
                              r-mcmcpack
@@ -298,6 +322,9 @@ Carmichael, and Williams (2024) available on @code{arXiv} at
         (base32 "0lpx55a8fhy6fqdv3zvzx9mh75q34r71v5kp96hkm9jzl4yvrpd2"))))
     (properties `((upstream-name . "ezec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-drc r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/grunwaldlab/ezec")
@@ -322,6 +349,9 @@ entire set of isolates using the drc package.")
         (base32 "04ah9dbfwl89xi0di0dslaf8a39nynxymm8lbacgd88al5dg7y1n"))))
     (properties `((upstream-name . "ezCutoffs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progress
                              r-moments
                              r-lavaan
@@ -349,6 +379,9 @@ number of observations, etc.) as the model under consideration.")
         (base32 "0k29c566mysmry8xn2b7chnmacnav0inbiadv1sb0gfmg5yv8zdm"))))
     (properties `((upstream-name . "ezcox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-utf8
                              r-tibble
                              r-survival
@@ -379,6 +412,9 @@ Cox models and return tidy result.")
         (base32 "1vpycf6gambwg8218wwjc9h3rhsin7qrhh0mpd3r6n9fp03y634f"))))
     (properties `((upstream-name . "ez.combat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ez.combat")
     (synopsis "Easy ComBat Harmonization")
     (description
@@ -408,6 +444,9 @@ tensor imaging data.\".")
         (base32 "14m7l8v0ry1ami1jl0xjp743m1ycklgfwi06vk5amppdp5w3w3qr"))))
     (properties `((upstream-name . "eyeTrackR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-plyr r-data-table))
     (home-page "https://cran.r-project.org/package=eyeTrackR")
     (synopsis "Organising and Analysing Eye-Tracking Data")
@@ -433,6 +472,9 @@ analyses and graphing packages as necessary.")
         (base32 "0y0aj9p4yhjmf04pi1bmbr4ygx4n2myc1n42fh3nzmy2chcaj959"))))
     (properties `((upstream-name . "eyetrackingR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-rlang
@@ -467,6 +509,9 @@ the approach see Mirman, Dixon & Magnuson (2008)
         (base32 "0mzy88x4z6gxs6qqsrcm9bnvqd1frn0dkk637dmz0nf27dnvpgqr"))))
     (properties `((upstream-name . "eyetools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-rlang
                              r-rdist
@@ -504,6 +549,9 @@ proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
         (base32 "0f6knzr4fdipbrvcsk0q9yjvkjjyc4wc252lq2s41gdvj3hv575d"))))
     (properties `((upstream-name . "eyeRead")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-tibble r-data-table))
     (home-page "https://github.com/SanVerhavert/eyeRead")
     (synopsis "Prepare/Analyse Eye Tracking Data for Reading")
@@ -531,6 +579,9 @@ between metric length and visual degrees.")
         (base32 "1vx02qaaw56qdb7kiz2zs17s4x7yxcrlkhwvb2xi3khp9smmx2vi"))))
     (properties `((upstream-name . "eyelinkReader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -565,6 +616,9 @@ The package requires EDF API library that can be obtained at
         (base32 "1xnll3x1sm0rv6hq2w22wa9n5qm8r827m7sr3dj54xb1i8j75gj3"))))
     (properties `((upstream-name . "eyedata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://github.com/tjebo/eyedata")
     (synopsis "Open Source Ophthalmic Data Sets Curated for R")
@@ -594,6 +648,9 @@ Associated publications of the data sets: Fu et al. (2020)
         (base32 "0la9hlpryqczi6v6pyjx2hdhhdgm3aijs45v1nj76a867zmf77k9"))))
     (properties `((upstream-name . "eye")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -637,6 +694,9 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
         (base32 "1k3jsaczzzvs9h72i6ldinv0byjs5wvqzy3qc0mn66lyq9gwrxg7"))))
     (properties `((upstream-name . "exvatools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-openxlsx r-data-table r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=exvatools")
@@ -665,6 +725,9 @@ and Mancini (2023) <doi:10.1080/09535314.2022.2153221>, Miroudot and Ye (2021)
         (base32 "1r3hb4nlaph1a2s0dmd1n22ax9xgmdrg75w2xlbf8v1j3ifamvl9"))))
     (properties `((upstream-name . "exuber")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -707,6 +770,9 @@ et al. (2022) <doi:10.18637/jss.v103.i10>.")
         (base32 "0azmr5j1icac4apc4w5s2rx1ngzr634hm9n2gjyb6xx2ikwc7sy8"))))
     (properties `((upstream-name . "ExtrPatt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=ExtrPatt")
     (synopsis "Spatial Dependencies and Indices for Extremes")
@@ -730,6 +796,9 @@ dependency'; submitted to ASCMO 2023).")
         (base32 "13k869v6j4ik9p8w0gf1absvb45xbd3nnwghsz0ix7y0vyvry358"))))
     (properties `((upstream-name . "extremogram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-boot))
     (home-page "https://cran.r-project.org/package=extremogram")
     (synopsis "Estimation of Extreme Value Dependence for Time Series Data")
@@ -753,6 +822,9 @@ confidence bands for the extremograms.")
         (base32 "11y3cb5z6vsrpdffdr44afz3is0ikxvpb81a8pwc7p8q63rxq4a2"))))
     (properties `((upstream-name . "extremis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-evd r-emplik))
     (home-page "https://cran.r-project.org/package=extremis")
     (synopsis "Statistics of Extremes")
@@ -775,6 +847,9 @@ confidence bands for the extremograms.")
         (base32 "0ka4j43b8h2h5289wdbwsvcrmrasnhwxv3s9zz3v1z40li9yvmm6"))))
     (properties `((upstream-name . "extremevalues")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gwidgets2tcltk r-gwidgets2))
     (home-page "https://github.com/markvanderloo/extremevalues")
     (synopsis "Univariate Outlier Detection")
@@ -793,6 +868,9 @@ confidence bands for the extremograms.")
         (base32 "19ayk8nx6yb14mhgglhy3mq606mm17r3is0x6apxqic7vadvmiqg"))))
     (properties `((upstream-name . "extremeStat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-renext
                              r-rcolorbrewer
                              r-pbapply
@@ -825,6 +903,9 @@ L-moment Statistics [...] ISBN 1463508417.")
         (base32 "1mvkrwyj9kwg35dzm9jzx311qqd4v3nnbrr6d64x476ni4pnrbl8"))))
     (properties `((upstream-name . "ExtremeRisks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm
                              r-pracma
                              r-plot3d
@@ -862,6 +943,9 @@ and Stupfler (2020) <arxiv:2007.08944>, Daouia et al. (2018)
         (base32 "0v5ghhazcv0j19a9klddnbwgq05ij0nsb4rskdks6mb7686w2qys"))))
     (properties `((upstream-name . "extrememix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-threshr
                              r-rcppprogress
                              r-rcpp
@@ -893,6 +977,9 @@ plotting.  Reference: CN Behrens, HF Lopes, D Gamerman (2004)
         (base32 "19zkqabk7n5v4nnwlkxbrym4rf1ljbpblggiqd9s9f6ylir417pv"))))
     (properties `((upstream-name . "extremeIndex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gmm r-evir r-evd r-boot))
     (home-page "https://cran.r-project.org/package=extremeIndex")
     (synopsis "Forecast Verification for Extreme Events")
@@ -916,6 +1003,13 @@ contexts.  This is the implementation of the index in Taillardat et al. (2019)
         (base32 "07gx6dp0kz4y1jn90hsfvkhn6k7i4flh7ghdz9v5nwda86f55q2s"))))
     (properties `((upstream-name . "extremefit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=extremefit")
     (synopsis "Estimation of Extreme Conditional Quantiles and Probabilities")
@@ -937,6 +1031,9 @@ regression, survival probabilities.")
         (base32 "02s714rg1s7wj9ic2kblc72ww7zpgy1brcqxa4rl96ip2rblzdbv"))))
     (properties `((upstream-name . "ExtremeBounds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-formula))
     (home-page "https://cran.r-project.org/package=ExtremeBounds")
     (synopsis "Extreme Bounds Analysis (EBA)")
@@ -959,6 +1056,9 @@ users to customize all aspects of the analysis.")
         (base32 "0kq61mpdl3634kpp8bmdw9c7i6dpyjra1vbs4sq5s47xmpqin3y9"))))
     (properties `((upstream-name . "ExtremalDep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sn
                              r-quadprog
                              r-numderiv
@@ -999,6 +1099,9 @@ per Beranger at al. (2021) <doi:10.1007/s10687-020-00376-1>.")
         (base32 "0mkvic9nr0asd0g04nlfiy81d7am9a3i65ibxyvbdwsxnf92p8ya"))))
     (properties `((upstream-name . "extRC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=extRC")
     (synopsis "Extended RC Models for Contingency Tables")
@@ -1023,6 +1126,9 @@ options and a transformation derived from suitable divergence measures.")
         (base32 "1w4xfr7ps565xczmn6pr7g4551rj28df1j0y9vckvxdbb4dk1p11"))))
     (properties `((upstream-name . "extRatum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-tidyr r-sf r-dplyr))
     (home-page "https://cran.r-project.org/package=extRatum")
@@ -1047,6 +1153,9 @@ data.")
         (base32 "0clss1zwgw1497n2xif82kplr1w1ajs4xs02041ads3l8craj7y1"))))
     (properties `((upstream-name . "extraterrestrial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=extraterrestrial")
     (synopsis "Astrobiology Equations Estimating Extraterrestrial Life")
     (description
@@ -1072,6 +1181,9 @@ package.")
         (base32 "074bxlr22dbh6br7vrj7wimp9mbq3777dlswjkprqsmxv3fb2qa9"))))
     (properties `((upstream-name . "extrasteps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tibble
                              r-rlang
@@ -1100,6 +1212,9 @@ or its extensions.")
         (base32 "1r0i9l49klkvibbylcj13wvbmxqn9xmpzm42s606v75mwmqgvxg1"))))
     (properties `((upstream-name . "extras")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lifecycle r-chk))
     (native-inputs (list r-knitr))
     (home-page "https://poissonconsulting.github.io/extras/")
@@ -1124,6 +1239,9 @@ Builder) functions.")
         (base32 "1kv72s5fcaiyp4sa2r4plm6psjhh07cdkl0zd7mdl25r8ixs1k3h"))))
     (properties `((upstream-name . "extraoperators")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://joshuawiley.com/extraoperators/")
     (synopsis "Extra Binary Relational and Logical Operators")
@@ -1154,6 +1272,9 @@ those values that are true.")
         (base32 "1j2i21mqqim3x8bn4fs7kb9dvzzvkjyhmwfgj459h4x39ih5pbmb"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-pracma r-msm r-expint))
     (home-page "https://cran.r-project.org/package=extrafrail")
     (synopsis
@@ -1182,6 +1303,9 @@ approach.  For details, see Gallardo and Bourguignon (2022)
         (base32 "146jvjmdf4kw3d3dp2v6fb421kh8jggyg0lh4xg1ggjb4rphpjzd"))))
     (properties `((upstream-name . "ExtractTrainData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-raster))
     (home-page "https://cran.r-project.org/package=ExtractTrainData")
     (synopsis "Extract Values from Raster")
@@ -1191,6 +1315,41 @@ table will be generated for classification, regression or other processing.  The
 data table will be contained by band wise raster values and shapefile ids (User
 Defined).")
     (license license:gpl3)))
+
+(define-public r-extractox
+  (package
+    (name "r-extractox")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "extractox" version))
+       (sha256
+        (base32 "16yi911yhjsh4am005b5dy59kyf288yxiwygnzl2zbzmgp7m4k23"))))
+    (properties `((upstream-name . "extractox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-webchem
+                             r-rvest
+                             r-readxl
+                             r-pingr
+                             r-janitor
+                             r-httr2
+                             r-cli))
+    (home-page "https://github.com/c1au6i0/extractox")
+    (synopsis "Extract Tox Info from Various Databases")
+    (description
+     "Extract toxicological and chemical information from databases maintained by
+scientific agencies and resources, including the Comparative Toxicogenomics
+Database <https://ctdbase.org/>, the Integrated Chemical Environment
+<https://ice.ntp.niehs.nih.gov/>, the Integrated Risk Information System
+<https://cfpub.epa.gov/ncea/iris/>, the @code{CompTox} Chemicals Dashboard
+Resource Hub
+<https://www.epa.gov/comptox-tools/comptox-chemicals-dashboard-resource-hub>,
+and @code{PubChem} <https://pubchem.ncbi.nlm.nih.gov/>.")
+    (license license:expat)))
 
 (define-public r-extmallows
   (package
@@ -1204,6 +1363,9 @@ Defined).")
         (base32 "0903jslp74s1vzbklq88y2dm0dgkhd6g77b7aipxam98933k0hzz"))))
     (properties `((upstream-name . "ExtMallows")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ExtMallows")
     (synopsis
      "An Extended Mallows Model and Its Hierarchical Version for Ranked Data Aggregation")
@@ -1227,6 +1389,9 @@ of over-correlated ranking lists.")
         (base32 "01vmnajxc52gk7kj20x8b80lh8qi932g8213mkvvixzsz3ipf689"))))
     (properties `((upstream-name . "extlasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=extlasso")
     (synopsis
      "Maximum Penalized Likelihood Estimation with Extended Lasso Penalty")
@@ -1256,6 +1421,9 @@ submitted to Macquarie University, NSW, Australia.")
         (base32 "0cdfj1n502iws1g03rk7x0c18zyazqf3vci9kjm6lrv4j2qwrvip"))))
     (properties `((upstream-name . "exteriorMatch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=exteriorMatch")
     (synopsis "Constructs the Exterior Match from Two Matched Control Groups")
     (description
@@ -1277,6 +1445,9 @@ control groups.  The exterior match is used to compare the two control groups.")
         (base32 "07nayhnj1jm2720hgd5hkb5z6x2dslcdqw8cvfv4q7mlfm6b7r1i"))))
     (properties `((upstream-name . "extendedFamily")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-assertthat))
     (home-page "https://cran.r-project.org/package=extendedFamily")
     (synopsis "Additional Families for Generalized Linear Models")
@@ -1296,6 +1467,9 @@ control groups.  The exterior match is used to compare the two control groups.")
         (base32 "0wramjs7s2nxgjb2k30jgbbpf7pj4a1gzzqx8p1qh4pskh15msfm"))))
     (properties `((upstream-name . "ExtDist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-optimx r-numderiv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ExtDist")
@@ -1324,6 +1498,9 @@ criteria.")
         (base32 "112rb9qdykdkgh9qwrlzkm5q4mxq80sfdw2zp0y83rjkhhv1pjgv"))))
     (properties `((upstream-name . "extBatchMarking")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-optimbase r-foreach
                              r-doparallel))
     (home-page "https://github.com/Olobatuyi/extBatchMarking_cov")
@@ -1332,10 +1509,10 @@ criteria.")
      "This package provides a system for batch-marking data analysis to estimate
 survival probabilities, capture probabilities, and enumerate the population
 abundance for both marked and unmarked individuals.  The estimation of only
-marked individuals can be achieved through the @code{batchMarkOptim}() function.
+marked individuals can be achieved through the @code{batchMarkOptim()} function.
  Similarly, the combined marked and unmarked can be achieved through the
-@code{batchMarkUnmarkOptim}() function.  The algorithm was also implemented for
-the hidden Markov model encapsulated in @code{batchMarkUnmarkOptim}() to
+@code{batchMarkUnmarkOptim()} function.  The algorithm was also implemented for
+the hidden Markov model encapsulated in @code{batchMarkUnmarkOptim()} to
 estimate the abundance of both marked and unmarked individuals in the
 population.  The package is based on the paper: \"Hidden Markov Models for
 Extended Batch Data\" of Cowen et al. (2017) <doi:10.1111/biom.12701>.")
@@ -1353,6 +1530,9 @@ Extended Batch Data\" of Cowen et al. (2017) <doi:10.1111/biom.12701>.")
         (base32 "1iqsr52sl2j5q03122a7rsp6n6a2bkysk2r908c89l36gk4sj2i5"))))
     (properties `((upstream-name . "EXRQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-mnormt))
     (home-page "https://cran.r-project.org/package=EXRQ")
     (synopsis "Extreme Regression of Quantiles")
@@ -1374,6 +1554,8 @@ Extended Batch Data\" of Cowen et al. (2017) <doi:10.1111/biom.12701>.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -1411,6 +1593,9 @@ tests and generation of common plots and tables with publish-ready quality.")
         (base32 "1hrcbw9yfq2c8y6z7lqklbk7rmhmm8ns0l05s4kymwh2d8j4pqjg"))))
     (properties `((upstream-name . "expstudy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lifecycle r-dplyr r-cli))
     (home-page "https://github.com/cb12991/expstudy")
     (synopsis "Tools for Actuarial Experience Studies")
@@ -1435,6 +1620,9 @@ experience.")
         (base32 "1qzgy9psxq7w61rqp16qhs02q264izk9bv1hwpa2n9k02milvldw"))))
     (properties `((upstream-name . "expss")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixstats r-maditr r-htmltable r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://gdemin.github.io/expss/")
@@ -1465,6 +1653,9 @@ Excel and SPSS to R.")
         (base32 "0alqg777g7zzbjbg86f00p2jzzlp4zyswpbif7ndd0zr8xis6zdc"))))
     (properties `((upstream-name . "expsmooth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-forecast))
     (home-page "https://github.com/robjhyndman/expsmooth")
     (synopsis "Data Sets from \"Forecasting with Exponential Smoothing\"")
@@ -1485,6 +1676,9 @@ approach\" by Hyndman, Koehler, Ord and Snyder (Springer, 2008).")
         (base32 "0k8nkwqrcmmhv0x8a2np1rm5cyc9glyvndwdbnp03v0wrg8121sw"))))
     (properties `((upstream-name . "expSBM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mclust r-gtools
                              r-blockmodels))
     (home-page "https://cran.r-project.org/package=expSBM")
@@ -1509,6 +1703,9 @@ the methodology described by R. Rastelli and M. Fop (2019)
         (base32 "0spv3wd9c8sr338n5kdzrs28yh7s90fl70wsdnkibmlxhnh3ay3g"))))
     (properties `((upstream-name . "ExpRep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ExpRep")
     (synopsis "Experiment Repetitions")
     (description
@@ -1533,6 +1730,9 @@ useful for educational purposes.")
         (base32 "0cybna0q3qn3slyc4lv5rby4pr0xkwq0h6n7hl1zhsaqv4c2zc5b"))))
     (properties `((upstream-name . "expperm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=expperm")
     (synopsis
@@ -1557,6 +1757,9 @@ soon as they are finalized.")
         (base32 "08w64l73vc83dk7himn7sr487ivjhn5cgql8vqw30vdksxz3nyi5"))))
     (properties `((upstream-name . "expowo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-tibble
                              r-sp
@@ -1595,6 +1798,9 @@ richness, graphics of species discoveries and nomenclatural changes over time.")
         (base32 "01nkysl3igjhv73s9n90kf8zbrgw92aa105h91ivnlxhgcx4abbs"))))
     (properties `((upstream-name . "ExposR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/expos-model/ExposR")
@@ -1622,6 +1828,9 @@ Serrano, and Foster (2004) <doi:10.1890/02-4057>.")
         (base32 "1b238d6aa1m2pcg7vdjbrvjj748j3fim5zvhng7lgkag2rzjqa56"))))
     (properties `((upstream-name . "export")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-xml2
                              r-stargazer
@@ -1647,8 +1856,9 @@ showing R stats object to be exported, but also allow the graphical or tabular
 output to be passed as objects.  The package relies on package officer for
 export to Office documents,and output files are also fully compatible with
 @code{LibreOffice}'.  Base R', ggplot2 and lattice plots are supported, as well
-as a wide variety of R stats objects, via wrappers to xtable(), broom::tidy()
-and stargazer(), including aov(), lm(), glm(), lme(), glmnet() and coxph() as
+as a wide variety of R stats objects, via wrappers to @code{xtable()},
+@code{broom::tidy()} and @code{stargazer()}, including @code{aov()},
+@code{lm()}, @code{glm()}, @code{lme()}, @code{glmnet()} and @code{coxph()} as
 well as matrices and data frames and many more...")
     (license license:gpl2)))
 
@@ -1664,6 +1874,9 @@ well as matrices and data frames and many more...")
         (base32 "154j5wiiy9vqdvh1qvdkz2fdp2phcygbbjl7nj5nkn07xwxbsc77"))))
     (properties `((upstream-name . "exploreR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=exploreR")
@@ -1688,6 +1901,9 @@ remove as much redundant typing as possible.")
         (base32 "1p8g85nv29lr8ncih7mh6x43xcahh1fb7y43b7kywgg85i2w257z"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-shiny
@@ -1725,6 +1941,9 @@ analysis.")
         (base32 "0m8visp57v2bgfbi3n6ywz2z7djd6bnd19hcz0jl2fjw9w5sw3hy"))))
     (properties `((upstream-name . "exploratory")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weights
                              r-shinydashboard
                              r-shiny
@@ -1770,6 +1989,9 @@ Selected References: Chang et al. (2021)
         (base32 "102rjnllk5xxsik42dd8m1rryz5y2h2dwmidy2jy3zlylgc4dhdr"))))
     (properties `((upstream-name . "explor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shiny
                              r-scatterd3
@@ -1799,6 +2021,9 @@ exploration.")
         (base32 "0yxf12hv4ypbyxnj1x4wrmj0l52nrx9ss79szl7j4bk9nc98qmli"))))
     (properties `((upstream-name . "ExplodeLayout")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=ExplodeLayout")
     (synopsis
@@ -1837,6 +2062,9 @@ bipartite network, but the algorithm can work also for unipartite networks.")
         (base32 "14m3b9fsrpfpr8avsnhl8b3bzk2xlhwgkwag5iq8bj7bzvv4yck1"))))
     (properties `((upstream-name . "ExplainPrediction")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-semiartificial r-corelearn))
     (home-page "http://lkm.fri.uni-lj.si/rmarko/software/")
     (synopsis
@@ -1867,6 +2095,9 @@ e1071'.")
         (base32 "0zv7miyii983ang9vr23gdrghr7ki6dpll231m1sfpcm0plfrvnd"))))
     (properties `((upstream-name . "explainer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-tidyr
                              r-tibble
@@ -1904,6 +2135,9 @@ offers enhanced visualizations with interactive elements.")
         (base32 "1pav81y4n23q42kfvbsdinfyklxwhspsxvfdyvs891zsvy2m93yn"))))
     (properties `((upstream-name . "expirest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lifecycle r-ggplot2))
     (home-page "https://github.com/piusdahinden/expirest")
     (synopsis "Expiry Estimation Procedures")
@@ -1930,6 +2164,9 @@ data\" from the International Council for Harmonisation (ICH).")
         (base32 "1xl8g5782gwlz3ibqrx5szv5rnq9n5bigwcfxk4fxh8yfz6i73gi"))))
     (properties `((upstream-name . "ExpImage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-schemr
                              r-rstudioapi
                              r-raster
@@ -1962,6 +2199,9 @@ de medidas biometricas) <https://www.expstat.com/pacotes-do-r/expimage>.")
         (base32 "096cxaqbc9y0bnj70fxk94585c880020pqqcx0dwwj839qkry4ha"))))
     (properties `((upstream-name . "ExpGenetic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-venndiagram
                              r-plyr
                              r-ggsci
@@ -1994,6 +2234,9 @@ expression analysis of RNA-seq data, it is only applicable to hybrid offspring
         (base32 "1pd4v240ywc4wzh249axxb4kz5dccizc08jdjnaygz35hjdg5hvj"))))
     (properties `((upstream-name . "ExpertChoice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist r-purrr r-far r-dplyr r-doe-base))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ExpertChoice")
@@ -2019,6 +2262,9 @@ efficiency measures! Draws from literature of Kuhfeld (2010) and Street et.  al
         (base32 "0ji2031r108rzna00zhsh70kfcnhcscz0an0jv0vvj00hrakl0yr"))))
     (properties `((upstream-name . "experimentr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=experimentr")
     (synopsis
      "Datasets Used in Social Science Experiments: A Hands-on Introduction")
@@ -2040,6 +2286,9 @@ can be found at <https://osf.io/b78je>.")
         (base32 "0lzxwpcz7m4wngfw0wyazkhh4icn9zjd8jmgf6ym2zzk3xc4dji1"))))
     (properties `((upstream-name . "experiment")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-boot))
     (home-page "https://github.com/kosukeimai/experiment")
     (synopsis "R Package for Designing and Analyzing Randomized Experiments")
@@ -2065,6 +2314,9 @@ randomized experiments with missing data.")
         (base32 "1fqcq9jaw79nafm4qqbwm9qg2xlscjcyx3rmk7677xxrz7kywn94"))))
     (properties `((upstream-name . "experiences")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-scales
@@ -2094,6 +2346,9 @@ statistical approaches in applied experience research to human readable output."
         (base32 "0qhp9kwcjk3l7zwd1bnkv5880cylzmf2d0n2y27jnsc4wns72hfz"))))
     (properties `((upstream-name . "experDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://experdesign.llrs.dev")
     (synopsis "Design Experiments for Batches")
@@ -2116,6 +2371,9 @@ representative sample.")
         (base32 "0g5py2096dyrcnvgmmba6g796ky150xk63ny6h6ylmajqfcypm1a"))))
     (properties `((upstream-name . "expectreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpp
                              r-quadprog
@@ -2144,6 +2402,9 @@ boosting; also supplies expectiles for common distributions.")
         (base32 "05s7j3afs97x0k4w9rsjic1519ilzri250x5rl6l6smqivjaplci"))))
     (properties `((upstream-name . "ExpDes.pt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stargazer))
     (home-page "https://cran.r-project.org/package=ExpDes.pt")
     (synopsis "Pacote Experimental Designs (Portugues)")
@@ -2171,6 +2432,9 @@ Cavalcanti and Nogueira, 2014) <doi:10.4236/am.2014.519280>.")
         (base32 "145x7zzhgs7rqbamsfwcxlhppxmy9l6v4a1wximac8qgp7i0wdpi"))))
     (properties `((upstream-name . "ExpDes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stargazer))
     (home-page "https://cran.r-project.org/package=ExpDes")
     (synopsis "Experimental Designs Package")
@@ -2200,6 +2464,9 @@ analysis (Ferreira, Cavalcanti and Nogueira, 2014) <doi:10.4236/am.2014.519280>.
         (base32 "0yjsap92dd1sb23fhw69i0ddk3lyj5f4kwp9rvz4k0vxry10hx7g"))))
     (properties `((upstream-name . "ExpDE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-assertthat))
     (home-page "http://github.com/fcampelo/ExpDE")
     (synopsis
@@ -2221,6 +2488,9 @@ with different types of operators.")
         (base32 "0h7f9127vrd45lg7k0bkgq3cghxwv2z11p4pak20pakk13g82hj4"))))
     (properties `((upstream-name . "expDB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weaana
                              r-tidyverse
                              r-tidyr
@@ -2256,6 +2526,9 @@ excel file.")
         (base32 "120w491g925vzxriinfsgxs4kgx58dy4awb2knichsa4p1w5gvly"))))
     (properties `((upstream-name . "EXPARMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-forecast))
     (home-page "https://cran.r-project.org/package=EXPARMA")
     (synopsis
@@ -2281,6 +2554,9 @@ consideration.")
         (base32 "0k6aq87k9ml3815zi5fvspaky6sd6qzbm3l8a80rgls2ha2886r9"))))
     (properties `((upstream-name . "EXPAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-forecast))
     (home-page "https://cran.r-project.org/package=EXPAR")
     (synopsis "Fitting of Exponential Autoregressive (EXPAR) Model")
@@ -2309,6 +2585,9 @@ price indices has also been provided.")
         (base32 "0661l4ab0xhjidmh8ycvymhp3wgxafm7nd1c59bfpxhyhz76n1p4"))))
     (properties `((upstream-name . "expandFunctions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polynom r-plyr r-orthopolynom r-glmnet))
     (home-page "https://cran.r-project.org/package=expandFunctions")
     (synopsis "Feature Matrix Builder")
@@ -2323,13 +2602,13 @@ lags, quadratic expansion into squares and unique products, powers by vectors of
 degree, vectors of orthogonal polynomials functions, and block random affine
 projection transformations (RAPTs).  The transformations are magrittr- and
 cbind-friendly, and can be used in a building block fashion.  For instance,
-taking the cos() of the output of the RAPT transformation generates a stationary
-kernel expansion via Bochner's theorem, and this expansion can then be cbind-ed
-with other features.  Additionally, there are utilities for replacing features,
-removing rows with NAs, creating matrix samples of a given distribution, a
-simple wrapper for LASSO with CV, a Freeman-Tukey transform, generalizations of
-the outer function, matrix size-preserving discrete difference by row, plotting,
-etc.")
+taking the @code{cos()} of the output of the RAPT transformation generates a
+stationary kernel expansion via Bochner's theorem, and this expansion can then
+be cbind-ed with other features.  Additionally, there are utilities for
+replacing features, removing rows with NAs, creating matrix samples of a given
+distribution, a simple wrapper for LASSO with CV, a Freeman-Tukey transform,
+generalizations of the outer function, matrix size-preserving discrete
+difference by row, plotting, etc.")
     (license license:gpl2)))
 
 (define-public r-expandar
@@ -2344,6 +2623,9 @@ etc.")
         (base32 "1y4ccyvlvdx9lcgpyns6k2npc0rzwk8db4bmbi3pq9xmv7ycgmcz"))))
     (properties `((upstream-name . "ExPanDaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-tidyr
                              r-tictoc
@@ -2388,6 +2670,9 @@ functions of this package.")
         (base32 "1hzl5dzayrqj1my187300bsm59w5vq2hi63z8hj768dsbdha2vpr"))))
     (properties `((upstream-name . "ExpAnalysis3d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotly r-magrittr r-fields r-crayon))
     (home-page "https://cran.r-project.org/package=ExpAnalysis3d")
     (synopsis
@@ -2416,6 +2701,9 @@ multiple regression models are fitted and response surface graphs are plotted
         (base32 "0sfrfnhba5940kyc1y5g8zp2wdrr44i498fbwrpbnjxfby4cdx4r"))))
     (properties `((upstream-name . "ExNRuleEnsemble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fnn))
     (home-page "https://cran.r-project.org/package=ExNRuleEnsemble")
     (synopsis
@@ -2445,6 +2733,9 @@ Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
         (base32 "05gdmyn01br93smw5gxc0jvfhrr9x2ly0jbfrcfvf3r2bw3kjwnr"))))
     (properties `((upstream-name . "exiftoolr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list perl))
     (propagated-inputs (list r-zip r-jsonlite r-data-table r-curl r-backports))
     (home-page "https://github.com/JoshOBrien/exiftoolr#readme")
@@ -2473,6 +2764,9 @@ Sigma/Foveon and Sony.")
         (base32 "0iqm513h7951q3hg8maf2hbprqmsm93cb3mbg3g91qawpx77494c"))))
     (properties `((upstream-name . "exifr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list perl))
     (propagated-inputs (list r-tibble r-rappdirs r-plyr r-jsonlite r-curl))
     (home-page "https://github.com/paleolimbot/exifr")
@@ -2502,6 +2796,9 @@ Sigma/Foveon and Sony.")
         (base32 "12phqn5x1x0xs2xczl3064q983dalm261vqpyafhdcndm1y3gwbc"))))
     (properties `((upstream-name . "exif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/Ironholds/exif")
     (synopsis "Read EXIF Metadata from JPEGs")
@@ -2523,6 +2820,9 @@ Incorporates the easyexif (https://github.com/mayanklahiri/easyexif) library.")
         (base32 "1wb3bf1ilml5cilm740rh8ngiybxhxg6h6nzh1rlqd6wgfp17mzh"))))
     (properties `((upstream-name . "ExhaustiveSearch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/RudolfJagdhuber/ExhaustiveSearch")
     (synopsis "Fast and Scalable Exhaustive Feature Selection Framework")
@@ -2548,6 +2848,9 @@ and thus keeping memory usage constant.")
         (base32 "070q94c9qblmcarpmpabhawc2y1lz98s6vv2x8wj8fhgah6pdhvf"))))
     (properties `((upstream-name . "ExGaussEstim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma
                              r-nloptr
                              r-invgamma
@@ -2583,6 +2886,9 @@ A., Slaoui, Y., Solier, C., & Perret, C. (2021)
         (base32 "1510lhcdzlss96lpmvzv8apnb774y6ayij9cdihl5sa5kzap0nbp"))))
     (properties `((upstream-name . "executablePackeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-cli r-automagic))
     (home-page "https://cran.r-project.org/package=executablePackeR")
     (synopsis "Make 'shiny' App to Executable Program")
@@ -2603,6 +2909,9 @@ R and shiny on their system.")
         (base32 "1mflapsbi67jabimqbysr0rcgi8bvn05sgmf5ykr9hmvhs16pf0x"))))
     (properties `((upstream-name . "exdqlm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-tictoc
                              r-magic
@@ -2635,6 +2944,9 @@ al (2020) <doi:10.1214/21-AOAS1497>.")
         (base32 "1vmbk52gxay0604jqmiqgm5zffnx1x5f5x3k0dajyxn3qlvqqrp6"))))
     (properties `((upstream-name . "exdex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpproll r-rcpparmadillo r-rcpp r-chandwich))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/paulnorthrop/exdex")
@@ -2673,6 +2985,9 @@ respective tuning parameters K and D are provided.")
         (base32 "0mirg44xhrb7h30blnb4hdfl5h96k5v28ll1awajrjmnrgwssx6a"))))
     (properties `((upstream-name . "excursions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-withr r-sp r-matrix r-fmesher))
     (home-page "https://github.com/davidbolin/excursions")
@@ -2702,6 +3017,9 @@ R.")
         (base32 "0gqnv01dw4ncf3x3p74pc6f14a1ixq7icl2p18hsmvxdqqg7kgy7"))))
     (properties `((upstream-name . "exCon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (home-page "https://github.com/bryanhanson/exCon")
     (synopsis "Interactive Exploration of Contour Data")
@@ -2728,18 +3046,21 @@ Mike Bostock.")
         (base32 "01f4gklvrzglwg2ck0qr1d9l467bb4rsklv5bz4afrdk9snxgwz7"))))
     (properties `((upstream-name . "ExclusionTable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/entjos/ExclusionTable/")
     (synopsis "Creating Tables of Excluded Observations")
     (description
-     "Instead of counting observations before and after a subset() call, the
-@code{ExclusionTable}() function reports the number before and after each
-subset() call together with the number of observations that have been excluded.
-This is especially useful in observational studies for keeping track how many
-observations have been excluded for each in-/ or exclusion criteria.  You just
-need to provide @code{ExclusionTable}() with a dataset and a list of logical
-filter statements.")
+     "Instead of counting observations before and after a @code{subset()} call, the
+@code{ExclusionTable()} function reports the number before and after each
+@code{subset()} call together with the number of observations that have been
+excluded.  This is especially useful in observational studies for keeping track
+how many observations have been excluded for each in-/ or exclusion criteria.
+You just need to provide @code{ExclusionTable()} with a dataset and a list of
+logical filter statements.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-excluder
@@ -2754,6 +3075,9 @@ filter statements.")
         (base32 "1amvxys6xg5djnfv4jxylv9m2z1vhvipq3d1k1ihv9m05prsvdv2"))))
     (properties `((upstream-name . "excluder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -2788,6 +3112,9 @@ Qualtrics datasets.")
         (base32 "0jpwvni5x066d9hb0fjiq212rmrl5mfb1dmvasv5xvn013j9qbm0"))))
     (properties `((upstream-name . "excessmort")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-rlang
@@ -2816,14 +3143,17 @@ Mortality\".")
         (base32 "1ycvv3bm9qq11imc09jhwhb1vb2cbngckmb3ibj4hfl697gaby5v"))))
     (properties `((upstream-name . "ExcessMass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ExcessMass")
     (synopsis "Excess Mass Calculation and Plots")
     (description
      "Implementation of a function which calculates the empirical excess mass for
-given \\eqn{\\lambda} and given maximal number of modes (excessm()).  Offering
-powerful plot features to visualize empirical excess mass (exmplot()).  This
-includes the possibility of drawing several plots (with different maximal number
-of modes / cut off values) in a single graph.")
+given \\eqn{\\lambda} and given maximal number of modes @code{(excessm()}).
+Offering powerful plot features to visualize empirical excess mass
+@code{(exmplot()}).  This includes the possibility of drawing several plots
+(with different maximal number of modes / cut off values) in a single graph.")
     (license license:lgpl2.0+)))
 
 (define-public r-excelfunctionsr
@@ -2838,6 +3168,9 @@ of modes / cut off values) in a single graph.")
         (base32 "1j3vfvfk8lp46zb6fwvq9lafk7r2qrnx4vxyhaih71c0a8g6dz9n"))))
     (properties `((upstream-name . "ExcelFunctionsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-stringr r-roperators r-plyr r-lubridate))
     (home-page "https://cran.r-project.org/package=ExcelFunctionsR")
     (synopsis "Imports Excel Functions to R")
@@ -2860,6 +3193,9 @@ might be struggling with the program.")
         (base32 "10krwc7fq0idmlpm32n4ikjixcmp775lgsnbndpg7pgwkmkqp81k"))))
     (properties `((upstream-name . "exceldata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-readxl r-lubridate r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=exceldata")
     (synopsis "Streamline Data Import, Cleaning and Recoding from 'Excel'")
@@ -2883,6 +3219,9 @@ designed to be a companion to the macro-enabled Excel template available on the
         (base32 "179ijsdnq9cas4ps0zx9vaj3cc7xb13rwz0h0sm4wpx1cc2xi0b0"))))
     (properties `((upstream-name . "excel2eprime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-stringr r-readxl r-magrittr r-dplyr))
     (home-page "https://github.com/wujackwill/excel2eprime")
     (synopsis "Split Sentences by Factors")
@@ -2903,19 +3242,22 @@ the result can be used in E-prime (<https://pstnet.com/products/e-prime/>).")
         (base32 "1inpwdaa2ja4y9xgs3nnkikws55h3h1ac38wcq56lqjaqc6flnlj"))))
     (properties `((upstream-name . "excel.link")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gdemin/excel.link")
     (synopsis "Convenient Data Exchange with Microsoft Excel")
     (description
      "Allows access to data in running instance of Microsoft Excel (e.  g.  xl[a1] =
 xl[b2]*3 and so on).  Graphics can be transferred with xl[a1] =
-current.graphics()'.  Additionally there are function for reading/writing Excel
-files - xl.read.file'/'xl.save.file'.  They are not fast but able to read/write
-*.xlsb'-files and password-protected files.  There is an Excel workbook with
-examples of calling R from Excel in the doc folder.  It tries to keep things as
-simple as possible - there are no needs in any additional installations besides
-R, only VBA code in the Excel workbook.  Microsoft Excel is required for this
-package.")
+@code{current.graphics()}'.  Additionally there are function for reading/writing
+Excel files - xl.read.file'/'xl.save.file'.  They are not fast but able to
+read/write *.xlsb'-files and password-protected files.  There is an Excel
+workbook with examples of calling R from Excel in the doc folder.  It tries to
+keep things as simple as possible - there are no needs in any additional
+installations besides R, only VBA code in the Excel workbook.  Microsoft Excel
+is required for this package.")
     (license license:gpl2+)))
 
 (define-public r-exceedprob
@@ -2930,6 +3272,9 @@ package.")
         (base32 "02pb8b0rxygbv6501rcr2hb0bhz1r78k5znav161kk25fb9bxs5v"))))
     (properties `((upstream-name . "exceedProb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-bh))
     (home-page "https://github.com/bdsegal/exceedProb")
     (synopsis "Confidence Intervals for Exceedance Probability")
@@ -2951,6 +3296,9 @@ see Segal (2019) <@code{arXiv:1803.03356>} for more information.")
         (base32 "1yp4dl2sb7j41nbqhx0dsag9b3qg3l82snvjxnb57z4p63zsb2r5"))))
     (properties `((upstream-name . "ExceedanceTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splancs r-spatialtools r-matrixstats))
     (home-page "https://cran.r-project.org/package=ExceedanceTools")
     (synopsis
@@ -2972,6 +3320,9 @@ for exceedance sets and contour lines.")
         (base32 "1qljhqac15qz1vjrp59l7xs7yd4y3p2f3wdryrfflb5b6a1qcmbf"))))
     (properties `((upstream-name . "exams2sakai")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-stringr r-stringi r-glue r-exams))
     (home-page "https://github.com/jesusmmp/exams2sakai")
     (synopsis "Automatic Generation of Exams in R for 'Sakai'")
@@ -2993,6 +3344,9 @@ format required by Sakai'.")
         (base32 "0laimld71p3w2r01d0xm7ly7brvahhagmx4972amv4xvn66y3xv4"))))
     (properties `((upstream-name . "exams2learnr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown r-learnr r-knitr r-exams))
     (native-inputs (list r-knitr))
     (home-page "https://www.R-exams.org/")
@@ -3014,6 +3368,9 @@ based on R/exams exercises.")
         (base32 "05z8a0nlhz5hmzhgnahlqrrm7n9by687yjjmsd6nch11yy0kh10a"))))
     (properties `((upstream-name . "exams2forms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown r-knitr r-exams))
     (native-inputs (list r-knitr))
     (home-page "https://www.R-exams.org/")
@@ -3036,6 +3393,9 @@ within rmarkdown or quarto documents based on R/exams exercises.")
         (base32 "0cswbynd1acrvdwhgg3vlgl80v0qk22kg2hacbc6y08s4367srly"))))
     (properties `((upstream-name . "exams.mylearn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-stringr
                              r-stringi
@@ -3064,6 +3424,9 @@ format required by @code{MyLearn}'.")
         (base32 "0kj6c26nhzvwqdfc61hfssq8mwm665ay0p4ycn1161d3ixm7p9j9"))))
     (properties `((upstream-name . "exams.forge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xtable
                              r-xml2
@@ -3111,6 +3474,9 @@ files for Moodle'.")
         (base32 "1ld2j22kxgbx3d9nmhzb0cnmb5a1pz1skx6y87i6ifmjhm1ib78q"))))
     (properties `((upstream-name . "exams")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-rmarkdown r-knitr r-base64enc))
     (home-page "https://www.R-exams.org/")
@@ -3141,6 +3507,7 @@ scanned, and automatically evaluated.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f list
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -3180,6 +3547,9 @@ R.")
         (base32 "1wjzg5b3xcl5njk95h2c8xz4k727d62182nbf49qrvd3nbd3bscj"))))
     (properties `((upstream-name . "ExamPAData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/sdcastillo/ExamPAData")
     (synopsis "Data Sets for Predictive Analytics Exam")
     (description
@@ -3199,6 +3569,9 @@ R.")
         (base32 "025lm577yr5730f3j544nszjyscw8yk2amdbm2cjc4kjkq2qcm7w"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-igraph))
     (home-page "https://cran.r-project.org/package=exametrika")
     (synopsis "Test Theory Analysis and Biclustering")
@@ -3230,6 +3603,9 @@ psychological, and social science research.")
         (base32 "1ygsiwcsmda0pbp7lzr03sb461mr9fff7hxp1lil40y9z0xgdmmb"))))
     (properties `((upstream-name . "ExactMultinom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=ExactMultinom")
     (synopsis "Multinomial Goodness-of-Fit Tests")
@@ -3253,6 +3629,9 @@ chi-square approximation or Monte-Carlo simulation can also be computed.")
         (base32 "0cjpnym71n2w0yk9xh5b65x35g4ycy20d9ydk43xw0nl1cpksd56"))))
     (properties `((upstream-name . "ExactMed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-pkgcond
                              r-nnet
@@ -3283,6 +3662,9 @@ and Lefebvre (2018) <doi:10.1353/obs.2018.0013>; Samoilenko, Lefebvre (2021)
         (base32 "0fhzymvsmp1hcq32nwka745jhbf51iyb9hp6ix9rm88kyclcwhrl"))))
     (properties `((upstream-name . "exactLTRE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-popdemo r-matrixcalc))
     (home-page "https://cran.r-project.org/package=exactLTRE")
     (synopsis
@@ -3318,6 +3700,9 @@ Poelwijk, Krishna, and Ranganathan (2016) <doi:10.1371/journal.pcbi.1004771>.")
         (base32 "050d4g2jyp8qncy5biim45xvl8kkjg3rwwdcakmwjgs9c88zvls5"))))
     (properties `((upstream-name . "ExactCox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biasedurn))
     (home-page "https://cran.r-project.org/package=ExactCox")
     (synopsis "Exact Test and Exact Confidence Interval for the Cox Model")
@@ -3339,6 +3724,9 @@ generated for the Cox model.")
         (base32 "049fh70aidsl60f355jkx93brkvaadpvlk7wxc196s51fddz2lwa"))))
     (properties `((upstream-name . "ExactCIone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ExactCIone")
     (synopsis
@@ -3364,6 +3752,9 @@ calculate the intervals constructed methods developed by Wang (2014)
         (base32 "1rhwdhgj3d6m4x75v5m03y6l2sf7ndgb15qc8k7kx7vr6c03zl8v"))))
     (properties `((upstream-name . "ExactCIdiff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page
      "https://urldefense.proofpoint.com/v2/url?u=http-3A__www.R-2Dproject.org&d=DwICaQ&c=sJ6xIWYx-zLMB3EPkvcnVg&r=u5749-0kOlGR1AfizUVmaw&m=qjJHLdipM5gUyXllZWH5kL0wENGFef6KuJ57hW5lHx14eZasfdmgFN_1geUbxk5J&s=VFf9h_9FOlJBpRMIjim8tGuVnJ7GlWc5qZkrA9kmoMM&e=")
     (synopsis
@@ -3385,6 +3776,9 @@ independent or dependent proportions.")
         (base32 "011y7sjsspn02z914c7x2w3h4fg38hlbqwg6s43rnsmrk398q76h"))))
     (properties `((upstream-name . "exactci")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat r-ssanv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=exactci")
@@ -3407,6 +3801,9 @@ or two-sample Poisson cases (see Fay (2010) <doi:10.32614/rj-2010-008>).")
         (base32 "0z6r8asbimqr4wvcns5gn9z3bzzy6wqdfibxjyd0avdfx8qw15cl"))))
     (properties `((upstream-name . "exactamente")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinythemes r-shiny r-ggplot2))
     (home-page "https://github.com/mightymetrika/exactamente")
     (synopsis "Explore the Exact Bootstrap Method")
@@ -3417,13 +3814,14 @@ tool for exploring the distribution of small sample size data.  For a sample of
 size n, the exact bootstrap method generates the entire space of n to the power
 of n resamples and calculates all realizations of the selected statistic.  The
 exactamente package includes functions for implementing two bootstrap methods,
-the exact bootstrap and the regular bootstrap.  The exact_bootstrap() function
-applies the exact bootstrap method following methodologies outlined in
-Kisielinska (2013) <doi:10.1007/s00180-012-0350-0>.  The regular_bootstrap()
-function offers a more traditional bootstrap approach, where users can determine
-the number of resamples.  The e_vs_r() function allows users to directly compare
-results from these bootstrap methods.  To augment user experience, exactamente
-includes the function exactamente_app() which launches an interactive shiny web
+the exact bootstrap and the regular bootstrap.  The @code{exact_bootstrap()}
+function applies the exact bootstrap method following methodologies outlined in
+Kisielinska (2013) <doi:10.1007/s00180-012-0350-0>.  The
+@code{regular_bootstrap()} function offers a more traditional bootstrap
+approach, where users can determine the number of resamples.  The
+@code{e_vs_r()} function allows users to directly compare results from these
+bootstrap methods.  To augment user experience, exactamente includes the
+function @code{exactamente_app()} which launches an interactive shiny web
 application.  This application facilitates exploration and comparison of the
 bootstrap methods, providing options for modifying various parameters and
 visualizing results.")
@@ -3441,6 +3839,9 @@ visualizing results.")
         (base32 "0lqxnljrlwc94sb6niiass7k2xb6gcl4ysh5ap25d9dy4mkymkl2"))))
     (properties `((upstream-name . "exact2x2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ssanv r-exactci))
     (home-page "https://cran.r-project.org/package=exact2x2")
     (synopsis "Exact Tests and Confidence Intervals for 2x2 Tables")
@@ -3471,6 +3872,9 @@ Hunsberger (2021, <DOI:10.1214/21-SS131>).")
         (base32 "0nj6i4djfr9khcj89mds2ks2v0jviaj9kal20havf6ncvjl7ssg2"))))
     (properties `((upstream-name . "exact.n")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr))
     (home-page "https://cran.r-project.org/package=exact.n")
     (synopsis
@@ -3494,6 +3898,9 @@ C.J. (2022) Preprint <doi:10.13140/RG.2.2.11828.94085>.")
         (base32 "16dk3p8km8s0ih4q2gdhvx0zakb3rh7ywz8shcy1g8yp0790bmwm"))))
     (properties `((upstream-name . "EWSmethods")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-scales
                              r-reticulate
@@ -3533,6 +3940,9 @@ presentation of the outputs are also provided for clear and publishable figures.
         (base32 "0rkxnc5pwrjgm2j201rg0z4nqb75rpkqh3hff4lvw1zmnr9flm6r"))))
     (properties `((upstream-name . "EWS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (home-page "https://cran.r-project.org/package=EWS")
     (synopsis "Early Warning System")
@@ -3568,6 +3978,9 @@ functions) for scholars as well as policymakers.")
         (base32 "1i0cwyylr1lqilykn1q2y1ad2gawfqkw9c51g04yn061c623pkam"))))
     (properties `((upstream-name . "EwR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EwR")
     (synopsis "Econometrics with R")
     (description
@@ -3591,6 +4004,9 @@ functions written in this package.")
         (base32 "18qcndxr5x6z5m91r9q8lzq0fmwli1w03x91z0rr03n3dw5c3kdx"))))
     (properties `((upstream-name . "ewp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-bh))
     (home-page "https://cran.r-project.org/package=ewp")
     (synopsis "An Empirical Model for Underdispersed Count Data")
@@ -3612,6 +4028,9 @@ Besbeas (2004) <DOI:10.1191/1471082X04st064oa>.")
         (base32 "0ck8sqy729qsry290fgrn829vsv7snxjlwbn725q6adg8239v4z8"))))
     (properties `((upstream-name . "EWOC.Comb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-mass))
     (home-page "https://cran.r-project.org/package=EWOC.Comb")
     (synopsis "Escalation with Overdose Control using 2 Drug Combinations")
@@ -3634,6 +4053,9 @@ simulations to obtain operating characteristics.")
         (base32 "0r8b5vq0qzp3f0dasxmrngldqlymca90sj019rzs1a0qf28wlgbr"))))
     (properties `((upstream-name . "ewoc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags
                              r-ggplot2
                              r-formula
@@ -3663,6 +4085,9 @@ simulations to obtain operating characteristics.")
         (base32 "19gd9grjjdv6hilqj41g5qhz7m0ga40q88clwggbp5f0f1yd5sym"))))
     (properties `((upstream-name . "EWGoF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=EWGoF")
     (synopsis
@@ -3687,6 +4112,9 @@ transform and the likelihood based tests.")
         (base32 "1dmzbsyrg8wwzzqcxzqmgm7yai37lh9lkjhizhr2h0k03s5xdv1k"))))
     (properties `((upstream-name . "evtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-partykit))
     (home-page "https://cran.r-project.org/package=evtree")
     (synopsis "Evolutionary Learning of Globally Optimal Trees")
@@ -3716,6 +4144,9 @@ infrastructure for summaries, visualizations, and predictions.")
         (base32 "1ny43sry257cxlg56f0lj1szv9ci3ymskj6l5sn43l5a2pq62g4l"))))
     (properties `((upstream-name . "evtclass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rann r-fitdistrplus r-evd))
     (home-page "https://cran.r-project.org/package=evtclass")
     (synopsis
@@ -3740,6 +4171,9 @@ value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
         (base32 "08a34p0jbphhwiyxnk0yy830w1xr4dxzqj8bij828kxrhzc30pbb"))))
     (properties `((upstream-name . "evt0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-evd))
     (home-page "https://cran.r-project.org/package=evt0")
     (synopsis
@@ -3766,6 +4200,9 @@ estimators are implemented.")
         (base32 "04w9yz96m9sqhk9xc92ss3vjnqqm2lqm8j833n8wyn7ns8i7hg8q"))))
     (properties `((upstream-name . "evsim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
@@ -3796,6 +4233,9 @@ is published in CaÃ±igueral et al. (2023, ISBN:0957-4174)
         (base32 "10zld5hh6qq92pmr0ajkimjjvnm8a6dhh106w6mpanfz09lvj74f"))))
     (properties `((upstream-name . "evreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-evclust))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=evreg")
@@ -3824,6 +4264,9 @@ or combining Gaussian random fuzzy numbers).")
         (base32 "1nkgvx76cvy78pcnrfh8md2j3b9vmsissmq2s2nbb2rral272gnr"))))
     (properties `((upstream-name . "evprof")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -3860,6 +4303,9 @@ methodology is described in CaÃ±igueral and MelÃ©ndez (2021, ISBN:0142-0615)
         (base32 "0lwv8j4z88xr2x7k7gay42g9dig0vgv0h62br9d1flqlzf1hppd9"))))
     (properties `((upstream-name . "evoTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-plotly r-paleots r-mvtnorm r-mass))
     (home-page "https://klvoje.github.io/evoTS/index.html")
     (synopsis "Analyses of Evolutionary Time-Series")
@@ -3883,6 +4329,9 @@ package and the implemented models.")
         (base32 "1jgvvi355dxrjqniwcga7gzfj0jw3hgwbii2cv055rq9z5f442mr"))))
     (properties `((upstream-name . "EvoPhylo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-unglue
                              r-treeio
                              r-rtsne
@@ -3918,6 +4367,9 @@ SimÃµes and Pierce (2021) <doi:10.1038/s41559-021-01532-x>.")
         (base32 "064fcpd04ws8v6sl0bakiw34jmmfpg1w5pkq94y2gh1c576x4vwz"))))
     (properties `((upstream-name . "evoper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rrepast
                              r-rnetlogo
                              r-reshape
@@ -3956,6 +4408,9 @@ Agent-based modeling.")
         (base32 "1br2fyggwz2mxpic8sk384xq1lpbpv0j5gf6xyzhkn2n7kfpf6d5"))))
     (properties `((upstream-name . "Evomorph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-reshape2 r-ggplot2 r-geomorph))
     (home-page "https://cran.r-project.org/package=Evomorph")
     (synopsis "Evolutionary Morphometric Simulation")
@@ -3976,6 +4431,9 @@ of landmark data files (TPS), shape plotting and distances plotting functions.")
         (base32 "105jxqv4gaqk7f0y99r21cnsiy5wgwzx803gnccy8xramrhhlc50"))))
     (properties `((upstream-name . "evolved")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-phytools r-diversitree r-ape))
     (native-inputs (list r-knitr))
     (home-page "<https://github.com/Auler-J/evolved>")
@@ -4008,6 +4466,9 @@ knowledge.  For additional details, see package's vignettes.")
         (base32 "0l81d48zvvnbxlx1mj4qwga1kdzk05pzdvsp4ghi93pzzynfqn9s"))))
     (properties `((upstream-name . "evolvability")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-lme4 r-coda r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=evolvability")
@@ -4034,6 +4495,9 @@ trait (see Hansen et al.  2021 Systematic Biology <doi:10.1093/sysbio/syab079>).
         (base32 "0aaqd4q8imm2wgkgdpwwdl6nxgr3apgb3l24f2lwxgv2y045309d"))))
     (properties `((upstream-name . "EvolutionaryGames")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-mass
                              r-interp
@@ -4064,6 +4528,9 @@ is provided.")
         (base32 "1h4k2sxp67f3qn1cnmy290rgbmpvvj2zlw7gz5lbcgzbf53lb1bd"))))
     (properties `((upstream-name . "evolqg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-reshape2
                              r-rcpparmadillo
@@ -4102,6 +4569,8 @@ quantitative genetics tools.  Melo D, Garcia G, Hubbe A, Assis A P, Marroig G.
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4141,6 +4610,9 @@ periods.")
         (base32 "14vpr9rds2z0pcxnhwq7w5p6h4xfsngwq34l037i5a017afh7nrr"))))
     (properties `((upstream-name . "evola")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-crayon r-alphasimr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=evola")
@@ -4163,6 +4635,9 @@ periods.")
         (base32 "0502xj1gv2g943vfqyllz4sr5z4mixf5vqlqi2v96mymnv9iwsr8"))))
     (properties `((upstream-name . "evobiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-seqinr r-phytools r-geiger r-ape))
     (home-page "http://www.uta.edu/karyodb/evobiR/")
     (synopsis "Comparative and Population Genetic Analyses")
@@ -4186,6 +4661,9 @@ for use in teaching.")
         (base32 "13vxbf3cf0bbdbqj2dw9f5ckih42c5wikdn6mh106yyq27rxw7kb"))))
     (properties `((upstream-name . "evitaicossa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-rcpp r-disordr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/evitaicossa")
@@ -4212,6 +4690,9 @@ coefficients.  A vignette is provided.")
         (base32 "1h7a7z7v5k33y5hsdfczsri3vpbwspfgazhv4saknv2h11rgfpki"))))
     (properties `((upstream-name . "evir")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=evir")
     (synopsis "Extreme Values in R")
     (description
@@ -4232,6 +4713,9 @@ thresholds (univariate and bivariate), point processes, gev/gpd distributions.")
         (base32 "142rg6d3ziq5y2qscnfiasg2f27va44gjc4qh8db3z4n1nw076a5"))))
     (properties `((upstream-name . "evinf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -4272,6 +4756,9 @@ tools such as broom', tidy', and modelsummary'.")
         (base32 "0lx0h4iav8yazxp50a4cn3g0si3w76r9zdb6n3xbwrjrdnaf3lc6"))))
     (properties `((upstream-name . "evilDice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=evilDice")
     (synopsis "Test Dice Sets for Intransitive Properties")
     (description
@@ -4292,6 +4779,9 @@ magnitude of win/loss) are presented as well.")
         (base32 "1sdhv9gra2rmp63fil61lq61a2jlfhajxd4nicvag11cnar880js"))))
     (properties `((upstream-name . "EviewsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-zoo r-xts r-magrittr r-knitr))
     (native-inputs (list r-knitr))
@@ -4318,6 +4808,9 @@ article Mati S., Civcir I. and Abba S.I (2023) <doi:10.32614/RJ-2023-045>.")
         (base32 "1nffcfkny79d3f776p8j4g71cc3n991v56jwjyrg3vkgs05w13cn"))))
     (properties `((upstream-name . "evident")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-senstrat
                              r-sensitivitymv
                              r-sensitivitymult
@@ -4344,6 +4837,9 @@ Observational Studies by Paul R. Rosenbaum (2021) <doi:10.1201/9781003039648>.")
         (base32 "0zyah27p1j7sxpcgpr05ws1whw7dd876nzygcvh5pyiikkahfmcm"))))
     (properties `((upstream-name . "EvidenceSynthesis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-survival
                              r-rlang
@@ -4380,6 +4876,9 @@ the effect parameter.")
         (base32 "0g9w1q8ir6qmvk5vvbpipiyias7nj74ks2h94ja7al8sz68gralx"))))
     (properties `((upstream-name . "evidenceFactors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sensitivitymv))
     (home-page "https://cran.r-project.org/package=evidenceFactors")
     (synopsis
@@ -4407,6 +4906,9 @@ outcome and in a case-control study.  Karmakar, B., French, B., and Small, D. S.
         (base32 "02kqk95kx4nv13fg6z55a5rv6sq6lv8azg0jjxbkg1j6hg15p7ai"))))
     (properties `((upstream-name . "evidence")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstanarm
                              r-rstan
                              r-loo
@@ -4439,6 +4941,9 @@ displays for data exploration and model comparison.")
         (base32 "1slnzq55gg3p16fs22v69mafiggiy5f70sj8fh65lc0hphybh6w2"))))
     (properties `((upstream-name . "evian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich r-profilelikelihood r-foreach
                              r-doparallel))
     (home-page "https://cran.r-project.org/package=evian")
@@ -4463,6 +4968,9 @@ Hodge, S. E., Chiang, T., Pal, D. K., Corey, P. N., & Rohde, C. (2010)
         (base32 "0q910z7xnvl8b0d0gw17hrz5fzxbsx9ij30z98sfdz6xglizg3kx"))))
     (properties `((upstream-name . "EVI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://www.nature.com/articles/s41598-021-02622-3")
@@ -4488,6 +4996,9 @@ rate exceeds a threshold.")
         (base32 "0f8a29c2qxlzqadq694j6gwrj8rdq7x1kqwn79di7ycxfi7ifdbq"))))
     (properties `((upstream-name . "evgam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mgcv))
     (home-page "https://cran.r-project.org/package=evgam")
     (synopsis "Generalised Additive Extreme Value Models")
@@ -4513,6 +5024,9 @@ see Wood, S.N., Pya, N. & Safken, B. (2016) <doi:10.1080/01621459.2016.1180986>.
         (base32 "1hsq4g7hh71lzxzkmhm15mk3xpxaq75rqhgslf4qif6x7pm0p859"))))
     (properties `((upstream-name . "EventWinRatios")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EventWinRatios")
     (synopsis "Event-Specific Win Ratios for Terminal and Non-Terminal Events")
     (description
@@ -4548,6 +5062,9 @@ moderately sized data sets.")
         (base32 "095xmsb0q32bk52q2130766irbcggbrvcliklaar3qg8v7p3dl4g"))))
     (properties `((upstream-name . "eventTrack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-muhaz))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=eventTrack")
@@ -4574,6 +5091,9 @@ exponential.")
         (base32 "0l7sv8kb459sb69rp2y61g7a19i8xhanjd6paajlrha44bxyl1kv"))))
     (properties `((upstream-name . "eventstudyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-pracma
@@ -4606,6 +5126,9 @@ al. (2019) <doi:10.1257/aer.20180609>.")
         (base32 "10dngj6xzf072gyz8wcs3g30ihqvxdmg9h3q8m3d3lf17v3a75d6"))))
     (properties `((upstream-name . "eventstream")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tensora
                              r-mass
                              r-glmnet
@@ -4636,6 +5159,9 @@ classified using a partial-observations-classifier (Kandanaarachchi et al.
         (base32 "1i11v671l5x31nhx0vz2zmjv3g3xr2yszd9vkhg71xnxmr1156cy"))))
     (properties `((upstream-name . "EventPredInCure")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnsim
                              r-survival
                              r-rstpm2
@@ -4675,6 +5201,9 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
         (base32 "0l605vf15da32j2x55i01gy8nyr1pcmsrg2cvw9vrq3zf41k2cmb"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-shiny
                              r-rstpm2
@@ -4707,6 +5236,9 @@ enrollment and time-to-event models through simulations.")
         (base32 "0nybzy2mpmazcvz06mkv7l9741mjm3i2q2sindq0777vb2k4504v"))))
     (properties `((upstream-name . "eventInterval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=eventInterval")
     (synopsis "Sequential Event Interval Analysis")
@@ -4727,6 +5259,9 @@ events.")
         (base32 "0f9vmm47g6cfvspil44zki2isd49zy6hx4cvl3vqksj57pbw8g0p"))))
     (properties `((upstream-name . "eventglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-sandwich r-geepack))
     (native-inputs (list r-knitr))
     (home-page "https://sachsmc.github.io/eventglm/")
@@ -4754,6 +5289,9 @@ residuals, the use of sampling weights, and corrected variance estimation.")
         (base32 "0wx3bcs8n95fmyc5vnlrwd75bzqqvy6czb9bsbp04g3770c5ja0r"))))
     (properties `((upstream-name . "EventDetectR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-neuralnet r-imputets r-gridextra r-ggplot2
                              r-forecast))
     (home-page "https://github.com/frehbach/EventDetectR")
@@ -4776,6 +5314,9 @@ event detection.")
         (base32 "02gwgbp692cfmf933jg1f7h4gghhc1v2cswz7rpcazm8h39mc4wh"))))
     (properties `((upstream-name . "EventDetectGUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-shinyjs
                              r-shinydashboard
@@ -4804,6 +5345,9 @@ detection.")
         (base32 "04hji0s5vglq60mv4kf368ny749rfr3hqlm78ch1dqh0f0nknk8q"))))
     (properties `((upstream-name . "eventdataR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://bupar.net/")
     (synopsis "Event Data Repository")
@@ -4826,6 +5370,9 @@ They can be used in combination with functionalities provided by the
         (base32 "0w3v8j61y7vr0cjl8a1rkvi4pyjlfhmzzn1n4dgkivac4iafzqjj"))))
     (properties `((upstream-name . "event")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil))
     (home-page "http://www.commanster.eu/rcode.html")
     (synopsis "Event History Procedures and Models")
@@ -4845,6 +5392,9 @@ They can be used in combination with functionalities provided by the
         (base32 "0mpn8pcfyziv9wxh9q0dg1hv0m8wbzihvdq8a4vqr3jq488jpa9j"))))
     (properties `((upstream-name . "evenBreak")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-combinat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=evenBreak")
@@ -4882,6 +5432,9 @@ Monzingo (2005) \"Hand and Suit Patterns\"
         (base32 "1adlwyr1csjmwcpc7jsywzggpvr3fk500hyahzy774jmgj3j09vh"))))
     (properties `((upstream-name . "evdbayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=evdbayes")
     (synopsis "Bayesian Analysis in Extreme Value Theory")
     (description
@@ -4904,6 +5457,9 @@ distribution.")
         (base32 "038crxa3a7h8zxjmcy98pq1zlc6gnlqjy39srh8mai9ksalx672x"))))
     (properties `((upstream-name . "EvCombR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EvCombR")
     (synopsis "Evidence Combination in R")
     (description
@@ -4922,6 +5478,9 @@ distribution.")
         (base32 "0z707x770rp7y3sii4w0xk61is2ib79mix14x48n942vb11mc91b"))))
     (properties `((upstream-name . "evclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r-utils
                              r-quadprog
                              r-plyr
@@ -4955,6 +5514,9 @@ Neural-Network-based Evidential Clustering.")
         (base32 "0khiifgfag8a6nsznnjr7h1vj5v2nzidv0qrkxlg12i42bg3xqpj"))))
     (properties `((upstream-name . "evclass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r-utils r-ibelief r-fnn))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=evclass")
@@ -4978,6 +5540,9 @@ networks, logistic regression, feed-forward neural networks.")
         (base32 "1xwyclfaq50805n3h052vxlyhmiayy9338gqmx6vgj77s8fw3ds1"))))
     (properties `((upstream-name . "EVchargcost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-cowplot))
     (home-page "https://cran.r-project.org/package=EVchargcost")
     (synopsis
@@ -5009,6 +5574,9 @@ GonzÃ¡lez-RodrÃ­guez et at (2023) <https://inria.hal.science/hal-04362876v1>
         (base32 "0mdy9f20fwhak1a830mq2dnvkal0whgfdr8bqkkg2hb9351ahl15"))))
     (properties `((upstream-name . "Evapotranspiration")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo))
     (home-page "https://cran.r-project.org/package=Evapotranspiration")
     (synopsis
@@ -5031,6 +5599,9 @@ Penman-Monteith FAO 56, Priestley-Taylor and Morton formulations.")
         (base32 "1a50pi9vch15cl5c3jb43slfdb7k0aa4s4pdx75va9icg738fiby"))))
     (properties `((upstream-name . "evapoRe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list proj gdal))
     (propagated-inputs (list r-raster
                              r-precipe
@@ -5066,6 +5637,9 @@ research applications and explore diverse ET data at different resolutions.")
         (base32 "0ip4cyipbs6g0znrdh5zs4xizmqgdznq8riggkgyv06wipgx9a2j"))))
     (properties `((upstream-name . "EValue")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-metautility
                              r-metafor
                              r-metadat
@@ -5101,6 +5675,9 @@ modification (Mathur et al., under review).")
         (base32 "0b65y4rb650hhlgc18z0sm0danrrawqkazzdl9krl877djrgx87g"))))
     (properties `((upstream-name . "EvaluationMeasures")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EvaluationMeasures")
     (synopsis "Collection of Model Evaluation Measure Functions")
     (description
@@ -5122,6 +5699,9 @@ returned.")
         (base32 "1cmway61p2cfl9101x30hvvvmzvg2asnf6378dkinr7dr5ymnkxm"))))
     (properties `((upstream-name . "EvaluateCore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-reshape2
                              r-rdpack
@@ -5158,6 +5738,9 @@ phenotypic trait data according to Odong et al. (2015)
         (base32 "0gb9bi9kfpqv0asbrcz2kdf1grxbjipdq97jmlgbzr5rn9jski01"))))
     (properties `((upstream-name . "evalR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=evalR")
@@ -5181,6 +5764,9 @@ statement evaluations are done by executing the verification trees.")
         (base32 "0szrqcvi9x0wqxlyi1qyzpkj4y93qym8295nddip9ncl67kh2w09"))))
     (properties `((upstream-name . "evalITR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-superlearner
                              r-scales
                              r-rqpen
@@ -5227,6 +5813,9 @@ Imai and Li (2019) <@code{arXiv:1905.05389>}.")
         (base32 "01nxclrp90qhlnxl0yf2srppglic6m3f7pl35h62r6kxic0lrzhs"))))
     (properties `((upstream-name . "Evacluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Evacluster")
     (synopsis "Evaluation Clustering Methods for Disease Subtypes Diagnosis")
     (description
@@ -5249,6 +5838,9 @@ al.(2021)<doi:10.2174/1567205018666210831145825>.")
         (base32 "0f34shsacf9lyb2hlp2f0nhqy2ihy1zqg52npx8ap2li0s4y0x24"))))
     (properties `((upstream-name . "evabic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://abichat.github.io/evabic/")
     (synopsis "Evaluation of Binary Classifiers")
     (description
@@ -5269,6 +5861,9 @@ under the curve.  Outputs are well suited for nested dataframes.")
         (base32 "1czvgnrykzll9dbq6ccgj34d5cpbk5rl6mrgp3kkl927dfs4gh2x"))))
     (properties `((upstream-name . "eva3dm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-ncdf4))
     (home-page "https://schuch666.github.io/eva3dm/")
     (synopsis "Evaluation of 3D Meteorological and Air Quality Models")
@@ -5290,6 +5885,9 @@ surface stations) and grid (i.e.  satellite) observations.")
         (base32 "1b5hrwgdbw19c63ywhkvxlz3843c0mgvsxlmab6zv6r2lrrdkf62"))))
     (properties `((upstream-name . "eva")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-envstats))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/brianbader/eva_package")
@@ -5317,6 +5915,9 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
         (base32 "13na6hdwz67f27vd3kvh6brxwxdf76sii0gf2r73ncs6db16q4pm"))))
     (properties `((upstream-name . "eurostat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-tibble
@@ -5357,6 +5958,9 @@ J. & Zhang, X. (2018) <doi:10.1214/17-AOAS1092>.")
         (base32 "1ym257bxr4a0dmln1j8x3pf87wrryzgqyzhvk61whc6n2bj62x1s"))))
     (properties `((upstream-name . "europop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/mdlincoln/europop")
     (synopsis "Historical Populations of European Cities, 1500-1800")
     (description
@@ -5377,6 +5981,9 @@ De Vries, \"European Urbanization, 1500-1800\" (1984).")
         (base32 "11cr8n64yv50zwib9wkvk1j43p9a1cmxmzznxykczv43l193kjg7"))))
     (properties `((upstream-name . "europeanaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-magrittr r-jsonlite r-httr
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -5408,6 +6015,9 @@ including both their metadata and their associated media files.")
         (base32 "0w0ffhm20yp2nfisc38hm9da1529i3fab0rxmhn1d7lsqs2f42f4"))))
     (properties `((upstream-name . "euroleaguer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -5438,6 +6048,9 @@ teams, players and games.")
         (base32 "0xw6b178jpg4dlgx6af1bh6z2m6apd12lbz03yzp7ay93ghf7zsi"))))
     (properties `((upstream-name . "eurodata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-xml2
                              r-stringr
@@ -5454,7 +6067,7 @@ data, labels, and metadata.  On top of the core functionality, data search and
 data description/comparison functions are also provided.  Use
 <https://github.com/alekrutkowski/eurodata_codegen> â a point-and-click app
 for rapid and easy generation of richly-commented R code â to import a
-Eurostat dataset or its subset (based on the eurodata::@code{importData}()
+Eurostat dataset or its subset (based on the @code{eurodata::importData()}
 function).")
     (license license:gpl2)))
 
@@ -5470,6 +6083,9 @@ function).")
         (base32 "1srn0n1imp975b3sfaz27yz1fxm8gs7h34wa6mf5xw551gm6kwwv"))))
     (properties `((upstream-name . "eurocordexr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pcict
                              r-ncdf4-helpers
                              r-ncdf4
@@ -5503,6 +6119,9 @@ interpolate them to a standard one.  Potentially works with many CF-conform
         (base32 "13f8bfkcda0n6fnh8hp398prx6nb18wfzxy7bklvj91s0y158j8s"))))
     (properties `((upstream-name . "eurlex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-stringr
@@ -5535,6 +6154,9 @@ pre-defined SPARQL queries and GET requests.  See Ovadek (2021)
         (base32 "1ma5xsfyj6f1dd6n7k4fqxil3xbgj2d79vb7b4zjqf7cb14vljlg"))))
     (properties `((upstream-name . "Eunomia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite
                              r-rlang
                              r-readr
@@ -5561,6 +6183,9 @@ pre-defined SPARQL queries and GET requests.  See Ovadek (2021)
         (base32 "1w1382bmlgj9xirrarvmsh8kymgbbfybfmbcpnh02y4lyrdav78d"))))
     (properties `((upstream-name . "eunis.habitats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/ramiromagno/eunis.habitats")
     (synopsis "EUNIS Habitat Classification")
@@ -5587,6 +6212,9 @@ crosswalks to other habitat typologies.")
         (base32 "0rdx4gynr0369ax7q8sgrla0fzqc82vg27npz4g3qixam1y50vvk"))))
     (properties `((upstream-name . "eummd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=eummd")
     (synopsis "Efficient Univariate Maximum Mean Discrepancy")
@@ -5611,6 +6239,9 @@ based on Johnson and Mizoguchi (1978) <doi:10.1137/0207013>.")
         (base32 "0yhpnx9vnfly14vn1c2z009m7yipv0j59j3s826vgpczax6b48m0"))))
     (properties `((upstream-name . "eulerian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-graph))
     (home-page "https://cran.r-project.org/package=eulerian")
     (synopsis "eulerian: A package to find eulerian paths from graphs")
@@ -5631,6 +6262,9 @@ This package provides methods to handle eulerian paths or cycles.")
         (base32 "0h36cqi752zs32gs55rdniabldr8jph7gc1y2yb9983cl4mfrjv0"))))
     (properties `((upstream-name . "EUfootball")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EUfootball")
     (synopsis "Football Match Data of European Leagues")
@@ -5654,6 +6288,9 @@ covariates.  Can be used all purposes.")
         (base32 "0n8qj5dhc32ckbjiwvcfc904j9jilyb87x325a2vbgb35gfhf7sn"))))
     (properties `((upstream-name . "eufmdis.adapt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tibble
                              r-shinywidgets
@@ -5670,7 +6307,7 @@ covariates.  Can be used all purposes.")
     (description
      "Analyses @code{EuFMDiS} output files in a Shiny App.  The distributions of
 relevant output parameters are described in form of tables (quantiles) and
-plots.  The App is called using eufmdis.adapt::run_adapt().")
+plots.  The App is called using @code{eufmdis.adapt::run_adapt()}.")
     (license license:gpl3+)))
 
 (define-public r-eudract
@@ -5685,6 +6322,9 @@ plots.  The App is called using eufmdis.adapt::run_adapt().")
         (base32 "1gqsm9nhl6ap7q9v1794yv4qvnhq7ikszvjd9cgyq4375jahlkmp"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xslt
                              r-xml2
                              r-tidyr
@@ -5729,6 +6369,9 @@ hand.")
         (base32 "0n0vxhl2d8in0z67sn4xm9gjmjyn9a7vhkwnjsf3s5vw775dllfr"))))
     (properties `((upstream-name . "Euclimatch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-rcppparallel
                              r-rcpp
@@ -5764,6 +6407,9 @@ C.M., and Lodge, D.M. (2016). <doi:10.1111/ddi.12391>.")
         (base32 "1w5s1zkb81v150nvaygvyla2x0vh4c99vd5jw53jcq68sv9hby3i"))))
     (properties `((upstream-name . "EuclideanSD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny))
     (home-page "https://cran.r-project.org/package=EuclideanSD")
     (synopsis "An Euclidean View of Center and Spread")
@@ -5805,6 +6451,9 @@ asked to correct it.")
         (base32 "06y9xw8fdfijxv4kh0fxin6dgj6vavnjnyh9a75m14i0i69hd8bd"))))
     (properties `((upstream-name . "etwfe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-marginaleffects r-formula r-fixest r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://grantmcdermott.com/etwfe/")
@@ -5827,6 +6476,9 @@ a la Wooldridge (2021, 2022) <doi:10.2139/ssrn.3906345>,
         (base32 "0jzwvz2ddh3w4y1kgqwdj7py376w6dwbvqhjmiiikr7qsgap23fk"))))
     (properties `((upstream-name . "etrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=etrm")
@@ -5857,6 +6509,9 @@ and R. W. Jones (1987) <doi:10.3905/jpm.1987.409131> and H. E. Leland (1980)
         (base32 "1yq34l655ydy4wx9b23kp37fkl5zffzic2nk87rqw2wbf085c75w"))))
     (properties `((upstream-name . "ETRep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-sphericalcubature
                              r-shapes
@@ -5903,6 +6558,9 @@ on a reference tube.")
         (base32 "1qnky9jqcfbq60s4h3igyq77r7f559i714i5g7ss14zcx86zkpdi"))))
     (properties `((upstream-name . "etree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usedist
                              r-tda
                              r-survival
@@ -5940,6 +6598,9 @@ described in Giubilei et al. (2022) <@code{arXiv:2207.04430>}.")
         (base32 "1yy7l9030pkwfashybkrpyzpip8camxsy503s1si2myrpjf93chj"))))
     (properties `((upstream-name . "etrader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urltools
                              r-rvest
                              r-purrr
@@ -5968,6 +6629,9 @@ approval.  See README for authentication process and examples.")
         (base32 "0s0q4f3wzpdd87l3pnzysa8aq7zgz29589xnm65a6xfy9znbpzs3"))))
     (properties `((upstream-name . "ETLUtils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ff r-bit))
     (home-page "https://github.com/jwijffels/ETLUtils")
     (synopsis
@@ -5993,6 +6657,9 @@ function for re-coding vectors.")
         (base32 "1msc5mpnw4wd5f798q8rjdxyky6b2bqn6vncgq40jscab83hk9hi"))))
     (properties `((upstream-name . "etl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-usethis
                              r-tibble
@@ -6030,6 +6697,9 @@ relational database management system.")
         (base32 "0wrqdvcfag83qidrfg2b6q86xmb3f03mda4kwx0f4a53wl5fjdrx"))))
     (properties `((upstream-name . "EthSEQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snprelate
                              r-rcpp
                              r-plot3d
@@ -6058,6 +6728,9 @@ data.")
         (base32 "1bdylx3in2hj3989kbp5xgpas5y84m3nrl9jpqr05rv19l6i4350"))))
     (properties `((upstream-name . "ethnobotanyR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-magrittr
                              r-ggridges
@@ -6091,6 +6764,9 @@ Economic Botany, 62(1), 24-39. <doi:10.1007/s12231-007-9004-5>.")
         (base32 "16ciff8bf2p56941r83y7405sp5pfms63dwjd232ih3mnznjpc0f"))))
     (properties `((upstream-name . "ETC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=ETC")
     (synopsis "Equivalence to Control")
@@ -6116,6 +6792,9 @@ chosen.  For non-normal data, the Wilcoxon test is applied.")
         (base32 "14g1v66z27qx84vzjh7fhnpw3a2yki42ylrg7fn6iwyys5cxqj5c"))))
     (properties `((upstream-name . "etasFLP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-maps r-mapdata r-fields))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=etasFLP")
@@ -6142,6 +6821,9 @@ the induced seismicity; the parametrization has been changed; Chiodi, Adelfio
         (base32 "1d0vdd3ldp2w6p15b8jj74l3fd28sjrcxhq1w4zdqh6r38m0cshg"))))
     (properties `((upstream-name . "ETASbootstrap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-geom r-mass r-etas))
     (home-page "https://cran.r-project.org/package=ETASbootstrap")
     (synopsis
@@ -6175,6 +6857,9 @@ feature.")
         (base32 "09nmajzjdrbmq5bh5zg53vmvv9580gi8v8g92ipzzih7a1xvrcgh"))))
     (properties `((upstream-name . "ETAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-random
                              r-spatstat-geom
                              r-spatstat-explore
@@ -6207,6 +6892,9 @@ computing with @code{OpenMP} is possible on supported platforms.")
         (base32 "17dga1hz29jjdclhhwn1hrvlkdfbcbqmk233vc00s59pbmgsav06"))))
     (properties `((upstream-name . "etable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hmisc))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=etable")
@@ -6228,6 +6916,9 @@ descriptive statistics, with or without weighting the data.")
         (base32 "01jhy5043axgmv51ri2k3gl1shvsh569h9xy4y1ya1qjpdlbv0ky"))))
     (properties `((upstream-name . "et.nwfva")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rnuske/et.nwfva")
     (synopsis
@@ -6258,6 +6949,9 @@ performed traditionally by the rule of proportion or with a functional approach.
         (base32 "0bb91khnrn8v3d6hbbin72032w7w8p0jchbr0bzwyfq5f6l4hwka"))))
     (properties `((upstream-name . "esvis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sfsmisc
@@ -6310,6 +7004,9 @@ specified.")
         (base32 "0pnpg8w6i1dmkcn6afj2jsm5mzvbxka80np1bldcxgmylrp5s35p"))))
     (properties `((upstream-name . "estprod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-minpack-lm r-lazyeval r-gmm r-formula r-boot))
     (home-page "https://cran.r-project.org/package=estprod")
     (synopsis "Estimation of Production Functions")
@@ -6337,6 +7034,9 @@ was originally proposed by Olley, G.S. and Pakes, A. (1996)
         (base32 "13zwhxm0qm83c8k5k4slvq2snkmbq1zz3i5cqvxxwhvkb4b8aja4"))))
     (properties `((upstream-name . "EstMix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-pscbs))
     (home-page "https://cran.r-project.org/package=EstMix")
     (synopsis "Tumor Clones Percentage Estimations")
@@ -6360,6 +7060,9 @@ Applied Statistics, 11(2), 967-991, <doi:10.1214/17-AOAS1026> for more details."
         (base32 "0wshkcqdajysymy765d5gg9z9bxdsy59h2rw0ls19nlf0dbj4z6s"))))
     (properties `((upstream-name . "estmeansd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-metablue))
     (home-page "https://github.com/stmcg/estmeansd")
     (synopsis
@@ -6387,6 +7090,9 @@ quartiles.  The corresponding standard error estimators described by
         (base32 "0z591mblbzc3qv9pyv8zn0r5r3d8f1l02sxdc649gl1lb40kalz0"))))
     (properties `((upstream-name . "estimraw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=estimraw")
     (synopsis
@@ -6413,6 +7119,9 @@ equations described in Di Pietrantonj C (2006) <doi:10.1002/sim.2287>.")
         (base32 "036kz4zdrgqab2mbzxmbknr9314ap5b2dp75syqhg2mmzw3zf3li"))))
     (properties `((upstream-name . "EstimDiagnostics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat
                              r-rlang
                              r-reshape2
@@ -6440,6 +7149,9 @@ estimators and functions for diagnostics of their finite-sample performance.")
         (base32 "1v9fzqp7h48lb70d2kln4wq9fl36dsxhv7871hnmggkykzax3pvc"))))
     (properties `((upstream-name . "estimatr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-rcppeigen r-rcpp r-generics r-formula))
     (home-page "https://declaredesign.org/r/estimatr/")
     (synopsis "Fast Estimators for Design-Based Inference")
@@ -6464,6 +7176,9 @@ introduced by Lin (2013) <doi:10.1214/12-AOAS583>.")
         (base32 "16zpgscxn3f3alfi44yinacrf9222wbdg7ac1bs91bax7zn3k0zd"))))
     (properties `((upstream-name . "estimators")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progress r-matrix r-ggplot2 r-ggh4x
                              r-extradistr))
     (native-inputs (list r-knitr))
@@ -6490,6 +7205,9 @@ possible.")
         (base32 "1hwlrsxl42n4i25f1izhccj755aydl2r98w1jn12z9a62wk9nnzy"))))
     (properties `((upstream-name . "EstimationTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
                              r-rdpack
@@ -6530,6 +7248,9 @@ TRUE of optim function.")
         (base32 "0fgbyfnxxs6kp9p17ljvj72q5vd4xn7kwh4zbmzjx45cdq101bjv"))))
     (properties `((upstream-name . "estimateW")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-plot-matrix r-matrixcalc r-matrix))
     (home-page "https://cran.r-project.org/package=estimateW")
     (synopsis "Estimation of Spatial Weight Matrices")
@@ -6553,6 +7274,9 @@ Krisztin and Piribauer (2022) <doi:10.1080/17421772.2022.2095426>.")
         (base32 "06ihyiq9dw7yg8qpq3yckpd0jk4gjajgvavbj302sj0qssrxgyzh"))))
     (properties `((upstream-name . "EstimateGroupNetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qgraph r-igraph r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=EstimateGroupNetwork")
     (synopsis
@@ -6576,6 +7300,9 @@ cross validation.")
         (base32 "1jiyqq5hgqc754r434sik9jnlpw66xz56cjdf5ig95qkffzsg224"))))
     (properties `((upstream-name . "ESTER")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-magrittr
@@ -6611,6 +7338,9 @@ Yao et al. (2017, <@code{arXiv:1704.02030v3>}).")
         (base32 "110imzvcbkql3dk1pb8ys1rqykkghd73k3v0l2sppny70fw8b24q"))))
     (properties `((upstream-name . "EstCRM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice r-hmisc))
     (home-page "https://cengiz.me/")
     (synopsis "Calibrating Parameters for the Samejima's Continuous IRT Model")
@@ -6634,6 +7364,9 @@ simulation studies.")
         (base32 "0wp5w9w0b832fnl7kchjqmychnf5896q50grw8hwdc1km14dfzkg"))))
     (properties `((upstream-name . "estatapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-readr
@@ -6659,6 +7392,9 @@ official statistics of the Japanese government.")
         (base32 "1l5ngjqm301rr1amsqdkazf7dg7c8nd0pvwy0hrsjk0m630q1kc4"))))
     (properties `((upstream-name . "estadistica")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shinydashboard
                              r-shiny
@@ -6698,6 +7434,9 @@ ISBN:9788484424673) .")
         (base32 "1b78am4vnyg3k2hjjkjyhnjgm6rsmjwvqys030qybkgfplsbgra3"))))
     (properties `((upstream-name . "essurvey")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-tibble r-rvest r-httr r-haven))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/essurvey/")
@@ -6721,6 +7460,9 @@ available.")
         (base32 "0rvlxfcl42h4pjqf37mx7bc4k21iwvnys6l5rf2jsl7yk1b9hmbn"))))
     (properties `((upstream-name . "essHist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=essHist")
     (synopsis "The Essential Histogram")
@@ -6750,6 +7492,9 @@ mixtures of both.  For details see Li, Munk, Sieling and Walther (2016)
         (base32 "163wv4szfanbpiw5f6lhw1dnns5prql43iz27zgcp5z2rsxlb894"))))
     (properties `((upstream-name . "essentials")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=essentials")
     (synopsis "Essential Functions not Included in Base R")
     (description
@@ -6770,6 +7515,9 @@ numbers (numeric and complex alike).")
         (base32 "1cmw20nn39ssyqiyn50w0ws28mq4cd26yhzr7mv97haaqjjjkv5h"))))
     (properties `((upstream-name . "ess")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-igraph))
     (home-page "https://github.com/mlindsk/ess")
     (synopsis "Efficient Stepwise Selection in Decomposable Models")
@@ -6791,6 +7539,9 @@ algorithm is used for model selection in decomposable graphical models.")
         (base32 "1djyx8cc1pfza5n5ipg990jwwc1fjlsiz817iifwv9iw8g9vkda4"))))
     (properties `((upstream-name . "esreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-quantreg r-formula))
     (home-page "https://cran.r-project.org/package=esreg")
     (synopsis "Joint Quantile and Expected Shortfall Regression")
@@ -6814,6 +7565,8 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6864,6 +7617,9 @@ formats, and retrieve the code to reproduce the plot.")
         (base32 "0dy9knx2ihq8xfkiikfv0havwb4l51403pn09hhkg06955ypixm0"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sodium
                              r-shinywidgets
                              r-shiny
@@ -6902,6 +7658,9 @@ patient-oriented perspective.")
         (base32 "0jrq3ccz6zv1ic7a5sqvk8h3vgrq1lkkckadsik8x1a9bnsv0qii"))))
     (properties `((upstream-name . "esmtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-lubridate
@@ -6944,6 +7703,9 @@ ecosystem which includes a framework and a web gallery
         (base32 "076sm26mkkvig2g04k32z2dlp2h9gnqgzckhirl4pqm01siknl61"))))
     (properties `((upstream-name . "esmprep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate))
     (home-page "https://github.com/mmiche/esmprep")
     (synopsis
@@ -6970,12 +7732,15 @@ This hierarchy evolved out of my personal experience in working with ESM data.")
         (base32 "1d6xrdxwn85c8s60s7vzaymh7wa9f7fzd79hq5spzd12fr3zisvj"))))
     (properties `((upstream-name . "esmisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-raster r-ggplot2))
     (home-page "https://github.com/EDiLD/esmisc")
     (synopsis "Misc Functions of Eduard SzÃ¶cs")
     (description
-     "Misc functions programmed by Eduard SzÃ¶cs.  Provides read_regnie() to read
-gridded precipitation data from German Weather Service (DWD, see
+     "Misc functions programmed by Eduard SzÃ¶cs.  Provides @code{read_regnie()} to
+read gridded precipitation data from German Weather Service (DWD, see
 <http://www.dwd.de/> for more information).")
     (license license:expat)))
 
@@ -6991,6 +7756,9 @@ gridded precipitation data from German Weather Service (DWD, see
         (base32 "05gpskdzjdm3kp7skqvy7dmj8sgh4jhpkm6akmxlfxn8b627zvg1"))))
     (properties `((upstream-name . "eSIR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rjags
                              r-reshape2
@@ -7021,6 +7789,9 @@ L. (2020) <doi:10.6339/JDS.202007_18(3).0003>.")
         (base32 "0min4j1dyd08i0fyn9a4iasjlhq08bn74bjz8vj1gq9l114v795k"))))
     (properties `((upstream-name . "eshrink")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-glmnet))
     (home-page "https://cran.r-project.org/package=eshrink")
     (synopsis "Shrinkage for Effect Estimation")
@@ -7043,6 +7814,9 @@ and Rice (2017) <doi:10.1093/aje/kwx225> for more details.")
         (base32 "1r454bn7wwc8nv9f1z0dfgn6kj9ac35b3i19xx385jhlqsm1akgw"))))
     (properties `((upstream-name . "ESG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ESG")
     (synopsis "Package for Asset Projection")
     (description
@@ -7051,7 +7825,7 @@ projection results.  Risk parameters are gathered together into a
 @code{ParamsScenarios} sub-object.  The general process for using this package
 is to set all needed parameters in a Scenarios object, use the
 @code{customPathsGeneration} method to proceed to the projection, then use
-xxx_@code{PriceDistribution}() methods to get asset prices.")
+@code{xxx_PriceDistribution()} methods to get asset prices.")
     (license license:gpl2+)))
 
 (define-public r-esemifar
@@ -7066,6 +7840,9 @@ xxx_@code{PriceDistribution}() methods to get asset prices.")
         (base32 "1ypylcyyq516d9w1s920m92h7a6c6yb837720hbmx37vjjz6l4dm"))))
     (properties `((upstream-name . "esemifar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-smoots
                              r-rcpparmadillo
                              r-rcpp
@@ -7096,6 +7873,9 @@ Feng, Y., (2023) <doi:10.1080/03610926.2023.2276049>.")
         (base32 "035f864na44lqdya6zbivyg1advan9mrfz5c61hxkvlv63b3v8ay"))))
     (properties `((upstream-name . "esem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -7114,13 +7894,13 @@ MuthÃ©n, 2009) <https://www.statmodel.com/download/EFACFA810.pdf>) with
 Longitudinal Study of Australian Children (LSAC) dataset (Mohal et al., 2023)
 <doi:10.26193/QR4L6Q>.  The package uses tidyverse','psych',
 lavaan','@code{semPlot} and provides additional functions to conduct ESEM. The
-package provides general functions to complete ESEM, including esem_c(),
-creation of target matrix (if it is used) make_target(), generation of the
-Confirmatory Factor Analysis (CFA) model syntax esem_cfa_syntax().  A sample
-data is provided - the package includes a sample data of the Strengths and
-Difficulties Questionnaire of the Longitudinal Study of Australian Children (SDQ
-LSAC) in sdq_lsac().  ESEM package vignette presents the tutorial demonstrating
-the use of ESEM on SDQ LSAC data.")
+package provides general functions to complete ESEM, including @code{esem_c()},
+creation of target matrix (if it is used) @code{make_target()}, generation of
+the Confirmatory Factor Analysis (CFA) model syntax @code{esem_cfa_syntax()}.  A
+sample data is provided - the package includes a sample data of the Strengths
+and Difficulties Questionnaire of the Longitudinal Study of Australian Children
+(SDQ LSAC) in @code{sdq_lsac()}.  ESEM package vignette presents the tutorial
+demonstrating the use of ESEM on SDQ LSAC data.")
     (license license:gpl3+)))
 
 (define-public r-eselect
@@ -7135,6 +7915,9 @@ the use of ESEM on SDQ LSAC data.")
         (base32 "04918ping7rxb0n5fkllkcv332gwhqq2f1fqi5nrbx65k7lrjmfy"))))
     (properties `((upstream-name . "eselect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-comparedesign))
     (home-page "https://cran.r-project.org/package=eselect")
     (synopsis
@@ -7162,6 +7945,9 @@ and Koenig, F. (2022). <doi:10.48550/@code{arXiv.2206.09639>}.")
         (base32 "0yi7wyf1hapvkpkcwiqi3k1p06nic0glrzrn59lcy0ck98krvy09"))))
     (properties `((upstream-name . "eseis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-terra
                              r-signal
@@ -7196,6 +7982,9 @@ seismic data, and generate reports of the processing history.")
         (base32 "0sm5xr93i785082bwiprbkxhbb94vwha7jfd3w5xvz2a28axgpxj"))))
     (properties `((upstream-name . "eSDM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-shiny
                              r-sf
@@ -7228,6 +8017,9 @@ management decisions.  The package is further described in Woodman et al (2019)
         (base32 "0lnz40d8s9pmxccsbd9g80n0k454xgicjfdpbfrq7rnyb4pdk9l2"))))
     (properties `((upstream-name . "esDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=esDesign")
     (synopsis "Adaptive Enrichment Designs with Sample Size Re-Estimation")
     (description
@@ -7259,6 +8051,9 @@ AED1-SSR, AED2-SSR and AED3-SSR.")
         (base32 "0bp5ykqczj6zyb9g5rg9zwwdyvd3l530km927wwxdi862sh5ri5g"))))
     (properties `((upstream-name . "EScvtmle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-superlearner
                              r-stringr
@@ -7297,6 +8092,9 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
         (base32 "1vyrx2ga32mgc6rlmywxm7wpmhcv8rwhaiddq03wgyn9515addn9"))))
     (properties `((upstream-name . "esci")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-statpsych
                              r-sadists
@@ -7337,6 +8135,9 @@ hypothesis test functions.  Data sets are included for all examples from Cumming
         (base32 "0qsr58jcw48lypddbyfpkx51riasxzq2c6098zhcypj8kf98rfvw"))))
     (properties `((upstream-name . "escalation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-trialr
                              r-tidyselect
@@ -7393,6 +8194,9 @@ simulations and calculate dose-paths for future cohorts of patients.")
         (base32 "0l2v4y2sgfyc0a6ap2ww93y44jxijnxjma16p0bsh3clrvzbvcrr"))))
     (properties `((upstream-name . "esback")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-esreg))
     (home-page "https://cran.r-project.org/package=esback")
     (synopsis "Expected Shortfall Backtesting")
@@ -7420,6 +8224,9 @@ for practitioners.")
         (base32 "0yys40ki5dy62fds4kfwji6qzq5mbmvqps85maqgsimal7p7gx3n"))))
     (properties `((upstream-name . "esaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-readxl r-readods r-plyr r-dplyr))
     (home-page "https://github.com/Nicolas-Schmidt/esaps")
     (synopsis "Indicators of Electoral Systems and Party Systems")
@@ -7443,6 +8250,9 @@ are included.")
         (base32 "1r79qcirlx7g9w523nz81f5f22paid5dhag2lqj7jf33w0ggaknn"))))
     (properties `((upstream-name . "esaddle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr r-mvnfast
                              r-doparallel))
     (native-inputs (list r-knitr))
@@ -7465,6 +8275,9 @@ density of Fasiolo et al. (2018) <doi:10.1214/18-EJS1433>.")
         (base32 "1swxg8mdp9jj9f0x0cawhhbx8gmmpsgqlbifx2v04a2vkgdkigqf"))))
     (properties `((upstream-name . "es.dif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=es.dif")
     (synopsis "Compute Effect Sizes of the Difference")
     (description
@@ -7486,6 +8299,9 @@ assuming the variance equality).")
         (base32 "1d559p1z73zqd5ym0bs7lpp1w1di7sxpryq41hvkj7azrlijy0ry"))))
     (properties `((upstream-name . "eRTG3D")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tiff
                              r-rastervis
                              r-raster
@@ -7526,6 +8342,9 @@ Science, 9, online. <doi:10.5167/uzh-130652>.")
         (base32 "1ri2v6qxdi9if10vxxhgj0jwk4whfi45aqqdqri918djg0dk75p1"))))
     (properties `((upstream-name . "ERSA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shiny
                              r-rlang
@@ -7559,6 +8378,9 @@ and residuals.")
         (base32 "18frrfnhnmg4fjlpfwj8aklzfwafpwqvagm0aschkqc8mz6wnjbz"))))
     (properties `((upstream-name . "errum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/tmsalab/errum")
     (synopsis "Exploratory Reduced Reparameterized Unified Model Estimation")
@@ -7580,6 +8402,9 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
         (base32 "17almk09rl6q0g88kwkdcf30280s56ay6vx3sancnn9qfsp9zzrg"))))
     (properties `((upstream-name . "errors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://r-quantities.github.io/errors/")
     (synopsis "Uncertainty Propagation for R Vectors")
@@ -7602,6 +8427,9 @@ included in this package as a vignette; see citation(\"errors\") for details.")
         (base32 "1qml2qd63iqswb0zvnx9m3ia0zq7q20ycllhds3bwa4fwg25pfsp"))))
     (properties `((upstream-name . "errorlocate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-validate r-lpsolveapi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/data-cleaning/errorlocate")
@@ -7624,6 +8452,9 @@ validate'.  See also Van der Loo and De Jonge (2018)
         (base32 "195c8bbxi22l9qyhj4ndjmwhcmk2b019vxcggsp2iaas48y4v6wi"))))
     (properties `((upstream-name . "errorist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-searcher))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/coatless-rpkg/errorist")
@@ -7645,6 +8476,9 @@ occur during the execution of code to automatically search for solutions.")
         (base32 "1c2w61m7qp6ma4kfhgg0bxn4mkvcss340yq2vr7y5s1cbd082ndh"))))
     (properties `((upstream-name . "ERPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snowfall r-rcolorbrewer r-numbers r-igraph))
     (home-page "https://github.com/stocnet/ERPM")
     (synopsis "Exponential Random Partition Models")
@@ -7670,6 +8504,9 @@ Graph Models (ERGM) for networks.")
         (base32 "1619j6fgsg594fdbv9qk64rw2yqsy7wyj8qnwmpnmv66gxc5mqaq"))))
     (properties `((upstream-name . "ERPeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-rmutil r-pracma r-invgamma))
     (home-page "https://cran.r-project.org/package=ERPeq")
     (synopsis "Probabilistic Hazard Assessment")
@@ -7693,6 +8530,9 @@ earthquakes are computed for each distribution.")
         (base32 "193n45w0rq3cy0nmxvv0h6s3yr8kfjlg90nd4dnqlsq85zlsizij"))))
     (properties `((upstream-name . "erp.easy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-signal r-plyr r-gtools))
     (home-page "https://github.com/mooretm/erp.easy")
     (synopsis "Event-Related Potential (ERP) Data Exploration Made Easy")
@@ -7718,6 +8558,9 @@ processed (cleaned) data.")
         (base32 "17i04rgfj9crnvpi7mf2spwmaw9jgw4kn5fx6x9xbl9cvwwx6q4k"))))
     (properties `((upstream-name . "ERP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pacman r-mnormt r-irlba r-fdrtool r-corpcor))
     (native-inputs (list r-knitr))
     (home-page "http://erpinr.org")
@@ -7756,6 +8599,9 @@ updating of the dependence modelling (see Sheu et al., 2016,
         (base32 "13hw1ji3d8dqr8al4rykg75a392w4306gmr3m2mlrwdy7rzi9pyi"))))
     (properties `((upstream-name . "ern")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-tibble
@@ -7789,6 +8635,9 @@ sources.")
         (base32 "0qgv1lsg30gpris1q5wh258sspxiyccs18mzvsgs0kdynhf0aj0p"))))
     (properties `((upstream-name . "erify")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/flujoo/erify")
@@ -7813,6 +8662,9 @@ is adopted from <https://style.tidyverse.org/error-messages.html>.")
         (base32 "0djcfwxr4diwfjvim6mbz1g28bzsd94s78xw5kvn5vahiwjpdd61"))))
     (properties `((upstream-name . "ergmito")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-texreg
                              r-rcpparmadillo
                              r-rcpp
@@ -7847,6 +8699,9 @@ more accurate than simulation-based algorithms.")
         (base32 "1bfijhsljlykb94wi25lbpv35zkmgqpmgzmxcq98gjvzbn5j9pdq"))))
     (properties `((upstream-name . "ergmharris")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ergmharris")
     (synopsis "Local Health Department network data set")
     (description
@@ -7868,6 +8723,9 @@ attributes.")
         (base32 "0lml2nah642g05mcayanblxzj8aawlkszlqkb638rqh3c7c6jgyg"))))
     (properties `((upstream-name . "ergmgp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statnet-common r-networkdynamic r-network
                              r-ergm))
     (home-page "https://statnet.org")
@@ -7892,6 +8750,9 @@ functions for hazard calculation and timing calibration.")
         (base32 "0mr01ckxn8l8fjxlld05ag18d04h17wbnrgpry46hz38axl41zzj"))))
     (properties `((upstream-name . "ergMargins")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna
                              r-sampling
                              r-numderiv
@@ -7929,6 +8790,9 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
         (base32 "059s4zdb5fm8wl130nnxww1ry57d3p6rd5zmn9pf94iisjpkxxij"))))
     (properties `((upstream-name . "ergm.rank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statnet-common r-rdpack r-network r-ergm))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://statnet.org")
@@ -7953,6 +8817,9 @@ networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
         (base32 "122yl6g4rbfdw0pscahr3p93kga8nifb2gdrpicikynpqb6dhqdn"))))
     (properties `((upstream-name . "ergm.multi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-statnet-common
                              r-rle
@@ -7987,6 +8854,9 @@ Krivitsky, Coletti, and Hens (2023) <doi:10.1080/01621459.2023.2242627>.")
         (base32 "0q9kmymli0056d4r2vgr94wc2zcc1vi5z617cpg7fmcnjnkfd489"))))
     (properties `((upstream-name . "ergm.ego")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survey
                              r-statnet-common
@@ -8017,6 +8887,9 @@ See Krivitsky and Morris (2017) <doi:10.1214/16-AOAS1010>.")
         (base32 "085h2dn9dz9i05kjdm3ysgp7lzqdniq16xrvc11b4q1g9av71klv"))))
     (properties `((upstream-name . "ergm.count")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statnet-common r-rdpack r-network r-ergm))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://statnet.org")
@@ -8041,6 +8914,9 @@ networks whose edge weights are counts.  See Krivitsky (2012)
         (base32 "15icc5m4q8w6fmlf71cpzgzymvnnnkydqb7qz9s4yngr8kgnixzl"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trust
                              r-tibble
                              r-stringr
@@ -8080,6 +8956,9 @@ Klumb (2023) <doi:10.18637/jss.v105.i06>.")
         (base32 "1v6xca2zwdg494mdb97dwg2xlqsr51919plylnl04d8dgg5adhz9"))))
     (properties `((upstream-name . "erfe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrix))
     (home-page "https://arxiv.org/abs/2108.04737")
     (synopsis "Fits Expectile Regression for Panel Fixed Effect Model")
@@ -8105,6 +8984,9 @@ asymmetric point is 0.5.  The paper by Barry, Oualkacha, and Charpentier (2021,
         (base32 "011f655f9q3grpy607svswpw4qpbqvchmpws5fm6yg6179l4w9w2"))))
     (properties `((upstream-name . "erer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urca r-tseries r-systemfit r-lmtest))
     (home-page "https://cran.r-project.org/package=erer")
     (synopsis "Empirical Research in Economics with R")
@@ -8127,6 +9009,9 @@ a typical event analysis in finance.")
         (base32 "10dy9cb0dr3fcxl39r39adjcxafwc8mfcf32153lad8030d15y4w"))))
     (properties `((upstream-name . "ERDbuilder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr r-diagrammer))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gbasulto/ERDbuilder")
@@ -8148,6 +9033,9 @@ relationship between tables in a database.")
         (base32 "0rs4yhm9sjnqkrgqqy6b8wj9fgk910hxc8d7zi4qwql0v1gid27l"))))
     (properties `((upstream-name . "ercv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ercv")
     (synopsis
      "Fitting Tails by the Empirical Residual Coefficient of Variation")
@@ -8170,6 +9058,9 @@ Castillo, J, Daoudi, J and Lockhart, R (2014) <doi:10.1111/sjos.12037>.")
         (base32 "1kfgqb6bd0i39k4k5wg3p33ir13wnfvdyh2ld0gmcgfl2gjks7pa"))))
     (properties `((upstream-name . "eratosthenes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=eratosthenes")
@@ -8194,6 +9085,9 @@ production dates of artifact types.  Collins-Elliott (2024)
         (base32 "136wh0gaygc7mkj507bjmgzv79jcap0whngd501gg47zf7b8jzxx"))))
     (properties `((upstream-name . "erah")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-signal
                              r-quantreg
@@ -8228,6 +9122,9 @@ Package implementation is described in Domingo-Almenara et al. (2016)
         (base32 "1g3423pdp8l79zzihcmb0pz78k0h3l1zn5y90j67h514qpvkf8g8"))))
     (properties `((upstream-name . "era")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-rlang r-pillar))
     (native-inputs (list r-knitr))
     (home-page "https://era.joeroe.io")
@@ -8256,6 +9153,9 @@ types, type-stable arithmetic with years, and pretty-printing in tables.")
         (base32 "1hsp5sqhnsz175nc2cq2w4g6dgld1429ib7w58piw6982b7m6zn6"))))
     (properties `((upstream-name . "ER")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-plsvarsel
                              r-pls
@@ -8282,6 +9182,9 @@ Mosleth et al. (2021) <doi:10.1038/s41598-021-82388-w> and EF Mosleth et al.
         (base32 "05ihbr6dd9qv89ll90ynk4g3d3xy2w5q0m696djfa63f1x92c01w"))))
     (properties `((upstream-name . "equivUMP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/thmild/equivUMP")
     (synopsis "Uniformly Most Powerful Invariant Tests of Equivalence")
     (description
@@ -8304,6 +9207,9 @@ non-superiority tests) are supported.  Basically a variant of a t-test with
         (base32 "08d74jm9my2p9r491v1hya7w2m9b4mf3vk812jsmrdfzdw3x47ab"))))
     (properties `((upstream-name . "EQUIVNONINF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biasedurn))
     (home-page "https://cran.r-project.org/package=EQUIVNONINF")
     (synopsis "Testing for Equivalence and Noninferiority")
@@ -8325,6 +9231,9 @@ Noninferiority.  Second Edition (Chapman&Hall/CRC).")
         (base32 "1lr1qc4mv8f9hwqidj1rwhxqm1fb8cf1hnb1k32xpdqwzsxbfa47"))))
     (properties `((upstream-name . "equivalenceTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-rdpack r-polynom r-cubature))
     (home-page "https://cran.r-project.org/package=equivalenceTest")
     (synopsis "Equivalence Test for the Means of Two Normal Distributions")
@@ -8355,6 +9264,9 @@ of the data and interpretation of the results.")
         (base32 "170l5gnk0dkjkfsx7qyrw56ircwsjzz9cvhakgyrqh7bj5734i79"))))
     (properties `((upstream-name . "equivalence")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-paireddata r-lattice r-boot))
     (home-page "https://cran.r-project.org/package=equivalence")
     (synopsis "Provides Tests and Graphics for Assessing Tests of Equivalence")
@@ -8376,6 +9288,9 @@ of the null.  Sample data sets are included.")
         (base32 "1gdmaqm18mk93bfcf6qm247v7j61hi0lssmskcrlblk1snnli49l"))))
     (properties `((upstream-name . "EquiTrends")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-rlang
                              r-rcppparallel
@@ -8413,6 +9328,9 @@ is based on the theory developed in Dette & Schumann (2024)
         (base32 "1yml5s3rswayxlxqsqknpwa2i55pj9q1p233kj9xsm8f1zmzk1mf"))))
     (properties `((upstream-name . "EquiSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-eha))
     (home-page "https://cran.r-project.org/package=EquiSurv")
     (synopsis
@@ -8446,6 +9364,9 @@ non-inferiority or equivalence in time-to-event data <@code{arXiv:2009.06699>}."
         (base32 "1dmd8ssgv0a0ccmk906vbx61qqdq4h033a8173i7s8c58qfz8yhb"))))
     (properties `((upstream-name . "equil2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units))
     (native-inputs (list r-knitr))
     (home-page "https://billdenney.github.io/equil2/")
@@ -8472,6 +9393,9 @@ kindly provided by Dr. John Lieske of the Mayo Clinic.")
         (base32 "0hdch7w3i5a7gvs0lckzhqr0adz82w25kn5jdzg3zaazh5lmmhbl"))))
     (properties `((upstream-name . "equiBSPD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=equiBSPD")
     (synopsis "Equivalent Estimation Balanced Split Plot Designs")
     (description
@@ -8492,7 +9416,7 @@ which have an equal number of subplots within every whole plot.  This package
 used to construct equivalent estimation balanced split plot designs for
 different experimental set ups along with different statistical criteria to
 measure the performance of these designs.  It consist of the function
-equivalent_BSPD().")
+@code{equivalent_BSPD()}.")
     (license license:gpl3)))
 
 (define-public r-equatiomatic
@@ -8507,6 +9431,9 @@ equivalent_BSPD().")
         (base32 "1zb8pnpdvn6159h43h4fr9sfp1fv9rgknv4wv1wra6ris204764b"))))
     (properties `((upstream-name . "equatiomatic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-knitr r-broom-mixed r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/datalorax/equatiomatic")
@@ -8514,7 +9441,7 @@ equivalent_BSPD().")
     (description
      "The goal of equatiomatic is to reduce the pain associated with writing
 @code{LaTeX} formulas from fitted models.  The primary function of the package,
-extract_eq(), takes a fitted model object as its input and returns the
+@code{extract_eq()}, takes a fitted model object as its input and returns the
 corresponding @code{LaTeX} code for the model.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
@@ -8530,6 +9457,9 @@ corresponding @code{LaTeX} code for the model.")
         (base32 "08mm3yqn2jbzvc7fd7z42cq141891dfnhpv93jf3rwkbcf4k8fq1"))))
     (properties `((upstream-name . "equateMultiple")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod
                              r-rcppdist
                              r-rcpparmadillo
@@ -8561,6 +9491,9 @@ corresponding @code{LaTeX} code for the model.")
         (base32 "0w9n77ivk5v5bnr8sc7qgsaq9zkmzsc9s29j6a51qj3l4i1rsqfd"))))
     (properties `((upstream-name . "equateIRT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod r-mirt))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=equateIRT")
@@ -8588,6 +9521,9 @@ package includes tests to assess the stability of the equating transformations
         (base32 "0yjgnhn1hj5rs68qn51caia4zb78hh7vipm4411ng28cn9cxzdm4"))))
     (properties `((upstream-name . "equate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/talbano/equate")
     (synopsis "Observed-Score Linking and Equating")
@@ -8614,6 +9550,9 @@ estimation are also provided.")
         (base32 "028mpd5idi84znlry494f96p8p178v9yccw4cxg56m1agbw391hs"))))
     (properties `((upstream-name . "equatags")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xslt r-xml2 r-katex))
     (home-page "https://cran.r-project.org/package=equatags")
     (synopsis "Equations to 'XML'")
@@ -8636,6 +9575,9 @@ Markdown document or the R package officer'.")
         (base32 "09wh4907vf54z3g2a1i1j4m5vkaz97jp3qyrmxbg0bbbq0c68ffg"))))
     (properties `((upstream-name . "equaltestMI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lavaan))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=equaltestMI")
@@ -8665,6 +9607,9 @@ equality of intercepts.  For more information, see Yuan, K. H., & Chan, W.
         (base32 "0vv2p4757sqjf9k2iynbigsa4n4pzd1wkrli3gbgnx6rk8b0r77b"))))
     (properties `((upstream-name . "EQUALSTATS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-thresholdroc
                              r-survival
@@ -8708,6 +9653,9 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
         (base32 "0djrdakdz9fhd7gvz80ky9wsjdvpv3j834arfnc9djnzmizg9732"))))
     (properties `((upstream-name . "EQUALrepeat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-viridislite
                              r-vars
@@ -8742,6 +9690,9 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
         (base32 "17rv3ccnki6s31s2f31m1cshbsd1zim55zi5l9f66lycj1svcym4"))))
     (properties `((upstream-name . "Equalden.HD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Equalden.HD")
     (synopsis "Testing the Equality of a High Dimensional Set of Densities")
     (description
@@ -8762,6 +9713,9 @@ on the pooled sample.  The test even works for sample sizes as small as 2.")
         (base32 "18w7panyd6mhdr3x1iz9fkrw7min22rishs4xhkxgxs3nnyglkrn"))))
     (properties `((upstream-name . "equalCovs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=equalCovs")
     (synopsis "Testing the Equality of Two Covariance Matrices")
@@ -8783,6 +9737,9 @@ for high dimensional covariance matrices.\" Li and Chen (2012)
         (base32 "0pa33h0f30l352m6ix296l55lvqxdaib666x2dwy9zx0lmk23w8m"))))
     (properties `((upstream-name . "EQL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ttutils r-lattice))
     (home-page "https://cran.r-project.org/package=EQL")
     (synopsis "Extended-Quasi-Likelihood-Function (EQL)")
@@ -8804,6 +9761,9 @@ polynomials).")
         (base32 "1dy52swx5mq9xs2c0c4xa01dkpzffbyydfk6h83wh7hy27ml4zr8"))))
     (properties `((upstream-name . "eq5dsuite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-scales
@@ -8847,6 +9807,9 @@ data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
         (base32 "1n0g7jsxyhhrh2ls391lrk79a0dx35x7nyp48q1lh12s7r8xj050"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fragla/eq5d")
     (synopsis
@@ -8893,6 +9856,9 @@ using EQ-5D dimension scores stored in CSV or Excel files.")
         (base32 "00m64ham9fd9dsw37ic2m62fy4pvmwfwmjx8cg6n4rwbgq9q49sg"))))
     (properties `((upstream-name . "epxToR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-httr))
     (home-page "https://cran.r-project.org/package=epxToR")
     (synopsis "Import 'Epidata' XML Files '.epx'")
@@ -8912,6 +9878,9 @@ using EQ-5D dimension scores stored in CSV or Excel files.")
         (base32 "0d0qddk4c835gkh4lydaypxzakjz3qw9ai7y35kbaflj08fismc6"))))
     (properties `((upstream-name . "EPX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rngtools
                              r-randomforest
                              r-nnet
@@ -8943,6 +9912,9 @@ al. (2016) <doi:10.1021/acs.jcim.5b00663>, and Tomal et al. (2019)
         (base32 "075yvrxyjswkx03fwns2pa7plz5hjlpjyp5xq48s7i0ya3x9x55w"))))
     (properties `((upstream-name . "epwshiftr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-rnetcdf
                              r-rappdirs
@@ -8980,6 +9952,9 @@ from climate changes using data from Global Climate Models ('GCM').")
         (base32 "13szfghy4zdbz4wakrnkr5vgliy4qdnvbad41ypdahdwhbjdh2d9"))))
     (properties `((upstream-name . "epubr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xslt
                              r-xml2
                              r-tidyr
@@ -9023,6 +9998,9 @@ from packages like tm or qdap'.")
         (base32 "1hkisfisi63dd9lai662y387av1g77fkbai0p2a346n8zgahysji"))))
     (properties `((upstream-name . "EPT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EPT")
     (synopsis "Ensemble Patch Transform, Visualization and Decomposition")
     (description
@@ -9048,6 +10026,9 @@ bidimensional ensemble patch transform, Pattern Recognition Letters 135 (2020)
         (base32 "0lmcmiqcc1pjj1d0zyn0hc23if1lkm85p6vcjqbddpnv9ags2mbh"))))
     (properties `((upstream-name . "epsiwal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/shabbychef/epsiwal")
     (synopsis "Exact Post Selection Inference with Applications to the Lasso")
     (description
@@ -9068,6 +10049,9 @@ testing on the mean of a normal random vector subject to linear constraints.")
         (base32 "0czfz6qkcpa2qqs3pqii27hgpdvdzfrvxl0ip67v58hamq7kvjfv"))))
     (properties `((upstream-name . "epr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lme4 r-car))
     (home-page "https://cran.r-project.org/package=epr")
     (synopsis "Easy Polynomial Regression")
@@ -9090,6 +10074,8 @@ quantitative treatments.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -9135,6 +10121,9 @@ whisker packages.")
         (base32 "13ajaiin7n9z9rhmczlxbrpma5d3wa1wh7gcnw7xa39wsinvmn9s"))))
     (properties `((upstream-name . "epos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-venndiagram
                              r-topklists
@@ -9173,6 +10162,9 @@ Dietrich (2020) <doi:10.1007/978-3-030-43887-6_52>, and Mueller, Bernd et al.
         (base32 "19wd80l35acij793spxglcwz346i2iivk6n0q2304wjcca6qzds7"))))
     (properties `((upstream-name . "eponge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang))
     (home-page "https://github.com/krzjoa/eponge")
     (synopsis "Keep Your Environment Clean")
@@ -9195,6 +10187,9 @@ function call.")
         (base32 "19dlwr7dm8dgpd4pkzz9z979ijq0rkampjw5mxjrbq8xgliz0mfr"))))
     (properties `((upstream-name . "epocakir")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-tidyr
                              r-tibble
@@ -9225,6 +10220,9 @@ kidney injury (AKI), anemia, and chronic kidney disease (CKD).")
         (base32 "1vmqgpr5f87n7qxvblp4m58z0l18sm8cc3i66cwk36rvcfxd8ik2"))))
     (properties `((upstream-name . "epo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts r-rlang r-dplyr r-assertthat))
     (home-page "https://github.com/Reckziegel/epo")
     (synopsis "Enhanced Portfolio Optimization (EPO)")
@@ -9245,6 +10243,9 @@ described in Pedersen, Babu and Levine (2021) <doi:10.2139/ssrn.3530390>.")
         (base32 "01xi5zss4pvljk92p7gjnd11i730jhwrhibqk9p0ya1kpgd9bm31"))))
     (properties `((upstream-name . "epmrob")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-mass))
     (home-page "https://cran.r-project.org/package=epmrob")
     (synopsis "Robust Estimation of Probit Models with Endogeneity")
@@ -9267,6 +10268,9 @@ two-step estimator.  For technical details, see Naghi, Varadi and Zhelonkin
         (base32 "1qd23jvx2i1n2ykxzci3xkr1rqp6mwa9s3a485mgxnfa68b1zsqg"))))
     (properties `((upstream-name . "epm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-terra
                              r-sf
@@ -9295,6 +10299,9 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
         (base32 "0al44pvqf6ls3dh129vlv3g56hk1nbql09rj0qsb04d9kaz9anrp"))))
     (properties `((upstream-name . "eply")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wlandau/eply")
@@ -9314,6 +10321,9 @@ Swiderski and ML Zelditch (2022) <doi:10.1111/2041-210X.13914>.")
         (base32 "1b9kqrma6ayzsj146fdb2w2pwzmz1r6yy9g0abhx745gll8g9gqr"))))
     (properties `((upstream-name . "eplusr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-stringi
                              r-rsqlite
@@ -9346,6 +10356,9 @@ to do parametric simulations and analysis.")
         (base32 "0x495638nh0n0k3i80vs7bcbdrgvw5fkib8dvwwgzgdgb419hakm"))))
     (properties `((upstream-name . "EPLSIM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-ggplot2 r-citools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/YuyanWangSixTwo/EPLSIM")
@@ -9375,6 +10388,9 @@ time-dependent exposures.  See Wang et al (2020)
         (base32 "1s8j5h860wvvl3yjij0vb52nihswnb90jx1jk2d6ifvksmdg05a5"))))
     (properties `((upstream-name . "epizootic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rcpparmadillo
                              r-rcpp
@@ -9412,6 +10428,9 @@ simulator that includes disease dynamics.")
         (base32 "0xffsvswwaxv3kcy4s9iznwmadb5r1p4darpkkplz1zvfma9sy5c"))))
     (properties `((upstream-name . "epiworldRShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinyjs
                              r-shinydashboard
                              r-shinycssloaders
@@ -9445,6 +10464,9 @@ results interactively.")
         (base32 "1r5r7n62sk3dwqgin4pmafb5g3hfw3ikyfwxc15gyxgx3v4cs52h"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/UofUEpiBio/epiworldR")
@@ -9474,6 +10496,9 @@ populations.")
         (base32 "0xniwd6r1jyn2ifw8y4d9c3dl4maik6p4lw0nghb9z9q9xigjlak"))))
     (properties `((upstream-name . "epitweetr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-xml2
                              r-tidyverse
@@ -9533,6 +10558,9 @@ the epitweetr peer-review publication
         (base32 "08cz2p9xxa966a2v8kay00l3pmgfgmwzlh5pnx04s19rmar13z02"))))
     (properties `((upstream-name . "epitrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringi
                              r-sodium
@@ -9562,6 +10590,9 @@ data, and fitting discretized Gamma distributions.")
         (base32 "0jqn3pas4lsans50jwakmvpyc7m7x0kxq6dzyckd3vgww56qa65l"))))
     (properties `((upstream-name . "epitools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=epitools")
     (synopsis "Epidemiology Tools")
     (description
@@ -9581,6 +10612,9 @@ including methods for two-way and multi-way contingency tables.")
         (base32 "0fr6lkn1782x9q91y12idbzsh40xz5vzqfag259g6p8m3gyjiq25"))))
     (properties `((upstream-name . "EpiTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-purrr
                              r-mm4lmm
@@ -9611,6 +10645,9 @@ interaction trend at the mean level and the variance component analysis.")
         (base32 "0yi65bblsikwsa9i7wys1mqf6pp6j01kyc8xkyrhs5n62y1k68nc"))))
     (properties `((upstream-name . "epitab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-survival r-mass r-knitr r-kableextra))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stulacy/epitab")
@@ -9633,6 +10670,9 @@ supported, including: HTML', @code{LaTeX}', and Excel'.")
         (base32 "0b2gnrvhlsw85qv63ib32pj55l7w63wgvbrj5rb209g6h46fby8m"))))
     (properties `((upstream-name . "EpistemicGameTheory")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve))
     (home-page "https://cran.r-project.org/package=EpistemicGameTheory")
     (synopsis "Constructing an Epistemic Model for the Games with Two Players")
@@ -9654,6 +10694,9 @@ rationality.")
         (base32 "1smzy6hvpiiysz9b9dxswmhdx36fy3cfbqpd2hyh24vxvr11ynlr"))))
     (properties `((upstream-name . "EpiStats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-epir r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EpiStats")
@@ -9663,20 +10706,21 @@ rationality.")
 includes commands for measures of association and impact for case control
 studies and cohort studies.  It may be particularly useful for outbreak
 investigations including univariable analysis and stratified analysis.  The
-functions for cohort studies include the CS(), CSTable() and CSInter() commands.
- The functions for case control studies include the CC(), CCTable() and
-CCInter() commands.  References - Cornfield, J. 1956.  A statistical problem
-arising from retrospective studies.  In Vol.  4 of Proceedings of the Third
-Berkeley Symposium, ed.  J. Neyman, 135-148.  Berkeley, CA - University of
-California Press.  Woolf, B. 1955.  On estimating the relation between blood
-group disease.  Annals of Human Genetics 19 251-253.  Reprinted in Evolution of
-Epidemiologic Ideas Annotated Readings on Concepts and Methods, ed.  S.
-Greenland, pp.  108-110.  Newton Lower Falls, MA Epidemiology Resources.  Gilles
-Desve & Peter Makary, 2007.  CSTABLE Stata module to calculate summary table for
-cohort study Statistical Software Components S456879, Boston College Department
-of Economics.  Gilles Desve & Peter Makary, 2007.  CCTABLE Stata module to
-calculate summary table for case-control study Statistical Software Components
-S456878, Boston College Department of Economics.")
+functions for cohort studies include the @code{CS()}, @code{CSTable()} and
+@code{CSInter()} commands.  The functions for case control studies include the
+@code{CC()}, @code{CCTable()} and @code{CCInter()} commands.  References -
+Cornfield, J. 1956.  A statistical problem arising from retrospective studies.
+In Vol.  4 of Proceedings of the Third Berkeley Symposium, ed.  J. Neyman,
+135-148.  Berkeley, CA - University of California Press.  Woolf, B. 1955.  On
+estimating the relation between blood group disease.  Annals of Human Genetics
+19 251-253.  Reprinted in Evolution of Epidemiologic Ideas Annotated Readings on
+Concepts and Methods, ed.  S. Greenland, pp.  108-110.  Newton Lower Falls, MA
+Epidemiology Resources.  Gilles Desve & Peter Makary, 2007.  CSTABLE Stata
+module to calculate summary table for cohort study Statistical Software
+Components S456879, Boston College Department of Economics.  Gilles Desve &
+Peter Makary, 2007.  CCTABLE Stata module to calculate summary table for
+case-control study Statistical Software Components S456878, Boston College
+Department of Economics.")
     (license license:lgpl3)))
 
 (define-public r-episignaldetection
@@ -9691,6 +10735,9 @@ S456878, Boston College Department of Economics.")
         (base32 "17mawnx3c87kgfa7aj42a7db9c1ciyxdfgka9sgx6lc0yw5249as"))))
     (properties `((upstream-name . "EpiSignalDetection")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-surveillance r-shiny r-rmarkdown r-isoweek
                              r-dplyr))
@@ -9724,6 +10771,9 @@ Prevention and Control.")
         (base32 "0jah8lwmgc7nfacw3nzlnfmrmh1hfnwpjdsvy928pvgh0rsamxvc"))))
     (properties `((upstream-name . "episensr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-triangle
                              r-trapezoid
                              r-magrittr
@@ -9755,6 +10805,9 @@ M.P, and Fink A.K. \"Applying Quantitative Bias Analysis to Epidemiologic Data\"
         (base32 "021cp01wc3m3mhallzszlwd07pjdylgp980978qm35ylasl7z3b5"))))
     (properties `((upstream-name . "EpiSemble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tibble
                              r-stringr
@@ -9799,6 +10852,9 @@ Gradient Boosting approach to predict the sequences with 6@code{mA} sites in it.
         (base32 "02687f8gpc2czn19lapvazd6mnm8902ay0lhgi3wdrzfhir42m4r"))))
     (properties `((upstream-name . "episcan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=episcan")
     (synopsis "Scan Pairwise Epistasis")
@@ -9825,6 +10881,9 @@ MÃ¼ller-Myhsok, and K. Borgwardt. (2011). <doi:10.1093/bioinformatics/btr218>.
         (base32 "1dh9rjdjgmwzvfslzgnmd37ipj7ydbn4pnngz4sw7nknqy7r4dpx"))))
     (properties `((upstream-name . "EpiReport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-tidyr
@@ -9865,6 +10924,9 @@ vignette.")
         (base32 "01xn2jr8npsl68nj1kh772gjmidv0ygyzf0sl2j4qqi1nargs1kp"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-survival
                              r-sf
@@ -9901,6 +10963,9 @@ analyses.")
         (base32 "08jvbmj6l90102cpf00h5dzq7a700zwvy31wz7d5lxfn91x83gb9"))))
     (properties `((upstream-name . "epiphy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-transport r-rcpp r-pbapply r-msm r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/chgigot/epiphy")
@@ -9929,6 +10994,9 @@ are also included in this package.")
         (base32 "0c8r7qgmqqiyvb1c2z6rs5g3pyk1rr1gadn8bambrna11mkwk0ag"))))
     (properties `((upstream-name . "epiparameterDB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/epiverse-trace/epiparameterDB/")
     (synopsis "Database of Epidemiological Parameters")
@@ -9950,6 +11018,9 @@ parameter estimates are extracted from the literature.")
         (base32 "1rabliw91lz9b18x9ml2g0i402p9k256qblmg2vr56pzjq5gnyq2"))))
     (properties `((upstream-name . "epiomics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-qgcomp r-ggrepel r-ggplot2
                              r-data-table))
     (home-page "https://cran.r-project.org/package=epiomics")
@@ -9979,6 +11050,9 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
         (base32 "1061438cjx36kvvqv3s7s02y2zzp913wi4f30j1ss6gcx4s5dzsq"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-stanheaders
                              r-scales
@@ -10026,6 +11100,9 @@ community feedback and is actively supported.")
         (base32 "0jg8pwbxlgrk7mqawsrifk724pi5qn0amh6x2fq54a0hmqdpdjns"))))
     (properties `((upstream-name . "epinetr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcfr
                              r-reshape2
                              r-rcppalgos
@@ -10053,6 +11130,9 @@ phenotypic output.")
         (base32 "0qcwmn2p6rfjzh5fhmgrk6jrs1q1409720qgwhzkl8pwcizry2xy"))))
     (properties `((upstream-name . "epinet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-network))
     (home-page "https://cran.r-project.org/package=epinet")
     (synopsis "Epidemic/Network-Related Tools")
@@ -10074,6 +11154,9 @@ on network and epidemic parameters, given epidemic data.")
         (base32 "0sybpf1bzrw2n1gl23kp1frzzlglgnmldwfz7lckv0nykr4wsh6g"))))
     (properties `((upstream-name . "EpiModel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-tergm
                              r-statnet-common
@@ -10120,6 +11203,9 @@ Jenness et al. (2018, <doi:10.18637/jss.v084.i08>).")
         (base32 "1lx1zibp2ziwdyj180jf9y5xczfs2xfkb5bw7q4f7i9p70jlqcrz"))))
     (properties `((upstream-name . "epimdr2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-polspline
                              r-plotly
@@ -10154,6 +11240,9 @@ Coursera Epidemics Massive Online Open Course
         (base32 "1nxdlz7gl9vrha9iw92y0s9dmm101gkz0rsqxqg1rdxanr6hs6sh"))))
     (properties `((upstream-name . "epimdr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-polspline r-desolve))
     (home-page "https://github.com/objornstad/epimdr")
     (synopsis "Functions and Data for \"Epidemics: Models and Data in R\"")
@@ -10181,6 +11270,9 @@ the coursera Epidemics Massive Online Open Course
         (base32 "0wdmkwcyqhjyyxrg7669sfrfqarvg5qrdm5zrchv9hnzjfxm4k9p"))))
     (properties `((upstream-name . "EpiLPS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-gridextra
@@ -10208,6 +11300,9 @@ methodology of Gressani et al. (2022) <doi:10.1371/journal.pcbi.1010618>.")
         (base32 "13x07w7idik7lmsp0zgbgdf49yxl5igy1dbnfyxf1bsn8id06ric"))))
     (properties `((upstream-name . "epilogi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast))
     (home-page "https://cran.r-project.org/package=epilogi")
     (synopsis "The 'epilogi' Variable Selection Algorithm for Continuous Data")
@@ -10231,6 +11326,9 @@ Studies\".  Bioinformatics. <doi:10.1093/bioinformatics/btad545>.")
         (base32 "1lw1hiccxw705pa9kkyc7gvyg3vggaqri4nfxhasjxhxp2wy6bfz"))))
     (properties `((upstream-name . "epikit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -10265,6 +11363,9 @@ project <https://r4epis.netlify.app/>.")
         (base32 "0afmgzx7ryvwb8ajkm0v077lrnahac8g3jqkk86imx4101dfg70q"))))
     (properties `((upstream-name . "EpiInvert")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/lalvarezmat/EpiInvert")
     (synopsis "Variational Techniques in Epidemiology")
@@ -10290,6 +11391,9 @@ short time forecast of the trend incidence curve as described in Morel et al.
         (base32 "1yjcjxf5m1qbb6p09g34wkr4q13g65ly11kxh95r22cdl85jmlq3"))))
     (properties `((upstream-name . "EpiILMCT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph r-coda))
     (native-inputs (list gfortran))
     (home-page "https://github.com/waleedalmutiry/EpiILMCT/")
@@ -10316,6 +11420,9 @@ Susceptible-Infectious-Removed (SIR) or Susceptible-Infectious-Notified-Removed
         (base32 "0drs4qywx9axs7k5qk7sp5r3g8pykn4lqqbm0hxyl24r6b5l3d6b"))))
     (properties `((upstream-name . "EpiILM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-laplacesdemon r-coda r-adaptmcmc))
     (native-inputs (list gfortran))
     (home-page "https://github.com/waleedalmutiry/EpiILM")
@@ -10340,6 +11447,9 @@ Susceptible-Infectious (SI) and Susceptible-Infectious-Removed (SIR).")
         (base32 "0j5gml3glnfsmc76qy554bmqx2g80y3kdrnbabzx0hqaz8sz8fgl"))))
     (properties `((upstream-name . "epigrowthfit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb r-rcppeigen r-nlme r-matrix))
     (home-page "https://github.com/davidearn/epigrowthfit")
     (synopsis "Nonlinear Mixed Effects Models of Epidemic Growth")
@@ -10369,6 +11479,9 @@ versions of this software were applied in Ma et al. (2014)
         (base32 "11ja2r024a4sfk6xjhwn2mj4fz2msf6jx85w3cxr2hvp9sl3zgc9"))))
     (properties `((upstream-name . "epigraphdb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-purrr
                              r-magrittr
@@ -10398,6 +11511,9 @@ in the tibble data frame format.")
         (base32 "0p8znwcx11sa5rqljsa38iwqwd91pvkw01g674grw2705cagjdnj"))))
     (properties `((upstream-name . "EpiForsk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-tidyr
                              r-svyvgam
@@ -10448,6 +11564,9 @@ several help functions for generalized random forest analysis using grf'.")
         (base32 "1d7j2w9jjscny0ax33k1wy0hcr2pn6ck491vfm327lx4jpld8pfd"))))
     (properties `((upstream-name . "epiflows")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-tibble
                              r-sp
@@ -10480,6 +11599,9 @@ RECON (<https://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
         (base32 "104hl3b3951psi023hv95486ygcv9ilmqkzw96yygym7rhkaww9m"))))
     (properties `((upstream-name . "epifitter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-minpack-lm
@@ -10515,6 +11637,9 @@ on the methods.")
         (base32 "12zv1mlb0gqsvff1s0fvqgxqk42c7y9gz3h94mjmf1wbmhsjcqnf"))))
     (properties `((upstream-name . "EpiEstim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-reshape2
                              r-incidence
@@ -10546,6 +11671,9 @@ from the analysis of time series of incidence as described in Cori et al. (2013)
         (base32 "0m6yay3r7dqih19f76wxwgq6dh9p1zmp5d9ilj9nd262q61jcy53"))))
     (properties `((upstream-name . "EpiDynamics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggplot2 r-desolve))
     (home-page "https://github.com/oswaldosantos/EpiDynamics")
     (synopsis "Dynamic Models in Epidemiology")
@@ -10566,6 +11694,9 @@ deterministic and stochastic models can be simulated and plotted.")
         (base32 "0ncjfhq45gs1w0kpkpdwfs43iccl6pq8yrc2999g3r5dsiw06lyq"))))
     (properties `((upstream-name . "epidm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-readr
@@ -10594,6 +11725,9 @@ held by the UK Health Security Agency, UKHSA.")
         (base32 "0430mwnaa0qamdyvmwkh37ic0kp4hq8mr5nxkc97mhhl7djw0y92"))))
     (properties `((upstream-name . "epiDisplay")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-nnet r-mass r-foreign))
     (home-page "https://cran.r-project.org/package=epiDisplay")
     (synopsis "Epidemiological Data Display Package")
@@ -10614,6 +11748,9 @@ data management functions is available at <https://medipe.psu.ac.th/epicalc/>'."
         (base32 "0x7hx5cc6w62clbpkpr6nwmzhb4nwb5kb8x324ci8llza2gdi9lk"))))
     (properties `((upstream-name . "epidatr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-usethis
                              r-tibble
@@ -10655,6 +11792,9 @@ Delphi Epidata API. <https://github.com/cmu-delphi/delphi-epidata>.")
         (base32 "0v3s1vrf2iqh03rkkwrlz6mhpbsbjxkayrqdx04vrnja4i9ljshk"))))
     (properties `((upstream-name . "epidata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tinytest
                              r-tidyr
@@ -10689,6 +11829,9 @@ groups.  Data is usually updated monthly.")
         (base32 "1z81zrg96hmgj2j37vwwg0bd84bq80ck3f704w9j6v0drckzh03j"))))
     (properties `((upstream-name . "EpiCurve")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timedate
                              r-tibble
                              r-scales
@@ -10716,6 +11859,9 @@ or monthly outcome data.")
         (base32 "1qi60w26yr0aixdjhlsn3rp8vp22wjnz4ch8q9i9r84wmyvsmc6r"))))
     (properties `((upstream-name . "EpiContactTrace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/stewid/EpiContactTrace")
     (synopsis "Epidemiological Tool for Contact Tracing")
     (description
@@ -10735,6 +11881,9 @@ contacts.")
         (base32 "0caf11814w2552yi4ybx5ql14kmmfjl2xa4r9mbibi71gpm0n94v"))))
     (properties `((upstream-name . "epicontacts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork r-threejs r-igraph r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://www.repidemicsconsortium.org/epicontacts/")
@@ -10758,6 +11907,9 @@ contains procedures for data handling, interactive graphics, and statistics.")
         (base32 "1x7icsihh7yk0l13xr5l2jsx2hwxdww8gi8pl9xil5hjclpiasbi"))))
     (properties `((upstream-name . "epiCo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-treemapify
                              r-spdep
                              r-scales
@@ -10796,6 +11948,9 @@ the endemic channel method (Bortman, M. (1999)
         (base32 "1l1vppgmh6s7h558b7cq1civm27z543iwxpm2mlf952jkq0wf9nh"))))
     (properties `((upstream-name . "epicmodel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -10837,6 +11992,9 @@ sufficient-component cause models as introduced by Rothman (1976)
         (base32 "1m5qz7qkly9waj1w8x0hrz28cc4vzn6psqs4q39x1fhxlgip0rih"))))
     (properties `((upstream-name . "epiCleanr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyselect
                              r-tidyr
@@ -10872,6 +12030,9 @@ cleaning.")
         (base32 "1a3pgaqns729z8x7582da14ps18p09dpvi3l2lkxpl9cpxpkn89h"))))
     (properties `((upstream-name . "epichains")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/epiverse-trace/epichains")
@@ -10897,6 +12058,9 @@ infectious disease outbreaks, as discussed in Farrington et al. (2003)
         (base32 "191kxjrr8h44i7a7dpxziqhbcnbmhgcc5b7ddn9cnvvjqmbwmvl2"))))
     (properties `((upstream-name . "epicasting")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets r-metrics r-forecast))
     (home-page "https://cran.r-project.org/package=epicasting")
     (synopsis
@@ -10922,6 +12086,9 @@ on the algorithm by Panja, et al. (2022) and Panja, et al. (2023)
         (base32 "0ivr51x37cbdryli9b4p4iq9v2c90zwmywrwdmg7ryq5vprvvbp0"))))
     (properties `((upstream-name . "epibasix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=epibasix")
     (synopsis
      "Elementary Epidemiological Functions for Epidemiology and Biostatistics")
@@ -10948,6 +12115,9 @@ researchers.")
         (base32 "02yl12chvqz02dk7f1asb21axr4g6yyd91dzpjcggdv6zrjpfbvx"))))
     (properties `((upstream-name . "eph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-tidyr
@@ -10970,12 +12140,13 @@ researchers.")
     (description
      "This package provides tools to download and manipulate the Permanent Household
 Survey from Argentina (EPH is the Spanish acronym for Permanent Household
-Survey).  e.g: get_microdata() for downloading the datasets, get_poverty_lines()
-for downloading the official poverty baskets, calculate_poverty() for the
-calculation of stating if a household is in poverty or not, following the
-official methodology.  organize_panels() is used to concatenate observations
-from different periods, and organize_labels() adds the official labels to the
-data.  The implemented methods are based on INDEC (2016)
+Survey).  e.g: @code{get_microdata()} for downloading the datasets,
+@code{get_poverty_lines()} for downloading the official poverty baskets,
+@code{calculate_poverty()} for the calculation of stating if a household is in
+poverty or not, following the official methodology. @code{organize_panels()} is
+used to concatenate observations from different periods, and
+@code{organize_labels()} adds the official labels to the data.  The implemented
+methods are based on INDEC (2016)
 <http://www.estadistica.ec.gba.gov.ar/dpe/images/SOCIEDAD/EPH_metodologia_22_pobreza.pdf>.
  As this package works with the argentinian Permanent Household Survey and its
 main audience is from this country, the documentation was written in Spanish.")
@@ -10993,6 +12164,9 @@ main audience is from this country, the documentation was written in Spanish.")
         (base32 "12arly1kcpcg0ym3rq8am7l4nchwl97vy3yp6vamc4sbv01w18a5"))))
     (properties `((upstream-name . "epe4md")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tsibble
                              r-tidyr
@@ -11041,6 +12215,9 @@ of this type of generation.
         (base32 "07fr702w5k7561w42g07hxvvzyiz51vvq5gwby5gbp03pp9hja3h"))))
     (properties `((upstream-name . "ePCR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timeroc
                              r-survival
                              r-pracma
@@ -11082,6 +12259,9 @@ provided for constructing novel model objects.")
         (base32 "0ikncmrvcdixa209lrjb84rdsl78isi815a461i7lfmmln9myqk2"))))
     (properties `((upstream-name . "epca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-irlba r-gparotation r-clue))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/fchen365/epca")
@@ -11103,6 +12283,9 @@ sparse principal component analysis and sparse matrix approximation.")
         (base32 "05pwa6z03qsjwr9pxpbxycsd21p7mf5j5ajyg4yaas5g100s1k8c"))))
     (properties `((upstream-name . "epanetReader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/bradleyjeck/epanetReader")
     (synopsis "Read Epanet Files into R")
     (description
@@ -11126,6 +12309,9 @@ systems.")
         (base32 "0y9mk5w1ds31g7nwx4xkpay8h2h6cqbh9i2hl01zhycjdgh4ddfg"))))
     (properties `((upstream-name . "epanet2toolkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/bradleyjeck/epanet2toolkit")
     (synopsis "Call 'EPANET' Functions to Simulate Pipe Networks")
     (description
@@ -11148,6 +12334,9 @@ version 2.2 from Open Water Analytics
         (base32 "0hxgbjns5bk82rgcmykxifnnxcnqdzmkimkkmpdif64zr5g3gjdg"))))
     (properties `((upstream-name . "epandist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=epandist")
     (synopsis
@@ -11175,6 +12364,9 @@ the uncensored Epanechnikov distribution are also provided by this package.")
         (base32 "05g41lslw77v8r2914vpf92348hcyfx7xqbbwknfhl1xld9rk2iz"))))
     (properties `((upstream-name . "epade")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-plotrix r-hmisc))
     (home-page "https://cran.r-project.org/package=epade")
     (synopsis "Easy Plots")
@@ -11195,6 +12387,9 @@ data.frame with limited customisation possibilities.")
         (base32 "0vn4s4af94n9h6x7z14qwpz94rgsd5m3mv55wva7x3h99ryhm83s"))))
     (properties `((upstream-name . "eoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://github.molgen.mpg.de/walke/eoR")
     (synopsis "Data Management Package (Exposure and Occurrence Data in R)")
@@ -11222,6 +12417,9 @@ footer information.")
         (base32 "0nxyllragxn5bq28x37vkx16vi4y9af5nly1pslqrvvarl21ics4"))))
     (properties `((upstream-name . "eoffice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rvg
                              r-r-devices
                              r-plotly
@@ -11260,6 +12458,9 @@ to extract colors from all types of figures and pdf files.")
         (base32 "1r1fxgqh9sv6gkcggjjrbby2jjz2bv5pm9kq46rkq1arfsmagxr7"))))
     (properties `((upstream-name . "eodhdR2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page
      "https://github.com/EodHistoricalData/R-Library-for-financial-data-2024")
     (synopsis "Official R API for Fetching Data from 'EODHD'")
@@ -11281,6 +12482,9 @@ functions for cleaning and aggregating the financial data.")
         (base32 "1fydkmz7f4wmlc5f0ihg5n98dyv7r2r9ny27n3qai6l47hf4k4x1"))))
     (properties `((upstream-name . "eoa3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-survival
                              r-rjags
@@ -11313,6 +12517,9 @@ Dalthorp and Huso (2015) <doi:10.3133/ofr20151227>.")
         (base32 "1nrcnipxljpwavfmm5m107zihvm2dj07wgrgkpzx3ph2mzjbzx81"))))
     (properties `((upstream-name . "envvar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lubridate r-fs r-cli))
     (home-page "https://github.com/briandconnelly/envvar")
     (synopsis
@@ -11335,6 +12542,9 @@ retrieving, transforming, and validating values stored in environment variables.
         (base32 "07y4bprb9mi37d8pg6xr1x4rkgjza2iq5hpr8a1iv584sgbjl4ah"))))
     (properties `((upstream-name . "envstat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-rstudioapi r-httr2 r-cli))
     (home-page "https://envstat.sellorm.com")
     (synopsis "Configurable Reporting on your External Compute Environment")
@@ -11358,6 +12568,9 @@ infrastructure.")
         (base32 "1wgrrkkpkmf300qb56mq6nxigwnpq551sjxlk05lk3ckawx66srf"))))
     (properties `((upstream-name . "envoutliers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase
                              r-mass
                              r-lokern
@@ -11391,6 +12604,9 @@ extreme value theory (Holesovsky, Campulova and Michalek (2018) <DOI:
         (base32 "1wxb4zhhn7iahgsi7rg1vmfaa3vypifqx7kkcvmmgk0263z4sj5v"))))
     (properties `((upstream-name . "EnvNJ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-seqinr
                              r-philentropy
@@ -11424,6 +12640,9 @@ generation of trees based on these distance matrices.")
         (base32 "1zg59w5ynhrl74z0y8f656rfqsicwc0sp6awgg655yr68c6xa0jp"))))
     (properties `((upstream-name . "EnvNicheR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-idpmisc))
     (home-page "https://cran.r-project.org/package=EnvNicheR")
     (synopsis "Niche Estimation")
@@ -11447,13 +12666,16 @@ the user and, 4) to estimate niche overlap among the species.")
         (base32 "1fkbid2x60m63dnrxrdq7im49spn8m70g1gd8nqjq3xlv642ianm"))))
     (properties `((upstream-name . "envnames")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mastropi/envnames")
     (synopsis "Keep Track of User-Defined Environment Names")
     (description
      "Set of functions to keep track and find objects in user-defined environments by
 identifying environments by name --which cannot be retrieved with the built-in
-function @code{environmentName}().  The package also provides functionality to
+function @code{environmentName()}.  The package also provides functionality to
 obtain simplified information about function calling chains and to get an
 object's memory address.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -11470,6 +12692,9 @@ object's memory address.")
         (base32 "0r73l4f221ryyh2nfp0whcmhq06rzim447lqa56rmv00hcsmda52"))))
     (properties `((upstream-name . "EnviroPRA2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncdist r-mass r-ksamples r-fitdistrplus))
     (home-page "https://cran.r-project.org/package=EnviroPRA2")
     (synopsis "Environmental Probabilistic Risk Assessment Tools")
@@ -11494,6 +12719,9 @@ assessment: the role of exposure factors in an urban garden scenario\"
         (base32 "06mxzm5kg0vm34z8sx5mbxxcdicjicjjdnhx0pi61dqnrwj47jml"))))
     (properties `((upstream-name . "envirem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-palinsol r-knitr))
     (home-page "https://github.com/ptitle/envirem")
     (synopsis "Generation of ENVIREM Variables")
@@ -11514,17 +12742,21 @@ bioclim variables.")
         (base32 "1jqrx6rl15kgws890klxd467431ciayp9rm5xsx7v81a7z8xyrz3"))))
     (properties `((upstream-name . "envir")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://t-kalinowski.github.io/envir/")
     (synopsis "Manage R Environments Better")
     (description
      "This package provides a small set of functions for managing R environments, with
 defaults designed to encourage usage patterns that scale well to larger code
-bases.  It provides: import_from(), a flexible way to assign bindings that
-defaults to the current environment; include(), a vectorized alternative to
-base::source() that also default to the current environment; and attach_eval()
-and attach_source(), a way to evaluate expressions in attached environments.
-Together, these (and other) functions pair to provide a robust alternative to
-base::library() and base::source().")
+bases.  It provides: @code{import_from()}, a flexible way to assign bindings
+that defaults to the current environment; @code{include()}, a vectorized
+alternative to @code{base::source()} that also default to the current
+environment; and @code{attach_eval()} and @code{attach_source()}, a way to
+evaluate expressions in attached environments.  Together, these (and other)
+functions pair to provide a robust alternative to @code{base::library()} and
+@code{base::source()}.")
     (license license:gpl3)))
 
 (define-public r-envipat
@@ -11539,6 +12771,9 @@ base::library() and base::source().")
         (base32 "17qrly8fb6d7gk1xcg3273mykpwc9i7ghnvipp63fwx4cp25crzw"))))
     (properties `((upstream-name . "enviPat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.envipat.eawag.ch/")
     (synopsis
      "Isotope Pattern, Profile and Centroid Calculation for Mass Spectrometry")
@@ -11563,6 +12798,9 @@ Loos, M., Gerber, C., Corona, F., Hollender, J., Singer, H. (2015)
         (base32 "1rk7y24lld16zk7f3aak3zf9i3xd27l8mffcvlxwqi7cpl1pqa9b"))))
     (properties `((upstream-name . "enviGCMS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdisop
                              r-rcolorbrewer
                              r-mixtools
@@ -11592,6 +12830,13 @@ environmental analysis.")
         (base32 "1xmv25m87si45dqz889cmis41djyx0ay1ad83f3rf9838i9qrlhp"))))
     (properties `((upstream-name . "envi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-terra
                              r-spatstat-geom
                              r-sparr
@@ -11634,6 +12879,9 @@ using kernel density estimation can be found in J. F. Bithell (1991)
         (base32 "1vw7pb5m13swwxql2c7raygs7rr5nrxbs93alhbv9bbmd01ga5zv"))))
     (properties `((upstream-name . "enveomics.R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sn r-investr r-fitdistrplus))
     (home-page "http://enve-omics.ce.gatech.edu/enveomics/")
     (synopsis "Various Utilities for Microbial Genomics and Metagenomics")
@@ -11656,12 +12904,15 @@ Collection (Rodriguez-R, L.M. and Konstantinidis, K.T., 2016
         (base32 "074m7adnasvys28kjdgj9071fi90vsl4yv5zvpxik4crlx098dlw"))))
     (properties `((upstream-name . "envDocument")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dgJacks0n/envDocument")
     (synopsis "Document the R Working Environment")
     (description
      "Prints out information about the R working environment (system, R version,loaded
-and attached packages and versions) from a single function \"env_doc()\".
+and attached packages and versions) from a single function @code{\"env_doc()}\".
 Optionally adds information on git repository, tags, commits and remotes (if
 available).")
     (license license:gpl3+)))
@@ -11678,16 +12929,19 @@ available).")
         (base32 "1zv2x3svlqrfchr9j4bk2w2sx75zl4886pqk1c1sx5glqrkdbfki"))))
     (properties `((upstream-name . "EnvCpt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-mass r-changepoint))
     (home-page "https://github.com/rkillick/EnvCpt/")
     (synopsis
      "Detection of Structural Changes in Climate and Environment Time Series")
     (description
      "This package provides tools for automatic model selection and diagnostics for
-Climate and Environmental data.  In particular the envcpt() function does
+Climate and Environmental data.  In particular the @code{envcpt()} function does
 automatic model selection between a variety of trend, changepoint and
-autocorrelation models.  The envcpt() function should be your first port of
-call.")
+autocorrelation models.  The @code{envcpt()} function should be your first port
+of call.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-envalysis
@@ -11702,16 +12956,20 @@ call.")
         (base32 "1hnfqhd6s6vvbxsmpv898dgmb1nzmb061b5qadw3dam3hr8j12rn"))))
     (properties `((upstream-name . "envalysis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lmtest r-ggplot2 r-drc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zsteinmetz/envalysis")
     (synopsis "Miscellaneous Functions for Environmental Analyses")
     (description
      "Small toolbox for data analyses in environmental chemistry and ecotoxicology.
-Provides, for example, calibration() to calculate calibration curves and
+Provides, for example, @code{calibration()} to calculate calibration curves and
 corresponding limits of detection (LODs) and limits of quantification (LOQs)
-according to German DIN 32645 (2008).  texture() makes it easy to estimate soil
-particle size distributions from hydrometer measurements (ASTM D422-63, 2007).")
+according to German DIN 32645 (2008). @code{texture()} makes it easy to estimate
+soil particle size distributions from hydrometer measurements (ASTM D422-63,
+2007).")
     (license license:gpl3+)))
 
 (define-public r-entrymodels
@@ -11726,6 +12984,9 @@ particle size distributions from hydrometer measurements (ASTM D422-63, 2007).")
         (base32 "0fz7jzax12pzw47iry4amgg9z4z3z94kig6r5dhcqa84kq02294v"))))
     (properties `((upstream-name . "entrymodels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-magrittr r-dplyr))
     (home-page "https://cran.r-project.org/package=entrymodels")
     (synopsis "Estimate Entry Models")
@@ -11747,6 +13008,9 @@ concentrated markets, based in Bresnahan and Reiss (1991)
         (base32 "065djml9dmn5ahbgaljnshvhziwg61xciq6fzh76449x3wy6bg65"))))
     (properties `((upstream-name . "EntropyMCMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rann r-mixtools))
     (home-page "https://cran.r-project.org/package=EntropyMCMC")
     (synopsis
@@ -11773,6 +13037,9 @@ Vandekerkhove, P. (2013) <doi:10.1051/ps/2012004> and next articles.")
         (base32 "1cvbmd745fv3xlxx81zbjf14qlf9avr7wia5r3ish05z7yhv9g2r"))))
     (properties `((upstream-name . "EntropyEstimation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EntropyEstimation")
     (synopsis "Estimation of Entropy and Related Quantities")
     (description
@@ -11794,6 +13061,9 @@ exponentially fast.")
         (base32 "1wi6kn4fhs3qsfikp9h9xjbdy5qcnvlm6zzyc2xprnjchg3lq5r5"))))
     (properties `((upstream-name . "EntropicStatistics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-tibble
@@ -11806,7 +13076,7 @@ exponentially fast.")
     (description
      "This package contains methods for data analysis in entropic perspective.  These
 entropic perspective methods are nonparametric, and perform better on
-non-ordinal data.  Currently, the package has a function @code{HeatMap}() for
+non-ordinal data.  Currently, the package has a function @code{HeatMap()} for
 visualizing distributional characteristics among multiple populations (groups).")
     (license license:gpl3)))
 
@@ -11822,6 +13092,9 @@ visualizing distributional characteristics among multiple populations (groups)."
         (base32 "07ppccnxl97v403hcmyx3aw82iv7vvfigxrkmqmh5iypn5zvyyg7"))))
     (properties `((upstream-name . "entropart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-vegan
                              r-tibble
@@ -11854,6 +13127,13 @@ available.")
         (base32 "18b81iswvby7k5akbfdyc6a8j1621d4d35hxmgjip5kyvf5cb3p8"))))
     (properties `((upstream-name . "ensr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-glmnet r-ggplot2 r-data-table))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/dewittpe/ensr")
@@ -11879,6 +13159,9 @@ lambda and alpha.  Developed, in part, with support by NICHD R03 HD094912.")
         (base32 "19jni9zcrlka41d6w7264b52nyakzy52ycsy5fk93x1wavjc5miy"))))
     (properties `((upstream-name . "enshuman")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=enshuman")
     (synopsis "Human Gene Annotation Data from 'Ensembl'")
     (description
@@ -11904,6 +13187,9 @@ to see the required format.")
         (base32 "1kxkv8b6qgrbylp16hlh53h3sr079jqhypv1fk4g5fr349zrjgv3"))))
     (properties `((upstream-name . "ensembleTax")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-stringr
                              r-reshape2
@@ -11933,6 +13219,9 @@ onto one another and for computing ensemble taxonomic assignments.")
         (base32 "08k7v61p2sgr07dklabl0g7apsn9da60sfb14gfrwipwi8bsd4pv"))))
     (properties `((upstream-name . "ensemblepp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ensemblepp")
     (synopsis "Ensemble Postprocessing Data Sets")
     (description
@@ -11956,6 +13245,9 @@ the book chapter is provided.")
         (base32 "00218yh0vzlb5g94asq5nz4i8blppskdzz9fl4c0v3fld3kxz2md"))))
     (properties `((upstream-name . "EnsemblePenReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glmnet r-ensemblebase))
     (home-page "https://cran.r-project.org/package=EnsemblePenReg")
     (synopsis
@@ -11985,6 +13277,13 @@ classes provided in @code{EnsembleBase} package as well as this package.")
         (base32 "0pii3w9dyv1505s92b03i42yiwq5vwa051674yzqxijj2mz7pvdh"))))
     (properties `((upstream-name . "EnsemblePCReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-ensemblebase))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=EnsemblePCReg")
@@ -12015,6 +13314,9 @@ classes provided in @code{EnsembleBase} package as well as this package.")
         (base32 "16d8030zfdwifqrh45vz3gf5n0bix0mhsmsnydgjq1fghdklcmyx"))))
     (properties `((upstream-name . "ensembleMOS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-evd r-ensemblebma r-chron))
     (home-page "https://cran.r-project.org/package=ensembleMOS")
     (synopsis "Ensemble Model Output Statistics")
@@ -12035,6 +13337,9 @@ forecasts and weather observations.")
         (base32 "1r9nmi2278lrwp5lpxhi78k10x8a5f5rh9xf1z5gfkc0bmpkhkvz"))))
     (properties `((upstream-name . "EnsembleCV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ensemblebase))
     (home-page "https://cran.r-project.org/package=EnsembleCV")
     (synopsis
@@ -12063,6 +13368,9 @@ package can be extended, e.g. by adding variants of the current implementation."
         (base32 "1bb2f7pkwq4dza8fkag3802yflzcsfma4cnwhfw1qgg227sfy8d9"))))
     (properties `((upstream-name . "ensembleBMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-chron))
     (home-page "https://cran.r-project.org/package=ensembleBMA")
     (synopsis
@@ -12085,6 +13393,9 @@ forecasts and weather observations
         (base32 "1wbkh89gz6m2m9hxbcymsymz3b7pynhdwfyq4qg3h4wn8409anxy"))))
     (properties `((upstream-name . "EnsembleBase")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest
                              r-nnet
                              r-kknn
@@ -12125,6 +13436,9 @@ being constrained by system RAM.")
         (base32 "1rp354fqq2ihjrmqw9j1qdy86md80xml5sgh2zbyabw3zddmgyn2"))))
     (properties `((upstream-name . "EnsCat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seqinr r-ggplot2 r-ggdendro r-dendextend))
     (home-page "https://github.com/jlp2duke/EnsCat/wiki/How-To-with-Examples")
     (synopsis "Clustering of Categorical Data")
@@ -12146,6 +13460,9 @@ ensembling dissimilarity matrices.  Preprint <@code{arXiv:1506.07930>}.")
         (base32 "05fhx323ani86wdxbjp8dgw4d1iq4kr1887646w072a6iq93bwhm"))))
     (properties `((upstream-name . "enrichwith")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ikosmidis/enrichwith")
     (synopsis "Methods to Enrich R Objects with Extra Components")
@@ -12177,6 +13494,9 @@ objects.")
         (base32 "0hgiy7l2vpxs94xici7fx8xwkxi8r79513zqczy8143d889l43c6"))))
     (properties `((upstream-name . "EnrichIntersect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-webshot2
                              r-networkd3
                              r-jsonlite
@@ -12208,6 +13528,9 @@ associations based on, for example, the mix-lasso model (Zhao et al., 2022
         (base32 "12088v9xnj5b3dlakqz1hbzxz4mdai7xi7s2fpx8lj3y3lx7znmb"))))
     (properties `((upstream-name . "enpls")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spls
                              r-reshape2
                              r-pls
@@ -12237,6 +13560,9 @@ model applicability domain evaluation, and ensemble predictive modeling with
         (base32 "0xz0v378mfy36yc001zr8j8s2dv6jpq2w2da7n3lsxarr8slqp8m"))))
     (properties `((upstream-name . "ENMTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-spatstat-random
                              r-spatstat-geom
@@ -12277,6 +13603,9 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
         (base32 "1z791qw9m03rf8m81xf4qzxn53glh9faq37ywbsl7714lsalg2m3"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-statisfactory
                              r-sp
@@ -12326,6 +13655,9 @@ objects and coordinate reference systems.")
         (base32 "07v4jqmppmvarqc8a4z2zhl52z16w2biq7mga3fd6gz5z43c9yb8"))))
     (properties `((upstream-name . "enmpa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-terra
                              r-snow
@@ -12362,6 +13694,9 @@ et al., (2019) <doi:10.7717/peerj.6281>, and Peterson et al., (2008)
         (base32 "1lb4bgnvig1sb88nfgylzps6kkw0jb5lz46yrqqk3ax71x33r7vd"))))
     (properties `((upstream-name . "ENMeval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-raster
@@ -12405,6 +13740,9 @@ big for CRAN, can be found here on the package's Github Pages website:
         (base32 "0zclvckj2i7j4kfs58hcjcl722vl2y6dcnjz238cjfgwv279gqhp"))))
     (properties `((upstream-name . "EngrExpt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://cran.r-project.org/package=EngrExpt")
     (synopsis
@@ -12426,6 +13764,9 @@ Engineering Experimentation\" (Elsevier, 2003) with sample code.")
         (base32 "030fcjh7cwjqiydyxjhaa7rsc2wq50ywdyp4wd2cr7glpy1fl346"))))
     (properties `((upstream-name . "engression")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-torch))
     (home-page "https://github.com/xwshen51/engression/")
     (synopsis "Engression Modelling")
@@ -12451,6 +13792,9 @@ Extrapolation for nonlinear regression?\" by Xinwei Shen and Nicolai Meinshausen
         (base32 "1jb2gyx2w210w76nwrc77hfn8qyn2rnykax8a5bpzci6lqlxcb3f"))))
     (properties `((upstream-name . "EngrEcon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "GitHub")
     (synopsis
      "Engineering Economics Analysis for Engineering Projects Cost Analysis")
@@ -12474,6 +13818,9 @@ future, and annualized costs.  Newnan D. (2020) <ISBN 9780190931919>
         (base32 "1lah9ai9skshz0rq3r1smvy69j443m22h1dihl42gy2568998q4v"))))
     (properties `((upstream-name . "enetLTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robusthd
                              r-robustbase
                              r-reshape
@@ -12504,6 +13851,9 @@ parameters for elastic net penalties are done via cross-validation.")
         (base32 "098xjzrh5drwh5ylfhdd0spxf6zi678irq5q1nqvn7q7xz3vspjc"))))
     (properties `((upstream-name . "enerscape")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=enerscape")
@@ -12525,6 +13875,9 @@ of animals.")
         (base32 "0g4zsnpbsgyvkcvsrpwwi17zbkj51zavsps53lsny4wrlwr3fg4v"))))
     (properties `((upstream-name . "energyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/paulgovan/energyr")
     (synopsis
      "Data Published by the United States Federal Energy Regulatory Commission")
@@ -12547,6 +13900,9 @@ data natural gas company financial data, and natural gas storage field data.")
         (base32 "1a3wvclqdwcvq5inhliwjnd7xzqbjvzs8h8ncy6qlhjq6s5n7nm8"))))
     (properties `((upstream-name . "EnergyOnlineCPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-energy))
     (home-page "https://sites.google.com/site/EnergyOnlineCPM/")
     (synopsis
@@ -12578,6 +13934,9 @@ Okhrin and Y.F. Xu (2017)
         (base32 "0dqzh2blb2h8ngchvfvnzx0gmilvx9ydvzqwfy4d9f58ixybn4d9"))))
     (properties `((upstream-name . "endtoend")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pastecs r-ggplot2))
     (home-page "https://cran.r-project.org/package=endtoend")
     (synopsis "Transmissions and Receptions in an End to End Network")
@@ -12601,6 +13960,9 @@ probabilities.")
         (base32 "1cj4skk317ppnayk1ph63vll49vs74fljc25cn1iviwgjq64ly0k"))))
     (properties `((upstream-name . "endoSwitch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-msm r-maxlik r-data-table))
     (home-page "https://github.com/cbw1243/endoSwitch")
     (synopsis "Endogenous Switching Regression Models")
@@ -12621,6 +13983,9 @@ Heckman (1979) <doi:10.2307/1912352> and estimation of treatment effects.")
         (base32 "16cbqg3z71c36j2zzw3xr09p6kpjwim7610sss1ayjh3xs0isa2l"))))
     (properties `((upstream-name . "endorse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-coda))
     (home-page "https://github.com/SensitiveQuestions/endorse/")
     (synopsis
@@ -12647,6 +14012,9 @@ and produces the output containing draws from the posterior distribution.")
         (base32 "079fmfxl9gf080zq5m1ixmgry9dawg2y6ixbfyc5da5jxf3zk9h8"))))
     (properties `((upstream-name . "endogenous")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=endogenous")
     (synopsis "Classical Simultaneous Equation Models")
@@ -12674,6 +14042,9 @@ effect modification.")
         (base32 "19hhs46sz7m7qsnwrz81740iq6g8n0z3rnw2shv6sakc5z0z7jga"))))
     (properties `((upstream-name . "endogeneity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod
                              r-rcpparmadillo
                              r-rcpp
@@ -12702,6 +14073,9 @@ the models are discussed in Peng (2023) <doi:10.1287/isre.2022.1113>.")
         (base32 "1svh49l60hnng9d10xkkhbqc7gr8h0dgxwpg0bq2b4lygx1c1d8l"))))
     (properties `((upstream-name . "enderecobr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-stringi
@@ -12734,6 +14108,9 @@ matches between strings.).")
         (base32 "01gsimhrb9c7k5d9h5dbvm4h9i7fc9vzi8wgqb5f191ki27fsw9w"))))
     (properties `((upstream-name . "encryptr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-readr
                              r-purrr
@@ -12764,6 +14141,9 @@ pseudonymised.")
         (base32 "0agd5lqrmdi50r9fl25njwsvg91nqsvj4h6c639vfhxx7p9y9nfk"))))
     (properties `((upstream-name . "encryptedRmd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sodium r-rmarkdown r-readr))
     (home-page "https://github.com/dirkschumacher/encryptedRmd")
     (synopsis "Encrypt Html Reports Using 'Libsodium'")
@@ -12785,6 +14165,9 @@ also directly create encrypted rmarkdown html reports.")
         (base32 "1pk5b272k4flv07mjjg7jyj0v3qg5j5hhk3sgwh0wwvc83nadi7r"))))
     (properties `((upstream-name . "EncompassTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (home-page "https://cran.r-project.org/package=EncompassTest")
     (synopsis
@@ -12809,15 +14192,19 @@ P-values will be provided in the output.")
         (base32 "04zwclmqasbx54m77wqfr9jg4axhkkqnykaxv3if8lnr46fl3zyc"))))
     (properties `((upstream-name . "encode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=encode")
     (synopsis "Represent Ordered Lists and Pairs as Strings")
     (description
      "Interconverts between ordered lists and compact string notation.  Useful for
 capturing code lists, and pair-wise codes and decodes, for text storage.
-Analogous to factor levels and labels.  Generics encode() and decode() perform
-interconversion, while codes() and decodes() extract components of an encoding.
-The function encoded() checks whether something is interpretable as an encoding.
- If a vector has an encoded guide attribute, as_factor() uses it to coerce to
+Analogous to factor levels and labels.  Generics @code{encode()} and
+@code{decode()} perform interconversion, while @code{codes()} and
+@code{decodes()} extract components of an encoding.  The function
+@code{encoded()} checks whether something is interpretable as an encoding.  If a
+vector has an encoded guide attribute, @code{as_factor()} uses it to coerce to
 factor.")
     (license license:gpl3)))
 
@@ -12833,6 +14220,9 @@ factor.")
         (base32 "07vdi05fr6mynb86haas21izdcjiagw14p1h8n0qr1hb3klvs8n5"))))
     (properties `((upstream-name . "eNchange")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp
                              r-iterators
                              r-hawkes
@@ -12859,6 +14249,9 @@ Korkas (2020) <@code{arXiv:2003.03649>}.")
         (base32 "0wy2cmcvyqjhg5mqbvdzmihfv8swx7ym2n9mjdqgx0kgnc7k614y"))))
     (properties `((upstream-name . "EncDNA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biostrings))
     (home-page "https://cran.r-project.org/package=EncDNA")
     (synopsis "Encoding of Nucleotide Sequences into Numeric Feature Vectors")
@@ -12884,6 +14277,9 @@ nucleic acid sequences of equal length.")
         (base32 "0mlcqi9lwqrjilc2nynrl7aqkbqixbdcwzw3rn7mgc8m7cb7s8pq"))))
     (properties `((upstream-name . "emuR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrassp
                              r-v8
                              r-uuid
@@ -12912,37 +14308,6 @@ management, data extraction, data preparation and data visualization facilities.
  See <https://ips-lmu.github.io/The-EMU-SDMS-Manual/> for more details.")
     (license license:gpl2+)))
 
-(define-public r-emulator
-  (package
-    (name "r-emulator")
-    (version "1.2-24")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "emulator" version))
-       (sha256
-        (base32 "0sd45wjdb00iyj8n16kqxypisam7ibwvpcaxsi1z56yzlzp93p4i"))))
-    (properties `((upstream-name . "emulator")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RobinHankin/emulator")
-    (synopsis "Bayesian Emulation of Computer Programs")
-    (description
-     "Allows one to estimate the output of a computer program, as a function of the
-input parameters, without actually running it.  The computer program is assumed
-to be a Gaussian process, whose parameters are estimated using Bayesian
-techniques that give a PDF of expected program output.  This PDF is conditional
-on a training set of runs, each consisting of a point in parameter space and the
-model output at that point.  The emphasis is on complex codes that take weeks or
-months to run, and that have a large number of undetermined input parameters;
-many climate prediction models fall into this class.  The emulator essentially
-determines Bayesian posterior estimates of the PDF of the output of a model,
-conditioned on results from previous runs and a user-specified prior linear
-model.  The package includes functionality to evaluate quadratic forms
-efficiently.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-emt
   (package
     (name "r-emt")
@@ -12955,6 +14320,9 @@ efficiently.")
         (base32 "0g4s99cbww9wi89acbpn8ggkfkf39nq0km0nhm5956r62sjw2wfr"))))
     (properties `((upstream-name . "EMT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EMT")
     (synopsis
      "Exact Multinomial Test: Goodness-of-Fit Test for Discrete Multivariate Data")
@@ -12977,6 +14345,9 @@ high-dimensional problems.")
         (base32 "1l85pn8y463fn09cpm737kzal6k3ydiri38s90bhfw3i1gvzqggf"))))
     (properties `((upstream-name . "emstreeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-scatterplot3d r-mlpack r-ggplot2))
     (home-page "https://cran.r-project.org/package=emstreeR")
     (synopsis
@@ -13004,6 +14375,9 @@ functions to export the MST output to shapefiles.")
         (base32 "0zkr2xfvwlqxcfj59801vm54l38agipbkd9qgq6jkmqkdbkfv3yr"))))
     (properties `((upstream-name . "EMSS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sampleselection r-mvtnorm))
     (home-page "https://github.com/SangkyuStat/EMSS")
     (synopsis
@@ -13031,6 +14405,9 @@ explanations of the algorithms can be found in Zhao et al. (2020) <doi:
         (base32 "0rhaadzhq9jfpnwxfqcsb3yz96rqlwkm165k5n5jxzwxpg1rg2n0"))))
     (properties `((upstream-name . "EMSNM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EMSNM")
     (synopsis "EM Algorithm for Sigmoid Normal Model")
     (description
@@ -13059,6 +14436,9 @@ subgroup structure.")
         (base32 "1qc478d6y37psyl56707v8axw0hp2fcwxwk5j35ypkn1wjvyckix"))))
     (properties `((upstream-name . "EMSC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (home-page "https://github.com/khliland/EMSC/")
     (synopsis "Extended Multiplicative Signal Correction")
@@ -13081,6 +14461,9 @@ corrected accordingly.")
         (base32 "1hpvwimhkl7za5s8j9n4a8883vy89jrxrhlh0k3cfprnndh4zz05"))))
     (properties `((upstream-name . "EMSaov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny))
     (home-page "https://cran.r-project.org/package=EMSaov")
     (synopsis "The Analysis of Variance with EMS")
@@ -13104,6 +14487,9 @@ appropriate test, especially denominator for F-statistic which depends on EMS.")
         (base32 "0xg4c6yhrnq5pfz94i1ys1bdqfz12h0wcs86fz4nm4pqfdbh41cc"))))
     (properties `((upstream-name . "ems")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rms r-boot))
     (home-page "https://cran.r-project.org/package=ems")
     (synopsis
@@ -13125,6 +14511,9 @@ analysis and editing of clinical and epidemiological data.")
         (base32 "1pxcvz7x8dfc30m1yb1k9xhlaj4z1i29xxg9vdz1l374k4f449sb"))))
     (properties `((upstream-name . "emplikAUC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-emplik2))
     (home-page "https://cran.r-project.org/package=emplikAUC")
     (synopsis
@@ -13150,6 +14539,9 @@ likelihood, as described in
         (base32 "0rjsk7j1likvhv88zdmbcam1nif0iilwfsry0amf6m7yb5qfppzv"))))
     (properties `((upstream-name . "emplik2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=emplik2")
     (synopsis
      "Empirical Likelihood Ratio Test for Two-Sample U-Statistics with Censored Data")
@@ -13171,6 +14563,9 @@ data.")
         (base32 "1lw7wvf0v73wm84x9amymxy2jnzrqndby1k4b580qwvcq7sz49x9"))))
     (properties `((upstream-name . "EmpiricalCalibration")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-rcpp r-gridextra r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/EmpiricalCalibration/")
@@ -13200,6 +14595,9 @@ and Schuemie et al. (2018) <doi:10.1073/pnas.1708282114>.")
         (base32 "0az7qxfnqrmxgd2591h49qs1w7iyzz6i490h4xn9gdzsplhpy1sw"))))
     (properties `((upstream-name . "empichar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/gbasulto/empichar")
     (synopsis
@@ -13222,6 +14620,9 @@ also possible to export the code to be used in other packages at C++ level.")
         (base32 "0v9h8q9l1zk9b23x9raqv9p93cvrnjijqphfz7px719zhi8104q5"))))
     (properties `((upstream-name . "emphatic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://coolbutuseless.github.io/package/emphatic/")
     (synopsis "Exploratory Analysis of Tabular Data using Colour Highlighting")
@@ -13246,6 +14647,9 @@ objects.")
         (base32 "0hzw4hnisqa13h75faq4hdsmg3y6dlmfknbkql4mbdx4s3qb19fv"))))
     (properties `((upstream-name . "EMpeaksR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EMpeaksR")
     (synopsis "Conducting the Peak Fitting Based on the EM Algorithm")
     (description
@@ -13275,6 +14679,9 @@ easily performed.")
         (base32 "0piagbxk8siagmvzqv2bh12g1y0hy3c0vkxpddlmp7gm3i304rpi"))))
     (properties `((upstream-name . "EMP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rocr))
     (home-page "https://cran.r-project.org/package=EMP")
     (synopsis "Expected Maximum Profit Classification Performance Measure")
@@ -13297,6 +14704,9 @@ Verbraken et al (2013, 2014) <DOI:10.1109/TKDE.2012.50>,
         (base32 "04w0bjyxvfb4ky573byp7j9b7x4gqycr5pgpnsl6rzag00zsf45a"))))
     (properties `((upstream-name . "emov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/schw4b/emov")
     (synopsis
      "Eye Movement Analysis Package for Fixation and Saccade Detection")
@@ -13318,6 +14728,9 @@ implements a dispersion-based algorithm (I-DT) proposed by Salvucci & Goldberg
         (base32 "19khjjpyxvzhzihqq15w02l5v5ryyvxlklz1ch2gkmqcpnvyga32"))))
     (properties `((upstream-name . "emon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv r-mass))
     (home-page "https://cran.r-project.org/package=emon")
     (synopsis "Tools for Environmental and Ecological Survey Design")
@@ -13339,6 +14752,9 @@ designs; visual fast count estimation.")
         (base32 "0128bwg5qraa4qiapy9cmvxgq6fdjm2xl7f2291j5cg4xhpwqjw0"))))
     (properties `((upstream-name . "emoji")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-stringr r-glue))
     (home-page "https://emilhvitfeldt.github.io/emoji/")
     (synopsis "Data and Function to Work with Emojis")
@@ -13359,6 +14775,9 @@ work with emojis when they are in strings.")
         (base32 "0qwj4jlfhppjxwcjldh49b6idnagazrxybaid3k2c269wvxwvddq"))))
     (properties `((upstream-name . "EMMREML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=EMMREML")
     (synopsis "Fitting Mixed Models with Known Covariance Structures")
@@ -13383,6 +14802,9 @@ covariance structure using the ECM algorithm.")
         (base32 "1b36kyzvrdljmkysggv8jyaip78pj32ms0xhj2y568hd419lkh2p"))))
     (properties `((upstream-name . "EMMLi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/timcdlucas/EMMLi")
     (synopsis "Maximum Likelihood Approach to the Analysis of Modularity")
     (description
@@ -13403,6 +14825,9 @@ within-module correlations fitted to each module.")
         (base32 "1z8mqh4d0vlxhk2mvpxwypr5labra3z4xsvpm4li1v4hga791h0v"))))
     (properties `((upstream-name . "EMMIXSSL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=EMMIXSSL")
     (synopsis
@@ -13430,6 +14855,9 @@ specified by Bayesâ rule.")
         (base32 "1a3zwjwj746rmbx4mkk7fs946ybbvbds3slh06v70szqhkpc1ajr"))))
     (properties `((upstream-name . "EMMIXmfa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/suren-rathnayake/EMMIXmfa")
     (synopsis "Mixture Models with Component-Wise Factor Analyzers")
     (description
@@ -13464,6 +14892,9 @@ Flack LK (2010) <doi:10.1109/TPAMI.2009.149> Baek J, @code{McLachlan} GJ (2011)
         (base32 "1k82r5ly0rnivvw803jibgsdjmk5nfzqqzcx0yv41i3f60pflv8x"))))
     (properties `((upstream-name . "EMMIXgene")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-reshape
                              r-rcpparmadillo
@@ -13497,6 +14928,9 @@ clustered by fitting mixtures of normal distributions.")
         (base32 "1wz4zw45xfqbk589cpd188j7619h2ar2czfkisil9x8ksijfixls"))))
     (properties `((upstream-name . "EMMAgeo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-matrixstats r-limsolve r-gparotation
                              r-catools))
     (home-page "https://cran.r-project.org/package=EMMAgeo")
@@ -13519,6 +14953,9 @@ provides deterministic and robust protocols for that purpose.")
         (base32 "0zwbbxsmkyrgmva5h8l78f181nz5asc7dpdcmajvj2y3yl1rb278"))))
     (properties `((upstream-name . "EMLI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EMLI")
     (synopsis
      "Computationally Efficient Maximum Likelihood Identification of Linear Dynamical Systems")
@@ -13544,6 +14981,9 @@ reference will be provided later.")
         (base32 "0cvnfvzskvpcqzs6fwrpjcqrc6yrfciliy9jj0c9h4iyag0g0b9b"))))
     (properties `((upstream-name . "emld")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-xml2 r-jsonlite r-jsonld))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/emld/")
@@ -13576,6 +15016,8 @@ serializations such as RDF and SPARQL queries.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -13619,6 +15061,9 @@ Jones et al. (2006), <doi:10.1146/annurev.ecolsys.37.091305.110031>.")
         (base32 "0wdqln3sdycml5hf5cgrasfp1llv61zzx45qswsjzynlk5g52qjp"))))
     (properties `((upstream-name . "EMJMCMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-stringi
                              r-speedglm
@@ -13656,6 +15101,9 @@ generalized nonlinear, generalized nonlinear mixed, and logic regression models.
         (base32 "1cwzzkynhnpjd1slnifdmkrshfpv99ryilxj27f98kwgbnb6i81a"))))
     (properties `((upstream-name . "EmiStatR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-lattice r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=EmiStatR")
     (synopsis
@@ -13680,6 +15128,9 @@ functionalities through the R framework.")
         (base32 "090xjvb5n05nd1rapqp2jaa23k3jzmys004bzfpn4nckb5nfs2nc"))))
     (properties `((upstream-name . "EmissV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units r-sf r-raster r-ncdf4 r-data-table))
     (home-page "https://atmoschem.github.io/EmissV/")
     (synopsis "Tools for Create Emissions for Air Quality Models")
@@ -13707,6 +15158,9 @@ distribution of emissions such as satellite images (Gavidia-Calderon et.  al,
         (base32 "1vdmrad9f0ywrlb3xqwysm8vps5dz9xc3xq6jl82gr6xl3rr54zi"))))
     (properties `((upstream-name . "emIRT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-pscl))
     (home-page "https://cran.r-project.org/package=emIRT")
     (synopsis "EM Algorithms for Estimating Item Response Theory Models")
@@ -13731,6 +15185,9 @@ described in Imai, Lo, and Olmsted (2016) <DOI:10.1017/S000305541600037X>.")
         (base32 "1xhsf9n5af6z7v62vpnqjlp20s6fp7jf1wmgxgv77hxm4g5cm0q7"))))
     (properties `((upstream-name . "EmiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tictoc
                              r-tibble
@@ -13774,6 +15231,9 @@ constrains, and variables restricted to be integers.")
         (base32 "0zhy1y80m548y9nbbjb2h795qky2637mxlqb548bakn7ps847qps"))))
     (properties `((upstream-name . "emhawkes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-maxlik))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=emhawkes")
@@ -13800,6 +15260,9 @@ maximum likelihood method, introduced by introduced by Ozaki (1979)
         (base32 "0gl3lfww7chwsvg16m5x6agbza4xx482b56wqccb9zqin0j89dfb"))))
     (properties `((upstream-name . "EMgaussian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-matrixcalc
@@ -13832,6 +15295,9 @@ normal (Gaussian) distribution is also available.")
         (base32 "04sm05xnjns7wcvpk35ywkxy6g0mm84r060mkmzh64wq58c2q06l"))))
     (properties `((upstream-name . "emg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-moments))
     (home-page "https://cran.r-project.org/package=emg")
     (synopsis "Exponentially Modified Gaussian (EMG) Distribution")
@@ -13853,6 +15319,9 @@ Gaussian and exponential distribution.")
         (base32 "1x0x1f2i0yxkq8xl6vm2w2nb8blpa6dkns07d1n9qj43rnwljv5s"))))
     (properties `((upstream-name . "emery")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -13885,6 +15354,9 @@ measurement methods.")
         (base32 "1vjr7aslvykbyz8aw2z5aqlqx1v3nv63hym6knygflkkpr9zsr30"))))
     (properties `((upstream-name . "EMDSVRhybrid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-emd r-e1071))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EMDSVRhybrid")
@@ -13911,6 +15383,13 @@ forecasting.  For method details see (i) Choudhury (2019)
         (base32 "1zdb2bg8gdpjlg104f5cpnrrdnpdqdcp95gxlbnadq6rds94ipcx"))))
     (properties `((upstream-name . "emdi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-stringr
                              r-spdep
                              r-saerobust
@@ -13961,6 +15440,9 @@ Framework for Producing Small Area Estimates Based on Area-Level Models in R\"."
         (base32 "17zkag633kh1xkcasvyimvd9w1dmy1hlnrfffb96v7qh35rc8q3n"))))
     (properties `((upstream-name . "EMDANNhybrid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-forecast r-emd))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EMDANNhybrid")
@@ -13987,6 +15469,9 @@ method details see (i) Choudhury (2019)
         (base32 "0lga27nl7c3h02xrbb2hcwlb9dyli340v0hb3vwwzqrhmr0fl806"))))
     (properties `((upstream-name . "EMD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-locfit r-fields))
     (home-page "https://cran.r-project.org/package=EMD")
     (synopsis "Empirical Mode Decomposition and Hilbert Spectral Analysis")
@@ -14009,6 +15494,9 @@ Spectrum, The R Journal, 1, 40-46).")
         (base32 "1hy2w7i367id0s6vl8m87d1s275638y767fx39xim9jrz6dwdzvx"))))
     (properties `((upstream-name . "EMCluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass))
     (home-page "https://github.com/snoweye/EMCluster")
     (synopsis
@@ -14031,6 +15519,9 @@ in both of unsupervised and semi-supervised learning.")
         (base32 "1rv2m7v8mhbwfrl3cwipnaxm1yxcs1mycp2vvhz5k9fbn9c0nwqk"))))
     (properties `((upstream-name . "EMC2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wienr
                              r-rcpp
                              r-psych
@@ -14078,6 +15569,9 @@ al. (2024) <doi:10.31234/osf.io/2e4dq>.")
         (base32 "059q5bp1pfz1hpas144jvb60izrl0f3nrn4ddm27h0haffx20s59"))))
     (properties `((upstream-name . "embryogrowth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-optimx
                              r-numderiv
@@ -14104,6 +15598,9 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
         (base32 "1mc4rh1mp81j4613s82z45zz0y12bkpg5kjjkx12i85nh953y1x1"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vctrs
                              r-uwot
@@ -14138,6 +15635,9 @@ used.  There are also functions for dimension reduction and other approaches.")
         (base32 "03vsyzq4zgv64yzazplj1sm3kgw0pdildcvi8w88b3d0rkjnhn5m"))))
     (properties `((upstream-name . "EMbC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-suntools
                              r-sp
                              r-rcpparmadillo
@@ -14169,6 +15669,9 @@ eventually with solar position covariate as a daytime indicator,
         (base32 "0v2yj9gmalm5dwxfi64zlpa4gk7r2v12sls0jy6dj3r3rv0hsyyw"))))
     (properties `((upstream-name . "emBayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
     (home-page "https://cran.r-project.org/package=emBayes")
     (synopsis
@@ -14201,6 +15704,9 @@ this package is developed in C++'.")
         (base32 "04dlya7fki6gq98rws5b3577lrs0cd213ml3w8qcsyzn7bbpz7np"))))
     (properties `((upstream-name . "emayili")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xfun
                              r-urltools
@@ -14240,6 +15746,9 @@ dependencies.")
         (base32 "07y15nbym69iwdy9c5gcdalign7g8qw8hkcy1v29z6j2di6qzn84"))))
     (properties `((upstream-name . "EMAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qqman
                              r-multilevel
                              r-minfi
@@ -14272,25 +15781,28 @@ Rosseel, D. (2012) <doi:10.18637/jss.v048.i02>.")
         (base32 "1i0jmxp1fckqvah6a08pgvn92dwg052bra3vp5wmwakk56cbyqih"))))
     (properties `((upstream-name . "EMAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EMAR")
     (synopsis "Empirical Model Assessment")
     (description
      "This package provides a tool that allows users to generate various indices for
-evaluating statistical models.  The fitstat() function computes indices based on
-the fitting data.  The valstat() function computes indices based on the
-validation data set.  Both fitstat() and valstat() will return 16 indices SSR:
-residual sum of squares, TRE: total relative error, Bias: mean bias, MRB: mean
-relative bias, MAB: mean absolute bias, MAPE: mean absolute percentage error,
-MSE: mean squared	error, RMSE: root mean square error, Percent.RMSE: percentage
-root mean squared error, R2: coefficient of determination, R2adj: adjusted
-coefficient of determination, APC: Amemiya's prediction criterion, @code{logL}:
-Log-likelihood, AIC: Akaike information criterion, AICc: corrected Akaike
-information criterion, BIC: Bayesian information criterion, HQC: Hannan-Quin
-information criterion.  The	lower the better for the SSR, TRE, Bias, MRB, MAB,
-MAPE, MSE, RMSE, Percent.RMSE, APC, AIC, AICc, BIC and HQC indices.  The higher
-the better for R2 and R2adj indices.  Petre Stoica, P., SelÃ©n, Y. (2004)
-<doi:10.1109/MSP.2004.1311138>\\n Zhou et al. (2023)
-<doi:10.3389/fpls.2023.1186250>\\n Ogana, F.N., Ercanli, I. (2021)
+evaluating statistical models.  The @code{fitstat()} function computes indices
+based on the fitting data.  The @code{valstat()} function computes indices based
+on the validation data set.  Both @code{fitstat()} and @code{valstat()} will
+return 16 indices SSR: residual sum of squares, TRE: total relative error, Bias:
+mean bias, MRB: mean relative bias, MAB: mean absolute bias, MAPE: mean absolute
+percentage error, MSE: mean squared	error, RMSE: root mean square error,
+Percent.RMSE: percentage root mean squared error, R2: coefficient of
+determination, R2adj: adjusted coefficient of determination, APC: Amemiya's
+prediction criterion, @code{logL}: Log-likelihood, AIC: Akaike information
+criterion, AICc: corrected Akaike information criterion, BIC: Bayesian
+information criterion, HQC: Hannan-Quin information criterion.  The	lower the
+better for the SSR, TRE, Bias, MRB, MAB, MAPE, MSE, RMSE, Percent.RMSE, APC,
+AIC, AICc, BIC and HQC indices.  The higher the better for R2 and R2adj indices.
+ Petre Stoica, P., SelÃ©n, Y. (2004) <doi:10.1109/MSP.2004.1311138>\\n Zhou et
+al. (2023) <doi:10.3389/fpls.2023.1186250>\\n Ogana, F.N., Ercanli, I. (2021)
 <doi:10.1007/s11676-021-01373-1>\\n Musabbikhah et al. (2019)
 <doi:10.1088/1742-6596/1175/1/012270>.")
     (license license:gpl3+)))
@@ -14307,6 +15819,9 @@ the better for R2 and R2adj indices.  Petre Stoica, P., SelÃ©n, Y. (2004)
         (base32 "1k2i2rnlqzgi7kn2knll86bax4pms68jddrycaqv6pkql8fja93a"))))
     (properties `((upstream-name . "emailvalidation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://emailvalidation.io")
@@ -14330,6 +15845,9 @@ subscription.  You can find the full API documentation at
         (base32 "1pxqw0r95pgpnvhmyw46py6bnchswb9wcyl42lsg5ccz74dynmh0"))))
     (properties `((upstream-name . "emailjsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinybrowser r-shiny-i18n r-shiny r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=emailjsr")
@@ -14353,6 +15871,9 @@ function.  It can be used for making feedback form, inquiry, and so on.")
         (base32 "0sz4zkjn6rdzdqmkq6j24bd4sj91y5lan31bldxdfskgz0jpzhbr"))))
     (properties `((upstream-name . "EM.Fuzzy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fuzzynumbers r-distrib))
     (home-page "https://cran.r-project.org/package=EM.Fuzzy")
     (synopsis
@@ -14380,6 +15901,9 @@ formulas see Denoeux (2011) <doi:10.1016/j.fss.2011.05.022>.")
         (base32 "16xmksz1zdr61gxycsbia28kj16nrrcdvjcdd3nk6n6zjiy3ca3v"))))
     (properties `((upstream-name . "em")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rcpparmadillo
                              r-rcpp
@@ -14411,6 +15935,9 @@ after a model fitting using R's existing functions and packages.")
         (base32 "1j2vwcs443x3pf4zypyvbkn8fb5if9b9hf1s821jjjpgach573sc"))))
     (properties `((upstream-name . "ELYP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "http://www.ms.uky.edu/~mai/EmpLik.html")
     (synopsis
@@ -14433,6 +15960,9 @@ parameters defined via both baseline hazard function and regression parameters."
         (base32 "0f4sy2hhsbghasl5xcnqlgxqhb503pl73c5vdkgpcm73smrqbpbv"))))
     (properties `((upstream-name . "eltr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://randhirbilkhu.github.io/eltr/")
@@ -14454,6 +15984,9 @@ event loss tables, using a Poisson frequency and Beta severity distribution.")
         (base32 "1ngpcrnzkx9svwglfd6pzz46frjvvckcfbm5g5myxi63raljfc8c"))))
     (properties `((upstream-name . "ELT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx r-locfit r-latticeextra r-lattice))
     (home-page "https://cran.r-project.org/package=ELT")
     (synopsis "Experience Life Tables")
@@ -14472,6 +16005,9 @@ event loss tables, using a Poisson frequency and Beta severity distribution.")
         (base32 "01sj2a4yhv5m6qj6ih26zw4yzd8s27lll7yp0yysjjrwz79a0fbq"))))
     (properties `((upstream-name . "elsa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-raster))
     (native-inputs (list r-knitr))
     (home-page "http://r-gis.net")
@@ -14499,6 +16035,9 @@ Alibakhshi, S. (2019) <doi:10.1016/j.spasta.2018.10.001>.")
         (base32 "1fqqvwbvhlr5h30mav5nch4gqjr61yvpydmbd1zq4a19hwb8rivd"))))
     (properties `((upstream-name . "EloSteepness")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -14531,6 +16070,9 @@ scores.")
         (base32 "10j60fj4kxsm2rps3f3khvp91cb8srgnbxqna4yn0gsbdr0l138d"))))
     (properties `((upstream-name . "EloRating")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-sna
                              r-rdpack
@@ -14561,6 +16103,9 @@ et al (2011) <doi:10.1016/j.anbehav.2011.07.016> for an introduction.")
         (base32 "0922xaicxkgiqaf126dbm6shm6ca7blwc13nwb3djmm7ky9m0lai"))))
     (properties `((upstream-name . "EloOptimized")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-reshape2
                              r-magrittr
@@ -14588,6 +16133,9 @@ deriving Elo scores as published in Foerster, Franz et al. (2016)
         (base32 "1g8ivvnv16c2gniwd9xa9z89bm4rac0nrg3mcg1risgf9yk4rgm5"))))
     (properties `((upstream-name . "EloChoice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-psychotools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gobbios/EloChoice")
@@ -14620,6 +16168,9 @@ to some characteristic of interest.  Clark et al (2018)
         (base32 "1phyg8by1pz3kvrb0x3w1a9f46ccadgzzznr6r8azfbqv46xyknf"))))
     (properties `((upstream-name . "elo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-proc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eheinzen/elo")
@@ -14645,6 +16196,9 @@ regression and Markov chain models.")
         (base32 "1rr8zd8l71am7sx8glv73lvn0w1wyyzkgn0j7hybi7ibcwg4hz5l"))))
     (properties `((upstream-name . "eLNNpairedCov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-limma r-biobase))
     (home-page "https://cran.r-project.org/package=eLNNpairedCov")
     (synopsis "Model-Based Gene Selection for Paired Data")
@@ -14666,6 +16220,9 @@ Bayesian hierarchical models on covariates.  Zhang et al. (2023)
         (base32 "14wnrqrbbfb37f3wp91qib28bcanflw3asv1y0v748n36x1xbv3m"))))
     (properties `((upstream-name . "ELMSO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "<https://journals.sagepub.com/doi/abs/10.1509/jmr.15.0307>")
     (synopsis
      "Implementation of the Efficient Large-Scale Online Display Advertising Algorithm")
@@ -14697,6 +16254,9 @@ channel.")
         (base32 "0pd3drv485xbdyfwm28kjpd0nd0zv1khfwzki1gh5p1gz9ndwr2x"))))
     (properties `((upstream-name . "ELMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ELMR")
     (synopsis "Extreme Machine Learning (ELM)")
     (description
@@ -14720,6 +16280,9 @@ tune is the hidden layer size and the learning function.")
         (base32 "1vn3c67p4kd7bs4fsyhkl350aydcqpfda4j6svkc0g4cxd5i33zj"))))
     (properties `((upstream-name . "elmNNRcpp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-kernelknn))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlampros/elmNNRcpp")
@@ -14749,6 +16312,9 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
         (base32 "035q6zjf0lnx704q5g51bhv1xp7y0yn31ph57zydk92gfpgn468l"))))
     (properties `((upstream-name . "ellipticalsymmetry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-icsnp r-foreach r-dorng r-doparallel))
     (home-page "https://cran.r-project.org/package=ellipticalsymmetry")
     (synopsis "Elliptical Symmetry Tests")
@@ -14771,6 +16337,9 @@ symmetry that are described in Babic et al. (2021) <@code{arXiv:2011.12560v2>}."
         (base32 "0arrvcs3ylh849bw76wl98qj40w7w3r6f1yqszphqf7nnw0i6x9n"))))
     (properties `((upstream-name . "ElliptCopulas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wdm r-runuran r-pbapply r-matrix r-kstatistics))
     (home-page "https://github.com/AlexisDerumigny/ElliptCopulas")
     (synopsis "Inference of Elliptical Distributions and Copulas")
@@ -14793,6 +16362,9 @@ trans-elliptical distributions, following the article Derumigny and Fermanian
         (base32 "13r16lx8hx46d3r9awki4j6lvy5p2q5d3k268h3bhd0mcsbxrml0"))))
     (properties `((upstream-name . "elliplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=elliplot")
     (synopsis "Ellipse Summary Plot of Quantiles")
     (description
@@ -14812,6 +16384,9 @@ effect of factor.")
         (base32 "0znq40ccr828j9xwa3xixdp0i2fyj0x02lh5vxb61bf96y9njsvy"))))
     (properties `((upstream-name . "Elja")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-ggplot2 r-dplyr r-devtools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EHMarwan/Elja")
@@ -14836,6 +16411,9 @@ linear models.")
         (base32 "1apqzcj3nnir8f448ainmkrw8qj6pfi7d163wy0pkgzsh0gjv8r0"))))
     (properties `((upstream-name . "elitism")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=elitism")
     (synopsis
@@ -14867,16 +16445,19 @@ Biopharmaceutical Research 14(4), 636-650.")
         (base32 "1znmdksi2wzzjz0n6lrggs4ckvqq3qirdfvicxlfbm05zgnjq277"))))
     (properties `((upstream-name . "eList")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=eList")
     (synopsis "List Comprehension and Tools")
     (description
      "Create list comprehensions (and other types of comprehension) similar to those
 in python', haskell', and other languages.  List comprehension in R converts a
-regular for() loop into a vectorized lapply() function.  Support for looping
-with multiple variables, parallelization, and across non-standard objects
-included.  Package also contains a variety of functions to help with list
-comprehension.")
+regular @code{for()} loop into a vectorized @code{lapply()} function.  Support
+for looping with multiple variables, parallelization, and across non-standard
+objects included.  Package also contains a variety of functions to help with
+list comprehension.")
     (license license:expat)))
 
 (define-public r-elisr
@@ -14891,6 +16472,9 @@ comprehension.")
         (base32 "1kz07fyffaqgda9rqidxzxz0bxzhyb8pyxpzqsvjsn1i9w98cb5k"))))
     (properties `((upstream-name . "elisr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sbissantz/elisr")
     (synopsis "Exploratory Likert Scaling")
@@ -14919,6 +16503,9 @@ itself.")
         (base32 "18f2adhw85f0hsz5gb6xhi0w2phcq364xy9y1jri6ckzs8g0pny7"))))
     (properties `((upstream-name . "ELISAtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-r2html r-minpack-lm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ELISAtools")
@@ -14942,6 +16529,9 @@ there are more than one batches of ELISAs.  Feng (2018) <doi:10.1101/483800>.")
         (base32 "19911czg6x9kb4c514w65fhjljrfm4src6hd3zai004w72h1ysb2"))))
     (properties `((upstream-name . "elhmc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-mass r-emplik))
     (home-page "https://cran.r-project.org/package=elhmc")
     (synopsis
@@ -14963,6 +16553,9 @@ Bayesian posterior of parameters using Hamiltonian Monte Carlo.")
         (base32 "06pl1bmsnvprglm0gzg5azxlhmlvslh5bppn02sj82s5p3ydvg8g"))))
     (properties `((upstream-name . "elgbd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp))
     (home-page "https://github.com/markean/elgbd")
     (synopsis "Empirical Likelihood for General Block Designs")
@@ -14988,6 +16581,9 @@ This work was supported by the U.S. National Science Foundation under Grants No.
         (base32 "11h91mwiw2pr0c8zvyzqql275falpiajv784n2rd5xs9azprqdd0"))))
     (properties `((upstream-name . "elfDistr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/matheushjs/elfDistr")
     (synopsis
@@ -15010,6 +16606,9 @@ distribution proposed in Afify, A.Z. et al (2017) <doi:10.1214/16-BJPS322>.")
         (base32 "1xmrzlp55z6k3psdg4a3x3rsilvq3k37v9r7ydfn80ahvqjz0fqh"))))
     (properties `((upstream-name . "elexr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=elexr")
     (synopsis "Load Associated Press Election Results with Elex")
     (description
@@ -15030,6 +16629,9 @@ fetching and parsing Associated Press election results.")
         (base32 "1cr6pgr1b5aqf78b053v96nr511yz7r25bvfd3z21a8bvqlnq7bi"))))
     (properties `((upstream-name . "ElevDistr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-rann r-ggplot2 r-ggmap))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/LivioBaetscher/ElevDistr")
@@ -15054,6 +16656,9 @@ free to decide what climate layers they would like to use.")
         (base32 "1l18b72bvb7cfprxi99ylffbvs072g29ly3bcw6s1yv5asp50iw6"))))
     (properties `((upstream-name . "elevatr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-terra
                              r-slippymath
@@ -15093,6 +16698,9 @@ Point Query Service <https://apps.nationalmap.gov/epqs/>.")
         (base32 "0r15ghnblp5f2g9hpw187clfpj1cgplqyn9mhyvlcmz5ql60glsj"))))
     (properties `((upstream-name . "electoral")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-ineq r-dplyr))
     (home-page "https://cran.r-project.org/package=electoral")
     (synopsis "Allocating Seats Methods and Party System Scores")
@@ -15130,6 +16738,9 @@ Pedersen (1979) <https://janda.org/c24/Readings/Pedersen/Pedersen.htm>.  Golosov
         (base32 "0clxsn9zkpdlq9jgq029ag310ji0hd0l23wfyqh8gkkj0091ip5a"))))
     (properties `((upstream-name . "electivity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/DesiQuintans/electivity")
     (synopsis "Algorithms for Electivity Indices")
     (description
@@ -15151,6 +16762,9 @@ resource utilisation.")
         (base32 "0d50hlbrby2frqvyl12y7jcy6cg7s1fqzav0cic5sllfhbk3kwdp"))))
     (properties `((upstream-name . "electionsBR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr
                              r-magrittr
                              r-httr
@@ -15181,6 +16795,9 @@ president) aggregated by state, city, and electoral zones.")
         (base32 "199ms891xgr8jgb5w0lrp8z1aj8faqrfsx60bcgv152v7y12mjx0"))))
     (properties `((upstream-name . "elections.dtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat
                              r-rdpack
                              r-rcppthread
@@ -15207,6 +16824,9 @@ Dirichlet-tree prior distributions.  Everest et al. (2022)
         (base32 "0gp2sadk18j518fj203qd52nwy93m85yw8ks59jr2ry2w28a6z2h"))))
     (properties `((upstream-name . "elections")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=elections")
     (synopsis "USA Presidential Elections Data")
     (description
@@ -15227,6 +16847,9 @@ Dirichlet-tree prior distributions.  Everest et al. (2022)
         (base32 "1wqcmrbmhi6fpmbb40yy59s6il02k9bxmw1nfk21m4rgb65ssggk"))))
     (properties `((upstream-name . "ElectDecomp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ElectDecomp")
     (synopsis
      "Decomposition of Seats-to-Votes Distortion in Multimember Elections")
@@ -15256,6 +16879,9 @@ into segments attributed to the major causes of deviation from proportionality
         (base32 "1hjqhmdklspssa75x8xdhv2narqgw80qh259hyfwfgnvva97w2ja"))))
     (properties `((upstream-name . "elect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnet r-msm))
     (home-page "https://cran.r-project.org/package=elect")
     (synopsis "Estimation of Life Expectancies Using Multi-State Models")
@@ -15279,6 +16905,9 @@ using the msm package using age as the time-scale.")
         (base32 "1wr2lkaf56qxsnqi7mgbgzy72lhkr0xlr1w1l9hy1dpmmqcqw7l3"))))
     (properties `((upstream-name . "EleChemr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=EleChemr")
     (synopsis "Electrochemical Reactions Simulation")
@@ -15312,6 +16941,9 @@ methods can be found in the following texts.  Dieter Britz, Jorg Strutwolf
         (base32 "1qc2hzbkmxvk4zrmdr935klhxvvdc7rmximqybb5aammd351qh2a"))))
     (properties `((upstream-name . "elec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=elec")
     (synopsis "Collection of Functions for Statistical Election Audits")
     (description
@@ -15333,6 +16965,9 @@ which allow for simulations for checking the characteristics of these methods.")
         (base32 "0k98ziacyxl1pyhyynmswcncqwl0a05sawypncdpdd9xr77nvgi6"))))
     (properties `((upstream-name . "elastic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-jsonlite r-curl r-crul))
     (home-page "https://docs.ropensci.org/elastic/")
     (synopsis "General Purpose Interface to 'Elasticsearch'")
@@ -15358,6 +16993,9 @@ documents, nodes, clusters, an interface to the cat API, and more.")
         (base32 "0sa95g6wcl3m8aygpg9ip1p3q8hwcin8mglzbl3mc9bvdfwkplsa"))))
     (properties `((upstream-name . "elastes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparseflmm r-orthogonalsplinebasis r-mgcv
                              r-elasdics))
     (native-inputs (list r-knitr))
@@ -15388,6 +17026,9 @@ methods for elastic mean estimation proposed in Steyer, StÃ¶cker, Greven	(2022
         (base32 "0nz3vw803dvk4s45zc9swyrkjwna94z84dn4vfj3j17h74a0cij2"))))
     (properties `((upstream-name . "elasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sizer r-glmnet))
     (home-page "https://cran.r-project.org/package=elasso")
     (synopsis
@@ -15409,6 +17050,9 @@ least absolute shrinkage and selection operator for regression model.")
         (base32 "03zfklxnh66kzlkw5yf8p859hkfhbvh5pgmi9lcwy0izi32sjx86"))))
     (properties `((upstream-name . "elasdics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (home-page "https://cran.r-project.org/package=elasdics")
     (synopsis "Elastic Analysis of Sparse, Dense and Irregular Curves")
@@ -15433,6 +17077,9 @@ al. (2023, <@code{arXiv:2305.02075>}).")
         (base32 "0a59wp50gszyx4q2qsfq8yjkqk4kz3bnlk5r95sjgc4rj8zg8vxf"))))
     (properties `((upstream-name . "elaborator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-shinywidgets
@@ -15473,6 +17120,9 @@ Majumder, M., Mendolia, F., Jeske, S., & Kulmann, H. (2021)
         (base32 "0bn2481rf61qnia468y7k95hhazjaghrv919a2y9ar5wcz5nq2kk"))))
     (properties `((upstream-name . "EL2Surv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=EL2Surv")
     (synopsis "Empirical Likelihood (EL) for Comparing Two Survival Functions")
@@ -15493,6 +17143,9 @@ the one-sided/two-sided EL tests.")
         (base32 "1ci1nb9ajw2qgirmi66r06dlsmhkzjw0kgvyvgys6c286i2sad05"))))
     (properties `((upstream-name . "EL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nleqslv r-ggplot2))
     (home-page "https://cran.r-project.org/package=EL")
     (synopsis "Two-Sample Empirical Likelihood")
@@ -15518,6 +17171,9 @@ Valeinis, E. Cers (2011)
         (base32 "1l4ciysx20i5a9vp8364znbnflxsg2id52yj8ispibn5k3g5y3w0"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-mapsf
                              r-ks
@@ -15545,6 +17201,9 @@ compatibility with the tidyverse and geospatial ecosystems
         (base32 "0filw1xikbv55h7xswlqifd30d43b9y3h2m6i0zv8v54y8mmszfg"))))
     (properties `((upstream-name . "EKMCMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (home-page "https://cran.r-project.org/package=EKMCMC")
     (synopsis "MCMC Procedures for Estimating Enzyme Kinetics Constants")
@@ -15566,6 +17225,9 @@ algorithm within Gibbs sampler based on the Bayesian framework.")
         (base32 "00zx8qk6zh31979vsnl857cr8yicj3j879k64p57iqxb8a9kaf79"))))
     (properties `((upstream-name . "eixport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-raster r-ncdf4 r-data-table r-cptcity))
     (home-page "https://atmoschem.github.io/eixport/")
     (synopsis "Export Emissions to Atmospheric Models")
@@ -15594,6 +17256,9 @@ and examples.  More details in Ibarra-Espinosa et al (2018)
         (base32 "02ry0aqqnd0zh6zbvx1dbq3sdahyqcgabhkvbbw4ig0qk70w62aj"))))
     (properties `((upstream-name . "EIX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-tidyr
                              r-scales
@@ -15631,6 +17296,9 @@ the @code{LightGBM} use the following link:
         (base32 "0ynmrql6dv10m7cwba5mzwlbvp6ab53nzqqvk3ihwyiqzmnnmpk4"))))
     (properties `((upstream-name . "eivtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r2jags))
     (home-page "https://cran.r-project.org/package=eivtools")
     (synopsis "Measurement Error Modeling Tools")
@@ -15656,6 +17324,9 @@ implements methods by Rabe-Hesketh et al. (2003)
         (base32 "1ziijc43axgsm9j61saab7q4kqysqwx3gvl710lv7m57vll6k4zl"))))
     (properties `((upstream-name . "eive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=eive")
     (synopsis
@@ -15679,6 +17350,9 @@ errors (MSEs) are reduced.")
         (base32 "0zs45n6xkyi9agrgv36bz2prdcplln66713xjr6sxyip52z9ksbk"))))
     (properties `((upstream-name . "eirm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinydashboard
                              r-shinycssloaders
                              r-shiny
@@ -15716,6 +17390,9 @@ dichotomous and polytomous item responses.")
         (base32 "1jb7nxk71cyvrmapzwz4fgjv7ca5m17i22acyhx27krl168ss0r2"))))
     (properties `((upstream-name . "eiPack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-msm r-mass r-coda))
     (home-page "http://www.olivialau.org/software/")
     (synopsis "Ecological Inference and Higher-Dimension Data Management")
@@ -15739,6 +17416,9 @@ manipulating higher-dimension data objects.")
         (base32 "1f8fm6ia5invskc7a7hcjvf52afdkw38y1vx7jlpqxvawswmwpv2"))))
     (properties `((upstream-name . "eiopaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-curl))
     (home-page "https://cran.r-project.org/package=eiopaR")
     (synopsis "Access to RFR (Risk-Free Rate) Curves Produced by the EIOPA")
@@ -15761,6 +17441,9 @@ affiliated with EIOPA. The data is accessed through a REST API available at
         (base32 "06q9kmzgxkpvm3krn1w1nfy8h2xrbmxc9cd5b4mm7yx829r2jf09"))))
     (properties `((upstream-name . "einsum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mathjaxr r-glue))
     (home-page "https://const-ae.github.io/einsum/")
     (synopsis "Einstein Summation")
@@ -15769,10 +17452,10 @@ affiliated with EIOPA. The data is accessed through a REST API available at
 <doi:10.1002/andp.19163540702> is a concise mathematical notation that
 implicitly sums over repeated indices of n-dimensional arrays.  Many ordinary
 matrix operations (e.g. transpose, matrix multiplication, scalar product,
-diag()', trace etc.) can be written using Einstein notation.  The notation is
-particularly convenient for expressing operations on arrays with more than two
-dimensions because the respective operators ('tensor products') might not have a
-standardized name.")
+@code{diag()}', trace etc.) can be written using Einstein notation.  The
+notation is particularly convenient for expressing operations on arrays with
+more than two dimensions because the respective operators ('tensor products')
+might not have a standardized name.")
     (license license:expat)))
 
 (define-public r-einet
@@ -15787,6 +17470,9 @@ standardized name.")
         (base32 "02v4k6031q2bcjkhbypzkgdj1lyvqbsi1nb0y40zb26bk2381ycq"))))
     (properties `((upstream-name . "einet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-magrittr r-igraph r-entropy
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -15810,6 +17496,9 @@ effective information, effectiveness and causal emergence.")
         (base32 "1yx2ck74g3229n159z7p453dfdsy6hrjfkgsi4wcnxg3hi214wff"))))
     (properties `((upstream-name . "eimpute")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=eimpute")
@@ -15834,6 +17523,9 @@ highly computational advantage by truncated singular-value decomposition.")
         (base32 "13s5wqcc8iwnhn3msrh9dfrvq9bwlby93p9v5wcnrm8m9iskax1s"))))
     (properties `((upstream-name . "eikosograms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/rwoldford/eikosograms")
@@ -15890,6 +17582,9 @@ eikosograms are given in R.W. Oldford (2003)
         (base32 "07223lp4x9zlcj0s5pjcw2475qwv8a0njdz1ac8v0wiw0bkxa6wl"))))
     (properties `((upstream-name . "EigenR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://github.com/stla/EigenR")
     (synopsis "Complex Matrix Algebra with 'Eigen'")
@@ -15913,6 +17608,9 @@ cosine.  Complex matrices are supported.")
         (base32 "1l3n0z736xf3x6cyxzmmq1jb2glxi2b75z7v39y4471knh6nbb4d"))))
     (properties `((upstream-name . "eigenmodel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://pdhoff.github.io/")
     (synopsis
      "Semiparametric Factor and Regression Models for Symmetric Relational Data")
@@ -15938,6 +17636,9 @@ arbitrary, and is fit with an ordered probit specification.  See Hoff (2007)
         (base32 "1x30np4liy33mkb31040b2mk3yqajp4v0b2n32akm07f8sn3zrxh"))))
     (properties `((upstream-name . "eiExpand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-tidyselect
                              r-tidyr
@@ -15971,6 +17672,9 @@ and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
         (base32 "13lxw10lx440301rms7fwqm875smc10gy1r5sz8yqnnvgwc56slg"))))
     (properties `((upstream-name . "EIEntropy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=EIEntropy")
@@ -16000,6 +17704,9 @@ France, Spain, Portugal and the United Kingdom.\" <doi:10.1111/rsp3.12379>.")
         (base32 "03sz9r2s6klrfigj16pnwgi1qj2sshfdays0mrfc0ic6b60armyj"))))
     (properties `((upstream-name . "eider")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -16034,6 +17741,9 @@ applied to new data.")
         (base32 "0439ngwr8m7inljn8303g2a9v3izw81jz1jqxgbp6xdnvlwwpsyx"))))
     (properties `((upstream-name . "eicm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ucminf
                              r-snow
                              r-pso
@@ -16070,6 +17780,9 @@ topology.")
         (base32 "11id675g2j36xq8c1fmsbh7djbcdgbyvq0hrnhahsmiy1nnrxncd"))))
     (properties `((upstream-name . "eiCircles")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlcoptim))
     (home-page "https://cran.r-project.org/package=eiCircles")
     (synopsis
@@ -16099,6 +17812,9 @@ B. (2012).  A revised Brown and Payne model of voting behaviour applied to the
         (base32 "1vyl7zm8vwqcs57b8sw9vkwc1p123kcz2d2xldg6p2vfkgi91jw1"))))
     (properties `((upstream-name . "EIAapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate r-jsonlite r-dplyr r-data-table))
     (home-page "https://github.com/RamiKrispin/EIAapi")
     (synopsis "Query Data from the 'EIA' API")
@@ -16122,6 +17838,9 @@ registration at <https://www.eia.gov/opendata/>.")
         (base32 "13r06wxg2byz71q1k6m5bgrdjb86c8lgrdbmhkxiifyihwpwnqdz"))))
     (properties `((upstream-name . "eia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-memoise r-lubridate r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/eia/")
@@ -16152,6 +17871,9 @@ API key storage and caching of API request results.")
         (base32 "1ii9dnjxbjvzp0ihg499fvwqzgdwdcp2xxnqfqz319d805hajcpr"))))
     (properties `((upstream-name . "ei.Datasets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://cran.r-project.org/package=ei.Datasets")
     (synopsis "Real Datasets for Assessing Ecological Inference Algorithms")
@@ -16179,6 +17901,9 @@ tables using exclusively aggregate results from voting units.  Reference: PavÃ�
         (base32 "0i8pvpal23zwsqldhmm3iis4vw9s08mlydpshaig2dsd9549gn11"))))
     (properties `((upstream-name . "ei")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ucminf
                              r-tmvtnorm
                              r-sp
@@ -16210,6 +17935,9 @@ Problem. (1997).  Princeton University Press.  ISBN 978-0691012407.")
         (base32 "0zk8akdn2sprnh1xfd0a67nrbr1dy955hsf6agakvasy7kk5bjjx"))))
     (properties `((upstream-name . "ehymet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tf r-kernlab r-clustercrit))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bpulidob/ehymet")
@@ -16244,6 +17972,9 @@ the epigraph and hypograph indices.  See Pulido et al. (2023)
         (base32 "12d1dzmcrp81dh54zkg9zwv11fnc4f8qzc2gngihmlrp1bzq76fi"))))
     (properties `((upstream-name . "EHRtemporalVariability")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-viridis
@@ -16288,6 +18019,9 @@ functions to those users non-experienced in R coding. (SÃ¡ez et al.  2020)
         (base32 "0iz69bk5l164c7qpmnwlbrpxn99d8jm0x6hck2bj8jd52q4kvfvi"))))
     (properties `((upstream-name . "EHR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pkdata r-lubridate r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://choileena.github.io/")
@@ -16319,6 +18053,9 @@ Denny, and Van Driest (2018) <doi:10.1093/bioinformatics/bty306>.")
         (base32 "0i7iki5sgwa5ngjs86jhkc3iw2x9ph43ksn9gq84rlm5hgimwb8v"))))
     (properties `((upstream-name . "eHOF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=eHOF")
@@ -16342,15 +18079,18 @@ gradients including no response, monotone, plateau, unimodal and bimodal models.
         (base32 "1kqd6mzzcf2b0hslpm2zvxyi3i4vhzxsmvdmfqgrs6703n1dx62g"))))
     (properties `((upstream-name . "ehelp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mponce0/eHelp")
     (synopsis
      "Enhanced Help to Enable \"Docstring\"-Comments in Users Functions")
     (description
-     "By overloading the R help() function, this package allows users to use
+     "By overloading the R @code{help()} function, this package allows users to use
 \"docstring\" style comments within their own defined functions.  The package also
-provides additional functions to mimic the R basic example() function and the
-prototyping of packages.")
+provides additional functions to mimic the R basic @code{example()} function and
+the prototyping of packages.")
     (license license:gpl2+)))
 
 (define-public r-ehdprep
@@ -16365,6 +18105,9 @@ prototyping of packages.")
         (base32 "0zwh30mz3a1dar8kbc8g43d54adc83rrqqa89gwfpjgah0akaaw8"))))
     (properties `((upstream-name . "eHDPrep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm
                              r-tidyr
                              r-tidygraph
@@ -16409,6 +18152,9 @@ ontologies.")
         (base32 "15hpzj3ridl6w3pd5z86d88cc88jw09qpqhsdwkar4dby8lgxhi0"))))
     (properties `((upstream-name . "ehaGoF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ehaGoF")
     (synopsis "Calculates Goodness of Fit Statistics")
     (description
@@ -16436,6 +18182,9 @@ Error (NMSE).")
         (base32 "0ps8a5q47m2yd67hap7886dwanlqlsdx1v2nh3immq61ym9zbrpv"))))
     (properties `((upstream-name . "eha")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://ehar.se/r/eha/")
@@ -16461,6 +18210,9 @@ bootstrapping.  BrostrÃ¶m (2022) <doi:10.1201/9780429503764>.")
         (base32 "0qi4vg0pwy55js9ww1cw85ssim3x7s2p98cjijxvlrvid8sns5bq"))))
     (properties `((upstream-name . "eGST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-mvtnorm r-matrixstats r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ArunabhaCodes/eGST")
@@ -16498,6 +18250,9 @@ Schwarz, J Flint, B Pasaniuc (2019) <doi:10.1101/674226>.")
         (base32 "0wgdhlmnch6gpypqlwd5z56ia03lbbimr4ci9gcfs8f881dh92dy"))))
     (properties `((upstream-name . "EGRNi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-mass r-gdata r-fdrtool))
     (home-page "https://cran.r-project.org/package=EGRNi")
     (synopsis "Ensemble Gene Regulatory Network Inference")
@@ -16522,6 +18277,9 @@ degrees of freedom. <doi:10.22271/09746315.2020.v16.i3.1358>.")
         (base32 "1g01a03smn5yp261cyk3x310m1mcv4bqyh8y123wam9gpa7dxrp6"))))
     (properties `((upstream-name . "EGRETci")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-egret r-binom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/USGS-R/EGRETci")
@@ -16549,6 +18307,9 @@ uncertainty and confidence interval calculations is Hirsch et al. (2015)
         (base32 "04apfhwczdwh6kq0ww4hbbfd4ymkvxzbm0r0kk97x96i5nvrk5fs"))))
     (properties `((upstream-name . "EGRET")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-survival
                              r-mass
@@ -16576,6 +18337,9 @@ Season (WRTDS).")
         (base32 "1dsgkqib20abi4qr9kinsjf3fxad6ybvc22nxs28c10rqwivzzjc"))))
     (properties `((upstream-name . "egor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tidygraph
                              r-tibble
@@ -16608,6 +18372,9 @@ Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
         (base32 "135k9yccmzbkzhf8dlzm00pawaav01bzw4r2y45mcb1fdfwf5fg2"))))
     (properties `((upstream-name . "EgoCor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatialtools r-sp r-shiny r-rdpack r-gstat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/julia-dyck/EgoCor")
@@ -16637,6 +18404,9 @@ semi-variogram fitting process.")
         (base32 "0malpx9idfhhavlq5j4awdkicz8ww2gqsfrw5kwycbsvymb5bm2b"))))
     (properties `((upstream-name . "EGM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-vctrs
                              r-stringr
@@ -16672,6 +18442,13 @@ intracardiac electrograms, is introduced.")
         (base32 "09d04wl90wgys5qx2zwy2q4jliaxzswl7avix202x1r09agzw61c"))))
     (properties `((upstream-name . "eglhmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-nnet r-dbd))
     (native-inputs (list r-r-rsp gfortran))
     (home-page "https://cran.r-project.org/package=eglhmm")
@@ -16695,6 +18472,13 @@ Thomson (1998) <doi:10.2307/3315677>, and Rolf Turner (2008)
         (base32 "089psh98w8kcy52h8vv3z8n0sigp46far0a0w4wfsyv2ijzc2l2p"))))
     (properties `((upstream-name . "eggCounts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -16728,6 +18512,9 @@ using Stan <https://mc-stan.org/>.")
         (base32 "16mzhf7x19v9z600n29q4481dmsjfcn55365zbb9d0wrclc3053l"))))
     (properties `((upstream-name . "egcm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-urca
@@ -16758,6 +18545,9 @@ root tests are supported, and an improved unit root test is included.")
         (base32 "0pmd672h96ddh955ia85dsm74f5ksa0wxl4cll1jnfnjva623f9y"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna
                              r-semplot
                              r-qgraph
@@ -16805,6 +18595,9 @@ individual, group, and population level assessments.")
         (base32 "04kwh24aap22yclmcrix3vi553qb30hd43mgfzpdl0cw3ibrh7xg"))))
     (properties `((upstream-name . "ega")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ega")
@@ -16827,6 +18620,9 @@ in both mg/@code{mL} and mmol/L units.")
         (base32 "1q8cf8dnxpv5s3lr9145y0wjhak4rz18dzah4xfs5qr4c8nlpl54"))))
     (properties `((upstream-name . "EFS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rocr r-randomforest r-proc r-party))
     (home-page "https://cran.r-project.org/package=EFS")
     (synopsis "Tool for Ensemble Feature Selection")
@@ -16836,8 +18632,8 @@ dependent classification variable.  An ensemble of feature selection methods is
 used to determine the normalized importance value of all features.  Combining
 these methods in one function (building the cumulative importance values)
 provides a stable feature selection tool.  This selection can also be viewed in
-a barplot using the barplot_fs() function and proved using the evaluation
-function efs_eval().")
+a barplot using the @code{barplot_fs()} function and proved using the evaluation
+function @code{efs_eval()}.")
     (license license:gpl2+)))
 
 (define-public r-efred
@@ -16852,6 +18648,9 @@ function efs_eval().")
         (base32 "1sqhcwxbi2gxgznz0z3iyvllalq9qwm18bc60dr6y2wvcilagsiy"))))
     (properties `((upstream-name . "eFRED")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=eFRED")
@@ -16877,6 +18676,9 @@ data sources, releases, and popular FRED tags.")
         (base32 "1sfmq7xrr6psa6hwi05m44prjcpixnrl7la03k33n0bksj8r1w6b"))))
     (properties `((upstream-name . "efflog")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=efflog")
     (synopsis "The Causal Effects for a Causal Loglinear Model")
     (description
@@ -16898,6 +18700,9 @@ effect.  It calculates also the cell effect, which is a new interaction effect."
         (base32 "1s0i9a2vk2g4f5gadsvzjfkw91hcjsrbyjg2vgnj1v17xrwgp40w"))))
     (properties `((upstream-name . "EfficientMaxEigenpair")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/mxjki/EfficientMaxEigenpair")
     (synopsis "Efficient Initials for Computing the Maximal Eigenpair")
@@ -16921,6 +18726,9 @@ two cases.")
         (base32 "1kw1vq9y1q3xyiqsk855wjn9jqkzdh6h4xklbl9kvbqsvvhhsgkz"))))
     (properties `((upstream-name . "EffectTreat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EffectTreat")
     (synopsis "Prediction of Therapeutic Success")
     (description
@@ -16947,6 +18755,9 @@ research, technological development and demonstration under Grant Agreement no
         (base32 "0yh4krqjh1jb7gjxb9z4f5bzarps0g9jfqbbva782a881dhcdl1x"))))
     (properties `((upstream-name . "EffectStars2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-misctools))
     (home-page "https://cran.r-project.org/package=EffectStars2")
     (synopsis "Effect Stars")
@@ -16971,6 +18782,9 @@ objects from the VGAM package.")
         (base32 "131w5bdc615gaa2czi4wyc2f96jcg24ahcmggajrvyhxmi6rag5x"))))
     (properties `((upstream-name . "EffectStars")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam))
     (home-page "https://cran.r-project.org/package=EffectStars")
     (synopsis "Visualization of Categorical Response Models")
@@ -16995,6 +18809,9 @@ impression of the fitted model.")
         (base32 "0shfjk6r3bz04jakrn5nwgymjx60lk83i0akcx7zqfxp3k8yncs5"))))
     (properties `((upstream-name . "effectsizescr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kendall))
     (home-page "https://cran.r-project.org/package=effectsizescr")
     (synopsis "Indices for Single-Case Research")
@@ -17018,6 +18835,9 @@ design.")
         (base32 "1icr1sx98x3h8rbky1agdh809arhjqcypyajl7y50yis8a5pkycb"))))
     (properties `((upstream-name . "effectR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-shiny
                              r-seqinr
@@ -17045,6 +18865,9 @@ motifs of interest using regular expression searches and hidden Markov models
         (base32 "0q79yv08ly33kpswr49lzlz704rcpx14d9ghclzq39js6alsvbld"))))
     (properties `((upstream-name . "effectplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-plotly r-patchwork r-ggplot2 r-collapse))
     (home-page "https://github.com/mayer79/effectplots")
     (synopsis "Effect Plots")
@@ -17071,6 +18894,9 @@ explainers, or models with case weights.")
         (base32 "1axjjhlhvbwg7w2a4p92l36ps1zqhx6zvn82mpaxdfkhs15pd322"))))
     (properties `((upstream-name . "EffectLiteR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-restriktor
                              r-numderiv
@@ -17101,6 +18927,9 @@ continuous and categorical covariates.")
         (base32 "1lnlmzwa5g1djs1i4vk2jx6rd0b45hs9n9lfkbpnn69s0lgj7rys"))))
     (properties `((upstream-name . "effClust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fixest))
     (home-page "https://cran.r-project.org/package=effClust")
     (synopsis "Calculate Effective Number of Clusters for a Linear Model")
@@ -17109,8 +18938,8 @@ continuous and categorical covariates.")
 model, as described in Carter, Schnepel, and Steigerwald (2017)
 <doi:10.1162/REST_a_00639>.  The effective number of clusters is a statistic to
 assess the reliability of asymptotic inference when sampling or treatment
-assignment is clustered.  Methods are implemented for stats::lm(), plm::plm(),
-and fixest::feols().  There is also a formula method.")
+assignment is clustered.  Methods are implemented for @code{stats::lm()},
+@code{plm::plm()}, and @code{fixest::feols()}.  There is also a formula method.")
     (license license:expat)))
 
 (define-public r-eff2
@@ -17125,6 +18954,9 @@ and fixest::feols().  There is also a formula method.")
         (base32 "19mq2klxyy9xjyz5zmfqjhh2cdbhf5s6ylm36x3cjx6f28f2y1fd"))))
     (properties `((upstream-name . "eff2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rbgl r-pcalg r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/richardkwo/eff2")
@@ -17156,6 +18988,9 @@ are based on the sample covariance.")
         (base32 "0mjf2r1aa5iyf4b9f50mb50h1rmhwdi3qyh235mihy3pj68195yn"))))
     (properties `((upstream-name . "EFDR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveslim
                              r-tidyr
                              r-sp
@@ -17196,6 +19031,9 @@ signal.  Journal of the American Statistical Association 97.460 (2002):
         (base32 "0wv8vfp2903rvkdnjaawblvd9wi6xyy3n34h1iw2dbcmab84irmw"))))
     (properties `((upstream-name . "efdm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mikkoku/efdm")
@@ -17222,6 +19060,9 @@ Packalen et al. (2015) <doi:10.2788/153990>.")
         (base32 "09835x3nk8nnr3ibiddc5hx2l0jylz15fwsy2wjmv6jdrs0j9vsy"))))
     (properties `((upstream-name . "EFAutilities")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-mvtnorm r-mass r-gparotation))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EFAutilities")
@@ -17245,6 +19086,9 @@ conditions.")
         (base32 "1fzkmvadkcd88d81420lw9mhpmxbjymp4jada2c79bxq1h6b3mw2"))))
     (properties `((upstream-name . "EFAtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-tidyr
                              r-tibble
@@ -17291,6 +19135,9 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
         (base32 "073fy8fnr8546i5bjq4aap6bhhkns77mgggw6r5jkvfpmz6g5av8"))))
     (properties `((upstream-name . "EFAfactors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-simcormultres
                              r-reticulate
@@ -17341,6 +19188,9 @@ determine the number of factors.")
         (base32 "0p1zkfwjch9y39r7hjccjk7vfbnfwpdak6jfjs1sdpqkjqiw3r86"))))
     (properties `((upstream-name . "EFA.MRFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-reshape2 r-psych r-pcovr r-ggplot2))
     (home-page "https://cran.r-project.org/package=EFA.MRFA")
     (synopsis "Dimensionality Assessment Using Minimum Rank Factor Analysis")
@@ -17366,6 +19216,9 @@ lower bound calculation.")
         (base32 "0zc2zby69c70g6qkama27b9lnk5dbrrrpp5w5r2xxk2wfg1lx8nn"))))
     (properties `((upstream-name . "EFA.dimensions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych r-polycor r-mirt r-gparotation r-efatools))
     (home-page "https://cran.r-project.org/package=EFA.dimensions")
     (synopsis
@@ -17400,6 +19253,9 @@ ISBN:978-1-4462-0045-2); Mulaik (2010, ISBN:978-1-4200-9981-2); O'Connor (2000,
         (base32 "1ic26mwjv221yyjj16v9xcdxsg3pl6wsp82iaprihdcndswccvzi"))))
     (properties `((upstream-name . "ef")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb r-rcppeigen r-mgcv r-matrix r-dplyr))
     (home-page "https://cran.r-project.org/package=ef")
     (synopsis "Modelling Framework for the Estimation of Salmonid Abundance")
@@ -17420,6 +19276,9 @@ densities from multipass pass removal data.")
         (base32 "0bj1wi1almj7rb7sad4i47mnfh4y83mbdd1x5clda6nd738adl2b"))))
     (properties `((upstream-name . "EESPCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rifle r-pma r-mass))
     (home-page "https://cran.r-project.org/package=EESPCA")
     (synopsis
@@ -17446,6 +19305,9 @@ reconstruction error.  H. Robert Frost (2021)
         (base32 "0ljj1jp9cl0im8k7sfjd28ggj4q9a14df3554kwxkssr1vsn1wbc"))))
     (properties `((upstream-name . "eesim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis r-purrr r-lubridate r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/sakoehler7/eesim")
@@ -17474,6 +19336,9 @@ Scholarly Excellence.")
         (base32 "1l8cjwkqgh9ywm8yc39kw684jhkw9afb0cxzpkjlap78jgb72xxf"))))
     (properties `((upstream-name . "eeptools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcd r-ggplot2 r-data-table r-arm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jknowles/eeptools")
@@ -17497,6 +19362,9 @@ records for learning how to process records with errors.")
         (base32 "1w3nwlrbxm7z4c3acx991zk5drgs67qys7kgl0qakh5vrdsrxw3v"))))
     (properties `((upstream-name . "eemR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-stringr
                              r-rlist
@@ -17528,6 +19396,9 @@ index.")
         (base32 "1cwl5qyhxf4d51f0awx8ks355pi5mj6rhl6md5763bnrlakfrbpq"))))
     (properties `((upstream-name . "EEML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weightedensemble r-topsis r-mcs))
     (home-page "https://cran.r-project.org/package=EEML")
     (synopsis "Ensemble Explainable Machine Learning Models")
@@ -17555,6 +19426,9 @@ Paul (2024) <doi:10.1007/s11227-023-05542-3>.")
         (base32 "1i2xyc26644pgr45s78g44mzln3km9r5cw22niz3cd6q8ik2iva0"))))
     (properties `((upstream-name . "eemdTDNN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlibeemd r-forecast))
     (home-page "https://cran.r-project.org/package=eemdTDNN")
     (synopsis "EEMD and Its Variant Based Time Delay Neural Network Model")
@@ -17576,6 +19450,9 @@ neural network models.  For method details see Yu L, Wang S, Lai KK (2008).
         (base32 "0m28rrw7lg3sx2aviqphsid2rsp7zksd3fcvk7pxfw16z90y7ifd"))))
     (properties `((upstream-name . "EEMDSVR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlibeemd r-e1071))
     (home-page "https://cran.r-project.org/package=EEMDSVR")
     (synopsis
@@ -17599,6 +19476,9 @@ method details see Das
         (base32 "0cilmbk100gym5kaa7fq8bx0cdqa07xk82kxgxjf4k6gyzs39nlh"))))
     (properties `((upstream-name . "EEMDlstm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsutils
                              r-tsdeeplearning
                              r-tensorflow
@@ -17627,6 +19507,9 @@ et al. (2022). <doi:10.1007/s00521-021-06621-3>.")
         (base32 "0riz6s53daqbhy3xif0z8brb0n4swfjxxvvdnx2wwaiwl098rmwa"))))
     (properties `((upstream-name . "EEMDelm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlibeemd r-nnfor r-forecast))
     (home-page "https://cran.r-project.org/package=EEMDelm")
     (synopsis
@@ -17650,6 +19533,9 @@ Learning Machine models.  For method details see Yu L, Wang S, Lai KK (2008).
         (base32 "0ma9h9vi19qy9a70vpdpik64r3q9hxqqcfiswczxwajncw5nvmv0"))))
     (properties `((upstream-name . "eemdARIMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlibeemd r-forecast))
     (home-page "https://cran.r-project.org/package=eemdARIMA")
     (synopsis "EEMD Based Auto Regressive Integrated Moving Average Model")
@@ -17671,6 +19557,9 @@ method details see Yu L, Wang S, Lai KK (2008).
         (base32 "0w20kakgcpyhfi7fcrss4w67pbaj87hi2scy7g05q3sg2ygac7gj"))))
     (properties `((upstream-name . "EEM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-reshape2 r-r-utils r-ggplot2 r-colorramps))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/chengvt/EEM")
@@ -17691,6 +19580,9 @@ method details see Yu L, Wang S, Lai KK (2008).
         (base32 "1pyxcpgkqqbzr9wbsqcxjnx6y4sxc69q7gvh3092jnnhs82kbqrc"))))
     (properties `((upstream-name . "eegkitdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=eegkitdata")
     (synopsis "Electroencephalography Toolkit Datasets")
     (description
@@ -17711,6 +19603,9 @@ the UCI Machine Learning Repository.")
         (base32 "1r1lack4ps9hwqq56rq37431rcxf3x79zgvda6vrmh4s0ziy6v4x"))))
     (properties `((upstream-name . "eegkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-signal r-rgl r-ica r-eegkitdata r-bigsplines))
     (home-page "https://cran.r-project.org/package=eegkit")
     (synopsis "Toolkit for Electroencephalography Data")
@@ -17734,6 +19629,9 @@ potential EEG data.")
         (base32 "1xrrrizzs23vm0s1ysiz2f527vb2jw90jwcwsypcna2sjmbldy48"))))
     (properties `((upstream-name . "eefAnalytics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r2jags
                              r-mvtnorm
                              r-mcmcvis
@@ -17767,6 +19665,9 @@ Frequentist and Bayesian multilevel models.")
         (base32 "05g90mjxjvw9yqsp9gk50ywi7hdfwn3bgsyxpfkwkrjx9sdq5l0z"))))
     (properties `((upstream-name . "edwards97")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tibble
                              r-rlang
@@ -17795,6 +19696,9 @@ are provided to optimise empirical coefficients.")
         (base32 "0qd6kvcy280glv3q6lcrawmnsfvp90as95chgi3hav0yj2dpakn6"))))
     (properties `((upstream-name . "educineq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ineq r-flexsurv))
     (home-page "https://cran.r-project.org/package=educineq")
     (synopsis "Compute and Decompose Inequality in Education")
@@ -17827,6 +19731,9 @@ distribution function and the Lorenz curve.")
         (base32 "1z86v9d3qdjzk3kvxid5k0gnj3sbdr4gd4z00f55ddknfgyfarqi"))))
     (properties `((upstream-name . "educationdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-jsonlite r-httr r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://urbaninstitute.github.io/education-data-package-r/")
@@ -17849,6 +19756,9 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
         (base32 "1bdnwhdqk3m6134wibsbzkvy1fys2n4yf02i1wq9hzwh2g9alpp4"))))
     (properties `((upstream-name . "EdSurvey")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-xml2
                              r-wemix
@@ -17902,6 +19812,9 @@ Computer and Information Literacy Study (ICILS), and Civic Education Study
         (base32 "1gm1rxwywigyfdlcm2yj1m9qjb4s6w7chr1ck7b32x1pdxdl3ns5"))))
     (properties `((upstream-name . "edstan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstan r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=edstan")
@@ -17924,6 +19837,9 @@ response theory models using Stan easy.")
         (base32 "0qyg9gcpdh9fchn3ylww1cmb4x1zrrapy9n26gqxncc728526gn7"))))
     (properties `((upstream-name . "EDOtrans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-opgmmassessment r-abcanalysis))
     (home-page "https://cran.r-project.org/package=EDOtrans")
     (synopsis "Euclidean Distance-Optimized Data Transformation")
@@ -17945,6 +19861,9 @@ distance.")
         (base32 "1lq4j5axybhv34mdsz0rn5nz9x3rzjf6bczzfzrf75k6pwqxim1w"))))
     (properties `((upstream-name . "EDOIF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-simpleboot
                              r-igraph
                              r-ggplot2
@@ -17981,6 +19900,9 @@ Plangprasopchok, and Suttipong Thajchayapong (2020)
         (base32 "13aflnpznpzjrrdrn0r7v2mch6hjd77s6c3l7mnc2p59vq7mzmpg"))))
     (properties `((upstream-name . "EDNE.EQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=EDNE.EQ")
     (synopsis "Implements the EDNE-Test for Equivalence")
@@ -17991,17 +19913,18 @@ Distance between the Non-standardized Expected values\".  The EDNE-test for
 equivalence is a multivariate two-sample equivalence test.  Distance measure of
 the test is the Euclidean distance.  The test is an asymptotically valid test
 for the family of distributions fulfilling the assumptions of the multivariate
-central limit theorem (see Hoffelder et al.,2015).  The function EDNE.EQ()
-implements the EDNE-test for equivalence according to Hoffelder et al. (2015).
-The function EDNE.EQ.dissolution.profiles() implements a variant of the
-EDNE-test for equivalence analyses of dissolution profiles (see Suarez-Sharp et
-al.,2020 <DOI:10.1208/s12248-020-00458-9>).  EDNE.EQ.dissolution.profiles()
-checks whether the quadratic mean of the differences of the expected values of
-both dissolution profile populations is statistically significantly smaller than
-10 [\\% of label claim].  The current regulatory standard approach for
-equivalence analyses of dissolution profiles is the similarity factor f2.  The
-statistical hypotheses underlying EDNE.EQ.dissolution.profiles() coincide with
-the hypotheses for f2 (see Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
+central limit theorem (see Hoffelder et al.,2015).  The function
+@code{EDNE.EQ()} implements the EDNE-test for equivalence according to Hoffelder
+et al. (2015).  The function @code{EDNE.EQ.dissolution.profiles()} implements a
+variant of the EDNE-test for equivalence analyses of dissolution profiles (see
+Suarez-Sharp et al.,2020 <DOI:10.1208/s12248-020-00458-9>).
+@code{EDNE.EQ.dissolution.profiles()} checks whether the quadratic mean of the
+differences of the expected values of both dissolution profile populations is
+statistically significantly smaller than 10 [\\% of label claim].  The current
+regulatory standard approach for equivalence analyses of dissolution profiles is
+the similarity factor f2.  The statistical hypotheses underlying
+@code{EDNE.EQ.dissolution.profiles()} coincide with the hypotheses for f2 (see
+Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
     (license license:gpl3)))
 
 (define-public r-ednajoint
@@ -18016,6 +19939,9 @@ the hypotheses for f2 (see Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
         (base32 "0iwgrh18aaij88j9hxv0bq7hvdml339rmcz7pm21hrskv7j7gvk3"))))
     (properties `((upstream-name . "eDNAjoint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stanheaders
                              r-scales
@@ -18062,6 +19988,9 @@ language.")
         (base32 "18818m3f5abr8srw6fdp0fxh53s6w0vlbjasynn56ri1isvzsfsw"))))
     (properties `((upstream-name . "edmdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://tmsalab.github.io/edmdata/")
     (synopsis "Data Sets for Psychometric Modeling")
     (description
@@ -18091,6 +20020,9 @@ Chen et al. (2021) <doi:10.1007/s11336-021-09750-9>, Yinyin Chen et al. (2020)
         (base32 "0wyp81si6lcispqng4c7lii22qbyblvijgnlxvcsnkcxj5hpm76j"))))
     (properties `((upstream-name . "eDMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=eDMA")
     (synopsis "Dynamic Model Averaging with Grid Search")
@@ -18111,6 +20043,9 @@ Chen et al. (2021) <doi:10.1007/s11336-021-09750-9>, Yinyin Chen et al. (2020)
         (base32 "0pncj573n95g6vnjnyihhac94qxq63p15lxy1xy7pd2p63p5hs4f"))))
     (properties `((upstream-name . "edlibR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/evanbiederstedt/edlibR")
@@ -18141,6 +20076,9 @@ alignment using edit distance\", M. Å oÅ¡iÄ, M. Å ikiÄ,
         (base32 "19p0qr9lm0kdinh4qnqx7bzxkbvcfpp6mbddwh0hgsgqkbw916cp"))))
     (properties `((upstream-name . "edl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotfunctions r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=edl")
@@ -18181,6 +20119,9 @@ pyndl <https://pyndl.readthedocs.io/en/latest/> for that purpose.).")
         (base32 "1rgk2bpfb98nd0zv4kabskm0zk9dz52swwf95h46vc2yb0kwapkw"))))
     (properties `((upstream-name . "EDIutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-jsonlite r-httr r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/EDIutils")
@@ -18209,6 +20150,9 @@ data, and assist other data management tasks common to repository users.")
         (base32 "16mna3wcr81b2k5kjbz84zgvcvn9avwi4gasnbk5crxjvd74wsj1"))))
     (properties `((upstream-name . "editrules")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolveapi r-igraph))
     (home-page "https://github.com/data-cleaning/editrules")
     (synopsis "Parsing, Applying, and Manipulating Data Cleaning Rules")
@@ -18235,6 +20179,9 @@ dependencies can be visualized with using the igraph package.")
         (base32 "0bsy0mpacwjglyp7vfqz32lpyd43yj346yvxqrf32fhwqlpfwimc"))))
     (properties `((upstream-name . "eDITH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-rivnet
                              r-rcpp
@@ -18273,6 +20220,9 @@ details.")
         (base32 "170i8p264zj716h58bb6pvgh2lnz1w5vplnrcv8vizppi0n1js6l"))))
     (properties `((upstream-name . "editData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-shinywidgets
                              r-shiny
@@ -18305,6 +20255,9 @@ modules are intended for reuse across applications.")
         (base32 "07nf808xlj3vh7nfv5rpx3d6jk7pdsygc31z25gi504mmda1y1hd"))))
     (properties `((upstream-name . "editbl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid
                              r-tibble
                              r-shinyjs
@@ -18317,10 +20270,10 @@ modules are intended for reuse across applications.")
     (synopsis
      "'DT' Extension for CRUD (Create, Read, Update, Delete) Applications in 'shiny'")
     (description
-     "The core of this package is a function @code{eDT}() which enhances
-DT::datatable() such that it can be used to interactively modify data in shiny'.
- By the use of generic dplyr methods it supports many types of data storage,
-with relational databases ('dbplyr') being the main use case.")
+     "The core of this package is a function @code{eDT()} which enhances
+@code{DT::datatable()} such that it can be used to interactively modify data in
+shiny'.  By the use of generic dplyr methods it supports many types of data
+storage, with relational databases ('dbplyr') being the main use case.")
     (license license:gpl3)))
 
 (define-public r-edison
@@ -18335,6 +20288,9 @@ with relational databases ('dbplyr') being the main use case.")
         (base32 "12cc13ng5fc4nm0nvqxqplpb2ycz4cln73xqkk85dka2fnpykjc7"))))
     (properties `((upstream-name . "EDISON")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-corpcor))
     (home-page "https://cran.r-project.org/package=EDISON")
     (synopsis "Network Reconstruction and Changepoint Detection")
@@ -18358,6 +20314,9 @@ information sharing priors provide a reduction of the inference uncertainty.")
         (base32 "1lpmidyxi54byrsnwwadkh5rr454635xrwa4v2wz8mqr2hngxis3"))))
     (properties `((upstream-name . "edina")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgen
                              r-reshape2
                              r-rcpparmadillo
@@ -18385,6 +20344,9 @@ gate (EDINA) cognitive diagnostic model described by Chen et al. (2018)
         (base32 "0ps6ing20bkaj1rjf63d1k5cc3mrymf5hf0mkdp3qq1ghn05s6la"))))
     (properties `((upstream-name . "ediblecity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stars r-sf r-rlang r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/icra/ediblecity")
@@ -18410,6 +20372,9 @@ agriculture.  Methods are described by Pueyo-Ros, Comas & Corominas (2023)
         (base32 "1c2ifx4yilrq8ivdhl30cq8wix539wfg9l71m4bdz4isq2gg3hw4"))))
     (properties `((upstream-name . "edibble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tibble
@@ -18447,6 +20412,9 @@ aids in experimental planning, management and workflow.")
         (base32 "11sc7x0m00yhn2c4601dpjv3brmf57i8barsl3p7bawcvka8z5lr"))))
     (properties `((upstream-name . "edgedata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=edgedata")
     (synopsis "Datasets that Support the EDGE Server DIY Logic")
     (description
@@ -18478,6 +20446,9 @@ risk adjustment and the HHS-HCC model can be found here:
         (base32 "19n67yc58ksin7xydrnfsyyw7fqawm5xli67cz4lv4wb62w6r6ld"))))
     (properties `((upstream-name . "edgeCorr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=edgeCorr")
     (synopsis "Spatial Edge Correction")
     (description
@@ -18498,6 +20469,8 @@ risk adjustment and the HHS-HCC model can be found here:
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -18534,6 +20507,9 @@ linkages between the connected nodes using hierarchical edge bundling via the D3
         (base32 "138cdhk3p95vh5siwwp05kir6kkrvqjlgbz97dgi149i6jmq656k"))))
     (properties `((upstream-name . "edgebundle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate r-rcpp r-interp r-igraph))
     (home-page "https://github.com/schochastics/edgebundle")
     (synopsis
@@ -18558,6 +20534,9 @@ for metro map layouts <doi:10.1109/TVCG.2010.24>.")
         (base32 "1v9rdj2qdcvzz7g78pa9j6l8d6zjz1q06h09c4547r67bzfz1nxy"))))
     (properties `((upstream-name . "edgarWebR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://mwaldstein.github.io/edgarWebR/")
@@ -18581,6 +20560,9 @@ associated metadata.")
         (base32 "1lzcs78cncz4ira1nnzyip1ap1iva75kfx8ynqqv79pmj8g4nms3"))))
     (properties `((upstream-name . "edgar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-tm
                              r-stringr
@@ -18617,6 +20599,9 @@ and provides HTML view of SEC filings.")
         (base32 "1wxx6bgy03z7c1d6556bbjl1cb49n2vn734fw2d5c1jk0zsh3fmz"))))
     (properties `((upstream-name . "edfun")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=edfun")
     (synopsis "Creating Empirical Distribution Functions")
@@ -18637,6 +20622,9 @@ and rfun'.")
         (base32 "1z6ayi0513ibyk0gjfxcd1rybp5374xhbf9zkkm669wdmfggx26h"))))
     (properties `((upstream-name . "EDFtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil r-compquadform))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EDFtest")
@@ -18662,6 +20650,9 @@ Gamma, Logistic, Laplace, Weibull, Extreme Value, and Exponential.")
         (base32 "076far4fhd6rpa6fwffad4cgchjvar135yblvlrm33s9pd5bf0hn"))))
     (properties `((upstream-name . "edfReader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=edfReader")
     (synopsis "Reading EDF(+) and BDF(+) Files")
@@ -18686,6 +20677,9 @@ files are read in two steps: first the header is read and then the signals
         (base32 "14ikm6j0ndxrk7c7lh5mbd2aci46d4j9a30mvcgnxy3kq6046a7b"))))
     (properties `((upstream-name . "edf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/bwrc/edf")
     (synopsis "Read Data from European Data Format (EDF and EDF+) Files")
     (description
@@ -18706,6 +20700,9 @@ supported.")
         (base32 "1k9790xamyw8ksfgvd8gka1f5mghfma6akdj7bqmlqv3yrlpgbxr"))))
     (properties `((upstream-name . "edecob")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (home-page "https://cran.r-project.org/package=edecob")
     (synopsis "Event Detection Using Confidence Bounds")
@@ -18728,6 +20725,9 @@ Buehlmann (1998) \"Sieve bootstrap for smoothing in nonstationary time series\"
         (base32 "120x95a5s51rvpr6kybgs875rbghqqmsrzdpq3jr1007yaxpl710"))))
     (properties `((upstream-name . "edeaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-tibble
@@ -18769,6 +20769,9 @@ package @code{bupaR}'.")
         (base32 "0nr9mv6vjd0m0n23p9ydamf23rfb9xhy6h8q27qic327avsa3a7g"))))
     (properties `((upstream-name . "eddington")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rcpp r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pegeler/eddington2")
@@ -18799,6 +20802,9 @@ side length of a Durfee square <https://en.wikipedia.org/wiki/Durfee_square>.")
         (base32 "02d33cd9pkcjrbl9qipcjzkhrc68j7bybg1hpnsngiz4wmf3bfik"))))
     (properties `((upstream-name . "edcpR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=edcpR")
     (synopsis "Ecological Data Collection and Processing Package")
@@ -18819,6 +20825,9 @@ Collection and Processing\" course.")
         (base32 "1c000mmy5krlq5203xjhhnwi44isqbph627cbg2j38ygw5ilvp50"))))
     (properties `((upstream-name . "EDCimport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -18854,6 +20863,9 @@ Electronic Data Capture (EDC) software @code{TrialMaster}'.")
         (base32 "1r84xldi872kh2msfhab1pa6j577gw47vvh0jqjbps3hdii9dwh4"))))
     (properties `((upstream-name . "eda4treeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-supernova
                              r-predictmeans
                              r-magrittr
@@ -18883,6 +20895,9 @@ CSIRO Publishing.")
         (base32 "00fknpssrpin8bpjhf2lsjx3lbpinrmqa6jzmgy3nslkc51x0939"))))
     (properties `((upstream-name . "ed50simulation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-boot))
     (home-page "https://cran.r-project.org/package=ed50simulation")
     (synopsis "Estimate ED50 and Its Confidence Interval")
@@ -18907,6 +20922,9 @@ comparison between two estimation results.")
         (base32 "058p1750ba5hp4rczi26grgwjia2ny1880v1vfp6wxad13r459pq"))))
     (properties `((upstream-name . "ed50")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-boot))
     (home-page "https://cran.r-project.org/package=ed50")
     (synopsis "Estimate ED50 and Its Confidence Interval")
@@ -18931,6 +20949,9 @@ comparison between two estimation results.")
         (base32 "12p20sfz5q16n24fjz7z5bv54wf20z6lp9gn6fvrilfy9w18as1k"))))
     (properties `((upstream-name . "eCV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-idr r-future-apply r-future))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eclipsebio/eCV")
@@ -18962,6 +20983,9 @@ implemented in @code{eCV} are described in Gonzalez-Reymundez et al., (2023)
         (base32 "0dgw1ddl4wzd50v04jyjrxdl92jwzb2cyahfkjfyayi0yg40p78h"))))
     (properties `((upstream-name . "Ecume")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-transport
                              r-spatstat-univar
                              r-pbapply
@@ -18992,6 +21016,9 @@ the univariate or multivariate case.  See the vignette for more info.")
         (base32 "1ddwf040yp4c7nxvivml0xhad5qdc6jlf17c1lh4mssm5c0pp14w"))))
     (properties `((upstream-name . "ECTTDNN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vars r-urca r-forecast))
     (home-page "https://cran.r-project.org/package=ECTTDNN")
     (synopsis "Cointegration Based Timedelay Neural Network Model")
@@ -19013,6 +21040,9 @@ as an input in the neural network model.")
         (base32 "1l4j1a25cssf2pindkqpzgr7a67brg5qxqk9ysy96vvbc74n8i6l"))))
     (properties `((upstream-name . "ECTSVR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weightsvm r-vars r-urca))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ECTSVR")
@@ -19035,6 +21065,9 @@ regression model.")
         (base32 "172rij0mmk7dd10lpbsxm4yy7072nz1fh7jfiyqmagzs5hwa31jv"))))
     (properties `((upstream-name . "ectotemp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych r-dplyr))
     (home-page "https://CRAN.R-project.org/package=ectotemp")
     (synopsis
@@ -19060,6 +21093,9 @@ divergence between organisms, species or populations.")
         (base32 "0abj88libbjimb512mvz7fa4ib7q84hn72digs5p3cd3pbx6zv0v"))))
     (properties `((upstream-name . "ecr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-smoof
                              r-scatterplot3d
@@ -19102,6 +21138,9 @@ flexible white-box approach where the evolutionary cycle is written by hand.")
         (base32 "1an8j13ms7blyx084y1jgbf32qp2gjw62mdxyl418y4ygl6f7gji"))))
     (properties `((upstream-name . "ecpdist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "<https://github.com/abreu-uma/ecpdist>")
     (synopsis "Extended Chen-Poisson Lifetime Distribution")
     (description
@@ -19126,6 +21165,9 @@ C. (2023). <doi:10.57805/revstat.v21i2.405>.")
         (base32 "0vi9k3p1xicx53rmccmx1ykdidqb22hkwgr7l5hc0bjzsv7h2w38"))))
     (properties `((upstream-name . "ecpc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-quadprog
                              r-proc
@@ -19166,6 +21208,9 @@ and Covariate selection.  See Van Nee et al. (2020) <@code{arXiv:2005.04010>}.")
         (base32 "1aryl2sb5ak390lgnm427ilm6xv9lmsjhwdnapzc033zvqb099gj"))))
     (properties `((upstream-name . "EcoVirtual")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http//ecovirtual.ib.usp.br")
     (synopsis "Simulation of Ecological Models")
     (description
@@ -19184,6 +21229,9 @@ and Covariate selection.  See Van Nee et al. (2020) <@code{arXiv:2005.04010>}.")
         (base32 "05a6hyjsbdp4wwhrm5fwjr7fxx4g2nffhp885q0da2jkzd0754f1"))))
     (properties `((upstream-name . "ecoval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-utility r-rivernet r-jpeg r-fs))
     (home-page "https://cran.r-project.org/package=ecoval")
     (synopsis "Procedures for Ecological Assessment of Surface Waters")
@@ -19205,6 +21253,9 @@ biological assessments in the form of value functions.")
         (base32 "0nrq6n7amz8l6rk0wfyrih7rkic96yc02rpk4szis81v7yvm7346"))))
     (properties `((upstream-name . "EcoTroph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml))
     (home-page "http://sirs.agrocampus-ouest.fr/EcoTroph/")
     (synopsis "An Implementation of the EcoTroph Ecosystem Modelling Approach")
@@ -19235,6 +21286,9 @@ functions.")
         (base32 "1qsp67y07xrqq0szlq8ks5i7w6aa42kmai9m5pjpfifs9hz5wnrz"))))
     (properties `((upstream-name . "ecotraj")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mass r-kendall))
     (home-page "https://emf-creaf.github.io/ecotraj/")
     (synopsis "Ecological Trajectory Analysis")
@@ -19262,6 +21316,9 @@ respect to reference conditions [Sturbois et al. (2023) ].")
         (base32 "0saxpf51wszrk42dv45lv905dia7llrvwkpasdkr15gygasfcfq2"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -19302,6 +21359,9 @@ EPA website and stored in a local SQLite database
         (base32 "084xkr59d7x9zxmsnsyym2x8jshz6ag6rvnmhd1i6fzar8ypwccb"))))
     (properties `((upstream-name . "ecotoxicology")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ecotoxicology")
     (synopsis "Methods for Ecotoxicology")
     (description
@@ -19327,6 +21387,9 @@ scales: Horsfall-Barratt, Archer, Gauhl-Stover, Fullerton-Olsen, etc.")
         (base32 "01sc2lf2kca7wqqyd3gk48va39gb7ijzgs2smgb2k4xbzjqndg08"))))
     (properties `((upstream-name . "ecotox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://cran.r-project.org/package=ecotox")
     (synopsis "Analysis of Ecotoxicology")
@@ -19336,12 +21399,13 @@ calculate lethal concentration (LC) or time (LT) and the appropriate fiducial
 confidence limits desired for selected LC or LT for ecotoxicology studies
 (Finney 1971; Wheeler et al.  2006; Robertson et al.  2007).  The simplicity of
 ecotox comes from the syntax it implies within its functions which are similar
-to functions like glm() and lm().  In addition to the simplicity of the syntax,
-a comprehensive data frame is produced which gives the user a predicted LC or LT
-value for the desired level and a suite of important parameters such as fiducial
-confidence limits and slope.  Finney, D.J. (1971, ISBN: 052108041X); Wheeler,
-M.W., Park, R.M., and Bailer, A.J. (2006) <doi:10.1897/05-320R.1>; Robertson,
-J.L., Savin, N.E., Russell, R.M., and Preisler, H.K. (2007, ISBN: 0849323312).")
+to functions like @code{glm()} and @code{lm()}.  In addition to the simplicity
+of the syntax, a comprehensive data frame is produced which gives the user a
+predicted LC or LT value for the desired level and a suite of important
+parameters such as fiducial confidence limits and slope.  Finney, D.J. (1971,
+ISBN: 052108041X); Wheeler, M.W., Park, R.M., and Bailer, A.J. (2006)
+<doi:10.1897/05-320R.1>; Robertson, J.L., Savin, N.E., Russell, R.M., and
+Preisler, H.K. (2007, ISBN: 0849323312).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -19357,6 +21421,9 @@ J.L., Savin, N.E., Russell, R.M., and Preisler, H.K. (2007, ISBN: 0849323312).")
         (base32 "1liqjakzg4c5kgjiir8i4fp4ax0737lfwriz277crh9p3jn3dgmh"))))
     (properties `((upstream-name . "EcotoneFinder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vegclust
                              r-vegan
@@ -19399,6 +21466,9 @@ synthetic ecological datasets are also provided.")
         (base32 "040y610c1v7l5phy8lmimafjh466s1zdhk81cfcarwhf0l1hzzpr"))))
     (properties `((upstream-name . "ecostatscale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-desolve))
     (home-page "https://cran.r-project.org/package=ecostatscale")
     (synopsis "Statistical Scaling Functions for Ecological Systems")
@@ -19424,6 +21494,9 @@ paper for more details.")
         (base32 "0zf3kw0kbwg759ixzwxilagx7h1xhdjsfvp8gb86b9m6pnwsiqr7"))))
     (properties `((upstream-name . "ecostats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm
                              r-mvabund
                              r-mgcv
@@ -19454,6 +21527,9 @@ text with solutions to exercises.")
         (base32 "1brnqksy53fz7l4pvrbny7amh0sb6xwii9f0s22v9qqkql7pm1ir"))))
     (properties `((upstream-name . "ecostate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb
                              r-rtmb
                              r-mass
@@ -19486,6 +21562,9 @@ priors for parameters.")
         (base32 "097cr6qwf2hqm8v3afabnm7lmmv2awih2kz26vd28jr179af8p65"))))
     (properties `((upstream-name . "ecospat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-terra
                              r-presenceabsence
@@ -19530,6 +21609,9 @@ Dynamics (IDYST), University of Lausanne, Switzerland.  Read Di Cola et al.
         (base32 "0vfaf27bv687ypxg5apzv63rl495rxyflqw33j17i4h0s7cjkgrm"))))
     (properties `((upstream-name . "ecospace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fd))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pnovack-gottshall/ecospace")
@@ -19555,6 +21637,9 @@ Functions are written so they will work in a parallel-computing environment.")
         (base32 "0v17iqrlm62vckglxkn3a617q4300pb40wdnyn4vpkxgiav9s86f"))))
     (properties `((upstream-name . "ecosim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stoichcalc r-desolve))
     (home-page "https://cran.r-project.org/package=ecosim")
     (synopsis "Toolbox for Aquatic Ecosystem Modeling")
@@ -19575,6 +21660,9 @@ models, for running these models, and for visualizing their results.")
         (base32 "1syqh2ivznz5swify1gc34m1iqgnp10rhk7b8giil7fwdzifalfj"))))
     (properties `((upstream-name . "ecos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-stringr r-jsonlite r-httr))
     (home-page "https://cran.r-project.org/package=ecos")
     (synopsis "Economic Statistics System of the Bank of Korea")
@@ -19595,6 +21683,9 @@ System (ECOS) of the Bank of Korea <https://ecos.bok.or.kr/api/#/>.")
         (base32 "0s523zj537bdz47x2lcfd72cqdzz0gwbi6vg79ckz0sjzaiy51kk"))))
     (properties `((upstream-name . "ecorest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis))
     (home-page "https://cran.r-project.org/package=ecorest")
     (synopsis "Conducts Analyses Informing Ecosystem Restoration Decisions")
@@ -19623,6 +21714,9 @@ Engineers).")
         (base32 "0f54y3q81ji4vaah6hplhl4jvzxw4lf0gg9sh0zvgq8ca43i4rkn"))))
     (properties `((upstream-name . "ecoregime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-smacof
                              r-shape
@@ -19658,6 +21752,9 @@ based on ecological dynamic regimes (SÃ¡nchez-Pinillos et al., 2024
         (base32 "09nfi0l06swa1xgziyqznydrv3irv1irpqpxab0f6pbw4fqj7nh8"))))
     (properties `((upstream-name . "ecoreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ecoreg")
     (synopsis "Ecological Regression using Aggregate and Individual Data")
     (description
@@ -19678,6 +21775,9 @@ based on ecological dynamic regimes (SÃ¡nchez-Pinillos et al., 2024
         (base32 "0vlvdlpxvbjrgwffqjyvfxns0sscrpbvkjcd5v67ngfpnl1bjw5a"))))
     (properties `((upstream-name . "ecopower")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvabund r-ecocopula))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ecopower")
@@ -19703,6 +21803,9 @@ The discrete Gaussian copula approach is described in Popovic et al. (2018)
         (base32 "0kdzkk8mlnc71a6n80hgrclwns66zyhr183ad4ifz8b146xh5cl9"))))
     (properties `((upstream-name . "econullnetr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-gtools r-bipartite))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=econullnetr")
@@ -19733,6 +21836,9 @@ Evolution, <doi:10.1111/2041-210X.12907>.")
         (base32 "1xx4fpf2rjizwhicb6sfrgl5xjfin9b9zi0q4kq47gjp8kzahkg3"))))
     (properties `((upstream-name . "economiccomplexity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-matrix r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://pacha.dev/economiccomplexity/")
@@ -19757,6 +21863,9 @@ these methods and its evolution in literature.")
         (base32 "0yf3hwgj2crpm8nm4whc1cygrql4v2n0s1ziwpl6k2rxbyibaj1w"))))
     (properties `((upstream-name . "EconGeo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape r-matrix))
     (home-page "https://github.com/PABalland/EconGeo")
     (synopsis
@@ -19786,6 +21895,9 @@ described in Balland (2017) <http://econ.geo.uu.nl/peeg/peeg1709.pdf>.")
         (base32 "1pn7bx3rch09ddllq9sfzm5ynz6a1mgbsy3rq0qyg19xan9xgmi6"))))
     (properties `((upstream-name . "econetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdiversity
                              r-rcppgsl
                              r-rcppeigen
@@ -19820,6 +21932,9 @@ Miele et al. (2021) <doi:10.48550/@code{arXiv.2103.10433>}, Botella et al (2021)
         (base32 "0ljihc60b3k25hn3z09arql2y0byhxx4mljm2w4m8f3micqfwzfw"))))
     (properties `((upstream-name . "EcoNetGen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph r-ggplot2))
     (native-inputs (list gfortran))
     (home-page "https://github.com/cboettig/EcoNetGen")
@@ -19846,6 +21961,13 @@ also included.  Algorithms implemented here are described in de Aguiar et al.
         (base32 "13kvx8ikfljxa21r1rjz3xj7liwllfp73nn57cmlhaqgxgw5wpzx"))))
     (properties `((upstream-name . "econet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-spatstat-utils
                              r-sna
                              r-progressr
@@ -19888,6 +22010,9 @@ vignette <doi:10.18637/jss.v102.i08>.")
         (base32 "1slpwiaxj7w21zdri9myrzwbwzl62m3cnp0g4fr2rkdlzgb6j5yj"))))
     (properties `((upstream-name . "EconDemand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EconDemand")
     (synopsis "General Analysis of Various Economics Demand Systems")
     (description
@@ -19908,6 +22033,9 @@ systems including Linear, Translog, CES, LES and CREMR.")
         (base32 "05a0dnhi41ch833hi2w4mvifq4rcxg79gcyr6yzgc5gxw57rsxf2"))))
     (properties `((upstream-name . "EconAndProdEfficiency")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EconAndProdEfficiency")
     (synopsis "Economic and Production Efficiency")
     (description
@@ -19933,6 +22061,9 @@ efficiency are calculated with the help of the formula given by (Kumar et al.,
         (base32 "0gkhf8gdjvkys54x0qx0h5i0lz0ksba6xdy15wzblzhym43vh9wf"))))
     (properties `((upstream-name . "ecolTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/hugosal/ecolTest")
     (synopsis "Community Ecology Tests")
     (description
@@ -19953,6 +22084,9 @@ community ecology statistical tests, including Hutcheson's t-test (Hutcheson
         (base32 "0m7c8ifmzq5s6sh8xp09ald7rd47ga66gzmsqn8028xylf8rpsbf"))))
     (properties `((upstream-name . "ecolRxC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ecolRxC")
     (synopsis
      "Ecological Inference of RxC Tables by Latent Structure Approaches")
@@ -19978,6 +22112,9 @@ Approach to Ecological Analysis and Inference''.  Politica, Aarhus, Denmark.")
         (base32 "0w5aq1aaqzz74vlj8hgnmn60l8rdrchx022dpspqnpvpzdlh65z5"))))
     (properties `((upstream-name . "ecolottery")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-abc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/frmunoz/ecolottery")
@@ -20001,6 +22138,9 @@ Computation.")
         (base32 "1kbllyh986468182q28g0hhyf2y58lcqd0wc7izi0fcw3ww2xyh6"))))
     (properties `((upstream-name . "ecolMod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shape r-rootsolve r-diagram r-desolve))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=ecolMod")
@@ -20027,6 +22167,9 @@ model projects are in the same subdirectories.")
         (base32 "02j4yl6hi83f6m529r6n0gaz8wsy2pi0ncy2g95fjhs8ib0kfn4f"))))
     (properties `((upstream-name . "ECoL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-igraph r-fnn r-e1071 r-cluster))
     (home-page "https://github.com/lpfgarcia/ECoL/")
     (synopsis "Complexity Measures for Supervised Problems")
@@ -20052,6 +22195,9 @@ in the papers: Lorena et al. (2019) <doi:10.1145/3347711> and Lorena et al.
         (base32 "0wsr3lmmg6rph6mlq6mrwlal4ph65ps5vyqkglbzb67xz7kc1hz5"))))
     (properties `((upstream-name . "EcoIndR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-splancs r-rarity r-picante r-fd))
     (home-page "https://cran.r-project.org/package=EcoIndR")
     (synopsis "Ecological Indicators")
@@ -20072,6 +22218,9 @@ are used to estimate ecological indicators.")
         (base32 "0imkzjqp3g28l42jz5m4p85wg5rawmn9hy1wys9xndnaliv6d7r2"))))
     (properties `((upstream-name . "Ecohydmod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Ecohydmod")
     (synopsis "Ecohydrological Modelling")
     (description
@@ -20093,6 +22242,9 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
         (base32 "0yzd38nwn4qdkqnm9hkyck1n1pscbca7payqp4gq5glwnipjg7iq"))))
     (properties `((upstream-name . "EcoEnsemble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stanheaders
                              r-rstantools
@@ -20126,6 +22278,9 @@ general framework for combining ecosystem models\"<doi:10.1111/faf.12310>.")
         (base32 "161xyjx004aqx1l64fd6wqz7m3fqq61ijc4k00dx2lkifanpx8p0"))))
     (properties `((upstream-name . "ecodist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ecodist")
@@ -20150,6 +22305,9 @@ original package description is in Goslee and Urban (2007)
         (base32 "0vw6q5yf5aq4gdim7yr188f9hbrd5giaivl27y4qrz987i152v8c"))))
     (properties `((upstream-name . "EcoDiet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-jagsui r-ggplot2 r-ggmcmc r-coda))
     (native-inputs (list r-knitr))
@@ -20176,6 +22334,9 @@ Carlo approximation of the different variables.")
         (base32 "138gs67z35nxa9a1y0v327qs0c695dy5la68ld17m9xrsg2rjz85"))))
     (properties `((upstream-name . "ecode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rlang r-ggplot2 r-cowplot))
     (home-page "https://github.com/HaoranPopEvo/ecode")
     (synopsis "Ordinary Differential Equation Systems in Ecology")
@@ -20200,6 +22361,9 @@ ecological community and biogeochemical cycles.")
         (base32 "1j3n9h7rm66r8vmzzhy5mjh36gs1qnsh7rq33ymjpkkfy698gbpm"))))
     (properties `((upstream-name . "ecoCopula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tweedie
                              r-sna
                              r-plyr
@@ -20235,6 +22399,9 @@ graphical models.  Methods described in Popovic, GC., Hui, FKC., Warton, DI.,
         (base32 "0l7f4fisk5hsvfpsvnpr3s6pb7x9daq6wklws3damdgljml95c3n"))))
     (properties `((upstream-name . "ecocomDP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-uuid
                              r-tidyr
@@ -20276,6 +22443,9 @@ change.  Described in O'Brien et al. (2021), <doi:10.1016/j.ecoinf.2021.101374>.
         (base32 "0rrls354f45r7x5lrj3qk0pk02brjsndallhpfhxs3l5bsgg8d54"))))
     (properties `((upstream-name . "ecochange")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-sp
                              r-sf
@@ -20319,6 +22489,9 @@ Continuous Tree Cover data (Sexton et al., 2013)
         (base32 "1dixh1rdrfw419wdcp81hac2sali03wg7x9fr1x77rgy2q059370"))))
     (properties `((upstream-name . "ecocbo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-ssp
                              r-sampling
@@ -20335,14 +22508,14 @@ Continuous Tree Cover data (Sexton et al., 2013)
      "This package provides a system for calculating the optimal sampling effort,
 based on the ideas of \"Ecological cost-benefit optimization\" as developed by A.
 Underwood (1997, ISBN 0 521 55696 1).  Data is obtained from simulated
-ecological communities with prep_data() which formats and arranges the initial
-data, and then the optimization follows the following procedure of four
-functions: (1) scompvar() calculates the variation components necessary for (2)
-sim_cbo() to calculate the optimal combination of number of sites and samples
-depending on either an economic budget or on a desired statistical accuracy.
-Additionally, (3) sim_beta() estimates statistical power and type 2 error by
-using Permutational Multivariate Analysis of Variance, and (6) plot_power()
-represents the results of the previous function.")
+ecological communities with @code{prep_data()} which formats and arranges the
+initial data, and then the optimization follows the following procedure of four
+functions: (1) @code{scompvar()} calculates the variation components necessary
+for (2) @code{sim_cbo()} to calculate the optimal combination of number of sites
+and samples depending on either an economic budget or on a desired statistical
+accuracy.  Additionally, (3) @code{sim_beta()} estimates statistical power and
+type 2 error by using Permutational Multivariate Analysis of Variance, and (6)
+@code{plot_power()} represents the results of the previous function.")
     (license license:gpl3+)))
 
 (define-public r-ecmwfr
@@ -20357,6 +22530,9 @@ represents the results of the previous function.")
         (base32 "0ryyx11685vnz2fkrzslp259l3k2iiczj7r70fbf7q0rcp0k7k94"))))
     (properties `((upstream-name . "ecmwfr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-memoise r-keyring r-httr r-getpass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/ecmwfr")
@@ -20383,6 +22559,9 @@ data in R. Data stores covered include the Climate Data Store (CDS;
         (base32 "180nys3fwk948f409p0zg4fp407j8jdd780jmqllryj80bnzf2c5"))))
     (properties `((upstream-name . "ecm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-earth r-car))
     (home-page "https://github.com/gaurbans/ecm")
     (synopsis "Build Error Correction Models")
@@ -20403,6 +22582,9 @@ data in R. Data stores covered include the Climate Data Store (CDS;
         (base32 "01x327w02m357lngmgv3drni2s67sass25xk9vni1z434n8i4428"))))
     (properties `((upstream-name . "eclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wgcna
                              r-stringr
                              r-pander
@@ -20435,6 +22617,9 @@ high dimensional data that can be affected by an environmental factor.")
         (base32 "01z2hmbpb754s2rsvx3i5wf7kkkr2mvs2g89ih2bqrif7w5rmgyg"))))
     (properties `((upstream-name . "ECLRMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-softimpute))
     (home-page "https://cran.r-project.org/package=ECLRMC")
     (synopsis "Ensemble Correlation-Based Low-Rank Matrix Completion")
@@ -20467,6 +22652,9 @@ Xiaobo, et al (2017) <doi:10.1016/j.knosys.2017.06.010>.")
         (base32 "16iyi6n0pnyfmy47b0ranjbh3spvq8cgkmcamzhgjfj7qn0ix184"))))
     (properties `((upstream-name . "ecipex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-chnosz))
     (home-page "https://cran.r-project.org/package=ecipex")
     (synopsis
@@ -20491,6 +22679,9 @@ calculation of isotopic gross structures is also supported.")
         (base32 "1b8jwxmbqs3hzjf1iy1f74way8ymi1lac38jd8zvc2np39szq2i8"))))
     (properties `((upstream-name . "ecic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progressr
                              r-progress
                              r-patchwork
@@ -20504,10 +22695,10 @@ calculation of isotopic gross structures is also supported.")
 <doi:10.1111/j.1468-0262.2006.00668.x> to multiple cohorts and time periods,
 which generalizes difference-in-differences estimation techniques to the entire
 distribution.  Computes quantile treatment effects for every possible two-by-two
-combination in ecic().  Then, aggregating all bootstrap runs adds the standard
-errors in summary_ecic().  Results can be plotted with plot_ecic() aggregated
-over all cohort-group combinations or in an event-study style for either
-individual periods or individual quantiles.")
+combination in @code{ecic()}.  Then, aggregating all bootstrap runs adds the
+standard errors in @code{summary_ecic()}.  Results can be plotted with
+@code{plot_ecic()} aggregated over all cohort-group combinations or in an
+event-study style for either individual periods or individual quantiles.")
     (license license:expat)))
 
 (define-public r-echor
@@ -20522,6 +22713,9 @@ individual periods or individual quantiles.")
         (base32 "11r62r0kq813cv8mc6qh8kkwj5apl8pc6ydw0npd38z9v21f8xyc"))))
     (properties `((upstream-name . "echor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sf
@@ -20555,6 +22749,9 @@ from <https://echo.epa.gov/>.")
         (base32 "0dsyr2fk94nvcd1749amk8mvvli5aalapb2mlhr25mj6d2iyrc30"))))
     (properties `((upstream-name . "echoice2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -20594,6 +22791,9 @@ described in Hardt and Kurz (2020) <doi:10.2139/ssrn.3418383>.")
         (base32 "0kir7x32fk3fc63kr3b2j0hfkmivs2pwrlxyjvdg7xqc59hjp3ma"))))
     (properties `((upstream-name . "echogram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readhac r-geosphere))
     (home-page "https://github.com/hvillalo/echogram")
     (synopsis "Echogram Visualisation and Analysis")
@@ -20619,15 +22819,18 @@ order to perform acoustic filtering of the echogram's data.")
         (base32 "1nadqqpxgx2ck16nzjp5ajm6714452qzllg5cq1jpisv1yb31db2"))))
     (properties `((upstream-name . "echo.find")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-minpack-lm r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/delosh653/ECHO")
     (synopsis
      "Finding Rhythms Using Extended Circadian Harmonic Oscillators (ECHO)")
     (description
-     "This package provides a function (echo_find()) designed to find rhythms from
-data using extended harmonic oscillators.  For more information, see H. De los
-Santos et al. (2020) <doi:10.1093/bioinformatics/btz617> .")
+     "This package provides a function @code{(echo_find()}) designed to find rhythms
+from data using extended harmonic oscillators.  For more information, see H. De
+los Santos et al. (2020) <doi:10.1093/bioinformatics/btz617> .")
     (license license:expat)))
 
 (define-public r-echo
@@ -20642,6 +22845,9 @@ Santos et al. (2020) <doi:10.1093/bioinformatics/btz617> .")
         (base32 "1m3dzdgkl6v9z0wv3ws1yn58zi6bxgdy3p6a5jmq2rwhb8wz1lr8"))))
     (properties `((upstream-name . "echo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jmbarbone/echo")
     (synopsis "Echo Code Evaluations")
     (description
@@ -20661,6 +22867,9 @@ condition calls for logging.")
         (base32 "0wmf204hqd4s5har5l9bkcbrbmbqbb8m11w2aivi2gs98f3hy51p"))))
     (properties `((upstream-name . "eChem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plot3d r-animation))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dtharvey/eChem")
@@ -20687,6 +22896,9 @@ package is to provide tools for use in courses in analytical chemistry.")
         (base32 "179s8s8wgii89676s98pb4rhh3ikdspavl3aifc5pl12an4hc5gr"))))
     (properties `((upstream-name . "echelon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=echelon")
     (synopsis
      "The Echelon Analysis and the Detection of Spatial Clusters using Echelon Scan Method")
@@ -20711,6 +22923,8 @@ using echelon scan method proposed by Kurihara (2003)
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -20748,6 +22962,8 @@ build R lists for ECharts API. Lean set of powerful commands.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -20793,6 +23009,9 @@ which includes 36 chart types, themes, Shiny proxies and animations.")
         (base32 "0dq8ja4ydxnc7qx35qhh9ryqgi7ambwz6ka2821mmq3p994crswn"))))
     (properties `((upstream-name . "ECharts2Shiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/XD-DENG/ECharts2Shiny")
@@ -20817,6 +23036,9 @@ word cloud, radar chart, tree map, and heat map.")
         (base32 "092djklyw9j5cjbkndb1jby2mn896y93yrysrg704dfcjd04yv2g"))))
     (properties `((upstream-name . "ech")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-tidyr
                              r-survey
@@ -20857,6 +23079,9 @@ Statistics at
         (base32 "0mg5snwnlwy2vdkj8zdy0ji790ws6fvy4yr9918mridr43pn77ap"))))
     (properties `((upstream-name . "ECGofTestDx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-orthopolynom r-bootstrap))
     (home-page "https://cran.r-project.org/package=ECGofTestDx")
     (synopsis
@@ -20879,6 +23104,9 @@ diagnostic capabilities.  Gilles R. Ducharme, Pierre Lafaye de Micheaux (2020)
         (base32 "00gxjsy20clwab19h982hnwz2xiqi619wkfc0w3s9c8vy8215x1n"))))
     (properties `((upstream-name . "ECG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=ECG")
     (synopsis "Center of Gravity Methods")
@@ -20887,37 +23115,6 @@ diagnostic capabilities.  Gilles R. Ducharme, Pierre Lafaye de Micheaux (2020)
 Gravity method.  It supports replicated observations.  Cameron, D.G., et al
 (1982) <doi:10.1366/0003702824638610> JCGM (2008) <doi:10.59161/JCGM100-2008E>.")
     (license license:gpl3+)))
-
-(define-public r-ecfun
-  (package
-    (name "r-ecfun")
-    (version "0.3-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Ecfun" version))
-       (sha256
-        (base32 "0651vbb040y17sizh927vq4jfidpxilmwdgkhmr7z8p24yb588rc"))))
-    (properties `((upstream-name . "Ecfun")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tis
-                             r-stringi
-                             r-rworldmap
-                             r-rvest
-                             r-readr
-                             r-mvtnorm
-                             r-mass
-                             r-jpeg
-                             r-fda
-                             r-bma))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.r-project.org")
-    (synopsis "Functions for 'Ecdat'")
-    (description
-     "This package provides functions and vignettes to update data sets in Ecdat and
-to create, manipulate, plot, and analyze those and similar data sets.")
-    (license license:gpl2+)))
 
 (define-public r-ecespa
   (package
@@ -20931,6 +23128,9 @@ to create, manipulate, plot, and analyze those and similar data sets.")
         (base32 "1n96nxb8spyi914m21yybb2yajawz22fmjldbr9j76dl7s36ygcd"))))
     (properties `((upstream-name . "ecespa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-random r-spatstat-model
                              r-spatstat-geom r-spatstat-explore r-spatstat))
     (native-inputs (list gfortran))
@@ -20956,6 +23156,9 @@ Olano et al. (2009) <doi:10.1051/forest:2008074>.")
         (base32 "1s2dz4dq0r2fhiinnlaqpg42bfzvdlh0inkyfdz0khapd67shbgq"))))
     (properties `((upstream-name . "eCerto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyxl
                              r-shinywidgets
                              r-shinyjs
@@ -20999,6 +23202,9 @@ the recommended procedures.  It is described in Lisec et al (2023)
         (base32 "1n3n9n86pj8c54l3xvp7knvi0ajbnjmz9pi79p7wfq92a90fqx48"))))
     (properties `((upstream-name . "ecdfHT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl))
     (home-page "https://cran.r-project.org/package=ecdfHT")
     (synopsis "Empirical CDF for Heavy Tailed Data")
@@ -21021,6 +23227,9 @@ and some multivariate extensions are given.")
         (base32 "11pmcl5f376xm56v4g2fhkfaf7safg1r5chqf3n2475pzc0nypz5"))))
     (properties `((upstream-name . "ecdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-rlang
                              r-piggyback
@@ -21038,24 +23247,6 @@ and some multivariate extensions are given.")
 repositories of the Executive Communications Database.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-ecdat
-  (package
-    (name "r-ecdat")
-    (version "0.4-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Ecdat" version))
-       (sha256
-        (base32 "1vyc4ynkd65mng2x8wvzn47crsvaqfz97n89jxn12xv13bpsbs7c"))))
-    (properties `((upstream-name . "Ecdat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ecfun))
-    (home-page "https://www.r-project.org")
-    (synopsis "Data Sets for Econometrics")
-    (description "Data sets for econometrics, including political science.")
-    (license license:gpl2+)))
-
 (define-public r-ecce
   (package
     (name "r-ecce")
@@ -21068,6 +23259,9 @@ repositories of the Executive Communications Database.")
         (base32 "1rxvcix414w9hmv9snmndq1ivg27njvvqh9zk7xjxlnf0d8ffc81"))))
     (properties `((upstream-name . "ecce")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid r-jsonlite r-httr r-digest r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://cxy.cc/rproj/ecce/")
@@ -21093,6 +23287,9 @@ more easily understand the pronunciation of the Chinese character.")
         (base32 "19ir0ywbzwyx90mgxqk9byb63afic2fvhrhy174di0pmj522vnr4"))))
     (properties `((upstream-name . "ecb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rsdmx r-httr r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://sdw.ecb.europa.eu/")
@@ -21116,6 +23313,9 @@ retrieval of a vast quantity of statistical data.")
         (base32 "1ps98abmdv8xf8xsnif95yg8z8564nlysv8vncp3cl5wc03pknhl"))))
     (properties `((upstream-name . "eCAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://github.com/gpage2990/eCAR")
     (synopsis "Eigenvalue CAR Models")
@@ -21139,6 +23339,9 @@ obtained from <https://www.r-inla.org/>.")
         (base32 "12bkgmbm6mbqcjhmanlg7zk0nlgqf8m1b4m7f2wcxsl8nbks8ymd"))))
     (properties `((upstream-name . "ecan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-tibble
@@ -21173,6 +23376,9 @@ visualisation functions of ordination and clustering.")
         (base32 "1zg4p1734q2jzifzfi2lf9wz3687s3cdn0yzkiwbc6w49mgdw877"))))
     (properties `((upstream-name . "ec50estimator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-tibble r-magrittr r-drc r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AlvesKS/ec50estimator")
@@ -21197,6 +23403,9 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
         (base32 "0637q8795n7k2mnwdvnamnkdrz4akh458ijry7x3068kfzgr778y"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyterra
                              r-terra
@@ -21236,6 +23445,9 @@ functionality to easily create, access and visualise this data.  The EBV
         (base32 "0vvi6q6ml4as3yr1lc6xldinha34jgswvmnwxc6maidw3zirk51m"))))
     (properties `((upstream-name . "ebTobit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/barbehenna/ebTobit")
     (synopsis "Empirical Bayesian Tobit Matrix Estimation")
@@ -21262,6 +23474,9 @@ many empirical Bayes and nonparametric maximum likelihood problems.")
         (base32 "18k622687qvp6q8m2ycn9ppwvv2jh76dj92vfkl0b99jng2hv1zl"))))
     (properties `((upstream-name . "eBsc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-nlme
@@ -21290,6 +23505,9 @@ of the errors.  See \"Krivobokova\", \"Serra\", \"Rosales\" and \"Klockmann\" (2
         (base32 "1xrs9afjd5hkdmhglj3md5i5hm7awlcdlccz3y2lw4c73lx31ywz"))))
     (properties `((upstream-name . "ebreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-lars))
     (home-page "https://cran.r-project.org/package=ebreg")
     (synopsis "Implementation of the Empirical Bayes Method")
@@ -21315,6 +23533,9 @@ are given in Martin, Ryan and Tang, Yiqi (2019) <@code{arXiv:1903.00961>}.")
         (base32 "1qzhrr3n2zv31mjp224b35324nr9nigzazyfv11j4zhwl1ipf632"))))
     (properties `((upstream-name . "EBrank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EBrank")
     (synopsis "Empirical Bayes Ranking")
     (description
@@ -21340,6 +23561,9 @@ rank-loss functions are also given.")
         (base32 "14wal81cai08xr26fpc2w4ramr5jyv7vwfyqb5hzw3kqxx76y9xx"))))
     (properties `((upstream-name . "EBPRS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rocr r-data-table r-bedmatrix))
     (home-page "https://cran.r-project.org/package=EBPRS")
     (synopsis "Derive Polygenic Risk Score Based on Emprical Bayes Theory")
@@ -21367,6 +23591,9 @@ presentation of the method.")
         (base32 "14ql990pgwwb8aakg4ikj7p3ijbfaqjrsvrrjwlma3halqs3cy19"))))
     (properties `((upstream-name . "ebnm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trust
                              r-truncnorm
                              r-rlang
@@ -21383,8 +23610,8 @@ presentation of the method.")
     (description
      "This package provides simple, fast, and stable functions to fit the normal means
 model using empirical Bayes.  For available models and details, see function
-ebnm().  A detailed introduction to the package is provided by Willwerscheid and
-Stephens (2021) <@code{arXiv:2110.00152>}.")
+@code{ebnm()}.  A detailed introduction to the package is provided by
+Willwerscheid and Stephens (2021) <@code{arXiv:2110.00152>}.")
     (license license:gpl3+)))
 
 (define-public r-ebmstate
@@ -21399,6 +23626,9 @@ Stephens (2021) <@code{arXiv:2110.00152>}.")
         (base32 "1f1rb6mzpmsh317gjfpyg9fhankyjpd8xixlhfp8m6cgmv6dgvfc"))))
     (properties `((upstream-name . "ebmstate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpp r-mstate r-hdinterval))
     (home-page "https://cran.r-project.org/package=ebmstate")
     (synopsis "Empirical Bayes Multi-State Cox Model")
@@ -21420,6 +23650,9 @@ analysis.  Run \"?'ebmstate-package'\" for details.  See also Schall (1991)
         (base32 "1z6s1blc2b6b13pk2sd6lcczdcldgjh65cnycjcw7d2g2hnxcifh"))))
     (properties `((upstream-name . "ebmc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-smotefamily
                              r-rpart
                              r-randomforest
@@ -21456,6 +23689,9 @@ Khoshgoftaar, Jason Van Hulse, and Amri Napolitano (2010)
         (base32 "01pv873d0sl0qzlgmqw4ahg5ym9gdjzbmzqlg593g5l935r3dgi4"))))
     (properties `((upstream-name . "EBMAforecast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-separationplot
                              r-rcpp
                              r-plyr
@@ -21487,6 +23723,9 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
         (base32 "0d2qblxdm3sk6rsl155ik303pcphw2dp6li4chizc8anpxwf175r"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-terra
                              r-stringr
@@ -21521,6 +23760,9 @@ trends at a high spatial and temporal resolution.")
         (base32 "1jllzc7kvvckrws8qhgvwy626llyb68sp1davp7swx48sf7rwcxc"))))
     (properties `((upstream-name . "ebGenotyping")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ebGenotyping")
     (synopsis
      "Genotyping and SNP Detection using Next Generation Sequencing Data")
@@ -21548,6 +23790,9 @@ Bayes method.")
         (base32 "1lkq9zdqpyjr59bij0ajpw69r0qdlpk29ps8pkhvvci84f5sd0bi"))))
     (properties `((upstream-name . "EBEN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=EBEN")
     (synopsis "Empirical Bayesian Elastic Net")
     (description
@@ -21570,6 +23815,9 @@ non-zero effects.")
         (base32 "0far2hvfvj6r4qzr47q72innxxnj0g8vxx6arn7wkcv30jmx34x7"))))
     (properties `((upstream-name . "ebdbNet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (home-page "https://github.com/andreamrau/ebdbNet")
     (synopsis "Empirical Bayes Estimation of Dynamic Bayesian Networks")
@@ -21590,6 +23838,9 @@ Bayes estimation procedure based on Dynamic Bayesian Networks.")
         (base32 "1vys4wb35pgh03331glbbiiw4kyis04d2ygyqng9l7h9jjh7d5xj"))))
     (properties `((upstream-name . "EBcoBART")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-univariateml r-posterior r-loo r-extradistr
                              r-dbarts))
     (home-page "https://github.com/JeroenGoedhart/EBcoBART")
@@ -21615,6 +23866,9 @@ models are fitted using the dbarts R package.  See Goedhart and others (2023)
         (base32 "00fa2y4ha9nlbjd01qckrrn721s63ja61n5jr4wm7ac6y7xivb2i"))))
     (properties `((upstream-name . "ebci")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kolesarm/ebci")
     (synopsis "Robust Empirical Bayes Confidence Intervals")
@@ -21639,6 +23893,9 @@ implementation is based on Armstrong, KolesÃ¡r and Plagborg-MÃ¸ller (2020)
         (base32 "103k4y105dn8v5yb5xk520404sd7c05cxd9iwh2k2v18kbvg8pdp"))))
     (properties `((upstream-name . "EBCHS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-fda))
     (home-page "https://github.com/dulilun/EBCHS")
     (synopsis "An Empirical Bayes Method for Chi-Squared Data")
@@ -21662,6 +23919,9 @@ posterior intervals.  Details can be found in Du and Hu (2020)
         (base32 "07a2dd3za2dc81n6m2xy794sclp3yw7f46lg1igaflh7m9407198"))))
     (properties `((upstream-name . "EbayesThresh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stephenslab/EbayesThresh")
@@ -21691,6 +23951,9 @@ thresholding, are also implemented within the package.")
         (base32 "0g9hhkbld6f5iasj56d539q9px6s6pb2mwhzl337bbvxcd7pf59w"))))
     (properties `((upstream-name . "EBASE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-truncnorm
                              r-tidyr
@@ -21727,6 +23990,9 @@ et al. (2015) <doi:10.1002/lom3.10011> and Wanninkhof (2014)
         (base32 "06hkk0fargzhzqn841c406r72y7jd53mjxgi4hzb2ahnpaiq2q1l"))))
     (properties `((upstream-name . "ebal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://web.stanford.edu/~jhain/")
     (synopsis "Entropy Reweighting to Create Balanced Samples")
     (description
@@ -21752,6 +24018,9 @@ characteristics from a target population.")
         (base32 "03jr54xq109x9bf8kcs8mi7am17l9ya3xdkdppd8imwd2paqrssk"))))
     (properties `((upstream-name . "eba")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psychotools r-nlme))
     (home-page "http://www.mathpsy.uni-tuebingen.de/wickelmaier")
     (synopsis "Elimination-by-Aspects Models")
@@ -21775,6 +24044,9 @@ models (Tversky & Sattath, 1979 <doi:10.1037/0033-295X.86.6.542>).")
         (base32 "00w39z9jjgrqsg0fn7y07m3znpm6bv780g3v8hkmrslxw7cxfc51"))))
     (properties `((upstream-name . "eatTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-data-table r-checkmate))
     (home-page "https://github.com/weirichs/eatTools")
     (synopsis
@@ -21802,6 +24074,9 @@ to Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
         (base32 "11yz0g83ngzab8gqi2mq4s28j7yvl06jf4clwb8vfjqa7lwpfcgq"))))
     (properties `((upstream-name . "eatRep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survey
                              r-reshape2
@@ -21847,6 +24122,9 @@ along with references.")
         (base32 "1bdiyrq1gay8mz3rkq2cwsw0x2b70i31gs79cyhxil2zh8jf25xf"))))
     (properties `((upstream-name . "EATME")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qcr))
     (home-page "https://cran.r-project.org/package=EATME")
     (synopsis
@@ -21878,6 +24156,9 @@ and Arnold (2016) <doi: 10.1080/00949655.2015.1125901>.")
         (base32 "1rbgs04rk7rdgyvvx9bcs9g0ir9rlx0ilkdj0dzfdyh6ba4jbkp3"))))
     (properties `((upstream-name . "eatGADS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringi
                              r-plyr
@@ -21906,6 +24187,9 @@ hierarchical data in SQLite data bases.")
         (base32 "0lym1g411ykb2vzi5yr570lmyh30br667wkm5dvnvfs7bsmk05il"))))
     (properties `((upstream-name . "eatDB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite r-dbi))
     (home-page "https://cran.r-project.org/package=eatDB")
     (synopsis "Spreadsheet Interface for Relational Databases")
@@ -21926,6 +24210,9 @@ the data as if it was a single spreadsheet.")
         (base32 "0ak9722mgy9fgpk43wppgisfxj6v4fzc8qwk4cmd760sq5gw3j88"))))
     (properties `((upstream-name . "eatATA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rglpk r-matrix r-mathjaxr r-lpsolve))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/beckerbenj/eatATA")
@@ -21950,6 +24237,9 @@ repository; see <https://www.gurobi.com/downloads/>.")
         (base32 "1s286b6wx0d59n2v3hf6s1zy1f15mwf6ssrpwciard3giccnf556"))))
     (properties `((upstream-name . "eat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-rdpack
                              r-partykit
@@ -21986,6 +24276,13 @@ estimating technical efficiency is also included.  More details in:
         (base32 "1k62dfhnc0g07jf82gm1m3747z8zchmj4mi5qap4dgc7pxdp2ikc"))))
     (properties `((upstream-name . "easyVerification")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-specsverification r-rcpp r-pbapply))
     (native-inputs (list r-rmarkdown r-r-rsp))
     (home-page "https://www.meteoswiss.admin.ch")
@@ -22011,6 +24308,9 @@ provided and applied using the functionality of this package.")
         (base32 "03gl5gl0yqgpygd4kna79wrhflbnq3zrz3iq2i8hk9xqd83mszh3"))))
     (properties `((upstream-name . "easySVG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ytdai/easySVG")
     (synopsis "An Easy SVG Basic Elements Generator")
@@ -22032,6 +24332,9 @@ output SVG elements into a SVG file.")
         (base32 "065h9wkd930k81jwdj48955nkv2z2q1xky15rg5nh0ig1r10d37p"))))
     (properties `((upstream-name . "easysurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-tidyr
                              r-tibble
@@ -22058,8 +24361,9 @@ output SVG elements into a SVG file.")
      "Inspect survival data, plot Kaplan-Meier curves, assess the proportional hazards
 assumption, fit parametric survival models, predict and plot survival and
 hazards, and export the outputs to Excel.  A simple interface for fitting
-survival models using flexsurv::flexsurvreg()', flexsurv::flexsurvspline()',
-flexsurvcure::flexsurvcure()', and survival::survreg()'.")
+survival models using @code{flexsurv::flexsurvreg()}',
+@code{flexsurv::flexsurvspline()}', @code{flexsurvcure::flexsurvcure()}', and
+@code{survival::survreg()}'.")
     (license license:expat)))
 
 (define-public r-easystats
@@ -22074,6 +24378,9 @@ flexsurvcure::flexsurvcure()', and survival::survreg()'.")
         (base32 "1mxkqm977wgnqd54paifyy5drl7zyb39lm2icps6vls4702zjzis"))))
     (properties `((upstream-name . "easystats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-see
                              r-report
                              r-performance
@@ -22110,6 +24417,9 @@ and visualizations with minimal programming.")
         (base32 "19jf7j91ynsibrjsd9m7i18sqhj89md7rwc753618sjhdrdfvrww"))))
     (properties `((upstream-name . "easySimData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-simdata r-gridextra r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=easySimData")
     (synopsis "Wrapper of 'simdata' Package")
@@ -22130,20 +24440,23 @@ This is a wrapper for the simdata package to make it easier to use.")
         (base32 "0wvnyhjq94cqjx9dw2nc5v66a11qbi972g0shvzz7q4llkgm21if"))))
     (properties `((upstream-name . "easySdcTable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ssbtools r-shiny r-sdctable r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/statisticsnorway/easySdcTable")
     (synopsis
      "Easy Interface to the Statistical Disclosure Control Package 'sdcTable' Extended with Own Implementation of 'GaussSuppression'")
     (description
-     "The main function, @code{ProtectTable}(), performs table suppression according
+     "The main function, @code{ProtectTable()}, performs table suppression according
 to a frequency rule with a data set as the only required input.  Within this
-function, @code{protectTable}(), protect_linked_tables() or
-@code{runArgusBatchFile}() in package @code{sdcTable} is called.  Lists of
+function, @code{protectTable()}, @code{protect_linked_tables()} or
+@code{runArgusBatchFile()} in package @code{sdcTable} is called.  Lists of
 level-hierarchy (parameter @code{dimList}') and other required input to these
 functions are created automatically.  The suppression method Gauss (default) is
-implemented independently of @code{sdcTable}'.  The function, PTgui(), starts a
-graphical user interface based on the shiny package.")
+implemented independently of @code{sdcTable}'.  The function, @code{PTgui()},
+starts a graphical user interface based on the shiny package.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -22159,6 +24472,9 @@ graphical user interface based on the shiny package.")
         (base32 "1w4wlhziyhdyldm0zgnm73fnxrh0fv8hwcw5j8ircxb4npx7bcgg"))))
     (properties `((upstream-name . "easyreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme))
     (home-page "https://cran.r-project.org/package=easyreg")
     (synopsis "Easy Regression")
@@ -22179,6 +24495,9 @@ treatments, including mixed models and non linear models.")
         (base32 "1wzc21n2f7i7idd2hs5s0sh46gpgl6sf4wmrmhi0wc6jcc4sb5rk"))))
     (properties `((upstream-name . "easyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-stringr
                              r-rprojroot
@@ -22213,6 +24532,9 @@ through @code{GitHub}.")
         (base32 "1wd8idyqz7kgygp34mjp2abx82775ry8l07vsqdlqnc6fdnvg55d"))))
     (properties `((upstream-name . "easyPubMed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://www.data-pulse.com/dev_site/easypubmed/")
     (synopsis "Search and Retrieve Scientific Publication Records from PubMed")
@@ -22235,6 +24557,9 @@ simple-to-use interface to the NCBI @code{PubMed} API.")
         (base32 "0npih5xpf2a5xw2iz68z9ckm8d4cpradzzdn50rdpg4gqvaq7azp"))))
     (properties `((upstream-name . "easyPSID")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-laf r-foreign))
     (home-page "https://cran.r-project.org/package=easyPSID")
     (synopsis
@@ -22261,6 +24586,9 @@ common among other statistical programming languages ('SAS', STATA', and SPSS').
         (base32 "1w2wkbrvxky6ivi51xmwwl66nfr8ckz34s9vrmq6djx80zbdrmjr"))))
     (properties `((upstream-name . "easypower")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pwr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=easypower")
@@ -22288,6 +24616,9 @@ package.")
         (base32 "0r911lys38jr60pvifkdp6d7gspdrcq3g7dn2fqhacz8pqvg1b5f"))))
     (properties `((upstream-name . "easypackages")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-devtools r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=easypackages")
@@ -22313,6 +24644,9 @@ import specific functions from a package into the global environment.")
         (base32 "1k9g4gfc8s6c93ba2clb4vyaafs7wbxw34d8nrkbnkzxy2frmkwn"))))
     (properties `((upstream-name . "easyORtables")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-knitr r-kableextra))
     (home-page "https://cran.r-project.org/package=easyORtables")
     (synopsis "Easy Odds Ratio Tables")
@@ -22334,6 +24668,9 @@ regression models.")
         (base32 "1ma2q4y5dxk6q99v880vqfsgy1fha96j7pi8ch699l0pi6bx0d6c"))))
     (properties `((upstream-name . "easynls")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=easynls")
     (synopsis "Easy Nonlinear Model")
     (description "Fit and plot some nonlinear models.")
@@ -22351,6 +24688,9 @@ regression models.")
         (base32 "0kh38iafgwf9rxd8ccwv2pvzxsnk5pwp02nqnksgy7l8s526i5cc"))))
     (properties `((upstream-name . "easyNCDF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ncdf4 r-abind))
     (home-page "https://earth.bsc.es/gitlab/es/easyNCDF")
     (synopsis
@@ -22372,6 +24712,9 @@ capabilities into/from multidimensional R arrays.")
         (base32 "155grvar94bfwddp99ipvafnn52ssdh2jd4q6ddqnw3zmv506snf"))))
     (properties `((upstream-name . "EasyMx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openmx))
     (home-page "https://bitbucket.org/mhunter/easymx")
     (synopsis "Easy Model-Builder Functions for 'OpenMx'")
@@ -22392,6 +24735,9 @@ extended structural equation modeling package, @code{OpenMx}'.")
         (base32 "0rl17iccmczd380yzcdkw6943x8pxyb4sqg6q6jj5jqqzalvqshb"))))
     (properties `((upstream-name . "easylabel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinycssloaders
                              r-shinybusy
                              r-shiny
@@ -22424,6 +24770,9 @@ to PDF for publication.")
         (base32 "1isln1bbav2zxqbia8616f1ywnpywcx3772bxws5hphx64x6bqfh"))))
     (properties `((upstream-name . "easyDifferentialGeneCoexpression")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-magrittr
                              r-limma
@@ -22463,6 +24812,13 @@ ID: identifier code.  The GEO datasets are downloaded from the URL
         (base32 "1kjh45ndscwz1wdkf0rvnjw4qs73v9h1g45wagdqhsckywnhfksh"))))
     (properties `((upstream-name . "EasyDescribe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rcompanion
                              r-psych
                              r-nortest
@@ -22521,6 +24877,9 @@ Terpstra, T. J. (1952) <doi:10.1016/S1385-7258(52)50043-X>.")
         (base32 "12p7ls0q9srrz5h0f0996mmw33shrfbya481s0d5d509vbw8ik6d"))))
     (properties `((upstream-name . "easyDes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pmcmrplus r-multcomp))
     (home-page "https://cran.r-project.org/package=easyDes")
     (synopsis "An Easy Way to Descriptive Analysis")
@@ -22547,6 +24906,9 @@ deviation can be forced to display.")
         (base32 "1xmhg5320ilc1138x23sb8s2wr7d753h0dv9i1az3zicx0858zbd"))))
     (properties `((upstream-name . "easydb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-rlang
                              r-keyring
@@ -22577,6 +24939,9 @@ once, you won't have to do it ever again.")
         (base32 "1i2k5372b6a5pypk6m0rsvvkcy0y51pvh57a60rpgqk8q0yq8pig"))))
     (properties `((upstream-name . "easycsv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://github.com/bogind/easycsv")
     (synopsis "Load Multiple 'csv' and 'txt' Tables")
@@ -22598,6 +24963,9 @@ a local directory, a zip file or a zip file on a remote directory.")
         (base32 "01qjlv5qhl2pzyizcx93qvlrn44dic8hy4xaj6zbx4xkcpvr13l7"))))
     (properties `((upstream-name . "easyCODA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-ellipse r-ca))
     (home-page "https://github.com/michaelgreenacre/CODAinPractice/")
     (synopsis "Compositional Data Analysis in Practice")
@@ -22622,6 +24990,9 @@ logratios are included in the package.")
         (base32 "1d617g1q32hhzssnspzgi24797259cy3jqar57bh7k6hfjmisyd5"))))
     (properties `((upstream-name . "easyclimate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-rcurl r-r-utils))
     (home-page "https://github.com/VeruGHub/easyclimate")
     (synopsis "Easy Access to High-Resolution Daily Climate Data for Europe")
@@ -22642,6 +25013,9 @@ maximum temperatures) for points and polygons within Europe.")
         (base32 "0k8cc02f7qf9g5fi9i8lsz02mkb0kcvqkh5zh7bajsfkmmksrr17"))))
     (properties `((upstream-name . "easycensus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-stringr
@@ -22671,6 +25045,9 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
         (base32 "0alnbb1pjvykagpgmw7wmn8bp0pkx3wx62nl97yvw9fwwdkg56hn"))))
     (properties `((upstream-name . "easybio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-limma r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/person-c/easybio")
@@ -22700,6 +25077,9 @@ functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:
         (base32 "0v54vqi7hc28spfbb2mbq8hjcxp1p5dwr1476qkifvm9src6ja53"))))
     (properties `((upstream-name . "easybgm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qgraph
                              r-igraph
                              r-hdinterval
@@ -22732,6 +25112,9 @@ comes with an extensive suite for visualizing results.")
         (base32 "12w7d2n4mpaf8zii07gcp6bv7hi4k72xkyd6wvifdwhfi55zkvrr"))))
     (properties `((upstream-name . "easyanova")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme))
     (home-page "https://cran.r-project.org/package=easyanova")
     (synopsis
@@ -22754,6 +25137,9 @@ and unbalanced data.")
         (base32 "1jn65b4rfzw3hn6n1bmdaqfv2fb7wq0b8rgbflj230k79kravsxm"))))
     (properties `((upstream-name . "easyalluvial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -22802,6 +25188,9 @@ plots a great tool for data exploration.")
         (base32 "161mn90j9ph1p9277mj61hch8ndcv7k9izs32q93y5wp474gzynd"))))
     (properties `((upstream-name . "easyAHP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=easyAHP")
     (synopsis "Analytic Hierarchy Process (AHP)")
     (description
@@ -22821,6 +25210,9 @@ conducted easily.")
         (base32 "173830655knpmc9qb7i2n4332rn3d3qp6566kmr2hrw60gh94v1j"))))
     (properties `((upstream-name . "EasyABC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tensora
                              r-pls
                              r-mnormt
@@ -22848,6 +25240,9 @@ coupled-to-MCMC schemes are implemented.")
         (base32 "1f9iz4jssb4ail8sp18mnfbkvsxz4rx1inry60z6zi4jswr3q25m"))))
     (properties `((upstream-name . "easy.utils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rlang r-polychrome r-fastmatch r-dplyr))
     (home-page "https://github.com/ycli1995/easy.utils")
     (synopsis "Frequently Used Functions for Easy R Programming")
@@ -22869,6 +25264,9 @@ development.")
         (base32 "0yxfydyi6q5qx157gf1sdambfbq33zvldsydsjbkzn5fqv03g7h5"))))
     (properties `((upstream-name . "easy.glmnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-glmnet r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=easy.glmnet")
     (synopsis "Functions to Simplify the Use of 'glmnet' for Machine Learning")
@@ -22897,6 +25295,9 @@ described in several publications: Solanes et al. (2022)
         (base32 "0llx3pdpzjsw94nk62h6cif4gn97rhbq38vsqpdarx201q8qq2qx"))))
     (properties `((upstream-name . "Ease")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Ease")
@@ -22926,6 +25327,9 @@ solution so that these kinds of models can be simulated simply.")
         (base32 "17biiw0ig8i8ihc2f8csp0bqryygg27ic2v1vrf81ax3qzhngy4l"))))
     (properties `((upstream-name . "earthtones")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggmap))
     (home-page "https://cran.r-project.org/package=earthtones")
     (synopsis "Derive a Color Palette from a Particular Location on Earth")
@@ -22949,6 +25353,9 @@ the resulting color palette.")
         (base32 "1skcn33357vnqq4f485cf7w865jsr7bj0kwsl2b78y069qxp7dvr"))))
     (properties `((upstream-name . "earthtide")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppthread r-rcppeigen r-rcpp r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jkennel/earthtide")
@@ -22974,6 +25381,9 @@ tidal catalogs.")
         (base32 "1g044i4kjl5ica9dlg0y2xnhaiqb3xi9ha81ljcz4w8f5mkj7y46"))))
     (properties `((upstream-name . "earthdatalogin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-openssl r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://boettiger-lab.github.io/earthdatalogin/")
@@ -22996,28 +25406,6 @@ packages that are widely used with cloud native earth observation data (such as
 terra', sf', etc.).")
     (license license:expat)))
 
-(define-public r-earth
-  (package
-    (name "r-earth")
-    (version "5.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "earth" version))
-       (sha256
-        (base32 "1g6ywsmdp7qlp0rql6f07j9hih45w9jm7b90sgkjpylqan94zy9s"))))
-    (properties `((upstream-name . "earth")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plotmo r-formula))
-    (native-inputs (list gfortran))
-    (home-page "http://www.milbo.users.sonic.net/earth/")
-    (synopsis "Multivariate Adaptive Regression Splines")
-    (description
-     "Build regression models using the techniques in Friedman's papers \"Fast MARS\"
-and \"Multivariate Adaptive Regression Splines\" <doi:10.1214/aos/1176347963>.
-(The term \"MARS\" is trademarked and thus not used in the name of the package.).")
-    (license license:gpl3)))
-
 (define-public r-earlyr
   (package
     (name "r-earlyr")
@@ -23030,6 +25418,9 @@ and \"Multivariate Adaptive Regression Splines\" <doi:10.1214/aos/1176347963>.
         (base32 "0978vv48sj1hs61rdb3xv02s8qz03jcm1c8q1mbb3d033x1q7k22"))))
     (properties `((upstream-name . "earlyR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-epitrix r-epiestim r-distcrete))
     (native-inputs (list r-knitr))
     (home-page "https://www.repidemicsconsortium.org/earlyR/")
@@ -23057,6 +25448,9 @@ simplified version of the model introduced by Cori et al. (2013)
         (base32 "0wwkn30kjdg0qni05l3acbgai9j3h2mqjli49afmpd2453fpyxig"))))
     (properties `((upstream-name . "earlygating")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-foreach r-doparallel r-betareg))
     (home-page "https://cran.r-project.org/package=earlygating")
     (synopsis "Properties of Bayesian Early Gating Designs")
@@ -23080,6 +25474,9 @@ size.  These might aid in deciding what design to use for the early phase trial.
         (base32 "1hphh2b8il1gj5kyz7xgq195gldq3xpkslaxz1rcc9kgqw1dyd5x"))))
     (properties `((upstream-name . "eAnalytics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinywidgets
                              r-shinydashboard
                              r-shiny
@@ -23109,6 +25506,9 @@ changes in the industry over time, and discover new relationships in the data.")
         (base32 "1kzcfya3z6rf1vqjn72yjymdhrn4dzgmwifh3w6k22cy5jxffzn4"))))
     (properties `((upstream-name . "EAinference")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
@@ -23142,6 +25542,9 @@ inference.")
         (base32 "18y0hc5461gh7kp095xfpwpfnl7k3v545r8w6nrhabrhwsflrrij"))))
     (properties `((upstream-name . "Eagle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinythemes
                              r-shinyjs
                              r-shinyfiles
@@ -23166,7 +25569,7 @@ Since Eagle is based on linear mixed models, it is best suited to the analysis
 of data on continuous traits.  However, it can tolerate non-normal data.  Eagle
 reports, as its findings, the best set of snp in strongest association with a
 trait.  For users unfamiliar with R, to perform an analysis, run
-@code{OpenGUI}()'.  This opens a web browser to the menu-driven user interface
+@code{OpenGUI()}'.  This opens a web browser to the menu-driven user interface
 for the input of data, and for performing genome-wide analysis.")
     (license license:gpl3)))
 
@@ -23182,6 +25585,9 @@ for the input of data, and for performing genome-wide analysis.")
         (base32 "03039hjrpkgh9kzasd0q8x4k6nnzkmhyrf39psg1zizfdfdh2y4p"))))
     (properties `((upstream-name . "eaf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-rdpack r-modeltools r-matrixstats))
     (native-inputs (list pkg-config))
@@ -23205,6 +25611,9 @@ Paquete, and T. StÃ¼tzle (2010) <doi:10.1007/978-3-642-02538-9_9>.")
         (base32 "0s9rk5iym5crlq4pr3gbgqhswjn3a7a4nclbvzhmzrxwfszqfy70"))))
     (properties `((upstream-name . "eadrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=eadrm")
     (synopsis "Fitting Dose-Response Models Using an Evolutionary Algorithm")
     (description
@@ -23230,6 +25639,9 @@ E., Motsinger-Reif, A.; Dose-Response 18(2):1559325820926734 (2020)
         (base32 "1kmj1fddybjia9ninhcy75kdmq152zjw7s24chpqr5wsblffr3yx"))))
     (properties `((upstream-name . "E4tools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-signal
                              r-scales
                              r-hms

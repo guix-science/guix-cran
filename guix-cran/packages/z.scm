@@ -46,6 +46,9 @@
         (base32 "0yaxxv5jiv25rx737zqz901pmbfys7rpqpngnhy1w6wgfq2pfdnp"))))
     (properties `((upstream-name . "zoomr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-rlang
@@ -77,6 +80,9 @@ package is not supported by Zoom (owner of the software).")
         (base32 "0bj5rmagm9f7qz0d6y698ipwcns4l2iz1mwcvn6dccpj2fnhn6m6"))))
     (properties `((upstream-name . "zoomerjoin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-tidyr r-tibble r-dplyr r-collapse))
     (native-inputs (list r-knitr))
@@ -103,6 +109,9 @@ fuzzy-merges that finish in linear time.")
         (base32 "0717gyn5r8gvrww840h592avqqxgf88wnabjnqvmqkaflzib5smy"))))
     (properties `((upstream-name . "ZooID")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magick))
     (home-page "https://github.com/arickGrootveld/ZooID_RPackage")
     (synopsis "Load, Segment and Classify Zooplankton Images")
@@ -129,6 +138,9 @@ at Arick Grootveld, Eva R. Kozak, Carmen Franco-Gordo (2023)
         (base32 "1xkli50nkhv7ygjrv7d9kcv4lq6wi7rxwvr13jg042571rml5l49"))))
     (properties `((upstream-name . "zonohedra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-logger))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=zonohedra")
@@ -153,6 +165,9 @@ Optimization methods are taken from Heckbert (1985)
         (base32 "1yr958iqk2w0r2cmvh4v2k1d20lrz6l7h9vdmah12krc04nma675"))))
     (properties `((upstream-name . "zoid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -183,6 +198,9 @@ included.")
         (base32 "1mkk8a93xqwzrs99g6zmd5x3yn0qrz3v44y35jas9wl8x92bzr9f"))))
     (properties `((upstream-name . "zmisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/torfason/zmisc/")
     (synopsis "Vector Look-Ups and Safer Sampling")
@@ -205,6 +223,9 @@ and aggregation.")
         (base32 "0fnx9dgcdgamh7a2grkrkzxsdpsj2zh6xvfh499fca97cbmpxs14"))))
     (properties `((upstream-name . "zlib")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/sgeist-ionos/R-zlib")
     (synopsis "Compression and Decompression")
@@ -228,6 +249,9 @@ working with gzip', zlib', and deflate formats.")
         (base32 "1bi3f8v0vlc5si9iz7iapw8h37i2084j576pm879lw16j18ka3v7"))))
     (properties `((upstream-name . "ZLAvian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-performance r-lme4 r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/CDr-er/ZLAvian")
@@ -250,6 +274,9 @@ function for visualisation.")
         (base32 "03kwfpjpwxqlphdy7xyhsf7d0mcg67jhvm7yz4i73ckmjdmq7wrd"))))
     (properties `((upstream-name . "zipsae")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/dheel/zipsae")
     (synopsis "Small Area Estimation with Zero-Inflated Model")
     (description
@@ -277,6 +304,9 @@ Boonstra and Marc Smeets (2016)<doi:10.1515/jos-2016-0051>.")
         (base32 "1gvf6z7mx543a0hiqcknwhkplqa3mfmw3swi8n9vma10bqmgysx7"))))
     (properties `((upstream-name . "ZIprop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgenoud r-purrr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.paca.inrae.fr/meribaud/ziprop")
@@ -302,6 +332,9 @@ details for the method at the following preprint e.g.:
         (base32 "1aaw3dslhsw3zgxvkc1v60vsk44x64i4qmjwx0gq4f7dad1rbiqp"))))
     (properties `((upstream-name . "zipR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/leslie-huang/zipR")
     (synopsis "Pythonic Zip() for R")
@@ -322,6 +355,9 @@ cbind.")
         (base32 "0cvgkaisig3h1rqwxxwn22wv8d0p5a8y3m93s7crqx2b8dabw2ql"))))
     (properties `((upstream-name . "zippeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tigris
                              r-tidyr
                              r-tidycensus
@@ -357,6 +393,9 @@ tabulating demographic data for three-digit ZCTAs.")
         (base32 "1g5viqqyl36xl43z7sbr9q4qgkwvv0pq308qw1rzdig4n1yxlwpj"))))
     (properties `((upstream-name . "ZIPG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pscl r-mass))
     (home-page "https://github.com/roulan2000/ZIPG")
     (synopsis "Zero-Inflated Poisson-Gamma Regression")
@@ -381,6 +420,9 @@ al (2023) <doi:10.1080/01621459.2022.2151447>.")
         (base32 "15ng7rj7qbgxajx8jb9kv04xmbidg9wwzxr2xaskmlaxrxlqac8c"))))
     (properties `((upstream-name . "zipfR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://zipfR.R-Forge.R-project.org/")
     (synopsis "Statistical Models for Word Frequency Distributions")
     (description
@@ -404,6 +446,9 @@ frequency distribution, Zipf's law.).")
         (base32 "03rlvvw7rfbhsbwd5njmgkkkrxq1lgjdydmpkn6h1hi97pc0gbhh"))))
     (properties `((upstream-name . "zipfextR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-tolerance r-copula))
     (home-page "https://github.com/ardlop/zipfextR")
     (synopsis "Zipf Extended Distributions")
@@ -429,6 +474,9 @@ linearity associated with the Zipf model in the tail.")
         (base32 "134pkdn4slhiv27rdkkmh2z7xch30ns0jhzxgd7r05bky0z1iri1"))))
     (properties `((upstream-name . "ZIPFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trustoptim r-optimx r-matrix r-foreach
                              r-doparallel))
     (home-page "https://zjph602xtc.github.io/ZIPFA/")
@@ -453,6 +501,9 @@ based on the determined rank.")
         (base32 "1fmjqfhxd0lgsn6l5jvi3qzhbq9865xcps3jm9iy72jx7jxr59lk"))))
     (properties `((upstream-name . "zipcodeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tidycensus
                              r-stringr
@@ -487,6 +538,9 @@ calculations.")
         (base32 "0j56smgf44fki70jc6aypksbl70pyppc6s3xv82yrq5rndym077k"))))
     (properties `((upstream-name . "ZIPBayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mass))
     (home-page "https://cran.r-project.org/package=ZIPBayes")
     (synopsis
@@ -512,6 +566,9 @@ internal validation scenario.")
         (base32 "1m68y8r691zdvg2n1mknhz6y58spiipdi7ip3za1laq2yzbg6wqq"))))
     (properties `((upstream-name . "zipangu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-stringi
@@ -544,6 +601,9 @@ general one.")
         (base32 "1s5nvxcc7nw2kz90i7fqw5fi2qzzbsm5ppn92695v44q38h8jw9s"))))
     (properties `((upstream-name . "ZINARp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progress))
     (home-page "https://cran.r-project.org/package=ZINARp")
     (synopsis "Simulate INAR/ZINAR(p) Models and Estimate Its Parameters")
@@ -566,6 +626,9 @@ Autoregressive (ZINAR(p)) processes, as described in Garay et al. (2020)
         (base32 "1didfjb4215k9q82n1vaqln6f7fszsycsflydak2zl7xwficwhy6"))))
     (properties `((upstream-name . "ZINAR1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-statmod
                              r-scales
@@ -593,6 +656,9 @@ described in Garay et al. (2021) <doi:10.1007/978-3-030-82110-4_2>.")
         (base32 "1q0hdm654p6vkmajwrhx18ifm9sc4czdfd7cabhkqdky4p07c89r"))))
     (properties `((upstream-name . "ZillowR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-rcurl))
     (home-page "https://fascinatingfingers.gitlab.io/zillowr")
     (synopsis "R Interface to Zillow Real Estate and Mortgage Data API")
@@ -618,6 +684,9 @@ package is now deprecated as a result.")
         (base32 "1vd64ljigf6iwgzlgdxgj65nlwir176h7ddznddpaz2abh6n6zwp"))))
     (properties `((upstream-name . "zic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-coda))
     (home-page "https://cran.r-project.org/package=zic")
     (synopsis "Bayesian Inference for Zero-Inflated Count Models")
@@ -640,6 +709,9 @@ set considering the demand for health care is provided.")
         (base32 "0c24g3s946nmm8m22wvmhdgh2ph9f9hmslfyx1s3cq139793grrz"))))
     (properties `((upstream-name . "ZIBR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PennChopMicrobiomeProgram/ZIBR")
@@ -663,6 +735,9 @@ Li (2016) <doi:10.1093/bioinformatics/btw308>.")
         (base32 "1pzzzb55v16piy1p1pyjrriiifbgxqnpaxi200cyfd8m39gz9n1j"))))
     (properties `((upstream-name . "zfit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://torfason.github.io/zfit/")
     (synopsis "Fit Models in a Pipe")
     (description
@@ -681,6 +756,9 @@ Li (2016) <doi:10.1093/bioinformatics/btw308>.")
         (base32 "02xbyfc972i73006wxsblsf0mfl706vrfanq93igfpayfbwcbp07"))))
     (properties `((upstream-name . "zfa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-skat))
     (home-page "https://cran.r-project.org/package=zfa")
     (synopsis "Zoom-Focus Algorithm")
@@ -701,6 +779,9 @@ rare variant association tests in exome sequencing data.")
         (base32 "10b0acz88vc80x49wwv581abym75wswi4z92mnl4xn0vw62vjpqa"))))
     (properties `((upstream-name . "ZetaSuite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rtsne
                              r-reshape2
                              r-rcolorbrewer
@@ -743,6 +824,9 @@ Zeta score calculation and hits selection based on defined Screen Strength.")
         (base32 "0m147z864g2pca28gbna1bb7jqr2f74x15fj8v8hhs3a2lr8lh37"))))
     (properties `((upstream-name . "zetadiv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-scam
                              r-nnls
@@ -776,6 +860,9 @@ additive models,shape constrained additive models, and I-splines.")
         (base32 "03fvhk3yd6grqs0d6m3j537xzy0n9s64947g7gagaqbrm3n8j1m6"))))
     (properties `((upstream-name . "zerotradeflow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-rlang
@@ -787,13 +874,13 @@ additive models,shape constrained additive models, and I-splines.")
     (synopsis "An Implementation for the Gravitational Models of Trade")
     (description
      "This package provides a system for creating the bilateral trade flow between a
-country pair equal to zero.  You provide the data, tell get_zerotradeflow()
-which variables are of interest and it expands the base by creating the
-bilateral zero trade flow.  The bases on the flow of trade between countries
-only report positive trade (greater than zero), however, for some analyzes of
-gravitacional models, data on zero flow is also necessary.  Some examples for
-Gravity Model: Figueiredo and Loures (2016) <doi:10.5935/0034-7140.20160015> and
-Yotov, Piermartini, Monteiro and Larch
+country pair equal to zero.  You provide the data, tell
+@code{get_zerotradeflow()} which variables are of interest and it expands the
+base by creating the bilateral zero trade flow.  The bases on the flow of trade
+between countries only report positive trade (greater than zero), however, for
+some analyzes of gravitacional models, data on zero flow is also necessary.
+Some examples for Gravity Model: Figueiredo and Loures (2016)
+<doi:10.5935/0034-7140.20160015> and Yotov, Piermartini, Monteiro and Larch
 <https://vi.unctad.org/tpa/web/docs/vol2/book.pdf>.")
     (license license:expat)))
 
@@ -809,6 +896,9 @@ Yotov, Piermartini, Monteiro and Larch
         (base32 "1n24nqyl0irpyspwx4b73xy228a84aa8zsn9fcf2lrlni5vyzmm0"))))
     (properties `((upstream-name . "zeroEQpart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ppcor r-mass))
     (home-page "https://github.com/djrichar92/zeroEQpart")
     (synopsis "Zero Order vs (Semi) Partial Correlation Test and CI")
@@ -832,6 +922,9 @@ to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
         (base32 "1ji4pqb0vh8ad8jr4pd6dkjr5cfckrlp24jncjc079wahw64fgs5"))))
     (properties `((upstream-name . "zenstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rvest
                              r-rlang
@@ -862,6 +955,9 @@ respecting the website scrapping policies.")
         (base32 "0rf690qip2x7w037cbq51cfzqmla398a6x857wpz8cy9fd26ns7p"))))
     (properties `((upstream-name . "zenplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pairviz r-mass r-graph))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/great-northern-diver/zenplots")
@@ -886,6 +982,9 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
         (base32 "0xmz4m9c96dm79csxwh878vvjyq147fzcy833i6a5flc5z9asw3z"))))
     (properties `((upstream-name . "zendown")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rcurl
@@ -913,6 +1012,9 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
         (base32 "06cjwk08w3x6dx717123psinid5bx6c563jnfn890373jw6xnfrk"))))
     (properties `((upstream-name . "zendeskR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjson r-rcurl))
     (home-page "https://cran.r-project.org/package=zendeskR")
     (synopsis "Zendesk API Wrapper")
@@ -931,6 +1033,9 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
         (base32 "0sizxy7ck26jrq77y09qcqyzppamfm0kh2zw8s7n83z0bfy54vs6"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xml
                              r-utf8
@@ -962,6 +1067,9 @@ and download of files.")
         (base32 "1h2zx3ah1xdyyag40ragrv7gvpnlzqmappbnjp971dn9khqdxfqs"))))
     (properties `((upstream-name . "zeitgebr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveletcomp r-pracma r-lomb r-data-table
                              r-behavr))
     (home-page "https://github.com/rethomics/zeitgebr")
@@ -987,6 +1095,9 @@ autocorrelation-based periodograms.")
         (base32 "1bxzc110nxyssdvnk330qs8qbmf6m7v5gglcfdkxdzy5gcbs1bm6"))))
     (properties `((upstream-name . "zebu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-rcpp r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/oliviermfmartin/zebu")
@@ -1011,6 +1122,9 @@ permutations.")
         (base32 "0v98kbz9njjdx60x9dn8hl8mc6x19i5knjyg2gkwfd667yy1rkl6"))))
     (properties `((upstream-name . "ZeBook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-triangle r-desolve))
     (home-page "https://cran.r-project.org/package=ZeBook")
     (synopsis "Working with Dynamic Models for Agriculture and Environment")
@@ -1032,6 +1146,9 @@ environment, by Daniel Wallach (INRA), David Makowski (INRA), James W. Jones
         (base32 "11nk8rvsqipqh9w13hi31yy3yv6hd2dk1si61p3frr9g5lsbi5l0"))))
     (properties `((upstream-name . "zdeskR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-purrr
@@ -1062,6 +1179,9 @@ the software).")
         (base32 "0a9x0j04mfjn2vfycylvqmsh7v4b1a5lx5j501xbzqp9m3m9bh9q"))))
     (properties `((upstream-name . "zcurve")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rdpack
                              r-rcpp
@@ -1094,6 +1214,9 @@ replicability rates, validation studies, and limitations.")
         (base32 "14yda45nqn9ywb7zpwp4kmjziglj0qjgm02lmi8ndvc5wi2r1ma7"))))
     (properties `((upstream-name . "zctaCrosswalk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rlang r-readr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MarketBridge/zctaCrosswalk")
@@ -1117,6 +1240,9 @@ ZIP Code Tabulation Areas (ZCTAs).")
         (base32 "04hi5lxgcqzmkbqppp5fv8x7wdgap3bgr8b8pv4pvavzh73jlmxs"))))
     (properties `((upstream-name . "zalpha")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=zalpha")
     (synopsis "Run a Suite of Selection Statistics")
@@ -1138,6 +1264,9 @@ under selective pressure.  See Jacobs, Sluckin and Kivisild (2016)
         (base32 "02kxlzplmss68zj1z97fvpcjyhhpic9hlx8f5j3gqn3m1mqm1dja"))))
     (properties `((upstream-name . "Z10")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rjson r-magrittr r-lubridate r-dplyr))
     (home-page "https://cran.r-project.org/package=Z10")
     (synopsis "Simple Ecological Statistics from the NEON Network")

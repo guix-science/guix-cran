@@ -56,6 +56,9 @@
         (base32 "1h3mf898wrqx212xxaqqm6vqgg1aicrykrnc32f9wl5hyjcbnq70"))))
     (properties `((upstream-name . "wyz.code.testthat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wyz-code-offensiveprogramming r-tidyr r-r6
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -84,6 +87,9 @@ need is nearly void when using wyz.code.@code{offensiveProgramming}'.")
         (base32 "02k6wk45dn6i8kzxhgcxqxvrzxf063dny17jjnj83wsxx2b37jgv"))))
     (properties `((upstream-name . "wyz.code.rdoc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wyz-code-offensiveprogramming
                              r-tidyr
                              r-stringr
@@ -119,6 +125,9 @@ language proficiency, wording style, and phrasal adjustments remains your job.")
         (base32 "1q3yn5yp2qlzqg1xpxlkpdkiij4kzwn9yj8mc9xxx4bxnbspkakq"))))
     (properties `((upstream-name . "wyz.code.offensiveProgramming")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-stringr r-r6 r-data-table r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://neonira.github.io/offensiveProgrammingBook_v1.2.2/")
@@ -146,6 +155,9 @@ up processing as many checks will be reduced to one single check.")
         (base32 "0xhcqqvh0lkw9mqdrib0q1inwgla5y9ayjc6pdkix6ckabfybagg"))))
     (properties `((upstream-name . "wyz.code.metaTesting")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wyz-code-offensiveprogramming r-tidyr
                              r-data-table r-crayon))
     (native-inputs (list r-knitr))
@@ -178,6 +190,9 @@ smart summaries that allows you to focus on dysfunctional cases.")
         (base32 "1m879478lvidcs1f844f5552kbgdxxbphk67w9pxgjx9mx8cmcxn"))))
     (properties `((upstream-name . "wxgenR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sm
                              r-plyr
                              r-msm
@@ -218,6 +233,9 @@ Cruz River Basin, Arizona.\" Fall Meeting 2019, American Geophysical Union.
         (base32 "0bs0i66ydy5zg66nwhniqzd000rc5qcmkliqpb3f9n749x2sj2f6"))))
     (properties `((upstream-name . "wwntests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sde r-rainbow r-mass r-ftsa r-fda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wwntests")
@@ -249,6 +267,9 @@ respectively.")
         (base32 "05dzgb2b1md981882sp85dvmrsak5v7gwkww1shqfm34zmk9dbkn"))))
     (properties `((upstream-name . "WWGbook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www-personal.umich.edu/~bwest/almmussp.html")
     (synopsis "Functions and Datasets for WWGbook")
     (description
@@ -268,6 +289,9 @@ published in 2006 by Chapman Hall / CRC Press.")
         (base32 "1zvw8mbgxnsj0r67v96fxnpcqbr2m52ffhhvzab0wlryxf7igs84"))))
     (properties `((upstream-name . "WVPlots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrapr
                              r-sigr
                              r-rquery
@@ -300,6 +324,9 @@ matching theoretical distribution.")
         (base32 "0dx33bs05k6zi6rnk12v6z2l2pvvx2jdl99vafbpyydf0ls4ppbk"))))
     (properties `((upstream-name . "wv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-simts r-rcpparmadillo r-rcpp r-coda))
     (home-page "https://github.com/SMAC-Group/wv")
     (synopsis "Wavelet Variance")
@@ -323,6 +350,9 @@ Percival, D.B. (2000) <doi:10.2307/2669537> and Guerrier, S. & Molinari, R.
         (base32 "0iq1lc1b22zdvclkr4yivxxf8z5mdxik7lx9r3b38h2qy2rckqb2"))))
     (properties `((upstream-name . "WufooR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dmpe/wufoor")
@@ -346,6 +376,9 @@ package is not supported.")
         (base32 "0zwx75rgdyh7pjxjvd5xvxqkfryvhq2csn4sd0py0dgmjxb5p3ja"))))
     (properties `((upstream-name . "WtTopsis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=WtTopsis")
     (synopsis "Weighted Method for Multiple-Criteria Decision Making")
     (description
@@ -366,6 +399,9 @@ Hwang CL. (1981, ISBN:978-3-540-10558-9).")
         (base32 "11400qmpkpk4y9af4c0q7ir32gwrxgyjspkxk0xlid2an7pbrsr3"))))
     (properties `((upstream-name . "wTO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-som
                              r-rfast
@@ -402,6 +438,9 @@ at <doi:10.1186/s12859-018-2351-7>.")
         (base32 "063ax9mbb2dy33l1cl533mjzpvhf2akw3613pklfjg6bhprlniz7"))))
     (properties `((upstream-name . "wtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wtest")
     (synopsis "The W-Test for Genetic Interactions Testing")
     (description
@@ -421,6 +460,9 @@ frequency (MAF) and odds ratio.")
         (base32 "0wq07n69l52rs0ddl1r3ml5jh5nflsg9mddvc3dxjdpd00mgbxnl"))))
     (properties `((upstream-name . "wsyn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-fields))
     (native-inputs (list r-rmarkdown r-mvtnorm r-knitr))
     (home-page "https://cran.r-project.org/package=wsyn")
@@ -446,6 +488,9 @@ Sheppard et al (2019) <doi: 10.1371/journal.pcbi.1006744>.")
         (base32 "0myb8hyjyapiahrar4zz1b4larv9nwxlk11mz5vyqyjwm98dxlvf"))))
     (properties `((upstream-name . "wsrf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SimonYansenZhao/wsrf")
@@ -474,6 +519,9 @@ building models from high-dimensional data.")
         (base32 "0l2c2zv6ypqqynaj9fxdwgwb0drm27zylbk9irhxxm2bp55s2pdy"))))
     (properties `((upstream-name . "wsprv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mnormt r-glmnet))
     (home-page "https://cran.r-project.org/package=wsprv")
     (synopsis "Weighted Selection Probability for Rare Variant Analysis")
@@ -494,6 +542,9 @@ associated with multiple phenotypes.")
         (base32 "0x5nc3bwqawx0k95v088dsx83dm7lw5lkryjvq6bl57bgrcn7n0l"))))
     (properties `((upstream-name . "wskm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-latticeextra r-lattice r-fpc))
     (home-page "https://github.com/SimonYansenZhao/wskm")
     (synopsis "Weighted k-Means Clustering")
@@ -524,6 +575,9 @@ weighting the group in addition to weighting individual features.")
         (base32 "1vgf823j3ychdnvg4nq59ah4rkv5lpwbg0r7sijir2b18sgxsrbi"))))
     (properties `((upstream-name . "wsjplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-scales r-magrittr r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=wsjplot")
     (synopsis "Style Time Series Plots Like the Wall Street Journal")
@@ -549,6 +603,9 @@ who has time to waste looking at a cluttered graph?")
         (base32 "18y2r6v19a4lnpa3y2q0whm5kizmd29r0abj7rcirb9fd5jqrsp2"))))
     (properties `((upstream-name . "wsbackfit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=wsbackfit")
     (synopsis "Weighted Smooth Backfitting for Structured Models")
@@ -573,6 +630,9 @@ backfitting.  Based on Roca-Pardinas J and Sperlich S (2010)
         (base32 "1d8k9bmzwg11ypkhhcnj2l6i2qnk13a09la0nc713nlwc21zqc44"))))
     (properties `((upstream-name . "wru")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-rcpparmadillo
@@ -614,6 +674,9 @@ The package also incorporates the data described in Rosenman, Olivella, and Imai
         (base32 "1rdg6rzjz2h514i3c8z89mvj2j3h1s7rr5fry2mq3xvrwrgd3738"))))
     (properties `((upstream-name . "wrTopDownFrag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrproteo r-wrmisc))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=wrTopDownFrag")
@@ -647,6 +710,9 @@ mass-spectrometry data.")
         (base32 "1clv6gd0qlkykllki5jkmhd1znrccyg1mv6w69wz8fj65b2466zd"))))
     (properties `((upstream-name . "WRTDStidal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survival
                              r-rcolorbrewer
@@ -682,6 +748,9 @@ see Beck and Hagy (2015) <doi:10.1007/s10666-015-9452-8> for details.")
         (base32 "1q0nc08q8f3kl9yvcivzylykk1ar5j5dw3ian2y9nrzgzri5l10i"))))
     (properties `((upstream-name . "wrswoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-logging))
     (home-page "http://krlmlr.github.io/wrswoR")
     (synopsis "Weighted Random Sampling without Replacement")
@@ -702,6 +771,9 @@ algorithms for weighted sampling without replacement.")
         (base32 "0fhmdnkk94m1bqm1i69szv3ycbkzr08xy30mwpqvbij9nh2sqj0w"))))
     (properties `((upstream-name . "WRSS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nloptr r-network r-hmisc r-ggplot2 r-ggally))
     (home-page "https://cran.r-project.org/package=WRSS")
     (synopsis "Water Resources System Simulator")
@@ -725,6 +797,9 @@ Operating Policy (SOP).")
         (base32 "0dv3s7dn9d1ssm6al4fsjr6702hlmlcw8z60qgsvzi3m226rpv5s"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrmisc r-limma r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wrProteo")
@@ -782,6 +857,9 @@ heterologous spike-in proteins.")
         (base32 "0pp1m2ijvkdyagc6rzfafgq2348lxdi5rplnsslg5wx0j88g5m92"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wrMisc")
@@ -823,6 +901,9 @@ supported, too.")
         (base32 "0sxg7z8rnh4lssbivkrfxldv4ivy37wkndzzndpbvq2gbvbjnp4l"))))
     (properties `((upstream-name . "write.snns")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=write.snns")
     (synopsis "Function for exporting data to SNNS pattern files")
     (description
@@ -841,6 +922,9 @@ supported, too.")
         (base32 "1ncng7mj207h50s8kc1c0d8z20qvzqxf28rbnbaddaj41bns23id"))))
     (properties `((upstream-name . "WrightMap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer))
     (home-page "https://cran.r-project.org/package=WrightMap")
     (synopsis "IRT Item-Person Map with 'ConQuest' Integration")
@@ -875,6 +959,9 @@ to create Wright Maps directly from data frames of person and item parameters.")
         (base32 "1hm23p0b4k03dxrbia9kq6r3n2c57glllraglxrj2vgnvwn6sl2c"))))
     (properties `((upstream-name . "WRI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rfast
                              r-rcpparmadillo
@@ -914,6 +1001,9 @@ Wasserstein autoregressive models.")
         (base32 "13wnj9260nchac59spg7k9vw073pa50kj98hvq5snr1j33nrxzgr"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrmisc r-rcolorbrewer r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wrGraph")
@@ -945,6 +1035,9 @@ mouse-over interactive html pages.")
         (base32 "03anhcwq9xlzj3zh7kpqm5n6znqiwvkwnd0w1b82my9rk3gp63gw"))))
     (properties `((upstream-name . "WRestimates")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=WRestimates")
     (synopsis "Sample Size, Power and CI for the Win Ratio")
@@ -967,6 +1060,9 @@ methodologies implemented see Yu, R. X. and Ganju, J. (2022)
         (base32 "1g83i9qmlidxy55cmvx0sqqrkps9fmvj0sh7jc92v89qwx73pfr0"))))
     (properties `((upstream-name . "WrensBookshelf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/buveges/WrensBookshelf")
     (synopsis "Collection of Palettes and Some Functions to Help Use Them")
@@ -989,6 +1085,9 @@ desired number/specific colors.")
         (base32 "1c9yh1xfgj1rd011qfw7mmmr3j1x0kzz8is93gw9wg6rf28d9lzj"))))
     (properties `((upstream-name . "wrassp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/IPS-LMU/wrassp")
@@ -1017,16 +1116,24 @@ user in a (hopefully) user-friendly manner.")
         (base32 "1r2mqgf4wiwx83lgs20r59c3h7yynkaif4qp6lbd20y06avb1jz1"))))
     (properties `((upstream-name . "wrapr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/WinVector/wrapr")
     (synopsis "Wrap R Tools for Debugging and Parametric Programming")
     (description
      "This package provides tools for writing and debugging R code.  Provides: %.>%
 dot-pipe (an S3 configurable pipe), unpack/to (R style multiple
-assignment/return), build_frame()'/'draw_frame() ('data.frame example tools),
-qc() (quoting concatenate), := (named map builder), let() (converts non-standard
-evaluation interfaces to parametric standard evaluation interfaces, inspired by
-gtools::strmacro() and base::bquote()'), and more.")
+assignment/return), @code{build_frame()'/'draw_frame()} ('data.frame example
+tools), @code{qc()} (quoting concatenate), := (named map builder), @code{let()}
+(converts non-standard evaluation interfaces to parametric standard evaluation
+interfaces, inspired by @code{gtools::strmacro()} and @code{base::bquote()}'),
+and more.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-wrappr
@@ -1041,6 +1148,9 @@ gtools::strmacro() and base::bquote()'), and more.")
         (base32 "0n60var32fyk40mgk6crq565qcpif8cbgmqkqkl0a2ip1l0vrs30"))))
     (properties `((upstream-name . "wrappr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wrappr")
     (synopsis "Collection of Helper and Wrapper Functions")
     (description
@@ -1062,6 +1172,9 @@ directory within functions and wrap console messages around other functions.")
         (base32 "0bp21x84rbmv5v0kv6bw41m6lq8mck24xv4ngkn2jywdjfpw3f8n"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -1107,20 +1220,24 @@ well.")
         (base32 "04l9m3x0yj5nccqpyaxd55dzw7mk2kjyrsysn680wx98jhwj05b2"))))
     (properties `((upstream-name . "wrangle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-rlang r-magrittr r-dplyr))
     (home-page "https://cran.r-project.org/package=wrangle")
     (synopsis "Systematic Data Wrangling Idiom")
     (description
      "Supports systematic scrutiny, modification, and integration of data.  The
-function status() counts rows that have missing values in grouping columns
-(returned by na() ), have non-unique combinations of grouping columns (returned
-by dup() ), and that are not locally sorted (returned by unsorted() ).
-Functions enumerate() and itemize() give sorted unique combinations of columns,
-with or without occurrence counts, respectively.  Function ignore() drops
-columns in x that are present in y, and informative() drops columns in x that
-are entirely NA; constant() returns values that are constant, given a key.  Data
-that have defined unique combinations of grouping values behave more predictably
-during merge operations.")
+function @code{status()} counts rows that have missing values in grouping
+columns (returned by @code{na()} ), have non-unique combinations of grouping
+columns (returned by @code{dup()} ), and that are not locally sorted (returned
+by @code{unsorted()} ).  Functions @code{enumerate()} and @code{itemize()} give
+sorted unique combinations of columns, with or without occurrence counts,
+respectively.  Function @code{ignore()} drops columns in x that are present in
+y, and @code{informative()} drops columns in x that are entirely NA;
+@code{constant()} returns values that are constant, given a key.  Data that have
+defined unique combinations of grouping values behave more predictably during
+merge operations.")
     (license license:gpl3)))
 
 (define-public r-wr
@@ -1135,6 +1252,9 @@ during merge operations.")
         (base32 "10813dzq3pn354g5x7hczi6aq61kmfrl8y4wc005bsxj0ipz0a06"))))
     (properties `((upstream-name . "WR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-gumbel r-cubature))
     (native-inputs (list r-knitr))
     (home-page "https://sites.google.com/view/lmaowisc/")
@@ -1160,6 +1280,9 @@ al., 2021 <doi:10.1111/biom.13501>).")
         (base32 "0swgjxq1i6pgflvavwq2dcdw21mc9bngqy18l089xrdv8kvilw4m"))))
     (properties `((upstream-name . "wqtrends")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-tidyr
                              r-tibble
@@ -1194,6 +1317,9 @@ results.")
         (base32 "1xd588kw171djx7q21b2jjarhbzd4i0gx7ccv1j1wyl95yzq07ba"))))
     (properties `((upstream-name . "wqspt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-rlang
                              r-pbapply
@@ -1231,6 +1357,9 @@ low false positive rate when utilizing WQS regression (Day et al. (2022)
         (base32 "14qaa9g9v4nqrv897laflib3wwhflyfaf9wpllmbi5xfv9223rcg"))))
     (properties `((upstream-name . "wqs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp r-glm2))
     (home-page "https://cran.r-project.org/package=wqs")
     (synopsis "Weighted Quantile Sum Regression")
@@ -1251,6 +1380,9 @@ index and estimated component weights.")
         (base32 "108cpsm7m8s4irh2k737hiljsznk98i9z4iaiv35sq1626ljalcg"))))
     (properties `((upstream-name . "WQM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveletcomp r-mbc r-matrixstats r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=WQM")
@@ -1282,6 +1414,9 @@ install wmtsa from this archive if they prefer to use wmtsa based decomposition.
         (base32 "1n28n7ijfypnqk7cwnvmkzhvp65sh7b00a9c2z72kdbxha0yn74w"))))
     (properties `((upstream-name . "wql")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-reshape2 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jsta/wql")
@@ -1308,6 +1443,9 @@ analysis of similar-frequency time series regardless of the subject matter.")
         (base32 "1pbmjg6y543aih8mxf9njfwpm090virhgqf8w0a5yx0jdfjwmz04"))))
     (properties `((upstream-name . "wppExplorer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wpp2019
                              r-shinythemes
                              r-shinyjs
@@ -1338,6 +1476,9 @@ interface.")
         (base32 "12h1z082xs9l58v69nilaqhdgz5jd0c90p85szibfzhfb7vs6xl5"))))
     (properties `((upstream-name . "wpp2019")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "http://population.un.org/wpp")
     (synopsis "World Population Prospects 2019")
@@ -1358,6 +1499,9 @@ interface.")
         (base32 "1w7cg31larvgaah16ch6z11jjq02i5f20hfwg63wvw5p6fyafivz"))))
     (properties `((upstream-name . "wpp2017")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "http://population.un.org/wpp")
     (synopsis "World Population Prospects 2017")
@@ -1378,6 +1522,9 @@ interface.")
         (base32 "07bnbmrshlqnlpca5djpq5crnpsmz228wmbpv1ah7ywnjvks6fyx"))))
     (properties `((upstream-name . "wpp2015")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr))
     (home-page "http://esa.un.org/wpp")
     (synopsis "World Population Prospects 2015")
@@ -1398,6 +1545,9 @@ interface.")
         (base32 "00283s4r36zzwn67fydrl7ldg6jhn14qkf47h0ifmsky95bd1n5k"))))
     (properties `((upstream-name . "wpp2012")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://esa.un.org/wpp")
     (synopsis "World Population Prospects 2012")
     (description
@@ -1416,6 +1566,9 @@ interface.")
         (base32 "1h87r1cn4lnx80dprvawsyzfkriscqjgr27gvv7n19wvsx8qd57k"))))
     (properties `((upstream-name . "wpp2010")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://esa.un.org/wpp")
     (synopsis "World Population Prospects 2010")
     (description
@@ -1434,6 +1587,9 @@ interface.")
         (base32 "0gd3vjw1fpzhp3qlf1jpc24f76i0pxsjs5pb1v3k2si6df7q4msd"))))
     (properties `((upstream-name . "wpp2008")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://esa.un.org/wpp/index.htm")
     (synopsis "World Population Prospects 2008")
     (description
@@ -1452,6 +1608,9 @@ interface.")
         (base32 "100vla11fbw16x5n4w4kbslz4n725v4x6j0hrxzrk99ryl0crmf6"))))
     (properties `((upstream-name . "WPKDE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=WPKDE")
     (synopsis "Weighted Piecewise Kernel Density Estimation")
     (description
@@ -1470,6 +1629,9 @@ interface.")
         (base32 "0f3v0kba87wkwyii0pzvs6a8ja897aifpvwkvryl2hzxxxaml7z4"))))
     (properties `((upstream-name . "wPerm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wPerm")
     (synopsis "Permutation Tests")
     (description
@@ -1493,6 +1655,9 @@ introduction to permutation tests.")
         (base32 "0likivdwxl66nj6wxkcssqgz8slhagbw9qhxbxwsw10gyq4769rb"))))
     (properties `((upstream-name . "wpa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-tidyselect
                              r-tidyr
@@ -1539,6 +1704,9 @@ optimised for simplicity.")
         (base32 "12hn1jn5q1gnc71w7mcbxq8zkaf2y3vwy8i06s7cakpdcrs0971z"))))
     (properties `((upstream-name . "woylier")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tourr r-tibble r-geozoo r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://numbats.github.io/woylier/")
@@ -1566,6 +1734,9 @@ invariant.  See more details in Buj, Cook, Asimov and Hurley (2005)
         (base32 "0i677bzgd9qx57x7n7qsaqpacgpap2d0n8gq1lc9hsmg13bs2v8f"))))
     (properties `((upstream-name . "wowa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=wowa")
     (synopsis "Weighted Ordered Weighted Average")
@@ -1590,6 +1761,9 @@ H. Bustince, and T. Calvo (2016, ISBN: 978-3-319-24753-3), G. Beliakov(2018)
         (base32 "1m0k21ywy6lgchddlaywl6rhqimjbd4npsnmx3l1w4jgnlgj9z76"))))
     (properties `((upstream-name . "WOTPLY")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna r-network r-ggally))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=WOTPLY")
@@ -1613,6 +1787,9 @@ between time point t and t+1 are obtained from Waddington-OT analysis
         (base32 "0fl9mizrjg3r7n7gslsxgaw3k2v63scqmvnv6341q8sq7018hzln"))))
     (properties `((upstream-name . "wosr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-pbapply r-jsonlite r-httr))
     (home-page "https://vt-arc.github.io/wosr/index.html")
     (synopsis "Clients to the 'Web of Science' and 'InCites' APIs")
@@ -1635,6 +1812,9 @@ Science and @code{InCites} databases.")
         (base32 "1czzm30xwssjrhw7kqw23d2s03v9lbwa0crld9qf9q80h5zc0kxi"))))
     (properties `((upstream-name . "worrrd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tibble
                              r-stringr
@@ -1667,6 +1847,9 @@ pencil!")
         (base32 "1bdr3x1pg4l37p5kg36za32skmwwn7hlfrnf2a3hf65347wiif9j"))))
     (properties `((upstream-name . "worrms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-jsonlite r-data-table r-crul))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/worrms/")
@@ -1690,6 +1873,9 @@ synonyms, as well as fetching taxonomic children and taxonomic classification.")
         (base32 "1xnjp6m3h0q6phmn2c2wkbjzyl8lpx07jsryz0i8rxr6ny591ja2"))))
     (properties `((upstream-name . "WormTensor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uwot
                              r-usedist
                              r-rtsne
@@ -1729,6 +1915,9 @@ calculated distance matrices from figshare <https://figshare.com>.")
         (base32 "146zygpdlxgwv871mb5x1whh6lzj3s1cma3rmgfip9h0fypd17q4"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-readr
@@ -1761,6 +1950,9 @@ Atmospheric Administration (NOAA) Integrated Surface Database (ISD).")
         (base32 "1lhhm7f7fqm4rnamcvcq0927bkk138kby4bgngacrhr79161z1mj"))))
     (properties `((upstream-name . "WorldMapR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-rnaturalearth
                              r-ggplot2
@@ -1787,6 +1979,9 @@ Country labels can also be added to the map.")
         (base32 "1s11qa30x2an8ndjahnx3wxbwf51xdwfqs42qw14wh83m35q2zn2"))))
     (properties `((upstream-name . "worldfootballR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-withr
                              r-tidyselect
@@ -1834,6 +2029,9 @@ export data tables to files before being able to complete their analysis.")
         (base32 "0wasm5fd387kih4a6g3z378560sbw3c2n9kdnbr1y47agysma9fp"))))
     (properties `((upstream-name . "WorldFlora")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=WorldFlora")
     (synopsis
      "Standardize Plant Names According to World Flora Online Taxonomic Backbone")
@@ -1860,6 +2058,9 @@ static since 2013.")
         (base32 "0cqnp8c3n7kvbkv2s4jqqvmzf8g86drywv7y05mnrgidynhr975d"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr2))
     (home-page "https://m-muecke.github.io/worldbank/")
     (synopsis
@@ -1883,6 +2084,9 @@ for further details about the API.")
         (base32 "1gynlvmqxyibql5j3db9dwvc0jsc9jqzpy3d3gp43d5lcl11mcmq"))))
     (properties `((upstream-name . "workloopR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-signal r-pracma))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/workloopR/")
@@ -1921,6 +2125,9 @@ or tidyverse functions.  This package has been peer-reviewed by @code{rOpenSci}
         (base32 "0ziknnnjqdlzxgxhcqlvpnjlqd33mdglp0wss2pl655slpizzjb4"))))
     (properties `((upstream-name . "workflowr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-whisker
                              r-stringr
@@ -1957,6 +2164,9 @@ results.")
         (base32 "18kgwq6f9ymm1bmbvpmxq9gz5fx0qj64439scr21kk1cvsfl4y88"))))
     (properties `((upstream-name . "wordsalad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-word2vec r-tibble r-text2vec r-fasttextr))
     (home-page "https://github.com/EmilHvitfeldt/wordsalad")
     (synopsis "Provide Tools to Extract and Analyze Word Vectors")
@@ -1978,6 +2188,9 @@ increase reproducibility and correctness.")
         (base32 "1kd9f5470c7bdayb324m4m72v7s2kknr68qbggl5m0ww29gxs9wd"))))
     (properties `((upstream-name . "words")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=words")
     (synopsis "List of English Words from the Scrabble Dictionary")
     (description
@@ -1999,6 +2212,9 @@ increase reproducibility and correctness.")
         (base32 "096b6msnl1rmikx40j7abb9rhw1vayvf9fjq6i8hrjvv38dbaa1d"))))
     (properties `((upstream-name . "WordR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-officer r-flextable r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=WordR")
@@ -2020,6 +2236,9 @@ and plots.")
         (base32 "04cxniagz9y2szq2b9qhz8lfjsmbdc6d928rfayy22yigy6mwi1i"))))
     (properties `((upstream-name . "wordPuzzleR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-scales r-purrr))
     (home-page "https://github.com/zhuxr11/wordPuzzleR")
     (synopsis "Word Puzzle Game")
@@ -2043,6 +2262,9 @@ guess different words.")
         (base32 "0gr04si037rwnmkb2i9p4cc75lrshjfwh3chbgl86dxyxryx9mdy"))))
     (properties `((upstream-name . "wordpredictor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-snowballc
                              r-patchwork
@@ -2075,6 +2297,9 @@ Packages\", <https://r-pkgs.org/index.html>.")
         (base32 "0g3ws2ndl34f8z4nxqij8ifwqs5n3nwn9fjgjqgg1sn5apkc2zcf"))))
     (properties `((upstream-name . "WordPools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=WordPools")
     (synopsis "Word Pools Used in Studies of Learning and Memory")
     (description
@@ -2095,6 +2320,9 @@ in psychological studies of learning and memory.  It provides a simple function,
         (base32 "0x5m8vkszxpz8mf9pblzm39wpaa247336zkja560zsqgzdvcj3hx"))))
     (properties `((upstream-name . "wordpiece.data")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/macmillancontentscience/wordpiece.data")
     (synopsis "Data for Wordpiece-Style Tokenization")
     (description
@@ -2117,6 +2345,9 @@ into an R-friendly format.")
         (base32 "1xg9xsaqpz5l2f2vk1qnc7cwplnwvv6jl9wbdg0f92klhk1nanyp"))))
     (properties `((upstream-name . "wordpiece")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordpiece-data
                              r-stringi
                              r-rlang
@@ -2145,6 +2376,9 @@ conventions are used by default.")
         (base32 "199hnirbmwarn04ky1147x5c048j087rdml86qcp92kzp20679v3"))))
     (properties `((upstream-name . "WordOfMouth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lambertw))
     (home-page "https://cran.r-project.org/package=WordOfMouth")
     (synopsis "Estimates Economic Variables for Word-of-Mouth-Campaigns")
@@ -2165,6 +2399,9 @@ demand and consumer surplus of Word-of-Mouth-campaigns on mean-field networks.")
         (base32 "1m08k2z7a1zf41n8gnffv6q3b3rgssw3smdwy7v9fjvngf04w7ax"))))
     (properties `((upstream-name . "wordnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjava))
     (home-page "https://wordnet.princeton.edu/")
     (synopsis "WordNet Interface")
@@ -2198,6 +2435,9 @@ where available, or direct download from
         (base32 "1hvnf5r82gymlyr08gkmyd2y8q51a66b9k47pzgagmv5fi1bpilm"))))
     (properties `((upstream-name . "wordmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-quanteda r-matrix r-ggrepel r-ggplot2))
     (home-page "https://github.com/koheiw/wordmap")
     (synopsis
@@ -2219,6 +2459,9 @@ data or keyword matching Watanabe & Zhou (2020) <doi:10.1177/0894439320907027>."
         (base32 "0ynn3wb3b226mnj6a51xb3an2vdn4v6ckaykbf52wyrnd94a6i7x"))))
     (properties `((upstream-name . "WordListsAnalytics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-reshape2
                              r-readr
@@ -2249,6 +2492,9 @@ based on their descriptions Canessa et al. (2022)
         (base32 "0pvnijh2gvwjbd86ivky0zbi8y1x40xazsv2bdy5s2rfsscf4l88"))))
     (properties `((upstream-name . "wordler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DavidASmith/wordler")
@@ -2274,6 +2520,9 @@ programmatically.  Based on Josh Wardle's game
         (base32 "1a2q42bn65q4idxq0vxysyam16q6c18inxv4dqhfy0x52j8z9x6k"))))
     (properties `((upstream-name . "wordcloud2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-htmlwidgets r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lchiffon/wordcloud2")
@@ -2296,6 +2545,9 @@ presentation on 2D canvas or HTML <https://timdream.org/wordcloud2.js/>.")
         (base32 "0inlq96j4zkjncz2v66amz91l5y3b5lx49qi2jg6jbqdldw7aa02"))))
     (properties `((upstream-name . "word.alignment")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openxlsx r-data-table))
     (home-page "https://cran.r-project.org/package=word.alignment")
     (synopsis
@@ -2320,6 +2572,9 @@ given parallel corpus.")
         (base32 "0hqsviiznr5rp3bg1fajpcpcnnb9819h96i198vslqn9qjr10a9q"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xfun
                              r-usethis
@@ -2346,35 +2601,6 @@ in the tutorial paper by Van Lissa, Brandmaier, Brinkman, Lamprecht, Struiksma,
 & Vreede (2021). <doi:10.3233/DS-210031>.")
     (license license:gpl3+)))
 
-(define-public r-wooldridge
-  (package
-    (name "r-wooldridge")
-    (version "1.4-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wooldridge" version))
-       (sha256
-        (base32 "16lgdzbjp4yjhihbhz9kpagsdral802lhgg6m94vxprlz2sna1r4"))))
-    (properties `((upstream-name . "wooldridge")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://justinmshea.github.io/wooldridge/")
-    (synopsis
-     "115 Data Sets from \"Introductory Econometrics: A Modern Approach, 7e\" by Jeffrey M. Wooldridge")
-    (description
-     "Students learning both econometrics and R may find the introduction to both
-challenging.  The wooldridge data package aims to lighten the task by
-efficiently loading any data set found in the text with a single command.  Data
-sets have been compressed to a fraction of their original size.  Documentation
-files contain page numbers, the original source, time of publication, and notes
-from the author suggesting avenues for further analysis and research.  If one
-needs an introduction to R model syntax, a vignette contains solutions to
-examples from chapters of the text.  Data sets are from the 7th edition
-(Wooldridge 2020, ISBN-13 978-1-337-55886-0), and are backwards compatible with
-all previous versions of the text.")
-    (license license:gpl3)))
-
 (define-public r-woodvaluationde
   (package
     (name "r-woodvaluationde")
@@ -2387,6 +2613,9 @@ all previous versions of the text.")
         (base32 "0lm6br7nnycng2lidkgg41li58q3pgsh85hi6b1mj2r6vkbnk3rx"))))
     (properties `((upstream-name . "woodValuationDE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page
      "https://github.com/Forest-Economics-Goettingen/woodValuationDE")
@@ -2420,6 +2649,9 @@ Federal State of Hesse in Germany.")
         (base32 "170bakkny7k6j22qwal9z2sycils1a7imajzvlzjbrasjy81m2l7"))))
     (properties `((upstream-name . "WoodSimulatR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -2450,6 +2682,9 @@ well.")
         (base32 "0pmm032lyk31bv30dwz7ajz2ihppp13i1ibpnnc9x9ga3axxhpj7"))))
     (properties `((upstream-name . "WoodburyMatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mbertolacci/WoodburyMatrix")
@@ -2476,6 +2711,9 @@ found in Harville, D. A. (1997) <doi:10.1007/b98818>.")
         (base32 "0acvv7jylissacvln51pi14a8i9y02q5whrz3sx5dsnvsk00slzm"))))
     (properties `((upstream-name . "womblR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-msm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=womblR")
@@ -2507,6 +2745,9 @@ Statistical Association.")
         (base32 "0x890h5fh59n54587adyzphr956fkg3px8i7c378aq1fs7k35gxs"))))
     (properties `((upstream-name . "woeBinning")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=woeBinning")
     (synopsis
      "Supervised Weight of Evidence Binning of Numeric Variables and Factors")
@@ -2534,6 +2775,9 @@ solutions and for deploying them to (new) data.")
         (base32 "15mvcmwnrqxpzn054lq85vyzq5rgxkiwbd40gnn4s3ny1xdrwgsm"))))
     (properties `((upstream-name . "woe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=woe")
     (synopsis "Computes Weight of Evidence and Information Values")
     (description
@@ -2553,6 +2797,9 @@ Weight of Evidence and Information Value.")
         (base32 "00rk7wmz0rknh4v9p0r6syi1c5dch7wkq7cz9zg6n8d72sia4azv"))))
     (properties `((upstream-name . "wodds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-purrr r-magrittr r-glue r-dplyr))
     (home-page "https://github.com/alexhallam/wodds")
     (synopsis "Calculates Whisker Odds")
@@ -2576,6 +2823,9 @@ Hadley Wickham and Karen Kafadar (2017) <doi:10.1080/10618600.2017.1305277>.")
         (base32 "0hh5dkjzqxwkzx5d28cywr9q5bdk3a44md57irj3gp6bd00rv0p6"))))
     (properties `((upstream-name . "WOAkMedoids")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-proxy r-dtwclust r-cluster))
     (home-page "https://cran.r-project.org/package=WOAkMedoids")
     (synopsis "Whale Optimization Algorithm for K-Medoids Clustering")
@@ -2598,6 +2848,9 @@ Algorithm\" by Mirjalili and Lewis (2016) <doi:10.1016/j.advengsoft.2016.01.008>
         (base32 "1lqz57438ikcbf2smi54qavwnw6p27qqh0ri33ijyzmcl6yakncg"))))
     (properties `((upstream-name . "wnominate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pscl))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=wnominate")
@@ -2620,6 +2873,9 @@ rollcall object from the pscl package.")
         (base32 "19j2yz6lvkxpmjr0vv6pjc7j1c02y0hb3gay5sy1y0xk706aggb5"))))
     (properties `((upstream-name . "wNNSel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wNNSel")
     (synopsis
      "Weighted Nearest Neighbor Imputation of Missing Values using Selected Variables")
@@ -2646,6 +2902,9 @@ smaller than the number of predictors.  For more information see Faisal and Tutz
         (base32 "1jsizbn4kampn8gqm3ry0m6a5sv9nb8adih8a7pnd2g3h0rjm7lx"))))
     (properties `((upstream-name . "wnl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (home-page "https://cran.r-project.org/package=wnl")
     (synopsis
@@ -2675,6 +2934,9 @@ receptor occupancy model, and rebound phenomena model.")
         (base32 "03rd75r4wih1w7srhnwqxjkirisb43y1sd2f1wzixqj8lq0dmb25"))))
     (properties `((upstream-name . "wmwpow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-smoothmest r-mass r-lamw))
     (home-page "https://cran.r-project.org/package=wmwpow")
     (synopsis
@@ -2699,6 +2961,9 @@ continuous outcome (Mollan, Trumble, Reifeis et.  al., Mar.  2020)
         (base32 "0dhh36wzcjg4c3yrg2qgb6kj7p8fpadvfwiach04dlqmbzjj2knw"))))
     (properties `((upstream-name . "wmwm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wmwm")
     (synopsis "Performs Wilcoxon-Mann-Whitney Test with Missing Data")
     (description
@@ -2718,6 +2983,9 @@ with controlled Type I error regardless of the values of missing data.")
         (base32 "0qy4cp4d8nlcqlcs4mqjv1f1kf1yh9y2wvh1ak6f049qlj7yfwfb"))))
     (properties `((upstream-name . "wmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/wfrierson/wmm")
     (synopsis "World Magnetic Model")
     (description
@@ -2751,6 +3019,9 @@ Macmillian et al (2000)
         (base32 "11fd1g83i2qvp9814zk3qq8bz5gir1j5gsz5x5zrqgygyla2xpbw"))))
     (properties `((upstream-name . "WMAP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zeallot
                              r-randomforest
                              r-pkgcond
@@ -2779,6 +3050,9 @@ of inverse probability weights for data integration settings.")
         (base32 "1j9ffilg61a4pxk26rwmpwrigm63lnnd4h0k8ivqk6flxal41jqb"))))
     (properties `((upstream-name . "WLreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-inline))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=WLreg")
@@ -2800,6 +3074,9 @@ for non-binary and multivariate covariates.")
         (base32 "06mhc6n9mszqrj9hi61z5yfyny5aqsvv11a5n7l0wwhpirgi3i8m"))))
     (properties `((upstream-name . "WLogit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-matrix
                              r-mass
@@ -2832,6 +3109,9 @@ between the predictors and in applying the generalized Lasso criterion.")
         (base32 "01gsvyzxd89j979zdm8q159wgkha277xwsn097ja5absxlny6991"))))
     (properties `((upstream-name . "wkutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wk r-vctrs r-tibble r-rcpp))
     (home-page "https://paleolimbot.github.io/wkutils/")
     (synopsis "Utilities for Well-Known Geometry Vectors")
@@ -2854,6 +3134,9 @@ well-known geometry vectors, and calculate bounding boxes are provided.")
         (base32 "05pjyk0xsdazbi1x7xfmg097ybybd60zmzzm7sch1ikp05hzn0wb"))))
     (properties `((upstream-name . "wktmo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wktmo")
     (synopsis "Converting Weekly Data to Monthly Data")
     (description
@@ -2873,6 +3156,9 @@ formats: ISO week, epidemiology week (epi week) and calendar date.")
         (base32 "0mah538345npkb06bcj18mb6qnnx8nn7bdqmvqqpbawallh546a9"))))
     (properties `((upstream-name . "wkb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp))
     (home-page "https://cran.r-project.org/package=wkb")
     (synopsis "Convert Between Spatial Objects and Well-Known Binary Geometry")
@@ -2900,14 +3186,18 @@ Spotfire'.")
         (base32 "0m4hz06y2dlgnr91nq7jf70fgdl9l6z6b7cf1nxcbc1q0a6rzxv0"))))
     (properties `((upstream-name . "wither")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr r-here r-fs))
     (home-page "https://github.com/torbjorn/wither")
     (synopsis "Temporarily Change Project Root")
     (description
      "Lets you temporarily execute an expression or a local block with a different
-here() root in the here package.  This is useful for sourcing code in other
-projects which expect the root directory of here() to be the project directory
-of those projects.  This may be the case with git submodules for example.")
+@code{here()} root in the here package.  This is useful for sourcing code in
+other projects which expect the root directory of @code{here()} to be the
+project directory of those projects.  This may be the case with git submodules
+for example.")
     (license license:expat)))
 
 (define-public r-withdots
@@ -2922,6 +3212,9 @@ of those projects.  This may be the case with git submodules for example.")
         (base32 "0vpbw9swyi8qf5s2nlml9pdmrzvwn4rpm4gbfsc0vikbzp29dmvi"))))
     (properties `((upstream-name . "withdots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/NikKrieger/withdots")
     (synopsis "Put ... in a Function's Argument List")
     (description
@@ -2941,6 +3234,9 @@ arguments.")
         (base32 "1j43s6n9y757gs7q9xjps9qsy81jznh5vyij1yds8nfz1r53wg3h"))))
     (properties `((upstream-name . "wishmom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-roxygen2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wishmom")
@@ -2970,6 +3266,9 @@ of Equivariant Matrix-valued Functions of Wishart and Inverse Wishart Matrices\"
         (base32 "0c5ic98ihpzkycsj9wg0127civm4w1rmkkw6zsjp8sfn20cl8a8z"))))
     (properties `((upstream-name . "wISAM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=wISAM")
     (synopsis "Weighted Inbred Strain Association Mapping")
@@ -2982,7 +3281,8 @@ that more organisms were observed from some strains than others, so the strains
 with more organisms have better-estimated means.  Package @code{wISAM} handles
 this situation by allowing for weighting of each observation according to
 residual variance.  Specifically, the weight parameter to the function
-conduct_scan() takes the precision of each observation (one over the variance).")
+@code{conduct_scan()} takes the precision of each observation (one over the
+variance).")
     (license license:gpl3)))
 
 (define-public r-wiqid
@@ -2997,6 +3297,9 @@ conduct_scan() takes the precision of each observation (one over the variance)."
         (base32 "1d5bckkr6cnixccxaa14n7vbsya5cc00y9mryy1j69shhsmxp5ks"))))
     (properties `((upstream-name . "wiqid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-plotrix
                              r-mcmcoutput
@@ -3026,6 +3329,9 @@ survival, species richness and distance measures.")
         (base32 "12ghq92mqr76jvld47cy4hh1gqs8kvjd0afb39qyx24l5abcl4nc"))))
     (properties `((upstream-name . "wintime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr))
     (home-page "https://pubmed.ncbi.nlm.nih.gov/38417455/")
@@ -3055,6 +3361,9 @@ to wintime.\".")
         (base32 "02b6y08qhs3w4l58yra6f7yw9pqmlbrmac7qinwwm63s7jl95z9q"))))
     (properties `((upstream-name . "WINS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-survival
                              r-stringr
@@ -3087,6 +3396,9 @@ inverse probability of treatment weighting (IPTW) analysis.")
         (base32 "0d064qq9zad9bdacldhicj3xhyrvp0fcqrxfj594yzra2qwgkx90"))))
     (properties `((upstream-name . "WinRatio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse r-tidyselect r-rcpp r-magrittr
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=WinRatio")
@@ -3111,6 +3423,9 @@ are captured at specific time-points in the study.")
         (base32 "1iw7xmqa03zqba9qvs1hdxmig5fgj7hz1ydj8cbcm2dscz4686sr"))))
     (properties `((upstream-name . "winr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-rdpack r-dplyr))
     (home-page "https://cran.r-project.org/package=winr")
     (synopsis "Randomization-Based Covariance Adjustment of Win Statistics")
@@ -3148,6 +3463,9 @@ ratios and win odds for ordinal outcomes.â SESUG 2023 Proceedings, Paper
         (base32 "17jwnnzy5a38a2n9ixhs8vk8ybq2a8lhjv5hfx4dwdg73iklnmib"))))
     (properties `((upstream-name . "winputall")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -3188,6 +3506,9 @@ allow integrating time-varying and time-constant control variables.")
         (base32 "0a4lhsvwd1jh48nb2b6nxkybp4j5pblf94j8pmx6v2yq11k2ddki"))))
     (properties `((upstream-name . "wingen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-vcfr
                              r-tidyselect
@@ -3227,6 +3548,9 @@ for rarefaction, interpolation, and masking as described in Bishop et al. (2023)
         (base32 "08b3311vw6cf9y9spzvd7pl7q53ik5alkxq4j5d6w8a4kd7bbwaf"))))
     (properties `((upstream-name . "winfapReader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate))
     (native-inputs (list r-knitr))
     (home-page "https://ilapros.github.io/winfapReader/")
@@ -3251,6 +3575,9 @@ suitable for direct use in the WINFAP software, hence the name of the package.")
         (base32 "09iqi3z6lw5mv4d8hl19c11slvy0gfgv99rhvia637wdihgbg8j2"))))
     (properties `((upstream-name . "wINEQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sampling r-dplyr))
     (home-page "https://cran.r-project.org/package=wINEQ")
     (synopsis "Inequality Measures for Weighted Data")
@@ -3275,6 +3602,9 @@ significance tests.")
         (base32 "1smd3zw5ra1fba6mds3diadcmbw59jlvmrvfzzi4fss91wv50jql"))))
     (properties `((upstream-name . "windsoraiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/windsor-ai/windsoraiR/")
@@ -3297,6 +3627,9 @@ Facebook Ads, and many others using the Windsor.ai API
         (base32 "1n8az7zsbj2xlgkws7rfnk4ihnj1lchsjvglm7qnkrmjchj8asmn"))))
     (properties `((upstream-name . "windows.pls")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-stringr
@@ -3325,6 +3658,9 @@ based on error metrics.  Chen et al.(2017) <doi:10.1007/s00216-017-0218-9>.")
         (base32 "0i8qvgc9r8j082m93bsvl082h32bsvjwqzmyn8cb6qnpynn4k2a0"))))
     (properties `((upstream-name . "windex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scatterplot3d r-phytools r-phangorn r-geiger
                              r-ape))
     (home-page "https://cran.r-project.org/package=windex")
@@ -3347,6 +3683,9 @@ perhaps useful functions.")
         (base32 "1vvcp1g5a677g9zqssdkh3zdy646zdkzy75nqhy497bpcgw43q1b"))))
     (properties `((upstream-name . "WindCurves")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readbitmap))
     (native-inputs (list r-knitr))
     (home-page "https://www.neerajbokde.in/viggnette/2021-10-14-WindCurves/")
@@ -3372,6 +3711,9 @@ provided.")
         (base32 "077kl7j1db0g2pnr7gc91x2anbw80y5sbl4gy49rzclbhhnwjlrs"))))
     (properties `((upstream-name . "windAC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-mvtnorm))
     (home-page "https://cran.r-project.org/package=windAC")
     (synopsis "Area Correction Methods")
@@ -3402,6 +3744,9 @@ truncated distribution functions.")
         (base32 "1ib3qz09r40gwxvzsapi6xs80phxxn2x04f6vgsvrbplfy5nxg6k"))))
     (properties `((upstream-name . "winch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-procmaps r-lifecycle))
     (native-inputs (list pkg-config r-knitr))
@@ -3424,6 +3769,9 @@ debugging of R packages with native code.")
         (base32 "050hi6rigs024is1ry0yymqapgqfhzpp0ghk5ya028k71k22lksx"))))
     (properties `((upstream-name . "wilson")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-viridis
                              r-shinywidgets
@@ -3477,6 +3825,9 @@ plotting.")
         (base32 "1302ain55spz34irmq49sp9b1pvrn2nxmzmqs8m9wdk6g82h3s27"))))
     (properties `((upstream-name . "wildpoker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wildpoker")
     (synopsis "Best Hand Analysis for Poker Variants Including Wildcards")
     (description
@@ -3498,6 +3849,9 @@ tactics, so draw poker variants are not included.")
         (base32 "1ixrajbxmlsr8xniagywlfd8knik7c93phvsdbpas0k8ai7wfv9r"))))
     (properties `((upstream-name . "wildmeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich r-robumeta r-metafor r-clubsandwich))
     (native-inputs (list r-knitr))
     (home-page "https://meghapsimatrix.github.io/wildmeta/index.html")
@@ -3520,6 +3874,9 @@ examined in Joshi, Pustejovsky, and Beretvas (2022) <DOI:10.1002/jrsm.1554>.")
         (base32 "1jl21mnsl993fc3y9z56zb8yfz3j0hvg8f9q69ghlicx139mik0m"))))
     (properties `((upstream-name . "wildlifeDI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-sp
                              r-sf
@@ -3553,6 +3910,9 @@ move2 class of objects for working with tracking dataset.")
         (base32 "0qkzab84z95g5f4fv3v4wisccgd7k9m3210pz4nvm1x8rfaqfjf1"))))
     (properties `((upstream-name . "wildcard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wlandau/wildcard")
@@ -3572,17 +3932,20 @@ move2 class of objects for working with tracking dataset.")
         (base32 "0wnwxgm5g4fxdkrb6h124ngaw0s88yr2s8iqshb77vzj12kvb9m1"))))
     (properties `((upstream-name . "wilcoxmed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wilcoxmed")
     (synopsis
      "Computes Values for the 1-Sample Wilcoxon Sign Rank Test for Medians")
     (description
      "An implementation of the 1-Sample Wilcoxon Sign rank test for medians.  It
-includes 2 functions, W_stat(), which computes the exact probabilities of the
-Wilcoxon Sign Rank Test Statistic, W. The second function, Wilcox.m.test()
-allows the user to conduct the 1-Sample Wilcoxon Sign Rank hypothesis test for
-medians, this also allows the user to conduct the hypothesis test for the normal
-approximation, based on the techniques of Bickel and Doksum (1973,
-ISBN:013850363X).")
+includes 2 functions, @code{W_stat()}, which computes the exact probabilities of
+the Wilcoxon Sign Rank Test Statistic, W. The second function,
+@code{Wilcox.m.test()} allows the user to conduct the 1-Sample Wilcoxon Sign
+Rank hypothesis test for medians, this also allows the user to conduct the
+hypothesis test for the normal approximation, based on the techniques of Bickel
+and Doksum (1973, ISBN:013850363X).")
     (license license:gpl2)))
 
 (define-public r-wikkitidy
@@ -3597,6 +3960,9 @@ ISBN:013850363X).")
         (base32 "03gdzmmic45z82a4c6cvdmispjl2r8iwkmmdzxm2b7ag4f7araak"))))
     (properties `((upstream-name . "wikkitidy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-webfakes
                              r-vctrs
                              r-tibble
@@ -3632,6 +3998,9 @@ correct, and receive results in tidy tibbles.")
         (base32 "0yw1afj926pki61kfgmb5s4whaj25c93hqs4yja8gqb87pky5010"))))
     (properties `((upstream-name . "wikiTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ratelimitr r-jsonlite r-httr r-curl
                              r-collections))
     (native-inputs (list r-knitr))
@@ -3642,7 +4011,7 @@ correct, and receive results in tidy tibbles.")
 information from the Wikimedia sources.  It is specifically created to work with
 names of celebrities, in which case their information and statistics can be
 downloaded.  Additionally, it also builds links and snippets to use in
-combination with the function gallery() in @code{netCoin} package.")
+combination with the function @code{gallery()} in @code{netCoin} package.")
     (license license:gpl3)))
 
 (define-public r-wikitaxa
@@ -3657,6 +4026,9 @@ combination with the function gallery() in @code{netCoin} package.")
         (base32 "1z7p7dwgl8x4ambwss5dqlp4zgz52mgj0vhx2bqwizarmx9ji1xs"))))
     (properties `((upstream-name . "wikitaxa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-wikidatar
                              r-tibble
@@ -3685,6 +4057,9 @@ the sources just listed, as well performing taxonomic search.")
         (base32 "180hgqc1saqc280p423qhgm5h106kd783l4ckhxs5nnhygm3yiv4"))))
     (properties `((upstream-name . "wikiprofiler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yulab-utils r-rsvg r-gson r-ggplotify r-ggplot2))
     (home-page "https://yulab-smu.top/contribution-knowledge-mining/")
     (synopsis "'WikiPathway' Based Data Integration and Visualization")
@@ -3706,6 +4081,9 @@ syntax that using pipe operator to add graphic layer.")
         (base32 "08mj3flildcvqdbj5y5c225ipbwfd2ivrjmlcwyg3v84ydhrbrkf"))))
     (properties `((upstream-name . "WikipediR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ironholds/WikipediR/")
@@ -3729,6 +4107,9 @@ elements of the category tree.")
         (base32 "0niym9azy4qzcr4rriw0bfd97scx1mdpx67szinj7qsh569xb61m"))))
     (properties `((upstream-name . "wikilake")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-wikipedir
                              r-units
@@ -3759,6 +4140,9 @@ elements of the category tree.")
         (base32 "1fw1chha6mcrmv1f9rjg01g84bgzkgf1h76l926brjs5gsn4i414"))))
     (properties `((upstream-name . "wikifacts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rvest r-magrittr))
     (home-page "https://cran.r-project.org/package=wikifacts")
     (synopsis "Get Facts and Data from Wikipedia and Wikidata")
@@ -3778,6 +4162,9 @@ elements of the category tree.")
         (base32 "120833b7zyq1rhmn9c8iv0j6br60af7gbn5lc4dil55qhh2lp9rx"))))
     (properties `((upstream-name . "WikidataR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wikipedir
                              r-wikidataqueryservicer
                              r-tibble
@@ -3814,6 +4201,9 @@ and tibbles).  Uses the Wikidata and Quickstatements APIs.")
         (base32 "1bl1nbhbmss8cj9ni7plsjs996n4rwqv6h8bh1zj4whs8z4fw50f"))))
     (properties `((upstream-name . "WikidataQueryServiceR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wikipedir
                              r-rex
                              r-readr
@@ -3840,6 +4230,9 @@ and tibbles).  Uses the Wikidata and Quickstatements APIs.")
         (base32 "1ws6spwxxcnjrzcngbr6n4hqy1di7s2h8iz6a62gyw84kpl542bw"))))
     (properties `((upstream-name . "wikibooks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://de.wikibooks.org/wiki/GNU_R")
     (synopsis "Functions and Datasets of the German WikiBook \"GNU R\"")
     (description
@@ -3859,6 +4252,9 @@ collection of functions and datas used in the german @code{WikiBook} \"GNU R\"."
         (base32 "0gj8sxd5903h0rizd260ffskarywkvf87ck4ixf8gb1z1vgqf8i4"))))
     (properties `((upstream-name . "wig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-stringr r-magrittr r-dplyr))
     (home-page "https://github.com/ramiromagno/wig")
     (synopsis "Import WIG Data into R in Long Format")
@@ -3877,6 +4273,9 @@ collection of functions and datas used in the german @code{WikiBook} \"GNU R\"."
         (base32 "0kmapfksrxkr3dry8didznhv3q0827183532s78bai9l2hm8is1p"))))
     (properties `((upstream-name . "wiesbaden")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-stringr
                              r-stringi
@@ -3906,6 +4305,9 @@ Office of Germany (DESTATIS) using their SOAP XML web service
         (base32 "00a5d287h78j7ccfarzc2l6i76shw5akzh4ggn6mb183b67nf9k8"))))
     (properties `((upstream-name . "WienR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=WienR")
     (synopsis
      "Derivatives of the First-Passage Time Density and Cumulative Distribution Function, and Random Sampling from the (Truncated) First-Passage Time Distribution")
@@ -3950,6 +4352,9 @@ on the first method.  For more details see the corresponding help files.")
         (base32 "05300hslrfpsqaxzzbmxgl2s2dz3wldpmnxh9hzgy97xkdc0c6fn"))))
     (properties `((upstream-name . "widyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-tidyr
                              r-tibble
@@ -3983,6 +4388,8 @@ mathematically convenient on wide matrices.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4002,10 +4409,10 @@ mathematically convenient on wide matrices.")
     (home-page "https://github.com/bhaskarvk/widgetframe")
     (synopsis "'Htmlwidgets' in Responsive 'iframes'")
     (description
-     "This package provides two functions @code{frameableWidget}()', and
-@code{frameWidget}()'.  The @code{frameableWidget}() is used to add extra code
+     "This package provides two functions @code{frameableWidget()}', and
+@code{frameWidget()}'.  The @code{frameableWidget()} is used to add extra code
 to a htmlwidget which allows is to be rendered correctly inside a responsive
-iframe'.  The @code{frameWidget}() is a htmlwidget which displays content of
+iframe'.  The @code{frameWidget()} is a htmlwidget which displays content of
 another htmlwidget inside a responsive iframe'.  These functions allow for
 easier embedding of htmlwidgets in content management systems such as
 wordpress', blogger etc.  They also allow for separation of widget content from
@@ -4024,6 +4431,9 @@ main HTML content where CSS of the main HTML could interfere with the widget.")
         (base32 "1094yaaq2xb0ykvc1j3hs87j1p4h7zgf8mkn4han8iw5fmr9zncy"))))
     (properties `((upstream-name . "widals")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snowfall))
     (home-page "https://cran.r-project.org/package=widals")
     (synopsis "Weighting by Inverse Distance with Adaptive Least Squares")
@@ -4044,6 +4454,9 @@ temporal-spacial data.")
         (base32 "1dkw155xk36r9vmkqxlg2vw45nbpypivd8q5v3i5995biyib4l2k"))))
     (properties `((upstream-name . "whSample")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr
                              r-openxlsx
                              r-magrittr
@@ -4076,6 +4489,9 @@ directory.  See vignettes for a detailed walk-through.")
         (base32 "1n7i7hh18mplqrhz554pwx4n70p1k7ryfzcgpxigzqphdny44npp"))))
     (properties `((upstream-name . "whomds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrightmap
                              r-tidyr
                              r-tidygraph
@@ -4127,6 +4543,9 @@ functions for implementing Rasch Analysis (see Andrich (2011)
         (base32 "19fwl7z55s4kl2xzwqwh8iwg13kdrv222vyl3kibxgwrjcjwj2y2"))))
     (properties `((upstream-name . "whoami")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (home-page "https://github.com/r-lib/whoami#readme")
     (synopsis
@@ -4149,6 +4568,9 @@ configuration information.")
         (base32 "1wa1s2dqwkmfa3avrgqkm6w59b6vm2xnnb77q25w187wdpjq65xx"))))
     (properties `((upstream-name . "whoa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-vcfr
                              r-tidyr
@@ -4188,6 +4610,9 @@ and Thierry Gosselin.")
         (base32 "0313rsph166qwmxb96lkzc8rzc1afm6is57v9fxlm6wzwr0cv4d0"))))
     (properties `((upstream-name . "whitewater")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-tidyr
                              r-stringr
@@ -4223,6 +4648,9 @@ and additional statistical attributes are provided.")
         (base32 "0r9gjmdilyfj317gr2z00xgz1bjx4802nb522341fw1gklgf7y5i"))))
     (properties `((upstream-name . "WhiteStripe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-oro-nifti r-neurobase r-mgcv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=WhiteStripe")
@@ -4248,6 +4676,9 @@ methods.")
         (base32 "1jcnxqxvkhyz9j6jay5834ncv5fxb9qiyyyj3b8al75mqknmn8ra"))))
     (properties `((upstream-name . "whitestrap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=whitestrap")
     (synopsis "White Test and Bootstrapped White Test for Heteroskedasticity")
     (description
@@ -4268,6 +4699,9 @@ version of it, developed under the methodology of Jeong, J., Lee, K. (1999)
         (base32 "1gc5pf4b9s8w4jh1wygyb9a9w6hi4zfd7ivlwshhzrmb43x5srsp"))))
     (properties `((upstream-name . "whitening")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-corpcor))
     (home-page "https://strimmerlab.github.io/software/whitening/")
     (synopsis "Whitening and High-Dimensional Canonical Correlation Analysis")
@@ -4296,6 +4730,9 @@ TCGA LUSC data, nutrimouse data, extended pitprops data).")
         (base32 "05vdk83xxyphhhyfcb01kscr0gwxrd01yjwlpr4afxh6ppbgvx6v"))))
     (properties `((upstream-name . "WhiteLabRt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -4329,6 +4766,9 @@ Zhou (2021) <doi:10.1371/journal.pcbi.1010434>.")
         (base32 "0mnq5m59mw8w5g1p0h2xzlz738j397b3444km59bm5yln3j0nsbi"))))
     (properties `((upstream-name . "whitechapelR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-igraph))
     (home-page "https://cran.r-project.org/package=whitechapelR")
     (synopsis
@@ -4354,6 +4794,9 @@ round to round, rounds 3 and 4 should have a vastly reduced field of search.")
         (base32 "0bprfkqik3ix6lyfdq6wvp0xfbi1z539w4mm7bk1696s55sxnw27"))))
     (properties `((upstream-name . "whitebox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (native-inputs (list r-knitr))
     (home-page "https://whiteboxr.gishub.org/")
@@ -4388,6 +4831,9 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
         (base32 "17r1wcgpriynpd3z7l6wa4al72x4ad07y1mr5jjafxgms6l554lx"))))
     (properties `((upstream-name . "whippr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-tibble
@@ -4425,6 +4871,9 @@ testing.")
         (base32 "1gdqzr2hrnpxbwl7cfps4m3xja8wkgwfs50i2nailybympvdnxm4"))))
     (properties `((upstream-name . "whereport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=whereport")
     (synopsis "Geolocalization of IATA Codes")
@@ -4444,6 +4893,9 @@ testing.")
         (base32 "0vg1vcs0b660zm08rwd6kg7vs8956pgdkjlba0z9f5ff9z69j1rr"))))
     (properties `((upstream-name . "whereami")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-jsonlite r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yonicd/whereami")
@@ -4467,6 +4919,9 @@ application.")
         (base32 "11i91wqr64ginwzy8flv7d3z4wsnha223mjnpjljj98x7ixx3xm2"))))
     (properties `((upstream-name . "where")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/KiwiMateo/where")
     (synopsis "Vectorised Substitution and Evaluation")
@@ -4487,6 +4942,9 @@ Evaluation (NSE), for example in ggplot2', dplyr', or data.table'.")
         (base32 "16xzhwvhd3zdklyvdb1lla5lykbvkq5hghfm9yz0cc6ykcnz7afr"))))
     (properties `((upstream-name . "when")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx
                              r-tibble
                              r-snakecase
@@ -4518,6 +4976,9 @@ Relational On-Line Analytical Processing star database systems.")
         (base32 "1shr4d1q2vallz251s6h0m2ncbx7lh0i194pm416q32ha0cz8ska"))))
     (properties `((upstream-name . "whatthreewords")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://davidasmith.github.io/whatthreewords/")
@@ -4541,6 +5002,9 @@ multiple languages.")
         (base32 "0i6mhc3cm7m885v5sznci7bqr6h2bfgnv466v5jwdwidisnzrhgx"))))
     (properties `((upstream-name . "WhatsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-tokenizers
                              r-stringi
@@ -4582,6 +5046,9 @@ names from messages.  Can be used to create anonymized versions of data.")
         (base32 "19w5qw123iahrx96379lrx8i7v3x2ck5dhklf58iw0dmj4pfy2kg"))))
     (properties `((upstream-name . "WhatIf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pbmcapply r-lpsolve))
     (home-page "https://gking.harvard.edu/whatif")
     (synopsis "Software for Evaluating Counterfactuals")
@@ -4618,6 +5085,9 @@ Inference,\" International Studies Quarterly 51 (March)
         (base32 "0hvlyb3vb4lk4sn6vqj80y0ps5jx8fdlcniiqhy803v04cph7v4y"))))
     (properties `((upstream-name . "WH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/GuillaumeBiessy/WH")
     (synopsis "Enhanced Implementation of Whittaker-Henderson Smoothing")
@@ -4642,6 +5112,9 @@ selects the smoothing parameter(s) and extrapolates beyond the range of data.")
         (base32 "1z8pndv43ssgmzldwaq0088lmf1g2mkmrbmzyaismcpngn9fqxsk"))))
     (properties `((upstream-name . "WgtEff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=WgtEff")
     (synopsis "Functions for Weighting Effects")
@@ -4665,6 +5138,9 @@ of error.")
         (base32 "0jma6di9hbdimswdfm58568vahcjy46hbhb78idjsdz4bl9apvq3"))))
     (properties `((upstream-name . "WGScan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-skat r-seqminer r-matrix r-mass r-data-table))
     (home-page "https://cran.r-project.org/package=WGScan")
     (synopsis
@@ -4688,14 +5164,18 @@ association scan, candidate region scan and single window test.")
         (base32 "0vnrnfcsacic57r730cjhrrb743qiq2yga9abhqi9w3fd5vixsni"))))
     (properties `((upstream-name . "wget")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yulab-utils))
     (home-page "https://cran.r-project.org/package=wget")
     (synopsis "Setting Download Method to 'wget'")
     (description
-     "This package provides function, wget_set(), to change the method (default to
-wget -c') using in download.file().  Using wget -c allowing continued
+     "This package provides function, @code{wget_set()}, to change the method (default
+to wget -c') using in @code{download.file()}.  Using wget -c allowing continued
 downloading, which is especially useful for slow internet connection and for
-downloading large files.  User can run wget_unset() to restore previous setting.")
+downloading large files.  User can run @code{wget_unset()} to restore previous
+setting.")
     (license license:artistic2.0)))
 
 (define-public r-wflo
@@ -4710,6 +5190,9 @@ downloading large files.  User can run wget_unset() to restore previous setting.
         (base32 "1lxndfm58jz9q7vg1w9jzdf0m3w504hsx7xcsjj78s9sn8d4a0xq"))))
     (properties `((upstream-name . "wflo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-sf r-progress r-plotrix r-emstreer))
     (home-page "https://cran.r-project.org/package=wflo")
     (synopsis
@@ -4737,6 +5220,9 @@ See Croonenbroeck, Carsten & Hennecke, David (2020)
         (base32 "0m5xj50hqdjj4lpbgx1kp3my4njr0nz09hd63rf4qf1ls8r7zil9"))))
     (properties `((upstream-name . "wfindr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-dplyr))
     (home-page "https://github.com/idmn/wfindr")
     (synopsis "Crossword, Scrabble and Anagram Solver")
@@ -4757,6 +5243,9 @@ patterns.  In particular, anagram finder and scrabble word finder.")
         (base32 "1r6wb8v42mpapjfhmkmghm9fq21c3s4zmdxy8nlh31nsja71c37d"))))
     (properties `((upstream-name . "wfg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (home-page "https://cran.r-project.org/package=wfg")
     (synopsis "Weighted Fast Greedy Algorithm")
@@ -4777,6 +5266,9 @@ networks with mixed types of attributes.")
         (base32 "0lcg7hzdll1wqdwydkk96m4n715h8sjn3qwhabm245m0hqhdf7is"))))
     (properties `((upstream-name . "wfe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-arm))
     (home-page "https://cran.r-project.org/package=wfe")
     (synopsis
@@ -4805,6 +5297,9 @@ available at <https://imai.fas.harvard.edu/research/FEmatch.html>.")
         (base32 "18gapsjvv3xj161kk8y8cwq4c3zxc8gjamkmzxm68vfgixf8bkh8"))))
     (properties `((upstream-name . "weyl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spray r-freealg r-disordr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/weyl")
@@ -4829,6 +5324,9 @@ To cite the package in publications, use Hankin 2022
         (base32 "1ranmqhgfkrky7r4qk563n9nlz2syn3vj85lmfajq01csadzjdpl"))))
     (properties `((upstream-name . "wevid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-reshape2 r-proc r-mclust r-ggplot2))
     (home-page
      "http://www.homepages.ed.ac.uk/pmckeigu/preprints/classify/wevidtutorial.html")
@@ -4858,6 +5356,9 @@ cases and controls can be calculated and plotted.")
         (base32 "1ykg7sphnm15a3dlkkhv18ycsclaw363yldfsyc83hf01vlghf77"))))
     (properties `((upstream-name . "WeMix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-minqa r-matrixstats r-matrix r-lme4))
     (native-inputs (list r-knitr))
     (home-page "https://american-institutes-for-research.github.io/WeMix/")
@@ -4889,6 +5390,9 @@ lme4@code{pureR} (Walker and Bates (2013)
         (base32 "14561rxbcc0w326nk24zl52nfw262z1pwvxsjfg9yx300byjljx3"))))
     (properties `((upstream-name . "welo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts
                              r-rio
                              r-reshape2
@@ -4920,6 +5424,9 @@ that automatically select the matches on which place a bet.")
         (base32 "02a8w1dhc2nd74hml4z3cdlx0d2a9rcx47v341kgav620i8bn88g"))))
     (properties `((upstream-name . "welchADF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lme4))
     (home-page "<http://decsai.ugr.es/~pjvi/r-packages.html>")
     (synopsis
@@ -4950,6 +5457,9 @@ published in Keselman, H.J., Wilcox, R.R., and Lix, L.M. (2003)
         (base32 "17a0ppi7ghikrwn39zvhg2cvhmnr3w0qi7r9lj22x65ii9nzadd7"))))
     (properties `((upstream-name . "weirs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=weirs")
     (synopsis "Hydraulics Package to Compute Open-Channel Flow over Weirs")
     (description
@@ -4970,6 +5480,9 @@ broad- and sharp-crested weirs.")
         (base32 "1xn1a7ssdwjvqynh5crr9dqf81smm1ldix1xlgfm42mpc478wplb"))))
     (properties `((upstream-name . "weird")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stray
                              r-rstudioapi
@@ -5007,6 +5520,9 @@ packages needed to run the examples are also loaded.")
         (base32 "0cbcfdn76cq54rs9qdbmji8zkbb7rb5r1dllc3f0qsv4jv9dabaw"))))
     (properties `((upstream-name . "WeightSVM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page
      "https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/#weights_for_data_instances")
@@ -5029,6 +5545,9 @@ package e1071'.  It also allows user defined kernel matrix.")
         (base32 "1qsyak91kdgv48wf6qhpfbiirlg4ba9w6rw8ynjcsnqqdvmly1lb"))))
     (properties `((upstream-name . "weightr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (home-page "http://faculty.ucmerced.edu/jvevea/")
     (synopsis "Estimating Weight-Function Models for Publication Bias")
@@ -5055,6 +5574,9 @@ this function allows users to launch it locally if they choose.")
         (base32 "0v2wxgvv8v5filiabcd19bmcprfv3l8gg79v6s3c5wmnzir617s5"))))
     (properties `((upstream-name . "weightQuant")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-quantreg r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=weightQuant")
     (synopsis
@@ -5078,6 +5600,9 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
         (base32 "05mp6d7rwvqnxzml2zmxr3ffkx8z8hl5i9cik8b1vz7v3gd6h5q9"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-ggplot2
                              r-generics
@@ -5113,6 +5638,9 @@ Supporting Packages\" for instructions on how to install any package
         (base32 "05vw0a2y4279f04q3y8vjk3rf2mcj9asq8k2nnv0ar2k65m5hb41"))))
     (properties `((upstream-name . "WeightedTreemaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-sp
                              r-sf
@@ -5155,6 +5683,9 @@ Voronoi tesselation is based on functions from Paul Murrell (2012)
         (base32 "1wf01z94snwbqp22waz7qays3ymg5lsxpfpafdarad2b6mg5j2g8"))))
     (properties `((upstream-name . "weightedScores")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-mvtnorm))
     (home-page "https://cran.r-project.org/package=weightedScores")
     (synopsis
@@ -5179,6 +5710,9 @@ and count data in Nikoloulopoulos, Joe and Chaganty (2011)
         (base32 "1f43hwsabciraj1qxfh5wcqnnx1vvcf4pwqs376rcfd9161k15xv"))))
     (properties `((upstream-name . "WeightedROC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/tdhock/WeightedROC")
     (synopsis "Fast, Weighted ROC Curves")
     (description
@@ -5199,6 +5733,9 @@ example-specific cost values).")
         (base32 "149xvsl20grf8wicx3xxyp9qpi7dga7ghklmrqam0y5rrkqp8y4j"))))
     (properties `((upstream-name . "weightedRank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-senstrat r-sensitivitymv r-mvtnorm))
     (home-page "https://cran.r-project.org/package=weightedRank")
     (synopsis "Sensitivity Analysis Using Weighted Rank Statistics")
@@ -5207,7 +5744,7 @@ example-specific cost values).")
 observational studies with I blocks of size J; see Rosenbaum (2024)
 <doi:10.1080/01621459.2023.2221402>.  The package can perform adaptive inference
 in block designs; see Rosenbaum (2012) <doi:10.1093/biomet/ass032>.  The main
-functions are @code{wgtRank}(), @code{wgtRankCI}() and @code{wgtRanktt}().")
+functions are @code{wgtRank()}, @code{wgtRankCI()} and @code{wgtRanktt()}.")
     (license license:gpl2)))
 
 (define-public r-weightedporttest
@@ -5222,6 +5759,9 @@ functions are @code{wgtRank}(), @code{wgtRankCI}() and @code{wgtRanktt}().")
         (base32 "0kv9ip38l659cwqkw6l831za2y2610w4cxpw1jxsph0h2qdfm8fx"))))
     (properties `((upstream-name . "WeightedPortTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=WeightedPortTest")
     (synopsis "Weighted Portmanteau Tests for Time Series Goodness-of-Fit")
     (description
@@ -5243,6 +5783,9 @@ Journal of the American Statistical Association, Volume 107, Issue 498, pages
         (base32 "04c24mxpvqdaprg6627w84ikmwxy96c1zcifn2y5n9ir7dlih5r3"))))
     (properties `((upstream-name . "weightedGCM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost r-mgcv r-generalisedcovariancemeasure))
     (home-page "https://cran.r-project.org/package=weightedGCM")
     (synopsis
@@ -5272,6 +5815,9 @@ Generalised Covariance Measure\" <@code{arXiv:1804.07203>}.")
         (base32 "0lvi8362fpmybm1icdp63ys5pdsa2qc54bsdwp7345xk7jmqzh1v"))))
     (properties `((upstream-name . "WeightedEnsemble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-metaheuristicopt))
     (home-page "https://cran.r-project.org/package=WeightedEnsemble")
     (synopsis "Weighted Ensemble for Hybrid Model")
@@ -5294,6 +5840,9 @@ weights.  This package has been developed using algorithm of Armstrong (1989)
         (base32 "1sgaz5r92xslhcr2wsc020938fzj0j0b3zl3bpr8npdwz1bwhim0"))))
     (properties `((upstream-name . "WeightedCluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegclust
                              r-traminer
                              r-rcolorbrewer
@@ -5328,6 +5877,9 @@ CLARA algorithm to cluster large database with sequence analysis.")
         (base32 "0gb9p3qvbnqmccsfi3a0hx6i67n5z9fg3jgjrgg6qikgngbq3sld"))))
     (properties `((upstream-name . "weightedCL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sure r-rootsolve r-matlab r-mass))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=weightedCL")
@@ -5353,6 +5905,9 @@ regressions.")
         (base32 "030i12mnwlj976avvk3grrccgprsckmc35dm2ajwdfc9dijhypnj"))))
     (properties `((upstream-name . "Weighted.Desc.Stat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Weighted.Desc.Stat")
     (synopsis "Weighted Descriptive Statistics")
     (description
@@ -5379,6 +5934,9 @@ using this package to describe properties of real-valued fuzzy data set.")
         (base32 "1scdpxvc9sj4jfxnf8xcsnpnp2vn0kl25gn1m2yqa3dw97h64mcl"))))
     (properties `((upstream-name . "weibulltools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-segmented
                              r-sandwich
@@ -5430,6 +5988,9 @@ bounds to existing plots are supported.")
         (base32 "1iadi0gzbyj359kbn9ycv4l3jzbrn2wfas7412hgbh51ahhkqblh"))))
     (properties `((upstream-name . "WeibullR.shiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weibullr-plotly
                              r-weibullr
                              r-shinywidgets
@@ -5458,6 +6019,9 @@ analysis.")
         (base32 "1y8w3sgkraqjbmzrrm933574iqj75zn40niga32nn399yxqa9wnv"))))
     (properties `((upstream-name . "WeibullR.plotly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weibullr r-reliagrowr r-plotly))
     (home-page "https://paulgovan.github.io/WeibullR.plotly/")
     (synopsis "Interactive Weibull Probability Plots")
@@ -5481,6 +6045,9 @@ interactive web-based graphing library.")
         (base32 "0zifz7wbgl2al9av97r5yy5p0vlyfq34s3328l16r9z9ri02hhli"))))
     (properties `((upstream-name . "WeibullR.learnr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weibullr-alt r-weibullr r-reliagrowr r-learnr))
     (home-page "https://paulgovan.github.io/WeibullR.learnr/")
     (synopsis "An Interactive Introduction to Life Data Analysis")
@@ -5505,6 +6072,9 @@ interactive learning modules in R.")
         (base32 "153zxw20gwv5rx5cxmygl97nv1c2pxb3yczmqvjxq7vwwxl04gr9"))))
     (properties `((upstream-name . "WeibullR.ALT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weibullr))
     (home-page
      "http://www.openreliability.org/weibull-r-weibull-analysis-on-r/")
@@ -5527,6 +6097,9 @@ ISBN: 1-471-14328-6).")
         (base32 "1i83dhd6202myfgsjwc3h68dflfvd74zjskvchbzd2407a30m8n7"))))
     (properties `((upstream-name . "WeibullR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page
      "http://www.openreliability.org/weibull-r-weibull-analysis-on-r/")
@@ -5550,6 +6123,9 @@ ISBN: 9780471094586), William Q. Meeker and Lois A. Escobar (1998, ISBN:
         (base32 "072w8av27ldass8alk50rdzqijmp2jpk243hnqqg0sfs69qs7px1"))))
     (properties `((upstream-name . "weibullness")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://AppliedStat.GitHub.io/R/")
     (synopsis "Goodness-of-Fit Test for Weibull Distribution (Weibullness)")
     (description
@@ -5577,6 +6153,9 @@ funded by the Korea government (MSIT) (No.  2022R1A2C1091319, RS-2023-00242528).
         (base32 "1a80gcqbmvb1rz2dr2syy16wn6ixjn6l40gayys9zy8302hky9ir"))))
     (properties `((upstream-name . "WeibullFit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-sqldf
                              r-r-oo
@@ -5612,6 +6191,9 @@ Algorithms to Aid Software System Users: optimx for R\"
         (base32 "0lg5k4w7k9pcp8dv4ayzlnd3xc39z5p6wabqnnhicy0byhjny838"))))
     (properties `((upstream-name . "wehoop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-tidyr
                              r-stringr
@@ -5652,6 +6234,9 @@ for themselves.")
         (base32 "17g4cgx0ajgj7lgxzi467cjbmbc47skyarcm88vqjc3i1j55dw12"))))
     (properties `((upstream-name . "WEGE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-sf r-raster))
     (home-page "https://cran.r-project.org/package=WEGE")
     (synopsis "Metric to Rank Locations for Biodiversity Conservation")
@@ -5677,6 +6262,9 @@ A., Faurby, S. & Antonelli, A. (2020) <doi:10.1101/2020.01.17.910299>.")
         (base32 "1i44v0swnlpgmicjllha3sk64cq55gygsphhi27yszg4jpd0sjqm"))))
     (properties `((upstream-name . "weed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-tidyr
                              r-tibble
@@ -5711,6 +6299,9 @@ to resolve these with its functions.")
         (base32 "10lqh43536d44d6082rpp11q1323pmjbmgrgb8v9mrk9c1ysf50w"))))
     (properties `((upstream-name . "wec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "http://www.ru.nl/sociology/mt/wec/downloads/")
     (synopsis "Weighted Effect Coding")
@@ -5735,12 +6326,15 @@ of observation per group is different.")
         (base32 "09xvw0v991cq1ck2kfxblp5cngfh9j6swvh5xv420mvky0kshv32"))))
     (properties `((upstream-name . "webuse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-haven))
     (home-page "https://github.com/leeper/webuse")
     (synopsis "Import Stata 'webuse' Datasets")
     (description
-     "This package provides a Stata-style `webuse()` function for importing named
-datasets from Stata's online collection.")
+     "This package provides a Stata-style @code{`webuse()}` function for importing
+named datasets from Stata's online collection.")
     (license license:expat)))
 
 (define-public r-webtrackr
@@ -5755,6 +6349,9 @@ datasets from Stata's online collection.")
         (base32 "18lch5l2i6pkwsba32mlnw13m2drqn1mqj9ivdihz8d1jmq4ikz0"))))
     (properties `((upstream-name . "webtrackR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr r-fastmatch r-data-table r-adar))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/schochastics/webtrackR")
@@ -5779,6 +6376,9 @@ Stier et al., 2022 <doi:10.1017/S0003055421001222>).")
         (base32 "040kawypkkim5scjp86immcqn42jj8s591hvypx1anyf7d8nls4w"))))
     (properties `((upstream-name . "websocket")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib openssl))
     (propagated-inputs (list r-r6 r-later r-cpp11 r-asioheaders))
     (native-inputs (list pkg-config r-knitr))
@@ -5802,6 +6402,9 @@ Stier et al., 2022 <doi:10.1017/S0003055421001222>).")
         (base32 "1i4432ifw6nxid9cjgly5qpirj245pvh1vfvhm695z3grkk5nvlv"))))
     (properties `((upstream-name . "webshot2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-promises r-magrittr r-later r-chromote r-callr))
     (home-page "https://rstudio.github.io/webshot2/")
     (synopsis "Take Screenshots of Web Pages")
@@ -5822,6 +6425,9 @@ documents.  webshot2 uses headless Chrome or Chromium as the browser back-end.")
         (base32 "1c6dwm5g5rjq0b12zrwwi5k9760jb0ph83v4j2gm8zm0x9dhiqm9"))))
     (properties `((upstream-name . "websearchr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/fschaff/websearchr")
     (synopsis "Access Domains and Search Popular Websites")
     (description
@@ -5841,6 +6447,9 @@ search engines.")
         (base32 "0dcqq99779isn5456j9zd1pvhrnx7b1gblwmm9v8qkjaf7darbg6"))))
     (properties `((upstream-name . "webSDM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstantools
                              r-rstanarm
                              r-jtools
@@ -5882,6 +6491,9 @@ in Poggiato, AndrÃ©oletti, Pollock and Thuiller (2022)
         (base32 "0l3l5g4zj5faxqi1kqwx9lq91gbj40z2q3csrsmpal08qnwkxs90"))))
     (properties `((upstream-name . "webreadr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ironholds/webreadr")
@@ -5905,6 +6517,9 @@ and various Amazon access logs.")
         (base32 "03yhlla74i71nphrfhr5sd57ykj7rjanh2a8nw3cq22rg9g668jk"))))
     (properties `((upstream-name . "webr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ztable
                              r-vcd
                              r-tidyselect
@@ -5930,8 +6545,8 @@ and various Amazon access logs.")
     (description
      "Several analysis-related functions for the book entitled \"Web-based Analysis
 without R in Your Computer\"(written in Korean, ISBN 978-89-5566-185-9) by
-Keon-Woong Moon.  The main function plot.htest() shows the distribution of
-statistic for the object of class htest'.")
+Keon-Woong Moon.  The main function @code{plot.htest()} shows the distribution
+of statistic for the object of class htest'.")
     (license license:gpl3)))
 
 (define-public r-webpower
@@ -5946,6 +6561,9 @@ statistic for the object of class htest'.")
         (base32 "0idfm9mr4sffyzyihggy5kmsklx178g8c5ikp34kxz74jkz0rzn5"))))
     (properties `((upstream-name . "WebPower")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pearsonds r-mass r-lme4 r-lavaan r-dplyr))
     (home-page "https://webpower.psychstat.org")
     (synopsis "Basic and Advanced Statistical Power Analysis")
@@ -5970,6 +6588,9 @@ online at <https://webpower.psychstat.org>.")
         (base32 "1ppwjlmpy43d6v789v4vvp5p0wxrkzrjghcgr1qqmk3f5vj30sbq"))))
     (properties `((upstream-name . "webp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list libwebp))
     (native-inputs (list pkg-config))
     (home-page "https://jeroen.r-universe.dev/webp")
@@ -5995,6 +6616,8 @@ the jpeg and png packages.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6033,6 +6656,13 @@ used with, the leaflet package.")
         (base32 "0gbg4pai4cn7hdc1943aqpx4bn3vgc82zp93a1wl6bmmajv1da4b"))))
     (properties `((upstream-name . "webglobe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-jsonlite r-httpuv r-geojsonio))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/r-barnes/webglobe/")
@@ -6053,6 +6683,9 @@ used with, the leaflet package.")
         (base32 "1xwadw9maj3n9yxm4bv63hx4x1lh6krqhfcnwn2ay6jgwh7y6zxw"))))
     (properties `((upstream-name . "WebGestaltR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-whisker
                              r-svglite
                              r-rlang
@@ -6080,27 +6713,6 @@ but also can be integrated into other pipeline or simultaneously analyze
 multiple gene lists.")
     (license license:lgpl2.0+)))
 
-(define-public r-webfakes
-  (package
-    (name "r-webfakes")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "webfakes" version))
-       (sha256
-        (base32 "0c4ja653fzamafkz7chfv16f1h7iibah683ma8sk2yaayywp7j47"))))
-    (properties `((upstream-name . "webfakes")))
-    (build-system r-build-system)
-    (home-page "https://webfakes.r-lib.org/")
-    (synopsis "Fake Web Apps for HTTP Testing")
-    (description
-     "Create a web app that makes it easier to test web clients without using the
-internet.  It includes a web app framework with path matching, parameters and
-templates.  Can parse various HTTP request bodies.  Can send JSON data or files
-from the disk.  Includes a web app that implements the httpbin.org web service.")
-    (license license:expat)))
-
 (define-public r-webexercises
   (package
     (name "r-webexercises")
@@ -6113,6 +6725,9 @@ from the disk.  Includes a web app that implements the httpbin.org web service."
         (base32 "1r2wgg89a84q54mrwqv4wcsjvcndiwwjn6rk7qz37pfyciv68hzy"))))
     (properties `((upstream-name . "webexercises")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-rstudioapi r-rmarkdown r-knitr
                              r-jsonlite))
     (home-page "https://github.com/psyteachr/webexercises")
@@ -6137,6 +6752,8 @@ R Markdown that students can use in self-guided learning.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6183,6 +6800,9 @@ implementation, but it was only tested with @code{PhantomJS}'.")
         (base32 "1nw97df9q0dpzl82pdybw527hc407ch2xg8f0s2z4kf89yp6ckhg"))))
     (properties `((upstream-name . "webdeveloper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-readr
                              r-promises
@@ -6201,15 +6821,18 @@ to web development.")
 (define-public r-webdav
   (package
     (name "r-webdav")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webdav" version))
        (sha256
-        (base32 "1ixn7ziy2w45agk6k58y44sivwym5205dfdj28h58adqn02dv897"))))
+        (base32 "1llqzzh7rlrs7f2d4kb9y7n5fgiv1n2fkm07jh3kbv3yzi5x3yy1"))))
     (properties `((upstream-name . "webdav")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-stringr
@@ -6241,6 +6864,9 @@ protocol.")
         (base32 "031gyndk605841ns33pifhfwlasa39jhrmvigw84iqc2dgxqqpgl"))))
     (properties `((upstream-name . "WebAnalytics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-uaparserjs
                              r-tinytex
@@ -6270,6 +6896,9 @@ client populations and workload definitions.")
         (base32 "1v8bi4w9h1yi0fk9l4in7f7fhqv8ws85n06134x740rscrsa3aws"))))
     (properties `((upstream-name . "WeatherSentiment")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordcloud
                              r-tidyverse
                              r-tidytext
@@ -6311,6 +6940,9 @@ Twitter data for research and commercial purposes.")
         (base32 "14zr8gvrmkarpsdqmc35c6hxl2xyiz463d2bk0a7vv9qvsrrld2i"))))
     (properties `((upstream-name . "weatherOz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-terra
                              r-stars
@@ -6366,6 +6998,9 @@ details.")
         (base32 "1hjhgsy3v8328hv4czxxz7kp68sxc10sy10f3dv5j8f6pka6qlsp"))))
     (properties `((upstream-name . "weathermetrics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/geanders/weathermetrics/")
     (synopsis "Functions to Convert Between Weather Metrics")
@@ -6388,6 +7023,9 @@ from air temperature and air moisture.")
         (base32 "1rqkrbzbihgygx2bg6lpkxqlwmdk88ljdp4j02xygvm0brqy2dc9"))))
     (properties `((upstream-name . "weatherindices")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=weatherindices")
     (synopsis "Calculate Weather Indices")
     (description
@@ -6418,6 +7056,9 @@ using Statistical and Machine Learning Technique\",Environment and Ecology,
         (base32 "0fjf43cgna1mg4mgg98kqhhl88yfhrr57rln2z6xm6d6bj73q5zn"))))
     (properties `((upstream-name . "wearables")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts
                              r-waveslim
                              r-varian
@@ -6450,6 +7091,9 @@ signal processing and analyses, including batch analyses.")
         (base32 "16dzyw7jiyqv9hd94dff9lxhqv9rwib1xs1km0xfqcy6xa2jhw8w"))))
     (properties `((upstream-name . "weakARMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vars r-matrixstats r-mass r-compquadform))
     (home-page "https://plmlab.math.cnrs.fr/jrolland/weakARMA")
     (synopsis "Tools for the Analysis of Weak ARMA Models")
@@ -6480,6 +7124,9 @@ Boubacar MaÃ¯nassara, Y. and Saussereau, B. (2018)
         (base32 "1wjvn78fkgc28ag1idy7h6sm0rvl57wbqdbxgbl3g5xv844vh8ls"))))
     (properties `((upstream-name . "weaana")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-settings
                              r-rlang
@@ -6507,6 +7154,9 @@ calculate extreme climate index.")
         (base32 "0mn05wg755xkj3pw6qv0g50p4h5v6n0if31gr9a2i04zjza5nr86"))))
     (properties `((upstream-name . "wdpar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-withr
                              r-tibble
@@ -6545,6 +7195,9 @@ this package, see Hanson (2022) <doi:10.21105/joss.04594>.")
         (base32 "00s1lly2rsgvldchiimxz48nn1gnidff131jj3gixir0bfdkl6fp"))))
     (properties `((upstream-name . "wdnr.gis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-rlang r-ggplot2 r-dplyr r-arcpullr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wdnr.gis")
@@ -6568,6 +7221,9 @@ Department of Natural Resources @code{ArcGIS} REST APIs
         (base32 "02sz8rdj3wy2lj5zxb3znc4hymahmpxmsi1n3bg30naz7492k9pk"))))
     (properties `((upstream-name . "wdnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wdm
                              r-rcppxptrutils
                              r-rcpparmadillo
@@ -6597,6 +7253,9 @@ networks.")
         (base32 "1lrmscy29ir292vxrgr5b1nprbi1zp3rj65nq963kf9gx829rlg2"))))
     (properties `((upstream-name . "wdm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/tnagler/wdm-r")
     (synopsis "Weighted Dependence Measures")
@@ -6607,6 +7266,32 @@ Pearson correlation, Spearman's rho, Kendall's tau, Blomqvist's beta, and
 Hoeffding's D; see, e.g., Nelsen (2006) <doi:10.1007/0-387-28678-0> and
 Hollander et al. (2015, ISBN:9780470387375).")
     (license license:expat)))
+
+(define-public r-wdief
+  (package
+    (name "r-wdief")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wdiEF" version))
+       (sha256
+        (base32 "1gm3m1ds4yrmlhzwwd4sbsksq0yjkh8m511nnzp5kja6l9jbjlb7"))))
+    (properties `((upstream-name . "wdiEF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-dplyr))
+    (home-page "https://cran.r-project.org/package=wdiEF")
+    (synopsis
+     "Calculation of the Water Deficit Index (WDI) and the Evaporative Fraction (EF) on Rasters")
+    (description
+     "Calculates the Water Deficit Index (WDI) and the Evaporative Fraction (EF) using
+geospatial data, such as fractional vegetation cover (FVC) and surface-air
+temperature difference (TS-TA).  Terms like \"raster\", \"CRS\" are part of standard
+geospatial terminology.")
+    (license license:gpl3)))
 
 (define-public r-wdi
   (package
@@ -6620,6 +7305,9 @@ Hollander et al. (2015, ISBN:9780470387375).")
         (base32 "1q7d74y3vi13zmpinky4ayn0n292rslg7fd112hxvjiqbmq6mxdc"))))
     (properties `((upstream-name . "WDI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (home-page "https://vincentarelbundock.github.io/WDI/")
     (synopsis "World Development Indicators and Other World Bank Data")
@@ -6642,6 +7330,9 @@ indicators.")
         (base32 "13shz5iz2ab9yqp24m6z7ciw70sdg2jdyqifmshq4flp4a737fr7"))))
     (properties `((upstream-name . "wcox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-survival r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wcox")
@@ -6664,6 +7355,9 @@ to deal with outcome-dependent sampling in survival analysis.")
         (base32 "0ja51w17q80r7xpwqhzn416b48ji9178026wf5ibm4s0hsfz7vb2"))))
     (properties `((upstream-name . "wCorr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mnormt r-minqa))
     (native-inputs (list r-knitr))
     (home-page "https://american-institutes-for-research.github.io/wCorr/")
@@ -6687,6 +7381,9 @@ correlation as a specific case of the polyserial.")
         (base32 "01ngm0ragl9fqhnk9l9pxdf23n16mvmy9znfdfd1q70qvj9y8v22"))))
     (properties `((upstream-name . "wconf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://www.alexandrumonahov.eu.org/projects")
     (synopsis "Weighted Confusion Matrix")
@@ -6724,6 +7421,9 @@ categorical variables\" <doi:10.48550/@code{arXiv.2301.02190>}.")
         (base32 "1rd7y86q8qi7w9878ng0zdk3zpxnjyzpmrm2mj5lm60hkd72xyrw"))))
     (properties `((upstream-name . "Wcompo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr))
     (home-page "https://sites.google.com/view/lmaowisc/")
@@ -6748,6 +7448,9 @@ recurrent event and death (Mao and Lin, 2016,
         (base32 "0w1m2vcxc64ksw3dm94wdigil2fpv3cvzyqmkhs2zrfjlgrdchcd"))))
     (properties `((upstream-name . "WCM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-raster r-pracma))
     (home-page "https://cran.r-project.org/package=WCM")
     (synopsis
@@ -6772,6 +7475,9 @@ Dr. Prashant K Srivastava to conduct this research work.")
         (base32 "0bv0q05gr1jw1ihamw7fqsvrcpr7qrwa9vry6v32qckacfr594rv"))))
     (properties `((upstream-name . "WCluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-datanugget r-cluster))
     (home-page "https://cran.r-project.org/package=WCluster")
     (synopsis "Clustering and PCA with Weights, and Data Nuggets Clustering")
@@ -6795,6 +7501,9 @@ al., (2022) <doi:10.1007/978-3-031-22687-8_20>.  Amaratunga et al., (2009)
         (base32 "0ydlfd6ngmrccaf9zybyzp11x98kih40kj3i2dq81ixxsgk2pjnq"))))
     (properties `((upstream-name . "wcep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-progress r-dplyr r-coin))
     (home-page "https://github.com/sarah-0k/wcep")
     (synopsis "Survival Analysis for Weighted Composite Endpoints")
@@ -6817,6 +7526,9 @@ Nabipoor M, Westerhout CM, Rathwell S, and Bakal JA (2023)
         (base32 "0wg4nigvry53mb89b89c1yrdlk5z0s1qqmlskwsrlbbkwd11sjch"))))
     (properties `((upstream-name . "WCE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-plyr))
     (home-page "https://cran.r-project.org/package=WCE")
     (synopsis "Weighted Cumulative Exposure Models")
@@ -6841,6 +7553,9 @@ cubic regression splines.")
         (base32 "1wyq4m6ziv4b8zkzg3gjjnyhj2bg18ikfxz98q9c2nxqdiq4kbir"))))
     (properties `((upstream-name . "wcde")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -6873,6 +7588,9 @@ Centre for Demography and Human Capital Data Explorer
         (base32 "07h3wqmb9ya878fwdj49r0npks0pnd3jlnzri1cmf27c691hwka4"))))
     (properties `((upstream-name . "wbsts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets r-rcpp r-mvtnorm))
     (home-page "https://cran.r-project.org/package=wbsts")
     (synopsis "Multiple Change-Point Detection for Nonstationary Time Series")
@@ -6895,6 +7613,9 @@ Locally Stationary Wavelet model of Korkas and Fryzlewicz (2017)
         (base32 "1va3lrksr5zg4k729xvbh176f8zcp9vfrvwxcp04znyh1rvmh6vz"))))
     (properties `((upstream-name . "wbstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -6925,6 +7646,9 @@ Locally Stationary Wavelet model of Korkas and Fryzlewicz (2017)
         (base32 "16jhimsq8symf6f2awczqkaqkdmlkzhmgk01iimhkvqlx8g2v219"))))
     (properties `((upstream-name . "wbsd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=wbsd")
     (synopsis "Wild Bootstrap Size Diagnostics")
@@ -6950,6 +7674,9 @@ function for computing bootstrap p-values is provided.")
         (base32 "1xrkh51xrvri1m48ndx9szj661ymjb23xgf0l4k8iggd9dllz9nl"))))
     (properties `((upstream-name . "wbs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wbs")
     (synopsis "Wild Binary Segmentation for Multiple Change-Point Detection")
     (description
@@ -6971,6 +7698,9 @@ model.")
         (base32 "0sx9w1y7hwhzjcswz0a1mjlzifqrhb9wmv5rwmfkpxba590hpv4h"))))
     (properties `((upstream-name . "wbids")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-rlang
@@ -7002,6 +7732,9 @@ multiple geographies, counterparts, and time periods.")
         (base32 "10rhxwgjdrhyrk0zkrifgwyxjzrk2aypq65pdg08bymwsch44d1g"))))
     (properties `((upstream-name . "wbacon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hexbin))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/tobiasschoch/wbacon")
@@ -7027,6 +7760,9 @@ to Beguin and Hulliger (2008)
         (base32 "0n6p7p6m5yspmxva7gb3s7drcznxmvx7yb6iccz6h7z8j7yvqv22"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yardstick
                              r-vctrs
                              r-tidyselect
@@ -7077,6 +7813,9 @@ an implementation of multi-scale assessment as described in Riemann et al'.
         (base32 "1j54374vk8y2f28lka03qwz5hyvpb0fyrbfn20pj1hbbnvymsxrm"))))
     (properties `((upstream-name . "WayFindR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-igraph))
     (native-inputs (list r-knitr))
     (home-page "http://oompa.r-forge.r-project.org/")
@@ -7099,6 +7838,9 @@ ones involve negative feedback (inhibition).")
         (base32 "1yjx9cd8h8rsi44s7dcqrvfmsbjhw7vkg2z7bl4knsgbki0c978g"))))
     (properties `((upstream-name . "waydown")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=waydown")
@@ -7125,6 +7867,9 @@ function for non gradient fields.  More information in RodrÃ­guez-SÃ¡nchez
         (base32 "06a38hvggvx39h0m7g35r0d4v8gbi1a5m0x1kv9q88vngwm4mxkv"))))
     (properties `((upstream-name . "wavScalogram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fields r-abind))
     (home-page "https://cran.r-project.org/package=wavScalogram")
     (synopsis "Wavelet Scalogram Tools for Time Series Analysis")
@@ -7148,6 +7893,9 @@ index and windowed scale index (Benitez et al. (2010)
         (base32 "133msy9bn32531n9z9wr9z6hccz5w8zczv0a5f2awkfbap8nlwn2"))))
     (properties `((upstream-name . "wavethresh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=wavethresh")
     (synopsis "Wavelets Statistics and Transforms")
@@ -7171,6 +7919,9 @@ series, nonstationary multiscale transfer function modeling, density estimation.
         (base32 "1r8fzvihpmpaak0pkcf9s1nkj6dlvj2maw30yflpifa6422y15va"))))
     (properties `((upstream-name . "WaveSampling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
     (home-page "https://github.com/RJauslin/WaveSampling")
     (synopsis "Weakly Associated Vectors (WAVE) Sampling")
@@ -7198,6 +7949,9 @@ sample.  For more details see RaphaÃ«l Jauslin and Yves TillÃ© (2019)
         (base32 "1ggpldwdgc97jp03n3z5s8hw3ib6q09yyinryz78xs798v9l4qdl"))))
     (properties `((upstream-name . "waves")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -7244,6 +7998,9 @@ data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
         (base32 "084fhzggzm075w6wp2lqd3j0an21idhw8z5l8ynz4y96mpmn204a"))))
     (properties `((upstream-name . "WaverR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-kimisc))
     (home-page "https://cran.r-project.org/package=WaverR")
     (synopsis
@@ -7265,6 +8022,9 @@ using the Weighted AVERage of all possible Regressions using the data available.
         (base32 "1lm7xq443vninrph21xq6dikpd42xl9ilwfb22lfba2b7j7j5z6g"))))
     (properties `((upstream-name . "WaverideR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveletcomp
                              r-viridis
                              r-truncnorm
@@ -7354,6 +8114,9 @@ Farres, A., Fienga, A. (2011b <doi:10.1051/0004-6361/201117504>.  J. Laskar
         (base32 "1yhbp1jimx33g4sjigr5vmqqrinz1mdfgvkaaj4y2gcx7sihiiwx"))))
     (properties `((upstream-name . "waver")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-geosphere))
     (home-page "https://github.com/pmarchand1/waver")
     (synopsis "Calculate Fetch and Wave Energy")
@@ -7375,6 +8138,9 @@ monitoring data.")
         (base32 "0a9qhcgf0l3zpwq8m476py94wb4rasy6a8xj302y6kwg3gvh1smm"))))
     (properties `((upstream-name . "wavemulcor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveslim r-rcolorbrewer r-plot3d))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wavemulcor")
@@ -7399,6 +8165,9 @@ time series.  Dynamic versions of the routines allow the wavelet local multiple
         (base32 "05sqvqklbz7barf1jfrhd7n4mj60z57sqpikl3lykigl3m9ravhm"))))
     (properties `((upstream-name . "WaveletSVR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets r-tsutils r-fracdiff r-forecast
                              r-e1071))
     (home-page "https://cran.r-project.org/package=WaveletSVR")
@@ -7427,6 +8196,9 @@ terms of Root Mean Square Error (RMSE) and Mean Absolute Prediction Error
         (base32 "07706rsjdmzj46ib2kfm5lfk4bnm2wfw7rby0ixs6x0myyzxdl92"))))
     (properties `((upstream-name . "wavelets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=wavelets")
     (synopsis
      "Functions for Computing Wavelet Filters, Wavelet Transforms and Multiresolution Analyses")
@@ -7450,6 +8222,9 @@ as well as multiresolution analyses.")
         (base32 "08czmifw1dz2arz9f4jk76vlwwnf24ha9pm3dfihqkxjcc16dkgz"))))
     (properties `((upstream-name . "WaveletRF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets r-tsutils r-randomforest r-fracdiff
                              r-forecast))
     (home-page "https://cran.r-project.org/package=WaveletRF")
@@ -7478,6 +8253,9 @@ Prediction Error (MAPE).  This package is based on the algorithm of Ding et al.
         (base32 "0qz5c3w7d0vyxfdvs28cr02ilsiac3nlmc206j7qm9pr735lcrj0"))))
     (properties `((upstream-name . "WaveletMLbestFL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveletml r-describedf r-ceemdanml))
     (home-page "https://cran.r-project.org/package=WaveletMLbestFL")
     (synopsis
@@ -7517,6 +8295,9 @@ filter-level combination.  More details can be found in Garai and others (2023)
         (base32 "0y3aclnrjk3zhw3ls00iwjif1ghdnfjhhglf37kr7f7alqbqg0ax"))))
     (properties `((upstream-name . "WaveletML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets
                              r-tseries
                              r-pso
@@ -7553,6 +8334,9 @@ following Paul and Garai (2021) <doi:10.1007/s00500-021-06087-4>.")
         (base32 "1imf51ihwhzga6xscqh5lawyrx3smk6czxpmyahxgd696xg70c1q"))))
     (properties `((upstream-name . "WaveletLSTM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets
                              r-tslstm
                              r-tseries
@@ -7584,6 +8368,9 @@ Paul (2017) and Paul and Garai (2021) <DOI:10.1007/s00521-017-3289-9>
         (base32 "1pr2w74r9qrbwdhacqa4xbyk5xd33sk208slgaq4dydbx3ndh5wp"))))
     (properties `((upstream-name . "WaveletKNN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets
                              r-tseries
                              r-metrics
@@ -7612,6 +8399,9 @@ by Anjoy and Paul (2017) <DOI:10.1007/s00521-017-3289-9>.")
         (base32 "0jilj6mgq6wb6a5zb4j9backfgyf38w687ppbyfsz40263srj081"))))
     (properties `((upstream-name . "WaveletGBM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets
                              r-tseries
                              r-metrics
@@ -7641,6 +8431,9 @@ forecasting using algorithm by Anjoy and Paul (2017)
         (base32 "0dj5bmvzfhj1cpn8qi2ax3iipr7jlq0f9vk4b1idqgh5dmdi8lh6"))))
     (properties `((upstream-name . "WaveletGARCH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets r-rugarch r-fracdiff r-forecast
                              r-fints))
     (home-page "https://cran.r-project.org/package=WaveletGARCH")
@@ -7662,6 +8455,9 @@ algorithm by Paul (2015) <doi:10.3233/MAS-150328>.")
         (base32 "1cxzhmyhvq7ip32csqlxzfxx6gxnwn49vvm8xx3idal4nkdlids1"))))
     (properties `((upstream-name . "WaveletETS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets
                              r-tseries
                              r-metrics
@@ -7692,6 +8488,9 @@ and Paul (2017) <DOI:10.1007/s00521-017-3289-9>.")
         (base32 "07w2aa0jiflvxyqhgh48705hg8hjspd103jd00i2pcw2v42hwmf8"))))
     (properties `((upstream-name . "WaveletComp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=WaveletComp")
     (synopsis "Computational Wavelet Analysis")
     (description
@@ -7712,6 +8511,9 @@ algorithms.")
         (base32 "00pg446c6vy3kgjlyzds35nlfgwnkl7a63pjcgbqy80gb3y6snhw"))))
     (properties `((upstream-name . "WaveletArima")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets r-fracdiff r-forecast))
     (home-page "https://cran.r-project.org/package=WaveletArima")
     (synopsis "Wavelet-ARIMA Model for Time Series Forecasting")
@@ -7738,6 +8540,9 @@ Paul and Anjoy (2018) <doi:10.1142/S0219691307002002>
         (base32 "1j16jsnz9j735348a5ybgrl7p6bg45gwwp863y4pg85h4mwg37c9"))))
     (properties `((upstream-name . "WaveletANN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavelets r-metrics r-fracdiff r-forecast))
     (home-page "https://cran.r-project.org/package=WaveletANN")
     (synopsis "Wavelet ANN Model")
@@ -7761,6 +8566,9 @@ and Paul (2017) <DOI: 10.1007/s00521-017-3289-9>.")
         (base32 "120dh64288daiq3k9ixcqxscy3brafwvv1964ndab1am0w466bqc"))))
     (properties `((upstream-name . "waved")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.jstatsoft.org/v21/i02")
     (synopsis "Wavelet Deconvolution")
     (description
@@ -7782,6 +8590,9 @@ The @code{WaveD} Transform in R, Journal of Statistical Software Volume 21, No.
         (base32 "0z0a273z3gaqfhpjgqlxql2faz794xpr3yhnzd26r9r5680niq3a"))))
     (properties `((upstream-name . "waveband")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=waveband")
@@ -7812,6 +8623,9 @@ Barber, S., Nason, G.P. and Silverman, B.W. (2002)
         (base32 "1f5y53max7vliq4sq66hqjjns8s9lsx9pkdjk6rm929gk371x7by"))))
     (properties `((upstream-name . "wav")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/mlverse/wav")
     (synopsis "Read and Write WAV Files")
@@ -7833,6 +8647,9 @@ modulation (PCM), signed 12, 16, 24 and 32 bit PCM and other encodings.")
         (base32 "030ybj5cxgg17gixar9hggwyd2sgv3yli0pwpca698wz2b0mypnm"))))
     (properties `((upstream-name . "watson")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tinflex r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=watson")
     (synopsis "Fitting and Simulating Mixtures of Watson Distributions")
@@ -7864,6 +8681,9 @@ special functions using the results of Sablica and Hornik (2022)
         (base32 "0xld5163srlyqd9rbmi618drkrimys7ifgzrq05ky22ns2qa4qfv"))))
     (properties `((upstream-name . "Wats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tibble
                              r-testit
@@ -7898,6 +8718,9 @@ existence and effect size of of an intervention.  This package accompanies
         (base32 "09brbqcd41khycz9lhn84w68wpk8lsdnzb6lzc10gm5s5ambgj06"))))
     (properties `((upstream-name . "waterYearType")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=waterYearType")
     (synopsis "Sacramento and San Joaquin Valley Water Year Types")
     (description
@@ -7918,6 +8741,9 @@ California Department of Water Resources and subject to revision.")
         (base32 "06dj21zi3g7m93iq588w1c5cpvakd1mjra79y3p4ibwrkizdqzhl"))))
     (properties `((upstream-name . "waterquality")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-purrr r-magrittr r-dplyr r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RAJohansen/waterquality")
@@ -7942,6 +8768,9 @@ Johansen et al. (2019) <doi:10.21079/11681/35053>.")
         (base32 "1wj1wlih1fh3y3wj3czhz5fzik7i499l6pycj44rq8rpvi7bkj0d"))))
     (properties `((upstream-name . "waterfalls")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/hughparsonage/waterfalls")
     (synopsis "Create Waterfall Charts using 'ggplot2' Simply")
@@ -7965,6 +8794,9 @@ object created will need to be modified through a theme.")
         (base32 "0jy6l9mx0dixwnkychdl18sf4xh73pm0qd1jyxp9rlnv1vcragjp"))))
     (properties `((upstream-name . "waterfall")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://jameshoward.us/software/waterfall/")
     (synopsis "Waterfall Charts")
@@ -7985,6 +8817,9 @@ traditional base and lattice graphics.")
         (base32 "0884agh876wf3qlbc75fbaa47x2iwvncz7r2l25qw34n8lxq1yr6"))))
     (properties `((upstream-name . "waterData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-lubridate r-latticeextra r-lattice
                              r-dataretrieval))
     (home-page "https://pubs.usgs.gov/of/2012/1168/")
@@ -8009,6 +8844,9 @@ data, addresses some common data problems, and calculates and plots anomalies.")
         (base32 "1l2q4bc3wx81a6ay7v118yw7rxl9aqih6xa4rdbjd9644ng27whn"))))
     (properties `((upstream-name . "waspr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/joliencremers/waspr")
@@ -8034,6 +8872,9 @@ big datasets, thereby increasing computational speed tremendously.")
         (base32 "09c1w9c8ql1xcpwsc0j2p9d0fmzkkq22jn16xvdl8hmlyc409br5"))))
     (properties `((upstream-name . "waspasR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=waspasR")
     (synopsis
@@ -8071,6 +8912,9 @@ possible value (e.g. price).")
         (base32 "1jjas0qklb3dyax4x26c327l59biyym5m2x6mv8z7dnkyfrw3vfq"))))
     (properties `((upstream-name . "WASP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-waveslim
                              r-tidyr
@@ -8103,6 +8947,9 @@ Z., Sharma, A., & Johnson, F. (2021) <doi:10.1016/J.JHYDROL.2021.126816>.")
         (base32 "0c8rvgbiqfn6n36rhp9i8czzbb3qywddj97x9vixr53vq22m96gz"))))
     (properties `((upstream-name . "washr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-rlang
                              r-pkgdown
@@ -8131,6 +8978,9 @@ documentation, README and website creation, and citation management.")
         (base32 "04cibvi0d9spx8h0r28m1sz5drrkiblzfp63v6csm2n4dv55x075"))))
     (properties `((upstream-name . "washi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-systemfonts
                              r-scales
                              r-officer
@@ -8157,6 +9007,9 @@ flextable tables.")
         (base32 "0g5cgs6y3l7ng4bcia1w3ysb8z7s3187ph5g052bssd3w01kim6g"))))
     (properties `((upstream-name . "washex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xml
                              r-rlang
@@ -8181,6 +9034,9 @@ flextable tables.")
         (base32 "082myz7lw9dyk4ygyj0q39n4h1gghsd1q7667ngzxa20lm0658wd"))))
     (properties `((upstream-name . "washeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gplots))
     (home-page "https://cran.r-project.org/package=washeR")
     (synopsis "Time Series Outlier Detection")
@@ -8207,6 +9063,9 @@ explanation look at R-bloggers on web.")
         (base32 "17hmhcnh53fivxaywa0hvjl9y527ms2pqlapd1wvyx3gjqkggwyg"))))
     (properties `((upstream-name . "washdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/katilingban/washdata/")
     (synopsis "Urban Water and Sanitation Survey Dataset")
@@ -8238,6 +9097,9 @@ been made available.")
         (base32 "13zbl4aifhg7j5b3vpwgzgs09hr7yblz0rckmj5qh40s78j8cpfn"))))
     (properties `((upstream-name . "warpMix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-nlme
                              r-mass
@@ -8268,6 +9130,9 @@ functions.")
         (base32 "18gfk9vqcqarj7j5i240wqv2dclg3csng4mih5izj40xaaxaf6q5"))))
     (properties `((upstream-name . "WARN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=WARN")
     (synopsis "Weaning Age Reconstruction with Nitrogen Isotope Analysis")
@@ -8290,6 +9155,9 @@ this package.")
         (base32 "0wkblxs30a8iz63dp7yls03jsa12w05nnb9p5kc986m589nrj5a6"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list sox libsndfile ghostscript gdal fftw))
     (propagated-inputs (list r-tuner
                              r-testthat
@@ -8337,6 +9205,9 @@ among others.")
         (base32 "0b1g2fpshhkd15b6fz4v3qwf425p5ahbh57acclqq6znl1acl1hg"))))
     (properties `((upstream-name . "warabandi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readtext r-lubridate r-flextable))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=warabandi")
@@ -8370,6 +9241,9 @@ DJ(1995) <https://publications.iwmi.org/pdf/H_17571i.pdf>.")
         (base32 "1c4fpl8n5ynp3fwrpqnwb2v16gv8slchy3pffga9yldr0hfn957a"))))
     (properties `((upstream-name . "WAnova")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-suppdists r-car))
     (home-page "https://cran.r-project.org/package=WAnova")
     (synopsis "Welch's Anova from Summary Statistics")
@@ -8400,6 +9274,9 @@ Show-Li, J., & Gwowen, S. (2014) <doi:10.1111/bmsp.12006>.")
         (base32 "0y9xmh9a93lnadg83i223j2nf77jazz8m1ck1bmdf5jwj4vyzaqa"))))
     (properties `((upstream-name . "wand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://gitlab.com/hrbrmstr/wand")
     (synopsis "Retrieve 'Magic' Attributes from Files and Directories")
     (description
@@ -8421,6 +9298,9 @@ mapping MIME types from a database of over 1,500 extension mappings.")
         (base32 "0sa7qd2bpn3sp06mlpissxxkfhg7j1d07nnwlnz7nyg7pivwnpan"))))
     (properties `((upstream-name . "WaMaSim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr))
     (home-page "https://github.com/scheidan/WaMaSim")
     (synopsis
@@ -8445,6 +9325,9 @@ Experimental and Computer Laboratory at ETH Zurich, Switzerland.")
         (base32 "0z3863ml85065w23m6wr4hd5a0vdaiavpmrbal8kz4igj6j34ff6"))))
     (properties `((upstream-name . "WALS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-mass r-formula))
     (home-page "https://github.com/kevhuy/WALS")
     (synopsis "Weighted-Average Least Squares Model Averaging")
@@ -8474,6 +9357,9 @@ regression model is based on the original MATLAB code by Magnus and De Luca
         (base32 "0z674sg78rdv9rmqr7s4w9rw8diciifwr4bc2v57yfvp0n9gcys4"))))
     (properties `((upstream-name . "walrus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrs2 r-r6 r-jmvcore r-ggplot2))
     (home-page "https://github.com/jamovi/walrus")
     (synopsis "Robust Statistical Methods")
@@ -8498,6 +9384,9 @@ book Introduction to Robust Estimation & Hypothesis Testing'.")
         (base32 "1nng8izncj2nmmpywn1ggpzvjh8q7y3q6260qhy9kbmvrrl26spf"))))
     (properties `((upstream-name . "walmartAPI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-purrr
@@ -8526,6 +9415,9 @@ taxonomies.")
         (base32 "1d03vxn6q7v0nsrkd7dxkkv3siysgicv6c13fkvwmypln9vsl6sl"))))
     (properties `((upstream-name . "wally")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-riskregression r-prodlim r-data-table))
     (home-page "https://cran.r-project.org/package=wally")
     (synopsis "The Wally Calibration Plot for Risk Prediction Models")
@@ -8559,6 +9451,9 @@ competing events.")
         (base32 "1bv2v0gjb6v5p7rmm8nc00xnkdw60552siyfhz4y60wm1cygclbq"))))
     (properties `((upstream-name . "WallomicsData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=WallomicsData")
     (synopsis
      "Datasets for Multi-Omics Integration in a Plant Abiotic Stress Context")
@@ -8583,6 +9478,9 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
         (base32 "0zij0r5y7ra402w7x52mb9xzk2wdxq898ysyy3w32lwvbjs5lck9"))))
     (properties `((upstream-name . "wallace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-spthin
                              r-spocc
@@ -8632,6 +9530,9 @@ guides users through most package functionality can be found on the package's
         (base32 "1c2gfkl5yl3mkviah8s8zjnqk6lnzma1yilxgfxckdh5wywi39fx"))))
     (properties `((upstream-name . "walkscoreAPI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=walkscoreAPI")
     (synopsis "Walk Score and Transit Score API")
     (description
@@ -8658,6 +9559,9 @@ Walk Score and Transit Score values for large lists of locations.")
         (base32 "0ayqkmj7iramg234n3ygvssqjy70jw7x327xjzn2izdyfww59z8k"))))
     (properties `((upstream-name . "walkscore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-httr r-dplyr))
     (home-page "https://github.com/chris31415926535/walkscore")
     (synopsis "Tidy Interface to the 'Walk Score' API")
@@ -8679,6 +9583,9 @@ proprietary API that assigns locations a walkability score between 0 and 100.")
         (base32 "135psiyyhv91x5rfj2y8im3a0l4gkby75p9k5d1kdb5lrkyhq8ib"))))
     (properties `((upstream-name . "walker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -8722,6 +9629,9 @@ Vihola, Helske, Franks (2020, <doi:10.1111/sjos.12492>).")
         (base32 "1h5fxl8ylnfdxwshjn9zp0zbiaz3qr15z7333wicvjp7ibzglqrj"))))
     (properties `((upstream-name . "walkboutr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sp
                              r-sf
@@ -8762,6 +9672,9 @@ cardioprotective behavior.  Kang B, Moudon AV, Hurvitz PM, Saelens BE (2017)
         (base32 "07igmqpyif0hn0x1ydv0ia1fb8zy9l86v51j445qn7jwc0rvxzvp"))))
     (properties `((upstream-name . "wal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spacesxyz r-png r-jpeg r-imager
                              r-freesurferformats))
     (native-inputs (list r-knitr))
@@ -8786,6 +9699,9 @@ archives.  It can also read models in MDL and MD2 formats.")
         (base32 "1rssh6v8m6fim2pvm4cjw8cbni77bv5qp0rwi6vwdl3jhi5zws7n"))))
     (properties `((upstream-name . "wakefield")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-ggplot2 r-dplyr r-chron))
     (home-page "https://github.com/trinker/wakefield")
     (synopsis "Generate Random Data Sets")
@@ -8805,6 +9721,9 @@ archives.  It can also read models in MDL and MD2 formats.")
         (base32 "0dc7413jb3yz0nns2lc93w32wv6m4sg17j2ip63gc12vis0nf855"))))
     (properties `((upstream-name . "wactor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-tokenizers
                              r-tibble
@@ -8831,6 +9750,9 @@ strings of text into numeric vectors and rectangular data structures.")
         (base32 "09fmdlpb99q9dw17lwp0bwpklgvgiqq7bfs9ryx5r54m0niklr9d"))))
     (properties `((upstream-name . "WACS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm r-mvtnorm r-mnormt r-mclust))
     (home-page "https://miat.inrae.fr/site/Ronan_TREPOS")
     (synopsis
@@ -8857,6 +9779,9 @@ can accept as many other variables as desired.")
         (base32 "0c5ja70vgb2f1l2k5j7amxhkydbj44nc290ccr816xglj31nvsiy"))))
     (properties `((upstream-name . "wacolors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (home-page "https://github.com/CoryMcCartan/wacolors")
     (synopsis "Colorblind-Friendly Palettes from Washington State")
@@ -8881,6 +9806,9 @@ has been evaluated to ensure colors are distinguishable by colorblind people.")
         (base32 "0i6hkajfalwpvxmmzfl7nhk4x6hhrf0xqpgny8b1gk1hw05yv03m"))))
     (properties `((upstream-name . "WA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://sites.google.com/view/lmaowisc/")
     (synopsis
@@ -8890,30 +9818,6 @@ has been evaluated to ensure colors are distinguishable by colorblind people.")
 analysis of while-alive loss (or event) rate for possibly recurrent nonfatal
 event in the presence of death.")
     (license license:gpl2+)))
-
-(define-public r-w4mrutils
-  (package
-    (name "r-w4mrutils")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "W4MRUtils" version))
-       (sha256
-        (base32 "1hzr2p3kp9k2y154a2p9qc9shyqpkh0m5ylk2f9ivm4m0f3ifqdp"))))
-    (properties `((upstream-name . "W4MRUtils")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=W4MRUtils")
-    (synopsis "Utils List for W4M - Workflow for Metabolomics")
-    (description
-     "This package provides a set of utility function to prevent the spread of
-utilities script in W4M (Workflow4Metabolomics) scripts, and centralize them in
-a single package.  Some are meant to be replaced by real packages in a near
-future, like the parse_args() function: it is here only to prepare the ground
-for more global changes in W4M scripts and tools.")
-    (license license:agpl3+)))
 
 (define-public r-w3cmarkupvalidator
   (package
@@ -8927,6 +9831,9 @@ for more global changes in W4M scripts and tools.")
         (base32 "1ns504i3567z90bz1p02mnfmnsgkk7wy2a772v2imiwjgzp0qia5"))))
     (properties `((upstream-name . "W3CMarkupValidator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-curl))
     (home-page "https://cran.r-project.org/package=W3CMarkupValidator")
     (synopsis "R Interface to W3C Markup Validation Services")
@@ -8947,6 +9854,9 @@ for more information.")
         (base32 "0544wnyyv8glv4ljldmaqgynpshd5bvsqwsz9q1071dfshhxki1v"))))
     (properties `((upstream-name . "W2CWM2C")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveslim r-wavemulcor r-colorspace))
     (home-page "https://github.com/jomopo/W2CWM2C")
     (synopsis

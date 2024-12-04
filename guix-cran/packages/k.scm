@@ -51,6 +51,9 @@
         (base32 "1srffwfg0ps8zx0c6hs2rc2y2p01qjl5g1ypqsbhq88vkcppx1w9"))))
     (properties `((upstream-name . "kzs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://cran.r-project.org/package=kzs")
     (synopsis "Kolmogorov-Zurbenko Spatial Smoothing and Applications")
@@ -72,6 +75,9 @@ high levels of noise.")
         (base32 "1vx7wc8iwmr9d6ff2kcy6y3nyfj6jfzv4hxkv1fsas0rbjgfick4"))))
     (properties `((upstream-name . "kza")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list fftw))
     (home-page "https://cran.r-project.org/package=kza")
     (synopsis "Kolmogorov-Zurbenko Adaptive Filters")
@@ -92,6 +98,13 @@ Transforms.")
         (base32 "15h5h732zr3k441naj86wmzz5z9zx22gpljp2w6494l57ig6irsz"))))
     (properties `((upstream-name . "kyotil")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=kyotil")
     (synopsis
@@ -113,6 +126,9 @@ publication-ready tables to latex files, and running Monte Carlo experiments.")
         (base32 "0lx7p2rgvcjgg99chcan0qb9hafx226sqvdb1g1xpkdwvzbyxci8"))))
     (properties `((upstream-name . "kvh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "http://serguei.sokol.free.fr/kvh-format/")
     (synopsis "Read/Write Files in Key-Value-Hierarchy Format")
@@ -135,6 +151,9 @@ to Rcpp use.")
         (base32 "0fmd3m6pgsyf614wf11yclxl9zsac5jrffci5c2514wvs1slqw1p"))))
     (properties `((upstream-name . "Kurt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polynom r-matrixcalc r-labstatr r-expm))
     (home-page "https://cran.r-project.org/package=Kurt")
     (synopsis "Performs Kurtosis-Based Statistical Analyses")
@@ -158,6 +177,9 @@ with Statistical Applications\".")
         (base32 "0gcgayh7qdic9zprdvs6r8qvpqs467zrm0qzp2acb7alcp01jhpi"))))
     (properties `((upstream-name . "kuiper.2samp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kuiper.2samp")
     (synopsis "Two-Sample Kuiper Test")
     (description
@@ -179,6 +201,9 @@ method are (1).  Kuiper, N. H. (1960). <DOI:10.1016/S1385-7258(60)50006-0> and
         (base32 "02agl1wc37wvsfn4lm59jn2jbc09ixh2g178x3s3li98z78ykv5z"))))
     (properties `((upstream-name . "ktweedie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=ktweedie")
     (synopsis
@@ -204,6 +229,9 @@ Archer Yi Yang, Boxiang Wang, Peng Shi & Robert William Platt (2023)
         (base32 "11ps4y7i8llb2v5d91zh9kmsnh6rxb4g6lwyzdalyixnzsy343m1"))))
     (properties `((upstream-name . "ktsolve")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nleqslv r-bb))
     (home-page "https://cran.r-project.org/package=ktsolve")
     (synopsis
@@ -230,17 +258,21 @@ Technical Systems (<https://www.uts.com>) was the inspiration for this function.
         (base32 "1szl66ix6c6vb0zzyp404psglx3lk125903zc4za0qfzcic7a9p6"))))
     (properties `((upstream-name . "KTensorGraphs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=KTensorGraphs")
     (synopsis "Co-Tucker3 Analysis of Two Sequences of Matrices")
     (description
-     "This package provides a function called COTUCKER3() (Co-Inertia Analysis +
-Tucker3 method) which performs a Co-Tucker3 analysis of two sequences of
-matrices, as well as other functions called PCA() (Principal Component Analysis)
-and BGA() (Between-Groups Analysis), which perform analysis of one matrix,
-COIA() (Co-Inertia Analysis), which performs analysis of two matrices, PTA()
-(Partial Triadic Analysis), STATIS(), STATISDUAL() and TUCKER3(), which perform
-analysis of a sequence of matrices, and BGCOIA() (Between-Groups Co-Inertia
-Analysis), STATICO() (STATIS method + Co-Inertia Analysis), COSTATIS()
+     "This package provides a function called @code{COTUCKER3()} (Co-Inertia Analysis
++ Tucker3 method) which performs a Co-Tucker3 analysis of two sequences of
+matrices, as well as other functions called @code{PCA()} (Principal Component
+Analysis) and @code{BGA()} (Between-Groups Analysis), which perform analysis of
+one matrix, @code{COIA()} (Co-Inertia Analysis), which performs analysis of two
+matrices, @code{PTA()} (Partial Triadic Analysis), @code{STATIS()},
+@code{STATISDUAL()} and @code{TUCKER3()}, which perform analysis of a sequence
+of matrices, and @code{BGCOIA()} (Between-Groups Co-Inertia Analysis),
+@code{STATICO()} (STATIS method + Co-Inertia Analysis), @code{COSTATIS()}
 (Co-Inertia Analysis + STATIS method), which also perform analysis of two
 sequences of matrices.")
     (license license:gpl2+)))
@@ -257,6 +289,9 @@ sequences of matrices.")
         (base32 "0sk3chvwm9p2cph87qd9pcnllzrxdzbdfqgcdikkw9x8g0rix86j"))))
     (properties `((upstream-name . "ktaucenters")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mass r-gse))
     (home-page "https://cran.r-project.org/package=ktaucenters")
     (synopsis "Robust Clustering Procedures")
@@ -283,6 +318,9 @@ and Zamar (2019) <arxiv:1906.08198>).")
         (base32 "1n2hz08fv2f6fbi3hcaccc4bmhpn9lvfba1q4ralwn84knxn6khv"))))
     (properties `((upstream-name . "kstMatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sets r-pks r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kstMatrix")
@@ -312,6 +350,9 @@ experts.")
         (base32 "1qv4mg9hi62imk6xsldqprm6aca33qkh13jjihmvddaam7xxcm1z"))))
     (properties `((upstream-name . "kstIO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sets
                              r-relations
@@ -341,6 +382,9 @@ read and write KST data from/to files to be used together with the kst',
         (base32 "149aly73m7ls4pvyhg861j6yi2yyyr4hdwzh53hfyrakr73rq7y4"))))
     (properties `((upstream-name . "kStatistics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kStatistics")
     (synopsis
      "Unbiased Estimators for Cumulant Products and Faa Di Bruno's Formula")
@@ -367,6 +411,9 @@ see Di Nardo E., Guarino G., Senato D. (2009) <@code{arXiv:0807.5008>},
         (base32 "0drh5zjin73jfa5vksprv43ak4s8jr4y4py6sbcc4835rkl9qzph"))))
     (properties `((upstream-name . "kst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sets r-relations r-proxy))
     (home-page "https://homepage.uni-graz.at/en/cord.hockemeyer/")
     (synopsis "Knowledge Space Theory")
@@ -390,6 +437,9 @@ handle, and manipulate knowledge structures and knowledge spaces.")
         (base32 "1vrd7zlwigg7ipfq2pjnndp5mwkc0yglvrdiirv3kqm5lq0f14qa"))))
     (properties `((upstream-name . "kssa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-rlang
                              r-missmethods
@@ -420,6 +470,9 @@ the comparison of multiple state-of-the-art algorithms.")
         (base32 "1zd3ggzgjks0jay69s5m7ihbd7v7zha6ssj2m9ahnyp00ghpk83j"))))
     (properties `((upstream-name . "ksrlive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tightclust))
     (home-page "https://cran.r-project.org/package=ksrlive")
     (synopsis "Identify Kinase Substrate Relationships Using Dynamic Data")
@@ -440,6 +493,9 @@ experimental data and determine active kinases and their substrates.")
         (base32 "13fq0d016z6880rr93y918l27fsxd5dxc6gbdnkma5sgsjni5cxh"))))
     (properties `((upstream-name . "KSPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-expm r-deoptim r-compquadform))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=KSPM")
@@ -468,6 +524,9 @@ paper of Liu et al. (2007), <doi:10.1111/j.1541-0420.2007.00799.x>.")
         (base32 "06x471hck95xqy7rbh53ibhzh6kfjra7y9ipqdj2rqdkmfdj72q8"))))
     (properties `((upstream-name . "ksNN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=ksNN")
     (synopsis "K* Nearest Neighbors Algorithm")
@@ -488,6 +547,9 @@ and Levy (2016) <@code{arXiv:1701.07266>}.")
         (base32 "1dnkj838y8c1b53mlljhjqs3nd864i9xcqsv9n4fw28b4br9m570"))))
     (properties `((upstream-name . "ksharp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tkonopka/ksharp")
     (synopsis "Cluster Sharpening")
@@ -511,6 +573,9 @@ excision criteria.")
         (base32 "155fr49pvsbjkjh96aidw3fs6gb4q1i9c9v7qmk7nnfh6gnx0q3c"))))
     (properties `((upstream-name . "KSgeneral")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list fftw))
     (propagated-inputs (list r-rcpp r-mass r-dgof))
     (native-inputs (list pkg-config))
@@ -551,6 +616,9 @@ Two-sample Kolmogorov-Smirnov and Kuiper Tests.  submitted.")
         (base32 "03ax8b63fkq4sfsb9zvh2hk4g9nmd8wh5lla26wb7lan4s197dz6"))))
     (properties `((upstream-name . "kselection")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/drodriguezperez/kselection")
     (synopsis "Selection of K in K-Means Clustering")
     (description
@@ -570,6 +638,9 @@ k in k-means clustering''.")
         (base32 "1gfgpa2d32y6bzvf4ww70sm7niq34sqmyrhi0phlqxshqq9xviqc"))))
     (properties `((upstream-name . "KSEAapp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gplots))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=KSEAapp")
@@ -591,6 +662,9 @@ the method described by Casado et al. (2013) <doi:10.1126/scisignal.2003573>.")
         (base32 "1g7fkk399mgnz0h4nhbxf295d3ph9ssv345c26j6sanqbbd9d7g3"))))
     (properties `((upstream-name . "KSD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pryr))
     (home-page "https://cran.r-project.org/package=KSD")
     (synopsis "Goodness-of-Fit Tests using Kernelized Stein Discrepancy")
@@ -615,6 +689,9 @@ Liu, Lee, and Jordan, available at <@code{arXiv:1602.03253>}.")
         (base32 "1khvwc610yp3fd4fn0wcgqpzxg9g7sicjjmwvfcahs8qxn3m5vfa"))))
     (properties `((upstream-name . "KScorrect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mclust r-mass r-iterators r-foreach
                              r-doparallel))
     (home-page "https://github.com/pnovack-gottshall/KScorrect")
@@ -642,6 +719,9 @@ with the log uniform and mixture distributions.")
         (base32 "1q72l28cfk4721w3qbkqcm0ak8qgp1fcnpj50idghr7hds6kmc2l"))))
     (properties `((upstream-name . "KSA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=KSA")
     (synopsis "Retained Component Criterion for Principal Component Analysis")
     (description
@@ -661,6 +741,9 @@ tool to determine the optimal number of components to retain in PCA.")
         (base32 "0iyq3n0mnzjxgfn0g4l8d7jpnl7lvand4j602prc1jljsylyxlpj"))))
     (properties `((upstream-name . "kronos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/thomazbastiaanssen/kronos")
     (synopsis "Microbiome Oriented Circadian Rhythm Analysis Toolkit")
@@ -682,6 +765,9 @@ taking care of the trigonometry under the hood.")
         (base32 "0wxzhrrc4lx20nxjny7rcfw3bya7drn88zbrlzx9f531298xwbrk"))))
     (properties `((upstream-name . "KRMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-mass r-kernlab r-cvtools))
     (home-page "https://cran.r-project.org/package=KRMM")
     (synopsis "Kernel Ridge Mixed Model")
@@ -710,6 +796,9 @@ Prediction with Application to Rice.  Front.  Genet.  7:145.
         (base32 "142scj7cgg7sv0g17mivpgzk3h8jczf40h1padixfgx3204fj4xa"))))
     (properties `((upstream-name . "krm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kyotil))
     (home-page "https://cran.r-project.org/package=krm")
     (synopsis "Kernel Based Regression Models")
@@ -734,6 +823,9 @@ sequence.  This package is described in Fong et al. (2015)
         (base32 "1zyf3smfzfm3n43i35rlj1w6vcip2hxkvk4f8lp77xbsry0gmwjw"))))
     (properties `((upstream-name . "KRLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.r-project.org")
     (synopsis "Kernel-Based Regularized Least Squares")
     (description
@@ -757,6 +849,9 @@ functions.  For further details see Hainmueller and Hazlett (2014).")
         (base32 "1alr1va8xi4840ki1r48yf441vyn81lhdakcm7w3wxzlx5mbkkp7"))))
     (properties `((upstream-name . "KRIS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rarpack))
     (home-page "https://gitlab.com/kris.ccp/kris")
     (synopsis
@@ -783,6 +878,9 @@ data.")
         (base32 "0zzhpdmmaiaqrg1xi9jg6lzrhzpav8wyrc8z38rf8x6kxmr2bx3m"))))
     (properties `((upstream-name . "krippendorffsalpha")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.johnhughes.org")
     (synopsis "Measuring Agreement Using Krippendorff's Alpha Coefficient")
     (description
@@ -807,6 +905,9 @@ Interval estimation can be done in parallel for either methodology.")
         (base32 "01i953b0xrqrwbgzv8giz4dmcbc18jni9whhkmpg8sxvhqac59ns"))))
     (properties `((upstream-name . "KrigInv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgenoud
                              r-randtoolbox
                              r-pbivnorm
@@ -833,6 +934,9 @@ numerical function, possibly observed with noise.")
         (base32 "1s8cvc88g0wldr40hsv00145bym071bmp8klr0pbmvx0gfrqs8y8"))))
     (properties `((upstream-name . "kriging")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kriging")
     (synopsis "Ordinary Kriging")
     (description
@@ -852,6 +956,9 @@ plot geographical data.")
         (base32 "03xqj8aqlxxxpxadrl64rxxz79k062bx953z958wg3adjip776q4"))))
     (properties `((upstream-name . "krige")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-coda))
     (home-page "https://cran.r-project.org/package=krige")
     (synopsis "Geospatial Kriging with Metropolis Sampling")
@@ -872,6 +979,9 @@ described in Gill (2020) <doi:10.1177/1532440020930197>.")
         (base32 "1qi65k9fsbbkbw0w40rv60p5ygrvr10rmlyxdaqa5bdpcmrbly5z"))))
     (properties `((upstream-name . "kriens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.alephdue.com")
     (synopsis "Continuation Passing Style Development")
     (description
@@ -891,6 +1001,9 @@ development.")
         (base32 "0yzilmiiyzd2x3v0cnjphf0wdwiblh37kgrvmfrdy49qly48pvi2"))))
     (properties `((upstream-name . "KraljicMatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/koalaverse/KraljicMatrix")
@@ -915,6 +1028,9 @@ this information to place products and services within the Kraljic Matrix.")
         (base32 "1h384z16iknccpfvaz6ybzfbr8nkfcmcxrwhi2fxgxgnbp19lpf9"))))
     (properties `((upstream-name . "KrakenR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-magrittr
@@ -945,6 +1061,9 @@ analysis, strategy development, and monitoring of cryptocurrency market trends."
         (base32 "1gwy59sh4gp06hr3il3hz0iiwdrzrlya5b026qxvz5q62msf6q5a"))))
     (properties `((upstream-name . "kpodclustr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://jocelynchi.com/kpodclustr")
     (synopsis "Method for Clustering Partially Observed Data")
     (description
@@ -964,6 +1083,9 @@ Baraniuk (2016) <doi:10.1080/00031305.2015.1086685>.")
         (base32 "057xfqn08lqczgrj1r63d7vbncg24x9va9lnk8c47nwzl1x8aphd"))))
     (properties `((upstream-name . "kpeaks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kpeaks")
     (synopsis
      "Determination of K Using Peak Counts of Features for Clustering")
@@ -990,6 +1112,9 @@ descriptive statistics of peak counts of the features in a data set.")
         (base32 "1gd5bisyfwb12l9jmwhi2arlxrabc01vgv4m1qqs23vybsd6yh52"))))
     (properties `((upstream-name . "kpcalg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-pcalg
                              r-mgcv
@@ -1018,6 +1143,9 @@ non-linear relationships and non-Gaussian noise.")
         (base32 "1jnlldr721c2an8npv1w6q4sk6fkamff8a5c3p9kcb575wrk4kqz"))))
     (properties `((upstream-name . "kpcaIG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wallomicsdata
                              r-viridis
                              r-rgl
@@ -1050,6 +1178,9 @@ important ones.")
         (base32 "1i9kpr0pib6a8qn7ibmhbay4vxr96ca4kcp5aswmlvcv4ycmw6lx"))))
     (properties `((upstream-name . "KPC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rann r-proxy r-mlpack r-kernlab r-data-table))
     (home-page "https://www.jmlr.org/papers/v23/21-493.html")
     (synopsis "Kernel Partial Correlation Coefficient")
@@ -1075,8 +1206,9 @@ measure of conditional dependenceâ (URL listed below).  When X is empty, KP
 measures the unconditional dependence between Y and Z, which has been described
 in Deb, N., P. Ghosal, and B. Sen (2020), âMeasuring association on
 topological spaces using kernels and geometric graphsâ
-<@code{arXiv:2010.01768>}, and it is implemented in the functions KMAc() and
-Klin() in this package.  The latter can be computed in near linear time.")
+<@code{arXiv:2010.01768>}, and it is implemented in the functions @code{KMAc()}
+and @code{Klin()} in this package.  The latter can be computed in near linear
+time.")
     (license license:gpl3)))
 
 (define-public r-kpart
@@ -1091,6 +1223,9 @@ Klin() in this package.  The latter can be computed in near linear time.")
         (base32 "02df0pr8a0gm8558gbw9svxf5sybmg27grymy71ar9hjnhw5xlf2"))))
     (properties `((upstream-name . "Kpart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-leaps))
     (home-page "https://cran.r-project.org/package=Kpart")
     (synopsis "Cubic Spline Fitting with Knot Selection")
@@ -1111,6 +1246,9 @@ variables.")
         (base32 "0yx04my2vwjpi4l35h1i5xwqckca8b72divww39y1frcvia33g08"))))
     (properties `((upstream-name . "KoulMde")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-expm))
     (home-page "https://cran.r-project.org/package=KoulMde")
     (synopsis
@@ -1137,8 +1275,8 @@ unsupervised approach, and this package - based on Hira L. Koul (1986)
 <DOI:10.1214/aos/1176350059> - proposes an efficient method for simple image
 segmentation - here, \"simple\" means that an image is black-and-white - which can
 easily be applied to MRI analysis.  This package includes a function
-@code{GetSegImage}(): when a black-and-white image is given as an input,
-@code{GetSegImage}() separates an area of white pixels - which corresponds to a
+@code{GetSegImage()}: when a black-and-white image is given as an input,
+@code{GetSegImage()} separates an area of white pixels - which corresponds to a
 white lesion in MRI - from the given image.  For the second problem, consider
 linear regression model and autoregressive model of order q where errors in the
 linear regression model and innovations in the autoregression model are
@@ -1150,12 +1288,12 @@ function by using symmetry of the integrating measure in the distance.  Kim
 (2018) <DOI:10.1080/00949655.2017.1392527> proposed a fast computational method
 which enables practitioners to compute the minimum distance estimator of the
 vector of general multiple regression parameters for several integrating
-measures.  This package contains three functions: @code{KoulLrMde}(),
-@code{KoulArMde}(), and Koul2@code{StageMde}().  The former two provide minimum
+measures.  This package contains three functions: @code{KoulLrMde()},
+@code{KoulArMde()}, and @code{Koul2StageMde()}.  The former two provide minimum
 distance estimators for linear regression model and autoregression model,
 respectively, where both are based on Koul's method.  These two functions take
 much less time for the computation than those based on parametric minimum
-distance estimation methods.  Koul2@code{StageMde}() provides estimators for
+distance estimation methods. @code{Koul2StageMde()} provides estimators for
 regression and autoregressive coefficients of linear regression model with
 autoregressive errors through minimum distant method of two stages.  The new
 version is written in Rcpp and dramatically reduces computational time.")
@@ -1173,6 +1311,9 @@ version is written in Rcpp and dramatically reduces computational time.")
         (base32 "0nxrv1a48smgp36zcny38yfcz5dkx1dic4zicqkpvm93vf7jqn5i"))))
     (properties `((upstream-name . "kosis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-jsonlite r-httr r-data-table))
     (home-page "https://cran.r-project.org/package=kosis")
     (synopsis "Korean Statistical Information Service (KOSIS)")
@@ -1193,6 +1334,9 @@ Information Service (KOSIS) <https://kosis.kr/openapi/index/index.jsp>.")
         (base32 "1gdsy4i58byqxddpsm5nk1r3hlgik5gs2b8jqcm8n1r4ib6pg0ay"))))
     (properties `((upstream-name . "kosel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ordinalnet r-glmnet))
     (home-page "https://arxiv.org/pdf/1907.03153.pdf")
     (synopsis "Variable Selection by Revisited Knockoffs Procedures")
@@ -1220,6 +1364,9 @@ Gueudin A., Karmann C. (2019) <@code{arXiv:1907.03153>}.")
         (base32 "1faj065wjj7a68i57y7zmrrj4ckp01gvq8qknf6a56idi8kzr732"))))
     (properties `((upstream-name . "koRpus.lang.en")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sylly-en r-korpus))
     (home-page "https://reaktanz.de/?c=hacking&s=koRpus")
     (synopsis "Language Support for 'koRpus' Package: English")
@@ -1242,6 +1389,9 @@ mailing list (<https://korpusml.reaktanz.de>).")
         (base32 "0r9a2fzi3w53kixcjzbij8qmmkjl2p53dazys34s0czb5qrlm6hf"))))
     (properties `((upstream-name . "koRpus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sylly r-matrix r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://reaktanz.de/?c=hacking&s=koRpus")
@@ -1280,6 +1430,9 @@ features, or discuss the development of the package, please subscribe to the
         (base32 "1zqx3v4rc1rpq7nwjvf2p98hjsyrimidkxbqz5p9d24qrqga5mrh"))))
     (properties `((upstream-name . "KOR.addrlink")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-stringdist))
     (home-page "https://git-kor.stadtdo.de")
     (synopsis "Matching Address Data to Reference Index")
@@ -1302,6 +1455,9 @@ German municipalities ('KOR'-community) and German address schemes.")
         (base32 "08z24w04rzydm86z201crcmyw88sg92yqma5hzj0blj0fyqakwmi"))))
     (properties `((upstream-name . "KONPsurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpp))
     (home-page "https://cran.r-project.org/package=KONPsurv")
     (synopsis "KONP Tests: Powerful K-Sample Tests for Right-Censored Data")
@@ -1327,6 +1483,9 @@ hazard functions.")
         (base32 "03p7rsrag1xskccg42rx4dz1f42dah1bjqkfca64cs0rxvq4g2yk"))))
     (properties `((upstream-name . "konfound")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -1358,9 +1517,9 @@ to replace pp percent of the observed data with nor which the treatment had no
 effect to invalidate the inference\".  We implement these recent developments of
 sensitivity analysis and provide modules to calculate these two robustness
 indices and generate such statements in R. In particular, the functions
-konfound(), pkonfound() and mkonfound() allow users to calculate the robustness
-of inferences for a user's own model, a single published study and multiple
-studies respectively.")
+@code{konfound()}, @code{pkonfound()} and @code{mkonfound()} allow users to
+calculate the robustness of inferences for a user's own model, a single
+published study and multiple studies respectively.")
     (license license:expat)))
 
 (define-public r-komaletter
@@ -1375,6 +1534,9 @@ studies respectively.")
         (base32 "1wk1bhn699295pjj0ap6qkh11khdbx0nfxih74w1in53k4d3dajg"))))
     (properties `((upstream-name . "komaletter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown))
     (native-inputs (list r-knitr))
     (home-page "https://rnuske.github.io/komaletter/")
@@ -1403,6 +1565,9 @@ layout based on DIN 5008B'.")
         (base32 "0h4r7bd9989pahx34lc2i5h1f8nipir941l7sahhgz28lskfkc3h"))))
     (properties `((upstream-name . "kokudosuuchi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-stringr r-sf r-rlang r-glue))
     (home-page "https://yutannihilation.github.io/kokudosuuchi/")
     (synopsis "Utilities for 'Kokudo Suuchi'")
@@ -1424,6 +1589,9 @@ information.")
         (base32 "1vz0099gp1r10n7w4p480l8rswdw100sns196d9xin2ibmmd2fx9"))))
     (properties `((upstream-name . "KOGMWU")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pheatmap))
     (home-page "https://cran.r-project.org/package=KOGMWU")
     (synopsis "Functional Summary and Meta-Analysis of Gene Expression Data")
@@ -1450,6 +1618,9 @@ performed.")
         (base32 "0w0881ydnqdah04sifi25ypzxdwnsiqxfq1xam4yhr670bdak1vm"))))
     (properties `((upstream-name . "kofnGA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bigmemory))
     (home-page "https://cran.r-project.org/package=kofnGA")
     (synopsis "Genetic Algorithm for Fixed-Size Subset Selection")
@@ -1474,6 +1645,9 @@ values may optionally be evaluated in parallel.")
         (base32 "0slqs58flcj1z7a9fz71v99lnr9jphc9qkdph7q7iihx3qxri41g"))))
     (properties `((upstream-name . "kofdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-jsonlite r-httr))
     (home-page "https://github.com/KOF-ch/kofdata")
     (synopsis "Get Data from the 'KOF Datenservice' API")
@@ -1497,6 +1671,9 @@ information as well as data that requires an API token.")
         (base32 "09wn4giikxpw6phks3nyd69zs7v4zw3rw6xqlwvdcy2gd3vinasz"))))
     (properties `((upstream-name . "KODAMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-umap r-rtsne r-rcpparmadillo r-rcpp r-minerva))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=KODAMA")
@@ -1522,6 +1699,9 @@ Tenori L. (2014) Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>.")
         (base32 "082yh0hfygg1favnxa2yxi96w44r11a033ypzvddzgvf0i9fd5dw"))))
     (properties `((upstream-name . "KoboconnectR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-readxl
                              r-r6
@@ -1554,6 +1734,9 @@ professionals using Kobotoolbox'.")
         (base32 "1af5qhj82dixf1qcbz3sfj52pzgy8gnafzifwxnhrp7vpn4rnv6m"))))
     (properties `((upstream-name . "kntnr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -1584,6 +1767,9 @@ an enterprise application platform.")
         (base32 "1w78rmrh4vgvgv3xf0s7w0zcw3y33l1h1gz6sma87xj8awpsp2l2"))))
     (properties `((upstream-name . "KnowBR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-sp r-plotrix r-mgcv r-fossil))
     (home-page "https://cran.r-project.org/package=KnowBR")
     (synopsis
@@ -1608,6 +1794,9 @@ background with administrative areas.")
         (base32 "03c7fbk7v56b7vqiq6rm4j9i71zj7nsd520gpsccs00i4zs2kldj"))))
     (properties `((upstream-name . "knotR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=knotR")
     (synopsis "Knot Diagrams using Bezier Curves")
     (description
@@ -1627,6 +1816,9 @@ curves.")
         (base32 "198sy0ww4cc59yqgf66vg6r5g52wmgpn51v43cm51b3pi7g7klar"))))
     (properties `((upstream-name . "KnockoffTrio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=KnockoffTrio")
     (synopsis "Trio Data Analysis with Knockoff Statistics for FDR Control")
     (description
@@ -1650,6 +1842,9 @@ American Journal of Human Genetics, 109(10), 1761-1776.")
         (base32 "01r04d9ha9l5pkz3lwdcb5x5qqwk8vil9avnbnfn76wg63mdfhbk"))))
     (properties `((upstream-name . "KnockoffScreen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatest
                              r-seqminer
                              r-matrix
@@ -1677,6 +1872,9 @@ whole-genome sequencing data.  The functions allow genome-wide association scan.
         (base32 "0ziqnhs2ipnzrh4ndjppcf2w3s13mwsza7w2s5dgfd70i0f6nk7v"))))
     (properties `((upstream-name . "KnockoffHybrid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatest r-glmnet))
     (home-page "https://cran.r-project.org/package=KnockoffHybrid")
     (synopsis
@@ -1702,6 +1900,9 @@ American Journal of Human Genetics, in press.")
         (base32 "1fj6n39i8wfkc16pmkl8jli81nny8sjjfdgklys4mbcavcmlrv5g"))))
     (properties `((upstream-name . "knockoff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-rdsdp
                              r-matrix
@@ -1731,6 +1932,9 @@ Statist.  Soc.  B (2018) 80, 3, pp.  551-577.")
         (base32 "1sxz1hzbx41z3w1qf2zf8fmf3pd64jrnc37ndxx28yc70vhwjd1n"))))
     (properties `((upstream-name . "knnwtsim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/mtrupiano1/knnwtsim")
     (synopsis
      "K Nearest Neighbor Forecasting with a Tailored Similarity Metric")
@@ -1755,6 +1959,9 @@ metric please see Trupiano (2021) <@code{arXiv:2112.06266>}.")
         (base32 "1zbfk8fanwmzn0ryhyxmq7npl1pysgnhs4chpfi1kxlnlbgfxfl1"))))
     (properties `((upstream-name . "kNNvs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kNNvs")
     (synopsis "k Nearest Neighbors with Grid Search Variable Selection")
     (description
@@ -1775,6 +1982,9 @@ predictive performance.")
         (base32 "16zm8bhdivaap3mvhdx2qn1b1j2iqyarclb0y2qd1n4viwcfm9c1"))))
     (properties `((upstream-name . "KNNShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rmarkdown
                              r-rhandsontable
@@ -1803,6 +2013,9 @@ function as well as at <https://kartikeyabolar.shinyapps.io/KNNShiny/>.")
         (base32 "0qgq8la3zndlb1wwqv9b2kw52y9ns36pi4ds68pkm81bhzq5nqis"))))
     (properties `((upstream-name . "knnp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-paralleldist r-forecast r-foreach
                              r-doparallel))
     (home-page "https://github.com/Grasia/knnp")
@@ -1826,6 +2039,9 @@ of the algorithm.  These are carried out in parallel using multiple threads.")
         (base32 "16cdga8q6vl289yh7520khyfsg9aih7crq9wa13sn6lnimfah49r"))))
     (properties `((upstream-name . "knnmi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=knnmi")
     (synopsis "k-Nearest Neighbor Mutual Information Estimator")
     (description
@@ -1850,6 +2066,9 @@ continuous values.  They are based on algorithms by A. Kraskov, et.  al. (2004)
         (base32 "1l0qq9mqfwkxkkms8xrmf7wzrgg27syrndng7vrrymda67pcxnl4"))))
     (properties `((upstream-name . "knitxl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xml2
                              r-stringr
@@ -1866,9 +2085,9 @@ continuous values.  They are based on algorithms by A. Kraskov, et.  al. (2004)
     (synopsis "Generates a Spreadsheet Report from an 'rmarkdown' File")
     (description
      "Convert an R Markdown documents into an .xlsx spreadsheet reports with the
-knitxl() function, which works similarly to knit() from the knitr package.  The
-generated report can be opened in Excel or similar software for further analysis
-and presentation.")
+@code{knitxl()} function, which works similarly to @code{knit()} from the knitr
+package.  The generated report can be opened in Excel or similar software for
+further analysis and presentation.")
     (license license:gpl3+)))
 
 (define-public r-knitrprogressbar
@@ -1883,15 +2102,18 @@ and presentation.")
         (base32 "09jw75m39vxkwwy05if3z280kww3qzyw5d1jplwy76dxgsf3cmz1"))))
     (properties `((upstream-name . "knitrProgressBar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-r-oo))
     (native-inputs (list r-knitr))
     (home-page "https://rmflight.github.io/knitrProgressBar/")
     (synopsis "Provides Progress Bars in 'knitr'")
     (description
      "This package provides a progress bar similar to dplyr that can write progress
-out to a variety of locations, including stdout(), stderr(), or from file().
-Useful when using knitr or rmarkdown', and you still want to see progress of
-calculations in the terminal.")
+out to a variety of locations, including @code{stdout()}, @code{stderr()}, or
+from @code{file()}.  Useful when using knitr or rmarkdown', and you still want
+to see progress of calculations in the terminal.")
     (license license:expat)))
 
 (define-public r-knitrdata
@@ -1906,6 +2128,9 @@ calculations in the terminal.")
         (base32 "1am79r4rkrw7vjmyzc0cq4p52l2ypdw99rfhrvdsaq11yllx08mx"))))
     (properties `((upstream-name . "knitrdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xfun r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dmkaplan2000/knitrdata")
@@ -1927,6 +2152,9 @@ in rmarkdown documents so that they can be made completely standalone.")
         (base32 "1igacc2sx8897wmnhh8kngd0fq6zqbi30chy5c8jw60zc38mi3wi"))))
     (properties `((upstream-name . "knitLatex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=knitLatex")
@@ -1936,10 +2164,10 @@ in rmarkdown documents so that they can be made completely standalone.")
 @code{LaTeX}'.  It includes @code{xTab} for creating traditional @code{LaTeX}
 tables, @code{lTab} for generating longtable environments, and @code{sTab} for
 generating a supertabular environment.  Additionally, this package contains a
-knitr_setup() function which fixes a well-known bug in knitr', which distorts
-the results=\"asis\" command when used in conjunction with user-defined commands;
-and a com command (<<com=TRUE>>=) which renders the output from knitr as a
-@code{LaTeX} command.")
+@code{knitr_setup()} function which fixes a well-known bug in knitr', which
+distorts the results=\"asis\" command when used in conjunction with user-defined
+commands; and a com command (<<com=TRUE>>=) which renders the output from knitr
+as a @code{LaTeX} command.")
     (license license:gpl3)))
 
 (define-public r-knitcitations
@@ -1954,6 +2182,9 @@ and a com command (<<com=TRUE>>=) which renders the output from knitr as a
         (base32 "1c7pl8jh61pv0brqanmyfy6s0ipxn312b2hjypcsjaph6b8mhj2q"))))
     (properties `((upstream-name . "knitcitations")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-refmanager r-httr r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cboettig/knitcitations")
@@ -1970,15 +2201,18 @@ DOI', URL, or bibtex file key.  See the package URL for details.")
 (define-public r-knfi
   (package
     (name "r-knfi")
-    (version "1.0.1")
+    (version "1.0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "knfi" version))
        (sha256
-        (base32 "11811ic3pigv351zlqda6vbni60s4p2fmc1vxxv8lg61q63sf4fh"))))
+        (base32 "1snshy9mh34l3iimwr4jz4ja9xv88plhlsn2h9g2nmgpp90nqx8d"))))
     (properties `((upstream-name . "knfi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-stringr
@@ -2014,24 +2248,25 @@ large volume of accumulated forest survey data from across the country can make
 it challenging to manage and utilize such a vast dataset.  To address this
 issue, we developed an R package that efficiently handles large-scale NFI data
 across time and space.  The package offers a comprehensive workflow for NFI data
-analysis.  It starts with data processing, where read_nfi() function
+analysis.  It starts with data processing, where @code{read_nfi()} function
 reconstructs NFI data according to the researcher's needs while performing basic
 integrity checks for data quality.Following this, the package provides
 analytical tools that operate on the verified data.  These include functions
-like summary_nfi() for summary statistics, diversity_nfi() for biodiversity
-analysis, iv_nfi() for calculating species importance value, and biomass_nfi()
-and cwd_biomass_nfi() for biomass estimation.  Finally, for visualization, the
-tsvis_nfi() function generates graphs and maps, allowing users to visualize
-forest ecosystem changes across various spatial and temporal scales.  This
-integrated approach and its specialized functions can enhance the efficiency of
-processing and analyzing NFI data, providing researchers with insights into
-forest ecosystems.  The NFI Excel files (.xlsx) are not included in the R
-package and must be downloaded separately.  Users can access these NFI Excel
-files by visiting the Korea Forest Service Forestry Statistics Platform
+like @code{summary_nfi()} for summary statistics, @code{diversity_nfi()} for
+biodiversity analysis, @code{iv_nfi()} for calculating species importance value,
+and @code{biomass_nfi()} and @code{cwd_biomass_nfi()} for biomass estimation.
+Finally, for visualization, the @code{tsvis_nfi()} function generates graphs and
+maps, allowing users to visualize forest ecosystem changes across various
+spatial and temporal scales.  This integrated approach and its specialized
+functions can enhance the efficiency of processing and analyzing NFI data,
+providing researchers with insights into forest ecosystems.  The NFI Excel files
+(.xlsx) are not included in the R package and must be downloaded separately.
+Users can access these NFI Excel files by visiting the Korea Forest Service
+Forestry Statistics Platform
 <https://kfss.forest.go.kr/stat/ptl/article/@code{articleList.do?curMenu=11694&bbsId=microdataboard>}
 to download the annual NFI Excel files, which are bundled in .zip archives.
 Please note that this website is only available in Korean, and direct download
-links can be found in the notes section of the read_nfi() function.")
+links can be found in the notes section of the @code{read_nfi()} function.")
     (license license:gpl3)))
 
 (define-public r-kneearrower
@@ -2046,6 +2281,9 @@ links can be found in the notes section of the read_nfi() function.")
         (base32 "1blmim4l7375psa9c3wbpksywj5nfbawly4001n6311wcv4dybl5"))))
     (properties `((upstream-name . "KneeArrower")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-signal))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=KneeArrower")
@@ -2067,6 +2305,9 @@ to find knee points.")
         (base32 "1yiakgzmh72lans1mwp42lch9x9gg2g6ww2hrjdma3w1bbsidlwf"))))
     (properties `((upstream-name . "KnapsackSampling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve))
     (home-page "https://github.com/chinsoon12/KnapsackSampling")
     (synopsis "Generate Feasible Samples of a Knapsack Problem")
@@ -2088,6 +2329,9 @@ problem with both equalities and inequalities constraints.")
         (base32 "0lfxxqrgh23i5gm0mwhq14kkzq5vxfnn3s8ydmfjvhphif322w4n"))))
     (properties `((upstream-name . "KMunicate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survival
                              r-pammtools
@@ -2119,6 +2363,9 @@ certain extent, including themes, fonts, and colour scales.")
         (base32 "1khp383k5rr7nnn1fih7wfw6k202igxcj3ddwawyp895qa9w12cj"))))
     (properties `((upstream-name . "kmodR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kmodR")
     (synopsis "K-Means with Simultaneous Outlier Detection")
     (description
@@ -2143,6 +2390,9 @@ finding outliers inexpensively in multidimensional space.")
         (base32 "1qbm06cn6jm523zxvj0f25c7x78vfsw7a92igwlnwfs38lii25vf"))))
     (properties `((upstream-name . "KMLtoSHAPE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-sf r-raster))
     (home-page "https://cran.r-project.org/package=KMLtoSHAPE")
     (synopsis "Preserving Attribute Values: Converting KML to Shapefile")
@@ -2171,6 +2421,9 @@ datasets.")
         (base32 "1y265nkz2fpwrvvljnl75qgrm0nl1kck7912cgm6y2vw2b46s4l4"))))
     (properties `((upstream-name . "kml3d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-misc3d r-longitudinaldata r-kml r-clv))
     (home-page "https://cran.r-project.org/package=kml3d")
     (synopsis "K-Means for Joint Longitudinal Data")
@@ -2196,6 +2449,9 @@ exported through @code{LaTeX} in a 3D dynamic rotating PDF graph.")
         (base32 "1qaiffqcfgqaygvxvp980q8kcag4bddckmbsllj7dyy72l87566g"))))
     (properties `((upstream-name . "kml")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-longitudinaldata r-clv))
     (home-page "https://cran.r-project.org/package=kml")
     (synopsis "K-Means for Longitudinal Data")
@@ -2218,6 +2474,9 @@ and propose a graphical interface for choosing the best number of clusters.")
         (base32 "1j6fyi004fl97l569sn05pb7bmc2jx5hi0blfd896qi309s9qkd8"))))
     (properties `((upstream-name . "kmi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mitools))
     (home-page "https://github.com/aallignol/kmi")
     (synopsis
@@ -2242,6 +2501,9 @@ analyses of the cumulative incidence functions (Allignol and Beyersmann, 2010
         (base32 "0aq7smn0ga60x5s69x6d0hln85d69q02w1b75gsp1fpzyf5mqw1w"))))
     (properties `((upstream-name . "kmeRtone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-venneuler
                              r-stringi
@@ -2271,17 +2533,18 @@ distant from, the case loci to mitigate any potential sequencing bias.  This
 method effectively captures both the local sequencing variations and broader
 sequence influences, while also correcting for potential biases, thereby
 ensuring more accurate analysis.  The core functionality of @code{kmeRtone} is
-the SCORE() function, which calculates the susceptibility scores for k-mers in
-case and control regions.  Case regions are defined by the genomic coordinates
-provided in a file by the user and the control regions can be constructed
-relative to the case regions or provided directly.  The k-meric susceptibility
-scores are calculated by using a one-proportion z-statistic. @code{kmeRtone} is
-highly flexible by allowing users to also specify their target k-mer patterns
-and quantify the corresponding k-mer enrichment scores in the context of these
-patterns, allowing for a more comprehensive approach to understanding the
-functional implications of specific DNA sequences on a genomic scale (e.g., CT
-motifs upon UV radiation damage).  Adib A. Abdullah, Patrick Pflughaupt, Claudia
-Feng, Aleksandr B. Sahakyan (2024) Bioinformatics (submitted).")
+the @code{SCORE()} function, which calculates the susceptibility scores for
+k-mers in case and control regions.  Case regions are defined by the genomic
+coordinates provided in a file by the user and the control regions can be
+constructed relative to the case regions or provided directly.  The k-meric
+susceptibility scores are calculated by using a one-proportion z-statistic.
+@code{kmeRtone} is highly flexible by allowing users to also specify their
+target k-mer patterns and quantify the corresponding k-mer enrichment scores in
+the context of these patterns, allowing for a more comprehensive approach to
+understanding the functional implications of specific DNA sequences on a genomic
+scale (e.g., CT motifs upon UV radiation damage).  Adib A. Abdullah, Patrick
+Pflughaupt, Claudia Feng, Aleksandr B. Sahakyan (2024) Bioinformatics
+(submitted).")
     (license license:gpl3)))
 
 (define-public r-kmers
@@ -2296,6 +2559,9 @@ Feng, Aleksandr B. Sahakyan (2024) Bioinformatics (submitted).")
         (base32 "0wybkzf3l5adgchdxklipkmd063x5nsdqrnhjz0kghc27v7h5zdg"))))
     (properties `((upstream-name . "kmeRs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pwalign r-biostrings r-biocgenerics))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/urniaz/kmeRs")
@@ -2320,6 +2586,9 @@ is evaluated by local and global alignment.")
         (base32 "0bsbwxv0a9b6g89h7v876hm5p97viwbczz851ngjv5li5qzvlpxs"))))
     (properties `((upstream-name . "Kmedians")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-mvtnorm
                              r-gmedian
@@ -2335,16 +2604,17 @@ is evaluated by local and global alignment.")
 methods, the algorithms can be initialized randomly or with the help of a robust
 hierarchical clustering.  The number of clusters can be selected with the help
 of a penalized criterion.  We provide functions to provide robust clustering.
-Function gen_K() enables to generate a sample of data following a contaminated
-Gaussian mixture.  Functions Kmedians() and Kmeans() consists in a K-median and
-a K-means algorithms while Kplot() enables to produce graph for both methods.
-Cardot, H., Cenac, P. and Zitt, P-A. (2013). \"Efficient and fast estimation of
-the geometric median in Hilbert spaces with an averaged stochastic gradient
-algorithm\".  Bernoulli, 19, 18-43. <doi:10.3150/11-BEJ390>.  Cardot, H. and
-Godichon-Baggioni, A. (2017). \"Fast Estimation of the Median Covariation Matrix
-with Application to Online Robust Principal Components Analysis\".  Test, 26(3),
-461-480 <doi:10.1007/s11749-016-0519-x>.  Godichon-Baggioni, A. and Surendran,
-S. \"A penalized criterion for selecting the number of clusters for K-medians\"
+Function @code{gen_K()} enables to generate a sample of data following a
+contaminated Gaussian mixture.  Functions @code{Kmedians()} and @code{Kmeans()}
+consists in a K-median and a K-means algorithms while @code{Kplot()} enables to
+produce graph for both methods.  Cardot, H., Cenac, P. and Zitt, P-A. (2013).
+\"Efficient and fast estimation of the geometric median in Hilbert spaces with an
+averaged stochastic gradient algorithm\".  Bernoulli, 19, 18-43.
+<doi:10.3150/11-BEJ390>.  Cardot, H. and Godichon-Baggioni, A. (2017). \"Fast
+Estimation of the Median Covariation Matrix with Application to Online Robust
+Principal Components Analysis\".  Test, 26(3), 461-480
+<doi:10.1007/s11749-016-0519-x>.  Godichon-Baggioni, A. and Surendran, S. \"A
+penalized criterion for selecting the number of clusters for K-medians\"
 <@code{arXiv:2209.03597>} Vardi, Y. and Zhang, C.-H. (2000). \"The multivariate
 L1-median and associated data depth\".  Proc.  Natl.  Acad.  Sci.  USA,
 97(4):1423-1426. <doi:10.1073/pnas.97.4.1423>.")
@@ -2362,6 +2632,9 @@ L1-median and associated data depth\".  Proc.  Natl.  Acad.  Sci.  USA,
         (base32 "1pamwl28g6gc84x7sw9czqj8dpraq5pd3hdrf5m3yziwzkfxawnc"))))
     (properties `((upstream-name . "kmed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kmed")
@@ -2389,6 +2662,9 @@ linkages.  The cluster result can be plotted in a marked barplot or pca biplot."
         (base32 "1973lrf5j63za86bjc8klv78gi1kiwrbiqf86675kdv6qf69ik44"))))
     (properties `((upstream-name . "KMEANS.KNN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2
                              r-factoextra
                              r-cluster
@@ -2404,8 +2680,9 @@ Neighbors) learning method.  It allows users to perform unsupervised clustering
 and supervised classification on their datasets.  Additional features include
 data normalization, imputation of missing values, and the choice of distance
 metric.  The package also provides functions to determine the optimal number of
-clusters for Kmeans and the best k-value for KNN: knn_Function(),
-find_Knn_best_k(), KMEANS_FUNCTION(), and find_Kmeans_best_k().")
+clusters for Kmeans and the best k-value for KNN: @code{knn_Function()},
+@code{find_Knn_best_k()}, @code{KMEANS_FUNCTION()}, and
+@code{find_Kmeans_best_k()}.")
     (license license:gpl3)))
 
 (define-public r-kmd
@@ -2420,6 +2697,9 @@ find_Knn_best_k(), KMEANS_FUNCTION(), and find_Kmeans_best_k().")
         (base32 "0sgcfh5b4dl1gy3dxsdsqgmyfrd6kqrzvxv9g4slskwyrjsirsp5"))))
     (properties `((upstream-name . "KMD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rann
                              r-proxy
                              r-mlpack
@@ -2457,6 +2737,9 @@ Huang, Z. and B. Sen (2022) <@code{arXiv:2210.00634>}.")
         (base32 "0rnrwqsmxcmf4sjd9p2xz7w12lv58wmy2p349s0x4b34b5arf75d"))))
     (properties `((upstream-name . "kmc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-rcpp r-emplik))
     (home-page "https://github.com/yfyang86/kmc/")
     (synopsis
@@ -2486,6 +2769,9 @@ Yifan Yang (2015)<doi: 10.1007/s00180-015-0567-9> and Mai Zhou and Yifan Yang
         (base32 "07y1gadn5givrx4ww9vzgcqdkchgd1ndjq65v6ssrbcxsx1lbgxl"))))
     (properties `((upstream-name . "kmBlock")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-foreach
@@ -2519,6 +2805,8 @@ co-authorship networks).")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2555,6 +2843,9 @@ clusters simple and informative.")
         (base32 "1r354fd5da6mp7v3048ii09hnghhfwdg6pvmx2ib0cr88ql431sy"))))
     (properties `((upstream-name . "klsh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-snowballc r-rcpp r-plyr r-blink))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=klsh")
@@ -2578,6 +2869,9 @@ vignette.")
         (base32 "0fd1p6dhvaa00h8ij3bj1brqbc21yqni3bfg265yqf7paqbmxnkv"))))
     (properties `((upstream-name . "klovan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tibble
                              r-sp
@@ -2627,6 +2921,9 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
         (base32 "100rfisd3srj3j3d1pqxcz45gd21ibclf873ccnb0n3pch8a8lbp"))))
     (properties `((upstream-name . "KLINK")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-verbalisr
                              r-shinyjs
@@ -2661,6 +2958,9 @@ ratios supports pairs of linked markers, and all common mutation models.")
         (base32 "1ggsdq8xcg6hi12rq356myhngx3j475gpwlvpynm1581r4z0lkbk"))))
     (properties `((upstream-name . "klic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-pheatmap r-matrix r-coca
                              r-cluster))
     (native-inputs (list r-knitr))
@@ -2690,6 +2990,9 @@ please see Cabassi and Kirk (2020) <doi:10.1093/bioinformatics/btaa593>.")
         (base32 "1knnqzzywh6zcj60133a5bfzqqxmf86gn4m1kggm7gzv1k9mx90b"))))
     (properties `((upstream-name . "KLexp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glmnet))
     (home-page "https://github.com/Zongrui-Dai/Kernel-lasso-feature-expansion")
     (synopsis "Kernel_lasso Expansion")
@@ -2712,6 +3015,9 @@ C Wang (2021) <doi:10.1088/1742-6596/1955/1/012047>.")
         (base32 "141xs03sb0ixhjpr388fwf5h124mqkbj0k1xqw0whdhrm5051qsz"))))
     (properties `((upstream-name . "klexdatr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf))
     (home-page "https://github.com/poissonconsulting/klexdatr")
     (synopsis "Kootenay Lake Exploitation Study Data")
@@ -2737,6 +3043,9 @@ the natural and fishing mortality of both species.")
         (base32 "1r6j6ddylzxsfmymnf8hp7sm8c2ckr8xrdz75xlkgp4fgay106r2"))))
     (properties `((upstream-name . "kldtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kldtools")
     (synopsis
      "Kullback-Leibler Divergence and Other Tools to Analyze Frequencies")
@@ -2757,6 +3066,9 @@ perspective estimator and their confidence intervals.")
         (base32 "0wy2cdkf6jmqw4hw1hs7vdwxvqn5yh4al71b5nvhixby4mck0cm3"))))
     (properties `((upstream-name . "kldest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rann))
     (home-page "https://niklhart.github.io/kldest/")
     (synopsis "Sample-Based Estimation of Kullback-Leibler Divergence")
@@ -2779,6 +3091,9 @@ discrete or mixed.")
         (base32 "1nc84q5jaya4d7bi1m8zwbmyfsxzmv470nq2nj2j8xn5jv6ch4a5"))))
     (properties `((upstream-name . "klausuR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable r-psych))
     (home-page "https://reaktanz.de/?c=hacking&s=klausuR")
     (synopsis "Multiple Choice Test Evaluation")
@@ -2799,15 +3114,18 @@ project homepage.")
 (define-public r-klassr
   (package
     (name "r-klassr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "klassR" version))
        (sha256
-        (base32 "09l614sgzgzyli0yyhgwp6yl8vdds908xscmdd501dzagm70fd83"))))
+        (base32 "0kx774cddcwhqfawqiz73jnmibkafd78vwd3q8i6byawn1qa6v3b"))))
     (properties `((upstream-name . "klassR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm r-jsonlite r-igraph r-httr))
     (home-page "https://statisticsnorway.github.io/ssb-klassr/")
     (synopsis "Classifications and Codelists for Statistics Norway")
@@ -2830,18 +3148,21 @@ date with options to choose language, hierarchical level and formatting.")
         (base32 "1rg3p3y984s7k7y14agbh3kxh21rrvan3yzpvfimpnvw04f08v6k"))))
     (properties `((upstream-name . "klaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-questionr r-mass r-combinat))
     (home-page "https://statistik.tu-dortmund.de")
     (synopsis "Classification and Visualization")
     (description
      "Miscellaneous functions for classification and visualization, e.g. regularized
-discriminant analysis, sknn() kernel-density naive Bayes, an interface to
-svmlight and stepclass() wrapper variable selection for supervised
-classification, partimat() visualization of classification rules and
-shardsplot() of cluster results as well as kmodes() clustering for categorical
-data, corclust() variable clustering, variable extraction from different
-variable clustering models and weight of evidence preprocessing.")
+discriminant analysis, @code{sknn()} kernel-density naive Bayes, an interface to
+svmlight and @code{stepclass()} wrapper variable selection for supervised
+classification, @code{partimat()} visualization of classification rules and
+@code{shardsplot()} of cluster results as well as @code{kmodes()} clustering for
+categorical data, @code{corclust()} variable clustering, variable extraction
+from different variable clustering models and weight of evidence preprocessing.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-kko
@@ -2856,6 +3177,9 @@ variable clustering models and weight of evidence preprocessing.")
         (base32 "08mgi7j1kirfnjsj3xi2wgr32cnqb88vxs15gfm6f1gq853xvhch"))))
     (properties `((upstream-name . "kko")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knockoff r-grpreg r-foreach r-extdist
                              r-doparallel))
     (native-inputs (list r-knitr))
@@ -2883,6 +3207,9 @@ Modelsâ. @code{arXiv} preprint <@code{arXiv:2105.11659>}.")
         (base32 "07sg5qxfgff99kv800q6g1ivs7l29r1fy1s3q84z4da61csdpxk6"))))
     (properties `((upstream-name . "kiwisR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-purrr r-lubridate r-httr2 r-dplyr))
     (home-page "https://github.com/rywhale/kiwisR")
     (synopsis
@@ -2910,6 +3237,9 @@ time series values.  All data is returned as tidy tibbles.")
         (base32 "0xn1gwa0whw6glypsf8wwrw0rlzy3xglqr7gdl5c7ldd5v1dffq9"))))
     (properties `((upstream-name . "kitagawa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psd r-kelvin r-bessel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/abarbour/kitagawa")
@@ -2946,13 +3276,16 @@ earth tides.")
         (base32 "0a0q57q3c5kfjd2c3vz1918hgzsh2ik1rwkr7kdrmzn45xs1nmdy"))))
     (properties `((upstream-name . "kit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kit")
     (synopsis "Data Manipulation Functions Implemented in C")
     (description
      "Basic functions, implemented in C, for large data manipulation.  Fast vectorised
-ifelse()/nested if()/switch() functions, psum()/pprod() functions equivalent to
-pmin()/pmax() plus others which are missing from base R. Most of these functions
-are callable at C level.")
+@code{ifelse()}/nested @code{if()/switch()} functions, @code{psum()/pprod()}
+functions equivalent to @code{pmin()/pmax()} plus others which are missing from
+base R. Most of these functions are callable at C level.")
     (license license:gpl3)))
 
 (define-public r-kissmig
@@ -2967,6 +3300,9 @@ are callable at C level.")
         (base32 "0q2kn394kzziywb1a0h1s0845q8b83fqv4s5qk1vx03kppd93smv"))))
     (properties `((upstream-name . "kissmig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-raster))
     (home-page "https://purl.oclc.org/wsl/kissmig")
     (synopsis "a Keep It Simple Species Migration Model")
@@ -2991,6 +3327,9 @@ Nobis & Normand (2014), <doi:10.1111/ecog.00930>.")
         (base32 "0vyz546nwxpz88hbjqp2q8ad9zqp1syln4yzmfdpzj8aqkdc3b0h"))))
     (properties `((upstream-name . "kisopenapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr2 r-data-table r-cli))
     (home-page "https://cran.r-project.org/package=kisopenapi")
     (synopsis "Korea Investment & Securities (KIS) Open Trading API")
@@ -3012,6 +3351,9 @@ check <https://apiportal.koreainvestment.com/>.")
         (base32 "0bv8rrk9jh02h3gill1g2w246j4zv98cjchz7i2c092lvqps8szs"))))
     (properties `((upstream-name . "kirby21.t1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kirby21-base))
     (home-page "https://www.nitrc.org/projects/multimodal/")
     (synopsis
@@ -3033,6 +3375,9 @@ reproducibility study <doi:10.1016/j.neuroimage.2010.11.047>.")
         (base32 "1z2l6bn53mwkll9ki4169lqlz6wcfp29xzdrqyw606j2xrs4wc22"))))
     (properties `((upstream-name . "kirby21.fmri")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kirby21-base))
     (home-page "https://www.nitrc.org/projects/multimodal/")
     (synopsis
@@ -3054,6 +3399,9 @@ reproducibility study <doi:10.1016/j.neuroimage.2010.11.047>.")
         (base32 "1ymhldippxybj6lkh7ibpix68285rdsyw28krjndyzvx39jl78gj"))))
     (properties `((upstream-name . "kirby21.base")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-git2r))
     (home-page "https://www.nitrc.org/projects/multimodal/")
     (synopsis
@@ -3076,6 +3424,9 @@ functional and structural imaging.")
         (base32 "1m5a551vlvd7ndmphqs182kmva7qyyh2rqxkmck7vjcil0qw11bk"))))
     (properties `((upstream-name . "Kira")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=Kira")
     (synopsis "Machine Learning")
@@ -3099,6 +3450,9 @@ be used in ranking results from other packs.")
         (base32 "1skhrrlskasysfvr1dmrsyji1zb897vx1zcb07hwzm8lrzda7fd7"))))
     (properties `((upstream-name . "KINSIMU")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=KINSIMU")
     (synopsis "Panel Evaluation in Forensic Kinship Analysis")
     (description
@@ -3119,6 +3473,9 @@ as probability of exclusion (PE).")
         (base32 "0bggc78b3xyz6vczbbqhibn6zxgsw122nzymsndk5nd19yb76nv9"))))
     (properties `((upstream-name . "kinship2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog r-matrix r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kinship2")
@@ -3145,6 +3502,9 @@ with various criteria, and kinship for the X chromosome.")
         (base32 "1yq7wkim0cm6p1nm49km5izabkp1cid9z8df7wndnx048kb37qv4"))))
     (properties `((upstream-name . "KinMixLite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statnet-common
                              r-rsolnp
                              r-ribd
@@ -3180,6 +3540,9 @@ Green, P. J. and Mortera, J. (2021) <doi:10.1111/rssc.12498>.")
         (base32 "17l415v290lm99rsifpk6324mm1sk79ns4cvjkyh9ibj8n7l44c1"))))
     (properties `((upstream-name . "KingCountyHouses")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=KingCountyHouses")
     (synopsis "Data on House Sales in King County WA")
     (description
@@ -3199,6 +3562,9 @@ given along with sale prices.")
         (base32 "1mn09isszg53zxss4q29fiv3ci7y25xsx36cmipk93b7s6p30mhn"))))
     (properties `((upstream-name . "kinematics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kinematics")
@@ -3222,6 +3588,9 @@ curvature.")
         (base32 "0f2i2j1mwk6bwsc42xkkf18nyffp1983bbarwvscjj7saibhfpyj"))))
     (properties `((upstream-name . "kindisperse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tibble
                              r-stringr
@@ -3265,6 +3634,9 @@ dispersal.  For ease of use an integrated Shiny app is also included.")
         (base32 "0wijsjz0piz5j9rm2nr3d5dfpiyba740mbfbkmfll9pz72s58wz8"))))
     (properties `((upstream-name . "kin.cohort")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=kin.cohort")
     (synopsis "Analysis of Kin-Cohort Studies")
@@ -3281,23 +3653,27 @@ Chatterjee.")
 (define-public r-kimisc
   (package
     (name "r-kimisc")
-    (version "0.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kimisc" version))
        (sha256
-        (base32 "0nbjspbq9akhmamfdn192p5b6ki7xqhp422ih6v77xsnrhl5m24z"))))
+        (base32 "0jchqhc9961br64x1x7ilg5gszvsjn1zjfas27ylnwivm8j7z51p"))))
     (properties `((upstream-name . "kimisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pryr r-plyr r-memoise))
-    (home-page "http://krlmlr.github.io/kimisc")
+    (home-page "https://krlmlr.github.io/kimisc/")
     (synopsis "Kirill's Miscellaneous Functions")
     (description
      "This package provides a collection of useful functions not found anywhere else,
 mainly for programming: Pretty intervals, generalized lagged differences,
-checking containment in an interval, and an alternative interface to assign().")
-    (license license:gpl3)))
+checking containment in an interval, and an alternative interface to
+@code{assign()}.")
+    (license license:expat)))
 
 (define-public r-kimfilter
   (package
@@ -3311,6 +3687,9 @@ checking containment in an interval, and an alternative interface to assign().")
         (base32 "19p6wqnp6gs7siwmyngw48lrpyqabmqxs051lx2mmlj3q53risyw"))))
     (properties `((upstream-name . "kimfilter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kimfilter")
@@ -3337,6 +3716,9 @@ Approaches with Applications\"
         (base32 "0d4jvvk9bvsh2cvkpswqfs41m4n0a6ly9093vb1s43k2i1jh7v6m"))))
     (properties `((upstream-name . "kim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-remotes r-data-table))
     (home-page "https://github.com/jinkim3/kim")
     (synopsis "Toolkit for Behavioral Scientists")
@@ -3365,18 +3747,22 @@ package rely heavily on these two popular R packages: Dowle et al. (2021)
         (base32 "059yi549ab580ph0r8nj0igkhdlsy40qrzqnszyf9s969p2x493l"))))
     (properties `((upstream-name . "Kifidi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Kifidi")
     (synopsis "Summary Table and Means Plots")
     (description
      "Optimized for handling complex datasets in environmental and ecological
 research, this package offers functionality that is not fully met by
-general-purpose packages.  It provides two key functions, summarize_data()',
-which summarizes datasets, and plot_means()', which creates plots with error
-bars.  The plot_means() function incorporates error bars by default, allowing
-quick visualization of uncertainties, crucial in ecological studies.  It also
-streamlines workflows for grouped datasets (e.g., by species or treatment),
-making it particularly user-friendly and reducing the complexity and time
-required for data summarization and visualization.")
+general-purpose packages.  It provides two key functions,
+@code{summarize_data()}', which summarizes datasets, and @code{plot_means()}',
+which creates plots with error bars.  The @code{plot_means()} function
+incorporates error bars by default, allowing quick visualization of
+uncertainties, crucial in ecological studies.  It also streamlines workflows for
+grouped datasets (e.g., by species or treatment), making it particularly
+user-friendly and reducing the complexity and time required for data
+summarization and visualization.")
     (license license:gpl3)))
 
 (define-public r-kidsides
@@ -3391,6 +3777,9 @@ required for data summarization and visualization.")
         (base32 "0iw6mr5yqgj4sn3bvirzcdzzxdxpkyr2ci4flzyjb60p0gfwlr7b"))))
     (properties `((upstream-name . "kidsides")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite r-r-utils r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ngiangre/kidsides")
@@ -3421,6 +3810,9 @@ other drugs.  Read more at the methods detailed in Giangreco (2022)
         (base32 "1hd6w7kxim5slmmqalf5sfjg8jcvhyzn5g4gf6h0lmaprsfszhja"))))
     (properties `((upstream-name . "kidney.epi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "http://kidneyepidemiology.org/r/")
     (synopsis "Kidney Functions: Clinical and Epidemiological")
@@ -3447,6 +3839,9 @@ Donor Risk Index.  Kidney Diseases (2018) 4:269â272 <doi:10.1159/000492427>
         (base32 "1acrdlqbklhhd69i1gija8r3nsdgcnfvk5ngz7b2ndy2f58w5ynf"))))
     (properties `((upstream-name . "kibior")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -3495,6 +3890,9 @@ common ones with rio (C-h.  Chan and al. (2018))
         (base32 "00kb8k5np6inxdjcjbmr36xp6qckf3qmc9p210g7r70pshzxgszp"))))
     (properties `((upstream-name . "khroma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/khroma/")
     (synopsis "Colour Schemes for Scientific Data Visualization")
@@ -3521,6 +3919,9 @@ implemented.")
         (base32 "1vg0p3igbw81fbp2gli9msqbvymbn0qf3g3y0nb3q51d7wfax0qd"))))
     (properties `((upstream-name . "KHQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openxlsx r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/augustobrusaca/KHQ")
@@ -3561,6 +3962,9 @@ KHQ5D scores; and also calculates the utility index of the KHQ5D.")
         (base32 "14z9h4msddq36kf79hrqyqlq956vbyn9jxqc02w56z9b91mrkjgm"))))
     (properties `((upstream-name . "khisr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-stringr
@@ -3597,6 +4001,9 @@ obtain and utilize data efficiently.")
         (base32 "1gdsrmnv8z99cldvig7grlq8gsbv3wpx7zdamw85lz563n4ln94d"))))
     (properties `((upstream-name . "kgschart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shiny
                              r-png
@@ -3627,6 +4034,9 @@ also provided.")
         (base32 "04fh0rnihlyxbj19bhnvvcbszp4x7zimbra344gdyz2im4xlkmzh"))))
     (properties `((upstream-name . "kgraph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-text2vec
                              r-shiny
                              r-sgraph
@@ -3684,6 +4094,9 @@ application <https://keser-mental-health.parse-health.org/> based on Hong C.
         (base32 "0783im4bj2jxpvicy5kvg05pmaiyr5nwhjfdswdnh3mpdzm4jx7b"))))
     (properties `((upstream-name . "kgrams")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-rdpack r-rcppprogress r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://vgherard.github.io/kgrams/")
@@ -3706,6 +4119,9 @@ generation and more.")
         (base32 "021113hqs7ack852mksssaac1lj0k4mpf94yiws67qiygmsa693k"))))
     (properties `((upstream-name . "kgp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/stephenturner/kgp")
     (synopsis "1000 Genomes Project Metadata")
     (description
@@ -3730,6 +4146,9 @@ Auton et al. (2015) <doi:10.1038/nature15393> and Byrska-Bishop et al. (2022)
         (base32 "0q39x34rwya3pqhvly1g0n2ykzvwrwdpdnp3y3ya9cyai63l2sgn"))))
     (properties `((upstream-name . "KGode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-pspline r-pracma r-mvtnorm))
     (home-page "https://cran.r-project.org/package=KGode")
     (synopsis
@@ -3755,6 +4174,9 @@ regularisation and warping.")
         (base32 "1rf7mic35jbaik9hw7j28sc98qjqjmzlv720lfpmgjsf6yhi2mlz"))))
     (properties `((upstream-name . "kgen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjson
                              r-reticulate
                              r-rappdirs
@@ -3784,6 +4206,9 @@ magnesium, calcium, sulphate, and fluorine.")
         (base32 "14zbcimnglh5jj07dcaxp1dfjaz8syswy29nf8z39qmslv1hg9kk"))))
     (properties `((upstream-name . "kgc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinythemes r-shiny r-plyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kgc")
@@ -3799,8 +4224,8 @@ day.  Recently one of use (FZ) has published updated, higher accuracy KG climate
 zone definitions [2].  In this package we use these updated high-resolution maps
 as the data source [3].  We provide functions that return the KG climate zone
 for a given longitude and lattitude, or for a given United States zip code.  In
-addition the CZUncertainty() function will check climate zones nearby to check
-if the given location is near a climate zone boundary.  In addition an
+addition the @code{CZUncertainty()} function will check climate zones nearby to
+check if the given location is near a climate zone boundary.  In addition an
 interactive shiny app is provided to define the KG climate zone for a given
 longitude and lattitude, or United States zip code.  Digital data, as well as
 animated maps, showing the shift of the climate zones are provided on the
@@ -3823,6 +4248,9 @@ I. Auer, (2016) <doi:10.1127/metz/2016/0816>.")
         (base32 "1bdba738mhsa6yw515fyaw96pycvflw596fh9dkhhns498lg7356"))))
     (properties `((upstream-name . "KFPLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fda))
     (home-page "https://cran.r-project.org/package=KFPLS")
     (synopsis "Kernel Functional Partial Least Squares")
@@ -3830,7 +4258,7 @@ I. Auer, (2016) <doi:10.1127/metz/2016/0816>.")
      "Implementation for kernel functional partial least squares (KFPLS) method.
 KFPLS method is developed for functional nonlinear models, and the method does
 not require strict constraints for the nonlinear structures.  The crucial
-function of this package is KFPLS().")
+function of this package is @code{KFPLS()}.")
     (license license:gpl3+)))
 
 (define-public r-kfpca
@@ -3845,6 +4273,9 @@ function of this package is KFPLS().")
         (base32 "1dzywxnp3ywg3zbvmacj3a1i7w5cg1g93a9ncl7ddwb7wqpzg6x1"))))
     (properties `((upstream-name . "KFPCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-kader r-fdapace r-fda))
     (home-page "https://cran.r-project.org/package=KFPCA")
     (synopsis "Kendall Functional Principal Component Analysis")
@@ -3852,11 +4283,11 @@ function of this package is KFPLS().")
      "Implementation for Kendall functional principal component analysis.  Kendall
 functional principal component analysis is a robust functional principal
 component analysis technique for non-Gaussian functional/longitudinal data.  The
-crucial function of this package is KFPCA() and KFPCA_reg().  Moreover, least
-square estimates of functional principal component scores are also provided.
-Refer to Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao Zhang. (2021)
-<@code{arXiv:2102.01286>}.  Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao Zhang.
-(2021) <doi:10.1016/j.jmva.2021.104864>.")
+crucial function of this package is @code{KFPCA()} and @code{KFPCA_reg()}.
+Moreover, least square estimates of functional principal component scores are
+also provided.  Refer to Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao Zhang.
+(2021) <@code{arXiv:2102.01286>}.  Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao
+Zhang. (2021) <doi:10.1016/j.jmva.2021.104864>.")
     (license license:gpl3+)))
 
 (define-public r-kfino
@@ -3871,6 +4302,9 @@ Refer to Rou Zhong, Shishi Liu, Haocheng Li, Jingxiao Zhang. (2021)
         (base32 "14gpc72nin96g2sqzbj7z9ca2gs3kjl2k0yg1zfdrv8fgjsn9s6i"))))
     (properties `((upstream-name . "kfino")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://forgemia.inra.fr/isabelle.sanchez/kfino")
@@ -3899,6 +4333,9 @@ following @code{arXiv} e-Print: <@code{arXiv:2208.00961>}.")
         (base32 "0kys4j2n2n1v918v877798m34q431fpz0p0s6gxnfqnn26z2hy14"))))
     (properties `((upstream-name . "kfigr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mkoohafkan/kfigr")
@@ -3924,6 +4361,9 @@ chunks, e.g. figures and tables.")
         (base32 "0861hzry55gj8ykdd8cwil1wb7234pkmipp4v1749fpmzggq1xgi"))))
     (properties `((upstream-name . "kfda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-kernlab))
     (home-page "https://github.com/ainsuotain/kfda")
     (synopsis "Kernel Fisher Discriminant Analysis")
@@ -3951,6 +4391,9 @@ Zhang, D., and Frangi, A. F. (2004) <DOI:10.1016/j.patcog.2003.10.015>.")
         (base32 "1kswy3ahd7ng8jhd1nl1x454ywqnlsgpxnzz0q2rll7hsl3xr4hj"))))
     (properties `((upstream-name . "KFAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/helske/KFAS")
     (synopsis
@@ -3977,6 +4420,9 @@ and gamma distributions.  See the paper by Helske (2017)
         (base32 "0niw8b8f56cb8ppfl40mh925a5yrhg89aiac7qynh0ni42ywlw5g"))))
     (properties `((upstream-name . "kfa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-simstandard
                              r-semtools
                              r-rmarkdown
@@ -4014,6 +4460,9 @@ generate model syntax, and summarize results in a report.")
         (base32 "1wzn93gp1v6y8qh9kypydqadnf6fc7xzjili77b7j402hvb0a8zg"))))
     (properties `((upstream-name . "keyToEnglish")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-openssl r-jsonlite))
     (home-page "https://github.com/mcandocia/keyToEnglish")
     (synopsis "Convert Data to Memorable Phrases")
@@ -4036,6 +4485,8 @@ build lists of words.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4071,6 +4522,9 @@ library.")
         (base32 "04f0z6mqj75l5qhiab0zvjsvz3jz1bp6dfazkpgihjmls5k11dnh"))))
     (properties `((upstream-name . "keyringr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=keyringr")
@@ -4093,6 +4547,9 @@ strings encrypted with the Windows Data Protection API.")
         (base32 "1jc0l3x2yd4d1q0108vj0iz8nxsrdhdfymkmadzzc0px76gwxci6"))))
     (properties `((upstream-name . "keypress")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/gaborcsardi/keypress#readme")
     (synopsis "Wait for a Key Press in a Terminal")
     (description
@@ -4114,6 +4571,9 @@ error message.")
         (base32 "17l45yj97d7n1lf32ck1zw84sv1gcd7i0f1j9pq7r673gb2sbvmi"))))
     (properties `((upstream-name . "keyplayer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna r-matpow r-igraph))
     (home-page "https://cran.r-project.org/package=keyplayer")
     (synopsis "Locating Key Players in Social Networks")
@@ -4134,6 +4594,9 @@ players in a network.")
         (base32 "11jwh704iq134imv9p7brnjpvzbqyvd5bdw7id0ggnf7kp2w5rbj"))))
     (properties `((upstream-name . "keyperm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm r-slam r-rcpp))
     (home-page "https://cran.r-project.org/package=keyperm")
     (synopsis "Keyword Analysis Using Permutation Tests")
@@ -4154,6 +4617,9 @@ linguistics as described in Mildenberger (2023) <@code{arXiv:2308.13383>}.")
         (base32 "19xbzpanwyfxywzki3m5jvams40ppxkplm7p1jqm6d5rviidiq1j"))))
     (properties `((upstream-name . "keyholder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://echasnovski.github.io/keyholder/")
@@ -4177,6 +4643,9 @@ ordering, etc.).  This package is designed to work tightly with dplyr package.")
         (base32 "1136fnab2jqhy5i0zkzpvn06zxp3llgw62avwi0f319aardcq88x"))))
     (properties `((upstream-name . "KeyboardSimulator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/ChiHangChen/KeyboardSimulator")
     (synopsis "Keyboard and Mouse Input Simulation for Windows OS")
@@ -4198,6 +4667,9 @@ clicks.  The input simulation is implemented with the Windows API.")
         (base32 "1yfcn1r0zngc1nlj5axqps8an66p1q1qmxwagxq2q15d9qipb5wh"))))
     (properties `((upstream-name . "Keyboard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-iso r-ggplot2))
     (home-page "https://cran.r-project.org/package=Keyboard")
     (synopsis "Bayesian Designs for Early Phase Clinical Trials")
@@ -4232,6 +4704,9 @@ publication.")
         (base32 "1xd5ps0m6ymbdia89n2lr03pjhxhwsjwd648xpq42wkvir8an1nv"))))
     (properties `((upstream-name . "keyATM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -4277,6 +4752,9 @@ The @code{keyATM} is proposed in Eshima, Imai, and Sasaki (2024)
         (base32 "0q42zry3qgg38aas0cxy7lwpj9mj45crcbs353d1d1is0w1avh09"))))
     (properties `((upstream-name . "kesernetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-visnetwork
                              r-stringr
@@ -4322,6 +4800,9 @@ found at Chuan et al. (2021) <doi:10.1038/s41746-021-00519-z>.")
         (base32 "135v5lcnvmlcabgqnlcba9q0wc51ajcklz04bknz3psaqv71bp71"))))
     (properties `((upstream-name . "kerTests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kerTests")
     (synopsis "Generalized Kernel Two-Sample Tests")
     (description
@@ -4342,6 +4823,9 @@ Song, H. and Chen, H. (2023) <@code{arXiv:2011.06127>}.")
         (base32 "15j3l9zlyg0hax5ynj9pvf0h60yr1y7wcx5v5zvk64ssmdyw0cdc"))))
     (properties `((upstream-name . "kerSeg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=kerSeg")
     (synopsis "New Kernel-Based Change-Point Detection")
@@ -4364,6 +4848,9 @@ particularly for high-dimensional data.  Song, H. and Chen, H. (2022)
         (base32 "0jgwqjkvxb8m3748h9x8a8kj1lpkhran1v7vymjblayk1hizqm2r"))))
     (properties `((upstream-name . "kerntools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-reshape2 r-kernlab r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/elies-ramon/kerntools")
@@ -4388,6 +4875,9 @@ Components Analysis (PCA) and features importance for Support Vector Machines
         (base32 "1va9ykbimjl3i02hdnwp41sjsxrqrnpp5lkq34sqnzcbyz87y47s"))))
     (properties `((upstream-name . "kernstadapt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-utils
                              r-spatstat-univar
                              r-spatstat-random
@@ -4419,6 +4909,9 @@ estimation is presented in GonzÃ¡lez and Moraga (2022).
         (base32 "0qqlmcd04m89pmhrbmxxx4lzzb6sksgrm0j8x7fs5r0sxdqy6rcp"))))
     (properties `((upstream-name . "KernSmoothIRT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-rcpp r-plotrix))
     (home-page "https://cran.r-project.org/package=KernSmoothIRT")
     (synopsis "Nonparametric Item Response Theory")
@@ -4442,6 +4935,9 @@ Estimation for Statistics and Data Analysis.  Chapman & Hall, London.")
         (base32 "0vk0ppb24la6876sw96kk5s3lw4qqs56m507xncbdvjjgw6pq180"))))
     (properties `((upstream-name . "kernscr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass))
     (home-page "https://cran.r-project.org/package=kernscr")
     (synopsis "Kernel Machine Score Test for Semi-Competing Risks")
@@ -4464,6 +4960,9 @@ Risks.  Method is detailed in: Neykov, Hejblum & Sinnott (2018) <doi:
         (base32 "0z5zpj89nw7cdphg6frmjwqjxsl6g95xsa8zgsxmw2q75wwj1saz"))))
     (properties `((upstream-name . "kernplus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mixtools r-kernsmooth r-circular))
     (home-page "https://cran.r-project.org/package=kernplus")
     (synopsis
@@ -4486,6 +4985,9 @@ wind power output for a specific environmental condition.")
         (base32 "1cxwjnfyhxfjdbhs21airycs704jic21pdpsbxsx37wkl11cxpai"))))
     (properties `((upstream-name . "kernhaz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-ga r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=kernhaz")
     (synopsis "Kernel Estimation of Hazard Function in Survival Analysis")
@@ -4506,6 +5008,9 @@ for right-censored data including methods of bandwidth selection.")
         (base32 "0p0zi0l3b7axcp3r34arwbpbbj8bibgryza7g5f45ngm77nlbc5f"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-foreach))
     (home-page "https://github.com/ModelOriented/kernelshap")
     (synopsis "Kernel SHAP")
@@ -4529,6 +5034,9 @@ mlr3'.  Visualizations can be done using the R package shapviz'.")
         (base32 "1b361qqkicbdwcmh7fj8rfqqj5yaf2ygmh4hwy5qxbpw8zkagccj"))))
     (properties `((upstream-name . "KernelKnn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlampros/KernelKnn")
@@ -4552,6 +5060,9 @@ observations.")
         (base32 "0nd8kbprpm2jrpnqr4xb4z8wklv5js2y3kdpjc2q0ay229hf85j8"))))
     (properties `((upstream-name . "Kernelheaping")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparr
                              r-sp
                              r-plyr
@@ -4592,6 +5103,9 @@ as well as data aggregated on areas is supported.")
         (base32 "1fv00hbm4l5dxcw8hq2wlfxng49bc8k608ny70g3fy0grkh7r8vy"))))
     (properties `((upstream-name . "kernelboot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-parallelly r-future-apply r-future))
     (home-page "https://github.com/twolodzko/kernelboot")
     (synopsis "Smoothed Bootstrap and Random Generation from Kernel Densities")
@@ -4612,6 +5126,9 @@ multivariate kernel densities.  It does not estimate kernel densities.")
         (base32 "0lvm007wzhyagyafmq47819hn66riwdcpymn56clc1sgch9i933m"))))
     (properties `((upstream-name . "kerndwd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=kerndwd")
     (synopsis "Distance Weighted Discrimination (DWD) and Kernel Methods")
@@ -4633,6 +5150,9 @@ Reference: Wang and Zou (2018) <doi:10.1111/rssb.12244>.")
         (base32 "1w8rglzl32k1006gdaxh3nxd23mnnddkznksyw3xqcznm4rz8k11"))))
     (properties `((upstream-name . "kergp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat
                              r-rcpp
                              r-numderiv
@@ -4665,6 +5185,9 @@ validation.")
         (base32 "1b16cb3ihcsp9jffmd45sd7ia4pibikmj62ad344wmq22q4fpliy"))))
     (properties `((upstream-name . "KERE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=KERE")
     (synopsis "Expectile Regression in Reproducing Kernel Hilbert Space")
@@ -4686,6 +5209,9 @@ regression estimator constructed in a reproducing kernel Hilbert space.")
         (base32 "0z27qkfasjian0wwn0q4400153ni5h0c6297j4b0qqjl3ylaqakb"))))
     (properties `((upstream-name . "kerDAA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=kerDAA")
     (synopsis "New Kernel-Based Test for Differential Association Analysis")
@@ -4707,6 +5233,9 @@ conditions.  Song, H. and Wu, M.C. (2023) <@code{arXiv:2307.15268>}.")
         (base32 "05hyhgbc2533az1yrjj8v8idky0xwn20mxd92dna0is6pddf75hv"))))
     (properties `((upstream-name . "kerastuneR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyjson
                              r-tensorflow
                              r-rstudioapi
@@ -4743,6 +5272,9 @@ requiring you to change a few lines of code.")
         (base32 "05g2kqf9ffk94vgclndyf5hqx9g5gnl0skzn5bfx48qlsi9g3m37"))))
     (properties `((upstream-name . "keras3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zeallot
                              r-tfruns
                              r-tensorflow
@@ -4775,6 +5307,9 @@ the two), and runs seamlessly on both CPU and GPU devices.")
         (base32 "0zlc1n69908011zz5aydcl41apg6l0l3dvmsm3fgpnr1vm76g9y1"))))
     (properties `((upstream-name . "kequate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mirt r-ltm r-equateirt))
     (home-page "https://cran.r-project.org/package=kequate")
     (synopsis "The Kernel Method of Test Equating")
@@ -4798,6 +5333,9 @@ uniform kernels and unsmoothed and pre-smoothed input data.")
         (base32 "0i2sdz4sk558h4nwi82ing1zx34m93v59lr81ska57xiw77y7swy"))))
     (properties `((upstream-name . "KEPTED")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-expm r-cubature r-compquadform))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tyy20/KEPTED")
@@ -4825,6 +5363,9 @@ for details.")
         (base32 "0s8sq3caxn4swac81196dp52r9lbmxb3ni45yaxh53f5g34slsi8"))))
     (properties `((upstream-name . "KenSyn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-metafor r-lme4))
     (home-page "http://www.modelia.org")
     (synopsis
@@ -4857,6 +5398,9 @@ Ministry of Agriculture and Fishing of France.")
         (base32 "0r64w6zy49ggwphzwz3ibyiwhkw8y1zksddcsnsh6v8xw5pghvj5"))))
     (properties `((upstream-name . "Keng")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/qyaozh/Keng")
     (synopsis "Knock Errors Off Nice Guesses")
@@ -4864,12 +5408,12 @@ Ministry of Agriculture and Fishing of France.")
      "Miscellaneous functions and data used in Qingyao's psychological research and
 teaching.  Keng currently has a built-in dataset depress, and could (1) scale a
 vector, (2) test the significance and compute the cut-off values of Pearson's r
-without raw data, (3) compare lm()'s fitted outputs using R-squared, f_squared,
-post-hoc power, and PRE (Proportional Reduction in Error, also called partial
-R-squared or partial Eta-squared). (4) Calculate PRE from partial correlation,
-Cohen's f, or f_squared. (5) Compute the post-hoc power for one or a set of
-predictors in regression analysis without raw data, (6) Plan the sample size for
-one or a set of predictors in regression analysis.")
+without raw data, (3) compare @code{lm()}'s fitted outputs using R-squared,
+f_squared, post-hoc power, and PRE (Proportional Reduction in Error, also called
+partial R-squared or partial Eta-squared). (4) Calculate PRE from partial
+correlation, Cohen's f, or f_squared. (5) Compute the post-hoc power for one or
+a set of predictors in regression analysis without raw data, (6) Plan the sample
+size for one or a set of predictors in regression analysis.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-kendallrandomwalks
@@ -4884,6 +5428,9 @@ one or a set of predictors in regression analysis.")
         (base32 "1mfqblvsn9p6gdcnbypfpzk0xzn6bz1ajbrkz2dap5w35dia3kxa"))))
     (properties `((upstream-name . "kendallRandomWalks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-ggplot2 r-dplyr r-actuar))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kendallRandomWalks")
@@ -4909,6 +5456,9 @@ information about Kendall random walks see Jasiulis-GoÅdyn (2014)
         (base32 "16b1hs3ck8l7j8v8nw6b6n0kn6i1r2drnsjj7rb4n3pqxxh881np"))))
     (properties `((upstream-name . "kendallknight")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://pacha.dev/capybara/")
@@ -4938,6 +5488,9 @@ in Vargas Sepulveda (2024) <doi:10.48550/@code{arXiv.2408.09618>}.")
         (base32 "0hjycqga3yjrzpgc911nk64nsjrpim4v7219f7iwi1snx0ydhqzf"))))
     (properties `((upstream-name . "kelvin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bessel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/abarbour/kelvin")
@@ -4960,6 +5513,9 @@ solutions to the Kelvin differential equation.")
         (base32 "1cc0bmbg0dncay50ap7cs2516qngzz3ddaab0jk5r6lwfq87h8qx"))))
     (properties `((upstream-name . "kehra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-stringr
@@ -4988,6 +5544,9 @@ analysis of air pollution, weather and health data.")
         (base32 "12803hhrs9v94rv6qaihk1f1ls7lx4cy2pa30v4p1r2z9afx9bjf"))))
     (properties `((upstream-name . "keep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=keep")
     (synopsis "Arrays with Better Control over Dimension Dropping")
     (description
@@ -5007,6 +5566,9 @@ subscripting.")
         (base32 "09jvqh97ifcincvfy9d73h5705kczyh3isfx7fxj5zqwls4l755v"))))
     (properties `((upstream-name . "kedd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://gitlab.com/iagogv/kedd")
     (synopsis
      "Kernel Estimator and Bandwidth Selection for Density and Its Derivatives")
@@ -5028,6 +5590,9 @@ Guidoum (2020) <@code{arXiv:2012.06102>} [stat.CO]).")
         (base32 "0svmm8ycl3gk0z9w2rps4hdqyrc6k3nl024fbmq3dwa3vlv56rs0"))))
     (properties `((upstream-name . "kdry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-hmisc r-foreach r-doparallel
                              r-data-table))
     (home-page "https://github.com/kapsner/kdry")
@@ -5050,6 +5615,9 @@ development (<https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>).")
         (base32 "042rzbrjmypxp7gb501hwnyr90c90g16pycakj4xbwky9bqb7c8a"))))
     (properties `((upstream-name . "kdml")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-np r-mass r-markdown))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kdml")
@@ -5061,8 +5629,9 @@ calculate similarity functions and metrics, and selects variables relevant to
 the underlying distance through bandwidth selection via maximum similarity
 cross-validation.  These methods can be used in any distance-based algorithm,
 such as distance-based clustering.  For further details, we refer the reader to
-Ghashti and Thompson (2024) <<doi:10.48550/@code{arXiv.2306.01890>>} for dkps()
-methodology, and Ghashti (2024) <doi:10.14288/1.0443975> for dkss() methodology.")
+Ghashti and Thompson (2024) <<doi:10.48550/@code{arXiv.2306.01890>>} for
+@code{dkps()} methodology, and Ghashti (2024) <doi:10.14288/1.0443975> for
+@code{dkss()} methodology.")
     (license license:gpl2+)))
 
 (define-public r-kdist
@@ -5077,6 +5646,9 @@ methodology, and Ghashti (2024) <doi:10.14288/1.0443975> for dkss() methodology.
         (base32 "18q7njvsb9sbm412c6ms4b4nxg768z9qahws5rnin06gvb25nfcx"))))
     (properties `((upstream-name . "kdist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kdist")
     (synopsis "K-Distribution and Weibull Paper")
     (description
@@ -5098,6 +5670,9 @@ Lamont-Smith (2018), submitted J. R. Stat.  Soc.")
         (base32 "10is3f3gcax317gxkbvsv35385q9cjmxb14dfxxmq7y7aw4p6iqb"))))
     (properties `((upstream-name . "kDGLM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast r-rdpack r-generics r-extradistr))
     (native-inputs (list r-knitr))
     (home-page "https://silvaneojunior.github.io/kDGLM/")
@@ -5121,6 +5696,9 @@ al. (2024)<doi:10.48550/@code{arXiv.2403.13069>}.")
         (base32 "0d157kl8x9jq4h8h0r8iia25wwdw1syc4f1iqp5mgn3l4kgark9s"))))
     (properties `((upstream-name . "kdevine")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vinecopula
                              r-rcpp
                              r-qrng
@@ -5151,6 +5729,9 @@ high-dimensional applications.")
         (base32 "07d1p3ysdm66a9sf0gih5xjb3wfab44c3sr8aaraz22s2a9q9b55"))))
     (properties `((upstream-name . "kdensity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-univariateml r-eql r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JonasMoss/kdensity")
@@ -5182,6 +5763,13 @@ and bandwidths are supported.")
         (base32 "0g5c12wm3byd4chd8i9mxv599gsf4ip4qghx83j3mmhsmn05zf4y"))))
     (properties `((upstream-name . "kdecopula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-quadprog
@@ -5209,6 +5797,9 @@ Nagler (2018) <doi:10.18637/jss.v084.i07>.")
         (base32 "1z6g54qhiry04hx39akz1ll78rw49w7gwkcbjagxyrfq8gswa2yn"))))
     (properties `((upstream-name . "kde1d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-randtoolbox r-bh))
     (home-page "https://github.com/tnagler/kde1d")
     (synopsis "Univariate Kernel Density Estimation")
@@ -5232,6 +5823,9 @@ Geenens (2014) <@code{arXiv:1303.4121>}, Geenens and Wang (2018)
         (base32 "1lv5r9qyvr3dnvcs00jyam0whv64qmv5vphhijlar1xa1g1llwqr"))))
     (properties `((upstream-name . "KCSNBShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rhandsontable r-e1071 r-dplyr r-caret))
     (home-page "https://karnechaithanyasai.shinyapps.io/KCSNBShiny/")
     (synopsis "Naive Bayes Classifier")
@@ -5256,6 +5850,9 @@ accuracy of the prediction is also shown.")
         (base32 "13gzqf3g7vj8cc0xm5902q7lad2way8d0ri1fs01dnv97wmwbxvn"))))
     (properties `((upstream-name . "KCSKNNShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rhandsontable r-fnn r-dplyr r-caret))
     (home-page "https://cran.r-project.org/package=KCSKNNShiny")
     (synopsis "K-Nearest Neighbour Classifier")
@@ -5280,6 +5877,9 @@ handsontable is also provided to enter the input predictor values.")
         (base32 "0drqw521bi2fnlapjd7hhir6vcy2aqz8jj35qdygnjkj1p3701c7"))))
     (properties `((upstream-name . "kcpRS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-roll r-rcpp r-rcolorbrewer r-foreach
                              r-doparallel))
     (home-page "https://cran.r-project.org/package=kcpRS")
@@ -5312,6 +5912,9 @@ selection is then used to determine the optimal k>0.")
         (base32 "0p9ik4z2jc2ib70v8lxxa40f13jbqgq6bb9s7yx335na9l43h1j8"))))
     (properties `((upstream-name . "Kcop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-orthopolynom r-gtools r-dplyr r-copula))
     (home-page "https://cran.r-project.org/package=Kcop")
     (synopsis
@@ -5336,6 +5939,9 @@ populations with arbitrary sizes.  See Yves I. Ngounou Bakam and Denys Pommeret
         (base32 "0aqh0g9sa9jigwy6yl0ianlnky6sjs7v65wv77xb0zdifsyyq6bh"))))
     (properties `((upstream-name . "kcmeans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-ckmeans-1d-dp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thomaswiemann/kcmeans")
@@ -5362,6 +5968,9 @@ polynomial in the number of observed categories.")
         (base32 "14g27a0dkj4gpf5l2k96fd3aa21fz8b85lf5a1jxj0qgjmr4kib0"))))
     (properties `((upstream-name . "KbMvtSkew")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=KbMvtSkew")
     (synopsis "Khattree-Bahuguna's Univariate and Multivariate Skewness")
     (description
@@ -5385,6 +5994,9 @@ multivariate skewness.  See Khattree, R. and Bahuguna, M. (2019) <doi:
         (base32 "0ri50qvkzbcarh9s05jw6h4mvdrcirl194jfii7smfd7fbw7iahk"))))
     (properties `((upstream-name . "kbal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra r-rcppparallel r-rcpp r-dplyr))
     (home-page "https://github.com/chadhazlett/kbal")
     (synopsis "Kernel Balancing")
@@ -5411,6 +6023,9 @@ estimating causal effects.\" Statistica Sinica.
         (base32 "0j7vysnmiv9sggcxdn3nrgfvyl52pza4kkjnsa0xlb3fzq9qpwlz"))))
     (properties `((upstream-name . "kazaam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pbdmpi))
     (home-page "http://r-pbd.org/")
     (synopsis "Tools for Tall Distributed Matrices")
@@ -5438,6 +6053,9 @@ and he starred in the film Kazaam'.")
         (base32 "14fn7ryrssj2c83w23hqm8ai8d5f4lf5raqyvj4qij514jfxrhzq"))))
     (properties `((upstream-name . "kayadata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-scales
@@ -5477,6 +6095,8 @@ energy supply.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5515,6 +6135,9 @@ provided to automatically render beautiful math in R documentation files.")
         (base32 "01mxsv4ky6d16xjkvi6lc2cfvrdll6whyizxf500m8ds9bdlmqha"))))
     (properties `((upstream-name . "karyotapR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-umap
                              r-tidyr
@@ -5559,6 +6182,9 @@ parsing barcoded reads from exogenous lentiviral constructs.")
         (base32 "1km8321a8vzff26g3x2hvdv5ciyk3fdpcn7g1xqbsx96fzxyd22n"))))
     (properties `((upstream-name . "KarsTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tserieschaos
                              r-tseries
@@ -5597,6 +6223,9 @@ time series and gap sets.")
         (base32 "0600m0hgll7sl8v3ah3g2dl5wa4brc929mp27iid9d1s9brhzgxv"))))
     (properties `((upstream-name . "karlen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://rmagno.eu/karlen/")
     (synopsis "Real-Time PCR Data Sets by Karlen et al. (2007)")
@@ -5628,6 +6257,13 @@ Karlen, A. @code{McNair}, S. Perseguers, C. Mazza, and N. Mermod (2007)
         (base32 "1yy80j15lra1zmak3klvqspy9ikhr0v7csl88l9cpbdpp73972by"))))
     (properties `((upstream-name . "Karen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-xtable
                              r-tmvtnorm
                              r-stringr
@@ -5665,6 +6301,9 @@ in L. Del Core et al., (2022) <doi:10.1101/2022.07.08.499353>.")
         (base32 "0nvzvd8aq0sipcvn8agjjd2k1wykpgc99nrrk2cxrlvsjbpd2w52"))))
     (properties `((upstream-name . "karel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-purrr
                              r-magrittr
@@ -5698,6 +6337,9 @@ is the first package implementing Karel in R.")
         (base32 "09fxf2pgs7nj96p8cfwc8ghwl8aqk6zal8njizbrz19m6l7ygxmk"))))
     (properties `((upstream-name . "karaoke")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tuner r-seewave))
     (home-page "https://cran.r-project.org/package=karaoke")
     (synopsis "Remove Vocals from a Song")
@@ -5717,6 +6359,9 @@ is the first package implementing Karel in R.")
         (base32 "0hndz1inl4s7vgkg570npk73zh9hglr7kwa1yrkgdsk5lf8l8z4m"))))
     (properties `((upstream-name . "KaradaColor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-crayon))
     (home-page "https://github.com/KaradaGood/KaradaColor")
     (synopsis "Color Palettes Inspired by Japanese Landscape and Culture")
@@ -5737,6 +6382,9 @@ provides commands for color manipulation and ggplot2 color scales.")
         (base32 "0lrcyj85zcl73m6bhbzl6rkprrfpfwmm4amyjkg1xsasy5zlwk67"))))
     (properties `((upstream-name . "kappaSize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kappaSize")
     (synopsis
      "Sample Size Estimation Functions for Studies of Interobserver Agreement")
@@ -5759,6 +6407,9 @@ multinomial outcomes and two through six raters.")
         (base32 "130k24wzan7slgvfld3yi12x8h9ybvwddfzdcvj3xvn7ijhjj25k"))))
     (properties `((upstream-name . "kappalab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog r-lpsolve r-kernlab))
     (home-page "https://cran.r-project.org/package=kappalab")
     (synopsis "Non-Additive Measure and Integral Manipulation Functions")
@@ -5792,6 +6443,9 @@ cooperative game theory.")
         (base32 "0vklny804xpd9r60j4a01j2gak8jizwjw0abf7yvbcalv3zbpb3k"))))
     (properties `((upstream-name . "KappaGUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-irr))
     (home-page "https://cran.r-project.org/package=KappaGUI")
     (synopsis
@@ -5815,6 +6469,9 @@ front-end for irr'.")
         (base32 "10kh8rkcp2xpg055yv5zivi9c07agffhxnwkbwjhnknx74389a5v"))))
     (properties `((upstream-name . "kappaGold")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-tibble r-purrr r-future-apply))
     (home-page "https://cran.r-project.org/package=kappaGold")
     (synopsis "Agreement of Nominal Scale Raters with a Gold Standard")
@@ -5838,6 +6495,9 @@ implemented.  Bias and standard error are estimated via delete-1 jackknife.")
         (base32 "081drgckirc0wv2viyhhnabrlfzi0nkpq6pffw2rxfjyxdsyvnwa"))))
     (properties `((upstream-name . "kaphom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=kaphom")
     (synopsis "Test the Homogeneity of Kappa Statistics")
     (description
@@ -5867,6 +6527,9 @@ Michael Eliasziw, Neil Klar (1996) <doi:10.2307/2533154>.")
         (base32 "0hzzb8ldydl4g3cl1579q8jv835q4cdmn8agafp6qqdhwi1xxw8k"))))
     (properties `((upstream-name . "kaos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggplot2))
     (home-page "https://cran.r-project.org/package=kaos")
     (synopsis
@@ -5888,6 +6551,9 @@ Michael Eliasziw, Neil Klar (1996) <doi:10.2307/2533154>.")
         (base32 "1fvf2j518h6mfjrkh7c9swpi8adfd6a5pr7b6pc6al16jbvbw3rf"))))
     (properties `((upstream-name . "kantorovich")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gmp))
     (propagated-inputs (list r-slam
                              r-roi-plugin-glpk
@@ -5919,6 +6585,9 @@ or the first Wasserstein distance.")
         (base32 "1d6r923xczhr75dmb3vq2pr3l9maigk8zvvk4r5x0jlh8sgrwdr0"))))
     (properties `((upstream-name . "kanjistat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-transport
                              r-sysfonts
@@ -5957,6 +6626,9 @@ morphology, decomposition and concepts of distance and similarity between them."
         (base32 "14i4i7m5y02hybllkawwxlc4g0j4lr1pybqip6zpqd612j5q4mfm"))))
     (properties `((upstream-name . "kangar00")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sqldf
                              r-lattice
                              r-igraph
@@ -5987,6 +6659,9 @@ kernel).")
         (base32 "01rwalv2qigxl3j3jyhrdbxlarwf0xdc8xa6c42sgcl6qpna5vn7"))))
     (properties `((upstream-name . "kamila")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-plyr r-kernsmooth r-gtools r-abind))
     (home-page "https://github.com/ahfoss/kamila")
     (synopsis "Methods for Clustering Mixed-Type Data")
@@ -6018,6 +6693,9 @@ For more information, see Foss, Markatou, Ray, & Heching (2016)
         (base32 "0d45gx7r7d80bvn57g5xy24pf193ds3nyi5b8alpn4f5y93iy86h"))))
     (properties `((upstream-name . "kalmanfilter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=kalmanfilter")
@@ -6043,6 +6721,9 @@ Switching: Classical and Gibbs-Sampling Approaches with Applications\"
         (base32 "07vlw4vyrkx1j12z8ik7fl9xqy3zmvx6nhcv8vwmzjbzhr3bv2j6"))))
     (properties `((upstream-name . "kairos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-extradistr r-dimensio r-arkhe r-aion))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/kairos/")
@@ -6068,6 +6749,9 @@ and density estimates of the occupation and duration of an archaeological site."
         (base32 "11f9lxk4kx3d65i2xnbpw1ixcc9qgahqdirl42aiyph4hzah1fhh"))))
     (properties `((upstream-name . "kaigiroku")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-r-utils r-jsonlite r-dplyr))
     (home-page "https://github.com/amatsuo/kaigiroku")
     (synopsis "Programmatic Access to the API for Japanese Diet Proceedings")
@@ -6088,6 +6772,9 @@ reference at <https://kokkai.ndl.go.jp/api.html>).")
         (base32 "15f2swgngw5rdjdsh5kd55wm2nivlfs8pv4mdn0b75qihwgg1zkk"))))
     (properties `((upstream-name . "kader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://github.com/GerritEichner/kader")
     (synopsis "Kernel Adaptive Density Estimation and Regression")
     (description
@@ -6110,6 +6797,9 @@ as described in Eichner and Stute (2012) <doi:10.1080/10485252.2012.760737>.")
         (base32 "0mlanbp48b6y2wvcr6q1nka27vm861zyvlzj6fs046rw7qnzmg1k"))))
     (properties `((upstream-name . "k5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-tibble
                              r-stringr

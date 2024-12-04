@@ -67,6 +67,9 @@
         (base32 "0zgzqgfd97bxb4crijlc9byak4dl5zrhp6ynch8yda8m3rx1gz92"))))
     (properties `((upstream-name . "gyro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rvcg
                              r-rstudioapi
                              r-rgl
@@ -103,6 +106,9 @@ PoincarÃ© disk.")
         (base32 "0vcwzgawqwjsf65hr1mbjkz3px8zsibfkn42jpsg39n13jpfjq8v"))))
     (properties `((upstream-name . "gym")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (home-page "https://github.com/paulhendricks/gym-R")
     (synopsis "Provides Access to the OpenAI Gym API")
@@ -127,6 +133,9 @@ For more details on the @code{OpenAI} Gym API specification, please see here:
         (base32 "0k3avad4b2x4sqv8iilx5a8gkybjlipx50mj0la4kl9xv0azshkd"))))
     (properties `((upstream-name . "GxEScanR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-prodlim))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GxEScanR")
@@ -136,7 +145,7 @@ For more details on the @code{OpenAI} Gym API specification, please see here:
 genome-wide by environment interaction study (GWEIS) scans using the genetic
 data stored in a binary dosage file.  The user provides a data frame with the
 subject's covariate data and the information about the binary dosage file
-returned by the @code{BinaryDosage::getbdinfo}() routine.")
+returned by the @code{BinaryDosage::getbdinfo()} routine.")
     (license license:gpl3)))
 
 (define-public r-gxeprs
@@ -151,6 +160,9 @@ returned by the @code{BinaryDosage::getbdinfo}() routine.")
         (base32 "1yv4b99mm1az298idvsb9czx0cgvq5032dv0k3wwcsgc5bk7hwqw"))))
     (properties `((upstream-name . "GxEprs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/DoviniJ/GxEprs")
     (synopsis "Genotype-by-Environment Interaction in Polygenic Score Models")
     (description
@@ -179,6 +191,9 @@ risk prediction (refer to the URL for more details).")
         (base32 "17i6y4zqr4p6zrp77pjhnpdq8wrannklc4ybmsbh8vmsq26in7d2"))))
     (properties `((upstream-name . "gwzinbr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp))
     (home-page "https://cran.r-project.org/package=gwzinbr")
     (synopsis
@@ -211,6 +226,9 @@ over-dispersed count data with extra zeros\", Biometrical Journal,
         (base32 "0bss5s3ijnlckz44p7jj49bn2r8nwqckpzwzcv0vci915q8jfsj2"))))
     (properties `((upstream-name . "GWsignif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GWsignif")
     (synopsis
      "Estimating Genome-Wide Significance for Whole Genome Sequencing Studies, Either Single SNP Tests or Region-Based Tests")
@@ -234,6 +252,9 @@ permutation on only a small proportion of the whole genome.")
         (base32 "0zqln2wnmid2cq5727pkk9lyqs4pb5nml12b5cza1xg0yzp38b6h"))))
     (properties `((upstream-name . "GWSDAT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-splancs
                              r-sp
@@ -276,6 +297,9 @@ required.  Also provides the import of a site basemap in GIS shapefile format.")
         (base32 "1pn84056fdrrjq8m13671hn4gvz40z0jsi6r5kv5b82fwzj4g57y"))))
     (properties `((upstream-name . "gwrr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lars r-fields))
     (home-page "https://cran.r-project.org/package=gwrr")
     (synopsis
@@ -300,6 +324,9 @@ more details.")
         (base32 "0x15nv2pfv99c04lgs6q6hgczarld34xc4aqw9bn179m7j02v6m3"))))
     (properties `((upstream-name . "gwrpvr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://doi.org/10.1101/204727")
     (synopsis "Genome-Wide Regression P-Value (Gwrpv)")
     (description
@@ -324,6 +351,9 @@ non-normally distributed phenotype (Gregory Connor and Michael O'Neill,
         (base32 "13g91bx7b0cf1rnyc6azkvjilvc3kjynb8nclmbh8n3ccm6b0v2r"))))
     (properties `((upstream-name . "GWRM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=GWRM")
     (synopsis "Generalized Waring Regression Model for Count Data")
@@ -344,6 +374,9 @@ Regression Model (GWRM).")
         (base32 "172gjp4f3i2na53l04ddsz588qmhfs4fwdnbnvpjvkrc8xsp9yf2"))))
     (properties `((upstream-name . "GWRLASSO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qpdf r-numbers r-matrix r-glmnet))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GWRLASSO")
@@ -378,6 +411,9 @@ patterns and large datasets with multiple predictor variables.")
         (base32 "11qs7vxal3br7rg379b5v2w06nvsipk7465c9l5lpifr8g0g561r"))))
     (properties `((upstream-name . "gWQS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist
                              r-reshape2
                              r-pscl
@@ -420,6 +456,9 @@ outcomes.")
         (base32 "0d8skx6rxas5qvhg7ykhymrzd6dawj45421vr66r4wi4hbdfjbzx"))))
     (properties `((upstream-name . "gwpcormapper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-shinyjs
                              r-shinydashboard
@@ -463,6 +502,9 @@ calculated following (Percival and Tsutsumida,
         (base32 "0q43673pmm2c6kss688fpz10b39y3jn1kblv13p8ky0bk82hmcvi"))))
     (properties `((upstream-name . "GWpcor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-sp
                              r-sf
@@ -476,7 +518,7 @@ calculated following (Percival and Tsutsumida,
     (synopsis "Geographically Weighted Partial Correlation Coefficient")
     (description
      "This package implements a geographically weighted partial correlation which is
-an extension from gwss() function in the GWmodel package (Percival and
+an extension from @code{gwss()} function in the GWmodel package (Percival and
 Tsutsumida (2017) <doi:10.1553/giscience2017_01_s36>).")
     (license license:gpl3)))
 
@@ -492,6 +534,9 @@ Tsutsumida (2017) <doi:10.1553/giscience2017_01_s36>).")
         (base32 "1yinzlp22z9z5fk9f1nm14i408yfm5kfgkn3pqnh4bkghs569ivg"))))
     (properties `((upstream-name . "GWnnegPCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-spdata
                              r-sp
@@ -521,6 +566,9 @@ sparse non-negative principal components analyses
         (base32 "1mlgcmr1s8gn52q32jxj2hfrymrc033w56bx0cm40m0mi657p3fb"))))
     (properties `((upstream-name . "GWmodel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep
                              r-spatialreg
                              r-spacetime
@@ -559,6 +607,9 @@ robust (outlier resistant) forms.")
         (base32 "1nm4w5m4ca6npmpvh9nb0cnrbzlyv95nvvhgs3pqcrw4igagm4hj"))))
     (properties `((upstream-name . "GWLelast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spgwr
                              r-sp
                              r-glmnet
@@ -586,6 +637,9 @@ selection: An application to gastric cancer screening <doi:10.1038/srep26582>.")
         (base32 "1cpxaqk6z55fydd1b18pc90796fdig1ax0llvip60sn0wwbqhqpp"))))
     (properties `((upstream-name . "GWlasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sf
                              r-rlang
@@ -620,6 +674,9 @@ predictions.  These methods are specially well suited for ecological inferences.
         (base32 "1rkq7pzqinsrjbidmjyjfkcwm2hldk8fnmkp4s222xlbj230ybwv"))))
     (properties `((upstream-name . "gwid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snprelate
                              r-shiny
                              r-rcpproll
@@ -654,6 +711,9 @@ multiple Single Nucleotide Polymorphisms (SNPs).")
         (base32 "0gwbidvdzk7b1w880baa338h7cikvlzvqmbmdxca4r83jzzwxlj1"))))
     (properties `((upstream-name . "GWI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GWI")
     (synopsis "Count and Continuous Generalized Variability Indexes")
     (description
@@ -679,6 +739,9 @@ generalized variation index (GVI) with its marginal one (MVI) too.")
         (base32 "17yd7c8qiqkfhzllrcrrf1az0rq1g6xkggp35zyd04idcjz4c6hf"))))
     (properties `((upstream-name . "GWEX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-renext
                              r-rcpparmadillo
                              r-rcpp
@@ -715,6 +778,9 @@ A.-C. Favre, and B. Hingray. (2018) <doi:10.1007/s00704-018-2404-x>.")
         (base32 "08yhg56i1xrkmfcyr87gz0w6mzsm0isg3fjm6kmmgsq522cj3jjb"))))
     (properties `((upstream-name . "gwbr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gwbr")
     (synopsis "Local and Global Beta Regression")
     (description
@@ -737,6 +803,9 @@ and Lima, A. O. (2017) <doi:10.1016/j.spasta.2017.07.011>.")
         (base32 "1hr1d66n5xf7ppmag70lzdnwp3m2jcs1qmh1nzrqq0nbqmqg8nck"))))
     (properties `((upstream-name . "gwavr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-whitebox
                              r-units
                              r-tidyr
@@ -777,6 +846,9 @@ comids, etc.")
         (base32 "1fmymw7vm4ana86mwf8figda20l601c7c6nr14444647x8cimlhx"))))
     (properties `((upstream-name . "gwasrapidd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-urltools
                              r-tidyr
@@ -817,6 +889,9 @@ GWAS Catalog data by accessing the REST API
         (base32 "16q5r3fzli7vml481fl56mzhl0w8bp0bp70rlsw20a6vzhnk5xf2"))))
     (properties `((upstream-name . "GWASinspector")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite
                              r-rmarkdown
                              r-r-utils
@@ -853,6 +928,9 @@ comprehensive report.")
         (base32 "06bd6cyjvihcj166f20wdycww6b2xqb9nvh078sys52fi9nwzwcc"))))
     (properties `((upstream-name . "GWASinlps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rcpparmadillo
                              r-rcpp
@@ -884,6 +962,9 @@ provided by the use of non-local priors (see Sanyal et al., 2019
         (base32 "122fg4pc409lvw4yvrc8ijm6d6j29b4aacd319a16caxkkydgwlb"))))
     (properties `((upstream-name . "gwasforest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glue
                              r-ggrepel
                              r-ggplot2
@@ -910,6 +991,9 @@ each shows the result of individual SNPs (or other items of interest).")
         (base32 "0ivlkxbh8m23vbnjfmhk0vfczd5b8lzy9w4gm1m6jpvdm40kn70x"))))
     (properties `((upstream-name . "GWASbyCluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snpstats r-rootsolve r-limma r-biobase))
     (home-page "https://cran.r-project.org/package=GWASbyCluster")
     (synopsis
@@ -932,6 +1016,9 @@ package is implementation of method proposed in Xu et al (2019)
         (base32 "1mjwsf1sbrd88psiz6f74zddv1wvhpxk5nxbfjpdrxs74rkc36fs"))))
     (properties `((upstream-name . "gwaRs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-rcolorbrewer
@@ -958,6 +1045,9 @@ package is implementation of method proposed in Xu et al (2019)
         (base32 "0d6f1br5g28z6qbi41y3sfglci941lzs38hm9cjr1vlxg65dnzav"))))
     (properties `((upstream-name . "GWalkR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinycssloaders
                              r-shiny
                              r-openssl
@@ -985,6 +1075,9 @@ graphic-walker @code{JavaScript} library and the htmlwidgets package.")
         (base32 "16dhd407bwjs91c3p9kk43646197s7n9vbyghxb4ckrpv3fsaxp0"))))
     (properties `((upstream-name . "gvlma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gvlma")
     (synopsis "Global Validation of Linear Models Assumptions")
     (description
@@ -1005,6 +1098,9 @@ Validation of Linear Model Assumptions,\" J. American Statistical Association,
         (base32 "1gp13980yqfyqgjj19445vyva2769wsa1kfq7h7y366g4knygnlp"))))
     (properties `((upstream-name . "gvcR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-supernova
                              r-rlang
@@ -1035,6 +1131,9 @@ Allard, R.W. (2010, ISBN:8126524154).")
         (base32 "1wwsl0vz801324558qwzy241ws6qics8nrd6yyzkwrfz2kyfmya0"))))
     (properties `((upstream-name . "gvc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-diagonals r-decompr))
     (native-inputs (list r-knitr))
     (home-page "https://qua.st/gvc")
@@ -1055,6 +1154,9 @@ Allard, R.W. (2010, ISBN:8126524154).")
         (base32 "0hafmq8m2pszmmj9yldrbab8670pfrm62x79g8lzac9rmhlz76w2"))))
     (properties `((upstream-name . "GVARX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts
                              r-vars
                              r-urca
@@ -1083,6 +1185,9 @@ di Mauro, Pesaran and Smith (2007) <DOI:10.1002/jae.932>.")
         (base32 "1dx760bvc5nkdfhknj8ilqqrxwllzqg03rvg0ghd61xadmb3m64x"))))
     (properties `((upstream-name . "GUTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GUTS")
@@ -1107,6 +1212,9 @@ of the corresponding likelihood (see Albert, C., Vogel, S. and Ashauer, R.
         (base32 "0hx9mrykkc7jqf5pl3k9y5i7pv8v9pwija8swv6s5p1gbmg56vg6"))))
     (properties `((upstream-name . "gutenbergr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urltools
                              r-stringr
                              r-readr
@@ -1138,6 +1246,9 @@ works, so that they can be searched and retrieved.")
         (base32 "0qja3f0925hhaq19xic0x9yygckjnym0daj2fzp36p7rsb4w0ga6"))))
     (properties `((upstream-name . "gustave")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://github.com/InseeFr/gustave")
     (synopsis
@@ -1162,6 +1273,9 @@ estimation) are handled in a consistent and transparent way.")
         (base32 "02vz16lhym72vvf48yai1g371wygdlmi63a6ylc147l0b69jgw31"))))
     (properties `((upstream-name . "gunsales")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-x13binary
                              r-seasonal
@@ -1192,6 +1306,9 @@ is provided.")
         (base32 "10n1mjhb3k0npcp3cmw3pm2035vda3341i0gfxni27xdhggpm0rk"))))
     (properties `((upstream-name . "gunit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units r-tibble r-stringr r-magrittr))
     (home-page "https://github.com/cdmuir/gunit")
     (synopsis "Converts Conductance Units")
@@ -1212,6 +1329,9 @@ different units: m/s, mol/m^2/s, and umol/m^2/s/Pa.")
         (base32 "12lbnhgcc6l76g6s3bcj46p1s4ddqazwspmkn97ybwcydma44x7m"))))
     (properties `((upstream-name . "gumboot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-reshape2
                              r-ncdf4
@@ -1241,6 +1361,9 @@ Research, <doi:10.1029/2020WR029001>.")
         (base32 "1ifvr284h1pwg2883qhzwi4a52l8sgdji1hk6la1h509aw2agv74"))))
     (properties `((upstream-name . "gumbel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gumbel")
     (synopsis "The Gumbel-Hougaard Copula")
     (description
@@ -1262,6 +1385,9 @@ Moment Based Estimation and Canonical Maximum Likelihood).")
         (base32 "10m4d7f2rhw6cmkrnw3jh4iqlkfphf4v7mpfwzw17laq0ncmsx5r"))))
     (properties `((upstream-name . "GUIProfiler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi
                              r-rgraphviz
                              r-proftools
@@ -1287,6 +1413,9 @@ execution time.")
         (base32 "0w0airy3z9hskpsqsk136ipmj8wn9v9j5n6sicybwm0qvj83fzhj"))))
     (properties `((upstream-name . "guiplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svglite
                              r-shiny
                              r-rlang
@@ -1317,6 +1446,9 @@ concentration versus time curve.")
         (base32 "0rjlx13shzmamxzqng0qjl5kwzg111lq245y9z6axb3al3ly59ij"))))
     (properties `((upstream-name . "GUILDS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-pracma r-nloptr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thijsjanzen/GUILDS")
@@ -1346,6 +1478,9 @@ guild size (Janzen et al.  2015).")
         (base32 "1y3m1756450dzcz1m8fdj53p2bw9zhisnp67fr2fhmv6kga37995"))))
     (properties `((upstream-name . "guildai")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list python))
     (propagated-inputs (list r-yaml
                              r-tibble
@@ -1382,6 +1517,9 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
         (base32 "1gmprd6a5nyglm36sdyk9dqbgqavf3a7gzjbm5jzb5ybhj9r2w61"))))
     (properties `((upstream-name . "guidedPLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-irlba))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rikenbit/guidedPLS")
@@ -1407,6 +1545,9 @@ section of @code{GitHub} README.md
         (base32 "045cb9k99mrnx8c6xrshsca6dlyw3wqj57i5j34cjz39g4bmwxl6"))))
     (properties `((upstream-name . "GUEST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xicor r-network r-ggally))
     (home-page "https://cran.r-project.org/package=GUEST")
     (synopsis
@@ -1431,6 +1572,9 @@ multi-label classes.")
         (base32 "198pxi0yipgm9wccpj3y4a0gkibhyxcmb7v5dz7ipzrk44ha5g6j"))))
     (properties `((upstream-name . "guess")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/soodoku/guess")
@@ -1454,6 +1598,9 @@ pre-post transitions.  For details of the latent class model, see
         (base32 "05vz4lvwh01s24cdsklqypkxz64ixrj4la5l5x0jgg8vsshjc727"))))
     (properties `((upstream-name . "guescini")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/ramiromagno/guescini")
     (synopsis "Real-Time PCR Data Sets by Guescini et al. (2008)")
@@ -1480,6 +1627,9 @@ and
         (base32 "01crjdgq7srn8a22a8cm4cbkxd4b0m7pm4fy5r5839ljy2k4dfs7"))))
     (properties `((upstream-name . "Guerry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/friendly/Guerry")
@@ -1505,6 +1655,9 @@ historical interest.")
         (base32 "0sbimcsclibjgilwy3p7h5lcz9dcvvfi36pcx9zkbdk765w5d5zg"))))
     (properties `((upstream-name . "GUD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -1540,6 +1693,9 @@ Liu, Huang, and Bai (2024) <doi:10.1016/j.csda.2024.108012>.")
         (base32 "17xmmr6pfzhdnmf45jzvk84gbfnmlw1qfv1gqjaw85vgm8b6jn6l"))))
     (properties `((upstream-name . "guardianapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.evanodell.com/guardianapi")
@@ -1563,6 +1719,9 @@ and contributor information.  An API key and registration is required.")
         (base32 "0ngdwg297ndn763vx0qnvcsy5bhsr026hv8hvwgrz5w32mpw252d"))))
     (properties `((upstream-name . "guaguas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/rivaquiroga/guaguas")
     (synopsis "Nombres Inscritos en Chile (1920 - 2021)")
     (description
@@ -1583,6 +1742,9 @@ Civil Registry Service.")
         (base32 "1kbkz0iwc3gfj982m93m2wdr1xm5rhy70k6bdc7kms9ivh5fh6sh"))))
     (properties `((upstream-name . "gtWAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gtWAS")
     (synopsis "Genome and Transcriptome Wide Association Study")
     (description
@@ -1613,6 +1775,9 @@ regression analysis.")
         (base32 "1vh9lffll6l1d6wbzhmci9zy9m6kq6wbnc8x4ydplagr5nigdh05"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-rlang
@@ -1628,12 +1793,12 @@ regression analysis.")
     (description
      "This package creates presentation-ready tables summarizing data sets, regression
 models, and more.  The code to create the tables is concise and highly
-customizable.  Data frames can be summarized with any function, e.g. mean(),
-median(), even user-written functions.  Regression models are summarized and
-include the reference rows for categorical variables.  Common regression models,
-such as logistic regression and Cox proportional hazards regression, are
-automatically identified and the tables are pre-filled with appropriate column
-headers.")
+customizable.  Data frames can be summarized with any function, e.g.
+@code{mean()}, @code{median()}, even user-written functions.  Regression models
+are summarized and include the reference rows for categorical variables.  Common
+regression models, such as logistic regression and Cox proportional hazards
+regression, are automatically identified and the tables are pre-filled with
+appropriate column headers.")
     (license license:expat)))
 
 (define-public r-gtrendsr
@@ -1648,6 +1813,9 @@ headers.")
         (base32 "05bfcc77bg2ndl83l0lv7rs4slxcflv9h2pfij8a3j1k9r9lwp2x"))))
     (properties `((upstream-name . "gtrendsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-ggplot2 r-curl r-anytime))
     (home-page "https://github.com/PMassicotte/gtrendsR")
     (synopsis "Perform and Display Google Trends Queries")
@@ -1669,6 +1837,9 @@ geographic representation of the results can be displayed.")
         (base32 "1ldlv43hgxb6dzs4d2ha1rd5qyyia5pyih2v7rfhmjdnz9qdwl6d"))))
     (properties `((upstream-name . "gtreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -1703,6 +1874,9 @@ regulatory tables.")
         (base32 "1ag0qkp5dnsj6vnwjyf4lw7kr37xzj5lkkr0b2y24pfx7alb33sv"))))
     (properties `((upstream-name . "gtranslate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rvest r-httr))
     (home-page "https://cran.r-project.org/package=gtranslate")
     (synopsis "Translate Between Different Languages")
@@ -1724,6 +1898,9 @@ package is free and lightweight.")
         (base32 "0j8yflfibqa9lypvblb6l25wmwfi5mypr20gp7fqy5hadaliy3d6"))))
     (properties `((upstream-name . "gto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rlang r-officer r-magrittr r-gt))
     (home-page "https://cran.r-project.org/package=gto")
     (synopsis "Insert 'gt' Tables into Word Documents")
@@ -1745,6 +1922,9 @@ in gt using the familiar officer package and syntax from the officeverse'.")
         (base32 "1xc1jl69z5csalqk3hx83s53awcl1fjq6p0x2pczhs7dsvwd6lks"))))
     (properties `((upstream-name . "gtheory")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lme4))
     (home-page "http://EvaluationDashboard.com")
     (synopsis "Apply Generalizability Theory with R")
@@ -1766,6 +1946,9 @@ measurement facets (e.g., items and raters).")
         (base32 "01gklymwqzq32xkmbsds9vlqzhs4x9237grn96bj70kl567zjyvw"))))
     (properties `((upstream-name . "GTFSwizard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytransit
                              r-tidyr
                              r-tibble
@@ -1817,6 +2000,9 @@ visualization.")
         (base32 "1gdizd3lkli60jkkfs7xd7yak8nc4w9sy21sjikdxbhh3xwks775"))))
     (properties `((upstream-name . "gtfstools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-units
                              r-sfheaders
@@ -1849,6 +2035,9 @@ General Transit Feed Specification (GTFS) data format.")
         (base32 "02vgx456z8d3yf5lklf7cddypkpxqxyv745xlax7y2fkanbinh3v"))))
     (properties `((upstream-name . "gtfsrouter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-geodist r-fs r-data-table r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/UrbanAnalyst/gtfsrouter")
@@ -1871,6 +2060,9 @@ nominated start station to all other stations.")
         (base32 "0dzmlq7x8zlvljfgyj5hs7f7ivgml0j4j9fl6zkdbg3dqwmrrysb"))))
     (properties `((upstream-name . "gtfsio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip r-jsonlite r-fs r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://r-transit.github.io/gtfsio/")
@@ -1897,6 +2089,9 @@ objects.")
         (base32 "0g1mklndk3y49h1ydxmzrmiz2098k1w4b053b6dcr8dsj2gga8wr"))))
     (properties `((upstream-name . "gtfs2gps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-terra
                              r-sfheaders
@@ -1919,6 +2114,49 @@ GTFS data in time and space and to convert both representations to simple
 feature format.")
     (license license:expat)))
 
+(define-public r-gtfs2emis
+  (package
+    (name "r-gtfs2emis")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtfs2emis" version))
+       (sha256
+        (base32 "1vz0kfycv3fgcm5bhbdn9hg3ls4pr1n88r1lhmy2fq9hwp8djgc6"))))
+    (properties `((upstream-name . "gtfs2emis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-terra
+                             r-sfheaders
+                             r-sf
+                             r-gtfs2gps
+                             r-future
+                             r-furrr
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://ipeagit.github.io/gtfs2emis/")
+    (synopsis
+     "Estimating Public Transport Emissions from General Transit Feed Specification (GTFS) Data")
+    (description
+     "This package provides a bottom up model to estimate the emission levels of
+public transport systems based on General Transit Feed Specification (GTFS)
+data.  The package requires two main inputs: i) Public transport data in the
+GTFS standard format; and ii) Some basic information on fleet characteristics
+such as fleet age, technology, fuel and Euro stage.  As it stands, the package
+estimates several pollutants at high spatial and temporal resolutions.
+Pollution levels can be calculated for specific transport routes, trips, time of
+the day or for the transport system as a whole.  The output with emission
+estimates can be extracted in different formats, supporting analysis on how
+emission levels vary across space, time and by fleet characteristics.  A full
+description of the methods used in the gtfs2emis model is presented in Vieira,
+J. P. B.; Pereira, R. H. M.; Andrade, P. R. (2022) <doi:10.31219/osf.io/8m2cy>.")
+    (license license:expat)))
+
 (define-public r-gtexture
   (package
     (name "r-gtexture")
@@ -1931,6 +2169,9 @@ feature format.")
         (base32 "1smlnnqsh1akjb2npn73qskq3dd3ypy40v3vkmqdf4qa2qx8yayk"))))
     (properties `((upstream-name . "gtexture")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-magrittr
@@ -1965,6 +2206,9 @@ mathematical oncology can be found at Rockne et al. (2019)
         (base32 "000vwq4k0vrn75vzy6iflqydxl81rgn06a8kqca99gwywcqr3gvv"))))
     (properties `((upstream-name . "gtExtras")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rlang
                              r-paletteer
@@ -1997,6 +2241,9 @@ opinionated niche capabilities and helpers functions.")
         (base32 "18g7138mzr4hk5h6k13zkc3vy7pmidva0vplfd6vbgqbm9p79yf8"))))
     (properties `((upstream-name . "gtexr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -2025,6 +2272,9 @@ opinionated niche capabilities and helpers functions.")
         (base32 "126731bb0f454x0pr378x6ri71i8nl6i6zcqx9jdv68wj8f4g0zy"))))
     (properties `((upstream-name . "gTestsMulti")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=gTestsMulti")
     (synopsis "New Graph-Based Multi-Sample Tests")
@@ -2046,6 +2296,9 @@ and Chen, H. (2022) <@code{arXiv:2205.13787>}.")
         (base32 "1h1sd8mrzcniq7rx7frdlxwpnsn8lifng1x99fqq703hs3znl1yq"))))
     (properties `((upstream-name . "gTests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ade4))
     (home-page "https://cran.r-project.org/package=gTests")
     (synopsis "Graph-Based Two-Sample Tests")
@@ -2066,6 +2319,9 @@ same distribution.  It works for both continuous data and discrete data.")
         (base32 "0fnrpgfji5f1n8nra0d8xghqgsjil7r2j6xnbmfm7mjafcav4wwk"))))
     (properties `((upstream-name . "gte")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=gte")
     (synopsis "Generalized Turnbull's Estimator")
@@ -2085,6 +2341,9 @@ same distribution.  It works for both continuous data and discrete data.")
         (base32 "1dryw7d9qnsa3wibk9kgkldwb660arzdw024p62a123v7i932jz0"))))
     (properties `((upstream-name . "GTDL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=GTDL")
     (synopsis "The Generalized Time-Dependent Logistic Family")
@@ -2109,6 +2368,9 @@ normally transformed randomized survival probability (Li,L., et al. (2021)
         (base32 "0im2s0n08kah2g9yg3f4l8y75jq1674liy6mffkd9xg7z6ad25q5"))))
     (properties `((upstream-name . "GTbasedIM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rweka r-coopgame))
     (home-page "https://cran.r-project.org/package=GTbasedIM")
     (synopsis "Game Theory-Based Influence Measures")
@@ -2133,6 +2395,9 @@ and Casas-MÃ©ndez (2024) <doi:10.48550/@code{arXiv.2408.02481>} can be obtaine
         (base32 "1d567iz57xqszm45l1wq4n2qrrmyz8ssll1vllfmncb9ibbnx4f3"))))
     (properties `((upstream-name . "gt4ireval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/julian-urbano/gt4ireval/")
     (synopsis "Generalizability Theory for Information Retrieval Evaluation")
@@ -2155,6 +2420,9 @@ as Kendall tau correlation or sensitivity.")
         (base32 "0njzpj57afvbi7jsbpb0j1mgm1nz01bd25668gsmvpd7lajm7ig0"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-vctrs
                              r-tidyselect
@@ -2198,6 +2466,9 @@ that you don't often have to worry about the fine details.")
         (base32 "1a4s8ghxc5zw295ys8hp22nx93gc1vyakn7r1dcq3ghikh02nzaa"))))
     (properties `((upstream-name . "gsynth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
@@ -2235,6 +2506,9 @@ method.")
         (base32 "0wifxgfj67wf1ax56a6j40vckrydrkw5qj7bk875gr0w0ah03a3g"))))
     (properties `((upstream-name . "GsymPoint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm r-rsolnp r-rocr))
     (home-page "https://cran.r-project.org/package=GsymPoint")
     (synopsis
@@ -2260,6 +2534,9 @@ easily obtained.")
         (base32 "08lmw719mhdzg4g8384y3fbhm6lx8a1hzz5zdlfqq5xv3n4s974z"))))
     (properties `((upstream-name . "gsw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "http://teos-10.github.io/GSW-R/")
     (synopsis "Gibbs Sea Water Functions")
@@ -2285,6 +2562,9 @@ Association for the Physical Sciences of the Oceans).")
         (base32 "1qkq9ghg49p09wx60k68nh871l1xz0qpzsls8lg4b038kngr9q6l"))))
     (properties `((upstream-name . "gstsm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-digest))
     (home-page "https://cran.r-project.org/package=gstsm")
     (synopsis "Generalized Spatial-Time Sequence Miner")
@@ -2309,6 +2589,9 @@ In: XXXVI SBBD - SimpÃ³sio Brasileiro de Banco de Dados, 2021
         (base32 "1f4xnbavm99yhjmaahazigps41mqlfvvl29kf4fs1yjqr531y36b"))))
     (properties `((upstream-name . "gStream")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gStream")
     (synopsis
      "Graph-Based Sequential Change-Point Detection for Streaming Data")
@@ -2335,6 +2618,9 @@ detection for high-dimensional and non-Euclidean data <@code{arXiv:1810.05973>}.
         (base32 "1582f7jcphb32j3wdc345qa5sgm2xyimlc6r5r5jay7ca5ll8c98"))))
     (properties `((upstream-name . "gstar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-reshape2 r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=gstar")
     (synopsis "Generalized Space-Time Autoregressive Model")
@@ -2355,6 +2641,9 @@ Model by Ruchjana et al.(2012) <doi:10.1063/1.4724118>.")
         (base32 "0ah19qf6lfzlw52w43b5qszsxh2yvpz7vnspgvj4qidysbxkxd3q"))))
     (properties `((upstream-name . "GSSTDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-survival
                              r-devtools
@@ -2388,6 +2677,9 @@ methylation studies\" <doi:10.1101/2022.09.08.507080>.")
         (base32 "034mmxa6kjq5kgikhb5q75viagz5ck9irrjbxm26zq9099qxm13b"))))
     (properties `((upstream-name . "GSSE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-iso))
     (home-page "https://cran.r-project.org/package=GSSE")
     (synopsis "Genotype-Specific Survival Estimation")
@@ -2413,6 +2705,9 @@ expectation-maximization algorithm.")
         (base32 "0b2dzacd5axd4pfhv0q1gd7hk0fbfj738zdlabzs8dc9737bykiq"))))
     (properties `((upstream-name . "gsrsb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable r-mvtnorm r-ldbounds))
     (home-page "https://cran.r-project.org/package=gsrsb")
     (synopsis "Group Sequential Refined Secondary Boundary")
@@ -2440,6 +2735,9 @@ interim looks\", Biometrics, 74(1), 40-48.")
         (base32 "0x5fll59l000dqszy0gmhsfqgpaljc57j1grqg5c7y1p3vji38in"))))
     (properties `((upstream-name . "gsrs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=gsrs")
     (synopsis "Group-Specific Recommendation System")
@@ -2462,6 +2760,9 @@ Recommender System <doi:10.1080/01621459.2016.1219261> for the details.")
         (base32 "19k07yg3z2p63dgq8hyyqpnq2r23rwbh1wqwna4d4w1bif9vgq8b"))))
     (properties `((upstream-name . "gspcr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-reshape2
                              r-pcamixdata
@@ -2493,6 +2794,9 @@ discrete variables as outcomes and predictors (inspired by the superpc R package
         (base32 "0xna2crxqwy8fj0s79rxbdcaz9x912rp1vdwqv1557fsnmfv2yf0"))))
     (properties `((upstream-name . "GSparO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-threeway r-ggplot2))
     (home-page "https://cran.r-project.org/package=GSparO")
     (synopsis "Group Sparse Optimization")
@@ -2516,6 +2820,9 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
         (base32 "0zqc0md2h2r0f0h9k8q70kdjnx35lvn8dnmzpxq0vwlkd0vzfyrn"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr r-r-utils r-data-table r-curl
                              r-countrycode))
     (native-inputs (list r-knitr))
@@ -2552,6 +2859,9 @@ please see the GSOD readme.txt file available from,
         (base32 "1n1d7rixj14ari46snsmi48qfmy00ihmzvayk3hkrp2d2d0xi2gh"))))
     (properties `((upstream-name . "GSMX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=GSMX")
     (synopsis "Multivariate Genomic Selection")
@@ -2574,6 +2884,9 @@ variance components and the heritability through cross validation.")
         (base32 "00z9852vn5pj04dhl3w36yk0xjawniay6iifw1i7fd8g98mgspxp"))))
     (properties `((upstream-name . "gsmoothr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gsmoothr")
     (synopsis "Smoothing tools")
     (description
@@ -2592,6 +2905,9 @@ variance components and the heritability through cross validation.")
         (base32 "0n5f1mq81pzbzk1bly8pdbw7ryyb081sg02kc3wiyklhk071la3c"))))
     (properties `((upstream-name . "gsMAMS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Tpatni719/gsMAMS")
@@ -2620,6 +2936,9 @@ Ordinal Endpoints\"(In preparation).")
         (base32 "04xjs9w4gaszwzxmsr7657ry2ywa9pvpwpczpvinxi8vpj347jbb"))))
     (properties `((upstream-name . "GSM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gtools))
     (home-page "http://projecteuclid.org/euclid.aoas/1215118537")
     (synopsis "Gamma Shape Mixture")
@@ -2643,6 +2962,9 @@ distribution for a single parameter.")
         (base32 "1z9fci21870d8z7qsc8hzj3vxlxrr7gxy1vibga3acayxz21lhvs"))))
     (properties `((upstream-name . "gsloid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/benmarwick/gsloid")
     (synopsis "Global Sea Level and Oxygen Isotope Data")
@@ -2664,6 +2986,9 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
         (base32 "1rfzdd9qsiqam5m9f2pi909lchcmmb1ljqiiwd5dpblbk8nqhm82"))))
     (properties `((upstream-name . "gslnls")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl gsl))
     (propagated-inputs (list r-matrix))
     (native-inputs (list pkg-config gfortran))
@@ -2678,8 +3003,8 @@ systems and several variants of Powell's dogleg algorithm.  Multi-start
 optimization based on quasi-random samples is implemented using a modified
 version of the algorithm in Hickernell and Yuan (1997, OR Transactions).
 Bindings are provided to tune a number of parameters affecting the low-level
-aspects of the trust region algorithms.  The interface mimics R's nls() function
-and returns model objects inheriting from the same class.")
+aspects of the trust region algorithms.  The interface mimics R's @code{nls()}
+function and returns model objects inheriting from the same class.")
     (license license:lgpl3)))
 
 (define-public r-gsisdecoder
@@ -2694,6 +3019,9 @@ and returns model objects inheriting from the same class.")
         (base32 "1h7a9j4gsdk8nasfkzfizlarx335ra0j0yz98a2000v2qzm2a5qy"))))
     (properties `((upstream-name . "gsisdecoder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/mrcaseb/gsisdecoder")
     (synopsis "High Efficient Functions to Decode NFL Player IDs")
@@ -2701,30 +3029,6 @@ and returns model objects inheriting from the same class.")
      "This package provides a set of high efficient functions to decode identifiers of
 National Football League players.")
     (license license:expat)))
-
-(define-public r-gsignal
-  (package
-    (name "r-gsignal")
-    (version "0.3-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gsignal" version))
-       (sha256
-        (base32 "1chkzv3bx1nas1yc6l5i3hgc8m40n1lm1y3c8577l8sqi89hnhs3"))))
-    (properties `((upstream-name . "gsignal")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-pracma))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gjmvanboxtel/gsignal")
-    (synopsis "Signal Processing")
-    (description
-     "R implementation of the Octave package signal', containing a variety of signal
-processing tools, such as signal generation and measurement, correlation and
-convolution, filtering, filter design, filter analysis and conversion, power
-spectrum analysis, system identification, decimation and sample rate change, and
-windowing.")
-    (license license:gpl3)))
 
 (define-public r-gsheet
   (package
@@ -2738,6 +3042,9 @@ windowing.")
         (base32 "0b8q44cqkjfy6vnffm94czq4ag8xfbxik52026ahq95kcf9v2j91"))))
     (properties `((upstream-name . "gsheet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-httr))
     (home-page "https://github.com/maxconway/gsheet")
     (synopsis "Download Google Sheets Using Just the URL")
@@ -2760,6 +3067,9 @@ manually.  Google Sheets is the new name for Google Docs Spreadsheets
         (base32 "1ynbjm61v1j3m06ixbzil0rxcmvfxpz27dcfiif8bkk9g5mkfs2d"))))
     (properties `((upstream-name . "GSEMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-singscore
                              r-scales
                              r-rdpack
@@ -2797,6 +3107,9 @@ to obtain significant pathways that are common to all of them.")
         (base32 "052vh1haxlzbh3c5i24nrwphapik1y8ribmh6q4axd447ggc0ff9"))))
     (properties `((upstream-name . "GSelection")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sam r-penalized r-gdata))
     (home-page "https://cran.r-project.org/package=GSelection")
     (synopsis "Genomic Selection")
@@ -2822,6 +3135,9 @@ Yamada et.  al. (2014) <doi:10.1162/NECO_a_00537>) model.")
         (base32 "0lixlirisnxk29zlrragi3l8j1abb5cl7zh6vhx7l5hjdvh8ldq9"))))
     (properties `((upstream-name . "gSeg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gSeg")
     (synopsis "Graph-Based Change-Point Detection (g-Segmentation)")
     (description
@@ -2842,6 +3158,9 @@ non-Euclidean, etc.) as long as a reasonable similarity measure is available.")
         (base32 "1k8axyzk55d8idn65qj3gxqjsk27n2r0q78v7524mg8n3fhxs0wj"))))
     (properties `((upstream-name . "GSED")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rootsolve r-r-utils r-memoise))
     (home-page "https://cran.r-project.org/package=GSED")
     (synopsis "Group Sequential Enrichment Design")
@@ -2863,6 +3182,9 @@ Turnbull (2013) <doi:10.1002/sim.5738>.")
         (base32 "01c5rl05lf9abmasw9w8rxlgl55jr3faiwi1ndx993r3j8xvbcqj"))))
     (properties `((upstream-name . "GseaVis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-reshape2
@@ -2895,6 +3217,9 @@ own gene set enrichment analysis plot.")
         (base32 "1mvqnyjzi5ik5bqisxpf6a592n9rnkv915kwnis238akwvkspspa"))))
     (properties `((upstream-name . "gsEasy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-ontologyindex))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gsEasy")
@@ -2916,6 +3241,9 @@ own gene set enrichment analysis plot.")
         (base32 "0hxz2m8fn7zkxchvpn0kdw77mxgczff9mk1k0xy2ml50b9vzssm2"))))
     (properties `((upstream-name . "GSE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rrcov
                              r-robustbase
                              r-rcpparmadillo
@@ -2943,6 +3271,9 @@ Cellwise and Casewise Contamination and Missing Data.")
         (base32 "11bd2l0vi1xa8hx59i543csqyphmqbg2jax9gcsjrgjfn2pjm2cm"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-survival
@@ -2981,6 +3312,9 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
         (base32 "02rc0b69ay7gr3s91kqfy56n5laxxdirj61krll3p074123j9a65"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-tidyr
                              r-tibble
@@ -3013,6 +3347,9 @@ based on methods described in Jennison, Christopher and Turnbull, Bruce W.,
         (base32 "1knzibpazyl0mp3c34hak634q4fb5cp250skkwgba92hj7hfhwvq"))))
     (properties `((upstream-name . "GSDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-msigdbr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GSDA")
@@ -3035,6 +3372,9 @@ and censored event-time variables.")
         (base32 "0qfn797wllkv44d55nhvm9mf4mxnxihckfbcd6l15irildnj9llg"))))
     (properties `((upstream-name . "GSD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-igraph r-ggplot2 r-ebayesthresh))
     (home-page "https://cran.r-project.org/package=GSD")
     (synopsis "Graph Signal Decomposition")
@@ -3067,6 +3407,9 @@ denoising and boundary treatment\".")
         (base32 "0i62zngk2n4jx9bk378xakzr1fjb2f8p2x4larx38jg511is2lq1"))))
     (properties `((upstream-name . "gscramble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -3102,6 +3445,9 @@ source populations through the pedigrees.")
         (base32 "1wcna4bcm38ivmys5hv30b72bvn0ja0n30zhwns94n4v2z1d24k4"))))
     (properties `((upstream-name . "gscounts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tobiasmuetze/gscounts")
@@ -3124,6 +3470,9 @@ as described by T MÃ¼tze, E Glimm, H Schmidli, T Friede (2018)
         (base32 "12zksjp0wh95qg7vxh22z652hk35r9sp0qxrms4y1laixa8vr71x"))))
     (properties `((upstream-name . "gscaLCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-psych
                              r-progress
@@ -3161,6 +3510,9 @@ prevalence and covariates.")
         (base32 "0pvlb2vainsazcyh1713m11q387ykqkj11k8sg0s96ldnzv751lg"))))
     (properties `((upstream-name . "gsbm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-softimpute r-rspectra r-matrix r-foreach
                              r-doparallel))
     (native-inputs (list r-knitr))
@@ -3185,6 +3537,9 @@ Klopp and Robin (2019) <@code{arXiv:1911.13122>}.")
         (base32 "07a5dpwfw052hx0ryrl54z4w71l9q6grh9cx5nf2h3v0lz45n6bp"))))
     (properties `((upstream-name . "gsbDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice r-gsdesign r-ggplot2))
     (home-page "https://cran.r-project.org/package=gsbDesign")
     (synopsis "Group Sequential Bayes Design")
@@ -3206,6 +3561,9 @@ with known Sigma and Normal Endpoints, as described in Gerber and Gsponer (2016)
         (base32 "0nmn4hlvhl8dw7pkpf010x9qjd6w8drdlcj47qv0sap8wngrwhzg"))))
     (properties `((upstream-name . "gsarima")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://www.r-project.org")
     (synopsis "Two Functions for Generalized SARIMA Time Series Simulation")
@@ -3229,6 +3587,9 @@ method is described in Briet OJT, Amerasinghe PH, and Vounatsou P (2013)
         (base32 "1p1rab2dlh4h9bfg464nhx708p7kc4q01ifccdh5756lq1qh2kzv"))))
     (properties `((upstream-name . "GSAQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GSAQ")
     (synopsis "Gene Set Analysis with QTL")
     (description
@@ -3252,6 +3613,9 @@ overlapped Quantitative Trait Loci names.")
         (base32 "1xhq5nc3kbz3ml9qkdxm6m0c65fybabfhgqlwii2105jl0ll7qy5"))))
     (properties `((upstream-name . "GSAfisherCombined")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GSAfisherCombined")
     (synopsis "Gene Set Analysis with Fisher Combined Method")
     (description
@@ -3273,6 +3637,9 @@ Methods for Research Workers.")
         (base32 "1jj9scv9x32zb24114a4sa43xvjmf3gmq8lnfablldjn7p7yx9cv"))))
     (properties `((upstream-name . "GSA.UN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-e1071))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GSA.UN")
@@ -3295,6 +3662,9 @@ allows to identify the most sensitive parameter or parameters of a model.")
         (base32 "10sv1kzf9z1c27d99rvxvx1gmhga6rj1mcyfkvyg93gd8i1jwxg9"))))
     (properties `((upstream-name . "grwat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-zoo
                              r-trend
@@ -3334,6 +3704,9 @@ functions for high-quality visualization.")
         (base32 "1xkcx2agvrpfnmplgaqx70vz303v8rhwnxdyr4hmdlf4h92lbv8i"))))
     (properties `((upstream-name . "GRTo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bootstrap))
     (home-page "https://cran.r-project.org/package=GRTo")
     (synopsis
@@ -3356,6 +3729,9 @@ catalogs.")
         (base32 "1dw5rjs82r82l6qryyyq9cczm770v4iv60d7pi1nb4b0733ndbd5"))))
     (properties `((upstream-name . "grt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=grt")
     (synopsis "General Recognition Theory")
@@ -3376,6 +3752,9 @@ experiments based on the General Recognition Theory.")
         (base32 "0wzaddhqxygw7p81ni2dl2fwr5kwb4qjar126n9mq8n6bkbvq2yk"))))
     (properties `((upstream-name . "GRSxE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ranger r-glmnet))
     (home-page "https://cran.r-project.org/package=GRSxE")
     (synopsis
@@ -3402,6 +3781,9 @@ construction and @code{GxE} testing (Lau et al., 2023,
         (base32 "0i8qcqk97lm2pwjl2s6lfa4p6c69p8xl3q88bpn706ib687f5j3x"))))
     (properties `((upstream-name . "GRShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-sirt
@@ -3445,6 +3827,9 @@ for characteristic and information curves.  Samejima (2018)
         (base32 "1g560n81kqf81n1z3s4yxl24r386q21avjknz6msqzp4xhxhr4l6"))))
     (properties `((upstream-name . "GRS.test")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GRS.test")
     (synopsis
      "GRS Test for Portfolio Efficiency, Its Statistical Power Analysis, and Optimal Significance Level Calculation")
@@ -3467,6 +3852,9 @@ determined by minimizing the expected loss from hypothesis testing.")
         (base32 "14ss6assqk6s9kv4bvzlydm8qrbnslm4vj876q5dn2dw4k50dai1"))))
     (properties `((upstream-name . "GrpString")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-plyr r-cluster))
     (home-page "https://cran.r-project.org/package=GrpString")
     (synopsis
@@ -3494,6 +3882,9 @@ research.")
         (base32 "05417f0pnp21svi30vcbkkw16zyg1kxynfigh5w2jdjmd12cb899"))))
     (properties `((upstream-name . "grpSLOPE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/agisga/grpSLOPE")
@@ -3520,6 +3911,9 @@ see Brzyski, Gossmann, Su, Bogdan (2018) <doi:10.1080/01621459.2017.1411269>.")
         (base32 "187c3y3rsls1a66phb6kvndfh0rz7h8kl6w10gi9k6r8q6isvl9i"))))
     (properties `((upstream-name . "grpseq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://sites.google.com/view/lmaowisc/")
@@ -3542,6 +3936,9 @@ multiple time points (Gallo, Mao, and Shih, 2014,
         (base32 "1jcf1h3jbczin6qxjs9f1yjbm83rlkih23zgfj2j0yxhxk9b7vfj"))))
     (properties `((upstream-name . "grpsel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ryan-thompson/grpsel")
@@ -3567,6 +3964,9 @@ overlapping groups.")
         (base32 "0344k07xy64byfp01qkp5fmwykl8nflz2l6zkk613f8bxqd342qn"))))
     (properties `((upstream-name . "grpreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://pbreheny.github.io/grpreg/")
@@ -3596,6 +3996,9 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
         (base32 "0ivkk669ycgghmbqzbkg6nz94y9gicixnyxd0np4bmrv62knz1h2"))))
     (properties `((upstream-name . "grpnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=grpnet")
     (synopsis "Group Elastic Net Regularized GLMs and GAMs")
@@ -3625,6 +4028,9 @@ spline) basis function expansion.")
         (base32 "0jf48ahc6d6biwx235dlvbk1papxkqbcnvxsr93p5047pjm02y3a"))))
     (properties `((upstream-name . "grplasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=grplasso")
     (synopsis "Fitting User-Specified Models with Group Lasso Penalty")
     (description "Fits user-specified (GLM-) models with group lasso penalty.")
@@ -3642,6 +4048,9 @@ spline) basis function expansion.")
         (base32 "0m9zxnmg8gfzridzk4lhhp1gw3nrygarn90ppwyi67bqdpp5hkfh"))))
     (properties `((upstream-name . "grPipe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsvg
                              r-png
                              r-magrittr
@@ -3669,6 +4078,9 @@ nodes.")
         (base32 "02x98zmaa7f73qv62wzr0vyyci7kcx7mmyw7cm3inlyphlkywvlw"))))
     (properties `((upstream-name . "grpCox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass r-colorspace))
     (home-page "https://cran.r-project.org/package=grpCox")
     (synopsis
@@ -3694,6 +4106,9 @@ are provided.")
         (base32 "04q8psz4fiibjj0pl6n7wkq83qn1aizzixww8gqdxzzsq6kay81q"))))
     (properties `((upstream-name . "growthrates")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice r-fme r-desolve))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tpetzoldt/growthrates")
@@ -3715,6 +4130,9 @@ experimental data, in particular from batch experiments and plate reader trials.
         (base32 "1ak3yqlm7dnkdjlmikwa57qnf7yd9n1ixz36gv3shr252750x9cd"))))
     (properties `((upstream-name . "growthrate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrix r-clime))
     (home-page "https://cran.r-project.org/package=growthrate")
     (synopsis "Bayesian reconstruction of growth velocity")
@@ -3737,6 +4155,13 @@ growth curves) at isolated time points.")
         (base32 "1bz1411ka1pghaa67ad0jkdzykadd64wzn8g37gp7z8zm1ablhzh"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-stringi
                              r-reshape
                              r-readxl
@@ -3781,6 +4206,9 @@ information).  The package @code{growthPheno} can also be installed from
         (base32 "1lryxdjq5ns08sqfcrsi9q2h399xr6lhxgh7kasx6pajly35vg1r"))))
     (properties `((upstream-name . "growthmodels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/drodriguezperez/growthmodels")
     (synopsis "Nonlinear Growth Models")
     (description
@@ -3799,6 +4227,9 @@ information).  The package @code{growthPheno} can also be installed from
         (base32 "1l3dqcl395nh406s7d5554r5ynk1a7v5ba5kmnv9r7lj7h9nfdjj"))))
     (properties `((upstream-name . "growthcurver")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-minpack-lm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sprouffske/growthcurver")
@@ -3824,6 +4255,9 @@ the inflection point.  Method described in Sprouffske and Wagner (2016)
         (base32 "0wlpaqjw44xa7z95ngiihgvmcrif6d2j7mfzjlzjgc04sjsb6y1v"))))
     (properties `((upstream-name . "growthcleanr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-r-utils
                              r-plyr
@@ -3853,6 +4287,9 @@ records.")
         (base32 "05yxjlbv1i4ly8yp3aqbxzq1z2mp7sfx7xyqw48qsdv0acqai7jy"))))
     (properties `((upstream-name . "growth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil))
     (native-inputs (list gfortran))
     (home-page "http://www.commanster.eu/rcode.html")
@@ -3876,6 +4313,9 @@ effects dependence.")
         (base32 "0z2kz7gd5grpb5kan6j6nbjsgdii7is4bwyx3jzsziq74q239fig"))))
     (properties `((upstream-name . "growR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-rdpack r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kuadrat/growR")
@@ -3905,6 +4345,9 @@ performance.")
         (base32 "1v1sawv9fbb6lw4ynjdkj02z8rv5k8pkw55wmg2ws3jisy3xrcm7"))))
     (properties `((upstream-name . "growfunctions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spam r-reshape2 r-rcpparmadillo r-rcpp
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=growfunctions")
@@ -3932,6 +4375,9 @@ seasonality.")
         (base32 "1flqjkmvl4wmz53hckn9j9w4lg4kjrjbx98hzlfkzc9ikkp68d7z"))))
     (properties `((upstream-name . "grove")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=grove")
     (synopsis "Wavelet Functional ANOVA Through Markov Groves")
@@ -3953,6 +4399,9 @@ through wavelet-domain Markov groves. <@code{arXiv:1602.03990v2} [stat.ME]>.")
         (base32 "1c5yrsfgkhbg1fcjbrilfmf0phjry5z34536yfizc8wbc7mmmj0c"))))
     (properties `((upstream-name . "groupWQS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp r-rjags r-mass r-glm2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=groupWQS")
@@ -3975,6 +4424,9 @@ with continuous or binary outcomes.  Wheeler D, Czarnota J.(2016)
         (base32 "1nhz9lyh863krxqqi189zpng12y658615w372km98scn1lwl6fi9"))))
     (properties `((upstream-name . "groupwalk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.biorxiv.org/content/10.1101/2022.01.30.478144v1")
     (synopsis "Implement the Group Walk Algorithm")
     (description
@@ -3996,6 +4448,9 @@ threshold.")
         (base32 "10scrwi5g2i4g32wfksfhmmbhiddcnj4khh7ls32kx2m4lhmll53"))))
     (properties `((upstream-name . "groupTesting")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-bingroup2))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=groupTesting")
@@ -4030,6 +4485,9 @@ estimator of disease prevalence.")
         (base32 "1v2230mw0irsr5y8n45g8sd362jp7f6dy2r532mhflfdqy6i2khs"))))
     (properties `((upstream-name . "GroupTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GroupTest")
     (synopsis "Multiple Testing Procedure for Grouped Hypotheses")
     (description
@@ -4050,6 +4508,9 @@ discovery rate and within-group false discovery rate.")
         (base32 "0051sihgnr0m60rkx3mqk2gsp2niff7bmd934czbxzrm3ki5jp6n"))))
     (properties `((upstream-name . "GroupSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tcltk2 r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://rpahl.github.io/GroupSeq/")
@@ -4074,6 +4535,9 @@ approach by Lan-@code{DeMets} (1994) <doi:10.1002/sim.4780131308>.")
         (base32 "0n7pd93a3v3ii85g2ms02zdvy8rkb0j8kfp1bvmfy71kd1ghc7d5"))))
     (properties `((upstream-name . "grouprar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-stringr r-gridextra r-ggplot2
                              r-extradistr))
     (home-page "https://cran.r-project.org/package=grouprar")
@@ -4113,6 +4577,9 @@ Cheung, S. H., & Chan, W. S. (2008) <doi:10.1002/cjs.5550360404>.")
         (base32 "1v4k8is6dkf7cl97z14i3j791a9xfcb1icm2ll5ss6h0d5ad3hym"))))
     (properties `((upstream-name . "groupr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -4142,15 +4609,18 @@ pivoting and other group manipulation functions.")
         (base32 "1wl828ligvvw55xic383gdn7aq4mbwsnkl4ym6f71jn5g3p36d0i"))))
     (properties `((upstream-name . "groupICA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://github.com/sweichwald/groupICA-R")
     (synopsis "Independent Component Analysis for Grouped Data")
     (description
      "This package contains an implementation of an independent component analysis
-(ICA) for grouped data.  The main function @code{groupICA}() performs a blind
+(ICA) for grouped data.  The main function @code{groupICA()} performs a blind
 source separation, by maximizing an independence across sources and allows to
 adjust for varying confounding for user-specified groups.  Additionally, the
-package contains the function uwedge() which can be used to approximately
+package contains the function @code{uwedge()} which can be used to approximately
 jointly diagonalize a list of matrices.  For more details see the project
 website <https://sweichwald.de/@code{groupICA/>}.")
     (license license:agpl3)))
@@ -4167,6 +4637,9 @@ website <https://sweichwald.de/@code{groupICA/>}.")
         (base32 "0wmzgd76adwq2gm8p1cxgy1kj1vl83bfsx4d9afk7wh3dxgq4c7l"))))
     (properties `((upstream-name . "Grouphmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-pheatmap
                              r-org-mm-eg-db
@@ -4203,6 +4676,9 @@ DEG, go, and merge.")
         (base32 "16qyvd8k7wdg0iafs5gxljx464nd79kwdl7g7g6hvhrhr621mgyq"))))
     (properties `((upstream-name . "groupedSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpp
                              r-qvalue
@@ -4241,6 +4717,9 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
         (base32 "0r126mq7cyc19nizyh8xk5a0pfi1sic8lxfvnlmhhhbpn97lqyqz"))))
     (properties `((upstream-name . "groupdata2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -4273,6 +4752,9 @@ downsampling or collapse them to fewer groups.")
         (base32 "0fxgh1mksrfmd4yjrpxg3nfby5wyx75lj0shb5xrdzl7pxzh56ai"))))
     (properties `((upstream-name . "GroupComparisons")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-car))
     (home-page "https://cran.r-project.org/package=GroupComparisons")
     (synopsis "Paired/Unpaired Parametric/Non-Parametric Group Comparisons")
@@ -4295,6 +4777,9 @@ format (Fay, M.P., & Proschan, M.A. (2010)<DOI: 10.1214/09-SS051>).")
         (base32 "0x41x7npaawnh6nxh4d4vmv2zwzc6c5ijrhh6fdpwzl4p75qlh1x"))))
     (properties `((upstream-name . "GroupBN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-visnetwork
                              r-stringr
@@ -4329,16 +4814,19 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
         (base32 "00lp733avwjxap5drc3p3763y4xhhphlck7zp7g5cijcbga4k54s"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://groundhogr.com/")
     (synopsis "Version-Control for CRAN, GitHub, and GitLab Packages")
     (description
      "Make R scripts reproducible, by ensuring that every time a given script is run,
 the same version of the used packages are loaded (instead of whichever version
 the user running the script happens to have installed).  This is achieved by
-using the command groundhog.library() instead of the base command library(), and
-including a date in the call.  The date is used to call on the same version of
-the package every time (the most recent version available at that date).  Load
-packages from CRAN, @code{GitHub}, or Gitlab.")
+using the command @code{groundhog.library()} instead of the base command
+@code{library()}, and including a date in the call.  The date is used to call on
+the same version of the package every time (the most recent version available at
+that date).  Load packages from CRAN, @code{GitHub}, or Gitlab.")
     (license license:gpl3)))
 
 (define-public r-groqr
@@ -4353,6 +4841,9 @@ packages from CRAN, @code{GitHub}, or Gitlab.")
         (base32 "0q03yad36mlrm8yqavdssb9h55vphxnb3vp6kman78nm2nkf6zmq"))))
     (properties `((upstream-name . "groqR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinywidgets
                              r-shiny
                              r-rstudioapi
@@ -4384,6 +4875,9 @@ and function names, thereby streamlining the development process.")
         (base32 "0mm303iiaqfdvr94x765dbd1018cvvl0q4z2zppwk1aif0kb53x8"))))
     (properties `((upstream-name . "gromovlab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog r-igraph r-glpkapi r-cluster r-ape))
     (home-page "https://cran.r-project.org/package=gromovlab")
     (synopsis "Gromov-Hausdorff Type Distances for Labeled Metric Spaces")
@@ -4406,6 +4900,9 @@ phylogenetic trees, but may apply to a diversity of scenarios.")
         (base32 "1q95j7yp8iv1545gqgkq139i08ky5ga32krkr1vy67j3qs4zkiwm"))))
     (properties `((upstream-name . "groc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rrcov r-robustbase r-pls r-mgcv r-mass))
     (home-page "https://cran.r-project.org/package=groc")
     (synopsis "Generalized Regression on Orthogonal Components")
@@ -4428,6 +4925,9 @@ described in Bilodeau, Lafaye De Micheaux and Mahdi (2015)
         (base32 "1l1msh900kmbbszn1f9vfdix4a6180lvs3gfidp9pgkvi2gv2g01"))))
     (properties `((upstream-name . "grobblR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rcurl
@@ -4459,6 +4959,9 @@ aesthetically pleasing tables, images, plots and/or text.")
         (base32 "1g6n00gnz47w06wkx0sha97qxxyhc8n2y8zaagqx7krgzx7lkha3"))))
     (properties `((upstream-name . "GROAN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rrblup r-plyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GROAN")
@@ -4481,6 +4984,9 @@ phenotypes.")
         (base32 "1c36km6g4fcsvpirlh88fl3zq9pdpdyfilahfx949salj0gnqsn6"))))
     (properties `((upstream-name . "GRNNs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-scales r-rdist r-cvtools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GRNNs")
@@ -4505,6 +5011,9 @@ traditionally.")
         (base32 "1dxcmar42g9hz4zlyszlmmnnsnja0gxfggav5jxv0gkp32rkd0wh"))))
     (properties `((upstream-name . "grnn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://flow.chasset.net/r-grnn/")
     (synopsis "General regression neural network")
     (description
@@ -4523,6 +5032,9 @@ traditionally.")
         (base32 "0byyl1121acs90xbhgi4g4hnf4n259k7cg5grm6dyaxqkha3lyw7"))))
     (properties `((upstream-name . "grmsem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-optimparallel r-numderiv r-msm))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=grmsem")
@@ -4551,6 +5063,9 @@ GRMs, with twin-research-based SEM techniques, St Pourcain et al. (2017)
         (base32 "04gka7q0wy1w4qg3wm4vnzc1q0g4zgvrvra1la2w1sggc5asdh32"))))
     (properties `((upstream-name . "grizbayr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -4582,6 +5097,9 @@ Chris (2015) \"Bayesian A/B Testing at VWO\"
         (base32 "0rshipm8rdynl19a4dsvvvlhkd0n4vjfkidwnv5iilc5ini7c4qr"))))
     (properties `((upstream-name . "gripp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis r-gensa r-ga))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gripp")
@@ -4608,6 +5126,9 @@ C. Santana 2008) <doi:10.1080/17415970802082922>.")
         (base32 "17q26vwz8mmdq649pmb6n4q210912f8q7qcc2imq10ri9ssaw295"))))
     (properties `((upstream-name . "GRIN2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-tidyselect
                              r-tibble
@@ -4649,6 +5170,9 @@ Stan, et al. (2013) <DOI:10.1093/bioinformatics/btt372>.")
         (base32 "005ywc31yn1cs54kjlkrryw0s7zm8dqqfjkdlkm4s1sbc9r3mssz"))))
     (properties `((upstream-name . "GrimR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-car))
     (home-page "https://cran.r-project.org/package=GrimR")
     (synopsis "Calculate Optical Parameters from Spindle Stage Measurements")
@@ -4673,6 +5197,8 @@ Details of the method can be found in Dufey (2017) <@code{arXiv:1703.00070>}.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4721,6 +5247,9 @@ package and the book by HÃ¸jsgaard, Edwards and Lauritzen (2012,
         (base32 "01yazynwprzjygkh0dwrlvbjsmxvfy1pxr0nldnbngmq10wvpp2n"))))
     (properties `((upstream-name . "gridstackeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinyjs r-shiny r-htmltools r-checkmate))
     (home-page "https://cran.r-project.org/package=gridstackeR")
     (synopsis "Wrapper for 'gridstack.js'")
@@ -4745,6 +5274,8 @@ functionalities <https://github.com/gridstack/gridstack.js>.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4788,6 +5319,9 @@ with content analysis.")
         (base32 "106h1lk2fyfl68iwmbqbm9h8ip75ibanr1dsi6nrmd54pz475ry8"))))
     (properties `((upstream-name . "gridOT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=gridOT")
     (synopsis "Approximate Optimal Transport Between Two-Dimensional Grids")
@@ -4813,6 +5347,9 @@ optimal transport are available.")
         (base32 "1zanz8p5ghy7q7dsazv6wfkf5gl2dnbmchw88drbrip1h85gxyid"))))
     (properties `((upstream-name . "GridOnClusters")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-rcpp
                              r-plotrix
@@ -4844,6 +5381,9 @@ association, function, or causality.")
         (base32 "0yzy7w4bk3rn9yjqy06gzkcs0dla3n49z3v1z0mjikg8cd97d5ni"))))
     (properties `((upstream-name . "gridGraphviz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list graphviz))
     (propagated-inputs (list r-rgraphviz r-graph))
     (home-page "https://r-forge.r-project.org/projects/gridgraph/")
@@ -4869,6 +5409,9 @@ viewports and grobs that @code{gridGraphviz} produces.")
         (base32 "1j19bwkc33r85xkc9vlphyyq3w8gwfigjkifikl7yi216fhgfrgr"))))
     (properties `((upstream-name . "gridGeometry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polyclip))
     (home-page "https://github.com/pmur002/gridgeometry")
     (synopsis "Polygon Geometry in 'grid'")
@@ -4889,6 +5432,9 @@ viewports and grobs that @code{gridGraphviz} produces.")
         (base32 "1x1bbyfbyyn13sw5pvnzns6mq57fyq2fywj8hx5k9rhqclzjqxyr"))))
     (properties `((upstream-name . "gridDebug")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list graphviz))
     (propagated-inputs (list r-gridsvg r-gridgraphviz r-graph))
     (home-page "https://cran.r-project.org/package=gridDebug")
@@ -4910,6 +5456,9 @@ have been drawn using grid graphics.")
         (base32 "0d8zibd27z0krn564ba906zlvnb1fx4mfvhpii7pxr0pzjir2a9c"))))
     (properties `((upstream-name . "GRIDCOPULA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp
                              r-reshape2
                              r-pracma
@@ -4936,6 +5485,9 @@ measures and provides several copula graphics.")
         (base32 "1n5d6svxblcxpzf79px0qjxsydpwjpnfcagnwk35ljinyd0wv68z"))))
     (properties `((upstream-name . "gridBezier")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/pmur002/gridbezier")
     (synopsis "Bezier Curves in 'grid'")
     (description
@@ -4957,6 +5509,9 @@ points on curves, tangents to curves, and normals to curves.")
         (base32 "1qlj3zxv7fy7mwqrmpidn2z3ni8vwp1yvz8w5gvzrxac39xqc2dv"))))
     (properties `((upstream-name . "GrFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=GrFA")
     (synopsis "Group Factor Analysis")
@@ -4981,6 +5536,9 @@ Aggregated projection method.")
         (base32 "1ibb2ylqrvgji899sraywklsq63i65y7hvm4km7hwblxgarbjgxm"))))
     (properties `((upstream-name . "grf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-rcppeigen
                              r-rcpp
@@ -5009,6 +5567,9 @@ survival regression, all with support for missing covariates.")
         (base32 "1mjnfiqc4zj08n8j899zqxkvxd6ryp6sg1n46isy0ni7ghbng38w"))))
     (properties `((upstream-name . "GreyZones")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-irrcac))
     (home-page "https://cran.r-project.org/package=GreyZones")
     (synopsis
@@ -5036,6 +5597,9 @@ inter-rater agreement tables (Demirhan and Yilmaz (2023)
         (base32 "0gv4kqgn10l3pknx7w26yas1h70gsb2h8a82w2ykxs134xl4vpll"))))
     (properties `((upstream-name . "Greymodels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinywidgets
                              r-shinydashboard
                              r-shiny
@@ -5096,6 +5660,9 @@ Zeng, B., Li, C. (2018) <doi:10.1016/j.cie.2018.02.042>, Xie, N., Liu, S. (2015)
         (base32 "0vxl4kgihcyl96qiz6sz5icznaa1jpsqqbn1irwmzyngwsh1qvzw"))))
     (properties `((upstream-name . "GreyModel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GreyModel")
     (synopsis "Fitting and Forecasting of Grey Model")
     (description
@@ -5115,6 +5682,9 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
         (base32 "0qkydablpwjmp15pamdgh063pkq03zc2hyx9vnr08fyj9n2jdaaz"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xtable
                              r-texreg
@@ -5150,6 +5720,9 @@ models and visualising them.")
         (base32 "0s6nan76rrmh3yhgvzb7pqdrzx2w9px8ay4v9yiib4bamy9wmhpb"))))
     (properties `((upstream-name . "grex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://nanx.me/grex/")
     (synopsis "Gene ID Mapping for Genotype-Tissue Expression (GTEx) Data")
@@ -5172,6 +5745,9 @@ identifiers in other annotation systems, including Entrez', HGNC', and
         (base32 "094a4hy67j8bk6b0yfvzq5g0ydi69z0m9bqmvdgwv87b3llvpl1q"))))
     (properties `((upstream-name . "gretlR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-rmarkdown r-magrittr r-knitr r-kableextra))
     (native-inputs (list r-knitr))
@@ -5198,6 +5774,9 @@ chunk.")
         (base32 "1yyj4aing56f2vy0gshxwb623g9idg8k4701v3s53lqn4m2ybazk"))))
     (properties `((upstream-name . "gretel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-resistorarray r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/davidbuch/gretel")
@@ -5227,6 +5806,9 @@ traditional methods are also implemented, as described in Yang, Knoke (2001)
         (base32 "0mfz958yinhnddai9k3hsg2zb20b1v8csxxfw2q3fgfqz7p2y3i1"))))
     (properties `((upstream-name . "greta.gp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tensorflow r-rlang r-greta r-glue r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/greta-dev/greta.gp")
@@ -5250,6 +5832,9 @@ processes.  This is an extension to the greta software, Golding (2019)
         (base32 "0pv74j4j0ggad5akv318bmc14vjgx4fqw3p8dsdi4447ks5z68l7"))))
     (properties `((upstream-name . "greta.dynamics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tensorflow r-rlang r-greta r-glue r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/greta-dev/greta.dynamics")
@@ -5274,6 +5859,9 @@ differential equations.  This is an extension to the greta software, Golding
         (base32 "0j4bfbwsx0hrm6ni64wzmj6sb2696cbn1g9yyp0d69xa41da5194"))))
     (properties `((upstream-name . "greta.censored")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tensorflow r-reticulate r-greta r-glue))
     (home-page "https://github.com/mtwesley/greta.censored")
     (synopsis "Censored Distributions for 'greta'")
@@ -5299,6 +5887,9 @@ Probability for efficient computation.")
         (base32 "01cpa5125h0a9hxqrccfbsxkqvv8y4bdw0fgn43gyfgns90g3g8h"))))
     (properties `((upstream-name . "greta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yesno
                              r-whisker
                              r-tensorflow
@@ -5337,6 +5928,9 @@ the greta forum.")
         (base32 "1zyvw3npqz20mlfvmlrz742xxsigs21srn2df9yyjap93g7wqzy1"))))
     (properties `((upstream-name . "greport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rms
                              r-latticeextra
@@ -5367,6 +5961,9 @@ used by greport for high-level graphics.")
         (base32 "16l2mzd6xm2yk1hs5333w9lfz7iymkwmi3k80yxal9dxqh5hajkb"))))
     (properties `((upstream-name . "GREMLINS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-pbmcapply r-igraph r-blockmodels r-aricode))
     (native-inputs (list r-knitr))
     (home-page "https://GrossSBM.github.io/GREMLINS/")
@@ -5391,6 +5988,9 @@ networks, as described in Bar-hen, Barbillon and Donnet (2020)
         (base32 "164rql775rhfri3ih188lci4lwi5lzykdxhz3lypfvf5mr588ic9"))))
     (properties `((upstream-name . "gremlin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-matrix))
     (home-page "https://github.com/matthewwolak/gremlin")
     (synopsis "Mixed-Effects REML Incorporating Generalized Inverses")
@@ -5416,6 +6016,9 @@ restricted log-likelihood, but with other algorithms available.")
         (base32 "1v1zcsk563cs6c1xn1qzm4v3yydmpr59hkz40xafkq4jbq9k2s9g"))))
     (properties `((upstream-name . "GRelevance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-philentropy r-mvtnorm r-mass))
     (home-page "https://cran.r-project.org/package=GRelevance")
     (synopsis
@@ -5440,6 +6043,9 @@ Methods for comparing distributions are as described in: Xiaoping Shi (2021)
         (base32 "1b8c8wwp8r2v51ayy7rbav24wfz75z1pylg0p4vsasaw9p06dlbz"))))
     (properties `((upstream-name . "gregRy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-purrr r-magrittr r-dplyr))
     (home-page "https://cran.r-project.org/package=gregRy")
     (synopsis "GREGORY Estimation")
@@ -5465,6 +6071,9 @@ model.")
         (base32 "067plq78h4qkzsdwdwman4d4n66fx23q4cj21m8mm2zpwqknmnm7"))))
     (properties `((upstream-name . "GregoryQuadrature")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dhetting/GregoryQuadrature")
@@ -5473,52 +6082,6 @@ model.")
      "Computes Gregory weights for a given number nodes and function order.  Anthony
 Ralston and Philip Rabinowitz (2001) <ISBN:9780486414546>.")
     (license license:gpl3)))
-
-(define-public r-greg
-  (package
-    (name "r-greg")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Greg" version))
-       (sha256
-        (base32 "13rsah8vf9s8wpkr5hlayyqa8v728cz80bvpg8vmlvnam8isb30s"))))
-    (properties `((upstream-name . "Greg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sandwich
-                             r-rms
-                             r-rlang
-                             r-purrr
-                             r-nlme
-                             r-knitr
-                             r-htmltable
-                             r-hmisc
-                             r-gmisc
-                             r-glue
-                             r-forestplot
-                             r-epi
-                             r-dplyr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "http://gforge.se")
-    (synopsis "Regression Helper Functions")
-    (description
-     "This package provides methods for manipulating regression models and for
-describing these in a style adapted for medical journals.  Contains functions
-for generating an HTML table with crude and adjusted estimates, plotting hazard
-ratio, plotting model estimates and confidence intervals using forest plots,
-extending this to comparing multiple models in a single forest plots.  In
-addition to the descriptive methods, there are functions for the robust
-covariance matrix provided by the sandwich package, a function for adding
-non-linearities to a model, and a wrapper around the Epi package's Lexis()
-functions for time-splitting a dataset when modeling non-proportional hazards in
-Cox regressions.")
-    (license license:gpl3+)))
 
 (define-public r-greenfeedr
   (package
@@ -5532,6 +6095,9 @@ Cox regressions.")
         (base32 "075kv3ir9pffsx6asxq73laniyx2rz02i4rd73x5vv4sy64vrvb1"))))
     (properties `((upstream-name . "greenfeedr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rmarkdown
@@ -5562,6 +6128,9 @@ finalized @code{GreenFeed} data.")
         (base32 "18li2xs12gi4c1wsjxdqbjfyw81xsmgnljdrlgj9fdw91w3f9bzw"))))
     (properties `((upstream-name . "GREENeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmap
                              r-tidyselect
                              r-sf
@@ -5599,6 +6168,9 @@ Equation for European Nutrient losses (GREEN); Grizzetti et al. (2005)
         (base32 "11lrbjm91m2lbgr0wdy84mal4qxs9x0bmniaijxpw9fdwrkqq0aw"))))
     (properties `((upstream-name . "greencrab.toolkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -5628,6 +6200,9 @@ independently or jointly.  Detailed model information is found in Keller (2022)
         (base32 "1wdz2lrrchwsxm68mvjcx3nlnr93n0jj8d5gr0j55idn7wn73gdq"))))
     (properties `((upstream-name . "greenclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/JeffJetton/greenclust")
     (synopsis "Combine Categories Using Greenacre's Method")
     (description
@@ -5635,9 +6210,10 @@ independently or jointly.  Detailed model information is found in Keller (2022)
 contingency table, two at a time, by selecting the pair of categories whose
 combination yields a new table with the smallest loss of chi-squared, as
 described by Greenacre, M.J. (1988) <doi:10.1007/BF01901670>.  The result is
-compatible with the class of object returned by the stats package's hclust()
-function and can be used similarly (plotted as a dendrogram, cut, etc.).
-Additional functions are provided for automatic cutting and diagnostic plotting.")
+compatible with the class of object returned by the stats package's
+@code{hclust()} function and can be used similarly (plotted as a dendrogram,
+cut, etc.).  Additional functions are provided for automatic cutting and
+diagnostic plotting.")
     (license license:expat)))
 
 (define-public r-greeks
@@ -5652,6 +6228,9 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
         (base32 "0vhb3k3fs57kx24bh3dnk3qgzrvn4qxnqakb2g8h1ah22i0qnvcs"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-shiny
@@ -5691,6 +6270,9 @@ Tree Method is implemented, as is presented in Hull, J. C. (2017).")
         (base32 "1bsdxzfz8ipa4c8xl2gjjymy20skqf5x52lqkn5wyxiln3dyx3vn"))))
     (properties `((upstream-name . "greekLetters")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-assertthat))
     (home-page "https://cran.r-project.org/package=greekLetters")
     (synopsis
@@ -5725,6 +6307,9 @@ In addition, it is a natural extension of the clisymbols package.")
         (base32 "14i6m5qlh1fca9xmzid01hicd3bkf6rzl139ss78gvw544zrapw7"))))
     (properties `((upstream-name . "GreedyExperimentalDesignJARs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page
@@ -5748,6 +6333,9 @@ standalone package without @code{GreedyExperimentalDesign}.")
         (base32 "057wpfg5kfgcvfgry12agn7arg917jwgvxhjz6q1na13y8pmqnrv"))))
     (properties `((upstream-name . "GreedyExperimentalDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-survey
                              r-stringr
@@ -5797,6 +6385,9 @@ Experimental Design by Hybridizing Binary Matching with Imbalance Optimization\"
         (base32 "19bgrgzb7jdqpljcbhr3d98y331k1b8fbwgcipak6zkhk2vr6vqz"))))
     (properties `((upstream-name . "GreedyEPL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=GreedyEPL")
     (synopsis "Greedy Expected Posterior Loss")
@@ -5820,6 +6411,9 @@ performed through a greedy algorithm described in Rastelli, R. and Friel, N.
         (base32 "05p24991s97h0hmvv88s3hca9b50384hm6qm771dqznqs5m4ggrq"))))
     (properties `((upstream-name . "greed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-rcpparmadillo
                              r-rcpp
@@ -5859,6 +6453,9 @@ combination of greedy local search and a genetic algorithm (see
         (base32 "1zv71cb6kj4bm11ihygzxhmc5hcxn7m4pmyga4fpxmc2xz8pv1sz"))))
     (properties `((upstream-name . "grec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-raster r-lifecycle r-imagine r-abind))
     (home-page "https://github.com/LuisLauM/grec")
     (synopsis
@@ -5880,6 +6477,9 @@ oceanographic data using image processing methods based on Gradient Recognition.
         (base32 "0fb065y4k7zsxb91kswssfq8zlg1p9780mx8wnzxn1pydckn4z3n"))))
     (properties `((upstream-name . "greatR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-patchwork
                              r-optimization
@@ -5909,6 +6509,9 @@ between reference and query data.")
         (base32 "05ll1ncxqnkyp5231xlpkmzd07m2rnmcdzcc68mq1gqfcahakdl1"))))
     (properties `((upstream-name . "GRCRegression")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-mass))
     (home-page "https://cran.r-project.org/package=GRCRegression")
     (synopsis
@@ -5933,6 +6536,9 @@ social sciences.  The algorithm implemented is described in Fu et al., (2021)
         (base32 "0fa1c9sf2sb085izcimwg78s7a7zgflncx0wbzhh8i8vfmi5xvi9"))))
     (properties `((upstream-name . "GRCdesigns")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GRCdesigns")
     (synopsis "Generalized Row-Column Designs")
     (description
@@ -5962,6 +6568,9 @@ at least one cell which does not contain any treatment.")
         (base32 "0nshii6kfvffncgcrmm7wvniq94j9djj84jikcb6ck49viikkrky"))))
     (properties `((upstream-name . "GRCdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nloptr r-cubature))
     (home-page "https://cran.r-project.org/package=GRCdata")
     (synopsis
@@ -5986,6 +6595,9 @@ responses in surveys.")
         (base32 "1l067jz2631x7kbmzr1zjyy3bbzr5qcyrrvw52sdplg1flald22c"))))
     (properties `((upstream-name . "gRc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-igraph r-grbase))
     (home-page "https://people.math.aau.dk/~sorenh/software/gR/")
     (synopsis
@@ -6010,6 +6622,9 @@ Hojsgaard and Lauritzen (2008, <doi:10.1111/j.1467-9868.2008.00666.x>).")
         (base32 "18hvdwr3pi5pn2bw6hd4vaqy1ybgsxqkw3y5zg9yn6rzd2zhriia"))))
     (properties `((upstream-name . "gRbase")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-matrix
                              r-igraph))
     (native-inputs (list r-knitr))
@@ -6042,6 +6657,9 @@ citation details.")
         (base32 "1kc3dm2wmbwbad6sdhzs6bnpmri66142rc552cd75pijzbnymqvf"))))
     (properties `((upstream-name . "gravmagsubs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://code.usgs.gov/gmegsc/gravmagsubs")
@@ -6065,6 +6683,9 @@ rectangular prisms at specific observation points using the method of Plouff
         (base32 "05kkprv63x9m715yv9kx2k70bqnkacc72zr0aljcj0ry10nl40c6"))))
     (properties `((upstream-name . "gravity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-survival
@@ -6100,6 +6721,9 @@ multiplicative models.")
         (base32 "11n85bdmigqasbq8c1amj1k7manfvs3gnax2ihsf2vp56s9c463p"))))
     (properties `((upstream-name . "gravitas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsibble
                              r-tidyr
                              r-tibble
@@ -6140,6 +6764,9 @@ exploring periodicity in the data.")
         (base32 "136s54cgxi8dyy0zpjcag9b02lgqgdxa39lpzsk4fndz9h45wp9c"))))
     (properties `((upstream-name . "gRaven")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-grbase r-grain))
     (home-page "https://cran.r-project.org/package=gRaven")
     (synopsis "Bayes Nets: 'RHugin' Emulation with 'gRain'")
@@ -6166,6 +6793,9 @@ without access to Hugin to use code written to use RHugin'.")
         (base32 "1mls2pnnds5c2ys5wsiki0xrwcn9l4bfpl785817cbfw61rwwi3h"))))
     (properties `((upstream-name . "grattanInflators")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hutils r-fy r-data-table))
     (home-page "https://cran.r-project.org/package=grattanInflators")
     (synopsis "Inflators for Australian Policy Analysis")
@@ -6187,6 +6817,9 @@ about date input quality, performance, or the ABS catalogue.")
         (base32 "0cxgj20c7gk55p22rmy1al44if4pk90yf9zify2jz9h7pviwgpjx"))))
     (properties `((upstream-name . "grattan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr
                              r-ineq
                              r-hutilscpp
@@ -6221,6 +6854,9 @@ sample files of personal income tax returns is assumed.")
         (base32 "0y9gblkcn145r8kx4447waqwc59iibm6nlmdykf6vrwn1y5vssa3"))))
     (properties `((upstream-name . "gratis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsibble
                              r-tsfeatures
                              r-tibble
@@ -6259,6 +6895,9 @@ including MAR and ARIMA processes.  Kang, Y., Hyndman, R.J., Li, F.(2020)
         (base32 "0i2nhsrhixbwisgx8354aqsnik5sax9m63fzagmj4k3fcnpry7b0"))))
     (properties `((upstream-name . "graticule")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-reproj r-raster r-geosphere))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hypertidy/graticule")
@@ -6282,6 +6921,9 @@ lines.")
         (base32 "0jjjncs5c3zd3jlxk5ywkg31lhxafdj5b58k664yd29193f2w3m0"))))
     (properties `((upstream-name . "gratia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vctrs
                              r-tidyselect
@@ -6307,8 +6949,8 @@ lines.")
     (description
      "Graceful ggplot'-based graphics and utility functions for working with
 generalized additive models (GAMs) fitted using the mgcv package.  Provides a
-reimplementation of the plot() method for GAMs that mgcv provides, as well as
-tidyverse compatible representations of estimated smooths.")
+reimplementation of the @code{plot()} method for GAMs that mgcv provides, as
+well as tidyverse compatible representations of estimated smooths.")
     (license license:expat)))
 
 (define-public r-grates
@@ -6323,6 +6965,9 @@ tidyverse compatible representations of estimated smooths.")
         (base32 "1xglxba5i31hmam49mvklp17vwzagqc0gj05v61aq48ay0kj7pbv"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://www.reconverse.org/grates/")
     (synopsis "Grouped Date Classes")
@@ -6344,6 +6989,9 @@ grouped date classes.  This package is part of the RECON
         (base32 "02flwjchvqr7wx5rsbiq3l8pgkmg6anw30piydnw0dsp5pmxrq1b"))))
     (properties `((upstream-name . "grateful")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-rmarkdown r-renv r-remotes r-knitr))
     (home-page "https://pakillo.github.io/grateful/")
     (synopsis "Facilitate Citation of R Packages")
@@ -6367,6 +7015,9 @@ or Quarto document.")
         (base32 "0wyrzhmkswx7s2a78lzphqm3jz9akxc462gy0icpvxn2hff9wvki"))))
     (properties `((upstream-name . "graposas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-ga))
     (home-page "https://cran.r-project.org/package=graposas")
     (synopsis "Graphical Approach Optimal Sample Size")
@@ -6392,6 +7043,9 @@ multiplicity adjustment, Technical Report.")
         (base32 "0jf52lclwvqgybdj6fknzx046bh6jgwxvqs4c5g1ii8f2lsz9y07"))))
     (properties `((upstream-name . "graphTweets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zeallot
                              r-tidyr
                              r-rlang
@@ -6421,6 +7075,8 @@ to build nodes and another create a temporal graph.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6434,7 +7090,10 @@ to build nodes and another create a temporal graph.")
                         (for-each (match-lambda
                                     ((source . target) (minify source
                                                                #:target target)))
-                                  '())))))))
+                                  '()))))
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-mvtnorm r-matrixcalc r-matrix r-igraph r-gplots))
     (native-inputs (list r-r-rsp esbuild))
     (home-page "https://github.com/TomKellyGenetics/graphsim/")
@@ -6469,6 +7128,9 @@ expression data to test the performance of genomic analyses.")
         (base32 "0b9j7hv45ml7xl29w7s2m63qc96rm6v746yy6ckpz25y1zv3j2aq"))))
     (properties `((upstream-name . "graphql")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-jsonlite))
     (home-page "https://cran.r-project.org/package=graphql")
     (synopsis "GraphQL Query Parser")
@@ -6489,6 +7151,13 @@ expression data to test the performance of genomic analyses.")
         (base32 "0m6v796hwxdv7nan3157x7b8xpph605ihj6gnmlh3v1p95dygsy7"))))
     (properties `((upstream-name . "graphPAF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-survival
                              r-reshape2
                              r-mass
@@ -6523,6 +7192,9 @@ attributable fractions.")
         (base32 "1x61pdsb3s1vi1iiy9pjq0iz0m5j5b6q3rqhwvx9kvmg4r8yifpv"))))
     (properties `((upstream-name . "graphon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-roptspace r-rdpack))
     (home-page "https://cran.r-project.org/package=graphon")
     (synopsis "Collection of Graphon Estimation Methods")
@@ -6547,6 +7219,9 @@ for generating sample networks using various network models and graphons.")
         (base32 "1fwl5a13mdmia374zas0vvd4dlfnp4in9gj42c0iq01icy1wq0la"))))
     (properties `((upstream-name . "graphkernels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-igraph))
     (home-page "https://cran.r-project.org/package=graphkernels")
     (synopsis "Graph Kernels")
@@ -6569,6 +7244,9 @@ and (4) the Weisfeiler-Lehman graph kernel (state-of-the-art).")
         (base32 "1p5x77ck3prs8782kv176qq9d5ngw3zz3w6qg7aq5658pwc87gd3"))))
     (properties `((upstream-name . "graphicalVAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpparmadillo
                              r-rcpp
@@ -6600,6 +7278,9 @@ regularization.  See also Epskamp, Waldorp, Mottus & Borsboom (2018)
         (base32 "1ffhxifncj5v4fm0kkfdnl3qgg9g13xy9kih6sf5rhiww3cs4haz"))))
     (properties `((upstream-name . "graphicalMCP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrixstats))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/openpharma/graphicalMCP")
@@ -6626,6 +7307,9 @@ graphical MCPs.")
         (base32 "11g036kbh3qr76irvsk126jbqha4miyzk0627s6cscdipvshr5cl"))))
     (properties `((upstream-name . "graphicalExtremes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-osqp
                              r-mvtnorm
@@ -6656,6 +7340,9 @@ Models for Extremes by Engelke and Hitz (2020) <doi:10.1111/rssb.12355>.")
         (base32 "123zqij3rhc4jwms9jgv8vnw6ib37r84d848kk7iyr3aavbb7rq9"))))
     (properties `((upstream-name . "graphicalEvidence")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-foreach
                              r-doparallel))
     (home-page "https://cran.r-project.org/package=graphicalEvidence")
@@ -6664,12 +7351,12 @@ Models for Extremes by Engelke and Hitz (2020) <doi:10.1111/rssb.12355>.")
      "Computes marginal likelihood in Gaussian graphical models through a novel
 telescoping block decomposition of the precision matrix which allows estimation
 of model evidence.  The top level function used to estimate marginal likelihood
-is called evidence(), which expects the prior name, data, and relevant prior
-specific parameters.  This package also provides an MCMC prior sampler using the
-same underlying approach, implemented in prior_sampling(), which expects a prior
-name and prior specific parameters.  Both functions also expect the number of
-burn-in iterations and the number of sampling iterations for the underlying MCMC
-sampler.")
+is called @code{evidence()}, which expects the prior name, data, and relevant
+prior specific parameters.  This package also provides an MCMC prior sampler
+using the same underlying approach, implemented in @code{prior_sampling()},
+which expects a prior name and prior specific parameters.  Both functions also
+expect the number of burn-in iterations and the number of sampling iterations
+for the underlying MCMC sampler.")
     (license license:gpl3)))
 
 (define-public r-graphhopper
@@ -6684,6 +7371,9 @@ sampler.")
         (base32 "1zrnwh86jv37z07b6l1i94dgjn8k3b3a3f76gfjsyyxvlc64i76x"))))
     (properties `((upstream-name . "graphhopper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-magrittr
                              r-jsonlite
@@ -6711,6 +7401,9 @@ converted to simple feature (sf) objects in a convenient way.")
         (base32 "1bv7d0sggwab4rd486ayw9gkb5ja5p5fin5pn92xnrmz8cgwsfxq"))))
     (properties `((upstream-name . "graphframes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-sparklyr r-forge))
     (home-page "https://github.com/rstudio/graphframes")
     (synopsis "Interface for 'GraphFrames'")
@@ -6736,6 +7429,9 @@ Breadth-first search.")
         (base32 "071by9b8figbsf4g0f8a8mgcdksjksc57mnlgggilw7py1yjnjlh"))))
     (properties `((upstream-name . "grapherator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-reshape2
                              r-lhs
@@ -6767,6 +7463,9 @@ weights.")
         (base32 "1cjll41857dh5r1jb3zkbxpkqj2qj9s7867nwfdn0h3ws52fb304"))))
     (properties `((upstream-name . "GrapheR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GrapheR")
     (synopsis "Multi-Platform GUI for Drawing Customizable Graphs in R")
     (description
@@ -6789,6 +7488,9 @@ scatter plot.")
         (base32 "1crzsc05qi4i5q78w4z6s4a2s5y8fb3msr9443bnjv121sj7zn6f"))))
     (properties `((upstream-name . "graphclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sclust r-igraph r-blockmodels))
     (home-page "https://cran.r-project.org/package=graphclust")
     (synopsis "Hierarchical Graph Clustering for a Collection of Networks")
@@ -6812,6 +7514,9 @@ networks with a hierarchical algorithm\" by T. Rebafka (2022)
         (base32 "07a109jjn1s36x1hpb1zvgb2wq41f11l8cv3car1lr6lw5g3rr3x"))))
     (properties `((upstream-name . "graph4lg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-stringr
@@ -6866,6 +7571,8 @@ genetics to create graphs, described by Dyer et Nason (2004)
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -6903,6 +7610,9 @@ module and the htmlwidgets R package.")
         (base32 "0bsnxk7fqick6y76z6s1kwrg1y8spvg0awmdg5hk37g0f3wxgyas"))))
     (properties `((upstream-name . "grapesAgri1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarytools
                              r-shinywidgets
                              r-shiny
@@ -6945,6 +7655,9 @@ Interface will pop up.  Apps Works by simple upload of files in CSV format.")
         (base32 "079b7w2xhb0a481s7qihhka0l9ydkjdph0865wjjkcbpr4775p26"))))
     (properties `((upstream-name . "grapes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wlandau/grapes")
@@ -6964,6 +7677,9 @@ Interface will pop up.  Apps Works by simple upload of files in CSV format.")
         (base32 "1jzvf45ch8x8f2x9kmvv02xz9bix5vplh8143vc4m1yyq42x09c6"))))
     (properties `((upstream-name . "GRAPE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GRAPE")
     (synopsis "Gene-Ranking Analysis of Pathway Expression")
     (description
@@ -6994,6 +7710,9 @@ Bioinformatics, 18:317 (June 2017).")
         (base32 "1bcycvf1sjzwxsmdbscj1q8i7kigy6gx5r202ihb1ilvdi1nmx7l"))))
     (properties `((upstream-name . "grantham")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-tibble r-dplyr))
     (home-page "https://www.pattern.institute/grantham/")
     (synopsis "Calculate the Grantham Distance")
@@ -7019,6 +7738,9 @@ expected to be.")
         (base32 "1w75d878p6izdr88j836vc7753c0mkjj5k3s04f09938gxda8a8w"))))
     (properties `((upstream-name . "granovaGG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rcolorbrewer
@@ -7034,31 +7756,32 @@ graphical displays that afford direct visualizations of data with respect to the
 fundamental questions that drive the particular anova methods.  This package
 represents a modification of the original granova package; the key change is to
 use ggplot2', Hadley Wickham's package based on Grammar of Graphics concepts
-(due to Wilkinson).  The main function is granovagg.1w() (a graphic for one way
-ANOVA); two other functions (granovagg.ds() and granovagg.contr()) are to
-construct graphics for dependent sample analyses and contrast-based analyses
-respectively. (The function granova.2w(), which entails dynamic displays of
-data, is not currently part of @code{granovaGG}'.) The @code{granovaGG}
-functions are to display data for any number of groups, regardless of their
-sizes (however, very large data sets or numbers of groups can be problematic).
-For granovagg.1w() a specialized approach is used to construct data-based
-contrast vectors for which anova data are displayed.  The result is that the
-graphics use a straight line to facilitate clear interpretations while being
-faithful to the standard effect test in anova.  The graphic results are
-complementary to standard summary tables; indeed, numerical summary statistics
-are provided as side effects of the graphic constructions.  granovagg.ds() and
-granovagg.contr() provide graphic displays and numerical outputs for a dependent
-sample and contrast-based analyses.  The graphics based on these functions can
-be especially helpful for learning how the respective methods work to answer the
+(due to Wilkinson).  The main function is @code{granovagg.1w()} (a graphic for
+one way ANOVA); two other functions @code{(granovagg.ds()} and
+@code{granovagg.contr()}) are to construct graphics for dependent sample
+analyses and contrast-based analyses respectively. (The function
+@code{granova.2w()}, which entails dynamic displays of data, is not currently
+part of @code{granovaGG}'.) The @code{granovaGG} functions are to display data
+for any number of groups, regardless of their sizes (however, very large data
+sets or numbers of groups can be problematic).  For @code{granovagg.1w()} a
+specialized approach is used to construct data-based contrast vectors for which
+anova data are displayed.  The result is that the graphics use a straight line
+to facilitate clear interpretations while being faithful to the standard effect
+test in anova.  The graphic results are complementary to standard summary
+tables; indeed, numerical summary statistics are provided as side effects of the
+graphic constructions. @code{granovagg.ds()} and @code{granovagg.contr()}
+provide graphic displays and numerical outputs for a dependent sample and
+contrast-based analyses.  The graphics based on these functions can be
+especially helpful for learning how the respective methods work to answer the
 basic question(s) that drive the analyses.  This means they can be particularly
 helpful for students and non-statistician analysts.  But these methods can be of
 assistance for work-a-day applications of many kinds, as they can help to
 identify outliers, clusters or patterns, as well as highlight the role of
-non-linear transformations of data.  In the case of granovagg.1w() and
-granovagg.ds() several arguments are provided to facilitate flexibility in the
-construction of graphics that accommodate diverse features of data, according to
-their corresponding display requirements.  See the help files for individual
-functions.")
+non-linear transformations of data.  In the case of @code{granovagg.1w()} and
+@code{granovagg.ds()} several arguments are provided to facilitate flexibility
+in the construction of graphics that accommodate diverse features of data,
+according to their corresponding display requirements.  See the help files for
+individual functions.")
     (license license:expat)))
 
 (define-public r-granova
@@ -7073,6 +7796,9 @@ functions.")
         (base32 "0fs8r0q5gvdyppsiil5p3dmfqyn2xygkqarnbmyhr0znbcxzkwxp"))))
     (properties `((upstream-name . "granova")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-car))
     (home-page "https://cran.r-project.org/package=granova")
     (synopsis "Graphical Analysis of Variance")
@@ -7103,6 +7829,9 @@ highlight the role of non-linear transformations of data.")
         (base32 "15q8hv7p5g5m7v6lx6nq5394fa6p05xgawnsrn1v5aslmmbbzyvl"))))
     (properties `((upstream-name . "grangers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vars r-tseries))
     (home-page "https://github.com/MatFar88/grangers")
     (synopsis "Inference on Granger-Causality in the Frequency Domain")
@@ -7125,6 +7854,9 @@ Montanari, 2018 <@code{arXiv:1803.00374>}.")
         (base32 "1cb8mkckbwkdi3zy108z3yhq3mssshhx1l9yb1j8rhgfg9abirly"))))
     (properties `((upstream-name . "grandR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rlang
                              r-reshape2
@@ -7165,6 +7897,9 @@ such data.")
         (base32 "08lgwpkbamb7p5a59q0dp1n7np9kmmvccvg97bl7937ishx50mg5"))))
     (properties `((upstream-name . "grand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zpneal/grand")
@@ -7187,6 +7922,9 @@ the object.")
         (base32 "02bpxs7yyd9805h8whvzfaxg43z4n5zxdj57hx36r3cx03hh26zd"))))
     (properties `((upstream-name . "GramQuad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (home-page "https://gitlab.com/iagogv/GramQuad")
     (synopsis "Gram Quadrature")
@@ -7208,6 +7946,9 @@ of Birmingham, UK]).")
         (base32 "1am5nlnyawi4lybi10ag4fdhddvbwsdzrmr6f66bzspdpl4s26g9"))))
     (properties `((upstream-name . "gramEvol")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fnoorian/gramEvol/")
     (synopsis "Grammatical Evolution for R")
@@ -7231,6 +7972,9 @@ function.")
         (base32 "0c9ms97xnz7z5r2hhwbw0qpcmknp2wk327z95x751yjvgbps3lkg"))))
     (properties `((upstream-name . "grainscape")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-sf
                              r-rcpp
@@ -7261,6 +8005,9 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
         (base32 "02wh9lwg7ky8yl58rxj2f7fay1gg0q0wf3j8gkb7381cn7d4c6xk"))))
     (properties `((upstream-name . "gRain")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -7289,6 +8036,9 @@ included in the package and in the paper by HÃ¸jsgaard (2012,
         (base32 "0zx6fqwklyi3sc1p59nb71mgrfnp7bqw5axmddj3706cawlrqrb8"))))
     (properties `((upstream-name . "grafzahl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate r-quanteda r-lime r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://gesistsa.github.io/grafzahl/")
@@ -7316,6 +8066,9 @@ information: <doi:10.5117/CCR2023.1.003.CHAN>.")
         (base32 "0349sz0gykm69gf7n54g8snvjb8fkfx4cgfwp8bpvib4r9dbsllp"))))
     (properties `((upstream-name . "grafify")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-purrr
                              r-patchwork
@@ -7331,17 +8084,18 @@ information: <doi:10.5117/CCR2023.1.003.CHAN>.")
     (synopsis "Easy Graphs for Data Visualisation and Linear Models for ANOVA")
     (description
      "Easily explore data by plotting graphs with a few lines of code.  Use these
-ggplot() wrappers to quickly draw graphs of scatter/dots with box-whiskers,
-violins or SD error bars, data distributions, before-after graphs, factorial
-ANOVA and more.  Customise graphs in many ways, for example, by choosing from
-colour blind-friendly palettes (12 discreet, 3 continuous and 2 divergent
-palettes).  Use the simple code for ANOVA as ordinary (lm()) or mixed-effects
-linear models (lmer()), including randomised-block or repeated-measures designs,
-and fit non-linear outcomes as a generalised additive model (gam) using mgcv().
-Obtain estimated marginal means and perform post-hoc comparisons on fitted
-models (via emmeans()).  Also includes small datasets for practising code and
-teaching basics before users move on to more complex designs.  See vignettes for
-details on usage <https://grafify-vignettes.netlify.app/>.  Citation:
+@code{ggplot()} wrappers to quickly draw graphs of scatter/dots with
+box-whiskers, violins or SD error bars, data distributions, before-after graphs,
+factorial ANOVA and more.  Customise graphs in many ways, for example, by
+choosing from colour blind-friendly palettes (12 discreet, 3 continuous and 2
+divergent palettes).  Use the simple code for ANOVA as ordinary @code{(lm()}) or
+mixed-effects linear models @code{(lmer()}), including randomised-block or
+repeated-measures designs, and fit non-linear outcomes as a generalised additive
+model (gam) using @code{mgcv()}.  Obtain estimated marginal means and perform
+post-hoc comparisons on fitted models (via @code{emmeans()}).  Also includes
+small datasets for practising code and teaching basics before users move on to
+more complex designs.  See vignettes for details on usage
+<https://grafify-vignettes.netlify.app/>.  Citation:
 <doi:10.5281/zenodo.5136508>.")
     (license license:gpl2+)))
 
@@ -7357,6 +8111,9 @@ details on usage <https://grafify-vignettes.netlify.app/>.  Citation:
         (base32 "0b20iqfipr7migwk1fl4lvdf4ghprqivcgmchfshhr8q82hyd1q0"))))
     (properties `((upstream-name . "gradientPickerD3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets))
     (home-page "https://github.com/peikert/gradientPickerD3")
     (synopsis
@@ -7385,6 +8142,9 @@ Peikert.")
         (base32 "102nf21a410rsfxqs7dv88kxxr6ya76kyyj95bkjjkn4bz8dykyc"))))
     (properties `((upstream-name . "graDiEnt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-doparallel))
     (home-page "https://github.com/bmgaldo/graDiEnt")
     (synopsis "Stochastic Quasi-Gradient Differential Evolution Optimization")
@@ -7413,6 +8173,9 @@ package can run SQG-DE in parallel and sequentially.")
         (base32 "1ngfrminhsk3155da0vjmvrk66nbnak8p1ns20cw32qayq6wyrr2"))))
     (properties `((upstream-name . "gradeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat r-jsonlite r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gradeR")
@@ -7436,6 +8199,9 @@ a column for each test.")
         (base32 "085hfvqn880yk19axdjv3z9jr33kls212vs172a8mzhnkallph1r"))))
     (properties `((upstream-name . "grade")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/ltjohnson/grade")
     (synopsis "Binary Grading functions for R")
     (description
@@ -7455,6 +8221,9 @@ for a variety of data types.")
         (base32 "0r41zvgdd5rqm15axqqssik6plwy7snpgw8m32labkfn3f0pp7n0"))))
     (properties `((upstream-name . "Grace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scalreg r-mass r-glmnet))
     (home-page
      "http://onlinelibrary.wiley.com/doi/10.1111/biom.12418/abstract")
@@ -7479,6 +8248,9 @@ predictors.")
         (base32 "0w53wwaaap90shm17jjkyvcx55cpvpmd9cp9f7cbf36v73n74wjm"))))
     (properties `((upstream-name . "GrabSVG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsematrixstats r-spam r-rann r-matrix
                              r-fitdistrplus))
     (home-page "https://cran.r-project.org/package=GrabSVG")
@@ -7503,6 +8275,9 @@ detailed description of this method is available at Wang, J. and Li, J. et al.
         (base32 "031a4ak84k2mbhrmjbai3q8qnf2z3d9rp0xra67x74a99av9lzs9"))))
     (properties `((upstream-name . "grabsampling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-plyr r-ggthemes r-ggplot2
                              r-extradistr))
     (home-page "https://github.com/Mayooran1987/grabsampling")
@@ -7527,6 +8302,9 @@ calculation, we used results from Bhat, U. and Lal, R. (1988)
         (base32 "09hcs2lgqnim29gpd805b5ndxi22z2xwsf25rb1zckxf9c7bn7sj"))))
     (properties `((upstream-name . "gquad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seqinr r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gquad")
@@ -7553,6 +8331,9 @@ for predicting other intramolecular @code{nonB} DNA structures are included.")
         (base32 "0gzhqyrbnz3qjzkr4slryrlfhlaxm474y9fahlj0sb0hvcx68pxj"))))
     (properties `((upstream-name . "gqlr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-pryr r-magrittr r-jsonlite r-graphql))
     (home-page "https://github.com/schloerke/gqlr")
     (synopsis "'GraphQL' Server in R")
@@ -7575,6 +8356,9 @@ Visit <http://graphql.org> to learn more about @code{GraphQL}'.")
         (base32 "0x9b3mnbrim690l4wnyzk47bgywvnw4h4l8qznnx7zkpqib2hn5i"))))
     (properties `((upstream-name . "gpx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rvest r-lubridate))
     (home-page "https://cran.r-project.org/package=gpx")
     (synopsis "Process GPX Files into R Data Structures")
@@ -7595,6 +8379,9 @@ R.")
         (base32 "1dvixffrn3vz98n8p7vqqr9l77m8n1gij5za8z2hfpg78pipa0mi"))))
     (properties `((upstream-name . "GPvecchia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparseinv
                              r-rcpparmadillo
                              r-rcpp
@@ -7627,6 +8414,9 @@ ordering proposed in Guinness (2018) <@code{arXiv:1609.05372>}.")
         (base32 "0rk3h767rpgdcjhy73kk77mcqbnl1g2x0f505cknp61i3fc5djaf"))))
     (properties `((upstream-name . "GPvam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpparmadillo
                              r-rcpp
@@ -7658,6 +8448,9 @@ either \"G-side\" or \"R-side\" effects.")
         (base32 "1z9s3c4lspbm29bp1l2sixlfps04aif70rv1p1db1f1xwk6vw3bn"))))
     (properties `((upstream-name . "gpuR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rviennacl r-rcppeigen r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eborgnine/gpuR")
@@ -7681,6 +8474,9 @@ mirror typical R syntax without the need to know @code{OpenCL}'.")
         (base32 "07s5p6miidc8sldnjmn11zwg4rahx43skwjzw4bhwdvbd5fssd20"))))
     (properties `((upstream-name . "GPUmatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GPUmatrix")
     (synopsis "Basic Linear Algebra with GPU")
@@ -7716,6 +8512,9 @@ and CPU performance on different matrix operations.")
         (base32 "1xdzg0xazim7qn54zh4wkix0xn0z49b3grrazr7xhjbqx29aca48"))))
     (properties `((upstream-name . "gptzeror")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-lifecycle
                              r-httr2
@@ -7743,6 +8542,9 @@ and document-level predictions are organized to align with the sentences.")
         (base32 "0hlmpysw3wlz2nvixbdz2gd9nk290jpfj5jcjidi6cn3skykvkdv"))))
     (properties `((upstream-name . "gptstudio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-waiter
                              r-stringr
@@ -7789,6 +8591,9 @@ API, see <https://platform.openai.com/docs/introduction>.")
         (base32 "0526qy3d067nh5753rqyfgmylz7fc27hc0nfvzxisx8kifmjbzcv"))))
     (properties `((upstream-name . "GPTreeO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-mlegp r-hash r-dicekriging))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GPTreeO")
@@ -7817,6 +8622,9 @@ relevant local GPs.")
         (base32 "17kf5azrm8xhc26pkv7fsqlfw1430h6024n3nz01kfmjyjqs348m"))))
     (properties `((upstream-name . "gptr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcurl r-jsonlite))
     (home-page "https://cran.r-project.org/package=gptr")
     (synopsis "Convenient R Interface with the OpenAI 'ChatGPT' API")
@@ -7843,6 +8651,9 @@ cool things with language!")
         (base32 "1f2aigkqpmbi8hxcivrbbfrpl3qs8fi2hcbvmcdc3k7j6znv4al3"))))
     (properties `((upstream-name . "gptoolsStan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gptoolsStan")
     (synopsis "Gaussian Processes on Graphs and Lattices in 'Stan'")
@@ -7869,6 +8680,9 @@ References: Hoffmann and Onnela (2022) <@code{arXiv:2301.08836>}.")
         (base32 "0bs6swzj2zh2dgyiwxirimz5gdk7vfssb7ga0cqmr9s5ckvgh8ir"))))
     (properties `((upstream-name . "GPSeqClus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-suncalc
                              r-sp
                              r-sf
@@ -7902,6 +8716,9 @@ system exchange format files for navigation purposes.  Methods can be found at
         (base32 "1l50a6p81lykiqlqiwb6kix5s6wzwdi8vddqhl418dlwlsh83ybf"))))
     (properties `((upstream-name . "GPSCDF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-nnet r-nbpmatching r-mass r-dplyr))
     (home-page "https://cran.r-project.org/package=GPSCDF")
     (synopsis "Generalized Propensity Score Cumulative Distribution Function")
@@ -7927,6 +8744,9 @@ ordinal or multinomial treatments.")
         (base32 "064l4pi44n3vwwz04rd6fs74lja2yvsr38nf911w7ighafp7s7ph"))))
     (properties `((upstream-name . "gps.track")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-sf r-raster r-nngeo))
     (home-page "https://cran.r-project.org/package=gps.track")
     (synopsis "GPS Track Point Information Extractor")
@@ -7948,6 +8768,9 @@ elevation difference and azimuth.(PLAZA, J. et al., 2022)
         (base32 "06vz0vs95z7cbmgsf71114d2gaqx7bn4zl6m33qg22aflna4shsr"))))
     (properties `((upstream-name . "gps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://github.com/ZheyuanLi/gps")
     (synopsis "General P-Splines")
@@ -7978,6 +8801,9 @@ estimation framework.")
         (base32 "0k5pfyl7r5vsac927aqx19lz93vyk5l3ydqkazn2hwwaw1lh2wav"))))
     (properties `((upstream-name . "GPRMortality")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstan))
     (home-page "https://cran.r-project.org/package=GPRMortality")
     (synopsis "Gaussian Process Regression for Mortality Rates")
@@ -8015,6 +8841,9 @@ et al. (2017) <doi:10.1016/S2214-109X(17)30105-5>.")
         (base32 "1qryza8mamwzwqiy31drf176w192ksw34kpsa0wc8gsp3ylkm2f9"))))
     (properties `((upstream-name . "GPP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstan))
     (home-page "https://cran.r-project.org/package=GPP")
     (synopsis "Gaussian Process Projection")
@@ -8039,6 +8868,9 @@ values using r-base plot.")
         (base32 "01j9v4a8ahfddd2mibqs44wjv5q7vm1rsa3nbswfm8x0vg7qv70c"))))
     (properties `((upstream-name . "GPoM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-float r-desolve))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GPoM")
@@ -8069,6 +8901,9 @@ article : Mangiarotti S. and Huc M. (2019) <doi:10.1063/1.5081448>.")
         (base32 "1n1r4rda9v4zw8zz4vcagmkkpgirwydhqz36pyq0assxwclnkcz0"))))
     (properties `((upstream-name . "gpmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-isotone r-ggplot2 r-foreach))
     (home-page "https://cran.r-project.org/package=gpmap")
     (synopsis "Analysing and Plotting Genotype-Phenotype Maps")
@@ -8094,6 +8929,9 @@ key feature of genotype-phenotype maps.  Frontier in Genetics 4:216
         (base32 "01vd68w5pnwhng83x5i0k9c5fhsn9siyzzndkvkmpis4mjm42sgv"))))
     (properties `((upstream-name . "GPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-randtoolbox
@@ -8128,6 +8966,9 @@ for Numerical Methods in Engineering, 114, 501-516.")
         (base32 "0rlaryw8l1hj15x9s57w7rif063njcc72l42bpc9lm8r5knjyjpb"))))
     (properties `((upstream-name . "GPLTR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart))
     (home-page "https://cran.r-project.org/package=GPLTR")
     (synopsis "Generalized Partially Linear Tree-Based Regression Model")
@@ -8154,6 +8995,9 @@ implemented in this package.")
         (base32 "1lqw5vk23r86cks5g6vx6m8bag7pafg2w755gx16rvm5ja9l7rkj"))))
     (properties `((upstream-name . "gplsim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-minpack-lm r-mgcv))
     (home-page "https://cran.r-project.org/package=gplsim")
     (synopsis "Spline Estimation for GPLSIM")
@@ -8177,6 +9021,9 @@ to include nonlinear effect for some predictors.  Please see Y. (2017) at
         (base32 "0apvj14nl5qbi4dhhdx5nih5lvjwfcipvr8cyk6xsz4r5gfr2iw4"))))
     (properties `((upstream-name . "gplm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-aer))
     (home-page "https://cran.r-project.org/package=gplm")
     (synopsis "Generalized Partial Linear Models (GPLM)")
@@ -8199,6 +9046,9 @@ function.")
         (base32 "0nxms34dfmbi3rz6x0yz8pn9a1v6w4k2w6jz1qrbqclmlg66g8vs"))))
     (properties `((upstream-name . "gplite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gplite")
@@ -8222,6 +9072,9 @@ approximations for larger datasets.")
         (base32 "0af42g3v91fbcmla2yq98v8rd4ifaznb1xvw7ny41r3843d8appc"))))
     (properties `((upstream-name . "GPL2025")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=GPL2025")
     (synopsis
@@ -8244,6 +9097,9 @@ Accession and ENTREZID <http://www.ncbi.nlm.nih.gov/gene>.")
         (base32 "0bx6mjvbzlli3fykrakkm8554hi4arf1ym1z9gcagybcjp4dbia1"))))
     (properties `((upstream-name . "gpkg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://humus.rocks/gpkg/")
@@ -8269,6 +9125,9 @@ package.")
         (base32 "1zfhkqyypb24mhbj2zi9qy3gw0kqxvlp8j5ni3zm7k5rz1bnrygg"))))
     (properties `((upstream-name . "gpk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gpk")
     (synopsis "100 Data Sets for Statistics Education")
     (description
@@ -8292,6 +9151,9 @@ building block for a beginner.")
         (base32 "1hif169xsvfvsnbgmad8v9qwq1d6hxvn74zyqkbmic8v3yxifs56"))))
     (properties `((upstream-name . "gpindex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://marberts.github.io/gpindex/")
     (synopsis "Generalized Price and Quantity Indexes")
@@ -8319,6 +9181,9 @@ von der Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
         (base32 "13hkni4w39rkb6ki03i9nfz2cgz8yr7kxcha3n8ivz834gsfzj77"))))
     (properties `((upstream-name . "GpGp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-fnn r-bh))
     (home-page "https://cran.r-project.org/package=GpGp")
     (synopsis
@@ -8348,6 +9213,9 @@ employs a Fisher scoring algorithm described in Guinness (2019)
         (base32 "1xxilr1ify9ip3vs000jawxplcbf1vqli40frhnwwjqf01kj8jq5"))))
     (properties `((upstream-name . "GPGame")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp
                              r-mvtnorm
                              r-mnormt
@@ -8380,6 +9248,9 @@ Taillandier, A. Habbal (2020) <@code{arXiv:1902.06565v2>}.")
         (base32 "04hnmxvnxligd93vzvp38wpxpyxvqz5qd5084awklim846v3dg03"))))
     (properties `((upstream-name . "gpg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-curl r-askpass))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/jeroen/gpg")
@@ -8405,6 +9276,9 @@ and entering passphrases.")
         (base32 "0s5jq2vmz02yr1wd79s6h5c8rvpbkdlnhdy5yfckk5nxddabcymb"))))
     (properties `((upstream-name . "GPFDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-mgcv
@@ -8437,6 +9311,9 @@ covariates.  The development version of the package can be found on
         (base32 "174zhr0nj6z4myvy24j1dx6j44fn30nwbjcpl95wpsz9rsrl41rm"))))
     (properties `((upstream-name . "GPEMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GPEMR")
@@ -8465,6 +9342,9 @@ App](<https://gpem-r.shinyapps.io/GPEM-R/>).")
         (base32 "0qijvdk6l8gjmikvq8bgglj5kp83b1qv7d860hrd2kw22s0gv0l7"))))
     (properties `((upstream-name . "GPCsign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncatednormal r-tmvtnorm r-future-apply
                              r-future r-dicekriging))
     (home-page "https://cran.r-project.org/package=GPCsign")
@@ -8473,7 +9353,7 @@ App](<https://gpem-r.shinyapps.io/GPEM-R/>).")
     (description
      "Parameter estimation and prediction of Gaussian Process Classifier models as
 described in Bachoc et al. (2020) <doi:10.1007/S10898-020-00920-0>.  Important
-functions : gpcm(), predict.gpcm(), update.gpcm().")
+functions : @code{gpcm()}, @code{predict.gpcm()}, @code{update.gpcm()}.")
     (license license:gpl3)))
 
 (define-public r-gpcp
@@ -8488,6 +9368,9 @@ functions : gpcm(), predict.gpcm(), update.gpcm().")
         (base32 "17gywg1rs9nbds6zaw6yq6a57ccg8jrw1b161jcp338s86ghgajs"))))
     (properties `((upstream-name . "gpcp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variantannotation
                              r-sommer
                              r-snpstats
@@ -8521,6 +9404,9 @@ mixed models, and predicting cross performance based on weighted marker effects.
         (base32 "0hlhm780xyila4idk5r87pw046xi3lxhhpr0a22smhf4klvnlfgc"))))
     (properties `((upstream-name . "GPCMlasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-teachingdemos
                              r-statmod
                              r-rcpparmadillo
@@ -8555,6 +9441,9 @@ and that both continuous and categorical variables can be used to detect DIF.")
         (base32 "0nzfd0sz73sb4903vpgix9m767np1prcmi3m1y3pq6dzmxmqzh6a"))))
     (properties `((upstream-name . "GPCERF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-wcorr
                              r-superlearner
@@ -8593,6 +9482,9 @@ preprint <doi:10.48550/@code{arXiv.2105.03454>}.")
         (base32 "18yzwa07grj5mqhl4y5p4gq9fqi8mrvv8mp886fjw6c3r5s84c6j"))))
     (properties `((upstream-name . "gpbStat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-tibble r-purrr r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/nandp1/gpbStat/")
@@ -8617,6 +9509,9 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
         (base32 "0alnlypk4bkmph3i2739vwx8j7c5drqbjfsi6a3xcya2lghc43a8"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
     (home-page "https://github.com/fabsig/GPBoost")
     (synopsis
@@ -8644,6 +9539,9 @@ methodology.")
         (base32 "0qrpybxvwajmwq8ybllk298wbc6q6h937b93q2az5d0bw4nqsiq2"))))
     (properties `((upstream-name . "GPBayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=GPBayes")
@@ -8683,6 +9581,9 @@ allow easy specification of various GPs'.")
         (base32 "161mml6pwcqza6asn7315lqkn69k9k1l9rwa59f9m68v427a5lr0"))))
     (properties `((upstream-name . "GPArotateDF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gparotation))
     (home-page "https://cran.r-project.org/package=GPArotateDF")
     (synopsis "Derivative Free Gradient Projection Factor Rotation")
@@ -8705,6 +9606,9 @@ Jennrich (2005) <doi:10.1177/0013164404272507>.")
         (base32 "1grs7pxxl9nymmg1qx8a7ln25c2bz47bv06pahq7ackhsh6zlvk9"))))
     (properties `((upstream-name . "GPareto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl
                              r-rgenoud
                              r-rcpp
@@ -8741,6 +9645,9 @@ provided using conditional simulations.")
         (base32 "08m1ydrr239vnhjbl47mng3i2w9bqmd8fijrwsraq5ysvn826n27"))))
     (properties `((upstream-name . "gpairs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcd r-mass r-lattice r-colorspace r-barcode))
     (home-page "https://cran.r-project.org/package=gpairs")
     (synopsis "The Generalized Pairs Plot")
@@ -8766,6 +9673,9 @@ categorical and quantitative variables.  Emerson et al. (2013)
         (base32 "0w5wcjzgjajfx29whqkn3xv3v9bn4q0almmmsb7qw79dnbv5c16s"))))
     (properties `((upstream-name . "gp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rngforgpd r-rfast))
     (home-page "https://cran.r-project.org/package=gp")
     (synopsis
@@ -8793,6 +9703,9 @@ Poisson regression model\".  Communications in Statistics - Theory and Methods,
         (base32 "0825zl16ap0k3jqhrjw4hfsw97ils77jmf4yqq347k3bb8i3dm79"))))
     (properties `((upstream-name . "goxygen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-stringi r-pander r-gms r-citation))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pik-piam/goxygen")
@@ -8815,6 +9728,9 @@ pandoc and pandoc-citeproc first (<https://pandoc.org/>).")
         (base32 "0878czn9fyjh52a8qwmffl47x1jy8pw4m35wzicxj7k7ck58ws9k"))))
     (properties `((upstream-name . "GOxploreR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-network
                              r-igraph
                              r-gontr
@@ -8849,6 +9765,9 @@ the methods explicitly in the following article
         (base32 "0jcnl8snw6chz6hy5a7hnmzsxkzf4hhimrnp3igpg23gl0pgc2yx"))))
     (properties `((upstream-name . "goweragreement")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.johnhughes.org")
     (synopsis "Bayesian Gower Agreement for Categorical Data")
     (description
@@ -8872,6 +9791,9 @@ statistics.")
         (base32 "03sywa7rl5rblvv370mfszz5ngp850qf32yydy1fdx10lv5amrfl"))))
     (properties `((upstream-name . "govStatJPN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=govStatJPN")
     (synopsis "functions to get public survey data in Japan")
     (description
@@ -8891,6 +9813,9 @@ their Application Programming Interface (http://statdb.nstac.go.jp/).")
         (base32 "0rxlk5wib9l03g7lm97z3n3dcywzs86h8yv9hh0w0f4h0ya9zcj4"))))
     (properties `((upstream-name . "govinfoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-lubridate
@@ -8917,6 +9842,9 @@ their Application Programming Interface (http://statdb.nstac.go.jp/).")
         (base32 "0nm6bdlzm0qbk5pdy77iahq44ya86dkfkabx0hyalprdrn3cbpm2"))))
     (properties `((upstream-name . "governor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/coolbutuseless/governor")
     (synopsis "Speed Limiter to Control Rate of Execution of Loops")
@@ -8944,6 +9872,8 @@ processing overhead.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -8979,6 +9909,9 @@ authoring web pages styled with the GOV.UK Design System.")
         (base32 "0q65qvzg5f36hp1f3yigmysy83x40jgz4c1ksch56b7svmfbrq0s"))))
     (properties `((upstream-name . "gotop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-htmltools))
     (home-page "https://felixluginbuhl.com/gotop/")
     (synopsis "Scroll Back to Top Icon in Shiny and R Markdown")
@@ -9000,6 +9933,9 @@ rmarkdown documents and shiny apps thanks to @code{jQuery} @code{GoTop}
         (base32 "0k50vjfrqqkw9anq012pbq861lnq3ihjh310rp12xyvzbzf6d6c7"))))
     (properties `((upstream-name . "gosset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-qvcalc
                              r-psychotools
@@ -9033,6 +9969,9 @@ experimental design and analysis.")
         (base32 "1r8dg9wcqxd53zm27mf0554x2zlsclbfmqqwjbkywa3np6gi358y"))))
     (properties `((upstream-name . "gorica")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog
                              r-mvtnorm
                              r-mass
@@ -9066,6 +10005,9 @@ cell probabilities can be non-linear.")
         (base32 "004nx29wz191rp0naa73r762bf6lap931lwrxifhz7izl47jzfj0"))))
     (properties `((upstream-name . "goric")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog r-nlme r-mvtnorm r-matrix r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=goric")
@@ -9087,6 +10029,9 @@ hypotheses in multivariate linear models and generalised linear models.")
         (base32 "1hazin0q74hf16azxa5h08kfj7g1079q77n2fn4fahpfxb8hmvwm"))))
     (properties `((upstream-name . "GORCure")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-pracma r-mass r-icsurv))
     (home-page "https://cran.r-project.org/package=GORCure")
     (synopsis
@@ -9110,6 +10055,9 @@ Cure (PHMC) model and the Proportional Odds Mixture Cure Model as special cases.
         (base32 "05wjmp8r58jv0ppq54vjw8xbwdlmksh5zch8cjm3ss20fsvqxdsj"))))
     (properties `((upstream-name . "gor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (home-page "https://cran.r-project.org/package=gor")
     (synopsis "Algorithms for the Subject Graphs and Network Optimization")
@@ -9135,6 +10083,9 @@ et al (1998, ISBN:0-471-55894-X), Korte, Vygen (2018)
         (base32 "17mihhyavl07aiyhm5pcsihmwznbdca5yfcaq4qk8kiyh81nnml0"))))
     (properties `((upstream-name . "googleway")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-shiny
                              r-scales
@@ -9167,6 +10118,9 @@ places, directions, roads, distances, geocoding, elevation and timezone.")
         (base32 "0zy3dn8rzhdwlxpxmpj8j3m5nzx1hkk733lcvfl6dl7z61n72s7a"))))
     (properties `((upstream-name . "googletraffic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-webshot2
                              r-stringr
                              r-sp
@@ -9199,6 +10153,9 @@ places, directions, roads, distances, geocoding, elevation and timezone.")
         (base32 "0ia3ndz5vf3bc5kckyxwn71nngml6p67v8r3n6h79s12xn9jzylg"))))
     (properties `((upstream-name . "googleTagManageR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr
                              r-jsonlite
                              r-httr
@@ -9227,6 +10184,9 @@ containers.")
         (base32 "1aayji3ncqxl58k29d93dbx05s9rp9bc63fl2cpl1cys7gilblxx"))))
     (properties `((upstream-name . "googler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-jsonlite))
     (home-page "https://github.com/mkearney/googler")
     (synopsis "Google from the R Console")
@@ -9247,6 +10207,9 @@ following URL: <https://github.com/jarun/googler>.")
         (base32 "1f9nd93x2z82jwjw2nha2czcnix7r97h1g3llgfx1b970gsm3pk1"))))
     (properties `((upstream-name . "googlePubsubR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-googleauthr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/andodet/googlePubsubR")
@@ -9268,6 +10231,9 @@ following URL: <https://github.com/jarun/googler>.")
         (base32 "15hyslpqvncg21q581h061rfyg99y8lavqw1x8hzl7xzd49bn9r5"))))
     (properties `((upstream-name . "googlePublicData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-readxl))
     (home-page "http://github.com/gvegayon/googlePublicData/")
     (synopsis
@@ -9292,6 +10258,9 @@ zip-up and ready to be published in Public Data Explorer'.")
         (base32 "0vhq0cl7zs2gazds6ciwykdhz92ayqyaqhzn4zcxfsfg42gsvxk9"))))
     (properties `((upstream-name . "googlePolylines")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=googlePolylines")
@@ -9314,6 +10283,9 @@ using the Google polyline encoding algorithm
         (base32 "0d0g18i3im2s5f14k69ym3vwf9a7zkaval3nwrip97xcl6kf4x9h"))))
     (properties `((upstream-name . "googlenlp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-readr
                              r-purrr
@@ -9342,6 +10314,9 @@ identification.")
         (base32 "0lm50g3gshp18nvygi6is2rayzhcx0rw2rvb4lvm0jlx5m96xgxb"))))
     (properties `((upstream-name . "googleLanguageR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-purrr
                              r-magrittr
@@ -9375,6 +10350,9 @@ transcribe sound files to text and the Cloud Text-to-Speech API
         (base32 "1jxiq1s48skn43pydsw8s67hf70v9fhhw2drcx9vni3c3szs44qd"))))
     (properties `((upstream-name . "GoogleKnowledgeGraphR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-curl))
     (home-page "https://cran.r-project.org/package=GoogleKnowledgeGraphR")
     (synopsis "Retrieve Information from 'Google Knowledge Graph' API")
@@ -9398,6 +10376,9 @@ and is compliant with the JSON-LD specification.")
         (base32 "0ycv7lr1p2rsfln5829yk6nk9h1yk24rirjr1fk27999n42iy1pk"))))
     (properties `((upstream-name . "GoogleImage2Array")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rvest r-magrittr r-ebimage))
     (home-page "https://github.com/kumeS/GoogleImage2Array")
     (synopsis
@@ -9420,6 +10401,9 @@ training data of machine learning or deep learning as a first trial.")
         (base32 "0x8pzj43apkk7qkx3fv2a8531lp94ir5l83vj3ksmvzrvqjars3l"))))
     (properties `((upstream-name . "googleErrorReportingR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ixpantia/googleErrorReportingR")
@@ -9442,6 +10426,9 @@ status in the Google Error Reporting user interface.")
         (base32 "1s0qvnijzkja645lim373swk815n3s1292q6sk3q36ss70q42cfg"))))
     (properties `((upstream-name . "googleComputeEngineR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-googleauthr r-future
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -9465,6 +10452,9 @@ templates for common R needs.")
         (base32 "1n4gkmnwp9wadxz1izggxnpcpm4bz3imhq5y3i2szr8zwafcqqjv"))))
     (properties `((upstream-name . "googleCloudVisionR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-jsonlite r-googleauthr r-glue
                              r-data-table))
     (home-page "https://cran.r-project.org/package=googleCloudVisionR")
@@ -9487,6 +10477,9 @@ R. Part of the cloudyr <https://cloudyr.github.io/> project.")
         (base32 "1yp8h87i17kald9pkr9icxd918n5vywk0h9q8lclip2slx9bry1p"))))
     (properties `((upstream-name . "googleCloudStorageR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-yaml
                              r-openssl
@@ -9504,44 +10497,6 @@ R. Part of the cloudyr <https://cloudyr.github.io/> project.")
 Part of the cloudyr <https://cloudyr.github.io/> project.")
     (license license:expat)))
 
-(define-public r-googlecloudrunner
-  (package
-    (name "r-googlecloudrunner")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "googleCloudRunner" version))
-       (sha256
-        (base32 "14nynl56gc8aj03wxbj243fz80j1wxd93ywfaivy1cgyfi3rid6z"))))
-    (properties `((upstream-name . "googleCloudRunner")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-withr
-                             r-usethis
-                             r-plumber
-                             r-openssl
-                             r-jsonlite
-                             r-jose
-                             r-httr
-                             r-googlepubsubr
-                             r-googlecloudstorager
-                             r-googleauthr
-                             r-curl
-                             r-cli
-                             r-assertthat))
-    (home-page "https://code.markedmondson.me/googleCloudRunner/")
-    (synopsis
-     "R Scripts in the Google Cloud via Cloud Run, Cloud Build and Cloud Scheduler")
-    (description
-     "This package provides tools to easily enable R scripts in the Google Cloud
-Platform.  Utilise cloud services such as Cloud Run
-<https://cloud.google.com/run/> for R over HTTP, Cloud Build
-<https://cloud.google.com/build> for Continuous Delivery and Integration
-services and Cloud Scheduler <https://cloud.google.com/scheduler/> for scheduled
-scripts.")
-    (license license:expat)))
-
 (define-public r-googleauthr
   (package
     (name "r-googleauthr")
@@ -9554,6 +10509,9 @@ scripts.")
         (base32 "15ir747qmxdcfqvdpj48famrgd1c2r1l3gfawnv55akqbxdwhmgx"))))
     (properties `((upstream-name . "googleAuthR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-memoise
                              r-jsonlite
@@ -9583,6 +10541,9 @@ Shiny compatibility.")
         (base32 "0syqlmrq4l8qnqzh6csfyf075fkfv1bmgglrmgynsbs16f4x195v"))))
     (properties `((upstream-name . "googleAnalyticsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-whisker
                              r-usethis
                              r-tidyr
@@ -9620,6 +10581,9 @@ Multi-Channel Funnel API.")
         (base32 "02zr7y485bpp11z9njcb3c07aw454pvf8zsdqb4qswps6l1ni0gc"))))
     (properties `((upstream-name . "googleadsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=googleadsR")
@@ -9641,6 +10605,9 @@ Multi-Channel Funnel API.")
         (base32 "1zcsfhp8h1qk67y421ayj7nm5lz03cm5zax9zilyy6pin2azqzpv"))))
     (properties `((upstream-name . "Goodreader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordcloud2
                              r-topicmodels
                              r-tm
@@ -9679,6 +10646,9 @@ analysts, and book enthusiasts who want to gain insights from Goodreads data.")
         (base32 "1sz5np8lgs2s1rlswrjfw20x8c9lxdz1r0wxybrgakzlfpj1i85w"))))
     (properties `((upstream-name . "goodpractice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xmlparsedata
                              r-xml2
                              r-withr
@@ -9714,6 +10684,9 @@ formatting, etc.")
         (base32 "1d0xkmkcfcwx0qs8m4b9dgrbkg1qpb859mmzg4d1rww8rc0wxh9h"))))
     (properties `((upstream-name . "GoodmanKruskal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-corrplot r-classint))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GoodmanKruskal")
@@ -9737,6 +10710,9 @@ by re-grouping another).")
         (base32 "1na4q7b963iayhfyrxxq2k57ph8ldxg7q8d5njplfx3ph1f0fzds"))))
     (properties `((upstream-name . "GoodFitSBM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-irlba r-igraph))
     (home-page "https://github.com/Roy-SR-007/GoodFitSBM")
     (synopsis "Monte Carlo Goodness-of-Fit Tests for Stochastic Block Models")
@@ -9759,6 +10735,9 @@ Erdos-Renyi (ER) and Beta versions.")
         (base32 "0pcjb1266zhwwxqhyn9jlq2mpqwxg77aka5k29zc84izyz6ba3nk"))))
     (properties `((upstream-name . "GoodFibes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splines2 r-rgl r-prodlim r-imager r-concaveman))
     (home-page "https://cran.r-project.org/package=GoodFibes")
     (synopsis
@@ -9782,6 +10761,9 @@ curvature).")
         (base32 "0asvpc3nizcn7cqdxr1j9hvhprmrazd8c7a2svhmln4vg9x1zzkp"))))
     (properties `((upstream-name . "gontr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gontr")
     (synopsis "Dataset for 'GOxploreR'")
     (description
@@ -9803,6 +10785,9 @@ explicitly discussed in the following article : Manjang et al (2020)
         (base32 "0m1xnjn5fm3s475gjqpkdc589z3qbplzjd4f8ay3sy38pg8j48gz"))))
     (properties `((upstream-name . "gompertztrunc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -9838,6 +10823,9 @@ without population denominators.  This method is described in Goldstein et al.
         (base32 "16kvf355yzpv0z2rndc5f50pxjnav6ld48j40vyip4h353wpwaks"))))
     (properties `((upstream-name . "GomoGomonoMi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-htmltools r-glue))
     (home-page "https://github.com/feddelegrand7/GomoGomonoMi")
     (synopsis "Animate Text using the 'Animate.css' Library")
@@ -9859,6 +10847,9 @@ applications.  The animations are activated using the Animate.css library.  See
         (base32 "1i9d5y28wrhal990x7xxy99v3z9y2pzlakj7wnynd3dpx5pqr0jj"))))
     (properties `((upstream-name . "gomms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gomms")
     (synopsis "GLM-Based Ordination Method")
     (description
@@ -9878,6 +10869,9 @@ similarity between samples visually in a low (2 or 3) dimensional space.")
         (base32 "0y6x3zlsgq48kv5mhgcaaczjz8zlf8yvs5z7hgdc8jdzi1dl0vw8"))))
     (properties `((upstream-name . "goldfish")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-rcpparmadillo
@@ -9909,6 +10903,9 @@ Block (2017a) <doi:10.1177/0081175017709295>, Stadtfeld, Hollway, and Block
         (base32 "01ikd7ngzgyrgkr637cxnj5xqmdmsj6szcr9f8wmrxvly0b3qf1i"))))
     (properties `((upstream-name . "gogarch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fgarch r-fastica))
     (home-page "https://cran.r-project.org/package=gogarch")
     (synopsis "Generalized Orthogonal GARCH (GO-GARCH) Models")
@@ -9930,6 +10927,9 @@ multivariate volatility modeling.")
         (base32 "0ag1bks44hm787sgbab70ab9q0dzbfsx70ldprafjx92gg1cqv5s"))))
     (properties `((upstream-name . "goft")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sn r-fitdistrplus))
     (home-page "https://cran.r-project.org/package=goft")
     (synopsis "Tests of Fit for some Probability Distributions")
@@ -9952,6 +10952,9 @@ estimators for gamma, inverse Gaussian and generalized Pareto distributions.")
         (base32 "04m08d9w8qqbql86c18qpnwym7agry8wspfwrnbbyp52h2pn2gxb"))))
     (properties `((upstream-name . "GOFShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rmarkdown r-rhandsontable))
     (home-page "https://cran.r-project.org/package=GOFShiny")
     (synopsis "Interactive Document for Working with Goodness of Fit Analysis")
@@ -9973,6 +10976,9 @@ well as at <https://predanalyticssessions1.shinyapps.io/@code{ChiSquareGOF/>}.")
         (base32 "0jy3vb8xm35waqzbj1px5nnm9ld7hdni28qwwciqsxsgpyb1n92z"))))
     (properties `((upstream-name . "gofreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-r6 r-ggplot2 r-dplyr r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gkremling/gofreg")
@@ -10001,6 +11007,9 @@ corresponding p-values are approximated using a parametric bootstrap method.")
         (base32 "1v9n1hfracincgaip7pym2l9h54azajw4fmsld0ff2rsd5np362z"))))
     (properties `((upstream-name . "GofKmt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp r-rcpparmadillo r-rcpp r-ggplot2))
     (home-page "https://cran.r-project.org/package=GofKmt")
     (synopsis "Khmaladze Martingale Transformation Goodness-of-Fit Test")
@@ -10010,7 +11019,7 @@ comes from one sample location-scale model where location and scale parameters
 are unknown.  It is well known that Khmaladze martingale transformation method -
 which was proposed by Khmaladze (1981) <DOI:10.1137/1126027> - provides
 asymptotic distribution free test for the GOF problem.  This package contains
-one function: @code{KhmaladzeTrans}().  In this version, @code{KhmaladzeTrans}()
+one function: @code{KhmaladzeTrans()}.  In this version, @code{KhmaladzeTrans()}
 provides test statistic and critical value of GOF test for normal, Cauchy, and
 logistic distributions.  This package used the main algorithm proposed by Kim
 (2020) <DOI:10.1007/s00180-020-00971-7> and tests for other distributions will
@@ -10029,6 +11038,9 @@ be available at the later version.")
         (base32 "0xygsdmggl35fafyp431mkwalwixw2r3f32qll1pf72dfwd8y8d3"))))
     (properties `((upstream-name . "GoFKernel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kernsmooth))
     (home-page "https://cran.r-project.org/package=GoFKernel")
     (synopsis "Testing Goodness-of-Fit with the Kernel Density Estimator")
@@ -10048,6 +11060,9 @@ be available at the later version.")
         (base32 "0243pag8ky7ja78dmcxnkjl5ijkxp4ga3zfiq1aq8zi0w097hkxv"))))
     (properties `((upstream-name . "gofIG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil r-pracma))
     (home-page "https://cran.r-project.org/package=gofIG")
     (synopsis "Goodness-of-Fit Tests for the Inverse Gaussian Distribution")
@@ -10073,6 +11088,9 @@ test proposed by Baringhaus and Gaigall (2015) <doi:10.1016/j.jmva.2015.05.013>.
         (base32 "00wda3fandrd1kkm20fb615g5fd0wykk3s0xn0xh9da28q08yh2m"))))
     (properties `((upstream-name . "gofgamma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gofgamma")
     (synopsis "Goodness-of-Fit Tests for the Gamma Distribution")
     (description
@@ -10100,6 +11118,9 @@ the gamma law are implemented using the method of Bhattacharya (2001)
         (base32 "0d4w2rz7024j4vky1nynqfanfgp8rvgivl2p6b8l2ws98brlhy24"))))
     (properties `((upstream-name . "goffda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ks r-glmnet r-fda-usc))
     (home-page "https://github.com/egarpor/goffda")
     (synopsis "Goodness-of-Fit Tests for Functional Data")
@@ -10123,6 +11144,9 @@ data applications considered in GarcÃ­a-PortuguÃ©s, Ãlvarez-LiÃ©bana,
         (base32 "12y6lhrpldj46adn3a7jz4snx79y9xdrzbgr5qa4gjl00w3nx6cn"))))
     (properties `((upstream-name . "gofedf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod r-mass r-glm2 r-compquadform))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pnickchi/gofedf")
@@ -10150,6 +11174,9 @@ with various link functions.  Michael Arthur Stephens (1976)
         (base32 "17bdrn8xsqjz64caa5wdigkv798i18gc2f9jiin1bz840bqn1abg"))))
     (properties `((upstream-name . "gofCopula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yarrr
                              r-vinecopula
                              r-sparsegrid
@@ -10189,6 +11216,9 @@ bootstrapping tasks.  The package provides an interface to perform new
         (base32 "1svkizyw1rc9mllax4swgjlp079wq5vr5zrx33ir8hsg1vl9jnjl"))))
     (properties `((upstream-name . "GofCens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-gridextra
                              r-ggplot2
@@ -10221,6 +11251,9 @@ parametric model for the data.")
         (base32 "0jkkavws3p336i3gzlkd24q467zd1clfndcpimwc6scy8zh67q9l"))))
     (properties `((upstream-name . "gofcat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-stringr
                              r-reshape
@@ -10231,18 +11264,18 @@ parametric model for the data.")
     (synopsis "Goodness-of-Fit Measures for Categorical Response Models")
     (description
      "This package provides a post-estimation method for categorical response models
-(CRM).  Inputs from objects of class serp(), clm(), polr(), multinom(),
-mlogit(), vglm() and glm() are currently supported.  Available tests include the
-Hosmer-Lemeshow tests for the binary, multinomial and ordinal logistic
-regression; the Lipsitz and the Pulkstenis-Robinson tests for the ordinal
-models.  The proportional odds, adjacent-category, and constrained
-continuation-ratio models are particularly supported at ordinal level.  Tests
-for the proportional odds assumptions in ordinal models are also possible with
-the Brant and the Likelihood-Ratio tests.  Moreover, several summary measures of
-predictive strength (Pseudo R-squared), and some useful error metrics,
-including, the brier score, misclassification rate and logloss are also
-available for the binary, multinomial and ordinal models.  Ugba, E. R. and
-Gertheiss, J. (2018)
+(CRM).  Inputs from objects of class @code{serp()}, @code{clm()}, @code{polr()},
+@code{multinom()}, @code{mlogit()}, @code{vglm()} and @code{glm()} are currently
+supported.  Available tests include the Hosmer-Lemeshow tests for the binary,
+multinomial and ordinal logistic regression; the Lipsitz and the
+Pulkstenis-Robinson tests for the ordinal models.  The proportional odds,
+adjacent-category, and constrained continuation-ratio models are particularly
+supported at ordinal level.  Tests for the proportional odds assumptions in
+ordinal models are also possible with the Brant and the Likelihood-Ratio tests.
+Moreover, several summary measures of predictive strength (Pseudo R-squared),
+and some useful error metrics, including, the brier score, misclassification
+rate and logloss are also available for the binary, multinomial and ordinal
+models.  Ugba, E. R. and Gertheiss, J. (2018)
 <http://www.statmod.org/workshops_archive_proceedings_2018.html>.")
     (license license:gpl2)))
 
@@ -10258,6 +11291,9 @@ Gertheiss, J. (2018)
         (base32 "10c1qgmkdhzxk9m2sd0xxww453y9lf5vjsrbmrbzbln91i6svy8j"))))
     (properties `((upstream-name . "gofar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rrpack
                              r-rcpparmadillo
                              r-rcpp
@@ -10286,6 +11322,9 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
         (base32 "1pdbl044xjganm8y7jg3j877bj1rinsr6k22b5b8ngm2gbdmril3"))))
     (properties `((upstream-name . "goeveg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields))
     (home-page "https://github.com/fvlampe/goeveg/")
     (synopsis "Functions for Community Data and Ordinations")
@@ -10308,6 +11347,9 @@ well as calculation and sorting of synoptic tables.")
         (base32 "0h4235bs9aszil20bxyscxv2z96rw9gdp87va8bmvj15cg2lfvgv"))))
     (properties `((upstream-name . "GOCompare")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-stringr
                              r-mathjaxr
@@ -10336,6 +11378,9 @@ weighted graphs.  Methods are described in Sosa et al. (2023)
         (base32 "154x643dlh614nasx8q77rksp0q9n19a6qnmc5gki0pxv6ysgyj6"))))
     (properties `((upstream-name . "goat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-vctrs
                              r-treemap
@@ -10372,6 +11417,9 @@ weighted graphs.  Methods are described in Sosa et al. (2023)
         (base32 "1xr9bgizzsjr4nn41q1zi049wg9cw6qril60bri96x0xgc00qdpz"))))
     (properties `((upstream-name . "goalp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=goalp")
@@ -10396,6 +11444,9 @@ package to solve the underlying linear optimisation problem.")
         (base32 "0xz6im5gc214m11w70m83mnas09sql9i0lvbgyfy0qvizn6zhyl3"))))
     (properties `((upstream-name . "go2bigq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmpfr r-gmp))
     (home-page "https://cran.r-project.org/package=go2bigq")
     (synopsis "Convert Large Numbers to Bigq Format")
@@ -10416,6 +11467,9 @@ to bigq format without loss of precision.")
         (base32 "0x8w35wj81yx7ri2jvkafkmg8d68il6m5fl6gh97g9rg5w0xkz7n"))))
     (properties `((upstream-name . "gnumeric")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gnumeric")
@@ -10441,6 +11495,9 @@ or read all sheets.")
         (base32 "1zkj98xh63wfyyygg2ahq3m54xlvi3x9sy0rhcn2dlfvbxaxfl4k"))))
     (properties `((upstream-name . "GNSSseg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-capushe))
     (home-page "https://cran.r-project.org/package=GNSSseg")
     (synopsis "Homogenization of GNSS Series")
@@ -10462,6 +11519,9 @@ considering monthly variances, see Quarello (2020) <@code{arXiv:2005.04683>}.")
         (base32 "0aq6rq5b3jq9yj8hhyxjin38f2008qsix4zm20nyhqx0k0hizql1"))))
     (properties `((upstream-name . "GNRS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcurl r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GNRS")
@@ -10495,6 +11555,9 @@ matched, the GNRS does not attempt to match state or county.")
         (base32 "1bk0cqpz0ng8pn2iss2fbbrprfm099fmy0nafa2flqwi7m04swp7"))))
     (properties `((upstream-name . "gnrprod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://cran.r-project.org/package=gnrprod")
     (synopsis "Estimates Gross Output Functions")
@@ -10518,6 +11581,9 @@ high performance in estimating production function elasticities.")
         (base32 "17h43qwb07wk5hiif89k6dgn6bbdsqfy2jy3k5blbdhhp3b9jcqp"))))
     (properties `((upstream-name . "gnorm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/maryclare/gnorm")
     (synopsis "Generalized Normal/Exponential Power Distribution")
@@ -10541,6 +11607,9 @@ Nadarajah (2005) <doi:10.1080/02664760500079464> is used.")
         (base32 "1yhh6s5hzvpdy6qrvnjx84basrbvi1r7dcgapwf7g8677c8f5fdb"))))
     (properties `((upstream-name . "gnonadd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/DecodeGenetics/gnonadd")
     (synopsis "Various Non-Additive Models for Genetic Associations")
@@ -10564,6 +11633,9 @@ visualization.")
         (base32 "1yv5ry21rv69hfd4wmhnwhvarnp49hn200aws428ahs5wvx3md1v"))))
     (properties `((upstream-name . "gnomonicM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-triangle r-minqa r-kableextra))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gnomonicM")
@@ -10589,6 +11661,9 @@ basic plots.")
         (base32 "0kwizsqzrb0q6nailnh6k3mzqwxv0d0phrqn7dp97rkgg2qq1kxa"))))
     (properties `((upstream-name . "gnn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list tensorflow))
     (propagated-inputs (list r-tensorflow r-r6 r-qrng r-keras r-copula))
     (home-page "https://cran.r-project.org/package=gnn")
@@ -10611,6 +11686,9 @@ moment matching networks is provided.")
         (base32 "0igqzm6sdmk1wqc3rdy6pc3ba9n7bs76j5nql5qa1y2wg3rlxna4"))))
     (properties `((upstream-name . "gnm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-relimp r-qvcalc r-nnet r-matrix r-mass))
     (home-page "https://github.com/hturner/gnm")
     (synopsis "Generalized Nonlinear Models")
@@ -10635,6 +11713,9 @@ methods for diagnostics etc.")
         (base32 "1krbz791l5qc06sh6my0bkq420b5afncw87lhyx1yiml2yg46zrk"))))
     (properties `((upstream-name . "gnlm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil))
     (home-page "http://www.commanster.eu/rcode.html")
     (synopsis "Generalized Nonlinear Regression Models")
@@ -10655,6 +11736,9 @@ regression with a large selection of distributions.")
         (base32 "0cji4zjslh18dfj0l827r6br4hx2f0akiaxrg7fhhyyyhgdcjnsm"))))
     (properties `((upstream-name . "gnFit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil r-ismev))
     (home-page "https://cran.r-project.org/package=gnFit")
     (synopsis "Goodness of Fit Test for Continuous Distribution Functions")
@@ -10684,6 +11768,9 @@ study the properties of risk measures.")
         (base32 "163jhkz2gxzq8ji3fgk1337rhnjhmwz55ai5mhgsbyyrgd5dayii"))))
     (properties `((upstream-name . "GNE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-squarem r-nleqslv r-bb r-alabama))
     (native-inputs (list r-knitr))
     (home-page "https://r-forge.r-project.org/projects/optimizer/")
@@ -10707,6 +11794,9 @@ e.g. Kanzow and Facchinei (2010), <doi:10.1007/s10479-009-0653-x>.")
         (base32 "0ma7cp0ikpihmjmi3m8h51pg897287xbkwiinpairrsmiz0l711i"))))
     (properties `((upstream-name . "GNAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordcloud
                              r-viridis
                              r-rlang
@@ -10738,6 +11828,9 @@ Diagnostic tools for GNAR(X) models can be found in Nason et al. (2023)
         (base32 "1iv7dav6l9gx6vhghcyasdizjsz2f8yzcgkj2i50kpgw74ljg5ia"))))
     (properties `((upstream-name . "gMWT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-clinfun))
     (home-page "https://cran.r-project.org/package=gMWT")
     (synopsis "Generalized Mann-Whitney Type Tests")
@@ -10759,6 +11852,9 @@ diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
         (base32 "1jp3jjg0znvqmir83ygvi1nnws6xs29cfccd79vbk8702k4i9y61"))))
     (properties `((upstream-name . "gmwmx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wv
                              r-stringi
                              r-rjson
@@ -10795,6 +11891,9 @@ with the Maximum Likelihood Estimator (MLE) implemented in Hector.")
         (base32 "1kalq3w70ixzw7anwbalfnyzxa0vap81bk05b91sk2aw98n36qq1"))))
     (properties `((upstream-name . "gmvjoint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-survival
                              r-statmod
@@ -10826,6 +11925,9 @@ maximisation algorithm.  Bernhardt (2015) <doi:10.1016/j.csda.2014.11.011>.")
         (base32 "06w822gq2zigynzmqndd3wilqyh1clbx2a52c9x5mg9km4pp95mb"))))
     (properties `((upstream-name . "gmvarkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pbapply r-mvnfast r-gsl r-brobdingnag))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gmvarkit")
@@ -10855,6 +11957,9 @@ Virolainen (forthcoming) <doi:10.1080/07350015.2024.2322090>, Savi Virolainen
         (base32 "0qayzxy2aqikndcmk25m26cjxdqf62d4pdk9aiclhw4acvq9awvz"))))
     (properties `((upstream-name . "gmtFD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-matrix
@@ -10890,6 +11995,9 @@ variance for functional data.")
         (base32 "1clnhwxn1z1iyzx9ps9rkfv2xqdyqc73mcc77ysmlg5cncvm1hac"))))
     (properties `((upstream-name . "gmt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.generic-mapping-tools.org")
     (synopsis "Interface Between GMT Map-Making Software and R")
     (description
@@ -10912,6 +12020,9 @@ statistical analysis in the R console.")
         (base32 "1hmn5ss81df9j9ibgibs95j98irqzif94vq0c861mq4a65y59fcp"))))
     (properties `((upstream-name . "GMSimpute")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-glmnet r-ggplot2))
     (home-page "https://cran.r-project.org/package=GMSimpute")
     (synopsis "Generalized Mass Spectrum Missing Peaks Abundance Imputation")
@@ -10935,6 +12046,13 @@ as well as a tool to estimate and visualize the proportion of missing at random.
         (base32 "08564m2j6xlrh658syczxcl0149g54wkqc6irgsafqxvl3fdjs52"))))
     (properties `((upstream-name . "GMSE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-shinyjs r-shinydashboard r-shinycssloaders
                              r-shiny))
     (native-inputs (list r-r-rsp))
@@ -10949,8 +12067,8 @@ manager observation of populations, manager decision making, and stakeholder
 responses to management decisions.  The newly developed generalised management
 strategy evaluation (GMSE) framework uses genetic algorithms to mimic the
 decision-making process of managers and stakeholders under conditions of change,
-uncertainty, and conflict.  Simulations can be run using gmse(), gmse_apply(),
-and gmse_gui() functions.")
+uncertainty, and conflict.  Simulations can be run using @code{gmse()},
+@code{gmse_apply()}, and @code{gmse_gui()} functions.")
     (license license:gpl2+)))
 
 (define-public r-gms
@@ -10965,6 +12083,9 @@ and gmse_gui() functions.")
         (base32 "1mf1pxxi9c62zvz3mnl0s616ps9cjhkm6xm3c2ak25saxmw5kfnv"))))
     (properties `((upstream-name . "gms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-withr
                              r-stringr
@@ -10996,6 +12117,9 @@ code with modular coding guidelines.")
         (base32 "1xzry0z02qb54ygvrykq3jyfrrs39zq0as8f54i7sdzx7nryxas3"))))
     (properties `((upstream-name . "gmresls")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gmresls")
     (synopsis "Solve Least Squares with GMRES(k)")
     (description
@@ -11019,6 +12143,9 @@ required.")
         (base32 "00n28difj8qs3i539fsd2x07qakyjxf77l8rq5fy07h4f4cpyd0x"))))
     (properties `((upstream-name . "GmptzCurve")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GmptzCurve")
     (synopsis "Gompertz Curve Fitting")
     (description
@@ -11037,6 +12164,9 @@ required.")
         (base32 "0xhja221wz89cm76qbq01nqz73jx7d2zx9i2ky5vd31zkspmlqkm"))))
     (properties `((upstream-name . "GMPro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-transport r-igraph r-combinat))
     (home-page "https://arxiv.org/abs/2006.03284")
     (synopsis "Graph Matching with Degree Profiles")
@@ -11059,6 +12189,9 @@ paper: Yaofang Hu, Wanjie Wang and Yi Yu (2020) <@code{arXiv:2006.03284>}.")
         (base32 "0rlmwlxyg9b8gqyrc7mbqv7x86v9pqj51pd847raq7x1smjnz1kg"))))
     (properties `((upstream-name . "gmpoly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-mvp r-gmp r-english))
     (home-page "https://github.com/stla/gmpoly")
     (synopsis "Multivariate Polynomials with Rational Coefficients")
@@ -11079,6 +12212,9 @@ polynomials with rational coefficients.")
         (base32 "07n3qy3i7yyb0z3i49x0pa3z697gppixk7jz31zk5d0144hxl4zi"))))
     (properties `((upstream-name . "gmoTree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rmarkdown
                              r-rlist
@@ -11115,6 +12251,9 @@ Information on @code{oTree} is found in Chen, D. L., Schonger, M., & Wickens, C.
         (base32 "019vxm1vwlsjkw6zgvmkg87bhnikl0i3mqhwqzm94vr4p406dgaz"))))
     (properties `((upstream-name . "GmooG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GmooG")
     (synopsis "Datasets for the Book 'Getting (more out of) Graphics'")
     (description
@@ -11134,6 +12273,9 @@ Information on @code{oTree} is found in Chen, D. L., Schonger, M., & Wickens, C.
         (base32 "1vjzn2r3qfwvrvh74ly8sbsarx86r2sfhxh31zkbqnwh12465dgm"))))
     (properties `((upstream-name . "gMOIP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -11176,6 +12318,9 @@ for checking if a point is inside the convex hull.")
         (base32 "01pviab3gyvjdlv5jy7wzp33909znhpn47kar55bwkm6gm3bdlg8"))))
     (properties `((upstream-name . "gmnl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-plotrix
                              r-msm
@@ -11206,6 +12351,9 @@ model.")
         (base32 "1cbpgl5w4zkgci77lbx2ji73z3hvzj6kyr6bi79a8l65d303fblk"))))
     (properties `((upstream-name . "gmmsslm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=gmmsslm")
     (synopsis
@@ -11233,6 +12381,9 @@ by Bayes rule.")
         (base32 "0ysy5av49fmswhn66b67lvbvzb5k6x6i9y0h9yrkkllssrghd7dr"))))
     (properties `((upstream-name . "GMMBoost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-minqa r-magic))
     (home-page "https://cran.r-project.org/package=GMMBoost")
     (synopsis "Likelihood-Based Boosting for Generalized Mixed Models")
@@ -11252,6 +12403,9 @@ by Bayes rule.")
         (base32 "151bc1mn69kmswkn6i5czmadsnymkw4yvgph8s7z3i6xc66r8s5y"))))
     (properties `((upstream-name . "GMMAT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
@@ -11288,6 +12442,9 @@ burden test and SKAT, based on user-defined variant sets.")
         (base32 "1n45dls7632b11bg6pipamp2zmp8j1hp4nlrj91r4schd9fgr6bh"))))
     (properties `((upstream-name . "gmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=gmm")
@@ -11317,6 +12474,9 @@ belong to the Generalized Empirical Likelihood family of estimators (Smith 1997;
         (base32 "1c7zb83p4r46h42xsjaj3c8zrnhrrhvggz4nqmasp52fh6gdarz6"))))
     (properties `((upstream-name . "GMKMcharlie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=GMKMcharlie")
     (synopsis
@@ -11336,45 +12496,6 @@ of GM and KM algorithms in various aspects.  It is carefully crafted in
 multithreaded C++ for modeling large data for industry use.")
     (license license:gpl3)))
 
-(define-public r-gmisc
-  (package
-    (name "r-gmisc")
-    (version "3.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Gmisc" version))
-       (sha256
-        (base32 "1s8gkqg54622xhsmhl7n5pff2b6xfij111m7h3i4inzfjfmziq43"))))
-    (properties `((upstream-name . "Gmisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xml
-                             r-stringr
-                             r-rmarkdown
-                             r-rlang
-                             r-rcpp
-                             r-magrittr
-                             r-lubridate
-                             r-lattice
-                             r-knitr
-                             r-htmltable
-                             r-hmisc
-                             r-glue
-                             r-forestplot
-                             r-checkmate
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://gforge.se")
-    (synopsis "Descriptive Statistics, Transition Plots, and More")
-    (description
-     "This package provides tools for making the descriptive \"Table 1\" used in medical
-articles, a transition plot for showing changes between categories (also known
-as a Sankey diagram), flow charts by extending the grid package, a method for
-variable selection based on the SVD, BÃ©zier lines with arrows complementing the
-ones in the grid package, and more.")
-    (license license:gpl3+)))
-
 (define-public r-gmgm
   (package
     (name "r-gmgm")
@@ -11387,6 +12508,9 @@ ones in the grid package, and more.")
         (base32 "18q119v8wi4l5i8r6qdsdwih3jj71iidwgbjjvqp2bh37wp58wq3"))))
     (properties `((upstream-name . "gmgm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-tidyr
                              r-stringr
@@ -11419,6 +12543,9 @@ Most of the algorithms are described in the @code{PhD} thesis of Roos (2018)
         (base32 "19kf409yhq13689akqz88dj0fq02falbh0j0kkvh0l0vymx4hj7y"))))
     (properties `((upstream-name . "gmGeostats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-rcolorbrewer
                              r-gstat
@@ -11449,6 +12576,9 @@ Boogaart (2018) <doi:10.1007/s11004-018-9769-3>.")
         (base32 "03sag09x7pjyzsp6w1z06108ig068krmw75064cnl3pqfvfyjfgr"))))
     (properties `((upstream-name . "gmfd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gmfd")
     (synopsis "Inference and Clustering of Functional Data")
@@ -11472,6 +12602,9 @@ Martino A., Ghiglietti, A., Ieva, F. and Paganoni A. M. (2017)
         (base32 "0l08x6qajr7ancf1dijayayycbs9p1xir4f78fxgicifszcdak6r"))))
     (properties `((upstream-name . "gmfamm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv r-matrix r-mass r-bamlss))
     (home-page "https://cran.r-project.org/package=gmfamm")
     (synopsis "Generalized Multivariate Functional Additive Models")
@@ -11493,6 +12626,9 @@ Bayesian additive mixed models of R package bamlss via a latent Gaussian process
         (base32 "0m9fp54y4m1xxjqphpnxhw2hspzdca9qc9l60znpnynyj5m6cy2k"))))
     (properties `((upstream-name . "Gmedian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra r-robustbase r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=Gmedian")
     (synopsis "Geometric Median, k-Medians Clustering and Robust Median PCA")
@@ -11514,6 +12650,9 @@ and robust PCA based on the Gmedian covariation matrix.")
         (base32 "1h0ysi0wkigjysqgzzw3za7nyfpmw71abdfl4hxanwihm7gaayxy"))))
     (properties `((upstream-name . "GMDHreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GMDHreg")
     (synopsis "Regression using GMDH Algorithms")
@@ -11540,6 +12679,9 @@ Combinatorial, GMDH MIA (Multilayered Iterative Algorithm), GMDH GIA
         (base32 "1cqpwnncxir9gc6vwzclm0av9hzd2a74xvl3w73dpzafvzkg4x67"))))
     (properties `((upstream-name . "GMDH2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-randomforest
                              r-plotly
@@ -11553,15 +12695,15 @@ Combinatorial, GMDH MIA (Multilayered Iterative Algorithm), GMDH GIA
     (description
      "This package performs binary classification via Group Method of Data Handling
 (GMDH) - type neural network algorithms.  There exist two main algorithms
-available in GMDH() and @code{dceGMDH}() functions.  GMDH() performs
-classification via GMDH algorithm for a binary response and returns important
-variables. @code{dceGMDH}() performs classification via diverse classifiers
-ensemble based on GMDH (dce-GMDH) algorithm.  Also, the package produces a
-well-formatted table of descriptives for a binary response.  Moreover, it
-produces confusion matrix, its related statistics and scatter plot (2D and 3D)
-with classification labels of binary classes to assess the prediction
-performance.  All GMDH2 functions are designed for a binary response (Dag et
-al., 2019, <https://download.atlantis-press.com/article/125911202.pdf>).")
+available in @code{GMDH()} and @code{dceGMDH()} functions. @code{GMDH()}
+performs classification via GMDH algorithm for a binary response and returns
+important variables. @code{dceGMDH()} performs classification via diverse
+classifiers ensemble based on GMDH (dce-GMDH) algorithm.  Also, the package
+produces a well-formatted table of descriptives for a binary response.
+Moreover, it produces confusion matrix, its related statistics and scatter plot
+(2D and 3D) with classification labels of binary classes to assess the
+prediction performance.  All GMDH2 functions are designed for a binary response
+(Dag et al., 2019, <https://download.atlantis-press.com/article/125911202.pdf>).")
     (license license:gpl2+)))
 
 (define-public r-gmdh
@@ -11576,6 +12718,9 @@ al., 2019, <https://download.atlantis-press.com/article/125911202.pdf>).")
         (base32 "093glyz73246m5f2xb2xgbgi80haj4fanmr325byr99dnf4x35yn"))))
     (properties `((upstream-name . "GMDH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=GMDH")
     (synopsis "Short Term Forecasting via GMDH-Type Neural Network Algorithms")
@@ -11598,6 +12743,9 @@ forecasting for a univariate time series.")
         (base32 "0prap4a8pvylmvakd2ii87jz9bqf0vvfsxdi4iwa40nx444hqhx2"))))
     (properties `((upstream-name . "gmDatabase")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rmysql r-foreach r-digest r-dbi))
     (home-page "http://www.r-project.org")
     (synopsis "Accessing a Geometallurgical Database with R")
@@ -11618,6 +12766,9 @@ easy interface for accessing it is provided in this package.")
         (base32 "1qykizcq42hj6v9fb9hyi59zi1m4hpk10il7why9s9cwyii1m69z"))))
     (properties `((upstream-name . "gMCPLite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://merck.github.io/gMCPLite/")
@@ -11644,6 +12795,9 @@ testing for group sequential design, described in Maurer and Bretz (2013)
         (base32 "0w5qxjyn5z7mygsvrmqk5ab827abhp7v4d8ha8279gjjkfswq5fi"))))
     (properties `((upstream-name . "gMCP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-xlsxjars
                              r-rjava
@@ -11674,6 +12828,9 @@ described multiple test procedures.")
         (base32 "13ds8da7lqkvm1mz75440hmn9smi9pznb8bknmckg8vd3fc70f6x"))))
     (properties `((upstream-name . "GMCM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ellipse))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AEBilgrau/GMCM")
@@ -11694,6 +12851,9 @@ described multiple test procedures.")
         (base32 "0gvpmannzhzxrgihi7fvj2kww637hq3zjvl52f8zp4psjpyd752s"))))
     (properties `((upstream-name . "gmapsdistance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-rcurl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jlacko/gmapsdistance")
@@ -11715,6 +12875,9 @@ modes of transportation (bicycling, walking, driving and public transportation).
         (base32 "0bn4605mjirhw1kmdnaa14rqqzrvxckfgi1ys597zwrclw601x59"))))
     (properties `((upstream-name . "gmailr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rematch2
                              r-rappdirs
@@ -11747,6 +12910,9 @@ threads, drafts and labels.")
         (base32 "1vrx6lqnm60g8nk44yhl55q2b7xqchxq3qzfrrf59sjk7whpcy5h"))))
     (properties `((upstream-name . "GMAC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GMAC")
     (synopsis
      "Genomic Mediation Analysis with Adaptive Confounding Adjustment")
@@ -11775,6 +12941,9 @@ association) and random @code{eQTL} (i.e., treatment).")
         (base32 "08hxbs9z4vq5zjis0lgdcvlysaj1k7i0icdk3wsyqf3wd9znsibi"))))
     (properties `((upstream-name . "gma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-mass r-car))
     (home-page "https://cran.r-project.org/package=gma")
     (synopsis "Granger Mediation Analysis")
@@ -11806,6 +12975,9 @@ Granger Mediation Analysis of Multiple Time Series with an Application to
         (base32 "0vjq3nj1wv4jy0rqi4f03kq3bdamfw63vncbhfmih063rpf7i69h"))))
     (properties `((upstream-name . "gm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-htmltools r-erify r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/flujoo/gm")
@@ -11830,6 +13002,9 @@ R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
         (base32 "1ic2v2dim0a8kzl38vx8an80jrbzimng0plrx62a1ps1jnczihl9"))))
     (properties `((upstream-name . "glycanr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-coin))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/iugrina/glycanr")
@@ -11855,6 +13030,9 @@ chromatographyâmass spectrometry) analysis of Plasma and @code{IgG} glycome
         (base32 "1nb34dm4m0nq7cr9f9jsacnk0xjv451m419sdwbk11ykpqkh9cdk"))))
     (properties `((upstream-name . "glvmfit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=glvmfit")
     (synopsis "Methods to Assess Generalized Latent Variable Model Fit")
     (description
@@ -11874,6 +13052,9 @@ variable models.")
         (base32 "04npfllnl0x7w8z693p4zixgkrcvvvjbp9047b231pbldfirx0hy"))))
     (properties `((upstream-name . "gluvarpro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-scales
@@ -11928,6 +13109,9 @@ Care, 2017 <doi:10.2337/dc17-1600>.")
         (base32 "0hnjzml5ag0xfdb9kab5fg1dfp2ldcj8i7ggfqssn4ifgyxk3c89"))))
     (properties `((upstream-name . "gluedown")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://k5cents.github.io/gluedown/")
@@ -11953,6 +13137,9 @@ the document.  This package primarily uses @code{GitHub} Flavored Markdown
         (base32 "18gixzg8b8yql91dhv8xsrcrxdix0kr0qgmiva0hwmyzpsn6rqam"))))
     (properties `((upstream-name . "GLSME")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-corpcor))
     (home-page "https://cran.r-project.org/package=GLSME")
     (synopsis "Generalized Least Squares with Measurement Error")
@@ -11975,6 +13162,9 @@ biased caused by these.")
         (base32 "1drmmr576n3pbr0q1cnnx4k7r4iz061n2cizv1kpr3wcc1g291pn"))))
     (properties `((upstream-name . "gLRTH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gLRTH")
     (synopsis
      "Genome-Wide Association and Linkage Analysis under Heterogeneity")
@@ -11995,6 +13185,9 @@ analysis under heterogeneity.")
         (base32 "1cr40jksm27h0j1j0q1ngcf4cbrhrjz48m6z3c3jns8h17h8g8qh"))))
     (properties `((upstream-name . "glpkAPI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list glpk))
     (home-page "https://cran.r-project.org/package=glpkAPI")
     (synopsis "R Interface to C API of GLPK")
@@ -12015,6 +13208,9 @@ analysis under heterogeneity.")
         (base32 "0hzjvc70syb0n771fnvxayfgjcpqxbp4pm5c9451n519m9j0srk1"))))
     (properties `((upstream-name . "glow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppparallel r-rcppeigen r-rcpp r-r6 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/traversc/glow")
@@ -12035,6 +13231,9 @@ analysis under heterogeneity.")
         (base32 "1bgyxki16mh38pw1476hq9f9r2899vs6ax7dsyrn1xzcad6x91y3"))))
     (properties `((upstream-name . "glottospace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-units
                              r-tmap
@@ -12072,6 +13271,8 @@ exploration, mapping, visualization and export.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -12114,6 +13315,9 @@ a way compatible with both Latex and HTML outputs.")
         (base32 "0p3sn30gpi1zbh498iv08n55sjpls0120cxcg9dkz0yjs60y2snl"))))
     (properties `((upstream-name . "glossary")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xml2
                              r-rvest
@@ -12140,6 +13344,9 @@ Definitions can be provided inline or in a separate file.")
         (base32 "17b9iir51a9vavd3bpg3448wpcmb9ib2kcf08qa29f68xy8fglgz"))))
     (properties `((upstream-name . "glossa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-waiter
                              r-tidyterra
@@ -12190,6 +13397,9 @@ scales.")
         (base32 "15zk11p10v8fmqvmg9gdhxa0h6s5axvmdkxkpwrg8sgp2ln94fr9"))))
     (properties `((upstream-name . "glogis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-sandwich))
     (home-page "https://cran.r-project.org/package=glogis")
     (synopsis "Fitting and Testing Generalized Logistic Distributions")
@@ -12212,6 +13422,9 @@ change methods.")
         (base32 "05syd93995pcvzvrwd8hchs2dgklv627a7pias806vsbs8xbp2vg"))))
     (properties `((upstream-name . "glober")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plot3d r-matrix r-ggplot2 r-genlasso r-fda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=glober")
@@ -12237,6 +13450,9 @@ we refer the reader to the paper Savino, M. E. and LÃ©vy-Leduc, C. (2023),
         (base32 "0xa0q5dac0g7xdlr679f3km8nqxlm7gi4msp9fbfivfvy0rmri96"))))
     (properties `((upstream-name . "globe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=globe")
     (synopsis "Plot 2D and 3D Views of the Earth, Including Major Coastline")
     (description
@@ -12256,6 +13472,9 @@ with its major coastline, and additional lines and points.")
         (base32 "13alq7vwfa2awg7xk9plna0sygsm65yni0ffkncznfpkhk5ff63q"))))
     (properties `((upstream-name . "globaltrends")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-tibble
@@ -12301,6 +13520,9 @@ is available as a working paper:
         (base32 "0yf4p82dpjh36ddpfrby7m3fnj2blf5s76lncflch917sq251h4f"))))
     (properties `((upstream-name . "globalOptTests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=globalOptTests")
     (synopsis
      "Objective functions for benchmarking the performance of global optimization algorithms")
@@ -12321,6 +13543,9 @@ performance of global optimization algorithms.")
         (base32 "0j07vlr8df9amb90cdg09yypz41878nhrbxv5mplyyjj76d8szlq"))))
     (properties `((upstream-name . "globalKinhom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-univar r-spatstat-random
                              r-spatstat-geom r-spatstat-explore))
     (home-page "https://cran.r-project.org/package=globalKinhom")
@@ -12346,6 +13571,9 @@ in T Shaw, J MÃ¸ller, R Waagepetersen, 2020
         (base32 "0m077j7prjc38yshq8ahprfsai0rc20qma2njjbdi975mrwxi25c"))))
     (properties `((upstream-name . "glmxdiag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam))
     (home-page "https://cran.r-project.org/package=glmxdiag")
     (synopsis
@@ -12374,6 +13602,9 @@ and Smyth (1996) <doi:10.2307/1390802>, O'Hara Hines and Carter (1993)
         (base32 "0mg7m981fvnywm4kv2v4hq9r7y18pjcmhzxy7w7lfi8gak75wcpg"))))
     (properties `((upstream-name . "glmx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich r-mass r-lmtest r-formula))
     (home-page "https://cran.r-project.org/package=glmx")
     (synopsis "Generalized Linear Models Extended")
@@ -12394,6 +13625,9 @@ responses, including parametric links and heteroscedastic latent variables.")
         (base32 "0im3143xvlsgkknsjnifx9zh7jsdm9bsmgiwrk0r2iil2ns22wgy"))))
     (properties `((upstream-name . "glmvsd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ncvreg r-mass r-glmnet r-brglm))
     (home-page "https://github.com/emeryyi/glmvsd")
     (synopsis
@@ -12416,6 +13650,9 @@ decide whether the sparse patterns identified by those methods are reliable.")
         (base32 "0zviahj99645s1xs2f9z7rnv95x4rdz7mfwzy3qjfw46yqpfj5cn"))))
     (properties `((upstream-name . "glmulti")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-leaps))
     (home-page "https://cran.r-project.org/package=glmulti")
@@ -12442,6 +13679,9 @@ is not feasible.")
         (base32 "0d0i9qhmib0rr15jm9kwl9jcfwhsagdr56jqgan5sr0hb4wbzzvw"))))
     (properties `((upstream-name . "glmtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-partykit r-magrittr r-dplyr r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://adimajo.github.io")
@@ -12467,6 +13707,9 @@ development is given in a @code{PhD} chapter, see Ehrhardt (2019)
         (base32 "10d9z1rrjnxkw3nmim01ql5yfn1w62sncgclmprznr5kbna49yj3"))))
     (properties `((upstream-name . "glmtrans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glmnet
                              r-ggplot2
                              r-formatr
@@ -12499,6 +13742,9 @@ relevant paper is available on @code{arXiv}: <@code{arXiv:2105.14328>}.")
         (base32 "1nzn5nqicry2687d0nx6dacy0kbl0fzsw2wqwwi07mc12b84m7j9"))))
     (properties `((upstream-name . "glmtoolbox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-suppdists
                              r-statmod
                              r-rfast
@@ -12531,6 +13777,9 @@ generalized estimating equations for cluster correlated data.")
         (base32 "1kdjhm29wglpn3xpr10ypx953m4y82ipf2q3qqfqk50k2g0gcy0k"))))
     (properties `((upstream-name . "glmtlp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-foreach r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://yuyangyy.com/glmtlp/")
@@ -12555,6 +13804,9 @@ written in C++ and highly optimized.")
         (base32 "1xfbmxsdlgpwlss5bfb4arlnblj4s6pzyn9npy04v5aara1m04na"))))
     (properties `((upstream-name . "GlmSimulatoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tweedie
                              r-stringr
                              r-statmod
@@ -12584,6 +13836,9 @@ model framework.")
         (base32 "1jk2avzp66nz8gxrqcynhrhwkdywr0mjv2r1smrfkxmwxjpdgm4i"))))
     (properties `((upstream-name . "GLMsData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GLMsData")
     (synopsis "Generalized Linear Model Data Sets")
     (description
@@ -12603,6 +13858,9 @@ Smyth.")
         (base32 "09jm71izzdj4bhhd3fmcxjwc1b6q9qhbynx9bzm1g18zwr8kck7k"))))
     (properties `((upstream-name . "glmpermu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=glmpermu")
     (synopsis "Permutation-Based Inference for Generalized Linear Models")
     (description
@@ -12629,6 +13887,9 @@ effectiveness remains consistent regardless of the sample size.")
         (base32 "03kjj1wcx8p2jcdqb70fsdz2ljiz37xaaahqadawr3vjs7x441q3"))))
     (properties `((upstream-name . "glmpathcr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glmpath))
     (home-page "https://cran.r-project.org/package=glmpathcr")
     (synopsis
@@ -12652,6 +13913,9 @@ described by Archer and Williams (2012) <doi:10.1002/sim.4484>.")
         (base32 "1jbiqqd1s93i941dhyyx50zlgwavhyjfw8bx13z4gz05rdvi4gn8"))))
     (properties `((upstream-name . "glmpath")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=glmpath")
     (synopsis
@@ -12673,6 +13937,9 @@ linear models and Cox proportional hazards model.")
         (base32 "15bpw42y999ljdw8ka2ysrrm0y73xz37wwi3j67i01wafipq82xy"))))
     (properties `((upstream-name . "GLMpack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-pscl
                              r-plm
@@ -12707,6 +13974,9 @@ models, tables, and plots are included for each data set.")
         (base32 "0qj3c8qrx3vl0dr9prravfjwzqv1yfi771xfss9d44wlvjz5f4gp"))))
     (properties `((upstream-name . "glmnetSE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glmnet r-boot))
     (home-page "https://github.com/sebastianbahr/glmnetSE")
     (synopsis
@@ -12733,6 +14003,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
         (base32 "0wd8ga9cabz9alzs6fpvpig9d0m4qlfasi7p7xv19n20hzd2106d"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-xgboost
                              r-torch
                              r-survival
@@ -12762,11 +14039,11 @@ or graphical means.  Calibration plots can also be generated, again based upon
 For some datasets, for example when the design matrix is not of full rank,
 glmnet may have very long run times when fitting the relaxed lasso model, from
 our experience when fitting Cox models on data with many predictors and many
-patients, making it difficult to get solutions from either glmnet() or
-cv.glmnet().  This may be remedied by using the path=TRUE option when calling
-glmnet() and cv.glmnet().  Within the glmnetr package the approach of path=TRUE
-is taken by default.  When fitting not a relaxed lasso model but an elastic-net
-model, then the R-packages nestedcv
+patients, making it difficult to get solutions from either @code{glmnet()} or
+@code{cv.glmnet()}.  This may be remedied by using the path=TRUE option when
+calling @code{glmnet()} and @code{cv.glmnet()}.  Within the glmnetr package the
+approach of path=TRUE is taken by default.  When fitting not a relaxed lasso
+model but an elastic-net model, then the R-packages nestedcv
 <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
 <https://cran.r-project.org/package=@code{glmnetSE>} or others may provide
 greater functionality when performing a nested CV. Use of the glmnetr has many
@@ -12788,6 +14065,9 @@ glmnet'\" and \"The Relaxed Lasso\" being especially useful in this regard.")
         (base32 "0cs0yj2js0920iggcw2vci5y9hnsm3hd7wpd7mwnx8mszwrklawg"))))
     (properties `((upstream-name . "glmnetcr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glmnet))
     (home-page "https://cran.r-project.org/package=glmnetcr")
     (synopsis
@@ -12813,6 +14093,9 @@ restructuring.")
         (base32 "182pgwqqbgpkcvapkps7ahxa4ppic44j10081q0v9lp2cjdiv4qy"))))
     (properties `((upstream-name . "glmmSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qvalue
                              r-plotly
                              r-pbmcapply
@@ -12853,6 +14136,9 @@ Nature medicine <doi:10.1038/s41591-022-01789-0>.")
         (base32 "19yvfnmiw98fyixw8nms158y4bwhzzf0bfsi0dcxg651rv4vrvla"))))
     (properties `((upstream-name . "GLMMselect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GLMMselect")
     (synopsis "Bayesian Model Selection for Generalized Linear Mixed Models")
@@ -12880,6 +14166,9 @@ under review.")
         (base32 "072zwi1rs6d84iszn09v5g19bkpla19nfqk4pq40ad8368zkbhcm"))))
     (properties `((upstream-name . "GLMMRR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-lme4 r-lattice))
     (home-page "https://cran.r-project.org/package=GLMMRR")
     (synopsis
@@ -12905,6 +14194,9 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
         (base32 "0aic2wc1f1qdj2g9g7zsaz4hckrgpy7w293harpjmq9ll3gxpfcz"))))
     (properties `((upstream-name . "glmmrOptim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsechol
                              r-rminqa
                              r-rcppprogress
@@ -12940,6 +14232,9 @@ this package can be found in Watson, Hemming, and Girling (2023)
         (base32 "1yq80s4j7riw2hrgcxjys5ljx32vm6ckhx0mcbxjqq6wggkwhzzl"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-sparsechol
                              r-rstantools
@@ -12974,6 +14269,9 @@ calculation, data simulation, and more.  See
         (base32 "1rlwfw54scd0l9n1jisf9dxjddc5fzw8ryakgdxk8k9zs5jzscbd"))))
     (properties `((upstream-name . "glmmPen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
                              r-stanheaders
@@ -13024,6 +14322,9 @@ LASSO penalties.")
         (base32 "07w6b1i9fkv8dxcmvky81f87ysbrrry3d4jczwkg953g9lankr5j"))))
     (properties `((upstream-name . "glmmML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=glmmML")
     (synopsis "Generalized Linear Models with Clustering")
@@ -13044,6 +14345,9 @@ with bootstrapping.")
         (base32 "1b2wkmsmnhmkql0kin56faf64abc6hijrs6dlz8qvwcbqpgbpcig"))))
     (properties `((upstream-name . "glmmLasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-minqa r-matrix))
     (home-page "https://cran.r-project.org/package=glmmLasso")
     (synopsis
@@ -13068,6 +14372,9 @@ heterogeneity.")
         (base32 "0ymcgn42r3n6fhfp7rmkz033bmnqdshx71957zvbrmxjphkmr37b"))))
     (properties `((upstream-name . "glmMisrep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-poisson-glm-mix r-mass))
     (home-page "https://cran.r-project.org/package=glmMisrep")
     (synopsis "Generalized Linear Models Adjusting for Misrepresentation")
@@ -13098,6 +14405,9 @@ al., (2023)
         (base32 "0nn328dn7fbh3h0wnl4kahwrbq9ddr3hyqq7930raa0abimg8ykq"))))
     (properties `((upstream-name . "glmmfields")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stanheaders
                              r-rstantools
@@ -13142,6 +14452,9 @@ is conducted with Stan'.  References: Anderson and Ward (2019)
         (base32 "0fql85m0mxn58jh3mgrcw56bb4dx7amrz39ngqrljwi5pv5i7aj4"))))
     (properties `((upstream-name . "glmmEP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixcalc r-lme4))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=glmmEP")
@@ -13168,6 +14481,9 @@ Yu (2018) <@code{arXiv:1805.08423v1>}.")
         (base32 "1s631xl56ix0xah8kq55lxw6273f5bc1md3zw7y5gvismfdlicwm"))))
     (properties `((upstream-name . "GLMMcosinor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rlang
                              r-lme4
@@ -13200,6 +14516,9 @@ capability to fit mixed models.  The cosinor model is described by Cornelissen
         (base32 "1gzm61a7qy4mvw1zaa4n01a5si7vawq2w0ppwk6pfsd06ffh5g2r"))))
     (properties `((upstream-name . "GLMMadaptive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-matrixstats r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://drizopoulos.github.io/GLMMadaptive/")
@@ -13224,6 +14543,9 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
         (base32 "1lrda4b6v22r3fq4p42p237hivjfmgd9h3wn49982j2gvbfna227"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-mumin r-lme4 r-ggplot2))
     (home-page "https://github.com/laijiangshan/glmm.hp")
     (synopsis
@@ -13232,7 +14554,7 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
      "Conducts hierarchical partitioning to calculate individual contributions of each
 predictor (fixed effects) towards marginal R2 for generalized linear
 mixed-effect model (including lm, glm and glmm) based on output of
-r.@code{squaredGLMM}() in @code{MuMIn}', applying the algorithm of Lai J.,Zou
+@code{r.squaredGLMM()} in @code{MuMIn}', applying the algorithm of Lai J.,Zou
 Y., Zhang S.,Zhang X.,Mao L.(2022)glmm.hp: an R package for computing individual
 effect of predictors in generalized linear mixed models.Journal of Plant
 Ecology,15(6)1302-1307<doi:10.1093/jpe/rtac096>.")
@@ -13250,6 +14572,9 @@ Ecology,15(6)1302-1307<doi:10.1093/jpe/rtac096>.")
         (base32 "0wl1ca4brlqp5dn2zi5c49y2i21b22ag88cxzzwb8nx10snlr9p1"))))
     (properties `((upstream-name . "glmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trust
                              r-mvtnorm
                              r-matrix
@@ -13279,6 +14604,9 @@ model information.")
         (base32 "0rq2vxbr732r725pn8qdvppxcrhjhyvlr550svfgy1inq985c1w4"))))
     (properties `((upstream-name . "glmlep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=glmlep")
     (synopsis "Fit GLM with LEP-Based Penalized Maximum Likelihood")
     (description
@@ -13298,6 +14626,9 @@ regression models penalized by LEP.")
         (base32 "1954ywshnqzr7h77wshf63y3zx3ra8mrfabg5dqjhkgv4rsk3h1y"))))
     (properties `((upstream-name . "glmglrt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-parameters r-mass))
     (home-page "https://cran.r-project.org/package=glmglrt")
     (synopsis "GLRT P-Values in Generalized Linear Models")
@@ -13305,11 +14636,12 @@ regression models penalized by LEP.")
      "This package provides functions to compute Generalized Likelihood Ratio Tests
 (GLRT) also known as Likelihood Ratio Tests (LRT) and Rao's score tests of
 simple and complex contrasts of Generalized Linear Models (GLMs).  It provides
-the same interface as summary.glm(), adding GLRT P-values, less biased than
-Wald's P-values and consistent with profile-likelihood confidence interval
-generated by confint().  See Wilks (1938) <doi:10.1214/aoms/1177732360> for the
-LRT chi-square approximation.  See Rao (1948) <doi:10.1017/S0305004100023987>
-for Rao's score test.  See Wald (1943) <doi:10.2307/1990256> for Wald's test.")
+the same interface as @code{summary.glm()}, adding GLRT P-values, less biased
+than Wald's P-values and consistent with profile-likelihood confidence interval
+generated by @code{confint()}.  See Wilks (1938) <doi:10.1214/aoms/1177732360>
+for the LRT chi-square approximation.  See Rao (1948)
+<doi:10.1017/S0305004100023987> for Rao's score test.  See Wald (1943)
+<doi:10.2307/1990256> for Wald's test.")
     (license license:gpl2)))
 
 (define-public r-glmertree
@@ -13324,16 +14656,19 @@ for Rao's score test.  See Wald (1943) <doi:10.2307/1990256> for Wald's test.")
         (base32 "05kks3wqzw1qn8cy5jnfddnza0vj5hr1q7bx435p1pg7p5dwrdj4"))))
     (properties `((upstream-name . "glmertree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-partykit r-lme4 r-formula))
     (home-page "https://cran.r-project.org/package=glmertree")
     (synopsis "Generalized Linear Mixed Model Trees")
     (description
      "Recursive partitioning based on (generalized) linear mixed models (GLMMs)
-combining lmer()/glmer() from lme4 and lmtree()/glmtree() from partykit'.  The
-fitting algorithm is described in more detail in Fokkema, Smits, Zeileis,
-Hothorn & Kelderman (2018; <DOI:10.3758/s13428-017-0971-x>).  For detecting and
-modeling subgroups in growth curves with GLMM trees see Fokkema & Zeileis (2024;
-<DOI:10.3758/s13428-024-02389-1>).")
+combining @code{lmer()/glmer()} from lme4 and @code{lmtree()/glmtree()} from
+partykit'.  The fitting algorithm is described in more detail in Fokkema, Smits,
+Zeileis, Hothorn & Kelderman (2018; <DOI:10.3758/s13428-017-0971-x>).  For
+detecting and modeling subgroups in growth curves with GLMM trees see Fokkema &
+Zeileis (2024; <DOI:10.3758/s13428-024-02389-1>).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-glme
@@ -13348,6 +14683,9 @@ modeling subgroups in growth curves with GLMM trees see Fokkema & Zeileis (2024;
         (base32 "1ysg1yx0pdyxlbkn36023230yky8wj3rvi3skrdqdjbnnyzhn49b"))))
     (properties `((upstream-name . "glme")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape r-nlme r-dplyr))
     (home-page "https://cran.r-project.org/package=glme")
     (synopsis "Generalized Linear Mixed Effects Models")
@@ -13372,6 +14710,9 @@ inference.")
         (base32 "0a9gvnrzrhpywmy4zzm0pyah6dflim4zfg4hqj8kh1ks0wynmjbr"))))
     (properties `((upstream-name . "GLMcat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rcppeigen r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ylleonv/GLMcat")
@@ -13400,6 +14741,9 @@ linkage, and Z, the design matrix.")
         (base32 "0x6jk2l5rpjkp5x815gpiwv8maa7mhmy6m8gaxbv1cbn3zyccynn"))))
     (properties `((upstream-name . "glmc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-emplik))
     (home-page "https://cran.r-project.org/package=glmc")
     (synopsis "Fitting Generalized Linear Models Subject to Constraints")
@@ -13422,6 +14766,9 @@ constraints on the parameters.")
         (base32 "1jy77z5fr781rm5mx6kszwi2zlvnpfwi24fn9vw1kza4jzcw9pjw"))))
     (properties `((upstream-name . "glmbb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-digest))
     (home-page "https://github.com/cjgeyer/glmbb")
     (synopsis
@@ -13445,6 +14792,9 @@ algorithm so we do not have to fit all models.")
         (base32 "0zx2bza5v5cfp9v7hf42s57522b6prawcwl77aa3kvjcnb0ish6g"))))
     (properties `((upstream-name . "GLMaSPU")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-mnormt r-mass))
     (home-page "https://cran.r-project.org/package=GLMaSPU")
     (synopsis
@@ -13479,6 +14829,9 @@ asymptotic type I error control.  Biometrika, 98(2).")
         (base32 "1byqlvpls23gzy7xlbs1kgfr4bsrmsrpc8rzzacf9czap1nlw39y"))))
     (properties `((upstream-name . "glm2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=glm2")
     (synopsis "Fitting Generalized Linear Models")
     (description
@@ -13499,6 +14852,9 @@ stability for models that may fail to converge using glm.")
         (base32 "18cs6z6573vq8sdjb4kgz8kahizs9njdbip4cm1dk63ldjjrl0kf"))))
     (properties `((upstream-name . "glm.predict")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-survival
                              r-survey
@@ -13513,13 +14869,13 @@ stability for models that may fail to converge using glm.")
     (synopsis "Predicted Values and Discrete Changes for Regression Models")
     (description
      "This package provides functions to calculate predicted values and the difference
-between the two cases with confidence interval for lm() [linear model], glm()
-[generalized linear model], glm.nb() [negative binomial model], polr() [ordinal
-logistic model], vglm() [generalized ordinal logistic model],	multinom()
-[multinomial model], tobit() [tobit model], svyglm() [survey-weighted
-generalised linear models] and lmer() [linear multilevel models] using Monte
-Carlo simulations or bootstrap.  Reference: Bennet A. Zelner (2009)
-<doi:10.1002/smj.783>.")
+between the two cases with confidence interval for @code{lm()} [linear model],
+@code{glm()} [generalized linear model], @code{glm.nb()} [negative binomial
+model], @code{polr()} [ordinal logistic model], @code{vglm()} [generalized
+ordinal logistic @code{model],	multinom()} [multinomial model], @code{tobit()}
+[tobit model], @code{svyglm()} [survey-weighted generalised linear models] and
+@code{lmer()} [linear multilevel models] using Monte Carlo simulations or
+bootstrap.  Reference: Bennet A. Zelner (2009) <doi:10.1002/smj.783>.")
     (license license:gpl2+)))
 
 (define-public r-glm-deploy
@@ -13534,6 +14890,9 @@ Carlo simulations or bootstrap.  Reference: Bennet A. Zelner (2009)
         (base32 "1akklvbhz2pp0sv1hax1jq0s9ajbfv1597z643gh5l9hwizj2h9m"))))
     (properties `((upstream-name . "glm.deploy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/oscarcastrolopez/glm.deploy")
     (synopsis "'C' and 'Java' Source Code Generator for Fitted Glm Objects")
@@ -13562,6 +14921,9 @@ generated.")
         (base32 "00pyfylc75aaidk0qq8avls2dzghym7yvkx4xmjna16k9cz5vfl3"))))
     (properties `((upstream-name . "gllvm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb
                              r-statmod
                              r-rcppeigen
@@ -13593,6 +14955,9 @@ approximations, or extended variational approximations, implemented via TMB
         (base32 "06sq7yk11rbqj8i900ss987fg9b232cirjxhdm1yl9xqz4inxvlg"))))
     (properties `((upstream-name . "gllm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://genepi.qimr.edu.au/Staff/davidD/#loglin")
     (synopsis "Generalised log-Linear Model")
     (description
@@ -13614,6 +14979,9 @@ approach.")
         (base32 "050rpdyp3xawkyjxcimjpbvn24677whlfhfmkyxijz7zqnvl7i8p"))))
     (properties `((upstream-name . "glinvci")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-plyr
                              r-optimx
@@ -13649,6 +15017,9 @@ models.")
         (base32 "02xgkrh2wybf9prcrb55w5ingf6x8f5xzdcnh2fv4skr0ixn0gp8"))))
     (properties `((upstream-name . "gldrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gldrm")
     (synopsis "Generalized Linear Density Ratio Models")
     (description
@@ -13679,6 +15050,9 @@ exponential family distribution were known.  Huang (2014)
         (base32 "1cp5mgbvq0g9ss2cv5yincfjvs8jmciz0h3g5jrr8gda1gvf357i"))))
     (properties `((upstream-name . "GLDreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gldex r-ddst))
     (home-page "https://cran.r-project.org/package=GLDreg")
     (synopsis "Fit GLD Regression/Quantile/AFT Model to Data")
@@ -13714,6 +15088,9 @@ model\"<doi:10.1080/10543406.2021.1934854>.")
         (base32 "0sfa05nm2riv8mnldq9hf7p0rcwwycc627ccwjkgh9a754fzxhcv"))))
     (properties `((upstream-name . "GLCMTextures")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-rcpparmadillo r-rcpp r-raster))
     (native-inputs (list r-knitr))
     (home-page "https://ailich.github.io/GLCMTextures/")
@@ -13740,6 +15117,9 @@ for a matrix.")
         (base32 "13my6y9jqd86cg5n74p4b8mqbdgwnanxx4qf1rrhm5jxf6sa31qm"))))
     (properties `((upstream-name . "glcm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-raster))
     (home-page "http://www.azvoleff.com/glcm")
     (synopsis
@@ -13762,6 +15142,9 @@ Supports processing images that cannot fit in memory.")
         (base32 "0vvd8m015g5rabpmkmfp20kh15d7ck8aamr9l9mbs2vapqs5k9c7"))))
     (properties `((upstream-name . "glca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://kim0sun.github.io/glca/")
@@ -13787,6 +15170,9 @@ et al (1997) <doi:10.1080/01621459.1997.10473658>; Clogg and Goodman (1985)
         (base32 "0dilf144xfn454xfsndbddhc28gzf36fiknc2qwcx3bp7z5caqjn"))))
     (properties `((upstream-name . "glba")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=glba")
     (synopsis "General Linear Ballistic Accumulator Models")
     (description
@@ -13810,6 +15196,9 @@ positive when needed.")
         (base32 "0r85k1fyk8979ahfmd4vmzkhyvrlnpkgjwg1yi7092kpx8877lj0"))))
     (properties `((upstream-name . "glassdoor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=glassdoor")
@@ -13833,6 +15222,9 @@ breakdown of other jobs a person did after their current one.")
         (base32 "080v2qckihhacclxi2zscslbwbc6179pc7g02lyqaicf9wrsr8ff"))))
     (properties `((upstream-name . "GlarmaVarSel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-glmnet r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GlarmaVarSel")
@@ -13855,6 +15247,9 @@ models.  For further details we refer the reader to the paper Gomtsyan et al.
         (base32 "14k24f6yjx9jlvmd7q1lw6nyajzpsmsbdj8jq3v8ad1kdrip05x7"))))
     (properties `((upstream-name . "Glarmadillo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Glarmadillo")
@@ -13885,6 +15280,9 @@ package is based on the work of Friedman, Hastie, and Tibshirani (2008)
         (base32 "0n0mv4xvh5q3y383cs224x6r608ciw4822pkanvmcjsc9zl0z1ar"))))
     (properties `((upstream-name . "glarma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=glarma")
@@ -13921,6 +15319,9 @@ included in the package.")
         (base32 "0vzkszam7nz40v8pxq06jn3fgwa1nd3s485hgfkcv7r8pg2rp56q"))))
     (properties `((upstream-name . "glamlasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=glamlasso")
     (synopsis "Penalization in Large Scale Generalized Linear Array Models")
@@ -13933,8 +15334,8 @@ Absolute Deviation (SCAD) penalized estimation is possible for the following
 models: The Gaussian model with identity link, the Binomial model with logit
 link, the Poisson model with log link and the Gamma model with log link.  It is
 also possible to include a component in the model with non-tensor design e.g an
-intercept.  Also provided are functions, @code{glamlassoRR}() and
-@code{glamlassoS}(), fitting special cases of GLAMs.")
+intercept.  Also provided are functions, @code{glamlassoRR()} and
+@code{glamlassoS()}, fitting special cases of GLAMs.")
     (license license:gpl3)))
 
 (define-public r-glam
@@ -13949,6 +15350,9 @@ intercept.  Also provided are functions, @code{glamlassoRR}() and
         (base32 "0fwh6x1y1d7fi0d4qh0vdmlr324zqil91zmi79w2mxs9q1w9a2ws"))))
     (properties `((upstream-name . "glam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gam))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=glam")
@@ -13978,6 +15382,9 @@ fit using local scoring algorithms described in Hastie and Tibshirani (1990)
         (base32 "1x6db22zib76xfzqxygcyxlcalg9c3f9bcyi10qsvi3sg5f77l6j"))))
     (properties `((upstream-name . "gKRLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-rcppeigen
                              r-rcpp
@@ -14010,6 +15417,9 @@ and Goplerud (2024) <doi:10.1017/pan.2023.27> provide further details.")
         (base32 "1sb52hhpwm3bq7rn2xdq5vly6z1c5yab9a26xzgj3c5s47vk02pa"))))
     (properties `((upstream-name . "gkgraphR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-isocodes r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/racorreia/gkgraphR")
@@ -14032,6 +15442,9 @@ official Google Knowledge Graph API
         (base32 "13vafhbgcsj485f12qv962y07v3hil3pla51vkl2b030amzy86jv"))))
     (properties `((upstream-name . "GK2011")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/leeper/GK2011")
     (synopsis "Gaines and Kuklinski (2011) Estimators for Hybrid Experiments")
     (description
@@ -14053,6 +15466,9 @@ Self-Selection,\" American Journal of Political Science 55(3): 724-736.")
         (base32 "1dwv6389w9cgavwkzznbdzf92d3y0s07s74a5ccwiy1zf48jwwar"))))
     (properties `((upstream-name . "gk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progress r-lubridate r-ecdat))
     (home-page "https://github.com/dennisprangle/gk")
     (synopsis "g-and-k and g-and-h Distribution Functions")
@@ -14073,6 +15489,9 @@ distributions.")
         (base32 "1zzbjss0xfnmf8q445wfrkvpgp4x33nmcnfxm2wizpfj7jgxprqg"))))
     (properties `((upstream-name . "GJRM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vinecopula
                              r-vgam
                              r-trust
@@ -14112,6 +15531,9 @@ association, endogeneity, non-random sample selection or partial observability."
         (base32 "112fyy76ry6g0xinhy09s5vdcd11jw7sivadlx05ali89lm5nigg"))))
     (properties `((upstream-name . "gJLS2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg
                              r-plyr
                              r-nlme
@@ -14151,6 +15573,9 @@ X-chromosome genotype data through novel methods for location (Chen et al.,
         (base32 "1jzgh5hp112gjgqyyhpd4fv1yizb56596wl3izb066rzhhyc4wim"))))
     (properties `((upstream-name . "gjam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-rann r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gjam")
@@ -14173,6 +15598,9 @@ details are described in Clark et al. (2018) <doi:10.1002/ecm.1241>.")
         (base32 "0y2slhxhj7k413kjaydin9hq3x2xgx4cgjshdplwnmg3x2nakn31"))))
     (properties `((upstream-name . "givitiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-alabama))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=givitiR")
@@ -14200,6 +15628,9 @@ to assess the validity of an externally developed model.")
         (base32 "0kgr3rcy261zlsc4a5sqvar6kwb23wcfdwv2rpjcfwdvghz3afzc"))))
     (properties `((upstream-name . "gittargets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list git))
     (propagated-inputs (list r-uuid
                              r-tibble
@@ -14237,6 +15668,9 @@ that all targets remain up to date.")
         (base32 "1wh5vz2vy1b1fqqjz20mdv9fckdxx1076bs4a74lddjn4q7m6xif"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-r6
@@ -14269,6 +15703,9 @@ to access repository data.")
         (base32 "09l22wv2r7l1ax17y1q1xmasibyqm71jk0nyvmvlawavkw6by658"))))
     (properties `((upstream-name . "gitr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://stufield.github.io/gitr/")
     (synopsis "Lightweight API for 'Git'")
@@ -14292,6 +15729,9 @@ Git <https://git-scm.com/downloads> is required.")
         (base32 "1g34cyx35wlpq42alsayk69x708zxqgvbdndb7j6n1q0rm4vncvd"))))
     (properties `((upstream-name . "gitlink")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-htmltools))
     (home-page "https://github.com/colearendt/gitlink")
     (synopsis "Add 'Git' Links to Your Web Based Assets")
@@ -14313,6 +15753,9 @@ documents, and other HTML based resources.  This is most commonly used for
         (base32 "1mlzg17pvbxgq8n09lajsb4qyfyl4ksyn7c2v5vlda94brvgspkd"))))
     (properties `((upstream-name . "gitlabr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -14346,6 +15789,9 @@ or used on <https://about.gitlab.com>.")
         (base32 "0gfh6szw9lycp6z8j5nghfz75lnilschg3n1yk6r6a8g4668k296"))))
     (properties `((upstream-name . "gitignore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xfun
                              r-purrr
                              r-jsonlite
@@ -14375,6 +15821,9 @@ available.")
         (base32 "1h3yaz2snrlibl707rnv2l5y5r879dsprcr0a0vc8aliwdsmydvi"))))
     (properties `((upstream-name . "githubr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-httr r-gitcreds r-gh r-dplyr))
     (home-page "https://github.com/fhdsl/githubr")
     (synopsis "Easier to Use API Wrapper for 'GitHub'")
@@ -14395,6 +15844,9 @@ uses the gh package but has things wrapped up for convenient use cases.")
         (base32 "0hqh86r2007hzdbm8rr0fwqhhsna7ji8sdgmdnrxkxraa5f2pfz3"))))
     (properties `((upstream-name . "githubinstall")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mockery
                              r-jsonlite
                              r-httr
@@ -14421,6 +15873,9 @@ uses the gh package but has things wrapped up for convenient use cases.")
         (base32 "1jznhl0ljcang10s4k9338fy5qsp0pxg4kv482v93milszib3vy7"))))
     (properties `((upstream-name . "gitGPT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (home-page "https://github.com/stevecondylios/gitGPT")
     (synopsis "Automated Git Commit Messages using the 'OpenAI' 'GPT' Model")
@@ -14443,6 +15898,9 @@ repository using commit messages generated by passing the git diff output to the
         (base32 "1kcky3yxj4f9rgp2dliwavajwy2784ynplnmvcyizwj83l07zjql"))))
     (properties `((upstream-name . "gitgadget")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-shinyfiles
                              r-shiny
@@ -14477,6 +15935,9 @@ button.")
         (base32 "139h19yyi7bpkps2vskdnga43ggpgb9fg8jdr7n8vgadxjamv98p"))))
     (properties `((upstream-name . "gitear")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -14508,6 +15969,9 @@ issues and organizations directly in R.")
         (base32 "16g4kngal0w0vjrympxmnq16rpxks4wbj35aasvr3p2srgqn86by"))))
     (properties `((upstream-name . "gitdown")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringi
                              r-rmarkdown
@@ -14540,6 +16004,9 @@ changes in their source code, in relation to features requests.")
         (base32 "1kfx95y0kp656y8306jz75q4zmd8dswfmrb5jr0wihlhnz182g2h"))))
     (properties `((upstream-name . "git4r")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-git2r r-diffr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/johnxhobbs/git4r")
@@ -14563,6 +16030,9 @@ on-premises remote option.")
         (base32 "0vj308ilycfv9jhi6ixk7n3pg6m8dh86rzcjnh78rzrd72fvcg9h"))))
     (properties `((upstream-name . "git2rdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-git2r r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://ropensci.github.io/git2rdata/")
@@ -14600,6 +16070,9 @@ reading.")
         (base32 "024ngx3r0c38ss9qzali6nw55sgl2jqksspjz6v2drgaadkxczlz"))))
     (properties `((upstream-name . "GISTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-sf r-rcolorbrewer r-mass))
     (home-page "https://cran.r-project.org/package=GISTools")
     (synopsis "Further Capabilities in Geographic Information Science")
@@ -14620,6 +16093,9 @@ maps with nice looking legends, and aggregation of point data to polygons.")
         (base32 "0clhch4xvklrmk7h6b7vz83zzlj5r1lzrszy73agmpdbs5cax5sy"))))
     (properties `((upstream-name . "GISSB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidygraph
                              r-tibble
@@ -14658,6 +16134,9 @@ primarily related to network analysis on the Norwegian road network.")
         (base32 "1nl1cbjcjkyd67i0qk0skbrk9ya9fydw9iiq4ip11bjg86661jjb"))))
     (properties `((upstream-name . "GISINTEGRATION")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm
                              r-syn
                              r-stringr
@@ -14688,6 +16167,9 @@ that the data are optimally primed for precise and thorough analysis.")
         (base32 "1zdm79h9mxwv72y9s1nznr39zxrpl4jmqyb6b9nc7nnij9w145yf"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-rappdirs r-jsonlite r-geojsonsf
                              r-countrycode))
     (native-inputs (list r-knitr))
@@ -14713,6 +16195,9 @@ Eurostat.")
         (base32 "1m19jxr6h485v32iqq260cizf30cgrx3pk802r73fbp3ssj7nmvh"))))
     (properties `((upstream-name . "GiRaF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GiRaF")
@@ -14738,6 +16223,9 @@ using MCMC samplers for large lattices.")
         (base32 "0mvjgzqy3sqa5p1263v042k20j6hmlgli9llgq89y17d47njmfw4"))))
     (properties `((upstream-name . "gips")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-permutations r-numbers))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PrzeChoj/gips")
@@ -14764,6 +16252,9 @@ are described in Graczyk et al. (2022) <doi:10.1214/22-AOS2174>.")
         (base32 "1asyd4f76xg84jnwa8kxcw5z6ch3kpy0p7yigmyga94908gylpxj"))))
     (properties `((upstream-name . "GIplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GIplot")
     (synopsis "Gaussian Interval Plot (GIplot)")
     (description
@@ -14785,6 +16276,9 @@ from the mean.")
         (base32 "08rfdac442picbw1r3xyxjzf2dc57svg44am0714z4r72mshvj04"))))
     (properties `((upstream-name . "gIPFrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gIPFrm")
     (synopsis
      "Generalized Iterative Proportional Fitting for Relational Models")
@@ -14805,6 +16299,9 @@ overall effect.")
         (base32 "0hxcaixr8f3pq4kpzhfrbm7blvkq6sk3pz63bfjy6n1lhlashb13"))))
     (properties `((upstream-name . "GInSARCorW")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-raster r-circular))
     (home-page
      "<https://subhadipdatta.wixsite.com/profile/post/ginsarcorw-gacos-insar-correction-workflow>")
@@ -14835,6 +16332,9 @@ References: Yu, C., N. T. Penna, and Z. Li (2017)
         (base32 "0b37np2h03m82dhww9slnchm3dk4qwfmj6v7q13li788cw7whid1"))))
     (properties `((upstream-name . "ginormal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bas))
     (native-inputs (list gfortran))
     (home-page "https://github.com/smonto2/ginormal")
@@ -14862,6 +16362,9 @@ Montoya-BlandÃ³n (2023)
         (base32 "1yv97q6l8imd7z8zqykymmsx6905wrygj5l3arwdz9irfgvw55lx"))))
     (properties `((upstream-name . "giniVarCI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=giniVarCI")
@@ -14890,6 +16393,9 @@ al. (2021) <doi:10.3390/math9243252>.  Giorgi and Gigliarano (2017)
         (base32 "1x9a59x60a2jdnql3wn4za510rv9qp84j6b9m6la81j3mmy92vzz"))))
     (properties `((upstream-name . "GiniDistance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readxl r-rcpparmadillo r-rcpp r-randomforest
                              r-energy))
     (home-page "https://cran.r-project.org/package=GiniDistance")
@@ -14913,6 +16419,9 @@ and Zhang, J., (2018) <@code{arXiv:1809.09793>}.")
         (base32 "03nhqx5z5m918dw277hx390w66mrfb33kmijd7724blfgikgpfpa"))))
     (properties `((upstream-name . "GiniDecompLY")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/aambarek/GiniDecompLY")
@@ -14934,6 +16443,9 @@ the decomposition of Lerman and Yitzhaki (1985) <doi:10.2307/1928447>.")
         (base32 "0858mlh8pwylnnb13y40wscq08gcx1cgwjn88wv5vkim5jn4bigi"))))
     (properties `((upstream-name . "Gini")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Gini")
     (synopsis "Gini Coefficient")
     (description
@@ -14954,6 +16466,9 @@ this package can be referenced from Brown MC (1994) <doi:
         (base32 "0his7wsgnggyv9526blxzxa1ni8hwq2ws64wkmha45nvvnm3dsiw"))))
     (properties `((upstream-name . "GiNA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-png r-foreach r-ebimage r-doparallel))
     (home-page "http://www.wisc.edu")
     (synopsis "High Throughput Phenotyping")
@@ -14975,6 +16490,9 @@ association (GWAS) and genomic selection programs.")
         (base32 "0dhvi05mpwyx6cpcyk2nzvgd6c8byd7cmrd9crx83lvfa03smpng"))))
     (properties `((upstream-name . "gimms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zyp r-raster r-ncdf4 r-kendall r-curl))
     (home-page "https://github.com/environmentalinformatics-marburg/gimms")
     (synopsis "Download and Process GIMMS NDVI3g Data")
@@ -15002,6 +16520,9 @@ lag-1 autocorrelation.")
         (base32 "1g170rz3c3qx27yy67f7xab4gkm0pbbvwlwkcsczfxphad609ryl"))))
     (properties `((upstream-name . "gimmeTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinywidgets
                              r-shinyjs
                              r-shiny
@@ -15032,6 +16553,9 @@ tools for navigating output.")
         (base32 "18k3z6ynzpmdg029sspl8as0bkifqf8ff6hf9l2yblls7sb64id0"))))
     (properties `((upstream-name . "GimmeMyPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-scales
@@ -15067,6 +16591,9 @@ graphics in R.")
         (base32 "1r5j5s8pmjrndr4qsi4ivrqfyj9rlmw72ya850ig387z9gl84n47"))))
     (properties `((upstream-name . "GIMMEgVAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qgraph r-png r-here r-graphicalvar))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GIMMEgVAR")
@@ -15094,6 +16621,9 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
         (base32 "16xb0182nh2p2cbr1iw74q1biif240jcyckal3mf6zdq703vgy4j"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries
                              r-qgraph
                              r-nloptr
@@ -15127,6 +16657,9 @@ individual-level) relations.  See Gates & Molenaar (2012)
         (base32 "1km8pyr1qfzffm33ihhlgvc0qxgxxfi161vkrz77d1b7jkpdyxjj"))))
     (properties `((upstream-name . "gim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zhangh12/gim")
@@ -15152,6 +16685,9 @@ al. (2020)<doi:10.1093/biomet/asaa014>.")
         (base32 "1hk7fnv3gdfvx9q4ssw0jgph59l7h2dgl7lv8pivkm678i53n8zl"))))
     (properties `((upstream-name . "GillespieSSA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rcannood/GillespieSSA")
     (synopsis "Gillespie's Stochastic Simulation Algorithm (SSA)")
@@ -15181,6 +16717,9 @@ SIRS model.  Pineda-Krch et al. (2008) <doi:10.18637/jss.v025.i12>.")
         (base32 "09n0nhsv3v61asfzghzxa9sr3ryl25mlvj73gk9ql9wlrynd3wrl"))))
     (properties `((upstream-name . "GIGrvg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GIGrvg")
     (synopsis "Random Variate Generator for the GIG Distribution")
     (description
@@ -15200,6 +16739,9 @@ distribution.")
         (base32 "0qb8w455a8wxc5ljmydq4xag2kbj5yk06an0pd9hd4k48wssg8la"))))
     (properties `((upstream-name . "gigg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
     (home-page "https://github.com/umich-cphds/gigg")
     (synopsis
@@ -15225,6 +16767,9 @@ Wang, Sung Kyun Park, Jian Kang, Bhramar Mukherjee (2021)
         (base32 "101vr2qasky8hnxp5i3lhlnymwzciypqwvhpl6mrr0r0czgpcz2f"))))
     (properties `((upstream-name . "GIFTr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/omarelashkar/GIFTr")
@@ -15250,6 +16795,9 @@ support.")
         (base32 "1gb3x4rln9vayjd9fgzb434mm3dwcqgrvlv6rmh4b39mjfm73sly"))))
     (properties `((upstream-name . "gifti")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-r-utils r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gifti")
@@ -15274,6 +16822,9 @@ imaging data.")
         (base32 "0ngrci818f0k21aiy7dnzpip33sikjf2kp7j9l3r7mwp35h6q2qd"))))
     (properties `((upstream-name . "GIFT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sf
                              r-purrr
@@ -15308,6 +16859,9 @@ queries can be accessed according the following scheme:
         (base32 "1vak4chf3cxy6dq7i7asxbs6byn6gqwl8iafrfpg12bkc71b4rhb"))))
     (properties `((upstream-name . "gifski")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (home-page "https://r-rust.r-universe.dev/gifski")
     (synopsis "Highest Quality GIF Encoder")
@@ -15329,6 +16883,9 @@ dithering with thousands of colors per frame.")
         (base32 "0a8xxr0qn72x2kkzlk9pm9nqp1pr74qh6p2g6l63km6c1imhc4i7"))))
     (properties `((upstream-name . "Gifi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-colorspace))
     (native-inputs (list gfortran))
     (home-page "https://r-forge.r-project.org/projects/psychor/")
@@ -15351,6 +16908,9 @@ multiple correspondence analysis ('HOMALS'), monotone regression analysis
         (base32 "1gh6h3cxf27x6wa3g28fi8famb1vvf69qgq8qw3ypdamc58avmp9"))))
     (properties `((upstream-name . "gif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gif")
@@ -15382,6 +16942,9 @@ few minutes.")
         (base32 "0dgzmlza4mxghs3f9d81p03f91bz7v07af1d6zpfmaif3lzc2q77"))))
     (properties `((upstream-name . "gie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-purrr
                              r-magrittr
@@ -15412,6 +16975,9 @@ level.")
         (base32 "0wjrv5rpzcyng0vvpr59l148lxzqnqq4c045fw2x9ynffyb71h99"))))
     (properties `((upstream-name . "GIC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest r-ggplot2 r-cluster))
     (home-page "https://cran.r-project.org/package=GIC")
     (synopsis "General Iterative Clustering Algorithm")
@@ -15432,6 +16998,9 @@ forest (RF) and the resulting clusters as measured by the silhouette score.")
         (base32 "19il4si7ch5jr7plr8qwv7jrc5kfkxmh5jrcdvbn688gxcnv7bs0"))))
     (properties `((upstream-name . "gibble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mdsumner/gibble")
@@ -15440,10 +17009,11 @@ forest (RF) and the resulting clusters as measured by the silhouette score.")
      "Build a map of path-based geometry, this is a simple description of the number
 of parts in an object and their basic structure.  Translation and restructuring
 operations for planar shapes and other hierarchical types require a data model
-with a record of the underlying relationships between elements.  The gibble()
-function creates a geometry map, a simple record of the underlying structure in
-path-based hierarchical types.  There are methods for the planar shape types in
-the sf and sp packages and for types in the trip and silicate packages.")
+with a record of the underlying relationships between elements.  The
+@code{gibble()} function creates a geometry map, a simple record of the
+underlying structure in path-based hierarchical types.  There are methods for
+the planar shape types in the sf and sp packages and for types in the trip and
+silicate packages.")
     (license license:gpl3)))
 
 (define-public r-gibasa
@@ -15458,6 +17028,9 @@ the sf and sp packages and for types in the trip and silicate packages.")
         (base32 "1j6k11vq9n9bh8f1sdc14maj88nd5vacl3xq9v54nb2phi55rp72"))))
     (properties `((upstream-name . "gibasa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list mecab))
     (propagated-inputs (list r-stringi
                              r-rlang
@@ -15487,6 +17060,9 @@ is to provide an alternative to tidytext using morphological analysis.")
         (base32 "01gvaian8a1dnlfvvbbxshfvfwr50dl9l1d41cq1nmy37gilj0pk"))))
     (properties `((upstream-name . "GiANT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GiANT")
     (synopsis "Gene Set Uncertainty in Enrichment Analysis")
     (description
@@ -15507,6 +17083,9 @@ uncertainty of gene sets, Schmid et al. (2016)
         (base32 "0y7vcca2im6q70jxsjnf4a7jg66y66g941ad0d7iykw3c2cwx6g4"))))
     (properties `((upstream-name . "giacR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-processx r-pingr r-jsonlite r-chromote))
     (home-page "https://github.com/stla/giacR")
     (synopsis "Interface to the Computer Algebra System 'Giac'")
@@ -15529,6 +17108,9 @@ interface Xcas'.  This package allows to execute Giac commands in R'.")
         (base32 "0k4w37vnhpanpa80la8rscgimnnzzid5v59109xfbbz1xxx1bb49"))))
     (properties `((upstream-name . "ghypernet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-texreg
                              r-rootsolve
                              r-rlang
@@ -15572,6 +17154,9 @@ Schweitzer, F. (2019) <doi:10.1145/3341161.3342926> Casiraghi, G. (2019)
         (base32 "10w3wlr9wk6z4ph2m8qip6bdsr3gg4nl7v5k277zswkyz26fg135"))))
     (properties `((upstream-name . "ghyp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-mass))
     (home-page "https://cran.r-project.org/package=ghyp")
     (synopsis "Generalized Hyperbolic Distribution and Its Special Cases")
@@ -15601,6 +17186,9 @@ Princeton (2005).")
         (base32 "1khjfy62a67r59s2rax9mmnqy5xnnwhbydzhqwwmyspl48mxycdj"))))
     (properties `((upstream-name . "GHS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=GHS")
     (synopsis
@@ -15629,6 +17217,9 @@ authored by Wang(2012) <doi:10.1214/12-BA729>.")
         (base32 "19awg98r2hwwwwrwh0166y8ij1clf58vrf02i8fhhfzddx3an6bz"))))
     (properties `((upstream-name . "ghql")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-jsonlite r-graphql r-crul))
     (home-page
      "https://github.com/ropensci/ghqlhttps://docs.ropensci.org/ghql")
@@ -15652,6 +17243,9 @@ are checked with the libgraphqlparser C++ parser via the gaphql package.")
         (base32 "0vp9f8k31yclxvmcjgzkg6xl3rdv49anjmwdhcrhcxv8x9f3bdrj"))))
     (properties `((upstream-name . "GhostKnockoff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seqminer
                              r-rspectra
                              r-rdsdp
@@ -15683,6 +17277,9 @@ supports multiple knockoff inference for improved stability and reproducibility.
         (base32 "0anrb1n3f3jnq2p0dgqzw5a0gby2slafv2bybgy5gm3f9fsj831w"))))
     (properties `((upstream-name . "Ghost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6))
     (home-page
      "https://www.researchgate.net/publication/332779980_Ghost_Imputation_Accurately_Reconstructing_Missing_Data_of_the_Off_Period")
@@ -15710,6 +17307,9 @@ file.  For more details see Reza Rawassizadeh (2019)
         (base32 "1qj5cysgbh9hq7q17p3vvaqychg3cyhyzlv1hs4jqqlb9z2cz1gr"))))
     (properties `((upstream-name . "ghibli")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-prismatic))
     (native-inputs (list r-knitr))
     (home-page "https://ewenme.github.io/ghibli/")
@@ -15732,6 +17332,9 @@ enjoyment.")
         (base32 "18cp82bniz1mdrkfi6y6mrrjxz5jhkz4w21939c5wsz9mlp9d2bj"))))
     (properties `((upstream-name . "ghcm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-compquadform))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/arlundborg/ghcm")
@@ -15757,6 +17360,9 @@ method can be found in Anton Rask Lundborg, Rajen D. Shah and Jonas Peters
         (base32 "10sq9rissf3w7rp8449vzigl7bj7y3iqx0vci2m559ihjmsdkn6i"))))
     (properties `((upstream-name . "ghclass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-whisker
                              r-tibble
@@ -15792,6 +17398,9 @@ and repetitive tasks around creating and distributing assignments.")
         (base32 "0xvr3xpi3d00ns55bwbj7k74ccs0lf0vf8f74qxhi5389bf3l0zr"))))
     (properties `((upstream-name . "Ghat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rrblup))
     (home-page "https://academic.oup.com/genetics/article/209/1/321/5931021")
     (synopsis "Quantifying Evolution and Selection on Complex Traits")
@@ -15817,6 +17426,9 @@ genome data and visualising the output and results.  Beissinger et al., (2018)
         (base32 "18m4kzz3vhkqbsdgj3k0cywsl7lvf6r6whwsaww480fazx7vwfk5"))))
     (properties `((upstream-name . "ghapps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openssl r-jose r-gh))
     (home-page "https://r-lib.r-universe.dev/ghapps")
     (synopsis "Authenticate as a 'GitHub' App")
@@ -15840,6 +17452,13 @@ extends the gh package to let you authenticate and interact with @code{GitHub}
         (base32 "1fyxgnn6b474rx8cqg9lgdybq5j4nriq2axwgmhx7m8f7mysrqny"))))
     (properties `((upstream-name . "GHap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-stringi
                              r-sparseinv
                              r-pedigreemm
@@ -15880,6 +17499,9 @@ sampling methods for virtual gamete mating, mixed model fitting and GWAS.")
         (base32 "13yvckny2b7b7rhgi28xm8379paskin78wm5095s1ily9a2dxgkg"))))
     (properties `((upstream-name . "ggx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sets r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggx")
@@ -15905,6 +17527,9 @@ font size and such), which then are translated into valid ggplot2 commands.")
         (base32 "0zl50rksfxiw3ab1j26w27rypygrr28yysflg507djamnc2371gj"))))
     (properties `((upstream-name . "ggwordcloud")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rcpp
                              r-png
@@ -15932,6 +17557,9 @@ around the one of wordcloud2.js'.")
         (base32 "1sj5g3gsdk3bi9vvnjmsfx6c68dhg0b4lpsq9ljxsx2xzapmilmm"))))
     (properties `((upstream-name . "ggvolcano")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-golem r-ggrepel r-ggplot2 r-config))
     (home-page "https://cran.r-project.org/package=ggvolcano")
     (synopsis "Publication-Ready Volcano Plots")
@@ -15954,13 +17582,16 @@ ggplot2 framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
         (base32 "0jdpr4bmw9kzq41h42r1i4ravfvkv65n2xkmqn6gm23bhdwyngmj"))))
     (properties `((upstream-name . "ggview")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-ggplot2))
     (home-page "https://github.com/idmn/ggview")
     (synopsis "'ggplot2' Picture Previewer")
     (description
      "Preview what a ggplot2 plot would look like if you save it to a file.  Attach
-picture dimensions as a canvas() element and get an instant preview.  These
-dimensions will then be used when you save the plot.")
+picture dimensions as a @code{canvas()} element and get an instant preview.
+These dimensions will then be used when you save the plot.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -15976,6 +17607,9 @@ dimensions will then be used when you save the plot.")
         (base32 "0xqn8iznrm8q30pxwka88wi1z7lndi6lm12rq6ngcaxf294fbz01"))))
     (properties `((upstream-name . "ggversa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ggversa")
     (synopsis "Graficas Versatiles Con 'ggplot2'")
     (description
@@ -15996,6 +17630,9 @@ Julian Hernandez-Serano.")
         (base32 "0cycnnycn1qazy35s4w746zlfraayf109bq40fglklmick6kfwsz"))))
     (properties `((upstream-name . "ggupset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-scales r-rlang r-gtable r-ggplot2))
     (home-page "https://github.com/const-ae/ggupset")
     (synopsis "Combination Matrix Axis for 'ggplot2' to Create 'UpSet' Plots")
@@ -16019,6 +17656,9 @@ categorical axis into a combination matrix axis.")
         (base32 "1xbbapam5whnsa0f2fpvj2v56c7g5wm4jcs0xwzrcjlp9g293vqj"))))
     (properties `((upstream-name . "GGUM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx r-viridis r-rdpack r-psych r-abind))
     (home-page "https://github.com/jorgetendeiro/GGUM/")
     (synopsis "Generalized Graded Unfolding Model")
@@ -16030,7 +17670,7 @@ and it retrieves item and person parameter estimates.  Several plotting
 functions are available (item and test information functions; item and test
 characteristic curves; item category response curves).  Additionally, there are
 some functions that facilitate the communication between R and GGUM2004'.
-Finally, a model-fit checking utility, MODFIT(), is also available.")
+Finally, a model-fit checking utility, @code{MODFIT()}, is also available.")
     (license license:gpl2+)))
 
 (define-public r-ggtricks
@@ -16045,6 +17685,9 @@ Finally, a model-fit checking utility, MODFIT(), is also available.")
         (base32 "1bpf3a5da8csqzwyqw0xqkbki4jgyhsybj2lw8zs00vcdsg9bhhv"))))
     (properties `((upstream-name . "ggtricks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-cli))
     (home-page "https://github.com/AbdoulMa/ggtricks")
     (synopsis
@@ -16068,6 +17711,9 @@ coordinates.")
         (base32 "10ml5mdijh27b1js67zwaywn81bvz6aja1bn60k3rnr964nsljsj"))))
     (properties `((upstream-name . "ggtrendline")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/PhDMeiwp/ggtrendline")
     (synopsis "Add Trendline and Confidence Interval to 'ggplot'")
@@ -16091,6 +17737,9 @@ the methods used in this package, see Ritz and Streibig (2008)
         (base32 "1zzdamzxkwimzjhrjf5nijj0r94l03nabny5gjv49kqlncjicr7r"))))
     (properties `((upstream-name . "ggtrace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
@@ -16114,6 +17763,9 @@ with dense datasets that are prone to overplotting.")
         (base32 "0sd39svwi3ai81szahd49a8qvsydi1922z4q6r2r70fpbfwi4qrq"))))
     (properties `((upstream-name . "ggTimeSeries")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/thecomeonman/ggTimeSeries")
@@ -16134,6 +17786,9 @@ with dense datasets that are prone to overplotting.")
         (base32 "07af96qx8n4mal4jnnn8br3gf7bw22mk82c24csvqhki6q5w460z"))))
     (properties `((upstream-name . "ggtikz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tikzdevice r-stringr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/osthomas/ggtikz")
@@ -16156,6 +17811,9 @@ or relative plot coordinates.")
         (base32 "1f9i81vmdkcahxsxqzwgkrjfqchk3jr14h2w8i5gsyhink271kxj"))))
     (properties `((upstream-name . "ggtibble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -16186,6 +17844,9 @@ where many figures are needed with different data and similar formatting.")
         (base32 "0nv11db6ds7xshh7dkpz1agfq0r8a9z3qvgd3m1icqcg3w60as0y"))))
     (properties `((upstream-name . "ggthemeUL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggthemeUL")
@@ -16207,6 +17868,9 @@ the University of Ljubljana.")
         (base32 "04g8g17ziw13rxjzkvgy5yd0z15ypxk0b8fq2y1vk8acsqr2dv11"))))
     (properties `((upstream-name . "ggtea")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=ggtea")
     (synopsis "Palettes and Themes for 'ggplot2'")
@@ -16214,32 +17878,6 @@ the University of Ljubljana.")
      "This package provides a collection of palettes and themes for ggplot2', offering
 a light, pastel aesthetic.  Syntax follows the viridis package.")
     (license license:gpl3+)))
-
-(define-public r-ggtangle
-  (package
-    (name "r-ggtangle")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggtangle" version))
-       (sha256
-        (base32 "07hlg2ygq9fbyzvfp1brvpxl1gr1hd10py73w2wsz95p91j9q3gr"))))
-    (properties `((upstream-name . "ggtangle")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yulab-utils
-                             r-rlang
-                             r-igraph
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggfun))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggtangle")
-    (synopsis "Draw Network with Data")
-    (description
-     "Extends the ggplot2 plotting system to support network visualization.  Inspired
-by ggtree', ggtangle is designed to work with network associated data.")
-    (license license:artistic2.0)))
 
 (define-public r-ggswissmaps
   (package
@@ -16253,6 +17891,9 @@ by ggtree', ggtangle is designed to work with network associated data.")
         (base32 "0is48x6k2p5dgj9q4km0dv33a9pcpfhlai9vz295y3acpyrkmnn4"))))
     (properties `((upstream-name . "ggswissmaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gibonet/ggswissmaps")
@@ -16275,6 +17916,9 @@ the swiss federal statistical office.")
         (base32 "0c3qv9gii3ndqip3nxs08bx7lvh6sm46mxz8nyi627zbgqmhwrr5"))))
     (properties `((upstream-name . "ggsurvfit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survival
                              r-rlang
@@ -16308,6 +17952,9 @@ function or customization from ggplot2 and other ggplot2 extension packages.")
         (base32 "1a50ac2546pxa35k59j4ih0csiyfjdgqfqwm3fb5ny7jx1mk0hmi"))))
     (properties `((upstream-name . "ggsurvey")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survey r-hexbin r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=ggsurvey")
     (synopsis "Simplifying 'ggplot2' for Survey Data")
@@ -16329,6 +17976,9 @@ and hexplots of survey data.")
         (base32 "0qs27b4lksaaaspavkycbzf8cfjxjli7xrfjby71sl0lca3fwm1g"))))
     (properties `((upstream-name . "ggstudent")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=ggstudent")
     (synopsis "Continuous Confidence Interval Plots using t-Distribution")
@@ -16356,6 +18006,9 @@ probability density function of the t-distribution.")
         (base32 "0d6g5916mfrg2srcqjhlpm4acp4g16vq9ks4x37yzkpr34vi5x7j"))))
     (properties `((upstream-name . "ggstream")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-purrr
                              r-magrittr
@@ -16381,6 +18034,9 @@ magnitude trends over time.")
         (base32 "0m2knp1jf1x62nqd8ln4haw90jv69l7vjrhn4pdrywgmwhdrp8gd"))))
     (properties `((upstream-name . "ggstar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-gridextra r-ggplot2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/xiangpin/ggstar/")
@@ -16403,6 +18059,9 @@ draw the scatter plot.")
         (base32 "0yxy06aa6w9hyjk4p6y7d72ypx3kzkj8zak2wbld4avlc457341m"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-scales
                              r-rlang
@@ -16416,10 +18075,10 @@ draw the scatter plot.")
     (synopsis "Extensions to 'ggplot2' for Radiation Spectra")
     (description
      "Additional annotations, stats, geoms and scales for plotting \"light\" spectra
-with ggplot2', together with specializations of ggplot() and autoplot() methods
-for spectral data and waveband definitions stored in objects of classes defined
-in package photobiology'.  Part of the r4photobiology suite, Aphalo P. J. (2015)
-<doi:10.19232/uv4pb.2015.1.14>.")
+with ggplot2', together with specializations of @code{ggplot()} and
+@code{autoplot()} methods for spectral data and waveband definitions stored in
+objects of classes defined in package photobiology'.  Part of the r4photobiology
+suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
     (license license:gpl2+)))
 
 (define-public r-ggspatial
@@ -16434,6 +18093,9 @@ in package photobiology'.  Part of the r4photobiology suite, Aphalo P. J. (2015)
         (base32 "14q3fc33cjy8vc85mb9a6h8fgciypnlcxjihbgc6jbzjksd0l38p"))))
     (properties `((upstream-name . "ggspatial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sf
@@ -16462,6 +18124,9 @@ input data are already in the form of spatial objects.")
         (base32 "09xdjiizx31sj8vahjdk12p7yhmxll8z61nirr13myj0wffrj79x"))))
     (properties `((upstream-name . "ggspark")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/marcboschmatas/ggspark")
     (synopsis "'ggplot2' Functions to Create Tufte Style Sparklines")
@@ -16485,6 +18150,9 @@ and/or labels at the beginning, end, max, and min points.")
         (base32 "0qsih00rm3ng2zh6p2s7a35rh1qlvbkn82s53v765w60fjmhwkwf"))))
     (properties `((upstream-name . "ggsom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-magrittr
@@ -16513,6 +18181,9 @@ self-organizing maps.")
         (base32 "0jzj4iglgzwp6pfs5zr7mirdiqrrmbwdvl245b1fwf42rnxbqrq6"))))
     (properties `((upstream-name . "ggsolvencyii")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-magrittr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vanzanden/ggsolvencyii")
@@ -16544,6 +18215,9 @@ Risk and Solvency Assessment).")
         (base32 "0ps1xr878arwyy0h6py62ibnhrrq3wimqkyay1acxb1pl2dfz26d"))))
     (properties `((upstream-name . "ggsoccer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (home-page "https://torvaney.github.io/ggsoccer/")
     (synopsis "Plot Soccer Event Data")
@@ -16567,6 +18241,9 @@ popular sports data providers.")
         (base32 "1wgb5ml1bgfi6rddbvm3rfk6di9imyx17iflg8h42hhbvbvm93iy"))))
     (properties `((upstream-name . "ggsmc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-poorman r-ggplot2 r-gganimate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/richardgeveritt/ggsmc")
@@ -16595,6 +18272,9 @@ by the plotting and animating functions.")
         (base32 "0cakz31hp97kdvdcyrp9p03nz81kypsn9sn6nxl7kb0n3rrrlav0"))))
     (properties `((upstream-name . "ggshadow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-scales
                              r-rlang
@@ -16606,10 +18286,11 @@ by the plotting and animating functions.")
     (synopsis "Shadow and Glow Geoms for 'ggplot2'")
     (description
      "This package provides a collection of Geoms for R's ggplot2 library.
-geom_shadowpath(), geom_shadowline(), geom_shadowstep() and geom_shadowpoint()
-functions draw a shadow below lines to make busy plots more aesthetically
-pleasing.  geom_glowpath(), geom_glowline(), geom_glowstep() and
-geom_glowpoint() add a neon glow around lines to get a steampunk style.")
+@code{geom_shadowpath()}, @code{geom_shadowline()}, @code{geom_shadowstep()} and
+@code{geom_shadowpoint()} functions draw a shadow below lines to make busy plots
+more aesthetically pleasing. @code{geom_glowpath()}, @code{geom_glowline()},
+@code{geom_glowstep()} and @code{geom_glowpoint()} add a neon glow around lines
+to get a steampunk style.")
     (license license:gpl2)))
 
 (define-public r-ggseqplot
@@ -16624,6 +18305,9 @@ geom_glowpoint() add a neon glow around lines to get a steampunk style.")
         (base32 "012hpnrj921bxc5s2dvjks8iri322lkn21rl87gwgrh23pvhrn83"))))
     (properties `((upstream-name . "ggseqplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-traminer
                              r-tidyr
@@ -16646,10 +18330,10 @@ geom_glowpoint() add a neon glow around lines to get a steampunk style.")
     (synopsis "Render Sequence Plots using 'ggplot2'")
     (description
      "This package provides a set of wrapper functions that mainly re-produces most of
-the sequence plots rendered with @code{TraMineR::seqplot}().  Whereas
+the sequence plots rendered with @code{TraMineR::seqplot()}.  Whereas
 @code{TraMineR} uses base R to produce the plots this library draws on ggplot2'.
  The plots are produced on the basis of a sequence object defined with
-@code{TraMineR::seqdef}().  The package automates the reshaping and plotting of
+@code{TraMineR::seqdef()}.  The package automates the reshaping and plotting of
 sequence data.  Resulting plots are of class ggplot', i.e.  components can be
 added and tweaked using + and regular ggplot2 functions.")
     (license license:gpl3+)))
@@ -16666,6 +18350,9 @@ added and tweaked using + and regular ggplot2 functions.")
         (base32 "096wqinvvv7mr15nk5ymvk6qkbnv833m3yiz9kv06b4gnzfl5m2i"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svglite
                              r-shiny
                              r-lavaan
@@ -16696,16 +18383,19 @@ workflow.")
         (base32 "1rpq2wgyyladz5nkngkvbf3cy4pw212dj1vfh7ksh0bxi7v1k6mh"))))
     (properties `((upstream-name . "ggseg3d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-scales r-plotly r-magrittr r-dplyr))
     (home-page "https://github.com/ggseg/ggseg3d/")
     (synopsis "Tri-Surface Mesh Plots for Brain Atlases")
     (description
-     "Mainly contains a plotting function ggseg3d(), and data of two standard brain
-atlases (Desikan-Killiany and aseg).  By far, the largest bit of the package is
-the data for each of the atlases.  The functions and data enable users to plot
-tri-surface mesh plots of brain atlases, and customise these by projecting
-colours onto the brain segments based on values in their own data sets.
-Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
+     "Mainly contains a plotting function @code{ggseg3d()}, and data of two standard
+brain atlases (Desikan-Killiany and aseg).  By far, the largest bit of the
+package is the data for each of the atlases.  The functions and data enable
+users to plot tri-surface mesh plots of brain atlases, and customise these by
+projecting colours onto the brain segments based on values in their own data
+sets.  Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
 <doi:10.1177/2515245920928009>.")
     (license license:expat)))
 
@@ -16721,6 +18411,9 @@ Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
         (base32 "0495g3l71lagrmz3s3lxy4rkfr7gin8vn1m59fvcv7hmycn39i0k"))))
     (properties `((upstream-name . "ggseg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-vctrs r-tidyr r-sf r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
@@ -16744,6 +18437,9 @@ atlases.  Mowinckel & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
         (base32 "0gcmk9gh51gli6dhdczjgj3sblr3ybdr2xm0byq23f8a3znscilj"))))
     (properties `((upstream-name . "ggsector")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-seurat
@@ -16774,6 +18470,9 @@ of how to draw sectors in @code{ComplexHeatmap}'.")
         (base32 "1jpdijwll5l7bg7cmjnklkxffysi9ckzg50rw2a2cd00zwby11q9"))))
     (properties `((upstream-name . "ggseas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-seasonal r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggseas")
@@ -16795,6 +18494,9 @@ rolling summaries such as rolling average on the fly for time series.")
         (base32 "1ggjakfafq6gib7yn684ssv6wdad68an0p13wxl232ikwmw4b66w"))))
     (properties `((upstream-name . "ggscidca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-reshape2
                              r-randomforest
@@ -16826,6 +18528,9 @@ and aesthetics.  This method was described by Balachandran VP (2015)
         (base32 "1blwzynrzywdgqllcgjjb0j0xc8fwplybnx3mfmiysppcvrk47p9"))))
     (properties `((upstream-name . "ggScatRidges")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-hrbrthemes
                              r-ggridges
@@ -16852,6 +18557,9 @@ distribution between sample groups.  The plot is created with ggplot2'.")
         (base32 "1sn7gpkqbgk3adkflnzak29d0zk57d0x6hlv2wm1shq45nawjmcg"))))
     (properties `((upstream-name . "ggsankeyfier")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vwline
                              r-tidyr
                              r-scales
@@ -16880,6 +18588,9 @@ ggplot2'.")
         (base32 "04q9674z0wgpd5igjhggih348jd6lv6nbwz4na597pn5d3pirhvl"))))
     (properties `((upstream-name . "ggRtsy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-purrr
@@ -16907,6 +18618,9 @@ data visualizations and add contextual information to the userâs plots.")
         (base32 "0fb6awfm4vn67pgmz50fljvp9mfxx1q29pirgv04dya8751srxgi"))))
     (properties `((upstream-name . "ggroups")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/nilforooshan/ggroups")
     (synopsis "Pedigree and Genetic Groups")
     (description
@@ -16932,6 +18646,9 @@ extensive.  There are computationally optimized functions to calculate Q.")
         (base32 "124khfv4fl3xgylq4s1pc3wzld0n68iclyl0pm19jcw97bmf1cxl"))))
     (properties `((upstream-name . "ggrounded")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gridgeometry r-ggplot2))
     (home-page "https://github.com/botan/ggrounded")
     (synopsis "Rounded Bar Plots")
@@ -16954,6 +18671,9 @@ in the following post
         (base32 "02df3gcviax747d33v30m97jsazj7zdpjnhypfy38cg70yxidwg9"))))
     (properties `((upstream-name . "ggrisk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-set
                              r-rms
@@ -16987,6 +18707,9 @@ the correlation between the predictors and the outcome.")
         (base32 "08gj61ahk7ilvsz93xcdv7yknkmfz2spbym6c2c62gq8cva9zg86"))))
     (properties `((upstream-name . "GGRidge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-grbase r-cvglasso))
     (home-page "https://cran.r-project.org/package=GGRidge")
     (synopsis "Graphical Group Ridge")
@@ -17014,6 +18737,9 @@ Zoubeidi, T. (2020) <DOI:10.1080/00949655.2020.1803320>.")
         (base32 "1999p7rkiz8bbq8c83phhdb21qf24x8wqv6g54kcwnmrdlp66w0c"))))
     (properties `((upstream-name . "ggreveal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -17042,6 +18768,9 @@ in an axis or any arbitrary aesthetic.")
         (base32 "1vsjw229pd36100ix1sgfmk5lb9b0fx3l6pxg1irsfhm2ypbg1ig"))))
     (properties `((upstream-name . "ggResidpanel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-qqplotr
                              r-plotly
@@ -17071,6 +18800,9 @@ diagnostic plots.")
         (base32 "1p5bzqi4g5ri0m0nlwra6vps4sil7qc56cd8nzp0xh7k1gl598ig"))))
     (properties `((upstream-name . "ggredist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (home-page "https://github.com/alarm-redist/ggredist")
     (synopsis
@@ -17094,6 +18826,9 @@ for easy label generation and placement, automatic map coloring, and themes.")
         (base32 "16ywi8dgsp000w0869mwrn61lwk3gb40bb0i7yh9i1ch2cyc05v1"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rms r-ggplot2 r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggrcs")
@@ -17101,7 +18836,7 @@ for easy label generation and placement, automatic map coloring, and themes.")
     (description
      "You can use this function to easily draw a combined histogram and restricted
 cubic spline.  The function draws the graph through ggplot2'.  RCS fitting
-requires the use of the rcs() function of the rms package.  Can fit cox
+requires the use of the @code{rcs()} function of the rms package.  Can fit cox
 regression, logistic regression.  This method was described by Per Kragh (2003)
 <doi:10.1002/sim.1497>.")
     (license license:gpl3)))
@@ -17118,6 +18853,9 @@ regression, logistic regression.  This method was described by Per Kragh (2003)
         (base32 "0jl4bmhsisqc7nam8r027lr1qp0yr6bvdiyycknp7bkl65cg2x1z"))))
     (properties `((upstream-name . "ggrasp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mixtools r-ggplot2 r-colorspace r-bgmm r-ape))
     (home-page "https://cran.r-project.org/package=ggrasp")
     (synopsis
@@ -17145,6 +18883,9 @@ mixture models, Bioinformatics, bty300, <doi:10.1093/bioinformatics/bty300>.")
         (base32 "1i6jp0n1sz5b4sv3d4h5624zhlknih2qp6p2m2ri6s3gsh1pl9zz"))))
     (properties `((upstream-name . "ggraptR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-purrr r-pacman r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggraptR")
@@ -17167,6 +18908,9 @@ visualizations through a web browser GUI without writing any code.")
         (base32 "05w1rs0mg2nj5j1rd32s1mcj294p4zm24p2d87535rmslqmya9c7"))))
     (properties `((upstream-name . "ggRandomForests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-survival r-randomforestsrc
                              r-randomforest r-ggplot2))
     (native-inputs (list r-knitr))
@@ -17190,6 +18934,9 @@ forests and ggplot2 package plotting.")
         (base32 "0l7042f4xh37vw9skhnagz5ncn8a0aflsz53x6rm3n1f6y2mi1gc"))))
     (properties `((upstream-name . "ggrain")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-rlang
                              r-ggpp
@@ -17200,8 +18947,8 @@ forests and ggplot2 package plotting.")
     (home-page "https://github.com/njudd/ggrain")
     (synopsis "Rainclouds Geom for 'ggplot2'")
     (description
-     "The geom_rain() function adds different geoms together using ggplot2 to create
-raincloud plots.")
+     "The @code{geom_rain()} function adds different geoms together using ggplot2 to
+create raincloud plots.")
     (license license:expat)))
 
 (define-public r-ggragged
@@ -17216,16 +18963,19 @@ raincloud plots.")
         (base32 "0b97k8cs5v0zlny6spcn4amgvih6px5n6w8lmm8068siah1d1bzy"))))
     (properties `((upstream-name . "ggragged")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-rlang r-gtable r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mikmart/ggragged")
     (synopsis "Ragged Grids for 'ggplot2'")
     (description
      "Extend ggplot2 facets to panel layouts arranged in a grid with ragged edges.
-facet_ragged_rows() groups panels into rows that can vary in length,
-facet_ragged_cols() does the same but for columns.  These can be useful, for
-example, to represent nested or partially crossed relationships between faceting
-variables.")
+@code{facet_ragged_rows()} groups panels into rows that can vary in length,
+@code{facet_ragged_cols()} does the same but for columns.  These can be useful,
+for example, to represent nested or partially crossed relationships between
+faceting variables.")
     (license license:expat)))
 
 (define-public r-ggquiver
@@ -17240,6 +18990,9 @@ variables.")
         (base32 "1ywpcbm6rg2f44iiw2j07p7zwfgjrnli6wscrfx93wsqaa55xyfi"))))
     (properties `((upstream-name . "ggquiver")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/mitchelloharawild/ggquiver")
     (synopsis "Quiver Plots for 'ggplot2'")
@@ -17262,6 +19015,9 @@ visualisation of mapped data.")
         (base32 "00m4qf51q40aknb20mj08n8s2fpym3qfcbcb37mpm2pdbsqgrzan"))))
     (properties `((upstream-name . "ggquickeda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-tibble
@@ -17321,6 +19077,9 @@ descriptive stats, all using an easy-to-use point and click Shiny interface.")
         (base32 "0vrxmqxy946mwdq0mb2m1ch41r0chrw7hcn18dr3mp10bv7pl7wj"))))
     (properties `((upstream-name . "ggQQunif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=ggQQunif")
     (synopsis "Compare Big Datasets to the Uniform Distribution")
@@ -17345,6 +19104,9 @@ when vector graphics are stored.")
         (base32 "1j9cs97hcj5zmqvn5rjr3gl0b9748s3pv2nb7v66dsyjdwvj7wyy"))))
     (properties `((upstream-name . "ggQC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggQC")
@@ -17366,18 +19128,21 @@ when vector graphics are stored.")
         (base32 "09wjfkmsh165xiw1dab6c8qb9wrnzm1q1sbfnbzyg99wsk480bgy"))))
     (properties `((upstream-name . "ggpval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/s6juncheng/ggpval")
     (synopsis "Annotate Statistical Tests for 'ggplot2'")
     (description
-     "Automatically performs desired statistical tests (e.g. wilcox.test(), t.test())
-to compare between groups, and adds the resulting p-values to the plot with an
-annotation bar.  Visualizing group differences are frequently performed by
-boxplots, bar plots, etc.  Statistical test results are often needed to be
-annotated on these plots.  This package provides a convenient function that
-works on ggplot2 objects, performs the desired statistical test between groups
-of interest and annotates the test results on the plot.")
+     "Automatically performs desired statistical tests (e.g. @code{wilcox.test()},
+@code{t.test()}) to compare between groups, and adds the resulting p-values to
+the plot with an annotation bar.  Visualizing group differences are frequently
+performed by boxplots, bar plots, etc.  Statistical test results are often
+needed to be annotated on these plots.  This package provides a convenient
+function that works on ggplot2 objects, performs the desired statistical test
+between groups of interest and annotates the test results on the plot.")
     (license license:gpl3)))
 
 (define-public r-ggpolypath
@@ -17392,6 +19157,9 @@ of interest and annotates the test results on the plot.")
         (base32 "0ipn1lhmpcdxim3235kxsw6vkj7cf7smqdm534jfa75ski4q9xpy"))))
     (properties `((upstream-name . "ggpolypath")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://mdsumner.github.io/ggpolypath/")
@@ -17413,6 +19181,9 @@ with a new geom for drawing a polypath applying the evenodd or winding rules.")
         (base32 "18m0nd74cz30gr961404wnib5v2wddpf1iv453s5dri0vxlmdl6w"))))
     (properties `((upstream-name . "ggpolar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ShixiangWang/polar")
@@ -17434,6 +19205,9 @@ point-to-point connections in a polar coordinate space.")
         (base32 "11xr26kwmkjjb51wm44ydv0vcinc6k6faqwx4s2faj4iwidlys1m"))))
     (properties `((upstream-name . "ggpol")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-plyr
@@ -17460,6 +19234,9 @@ several other useful visualizations.")
         (base32 "1qzd5jcac3syl9pgxzq2r7vmrp7kzd2h56xa1y6hich2rhzywva9"))))
     (properties `((upstream-name . "ggpointless")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lifecycle r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://flrd.github.io/ggpointless/")
@@ -17481,6 +19258,9 @@ ggplot2'.")
         (base32 "04381iaa52ljpkbi4sy5xgyiv0vznd2k7vnwvsdyk4qkggxxyqw9"))))
     (properties `((upstream-name . "ggPMX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-tidyr
@@ -17532,14 +19312,17 @@ required Chart Data instead of exporting it from the Monolix gui.")
         (base32 "1m2rhylpzj934gb50lxjp47rxz0kwl9i1p3n7w1rz4qi96pr5p1c"))))
     (properties `((upstream-name . "ggplotlyExtra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-plotly r-ggplot2))
     (home-page "https://cran.r-project.org/package=ggplotlyExtra")
     (synopsis "Extra Convenience Functions for 'Plotly'")
     (description
      "Convenience functions for smooth conversion from ggplot to plotly where the
-conversion using ggplotly() usually gives an unexpected labels.  The package
-ease the process of making a plotly figures generated from ggplot2 object more
-aesthetic in terms of labels and customizability.")
+conversion using @code{ggplotly()} usually gives an unexpected labels.  The
+package ease the process of making a plotly figures generated from ggplot2
+object more aesthetic in terms of labels and customizability.")
     (license license:gpl3)))
 
 (define-public r-ggplotgui
@@ -17554,6 +19337,9 @@ aesthetic in terms of labels and customizability.")
         (base32 "1yfglg5438mwyml845isimzma5q6824x19jka509ng49bzmf1za0"))))
     (properties `((upstream-name . "ggplotgui")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shiny
                              r-readxl
@@ -17581,6 +19367,9 @@ recreate graph provided.")
         (base32 "1g0s1dkbrxmwqjqppagdbnx24s0nbjn09xwxix3dkfssz6drhala"))))
     (properties `((upstream-name . "ggplotAssist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tibble
                              r-stringr
@@ -17618,6 +19407,9 @@ coding.  You can get resultant code for the plot.")
         (base32 "067ld6djxcpbliv70r2c1pp4z50rvwmn1xbvxfcqdi9s3k9a2v8q"))))
     (properties `((upstream-name . "ggplot2movies")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ggplot2movies")
     (synopsis "Movies Data")
     (description
@@ -17638,6 +19430,9 @@ ggplot2.")
         (base32 "07svk16j9mc3d1fgkd5zpilnr82f7r40y9nachkp32s2bsg1a29g"))))
     (properties `((upstream-name . "ggplot2.utils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-ggstats
                              r-ggpp
@@ -17670,6 +19465,9 @@ make sure that they work reliably.")
         (base32 "15q78hl9fngjx1xyccwzny78rg169zv10fvzl6an9silcgwrw2ak"))))
     (properties `((upstream-name . "ggplate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-scales
@@ -17700,6 +19498,9 @@ layout.")
         (base32 "11c431ggrhyxiql1v9qajp568jri6hlp1kgl334j4f7sgyh73ng5"))))
     (properties `((upstream-name . "ggpie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-scales
@@ -17728,6 +19529,9 @@ layout.")
         (base32 "03gsbdqqxi0j4slp61bzrn4m2sjhh9fvcy1a1h5vcg4ax233j270"))))
     (properties `((upstream-name . "ggperiodic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect r-sticky r-ggplot2 r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -17750,6 +19554,9 @@ the fly.")
         (base32 "1xkxsxnxcyy8rrazzbl38g405cxjjjz6a720cdm4bsk03q2q4rar"))))
     (properties `((upstream-name . "ggpcp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -17780,6 +19587,9 @@ parameters manageably low.")
         (base32 "13b3iks81mhjvjpghfamiyr3nbj63hg6jgl6922fclqml5i0rbdy"))))
     (properties `((upstream-name . "ggpca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-umap
                              r-shiny
                              r-rtsne
@@ -17813,6 +19623,9 @@ framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
         (base32 "19rsshpcgdwccv790bydvp68p4797p5d6zyqwqbahd7xa1bwmg86"))))
     (properties `((upstream-name . "ggpath")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-memoise
                              r-magick
@@ -17839,6 +19652,9 @@ panels and theme elements.")
         (base32 "0s6hr5p930kl3pj6ajwgwqz6yikc3l9hhzy1yn0nqc0r8pp2jyqf"))))
     (properties `((upstream-name . "ggparty")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rlang
                              r-partykit
@@ -17866,6 +19682,9 @@ visualizations for tree-objects of the class party'.")
         (base32 "1flhy0731phknzxwmr6lza7a6r0mqy7j8z93p4aala3d3cg2x1nw"))))
     (properties `((upstream-name . "ggparallel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-plyr r-ggplot2))
     (home-page "https://github.com/heike/ggparallel/")
     (synopsis "Variations of Parallel Coordinate Plots for Categorical Data")
@@ -17885,6 +19704,9 @@ visualizations for tree-objects of the class party'.")
         (base32 "1qi8ydq3fxb1smk0jg9z1cv2xjq8c1lsnmz8l7c61rvdbjm3710v"))))
     (properties `((upstream-name . "ggpage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-stringr
                              r-rlang
@@ -17913,6 +19735,9 @@ then is divided in lines and pages for easy overview of up to quite large texts.
         (base32 "1fdyr0m5rf1wy2pydvk12g7lw338iw026rxz98mv8kryrs32q7kh"))))
     (properties `((upstream-name . "ggpackets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dgkf/ggpackets")
@@ -17935,6 +19760,9 @@ that draw from the same source ggpacket layers.")
         (base32 "18ass4fxdsvcn9j103dixar0grrh5w3nh6icydh1w5myrd455z9l"))))
     (properties `((upstream-name . "GGoutlieR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sf
                              r-scales
@@ -17972,16 +19800,20 @@ large biological sample.")
         (base32 "0ncwkahwdl6mg27a7cg6363d51jqr03cxsn5ww4ainq679lw8fmc"))))
     (properties `((upstream-name . "ggordiplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-glue r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jfq3/ggordiplots")
     (synopsis "Make 'ggplot2' Versions of Vegan's Ordiplots")
     (description
      "The vegan package includes several functions for adding features to ordination
-plots: ordiarrows(), ordiellipse(), ordihull(), ordispider() and ordisurf().
-This package adds these same features to ordination plots made with ggplot2'.
-In addition, gg_ordibubble() sizes points relative to the value of an
-environmental variable.")
+plots: @code{ordiarrows()}, @code{ordiellipse()}, @code{ordihull()},
+@code{ordispider()} and @code{ordisurf()}.  This package adds these same
+features to ordination plots made with ggplot2'.  In addition,
+@code{gg_ordibubble()} sizes points relative to the value of an environmental
+variable.")
     (license license:gpl2+)))
 
 (define-public r-ggokabeito
@@ -17996,6 +19828,9 @@ environmental variable.")
         (base32 "07lbzq87zl2yswidp0f90l8szl7y4wwn8psgacyl90wn2gd9mdcp"))))
     (properties `((upstream-name . "ggokabeito")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/malcolmbarrett/ggokabeito")
     (synopsis "'Okabe-Ito' Scales for 'ggplot2' and 'ggraph'")
@@ -18017,6 +19852,9 @@ easily use the Okabe-Ito palette in your data visualizations.")
         (base32 "1wrr92srwrg7fx0iz4qnmn89mhhwfbrx5z2rk8vfy3clh8i65x23"))))
     (properties `((upstream-name . "ggOceanMaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units r-stars r-smoothr r-sf r-ggplot2))
     (home-page "https://mikkovihtakari.github.io/ggOceanMaps/")
     (synopsis "Plot Data on Oceanographic Maps using 'ggplot2'")
@@ -18024,13 +19862,13 @@ easily use the Okabe-Ito palette in your data visualizations.")
      "Allows plotting data on bathymetric maps using ggplot2'.  Plotting oceanographic
 spatial data is made as simple as feasible, but also flexible for custom
 modifications.  Data that contain geographic information from anywhere around
-the globe can be plotted on maps generated by the basemap() or qmap() functions
-using ggplot2 layers separated by the + operator.  The package uses spatial
-shape- ('sf') and raster ('stars') files, geospatial packages for R to
-manipulate, and the ggplot2 package to plot these files.  The package ships with
-low-resolution spatial data files and higher resolution files for detailed maps
-are stored in the @code{ggOceanMapsLargeData} repository on @code{GitHub} and
-downloaded automatically when needed.")
+the globe can be plotted on maps generated by the @code{basemap()} or
+@code{qmap()} functions using ggplot2 layers separated by the + operator.  The
+package uses spatial shape- ('sf') and raster ('stars') files, geospatial
+packages for R to manipulate, and the ggplot2 package to plot these files.  The
+package ships with low-resolution spatial data files and higher resolution files
+for detailed maps are stored in the @code{ggOceanMapsLargeData} repository on
+@code{GitHub} and downloaded automatically when needed.")
     (license license:gpl3)))
 
 (define-public r-ggnuplot
@@ -18045,6 +19883,9 @@ downloaded automatically when needed.")
         (base32 "0i09ybmxdjyr15z1a651k3bkbqskri4ipcyjap93020zbfv05r9c"))))
     (properties `((upstream-name . "ggnuplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/hriebl/ggnuplot")
     (synopsis "Make 'ggplot2' Look Like 'gnuplot'")
@@ -18066,6 +19907,9 @@ and gnuplot in one project.")
         (base32 "1gbv2b86nznw5bs05c4ns96b8hsxkhikhcf8syl2qbbafzy8vx6y"))))
     (properties `((upstream-name . "ggnormalviolin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-magrittr r-ggplot2 r-dplyr))
     (home-page "https://github.com/wjschne/ggnormalviolin")
     (synopsis "'ggplot2' Extension to Make Normal Violin Plots")
@@ -18087,6 +19931,9 @@ normal distributions and confidence intervals.")
         (base32 "071h76imfsm6p9ml9pkfsar3d6z1nawd9m7f82smy4csb58iz5i3"))))
     (properties `((upstream-name . "ggmulti")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggmulti")
@@ -18108,6 +19955,9 @@ for scatter plot) to visualize high dimensional data.")
         (base32 "069y6wf9lbkz32kmkrc61vjc0p9fpr5191103dvaz0nj6gpd686a"))))
     (properties `((upstream-name . "ggmuller")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-dplyr r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggmuller")
@@ -18132,6 +19982,9 @@ package exploits).")
         (base32 "1qky7ywk8np24hgn1lj4mpd4snwlvngx8ix7ack4gxblixl9s0z0"))))
     (properties `((upstream-name . "ggmugs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-purrr
@@ -18163,6 +20016,9 @@ et al. (2021) <doi:10.1038/s43586-021-00056-9>.")
         (base32 "0zv2g8vdwz02hkw199zj95bsdp93nbwkc6zdkbsvcqnanqr4akx6"))))
     (properties `((upstream-name . "GGMselect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-lars r-gtools))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=GGMselect")
@@ -18186,6 +20042,9 @@ a data matrix.")
         (base32 "179g82w7vrbkvq0b8bcaakcjhqz1gsyc2qyh70ldglbj0sj5yh4m"))))
     (properties `((upstream-name . "GGMridge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass))
     (home-page "https://cran.r-project.org/package=GGMridge")
     (synopsis
@@ -18208,6 +20067,9 @@ matrix constitutes an Gaussian graphical model (GGM).")
         (base32 "0941rvh7m5knlhp0m0mhm4j8spmch0pyvwhzs3bycq3vzlvzv1w7"))))
     (properties `((upstream-name . "ggmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=ggmr")
     (synopsis "Generalized Gauss Markov Regression")
@@ -18231,6 +20093,9 @@ and the response is present.  Base on the results published in guide ISO/TS
         (base32 "1bhqk172ddc7xq1hqj1i6q8np6jvmf2xypvd8kp3w1bcsafsbms8"))))
     (properties `((upstream-name . "GGMnonreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna
                              r-rdpack
                              r-psych
@@ -18268,6 +20133,9 @@ uncertainty, predictability, and network replicability
         (base32 "0lih9dyb5aqrawhiy2vhv63b132hhzq6zq0x6rbrhy8kbkldhigr"))))
     (properties `((upstream-name . "GGMncv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna
                              r-reshape
                              r-rdpack
@@ -18310,6 +20178,9 @@ regression coefficients, and statistical inference <doi:10.1214/15-EJS1031>.")
         (base32 "158pzmr4vmy2qxmp3nrabjgkg11mrdvl1skzxgwida2is900f7gf"))))
     (properties `((upstream-name . "ggmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-glmnet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sahirbhatnagar/ggmix")
@@ -18338,6 +20209,9 @@ for population structure in high dimensional prediction models\", 2020,
         (base32 "14fb8889fqx3r0rky7rfnagfrrlhspj74zlp7wz7wj232y3j923h"))))
     (properties `((upstream-name . "ggmice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -18371,6 +20245,9 @@ data.")
         (base32 "1y6ya2qihm8h6ds84akhmsxn9c8jriw03wakaqzsmi21agz87n21"))))
     (properties `((upstream-name . "ggmcmc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-ggplot2 r-ggally r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "http://xavier-fim.net/packages/ggmcmc/")
@@ -18396,6 +20273,9 @@ parameters (FernÃ¡ndez-i-MarÃ­n, 2016 <doi:10.18637/jss.v070.i09>).")
         (base32 "0k062kqa9hrq1iyjwjj670sdk559zx1nxpbkk0sxkda2h235lxjr"))))
     (properties `((upstream-name . "ggmatplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/xuan-liang/ggmatplot")
@@ -18421,14 +20301,17 @@ ggplot2'.")
         (base32 "1cakn2iqjk117ngb0ssc68hxx8s4mgc8z8bl6mfvwffvjsyjyxyp"))))
     (properties `((upstream-name . "ggmapinset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-rlang r-ggplot2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cidm-ph/ggmapinset")
     (synopsis "Add Inset Panels to Maps")
     (description
-     "Helper to add insets based on geom_sf() from ggplot2'.  This package gives you a
-drop-in replacement for geom_sf() that supports adding a zoomed inset map
-without having to create and embed a separate plot.")
+     "Helper to add insets based on @code{geom_sf()} from ggplot2'.  This package
+gives you a drop-in replacement for @code{geom_sf()} that supports adding a
+zoomed inset map without having to create and embed a separate plot.")
     (license license:expat)))
 
 (define-public r-gglorenz
@@ -18443,6 +20326,9 @@ without having to create and embed a separate plot.")
         (base32 "1kag8p2chd0sbn8affpxzi4aawpm71ls97dwdgx7mxxfwkdb2q0y"))))
     (properties `((upstream-name . "gglorenz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ineq r-ggplot2))
     (home-page "https://github.com/jjchern/gglorenz")
     (synopsis "Plotting Lorenz Curve with the Blessing of 'ggplot2'")
@@ -18464,6 +20350,9 @@ curve (Shorrocks 1983) <doi:10.2307/2554117>.")
         (base32 "1hhpv5vvpb635hb27v64h92x7ga9m4yvrldd61qa0jzjhnmp1623"))))
     (properties `((upstream-name . "gglogger")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-cli))
     (home-page "https://github.com/pwwang/gglogger/")
     (synopsis "Track 'ggplot2' Calls")
@@ -18486,6 +20375,9 @@ object.")
         (base32 "1fybwxgsdwvl4d9ixicfgr1sgrzkwndmvp91zhhfhjlf0yy4qdaj"))))
     (properties `((upstream-name . "gglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -18518,6 +20410,9 @@ diagnostic plots and an array of four standard diagnostic plots.")
         (base32 "1971cjn3xyn5wf2g9a8in05w3wjpvyql7928nkm3gxw23caczpd1"))))
     (properties `((upstream-name . "gglgbtq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/turtletopia/gglgbtq")
@@ -18539,6 +20434,9 @@ themes.")
         (base32 "1gasfhwp74akmqk8c534iyag61r9jznalcjcpgvacnmbnf2irrif"))))
     (properties `((upstream-name . "gglasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/emeryyi/gglasso")
     (synopsis "Group Lasso Penalized Learning Using a Unified BMD Algorithm")
@@ -18562,11 +20460,14 @@ implementation of Yang, Y. and Zou, H. (2015) DOI:
         (base32 "1jz1qhx51gzq6lbk24pjxc55nhzc6alsy9h870jn88mn9fpx4lhp"))))
     (properties `((upstream-name . "ggisotonic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-fdrtool r-dplyr))
     (home-page "https://github.com/talegari/ggisotonic")
     (synopsis "'ggplot2' Friendly Isotonic or Monotonic Regression Curves")
     (description
-     "This package provides stat_isotonic() to add weighted univariate isotonic
+     "This package provides @code{stat_isotonic()} to add weighted univariate isotonic
 regression curves.")
     (license license:gpl3)))
 
@@ -18582,6 +20483,9 @@ regression curves.")
         (base32 "0qd13y9hg63qabn4z8z8qxqj34gwf763wvw7zdfq2df0ik5ipg55"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readxl
                              r-rcpp
                              r-matlab
@@ -18613,6 +20517,9 @@ Primarily designed to complement R package GGIR
         (base32 "0q8ppixw5i1hpphmswpw6lvq7gx8rx4gfs2b8d31wbn32ziiv2rk"))))
     (properties `((upstream-name . "ggiraphExtra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-sjmisc
@@ -18653,6 +20560,8 @@ ggiraph'.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -18696,6 +20605,9 @@ ggiraph'.")
         (base32 "1shcm0v3mjscf5kc2lhn9y2vwdffsx3kgawh7ddpklrgf250vzpx"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-unisensr
                              r-signal
@@ -18738,6 +20650,9 @@ stored in csv format.  Also the package allows for external function embedding."
         (base32 "0mg3p3lq3afw96ddk89v62jjd8ii7nhdcwlmdnmdxrw6awcmvyhk"))))
     (properties `((upstream-name . "ggip")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-rlang
@@ -18769,6 +20684,9 @@ spaces.")
         (base32 "062xdhq8pgbvwl8zy7kzfgdgzfaf4zd3bnw8l4201xcl3nq6v9l3"))))
     (properties `((upstream-name . "gginnards")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-stringr r-rlang r-magrittr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://docs.r4photobiology.info/gginnards/")
@@ -18792,6 +20710,9 @@ object embedded in \"ggplot\" objects.")
         (base32 "1r960cglnkii8xih4r1r7wd857jqn53f08zi9dnj54bpqrs374zx"))))
     (properties `((upstream-name . "gginference")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (home-page "https://github.com/okgreece/gginference")
     (synopsis
@@ -18815,6 +20736,9 @@ test for association/correlation between paired samples.")
         (base32 "1ynfq8lwlw851j00k7mm63w5yyqkd7v67fs8g2nwxk7ac0wb44ph"))))
     (properties `((upstream-name . "ggimg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-png r-jpeg r-ggplot2 r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/statsmaths/ggimg")
@@ -18839,6 +20763,9 @@ PNG files, external resources, or as a list column containing raster image data.
         (base32 "0jm316dqnnnsifrwkh6q2xs07dqazaa77s713pr7h94q1r8ab1bs"))))
     (properties `((upstream-name . "ggimage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tibble
                              r-scales
@@ -18866,6 +20793,9 @@ system.")
         (base32 "1sb567qrqawks9z4zhlfgyx6pcgsvhki3rafppj969xzjh59w6b7"))))
     (properties `((upstream-name . "ggHoriPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-magrittr
@@ -18892,13 +20822,16 @@ building horizon plots in the ggplot2 environment.")
         (base32 "0ncxx2ckc78gaa9dyddyli1wca7kkz33v13mplhnxd33gkk9pxmz"))))
     (properties `((upstream-name . "gghist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/frederikziebell/gghist")
     (synopsis "Plot the Histogram of a Numeric Vector")
     (description
-     "Wrapper around geom_histogram() of ggplot2 to plot the histogram of a numeric
-vector.  This is especially useful, since qplot() was deprecated in ggplot2
-3.4.0.")
+     "Wrapper around @code{geom_histogram()} of ggplot2 to plot the histogram of a
+numeric vector.  This is especially useful, since @code{qplot()} was deprecated
+in ggplot2 3.4.0.")
     (license license:gpl3+)))
 
 (define-public r-gghilbertstrings
@@ -18913,6 +20846,9 @@ vector.  This is especially useful, since qplot() was deprecated in ggplot2
         (base32 "0b3xp1w6fkkmjh7gihhfkp4npx553a75bvsal3w4j57xa34l8rap"))))
     (properties `((upstream-name . "gghilbertstrings")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-rcpp
@@ -18944,6 +20880,9 @@ that has a fixed order and position.")
         (base32 "13cf3xk5drb6dfr3gcbgfi0hk6akk9b3g9f3c2jy6hz8rz5xnyn6"))))
     (properties `((upstream-name . "ggheatmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-patchwork
@@ -18976,6 +20915,9 @@ operate; 4.  Optimization of clustering tree visualization.")
         (base32 "0lsa84afs31jch7wgamsg721wyac64qm5wxk12iiwkyxcmlv7234"))))
     (properties `((upstream-name . "gghdx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-sysfonts
                              r-showtext
@@ -19008,12 +20950,15 @@ guide, including convenience functions for for loading and using the Source Sans
         (base32 "1sy0m6pqmnjbqv60rljyblhis0dxwkhw751jhlad5arcgrcwf4k8"))))
     (properties `((upstream-name . "gghalfnorm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggrepel r-ggplot2))
     (home-page "https://github.com/nathaneastwood/gghalfnorm")
     (synopsis "Create a Half Normal Plot Using 'ggplot2'")
     (description
-     "Reproduce the halfnorm() function found in the faraway package using the ggplot2
-API.")
+     "Reproduce the @code{halfnorm()} function found in the faraway package using the
+ggplot2 API.")
     (license license:agpl3)))
 
 (define-public r-gggrid
@@ -19028,6 +20973,9 @@ API.")
         (base32 "0g8msi5qpnr2npcgjvdjncrq6p61ddpzasy5g0fxqbybbpfxsyi8"))))
     (properties `((upstream-name . "gggrid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pmur002/gggrid")
@@ -19049,6 +20997,9 @@ customised annotations, to a ggplot2 plot.")
         (base32 "1sy9d9hl04b13yz4563bzsdznjdh3xmikdrsqg8kdv8wn481lqbd"))))
     (properties `((upstream-name . "gggibbous")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mnbram/gggibbous")
@@ -19073,6 +21024,9 @@ not require a square coordinate system.")
         (base32 "1imahf69d17l7fk8j3jkiwlhbbc71yvdvp4q440w2mn4pnbzf6xx"))))
     (properties `((upstream-name . "gggenomes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tidyr
@@ -19112,13 +21066,16 @@ that is genomics data.")
         (base32 "1iidxm7qcrg0isw2q27cmjbfb3pkfj5jcg1nj8lgy6xmydw3vrw3"))))
     (properties `((upstream-name . "gggap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-cowplot))
     (home-page "https://github.com/cmoralesmx/gggap")
     (synopsis
      "Streamlined Creation of Segments on the Y-Axis of 'ggplot2' Plots")
     (description
-     "The function gggap() streamlines the creation of segments on the y-axis of
-ggplot2 plots which is otherwise not a trivial task to accomplish.")
+     "The function @code{gggap()} streamlines the creation of segments on the y-axis
+of ggplot2 plots which is otherwise not a trivial task to accomplish.")
     (license license:gpl3)))
 
 (define-public r-ggfx
@@ -19133,6 +21090,9 @@ ggplot2 plots which is otherwise not a trivial task to accomplish.")
         (base32 "1lys5lzlilzvd6dm7rkxv7nvnp80fajl5yzhpwcbb5az5832ik27"))))
     (properties `((upstream-name . "ggfx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ragg r-magick r-gtable r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://ggfx.data-imaginist.com")
@@ -19156,6 +21116,9 @@ the exact pixel dimensions needed.")
         (base32 "0m7r1845vx3snxadqbg3vxyxsh115h7bi5h3q3x1n4c1nd5y45r7"))))
     (properties `((upstream-name . "ggfoundry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lifecycle r-grimport2 r-ggplot2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cgoo4/ggfoundry")
@@ -19178,6 +21141,9 @@ issue.")
         (base32 "03q0rz7flm8sc8hrlkcm5fz66qiyxb8z8q4bh9dglhw0jc8q1fvb"))))
     (properties `((upstream-name . "ggfocus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-rcolorbrewer r-magrittr r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -19201,6 +21167,9 @@ information.")
         (base32 "0n93ydnj4q95a67ch2i3yjg7f05vi2xdb4jss620ccaj33chwqzv"))))
     (properties `((upstream-name . "ggflowchart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -19227,6 +21196,9 @@ uses the layered grammar of graphics of ggplot2 to create simple flowcharts.")
         (base32 "0i05lvm45kp8l2shxlznlk5yw96rzcilwmm9i9194x0zxz29q5nf"))))
     (properties `((upstream-name . "ggfixest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-marginaleffects
                              r-ggplot2
@@ -19237,11 +21209,11 @@ uses the layered grammar of graphics of ggplot2 to create simple flowcharts.")
     (home-page "http://grantmcdermott.com/ggfixest/")
     (synopsis "Dedicated 'ggplot2' Methods for 'fixest' Objects")
     (description
-     "This package provides ggplot2 equivalents of fixest::coefplot() and
-fixest::iplot(), for producing nice coefficient plots and interaction plots.
-Enables some additional functionality and convenience features, including
-grouped multi-'fixest object faceting and programmatic updates to existing plots
-(e.g., themes and aesthetics).")
+     "This package provides ggplot2 equivalents of @code{fixest::coefplot()} and
+@code{fixest::iplot()}, for producing nice coefficient plots and interaction
+plots.  Enables some additional functionality and convenience features,
+including grouped multi-'fixest object faceting and programmatic updates to
+existing plots (e.g., themes and aesthetics).")
     (license license:gpl3)))
 
 (define-public r-ggfishplots
@@ -19256,6 +21228,9 @@ grouped multi-'fixest object faceting and programmatic updates to existing plots
         (base32 "12p3ldbfxp51sqswms9zk6chmi8qy0ncv3l2bh9i6b1xhjcx86b2"))))
     (properties `((upstream-name . "ggFishPlots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -19293,6 +21268,8 @@ tidyverse collection of packages.  The package contains references to
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -19339,6 +21316,9 @@ You can easily add the figure to the database and update them later using CLI
         (base32 "1b23hxi9g5fcmrw63pmksayk9j7xsi0j23qkfkchlcx258yrf7la"))))
     (properties `((upstream-name . "ggfields")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-scales r-rlang r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://pepijn-devries.github.io/ggfields/")
@@ -19363,6 +21343,9 @@ and radii.")
         (base32 "1cdj34y5saf2d5cwnigmxlfyny9alcl84cyhrybv5yqykc75sim8"))))
     (properties `((upstream-name . "ggfacto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vctrs
                              r-tidyselect
@@ -19407,6 +21390,9 @@ or change theme elements.  3D graphs are made with plotly'.")
         (base32 "0bdqx3x42jp22bs297nhdgzvywhq4cy0lwmwprl7vmjjh8lwvkxk"))))
     (properties `((upstream-name . "ggetho")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-scales
                              r-rlang
@@ -19437,6 +21423,9 @@ days.  This package is part of the rethomics framework
         (base32 "0abjjs1syk9w5fqs778njkz3f92kil1617239hzdcjy67hbbf3c0"))))
     (properties `((upstream-name . "ggESDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyverse
                              r-tidyr
@@ -19476,6 +21465,9 @@ symbolic data by both clustering algorithm and customized method.")
         (base32 "1dak8nwdjiv7947w4pf00vhh6bida7gahv4ijqa3m1k22j2mr2qa"))))
     (properties `((upstream-name . "ggenealogy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-plyr r-plotly r-igraph r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggenealogy")
@@ -19500,6 +21492,9 @@ descendant branches of interest.  Uses the Grammar of Graphics.")
         (base32 "1mnk2ygnflkp9bx8pbf41vb9fyhcnkqrw8j01vx7p56iga3lwi4g"))))
     (properties `((upstream-name . "ggedit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-shinybs
@@ -19532,6 +21527,9 @@ descendant branches of interest.  Uses the Grammar of Graphics.")
         (base32 "0h7irlmq283bx1hlqyv8bi228kd6xkc7sdw6nq18v3s7b0a9bhcm"))))
     (properties `((upstream-name . "GGEBiplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2 r-ggforce))
     (home-page "https://cran.r-project.org/package=GGEBiplots")
     (synopsis "GGE Biplots with 'ggplot2'")
@@ -19553,6 +21551,9 @@ the archived package GGE@code{BiplotGUI}'.")
         (base32 "1inxk15lmdjpfzf46xdn6yrgz6h45i6rhv2qpcyb2rvf4v6cfm96"))))
     (properties `((upstream-name . "ggeasy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jonocarroll/ggeasy")
@@ -19574,6 +21575,9 @@ remember ggplot2 sequences.")
         (base32 "0n33dpqvmf3iqr3bimx91zzla5m83nhyf0ldm9hrflxgnnmlnzhg"))))
     (properties `((upstream-name . "gge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-nipals))
     (native-inputs (list r-knitr))
     (home-page "https://kwstat.github.io/gge/")
@@ -19596,6 +21600,9 @@ plus genotype-by-block-of-environments) models.  See Laffont et al. (2013)
         (base32 "05wlyiqjivw0am20vn0s6rm20xj1r3q75immlvf063li0pxqfp93"))))
     (properties `((upstream-name . "ggDoubleHeat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2 r-ggnewscale))
     (home-page "https://pursuitofdatascience.github.io/ggDoubleHeat/")
     (synopsis "Heatmap-Like Visualization Tool")
@@ -19617,6 +21624,9 @@ reformed heatmap, while inheriting ggplot2 features.")
         (base32 "0r857z5iw30b8wq8ry0kgwgagb77jzk4n2qc8wy316gn7dq2y12c"))))
     (properties `((upstream-name . "ggDoE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-insight r-ggplot2))
     (home-page "https://ggdoe.netlify.app")
     (synopsis "Modern Graphs for Design of Experiments with 'ggplot2'")
@@ -19641,6 +21651,9 @@ projections of a latin hypercube design.")
         (base32 "1gncv7npl548k3zd41x2gwg5qywn5rp6zb4i7ga78sy77mvi3x92"))))
     (properties `((upstream-name . "ggdmc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-matrixstats
@@ -19666,6 +21679,9 @@ time models, using the population-based Markov Chain Monte Carlo.")
         (base32 "01ym1af6w39zg6xh5mls8kwl4mg0lpjd94j0hm2xrgl39llpwx6r"))))
     (properties `((upstream-name . "ggdensity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tibble
                              r-scales
@@ -19694,6 +21710,9 @@ regions instead of the traditional height of the estimated density surface.")
         (base32 "18i96jkbc0zm9xgn5250v2316kccr5vcxag2gii7lag7bhj6fq51"))))
     (properties `((upstream-name . "ggdemetra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjdemetra r-gridextra r-ggrepel r-ggplot2))
     (native-inputs (list r-knitr))
@@ -19720,6 +21739,9 @@ System and the European System of Central Banks.")
         (base32 "1wvpmpyfnq6j6wkk8ayaddb4yyk945w4isjn57dpkvabfk59cvfh"))))
     (properties `((upstream-name . "ggdaynight")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/GabrielSlPires/ggdaynight")
     (synopsis "Add Day/Night Patterns to 'ggplot2' Plots")
@@ -19741,16 +21763,19 @@ visualizing data that spans multiple days and for highlighting diurnal patterns.
         (base32 "1w93g2j4g45x9s841v9zi18lxzda81ipa13fajqc6p9xk8frvgrf"))))
     (properties `((upstream-name . "ggdark")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=ggdark")
     (synopsis "Dark Mode for 'ggplot2' Themes")
     (description
-     "Activate dark mode on your favorite ggplot2 theme with dark_mode() or use the
-dark versions of ggplot2 themes, including dark_theme_gray(),
-dark_theme_minimal(), and others.  When a dark theme is applied, all geom color
-and geom fill defaults are changed to make them visible against a dark
+     "Activate dark mode on your favorite ggplot2 theme with @code{dark_mode()} or use
+the dark versions of ggplot2 themes, including @code{dark_theme_gray()},
+@code{dark_theme_minimal()}, and others.  When a dark theme is applied, all geom
+color and geom fill defaults are changed to make them visible against a dark
 background.  To restore the defaults to their original values, use
-invert_geom_defaults().")
+@code{invert_geom_defaults()}.")
     (license license:expat)))
 
 (define-public r-ggdag
@@ -19765,6 +21790,9 @@ invert_geom_defaults().")
         (base32 "074n9w1vgzmx677nppjfp4k3wf7rp0yfh9fbyhb3man4gl2w17df"))))
     (properties `((upstream-name . "ggdag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidygraph
                              r-tibble
                              r-stringr
@@ -19803,6 +21831,9 @@ relationships.")
         (base32 "1vswnr15xbsl3kbd7nbd33mc9931d4lk3mpx8ri0ph37h3b0sif9"))))
     (properties `((upstream-name . "ggcorset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-gghalves))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggcorset")
@@ -19817,8 +21848,8 @@ other user-defined value.  This method of visualization is ideal for showing the
 heterogeneity of data, including differences by sub-groups.  The package relies
 on ggplot2 allowing for easy integration so that users can customize their
 visualizations as required.  Users can create corset plots using data in either
-wide or long format using the functions gg_corset() or gg_corset_elongated(),
-respectively.")
+wide or long format using the functions @code{gg_corset()} or
+@code{gg_corset_elongated()}, respectively.")
     (license license:expat)))
 
 (define-public r-ggcompare
@@ -19833,6 +21864,9 @@ respectively.")
         (base32 "0pdby6vjxg50zhxbi7vybfgf8i484bxgaj7y4cqv50gvywcpsns6"))))
     (properties `((upstream-name . "ggcompare")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://hmu-wh.github.io/ggcompare/")
     (synopsis "Mean Comparison in 'ggplot2'")
@@ -19840,12 +21874,12 @@ respectively.")
      "Add mean comparison annotations to a ggplot'.  This package provides an easy way
 to indicate if two or more groups are significantly different in a ggplot'.
 Usually you do not need to specify the test method, you only need to tell
-stat_compare() whether you want to perform a parametric test or a nonparametric
-test, and stat_compare() will automatically choose the appropriate test method
-based on your data.  For comparisons between two groups, the p-value is
-calculated by t-test (parametric) or Wilcoxon rank sum test (nonparametric).
-For comparisons among more than two groups, the p-value is calculated by One-way
-ANOVA (parametric) or Kruskal-Wallis test (nonparametric).")
+@code{stat_compare()} whether you want to perform a parametric test or a
+nonparametric test, and @code{stat_compare()} will automatically choose the
+appropriate test method based on your data.  For comparisons between two groups,
+the p-value is calculated by t-test (parametric) or Wilcoxon rank sum test
+(nonparametric).  For comparisons among more than two groups, the p-value is
+calculated by One-way ANOVA (parametric) or Kruskal-Wallis test (nonparametric).")
     (license license:artistic2.0)))
 
 (define-public r-ggcleveland
@@ -19860,6 +21894,9 @@ ANOVA (parametric) or Kruskal-Wallis test (nonparametric).")
         (base32 "1pl9qhj7p5kflx0ni59hq1k9afqchghg5wig9v1ml5pqrjz70pxa"))))
     (properties `((upstream-name . "ggcleveland")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -19897,6 +21934,9 @@ Analysis.")
         (base32 "03wis5ng2mnfhp33xrag8xbmvjagzr1909a6x94wv7s2spji00rp"))))
     (properties `((upstream-name . "GGClassification")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=GGClassification")
     (synopsis "Gabriel Graph Based Large-Margin Classifiers")
@@ -19918,6 +21958,9 @@ Torres et al. (2015) <doi:10.1049/el.2015.1644>.")
         (base32 "0dkr3vl4a3css19j53x1c1gxxgjg57d444ahxrrrxsyva49lnq1y"))))
     (properties `((upstream-name . "ggChernoff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (home-page "https://github.com/Selbosh/ggChernoff")
     (synopsis "Chernoff Faces for 'ggplot2'")
@@ -19939,6 +21982,9 @@ to human-like faces.  Inspired by Chernoff (1973)
         (base32 "1c0gdn8skkm82f3qxv9551l36zwqcga9b9sbc48q8hp71ay4ac6b"))))
     (properties `((upstream-name . "ggcharts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-patchwork
                              r-magrittr
@@ -19968,6 +22014,9 @@ interface to create plots using ggplot2'.")
         (base32 "0brd9z8wj563j2kcx12bz4kyg2ynppxx5cz8k23xli1qijlib98p"))))
     (properties `((upstream-name . "ggchangepoint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rdpack
                              r-ggplot2
@@ -19996,6 +22045,9 @@ changepoint.np and ecp together, and uses ggplot2 to visualize changepoints.")
         (base32 "15cnzv2q3gylkmd1zj044cp14ldnkc4fzwmxaqpc8cagwf9i10zk"))))
     (properties `((upstream-name . "ggbump")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-purrr r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=ggbump")
     (synopsis "Bump Chart and Sigmoid Curves")
@@ -20016,6 +22068,9 @@ use for showing rank over time.")
         (base32 "0pld635v6fv46ky7s4icwxlcnr7z6bp5ikf20adpkljwhy0wwxak"))))
     (properties `((upstream-name . "ggbuildr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-purrr r-ggplot2))
     (home-page "https://cran.r-project.org/package=ggbuildr")
     (synopsis "Save Incremental Builds of Plots")
@@ -20038,6 +22093,9 @@ allow different file types for the final complete plot, and intermediate builds.
         (base32 "116rl8j0s9xwhh9jl5yj9fspkhv2zrirbx9247hhns9ngrdn4i3x"))))
     (properties `((upstream-name . "ggBubbles")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggBubbles")
@@ -20047,8 +22105,8 @@ allow different file types for the final complete plot, and intermediate builds.
      "When comparing discrete data mini bubble plots allow displaying more information
 than traditional bubble plots via colour, shape or labels.  Exact overlapping
 coordinates will be transformed so they surround the original point circularly
-without overlapping.  This is implemented as a position_surround() function for
-ggplot2'.")
+without overlapping.  This is implemented as a @code{position_surround()}
+function for ggplot2'.")
     (license license:lgpl3+)))
 
 (define-public r-ggbrick
@@ -20063,6 +22121,9 @@ ggplot2'.")
         (base32 "0w6cw5f8skx1diymsmpvkipk9n9c8yhi18b9mghynv3x0mn8qrwh"))))
     (properties `((upstream-name . "ggbrick")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-glue r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=ggbrick")
     (synopsis "Waffle Style Chart with a Brick Layout in 'ggplot2'")
@@ -20083,6 +22144,9 @@ chart but instead of squares the layout resembles a brick wall.")
         (base32 "1nicqirp69k0ish7j3mr7zz82w2lj5jcvmn7cbx764r62s5pscvd"))))
     (properties `((upstream-name . "ggbrain")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -20125,14 +22189,17 @@ modifications of display aesthetics supported by ggplot2'.")
         (base32 "0p5k9lp0c34ry3mf39w0j9pi8irych9p6lvh6zyk82my18b25yk0"))))
     (properties `((upstream-name . "ggbrace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=ggbrace")
     (synopsis "Curly Braces for 'ggplot2'")
     (description
-     "This package provides curly braces in ggplot2 plus matching text.  stat_brace()
-plots braces partially in the confines of data so that the brace is set apart
-from it.  stat_bracetext() plots corresponding text, fitting to the braces from
-stat_brace().")
+     "This package provides curly braces in ggplot2 plus matching text.
+@code{stat_brace()} plots braces partially in the confines of data so that the
+brace is set apart from it. @code{stat_bracetext()} plots corresponding text,
+fitting to the braces from @code{stat_brace()}.")
     (license license:expat)))
 
 (define-public r-ggborderline
@@ -20147,6 +22214,9 @@ stat_brace().")
         (base32 "1acb3z2dwasmn4ngc7wqk3y4n34ah3fhdxsbdl3dmbc75nmdsn5a"))))
     (properties `((upstream-name . "ggborderline")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-rlang r-ggplot2 r-cli))
     (home-page "https://github.com/wurli/ggborderline")
     (synopsis "Line Plots that Pop")
@@ -20168,6 +22238,9 @@ overlapping lines - Draw more realistic worms.")
         (base32 "0wzy9lnvqxjl3511vk1y6nxpvhk9hvk1xq18bbwsv6886npls56z"))))
     (properties `((upstream-name . "ggblend")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (home-page "https://mjskay.github.io/ggblend/")
     (synopsis "Blending and Compositing Algebra for 'ggplot2'")
@@ -20194,6 +22267,9 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
         (base32 "1r74czqsrr2s0vkblhln4spin5y1g2gpp27hy77yvgy4hjvkjda6"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-tidyselect
                              r-tidyr
@@ -20230,6 +22306,9 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
         (base32 "0ys4l5fhy1p1ys3q7012vxafmfrzaqlvnzmkmv32zar32j3hvmkc"))))
     (properties `((upstream-name . "ggbiplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (home-page "https://github.com/friendly/ggbiplot")
     (synopsis "Grammar of Graphics Implementation of Biplots")
@@ -20237,11 +22316,12 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
      "This package provides a ggplot2 based implementation of biplots, giving a
 representation of a dataset in a two dimensional space accounting for the
 greatest variance, together with variable vectors showing how the data variables
-relate to this space.  It provides a replacement for stats::biplot(), but with
-many enhancements to control the analysis and graphical display.  It implements
-biplot and scree plot methods which can be used with the results of prcomp(),
-princomp(), @code{FactoMineR::PCA}(), ade4::dudi.pca() or MASS::lda() and can be
-customized using ggplot2 techniques.")
+relate to this space.  It provides a replacement for @code{stats::biplot()}, but
+with many enhancements to control the analysis and graphical display.  It
+implements biplot and scree plot methods which can be used with the results of
+@code{prcomp()}, @code{princomp()}, @code{FactoMineR::PCA()},
+@code{ade4::dudi.pca()} or @code{MASS::lda()} and can be customized using
+ggplot2 techniques.")
     (license license:gpl2)))
 
 (define-public r-ggautomap
@@ -20256,6 +22336,9 @@ customized using ggplot2 techniques.")
         (base32 "0fy1saym15l3d76ix26kz9il3nzsypchh028vigcvan7g0yg7168"))))
     (properties `((upstream-name . "ggautomap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-sf
@@ -20289,6 +22372,9 @@ by the user or by another package.")
         (base32 "14jvrjrzp7wk94c3s0ixdcbhfsx9nlr5rf85a5gmrhvq7qjaicxc"))))
     (properties `((upstream-name . "ggarrow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-scales
                              r-rlang
@@ -20316,6 +22402,9 @@ built-in many line-based geom layers.")
         (base32 "1fgcy26gq0cpk4vhc412yw5wj8j4afs21lp7fcqsdah1xmpnhym2"))))
     (properties `((upstream-name . "ggarchery")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
@@ -20343,6 +22432,9 @@ intersecting points.")
         (base32 "1zc4p2bz4pxqycrzgb9wwl53lxqcikxsihna6ff8pmw1n623j85z"))))
     (properties `((upstream-name . "ggamma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://mjsaldanha.com/posts/ggamma")
     (synopsis "Generalized Gamma Probability Distribution")
     (description
@@ -20362,15 +22454,18 @@ Generalized Gamma proposed in Stacy, E. W. (1962) <doi:10.1214/aoms/1177704481>.
         (base32 "0hrxa7m07ppvnndivxcgxksdyblb6fw17aw46maqavlvcrz3fjgm"))))
     (properties `((upstream-name . "ggallin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (home-page "https://github.com/shabbychef/ggallin")
     (synopsis "Grab Bag of 'ggplot2' Functions")
     (description
-     "Extra geoms and scales for ggplot2', including geom_cloud(), a Normal density
-cloud replacement for errorbars; transforms ssqrt_trans and pseudolog10_trans,
-which are loglike but appropriate for negative data; interp_trans() and
-warp_trans() which provide scale transforms based on interpolation; and an infix
-compose operator for scale transforms.")
+     "Extra geoms and scales for ggplot2', including @code{geom_cloud()}, a Normal
+density cloud replacement for errorbars; transforms ssqrt_trans and
+pseudolog10_trans, which are loglike but appropriate for negative data;
+@code{interp_trans()} and @code{warp_trans()} which provide scale transforms
+based on interpolation; and an infix compose operator for scale transforms.")
     (license license:lgpl3)))
 
 (define-public r-ggalignment
@@ -20385,6 +22480,9 @@ compose operator for scale transforms.")
         (base32 "1rqndv1xqz350v6a23pfrl4zkwjyh4zg633kwcxnv57v0g01mmif"))))
     (properties `((upstream-name . "ggalignment")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-magrittr r-ggplot2 r-ggimage r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggalignment")
@@ -20407,6 +22505,9 @@ from user-provided image paths and alignment values.")
         (base32 "1b2fk8bxj4y8an7higv6251fvba748j8x6j7cqqdznmk9az86g01"))))
     (properties `((upstream-name . "ggaligner")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggplot2))
     (home-page "https://cran.r-project.org/package=ggaligner")
     (synopsis
@@ -20430,6 +22531,9 @@ other available packages.")
         (base32 "17zcfwglgrn6lmjzym7q7qqgvy8fq97qc74mkmlwi0zgy6vnlb4g"))))
     (properties `((upstream-name . "ggalign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-rlang
                              r-lifecycle
@@ -20459,12 +22563,16 @@ like a dendrogram and a heatmap.")
         (base32 "1rjrw4g0daw219spcz0pmy78m68gidk7vdbxd31wqgn1p7xwa4jb"))))
     (properties `((upstream-name . "gfunctions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-sandwich))
     (home-page "https://cran.r-project.org/package=gfunctions")
     (synopsis "G-Functions")
     (description
-     "Modified versions of the lag() and summary() functions: glag() and gsummary().
-The prefix g is a reminder of who to blame if things do not work as they should.")
+     "Modified versions of the @code{lag()} and @code{summary()} functions:
+@code{glag()} and @code{gsummary()}.  The prefix g is a reminder of who to blame
+if things do not work as they should.")
     (license license:gpl2+)))
 
 (define-public r-gformulami
@@ -20479,6 +22587,9 @@ The prefix g is a reminder of who to blame if things do not work as they should.
         (base32 "1zp8gn83h7bnfygi46qqhda4z5n2axbvcmqvhz60ba0daknw0jx0"))))
     (properties `((upstream-name . "gFormulaMI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mice))
     (native-inputs (list r-knitr))
     (home-page "https://jwb133.github.io/gFormulaMI/")
@@ -20492,6 +22603,47 @@ treatment regimes of interest using the mice package.  These can then be
 analysed using rules developed for analysing multiple synthetic datasets.")
     (license license:gpl3+)))
 
+(define-public r-gformulaice
+  (package
+    (name "r-gformulaice")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gfoRmulaICE" version))
+       (sha256
+        (base32 "1bpm1mn88byb12fdphshz5jgnz79y7fl595g8f6h8cbk01ih9grb"))))
+    (properties `((upstream-name . "gfoRmulaICE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-speedglm
+                             r-rlang
+                             r-reshape2
+                             r-nnet
+                             r-magrittr
+                             r-hmisc
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=gfoRmulaICE")
+    (synopsis "Parametric Iterative Conditional Expectation G-Formula")
+    (description
+     "This package implements iterative conditional expectation (ICE) estimators of
+the plug-in g-formula (Wen, Young, Robins, and HernÃ¡n (2020) <doi:
+10.1111/biom.13321>).  Both singly robust and doubly robust ICE estimators based
+on parametric models are available.  The package can be used to estimate
+survival curves under sustained treatment strategies (interventions) using
+longitudinal data with time-varying treatments, time-varying confounders,
+censoring, and competing events.  The interventions can be static or dynamic,
+and deterministic or stochastic (including threshold interventions).  Both
+prespecified and user-defined interventions are available.")
+    (license license:expat)))
+
 (define-public r-gformula
   (package
     (name "r-gformula")
@@ -20504,6 +22656,9 @@ analysed using rules developed for analysing multiple synthetic datasets.")
         (base32 "09bjc5wp8rc7wmjcx8vkk7vg386j1wq5hkf6v63fpfpcsb887251"))))
     (properties `((upstream-name . "gfoRmula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncreg
                              r-truncnorm
                              r-survival
@@ -20545,6 +22700,9 @@ joint interventions on multiple treatments.  See @code{McGrath} et al. (2020)
         (base32 "13v8gsn1zsxcji52n3mv1bik5xjqzg8n01rak1bvffm9qwakg571"))))
     (properties `((upstream-name . "GFM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-irlba r-dosnow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/feiyoung/GFM")
@@ -20572,6 +22730,9 @@ Shurong Zheng and Jin Liu. (2021) <doi:10.1080/01621459.2021.1999818>.")
         (base32 "1n6sp7h0ys92mqixznrs2j8kmban3mx8swrwdpxgxc6vxycky8d8"))))
     (properties `((upstream-name . "gfiUltra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sis r-mvtnorm r-lazyeval))
     (home-page "https://github.com/stla/gfiUltra")
     (synopsis
@@ -20594,6 +22755,9 @@ Reference: Lai, Hannig & Lee (2015) <doi:10.1080/01621459.2014.931237>.")
         (base32 "0ilvl8y118iicq5anzcsm94yz3bq890mb627dxi6z61cqazjbbai"))))
     (properties `((upstream-name . "GFisher")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrix))
     (home-page "https://cran.r-project.org/package=GFisher")
     (synopsis "Generalized Fisher's Combination Tests Under Dependence")
@@ -20621,6 +22785,9 @@ details can be found in Hong Zhang and Zheyang Wu (2020)
         (base32 "0iljf63pwwxzj0syvj7p13m6q82y7nf1kq5xpgyczkbrrbb59p7n"))))
     (properties `((upstream-name . "gfiExtremes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-foreach
@@ -20650,6 +22817,9 @@ distribution, assuming the exceedance threshold is a known or unknown parameter.
         (base32 "0cw8ih9dj86cvks0qcpffzjx8lv6qiwvk3f1wri8zashj8lk9am6"))))
     (properties `((upstream-name . "GFGM.copula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-joint-cox r-compound-cox r-cmprsk))
     (home-page "https://cran.r-project.org/package=GFGM.copula")
     (synopsis "Generalized Farlie-Gumbel-Morgenstern Copula")
@@ -20672,6 +22842,9 @@ and Emura (2018) <doi:10.1007/s00180-018-0804-0> and Shih and Emura (2019)
         (base32 "19iarppqaz05352f3ng01yi7na9p612nxwwwagm2nxy1gxrjz5rh"))))
     (properties `((upstream-name . "gfer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-v8
                              r-tidyr
@@ -20709,6 +22882,9 @@ identification and environmental data visualization.")
         (base32 "1mhlvp7i8g4b3mj4qwfnk0vl7af9sflgi6zgsjjp16kdsv42zkwn"))))
     (properties `((upstream-name . "GFE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-teachingsampling r-dplyr r-data-table))
     (home-page "https://cran.r-project.org/package=GFE")
     (synopsis "Gross Flows Estimation under Complex Surveys")
@@ -20731,6 +22907,9 @@ Markov chain approach with non response.")
         (base32 "0qq66f8ddw92m9k9raid89rggla9691xi2sn1w3r7lmwqf6ajsl4"))))
     (properties `((upstream-name . "GFDsurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tippy
                              r-survminer
                              r-survival
@@ -20766,6 +22945,9 @@ nested designs with up to three factors.  Ditzhaus, Dobler and Pauly (2020)
         (base32 "1kdfgz8y0bfnq40ab083z4ra8f7sv2s2ng94mfa3fcjh6ixk2fvj"))))
     (properties `((upstream-name . "GFDrmtl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tippy
                              r-shinywidgets
                              r-shinythemes
@@ -20804,6 +22986,9 @@ can improve the power of the multiple tests is available.")
         (base32 "0d1cfy97qclymycq03i8gqnivm1x2slqmbv4zlyxk8frg7j4wb57"))))
     (properties `((upstream-name . "GFDrmst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tippy
                              r-shinywidgets
                              r-shinythemes
@@ -20841,6 +23026,9 @@ available.")
         (base32 "094b41sx3czz9sjqhvxggkmrdcwfwv8ww9k4286vzd055jbvk5hh"))))
     (properties `((upstream-name . "GFDmcv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rcpparmadillo
                              r-rcpp
@@ -20874,6 +23062,9 @@ contrasts.")
         (base32 "1d40fwk367ww544z25jwlx2kdm1gv7y6ijl8vnpi198n7k1hdgpl"))))
     (properties `((upstream-name . "GFD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tippy
                              r-shinywidgets
                              r-shinythemes
@@ -20907,6 +23098,9 @@ Friedrich et al. (2017) <doi:10.18637/jss.v079.c01>.")
         (base32 "0j13y90nyd3qczrkzxwi1wpf5xlh7c0nlsyn8p7z1b4y93v63byc"))))
     (properties `((upstream-name . "gfcanalysis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-stringr
                              r-sf
@@ -20942,6 +23136,9 @@ forest change data and more information on the product is available at
         (base32 "1flvvqm9rk156nqnd0qwpagjl7kp2r4mkxpmp1i4zdnnyp2cydwk"))))
     (properties `((upstream-name . "gfboost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pcapp r-mvtnorm r-mboost))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gfboost")
@@ -20964,6 +23161,9 @@ Gradient Boosting (Werner, Tino (2020) \"Gradient-Free Gradient Boosting\", URL
         (base32 "1ldpa12awb5d8mn25wn34nclqc4fyq690siq0wdq4c8fzgpv2xad"))))
     (properties `((upstream-name . "GFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GFA")
     (synopsis "Group Factor Analysis")
     (description
@@ -20989,6 +23189,9 @@ originally by Virtanen et al. (2012), and extended in Klami et al. (2015)
         (base32 "08d04znd1h4s5vdp5981bzz4rb48lnx2nwwnvcqk84rl6zmc0l97"))))
     (properties `((upstream-name . "geysertimes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-lubridate r-jsonlite))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/geysertimes/geysertimes-r-package")
@@ -21011,6 +23214,9 @@ a simple analysis of downloading, accessing, and summarizing the data.")
         (base32 "1x2lpz4mqk5khqjyfval59m6cc6bw0c9a8dgr29yn4l8r8vsm9ky"))))
     (properties `((upstream-name . "gexp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-png r-mvtnorm r-jpeg))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ivanalaman/gexp")
@@ -21035,6 +23241,9 @@ Montgomery, 2001, ISBN:0471316490).")
         (base32 "0vmm9fhyrk5m0zwy7fpq5j9zinws0gn2saf4j9plqc9gj1gphjn0"))))
     (properties `((upstream-name . "GEVcdn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GEVcdn")
     (synopsis "GEV Conditional Density Estimation Network")
     (description
@@ -21055,6 +23264,9 @@ Cannon (2010) <doi:10.1002/hyp.7506>.")
         (base32 "0zkan4w96g3qc1hgla90mh32b55bk58gax095p4nxrfi46f8w3rf"))))
     (properties `((upstream-name . "GEVACO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlrsim r-nlme))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GEVACO")
@@ -21065,9 +23277,9 @@ Cannon (2010) <doi:10.1002/hyp.7506>.")
 dynamic gene-environment (@code{GxE}) interaction with continuous traits in
 genetic association studies.  It uses varying-coefficient models to account for
 different @code{GxE} trajectories, regardless whether the relationship is linear
-or not.  The package includes one function, @code{GxEtest}(), to test a single
+or not.  The package includes one function, @code{GxEtest()}, to test a single
 genetic variant (e.g., a single nucleotide polymorphism or SNP), and another
-function, @code{GxEscreen}(), to test for a set of genetic variants.  The method
+function, @code{GxEscreen()}, to test for a set of genetic variants.  The method
 involves a likelihood ratio test described in Crainiceanu, C. M., and Ruppert,
 D. (2004) <doi:10.1111/j.1467-9868.2004.00438.x>.")
     (license license:gpl3)))
@@ -21084,6 +23296,9 @@ D. (2004) <doi:10.1111/j.1467-9868.2004.00438.x>.")
         (base32 "1dj91hc65l84yhzdl7i05s7nw0ybgijjs2g2dxgfmsvxnj10fgby"))))
     (properties `((upstream-name . "getwiki")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=getwiki")
@@ -21106,14 +23321,17 @@ used for Natural Language Processing.")
         (base32 "0dgzw5mji5983588vj6q2kyjv9dngmrd0ilrkhfc3b4ngvfq61mf"))))
     (properties `((upstream-name . "gettz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/eddelbuettel/gettz/")
     (synopsis "Get the Timezone Information")
     (description
      "This package provides a function to retrieve the system timezone on Unix systems
-which has been found to find an answer when Sys.timezone() has failed.  It is
-based on an answer by Duane @code{McCully} posted on @code{StackOverflow}', and
-adapted to be callable from R. The package also builds on Windows, but just
-returns NULL.")
+which has been found to find an answer when @code{Sys.timezone()} has failed.
+It is based on an answer by Duane @code{McCully} posted on
+@code{StackOverflow}', and adapted to be callable from R. The package also
+builds on Windows, but just returns NULL.")
     (license license:gpl2+)))
 
 (define-public r-gettddata
@@ -21128,6 +23346,9 @@ returns NULL.")
         (base32 "1l2kc85sxnwmccyyjf18d8npg40pa3kgsvd73lj6b8pxwrsg9wj7"))))
     (properties `((upstream-name . "GetTDData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-tibble
@@ -21161,6 +23382,9 @@ from the website of Tesouro Direto <https://www.tesourodireto.com.br/>.")
         (base32 "190y4qrm1wawp0787zhw3g8h9s2smacvvxbs70pxbhysq4bkzcdd"))))
     (properties `((upstream-name . "getspres")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer
                              r-plotrix
                              r-metafor
@@ -21194,6 +23418,9 @@ documentation and examples <https://magosil86.github.io/getspres/>.")
         (base32 "0xccla4w7vc82gqxfm927xzynchn9zi37smnq03rkamn4pf7v4gz"))))
     (properties `((upstream-name . "getspanel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrix r-ggplot2 r-gets r-fastdummies))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/moritzpschwarz/getspanel")
@@ -21218,6 +23445,9 @@ reverse causal approach of causal inference, see Pretis and Schwarz (2022)
         (base32 "0jwjwlg8r4mgk12iszxyy2nfnmqy75ajal3nzdgb8rn2xa3q35vc"))))
     (properties `((upstream-name . "gets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo))
     (home-page "https://CRAN.R-project.org/package=gets")
     (synopsis
@@ -21243,6 +23473,9 @@ the estimator and diagnostics tests can be fully user-specified, see Sucarrat
         (base32 "0j5n2xbjk64nyfdpzphsiwa9k08rvgdfkzbfqahjdy11rk4x1fgi"))))
     (properties `((upstream-name . "GetQuandlData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr
                              r-purrr
                              r-memoise
@@ -21274,6 +23507,9 @@ data importation in the tidy/long format.")
         (base32 "0n8ja0i1v0cd2piqyx4hfc4qw18d535j3ffpz164c3r8cmppnqzd"))))
     (properties `((upstream-name . "getProxy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr r-cli))
     (home-page "https://selesnow.github.io/getProxy/")
     (synopsis "Get Free Proxy IP and Port")
@@ -21295,6 +23531,9 @@ redirect your Internet connection through a proxy server.")
         (base32 "100m5cbwx9anlh1hzjv7d1h1viqsxb0bx0ksc1dsjx3gqrf77q1n"))))
     (properties `((upstream-name . "getmstatistic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stargazer
                              r-psych
                              r-metafor
@@ -21334,6 +23573,9 @@ statistical statistical theory, documentation and examples.")
         (base32 "0gfjqvzn03qxlyf4hj5kzfy8pqbphrw421bqbkb2pksa6gyvnfnq"))))
     (properties `((upstream-name . "GetLattesData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-stringr
                              r-stringdist
@@ -21361,6 +23603,9 @@ from Lattes <http://lattes.cnpq.br/>.")
         (base32 "1rrd9x9jmnsy0770c86lqws4a6b2zxf3384h1dcvzrmlk20hhqxw"))))
     (properties `((upstream-name . "getLattes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-rlang
@@ -21394,6 +23639,9 @@ exported to XML format.")
         (base32 "0qyld6sy1i7kmbvcyg3vdv31qdyj81n54v6gvknb7nrqwwl8bgv3"))))
     (properties `((upstream-name . "getip")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=getip")
     (synopsis "'IP' Address 'Lookup'")
     (description
@@ -21414,6 +23662,9 @@ supported.")
         (base32 "15rca6pfsx5hcl1lnz49904b2ps0312mwjv8d4f0g76jhkvqfvss"))))
     (properties `((upstream-name . "GetFREData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xml
                              r-stringr
@@ -21446,13 +23697,16 @@ downloaded and imported from the ftp site
         (base32 "16y24jhy9k1adlmf6yqzc8kla2vw7r0c6zd52jpfkiljxwkm4634"))))
     (properties `((upstream-name . "getDTeval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-microbenchmark r-formulaic r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=getDTeval")
     (synopsis
      "Translating Coding Statements using get() and eval() for Improved Run-Time Coding Efficiency")
     (description
-     "The @code{getDTeval}() function facilitates the translation of the original
+     "The @code{getDTeval()} function facilitates the translation of the original
 coding statement to an optimized form for improved runtime efficiency without
 compromising on the programmatic coding design.  The function can either provide
 a translation of the coding statement, directly evaluate the translation to
@@ -21471,6 +23725,9 @@ return a coding result, or provide both of these outputs.")
         (base32 "1dc1ks9mrwc8sjmp6fh47hlhhfwvfign6jmf4cxik28q3253al01"))))
     (properties `((upstream-name . "GetDFPData2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-writexl
                              r-tidyr
@@ -21506,6 +23763,9 @@ imported from CVM's public ftp site
         (base32 "1yxf1i5bipz16pbydl6qxlalh2zpdiigbxd1qczbjc1z78bl5727"))))
     (properties `((upstream-name . "GetDFPData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-xlsx
                              r-tibble
@@ -21541,6 +23801,9 @@ keeping a tabular (long) structure for easier processing.")
         (base32 "1kd08vdra3akdkvk6n9i6w4m2qmlnkjqjnssdn8f317vwbhjcmf3"))))
     (properties `((upstream-name . "GETdesigns")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GETdesigns")
     (synopsis "Generalized Extended Triangular Designs ('GETdesigns')")
     (description
@@ -21554,7 +23817,7 @@ PBIB designs, more specifically to higher associate class PBIB designs from
 balanced incomplete block designs.  It is interesting to note that many times
 higher associate PBIB designs perform better than their counterpart lower
 associate PBIB designs for the same set of parameters v, b, r, k and lambda_i
-(i=1,2...m).  This package contains functions named GETD() for generating
+(i=1,2...m).  This package contains functions named @code{GETD()} for generating
 m-associate (m>=2) class PBIB designs along with parameters (v, b, r, k and
 lambda_i, i = 1, 2,â¦,m) based on Generalized Triangular (GT) Association
 Scheme.  It also calculates the Information matrix, Average variance factor and
@@ -21575,6 +23838,9 @@ possible concurrence of treatment pairs.")
         (base32 "0bc1ar1cx7vxvlld2dishi46a9bxs075vgby1xs8kbxlllknvcsi"))))
     (properties `((upstream-name . "GetBCBData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-purrr
                              r-memoise
@@ -21605,6 +23871,9 @@ with furrr and format of output data (long/wide).")
         (base32 "0v45nqpx55vbj68gj4wxr0bdlrl897ayac78rxjd2lkkjx49hlyh"))))
     (properties `((upstream-name . "getable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://yongfu.name/getable/")
@@ -21618,15 +23887,22 @@ Markdown HTML documents.")
 (define-public r-get
   (package
     (name "r-get")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GET" version))
        (sha256
-        (base32 "0mg6q10022f35aqnvfrh2czvk2m31d5jsidhc85bjgnkhwg65pcy"))))
+        (base32 "1648dg7vhvy4yljq0m0y0a4b67n81d34nygmqr1kci9f5avcgjjr"))))
     (properties `((upstream-name . "GET")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-viridislite r-gridextra r-ggplot2 r-cluster))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/myllym/GET")
@@ -21644,9 +23920,9 @@ functional general linear model, n-sample test of correspondence of distribution
 functions), for central regions of functional or multivariate data (e.g. outlier
 detection, functional boxplot) and for global confidence and prediction bands
 (e.g. confidence band in polynomial regression, Bayesian posterior prediction).
-See MyllymÃ¤ki and MrkviÄka (2023) <doi:10.48550/@code{arXiv.1911.06583>},
-MyllymÃ¤ki et al. (2017) <doi:10.1111/rssb.12172>, MrkviÄka and MyllymÃ¤ki
-(2023) <doi:10.1007/s11222-023-10275-7>, MrkviÄka et al. (2016)
+See MyllymÃ¤ki and MrkviÄka (2024) <doi:10.18637/jss.v111.i03>, MyllymÃ¤ki et
+al. (2017) <doi:10.1111/rssb.12172>, MrkviÄka and MyllymÃ¤ki (2023)
+<doi:10.1007/s11222-023-10275-7>, MrkviÄka et al. (2016)
 <doi:10.1016/j.spasta.2016.04.005>, MrkviÄka et al. (2017)
 <doi:10.1007/s11222-016-9683-9>, MrkviÄka et al. (2020)
 <doi:10.14736/kyb-2020-3-0432>, MrkviÄka et al. (2021)
@@ -21655,7 +23931,7 @@ MyllymÃ¤ki et al. (2017) <doi:10.1111/rssb.12172>, MrkviÄka and MyllymÃ¤k
 <doi:10.1002/sim.9236>, Dai et al. (2022) <doi:10.5772/intechopen.100124>,
 DvoÅÃ¡k and MrkviÄka (2022) <doi:10.1007/s00180-021-01134-y>, MrkviÄka et al.
 (2023) <doi:10.48550/@code{arXiv.2309.04746>}, and Konstantinou et al. (2024)
-<doi: 10.48550/@code{arXiv.2403.01838>}.")
+<doi: 10.1007/s00180-024-01569-z>.")
     (license license:gpl3)))
 
 (define-public r-gesttools
@@ -21670,6 +23946,9 @@ DvoÅÃ¡k and MrkviÄka (2022) <doi:10.1007/s00180-021-01134-y>, MrkviÄk
         (base32 "1lrjr60vrl0j31hb12i8c78k5554vwpgj8pzzrhbdhmb6y0972fx"))))
     (properties `((upstream-name . "gesttools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -21705,6 +23984,9 @@ effect modification by a confounding variable.")
         (base32 "1b6zyrph3h7cgnl8rxj3yv14mgnvxvgk26m84k5v8cbnly9ky2k2"))))
     (properties `((upstream-name . "gestate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-shinythemes r-shiny r-foreach
                              r-doparallel))
     (native-inputs (list r-knitr))
@@ -21735,6 +24017,9 @@ recruitment distributions (Curves).")
         (base32 "0p8xrlmc81irh9s2c57sxgmvdjmmgmya0h31904c4cwi9aa32f4z"))))
     (properties `((upstream-name . "gestalt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/egnha/gestalt")
@@ -21744,9 +24029,9 @@ recruitment distributions (Curves).")
 (forward) composition operator, %>>>%, which extends the semantics of the
 magrittr %>% operator and supports Tidyverse quasiquotation.  It enables you to
 construct composite functions that can be inspected and transformed as list-like
-objects.  In conjunction with %>>>%, a compact function constructor, fn(), and a
-partial-application constructor, partial(), are also provided; both support
-quasiquotation.")
+objects.  In conjunction with %>>>%, a compact function constructor,
+@code{fn()}, and a partial-application constructor, @code{partial()}, are also
+provided; both support quasiquotation.")
     (license license:expat)))
 
 (define-public r-gesso
@@ -21761,6 +24046,9 @@ quasiquotation.")
         (base32 "0i7a927mbll8mlisxb0ic62fvq1wp5v0m69n7zkhcjabkxr7gbn3"))))
     (properties `((upstream-name . "gesso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppthread
                              r-rcppeigen
                              r-rcpp
@@ -21791,6 +24079,9 @@ Zemlianskaia et al. (2021) <arxiv:2103.13510>.")
         (base32 "05dswf8c10vwhswsgdpzkqlhbazrw8bd62ndk768lw31fj1n0cab"))))
     (properties `((upstream-name . "geslaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-dplyr r-cli r-arrow))
     (native-inputs (list r-knitr))
@@ -21818,6 +24109,9 @@ showing the selected sites.")
         (base32 "1cabgmprwlwn09hd1jd9hvj50bqaarxyajz251l0vv2qb3d5l11a"))))
     (properties `((upstream-name . "gesisdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rselenium
                              r-rio
@@ -21851,6 +24145,9 @@ programmatic, reproducible access to GESIS datasets from within R'.")
         (base32 "0h3s2sbnv5wilr2mj6bnl2892p16pxrs341gg6jql1a540p669sk"))))
     (properties `((upstream-name . "GESE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kinship2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GESE")
@@ -21877,6 +24174,9 @@ at <http://scholar.harvard.edu/dqiao/gese>.")
         (base32 "0s3ncb9gvaww92jpiidsp6v7lmgqqdv4rrrxlfv0rpjddpnvaixk"))))
     (properties `((upstream-name . "gesca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://quantmm.github.io/gesca/")
     (synopsis
      "Generalized Structured Component Analysis Structural Equation Modeling")
@@ -21899,6 +24199,9 @@ order latent variable modeling.  For a comprehensive overview of GSCA, see Hwang
         (base32 "0d61vx33rxlmjk5kazji0a6wli6cfcardn308wzbjqpvixsqy2vl"))))
     (properties `((upstream-name . "GeRnika")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-reshape2
                              r-purrr
@@ -21931,6 +24234,9 @@ composition and the evolutionary history of tumors.")
         (base32 "1lssjs9rp09l9draylrkslb74apizbanacgp00yyxhgxa39dk2g6"))))
     (properties `((upstream-name . "germinationmetrics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-plyr
                              r-mathjaxr
@@ -21965,6 +24271,9 @@ list of citations for the methods implemented.")
         (base32 "0f2dbq1adbd5p30kf9bi8qqk2s8da0p65i9a0igm16ckwpam7lkk"))))
     (properties `((upstream-name . "GerminaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-shiny
@@ -21995,6 +24304,9 @@ techniques for evaluate the seed germination process in ecophysiological studies
         (base32 "10l4s44amz0pc9nmwh3j7bbysyn2rwfa6a95w3xpf6qdgjkxgfnw"))))
     (properties `((upstream-name . "gerefer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bibliorefer))
     (home-page "https://cran.r-project.org/package=gerefer")
     (synopsis
@@ -22002,11 +24314,12 @@ techniques for evaluate the seed germination process in ecophysiological studies
     (description
      "Generates a file, containing the main scientific references, prepared to be
 automatically inserted into an academic paper.  The articles present in the list
-are chosen from the main references generated, by function principal_lister(),
-of the package bibliorefer'.  The generated file contains the list of metadata
-of the principal references in @code{BibTex} format.  Massimo Aria, Corrado
-Cuccurullo. (2017) <doi:10.1016/j.joi.2017.08.007>.  Caibo Zhou, Wenyan Song.
-(2021) <doi:10.1016/j.jclepro.2021.126943>.  Hamid DerviÅ. (2019)
+are chosen from the main references generated, by function
+@code{principal_lister()}, of the package bibliorefer'.  The generated file
+contains the list of metadata of the principal references in @code{BibTex}
+format.  Massimo Aria, Corrado Cuccurullo. (2017)
+<doi:10.1016/j.joi.2017.08.007>.  Caibo Zhou, Wenyan Song. (2021)
+<doi:10.1016/j.jclepro.2021.126943>.  Hamid DerviÅ. (2019)
 <doi:10.5530/jscires.8.3.32>.")
     (license license:gpl3)))
 
@@ -22022,6 +24335,9 @@ Cuccurullo. (2017) <doi:10.1016/j.joi.2017.08.007>.  Caibo Zhou, Wenyan Song.
         (base32 "1s9li84ph5wxpl6j696ysfi2km62s03231avwk36hp74fxj1sgwr"))))
     (properties `((upstream-name . "gerda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-stringdist r-readr r-knitr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hhilbig/gerda")
@@ -22050,6 +24366,9 @@ electoral data, making it ready for analysis.  Data is sourced from
         (base32 "1ra1piza922sigxk61v55dbpkmzha716drmb6m1qxn892vykmm8w"))))
     (properties `((upstream-name . "gerbil")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-pbapply
                              r-openxlsx
@@ -22082,6 +24401,9 @@ implemented on high dimensional datasets in practice.  See Robbins (2021)
         (base32 "08d50sg80dj3jazznszs7b0jpb21jp9khjvplx1qgdlpnlljwq4h"))))
     (properties `((upstream-name . "geppe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast2))
     (home-page "https://cran.r-project.org/package=geppe")
     (synopsis
@@ -22113,6 +24435,9 @@ and Probability Letters, 79(24): 2493--2500. <doi:10.1016/j.spl.2009.09.003>.")
         (base32 "0g1aq1k25pipnkm1xbsb7f9nx4j86ra2a39h9nrq9jzh40vd3ldr"))))
     (properties `((upstream-name . "GephiForR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-igraph))
     (home-page "https://cran.r-project.org/package=GephiForR")
     (synopsis "'Gephi' Network Visualization")
@@ -22138,6 +24463,9 @@ A. (2009) <doi:10.48550/@code{arXiv.0807.4052>}.")
         (base32 "1fmxm8dzz8jx9qc7q9rwxh8zm8flwb9xkbpbv50526klsixp0qs3"))))
     (properties `((upstream-name . "gepaf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bitops))
     (home-page "https://github.com/riatelab/gepaf")
     (synopsis "Google Encoded Polyline Algorithm Format")
@@ -22159,6 +24487,9 @@ for more information.")
         (base32 "0g91yhg7zw1bp0lxxblr2irckjg2rl4pg1vgglccnmxkzn0ji2qi"))))
     (properties `((upstream-name . "geozoo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bitops))
     (home-page "http://schloerke.github.io/geozoo/")
     (synopsis "Zoo of Geometric Objects")
@@ -22179,6 +24510,9 @@ package tourr'.")
         (base32 "1ylfggfqylqi76z3ac95cnxmmw3gzddq2r5qx5w0gjyjvrxr8wsv"))))
     (properties `((upstream-name . "GeoWeightedModel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep
                              r-sp
                              r-shinywidgets
@@ -22219,6 +24553,9 @@ Brunsdon et al., 2002 <doi:10.1016/s0198-9715(01)00009-6>, Harris et al., 2011
         (base32 "13ll9jyh1fadm2rpfvja0fnqnpr6haivz1vmmpi6yc95rpl4234b"))))
     (properties `((upstream-name . "geovol")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo))
     (home-page "https://sites.google.com/site/susanacamposmartins/")
     (synopsis "Geopolitical Volatility (GEOVOL) Modelling")
@@ -22243,6 +24580,9 @@ estimated iteratively until convergence.")
         (base32 "02x52fid3pmaaj22b729zvrh8giwb2a4az66xxwp0lw03pf188zi"))))
     (properties `((upstream-name . "geouy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-viridis
                              r-tidyselect
@@ -22283,6 +24623,9 @@ the uruguayan IDE API
         (base32 "0hjhc68pl1gq9wcgvvagn903vlhwsayf7kka88rdcb6y7rgdlp5v"))))
     (properties `((upstream-name . "geoTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-robustbase
                              r-raster
@@ -22314,6 +24657,9 @@ regression model is based on G. Roerink, M. Menenti and W. Verhoef (2000)
         (base32 "0q4jkcj7zmh1hsn9izv09p0wzb4amsxfqc22lr28jw2df17r0ym6"))))
     (properties `((upstream-name . "GeoTox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-tidyselect
                              r-tidyr
@@ -22347,6 +24693,9 @@ are described in Messier, Reif, and Marvel (2024)
         (base32 "1wl0zggilgq2nrwdjvmba9k4avgqfv06ffsj2fmql2qmlzan744q"))))
     (properties `((upstream-name . "geotopbricks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-terra r-stringr r-sf r-raster))
     (home-page "https://zenodo.org/record/8228413")
     (synopsis "An R Plug-in for the Distributed Hydrological Model GEOtop")
@@ -22373,6 +24722,9 @@ Endrizzi et al (2014)
         (base32 "0chiyvc3f3y45v4ja1jhj4pag54ir18d42qnfd3q8dnyisk8cags"))))
     (properties `((upstream-name . "geotoolsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-ggplot2 r-geor r-dplyr))
     (home-page "https://cran.r-project.org/package=geotoolsR")
     (synopsis "Tools to Improve the Use of Geostatistic")
@@ -22398,6 +24750,9 @@ bootstrap variograms.")
         (base32 "0d0vf9dvrrv68ivssp58qzaj8vra26ms33my097jmzmgagwy1spd"))))
     (properties `((upstream-name . "geotools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=geotools")
     (synopsis "Geo tools")
     (description "This package provides tools.")
@@ -22415,6 +24770,9 @@ bootstrap variograms.")
         (base32 "0fsiik19cck9pmfk4nwwfy3vyj19s1x0m2y9a14jlrqy40v98lza"))))
     (properties `((upstream-name . "GeoThinneR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-rcpp
                              r-nabor
@@ -22444,6 +24802,9 @@ Elseberg et al. (2012) <https://hdl.handle.net/10446/86202>.")
         (base32 "10xmdgmmd4f67778g02hyqzkk9zj9c0cdfs9cw8py1b413vfclyv"))))
     (properties `((upstream-name . "geostatsp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-numderiv r-matrix r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=geostatsp")
@@ -22469,6 +24830,9 @@ For details see Brown (2015) <doi:10.18637/jss.v063.i12>.  The
         (base32 "0fmp6883a3xqay3wcc3bz7czhyik1mki3zn5z195iag11yvc5wr6"))))
     (properties `((upstream-name . "geostats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/pvermees/geostats/")
     (synopsis "An Introduction to Statistics for Geoscientists")
     (description
@@ -22500,6 +24864,9 @@ Theoretical background and worked examples are available at
         (base32 "083p56ij3w14ixrbcndqywbhhffc56ry5gkq2pp0npfrj9cs6430"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-stanheaders
                              r-spdep
@@ -22545,6 +24912,9 @@ Donegan (2022) <doi:10.21105/joss.04716>; Donegan, Chun and Hughes (2020)
         (base32 "1n1jvigavcxlbc5wki74lnhax3060i44m1cvkcr664wsjqhx3kl2"))))
     (properties `((upstream-name . "geosptdb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmatch
                              r-sp
                              r-minqa
@@ -22575,6 +24945,9 @@ coordinates of a new individual from Gower's distance.")
         (base32 "1fmvrsmh4nfc4g8z9ca5k4c4pm7wy218crhigp58n6i6avvf9scz"))))
     (properties `((upstream-name . "geospt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-teachingdemos
                              r-sp
                              r-sgeostat
@@ -22608,6 +24981,9 @@ sequential and simultaneous points methods.")
         (base32 "004axa0k9xg1hra8jihwgnc379k8pib1h0zkr82j0m9sii4wrk6r"))))
     (properties `((upstream-name . "geospark")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparklyr r-dplyr r-dbplyr))
     (home-page "https://cran.r-project.org/package=geospark")
     (synopsis "Bring Local Sf to Spark")
@@ -22632,6 +25008,9 @@ simple features access like sf but running on Spark distributed system.")
         (base32 "10hdll5niqd1k5kgqzp44dipqwp6mvbq00h0x9h16yswvxrx6ji9"))))
     (properties `((upstream-name . "geosimilarity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-purrr
                              r-magrittr
@@ -22664,6 +25043,9 @@ prediction uncertainty.")
         (base32 "07j4q6sgrf83h2gi2j5qap5rifz8gimdacd3b7ld1p3b6ai6kv3r"))))
     (properties `((upstream-name . "geosed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=geosed")
     (synopsis "Smallest Enclosing Disc for Latitude and Longitude Points")
     (description
@@ -22687,6 +25069,9 @@ midpoint, bearing and more are derived from <https://www.movable-type.co.uk>.")
         (base32 "1ykzxbwjdy0xi5hj5r201j3wrgahcxvxrgp40mqlw7zj80wgdgif"))))
     (properties `((upstream-name . "geoscale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=geoscale")
     (synopsis "Geological Time Scale Plotting")
     (description
@@ -22705,6 +25090,9 @@ midpoint, bearing and more are derived from <https://www.movable-type.co.uk>.")
         (base32 "0zq02xnzqszmkdj99686g2x91gyc8x16yhkixhpd7frap7zy6h23"))))
     (properties `((upstream-name . "geosapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-readr
                              r-r6
@@ -22739,6 +25127,9 @@ well as vector data upload operations.  For more information about the
         (base32 "16fkai95cqwxkylpk1gddyzja80036ghfb4ps3rz1vbbqzhg01x8"))))
     (properties `((upstream-name . "geoSAE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-mass))
     (home-page "https://github.com/ketutdika/geoSAE")
     (synopsis "Geoadditive Small Area Model")
@@ -22752,30 +25143,6 @@ model.  This package refers to J.N.K Rao and Isabel Molina (2015, ISBN:
 Kurnia, A. (2018)<doi:10.21082/jpptp.v2n2.2018.p101-110>.")
     (license license:gpl3)))
 
-(define-public r-geos
-  (package
-    (name "r-geos")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geos" version))
-       (sha256
-        (base32 "03cxm9rby7qmk9apqk3sh373rnzqcrj23cn6q153gq93lx372b8n"))))
-    (properties `((upstream-name . "geos")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wk r-libgeos))
-    (home-page "https://paleolimbot.github.io/geos/")
-    (synopsis "Open Source Geometry Engine ('GEOS') R API")
-    (description
-     "This package provides an R API to the Open Source Geometry Engine ('GEOS')
-library (<https://libgeos.org/>) and a vector format with which to efficiently
-store GEOS geometries.  High-performance functions to extract information from,
-calculate relationships between, and transform geometries are provided.
-Finally, facilities to import and export geometry vectors to other spatial
-formats are provided.")
-    (license license:expat)))
-
 (define-public r-georob
   (package
     (name "r-georob")
@@ -22788,6 +25155,9 @@ formats are provided.")
         (base32 "0z1g26z4dbayxbh506ynh03v51v0q9dgz2b98l3cfbb9g53q1d7q"))))
     (properties `((upstream-name . "georob")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-snowfall
                              r-robustbase
@@ -22826,6 +25196,9 @@ unbiased back-transformation of Kriging predictions of log-transformed data
         (base32 "1cqdl4zskgxjb1s29ka6q6wk7kpvrapjl40q5pfjwxh16b3bfdbh"))))
     (properties `((upstream-name . "georefdatar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack))
     (home-page "https://github.com/abuseki/georefdatar")
     (synopsis "Geosciences Reference Datasets")
@@ -22853,6 +25226,9 @@ references is included.")
         (base32 "0krj9570wkhdvpaqkq3nf0maglqd44mpwn4v1bymvgpk1i1wf5p3"))))
     (properties `((upstream-name . "GeoRange")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-velociraptr r-sp r-raster r-proj4 r-moments))
     (home-page "https://cran.r-project.org/package=GeoRange")
     (synopsis "Calculating Geographic Range from Occurrence Data")
@@ -22876,6 +25252,9 @@ degree cells occupied.")
         (base32 "1ggbswsw01r3cfx88khprx6rhrq40rnqsbsljcjkpyg0xdy9g7df"))))
     (properties `((upstream-name . "geoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splancs r-sp r-mass))
     (home-page "http://www.leg.ufpr.br/geoR/")
     (synopsis "Analysis of Geostatistical Data")
@@ -22897,6 +25276,9 @@ methods.  Software companion for Diggle and Ribeiro (2007)
         (base32 "1hzdbghskdp0gnngycjn1z6zxdzas71mg7pw2bh6xw7ll52agkp5"))))
     (properties `((upstream-name . "geoperu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-httr r-data-table r-curl))
     (home-page "https://github.com/PaulESantos/geoperu")
     (synopsis "Download Spatial Datasets of Peru")
@@ -22922,6 +25304,9 @@ ensuring consistency and ease of use for spatial analysis and visualization.")
         (base32 "1pyyknkg9dv58vq8w4pmxd36j8l352zb2jv99skvyg0vn07m6bax"))))
     (properties `((upstream-name . "geonode4R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-r6 r-openssl r-keyring r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eblondel/geonode4R")
@@ -22944,6 +25329,9 @@ the @code{GeoNode} API, see <https://geonode.org/>.")
         (base32 "0yg6pp2ya62qws6jdjxmhqjh5gdn4cfm6zbljazc35xf7d97jjnx"))))
     (properties `((upstream-name . "geonetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-igraph r-geosphere))
     (home-page "https://umr-astre.pages.mia.inra.fr/geonetwork")
     (synopsis "Geographic Networks")
@@ -22970,6 +25358,9 @@ supplementary cartography for spatial representation.")
         (base32 "0n6s9gvg9z8hn3sih0gj35x8zxspqa8h8bml50bhsl5y4gcfihgd"))))
     (properties `((upstream-name . "geonapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-r6
                              r-plyr
@@ -22997,6 +25388,9 @@ metadata in a @code{GeoNetwork} web-application and expose it to OGC CSW.")
         (base32 "0yz1b7y3vwa4izrhpry4n3iwzb7y67s5p3kgnd7d29cl5pcbpmqx"))))
     (properties `((upstream-name . "geonames")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjson))
     (home-page "https://cran.r-project.org/package=geonames")
     (synopsis "Interface to the \"Geonames\" Spatial Query Web Service")
@@ -23019,6 +25413,9 @@ exist.")
         (base32 "0vvk48na7130d8j3gm0c5vgi1riqwkjk314pd03i7b4mw00pcm92"))))
     (properties `((upstream-name . "geomultistar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -23054,6 +25451,9 @@ functions from this package.")
         (base32 "1a33rcks9hvg3jyiplzsm1na6n80n934zvbcm57n3jg6gxcv2v5s"))))
     (properties `((upstream-name . "geomtextpath")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-textshaping r-systemfonts r-scales r-rlang
                              r-ggplot2))
     (native-inputs (list r-knitr))
@@ -23077,6 +25477,9 @@ in polar co-ordinates.")
         (base32 "0rshmlz9ccljl7c9fsz18jajdsdgm7zgiarx1sk2d85j31bfdhmb"))))
     (properties `((upstream-name . "geomorph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rrpp
                              r-rgl
                              r-matrix
@@ -23104,6 +25507,9 @@ provide graphical depictions of shapes and patterns of shape variation.")
         (base32 "0m5nz5q81jz2v2bl2dbgdbdprrkckxr2c67qn0cg9vms0pi3fawr"))))
     (properties `((upstream-name . "GeoMongo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-reticulate r-r6 r-geojsonr r-data-table))
     (native-inputs (list r-knitr))
@@ -23130,6 +25536,9 @@ classes and functions.")
         (base32 "0bkwbkkmwdxw8l4sgxdhk1i2ichn86z01jk0ma9mi2rrxxdaclv6"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zipfr
                              r-vgam
                              r-spam
@@ -23193,6 +25602,9 @@ and tutorials.")
         (base32 "06a211cyhcicy5arpjxiglami56plkm6ybxbzbmjd0z6yn9yyd38"))))
     (properties `((upstream-name . "geomod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-rpart
                              r-rastervis
@@ -23233,6 +25645,9 @@ Kriging technique.")
         (base32 "172iv017p5lfsy0436sqmvf8r1grwyb146czp6x6cyzn2n9qxhqx"))))
     (properties `((upstream-name . "geommc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp
                              r-mcmc
                              r-matrixcalc
@@ -23261,6 +25676,9 @@ performing high dimensional Bayesian variable selection.")
         (base32 "14f1g5ijm2hv0cncrddfr8fca9517g0dyrkfgc0k1v301nhlvcn4"))))
     (properties `((upstream-name . "geometa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-readr
                              r-r6
@@ -23293,6 +25711,9 @@ OGC GML Referenceable Grid (GMLRGRID).")
         (base32 "1isap50gbkcrbpg0wmzvxxa45vaa9szsxf9k9z3j2jjmv2gbg5mk"))))
     (properties `((upstream-name . "geomerge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-spdep
                              r-sp
@@ -23323,6 +25744,9 @@ geographical resolution.")
         (base32 "05xb6m2ciszxd13yhqdkildh9nsq19ss8885ngj6ynvbchqkii7r"))))
     (properties `((upstream-name . "GeomComb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych
                              r-mtsdi
                              r-matrix
@@ -23351,6 +25775,9 @@ forecast combination (missingness, collinearity).")
         (base32 "09j48ms1j7sqakznd2bj6sks1b6ckhch7ydhbdky4jk2acvl7lqw"))))
     (properties `((upstream-name . "geomaroc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AmineAndam04/R-geomaroc")
@@ -23374,6 +25801,9 @@ is approximately 12 MB.")
         (base32 "1v3jgwv45bzyya578z6hqjj6jzwgh1gsbin67sqf1i735c0lms05"))))
     (properties `((upstream-name . "GeomArchetypal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rlang
                              r-plot3d
@@ -23415,6 +25845,9 @@ our data points if we consider them as a vector space.  Cutler, A., Breiman, L.
         (base32 "1fp0qwsk4h7inp6jhz1b0zsdhv6frlxbbk8crv4xjzxzc72zhzdx"))))
     (properties `((upstream-name . "geomapdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=geomapdata")
     (synopsis "Data for Topographic and Geologic Mapping")
     (description
@@ -23434,6 +25867,9 @@ map, USA map, Coso map, Japan Map.")
         (base32 "1h6f8wyf3p5a0mr5mvm7cv9v67gjfyzip1fw4rsqx6zkc9nyaswp"))))
     (properties `((upstream-name . "GEOmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-rpmg r-mba r-fields))
     (home-page "https://cran.r-project.org/package=GEOmap")
     (synopsis "Topographic and Geologic Mapping")
@@ -23455,6 +25891,9 @@ databases, interactive plotting and selection of focus regions.")
         (base32 "1w47ln4vxxlp45rqmr6diglwmyadhrq7n6smbgipznwkfkr975jm"))))
     (properties `((upstream-name . "geomander")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tinytiger
                              r-tidyr
                              r-tibble
@@ -23493,6 +25932,9 @@ US.")
         (base32 "0l4zwyf3f827jpwbsv097d0h8i7pjwpkvdr89hc6vv9pzavfymhp"))))
     (properties `((upstream-name . "geojsonR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlampros/geojsonR")
@@ -23518,6 +25960,9 @@ in R through the Rcpp and @code{RcppArmadillo} packages.")
         (base32 "0as0lcypj05j1vxkf3f13z4x6crjvgwmy06xrgq7j124f4syns3i"))))
     (properties `((upstream-name . "geojsonio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8
                              r-sp
                              r-sf
@@ -23550,6 +25995,9 @@ aims to be a high level client to simplify conversions of data from and to
         (base32 "0aj00zy603w03y36r2x8gvnya9c2xl73pnvi3wy5xky9kmbwh9g4"))))
     (properties `((upstream-name . "geojson")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-protolite
                              r-magrittr
@@ -23580,6 +26028,9 @@ format.")
         (base32 "1jqbvzz3cjyrkxj7q50w1hl62q5pdw0qfi1l7ca0j3b0m4ndbhgi"))))
     (properties `((upstream-name . "geoheatmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statebins r-rlang r-plotly r-ggplot2 r-geofacet))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=geoheatmap")
@@ -23604,6 +26055,9 @@ supplied.")
         (base32 "04hvlxq5fm4mcrlbx09j079522qhlyg4jg6dymwkmqxrwdibcnqq"))))
     (properties `((upstream-name . "geohashTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MichaelChirico/geohashTools")
     (synopsis "Tools for Working with Geohashes")
@@ -23626,6 +26080,9 @@ libraries.")
         (base32 "0jqqv5agnw071ysrmwz5r2z76f80rzm5bfl5g23gq1mbw85x8z8m"))))
     (properties `((upstream-name . "geogrid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-sf r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/jbaileyh/geogrid")
     (synopsis "Turn Geospatial Polygons into Regular or Hexagonal Grids")
@@ -23651,6 +26108,9 @@ existing geography.")
         (base32 "17jg4mvwfaayda4igx4qigk83xbvn5s05y82393abwjiakp14lvi"))))
     (properties `((upstream-name . "geogenr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -23686,6 +26146,9 @@ Analytical Processing) star format.")
         (base32 "080rls4rbac809hd4ddjsj2ndb2hv6fvwdnh4yl7j1hnfm1xwv64"))))
     (properties `((upstream-name . "geoGAM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv r-mboost r-mass r-grpreg))
     (home-page "https://cran.r-project.org/package=geoGAM")
     (synopsis "Select Sparse Geoadditive Models for Spatial Prediction")
@@ -23715,6 +26178,9 @@ A test data set of a soil mapping case study in Berne (Switzerland) is provided.
         (base32 "1a5ggjyfj5ic9h7fqvy3r7s0i6bmbwk95bf7y3vrmmmj0sxdm1mf"))))
     (properties `((upstream-name . "geoFourierFDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-orthopolynom r-magrittr))
     (home-page "https://cran.r-project.org/package=geoFourierFDA")
     (synopsis
@@ -23737,6 +26203,9 @@ to estimate the trace-variogram using Fourier Smoothing and Gaussian Quadrature.
         (base32 "1fwzc32dq3ip0crxlmnqfxqky1jbadvdyfaprsbcxpmyrcs4f3qj"))))
     (properties `((upstream-name . "geoFKF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv))
     (home-page "https://github.com/gilberto-sassi/geoFKF")
     (synopsis "Kriging Method for Spatial Functional Data")
@@ -23761,6 +26230,13 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
         (base32 "0akcs04ip30jb37jh0nmc3vdmhlr8zmpspgnbsaz9w3qxklhlarw"))))
     (properties `((upstream-name . "GeoFIS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (inputs (list mpfr gmp))
     (propagated-inputs (list r-sp
                              r-sf
@@ -23799,6 +26275,9 @@ data aggregation (Mora-Herrera et al.  2020) <doi:10.1016/j.compag.2020.105624>.
         (base32 "1ihy8b94p6zqr7lpz6k5waqlhvpzyjp2sh73hh4kjmm4aazhx0x2"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xml2
                              r-sf
@@ -23833,6 +26312,9 @@ language translations.")
         (base32 "1bj201afh7df3smgmllglmgs7bkkc1k1arvjr7kwn1cnn67b3mzj"))))
     (properties `((upstream-name . "geofacet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-rnaturalearth
                              r-rlang
@@ -23864,6 +26346,9 @@ orientation.")
         (base32 "1zxikh4jj750grpnaazqm51q7yp5df5a77kljvmim4nazzrsyrpg"))))
     (properties `((upstream-name . "geoelectrics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-lattice r-fields))
     (home-page "https://github.com/kleebaum/geoelectrics")
     (synopsis
@@ -23885,6 +26370,9 @@ dimensions.")
         (base32 "029yclgi4np000yh42j68v32m32lq2hmkh94q33hh1qkx8rilfa7"))))
     (properties `((upstream-name . "GeodRegr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zipfr r-mass))
     (home-page "https://github.com/hayoungshin1/GeodRegr")
     (synopsis "Geodesic Regression")
@@ -23922,6 +26410,9 @@ Details are described in Shin, H.-Y. and Oh, H.-S. (2020)
         (base32 "05irfyfpk5lgsh0wax8dqdyfw4prynxz1bhs9k1nrz8yn2dd0imn"))))
     (properties `((upstream-name . "geodrawr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinydashboard r-shiny r-sf r-leaflet))
     (home-page "https://github.com/Curycu/geodrawr")
     (synopsis "Making Geospatial Objects")
@@ -23943,6 +26434,9 @@ geospatial objects.")
         (base32 "0fds29bsijihi47g3bh5796ni42shap8jyqrml385is6g50x9yy5"))))
     (properties `((upstream-name . "geodl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-torchvision
                              r-torch
                              r-terra
@@ -23997,6 +26491,13 @@ Compute Unified Device Architecture (CUDA)-enabled graphics processing unit
         (base32 "0580q71m71xd0kn9z8l536ypl31gx4fyw6cn1nc03sazrdilkz8r"))))
     (properties `((upstream-name . "geodiv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-zoo
                              r-terra
                              r-spatial
@@ -24027,6 +26528,9 @@ continuous analysis of landscape features.")
         (base32 "16nldq2fph4nxy0rcy33z6vw9xar3ckvdpagbaqsa2w0023bzq7x"))))
     (properties `((upstream-name . "geodist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hypertidy/geodist")
     (synopsis "Fast, Dependency-Free Geodesic Distance Calculations")
@@ -24053,6 +26557,9 @@ matrices of pairwise distances, or vectors of sequential distances.")
         (base32 "1bx948hwy1c2src03vwvb29plzihqvsq92mbgg396xda560kxpfd"))))
     (properties `((upstream-name . "geodimension")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect r-tibble r-snakecase r-sf r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://josesamos.github.io/geodimension/")
@@ -24080,6 +26587,9 @@ data from them.")
         (base32 "17651yppczr3rdnd1zb34pxllg42fs7j7hcg96vzljsaaaziv4bj"))))
     (properties `((upstream-name . "geodetector")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=geodetector")
     (synopsis
@@ -24109,6 +26619,9 @@ Y (Wang et al 2014 <doi:10.1080/13658810802443457>, Wang, Zhang, and Fu 2016
         (base32 "0yiir9dslk6l60zf40kbvycd2x755whpp07is5bah1wa1wwgxwn5"))))
     (properties `((upstream-name . "geodata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra))
     (home-page "https://cran.r-project.org/package=geodata")
     (synopsis "Download Geographic Data")
@@ -24131,6 +26644,9 @@ boundaries and other data.")
         (base32 "003m5wff0q4fdlg64qispmhj2aw83isxg3ijxwkwhvi33bpwpq4z"))))
     (properties `((upstream-name . "geodaData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/spatialanalysis/geodaData")
     (synopsis "Spatial Analysis Datasets for Teaching")
     (description
@@ -24152,6 +26668,9 @@ at the University of Chicago.  Datasets are stored as sf objects.")
         (base32 "1zmfr4lsjh9k55gn4kvm4rgaaw1f771bskns2l32wjivivia5rwv"))))
     (properties `((upstream-name . "geocomplexity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-terra
                              r-sf
@@ -24190,6 +26709,9 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
         (base32 "02h171flg295ixpgl2glav2ij0wbvy7kclazdlldw40461aar5nk"))))
     (properties `((upstream-name . "geocmeans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmap
                              r-terra
                              r-spdep
@@ -24228,15 +26750,18 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
 (define-public r-geocausal
   (package
     (name "r-geocausal")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocausal" version))
        (sha256
-        (base32 "0cz1pzfyygiriwagqlhcwibmr2zakkdcnz9jnkghyw7s9xqvnnd6"))))
+        (base32 "0fjlir1ya2ldp95wgb4gz6fl00xmxfvblf85pb8fsdans83ch0dp"))))
     (properties `((upstream-name . "geocausal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyterra
                              r-tidyselect
                              r-tidyr
@@ -24262,7 +26787,8 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
 raw data of locations and timings of treatment and outcome events, specify
 counterfactual scenarios, and the package estimates causal effects over
 specified spatial and temporal windows.  See Papadogeorgou, et al. (2022)
-<doi:10.1111/rssb.12548>.")
+<doi:10.1111/rssb.12548> and Mukaigawara, et al. (2024)
+<doi:10.31219/osf.io/5kc6f>.")
     (license license:expat)))
 
 (define-public r-geocacher
@@ -24277,6 +26803,9 @@ specified spatial and temporal windows.  See Papadogeorgou, et al. (2022)
         (base32 "04ckxmird6n179xvsx50cjdz046igjxxqdnz5pfxi8pdklnky20c"))))
     (properties `((upstream-name . "geocacheR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-threewords r-stringr r-magrittr
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=geocacheR")
@@ -24298,6 +26827,9 @@ other Geocaching-related tasks.")
         (base32 "0mn6qrlxxhf444ngdvq5gwvi1kadpg57zgg4gzmmrv186n709s0j"))))
     (properties `((upstream-name . "geobr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-fs r-dplyr r-data-table r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://ipeagit.github.io/geobr/")
@@ -24321,6 +26853,9 @@ topology.")
         (base32 "1d32c9f9wk1x3s89v957f8pb98m6qq5j084p35skbppkmc60y5lp"))))
     (properties `((upstream-name . "geoBayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-optimx r-coda))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=geoBayes")
@@ -24346,6 +26881,9 @@ methods.")
         (base32 "0sdwlx4v9024m7lz93r9sfcg8zyzs3pvc7hm419y18vapqlvpm24"))))
     (properties `((upstream-name . "geoarrow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wk r-nanoarrow))
     (home-page "https://github.com/geoarrow/geoarrow-r")
     (synopsis "Extension Types for Spatial Data for Use with 'Arrow'")
@@ -24369,6 +26907,9 @@ data type support in the arrow and nanoarrow packages.")
         (base32 "06vj4r764cwnc131vlfvd3qhy959z49mw24sg3r1dq20frs195di"))))
     (properties `((upstream-name . "geoAr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-sf
@@ -24406,6 +26947,9 @@ although an effort is made to also offer annotations in English.")
         (base32 "0251672j2vl9jck31zfcqzsyw8pphzs934j8ljjmnw9qqd3gzd2p"))))
     (properties `((upstream-name . "GeoAdjust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb
                              r-terra
                              r-summer
@@ -24442,6 +26986,9 @@ Altay, John Paige, Andrea Riebler, Geir-Arne Fuglstad (2022)
         (base32 "0fy5ws481xxk16x6wj7z8mwdzy044lqkqkw36xf1yxq18yxcg9xj"))))
     (properties `((upstream-name . "GenWin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pspline))
     (home-page "https://cran.r-project.org/package=GenWin")
     (synopsis "Spline Based Window Boundaries for Genomic Analyses")
@@ -24455,33 +27002,6 @@ variability between populations (e.g. using Wright's fixations index, Fst, which
 measures variability in subpopulations relative to the total population).")
     (license license:expat)))
 
-(define-public r-genular
-  (package
-    (name "r-genular")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "genular" version))
-       (sha256
-        (base32 "0i77sxynwanm2rwc0dw3yq1j0vmha6mbjjcvmv1vkgdf8xq1aqmz"))))
-    (properties `((upstream-name . "genular")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-jsonlite r-httr r-dplyr))
-    (home-page "https://github.com/atomiclaboratory/genular-database")
-    (synopsis "'Genular' Database API")
-    (description
-     "This package provides an interface to the Genular database API
-(<https://genular.atomic-lab.org>), allowing efficient retrieval and integration
-of genomic, proteomic, and single-cell data.  It supports operations like
-fetching gene annotations, cell expression profiles, and other information as
-defined in the Genular database, enabling seamless incorporation of biological
-data into R workflows.  With functions tailored for bioinformatics and machine
-learning, the package facilitates exploration of cellular heterogeneity,
-gene-disease relationships, and pathway analysis, streamlining multi-omics data
-analysis.")
-    (license license:gpl3)))
-
 (define-public r-gentwoarmstrialsize
   (package
     (name "r-gentwoarmstrialsize")
@@ -24494,6 +27014,9 @@ analysis.")
         (base32 "0qf3a19hv860ll28pmx6skphwbn65ia8k0pvb3gzkdz3wlzmd1zw"))))
     (properties `((upstream-name . "GenTwoArmsTrialSize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trialsize r-hmisc r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GenTwoArmsTrialSize")
@@ -24523,6 +27046,9 @@ M, Foulkes, M A (1986) <doi:10.2307/2531201>, Whitehead J(1993)
         (base32 "172xpx8g6048z5hgy9h6j3k6j975hw1q7pmcn5k2s5iaj9x5kjzv"))))
     (properties `((upstream-name . "genTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny))
     (home-page "https://cran.r-project.org/package=genTS")
     (synopsis "R Shiny App for Creating Simplified Trial Summary (TS) Domain")
@@ -24544,6 +27070,9 @@ guide
         (base32 "0yirl7n7p7w1dfbbr48v1151qyqm7p9m00vc6jq0s2d6bjdspin9"))))
     (properties `((upstream-name . "GenTag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GenTag")
     (synopsis "Generate Color Tag Sequences")
     (description
@@ -24568,6 +27097,9 @@ applications.")
         (base32 "0r1n5icxs313aipl63hdbvki37h2hv1r8ii7m8pyf9h36jxk4lfg"))))
     (properties `((upstream-name . "gensvm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gensvm")
     (synopsis "Generalized Multiclass Support Vector Machine")
     (description
@@ -24598,6 +27130,9 @@ G.J.J. van den Burg and P.J.F. Groenen (2018)
         (base32 "07f6prqpc1mafzb8dyp8xgycrrd548rj9cpn3qz64lh1qjymns3m"))))
     (properties `((upstream-name . "genSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/arturstat/genSurv")
     (synopsis "Generating Multi-State Survival Data")
     (description
@@ -24617,21 +27152,24 @@ Generation of survival data arising from a progressive illness-death model.")
         (base32 "09kg70v8qj8rbqwk0zm3xg54pmrr26l8n1s9x26s8qrsns0dgz0x"))))
     (properties `((upstream-name . "genstab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=genstab")
     (synopsis "Resampling Based Yield Stability Analyses")
     (description
      "Several yield stability analyses are mentioned in this package: variation and
 regression based yield stability analyses.  Resampling techniques are integrated
-with these stability analyses.  The function stab.mean() provides the genotypic
-means and ranks including their corresponding confidence intervals.  The
-function stab.var() provides the genotypic variances over environments including
-their corresponding confidence intervals.  The function stab.fw() is an extended
-method from the Finlay-Wilkinson method (1963).  This method can include several
-other factors that might impact yield stability.  Resampling technique is
-integrated into this method.  A few missing data points or unbalanced data are
-allowed too.  The function stab.fw.check() is an extended method from the
-Finlay-Wilkinson method (1963).  The yield stability is evaluated via common
-check line(s).  Resampling technique is integrated.")
+with these stability analyses.  The function @code{stab.mean()} provides the
+genotypic means and ranks including their corresponding confidence intervals.
+The function @code{stab.var()} provides the genotypic variances over
+environments including their corresponding confidence intervals.  The function
+@code{stab.fw()} is an extended method from the Finlay-Wilkinson method (1963).
+This method can include several other factors that might impact yield stability.
+ Resampling technique is integrated into this method.  A few missing data points
+or unbalanced data are allowed too.  The function @code{stab.fw.check()} is an
+extended method from the Finlay-Wilkinson method (1963).  The yield stability is
+evaluated via common check line(s).  Resampling technique is integrated.")
     (license license:gpl2)))
 
 (define-public r-gensphere
@@ -24646,6 +27184,9 @@ check line(s).  Resampling technique is integrated.")
         (base32 "0cf1xmwi32x3ga9m5k7a93vdwix84ny7wxb74mddmfvb3m1v4c7g"))))
     (properties `((upstream-name . "gensphere")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sphericalcubature r-simplicialcubature r-rgl
                              r-mvmesh r-geometry))
     (home-page "https://cran.r-project.org/package=gensphere")
@@ -24669,6 +27210,9 @@ behavior) and a radial component.  The methods are described in Nolan (2016)
         (base32 "02zldi136sfnq1i8pwb3b97zd44pjdgnfadk4bqp36wm8x95phwi"))))
     (properties `((upstream-name . "genset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=genset")
     (synopsis "Generates Data Sets for Class Demonstrations")
@@ -24691,6 +27235,9 @@ regression results.")
         (base32 "02lprxxpf7ll23habq05b6slgbh978k09sqr6myr2jhlax2snxvk"))))
     (properties `((upstream-name . "genSEIR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-nlsr r-minpack-lm r-ggplot2))
     (home-page "https://cran.r-project.org/package=genSEIR")
     (synopsis "Predict Epidemic Curves with Generalized SEIR Modeling")
@@ -24712,6 +27259,9 @@ modeling to predict epidemic curves.  The method is described in Peng et al.
         (base32 "1ffwnxh1c2wlad4wh9lkvixly0a19l8fcgpp0vxxby6iwsd2vshf"))))
     (properties `((upstream-name . "genscore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm r-stringr r-rdpack r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sqyu/genscore")
@@ -24728,15 +27278,18 @@ untruncated Gaussian graphical models from Lin et al. (2016)
 (define-public r-genridge
   (package
     (name "r-genridge")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genridge" version))
        (sha256
-        (base32 "0fjd1j9vsl2gn33791x92rfcrncg7yz32mdy3wb0dfbi51ic837d"))))
+        (base32 "1n6aysijqskw53j9wav52fh5irfvv12nyvizwmqxv8nny10680s6"))))
     (properties `((upstream-name . "genridge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-colorspace r-car))
     (home-page "https://github.com/friendly/genridge")
     (synopsis "Generalized Ridge Trace Plots for Ridge Regression")
@@ -24762,6 +27315,9 @@ the predictors.")
         (base32 "0cys4zmfq07g99xywqampvmn8g0a6bjjj368d62q5xki2mi9z649"))))
     (properties `((upstream-name . "genpwr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nleqslv r-mass r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=genpwr")
@@ -24794,6 +27350,9 @@ Human Genetics.  October 2018, San Diego.")
         (base32 "1pjg3irjlw9gbp2cwqrl5d7nvfhncds3bmxp0878y5yf35sl4smk"))))
     (properties `((upstream-name . "genpathmox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixcalc r-diagram r-csem))
     (home-page "https://cran.r-project.org/package=genpathmox")
     (synopsis "Pathmox Approach Segmentation Tree Analysis")
@@ -24820,6 +27379,9 @@ allows running the hybrid multi-group approach (Lamberti (2021)
         (base32 "04v1llw3ppzx9s9cm8wp78n5hpm65bpmkmsliczlp33l91cbspp8"))))
     (properties `((upstream-name . "GenoTriplo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shinythemes
                              r-shinybs
@@ -24838,10 +27400,10 @@ allows running the hybrid multi-group approach (Lamberti (2021)
     (synopsis "Genotyping Triploids (or Diploids) from Luminescence Data")
     (description
      "Genotyping of triploid individuals from luminescence data (marker probeset A and
-B).  Works also for diploids.  Two main functions: Run_Clustering() that
+B).  Works also for diploids.  Two main functions: @code{Run_Clustering()} that
 regroups individuals with a same genotype based on proximity and
-Run_Genotyping() that assigns a genotype to each cluster.  For Shiny interface
-use: launch_@code{GenoShiny}().")
+@code{Run_Genotyping()} that assigns a genotype to each cluster.  For Shiny
+interface use: @code{launch_GenoShiny()}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-genoscan
@@ -24856,6 +27418,9 @@ use: launch_@code{GenoShiny}().")
         (base32 "0p98imfvvz7l94kim3pxypyjs2pbxng4a2nagbafbady82ylr2vi"))))
     (properties `((upstream-name . "GenoScan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-skat r-seqminer r-matrix r-mass r-data-table))
     (home-page "https://cran.r-project.org/package=GenoScan")
     (synopsis
@@ -24877,6 +27442,9 @@ genome-wide scan, candidate region scan and single window test.")
         (base32 "17mfrj1fwj8mri1w0bl2pw1rqriidmd67i7gpn9v56g9dzw5rzms"))))
     (properties `((upstream-name . "GenOrd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=GenOrd")
     (synopsis
@@ -24899,6 +27467,9 @@ distributions.")
         (base32 "1fn1ai67xwxrriiildqbd6hr63qxg1ykma1q50c07i1k8bbyzpbq"))))
     (properties `((upstream-name . "GenoPop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsamtools
                              r-missforest
                              r-iranges
@@ -24929,6 +27500,9 @@ panel free genotype imputation, which is described in the preprint Gurke & Mayer
         (base32 "01qn81nsdk3s150gqwisb7xnm4hq5sfzd2zrzpn9kj0rigzgf9zi"))))
     (properties `((upstream-name . "genoPlotR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ade4))
     (home-page "http://genoplotr.r-forge.r-project.org/")
     (synopsis "Plot Publication-Grade Gene and Genome Maps")
@@ -24950,6 +27524,9 @@ files that can be sent as such to journals.")
         (base32 "09l87wf78bj49cdh7r3x81hn15c4pihxih8l59xxrpgdhp69268c"))))
     (properties `((upstream-name . "GenomicTools.fileHandler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snpstats r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GenomicTools.fileHandler")
@@ -24971,6 +27548,9 @@ used genomic datafiles, like fasta/-q, bed, gff, gtf, ped/map and vcf.")
         (base32 "0l4sl2f90c4vgz24fn805jcqk1llzhqlf5qj4dpdls3zfdmcd9qq"))))
     (properties `((upstream-name . "GenomicSig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seqinr r-kaos r-entropy r-biostrings))
     (home-page "https://cran.r-project.org/package=GenomicSig")
     (synopsis "Computation of Genomic Signatures")
@@ -25008,6 +27588,9 @@ published by Elek (2018) <https://urn.nsk.hr/urn:nbn:hr:217:686131>.")
         (base32 "1sran9gjjkrq9yxv4630cyhjhm9w9cggyx3amhcncmyiknz6pa76"))))
     (properties `((upstream-name . "genomicper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reactome-db r-dbi r-annotationdbi))
     (home-page "https://cran.r-project.org/package=genomicper")
     (synopsis
@@ -25042,6 +27625,9 @@ the user.")
         (base32 "1lidrjz1flxw4jvhqdi8y813m7ss4kkvm7bxsdpz60dxxw3204gm"))))
     (properties `((upstream-name . "genomic.autocorr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape r-magrittr r-data-table))
     (home-page "https://github.com/chr1swallace/genomic.autocorr")
     (synopsis "Models Dealing with Spatial Dependency in Genomic Data")
@@ -25051,7 +27637,7 @@ taken at different genomic locations.  Ignoring this dependence leads to
 underestimation of the standard error of parameter estimates.  This package uses
 block bootstrapping to estimate asymptotically correct standard errors of
 parameters from any standard generalised linear model that may be fit by the
-glm() function.")
+@code{glm()} function.")
     (license license:gpl2)))
 
 (define-public r-genomeadmixr
@@ -25066,6 +27652,9 @@ glm() function.")
         (base32 "14qnabg1pj8sg2bvd3k4m467bh1q2zfjr0ljxn1ny031sqwis4cy"))))
     (properties `((upstream-name . "GenomeAdmixR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcfr
                              r-tibble
                              r-stringr
@@ -25097,6 +27686,9 @@ in Janzen (2021) <doi:10.1111/2041-210X.13612>.")
         (base32 "0q56ysv5333i27iv1gmd9ilbgn3rw8sb9yq7z76gmn1fak5aqci8"))))
     (properties `((upstream-name . "genogeographer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-shinywidgets
@@ -25135,6 +27727,9 @@ of Tvedebrink et al (2018) <doi:10.1016/j.tpb.2017.12.004>.")
         (base32 "1dn39h5yxm3mjvm1xciyz127zrd79kw7fi2dlmxwmqk17ssmhrwq"))))
     (properties `((upstream-name . "genodds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=genodds")
     (synopsis "Generalised Odds Ratios")
@@ -25158,6 +27753,9 @@ chance).")
         (base32 "1gq8lqwwqvmxqqxwf4kms7dhd1zzz33z37m67q53p4a1j5z5n12s"))))
     (properties `((upstream-name . "geno2proteo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list perl))
     (propagated-inputs (list r-s4vectors
                              r-runit
@@ -25189,6 +27787,9 @@ data.")
         (base32 "11wlcnj919jws62ngf29gr2p0shdlm917hkz5iwfss1m8gcbfjnl"))))
     (properties `((upstream-name . "GENMETA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-matrix r-mass r-magic))
     (home-page "https://cran.r-project.org/package=GENMETA")
     (synopsis
@@ -25227,6 +27828,9 @@ some of the stability issues in the previous version (0.1).")
         (base32 "0vf9r9qc477mdjvi54sh0m67lscb8j6lfc7ikqpd4xnzsd4aklb6"))))
     (properties `((upstream-name . "genMCMCDiag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mcmcse r-lifecycle r-knitr r-ggplot2 r-coda))
     (home-page "https://github.com/LukeDuttweiler/genMCMCDiag")
     (synopsis
@@ -25249,6 +27853,9 @@ forthcoming paper.")
         (base32 "1dqs8wapdpmgqnrf4xgvdmaz74gck23sbnpjxzj2g03gl8k9lq5w"))))
     (properties `((upstream-name . "GenMarkov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnet
                              r-maxlik
                              r-matrixcalc
@@ -25280,6 +27887,9 @@ Markov chain.")
         (base32 "1d6ni84rdbqyi2052kzfm8v2kvmki84vp8lfjip8c9bp0crig52i"))))
     (properties `((upstream-name . "genlogis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-manipulate r-ggplot2 r-foreach r-doparallel
                              r-distr))
     (home-page "https://pinduzera.github.io/genlogis/")
@@ -25304,6 +27914,9 @@ initial values for ease of included optimization and simulating.")
         (base32 "1h0digaa1szgwq0qzf3114id7bx7q6zmgar591jlxgyihihk4x9j"))))
     (properties `((upstream-name . "GENLIB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp
                              r-quadprog
                              r-matrix
@@ -25334,6 +27947,9 @@ package for the analysis of genealogical data\" Gauvin et al. (2015)
         (base32 "0bhpsz4qcvnmf09l1j6r94ljrdfxidjrsmggb3q4xvyf2xxnnbfx"))))
     (properties `((upstream-name . "genlasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-igraph))
     (home-page "https://github.com/glmgen/genlasso")
     (synopsis "Path Algorithm for Generalized Lasso Problems")
@@ -25357,6 +27973,9 @@ are given to improve stability and speed.  See Taylor Arnold and Ryan Tibshirani
         (base32 "14flyjrnw3l4j02dnr8495r5xdsr83firz0irpqbxw0jrajbj5dq"))))
     (properties `((upstream-name . "geniusr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-stringr
@@ -25385,6 +28004,9 @@ and retrieve lyrics with ease.")
         (base32 "0izx8yv8mvnfxdqnqpnp2ldw1hzs6ggxi7jgmjlgxkgmm4vngbgl"))))
     (properties `((upstream-name . "genio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-readr r-rcpp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/OchoaLab/genio")
@@ -25412,6 +28034,9 @@ genotype data.")
         (base32 "131nax76dsg3b6700qwgq3gpin4pl152rjsfqgh41m89ffchk0m4"))))
     (properties `((upstream-name . "genieclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-rcpp))
     (home-page "https://genieclust.gagolewski.com/")
@@ -25449,6 +28074,9 @@ more metrics, and even larger datasets.")
         (base32 "02jfa24qjpdn6z25312hs9vgasr6pkfab5apmmsh3yqhq6l4g7jg"))))
     (properties `((upstream-name . "genieBPC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sunburstr
@@ -25487,6 +28115,9 @@ datasets for analysis.")
         (base32 "07w6rf4a3d34j7dwz9zcxshg2sk1cd5v59xs3jxph17c9gga0nlq"))))
     (properties `((upstream-name . "genie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-rcpp r-genieclust))
     (home-page "http://genieclust.gagolewski.com/")
@@ -25517,6 +28148,9 @@ genieclust package.")
         (base32 "1y2ggdsbv7dbmi7y32nnhg76s6raj29j7riqlwbq49zg414p926a"))))
     (properties `((upstream-name . "genfrn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=genfrn")
     (synopsis
      "Generating Triangular and Trapezoidal Fuzzy Random Numbers via Uniform Distribution")
@@ -25541,6 +28175,9 @@ on the possibility theory.")
         (base32 "1ay40ym6khs016bs7ljcn7krqn9bmj2csd7p4nhzapbhp4g45wsc"))))
     (properties `((upstream-name . "GeNetIt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidygraph
                              r-terra
                              r-spdep
@@ -25572,6 +28209,9 @@ models.")
         (base32 "0bd4snv3dwabc7mknmd2rjmffj67xq535x0bycajhd83d1jhjars"))))
     (properties `((upstream-name . "GeneticSubsetter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GeneticSubsetter")
     (synopsis "Identify Favorable Subsets of Germplasm Collections")
@@ -25594,6 +28234,9 @@ respectively.")
         (base32 "0ka0m4dq8a9bzdk3gi7gj6dnc2a7c4chrzixw2g4qd7md31z33vx"))))
     (properties `((upstream-name . "geneticae")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-rrcov
@@ -25638,6 +28281,9 @@ specifically developed for this kind of data ('Arciniegas-AlarcÃ³n 2014,
         (base32 "14s8cwx7bx6a206cxm2i7rp8kisqz620qrgzj3cn1qg0pxd49ixj"))))
     (properties `((upstream-name . "genetic.algo.optimizeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tinytex
                              r-stringr
                              r-rsconnect
@@ -25671,6 +28317,9 @@ discrete space.")
         (base32 "0gf63gmhxvyxms2xhbgwmg8c5xpc4bswbpvfv4nyx25zr97ba7vi"))))
     (properties `((upstream-name . "genesysr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-readr
                              r-magrittr
@@ -25699,6 +28348,9 @@ terms and conditions available at
         (base32 "0ifqzpqrc9bgg6sp8zx30lvcz9kcbzivw5sf8f3axnwzfia9x376"))))
     (properties `((upstream-name . "GenEst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-shinyjs
                              r-shiny
@@ -25733,6 +28385,9 @@ Dalthorp, et al. (2018) <doi:10.3133/tm7A2>.")
         (base32 "08fbrssj03ak6xqm9fmb9v6ir7229qds891088wznvg58k81yslv"))))
     (properties `((upstream-name . "geneSLOPE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-slope r-ggplot2 r-bigmemory))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/psobczyk/geneSLOPE")
@@ -25760,6 +28415,9 @@ Bogdan, Ewout van den Berg, Chiara Sabatti, Weijie Su and Emmanuel Candes (2014)
         (base32 "1fiyrlsy5zqmxdj71w5m0h70ln5b84y7mlhv2j8lad623gpng3l6"))))
     (properties `((upstream-name . "geneset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-stringi r-rcurl r-fst r-dplyr))
     (home-page "https://github.com/GangLiLab/geneset")
     (synopsis "Get Gene Sets for Gene Enrichment Analysis")
@@ -25793,6 +28451,9 @@ description.")
         (base32 "0hxdnfhah3a29f00ycanf7ssxm2z7inp9sf72l61ilcrg9bx22hq"))))
     (properties `((upstream-name . "GeneSelectR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmod
                              r-tidyr
                              r-tibble
@@ -25837,6 +28498,9 @@ computational and biological insights for analyzing complex RNAseq datasets.")
         (base32 "1zf1imf9q85qazn176lzgxfgim4rni4hpzbsaiaqgh70i0g74qrl"))))
     (properties `((upstream-name . "GeneScoreR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GeneScoreR")
     (synopsis "Gene Scoring from Count Tables")
     (description
@@ -25859,6 +28523,9 @@ are described by Kim et al. (2018) <doi:10.1089/jir.2017.0127>.")
         (base32 "1yjz9bc5qy46z6ha9c7khx6mgzyqqbx3aq5w7nqw5zfym1zkfiaq"))))
     (properties `((upstream-name . "GeneScape")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-corpcor))
     (home-page "https://cran.r-project.org/package=GeneScape")
     (synopsis "Simulation of Single Cell RNA-Seq Data with Complex Structure")
@@ -25883,6 +28550,9 @@ expression and correlation structures, such as sub-cell-types, correlated genes
         (base32 "0akwwy5xbh7s40v8dr1zr7jfglv0iyh4zn0sb0rnz4r57qr6nh8w"))))
     (properties `((upstream-name . "genero")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/datasketch/genero")
     (synopsis "Estimate Gender from Names in Spanish and Portuguese")
@@ -25906,6 +28576,9 @@ inference.")
         (base32 "1r2jl3say11by21ja7m6m55yzmgrdmp4nlanvh8h4cm8v37bzql7"))))
     (properties `((upstream-name . "GenericML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splitstackshape
                              r-sandwich
                              r-mlr3learners
@@ -25921,11 +28594,11 @@ randomized experiments as proposed in Chernozhukov, Demirer, Duflo and
 FernÃ¡ndez-Val (2020) <@code{arXiv:1712.04802>}.  This package's workhorse is
 the mlr3 framework of Lang et al. (2019) <doi:10.21105/joss.01903>, which
 enables the specification of a wide variety of machine learners.  The main
-functionality, @code{GenericML}(), runs Algorithm 1 in Chernozhukov, Demirer,
+functionality, @code{GenericML()}, runs Algorithm 1 in Chernozhukov, Demirer,
 Duflo and FernÃ¡ndez-Val (2020) <@code{arXiv:1712.04802>} for a suite of
 user-specified machine learners.  All steps in the algorithm are customizable
 via setup functions.  Methods for printing and plotting are available for
-objects returned by @code{GenericML}().  Parallel computing is supported.")
+objects returned by @code{GenericML()}.  Parallel computing is supported.")
     (license license:gpl3+)))
 
 (define-public r-generator
@@ -25940,6 +28613,9 @@ objects returned by @code{GenericML}().  Parallel computing is supported.")
         (base32 "0xjvnmnpdms8rrxxcz6pd8w4rnbv3ghzqv4m63zxia2l98x7z4rf"))))
     (properties `((upstream-name . "generator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/paulhendricks/generator")
     (synopsis
      "Generate Data Containing Fake Personally Identifiable Information")
@@ -25960,6 +28636,9 @@ Identifiable Information (PII) through convenience functions.")
         (base32 "19j5c5xr6mdb6pmih94wbjas4yh0dmsqfggg8clvdxkpwk0h338v"))))
     (properties `((upstream-name . "GeneralOaxaca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-boot))
     (home-page "https://cran.r-project.org/package=GeneralOaxaca")
     (synopsis "Blinder-Oaxaca Decomposition for Generalized Linear Model")
@@ -25981,6 +28660,13 @@ given, even the generalized linear model output in each group.")
         (base32 "1mwinkjnf7wvsa077nzq641fkrj9y44gzmihhkkfgkjddcjnk4s4"))))
     (properties `((upstream-name . "GeneralizedWendland")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (inputs (list gsl))
     (propagated-inputs (list r-spam64
                              r-spam
@@ -26017,6 +28703,9 @@ Bevilacqua and Reinhard Furrer and Tarik Faouzi and Emilio Porcu (2019)
         (base32 "1mzxszsk2mzswndrq0j125l1b5qdmjryg2swb7f2mnipa5k3mqbm"))))
     (properties `((upstream-name . "GeneralizedUmatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-ggplot2))
     (native-inputs (list r-knitr))
@@ -26049,6 +28738,9 @@ reduction methods is published in <DOI: 10.1016/j.mex.2020.101093>.")
         (base32 "1a9n9hb6cxp9silcpskhp67l7p1azm72y4dngj48nngcavrm8i4r"))))
     (properties `((upstream-name . "GeneralizedHyperbolic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-distributionutils))
     (home-page "https://r-forge.r-project.org/projects/rmetrics/")
     (synopsis "The Generalized Hyperbolic Distribution")
@@ -26075,6 +28767,9 @@ models with hyperbolic errors may be fitted using @code{hyperblmFit}.")
         (base32 "0xgxmfcpx3mnmp5hxdy5wiihj693qlksv6jxfb9ba4dy2glzdacf"))))
     (properties `((upstream-name . "GeneralisedCovarianceMeasure")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost r-mgcv r-kernlab r-cvst))
     (home-page
      "https://cran.r-project.org/package=GeneralisedCovarianceMeasure")
@@ -26102,6 +28797,9 @@ Measure, Annals of Statistics 48(3), 1514--1538, 2020.")
         (base32 "0fmfhmdb16gf3v9h50vif4f3f6bm03qq7wplnmzyxa80jb60fcc0"))))
     (properties `((upstream-name . "generalhoslem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape r-mass))
     (home-page "https://cran.r-project.org/package=generalhoslem")
     (synopsis "Goodness of Fit Tests for Logistic Regression Models")
@@ -26124,36 +28822,43 @@ multinomial and ordinal logistic models.  Included are the Hosmer-Lemeshow tests
         (base32 "19yqhzz3xpgb7aixpj214mfkviz0iwap8hh758xyx25jqf4w4h5a"))))
     (properties `((upstream-name . "generalCorr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-xtable r-psych r-np r-meboot r-lattice))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=generalCorr")
     (synopsis "Generalized Correlations, Causal Paths and Portfolio Selection")
     (description
-     "Function gmcmtx0() computes a more reliable (general) correlation matrix.  Since
-causal paths from data are important for all sciences, the package provides many
-sophisticated functions. @code{causeSummBlk}() and @code{causeSum2Blk}() give
-easy-to-interpret causal paths.  Let Z denote control variables and compare two
-flipped kernel regressions: X=f(Y, Z)+e1 and Y=g(X, Z)+e2.  Our criterion Cr1
-says that if |e1*Y|>|e2*X| then variation in X is more \"exogenous or
-independent\" than in Y, and the causal path is X to Y. Criterion Cr2 requires
-|e2|<|e1|.  These inequalities between many absolute values are quantified by
-four orders of stochastic dominance.  Our third criterion Cr3, for the causal
-path X to Y, requires new generalized partial correlations to satisfy
-|r*(x|y,z)|< |r*(y|x,z)|.  The function @code{parcorVec}() reports generalized
+     "Function @code{gmcmtx0()} computes a more reliable (general) correlation matrix.
+ Since causal paths from data are important for all sciences, the package
+provides many sophisticated functions. @code{causeSummBlk()} and
+@code{causeSum2Blk()} give easy-to-interpret causal paths.  Let Z denote control
+variables and compare two flipped kernel regressions: X=f(Y, Z)+e1 and Y=g(X,
+Z)+e2.  Our criterion Cr1 says that if |e1*Y|>|e2*X| then variation in X is more
+\"exogenous or independent\" than in Y, and the causal path is X to Y. Criterion
+Cr2 requires |e2|<|e1|.  These inequalities between many absolute values are
+quantified by four orders of stochastic dominance.  Our third criterion Cr3, for
+the causal path X to Y, requires new generalized partial correlations to satisfy
+|r*(x|y,z)|< |r*(y|x,z)|.  The function @code{parcorVec()} reports generalized
 partials between the first variable and all others.  The package provides
-several R functions including get0outliers() for outlier detection, bigfp() for
-numerical integration by the trapezoidal rule, stochdom2() for stochastic
-dominance, pillar3D() for 3D charts, @code{canonRho}() for generalized canonical
-correlations, @code{depMeas}() measures nonlinear dependence, and
-@code{causeSummary(mtx}) reports summary of causal paths among matrix columns.
-Portfolio selection: @code{decileVote}(), @code{momentVote}(), dif4mtx(),
-@code{exactSdMtx}() can rank several stocks.  Functions whose names begin with
-boot provide bootstrap statistical inference, including a new @code{bootGcRsq}()
-test for \"Granger-causality\" allowing nonlinear relations.  A new tool for
-evaluation of out-of-sample portfolio performance is @code{outOFsamp}().  Panel
-data implementation is now included.  See eight vignettes of the package for
-theory, examples, and usage tips.  See Vinod (2019)
-\\doi{10.1080/03610918.2015.1122048}.")
+several R functions including @code{get0outliers()} for outlier detection,
+@code{bigfp()} for numerical integration by the trapezoidal rule,
+@code{stochdom2()} for stochastic dominance, @code{pillar3D()} for 3D charts,
+@code{canonRho()} for generalized canonical correlations, @code{depMeas()}
+measures nonlinear dependence, and @code{causeSummary(mtx}) reports summary of
+causal paths among matrix columns.  Portfolio selection: @code{decileVote()},
+@code{momentVote()}, @code{dif4mtx()}, @code{exactSdMtx()} can rank several
+stocks.  Functions whose names begin with boot provide bootstrap statistical
+inference, including a new @code{bootGcRsq()} test for \"Granger-causality\"
+allowing nonlinear relations.  A new tool for evaluation of out-of-sample
+portfolio performance is @code{outOFsamp()}.  Panel data implementation is now
+included.  See eight vignettes of the package for theory, examples, and usage
+tips.  See Vinod (2019) \\doi{10.1080/03610918.2015.1122048}.")
     (license license:gpl2+)))
 
 (define-public r-genepop
@@ -26170,6 +28875,8 @@ theory, examples, and usage tips.  See Vinod (2019)
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -26210,6 +28917,9 @@ distance from pairwise comparisons of individuals or population samples.")
         (base32 "0ff5cv8sxda55xjj1pdnaljsg840vmvaz51mgajczv9c0wgj70yj"))))
     (properties `((upstream-name . "genepi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=genepi")
     (synopsis "Genetic Epidemiology Design and Inference")
@@ -26231,6 +28941,9 @@ design for GWAS studies.")
         (base32 "1955d39fbqnqp7j2878v7qd4wm9pjp315mgigsk3g4pnivgml2a4"))))
     (properties `((upstream-name . "GeneNMF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-seurat
                              r-rcppml
@@ -26262,6 +28975,9 @@ and derive interpretable gene program signatures.")
         (base32 "1x6n6k9ifv2swhyrghvm6fsz5vh85cdik8225175i9msvmkh928n"))))
     (properties `((upstream-name . "genemodel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/greymonroe/genemodel")
@@ -26284,6 +29000,9 @@ other gene features.")
         (base32 "04hjz6g4jzbghv28z1nfz7adx9lk93v0h1m17vpf548z0mkv6zyh"))))
     (properties `((upstream-name . "genekitr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-stringi
@@ -26321,6 +29040,9 @@ export in one Excel file for seamless sharing and communication.")
         (base32 "1m6yyjsvmn3w87cw4da8js5vi74k5y739gxdx1yscx1n50bc3m34"))))
     (properties `((upstream-name . "geneHummus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rentrez r-httr r-dplyr r-curl))
     (home-page "https://github.com/NCBI-Hackathons/GeneHummus")
     (synopsis "Pipeline to Define Gene Families in Legumes and Beyond")
@@ -26347,6 +29069,9 @@ on the conserved domains that specifically define that family.  See Die et al.
         (base32 "1yairrndrggvkiwwamqv3qwjs8sci4jc6k53rqs766n752vsbisz"))))
     (properties `((upstream-name . "geneHapR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcfr
                              r-tidyr
                              r-tibble
@@ -26389,6 +29114,9 @@ and phenotype association with R'.")
         (base32 "04fmnlj42m9ahq1504pymhq930azr8a5lyggc3bl5awqv1agpzf6"))))
     (properties `((upstream-name . "GeneF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GeneF")
     (synopsis "Package for Generalized F-Statistics")
     (description
@@ -26410,6 +29138,9 @@ regression or order restricted hypothesis testing.  Based on: Y. Lai (2011)
         (base32 "15dvx2f4nsmw1mgjfpcdcfnx8335fd043xb4hdnqcbjzf9h228bp"))))
     (properties `((upstream-name . "geneExpressionFromGEO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-r-utils
                              r-markdown
@@ -26448,6 +29179,9 @@ pages 187-194, Springer Protocols, 2021, <doi:10.1007/978-1-0716-1839-4_12>.")
         (base32 "08pr8xgcznm04c4lhvzv2qnzij5vj7pjzyj9pr1pqpmc977h8dvg"))))
     (properties `((upstream-name . "GeneCycle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-longitudinal r-fdrtool))
     (home-page "https://cran.r-project.org/package=GeneCycle")
     (synopsis "Identification of Periodically Expressed Genes")
@@ -26471,6 +29205,9 @@ gene expression time series data.")
         (base32 "1yk66mzzk5xxkrg81cywq94b84y2l0m542g03xcmh31gvskccl1h"))))
     (properties `((upstream-name . "GENEAread")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mmap r-bitops))
     (home-page "https://cran.r-project.org/package=GENEAread")
     (synopsis "Package for Reading Binary Files")
@@ -26493,6 +29230,9 @@ GENEActiv device.")
         (base32 "0iy75m31i0wb27kvknx3ln9crbllpgdc6j2qsx6hwn4gxddl9lv0"))))
     (properties `((upstream-name . "GENEAclassify")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-signal r-rpart r-mass r-genearead r-changepoint))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GENEAclassify")
@@ -26503,7 +29243,8 @@ GENEActiv <https://activinsights.com/technology/geneactiv/> accelerometer that
 provides the user with a model to guess behaviour from test data where behaviour
 is missing.  Includes a step counting algorithm, a function to create segmented
 data with custom features and a function to use recursive partitioning provided
-in the function rpart() of the rpart package to create classification models.")
+in the function @code{rpart()} of the rpart package to create classification
+models.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-gendist
@@ -26518,6 +29259,9 @@ in the function rpart() of the rpart package to create classification models.")
         (base32 "0rs0sn1sb6j3pk2xncix04a093awlm2nw70g0rjhr7dlzmigspgb"))))
     (properties `((upstream-name . "gendist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gendist")
     (synopsis "Generated Probability Distribution Models")
     (description
@@ -26539,6 +29283,9 @@ skewed symmetric models and arc tan models.")
         (base32 "05i89xn1r94q53rnw5njj19nmix2ldywkadvinfc47nn60h6zfgx"))))
     (properties `((upstream-name . "genderstat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=genderstat")
     (synopsis "Quantitative Analysis Tools for Gender Studies")
@@ -26568,6 +29315,9 @@ References: Miller, Kevin; Vagins, Deborah J. (2021)
         (base32 "1bdihxxwmp8ffb5blc8hkxnxh2z72vkq1sjak25njq8b1kwnazvn"))))
     (properties `((upstream-name . "GenderInfer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-binom))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GenderInfer")
@@ -26592,6 +29342,9 @@ when self-reported gender is unavailable.")
         (base32 "19n3d6ps0wswq1bxgfqifq26svqf8q696im14wfglrl731mr0qbm"))))
     (properties `((upstream-name . "genderBR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-purrr
                              r-magrittr
@@ -26618,6 +29371,9 @@ names using the Brazilian Institute of Geography and Statistics Census data
         (base32 "18xiaif6iiwjvnjk611sfz7qi5r7mbi73dcrgrkzkjly8zygp42k"))))
     (properties `((upstream-name . "gender")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-remotes r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lmullen/gender")
@@ -26645,6 +29401,9 @@ the package documentation.  See Blevins and Mullen (2015)
         (base32 "1jcyv7qsmms73s4n4833djr20wxaf8n6y0hlx86yjys7nmx2xiqn"))))
     (properties `((upstream-name . "gendata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gendata")
     (synopsis "Generate and Modify Synthetic Datasets")
     (description
@@ -26663,6 +29422,9 @@ the package documentation.  See Blevins and Mullen (2015)
         (base32 "0s5hbvg71vsg02c3z8g2vim431jrc2jfksh28si2ycqi6bz2aj0y"))))
     (properties `((upstream-name . "genCountR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://gencounter.app.damoncroberts.com")
     (synopsis
@@ -26684,6 +29446,9 @@ language dictionary in Roberts and Utych (2019) <doi:10.1177/1065912919874883>."
         (base32 "11dai3d40mkayhwra57ywagfklm5kayyhklhbsb7l3r53pmmfym9"))))
     (properties `((upstream-name . "gencor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gencor")
     (synopsis "Generate Customized Correlation Matrices")
     (description
@@ -26705,6 +29470,9 @@ which low, medium, and high thresholds are user-defined.")
         (base32 "1bcgfp7ilzqirb6adwf9wjlcch4xx3zwsd8n2n7xkpjfkdm3rx62"))))
     (properties `((upstream-name . "GenBinomApps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GenBinomApps")
     (synopsis
      "Clopper-Pearson Confidence Interval and Generalized Binomial Distribution")
@@ -26727,6 +29495,9 @@ studies, where failures are tackled by countermeasures.")
         (base32 "1rgx0b3bpqfc75y5x4i714m8xbrgckvg4m9gkqxq0464386s53dd"))))
     (properties `((upstream-name . "genBaRcode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-venndiagram
                              r-stringdist
@@ -26773,6 +29544,9 @@ provides a variety of visualisation tools (Thielecke, L. et al. (2017)
         (base32 "1pihqxif2v62hwf5761fshyhigcjmlgbvp2j7immxlsysjfw5xgq"))))
     (properties `((upstream-name . "GenAlgo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-oompabase r-mass r-classdiscovery))
     (home-page "http://oompa.r-forge.r-project.org/")
     (synopsis
@@ -26797,6 +29571,9 @@ features.")
         (base32 "0qwls17p5nv24wx17yyq42sg903119s5z4hi91czas0l4wh9lnif"))))
     (properties `((upstream-name . "GenAI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6
                              r-magrittr
                              r-magick
@@ -26827,6 +29604,9 @@ R users in streamlining laborious coding and language processing tasks.")
         (base32 "0hwfjzsz0hrca5vdlkhggzdpv9r8hybqwd5c8mlj5ja896vkrc0w"))))
     (properties `((upstream-name . "gena")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=gena")
     (synopsis "Genetic Algorithm and Particle Swarm Optimization")
@@ -26851,6 +29631,9 @@ ideas described in S. Katoch, S. Chauhan, V. Kumar (2020)
         (base32 "0z7hisn57md18vcfb6f44hy6zzp9dirrjyxi4x1id3mqa3mligb6"))))
     (properties `((upstream-name . "gen5helper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-pracma
@@ -26887,6 +29670,9 @@ information, documentation and examples.")
         (base32 "07r2x0mwrs1ghsfd0a2zj7m2khwq4pg64xiv3n89zy9w9b6vcyw9"))))
     (properties `((upstream-name . "gen3sis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rcpp
                              r-raster
@@ -26920,6 +29706,9 @@ eco-evolutionary simulations of the processes that shape Earth's biodiversity\"
         (base32 "16xbzgkjskzm1wik3dznvwhqddrpmcgsgd372n4a67rbb46jgx6r"))))
     (properties `((upstream-name . "gen2stage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-clinfun))
     (home-page "https://cran.r-project.org/package=gen2stage")
     (synopsis "Generalized Two-Stage Designs for Phase II Single-Arm Studies")
@@ -26941,6 +29730,9 @@ with either efficacy or safety/toxicity endpoints as described in Kim and Wong
         (base32 "01sas647d3s5adkqg96z0hhr9pig275fz896ghnp313p5k3fz90l"))))
     (properties `((upstream-name . "gemtc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-rjags
                              r-rglpk
@@ -26970,6 +29762,9 @@ number of standard visualizations.  van Valkenhoef et al. (2012)
         (base32 "174mjnpldb0rwjvwdgpcg1acm526gs0pjf9gi5mn9d3x9yz4r5jx"))))
     (properties `((upstream-name . "gems")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-msm r-mass r-data-table))
     (home-page "https://cran.r-project.org/package=gems")
     (synopsis "Generalized Multistate Simulation Model")
@@ -26995,6 +29790,9 @@ normally distributed.")
         (base32 "1l5axji33abrkm2b32ziilhfqssbq4ypv7kimd16fak6xjz50m0k"))))
     (properties `((upstream-name . "gemma2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fboehm/gemma2")
@@ -27021,6 +29819,9 @@ quantitative trait locus studies.")
         (base32 "1xppmjpsm670nak4c8bc7ssasrzjh56144xwsrc0sfnb28lp3n2l"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr2 r-cli r-base64enc))
     (home-page "https://github.com/jhk0530/gemini.R")
     (synopsis "Interface for 'Google Gemini' API")
@@ -27045,6 +29846,9 @@ visit <https://ai.google.dev/docs/gemini_api_overview>.")
         (base32 "1is78g8jm551bc7qb61jm6c9qcqygbh4nxj89sfccbz08k1xljyl"))))
     (properties `((upstream-name . "GEmetrics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bglr))
     (home-page "https://cran.r-project.org/package=GEmetrics")
     (synopsis
@@ -27068,6 +29872,9 @@ multi-environment genomic prediction model.")
         (base32 "10ygdfz9f5xhahlqb2divwvaljhiz8jhsd12wvq0qalx0v1h5j0p"))))
     (properties `((upstream-name . "gelnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gelnet")
     (synopsis "Generalized Elastic Nets")
@@ -27090,6 +29897,9 @@ for the latter.")
         (base32 "16dh4gs44vnc9v1hj9xjmsq88ygk9vyfp0asqgql1ar61wgmlsav"))))
     (properties `((upstream-name . "gellipsoid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl))
     (home-page "https://github.com/friendly/gellipsoid")
     (synopsis "Generalized Ellipsoids")
@@ -27116,6 +29926,9 @@ Understanding Statistical Methods Through Elliptical Geometry
         (base32 "15nrnidbih5fw7i7g6d8rjllw2jbmligz2kzj2fqg30llck9ivl5"))))
     (properties `((upstream-name . "GEInter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-reshape2
                              r-quantreg
@@ -27159,6 +29972,9 @@ high-dimensional data. (Mengyun Wu et al (2017),
         (base32 "08ha9w3c64x9ib2fbh4djbhg7y6lykibx93mbm7i3gdvpajqk0jx"))))
     (properties `((upstream-name . "GEInfo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rvest r-pheatmap r-mass r-glmnet r-dplyr))
     (home-page "https://cran.r-project.org/package=GEInfo")
     (synopsis
@@ -27184,6 +30000,9 @@ information for G variables and G-E interactions.")
         (base32 "0s9zvqgn30spwggwpr02gzdjg3h4kgqamq37i03i14a3i2ls1ifw"))))
     (properties `((upstream-name . "geiger")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-subplex
                              r-rcpp
                              r-phytools
@@ -27214,6 +30033,9 @@ phylogenetic trees Pennell (2014) <doi:10.1093/bioinformatics/btu181>.")
         (base32 "0blg4w9wjprbax8z6md3285v12ajcjmcrpca52l3kd5qmxlvizy7"))))
     (properties `((upstream-name . "geigen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=geigen")
     (synopsis
@@ -27236,6 +30058,9 @@ Value Decomposition of a matrix pair, using Lapack routines.")
         (base32 "0hs17vmwgpvv85za32rmnlylp0fbbirb1irxxqkgx3dsffgvpbm1"))))
     (properties `((upstream-name . "geex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-numderiv r-matrix r-lme4))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bsaul/geex")
@@ -27263,6 +30088,9 @@ variance corrections.")
         (base32 "1z3lfi9n7jrnh62wjhkmy1xqaxw3xmfm69djw0wgbd9l3k4n2lpd"))))
     (properties `((upstream-name . "geeVerse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpp
                              r-quantreg
@@ -27293,6 +30121,9 @@ equations.")
         (base32 "0vj1z29hccvwqsqj8gclmwzrqsqimzsr0sy2hh81jaznw9hghw5x"))))
     (properties `((upstream-name . "geessbin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://github.com/rtishii/geessbin")
     (synopsis "Modified Generalized Estimating Equations for Binary Outcome")
@@ -27315,6 +30146,9 @@ covariance estimators.")
         (base32 "0gm953z8q5cc1adl3d6vj5djg2inc880zfcdl5gd56fnb5gl6h1w"))))
     (properties `((upstream-name . "geesmv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-matrixcalc r-mass r-gee))
     (home-page "https://cran.r-project.org/package=geesmv")
     (synopsis
@@ -27337,6 +30171,9 @@ variance estimators for improving the finite small-sample performance.")
         (base32 "0k856hw7zh553yrqp9g3s19hjviadh36drg2vvaddv2ma5ayj6z0"))))
     (properties `((upstream-name . "geepack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-magrittr r-broom))
     (home-page "https://cran.r-project.org/package=geepack")
     (synopsis "Generalized Estimating Equation Package")
@@ -27359,6 +30196,9 @@ HÃ¸jsgaard, (2005, <doi:10.18637/jss.v015.i02>), for details.")
         (base32 "1x0r2qcyd9hrhkws5zi0pjdc40w8wal3jpvvajj3cr8c1r8dpfzz"))))
     (properties `((upstream-name . "GEEmediate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gee))
     (home-page "https://cran.r-project.org/package=GEEmediate")
     (synopsis
@@ -27383,6 +30223,9 @@ Xiao and Spiegelman (2017) <doi:10.1515/ijb-2017-0006>.")
         (base32 "1r9zyjv7r7r7avdqi54dvczf971frz8pgrs1a04kan5mh4ls6xpy"))))
     (properties `((upstream-name . "geeM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=geeM")
     (synopsis "Solve Generalized Estimating Equations")
@@ -27406,6 +30249,9 @@ implementation based fully in R.")
         (base32 "0nmnrkfgblv38qvk66bdk8933icr59mayqwljkvmpy59sm6br2k5"))))
     (properties `((upstream-name . "geecure")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-matrix r-mass r-geepack))
     (home-page "https://cran.r-project.org/package=geecure")
     (synopsis
@@ -27429,6 +30275,9 @@ fraction.  A reference is Yi Niu and Yingwei Peng (2014)
         (base32 "08gcifq3gv8b6j7mdgf2y2s9gdcza96681wkzmq7skcj9430m7dm"))))
     (properties `((upstream-name . "geeCRT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-mvtnorm r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=geeCRT")
@@ -27464,6 +30313,9 @@ the conditional linear family method in Qaqish (2003)
         (base32 "0hfxryqn5dxpyl0s16ibbg1n8w19wl5ldxa8g437akb760pmsmvl"))))
     (properties `((upstream-name . "geeasy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mess
                              r-matrix
                              r-lme4
@@ -27497,6 +30349,9 @@ geeglm objects from geepack'.")
         (base32 "02pwjqd94kranc1f69bx9rzk27kchavhvhl9fygjhrr40nwq3pbg"))))
     (properties `((upstream-name . "GEEaSPU")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-gee))
     (home-page "https://cran.r-project.org/package=GEEaSPU")
     (synopsis
@@ -27518,6 +30373,9 @@ pathway level analyses.")
         (base32 "02c3hrpgp2y2il1db1da73zi3jikzihaaafp8snsdfw516q0a1pc"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-th-data
                              r-rmpfr
                              r-rcpp
@@ -27562,6 +30420,9 @@ modeling, as discussed in the forthcoming work of Dimitrova et al. (2024).")
         (base32 "1q0wzg3mkb6z7zs81zynj6x159w99h5an20a6m8wdqbday5sccyc"))))
     (properties `((upstream-name . "gecko")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sp
                              r-red
@@ -27589,6 +30450,9 @@ by the authors.")
         (base32 "0i5l15v3g0mpr3byhg55pib5x84fjhp7yxwzm3hb04dfn1dx07lj"))))
     (properties `((upstream-name . "GECal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nleqslv))
     (home-page "https://github.com/yonghyun-K/GECal")
     (synopsis "Generalized Entropy Calibration")
@@ -27613,6 +30477,9 @@ rather than including them in the objective function itself.")
         (base32 "1kcczyih3lg1cc6nppxbpz1zkq9priy8xwapd6kvkzmyw8npback"))))
     (properties `((upstream-name . "GEC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mistr))
     (home-page "https://cran.r-project.org/package=GEC")
     (synopsis "Generalized Exponentiated Composite Distributions")
@@ -27639,6 +30506,9 @@ Ananda (2022) <doi:10.3390/math10111895>, and Bowen Liu, Malwane M.A. Ananda
         (base32 "1i7ivcbrk1kyvh98xjs2v4zph85qrfsila50wx4vjxclaqp7afzl"))))
     (properties `((upstream-name . "geboes.score")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-checkmate))
     (home-page "https://billdenney.github.io/geboes.score/")
     (synopsis "Evaluate the Geboes Score for Histology in Ulcerative Colitis")
@@ -27662,6 +30532,9 @@ al. (2000) <doi:10.1136/gut.47.3.404>, binary version from Li, et al. (2019)
         (base32 "0ibn2kr0rjj546cbcqhr6x69s25xh7si5fri59055j42g62mdnxy"))))
     (properties `((upstream-name . "gear")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-optimx r-autoimage))
     (home-page "https://cran.r-project.org/package=gear")
     (synopsis "Geostatistical Analysis in R")
@@ -27684,6 +30557,9 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
         (base32 "0fnf6z08989g132p0prif49zqa3a399wq0wzz7n964cqvz5g3j5f"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))
     (home-page "https://cran.r-project.org/package=GE")
     (synopsis "General Equilibrium Modeling")
@@ -27713,6 +30589,9 @@ Kemeny is a co-inventor of the computer language BASIC.")
         (base32 "1yrjixq4srmaiy5iaprix4096yhf3ldyklgjag4kxd3l5acwap4h"))))
     (properties `((upstream-name . "gdxdt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://cran.r-project.org/package=gdxdt")
     (synopsis "IO for GAMS GDX Files using 'data.table'")
@@ -27734,6 +30613,9 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
         (base32 "0l64v55pq3kyvd4bkmy9xrh9vhiw3fwy12ivbc2vc8nrnn4996g4"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sf
@@ -27771,6 +30653,9 @@ spatial stratified heterogeneity family established in academic literature.")
         (base32 "0id3z450prnrd6rdcv4xaizmjkdhjv8vdbpbnpniaml66kqsadvh"))))
     (properties `((upstream-name . "GDSARM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve))
     (home-page "https://github.com/agrakhi/GDSARM")
     (synopsis "Gauss - Dantzig Selector: Aggregation over Random Models")
@@ -27795,17 +30680,20 @@ two levels coded as +1 and -1.")
         (base32 "0gwq0k80rnbg4ibz6dz8sk6hqaklrdbv4vzv8zyk74am3aqipn20"))))
     (properties `((upstream-name . "gds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gds")
     (synopsis "Descriptive Statistics of Grouped Data")
     (description
-     "This package contains a function called gds() which accepts three input
+     "This package contains a function called @code{gds()} which accepts three input
 parameters like lower limits, upper limits and the frequencies of the
-corresponding classes.  The gds() function calculate and return the values of
-mean ('gmean'), median ('gmedian'), mode ('gmode'), variance ('gvar'), standard
-deviation ('gstdev'), coefficient of variance ('gcv'), quartiles ('gq1', gq2',
-gq3'), inter-quartile range ('@code{gIQR}'), skewness ('g1'), and kurtosis
-('g2') which facilitate effective data analysis.  For skewness and kurtosis
-calculations we use moments.")
+corresponding classes.  The @code{gds()} function calculate and return the
+values of mean ('gmean'), median ('gmedian'), mode ('gmode'), variance ('gvar'),
+standard deviation ('gstdev'), coefficient of variance ('gcv'), quartiles
+('gq1', gq2', gq3'), inter-quartile range ('@code{gIQR}'), skewness ('g1'), and
+kurtosis ('g2') which facilitate effective data analysis.  For skewness and
+kurtosis calculations we use moments.")
     (license license:gpl2+)))
 
 (define-public r-gdpuc
@@ -27820,6 +30708,9 @@ calculations we use moments.")
         (base32 "0g3s6jhn8ndx7jy97kmfzmxcc2b40k9j47rx703g61la1mm0a4fg"))))
     (properties `((upstream-name . "GDPuc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyselect
                              r-tidyr
@@ -27852,6 +30743,13 @@ exchange rates and international dollars via purchasing power parities.")
         (base32 "1m54nm5ikarrmlpjnvl70v2xirk5xaqnv3i3pcwy96796ymk5ars"))))
     (properties `((upstream-name . "gdpc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-rcpparmadillo
@@ -27874,15 +30772,18 @@ components required for a given reconstruction accuracy.")
 (define-public r-gdm
   (package
     (name "r-gdm")
-    (version "1.6.0-3")
+    (version "1.6.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdm" version))
        (sha256
-        (base32 "1zjcciily8xf4jlsrbjxgv64j0fv1h86605hf2df77aj6sndinkk"))))
+        (base32 "1fw7grjbhqar3x2a4406bagl89klg974pga5w859fz8w4724wyck"))))
     (properties `((upstream-name . "gdm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-reshape2
                              r-rcpp
@@ -27910,6 +30811,9 @@ Richardson K (2007) <doi:10.1111/j.1472-4642.2007.00341.x>.")
         (base32 "19zvchn55d70miqgxnbz3y1svj6gn6236l897qc0cbqmv48mjxh4"))))
     (properties `((upstream-name . "gdldata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr2))
     (home-page "https://docs.globaldatalab.org/gdldata/")
     (synopsis "'Global Data Lab' R API")
@@ -27931,6 +30835,9 @@ options (indicators, levels, countries, regions) as well.")
         (base32 "0awrv10adi31inrgxbb83p73fq05i2xifj2xf16z6mp2lwzgvxba"))))
     (properties `((upstream-name . "gdistance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-sp r-raster r-matrix r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://AgrDataSci.github.io/gdistance/")
@@ -27958,6 +30865,9 @@ in other fields of geospatial analysis.")
         (base32 "02q5ynd22yisl3as9hyrg18p9j74lw6p1z3szm1k2ax0r3k04r27"))))
     (properties `((upstream-name . "gdim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-progress
@@ -27990,6 +30900,9 @@ dimension via hypothesis testing, see Chen et al. (2021)
         (base32 "08bcxnv5vwshj5hsxs6z8sny8hkb65aihcijlns0zinsdf685rgl"))))
     (properties `((upstream-name . "GDILM.SIR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych r-numderiv r-mvtnorm r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=GDILM.SIR")
     (synopsis "Inference for Infectious Disease Transmission in SIR Framework")
@@ -28011,6 +30924,9 @@ Susceptible-Infected-Recovered (SIR) framework.")
         (base32 "1gq2snfbmzfddh3bnga26p37ywahqxq5mnnmr3in8an3x5fdpw2v"))))
     (properties `((upstream-name . "GDILM.ME")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych
                              r-numderiv
                              r-ngspatial
@@ -28039,6 +30955,9 @@ Susceptible-Infectious-Removed (SIR) compartmental frameworks.")
         (base32 "1j3xmvpqs5vb9iq460dishi8bsb0kwfz6742bpvnhpk8z3mhf9af"))))
     (properties `((upstream-name . "gdiff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pdftools r-magick))
     (home-page "https://github.com/pmur002/")
     (synopsis "Graphical Difference Testing")
@@ -28060,6 +30979,9 @@ between different package versions and between different R versions.")
         (base32 "0arqx98k9dkxr8fhp0x2zxmx97kk666ffhbaqh9mrzrmwkapa3vb"))))
     (properties `((upstream-name . "gdi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-png r-jpeg))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gdi")
@@ -28094,6 +31016,9 @@ as for visualization of results.")
         (base32 "0v368chcgqnrfy2isy8z7gl0xizafhxlcd29gr89iblhrzwmssid"))))
     (properties `((upstream-name . "GDELTtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-plyr r-dplyr r-datetimeutils))
     (home-page "https://cran.r-project.org/package=GDELTtools")
     (synopsis
@@ -28117,6 +31042,9 @@ that data to facilitate valid time series analysis.")
         (base32 "05paf15dn2l7mfzhy3p3k7a2831fj9fwvwgljhcv7wpdj7djdccs"))))
     (properties `((upstream-name . "gde")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-stringr
                              r-shinywidgets
@@ -28152,6 +31080,13 @@ Information Facility (GBIF - <https://www.gbif.org/>) using a Shiny interface.")
         (base32 "1561zzw177kc7x3hiqzi7qm1yvczx8lzjb2j7d45zgwgz96v9vf8"))))
     (properties `((upstream-name . "GDAtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rlang r-ggrepel r-ggplot2 r-factominer
                              r-descriptio))
     (native-inputs (list r-r-rsp))
@@ -28180,6 +31115,9 @@ etc.).")
         (base32 "19vi6mr5jwlb00r33hkz7d0n9dar95hwdvbqbhh2dmha128fjwia"))))
     (properties `((upstream-name . "gdalUtilities")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf))
     (home-page "https://github.com/JoshOBrien/gdalUtilities/")
     (synopsis "Wrappers for 'GDAL' Utilities Executables")
@@ -28208,6 +31146,9 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
         (base32 "0vf28id5yq4f491b25fbmap1yzpzxxkkqmzfln1qc4hxfhbirv1p"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib
                   proj
                   pcre2
@@ -28229,20 +31170,21 @@ stand-alone functions.  These support manual creation of uninitialized datasets,
 creation from existing raster as template, read/set dataset parameters, low
 level I/O, color tables, raster attribute tables, virtual raster (VRT), and
 gdalwarp wrapper for reprojection and mosaicing.  Includes GDAL algorithms
-('dem_proc()', polygonize()', rasterize()', etc.), and functions for coordinate
-transformation and spatial reference systems.  Calling signatures resemble the
-native C, C++ and Python APIs provided by the GDAL project.  Includes raster
-calc() to evaluate a given R expression on a layer or stack of layers, with
-pixel x/y available as variables in the expression; and raster combine() to
-identify and count unique pixel combinations across multiple input layers, with
-optional output of the pixel-level combination IDs.  Provides raster display
-using base graphics'.  Bindings to a subset of the OGR API are also included for
-managing vector data sources.  Bindings to a subset of the Virtual Systems
-Interface ('VSI') are also included to support operations on GDAL virtual file
-systems.  These are general utility functions that abstract file system
-operations on URLs, cloud storage services, Zip'/'GZip'/'7z'/'RAR archives, and
-in-memory files.  gdalraster may be useful in applications that need scalable,
-low-level I/O, or prefer a direct GDAL API.")
+@code{('dem_proc()}', @code{polygonize()}', @code{rasterize()}', etc.), and
+functions for coordinate transformation and spatial reference systems.  Calling
+signatures resemble the native C, C++ and Python APIs provided by the GDAL
+project.  Includes raster @code{calc()} to evaluate a given R expression on a
+layer or stack of layers, with pixel x/y available as variables in the
+expression; and raster @code{combine()} to identify and count unique pixel
+combinations across multiple input layers, with optional output of the
+pixel-level combination IDs.  Provides raster display using base graphics'.
+Bindings to a subset of the OGR API are also included for managing vector data
+sources.  Bindings to a subset of the Virtual Systems Interface ('VSI') are also
+included to support operations on GDAL virtual file systems.  These are general
+utility functions that abstract file system operations on URLs, cloud storage
+services, Zip'/'GZip'/'7z'/'RAR archives, and in-memory files.  gdalraster may
+be useful in applications that need scalable, low-level I/O, or prefer a direct
+GDAL API.")
     (license license:expat)))
 
 (define-public r-gdalcubes
@@ -28257,6 +31199,9 @@ low-level I/O, or prefer a direct GDAL API.")
         (base32 "1bpskiv7pc09pwmh3ghf5l6wswbwlbmwx6sjqlqx7vs8d7gk6972"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib
                   sqlite
                   proj
@@ -28297,6 +31242,9 @@ computational parts are implemented in C++, linking to the GDAL',
         (base32 "13ks97i289rc4i7gpqrifwbj0m9rx8csjhnfg8mad10qmjwz7p8b"))))
     (properties `((upstream-name . "GDAdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GDAdata")
     (synopsis "Datasets for the Book Graphical Data Analysis with R")
     (description
@@ -28316,6 +31264,9 @@ Press 2015).")
         (base32 "102y9q8lpmvad0ih82r3pqg8qy7sq61j5wzd6lj6b6dp6pnv8s2r"))))
     (properties `((upstream-name . "GD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bammtools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ausgis/GD")
@@ -28346,6 +31297,9 @@ Song (2020) <doi:10.1109/TITS.2020.3001193>, respectively.")
         (base32 "0w6l9d23wbcvj5qzxc1yz20ic58hjkswk7scyjldiv6cbzm89wr1"))))
     (properties `((upstream-name . "gcxgclab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-rdpack
                              r-ptw
@@ -28380,6 +31334,9 @@ and analysis.")
         (base32 "10iljda6ms5g1wm3xhznwgnfnjh0nbwi6szykqdnb15gdhhsx9j9"))))
     (properties `((upstream-name . "gcTensor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rtensor r-einsum))
     (home-page "https://github.com/rikenbit/gcTensor")
     (synopsis "Generalized Coupled Tensor Factorization")
@@ -28402,6 +31359,9 @@ details of the method.")
         (base32 "0apz1wh6nfpg2gyx12xnbdb3hjyrrpwlcrh5khn6cxhxm06q9l95"))))
     (properties `((upstream-name . "GCSM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/liuyadong/GCSM")
     (synopsis "Implements Generic Composite Similarity Measure")
@@ -28426,6 +31386,9 @@ are included.")
         (base32 "0k2ng78bk3bxpj6nz80j5cvjd56zjz328ga68vyyc3hvdjgpspqj"))))
     (properties `((upstream-name . "GCPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpp))
     (home-page "https://cran.r-project.org/package=GCPM")
     (synopsis "Generalized Credit Portfolio Model")
@@ -28454,6 +31417,9 @@ to quantify model sensitivities.")
         (base32 "04g8p92aw8ihndlrlxlhvhrqgqv9x6izykpfs8rfn1jc3bisbyyd"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-rlang r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://mikeblazanin.github.io/gcplyr/")
@@ -28480,6 +31446,9 @@ methods at <https://mikeblazanin.github.io/gcplyr/>.")
         (base32 "134rqclfix1p91nb1sn3js3l8pbgsl0i22ygz2gl73jjhckk0j75"))))
     (properties `((upstream-name . "GCPBayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wiqid
                              r-truncnorm
                              r-rcpparmadillo
@@ -28513,6 +31482,9 @@ Pettitt, A. N., Mengersen, K., & Liquet, B. (2021) <doi:10.1002/sim.8855>.")
         (base32 "11g1q187l4j31b6cdzdx5z3s14z3s09l7ynl36pzzn9j19l8cmrc"))))
     (properties `((upstream-name . "gcookbook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gcookbook")
     (synopsis "Data for \"R Graphics Cookbook\"")
     (description
@@ -28532,6 +31504,9 @@ O'Reilly Media.")
         (base32 "065i587611nh3fiaxlp88qzd12cjxpbdvxn8pvd99fmk88d809zs"))))
     (properties `((upstream-name . "gconsensus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-mass r-coda))
     (home-page "https://cran.r-project.org/package=gconsensus")
     (synopsis "Consensus Value Constructor")
@@ -28561,6 +31536,9 @@ the reference section in the package documentation.")
         (base32 "0m4px1w41226clczzmnzal3hs0qwrvlhhdnkcxj1i7qp358ksxvm"))))
     (properties `((upstream-name . "gcmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-sandwich
                              r-nlme
@@ -28586,6 +31564,9 @@ the reference section in the package documentation.")
         (base32 "0b1nr8k8m48x78m6fkga11ikkcxyjsjpvqcd1lp6n9n4hv7akmfp"))))
     (properties `((upstream-name . "gclm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://github.com/gherardovarando/gclm")
     (synopsis "Graphical Continuous Lyapunov Models")
@@ -28608,6 +31589,9 @@ G, Hansen NR (2020) <@code{arXiv:2005.10483>}.")
         (base32 "13zhl23j0rihg40b49s0my8sypxhqjd5h08sch3nsim9dsi766pl"))))
     (properties `((upstream-name . "gcKrig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=gcKrig")
     (synopsis "Analysis of Geostatistical Count Data using Gaussian Copulas")
@@ -28633,6 +31617,9 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
         (base32 "0ljgzzl4yy1in5iz42iqkrsq6da4qx838anwdlvbdy96dyafl4ad"))))
     (properties `((upstream-name . "gcite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-wordcloud
                              r-tm
@@ -28658,6 +31645,9 @@ Description of the method is available from: Han and @code{DeOliveira} (2018)
         (base32 "1dn3x9afb6lwys5adi621s6357s66lsif5zv64ilxmckmy2j71zl"))))
     (properties `((upstream-name . "gcerisk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-ggplot2 r-cmprsk))
     (home-page "https://cran.r-project.org/package=gcerisk")
     (synopsis "Generalized Competing Event Model")
@@ -28684,6 +31674,9 @@ Lunn, Mary, and Don @code{McNeil} (1995) <DOI:10.2307/2532940>.")
         (base32 "1fkg80d6pq784cwaf28vgf8qpi4krhlhlhllvjdyv50v14i34svq"))))
     (properties `((upstream-name . "gcdnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list gfortran))
     (home-page "https://github.com/emeryyi/gcdnet")
@@ -28709,6 +31702,9 @@ hinge loss SVM and expectile regression.")
         (base32 "1259z76hajapzzq75fas2sq19r0wapn1ybghdaqdc6dksifdz6fv"))))
     (properties `((upstream-name . "GCD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-raster))
     (home-page "http://paleofire.org")
     (synopsis "Global Charcoal Database")
@@ -28732,6 +31728,9 @@ online SQL database at <http://paleofire.org>.")
         (base32 "1rxn0v4msfr5rwqc91ypafnvwa23n5574s8lhqmdqq53rs32ff89"))))
     (properties `((upstream-name . "GCCfactor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-sandwich))
     (home-page "https://cran.r-project.org/package=GCCfactor")
     (synopsis "GCC Estimation of the Multilevel Factor Model")
@@ -28755,6 +31754,9 @@ Multilevel Factor Model.\" Lin and Shin (2023) <doi:10.2139/ssrn.4295429>.")
         (base32 "1yprp56y15d3z48s9qk0dl9qcy9hg7caqlqnd30k47rpigxszwii"))))
     (properties `((upstream-name . "gcbd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite
                              r-reshape
                              r-plyr
@@ -28791,6 +31793,9 @@ the Revolution R packages from Ubuntu 9.10.")
         (base32 "0n1x039a0pm4sz2rwsgq82n423zgp4xni69129dh3nvxfrc0hzc5"))))
     (properties `((upstream-name . "gCat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gCat")
     (synopsis "Graph-Based Two-Sample Tests for Categorical Data")
     (description
@@ -28811,6 +31816,9 @@ categories.")
         (base32 "1c8vsklvkggwarh38rd1k88n0jaqcy7r23gyy5khsfkglzgkg2ns"))))
     (properties `((upstream-name . "GCalignR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-reshape2
@@ -28845,6 +31853,9 @@ algorithm is described in detail in Ottensmann et al., 2018
         (base32 "0r84qmdsqsgpaqr08imh48mdvy26s2b62hi0hxxwhr9kg7qvj0rd"))))
     (properties `((upstream-name . "GCalcium")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr r-catools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GCalcium")
@@ -28869,6 +31880,9 @@ user-friendly format for use by both beginners and seasoned R users.")
         (base32 "1gn6cmif5ixhgjcp29psfjsm3mk1y38mvv36vmxr77839rmkalxf"))))
     (properties `((upstream-name . "gbutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack))
     (home-page "https://github.com/GeoBosh/gbutils")
     (synopsis
@@ -28896,6 +31910,9 @@ an argument is unnamed, compute the graph of S4 classes in packages.")
         (base32 "1v8x4dnja8va28rjznyqa6js9wazndijasb95lfj2qwhxhgf5h65"))))
     (properties `((upstream-name . "gbts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gbm r-foreach r-earth r-dorng r-doparallel))
     (home-page "https://cran.r-project.org/package=gbts")
     (synopsis "Hyperparameter Search for Gradient Boosted Trees")
@@ -28920,6 +31937,9 @@ Boosted Trees constructed via the method of ensemble selection.")
         (base32 "0gdjfqs9ccyaw7vi22wbyc742n1badr5ypr08g6rvi8ka5lmx836"))))
     (properties `((upstream-name . "gbs2ploidy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-mass))
     (home-page "https://cran.r-project.org/package=gbs2ploidy")
     (synopsis "Inference of Ploidy from (Genotyping-by-Sequencing) GBS Data")
@@ -28941,6 +31961,9 @@ ratios and allelic proportions in a Bayesian framework.")
         (base32 "0awg724gsfwlb0fjcvw0450qdsk4m8x8is16pj5c8fx6nc8rn8bv"))))
     (properties `((upstream-name . "gbp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-rcpparmadillo r-rcpp r-magrittr
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -28965,15 +31988,18 @@ orthogonal direction, and no further restrictions implied.")
 (define-public r-gbmt
   (package
     (name "r-gbmt")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gbmt" version))
        (sha256
-        (base32 "10dyghrxjd9ddgk7gp2af8a46skzb2m9vazr9s216r20257ijd13"))))
+        (base32 "1nzj8jhkabxp5ix9zw8ac4i9ij5cgss6n126pnh81vd3qjpi1fqm"))))
     (properties `((upstream-name . "gbmt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=gbmt")
     (synopsis "Group-Based Multivariate Trajectory Modeling")
@@ -28998,6 +32024,9 @@ representation.")
         (base32 "1dzqmbfjasydghlb44nl1lsvr53w4gaiyh6852a9lnd62chapd45"))))
     (properties `((upstream-name . "gbm2sas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gbm))
     (home-page "https://cran.r-project.org/package=gbm2sas")
     (synopsis "Convert GBM Object Trees to SAS Code")
@@ -29017,6 +32046,9 @@ representation.")
         (base32 "1dyx937ajm461kpigbfgasb7ay96abw7s3lda8g54nfn3mxl82sq"))))
     (properties `((upstream-name . "gbm.auto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-tidyselect
                              r-stringi
@@ -29063,6 +32095,9 @@ using this package.")
         (base32 "0vi4zv59g4fjq28gq6b8mn5gmddwvq9sijjilcd6wr7jl67c0fbs"))))
     (properties `((upstream-name . "GBJ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-skat r-rcpp r-mvtnorm r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GBJ")
@@ -29093,6 +32128,9 @@ Please see the vignette for a quickstart guide or Sun and Lin (2017)
         (base32 "0lcwi7bx2giwcgr0dw6y1isj9bszs9d5yv4lby6gn0z4cmv6qzcb"))))
     (properties `((upstream-name . "gbifdb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-duckdbfs r-dplyr r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/gbifdb/")
@@ -29125,6 +32163,9 @@ local and remote access are described in <https://duckdb.org/why_duckdb> and
         (base32 "0748gicg4mf3csgf75rcpkcsf0c8md4clyavh3kxs77jhq8h6j48"))))
     (properties `((upstream-name . "gbfs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-readr
                              r-purrr
@@ -29153,6 +32194,9 @@ tidy datasets for specified cities/bikeshare programs.")
         (base32 "0611rynyybmiq6pj5jvwijdgx3hnr6mscv20lrqzlfplbmvmz0bj"))))
     (properties `((upstream-name . "gbeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-runuran r-rcppnumerical r-rcppeigen r-rcpp
                              r-gsl))
     (native-inputs (list r-knitr))
@@ -29182,6 +32226,9 @@ Vallois (2016) <doi:10.1016/j.spl.2016.03.014>, Chen & Novick (1984)
         (base32 "009ijrc0f04n74bxyrqnw553rf299m2gxbqrpkf3hrd78yfd3idy"))))
     (properties `((upstream-name . "GB5mcPred")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tibble
                              r-stringr
@@ -29224,6 +32271,9 @@ developed by using the concept of Navarez and Roxas (2022)
         (base32 "1dbyc7izyggfrsq2gj7rwff5qjyy6bx6ip09xvbj73xqczv8fkcd"))))
     (properties `((upstream-name . "GB2group")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-minpack-lm r-ineq r-gb2))
     (home-page "https://cran.r-project.org/package=GB2group")
     (synopsis
@@ -29254,6 +32304,9 @@ detailed description of the estimation procedure.")
         (base32 "05hvyyjlxckhgqipssb7qkfqv3dq202jpjyp9y7hgmka0vsix2yr"))))
     (properties `((upstream-name . "GB2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survey r-numderiv r-laeken r-hypergeo
                              r-cubature))
     (home-page "https://cran.r-project.org/package=GB2")
@@ -29293,6 +32346,9 @@ estimation by linearization and comparative density plots.")
         (base32 "0gkdkbwr168vi7lgccla49l43rkmjcfrwlqdr65mg5syzcxrh7nh"))))
     (properties `((upstream-name . "gb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kernsmooth r-boot))
     (home-page "https://cran.r-project.org/package=gb")
     (synopsis "Generalize Lambda Distribution and Generalized Bootstrapping")
@@ -29314,12 +32370,15 @@ generalized bootstrapping.")
         (base32 "13f7fx5j9r5wky2zriyqlr7vjda1y9c7n3iz0ajw6fxfr1c670dx"))))
     (properties `((upstream-name . "gawdis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ga r-fd))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pavel-fibich/gawdis/")
     (synopsis "Multi-Trait Dissimilarity with more Uniform Contributions")
     (description
-     "R function gawdis() produces multi-trait dissimilarity with more uniform
+     "R function @code{gawdis()} produces multi-trait dissimilarity with more uniform
 contributions of different traits.  de Bello et al. (2021)
 <doi:10.1111/2041-210X.13537> presented the approach based on minimizing the
 differences in the correlation between the dissimilarity of each trait, or
@@ -29339,6 +32398,9 @@ an analytic or a numerical solution, both available in the function.")
         (base32 "0hygyj4l1ah31h7dlh54z5zni08cgzaxsn6zzh8xvcm2hnlvs54r"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ssbtools r-regsdc r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/statisticsnorway/ssb-gausssuppression")
@@ -29347,12 +32409,12 @@ an analytic or a numerical solution, both available in the function.")
      "This package provides a statistical disclosure control tool to protect tables by
 suppression using the Gaussian elimination secondary suppression algorithm
 (Langsrud, 2024) <doi:10.1007/978-3-031-69651-0_6>.  A suggestion is to start by
-working with functions @code{SuppressSmallCounts}() and
-@code{SuppressDominantCells}().  These functions use primary suppression
+working with functions @code{SuppressSmallCounts()} and
+@code{SuppressDominantCells()}.  These functions use primary suppression
 functions for the minimum frequency rule and the dominance rule, respectively.
 Novel functionality for suppression of disclosive cells is also included.
 General primary suppression functions can be supplied as input to the general
-working horse function, @code{GaussSuppressionFromData}().  Suppressed
+working horse function, @code{GaussSuppressionFromData()}.  Suppressed
 frequencies can be replaced by synthetic decimal numbers as described in
 Langsrud (2019) <doi:10.1007/s11222-018-9848-9>.")
     (license license:expat)))
@@ -29369,6 +32431,9 @@ Langsrud (2019) <doi:10.1007/s11222-018-9848-9>.")
         (base32 "04689l076agncsxqcbkx76z89cvjigs8p8v58p5kad655gjpqcx3"))))
     (properties `((upstream-name . "gaussquad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polynom r-orthopolynom))
     (home-page "https://cran.r-project.org/package=gaussquad")
     (synopsis "Collection of Functions for Gaussian Quadrature")
@@ -29391,6 +32456,9 @@ the polynomials.")
         (base32 "0amkgzgh6764ri30210nhbi3wcll3248fmkpclx010dxc3hllfdx"))))
     (properties `((upstream-name . "gaussplotR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite r-rgl r-metr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vbaliga/gaussplotR")
@@ -29413,6 +32481,9 @@ or base R plotting.")
         (base32 "0c9khbg44yf04wp80bizd7j86gif1apqqafxyvi8692rrhf1r3ax"))))
     (properties `((upstream-name . "GaussianHMM1d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=GaussianHMM1d")
     (synopsis
@@ -29437,6 +32508,9 @@ Remillard (2013) <doi:10.1201/b14285>.")
         (base32 "095x7k7m7sy1gqkbm6wiqn26252dclz62sbnkv6cjvmbdxajl7m9"))))
     (properties `((upstream-name . "gaussfacts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gaussfacts")
     (synopsis "The Greatest Mathematician Since Antiquity")
     (description
@@ -29456,6 +32530,9 @@ by Mike Cavers via the <http://gaussfacts.com> site.")
         (base32 "0fqjdxp2ibbami75ba16d02dz4rz5sk8mni45di9anydx44g9d45"))))
     (properties `((upstream-name . "gaussDiff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "www.geo.fu-berlin.de/met/ag/clidia/Mitarbeiter/HenningRust/")
     (synopsis
      "Difference measures for multivariate Gaussian probability density functions")
@@ -29478,6 +32555,9 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
         (base32 "0dv3ifhi72kij820bny5jikps8zywyinddbc78q4bdbska820rvn"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=gausscov")
     (synopsis "The Gaussian Covariate Method for Variable Selection")
@@ -29529,6 +32609,9 @@ Theory of Linear Regression\", 2402, <doi:10.48550/@code{arXiv.2402.09858>}.")
         (base32 "1rvw7dbrsxqqch2dgslabc47llb64ljakc60m47gql5n9br7akbd"))))
     (properties `((upstream-name . "gauseR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-desolve))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gauseR")
@@ -29539,8 +32622,8 @@ microcosm experiments, and for fitting Lotka-Volterra models to time series
 data.  Includes methods for fitting single-species logistic growth, and
 multi-species interaction models, e.g. of competition, predator/prey
 relationships, or mutualism.  See documentation for individual functions for
-examples.  In general, see the lv_optim() function for examples of how to fit
-parameter values in multi-species systems.  Note that the general methods
+examples.  In general, see the @code{lv_optim()} function for examples of how to
+fit parameter values in multi-species systems.  Note that the general methods
 applied here, as well as the form of the differential equations that we use, are
 described in detail in the Quantitative Ecology textbook by Lehman et al.,
 available at <http://hdl.handle.net/11299/204551>, and in Lina K. MÃ¼hlbauer,
@@ -29561,6 +32644,9 @@ Existence in the journal Ecology and Evolution.")
         (base32 "0l1sizyzrmxl9svdx1hhfg4aq00g1ss9ply3i2ll344nd9j54fvz"))))
     (properties `((upstream-name . "GauPro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rmarkdown
                              r-rcpparmadillo
@@ -29594,6 +32680,9 @@ Gaussian process software, see Erickson et al. (2018)
         (base32 "0a1z3rjgkz5wxccb5lzmwmskvjlgab3zmznwvjgk2bslda6yzqil"))))
     (properties `((upstream-name . "gatoRs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-stringr
                              r-spthin
@@ -29626,6 +32715,13 @@ Biocollections (@code{iDigBio}) and the Global Biodiversity Information Facility
         (base32 "1a818bypdiingv6kmrfmx7ivxybs8k7261vfqlmb4gdl87n71rb2"))))
     (properties `((upstream-name . "gateR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tibble
                              r-terra
                              r-spatstat-geom
@@ -29664,6 +32760,9 @@ Bithell (1991) <doi:10.1002/sim.4780101112>.")
         (base32 "0f9n32s1ssp4nmjarls4llmi91jxh4w4qwxf7awxaalqz4lrzbg2"))))
     (properties `((upstream-name . "gatepoints")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wjawaid/gatepoints")
     (synopsis "Easily Gate or Select Points on a Scatter Plot")
@@ -29674,15 +32773,18 @@ Bithell (1991) <doi:10.1002/sim.4780101112>.")
 (define-public r-gastempt
   (package
     (name "r-gastempt")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gastempt" version))
        (sha256
-        (base32 "1fy6scbgi9qq78rfwq58p7f9x6mgam6lvrlmz224mz99qf3lz6s1"))))
+        (base32 "1lpjx9yxdm3fk9wmal3ii49gxk6nvagzdmz9zk1f44dq7kpi19kb"))))
     (properties `((upstream-name . "gastempt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-utf8
                              r-tibble
                              r-stringr
@@ -29718,6 +32820,9 @@ computes derived parameters such as t50 and AUC.")
         (base32 "1ksvgccl4kqnsgrmaxj8daww5f2r9a4p6p2hsnsg3c5iqwnj6i35"))))
     (properties `((upstream-name . "gasper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-rcpparmadillo
                              r-rcpp
@@ -29750,6 +32855,9 @@ benchmarks collected from a wide range of applications.")
         (base32 "0hyalvx7j434g4z7imkwn6anl7sp8pp076v6a2bbsy054vh5l59z"))))
     (properties `((upstream-name . "GaSP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GaSP")
     (synopsis "Train and Apply a Gaussian Stochastic Process Model")
@@ -29777,6 +32885,9 @@ Computer Model Via Analysis of Variance and Visualization\",
         (base32 "16wxv0fkaayxvd5h436wyp9is8y47k7ivim5f9md4g4acy3ca3cb"))))
     (properties `((upstream-name . "gasmodel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-pracma
                              r-numderiv
@@ -29815,6 +32926,9 @@ missing values.  Model estimation is performed by the maximum likelihood method.
         (base32 "1n2cfm3fa22nbirgkv91qapw5mipsw59m8kwvmb4ljgcslpzjrzp"))))
     (properties `((upstream-name . "gasfluxes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sfsmisc r-mass r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://git-dmz.thuenen.de/fuss/gasfluxes")
@@ -29836,6 +32950,9 @@ measurements.")
         (base32 "0hk18dl851z9dnw9vd9836lr7j3wlg3kk31k185p2yyk7l821mqp"))))
     (properties `((upstream-name . "gaselect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/dakep/gaselect")
     (synopsis
@@ -29852,15 +32969,18 @@ tradeoff between speed and quality of the solution.")
 (define-public r-gasanalyzer
   (package
     (name "r-gasanalyzer")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasanalyzer" version))
        (sha256
-        (base32 "0cb6xkzfrnxd28dm17r6b57i8l48psqcgx1yaw37csjll35ngxap"))))
+        (base32 "0ca6ywbsqxj84agbmk3azlc5jwb48hk7wci61j7wp2id5gmh3d11"))))
     (properties `((upstream-name . "gasanalyzer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-vctrs
                              r-units
@@ -29893,6 +33013,9 @@ See also Tholen (2024) <doi:10.1093/aobpla/plae035>.")
         (base32 "16348wz41silrrp7vb5qscydf9di8zrbydyvhpkv7dl003c9x0rp"))))
     (properties `((upstream-name . "GAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-rsolnp
@@ -29920,6 +33043,9 @@ described in Ardia et al. (2019) <doi:10.18637/jss.v088.i06>.")
         (base32 "0s2dgi556x9jnhafvzz4qkxdbq9dm12gsvsqd2g9iy3468fx9flq"))))
     (properties `((upstream-name . "garray")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=garray")
     (synopsis
      "Generalized Array Arithmetic for Ragged Arrays with Named Margins")
@@ -29945,6 +33071,9 @@ native functions that work on simple arrays.")
         (base32 "0rm77ig8payprd715z635h35338mc71pd0k7fk46s4jqlwaqkybd"))))
     (properties `((upstream-name . "garma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-signal
                              r-rsolnp
@@ -29977,6 +33106,9 @@ fitting these processes.")
         (base32 "0lsjplfrc047lb3zjfsc8wl47kll7d85v824k7zlr0n34xbbypq7"))))
     (properties `((upstream-name . "gargoyle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-attempt))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gargoyle")
@@ -29999,6 +33131,9 @@ of triggers, so that reactive contexts can be invalidated with more control.")
         (base32 "0fz8i4zidw47p6zpb83988k6rwb12scv90n1lvy2jb1fq29zp63q"))))
     (properties `((upstream-name . "GARCOM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcfr r-data-table))
     (home-page "https://cran.r-project.org/package=GARCOM")
     (synopsis "Gene and Region Counting of Mutations (\"GARCOM\")")
@@ -30022,6 +33157,9 @@ individuals, mutations and genes of interest.")
         (base32 "0znb5drsbd6vfr6yp020r3w3k3jmk6p3xcnkx3n2sc7fm2qg765b"))))
     (properties `((upstream-name . "garchx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo))
     (home-page "https://www.sucarrat.net/")
     (synopsis "Flexible and Robust GARCH-X Modelling")
@@ -30049,6 +33187,9 @@ overview of the package.")
         (base32 "0fwzv8js3d9klbzs58m946k7q50yxpf0cxia3r2z2gy85xphrsm0"))))
     (properties `((upstream-name . "GARCHSK")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp))
     (home-page "https://cran.r-project.org/package=GARCHSK")
     (synopsis "Estimating a GARCHSK Model and GJRSK Model")
@@ -30071,6 +33212,9 @@ model allowing for time-varying volatility, skewness and kurtosis.")
         (base32 "1rh9da9gb1krxasx1apldns5k3wl2xjjqc8bidsd5c0h5jlqdvr6"))))
     (properties `((upstream-name . "GARCHIto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GARCHIto")
@@ -30095,6 +33239,9 @@ augmented Lagrange multiplier method.")
         (base32 "1hlpddji4z7j71fhpc6nkwl6fmwxfkdj9v053c9fhnvr1ywjzs4h"))))
     (properties `((upstream-name . "gapminder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jennybc/gapminder")
@@ -30117,6 +33264,9 @@ every five years, from 1952 to 2007.")
         (base32 "04hjla4vyi524dwk5y69f1mfk3l9kyb5p82a8pzrcwgfjbqx15gv"))))
     (properties `((upstream-name . "gapmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/evanbiederstedt/gapmap")
@@ -30140,6 +33290,9 @@ based on the distance between clusters.")
         (base32 "15mrn44v5l4sgxwlyp1rik5mdg7m2s6xxcdigc3sjd1yhxalgw12"))))
     (properties `((upstream-name . "gapfill")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-quantreg r-ggplot2 r-foreach r-fields))
     (home-page "https://github.com/florafauna/gapfill")
     (synopsis "Fill Missing Values in Satellite Data")
@@ -30162,6 +33315,9 @@ MODIS NDVI data.")
         (base32 "1nq7wbl3236rg27hpfrl1f20gg0yrjmddcghmnh0yv5nzl52l798"))))
     (properties `((upstream-name . "gapclosing")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-ranger
@@ -30202,6 +33358,9 @@ package are described in Lundberg (2021) <doi:10.31235/osf.io/gx4y3>.")
         (base32 "1l3x6m7phbin6ba6rclljzym9zgx9nskz65ggkg0ij24pz5h7y51"))))
     (properties `((upstream-name . "GAparsimony")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-iterators r-foreach))
     (home-page "https://github.com/jpison/GAparsimony")
     (synopsis "Searching Parsimony Models with Genetic Algorithms")
@@ -30225,6 +33384,9 @@ evaluations.")
         (base32 "1jwpsb66sgj2zzgrpgwxc22df66gbhi278ywbmaicc10mipv050y"))))
     (properties `((upstream-name . "gap.datasets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://jinghuazhao.github.io/R/")
     (synopsis "Datasets for 'gap'")
     (description
@@ -30248,6 +33410,9 @@ ALHD2 markers and alcoholism (aldh2), APOE/APOC1 markers and Schizophrenia
         (base32 "1pz0j3vglccrwm3p9lj6wbq58varb8b0xg5r97gmz8c3biprpzww"))))
     (properties `((upstream-name . "gap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-plotly r-ggplot2 r-gap-datasets
                              r-dplyr))
     (native-inputs (list r-knitr gfortran))
@@ -30277,6 +33442,9 @@ in-between many projects hence also in line with the name (gap).")
         (base32 "0mhdadl7zgsacn59ym42magg3214k1xhabwn78fv7kgccszcgc86"))))
     (properties `((upstream-name . "GANPAdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GANPAdata")
     (synopsis "The GANPA Datasets Package")
     (description
@@ -30298,6 +33466,9 @@ and multi-subunit proteins.")
         (base32 "1c2yvh6sqx75hg0lsmflgd9mdic8imysv8dn46g4abvfwjhxsafp"))))
     (properties `((upstream-name . "GANPA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ganpadata))
     (home-page "https://cran.r-project.org/package=GANPA")
     (synopsis "Gene Association Network-Based Pathway Analysis (GANPA)")
@@ -30319,6 +33490,9 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
         (base32 "04h07fnvhvrg7c0ycv2pzlvd902cxi42fcvlpqqffx25krnrakb0"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list tensorflow))
     (propagated-inputs (list r-tensorflow r-rcpp r-httr))
     (home-page "https://cran.r-project.org/package=ganGenerativeData")
@@ -30346,6 +33520,9 @@ graphics processing units is available.  Reference: Goodfellow et al. (2014)
         (base32 "0zp6nx43qza572nl7wibxamw5ca56b3955z6zfjxq77kwlc8jcl7"))))
     (properties `((upstream-name . "ganDataModel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list tensorflow))
     (propagated-inputs (list r-tensorflow r-rcpp))
     (home-page "https://cran.r-project.org/package=ganDataModel")
@@ -30374,6 +33551,9 @@ calculation of density values.  These tasks are executed using package
         (base32 "1xfrykgfd0xw1z2fs1ay1d7wq87ak78qrfgw8vsxf0lg8lvmjqpp"))))
     (properties `((upstream-name . "gamstransfer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-rcpp r-r6 r-r-utils r-collections))
     (home-page "https://github.com/GAMS-dev/transfer-r/tree/main/gamstransfer")
@@ -30399,6 +33579,9 @@ utility functions to get an overview of GAMS data and to check its validity.")
         (base32 "1947lpxhiyf2kf22miliikx8plzhb1l97w440fb626vvgwfa340j"))))
     (properties `((upstream-name . "gamselBayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=gamselBayes")
     (synopsis "Bayesian Generalized Additive Model Selection")
@@ -30425,6 +33608,9 @@ He and Wand (2023) <@code{arXiv:2201.00412>}.")
         (base32 "17c3k72absrfzj8qqjgf9rni7p3s0d1jdw5hf94d03jds00n4w21"))))
     (properties `((upstream-name . "gamsel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mda r-foreach))
     (native-inputs (list r-knitr))
     (home-page "https://arxiv.org/abs/1506.03850")
@@ -30449,6 +33635,9 @@ penalty lambda, both for gaussian and binomial families.  See
         (base32 "0zn8921a4i1lz5wpdfbd72pqb25r12abyqw7y2w53kfhdzs57f3l"))))
     (properties `((upstream-name . "gamRR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv r-boot))
     (home-page "https://cran.r-project.org/package=gamRR")
     (synopsis "Calculate the RR for the GAM")
@@ -30468,6 +33657,9 @@ penalty lambda, both for gaussian and binomial families.  See
         (base32 "1svrgbb8qdy2hzpq1g38v2lzmlbrn7qljix827biqzwgiajy69gg"))))
     (properties `((upstream-name . "gamreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robusthd
                              r-rcpparmadillo
                              r-rcpp
@@ -30492,6 +33684,9 @@ penalty lambda, both for gaussian and binomial families.  See
         (base32 "1klxg1yhmfaz1zjnw1kxl1lm5plkakqh014rpkak2lj8zgf8qnyy"))))
     (properties `((upstream-name . "gammSlice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv r-lattice r-kernsmooth))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=gammSlice")
@@ -30517,6 +33712,9 @@ Statistics, 60, 279-330 <DOI:10.1111/ANZS.12241>.")
         (base32 "1zvmfkbjj70h7aq0yx3gchq17klgfwbjqd468pnq7wfrpvg04dgy"))))
     (properties `((upstream-name . "gammi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-lme4))
     (home-page "https://cran.r-project.org/package=gammi")
     (synopsis "Generalized Additive Mixed Model Interface")
@@ -30544,6 +33742,9 @@ significance testing using the Bayesian interpretation of a smoothing spline.")
         (base32 "0y3iqhrnppznqmx7sfibmwq3yq1l0jd8cfnpv0hch9byllh0syad"))))
     (properties `((upstream-name . "Gammareg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Gammareg")
     (synopsis
      "Classic Gamma Regression: Joint Modeling of Mean and Shape Parameters")
@@ -30564,6 +33765,9 @@ follows lineal regression structures.")
         (base32 "0wsxy97kdfmlvrflp9l3fqn5ckdraxb7lbjpq1znqgj304g0j45n"))))
     (properties `((upstream-name . "gamma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rxylib r-rlang r-isoplotr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://crp2a.github.io/gamma/")
@@ -30589,6 +33793,9 @@ only supports Canberra CNF and TKA and Kromek SPE files.")
         (base32 "0lhn0rif1k6978j50cvb3krknn09dzvdln1dh4amz3h2jqsh6434"))))
     (properties `((upstream-name . "gamlssx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nieve r-gamlss-dist r-gamlss))
     (home-page "https://paulnorthrop.github.io/gamlssx/")
     (synopsis
@@ -30613,6 +33820,9 @@ gamlss package <doi:10.32614/CRAN.package.gamlss>.")
         (base32 "1l8d4qwmq9dklm9imb3cvlncwa6jygf8kg2j1599h1nfhyyhj2vv"))))
     (properties `((upstream-name . "gamlssbssn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-gamlss-dist r-gamlss))
     (home-page "https://cran.r-project.org/package=gamlssbssn")
     (synopsis "Bimodal Skew Symmetric Normal Distribution")
@@ -30634,13 +33844,16 @@ bimodal skew symmetric normal distribution of Hassan and El-Bassiouni (2016)
         (base32 "1r5pd19r4nbxqx7jbi14iyyhn220dz914fa6v000rl0bwqdya379"))))
     (properties `((upstream-name . "gamlss.tr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gamlss-dist r-gamlss))
     (home-page "https://www.gamlss.com/")
     (synopsis "Generating and Fitting Truncated `gamlss.family' Distributions")
     (description
      "This is an add on package to GAMLSS. The purpose of this package is to allow
 users to defined truncated distributions in GAMLSS models.  The main function
-gen.trun() generates truncated version of an existing GAMLSS family
+@code{gen.trun()} generates truncated version of an existing GAMLSS family
 distribution.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -30656,6 +33869,9 @@ distribution.")
         (base32 "1v1mwi0k38b1b6bwf9gw46fkx83gzfxfqcyykx6kzpc7shkvy8f8"))))
     (properties `((upstream-name . "gamlss.spatial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spam r-mgcv r-gamlss-dist r-gamlss-add r-gamlss))
     (home-page "https://www.gamlss.com/")
     (synopsis
@@ -30677,6 +33893,9 @@ Models for Location Scale and Shape algorithms.")
         (base32 "0r19705wxc9wj4ji2plws9q7xn2nm53sb3x4z9c0ycymv9fkblb6"))))
     (properties `((upstream-name . "gamlss.mx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnet r-gamlss-dist r-gamlss))
     (home-page "https://www.gamlss.com/")
     (synopsis "Fitting Mixture Distributions with GAMLSS")
@@ -30698,6 +33917,9 @@ with generalised additive models for location scale and shape models see Chapter
         (base32 "03c8k6hl23ag98dihznfz1h0qc3pwxbnpv58pvmx3xbb3lipfjfb"))))
     (properties `((upstream-name . "gamlss.lasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-lars r-glmnet r-gamlss))
     (home-page "https://www.gamlss.com/")
     (synopsis "Extra Lasso-Type Additive Terms for GAMLSS")
@@ -30719,6 +33941,9 @@ elastic net and least angle regression.")
         (base32 "0m091zxjm5wvhm6mzbpzkr275n3qnlb3v4099k0a1jymahk4w7vr"))))
     (properties `((upstream-name . "gamlss.inf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gamlss-dist r-gamlss))
     (home-page "http://www.gamlss.com/")
     (synopsis "Fitting Mixed (Inflated and Adjusted) Distributions")
@@ -30747,6 +33972,9 @@ resulting fitted object.")
         (base32 "0lm0nlc2rb4yl6fliv0017qpgyaaky7hws6arv36dgqqih9dmcii"))))
     (properties `((upstream-name . "gamlss.ggplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaimpute
                              r-mgcv
                              r-ggridges
@@ -30778,6 +34006,9 @@ Location Scale and Shape from the gamlss package, Stasinopoulos and Rigby (2007)
         (base32 "1bld98lfbgj1v6l4vq3yysg1lnvpgj2r9vykkfy0q1yipv2xbnqb"))))
     (properties `((upstream-name . "gamlss.foreach")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glmnet
                              r-gamlss-dist
                              r-gamlss-data
@@ -30803,6 +34034,9 @@ Location Scale and Shape, <doi:10.1111/j.1467-9876.2005.00510.x>.")
         (base32 "01p6abppwbnh2a2ks1g08z4iwq2fxf125y9s4qzssybsn76a3gf3"))))
     (properties `((upstream-name . "gamlss.demo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpanel r-gamlss-tr r-gamlss-dist))
     (home-page "http://www.gamlss.org/")
     (synopsis "Demos for GAMLSS")
@@ -30821,6 +34055,9 @@ Location Scale and Shape, <doi:10.1111/j.1467-9876.2005.00510.x>.")
         (base32 "1xalp909gxxhyhh4chlr1ssyfhydhw1w3szzbynajji98576zaqv"))))
     (properties `((upstream-name . "gamlss.countKinf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gamlss-dist r-gamlss))
     (home-page "http://www.gamlss.org/")
     (synopsis
@@ -30828,8 +34065,8 @@ Location Scale and Shape, <doi:10.1111/j.1467-9876.2005.00510.x>.")
     (description
      "This is an add on package to GAMLSS'.  The main purpose of this package is
 generating and fitting inflated distributions at any desired point (0, 1, 2,
-...).  The function gen.Kinf() generates K-inflated version of an existing
-discrete GAMLSS family distribution.")
+...).  The function @code{gen.Kinf()} generates K-inflated version of an
+existing discrete GAMLSS family distribution.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-gamlss-cens
@@ -30844,6 +34081,9 @@ discrete GAMLSS family distribution.")
         (base32 "1l2g0gn794jyyjxvphfk1l8h4qwf6sk1akcf0c08xqx3kgillnjl"))))
     (properties `((upstream-name . "gamlss.cens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-gamlss-dist r-gamlss))
     (home-page "https://www.gamlss.com/")
     (synopsis
@@ -30851,7 +34091,7 @@ discrete GAMLSS family distribution.")
     (description
      "This is an add-on package to GAMLSS. The purpose of this package is to allow
 users to fit interval response variables in GAMLSS models.  The main function
-gen.cens() generates a censored version of an existing GAMLSS family
+@code{gen.cens()} generates a censored version of an existing GAMLSS family
 distribution.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -30867,6 +34107,9 @@ distribution.")
         (base32 "1dhiq3x0dascjsq3c80j6zgx4xdcjljd4ishzpp8j9m5bk55z72z"))))
     (properties `((upstream-name . "gamlss.add")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-nnet r-mgcv r-gamlss-dist r-gamlss))
     (home-page "https://www.gamlss.com/")
     (synopsis
@@ -30888,6 +34131,9 @@ and decision trees.")
         (base32 "1psvxx7ymkgr4acis85842xgafc5azdl7v1cmgvgbhsdwksm95q7"))))
     (properties `((upstream-name . "gamlr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://github.com/TaddyLab/gamlr")
     (synopsis "Gamma Lasso Regression")
@@ -30912,6 +34158,9 @@ Taddy (2017 JCGS), One-Step Estimator Paths for Concave Regularization',
         (base32 "0733vmyr0d9scjd5ixpnggr548snd7nj70knf5hbzc59nmbc5y11"))))
     (properties `((upstream-name . "GameTheoryAllocation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolveapi r-e1071))
     (home-page "https://cran.r-project.org/package=GameTheoryAllocation")
     (synopsis "Tools for Calculating Allocations in Game Theory")
@@ -30935,6 +34184,9 @@ the characteristic function.")
         (base32 "1mq8406zgh4yww2jb7xvvmizyis9cb2hwdliacr4hxpjg38c3jdn"))))
     (properties `((upstream-name . "GameTheory")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolveapi r-kappalab r-ineq r-gtools
                              r-combinat))
     (home-page "https://cran.r-project.org/package=GameTheory")
@@ -30956,6 +34208,9 @@ Theory.")
         (base32 "0km0z2haqgykl01xkzsbkpwibavgqfjygx7cg08ni68gw501689l"))))
     (properties `((upstream-name . "gamesGA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny))
     (home-page "https://bradduthie.github.io/gamesGA/")
     (synopsis "Genetic Algorithm for Sequential Symmetric Games")
@@ -30980,6 +34235,9 @@ fitness of strategies in each generation.")
         (base32 "1p005k6l2zkfqrkjis99shrxazaidb4d74x4z3h984qp3ag0w8p8"))))
     (properties `((upstream-name . "gameR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://www.constantine-cooke.com/gameR/")
     (synopsis "Color Palettes Inspired by Video Games")
@@ -30998,6 +34256,9 @@ fitness of strategies in each generation.")
         (base32 "1z10wxcg277fra2lch464l0kb02lspw9qr1i2wmq11wcz0k9qnl8"))))
     (properties `((upstream-name . "GAMens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mlbench r-gam r-catools))
     (home-page "https://cran.r-project.org/package=GAMens")
     (synopsis
@@ -31025,6 +34286,9 @@ also included.")
         (base32 "0zi9g2vxkn1hxc2qyyr1x8p1f9w7fc1j5dmm2mmm333gixkkz9nb"))))
     (properties `((upstream-name . "gamCopula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vinecopula
                              r-numderiv
                              r-mgcv
@@ -31055,6 +34319,9 @@ copulas.")
         (base32 "0y34970qwgssdnwnhb1hnkyav8j7pq3hkdskw63qs8cin4cknq7j"))))
     (properties `((upstream-name . "gamclass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-randomforest r-latticeextra r-lattice))
     (native-inputs (list r-rmarkdown r-knitr r-bookdown))
     (home-page "https://cran.r-project.org/package=gamclass")
@@ -31082,12 +34349,15 @@ Forests.")
         (base32 "16khm2fpsb3ivfszrilxbrzc8a281vmd1q36dcn50xbkvn19syxg"))))
     (properties `((upstream-name . "gamboostMSM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mboost))
     (home-page "https://cran.r-project.org/package=gamboostMSM")
     (synopsis "Boosting Multistate Models")
     (description
-     "This package contains infrastructure for using mboost::gamboost() in order to
-estimate multistate models.")
+     "This package contains infrastructure for using @code{mboost::gamboost()} in
+order to estimate multistate models.")
     (license license:gpl2+)))
 
 (define-public r-gamboostlss
@@ -31102,6 +34372,9 @@ estimate multistate models.")
         (base32 "1mx2aixdswmb8dgg1iawqzak2w7a1w4x6igk8wdwi05gifrgrs3i"))))
     (properties `((upstream-name . "gamboostLSS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stabs r-mboost))
     (home-page "https://cran.r-project.org/package=gamboostLSS")
     (synopsis "Boosting Methods for 'GAMLSS'")
@@ -31122,6 +34395,9 @@ scale ('GAMLSS') to potentially high dimensional data.")
         (base32 "0h5sfjs2lzs3cfx7q0agq68x4hhqmkiqga04c1gvnzwn8k7i8svc"))))
     (properties `((upstream-name . "gamblers.ruin.gameplay")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis r-hrbrthemes r-ggplot2 r-gganimate))
     (home-page "https://cran.r-project.org/package=gamblers.ruin.gameplay")
     (synopsis
@@ -31144,6 +34420,9 @@ each round of the game.")
         (base32 "137z6dxrvf05ss9bqh96bsl8rm6gzpk7kdgnfqh355mn0m5h2zx6"))))
     (properties `((upstream-name . "gambin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gtools r-foreach r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/txm676/gambin/")
@@ -31152,9 +34431,9 @@ each round of the game.")
      "Fits unimodal and multimodal gambin distributions to species-abundance
 distributions from ecological data, as in in Matthews et al. (2014)
 <DOI:10.1111/ecog.00861>.  gambin is short for gamma-binomial'.  The main
-function is fit_abundances(), which estimates the alpha parameter(s) of the
-gambin distribution using maximum likelihood.  Functions are also provided to
-generate the gambin distribution and for calculating likelihood statistics.")
+function is @code{fit_abundances()}, which estimates the alpha parameter(s) of
+the gambin distribution using maximum likelihood.  Functions are also provided
+to generate the gambin distribution and for calculating likelihood statistics.")
     (license license:gpl3)))
 
 (define-public r-gamair
@@ -31169,6 +34448,9 @@ generate the gambin distribution and for calculating likelihood statistics.")
         (base32 "1cjrd576l9md1jb1fc1y6iay5y49i0d8by024qsc7yik6f6mdl13"))))
     (properties `((upstream-name . "gamair")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gamair")
     (synopsis "Data for 'GAMs: An Introduction with R'")
     (description
@@ -31188,6 +34470,9 @@ Introduction with R', Wood (2006,2017) CRC.")
         (base32 "0zhnwl533vb094vbn5bxggav3fqh0ahrdrhjliwrgwh2h3bwqpp7"))))
     (properties `((upstream-name . "gam.hp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv r-ggplot2))
     (home-page "https://github.com/laijiangshan/gam.hp")
     (synopsis
@@ -31195,8 +34480,8 @@ Introduction with R', Wood (2006,2017) CRC.")
     (description
      "Conducts hierarchical partitioning to calculate individual contributions of each
 predictor towards adjusted R2 and explained deviance for generalized additive
-models based on output of gam()in mgcv package, applying the algorithm in this
-paper: Lai(2024) <doi:10.1016/j.pld.2024.06.002>.")
+models based on output of @code{gam()}in mgcv package, applying the algorithm in
+this paper: Lai(2024) <doi:10.1016/j.pld.2024.06.002>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-galvanizer
@@ -31211,6 +34496,9 @@ paper: Lai(2024) <doi:10.1016/j.pld.2024.06.002>.")
         (base32 "1b9431mmgpqyd49b8nlsrlxjq9j9fyj73226bi9jic1p867533kk"))))
     (properties `((upstream-name . "galvanizer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tidyjson
@@ -31239,21 +34527,24 @@ paper: Lai(2024) <doi:10.1016/j.pld.2024.06.002>.")
         (base32 "0a7yhdxja4jq2rn6p8imfg7ih3i4njqsz8zmkgwckj4q2x042lj5"))))
     (properties `((upstream-name . "galts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-genalg r-deoptim))
     (home-page "https://cran.r-project.org/package=galts")
     (synopsis
      "Genetic Algorithms and C-Steps Based LTS (Least Trimmed Squares) Estimation")
     (description
-     "Includes the ga.lts() function that estimates LTS (Least Trimmed Squares)
-parameters using genetic algorithms and C-steps.  ga.lts() constructs a genetic
-algorithm to form a basic subset and iterates C-steps as defined in Rousseeuw
-and van-Driessen (2006) to calculate the cost value of the LTS criterion.  OLS
-(Ordinary Least Squares) regression is known to be sensitive to outliers.  A
-single outlying observation can change the values of estimated parameters.  LTS
-is a resistant estimator even the number of outliers is up to half of the data.
-This package is for estimating the LTS parameters with lower bias and variance
-in a reasonable time.  Version >=1.3 includes the function medmad for fast
-outlier detection in linear regression.")
+     "Includes the @code{ga.lts()} function that estimates LTS (Least Trimmed Squares)
+parameters using genetic algorithms and C-steps. @code{ga.lts()} constructs a
+genetic algorithm to form a basic subset and iterates C-steps as defined in
+Rousseeuw and van-Driessen (2006) to calculate the cost value of the LTS
+criterion.  OLS (Ordinary Least Squares) regression is known to be sensitive to
+outliers.  A single outlying observation can change the values of estimated
+parameters.  LTS is a resistant estimator even the number of outliers is up to
+half of the data.  This package is for estimating the LTS parameters with lower
+bias and variance in a reasonable time.  Version >=1.3 includes the function
+medmad for fast outlier detection in linear regression.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-gallo
@@ -31268,6 +34559,9 @@ outlier detection in linear regression.")
         (base32 "0idzzkgxfr5im9p7xk7f4iph445rp8y2dzdzddm4x9i4fnh5hkwn"))))
     (properties `((upstream-name . "GALLO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-webshot
                              r-visnetwork
                              r-unbalhaar
@@ -31315,6 +34609,9 @@ others.")
         (base32 "1mp247z0vh4n2xh3nwkgkxq7rrc6vcfkcx39c4z80vvvdx3rvw1m"))))
     (properties `((upstream-name . "gallery")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-matrix))
     (home-page "https://cran.r-project.org/package=gallery")
     (synopsis "Generate Test Matrices for Numerical Experiments")
@@ -31337,6 +34634,9 @@ algebra algorithms.  Inspired by MATLAB gallery functions.")
         (base32 "1lfw1kikf90nv9g0xrb656fbilmxdk64zrzi43wrz7y2y55sd5xv"))))
     (properties `((upstream-name . "galigor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rym
@@ -31381,6 +34681,9 @@ materials.")
         (base32 "1gjz1hmfimld6drildhmlf8xgh6s3p7l6064bsjvp58ggvlmwawk"))))
     (properties `((upstream-name . "galamm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-rcppeigen
                              r-rcpp
@@ -31418,6 +34721,9 @@ al. (2015) <doi:10.18637/jss.v067.i01>) and PLmixed (Rockwood and Jeon (2019)
         (base32 "0byf7hh34grhar8nf6lqpsnhmj59wmz8ww6h9b9c2bimlg3s0h20"))))
     (properties `((upstream-name . "galah")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -31459,6 +34765,9 @@ data and resources hosted by GBIF and its partner nodes.")
         (base32 "035x5x8ig85q51bf4qgj5n5qq6clwjp4xk5bf35gswn7qxd13yls"))))
     (properties `((upstream-name . "GAIPE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.r-project.org")
     (synopsis
      "Graphical Extension with Accuracy in Parameter Estimation (GAIPE)")
@@ -31482,6 +34791,9 @@ power analysis on RMSEA.")
         (base32 "1nmrhc7qjlyzn04r1qyjdws5fin3idmi789kbxzilax12ya8xr7k"))))
     (properties `((upstream-name . "gains")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gains")
     (synopsis "Lift (Gains) Tables and Charts")
     (description
@@ -31503,6 +34815,9 @@ Chapter 11.")
         (base32 "1mqhrdjdmc2n7dxilxkqn6xq7z0qnxpigw5bbffnjvvsmdamah0n"))))
     (properties `((upstream-name . "gainML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fnn r-fields))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=gainML")
@@ -31526,6 +34841,9 @@ Y. Ding, and D. Cabezon (2019) <@code{arXiv:1906.05776>}.")
         (base32 "1s2chr3zjgvmmic178c1fixbvf501q7jvxdg8204jalh9iii14vb"))))
     (properties `((upstream-name . "gaiah")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-rlang
                              r-raster
@@ -31553,6 +34871,9 @@ of migrating birds.")
         (base32 "192r4fr3idl78g9vllb7hdvlrfkghh1airblb94c1mjyrjkj2hxa"))))
     (properties `((upstream-name . "GAGBLUP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ga r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=GAGBLUP")
     (synopsis
@@ -31577,6 +34898,9 @@ reduction.")
         (base32 "04gfxhvbb9mm2rl6n2kfch8d9ggzblr5ch2p561x39dgwmwbpc2r"))))
     (properties `((upstream-name . "GAGAs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcppeigen r-rcpp))
     (home-page "https://arxiv.org/abs/1911.00658")
     (synopsis
@@ -31603,6 +34927,9 @@ part supported by the National Natural Foundation of China (No.12171076).")
         (base32 "160z3cv22prf7118447dla9g1gimwkfad8zdil3fg8n4l22rk51a"))))
     (properties `((upstream-name . "gafit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://lnx-bsp.net/")
     (synopsis "Genetic Algorithm for Curve Fitting")
     (description
@@ -31625,6 +34952,9 @@ sum of residuals squared).")
         (base32 "1jw834v98mwlx7pf78xcqvpqnlrdwl03qm1m4fd5x7yxkn5nhk92"))))
     (properties `((upstream-name . "gadget3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb r-rlang r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://gadget-framework.github.io/gadget3/")
@@ -31654,6 +34984,9 @@ globally applicable area-disaggregated general ecosystem toolbox.  ICES.\".")
         (base32 "0ka5mbr9nppgsr95l33k510h278z49j6chbbqvbba0gan9842kwg"))))
     (properties `((upstream-name . "gadget2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=gadget2")
     (synopsis
      "Gadget is the Globally-Applicable Area Disaggregated General Ecosystem Toolbox")
@@ -31685,6 +35018,9 @@ making it available for R.")
         (base32 "1ycg48idrq2yrk1fxs16yl5wwg3kbfki8xppmh311rrzf75c6z4g"))))
     (properties `((upstream-name . "GADAG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-igraph))
     (home-page "https://cran.r-project.org/package=GADAG")
     (synopsis "Genetic Algorithm for Learning Directed Acyclic Graphs")
@@ -31706,6 +35042,9 @@ program and a tailored genetic algorithm (see Champion et al. (2017)
         (base32 "1qb735hbqv00yz0xaw0k3vpg7j9lqbbkzkqdys25n64ji59qr33x"))))
     (properties `((upstream-name . "GAD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixstats))
     (home-page "https://cran.r-project.org/package=GAD")
     (synopsis "Analysis of Variance from General Principles")
@@ -31732,6 +35071,9 @@ assessed by components of variation.")
         (base32 "0lhjzb6cj8838dh4423929z7bwpa6cv3dn84rccwi3382vsq9g2c"))))
     (properties `((upstream-name . "GACFF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=GACFF")
     (synopsis "Genetic Similarity in User-Based Collaborative Filtering")
     (description
@@ -31763,6 +35105,9 @@ solving the problem.")
         (base32 "16gdg5yvzlvic3qc9ya68xkbx55jg7lvlnqjry9x4c5hvggywzvl"))))
     (properties `((upstream-name . "GABB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-pheatmap
@@ -31801,6 +35146,8 @@ graphic parameters.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -31842,6 +35189,9 @@ data using an interactive lollipop diagram in RStudio or your web browser.")
         (base32 "165i6x2k56vwhk5p2p5m9vjmp9flblsapjdlz7nw9b719l6xz5zk"))))
     (properties `((upstream-name . "G2Sd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsxjars
                              r-xlsx
                              r-shiny
@@ -31867,6 +35217,9 @@ sieves.")
         (base32 "1llks14akpdpa3v80kpr8sgmdlmjsvk7hcbilnk0zqlh1xi066km"))))
     (properties `((upstream-name . "g.ridge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=g.ridge")
     (synopsis "Generalized Ridge Regression for Linear Models")
     (description
@@ -31892,12 +35245,16 @@ the sample size.")
         (base32 "1v2sn117hmawgsa6f7nrpv2bpg6zzjd1ss356qjqp7kdwmifqlrq"))))
     (properties `((upstream-name . "g.data")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=g.data")
     (synopsis "Delayed-Data Packages")
     (description
      "Create and maintain delayed-data packages (ddp's).  Data stored in a ddp are
 available on demand, but do not take up memory until requested.  You attach a
-ddp with g.data.attach(), then read from it and assign to it in a manner similar
-to S-PLUS, except that you must run g.data.save() to actually commit to disk.")
+ddp with @code{g.data.attach()}, then read from it and assign to it in a manner
+similar to S-PLUS, except that you must run @code{g.data.save()} to actually
+commit to disk.")
     (license (list license:gpl2+ license:gpl3+))))
 

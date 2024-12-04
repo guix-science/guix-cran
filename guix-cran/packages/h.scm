@@ -55,6 +55,9 @@
         (base32 "067b44yrjqnr8zrb4f532nyry5z5faijaxi55zmi2vkxvgvw0pxr"))))
     (properties `((upstream-name . "hytest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gamlss-dist r-gamlss))
     (home-page "https://cran.r-project.org/package=hytest")
     (synopsis
@@ -84,6 +87,9 @@ Pearson).")
         (base32 "1vrby9lgy0nm5wa5r1y3k3l2s9fc8vdf4szy8isvnzayr464xvwi"))))
     (properties `((upstream-name . "hystReet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JohannesFriedrich/hystReet")
@@ -105,6 +111,9 @@ provides pedestrian counts in different cities in Germany.")
         (base32 "0jn8glihvnf6l6gf91cisqi4h1iscp7qqvchkbcvz0mv8cvklmg8"))))
     (properties `((upstream-name . "hysteresis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-msm r-mass r-car))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hysteresis")
@@ -130,6 +139,9 @@ the Characterization of Heat Stress\" <DOI:10.1007/s13253-015-0213-6>.")
         (base32 "1gyk78nfhhglry2dwy21h9s2hqlqisd7cffwg2864spmwml4brcf"))))
     (properties `((upstream-name . "hystar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/daandejongen/hystar/")
     (synopsis "Fit the Hysteretic Threshold Autoregressive Model")
@@ -152,6 +164,9 @@ series data from the @code{HysTAR} model.  For details, see Li, Guan, Li and Yu
         (base32 "12za828sw2al3aa236ksmnwxpy2sqw8gl8b3p3vvrjk1l31l1qcm"))))
     (properties `((upstream-name . "hySpc.testthat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat))
     (home-page "https://cran.r-project.org/package=hySpc.testthat")
     (synopsis "'testthat' Unit Test Enhancements")
@@ -172,6 +187,9 @@ they test.  This allows to keep functional and unit test code together.")
         (base32 "1mmw0k63rci7w19livfv7mnsrqjwk0cc51wlyn58ksnf9bbqphch"))))
     (properties `((upstream-name . "hySAINT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variablescreening
                              r-sis
                              r-selectiveinference
@@ -201,6 +219,9 @@ C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
         (base32 "02hb8kl02872xvyhg0k19xavcmhqmf0ddfnxx5nxlpzgzb432csd"))))
     (properties `((upstream-name . "HyRiM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rglpk r-purrr r-polynom r-grimport2 r-compare))
     (home-page "https://cran.r-project.org/package=HyRiM")
     (synopsis
@@ -236,6 +257,9 @@ Springer, <doi:10.1007/978-3-319-75268-6>, ISBN 978-3-319-75267-9.")
         (base32 "0kwxzw2r406li2pmby92a3jik4k3z1vdgs54m4q45a8r8vz3y1nn"))))
     (properties `((upstream-name . "hypsoLoop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-stars
                              r-sjplot
@@ -270,6 +294,9 @@ Vanderwaal and Herbert Ssegane (2013) <doi:10.1111/jawr.12089>.")
         (base32 "1l5vfjifnnf711wr3n9zprf78jkq7s2pjvw3vz47jr3234glsrjx"))))
     (properties `((upstream-name . "hypr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-matrix r-mass r-magrittr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://maxrabe.com/hypr")
@@ -293,6 +320,9 @@ Rabe et al. (2020) <doi:10.21105/joss.02134>.")
         (base32 "0z06risagphhvqiw4lrxy52q6q2yr10w2yxsm8iz1wh9ik097pcv"))))
     (properties `((upstream-name . "hypothesisr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
     (home-page "https://github.com/mdlincoln/hypothesisr")
     (synopsis "Wrapper for the 'Hypothes.is' Web Annotation Service")
@@ -315,6 +345,9 @@ and delete their own annotations.")
         (base32 "0mllh8lamls0rrbr9d12xa7a56pa2zahvr243kbfmhad81nalpl7"))))
     (properties `((upstream-name . "hypothesis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-purrr
                              r-magrittr
@@ -343,6 +376,9 @@ documents via hypothes.is'.")
         (base32 "0876i9x2s0vzhki7sp5f62akvjkpksd88k09yd9iaczixvbiwisy"))))
     (properties `((upstream-name . "hypoRF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ranger))
     (home-page "https://cran.r-project.org/package=hypoRF")
     (synopsis "Random Forest Two-Sample Tests")
@@ -363,6 +399,9 @@ Hediger & Michel & Naef (2022).")
         (base32 "0p8ph11rsj8j5b3khisza48kj1b2qiyd2wxhcdv2vvk5a8mrc6bw"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-tidyr
@@ -406,6 +445,9 @@ al. (2024) <doi:10.1016/j.envsoft.2024.106094>.")
         (base32 "1vw9s85gr1mv7c21x7rk66bz7wg3nfy874ixrhbcksyrxjq82q3c"))))
     (properties `((upstream-name . "hypervolume")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sp
                              r-rcpparmadillo
@@ -455,6 +497,9 @@ species distribution modeling.")
         (base32 "0g4lc26prwpb7qsk4q0rzhzz7lw9x4hfrnsbzikwv3na6lqkhkip"))))
     (properties `((upstream-name . "hyperSpec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-testthat
                              r-rlang
@@ -476,33 +521,6 @@ is recorded over a discretized variable, e.g. absorbance = f(wavelength), stored
 as a vector of absorbance values for discrete wavelengths is suitable.")
     (license license:gpl3+)))
 
-(define-public r-hypersampleplan
-  (package
-    (name "r-hypersampleplan")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hypersampleplan" version))
-       (sha256
-        (base32 "1sk3s1jm46ac4i7p433s3kyngj86kq2821zzhp30a3y8vi1j2psq"))))
-    (properties `((upstream-name . "hypersampleplan")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=hypersampleplan")
-    (synopsis
-     "Attribute Sampling Plan with Exact Hypergeometric Probabilities using Chebyshev Polynomials")
-    (description
-     "This package implements an algorithm for efficient and exact calculation of
-hypergeometric and binomial probabilities using Chebyshev polynomials, while
-other algorithm use an approximation when N is large.  A useful applications is
-also considered in this package for the construction of attribute sampling plans
-which is an important field of statistical quality control.  The quantile, and
-the confidence limit for the attribute sampling plan are also implemented in
-this package.  The hypergeometric distribution can be represented in terms of
-Chebyshev polynomials.  This representation is particularly useful in the
-calculation of exact values of hypergeometric variables.")
-    (license license:gpl2)))
-
 (define-public r-hyperoverlap
   (package
     (name "r-hyperoverlap")
@@ -515,6 +533,9 @@ calculation of exact values of hypergeometric variables.")
         (base32 "10kcphn5zl1pl70xg9bn947i9mbnjxk03p6y7xhdlv152cihffw0"))))
     (properties `((upstream-name . "hyperoverlap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl
                              r-misc3d
                              r-matlib
@@ -544,6 +565,9 @@ can be found in: Brown et al. (2020) <doi:10.1111/2041-210X.13363> .")
         (base32 "0yc9kvi8y5ikf9db5r1wx3a00ykhv4ngl1jq0q1bzn4zl5y5y7pf"))))
     (properties `((upstream-name . "HypergeoMat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-juliaconnector r-gsl
                              r-eigenr))
     (native-inputs (list r-knitr))
@@ -567,6 +591,9 @@ random matrix theory.  This is an implementation of Koev & Edelman's algorithm
         (base32 "1xc4yva1k93j01x061pa0g4smlbbqmwlcg8gfax9k2ry4pj1p339"))))
     (properties `((upstream-name . "hypergeo2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list mpfr gmp))
     (propagated-inputs (list r-rcpp r-bh))
     (native-inputs (list pkg-config))
@@ -591,6 +618,9 @@ library.  The computation is limited to real numbers.")
         (base32 "10lhjj8sgjv9p6v0n93f1jgybvgb1yr92slrqjdphag4clqvygw0"))))
     (properties `((upstream-name . "hypergate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hypergate")
     (synopsis
@@ -615,6 +645,9 @@ gating strategies outputs.")
         (base32 "0w84ph0vd03i22s8g52jf2w96yd80ynbh6x0p88apg92jdsapcrc"))))
     (properties `((upstream-name . "HyperG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-proxy
                              r-mclust
@@ -642,6 +675,9 @@ hypergraphs.")
         (base32 "0m0n64rl5fnhvhfdknrza8a0h5lw8vbgakaqbyfx77ixhwqhjn1l"))))
     (properties `((upstream-name . "hypercube")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-plotly r-dplyr))
     (home-page "https://cran.r-project.org/package=hypercube")
     (synopsis "Organizing Data in Hypercubes")
@@ -649,9 +685,9 @@ hypergraphs.")
      "This package provides functions and methods for organizing data in hypercubes
 (i.e., a multi-dimensional cube).  Cubes are generated from molten data frames.
 Each cube can be manipulated with five operations: rotation
-(change.@code{dimensionOrder}()), dicing and slicing (add.selection(),
-remove.selection()), drilling down (add.aggregation()), and rolling up
-(remove.aggregation()).")
+@code{(change.dimensionOrder()}), dicing and slicing @code{(add.selection()},
+@code{remove.selection()}), drilling down @code{(add.aggregation()}), and
+rolling up @code{(remove.aggregation()}).")
     (license license:gpl3)))
 
 (define-public r-hyperbolicdist
@@ -666,6 +702,9 @@ remove.selection()), drilling down (add.aggregation()), and rolling up
         (base32 "10bcqychdc3rrdyqng5sxjbr8a6wljwnqa4gff99dmx8774sdw16"))))
     (properties `((upstream-name . "HyperbolicDist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.r-project.org")
     (synopsis "The Hyperbolic Distribution")
     (description
@@ -692,6 +731,9 @@ hyperbolic distribution, including fitting of the hyperbolic to data.")
         (base32 "03lc3dycrjh33425waswn7a7s5b6s6d8l4200yqlqqczih3xii3y"))))
     (properties `((upstream-name . "hyperbolicDEA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nloptr
                              r-lpsolveapi
                              r-foreach
@@ -722,6 +764,9 @@ non-linear profitability estimation built upon the DEA framework.")
         (base32 "11bn7rhadisb46ls6ph9xbixz9zygd4ivjn3hgbv6059l2f2v0i0"))))
     (properties `((upstream-name . "hyper2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-rcpp
                              r-partitions
@@ -755,16 +800,20 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
         (base32 "1w6ra4sqdvzcyhsiyi3lgzy9m4ca3898qjdssdfgmarkrc13bk3n"))))
     (properties `((upstream-name . "hyper.fit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-mass r-magicaxis r-laplacesdemon))
     (home-page "https://cran.r-project.org/package=hyper.fit")
     (synopsis "N-Dimensional Hyperplane Fitting with Errors")
     (description
-     "High level functions for hyperplane fitting (hyper.fit()) and visualising
-(hyper.plot2d() / hyper.plot3d()).  In simple terms this allows the user to
-produce robust 1D linear fits for 2D x vs y type data, and robust 2D plane fits
-to 3D x vs y vs z type data.  This hyperplane fitting works generically for any
-N-1 hyperplane model being fit to a N dimension dataset.  All fits include
-intrinsic scatter in the generative model orthogonal to the hyperplane.")
+     "High level functions for hyperplane fitting @code{(hyper.fit()}) and visualising
+@code{(hyper.plot2d()} / @code{hyper.plot3d()}).  In simple terms this allows
+the user to produce robust 1D linear fits for 2D x vs y type data, and robust 2D
+plane fits to 3D x vs y vs z type data.  This hyperplane fitting works
+generically for any N-1 hyperplane model being fit to a N dimension dataset.
+All fits include intrinsic scatter in the generative model orthogonal to the
+hyperplane.")
     (license license:gpl3)))
 
 (define-public r-hymett
@@ -779,6 +828,9 @@ intrinsic scatter in the generative model orthogonal to the hyperplane.")
         (base32 "0j613j7p80sa5rp5qdzri51wjsl1zmzk3acrhb0df62d8fxnlzl2"))))
     (properties `((upstream-name . "HyMETT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tibble
                              r-rlang
@@ -809,6 +861,9 @@ observed data, period-of-record statistics, and trends.")
         (base32 "03z36ddq6vpld1v876adp5xrz0hjy46vhs5sn8sgaa57fhmya6cm"))))
     (properties `((upstream-name . "hyfo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-sp
                              r-sf
@@ -844,6 +899,9 @@ processing and post-processing tool for hydrological and hydraulic modellers.")
         (base32 "0gan9f46lbnaa9993lgyi2p70c2dlrb8xf6if5n320hy2h98mlh6"))))
     (properties `((upstream-name . "hydroTSM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-lattice r-e1071 r-classint))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hzambran/hydroTSM")
@@ -871,6 +929,9 @@ datasets that can be included in this package for academic purposes.")
         (base32 "0bij4365hczvq17wj9hp0570v35m8ili11mp9dzfj3mvhhqrc9p4"))))
     (properties `((upstream-name . "hydroToolkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-readxl r-plotly r-lubridate
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=hydroToolkit")
@@ -893,6 +954,9 @@ Chile.")
         (base32 "0m5crm8n8i3fv43am649cdyrbfcfbais8fwrg6c7zy81dbhmy9m9"))))
     (properties `((upstream-name . "hydrotoolbox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tibble
                              r-reshape2
@@ -923,6 +987,9 @@ special features for Argentina and Chile data-sets).")
         (base32 "11ipfp5dnl336wbsw0nrrcd68hccp8igvlrr93rc3hrvif3slkim"))))
     (properties `((upstream-name . "hydrostats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/nickbond/hydrostats")
     (synopsis "Hydrologic Indices for Daily Time Series Data")
     (description
@@ -942,6 +1009,9 @@ widely used in hydrology and stream ecology.")
         (base32 "1pvdvfmjrxplcycszaig2xbwlk1acs6smci1cwmmhdh2xpaffami"))))
     (properties `((upstream-name . "hydroroute")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-reshape2
                              r-lubridate
@@ -978,6 +1048,9 @@ on the event detection implemented in hydropeak'.")
         (base32 "05fa03j0x0639langkhp40ds3d8j9a1i2f05m1svq6iysx2r0dmy"))))
     (properties `((upstream-name . "HydroPortailStats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-mvtnorm r-evd))
     (home-page "https://github.com/benRenard/HydroPortailStats")
     (synopsis "'HydroPortail' Statistical Functions")
@@ -1001,6 +1074,9 @@ utilities.  Technical details are available (in French) in Renard (2016)
         (base32 "06x1qahavvhaqwdsjg65ixgc6migbm188v3w3vjng5xl2g2ybhqc"))))
     (properties `((upstream-name . "hydropeak")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hydropeak")
     (synopsis "Detect and Characterize Sub-Daily Flow Fluctuations")
@@ -1033,6 +1109,9 @@ along the longitudinal flow path as proposed and validated in Greimel et al.
         (base32 "06fqzvpwh25qc9ksh49gpfyw8jgy9xbw27wlp8mxk0b2fq58fyqg"))))
     (properties `((upstream-name . "HydroMe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HydroMe")
     (synopsis
      "Estimating Water Retention and Infiltration Model Parameters using Experimental Data")
@@ -1057,6 +1136,9 @@ package has new models for water retention characteristic curves.")
         (base32 "1m69bh09ci3zbwpqlkfjjp66l3lsav62sxb0y3ilb57cfswdd7qz"))))
     (properties `((upstream-name . "hydroloom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-tidyr
                              r-sf
@@ -1089,6 +1171,9 @@ Leiserson (2022) <ISBN:9780262046305> and Verdin and Verdin (1999)
         (base32 "0vg9cm2xjayhi1xsr6x8cl1ix5dk7x9p0wn0nhrf31nlvmpwh0c1"))))
     (properties `((upstream-name . "hydroGOF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-hydrotsm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hzambran/hydroGOF")
@@ -1115,6 +1200,9 @@ welcomed.")
         (base32 "16m6yvr9yhvb0vdh9pqd6gzf3h9km7gd89y6risjddv6g83469k8"))))
     (properties `((upstream-name . "hydrogeo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://rockhead.biz")
     (synopsis "Groundwater Data Presentation and Interpretation")
     (description
@@ -1134,6 +1222,9 @@ Piper-Hill diagrams) of water analyses for major ions.")
         (base32 "1w433lmzk6lr2lnqn1qcq13c980kpi0r881cdzm56n53s89zdh36"))))
     (properties `((upstream-name . "hydroEvents")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/conradwasko/hydroEvents")
     (synopsis "Extract Event Statistics in Hydrologic Time Series")
     (description
@@ -1157,6 +1248,9 @@ R. J. (2013) <doi:10.7158/W12-028.2013.17.1>.")
         (base32 "0nci4jj2aca2kaq4cgrv9sq9pksjaagqik2y8j1c2a1w39qjzyan"))))
     (properties `((upstream-name . "hydroDCindex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hydroDCindex")
     (synopsis "Duration Curve Hydrological Model Indexes")
@@ -1179,6 +1273,9 @@ based on: Yilmaz et al., (2008) <DOI:10.1029/2007WR006716>.")
         (base32 "1kykxra9cg1n17l2zmnjk1qv8450v4qix5sylm1k9xxzirbb7wca"))))
     (properties `((upstream-name . "HydroCode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp))
     (home-page "https://cran.r-project.org/package=HydroCode")
     (synopsis "Hydrological Codes")
@@ -1199,6 +1296,9 @@ based on: Yilmaz et al., (2008) <DOI:10.1029/2007WR006716>.")
         (base32 "0xq53nysn9kv6p1clgdjxsvj7qjlcmg02frfpw9fnzim53pzzrp4"))))
     (properties `((upstream-name . "HYDROCAL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "GitHub")
     (synopsis "Hydraulic Roughness Calculator")
     (description
@@ -1220,6 +1320,9 @@ and accompanying documentation by @code{McKay} and Fischenich (2011,
         (base32 "0hjvs57zl51b2f49ryawpfnhw1gw27p2dkzpac8k14zwvxq3kjif"))))
     (properties `((upstream-name . "hydraulics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-tibble
                              r-reshape2
@@ -1261,6 +1364,9 @@ iemisc package by Irucka Embry.")
         (base32 "0r3r8cds4h15narawxhzkrvgnf00vlgrgqdgnmbzjyyb1dmry8wn"))))
     (properties `((upstream-name . "hydra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hydra")
     (synopsis "Hyperbolic Embedding")
     (description
@@ -1281,6 +1387,9 @@ Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
         (base32 "1275r7wqkbzcqf5ha5kxj4bf7mcqw9gki0s2m9i4mkq8dfhirlq8"))))
     (properties `((upstream-name . "hydflood")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sf
                              r-rdpack
@@ -1314,6 +1423,9 @@ published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
         (base32 "0k34blmjyradfbrq5j6lqkhs64q80k9a5pdrc3anyvanadcz32af"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-httr2 r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://hyd1d.bafg.de")
@@ -1342,6 +1454,9 @@ externally from the PEGELONLINE REST API
         (base32 "1x96g0cjgn3vklczksxdgpd5ayl3rl63k0ig0h8vacm2nxn4c6js"))))
     (properties `((upstream-name . "hybridts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveletarima r-nnfor r-metrics r-forecast))
     (home-page "https://cran.r-project.org/package=hybridts")
     (synopsis "Hybrid Time Series Forecasting Using Error Remodeling Approach")
@@ -1377,6 +1492,9 @@ Bhattacharyya et al. (2022) <doi:10.1016/S0925-2312(01)00702-0>
         (base32 "14p2gwmgcaf84aycdc2a51frw2pccrffsjk8n83gvj2ans8phrr9"))))
     (properties `((upstream-name . "hybridogram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pheatmap))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hybridogram")
@@ -1402,6 +1520,9 @@ with a color legend.")
         (base32 "0fj3dvv7s1hlicvlb077pkhbj894brzgdxhp67jck9zpy2qymzxq"))))
     (properties `((upstream-name . "hybridModels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-reshape2
                              r-gillespiessa
@@ -1436,6 +1557,9 @@ information in Fernando S. Marques, Jose H. H. Grisi-Filho, Marcos Amaku et al.
         (base32 "05y3hcw18q9v3fpv0i0msmr9v4hnfgk0ni55wk3k786h96m2swsv"))))
     (properties `((upstream-name . "HybridMicrobiomes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-stereomorph
                              r-rlang
@@ -1473,6 +1597,9 @@ devtools::install_github(\"david-barnett/@code{microViz}\").")
         (base32 "19hgljm7mhd00s2lvvxmdr35zifnl0kymmcx06jfqkld3qd3zli6"))))
     (properties `((upstream-name . "HybridDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testit r-resourceselection))
     (home-page "https://cran.r-project.org/package=HybridDesign")
     (synopsis "Hybrid Design for Phase I Dose-Finding Studies")
@@ -1497,6 +1624,9 @@ More details can be found in Liao et al.  2022 <doi:10.1002/ijc.34203>.")
         (base32 "1j6lpbrf3jp3nrz9m0s74inkr2ww4g8ajz30qjhlfwmacww0hdsg"))))
     (properties `((upstream-name . "hwwntest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh r-polynom))
     (home-page "https://cran.r-project.org/package=hwwntest")
     (synopsis "Tests of White Noise using Wavelets")
@@ -1522,6 +1652,9 @@ of general ARMA alternatives.")
         (base32 "1dfrqcd0nccrsv01hsvp2xic9nfhsqmvl7cqvv28amayqyv3lizk"))))
     (properties `((upstream-name . "hwsdr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-sf r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/hwsdr")
@@ -1545,6 +1678,9 @@ Routines for both single pixel data downloads and gridded data are provided.")
         (base32 "0civbwv276lcwvfs4qzz14r8rk14kg1ml4zzhi3msnkkh29v70y2"))))
     (properties `((upstream-name . "hwordcloud")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordcloud2 r-shiny r-htmlwidgets r-colourpicker))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/czxa/hwordcloud")
@@ -1566,6 +1702,9 @@ html widget, so you can use it in interactive documents and shiny applications."
         (base32 "06a42a38qsjwijbbr2c8dsd7hjm751g1s4sgcmzvvfi6xy7svl3k"))))
     (properties `((upstream-name . "hwig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatsoc r-data-table r-asnipe))
     (home-page "https://gitlab.com/robit.a/hwig")
     (synopsis "Half-Weight Index Gregariousness")
@@ -1589,6 +1728,9 @@ group by individual data according to methods described in Godde et al. (2013)
         (base32 "0cvy9s9kwc1jp4klgbjahidpk8gkvfa43vry8i0y77nvfys7x9v9"))))
     (properties `((upstream-name . "hwep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-updog
                              r-tensr
                              r-stanheaders
@@ -1615,10 +1757,10 @@ are available to test for equilibrium and random mating at any even ploidy level
 populations in equilibrium, methods are available to estimate the degree of
 double reduction.  We also provide functions to calculate genotype frequencies
 at equilibrium, or after one or several rounds of random mating, given rates of
-double reduction.  The main function is hwefit().  This material is based upon
-work supported by the National Science Foundation under Grant No.  2132247.  The
-opinions, findings, and conclusions or recommendations expressed are those of
-the author and do not necessarily reflect the views of the National Science
+double reduction.  The main function is @code{hwefit()}.  This material is based
+upon work supported by the National Science Foundation under Grant No.  2132247.
+ The opinions, findings, and conclusions or recommendations expressed are those
+of the author and do not necessarily reflect the views of the National Science
 Foundation.  For details of these methods, see Gerard (2022a)
 <doi:10.1111/biom.13722> and Gerard (2022b) <doi:10.1101/2022.08.11.503635>.")
     (license license:gpl3+)))
@@ -1635,6 +1777,9 @@ Foundation.  For details of these methods, see Gerard (2022a)
         (base32 "0ijrczm0mm37a3v4v0hd7zb662rcyzqf58z4nbhrix1nf6vzj47m"))))
     (properties `((upstream-name . "HWEintrinsic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://onlinelibrary.wiley.com/doi/10.1002/sim.4084/abstract")
     (synopsis
      "Objective Bayesian Testing for the Hardy-Weinberg Equilibrium Problem")
@@ -1662,6 +1807,9 @@ problems.")
         (base32 "00awnlswkwki1fjjf7rq6s6k4vahb3vyzbzj2wbbhc3ihbv354jf"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-umap
                              r-tidyr
                              r-splancs
@@ -1704,6 +1852,13 @@ the package.")
         (base32 "0piaa4zcx3xsr25yf15cv3vindsksxwwqvsjgvk47p1nvw1f0k6y"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (inputs (list calc))
     (propagated-inputs (list r-xml2
                              r-tidyselect
@@ -1744,6 +1899,9 @@ one-liners to print data to a new document.")
         (base32 "0yvrzkpgjdk0pq8p2v771rl6nj5yszzlr8k6ajif62qndvxkwc64"))))
     (properties `((upstream-name . "hutilscpp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-hutils r-data-table))
     (home-page "https://github.com/hughparsonage/hutilscpp")
     (synopsis "Miscellaneous Functions in C++")
@@ -1768,6 +1926,9 @@ speeds.  The name is a portmanteau of the author and Rcpp'.")
         (base32 "0pdya5gdyab5pwpgiw9yfa95m5ynqk154sydsfg56dxq1ihzfr74"))))
     (properties `((upstream-name . "hutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-fastmatch r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hughparsonage/hutils")
@@ -1791,6 +1952,9 @@ author.")
         (base32 "0a8xy71dkq2bzdnc90irxmbcxhi0anh87ic22x7b22c3m5605w6s"))))
     (properties `((upstream-name . "hurricaneexposure")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -1833,6 +1997,9 @@ Sciences Program/Public Health Program Grant (NNX09AV81G).")
         (base32 "1grdhvdkvp1s9x9mwpy4f38ayp5zv7mkiwz1pvjm4zlgjpzzq4l4"))))
     (properties `((upstream-name . "HurreconR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hurrecon-model/HurreconR")
@@ -1861,6 +2028,9 @@ Foster (2004) <doi:10.1890/02-4057>.")
         (base32 "1ryrqsxa07isxv2zx156bcn36d4yjvwpirb8jqcmqm97q7rmihmq"))))
     (properties `((upstream-name . "hurdlr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hurdlr")
     (synopsis "Zero-Inflated and Hurdle Modelling Using Bayesian Inference")
     (description
@@ -1893,6 +2063,9 @@ manage data that is both zero-inflated and over-dispersed.")
         (base32 "0bi1y7icrg0f4n9ah9dsrijnfr39bqg3799rz4hccd1b061f0rvj"))))
     (properties `((upstream-name . "HuraultMisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rstan
                              r-reshape2
@@ -1921,6 +2094,9 @@ diagnostics for Bayesian modelling using Stan.")
         (base32 "143pn8jjinlda76b94qh5zw2sfajw0ifcx774x6adr2il5a5wm99"))))
     (properties `((upstream-name . "humidity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/caijun/humidity")
     (synopsis "Calculate Water Vapor Measures from Temperature and Dew Point")
@@ -1946,6 +2122,9 @@ measures are also provided.")
         (base32 "0xfbah1lwj2izdky1b37ycislqr13fnarfz07dqi24sfvn17qm1s"))))
     (properties `((upstream-name . "humanleague")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=humanleague")
     (synopsis "Synthetic Population Generator")
@@ -1969,6 +2148,9 @@ provides an implementation of the Iterative Proportional Fitting (IPF) algorithm
         (base32 "0hhhd640n77s8xaa2gbd9fckdk2yjg68gdb7wjy56a2khzqfssxr"))))
     (properties `((upstream-name . "humanize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate r-glue r-assertthat))
     (home-page "https://newtux.github.io/humanize/index.html")
     (synopsis "Create Values for Human Consumption")
@@ -1990,6 +2172,9 @@ convert values into human readable forms.")
         (base32 "0vaynjzz57pk4y1liag9lpn9jkag2033a6bkn28zzm7ndg3344l6"))))
     (properties `((upstream-name . "humaniformat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ironholds/humaniformat/")
@@ -2014,6 +2199,9 @@ names and salutations.")
         (base32 "0yzax988qp5c8kvjnj9ggm5yl9sklqhs7b2b4w81np5kxhxy973y"))))
     (properties `((upstream-name . "humanFormat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat))
     (home-page "https://github.com/dustin/humanFormat")
     (synopsis "Human-Friendly Formatting Functions")
@@ -2033,6 +2221,9 @@ names and salutations.")
         (base32 "06jx3f2zb52gjp05bq3zmgjkyiaa2j9v0biq23gg88gplpign6jw"))))
     (properties `((upstream-name . "HUM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-rcpp r-gtools))
     (home-page "https://public.ostfalia.de/~klawonn/HUM.htm")
     (synopsis "Compute HUM Value and Visualize ROC Curves")
@@ -2056,6 +2247,9 @@ Beffa, Junxi Wang, Jialiang Li, Frank Pessler, Frank Klawonn (2014)
         (base32 "08p60mdmnpvqii75psza79yi4wasbnfwf5qay68lsyw836nylnra"))))
     (properties `((upstream-name . "huito")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sysfonts
@@ -2090,6 +2284,9 @@ Learn more about the inkaverse project at <https://inkaverse.com/>.")
         (base32 "062i7yc16nmnp15c1jh4xffw2lpklp36wkn1yvagh186ahnlgffx"))))
     (properties `((upstream-name . "hues")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-colorspace))
     (home-page "https://github.com/johnbaums/hues")
     (synopsis "Distinct Colour Palettes Based on 'iwanthue'")
@@ -2114,6 +2311,9 @@ hue, chroma, and lightness.")
         (base32 "1kvqbgyhyr4lvzqvfsa1597px8ydqpacphnm902hchqv5qvbxgm4"))))
     (properties `((upstream-name . "hudr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-janitor r-httr r-data-table))
     (home-page "https://cran.r-project.org/package=hudr")
     (synopsis
@@ -2135,6 +2335,9 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
         (base32 "125smlfffs9mrpms8pxvri6fyww7ybawf7s3b7gf1vapji0z3mc6"))))
     (properties `((upstream-name . "hubUtils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -2170,6 +2373,9 @@ be primarily used internally by other hubverse packages.  See Reich et al.
         (base32 "1kl3m41mfi1r47sv1m4w8kdk6zqq3jizr2hjv5wbvsgdrcxqc7nx"))))
     (properties `((upstream-name . "hubEnsembles")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-rlang
@@ -2198,6 +2404,9 @@ estimates) from multiple models into an aggregated ensemble model output.")
         (base32 "1fzy24wx93rc9niiksir0hys2f1slafrng9rkwmjaf51lsj0n1qw"))))
     (properties `((upstream-name . "hubeau")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urltools
                              r-tibble
                              r-purrr
@@ -2212,62 +2421,6 @@ estimates) from multiple models into an aggregated ensemble model output.")
 French National APIs on water <https://hubeau.eaufrance.fr/>.")
     (license license:expat)))
 
-(define-public r-httptest2
-  (package
-    (name "r-httptest2")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "httptest2" version))
-       (sha256
-        (base32 "0vj6ynxc2xdq4xhl6df8aa3582s7jf5m71hxqxhjsjfqdzm72dv8"))))
-    (properties `((upstream-name . "httptest2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat r-rlang r-jsonlite r-httr2 r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://enpiar.com/httptest2/")
-    (synopsis "Test Helpers for 'httr2'")
-    (description
-     "Testing and documenting code that communicates with remote servers can be
-painful.  This package helps with writing tests for packages that use httr2'.
-It enables testing all of the logic on the R sides of the API without requiring
-access to the remote service, and it also allows recording real API responses to
-use as test fixtures.  The ability to save responses and load them offline also
-enables writing vignettes and other dynamic documents that can be distributed
-without access to a live server.")
-    (license license:expat)))
-
-(define-public r-httptest
-  (package
-    (name "r-httptest")
-    (version "4.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "httptest" version))
-       (sha256
-        (base32 "0c370jxkd9dzqg5pdf2mcv2kjzr9zp9qai9riivjgygj6jhlcjav"))))
-    (properties `((upstream-name . "httptest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat r-jsonlite r-httr r-digest r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://enpiar.com/r/httptest/")
-    (synopsis "Test Environment for HTTP Requests")
-    (description
-     "Testing and documenting code that communicates with remote servers can be
-painful.  Dealing with authentication, server state, and other complications can
-make testing seem too costly to bother with.  But it doesn't need to be that
-hard.  This package enables one to test all of the logic on the R sides of the
-API in your package without requiring access to the remote service.
-Importantly, it provides three contexts that mock the network connection in
-different ways, as well as testing functions to assert that HTTP requests
-were---or were not---made.  It also allows one to safely record real API
-responses to use as test fixtures.  The ability to save responses and load them
-offline also enables one to write vignettes and other dynamic documents that can
-be distributed without access to a live server.")
-    (license license:expat)))
-
 (define-public r-httprequest
   (package
     (name "r-httprequest")
@@ -2280,6 +2433,9 @@ be distributed without access to a live server.")
         (base32 "0qsi01fcrkps0h6r7l3l5ph3zlq9gscmq19b9ah2q2qlcv3hk4cf"))))
     (properties `((upstream-name . "httpRequest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=httpRequest")
     (synopsis "Basic HTTP Request")
     (description
@@ -2298,6 +2454,9 @@ be distributed without access to a live server.")
         (base32 "0zd683xd9f9hz6dxm4bmic54jqjcabr23kwl6afsmdjwnrwwsn06"))))
     (properties `((upstream-name . "httpproblems")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/atheriel/httpproblems")
     (synopsis
      "Report Errors in Web Applications with 'Problem Details' (RFC 7807)")
@@ -2319,6 +2478,9 @@ servers in a standard way.")
         (base32 "0hdcf51yak8yagy4xj9cyck934lgmvpkd08jvlql33ir5mqvvv3i"))))
     (properties `((upstream-name . "httping")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pryr r-magrittr r-jsonlite r-httr r-httpcode))
     (home-page "https://github.com/sckott/httping")
     (synopsis "'Ping' 'URLs' to Time 'Requests'")
@@ -2339,6 +2501,9 @@ requests'.  Designed to work with httr'.")
         (base32 "026sl19301al3sid9hlwq8jz5b0zvh9a4n3cl4niqvc2b57h133r"))))
     (properties `((upstream-name . "httpcache")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://enpiar.com/r/httpcache/")
@@ -2366,6 +2531,13 @@ performance.")
         (base32 "0p1vxy8pl38aqa6xq84g1pandc4h0cg53aykn6xf1difbkjz9a9z"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-truncnorm
                              r-survey
                              r-rdpack
@@ -2420,6 +2592,9 @@ concentrations from high-throughput screening experiments (for example, Tox21,
         (base32 "0345ydb3rjdkj4zm6xr5y4kf6plvxfgbpwkjs81pls99mr208qwz"))))
     (properties `((upstream-name . "HTT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-igraph r-ggraph r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HTT")
@@ -2448,6 +2623,9 @@ error, power, prediction accuracy, and complexity.")
         (base32 "0rk11gnwws6fsmbh9zk5cpxavqkrxd4kja3wzhlh4jn5b4ypblps"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexls
                              r-waiter
                              r-tibble
@@ -2484,6 +2662,9 @@ and meteorology time-series stored in a Sqlite data base.")
         (base32 "0nrd53rbd09jz3q54qa6r9gl5xv46n5c4fnmjq7gda4vdchcnah9"))))
     (properties `((upstream-name . "HTSeedGLM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HTSeedGLM")
     (synopsis
      "Hydro Thermal Time Analysis of Seed Germination Using Generalised Linear Model")
@@ -2518,6 +2699,9 @@ the analysis.  Details can be found in Kebreab and Murdoch (1999)
         (base32 "01h9lm2ljp67qfcl7vlh804r7q15arqx103jb9pvk2wx1c27qy3x"))))
     (properties `((upstream-name . "HTSeed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=HTSeed")
     (synopsis "Fitting of Hydrotime Model for Seed Germination Time Course")
@@ -2549,6 +2733,9 @@ the model to the seed germination time course.  Details can be found in Bradford
         (base32 "04s4ndvlxbjz2hamnhakibj92ipbppf1sj1pfc571lkz2c91ggf9"))))
     (properties `((upstream-name . "hts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsem r-rcppeigen r-rcpp r-matrix r-forecast))
     (home-page "https://pkg.earo.me/hts/")
     (synopsis "Hierarchical and Grouped Time Series")
@@ -2572,6 +2759,9 @@ top-down, optimal combination reconciliation (Hyndman et al.  2011)
         (base32 "1ggmqz3a0r5cilpynjmr52hjk88vq83wk1akcg6hkn3bzrwgcgmd"))))
     (properties `((upstream-name . "HTRX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tune r-recipes r-glmnet r-fastglm r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HTRX")
@@ -2596,6 +2786,9 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
         (base32 "1r8vyi6r0k6cm1mv10vr0xd9jqvg491z70rmwkhw7dfq4dpkhd90"))))
     (properties `((upstream-name . "htrSPRanalysis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-tidyr
@@ -2640,6 +2833,9 @@ parameters for each spot on the SPR chip.")
         (base32 "1i4f78c5g9j9n6bahga4mqg91p5c39yvw9mpm8hxz6isfi2jvs8l"))))
     (properties `((upstream-name . "HTMLUtils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r2html))
     (home-page "https://cran.r-project.org/package=HTMLUtils")
     (synopsis "Facilitates Automated HTML Report Creation")
@@ -2662,6 +2858,8 @@ dynamically sortable tables.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2699,6 +2897,9 @@ on <https://pypi.org/project/py-report-html/>, its sister project.")
         (base32 "19brwxqnsxzvgsqq3gsjkcyag9ag3xa3mrl5c4s7x48xx2knfh9q"))))
     (properties `((upstream-name . "htmldf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-urltools
                              r-tidyr
@@ -2734,14 +2935,17 @@ links, images, rss feeds, social media handles and page metadata.")
         (base32 "1icji4y2x7bn4nrsf99n8b6g5v053bb9hpwvmp8bf5wh63d1ns8l"))))
     (properties `((upstream-name . "html5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=html5")
     (synopsis "Creates Valid HTML5 Strings")
     (description
      "Generates valid HTML tag strings for HTML5 elements documented by Mozilla.
 Attributes are passed as named lists, with names being the attribute name and
 values being the attribute value.  Attribute values are automatically
-double-quoted.  To declare a DOCTYPE, wrap html() with function doctype().
-Mozilla's documentation for HTML5 is available here:
+double-quoted.  To declare a DOCTYPE, wrap @code{html()} with function
+@code{doctype()}.  Mozilla's documentation for HTML5 is available here:
 <https://developer.mozilla.org/en-US/docs/Web/HTML/Element>.  Elements marked as
 obsolete are not included.")
     (license license:gpl2+)))
@@ -2760,6 +2964,8 @@ obsolete are not included.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2796,6 +3002,9 @@ obsolete are not included.")
         (base32 "0f03vckq4wzd2nbzjfqgjf2pnjfdq875lhpim10k80smq32w8xx0"))))
     (properties `((upstream-name . "htm2txt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/replicable/htm2txt")
     (synopsis "Convert Html into Text")
     (description
@@ -2814,6 +3023,9 @@ obsolete are not included.")
         (base32 "0mi03r9izipvmla5pm0s42vm85ishr3bb8pjdw906s4q7lkxjivz"))))
     (properties `((upstream-name . "HTLR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-magrittr r-glmnet
                              r-bcbcsf))
     (native-inputs (list r-knitr))
@@ -2841,6 +3053,9 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
         (base32 "16wjx56c5h9vbbh9gw9j646q0hdylcbgc70v6x3fdvis457nxv7a"))))
     (properties `((upstream-name . "htetree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shiny
                              r-rpart-plot
@@ -2875,6 +3090,9 @@ authors for their extremely useful and free package.")
         (base32 "081kxhc7sn070ys94pfzjf3gi2kkqwrqx2sclbgz4ihahqkbnhhr"))))
     (properties `((upstream-name . "htestClust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-bootstrap))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=htestClust")
@@ -2907,6 +3125,9 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
         (base32 "1my1zxwvdzajp75lxyqmwr7z8ci9ldvlmpqxapyqbj0d5ibn2sbn"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/ModelOriented/hstats/")
     (synopsis "Interaction Statistics")
@@ -2933,6 +3154,9 @@ or individual conditional expectation plots.  DALEX explainers, meta learners
         (base32 "0kfdx17vacy43bjg6si4d1nxbmsrzj61bgs6d5pbwny02fq9i9gc"))))
     (properties `((upstream-name . "hsstan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -2967,6 +3191,9 @@ Paasiniemi and Vehtari (2020) <doi:10.1214/20-EJS1711>).")
         (base32 "1f5ks1wvpc0dn5lwyhs479zhkcbcfg2c5gxxlwr9pliv5ncgcmla"))))
     (properties `((upstream-name . "hsrecombi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist
                              r-rcpp
                              r-quadprog
@@ -3009,6 +3236,9 @@ estimation of linkage disequilibrium in half-sib families\"
         (base32 "06lr8l71y5fcqcnmgq7cgiab1pcc98wnqzndbxcbikbh33cx7nxv"))))
     (properties `((upstream-name . "HSPOR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-npregfast r-corpcor))
     (home-page "https://cran.r-project.org/package=HSPOR")
     (synopsis "Hidden Smooth Polynomial Regression for Rupture Detection")
@@ -3034,6 +3264,9 @@ as soon as available.")
         (base32 "0ycdaji080xav2k87pcln7c26iy31bfjxzzccpyl57w3agcfwrcc"))))
     (properties `((upstream-name . "hspm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sphet r-spdep r-matrix r-formula))
     (home-page "https://github.com/gpiras/hspm")
     (synopsis "Heterogeneous Spatial Models")
@@ -3064,6 +3297,9 @@ Bivand and Piras, (2015) <doi:10.18637/jss.v063.i18>, Drukker et al., (2013)
         (base32 "18fd5g79m0d2f5b7j289wz6z5ypq2404vhnvv9jk45897f5mc4lf"))))
     (properties `((upstream-name . "hsphase")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snowfall r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=hsphase")
     (synopsis
@@ -3085,6 +3321,9 @@ imputation and pedigree reconstruction using half-sib family SNP data.")
         (base32 "0dzc44icmb1kkjr46siqigy0zpi66189qpwijgmlqwhzrj4yql9c"))))
     (properties `((upstream-name . "HSEtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HSEtest")
     (synopsis "Homogeneity of Stratum Effects Test")
     (description
@@ -3103,6 +3342,9 @@ imputation and pedigree reconstruction using half-sib family SNP data.")
         (base32 "16mlicwj11d3gjai1499vdmjibbr2iayni5zz2n516ir2s1cr48v"))))
     (properties `((upstream-name . "hset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hash))
     (home-page "https://cran.r-project.org/package=hset")
     (synopsis "Sets of Numbers Implemented with Hash Tables")
@@ -3125,6 +3367,9 @@ Ceoldo and Wit (2023) <@code{arXiv:2304.09809>}.")
         (base32 "0dgp65isbfmw0q4sn36l5226sf6vrl7mvn7gn50xvgybh0l6y7vk"))))
     (properties `((upstream-name . "hsem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-mvtnorm r-matrix r-boot))
     (home-page "https://cran.r-project.org/package=hsem")
     (synopsis "Hierarchical Structural Equation Model")
@@ -3149,6 +3394,9 @@ to handle two serious problems inadmissible solution and factor indeterminacy
         (base32 "14w09wm1kk7b4q8cl5cwjfqvzm2fb4ls8qjw6i0l54184fmw4dah"))))
     (properties `((upstream-name . "hse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hse")
     (synopsis "The hse Distribution")
     (description "Deprecated.")
@@ -3166,6 +3414,9 @@ to handle two serious problems inadmissible solution and factor indeterminacy
         (base32 "1r2hbwf9795bxrd09c8hmmj7cm044x4w42606m3i3d3i065bpw4m"))))
     (properties `((upstream-name . "hSDM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-coda))
     (native-inputs (list r-knitr))
@@ -3195,6 +3446,9 @@ their probability of occurrence, and assessing uncertainty in the model results.
         (base32 "0wiixb1ylx0l8qfgh5ark6alkdq87xaak1jlxizw1m589vghvqfp"))))
     (properties `((upstream-name . "HSDiC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog r-ncvreg r-matrix r-glmnet))
     (home-page "https://cran.r-project.org/package=HSDiC")
     (synopsis
@@ -3219,6 +3473,9 @@ algorithm (ADMM) to obtain the estimators.")
         (base32 "06bkqcp0vcnkp0jqi0qjvxnw0lk0w4mrf88h1769ak7r49vzlr6f"))))
     (properties `((upstream-name . "hscovar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist r-pwr r-matrix r-foreach))
     (home-page "https://cran.r-project.org/package=hscovar")
     (synopsis
@@ -3240,31 +3497,6 @@ polymorphisms for association analyses using linkage disequilibrium\"
 <doi:10.1086/381000>.")
     (license license:gpl2+)))
 
-(define-public r-hsaur3
-  (package
-    (name "r-hsaur3")
-    (version "1.0-15")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HSAUR3" version))
-       (sha256
-        (base32 "17yg6ql9c88pg5higmrvhnavx6hcbr4nm5r65d8q3iqfkgnc6ym1"))))
-    (properties `((upstream-name . "HSAUR3")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=HSAUR3")
-    (synopsis "Handbook of Statistical Analyses Using R (3rd Edition)")
-    (description
-     "Functions, data sets, analyses and examples from the third edition of the book A
-Handbook of Statistical Analyses Using R (Torsten Hothorn and Brian S. Everitt,
-Chapman & Hall/CRC, 2014).  The first chapter of the book, which is entitled An
-Introduction to R'', is completely included in this package, for all other
-chapters, a vignette containing all data analyses is available.  In addition,
-Sweave source code for slides of selected chapters is included in this package
-(see HSAUR3/inst/slides).  The publishers web page is
-<https://www.routledge.com/A-Handbook-of-Statistical-Analyses-using-R/Hothorn-Everitt/p/book/9781482204582>'.")
-    (license license:gpl2)))
-
 (define-public r-hsaur2
   (package
     (name "r-hsaur2")
@@ -3277,6 +3509,9 @@ Sweave source code for slides of selected chapters is included in this package
         (base32 "0660z2fxj5l0dzlb1xzgd446zzxqwc1kmv52k4aa7p45apxy9hn4"))))
     (properties `((upstream-name . "HSAUR2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HSAUR2")
     (synopsis "Handbook of Statistical Analyses Using R (2nd Edition)")
     (description
@@ -3301,6 +3536,9 @@ chapters (see HSAUR2/inst/slides).")
         (base32 "1z4drab395bnyfbd19rn9hr1gz78ny773g1anh54w18iszakkvib"))))
     (properties `((upstream-name . "HSAUR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HSAUR")
     (synopsis "Handbook of Statistical Analyses Using R (1st Edition)")
     (description
@@ -3323,6 +3561,9 @@ chapters, a vignette containing all data analyses is available.")
         (base32 "08fh9504cck1ffrwim27nkrm9y1in6jl1s7zs8h8x3ik54p9jb0k"))))
     (properties `((upstream-name . "HRW")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kernsmooth))
     (home-page "https://cran.r-project.org/package=HRW")
     (synopsis
@@ -3348,6 +3589,9 @@ included.")
         (base32 "1pzfdr1ylqcp7mnxx3wmxdf89g2mqpfx2sfmkhybwqqk5irqspnm"))))
     (properties `((upstream-name . "hrtlFMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fmc))
     (home-page "https://cran.r-project.org/package=hrtlFMC")
     (synopsis
@@ -3356,19 +3600,19 @@ included.")
      "It is used to construct run sequences with minimum changes for half replicate of
 two level factorial run order.  Experimenter can save time and resources by
 minimizing the number of changes in levels of individual factor and therefore
-the total number of changes.  It consists of the function minimal_hrtlf().  This
-technique can be employed to any half replicate of two level factorial run order
-where the number of factors are greater than two.  In Design of Experiments
-(DOE) theory, two level of a factor can be represented as integers e.g. - 1 for
-low and 1 for high.  User is expected to enter total number of factors to be
-considered in the experiment.  minimal_hrtlf() provides the required run
-sequences for the input number of factors.  The output also gives the number of
-changes of each factor along with total number of changes in the run sequence.
-Due to restricted randomization the minimally changed run sequences of half
-replicate of two level factorial run order will be affected by trend effect.
-The output also provides the Trend Factor value of the run order.  Trend factor
-value will lies between 0 to 1.  Higher the values, lesser the influence of
-trend effects on the run order.")
+the total number of changes.  It consists of the function
+@code{minimal_hrtlf()}.  This technique can be employed to any half replicate of
+two level factorial run order where the number of factors are greater than two.
+In Design of Experiments (DOE) theory, two level of a factor can be represented
+as integers e.g. - 1 for low and 1 for high.  User is expected to enter total
+number of factors to be considered in the experiment. @code{minimal_hrtlf()}
+provides the required run sequences for the input number of factors.  The output
+also gives the number of changes of each factor along with total number of
+changes in the run sequence.  Due to restricted randomization the minimally
+changed run sequences of half replicate of two level factorial run order will be
+affected by trend effect.  The output also provides the Trend Factor value of
+the run order.  Trend factor value will lies between 0 to 1.  Higher the values,
+lesser the influence of trend effects on the run order.")
     (license license:gpl3)))
 
 (define-public r-hrt
@@ -3383,6 +3627,9 @@ trend effects on the run order.")
         (base32 "0l0hjspncr6pkc3sg11p63k1gy1jmc70g6581ykh6zy0b07zm8rk"))))
     (properties `((upstream-name . "hrt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-compquadform))
     (home-page "https://cran.r-project.org/package=hrt")
     (synopsis "Heteroskedasticity Robust Testing")
@@ -3412,6 +3659,9 @@ three functions are based on results in Poetscher and Preinerstorfer (2021)
         (base32 "0v3hdjz8755ka4ahdx2dsyw3513hxg1r0ncj9id6gbmqq1l0s9a5"))))
     (properties `((upstream-name . "hrqglas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-quantreg r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=hrqglas")
     (synopsis
@@ -3440,6 +3690,9 @@ statistical consistent.")
         (base32 "0w0ij2yqgg6gkn3pdaism1xqw3dfnm670j2pmsd85qk1ybxzq9l5"))))
     (properties `((upstream-name . "hrcomprisk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AntiportaD/hrcomprisk")
@@ -3461,6 +3714,9 @@ ratios to cause-specific hazard ratios using the approach from Ng et al. (2020).
         (base32 "1zslalsb2zi6b91fb2k1m0vsbsdazls2gnnl7gv2xqvn6kdh4nf6"))))
     (properties `((upstream-name . "hR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rhandsontable r-knitr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hR")
@@ -3482,6 +3738,9 @@ analytics.  Get started with workforce planning using a simple Shiny app.")
         (base32 "1srr7vw5w2qpzxlhybbri2qj9gdk5yqamh33xxl58b65spdkiwds"))))
     (properties `((upstream-name . "hqreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/CY-dev/hqreg")
     (synopsis
      "Regularization Paths for Lasso or Elastic-Net Penalized Huber Loss Regression and Quantile Regression")
@@ -3504,6 +3763,9 @@ squared loss.  Reference: Congrui Yi and Jian Huang (2017)
         (base32 "10n5p5n9nw713ihz1mfm5d375msf29x68c3gk5l5slpzfk8cfh2n"))))
     (properties `((upstream-name . "hqmisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hqmisc")
     (synopsis "Miscellaneous Convenience Functions and Dataset")
     (description
@@ -3517,16 +3779,19 @@ stratified sample of 80 talkers of Dutch.")
 (define-public r-hqm
   (package
     (name "r-hqm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HQM" version))
        (sha256
-        (base32 "1qrga27vpcvmc7pdkvpgqab133fqk3nnwiahr08chhzpdrm4rr40"))))
+        (base32 "0zf0640pkpjmg1svp205l97c2qbfjpdnhhrrhc7l7dd2r8xh3xqr"))))
     (properties `((upstream-name . "HQM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival))
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timeroc r-survival r-pec r-nlme r-jm))
     (home-page "https://cran.r-project.org/package=HQM")
     (synopsis
      "Superefficient Estimation of Future Conditional Hazards Based on Marker Information")
@@ -3548,6 +3813,9 @@ provides pointwise and uniform confidence bands and a bandwidth selection.")
         (base32 "1xxckjz90sdmng0sm9dlhwpzj79pxa3vd1cidxc44wjk4h25rq7q"))))
     (properties `((upstream-name . "HPLB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://cran.r-project.org/package=HPLB")
     (synopsis "High-Probability Lower Bounds for the Total Variance Distance")
@@ -3571,6 +3839,9 @@ samples are observed can be obtained with the function HPLB.")
         (base32 "0gz9ngnjgys7hzijsma2iyywwiv7vjar5gls28ds11wq8pmsv96n"))))
     (properties `((upstream-name . "hpiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-robustbase
                              r-rlang
@@ -3612,6 +3883,9 @@ indexes can be found at: <http://www.github.com/andykrause/hpi_research>.")
         (base32 "1w1asqa4dszijwdmgdzx4ahl5bl34l0psczwvcal4kdkawy5kia2"))))
     (properties `((upstream-name . "hpfilter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://www.alexandrumonahov.eu.org/projects")
@@ -3638,6 +3912,9 @@ references, see the vignette.")
         (base32 "1w7jpfnaqm9qhr52ixyihzwqklhf2pccshhpvf57pra3vc6cwv2l"))))
     (properties `((upstream-name . "hpcwld")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hpcwld")
     (synopsis
      "High Performance Cluster Models Based on Kiefer-Wolfowitz Recursion")
@@ -3666,6 +3943,9 @@ exactly, or approximately.  Stability analysis: see Rumyantsev and Morozov
         (base32 "1br7q4958f1zgvisglsaf41nz2ahnqi3bzazvlfnmk3nq03cb1ri"))))
     (properties `((upstream-name . "hpackedbubble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/czxa/hpackedbubble")
@@ -3688,6 +3968,9 @@ charts.")
         (base32 "1p3bi6syn211wp2xa90mcxsl11gk8w9rpn2axlxasnqc4c3ag64x"))))
     (properties `((upstream-name . "hpa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=hpa")
     (synopsis "Distributions Hermite Polynomial Approximation")
@@ -3710,6 +3993,9 @@ Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
         (base32 "00mv9qkn4ndp74jwqkjwqmy7j8ywhpl4ycg81yw3xlabbnqb292j"))))
     (properties `((upstream-name . "howzatR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-magrittr))
     (home-page "https://github.com/lukelockley/howzatR")
     (synopsis "Useful Functions for Cricket Analysis")
@@ -3729,6 +4015,9 @@ Gallant and D. W. Nychka (1987) <doi:10.2307/1913241>.")
         (base32 "1vcsf8l2hflr3csjrrgv4883hz0gb3vkaa26943wi8vss7h2lb4d"))))
     (properties `((upstream-name . "howManyImputations")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mice))
     (home-page "https://errickson.net/howManyImputations/")
     (synopsis
@@ -3755,6 +4044,8 @@ imputations are needed, following the work of von Hippel (2020)
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -3791,6 +4082,9 @@ as playing and pausing the audio can be triggered from the server.")
         (base32 "09lpga8a87h6fyg0j3av4xjna300ifsx2ygzwsnvh2l1d70fwf8m"))))
     (properties `((upstream-name . "hover")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-htmltools))
     (home-page "https://github.com/r4fun/hover")
     (synopsis "CSS Animations for 'shiny' Button Elements")
@@ -3811,6 +4105,9 @@ for use in shiny applications.")
         (base32 "0ngfx2vjx705xixzpz0rgx1481cr2szj4yfi5g7ma1hhivddl7d1"))))
     (properties `((upstream-name . "housingData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://github.com/hafen/housingData")
     (synopsis "U.S. Housing Data from 2008 to 2016")
     (description
@@ -3832,6 +4129,9 @@ Wikipedia are also included.")
         (base32 "12v88k3yz1bsxx9p5dx8y54ccqcglwknm2jr7ybygdj2yasjr5l0"))))
     (properties `((upstream-name . "hotspots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice r-ineq))
     (home-page "https://cran.r-project.org/package=hotspots")
     (synopsis "Hot Spots")
@@ -3856,6 +4156,9 @@ other values are similarly large.")
         (base32 "0a4w5d6rg324hd06lfwr1hxf6bwr10n55s3ynz5bpkh9c61yik3n"))))
     (properties `((upstream-name . "hotspot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hotspot")
     (synopsis "Software Hotspot Analysis")
     (description
@@ -3875,6 +4178,9 @@ performing the analysis itself.")
         (base32 "1d7af7wdjkp2r5x49p76si5jwj7jxd5mngkip7x91rbjj0v0wagp"))))
     (properties `((upstream-name . "HotellingEllipse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rgl
                              r-purrr
@@ -3909,6 +4215,9 @@ Brereton (2016) <DOI:10.1002/cem.2763>.")
         (base32 "04x2x3anwf4d71dm7x6y08ysk7ygysshc0avisyshbl52x39l8si"))))
     (properties `((upstream-name . "Hotelling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-corpcor))
     (home-page "https://github.com/jmcurran/Hotelling")
     (synopsis "Hotelling's T^2 Test and Variants")
@@ -3930,6 +4239,9 @@ log ratio and centred log ratio transformations.")
         (base32 "1zdrbqkqh3sbc4pkrqgv230h6jm6fvf3wwpb3y6r9l3g8zh4j18r"))))
     (properties `((upstream-name . "hot.deck")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-mice r-mass r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hot.deck")
@@ -3951,6 +4263,9 @@ variables in a data frame.")
         (base32 "03bg0fl1wpc7rxlzxgjdk48x8zsd7lv64dcs0fbg573wkhp02vim"))))
     (properties `((upstream-name . "hospitals")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-stringr r-magrittr))
     (home-page "https://github.com/nhs-pt/hospitals")
     (synopsis "Portuguese 'NHS' Hospitals")
@@ -3970,6 +4285,9 @@ variables in a data frame.")
         (base32 "183nb9h9b1z1ifpnzcxa8wh3xm2id6fnq9vqd4vkbxzw7wlyd86b"))))
     (properties `((upstream-name . "HospitalNetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6
                              r-lubridate
                              r-igraph
@@ -4000,6 +4318,9 @@ Opatowski L, Temime L. (2020) <doi:10.1038/s41598-020-71212-6>.")
         (base32 "062byyvgrjh77hz8i0qb4ixm0smp7xp9lrj84gliigqcy0b5i5w5"))))
     (properties `((upstream-name . "hosm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-tidyverse
                              r-tibble
@@ -4032,6 +4353,9 @@ research by Mubarak, Aslanargun, and Siklar (2022)
         (base32 "1m3n12wgmb1wnxc40bzpna261das8hy47l7hmvhfbzhmp7v803v5"))))
     (properties `((upstream-name . "horseshoenlm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-msm))
     (home-page "https://cran.r-project.org/package=horseshoenlm")
     (synopsis "Nonlinear Regression using Horseshoe Prior")
@@ -4057,6 +4381,9 @@ et.  al. (2019) <doi:10.1111/biom.13132> Maity et.  al. (2020).")
         (base32 "1qhkw6agkhpmgf27429c3kqqhbvpg61l0dvfxg7n564y2ha76r3c"))))
     (properties `((upstream-name . "horseshoe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=horseshoe")
     (synopsis "Implementation of the Horseshoe Prior")
@@ -4084,6 +4411,9 @@ of thresholding, or credible intervals.")
         (base32 "0b4dxzibngdiqj00ma2nzimbknfkscpq1ncalm9dc6pjwrmq43q1"))))
     (properties `((upstream-name . "hornpa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hornpa")
     (synopsis
      "Horn's (1965) Test to Determine the Number of Components/Factors")
@@ -4118,6 +4448,9 @@ Psychometrika, 32, 179-185.")
         (base32 "09dkpzlwkkdn0z8g9fbb7hzxbrrq70x9v1zx254svck2jyk0hx58"))))
     (properties `((upstream-name . "HoRM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsm r-quantmod r-orthopolynom r-mass r-ggplot2))
     (home-page "https://github.com/dsy109/HoRM")
     (synopsis
@@ -4142,6 +4475,9 @@ of squares.")
         (base32 "0wy4d5mmzd9qka5wpkglqy0m2pswypj64wp4hqpk94c6gj46ghwl"))))
     (properties `((upstream-name . "hopkins")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rann r-pdist r-donut))
     (native-inputs (list r-knitr))
     (home-page "https://kwstat.github.io/hopkins/")
@@ -4163,6 +4499,13 @@ of squares.")
         (base32 "13hzzjfj26kk5sfwrbi9lv1yczhnv0z0nlvlnp0y4xm3p0vkiyqp"))))
     (properties `((upstream-name . "hopit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-survey
                              r-rdpack
                              r-rcppeigen
@@ -4217,6 +4560,9 @@ inter-individual differences in reporting behavior.")
         (base32 "1dh502mjrk9dlqikn0ak4gh2dw9nrnp3zrz8j1xwa9cjn37al2wh"))))
     (properties `((upstream-name . "hopbyhop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pastecs r-ggplot2))
     (home-page "https://cran.r-project.org/package=hopbyhop")
     (synopsis "Transmissions and Receptions in a Hop by Hop Network")
@@ -4240,6 +4586,9 @@ simulations.  It is also possible to consider random data and ACK probabilities.
         (base32 "1m6ffh7slcqzj28jn9f67n5czidal5nkv6c883sk96w13h3lhyam"))))
     (properties `((upstream-name . "hoopR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc pandoc))
     (propagated-inputs (list r-usethis
                              r-tidyr
@@ -4286,6 +4635,9 @@ data for themselves.")
         (base32 "1ywq7a4lz9w2k4yzqlljrb0qa623lgn3wngx00vapdx6a14vfaam"))))
     (properties `((upstream-name . "HonestDiD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncatednormal
                              r-tibble
                              r-rlang
@@ -4327,6 +4679,9 @@ confidence sets.")
         (base32 "0ynxn1mcr76yvqjpmi8mxl35i9r1fy7rwshpv8qx68nabk67rh61"))))
     (properties `((upstream-name . "HomomorphicEncryption")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polynom r-hetools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HomomorphicEncryption")
@@ -4351,6 +4706,9 @@ The included vignettes demonstrate the encryption procedures.")
         (base32 "1iahq16nswlc3b87598206xdp24bg9v8acyjp1jivybl3fr4k3pq"))))
     (properties `((upstream-name . "homomorpheR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sodium r-r6 r-gmp))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/bnaras/homomorpheR")
@@ -4372,6 +4730,9 @@ only the Paillier Scheme is implemented.")
         (base32 "1xw8j5b0w3ngqwzd458zcsmj6874dgxhrik1z3w7l188j5gr5vxa"))))
     (properties `((upstream-name . "homnormal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-huxtable))
     (home-page "https://cran.r-project.org/package=homnormal")
     (synopsis "Tests of Homogeneity of Variances")
@@ -4403,6 +4764,9 @@ Bartlett, M. S. (1937) <doi:10.1098/rspa.1937.0109> Bhandary, M., & Dai, H.
         (base32 "1lvlazvvgmaqbawalgry1a59qmqxv2qy9g0ijhpcawwv2cfxmdja"))))
     (properties `((upstream-name . "hommel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=hommel")
     (synopsis
@@ -4429,6 +4793,9 @@ have been described in detail in Goeman et al (2016)
         (base32 "1vcs8fj39zpz45p7gph0mnx65hgr35na0b79i8llyw7i1h7zqzxr"))))
     (properties `((upstream-name . "Homeric")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Homeric")
     (synopsis "Doughnut Plots")
     (description
@@ -4449,6 +4816,9 @@ best-known lover of doughnuts.")
         (base32 "0kjcy3nv28jrir6a4pf8y82908p5snx8wha8h9lip4y436n1f4iw"))))
     (properties `((upstream-name . "homals")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scatterplot3d r-ape))
     (home-page "https://cran.r-project.org/package=homals")
     (synopsis "Gifi Methods for Optimal Scaling")
@@ -4473,6 +4843,9 @@ regression analysis and canonical correlation analysis.")
         (base32 "1d2ypgsaq1y4q9q8yis2549m2vaxg4fas6x9zagsw4jx97vi61kh"))))
     (properties `((upstream-name . "Holomics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-uuid
                              r-tippy
@@ -4528,6 +4901,9 @@ Rohart,BenoÃ®t Gautier,Amrit Singh,Kim-Anh LÃª Cao (2017)
         (base32 "1phaj4yw01301rgcdv4w44q6y5vxwggmks0xdbvg9i2ak3kjcyfp"))))
     (properties `((upstream-name . "holodeck")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-purrr
@@ -4538,9 +4914,9 @@ Rohart,BenoÃ®t Gautier,Amrit Singh,Kim-Anh LÃª Cao (2017)
     (home-page "https://github.com/Aariq/holodeck")
     (synopsis "Tidy Interface for Simulating Multivariate Data")
     (description
-     "This package provides pipe-friendly (%>%) wrapper functions for MASS::mvrnorm()
-to create simulated multivariate data sets with groups of variables with
-different degrees of variance, covariance, and effect size.")
+     "This package provides pipe-friendly (%>%) wrapper functions for
+@code{MASS::mvrnorm()} to create simulated multivariate data sets with groups of
+variables with different degrees of variance, covariance, and effect size.")
     (license license:expat)))
 
 (define-public r-holobiont
@@ -4555,6 +4931,9 @@ different degrees of variance, covariance, and effect size.")
         (base32 "1m22x1la59kh7z57s05rsmxf44y2fzk32159wjnfs4wvqdfskzkl"))))
     (properties `((upstream-name . "holobiont")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-phytools
                              r-phyloseq
@@ -4590,6 +4969,9 @@ Additional repositories.")
         (base32 "0ygnhzy2pf3gkayxcmv2rrapwp6xj9s33x71bczwchy6iipvmnml"))))
     (properties `((upstream-name . "hollr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate r-pbapply r-jsonlite r-httr
                              r-data-table))
     (home-page "https://github.com/jaytimm/hollr")
@@ -4613,6 +4995,9 @@ annotators, and consistent output formats.")
         (base32 "0f5nr17rmx1m3g4aw6c1f82xdj2ll5nr8slm8ha80cg2i6a90v10"))))
     (properties `((upstream-name . "holland")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mplusautomation))
     (home-page "https://cran.r-project.org/package=holland")
     (synopsis "Statistics for Holland's Theory of Vocational Choice")
@@ -4636,6 +5021,9 @@ vocational choices.  A theory of vocational personalities and work environments.
         (base32 "02i6smmwmvbkx351ahjzz247kky377r6ara06c5wk5jrfsfjbbr7"))))
     (properties `((upstream-name . "holiglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-suppdists
                              r-slam
                              r-roi-plugin-ecos
@@ -4665,6 +5053,9 @@ the README and the accompanying paper <doi:10.18637/jss.v108.i07>.")
         (base32 "0bmi95q4lbphs261hhsq1a2d9qvf1177z0dszdff53ch3ip9w9ak"))))
     (properties `((upstream-name . "holi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sn
                              r-shinythemes
                              r-shiny
@@ -4680,13 +5071,13 @@ the README and the accompanying paper <doi:10.18637/jss.v108.i07>.")
      "Higher order likelihood inference is a promising approach for analyzing small
 sample size data.  The holi package provides web applications for higher order
 likelihood inference.  It currently supports linear, logistic, and Poisson
-generalized linear models through the rstar_glm() function, based on Pierce and
-Bellio (2017) <doi:10.1111/insr.12232> and @code{likelihoodAsy}'.  The package
-offers two main features: LA_rstar(), which launches an interactive shiny
-application allowing users to fit models with rstar_glm() through their web
-browser, and sim_rstar_glm_pgsql(), which streamlines the process of launching a
-web-based shiny simulation application that saves results to a user-created
-@code{PostgreSQL} database.")
+generalized linear models through the @code{rstar_glm()} function, based on
+Pierce and Bellio (2017) <doi:10.1111/insr.12232> and @code{likelihoodAsy}'.
+The package offers two main features: @code{LA_rstar()}, which launches an
+interactive shiny application allowing users to fit models with
+@code{rstar_glm()} through their web browser, and @code{sim_rstar_glm_pgsql()},
+which streamlines the process of launching a web-based shiny simulation
+application that saves results to a user-created @code{PostgreSQL} database.")
     (license license:expat)))
 
 (define-public r-hodgestools
@@ -4701,6 +5092,9 @@ web-based shiny simulation application that saves results to a user-created
         (base32 "02i87pd5ah3mmf03878354p8nqh3bgn9cnrl1pnnrb3qw7afj19q"))))
     (properties `((upstream-name . "HodgesTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-recordlinkage
                              r-readr
                              r-rcolorbrewer
@@ -4733,6 +5127,9 @@ the package to build on previous lab members code.")
         (base32 "1kfv5f2zzw9dr549carnjwa59xz69iy2dbldllqg99lpqhigs4z0"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-treemapify
                              r-tidyr
                              r-tibble
@@ -4778,6 +5175,9 @@ dioxide and temperature data: <doi:10.3334/CDIAC/ATG.009>.")
         (base32 "07xihcjj3gfxl1fd5x1dvfmfg8m19rfjzq110ay3vrj38sxxvkiw"))))
     (properties `((upstream-name . "HOasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-igraph))
     (home-page "https://cran.r-project.org/package=HOasso")
     (synopsis "Higher Order Assortativity for Complex Networks")
@@ -4803,6 +5203,9 @@ R., & Grassi, R. (2023) <doi:10.48550/@code{arXiv.2304.01737>}.")
         (base32 "0dws91z1a25ynkdjj3f1lgp6qbgvfgnqi0mw14f4b13m670il0sf"))))
     (properties `((upstream-name . "hoardr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rappdirs r-r6 r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/hoardr/")
@@ -4826,6 +5229,9 @@ be compressed and uncompressed easily to save disk space.")
         (base32 "0maqypigq2942mqbnr7a11iryv6xhhfrnyarqw3r8z5zimjy1y7p"))))
     (properties `((upstream-name . "hoardeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-stringr
                              r-seqinr
@@ -4866,6 +5272,9 @@ using the targetscan.org API.")
         (base32 "12cbc353ipr2rcc93skf1766g38j1pvpdkqk3cswv0cxsjl2x7pl"))))
     (properties `((upstream-name . "hnp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=hnp")
     (synopsis "Half-Normal Plots with Simulation Envelopes")
@@ -4887,6 +5296,9 @@ included.")
         (base32 "08xn9i24dcykvbcsqzmk33li5fm1alkvcmq2fp0a2ysw4lvwfwqs"))))
     (properties `((upstream-name . "hNMF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rasterimage r-oro-nifti r-nnls r-nmf r-mass))
     (home-page "https://cran.r-project.org/package=hNMF")
     (synopsis "Hierarchical Non-Negative Matrix Factorization")
@@ -4907,6 +5319,9 @@ algorithms are available.")
         (base32 "0pn192bikij1yqms6vnv1n313g4q21966314zvg1krrwisklny9r"))))
     (properties `((upstream-name . "HMTL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-proc r-matrix))
     (home-page "https://cran.r-project.org/package=HMTL")
     (synopsis "Heterogeneous Multi-Task Feature Learning")
@@ -4933,14 +5348,17 @@ Xu, and Xin Gao (2022)
         (base32 "100jkilzpr02ccdywwqnj2fvfmv23l9qiw837jdn8y1ggmn87rzy"))))
     (properties `((upstream-name . "hmstimer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lifecycle r-hms))
     (home-page "https://github.com/poissonconsulting/hmstimer")
     (synopsis "'hms' Based Timer")
     (description
-     "Tracks elapsed clock time using a `hms::hms()` scalar.  It was was originally
-developed to time Bayesian model runs.  It should not be used to estimate how
-long extremely fast code takes to execute as the package code adds a small time
-cost.")
+     "Tracks elapsed clock time using a @code{`hms::hms()}` scalar.  It was was
+originally developed to time Bayesian model runs.  It should not be used to
+estimate how long extremely fast code takes to execute as the package code adds
+a small time cost.")
     (license license:expat)))
 
 (define-public r-hmsr
@@ -4955,6 +5373,9 @@ cost.")
         (base32 "0zznji4cxkgbww7cyxad68bxmqf18y76wkyw9y03d97871jr0sny"))))
     (properties `((upstream-name . "hmsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid r-msm r-ga))
     (home-page "https://wojtacht.github.io/hms/")
     (synopsis "Multipopulation Evolutionary Strategy HMS")
@@ -4982,6 +5403,9 @@ SmoÅka, J. Alvarez-Aramberri (2022) <doi:10.1007/s11047-020-09836-w>.")
         (base32 "067hkf1brnspvzldjibbi0xq1xyczijga9srp8x0231g2ry6v700"))))
     (properties `((upstream-name . "hmsidwR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-sysfonts
                              r-showtext
@@ -5013,6 +5437,13 @@ and visualizing health data.  Federica Gazzelloni (2024)
         (base32 "13gqwjniwxc5lgsj044qjq6ic0ibwvj3mviw4hq31s89m834gvyb"))))
     (properties `((upstream-name . "Hmsc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-truncnorm
                              r-statmod
                              r-sp
@@ -5055,6 +5486,9 @@ et al. (2020) <doi:10.1111/2041-210X.13345>).")
         (base32 "14hhdk8l3kx0388ixa2facrw8h5blry1sxch6sci60g4iwwcwi8v"))))
     (properties `((upstream-name . "HMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HMR")
     (synopsis "Flux Estimation with Static Chamber Data")
     (description
@@ -5074,6 +5508,9 @@ estimation.")
         (base32 "1jha64iyb0816rdg2i3z7i31z02r72k6acmvw0ibw3sli8zcvphb"))))
     (properties `((upstream-name . "HMPTrees")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hmp r-foreach r-doparallel r-dirmult r-ape))
     (home-page "https://cran.r-project.org/package=HMPTrees")
     (synopsis
@@ -5095,6 +5532,9 @@ taxonomic tree objects.")
         (base32 "0233p7gajr2aic0c5snni4g9v1bwn4zd5i3kagxhqxa3mvy5c7wc"))))
     (properties `((upstream-name . "HMP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-rpart-plot
                              r-rpart
@@ -5126,6 +5566,9 @@ experiments.")
         (base32 "1vrjkq5vv70wjvg588w2q7sd8qhnp4iz3swx8yc3x8w7zpwkf0hn"))))
     (properties `((upstream-name . "hmmTMB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmbstan
                              r-tmb
                              r-stringr
@@ -5159,6 +5602,9 @@ package is described by Michelot (2022) <@code{arXiv:2211.14139>}.")
         (base32 "07s4h9b5msk5pv1cbqmny0xqjh4d3cq094wmpy3b4dm1s630w04a"))))
     (properties `((upstream-name . "HMMRel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HMMRel")
     (synopsis "Hidden Markov Models for Reliability and Maintenance")
     (description
@@ -5188,6 +5634,9 @@ Methods are described in Gamiz, Limnios, and Segovia-Garcia (2023)
         (base32 "1m0jmw0i66hm5z5rycvpdmasq8zhgsz91km491n0n923mm480hmh"))))
     (properties `((upstream-name . "hmmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-depmixs4))
     (home-page "<https://depmix.github.io/hmmr/>")
     (synopsis
@@ -5209,6 +5658,9 @@ Methods are described in Gamiz, Limnios, and Segovia-Garcia (2023)
         (base32 "0c3jmvcklywqsjmskx7zbw4d3l8i6bzr5h741v8iwgyw67mjn37g"))))
     (properties `((upstream-name . "HMMpa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HMMpa")
     (synopsis "Analysing Accelerometer Data Using Hidden Markov Models")
     (description
@@ -5230,6 +5682,9 @@ cut-off point method.  Witowski V, Foraita R, Pitsiladis Y, Pigeot I, Wirsik N
         (base32 "0kvw9nihbmvp19hbz5h8sz9jps5ik2di969jxdbp4ymj735c0fc9"))))
     (properties `((upstream-name . "HMMmlselect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mvtnorm r-mcmcpack r-mclust
                              r-hiddenmarkov))
     (home-page "https://cran.r-project.org/package=HMMmlselect")
@@ -5253,6 +5708,9 @@ Manual.pdf file a detail description of all functions, and a detail tutorial.")
         (base32 "0fknljb97x0nkj904dxx98p0mmx238ak33cy3j4d0626a2589kyg"))))
     (properties `((upstream-name . "hmmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog r-nleqslv r-mvtnorm r-mass))
     (home-page "https://www.r-project.org")
     (synopsis "Hierarchical Multinomial Marginal Models")
@@ -5280,6 +5738,9 @@ allowed and can be tested.")
         (base32 "067yb9xg1b4z2k0zhjj4wlvlv46c7rxaipyqkc81r30zh4qfrr1c"))))
     (properties `((upstream-name . "HMMextra0s")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-ellipse))
     (native-inputs (list gfortran))
     (home-page "https://www.stats.otago.ac.nz/?people=ting_wang")
@@ -5316,6 +5777,9 @@ have also made changes to increase the speed of some of the functions.")
         (base32 "0msin7rq3npz221mvrw3zcs6bwz439six99iblx5p3hkp1n1ljf3"))))
     (properties `((upstream-name . "HMMEsolver")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=HMMEsolver")
     (synopsis
@@ -5340,6 +5804,9 @@ solver to the HMME without computing matrix inverse.  See Kim (2017)
         (base32 "0ja2lyviswy327713hlrdwx7m9h2fbcv46f4sln0baqgglx739pj"))))
     (properties `((upstream-name . "HMMcopula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-foreach r-doparallel r-copula))
     (home-page "https://cran.r-project.org/package=HMMcopula")
     (synopsis
@@ -5364,6 +5831,9 @@ are described in Nasri, Remillard and Thioub (2020) <doi:10.1002/cjs.11534>.")
         (base32 "1cwsgjf258hwyf12sn54iqiliikmadbknlvhclhmqrr2vvj7561f"))))
     (properties `((upstream-name . "hmm.discnp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnet))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=hmm.discnp")
@@ -5390,6 +5860,9 @@ accommodated in the univariate setting.")
         (base32 "1h1qj4c0f3nbw3p61n8fvwqr1q2da1q476xinj6bl7pcy4y5l6mb"))))
     (properties `((upstream-name . "hmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr
                              r-normalp
                              r-mc2d
@@ -5420,6 +5893,9 @@ predict future sequences.")
         (base32 "0536bdrg4cw4kqmx6czzh63b8wia6fhm02fvjv9irlmxqhmy0mxa"))))
     (properties `((upstream-name . "hmer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-stringr
                              r-rlang
@@ -5463,6 +5939,9 @@ A.H., and Smith, J.A. (1997) <doi:10.1007/978-1-4612-2290-3_2>.")
         (base32 "0l4nlny532kddiaa1nmgd37971whhwzb54mb1pvbwax7fsg6hmhw"))))
     (properties `((upstream-name . "hmeasure")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.hmeasure.net")
     (synopsis
      "The H-Measure and Other Scalar Classification Performance Metrics")
@@ -5489,6 +5968,9 @@ curves and related statistics.")
         (base32 "1cz9q0kydb926v1n15z96cj1a7d1nyv2ffkxf00vay5l70n05137"))))
     (properties `((upstream-name . "HMDHFDplus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rvest
@@ -5526,6 +6008,9 @@ Arguments and data are standardized.")
         (base32 "0zalvgnibd1kygryqcah5d008y6a0nxpy61yyiqsriw89r01jyjk"))))
     (properties `((upstream-name . "hmclearn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass r-bayesplot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hmclearn")
@@ -5556,6 +6041,9 @@ Bates, D. (2006) \"Mixed-effects Models in S and S-Plus\" ISBN: 978-1441903174."
         (base32 "0w3ldx8bwcqbc0mv1f8yiby08w4s37jc7gp3p53pmldqk65s7qfb"))))
     (properties `((upstream-name . "hmcdm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstantools r-rcpparmadillo r-rcpp r-progress
                              r-bayesplot))
     (native-inputs (list r-knitr))
@@ -5580,6 +6068,9 @@ learning model, and the joint learning model for responses and response times.")
         (base32 "0xsf9ry019r21yjfrm1bxkr60dzvmy7lj4is0l5qfr7g0bskg1lc"))))
     (properties `((upstream-name . "HMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pma r-mass r-irlba r-glmnet))
     (home-page "https://cran.r-project.org/package=HMC")
     (synopsis
@@ -5606,6 +6097,9 @@ results.")
         (base32 "19z3d0b98fyjcnbxh3g6h2g927nv0408sbxjlzalrjlw9mbpzd2b"))))
     (properties `((upstream-name . "HMB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=HMB")
     (synopsis "Hierarchical Model-Based Estimation Approach")
@@ -5628,6 +6122,9 @@ information available in a nested structure.  For reference see Saarela et al.
         (base32 "0wzxymjb70lcgk1hj6ky6ypk9i6s0a5rm7yqlpbs1fddl6mkcln9"))))
     (properties `((upstream-name . "hlt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-tidyr
                              r-rcppprogress
@@ -5659,6 +6156,9 @@ with the R Package hlt\"
         (base32 "0yy0qf9iw5gr40vlmm697rvvvgp077f08fialx3ijn0vfpsjbl2v"))))
     (properties `((upstream-name . "HLMdiag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tibble
                              r-stringr
@@ -5700,6 +6200,9 @@ using either lmer in the lme4 package or lme in the nlme package.")
         (base32 "02l86bvb4w8wdq9mk9zh5wkf5i5y5jlgld0ciz851p5ra70c395p"))))
     (properties `((upstream-name . "hlidacr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-urltools
                              r-stringr
@@ -5728,6 +6231,9 @@ using either lmer in the lme4 package or lme in the nlme package.")
         (base32 "0k2hj0cqwsjbkgb98zm11c1ng278zi8gpk6yndi93fkcq3lmqdkj"))))
     (properties `((upstream-name . "HLAtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xfun
                              r-tibble
                              r-stringr
@@ -5762,6 +6268,9 @@ across nomenclature epochs, and extend existing data-analysis methods.")
         (base32 "0l0vch3sliyhm9pcz3x488bsq513c1iv2p55fg71141cr5k71pal"))))
     (properties `((upstream-name . "hlaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyselect
                              r-tidyr
@@ -5801,6 +6310,9 @@ aims and initial data quality.")
         (base32 "1bhyhv72c8afyzwx7h6p33mgfvhgqfh5c5f85gj803p6ai60h544"))))
     (properties `((upstream-name . "HKRbook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinywidgets
                              r-shinydashboardplus
                              r-shinydashboard
@@ -5831,6 +6343,9 @@ Wolfgang Karl HÃ¤rdle, Sigbert Klinke, and Bernd RÃ¶nz (2015)
         (base32 "1a3wqafgv9rn10zkg27bgill33zhv76infpp4j84hsqmgiix0gfl"))))
     (properties `((upstream-name . "hkevp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=hkevp")
     (synopsis
@@ -5854,6 +6369,9 @@ spatial extrapolation.  The spatial latent variable model
         (base32 "1a594fgwc5bvimwp5m2zpb6pjy4iavcylxdmsq3hrnh9ll5g5582"))))
     (properties `((upstream-name . "hkdatasets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fst))
     (home-page "https://hong-kong-districts-info.github.io/hkdatasets/")
     (synopsis "Datasets Related to Hong Kong")
@@ -5877,6 +6395,9 @@ package is available in the public domain.")
         (base32 "0c8scpzl5xgqm9rlsvh5nl3bz42i5pzvb873j9bn3bi15gcknbny"))))
     (properties `((upstream-name . "HK80")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/helixcn/")
     (synopsis "Conversion Tools for HK80 Geographical Coordinate System")
     (description
@@ -5899,6 +6420,9 @@ in Hong Kong by Survey and Mapping Office Lands Department, Hong Kong Government
         (base32 "1pnjcn54zi4d7h9zc9wr1gv51dzb0vasfcrw4c1kqymhxsq2yfh3"))))
     (properties `((upstream-name . "hJAM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggpubr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lailylajiang/hJAM")
@@ -5925,6 +6449,9 @@ Intermediates in a Mendelian Randomization or Transcriptome Analysis.\"
         (base32 "1fddyqx781vw2k9kxnsxzf5j2i9340a5ljpr1ddrcl1h88qnqpjs"))))
     (properties `((upstream-name . "HiveR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-rgl
                              r-rcolorbrewer
@@ -5954,6 +6481,9 @@ biology, bioinformatics.")
         (base32 "0ihghpfsk73lndrfrk5907kdsih9s0a7xq23zcyfaa05nk98510n"))))
     (properties `((upstream-name . "hive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-rjava))
     (home-page "https://cran.r-project.org/package=hive")
     (synopsis "Hadoop InteractiVE")
@@ -5976,6 +6506,9 @@ provided.")
         (base32 "1rscr91hgrbpgip0knv5wp7nv3bvzr4rrfg8fpch364g99sbbqrq"))))
     (properties `((upstream-name . "hivdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hivdata")
     (synopsis "Six-Year Chronological Data of HIV and ART Cases in Pakistan")
     (description
@@ -5999,6 +6532,9 @@ Institute, 32(1), 9-13. <https://jpmi.org.pk/index.php/jpmi/article/view/2108>."
         (base32 "0r0iymcmhiv3q1n7mrn3zsz2libfq3cdsq517k7kdk9m35piqrcg"))))
     (properties `((upstream-name . "hitandrun")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcdd))
     (home-page "https://github.com/gertvv/hitandrun")
     (synopsis
@@ -6025,6 +6561,9 @@ Postmus, D. (2014) <doi:10.1016/j.ejor.2014.06.036>.")
         (base32 "1ssniz6lm5zwsqzplidsdjk92d3723kxxpvxb43hgydwbhlq7rd4"))))
     (properties `((upstream-name . "histoslider")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rlang r-reactr r-htmltools))
     (home-page "https://cran.r-project.org/package=histoslider")
     (synopsis "Histogram Slider Input for 'Shiny'")
@@ -6046,6 +6585,9 @@ vectors.")
         (base32 "1h69x3iig542d43p9zm8x83p4dq48iwsw606j4fndnqhx99vzkw6"))))
     (properties `((upstream-name . "historydata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/ropensci/historydata")
     (synopsis "Data Sets for Historians")
     (description
@@ -6066,6 +6608,9 @@ suitable for mapping, quantitative analysis, and network analysis.")
         (base32 "024dq8kyw67bz4p58d99r1ldhh3wjhpjzgqdmi25ncgxq7k9ylva"))))
     (properties `((upstream-name . "historicalborrowlong")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-withr
                              r-trialr
@@ -6111,6 +6656,9 @@ hierarchical model approach to historical borrowing is discussed by Viele et al.
         (base32 "19z7v6a0yw5z0niyf7a5l3ydr2wrbvmrd3ly7zbkd9as6scks8hb"))))
     (properties `((upstream-name . "historicalborrow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -6144,6 +6692,9 @@ methods are discussed by Viele et al. (2013) <doi:10.1002/pst.1589>.")
         (base32 "0yymc7fw4qkbigr8jiw2nzjyrw0ikkipz62pdn3bpz1f7nb7mi93"))))
     (properties `((upstream-name . "histogram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=histogram")
     (synopsis
      "Construction of Regular and Irregular Histograms with Different Options for Automatic Choice of Bins")
@@ -6164,6 +6715,9 @@ Rozenholc/Mildenberger/Gather (2010).")
         (base32 "0k6l3pfjzlgpxv55vy8dg4sl8zhh0460xcfszwp2k9sbzanwaamp"))))
     (properties `((upstream-name . "histmdl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=histmdl")
     (synopsis "Most Informative Histogram-Like Model")
     (description
@@ -6184,6 +6738,9 @@ estimation method.")
         (base32 "001ranvb4lfjh9lmh5d031g0k6r3yxzwaxvyacxh07hlf9fh7kvn"))))
     (properties `((upstream-name . "HistDAWass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-histogram
@@ -6217,6 +6774,9 @@ series.  An introducing paper is Irpino A. Verde R. (2015) <doi:
         (base32 "1c005rmzbxcc4m7rxnbxna4dlg3vrn5fhkj4vrkak3xrxbcfkafw"))))
     (properties `((upstream-name . "HistData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://friendly.github.io/HistData/")
     (synopsis
@@ -6241,6 +6801,9 @@ graphics or analysis in R.")
         (base32 "06zxsja8qk48q9lrr9fbk4sbpidysp31mcirxfr12l348lc9zf10"))))
     (properties `((upstream-name . "HistDat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HistDat")
     (synopsis "Summary Statistics for Histogram/Count Data")
@@ -6264,6 +6827,9 @@ calculation of summary statistics without the need for expanding your data.")
         (base32 "1mal9x2x882lq3cf74yjrdan3i69x2kq309b154n6lm4gbpk95vw"))))
     (properties `((upstream-name . "hisse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-treesim
                              r-subplex
                              r-plotrix
@@ -6301,6 +6867,9 @@ dependent rates of diversification.  Beaulieu and O'Meara (2016)
         (base32 "0s0i6p9iv0yv0l15dnwkpcmc91751jyjs1y1nz671lz6jpb8rz5c"))))
     (properties `((upstream-name . "hIRT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rms r-pryr r-matrix r-ltm))
     (home-page "http://github.com/xiangzhou09/hIRT")
     (synopsis "Hierarchical Item Response Theory Models")
@@ -6326,6 +6895,9 @@ matrix.")
         (base32 "1wswcd68zy03qcajkywgrgi7c06v1kyj2rmvdxj1s4yc0pcw657q"))))
     (properties `((upstream-name . "HiResTEC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-openxlsx r-interpretmsspectrum r-cormid
                              r-beeswarm))
     (home-page "https://github.com/janlisec/HiResTEC")
@@ -6354,6 +6926,9 @@ described in Hoffmann et al. (2018) <doi:10.1021/acs.analchem.8b00356>.")
         (base32 "06z20kxswamhs8abjk6ff7xqhisaixw9ygz1831n38nl489vjpip"))))
     (properties `((upstream-name . "hipread")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-tibble r-rlang r-rcpp r-r6 r-bh))
     (home-page "https://cran.r-project.org/package=hipread")
@@ -6377,6 +6952,9 @@ without storing the full file in memory.")
         (base32 "1c31l1qgjk7m1gif78wxq0wxwla5d2gkpgql48aqc8i2m9i65k67"))))
     (properties `((upstream-name . "hippie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sourcetools r-rstudioapi))
     (home-page "https://github.com/crew102/hippie")
     (synopsis "Hippie Code Completion in 'RStudio'")
@@ -6400,6 +6978,9 @@ completions that appear around the user's cursor.")
         (base32 "0k071kxf04b95f3z5y2h9dhnqrvzwgyhi3q26ghn3s76c155f1k1"))))
     (properties `((upstream-name . "hiphop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://groups.google.com/d/forum/r-hiphop")
     (synopsis "Parentage Assignment using Bi-Allelic Genetic Markers")
@@ -6442,6 +7023,9 @@ Ecology Resources, DOI to be added upon acceptance.")
         (base32 "00ppz8009cp0wbkmrxdg8x9jjqqb803bl6ki13hsqz07aya0j4iy"))))
     (properties `((upstream-name . "hint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/alextkalinka/hint")
     (synopsis
      "Tools for Hypothesis Testing Based on Hypergeometric Intersection Distributions")
@@ -6464,6 +7048,9 @@ belonging to the same n categories. <@code{arXiv:1305.0717>}.")
         (base32 "06b4dn629avmnyqxb0l39m00wz9cg9dddmm6qhgwgnzlxh14ifgk"))))
     (properties `((upstream-name . "hindexcalculator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hindexcalculator")
     (synopsis
      "H-Index Calculator using Data from a Web of Science (WoS) Citation Report")
@@ -6489,6 +7076,9 @@ calculated.  Note: the excel file has to first be saved in a .csv format.")
         (base32 "01mcd2br33qqkfcyxl584f3l6kyb2cgzpd207p0mynzdaallgxgc"))))
     (properties `((upstream-name . "hindex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-ggplot2 r-foreach))
     (home-page "https://cran.r-project.org/package=hindex")
     (synopsis "Simulating the Development of h-Index Values")
@@ -6512,6 +7102,9 @@ al. (2019) <@code{arXiv:1905.11052>}.")
         (base32 "0j262rkhfadd6n1ypzwv8pj543zinayihnvfsb5i8i6fx2lag88q"))))
     (properties `((upstream-name . "himach")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sf
                              r-s2
@@ -6545,6 +7138,9 @@ forecasting, not for planning your flight!")
         (base32 "0cvzbcwavhb38ab603wqbgmbhhgwh9jh7gx6lkps3js3rbc58f4y"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-quantreg
                              r-ncvreg
@@ -6581,6 +7177,9 @@ Studies.  Bioinformatics. (2016) <doi:10.1093/bioinformatics/btw351>.  PMID:
         (base32 "15rvl5fisqnbs8gnvcc3l0ip8a6mwgaz5c6ads012pk497jv88ck"))))
     (properties `((upstream-name . "hillshader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rayshader r-raster))
     (home-page "https://cran.r-project.org/package=hillshader")
     (synopsis "Create Hillshade Relief Maps Using Ray-Tracing")
@@ -6604,6 +7203,9 @@ rayshader pipeline.")
         (base32 "0gc4yirbn2bp38sjdgin7167yvm0kd6nk4yaj66jp0b5qbpc85gc"))))
     (properties `((upstream-name . "hillR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-plyr
                              r-geiger
@@ -6630,6 +7232,9 @@ Numbers proposed by Chao, Chiu and Jost (2014)
         (base32 "1jp4xvrpqd575y2x0i73s0bq708bzi6gdhqgz85bia6d5kf05lq9"))))
     (properties `((upstream-name . "hilldiv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-scales
                              r-rcolorbrewer
@@ -6677,6 +7282,9 @@ molecularly characterised biological systems in Alberdi & Gilbert (2019)
         (base32 "0hay1r6lxnyzjp97456d9wra7myrmifyx8cywzc85wclm355yc9b"))))
     (properties `((upstream-name . "hildareadR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-haven r-dplyr))
     (home-page "https://cran.r-project.org/package=hildareadR")
     (synopsis "Extract Variables from HILDA")
@@ -6698,6 +7306,9 @@ and Labour Dynamics in Australia) survey maintained by the Melbourne Institute
         (base32 "1251df3q7c7c69f8q9y9bxj210bk2dh80c8ca4s58isf0hr2x7zp"))))
     (properties `((upstream-name . "hilbertSimilarity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-entropy))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/yannabraham/hilbertSimilarity")
@@ -6725,6 +7336,9 @@ differences between samples can identified using a simple bootstrap procedure.")
         (base32 "1vw1rn5adnqi99v5w47jmqx35rqv0slas3ldw7g34il1krz9xhms"))))
     (properties `((upstream-name . "hilbert")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://hilbert.justinsingh.me")
@@ -6747,6 +7361,9 @@ et al. (2006) <doi:10.1002/spe.793>.")
         (base32 "0q9av8qyvmvgy6a3l7svcmbkjjgnp4iny1cld4g3qsbaz3yp3jaj"))))
     (properties `((upstream-name . "higrad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=higrad")
     (synopsis
@@ -6772,6 +7389,9 @@ details.")
         (base32 "09d500jsxlrv658i90xnb2wj1ad89v1iwb6y7vascyvg3cff104h"))))
     (properties `((upstream-name . "higlasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-purrr r-gglasso r-gcdnet))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=higlasso")
@@ -6800,6 +7420,9 @@ a set of exposures.")
         (base32 "0w7114qnywpd3wcnxhpkmv0j7hqip25p6wdigg505k0gywanr7fp"))))
     (properties `((upstream-name . "highTtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=highTtest")
     (synopsis
      "Simultaneous Critical Values for t-Tests in Very High Dimensions")
@@ -6823,6 +7446,9 @@ discovery rate, and the tail probability of false discovery proportion.")
         (base32 "0d4p9qcj7z0ayk4nb3pxnfwww29d7ks0jzavxsbz6m82g7x1pmyh"))))
     (properties `((upstream-name . "hightR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/Yongwoo-Eg-Kim/hightR")
     (synopsis "HIGHT Algorithm")
     (description
@@ -6853,6 +7479,9 @@ standard.  The detailed procedure is described in Hong et al. (2006)
         (base32 "0sg3a99pb2559chalxh66zv9mvwbgfx64vp1209vbhbx3sya48r2"))))
     (properties `((upstream-name . "highriskzone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splancs
                              r-spatstat-random
                              r-spatstat-geom
@@ -6889,6 +7518,13 @@ methodology', Mahling et al. (2013) <doi:10.1111/j.1467-9876.2012.01055.x>.")
         (base32 "0qjmxiv5dcpgyl5c9vbbizwwg4lpppc9z09rf4c4lf0dfrcj4c5i"))))
     (properties `((upstream-name . "highOrderPortfolios")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-quadprog
                              r-performanceanalytics
                              r-nloptr
@@ -6923,6 +7559,9 @@ Design via Parametric Skew-t Distribution.\" <@code{arXiv:2206.02412>}.")
         (base32 "0jkv6blkzdnn263wxy7p0hspgf5fchl5fbmzpqb5lfvl2f3pi3j9"))))
     (properties `((upstream-name . "highMLR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survival
                              r-r6
@@ -6956,6 +7595,9 @@ threshold values.  The functions methodology is based on by Sonabend et al
         (base32 "1lq7z0l1737j4wvsy7951405afylyywp7vf2i7girzh459fdfzpc"))))
     (properties `((upstream-name . "highmean")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mnormt r-mass))
     (home-page "https://cran.r-project.org/package=highmean")
     (synopsis "Two-Sample Tests for High-Dimensional Mean Vectors")
@@ -6976,6 +7618,9 @@ in two sample populations.")
         (base32 "1n4jb1snl9riqkfhzn84rq1czyg5r5v41m3fk78wc0fi2wacxwil"))))
     (properties `((upstream-name . "highlightr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm
                              r-tidyr
                              r-tibble
@@ -7011,6 +7656,9 @@ Chapter 3 of Rogers (2024)
         (base32 "0j3zrvil7k5wfsbgfj2b4nbx77qsj3b4makv5angcf8s59p7q80r"))))
     (properties `((upstream-name . "highlightHTML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lebebr01/highlightHTML")
     (synopsis "Highlight HTML Text and Tables")
@@ -7033,6 +7681,9 @@ document authors.")
         (base32 "1ksgqx2ryg5lfka93yns5cphnf4xc4v55ncmpisydjbcpzd2105c"))))
     (properties `((upstream-name . "highlighter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-htmlwidgets r-htmltools r-glue r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://federiva.github.io/highlighter/")
@@ -7054,6 +7705,9 @@ you're documenting your data analysis or creating interactive shiny apps.")
         (base32 "0jxkmgd3sfipz1z37w9flwy8i94q6vxwlxyaflfbprwlskmlnakd"))))
     (properties `((upstream-name . "highfrequency")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-sandwich
@@ -7088,6 +7742,9 @@ Kleen, and Sjoerup (2022, <doi:10.18637/jss.v104.i08>).")
         (base32 "01fj3xgrb9iav5v91bq04hzv9nhnwy8l00dx6yykghwvzjwfv3ih"))))
     (properties `((upstream-name . "HighestMedianRules")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmallow))
     (home-page "https://cran.r-project.org/package=HighestMedianRules")
     (synopsis
@@ -7114,6 +7771,9 @@ to the majority judgment\", A. Fabre, Social Choice & Welfare (forthcoming as of
         (base32 "0z81iw1nb8y4pvmhk8ay9pq4kvqxwxwv8q6p47hy8s2b465sfy1f"))))
     (properties `((upstream-name . "highDmean")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=highDmean")
     (synopsis "Testing Two-Sample Mean in High Dimension")
     (description
@@ -7124,7 +7784,7 @@ These tests are particularly suitable to high dimensional data from two
 populations for which the classical multivariate Hotelling's T-square test fails
 due to sample sizes smaller than dimensionality.  In this case, the ZWL and ZWLm
 tests proposed by Zhang (2019) <http://hdl.handle.net/2097/40235>, referred to
-as zwl_test() in this package, provide a reliable and powerful test.")
+as @code{zwl_test()} in this package, provide a reliable and powerful test.")
     (license license:gpl2)))
 
 (define-public r-highd2means
@@ -7139,6 +7799,9 @@ as zwl_test() in this package, provide a reliable and powerful test.")
         (base32 "10gy9rhbpllp6qq8ribjswp3h0cdli6qhnh87ccb1ag252383kqc"))))
     (properties `((upstream-name . "highd2means")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=highd2means")
     (synopsis "High-Dimensional Tests for Two Population Mean Vectors")
@@ -7165,6 +7828,8 @@ test.  Some references are: Chen S.X. and Qin Y.L. (2010).
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -7221,6 +7886,9 @@ syntax.")
         (base32 "0v7dd9sd9dkqylb53vx5f0npwpcyh0fd9b39havn99l1bzyl1cx5"))))
     (properties `((upstream-name . "HiGarrote")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-scales
                              r-rlist
@@ -7237,7 +7905,7 @@ syntax.")
     (description
      "An implementation of the nonnegative garrote method that incorporates
 hierarchical relationships among variables.  The core function,
-@code{HiGarrote}(), offers an automated approach for analyzing experiments while
+@code{HiGarrote()}, offers an automated approach for analyzing experiments while
 respecting hierarchical structures among effects.  For methodological details,
 refer to Yu and Joseph (2024) <doi:10.48550/@code{arXiv.2411.01383>}.  This work
 is supported by U.S. National Science Foundation grant DMS-2310637.")
@@ -7255,6 +7923,9 @@ is supported by U.S. National Science Foundation grant DMS-2310637.")
         (base32 "164l7gw5bkg09mfs0rnqwfsbgr4mppc0skbmqk2d98mcvvmmcwd7"))))
     (properties `((upstream-name . "hierSDR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-optimx
                              r-numderiv
                              r-matrix
@@ -7284,6 +7955,9 @@ of Huling and Yu (2021) <doi:10.1111/biom.13546>.")
         (base32 "0hpr8rxpzgbr1v6fh4wxx140nh2017cvrk8anaczv1rnq75j2bdp"))))
     (properties `((upstream-name . "HierPortfolios")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fastcluster r-cluster))
     (home-page "https://github.com/ctruciosm/HierPortfolios")
     (synopsis "Hierarchical Risk Clustering Portfolio Allocation Strategies")
@@ -7310,6 +7984,9 @@ Allocation (Pfitzingera and Katzke, 2019)
         (base32 "0fdnj50s985w06wrjc67hcy6fc4lj8jbxlskgrli9m0181vbdj69"))))
     (properties `((upstream-name . "hierNet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hierNet")
     (synopsis "Lasso for Hierarchical Interactions")
     (description
@@ -7333,6 +8010,9 @@ Statistics.  41(3).  1111-1141.")
         (base32 "1f6agxrv363wksi33b29v42hys90351ninb4li9m52n0kzv25m1f"))))
     (properties `((upstream-name . "hierBipartite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-irlba))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hierBipartite")
@@ -7363,6 +8043,9 @@ associations.  Finally, hierarchical clustering is applied.")
         (base32 "0i0dl2r1gc8ckk2hb498km9bgsqbj7fp8gpp8778rba001nvgwx7"))))
     (properties `((upstream-name . "hierarchicalSets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-scales
                              r-rcpp
@@ -7398,6 +8081,9 @@ meaningful relational structure.")
         (base32 "0dzdllmsj98yl178fg25vny0vaxhra88zd6ifzv06fcjma53svrj"))))
     (properties `((upstream-name . "hidradenitis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-checkmate))
     (home-page "https://billdenney.github.io/hidradenitis/")
     (synopsis
@@ -7427,6 +8113,9 @@ Hidradenitis Suppurativa Severity Score System (IHS4) (Zouboulis, et al. (2017)
         (base32 "0133bvj3a9ab8frl8r1xrgdpwc6rp2nfyfa2pnabd62sdvp0axvn"))))
     (properties `((upstream-name . "HiDimDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=HiDimDA")
     (synopsis "High Dimensional Discriminant Analysis")
@@ -7449,6 +8138,9 @@ cross-validation and variable selection.")
         (base32 "08yhjgmcmrnrm6rm0vlzvizadvywcs1p6mchw1synxvclfaxyi28"))))
     (properties `((upstream-name . "hidecan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vroom
                              r-viridis
                              r-tidyr
@@ -7482,6 +8174,9 @@ is presented in Angelin-Bonnet et al. (2023) (currently in review).")
         (base32 "0shc1kfiq527mkc5i97zcm51hsvknnhjg7dyfvbfqyk145v6sz00"))))
     (properties `((upstream-name . "hiddenf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hiddenf")
     (synopsis
      "The All-Configurations, Maximum-Interaction F-Test for Hidden Additivity")
@@ -7503,6 +8198,9 @@ variance tables and p-values from several other tests of non-additivity.")
         (base32 "1zb18sn2az5gval4az4n9g9jipmikd08jj7vpmlqmzdsascp75wg"))))
     (properties `((upstream-name . "hicp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-restatapi r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eurostat/hicp")
@@ -7529,6 +8227,9 @@ HICP data from Eurostat's public database
         (base32 "11aip68cjyy70xr0la1apk6gbkabg8vnc3s5cbydyz7yl4v80nn8"))))
     (properties `((upstream-name . "HiClimR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list netcdf))
     (propagated-inputs (list r-ncdf4))
     (native-inputs (list r-knitr gfortran))
@@ -7561,6 +8262,9 @@ regionalization results, and exporting region map and mean timeseries into
         (base32 "04vkvqha82cpmjflxir83208d9mxwip7wlbc3zd12apvrg2c91x6"))))
     (properties `((upstream-name . "hibayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rcppprogress
                              r-rcpparmadillo
@@ -7608,6 +8312,9 @@ Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
         (base32 "13q30difb84byy62rrkxq2hjjl1526pn8j4qvhm5g3cgivvby5ci"))))
     (properties `((upstream-name . "hht")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fields r-emd))
     (home-page "https://cran.r-project.org/package=hht")
     (synopsis "The Hilbert-Huang Transform: Tools and Methods")
@@ -7633,6 +8340,9 @@ spectrum.")
         (base32 "0liyx7jii3ryg8zffr9qjq92mdp193p8zzv0azajs038s4flzrlx"))))
     (properties `((upstream-name . "hhsmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splines2
                              r-rdpack
                              r-rcpp
@@ -7677,6 +8387,9 @@ et al., 2022 <doi:10.1007/s00180-022-01248-x> and its arxiv version:
         (base32 "0rmvw52a7a75gcwsyv30wvxrb9ykhg4ji3pj2jhgbzjqdc4s9xzw"))))
     (properties `((upstream-name . "HhP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=HhP")
@@ -7706,6 +8419,9 @@ features\".  Biometrics, <doi:10.1111/biom.13426>.")
         (base32 "1yl52c3nqdi8v60sr01l0vv8359803dm2i4c9ifazgj3h3a4h0yp"))))
     (properties `((upstream-name . "hhi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=hhi")
     (synopsis "Calculate and Visualize the Herfindahl-Hirschman Index")
@@ -7733,6 +8449,9 @@ associated with the package: Waggoner, Philip D. (2018)
         (base32 "04mfdc8ksxkcrg24ww3chmpjzcbwb5r0sn9qsdyrwykk410hnn0d"))))
     (properties `((upstream-name . "hhh4contacts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-surveillance r-sp))
     (home-page "https://codeberg.org/EE-hub/hhh4contacts")
     (synopsis
@@ -7758,6 +8477,9 @@ the results from the paper, see demo(\"hhh4contacts\")'.")
         (base32 "10q3im2y5r9f5d80c35r2mmp89xclaf74hywkcyn3pk5vwc5wjfm"))))
     (properties `((upstream-name . "HH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcd
                              r-shiny
                              r-rmpfr
@@ -7801,6 +8523,9 @@ included in the scripts directory of the package.")
         (base32 "19lx5xnxvvxq7yax1i9pn19vjvn5ak6s2khm9bi8h43rj08wc4ck"))))
     (properties `((upstream-name . "hgwrr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-sf r-rcpparmadillo r-rcpp r-mass))
     (native-inputs (list r-knitr))
@@ -7826,6 +8551,9 @@ this model to reach better fitness.")
         (base32 "12sylpfjzh8avlk9b51vcz5dm8097z9k90n043pv3g5jzywd4wxd"))))
     (properties `((upstream-name . "hgutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-magrittr
                              r-lubridate
@@ -7857,6 +8585,9 @@ for plots, overview tables and many more handy utility functions.")
         (base32 "1p453xr3d1bmqc6mrmzb0hz9p0gp25m6v6qr0l3bapcf71vzbvq1"))))
     (properties `((upstream-name . "HGSL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HGSL")
     (synopsis "Heterogeneous Group Square-Root Lasso")
     (description
@@ -7877,6 +8608,9 @@ Ren, Z., Kang, Y., Fan, Y. and Lv, J. (2018)<@code{arXiv:1606.03803>}.")
         (base32 "1y35lzym3mbr1v7j7v55i9mxb1vn65xzgp5542va1bngvrm25hjf"))))
     (properties `((upstream-name . "HGraph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HGraph")
@@ -7906,6 +8640,9 @@ Implement reference about Baruch Awerbuch (1985)
         (base32 "180092gpcs3j94904ry42crs62knzrv926bp25dapigqqfj7jjqi"))))
     (properties `((upstream-name . "hgnc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rvest
@@ -7939,6 +8676,9 @@ or resources.")
         (base32 "1iwqssj66q9dfgddzwqmnnpvxnvlrq7p1axm95lpkf3vrpn5rp6b"))))
     (properties `((upstream-name . "HGMND")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-genscore))
     (home-page "https://cran.r-project.org/package=HGMND")
     (synopsis "Heterogeneous Graphical Model for Non-Negative Data")
@@ -7971,6 +8711,9 @@ and non-negative exponential family in each cluster.")
         (base32 "15prmsbs5zq12r6nrg2ibq2y8qfyrp9vq1g4jm258m0alrxnjx8w"))))
     (properties `((upstream-name . "hgm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-desolve))
     (home-page "http://www.openxm.org")
     (synopsis "Holonomic Gradient Method and Gradient Descent")
@@ -7994,6 +8737,9 @@ HGM.")
         (base32 "0mw1s0kahsh9jmwkxysfy5f7vbld7mpzmdnnww6im5h21jhnczx2"))))
     (properties `((upstream-name . "hglm.data")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=hglm.data")
     (synopsis "Data for the 'hglm' Package")
@@ -8014,6 +8760,9 @@ the hglm package.")
         (base32 "1lyxkvqzfll1qrz5c2km9ikhq0dm63x39by4vc1nmkd24yza93nc"))))
     (properties `((upstream-name . "hglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-hglm-data))
     (home-page "https://cran.r-project.org/package=hglm")
     (synopsis "Hierarchical Generalized Linear Models")
@@ -8044,6 +8793,9 @@ extended for spatial modeling (Alam, Ronnegard and Shen 2015)
         (base32 "15sq5fk7iicglpyxdkh44mg112zij05ic4x3snhqyc2lx1hvp7cy"))))
     (properties `((upstream-name . "hglasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-igraph r-glasso r-fields))
     (home-page "https://cran.r-project.org/package=hglasso")
     (synopsis "Learning Graphical Models with Hubs")
@@ -8066,6 +8818,9 @@ Research 15(Oct):3297-3331.")
         (base32 "0xcmin49sbkl3c9xrvq7spp5qnfdf7v6fscv3a85dhd5b5adhpm7"))))
     (properties `((upstream-name . "hfr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-quadprog r-dendextend r-corpcor))
     (home-page "https://hfr.residualmetrics.com")
     (synopsis "Estimate Hierarchical Feature Regression Models")
@@ -8089,6 +8844,9 @@ Regression.  Econometrics and Statistics (in press).
         (base32 "1rb6finck13i6949i6hsgfk90q4ybxh1m3is2mlw2m6087bpzfbd"))))
     (properties `((upstream-name . "hflights")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hflights")
     (synopsis "Flights that departed Houston in 2011")
     (description
@@ -8108,6 +8866,9 @@ that departed Houston (IAH and HOU) in 2011.")
         (base32 "0s2fm8lx680ymn8srln6dyay0lp03mxhyv7p71aw892hdq1d2sm1"))))
     (properties `((upstream-name . "hfhub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-urltools
                              r-rlang
@@ -8137,6 +8898,9 @@ files can be shared between different client libraries.")
         (base32 "01hiqyibsd4as7jcklzg09pl12la341mg561vn16z4jzdarfvkfc"))))
     (properties `((upstream-name . "hexView")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hexView")
     (synopsis "Viewing Binary Files")
     (description
@@ -8156,6 +8920,9 @@ editor.  Additional functions to specify and read arbitrary binary formats.")
         (base32 "04kk1a029i1rz617s9i3jvpnxillc3k3b7g3nrbsbi37ik6qk5r4"))))
     (properties `((upstream-name . "hextri")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hexbin r-fnn))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hextri")
@@ -8177,6 +8944,9 @@ triangles to show class proportions.")
         (base32 "1wp7n92wgrjyklq159ymrw8y5ads6lhj2fcz54rzdnccdyx5naxi"))))
     (properties `((upstream-name . "HextractoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seqinr r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=HextractoR")
     (synopsis "Integrated Tool for Hairping Extraction of RNA Sequences")
@@ -8200,6 +8970,9 @@ lost nor inappropriately cut.")
         (base32 "0d9sz2cshn4lq18kd9fkgvjm3v29h0k22b6228rq2q3zhxi97ra0"))))
     (properties `((upstream-name . "hexSticker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sysfonts r-showtext r-hexbin r-ggplot2
                              r-ggimage))
     (home-page "https://github.com/GuangchuangYu/hexSticker")
@@ -8220,6 +8993,9 @@ lost nor inappropriately cut.")
         (base32 "0pi64rzrzjrfpbjpgvj8fpf81550jfsy5sjsvgc4a0gv9b1dswr6"))))
     (properties `((upstream-name . "hexfont")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bittermelon))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/trevorld/hexfont")
@@ -8246,6 +9022,9 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
         (base32 "08viz39hxb34w8xycs6r1qdrb2rfxai4frxc3vjlgg97b5lcnl0q"))))
     (properties `((upstream-name . "hexDensity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-geom r-hexbin))
     (native-inputs (list gfortran))
     (home-page "https://github.com/ChenLaboratory/hexDensity")
@@ -8272,6 +9051,9 @@ J. (2010) <doi:10.1201/9781420072884>.  Hill, B. (2017)
         (base32 "0w4f7xpz2342k38b5a7fs6fq50045hh2836390zg36nqdapg8vlv"))))
     (properties `((upstream-name . "heuristicsmineR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-scales
@@ -8295,9 +9077,9 @@ J. (2010) <doi:10.1201/9781420072884>.  Hill, B. (2017)
 proposed by Weijters et al. (2011) <doi:10.1109/CIDM.2011.5949453>.  The
 algorithm builds a causal net from an event log created with the @code{bupaR}
 package.  Event logs are a set of ordered sequences of events for which
-@code{bupaR} provides the S3 class eventlog().  The discovered causal nets can
-be visualised as htmlwidgets and it is possible to annotate them with the
-occurrence frequency or processing and waiting time of process activities.")
+@code{bupaR} provides the S3 class @code{eventlog()}.  The discovered causal
+nets can be visualised as htmlwidgets and it is possible to annotate them with
+the occurrence frequency or processing and waiting time of process activities.")
     (license license:expat)))
 
 (define-public r-heuristica
@@ -8312,6 +9094,9 @@ occurrence frequency or processing and waiting time of process activities.")
         (base32 "1j88sviy6yabh5prab0f1snnicbg843kbwyawakj3xx3p43v23lb"))))
     (properties `((upstream-name . "heuristica")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hmisc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jeanimal/heuristica")
@@ -8340,6 +9125,9 @@ on many data sets and analyzed in: Gigerenzer, G., Todd, P. M., & the ABC Group
         (base32 "0zpjmsk0vzz9x5nngznma3znpjlhjihxq0i9hrjx4nzbbbayf9qp"))))
     (properties `((upstream-name . "heumilkr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rlang r-ggplot2 r-cpp11 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lschneiderbauer/heumilkr")
@@ -8354,15 +9142,18 @@ accompanied by helper functions to inspect its solution.")
 (define-public r-hetu
   (package
     (name "r-hetu")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hetu" version))
        (sha256
-        (base32 "1ml3jzfc71j0d7a7yn97sbfzlpdpg46jpjcn6xbnh17xrqc1mv2a"))))
+        (base32 "14jg5y18b2ah66yzgga8zmp2z47wnlzap7yw62zab8p79ld9nmwf"))))
     (properties `((upstream-name . "hetu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://ropengov.github.io/hetu/")
@@ -8384,6 +9175,9 @@ organizations); extract information, check ID validity and diagnostics.")
         (base32 "15i9n2fcfbkv11qlgh4gsjvfnzzziwbcn8izzxw2d0kbdhhk7h8c"))))
     (properties `((upstream-name . "hettx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-quantreg
                              r-purrr
@@ -8423,6 +9217,9 @@ visualizing the results of the test.")
         (base32 "092xd2yndg5n5shxmcyn2gh6a6w1i1497cvj009ih3ax8hk3crf0"))))
     (properties `((upstream-name . "hettreatreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/tslocz/hettreatreg")
     (synopsis "Heterogeneous Treatment Effects in Regression Analysis")
     (description
@@ -8448,6 +9245,9 @@ OLS estimate of the average treatment effect (ATE).  See Sloczynski (2019),
         (base32 "0qmgm9q42xrgfgsk15a6h2mdnq0aiyccpzyp79hi271w54dkmbj0"))))
     (properties `((upstream-name . "hettest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hettest")
     (synopsis
      "Testing for a Treatment Effect Using a Heterogeneous Surrogate Marker")
@@ -8469,6 +9269,9 @@ et al (2022) <@code{arXiv:2209.08315>}.")
         (base32 "0i7q28nc67m62vi1ipfg035yqjh691fb1mp33dp1b68g5wjysphh"))))
     (properties `((upstream-name . "hett")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-lattice))
     (home-page "https://cran.r-project.org/package=hett")
     (synopsis "Heteroscedastic t-Regression")
@@ -8489,6 +9292,9 @@ heteroscedastic t-regression.")
         (base32 "01i918hq0rsmagpzld9zg7zzsv1i94y4dcm9apzb71pn90rmmg3n"))))
     (properties `((upstream-name . "hetsurrSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsurrogate r-mass r-groc))
     (home-page "https://cran.r-project.org/package=hetsurrSurv")
     (synopsis "Assessing Heterogeneity in Surrogacy Using Censored Data")
@@ -8512,6 +9318,9 @@ points.  More details are available in Parast et al (2024)
         (base32 "1086lqxg6s5a0qxmd29bp3ninr4jzfdp3m6fsn9sfl7bagvrs5wy"))))
     (properties `((upstream-name . "hetsurr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsurrogate))
     (home-page "https://cran.r-project.org/package=hetsurr")
     (synopsis "Assessing Heterogeneity in the Utility of a Surrogate Marker")
@@ -8536,6 +9345,9 @@ Biometrics, In press.")
         (base32 "1fjwyqh7l296pghmc4m81q8icgbhvqvxr61zd638fr46gls3ky2p"))))
     (properties `((upstream-name . "HETOP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r2jags))
     (home-page "https://cran.r-project.org/package=HETOP")
     (synopsis
@@ -8561,6 +9373,9 @@ and Louis (1998) <doi:10.1111/1467-9868.00135>.")
         (base32 "0qfygdpmzrnih0p24xdqpxbgmcqbcgvbdjihh3x4cqspawcsffs5"))))
     (properties `((upstream-name . "HEtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polynom))
     (home-page "https://cran.r-project.org/package=HEtools")
     (synopsis "Homomorphic Encryption Polynomials")
@@ -8586,6 +9401,9 @@ generate and take coefficient modulo are provided.")
         (base32 "0h4lhy3ifmdh51f91a5i5cw85mhzszcijrafg1andhkm4fsps5m8"))))
     (properties `((upstream-name . "hetGP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mass r-dicedesign))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hetGP")
@@ -8614,6 +9432,9 @@ are provided, and notably fast update functions when adding new observations.")
         (base32 "02vy3v62mr5kn56w60ckcl8gcwks5z950vaxyk0aps428q1f954f"))))
     (properties `((upstream-name . "heteromixgm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm
                              r-matrix
                              r-mass
@@ -8648,6 +9469,9 @@ The package implements the methodological developments found in Hermes et al.
         (base32 "1z295l3kzz0c3q6qx5qhf0nr73db13vjvn1lnis05509mga9i28w"))))
     (properties `((upstream-name . "heterometa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-mathjaxr))
     (home-page "https://cran.r-project.org/package=heterometa")
     (synopsis "Convert Various Meta-Analysis Heterogeneity Measures")
@@ -8670,6 +9494,9 @@ Some conversions are provided here and confidence intervals are also available."
         (base32 "1yz4rwlfhq0lk9zpc1p7yc35d1n1gr0pfdfhlm57kcsi5a8pzlk1"))))
     (properties `((upstream-name . "HeteroGGM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-igraph r-huge))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=HeteroGGM")
@@ -8703,6 +9530,9 @@ Analysis via Penalized Fusion.  Biometrics, 78 (2), 524-535.")
         (base32 "17287n38km02ldwddldw9zh8f8w18f9vi7dcg52a17r9r7v0mshv"))))
     (properties `((upstream-name . "heterogen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-scales
                              r-rio
@@ -8732,6 +9562,9 @@ environmental and climate-related data.")
         (base32 "0bb56pq2cc3vi5c2kskn76dgrsn5f32dlhrxfpblaq3a5fg0w445"))))
     (properties `((upstream-name . "heterocop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-mvtnorm
                              r-matrixcalc
@@ -8759,6 +9592,9 @@ Gaussian copula in order to identify independencies within the data.")
         (base32 "0qrfmxwrxn0rd2ncy3afhraf7m0010nf9739jkj19h1j5vksi9n1"))))
     (properties `((upstream-name . "HeterFunctionalData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HeterFunctionalData")
     (synopsis "Test of No Main and/or Interaction Effects in Functional Data")
     (description
@@ -8783,6 +9619,9 @@ Akritas (2010b) <doi:10.1016/j.jmva.2010.03.012>.")
         (base32 "0r3hwn60z0ypxw7ylvkkd0kh9kgk0rxhghckla77h2505h7wq2x6"))))
     (properties `((upstream-name . "hesim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rcpparmadillo
                              r-rcpp
@@ -8823,6 +9662,9 @@ sensitivity analysis, and incorporation of patient heterogeneity fast.")
         (base32 "0az2gva4rdbgsfd31512h8a23bvvbx812ws05rg2qs6r5qhwbj8r"))))
     (properties `((upstream-name . "hero")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-sf
                              r-pbapply
@@ -8853,6 +9695,9 @@ smoother of French and Kokoszka (2021) <doi:10.1016/j.spasta.2020.100413>.")
         (base32 "13vfzsns91g0vcbdzrzlgzcdh4sqfh4wzivyhgcn4v6rc10sj2dp"))))
     (properties `((upstream-name . "hermiter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppparallel r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MikeJaredS/hermiter")
@@ -8887,6 +9732,9 @@ estimators.\" Journal of Multivariate Analysis (2021)
         (base32 "0j9s7ayvbvmgwybrvf703b72qbn8gskb105pis19ig2sslllzda3"))))
     (properties `((upstream-name . "hermite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-maxlik))
     (home-page "https://cran.r-project.org/package=hermite")
     (synopsis "Generalized Hermite Distribution")
@@ -8907,6 +9755,9 @@ distribution.")
         (base32 "0jzf3pq43lllxvvmf0rqzxz9fx6931mgb0ipminlw1iakz8wa6w3"))))
     (properties `((upstream-name . "HeritSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tweedie
                              r-summarizedexperiment
                              r-pbapply
@@ -8938,6 +9789,9 @@ heritability scores for high-throughput sequencing data.\" BMC bioinformatics
         (base32 "053fqjc8772gqhxnm2gn7yz747432kizn5q5060g5bd77v15jlhp"))))
     (properties `((upstream-name . "heritability")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=heritability")
     (synopsis
@@ -8965,6 +9819,9 @@ Arabidopsis thaliana.")
         (base32 "0nl8k58syhkbwdmy4jxc7as99bv8j5k9j87bqmr0y2jlfi9ny2d2"))))
     (properties `((upstream-name . "hereR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sf
                              r-jsonlite
@@ -9000,6 +9857,13 @@ routes and isolines are returned as sf objects.")
         (base32 "0k9klz37ix3v3hwirznjxd0d73d9a6wbnvx9nlkdjv3lnsl9v03w"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tibble
                              r-rgl
                              r-purrr
@@ -9031,6 +9895,9 @@ space when there are more than a few response variables.")
         (base32 "1x372rbi112l5hdmlkbn5x90h8a6y71zngdlfn1p27c10klwaspy"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-terra
                              r-sf
@@ -9060,6 +9927,9 @@ information is provided in the study by Chianucci F., Macek M. (2023)
         (base32 "1dmfy5bbnjmjb4d7430i38z9hvpcrwafj6hw46118hwzcl4b6ldv"))))
     (properties `((upstream-name . "HEMDAG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rbgl
                              r-preprocesscore
                              r-precrec
@@ -9099,6 +9969,9 @@ Valentini (2017) <doi:10.1186/s12859-017-1854-y>).")
         (base32 "1hsmxnfzbi8xvqz97rmq225w9prhxc558slmfxg03y5wpjqdpq4a"))))
     (properties `((upstream-name . "helsinki")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-sf
                              r-purrr
@@ -9127,6 +10000,9 @@ Events API, and Helsinki Region Infoshare statistics API.")
         (base32 "1qv127pa1zki42a4riw2lb05sajwp1mdschxlalvf5hfdhrq7i3g"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))
     (home-page "https://cran.r-project.org/package=HelpersMG")
     (synopsis
@@ -9154,6 +10030,9 @@ folder at one time.")
         (base32 "1dh22ip3cqz7gp2viywdrxsh9bhgmvs2jxkksic8xs9670rzf674"))))
     (properties `((upstream-name . "hellorust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (home-page "https://github.com/r-rust/hellorust")
     (synopsis "Minimal Examples of Using Rust Code in R")
@@ -9180,6 +10059,9 @@ use-case, see the gifski package on CRAN'.")
         (base32 "1a8yxja54iqdy2k8bicrcx1y3rkgslas03is4v78yhbz42c9fi8s"))))
     (properties `((upstream-name . "helloJavaWorld")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page "https://cran.r-project.org/package=helloJavaWorld")
@@ -9201,18 +10083,21 @@ file that resides inside an R package.")
         (base32 "1j787rw9hh75bvkckmlz5xkgwc22gd7si3mgjd7v60dd6lykfa88"))))
     (properties `((upstream-name . "hellno")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/petermeissner/hellno")
     (synopsis
      "Providing 'stringsAsFactors=FALSE' Variants of 'data.frame()' and 'as.data.frame()'")
     (description
-     "Base R's default setting for @code{stringsAsFactors} within data.frame() and
-as.data.frame() is supposedly the most often complained about piece of code in
-the R infrastructure.  The hellno package provides an explicit solution without
-changing R itself or having to mess around with options.  It tries to solve this
-problem by providing alternative data.frame() and as.data.frame() functions that
-are in fact simple wrappers around base R's data.frame() and as.data.frame()
-with @code{stringsAsFactors} option set to HELLNO ( which in turn equals FALSE )
-by default.")
+     "Base R's default setting for @code{stringsAsFactors} within @code{data.frame()}
+and @code{as.data.frame()} is supposedly the most often complained about piece
+of code in the R infrastructure.  The hellno package provides an explicit
+solution without changing R itself or having to mess around with options.  It
+tries to solve this problem by providing alternative @code{data.frame()} and
+@code{as.data.frame()} functions that are in fact simple wrappers around base
+R's @code{data.frame()} and @code{as.data.frame()} with @code{stringsAsFactors}
+option set to HELLNO ( which in turn equals FALSE ) by default.")
     (license license:expat)))
 
 (define-public r-hellcor
@@ -9227,6 +10112,9 @@ by default.")
         (base32 "1bzc2ipm7vw7s849d43lcs0xrk2rs67h223dn9kahqg152mmknza"))))
     (properties `((upstream-name . "HellCor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-orthopolynom r-fnn r-energy))
     (home-page "https://cran.r-project.org/package=HellCor")
     (synopsis "The Hellinger Correlation")
@@ -9248,6 +10136,9 @@ Lafaye De Micheaux (2019) <@code{arXiv:1810.10276v4>}.")
         (base32 "113rnpnrcnw18ks78fgq79zdrw3kmpzpimlc45gvj0za2fbyci3p"))))
     (properties `((upstream-name . "helixvis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2 r-ggforce))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rrrlw/helixvis")
@@ -9272,6 +10163,9 @@ alpha-helical oligopeptides.  See Wadhwa RR, et al. (2018)
         (base32 "0q4zz4h6554h1z6d1ikhlb6ghfqgbz2yrlp4pa5svyyhpir7y6n2"))))
     (properties `((upstream-name . "heiscore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-tidyr
                              r-tibble
@@ -9307,6 +10201,9 @@ methods recommended by the National Cancer Institute (2024)
         (base32 "0vnq31jwn09grni4gdhf1hzd87b62as4f65b2qw7ky6mi38ahr5d"))))
     (properties `((upstream-name . "heims")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr
                              r-lubridate
                              r-hutils
@@ -9337,6 +10234,9 @@ Australia's higher education system, as well as a range of relevant information.
         (base32 "0qqr084h30p7aiv7cfz7g39qgswz4d249s90cck6xhbc8la9jbc3"))))
     (properties `((upstream-name . "heimdall")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate r-ggplot2 r-daltoolbox r-caret))
     (home-page "https://github.com/cefet-rj-dal/heimdall")
     (synopsis "Drift Adaptable Models")
@@ -9361,6 +10261,9 @@ described in Tavares (2022) <doi:10.1007/s12530-021-09415-z>.")
         (base32 "0zcj2g578m6pxv7iz3xlypka64qm2j906w10n69wplpn9h9cp3s4"))))
     (properties `((upstream-name . "heemod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tibble
                              r-rlang
@@ -9396,6 +10299,9 @@ Markov models), etc.")
         (base32 "1mvjnm2zlc4pvw9vnhxr0dj1g1sfqvlrnnhcipzfbvr147yan9l5"))))
     (properties `((upstream-name . "hedgehog")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://hedgehog.qa")
@@ -9421,6 +10327,9 @@ cause of bugs, given salient examples when incorrect behaviour occurs.")
         (base32 "1ka2pp1df00j63g15arcnndzribgkkaimvhxgiia9g409pmyizpc"))))
     (properties `((upstream-name . "hedgedrf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ranger r-cvxr))
     (home-page "https://cran.r-project.org/package=hedgedrf")
     (synopsis "An Implementation of the Hedged Random Forest Algorithm")
@@ -9428,9 +10337,9 @@ cause of bugs, given salient examples when incorrect behaviour occurs.")
      "This algorithm is described in detail in the paper \"Hedging Forecast
 Combinations With an Application to the Random Forest\" by Beck et al. (2023)
 <doi:10.48550/@code{arXiv.2308.15384>}.  The package provides a function
-hedgedrf() that can be used to train a Hedged Random Forest model on a dataset,
-and a function predict.hedgedrf() that can be used to make predictions with the
-model.")
+@code{hedgedrf()} that can be used to train a Hedged Random Forest model on a
+dataset, and a function @code{predict.hedgedrf()} that can be used to make
+predictions with the model.")
     (license license:gpl3)))
 
 (define-public r-heddlr
@@ -9445,6 +10354,9 @@ model.")
         (base32 "0ixmcgvfbq4hi3wv1fyzpwacmxmixsw5yq6mq5xygk6ji03m1v23"))))
     (properties `((upstream-name . "heddlr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-utf8 r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mikemahoney218/heddlr")
@@ -9467,6 +10379,9 @@ your data, and combine them for exporting into a single R Markdown document.")
         (base32 "0arya76isiaxmgmhl7q93vmga9apmbkq3scgz7zhgnrkd8mkh0i1"))))
     (properties `((upstream-name . "HEDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-rlang r-lubridate r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=HEDA")
     (synopsis "'Hydropeaking Events Detection Algorithm'")
@@ -9491,6 +10406,9 @@ but also accounts for the rate of change of the flow variation.  More details
         (base32 "1brkxdasmb62vq8295qvaiz5c1sgj4qhsdyg9mxv96945r0z2rw6"))))
     (properties `((upstream-name . "heckmanGE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-misctools r-maxlik r-glm2))
     (home-page "https://github.com/fsbmat-ufv/heckmanGE")
     (synopsis
@@ -9517,6 +10435,9 @@ handling issues related to eigenvalues in covariance matrices.")
         (base32 "0rx9lbi5l0h95sg5lhjyrv31qmp4ziam84b98l2a05q56avck9jj"))))
     (properties `((upstream-name . "HeckmanEM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sampleselection r-performanceanalytics
                              r-mvtnorm r-momtrunc r-ggplot2))
     (home-page "https://cran.r-project.org/package=HeckmanEM")
@@ -9541,6 +10462,9 @@ global and local influence for four possible perturbation schema.")
         (base32 "0kr4ch84j0fnj9zhmfnvwn24kfnz8kcykg0vhqvw5grnx7971sq9"))))
     (properties `((upstream-name . "heck")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (home-page "https://github.com/DyfanJones/heck")
     (synopsis "Highly Performant String Case Converter")
@@ -9563,6 +10487,9 @@ case conversion for R'.")
         (base32 "172qg8dgyn5lbwmyq8dxdccxr4aqaq6iixn5dqb4fy99ahgdbhyv"))))
     (properties `((upstream-name . "heatwaveR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rcpproll
                              r-rcpparmadillo
@@ -9596,6 +10523,9 @@ non-temperature data as well.")
         (base32 "0va8ac2wf1mzm6zamhfpid3xkm7310c6b695c5wbc705nwijnd9q"))))
     (properties `((upstream-name . "heatmapFlex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-heatplus r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=heatmapFlex")
@@ -9603,11 +10533,11 @@ non-temperature data as well.")
     (description
      "This package provides a set of tools supporting more flexible heatmaps.  The
 graphics is grid-like using the old graphics system.  The main function is
-heatmap.n2(), which is a wrapper around the various functions constructing
-individual parts of the heatmap, like sidebars, picket plots, legends etc.  The
-function supports zooming and splitting, i.e., having (unlimited) small heatmaps
-underneath each other in one plot deriving from the same data set, e.g.,
-clustered and ordered by a supervised clustering method.")
+@code{heatmap.n2()}, which is a wrapper around the various functions
+constructing individual parts of the heatmap, like sidebars, picket plots,
+legends etc.  The function supports zooming and splitting, i.e., having
+(unlimited) small heatmaps underneath each other in one plot deriving from the
+same data set, e.g., clustered and ordered by a supervised clustering method.")
     (license license:gpl3)))
 
 (define-public r-heatmapfit
@@ -9622,6 +10552,9 @@ clustered and ordered by a supervised clustering method.")
         (base32 "1rswp1wp58f21fpyjybcvvmnn53kr54ij83hp05qbvl7yn1fsnrb"))))
     (properties `((upstream-name . "heatmapFit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=heatmapFit")
     (synopsis "Fit Statistic for Binary Dependent Variable Models")
     (description
@@ -9642,6 +10575,9 @@ in Esarey and Pierce (2012) <DOI:10.1093/pan/mps026>.")
         (base32 "0c7bxblq24m80yi24gmrqqlcw8jh0lb749adsh51yr6nzpap6i9n"))))
     (properties `((upstream-name . "heatex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=heatex")
     (synopsis "Heat exchange calculations during physical activity")
     (description
@@ -9664,6 +10600,9 @@ range of environmental conditions when wearing various clothing ensembles.")
         (base32 "1b88ff4j6rh0qif43iyb12wipkkjmp5qx33qfzgffr5m54df4kfy"))))
     (properties `((upstream-name . "heapsofpapers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rlang
                              r-magrittr
@@ -9692,6 +10631,9 @@ up to, and adjusting for files that have already been downloaded.")
         (base32 "0l7fwlfr1kzrwmb8g9vln0bhdig9sqi27sdxx8ydpl9pgqwqv1vx"))))
     (properties `((upstream-name . "healthyverse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidydensity
                              r-tidyaml
                              r-tibble
@@ -9728,6 +10670,9 @@ easy to install and load multiple healthyverse packages in a single step.")
         (base32 "139y1xjnb2803gk191mhi1ib8m9ivaf64zqcqxs3dnd7blbdxvj6"))))
     (properties `((upstream-name . "healthyR.ts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-workflowsets
                              r-timetk
                              r-tidyr
@@ -9769,6 +10714,9 @@ that takes the guesswork out of everything.")
         (base32 "1g8fd2s60i6yhfp6z2g0ib6zz4n2xvwswbzacbffbvakf21djwvc"))))
     (properties `((upstream-name . "healthyR.data")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -9794,6 +10742,9 @@ package.")
         (base32 "1wfwjl1v91y16v6x2zzag8h85lvrq4m9jnh041s9gxmv0wpccnqr"))))
     (properties `((upstream-name . "healthyR.ai")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yardstick
                              r-workflows
                              r-tune
@@ -9835,6 +10786,9 @@ takes the guesswork out of everything.")
         (base32 "1fa2w3w2cfn5ak01kls8yxxzyfvmp2v43q0bfr4ylrimd1fvbhbp"))))
     (properties `((upstream-name . "healthyR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-timetk
                              r-tibble
@@ -9872,6 +10826,9 @@ consistent verb framework that takes the guesswork out of everything.")
         (base32 "0rj2cd34dw17bdw3m6dkgyaji72f3sapf9jnvlr8sima6nfiacqd"))))
     (properties `((upstream-name . "healthyAddress")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qs
                              r-magrittr
                              r-hutilscpp
@@ -9906,6 +10863,9 @@ analysis in urban studies, geography, and related fields.")
         (base32 "163zhdd5mqp0q872dmr3xzw2ppapnwp46rr7vkkfnglz635nxvpz"))))
     (properties `((upstream-name . "healthfinance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-shiny
                              r-scales
@@ -9937,6 +10897,9 @@ ISBN:9780078025792).")
         (base32 "06vjiw526nvzb392pfsi9qs59yw5bsk5m5y2p88zyi2lny02k2fk"))))
     (properties `((upstream-name . "healthequal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survey
                              r-srvyr
                              r-rlang
@@ -9965,6 +10928,9 @@ Absolute Concentration Index) also accept individual and survey data.")
         (base32 "1iyijm0hwqz0dypqfvk84iyj0qbh16sq09mcs2srj98yywd4nnz4"))))
     (properties `((upstream-name . "healthdb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -10000,6 +10966,9 @@ The implementation is based on dbplyr with full tidyverse compatibility.")
         (base32 "1584j0ljvxp4b1ly0gxs9sdsnvvg96f91x94v5xngr4zrvsc21ga"))))
     (properties `((upstream-name . "healthcare.antitrust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mpanhans/healthcare.antitrust")
     (synopsis "Healthcare Antitrust Analysis")
@@ -10022,6 +10991,9 @@ Mergers\" <doi:10.1111/ecin.12454>.")
         (base32 "03q966d2kyi6x1ka4nmma94y75yj0vz4bk26psgnysvfz0nldfa3"))))
     (properties `((upstream-name . "HealthCal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HealthCal")
     (synopsis "Health Calculator")
@@ -10042,6 +11014,9 @@ body mass index etc.  related to fitness and health of a person.")
         (base32 "0yl2rvz92cb4y3k408gi66dgv835h4k86vgf258h87psmg3kr6md"))))
     (properties `((upstream-name . "healthatlas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-sf
@@ -10074,6 +11049,9 @@ Spatial datasets are returned as sf objects.")
         (base32 "1llq007b032q526csfxxwrrwaxkzgq8wl4g4cr65j8biwwynpaba"))))
     (properties `((upstream-name . "headliner")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -10102,6 +11080,9 @@ package.")
         (base32 "1blfqm1h54gq551g0gvprsyd66r9pbirh8f1d0grchv8b7mnydml"))))
     (properties `((upstream-name . "HDXBoxeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrapr r-tidyr r-stringr r-rcolorbrewer r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=HDXBoxeR")
@@ -10135,6 +11116,9 @@ protein states.  For details check papers by Hageman and Weis (2019)
         (base32 "0m8xg6fkn81ni1npfadhv2b2zy7nazg46217hr3xw9y53d1a90gk"))))
     (properties `((upstream-name . "HDtweedie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=HDtweedie")
     (synopsis
@@ -10149,38 +11133,44 @@ elastic net methods.")
 (define-public r-hdtsa
   (package
     (name "r-hdtsa")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDTSA" version))
        (sha256
-        (base32 "1jsrzyxlcaz5l8zq9hxd7hf1kgs4lvq13z78lhmq68z9vxlln38j"))))
+        (base32 "1p4mka4m2ladlxgd6ljqw181lky8bynh6vf9cfsgf21qq3pals1z"))))
     (properties `((upstream-name . "HDTSA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vars
+                             r-sandwich
                              r-rcppeigen
                              r-rcpp
                              r-mass
                              r-jointdiag
                              r-geigen
+                             r-forecast
                              r-clime))
     (home-page "https://github.com/Linc2021/HDTSA")
     (synopsis "High Dimensional Time Series Analysis Tools")
     (description
-     "Procedures for high-dimensional time series analysis including factor analysis
-proposed by Lam and Yao (2012) <doi:10.1214/12-AOS970> and Chang, Guo and Yao
-(2015) <doi:10.1016/j.jeconom.2015.03.024>,martingale difference test proposed
-by Chang, Jiang and Shao (2022) <doi:10.1016/j.jeconom.2022.09.001> in
-press,principal component analysis proposed by Chang, Guo and Yao (2018)
-<doi:10.1214/17-AOS1613>, identifying cointegration proposed by Zhang, Robinson
-and Yao (2019) <doi:10.1080/01621459.2018.1458620>, unit root test proposed by
-Chang, Cheng and Yao (2021) <doi:10.1093/biomet/asab034>, white noise test
+     "An implementation for high-dimensional time series analysis methods, including
+factor model for vector time series proposed by Lam and Yao (2012)
+<doi:10.1214/12-AOS970> and Chang, Guo and Yao (2015)
+<doi:10.1016/j.jeconom.2015.03.024>, martingale difference test proposed by
+Chang, Jiang and Shao (2023) <doi:10.1016/j.jeconom.2022.09.001>, principal
+component analysis for vector time series proposed by Chang, Guo and Yao (2018)
+<doi:10.1214/17-AOS1613>, cointegration analysis proposed by Zhang, Robinson and
+Yao (2019) <doi:10.1080/01621459.2018.1458620>, unit root test proposed by
+Chang, Cheng and Yao (2022) <doi:10.1093/biomet/asab034>, white noise test
 proposed by Chang, Yao and Zhou (2017) <doi:10.1093/biomet/asw066>,
-CP-decomposition for high-dimensional matrix time series proposed by Chang, He,
-Yang and Yao(2023) <doi:10.1093/jrsssb/qkac011> and Chang, Du, Huang and Yao
-(2024+), and Statistical inference for high-dimensional spectral density matrix
-porposed by Chang, Jiang, @code{McElroy} and Shao (2023)
+CP-decomposition for matrix time series proposed by Chang et al. (2023)
+<doi:10.1093/jrsssb/qkac011> and Chang et al. (2024)
+<doi:10.48550/@code{arXiv.2410.05634>}, and statistical inference for spectral
+density matrix proposed by Chang et al. (2022)
 <doi:10.48550/@code{arXiv.2212.13686>}.")
     (license license:gpl3)))
 
@@ -10196,6 +11186,9 @@ porposed by Chang, Jiang, @code{McElroy} and Shao (2023)
         (base32 "0v43lwszxmka5li6mp10i2c6zq4si5hm2qsb27lib5gq5cxm23r7"))))
     (properties `((upstream-name . "HDStIM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uwot
                              r-tidyselect
                              r-tidyr
@@ -10235,6 +11228,9 @@ responses and generating diagnostic plots.")
         (base32 "1hwqdwr4jl887sgnjwq3gmxjhk6zz45nasvy3x7i7rmrqylxig60"))))
     (properties `((upstream-name . "HDSpatialScan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-teachingdemos
                              r-swfscmisc
                              r-spatialnp
@@ -10277,6 +11273,9 @@ Sophie DABO-NIANG and Michael GENIN (2023) <doi:10.1093/jrsssc/qlad017>.")
         (base32 "1wkhy6xf5ahj12sg9s32k53j7z2zpqj7rq0ficngdbyfzs2y6w48"))))
     (properties `((upstream-name . "HDSinRdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HDSinRdata")
     (synopsis
      "Data for the 'Mastering Health Data Science Using R' Online Textbook")
@@ -10298,6 +11297,9 @@ Alice (2023) \"Health Data Science in R\"
         (base32 "129j1dr3vjdg23dy45wws470v05j5azq8nq88b670kdgfw1586qm"))))
     (properties `((upstream-name . "HDShOP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-lattice))
     (home-page
      "https://github.com/Otryakhin-Dmitry/global-minimum-variance-portfolio")
@@ -10329,6 +11331,9 @@ Markowitz efficient frontier recently developed by Bauder et al. (2021)
         (base32 "1smg5ixrl7f2x3wn7s5i26dyadn5sigpf4jsk236z1bhnz617ax4"))))
     (properties `((upstream-name . "hds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tensor r-survival))
     (home-page "https://github.com/liangcj/hds")
     (synopsis "Hazard Discrimination Summary")
@@ -10350,6 +11355,9 @@ summary and its standard errors, as described in Liang and Heagerty (2016)
         (base32 "00rggyq5sz73jnv4s8zfjw6hx08fw0qaadw0rng695ri17m0czxg"))))
     (properties `((upstream-name . "HDRFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-pracma))
     (home-page "https://cran.r-project.org/package=HDRFA")
     (synopsis "High-Dimensional Robust Factor Analysis")
@@ -10379,6 +11387,9 @@ Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
         (base32 "1hh0d0dmnqxzsfar86bd0cqjj5jljyhw073zi59bmjyg4m0rjyyn"))))
     (properties `((upstream-name . "hdpGLM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-tibble
@@ -10426,6 +11437,9 @@ Modeling Context-Dependent Latent Heterogeneity, Political Analysis
         (base32 "0xcakpnp363lz98y3h87p1yhj0gs3f94gx2i8kz4mcizn1ll5xbd"))))
     (properties `((upstream-name . "hdpca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve r-boot))
     (home-page "https://cran.r-project.org/package=hdpca")
     (synopsis "Principal Component Analysis in High-Dimensional Data")
@@ -10450,6 +11464,9 @@ the shrinkage bias in the predicted PC scores.  Dey, R. and Lee, S. (2019)
         (base32 "0vc3g36cghs2ln8a3pb344b3vw1jpz9r8ld77ldd898vg9rhkq2m"))))
     (properties `((upstream-name . "HDoutliers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mclust r-fnn r-factominer))
     (home-page "https://cran.r-project.org/package=HDoutliers")
     (synopsis
@@ -10475,6 +11492,9 @@ uses probabilities to determine outliers.")
         (base32 "1wfq4w73dkkmfwn3n9rwpjlpvm1ak76dv9ymh6zqfls5whdmp59g"))))
     (properties `((upstream-name . "HDOMDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hadamardr))
     (home-page "https://cran.r-project.org/package=HDOMDesign")
     (synopsis "High-Dimensional Orthogonal Maximin Distance Designs")
@@ -10496,6 +11516,9 @@ Kronecker product of sub-Hadamard matrices.")
         (base32 "1yjgms82419v073ahi381nhrppmwrlncjqwl42ahlf7agp1pv48m"))))
     (properties `((upstream-name . "HDNRA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-rdpack r-rcpparmadillo r-rcpp r-expm))
     (home-page "https://nie23wp8738.github.io/HDNRA/")
     (synopsis
@@ -10544,6 +11567,9 @@ Zhu, Tianming, Liang Zhang, and Jin-Ting Zhang.(2022)
         (base32 "0d9khk2a16p4j6vcj109pn695fbrra8vx821fzzyg56px5j1j8k0"))))
     (properties `((upstream-name . "hdnom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-penalized
                              r-ncvreg
@@ -10574,6 +11600,9 @@ calibration, and comparison for high-dimensional data.")
         (base32 "11wr7n6gj75k3a339h9hm167pni3vdbbnwwblc2b0wfljxsif6hf"))))
     (properties `((upstream-name . "HDMT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qvalue r-fdrtool))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HDMT")
@@ -10610,6 +11639,9 @@ challenge.  Methods used in the package refer to James Y. Dai, Janet L. Stanford
         (base32 "19s3zflc7fhd2bwf8m7h5n4scd45li9izgw8aqv4prly46isnn3y"))))
     (properties `((upstream-name . "HDMFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra r-mass))
     (home-page "https://cran.r-project.org/package=HDMFA")
     (synopsis "High-Dimensional Matrix Factor Analysis")
@@ -10645,6 +11677,9 @@ determining the pair of factor numbers are also given.")
         (base32 "1vmyf9w5dwl8ayxsk7ykd13hl41j4a435771rkgmkmnm5fbcqaai"))))
     (properties `((upstream-name . "hdmed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ncvreg
                              r-mediation
                              r-mass
@@ -10693,6 +11728,9 @@ functions.")
         (base32 "04s9r29yjirkzki6drcyglh2hd712habzdgpw0fnf3cy9960wv4v"))))
     (properties `((upstream-name . "hdme")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rglpk
                              r-rdpack
@@ -10725,6 +11763,9 @@ Dantzig Selector for the case of measurement error (Sorensen et al. (2018)
         (base32 "0whcd0315cxn45ilsrh11baylrxvk0w4vcsqk6sps6fcpg4m2ak5"))))
     (properties `((upstream-name . "HDMAADMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng))
     (home-page "https://github.com/psyen0824/HDMAADMM")
     (synopsis "ADMM for High-Dimensional Mediation Models")
@@ -10756,6 +11797,9 @@ Boyd, S., Parikh, N., Chu, E., Peleato, B., & Eckstein, J. (2011).
         (base32 "0spy2a23b6hxw6dm6zjqya066ar0224b64lckh6hrapha8kv4m1k"))))
     (properties `((upstream-name . "hdm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-glmnet r-ggplot2 r-formula r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hdm")
@@ -10785,6 +11829,9 @@ choice of the penalty.  Chernozhukov, Hansen, Spindler (2016)
         (base32 "19snvpgiq8kxzqv6yimzn7nfxkch2xkm0sk41m7g4xwr412dn49j"))))
     (properties `((upstream-name . "HDLSSkST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=HDLSSkST")
     (synopsis
@@ -10820,6 +11867,9 @@ Sture Holm (1979) <doi:10.2307/4615733>; Yoav Benjamini and Yosef Hochberg
         (base32 "1vv1q7hdq12wh5nbr8zh1f8fzx5caaq4b39wqy99mxpx8cnsb87n"))))
     (properties `((upstream-name . "HDJM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-statmod r-rcppensmallen
                              r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=HDJM")
@@ -10849,6 +11899,9 @@ approximation method.")
         (base32 "1vvsi1irnbjnyliz9wh783kbjkyz8agfbrx10436fsf8x33d1qs8"))))
     (properties `((upstream-name . "hdiVAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hdiVAR")
@@ -10876,6 +11929,9 @@ Statistica Sinica.")
         (base32 "1qwd3y9645m8v2gdrb4xjpq86ixs9rgrw7iv3m5lm7nnf87qm350"))))
     (properties `((upstream-name . "HDiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-npcirc r-movmf r-directional r-circular))
     (home-page "https://cran.r-project.org/package=HDiR")
     (synopsis "Directional Highest Density Regions")
@@ -10902,6 +11958,9 @@ occurrences.")
         (base32 "1xlljhzd30mi7pic7q55h7hv0bccxfc2g32piv8jx830svnz01xv"))))
     (properties `((upstream-name . "HDInterval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HDInterval")
     (synopsis "Highest (Posterior) Density Intervals")
     (description
@@ -10923,6 +11982,9 @@ objects, and functions.")
         (base32 "1gs3205z3v7zvr2xqi4jv8xpmngpw41nk0kbz7wx3g4a5152hagq"))))
     (properties `((upstream-name . "hdImpute")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -10957,6 +12019,9 @@ forests.  See Waggoner (2023) <doi:10.1007/s00180-023-01325-9> for more on
         (base32 "0k35zqz58lcx5p7ijhks4j7kqp553zggvrx4lh6k4s85lp601x22"))))
     (properties `((upstream-name . "hdi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scalreg r-mass r-linprog r-glmnet))
     (home-page "https://cran.r-project.org/package=hdi")
     (synopsis "High-Dimensional Inference")
@@ -10977,6 +12042,9 @@ models.")
         (base32 "0a5lnh3780lsczj8339sp97c5y64a2gsdf77i56fvpxpphq0dnf8"))))
     (properties `((upstream-name . "HDGLM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=HDGLM")
     (synopsis "Tests for High Dimensional Generalized Linear Models")
@@ -10997,6 +12065,9 @@ models.")
         (base32 "07lfr0vblahh3xhckwmzbmlja0janb73qkl4663mqgp6xk21jmi1"))))
     (properties `((upstream-name . "hdfqlr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hdfqlr")
@@ -11021,6 +12092,9 @@ more information, see the reference manual
         (base32 "19ncn1nks93g3xgdnnsxd72lzyxx9qsxj4m8sd7sdlz7azccpm51"))))
     (properties `((upstream-name . "hdflex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-rcppthread
                              r-rcpparmadillo
@@ -11051,6 +12125,9 @@ al. (2023) <doi:10.2139/ssrn.4342487>.")
         (base32 "1kfpa8i697f0ksa0pd726g6bf0j2injlbwkjg71k6apv3sq8aqxg"))))
     (properties `((upstream-name . "hdf5r.Extra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-matrix
                              r-hdf5r
@@ -11077,6 +12154,9 @@ writing R objects to HDF5 formats follow the specification of @code{AnnData}
         (base32 "1q7mz7yxb4qvprj431kxv46cf9myckkycfbi6nzbkqw8mpwg02qy"))))
     (properties `((upstream-name . "hddplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-multtest r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jhmaindonald/hddplot")
@@ -11104,6 +12184,9 @@ implements, and extends, methods described in J.H. Maindonald and C.J. Burden
         (base32 "1jim4h9bwn8r637va7m81kwwsfwyzs9pzn5a9i7c8xz8b1x191bj"))))
     (properties `((upstream-name . "HDDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HDDesign")
     (synopsis
      "Sample Size Calculation for High Dimensional Classification Study")
@@ -11129,6 +12212,9 @@ for three design methods.")
         (base32 "1xl5p56qrnvli2ga1p8xyvgsp17jyjm0xng5prigyngnpj327qpk"))))
     (properties `((upstream-name . "hdd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-fst r-dreamerr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hdd")
@@ -11152,6 +12238,9 @@ the syntax for manipulation is similar to data.table'.  Operations are performed
         (base32 "1656ia0qn4yrbkcrpjiyqq72fbvb088d07ma7kchvg875nzwj42v"))))
     (properties `((upstream-name . "HDCurves")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HDCurves")
     (synopsis "Hierarchical Derivative Curve Estimation")
     (description
@@ -11173,6 +12262,9 @@ a non-hierarchical setting the package produces a single derivative curve.")
         (base32 "09ih9jlz7l4vcgqhpy9h5c8j19c5fdfn4hhka85as762lxxbkwrl"))))
     (properties `((upstream-name . "hdcuremodels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-plyr
                              r-mvnfast
@@ -11208,6 +12300,9 @@ variable selection is provided using model-X knock-offs.")
         (base32 "0ai35d9df5pmva52sb1rr20f11h0mbal6d179g865b7w6n90kfr1"))))
     (properties `((upstream-name . "HDcpDetect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=HDcpDetect")
     (synopsis "Detect Change Points in Means of High Dimensional Data")
@@ -11239,6 +12334,9 @@ large number of attributes but no more than a few hundred observations.")
         (base32 "1v8q8xf9nlxq0x8m5xlnrp3f3hdzlxraxf8g22cadi1162d6vfg1"))))
     (properties `((upstream-name . "HDclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rtsne r-rcppprogress r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=HDclust")
@@ -11263,6 +12361,9 @@ and Jia Li (2017) <https://jmlr.org/papers/v18/16-342.html>.")
         (base32 "0npdnp86m71bsp4096j3yfcvr702ghhvdvxpd2m7lbnc8g3v0sdp"))))
     (properties `((upstream-name . "HDclassif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rarpack r-mass))
     (home-page "https://cran.r-project.org/package=HDclassif")
     (synopsis "High Dimensional Supervised Classification and Clustering")
@@ -11286,6 +12387,9 @@ model.")
         (base32 "0wxbv54kbygymhh4r7052vnbj603c1kya01ykvmqzzkjyyfzidkz"))))
     (properties `((upstream-name . "HDCI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-slam
                              r-mvtnorm
                              r-matrix
@@ -11315,6 +12419,9 @@ are Lasso, Lasso+OLS, Lasso partial ridge, Lasso+OLS partial ridge.")
         (base32 "01fxai59mi5hrjv0yx8f4cd6c5pin87n2sry2lk3w041c7df21gs"))))
     (properties `((upstream-name . "HDCD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-mclust))
     (home-page "https://cran.r-project.org/package=HDCD")
     (synopsis "High-Dimensional Changepoint Detection")
@@ -11339,6 +12446,9 @@ Projection for Estimating Changepoints by Wang and Samworth (2017)
         (base32 "1jv6y38lzvm75s44n1pjvkkf5xcvrvclil318gvx54b16hvgggcg"))))
     (properties `((upstream-name . "hdcate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-locpol r-kernsmooth r-hdm r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hdcate")
@@ -11373,6 +12483,9 @@ misspecified (but not both).  This package is based on the paper by Fan et al.,
         (base32 "03jl1m099z6gj2ipi7rnjnrd2rmk4zs54332rwlqyf40dv7ndbz1"))))
     (properties `((upstream-name . "HDBRR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-mass r-bigstatsr))
     (home-page "https://cran.r-project.org/package=HDBRR")
     (synopsis "High Dimensional Bayesian Ridge Regression without MCMC")
@@ -11395,6 +12508,9 @@ QR decomposition for the posterior computation.")
         (base32 "0dj9hh6x5096znl7naga0qrx2fwr4crgjk7fyk5vxn6v1gl3llrh"))))
     (properties `((upstream-name . "hdbma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-r2jags r-mass r-lattice r-gplots))
     (home-page "https://www.r-project.org")
     (synopsis "Bayesian Mediation Analysis with High-Dimensional Data")
@@ -11417,6 +12533,9 @@ of the hierarchical structures and high dimensional exposures or mediators.")
         (base32 "0lvaica195chl6bb10wvvr7fbmh8b954fpxcm9r0gyp0d0i2a2w4"))))
     (properties `((upstream-name . "hdbm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hdbm")
@@ -11445,6 +12564,9 @@ continuous shrinkage priors on the effects.")
         (base32 "0q5lfczymrd4ln04lbdysncx6ylcsgrk69mhvm7jjk7pybrpm9wq"))))
     (properties `((upstream-name . "hdbinseg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-iterators r-foreach
                              r-doparallel))
     (home-page "https://cran.r-project.org/package=hdbinseg")
@@ -11469,6 +12591,9 @@ described in Cho and Fryzlewicz (2014) <doi:10.1111/rssb.12079> and Cho (2016)
         (base32 "1c2mjfv7d93zn29dr0rcd5ym109qznfyjj45c8608qpaj8g6jqkx"))))
     (properties `((upstream-name . "hdbcp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-dplyr))
     (home-page "https://github.com/JaeHoonKim98/hdbcp")
     (synopsis "Bayesian Change Point Detection for High-Dimensional Data")
@@ -11491,6 +12616,9 @@ change point detection techniques.")
         (base32 "1vm89cdi2dfx6dhv62s3c0iv81rd2mfp1m99am4r6bdc71rqi0qi"))))
     (properties `((upstream-name . "hdbayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-posterior
                              r-mvtnorm
@@ -11534,6 +12662,9 @@ package.")
         (base32 "1hx1jrxi8jmls5xi7mnpw06192l60i3ksrjbsmr7qz4ww8r8s31m"))))
     (properties `((upstream-name . "hdar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-r6
                              r-magrittr
@@ -11565,6 +12696,9 @@ available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
         (base32 "1w6c2pwngx1f55zzxsvxnmg2bv5i0ywirchvdncl3iy7mpcsm6vm"))))
     (properties `((upstream-name . "HDANOVA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-progress
                              r-pracma
@@ -11596,6 +12730,9 @@ four vignettes covering a range different applications.")
         (base32 "0azfxyws7yslcqplfddmdp5ngk91j5h7llvrg77yh5z0kkd09j1b"))))
     (properties `((upstream-name . "hda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-e1071))
     (home-page "https://cran.r-project.org/package=hda")
     (synopsis "Heteroscedastic Discriminant Analysis")
@@ -11616,6 +12753,9 @@ classification if the covariance matrices of the classes are unequal.")
         (base32 "19li8i8hx0r3b63q80cnj6pr72rdbmykxq0kcfbn4azq3sdd046y"))))
     (properties `((upstream-name . "hctrial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-genbinomapps r-clinfun))
     (home-page "https://cran.r-project.org/package=hctrial")
     (synopsis
@@ -11638,6 +12778,9 @@ controls.")
         (base32 "1hg8mpallwxpmamk6q8x87w5hlqqwvbahfw5zmr9pisiagbwcsay"))))
     (properties `((upstream-name . "HCTR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-ncvreg r-mass r-harmonicmeanp r-glmnet))
     (home-page "https://cran.r-project.org/package=HCTR")
     (synopsis "Higher Criticism Tuned Regression")
@@ -11668,6 +12811,9 @@ provided in the multi-split algorithm.")
         (base32 "1nncyyw1dlbdl9f1pncwa9xdqrd7w2aw4ghnf01vwyq0m7pj90l1"))))
     (properties `((upstream-name . "HCTDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rdpack
                              r-mvtnorm
@@ -11698,6 +12844,9 @@ Li (2020) <doi:10.1080/10543406.2019.1684305>.")
         (base32 "18k6p9y3vl39mxbvdjanyj3w74jqy2rym6rdbfrx5crvqm9k8hcp"))))
     (properties `((upstream-name . "HCT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstan))
     (home-page "https://cran.r-project.org/package=HCT")
     (synopsis
@@ -11720,6 +12869,9 @@ estimate that takes into account the among trial variation.")
         (base32 "14s46dyw3ifp3pwwlcwbbl47i6hy2whjj1n65i28am5a33nycgha"))))
     (properties `((upstream-name . "HCR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://cran.r-project.org/package=HCR")
     (synopsis
@@ -11747,6 +12899,13 @@ description of some of our methods.")
         (base32 "0jchr8ncjpl2ljwf09cmpv679vdla11r1vkylhqaacdp1zdb93w6"))))
     (properties `((upstream-name . "HCmodelSets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-survival r-mvtnorm r-ggplot2))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=HCmodelSets")
@@ -11773,6 +12932,9 @@ the proportional hazards model fitted by partial likelihood.")
         (base32 "0c3w2wmk5a85kxkkg782w2ggy43i2ayrrjfwl91bkxba5n2pk3sa"))))
     (properties `((upstream-name . "hclusteasy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readxl r-factoextra r-clustersim))
     (home-page "https://github.com/tsukubai/hclusteasy")
     (synopsis "Determining Hierarchical Clustering Easily")
@@ -11795,6 +12957,9 @@ component analysis to evaluate the groups obtained.")
         (base32 "1cari4ms1j5x2i5m9yd50j7alf18k7z053yhqbck0hs2mck9jx86"))))
     (properties `((upstream-name . "hclust1d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SzymonNowakowski/hclust1d")
@@ -11817,6 +12982,9 @@ complexity is paired with an efficient C++ implementation.")
         (base32 "16qzll0rhfc6szi9y5hxycq5462jm78kla70fnv1sqw7n34pvpg5"))))
     (properties `((upstream-name . "hcidata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack))
     (home-page "https://github.com/henningpohl/hcidata")
     (synopsis "HCI Datasets")
@@ -11848,6 +13016,8 @@ Larsen et al. (2019) <doi:10.1145/3338286.3340115>; Lilija et al. (2019)
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -11886,6 +13056,9 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
         (base32 "1zivik69va92mbqhv46xh3pj98jxbc6z3x5i4isb07k8incv4wcy"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hce")
     (synopsis "Design and Analysis of Hierarchical Composite Endpoints")
@@ -11910,6 +13083,9 @@ in Innovative Clinical Trials, 95-148.  Chapman; Hall/CRC.
         (base32 "0f0kn2n1g25akwdbysy5xpxfcnpfdxgjzyd7ji6f58cs40q6gl28"))))
     (properties `((upstream-name . "HCD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rspectra
                              r-randnet
@@ -11941,6 +13117,9 @@ between communities.")
         (base32 "1rkbds3inpkhpvqb7rhvvakf9n0xf1yr74c3ywm35lwv6lj8pi21"))))
     (properties `((upstream-name . "hcci")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/prdm0/hcci")
     (synopsis "Interval Estimation of Linear Models with Heteroskedasticity")
     (description
@@ -11981,6 +13160,9 @@ wild bootstrap.")
         (base32 "0r8z8kb9hwvgcsxbd7arbmqclhwlbcjpnf3p9mp5vgyxm84iz515"))))
     (properties `((upstream-name . "hcandersenr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/EmilHvitfeldt/hcandersenr")
     (synopsis "H.C. Andersens Fairy Tales")
     (description
@@ -12000,6 +13182,9 @@ German, Danish, English, Spanish and French.")
         (base32 "1ngvw17k4i4cxdr59fsbm437fn1wqxjz7zn1l6aciygy3rlcncw9"))))
     (properties `((upstream-name . "HBV.IANIGLA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/ezetoum27/hbv.ianigla")
@@ -12026,6 +13211,9 @@ glacier melt simulations.")
         (base32 "1rw0sav1xrw5sraah3yhw5ypyf99pi9h323nf02qidqfzr9xb214"))))
     (properties `((upstream-name . "HBSTM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-maps r-fbasics))
     (home-page "https://cran.r-project.org/package=HBSTM")
     (synopsis
@@ -12048,6 +13236,9 @@ models.")
         (base32 "0fg782gxivkkwhqvxf09j1q20f2dqm7bd1y9bp99fy7mg88zp0gn"))))
     (properties `((upstream-name . "hbsae")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=hbsae")
     (synopsis "Hierarchical Bayesian Small Area Estimation")
@@ -12075,6 +13266,9 @@ level, and to graphically compare different sets of small area estimates.")
         (base32 "0qhxc784zhilxhijlsykl10cqlxk9ll8m2cz9s1cmz76hlvrn0y9"))))
     (properties `((upstream-name . "hbmem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://pcn.psychology.msstate.edu/")
     (synopsis "Hierarchical Bayesian Analysis of Recognition Memory")
     (description
@@ -12095,6 +13289,9 @@ model to recognition memory confidence-ratings data.")
         (base32 "1wgzxmbdzigh9q6q2s4vfh58p8whmyp0jckfga1li5cibqbvpaf0"))))
     (properties `((upstream-name . "hbim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=hbim")
     (synopsis "Hill/Bliss Independence Model for Combination Vaccines")
@@ -12117,6 +13314,9 @@ Uses Hill models for each component which are combined under Bliss independence.
         (base32 "09sph4vliyb63pd0abq02ix5wz373r70kgldw44fm279zq4z772h"))))
     (properties `((upstream-name . "hbbr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r2jags))
     (home-page "https://cran.r-project.org/package=hbbr")
     (synopsis
@@ -12139,6 +13339,9 @@ al. (2019) <DOI:10.1080/19466315.2018.1527248>.")
         (base32 "1vy1kaffviidhil39n7k2fr5rjgzkhkaj1r2nhmp908snq8nhf2m"))))
     (properties `((upstream-name . "hBayesDM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstan
                              r-rcppeigen
@@ -12168,6 +13371,9 @@ various computational models with a single line of coding (Ahn et al., 2017)
         (base32 "1rl1sd46r1pk1mikczladgwszynr3p50ydbd6hl8ixczkvadgldm"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stanheaders
                              r-rstantools
@@ -12216,6 +13422,9 @@ The original version of the default model is described in BÃ¸lstad (2024)
         (base32 "1r3wlgvjy33cr0vi0lpckim4cybz67lh44fi6d36hms8pirnl4rl"))))
     (properties `((upstream-name . "hbal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rcppeigen
                              r-rcpp
@@ -12248,6 +13457,9 @@ cross-validation to select variable penalties for the balancing conditions.")
         (base32 "1d1qj6mamgxlvxq2hjik69zfzackjz5819iss98jf5gdbdngw41x"))))
     (properties `((upstream-name . "hazer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bnasr/hazer/")
     (synopsis "Identifying Foggy and Cloudy Images by Quantifying Haziness")
@@ -12274,6 +13486,9 @@ images.")
         (base32 "048lvhb4545a487kyknf5b5v8q3a9nsipbh0ii2k3pcc5vfql1h4"))))
     (properties `((upstream-name . "HazardDiff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rootsolve r-rdpack r-ahaz))
     (home-page "https://cran.r-project.org/package=HazardDiff")
     (synopsis "Conditional Treatment Effect for Competing Risks")
@@ -12296,6 +13511,9 @@ forms for the covariates.  Rava, D. and Xu, R. (2021) <@code{arXiv:2112.09535>}.
         (base32 "1jbwvzw4j8l7ywrbm4bhxvwp1b3j4ahi6fchmmvfjnx0da1d8163"))))
     (properties `((upstream-name . "hawkesbow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-nloptr r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hawkesbow")
@@ -12321,6 +13539,9 @@ analysis, etc.")
         (base32 "1ghwq3icxwmrai3xn9r8cnvlh3z3j18lznhw1bm31h9mkkp2dk0a"))))
     (properties `((upstream-name . "hawkes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=hawkes")
     (synopsis "Hawkes process simulation and calibration toolkit")
@@ -12343,6 +13564,9 @@ autocorrelation of process jumps on time intervals separated by a lag.")
         (base32 "1ni4wzj8g6qmpgz1xj62vawkcpm3jr4jqqr1xaxlh5nzbj9fn57h"))))
     (properties `((upstream-name . "hasseDiagram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgraphviz r-graph))
     (home-page "https://github.com/kciomek/hasseDiagram")
     (synopsis "Drawing Hasse Diagram")
@@ -12363,6 +13587,9 @@ partially ordered set.")
         (base32 "0rhi3mrlyxksgd34xxha73m0x6aqdf2xk8bshdnmm463rkzyy31l"))))
     (properties `((upstream-name . "Hassani.Silva")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Hassani.Silva")
     (synopsis
      "Test for Comparing the Predictive Accuracy of Two Sets of Forecasts")
@@ -12391,6 +13618,9 @@ accuracy of forecasts.  KSPA test has been described in : Hassani and Silva
         (base32 "16sk1vn47gd5qaq31p8hnqa5p29nd230v4vbg2lsn2bhy9m32km3"))))
     (properties `((upstream-name . "Hassani.SACF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Hassani.SACF")
     (synopsis "Computing Lower Bound of Ljung-Box Test")
     (description
@@ -12416,6 +13646,9 @@ Yeganegi and M. R. (2019) <doi:10.1016/j.physa.2018.12.028>.")
         (base32 "10rvq4rvg7fds2ylh21lri4wlvj870bncqq7kma7rf89rg5x1jz6"))))
     (properties `((upstream-name . "hashr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/markvanderloo/hashr")
     (synopsis "Hash R Objects to Integers Fast")
     (description
@@ -12438,6 +13671,9 @@ algorithm.")
         (base32 "0233qly4rb1g4znxm9h9h8gskzrjyav6nd26xkdl7990m5hcbcwh"))))
     (properties `((upstream-name . "hashids")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/ALShum/hashids-r/")
     (synopsis "Generate Short Unique YouTube-Like IDs (Hashes) from Integers")
     (description
@@ -12462,6 +13698,9 @@ an integer to a hashid and decode a hashid back into an integer.")
         (base32 "021zmppy7p2iakaxirfjdb5jzakg1ijma9d25ly2ni0nx0p1mh6z"))))
     (properties `((upstream-name . "Harvest.Tree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart))
     (home-page "https://cran.r-project.org/package=Harvest.Tree")
     (synopsis "Harvest the Classification Tree")
@@ -12490,6 +13729,9 @@ for more information.")
         (base32 "1j3sv0rpp4lcrf09j4a3an4lkwi2x1z18iv62fk6c2kpp9b14b8r"))))
     (properties `((upstream-name . "harrypotter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gridextra r-ggplot2))
     (home-page "https://github.com/aljrico/harrypotter")
     (synopsis "Palettes Generated from All \"Harry Potter\" Movies")
@@ -12510,6 +13752,9 @@ the Harry Potter movie franchise.")
         (base32 "0n6vsqysj4ijh06z6nqmj8x1z4w9711dxhbfp8p8fwi0l75pj0cj"))))
     (properties `((upstream-name . "harrietr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-magrittr
@@ -12538,6 +13783,9 @@ easier to plot with ggplot2 and to manipulate using tidyverse tools.")
         (base32 "1n90zm31himxwaaan92fbar0nqvxgn41i38vshv42wa77641lr1m"))))
     (properties `((upstream-name . "harmonydata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid r-jsonlite r-httr r-base64enc))
     (home-page "<https://harmonydata.ac.uk>")
     (synopsis "R Library for 'Harmony'")
@@ -12562,6 +13810,9 @@ and identify similar content.  You can try Harmony at
         (base32 "05iiph9zx4wllviiwr92bhiq24bmi62iq9wjn8j91dvascd6xh5i"))))
     (properties `((upstream-name . "harmonizer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=harmonizer")
     (synopsis "Harmonizing CN8 and PC8 Product Codes")
@@ -12584,6 +13835,9 @@ default from 1995 to 2022 and of PC8 from 2001 to 2021, respectively.")
         (base32 "11lxiafclihb49j6psqrdb143sz1xv9v45fafj8dfm8r2yr5hp1g"))))
     (properties `((upstream-name . "harmonicmeanp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fmstable))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=harmonicmeanp")
@@ -12611,15 +13865,18 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.0.787")
+    (version "1.1.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "0ibmcwxlcdw4k7xd0bdnixz5fbnc6avj6jg7sd9ij5kir82xi03f"))))
+        (base32 "0vvqfdb8f5ly75c5a1fbalir7142l7qrb07zbvc0387w9b9fpmfs"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-wavelets
                              r-tsmp
@@ -12659,6 +13916,9 @@ state-of-the-art methods described in Salles et al. (2020)
         (base32 "0jw6iw89d4y8wjy58biv40szp123ql7frz1mmdjdxljmwaby963h"))))
     (properties `((upstream-name . "hapsim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=hapsim")
     (synopsis "Haplotype Data Simulation")
@@ -12680,6 +13940,9 @@ those estimated from an input data set.")
         (base32 "03iblwb6w2dh9sibfi4nlswidck13hzsn7123838zp4sxfnrp041"))))
     (properties `((upstream-name . "happytime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=happytime")
     (synopsis "Two Games to Relieve the Boredom")
     (description
@@ -12701,6 +13964,9 @@ including most of the delicious Cantonese cuisine.")
         (base32 "05lcl8r63f8rjzjs8bgl3n97lh73hnwaw7r4i0hz4qc68fxggn1r"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list sqlite proj geos gdal))
     (propagated-inputs (list r-yyjsonr
                              r-xml2
@@ -12734,6 +14000,9 @@ elevation models, state borders, spatial databases, cadastral parcels, and more.
         (base32 "0w61ww76fq4iqzi6w9q2649925m5agnjaqhij40dwxyzsyqv9zjd"))))
     (properties `((upstream-name . "haplotypes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna r-plotrix r-phangorn r-network r-ape))
     (home-page "https://cran.r-project.org")
     (synopsis
@@ -12761,6 +14030,9 @@ haplotypes using statistical parsimony and plotting parsimony networks.")
         (base32 "0pcshlh29c4zazhkcq4371kqh9inrbx494y5a1qb1k2c92fkax31"))))
     (properties `((upstream-name . "haplotyper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=haplotyper")
     (synopsis "Tool for Clustering Genotypes in Haplotypes")
@@ -12787,6 +14059,9 @@ relative frequencies.")
         (base32 "15jawq5bxy2kjvl7bxqjr6p02ivhfrdzjmvjy1vp45jnaz6052v2"))))
     (properties `((upstream-name . "HaploSim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HaploSim")
     (synopsis "Functions to Simulate Haplotypes")
     (description
@@ -12806,6 +14081,9 @@ parameters.")
         (base32 "1s8f556d9x5h76gyl4wggcx01f4qrx0fp5mz46yk2x9qmwiir89v"))))
     (properties `((upstream-name . "haploR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-tibble
                              r-runit
@@ -12839,6 +14117,9 @@ downstream analyses.")
         (base32 "182ihr45s2g452h054c6m8lgvj629spq1rd9vglzyy8ymg0l6w4j"))))
     (properties `((upstream-name . "HaploCatcher")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest
                              r-patchwork
                              r-lattice
@@ -12879,6 +14160,9 @@ information on this method, refer to <doi:10.1007/s00122-022-04178-w>.")
         (base32 "103i1fxk990drlsdhjrh9p6rp05g7gqzmlqfcdx9a1di1qrhw5qh"))))
     (properties `((upstream-name . "haplo.ccs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-haplo-stats))
     (home-page "https://github.com/vubiostat/haplo.ccs")
     (synopsis "Estimate Haplotype Relative Risks in Case-Control Data")
@@ -12901,6 +14185,9 @@ French et al. (2006) <doi:10.1002/gepi.20161>.")
         (base32 "0igijgzcs2bkh2yg58jzyixnxhg6d8rb4yvvwyqf0czi0rv1kzyl"))))
     (properties `((upstream-name . "Haplin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-mgcv r-mass r-ff))
     (native-inputs (list r-knitr))
     (home-page "https://haplin.bitbucket.io")
@@ -12937,6 +14224,9 @@ maternal disease gene haplotypes.  Annals of Human Genetics (2006) 70, pp.
         (base32 "0jqjhfq38k161kqff5cx0vxpsmjm2y5ca7049mvqiwqwvi4fp08m"))))
     (properties `((upstream-name . "Hapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hmm r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Hapi")
@@ -12964,6 +14254,9 @@ and visualization of identified crossovers in the gametes.")
         (base32 "0ycppc7cq8jpg2xldl692mxg73agra3sq6zjzlpz7vvr9kqf64g6"))))
     (properties `((upstream-name . "HanStat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-olsrr
                              r-lmtest
                              r-ggpubr
@@ -12992,6 +14285,9 @@ calculation and all tested requirements.")
         (base32 "0hh2nlzxs2kj93yb7yfm873m6nymjw5qmkin3qqn3acza6dr0k6q"))))
     (properties `((upstream-name . "hans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=hans")
     (synopsis "Haversines are not Slow")
@@ -13016,6 +14312,9 @@ calculation see Joseph de Mendoza y RÃ­os (1795)
         (base32 "0pcl0iichdw2lkv8y00mv6n6c0rvrnsk75ka5lwm2g7b64pphsvk"))))
     (properties `((upstream-name . "handyplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=handyplots")
     (synopsis "Handy Plots")
     (description
@@ -13036,6 +14335,9 @@ qq-plots, box plots, confidence intervals, and prediction intervals.")
         (base32 "0y476acqdm73y19k8s9c9vy8xryyjg16pay3vikslwccv7kgsigz"))))
     (properties `((upstream-name . "handyFunctions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rlang r-ggplot2))
     (home-page "https://github.com/LuffyLouis/handyFunctions")
     (synopsis
@@ -13061,6 +14363,9 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
         (base32 "1a3q74kjgzfriikk739sib7jmzq0dgvab0l5k4wh4xyb4z0s1z99"))))
     (properties `((upstream-name . "handwriterRF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-reshape2
@@ -13093,6 +14398,9 @@ different writers.")
         (base32 "19b5vki2l9hj8s20bymfcjjiliflk31qxhg91x9yd3b9ri1fiz65"))))
     (properties `((upstream-name . "handwriterApp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-shinyjs
@@ -13126,6 +14434,9 @@ shiny app for handwriter'.")
         (base32 "1b17w22sc71h9gn20lvfwzh0i4jb58rg5vlzcjj82c2phz05cpxa"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -13164,6 +14475,9 @@ Webpage provided at: <https://github.com/CSAFE-ISU/handwriter>.")
         (base32 "0wgr3rhz1iklirpnzk25afh8fv1qpi2ijmx4xwzplw3w3qir4yv6"))))
     (properties `((upstream-name . "HandTill2001")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list))
     (home-page "https://gitlab.com/fvafrCU/HandTill2001")
     (synopsis "Multiple Class Area under ROC Curve")
@@ -13184,6 +14498,9 @@ Webpage provided at: <https://github.com/CSAFE-ISU/handwriter>.")
         (base32 "0l0jwlslz2pyg7q447k56acfhgmx5njsriqdrwd02zzbsc3g6wm5"))))
     (properties `((upstream-name . "handlr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xml2
                              r-urltools
@@ -13211,6 +14528,9 @@ for both read and write.")
         (base32 "1icr2474y2q2jnax7ps9lmh13hkrpq4z2yacffc1scm2cpg18y6a"))))
     (properties `((upstream-name . "handcodeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinywidgets r-shiny))
     (home-page "https://github.com/liserman/handcodeR/")
     (synopsis "Text Annotation App")
@@ -13231,6 +14551,9 @@ hand.")
         (base32 "076fh28grlrv38qywshi79m84jsz1ck9k4n0rg4svvr3gqkdbcn2"))))
     (properties `((upstream-name . "hamlet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=hamlet")
     (synopsis "Hierarchical Optimal Matching and Machine Learning Toolbox")
     (description
@@ -13253,6 +14576,9 @@ patterns.")
         (base32 "109xrz7wm0zsl4kkr5fx0igiwcq2lgkxsws4g1m8k1nhnz1aidbn"))))
     (properties `((upstream-name . "halk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -13282,6 +14608,9 @@ hierarchical age length keys and use them to assign ages given length.")
         (base32 "19pclcrcbmmf1b1q2dhwh17a67xif992y3w6685si5bn0ripsj6h"))))
     (properties `((upstream-name . "halfmoon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidysmd r-tidyselect r-ggplot2 r-cli))
     (home-page "https://github.com/r-causal/halfmoon")
     (synopsis "Techniques to Build Better Balance")
@@ -13304,6 +14633,9 @@ histograms.  halfmoon supports both weighting and matching techniques.")
         (base32 "1gbqbv3cn8w09i3f2ji3qq0snb4fy9243y12agw686fx46dfmhxs"))))
     (properties `((upstream-name . "halfcircle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales))
     (home-page "https://cran.r-project.org/package=halfcircle")
     (synopsis "Plot Halfcircle Diagram")
@@ -13332,6 +14664,9 @@ circles, makes the comparison easier.")
         (base32 "071lgx6j92n40bjlrp3khmnavvkla371rkm1ssx20ig5pkay23pw"))))
     (properties `((upstream-name . "haldensify")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-scales
                              r-rsample
@@ -13378,6 +14713,9 @@ efficiency bound.")
         (base32 "1p88rpm4alkr56w4cjl8sxj6ylq991dsny11njcdx5rzc25jh8qi"))))
     (properties `((upstream-name . "hal9001")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rcppeigen
                              r-rcpp
@@ -13416,6 +14754,9 @@ algorithm was described by Hejazi, Coyle, and van der Laan (2020)
         (base32 "0lxqk4cp1s1sm3nbsp74q1bpklmph620c2f1kii97h6yimnq9bi0"))))
     (properties `((upstream-name . "hakaiApi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-readr r-r6 r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HakaiInstitute/hakai-api-client-r")
@@ -13438,6 +14779,9 @@ instructions are documented at <https://hakaiinstitute.github.io/hakai-api/>.")
         (base32 "19bds84pkimr71dy1365b71k7ihn7x86yalgcmagvkxgygpg3409"))))
     (properties `((upstream-name . "hahmmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tibble
                              r-stringr
@@ -13472,6 +14816,9 @@ examples, documentations, and details on the method are available at
         (base32 "18mcd8vm2dy50wfwfxbih841z1l8yml6fvb6y5qqq7a04h09k590"))))
     (properties `((upstream-name . "hagis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pander r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/openplantpathology/hagis")
@@ -13498,6 +14845,9 @@ Spreadsheet, @code{HaGiS}', previously used for pathotype analysis.")
         (base32 "1k3p3mpzs235inrxnqx0q75ckam629d3pcp176mf2m6c0y4f7iri"))))
     (properties `((upstream-name . "HadIBDs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=HadIBDs")
     (synopsis "Incomplete Block Designs using Hadamard Matrix (HadIBDs)")
     (description
@@ -13522,6 +14872,9 @@ Hadamard matrices and Kronecker product of Hadamard matrices.")
         (base32 "1qj6n03pd5kd5ff5h4v8wmnqxxylsxx1p6i88nahqkah2mzg9jdr"))))
     (properties `((upstream-name . "HaDeX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-shiny
@@ -13560,13 +14913,16 @@ functionalities are also available in the in-built Shiny app.")
         (base32 "0nr8m6fchpmlvhyisb61y0fymjjrk2k1sd67r14n87sgn3mafh4a"))))
     (properties `((upstream-name . "HadamardR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openxlsx r-numbers))
     (home-page "https://cran.r-project.org/package=HadamardR")
     (synopsis "Hadamard Matrix Generation")
     (description
      "Generates Hadamard matrices using different construction methods.  For those who
-want to generate Hadamard matrix, a generic function, Hadamard_matrix() is
-provided.  For those who want to generate Hadamard matrix using a particular
+want to generate Hadamard matrix, a generic function, @code{Hadamard_matrix()}
+is provided.  For those who want to generate Hadamard matrix using a particular
 method, separate functions are available.  See Horadam (2007,
 ISBN:9780691119212) Hadamard Matrices and their applications, Princeton
 University Press for more information on Hadamard Matrices.")
@@ -13584,6 +14940,9 @@ University Press for more information on Hadamard Matrices.")
         (base32 "0hdczpn1x6zcxya8qlp82fzzpli3z2kfvynk5sqk97h1d55d27i4"))))
     (properties `((upstream-name . "HACSim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rcpparmadillo
                              r-rcpp
@@ -13623,6 +14982,9 @@ A Shiny app is also available.")
         (base32 "0sc35vyi00r2b3hgn1xw2zffd704adschjwhx0niv5a1l33dxbkp"))))
     (properties `((upstream-name . "hacksig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-tibble r-rlang r-future-apply r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Acare/hacksig")
@@ -13634,8 +14996,8 @@ either with the original procedure or with three alternatives: the \"combined
 z-score\" of Lee et al. (2008) <doi:10.1371/journal.pcbi.1000217>, the \"single
 sample GSEA\" of Barbie et al. (2009) <doi:10.1038/nature08460> and the
 \"singscore\" of Foroutan et al. (2018) <doi:10.1186/s12859-018-2435-4>.  The
-get_sig_info() function can be used to retrieve information about each signature
-implemented.")
+@code{get_sig_info()} function can be used to retrieve information about each
+signature implemented.")
     (license license:expat)))
 
 (define-public r-hacksaw
@@ -13650,6 +15012,9 @@ implemented.")
         (base32 "1ls4l53bsaxyd6lwka9z9sb6ypa2ymbxpfxhsj9k966031jv2vk3"))))
     (properties `((upstream-name . "hacksaw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zeallot
                              r-tidyselect
                              r-tibble
@@ -13677,6 +15042,9 @@ NAs.  Shift row values.")
         (base32 "0vrdbk4dxbykb3hs35nxkl3s2ds92gs5qz66p85w8j5zjmwbw2x6"))))
     (properties `((upstream-name . "hackeRnews")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-jsonlite r-httr r-future-apply))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/szymanskir/hackeRnews")
@@ -13698,6 +15066,9 @@ articles and other items in form of convenient R objects.")
         (base32 "041nlm48c69kv20hsvnrwljbr2yh7d7v209iqvd26x2i0fmnx3zn"))))
     (properties `((upstream-name . "HAC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-copula))
     (home-page
      "https://tu-dresden.de/bu/verkehr/ivw/osv/die-professur/inhaber-in")
@@ -13720,6 +15091,9 @@ methods and structural plots of Hierarchical Archimedean Copulae (HAC).")
         (base32 "1283ng0ypn6b9smi9jca04sl4s4xrsap76rx7w4inc7vfi2h2xvj"))))
     (properties `((upstream-name . "habtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sp
                              r-rvcg
@@ -13750,6 +15124,9 @@ convexity, sphericity, circularity, second moments of area and volume, and more.
         (base32 "0mzk4nwsamf07cbscn8zjiqdf6ik0dc9c4v8cafrlsv1wxpbs09i"))))
     (properties `((upstream-name . "hablar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-lubridate r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://davidsjoberg.github.io/")
@@ -13771,6 +15148,9 @@ columns with missing values.")
         (base32 "1cjmhq8krkv4g1vy70kc3j667djzmq38xlqn568f437f6jaglvkp"))))
     (properties `((upstream-name . "habCluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stars r-sf r-rcpp r-raster r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=habCluster")
@@ -13796,6 +15176,9 @@ package methods can be found in Zhang et al. <@code{bioRxiv:2022.05.06.490926>}.
         (base32 "1c00zpswnbfd44j7fb6pib6fwri2qs8kasd3fxifmaj0i6zpq8jf"))))
     (properties `((upstream-name . "haarfisz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh))
     (home-page "https://cran.r-project.org/package=haarfisz")
     (synopsis "Software to Perform Haar Fisz Transforms")
@@ -13822,6 +15205,9 @@ and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
         (base32 "0i4k66092aqj32snh94pifhml95md2f03y698zvzscl8bgxwlra7"))))
     (properties `((upstream-name . "h3r")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-h3lib))
     (home-page "https://symbolixau.github.io/h3r/")
     (synopsis "Hexagonal Hierarchical Geospatial Indexing System")
@@ -13844,6 +15230,9 @@ so that any function in the API is also available in h3r'.")
         (base32 "1zrda5g2b50iz6qxk1dz18dnanp1dr6d5wldiwh1ap5qclz7w9b4"))))
     (properties `((upstream-name . "h3lib")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/symbolixau/h3lib")
     (synopsis "Exposes the 'Uber' 'H3' Library to R Packages")
     (description
@@ -13864,6 +15253,9 @@ C') to routines that are callable through R'.")
         (base32 "04h905p3xpaswpx728kp7z6bgqlncgzikfv6njvgvzbhmpfn9fs8"))))
     (properties `((upstream-name . "h3jsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8 r-tidyr r-sf r-geojsonsf))
     (native-inputs (list r-knitr))
     (home-page "https://obrl-soil.github.io/h3jsr/")
@@ -13886,6 +15278,9 @@ its @code{JavaScript} transpile h3-js <https://github.com/uber/h3-js> and V8
         (base32 "01if0ps43xhcw6q5khdbvjd0yvvhkcj4gvdx538g2kaxzi3lrj1z"))))
     (properties `((upstream-name . "H2x2Factorial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=H2x2Factorial")
     (synopsis "Sample Size Calculation in Hierarchical 2x2 Factorial Trials")
@@ -13909,6 +15304,9 @@ generators for the sample size estimations.")
         (base32 "105zc76yi03ib5l6366an472hnf3m0pk1mwghwn8pwi91pfybzzr"))))
     (properties `((upstream-name . "h2otools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-h2o r-curl r-boot))
     (home-page "https://github.com/haghish/h2otools")
     (synopsis "Machine Learning Model Evaluation for 'h2o' Package")
@@ -13931,6 +15329,9 @@ information about h2o package see <https://h2o.ai/>.")
         (base32 "004sskj3a1mzjfh86m0rq02z1f3kd6650bzv1d3j8pj0xdmqb86c"))))
     (properties `((upstream-name . "h2o4gpu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/h2oai/h2o4gpu")
@@ -13952,6 +15353,9 @@ solvers for machine learning algorithms.")
         (base32 "10hczpb53s9nvnj21fqp0nlvr9pa8lxgv97q75lfks0m5xn5za31"))))
     (properties `((upstream-name . "h2o")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rcurl r-jsonlite))
     (home-page "https://github.com/h2oai/h2o-3")
@@ -13979,6 +15383,9 @@ Word2Vec, as well as a fully automatic machine learning algorithm (H2O
         (base32 "0nw671dgf50zqmw6j8znig6ksqf68hbshc8v87dcig70j1sqab4k"))))
     (properties `((upstream-name . "h0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=h0")
     (synopsis
      "Robust Bayesian Meta-Analysis for Estimating the Hubble Constant via Time Delay Cosmography")

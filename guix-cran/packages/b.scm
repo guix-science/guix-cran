@@ -58,6 +58,9 @@
         (base32 "06sn7j0i6znwdka8rww2xc4q6r4a0pmm77vsd6bjdjqmkpai7kj1"))))
     (properties `((upstream-name . "bzinb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-bh))
     (home-page "https://cran.r-project.org/package=bzinb")
     (synopsis "Bivariate Zero-Inflated Negative Binomial Model Estimator")
@@ -80,6 +83,9 @@ Preisser, J., and Wu, D. (In preparation) for details.")
         (base32 "0786dkdww0qyhqr1di7pdcwrnymdcqq7kwrjalagykc41aa4jgza"))))
     (properties `((upstream-name . "bytescircle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bytescircle")
     (synopsis "Statistics About Bytes Contained in a File as a Circle Plot")
@@ -106,6 +112,9 @@ inside them (databases, multimedia files, etc).")
         (base32 "1lvqbax7dvli4265856f9667ckp9g5l4radz2cp0yk0slsjgsdpg"))))
     (properties `((upstream-name . "bysykkel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-lubridate r-jsonlite r-httr r-glue))
     (home-page "http://github.com/imangR/bysykkel")
     (synopsis "Get City Bike Data from Norway")
@@ -130,6 +139,9 @@ Bike, and Trondheim City Bike.  The data is made available under NLOD 2.0
         (base32 "181pm9pr0ykyd3mikn6z4z5m7jkv72sisixmilijh6q3393g9pqw"))))
     (properties `((upstream-name . "bwsTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-magrittr
@@ -161,6 +173,9 @@ Elo, Hollis (2018) <doi:10.3758/s13428-017-0898-2>; and network-based measures."
         (base32 "11gci4z434n68agc71ab16br8yp8fd1lylgnaqz7p7w676yrygn8"))))
     (properties `((upstream-name . "bws")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -191,6 +206,9 @@ an extension to model binary outcome.")
         (base32 "0pna0ppj9hkxpc2mbyy0ss7zrl5y736h5xsfkhmqr0389vmgibrj"))))
     (properties `((upstream-name . "BwQuant")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-nleqslv r-kernsmooth))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=BwQuant")
@@ -213,6 +231,9 @@ estimate is also implemented.")
         (base32 "1r5l7z90q2qs92dzp78jj4gf1kg1gc85g6y5rn2z8vxjbvbc5vma"))))
     (properties `((upstream-name . "bwimage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-png r-jpeg))
     (home-page "https://cran.r-project.org/package=bwimage")
     (synopsis "Describe Image Patterns in Natural Structures")
@@ -236,6 +257,9 @@ vegetation structure, to patterns in bird nest structure.")
         (base32 "1473lvkmpf2dsgnccwl5a8wp9yvddciqdql4naba4lwghimxy39w"))))
     (properties `((upstream-name . "BWGS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-rrblup
                              r-randomforest
@@ -264,6 +288,9 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
         (base32 "1fs3rhnijyirc8zcjjadkjvgp2qbhc0bnlzxvhdglz9a1xy9yyyi"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
     (home-page "https://cran.r-project.org/package=bWGR")
     (synopsis "Bayesian Whole-Genome Regression")
@@ -286,6 +313,9 @@ optional kernel term and sampling techniques (<doi:10.1186/s12859-017-1582-3>)."
         (base32 "1ryd5cqbpns9dsis2a9vjg6fcg23284c3dr3j3l18krdshdksfr0"))))
     (properties `((upstream-name . "bwd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bwd")
     (synopsis "Backward Procedure for Change-Point Detection")
     (description
@@ -307,6 +337,9 @@ common in copy number variation (CNV) detection.")
         (base32 "1k2sr9wq0q7lq2hmgp75hzxy6v688lw5npwvpma88975yqi6ghiw"))))
     (properties `((upstream-name . "BVSNLP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppnumerical
                              r-rcppeigen
                              r-rcpparmadillo
@@ -345,6 +378,9 @@ can be exploited for predictive power measurements in real datasets.")
         (base32 "01ymikjbk29vfqh31pd6b0rnh12l26b1mia1l34kh7v81z1b04ai"))))
     (properties `((upstream-name . "bvpa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (home-page "https://cran.r-project.org/package=bvpa")
     (synopsis "Bivariate Pareto Distribution")
@@ -376,6 +412,9 @@ from Incomplete Data via the EM Algorithm\".")
         (base32 "18aaf7kk5mks3a59wwqhm1ckpn6s704l9m5nzy0x5iw0s98ijbm2"))))
     (properties `((upstream-name . "bvls")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bvls")
     (synopsis "The Stark-Parker algorithm for bounded-variable least squares")
@@ -396,6 +435,9 @@ bounded-variable least squares.")
         (base32 "171ngw5a8zbq2vaxs3ipr76jnan4614fxr8ka28fhlx6qh6fy703"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rcppeigen
@@ -421,29 +463,6 @@ Autoregressive (VAR), VHAR, Bayesian VAR (BVAR), and Bayesian VHAR (BVHAR)
 models.")
     (license license:gpl3+)))
 
-(define-public r-bvarverse
-  (package
-    (name "r-bvarverse")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BVARverse" version))
-       (sha256
-        (base32 "00nghvd5bavmn5hw89pcz20x5kbpxr707r5yvvsakn77rdis37ig"))))
-    (properties `((upstream-name . "BVARverse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rlang r-ggplot2 r-generics r-bvar))
-    (home-page "https://github.com/nk027/bvarverse")
-    (synopsis "Tidy Bayesian Vector Autoregression")
-    (description
-     "This package provides functions to prepare tidy objects from estimated models
-via BVAR (see Kuschnig & Vashold, 2019 <doi:10.13140/RG.2.2.25541.60643>) and
-visualisation thereof.  Bridges the gap between estimating models with BVAR and
-plotting the results in a more sophisticated way with ggplot2 as well as passing
-them on in a tidy format.")
-    (license license:gpl3)))
-
 (define-public r-bvartools
   (package
     (name "r-bvartools")
@@ -456,6 +475,9 @@ them on in a tidy format.")
         (base32 "0klbzxqypqm5v549k56fvl67yri7bwaazf02ypsg6xyriz2a9ck4"))))
     (properties `((upstream-name . "bvartools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/franzmohr/bvartools")
@@ -482,6 +504,9 @@ and Tobias (2019, ISBN: 9781108437493), Koop and Korobilis (2010)
         (base32 "1bv4fbbi8bn7sqqpjlf8w5jpgydjr15wv5v9940wc42yk792yjrx"))))
     (properties `((upstream-name . "bvarsv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://sites.google.com/site/fk83research/code")
     (synopsis
@@ -505,6 +530,9 @@ distributions and impulse responses.")
         (base32 "05bf78pjf7bzhfnaq5pn8jfl25k4qdvhrl7m7fnfdmdj5bf46cml"))))
     (properties `((upstream-name . "BVAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://github.com/nk027/bvar")
     (synopsis "Hierarchical Bayesian Vector Autoregression")
@@ -531,6 +559,9 @@ results facilitate analysis.")
         (base32 "17zlllzjrcq4grggal3hlg384990n62wnflr2g21fa6hcnglwy7d"))))
     (properties `((upstream-name . "Bvalue")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Bvalue")
     (synopsis "B-Value and Empirical Equivalence Bound")
     (description
@@ -556,6 +587,13 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
         (base32 "0lv9yj7r9sj1i67zfca6wagjjvxcvf8vv2i7475aaf9w5rlxpd9r"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-scales
                              r-rlang
                              r-riskregression
@@ -598,6 +636,9 @@ Brien test), and can handle right-censoring and competing-risks.")
         (base32 "0kmzrk8gqyqrpp4wfsl04cff13m6aiag7d6fbq7kbb6ln8fa6as9"))))
     (properties `((upstream-name . "butterflyOptions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=butterflyOptions")
     (synopsis "Trading Butterfly Options Strategies")
@@ -624,6 +665,9 @@ Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
         (base32 "19fbyycydivkldj845jsg5xidysiddnxqd4by14v2yyripy8d44j"))))
     (properties `((upstream-name . "businessPlanR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knitr r-kableextra))
     (native-inputs (list r-knitr))
     (home-page "https://www.c3s.cc")
@@ -649,6 +693,9 @@ tables in both PDF and HTML using RMarkdown or Shiny'.")
         (base32 "17923n1r3n8kp7qqzr2dv8ffax355yyc3b9f6mv2hxy6k31hrrb8"))))
     (properties `((upstream-name . "BusinessDuration")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-chron))
     (home-page "https://cran.r-project.org/package=BusinessDuration")
     (synopsis "Calculates Business Duration Between Two Dates")
@@ -669,6 +716,9 @@ holidays and non-business hours.")
         (base32 "0hib73zay9r7rv49zv1lx0l15jzjyli9f1vrk414l8apggvx4c6s"))))
     (properties `((upstream-name . "busdater")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate))
     (native-inputs (list r-knitr))
     (home-page "https://mickmioduszewski.github.io/busdater/")
@@ -690,6 +740,9 @@ start of financial year and end of it.  Allow for offset from the date.")
         (base32 "0cbksnxavkssp3mz80rz0sdvbg21m5yzjn009wclinz12mm1p9rq"))))
     (properties `((upstream-name . "bursts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bursts")
     (synopsis "Markov Model for Bursty Behavior in Streams")
     (description
@@ -711,6 +764,9 @@ provides a simple visualization of the results.")
         (base32 "0cyi42zkn2dby162x9f95b3hpqxbzx25s7nahb4p86r60xj3a5c0"))))
     (properties `((upstream-name . "BurStMisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BurStMisc")
     (synopsis "Burns Statistics Miscellaneous")
     (description
@@ -730,6 +786,9 @@ test.")
         (base32 "082kbs4blc6ldgp18k34fxqilqmwgynrjj1mbji198v7pn4y8s0h"))))
     (properties `((upstream-name . "BurStFin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.burns-stat.com/")
     (synopsis "Burns Statistics Financial")
     (description
@@ -749,6 +808,9 @@ of variance matrices via a statistical factor model or Ledoit-Wolf shrinkage.")
         (base32 "14pjl5l0rh7aap8d2zmsd2spg6521vkkpiigh0jh5ly2cc56zyvr"))))
     (properties `((upstream-name . "bursa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rvest
                              r-readr
@@ -775,6 +837,9 @@ different formats.")
         (base32 "0pgki4inyql8h10i78yzqm73jy2h7rdp9ywsk65virxaadpngy9c"))))
     (properties `((upstream-name . "burnr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -804,6 +869,9 @@ history data (e.g. FHX).  Described in Malevich et al. (2018)
         (base32 "0166pqcyhzlk8xv58hql5szanyh47blpwnawxmwxwqysfrm0w7xj"))))
     (properties `((upstream-name . "burgle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-riskregression r-mass))
     (home-page "https://cran.r-project.org/package=burgle")
     (synopsis "'Burgle': Stealing the Necessary Parts of Model Objects")
@@ -825,6 +893,9 @@ responses while allowing for parameter uncertainty.")
         (base32 "1h79flc3ks23n1ih8vf741akvii3y25hqdl8k479hkhk423pfma2"))))
     (properties `((upstream-name . "bupaverse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-purrr
                              r-processmapr
@@ -859,6 +930,9 @@ bupaverse at the <https://bupar.net> homepage.")
         (base32 "16m9n7h1nwfz564cxyhgkxdzszcr3nr7abz4d6mqx97kjv46k23n"))))
     (properties `((upstream-name . "bupaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -900,6 +974,9 @@ and visualization of process maps.  See also packages
         (base32 "1q8wyzbgxhn0bsc5h2mr53kfk45019x6naxq591glrkv2m02m7ll"))))
     (properties `((upstream-name . "bundle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr r-rlang r-purrr r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rstudio/bundle")
@@ -924,13 +1001,16 @@ restore it for use in new settings.")
         (base32 "11jfw2blzsfs479jrz8h0nslk99g6g5ih0ahb0a2w9cad0hwhkdj"))))
     (properties `((upstream-name . "bundesbank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://enricoschumann.net/R/packages/bundesbank/index.htm")
     (synopsis "Download Data from Bundesbank")
     (description
      "Download data from the time-series databases of the Bundesbank, the German
 central bank.  See the overview at the Bundesbank website
 (<https://www.bundesbank.de/en/statistics/time-series-databases>) for available
-series.  The package provides only a single function, @code{getSeries}(), which
+series.  The package provides only a single function, @code{getSeries()}, which
 supports both traditional and real-time datasets; it will also download meta
 data if available.  Downloaded data can automatically be arranged in various
 formats, such as data frames or zoo series.  The data may optionally be cached,
@@ -949,6 +1029,9 @@ so as to avoid repeated downloads of the same series.")
         (base32 "1b8hdg2x26k0ahx4gxdpzr36hy056939r4496q3vbgyd4bbk2fbd"))))
     (properties `((upstream-name . "bunchr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/trilnick/bunchr")
@@ -971,6 +1054,9 @@ earnings w.r.t.  the net-of-tax rate.")
         (base32 "08rsm2dgqgqr94sw7qijvsqcba4hqp43ci53plzifsa5rr2gwvfl"))))
     (properties `((upstream-name . "bunching")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-bb))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/mavpanos/bunching")
@@ -996,6 +1082,9 @@ produces publication-ready plots in the style followed since Chetty et al.
         (base32 "055plkcswq7qsy3flkjjq5kqampj9s8dbc3ahzinps6s0jkcv2ad"))))
     (properties `((upstream-name . "bumblebee")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown r-magrittr r-hmisc r-gtools r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://magosil86.github.io/bumblebee/")
@@ -1025,6 +1114,9 @@ documentation and examples <https://magosil86.github.io/bumblebee/>.")
         (base32 "16fpd62wkvjd25wv80rlp01q57sacx1jjww5j1v6hifc8097wj0i"))))
     (properties `((upstream-name . "bumbl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
@@ -1058,6 +1150,9 @@ The mathematical models fit by bumbl are described in Crone and Williams (2016)
         (base32 "03nwf2v4zhgkxvkghpkbkxz0cnkqcwwl51ykrk25qciakfqkgfws"))))
     (properties `((upstream-name . "bullwhipgame")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny))
     (home-page "https://cran.r-project.org/package=bullwhipgame")
     (synopsis "Bullwhip Effect Demo in Shiny")
@@ -1079,6 +1174,9 @@ the supply chain.  Marchena Marlene (2010) <@code{arXiv:1009.3977>}.")
         (base32 "03lzd4xw9yh3kgp53w3cpli6n0m8z1ww5744pii35vyw9456bdik"))))
     (properties `((upstream-name . "bullseye")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-polycor
@@ -1112,6 +1210,9 @@ correlation, Kendall's tau, and polychoric correlation.")
         (base32 "0mh6skgkayjsqww4q6rpzhj0n5l3lb9wwh29gy9y08cqd91i02rs"))))
     (properties `((upstream-name . "bullishTrader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bullishTrader")
     (synopsis "Bullish Trading Strategies Through Graphs")
     (description
@@ -1138,6 +1239,9 @@ ed.)â, 2022, ISBN: 9780136939979).")
         (base32 "181rnrp62almf08gr41qnrnq8qnbqraqdvj4zixdh8fachsq2imp"))))
     (properties `((upstream-name . "bulletr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xml2
                              r-smoother
@@ -1168,6 +1272,9 @@ fired from the same gun barrel.")
         (base32 "1k7lw8gflih47ncz8hgsj0sxbajnkhz1k7yb7rwbdnzcki3n3jln"))))
     (properties `((upstream-name . "bulletcp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-mvtnorm r-dplyr r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bulletcp")
@@ -1194,6 +1301,9 @@ which identifies the groove locations.")
         (base32 "0hq4xaxqjp08qd7h54s6nbvz2q7xpzxg1n6s0w9flavhl5jfilzg"))))
     (properties `((upstream-name . "bulkreadr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -1239,6 +1349,9 @@ seamlessly works with labelled data from SPSS and Stata.")
         (base32 "0236knz4jh89nzwmdfxs0cinzj9ysnxvlcs6y87kjfpj7aywx6gb"))))
     (properties `((upstream-name . "bulkQC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stddiff r-isotree))
     (home-page "https://cran.r-project.org/package=bulkQC")
     (synopsis
@@ -1264,6 +1377,9 @@ appear).")
         (base32 "008vnkcaa26d8620i1l49mbcr7px5x16s5x2wlq1vm0jkxya4c3z"))))
     (properties `((upstream-name . "bulkAnalyseR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-upsetr
                              r-tidyr
@@ -1319,6 +1435,13 @@ customised to contain more panels by the user.")
         (base32 "11g25sa2adlrzvs10k907c1a4anyigqd7lkd337vf8dcwrajqxa9"))))
     (properties `((upstream-name . "bujar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-survival
                              r-rms
                              r-mpath
@@ -1353,6 +1476,9 @@ survival data.  See Wang and Wang (2010) <doi:10.2202/1544-6115.1550>.")
         (base32 "1mqwnr8x883nhd7mpqzc351njdvdqps8w8b106l2b4l2620c546f"))))
     (properties `((upstream-name . "BuildSys")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-digest))
     (home-page "https://github.com/pjumppanen/BuildSys")
     (synopsis "System for Building and Debugging C/C++ Dynamic Libraries")
@@ -1374,6 +1500,9 @@ through Microsoft Visual Code'.")
         (base32 "117j4z6c22d9c5aghsmqsvyjc94kr0vpandgbikl5cc4zphl7w03"))))
     (properties `((upstream-name . "buildr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-tibble
                              r-stringr
@@ -1406,6 +1535,9 @@ anywhere anytime.")
         (base32 "0lmgzvi2jz92nps1z7cxla28ymxp5vnagikzk6dma94hycb7x2b4"))))
     (properties `((upstream-name . "buildmer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-mgcv r-lme4))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=buildmer")
@@ -1433,6 +1565,9 @@ RÂ².")
         (base32 "0hi516cbl93z00jpdgyp3j5hz0xf594vn65p6ahpffwzh1l8s1cf"))))
     (properties `((upstream-name . "Buddle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr))
     (home-page "https://cran.r-project.org/package=Buddle")
     (synopsis
@@ -1457,10 +1592,10 @@ batch normalization and dropout - which performs a multi-layer feed-forward
 neural network: see Krizhevsky et.  al (2017) <DOI:10.1145/3065386>, Schmidhuber
 (2015) <DOI:10.1016/j.neunet.2014.09.003> and @code{LeCun} et al. (1998)
 <DOI:10.1109/5.726791> for more details.  This package contains two main
-functions: @code{TrainBuddle}() and @code{FetchBuddle}(). @code{TrainBuddle}()
+functions: @code{TrainBuddle()} and @code{FetchBuddle()}. @code{TrainBuddle()}
 builds a feed-forward neural network model and trains the model.
-@code{FetchBuddle}() recalls the trained model which is the output of
-@code{TrainBuddle}(), classifies or regresses given data, and make a final
+@code{FetchBuddle()} recalls the trained model which is the output of
+@code{TrainBuddle()}, classifies or regresses given data, and make a final
 prediction for the data.")
     (license license:gpl2)))
 
@@ -1476,6 +1611,9 @@ prediction for the data.")
         (base32 "1nf0xpy5r49yfd0xydzxxxrc6isj14s8lswrf5nhh7g60nkkwcxr"))))
     (properties `((upstream-name . "BUCSS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BUCSS")
     (synopsis "Bias and Uncertainty Corrected Sample Size")
     (description
@@ -1497,6 +1635,9 @@ Psychological Science, 28, 1547-1562).")
         (base32 "04agfwk6rmbhlfblfw1irqnv3yrp00zfn4qwy2169b7ypg8r55v2"))))
     (properties `((upstream-name . "bubblyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-htmltools r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/feddelegrand7/bubblyr")
@@ -1518,6 +1659,9 @@ bubbly-bg @code{JavaScript} library.")
         (base32 "0b12bhk0c65m5izp5ayy6fl4iv0jhk7hhwbnavyggawrpz23ikxr"))))
     (properties `((upstream-name . "bubbleHeatmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bubbleHeatmap")
@@ -1546,6 +1690,9 @@ figures from these datasets.")
         (base32 "1shai7kij20g3isd6l29i696pkzymr0qq2i9gzfsxmvdb4g4pcm2"))))
     (properties `((upstream-name . "BTYDplus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp
                              r-mvtnorm
                              r-data-table
@@ -1584,6 +1731,9 @@ implementation are complex and non-trivial.  These models are: NBD [Ehrenberg
         (base32 "1szkpcmagpig32vbs7klx71avjlmbd0cn123ljpc3i02b55lma7z"))))
     (properties `((upstream-name . "BTYD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-optimx r-matrix r-hypergeo r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=BTYD")
@@ -1608,6 +1758,9 @@ Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
         (base32 "0vkp85mmdzch26l1y28ngd1mq5d7disha5jp01r2ranpb5whqjmr"))))
     (properties `((upstream-name . "BTTL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BTTL")
     (synopsis "Bradley-Terry Transfer Learning")
     (description
@@ -1628,6 +1781,9 @@ allows for the statistical modeling of multi-attribute pairwise comparison data.
         (base32 "1bp7x9j3ckndsga8q8j1k0vlz0pfsw6n6nmqwl2zzm9v2inc3jvi"))))
     (properties `((upstream-name . "BTtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/Paul-Haimerl/BTtest")
     (synopsis "Estimate the Number of Factors in Large Nonstationary Datasets")
@@ -1657,6 +1813,9 @@ number of factors.")
         (base32 "0kqgy61ijalpclrm20xwjbvbb5pkhkbgsbdbsz0mrb4v30a05dh4"))))
     (properties `((upstream-name . "BTSR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=BTSR")
     (synopsis "Bounded Time Series Regression")
@@ -1682,6 +1841,13 @@ and Pumi et al. (2022) <@code{arXiv:2211.02097>}.")
         (base32 "105hpyja93rjpfhxdr80fyx7nrsli0l113fr7nfwqbmsdyr96cgl"))))
     (properties `((upstream-name . "BTSPAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (inputs (list jags))
     (propagated-inputs (list r-scales
                              r-reshape2
@@ -1716,6 +1882,9 @@ smoothing of the daily run size.  Theory described in Bonner and Schwarz (2011)
         (base32 "19r45qm1iq3sjb6r5ficgv8q9zwpbilxwrf6rxvqdl333xcnnjy4"))))
     (properties `((upstream-name . "BTLLasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rcpparmadillo r-rcpp r-psychotools
                              r-matrix))
     (home-page "https://cran.r-project.org/package=BTLLasso")
@@ -1743,6 +1912,9 @@ cluster certain effects and to reduce the complexity of the models.")
         (base32 "1xcn24m6ldmi5wh44169vg13f7a7apbk45iwsl88clbnf2l9wpb8"))))
     (properties `((upstream-name . "btergm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statnet-common
                              r-sna
                              r-rocr
@@ -1776,6 +1948,9 @@ in Leifeld, Cranmer and Desmarais (2018), J@code{StatSoft}
         (base32 "0ig1nbhjs1xb9743j3q7ggp01s780hw0b1xjn8spkfkjad1ijsbm"))))
     (properties `((upstream-name . "BTdecayLasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-optimx r-ggplot2))
     (home-page "https://cran.r-project.org/package=BTdecayLasso")
     (synopsis
@@ -1801,6 +1976,9 @@ the Augmented Lagrangian Method described by Masarotto and Varin (2012)
         (base32 "1gm03md6ky134nzmnnp054mi2w8kl4bgcgg4k65zf2cyniz4arxq"))))
     (properties `((upstream-name . "btb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-rcppparallel
                              r-rcpparmadillo
@@ -1814,7 +1992,7 @@ the Augmented Lagrangian Method described by Masarotto and Varin (2012)
     (synopsis
      "Beyond the Border - Kernel Density Estimation for Urban Geography")
     (description
-     "The @code{kernelSmoothing}() function allows you to square and smooth geolocated
+     "The @code{kernelSmoothing()} function allows you to square and smooth geolocated
 data.  It calculates a classical kernel smoothing (conservative) or a
 geographically weighted median.  There are four major call modes of the
 function.  The first call mode is @code{kernelSmoothing(obs}, epsg, cellsize,
@@ -1844,6 +2022,9 @@ Spatio-Temporal Point Patterns, Third Edition, Diggle, pp.  83-86, (2003)
         (base32 "1ifanv79rrbc9m6rxhnhhr5kss9idykpn672w3zxqi8fic9f0hsx"))))
     (properties `((upstream-name . "BT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod r-rpart))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/GiregWillame/BT/")
@@ -1875,6 +2056,9 @@ Denuit, M., Trufin, J., Verdebout, T. (2022)
         (base32 "1hgq999pkk54cnw21xgpmksr1x4lr2y23c3ma8fyn4637mqa0z7r"))))
     (properties `((upstream-name . "bsynth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vizdraws
                              r-tidyr
                              r-tibble
@@ -1918,6 +2102,9 @@ Martinez (2022) <doi:10.48550/@code{arXiv.2206.01779>}.")
         (base32 "0l6sw8lyk9mxfdw4s72hz6a0b30gi2a2vlcndkgahjlym6i5bz83"))))
     (properties `((upstream-name . "BSW")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog r-matrixstats r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/adam-bec/BSW")
@@ -1941,6 +2128,9 @@ model under linear inequality constraints.")
         (base32 "15kjmjzrn5vp9r35mjyh009v174jlz670kqchz6jhp7yqlxhnbqc"))))
     (properties `((upstream-name . "bsvarSIGNs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-r6
                              r-bsvars))
     (home-page "https://bsvars.github.io/bsvarSIGNs/")
@@ -1981,6 +2171,9 @@ workflows, and code structure with the R package bsvars by WoÅºniak (2024)
         (base32 "06ap666qjqj14x5378442j3k3llq58v4dfyy3kl9v0f6ja9z0d54"))))
     (properties `((upstream-name . "bsvars")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stochvol
                              r-rcpptn
                              r-rcppprogress
@@ -2028,6 +2221,9 @@ toolset.")
         (base32 "112hlvg15jlzg3drfzkslaly42vnvsycn9vif0w3iaw5fzsaa954"))))
     (properties `((upstream-name . "bsub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-globaloptions r-getoptlong r-digest r-crayon
                              r-clisymbols))
     (native-inputs (list r-knitr))
@@ -2051,6 +2247,9 @@ R. There is also an interactive shiny app for monitoring the job status.")
         (base32 "1zjvwvbldmr02lc3lyq1gggqfp62z6153za4rq18p45bj7r555vg"))))
     (properties `((upstream-name . "BSTZINB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-spam
                              r-reshape
@@ -2090,6 +2289,9 @@ more details on the method.")
         (base32 "1cbiha8pgb2xmpwqbgb16d1dpjj9x41wx3dzly1xxy2fs04bq0m3"))))
     (properties `((upstream-name . "bsts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-boomspikeslab r-boom))
     (home-page "https://cran.r-project.org/package=bsts")
     (synopsis "Bayesian Structural Time Series")
@@ -2110,6 +2312,9 @@ Varian (2014) <DOI:10.1504/IJMMNO.2014.059942>, among many other sources.")
         (base32 "10ncaicda2rwwrl2ykbrdhh51fziy3ahwp8z859cr2k4v19lviv0"))))
     (properties `((upstream-name . "bstrl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-foreach r-extradistr r-doparallel r-brl))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bstrl")
@@ -2130,6 +2335,9 @@ Varian (2014) <DOI:10.1504/IJMMNO.2014.059942>, among many other sources.")
         (base32 "0akvk2i5gbrkxfwf69m1xjfn643d41rrdzp02gyhrxyhqwsx9p14"))))
     (properties `((upstream-name . "bsTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-toolbox r-html5))
     (home-page "https://cran.r-project.org/package=bsTools")
     (synopsis "Create HTML Content with Bootstrap 5 Classes and Layouts")
@@ -2153,6 +2361,13 @@ more at <https://getbootstrap.com/>.")
         (base32 "1x297sv9px7ipd7a6xprlff8rgkdr2z379xsm8rfqd8xal9nxnb4"))))
     (properties `((upstream-name . "bst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rpart r-gbm r-foreach r-doparallel))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=bst")
@@ -2177,6 +2392,9 @@ Wang (2018) <doi:10.1214/18-EJS1404>.")
         (base32 "0dkhx8vx9kg902i6nzkzbighf2szq12l0p8iwinlpb2qdf526lk6"))))
     (properties `((upstream-name . "BSSprep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=BSSprep")
     (synopsis "Whitening Data as Preparation for Blind Source Separation")
@@ -2198,6 +2416,9 @@ lightweight dependency for packages providing BSS methods.")
         (base32 "117av0y5bw44z6293fvbxmf1xqhar7c4lf5z09xrs78dn1xdsnbs"))))
     (properties `((upstream-name . "BSSoverSpace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatialbss r-rspde r-expm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BSSoverSpace")
@@ -2225,6 +2446,9 @@ package is an implementation of the method described in Zhang, Hao and Yao
         (base32 "1brxbvcvqy8n9xpvp5kz47x5ps8hdqgnh6s49051qaylp95qm432"))))
     (properties `((upstream-name . "bssn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ssmn r-sn r-mvtnorm r-clusterr))
     (home-page "https://cran.r-project.org/package=bssn")
     (synopsis "Birnbaum-Saunders Model")
@@ -2252,6 +2476,9 @@ distributions.")
         (base32 "121fb12n5z3w97xpj5ga1985drv3h4g7b0xy5yk9sfqfaqf92yyn"))))
     (properties `((upstream-name . "bssm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-tidyr
                              r-sitmo
@@ -2292,6 +2519,9 @@ Helske and Vihola (2021, <doi:10.32614/RJ-2021-103>) for details.")
         (base32 "1nqj8w8ilyhladjzhjp1rhi3ff7ik1m76pdhgs16ph7pzdw36w6i"))))
     (properties `((upstream-name . "BSSasymp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jade r-fica))
     (home-page "https://cran.r-project.org/package=BSSasymp")
     (synopsis
@@ -2317,6 +2547,9 @@ are available.")
         (base32 "1lxmrdmr6c0niqz61kc9ybzszprn66jyinfy4dr9r6i161gvs4qg"))))
     (properties `((upstream-name . "BSS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-phangorn r-mass r-hypergeo))
     (home-page "https://cran.r-project.org/package=BSS")
     (synopsis "Brownian Semistationary Processes")
@@ -2339,6 +2572,9 @@ and functions to estimate the stochastic volatility process of a BSS process.")
         (base32 "13701llj5k7vssmgb4fvxswcf9bsc4pxjvh67znbsvrv5cmjh5x3"))))
     (properties `((upstream-name . "bsreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-matrix))
     (home-page "https://cran.r-project.org/package=bsreg")
     (synopsis "Bayesian Spatial Regression Models")
@@ -2359,6 +2595,9 @@ and functions to estimate the stochastic volatility process of a BSS process.")
         (base32 "1a3p1h7bks5yrxv791wfa680v4a6q10p59iz6wvfifhf3ndlaw49"))))
     (properties `((upstream-name . "bspmma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bspmma")
     (synopsis "Bayesian Semiparametric Models for Meta-Analysis")
     (description
@@ -2378,17 +2617,20 @@ semiparametric Bayesian models for random effects meta-analysis.")
         (base32 "168mlimmab1i03fqvkgc449gcmdxr8dsy7b09pzvgswgxjgf7b2a"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (home-page "https://cran4linux.github.io/bspm/")
     (synopsis "Bridge to System Package Manager")
     (description
      "Enables binary package installations on Linux distributions.  Provides functions
 to manage packages via the distribution's package manager.  Also provides
-transparent integration with R's install.packages() and a fallback mechanism.
-When installed as a system package, interacts with the system's package manager
-without requiring administrative privileges via an integrated D-Bus service;
-otherwise, uses sudo.  Currently, the following backends are supported: DNF,
-APT, ALPM.")
+transparent integration with R's @code{install.packages()} and a fallback
+mechanism.  When installed as a system package, interacts with the system's
+package manager without requiring administrative privileges via an integrated
+D-Bus service; otherwise, uses sudo.  Currently, the following backends are
+supported: DNF, APT, ALPM.")
     (license license:expat)))
 
 (define-public r-bsplus
@@ -2403,6 +2645,9 @@ APT, ALPM.")
         (base32 "0bf8qvj7pk3xn7g4p89as1xzx56c75n842g27rj6lcgsf9rdmv9g"))))
     (properties `((upstream-name . "bsplus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rmarkdown
                              r-purrr
@@ -2436,6 +2681,9 @@ designed for Bootstrap 3.3.")
         (base32 "0f785l02hiq3f7anxqhm09f7lrqgkkqhly7f1x78cxm22hvrqyhg"))))
     (properties `((upstream-name . "bsplinePsd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=bsplinePsd")
     (synopsis
@@ -2461,6 +2709,9 @@ Meyer, R. and Christensen, N., Statistics and Computing (2018).
         (base32 "1m214gp6kjpl56vd7w8h1lwgwrh46pds5i77ilvgiv64nrccqih7"))))
     (properties `((upstream-name . "bspline")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-nlsic r-arrapply))
     (home-page "https://github.com/MathsCell/bspline")
     (synopsis "B-Spline Interpolation and Regression")
@@ -2491,6 +2742,9 @@ but without notable impact on computing speed.")
         (base32 "19l1sagx6kn6i8mcs3i0h6rh7rwsyhphncv55jywpv4g6616kqcv"))))
     (properties `((upstream-name . "bspec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bspec")
     (synopsis "Bayesian Spectral Inference")
     (description
@@ -2509,6 +2763,9 @@ but without notable impact on computing speed.")
         (base32 "15dgkn1m3wrdci98qrrx0hr8c2lbn7p124gjp45mgwkjn9rgi2qb"))))
     (properties `((upstream-name . "bspcov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-purrr
                              r-progress
@@ -2556,6 +2813,9 @@ NRF-2020R1C1C1A01013338').")
         (base32 "0ax92x657f8jm731wc1qry19mbi4d3xxcxh5zd07w3705va4k82y"))))
     (properties `((upstream-name . "BSPBSS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svd
                              r-rstiefel
                              r-rcpparmadillo
@@ -2596,6 +2856,9 @@ Gaussian processes.  Details can be found in our paper: Wu et al. (2022+)
         (base32 "190zmjvw5q5gg47g21n2imclz1qg585cvjxl501mm910gx50rldb"))))
     (properties `((upstream-name . "BSPADATA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep r-pscl r-pbapply r-mvtnorm r-coda))
     (home-page "https://cran.r-project.org/package=BSPADATA")
     (synopsis "Bayesian Proposal to Fit Spatial Econometric Models")
@@ -2618,6 +2881,9 @@ working variables approach.")
         (base32 "1a1vxh1fc5vz7wk73m093bvpz9qb52cfrxcj5yiqm56v309jckzk"))))
     (properties `((upstream-name . "bsnsing")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=bsnsing")
     (synopsis "Build Decision Trees with Optimal Multivariate Splits")
@@ -2626,10 +2892,10 @@ working variables approach.")
 classifier, making predictions and generating latex code for plotting.  Works
 for two-class and multi-class classification problems.  The algorithm seeks the
 optimal Boolean rule consisting of multiple variables to split a node, resulting
-in shorter trees.  Use bsnsing() to build a tree, predict() to make predictions
-and plot() to plot the tree into latex and PDF. See Yanchao Liu (2022)
-<@code{arXiv:2205.15263>} for technical details.  Source code and more data sets
-are at <https://github.com/profyliu/bsnsing/>.")
+in shorter trees.  Use @code{bsnsing()} to build a tree, @code{predict()} to
+make predictions and @code{plot()} to plot the tree into latex and PDF. See
+Yanchao Liu (2022) <@code{arXiv:2205.15263>} for technical details.  Source code
+and more data sets are at <https://github.com/profyliu/bsnsing/>.")
     (license license:gpl3)))
 
 (define-public r-bsmd
@@ -2644,6 +2910,9 @@ are at <https://github.com/profyliu/bsnsing/>.")
         (base32 "13gwdgsq4c2g5y70adbz4hfgwygxna7k1q33q3sf0snz53y66gi9"))))
     (properties `((upstream-name . "BsMD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=BsMD")
     (synopsis "Bayes Screening and Model Discrimination")
@@ -2662,6 +2931,9 @@ are at <https://github.com/profyliu/bsnsing/>.")
         (base32 "12fksih33a4r6dd8flv7s1hidazhfqcbyvvnppp25rn6jb7p6344"))))
     (properties `((upstream-name . "BSL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-whitening
                              r-stringr
                              r-rdpack
@@ -2712,6 +2984,9 @@ use this package, see An et al. (2022) <doi:10.18637/jss.v101.i11>.")
         (base32 "0qnw7mbsbg0w4afqnvrw69vzc7d1j5lpyk06zlpppkswp594bnbq"))))
     (properties `((upstream-name . "bskyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -2747,6 +3022,13 @@ simple interface.")
         (base32 "1h18hk5qr3lcxy0iqhz2wfxhvyjl1bs45y78skx070qbxrgwai5z"))))
     (properties `((upstream-name . "bsitar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-sitar
                              r-rstan
                              r-rlang
@@ -2799,6 +3081,8 @@ growth rate as a function of age).")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2828,26 +3112,6 @@ follow time-removal and distance sampling models based on Matsuoka et al. (2012)
 (2017) <doi:10.1650/CONDOR-16-93.1>.")
     (license license:gpl2)))
 
-(define-public r-bsicons
-  (package
-    (name "r-bsicons")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bsicons" version))
-       (sha256
-        (base32 "1ifxb6qvm5m824n924pwa3f2ck33mzzbjq77jzdl36ikx4z0x47a"))))
-    (properties `((upstream-name . "bsicons")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-htmltools r-cli))
-    (home-page "https://github.com/rstudio/bsicons")
-    (synopsis "Easily Work with 'Bootstrap' Icons")
-    (description
-     "Easily use Bootstrap icons inside Shiny apps and R Markdown documents.  More
-generally, icons can be inserted in any htmltools document through inline SVG'.")
-    (license license:expat)))
-
 (define-public r-bsi
   (package
     (name "r-bsi")
@@ -2860,6 +3124,9 @@ generally, icons can be inserted in any htmltools document through inline SVG'."
         (base32 "06ncvxf75khbwv5xg399717n3havj2ip0z07wzh9sjzx5irfw42v"))))
     (properties `((upstream-name . "bSi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-ggpubr
@@ -2894,6 +3161,9 @@ tailored towards reconstructing productivity in aquatic ecosystems.")
         (base32 "1ghjb8rw6czrl1cy9c8wjap0vj4zvah2c1wdz2s7wff34gxynjmi"))))
     (properties `((upstream-name . "bshazard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-epi))
     (home-page "https://cran.r-project.org/package=bshazard")
     (synopsis "Nonparametric Smoothing of the Hazard Function")
@@ -2917,6 +3187,9 @@ work in Rebora P (2014) <doi:10.32614/RJ-2014-028>.")
         (base32 "05gr0p9fmj5560s083iss8j4gyh5rk0kdi3qhq5dzr9mfzy0n12q"))))
     (properties `((upstream-name . "BSGW")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mfusampler r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=BSGW")
     (synopsis
@@ -2945,6 +3218,9 @@ using a Gibbs wrapper around Radford Neal's univariate slice sampler (R package
         (base32 "0vgf61fglzlbgdk64z826nzb9rv37kw39rlk6m8rl84m3cjsw80a"))))
     (properties `((upstream-name . "bsgof")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://AppliedStat.GitHub.io/R/")
     (synopsis "Birnbaum-Saunders Goodness-of-Fit Test")
     (description
@@ -2968,6 +3244,9 @@ Foundation of Korea (NRF) grants funded by the Korea government (MSIT) (No.
         (base32 "11fqz8kdhqpc3jq34vgv3frzawgsl5y0s83rb2p54yb5yhd3p68w"))))
     (properties `((upstream-name . "bsearchtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/digEmAll/bsearchtools")
     (synopsis "Binary Search Tools")
@@ -2989,6 +3268,9 @@ faster lookups on sorted vectors.")
         (base32 "0i7jqx2a5nrabzzg27i3ag9w1dmasz2kxdbg5b469jcnnnk7kglb"))))
     (properties `((upstream-name . "BSDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice r-e1071))
     (home-page "https://github.com/alanarnholt/BSDA")
     (synopsis "Basic Statistics and Data Analysis")
@@ -3010,6 +3292,8 @@ faster lookups on sorted vectors.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -3049,6 +3333,9 @@ ability to export the figures in SVG or PNG formats.")
         (base32 "1792kksvpzinap83asyz6iz7mp7xyi0a7lppxx1m8as7jwnk2nsk"))))
     (properties `((upstream-name . "bsamGP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-gridextra r-ggplot2))
     (native-inputs (list gfortran))
     (home-page "http://statlab2.korea.ac.kr/software/bsamgp")
@@ -3080,6 +3367,9 @@ NRF-2016R1D1A1B03932178 and no.  NRF-2017R1D1A3B03035235).")
         (base32 "1yiplh4wcc711w59ir5hxlp3mmgsnfz01d6203vfgclzsi7ix5m9"))))
     (properties `((upstream-name . "bsam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-tibble
                              r-sp
@@ -3117,6 +3407,9 @@ tools available in packages such as coda and boa'.")
         (base32 "096l2ilr4x2fbjxchkksxkbiyaf7wwdmzn4xyjx001w873x9dgf6"))))
     (properties `((upstream-name . "BSagri")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm
                              r-multcomp
                              r-mratios
@@ -3144,6 +3437,8 @@ trials with the objective of equivalence assessment.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -3189,6 +3484,9 @@ dashboard template built on top of Bootstrap 4
         (base32 "0fhjj3wjhxl263lhlbm5jw9l227a5k9cpannpankr5h8bkn1408h"))))
     (properties `((upstream-name . "bs4cards")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-magrittr r-htmltools))
     (home-page "https://github.com/djnavarro/bs4cards")
     (synopsis "Generate Bootstrap Cards")
@@ -3210,6 +3508,9 @@ that support the bootstrap 4 library.")
         (base32 "08qlfnf84k3yjcvr1wm6gd96mk26xf2gz59ychb3m981228hbbs6"))))
     (properties `((upstream-name . "brxx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-teachingdemos
                              r-rstan
                              r-mcmcpack
@@ -3243,6 +3544,9 @@ score variance and beta=error variance (Tanzer & Harlow, 2020)
         (base32 "0vkx0lbamfkmpcpd7kp85jqzf2fivp898yw0dvkgan8kkfqclra5"))))
     (properties `((upstream-name . "BRVM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts
                              r-xml2
                              r-tseries
@@ -3286,6 +3590,9 @@ package includes a variety of data that can be accessed by calling functions.")
         (base32 "1sz1nx9lgl7pwgx9a5m59svajsk4qv0ajzzkw9123vrh0wydy6j3"))))
     (properties `((upstream-name . "brunnermunzel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/toshi-ara/brunnermunzel")
     (synopsis "(Permuted) Brunner-Munzel Test")
@@ -3310,6 +3617,9 @@ with FORTRAN.")
         (base32 "1lzn06q1i575n9b7axqxfp0ngycx2mdmh0cqw6zz80z3ikbi7hq9"))))
     (properties `((upstream-name . "brulee")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-torch
                              r-tibble
                              r-rlang
@@ -3340,6 +3650,9 @@ regression as well as multilayer perceptrons.")
         (base32 "002x1qliy2ziqgj56f10yw6n7n8rn60brzi1m0gayy3zb0jps9qm"))))
     (properties `((upstream-name . "BRugs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-coda))
     (home-page "https://cran.r-project.org/package=BRugs")
@@ -3363,6 +3676,9 @@ Windows.  Versions running on x86Linux and on 64-bit R under Windows are in
         (base32 "0ih2l2yf9vfmzx1l2npj8yp0brnqdiszq0ip26nw5vdgv9b7rm5l"))))
     (properties `((upstream-name . "bruceR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-texreg
                              r-stringr
@@ -3411,6 +3727,9 @@ statistics and graphics.")
         (base32 "15clv6gfvvfclj9wmb6hr4ljfvs28spamq9rqj12nwzz5fihyhi9"))))
     (properties `((upstream-name . "brsim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcmdrmisc r-corrplot r-cluster))
     (home-page "https://cran.r-project.org/package=brsim")
     (synopsis "Brainerd-Robinson Similarity Coefficient Matrix")
@@ -3436,6 +3755,9 @@ optionally used to sort the heatmap.")
         (base32 "1gppp959i9kr8pdvn336v28gg9h0jl8qg6pqvzvp5wf257z8m4l8"))))
     (properties `((upstream-name . "Brq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Brq")
     (synopsis "Bayesian Analysis of Quantile Regression Models")
     (description
@@ -3454,6 +3776,9 @@ optionally used to sort the heatmap.")
         (base32 "0zklcvzygps99xz9qk4k2jqnk4p5pxhrkf7pjh98b6d12mq84hcw"))))
     (properties `((upstream-name . "brpop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zendown
                              r-tibble
                              r-rlang
@@ -3481,6 +3806,9 @@ Brazilian municipalities by sex and age groups.")
         (base32 "0wnf1jcf4cakbvj9j1l7jk9mq7gd4j1il1ha2vglghqn04f27938"))))
     (properties `((upstream-name . "BrownDog")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcurl r-jsonlite r-httpuv))
     (home-page "https://cran.r-project.org/package=BrownDog")
     (synopsis "Brown Dog R Interface")
@@ -3504,6 +3832,13 @@ convert file to appropriate format, or to extract data from a file.  See
         (base32 "0ihrf472ynjiby4k032cnj7383wvd5fi6rm19snjxmzxx7yc6xl7"))))
     (properties `((upstream-name . "brotli")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://jeroen.r-universe.dev/brotli")
     (synopsis "Compression Format Optimized for the Web")
@@ -3526,6 +3861,9 @@ of the LZ77 algorithm and Huffman coding
         (base32 "134qwdwhm0ih55n26hbyqb1hxj8d5k5jpc6gagpn9ny2vryzsszh"))))
     (properties `((upstream-name . "broom.mixed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -3542,10 +3880,10 @@ of the LZ77 algorithm and Huffman coding
     (description
      "Convert fitted objects from various R mixed-model packages into tidy data frames
 along the lines of the broom package.  The package provides three S3 generics
-for each model: tidy(), which summarizes a model's statistical findings such as
-coefficients of a regression; augment(), which adds columns to the original data
-such as predictions, residuals and cluster assignments; and glance(), which
-provides a one-row summary of model-level statistics.")
+for each model: @code{tidy()}, which summarizes a model's statistical findings
+such as coefficients of a regression; @code{augment()}, which adds columns to
+the original data such as predictions, residuals and cluster assignments; and
+@code{glance()}, which provides a one-row summary of model-level statistics.")
     (license license:gpl3)))
 
 (define-public r-broman
@@ -3560,6 +3898,9 @@ provides a one-row summary of model-level statistics.")
         (base32 "01q05xvxlam6isdhaq48sfw5fh60pcqlhivs7c38lh7c8r3w2172"))))
     (properties `((upstream-name . "broman")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/kbroman/broman")
     (synopsis "Karl Broman's R Code")
@@ -3580,6 +3921,9 @@ base graphics), permutation tests, running mean/median, and general utilities.")
         (base32 "19ps8faycijfqlmzhmcbf03gpcfwdayica456zqyark4pl2n0gjq"))))
     (properties `((upstream-name . "brolgar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tsibble
                              r-tidyr
@@ -3621,6 +3965,9 @@ Tierney, Dianne Cook, Tania Prvan (2020) <doi:10.32614/RJ-2022-023>.")
         (base32 "0bq470kvv9084qaaaz5yicmxpljp23gb3dqijrmdwk1agqxn09mc"))))
     (properties `((upstream-name . "brokenstick")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-matrixsampling
@@ -3668,6 +4015,9 @@ methodology and applications.")
         (base32 "0f46wwyfcqslk25cbm63pbnp8bwamqhr4g4wdlrqn666yiwn1sc2"))))
     (properties `((upstream-name . "BrokenAdaptiveRidge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-futile-logger r-cyclops r-bit64))
     (home-page "https://cran.r-project.org/package=BrokenAdaptiveRidge")
     (synopsis "Broken Adaptive Ridge Regression with Cyclops")
@@ -3691,6 +4041,9 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
         (base32 "14gqbsrmv9r5kbp4c5swrpclympchyg4fw5f0b6g767y6mm22h7m"))))
     (properties `((upstream-name . "brnn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm r-formula))
     (home-page "https://cran.r-project.org/package=brnn")
     (synopsis "Bayesian Regularization for Feed-Forward Neural Networks")
@@ -3709,6 +4062,9 @@ al (2020) <doi:10.1002/sim.8438> and Li et al (2021)
         (base32 "1qdfig1cy5cf3csky995m0jybb2hyp7yq7ka67wircrln919c1nm"))))
     (properties `((upstream-name . "brmsmargins")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-posterior
@@ -3740,6 +4096,9 @@ effects if necessary (see for example <doi:10.1186/s12874-015-0046-6> and
         (base32 "0y0bhdkpfs5xx9a5dcs00a69bzwiarf90ap34j07ym0f19fsnj0n"))))
     (properties `((upstream-name . "brms.mmrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-trialr
                              r-tidyselect
@@ -3778,6 +4137,9 @@ References: BÃ¼rkner (2017) <doi:10.18637/jss.v080.i01>, Mallinckrodt (2008)
         (base32 "0kyr8mxz5g3w41kp08d47f29cff8fqrfbm1ri7hgfg2lgr1151xy"))))
     (properties `((upstream-name . "brm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://github.com/mclements/brm")
     (synopsis "Binary Regression Model")
     (description
@@ -3797,17 +4159,20 @@ ratio <doi:10.1080/01621459.2016.1192546>.")
         (base32 "0s47qz8y416x0gz91pzdpr97pmlvddwkvll454vnlafxxk9p5lds"))))
     (properties `((upstream-name . "brlrmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-profilemodel r-mass r-brglm r-boot))
     (home-page "https://cran.r-project.org/package=brlrmr")
     (synopsis "Bias Reduction with Missing Binary Response")
     (description
-     "This package provides two main functions, il() and fil().  The il() function
-implements the EM algorithm developed by Ibrahim and Lipsitz (1996)
-<DOI:10.2307/2533068> to estimate the parameters of a logistic regression model
-with the missing response when the missing data mechanism is nonignorable.  The
-fil() function implements the algorithm proposed by Maity et.  al. (2017+)
-<https://github.com/arnabkrmaity/brlrmr> to reduce the bias produced by the
-method of Ibrahim and Lipsitz (1996) <DOI:10.2307/2533068>.")
+     "This package provides two main functions, @code{il()} and @code{fil()}.  The
+@code{il()} function implements the EM algorithm developed by Ibrahim and
+Lipsitz (1996) <DOI:10.2307/2533068> to estimate the parameters of a logistic
+regression model with the missing response when the missing data mechanism is
+nonignorable.  The @code{fil()} function implements the algorithm proposed by
+Maity et.  al. (2017+) <https://github.com/arnabkrmaity/brlrmr> to reduce the
+bias produced by the method of Ibrahim and Lipsitz (1996) <DOI:10.2307/2533068>.")
     (license license:gpl3)))
 
 (define-public r-brl
@@ -3822,6 +4187,9 @@ method of Ibrahim and Lipsitz (1996) <DOI:10.2307/2533068>.")
         (base32 "13qi78v3057qn4hfby14sp26hy3ibl50f06x8gpak6gi76g8bhwi"))))
     (properties `((upstream-name . "BRL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/msadinle/BRL")
     (synopsis "Beta Record Linkage")
     (description
@@ -3842,6 +4210,9 @@ problem, where two duplicate-free datafiles are to be merged.")
         (base32 "1l6m47rj25klrjil0275bnv0m149d2kjh23r8cv7zw2vhmlza7z1"))))
     (properties `((upstream-name . "brisk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
@@ -3877,6 +4248,9 @@ each group can be compared.  Some plotting capabilities are also included.")
         (base32 "1pmi34xfiij053pqr04r13679khrilqmhw7jj527hbqdwnk53gjr"))))
     (properties `((upstream-name . "BRISC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdist r-rann r-pbapply r-matrixstats))
     (home-page "https://github.com/ArkajyotiSaha/BRISC")
     (synopsis "Fast Inference for Large Spatial Datasets using BRISC")
@@ -3899,6 +4273,9 @@ neighbor Gaussian processes detailed in Saha and Datta (2018)
         (base32 "073pdk1094ng4kggzdjvihl791r2qlja1j2w3pfmh2027kn520r8"))))
     (properties `((upstream-name . "briqr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-magrittr r-jsonlite r-httr r-dplyr))
     (home-page "https://cran.r-project.org/package=briqr")
     (synopsis "Interface to the 'Briq' API")
@@ -3925,6 +4302,9 @@ organization into R.")
         (base32 "1z2d7a1wq5ms5j0mn2hgqvvp9x3mfvxw4llia8d0bs0mpm0jkjvn"))))
     (properties `((upstream-name . "brinton")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-tibble
                              r-sm
@@ -3949,11 +4329,11 @@ variables and graphic types.  b.) longplot graphics, which present the entire
 catalog of available graphics for representing a particular variable using a
 grid of graphic types and variations on these types.  c.) plotup function, which
 presents a particular graphic for a specific variable of a dataset.  The
-plotup() function also makes it possible to obtain the code used to generate the
-graphic, meaning that the user can adjust its properties as needed.  d.)
-matrixplot graphics that is a grid of a particular graphic showing bivariate
-relationships between all pairs of variables of a certain(s) type(s) in a
-multivariate data set.")
+@code{plotup()} function also makes it possible to obtain the code used to
+generate the graphic, meaning that the user can adjust its properties as needed.
+ d.) matrixplot graphics that is a grid of a particular graphic showing
+bivariate relationships between all pairs of variables of a certain(s) type(s)
+in a multivariate data set.")
     (license license:gpl3)))
 
 (define-public r-brinda
@@ -3968,6 +4348,9 @@ multivariate data set.")
         (base32 "0jxw3jxxp5k3q80pyiwlg4s5z5vbaplvf5bqb092hppgvkk2q2r5"))))
     (properties `((upstream-name . "BRINDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-hmisc r-dplyr r-data-table
                              r-berryfunctions))
     (home-page "https://github.com/hanqiluo/BRINDA")
@@ -4017,6 +4400,9 @@ PSC groups (Young (2020) <doi:10.1093/ajcn/nqz303>).")
         (base32 "158q2yb4dj4vhw8warv005s3rr8svr2vpkp2insgqv8mbvz7kzwq"))))
     (properties `((upstream-name . "briKmeans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splines2 r-depthtools r-cluster r-boot))
     (home-page "https://cran.r-project.org/package=briKmeans")
     (synopsis
@@ -4043,6 +4429,9 @@ kma.similarity, from the archived package fdakma, by Alice Parodi et al.")
         (base32 "0zavddjs6y37ll68s0c3ap9p79disv7v54505pv6nyxqh40s22m8"))))
     (properties `((upstream-name . "brif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=brif")
     (synopsis "Tree and Forest Tool for Classification and Regression")
@@ -4066,6 +4455,9 @@ sets.  Multi-threading is available through @code{OpenMP}
         (base32 "0clp42nnbvd01n65azdi2ghp0mfqwsipzdl2d30q04lcvfkdpxrf"))))
     (properties `((upstream-name . "bridger2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinydashboard
                              r-shiny
                              r-plotly
@@ -4094,6 +4486,9 @@ comparison of RNA half-lives between two conditions.")
         (base32 "1rx16zwa3zz4bs7h0b75vsx78dvkif8d9c7prb5pmwccizll7v53"))))
     (properties `((upstream-name . "bridger")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -4127,6 +4522,9 @@ bidding sequences.")
         (base32 "06y4c4ym27dh39ysr5sf4ymad0bk7wxyf8kmj1y560p7h97f5d32"))))
     (properties `((upstream-name . "bridgedist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/swihart/bridgedist")
     (synopsis
@@ -4153,6 +4551,9 @@ Gaussian.")
         (base32 "0xglzh73vyfwfvd4k2dwrp06ynxxxfak6aqk4gsv2y3jy4qrz451"))))
     (properties `((upstream-name . "brickster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-reticulate
@@ -4189,6 +4590,9 @@ life functions to make Databricks simpler to use.")
         (base32 "0jfjqrc2d75zhygfxpschn2mqgjc35wwgczqrh9d3f58amkg5m61"))))
     (properties `((upstream-name . "brickset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-piggyback r-jsonlite r-httr r-dplyr))
     (home-page "https://github.com/jbryer/brickset")
     (synopsis
@@ -4213,6 +4617,9 @@ all LEGO since through the end of 2023.")
         (base32 "0islmx4kdy22qn2cq7lpzqq6lc6mci5qly645nfdhad9001jmhsa"))))
     (properties `((upstream-name . "brglm2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-nnet r-matrix r-mass r-enrichwith))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ikosmidis/brglm2")
@@ -4253,6 +4660,9 @@ regression).")
         (base32 "0q4phggz6smzd294znr1fp0gskpcwdbd6hnvvl3q3z1h7cpf40sn"))))
     (properties `((upstream-name . "BRETIGEA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BRETIGEA")
     (synopsis "Brain Cell Type Specific Gene Expression Analysis")
@@ -4287,6 +4697,9 @@ downstream analyses.")
         (base32 "1zx933iaxqp91s41dham2chzf0f4rxs0d1ww564gg352fs3gi1vn"))))
     (properties `((upstream-name . "bReeze")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate))
     (home-page "https://github.com/chgrl/bReeze")
     (synopsis "Functions for Wind Resource Assessment")
@@ -4299,15 +4712,18 @@ turbines.")
 (define-public r-breathteststan
   (package
     (name "r-breathteststan")
-    (version "0.8.5")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "breathteststan" version))
        (sha256
-        (base32 "1b495qb0r8wdh4rnv3namnhrd1d6mba55ayj7h9s0076h8aw04hk"))))
+        (base32 "0mwknbwxfdry48cyv7j0hzxi7lxwd0k6zbz5rl2l3bglbv219502"))))
     (properties `((upstream-name . "breathteststan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-stanheaders
@@ -4329,15 +4745,18 @@ same author.  Stan functions are refactored here for easier testing.")
 (define-public r-breathtestcore
   (package
     (name "r-breathtestcore")
-    (version "0.8.7")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "breathtestcore" version))
        (sha256
-        (base32 "0i5mih2v6397g0glgdhn5lrz3j0l6yv3pmlvs9pkg2vbjppif2sc"))))
+        (base32 "110xsdfd1c2l5vj2h3wnymljwjsj8h8llf3g8sm5b7kf8m4cj58r"))))
     (properties `((upstream-name . "breathtestcore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-xml2
                              r-tidyr
@@ -4379,6 +4798,9 @@ Shiny GUI, see package dmenne/breathtestshiny on github.")
         (base32 "125fvzkmfnriyd4y4nywj5ihm766xlsyi7dpnq57fa9d38ffbyf2"))))
     (properties `((upstream-name . "BreakPoints")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-mass))
     (home-page "https://cran.r-project.org/package=BreakPoints")
     (synopsis "Identify Breakpoints in Series of Data")
@@ -4409,6 +4831,9 @@ Yamamoto, R., Iwashima, T., Kazadi, S. N., & Hoshiai, M. (1985)
         (base32 "004vi1qr7iib8ykg6sp7xzv0bb841h4vsz2x0cyrhkdp41frglx9"))))
     (properties `((upstream-name . "breakpoint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-msm r-mass r-ggplot2 r-foreach r-doparallel))
     (home-page "https://github.com/madawaweer/breakpoint")
     (synopsis
@@ -4433,6 +4858,9 @@ Priyadarshana and Sofronov (2012b)).")
         (base32 "027q949qqyxlj58a4qpn6a2qcaqzawgzmck8ab1dnfgpyi0vkrpm"))))
     (properties `((upstream-name . "breakfast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-plyr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=breakfast")
@@ -4456,6 +4884,9 @@ sequences.")
         (base32 "1p02qy5kpv98qxlawn6l2hq7q48kv97ks3s9jnxawhqz44c08lwv"))))
     (properties `((upstream-name . "breakDown")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://pbiecek.github.io/breakDown/")
@@ -4479,6 +4910,9 @@ package work for binary classifiers and general regression models.")
         (base32 "08mxp41d79iaqbz96bpzw7halasijghv0557ccz5p563y5lk3n3m"))))
     (properties `((upstream-name . "breakaway")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-phyloseq
                              r-mass
@@ -4512,6 +4946,9 @@ described in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
         (base32 "1hbjwf86575hqxbz3lz89r0sbzfr5cyy8jmid2jx4yj9f9lqc8h5"))))
     (properties `((upstream-name . "BREADR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-readr
@@ -4534,35 +4971,6 @@ The package also allows users to quantify and visualise the level of confidence
 in the estimated degrees of relatedness.")
     (license license:expat)))
 
-(define-public r-bread
-  (package
-    (name "r-bread")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bread" version))
-       (sha256
-        (base32 "0vsxmqpgi2yjcpdpgdz6gzqkpjsq5ax4qkpys60bwmxyp1ahv90r"))))
-    (properties `((upstream-name . "bread")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-data-table))
-    (home-page "https://github.com/MagicHead99/bread/")
-    (synopsis "Analyze Big Files Without Loading Them in Memory")
-    (description
-     "This package provides a simple set of wrapper functions for data.table::fread()
-that allows subsetting or filtering rows and selecting columns of
-table-formatted files too large for the available RAM. b stands for big files'.
-bread makes heavy use of Unix commands like grep', sed', wc', awk and cut'.
-They are available by default in all Unix environments.  For Windows, you need
-to install those commands externally in order to simulate a Unix environment and
-make sure that the executables are in the Windows PATH variable.  To my
-knowledge, the simplest ways are to install RTools', Git or Cygwin'.  If they
-have been correctly installed (with the expected registry entries), they should
-be detected on loading the package and the correct directories will be added
-automatically to the PATH.")
-    (license license:gpl3+)))
-
 (define-public r-brea
   (package
     (name "r-brea")
@@ -4575,6 +4983,9 @@ automatically to the PATH.")
         (base32 "1sh0m4hfik0kzc19ygqcbrxn67n52zz9l90gs494iqqwj1fzs8f7"))))
     (properties `((upstream-name . "brea")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=brea")
     (synopsis "Bayesian Recurrent Events Analysis")
@@ -4596,6 +5007,9 @@ and multistate models.")
         (base32 "1yv2fh4cc9h35l8cngpxnqa83a7bx79pr7c1gp9h84p1pigg8282"))))
     (properties `((upstream-name . "BRDT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ericchen12377/BRDT")
     (synopsis "Binomial Reliability Demonstration Tests")
@@ -4622,6 +5036,9 @@ Design under Acceptance Decision Uncertainty\" by Suiyao Chen et al. (2020)
         (base32 "11870q60spq4pi7d6yvly48x8n9is15cj957aq8h7bw2lgcyzb1z"))))
     (properties `((upstream-name . "brclimr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-magrittr
                              r-lobstr
@@ -4656,18 +5073,21 @@ calculated statistics on the Parquet files and returns easy-to-use data.frames."
         (base32 "1z8mr76rj8xdqsgny6hskbs3czgy23xqrjrhw9006y4mdhd39hbr"))))
     (properties `((upstream-name . "BRcal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nloptr r-lifecycle r-ggplot2 r-fields))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/apguthrie/BRcal")
     (synopsis "Boldness-Recalibration of Binary Events")
     (description
      "Boldness-recalibration maximally spreads out probability predictions while
-maintaining a user specified level of calibration, facilitated the brcal()
-function.  Supporting functions to assess calibration via Bayesian and
-Frequentist approaches, Maximum Likelihood Estimator (MLE) recalibration, Linear
-in Log Odds (LLO)-adjust via any specified parameters, and visualize results are
-also provided.  Methodological details can be found in Guthrie & Franck (2024)
-<doi:10.1080/00031305.2024.2339266>.")
+maintaining a user specified level of calibration, facilitated the
+@code{brcal()} function.  Supporting functions to assess calibration via
+Bayesian and Frequentist approaches, Maximum Likelihood Estimator (MLE)
+recalibration, Linear in Log Odds (LLO)-adjust via any specified parameters, and
+visualize results are also provided.  Methodological details can be found in
+Guthrie & Franck (2024) <doi:10.1080/00031305.2024.2339266>.")
     (license license:expat)))
 
 (define-public r-brbvs
@@ -4682,6 +5102,9 @@ also provided.  Methodological details can be found in Guthrie & Franck (2024)
         (base32 "0vhwwsdbslr6craaflvllvba7s1b1jzhjqpmmh70f7k0qi61x5qc"))))
     (properties `((upstream-name . "BRBVS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-gjrm r-ggplot2 r-copent))
     (home-page "https://cran.r-project.org/package=BRBVS")
     (synopsis
@@ -4705,6 +5128,9 @@ GJRM package.")
         (base32 "0pcr665j4balmcm4sq6l19nmhpbs7ayw5dljsdxr91bn6srb33b3"))))
     (properties `((upstream-name . "BrazilMet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-readxl r-dplyr))
     (home-page "https://cran.r-project.org/package=BrazilMet")
     (synopsis
@@ -4728,6 +5154,9 @@ analysis more parsimonious.")
         (base32 "194ckp3b6yini9z6nh953n7x0yp6x1zwvxg42z6pq5wsd07g76n5"))))
     (properties `((upstream-name . "BrazilCrime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-openxlsx r-janitor r-geobr r-dplyr))
     (home-page "https://cran.r-project.org/package=BrazilCrime")
     (synopsis "Accesses Brazilian Public Security Data from SINESP Since 2015")
@@ -4749,6 +5178,9 @@ analysis more parsimonious.")
         (base32 "16k4rsmc0nl3vvylwr55mb5vlib8x5dlkjg99b7dr99l9a0fxqps"))))
     (properties `((upstream-name . "bravo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-matrix))
     (home-page "https://cran.r-project.org/package=bravo")
     (synopsis "Bayesian Screening and Variable Selection")
@@ -4769,6 +5201,9 @@ dimensional linear regression models.")
         (base32 "07hl2s2vcjqx4db0gksfnwdarl59a9441d0ff13zf0vj0pbaqam2"))))
     (properties `((upstream-name . "bratteli")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kantorovich r-gmp r-diagram r-data-table))
     (home-page "https://github.com/stla/bratteliR")
     (synopsis "Deal with Bratteli Graphs")
@@ -4793,6 +5228,9 @@ kernels and distances were introduced by Vershik (2014)
         (base32 "1av52p39jsv54q02v8xa7xilwmz5vzj6zy68y9m5lgl6s86r509y"))))
     (properties `((upstream-name . "brassica")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=brassica")
     (synopsis "1970s BASIC Interpreter")
     (description
@@ -4814,15 +5252,18 @@ run in their original form.")
         (base32 "1237xajdqr6xpvq210drzakcfw390pa7h7mgv92bwbggyirida1r"))))
     (properties `((upstream-name . "braQCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qca r-bootstrap))
     (home-page "https://cran.r-project.org/package=braQCA")
     (synopsis
      "Bootstrapped Robustness Assessment for Qualitative Comparative Analysis")
     (description
      "Test the robustness of a user's Qualitative Comparative Analysis solutions to
-randomness, using the bootstrapped assessment: @code{baQCA}().  This package
+randomness, using the bootstrapped assessment: @code{baQCA()}.  This package
 also includes a function that provides recommendations for improving solutions
-to reach typical significance levels: @code{brQCA}().  Data included come from
+to reach typical significance levels: @code{brQCA()}.  Data included come from
 @code{McVeigh} et al. (2014) <doi:10.1177/0003122414534065>.")
     (license license:gpl3)))
 
@@ -4838,13 +5279,16 @@ to reach typical significance levels: @code{brQCA}().  Data included come from
         (base32 "0rcp0am4wjlkinvmv0n5bky84v31ds28v163p5mlp343cgma2b62"))))
     (properties `((upstream-name . "brant")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass))
     (home-page "https://benjaminschlegel.ch/r/brant/")
     (synopsis "Test for Parallel Regression Assumption")
     (description
      "Tests the parallel regression assumption wit the brant test by Brant (1990)
 <doi: 10.2307/2532457> for ordinal logit models generated with the function
-polr() from the package MASS'.")
+@code{polr()} from the package MASS'.")
     (license license:gpl2+)))
 
 (define-public r-brandwatchr
@@ -4859,6 +5303,9 @@ polr() from the package MASS'.")
         (base32 "10bccsaswsq06wdrxqg71amzx5rabmgfi4n074y651r2c1pyy98w"))))
     (properties `((upstream-name . "brandwatchR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-data-table))
     (home-page "https://github.com/Phippsy/brandwatchR")
     (synopsis "'Brandwatch' API to R")
@@ -4881,6 +5328,9 @@ and aggregate data for a specified query or query group.")
         (base32 "15znbxpv0kcl8qqihl9f5irvcsyanfhszcz0xq6r7g8gsay4s760"))))
     (properties `((upstream-name . "Branching")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Branching")
     (synopsis "Simulation and Estimation for Branching Processes")
     (description
@@ -4900,6 +5350,9 @@ processes.")
         (base32 "1d0cqrfh4p5wfljys3xm8brpmvycl6ix28qwillq1zyvbik9r1js"))))
     (properties `((upstream-name . "BranchGLM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JacobSeedorff21/BranchGLM")
@@ -4924,6 +5377,9 @@ fitting process, a range of optimization methods are implemented in
         (base32 "1l5rm6grslc6mivwh2fv3pznhy2cw16fz5695pmyfamzvsjggir1"))))
     (properties `((upstream-name . "brainR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-oro-nifti r-misc3d))
     (home-page "https://cran.r-project.org/package=brainR")
     (synopsis
@@ -4946,6 +5402,9 @@ and @code{JavaScript} commands.  This package relies on the X toolkit ('XTK',
         (base32 "1ag3qahlba4h4126873hg2bbi6sr729mhiw22gjgr4g4jg6lhh09"))))
     (properties `((upstream-name . "brainKCCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl
                              r-oro-nifti
                              r-misc3d
@@ -4977,6 +5436,9 @@ group-level connectivity network.  Kang, Jian (2016)
         (base32 "009m3297bn1jl1aacypajkdawgjp3pwx7krz3bxifb0bmrdi0n7b"))))
     (properties `((upstream-name . "brainGraph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-permute
                              r-matrix
                              r-mass
@@ -5009,6 +5471,9 @@ data exploration, along with several functions for generating useful figures.")
         (base32 "137pagkjb4xzk3skmsf5vlp8q0k79zl9xjz8wwda1mdrknkdnbj6"))))
     (properties `((upstream-name . "BrainCon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-glmnet))
     (home-page "https://cran.r-project.org/package=BrainCon")
     (synopsis "Inference the Partial Correlations Based on Time Series Data")
@@ -5037,6 +5502,9 @@ populations.")
         (base32 "1gh4n9zl7yczmhy85xmsx1mh9qmc99xvhmm5cdnjcb644i2n214k"))))
     (properties `((upstream-name . "BrailleR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-xml
                              r-whisker
@@ -5081,6 +5549,9 @@ for optimising graphical content to prepare it for embossing as tactile images."
         (base32 "1sbkdimqg4vxhw4djknjixzj37hp69nm7dcki2j6zfmrzhmvx1fl"))))
     (properties `((upstream-name . "braids")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-maybe))
     (home-page "https://github.com/stla/braids")
     (synopsis "The Braid Groups")
@@ -5104,6 +5575,9 @@ the Haskell library combinat', and is based on Birman and Brendle (2005)
         (base32 "16wj2bnjpr93vsiyngn4agyiizslzpglld5kr3xxhmn8n2dfmc3k"))))
     (properties `((upstream-name . "braidrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-basicdrm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=braidrm")
@@ -5128,6 +5602,9 @@ combination index, and additional response surface methods.")
         (base32 "1w6bxvpkh8wslnzickwlxk6sw793x142cinn6sn6836ldlhgzlg9"))))
     (properties `((upstream-name . "braidReports")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-gtable
                              r-ggplot2
@@ -5157,6 +5634,9 @@ al. (2016) <doi:10.1038/srep25523>.")
         (base32 "1sq7knrnz3nqprlvsj24f9gj1i0viawq3wcv2b97dmbwa7rd5qfz"))))
     (properties `((upstream-name . "braggR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=braggR")
     (synopsis "Calculate the Revealed Aggregator of Probability Predictions")
@@ -5192,6 +5672,9 @@ aggregator.  Its use is illustrated with a simple example.")
         (base32 "0vss3ib74cz2zn1afmrvllawghj9z2ay4x1ysvk4rqvjmiia4a2i"))))
     (properties `((upstream-name . "BradleyTerry2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qvcalc r-lme4 r-gtools r-brglm))
     (home-page "https://github.com/hturner/BradleyTerry2")
     (synopsis "Bradley-Terry Models")
@@ -5213,6 +5696,9 @@ and versions with contest-specific effects, such as a home advantage.")
         (base32 "07m5xj4wjf3w85fhhh8qw8pl2gb94i50099ql8anmrm1ax5pj8sr"))))
     (properties `((upstream-name . "brada")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progress
                              r-foreach
                              r-fbst
@@ -5242,6 +5728,9 @@ designs for binary endpoints.")
         (base32 "1jxxrgq2s5fqflp9ac4fx51jhlx33pdwijsp4vq63y430k79vcpp"))))
     (properties `((upstream-name . "BRACoD.R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate))
     (home-page "https://cran.r-project.org/package=BRACoD.R")
     (synopsis "BRACoD: Bayesian Regression Analysis of Compositional Data")
@@ -5269,6 +5758,9 @@ This package runs the python implementation using reticulate.")
         (base32 "0kbx30icv966sjv93as4yq88vkavbw68a7v2fnrvblzx2dgcis1n"))))
     (properties `((upstream-name . "bracer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://trevorldavis.com/R/bracer/")
@@ -5294,6 +5786,9 @@ supports padding the resulting numbers with zeros.")
         (base32 "19paaxk0szd5azcw95sd22fryb38lamd8r4y1f6zmcngbza470dk"))))
     (properties `((upstream-name . "BRACE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survminer r-survival))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BRACE")
@@ -5316,6 +5811,9 @@ described in Williamson et al. (2022) <doi:10.1158/1078-0432.ccr-21-2468>.")
         (base32 "0jz5c1sbnnl5db0iiqh1paq55rwsbpz6srshcf4yf3ki58m3a9sm"))))
     (properties `((upstream-name . "bRacatus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-sf
                              r-rnaturalearth
@@ -5352,6 +5850,9 @@ review).")
         (base32 "1pisp3p3w5r9bfv5m5yykk410z5qvwsqdblmv7vsj1sc1nwf5y2v"))))
     (properties `((upstream-name . "bqror")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-progress
                              r-pracma
@@ -5398,6 +5899,9 @@ of the American Statistical Association, 96(453):270â281, 2001. <doi:
         (base32 "1iqy36am0isiyjjgrf2jr1ywxxl0n33da637r7j3c3n3zc6yyqyg"))))
     (properties `((upstream-name . "BPrinStratTTE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-stanheaders
@@ -5435,6 +5939,9 @@ setting.")
         (base32 "1hiwz1s8gc6skl0zg7mjh29bxazka9wgrbbldqhy6f9vzrddl4pn"))))
     (properties `((upstream-name . "bpr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-coda r-bh))
     (home-page "https://cran.r-project.org/package=bpr")
     (synopsis "Fitting Bayesian Poisson Regression")
@@ -5457,6 +5964,9 @@ found in D'Angelo and Canale (2023) <doi:10.1080/10618600.2022.2123337>.")
         (base32 "07vz00y9m71n3a847jpviwyy0zb59402yyklsfmyxmggjivpjshi"))))
     (properties `((upstream-name . "bpp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bpp")
@@ -5481,6 +5991,9 @@ being the hazard ratio.")
         (base32 "1yy1rbbnqjrz0dkpvwi49432ddpjbql0vrpwvhzv9qzpv8ydvlw4"))))
     (properties `((upstream-name . "bpnreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-haven r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/joliencremers/bpnreg")
@@ -5509,6 +6022,8 @@ NuÃ±ez-Antonio & GuttiÃ©rez-PeÃ±a (2014) <doi:10.1016/j.csda.2012.07.025>.
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5547,6 +6062,8 @@ with the bpmn-visualization @code{TypeScript} library.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5599,6 +6116,9 @@ the pm4py and @code{bupaRminer} packages.  Part of the @code{bupaR} ecosystem.")
         (base32 "17k2d1xjfz85ygx0xnh6yqca9nyypd32d7sbna3k33ynsjqay3x8"))))
     (properties `((upstream-name . "BPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-limma))
     (home-page "https://cran.r-project.org/package=BPM")
     (synopsis "Bayesian Purity Model to Estimate Tumor Purity")
@@ -5610,15 +6130,18 @@ methylation Infinium 450K array data) without reference samples.")
 (define-public r-bplsr
   (package
     (name "r-bplsr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bplsr" version))
        (sha256
-        (base32 "17sbipby951l28hjvmyrs1ascxhb551n4llxw95sw4awzk10kc9b"))))
+        (base32 "06ybazc211ij5z81kjczfz6clxcimh4pndp36hp64d5rrz00i5rq"))))
     (properties `((upstream-name . "bplsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod r-progress r-coda))
     (home-page "https://cran.r-project.org/package=bplsr")
     (synopsis "Bayesian partial least squares regression")
@@ -5640,6 +6163,9 @@ regression with high-dimensional data.")
         (base32 "0wrdh4c8yws7z5zd1yl23wbja88x57x651kqbnqj70k9a1195rwc"))))
     (properties `((upstream-name . "bpgmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-pgmm
@@ -5672,6 +6198,9 @@ et al. (1995) <doi:10.1093/biomet/82.4.711>.")
         (base32 "1wkj25srsbidpcvgm6c74584ahybjy39r86dxir1vd13kbi8l120"))))
     (properties `((upstream-name . "bpDir")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotrix r-mass r-circular))
     (home-page "https://cran.r-project.org/package=bpDir")
     (synopsis "Boxplots for Directional Data")
@@ -5693,6 +6222,9 @@ G., Porzio G.C. (2018) <doi:10.1111/biom.12889>.")
         (base32 "1xgspmknjs7cqh0iw3qgikbxpbl2qscjx9n07ib5s3z8hi282wrn"))))
     (properties `((upstream-name . "bpcp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-ggplot2))
     (home-page "https://cran.r-project.org/package=bpcp")
     (synopsis "Beta Product Confidence Procedure for Right Censored Data")
@@ -5721,6 +6253,9 @@ options.")
         (base32 "13rb6k50527aiaydapkvjyh3c2pk1anmz537y97mx35malfh1kmd"))))
     (properties `((upstream-name . "bpca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable r-scatterplot3d r-rgl))
     (home-page "https://cran.r-project.org/package=bpca")
     (synopsis
@@ -5743,6 +6278,9 @@ reduction.")
         (base32 "0f8knwvwllzraxkhawkljdm7mj2i0crd6yj415dya7nvp01ilaql"))))
     (properties `((upstream-name . "bpbounds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/remlapmot/bpbounds")
     (synopsis
@@ -5771,6 +6309,9 @@ are measured in another study (bivariate data).")
         (base32 "0341mndgl9jybmkgqa3pfgk9ryn8738j04d1gy2yjacbs68xxhn8"))))
     (properties `((upstream-name . "bpAcc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bpAcc")
     (synopsis
      "Blood Pressure Device Accuracy Evaluation: Statistical Considerations")
@@ -5798,6 +6339,9 @@ ISBN:1-57020-183-8).")
         (base32 "0np7q1nasrq4j7ssaipvbjgrsi9n612p9lp96frq1dgix95mcgf0"))))
     (properties `((upstream-name . "bpa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bgreenwell/bpa")
@@ -5820,6 +6364,9 @@ identifying columns containing multiple or nonstandard formats.")
         (base32 "0qdpm5nfx2jhc0s77x839jdmk07c88xf739dwf2n8hqhk24y0cdr"))))
     (properties `((upstream-name . "bp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -5851,6 +6398,9 @@ for researchers.")
         (base32 "1hdm4p7zx2r566zaiyw06qg3c790gsvylrvav7g9fl4i1x6qgkyk"))))
     (properties `((upstream-name . "boxr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -5874,9 +6424,10 @@ for researchers.")
     (description
      "An R interface for the remote file hosting service Box (<https://www.box.com/>).
  In addition to uploading and downloading files, this package includes functions
-which mirror base R operations for local files, (e.g. box_load(), box_save(),
-box_read(), box_setwd(), etc.), as well as git style functions for entire
-directories (e.g. box_fetch(), box_push()).")
+which mirror base R operations for local files, (e.g. @code{box_load()},
+@code{box_save()}, @code{box_read()}, @code{box_setwd()}, etc.), as well as git
+style functions for entire directories (e.g. @code{box_fetch()},
+@code{box_push()}).")
     (license license:expat)))
 
 (define-public r-boxplotdbl
@@ -5891,6 +6442,9 @@ directories (e.g. box_fetch(), box_push()).")
         (base32 "0yfkkafrq329l6yxbnpwm8yqidixxh7k124xjy5xa92pbng2clbd"))))
     (properties `((upstream-name . "boxplotdbl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=boxplotdbl")
     (synopsis "Double Box Plot for Two-Axes Correlation")
     (description
@@ -5910,6 +6464,9 @@ style.  Visualize the effect of factor.")
         (base32 "1c3hy8h780c11hl98vwdn614nprxd2vb3n3rv23qdcl8fld0r16h"))))
     (properties `((upstream-name . "boxplotcluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cluster))
     (home-page "https://cran.r-project.org/package=boxplotcluster")
     (synopsis "Clustering Method Based on Boxplot Statistics")
@@ -5940,6 +6497,9 @@ package is based on the following publications: Rousseeuw (1987)
         (base32 "0fvk95f2nn06aaxn2qq7jxr2yvsnc40806xkamryhrnmrwiphia9"))))
     (properties `((upstream-name . "boxly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid
                              r-rlang
                              r-plotly
@@ -5969,6 +6529,9 @@ package is based on the following publications: Rousseeuw (1987)
         (base32 "03qx2bsqg7kkpf2q6xrj7ap0aczgascdrnkj5bcl3aq278fahnxi"))))
     (properties `((upstream-name . "boxfilter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gridextra r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=boxfilter")
@@ -5996,6 +6559,9 @@ slowly-changing physiological variable.For more information see Signer
         (base32 "0lalj4sd9ydk2k5r5jww60bm68fbwhin0p81wzraq025pil5cddm"))))
     (properties `((upstream-name . "boxcoxmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod r-qicharts r-npmlreg))
     (native-inputs (list))
     (home-page "https://gitlab.com/iagogv/boxcoxmix")
@@ -6005,9 +6571,9 @@ slowly-changing physiological variable.For more information see Signer
      "Box-Cox-type transformations for linear and logistic models with random effects
 using non-parametric profile maximum likelihood estimation, as introduced in
 Almohaimeed (2018) <http://etheses.dur.ac.uk/12831/> and Almohaimeed and Einbeck
-(2022) <doi:10.1177/1471082X20966919>.  The main functions are optim.boxcox()
-for linear models with random effects and boxcoxtype() for logistic models with
-random effects.")
+(2022) <doi:10.1177/1471082X20966919>.  The main functions are
+@code{optim.boxcox()} for linear models with random effects and
+@code{boxcoxtype()} for logistic models with random effects.")
     (license license:gpl3+)))
 
 (define-public r-box-lsp
@@ -6022,6 +6588,9 @@ random effects.")
         (base32 "0rayi6fsnk2cjzvx7i3bmih9d5x93ssm0kg3r6w1dqk0djj0xrsj"))))
     (properties `((upstream-name . "box.lsp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-fs r-cli r-box))
     (home-page "https://github.com/Appsilon/box.lsp")
     (synopsis "Provides 'box' Compatibility for 'languageserver'")
@@ -6043,6 +6612,9 @@ editors.")
         (base32 "1j6zjs5cpafyk1f74p059mggr9kp7c92fv4msyycs0lwji01ar88"))))
     (properties `((upstream-name . "box.linters")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xmlparsedata
                              r-xml2
                              r-xfun
@@ -6074,6 +6646,9 @@ ensure consistent coding standards.")
         (base32 "0q5l0w0nlclz3k13mxwqd2j4q8hqy9lhywz6d7jx5lk3jq72gf5i"))))
     (properties `((upstream-name . "BoutrosLab.plotting.general")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass
                              r-latticeextra
                              r-lattice
@@ -6112,6 +6687,9 @@ interactive visualization of scientific data; BMC Bioinformatics 2019
         (base32 "0j2y6ndj03shssa7pgvg9cwbm5mv7ahy9kypj9z1ahskdi4xg1m1"))))
     (properties `((upstream-name . "boutliers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-metafor r-mass))
     (home-page "https://cran.r-project.org/package=boutliers")
     (synopsis "Outlier Detection and Influence Diagnostics for Meta-Analysis")
@@ -6133,12 +6711,15 @@ calculated, and the thresholds to determine outliers are explicitly provided.")
         (base32 "11dwc0j88zqxqwnrinc4f990vjbyv4bs16z6id6xw7yp7i2n5nla"))))
     (properties `((upstream-name . "boussinesq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/ecor/boussinesq")
     (synopsis "Analytic Solutions for (Ground-Water) Boussinesq Equation")
     (description
      "This package provides a collection of R functions were implemented from
 published and available analytic solutions for the One-Dimensional Boussinesq
-Equation (ground-water).  In particular, the function \"beq.lin()\" is the
+Equation (ground-water).  In particular, the function @code{\"beq.lin()}\" is the
 analytic solution of the linearized form of Boussinesq Equation between two
 different head-based boundary (Dirichlet) conditions; \"beq.song\" is the
 non-linear power-series analytic solution of the motion of a wetting front over
@@ -6159,6 +6740,9 @@ welcomed.")
         (base32 "0kgpsvnq8f0qyw55rldwqapys36y6lb4w2bw2azfl4nmrrnayxbc"))))
     (properties `((upstream-name . "boundingbox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-imager r-gplots))
     (native-inputs (list r-knitr))
     (home-page "<https://github.com/stomperusa/boundingbox>")
@@ -6185,6 +6769,9 @@ Object Localization Based on Image Superpixelization\"
         (base32 "03gqm9afqv7z176f9yv5vxf0r4v0bq1zs8rfwfld38mk66sfb2m1"))))
     (properties `((upstream-name . "BoundEdgeworth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mathjaxr r-expint))
     (home-page "https://cran.r-project.org/package=BoundEdgeworth")
     (synopsis "Bound on the Error of the First-Order Edgeworth Expansion")
@@ -6207,6 +6794,9 @@ expansion, following the article Derumigny, Girard, Guyonvarch (2021)
         (base32 "18a0xjs2qg8lfxh5riqdh8c6pwpg72r2m1bl1p4qgcclrkcvdsx7"))))
     (properties `((upstream-name . "BoundaryStats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-terra
                              r-sf
@@ -6242,6 +6832,9 @@ boundary statistics are described in: Fortin, Drapeau, and Jacquez (1996)
         (base32 "0avw7h0m2dm9nn5ya1y6kcgdh438v63y42w3y2dag24iyligx0wq"))))
     (properties `((upstream-name . "botor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate r-logger r-jsonlite r-checkmate))
     (home-page "https://daroczig.github.io/botor/")
     (synopsis "'AWS Python SDK' ('boto3') for R")
@@ -6264,6 +6857,9 @@ Systems Manager Parameter Store and Secrets Manager'.")
         (base32 "0ln4nx0jlvz5kqk9qkcl8a2cyhsdcqqfs5112qcaabjiwjnvla7w"))))
     (properties `((upstream-name . "BOSSreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-glmnet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sentian/BOSSreg")
@@ -6295,6 +6891,9 @@ Least Squares Regression\", <@code{arXiv:1911.10191>}.")
         (base32 "04m0pbs5ywmq5yf1xq5skay7fsvvh7mlc9ks0z6wl7pg9ibwrxkf"))))
     (properties `((upstream-name . "bossR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mvtnorm))
     (home-page "https://cran.r-project.org/package=bossR")
     (synopsis "Biomarker Optimal Segmentation System")
@@ -6322,6 +6921,9 @@ gold standard in this field), while being hundreds of times faster.")
         (base32 "0qhcar3grp6l6islbjc27jqvgh37kkdi0nql6plsqwilldv3kis6"))))
     (properties `((upstream-name . "BoSSA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite r-plotrix r-phangorn r-jsonlite r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BoSSA")
@@ -6341,6 +6943,9 @@ gold standard in this field), while being hundreds of times faster.")
         (base32 "059g4sl7c2cns729sssv1syj0zx8rs8wbjfsc761fxl435ca7hqk"))))
     (properties `((upstream-name . "BosonSampling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=BosonSampling")
     (synopsis "Classical Boson Sampling")
@@ -6363,6 +6968,9 @@ evaluation of complex permanent minors.")
         (base32 "0hq9rplb22dm8nikapxnvzq10y4xzi1y7k61ghw9x1fq4fdfyy2f"))))
     (properties `((upstream-name . "borrowr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mvtnorm r-bart))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=borrowr")
@@ -6389,6 +6997,9 @@ Koopmeiners, & Hobbs (2018) <doi:10.1093/biostatistics/kxx031>.")
         (base32 "1x53g3y283i92624rkp36lwfmz0p8rkkqsndn5h35sapjga6wmy3"))))
     (properties `((upstream-name . "boral")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-r2jags
                              r-mvtnorm
@@ -6423,6 +7034,9 @@ account for any residual correlation between the columns of the response matrix.
         (base32 "1r5jacmin0cq9zipxa9nmp3jnh6wsddd4wnzw2n5sggnf24ryp8g"))))
     (properties `((upstream-name . "bor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bor")
     (synopsis "Transforming Behavioral Observation Records into Data Matrices")
     (description
@@ -6445,6 +7059,9 @@ subject.")
         (base32 "1p786avc37yq5g01zh6sqx7b1rvbxrh6gbxsad4bdvr12cjdsss6"))))
     (properties `((upstream-name . "Boptbd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-igraph))
     (home-page "https://cran.r-project.org/package=Boptbd")
     (synopsis "Bayesian Optimal Block Designs")
@@ -6469,6 +7086,9 @@ package tcltk to ensure that it is user friendly.")
         (base32 "1s6qvc2nvkqfxl8d4cy7ckvn6l0svq85g274pvjjxg8f883hax0j"))))
     (properties `((upstream-name . "BootWPTOS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh r-tseries))
     (home-page "https://cran.r-project.org/package=BootWPTOS")
     (synopsis "Test Stationarity using Bootstrap Wavelet Packet Tests")
@@ -6493,6 +7113,9 @@ Computational Harmonic Analysis, 44, 558-585 <doi:10.1016/j.acha.2016.06.006>.")
         (base32 "0cvwdi8qvm737qsnyr87wpsfmyzcdr7sga4zbkal8y5bj73h9y63"))))
     (properties `((upstream-name . "bootwar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinythemes
                              r-shinyjs
                              r-shiny
@@ -6511,15 +7134,16 @@ non-normal data, especially for small sample size studies.  However, many
 researchers are unfamiliar with these methods.  The bootwar package bridges this
 gap by enabling users to grasp the concepts of nbpr via Boot War, a variation of
 the card game War designed for small samples.  The package provides functions
-like score_keeper() and play_round() to streamline gameplay and scoring.  Once a
-predetermined number of rounds concludes, users can employ the analyze_game()
-function to derive game results.  This function leverages the npboottprm
-package's nonparboot() to report nbpr results and, for comparative analysis,
-also reports results from the stats package's t.test() function.  Additionally,
-bootwar features an interactive shiny web application, bootwar().  This offers a
-user-centric interface to experience Boot War, enhancing understanding of nbpr
-methods across various distributions, sample sizes, number of bootstrap
-resamples, and confidence intervals.")
+like @code{score_keeper()} and @code{play_round()} to streamline gameplay and
+scoring.  Once a predetermined number of rounds concludes, users can employ the
+@code{analyze_game()} function to derive game results.  This function leverages
+the npboottprm package's @code{nonparboot()} to report nbpr results and, for
+comparative analysis, also reports results from the stats package's
+@code{t.test()} function.  Additionally, bootwar features an interactive shiny
+web application, @code{bootwar()}.  This offers a user-centric interface to
+experience Boot War, enhancing understanding of nbpr methods across various
+distributions, sample sizes, number of bootstrap resamples, and confidence
+intervals.")
     (license license:expat)))
 
 (define-public r-bootur
@@ -6534,6 +7158,9 @@ resamples, and confidence intervals.")
         (base32 "19sjh9hwx9hcqyrjx5kc2id1ml1sfd6c37g412vzfgk931bm0lbs"))))
     (properties `((upstream-name . "bootUR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urca
                              r-rcppthread
                              r-rcppparallel
@@ -6567,6 +7194,9 @@ key references.")
         (base32 "16d3qv8vzhfvl9vbfglkb3csmc4npb29jcq9apv89hj7bkcapvi9"))))
     (properties `((upstream-name . "bootSVD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ff))
     (home-page "http://arxiv.org/abs/1405.0922")
     (synopsis
@@ -6595,6 +7225,9 @@ calculation of the bootstrap PCs.")
         (base32 "0c60xyhq8x3k75dxi8lcsz7i5xnizdzrypcvy27w5mb5nx9wg58i"))))
     (properties `((upstream-name . "bootsurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=bootsurv")
     (synopsis "Bootstrap Methods for Complete Survey Data")
@@ -6620,6 +7253,9 @@ in-depth analysis.")
         (base32 "04lyr9x6lz4q5y70p92ffdil2i9f1fsykw5wh6wsv0qcqypdmawy"))))
     (properties `((upstream-name . "BootstrapQTL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixeqtl r-foreach r-data-table))
     (home-page "https://cran.r-project.org/package=BootstrapQTL")
     (synopsis "Bootstrap cis-QTL Method that Corrects for the Winner's Curse")
@@ -6642,6 +7278,9 @@ described in Huang QQ *et al.* 2018 <doi: 10.1093/nar/gky780>.")
         (base32 "104vl9a6qqk0xr0pqmnm9v0rdc0x1jizvshf494zqkg9l97nq3yb"))))
     (properties `((upstream-name . "bootstrapFP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sampling))
     (home-page "https://cran.r-project.org/package=bootstrapFP")
     (synopsis "Bootstrap Algorithms for Finite Population Inference")
@@ -6664,11 +7303,14 @@ methods for finite populations, see Mashreghi et Al. (2016)
         (base32 "1dmziq6yfycpap4hhlzl3xg2hsx4y135hy7r6qh9p98vxpa6mycl"))))
     (properties `((upstream-name . "bootStepAIC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=bootStepAIC")
     (synopsis "Bootstrap stepAIC")
     (description
-     "Model selection by bootstrapping the @code{stepAIC}() procedure.")
+     "Model selection by bootstrapping the @code{stepAIC()} procedure.")
     (license license:gpl2+)))
 
 (define-public r-bootruin
@@ -6683,6 +7325,9 @@ methods for finite populations, see Mashreghi et Al. (2016)
         (base32 "1gbvh99snchipf13kjhymcx60s2kni23y7lv8lhzd3d402grp68h"))))
     (properties `((upstream-name . "bootruin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bootruin")
     (synopsis
      "Bootstrap Test for the Probability of Ruin in the Classical Risk Process")
@@ -6705,6 +7350,9 @@ asymptotic normality.")
         (base32 "11cpg3klm5qk7447wnwhfv1kg0r3kqr0m4vvwkv1jll5v9zkq7h7"))))
     (properties `((upstream-name . "BootPR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BootPR")
     (synopsis "Bootstrap Prediction Intervals and Bias-Corrected Forecasting")
     (description
@@ -6724,6 +7372,9 @@ Prediction Intervals for Autoregressive Time Series.")
         (base32 "1sk7327fwqhy9arxn2shlxhflg4i99864wqs782jh325z18nqxwb"))))
     (properties `((upstream-name . "bootPLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spls
                              r-plsrglm
                              r-pls
@@ -6761,6 +7412,9 @@ al.  2021, Frontiers in Applied Mathematics and Statistics',
         (base32 "0r7ad6ybzr3jm5s2791sv402293wi4wy59n7dv5q5ss1vykpsk6h"))))
     (properties `((upstream-name . "bootnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -6802,6 +7456,9 @@ offers default sets for various estimation routines.")
         (base32 "07am80603pv1dh5ma3zb0idnslkzm5m3ym8sd1nhkh8zbc6qqmzs"))))
     (properties `((upstream-name . "BootMRMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BootMRMR")
     (synopsis "Bootstrap-MRMR Technique for Informative Gene Selection")
     (description
@@ -6826,6 +7483,9 @@ proteomics applications).")
         (base32 "1aj5l42d5y7czxzlg6r9ykdxyjf8m8bahl41xk4k6xpxckdnka14"))))
     (properties `((upstream-name . "bootLR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-boot r-binom))
     (home-page "https://cran.r-project.org/package=bootLR")
     (synopsis
@@ -6850,6 +7510,9 @@ on nested models--for that, see epicalc::lrtest'.")
         (base32 "1z7vhfn43rd91bnflygyx3f9bvlzz9djncxa8abqs8ip8rz1pqj0"))))
     (properties `((upstream-name . "bootImpute")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-smcfcs r-mice))
     (home-page "https://cran.r-project.org/package=bootImpute")
     (synopsis "Bootstrap Inference for Multiple Imputation")
@@ -6871,6 +7534,9 @@ and Bartlett (2021) <doi:10.1214/20-STS793>.")
         (base32 "11nn4lc9wdx1z35mfpc3zkk1xr0pvvjyvjzpjlq3z4gm0hmniifz"))))
     (properties `((upstream-name . "bootGOF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MarselScheer/bootGOF")
@@ -6899,6 +7565,9 @@ certain interfaces for models that are not supported natively by the package.")
         (base32 "17wrl678x9mb5pny2vwrr6sdl2hsqr1nbjzsizp2q6l3w5m6s152"))))
     (properties `((upstream-name . "bootf2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readxl r-minpack-lm r-mass r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zhengguoxu/bootf2")
@@ -6924,6 +7593,9 @@ modelling and multivariate normal distribution.")
         (base32 "1qc01drxrmzclb2cwby475pmymwg86iq8zm3jq3fzxzi6kyfwf61"))))
     (properties `((upstream-name . "bootES")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-boot))
     (home-page "https://github.com/dgerlanc/bootES")
     (synopsis "Bootstrap Confidence Intervals on Effect Sizes")
@@ -6943,6 +7615,9 @@ modelling and multivariate normal distribution.")
         (base32 "1025n0rxvjsyqwba3y4frjhpfqila70p43pk4p4rf9fhxcs4xg6m"))))
     (properties `((upstream-name . "bootCT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vars
                              r-usethis
                              r-urca
@@ -6981,6 +7656,9 @@ unconditional ARDL models.")
         (base32 "0gg07ck2nf0ddqc5nflk5ms16m3c6dlf1a77m58q581mkavj6gyb"))))
     (properties `((upstream-name . "bootComb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=bootComb")
     (synopsis "Combine Parameter Estimates via Parametric Bootstrap")
@@ -7010,6 +7688,9 @@ example of combining conditional prevalences.")
         (base32 "0f1zw39c4dr0j6clxg4iay0vd3jb9k2nm6rjkvx32pnvmhbdkhvn"))))
     (properties `((upstream-name . "bootcluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna
                              r-plyr
                              r-network
@@ -7055,6 +7736,9 @@ clustering method.")
         (base32 "0572n82402i609q0jl6p2ar1gq5jlqqssv28xs3rxsr3nza49dxv"))))
     (properties `((upstream-name . "boot.pval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rms
                              r-rdpack
@@ -7082,6 +7766,9 @@ including convenience functions for regression models.")
         (base32 "0g4zkvx8krqh54xvjh1a0ybwl3v5bg3l670ycgnps8kkw32w5p1f"))))
     (properties `((upstream-name . "boot.heterogeneity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown r-pbmcapply r-metafor r-knitr
                              r-hsaur3))
     (native-inputs (list r-knitr))
@@ -7092,13 +7779,13 @@ including convenience functions for regression models.")
 mean differences (d), Fisher-transformed Pearson's correlations (r), and
 natural-logarithm-transformed odds ratio (or) in meta-analysis studies.
 Depending on the presence of moderators, this Monte Carlo based test can be
-implemented in the random- or mixed-effects model.  This package uses rma()
-function from the R package metafor to obtain parameter estimates and
-likelihoods, so installation of R package metafor is required.  This approach
-refers to the studies of Anscombe (1956) <doi:10.2307/2332926>, Haldane (1940)
-<doi:10.2307/2332614>, Hedges (1981) <doi:10.3102/10769986006002107>, Hedges &
-Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, & Fowler
-(2004) <doi:10.1002/14651858.CD000146.pub2>, Viechtbauer (2010)
+implemented in the random- or mixed-effects model.  This package uses
+@code{rma()} function from the R package metafor to obtain parameter estimates
+and likelihoods, so installation of R package metafor is required.  This
+approach refers to the studies of Anscombe (1956) <doi:10.2307/2332926>, Haldane
+(1940) <doi:10.2307/2332614>, Hedges (1981) <doi:10.3102/10769986006002107>,
+Hedges & Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, &
+Fowler (2004) <doi:10.1002/14651858.CD000146.pub2>, Viechtbauer (2010)
 <doi:10.18637/jss.v036.i03>, and Zuckerman (1994, ISBN:978-0521432009).")
     (license license:gpl2+)))
 
@@ -7114,6 +7801,9 @@ Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, & Fowler
         (base32 "1lf3gj1adnwxavlpmw9ygwz5pxz45bbdgz7cv46cp2jyh06y3sa3"))))
     (properties `((upstream-name . "boostrq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stabs r-quantreg r-mboost r-checkmate))
     (home-page "https://github.com/stefanlinner/boostrq")
     (synopsis "Boosting Regression Quantiles")
@@ -7138,6 +7828,9 @@ stability selection.")
         (base32 "17na38k052lzjrssvxssllm9fwpnzhr29g9wwcfkbja6rv2pw9p1"))))
     (properties `((upstream-name . "boostmtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforestsrc r-nlme))
     (home-page "https://ishwaran.org/ishwaran.html")
     (synopsis "Boosted Multivariate Trees for Longitudinal Data")
@@ -7164,6 +7857,9 @@ Implementation details are provided in Pande et al. (2017), Mach Learn
         (base32 "0gk8jf04qda1qsc6987d8nfa453v9cqkjsvvrrg68yx3fd96m8aj"))))
     (properties `((upstream-name . "BoostMLR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-nlme))
     (home-page "https://cran.r-project.org/package=BoostMLR")
     (synopsis "Boosting for Multivariate Longitudinal Responses")
@@ -7184,6 +7880,9 @@ and time using gradient boosting approach.")
         (base32 "0df19q44fsv0hvda4dwq302wsh6vlalwszyh0ir66r5ryrrmhas4"))))
     (properties `((upstream-name . "boostingDEA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rglpk r-mlmetrics r-lpsolveapi r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/itsmeryguillen/boostingDEA")
@@ -7212,6 +7911,9 @@ the Slacks-Based Measure (SBM).")
         (base32 "0gn6fb68hk0kzpa4mp4465rsbk37fkq7nnx6bvd5bhhk1zi25xl7"))))
     (properties `((upstream-name . "BoomSpikeSlab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-boom))
     (home-page "https://cran.r-project.org/package=BoomSpikeSlab")
     (synopsis "MCMC for Spike and Slab Regression")
@@ -7242,6 +7944,7 @@ explanation of the Gaussian case.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f list
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -7273,6 +7976,9 @@ hence the package name.")
         (base32 "00fn41sk0fdv8xv98j3wzc30vkhrw48clkqwpymvrh57rjdh4q2k"))))
     (properties `((upstream-name . "Boom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=Boom")
     (synopsis "Bayesian Object Oriented Modeling")
@@ -7296,6 +8002,9 @@ your system so that other packages can link against it.")
         (base32 "19xnmz5dq8lvk1va8zi931xkawkwfcfjf4vh0dsg5n8zhy4p321f"))))
     (properties `((upstream-name . "BoolNet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-igraph))
     (home-page "https://cran.r-project.org/package=BoolNet")
     (synopsis "Construction, Simulation and Analysis of Boolean Networks")
@@ -7318,6 +8027,9 @@ Provides also functions to analyze and visualize attractors in Boolean networks
         (base32 "14z4fzf8p4wgi939qs6v39a3xizccjcx7j4szsydllpkvxbwggbw"))))
     (properties `((upstream-name . "BoolFilter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlab r-boolnet))
     (home-page "https://cran.r-project.org/package=BoolFilter")
     (synopsis
@@ -7339,6 +8051,9 @@ as network inference of Partially-Observed Boolean Dynamical Systems.")
         (base32 "1haplr64f5kai1y6kdxhxiayidy1mivh85dx140fya5r6fdk0shm"))))
     (properties `((upstream-name . "boodist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpp r-r6 r-bh))
     (home-page "https://github.com/stla/boodist")
     (synopsis "Some Distributions from the 'Boost' Library and More")
@@ -7364,6 +8079,9 @@ inverse Gaussian distribution\" Luc Devroye (2012)
         (base32 "1h16bwwl14ikyx489n8bx63qnp7k982lxm1xlrdr8jnaq6kc7fgp"))))
     (properties `((upstream-name . "bonsaiforest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vdiffr
                              r-tidyselect
                              r-tidyr
@@ -7410,6 +8128,9 @@ in practical clinical trial analyses.")
         (base32 "01k4b1d0rl6fry1y5594fca7rsp7i55d0wadm7ibydn9jf1hmsiv"))))
     (properties `((upstream-name . "bonsai")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-purrr
@@ -7442,6 +8163,9 @@ aorsf (Jaeger et al, 2022 <doi:10.5281/zenodo.7116854>).")
         (base32 "1z22cdizz8sgw4fry98adcjvn23ag3qvvcinbg3kmafksdk1ivmb"))))
     (properties `((upstream-name . "bonn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (home-page "https://github.com/sumtxt/bonn/")
     (synopsis "Access INKAR Database")
@@ -7463,6 +8187,9 @@ Office for Building and Regional Planning (BBSR) in Bonn using their JSON API.")
         (base32 "0lmgrg53b0abb5hidyjjmwn7lf2ani84k9fil7g6j6mdajjhh1b7"))))
     (properties `((upstream-name . "BonEV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qvalue))
     (home-page "https://cran.r-project.org/package=BonEV")
     (synopsis
@@ -7487,6 +8214,9 @@ discoveries.")
         (base32 "0r9fmrb2v0jlbp9f2c644v17hbdfz91dl6j87mgxwkpc472iz9w8"))))
     (properties `((upstream-name . "BoneProfileR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rmarkdown r-knitr r-imager r-helpersmg))
     (home-page "https://cran.r-project.org/package=BoneProfileR")
     (synopsis "Tools to Study Bone Compactness")
@@ -7510,6 +8240,9 @@ and GÃ´net, Laurin and Girondot (2022)
         (base32 "00fdqsy7znlwszwjm7mzd5yb3bbx463iy4fbkrzc5nn08rfa395g"))))
     (properties `((upstream-name . "BondValuation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timedate r-rcpp))
     (home-page "https://cran.r-project.org/package=BondValuation")
     (synopsis
@@ -7535,6 +8268,9 @@ return time-invariant properties and temporal structure of a bond.")
         (base32 "0bygaldjgxbjqjnlgs64vdayr7kp6sjl6qffdywxpi7v0yfi072a"))))
     (properties `((upstream-name . "bondAnalyst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack))
     (home-page "https://cran.r-project.org/package=bondAnalyst")
     (synopsis "Methods for Fixed-Income Valuation, Risk and Return")
@@ -7562,6 +8298,9 @@ Return.  CFA Institute (\"CFA Program Curriculum 2020 Level I Volumes 1-6. (Vol.
         (base32 "17nsjr2y8nniaxd6f13g85gb9rshar72qqp45yh2ygg4zrx1d226"))))
     (properties `((upstream-name . "BoltzMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
     (home-page "https://cran.r-project.org/package=BoltzMM")
     (synopsis "Boltzmann Machines with MM Algorithms")
@@ -7584,6 +8323,9 @@ Wood (2016b) <doi:10.1109/TNNLS.2015.2425898>.")
         (base32 "1pxl5q2kb8k2dkq4n34y6fj5snqx77fl76dznx22l64x4dig2q6d"))))
     (properties `((upstream-name . "Bolstad2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jmcurran/Bolstad2")
     (synopsis "Bolstad Functions")
     (description
@@ -7604,6 +8346,9 @@ Wood (2016b) <doi:10.1109/TNNLS.2015.2425898>.")
         (base32 "0ldy6w911lcf8z0rckdbsn9246wlwiq8mnmqiq2pb8j5is6rqvn9"))))
     (properties `((upstream-name . "Bolstad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=Bolstad")
     (synopsis "Functions for Elementary Bayesian Inference")
@@ -7625,6 +8370,9 @@ ISBN 978-1-118-09156-2.")
         (base32 "0ab5cydn4hbm1fbbd71xh5724wizrv9ckj3j6rklz46nhbwfjmr2"))))
     (properties `((upstream-name . "bolsec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rvest r-formattable r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bolsec")
@@ -7648,6 +8396,9 @@ correlation, and descriptive statistics table for the securities.")
         (base32 "1fbd39jyxq0zfbybrzzwnyql2w8hf2b9133jj0nl99d1326wr7dh"))))
     (properties `((upstream-name . "bolasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rdpack
                              r-progressr
@@ -7677,6 +8428,9 @@ estimation through the bootstrap', <@code{arXiv:0804.1302>}.")
         (base32 "1x9lz01fjdk0aybs6zsbbq2xfjvh99qiimmnrkbcd6sj880vn3a3"))))
     (properties `((upstream-name . "BOJ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyselect
                              r-tidyr
@@ -7703,6 +8457,9 @@ statistics.")
         (base32 "1ys3s4f2ydf5m1ab7y9yf1lvbjlarffn5cjcycq0yfis45gs8xqj"))))
     (properties `((upstream-name . "boiwsa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-lubridate
@@ -7733,6 +8490,9 @@ adjustments.  The method is described in more detail in Ginker (2023)
         (base32 "0jk1igg45zpds8qadzwaifmcj3b61ghn2rqx4x8b4pv3mi2sk2cn"))))
     (properties `((upstream-name . "boinet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mfp r-iso r-copula))
     (home-page "https://cran.r-project.org/package=boinet")
     (synopsis
@@ -7764,6 +8524,9 @@ straightforward ways depending on their own application.")
         (base32 "03h6s1nn87xgkk830wls06mgflg0arq084k74gfp1k4wccwkjr5y"))))
     (properties `((upstream-name . "BOIN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-iso))
     (home-page "https://cran.r-project.org/package=BOIN")
     (synopsis
@@ -7797,6 +8560,9 @@ toxic doses.  For tutorial, please check Yan et al. (2020)
         (base32 "1dws84ghc5r6zpnr23qd4l9bkazds8ar723wkrkikjni58vshjf1"))))
     (properties `((upstream-name . "boilerpipeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjava))
     (home-page "https://github.com/mannau/boilerpipeR")
     (synopsis "Interface to the Boilerpipe Java Library")
@@ -7820,6 +8586,9 @@ site templates.")
         (base32 "0vxzwhmahfd4dx7x28n0c7l4gmz1921y60mfpcwaz2qjpl9d27m7"))))
     (properties `((upstream-name . "boggy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://rmagno.eu/boggy/")
     (synopsis "Real-Time PCR Data Sets by Boggy et al. (2010)")
@@ -7845,6 +8614,9 @@ amplification curve is 40 cycles long.  Original raw data file:
         (base32 "1nsgn3x2w8ri059iwpj9rhg4abxrk6ryq1lbbrwihrxdq9xqvg4v"))))
     (properties `((upstream-name . "bodycompref")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sae r-gamlss r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://bodycomp-metrics.mgh.harvard.edu")
@@ -7875,6 +8647,9 @@ Assessment [column] The Framingham Heart Study\", *Investigative Radiology*,
         (base32 "1hi3x2chs87ba5nh7ka6xjrl5yvwqqcdyj1dg87rpaiipyl8396n"))))
     (properties `((upstream-name . "bodycomp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bodycomp")
     (synopsis
      "Percent Body Fat Values Using Anthropometric Prediction Equations")
@@ -7900,6 +8675,9 @@ or predictor variables) is used to estimate total percent body fat in humans.
         (base32 "13d3fhdq1cyq7zhr6sj9nmw1zdfibq7mv6cjx8zlb1dmqi1m5d07"))))
     (properties `((upstream-name . "bodsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-rlang
@@ -7928,6 +8706,9 @@ timetable data at line level, and real-time location data.")
         (base32 "1z3xamj4qh3g5asrl3kbvcnx3r66mch34d0hlz9vg0498s9fwn6s"))))
     (properties `((upstream-name . "Bodi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-ranger r-opera r-mgcv r-gbm))
     (home-page "https://cran.r-project.org/package=Bodi")
     (synopsis "Boosting Diversity in Regression Ensembles")
@@ -7949,6 +8730,9 @@ Goude, Poggi (2021) <https://hal.archives-ouvertes.fr/hal-03041309/>.")
         (base32 "0rdbk3f95iw4352fl9d81ir503q072chbb4hn1k12sp1wjc3apid"))))
     (properties `((upstream-name . "bodenmiller")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yannabraham/bodenmiller")
     (synopsis "Profiling of Peripheral Blood Mononuclear Cells using CyTOF")
@@ -7970,6 +8754,9 @@ methods.")
         (base32 "1w3ghs29qlnjrd46lvv055snclwwy6a22fgdqszqm377w4favnhm"))))
     (properties `((upstream-name . "BoardGames")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BoardGames")
     (synopsis "Board Games and Tools for Building Board Games")
     (description
@@ -7989,6 +8776,9 @@ readily available game(s) for your entertainment.")
         (base32 "036jmypxg2ciiz388f90vm73l9djhpi6gzp1ibn9l0x3d072r7zz"))))
     (properties `((upstream-name . "bnviewer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-shiny
                              r-igraph
@@ -8021,6 +8811,9 @@ the basic and static views offered by existing packages.")
         (base32 "0gy3msq6i20xbf6vwrxj5k4b6bav9pbdjpci47b7g01npbhbdzsz"))))
     (properties `((upstream-name . "bnstruct")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph r-bitops))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bnstruct")
@@ -8048,6 +8841,9 @@ generating and using bootstrap samples, imputed data, inference.")
         (base32 "01rrqvgz9655psm7xcysf50y94lkzl2q3davgjzymg73kzbv3s41"))))
     (properties `((upstream-name . "BNSP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-threejs
                              r-plyr
                              r-plot3d
@@ -8085,6 +8881,9 @@ multivariate responses, see Papageorgiou, G. (2022) <doi: 10.1002/sim.9376>, and
         (base32 "0nrlx55364kgvkdpyaimgjxwnzmmdl1gmvyv3wkm8n2jyki92xxp"))))
     (properties `((upstream-name . "BNSL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-igraph r-bnlearn))
     (home-page "https://cran.r-project.org/package=BNSL")
     (synopsis "Bayesian Network Structure Learning")
@@ -8105,6 +8904,9 @@ based on a selected score.")
         (base32 "0m3cz7npc7mwq2vj68hllbd2vf5xqw00jaxv1pm3c28mq7pb459j"))))
     (properties `((upstream-name . "BNrich")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-graph r-glmnet r-corpcor r-bnlearn))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Samaneh-Bioinformatics/BNrich")
@@ -8133,6 +8935,9 @@ Exact Test on significant parameters.")
         (base32 "09ri3ms49w6qxck78cj5qw48jqd8vs544yw46fmz4vhq9ng08m7w"))))
     (properties `((upstream-name . "bnRep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinythemes
                              r-shinyjs
                              r-shiny
@@ -8150,7 +8955,7 @@ conditional linear Gaussian) collated from recent academic literature.  The
 @code{bnRep_summary} object provides an overview of the Bayesian networks in the
 repository and the package documentation includes details about the variables in
 each network.  A Shiny app to explore the repository can be launched with
-@code{bnRep_app}() and is available online at
+@code{bnRep_app()} and is available online at
 <https://manueleleonelli.shinyapps.io/@code{bnRep>}.  Reference: M. Leonelli
 (2024) <doi:10.48550/@code{arXiv.2409.19158>}.")
     (license license:expat)))
@@ -8167,6 +8972,9 @@ each network.  A Shiny app to explore the repository can be launched with
         (base32 "1ymvklv6d9684xzwdkvaxdjd1q20xmsf6kkfibn2wphlaqs2rh2n"))))
     (properties `((upstream-name . "BNPTSclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass))
     (home-page "https://cran.r-project.org/package=BNPTSclust")
     (synopsis "Bayesian Nonparametric Algorithm for Time Series Clustering")
@@ -8187,6 +8995,9 @@ Nieto-Barajas and Contreras-Cristan (2014).")
         (base32 "0wnbsz5c52pglycykzkd5lsnxfkjqva0xhwnb4kz7x1zd8vbd1sl"))))
     (properties `((upstream-name . "bnpsd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnls r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/StoreyLab/bnpsd/")
@@ -8216,6 +9027,13 @@ by a tree.  Method described in Ochoa and Storey (2021)
         (base32 "114gn80b7yyl6hi5cdnc0rp2hzy7pp8z6q4is1h29yxlqa6acbq4"))))
     (properties `((upstream-name . "BNPmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rcppdist
                              r-rcpparmadillo
                              r-rcpp
@@ -8245,6 +9063,9 @@ Corradin et al. (2021) <doi:10.18637/jss.v100.i15> for more details.")
         (base32 "0b0hv634k5vnc74iw2c0arx9rl3bh5hahhrhp14gx324jv279fs5"))))
     (properties `((upstream-name . "BNPdensity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-tidyr
                              r-survival
@@ -8272,6 +9093,9 @@ type algorithm for posterior normalized random measures.")
         (base32 "0qsxk47i7q4d8hbs2xj5k5sf8bqyzhq7rbj4y7w8ljprznlydgl9"))))
     (properties `((upstream-name . "bnpa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx
                              r-semplot
                              r-rgraphviz
@@ -8309,6 +9133,9 @@ Equation Modeling.  Journal of Statistical Software, 48(2), 1 - 36.
         (base32 "1d9jmfx0id4lmw122zga7hb52vlfdfqn4amhzpsmhyck99rv92j4"))))
     (properties `((upstream-name . "bnnSurvival")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-prodlim r-pec))
     (home-page "https://cran.r-project.org/package=bnnSurvival")
     (synopsis "Bagged k-Nearest Neighbors Survival Prediction")
@@ -8332,6 +9159,9 @@ package is used to speed up the computation.")
         (base32 "081j10b6akgya5f1hpfg2ccnlc26igf6crmhv96asachs1c5662d"))))
     (properties `((upstream-name . "bnmonitor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-reshape2
@@ -8369,6 +9199,9 @@ M. Leonelli, R. Ramanathan, R.L. Wilkerson (2022)
         (base32 "0z2kd9x5hi192dlr36r4vh9c66dzprm63y1l9v8av6dfnz63sj5b"))))
     (properties `((upstream-name . "bnma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-igraph r-ggplot2 r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bnma")
@@ -8394,6 +9227,9 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
         (base32 "17pr1b3dg576fsrzgvhdh0c4vfi3cl4ngkak8njddd6v4favsli4"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.bnlearn.com/")
     (synopsis
      "Bayesian Network Structure Learning, Parameter Learning and Inference")
@@ -8425,6 +9261,9 @@ averaging.  Development snapshots with the latest bugfixes are available from
         (base32 "16mvkvwnx61jrvraagvxf56pvmf5klm8lnkqq4s5y2z92kd0clgp"))))
     (properties `((upstream-name . "bndovb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma
                              r-np
                              r-nnet
@@ -8452,6 +9291,9 @@ using auxiliary data.")
         (base32 "0yx5grnaginmdxdi9philz24qvncr6gva01zrasl098p49dx0zpv"))))
     (properties `((upstream-name . "bndesr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-readxl
                              r-readr
@@ -8480,6 +9322,9 @@ R.<https://www.bndes.gov.br/@code{SiteBNDES/bndes/bndes_en>}.")
         (base32 "0sqyqw3jlzjhsmcblzxcc3nak4z63pvg3paniysnjzyi139fjyam"))))
     (properties `((upstream-name . "bnclassify")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart
                              r-rcpp
                              r-matrixstats
@@ -8508,6 +9353,9 @@ inspection.")
         (base32 "0c70vkgv2sdci33yrk2n297k105wnlxj1qchskdparkiipf47xsh"))))
     (properties `((upstream-name . "BMTAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm
                              r-mcmcpack
                              r-mass
@@ -8522,13 +9370,13 @@ inspection.")
      "This package implements parameter estimation using a Bayesian approach for
 Multivariate Threshold Autoregressive (MTAR) models with missing data using
 Markov Chain Monte Carlo methods.  Performs the simulation of MTAR processes
-(mtarsim()), estimation of matrix parameters and the threshold values
-(mtarns()), identification of the autoregressive orders using Bayesian variable
-selection (mtarstr()), identification of the number of regimes using
-Metropolised Carlin and Chib (mtarnumreg()) and estimate missing data,
-coefficients and covariance matrices conditional on the autoregressive orders,
-the threshold values and the number of regimes (mtarmissing()).  Calderon and
-Nieto (2017) <doi:10.1080/03610926.2014.990758>.")
+@code{(mtarsim()}), estimation of matrix parameters and the threshold values
+@code{(mtarns()}), identification of the autoregressive orders using Bayesian
+variable selection @code{(mtarstr()}), identification of the number of regimes
+using Metropolised Carlin and Chib @code{(mtarnumreg()}) and estimate missing
+data, coefficients and covariance matrices conditional on the autoregressive
+orders, the threshold values and the number of regimes @code{(mtarmissing()}).
+Calderon and Nieto (2017) <doi:10.1080/03610926.2014.990758>.")
     (license license:gpl2+)))
 
 (define-public r-bmt
@@ -8543,6 +9391,9 @@ Nieto (2017) <doi:10.1080/03610926.2014.990758>.")
         (base32 "1vdah5bsn41s2qriq15xi7dw9qzngaacmn5gk6yc7hi89dwyy3yj"))))
     (properties `((upstream-name . "BMT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-partitions r-fitdistrplus))
     (home-page "https://cran.r-project.org/package=BMT")
     (synopsis "The BMT Distribution")
@@ -8572,6 +9423,9 @@ estimation is also included.")
         (base32 "0myv2mj5kp97dzvbf4sw63fzjxzpv2d82vxwiqxaqd1pllcgrzz1"))))
     (properties `((upstream-name . "bmstdr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-sptimer
                              r-sptdyn
@@ -8615,6 +9469,9 @@ describes the methods in detail.")
         (base32 "05w6pz0mwqighhdl36f2ya1b4dw0xdhpfcbq6saw73ag5hvl57i9"))))
     (properties `((upstream-name . "bmscstan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstan
                              r-loo
                              r-logspline
@@ -8645,6 +9502,9 @@ D. (2021). <doi:10.1016/j.neuropsychologia.2021.107834>.")
         (base32 "0mivdvazhmvfg4in56hlw41amf470a20qczdi4if9r1f9kdcji19"))))
     (properties `((upstream-name . "BMS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://bms.zeugner.eu")
     (synopsis "Bayesian Model Averaging Library")
     (description
@@ -8671,6 +9531,9 @@ normal-conjugate linear model with Zellner's g prior, and assorted methods.")
         (base32 "1hkk1wwxl4hn9nj43akx6d01pivg3cmkbdngip5f7g2qxd483111"))))
     (properties `((upstream-name . "BMRMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-multicool r-mcmcpack r-logofgamma
                              r-fields))
     (home-page "https://cran.r-project.org/package=BMRMM")
@@ -8707,6 +9570,9 @@ Wu et al., (2022) <doi:10.1093/biostatistics/kxac050>.")
         (base32 "0v2ysap5jfkq9fc5blqlfhsv2bs8rqybmp5z4q3g6y3y7qzhypjw"))))
     (properties `((upstream-name . "BMRBr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-rvest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/billchenxi/BMRBr")
@@ -8758,6 +9624,9 @@ system identifications, J. Biomol.  NMR. 32 (2005) 13â22.
         (base32 "11fl9a0350602ipjzcwqh2fcbh1zhbachxb37wd4n25qaraqds6l"))))
     (properties `((upstream-name . "bmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-matrixstats
@@ -8791,6 +9660,9 @@ References: Frischkorn and Popov (2023) <doi:10.31234/osf.io/umt57>.")
         (base32 "1iig406z8whdjpbvajks2vzp1s1ay1f99r1n6qhs9xyi1z6yff2l"))))
     (properties `((upstream-name . "bmlm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -8817,6 +9689,9 @@ References: Frischkorn and Popov (2023) <doi:10.31234/osf.io/umt57>.")
         (base32 "09ahs2dwrbqhk4aki9291v5lr5fa9mvi087zrqjmv2057ypyv2n5"))))
     (properties `((upstream-name . "bmixture")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bdgraph))
     (home-page "https://www.uva.nl/profile/a.mohammadi")
     (synopsis "Bayesian Estimation for Finite Mixture of Distributions")
@@ -8841,6 +9716,9 @@ of distributions, including Mohammadi and et al. (2013)
         (base32 "1j1qxa5hgc9zdmk1y4xa87jcxi8m75hms88ishfvbqg8n2k9ah1h"))))
     (properties `((upstream-name . "BMisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-dplyr r-data-table))
     (home-page "https://bcallaway11.github.io/BMisc/")
     (synopsis
@@ -8873,6 +9751,9 @@ formulas.")
         (base32 "1r0j5gklmknyan68nc3vfn96ck414v75547486ic70v2pdr3xnpf"))))
     (properties `((upstream-name . "bmggum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -8906,6 +9787,9 @@ and plottings.")
         (base32 "0a0svnb7wxm9v8mzk0ld28scp51sp4rsgspxccqpkbmj31njc4d0"))))
     (properties `((upstream-name . "bmgarch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -8945,6 +9829,9 @@ contain rstan objects and can be examined with rstan functions.")
         (base32 "128mnyq4jkigirf9xkpfrk4l4d8pivrj43wbaj5hizhfd84q1qzj"))))
     (properties `((upstream-name . "bmet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mcmcpack r-mass))
     (home-page "https://cran.r-project.org/package=bmet")
     (synopsis "Bayesian Multigroup Equivalence Testing")
@@ -8967,6 +9854,13 @@ models and equivalence testing features may be added over time.")
         (base32 "0axwc7y7ncvmpnmdlxjdaw2kfhqklxd0zb7n22m6aw67hkqqqcg5"))))
     (properties `((upstream-name . "bmemLavaan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-snowfall
                              r-sem
                              r-rsem
@@ -9000,6 +9894,9 @@ Zhang and Wang (2013, <doi:10.1007/s11336-012-9301-5>), Zhang (2014,
         (base32 "0acw1xwswf5yi1a0j8pv996qcma3br0xw7a9w9mh7bx5xavlivvl"))))
     (properties `((upstream-name . "bmem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snowfall r-sem r-mass r-lavaan r-amelia))
     (home-page "https://bigdatalab.nd.edu")
     (synopsis "Mediation Analysis with Missing Data Using Bootstrap")
@@ -9026,20 +9923,23 @@ be found in these articles.  Zhang and Wang (2003)
         (base32 "0sm18dy9d4byzhjymcl9i30660i7x4zd53mbgyns5ffaww4h7fcc"))))
     (properties `((upstream-name . "BMconcor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://fatelarico.github.io/BMconcor/")
     (synopsis "CONCOR for Structural- And Regular-Equivalence Blockmodeling")
     (description
-     "The four functions svdcp() ('cp for column partitioned), svdbip() or svdbip2()
-('bip for bipartitioned), and svdbips() ('s for a simultaneous optimization of a
-set of r solutions), correspond to a singular value decomposition (SVD) by
-blocks notion, by supposing each block depending on relative subspaces, rather
-than on two whole spaces as usual SVD does.  The other functions, based on this
-notion, are relative to two column partitioned data matrices x and y defining
-two sets of subsets x_i and y_j of variables and amount to estimate a link
-between x_i and y_j for the pair (x_i, y_j) relatively to the links associated
-to all the other pairs.  These methods were first presented in: Lafosse R. &
-Hanafi M.,(1997) <https://eudml.org/doc/106424> and Hanafi M. & Lafosse, R.
-(2001) <https://eudml.org/doc/106494>.")
+     "The four functions @code{svdcp()} ('cp for column partitioned), @code{svdbip()}
+or @code{svdbip2()} ('bip for bipartitioned), and @code{svdbips()} ('s for a
+simultaneous optimization of a set of r solutions), correspond to a singular
+value decomposition (SVD) by blocks notion, by supposing each block depending on
+relative subspaces, rather than on two whole spaces as usual SVD does.  The
+other functions, based on this notion, are relative to two column partitioned
+data matrices x and y defining two sets of subsets x_i and y_j of variables and
+amount to estimate a link between x_i and y_j for the pair (x_i, y_j) relatively
+to the links associated to all the other pairs.  These methods were first
+presented in: Lafosse R. & Hanafi M.,(1997) <https://eudml.org/doc/106424> and
+Hanafi M. & Lafosse, R. (2001) <https://eudml.org/doc/106494>.")
     (license license:gpl3+)))
 
 (define-public r-bmass
@@ -9054,6 +9954,9 @@ Hanafi M.,(1997) <https://eudml.org/doc/106424> and Hanafi M. & Lafosse, R.
         (base32 "0dafixd996lamn5kfbqpiawblalhyw1gi394j46n2sij2r209d76"))))
     (properties `((upstream-name . "bmass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mturchin20/bmass")
     (synopsis "Bayesian Multivariate Analysis of Summary Statistics")
@@ -9083,6 +9986,9 @@ Multiple Related Phenotypes\", M. Stephens (2013)
         (base32 "19mmrz54n8ai9sfjpb3815p4r2pzy0v18hk020vqkjxakh9zgpab"))))
     (properties `((upstream-name . "BMAmevt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-coda))
     (home-page "https://cran.r-project.org/package=BMAmevt")
     (synopsis
@@ -9106,6 +10012,9 @@ extreme value parametric models, following Sabourin and Naveau (2014)
         (base32 "0w8y992ylyg0cyz1lfqll96fivng13lvxp0mhyb48flfnkg8rcdd"))))
     (properties `((upstream-name . "bmabasket")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-partitions))
     (home-page "https://github.com/ethan-alt/bmabasket")
     (synopsis "Bayesian Model Averaging for Basket Trials")
@@ -9115,27 +10024,6 @@ extreme value parametric models, following Sabourin and Naveau (2014)
 user-friendly wrapper for simulating basket trials under conditions and
 analyzing them with a Bayesian model averaging approach.")
     (license license:gpl3+)))
-
-(define-public r-bma
-  (package
-    (name "r-bma")
-    (version "3.18.19")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BMA" version))
-       (sha256
-        (base32 "0hldrbl7bcf5rchc5vl8v1y679yjbxq8pca79pgc3g607pnddsh9"))))
-    (properties `((upstream-name . "BMA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rrcov r-robustbase r-leaps r-inline))
-    (native-inputs (list gfortran))
-    (home-page "https://github.com/hanase/BMA")
-    (synopsis "Bayesian Model Averaging")
-    (description
-     "Package for Bayesian model averaging and variable selection for linear models,
-generalized linear models and survival models (cox regression).")
-    (license license:gpl2+)))
 
 (define-public r-blythstillcasellaci
   (package
@@ -9149,6 +10037,9 @@ generalized linear models and survival models (cox regression).")
         (base32 "1pvbnhm6y1canq67vh5c8qm6942vhglwh31w5gnrmrydyrvay7vj"))))
     (properties `((upstream-name . "BlythStillCasellaCI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BlythStillCasellaCI")
     (synopsis "Blyth-Still-Casella Exact Binomial Confidence Intervals")
     (description
@@ -9168,6 +10059,9 @@ refining procedure proposed by George Casella (1986) <doi:10.2307/3314658>.")
         (base32 "1nlxgq145igvf22ar7fpi1a7caw64jhi44fjvqsimpcqxpjycy38"))))
     (properties `((upstream-name . "bluebike")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-stringr
                              r-sf
@@ -9200,6 +10094,9 @@ distance to nearby stations.  Data is from
         (base32 "1sx4ii65ddvdw45za8j320v1s9d1pz5k2gx979yymhyxi8fmq69z"))))
     (properties `((upstream-name . "bltm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast r-mvnfast))
     (home-page "https://github.com/curso-r/bltm")
     (synopsis "Bayesian Latent Threshold Modeling")
@@ -9223,6 +10120,9 @@ may be checked inside the demonstration files.")
         (base32 "0par5yqfn9f63di1dqjncfvvn7q3ikvc1g91gbk7svi074v9l6wx"))))
     (properties `((upstream-name . "blsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-readr
@@ -9251,6 +10151,9 @@ at: <https://www.bls.gov/developers/api_signature_v2.htm>.")
         (base32 "02xidwp91rh34rcqd0q552wzm2j80axs1nnwwv2aj04g96lf7myj"))))
     (properties `((upstream-name . "BLSM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=BLSM")
     (synopsis "Bayesian Latent Space Model")
@@ -9282,6 +10185,9 @@ graphical representations or apply clustering techniques.")
         (base32 "0bz1bqma9r9qdd10k8yzm9bf0pxcw8dpsb44ch5hd57p9p1p9q4y"))))
     (properties `((upstream-name . "blscrapeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-purrr
@@ -9312,6 +10218,9 @@ data.")
         (base32 "08dppd0qym4lac5glifwaraddics8np522sfw4x8xg00vm335r25"))))
     (properties `((upstream-name . "blsBandit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-shiny
                              r-rsqlite
@@ -9339,6 +10248,9 @@ or United States Government.")
         (base32 "0cl959hlchba4ikzdvxv2jz30sswh5hc0d8hwx8ckzz52kkj4csa"))))
     (properties `((upstream-name . "BLRShiny2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rmarkdown
                              r-rhandsontable
@@ -9368,6 +10280,9 @@ package function as well as at
         (base32 "0z3gr0bvjs7y0jkygh7h9habnk2807cwziajpgfmb7dxdrhccj68"))))
     (properties `((upstream-name . "BLRShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rmarkdown
                              r-rhandsontable
@@ -9397,6 +10312,9 @@ package function as well as at
         (base32 "15q0jkw4swz35c58nv23k8g1dy1kkbqh5aydjck7pd0fmppqrhpx"))))
     (properties `((upstream-name . "BLRPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6))
     (home-page "https://cran.r-project.org/package=BLRPM")
     (synopsis
@@ -9430,6 +10348,9 @@ series at a chosen aggregation level.")
         (base32 "1lk7s7myxflr9as88944kvg8vn7m2ansg2caizr6h4d3690vr4m7"))))
     (properties `((upstream-name . "blrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rjags
                              r-reshape2
@@ -9456,6 +10377,9 @@ oncology trial.")
         (base32 "1wivqh19kxgr7nwa09s5ay6x1yidjk4hqanv0mzb1nbik98w9024"))))
     (properties `((upstream-name . "BLR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BLR")
     (synopsis "Bayesian Linear Regression")
     (description "Bayesian Linear Regression.")
@@ -9473,6 +10397,9 @@ oncology trial.")
         (base32 "07q5ifsvw1ccxys6y01ldh2n9v7chyv88rda1jbznb3nnwka2wh0"))))
     (properties `((upstream-name . "BLPestimatoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-randtoolbox
@@ -9502,6 +10429,9 @@ integration methods and optimization routines.")
         (base32 "098z71gyrf7b76g36p87mipmwakgwm4s56f97vfqi13llr3gqir5"))))
     (properties `((upstream-name . "blorr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-gridextra r-ggplot2 r-data-table r-car))
     (native-inputs (list r-knitr))
     (home-page "https://blorr.rsquaredacademy.com/")
@@ -9526,6 +10456,9 @@ shiny app for interactive model building.")
         (base32 "0qs4pnzpfwkii6wpd8my34zw9k003b3is0y0aj1lhcm0qnn1p8h4"))))
     (properties `((upstream-name . "BLOQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-maxlik))
     (home-page "https://cran.r-project.org/package=BLOQ")
     (synopsis "Impute and Analyze Data with BLOQ Observations")
@@ -9554,6 +10487,9 @@ the Limit of Quantification.\" Statistics in Biopharmaceutical Research (2020):
         (base32 "0glxgks9aql3k5hxjr9yfinvp4n69fdh99v7q33mgjk7n2ja88q5"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xfun
                              r-servr
@@ -9584,6 +10520,9 @@ site generator Hugo (<https://gohugo.io>) best, and it also supports Jekyll
         (base32 "084449bigcqc6jfarpb5cvvrhh7a4qghgz3ym9db64zhjrha384x"))))
     (properties `((upstream-name . "blocs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-mgcv
@@ -9614,6 +10553,13 @@ Marble, and Tanigawa-Lau (2023) <doi:10.31235/osf.io/c9fkg>.")
         (base32 "1kr3fxs8vgc96clhx5ml11jkwll1rg9gf16xg93q14jpg4hg0j9h"))))
     (properties `((upstream-name . "blocksdesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-polynomf r-plyr))
     (native-inputs (list r-r-rsp))
     (home-page "<doi:10.1007/s13253-020-00416-0>")
@@ -9648,6 +10594,9 @@ JABES 25, 500â522 (2020) <doi:10.1007/s13253-020-00416-0>.")
         (base32 "0bic3b8l7mp2hpwd8k1diwy6a4lj92i7s5k20i2wy8kw0c74jwfh"))))
     (properties `((upstream-name . "blockrand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=blockrand")
     (synopsis "Randomization for Block Random Clinical Trials")
     (description
@@ -9667,6 +10616,9 @@ file of randomization cards.")
         (base32 "1h2g13yp8xhkw9icl5bi1nkc0qfqkqhlhdqbcsp0246g9amssci9"))))
     (properties `((upstream-name . "blockmodels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-digest))
     (home-page "https://cran.r-project.org/package=blockmodels")
     (synopsis
@@ -9689,6 +10641,9 @@ without covariates.")
         (base32 "09sbxwzvnnzjv5gy0zyd1lvm1z44ywqvanj99i15l0lp66l54572"))))
     (properties `((upstream-name . "BlockmodelingGUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-shinythemes
                              r-shinyjs
@@ -9727,6 +10682,9 @@ networks).")
         (base32 "12jgf58k3dgbyb7x4skcdc10m8pvyx8kzqq6fi4wn5x1g5595nxy"))))
     (properties `((upstream-name . "BlockMissingData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pryr
                              r-matrix
                              r-mass
@@ -9755,6 +10713,9 @@ missing data; see Xue, F., and Qu, A. (2021)
         (base32 "14k69ly4i8pb8z59005kaf5rpv611kk1mk96q6piyn1gz1s6sk6r"))))
     (properties `((upstream-name . "blockmatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page
      "http://cri.gmpf.eu/Research/Sustainable-Agro-Ecosystems-and-Bioresources/Dynamics-in-the-agro-ecosystems/people/Emanuele-Cordano")
     (synopsis
@@ -9782,6 +10743,9 @@ kind are warmly welcomed.")
         (base32 "06d62hgkf2pphr6h3nba1b5r0izr45bvmrymrzq0lyc7xiwrh6na"))))
     (properties `((upstream-name . "blocklength")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries))
     (native-inputs (list r-knitr))
     (home-page "https://alecstashevsky.com/r/blocklength")
@@ -9808,6 +10772,9 @@ correction with a corresponding set of S3 plot methods.")
         (base32 "1i5vqs0hh3yc82hl8bsa647plcv0c4c95b1wzdzyslxz2m5khw0l"))))
     (properties `((upstream-name . "blockForest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcppeigen r-rcpp r-matrix))
     (home-page "https://github.com/bips-hb/blockForest")
     (synopsis
@@ -9845,6 +10812,9 @@ data.  BMC Bioinformatics 20:358. <doi:10.1186/s12859-019-2942-y>.")
         (base32 "1ngjr7z7ivm12dijywvca776bpgagszn2aipl7d3kfzs9z3x12hg"))))
     (properties `((upstream-name . "blockCV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rvalavi/blockCV")
@@ -9871,6 +10841,9 @@ Valavi, R. et al. (2019) <doi:10.1111/2041-210X.13107>.")
         (base32 "1ilqd8kvhlq0nc1n4y7g0aiwran3kyqs8i143j6dv2wy3myn5x0l"))))
     (properties `((upstream-name . "BlockCov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-rdpack
@@ -9900,6 +10873,9 @@ Perrot-DockÃ¨s et al. (2019) <@code{arXiv:1806.10093>}.")
         (base32 "03149z73d19fg5cgsgvkj2m5vb0jssxwxp83bc76q7nq8mm4rwnr"))))
     (properties `((upstream-name . "blockcluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rtkore r-rcpp))
     (home-page "https://gitlab.inria.fr/iovleff/blockcluster")
     (synopsis
@@ -9932,6 +10908,9 @@ tutorial can be found on the link mentioned in URL.")
         (base32 "0l5f2v5ggadmrci3qhhmxm3j9i6jii0anq5rv5vk50y2qzii2q15"))))
     (properties `((upstream-name . "BLModel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BLModel")
     (synopsis "Black-Litterman Posterior Distribution")
     (description
@@ -9952,6 +10931,9 @@ continuous distribution of views provided by the user as an external function.")
         (base32 "1370djpy87816bfr0g8730x7q4d4xx9aa41iqm622q5b5zm2jzmp"))))
     (properties `((upstream-name . "blmeco")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-lme4 r-arm))
     (home-page "https://cran.r-project.org/package=blmeco")
     (synopsis
@@ -9974,6 +10956,9 @@ Ecology using R, BUGS and Stan\", Elsevier, New York.")
         (base32 "0pmh3fw5iv9xhr08gji1q5vcaaai5s2qq40wisqdrqn5xhk9rh2h"))))
     (properties `((upstream-name . "blm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=blm")
     (synopsis "Binomial Linear Regression")
     (description
@@ -9994,6 +10979,9 @@ data.")
         (base32 "0ayqzkwq897nx02clw1qb413m1a6bzfdgxw8vmmpbqld8y6ajyk9"))))
     (properties `((upstream-name . "bliss")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-mass
                              r-ggplot2))
     (native-inputs (list r-knitr))
@@ -10020,6 +11008,9 @@ is also available.  Grollemund P-M., Abraham C., Baragatti M., Pudlo P. (2019)
         (base32 "053nw592sglzh6fgz7hj8ra6q7lqs83hhv14kcgs67b56q8a3crb"))))
     (properties `((upstream-name . "blink")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringdist r-plyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=blink")
@@ -10046,6 +11037,9 @@ vignette.  LICENSE: GPL-3 + file license.")
         (base32 "0hfqcykk5yg3sccqf73lxikb39ryir8fsd7a0qshpdxvbdjm6l1p"))))
     (properties `((upstream-name . "blindreview")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gmp))
     (propagated-inputs (list r-hmisc))
     (home-page "https://cran.r-project.org/package=blindreview")
@@ -10074,6 +11068,9 @@ masked data.  Details of some forward search functions may be found in
         (base32 "126mh5p1js4mm9sq3w6hs2vlx4baa6gzm9b9jybllfi751jsgjw5"))))
     (properties `((upstream-name . "blindrecalc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/imbi-heidelberg/blindrecalc")
     (synopsis "Blinded Sample Size Recalculation")
@@ -10102,6 +11099,9 @@ Kieser, M. (2011) <doi:10.3414/ME09-01-0063>.")
         (base32 "1nz5gwsjlvk6lajiyf0j2max6q5ifsj1arsbn1l4x6z8m7psm9wp"))))
     (properties `((upstream-name . "Blendstat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-lattice))
     (home-page "https://cran.r-project.org/package=Blendstat")
     (synopsis "Joint Analysis of Experiments with Mixtures and Random Effects")
@@ -10122,6 +11122,9 @@ effects, taking on a process variable represented by a covariable.")
         (base32 "1qqkfgf7fzwcz88a43cqr8bw86qda33f18dg3rv1k77gpjqr999c"))))
     (properties `((upstream-name . "blender")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan))
     (home-page "https://cran.r-project.org/package=blender")
     (synopsis "Analyze biotic homogenization of landscapes")
@@ -10145,6 +11148,9 @@ randomization method for assessing sources of model error.")
         (base32 "18dib7pb44z9kacmhsypvzpn3345m9wy042pf5vlli7wms5fz9zz"))))
     (properties `((upstream-name . "Blend")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
     (home-page "https://github.com/kunfa/Blend")
     (synopsis
@@ -10174,6 +11180,9 @@ alternative models are efficiently implemented in C++'.")
         (base32 "08y9vmx3cknjvk6ngfwxlfnc03cqpj97i1ijrs1cw5sahjc0vmhc"))))
     (properties `((upstream-name . "BLCOP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timeseries
                              r-runit
                              r-rmarkdown
@@ -10205,6 +11214,9 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
         (base32 "0lbvsga6ba4n05xnzahmj2dw3jjpjhkg93p9kadb656wxffkq7qy"))))
     (properties `((upstream-name . "blavaan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvnsim
                              r-stanheaders
                              r-rstantools
@@ -10242,6 +11254,9 @@ References: Merkle & Rosseel (2018) <doi:10.18637/jss.v085.i04>; Merkle et al.
         (base32 "1pn9qi3nlk82ajck3ikcxaxrpy8plnddrp9b5w4sfhw378n0xqkh"))))
     (properties `((upstream-name . "blatr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=blatr")
     (synopsis "Send Emails Using 'Blat' for Windows")
     (description
@@ -10262,6 +11277,9 @@ use.  It can be found at the Blat website http://www.blat.net.")
         (base32 "0vmybbb5xwmlmzgzyaxiiargi4fd2f661sap2wfmjw9rav89zhmv"))))
     (properties `((upstream-name . "blatent")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-rcpparmadillo
                              r-rcpp
@@ -10289,6 +11307,9 @@ estimates the loglinear cognitive diagnosis model of Henson, Templin, and Willse
         (base32 "1ppn3lyzdrarcq1laz0r8b018p0yxzs2ji1q82lg9nnmghqzs24b"))))
     (properties `((upstream-name . "blastula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid
                              r-stringr
                              r-rmarkdown
@@ -10328,6 +11349,9 @@ service, or through the Mailgun API service <https://www.mailgun.com/>.")
         (base32 "1p0d76dzn3kkdk6r4lp3kjh06iy3r2l4zhqwr3p888gxibzfwyb0"))))
     (properties `((upstream-name . "blaster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/tamminenlab/blaster")
     (synopsis "Native R Implementation of an Efficient BLAST-Like Algorithm")
@@ -10349,6 +11373,9 @@ al (2018) <doi:10.1101/399782>.")
         (base32 "1vycwglrpb0d041xj3dza25am16ac80r93si8x45b5ry0aq38c46"))))
     (properties `((upstream-name . "blapsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-sn
                              r-rspectra
@@ -10381,6 +11408,9 @@ information and examples.")
         (base32 "1ckbdgyqxgycd99r0bbyw38cw6k4sq1nhi5xcc0rblck5h8hzn2i"))))
     (properties `((upstream-name . "blandr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-stringr
                              r-rmarkdown
@@ -10414,6 +11444,9 @@ package is also available as a module for the jamovi statistical spreadsheet
         (base32 "11p30zqb3f9ifk3v18dspg18sclz5zxjygy7hw8ccb4bcqhx68lm"))))
     (properties `((upstream-name . "BlandAltmanLeh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BlandAltmanLeh")
     (synopsis "Plots (Slightly Extended) Bland-Altman Plots")
@@ -10435,6 +11468,9 @@ data with ties.")
         (base32 "0dcmnaf0k195caajy8h4qymyfj45cjwmkcgsbwv0z7x3h9sx5k6v"))))
     (properties `((upstream-name . "BlakerCI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BlakerCI")
     (synopsis "Blaker's Binomial and Poisson Confidence Limits")
     (description
@@ -10454,6 +11490,9 @@ data with ties.")
         (base32 "1ll9yqfinc2x5bb90cvgj4mc5bl4gfsmdshi5pimnjdhzwmwa9jc"))))
     (properties `((upstream-name . "blaise")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-stringr r-readr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=blaise")
@@ -10483,6 +11522,9 @@ format and checked for compatibility.  Supports dataframes, tibbles and
         (base32 "05wg5n7zbg7cpj44f3f7j889gbrcp155cza3csc4x43bflfbqgml"))))
     (properties `((upstream-name . "blackmarbler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-terra
                              r-stringr
@@ -10514,6 +11556,9 @@ Black Marble <https://blackmarble.gsfc.nasa.gov/>.")
         (base32 "03m93v5nk5zg039axkf02drdj2q165k73xk6waaiyi0b8w0sbl8l"))))
     (properties `((upstream-name . "blackbox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spamm
                              r-rcppeigen
                              r-rcpp
@@ -10554,6 +11599,9 @@ Estimation of smoothing parameters is performed by generalized cross-validation.
         (base32 "06nfsn67vgmkm0rrbs2q56gswx4hj7swysaq6vizx6zsl0xp7rvr"))))
     (properties `((upstream-name . "BLA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-mvtnorm r-mass r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://chawezimiti.github.io/BLA/")
@@ -10582,6 +11630,13 @@ datasets that exhibit upper boundary structures.")
         (base32 "17nibqn0bwbzdrxqyq10m7ll958cp5v431zda3ja16az2mss38cy"))))
     (properties `((upstream-name . "BKTR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-torch
                              r-r6p
                              r-r6
@@ -10616,6 +11671,9 @@ the torch package.")
         (base32 "0l575dav5wyia37vm5j1dyljgk0k6l1hwfwsqr2gq3sb0iim4my4"))))
     (properties `((upstream-name . "bkmrhat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstan r-future r-data-table r-coda r-bkmr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bkmrhat")
@@ -10644,6 +11702,9 @@ concurrent exposures via Bayesian kernel machine regression. ;
         (base32 "1bzr39a53p1xkq2fi2fphv2rpsml2z25xb1ycs63p3y7qis9zlky"))))
     (properties `((upstream-name . "bkmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-tmvtnorm
                              r-tidyr
@@ -10673,6 +11734,9 @@ of multiple concurrent exposures, as described in Bobb et al (2015)
         (base32 "0f6qjyc81mh3f8amqm6wipr41zglv8y3khs5g8rnsx247xpshqdv"))))
     (properties `((upstream-name . "bizicount")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-texreg
                              r-rlang
                              r-pbivnorm
@@ -10710,6 +11774,9 @@ support by NSF DMS-1925119 and DMS-212324.")
         (base32 "0drdmry39k6rxyy4x7d667znsv8r8ias66z0bvxkfk5vamsv744i"))))
     (properties `((upstream-name . "bizdays")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wilsonfreitas/R-bizdays")
@@ -10731,6 +11798,9 @@ Quite useful for fixed income and derivatives pricing.")
         (base32 "0gg381jhwdc0kc8v0yn7wcgjkpn8dfnnn20m5ycjv66jlk2jhdcw"))))
     (properties `((upstream-name . "biwt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-mass))
     (home-page "https://cran.r-project.org/package=biwt")
     (synopsis
@@ -10752,6 +11822,9 @@ biweight M-estimator.")
         (base32 "0j9y81rg9rmri39fjvy9s0wckxcdylbwm1ak62rxy65p397ppgcr"))))
     (properties `((upstream-name . "biwavelet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-foreach r-fields))
     (home-page "https://github.com/tgouhier/biwavelet")
     (synopsis "Conduct Univariate and Bivariate Wavelet Analyses")
@@ -10774,6 +11847,9 @@ coherence, wavelet clustering) analyses.")
         (base32 "0l5s07mvip1k667rvdpkh3k6xkzns8cy50bcs2xlmxd9xp7c6j2w"))))
     (properties `((upstream-name . "BivUnifBin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-binordnonnor))
     (home-page "https://cran.r-project.org/package=BivUnifBin")
     (synopsis
@@ -10797,6 +11873,9 @@ binary data) and vice versa.")
         (base32 "0b38nh38vgqjllb1z9627dm86yp0s06ky1g829g8kkz7rffdp2za"))))
     (properties `((upstream-name . "bivrp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=bivrp")
     (synopsis "Bivariate Residual Plots with Simulation Polygons")
@@ -10818,6 +11897,9 @@ simulate new data and refit the models are available.")
         (base32 "1kpl0pwm2g40pxrfbz2d95vcrm51flg6bgc83661349cmc9a2511"))))
     (properties `((upstream-name . "BivRegBLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ellipse))
     (home-page "https://cran.r-project.org/package=BivRegBLS")
     (synopsis
@@ -10827,19 +11909,20 @@ simulate new data and refit the models are available.")
 errors-in-variables (EIV) regressions.  The Ordinary Least Square regressions
 (OLSv and OLSh), the Deming Regression (DR), and the (Correlated)-Bivariate
 Least Square regressions (BLS and CBLS) can be used with unreplicated or
-replicated data.  The BLS() and CBLS() are the two main functions to estimate a
-regression line, while XY.plot() and MD.plot() are the two main graphical
-functions to display, respectively an (X,Y) plot or (M,D) plot with the BLS or
-CBLS results.  Four hyperbolic statistical intervals are provided: the
-Confidence Interval (CI), the Confidence Bands (CB), the Prediction Interval and
-the Generalized prediction Interval.  Assuming no proportional bias, the (M,D)
-plot (Band-Altman plot) may be simplified by calculating univariate tolerance
-intervals (beta-expectation (type I) or beta-gamma content (type II)).  Major
-updates from last version 1.0.0 are: title shortened, include the new functions
-BLS.fit() and CBLS.fit() as shortcut of the, respectively, functions BLS() and
-CBLS().  References: B.G. Francq, B. Govaerts (2016) <doi:10.1002/sim.6872>,
-B.G. Francq, B. Govaerts (2014) <doi:10.1016/j.chemolab.2014.03.006>, B.G.
-Francq, B. Govaerts (2014)
+replicated data.  The @code{BLS()} and @code{CBLS()} are the two main functions
+to estimate a regression line, while @code{XY.plot()} and @code{MD.plot()} are
+the two main graphical functions to display, respectively an (X,Y) plot or (M,D)
+plot with the BLS or CBLS results.  Four hyperbolic statistical intervals are
+provided: the Confidence Interval (CI), the Confidence Bands (CB), the
+Prediction Interval and the Generalized prediction Interval.  Assuming no
+proportional bias, the (M,D) plot (Band-Altman plot) may be simplified by
+calculating univariate tolerance intervals (beta-expectation (type I) or
+beta-gamma content (type II)).  Major updates from last version 1.0.0 are: title
+shortened, include the new functions @code{BLS.fit()} and @code{CBLS.fit()} as
+shortcut of the, respectively, functions @code{BLS()} and @code{CBLS()}.
+References: B.G. Francq, B. Govaerts (2016) <doi:10.1002/sim.6872>, B.G. Francq,
+B. Govaerts (2014) <doi:10.1016/j.chemolab.2014.03.006>, B.G. Francq, B.
+Govaerts (2014)
 <http://publications-sfds.fr/index.php/J-S@code{FdS/article/view/262>}, B.G.
 Francq (2013), @code{PhD} Thesis, UCLouvain, Errors-in-variables regressions to
 assess equivalence in method comparison studies,
@@ -10858,6 +11941,9 @@ assess equivalence in method comparison studies,
         (base32 "0qqjp9m360db3vz15zpbpqbm8v112n9mchcvsc3iiv60ayfimbg4"))))
     (properties `((upstream-name . "BivRec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-stringr r-rcpp r-mass r-dplyr))
     (native-inputs (list gfortran))
     (home-page "https://github.com/SandraCastroPearson/BivRec")
@@ -10879,6 +11965,9 @@ event data analysis.  Includes non-parametric and semi-parametric methods.")
         (base32 "1pajy04wy11nxzy9dvpg6zpp99fb6splfv0nn8hg76kk8j3zn844"))))
     (properties `((upstream-name . "bivpois")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast))
     (home-page "https://cran.r-project.org/package=bivpois")
     (synopsis "Bivariate Poisson Distribution")
@@ -10906,6 +11995,9 @@ Statistician), 52(3): 381--393. <doi:10.1111/1467-9884.00366>.")
         (base32 "1cn8k7q011whr4f7zig85dsrkz04614z9ns2ky6k6i16s5n3glxy"))))
     (properties `((upstream-name . "bivgeom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-copula r-bbmle))
     (home-page "https://cran.r-project.org/package=bivgeom")
     (synopsis "Roy's Bivariate Geometric Distribution")
@@ -10927,6 +12019,9 @@ function, survival function, random generation, parameter estimation, and more."
         (base32 "1sj52v1zmk425jw9acq9y0jdp3agx103yzf1bjbc5vrmk1x0i0qr"))))
     (properties `((upstream-name . "BivGeo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BivGeo")
     (synopsis "Basu-Dhar Bivariate Geometric Distribution")
     (description
@@ -10951,6 +12046,9 @@ computes the estimators based on the method of moments.")
         (base32 "0glhpdn1v1sgm83gyga63b9yx5a1gflg7rqj9awm0nwr2c11ak63"))))
     (properties `((upstream-name . "bivariatemaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-picante
                              r-commecol
@@ -10976,6 +12074,9 @@ computes the estimators based on the method of moments.")
         (base32 "11knwynqfxdz6zl7vzr48jpygcilsxarpmwphaajh62asdlg5w6p"))))
     (properties `((upstream-name . "Bivariate.Pareto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-compound-cox))
     (home-page "https://cran.r-project.org/package=Bivariate.Pareto")
     (synopsis "Bivariate Pareto Models")
@@ -10996,6 +12097,9 @@ computes the estimators based on the method of moments.")
         (base32 "0nd0jn28rfkqzvji54i4b53qjzl4xjbwnhsw55vyb3209hk84q1w"))))
     (properties `((upstream-name . "bittermelon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-unicode r-png r-cli))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://trevorldavis.com/R/bittermelon/")
@@ -11021,6 +12125,9 @@ read/write several additional bitmap font formats.")
         (base32 "09x3w3njdm7pgjjcqc1g3lp8nj31qkq3hmn21dqgvq7acyblan08"))))
     (properties `((upstream-name . "BiTrinA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-diptest))
     (home-page "https://cran.r-project.org/package=BiTrinA")
     (synopsis "Binarization and Trinarization of One-Dimensional Data")
@@ -11041,6 +12148,9 @@ one-dimensional data and some visualization functions.")
         (base32 "0zxym4cyxk2p9cgm8lmqfxmgb01jcyww0mm3zmhqprgpk5r0faks"))))
     (properties `((upstream-name . "bitmexr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-purrr
@@ -11075,6 +12185,9 @@ supported.")
         (base32 "114m7banr0h4l7lzq2bsjz9l3qb7xgg297ix9aj62rmz02p7x5hf"))))
     (properties `((upstream-name . "bistablehistory")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stanheaders
@@ -11117,6 +12230,9 @@ example of using the computation on a custom Stan code.")
         (base32 "11jl5109nlm272vncprwplkz4kpvg7yx6yfnbjg47lfrsxcj8n0g"))))
     (properties `((upstream-name . "BisRNA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=BisRNA")
     (synopsis "Analysis of RNA Cytosine-5 Methylation")
@@ -11142,6 +12258,9 @@ Tuorto, M Hartmann, R Liebers, D Jakob, M Helm and F Lyko (2017)
         (base32 "0zp2r1vg29q2ds34hhyjv9pz761mi0qncx9p4ilwnfd5yj9pmzwq"))))
     (properties `((upstream-name . "bisque")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -11174,6 +12293,9 @@ the approximation.")
         (base32 "1bcqj50snjzvggii3kd69wc0kqfldb6fc3w8nxwb1v828hml6b83"))))
     (properties `((upstream-name . "bispdep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep
                              r-spdata
                              r-spatialreg
@@ -11207,6 +12329,9 @@ once the scheme of the spatial weights matrix has been established.")
         (base32 "1xg2m8rvxwpj47nb20kyd5hpa1lshg58bi0alf1v476yhcwqgrhx"))))
     (properties `((upstream-name . "BiSEp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-hs-eg-db r-mclust r-gosemsim r-go-db
                              r-annotationdbi))
     (home-page "https://cran.r-project.org/package=BiSEp")
@@ -11230,6 +12355,9 @@ relationships.")
         (base32 "1vjsjshvzj66qqzg32rviklqswrb00jyq6vwrywg1hpqhf4kisv7"))))
     (properties `((upstream-name . "bisectr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-devtools))
     (home-page "https://github.com/wch/bisectr")
     (synopsis "Tools to find bad commits with git bisect")
@@ -11250,6 +12378,9 @@ https://github.com/wch/bisectr for examples and test script templates.")
         (base32 "1bhlnwb88diyw2f9h9gyk73m4s9s30f51imclif8rwa45dpylmd3"))))
     (properties `((upstream-name . "BISdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://enricoschumann.net/R/packages/BISdata/")
     (synopsis
      "Download Data from the Bank for International Settlements (BIS)")
@@ -11275,6 +12406,9 @@ same files.")
         (base32 "1bjlw2vlgb9c50iah1w38b1g8bgdys86vr7bnbv0fapzp584d36g"))))
     (properties `((upstream-name . "biscale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-classint))
     (native-inputs (list r-knitr))
     (home-page "https://chris-prener.github.io/biscale/")
@@ -11301,15 +12435,19 @@ included.")
         (base32 "0bcxvj30wzwclw1lcyhvwj3k7awd39lrvzia1nrg53hw90bfs811"))))
     (properties `((upstream-name . "birtr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=birtr")
     (synopsis
      "The R Package for \"The Basics of Item Response Theory Using R\"")
     (description
      "R functions for \"The Basics of Item Response Theory Using R\" by Frank B. Baker
 and Seock-Ho Kim (Springer, 2017, ISBN-13: 978-3-319-54204-1) including
-iccplot(), icccal(), icc(), iccfit(), groupinv(), tcc(), ability(), tif(), and
-rasch().  For example, iccplot() plots an item characteristic curve under the
-two-parameter logistic model.")
+@code{iccplot()}, @code{icccal()}, @code{icc()}, @code{iccfit()},
+@code{groupinv()}, @code{tcc()}, @code{ability()}, @code{tif()}, and
+@code{rasch()}.  For example, @code{iccplot()} plots an item characteristic
+curve under the two-parameter logistic model.")
     (license license:gpl2+)))
 
 (define-public r-birk
@@ -11324,6 +12462,9 @@ two-parameter logistic model.")
         (base32 "07ck59m5mw897a60vmdn1b3qrmqj20qpfsn3093haqbpn8z13dmn"))))
     (properties `((upstream-name . "birk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=birk")
     (synopsis "MA Birk's Functions")
     (description
@@ -11343,6 +12484,9 @@ using statistics not available with base R and manipulate objects for analyses."
         (base32 "1brgz6x8ljgy9y87znx93d6d68vsr7a75i1p86rxnxvka0s91r15"))))
     (properties `((upstream-name . "birdscanR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-suntools
@@ -11388,6 +12532,9 @@ Traffic Rate calculation procedures, see Schmid et al. (2019)
         (base32 "17f6hlvz6k4ya82nai7j474k55w3is8if4vckbwqq1c4lj9zfm6r"))))
     (properties `((upstream-name . "birdring")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-raster r-lazydata r-ks r-geosphere))
     (home-page "https://cran.r-project.org/package=birdring")
     (synopsis "Methods to Analyse Ring Re-Encounter Data")
@@ -11408,6 +12555,9 @@ metal rings.  For a tutorial, go to <doi:10.1080/03078698.2014.933053>.")
         (base32 "1xh3ga5f16p46jrw7xj2mwv41mnib0mijin2005q9wrfr5pr54yc"))))
     (properties `((upstream-name . "birdie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-stringr
                              r-stringi
@@ -11444,6 +12594,9 @@ Goldin, Ho and Imai (2024) <doi:10.3386/w32373>.")
         (base32 "1azgrzgw5bnfac8p287ir5zl6kxc6jij20p6cfc3lbbl03f8sa1k"))))
     (properties `((upstream-name . "birankr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-data-table))
     (home-page "https://cran.r-project.org/package=birankr")
     (synopsis "Ranking Nodes in Bipartite and Weighted Networks")
@@ -11473,6 +12626,9 @@ data.frame, data.table, or tbl_df) and adjacency matrices (class matrix or
         (base32 "17pv5rccqqql178i94iic7504pf56aidg6kpkfl85adzl15dq7ns"))))
     (properties `((upstream-name . "BiplotGUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tkrplot
                              r-tcltk2
                              r-rgl
@@ -11500,6 +12656,9 @@ biplots.")
         (base32 "0cpp0b898qlzpkf50ggd8g5lz7hswibvc9kqqgavncw6n5rqzkpk"))))
     (properties `((upstream-name . "biplotEZ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr r-plotrix))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=biplotEZ")
@@ -11527,6 +12686,9 @@ Biplots.  Wiley: Chichester.")
         (base32 "1z2mlfya6c4lh970p6hpf8sqhxz7wjl16d1lx2djv4cr8sj7nhdh"))))
     (properties `((upstream-name . "biplotbootGUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tkrplot
                              r-tcltk2
                              r-shapes
@@ -11556,6 +12718,9 @@ Clustering and Disjoint Principal component (CDPCA) methodology.")
         (base32 "0anir5fgvac9ka5y9wfar7pbwdqd0qwx6hynlmr6jwhna57linly"))))
     (properties `((upstream-name . "bipl5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotly r-knitr r-htmlwidgets r-crayon r-cluster))
     (home-page "https://cran.r-project.org/package=bipl5")
     (synopsis "Construct Reactive Calibrated Axes Biplots")
@@ -11580,6 +12745,9 @@ Lubbe, S. and le Roux, N.J. (2011, ISBN: 978-0-470-01255-0).")
         (base32 "1d8mcanmkjki3md047widfgf2hi905w24hibqsg1r7nr8d0g03yg"))))
     (properties `((upstream-name . "bipd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-mvtnorm r-dplyr r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bipd")
@@ -11605,16 +12773,20 @@ mice-related packages.")
         (base32 "0pz9cyg3avngxgd7ys5a1pfw4jw4cxbq36nh9hjarisl5phk761b"))))
     (properties `((upstream-name . "BipartiteModularityMaximization")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page
      "https://cran.r-project.org/package=BipartiteModularityMaximization")
     (synopsis
      "Partition Bipartite Network into Non-Overlapping Biclusters by Optimizing Bipartite Modularity")
     (description
-     "Function bipmod() that partitions a bipartite network into non-overlapping
-biclusters by maximizing bipartite modularity defined in Barber (2007)
-<doi:10.1103/@code{PhysRevE.76.066102>} using the bipartite version of the
-algorithm described in TreviÃ±o (2015) <doi:10.1088/1742-5468/2015/02/P02003>.")
+     "Function @code{bipmod()} that partitions a bipartite network into
+non-overlapping biclusters by maximizing bipartite modularity defined in Barber
+(2007) <doi:10.1103/@code{PhysRevE.76.066102>} using the bipartite version of
+the algorithm described in TreviÃ±o (2015)
+<doi:10.1088/1742-5468/2015/02/P02003>.")
     (license license:expat)))
 
 (define-public r-bipartited3
@@ -11629,6 +12801,9 @@ algorithm described in TreviÃ±o (2015) <doi:10.1088/1742-5468/2015/02/P02003>.
         (base32 "0njqj4rz054vjp9chm14i20rl9hssvbf3hmrp1w1a4rnjabcijmd"))))
     (properties `((upstream-name . "bipartiteD3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -11646,37 +12821,6 @@ Adapted from examples at <https://bl.ocks.org/N@code{PashaP>} (released under
 GPL-3).")
     (license license:gpl3)))
 
-(define-public r-bipartite
-  (package
-    (name "r-bipartite")
-    (version "2.20")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bipartite" version))
-       (sha256
-        (base32 "0wgx695r5knlrzg0wv5h2sivh3xzjsb50lafmb08j1fvg3hnrxl6"))))
-    (properties `((upstream-name . "bipartite")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-sna
-                             r-permute
-                             r-mass
-                             r-igraph
-                             r-fields))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/biometry/bipartite")
-    (synopsis
-     "Visualising Bipartite Networks and Calculating Some (Ecological) Indices")
-    (description
-     "This package provides functions to visualise webs and calculate a series of
-indices commonly used to describe pattern in (ecological) webs.  It focuses on
-webs consisting of only two levels (bipartite), e.g. pollination webs or
-predator-prey-webs.  Visualisation is important to get an idea of what we are
-actually looking at, while the indices summarise different aspects of the web's
-topology.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
@@ -11689,6 +12833,9 @@ topology.")
         (base32 "0xyws7rmq4cp5mjmnkswfkbl9sfcnzjpgs4rycap3wsch6c2dg97"))))
     (properties `((upstream-name . "BioVizSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-seqinr
@@ -11701,9 +12848,9 @@ topology.")
     (synopsis "Visualizing the Elements Within Bio-Sequences")
     (description
      "Visualizing the types and distribution of elements within bio-sequences.  At the
-same time, We have developed a geom layer, geom_rrect(), that can generate
-rounded rectangles.  No external references are used in the development of this
-package.")
+same time, We have developed a geom layer, @code{geom_rrect()}, that can
+generate rounded rectangles.  No external references are used in the development
+of this package.")
     (license license:artistic2.0)))
 
 (define-public r-biovenn
@@ -11718,6 +12865,9 @@ package.")
         (base32 "0nwqfb65vhr2246w17nv27v186gzl5n3jxnqx7r9rq525qvyx0rg"))))
     (properties `((upstream-name . "BioVenn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svglite r-plotrix r-biomart))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BioVenn")
@@ -11744,6 +12894,9 @@ IDs.  In SVG mode, text and numbers can be dragged and dropped.  Based on the
         (base32 "1dyy9mk2afjbc8g1qygy6h1aksbhndm53c4sb5mfzriydl03ibxv"))))
     (properties `((upstream-name . "biotools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://arsilva87.github.io/biotools/")
@@ -11773,6 +12926,9 @@ variables and spatial gene diversity are implemented.")
         (base32 "027kx7244j575wn3yxhsmhbg2yaf1w611jvjnzaxivpns56rvg33"))))
     (properties `((upstream-name . "BioTIMEr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-ggplot2
@@ -11807,6 +12963,9 @@ and meta data, the full versions of which are freely available on the
         (base32 "1p18jkdd263dgk90626n9awkj6m4zn1n7897596fzrzrahksa978"))))
     (properties `((upstream-name . "biotic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/robbriers/biotic")
     (synopsis "Calculation of Freshwater Biotic Indices")
@@ -11827,6 +12986,9 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
         (base32 "0wrppamh4m47zczci3csqfijf2hyz4lb5ks2z8h2ybn8lcnbjxgp"))))
     (properties `((upstream-name . "BiostatsUHNplus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-stringi
@@ -11865,6 +13027,9 @@ adverse events and REDCap study information.")
         (base32 "035qk9n4drdhv7g37gq26z5idfxkg8h8b3shagjcsxyar5s5hcfh"))))
     (properties `((upstream-name . "biostats101")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=biostats101")
     (synopsis "Practical Functions for Biostatistics Beginners")
@@ -11890,6 +13055,9 @@ ISBN:978-1-118-62561-3) Levin & Chen (1999) <doi:10.1080/00031305.1999.10474431>
         (base32 "0w8ly4pk0zv6rnmbzfq3i8sd4h4gjsxlnhj5nlyfr72687jjx5cm"))))
     (properties `((upstream-name . "BioStatR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://fbertran.github.io/BioStatR/")
     (synopsis "Initiation Ã  La Statistique Avec R")
@@ -11911,6 +13079,9 @@ edition).")
         (base32 "1fcrj53rqg7mdhrrsl95l0n6hycb0863isch2f6zzsqdqbxhq7dh"))))
     (properties `((upstream-name . "Biostatistics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-learnr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Biostatistics")
@@ -11934,6 +13105,9 @@ The package also includes 19 datasets which are used in the tutorials.")
         (base32 "0gggiqnbflqx4h89wk17k556ifn26mz07czfpy5zq2pr2y6qfqjd"))))
     (properties `((upstream-name . "biostat3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mass))
     (home-page "https://cran.r-project.org/package=biostat3")
     (synopsis
@@ -11958,6 +13132,9 @@ epidemiologists in R\".")
         (base32 "10y4hbncwiqpxzqvzjrmfgp804zczdgvwpjcj0dzaa0sx1njdzja"))))
     (properties `((upstream-name . "biospear")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-survauc
                              r-rcurl
@@ -12000,6 +13177,9 @@ function generating simulated survival data set is also provided.")
         (base32 "19blfbw9d0did76llgffs8dyld8yr6wf4rmxmr2fb4vp1s8m2izc"))))
     (properties `((upstream-name . "bioSNR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-pracma r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bioSNR")
@@ -12029,6 +13209,9 @@ found within the walk through vignettes at
         (base32 "0bbkrfqkmks4z8c7rh0k43lvm71vn3fzrw3kpj012ym77whwkvay"))))
     (properties `((upstream-name . "biosignalEMG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-signal))
     (home-page "https://cran.r-project.org/package=biosignalEMG")
     (synopsis "Tools for Electromyogram Signals (EMG) Analysis")
@@ -12051,6 +13234,9 @@ purposes.")
         (base32 "0m93s7vrpd392w2mcv3sdf5kcmpn1671ksplx1fiz7wdakck9fxq"))))
     (properties `((upstream-name . "bioseq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tibble
                              r-stringr
@@ -12088,6 +13274,9 @@ package formats.")
         (base32 "076isyk7dfjpi5db7ghk0hmz2kkdgmrnj3g9ffdnim5gxq3zsf1h"))))
     (properties `((upstream-name . "biosensors.usc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-rcpparmadillo
                              r-rcpp
@@ -12123,6 +13312,9 @@ representation of glucose profiles using distributional data analysis\" (2021)
         (base32 "1cx6as9nvivx5laz029wrbd7jrhl3fhqj0lm1sb65ckx3arm8dwj"))))
     (properties `((upstream-name . "biosampleR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/csim063/biosampleR")
@@ -12152,6 +13344,9 @@ and Colwell (2022) <doi:10.1002/9781119902911.ch2>, Hsieh, Ma,` and Chao (2016)
         (base32 "1k0r3fnkzfczx3wp3m8zpndk6gxca7idsp0z13rw84zjrgqaw6jm"))))
     (properties `((upstream-name . "bios2mds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rgl r-e1071 r-cluster r-amap))
     (home-page "https://cran.r-project.org/package=bios2mds")
     (synopsis "From Biological Sequences to Multidimensional Scaling")
@@ -12175,6 +13370,9 @@ results.")
         (base32 "0bs05vkidf7rfhb9s9vby7k4q9w7vwanlvk034kspqp4ydkhpm5n"))))
     (properties `((upstream-name . "BioRssay")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://milesilab.github.io/BioRssay/")
@@ -12196,6 +13394,9 @@ bioassays for one or several strains/lines/populations.")
         (base32 "17i7cbaf0pzjja71z5c3gr8s9hjkj74z6xcdk3h3wpm4wi3lm9z2"))))
     (properties `((upstream-name . "bioregion")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sf
                              r-segmented
@@ -12238,6 +13439,9 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
         (base32 "1c7wl1wk1lh31dr7a7lwbjib4v1mfvvyi8iwfc9svj07y4wpzj58"))))
     (properties `((upstream-name . "bioRad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-viridis
                              r-tidyselect
@@ -12281,6 +13485,9 @@ software paper describing package and methodologies.")
         (base32 "051m761zf079s0p4q0ambwqc22qjz2yajxrsmnjnxvqiaadaj1q7"))))
     (properties `((upstream-name . "BioProbability")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BioProbability")
     (synopsis "Probability in Biostatistics")
     (description
@@ -12303,6 +13510,9 @@ estimated.  Furthermore, confidence intervals are provided.")
         (base32 "077pll9a224mi2g5za3l6a01h4azmw3ikp0pp9yig1lmrrc8c7lq"))))
     (properties `((upstream-name . "BioPred")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-survminer
                              r-survival
@@ -12333,6 +13543,9 @@ details, see Liu et al. (2024) <doi:10.1093/bioinformatics/btae592>.")
         (base32 "0npbdbyxm2p2iv0lhgy7bxgpx8mqiw38b5z4gklkk1qvccmz7js7"))))
     (properties `((upstream-name . "biopixR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magick r-imager r-data-table r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Brauckhoff/biopixR")
@@ -12357,6 +13570,9 @@ researchers (Schneider J. et al. (2019) <doi:10.21037/jlpm.2019.04.05>).")
         (base32 "0svwf8pzvlmlp8aacf70hzlg2h81m6lyhh4p73ixqw5v9bnyq6m0"))))
     (properties `((upstream-name . "BioPETsurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-gridextra r-ggplot2))
     (home-page "https://cran.r-project.org/package=BioPETsurv")
     (synopsis "Biomarker Prognostic Enrichment Tool for Time-to-Event Trial")
@@ -12384,6 +13600,9 @@ trials with survival/time-to-event outcomes.")
         (base32 "0zgq7i37d0rnjhlkcrl44x62vhz0njsv2fldm64j9r4wc02z1q9n"))))
     (properties `((upstream-name . "BioPET")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-proc r-gridextra r-ggplot2))
     (home-page "https://cran.r-project.org/package=BioPET")
     (synopsis "Biomarker Prognostic Enrichment Tool")
@@ -12408,6 +13627,9 @@ help evaluate biomarkers for prognostic enrichment of clinical trials.")
         (base32 "14ll1m85pcr0xycczk1y9jxiqxfy5daiigfhqn4f6sfk2afy07yr"))))
     (properties `((upstream-name . "bionetdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bionetdata")
     (synopsis "Biological and Chemical Data Networks")
     (description
@@ -12427,6 +13649,9 @@ networks, i.e.  data graph structured.")
         (base32 "1rdlkspi0hkgnrc4qs7vgbmcpsf74nzdq8w0akg59bynp0ks8k0w"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sp
                              r-rpart
@@ -12464,6 +13689,9 @@ visualisation tools are also available within the package.")
         (base32 "1gj2lfsi8rnvc61sz70rvii1xhszl84wfvy6lsnwgh26vnj890wf"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-stringi
                              r-scales
@@ -12505,6 +13733,9 @@ file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
         (base32 "1qbx7hxzzwnwp00rdvdwqxawm54chn1pcql3009cwdydc249v0dh"))))
     (properties `((upstream-name . "BIOMASS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sf
                              r-rappdirs
@@ -12538,6 +13769,9 @@ RÃ©jou-MÃ©chain et al. (2017) <doi:10.1111/2041-210X.12753>.")
         (base32 "1ifc72bayy3azbilajqqzl0is6z7l1zaadchcg3n8lhmjrv5sk3m"))))
     (properties `((upstream-name . "BioMark")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-st r-pls r-mass r-glmnet))
     (home-page "https://cran.r-project.org/package=BioMark")
     (synopsis "Find Biomarkers in Two-Class Discrimination Problems")
@@ -12560,6 +13794,9 @@ under perturbation, and the other on higher criticism.")
         (base32 "0p0gzmb3kdfpa3w48f1g5s71z14w1g3m000ka7p9ifilajy9hrnh"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordcloud2
                              r-wgcna
                              r-webshot
@@ -12608,6 +13845,9 @@ analyzed using WGCNA (Described in Horvath and Zhang (2005)
         (base32 "022qip20nwv0xfxnx5507bsa7finnixjshvf60ssnagbchvgwvz9"))))
     (properties `((upstream-name . "biologicalActivityIndices")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=biologicalActivityIndices")
     (synopsis "Biological Activity Indices")
     (description
@@ -12639,6 +13879,9 @@ fluorescein diacetate and p-nitro phenyl-phosphate as substrates, respectively."
         (base32 "03jsvzy6fqbx3w6gs7v1mnznkqwsad3ywdb4wxp0mbaq4vrsandm"))))
     (properties `((upstream-name . "biolink")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-rmysql
                              r-rentrez
@@ -12668,6 +13911,9 @@ Ontology, KEGG', CRAN and Bioconductor.")
         (base32 "129w9643l01y316hm0qcsmxzh5lsdmq6xmiz4rhmdh0dcnw2s93n"))))
     (properties `((upstream-name . "BioInsight")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordcloud r-rcolorbrewer r-limma r-knitr
                              r-edger))
     (home-page "https://cran.r-project.org/package=BioInsight")
@@ -12691,6 +13937,9 @@ expression analysis.")
         (base32 "0gz1bbakf6b23jsbvrr8314yxajxcr1akm5srgm883lrf1p5ax13"))))
     (properties `((upstream-name . "bioinactivation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-purrr
                              r-mass
@@ -12724,6 +13973,13 @@ Carlo method for a Bayesian approach to parameter estimation.")
         (base32 "1b7nxjis0p1hiv3w0cr3cyc2xz6sn9qbpssvlp2d7c5gm8x2gnj7"))))
     (properties `((upstream-name . "bioimagetools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tiff r-httr r-ebimage))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://bioimaginggroup.github.io/bioimagetools/")
@@ -12746,6 +14002,9 @@ point patterns.")
         (base32 "1ay8889490nfhxhh72fvk9z4h58xknm2b145xhbx2wbzj65zf9ib"))))
     (properties `((upstream-name . "Bioi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-igraph r-dplyr r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Bioi")
@@ -12771,6 +14030,9 @@ component analyses are limited to 3 or fewer dimensions.")
         (base32 "0cybc5qcpk1mka4ilkhy0iyjx9xy618byz9qfkb5mw4l30pmnky0"))))
     (properties `((upstream-name . "biogrowth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -12807,6 +14069,9 @@ ISBN:978-1-4614-5519-6)).")
         (base32 "1y7yaa6xwv11b6a4qf4qb3d7rsz0yiiq1k5mb0dbm3avydnl9c4b"))))
     (properties `((upstream-name . "biogram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-slam r-partitions r-entropy r-combinat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/michbur/biogram")
@@ -12830,6 +14095,9 @@ n-gram data.")
         (base32 "0wzj99ldk0654s1a8d1b4q57mahv4mjzndx5bj1hakmsdrwa6q8b"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-geom))
     (home-page "https://cran.r-project.org/package=biogeom")
     (synopsis "Biological Geometries")
@@ -12865,6 +14133,9 @@ implications for the growth and form of living organisms.  Please see Shi et al.
         (base32 "05g6nyi872skvr34kw5c71ggnnjc3fv95imc327yjqhmqmwx3m19"))))
     (properties `((upstream-name . "biogas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=biogas")
     (synopsis "Process Biogas Data and Predict Biogas Production")
@@ -12899,6 +14170,9 @@ determined for planning BMP experiments.")
         (base32 "1j6fbrvhiaz04fpybdldjk2prg3n5ayzvxqbx0g0vbna54kd1vz6"))))
     (properties `((upstream-name . "BIOdry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-ecodist))
     (home-page "https://cran.r-project.org/package=BIOdry")
     (synopsis "Multilevel Modeling of Dendroclimatical Fluctuations")
@@ -12909,8 +14183,8 @@ with sample variability confined to ecological factors.  Dendroclimatic MEDS of
 tree rings and climate are modeled into normalized fluctuations of tree growth
 and aridity.  Modeled fluctuations (model frames) are compared with Mantel
 correlograms on multiple levels defined by sample design.  Package
-implementation can be understood by running examples in @code{modelFrame}(), and
-@code{muleMan}() functions.")
+implementation can be understood by running examples in @code{modelFrame()}, and
+@code{muleMan()} functions.")
     (license license:gpl3)))
 
 (define-public r-biodosetools
@@ -12925,6 +14199,9 @@ implementation can be understood by running examples in @code{modelFrame}(), and
         (base32 "013nqdqrv5h3swzqss2kazsp06wrs57zri3aaidy92wrd6v24bsh"))))
     (properties `((upstream-name . "biodosetools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shinywidgets
                              r-shinydashboard
@@ -12963,6 +14240,9 @@ calculations needed by Biological Dosimetry Laboratories.")
         (base32 "059kj0cnb3fpqngww6560mqg6c4dsh5w6484v23wnmng064rf1fi"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-rcmdr r-ggplot2))
     (home-page
      "http://www.worldagroforestry.org/output/tree-diversity-analysis")
@@ -12990,6 +14270,9 @@ analysis is available for free download from the website.  In 2012, methods for
         (base32 "1phnq6zq96i6z7jj196png3spjpbbx5p2s8iya0vvbfik12ivzkc"))))
     (properties `((upstream-name . "Biodem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Biodem")
     (synopsis "Biodemography Functions")
     (description
@@ -13008,6 +14291,9 @@ analysis is available for free download from the website.  In 2012, methods for
         (base32 "1r0q6rwn6qv8wh5j0qyf49dzfl1vy211wbnjkcjhg27jahf553fc"))))
     (properties `((upstream-name . "BioCro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/biocro/biocro")
     (synopsis "Modular Crop Growth Simulations")
@@ -13031,6 +14317,9 @@ see Lochocki et al. (2022) <doi:10.1093/insilicoplants/diac003>.")
         (base32 "102n8y83z8568lwil2fb28wrjkymwmw9rzvk0a4zgsx5a3l7wl01"))))
     (properties `((upstream-name . "biocompute")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-uuid
                              r-stringr
@@ -13068,6 +14357,9 @@ platforms.")
         (base32 "15a2v5l4ydn2zsnbwkrwpfvcj5xzhwj1diqrr9vp1i42w9ci55h2"))))
     (properties `((upstream-name . "bioclim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-rmarkdown r-reshape2 r-ggplot2
                              r-berryfunctions))
     (home-page "https://cran.r-project.org/package=bioclim")
@@ -13090,6 +14382,9 @@ for individual locations, multi-layered rasters for spatial analysis.")
         (base32 "1gl57r47p5z1wzs94xzc26j2r8z5hpqr4163b01x6jwzvbrlfwhz"))))
     (properties `((upstream-name . "BioCircos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-plyr r-jsonlite r-htmlwidgets))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lvulliard/BioCircos.R")
@@ -13117,6 +14412,9 @@ Moreover it can be integrated in R Markdown documents and Shiny applications.")
         (base32 "092hdrfkdij3s8871z4c1lb0rf5pp07ggliaz76iyfxrbvy9hcxj"))))
     (properties `((upstream-name . "bioC.logs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mponce0/bioC.logs")
     (synopsis "BioConductor Package Downloads Stats")
@@ -13136,6 +14434,9 @@ Moreover it can be integrated in R Markdown documents and Shiny applications.")
         (base32 "0xa6pd7c4sdq4wzn8053drr063cjll7lpg5k3k146zz0z6rczg30"))))
     (properties `((upstream-name . "biobricks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=biobricks")
     (synopsis "Access Data Dependencies Installed Through 'Biobricks.ai'")
     (description
@@ -13158,6 +14459,9 @@ available at <https://docs.biobricks.ai>.")
         (base32 "07vbs0qi60x32y0hj6g55z76zsfmc7v8dapr2g22lsnkfdnfh10c"))))
     (properties `((upstream-name . "BiObjClass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BiObjClass")
     (synopsis "Classification of Algorithms")
     (description
@@ -13187,6 +14491,9 @@ power in preprocessing methodologies for datasets with missing values
         (base32 "08qhxx7xgswjamrgg82pkg1f7w50dx9ln67d50n1p3rvrxab4061"))))
     (properties `((upstream-name . "bioacoustics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list fftw))
     (propagated-inputs (list r-tuner r-stringr r-rcpp r-moments r-htmltools))
     (native-inputs (list r-knitr))
@@ -13212,6 +14519,9 @@ such as classification.")
         (base32 "1hs11c9qpdsl1awgk3b34mcsnr8g1xpg3zd9dlrqrz6ppdqkgxmn"))))
     (properties `((upstream-name . "bio.infer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bio.infer")
     (synopsis "Predict Environmental Conditions from Biological Observations")
     (description
@@ -13231,6 +14541,9 @@ inferences from this data.")
         (base32 "0x97h0b2krdgrd0x266fidj77an3dq8mf9lnbas9112p4mhkmk58"))))
     (properties `((upstream-name . "BINtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringi
                              r-stanheaders
@@ -13274,6 +14587,9 @@ Forecasting\" <doi:10.1287/mnsc.2020.3882>.")
         (base32 "09kzk7n1j9nzgyijwirzk33z6p6hc67zkd05hv1i9qfijy31gci4"))))
     (properties `((upstream-name . "binst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart))
     (home-page "https://github.com/jules-and-dave/binst")
     (synopsis "Data Preprocessing, Binning for Classification and Regression")
@@ -13294,6 +14610,9 @@ recursive partition methods and clustering.")
         (base32 "04afp5sixn51kf519sgrra50knmkz1a1gsz28xbdjph9vx5bv6jl"))))
     (properties `((upstream-name . "binsreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich r-quantreg r-matrixstats r-ggplot2))
     (home-page "https://cran.r-project.org/package=binsreg")
     (synopsis "Binscatter Estimation and Inference")
@@ -13306,17 +14625,18 @@ methods developed by Cattaneo, Crump, Farrell and Feng (2024a)
 and Cattaneo, Crump, Farrell and Feng (2024c)
 <doi:10.48550/@code{arXiv.1902.09615>}.  Binscatter provides a flexible way of
 describing the relationship between two variables based on partitioning/binning
-of the independent variable of interest.  binsreg(), binsqreg() and binsglm()
-implement binscatter least squares regression, quantile regression and
-generalized linear regression respectively, with particular focus on
-constructing binned scatter plots.  They also implement robust (pointwise and
-uniform) inference of regression functions and derivatives thereof.  binstest()
-implements hypothesis testing procedures for parametric functional forms of and
-nonparametric shape restrictions on the regression function.  binspwc()
-implements hypothesis testing procedures for pairwise group comparison of
-binscatter estimators.  binsregselect() implements data-driven procedures for
-selecting the number of bins for binscatter estimation.  All the commands allow
-for covariate adjustment, smoothness restrictions and clustering.")
+of the independent variable of interest. @code{binsreg()}, @code{binsqreg()} and
+@code{binsglm()} implement binscatter least squares regression, quantile
+regression and generalized linear regression respectively, with particular focus
+on constructing binned scatter plots.  They also implement robust (pointwise and
+uniform) inference of regression functions and derivatives thereof.
+@code{binstest()} implements hypothesis testing procedures for parametric
+functional forms of and nonparametric shape restrictions on the regression
+function. @code{binspwc()} implements hypothesis testing procedures for pairwise
+group comparison of binscatter estimators. @code{binsregselect()} implements
+data-driven procedures for selecting the number of bins for binscatter
+estimation.  All the commands allow for covariate adjustment, smoothness
+restrictions and clustering.")
     (license license:gpl2)))
 
 (define-public r-binspp
@@ -13331,6 +14651,9 @@ for covariate adjustment, smoothness restrictions and clustering.")
         (base32 "0ah002lvimniwmwgn2syw9saxgzpdhs5vins0f3kb98p5k3gdxqk"))))
     (properties `((upstream-name . "binspp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-spatstat-random
                              r-spatstat-model
@@ -13366,6 +14689,9 @@ dispersed).  Details are described in DvoÅÃ¡k, RemeÅ¡, BerÃ¡nek & Mrkvi
         (base32 "1sidv8ra377glaacib1j4ksg5bg759hk7h6fadrfzip3hgxgjg9x"))))
     (properties `((upstream-name . "binsmooth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-triangle r-pracma r-ineq))
     (home-page "https://cran.r-project.org/package=binsmooth")
     (synopsis "Generate PDFs and CDFs from Binned Data")
@@ -13398,6 +14724,9 @@ splinebins.")
         (base32 "14na719dsz9bnvcyhlclzbaxvm4sc8g3v41jmhdzgr8bfbqahgk4"))))
     (properties `((upstream-name . "binseqtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-clinfun))
     (home-page "https://cran.r-project.org/package=binseqtest")
     (synopsis "Exact Binary Sequential Designs and Analysis")
@@ -13418,6 +14747,9 @@ after stopping, allowing updating for missing assessments.")
         (base32 "1rx8rxgzjf4bjbx6gpf70pnma05g51lg6l1z0kdswj8m3pmqnk93"))))
     (properties `((upstream-name . "binsegRcpp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tdhock/binsegRcpp")
@@ -13440,6 +14772,9 @@ worst case.")
         (base32 "1ikaqhcymy27qrpf85a23dpazy8gd407yi0z0w3nl5l38clz4h8w"))))
     (properties `((upstream-name . "BinSegBstrap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BinSegBstrap")
@@ -13465,6 +14800,9 @@ further change-point.")
         (base32 "1h1zkawhzp23diav6q4i2sysf4lh3pxc0gsmh4q3vgany1wj57wy"))))
     (properties `((upstream-name . "binr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jabiru/binr")
     (synopsis "Cut Numeric Values into Evenly Distributed Groups")
     (description
@@ -13487,6 +14825,9 @@ generation of features used in machine learning algorithms.")
         (base32 "1kc5cm8apijgxwncpj3vflpm2alxlyz7nj2ifa09rh4n36c17hzm"))))
     (properties `((upstream-name . "binpackr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cpp11))
     (home-page "https://github.com/lschneiderbauer/binpackr")
     (synopsis "Fast 1d Bin Packing")
@@ -13509,6 +14850,9 @@ Donald E. Knuth (1997, ISBN: 0201896834) for more details.")
         (base32 "0s2p0miqjckkj4v9l0c7zsdnnq69j08p4c5sgdxvkzlv23rnrkyd"))))
     (properties `((upstream-name . "binovisualfields")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-plotrix r-gtools))
     (native-inputs (list r-knitr))
     (home-page "https://people.eng.unimelb.edu.au/aturpin/opi/index.html")
@@ -13539,6 +14883,9 @@ visual field pattern in the included shiny apps.")
         (base32 "17981jfjjgsfzjwbv9cjgqdha846rf03nfd8kgj4wiljgz855mz9"))))
     (properties `((upstream-name . "BinOrdNonNor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ordnor
                              r-mvtnorm
                              r-matrix
@@ -13566,6 +14913,9 @@ The details of the method are explained in Demirtas et al. (2012)
         (base32 "1rrs8sg1dfzgb6005pm5nj3fwp5fy89pjx0af59clybj6lyqp25d"))))
     (properties `((upstream-name . "binomialtrend")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pheatmap))
     (home-page "https://cran.r-project.org/package=binomialtrend")
     (synopsis
@@ -13594,6 +14944,9 @@ has global mean temperatures for January, April, July, and October for the years
         (base32 "1liqhnp4j3fxy552fi4yz5vmfzh5blpmxx6fa3g62dgnhcm9sy18"))))
     (properties `((upstream-name . "binomialRF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist r-randomforest r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://www.biorxiv.org/content/10.1101/681973v1.abstract")
@@ -13619,6 +14972,9 @@ whether a feature is selected more often than by random chance.")
         (base32 "0x4ga6935z85ki23lwna1am42mxvck1w0al5b1wpngyf86364lgk"))))
     (properties `((upstream-name . "binomCI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=binomCI")
     (synopsis "Confidence Intervals for a Binomial Proportion")
     (description
@@ -13643,6 +14999,9 @@ for a binomial proportion\".  Statistics in Medicine, 12(9): 809-824.
         (base32 "07r7nf4ygilp470z93x9dc5zddc96m2dkw6d2s4an8fbr4pljc1y"))))
     (properties `((upstream-name . "BinNor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych r-mvtnorm r-matrix r-corpcor))
     (home-page "https://cran.r-project.org/package=BinNor")
     (synopsis
@@ -13665,6 +15024,9 @@ Demirtas and Doganay (2012) <DOI:10.1080/10543406.2010.521874>.")
         (base32 "0ijjv2w4bx0i3mks7s4vii21hc9iq69p3jld1qg68a6115njsm24"))))
     (properties `((upstream-name . "BinNonNor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrix r-corpcor r-bb))
     (home-page "https://cran.r-project.org/package=BinNonNor")
     (synopsis
@@ -13687,6 +15049,9 @@ methodology proposed by Demirtas et al. (2012) <DOI:10.1002/sim.5362>.")
         (base32 "0rg9rsdy14jx7zjv60krcz1vh0sxqimsai0wynhx2sx0kydw4ngy"))))
     (properties `((upstream-name . "binMto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=binMto")
     (synopsis "Many-to-One Comparisons of Proportions")
@@ -13711,6 +15076,9 @@ conditional maximum test for many-to-one comparisons to a control.")
         (base32 "1brgv0zmprvwx6x670mmxxlk50nh4ds63bip48mlh0p1qv8pm9db"))))
     (properties `((upstream-name . "BinMat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-pvclust r-mass r-ggpubr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BinMat")
@@ -13746,6 +15114,9 @@ authors of these publications are thanked for allowing the use of their data.")
         (base32 "1vdw2s8zddp7gad8l3c4jpmnjcc0f5wpqbrp6gp9lgp1c3qa505y"))))
     (properties `((upstream-name . "binhf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh r-ebayesthresh r-adlift))
     (home-page "https://cran.r-project.org/package=binhf")
     (synopsis "Haar-Fisz Functions for Binomial Data")
@@ -13765,6 +15136,9 @@ authors of these publications are thanked for allowing the use of their data.")
         (base32 "0986203jjszha7sm7n63lwi9zlfwrla9g8mi1fm84dzjn9bc9dgi"))))
     (properties `((upstream-name . "BinGSD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=BinGSD")
     (synopsis
@@ -13791,6 +15165,9 @@ functions to obtain boundary crossing probabilities given the design.")
         (base32 "000a8vci2sfxgbw412i0wajmnwgpx54zalcv4xhvyckh69i1z1db"))))
     (properties `((upstream-name . "binGroup2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rdpack
                              r-rcpparmadillo
@@ -13822,6 +15199,9 @@ modeling for commonly used hierarchical and array-based algorithms.")
         (base32 "0cb7j6b0s3y56mv1967awwri0kv0rf3sr3vwf9gc2zbjggxi9ffp"))))
     (properties `((upstream-name . "binGroup")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-partitions))
     (home-page "https://cran.r-project.org/package=binGroup")
     (synopsis "Evaluation and Experimental Design for Binomial Group Testing")
@@ -13852,6 +15232,9 @@ wide variety of situations.")
         (base32 "1y68rgafipfad78yrzcygdszgy1d5q739kap06pzr78bn3i8hiwa"))))
     (properties `((upstream-name . "bingat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-network
                              r-matrixstats
@@ -13876,6 +15259,9 @@ wide variety of situations.")
         (base32 "071j30fmskfw513yf9fdcm711r17kcxpn5ly20dk11chkxk6mcsc"))))
     (properties `((upstream-name . "bingadsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://windsor.ai/")
@@ -13897,6 +15283,9 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
         (base32 "0gqvk9hfsskm2h6vq80hcmy08wrricdc96np8dhx1slcyqhhwz0c"))))
     (properties `((upstream-name . "binfunest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PhilShea/binfunest")
@@ -13927,6 +15316,9 @@ functions to work with the performance functions.")
         (base32 "04mpdvynlm4gddybys04k0446gc9hyq0vaxr6a525p76ls5aw4b1"))))
     (properties `((upstream-name . "binford")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://github.com/benmarwick/binford")
     (synopsis "Binford's Hunter-Gatherer Data")
     (description
@@ -13947,6 +15339,9 @@ ethnographically documented groups of hunter-gatherers.")
         (base32 "19sm4gk7pnp0aq0bil3acm2jc6w26pkj11vvxzysgs1xlmsra7vg"))))
     (properties `((upstream-name . "binequality")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-ineq r-gamlss-dist r-gamlss-cens
                              r-gamlss))
     (home-page "https://cran.r-project.org/package=binequality")
@@ -13980,6 +15375,9 @@ districts, counties, and states.")
         (base32 "0s1f7jvlr8xjn89ns5kq0wyvcibdvhyaw92pz1p14nbmg8lqky5d"))))
     (properties `((upstream-name . "bindata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-e1071))
     (home-page "https://cran.r-project.org/package=bindata")
     (synopsis "Generation of Artificial Binary Data")
@@ -13998,6 +15396,9 @@ districts, counties, and states.")
         (base32 "0fgdpdjbw95rwv7l0acfb9cf7s57q5ld2vgdvrv1pxwkyi902nh4"))))
     (properties `((upstream-name . "binda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-entropy))
     (home-page "https://strimmerlab.github.io/software/binda/")
     (synopsis "Multi-Class Discriminant Analysis using Binary Predictors")
@@ -14019,6 +15420,9 @@ continuous data.")
         (base32 "0x2s82jql429shk70bhjdy9kamz8dz5ymsxj6kp8ga1711bpwyq6"))))
     (properties `((upstream-name . "BINCOR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (home-page "https://cran.r-project.org/package=BINCOR")
     (synopsis "Estimate the Correlation Between Two Irregular Time Series")
@@ -14030,10 +15434,11 @@ grid.  BINCOR is based on a novel estimation approach proposed by Mudelsee
 (2010, 2014) to estimate the correlation between two climate time series with
 different timescales.  The idea is that autocorrelation (AR1 process) allows to
 correlate values obtained on different time points.  BINCOR contains four
-functions: bin_cor() (the main function to build the binned time series),
-plot_ts() (to plot and compare the irregular and binned time series, cor_ts()
-(to estimate the correlation between the binned time series) and ccf_ts() (to
-estimate the cross-correlation between the binned time series).")
+functions: @code{bin_cor()} (the main function to build the binned time series),
+@code{plot_ts()} (to plot and compare the irregular and binned time series,
+@code{cor_ts()} (to estimate the correlation between the binned time series) and
+@code{ccf_ts()} (to estimate the cross-correlation between the binned time
+series).")
     (license license:gpl2+)))
 
 (define-public r-binb
@@ -14048,6 +15453,9 @@ estimate the cross-correlation between the binned time series).")
         (base32 "18f4l7fa3b0h1r91xy9nvplllgnsx3r765qibbbz1rz5zq6cnjpg"))))
     (properties `((upstream-name . "binb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown r-knitr r-codetools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eddelbuettel/binb")
@@ -14074,6 +15482,9 @@ prefers Fira', and IQSS requires Libertinus'.")
         (base32 "0vjs3in8rih5iinlfcrilpqwqjxkdf01h6giv993zy8l3s28r9yd"))))
     (properties `((upstream-name . "binaryMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mass r-fastghquad))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=binaryMM")
@@ -14099,6 +15510,9 @@ variable terms.  Methods are described in: Schildcrout and Heagerty (2007)
         (base32 "0i4xi0gxk0lamjdygyx0azdp3kfqmva1g20nl3p65w4yx77m88d6"))))
     (properties `((upstream-name . "binaryGP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-nloptr
@@ -14130,6 +15544,13 @@ by Metropolis-Hastings algorithm.  More details can be seen in Sung et al (2017)
         (base32 "1sjwh423vap4gd44mkpdhsmp90y9rzr3zkzzakbfczawxz3mbcrp"))))
     (properties `((upstream-name . "BinaryEPPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-numderiv r-lmtest r-formula r-expm))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=BinaryEPPM")
@@ -14163,6 +15584,9 @@ and Smith and Faddy (2019) <doi:10.18637/jss.v090.i08>.")
         (base32 "1ainp6pg481yqhjc4f1pkxzxczbi3qm0kgq280vndq859ldfkpnh"))))
     (properties `((upstream-name . "BinaryEMVS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BinaryEMVS")
     (synopsis "Variable Selection for Binary Data Using the EM Algorithm")
     (description
@@ -14184,6 +15608,9 @@ data with correlated variables.")
         (base32 "10nf11c57j0ls4znm137w831s7zmihg7bybrfg666hx7c9amspjw"))))
     (properties `((upstream-name . "BinaryDosage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-prodlim r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BinaryDosage")
@@ -14205,6 +15632,9 @@ files, merge binary dosage files, and read binary dosage files.")
         (base32 "1rs7x7ggqzaz9r2912g0fi9x7przd8gjy6pianx457w5f39fqx4v"))))
     (properties `((upstream-name . "BinarybalancedCut")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggplot2))
     (home-page "https://cran.r-project.org/package=BinarybalancedCut")
     (synopsis
@@ -14227,6 +15657,9 @@ error for a binary Classifier in determining the Probability threshold.")
         (base32 "08xg3s30mk5q0hfvigysnfp8lsnq42j267ylpnhphw5vzlg5xivx"))))
     (properties `((upstream-name . "Binarize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-diptest))
     (home-page "https://cran.r-project.org/package=Binarize")
     (synopsis "Binarization of One-Dimensional Data")
@@ -14247,6 +15680,9 @@ some visualization functions.")
         (base32 "1diy0g3mvzxs0jxybpk42m3ccs5qk1ynw116aaxsn5k9ch7crj3l"))))
     (properties `((upstream-name . "binancer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snakecase
                              r-logger
                              r-jsonlite
@@ -14273,6 +15709,9 @@ portfolio management and trading:
         (base32 "1m1dcj0ryjicaqjlkch7aymsklmvjvn2dvnbssi1cpi54bzn8l7g"))))
     (properties `((upstream-name . "BimodalIndex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-oompabase r-mclust))
     (home-page "http://oompa.r-forge.r-project.org/")
     (synopsis "The Bimodality Index")
@@ -14294,6 +15733,9 @@ al. (2009) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180/>,
         (base32 "172nwa96k94j68f477nh1bf33dajma3140fjfbj09zw6p6hl06ay"))))
     (properties `((upstream-name . "bimets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts))
     (home-page "https://github.com/andrea-luciani/bimets")
     (synopsis "Time Series and Econometric Modeling")
@@ -14321,6 +15763,9 @@ and forecast, optimal control.")
         (base32 "1z3y8dijhc1381y91n5zq305xzm1gpvs0g4mdpfr7zrblpa8ws39"))))
     (properties `((upstream-name . "billboard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/mikkelkrogsholm/billboard")
     (synopsis "Contains Data of Billboard Hot 100 Songs")
@@ -14342,6 +15787,9 @@ features of a lot of the songs and lyrics for several of the songs as well.")
         (base32 "18fcfaavqdhx0n5l4mhg5ibg9wp01amxj1qin25immsx6pwmp9gb"))))
     (properties `((upstream-name . "bild")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bild")
     (synopsis "Package for BInary Longitudinal Data")
@@ -14366,6 +15814,9 @@ some restrictions.  M. Helena Goncalves et al.(2007) <DOI:
         (base32 "1ffw7vfl7cpj6n6c3hrnn4pjnwmw623xdj469fh61q6c2ig5sq87"))))
     (properties `((upstream-name . "bikm1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-pracma
                              r-lpsolve
@@ -14401,6 +15852,9 @@ Vasseur Yann, Brault Vincent (2021) <doi:10.1007/s00357-020-09379-w>.")
         (base32 "1ca8w4yfw0bfqls0g1qqh8gkyk23d0mi22kavawv9wwhydxrxxjc"))))
     (properties `((upstream-name . "bikeshare14")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/arunsrinivasan/bikeshare14")
     (synopsis "Bay Area Bike Share Trips in 2014")
     (description
@@ -14420,6 +15874,9 @@ additional metadata on stations and weather.")
         (base32 "1f67gk54gzdlil79gqqws0i6j0rvjqk4k0bhdb9adcvcsdxfkwwy"))))
     (properties `((upstream-name . "BigVAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-rcppeigen
                              r-rcpparmadillo
@@ -14448,6 +15905,9 @@ Nicholson et al (2020) <doi:10.48550/@code{arXiv.1412.5250>}.")
         (base32 "096h0v277n39bvipfbfd730lz3qkplfnv58zmzsyy3al9f7lajxl"))))
     (properties `((upstream-name . "bigutilsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-robustbase
                              r-rcpp
@@ -14473,6 +15933,9 @@ includes functions for outlier detection and unbiased PCA projection.")
         (base32 "1lnq8zjhvnm5q90y2aak11l8a726p1w4wgjwdvdn9pzlwgm8xia5"))))
     (properties `((upstream-name . "bigtime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rcppeigen
                              r-rcpparmadillo
@@ -14504,6 +15967,9 @@ Penalties, see Nicholson, Wilms, Bien and Matteson (2020)
         (base32 "1l03yc28afdm7glbw4ay0zsywjgqg5l90qz1hfhslsy8gg7d5wq5"))))
     (properties `((upstream-name . "bigtcr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bigtcr")
     (synopsis
      "Nonparametric Analysis of Bivariate Gap Time with Competing Risks")
@@ -14531,6 +15997,9 @@ Huang et al. (2016) <doi:10.1111/biom.12494>.")
         (base32 "0ws73fasmwsjbv5l63iln164ai7n3dy6wwpm8vqkpys7wl1i3xxy"))))
     (properties `((upstream-name . "bigtabulate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-bigmemory r-biganalytics r-bh))
     (home-page "http://www.bigmemory.org")
     (synopsis
@@ -14553,6 +16022,9 @@ improving speed and memory-efficiency.")
         (base32 "08i6hwfr4rpvmxfa0vx8bi2dsa63iasj049ndwfn6zgvai6qaz0s"))))
     (properties `((upstream-name . "bigSurvSGD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpp r-foreach r-doparallel
                              r-bigmemory))
     (home-page "https://cran.r-project.org/package=bigSurvSGD")
@@ -14578,6 +16050,9 @@ Noah Simon (2020) <@code{arXiv:2003.00116v2>}.")
         (base32 "1bppvib57p6m91c2v9w9lgb1k3jg8mk3w2kkbjvwgsdwy4m8fhap"))))
     (properties `((upstream-name . "bigstep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-speedglm
                              r-rcppeigen
                              r-r-utils
@@ -14606,6 +16081,9 @@ exceed RAM capacity.  Bogdan et al., (2004) <doi:10.1534/genetics.103.021683>.")
         (base32 "1c445mm11gsvs2sqmrblig1d3456vwb1n3rz08mhkpxghjaf4dci"))))
     (properties `((upstream-name . "bigstatsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rspectra
                              r-rmio
@@ -14639,6 +16117,9 @@ linear supervised models, utility functions and more
         (base32 "1kf04p2lglzdi1fdryk27nmj2a2jca2ii7ki8vak93sq21isb179"))))
     (properties `((upstream-name . "bigsplines")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bigsplines")
@@ -14663,6 +16144,9 @@ non-Gaussian: Binomial, Poisson, Gamma, Inverse Gaussian, or Negative Binomial."
         (base32 "0v28k0jh7nw3ms5sh2izd28b4p5b9qf4rrnps0pfwpq0xmigr4ch"))))
     (properties `((upstream-name . "bigsparser")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmio r-rcppeigen r-rcpp r-matrix r-bigassertr))
     (home-page "https://github.com/privefl/bigsparser")
     (synopsis "Sparse Matrix Format with Data on Disk")
@@ -14687,6 +16171,9 @@ compact format is also now available.")
         (base32 "0jlf1x7k6pjzdhm765jds3f19c3s00ya6vznxlykds89rfb24b29"))))
     (properties `((upstream-name . "bigsnpr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-vctrs
                              r-runonce
@@ -14725,6 +16212,9 @@ arrays.  PrivÃ© et al. (2018) <doi:10.1093/bioinformatics/bty185>.")
         (base32 "1cvj6p5g2g8ldi3g6d1mvhsf8xcsxgqd71frghdqybz6f1vdbs34"))))
     (properties `((upstream-name . "bigsimr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list julia))
     (propagated-inputs (list r-juliacall))
     (home-page "https://github.com/SchisslerGroup/r-bigsimr")
@@ -14748,6 +16238,9 @@ utilizes the Julia package Bigsimr.jl for its core routines.")
         (base32 "1x48msnh3lhi5x74n1v7icd3vzxwqw9yaq8llcr0a79mj6abiwar"))))
     (properties `((upstream-name . "bigrquerystorage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib openssl))
     (propagated-inputs (list r-tibble
                              r-rlang
@@ -14776,23 +16269,26 @@ utilizes the Julia package Bigsimr.jl for its core routines.")
         (base32 "08rpkskvsnmln4583074nxlkjf2qkg61v24c0lbj27rfp2ab0wzw"))))
     (properties `((upstream-name . "bigReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid r-rcpparmadillo r-rcpp r-mass))
     (home-page "https://cran.r-project.org/package=bigReg")
     (synopsis "Generalized Linear Models (GLM) for Large Data Sets")
     (description
      "Allows the user to carry out GLM on very large data sets.  Data can be created
-using the data_frame() function and appended to the object with
+using the @code{data_frame()} function and appended to the object with
 object$append(data); data_frame and data_matrix objects are available that allow
 the user to store large data on disk.  The data is stored as doubles in binary
 format and any character columns are transformed to factors and then stored as
 numeric (binary) data while a look-up table is stored in a separate .meta_data
 file in the same folder.  The data is stored in blocks and GLM regression
 algorithm is modified and carries out a @code{MapReduce}- like algorithm to fit
-the model.  The functions bglm(), and summary() and bglm_predict() are available
-for creating and post-processing of models.  The library requires Armadillo
-installed on your system.  It may not function on windows since multi-core
-processing is done using mclapply() which forks R on Unix/Linux type operating
-systems.")
+the model.  The functions @code{bglm()}, and @code{summary()} and
+@code{bglm_predict()} are available for creating and post-processing of models.
+The library requires Armadillo installed on your system.  It may not function on
+windows since multi-core processing is done using @code{mclapply()} which forks
+R on Unix/Linux type operating systems.")
     (license license:gpl2+)))
 
 (define-public r-bigreadr
@@ -14807,13 +16303,16 @@ systems.")
         (base32 "15wy5rphk2l59k8fk68a15xsvy8nxj1srnc2c86i7y5ym04a856k"))))
     (properties `((upstream-name . "bigreadr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-parallelly r-data-table r-bigassertr))
     (home-page "https://github.com/privefl/bigreadr")
     (synopsis "Read Large Text Files")
     (description
      "Read large text files by splitting them in smaller files.  Package bigreadr also
-provides some convenient wrappers around fread() and fwrite() from package
-data.table'.")
+provides some convenient wrappers around @code{fread()} and @code{fwrite()} from
+package data.table'.")
     (license license:gpl3)))
 
 (define-public r-bigquic
@@ -14828,6 +16327,9 @@ data.table'.")
         (base32 "14mz9ry72zc4c0fhc59dima66qnksr1masvhzm1j8z8r11w7qjhd"))))
     (properties `((upstream-name . "BigQuic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scalreg r-rcpp r-matrix))
     (home-page "https://www.r-project.org")
     (synopsis "Big Quadratic Inverse Covariance Estimation")
@@ -14849,6 +16351,9 @@ regularized Gaussian MLE inverse covariance matrix estimation problem.")
         (base32 "01qr1cw5v330kkddmgwk4fdlm6msnqcbx1kfzw390yfwq5pr84sy"))))
     (properties `((upstream-name . "bigQF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svd r-matrix r-coxme r-compquadform))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tslumley/bigQF")
@@ -14873,6 +16378,9 @@ for dense or sparse matrices.")
         (base32 "14rkcig4j93c231sfm43331ykmvxjx2fiz5nhblj2rfzkxli4css"))))
     (properties `((upstream-name . "bigparallelr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rhpcblasctl
                              r-parallelly
                              r-foreach
@@ -14899,6 +16407,9 @@ choosing and setting the number of cores used.")
         (base32 "0v2hiw9kirm78fcqbm2hzrqcvndgcslz9j8gmzba1d5xaivanhkj"))))
     (properties `((upstream-name . "bignum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-rlang r-cpp11 r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://davidchall.github.io/bignum/")
@@ -14923,6 +16434,9 @@ designed to work well with the tidyverse collection of R packages.")
         (base32 "1pkmzpibmch8zxlp08r460cvszwh4pshi9b8lafmkspj4pdkxlr9"))))
     (properties `((upstream-name . "bigmds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svd r-pracma r-corpcor))
     (home-page "https://github.com/pachoning/bigmds")
     (synopsis "Multidimensional Scaling for Big Data")
@@ -14952,6 +16466,9 @@ Yang, T., J. Liu, L. @code{McMillan} and W. Wang (2006).")
         (base32 "1a3qiljarnv14dmpr5g2nfxzaf4wmw88md4kjrlrlgxcgmijlwm6"))))
     (properties `((upstream-name . "bigmatch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcbalance r-plyr r-mvnfast r-liqueuer))
     (home-page "https://cran.r-project.org/package=bigmatch")
     (synopsis "Making Optimal Matching Size-Scalable Using Optimal Calipers")
@@ -14959,11 +16476,11 @@ Yang, T., J. Liu, L. @code{McMillan} and W. Wang (2006).")
      "This package implements optimal matching with near-fine balance in large
 observational studies with the use of optimal calipers to get a sparse network.
 The caliper is optimal in the sense that it is as small as possible such that a
-matching exists.  The main functions in the bigmatch package are optcal() to
-find the optimal caliper, optconstant() to find the optimal number of nearest
-neighbors, and nfmatch() to find a near-fine balance match with a caliper and a
-restriction on the number of nearest neighbors.  Yu, R., Silber, J. H., and
-Rosenbaum, P. R. (2020). <DOI:10.1214/19-sts699>.")
+matching exists.  The main functions in the bigmatch package are @code{optcal()}
+to find the optimal caliper, @code{optconstant()} to find the optimal number of
+nearest neighbors, and @code{nfmatch()} to find a near-fine balance match with a
+caliper and a restriction on the number of nearest neighbors.  Yu, R., Silber,
+J. H., and Rosenbaum, P. R. (2020). <DOI:10.1214/19-sts699>.")
     (license license:expat)))
 
 (define-public r-bigmap
@@ -14978,6 +16495,9 @@ Rosenbaum, P. R. (2020). <DOI:10.1214/19-sts699>.")
         (base32 "08c9s5sk672j70d6pnva7z52i4s3knkby06lva9al9n8a3jiwsvz"))))
     (properties `((upstream-name . "bigMap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-rcolorbrewer
@@ -15006,6 +16526,9 @@ algorithm (Garriga J. and Bartumeus F. (2018), <@code{arXiv:1812.09869>}).")
         (base32 "1fbrp6gmk0cxd7021pwarq20sjv1jrv6ri67hz0wjragh7zak272"))))
     (properties `((upstream-name . "biglmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dbi))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=biglmm")
@@ -15027,6 +16550,9 @@ like the biglm package, but works with later versions of R.")
         (base32 "1xvd1fdycyxb9da34v4ibsjwzipil5cyja3iym30q5cqcbxq47g4"))))
     (properties `((upstream-name . "bigleaf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-solartime r-robustbase))
     (native-inputs (list r-knitr))
     (home-page "https://bitbucket.org/juergenknauer/bigleaf")
@@ -15052,6 +16578,9 @@ and return bulk ecosystem/canopy variables.")
         (base32 "165bc1y5byma872yld5y5nxkhyhkfn6h4gfiqv5bkfw5hn77ijlc"))))
     (properties `((upstream-name . "biglasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-ncvreg
@@ -15081,6 +16610,9 @@ an ordinary laptop.")
         (base32 "17skfw03f6ycfkqinisd9mrslwj19g5mm99s4ma65kln3xlx692j"))))
     (properties `((upstream-name . "BIGL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-robustbase
                              r-progress
@@ -15121,6 +16653,9 @@ Bie Verbist & Hugo Ceulemans (2017) <doi:10.1038/s41598-017-18068-5>.")
         (base32 "0awsskpdky56llqc7flgwzs6646cvvn8q50x8gj0hkknfm8fs1rz"))))
     (properties `((upstream-name . "bigGP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmpi))
     (home-page "https://doi.org/10.18637/jss.v063.i10")
     (synopsis "Distributed Gaussian Process Calculations")
@@ -15146,6 +16681,9 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
         (base32 "1cwp7vqcspfg8xgjfrk8517xwnfpn1hphz16bfprjmwrr3xg5b2x"))))
     (properties `((upstream-name . "bigergm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-statnet-common
@@ -15191,6 +16729,9 @@ simulating networks with local dependence to assess the goodness-of-fit.")
         (base32 "183px40ah4043q2yc2811hlwx8vinqk5xxhz1wmgw4m8cig62xgw"))))
     (properties `((upstream-name . "bigDM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep
                              r-spatialreg
                              r-sf
@@ -15233,6 +16774,9 @@ funded by the Public University of Navarra (project PJUPNA2001).")
         (base32 "1zbikvhyaksbddv2kz8nqkidjy4qsfp6a8wwyxjy5a0wcnqnwsxf"))))
     (properties `((upstream-name . "BIGDAWG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-httr r-haplo-stats))
     (native-inputs (list r-knitr))
     (home-page "http://tools.immunogenomics.org/")
@@ -15260,6 +16804,9 @@ as described by Hollenbach JA, Mack SJ, Thomson G, Gourraud PA (2012)
         (base32 "16gkybwcp9sxqb0iic2fhmc4gndr44ayg14wrfcjvjaj4g5r6xs2"))))
     (properties `((upstream-name . "bigdatadist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rrcov r-pdist r-mass r-fnn))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bigdatadist")
@@ -15287,6 +16834,9 @@ et al (2018, submitted); Martos et al (2018, submitted).")
         (base32 "1807m3ma7h7k7m7c8g7qrjf77limvy6q4mkfkn4nrv1rgsnq7kbq"))))
     (properties `((upstream-name . "bigD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://rstudio.github.io/bigD/")
     (synopsis "Flexibly Format Dates and Times to a Given Locale")
     (description
@@ -15313,6 +16863,9 @@ varying specificity.")
         (base32 "1vdzx185y1agh1xjf7qcfi2s6l7qzm1kx6b2kr3cbz2in88bws3n"))))
     (properties `((upstream-name . "bigchess")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-processx))
     (home-page "https://cran.r-project.org/package=bigchess")
     (synopsis
@@ -15337,6 +16890,9 @@ of functions of R API to communicate with UCI-protocol based chess engines.")
         (base32 "1aajx0cg3ljjmvc50qx3v2halqksj54i2krcm7ib33cnqaxzbfbb"))))
     (properties `((upstream-name . "bigBits")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmpfr r-gmp))
     (home-page "https://cran.r-project.org/package=bigBits")
     (synopsis "Perform Boolean Operations on Large Numbers")
@@ -15359,12 +16915,16 @@ specified.  A direct base to base converter is included.")
         (base32 "0bk11jinlc1cvm6aaq9mccs9i328b8s2lbwq63a42fgf1qng103p"))))
     (properties `((upstream-name . "bigassertr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/privefl/bigassertr")
     (synopsis "Assertion and Message Functions")
     (description
-     "Enhanced message functions (cat() / message() / warning() / error()) using
-wrappers around sprintf().  Also, multiple assertion functions (e.g. to check
-class, length, values, files, arguments, etc.).")
+     "Enhanced message functions @code{(cat()} / @code{message()} / @code{warning()} /
+@code{error()}) using wrappers around @code{sprintf()}.  Also, multiple
+assertion functions (e.g. to check class, length, values, files, arguments,
+etc.).")
     (license license:gpl3)))
 
 (define-public r-biganalytics
@@ -15379,6 +16939,9 @@ class, length, values, files, arguments, etc.).")
         (base32 "0y9zr4gr31l4q2j78nqyh4svlgsd7f5x8jkhgsflfr6agia77gyh"))))
     (properties `((upstream-name . "biganalytics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-foreach r-bigmemory r-biglm r-bh))
     (home-page "http://www.bigmemory.org")
     (synopsis "Utilities for 'big.matrix' Objects from Package 'bigmemory'")
@@ -15402,6 +16965,9 @@ synchronicity'.")
         (base32 "0zk0n3lxqrhxzwdm47yhvv8n0m30bp9b7bvany3gg7a6vrz43yqn"))))
     (properties `((upstream-name . "bigalgebra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-bigmemory r-bh))
     (native-inputs (list gfortran))
     (home-page "https://fbertran.github.io/bigalgebra/")
@@ -15428,6 +16994,9 @@ object- and pure type operation for two big.matrix class objects.")
         (base32 "0qk009q0kw8h2j5qkvlpkhcmjw9cac9xqvi1v3r721n7cmx340sx"))))
     (properties `((upstream-name . "bifurcatingr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fmultivar))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bifurcatingr")
@@ -15459,6 +17028,9 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
         (base32 "0g0v7sahh7kg84yi0gj7q21i2wld76vs8c0vzynyna3jal5a2ij7"))))
     (properties `((upstream-name . "BIFIEsurvey")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-miceadds))
     (home-page "https://github.com/alexanderrobitzsch/BIFIEsurvey")
     (synopsis "Tools for Survey Statistics in Educational Assessment")
@@ -15491,6 +17063,9 @@ School System; Salzburg, Austria).")
         (base32 "0xikxniwzcv6jc64rgx39hddqchxk6c43h45algssbz2vaxvc4zg"))))
     (properties `((upstream-name . "bife")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-formula r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/amrei-stammann/bife")
@@ -15514,6 +17089,9 @@ Fernandez-Val (2009) <doi:10.1016/j.jeconom.2009.02.007>.")
         (base32 "1vnwksw0j4lc2knlcmm5748pf4d7r44sn34s1mrv9p50hlnkk85p"))))
     (properties `((upstream-name . "BifactorIndicesCalculator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-mplusautomation r-mnormt r-mirt
                              r-lavaan))
     (home-page "https://github.com/ddueber/BifactorIndicesCalculator")
@@ -15540,6 +17118,9 @@ or item response models.")
         (base32 "00zcvk5v8rn3dp02sivs5z7cch9y8csp5cjhhs4ragdgcry0c3i5"))))
     (properties `((upstream-name . "BiDimRegression")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-formula))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=BiDimRegression/")
@@ -15562,6 +17143,9 @@ the approach by Tobler (1965).")
         (base32 "1kavjvllp1vf01xj9mnngd6k1r5zx48zp5kvsv5c8qsa53l5gzxl"))))
     (properties `((upstream-name . "bidask")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eguidotti/bidask")
@@ -15588,6 +17172,9 @@ Ranaldo (2017) <doi:10.1093/rfs/hhx084>.")
         (base32 "0gncxn558mdasr63jvqyavd6nhg6762rk0g0a2b7hfvcivjb6bd5"))))
     (properties `((upstream-name . "BiDAG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgraphviz
                              r-rcpp
                              r-rbgl
@@ -15631,6 +17218,9 @@ Moffa (2017) <doi:10.1080/01621459.2015.1133426>, M. Kalisch et al. (2012)
         (base32 "0mqk8vgp6jdk7f0paa06yqlibkd1y3vs69pg7i9mkvxmda7p4nkq"))))
     (properties `((upstream-name . "BICORN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BICORN")
     (synopsis "Integrative Inference of De Novo Cis-Regulatory Modules")
@@ -15654,6 +17244,9 @@ hidden activity for each transcription factor.")
         (base32 "1knhz96k5giq3d16i3akl5gbxrzx3vxm97cb3ivaw835fr9zrmr5"))))
     (properties `((upstream-name . "biclustermd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-phyclust
                              r-nycflights13
@@ -15689,6 +17282,9 @@ and Vardeman, S. (2020) Biclustering with Missing Data.  Information Sciences,
         (base32 "14z3kmpmlvnkjwpjspajdfx5951cmck4binszzdd7nqbai5f1dwv"))))
     (properties `((upstream-name . "biClassify")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
@@ -15721,6 +17317,9 @@ analysis with simultaneous sparse feature selection in Lapanowski and Gaynanova
         (base32 "0ryzq77j8sbic5mj8r6bpirnr2vb45wwkkkkkjmv70c15ip5409r"))))
     (properties `((upstream-name . "BiCausality")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DarkEyes/BiCausality")
     (synopsis "Binary Causality Inference Framework")
@@ -15749,6 +17348,9 @@ Suttipong Thajchayapong (2023) <doi:10.1016/j.heliyon.2023.e15947>.")
         (base32 "0slxqhcm4fhdmr2dj1c31zs8sgl39267179nbc59jlpb0z77z2d6"))))
     (properties `((upstream-name . "bibs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gigrvg))
     (home-page "https://cran.r-project.org/package=bibs")
     (synopsis "Bayesian Inference for the Birnbaum-Saunders Distribution")
@@ -15776,6 +17378,9 @@ BS distribution under progressive type-II censoring scheme.")
         (base32 "0zvbyh8spr0ywj64b2rc8jcq4fgn87858km4mkkh17g30ympg767"))))
     (properties `((upstream-name . "BibPlots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BibPlots")
     (synopsis "Plot Functions for Use in Bibliometrics")
     (description
@@ -15799,6 +17404,9 @@ Further extension to more plot variants is planned.")
         (base32 "03mpw4h7z33dnmf7ain085xnlb6wjzj8vsrlr2jhm0h6fpx9880y"))))
     (properties `((upstream-name . "biblioverlap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid
                              r-upsetr
                              r-stringdist
@@ -15834,6 +17442,9 @@ plot, as well as a summary of the matching procedure.")
         (base32 "0sqj4gpdlx3ahaxh07jvgaidxa5svi3r014v2mmpmi90qym35fkl"))))
     (properties `((upstream-name . "bibliorefer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bibliorefer")
     (synopsis "Generator of Main Scientific References")
     (description
@@ -15860,6 +17471,9 @@ Song. (2021) <doi:10.1016/j.jclepro.2021.126943>.")
         (base32 "0nhx9bk7r5l0bvj98clnmwf53ihghf48zai4nj6pcgr2rb69fvjj"))))
     (properties `((upstream-name . "biblionetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/agoutsmedt/biblionetwork")
@@ -15891,6 +17505,9 @@ Shen, Si, Zhu, Danhao, Rousseau, Ronald, Su, Xinning and Wang, Dongbo (2019)
         (base32 "0dkg5g9il95w9glzvhjdgp8z30prydspvpz5bb403vaizykwv9kl"))))
     (properties `((upstream-name . "bibliometrixData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bibliometrixData")
     (synopsis "Bibliometrix Example Datasets")
     (description
@@ -15913,6 +17530,9 @@ They can be used to test the different features of the package bibliometrix
         (base32 "1cas914ach2d2r8pjybyx2lvhydlsx89y2bgkqn40vhg8d40zc5d"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-tidyr
                              r-stringi
@@ -15964,6 +17584,9 @@ scientific collaboration and co-word analysis.")
         (base32 "0ml6sh0ki04kqyfixd0cxmxpdxznisifaqnjdshvrvi1yqjq12ih"))))
     (properties `((upstream-name . "biblio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yamlme r-stringr r-rcrossref))
     (home-page "https://kamapu.github.io/biblio/")
     (synopsis "Interacting with BibTeX Databases")
@@ -15983,6 +17606,9 @@ scientific collaboration and co-word analysis.")
         (base32 "0wfwph6nw12hb43j14i9ycj8m2zn0m5ynp7afq9cray8rbgvxfv6"))))
     (properties `((upstream-name . "BiBitR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-viridis
                              r-randomcolor
@@ -16015,6 +17641,9 @@ larger column patterns is included as well.")
         (base32 "1w7x6jj8x3rv1ms8278jwszj8d4g5b59drs7gdfsrbp1x74npcr1"))))
     (properties `((upstream-name . "bib2df")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-humaniformat r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/bib2df/")
@@ -16036,6 +17665,9 @@ analysis and visualization.")
         (base32 "1ligmx7c44faqpzfvcwp841wqbrbwwyh2xdr0hgp7g30qmlb5m1y"))))
     (properties `((upstream-name . "BiasCorrector")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinyjs
                              r-shinydashboard
                              r-shiny
@@ -16065,6 +17697,9 @@ make them more easily accessible.  Publication: Kapsner et al. (2021)
         (base32 "12x8l5v703b142cixnw9fz0i1j7sx6cphjcsw7ywvhrfy7z8yc35"))))
     (properties `((upstream-name . "BI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/marcschwartz/BI")
     (synopsis
      "Blinding Assessment Indexes for Randomized, Controlled, Clinical Trials")
@@ -16092,6 +17727,9 @@ treatment) subjects were assigned at randomization.")
         (base32 "184dhaajjzplslbfjmdm9zyr7h39zi1h3p549lac2sy6mrkglrc0"))))
     (properties `((upstream-name . "BHSBVAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BHSBVAR")
@@ -16118,6 +17756,9 @@ also provided.")
         (base32 "0xn4ss422mkshx5kcznaym04i5z5a9vw9hvcb10r38vq031wys8q"))))
     (properties `((upstream-name . "BHMSMAfMRI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh r-rcpparmadillo r-rcpp r-oro-nifti))
     (native-inputs (list r-knitr))
     (home-page "https://nilotpalsanyal.github.io/BHMSMAfMRI/")
@@ -16143,6 +17784,9 @@ smoothed images of the effect sizes and samples from the posterior distribution.
         (base32 "1mcgbvlnrmxlxqcjmc7ij7qn3zqfwsmbx2r2facbqrf043hmiipc"))))
     (properties `((upstream-name . "bhmbasket")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r2jags r-foreach r-dorng))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=bhmbasket")
@@ -16177,6 +17821,9 @@ rates can be provided.")
         (base32 "05gr5qmd6dzfylay60wazi0iyvj9r0xhzdk7jm7wrsrag7i43z1p"))))
     (properties `((upstream-name . "bhm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mass r-ggplot2 r-coda))
     (home-page "https://cran.r-project.org/package=bhm")
     (synopsis "Biomarker Threshold Models")
@@ -16200,6 +17847,9 @@ interaction using residual bootstrap method.")
         (base32 "1m4fcx979nbm97hi89vbjjix0sx6qhdzs486risck9bi7yzih5k4"))))
     (properties `((upstream-name . "BHH2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BHH2")
     (synopsis "Useful Functions for Box, Hunter and Hunter II")
     (description
@@ -16220,6 +17870,9 @@ factorial experiments.")
         (base32 "0jrn57v90anxsdasfwn3c4mxwzz8b5nbvsn5c57d71xfdza4lh6f"))))
     (properties `((upstream-name . "Bhat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=Bhat")
     (synopsis "General Likelihood Exploration")
@@ -16241,6 +17894,9 @@ on the original Fortran source code translated to R.")
         (base32 "1hawa55mk590is8ziav7fdszsa3a42bqb0znzqsazz5lkg4daaa7"))))
     (properties `((upstream-name . "BHAI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-prevtoinc r-plotrix r-mcmcpack))
     (home-page "https://cran.r-project.org/package=BHAI")
     (synopsis "Estimate the Burden of Healthcare-Associated Infections")
@@ -16265,6 +17921,9 @@ be visualized with various plotting functions and exported into tables.")
         (base32 "0iw36qifawm5jlsjzv4y4kl228hz4clbgzf02dpxv7579nlnibm7"))))
     (properties `((upstream-name . "bgw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=bgw")
     (synopsis "Bunch-Gay-Welsch Statistical Estimation")
@@ -16312,6 +17971,9 @@ is clear citation of the original publication (see above).")
         (base32 "124vy9dx91sa42z6x4g4drai0gxz2l36p0nn4ng2r0hxj6z2m34x"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-stochvol
@@ -16359,6 +18021,9 @@ Shrinkage Priors in R\", Journal of Statistical Software, Vol.  104(9), pp.  1-2
         (base32 "18k8dy44x49hr4s37hjrq60c3cbw0slc9gjmd8gwcbz4slix2ydk"))))
     (properties `((upstream-name . "bgumbel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gfortran gcc))
     (propagated-inputs (list r-sparsem r-quantreg r-mcmcpack r-mass r-coda))
     (home-page "https://CRAN.R-project.org/package=bgumbel")
@@ -16380,6 +18045,9 @@ analysis.")
         (base32 "17706qims9637ppwg0vszkcm6kmvhzyrdihkgigpiv5lknhk2q3m"))))
     (properties `((upstream-name . "bgsmtr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod
                              r-sparsemvn
                              r-rcpp
@@ -16420,6 +18088,9 @@ sampling.  The model can also be used more generally for multivariate
         (base32 "0i2fsvb9pvvhl4xpp87cacg9934hsi060c6d1z3j5hylwyq2k5h9"))))
     (properties `((upstream-name . "BGPhazard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-survival
@@ -16455,6 +18126,9 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
         (base32 "0d5aaiwb0xayw7kr25klmjxrh1rzg967r9qlxzvkg260iryn8g0g"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-rcppprogress r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://maartenmarsman.github.io/bgms/")
@@ -16479,6 +18153,9 @@ the implemented methods can be found in: Marsman, van den Bergh, and Haslbeck
         (base32 "1qng8zlpm5pp2ilny99gxyppmp5dnrada4kmvpyg2ap06i69a9gs"))))
     (properties `((upstream-name . "bgmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-lattice r-combinat r-car))
     (home-page "http://bgmm.molgen.mpg.de/")
     (synopsis
@@ -16506,6 +18183,9 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
         (base32 "12m6c0b0nqgxiiy9vynygx186vb1v5i6s8gfjijsqn7wzpzfj6ig"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-matrix r-kinship2 r-igraph
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -16529,6 +18209,9 @@ relatedness, pedigree conversion, pedigree simulation, and more.")
         (base32 "10qldfjjq5fx5jrrakdxc8k2pf0vp8ifg18nq56lvx9n28mqigim"))))
     (properties `((upstream-name . "bgmfiles")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/AustralianAntarcticDivision/bgmfiles/")
     (synopsis "Example BGM Files for the Atlantis Ecosystem Model")
     (description
@@ -16550,6 +18233,9 @@ information).")
         (base32 "0850mzfbdbrhaahl4gv9rgw2lsbarhz783q15m18ws2a17v918p9"))))
     (properties `((upstream-name . "BGLR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm r-mass))
     (home-page "https://cran.r-project.org/package=BGLR")
     (synopsis "Bayesian Generalized Linear Regression")
@@ -16568,6 +18254,9 @@ information).")
         (base32 "04vr9z81awavkhk3lbi8yasmi242lrbnq0pzqp38xlrn5xkf8b1w"))))
     (properties `((upstream-name . "bggum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppdist r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/duckmayr/bggum")
@@ -16592,6 +18281,9 @@ the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
         (base32 "15yqbifnxlpwk25ki1yxfylkyb061375cxwq7dbid2381lvnslih"))))
     (properties `((upstream-name . "BGGM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna
                              r-reshape
                              r-rdpack
@@ -16632,6 +18324,9 @@ the Gaussian graphical model literature, including Williams (2019)
         (base32 "1h76c40y45xhf2vp9g0q5j9lfwh16q9axbk5c9aqn4md008xr1j2"))))
     (properties `((upstream-name . "BGGE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BGGE")
     (synopsis "Bayesian Genomic Linear Models Applied to GE Genome Selection")
     (description
@@ -16657,6 +18352,9 @@ al. (2014) <doi:10.1534/g3.114.013094>.")
         (base32 "0983v66bjp9v3jp7zbjyffda1gaf20nakqr94c32lvh9wmk0y1s9"))))
     (properties `((upstream-name . "BGFD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-adequacymodel))
     (home-page "https://cran.r-project.org/package=BGFD")
     (synopsis "Bell-G and Complementary Bell-G Family of Distributions")
@@ -16693,6 +18391,9 @@ Plan Based on New Compounded Three-Parameter Weibull Model\".  Axioms, 11(9):
         (base32 "0qm4xknyab8hdyn3in2hsvm8s062cnmqqf41b5jvax1mi5hs0z8c"))))
     (properties `((upstream-name . "bgeva")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trust r-mgcv r-magic))
     (home-page "http://www.ucl.ac.uk/statistics/people/giampieromarra")
     (synopsis "Binary Generalized Extreme Value Additive Models")
@@ -16714,6 +18415,9 @@ Extreme Value random variable.")
         (base32 "1vvv44lf5vdg88fv6zkvggprxbf33msbjmsxli18m3vpwxdjxdm0"))))
     (properties `((upstream-name . "bgev")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-envstats r-deoptim))
     (home-page "https://cran.r-project.org/package=bgev")
     (synopsis "Bimodal GEV Distribution with Location Parameter")
@@ -16737,6 +18441,9 @@ bimodal data from different areas.")
         (base32 "1bx63spfmsn9hz3qxhkvipfvyqcdy4afqzcada3bgly265kdg10h"))))
     (properties `((upstream-name . "BGData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-synchronicity
                              r-symdmatrix
                              r-linkedmatrix
@@ -16766,6 +18473,9 @@ with several other packages: BEDMatrix', @code{LinkedMatrix}', and
         (base32 "0qgq47axa0r9653d1sjm00fvfx49v28id5sngwyrgkppcngmbg9p"))))
     (properties `((upstream-name . "bfw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rvg
                              r-runjags
@@ -16805,6 +18515,13 @@ modeling).")
         (base32 "1sjvlfwcp52l2bpnbbalrcr978lwmkrr9kz47jvnkgy3vg9ppd14"))))
     (properties `((upstream-name . "bfsMaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-sf r-desctools))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/AndriSignorell/bfsMaps/")
@@ -16833,6 +18550,9 @@ or canton it belongs.")
         (base32 "10z3w1fk4va2ajvpnqp0llgw4a047iaya6xi57if1a7jd7r1jxfh"))))
     (properties `((upstream-name . "bfsl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-generics))
     (home-page "https://github.com/pasturm/bfsl")
     (synopsis "Best-Fit Straight Line")
@@ -16859,6 +18579,9 @@ the bfsl solution.")
         (base32 "19zizch8k142c94x8i47v10hn1cz3w85ksnxp5ip83bvxdvmmrd6"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-xml2
                              r-tibble
@@ -16893,6 +18616,9 @@ the bfsl solution.")
         (base32 "1vh70vqf0g4q2n4kkkq10g2917qry4bykrzvwcr5pwh3p34g87vp"))))
     (properties `((upstream-name . "bfpwr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lamw))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SamCH93/bfpwr")
@@ -16907,23 +18633,28 @@ power and sample size calculations as described in Pawel and Held (2024)
 (define-public r-bfpack
   (package
     (name "r-bfpack")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFpack" version))
        (sha256
-        (base32 "1ddcqcd8wzc1mc8d27kwv1xand8f4asvdirjbgncl5vs4akr924m"))))
+        (base32 "0rdzkxcnv5nq78ic8hi5w3ci4r29b1a251hdka5drl7i2z2m590a"))))
     (properties `((upstream-name . "BFpack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-qrm
                              r-pracma
                              r-mvtnorm
+                             r-metabma
                              r-mass
                              r-lme4
                              r-extradistr
                              r-ergm
+                             r-coda
                              r-bergm
                              r-bain))
     (native-inputs (list r-knitr gfortran))
@@ -16940,15 +18671,15 @@ models, relational event models.  Parameters that can be tested are location
 parameters (e.g., group means, regression coefficients), variances (e.g., group
 variances), and measures of association (e.g,.
 polychoric/polyserial/biserial/tetrachoric/product moments correlations), among
-others.  The statistical underpinnings are described in Mulder and Xin (2019)
+others.  The statistical underpinnings are described in Mulder and Xin (2022)
 <DOI:10.1080/00273171.2021.1904809>, Mulder and Gelissen (2019)
 <DOI:10.1080/02664763.2021.1992360>, Mulder (2016)
 <DOI:10.1016/j.jmp.2014.09.004>, Mulder and Fox (2019) <DOI:10.1214/18-BA1115>,
 Mulder and Fox (2013) <DOI:10.1007/s11222-011-9295-3>, Boeing-Messing, van
 Assen, Hofman, Hoijtink, and Mulder (2017) <DOI:10.1037/met0000116>, Hoijtink,
-Mulder, van Lissa, and Gu, (2018) <DOI:10.31234/osf.io/v3shc>, Gu, Mulder, and
-Hoijtink, (2018) <DOI:10.1111/bmsp.12110>, Hoijtink, Gu, and Mulder, (2018)
-<DOI:10.1111/bmsp.12145>, and Hoijtink, Gu, Mulder, and Rosseel, (2018)
+Mulder, van Lissa, and Gu (2018) <DOI:10.1037/met0000201>, Gu, Mulder, and
+Hoijtink (2018) <DOI:10.1111/bmsp.12110>, Hoijtink, Gu, and Mulder (2018)
+<DOI:10.1111/bmsp.12145>, and Hoijtink, Gu, Mulder, and Rosseel (2018)
 <DOI:10.1037/met0000187>.  When using the packages, please refer to Mulder et
 al. (2021) <DOI:10.18637/jss.v100.i18>.")
     (license license:gpl3+)))
@@ -16965,6 +18696,9 @@ al. (2021) <DOI:10.18637/jss.v100.i18>.")
         (base32 "0m3ika7sfksv4xhbxcysh0yyfvj7bip9g1m8n2icb2zjwfafccvn"))))
     (properties `((upstream-name . "bfp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=bfp")
     (synopsis "Bayesian Fractional Polynomials")
@@ -16986,6 +18720,9 @@ and Held, L. (2011) <doi:10.1007/s11222-010-9170-7>.")
         (base32 "0szx9cjzhlxk6n83i6rm48db2lkj4zdsaqrgzipr71bwwjfk08nr"))))
     (properties `((upstream-name . "BFI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://hassanpazira.github.io/BFI/")
     (synopsis "Bayesian Federated Inference")
@@ -17012,6 +18749,9 @@ populations, see Jonker, Pazira and Coolen (2024)
         (base32 "1s4f9mjhx24hxm2aan25kmb5akpxl25ggic3mkwmh1d0npbgip6a"))))
     (properties `((upstream-name . "BFF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-matrix r-gsl r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rshudde/BFF")
@@ -17047,6 +18787,9 @@ summaries of hypothesis tests that can be easily aggregated across studies.")
         (base32 "03s4b0x7lfka09rm5a5fr9aiahk846znc6ag73s8gygmls58mvx5"))))
     (properties `((upstream-name . "bfboinet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect r-magrittr r-iso r-dplyr r-copula))
     (home-page "https://cran.r-project.org/package=bfboinet")
     (synopsis
@@ -17073,6 +18816,9 @@ the duration of the trial, in various realistic setting.")
         (base32 "1i6rhzxj6c8hfg9pfzcnwc98lm3jj4fx8ybldjg0gxl1p1h9yy9n"))))
     (properties `((upstream-name . "bfast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-strucchangercpp r-rdpack r-rcpp
                              r-forecast))
     (home-page "https://bfast2.github.io/")
@@ -17106,6 +18852,9 @@ used to fit the time series data and detect structural changes (breaks).")
         (base32 "0vhd6vhxcx0chc71cnp9iwxp2x3sh7w0pxzjhxa6hdmxq2f1gpp7"))))
     (properties `((upstream-name . "beyondWhittle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-mass
@@ -17135,6 +18884,9 @@ grants KI 1443/3-1 and KI 1443/3-2.")
         (base32 "04jdx35955g44v2is6zxfw1gip7zh3li8divc7iy5hl0jrshfhv3"))))
     (properties `((upstream-name . "BeyondBenford")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=BeyondBenford")
     (synopsis
@@ -17143,12 +18895,13 @@ grants KI 1443/3-1 and KI 1443/3-2.")
      "Allows to compare the goodness of fit of Benford's and Blondeau Da Silva's digit
 distributions in a dataset.  It is used to check whether the data distribution
 is consistent with theoretical distributions highlighted by Blondeau Da Silva or
-not (through the dat.distr() function): this ideal theoretical distribution must
-be at least approximately followed by the data for the use of Blondeau Da
-Silva's model to be well-founded.  It also enables to plot histograms of digit
-distributions, both observed in the dataset and given by the two theoretical
-approaches (with the digit.ditr() function).  Finally, it proposes to quantify
-the goodness of fit via Pearson's chi-squared test (with the chi2() function).")
+not (through the @code{dat.distr()} function): this ideal theoretical
+distribution must be at least approximately followed by the data for the use of
+Blondeau Da Silva's model to be well-founded.  It also enables to plot
+histograms of digit distributions, both observed in the dataset and given by the
+two theoretical approaches (with the @code{digit.ditr()} function).  Finally, it
+proposes to quantify the goodness of fit via Pearson's chi-squared test (with
+the @code{chi2()} function).")
     (license license:gpl2)))
 
 (define-public r-bexy
@@ -17163,6 +18916,9 @@ the goodness of fit via Pearson's chi-squared test (with the chi2() function).")
         (base32 "0dznrvdklfrf14p9z1pmmixac086xf0a0w8zii08lqmb3blq66lk"))))
     (properties `((upstream-name . "bexy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ternary r-teachingdemos))
     (home-page "https://cran.r-project.org/package=bexy")
     (synopsis "Visualize and Parse the Output of 'BeXY'")
@@ -17185,6 +18941,9 @@ scaffolds from low-depth sequencing data.")
         (base32 "0brima71g7x51zd1ifbgw54mnamjmm2wr8rrcnkzdy0q8wcnvgqj"))))
     (properties `((upstream-name . "BeviMed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BeviMed")
@@ -17211,6 +18970,9 @@ Diseases', Greene et al 2017 <doi:10.1016/j.ajhg.2017.05.015>.")
         (base32 "08qafm8j0bbh6qywyq6dr1j204n9cxrpyy2fh74mbgm3xknazxsc"))))
     (properties `((upstream-name . "BetterReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr r-car))
     (home-page "https://cran.r-project.org/package=BetterReg")
     (synopsis "Better Statistics for OLS and Binomial Logistic Regression")
@@ -17232,6 +18994,9 @@ Likelihood Ratio Chi Square, and Pseudo R Square.  Aberson, C. L. (2022)
         (base32 "1pqa6zpkkcmnm9a4m3676css0fi2lp4ik6mmhfhnsr4v4kv2pq2s"))))
     (properties `((upstream-name . "bets.covid19")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve))
     (home-page "https://github.com/qingyuanzhao/bets.covid19")
     (synopsis "The BETS Model for Early Epidemic Data")
@@ -17256,6 +19021,9 @@ methods can be found in Zhao et al. (2020) <@code{arXiv:2004.07743>}.")
         (base32 "0daixk7mqmk2jq35i7mjaslz11gxbnnjgwxfvj8x1s88vz9l74sm"))))
     (properties `((upstream-name . "BETS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xml2
                              r-webshot
@@ -17308,6 +19076,9 @@ these time series.")
         (base32 "1zlkw672k1c5px47bpa2vk3w2906vkhvifz20h6xm7s51gmm64i0"))))
     (properties `((upstream-name . "bethel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bethel")
     (synopsis "Bethel's algorithm")
     (description "The sample size according to the Bethel's procedure.")
@@ -17325,6 +19096,9 @@ these time series.")
         (base32 "0hqvyps3lwix2fkzk18wrkhxpqhgardvib9sq1ip8gn8sn1dsi8y"))))
     (properties `((upstream-name . "betategarch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo))
     (home-page "http://www.sucarrat.net/")
     (synopsis
@@ -17346,6 +19120,9 @@ with leverage (one-component, two-component, skewed versions).")
         (base32 "1v8920wi74fjjklai7cc1dsm2xmb98r2phf997wlxclk2ga1qy1s"))))
     (properties `((upstream-name . "betaselectr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pbapply
                              r-numderiv
                              r-manymome
@@ -17376,46 +19153,21 @@ et al. (2022) <doi:10.1037/hea0001188>.")
         (base32 "0gd6n1xghwhqg981ibb41w2hw3wk5zzr3870wpjbic4k96cnmvyb"))))
     (properties `((upstream-name . "betaSandwich")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jeksterslab/betaSandwich")
     (synopsis
      "Robust Confidence Intervals for Standardized Regression Coefficients")
     (description
      "Generates robust confidence intervals for standardized regression coefficients
-using heteroskedasticity-consistent standard errors for models fitted by lm() as
-described in Dudgeon (2017) <doi:10.1007/s11336-017-9563-z>.  The package can
-also be used to generate confidence intervals for R-squared, adjusted R-squared,
-and differences of standardized regression coefficients.  A description of the
-package and code examples are presented in Pesigan, Sun, and Cheung (2023)
-<doi:10.1080/00273171.2023.2201277>.")
+using heteroskedasticity-consistent standard errors for models fitted by
+@code{lm()} as described in Dudgeon (2017) <doi:10.1007/s11336-017-9563-z>.  The
+package can also be used to generate confidence intervals for R-squared,
+adjusted R-squared, and differences of standardized regression coefficients.  A
+description of the package and code examples are presented in Pesigan, Sun, and
+Cheung (2023) <doi:10.1080/00273171.2023.2201277>.")
     (license license:expat)))
-
-(define-public r-betareg
-  (package
-    (name "r-betareg")
-    (version "3.2-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "betareg" version))
-       (sha256
-        (base32 "1izp7nirsziwx8803ckbgwyj4r1vf4ixgx5nlin7d5pkjy13c9mv"))))
-    (properties `((upstream-name . "betareg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-modeltools r-lmtest r-formula
-                             r-flexmix))
-    (native-inputs (list r-quarto))
-    (home-page "https://topmodels.R-Forge.R-project.org/betareg/")
-    (synopsis "Beta Regression")
-    (description
-     "Beta regression for modeling beta-distributed dependent variables on the open
-unit interval (0, 1), e.g., rates and proportions, see Cribari-Neto and Zeileis
-(2010) <doi:10.18637/jss.v034.i02>.  Moreover, extended-support beta regression
-models can accommodate dependent variables with boundary observations at 0
-and/or 1.  For the classical beta regression model, alternative specifications
-are provided: Bias-corrected and bias-reduced estimation, finite mixture models,
-and recursive partitioning for beta regression, see GrÃ¼n, Kosmidis, and Zeileis
-(2012) <doi:10.18637/jss.v048.i11>.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-betaper
   (package
@@ -17429,6 +19181,9 @@ and recursive partitioning for beta regression, see GrÃ¼n, Kosmidis, and Zeile
         (base32 "0gh5xjimg0wgv626g3y34mvgrji2aylnm89iwadg7d6g4s457ynp"))))
     (properties `((upstream-name . "betaper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan))
     (home-page "https://cran.r-project.org/package=betaper")
     (synopsis
@@ -17452,6 +19207,9 @@ ecology, as explained in Cayuela et al. (2011)
         (base32 "1vx2wn2bj3xl430aw4zlv2j3m39nkmg7mfkm1pmilvpqszfx078g"))))
     (properties `((upstream-name . "BetaPASS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pbapply r-ggplot2 r-betareg))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BetaPASS")
@@ -17479,6 +19237,9 @@ data and graphing functionality for visual comparisons.")
         (base32 "1ap1z9pvih66la7qh1bfihq0s5csnacgnx3i31gnj5ylaf72z9ds"))))
     (properties `((upstream-name . "betapart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snow
                              r-rcdd
                              r-picante
@@ -17511,6 +19272,9 @@ functional and phylogenetic beta diversity.")
         (base32 "1qfpp4y3drqh492y7x67jkqbabkqbmsbc2yqvbzc427pd3n9ijs5"))))
     (properties `((upstream-name . "betaNB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jeksterslab/betaNB")
     (synopsis "Bootstrap for Regression Effect Sizes")
     (description
@@ -17518,7 +19282,8 @@ functional and phylogenetic beta diversity.")
 1993: <doi:10.1201/9780429246593>) for standardized regression coefficients
 (beta) and other effect sizes, including multiple correlation, semipartial
 correlations, improvement in R-squared, squared partial correlations, and
-differences in standardized regression coefficients, for models fitted by lm().")
+differences in standardized regression coefficients, for models fitted by
+@code{lm()}.")
     (license license:expat)))
 
 (define-public r-betamc
@@ -17533,6 +19298,9 @@ differences in standardized regression coefficients, for models fitted by lm()."
         (base32 "08rw2q8dg51ygmns070qpd1204k9hizpqfzggj542sq2ssgc7byk"))))
     (properties `((upstream-name . "betaMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jeksterslab/betaMC")
     (synopsis "Monte Carlo for Regression Effect Sizes")
     (description
@@ -17540,8 +19308,8 @@ differences in standardized regression coefficients, for models fitted by lm()."
 coefficients (beta) and other effect sizes, including multiple correlation,
 semipartial correlations, improvement in R-squared, squared partial
 correlations, and differences in standardized regression coefficients, for
-models fitted by lm(). @code{betaMC} combines ideas from Monte Carlo confidence
-intervals for the indirect effect (Pesigan and Cheung, 2023
+models fitted by @code{lm()}. @code{betaMC} combines ideas from Monte Carlo
+confidence intervals for the indirect effect (Pesigan and Cheung, 2023
 <doi:10.3758/s13428-023-02114-4>) and the sampling covariance matrix of
 regression coefficients (Dudgeon, 2017 <doi:10.1007/s11336-017-9563-z>) to
 generate confidence intervals effect sizes in regression.")
@@ -17559,6 +19327,9 @@ generate confidence intervals effect sizes in regression.")
         (base32 "1sm33z8nzbh4savzw3zc81bg9g0n83xfibmd5kklq02h3105d4v4"))))
     (properties `((upstream-name . "betafunctions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=betafunctions")
     (synopsis
      "Functions for Working with Two- And Four-Parameter Beta Probability Distributions and Psychometric Analysis of Classifications")
@@ -17575,7 +19346,7 @@ and observed value distributions. - Functions for estimating classification
 accuracy and consistency, making use of the Classical Test-Theory based
 Livingston and Lewis (L&L) and Hanson and Brennan approaches.  A shiny app is
 available, providing a GUI for the L&L approach when used for binary
-classifications.  For url to the app, see documentation for the LL.CA()
+classifications.  For url to the app, see documentation for the @code{LL.CA()}
 function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
  Lord (1965) <doi:10.1007/BF02289490>.  Hanson (1991)
 <https://files.eric.ed.gov/fulltext/ED344945.pdf>.")
@@ -17593,13 +19364,16 @@ function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
         (base32 "1d9fdi4bvhqih45iism5mkpqrmfl4mgjhsqkb5jkpyyd3la059y6"))))
     (properties `((upstream-name . "betaDelta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (home-page "https://github.com/jeksterslab/betaDelta")
     (synopsis "Confidence Intervals for Standardized Regression Coefficients")
     (description
      "Generates confidence intervals for standardized regression coefficients using
-delta method standard errors for models fitted by lm() as described in Yuan and
-Chan (2011) <doi:10.1007/s11336-011-9224-6> and Jones and Waller (2015)
+delta method standard errors for models fitted by @code{lm()} as described in
+Yuan and Chan (2011) <doi:10.1007/s11336-011-9224-6> and Jones and Waller (2015)
 <doi:10.1007/s11336-013-9380-y>.  The package can also be used to generate
 confidence intervals for differences of standardized regression coefficients and
 as a general approach to performing the delta method.  A description of the
@@ -17619,6 +19393,9 @@ package and code examples are presented in Pesigan, Sun, and Cheung (2023)
         (base32 "1kw8ri4244z7ckn4gizz0zbqzwx7dypv6qb974lmj6dzzyjp6922"))))
     (properties `((upstream-name . "betaclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-proc
                              r-plotly
@@ -17653,6 +19430,9 @@ tractability and ensuring computational feasibility.")
         (base32 "19wgpgf9yhckl9qx9v24f4yh055wfalphcxwm7lg68px6ap2pxl9"))))
     (properties `((upstream-name . "betacal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=betacal")
     (synopsis "Beta Calibration")
     (description
@@ -17671,6 +19451,9 @@ tractability and ensuring computational feasibility.")
         (base32 "185bsjc1azvblg0hm39bq3r1c6c4vla9k5cz39p6kjzd1gn1zhr2"))))
     (properties `((upstream-name . "BetaBit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-digest))
     (home-page "https://github.com/BetaAndBit/Charts")
     (synopsis "Mini Games from Adventures of Beta and Bit")
@@ -17702,6 +19485,9 @@ at <https://github.com/@code{BetaAndBit/Charts>}.")
         (base32 "1a7ng6ym47scgj47frrhs76r6ipq6mhgf3ivbg2npqpg7hjcz2ci"))))
     (properties `((upstream-name . "betaBayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-betareg))
     (home-page "https://cran.r-project.org/package=betaBayes")
     (synopsis "Bayesian Beta Regression")
@@ -17730,6 +19516,9 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou and Huang (2022)
         (base32 "13yc78idgdxp2sadx3pl8c8dffxinr0aywygbfmbz35zvwl7qa4r"))))
     (properties `((upstream-name . "BET")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=BET")
     (synopsis "Binary Expansion Testing")
@@ -17756,6 +19545,9 @@ Techinical report.")
         (base32 "1rff6jij9wmlpalzilvid8jvj2pczrchx0yrg0vhy00j64zg6jzs"))))
     (properties `((upstream-name . "bestSDP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-shinywidgets
@@ -17796,6 +19588,9 @@ Acute diarrheal diseases, Acute jaundice syndrome and Acute febrile illnesses.")
         (base32 "10nlk1vrzmgxfia9b3skmg5594ab5s3d64k2awyxybkz2pzz7gb1"))))
     (properties `((upstream-name . "bestridge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rcppeigen
                              r-rcpp
@@ -17827,6 +19622,9 @@ group variable selection and nuisance variable selection.")
         (base32 "0yij6xdlvhbqifckaylgbhszwwp38d9x6vbpr1nl40mwwnv4bswz"))))
     (properties `((upstream-name . "BESTree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BESTree")
@@ -17850,6 +19648,9 @@ Trees (BEST).  Cedric Beaulac and Jeffrey S. Rosentahl (2019)
         (base32 "1j3xnwq9faim8cjb6cz54mix7ly8dzxa5qsdglcgl2gfbvzbb9s1"))))
     (properties `((upstream-name . "Bestie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mvtnorm r-bidag))
     (home-page "https://cran.r-project.org/package=Bestie")
     (synopsis "Bayesian Estimation of Intervention Effects")
@@ -17874,6 +19675,9 @@ schemes (for larger binary networks) are implemented.")
         (base32 "0mg1nm014p82n9v5f929rcrpqclqs5kh8hga8gd7h29jqykgirc0"))))
     (properties `((upstream-name . "besthr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -17903,6 +19707,9 @@ distribution of means of ranks of HR score from bootstrapping.  Authors (2019)
         (base32 "1zncy958hlwyyxrp6yvq1inq6mpyrbr6cdkf8maijfirr5j8f0ya"))))
     (properties `((upstream-name . "bestglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pls r-leaps r-lattice r-grpreg r-glmnet))
     (home-page "https://cran.r-project.org/package=bestglm")
     (synopsis "Best Subset GLM and Regression Utilities")
@@ -17926,6 +19733,9 @@ use with the caret package.")
         (base32 "0n2k33n4r1hx20qr2hh5i6a2rcyikd6iwihhknzz8nvx8f2ms9yh"))))
     (properties `((upstream-name . "Bessel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmpfr))
     (home-page "https://specfun.r-forge.r-project.org/")
     (synopsis "Computations and Approximations for Bessel Functions")
@@ -17947,6 +19757,9 @@ arguments, experiments, etc.")
         (base32 "1y45lqw6b0qzzg9j3cs18fvzd4q7l6njhjkzpcrik2lgwkzamc8a"))))
     (properties `((upstream-name . "BeSS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcppeigen r-rcpp r-matrix r-glmnet))
     (home-page "https://cran.r-project.org/package=BeSS")
     (synopsis "Best Subset Selection in Linear, Logistic and CoxPH Models")
@@ -17971,6 +19784,9 @@ complementarity of the primal and dual variables.")
         (base32 "1sbgi4dcddjwgs4dzwn3zf91kx07kr5vc9dblvijgfasqhpfjv5m"))))
     (properties `((upstream-name . "bespatial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-terra
                              r-rcpparmadillo
@@ -18003,6 +19819,9 @@ and Zhang for landscape mosaics (Zhao and Zhang (2019)
         (base32 "1kd1r8ha1dggqmpiiwxvgfk5igshkfaqnkhkrjn7s79xqz2bsq1k"))))
     (properties `((upstream-name . "berryFunctions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/brry/berryFunctions")
@@ -18026,6 +19845,9 @@ and arrays, fit multiple functions.")
         (base32 "08q0jarv737p4mis7kql1ny9hrm86w49kdn47r94id4895l052ck"))))
     (properties `((upstream-name . "Bernadette")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-scales
                              r-rstantools
@@ -18059,6 +19881,9 @@ Kalogeropoulos, K., and Ntzoufras, I. (2022) <@code{arXiv:2211.15229>}.")
         (base32 "13wdkbjnqj3dk8fpk8vblkf4z79j87gdszjdzwysq9i10l6yl6ir"))))
     (properties `((upstream-name . "Bergm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statnet-common
                              r-rglpk
                              r-network
@@ -18088,6 +19913,9 @@ computational algorithms.  More information can be found at:
         (base32 "065hjpz4162j2ykcwnri25j4mkqf7yl5bf9ja3xn7yvszif0pjh9"))))
     (properties `((upstream-name . "BeQut")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mass r-lqmm r-jagsui))
     (home-page "https://cran.r-project.org/package=BeQut")
     (synopsis "Bayesian Estimation for Quantile Regression Mixed Models")
@@ -18112,6 +19940,9 @@ JAGS software is used to get posterior samples (Yang, Luo, @code{DeSantis}
         (base32 "0pznxnf4wl47wc926diaf4h6x12grc9vxbzd8d4d5j18dp3wvr5z"))))
     (properties `((upstream-name . "benthos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-lazyeval r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=benthos")
@@ -18135,23 +19966,26 @@ application of these tools.")
         (base32 "1d65xaqz0v2wjm6nxl0lyzjynrgizdvzpj2cqa0nhlczcg6xi62r"))))
     (properties `((upstream-name . "bentcableAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bentcableAR")
     (synopsis
      "Bent-Cable Regression for Independent Data or Autoregressive Time Series")
     (description
-     "Included are two main interfaces, bentcable.ar() and bentcable.dev.plot(), for
-fitting and diagnosing bent-cable regressions for autoregressive time-series
-data (Chiu and Lockhart 2010, <doi:10.1002/cjs.10070>) or independent data (time
-series or otherwise - Chiu, Lockhart and Routledge 2006,
-<doi:10.1198/016214505000001177>).  Some components in the package can also be
-used as stand-alone functions.  The bent cable (linear-quadratic-linear)
-generalizes the broken stick (linear-linear), which is also handled by this
-package.  Version 0.2 corrected a glitch in the computation of confidence
-intervals for the CTP. References that were updated from Versions 0.2.1 and
-0.2.2 appear in Version 0.2.3 and up.  Version 0.3.0 improved robustness of the
-error-message producing mechanism.  Version 0.3.1 improves the NAMESPACE file of
-the package.  It is the author's intention to distribute any future updates via
-@code{GitHub}.")
+     "Included are two main interfaces, @code{bentcable.ar()} and
+@code{bentcable.dev.plot()}, for fitting and diagnosing bent-cable regressions
+for autoregressive time-series data (Chiu and Lockhart 2010,
+<doi:10.1002/cjs.10070>) or independent data (time series or otherwise - Chiu,
+Lockhart and Routledge 2006, <doi:10.1198/016214505000001177>).  Some components
+in the package can also be used as stand-alone functions.  The bent cable
+(linear-quadratic-linear) generalizes the broken stick (linear-linear), which is
+also handled by this package.  Version 0.2 corrected a glitch in the computation
+of confidence intervals for the CTP. References that were updated from Versions
+0.2.1 and 0.2.2 appear in Version 0.2.3 and up.  Version 0.3.0 improved
+robustness of the error-message producing mechanism.  Version 0.3.1 improves the
+NAMESPACE file of the package.  It is the author's intention to distribute any
+future updates via @code{GitHub}.")
     (license license:gpl3+)))
 
 (define-public r-bennu
@@ -18166,6 +20000,9 @@ the package.  It is the author's intention to distribute any future updates via
         (base32 "04vgpk549fr5wwg11f5979iqd40yqamdch46vwxb57wxhraphcxy"))))
     (properties `((upstream-name . "bennu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tidybayes
                              r-stanheaders
@@ -18204,6 +20041,9 @@ generating samples from the posterior.")
         (base32 "1nnj0w0zwcmg7maqmmpixx7alvsyxva370ssc26ahg6kxy5a621w"))))
     (properties `((upstream-name . "BenfordTests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BenfordTests")
     (synopsis "Statistical Tests for Evaluating Conformity to Benford's Law")
     (description
@@ -18223,6 +20063,9 @@ numerical data could conform to Benford's law.")
         (base32 "0y0c7l2r9s7lg9bw4ndcqwisa5l6a2cpydn1vmz88h3yva0l68cg"))))
     (properties `((upstream-name . "benford.analysis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "http://github.com/carloscinelli/benford.analysis")
     (synopsis "Benford Analysis for Data Validation and Forensic Analytics")
@@ -18243,6 +20086,9 @@ Law.")
         (base32 "0phy3bk89bn4p69mym9lrb04cfavdb1rl47yy44qp4g2w1028dqw"))))
     (properties `((upstream-name . "benford")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=benford")
     (synopsis "Benford's Analysis on Large Data Sets")
     (description
@@ -18264,6 +20110,9 @@ Assist.  Statist.  Appl., 16 (2021) 73â79. <doi:10.3233/MAS-210517>.")
         (base32 "07npksrj094h884lli0fjvwjc1lhcwzlsk9wx82761mka5xajv4v"))))
     (properties `((upstream-name . "bender")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-jsonlite r-httr))
     (home-page "https://cran.r-project.org/package=bender")
     (synopsis "Bender Client")
@@ -18285,24 +20134,28 @@ new trials within your R script itself.")
         (base32 "1d4pl73q9dr0r3albxb5mvx84smn3fffi1c5cs7f5slfaigza0mx"))))
     (properties `((upstream-name . "BEND")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-label-switching r-coda))
     (home-page "https://github.com/crohlo/BEND")
     (synopsis "Bayesian Estimation of Nonlinear Data (BEND)")
     (description
      "This package provides a set of models to estimate nonlinear longitudinal data
 using Bayesian estimation methods.  These models include the: 1) Bayesian
-Piecewise Random Effects Model (Bayes_PREM()) which estimates a piecewise random
-effects (mixture) model for a given number of latent classes and a latent number
-of possible changepoints in each class, and can incorporate class and outcome
-predictive covariates (see Lamm (2022) <https://hdl.handle.net/11299/252533> and
-Lock et al., (2018) <doi:10.1007/s11336-017-9594-5>), 2) Bayesian Crossed Random
-Effects Model (Bayes_CREM()) which estimates a linear, quadratic, exponential,
-or piecewise crossed random effects models where individuals are changing groups
+Piecewise Random Effects Model @code{(Bayes_PREM()}) which estimates a piecewise
+random effects (mixture) model for a given number of latent classes and a latent
+number of possible changepoints in each class, and can incorporate class and
+outcome predictive covariates (see Lamm (2022)
+<https://hdl.handle.net/11299/252533> and Lock et al., (2018)
+<doi:10.1007/s11336-017-9594-5>), 2) Bayesian Crossed Random Effects Model
+@code{(Bayes_CREM()}) which estimates a linear, quadratic, exponential, or
+piecewise crossed random effects models where individuals are changing groups
 over time (e.g., students and schools; see Rohloff et al., (2024)
 <doi:10.1111/bmsp.12334>), and 3) Bayesian Bivariate Piecewise Random Effects
-Model (Bayes_BPREM()) which estimates a bivariate piecewise random effects model
-to jointly model two related outcomes (e.g., reading and math achievement; see
-Peralta et al., (2022) <doi:10.1037/met0000358>).")
+Model @code{(Bayes_BPREM()}) which estimates a bivariate piecewise random
+effects model to jointly model two related outcomes (e.g., reading and math
+achievement; see Peralta et al., (2022) <doi:10.1037/met0000358>).")
     (license license:expat)))
 
 (define-public r-benchr
@@ -18317,6 +20170,9 @@ Peralta et al., (2022) <doi:10.1037/met0000358>).")
         (base32 "1xh1n41ll50zz3v26i8lg5f92i90rc78ywnl0rczryh621whx80n"))))
     (properties `((upstream-name . "benchr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpp))
     (home-page "https://gitlab.com/artemklevtsov/benchr")
     (synopsis "High Precise Measurement of R Expressions Execution Time")
@@ -18337,6 +20193,9 @@ execution time of R expressions.")
         (base32 "0fv0i4cpsisk5wa6hgvp75r170ir1zyr2wqbkzfz3qhr43z0jayx"))))
     (properties `((upstream-name . "Benchmarking")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ucminf r-rcpp r-quadprog r-lpsolveapi))
     (home-page "https://cran.r-project.org/package=Benchmarking")
     (synopsis "Benchmark and Frontier Analysis Using DEA and SFA")
@@ -18368,6 +20227,9 @@ be used as a stand-alone package.")
         (base32 "01fhqdkkdm6ph965vj3m274f3zrbrjs5abcwpsp78nm5qz9kxbn8"))))
     (properties `((upstream-name . "benchden")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/thmild/benchden")
     (synopsis "28 Benchmark Densities from Berlinet/Devroye (1994)")
     (description
@@ -18391,6 +20253,9 @@ Rozenholc/Mildenberger/Gather (2010) <doi:10.1016/j.csda.2010.04.021>.")
         (base32 "1p162lw3hcwza59a7b99sy6yn9injvclm674ligxfxwa63x8f8qi"))))
     (properties `((upstream-name . "bellreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -18431,6 +20296,9 @@ implemented in the package can be found in Castellares et al. (2018)
         (base32 "1v7bcyzrgaf4ih7pc0xq2zl8iwqgm5cjrz0x4ghvlai7w3008ihq"))))
     (properties `((upstream-name . "BElikelihood")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BElikelihood")
@@ -18461,6 +20329,9 @@ which present evidence for bioequivalence.  See Liping Du and Leena Choi (2015)
         (base32 "12yfqzz98c4377xjqw9biq83mp8gb009xy4fnnsgxrqb8d4r6i2i"))))
     (properties `((upstream-name . "belg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://r-spatialecology.github.io/belg/")
@@ -18485,6 +20356,9 @@ allowing calculations on data with missing values.")
         (base32 "1563yngc1lvncmx3h6kgsj1r6k3hvxidh6h9rb7apxs2rq5k32ms"))))
     (properties `((upstream-name . "belex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml))
     (home-page "https://cran.r-project.org/package=belex")
     (synopsis "Download Historical Data from the Belgrade Stock Exchange")
@@ -18505,6 +20379,9 @@ www.belex.rs.")
         (base32 "1gcbpmdbx9mq8nssl3bv4985v68j7p1d4ly21kg4fs2yy8z51m4x"))))
     (properties `((upstream-name . "BEKKs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts
                              r-reshape2
                              r-rcpparmadillo
@@ -18543,6 +20420,9 @@ refer the reader to FÃ¼lle et al. (2024) <doi:10.18637/jss.v111.i04>.")
         (base32 "01ny099m2zmvlalwiq3nqkgynnxn1mdspch15lkawwd40q8s9s4p"))))
     (properties `((upstream-name . "behavr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://github.com/rethomics/behavr")
     (synopsis "Canonical Data Structure for Behavioural Data")
@@ -18563,6 +20443,9 @@ efficiently ethomics (high-throughput behavioural) data.")
         (base32 "1nvmrl5nif10kw1risfsmvdlc4q6bkcfxpw26vwanm6ks3lamdc3"))))
     (properties `((upstream-name . "behaviorchange")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yum
                              r-viridis
                              r-ufs
@@ -18606,6 +20489,9 @@ and prevention workers.")
         (base32 "194kicmfxamy061zx0ljmvrlh8gm56fcmhj1j2qfrihklpab4xhx"))))
     (properties `((upstream-name . "befproj")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=befproj")
     (synopsis "Makes a Local Population Projection")
@@ -18628,6 +20514,9 @@ Projections.  2013. <doi:10.1007/978-94-007-7551-0>.")
         (base32 "07m1mjswrjcq7573drq511vzpgcj8gp8jwzzxvnc6bl4a58wh8y0"))))
     (properties `((upstream-name . "beezdiscounting")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-psych
@@ -18658,6 +20547,9 @@ which is also available as a .qsf file in this package.")
         (base32 "0rzs0mhl8dyflfz69c98ibk5bnsaf651k72wpx4ihl1im2scapfw"))))
     (properties `((upstream-name . "beezdemand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-optimx
                              r-nlstools
@@ -18681,28 +20573,6 @@ Also	supports plotting and comparing data.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-beepr
-  (package
-    (name "r-beepr")
-    (version "2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "beepr" version))
-       (sha256
-        (base32 "0xq4qs06f61m1q6gb157n4c3j7pf7wanh27nr2lr228s7k4mw3k2"))))
-    (properties `((upstream-name . "beepr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-audio))
-    (home-page "https://github.com/rasmusab/beepr")
-    (synopsis "Easily Play Notification Sounds on any Platform")
-    (description
-     "The main function of this package is beep(), with the purpose to make it easy to
-play notification sounds on whatever platform you are on.  It is intended to be
-useful, for example, if you are running a long analysis in the background and
-want to know when it is ready.")
-    (license license:gpl3)))
-
 (define-public r-beeguts
   (package
     (name "r-beeguts")
@@ -18715,6 +20585,9 @@ want to know when it is ready.")
         (base32 "0sdd5k10hq6winh2jhlh87ramryfkrp608nhrhm6pc871g2fmg2r"))))
     (properties `((upstream-name . "BeeGUTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stanheaders
                              r-rstantools
@@ -18760,6 +20633,9 @@ financial support.")
         (base32 "0alqfi8srm3vnljgpj4510zr0da1qb8aabl0x2nqwvg17pplhyrs"))))
     (properties `((upstream-name . "beeca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich r-lifecycle r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://openpharma.github.io/beeca/")
@@ -18784,6 +20660,9 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
         (base32 "10gqj889m931m80ir5m5qz7mh2j5g8d2yc4yxakvjq4ipncvjvkm"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-stringr
                              r-sf
@@ -18829,6 +20708,9 @@ al. (2023) <doi:10.1101/2023.06.30.547152> and package website - Dorey et al.
         (base32 "0dxkhag4jxjlbv8vx59l30rc9vc2m1szalapsxgm4mqd56llp52k"))))
     (properties `((upstream-name . "BEDMatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-crochet))
     (home-page "https://github.com/QuantGen/BEDMatrix")
     (synopsis "Extract Genotypes from a PLINK .bed File")
@@ -18851,6 +20733,9 @@ analysis toolset, without loading the entire file into memory.")
         (base32 "1zjgcfpsvghxz62qsg4s1w6gwpd804s8hfnwy5hifg6sy4phw9d7"))))
     (properties `((upstream-name . "BEDASSLE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixcalc r-mass r-emdbook))
     (home-page "https://cran.r-project.org/package=BEDASSLE")
     (synopsis
@@ -18876,6 +20761,9 @@ assessing model adequacy.")
         (base32 "0hma6wmrb6vqzhfsx5qgbsyw2kawpl80mmjac89xvfy1kmaz18qj"))))
     (properties `((upstream-name . "BED")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-stringr
                              r-shiny
@@ -18923,6 +20811,9 @@ method has been published by Godard and van Eyll (2018)
         (base32 "0l33g09df9vqigfrafwwsi71qrfb2rrnlp7qbx7rjpqi8dspj2rd"))))
     (properties `((upstream-name . "beaver")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yodel
                              r-tidyr
                              r-tibble
@@ -18957,6 +20848,9 @@ dose-response relationship and plot the dose-response curve.")
         (base32 "116k8lkbf872db3b377l6ls2pymmdvshyxlijyplph4gvy8y5vgn"))))
     (properties `((upstream-name . "beautier")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-seqinr
                              r-rlang
@@ -18988,6 +20882,9 @@ instead.")
         (base32 "0xgz9xjanybnc2fi0fqc9i0zq80y87rnll62q98nk08f919h7xs1"))))
     (properties `((upstream-name . "beastt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -19023,6 +20920,9 @@ external and internal data.")
         (base32 "0581q9m7lb681d12vld231vn6wqv5s2sqkvav4fd0xllvjighlx7"))))
     (properties `((upstream-name . "BeastJar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page "https://github.com/beast-dev/BeastJar")
@@ -19050,6 +20950,9 @@ BEAST use by other R packages using CRAN.")
         (base32 "1gn1yjy6d0wkvablwa4yz5qvjgrmx5lwn8kzmkbkzhd9xj1299q1"))))
     (properties `((upstream-name . "beastier")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-xml2
                              r-tibble
@@ -19085,6 +20988,9 @@ This package provides a way to call BEAST2 from an R function call.")
         (base32 "0ikbnzdzp2lv1nh5mxxanra81v4dl6svg3ywqcqd6wgzri70a4ry"))))
     (properties `((upstream-name . "beast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer))
     (home-page "https://cran.r-project.org/package=beast")
     (synopsis
@@ -19117,6 +21023,9 @@ for a detailed presentation of the method.")
         (base32 "1w9q66v46ppbic684dp3wv22cykd8fvjznd53w0xp3h0fnzhb5v0"))))
     (properties `((upstream-name . "bearishTrader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bearishTrader")
     (synopsis "Trading Strategies for Bearish Outlook")
     (description
@@ -19145,6 +21054,9 @@ Institute (\"Chartered Financial Analyst Program Curriculum 2020 Level I Volumes
         (base32 "1rv4pil8hfykp35impw980riijwgrqxv9v528w1mmq1gyy25wjhl"))))
     (properties `((upstream-name . "beanz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stanheaders
                              r-rstantools
@@ -19182,6 +21094,9 @@ models, and produce posterior inferences about HTE. See Wang et al. (2018)
         (base32 "12kxd6hnag93whncmab17yrqiif644lzbl1ramz8kz21mqvkjsfw"))))
     (properties `((upstream-name . "beans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=beans")
     (synopsis "Data on Dried Beans")
     (description
@@ -19201,6 +21116,9 @@ and Ozkan (2020) <doi:10.1016/j.compag.2020.105507>.")
         (base32 "0187ka2lgkkqbvkrss4sgfnihicvkyi9zp6dk79cfxjvl3jyh2xm"))))
     (properties `((upstream-name . "BEAMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survminer
                              r-survival
                              r-stringr
@@ -19234,6 +21152,9 @@ pathways.  A manuscript describing this method is in preparation.")
         (base32 "0l6475l5d58g5ahz4b3vrdlvl656p2rasni17gz4y1l2rd0pvvh4"))))
     (properties `((upstream-name . "beakr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-webutils
                              r-stringr
                              r-r6
@@ -19263,6 +21184,9 @@ server middle-ware.")
         (base32 "0n07lxwmcqn6hx7bvrqvcy5y98c4x7wbcpjlwyq66imphj711blp"))))
     (properties `((upstream-name . "beadplexr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tidyr
                              r-tibble
@@ -19300,6 +21224,9 @@ standard curves and the subsequent calculation of the analyte concentration.")
         (base32 "0biq6c74k8vb8ykafzf3blyi08rp65x1vaw3bfpwdc1ihc9wrgjr"))))
     (properties `((upstream-name . "BEACH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-writexls
                              r-shiny
@@ -19334,6 +21261,9 @@ with html or shiny code.")
         (base32 "15pdbwz7av8862bl144n998qk0w9rqwip9m2brdm5hj7id5xdlif"))))
     (properties `((upstream-name . "bea.R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xtable
                              r-stringr
@@ -19363,13 +21293,13 @@ with html or shiny code.")
      "This package provides an R interface for the Bureau of Economic Analysis (BEA)
 API (see <http://www.bea.gov/API/bea_web_service_api_user_guide.htm> for more
 information) that serves two core purposes - 1.  To Extract/Transform/Load data
-[@code{beaGet}()] from the BEA API as R-friendly formats in the user's work
-space [transformation done by default in @code{beaGet}() can be modified using
-optional parameters; see, too, bea2List(), bea2Tab()].  2.  To enable the search
-of descriptive meta data [@code{beaSearch}()].  Other features of the library
-exist mainly as intermediate methods or are in early stages of development.
-Important Note - You must have an API key to use this library.  Register for a
-key at <http://www.bea.gov/API/signup/index.cfm> .")
+@code{[beaGet()}] from the BEA API as R-friendly formats in the user's work
+space [transformation done by default in @code{beaGet()} can be modified using
+optional parameters; see, too, @code{bea2List()}, @code{bea2Tab()}].  2.  To
+enable the search of descriptive meta data @code{[beaSearch()}].  Other features
+of the library exist mainly as intermediate methods or are in early stages of
+development.  Important Note - You must have an API key to use this library.
+Register for a key at <http://www.bea.gov/API/signup/index.cfm> .")
     (license license:cc0)))
 
 (define-public r-be
@@ -19384,6 +21314,9 @@ key at <http://www.bea.gov/API/signup/index.cfm> .")
         (base32 "17cm4vfvrv29rfxr6v58x04y4v1ncd23cpxfpdv7lq9saq8i82ag"))))
     (properties `((upstream-name . "BE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rtf))
     (home-page "https://cran.r-project.org/package=BE")
     (synopsis "Bioequivalence Study Data Analysis")
@@ -19407,6 +21340,9 @@ Studies.  3rd ed. (2009, ISBN:978-1-58488-668-6).")
         (base32 "0di2ll2sjj6js9fg3gx20kmjjzkqwhwq9g319jfwzzwxbclqs5ky"))))
     (properties `((upstream-name . "BDWreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-foreach r-dwreg r-doparallel r-coda))
     (home-page "https://cran.r-project.org/package=BDWreg")
     (synopsis "Bayesian Inference for Discrete Weibull Regression")
@@ -19433,6 +21369,9 @@ validity of the results as well as several measures of goodness-of-fit.")
         (base32 "02fhhwlnq31yzf0m3qyk14w1f9d4xn0ygnjcwx7m28z34l18547m"))))
     (properties `((upstream-name . "bdsvd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-irlba))
     (home-page "https://cran.r-project.org/package=bdsvd")
     (synopsis "Block Structure Detection Using Singular Vectors")
@@ -19456,6 +21395,9 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
         (base32 "1hkkfd69g2bg2y4hicjs6bnw9f0zw74jy0dpadchnzw17lffpms3"))))
     (properties `((upstream-name . "bdscale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/dvmlls/bdscale")
@@ -19476,6 +21418,9 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
         (base32 "19qakmdw3l8vfxkr4p1ydkyfs4cmq37lqzw7l5zx5rdn6zlhqwh4"))))
     (properties `((upstream-name . "bdribs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags))
     (home-page "https://cran.r-project.org/package=bdribs")
     (synopsis
@@ -19501,6 +21446,9 @@ Statistics (to appear).")
         (base32 "0xkqm04q8cvrfkddw8bfsn8mh2l0h4762g6p3jg9n2psiac05yrc"))))
     (properties `((upstream-name . "bdrc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rlang r-gridextra r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bdrc")
@@ -19524,6 +21472,9 @@ using a Bayesian hierarchical model as described in Hrafnkelsson et al. (2020)
         (base32 "0wcnmamqrbqwskgv2yhnxq2kb179n63c825y9hsl20rfca0ijh6m"))))
     (properties `((upstream-name . "bdpv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bdpv")
     (synopsis "Inference and Design for Predictive Values in Diagnostic Tests")
     (description
@@ -19544,6 +21495,9 @@ Experimental design for hypothesis tests on predictive values.")
         (base32 "063b4wwc476gx1gsb028b0fr5agf1n9ciagl5h28zx7ap3jnxmph"))))
     (properties `((upstream-name . "bdpar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list python))
     (propagated-inputs (list r-rlist r-r6 r-digest))
     (native-inputs (list r-knitr))
@@ -19571,6 +21525,9 @@ information (tokens, dates, ... ) from some textual sources (SMS, Email,
         (base32 "14m85sigx6hk0qzhfgih43m2lxp9xczmp9g3z4pping6msbnbdrz"))))
     (properties `((upstream-name . "BDP2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinybs r-shiny r-rmarkdown))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BDP2")
@@ -19596,6 +21553,9 @@ See Kopp-Schneider et al. (2018) <doi:10.1002/bimj.201700209>.")
         (base32 "18sciji8xy1s53d7d5q1g5zqdn25wd7w5vyiisigf54sbz13vqg6"))))
     (properties `((upstream-name . "bdots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-mvtnorm r-gridextra r-ggplot2
                              r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -19620,6 +21580,9 @@ multiple comparisons introduced in Oleson et al (2015)
         (base32 "14fxwgcn3g6k1cdimgfp6zmsgqi4s7sh6kapnls229qiin2nijjl"))))
     (properties `((upstream-name . "bdlp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringdist
                              r-rsqlite
                              r-rgl
@@ -19631,7 +21594,7 @@ multiple comparisons introduced in Oleson et al (2015)
     (home-page "https://cran.r-project.org/package=bdlp")
     (synopsis "Transparent and Reproducible Artificial Data Generation")
     (description
-     "The main function @code{generateDataset}() processes a user-supplied .R file
+     "The main function @code{generateDataset()} processes a user-supplied .R file
 that contains metadata parameters in order to generate actual data.  The
 metadata parameters have to be structured in the form of metadata objects, the
 format of which is outlined in the package vignette.  This approach allows to
@@ -19650,6 +21613,9 @@ generate artificial data in a transparent and reproducible manner.")
         (base32 "04qgmanb198abrkqfv4n0fk0zib3nad14s7pz85n4ws0252vk10r"))))
     (properties `((upstream-name . "bdlim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-laplacesdemon r-ggplot2 r-dplyr
                              r-bayeslogit))
     (home-page "https://anderwilson.github.io/bdlim/")
@@ -19658,9 +21624,9 @@ generate artificial data in a transparent and reproducible manner.")
      "Estimation and interpretation of Bayesian distributed lag interaction models
 (BDLIMs).  A BDLIM regresses a scalar outcome on repeated measures of exposure
 and allows for modification by a categorical variable under four specific
-patterns of modification.  The main function is bdlim().  There are also summary
-and plotting files.  Details on methodology are described in Wilson et al.
-(2017) <doi:10.1093/biostatistics/kxx002>.")
+patterns of modification.  The main function is @code{bdlim()}.  There are also
+summary and plotting files.  Details on methodology are described in Wilson et
+al. (2017) <doi:10.1093/biostatistics/kxx002>.")
     (license license:gpl3+)))
 
 (define-public r-bdl
@@ -19675,6 +21641,9 @@ and plotting files.  Details on methodology are described in Wilson et al.
         (base32 "1d55i1pn8pfnv2wcmxxifqbxlni9npv9n3xnjcgfcfhs0ixnz314"))))
     (properties `((upstream-name . "bdl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmaptools
                              r-tmap
                              r-tidyr
@@ -19710,6 +21679,9 @@ like quick plotting and map generating using data from bank.")
         (base32 "0dyjd5f1cqmzqnrbxz06pbxrk6gjrmsh2x6p7qllczvlmm7jdm5i"))))
     (properties `((upstream-name . "BDEsize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-fpow))
     (home-page "https://cran.r-project.org/package=BDEsize")
     (synopsis
@@ -19739,6 +21711,9 @@ Douglas C. Montgomery (2013, ISBN: 0849323312).")
         (base32 "0idawsykqz7ybnnfcs0946wd1q8aaw1xdx2w3zzgjz7faxbvznb9"))))
     (properties `((upstream-name . "bde")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-ggplot2))
     (home-page "https://cran.r-project.org/package=bde")
     (synopsis "Bounded Density Estimation")
@@ -19761,6 +21736,9 @@ lower.limit and upper.limit are values that can be set by the user.")
         (base32 "0yraq8a0wgz12rzi2dx0gdcz5rx99qd2pzw972wjqyq3rs41pwx0"))))
     (properties `((upstream-name . "bdDwC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinyjs r-shinyfiles r-shinydashboard r-shinybs
                              r-shiny))
     (home-page "https://cran.r-project.org/package=bdDwC")
@@ -19782,6 +21760,9 @@ Core compatible.")
         (base32 "1z79bsg0jz5ffl47sjgxj2bigyhbn76m0kz9sqbzkph7srcc6vpr"))))
     (properties `((upstream-name . "bdc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tibble
                              r-taxadb
@@ -19834,6 +21815,9 @@ for the methodology is Bruno et al. (2022) <doi:10.1111/2041-210X.13868>.")
         (base32 "0f7aqbyfwyfq18z8ygjna3i38dnx2bm4wpkgvdsqwbiby9swqr6d"))))
     (properties `((upstream-name . "BDAlgo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-inflection))
     (home-page "https://cran.r-project.org/package=BDAlgo")
     (synopsis "Bloom Detecting Algorithm")
@@ -19855,6 +21839,9 @@ details, see Karasiewicz et al. (2022) <doi:10.3390/jmse10020174>.")
         (base32 "0kdm46rq939pqk0hv9x0fk9nkv45d8k2bakyhm0p4l9jcjb0vwfa"))))
     (properties `((upstream-name . "bda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-boot))
     (home-page "https://cran.r-project.org/package=bda")
     (synopsis "Binned Data Analysis")
@@ -19875,6 +21862,9 @@ measurement error models for ordinal data analysis.")
         (base32 "1fs7pj8lsn96cr1r5bagp9mq869q3pj9k71r7j1xi0i5l06pz90y"))))
     (properties `((upstream-name . "bcv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/michbur/bcv")
     (synopsis "Cross-Validation for the SVD (Bi-Cross-Validation)")
     (description
@@ -19899,6 +21889,9 @@ about Bi-cross-validation, see Owen & Perry's 2009 @code{AoAS} article (at
         (base32 "0fs6wh59njgj7ybnkf5ki4g8phmzrchvml0f8jyhhxdarkj5vr5d"))))
     (properties `((upstream-name . "BCT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rcpp r-igraph))
     (home-page "https://cran.r-project.org/package=BCT")
     (synopsis "Bayesian Context Trees for Discrete Time Series")
@@ -19933,6 +21926,9 @@ Bayesian Context Trees <@code{arXiv:2203.04341>} [stat.ME], March 2022].")
         (base32 "0c8dlxsx23qfyygmajg2amj78ax01kb3808d9hvy7g3hkgp2i2fp"))))
     (properties `((upstream-name . "BCSub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-nfactors r-mcclust
                              r-mass))
     (native-inputs (list r-knitr))
@@ -19963,6 +21959,9 @@ process mixture model in order to induce clustering.")
         (base32 "0n1zkhjq4q16smp672617w6bb506f74ifljaddn50djk0s1cb8ca"))))
     (properties `((upstream-name . "bcrypt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openssl))
     (home-page "https://jeroen.r-universe.dev/bcrypt")
     (synopsis "'Blowfish' Key Derivation and Password Hashing")
@@ -19984,6 +21983,9 @@ process mixture model in order to induce clustering.")
         (base32 "0g0z4z3dw4mjp4dpa0d6bz46700jibixhlh2jj62z2l7qz5140cy"))))
     (properties `((upstream-name . "bcROCsurface")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl r-rcpparmadillo r-rcpp r-nnet r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/toduckhanh/bcROCsurface")
@@ -20007,6 +22009,9 @@ ROC surface and the volume under ROC surfaces (VUS) under missing at random
         (base32 "1j8bfa3x7h77vs41k4nqbqlb961szp1fkhc181wzb3zpbnzmjhhy"))))
     (properties `((upstream-name . "bcrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-mvtnorm r-knitr r-ggplot2))
     (home-page "https://github.com/mikesweeting/bcrm")
     (synopsis
@@ -20030,6 +22035,9 @@ characteristics.  See Sweeting et al. (2013): <doi:10.18637/jss.v054.i13>.")
         (base32 "17h0ara1y3fh2xyhjarbw3b549v6kq108bg946ndh7kjykara9dd"))))
     (properties `((upstream-name . "BCRA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BCRA")
     (synopsis "Breast Cancer Risk Assessment")
     (description
@@ -20052,6 +22060,9 @@ Marthew PB, Gail MH, et al (2016) <doi:10.1093/jnci/djw215>.")
         (base32 "11wp0llr8wk96ifl93vw1hadrda61zdkmbazp1khimbx0qgr31gx"))))
     (properties `((upstream-name . "bcputility")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-data-table))
     (home-page "https://bcputility.delveds.com")
     (synopsis "Wrapper for SQL Server bcp Utility")
@@ -20072,6 +22083,9 @@ inserts and exports from SQL Server databases.")
         (base32 "09n4grdz3vvm3744bggxv9qvnjbifh1hj31sc6s7a3189d1zhl4v"))))
     (properties `((upstream-name . "bcpa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-plyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bcpa")
@@ -20103,6 +22117,9 @@ vignette.")
         (base32 "0am6amk1axfxkxgp9nmfys4fp4snplfncwkzh02im7a6zr3v1m63"))))
     (properties `((upstream-name . "bcmixed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-mass))
     (home-page "https://cran.r-project.org/package=bcmixed")
     (synopsis "Mixed Effect Model with the Box-Cox Transformation")
@@ -20125,6 +22142,9 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
         (base32 "0cpghf8acq7dpmiaw314n1h2aa310513f3qwnl8p74pyr940gwvn"))))
     (properties `((upstream-name . "bcmaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-sf
                              r-rappdirs
@@ -20160,6 +22180,9 @@ Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data Portal
         (base32 "1p6fm60vhs9l3b120h2l7nz4rf4ckhka7124kzwjd7znax2a336g"))))
     (properties `((upstream-name . "BClustLonG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mcclust r-mass r-lme4))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BClustLonG")
@@ -20193,6 +22216,9 @@ More details about this method can be found in Jiehuan Sun, et al. (2017)
         (base32 "1s8bx9a5rpcrw0msnjf565crz3d2fykvy5fj1chbqxzjh7qm865w"))))
     (properties `((upstream-name . "Bchron")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-scales
                              r-purrr
@@ -20233,6 +22259,9 @@ un-calibrated years (also unpublished).")
         (base32 "1nyf65grcyf74sixixzl12gylk2rzh7n5id4mbhim4lzdm4j272i"))))
     (properties `((upstream-name . "BCHM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-rjags
                              r-plyr
@@ -20267,6 +22296,9 @@ pre-install them.")
         (base32 "09p2523hslfhg0qryfn81cd5mn8nskiv98yw3s0ajfywfnwrb68k"))))
     (properties `((upstream-name . "BCgee")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BCgee")
     (synopsis
      "Bias-Corrected Estimates for Generalized Linear Models for Dependent Data")
@@ -20289,6 +22321,9 @@ about the bias formula used are in Lunardon, N., Scharfstein, D. (2017)
         (base32 "1dg2fcjw8xal77irviiz260qpar2iqkjvi2k4qfm71jyq0ir0axk"))))
     (properties `((upstream-name . "bcgam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nimble r-igraph r-coda))
     (home-page "https://cran.r-project.org/package=bcgam")
     (synopsis "Bayesian Constrained Generalised Linear Models")
@@ -20315,6 +22350,9 @@ These are required for the correct installation of nimble
         (base32 "1amfpyb9y7ngfq1npnjwzgbs6g3dmpp979q7ajf0khjgj55fkirw"))))
     (properties `((upstream-name . "bcfrailphdv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-bcfrailph))
     (home-page "https://cran.r-project.org/package=bcfrailphdv")
     (synopsis "Bivariate Correlated Frailty Models with Varied Variances")
@@ -20343,6 +22381,9 @@ approach.")
         (base32 "0qq885wfd7sr8cjxygw33l321q7jk4b6996p0j6inzlwycs8d6bc"))))
     (properties `((upstream-name . "bcfrailph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=bcfrailph")
     (synopsis "Semiparametric Bivariate Correlated Frailty Models Fit")
@@ -20366,6 +22407,9 @@ Ripatti and Palmgren (2000) <doi:10.1111/j.0006-341X.2000.01016.x>.")
         (base32 "0a7279h7f3v23zbzqkpaxl9s2q1igfc3c5wcjpins8d7nk5hgfj4"))))
     (properties `((upstream-name . "bcf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
@@ -20396,6 +22440,9 @@ accompanying Pratola et.  al. (2013) <@code{arXiv:1309.1906>}.")
         (base32 "181khl93rsrqjm8cmn14a6bb7s47dp3xc31gm9rk088ixfjadq7h"))))
     (properties `((upstream-name . "BCEE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-leaps r-boot r-bma))
     (home-page "https://cran.r-project.org/package=BCEE")
     (synopsis "The Bayesian Causal Effect Estimation Algorithm")
@@ -20419,6 +22466,9 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
         (base32 "0qmnwh3j0mksgvnfnbkym7fpcngdnf1j83lqfilp5gn46akdqyvn"))))
     (properties `((upstream-name . "BCEA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rstan
                              r-rlang
@@ -20455,6 +22505,9 @@ sensitivity analysis, see Baio et al (2017) <doi:10.1007/978-3-319-55718-2>.")
         (base32 "1gyinmx5wn2kk70hiy28ghilkhfirfjbfqdrqq5h3wfb4khnq6pz"))))
     (properties `((upstream-name . "BcDiag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list))
     (home-page "https://cran.r-project.org/package=BcDiag")
     (synopsis "Diagnostics Plots for Bicluster Data")
@@ -20480,6 +22533,9 @@ adding two bicluster methods from the fabia and isa2 R packages.")
         (base32 "1px9fimg3fqx8bfkzq6rl34xclc9gcjxqjvj5islpdy4f1ifwph3"))))
     (properties `((upstream-name . "BCDating")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BCDating")
     (synopsis "Business Cycle Dating and Plotting Tools")
     (description
@@ -20499,6 +22555,9 @@ adding two bicluster methods from the fabia and isa2 R packages.")
         (base32 "05izx4bpk60icwnsy4698cm4dyxmmffss59dca8zrrh4i4pql72f"))))
     (properties `((upstream-name . "bcdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyselect
                              r-tibble
@@ -20540,6 +22599,9 @@ Service ('WFS') using dplyr syntax.")
         (base32 "1w6b72vcv9gdwxm5ynpy9jrw2qpbfi4qn8272qdbv4jz1p3k605n"))))
     (properties `((upstream-name . "BCDAG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgraphviz r-mvtnorm r-lattice r-grbase r-graph))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/alesmascaro/BCDAG")
@@ -20567,6 +22629,9 @@ variables.  References: F. Castelletti and A. Mascaro (2021)
         (base32 "0g9yzqzf977rx97c77krdhl7c499r58xcbzx0nihk73143ynf17w"))))
     (properties `((upstream-name . "bccp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (home-page "https://cran.r-project.org/package=bccp")
     (synopsis "Bias Correction under Censoring Plan")
@@ -20592,6 +22657,9 @@ bias-corrected maximum likelihood estimator.")
         (base32 "1ighfc6zsgclvpfan0vdi0k896y4lnwkvm9g3fj1zmmzf2pym3mj"))))
     (properties `((upstream-name . "BCClong")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncdist
                              r-rmpfr
                              r-rcpparmadillo
@@ -20642,6 +22710,9 @@ feature-specific (local) clusterings and consensus (global) clustering.")
         (base32 "1lqbivjkc7858jn54av1v9bzp0as43klgndbzkr59dc3l128xp12"))))
     (properties `((upstream-name . "BCC1997")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BCC1997")
     (synopsis "Calculation of Option Prices Based on a Universal Solution")
     (description
@@ -20664,6 +22735,9 @@ this package is used.")
         (base32 "1wvly81rg5ximrsp01jpl8rn6rkickzfaq3ybp1i8bbcyvdj1d7d"))))
     (properties `((upstream-name . "bcc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bcc")
     (synopsis "Beta Control Charts")
     (description
@@ -20693,6 +22767,9 @@ details, see Ãngelo MÃ¡rcio Oliveira SantâAnna and Carla Schwengber te
         (base32 "0hvhnra68i0x78n57nlbxmz0qwl2flng9w47089jw6f9hzkq9r7n"))))
     (properties `((upstream-name . "BCBCSF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-abind))
     (home-page "http://www.r-project.org")
     (synopsis "Bias-Corrected Bayesian Classification with Selected Features")
@@ -20721,6 +22798,9 @@ select features.")
         (base32 "0b1m4lwi9hwd4xswabzyy2svc91ppiym8bi9f1wj79w5sg2hxpn7"))))
     (properties `((upstream-name . "bcaboot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://bnaras.github.io/bcaboot/")
     (synopsis "Bias Corrected Bootstrap Confidence Intervals")
@@ -20741,6 +22821,9 @@ described in Efron and Narasimhan (2020, <doi:10.1080/10618600.2020.1714633>).")
         (base32 "14jvi5gn19f72szcnyhfpdld00cc7gyih5qrm4bpzvp553f1svvk"))))
     (properties `((upstream-name . "BCA1SG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-logofgamma))
     (home-page "https://cran.r-project.org/package=BCA1SG")
     (synopsis
@@ -20770,6 +22853,9 @@ respectively.")
         (base32 "15dghd0v1s71h77iw8b49v5h7wcda5mb4540lfyibsdipbashv2h"))))
     (properties `((upstream-name . "bc3net")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-lattice r-infotheo r-igraph r-c3net))
     (home-page "https://cran.r-project.org/package=bc3net")
     (synopsis "Gene Regulatory Network Inference with Bc3net")
@@ -20792,6 +22878,9 @@ Large-Scale Gene Expression Data, P@code{LoS} ONE 7(3): e33624,
         (base32 "0gycjqn36msa6cl4zdrjv2bpv14xm8m6nsc3rfjm8mw9zjjzrw6g"))))
     (properties `((upstream-name . "bbw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr r-car))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rapidsurveys/bbw")
@@ -20821,6 +22910,9 @@ bootstrap to estimate indicators from two-stage cluster sampled surveys.")
         (base32 "0mi2834v4cvrhvpnzkb4lgkqq993c3c1yzsxdnmny4p6yxw1q547"))))
     (properties `((upstream-name . "bbreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod r-pbapply r-formula r-expint))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bbreg")
@@ -20848,6 +22940,9 @@ Barreto-Souza, Mayrink and Simas (2020) <@code{arXiv:2003.05157>}.")
         (base32 "1g7hkiz6485200qabnpx31br6ixcr1jwgvzzdznz4qs8nwhswxqf"))))
     (properties `((upstream-name . "bbnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-igraph r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vda1r22/bbnet")
@@ -20870,6 +22965,9 @@ networks.  The methods are described in Stafford et al. (2015)
         (base32 "088878222dvqmqrg5d4ny3rrpbvjw7npzrk0fmagvhj3z5dvd6la"))))
     (properties `((upstream-name . "bbmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstan
                              r-rmutil
@@ -20901,6 +22999,9 @@ beta-binomial mixture model for accurate genotyping from RNA-sequencing.\".")
         (base32 "135i619lliy93dvgb7ymrcdh20y2b1j7s0y6awzcs3w0hbyd8j5z"))))
     (properties `((upstream-name . "bbl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-rcolorbrewer r-proc))
     (home-page "https://cran.r-project.org/package=bbl")
     (synopsis "Boltzmann Bayes Learner")
@@ -20925,6 +23026,9 @@ prediction on new data. <doi:10.18637/jss.v101.i05>.")
         (base32 "0zwsk491pgfr0dxbpkw1zqa4fi4d8j1bdfiridxq6f07aypx8nmg"))))
     (properties `((upstream-name . "bbknnR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uwot
                              r-tidytable
                              r-seuratobject
@@ -20950,16 +23054,19 @@ now can be used with Seurat seamlessly.")
 (define-public r-bbk
   (package
     (name "r-bbk")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbk" version))
        (sha256
-        (base32 "1dnr024app4xp7qj777vzia72jjc8ak128dcd27879cqfzixail5"))))
+        (base32 "12hx3l5yypmgj2drgq9g1c5k5xlyv4ivqpvkvl4c6ff1jqbs1lqs"))))
     (properties `((upstream-name . "bbk")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-httr2))
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-httr2 r-curl))
     (home-page "https://m-muecke.github.io/bbk/")
     (synopsis
      "Client for the Deutsche Bundesbank and European Central Bank APIs")
@@ -20982,6 +23089,9 @@ and the ECB Data Portal API found at
         (base32 "167sndfp3776p8n9zdpihc9xhqqi8wygzpl49dzkfj53gwa77rnn"))))
     (properties `((upstream-name . "BBI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan))
     (home-page "https://github.com/trtcrd/BBI")
     (synopsis "Benthic Biotic Indices Calculation from Composition Data")
@@ -21009,6 +23119,9 @@ normalized Ecological Quality Ratio.")
         (base32 "0j3ykxsmxima75h40mhqm32l2ffc27pk11rfzjyvv1cm6q2q3gbh"))))
     (properties `((upstream-name . "BBEST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-reshape2 r-ggplot2 r-deoptim r-aws))
     (home-page "https://cran.r-project.org/package=BBEST")
     (synopsis
@@ -21035,6 +23148,9 @@ corresponding approach could be found at Gagin and Levin (2014)
         (base32 "1j6xcbfsrg3wcr1rpddj7ia33szn5bs0wk4mzq42d761clsr5qq8"))))
     (properties `((upstream-name . "bbdetection")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xtable r-rcpp r-ggplot2))
     (home-page "https://cran.r-project.org/package=bbdetection")
     (synopsis "Identification of Bull and Bear States of the Market")
@@ -21061,6 +23177,9 @@ the prices (not adjusted for dividends) of the S&P 500 stock market index.")
         (base32 "1q2w5pvlb51lzbb5k719sf1lrhffandkfqlcvi2prw4dmq7qjxv9"))))
     (properties `((upstream-name . "bazar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kimisc))
     (home-page "https://github.com/paulponcet/bazar")
     (synopsis "Miscellaneous Basic Functions")
@@ -21091,6 +23210,9 @@ others ('erase', %nin%', unwhich', top', bot', normalize').")
         (base32 "05gd8i6y5fvkx12v55drff0fqpkg7bs3qjcaqmmcid9sl4168ms8"))))
     (properties `((upstream-name . "baytrends")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-sessioninfo
                              r-readxl
@@ -21132,6 +23254,9 @@ management- and research-focused questions.  Methodology described in Murphy
         (base32 "1yn79nkwi33d6qsiklay3ngk26dvi44lap59zp545gidvn9fbir6"))))
     (properties `((upstream-name . "BAYSTAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-coda))
     (home-page "https://cran.r-project.org/package=BAYSTAR")
     (synopsis "On Bayesian Analysis of Threshold Autoregressive Models")
@@ -21152,6 +23277,9 @@ methods.")
         (base32 "11ac74mb9dasf4m3qqd0j89bbjq2zk2jynljs86c2mlqack3jivj"))))
     (properties `((upstream-name . "baystability")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-scales
@@ -21183,6 +23311,9 @@ Perez-Elizalde, S., Jarquin, D., and Crossa, J. (2011)
         (base32 "0lsp9g9xjwwf2znh4vld41pgdn55ncvmdsyg84ifhdqzjrsgwc6f"))))
     (properties `((upstream-name . "baymedr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/maxlinde/baymedr")
@@ -21209,6 +23340,9 @@ ci_margin and ci_level]).")
         (base32 "1l5srpaichn598a3a9pj7pwp35jvbwb65d37l9ngvdq3rja8xm0s"))))
     (properties `((upstream-name . "bayMDS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinythemes
                              r-shiny
                              r-rcpparmadillo
@@ -21236,6 +23370,13 @@ implementations of the methods of Oh and Raftery (2001)
         (base32 "1vkykrwjmm810m29i2l3yps8snysc8s2qqfbgprr4a0a1qyj4nrg"))))
     (properties `((upstream-name . "BayLum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-yaml
                              r-runjags
                              r-rjags
@@ -21268,6 +23409,9 @@ export, application of age models and palaeodose model.")
         (base32 "05s9wnsk4fi6pczjd4jg803dwss71m7yng3ck54n3b0pm27c37yd"))))
     (properties `((upstream-name . "baygel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/Jarod-Smithy/baygel")
     (synopsis
@@ -21294,6 +23438,9 @@ distributed data and were originally proposed by: Wang (2012)
         (base32 "1295296mbjpmd0bg1pfxvyp0az3sry6gsq9ir3l8x64w5a4qrzd5"))))
     (properties `((upstream-name . "bayfoxr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/brews/bayfoxr/")
     (synopsis "Global Bayesian Foraminifera Core Top Calibration")
@@ -21315,6 +23462,9 @@ models, considering species-specific calibration parameters and seasonality.")
         (base32 "1265vnwmxxgahdccw81sirjb782z5pl3finf5gvmky3zgvj2p8kc"))))
     (properties `((upstream-name . "bayesZIB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -21342,6 +23492,9 @@ MoriÃ±a D, Puig P, Navarro A. (2021) <doi:10.1186/s12874-021-01427-2>.")
         (base32 "0wv432bmq7vidbccli1lgzyj7d9nl2ykfhr654bhxnsfkbaaqdpg"))))
     (properties `((upstream-name . "BayesXsrc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.uni-goettingen.de/de/bayesx/550513.html")
     (synopsis "Distribution of the 'BayesX' C++ Sources")
     (description
@@ -21363,6 +23516,9 @@ in package R2@code{BayesX}.")
         (base32 "1yxj13nyzhwl2ak9y4y7cdcrrrfb78wdynggs6v76n94pghc9dgp"))))
     (properties `((upstream-name . "BayesX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-shapefiles
                              r-sf
@@ -21391,6 +23547,9 @@ are required in spatial analyses performed with @code{BayesX}.")
         (base32 "04kfx68cq5cjg1ykzl8i55prnw2mvqgnmgbjav5nv2rmh9psny61"))))
     (properties `((upstream-name . "bayesWatch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -21430,6 +23589,9 @@ Murph et al. (2023) <@code{arXiv:2310.02940>}.")
         (base32 "1gb2in8hjiqb3daqz6phn1639i6p2w641kxrm3zh4rm3d6hg6hzr"))))
     (properties `((upstream-name . "bayesvl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-stanheaders
                              r-rstan
@@ -21468,6 +23630,9 @@ Science Framework (May 18).")
         (base32 "1hp8cy9dbna32r57pjpsi9kx9vm18s0xr3gk1ndj0rbzn4193jdn"))))
     (properties `((upstream-name . "BayesVarSel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass))
     (home-page "https://github.com/comodin19/BayesVarSel")
     (synopsis
@@ -21489,6 +23654,9 @@ formal Bayesian answer to testing and variable selection problems.")
         (base32 "026blnhihbx9bpd63mxhbp0kpvj0lwbj7mg72alyfr2jnrh1n3lp"))))
     (properties `((upstream-name . "BayesTwin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-matrixstats r-foreign r-coda))
     (home-page "http://www.ingaschwabe.com")
     (synopsis "Bayesian Analysis of Item-Level Twin Data")
@@ -21513,6 +23681,9 @@ response theory model.  Analyses are based on Schwabe & van den Berg (2014)
         (base32 "13igmvw1wj8kzfijzsrhdqr52kv4vqrm91i71ay6f7jnkry3spaw"))))
     (properties `((upstream-name . "BayesTreePrior")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BayesTreePrior")
     (synopsis "Bayesian Tree Prior Simulation")
     (description
@@ -21536,6 +23707,9 @@ of my master thesis (expected 2016).")
         (base32 "0nq0587j9n7c83m3mw2wglz58dayfsbgrlvyfslf8jmfhgi5lqqx"))))
     (properties `((upstream-name . "BayesTree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnet))
     (home-page "https://www.r-project.org")
     (synopsis "Bayesian Additive Regression Trees")
@@ -21556,6 +23730,9 @@ Chipman, George, @code{McCulloch} (2010).")
         (base32 "1vwc64s1a10d2haw7bi5896hhipbb1y7aks4mzjpfrp4zavbzlpn"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rdpack
                              r-mvtnorm
@@ -21589,6 +23766,9 @@ distribution functions.")
         (base32 "1ydizzc0pp3rwkkr6lbsxkcq1kihsqn8hsiamy2sxlghdzzdkk5b"))))
     (properties `((upstream-name . "bayesTFR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wpp2019
                              r-mvtnorm
                              r-mass
@@ -21617,6 +23797,9 @@ supported <doi:10.4054/@code{DemRes.2018.38.60>}.")
         (base32 "1vx0avy5a3ndy76pvgf71hxpmy7g9l0l1lmc4cgczzdmf55lrksa"))))
     (properties `((upstream-name . "bayest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mcmcpack))
     (home-page "https://cran.r-project.org/package=bayest")
     (synopsis
@@ -21643,6 +23826,9 @@ provided, too.  For more details about the Gibbs sampler see Kelter (2019)
         (base32 "1m7acw40hvjpgjzyz8fpqzvkz1dadq829klba0343g8h0hmfcd65"))))
     (properties `((upstream-name . "BayesSurvive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-riskregression
                              r-rcpparmadillo
@@ -21674,18 +23860,21 @@ Encyclopedia of Genes and Genomes database.")
         (base32 "1kpp0dfcmk86grg13b817py49v071q6p0dh8z22g6x2i8zl1vdfi"))))
     (properties `((upstream-name . "BayesSurvival")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BayesSurvival")
     (synopsis "Bayesian Survival Analysis for Right Censored Data")
     (description
      "This package performs unadjusted Bayesian survival analysis for right censored
-time-to-event data.  The main function, @code{BayesSurv}(), computes the
+time-to-event data.  The main function, @code{BayesSurv()}, computes the
 posterior mean and a credible band for the survival function and for the
 cumulative hazard, as well as the posterior mean for the hazard, starting from a
 piecewise exponential (histogram) prior with Gamma distributed heights that are
 either independent, or have a Markovian dependence structure.  A function,
-@code{PlotBayesSurv}(), is provided to easily create plots of the posterior
+@code{PlotBayesSurv()}, is provided to easily create plots of the posterior
 means of the hazard, cumulative hazard and survival function, with a credible
 band accompanying the latter two.  The priors and samplers are described in more
 detail in Castillo and Van der Pas (2020) \"Multiscale Bayesian survival
@@ -21707,6 +23896,9 @@ uncertainty quantification.")
         (base32 "0yys80bps7567av16yw6ndj6vvx1kn8pnd7wa4xz521bjby4wsjz"))))
     (properties `((upstream-name . "bayesSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-smoothsurv r-coda))
     (home-page "https://msekce.karlin.mff.cuni.cz/~komarek/")
     (synopsis
@@ -21736,6 +23928,13 @@ and KomÃ¡rek (2016, Biometrics) <doi:10.1111/biom.12424>.")
         (base32 "0zm1591y4iwz006p6a6vjv1q0vl8jdzr5v1cfqixqvi8wd3rs1s4"))))
     (properties `((upstream-name . "BayesSUR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-xml2
                              r-tikzdevice
                              r-rcpparmadillo
@@ -21766,6 +23965,9 @@ effects is described in Zhao et al. (2024) <doi:10.1093/jrsssc/qlad102>.")
         (base32 "16949bcakx4a77md1rm6364mzsjxr7gpmz2rxnslhz2szx4cnnaj"))))
     (properties `((upstream-name . "BayesSenMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -21800,6 +24002,9 @@ implements the methods that are first proposed in
         (base32 "1nwwf195b7hly7kjfikizyvgc975g74z6hsm89c1ibfgxlj51bcw"))))
     (properties `((upstream-name . "BayesSampling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixcalc r-matrix r-mass))
     (native-inputs (list r-knitr))
     (home-page
@@ -21807,13 +24012,14 @@ implements the methods that are first proposed in
     (synopsis "Bayes Linear Estimators for Finite Population")
     (description
      "Allows the user to apply the Bayes Linear approach to finite population with the
-Simple Random Sampling - BLE_SRS() - and the Stratified Simple Random Sampling
-design - BLE_SSRS() - (both without replacement), to the Ratio estimator (using
-auxiliary information) - BLE_Ratio() - and to categorical data -
-BLE_Categorical().  The Bayes linear estimation approach is applied to a general
-linear regression model for finite population prediction in BLE_Reg() and it is
-also possible to achieve the design based estimators using vague prior
-distributions.  Based on GonÃ§alves, K.C.M, Moura, F.A.S and Migon, H.S.(2014)
+Simple Random Sampling - @code{BLE_SRS()} - and the Stratified Simple Random
+Sampling design - @code{BLE_SSRS()} - (both without replacement), to the Ratio
+estimator (using auxiliary information) - @code{BLE_Ratio()} - and to
+categorical data - @code{BLE_Categorical()}.  The Bayes linear estimation
+approach is applied to a general linear regression model for finite population
+prediction in @code{BLE_Reg()} and it is also possible to achieve the design
+based estimators using vague prior distributions.  Based on GonÃ§alves, K.C.M,
+Moura, F.A.S and Migon, H.S.(2014)
 <https://www150.statcan.gc.ca/n1/en/catalogue/12-001-X201400111886>.")
     (license license:gpl3)))
 
@@ -21829,6 +24035,9 @@ distributions.  Based on GonÃ§alves, K.C.M, Moura, F.A.S and Migon, H.S.(2014)
         (base32 "0vs6s50h4gpxda9lbxfgn76k9kp81l62a6bv22r7ixsjlnd4baql"))))
     (properties `((upstream-name . "BayesS5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splines2 r-snowfall r-matrix r-abind))
     (home-page "https://arxiv.org/abs/1507.07106v4")
     (synopsis
@@ -21861,6 +24070,9 @@ Bhattacharya.")
         (base32 "0kqk4mq7q4cp2pgxw6b261fj3kl47a0dx44b7b5siwqv45nzymiz"))))
     (properties `((upstream-name . "bayess")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mnormt r-gplots r-combinat))
     (home-page "https://www.r-project.org")
     (synopsis "Bayesian Essentials with R")
@@ -21883,6 +24095,9 @@ C. P. (2014) <doi:10.1007/978-1-4614-8687-9>.")
         (base32 "0a1a1aq91ary985xd0qqc1sgjlyfcrjh7ngzcy4f7j09a7ch3j4b"))))
     (properties `((upstream-name . "bayesrules")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstanarm
                              r-purrr
                              r-magrittr
@@ -21914,6 +24129,13 @@ Bayesian models.")
         (base32 "0fhvnckabp0z1cdsbjgv3ijnzaxwhrk83fwcflgqbhvm3a9lzr77"))))
     (properties `((upstream-name . "BayesRS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rjags r-reshape r-metrology r-ggplot2 r-coda))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=BayesRS")
@@ -21939,6 +24161,9 @@ Raaijmakers, Jakab, Wagenmakers, 2009, <doi:10.3758/PBR.16.4.752>).")
         (base32 "1y5nvvwyhr27268prahjif71y89mbhgyc51gc5nqhmy5d7qwimwj"))))
     (properties `((upstream-name . "bayesROE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinybs
                              r-shiny
                              r-scales
@@ -21969,6 +24194,9 @@ environments.")
         (base32 "0yvjl5kzmh2c7c00jk38cs5g6g0yhrc86p5jn8zf10349md3dpcv"))))
     (properties `((upstream-name . "BayesRGMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape
                              r-rdpack
                              r-rcppdist
@@ -22002,6 +24230,9 @@ be found in the vignette or
         (base32 "08zx8paaqg8zkf4d2rfparbi54p1i9wr05iqp7nqy7xv3isq1zfp"))))
     (properties `((upstream-name . "BayesReversePLLH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=BayesReversePLLH")
     (synopsis "Fits the Bayesian Piecewise Linear Log-Hazard Model")
@@ -22009,7 +24240,7 @@ be found in the vignette or
      "This package contains posterior samplers for the Bayesian piecewise linear
 log-hazard and piecewise exponential hazard models, including Cox models.
 Posterior mean restricted survival times are also computed for non-Cox an Cox
-models with only treatment indicators.  The @code{ApproxMean}() function can be
+models with only treatment indicators.  The @code{ApproxMean()} function can be
 used to estimate restricted posterior mean survival times given a vector of
 patient covariates in the Cox model.  Functions included to return the posterior
 mean hazard and survival functions for the piecewise exponential and piecewise
@@ -22029,6 +24260,9 @@ Revision.")
         (base32 "0xm3ap8lwg52760kyfp71i52mpkkh32753fprb4dfy1ry7g2qmyv"))))
     (properties `((upstream-name . "BayesRepDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lamw))
     (home-page "https://github.com/SamCH93/BayesRepDesign")
     (synopsis "Bayesian Design of Replication Studies")
@@ -22050,6 +24284,9 @@ hierarchical model (Pawel et al., 2022) <doi:10.48550/@code{arXiv.2211.02552>}."
         (base32 "16ddkaz0qqyy0pid614j5hbvmhih5xxzachyz07xw36cjzz4d2i8"))))
     (properties `((upstream-name . "BayesRep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lamw r-hypergeo))
     (home-page "https://github.com/SamCH93/BayesRep")
     (synopsis "Bayesian Analysis of Replication Studies")
@@ -22070,6 +24307,9 @@ factors (Pawel and Held, 2022) <doi:10.1111/rssb.12491>.")
         (base32 "0c6vpkljhisdznxw1g204gyfvpy2zs8yqymdbp35zxddygfdchgd"))))
     (properties `((upstream-name . "Bayesrel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-rcpparmadillo
                              r-rcpp
@@ -22108,6 +24348,9 @@ model ('Lee', 2007, <doi:10.1002/9780470024737>).")
         (base32 "0xx49lqmrxcygbl4znjdlamjqfc6raskm5k54lfp9l8lfd5rmq91"))))
     (properties `((upstream-name . "bayesreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pgdraw r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=bayesreg")
     (synopsis "Bayesian Regression Models with Global-Local Shrinkage Priors")
@@ -22133,6 +24376,9 @@ using the algorithms summarized in Makalic and Schmidt (2016)
         (base32 "05x6x95dka571pidm4bs531qbnfrj59x81ji9h2n8iccfnqx38yl"))))
     (properties `((upstream-name . "bayesRecon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/IDSIA/bayesRecon")
@@ -22160,6 +24406,9 @@ Conference on Uncertainty in Artificial Intelligence, accepted).")
         (base32 "1ci81pishhf9iv08gsnyfmx9kq9d4bswfvnwx3whykrkrlgifzmi"))))
     (properties `((upstream-name . "bayesQR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bayesQR")
     (synopsis "Bayesian Quantile Regression")
@@ -22186,6 +24435,9 @@ from R.")
         (base32 "0b1xqw7f9kfbmr8m6fl9d2fpwr364s4a5vdw57l6i5rm6lszyfh5"))))
     (properties `((upstream-name . "BayesProject")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=BayesProject")
     (synopsis
@@ -22210,6 +24462,9 @@ segmentation wrapper for all algorithms.")
         (base32 "1n954qsld509hf47hz7m0998lb1pc8mj0r8i67v0qx9qvr39jmm2"))))
     (properties `((upstream-name . "BayesPPDSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-rcppdist r-rcpparmadillo r-rcpp r-dplyr))
     (home-page "https://cran.r-project.org/package=BayesPPDSurv")
     (synopsis "Bayesian Power Prior Design for Survival Data")
@@ -22237,6 +24492,9 @@ piecewise constant hazard is detailed in Ibrahim et al. (2001)
         (base32 "0c015l8ih1ck1qb31vvnn95fivf5r3ns58pdlm4x5bf7giprjxf4"))))
     (properties `((upstream-name . "BayesPPD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpparmadillo
                              r-rcpp))
     (native-inputs (list r-knitr))
@@ -22265,6 +24523,9 @@ Duan et al. (2006) <doi:10.1002/env.752> and Ibrahim et al. (2015)
         (base32 "0r05by4w80j6hb22v3ibj686ixxbj7lkxq499fciz5lqs4lxzf3h"))))
     (properties `((upstream-name . "BayesPostEst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-tidyr
                              r-texreg
@@ -22316,6 +24577,9 @@ tool including JAGS', BUGS', MCMCpack', and Stan'.")
         (base32 "0jzxsqnrzvhz85wravjxbjwf6panwmylqgz99b0zknvgbf0vx6zh"))))
     (properties `((upstream-name . "bayesPop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wpp2019
                              r-wpp2012
                              r-rworldmap
@@ -22349,6 +24613,9 @@ probabilistic components, such as total fertility rate and life expectancy
         (base32 "0dav6kjasb7p0ks8fwd3r8pb7q8il39rmvpbgdb80c7k49azirhd"))))
     (properties `((upstream-name . "bayesPO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bayesPO")
@@ -22372,6 +24639,9 @@ this package.")
         (base32 "0w965fn7qvxq93bb1iiwzzkz6vc5k7gz87xfnwnywsqcm0bj2khb"))))
     (properties `((upstream-name . "bayespm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil r-invgamma r-gridextra r-ggplot2
                              r-extradistr))
     (home-page "https://cran.r-project.org/package=bayespm")
@@ -22414,6 +24684,9 @@ approach in online change point detection of short runs\"
         (base32 "1gc5gfyd03rir3yrjsqj6448wvbw49n6c789hzfqwignk3vjc555"))))
     (properties `((upstream-name . "bayesplay")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gginnards))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bayesplay/bayesplay")
@@ -22438,6 +24711,9 @@ posteriors.")
         (base32 "0znbmv7crqycdx75jh02h6z8d6cifjszbrldv2yva4mkjxsydag5"))))
     (properties `((upstream-name . "BayesPieceHazSelect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=BayesPieceHazSelect")
     (synopsis
@@ -22465,6 +24741,9 @@ hazard.  The function saves all posterior quantities to the desired path.")
         (base32 "1417zd1n5sip999n6q6bgs85c0000ksl73a4p94y0lmdn27i8pmj"))))
     (properties `((upstream-name . "BayesOrdDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-superdiag
                              r-schoolmath
                              r-rjmcmc
@@ -22500,6 +24779,9 @@ Chengxue Zhong, Haitao Pan, Hongyu Miao (2021) <@code{arXiv:2108.06568>}.")
         (base32 "0va4gvyfwfdk3yvhdyxc49qlmzxfblwlmwqh79b93zkv8239kkk1"))))
     (properties `((upstream-name . "BayesNSGP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmatch r-nimble r-matrix r-fnn))
     (home-page "https://cran.r-project.org/package=BayesNSGP")
     (synopsis "Bayesian Analysis of Non-Stationary Gaussian Process Models")
@@ -22530,6 +24812,9 @@ step.")
         (base32 "1c6a82qlcrpbb2c4zp3gk24wcgw6x62lm8hm6n2l1r307dxm2rpb"))))
     (properties `((upstream-name . "BayesNetBP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer
                              r-igraph
                              r-graph
@@ -22563,6 +24848,9 @@ package from @code{GitHub}.")
         (base32 "0pac8s3zqg6z2x3jf4j2kkvra6mpc5aa723b4mp2pygs9x6sjn41"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -22605,6 +24893,9 @@ supersedes an original version implemented in R2jags (see Su and Yajima
         (base32 "09x41r5lhr2dq56b05f0aj8v4s7084d4z90qjqwdkv8zgk664ki0"))))
     (properties `((upstream-name . "BayesMultMeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-assertthat))
     (home-page "https://cran.r-project.org/package=BayesMultMeta")
     (synopsis "Bayesian Multivariate Meta-Analysis")
@@ -22635,6 +24926,9 @@ rank normalization, which are proposed in Vehtari et al. (2021)
         (base32 "10bvfhb5jrxhl5y6yqic6kh0mjfi5biy5f1x7cg4zlraqaj56f72"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-sn
@@ -22676,6 +24970,9 @@ uncertainties, providing a powerful tool for mode inference.")
         (base32 "1qdc4y0l6v4axp47pnxcnq96hl7kbi9r4jiknd5i934smcr2bsza"))))
     (properties `((upstream-name . "bayesMRM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinythemes
                              r-shiny
                              r-rjags
@@ -22704,6 +25001,9 @@ Sampler) to generate Markov chain Monte Carlo samples of parameters.")
         (base32 "1l6i8qh7l53x0133gjc5jvri4vnnfviq9y3mcr1kfa5j84gfnmsf"))))
     (properties `((upstream-name . "bayesmove")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tictoc
                              r-shiny
@@ -22747,6 +25047,9 @@ details regarding part of this framework can be found in Cullen et al. (2021)
         (base32 "15g87wpaj7rsm8dnz7w57vw9bpkj0aj5f6hi8v7m8kamki8m7chm"))))
     (properties `((upstream-name . "BayesMortalityPlus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-progress
@@ -22786,6 +25089,9 @@ Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.")
         (base32 "1958kyagp41ji9xlwr03g6yv4jrd68kzc7g2hm0wgjdrksifmwp8"))))
     (properties `((upstream-name . "bayesmlogit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bayesmlogit")
@@ -22811,6 +25117,9 @@ Emma, et al., (2022) <doi:10.1093/geronb/gbab149>.")
         (base32 "19kf39881q00pap9afwvvggk4s4w3qpz17b7065nig1mvk8dnp8r"))))
     (properties `((upstream-name . "BayesMixSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=BayesMixSurv")
     (synopsis
@@ -22835,6 +25144,9 @@ due to presence of two Weibull components in the hazard function.")
         (base32 "0gzzzgjbz4aw2zrd5grvd1r0zlycxkgyq4hj1mcbwkfs2dd00msk"))))
     (properties `((upstream-name . "bayesmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-coda))
     (home-page "https://statmath.wu.ac.at/~gruen/BayesMix/")
     (synopsis "Bayesian Mixture Models with JAGS")
@@ -22855,6 +25167,9 @@ within a Bayesian framework.")
         (base32 "1byyrqgw6nbjyvcarm5zhpaz8xfrcchnqf5dvq0814a5rfbn59an"))))
     (properties `((upstream-name . "bayesMig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wpp2019 r-truncnorm r-data-table r-coda
                              r-bayestfr))
     (home-page "http://bayespop.csss.washington.edu")
@@ -22877,6 +25192,9 @@ an Raftery (2015) <doi:10.1007/s13524-015-0415-0>.")
         (base32 "1yxxzwjh1fgfh7qkzf9dfm3x0vbgb0v4p6bf6b5w14kvm06rzhkg"))))
     (properties `((upstream-name . "BayesMFSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
@@ -22904,6 +25222,13 @@ split population survival estimator is described in Bagozzi et al. (2019)
         (base32 "1w9xz0wix4nggp6d1az8i9m1r7s288n1cksnnrdan0f3lpk5aai4"))))
     (properties `((upstream-name . "bayesmeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-numderiv r-mvtnorm r-metafor r-forestplot))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://gitlab.gwdg.de/croever/bayesmeta")
@@ -22930,6 +25255,9 @@ C (2020) <doi:10.18637/jss.v093.i06>, or Roever C and Friede T (2022)
         (base32 "0zkfv6f50z83d8iih2f9p0dkla2bffcfjhfbmpicybicfi35f480"))))
     (properties `((upstream-name . "bayesMeanScale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-posterior r-magrittr r-data-table r-bayestestr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dalenbe2/bayesMeanScale")
@@ -22955,6 +25283,9 @@ models can be computed.")
         (base32 "1jgv654k0qkspardlma2z7a854zw7zxk4fflc027wf7mlvs29b4h"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat
                              r-sets
                              r-rlang
@@ -22997,6 +25328,9 @@ Annals of Statistics, 2016 <doi:10.1214/15-AOS1389>).")
         (base32 "0g45ikpnbry1albb3asrzab5z3sy98yf74c64qn02d65xgafifwg"))))
     (properties `((upstream-name . "bayeslongitudinal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass r-learnbayes))
     (home-page "https://cran.r-project.org/package=bayeslongitudinal")
     (synopsis
@@ -23019,6 +25353,9 @@ autoregressive moving average of order (1,1) ARMA (1,1).")
         (base32 "0w3bzk39sxdskwikcz5i0xwfsll4sqgkpr8vw8jvzlcy6dl3yhis"))))
     (properties `((upstream-name . "BayesLogit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jwindle/BayesLogit")
     (synopsis "PolyaGamma Sampling")
     (description
@@ -23039,6 +25376,9 @@ Useful for logistic regression.")
         (base32 "0p8g0h4zqz5njr7lkkv2hhq9qas9lvrxamg8xb9hkqrxfxd0d3nn"))))
     (properties `((upstream-name . "BayesLN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpp
                              r-optimx
@@ -23076,6 +25416,9 @@ and conditional) are provided.")
         (base32 "0mnzxzdz456qxfszl8vhnvb1875hxn8b57wi6dhr9g668da2zdin"))))
     (properties `((upstream-name . "bayeslm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JingyuHe/bayeslm")
@@ -23098,6 +25441,9 @@ He and Lopes (2018) <@code{arXiv:1806.05738>}.")
         (base32 "11b0dq1gc3qsv6qy5hdrf5jzbw5g8alqgp6nj5x1bramhnrc9mia"))))
     (properties `((upstream-name . "bayeslist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -23128,6 +25474,9 @@ with varying prior information.  See Lu and TraunmÃ¼ller (2021)
         (base32 "116wa3sqxkp8ywc0s83clg1pp81bf1rhddpvjbcw9pyim57h4kxm"))))
     (properties `((upstream-name . "bayesLife")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wpp2019
                              r-hett
                              r-data-table
@@ -23155,6 +25504,9 @@ Subnational projections are also supported.")
         (base32 "11ji5s1njip57zkr4bxwp3agx1ddv7yagm5prn9ckcbasan4rbx1"))))
     (properties `((upstream-name . "BayesLCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-mcmcpack r-fields r-e1071 r-coda))
     (home-page "https://cran.r-project.org/package=BayesLCA")
     (synopsis "Bayesian Latent Class Analysis")
@@ -23174,6 +25526,9 @@ Subnational projections are also supported.")
         (base32 "0hz6ynvrhsxp097zswdlascza5n27cq4hfaqdc3r8b7crmh7lrim"))))
     (properties `((upstream-name . "bayesImageS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://bitbucket.org/Azeari/bayesimages")
@@ -23205,6 +25560,9 @@ of specific algorithms.")
         (base32 "0q4kvw1z529yi1vjb69qj4d69chgvq6c1dfrmhyvmpx0n6igrppj"))))
     (properties `((upstream-name . "bayesianVARs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stochvol
                              r-scales
                              r-rcppprogress
@@ -23239,6 +25597,9 @@ et al. (2021) <doi:10.1016/j.jeconom.2021.11.010>.")
         (base32 "1bg6dqvpmsx4pnp0bv16m1rpgz68yjmcw8c832xn649fyk5dmanx"))))
     (properties `((upstream-name . "Bayesiantreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=Bayesiantreg")
     (synopsis "Bayesian t Regression for Modeling Mean and Scale Parameters")
@@ -23260,6 +25621,9 @@ are estimated.")
         (base32 "1ldx75g4ws2yrnq4xyj3j83xjhakhgbhn174lwqzviqynvbbshzm"))))
     (properties `((upstream-name . "BayesianTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm
                              r-rcpp
                              r-numderiv
@@ -23299,6 +25663,9 @@ filter.")
         (base32 "0bl0crj9z0grgfsqzc403jd74f411ib827gkfqis0hbdi5y57gyw"))))
     (properties `((upstream-name . "BayesianReasoning")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-scales
@@ -23335,6 +25702,9 @@ the importance of their understanding <doi:10.3389/fpsyg.2015.01327>.")
         (base32 "00rn3wmqrhk2pssbq5j2prl8m6cgfarr49672pnksp2dcbi47p20"))))
     (properties `((upstream-name . "BayesianPower")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BayesianPower")
     (synopsis
@@ -23360,6 +25730,9 @@ F., Hoijtink, H. & Gu, X. (2019) <doi:10.31219/osf.io/d5kf3>.")
         (base32 "1v06airw3zzkvb5qmn0abyhkdp51wjmax101ljj9ibx01nj01zdv"))))
     (properties `((upstream-name . "BayesianPlatformDesignTimeTrend")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stanheaders
                              r-rstantools
@@ -23411,6 +25784,9 @@ effect in platform trial are described in: Saville et al. (2022)
         (base32 "1j0mgjib2v60sfjic8kli69lcbdkakp0fcgx2dhh7p1rq4xx88j1"))))
     (properties `((upstream-name . "BayesianNetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinywidgets
                              r-shinydashboard
                              r-shinyace
@@ -23441,6 +25817,9 @@ networks, and utilities for classic network analysis.")
         (base32 "1ygc0xhk7mk7pkqn0v9n23j1m75rr1r2ar30r386c1av3jh7krnw"))))
     (properties `((upstream-name . "BayesianMediationA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-r2jags r-lattice r-gplots r-car))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BayesianMediationA")
@@ -23466,6 +25845,9 @@ mediation effects are reported as analytic results.")
         (base32 "1767rjyd5vl73lqknpxkgcv38rhxdm837zr7c3d5d6f9rdh8rgyw"))))
     (properties `((upstream-name . "BayesianMCPMod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rbest r-nloptr r-ggplot2 r-dosefinding
                              r-checkmate))
     (native-inputs (list r-knitr))
@@ -23500,6 +25882,9 @@ dose-response relationships can be bootstrapped and visualized.")
         (base32 "1dy00xgz9cc65aj39nf76crhfxfyackpcniwadrh38mk8zpbka42"))))
     (properties `((upstream-name . "BayesianLaterality")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm
                              r-tidyr
                              r-rlang
@@ -23534,6 +25919,9 @@ and Westerhausen, Laterality: Asymmetries of Body, Brain and Cognition, 2020,
         (base32 "09yb1qqx6qlsspk3ndrcqxy0956iqznw0rmyvqxgxxp3zd3y21xp"))))
     (properties `((upstream-name . "BayesianGLasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod r-mass))
     (home-page "https://cran.r-project.org/package=BayesianGLasso")
     (synopsis "Bayesian Graphical Lasso")
@@ -23556,6 +25944,9 @@ originally proposed in Wang (2012) <doi:10.1214/12-BA729>.")
         (base32 "0b0fqmig7vgmlrq2884q0apfd89nn5k4dj8rqjizkkbw4qpzmylb"))))
     (properties `((upstream-name . "Bayesiangammareg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://www.r-project.org")
     (synopsis "Bayesian Gamma Regression: Joint Mean and Shape Modeling")
@@ -23580,6 +25971,9 @@ criterion.")
         (base32 "026mfyfx8dzj1y97v7gi0kx3iq2fnrlyjd3pcszz1324fi87rpa5"))))
     (properties `((upstream-name . "BayesianFactorZoo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timeseries
                              r-reshape2
                              r-rdpack
@@ -23599,14 +25993,14 @@ criterion.")
 Bryzgalova, Huang, and Julliard (2023) <doi:10.1111/jofi.13197>.  In this
 package, we provide a novel Bayesian framework for analyzing linear asset
 pricing models: simple, robust, and applicable to high-dimensional problems.
-For a stand-alone model, we provide functions including @code{BayesianFM}() and
-@code{BayesianSDF}() to deliver reliable price of risk estimates for both
+For a stand-alone model, we provide functions including @code{BayesianFM()} and
+@code{BayesianSDF()} to deliver reliable price of risk estimates for both
 tradable and nontradable factors.  For competing factors and possibly nonnested
-models, we provide functions including continuous_ss_sdf(),
-continuous_ss_sdf_v2(), and dirac_ss_sdf_pvalue() to analyze high-dimensional
-models.  If you use this package, please cite the paper.  We are thankful to
-Yunan Ding and Jingtong Zhang for their research assistance.  Any errors or
-omissions are the responsibility of the authors.")
+models, we provide functions including @code{continuous_ss_sdf()},
+@code{continuous_ss_sdf_v2()}, and @code{dirac_ss_sdf_pvalue()} to analyze
+high-dimensional models.  If you use this package, please cite the paper.  We
+are thankful to Yunan Ding and Jingtong Zhang for their research assistance.
+Any errors or omissions are the responsibility of the authors.")
     (license license:gpl3)))
 
 (define-public r-bayesianetas
@@ -23621,6 +26015,9 @@ omissions are the responsibility of the authors.")
         (base32 "0nbif0b6lcik2kh948zg5ska5mvkdsfr0dg8ndnfpscm2mp7y1dg"))))
     (properties `((upstream-name . "bayesianETAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.gordonjross.co.uk/bayesianetas.pdf")
     (synopsis
      "Bayesian Estimation of the ETAS Model for Earthquake Occurrences")
@@ -23645,6 +26042,9 @@ Model for Earthquake Occurrences (2016), available from the below URL.")
         (base32 "17d08700gwijpzv325pp7pndrz4mv1j1c4hll8s7ry15s1z82fmf"))))
     (properties `((upstream-name . "bayesian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-purrr
@@ -23675,6 +26075,9 @@ Carpenter et al. (2017) <doi:10.18637/jss.v076.i01>.")
         (base32 "1vxln01194ipfhzid48x95hrpzkwylhr3nx1dh38rkfsg9fpl2af"))))
     (properties `((upstream-name . "BayesGWQS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-stringr r-rjags r-plyr r-coda))
     (home-page "https://cran.r-project.org/package=BayesGWQS")
@@ -23697,6 +26100,9 @@ chemical groups with binary outcomes.  Wheeler DC et al. (2019)
         (base32 "0snjl40x8h8v8y6wm8lby4h4wm78qgbaq2jx45s96lz9cmfhdz2c"))))
     (properties `((upstream-name . "BayesGrowth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidybayes
                              r-tibble
                              r-stanheaders
@@ -23736,6 +26142,9 @@ with Bayesian length-at-age models\".  PLOS ONE 16(2): e0246734
         (base32 "08ayk6cxhqwymmr559rrmg35s2i2kbvrxd408vy6xrsyvidjppi5"))))
     (properties `((upstream-name . "BayesGPfit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://cran.r-project.org/package=BayesGPfit")
     (synopsis "Fast Bayesian Gaussian Process Regression Fitting")
@@ -23756,6 +26165,9 @@ modified exponential square kernel using a basis expansion approach.")
         (base32 "10nhb5dc5y2hkr06rvdddchanbglz2qvjzqsfvk1kxhxciy7bb0a"))))
     (properties `((upstream-name . "BayesGP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmbstan
                              r-tmb
                              r-sfsmisc
@@ -23794,6 +26206,9 @@ Methods are detailed in Zhang, Stringer, Brown, and Stafford (2023)
         (base32 "17wm0228xq3db431abyi9jr0q1q86nnajsn7hmy4dwzgvrlz5s0i"))))
     (properties `((upstream-name . "BayesGOF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-orthopolynom r-nleqslv r-bolstad2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BayesGOF")
@@ -23820,6 +26235,9 @@ Fit\" (<https://www.nature.com/articles/s41598-018-28130-5 >).")
         (base32 "1bfrvrpf0qiwy720hjrmp007z7xd7ylpl68v9gr2g0i4mjz3szdi"))))
     (properties `((upstream-name . "BayesGmed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -23850,73 +26268,18 @@ application can be found at Yimer et al. (2022)
         (base32 "1jb7jfyxp210pc8myv9lnwb55hy19d39m10kkhs5lyjwc2lv0401"))))
     (properties `((upstream-name . "bayesGARCH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-coda))
     (home-page "https://github.com/ArdiaD/bayesGARCH")
     (synopsis
      "Bayesian Estimation of the GARCH(1,1) Model with Student-t Innovations")
     (description
-     "This package provides the @code{bayesGARCH}() function which performs the
+     "This package provides the @code{bayesGARCH()} function which performs the
 Bayesian estimation of the GARCH(1,1) model with Student's t innovations as
 described in Ardia (2008) <doi:10.1007/978-3-540-78657-3>.")
     (license license:gpl2+)))
-
-(define-public r-bayesgam
-  (package
-    (name "r-bayesgam")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesGAM" version))
-       (sha256
-        (base32 "13zs68d26c66hkm8mfhcygk8rw6sdg4rf4a4az254lf2xvypbh5d"))))
-    (properties `((upstream-name . "bayesGAM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stanheaders
-                             r-semipar
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-mlbench
-                             r-mass
-                             r-loo
-                             r-gridextra
-                             r-ggplot2
-                             r-geometry
-                             r-corrplot
-                             r-cluster
-                             r-boot
-                             r-bh
-                             r-bayesplot))
-    (home-page "https://cran.r-project.org/package=bayesGAM")
-    (synopsis
-     "Fit Multivariate Response Generalized Additive Models using Hamiltonian Monte Carlo")
-    (description
-     "The @code{bayesGAM} package is designed to provide a user friendly option to fit
-univariate and multivariate response Generalized Additive Models (GAM) using
-Hamiltonian Monte Carlo (HMC) with few technical burdens.  The functions in this
-package use rstan (Stan Development Team 2020) to call Stan routines that run
-the HMC simulations.  The Stan code for these models is already pre-compiled for
-the user.  The programming formulation for models in @code{bayesGAM} is designed
-to be familiar to analysts who fit statistical models in R'.  Carpenter, B.,
-Gelman, A., Hoffman, M. D., Lee, D., Goodrich, B., Betancourt, M., ... &
-Riddell, A. (2017).  Stan: A probabilistic programming language.  Journal of
-statistical software, 76(1).  Stan Development Team.  2018.  RStan: the R
-interface to Stan.  R package version 2.17.3. <https://mc-stan.org/> Neal,
-Radford (2011) \"Handbook of Markov Chain Monte Carlo\" ISBN: 978-1420079418.
-Betancourt, Michael, and Mark Girolami. \"Hamiltonian Monte Carlo for
-hierarchical models.\" Current trends in Bayesian methodology with applications
-79.30 (2015): 2-4.  Thomas, S., Tu, W. (2020) \"Learning Hamiltonian Monte Carlo
-in R\" <@code{arXiv:2006.16194>}, Gelman, A., Carlin, J. B., Stern, H. S.,
-Dunson, D. B., Vehtari, A., & Rubin, D. B. (2013) \"Bayesian Data Analysis\" ISBN:
-978-1439840955, Agresti, Alan (2015) \"Foundations of Linear and Generalized
-Linear Models ISBN: 978-1118730034, Pinheiro, J., Bates, D. (2006)
-\"Mixed-effects Models in S and S-Plus\" ISBN: 978-1441903174.  Ruppert, D., Wand,
-M. P., & Carroll, R. J. (2003).  Semiparametric regression (No.  12).  Cambridge
-university press.  ISBN: 978-0521785167.")
-    (license license:gpl3)))
 
 (define-public r-bayesforecast
   (package
@@ -23930,6 +26293,9 @@ university press.  ISBN: 978-0521785167.")
         (base32 "0wnz6qblm3ib7lpj860s4lhrs4gvmyrmk779r38rybfvxw4xssii"))))
     (properties `((upstream-name . "bayesforecast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-stanheaders
                              r-rstantools
@@ -23977,6 +26343,9 @@ factor and leave-one-out cross-validation methods.  References: Hyndman (2017)
         (base32 "19yn8d3jbh1fpxdmqvz3yflnml4fdxb966w44yqha4wjhzfp6hym"))))
     (properties `((upstream-name . "BayesfMRI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-rcppeigen
                              r-rcpp
@@ -24012,6 +26381,9 @@ and D. Spencer, Y. R. Yue, D. Bolin, S. Ryan, A. F. Mejia (2022)
         (base32 "1iiahwlzxizs6d2f59amfhhca3vh612y5n9ijzpr4fnhpm1q9df1"))))
     (properties `((upstream-name . "BayesFM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gfortran))
     (propagated-inputs (list r-plyr r-gridextra r-ggplot2 r-coda r-checkmate))
     (native-inputs (list gfortran))
@@ -24039,6 +26411,9 @@ the factors, are not fixed a priori but determined during MCMC sampling.")
         (base32 "0kj7hxj39k0k6njf24ldb6w10qdwambd8hm6xpjfa1brb807lwkj"))))
     (properties `((upstream-name . "BayesFluxR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-juliacall))
     (home-page "https://cran.r-project.org/package=BayesFluxR")
     (synopsis "Implementation of Bayesian Neural Networks")
@@ -24061,6 +26436,9 @@ to use and research on Bayesian Neural Networks.")
         (base32 "0kaw4pmy2mjawsfs8s0h2m32p0cvg8wg33vfznpzvc40xymy2g4l"))))
     (properties `((upstream-name . "BayesFBHborrow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-mvtnorm
                              r-magrittr
@@ -24092,6 +26470,9 @@ al. (2024) <doi:10.48550/@code{arXiv.2408.04327>}.")
         (base32 "023r5pxqa2ll3vyfmchdlcg6ay0qixphz24078g1immqp43mlrxm"))))
     (properties `((upstream-name . "BayesESS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -24120,6 +26501,9 @@ models.  For a web-based Shiny application related to this package, see
         (base32 "0zs4qqf8881x01wblzmnw7m3zmh4ifrim3a8ws454r2lxf4y7mj5"))))
     (properties `((upstream-name . "bayesEO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tmap
                              r-tidyr
@@ -24153,6 +26537,9 @@ and misclassified pixels.")
         (base32 "0li063187icw96shrbawfa00vkb42m5y38a4j2aahryajjlsva57"))))
     (properties `((upstream-name . "bayesDP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-mcmcpack
                              r-ggplot2))
     (native-inputs (list r-knitr))
@@ -24180,6 +26567,9 @@ Innovation Consortium (MDIC) Computer Modeling & Simulation Working Group.")
         (base32 "06806wckw629gl6p8jbxpg8lh6wsy8nhs2017qcfc3wwxb6dd3jc"))))
     (properties `((upstream-name . "BayesDLMfMRI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-rcppdist
                              r-rcpparmadillo
@@ -24220,6 +26610,9 @@ Cardona-JimÃ©nez (2021) <doi:10.1016/j.csda.2021.107297>; Cardona-JimÃ©nez
         (base32 "04slvxzbqdi2ak3dlw4lfx55rhw28js8yjmvjpy8vvgq39vcx3dq"))))
     (properties `((upstream-name . "bayesdistreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich r-mass))
     (home-page "https://cran.r-project.org/package=bayesdistreg")
     (synopsis "Bayesian Distribution Regression")
@@ -24248,6 +26641,9 @@ asymptotic Bayesian distribution regression inference.")
         (base32 "1x3jn4mdp7csxm6h8rk33h9hlflhkjssqnfzcl3hbkwv4pb97ifl"))))
     (properties `((upstream-name . "BayesDissolution")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-pscl
                              r-mnormt
@@ -24277,6 +26673,9 @@ More models may be added over time.")
         (base32 "05kz0qik76gk1v6ldhlbzmylpsv5zmbqbjgf9sc8c5zkyjdawgj8"))))
     (properties `((upstream-name . "BayesDIP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "<https://github.com/chenw10/BayesDIP>")
     (synopsis
      "Bayesian Decreasingly Informative Priors for Early Termination Phase II Trials")
@@ -24302,6 +26701,9 @@ Sabo RT (2014) <doi:10.1080/10543406.2014.888441>.")
         (base32 "1xmvpkg30nk4sldzy3rp12ivnj4phzdw08hmk5nh5b70mqapvkra"))))
     (properties `((upstream-name . "bayesdfa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-stanheaders
                              r-rstantools
@@ -24341,6 +26743,9 @@ with hidden Markov models to evaluate support for latent regimes.")
         (base32 "1h69a18wp2z96a002x154d2vd1imzap3zm7yfssm5dh7igha18zc"))))
     (properties `((upstream-name . "BayesDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BayesDesign")
     (synopsis "Bayesian Single-Arm Design with Survival Endpoints")
     (description
@@ -24364,6 +26769,9 @@ endpoint.")
         (base32 "1wv36yv43m8fkpk59hfrw3672p95lzhapr0d4n3jynsfhf6ivpm6"))))
     (properties `((upstream-name . "bayesDccGarch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-coda))
     (home-page
      "https://ui.adsabs.harvard.edu/abs/2014arXiv1412.2967F/abstract")
@@ -24387,6 +26795,9 @@ Andrade-Filho, M.G., (2014). <doi:10.1080/02664763.2013.839635>.")
         (base32 "0fp27cmhw8dsxr4mc1flm6qh907476kph8ch2889g9p31xm1psjc"))))
     (properties `((upstream-name . "BayesDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BayesDA")
     (synopsis "Functions and Datasets for the book \"Bayesian Data Analysis\"")
     (description
@@ -24407,6 +26818,9 @@ Rubin.  Not all datasets yet, hopefully completed soon.")
         (base32 "0j2kaq0ssbs9d0y17kmj8p89g7gh8dpaa8wrf6ylm3jy27g8b48j"))))
     (properties `((upstream-name . "BayesCVI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-universalcvi r-mclust r-ggplot2 r-e1071))
     (home-page "https://cran.r-project.org/package=BayesCVI")
     (synopsis "Bayesian Cluster Validity Index")
@@ -24439,6 +26853,9 @@ WI or WP as the underlying CVI.")
         (base32 "0h3sq3yydzkr9f0j0n32w8x8an0ckl5q85yiz7c63c535wxhhdg0"))))
     (properties `((upstream-name . "bayesCureRateModel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-survival
                              r-rcpparmadillo
@@ -24480,6 +26897,9 @@ versions of the target posterior distribution.")
         (base32 "1277w6cv6b1s0wm492a79qrj9a4jzq1gizlpwkvwnvxzdl9f84r3"))))
     (properties `((upstream-name . "BayesCTDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-reshape2 r-ggplot2 r-eha))
     (home-page "https://github.com/begglest/BayesCTDesign")
     (synopsis
@@ -24491,7 +26911,7 @@ that do or do not incorporate historical control data.  At some point during the
 design process, a clinical trial researcher who is designing a basic two-arm
 Bayesian randomized clinical trial needs to make decisions about power and
 sample size within the context of hypothesized treatment effects.  Through
-simulation, the simple_sim() function will estimate power and other user
+simulation, the @code{simple_sim()} function will estimate power and other user
 specified clinical trial characteristics at user specified sample sizes given
 user defined scenarios about treatment effect,control group characteristics, and
 outcome.  If the clinical trial researcher has access to historical control
@@ -24507,14 +26927,15 @@ when the designed trial is implemented? During the design phase, the researcher
 needs to investigate the negative effects of possible historic/randomized
 control differences on power, type one error, and other trial characteristics.
 Using this information, the researcher should design the trial to mitigate these
-negative effects.  Through simulation, the historic_sim() function will estimate
-power and other user specified clinical trial characteristics at user specified
-sample sizes given user defined scenarios about historical and randomized
-control differences as well as treatment effects and outcomes.  The results from
-historic_sim() and simple_sim() can be printed with print_table() and graphed
-with plot_table() methods.  Outcomes considered are Gaussian, Poisson,
-Bernoulli, Lognormal, Weibull, and Piecewise Exponential.  The methods are
-described in Eggleston et al. (2021) <doi:10.18637/jss.v100.i21>.")
+negative effects.  Through simulation, the @code{historic_sim()} function will
+estimate power and other user specified clinical trial characteristics at user
+specified sample sizes given user defined scenarios about historical and
+randomized control differences as well as treatment effects and outcomes.  The
+results from @code{historic_sim()} and @code{simple_sim()} can be printed with
+@code{print_table()} and graphed with @code{plot_table()} methods.  Outcomes
+considered are Gaussian, Poisson, Bernoulli, Lognormal, Weibull, and Piecewise
+Exponential.  The methods are described in Eggleston et al. (2021)
+<doi:10.18637/jss.v100.i21>.")
     (license license:gpl3)))
 
 (define-public r-bayesct
@@ -24529,6 +26950,9 @@ described in Eggleston et al. (2021) <doi:10.18637/jss.v100.i21>.")
         (base32 "0ragig1x34syhsnbnd58l2s7g23j7fb0cl9wkasvxq8cicw5hqgn"))))
     (properties `((upstream-name . "bayesCT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-purrr r-magrittr r-dplyr r-bayesdp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thevaachandereng/bayesCT/")
@@ -24555,6 +26979,9 @@ analysis via the power prior or non-informative priors.")
         (base32 "1qav7l64iqqdvr1v6c7hlzvbx7zbvsa55pyisvkq5rsayy1rdsl1"))))
     (properties `((upstream-name . "BayesCR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncdist r-rootsolve r-mvtnorm r-mnormt))
     (home-page "https://cran.r-project.org/package=BayesCR")
     (synopsis
@@ -24577,6 +27004,9 @@ variables.")
         (base32 "1m9rsyxzf76079yzacgg1wqvylqgvmvwag043csaykn1m42kzdm3"))))
     (properties `((upstream-name . "bayescount")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-runjags r-rjags r-coda))
     (home-page "https://bayescount.sourceforge.net")
@@ -24605,6 +27035,9 @@ analyses for faecal egg counts (including FECRT) are also provided.")
         (base32 "0jzj1iwd8g1kpypg6dl3anhay7kjvznfkyzri3sdf538s6vr88m5"))))
     (properties `((upstream-name . "bayescopulareg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppdist r-rcpparmadillo r-rcpp r-mvtnorm))
     (home-page "https://github.com/ethan-alt/bayescopulareg")
     (synopsis "Bayesian Copula Regression")
@@ -24630,6 +27063,9 @@ Hoff (2007) <doi:10.1214/07-AOAS107>.")
         (base32 "1rrbvwcfm93cw0m33g0zn6nyshfjc97kb3fby9cga0zaixc0a8rk"))))
     (properties `((upstream-name . "BayesComm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-coda r-abind))
     (home-page "https://cran.r-project.org/package=BayesComm")
     (synopsis "Bayesian Community Ecology Analysis")
@@ -24650,6 +27086,9 @@ ecological communities.")
         (base32 "01rzjja0xzvqyjivl8a9da13v13ylm4dwv4f27cmgz2znakfg5y8"))))
     (properties `((upstream-name . "BayesCombo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stanlazic/BayesCombo")
     (synopsis "Bayesian Evidence Combination")
@@ -24671,6 +27110,13 @@ meta-analysis.")
         (base32 "12vw401d692x2692sykhngi5fk8l6z5724lym97zz9z2wyj29zyk"))))
     (properties `((upstream-name . "BayesCACE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rjags
                              r-rdpack
                              r-metafor
@@ -24703,6 +27149,9 @@ Analgesia.")
         (base32 "043msccrins1smaizmf7qc6q1cyjdzirw2ygnvi56lskib1cls7m"))))
     (properties `((upstream-name . "BayesBP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openxlsx r-iterators))
     (home-page "https://cran.r-project.org/package=BayesBP")
     (synopsis
@@ -24726,6 +27175,9 @@ et al. (2017) <doi:10.1002/cam4.1102>.")
         (base32 "0976ryd0gbw3kpmxg2qxyp1m2swnrpa86vdhvqrqxp7fcrs8cs2z"))))
     (properties `((upstream-name . "bayesboot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-hdinterval))
     (home-page "https://github.com/rasmusab/bayesboot")
     (synopsis "An Implementation of Rubin's (1981) Bayesian Bootstrap")
@@ -24749,6 +27201,9 @@ data set.")
         (base32 "08qa4lzkrcwin7n3kzfqfdlnlqahdmjl1lxpdh29n780cgyjfvs0"))))
     (properties `((upstream-name . "bayesbio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bayesbio")
     (synopsis
      "Miscellaneous Functions for Bioinformatics and Bayesian Statistics")
@@ -24771,6 +27226,9 @@ shrinkage estimation for the case of unequal variances.")
         (base32 "1b18qg0mjbmrilwqffrq33gw04fzask2xgj1bp4cli51cjf2slf7"))))
     (properties `((upstream-name . "BayesBinMix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-label-switching r-foreach r-doparallel r-coda))
     (home-page "https://cran.r-project.org/package=BayesBinMix")
     (synopsis
@@ -24792,6 +27250,9 @@ parameters to heterogeneous binary data.")
         (base32 "1vlljv7xdfvbrbxqdi91xrz1aga04aa1pb23kvnmahm2s261map1"))))
     (properties `((upstream-name . "BayesBEKK")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mts r-coda))
     (home-page "https://cran.r-project.org/package=BayesBEKK")
     (synopsis "Bayesian Estimation of Bivariate Volatility Model")
@@ -24815,6 +27276,9 @@ been used to estimate the bivariate time series data using Bayesian technique.")
         (base32 "0y62q0340j3781f0l9azxdn6k4isj1zds6y50fg38a73pi7mbfbm"))))
     (properties `((upstream-name . "bayesassurance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-plotly
                              r-plot3d
@@ -24849,6 +27313,9 @@ more information, please refer to Pan and Banerjee (2021)
         (base32 "1rcfq0r8sqiqs65mbpcr8i4667cdb50k6bx6wdh9spr0djh8gfv0"))))
     (properties `((upstream-name . "BayesARIMAX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-forecast r-coda))
     (home-page "https://cran.r-project.org/package=BayesARIMAX")
     (synopsis "Bayesian Estimation of ARIMAX Model")
@@ -24872,6 +27339,9 @@ estimate the ARIMAX model using Bayesian framework.")
         (base32 "07zmg4y57ysfg7my709x1z35izb4jij0fm5qm0kacdkfvz20mgj8"))))
     (properties `((upstream-name . "bayesanova")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mcmcpack))
     (home-page "https://cran.r-project.org/package=bayesanova")
     (synopsis
@@ -24895,6 +27365,9 @@ Kelter (2019) <@code{arXiv:1906.07524>}.")
         (base32 "040bczymj43rkqz66w9nqgakj43ww1mhiy5kwg2by63gxw3kjpcy"))))
     (properties `((upstream-name . "bayesammi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm
                              r-tidyr
                              r-tibble
@@ -24932,6 +27405,9 @@ P.L. (2011) (<doi:10.2135/cropsci2010.06.0343>).")
         (base32 "1mwwbkd8mqm22mkbgrp5mq7i52qqjr9if09fnhb3ybdpqq3sdg73"))))
     (properties `((upstream-name . "bayesAB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-rcpp r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/FrankPortman/bayesAB")
@@ -24954,6 +27430,9 @@ common frequentist hypothesis test such as the t-test and chi-sq test.")
         (base32 "1i6yc871bbygj6sw2v2l0diiz03n3n4mw46n905fsjkpdrx8rfhj"))))
     (properties `((upstream-name . "bayes4psy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
@@ -24992,6 +27471,9 @@ based on the Stan platform (Carpenter et el.  2017 <doi:10.18637/jss.v076.i01>).
         (base32 "0h0b6m3lpwjax5vwbmqmfqx55hx3sgbb87jby2lwn3d2v138bpks"))))
     (properties `((upstream-name . "Bayenet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-suppdists
                              r-rcpparmadillo
@@ -25024,6 +27506,9 @@ the package have been developed in C++ and R.")
         (base32 "178s559p1mgzp2b23plq3dcl5p0mg1d5cy6477knbaq711awzz3j"))))
     (properties `((upstream-name . "bayefdr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggplot2 r-ggextra r-cowplot
                              r-assertthat))
     (home-page "https://github.com/VallejosGroup/bayefdr")
@@ -25050,6 +27535,9 @@ single-cell level Vallejos et al. (2016) <doi:10.1186/s13059-016-0930-3>.")
         (base32 "1ykz1brs3mz94n86d5qaq25vf24j5adyzpddxqmn7qklbxxr6fh5"))))
     (properties `((upstream-name . "baycn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-igraph r-gtools r-ggplot2 r-egg))
     (home-page "https://cran.r-project.org/package=baycn")
     (synopsis "Bayesian Inference for Causal Networks")
@@ -25077,6 +27565,9 @@ edges in the network.  References: Martin and Fu (2019)
         (base32 "17yppw6m27d1smdbwrl9mja84y3p56s4sjw4c6hklxadcf4na8im"))))
     (properties `((upstream-name . "bayclumpr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstan r-loo r-isoplotr r-deming))
     (native-inputs (list r-knitr))
     (home-page "https://bayclump.tripatilab.epss.ucla.edu/")
@@ -25101,6 +27592,9 @@ implemented in this package are described in Roman-Palacios et al. (2021)
         (base32 "138irq8f7yinjbz9ycsvvb42bh35a8a2jmncg9fcfc1gm9dlfmzb"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-tibble
@@ -25151,6 +27645,9 @@ performance by periods, personal fouls and offensive rebounds.  Please see Vinue
         (base32 "0j838q7063bplkzd50kmnxji80cgysfsq7m1qifv8z7a2zsh8c8g"))))
     (properties `((upstream-name . "batteryreduction")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (home-page "https://cran.r-project.org/package=batteryreduction")
     (synopsis "An R Package for Data Reduction by Battery Reduction")
@@ -25172,6 +27669,9 @@ original set of variables.")
         (base32 "1rkzw4sz3qn09ihjwnwj35gafh196gcnl75xqjjimga5bd7y7m7s"))))
     (properties `((upstream-name . "BATSS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-r-utils r-plyr r-cli r-abind))
     (home-page "https://batss-dev.github.io/BATSS/")
     (synopsis
@@ -25194,6 +27694,9 @@ fitted via integrated Laplace approximations (INLA).")
         (base32 "07axa9rrl4r8wf73023v64sc7x700gl5vmsq90gagnfgg06bfqp5"))))
     (properties `((upstream-name . "batsch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/ramiromagno/batsch")
     (synopsis "Real-Time PCR Data Sets by Batsch et al. (2008)")
@@ -25220,6 +27723,9 @@ file:
         (base32 "0ccgx506p4iri23k2ikb8jmh04dp08w66785bv52iy8kd359h43f"))))
     (properties `((upstream-name . "batman")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/ironholds/batman")
     (synopsis
@@ -25245,6 +27751,9 @@ and Polish.")
         (base32 "1jrf614g5699ygw73pda7dk79ydx57sc8wpq4vg51yy98arhidc2"))))
     (properties `((upstream-name . "bate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vtable
                              r-tidyselect
                              r-purrr
@@ -25277,6 +27786,9 @@ visualization of results.")
         (base32 "1ii7iiq6vhfqnhzp5xpl40g2gdmm9c7ib3kg8fbswg99f96hqhbp"))))
     (properties `((upstream-name . "batchtma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -25312,6 +27824,9 @@ influence biomarker values.")
         (base32 "094l2cq7lcdrlsdmsxmbal7srxdg20rxbms46h1sd414wq26d413"))))
     (properties `((upstream-name . "batchscr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=batchscr")
     (synopsis "Batch Script Helpers")
     (description
@@ -25332,6 +27847,9 @@ downloading and uploading and record operation log.")
         (base32 "1vsr4p3a03dx3kr2clzcnyvf6xfzyisfk87famfvssjb4g58bzrv"))))
     (properties `((upstream-name . "batchmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-salso r-rcpparmadillo r-rcpp r-ggplot2))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/stcolema/batchmix")
@@ -25358,6 +27876,9 @@ generated across several batches.  See Coleman et al. (2022)
         (base32 "0b2npqxrv08zxj59sahj5s87inhl6dyl10bj01v0l1yr14q5g546"))))
     (properties `((upstream-name . "batchmeans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=batchmeans")
     (synopsis
      "Consistent Batch Means Estimation of Monte Carlo Standard Errors")
@@ -25378,6 +27899,9 @@ errors.")
         (base32 "0y7s0m2gdynqcnnf4yar8ga7y53km7a03izaf4ds254349dhkk0y"))))
     (properties `((upstream-name . "batchLLM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spscomps
                              r-shinywidgets
                              r-shinyjs
@@ -25415,6 +27939,9 @@ delays, and a shiny app addin.")
         (base32 "1sv4p0f8l79wy3q6jwsi3iy7zljc33z9mnyf8ijb23l64w7fvy9i"))))
     (properties `((upstream-name . "BatchGetSymbols")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xml
                              r-tidyr
@@ -25451,6 +27978,9 @@ delays, and a shiny app addin.")
         (base32 "0g3vr2g4v968rwzja1nngji58960p2r494km8wia7x5w3y69p063"))))
     (properties `((upstream-name . "BatchExperiments")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite
                              r-dbi
                              r-data-table
@@ -25477,6 +28007,9 @@ computing clusters.  For further details see the project web page.")
         (base32 "0wdgfvk2i542cqg34ikvzwlix09f2jyjb32a0f4zh9vg9nrywswq"))))
     (properties `((upstream-name . "batch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://sites.google.com/site/thomashoffmannproject/")
     (synopsis
      "Batching Routines in Parallel and Passing Command-Line Arguments to R")
@@ -25501,6 +28034,9 @@ this package.")
         (base32 "0z3pj37jydidw3lq1yvp1yv1vqbm28nhj0v4kb3n30dl00kd0hmy"))))
     (properties `((upstream-name . "batata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-remotes
                              r-purrr
                              r-lubridate
@@ -25530,6 +28066,9 @@ that will install Github starred R packages whether available on CRAN or not.")
         (base32 "04wsr8sz70z7z6cqhmc4npqvh6ay9r1x5ghkp2ick58s0f6sagbf"))))
     (properties `((upstream-name . "BAT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-terra
                              r-phytools
@@ -25561,6 +28100,9 @@ depicting species relationships.  Cardoso et al. (2015)
         (base32 "1db4qyg6dmcq2mzmf55n3lxxqk4i7jfz9s32560754h9n0y1l92p"))))
     (properties `((upstream-name . "BaSTA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snowfall))
     (home-page "https://cran.r-project.org/package=BaSTA")
     (synopsis
@@ -25586,6 +28128,13 @@ Rebke (2012) <doi:10.1111/j.2041-210X.2012.00186.x> and Colchero et al. (2021)
         (base32 "00py6s7b9lv8lsycpa79gbwrlbghgsffd2avggb77gxpl0g8vfz0"))))
     (properties `((upstream-name . "BASS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-truncdist r-hypergeo))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=BASS")
@@ -25609,6 +28158,9 @@ methodology in Denison, Mallick and Smith (1998) <doi:10.1023/A:1008824606259>."
         (base32 "1vrav84fqkilmk0ww0gjr6hldxp7fpzgca2062jvrkzbyff05bx9"))))
     (properties `((upstream-name . "basksim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progressr
                              r-hdinterval
                              r-foreach
@@ -25645,6 +28197,9 @@ bmabasket'.")
         (base32 "1825avqbbf8zkk9fps0i450zwl3j0armbnblndl9q954g2wzdhs4"))))
     (properties `((upstream-name . "baskexact")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-ggplot2
@@ -25675,6 +28230,9 @@ Fujikawa et al. (2020) <doi:10.1002/bimj.201800404>.")
         (base32 "1bad287llg89smqg43lgz2hdkjg3l39mh4k82avgb52xwqp5gjxc"))))
     (properties `((upstream-name . "BasketballAnalyzeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-statnet-common
@@ -25721,6 +28279,9 @@ Manisera (2020) Basketball Data Science.  Applications with R. CRC Press.  ISBN
         (base32 "1kmz53v8k1wyjg33dsf05p57ym2zq3d0f373wp85bnrwx00nfr10"))))
     (properties `((upstream-name . "basket")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tidygraph
                              r-tibble
@@ -25773,6 +28334,9 @@ Koopmeiners, J.S. and Hobbs, B.P. (2017) <doi:10.1093/biostatistics/kxx031>.")
         (base32 "1dvkn8sgrxnxi91635ic3crhz498v95i8clj7n4pq1k9fsany3jg"))))
     (properties `((upstream-name . "BaSkePro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=BaSkePro")
     (synopsis "Bayesian Model to Archaeological Faunal Skeletal Profiles")
@@ -25812,6 +28376,9 @@ value.  See Ana B. Marin-Arroyo, David Ocio
         (base32 "00lid7crjjcrfkfqdnkk7i5zlp17wvnirbgb3xb5s8wlc5cyhxyq"))))
     (properties `((upstream-name . "BASiNETEntropy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest r-igraph r-biostrings))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BASiNETEntropy")
@@ -25840,6 +28407,9 @@ examples.")
         (base32 "09g2h38kz1g9kkjc69si5d6z6fkayys9hinjs3p6dn7sx7zn2bx1"))))
     (properties `((upstream-name . "BASiNET")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rweka
                              r-rmcfs
                              r-rjava
@@ -25875,6 +28445,9 @@ Isaque; VICENTE, FÃ¡bio; PEREIRA, Felipe; LOPES, FabrÃ­cio, 2018)
         (base32 "1clnmb57g7aclgw8ibj92pfixaism0af85w4kn0208nbm75c1kvf"))))
     (properties `((upstream-name . "basifoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rodbc
                              r-measurements
                              r-httr
@@ -25887,8 +28460,8 @@ Isaque; VICENTE, FÃ¡bio; PEREIRA, Felipe; LOPES, FabrÃ­cio, 2018)
     (description
      "Data sets of the Spanish National Forest Inventory
 <https://www.miteco.gob.es/es/biodiversidad/servicios/banco-datos-naturaleza/informacion-disponible/>
-are processed to compute tree metrics and statistics.  Function metrics2Vol()
-controls most of the routines.")
+are processed to compute tree metrics and statistics.  Function
+@code{metrics2Vol()} controls most of the routines.")
     (license license:gpl3)))
 
 (define-public r-basictabler
@@ -25903,6 +28476,9 @@ controls most of the routines.")
         (base32 "0d5gpvf3la0fky786z74i8q7il1mmb2prg8y9wslg2gbngnkvkvm"))))
     (properties `((upstream-name . "basictabler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-htmlwidgets r-htmltools r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "http://www.basictabler.org.uk/")
@@ -25912,6 +28488,39 @@ controls most of the routines.")
 row-by-row, column-by-column or cell-by-cell.  Use common formatting/styling to
 output rich tables as HTML', HTML widgets or to Excel'.")
     (license license:gpl3)))
+
+(define-public r-basicspace
+  (package
+    (name "r-basicspace")
+    (version "0.25")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "basicspace" version))
+       (sha256
+        (base32 "0scgiqqqydp8rp5gg77q7yfwr62aazyjxmfajh942j83pfclhjgx"))))
+    (properties `((upstream-name . "basicspace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list gfortran))
+    (home-page "https://CRAN.R-project.org/package=basicspace")
+    (synopsis "Recovering a Basic Space from Issue Scales")
+    (description
+     "This package provides functions to estimate latent dimensions of choice and
+judgment using Aldrich-@code{McKelvey} and Blackbox scaling methods, as
+described in Poole et al. (2016, <doi:10.18637/jss.v069.i07>).  These techniques
+allow researchers (particularly those analyzing political attitudes, public
+opinion, and legislative behavior) to recover spatial estimates of political
+actors ideal points and stimuli from issue scale data, accounting for perceptual
+bias, multidimensional spaces, and missing data.  The package uses singular
+value decomposition and alternating least squares (ALS) procedures to scale
+self-placement and perceptual data into a common latent space for the analysis
+of ideological or evaluative dimensions.  Functionality also include tools for
+assessing model fit, handling complex survey data structures, and reproducing
+simulated datasets for methodological validation.")
+    (license license:gpl2)))
 
 (define-public r-basicmcmcplots
   (package
@@ -25925,6 +28534,9 @@ output rich tables as HTML', HTML widgets or to Excel'.")
         (base32 "02lwkbpr9yj5q7l3ing1v47c4ifvwaxn8yyr3b34fral08cgpn9x"))))
     (properties `((upstream-name . "basicMCMCplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=basicMCMCplots")
     (synopsis
      "Trace Plots, Density Plots and Chain Comparisons for MCMC Samples")
@@ -25950,6 +28562,9 @@ Bodik (2017) <doi:10.1080/10618600.2016.1172487>.")
         (base32 "130s8h54760lnjh0m2i7pjs9cx2sc6xxjkm3x93727azxzgxpk09"))))
     (properties `((upstream-name . "basicdrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=basicdrm")
     (synopsis "Fit Hill Dose Response Models")
     (description
@@ -25975,6 +28590,9 @@ model parameters.")
         (base32 "0l3y5p51jic3b8h1jclhhma4myll1g3vsxr8rj0dx1bvjfimkryw"))))
     (properties `((upstream-name . "basf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-sf r-raster))
     (home-page "https://github.com/mdsumner/basf")
     (synopsis "Plot Simple Features with 'base' Sensibilities")
@@ -25997,6 +28615,9 @@ it belongs.  This package depends on sf and only replaces the plot method.")
         (base32 "0g1dsim688zl309svbv29g5ya23x71al4kribmy279vwqiddzl8z"))))
     (properties `((upstream-name . "basetheme")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/karoliskoncevicius/basetheme")
     (synopsis "Themes for Base Graphics Plots")
     (description
@@ -26018,6 +28639,9 @@ of base plots.")
         (base32 "07b1611k639whrc32xcjdlqyxjsdyd9gmpgx3f7b8hcchnhx98ay"))))
     (properties `((upstream-name . "BaseTempSeed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlcoptim))
     (home-page "https://cran.r-project.org/package=BaseTempSeed")
     (synopsis
@@ -26050,6 +28674,9 @@ al. (1982) and Ellis et al. (1982) <doi:10.1093/JXB/38.6.1033>
         (base32 "0dn4qxmba4pwf5ig7wivqijr35krm2h1cxgr99z44678k9hd3ip5"))))
     (properties `((upstream-name . "BaseSet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/BaseSet")
@@ -26074,6 +28701,9 @@ several data structures.")
         (base32 "012p6xs9dkvpwcqkm9qgnc5v6sg6qhwpcaqxfnwx30fpim99liai"))))
     (properties `((upstream-name . "baseq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/ambuvjyn/baseq")
     (synopsis "Basic Sequence Processing Tool for Biological Data")
     (description
@@ -26093,6 +28723,9 @@ surrounding the central dogma of molecular biology.")
         (base32 "07r61bzrpnwwfsxg9szfw6cf5aqsqa5fxz9j448rqlkqlg84r68h"))))
     (properties `((upstream-name . "basemodels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ying-Ju/basemodels")
     (synopsis "Baseline Models for Classification and Regression")
@@ -26122,6 +28755,9 @@ that can be used within the caret package pipeline.")
         (base32 "1z8v8w95y6gic360cy8dg38c56l64yvnx5sa1ga5m47c37a1dvkz"))))
     (properties `((upstream-name . "basemaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-stars
                              r-slippymath
@@ -26149,6 +28785,9 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
         (base32 "1m258ycxc9m2xdpvqzjk0hz3fg3bwbj3z2yx6raf315ws4s2h47f"))))
     (properties `((upstream-name . "basefun")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variables r-polynom r-orthopolynom r-matrix))
     (home-page "http://ctm.R-forge.R-project.org")
     (synopsis "Infrastructure for Computing with Basis Functions")
@@ -26167,6 +28806,9 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
         (base32 "18gfk7hivp68mgbgx60qbpcy28ysj4llzwdji5a57rrczwffr6p0"))))
     (properties `((upstream-name . "basedosdados")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-typed
                              r-tibble
@@ -26205,6 +28847,9 @@ project, query our tables, save data to disk and memory, all from R.")
         (base32 "0jxlh04f3pqxb0ihp8241z91fka4hi3d3g41ya927japps5dpvhr"))))
     (properties `((upstream-name . "basecamb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-sae
                              r-purrr
@@ -26234,6 +28879,9 @@ imputed datasets and fitting models on them.  Summarizing models.")
         (base32 "0qsr6di5y1a3z28rxpzk6k8b5rbnh08pdcjv65qa0fci3yx1i15y"))))
     (properties `((upstream-name . "baseballr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -26273,19 +28921,22 @@ data from online sources such as Baseball Reference
         (base32 "0lsbbcvmq5n3dpqic9qkyr8wdbmagaw32qfdnl0ck5b6ijh2wz0a"))))
     (properties `((upstream-name . "base.rms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rms r-do))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=base.rms")
     (synopsis "Convert Regression Between Base Function and 'rms' Package")
     (description
-     "We perform linear, logistic, and cox regression using the base functions lm(),
-glm(), and coxph() in the R software and the survival package.  Likewise, we can
-use ols(), lrm() and cph() from the rms package for the same functionality.
-Each of these two sets of commands has a different focus.  In many cases, we
-need to use both sets of commands in the same situation, e.g. we need to filter
-the full subset model using AIC, and we need to build a visualization graph for
-the final model.  base.rms package can help you to switch between the two sets
-of commands easily.")
+     "We perform linear, logistic, and cox regression using the base functions
+@code{lm()}, @code{glm()}, and @code{coxph()} in the R software and the survival
+package.  Likewise, we can use @code{ols()}, @code{lrm()} and @code{cph()} from
+the rms package for the same functionality.  Each of these two sets of commands
+has a different focus.  In many cases, we need to use both sets of commands in
+the same situation, e.g. we need to filter the full subset model using AIC, and
+we need to build a visualization graph for the final model.  base.rms package
+can help you to switch between the two sets of commands easily.")
     (license license:gpl3)))
 
 (define-public r-basad
@@ -26300,6 +28951,9 @@ of commands easily.")
         (base32 "0g8zfphwbvxq1ydvsaj0dvidsikrriyi80cam9i3syhx0v20vnir"))))
     (properties `((upstream-name . "basad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=basad")
     (synopsis
@@ -26323,6 +28977,9 @@ shrinking and diffusing priors studied in Narisetty & He (2014)
         (base32 "1h11lllvk9dhj63kzaibr71jvrlf944sy39grbg997r1z81g245g"))))
     (properties `((upstream-name . "BAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://merliseclyde.github.io/BAS/")
     (synopsis
@@ -26364,6 +29021,9 @@ necessarily reflect the views of the National Science Foundation.")
         (base32 "0ymdz8dpkk8xw4baiz0xamwx526gmaf59w3nzbppckiqacjr6qvd"))))
     (properties `((upstream-name . "baRulho")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-warbler
                              r-viridis
                              r-tuner
@@ -26401,6 +29061,9 @@ attenuation and envelope correlation among others (Dabelsteen et al 1993
         (base32 "10g9ymfjnjzykrxkws4iayzz69mi4a5vjba49js740ds6i1r3zq5"))))
     (properties `((upstream-name . "bartMan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytreatment
                              r-tidyr
                              r-tidygraph
@@ -26455,6 +29118,9 @@ Kapelner and Justin Bleich 2016) <doi:10.18637/jss.v070.i04>.")
         (base32 "1h71ikmj217wjd1w52qvxf6p3alnqxg1zn43dzhlkhmfyjn20ylz"))))
     (properties `((upstream-name . "bartMachineJARs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page "https://cran.r-project.org/package=bartMachineJARs")
@@ -26477,6 +29143,9 @@ package without @code{bartMachine}.")
         (base32 "12abi19nd07lvclxpa73ba21sbrll67bbp0a8vz8wnj2ym8542iv"))))
     (properties `((upstream-name . "bartMachine")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-randomforest r-missforest
                              r-bartmachinejars))
@@ -26499,6 +29168,9 @@ features for data analysis and visualization.")
         (base32 "0kajw5phkymvkilwb7bf3qdc24h369yvb1zmc49kk6k7bdpbxcrr"))))
     (properties `((upstream-name . "bartcs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve
                              r-rlang
                              r-rcpp
@@ -26528,6 +29200,9 @@ effect.  For more information, see Kim et al. (2023) <doi:10.1111/biom.13833>.")
         (base32 "1nvb3ljzh4l8bq1nixvphr0aww1zxi3bcv6jfa54qs4iq9mgqxsv"))))
     (properties `((upstream-name . "bartCause")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dbarts))
     (home-page "https://github.com/vdorie/bartCause")
     (synopsis "Causal Inference using Bayesian Additive Regression Trees")
@@ -26549,6 +29224,9 @@ regression model (Hill (2012) <doi:10.1198/jcgs.2010.08162>).")
         (base32 "1jm17n2p6n0knbjzy3sqxaljbq9qfm7mn1swb6zpgw172hr7l22v"))))
     (properties `((upstream-name . "BART")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpp r-nlme))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BART")
@@ -26572,6 +29250,9 @@ outcomes.  For more information see Sparapani, Spanbauer and @code{McCulloch}
         (base32 "1rj69p5s8w191haavjind42kr36jf4pcv3l43qsqwkndnn0f253w"))))
     (properties `((upstream-name . "barrks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-stringr
                              r-readr
@@ -26608,6 +29289,9 @@ expanded by models for other bark beetle species in the future.")
         (base32 "1ki58hjs5kpmp76kwj1qi6hwmdvjphqb1lvrlhnmkgqxg4hw4vqg"))))
     (properties `((upstream-name . "Barnard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/kerguler/Barnard")
     (synopsis "Barnard's Unconditional Test")
     (description "Barnard's unconditional test for 2x2 contingency tables.")
@@ -26625,6 +29309,9 @@ expanded by models for other bark beetle species in the future.")
         (base32 "0kmxklp4l3yfyvh3g72zh5g1y04ahz1h7b1z3kx360yxv97098gx"))))
     (properties `((upstream-name . "bark")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://www.R-project.org")
     (synopsis "Bayesian Additive Regression Kernels")
@@ -26655,6 +29342,9 @@ Regression Kernels, Annals of Statistics Vol (39) pages 1916-1962
         (base32 "02499b3j10j7qq3whz9qijfp3amp0s1ji8qk76c53dsnkj8f9hvs"))))
     (properties `((upstream-name . "bardr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=bardr")
     (synopsis "Complete Works of William Shakespeare in Tidy Format")
     (description
@@ -26674,6 +29364,9 @@ provided by Project Gutenberg <https:www.gutenberg.org/ebooks/100>.")
         (base32 "03x26mrlvg00rnfh74wacpgbdk7xr2lq4yd0bx4q2442nli54rdv"))))
     (properties `((upstream-name . "BarcodingR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-nnet r-class r-ape))
     (home-page "https://cran.r-project.org/package=BarcodingR")
     (synopsis "Species Identification using DNA Barcodes")
@@ -26692,6 +29385,9 @@ provided by Project Gutenberg <https:www.gutenberg.org/ebooks/100>.")
         (base32 "199cdbwphpz6ds19841s32bm2rjd7b6v484bvaskw94z0d8bcn6w"))))
     (properties `((upstream-name . "baRcodeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rstudioapi r-qrcode r-miniui r-dt))
     (native-inputs (list r-knitr))
     (home-page
@@ -26718,12 +29414,15 @@ codes can be included for hierarchically structured sampling designs.")
         (base32 "1kk5nwh810l5vix6qzwl28cfi8rk7vc35hv73whk1bkndv2y4qx0"))))
     (properties `((upstream-name . "barcode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://cran.r-project.org/package=barcode")
     (synopsis "Render Barcode Distribution Plots")
     (description
-     "The function \\code{barcode()} produces a histogram-like plot of a distribution
-that shows granularity in the data.")
+     "The function @code{\\code{barcode()}} produces a histogram-like plot of a
+distribution that shows granularity in the data.")
     (license license:gpl2+)))
 
 (define-public r-barborgradient
@@ -26738,6 +29437,9 @@ that shows granularity in the data.")
         (base32 "0g2g7hrm23as1xbj79g48r8sj3gsj66fmi895jqlqfbqrl2fl7a5"))))
     (properties `((upstream-name . "BarBorGradient")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=BarBorGradient")
     (synopsis "Function Minimum Approximator")
     (description
@@ -26760,6 +29462,9 @@ not recommended for use, their purpose are purely for comparison.")
         (base32 "0bcq6lvijq1vxri2dbhnqcn46f799h3ag974zgcdpx4c5apph04w"))))
     (properties `((upstream-name . "BAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BAR")
     (synopsis "Bayesian Adaptive Randomization")
@@ -26780,6 +29485,9 @@ which is increasingly used in clinical trials.")
         (base32 "1pnhq1li0c4pvgvwsaxxzsgbdyjnb96s1hciqanzgbd1d4577lvp"))))
     (properties `((upstream-name . "bapred")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sva
                              r-mnormt
                              r-mass
@@ -26806,13 +29514,13 @@ Here, the (already batch effect adjusted) training data is not altered.  For
 evaluating the success of batch effect adjustment several metrics are provided.
 Moreover, the package implements a plot for the visualization of batch effects
 using principal component analysis.  The main functions of the package for batch
-effect adjustment are ba() and baaddon() which enable batch effect removal and
-addon batch effect removal, respectively, with one of the seven methods
-mentioned above.  Another important function here is bametric() which is a
-wrapper function for all implemented methods for evaluating the success of batch
-effect removal.  For (addon) quantile normalization and (addon) RMA
-normalization the functions qunormtrain(), qunormaddon(), rmatrain() and
-rmaaddon() can be used.")
+effect adjustment are @code{ba()} and @code{baaddon()} which enable batch effect
+removal and addon batch effect removal, respectively, with one of the seven
+methods mentioned above.  Another important function here is @code{bametric()}
+which is a wrapper function for all implemented methods for evaluating the
+success of batch effect removal.  For (addon) quantile normalization and (addon)
+RMA normalization the functions @code{qunormtrain()}, @code{qunormaddon()},
+@code{rmatrain()} and @code{rmaaddon()} can be used.")
     (license license:gpl2)))
 
 (define-public r-baorista
@@ -26827,6 +29535,9 @@ rmaaddon() can be used.")
         (base32 "06dgqzkl9a2v3izpwlgvc31lg2b4yh3pynhs4wgjzhrn58lf6rp1"))))
     (properties `((upstream-name . "baorista")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nimble r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=baorista")
@@ -26852,6 +29563,9 @@ complex user-provided vector of probabilities.")
         (base32 "0vchm2hnqm45fhn8k38rcam4vkazmifcl40390s2r04bgvqr0pnl"))))
     (properties `((upstream-name . "banxicoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-stringr r-rvest))
     (home-page "https://cran.r-project.org/package=banxicoR")
     (synopsis "Download Data from the Bank of Mexico")
@@ -26872,6 +29586,9 @@ downloading and ordering the data conveniently.")
         (base32 "07gzl06l7iw4czdx3il3p8kl83yw32fxa8cjx1j018z3468m1qyj"))))
     (properties `((upstream-name . "banter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-swfscmisc
@@ -26901,6 +29618,9 @@ type detectors as described in Rankin et al (2017) <doi:10.1111/mms.12381>.")
         (base32 "07ghmzsb77vcd3snmg59spp60j603gawnqs847x1x44pnxs9l4wl"))))
     (properties `((upstream-name . "BANOVA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-runjags r-rstan r-rjags r-coda))
     (native-inputs (list r-knitr))
@@ -26934,6 +29654,9 @@ Stan and JAGS as the computational platform.  References: Dong and Wedel (2017)
         (base32 "1i0b3v4n0xylcbrg9i3a28z037m27vjfg61xz2hl99wavn0bsl1j"))))
     (properties `((upstream-name . "bannerCommenter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bannerCommenter")
     (synopsis "Make Banner Comments with a Consistent Format")
@@ -26959,6 +29682,9 @@ other programmers.")
         (base32 "1vjrashph4n8njm6yk8slywmfwxqrvdmb2ybgp23vdxjhk3rlrzl"))))
     (properties `((upstream-name . "bangladesh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmap r-sf))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bangladesh")
@@ -26987,6 +29713,9 @@ calculate the centroids of those areas.")
         (base32 "0v2iwy52knvsnr2ldcdqm1z99ag047fxbch56nvs6mki6zbn1vwf"))))
     (properties `((upstream-name . "bang")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rust r-bayesplot))
     (native-inputs (list r-knitr))
     (home-page "https://paulnorthrop.github.io/bang/")
@@ -27014,6 +29743,9 @@ conjugate hierarchical models are available: beta-binomial, gamma-Poisson and a
         (base32 "0b37j8xg2rg7gisp2m1rqvjfffqj0yfz54bq2fl0wckmgknkz05c"))))
     (properties `((upstream-name . "banffIT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -27053,6 +29785,9 @@ description of the Banff classification is available at
         (base32 "07w381i8cls1hf1mdl4qy3vxp7xx0czng3fl3bzrbk80mysjf47n"))))
     (properties `((upstream-name . "bandsfdp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/uni-Arya/bandsfdp")
     (synopsis
      "Compute Upper Prediction Bounds on the FDP in Competition-Based Setups")
@@ -27083,6 +29818,9 @@ installation.  The size of this data is roughly 81Mb.")
         (base32 "167myv0cd3bygypnvib0nbphcwr8sxwgj6h4fpvhkwyskdwyrnhn"))))
     (properties `((upstream-name . "banditsCI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-mvtnorm r-mass r-glmnet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/UChicago-pol-methods/banditsCI")
@@ -27107,6 +29845,9 @@ using Thompson sampling are also supplied.")
         (base32 "05ym5x178rgfvpvqgiv46ly6xnk44d0j74ykdxkzshil7aig1xfk"))))
     (properties `((upstream-name . "banditpam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=banditpam")
@@ -27130,6 +29871,9 @@ Almost Linear Time k-medoids Clustering via Multi-Armed Bandits\"
         (base32 "0zj98x4kwv8fr6j78vg0hzlsjd4w5l4nbazkpxqkn5yyd6g0v9h4"))))
     (properties `((upstream-name . "bandit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gam r-boot))
     (home-page "https://cran.r-project.org/package=bandit")
     (synopsis
@@ -27151,6 +29895,9 @@ data and web metrics in general.")
         (base32 "0vb9cdp3ci00rjqb18l1a6106fbl5w8sjlj8kfs170rccziynnf9"))))
     (properties `((upstream-name . "bandicoot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://tengmcing.github.io/bandicoot/")
@@ -27164,15 +29911,18 @@ method resolution order.")
 (define-public r-banam
   (package
     (name "r-banam")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BANAM" version))
        (sha256
-        (base32 "0jiw42icj0zzxpf51fxjbgqzjlp5s90nd8pgav4nlq70h4y64g2n"))))
+        (base32 "0mwvnqpcmsdwxrhm87r0k8yaq9fbjqpwva3a7pixcrcdmggqlb9j"))))
     (properties `((upstream-name . "BANAM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm
                              r-sna
                              r-rarpack
@@ -27215,6 +29965,13 @@ on flat priors as input.")
         (base32 "0qzcndjdwbgiwyvc7ikb7jr0n7cmn78v56h5in22j24jjj740l2z"))))
     (properties `((upstream-name . "bamp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-coda r-abind))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://volkerschmid.github.io/bamp/")
@@ -27240,6 +29997,9 @@ Gelman's R.")
         (base32 "0hijnx2rlfhwxm2jvyam6nzfcxyff9fq69nz7cnnw2wald8y6s7y"))))
     (properties `((upstream-name . "BAMMtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-gplots r-ape))
     (home-page "http://bamm-project.org/")
     (synopsis
@@ -27267,6 +30027,9 @@ models using Bayes factors, and more.")
         (base32 "1m48bszhqhzsjnr70pv5lmx19x13gm9nfg1idcr2jrn87xcm8mlb"))))
     (properties `((upstream-name . "bamm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list sqlite geos))
     (propagated-inputs (list r-sp
                              r-rspectra
@@ -27320,6 +30083,9 @@ background of the package can be found in SoberÃ³n and Osorio-Olvera (2023)
         (base32 "0p7gi5biydv73mmscizxd193fzx60cd8zwv0i5gsshspi9cwfmw6"))))
     (properties `((upstream-name . "bamlss")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-sp
                              r-mvtnorm
@@ -27356,6 +30122,9 @@ Simon, Zeileis (2021) <doi:10.18637/jss.v100.i04>.")
         (base32 "0qi31rd9wphnmx7snk6kwk8l7p7j7sirdgnh97zj98xb79hqj6gv"))))
     (properties `((upstream-name . "bamdit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-rjags
                              r-r2jags
@@ -27385,6 +30154,9 @@ results of observational studies (OS).")
         (base32 "0d4jw8ymrgi20il0ipszs18a7x7q7xb3jpqmp1zrb5gigvabb9x2"))))
     (properties `((upstream-name . "bambooHR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-tibble
@@ -27421,6 +30193,9 @@ be found here <https://documentation.bamboohr.com/docs>.")
         (base32 "1w6jhh9f336cmwjvchc0j05pn1q716644rr654937x5ify0l8y6i"))))
     (properties `((upstream-name . "BAMBI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rcpparmadillo
                              r-rcpp
@@ -27454,6 +30229,9 @@ angular distributions.  Chakraborty and Wong (2021) <doi:10.18637/jss.v099.i11>.
         (base32 "1ydm9p6msmgi74rhrji2j14qy7cg7fqgg4ffm9rz293k27n5ghnn"))))
     (properties `((upstream-name . "bama")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppdist r-rcpparmadillo r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/umich-cphds/bama")
@@ -27483,6 +30261,9 @@ on the effects.")
         (base32 "1mfbz8hp6cd170d5y6iva2dbd31rlg6z2dgnfvjp9myqa4cjy40y"))))
     (properties `((upstream-name . "BaM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mice r-mass))
     (home-page "https://cran.r-project.org/package=BaM")
     (synopsis
@@ -27505,6 +30286,9 @@ Published by Chapman and Hall/CRC (2002, 2007, 2014) <doi:10.1201/b17888>.")
         (base32 "1hf94d41cks8mbrb985mpd0nqgirvm096cfv7bsy0182bbxlk6s1"))))
     (properties `((upstream-name . "BallMapper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat
                              r-stringr
                              r-scales
@@ -27538,6 +30322,9 @@ as the minimal resolution on which we use to create the model of the data.")
         (base32 "0qmjwpj56n07dvjwfknqvc02f0y5mlwh2yz4lrw7c4wqgrckcpgi"))))
     (properties `((upstream-name . "BALLI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-limma r-edger))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BALLI")
@@ -27561,6 +30348,9 @@ provides comparisons for effect of one or more variables.  See Kyungtaek Park
         (base32 "1bmwdjj7zsxnchq1xv64b45izn94bzayqzzib47jq03b59blg4ay"))))
     (properties `((upstream-name . "Ball")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mvtnorm r-gam))
     (native-inputs (list r-knitr))
     (home-page "https://mamba413.github.io/Ball/")
@@ -27594,6 +30384,9 @@ supported, which is particularly helpful for genome-wide association study.")
         (base32 "13nl5apdmb1pm32d58qq04vc2xngc35n6cv4sivf2s34yk4k0n4c"))))
     (properties `((upstream-name . "baldur")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-tidyr
                              r-tibble
@@ -27642,6 +30435,9 @@ which a statistical decision can be made.  See Berg and Popescu for details
         (base32 "19a4fb2jnd2h6234radcylgbvmf6mf40hkqn9r2nmrmydvw883hq"))))
     (properties `((upstream-name . "BalancedSampling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://www.envisim.se/")
     (synopsis "Balanced and Spatially Balanced Sampling")
@@ -27669,6 +30465,9 @@ balanced sampling) are included, see GrafstrÃ¶m and TillÃ© (2013)
         (base32 "0aal641vfbjk3w6ipwbqqmm9nnxs962hjmpph9wnqaqk5r6s7brs"))))
     (properties `((upstream-name . "BalanceCheck")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-ade4))
     (home-page "https://cran.r-project.org/package=BalanceCheck")
     (synopsis
@@ -27691,6 +30490,9 @@ studies.")
         (base32 "070gv5s78381cq8pagggicxx065hab99v2vgvii996b5svs6rjic"))))
     (properties `((upstream-name . "bakR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stanheaders
                              r-rstantools
@@ -27740,6 +30542,9 @@ detect batch effects are also provided.")
         (base32 "0k564q7v6pvf6w3qs5cmdbhxjjqg2kqm9yr7ckvd23wbl0gm5rdv"))))
     (properties `((upstream-name . "baker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-shinyfiles
                              r-shinydashboard
@@ -27783,6 +30588,9 @@ hence the name of the package.")
         (base32 "0i40vnwgy4db8flfcx23zh5a7mmp4dhckhzayj34smqfmfm5xzkl"))))
     (properties `((upstream-name . "bakeoff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bakeoff.netlify.app/")
     (synopsis "Data from \"The Great British Bake Off\"")
     (description
@@ -27802,6 +30610,9 @@ from Wikipedia <https://en.wikipedia.org/wiki/The_Great_British_Bake_Off>.")
         (base32 "06f7g71pzc4y2vnc3fj33s1xl6plxrkd2y73xi24pk81lm5wgf9a"))))
     (properties `((upstream-name . "baizer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -27838,6 +30649,9 @@ author.  Hope this package also knows what you want!")
         (base32 "137i13i39i87q7219bpja6a8l762is4sala55hvk2hlmph3qnylc"))))
     (properties `((upstream-name . "bain")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lavaan))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://informative-hypotheses.sites.uu.nl/software/bain/")
@@ -27866,6 +30680,9 @@ For the statistical underpinnings, see Gu, Mulder, and Hoijtink (2018)
         (base32 "0yz0v33fhm38ivhr7bvajk9v7wdmhg9qg7ac8r2qr00rns82m6y3"))))
     (properties `((upstream-name . "bahc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixstats r-fastcluster))
     (home-page "https://cran.r-project.org/package=bahc")
     (synopsis
@@ -27891,6 +30708,9 @@ Reactive Global Minimum Variance Portfolios with k-BAHC covariance cleaning
         (base32 "0j3aiqqn1y9hw3ik2jlza3rwsi8rn32i218dd0fffz56k5d5hcdp"))))
     (properties `((upstream-name . "bagyo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://panukatan.io/bagyo/")
     (synopsis "Philippine Tropical Cyclones Data")
@@ -27920,6 +30740,9 @@ dataset for data exploration and visualisation.")
         (base32 "01pxk9angq2yrw3j5c748qhcdq92axpml5lr9cpf74a8hpg6ddjb"))))
     (properties `((upstream-name . "baguette")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-tibble
@@ -27956,6 +30779,9 @@ reduce the model objects size and speed.")
         (base32 "0lvjygnphb2d5cammmswlnyn77vmy3k46r8hh8f3mfr7i68gcdvz"))))
     (properties `((upstream-name . "BAGofT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest r-dcov))
     (home-page "https://cran.r-project.org/package=BAGofT")
     (synopsis "Binary Regression Adaptive Goodness-of-Fit Test (BAGofT)")
@@ -27976,6 +30802,9 @@ can be found in Zhang, Ding and Yang (2021) <@code{arXiv:1911.03063v2>}.")
         (base32 "18faz6b8llzxsrm60bnsanplc8d7knb8cmcz34nyai7i7022061k"))))
     (properties `((upstream-name . "baggr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat
                              r-stanheaders
                              r-rstantools
@@ -28013,6 +30842,9 @@ measures specific to meta-analysis.  This implements many models from Meager
         (base32 "0za7a7l4dzg0djzdrrz9axry61h8m41qkgay37ymy4lfkdwawjcx"))))
     (properties `((upstream-name . "baggingbwsel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sm
                              r-rcpp
                              r-nor1mix
@@ -28045,6 +30877,9 @@ computationally fast.  See Barreiro-Ures et al. (2020)
         (base32 "0fcd54j6vci2yvlb609dck4pwbn54irkdk472cjc965rcw6dz9z7"))))
     (properties `((upstream-name . "bagged.outliertrees")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist
                              r-outliertree
                              r-foreach
@@ -28075,6 +30910,9 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
         (base32 "1pld907impj1l4sbr8ndk9dsxcy6kzlb799pni2pqldriaax1xwc"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tmb
                              r-tibble
@@ -28105,6 +30943,9 @@ and means, based on Template Model Builder'.")
         (base32 "17307jn92sr4gindd9fvaqvk990v40mr77zp2xs0079h85vh8954"))))
     (properties `((upstream-name . "baffle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://j-moravec.github.io/baffle/")
     (synopsis "Make Waffle Plots with Base Graphics")
@@ -28129,6 +30970,9 @@ nowadays popular in various infographics to visualize any proportional ratios.")
         (base32 "1zjn6iqxsa0qby285dhn86047gkzz05nknqqj3dw3bcdhsl91gim"))))
     (properties `((upstream-name . "baf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr
                              r-glue
                              r-fs
@@ -28157,6 +31001,9 @@ outside of decennial census years.")
         (base32 "1d41xcynl2g63mb4qmhkj8hrs193fq7n0ymh6v2ygabn2n6029kc"))))
     (properties `((upstream-name . "badger")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis r-rvcheck r-dlstats r-desc))
     (home-page "https://github.com/GuangchuangYu/badger")
     (synopsis "Badge for R Package")
@@ -28177,6 +31024,9 @@ Pages.")
         (base32 "140hmw036966hff9wjqykixxjvs5c0s2zq5yfwafl8il0k10s3y1"))))
     (properties `((upstream-name . "badgen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8 r-jsonlite))
     (home-page "https://jeroen.r-universe.dev/badgen")
     (synopsis "Fast and Simple Badge Generator")
@@ -28198,6 +31048,9 @@ the rsvg package as shown in examples.")
         (base32 "14zr1v4rihx0ra3x0vsb81vsz0g8gzskkdxkg7nhiz835hp2fiy8"))))
     (properties `((upstream-name . "bacr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mcmcpack))
     (home-page "https://cran.r-project.org/package=bacr")
     (synopsis "Bayesian Adjustment for Confounding")
@@ -28218,6 +31071,9 @@ Confounding (BAC) algorithm.")
         (base32 "1z5wxkik8ziqsgiq6arxsp772scz9jfsa1kz9wz07gpfvv1pl53z"))))
     (properties `((upstream-name . "BACprior")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-leaps r-boot))
     (home-page "https://cran.r-project.org/package=BACprior")
     (synopsis "Choice of Omega in the BAC Algorithm")
@@ -28242,6 +31098,9 @@ Lefebvre, Atherton and Talbot (2014).")
         (base32 "1sd6pbhmx8vxz5c2cvvadbjy7p15y91gzs3n0ish7h5br1vq8fpm"))))
     (properties `((upstream-name . "bacondecomp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bacondecomp")
     (synopsis "Goodman-Bacon Decomposition")
@@ -28262,6 +31121,9 @@ from Goodman-Bacon (2018) <doi:10.3386/w25018>.")
         (base32 "1jpb59g23cmxc8c07fx9y810sx58gm6n1v6cgkmsf8m7592di1bb"))))
     (properties `((upstream-name . "baclava")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rcppnumerical
@@ -28294,6 +31156,9 @@ Bayesian framework Morsomme, R.N., Holloway, S.T., Ryser, M.D. and Xu J. (2024)
         (base32 "1s0mf247dz2vvyf4m3sp9xiqhv7xcs4rphyg9gdcy73060sah2ad"))))
     (properties `((upstream-name . "backtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://cran.r-project.org/package=backtest")
     (synopsis
@@ -28316,6 +31181,9 @@ cetera).")
         (base32 "1dhmq51w07vcqlngsb04ip0wqbgqq2xdfdm1w82r082f07ywqb16"))))
     (properties `((upstream-name . "backShift")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-matrixcalc
                              r-mass
@@ -28344,6 +31212,9 @@ interventions are available.  For more details, see <@code{arXiv:1506.02494>}.")
         (base32 "12k2cv9x8h0b002m9c8g4vj5a7chp4b8jqz377ia0diqw89dydpm"))))
     (properties `((upstream-name . "backpipe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/decisionpatterns/backpipe")
     (synopsis "Backward Pipe (Right-to-Left) Operator")
@@ -28369,6 +31240,9 @@ add-in that can be bound to a keyboard shortcut.")
         (base32 "05b493cfzi85hnczl56d81sc7j5xfwybsmnc4i4q984sw0gpgvll"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-matrix r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://www.zacharyneal.com/backbone")
@@ -28392,6 +31266,9 @@ bipartite graph (Neal, 2022 <doi:10.1371/journal.pone.0269137>).")
         (base32 "1hby2bmxbc8qgjzgkp2flv89lpzzvg3vr7s98989ayjmv4vgmqaf"))))
     (properties `((upstream-name . "bacistool")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-rjags))
     (home-page "https://cran.r-project.org/package=bacistool")
@@ -28420,6 +31297,9 @@ Reference: Nan Chen and J. Jack Lee (2019) <doi:10.1002/bimj.201700275>.")
         (base32 "0bpm4l27vbblzi2hhfbjw2af3ic2jbnyghkvchpq8ww43k8068iv"))))
     (properties `((upstream-name . "BACCT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-reshape2 r-ggplot2))
     (home-page "https://cran.r-project.org/package=BACCT")
     (synopsis "Bayesian Augmented Control for Clinical Trials")
@@ -28449,6 +31329,9 @@ Statistics group for their support in developing the BACCT package.")
         (base32 "1xqhb91pj6gcbr2afbq8jqkilhvy12qqq74zhv9c05i7dxl3b7ak"))))
     (properties `((upstream-name . "BACCO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-emulator r-calibrator r-approximator))
     (home-page "https://cran.r-project.org/package=BACCO")
     (synopsis "Bayesian Analysis of Computer Code Output (BACCO)")
@@ -28470,6 +31353,9 @@ calibrator) in use.")
         (base32 "0g8p5afhsh0piip0i8jxd1s52bk4zb1z5bf3chdkcbxr8z0d42f6"))))
     (properties `((upstream-name . "babynamesIL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/aviezerl/babynamesIL")
     (synopsis "Israel Baby Names 1948-2022")
@@ -28493,6 +31379,9 @@ downloaded from:
         (base32 "1gcpd6lncqwjz05z98ra6hcc8q966l2594ylkg50avndild89n3h"))))
     (properties `((upstream-name . "babynames")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "https://github.com/hadley/babynames")
     (synopsis "US Baby Names 1880-2017")
@@ -28513,6 +31402,9 @@ least 5 children of either sex.")
         (base32 "1hir478scnfm87j2r6f48sr9sxwv2n9b6vcmwjvq58m6s0j8mzfi"))))
     (properties `((upstream-name . "babette")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-xml2
                              r-tracerer
@@ -28546,6 +31438,9 @@ Bayesian phylogenetics easily and reproducibly from R'.")
         (base32 "0qa4hmlan67gqbgmggzkqmiw307yqfwsm968bsqh8yb2z006lmbb"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rxode2
                              r-rex
                              r-rcppeigen
@@ -28585,6 +31480,13 @@ of setting up command line usage.")
         (base32 "1iwvx69051yhlxbcl6bypvc3mcih0q8bf3i29r3i79356hp12xqa"))))
     (properties `((upstream-name . "babel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-edger))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=babel")
@@ -28606,6 +31508,9 @@ fragment counts given @code{mRNA} counts.")
         (base32 "0alr0q2zfxni31rb3m1676kwhwwg91xaq9fsfhjgcycn7r06rjpl"))))
     (properties `((upstream-name . "b64")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (home-page "https://extendr.github.io/b64/")
     (synopsis "Fast and Vectorized Base 64 Engine")

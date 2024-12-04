@@ -52,6 +52,9 @@
         (base32 "0sqxaiw1mdcg81228g7k7r6fla6d7hfk9ax2z6pws8457xbvrzka"))))
     (properties `((upstream-name . "ozmaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-sf r-oz))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mdsumner/ozmaps")
@@ -78,6 +81,9 @@ municipality.")
         (base32 "1aknsdik18jgifz9l4hd37xd67lpdl1sgg71yqzs8f8kz5xg1xmw"))))
     (properties `((upstream-name . "ozbabynames")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/robjhyndman/ozbabynames")
     (synopsis "Australian Popular Baby Names")
     (description
@@ -98,6 +104,9 @@ quantity of the data varies with the state.")
         (base32 "042f2pplhwj6q7n87qk6r2xcriif76ywyf4mcx3xsr2fjislajw9"))))
     (properties `((upstream-name . "oz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=oz")
     (synopsis "Plot the Australian Coastline and States")
     (description
@@ -117,6 +126,9 @@ boundaries.")
         (base32 "11zg959h9104hh8wid4003s8c4z9xhmicj39cc5vq1j8g1g7ilr7"))))
     (properties `((upstream-name . "oysteR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tidyr
                              r-tibble
@@ -150,6 +162,9 @@ found in the third party packages you use.")
         (base32 "11l3gm0jvw993jb13f6kpv77m6z0d1jswscma2v28qzkw053r3dc"))))
     (properties `((upstream-name . "OxyBS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OxyBS")
     (synopsis "Processing of Oxy-Bisulfite Microarray Data")
     (description
@@ -171,6 +186,9 @@ oxy-bisulfite conversion.")
         (base32 "1szifw978qr7v8n178jhg4ap2jwvfnwjl2izbbiydwx8q1fyj2q4"))))
     (properties `((upstream-name . "oxcAAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-stringi r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=oxcAAR")
@@ -198,6 +216,9 @@ of bulk analysis and complex Bayesian sequential calibration.")
         (base32 "0j0va301bmppvmk6paqaqqaw85h8yf92i3pz7i59f2j8q9im82rx"))))
     (properties `((upstream-name . "ox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ox")
     (synopsis "Shorthand if-Else")
@@ -218,6 +239,9 @@ condition.")
         (base32 "0isp6f4q900yzx2fbm3nflm7ngpvycz33a6i1zilcjxsbyjkhxxk"))))
     (properties `((upstream-name . "ows4R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-terra
                              r-sf
@@ -254,6 +278,9 @@ services emerging such OGC API or @code{SensorThings}.")
         (base32 "0qlb5aw6n06yf8y2gd2fjp8kp3w0xgqh3fka7rxqndgvaqmin1a6"))))
     (properties `((upstream-name . "owmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-plyr
@@ -284,6 +311,9 @@ it on leaflet maps.")
         (base32 "07l2398xlm2w8pi2az11wvahiq2sy7wpidmvcwplxb10c8pj29gy"))))
     (properties `((upstream-name . "owidR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-rvest
                              r-purrr
@@ -311,6 +341,9 @@ and data on global economic and social issues.")
         (base32 "0az36s6vrnfa93w12549v9zf6q9xg0a4kvrq5hnkaqxl314zaz1y"))))
     (properties `((upstream-name . "OwenQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stla/OwenQ")
@@ -333,6 +366,9 @@ for the calculation of the power of equivalence tests.")
         (base32 "05h3aj074manlwnlzqp023zkql6gmsm9p1nfs6zki7ifdd83wj7m"))))
     (properties `((upstream-name . "OWEA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-mass r-gtools))
     (home-page "https://cran.r-project.org/package=OWEA")
     (synopsis
@@ -358,6 +394,9 @@ approximate designs and relative efficiency is provided as well.")
         (base32 "0q4654zr5aw04sssy7127vafry72b7p3d8i44fqvqg3055awin0i"))))
     (properties `((upstream-name . "owdbr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-magrittr
                              r-jsonlite
@@ -384,6 +423,9 @@ governmental social programs.")
         (base32 "08f1zzlnkfdzm5rlw14qm6yvn68j2yas21zjsy31pc59rh3lzkyh"))))
     (properties `((upstream-name . "owd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/Feakster/owd")
     (synopsis "Open Working Directory")
     (description
@@ -403,6 +445,9 @@ computer's file manager.")
         (base32 "1ghfbvnfl092g0kikgjghgf0l1y7ihqykssfvvfi6q6pgzl8kz4y"))))
     (properties `((upstream-name . "OVtool")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-varhandle
                              r-twang
                              r-tidyselect
@@ -445,6 +490,9 @@ package, ov_sim.  The method is demonstrated in Griffin et al. (2020)
         (base32 "17ksnsj68snxwm5ibjq3zchmybs7a3zq9ack0blhi4cbsx7xd5ds"))))
     (properties `((upstream-name . "OVL.CI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ks))
     (home-page "https://cran.r-project.org/package=OVL.CI")
     (synopsis
@@ -474,6 +522,9 @@ the work of Franco-Pereira, A.M., Nakas, C.T., Reiser, B., and Pardo, M.C.
         (base32 "13g2qjd9421nfmabhs2xx8h393id9c9x1h547r953q7aabjmkr89"))))
     (properties `((upstream-name . "overviewR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -504,6 +555,9 @@ publishable @code{LaTeX} code to present the sample information.")
         (base32 "0x4z1dyijw4qrf5g89mskvmxvy01xa94bkdk2ybp2ykfgbh3svcy"))))
     (properties `((upstream-name . "overtureR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-rlang
                              r-glue
@@ -533,6 +587,9 @@ dbplyr data frames or materialized sf spatial data frames.")
         (base32 "176vh7gp6ijqb4dqnk3shhrs1q0x3gz0gj1w24a7qrcp5zdp24ff"))))
     (properties `((upstream-name . "overturemapsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-dplyr r-arrow))
     (home-page "https://cran.r-project.org/package=overturemapsr")
     (synopsis "Download Overture Maps Data in R")
@@ -556,6 +613,9 @@ different file formats.  For more information, visit
         (base32 "1s16x5kn0apb0w1f7hqzcsqvw3x621y5n6yr1qn7yb7431pdw3cz"))))
     (properties `((upstream-name . "overture")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bigmemory))
     (home-page "https://github.com/kurtis-s/overture")
     (synopsis "Tools for Writing MCMC")
@@ -581,6 +641,9 @@ adaptive Metropolis samplers.  References: Roberts and Rosenthal (2009)
         (base32 "0qvsiwh76isiz3rcrizahp6p35lscrjijidnjwwwpmc0r9pm7xzd"))))
     (properties `((upstream-name . "overlapptest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-geom))
     (home-page "https://cran.r-project.org/package=overlapptest")
     (synopsis "Test Overlapping of Polygons Against Random Rotation")
@@ -602,6 +665,9 @@ a null model of random rotation, as explained in De la Cruz et al. (2017)
         (base32 "1dq2xsinl5rh8sf2bayv6xs7x8i0d54c405p8l82ji3xrkz49clf"))))
     (properties `((upstream-name . "overlapping")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat r-ggplot2))
     (home-page "https://cran.r-project.org/package=overlapping")
     (synopsis "Estimation of Overlapping in Empirical Distributions")
@@ -622,6 +688,9 @@ more kernel density estimations from empirical data.")
         (base32 "155zkxpv0jqy21winp3r17vnrd6xh2a92glha4d9i2vi541d9kix"))))
     (properties `((upstream-name . "overdisp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=overdisp")
     (synopsis "Overdispersion in Count Data Multiple Regression Analysis")
     (description
@@ -635,10 +704,10 @@ prediction from a count data estimation is directly linked to the existence of
 overdispersion of the dependent variable, conditional to the explanatory
 variables.  Based on the studies of Cameron and Trivedi (1990)
 <doi:10.1016/0304-4076(90)90014-K> and Cameron and Trivedi (2013,
-ISBN:978-1107667273), the overdisp() command is a contribution to researchers,
-providing a fast and secure solution for the detection of overdispersion in
-count data.  Another advantage is that the installation of other packages is
-unnecessary, since the command runs in the basic R language.")
+ISBN:978-1107667273), the @code{overdisp()} command is a contribution to
+researchers, providing a fast and secure solution for the detection of
+overdispersion in count data.  Another advantage is that the installation of
+other packages is unnecessary, since the command runs in the basic R language.")
     (license license:gpl2+)))
 
 (define-public r-ouwie
@@ -653,6 +722,9 @@ unnecessary, since the command runs in the basic R language.")
         (base32 "19bh0vb7azxpzrjw2829gcjcq91fnzb5ybhkp3fsvg9xccmjq9dg"))))
     (properties `((upstream-name . "OUwie")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer
                              r-phytools
                              r-phylolm
@@ -688,6 +760,9 @@ al (2012).")
         (base32 "0a1skaj2qchg7pnl2rpadpfmvdiiazy4q791bv2pxc8y60b1dwnp"))))
     (properties `((upstream-name . "OutSeekR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm r-lsa r-gamlss-dist r-gamlss
                              r-future-apply))
     (native-inputs (list r-knitr))
@@ -713,6 +788,9 @@ data.")
         (base32 "04f1x7mxq4swbd7bfwjjgx4838jm6qj4piaighmhcscwrdkxa1cp"))))
     (properties `((upstream-name . "outreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-stringr r-sandwich r-reshape2
                              r-magrittr))
     (home-page "https://github.com/kota7/outreg")
@@ -734,6 +812,9 @@ survreg', and ivreg outputs.")
         (base32 "0gl3ix39kx7n1akg1789nfqg84jxq5q9qdxwcmf8ch7zklbkgccb"))))
     (properties `((upstream-name . "outqrf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-ranger
                              r-missranger
@@ -747,10 +828,10 @@ survreg', and ivreg outputs.")
      "This package provides a method to find the outlier in custom data by quantile
 random forests method.  Introduced by Meinshausen Nicolai (2006)
 <https://dl.acm.org/doi/10.5555/1248547.1248582>.  It directly calls the
-ranger() function of the ranger package to perform data fitting and prediction.
-We also implement the evaluation of outlier prediction results.  Compared with
-random forest detection of outliers, this method has higher accuracy and
-stability on large datasets.")
+@code{ranger()} function of the ranger package to perform data fitting and
+prediction.  We also implement the evaluation of outlier prediction results.
+Compared with random forest detection of outliers, this method has higher
+accuracy and stability on large datasets.")
     (license license:expat)))
 
 (define-public r-outliertree
@@ -765,6 +846,9 @@ stability on large datasets.")
         (base32 "13z39pfc7fzxil5gc48s7b2f0zal4l4d8qw5xvwy4mlp010mwrc5"))))
     (properties `((upstream-name . "outliertree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-rcereal))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/david-cortes/outliertree")
@@ -791,6 +875,9 @@ rare.  Full procedure is described in Cortes (2020)
         (base32 "165v572w9bnvay9f0xyxzbhgj1i86ndia4rzqy98i48dfdbdb990"))))
     (properties `((upstream-name . "OutliersO3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-robustx
                              r-robustbase
@@ -809,10 +896,10 @@ rare.  Full procedure is described in Cortes (2020)
     (description
      "Potential outliers are identified for all combinations of a dataset's variables.
  O3 plots are described in Unwin(2019) <doi:10.1080/10618600.2019.1575226>.  The
-available methods are HDoutliers() from the package HDoutliers',
-@code{FastPCS}() from the package @code{FastPCS}', @code{mvBACON}() from
-@code{robustX}', @code{adjOutlyingness}() from robustbase',
-@code{DectectDeviatingCells}() from @code{cellWise}', @code{covMcd}() from
+available methods are @code{HDoutliers()} from the package HDoutliers',
+@code{FastPCS()} from the package @code{FastPCS}', @code{mvBACON()} from
+@code{robustX}', @code{adjOutlyingness()} from robustbase',
+@code{DectectDeviatingCells()} from @code{cellWise}', @code{covMcd()} from
 robustbase'.")
     (license license:gpl2+)))
 
@@ -828,6 +915,9 @@ robustbase'.")
         (base32 "1qjgi3m8727x40dfx9r36m9mg0jwa99qfwxv5xz29k2mwqknhl47"))))
     (properties `((upstream-name . "OutliersLearn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OutliersLearn")
     (synopsis
@@ -855,6 +945,9 @@ Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
         (base32 "1v10v4nw7xkrranv4pa4xqw3cayb1lq2p3qda76w6vxxwfch32pi"))))
     (properties `((upstream-name . "outliers.ts.oga")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-slbdd
                              r-robust
                              r-parallelly
@@ -885,6 +978,9 @@ Tsay (2024), working paper, Universidad Carlos III de Madrid.")
         (base32 "0m2iaf3rbpwvyrjz6qglbrinmz676hnbqqm6vc38zb3k3cjcllaq"))))
     (properties `((upstream-name . "outlierensembles")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych r-estcrm r-apcluster r-airt))
     (native-inputs (list r-knitr))
     (home-page "https://sevvandi.github.io/outlierensembles/")
@@ -909,6 +1005,9 @@ from Schubert et al (2012) <doi:10.1137/1.9781611972825.90>, Chiang et al (2017)
         (base32 "03m3jfbydagv4skpijz1xjhsydfb0ci2n0qz4zigfys6hxhfzg36"))))
     (properties `((upstream-name . "outForest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ranger r-missranger r-fnn))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mayer79/outForest")
@@ -937,6 +1036,9 @@ method is trained on a reference data, it can be applied to new data.")
         (base32 "11kcx26as5ncb2yikal5fy228ib84m9q3kgjrr9rvwmf54h3mvnr"))))
     (properties `((upstream-name . "OutcomeWeights")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-grf r-ggplot2))
     (home-page "https://github.com/MCKnaus/OutcomeWeights")
     (synopsis "Outcome Weights of Treatment Effect Estimators")
@@ -962,6 +1064,9 @@ Learning.")
         (base32 "07mwml7r98qjgvrp938sqf7klyspz110583j0zwb72j69n4whmrj"))))
     (properties `((upstream-name . "outcomerate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/outcomerate")
@@ -987,6 +1092,9 @@ these standards, see AAPOR (2016)
         (base32 "0x6r4rzcvd1rp8j4brq9c0zl2xsl5jfi18dny20an7aqk310p11v"))))
     (properties `((upstream-name . "outbreaks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/reconhub/outbreaks")
     (synopsis "Collection of Disease Outbreak Data")
     (description
@@ -1006,6 +1114,9 @@ text files.")
         (base32 "06wlmf51ciy7zy5nchfn2myvkwrvq44cnzzjl75vz32ixn8iy56v"))))
     (properties `((upstream-name . "outbreaker2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork r-rcpp r-magrittr r-ggplot2 r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=outbreaker2")
@@ -1030,6 +1141,9 @@ Jombart T. 2019. <doi:10.1371/journal.pcbi.1006930>.")
         (base32 "1m8m5nrf2y42yvz9f0j976dvq5jrmyswiznq7iv32bppm0jwz92m"))))
     (properties `((upstream-name . "ouladFormat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-magrittr r-httr r-dplyr))
     (home-page "https://cran.r-project.org/package=ouladFormat")
     (synopsis
@@ -1039,8 +1153,8 @@ Jombart T. 2019. <doi:10.1371/journal.pcbi.1006930>.")
 et al. (2017) <doi:10.1038/sdata.2017.171>.  The @code{ouladFormat} package
 loads, cleans and formats the OULAD for data analysis (each row of the returned
 data set is an individual student).  The packageâs main function,
-combined_dataset(), allows the user to choose whether the returned data set
-includes assessment, demographics, virtual learning environment (VLE), or
+@code{combined_dataset()}, allows the user to choose whether the returned data
+set includes assessment, demographics, virtual learning environment (VLE), or
 registration variables etc.")
     (license license:gpl2+)))
 
@@ -1056,6 +1170,9 @@ registration variables etc.")
         (base32 "1sm037ihm12xyp7ns5f0c1psflvm1aj3xnsj5nzh2rsjn35hvd6h"))))
     (properties `((upstream-name . "OTUtable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OTUtable")
     (synopsis
      "North Temperate Lakes - Microbial Observatory 16S Time Series Data and Functions")
@@ -1078,6 +1195,9 @@ in freshwater bog lakes,\" <doi: 10.1128/@code{mSphere.00169-17>}.")
         (base32 "0zyjycymdlzszaqns5y2507lpy52dhl82wm4frv8nfy4xcwb3yxy"))))
     (properties `((upstream-name . "otuSummary")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2))
     (home-page "https://github.com/cam315/otuSummary")
     (synopsis
@@ -1102,6 +1222,9 @@ biosphere please see Lynch and Neufeld (2015) <doi:10.1038/nrmicro3400>).")
         (base32 "0wjavfgn9cjk83bsrcj820nxairb5jxszryqzppwwbjf844vi17y"))))
     (properties `((upstream-name . "ottrpal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xml2
                              r-stringr
@@ -1143,6 +1266,9 @@ with the OTTR Template repository to create courses.")
         (base32 "0ixvisvzxfdznmdgy3jjknqmldryagp7nynvszf99lbxbnxcvdhj"))))
     (properties `((upstream-name . "ottr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip r-testthat r-r6 r-jsonlite))
     (home-page "https://cran.r-project.org/package=ottr")
     (synopsis "An R Autograding Extension for Otter-Grader")
@@ -1164,6 +1290,9 @@ Markdown documents, and R Jupyter Notebooks.")
         (base32 "1akny7bdls9ddvkpm906ih9h7bc5sgnj03z7kkzbpy703d1y6krr"))))
     (properties `((upstream-name . "otsfeatures")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-latex2exp r-ggplot2 r-bolstad2 r-astsa))
     (home-page "https://cran.r-project.org/package=otsfeatures")
     (synopsis "Ordinal Time Series Analysis")
@@ -1189,6 +1318,9 @@ could benefit from the general framework provided by otsfeatures'.")
         (base32 "02aslqz8k10jglxwifn8sm1y3cg10vaq6dd5n15s4nrvcfg53180"))))
     (properties `((upstream-name . "OTRselect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-lars))
     (home-page "https://cran.r-project.org/package=OTRselect")
     (synopsis "Variable Selection for Optimal Treatment Decision")
@@ -1210,6 +1342,9 @@ Appropriate for either censored or uncensored continuous response.")
         (base32 "16zydn1vpxqh0xn6bi5159sjlnqxqvmwwhg9cx016sxfiv579m1z"))))
     (properties `((upstream-name . "otrKM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rgenoud))
     (home-page "https://cran.r-project.org/package=otrKM")
     (synopsis
@@ -1235,6 +1370,9 @@ hold and a binary instrument is available (Xia, J., Zhan, Z., Zhang, J. (2022)
         (base32 "0rca8ln9cyikfpsf1af550cfx2zx110c8jxv64xf8dnnd09s9h7b"))))
     (properties `((upstream-name . "otrimle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-mvtnorm r-mclust r-foreach
                              r-doparallel))
     (home-page "https://cran.r-project.org/package=otrimle")
@@ -1261,6 +1399,9 @@ Hennig (2017) <https://jmlr.org/papers/v18/16-382.html>.")
         (base32 "1w3w6vsp5v2sccpn0zzjiwcnwmgcindh7wnsnf90qprvjwlys7mw"))))
     (properties `((upstream-name . "OTrecod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcd
                              r-statmatch
                              r-roi-plugin-glpk
@@ -1300,6 +1441,9 @@ is fully completed.")
         (base32 "1wh5rmwwwdf1wkb18ayx6zcnhwf80zziznk64jg1974g8crgdxsb"))))
     (properties `((upstream-name . "otpr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urltools
                              r-sf
                              r-rrapply
@@ -1331,6 +1475,9 @@ R objects are returned.")
         (base32 "19fi2a4gi6fjhhkybrlx9chph2adjqqx4h1mc214cjn6m5bg37mq"))))
     (properties `((upstream-name . "otp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-openssl r-base64url))
     (home-page "https://github.com/randy3k/otp")
     (synopsis "One Time Password Generation and Verification")
@@ -1353,6 +1500,9 @@ RFC 4226 <https://datatracker.ietf.org/doc/html/rfc4226> and RFC 6238
         (base32 "1l75jjnkyk8yzaw9zyk45jq9ys304i6pzm2xd5apxrb1jk75a3li"))))
     (properties `((upstream-name . "otinference")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-transport r-sm r-rglpk r-mass))
     (home-page "https://cran.r-project.org/package=otinference")
     (synopsis "Inference for Optimal Transport")
@@ -1374,6 +1524,9 @@ multivariate data using these limiting distributions and binning.")
         (base32 "0jvvrrfhpc5kibbxrd5r4dj97jp5m072fxnkpcyz11gi65db3z4g"))))
     (properties `((upstream-name . "OTE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest))
     (home-page "https://cran.r-project.org/package=OTE")
     (synopsis
@@ -1405,6 +1558,9 @@ matrix, Brier scores, etc.  are also returned for the test data.")
         (base32 "00609z2fp3ijqid7yjgh045xz038h5jl7i1k2kww3kfpcf40mhzs"))))
     (properties `((upstream-name . "OTclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-rcolorbrewer r-magrittr r-ggplot2
                              r-class))
     (native-inputs (list r-knitr))
@@ -1433,6 +1589,9 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
         (base32 "1akqdz0qcc5clj2mqn71zqi7d93l5yihzr9d4wsk4pv9rsw3vqry"))))
     (properties `((upstream-name . "otargen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -1467,14 +1626,17 @@ more information about the Open Target Genetics API
         (base32 "066h6xylagrs313zy4p9qm5rgml6pkz6kq4jvpw922f89q5cd04m"))))
     (properties `((upstream-name . "osum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://zivankaraman.github.io/osum/")
     (synopsis "Provide Summary Information About R Objects")
     (description
-     "Inspired by S-PLUS function objects.summary(), provides a function with the same
-name that returns data class, storage mode, mode, type, dimension, and size
-information for R objects in the specified environment.  Various filtering and
-sorting options are also proposed.")
+     "Inspired by S-PLUS function @code{objects.summary()}, provides a function with
+the same name that returns data class, storage mode, mode, type, dimension, and
+size information for R objects in the specified environment.  Various filtering
+and sorting options are also proposed.")
     (license license:gpl3)))
 
 (define-public r-oste
@@ -1489,6 +1651,9 @@ sorting options are also proposed.")
         (base32 "0l8whr883g3jp5ckgxr4zf9vj055jrjb7pfraacd15smnrbl0v5d"))))
     (properties `((upstream-name . "OSTE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-ranger r-prodlim r-pec))
     (home-page "https://cran.r-project.org/package=OSTE")
     (synopsis "Optimal Survival Trees Ensemble")
@@ -1514,6 +1679,9 @@ on fewer survival trees selected in the final ensemble.")
         (base32 "0d2qk76issb2k5f2ghfvpq0k8ra7d7nj9hp4ja1s0817zwr0g3zz"))))
     (properties `((upstream-name . "Ostats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-sfsmisc
                              r-matrixstats
@@ -1532,9 +1700,9 @@ to each speciesâ trait distribution and calculating their areas of overlap.
 For instance, the median pairwise overlap for a community is calculated by first
 determining the overlap of each species pair in trait space, and then taking the
 median overlap of each species pair in a community.  This median overlap value
-is called the O-statistic (O for overlap).  The Ostats() function calculates
-separate univariate overlap statistics for each trait, while the
-Ostats_multivariate() function calculates a single multivariate overlap
+is called the O-statistic (O for overlap).  The @code{Ostats()} function
+calculates separate univariate overlap statistics for each trait, while the
+@code{Ostats_multivariate()} function calculates a single multivariate overlap
 statistic for all traits.  O-statistics can be evaluated against null models to
 obtain standardized effect sizes.  Ostats is part of the collaborative
 Macrosystems Biodiversity Project \"Local- to continental-scale drivers of
@@ -1559,6 +1727,9 @@ described in Grady et al. (2018)
         (base32 "1fbxddbhppqlh49wgh2fldixar5mk7rywjbfvbpdb6fvpgn1sc4g"))))
     (properties `((upstream-name . "OSsurvival")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OSsurvival")
     (synopsis "Assessing Surrogacy with a Censored Outcome")
     (description
@@ -1581,6 +1752,9 @@ time-to-event outcome; details are described in Wang et al (2021)
         (base32 "04y36yi1qvxazf0s563d41g91x2190r1c5phkgkfqdcml94dmnln"))))
     (properties `((upstream-name . "OssaNMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlcoptim r-deoptimr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fangshuye/OssaNMA")
@@ -1604,6 +1778,9 @@ treatment group with a fixed total sample size to maximize the power.")
         (base32 "1vnf6g1d9fjckz9ay910nb9gr1km2adwk3b0k460mxvpr36izkh7"))))
     (properties `((upstream-name . "osrmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rjson r-r-utils r-bitops r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=osrmr")
@@ -1626,6 +1803,9 @@ handle servers that run locally as well as the OSRM webserver.")
         (base32 "1256pksd8mxzxi1vnl6ghhyl8f7g2li4wabs0kllw9i54yxvc83b"))))
     (properties `((upstream-name . "osrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-rcppsimdjson r-mapiso r-googlepolylines
                              r-curl))
     (home-page "https://github.com/riatelab/osrm")
@@ -1650,6 +1830,9 @@ distances matrices (travel time and kilometric distance).")
         (base32 "0g83wqh97iz3g4ganj2dy3biyn8cmb0v8zz6rydald1hfszj8aa2"))))
     (properties `((upstream-name . "OSNMTF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OSNMTF")
@@ -1678,6 +1861,9 @@ Factorization\" which will be submitted to BBRC.")
         (base32 "14n5574j083xllj0xs87cl8szc0favb8wp3v10bbdljbk35qvmbm"))))
     (properties `((upstream-name . "OSMscale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-pbapply r-openstreetmap r-berryfunctions))
     (home-page "https://github.com/brry/OSMscale")
     (synopsis "Add a Scale Bar to 'OpenStreetMap' Plots")
@@ -1699,6 +1885,9 @@ map projection.")
         (base32 "0n0c5zq7r5gckblxsrf5a1bc841dakhfgzhpf7ny9vfpk7zdla68"))))
     (properties `((upstream-name . "osmextract")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/osmextract/")
@@ -1720,6 +1909,9 @@ several providers.")
         (base32 "0073dnnznq479ffnizrv8wqmfiv3gmdmmlkmkh1hxgr7p32v1i4z"))))
     (properties `((upstream-name . "osmdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-rvest
@@ -1752,6 +1944,9 @@ and processed with very fast C++ routines for return to R'.")
         (base32 "16vpb1fq93s386anvyl6i8ynk5mijs0c40sh86lcpmp9wmdb6msp"))))
     (properties `((upstream-name . "osmclass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-data-table r-collapse))
     (home-page "https://cran.r-project.org/package=osmclass")
     (synopsis "Classify Open Street Map Features")
@@ -1761,8 +1956,8 @@ categories.  Designed for OSM PBF files, e.g. from
 <https://download.geofabrik.de/> imported as spatial data frames.  A
 classification consists of a list of categories that are related to certain OSM
 tags and values.  Given a layer from an OSM PBF file and a classification, the
-main osm_classify() function returns a classification data table giving, for
-each feature, the primary and alternative categories (if there is overlap)
+main @code{osm_classify()} function returns a classification data table giving,
+for each feature, the primary and alternative categories (if there is overlap)
 assigned, and the tag(s) and value(s) matched on.  The package also contains a
 classification of OSM features by economic function/significance, following
 Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
@@ -1780,6 +1975,9 @@ Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
         (base32 "0ws9dvcnc3zmdgzyx01bhhix2c6fackgzivkhypipybb9m8z6cc1"))))
     (properties `((upstream-name . "osmapiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-httr2 r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/osmapiR/")
@@ -1801,6 +1999,9 @@ Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
         (base32 "0xz27p4wd1a5y8x24sqgpyvgdwi2dzk4qh2s50xrdr82prb2znkv"))))
     (properties `((upstream-name . "OSLdecomposition")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rmarkdown
                              r-minpack-lm
@@ -1835,6 +2036,9 @@ Further information and tutorials can be found at <https://luminescence.de>.")
         (base32 "1fsgz4jln3nk53bxpmjpc7dcapc9j1wdqlrab169ymvrlzypgvqc"))))
     (properties `((upstream-name . "oskeyring")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/r-lib/oskeyring#readme")
     (synopsis "Raw System Credential Store Access from R")
     (description
@@ -1855,6 +2059,9 @@ on Windows'.  See the keyring package if you need a portable API'.")
         (base32 "02hglpq5lknq93zbcf219lhnhppzgygkhxqixb15f89rxf9fczgs"))))
     (properties `((upstream-name . "oshka")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/brodieG/oshka")
     (synopsis "Recursive Quoted Language Expansion")
@@ -1879,6 +2086,9 @@ objects that would interfere with evaluation.")
         (base32 "0gbkg6hlip2bkwifsgvnaimrmi1pamaxf8xv7g0yxw5wdf8zyy5c"))))
     (properties `((upstream-name . "osfr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringi
                              r-rlang
@@ -1909,6 +2119,9 @@ or public projects.")
         (base32 "1xw76hi34vgq1r6r22z4bqp114nzg4h85mvz6pya724vyf110vhg"))))
     (properties `((upstream-name . "OSFD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-twinning r-rcpparmadillo r-rcpp r-lhs r-dplyr))
     (home-page "https://cran.r-project.org/package=OSFD")
     (synopsis "Output Space-Filling Design")
@@ -1933,6 +2146,9 @@ CMMI-1921646.")
         (base32 "0yf9l0fkqf9adanl8182nyislj2s2xvsnf2xp5y7pdj3af2k4m7w"))))
     (properties `((upstream-name . "OSDR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OSDR")
     (synopsis "Finds an Optimal System of Distinct Representatives")
     (description
@@ -1953,6 +2169,9 @@ Representatives (OSDR), as defined by D.Gale (1968)
         (base32 "0l5dq8rj4rg4v324610kj2j5nv7py6z1jcplhb6br1gvldj7ng1d"))))
     (properties `((upstream-name . "osDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=osDesign")
     (synopsis "Design, Planning and Analysis of Observational Studies")
     (description
@@ -1976,6 +2195,9 @@ For additional detail see: Haneuse S, Saegusa T and Lumley T
         (base32 "00pk0c9v3r0kdgin4gg4hk3hhf0274pw283919pr9kg926nddc3r"))))
     (properties `((upstream-name . "osdatahub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-geos r-geojsonsf))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=osdatahub")
@@ -2000,6 +2222,9 @@ way to access, query, and download these data.")
         (base32 "1py9p15nrcydr8w9ilxkxabiz9zlqnls8xn9avjkxd8x6602jx6p"))))
     (properties `((upstream-name . "osd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnls r-jade))
     (home-page "https://cran.r-project.org/package=osd")
     (synopsis
@@ -2025,6 +2250,9 @@ and orthogonal signal deconvolution (OSD) alone.")
         (base32 "17wrfak6b6m2l3iqbhdwcfh0rlqb14rkvrbari7v46gya9v7hq20"))))
     (properties `((upstream-name . "OSCV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mc2d))
     (home-page "https://cran.r-project.org/package=OSCV")
     (synopsis "One-Sided Cross-Validation")
@@ -2050,6 +2278,9 @@ One-sided cross-validation for nonsmooth density functions,
         (base32 "0zqw8l955msxkdviw5vd493749zwc22qby9mfmyqnqqmq0pyjw4w"))))
     (properties `((upstream-name . "OscillatorGenerator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OscillatorGenerator")
     (synopsis
      "Generation of Customizable, Discretized Time Series of Oscillating Species")
@@ -2073,6 +2304,9 @@ code was developed in the Biological Information Processing Group at the
         (base32 "1khyl3y8rpyn0skn45wcl1saa713fh48fv6vh3hfgyf46j8ibgra"))))
     (properties `((upstream-name . "oscar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-proc r-matrix r-hamlet))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/Syksy/oscar")
@@ -2107,6 +2341,9 @@ Multiple regression model families are supported: Cox, logistic, and Gaussian.")
         (base32 "00a0ys5ni0hg5zxi0sr5ak3n4c252vhvd6gynnx1b0lqna7bz9qi"))))
     (properties `((upstream-name . "osc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-raster))
     (home-page "https://www.pik-potsdam.de/~kriewald/osc/")
     (synopsis "Orthodromic Spatial Clustering")
@@ -2129,6 +2366,9 @@ sphere (great-circle or orthodromic distance).")
         (base32 "0sih1pc0ch5w769w7sc56ixppv4njqq31g7n49290kzn8d46i3fw"))))
     (properties `((upstream-name . "OryzaProbe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OryzaProbe")
     (synopsis
@@ -2160,6 +2400,9 @@ keep multiple probes by appending sequence numbers to duplicate the RAP-DB ID.")
         (base32 "0q6hgiidcpm95pyisndihxjg78v6k1zycdqd72309aankdk0g5h4"))))
     (properties `((upstream-name . "oRus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx
                              r-topicmodels
                              r-tm
@@ -2193,6 +2436,9 @@ stories, for project management purposes.")
         (base32 "0byja1gi44ymn68cfai8apcimlxmnflqr1pj8k4y7l8lqd3fyz60"))))
     (properties `((upstream-name . "ORTSC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-googlecloudvisionr r-googleauthr))
     (home-page "https://github.com/MohmedSoudy/ORTSC")
     (synopsis "Connects to Google Cloud API for Label Detection")
@@ -2213,6 +2459,9 @@ label detection and repurpose this feature for image classification.")
         (base32 "1ig2pyyibbynwmhapbicij5g47acnz8npjm46xnjybskcv96wjpc"))))
     (properties `((upstream-name . "orthopolynom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polynom))
     (home-page "https://cran.r-project.org/package=orthopolynom")
     (synopsis
@@ -2236,6 +2485,9 @@ objects.")
         (base32 "1l7fllkswiypdg88l3hy1ckd1gx7visfrzw24wrr2xc265iqyn26"))))
     (properties `((upstream-name . "OrthoPanels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OrthoPanels")
@@ -2261,6 +2513,9 @@ infinity, with a T as low as 2.")
         (base32 "0wdqyijvwf9fdg22s6ck22bjk3xc30snlx29sxvm15yiz3rj498v"))))
     (properties `((upstream-name . "orthogonalsplinebasis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/halpo/obsplines")
     (synopsis "Orthogonal B-Spline Basis Functions")
     (description
@@ -2281,6 +2536,9 @@ functions.")
         (base32 "0dsdmrmqib5mx57v0f32dw9ybydxh80h1xn0130nrw27268bqi52"))))
     (properties `((upstream-name . "orthoDr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rgl
                              r-rcpparmadillo
@@ -2307,6 +2565,38 @@ Stiefel manifold.  Parallel computing for approximating the gradient is enabled
 through @code{OpenMP}'.")
     (license license:gpl2+)))
 
+(define-public r-orthgs
+  (package
+    (name "r-orthgs")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orthGS" version))
+       (sha256
+        (base32 "0nb0jayfx5pi23kq1xybiz0v9fyjj50z13fansna5h9zc6f3m4s7"))))
+    (properties `((upstream-name . "orthGS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treetools
+                             r-seqinr
+                             r-phytools
+                             r-phangorn
+                             r-igraph
+                             r-castor
+                             r-bio3d
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=orthGS")
+    (synopsis
+     "Orthology vs Paralogy Relationships among Glutamine Synthetase from Plants")
+    (description
+     "This package provides tools to analyze and infer orthology and paralogy
+relationships between glutamine synthetase proteins in seed plants.")
+    (license license:gpl2+)))
+
 (define-public r-orth-ord
   (package
     (name "r-orth-ord")
@@ -2319,6 +2609,9 @@ through @code{OpenMP}'.")
         (base32 "0n8m8dpxbb6zss7mlyq6v44yja566q3hf23qqspk88ksrah8wgiv"))))
     (properties `((upstream-name . "ORTH.Ord")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-magic))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ORTH.Ord")
@@ -2348,6 +2641,9 @@ BC1, BC2, and BC3.")
         (base32 "01gnqqcasdwbh5dk1yg50qiyn59wsk0d01q0xwg0aqcclmnsfkds"))))
     (properties `((upstream-name . "orsk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bhh2 r-bb))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=orsk")
@@ -2370,6 +2666,9 @@ information (Wang (2013) <doi:10.18637/jss.v055.i05>).")
         (base32 "0nxhijiqhhrxwrm5fy619lsdqyji43xyfqg4309pfb7da4377i3q"))))
     (properties `((upstream-name . "orsifronts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp))
     (native-inputs (list r-knitr))
     (home-page "https://australianantarcticdivision.github.io/orsifronts/")
@@ -2394,6 +2693,9 @@ Circumpolar Current fronts page, please see package CITATION for details.")
         (base32 "0drk4mlacg443y5qljyp5jrq3lcr08qmsxnr8mgp93cxrdlwvr1i"))))
     (properties `((upstream-name . "oro.pet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-oro-nifti r-oro-dicom r-msm r-minpack-lm))
     (home-page "http://rig.oro.us.com")
     (synopsis "Rigorous - Positron Emission Tomography")
@@ -2414,6 +2716,9 @@ of the Rigorous Analytics bundle.")
         (base32 "1ar70xk2bqk7jgckfivgp4np3dxaynmgdg41n8x0sg9cpxl2lc38"))))
     (properties `((upstream-name . "oro.dicom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-oro-nifti))
     (home-page "http://rig.oro.us.com")
     (synopsis "Rigorous - DICOM Input / Output")
@@ -2435,6 +2740,9 @@ bundle.")
         (base32 "0fr1g2lkzc50y79f1czkagcavnq1kfmk6qxg05gqj07jc66mvici"))))
     (properties `((upstream-name . "ormPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rms r-gtable r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://doi.org/10.1186/s12889-019-8072-7")
@@ -2458,6 +2766,9 @@ model summary as a modifiable object.")
         (base32 "1rq202k4assmij21bjjk1ba7121p5p3rp21k548cc6lk81xj1rcc"))))
     (properties `((upstream-name . "ormBigData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsem
                              r-rms
                              r-iterators
@@ -2470,8 +2781,8 @@ model summary as a modifiable object.")
      "Fitting Semiparametric Cumulative Probability Models for Big Data")
     (description
      "This package provides a big data version for fitting cumulative probability
-models using the orm() function.  See Liu et al. (2017) <DOI:10.1002/sim.7433>
-for details.")
+models using the @code{orm()} function.  See Liu et al. (2017)
+<DOI:10.1002/sim.7433> for details.")
     (license license:gpl2+)))
 
 (define-public r-orloca-es
@@ -2486,6 +2797,9 @@ for details.")
         (base32 "00zb08dqcsh1ljl4f2djm1pwbrfbaddgapn3v8nascmwxlhb2hkw"))))
     (properties `((upstream-name . "orloca.es")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-orloca))
     (home-page "http://knuth.uca.es/orloca")
     (synopsis
@@ -2518,6 +2832,9 @@ Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
         (base32 "0zfi64whis248fi5fggjqym7jhyh7ix7l371kchkdxcib3xylnps"))))
     (properties `((upstream-name . "orloca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ucminf r-rmarkdown r-png r-knitr))
     (native-inputs (list r-knitr))
     (home-page "http://knuth.uca.es/orloca/")
@@ -2548,6 +2865,9 @@ of Operations Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
         (base32 "132459zd83c3www2gijcb97f5c765p66y459irlv63ny21hwpnsp"))))
     (properties `((upstream-name . "ORKM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=ORKM")
     (synopsis "The Online Regularized K-Means Clustering Algorithm")
@@ -2569,6 +2889,9 @@ data.  The philosophy of the package is described in Guo G. (2020)
         (base32 "05223qkvqpr1nr7jxznin11jcyapzp76p47xqhl1jr1hif3akvrb"))))
     (properties `((upstream-name . "ORIONZ.G")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ORIONZ.G")
     (synopsis
      "EAP Scoring in Exploratory FA Solutions with Correlated Residuals")
@@ -2590,6 +2913,9 @@ a correlated-residual structure.")
         (base32 "0zzlvx1yd3hy8dy7nbmkj7d2k6609ys91s894qcgx5n7jirqviy3"))))
     (properties `((upstream-name . "ORION")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tunepareto
                              r-rmarkdown
                              r-randomforest
@@ -2621,16 +2947,19 @@ filter, organize and further analyze those ordinal relations.")
         (base32 "0cdr9lizkw09z0lnn07v8jjwyxz1z9277sn7ib0bhyjzxwc9h48c"))))
     (properties `((upstream-name . "origin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mnist91/origin")
     (synopsis
      "Explicitly Qualifying Namespaces by Automatically Adding 'pkg::' to Functions")
     (description
-     "Automatically adding pkg:: to a function, i.e.  mutate() becomes
-dplyr::mutate().  It is up to the user to determine which packages should be
-used explicitly, whether to include base R packages or use the functionality on
-selected text, a file, or a complete directory.  User friendly logging is
+     "Automatically adding pkg:: to a function, i.e. @code{mutate()} becomes
+@code{dplyr::mutate()}.  It is up to the user to determine which packages should
+be used explicitly, whether to include base R packages or use the functionality
+on selected text, a file, or a complete directory.  User friendly logging is
 provided in the RStudio Markers pane.  Lives in the spirit of lintr and styler'.
  Can also be used for checking which packages are actually used in a project.")
     (license license:expat)))
@@ -2647,6 +2976,9 @@ provided in the RStudio Markers pane.  Lives in the spirit of lintr and styler'.
         (base32 "046rdyla5a4qf8wpk8lkmvsbrr85prcdr2k459bamnyvy5bgxzdl"))))
     (properties `((upstream-name . "OrigamiPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotrix r-fmsb))
     (home-page "https://cran.r-project.org/package=OrigamiPlot")
     (synopsis
@@ -2670,6 +3002,9 @@ multi-criteria decision-making.")
         (base32 "0b66alm1mr6vsgj5cgliqxw8vpm1x504qs42crlf0n6339a38h5l"))))
     (properties `((upstream-name . "origami")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-listenv
                              r-future-apply
                              r-future
@@ -2699,6 +3034,9 @@ implementation was first described by Coyle and Hejazi (2018)
         (base32 "05xwx040l1ln06rkmsg8l4394b3inaf663mw4fng54wwacgv9jfj"))))
     (properties `((upstream-name . "orientlib")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/dmurdoch/orientlib")
     (synopsis "Support for Orientation Data")
     (description
@@ -2718,6 +3056,9 @@ orientlib help topic for details.")
         (base32 "036jbfq4klzlppybvcj8wjchcyqmmxwvvr3rn9436cz4zm2yjy4a"))))
     (properties `((upstream-name . "ORIClust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ORIClust")
     (synopsis
      "Order-Restricted Information Criterion-Based Clustering Algorithm")
@@ -2740,6 +3081,9 @@ obtained from short time-course or dose-response microarray experiments.")
         (base32 "1gvj82m67xmi0kwd883zmqgxnc621q30bgbnnszm5fnb3y2ni7d6"))))
     (properties `((upstream-name . "orgutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-textutils))
     (home-page "http://enricoschumann.net/R/packages/orgutils/")
     (synopsis "Helper Functions for Org Files")
@@ -2762,6 +3106,9 @@ tables into data frames.")
         (base32 "1q4qbwnbhmja8rqiph7g7m4wxhzhk9mh91x1jgbnky8bs4ljdgrx"))))
     (properties `((upstream-name . "orgR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-lubridate r-ggthemes r-ggplot2
                              r-data-table))
     (home-page "https://cran.r-project.org/package=orgR")
@@ -2790,6 +3137,9 @@ help user managing their complex org files.")
         (base32 "1i6j7c7d588gnjmh3ddknrs95mhw6ikq53c6wd3zy82lmjvh96bv"))))
     (properties `((upstream-name . "organizr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rstudioapi
                              r-rlang
@@ -2816,6 +3166,9 @@ well as Rmarkdown or Quarto documents with automatically assigned name prefixes.
         (base32 "1kpaij3qz6amccf01kplmx6ql90qkkqmswq364jj5x2jwx7k5w26"))))
     (properties `((upstream-name . "org")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://www.csids.no/org/")
     (synopsis "Organising Projects")
@@ -2838,6 +3191,9 @@ and org helps you take care of the details.")
         (base32 "11g4l45x3jwyffamr2qd0h7y15kyynqqwxh1mp1mnv0lchmdyr89"))))
     (properties `((upstream-name . "ORFID")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -2871,6 +3227,9 @@ efficiency.")
         (base32 "1njcnya5f2wx50l7gyf53js16xj1y6pwgbghxq4nm4grf2ck3mz1"))))
     (properties `((upstream-name . "orf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable r-rcpp r-ranger r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/okasag/orf")
@@ -2899,6 +3258,9 @@ Ziegler, 2017) <@code{arXiv:1508.04409>}.")
         (base32 "1qzv6fjana5fx45msqasqfniiancsch6j8r1llh1xyg2wjhqdj23"))))
     (properties `((upstream-name . "oreo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spectral
                              r-scales
                              r-pracma
@@ -2934,6 +3296,9 @@ Erwin, Dimitris Vlassopoulos, Michel Cloitre (2011) <doi:10.1122/1.3544591>).")
         (base32 "07nsl6mdm4dmyl8vsqzcpd2mihcxsm68gjx3v1dfqgjqmz477nvf"))))
     (properties `((upstream-name . "ordr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -2980,6 +3345,9 @@ Wickham et al (2019) <doi:10.21105/joss.01686>.")
         (base32 "1837d2rz42y71yq9rzzkc5pkywvyc4zbk7s4kg4kwrvxysg0y6p1"))))
     (properties `((upstream-name . "ordPens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlrsim
                              r-quadprog
                              r-ordinalnet
@@ -3009,6 +3377,9 @@ second-order difference/smoothing penalty.")
         (base32 "0yjvylp8z24w6nbwy9rjyk0y7gpzsxzsqm8x4q4fn8g87cb3314v"))))
     (properties `((upstream-name . "OrdNor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-matrix r-genord r-corpcor))
     (home-page "https://cran.r-project.org/package=OrdNor")
     (synopsis
@@ -3032,6 +3403,9 @@ et al. (2015) <DOI:10.1080/10543406.2014.920868>.")
         (base32 "1xca8pvvq79j484l2rmn4nva8ncx8z51g5diljikck231y8qjqaz"))))
     (properties `((upstream-name . "OrdMonReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.ceremade.dauphine.fr/~fadoua")
     (synopsis
      "Compute least squares estimates of one bounded or two ordered isotonic regression curves")
@@ -3060,6 +3434,9 @@ cyclical projection algorithm.")
         (base32 "1sfkq8gryyls22208ympw5scgb4jkd27pyc1qklw4x7cz9wfnfbp"))))
     (properties `((upstream-name . "ordinalRR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags))
     (home-page "https://cran.r-project.org/package=ordinalRR")
     (synopsis
@@ -3067,7 +3444,7 @@ cyclical projection algorithm.")
     (description
      "This package implements Bayesian data analyses of balanced repeatability and
 reproducibility studies with ordinal measurements.  Model fitting is based on
-MCMC posterior sampling with rjags'.  Function @code{ordinalRR}() directly
+MCMC posterior sampling with rjags'.  Function @code{ordinalRR()} directly
 carries out the model fitting, and this function has the flexibility to allow
 the user to specify key aspects of the model, e.g., fixed versus random effects.
  Functions for preprocessing data and for the numerical and graphical display of
@@ -3092,6 +3469,9 @@ Technometrics paper.")
         (base32 "19kakwb2p5lqqzc7lgc0y9js90nnb2427y702p2z79bzfprrvqn9"))))
     (properties `((upstream-name . "ordinalpattern")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-gtools))
     (home-page "https://cran.r-project.org/package=ordinalpattern")
     (synopsis "Tests Based on Ordinal Patterns")
@@ -3119,6 +3499,9 @@ Schnurr and Fischer (2022) <doi:10.1016/j.csda.2022.107472> are also considered.
         (base32 "0ijgxp1lh4hbgks0p5041f5s6kpfrlm6f7hdz2nm3dn1rhq6bwvi"))))
     (properties `((upstream-name . "ordinalNet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ordinalNet")
     (synopsis "Penalized Ordinal Regression")
     (description
@@ -3151,6 +3534,9 @@ toward the parallel model.  For details, refer to Wurm, Hanlon, and Rathouz
         (base32 "1sfzkm3f9s5nbalakgk5v919wr7hdlr5p280rw2p8dy4wxr3xk3s"))))
     (properties `((upstream-name . "ordinalLBM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-rcolorbrewer))
     (home-page "https://cran.r-project.org/package=ordinalLBM")
     (synopsis
@@ -3172,6 +3558,9 @@ block model (OLBM), as described in Corneli, Bouveyron and Latouche (2019).")
         (base32 "0c97c3zss34x9n8szr95z51qx8ix55mlrbqvg8dz128xpd3684rj"))))
     (properties `((upstream-name . "ordinalgmifs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=ordinalgmifs")
     (synopsis "Ordinal Regression for High-Dimensional Data")
@@ -3194,6 +3583,9 @@ monotone incremental forward stagewise method.")
         (base32 "105pblsn182qdbb7qvr6izri19vlxlc53h3kl68h56mcnpmwiqi4"))))
     (properties `((upstream-name . "ordinalForest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-verification r-rcpp r-nnet r-combinat))
     (home-page "https://cran.r-project.org/package=ordinalForest")
     (synopsis
@@ -3211,9 +3603,9 @@ in addition to the class point predictions.  Moreover, the variable importance
 values can also be based on the class probability predictions.  Preliminary
 results indicate that this might lead to a better discrimination between
 influential and non-influential covariates.  The main functions of the package
-are: ordfor() (construction of OF) and predict.ordfor() (prediction of the
-target variable values of new observations).  References: Hornung R. (2020)
-Ordinal Forests.  Journal of Classification 37, 4â17.
+are: @code{ordfor()} (construction of OF) and @code{predict.ordfor()}
+(prediction of the target variable values of new observations).  References:
+Hornung R. (2020) Ordinal Forests.  Journal of Classification 37, 4â17.
 <doi:10.1007/s00357-018-9302-x>.")
     (license license:gpl2)))
 
@@ -3229,6 +3621,9 @@ Ordinal Forests.  Journal of Classification 37, 4â17.
         (base32 "1azwcr1si3b8dxf2y59d3rxw4msfq79khzg7zgqd0kbzyka4ygl8"))))
     (properties `((upstream-name . "ordinalCont")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-deriv r-boot))
     (home-page "https://cran.r-project.org/package=ordinalCont")
     (synopsis "Ordinal Regression Analysis for Continuous Scales")
@@ -3258,6 +3653,9 @@ al (2020) <doi:10.18637/jss.v096.i08>.")
         (base32 "13f9rv6gndjr18rfk60rmginzam1xjsssjn45l6hhl6y3gglsyzh"))))
     (properties `((upstream-name . "ordinalbayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-summarizedexperiment
                              r-runjags
@@ -3287,6 +3685,9 @@ the sample size.  These models have been described in Zhang and Archer (2021)
         (base32 "04faqhas1p9lxhghd4xq07yq1nxv7ns18avhvkql7sy5a9g7bfs1"))))
     (properties `((upstream-name . "ordiBreadth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan))
     (home-page "https://cran.r-project.org/package=ordiBreadth")
     (synopsis "Ordinated Diet Breadth")
@@ -3306,6 +3707,9 @@ the sample size.  These models have been described in Zhang and Archer (2021)
         (base32 "0flldxv53qyiprq44670b4b98i791si3nmi983pgkzd8s39aa68l"))))
     (properties `((upstream-name . "ordgam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ucminf
                              r-sn
                              r-numderiv
@@ -3337,6 +3741,9 @@ non-penalized parameters.  For more details, see Lambert and Gressani (2023)
         (base32 "16mavsmp6d8rfmimmp5ynwyzir0gycpg8rhd8cwanlrndyclqlpv"))))
     (properties `((upstream-name . "OrdFacReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mass r-eha))
     (home-page "http://www.kasparrufibach.ch")
     (synopsis
@@ -3364,6 +3771,9 @@ active set algorithm that efficiently computes such estimators.")
         (base32 "0a3ga0cjryvbininspsx5wzc96s3fza06s3d5fhbllbixz0rap4a"))))
     (properties `((upstream-name . "orderstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=orderstats")
     (synopsis "Efficiently Generates Random Order Statistic Variables")
     (description
@@ -3386,6 +3796,9 @@ directly sampling from the order statistic distribution.")
         (base32 "05fq8mvqjvm4dir7zc7dxri3n6ar08afvrg49x8hbf920yqxkmq1"))))
     (properties `((upstream-name . "orders")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-newdistns r-gamlss-dist r-actuar))
     (home-page "https://cran.r-project.org/package=orders")
     (synopsis
@@ -3427,6 +3840,9 @@ distributions.")
         (base32 "0k7xk64schhw9jdbg50hlnf6gfhlgnv1n20rz3fga02z38441xkn"))))
     (properties `((upstream-name . "orderly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list git))
     (propagated-inputs (list r-zip
                              r-yaml
@@ -3464,6 +3880,9 @@ lifespans.")
         (base32 "0sgwgcjg6sazmi11c9qvxfrzg671kcp18i2q20xbmbj4v3yqhwbh"))))
     (properties `((upstream-name . "ordering")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/decisionpatterns/ordering")
     (synopsis
      "Test, Check, Verify, Investigate the Monotonic Properties of Vectors")
@@ -3487,6 +3906,9 @@ for the degree of ordering. `ordering` provides a numeric indication of ordering
         (base32 "0906y98ydiadyqhz9ad2ssw1282a10c418k20vkbwzad2xip7grg"))))
     (properties `((upstream-name . "ordDisp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam))
     (home-page "https://cran.r-project.org/package=ordDisp")
     (synopsis
@@ -3508,6 +3930,9 @@ styles (RSRS) for the regression analysis of ordinal responses.")
         (base32 "1hy24s23l099b21w5j3p2f0748s8xmhxhslfp65fg7ycwda5qsyw"))))
     (properties `((upstream-name . "ordcrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rms))
     (home-page "https://cran.r-project.org/package=ordcrm")
     (synopsis
@@ -3542,6 +3967,9 @@ dose finding designs under various scenarios.")
         (base32 "1wg4sxirzp8r91qzzvrx4yashg1f574ayaxbviy8hdca3iydfl1j"))))
     (properties `((upstream-name . "OrdCD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-igraph r-grbase r-bnlearn))
     (home-page "https://github.com/nySTAT/OrdCD")
     (synopsis "Ordinal Causal Discovery")
@@ -3566,6 +3994,9 @@ Proceedings of the 38th Conference on Uncertainty in Artificial Intelligence,
         (base32 "12z5ig4m62fy6j76anidj6gpy0g2xcr35yv0xv0avgi57wf4rpwv"))))
     (properties `((upstream-name . "ordbetareg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-transformr
                              r-tidyr
                              r-ggplot2
@@ -3596,6 +4027,9 @@ hierarchical, dynamic and multivariate modeling.")
         (base32 "0b2h0vyvp6hnp9i03c8yxfhrlbdq0akdlw2ik0k5c09wfiq7amq6"))))
     (properties `((upstream-name . "Orcs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-terra
                              r-sp
@@ -3633,6 +4067,9 @@ particular scope of application.")
         (base32 "1pm8ajj24qqj2fir0gjzq5f4mfpl1cnj6fm2z5qg6g3sbnm57ayk"))))
     (properties `((upstream-name . "ORCME")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-iso))
     (home-page "https://cran.r-project.org/package=ORCME")
     (synopsis "Order Restricted Clustering for Microarray Experiments")
@@ -3653,6 +4090,9 @@ course) profiles.  It implements the method described by Lin et al. (2012).")
         (base32 "0d78mn2vl2yxlvdswyxkxp9zg59b8cvfksz9m56kddn79aps1ikl"))))
     (properties `((upstream-name . "orclus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=orclus")
     (synopsis
      "Subspace Clustering Based on Arbitrarily Oriented Projected Cluster Generation")
@@ -3673,6 +4113,9 @@ classification.")
         (base32 "1bcksv7rrrpxjaj42ddcfn2v9gi70233p7lrik5rv0dvl4wblbhf"))))
     (properties `((upstream-name . "orca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=orca")
     (synopsis "Computation of Graphlet Orbit Counts in Sparse Graphs")
     (description
@@ -3693,6 +4136,9 @@ object from the graph package.")
         (base32 "167hpki2v1m8n0fpx3giy7pdc49lwcsn1qacgi38f7m8v0dca4ga"))))
     (properties `((upstream-name . "orbital")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tidymodels/orbital")
@@ -3715,6 +4161,9 @@ dependency prediction locally or directly in databases.")
         (base32 "0r090bhdv221ng4acwwppzk907h3vb10nachy32zdx2nfs0dqid7"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-stringr
@@ -3756,6 +4205,9 @@ healthcare provider.")
         (base32 "1vw6pbk1iiaxmfws95wmwf56p3afk10s5c3x9f0lliamckpyzkck"))))
     (properties `((upstream-name . "opusminer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-matrix r-arules))
     (home-page "https://cran.r-project.org/package=opusminer")
     (synopsis "OPUS Miner Algorithm for Filtered Top-k Association Discovery")
@@ -3781,6 +4233,9 @@ information in relation to the OPUS Miner algorithm.")
         (base32 "1mfk9sp47flqq7i762wip5191j8m0q9kbyxs4a7f0pd76qwf67q2"))))
     (properties `((upstream-name . "optweight")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-osqp r-matrix r-ggplot2))
     (home-page "https://cran.r-project.org/package=optweight")
     (synopsis "Targeted Stable Balancing Weights Using Optimization")
@@ -3805,6 +4260,9 @@ covariates.")
         (base32 "1d5pkvrzz5hvr764kyliyba5mgix9y340gdcvc0d0si41rz12r91"))))
     (properties `((upstream-name . "OPTtesting")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra r-rootsolve r-quantreg))
     (home-page "https://cran.r-project.org/package=OPTtesting")
     (synopsis "Optimal Testing")
@@ -3827,6 +4285,9 @@ testing procedure.")
         (base32 "0fdszrblayi2hlmkgvwqxw1fh5nh2jad6sxlc788jrzjrd8nkldj"))))
     (properties `((upstream-name . "OptSig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pwr))
     (home-page "https://cran.r-project.org/package=OptSig")
     (synopsis
@@ -3852,6 +4313,9 @@ a multiple regression model.  The details are covered in Kim and Choi (2020)
         (base32 "0h382gcjq2f4qm63xnqvhjvxyn9w01dzx8964fk6cm2izhw04bk2"))))
     (properties `((upstream-name . "OPTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-cvtools r-changepoint))
     (home-page "https://cran.r-project.org/package=OPTS")
     (synopsis "Optimization via Subsampling (OPTS)")
@@ -3875,6 +4339,9 @@ variable selection for generalized linear models.")
         (base32 "02imgfmfigcps4z4028r7jp61153m4ircb4l1axszcaag0181gba"))))
     (properties `((upstream-name . "optRF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ranger r-minpack-lm r-irr))
     (home-page "https://cran.r-project.org/package=optRF")
     (synopsis
@@ -3898,6 +4365,9 @@ trees.")
         (base32 "1ijahjraiaax0xyr1y4s3aq1b4xk8h7ablrvy2m2fr879q3xfi9i"))))
     (properties `((upstream-name . "optrefine")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sampling r-rglpk r-mass r-ggplot2))
     (home-page "https://github.com/kkbrum/optrefine")
     (synopsis "Optimally Refine Strata")
@@ -3922,6 +4392,9 @@ installed following the instructions at
         (base32 "16g4612mwyfsckn6l71fbrjnnjv4yvnac1cccbrn3k8jh07qgb1h"))))
     (properties `((upstream-name . "optrcdmaeAT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-igraph))
     (home-page "https://cran.r-project.org/package=optrcdmaeAT")
     (synopsis
@@ -3949,6 +4422,9 @@ interface (GUI) R package tcltk to ensure that it is user friendly.")
         (base32 "0q7jf4m0gzm11izl5lff17pvr855smqmc6zzi1bc7m6h3z865l32"))))
     (properties `((upstream-name . "optR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=optR")
     (synopsis "Optimization Toolbox for Solving Linear Systems")
     (description
@@ -3968,6 +4444,9 @@ Gauss-Seidel, Conjugate Gradient Method (CGM) and Cholesky methods.")
         (base32 "18h659gbgzflq81lcchc058xjgljkmhpsjkh51ylygwrv1qjrz2i"))))
     (properties `((upstream-name . "optpart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotrix r-mass r-labdsv r-cluster))
     (native-inputs (list gfortran))
     (home-page "http://ecology.msu.montana.edu/labdsv/R")
@@ -3994,6 +4473,9 @@ are also included.")
         (base32 "14a93plyhm3j009lcqwvh94zcd5i90kvp92y0kjb0ahn1bmanc2i"))))
     (properties `((upstream-name . "optmatch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlemon r-rcpp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "http://optmat.ch")
@@ -4019,6 +4501,9 @@ matching directives, or calipers, alone or in combination.")
         (base32 "00xjzpfnri2k0p04cv98vwwymv16pbw79znklg1k3xc4rxg8wd25"))))
     (properties `((upstream-name . "OptM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sizer))
     (home-page "https://cran.r-project.org/package=OptM")
     (synopsis
@@ -4047,6 +4532,9 @@ statistic.")
         (base32 "1wl637hgdhiyk56xv39bb8m4v6nnlqyy6vgkradf90k084m9q52p"))))
     (properties `((upstream-name . "optistock")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=optistock")
     (synopsis "Determine Optimum Stocking Times Used in Fishery Enhancements")
@@ -4069,6 +4557,9 @@ certain length.")
         (base32 "0mhl5gdz3y3cs3p6v7z4n50na3sqj0w739gixcf4qgb1ppx0h1xa"))))
     (properties `((upstream-name . "optiSolve")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shapes
                              r-rcpp
@@ -4103,6 +4594,9 @@ problems with second order cone constraints and solved with package cccp'.")
         (base32 "0n1snxh05dsrgcgzl5xm65ghixja8yb1kbkxws9i0i1zy7qm6kzp"))))
     (properties `((upstream-name . "optiSel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-reshape2
                              r-rcpparmadillo
@@ -4158,6 +4652,9 @@ Wellmann, R., Bennewitz, J., Meuwissen, T.H.E. (2014)
         (base32 "06qx6fha6vz46bchqswkdv3blxkpv2zg21kiwnb0rzz66srfkljn"))))
     (properties `((upstream-name . "optiscale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://cran.r-project.org/package=optiscale")
     (synopsis "Optimal Scaling")
@@ -4184,6 +4681,9 @@ values can be untied in the optimal transformation.")
         (base32 "0vidaf888zdls5yxy7637fqg6r39l3rxw9bhn16s4xmag7kawljv"))))
     (properties `((upstream-name . "optionstrat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=optionstrat")
     (synopsis
@@ -4207,6 +4707,9 @@ options.")
         (base32 "0c4pq9qzbnqsfgdqq29vnkxjcb5six4xfj2djv05zw8qnyvhaljg"))))
     (properties `((upstream-name . "OptionPricing")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OptionPricing")
     (synopsis "Option Pricing with Efficient Simulation Algorithms")
     (description
@@ -4226,13 +4729,16 @@ and European Options under Geometric Brownian Motion.")
         (base32 "1q7k9rsa7m3ag7mwx88101ksy0c01gk0xl0425jfkwm0d4g5pyy0"))))
     (properties `((upstream-name . "optional")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=optional")
     (synopsis "Optional Types and Pattern Matching")
     (description
-     "Introduces optional types with some() and none, as well as match_with() from
-functional languages.")
+     "Introduces optional types with @code{some()} and none, as well as
+@code{match_with()} from functional languages.")
     (license (license:fsdg-compatible "BSL"))))
 
 (define-public r-optimus
@@ -4247,6 +4753,9 @@ functional languages.")
         (base32 "01njyjfrm6kjwx2qq41c0hsgxzydnrmr3538cpbfdn5i0z5blgyx"))))
     (properties `((upstream-name . "optimus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ordinal r-mvabund))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mitchest/optimus/")
@@ -4274,6 +4783,9 @@ variables.")
         (base32 "0p52ly7yfz9jjlhd5912xdv1j01j1ccm57ygp9nz3rks7fi3b5r5"))))
     (properties `((upstream-name . "optimStrat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-mvtnorm r-cubature))
     (home-page "https://cran.r-project.org/package=optimStrat")
     (synopsis "Choosing the Sample Strategy")
@@ -4294,6 +4806,9 @@ survey.")
         (base32 "1q5hfbiq265q5im6wg78spaqsfj421hpzh8bz51zmi188h6xwnwr"))))
     (properties `((upstream-name . "optimsimplex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-optimbase))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=optimsimplex")
@@ -4320,14 +4835,21 @@ methods: the simplex method of Spendley et al. (1962)
         (base32 "178ayfaivkbxkghxbg97lx4gl27kxkmgaaw9y8q5206r4cncd6qg"))))
     (properties `((upstream-name . "optimParallel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/florafauna/optimParallel-R")
     (synopsis "Parallel Version of the L-BFGS-B Optimization Method")
     (description
-     "This package provides a parallel version of the L-BFGS-B method of optim().  The
-main function of the package is @code{optimParallel}(), which has the same usage
-and output as optim().  Using @code{optimParallel}() can significantly reduce
-the optimization time.")
+     "This package provides a parallel version of the L-BFGS-B method of
+@code{optim()}.  The main function of the package is @code{optimParallel()},
+which has the same usage and output as @code{optim()}.  Using
+@code{optimParallel()} can significantly reduce the optimization time.")
     (license license:gpl2+)))
 
 (define-public r-optimos-prime
@@ -4342,6 +4864,9 @@ the optimization time.")
         (base32 "1a76gfzpd2s4gq15cd3frndak7wc6q3xqh9sllkk665031fx6z1h"))))
     (properties `((upstream-name . "optimos.prime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse r-plotly r-ggplot2))
     (home-page "https://cran.r-project.org/package=optimos.prime")
     (synopsis
@@ -4368,6 +4893,9 @@ unequal occurrences.  See the detailed methodology by Birks et al. (1990)
         (base32 "1c53jryrvzjhkgjppvf8kx7fvfss2x52v6wx90sfw57710dl9wvx"))))
     (properties `((upstream-name . "OptimModel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OptimModel")
@@ -4393,6 +4921,9 @@ see Motulsky, H and Brown, R (2006)<doi:10.1186/1471-2105-7-123>.")
         (base32 "03y3cw07ya9q15aybjcaiqa2ghs1id2k55crkpf8xh0yn4mylhh4"))))
     (properties `((upstream-name . "optimLanduse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-lpsolveapi r-future-apply r-future
                              r-dplyr))
     (home-page "https://github.com/Forest-Economics-Goettingen/optimLanduse/")
@@ -4421,6 +4952,9 @@ the portfolio performance as presented by Gosling et al. (2020)
         (base32 "0y51r8v2kzhiac3d1zkh5z0gw87hcfx7cr1xdfsnzjdxckcgvmhv"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ucminf
                              r-testfunctions
                              r-r6
@@ -4449,6 +4983,13 @@ computation time, setting a time limit for long optimization tasks.")
         (base32 "1pg9a78hhm0h4pfagj13r1dmynv714knhw2dxhzhcvlgk9inpam8"))))
     (properties `((upstream-name . "optimization")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rcpp r-colorspace))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/kaihusmann/optimization")
@@ -4473,6 +5014,9 @@ convergence are included.")
         (base32 "0fc7d3g5nxjjcbwh6v5m0ryhanw80v250j8m7j2gv4c9ql4g650d"))))
     (properties `((upstream-name . "optimg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ucminf))
     (home-page "https://github.com/vthorrf/optimg")
     (synopsis "General-Purpose Gradient-Based Optimization")
@@ -4496,6 +5040,9 @@ implemented.  Other methods will be implemented in the future.")
         (base32 "0nxvq6xmcgfdnmlva65swi519vysa1dya14r5vna4ma006229ncy"))))
     (properties `((upstream-name . "optimCheck")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlysy/optimCheck")
     (synopsis "Graphical and Numerical Checks for Mode-Finding Routines")
@@ -4521,6 +5068,9 @@ systematic unit-testing of optimization routines.")
         (base32 "0hdzbqr03jwy1vz3q9iw0kvii5p9g1vm4c3hs3jxszcj1rgrfm12"))))
     (properties `((upstream-name . "optimbase")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=optimbase")
@@ -4546,6 +5096,9 @@ criteria, etc...")
         (base32 "01nbisv45amv5pfnl0hmbc751qjkjvw8xsva50q8ypm02p2jw07f"))))
     (properties `((upstream-name . "OptimaRegion")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-spam
                              r-rsm
@@ -4576,6 +5129,9 @@ controllable factors, or Thin Plate Spline models in 2 controllable factors.")
         (base32 "1mchb7wdk1v56la30ivi40aq6zma64lrdb94d64d0s7x67m8315w"))))
     (properties `((upstream-name . "OptimalTiming")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mstate))
     (home-page "https://cran.r-project.org/package=OptimalTiming")
     (synopsis "Optimal Timing Identification")
@@ -4599,6 +5155,9 @@ interval.  The method is referred to de Wreede, L., Fiocco, M., & Putter, H.
         (base32 "1m39q36p7i7z31b90awriq5jf9rfybyw5lj3m1w33v2ssipkzp1n"))))
     (properties `((upstream-name . "optimalThreshold")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-mgcv r-hdinterval r-coda r-ars))
     (home-page "https://cran.r-project.org/package=optimalThreshold")
     (synopsis "Bayesian Methods for Optimal Threshold Estimation")
@@ -4634,6 +5193,9 @@ M (2019) <doi:10.1002/bimj.200900242> for diagnostic markers.")
         (base32 "1kw87h6im3s1xzj0va22w0av67s0qz59vmf36lkh2mi5x1mi7gws"))))
     (properties `((upstream-name . "OptimalSurrogate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=OptimalSurrogate")
     (synopsis "Model Free Approach to Quantifying Surrogacy")
@@ -4657,6 +5219,9 @@ quantities of this proportion.  Details are described in Wang et al (2020)
         (base32 "033qwzglpzjk302dr19yak34j2k19k6vihd3vlj9c8xsiikmrfmj"))))
     (properties `((upstream-name . "OptimalRerandExpDesigns")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-momentchi2 r-greedyexperimentaldesign r-ggplot2))
     (home-page "https://github.com/kapelner/OptimalRerandExpDesigns")
     (synopsis "Optimal Rerandomization Experimental Designs")
@@ -4683,6 +5248,9 @@ Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
         (base32 "0pc7bswfaz0fc9mjr8m29xvm9a1015fb80sr7si65zkkmjhxwldz"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-magrittr r-glue r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yangjasp/optimall")
@@ -4709,6 +5277,9 @@ a Shiny application for observing the effects of different strata splits.")
         (base32 "1rw3syj5wb1v8ryqc9vkchi62pf02460f5i5zapq2azgfg99l66y"))))
     (properties `((upstream-name . "OptimalGoldstandardDesigns")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rdpack
                              r-nloptr
@@ -4738,6 +5309,9 @@ in Meis et al. (2023) <doi:10.1002/sim.9630>.")
         (base32 "02vxxb25q7fl73y7zq0a89ra0s88wji4mrql7p88014p073lj2as"))))
     (properties `((upstream-name . "OptimalDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl
                              r-quadprog
                              r-plyr
@@ -4766,6 +5340,9 @@ file gurobi_inst.txt, respectively.")
         (base32 "07lgh3maxvz8vmw3zd02bfy7yp4jn0krflnqpp5bax3zhy6kmmbi"))))
     (properties `((upstream-name . "OptimalCutpoints")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OptimalCutpoints")
     (synopsis "Computing Optimal Cutpoints in Diagnostic Tests")
     (description
@@ -4788,6 +5365,9 @@ Numerical and graphical output for all methods is easily obtained.")
         (base32 "1la3v8yd9cdichp3mka4x86hr9lynh6qfg7h9ab6cwijw6kzkn6g"))))
     (properties `((upstream-name . "optim.functions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-randtoolbox r-lhs))
     (home-page "https://cran.r-project.org/package=optim.functions")
     (synopsis "Standard Benchmark Optimization Functions")
@@ -4808,6 +5388,9 @@ and a common interface to sample them.")
         (base32 "1c3q4kx8rkgpjsy0hy2w2dd9kv51avnw1ab82hzmjgngfnvaig0n"))))
     (properties `((upstream-name . "optigrab")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/decisionpatterns/optigrab")
@@ -4831,6 +5414,9 @@ Microsoft- style syntaxes, verb commands and more.")
         (base32 "18pvdl04ln1i0w30ljdb3k86j27zg2nvrn3ws54c1g6zg9haqhbg"))))
     (properties `((upstream-name . "optifunset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=optifunset")
     (synopsis "Set Options if Unset")
     (description
@@ -4854,6 +5440,9 @@ not be overridden at the point when a package is loaded.")
         (base32 "1knjxfz52gisnkz62m885zf4gn73dnkhc0q2wfvmhj02vqq0sfhf"))))
     (properties `((upstream-name . "opticut")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-resourceselection
                              r-pscl
                              r-pbapply
@@ -4885,6 +5474,9 @@ computations.")
         (base32 "1vdz5sgjgyh2nj034w87d2yxcbbg97f1b0vijlwzwjkrfz5knfhl"))))
     (properties `((upstream-name . "opticskxi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=opticskxi")
@@ -4908,6 +5500,9 @@ investigate datasets with unknown number of clusters.")
         (base32 "1g400s4xbf9c8ss02qhm6q31sv7mrki4a9x1fdjjsyrgmclv9q2s"))))
     (properties `((upstream-name . "optical")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://scenic555.github.io/optical/")
     (synopsis "Optimal Item Calibration")
     (description
@@ -4942,6 +5537,9 @@ approach.  This work was supported by the Swedish Research Council
         (base32 "166ngas1zp1ln951n26kmyfj9jcpi2fm2g2yxs9vs4as6fl1yf2n"))))
     (properties `((upstream-name . "optic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sandwich
                              r-rlang
@@ -4975,6 +5573,9 @@ al. (2022) <doi:10.1186/s12874-021-01471-y> for a description of our methods.")
         (base32 "0ab0vvbg1nmpbbhq5a5nkwv7ap0fq4542l5da7g8qlwc23h6sfs5"))))
     (properties `((upstream-name . "OptHoldoutSize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ranger r-mvtnorm r-mnormt r-mle-tools
                              r-matrixstats))
     (native-inputs (list r-knitr))
@@ -5004,6 +5605,9 @@ methods.")
         (base32 "0g7qaf5abvbcqv2h1dciwn3gwpz084ryqjjk0yabdm4ym0y38ddm"))))
     (properties `((upstream-name . "OptHedging")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.r-project.org")
     (synopsis
      "Estimation of value and hedging strategy of call and put options")
@@ -5025,6 +5629,9 @@ for Financial Engineering', by Bruno Remillard, CRC Press, (2013).")
         (base32 "0rpnn38w3a15agv0hkr77w6jpdb75ahnxq487vy35yxv9mvh75nn"))))
     (properties `((upstream-name . "OptGS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OptGS")
     (synopsis "Near-Optimal Group-Sequential Designs for Continuous Outcomes")
     (description
@@ -5047,6 +5654,9 @@ methods used are described in Wason, JMS (2015) <doi:10.18637/jss.v066.i02>.")
         (base32 "1sqkid6h13h8i8wzri26s828ycwlxlwpwxd85r8bw9h8hs1n602r"))))
     (properties `((upstream-name . "optextras")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (home-page "https://cran.r-project.org/package=optextras")
     (synopsis "Tools to Support Optimization Possibly with Bounds and Masks")
@@ -5074,6 +5684,9 @@ forward, central and backward gradient approximation codes.")
         (base32 "17r0axfh7yjv5xj9060vi5vysnmi38pz5dsvm0fazfcpzzlxnld7"))))
     (properties `((upstream-name . "optedr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rlang
                              r-purrr
@@ -5104,6 +5717,9 @@ function has been provided to transform approximate designs to exact designs.")
         (base32 "051ljpb89clqfwpzn6k69jd30sw8zw3f09kdj8ynfmb0bqlzs1df"))))
     (properties `((upstream-name . "OPTeCD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OPTeCD")
     (synopsis "Optimal Partial Tetra-Allele Cross Designs")
     (description
@@ -5140,6 +5756,9 @@ P@code{TaC}.")
         (base32 "0kjfhy1ccdxgb2sxa3928m1pqpbvl1rxz0kajqf9yvga451l5ddd"))))
     (properties `((upstream-name . "optDesignSlopeInt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mcmcpack))
     (home-page "https://cran.r-project.org/package=optDesignSlopeInt")
     (synopsis
@@ -5161,6 +5780,9 @@ divided by the intercept and provides confidence intervals for the ratio.")
         (base32 "0g34kn2gmvy9r4ph0vbssc9gl8bcpw6d72b8zpf38iml4zh52b0n"))))
     (properties `((upstream-name . "OptCirClust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-rdpack r-rcpp r-plotrix
                              r-ckmeans-1d-dp))
     (native-inputs (list r-knitr))
@@ -5195,6 +5817,9 @@ clustering.")
         (base32 "10i9ir0056qxyiayg10v6v25m1b94m1wd7c8ssigiqjhjncpddw5"))))
     (properties `((upstream-name . "optBiomarker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpanel
                              r-rgl
                              r-randomforest
@@ -5223,6 +5848,9 @@ microarray data.")
         (base32 "15ami2m95sn0axdnjn3kn6rxdw8ip8zn4fanshfsxw9vfmygyvln"))))
     (properties `((upstream-name . "optbin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=optbin")
     (synopsis "Optimal Binning of Data")
     (description
@@ -5242,6 +5870,9 @@ minimizing the (mean) squared error within all bins.")
         (base32 "1y1mvcyjihpj1wgjmifhmd10717wr1srp7h87azs4gfypgsiqchn"))))
     (properties `((upstream-name . "optbdmaeAT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-igraph))
     (home-page "https://cran.r-project.org/package=optbdmaeAT")
     (synopsis
@@ -5269,6 +5900,9 @@ friendly.")
         (base32 "0mg6awg1vgnbqrbkf9vnyj5jfbakna0jsclhi0w3v1rh0rsd5jlp"))))
     (properties `((upstream-name . "optband")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lambertw))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/seasamgo/optband")
@@ -5291,6 +5925,9 @@ minimized.  Produces an approximate solution based on local time arguments.")
         (base32 "0v3ibfzmkfnkhxylhaqcd3yqygsk7027ga12vb6gj4h4zcccf17f"))))
     (properties `((upstream-name . "Opt5PL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-matrixcalc))
     (home-page "https://cran.r-project.org/package=Opt5PL")
     (synopsis "Optimal Designs for the 5-Parameter Logistic Model")
@@ -5312,6 +5949,9 @@ algorithm in Hyun, Wong, Yang (2018) <doi:10.18637/jss.v083.i05>.")
         (base32 "13gcl93lgmrv224nsi1cvp11hp4pkm6b418bhcsak62z7ga4ly0p"))))
     (properties `((upstream-name . "OPSR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-texreg
                              r-sandwich
                              r-rdpack
@@ -5344,6 +5984,9 @@ method, see Wang & Mokhtarian (2024) <doi:10.1016/j.tra.2024.104072> or Chiburis
         (base32 "1kyzrpr09fmx7rhbgwy5d1s8ggl7avcrs4vjb9s6m03w756zbb3a"))))
     (properties `((upstream-name . "oppr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-viridislite
                              r-uuid
@@ -5391,6 +6034,9 @@ and evaluating their benefits.  For more information, see Hanson et al. (2019)
         (base32 "0kaj11ziij1v65l972x4kbr7vzkx4dwa27ymabiip4dg57a976wr"))))
     (properties `((upstream-name . "Opportunistic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Opportunistic")
     (synopsis
      "Routing Distribution, Broadcasts, Transmissions and Receptions in an Opportunistic Network")
@@ -5413,6 +6059,9 @@ simulations.")
         (base32 "1w5s78dxz03asxc46mn5vy9y21dr6km12ms563cgcaf9g9rw9dqc"))))
     (properties `((upstream-name . "opitools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordcloud2
                              r-tm
                              r-tidytext
@@ -5453,6 +6102,9 @@ data.  Further examples can be found in the vignette of the package.")
         (base32 "0xvzjkkqcd058br32cnva8pif0rgpfwk2qbq5q3wyjhfqqv3bwxq"))))
     (properties `((upstream-name . "opinAr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sjplot
                              r-rvest
@@ -5493,6 +6145,9 @@ Universidad Torcuato Di Tella.")
         (base32 "19fgfkd8zf8r7cqmkqvhzkv8lwnbg33cvm8kapqp7sb6g4i3qk1x"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast r-openssl r-jsonlite r-abind))
     (home-page "https://opi.lei.org.au/")
     (synopsis "Open Perimetry Interface")
@@ -5521,6 +6176,9 @@ field data.")
         (base32 "0qnxq9i0spygz2lmjb23y94r9cgvkkariv0v8llqdb6l89bhfdqm"))))
     (properties `((upstream-name . "opGMMassessment")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-nbclust
                              r-multimode
@@ -5559,6 +6217,9 @@ Malkusch, S. and A. Ultsch. (2022) <doi:10.1016/j.imu.2022.101113>.")
         (base32 "0zgcv2q46qyqv4dhbd33s4044zjw38w8dqfpzs0c1lxjpkil3dnx"))))
     (properties `((upstream-name . "operators")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/romainfrancois/operators")
     (synopsis "Additional Binary Operators")
     (description
@@ -5578,6 +6239,9 @@ manipulation.")
         (base32 "09gh0c74y3n25f9p1rya8ybql5mfaqkcnr8i8wwwzfm67vqdfrnh"))))
     (properties `((upstream-name . "opera")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-rcppeigen
                              r-rcpp
@@ -5607,6 +6271,9 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
         (base32 "0mc28gwrby8lcdd5icwa50ardvq8xd90x0wnjndhb1h52wjkaprd"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://janmarvin.github.io/openxlsx2/")
@@ -5628,6 +6295,13 @@ writing, styling and editing worksheets.")
         (base32 "0ywf9hh4liz992ym1xdqpk4pnywy9azasyvqdy3ih8idmj3y5h0d"))))
     (properties `((upstream-name . "openVA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tariff
                              r-interva5
                              r-interva4
@@ -5669,6 +6343,9 @@ method.")
         (base32 "0h0dq72gfiyhnl9j8pdr295a93xcd59mqag4ca5hnvq8v93hn0cc"))))
     (properties `((upstream-name . "opentripplanner")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sfheaders
                              r-sf
                              r-rjson
@@ -5704,6 +6381,9 @@ peer-reviewed by @code{rOpenSci} (v.  0.2.0.0).")
         (base32 "0iq3y3331rjppc8nfx9krrrfybyn1spwfp15hf3vz8mnmcg86dkf"))))
     (properties `((upstream-name . "OpenStreetMap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-sp r-rjava r-raster r-ggplot2))
     (home-page "https://cran.r-project.org/package=OpenStreetMap")
@@ -5730,6 +6410,9 @@ graphics, or ggplot2.  This package is not affiliated with the
         (base32 "15vnbg7h0ijrypi7i6g5kfq4zasxc9fywsyzih0p5f6wkqavmhqg"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-signal
                              r-shiny
@@ -5748,14 +6431,15 @@ graphics, or ggplot2.  This package is not affiliated with the
     (description
      "Raman and (FT)IR spectral analysis tool for plastic particles and other
 environmental samples (Cowger et al.  2021, <doi:10.1021/acs.analchem.1c00123>).
- With read_any(), Open Specy provides a single function for reading individual,
-batch, or map spectral data files like .asp, .csv, .jdx, .spc, .spa, .0, and
-.zip.  process_spec() simplifies processing spectra, including smoothing,
-baseline correction, range restriction and flattening, intensity conversions,
-wavenumber alignment, and min-max normalization.  Spectra can be identified in
-batch using an onboard reference library (Cowger et al.  2020,
-<doi:10.1177/0003702820929064>) using match_spec().  A Shiny app is available
-via run_app() or online at <https://openanalysis.org/openspecy/>.")
+ With @code{read_any()}, Open Specy provides a single function for reading
+individual, batch, or map spectral data files like .asp, .csv, .jdx, .spc, .spa,
+.0, and .zip. @code{process_spec()} simplifies processing spectra, including
+smoothing, baseline correction, range restriction and flattening, intensity
+conversions, wavenumber alignment, and min-max normalization.  Spectra can be
+identified in batch using an onboard reference library (Cowger et al.  2020,
+<doi:10.1177/0003702820929064>) using @code{match_spec()}.  A Shiny app is
+available via @code{run_app()} or online at
+<https://openanalysis.org/openspecy/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-openskies
@@ -5770,6 +6454,9 @@ via run_app() or online at <https://openanalysis.org/openspecy/>.")
         (base32 "0ky11gpgnf2afv6kzhwbzwzrmril99ixxxzzmav3h9hzcig3igyj"))))
     (properties `((upstream-name . "openSkies")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-ssh
                              r-rpresto
@@ -5803,6 +6490,9 @@ information, as well as aircraft state vectors.")
         (base32 "0y7yfqk0bqj03fvzni8dwvv0dhis1dp3h0gzbnfky9kmw43iinjv"))))
     (properties `((upstream-name . "openscoring")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-purrr
@@ -5835,6 +6525,9 @@ score your own data directly from an R script.")
         (base32 "18la6cy6xs0rlp4b40cri4fzs9xl4ddh8y1hq5kziv9rswckv6bv"))))
     (properties `((upstream-name . "openrouteservice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-v8
                              r-leaflet
@@ -5865,6 +6558,9 @@ interest, and more.")
         (base32 "1v8sqlid97xnp0nddn4yr6im8zah1pclirvmz1n7qmc91656plx6"))))
     (properties `((upstream-name . "OpenRepGrid.ic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyverse
                              r-tidyr
@@ -5899,15 +6595,18 @@ description of the interpretive clustering (IC) method.")
 (define-public r-openrepgrid
   (package
     (name "r-openrepgrid")
-    (version "0.1.15")
+    (version "0.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenRepGrid" version))
        (sha256
-        (base32 "0sdqz9bhwfqcpggd2yw4inlfzn4qkzv1vxnri6mxqmjpkb7arysw"))))
+        (base32 "0dwvwfpjcbjq1vsr91df4rp552c4kvh5ygaa2ng84qryqmydcp48"))))
     (properties `((upstream-name . "OpenRepGrid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-tidyr
                              r-stringr
@@ -5944,6 +6643,9 @@ part of the The package is part of the <https://openrepgrid.org/> project.")
         (base32 "1awwyam8jz0vh0dlwx23r96g5mvfclnwa3a4j97ng8k5w3hcwisi"))))
     (properties `((upstream-name . "OpeNoise")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-pracma r-lubridate r-ggplot2))
     (home-page "https://arpapiemonte.github.io/openoise-analysis/")
     (synopsis "Environmental Noise Pollution Data Analysis")
@@ -5966,6 +6668,9 @@ is partially described in Fogola, Grasso, Masera and Scordino (2023,
         (base32 "03a194yjzlxymq64c6pd28ja71gv2z5465hb7qmxbw0gqpirz3l0"))))
     (properties `((upstream-name . "openNLPdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page "https://opennlp.apache.org/")
@@ -5986,6 +6691,9 @@ is partially described in Fogola, Grasso, Masera and Scordino (2023,
         (base32 "15yl74wv6w1d2wwpn1xlkkpam3c62977gnqal651fv623v29gg35"))))
     (properties `((upstream-name . "openNLP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-opennlpdata r-nlp))
     (home-page "https://cran.r-project.org/package=openNLP")
@@ -6011,6 +6719,9 @@ entity extraction, chunking, parsing, and coreference resolution.  See
         (base32 "1yd5p92w9l4vag591slnxvj8zzljilv7idv52978z2gsrihy5lsb"))))
     (properties `((upstream-name . "openMSE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-samtool
                              r-purrr
@@ -6043,6 +6754,13 @@ these packages.  Learn more about @code{openMSE} at <https://openmse.com/>.")
         (base32 "0ij4mnbfkckidv9f414fclyhrbbkgmpz5zsjiqa3zlckr3pfaxg7"))))
     (properties `((upstream-name . "OpenML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-xml
                              r-stringi
                              r-memoise
@@ -6079,6 +6797,9 @@ uploading of data sets, tasks, flows and runs.  See
         (base32 "1y9f358yn1d2xfqcgmmhcnyxr29fd2frh6ka70pzk63szswszs50"))))
     (properties `((upstream-name . "OpenMindat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-stringr
                              r-stringi
@@ -6119,6 +6840,9 @@ scientific discoveries.")
         (base32 "0bcljsirlkxn0h87j2g2jb6spcik84h7nms06mcj40ckx188yr82"))))
     (properties `((upstream-name . "openmetrics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6))
     (home-page "https://github.com/atheriel/openmetrics")
     (synopsis "'Prometheus' Client for R Using the 'OpenMetrics' Format")
@@ -6142,6 +6866,9 @@ metrics of their own.")
         (base32 "147zc2mn9ma6rkdz5czkmq8pp9slkvz44vf00mi64jkq2gp9kfpx"))))
     (properties `((upstream-name . "openmeteo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tidyr
                              r-tibblify
@@ -6169,6 +6896,9 @@ is located at <https://open-meteo.com/en/docs>.")
         (base32 "0qm08j12yrh3kyz3azpgp3w9pwvf4i8ymwisks8iqz05k2kw1r36"))))
     (properties `((upstream-name . "OpenLand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-raster
                              r-networkd3
@@ -6202,6 +6932,9 @@ output graphics.")
         (base32 "0d9x109806ylay80ih6zrfqqjylbi0ralr9k7rz6xar40rimzb5z"))))
     (properties `((upstream-name . "openintro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usdata
                              r-tibble
                              r-rmarkdown
@@ -6235,6 +6968,9 @@ of Windows operating system.")
         (base32 "0j15kwhjazr35yqs9lhw0pfqmrd9rm75gs160dn3xcyc3nw2is56"))))
     (properties `((upstream-name . "OpenImageR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tiff
                              r-shiny
                              r-rcpparmadillo
@@ -6251,19 +6987,20 @@ of Windows operating system.")
  The package takes advantage of @code{RcppArmadillo} to speed up computationally
 intensive functions.  The histogram of oriented gradients descriptor is a
 modification of the @code{findHOGFeatures} function of the @code{SimpleCV}
-computer vision platform, the average_hash(), dhash() and phash() functions are
-based on the @code{ImageHash} python library.  The Gabor Feature Extraction
-functions are based on Matlab code of the paper, \"@code{CloudID}: Trustworthy
-cloud-based and cross-enterprise biometric identification\" by M. Haghighat, S.
-Zonouz, M. Abdel-Mottaleb, Expert Systems with Applications, vol.  42, no.  21,
-pp.  7905-7916, 2015, <doi:10.1016/j.eswa.2015.06.025>.  The SLIC and SLICO
-superpixel algorithms were explained in detail in (i) \"SLIC Superpixels Compared
-to State-of-the-art Superpixel Methods\", Radhakrishna Achanta, Appu Shaji, Kevin
-Smith, Aurelien Lucchi, Pascal Fua, and Sabine Suesstrunk, IEEE Transactions on
-Pattern Analysis and Machine Intelligence, vol.  34, num.  11, p.  2274-2282,
-May 2012, <doi:10.1109/TPAMI.2012.120> and (ii) \"SLIC Superpixels\", Radhakrishna
-Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi, Pascal Fua, and Sabine
-Suesstrunk, EPFL Technical Report no.  149300, June 2010.")
+computer vision platform, the @code{average_hash()}, @code{dhash()} and
+@code{phash()} functions are based on the @code{ImageHash} python library.  The
+Gabor Feature Extraction functions are based on Matlab code of the paper,
+\"@code{CloudID}: Trustworthy cloud-based and cross-enterprise biometric
+identification\" by M. Haghighat, S. Zonouz, M. Abdel-Mottaleb, Expert Systems
+with Applications, vol.  42, no.  21, pp.  7905-7916, 2015,
+<doi:10.1016/j.eswa.2015.06.025>.  The SLIC and SLICO superpixel algorithms were
+explained in detail in (i) \"SLIC Superpixels Compared to State-of-the-art
+Superpixel Methods\", Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien
+Lucchi, Pascal Fua, and Sabine Suesstrunk, IEEE Transactions on Pattern Analysis
+and Machine Intelligence, vol.  34, num.  11, p.  2274-2282, May 2012,
+<doi:10.1109/TPAMI.2012.120> and (ii) \"SLIC Superpixels\", Radhakrishna Achanta,
+Appu Shaji, Kevin Smith, Aurelien Lucchi, Pascal Fua, and Sabine Suesstrunk,
+EPFL Technical Report no.  149300, June 2010.")
     (license license:gpl3)))
 
 (define-public r-openhimr
@@ -6278,6 +7015,9 @@ Suesstrunk, EPFL Technical Report no.  149300, June 2010.")
         (base32 "0wgjihdfjvsf3p97ll496ixwv2xzlgsr138pzgalw5hq0p1kmld6"))))
     (properties `((upstream-name . "OpEnHiMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-stringr
                              r-splitstackshape
@@ -6320,6 +7060,9 @@ histone modification in plants. <doi:10.1186/s12864-019-5489-4>.")
         (base32 "1z5mljnn4f6hasc207spiz5yvhrssb09mfnbnfdi8p7di0wg8szw"))))
     (properties `((upstream-name . "openFDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-rlang
                              r-purrr
@@ -6349,6 +7092,9 @@ data and parse.  Kass-Hout TA, Xu Z, Mohebbi M et al. (2016)
         (base32 "02rm34mgjhcb3pp71x0rspyz7cmpmj4g5rs93xnly304il8v0rx2"))))
     (properties `((upstream-name . "openeo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-rlang
                              r-r6
@@ -6378,6 +7124,9 @@ in R.")
         (base32 "19q5xlvgc91mcr6sjzppgkmvdlfb6cr7rs952i2yys3w7ylwk3bj"))))
     (properties `((upstream-name . "openEBGM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page
@@ -6411,6 +7160,9 @@ estimation loosely derived from the @code{mederrRank} package.")
         (base32 "17cygsw3nkg6zincfrcdh1509rlz3n5zrv9wvv7mjngm61sn79nf"))))
     (properties `((upstream-name . "opendotaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate r-jsonlite r-dplyr))
     (home-page "https://cran.r-project.org/package=opendotaR")
     (synopsis "Interface for OpenDota API")
@@ -6433,6 +7185,9 @@ the JSON file.")
         (base32 "1fiviazs0ydxvmsqaayhwnxf4wl4sx1psn8i5mpis7218d9ihagy"))))
     (properties `((upstream-name . "opendatatoronto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-sf
@@ -6450,15 +7205,18 @@ the JSON file.")
 (define-public r-opendataformat
   (package
     (name "r-opendataformat")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opendataformat" version))
        (sha256
-        (base32 "04957rzdilahwigi9jpv03wyw0xbkgc2h0mdg69ndx7776vh4xvj"))))
+        (base32 "0x10gw6329lqfbyz1y7lanqk9ymy12h88i9k4ifbxnvbw2dar69z"))))
     (properties `((upstream-name . "opendataformat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-xml2
                              r-tibble
@@ -6489,6 +7247,9 @@ Format, see <https://opendataformat.github.io/>.")
         (base32 "087vjygs446lw10nizl14kq27n668wqky3jr6ks28mqmcvk1wgqx"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-rcpp r-magrittr))
     (native-inputs (list pkg-config))
@@ -6513,6 +7274,9 @@ camera device.")
         (base32 "13z547bfbnmlnlmnir98j26gn82ksfhfzbqdgcfnb768w33hjv7v"))))
     (properties `((upstream-name . "openCR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-secr
                              r-rcppparallel
@@ -6541,6 +7305,9 @@ camera device.")
         (base32 "0nkf1rfplzpwf722xiswvvjqla0aysaga5g6r1whx6ksy21xbhpi"))))
     (properties `((upstream-name . "OpenCL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.rforge.net/OpenCL/")
     (synopsis "Interface allowing R to use OpenCL")
     (description
@@ -6560,6 +7327,9 @@ computing power of GPUs and other HPC accelerator devices.")
         (base32 "1sjkpp6cj6ivd68p6ql6vwgdvy0fwfkjv84wgwgb4i7f4mnxgnff"))))
     (properties `((upstream-name . "opencage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-tibble
@@ -6593,6 +7363,9 @@ address of a location (reverse geocoding), see <https://opencagedata.com/>.")
         (base32 "01akixxj04kgrxhv04icrivfpnipnpg9j62i3y19q3jkl9846lh1"))))
     (properties `((upstream-name . "openblender")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (home-page "https://cran.r-project.org/package=openblender")
     (synopsis "Request <https://openblender.io> API Services")
@@ -6613,6 +7386,9 @@ address of a location (reverse geocoding), see <https://opencagedata.com/>.")
         (base32 "04jh3nnp53dzbk96dcz0xi67jqmp66mzbj81cy8mhhd2rl5ry9cj"))))
     (properties `((upstream-name . "openbankeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-magrittr
                              r-jsonlite
@@ -6640,6 +7416,9 @@ API.")
         (base32 "1icdv5cr39xrv0nyqaz6727ffzh7zc84j1lb9jbz7bai8ky9k3w1"))))
     (properties `((upstream-name . "openappr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rsqlite
@@ -6675,6 +7454,9 @@ into R.")
         (base32 "14bhwbkwxaj8vjrix7klhqqxrfkaybd83dxkvxhpnsfr7yqhls3q"))))
     (properties `((upstream-name . "openalexR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-progress r-jsonlite r-httr))
     (home-page "https://github.com/ropensci/openalexR")
     (synopsis
@@ -6696,6 +7478,9 @@ into R.")
         (base32 "0zihkpq6p7a3n0qdwpazds4qbpagk7zh6ziflm9194vbygyskv2z"))))
     (properties `((upstream-name . "openaistream")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-jsonlite r-iterators r-httr2 r-curl))
     (home-page "https://github.com/libingfei/openaistream")
     (synopsis "Streaming Capabilities for 'OpenAI API' Interactions")
@@ -6718,6 +7503,9 @@ the @code{OpenAI} platform documentation at
         (base32 "0f56qpfjrx620qmlcad6d69rf02kvdh9fbb3p1ip4j9swshcl1a6"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -6759,6 +7547,9 @@ and air mass trajectories.")
         (base32 "1pw4bdqkd515n7fdcjavjmanhpaywxamzywgiaz4nk5bqq5mh84b"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -6797,6 +7588,9 @@ subsequent papers.")
         (base32 "04z944i4f3i0cjnxh32wf7n2dfyynnvkz4lxdkn90flam2np58yv"))))
     (properties `((upstream-name . "OPDOE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polynom
                              r-orthopolynom
                              r-nlme
@@ -6822,6 +7616,9 @@ subsequent papers.")
         (base32 "10r6s87ffxzdcrwfwxwikxilpd4ccksma9g9sbz80l3mhlakvskl"))))
     (properties `((upstream-name . "opdisDownsampling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-twosamples
                              r-pracma
                              r-pbmcapply
@@ -6848,6 +7645,9 @@ of bio-medical data.")
         (base32 "01ljrczj9ds18x40fas4rsca4phqsjaz8w8nvbr7xprf4fp8zpcj"))))
     (properties `((upstream-name . "OPC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=OPC")
     (synopsis "The Online Principal Component Estimation Method")
@@ -6869,6 +7669,9 @@ philosophy of the package is described in Guo G. (2018)
         (base32 "08jh04m6bpcfidibgl6qb01fii6smb5wvjxji6fp19iahcl9wn6h"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-readr
                              r-progress
@@ -6903,6 +7706,9 @@ on the R server side. @code{DataSHIELD} administration tools are also provided."
         (base32 "09k3bkh2glkl0sf5pcbii9cxq6ijpdsayncb02dm0ing2bh9kh0m"))))
     (properties `((upstream-name . "opa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://timbeechey.github.io/opa/")
@@ -6927,6 +7733,9 @@ percentage of orderings in the data that are matched by the hypothesis.")
         (base32 "1y0k0jcncjkcgfxybs2yyfcc7ywa49jnalrw8mn7m04h58gqg77x"))))
     (properties `((upstream-name . "oottest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PhilippKuelpmann/oottest")
     (synopsis "Out-of-Treatment Testing")
@@ -6949,6 +7758,9 @@ pairwise likelihood comparison of theories, calibrated with pre-existing data.")
         (base32 "08nx25j5m6vqg9hqns6psldfdmsb81ixjlzdhxpx392ad0j4yfbx"))))
     (properties `((upstream-name . "oosse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-matrix r-doparallel r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=oosse")
@@ -6971,6 +7783,9 @@ estimate is provided, and confidence intervals are constructed.")
         (base32 "0jnj5y26rv0i2561mywcxb7aavmpq16ippq6rblb8jiqjd05nhib"))))
     (properties `((upstream-name . "OOS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-vars
@@ -7010,6 +7825,9 @@ combination, model and error analysis, and forecast visualization.")
         (base32 "0p5bi4z6q2kz1hkn12hy7qsn1sdb336y8phmznd8cayyfil7hjvh"))))
     (properties `((upstream-name . "OOR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/mbinois/OOR")
     (synopsis "Optimistic Optimization in R")
     (description
@@ -7035,6 +7853,9 @@ dimensions, for example, for hyperparameter tuning.")
         (base32 "1p74jh9g62yicrw0lhpbn0diqi2myl24z28kpd2b3mglyffadr0b"))))
     (properties `((upstream-name . "ooplah")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6))
     (home-page "https://xoopR.github.io/ooplah/")
     (synopsis "Helper Functions for Class Object-Oriented Programming")
@@ -7056,6 +7877,9 @@ patterns including Abstract and Decorator classes.")
         (base32 "10fn3llypnglz6i02pii7i4lki0hrh46b76y8wd7df8j4bcixnn5"))))
     (properties `((upstream-name . "oolong")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-shiny
                              r-seededlda
@@ -7097,6 +7921,9 @@ generated tests match those suggested in Chang et al. (2009) and Song et al.
         (base32 "1i7prybs3b60ipl34zrq6mcr6w9kc1d44b14mxcd752k42k6xs2r"))))
     (properties `((upstream-name . "OOBCurve")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ranger r-randomforest r-mlr))
     (home-page "https://github.com/PhilippPro/OOBCurve")
     (synopsis "Out of Bag Learning Curve")
@@ -7104,10 +7931,10 @@ generated tests match those suggested in Chang et al. (2009) and Song et al.
      "This package provides functions to calculate the out-of-bag learning curve for
 random forests for any measure that is available in the mlr package.  Supported
 random forest packages are @code{randomForest} and ranger and trained models of
-these packages with the train function of mlr'.  The main function is OOBCurve()
-that calculates the out-of-bag curve depending on the number of trees.  With the
-OOB@code{CurvePars}() function out-of-bag curves can also be calculated for
-mtry', sample.fraction and min.node.size for the ranger package.")
+these packages with the train function of mlr'.  The main function is
+@code{OOBCurve()} that calculates the out-of-bag curve depending on the number
+of trees.  With the @code{OOBCurvePars()} function out-of-bag curves can also be
+calculated for mtry', sample.fraction and min.node.size for the ranger package.")
     (license license:gpl3)))
 
 (define-public r-ontophylo
@@ -7122,6 +7949,9 @@ mtry', sample.fraction and min.node.size for the ranger package.")
         (base32 "1pb8w39ckx2ffchrrxp1jqs555b5bfz7cv5kbwgyzpfshv9s0ca4"))))
     (properties `((upstream-name . "ontophylo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-tidyr
                              r-tibble
@@ -7168,6 +7998,9 @@ interest.")
         (base32 "03fga6xqvxpa3hwf5pb0dzyz4scz2szvbgm8bsj1wl35gl477cjp"))))
     (properties `((upstream-name . "ontologySimilarity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-ontologyindex))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ontologySimilarity")
@@ -7191,6 +8024,9 @@ similarity in the context of a collection of terms sets - Greene et al.  2017
         (base32 "06ynryr4yx2mg85v12vhggx795hwwwfniskv3dgmb5nmrxhvh26m"))))
     (properties `((upstream-name . "ontologyPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgraphviz r-paintmap r-ontologyindex))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ontologyPlot")
@@ -7213,6 +8049,9 @@ with various graphical options - Greene et al.  2017
         (base32 "1ggdnydxl5xdh8vjjxna778d3c3wvw1rcvvjdcnrllms8i30cvga"))))
     (properties `((upstream-name . "ontologics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -7250,6 +8089,9 @@ Knowledge Organisation System (SKOS).")
         (base32 "0l3d8bp86849rp0qrs1dfv7bjmrfdqvahb1x656vk69fi20722ma"))))
     (properties `((upstream-name . "ontoFAST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-usethis
                              r-sunburstr
@@ -7282,6 +8124,9 @@ relationships.")
         (base32 "181z69m5ws74wzrka6xb9cxz3yr1m7z57yyr401mxiz4cd466xlw"))))
     (properties `((upstream-name . "onsvtables")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gt))
     (home-page "https://github.com/ONSV/onsvtables")
     (synopsis "National Road Safety Observatory (ONSV) Styles for 'gt' Tables")
@@ -7302,6 +8147,9 @@ style.")
         (base32 "06jkq25ivi8qn3c46616a7z47g2qfjpvnfwlzjx8shw4c36j5737"))))
     (properties `((upstream-name . "onsvplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/pabsantos/onsvplot/")
     (synopsis
@@ -7324,6 +8172,9 @@ with new theme and colors.")
         (base32 "07aa0rq41vw4xy76fwwjwcvl2bv15phh5bsk4xb3j7gahy6g9xxi"))))
     (properties `((upstream-name . "onsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-readr r-jsonlite r-httr))
     (home-page "https://kvasilopoulos.github.io/onsr/")
     (synopsis "Client for the 'ONS' API")
@@ -7343,6 +8194,9 @@ with new theme and colors.")
         (base32 "0v45r1sjlhh17xcrw5498k3g82ar2y83b83qp1hfpv5hybghvr5x"))))
     (properties `((upstream-name . "onpoint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-random r-spatstat-geom
                              r-spatstat-explore r-ggplot2))
     (home-page "https://r-spatialecology.github.io/onpoint/")
@@ -7368,6 +8222,9 @@ ISBN:9781420082548).")
         (base32 "11v8zk4xvy7a3mfglj7d96d03nsnc2i23ms73v9dci8wdnwnskp1"))))
     (properties `((upstream-name . "OnomasticDiversity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sqldf))
     (home-page "https://cran.r-project.org/package=OnomasticDiversity")
     (synopsis "Onomastic Diversity Measures")
@@ -7391,6 +8248,9 @@ Numbers, Geometric Mean and Cressie and Read statistics.")
         (base32 "1s0swrcff9v9ffbjkraahmb398gh2jrca2wf5k6gs8037frnl8wd"))))
     (properties `((upstream-name . "onnx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/onnx/onnx-r")
@@ -7414,6 +8274,9 @@ and standard data types.")
         (base32 "0n4gf8fx6c4abwxcajz8bpsfvgl42dflb99wfn4632csag1a50rl"))))
     (properties `((upstream-name . "onmaRg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-sf r-readxl r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=onmaRg")
@@ -7450,6 +8313,9 @@ Public Health Ontario website:
         (base32 "19pgrhr7xzas4s592l4sgv1dfynf3s3d227zwcdv6z6wrxh40hyj"))))
     (properties `((upstream-name . "onls")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-minpack-lm))
     (home-page "https://cran.r-project.org/package=onls")
     (synopsis "Orthogonal Nonlinear Least-Squares Regression")
@@ -7471,6 +8337,9 @@ and plotting.")
         (base32 "0lid3g4v51c664304cxgjm209qxv88hqglv89frmj4afc0y6k7sc"))))
     (properties `((upstream-name . "onlineretail")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/allanvc/onlineretail/")
     (synopsis "Online Retail Dataset")
     (description
@@ -7492,6 +8361,9 @@ the donor's permission, Dr. Daqing Chen.")
         (base32 "1xc9kjqvpspymywzaykw4nw14y43fi4ydwj4jfhvx5ws51f7y9i8"))))
     (properties `((upstream-name . "onlinePCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=onlinePCA")
     (synopsis "Online Principal Component Analysis")
@@ -7512,6 +8384,9 @@ low-rank incremental methods, and stochastic optimization methods.")
         (base32 "0qj9943hmcf584b7czf877zg5rxz8byg97dkk3gnb57q5ar60f3z"))))
     (properties `((upstream-name . "onlineforecast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-pbs r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://onlineforecasting.org")
@@ -7538,6 +8413,9 @@ vignettes, the website <https://onlineforecasting.org> and the paper
         (base32 "04ikvsd76f6xhja7djyv433m88lfj2vf0y9qi6x1s4i9kh8xkbz9"))))
     (properties `((upstream-name . "onlineCOV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=onlineCOV")
     (synopsis
@@ -7566,6 +8444,9 @@ High-Dimensional Covariance Structure with Application to Dynamic Networks.\"
         (base32 "1pwpnmpgh3hl8mv1pbn577dn832nxbsfaxn3hqghvs4dn06lwngf"))))
     (properties `((upstream-name . "onlineBcp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vim))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=onlineBcp")
@@ -7590,6 +8471,9 @@ Yigiter A, Chen J, An L, Danacioglu N (2015)
         (base32 "0ja3nqi684c314hh9y5lp59bdfi01vycz17ridw1xlzh89na8c60"))))
     (properties `((upstream-name . "onion")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mathjaxr r-freealg r-emulator))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/onion")
@@ -7614,6 +8498,9 @@ nonassociative.  See the package vignette for more details.")
         (base32 "0qmzgg869pdj3sfi8znd02z62px9n04fxl1psrfw8mxl4ainp0v7"))))
     (properties `((upstream-name . "onewaytests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wesanderson r-nortest r-moments r-ggplot2 r-car))
     (home-page "https://cran.r-project.org/package=onewaytests")
     (synopsis "One-Way Tests in Independent Groups Designs")
@@ -7646,19 +8533,22 @@ and normality of data in each group via tests and plots (Dag et al., 2018,
         (base32 "0qa5v3c1f5mckvgmw8zbxqkk1q8k8dig1xg9k8pfyvfxqjard1ny"))))
     (properties `((upstream-name . "OneTwoSamples")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OneTwoSamples")
     (synopsis "Deal with One and Two (Normal) Samples")
     (description
-     "We introduce an R function one_two_sample() which can deal with one and two
-(normal) samples, Ying-Ying Zhang, Yi Wei (2012) <doi:10.2991/asshm-13.2013.29>.
- For one normal sample x, the function reports descriptive statistics, plot,
-interval estimation and test of hypothesis of x.  For two normal samples x and
-y, the function reports descriptive statistics, plot, interval estimation and
-test of hypothesis of x and y, respectively.  It also reports interval
-estimation and test of hypothesis of mu1-mu2 (the difference of the means of x
-and y) and sigma1^2 / sigma2^2 (the ratio of the variances of x and y), tests
-whether x and y are from the same population, finds the correlation coefficient
-of x and y if x and y have the same length.")
+     "We introduce an R function @code{one_two_sample()} which can deal with one and
+two (normal) samples, Ying-Ying Zhang, Yi Wei (2012)
+<doi:10.2991/asshm-13.2013.29>.  For one normal sample x, the function reports
+descriptive statistics, plot, interval estimation and test of hypothesis of x.
+For two normal samples x and y, the function reports descriptive statistics,
+plot, interval estimation and test of hypothesis of x and y, respectively.  It
+also reports interval estimation and test of hypothesis of mu1-mu2 (the
+difference of the means of x and y) and sigma1^2 / sigma2^2 (the ratio of the
+variances of x and y), tests whether x and y are from the same population, finds
+the correlation coefficient of x and y if x and y have the same length.")
     (license license:gpl2+)))
 
 (define-public r-onetime
@@ -7673,6 +8563,9 @@ of x and y if x and y have the same length.")
         (base32 "1yyi8r8dniavsjlqmj5z9x52av2qz0iz01i2r7qx69apqbkwd57b"))))
     (properties `((upstream-name . "onetime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rappdirs r-filelock))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hughjonesd/onetime")
@@ -7695,6 +8588,9 @@ very first time.")
         (base32 "0fm8gpdwzdx4s23gg615a6r58mrjrx2k3pcbh8dq4z4067lr880w"))))
     (properties `((upstream-name . "OneStep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-fitdistrplus r-extradistr))
     (home-page "https://journal.r-project.org/archive/2021/RJ-2021-044/")
     (synopsis "One-Step Estimation")
@@ -7719,6 +8615,9 @@ Brouste et al. (2021) <doi:10.32614/RJ-2021-044>.")
         (base32 "07mfykpkcgcqafw1w3qr9x83zpy2p0q7v1zkgwpd69g79j0r3yap"))))
     (properties `((upstream-name . "ONEST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hangangtrue/ONEST")
     (synopsis "Observers Needed to Evaluate Subjective Tests")
@@ -7744,6 +8643,9 @@ data from Rimm et al. (2017 <doi:10.1001/jamaoncol.2017.0013>).")
         (base32 "1swjc1gsddihdcx9c219vzh9xn379fp8jlvvs5jhikixkk1frqdq"))))
     (properties `((upstream-name . "OneSampleMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-msm
                              r-lmtest
@@ -7776,6 +8678,9 @@ al. (2008) <doi:10.1016/j.jhealeco.2007.09.009>.")
         (base32 "1z09nmwp4v4rhr5aqx7k4dg9xvp9nm4djr2kbkivd7hph4fks0qs"))))
     (properties `((upstream-name . "OneSampleLogRankTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survminer
                              r-survival
                              r-rlang
@@ -7809,6 +8714,9 @@ interest.")
         (base32 "1k7rzhcwq5b2yi4zfsc1r0yb6w65gxj9835d2a1dclallja3zav2"))))
     (properties `((upstream-name . "OneR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vonjd/OneR")
     (synopsis
@@ -7833,6 +8741,9 @@ machine learning models and the rules are often helpful heuristics.")
         (base32 "0h5bi4zyiglic60msrkfny28k1rb7avqbs87ipzwwayb452b970c"))))
     (properties `((upstream-name . "onemap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcfr
                              r-tidyr
                              r-smacof
@@ -7871,6 +8782,9 @@ using hidden Markov models.")
         (base32 "06p3a8kaxmvsj8nn7dy8w6wv1jjw67is991hqg9q0fa20ifym3dl"))))
     (properties `((upstream-name . "onelogin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-safer
                              r-r6
@@ -7897,6 +8811,9 @@ to their API.")
         (base32 "1cdsz007wr054k5phvihhg4qx0fc039k2s6484m92kws8mb2ziix"))))
     (properties `((upstream-name . "onehot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=onehot")
     (synopsis "Fast Onehot Encoding for Data.frames")
     (description
@@ -7916,6 +8833,9 @@ them.  It converts factor columns into onehot vectors.")
         (base32 "1hwvk3fkjad9z3c9rbwx3v2n4zvjjyrjcl1nxwk9yj6zgrlxbibk"))))
     (properties `((upstream-name . "oneclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://nanx.me/oneclust/")
@@ -7938,6 +8858,9 @@ programming.")
         (base32 "186386pjjvlfq38950n1sdx0wq31q8ggjlqlrn07v68bcqjl70y6"))))
     (properties `((upstream-name . "OneArmTTE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-tibble r-survival r-dplyr))
     (home-page "https://cran.r-project.org/package=OneArmTTE")
     (synopsis "One-Arm Clinical Trial Designs for Time-to-Event Endpoint")
@@ -7959,6 +8882,9 @@ time-to-event data.")
         (base32 "040yv2bl6s7b1bgma7z1hgrsj8iynzayjc77ncp401nd1ng5wmw5"))))
     (properties `((upstream-name . "OneArm2stage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-ipdfromkm r-flexsurv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=OneArm2stage")
@@ -7989,6 +8915,9 @@ design method can be found in: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020).
         (base32 "081d40n8whvhykzdpm2crwmpr3mlczd6svhcpr48nxdhh56pyhjf"))))
     (properties `((upstream-name . "One4All")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-validate
                              r-tibble
                              r-shiny
@@ -8028,6 +8957,9 @@ Lab, maintained by the Moore Institute for Plastic Pollution Research.")
         (base32 "071jrldclkaz5lfp3k5fh1ilpgvvcnakh2vvnr69n3pri9dl3fls"))))
     (properties `((upstream-name . "ondisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rhdf5lib
                              r-rhdf5
                              r-readr
@@ -8061,6 +8993,9 @@ ondisc makes computing on large-scale single-cell data FUN: Fast, Universal, and
         (base32 "0cm26diaf3jlzfrpgh13q0hakakmj6vy41wk9z0w81az4jcg9sn9"))))
     (properties `((upstream-name . "oncrawlR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-webshot
                              r-tidyr
@@ -8106,6 +9041,9 @@ performance on search engines.")
         (base32 "1c40xggz3ldgma73ik0m10asamd9kns4i30w3zgw4hvpyzalbvm4"))))
     (properties `((upstream-name . "Oncotree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-boot))
     (home-page "https://github.com/anikoszabo/Oncotree")
     (synopsis "Estimating Oncogenetic Trees")
@@ -8127,6 +9065,9 @@ A. and Boucher, K (2002) <doi:10.1016/S0025-5564(02)00086-X>.")
         (base32 "12d32i8q4j0hlkxlk6s8r5ycib6lx5jdsp8g404zmjrsd96aadr2"))))
     (properties `((upstream-name . "OncoSubtype")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-summarizedexperiment
                              r-rlang
@@ -8158,6 +9099,9 @@ learning methods based on TCGA data.")
         (base32 "0cp0b0d5nbanflp1jrkvdcybjii4lzv275d880wbadsx960rax2l"))))
     (properties `((upstream-name . "oncoPredict")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg19-knowngene
                              r-tidyverse
                              r-tcgabiolinks
@@ -8208,6 +9152,9 @@ imputing drug response in cancer patients from large genomics studies.")
         (base32 "1crjpfa7yxcafnhsxs2sbf153lsr9ffaqdxjxp0zkd7hiash0mfm"))))
     (properties `((upstream-name . "oncomsm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -8249,13 +9196,16 @@ inference is implemented using stan'.")
         (base32 "1ns39r8ljzykpxy5cy4wvgsgiwqpdrida26641av7z3arr1f4kd1"))))
     (properties `((upstream-name . "Oncofilterfast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survminer r-survival))
     (home-page "https://cran.r-project.org/package=Oncofilterfast")
     (synopsis "Aids in the Analysis of Genes Influencing Cancer Survival")
     (description
      "Aids in the analysis of genes influencing cancer survival by including a
-principal function, calculator(), which calculates the P-value for each provided
-gene under the optimal cutoff in cancer survival studies.  Grounded in
+principal function, @code{calculator()}, which calculates the P-value for each
+provided gene under the optimal cutoff in cancer survival studies.  Grounded in
 methodologies from significant works, this package references Therneau's
 survival package (Therneau, 2024; <https://CRAN.R-project.org/package=survival>)
 and the survival analysis extensions by Therneau and Grambsch (2000, ISBN
@@ -8276,6 +9226,9 @@ visualizations with ggplot2'.")
         (base32 "06k0lbriyx6b1nlvpyjhf5g8dp8wa37wi1pmlpfqq7ryivp39v38"))))
     (properties `((upstream-name . "OncoBayes2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc pandoc))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
@@ -8324,6 +9277,9 @@ Neuenschwander et al. (2008) <doi:10.1002/sim.3230> and Neuenschwander et al.
         (base32 "0yshpww3rq68m0qx7kid3zlcxi1nf81vmziclyvpg61aikj8fhx5"))))
     (properties `((upstream-name . "once")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr))
     (home-page "https://gdmcdonald.github.io/once/")
     (synopsis "Execute Expensive Operations Only Once")
@@ -8344,6 +9300,9 @@ the resulting object to disk.")
         (base32 "10scbhg6aniqzrbkblhfhz9ni710xzppbzfrr4wrhsy1z5y2nfwc"))))
     (properties `((upstream-name . "onc.api")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tictoc
                              r-testthat
                              r-stringi
@@ -8373,6 +9332,9 @@ data with a single line of code.")
         (base32 "1hnhnhzfmd3cjl9ibkydzcy9i7if1f1ykqj0a74wmawh37cv4iiv"))))
     (properties `((upstream-name . "onbrand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-stringr
                              r-rlang
@@ -8404,6 +9366,9 @@ workflows that can be replicated across different organizational templates.")
         (base32 "15ymf163a80s4yvi5z884irvkb1ivnxpr505z96s23hs8ibhk2bh"))))
     (properties `((upstream-name . "OnboardClient")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -8438,6 +9403,9 @@ model/ontology.")
         (base32 "13sp9gnqnsx2b8dq13qnkin813clnanh6hzv3vi7bxy514pvmisj"))))
     (properties `((upstream-name . "onbabynames")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble))
     (home-page "<https://github.com/desautm/onbabynames>")
     (synopsis "Names Given to Babies in Ontario Between 1917 and 2018")
@@ -8459,6 +9427,9 @@ privacy.")
         (base32 "1zby5sf92c185b5m19jv4ndgbv6mz107nc47zn1d6bijrypzpc20"))))
     (properties `((upstream-name . "OnAge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://lbbe.univ-lyon1.fr/OnAge.html")
     (synopsis "Test of Between-Group Differences in the Onset of Senescence")
     (description
@@ -8482,6 +9453,9 @@ Douhard et al. (2017) <doi:10.1111/oik.04421>.")
         (base32 "0l7fqskgqm421mcijmbbb1xgi99y1j673qil5r9whwfdxk78xgqc"))))
     (properties `((upstream-name . "onadata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://ona-book.org")
     (synopsis
      "Data Sets for Keith McNulty's Handbook of Graphs and Networks in People Analytics")
@@ -8503,6 +9477,9 @@ Keith @code{McNulty} (2021).")
         (base32 "19kfk5pcwdkdb41irw9dz34gibhnc8r1amm0mnvk4kbk7y3c1809"))))
     (properties `((upstream-name . "omu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rstatix
@@ -8538,6 +9515,9 @@ gathers functional orthology and gene data from the KEGG-REST API.")
         (base32 "018sphpmmgpq5alag0il83q51f3r3jx3pnnzjrvg4gn6691nkwvz"))))
     (properties `((upstream-name . "omsvg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-sass
                              r-rlang
@@ -8564,6 +9544,9 @@ modify its graphical elements with a suite of transform functions.")
         (base32 "1w0cyw5ixkri8523vdcfrlaf49farhgdf1bxiizwk5gppb3w5ibl"))))
     (properties `((upstream-name . "ompr.roi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-slam r-roi r-ompr r-matrix))
     (home-page "https://github.com/dirkschumacher/ompr.roi")
     (synopsis
@@ -8588,6 +9571,9 @@ and examples on how to use it.")
         (base32 "02glc09yrdvwls0i8ik1wh6fp3qa9ry55xd3yy3xk0rav8r3hcj3"))))
     (properties `((upstream-name . "ompr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-matrix
                              r-listcomp
@@ -8618,6 +9604,7 @@ more information, documentation and examples.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f list
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -8661,6 +9648,9 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
         (base32 "1lgh0cyd5qpg4bzs1s6iwvfif7mwwjwxn3wjqhidpg6nhhiv1dga"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visomopresults
                              r-tidyr
                              r-tibble
@@ -8702,6 +9692,9 @@ counts and trends.")
         (base32 "0a2sdigf1gx8zzpcr926b6pysvz5haf79pmma74sw3ifg1i6kxma"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-stringr
@@ -8735,6 +9728,9 @@ common data model.")
         (base32 "13p5ms9c3lpbc8n2a4vjx6pfayv6pfllspyifxsq53pn9cfm2z6z"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snakecase
                              r-rlang
                              r-purrr
@@ -8765,6 +9761,9 @@ to effortlessly include only the necessary tables for their testing needs.")
         (base32 "0x3q04g45nixgsrl4biqqi6bk4kx79spq5whm3n4ppr0nkv8dw4h"))))
     (properties `((upstream-name . "OmnibusFisher")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survey r-stringr r-compquadform))
     (home-page "https://cran.r-project.org/package=OmnibusFisher")
     (synopsis "Modified Fisherâs Method to Test Overall Gene-Level Effect")
@@ -8787,6 +9786,9 @@ types of omics data or samples with two types.")
         (base32 "16lzx1acbl6nbjg21dv2g3n934bvial7nkbbs15pm00aliclws7p"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/adamlilith/omnibus")
     (synopsis
      "Helper Tools for Managing Data, Dates, Missing Values, and Text")
@@ -8812,6 +9814,9 @@ applying functions before combining).")
         (base32 "0p0iraascyx16y05rpc2c9k25s4crc0wrxy58dpj7jd47g2360ar"))))
     (properties `((upstream-name . "Omisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-psych r-mass r-copula))
     (home-page "https://cran.r-project.org/package=Omisc")
     (synopsis "Univariate Bootstrapping and Other Things")
@@ -8838,6 +9843,9 @@ about univariate bootstrapping see: Lee and Rodgers (1998) and Beasley et al
         (base32 "03l53vbsard0hpaffcaa9l1aa3nh3w16j00k2jz2jqrrg02z0d7h"))))
     (properties `((upstream-name . "omicwas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
@@ -8875,6 +9883,9 @@ cell-type-specific epigenome-wide and transcriptome association study\".")
         (base32 "0k6cpdxafz6x5360m97x8mvvi09mb36yx42slkq6nr4axpm089pf"))))
     (properties `((upstream-name . "omicsTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-shiny
                              r-readr
@@ -8909,6 +9920,9 @@ al. (2011) <doi:10.1038/nprot.2011.335>.")
         (base32 "1hfdv3cv1ws03x93vah3alpv619dwq40sbl35b2nra3wsix8zcan"))))
     (properties `((upstream-name . "OmicsQC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lsa r-fitdistrplus
                              r-boutroslab-plotting-general))
     (native-inputs (list r-knitr))
@@ -8938,6 +9952,9 @@ algorithm are provided with flexible parameters for dataset customization.")
         (base32 "08vx4925j5ln366h7nzhf1ra5ciplrqw911258chi9di7gpm8g50"))))
     (properties `((upstream-name . "OmicsPLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-softimpute r-magrittr r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -8969,6 +9986,9 @@ degree of sparsity.")
         (base32 "0nac0ahciyajsicrs4rkn54xiwgvdm4m2kbg6icbsygwzzp2w14z"))))
     (properties `((upstream-name . "OmicSense")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kernlab r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "<https://github.com/takakoizumi/OmicSense>")
@@ -8991,6 +10011,9 @@ using omics data.")
         (base32 "1y2x33mfgq98nglhvpr1wq1v6nfiq4njy2yac47x72rpwxsj9vb1"))))
     (properties `((upstream-name . "omics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pheatmap r-lme4))
     (home-page "https://cran.r-project.org/package=omics")
     (synopsis "'--omics' Data Analysis Toolbox")
@@ -9011,6 +10034,9 @@ as DNA methylation and gene expression profiles.")
         (base32 "0dfc3v5n7sms0fjgm8g0f1r810q139378ha0i86hv1s88psxy08x"))))
     (properties `((upstream-name . "OmicNavigator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-data-table))
     (home-page "https://github.com/abbvie-external/OmicNavigator")
     (synopsis
@@ -9039,6 +10065,9 @@ fine-grained filtering based on statistical significance.")
         (base32 "08frr38yf5d0l3zwkbq9465xrbyzsn8sx9icqc3yvfnxrkhrpzig"))))
     (properties `((upstream-name . "OmicKriging")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rocr r-irlba r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=OmicKriging")
     (synopsis "Poly-Omic Prediction of Complex TRaits")
@@ -9067,6 +10096,9 @@ Y to predict Y.")
         (base32 "1aihcrgml67rvnx9vpnq2nnbc79kicw4ks1fradsa36ykkdz6b1g"))))
     (properties `((upstream-name . "OmegaG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OmegaG")
     (synopsis
      "Omega-Generic: Composite Reliability of Multidimensional Measures")
@@ -9102,6 +10134,9 @@ of @code{OmegaG} do not necessarily represent the policy of the ALSAC.")
         (base32 "10aq9mcnb7yp2jwz897qmng3p0vwrm1rzny8nc9lzm6gisw50lby"))))
     (properties `((upstream-name . "OlympicRshiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarytools
                              r-shinythemes
                              r-shinybusy
@@ -9131,6 +10166,9 @@ Olympics events are included.  Data is from Kaggle at
         (base32 "1ln2as15aay4hzdm82yc024dlv7wdip9l5dryrdhkmmhjy026gia"))))
     (properties `((upstream-name . "OLStrajr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-purrr
@@ -9145,15 +10183,15 @@ Olympics events are included.  Data is from Kaggle at
 (OLS) trajectory analysis and case-by-case OLS regression as outlined in Carrig,
 Wirth, and Curran (2004) <doi:10.1207/S15328007SEM1101_9> and Rogosa and Saner
 (1995) <doi:10.3102/10769986020002149>.  It encompasses two primary functions,
-OLStraj() and cbc_lm().  The OLStraj() function simplifies the estimation of
-individual growth curves over time via OLS regression, with options for
-visualizing both group-level and individual-level growth trajectories and
-support for linear and quadratic models.  The cbc_lm() function facilitates
-case-by-case OLS estimates and provides unbiased mean population intercept and
-slope estimators by averaging OLS intercepts and slopes across cases.  It
-further offers standard error calculations across bootstrap replicates and
-computation of 95% confidence intervals based on empirical distributions from
-the resampling processes.")
+@code{OLStraj()} and @code{cbc_lm()}.  The @code{OLStraj()} function simplifies
+the estimation of individual growth curves over time via OLS regression, with
+options for visualizing both group-level and individual-level growth
+trajectories and support for linear and quadratic models.  The @code{cbc_lm()}
+function facilitates case-by-case OLS estimates and provides unbiased mean
+population intercept and slope estimators by averaging OLS intercepts and slopes
+across cases.  It further offers standard error calculations across bootstrap
+replicates and computation of 95% confidence intervals based on empirical
+distributions from the resampling processes.")
     (license license:expat)))
 
 (define-public r-olsrr
@@ -9168,6 +10206,9 @@ the resampling processes.")
         (base32 "0hvz8kab1bwnm36npdsk54yav3ga268a54rirjh1xij0nvc9hwp9"))))
     (properties `((upstream-name . "olsrr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xplorerr
                              r-nortest
                              r-gridextra
@@ -9197,15 +10238,18 @@ assessment and variable selection procedures.")
         (base32 "1l6m2gbglh8idy4k2q23qgfb7in1a6pnwiji1gbygfan6paw4xza"))))
     (properties `((upstream-name . "olr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr))
     (home-page "https://github.com/MatHatter")
     (synopsis "Optimal Linear Regression")
     (description
-     "The optimal linear regression olr(), runs all the possible combinations of
-linear regression equations.  The olr() returns the equation which has the
-greatest adjusted R-squared term or the greatest R-squared term based on the
-user's discretion.  Essentially, the olr() returns the best fit equation out of
-all the possible equations.  R-squared increases with the addition of an
+     "The optimal linear regression @code{olr()}, runs all the possible combinations
+of linear regression equations.  The @code{olr()} returns the equation which has
+the greatest adjusted R-squared term or the greatest R-squared term based on the
+user's discretion.  Essentially, the @code{olr()} returns the best fit equation
+out of all the possible equations.  R-squared increases with the addition of an
 explanatory variable whether it is significant or not, thus this was developed
 to eliminate that conundrum.  Adjusted R-squared is preferred to overcome this
 phenomenon, but each combination will still produce different results and this
@@ -9228,6 +10272,9 @@ R-squared terms.  A Python version is available at:
         (base32 "1990hr9gww636xr4gkvc816hd0pc78nw3ypbzflkh5g3pmsn7bc2"))))
     (properties `((upstream-name . "ollggamma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://mjsaldanha.com/posts/ollggamma")
     (synopsis "Odd Log-Logistic Generalized Gamma Probability Distribution")
     (description
@@ -9248,6 +10295,9 @@ Odd Log-Logistic Generalized Gamma proposed in Prataviera, F. et al (2017)
         (base32 "1xjfn3hlmmx65kphchhxqa9fx6qmkiyx24lp19si1y3v92wdv2i9"))))
     (properties `((upstream-name . "ollg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/dmazarei/ollg")
     (synopsis "Computes some Measures of OLL-G Family of Distributions")
     (description
@@ -9269,6 +10319,9 @@ different authors in the recent years.  See Alizadeh (2019)
         (base32 "0l9k84hf5y46ci6l2sy1zi3423akip2jr0zi8cnjh337dfww9sis"))))
     (properties `((upstream-name . "ollamar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-jsonlite
                              r-httr2
@@ -9296,6 +10349,9 @@ you run open-source large language models locally on your machine.")
         (base32 "0gwm63xibgyg6ra2zs128dc586vx73mbr60gply1jgws7h95c3b0"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -9341,6 +10397,9 @@ data run on the Olink platform.")
         (base32 "1gbchwynvmryarz32f24v56kj57h7x6nrrm878fkjkpq140cqwzz"))))
     (properties `((upstream-name . "olctools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ironholds/olctools")
@@ -9363,6 +10422,9 @@ validating, encoding and decoding entries that follow this standard.")
         (base32 "0w60w1qhq8sbcaqk56kf4cgn51fm8zjmxdm42imn5c05m06pc8k0"))))
     (properties `((upstream-name . "OLCPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra r-laplacesdemon))
     (home-page "https://cran.r-project.org/package=OLCPM")
     (synopsis "Online Change Point Detection for Matrix-Valued Time Series")
@@ -9396,6 +10458,9 @@ et al. (2021)<doi:10.48550/@code{arXiv.2112.13479>}.")
         (base32 "0wysfpkij9l265clw6qi4zpr1c860idxfp82xz2nmy1l5b2n8ri0"))))
     (properties `((upstream-name . "okxAPI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-websocket
                              r-r6
                              r-jsonlite
@@ -9422,6 +10487,9 @@ including REST API and @code{WebSocket} API.")
         (base32 "10kkg6n6fsqm1kir1ay96br1m8adykarmp57bnw900fiblqqa2i0"))))
     (properties `((upstream-name . "OkNNE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fnn))
     (home-page "https://cran.r-project.org/package=OkNNE")
     (synopsis
@@ -9450,6 +10518,9 @@ Kumam, P., Khan, D.M., Khalil, U., Sulaiman, M. and Khan, Z. (2020)
         (base32 "0jmz9zmzbaass3l8w5gvcg2ywa2mwmz7ngq5xb11in8gckbpn7cs"))))
     (properties `((upstream-name . "ojsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-urltools
                              r-tidyr
@@ -9482,6 +10553,9 @@ articles metadata from their head tag in html, or from Open Archives Initiative
         (base32 "1n41hikn53ikyynsravg127cw5csa8s0s1l63w5hym7c6j625ya5"))))
     (properties `((upstream-name . "oii")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rapportools r-gmodels r-deducer))
     (home-page "https://cran.r-project.org/package=oii")
     (synopsis "Crosstab and Statistical Tests for OII MSc Stats Course")
@@ -9507,6 +10581,9 @@ ordinal data.")
         (base32 "0l3c6p1q2mjvr03q905ygmaax94bn3a0fkfn8kfjr6d5bs60283s"))))
     (properties `((upstream-name . "ohun")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-warbler
                              r-tuner
                              r-sf
@@ -9540,6 +10617,9 @@ peer-reviewed by @code{rOpenSci}.  Araya-Salas et al. (2022)
         (base32 "0hkjs322vii1dsminlkwpwi12sc9pd88jag7p4dmy6nfw2hh2d69"))))
     (properties `((upstream-name . "ohtadstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://github.com/pfpetrowski/OhtaDStats")
     (synopsis "Tomoka Ohta D Statistics")
@@ -9561,6 +10641,9 @@ D-statistics, for pairs of loci.  Petrowski et al. (2019)
         (base32 "0zw4r1sv46mfxzbp620a00wsh9i1dc21lmf1iadsdm4iss8pjk44"))))
     (properties `((upstream-name . "ohsome")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-readr r-jsonlite r-httr r-geojsonsf))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/GIScience/ohsome-r")
@@ -9585,6 +10668,9 @@ specify your own temporal, spatial and/or thematic filters.")
         (base32 "1bcg97lgjs00xka2k5k8kdnc42vz10g78cb9mh5jz2g58iamjzbk"))))
     (properties `((upstream-name . "OHPL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pls r-mvtnorm r-glmnet))
     (home-page "https://ohpl.io")
     (synopsis "Ordered Homogeneity Pursuit Lasso for Group Variable Selection")
@@ -9610,6 +10696,9 @@ correlated variables, such as spectroscopic data.")
         (base32 "1p1jica3fr4a5ilz1m2gxyzbapxjvgiw4v5rn90d5qgsmbp1hj42"))))
     (properties `((upstream-name . "ohoegdm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/tmsalab/ohoegdm")
     (synopsis
@@ -9632,6 +10721,9 @@ Balamuta, J. J. (In Press) <doi:10.1080/00273171.2021.1985949>.")
         (base32 "09ii42791qyfzc641906k92p5nd8r162jji3fxjdidw2ncwnnn8b"))))
     (properties `((upstream-name . "oHMMed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcd
                              r-scales
                              r-mistr
@@ -9669,6 +10761,9 @@ autocorrelation.")
         (base32 "132d4drc2phw9ppxnczb1ycdg3dv085k8p6bcaj3v866j0hfxjgb"))))
     (properties `((upstream-name . "Ohit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://mx.nthu.edu.tw/~cking/pdf/IngLai2011.pdf")
     (synopsis "OGA+HDIC+Trim and High-Dimensional Linear Regression Models")
     (description
@@ -9693,6 +10788,9 @@ a high-dimensional linear regression model via OGA+HDIC+Trim.")
         (base32 "14f46s2d75313d7vkshlnan40452pyxnj02cz98dkpk6mis6y751"))))
     (properties `((upstream-name . "ohenery")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-maxlik r-magrittr r-dplyr))
     (home-page "https://github.com/shabbychef/ohenery")
     (synopsis "Modeling of Ordinal Random Variables via Softmax Regression")
@@ -9714,6 +10812,9 @@ and Henery <doi:10.1111/j.2517-6161.1981.tb01153.x> models.")
         (base32 "0dr2yxz9amqq9mpl8skhdvs7w01zc4y3sw4wqs0iwj1pj9jb96fz"))))
     (properties `((upstream-name . "OHCSpackage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-readr r-openxlsx r-dplyr))
     (home-page "https://cran.r-project.org/package=OHCSpackage")
     (synopsis "Prepare Housing Data for Analysis")
@@ -9739,6 +10840,9 @@ streamline their data preparation processes.")
         (base32 "1dppd0jzzrifclic1bs6asjl2rbzygvbrjbc922xsz95wazgfmww"))))
     (properties `((upstream-name . "ogrdbstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tigger
                              r-tidyr
                              r-stringr
@@ -9780,6 +10884,9 @@ provided is described in <doi:10.3389/fimmu.2019.00435>.")
         (base32 "13axmhbqhv4kkcdsdmp9r7p0d0kyqlsaqgyyllbkxlxb4hfz79b6"))))
     (properties `((upstream-name . "oglmx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-maxlik))
     (home-page "https://cran.r-project.org/package=oglmx")
     (synopsis "Estimation of Ordered Generalized Linear Models")
@@ -9806,6 +10913,9 @@ included.")
         (base32 "0qw55jamkvdf3vfa5c0ygbymbs4d9q15dihiqz691hdfnyjvc2mk"))))
     (properties `((upstream-name . "OGI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve))
     (home-page "https://cran.r-project.org/package=OGI")
     (synopsis "Objective General Index")
@@ -9829,6 +10939,9 @@ correlated with each of the variates.  More details can be found in Sei (2016)
         (base32 "1wid8d4m8bk087z8fi4ls493p1g30cymyl5xcbzcv0an2rkd739j"))))
     (properties `((upstream-name . "ofpetrial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-tmap
                              r-tidyr
@@ -9868,6 +10981,9 @@ report checks the validity and reliability of the trial design.")
         (base32 "0xdkl8k12an9pdy6i5nay4m2iakrwsp0lr3zl8gphii75j0ywz7k"))))
     (properties `((upstream-name . "ofGEM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-forestplot r-compquadform))
     (home-page "https://github.com/randel/ofGEM")
     (synopsis
@@ -9894,6 +11010,9 @@ meta-filtering.  It can also analyze data from multiple ethnic groups.")
         (base32 "1nxiaz5p3s4i3dxl3cph5c8aily3d6g212086wrxy38jyqk55xkm"))))
     (properties `((upstream-name . "offsetreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-poissonreg r-parsnip r-glue r-generics))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mattheaphy/offsetreg/")
@@ -9920,6 +11039,9 @@ point for setting assumptions.")
         (base32 "005afrm4ki4zz3zkgrf8c1v9gf5cjhc5g50mjkqya3r8npaccwq2"))))
     (properties `((upstream-name . "offlineChange")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=offlineChange")
@@ -9943,6 +11065,9 @@ The method is based on Jie Ding, Yu Xiang, Lu Shen, Vahid Tarokh (2017)
         (base32 "0mxg46jg4vb6bxxqayvf84g8bllwsf11ybkfinrsdzdlkw89s3vk"))))
     (properties `((upstream-name . "officedown")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xml2
                              r-uuid
@@ -9980,6 +11105,9 @@ define placeholder where content is to be added.")
         (base32 "0b03jqn7bz528qky6h35h3kxr6pnfqpllc4h2lgpf790slsfc054"))))
     (properties `((upstream-name . "oews2021")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=oews2021")
     (synopsis "May 2021 Occupational Employment and Wage Statistics")
     (description
@@ -10001,6 +11129,9 @@ national level.  Metropolitan data is not included.")
         (base32 "0qan0dw6v25219xxij8ra36ccdvz21n4c1025dnb36rgb63wa3kg"))))
     (properties `((upstream-name . "oews2020")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=oews2020")
     (synopsis "May 2020 Occupational Employment and Wage Statistics")
     (description
@@ -10022,6 +11153,9 @@ national level.  Metropolitan data is not included.")
         (base32 "078jjvm9d0g8jaab0x2z4h7h8m2pznamiglhkwv07xc65cskjmpb"))))
     (properties `((upstream-name . "oesr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-sandwich
                              r-rlang
@@ -10035,10 +11169,10 @@ national level.  Metropolitan data is not included.")
     (description
      "This package provides methods for statistical analysis and reporting preferred
 by the US Office of Evaluation Sciences (OES).  This package prepares data from
-standard model output objects (such as from \\code{lm()} and
-\\code{estimatr::lm_robust()}) and creates visualizations of treatment effects
-from the prepared quantities, according to the standards of the US Office of
-Evaluation Sciences.")
+standard model output objects (such as from @code{\\code{lm()}} and
+@code{\\code{estimatr::lm_robust()}}) and creates visualizations of treatment
+effects from the prepared quantities, according to the standards of the US
+Office of Evaluation Sciences.")
     (license license:gpl3)))
 
 (define-public r-oenokpm
@@ -10053,6 +11187,9 @@ Evaluation Sciences.")
         (base32 "1qqfnq0zzmnjjb9rr6qd2l08rn5plkg4xsbrdk7jv1alfnq1b938"))))
     (properties `((upstream-name . "OenoKPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openxlsx r-minpack-lm r-gridextra r-ggpubr
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=OenoKPM")
@@ -10088,6 +11225,9 @@ production: Use of methodology for modeling\". <doi:10.1016/j.lwt.2020.109660>."
         (base32 "1a12d4fnrkrawb5f7rfidjixjl1v5qznqdyv8a5s1bp37pf1gh89"))))
     (properties `((upstream-name . "oem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra
                              r-rcppeigen
                              r-rcpparmadillo
@@ -10102,12 +11242,12 @@ production: Use of methodology for modeling\". <doi:10.1016/j.lwt.2020.109660>."
     (description
      "Solves penalized least squares problems for big tall data using the
 orthogonalizing EM algorithm of Xiong et al. (2016)
-<doi:10.1080/00401706.2015.1054436>.  The main fitting function is oem() and the
-functions cv.oem() and xval.oem() are for cross validation, the latter being an
-accelerated cross validation function for linear models.  The big.oem() function
-allows for out of memory fitting.  A description of the underlying methods and
-code interface is described in Huling and Chien (2022)
-<doi:10.18637/jss.v104.i06>.")
+<doi:10.1080/00401706.2015.1054436>.  The main fitting function is @code{oem()}
+and the functions @code{cv.oem()} and @code{xval.oem()} are for cross
+validation, the latter being an accelerated cross validation function for linear
+models.  The @code{big.oem()} function allows for out of memory fitting.  A
+description of the underlying methods and code interface is described in Huling
+and Chien (2022) <doi:10.18637/jss.v104.i06>.")
     (license license:gpl2+)))
 
 (define-public r-oeli
@@ -10122,6 +11262,9 @@ code interface is described in Huling and Chien (2022)
         (base32 "00qyrkrpd1lp1mcjsj12qil58zgwk0p6mgqyng20a6vlxqmvd96p"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat
                              r-sysfonts
                              r-simmulticorrdata
@@ -10154,6 +11297,9 @@ developing data science software.")
         (base32 "0gnbbz2spaqlqqn7978l15jv7xiqpfrh8k9girrpdqih02x95rfw"))))
     (properties `((upstream-name . "OEFPIL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr
                              r-minpack-lm
                              r-matrixcalc
@@ -10183,6 +11329,9 @@ KÃ¶ning, R., Wimmer, G. and WitkovskÃ½, V. (2014)
         (base32 "13f185xvjlhxbg94vmnzvyddidxsbkvffjabp7jkg1zjl4x680s1"))))
     (properties `((upstream-name . "OECD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-readsdmx r-httr))
     (home-page "https://github.com/expersso/OECD")
     (synopsis "Search and Extract Data from the OECD")
@@ -10203,6 +11352,9 @@ Development (OECD).")
         (base32 "0gwjnx99g2r3fhysp0in8dby5syvnpzs3lysgagsdd38pfhizq9h"))))
     (properties `((upstream-name . "ODT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsvg
                              r-partykit
                              r-matrixstats
@@ -10242,6 +11394,9 @@ into the methodology, please refer to Gimeno et al. (2023)
         (base32 "0i7giibass7hadvv6mb7k9xrykgfss57jmm6gpbym8qcywhzq4ny"))))
     (properties `((upstream-name . "ODS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-cubature))
     (home-page "https://github.com/Yinghao-Pan/ODS")
     (synopsis "Statistical Methods for Outcome-Dependent Sampling Designs")
@@ -10276,6 +11431,9 @@ estimated likelihood method analyzing a secondary outcome in case-cohort data
         (base32 "017z7yr4r864cxvqyn14fxgmc2rgq01c95sbcmp6qg8dj03bcz53"))))
     (properties `((upstream-name . "ODRF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpparmadillo
                              r-rcpp
@@ -10312,6 +11470,9 @@ of Breiman (1984) <DOI:10.1201/9781315139470> and Random Forest of Breiman
         (base32 "037v6523kbl0izfzyg6lp6h4r5p8w23dp8r1fpx07wyr34q2w8vn"))))
     (properties `((upstream-name . "odr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-rmarkdown r-markdown r-knitr))
     (home-page "https://cran.r-project.org/package=odr")
     (synopsis
@@ -10347,6 +11508,9 @@ Available from <https://CRAN.R-project.org/package=pwr>.")
         (base32 "0fxy792h439kjbs7hq3cchnz00va5vbi1s6fq3ppjnp0qxf7h7zq"))))
     (properties `((upstream-name . "ODMeans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggrepel r-ggplot2 r-ggmap r-geosphere))
     (home-page "https://cran.r-project.org/package=ODMeans")
     (synopsis "OD-Means: k-Means for Origin-Destination")
@@ -10371,6 +11535,9 @@ the origin and destination of each cluster.")
         (base32 "0fcnr4c1clwx1sk6fgg4cx506gdi90n2h05g0i47p4s5bra0qwwl"))))
     (properties `((upstream-name . "odk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openxlsx r-gsheet))
     (home-page "https://cran.r-project.org/package=odk")
     (synopsis "Convert 'ODK' or 'XLSForm' to 'SPSS' Data Frame")
@@ -10378,7 +11545,7 @@ the origin and destination of each cluster.")
      "After develop a ODK <https://opendatakit.org/> frame, we can link the frame to
 Google Sheets <https://www.google.com/sheets/about/> and collect data through
 Android <https://www.android.com/>.  This data uploaded to a Google sheets'.
-odk2spss() function help to convert the odk frame into SPSS
+@code{odk2spss()} function help to convert the odk frame into SPSS
 <https://www.ibm.com/analytics/us/en/technology/spss/> frame.  Also able to add
 downloaded Google sheets data or read data from Google sheets by using ODK frame
 submission_url'.")
@@ -10396,6 +11563,9 @@ submission_url'.")
         (base32 "0rr3sg96z7f64pz84pfrcaaz8sqa6lgp4z7dj2pyrvzgjxjr3fjm"))))
     (properties `((upstream-name . "odin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-ring
                              r-r6
@@ -10435,6 +11605,9 @@ interpolation, and for integrating quantities that represent arrays.")
         (base32 "094i6ykv3s0c5yhdnlgpkz1wb6pr9k6r3vsh7zgkxyy5iayi6dlv"))))
     (properties `((upstream-name . "odetector")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ppclust))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zcebeci/odetector")
@@ -10463,6 +11636,9 @@ partitioning clustering algorithms such as Fuzzy C-means and its variants.")
         (base32 "0yddv5h3y0xfviqjgrbixawd00jc1rh9ngckfqka5j855vhchh66"))))
     (properties `((upstream-name . "ODEsensitivity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sensitivity r-odenetwork r-desolve r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/surmann/ODEsensitivity")
@@ -10489,6 +11665,9 @@ ODEnetwork'.  A detailed plotting function provides outputs on the calculations.
         (base32 "0wicp0xxqq3jl0kjhc26iqpk8rwa9nv2aiwf18pkgnqxbyw6lgnp"))))
     (properties `((upstream-name . "ODEnetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-desolve r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/surmann/ODEnetwork")
@@ -10513,6 +11692,9 @@ method is described by Surmann, Ligges, and Weihs (2014)
         (base32 "0bk2ahk9qigqx00rdppgml4fb1czibhqal8wymqgs1bifixxb5wy"))))
     (properties `((upstream-name . "odeGUTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-tidyr r-magrittr r-dplyr r-desolve))
     (home-page "https://github.com/bgoussen/odeGUTS")
     (synopsis "Solve ODE for GUTS-RED-SD and GUTS-RED-IT Using Compiled Code")
@@ -10538,6 +11720,9 @@ Singer and Philippe Veber (2021) <https://CRAN.R-project.org/package=morse>.")
         (base32 "1nwjw7fq6b4jdq4m2w0a7xgmzjg5a6pbma1d3r9msiz8rnhb0c54"))))
     (properties `((upstream-name . "oddstream")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-reshape
@@ -10583,6 +11768,9 @@ Smith-Miles, K., et al. (2019) <doi:10.1080/10618600.2019.1617160>.")
         (base32 "1db0pxi5j18rvi8dyc2xx1im3l269775vpjjavapjcv2pylfg5r0"))))
     (properties `((upstream-name . "oddsratio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mgcv r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pat-s/oddsratio")
@@ -10595,11 +11783,11 @@ predictors and increments by specifying these parameters in a list instead of
 using exp(coef(model)) (standard approach of odds ratio calculation for GLMs)
 which just returns a plain numeric output.  For GAM(M)s, odds ratio calculation
 is highly simplified with this package since it takes care of the multiple
-predict() calls of the chosen predictor while holding other predictors constant.
- Also, this package allows odds ratio calculation of percentage steps across the
-whole predictor distribution range for GAM(M)s.  In both cases, confident
-intervals are returned additionally.  Calculated odds ratio of GAM(M)s can be
-inserted into the smooth function plot.")
+@code{predict()} calls of the chosen predictor while holding other predictors
+constant.  Also, this package allows odds ratio calculation of percentage steps
+across the whole predictor distribution range for GAM(M)s.  In both cases,
+confident intervals are returned additionally.  Calculated odds ratio of GAM(M)s
+can be inserted into the smooth function plot.")
     (license license:expat)))
 
 (define-public r-oddsplotty
@@ -10614,6 +11802,9 @@ inserted into the smooth function plot.")
         (base32 "0adgbrni7yrarybh0djmq68hifwqzn2rn9mfqgwqma1d7mg3ai93"))))
     (properties `((upstream-name . "OddsPlotty")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidymodels
                              r-tibble
                              r-rmarkdown
@@ -10645,6 +11836,9 @@ of CARET's GLM model class, by returning the final trained model.")
         (base32 "0vjmmbyxsnc40sv053s3jgwssxnn897kf5hkx1vbxrym7zx775k9"))))
     (properties `((upstream-name . "oddsapiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc pandoc))
     (propagated-inputs (list r-tidyr
                              r-rvest
@@ -10676,6 +11870,9 @@ from The Odds API <https://the-odds-api.com>.")
         (base32 "1md0m1z8a6jnmkjj2njngpqpasnvgngdxj57r3jc7jq356qzg707"))))
     (properties `((upstream-name . "odds.n.ends")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=odds.n.ends")
@@ -10701,6 +11898,9 @@ value of the outcome.  Calculates model sensitivity and specificity.")
         (base32 "09s8pg55gpsxmrbimzg5rsr1n07la93781sar6vab5p9zn9zxgx4"))))
     (properties `((upstream-name . "odds.converter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=odds.converter")
     (synopsis "Betting Odds Conversion")
     (description
@@ -10721,6 +11921,9 @@ Probability are covered in this package.")
         (base32 "0wa3vjjsn9f60b4c2l43sy41x0qhkbsg0yjy1ki6pgflgavr9ldg"))))
     (properties `((upstream-name . "oddnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsibble
                              r-tidyr
                              r-tibble
@@ -10755,6 +11958,9 @@ are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
         (base32 "1c49209bf1swsk5mhwb4zxymlg5dha9rg500nq83kbgib6ikkk9f"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpp
                              r-lifecycle
@@ -10782,6 +11988,9 @@ are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
         (base32 "0frkbl99ilpmppm4fm97lbkqhmjgcwlz9j5vh5nzzcsxrh8qwicn"))))
     (properties `((upstream-name . "ODB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zip))
     (propagated-inputs (list r-rjdbc r-dbi))
     (home-page "http://bioinformatics.ovsa.fr/ODB")
@@ -10804,6 +12013,9 @@ databases embedded in Open Document Databases files, as @code{OpenOffice} and
         (base32 "058j3rc5kh134ndsxn5gck2xh6llrs73cyxpa5z8zkmsw9am22qj"))))
     (properties `((upstream-name . "ODataQuery")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-r6 r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ODataQuery")
@@ -10825,6 +12037,9 @@ be manipulated and provides features such as selection, filtering and ordering."
         (base32 "16lal5asj6h9i5zwafpgzplcbl5pmwfn9gs2azi5swq5v6n0i748"))))
     (properties `((upstream-name . "od")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-sfheaders))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/itsleeds/od")
@@ -10856,6 +12071,9 @@ between countries.")
         (base32 "1hah1zphwrvj1kx344s9nxq8bw4q358fz9j487hi6dkfhjvg7j21"))))
     (properties `((upstream-name . "octopusR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-httr2
@@ -10884,6 +12102,9 @@ consumption data.")
         (base32 "0a24czpsvq5xpr3g9m6d2bsd3dv5jcr2m724gz4z3c56f4xbxd8b"))))
     (properties `((upstream-name . "octopus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinyjs
                              r-shinyace
                              r-shiny
@@ -10917,6 +12138,9 @@ more.")
         (base32 "0l9km2q9yjv43bis32gmw6sc7y5c425plgs0vi9sjx17pgsyvqdw"))))
     (properties `((upstream-name . "octopucs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-stringr r-progress))
     (home-page "https://cran.r-project.org/package=octopucs")
     (synopsis "Statistical Support for Hierarchical Clusters")
@@ -10943,6 +12167,9 @@ Bayesian approach.")
         (base32 "0119c2i9k63mbz40lbbf7x59nf4yyhrmaynn0m0sh1h3jjbsiazc"))))
     (properties `((upstream-name . "OCSdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis r-purrr r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/opencasestudies/OCSdata")
@@ -10953,11 +12180,12 @@ Studies <https://www.opencasestudies.org/> repositories on @code{GitHub}
 <https://github.com/opencasestudies>.  Different functions enable users to grab
 the data they need at different sections in the case study, as well as download
 the whole case study repository.  All the user needs to do is input the name of
-the case study being worked on.  The package relies on the httr::GET() function
-to access files through the @code{GitHub} API. The functions usethis::use_zip()
-and usethis::create_from_github() are used to clone and/or download the case
-study repositories.  To cite an individual case study, please see the respective
-README file at <https://github.com/opencasestudies/>.
+the case study being worked on.  The package relies on the @code{httr::GET()}
+function to access files through the @code{GitHub} API. The functions
+@code{usethis::use_zip()} and @code{usethis::create_from_github()} are used to
+clone and/or download the case study repositories.  To cite an individual case
+study, please see the respective README file at
+<https://github.com/opencasestudies/>.
 <https://github.com/opencasestudies/ocs-bp-rural-and-urban-obesity>
 <https://github.com/opencasestudies/ocs-bp-air-pollution>
 <https://github.com/opencasestudies/ocs-bp-vaping-case-study>
@@ -10983,6 +12211,9 @@ README file at <https://github.com/opencasestudies/>.
         (base32 "09zl9jl1kzvyq0wccp41j32pr3as93qh250iaawhwkpcswjpyl89"))))
     (properties `((upstream-name . "ocs4R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-r6
                              r-openssl
@@ -11009,6 +12240,9 @@ README file at <https://github.com/opencasestudies/>.
         (base32 "0q52s8j3z3xwnma3sxx6019qxid66bf0a43w4g8xjagplwps57dx"))))
     (properties `((upstream-name . "ocp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ocp")
     (synopsis "Bayesian Online Changepoint Detection")
@@ -11032,6 +12266,9 @@ changepoints.")
         (base32 "1ryb5jbz1dd4b9v45za6li1szdz8n9mmf3n3wx4ivqmcrnp2zqdh"))))
     (properties `((upstream-name . "OCNet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-spdep
                              r-spam
@@ -11065,6 +12302,9 @@ Furrer and Sain (2010) <doi:10.18637/jss.v036.i10> for the construct used.")
         (base32 "08247vcjs7hhzbj69f2x39n5y5ycns0qd7pdlvpwyn4j7yd1ji31"))))
     (properties `((upstream-name . "oclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm
                              r-mixture
                              r-mclust
@@ -11091,6 +12331,9 @@ model-based clustering using methods described in Clark and @code{McNicholas}
         (base32 "1iqv9vjdcv96a8k5ccrh6r3jpjq39g4g0qjhb4hzvfv17p28rpcb"))))
     (properties `((upstream-name . "ockc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-modeltools r-flexclust))
     (home-page "https://cran.r-project.org/package=ockc")
     (synopsis "Order Constrained Solutions in k-Means Clustering")
@@ -11111,6 +12354,9 @@ k-means clustering (Steinley and Hubert, 2008, <doi:10.1007/s11336-008-9058-z>).
         (base32 "1vzpiy7dby61yydszgm2magdq9dah7c0pw9zl7bsrycrzs5qfxgs"))))
     (properties `((upstream-name . "ocf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rcppeigen
                              r-rcpp
@@ -11143,6 +12389,9 @@ Francesco (2023) <doi:10.48550/@code{arXiv.2309.08755>}.")
         (base32 "0yj90gaaacq6d53di2vz23za5sz9wy2j626ib3cbdhvxg731pizk"))))
     (properties `((upstream-name . "ocedata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://dankelley.github.io/ocedata/")
     (synopsis "Oceanographic Data Sets for 'oce' Package")
     (description
@@ -11162,6 +12411,9 @@ other purposes.")
         (base32 "1ckp89n22scmjli30x99iaxgyk41a27v1n9gxjp9n29y66lw71nb"))))
     (properties `((upstream-name . "oceCens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=oceCens")
@@ -11184,6 +12436,9 @@ Hamasaki, and Evans (2020)<doi:10.1002/sim.7890>.")
         (base32 "1v4gj4ippv1l3r77z2ic19x5zi5lpsh5wihaqay3264zhpb3kv9a"))))
     (properties `((upstream-name . "oceanwaves")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-signal r-ggplot2 r-bspec))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/millerlp/oceanwaves")
@@ -11210,6 +12465,9 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
         (base32 "0s615mrbwamd85h1q8rg5mciwq0hcjzl5rqjaq578nz5ikr3px9a"))))
     (properties `((upstream-name . "OceanView")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shape r-rgl r-plot3drgl r-plot3d))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=OceanView")
@@ -11231,6 +12489,9 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
         (base32 "12ppcqk2s14p7hg0a6b3hgnz90dxn3kagfgkpykz6ks93vjy8pd7"))))
     (properties `((upstream-name . "oceanmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list imagemagick))
     (propagated-inputs (list r-sp
                              r-sf
@@ -11267,6 +12528,9 @@ formats include netcdf, Raster, .nc and .gz files.")
         (base32 "13zdzqjlf5pihji6np9a3m2j5ycy4jvfl75knzry2ir78zr9ngj7"))))
     (properties `((upstream-name . "oceanis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-webshot
                              r-stringr
@@ -11308,6 +12572,9 @@ technology). - Create frozen maps with the possibility to add labels.")
         (base32 "0nfz257i0gfkqvnpi4gaki79mgh1ff6h075dyylk0fs0gw01dddm"))))
     (properties `((upstream-name . "oceanic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdata
                              r-sp
                              r-sf
@@ -11319,8 +12586,8 @@ technology). - Create frozen maps with the possibility to add labels.")
     (description
      "Determine the sea area where the fishing boat operates.  The latitude and
 longitude of geographic coordinates are used to match oceanic areas and economic
-sea areas.  You can plot the distribution map with dotplot() function.  Please
-refer to Flanders Marine Institute (2020) <doi:10.14284/403>.")
+sea areas.  You can plot the distribution map with @code{dotplot()} function.
+Please refer to Flanders Marine Institute (2020) <doi:10.14284/403>.")
     (license license:gpl2+)))
 
 (define-public r-oceanexplorer
@@ -11335,6 +12602,9 @@ refer to Flanders Marine Institute (2020) <doi:10.14284/403>.")
         (base32 "07l2la7nrqj8bsyv0flyjs08wishlvq6v2hx5n1g9kag4bcfl6vz"))))
     (properties `((upstream-name . "oceanexplorer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waiter
                              r-thematic
                              r-stars
@@ -11380,6 +12650,9 @@ found here: <https://www.ncei.noaa.gov/products/world-ocean-atlas>.")
         (base32 "13vg1g3pn1bmmjb5sb34qmwy2czxigin02nz4vkwlw9z4vpjkwgi"))))
     (properties `((upstream-name . "oce")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-gsw))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://dankelley.github.io/oce/")
@@ -11407,6 +12680,9 @@ is discussed extensively by Kelley (2018) \"Oceanographic Analysis with R\"
         (base32 "06pyc352pvn85k76z9797gwk0ksbb3snvh6krysp68k3lcygq872"))))
     (properties `((upstream-name . "ocd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ocd")
     (synopsis "High-Dimensional Multiscale Online Changepoint Detection")
     (description
@@ -11429,6 +12705,9 @@ and Chan (2017) <doi:10.1214/17-AOS1546>.")
         (base32 "03kq8sbcbb1swnc7rl2qqzmvlhfb7n5ba8q546v657cm35h15rr9"))))
     (properties `((upstream-name . "occupationMeasurement")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm
                              r-text2vec
                              r-stringr
@@ -11461,6 +12740,9 @@ a ready-to-use shiny application provided for quick and easy data collection.")
         (base32 "0j50vg1405n1hp72xqsq1hp3gdbfx5yq9w1zdv6dzjc6vjhbx00d"))))
     (properties `((upstream-name . "occupancy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixstats))
     (home-page "https://cran.r-project.org/package=occupancy")
     (synopsis "Probability Functions for Occupancy Distributions")
@@ -11484,6 +12766,9 @@ distributions are implemented as described in OâNeill (2019)
         (base32 "1rfaswipykflwkdiacq66ibbvf2hzzal2ffibsgrl8q1m6frj5k3"))))
     (properties `((upstream-name . "occumb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-knitr r-jagsui r-crayon r-checkmate))
     (native-inputs (list r-knitr))
@@ -11509,6 +12794,9 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
         (base32 "17msmwh1rlyf4a2jkz36856bmvy2v636jmg3f8c4xingmfgdi94i"))))
     (properties `((upstream-name . "occCite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waffle
                              r-viridis
                              r-tidyr
@@ -11549,6 +12837,9 @@ enhanced ability to repeat analyses.")
         (base32 "043n429q4md3x7bzgr22gh5mmbdx27b0vi161sw31vkmmzk1mblw"))))
     (properties `((upstream-name . "occ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=occ")
     (synopsis "Estimation of PET Neuroreceptor Occupancies")
     (description
@@ -11570,6 +12861,9 @@ known as occupancy plot), and restricted maximum likelihood estimation'.")
         (base32 "19bayggqkzzpvn7ax8m8xgvz27a03iyybsxjz2vphf03dwsr8c5h"))))
     (properties `((upstream-name . "OCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mathjaxr))
     (home-page "https://cran.r-project.org/package=OCA")
     (synopsis "Optimal Capital Allocations")
@@ -11594,6 +12888,9 @@ GuillÃ©n (2014)<doi:10.1016/j.eswa.2014.05.017> and Urbina
         (base32 "0g4ij5g2xkkd73srm21b2xc170rgwbdsdx2qjkp3pr30axb0bf91"))))
     (properties `((upstream-name . "oc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pscl))
     (native-inputs (list gfortran))
     (home-page "https://legacy.voteview.com/oc_in_R.htm")
@@ -11616,6 +12913,9 @@ though a rollcall object from package pscl'.")
         (base32 "07dvz3v580yliwqvfisgvzvg8ly9nw3r4y5bmwkmgphbfmh88635"))))
     (properties `((upstream-name . "obsSens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=obsSens")
     (synopsis "Sensitivity Analysis for Observational Studies")
     (description
@@ -11640,6 +12940,9 @@ sensitivity analysis for regression (linear, logistic, and cox) style models.")
         (base32 "02ik14vpj8diwc0ylp37bk6s96mp9b79myzy8y9mmp7krj5p473q"))))
     (properties `((upstream-name . "OBsMD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=OBsMD")
     (synopsis "Objective Bayesian Model Discrimination in Follow-Up Designs")
@@ -11662,6 +12965,9 @@ between competing models, see Deldossi and Nai Ruscone (2020)
         (base32 "1z9ldp050f7jy76s8yk509nwjx1ymvk5k9d19i67brd7xcawxnr3"))))
     (properties `((upstream-name . "Observation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svdialogs))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/paulhibbing/Observation")
@@ -11685,6 +12991,9 @@ described by Hibbing PR, Ellingson LD, Dixon PM, & Welk GJ (2018)
         (base32 "1x1s46yffjr140mwx8amnh02k6g8x2gz5hz7lypiwxh0v7a8bm8w"))))
     (properties `((upstream-name . "OBRE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (home-page "https://cran.r-project.org/package=OBRE")
     (synopsis "Optimal B-Robust Estimator Tools")
@@ -11708,6 +13017,9 @@ using a closed formula.")
         (base32 "01wch8wwij3fd0jambk0hpkhlnp4ryrq8qnnr2w1iad9zssjyii5"))))
     (properties `((upstream-name . "OBMbpkg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=OBMbpkg")
     (synopsis
      "Estimate the Population Size for the Mb Capture-Recapture Model")
@@ -11732,6 +13044,9 @@ the probability of subsequent captures due to their becoming \"trap happy\" or
         (base32 "1y9bkhwlb9aabfvnz62cg128c242hd1qdrwmmf6i76yfg0b0w10k"))))
     (properties `((upstream-name . "obliqueRSF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survival
                              r-scales
@@ -11769,6 +13084,9 @@ combinations of input variables.")
         (base32 "0656dfaz19bmcaiqh988lryj5gql39q8pwnl6c9fab07wwd85w3k"))))
     (properties `((upstream-name . "oblicubes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://trevorldavis.com/R/oblicubes/")
     (synopsis "3D Rendering Using Obliquely Projected Cubes and Cuboids")
@@ -11791,6 +13109,9 @@ isocubes package <https://github.com/coolbutuseless/isocubes>.")
         (base32 "06icw1dnmavgaf51fs2nfi6582cpjrnlii1j9s62nwnwfnqw00v3"))))
     (properties `((upstream-name . "OBL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-ggplot2
                              r-forecast
@@ -11816,6 +13137,9 @@ isocubes package <https://github.com/coolbutuseless/isocubes>.")
         (base32 "087hknxhw3zqxrzdazbqw9zxi01dvrzcgm6k1i7r231vvvm6nxid"))))
     (properties `((upstream-name . "objectSignals")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=objectSignals")
     (synopsis "Observer Pattern for S4")
     (description
@@ -11837,6 +13161,9 @@ buffered.")
         (base32 "0qywigwb6r5lzvw8ylgriwignk4ayfkvfnmc6cb1yxsg0hrc4hiv"))))
     (properties `((upstream-name . "objectremover")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-miniui))
     (home-page "https://github.com/alan-y/objectremover")
     (synopsis
@@ -11861,6 +13188,9 @@ management within R is important.")
         (base32 "02rbxp2w0q6sr3zvgj99a4hi8dldn57isvimfhqjm1j8yc8p3afz"))))
     (properties `((upstream-name . "objectProperties")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-objectsignals))
     (home-page "https://cran.r-project.org/package=objectProperties")
     (synopsis "Factory of Self-Describing Properties")
@@ -11883,6 +13213,9 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
         (base32 "0bhmry7214i018r5cjxlrf07x5wbbg0aysish053wdcgrkzjplrs"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AgroCares/Open-Bodem-Index-Calculator")
@@ -11910,6 +13243,9 @@ OBI. More information about the Open Bodem Index can be found at
         (base32 "1scd63giywfbvpynbxbk0kq01rwhx62416dibs5gky15dxfcsvmk"))))
     (properties `((upstream-name . "obfuscatoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rfast
@@ -11941,6 +13277,9 @@ Social Sciences, 109, 28-44, <doi:10.1016/j.mathsocsci.2020.10.002>.")
         (base32 "1i2a4xzgagx9f8fs1jh9pgmvsd7hkyhhr3dj349fijbis6fvq6v5"))))
     (properties `((upstream-name . "obcost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-dplyr))
     (home-page "https://cran.r-project.org/package=obcost")
     (synopsis "Obesity Cost Database")
@@ -11964,7 +13303,7 @@ all variables used to make cost calculations, as well as cost calculations in a
 given state and year; 4.  National_Summary: (obesity_cost_national_summary)
 National summary cost calculations in a given year.  Three functions are
 included to assist users in calling and adjusting the mentioned tables and they
-are data_load(), data_produce(), and rel_risk_fun().")
+are @code{data_load()}, @code{data_produce()}, and @code{rel_risk_fun()}.")
     (license license:lgpl2.0+)))
 
 (define-public r-obaspatial
@@ -11979,6 +13318,9 @@ are data_load(), data_produce(), and rel_risk_fun().")
         (base32 "13jx5f5piii9cys7xyhfwilyg87zsi632fscy8902mlhbgg7abkp"))))
     (properties `((upstream-name . "OBASpatial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncdist
                              r-mvtnorm
                              r-modeest
@@ -12008,6 +13350,9 @@ et al. (2020) <@code{arXiv:2004.04341>}.")
         (base32 "1l4ld120qk0adycmvqrkzada10kb7z03lj2njzqagmacl1z8598f"))))
     (properties `((upstream-name . "obAnalytics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-reshape2 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/phil8192/ob-analytics")
@@ -12028,6 +13373,9 @@ et al. (2020) <@code{arXiv:2004.04341>}.")
         (base32 "1z3sbkgzaqq6n1bz0f17gqrbfjbm8bp20384ryx3jq2v50b6gbry"))))
     (properties `((upstream-name . "oaxaca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-ggplot2 r-formula))
     (home-page "https://cran.r-project.org/package=oaxaca")
     (synopsis "Blinder-Oaxaca Decomposition")
@@ -12048,6 +13396,9 @@ models.")
         (base32 "062m3ivs09kl6jclv4djfvji275w46w4jh6w03ydiiazlcsy20h8"))))
     (properties `((upstream-name . "OasisR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep r-sf r-outliers r-measurements))
     (home-page "https://cran.r-project.org/package=OasisR")
     (synopsis
@@ -12075,6 +13426,9 @@ bootstrapping, and jackknife methods).")
         (base32 "04jng89s19rd8lbjm76wm4p4ggkffwnsa5qa60c4lwn2rj89a8a1"))))
     (properties `((upstream-name . "Oarray")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Oarray")
     (synopsis "Arrays with Arbitrary Offsets")
     (description "Generalise the starting point of the array index.")
@@ -12092,6 +13446,9 @@ bootstrapping, and jackknife methods).")
         (base32 "0f777a8i03mb4f4q2zdacglyn0lbmf5b7c6682ssw2dlnm14jhz9"))))
     (properties `((upstream-name . "oaqc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/schochastics/oaqc")
     (synopsis "Computation of the Orbit-Aware Quad Census")
@@ -12115,6 +13472,9 @@ orbit-aware counts are computed respective each of the edges and nodes.")
         (base32 "0c5ig1ar02vg38pjjmp3gd53ij1j7pzajs0zrlfajz141qkv2ysr"))))
     (properties `((upstream-name . "oaPlots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-oacolors r-ggplot2))
     (home-page "http://www.openanalytics.eu")
     (synopsis "OpenAnalytics Plots Package")
@@ -12133,6 +13493,9 @@ orbit-aware counts are computed respective each of the edges and nodes.")
         (base32 "1kj86c3mydc8zylxx1s088iz6d1b02gixvy40d4qwxs55k07g9m0"))))
     (properties `((upstream-name . "oaii")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-httr r-checkmate r-base64enc))
     (home-page "https://github.com/cezarykuran/oaii")
     (synopsis "'OpenAI' API R Interface")
@@ -12154,6 +13517,9 @@ transmission and processing, making it effortless to interact with the
         (base32 "0758pi2rwyxlg3dldfbz2lg7a0w5zsn61ixr2psc4hb2d6niyb25"))))
     (properties `((upstream-name . "OAIHarvester")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-curl))
     (home-page "https://cran.r-project.org/package=OAIHarvester")
     (synopsis "Harvest Metadata Using OAI-PMH Version 2.0")
@@ -12175,6 +13541,9 @@ Harvesting (OAI-PMH) version 2.0 (for more information, see
         (base32 "040sdqrk9dciylnnrrshlj06s9qhvngii9shx1p8412ip7mk8r1m"))))
     (properties `((upstream-name . "oaColors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-mass))
     (home-page "http://www.openanalytics.eu")
     (synopsis "OpenAnalytics Colors Package")
@@ -12195,6 +13564,9 @@ Harvesting (OAI-PMH) version 2.0 (for more information, see
         (base32 "1lsww2g9inpaw7mhg49ia517am14sjvy9i92h2xsfv4qygqkl1wq"))))
     (properties `((upstream-name . "o2plsda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-magrittr
@@ -12228,6 +13600,9 @@ specific for each data set separately.")
         (base32 "044m21116zwbkh55z84pns5l3agvdw50pcza669blmf3za7m2bby"))))
     (properties `((upstream-name . "o2geosocial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-rcpp
                              r-outbreaker2

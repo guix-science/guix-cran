@@ -58,6 +58,9 @@
         (base32 "1hhpqxzh9h5dy45r04l1fa1k4a14s0m6z6fhfg22kpwpryszbc44"))))
     (properties `((upstream-name . "VWPre")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shiny
                              r-rlang
@@ -95,6 +98,9 @@ maintenance and the addition of minor functionality.")
         (base32 "0cyv3kn6wza7bh7nzzq74s08b4ifr7cs6kkmqpdxqbh2yabim207"))))
     (properties `((upstream-name . "vwline")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polyclip r-gridbezier))
     (home-page "https://github.com/pmur002/vwline")
     (synopsis "Draw Variable-Width Lines")
@@ -115,6 +121,9 @@ curve allowed to vary along the length of the curve.")
         (base32 "0c7cry87wgk86wydrw0l8icc25lx5fcxzm1wyfs2ls8ppmpkz3l7"))))
     (properties `((upstream-name . "vvtermtime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vusaverse/vvtermtime")
@@ -138,6 +147,9 @@ for details.")
         (base32 "1d2d8zd6zp9dsmmzjrslhjkm41312g7dl0a333yrs57cwzxarc5l"))))
     (properties `((upstream-name . "vvtableau")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xml
                              r-tidyr
@@ -172,6 +184,9 @@ Tableau workbooks.")
         (base32 "015rac6hz6k5wrg75abiyicjpljfs3cxibrala4dm5jxnwrm79sa"))))
     (properties `((upstream-name . "vvshiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shinywidgets
                              r-shinydashboardplus
@@ -212,6 +227,9 @@ use-cases are supported.")
         (base32 "076fdzhr5b39k1vavj3jf7897vpdjgfbf8fxxqi6y4cy0pz4iisi"))))
     (properties `((upstream-name . "vvsculptor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=vvsculptor")
     (synopsis "Apply Manipulations to Data Frames")
@@ -237,6 +255,9 @@ needs.")
         (base32 "0bg7mc8wz3d9ibp2kbc8lc0zdbbf8i2rj3hxsrnk0yrzxbb6czdg"))))
     (properties `((upstream-name . "vvmover")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readxl r-readr r-magrittr r-dplyr))
     (home-page "https://vusaverse.github.io/vvmover/")
     (synopsis "Read and Write Data")
@@ -261,6 +282,9 @@ with a comprehensive set of tools to work with different types of data files.")
         (base32 "0kknnnkfdw9h4wxs215pgmg1j0mbl5lqfw4xl0il8rw6n0yy7vsn"))))
     (properties `((upstream-name . "vvfiller")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-purrr r-dplyr))
     (home-page "https://github.com/vusaverse/vvfiller")
     (synopsis "Fill Data Points")
@@ -282,6 +306,9 @@ of Student Analytics.")
         (base32 "1sxj7a6pg1kynwsb1fc28l3ipj3jf5azn4cyck0489hsxqnyjn5p"))))
     (properties `((upstream-name . "vvdoctor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinywidgets
                              r-shinyjs
                              r-shiny
@@ -319,6 +346,9 @@ R scripts.")
         (base32 "1dl0vvglj2p1i1c1a9vxgr6cr5f7bxqqnv7w1ds0gzgwv5zyhz1c"))))
     (properties `((upstream-name . "vvconverter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-polyglotr
                              r-magrittr
@@ -346,6 +376,9 @@ academic year.")
         (base32 "1var5p4znz8xgbvhpcz2m4z9c129nxb4yqhwjmj8sf8y6m2dsbrw"))))
     (properties `((upstream-name . "vvcanvas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -378,6 +411,9 @@ API.")
         (base32 "10f9ylb7kpm28smw8nsnlmiqk8pp9zdfvkrk4qxk6pfyriv341jb"))))
     (properties `((upstream-name . "vvauditor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-purrr
@@ -413,6 +449,9 @@ errors or inconsistencies in data.")
         (base32 "1r4hq7az50v7lbyx5w6b4zs2kwi5cypqn9k6ac4kr8jr3jlyanr3"))))
     (properties `((upstream-name . "VUROCS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=VUROCS")
     (synopsis "Volume under the ROC Surface for Multi-Class ROC Analysis")
@@ -434,6 +473,9 @@ association.")
         (base32 "01m8spmd4na7mxgnplnnq3n4pab9349z2dk44b455vcadll0fsdi"))))
     (properties `((upstream-name . "VulnToolkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-plyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/troyhill/VulnToolkit")
@@ -462,6 +504,8 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -496,6 +540,9 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
         (base32 "0zxz6n3ixa3xjzcinky8ymqjx9w8y8z65mz8d84dl00mxzkmkz4h"))))
     (properties `((upstream-name . "vudc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=vudc")
     (synopsis "Visualization of Univariate Data for Comparison")
     (description
@@ -515,6 +562,9 @@ qddplot.")
         (base32 "0j070bn86a6hlg99h2qaf0dlbnjjsmx1zdcmvl3acymr31bqyvrj"))))
     (properties `((upstream-name . "vtype")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vtype")
@@ -538,6 +588,9 @@ data.")
         (base32 "1zq6irla3q7hqs8jpjdya7vy3frqrj72rwmd1sgxwrkgpmpxw6x7"))))
     (properties `((upstream-name . "VTShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rmarkdown r-envstats))
     (home-page "https://cran.r-project.org/package=VTShiny")
     (synopsis "Interactive Document for Working with Variance Analysis")
@@ -560,6 +613,9 @@ as at
         (base32 "0qszya11qh2xzq1blbrcli3l8hhf0dannhh2hn3gi59c9dn3jr16"))))
     (properties `((upstream-name . "vtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-utf8
                              r-shiny
                              r-rsvg
@@ -586,6 +642,13 @@ Variable trees display information about nested subsets of a data frame.")
         (base32 "04ymyv7ybahs4k6yc2dbmhhnxnjsa09h8cbfayslr655rzlgyqx5"))))
     (properties `((upstream-name . "vtreat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-wrapr r-digest))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/WinVector/vtreat/")
@@ -613,6 +676,9 @@ levels (levels seen during application, but not during training).  Reference:
         (base32 "1pjcvyid8i5j86jw0l6r3sd7gr6lc41vskiwbmi369g7k4fpgl6y"))))
     (properties `((upstream-name . "vtable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sjlabelled r-rstudioapi r-knitr r-kableextra
                              r-haven))
     (native-inputs (list r-knitr))
@@ -636,6 +702,9 @@ statistics.  See the vignette \"vtable\" for a package overview.")
         (base32 "1nrs94gyxc2ldihnn28wijigfs13ipigcvkycnxnzd60hg5j8c7i"))))
     (properties `((upstream-name . "VsusP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bayesreg))
     (native-inputs (list r-knitr))
     (home-page
@@ -662,6 +731,9 @@ selection process with minimal tuning required in statistical analysis.")
         (base32 "14rkd1n7ffy7hz3xgqqysbphy89h6lpmkhjrlpsfmwb2jzhv29y0"))))
     (properties `((upstream-name . "VSURF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-randomforest r-foreach r-doparallel))
     (home-page "https://github.com/robingenuer/VSURF")
     (synopsis "Variable Selection Using Random Forests")
@@ -690,6 +762,9 @@ purpose.  Genuer, R. Poggi, J.-M. and Tuleau-Malot, C. (2015)
         (base32 "071nfxkwwpbp2d8khxq7d1pp268pa1fcfj619bs6xwg4wk9srr3k"))))
     (properties `((upstream-name . "vstsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcurl r-r6 r-jsonlite r-httr))
     (home-page "https://github.com/ashbaldry/vstsr")
     (synopsis "Access to 'Azure DevOps' API via R")
@@ -713,6 +788,9 @@ ability to use any API service with a shell for any non-predefined call.")
         (base32 "0g26cplp5vjppyw8w37vdy3wah3i9wi14j64vl7i8d2fjbhqhqxp"))))
     (properties `((upstream-name . "vstdct")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-mass r-dtt))
     (home-page "https://cran.r-project.org/package=vstdct")
     (synopsis "Nonparametric Estimation of Toeplitz Covariance Matrices")
@@ -740,6 +818,9 @@ example are included.  For details see (Klockmann, Krivobokova; 2023),
         (base32 "0i1syjh64v0wwdr9r2rp853spvxq79rqlv6j9bdhd9ldpys103aw"))))
     (properties `((upstream-name . "vsp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tibble
                              r-rspectra
@@ -774,6 +855,9 @@ overlapping stochastic blockmodels.")
         (base32 "1jmnm435x36jlhbzl7kgjiby7kb7yjhh013zdnnvf9pcjaallqn9"))))
     (properties `((upstream-name . "VSOLassoBag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-summarizedexperiment
                              r-pot
@@ -805,6 +889,9 @@ multiple LASSO models to determine the optimal candidates.  Luo H, Zhao Q, et al
         (base32 "1slyz8ldd3vqqqcpjccr0qsfy664m4zjczgr5qh0d4pcy0yg5f4x"))))
     (properties `((upstream-name . "vsmi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qif r-mice r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=vsmi")
     (synopsis "Variable Selection for Multiple Imputed Data")
@@ -831,6 +918,9 @@ for variable selection on correlated multiply imputed data\",
         (base32 "0vypi4cf04bljmx3jwq3ixs86ivd6p7a825ik189y71fyqg9g70v"))))
     (properties `((upstream-name . "vsgoftest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-fitdistrplus))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vsgoftest")
@@ -856,6 +946,9 @@ Lequesne and Regnault (2020) <doi:10.18637/jss.v096.c01>.")
         (base32 "1js4iawg3c3hcflc7xmy8iif95l545mgg4cc5cmkp8jlfcdmbrig"))))
     (properties `((upstream-name . "vse4ts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://z-my-cn.github.io/vse4ts/")
     (synopsis
      "Identify Memory Patterns in Time Series Using Variance Scale Exponent")
@@ -878,6 +971,9 @@ short memory, and long memory.  See Fu, H. et al. (2018)
         (base32 "18whnvary4glblzx1vxf3yzsllnnnbnyijwhbw7bi3agppnwrf22"))))
     (properties `((upstream-name . "vsd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survminer
                              r-survival
                              r-muhaz
@@ -904,6 +1000,9 @@ short memory, and long memory.  See Fu, H. et al. (2018)
         (base32 "082jxk8fw4rplal9672bi6rr1jwpb5h6clrdlv9jj4ffvlbg6vaz"))))
     (properties `((upstream-name . "vscc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-teigen r-mixghd r-mclust r-manlymix))
     (home-page "https://cran.r-project.org/package=vscc")
     (synopsis "Variable Selection for Clustering and Classification")
@@ -929,6 +1028,9 @@ Can account for mixtures of non-Gaussian distributions via Manly transform (via
         (base32 "1ln1ayh18q5lxiavznq19ccwb90dviw5ncbwpbghiawa1i0q42d2"))))
     (properties `((upstream-name . "vrtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=vrtest")
     (synopsis
      "Variance Ratio Tests and Other Tests for Martingale Difference Hypothesis")
@@ -951,6 +1053,9 @@ test (Kim, 2009) <doi:10.1016/j.frl.2009.04.003>.")
         (base32 "0n0kmzhygaii9kipcmr943s0vcf8brxgsk25m9illd4fij6nwpp2"))))
     (properties `((upstream-name . "vrnmf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog r-nnls r-matrix r-lpsolveapi r-ica))
     (home-page "https://github.com/kharchenkolab/vrnmf")
     (synopsis "Volume-Regularized Structured Matrix Factorization")
@@ -984,6 +1089,9 @@ package is approximately 8 MB.")
         (base32 "02hx3wbj921fsir8yldkgcygci01w1171bxsxi2khplck4gkqn9i"))))
     (properties `((upstream-name . "vprr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-usethis
                              r-tidyr
@@ -1020,6 +1128,9 @@ output and create organized and easily portable data products.")
         (base32 "0ya9wa0wzv8z9cc8gyrwdvk7vsil45j37xjz46p04c0cgzr0l7mb"))))
     (properties `((upstream-name . "VPdtw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/ethanbass/VPdtw/")
     (synopsis "Variable Penalty Dynamic Time Warping")
     (description
@@ -1043,6 +1154,9 @@ Montoliu, I., Rezzi S., Martin F., Guy P., Bruce S., and Kochhar S.(2009)
         (base32 "15s9f6hmqawv2594xqv58hnqg2wm1fm8qaj8h9k4m55cx4sf1hik"))))
     (properties `((upstream-name . "vpc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survival
                              r-stringr
@@ -1072,6 +1186,9 @@ for continuous, categorical, censored, and (repeated) time-to-event data.")
         (base32 "16r9ggc5x889g8rjqvp1q2kgf5asjzhykd1ldjy3ny9m48p501ad"))))
     (properties `((upstream-name . "VoxR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl
                              r-rfast
                              r-raster
@@ -1105,6 +1222,9 @@ the concept of space exploration and are described in Lecigne et al. (2018,
         (base32 "1xlym8xc22dq67h0lylrr16z7b4zdidpgrkvbs7n9fnkh6vijw2j"))))
     (properties `((upstream-name . "voxel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr
                              r-oro-nifti
                              r-mgcv
@@ -1131,6 +1251,9 @@ format.")
         (base32 "0xhfn3avx9h6kg3jwd47n2x7w8q8c9h13wsxd74hhbbn2gkjrs84"))))
     (properties `((upstream-name . "vowels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://blogs.uoregon.edu/vowels/")
     (synopsis "Vowel Manipulation, Normalization, and Plotting")
     (description
@@ -1150,6 +1273,9 @@ sociophonetic vowel formant data.  vowels is the backend for the NORM website.")
         (base32 "0hbb9zj33a98rv4grm644k650pq6kgmm6l01mkd4p0ic0mxa9fyh"))))
     (properties `((upstream-name . "vov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-htmltools r-glue))
     (home-page "https://github.com/tyluRp/vov")
     (synopsis "CSS Animations for 'shiny' Elements")
@@ -1171,12 +1297,15 @@ functions to see it move.")
         (base32 "1fp7jrw072ws39bqsg88bm2qndcv68aa2vdqwgnza58p1dfq3x9f"))))
     (properties `((upstream-name . "vottrans")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog))
     (home-page "https://cran.r-project.org/package=vottrans")
     (synopsis "Voter Transition Analysis")
     (description
      "Calculates voter transitions comparing two elections, using the function
-solve.QP() in package quadprog'.")
+@code{solve.QP()} in package quadprog'.")
     (license license:gpl3)))
 
 (define-public r-votesys
@@ -1191,6 +1320,9 @@ solve.QP() in package quadprog'.")
         (base32 "1z7cx3rj3bfrkb6jkmf1m1wad5ff46zrab5vhk69wf3jbwd9h920"))))
     (properties `((upstream-name . "votesys")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-gtools r-data-table))
     (home-page "https://cran.r-project.org/package=votesys")
     (synopsis
@@ -1212,6 +1344,9 @@ check validity of ballots are also provided to ensure flexibility.")
         (base32 "184q553p8n76jch4xiyfsqbczbjza3v9s8xsd8zwckxq5j2cgyvp"))))
     (properties `((upstream-name . "votesmart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-snakecase
@@ -1241,6 +1376,9 @@ check validity of ballots are also provided to ensure flexibility.")
         (base32 "0wqyckpmwwyfmwqhmml62nf781zakbiir727jac1bc1iawxm9y7k"))))
     (properties `((upstream-name . "voteSim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm r-genord r-extradistr))
     (home-page "https://eric.univ-lyon2.fr/arolland/")
     (synopsis "Generate Simulated Data for Voting Rules using Evaluations")
@@ -1262,6 +1400,9 @@ for continuous or discrete evaluations.")
         (base32 "16bhnf9p2sanbcsdmdjb4iqca7hx4ghd40psxavndv1vkhw3cv0r"))))
     (properties `((upstream-name . "voteogram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-scales r-jsonlite r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hrbrmstr/voteogram")
@@ -1286,6 +1427,9 @@ cartograms and theme them.")
         (base32 "0mayys5l755a0wdh49llpw37ssp88ifariivjghcd16i2yvpmwxz"))))
     (properties `((upstream-name . "vote")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knitr r-formattable r-fields r-data-table))
     (home-page "https://cran.r-project.org/package=vote")
     (synopsis "Election Vote Counting")
@@ -1308,6 +1452,9 @@ plurality, condorcet and two-round runoff methods (Raftery et al., 2021
         (base32 "00f3ljm85z8gr1qyc6nj9g35ywzm78khy8r82wb5ys8fx68n0vwl"))))
     (properties `((upstream-name . "Voss")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fields))
     (home-page "https://cran.r-project.org/package=Voss")
     (synopsis "Generic Voss Algorithm (Random Sequential Additions)")
@@ -1329,6 +1476,9 @@ additions).")
         (base32 "1fs939zq2vnilc3fp6cplsqk0iz71i8xjdcbvspsccw7rsdp2qs8"))))
     (properties `((upstream-name . "vosonSML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-textutils
@@ -1362,6 +1512,9 @@ media data and generating networks for analysis.  Supports Twitter,
         (base32 "1qivx5ddl9jsn6q6ic2w8jrczxlx23z087k5arfz2rixgj7rndyg"))))
     (properties `((upstream-name . "VOSONDash")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordcloud
                              r-vosonsml
                              r-tm
@@ -1397,6 +1550,9 @@ media data using @code{vosonSML}'.")
         (base32 "1fylp5770by5ybpda6n8c3y8n7zsmc62f5q11k0ndh5kp7ka11cb"))))
     (properties `((upstream-name . "voson.tcn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -1424,6 +1580,9 @@ media data using @code{vosonSML}'.")
         (base32 "0b47q3aslz4110a1bfaa103i098y2ngzrjh01rwasq3gd6xbif9n"))))
     (properties `((upstream-name . "vortexRdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/carlopacioni/vortexRdata/")
     (synopsis "Example Data for R Package 'vortexR'")
     (description
@@ -1447,6 +1606,9 @@ functionality of parsing raw Vortex output into R objects.")
         (base32 "0r9wmd9bdarjkqmpwp85xz27nbyhjkcpxm8qb8bqjmxq4nds6nxx"))))
     (properties `((upstream-name . "VorteksExport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VorteksExport")
     (synopsis "Export Dataframes to 'Vorteks' Software")
     (description
@@ -1471,6 +1633,8 @@ Requires installation of Vorteks software.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -1513,6 +1677,9 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
         (base32 "1pl4rxqpsh2kvnqph53nbcv4kj9zj7i3krn7y0h1mcvp0pzz1yva"))))
     (properties `((upstream-name . "voluModel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-terra
                              r-sf
@@ -1553,6 +1720,9 @@ JA (2016) <doi:10.1038/ncomms11484>.  Nychka D, Furrer R, Paige J, Sain S (2021)
         (base32 "0n1r0bvvmba21cs3qgpnw9jxpgl2n82fhxa40sa1w2gav5rch5i6"))))
     (properties `((upstream-name . "volleystat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/bozhinvi/volleystat")
     (synopsis "Detailed Statistics on Volleyball Matches")
@@ -1576,6 +1746,9 @@ information on teams, staff, sets, matches, and player-in-match statistics
         (base32 "057y2l50gsnsc81z47kqvgkp349f30ypj92l92d358bal1nc3ndk"))))
     (properties `((upstream-name . "volker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -1619,6 +1792,9 @@ are tidyverse compatible.")
         (base32 "0g8p2y1awjdxfnghcsj91ws2kdgczlhgwg3dd2dxwhfv2ch2693n"))))
     (properties `((upstream-name . "volesti")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-bh))
     (home-page "https://cran.r-project.org/package=volesti")
     (synopsis "Volume Approximation and Sampling of Convex Polytopes")
@@ -1645,6 +1821,9 @@ volesti are described in A. Chalkis and V. Fisikopoulos (2022)
         (base32 "06nkv56c36wgnb7s6gkpp14syzhm5zm2wdfjx9wamxp5cf0wk3mk"))))
     (properties `((upstream-name . "volcanoPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shiny
                              r-purrr
@@ -1677,6 +1856,9 @@ of more robust safety monitoring framework like the Shiny app from the
         (base32 "1k1n49pzsdkwia09mf9ra75cbnx49q99ygn5c92kyq8kqv83d1w8"))))
     (properties `((upstream-name . "volcano3D")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rfast
                              r-plotly
@@ -1711,6 +1893,9 @@ three-class data.")
         (base32 "1zz6286kmzcj8k66mpj9nidsf86dkw2ms75ck6rrvnl5h1idcacj"))))
     (properties `((upstream-name . "volatilityTrader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=volatilityTrader")
     (synopsis "High Volatility Environment Option Trading Strategies Graphs")
@@ -1737,6 +1922,9 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
         (base32 "08vcq5i7i3mm6pzzai6fnmm0phb0zxxbv1mav70jn2qs09ailm8q"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib
                   proj
                   openssl
@@ -1771,6 +1959,9 @@ birds and other biological signals in weather radar data.  See Dokter et al.
         (base32 "1bc2h04i9l76wqrw93brg5ivpgd0pq20zq2nq8x7p851jfxz84p4"))))
     (properties `((upstream-name . "voiceR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xfun
                              r-tuner
                              r-stringr
@@ -1824,6 +2015,9 @@ the @code{voiceR} package is provided in Hildebrand et al.  2020
         (base32 "0fh1k0596npm6yah992g3hc79g6lh12b7k97nnxlm1pgpdbb503v"))))
     (properties `((upstream-name . "voice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-wrassp
                              r-tuner
@@ -1855,6 +2049,9 @@ audio in general.")
         (base32 "1d72g5wpyfq92gc7bp42xbiafbl4q769bxq8awifsc93haawrwqm"))))
     (properties `((upstream-name . "voi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progress
                              r-posterior
                              r-mvtnorm
@@ -1889,6 +2086,9 @@ al. (2024) <doi:10.1201/9781003156109>, Jackson et al. (2022)
         (base32 "1nr1w85m4xhk6777iqww94mb82c3smfhr96mybpi9m1kk7f6rv0i"))))
     (properties `((upstream-name . "vocaldia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://git.ecdf.ed.ac.uk/sluzfil/vocaldia")
     (synopsis "Create and Manipulate Vocalisation Diagrams")
     (description
@@ -1915,6 +2115,9 @@ segmentation (Luz, 2012) <doi:10.1145/2328967.2328970> and classification (Luz,
         (base32 "1068l5p7qqjp69yzp72zp975cr2zpnfbnik6h109lhw554m4ckll"))))
     (properties `((upstream-name . "vntrs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trust))
     (home-page "https://loelschlaeger.de/vntrs/")
     (synopsis "Variable Neighborhood Trust Region Search")
@@ -1936,6 +2139,9 @@ et al. (2009) \"A Heuristic for Nonlinear Global Optimization\"
         (base32 "0vm4wxf9zb2xgjd9xam3gy6mqr621x922ldshrxs4cibaag3lq5x"))))
     (properties `((upstream-name . "vmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/rstuff/vmr")
@@ -1958,6 +2164,9 @@ Virtualbox') have to be installed.")
         (base32 "1vzg9plrly7xqaahqxl3w2z2kf1wa5w0c25xjld2ksnpb4sb3r4d"))))
     (properties `((upstream-name . "vMF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ahoundetoungan/vMF")
@@ -1979,6 +2188,9 @@ method proposed by Andrew T.A Wood (1994) <doi:10.1080/03610919408813161>.")
         (base32 "17rqr8zpfnq3f0d3yi9w09wvrbq79g4w7rkqf4l2wyd8ic5npwb0"))))
     (properties `((upstream-name . "vmeasur")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-svdialogs
                              r-stringr
@@ -2024,6 +2236,9 @@ also included.")
         (base32 "08bdihlf2lj1wfxilshxww3sav7c35qiqzs468mdahbn4vnzbngr"))))
     (properties `((upstream-name . "vmdTDNN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vmdecomp r-nnfor r-forecast))
     (home-page "https://cran.r-project.org/package=vmdTDNN")
     (synopsis "VMD Based Time Delay Neural Network Model")
@@ -2045,6 +2260,9 @@ Dominique, Z. (2014). <doi:10.1109/TSP.2013.2288675>.")
         (base32 "12n32wx3hcvw55rrcwkv501cjl4zrpgh4d7y4m1irgrpjfqk77x2"))))
     (properties `((upstream-name . "VMDML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vmdecomp r-randomforest r-nnfor r-forecast
                              r-e1071))
     (native-inputs (list r-knitr))
@@ -2069,6 +2287,9 @@ Das (2020) <http://krishi.icar.gov.in/jspui/handle/123456789/44138>.")
         (base32 "0iq2lj7n77qmryf95cjl2y869bhy6i0mx44qls7xc07g0qplwqx3"))))
     (properties `((upstream-name . "VMDecomp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-glue r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlampros/VMDecomp")
@@ -2097,6 +2318,9 @@ and Pattern Recognition.  EMMCVPR 2015.  Lecture Notes in Computer Science, vol
         (base32 "0pfgpl9xkwi0v0z1l58gb8s4gzz7r4k38270x8ifyk41l5vq8iwd"))))
     (properties `((upstream-name . "VLTimeCausality")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries r-rtransferentropy r-ggplot2 r-dtw))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DarkEyes/VLTimeSeriesCausality")
@@ -2128,6 +2352,9 @@ Please see Chainarong Amornbunchornvej, Elena Zheleva, and Tanya Berger-Wolf
         (base32 "1kwwg158556v4685j2dji4xjf1v9v5d9qdp4xhki022f5dv8h61h"))))
     (properties `((upstream-name . "VLMCX")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnet r-berryfunctions))
     (home-page "https://cran.r-project.org/package=VLMCX")
     (synopsis "Variable Length Markov Chain with Exogenous Covariates")
@@ -2154,6 +2381,9 @@ depends on the observed states themselves.  See Zambom, Kim, and Garcia (2022)
         (base32 "1mcypnr956jfq0iyfak6bhfv99p0zzal9r0bd10py5qwzal0n6i8"))))
     (properties `((upstream-name . "VLMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=VLMC")
     (synopsis "Variable Length Markov Chains ('VLMC') Models")
@@ -2174,6 +2404,9 @@ depends on the observed states themselves.  See Zambom, Kim, and Garcia (2022)
         (base32 "096a7nx60qm4b7fil4s3r4mlp8fq60v0lq893jh3ij6gm63mfcim"))))
     (properties `((upstream-name . "VLF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VLF")
     (synopsis
      "Frequency Matrix Approach for Assessing Very Low Frequency Variants in Sequence Records")
@@ -2200,6 +2433,9 @@ and Kerr (2012) <doi:10.1371/journal.pone.0043992>.")
         (base32 "1pk444fcw4yyv2dnfrw9vynbpc4gwr5yv9jd41djp9yipdf6d53l"))))
     (properties `((upstream-name . "vkR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-purrr r-jsonlite r-httr))
     (home-page "https://github.com/Dementiy/vkR")
     (synopsis "Access to VK API via R")
@@ -2223,6 +2459,8 @@ based in Russia.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2261,6 +2499,9 @@ provided, it defaults to zero.")
         (base32 "1cfval06byviw7himr5nql34h4jaway9gb6dzya3v994p7v851cg"))))
     (properties `((upstream-name . "vivo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-dalex))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ModelOriented/vivo")
@@ -2283,6 +2524,9 @@ Partial Dependence Profiles.")
         (base32 "13iagv585a5z7pggzlcgc8h17r5lx4nq2gljy58238nsi0xc9549"))))
     (properties `((upstream-name . "vivid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-rcolorbrewer
                              r-igraph
@@ -2316,6 +2560,9 @@ laid out in a pairs plot or zenplots style.")
         (base32 "1dvihjc6vjzg2w1j0q6vjhlhpwkknwsd97lpbqbfpacpp337mvx8"))))
     (properties `((upstream-name . "vivaldi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcfr
                              r-tidyselect
                              r-tidyr
@@ -2345,6 +2592,9 @@ Functions in vivaldi primarily operate on vcf files.")
         (base32 "0pphz6zflf3ym8ldlfklgm5p8a7khmz3ix3hgmm1lj7zxkw0245w"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wpa
                              r-tidytext
                              r-tidyselect
@@ -2386,6 +2636,9 @@ analyzing and visualizing data specific to Microsoft Viva Insights'.")
         (base32 "17micfmlksnw167vavvhlk431fm20k74y5ggs47pgz5fwpm854zp"))))
     (properties `((upstream-name . "vitality")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=vitality")
     (synopsis "Fitting Routines for the Vitality Family of Mortality Models")
     (description
@@ -2405,6 +2658,9 @@ of mortality models.")
         (base32 "0qmqalqzqzzsc8fvzrqj5wzwaw90lf161524wibjzc89knz6z0g4"))))
     (properties `((upstream-name . "vital")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tsibble
                              r-tidyselect
@@ -2446,6 +2702,9 @@ forecasting.")
         (base32 "0mb6kps08za2sma2d5xw441kpri425arlbwznygifd7g3c5zyvhv"))))
     (properties `((upstream-name . "vitae")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xfun
                              r-vctrs
@@ -2477,6 +2736,9 @@ maintenance of curriculum vitae.")
         (base32 "114p2lzcr8rn68f0z4kmjdnragqlmi18axda9ma4sbqh8mrmjs9v"))))
     (properties `((upstream-name . "vita")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-randomforest))
     (home-page "https://cran.r-project.org/package=vita")
     (synopsis "Variable Importance Testing Approaches")
@@ -2510,6 +2772,9 @@ experimental.")
         (base32 "1wx16mg5g58p4mgf5y776i5ahgpqqjy4wbfqhfjph36mrhs6qr22"))))
     (properties `((upstream-name . "visxhclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shinyhelper
                              r-shinycssloaders
@@ -2552,6 +2817,13 @@ computation of evaluation criteria.")
         (base32 "1my0gvp63lri56hkqrs7xsr5i6ji9w17xm94mrrc9lgwy5sj3vf0"))))
     (properties `((upstream-name . "visvow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-writexls
                              r-vegan
                              r-tikzdevice
@@ -2596,6 +2868,9 @@ computation of evaluation criteria.")
         (base32 "1kxydr8inciq7285xrhwzi8hxim0bg4ckpzh8dhzp9q3iwd2jp0d"))))
     (properties `((upstream-name . "visvaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-shiny
@@ -2638,6 +2913,9 @@ approaches follow methods developed by Wei & Simko (2021) and Friendly (2002)
         (base32 "03vdy0rpfw84jwgp48xws30vxbb9zaly1da298ffyk94knpdf5yg"))))
     (properties `((upstream-name . "visualpred")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest
                              r-proc
                              r-nnet
@@ -2678,6 +2956,9 @@ also many practical uses under the XAI paradigm.")
         (base32 "0dkbkc1cprri9kkzsl47651n03h2hdlq34b4w6p4j3x14d102dgx"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-geomtextpath))
     (home-page "https://cran.r-project.org/package=VisualizeSimon2Stage")
     (synopsis "Visualize Simon's Two-Stage Design")
@@ -2699,6 +2980,9 @@ Simon's two-stage design.")
         (base32 "1jfj0qp4a6jxw423d6ik18r7gy6zzcxlp71mfhpam256xay0sq8f"))))
     (properties `((upstream-name . "Visualize.CRAN.Downloads")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotly r-htmlwidgets r-cranlogs))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mponce0/Visualize.CRAN.Downloads")
@@ -2721,6 +3005,9 @@ RStudio CRAN mirror.")
         (base32 "0bsdyqakidgdgxhzyl6w0pg3mnkj84550c4s7dwcwjjqqjsr9bj1"))))
     (properties `((upstream-name . "visualize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/coatless-rpkg/visualize")
     (synopsis
      "Graph Probability Distributions with User Supplied Parameters and Statistics")
@@ -2743,6 +3030,9 @@ Also provided on the graph is the mean and variance of the distribution.")
         (base32 "0p8a3xjhw6sjhnq5gscz5nsqk9fnzp6si5k2sa00qw6x70ihw0gk"))))
     (properties `((upstream-name . "visualFields")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-shinyjs
                              r-shiny
@@ -2783,6 +3073,9 @@ research.  The package is described in Marin-Franch and Swanson (2013)
         (base32 "14qg44sivfhnvjac5yq4n5llhwq669m3j7a2z84rlz0737x7x5xd"))))
     (properties `((upstream-name . "VisualDom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waveslim r-wavemulcor r-plot3d))
     (home-page "https://cran.r-project.org/package=VisualDom")
     (synopsis "Visualize Dominant Variables in Wavelet Multiple Correlation")
@@ -2815,6 +3108,9 @@ functions contained in @code{VisualDom}'.  Methods derived from FernÃ¡ndez-Mac
         (base32 "012ccs5wy8mll0qnqp0qbcqbjmm7kw5d48yyi8xkxym5qffms9w3"))))
     (properties `((upstream-name . "vistributions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rsquaredacademy/vistributions")
@@ -2836,6 +3132,9 @@ binomial distributions.")
         (base32 "1l07zfr2hagjpdxfw5290wa3ki4bl7iqxrrhda0d1bp3wmwfz0ai"))))
     (properties `((upstream-name . "visTree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-partykit r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=visTree")
@@ -2860,6 +3159,9 @@ associated inner nodes.")
         (base32 "0r4l1jdphq3d075ypbc5ab7rsj77qpi43600b6sqqw418za5fqkz"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=vistla")
     (synopsis "Detecting Influence Paths with Information Theory")
     (description
@@ -2885,6 +3187,9 @@ to a single feature.")
         (base32 "14nm2p8yyl0zcf4al31cvnji4a9fi6zs1hvcjpa7dcyjdxd6yfyi"))))
     (properties `((upstream-name . "vistime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcolorbrewer
                              r-plotly
@@ -2899,8 +3204,8 @@ to a single feature.")
 timelines.  Possible outputs include ggplot2 diagrams, plotly.js graphs,
 Highcharts.js widgets and data.frames.  Results can be used in the RStudio
 viewer pane, in RMarkdown documents or in Shiny apps.  In the interactive
-outputs created by vistime() and hc_vistime(), you can interact with the plot
-using mouse hover or zoom.")
+outputs created by @code{vistime()} and @code{hc_vistime()}, you can interact
+with the plot using mouse hover or zoom.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -2916,35 +3221,41 @@ using mouse hover or zoom.")
         (base32 "0lp6sf2wrjjp1zh77yhlgr9sfpls54z0bny0l36v98ik4qykky0f"))))
     (properties `((upstream-name . "visStatistics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcd r-nortest r-multcompview r-cairo))
     (home-page "https://cran.r-project.org/package=visStatistics")
     (synopsis "Automated Visualization of Statistical Tests")
     (description
      "Visualization of the most powerful statistical hypothesis test.  The function
-vistat() visualizes the statistical hypothesis testing between the dependent
-variable (response) varsample and the independent variable (feature) varfactor.
-The statistical hypothesis test (including the eventual corresponding post-hoc
-analysis) with the highest statistical power fulfilling the assumptions of the
-corresponding test is chosen based on a decision tree.  A graph displaying the
-raw data accordingly to the chosen test is generated, the test statistics
-including eventual post-hoc-analysis are returned.  The automated workflow is
-especially suited for browser based interfaces to server-based deployments of R.
-Implemented tests: lm(), t.test(), wilcox.test(), aov(), kruskal.test(),
-fisher.test(), chisqu.test().  Implemented tests to check the normal
-distribution of standardized residuals: shapiro.test() and ad.test().
-Implemented post-hoc tests: @code{TukeyHSD}() for aov() and
-pairwise.wilcox.test() for kruskal.test().  For the comparison of averages, the
-following algorithm is implemented: If the p-values of the standardized
-residuals of both shapiro.test() or ad.test() are smaller than 1-conf.level,
-kruskal.test() resp.  wilcox.test() are performed, otherwise the oneway.test()
-and aov() resp.  t.test() are performed and displayed.  Exception: If the sample
-size is bigger than 100, t.test() is always performed and wilcox.test() is never
-executed (Lumley et al. (2002)
+@code{vistat()} visualizes the statistical hypothesis testing between the
+dependent variable (response) varsample and the independent variable (feature)
+varfactor.  The statistical hypothesis test (including the eventual
+corresponding post-hoc analysis) with the highest statistical power fulfilling
+the assumptions of the corresponding test is chosen based on a decision tree.  A
+graph displaying the raw data accordingly to the chosen test is generated, the
+test statistics including eventual post-hoc-analysis are returned.  The
+automated workflow is especially suited for browser based interfaces to
+server-based deployments of R. Implemented tests: @code{lm()}, @code{t.test()},
+@code{wilcox.test()}, @code{aov()}, @code{kruskal.test()}, @code{fisher.test()},
+@code{chisqu.test()}.  Implemented tests to check the normal distribution of
+standardized residuals: @code{shapiro.test()} and @code{ad.test()}.  Implemented
+post-hoc tests: @code{TukeyHSD()} for @code{aov()} and
+@code{pairwise.wilcox.test()} for @code{kruskal.test()}.  For the comparison of
+averages, the following algorithm is implemented: If the p-values of the
+standardized residuals of both @code{shapiro.test()} or @code{ad.test()} are
+smaller than 1-conf.level, @code{kruskal.test()} resp. @code{wilcox.test()} are
+performed, otherwise the @code{oneway.test()} and @code{aov()} resp.
+@code{t.test()} are performed and displayed.  Exception: If the sample size is
+bigger than 100, @code{t.test()} is always performed and @code{wilcox.test()} is
+never executed (Lumley et al. (2002)
 <doi:10.1146/annurev.publhealth.23.100901.140546>).  For the test of
 independence of count data, Cochran's rule (Cochran (1954)
 <doi:10.2307/3001666>) is implemented: If more than 20 percent of all cells have
-a count smaller than 5, fisher.test() is performed and displayed, otherwise
-chisqu.test().  In both cases case an additional mosaic plot is generated.")
+a count smaller than 5, @code{fisher.test()} is performed and displayed,
+otherwise @code{chisqu.test()}.  In both cases case an additional mosaic plot is
+generated.")
     (license license:expat)))
 
 (define-public r-visreg
@@ -2959,6 +3270,9 @@ chisqu.test().  In both cases case an additional mosaic plot is generated.")
         (base32 "070yhyxxh3w16i54k790n47bgcjn4b10b6g1z553x6afjc3l3a6d"))))
     (properties `((upstream-name . "visreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (native-inputs (list r-knitr))
     (home-page "http://pbreheny.github.io/visreg")
@@ -2981,6 +3295,9 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
         (base32 "152wnzhq1wx3qd8n0szl0mpxrbabrcq5736pc0zdzni8j0h1zz0c"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -3012,6 +3329,9 @@ the Observational Medical Outcomes Partnership (OMOP) Common Data Model.")
         (base32 "059v7qxpkhir066rrw9kxnb8wnyjgwi2fj9mkb7wl0zrqbknhglb"))))
     (properties `((upstream-name . "vismeteor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jankorichter/vismeteor")
@@ -3034,6 +3354,9 @@ International Meteor Organization <https://www.imo.net/>.")
         (base32 "0iaik54zcq0vxfzfdgq90lxrr1b1824q5zicbpbczm4dxlc17q2q"))))
     (properties `((upstream-name . "VisitorCounts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-rssa r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VisitorCounts")
@@ -3061,6 +3384,9 @@ Kimihiro Noguchi (2023) <doi:10.1002/for.2965> .")
         (base32 "0mrwah122w9dyivyzs8xlv6vq9w8bpr468zjjw5q974wk7h31mk4"))))
     (properties `((upstream-name . "visit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stanheaders
                              r-sqldf
                              r-rstantools
@@ -3100,6 +3426,9 @@ further details.")
         (base32 "1ay09dahlqnfrgf4gl4s45a4ahrk2xliagxqz5h826w2vzsawqcc"))))
     (properties `((upstream-name . "ViSiElse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-reshape2
                              r-matrix
@@ -3133,6 +3462,9 @@ actions.")
         (base32 "1xiim4cj4cx885fidp0xy2bgy7wv9scak0v64v9agkifhvdhx05f"))))
     (properties `((upstream-name . "ViSe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shiny
                              r-scales
@@ -3162,6 +3494,9 @@ from Kraemer H.C. & Kupfer D.J. (2006) <doi:10.1016/j.biopsych.2005.09.014>.")
         (base32 "0rcypw7szbs5x9wcdihcj87i7kic2dz8c56zdxq3pfrqsligm86b"))))
     (properties `((upstream-name . "VisCov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scatterplot3d r-kernsmooth r-clustergeneration
                              r-bayesm))
     (home-page "https://cran.r-project.org/package=VisCov")
@@ -3185,6 +3520,9 @@ methodology described in Tokuda, T., Goodrich, B., Van Mechelen, I., Gelman, A.,
         (base32 "03v49zhqfv2ifzyqhjhagvjk65hz0vzn61ax9w1lhgd751kpazha"))))
     (properties `((upstream-name . "viscomplexr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rdpack
                              r-rcpp
@@ -3212,6 +3550,9 @@ Parallel processing is used for optimum performance.")
         (base32 "18s9qapznc50xwjr3lx48nsn9prji8n13byqzvhy151wm4anak7k"))))
     (properties `((upstream-name . "viscomp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-reshape2
@@ -3254,6 +3595,9 @@ implemented tools are described by Seitidis et al. (2023)
         (base32 "1pcd7b14a2qnq1jlk63fascdb8hkys8cg4jw4rx6xk9xmvpvyhlb"))))
     (properties `((upstream-name . "VisCollin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/friendly/VisCollin")
     (synopsis "Visualizing Collinearity Diagnostics")
     (description
@@ -3280,6 +3624,9 @@ collinearity is most apparent.")
         (base32 "12ix8ljbykwf493hw6npli2ad665jip2mzb8p25j5v10f8ij88qm"))))
     (properties `((upstream-name . "visaOTR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-rglpk
                              r-randomforest
@@ -3312,6 +3659,9 @@ is an implementation of Zishu Zhan and Jingxiao Zhang. (2022+).")
         (base32 "1a0jvdkmkk86p7xl16mpwibkrxbk4zsas6yrmjg9zwincsf3xx81"))))
     (properties `((upstream-name . "visachartR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-htmlwidgets))
     (home-page
      "https://github.com/visa/visa-chart-components/tree/master/packages/charts-R")
@@ -3335,6 +3685,9 @@ components for the web.")
         (base32 "1mx7nbbpxs4fdp781a75qvffa42dx2n6anslbfs9bnprmvzmljqr"))))
     (properties `((upstream-name . "visa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-rcolorbrewer r-matrix r-ggpmisc
                              r-ggplot2))
     (native-inputs (list r-knitr))
@@ -3362,6 +3715,9 @@ results of analysis in the ggplot2 style.")
         (base32 "020kwhki5740857zd24xm18dg3whzhf527qhmfx1cxyqyld404wy"))))
     (properties `((upstream-name . "virustotal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/themains/virustotal")
@@ -3385,6 +3741,9 @@ among other things.  See <http://www.virustotal.com> for more information.")
         (base32 "0n7am416gyxk0akbpabcw2x4skqqa3jj4vd3j7zrhbhhq8qfd8fx"))))
     (properties `((upstream-name . "Virusparies")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-scales
@@ -3416,6 +3775,9 @@ functions.")
         (base32 "1smb8sjfqcp3jflplgf92swasxzrp72fnnqwyisf87pjknm91qsc"))))
     (properties `((upstream-name . "virtuoso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rappdirs
                              r-ps
                              r-processx
@@ -3463,6 +3825,9 @@ rdflib and redland packages.")
         (base32 "1bqrh17fcskklsdkwkg9lvlki67jigr0c32mq4bfl16iisrc1342"))))
     (properties `((upstream-name . "virtualspecies")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis r-terra r-rnaturalearth r-raster r-ade4))
     (home-page "https://borisleroy.com/virtualspecies/")
     (synopsis "Generation of Virtual Species Distributions")
@@ -3486,6 +3851,9 @@ realism.")
         (base32 "1miwljsr6r6i94q9pdpqzhapnfgg3vjv2ikwvc56cpw6k1iw9h39"))))
     (properties `((upstream-name . "VirtualPop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-msm r-hmdhfdplus))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VirtualPop")
@@ -3511,6 +3879,9 @@ individual and their offspring, producing a multi-generation virtual population.
         (base32 "0caiyl7h9qn3nv34dafv5rs4v7n4avyjpng0rkz6aw3ri1zn8sa0"))))
     (properties `((upstream-name . "virtualPollen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-tidyr
                              r-plyr
@@ -3542,6 +3913,9 @@ accumulation rates and given depth intervals between consecutive samples.")
         (base32 "0bdkmbmkmmj78h9x025qsdzjzcx8xr2s98wlspcsghlz4hxkzcas"))))
     (properties `((upstream-name . "VIRF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmgarch
                              r-mgarchbekk
                              r-matrixcalc
@@ -3571,6 +3945,9 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
         (base32 "1449r74g4q7qigyqb21sasdyr80542b4lfavjszh2s5bd8pkc8di"))))
     (properties `((upstream-name . "viralx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-workflows
                              r-vdiffr
                              r-teachingdemos
@@ -3610,6 +3987,9 @@ and computational biology for the benefit of understanding HIV dynamics.")
         (base32 "0ryjymbry92278sacbnfbkzl90i58cfk10dradkzp6rxl1ik9ryf"))))
     (properties `((upstream-name . "viralmodels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-workflowsets
                              r-workflows
                              r-tune
@@ -3652,6 +4032,9 @@ populations.")
         (base32 "1g5872l0vgv3dx2ilkk75rzrvp2df7c7avx9n51dzfxkm82s41hi"))))
     (properties `((upstream-name . "viraldomain")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-workflows
                              r-tidyselect
                              r-recipes
@@ -3680,6 +4063,9 @@ predictions.")
         (base32 "0n87g2z354az0scsf7w7n144p77yv1mk96w5vacn25p7jlldsram"))))
     (properties `((upstream-name . "vip")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yardstick r-tibble r-ggplot2 r-foreach))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/koalaverse/vip/")
@@ -3709,6 +4095,9 @@ effects is also included (see the previous reference for details).")
         (base32 "1xy57mycdsr9qr48n1jrw0nzwz848r0xcns864d8gyc8zikp3x6a"))))
     (properties `((upstream-name . "violinplotter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=violinplotter")
     (synopsis "Plotting and Comparing Means with Violin Plots")
     (description
@@ -3730,6 +4119,9 @@ tool for comparing means and assessing trends of categorical factors.")
         (base32 "057d2fdh03cq9kh4vz94arqscahmz14xbr2g59l0vn205lnyilf1"))))
     (properties `((upstream-name . "vines")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsp r-cubature r-copula r-adgoftest))
     (home-page "https://github.com/yasserglez/vines")
     (synopsis "Multivariate Dependence Modeling with Vines")
@@ -3753,6 +4145,9 @@ function evaluation, and simulation.")
         (base32 "0r4xg3a2mk7030z2vc1w5g0390vkhbnq757cj9j5imki2ii2xfnz"))))
     (properties `((upstream-name . "vinereg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wdm
                              r-rvinecopulib
                              r-rcppthread
@@ -3783,6 +4178,9 @@ nonparametric pair-copulas.  See Kraus and Czado (2017)
         (base32 "0p3bwhfy59887a8la97919zx90fzpfqgg646d93nw4dvr3n84gpi"))))
     (properties `((upstream-name . "VineCopula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass r-lattice r-adgoftest))
     (home-page "https://github.com/tnagler/VineCopula")
     (synopsis "Statistical Inference of Vine Copulas")
@@ -3807,6 +4205,9 @@ bivariate copula models are also provided.")
         (base32 "0yvchdf90l8lkzyba5wrpma6vjcgf19li159s8s79y8sgp5pyx7p"))))
     (properties `((upstream-name . "vindecodr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr))
     (home-page "https://cran.r-project.org/package=vindecodr")
     (synopsis
@@ -3833,6 +4234,9 @@ the vehicles, including make, model, model year, and gross vehicle weight rating
         (base32 "13r8g9k216fjsnw4ymqdsrx08z6rr2i3cwafrv1j93lgl0d3lnj4"))))
     (properties `((upstream-name . "VIMPS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rocr r-ranger r-knockoff r-ggplot2 r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VIMPS")
@@ -3855,6 +4259,9 @@ can be provided in numerical and graphical form.  Meredith L Wallace (2023)
         (base32 "0ly7piz7q88sh2g7zq5b2pqph9467b4fclgq9amm0m7xc8vrv4f9"))))
     (properties `((upstream-name . "vimpclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-polychrome r-pcamixdata r-mclust
                              r-ggplot2))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -3884,6 +4291,9 @@ Lacaille, A. Mourer and M. Olteanu
         (base32 "069pcxzavi213idpslnc1skylsb1wn6xldajnn54prlwq9hkfb19"))))
     (properties `((upstream-name . "vimp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-superlearner
                              r-rocr
@@ -3916,6 +4326,9 @@ Williamson et al. (JASA, 2021), and Williamson and Feng (ICML, 2020).")
         (base32 "0kxrcigp94h2j1vx5pj24sp73iqxldc1ygm5bak4jrld66r0nb5b"))))
     (properties `((upstream-name . "VIMean")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VIMean")
     (synopsis "Variability Independent of Mean")
     (description
@@ -3936,6 +4349,9 @@ of mean (VIM).  The methodology can be found at Peter M Rothwell et al. (2010)
         (base32 "1jcgjz6sn5izn3bqi6g45f40nw921vvqj74apb2i44h6a3qnxqjg"))))
     (properties `((upstream-name . "villager")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid r-readr r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zizroc/villager/")
@@ -3959,6 +4375,9 @@ fit researcher needs.")
         (base32 "145xrfifdqnzclzx2c7aj89yw5sd8f34jijpia595dy30lssywwi"))))
     (properties `((upstream-name . "viking")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=viking")
     (synopsis "State-Space Models Inference by Kalman or Viking")
     (description
@@ -3979,6 +4398,9 @@ Vilmarest (2022) <https://theses.hal.science/tel-03716104/>.")
         (base32 "13xxzlpznxvvvflqrhyh5m8v6x3q5ifrwx8dmm9hl0h8sr6i0lvp"))))
     (properties `((upstream-name . "VIGoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VIGoR")
     (synopsis "Variational Bayesian Inference for Genome-Wide Regression")
     (description
@@ -4002,6 +4424,9 @@ different ways (i.e., model structures).")
         (base32 "19hqxy260dmy6scwag3wd7kis0f5f3lchqx4cr4h4lpi6h2v6lnh"))))
     (properties `((upstream-name . "viewscape")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sp
                              r-sf
@@ -4036,6 +4461,9 @@ based on the work of Franklin & Ray. (1994)
         (base32 "1c97khxsfnml21wh8np4qp7w2w31zxw72dl5vy25jjpx06dbp814"))))
     (properties `((upstream-name . "viewpoly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vroom
                              r-tidyr
                              r-shinywidgets
@@ -4082,6 +4510,9 @@ QTLpoly', @code{polyqtlR}', GWASpoly', and HIDECAN packages.")
         (base32 "0lcm7zzflbbjpb1mdy6pppdmg9gvlcn7hg42a4fgm0kxhniwnmyg"))))
     (properties `((upstream-name . "ViewPipeSteps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rstudioapi r-dplyr))
     (home-page "https://cran.r-project.org/package=ViewPipeSteps")
     (synopsis "Create View Tabs of Pipe Chains")
@@ -4103,6 +4534,13 @@ select steps in a convenient way.")
         (base32 "1bnscv1yz4hr6cvpavdj2gjn6dqy96rbagxl9280a2xxav09mps3"))))
     (properties `((upstream-name . "vietnameseConverter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-utf8 r-sf r-gsubfn))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/jniedballa/vietnameseConverter")
@@ -4127,6 +4565,9 @@ with the correct Unicode characters (with or without diacritics).")
         (base32 "0vc0c1fg30afar2dkch5h27b8jbglcd9ja6d5hcypnibqz4c68vz"))))
     (properties `((upstream-name . "vietnamcode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=vietnamcode")
     (synopsis "Convert Vietnam Provincial Codes")
     (description
@@ -4148,6 +4589,8 @@ diacritics and different spellings.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4184,6 +4627,9 @@ as playing and pausing the video to be triggered from the server.")
         (base32 "1f4vmz34gms0vbvpn94rgdhbbvxbqmjxzhd9n4fxfm0dizmba004"))))
     (properties `((upstream-name . "Vicus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra r-rann r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rikenbit/Vicus")
@@ -4208,6 +4654,9 @@ methods, see the reference section of @code{GitHub} README.md
         (base32 "0djv95l32nz6wwslwgn0v037fjbl3fz15vybn39c6g1iw9a2a46s"))))
     (properties `((upstream-name . "VicmapR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list proj geos gdal))
     (propagated-inputs (list r-xml2
                              r-stringr
@@ -4252,6 +4701,9 @@ bcdata R package <doi:10.21105/joss.02927>.")
         (base32 "0gghmn7bs4wr2r24s794ljvz2r3qv0clvgj54b6hxmgn1b48bxg0"))))
     (properties `((upstream-name . "vici")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-shinywidgets
@@ -4286,6 +4738,9 @@ Journal of Immunological Methods, 477:112711. <doi:10.1016/j.jim.2019.112711>.")
         (base32 "13lcs7wwj1xfbjf3q7r8ssf00jg5hr1vjp2pyw0r42iz7mx47xjv"))))
     (properties `((upstream-name . "vICC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjags r-rdpack r-nlme r-ggplot2 r-coda))
     (home-page "https://cran.r-project.org/package=vICC")
     (synopsis "Varying Intraclass Correlation Coefficients")
@@ -4308,6 +4763,9 @@ effects model <10.31234/osf.io/hpq7w>.")
         (base32 "0wkzl7km9sm26m95ngd58vlsfwpzbvx3wjaw66lmzapjjxn9801s"))))
     (properties `((upstream-name . "VICatMix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-mcclust
@@ -4338,6 +4796,9 @@ further details, see the paper by Rao and Kirk (2024)
         (base32 "1zkvzkras94gyc43b9j4bq4mpyg9l1idx2pdd8a728gmq1daky0k"))))
     (properties `((upstream-name . "VIC5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-lubridate r-foreach))
     (home-page "https://github.com/rpkgs/VIC5")
     (synopsis "The Variable Infiltration Capacity (VIC) Hydrological Model")
@@ -4373,6 +4834,9 @@ Geosci.  Model Dev., 11, 3481-3496, <doi:10.5194/gmd-11-3481-2018>\".")
         (base32 "1b8gxn1zbr032xp11247agqyhi3iypr65a9jvkgg57l6b92hf6cq"))))
     (properties `((upstream-name . "viafr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-utf8
                              r-tidyr
                              r-tibble
@@ -4406,6 +4870,9 @@ variations in language, character set, and spelling.  For more information go to
         (base32 "0mk6zrirf38a6qym15w9w76gw813mc7p265mcach90asrzfglb6q"))))
     (properties `((upstream-name . "via")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=via")
     (synopsis "Virtual Arrays")
     (description
@@ -4429,6 +4896,9 @@ data instead of lists.")
         (base32 "10785bx2wcnrfg77914r93fzlixhjpqz22sj3gfrh5n4qswzs91g"))))
     (properties `((upstream-name . "vhica")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=vhica")
     (synopsis "Vertical and Horizontal Inheritance Consistence Analysis")
     (description
@@ -4453,6 +4923,9 @@ transposable element sequences with that of regular genes.")
         (base32 "04a8hdm4pxl8fzwy9q2wqc9q0dl5r49xwbid70yj9qlflh683id0"))))
     (properties `((upstream-name . "vhcub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-seqinr r-ggplot2 r-biostrings))
     (home-page "https://cran.r-project.org/package=vhcub")
     (synopsis "Virus-Host Codon Usage Co-Adaptation Analysis")
@@ -4468,7 +4941,7 @@ Wan et al (2004) <doi:10.1186/1471-2148-4-19> and, relative synonymous codon
 usage (RSCU) Sharp et al (1986) <doi:10.1093/nar/14.13.5125>.  Also, it provides
 a statistical dinucleotide over- and underrepresentation with three different
 models.  Implement several methods for visualization of codon usage as
-ENc.GC3plot() and PR2.plot().")
+@code{ENc.GC3plot()} and @code{PR2.plot()}.")
     (license license:gpl3)))
 
 (define-public r-vglmer
@@ -4483,6 +4956,9 @@ ENc.GC3plot() and PR2.plot().")
         (base32 "1xcz1h6wr0ipvhny5ay2kxqh75fdd8k1xv6aywn1jfbyf1mcw20q"))))
     (properties `((upstream-name . "vglmer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpp
                              r-mvtnorm
@@ -4516,6 +4992,9 @@ provide details on the variational algorithms.")
         (base32 "061mlhiqdncgjzyflpjjhmssjp7z33k9xrz7dmcgsrw37fb97jrs"))))
     (properties `((upstream-name . "VGAMextra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam))
     (home-page "https://cran.r-project.org/package=VGAMextra")
     (synopsis "Additions and Extensions of the 'VGAM' Package")
@@ -4523,17 +5002,18 @@ provide details on the variational algorithms.")
      "Extending the functionalities of the VGAM package with additional functions and
 datasets.  At present, VGAMextra comprises new family functions (ffs) to
 estimate several time series models by maximum likelihood using Fisher scoring,
-unlike popular packages in CRAN relying on optim(), including ARMA-GARCH-like
-models, the Order-(p, d, q) ARIMAX model (non- seasonal), the Order-(p) VAR
-model, error correction models for cointegrated time series, and ARMA-structures
-with Student-t errors.  For independent data, new ffs to estimate the inverse-
-Weibull, the inverse-gamma, the generalized beta of the second kind and the
-general multivariate normal distributions are available.  In addition, VGAMextra
-incorporates new VGLM-links for the mean-function, and the quantile-function (as
-an alternative to ordinary quantile modelling) of several 1-parameter
-distributions, that are compatible with the class of VGLM/VGAM family functions.
- Currently, only fixed-effects models are implemented.  All functions are
-subject to change; see the NEWS for further details on the latest changes.")
+unlike popular packages in CRAN relying on @code{optim()}, including
+ARMA-GARCH-like models, the Order-(p, d, q) ARIMAX model (non- seasonal), the
+Order-(p) VAR model, error correction models for cointegrated time series, and
+ARMA-structures with Student-t errors.  For independent data, new ffs to
+estimate the inverse- Weibull, the inverse-gamma, the generalized beta of the
+second kind and the general multivariate normal distributions are available.  In
+addition, VGAMextra incorporates new VGLM-links for the mean-function, and the
+quantile-function (as an alternative to ordinary quantile modelling) of several
+1-parameter distributions, that are compatible with the class of VGLM/VGAM
+family functions.  Currently, only fixed-effects models are implemented.  All
+functions are subject to change; see the NEWS for further details on the latest
+changes.")
     (license license:gpl2)))
 
 (define-public r-vgamdata
@@ -4548,6 +5028,9 @@ subject to change; see the NEWS for further details on the latest changes.")
         (base32 "10s0jinzwpb9wjvzkl0dihm3byr8q2mzmq4z86zpmnlw0blvkkvy"))))
     (properties `((upstream-name . "VGAMdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam))
     (home-page "https://www.stat.auckland.ac.nz/~yee/VGAMdata/")
     (synopsis "Data Supporting the 'VGAM' Package")
@@ -4574,6 +5057,9 @@ contains some old VGAM family functions which have been replaced by newer ones
         (base32 "1b8sl8id2gj4iqkpjzd3giybbix2jvskwsbw1kqj3zqr77hygxwg"))))
     (properties `((upstream-name . "VFS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nleqslv r-e1071))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VFS")
@@ -4599,6 +5085,9 @@ al., 2009 <doi:10.2134/jeq2008.0337>).")
         (base32 "0kgw1jx0rl9v8qy8qg7zjzdgvwqdi7k1lsvsx3lnpw4sfpkzsq23"))))
     (properties `((upstream-name . "vfprogression")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=vfprogression")
     (synopsis "Visual Field (VF) Progression Analysis and Plotting Methods")
     (description
@@ -4623,6 +5112,9 @@ included.  The VF analysis methods could be found in -- Musch et al. (1999)
         (base32 "14idww1vy695mp9v2h0nxqi6flmm41cr30i0yd2nwjsnriwqgzak"))))
     (properties `((upstream-name . "VFP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vca r-mass r-gnm))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=VFP")
@@ -4652,6 +5144,8 @@ treatment of patients.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4687,6 +5181,9 @@ facilitate filtering across multiple outputs.")
         (base32 "0zj1ihqdx5x1695al1xyi8k001yw8x7gdss72myxlnh7b4flnp9m"))))
     (properties `((upstream-name . "vfcp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-extradistr r-copula))
     (home-page "https://cran.r-project.org/package=vfcp")
     (synopsis "Computation of v Values for U and Copula C(U, v)")
@@ -4712,6 +5209,9 @@ amh', the copula dimension may be larger than 2.")
         (base32 "1fg44cy2i138b21y610bj64xjwwp96wilngy3rq89vsvkj40rird"))))
     (properties `((upstream-name . "VEwaningVariant")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-ggplot2))
     (home-page "https://cran.r-project.org/package=VEwaningVariant")
     (synopsis "Vaccine Efficacy Over Time - Variant Aware")
@@ -4739,6 +5239,9 @@ vaccine.")
         (base32 "0zg5m7bx1vj9libvg8l3g8wnsnqd565jjsqvwghml62wfsdhghk4"))))
     (properties `((upstream-name . "VEwaning")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-ggplot2))
     (home-page "https://cran.r-project.org/package=VEwaning")
     (synopsis "Vaccine Efficacy Over Time")
@@ -4766,6 +5269,9 @@ Davidian, M. (2021) <@code{arXiv:2102.13103>} .")
         (base32 "1a7wm04bsr5shak7l8ypxlhlnx3qkq1jdpjnji1n05p6b00ih9h1"))))
     (properties `((upstream-name . "VetResearchLMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-multcomp r-lmertest r-lme4 r-ggplot2))
     (home-page "https://github.com/MYaseen208/VetResearchLMM")
     (synopsis
@@ -4788,6 +5294,9 @@ Research.  International Livestock Research Institute.")
         (base32 "0ymbv6d1xvsnpvhn6pniiwxw9fjyxy8bahkwfh56rxqlv9qx3pi0"))))
     (properties `((upstream-name . "vetr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/brodieG/vetr")
     (synopsis "Trust, but Verify")
@@ -4808,6 +5317,9 @@ requirements, and auto-composing error messages when they do not.")
         (base32 "04gpr4h4vzr0xkgf4x8drpkg1j8f1w84h4ndc4ry15n7ayim4s0b"))))
     (properties `((upstream-name . "vetiver")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vctrs
                              r-tibble
@@ -4850,6 +5362,9 @@ models.")
         (base32 "1wzprnpiv04gxhqgki36gp1a0xj9l3mchllphwkfsdja4axq3prk"))))
     (properties `((upstream-name . "vesselr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pbmcapply r-pbapply r-oro-nifti))
     (home-page "https://github.com/jdwor/vesselr")
     (synopsis "Gradient and Vesselness Tools for Arrays and NIfTI Images")
@@ -4870,6 +5385,9 @@ filter, and Frangi vesselness filter of 3-dimensional volumes.")
         (base32 "1a6hyipn9522zj69amlxmqip45gflml5kcyjlxi4vf4y1givb7qs"))))
     (properties `((upstream-name . "VeryLargeIntegers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=VeryLargeIntegers")
     (synopsis "Store and Operate with Arbitrarily Large Integers")
@@ -4893,6 +5411,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
         (base32 "1g9qi5yyqy30q0s4klsjv6fb6fn7b0yfi6gj834s91m7bzi8a3g6"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-stringr
                              r-reticulate
                              r-rappdirs
@@ -4933,6 +5458,9 @@ need for its access.")
         (base32 "0f638y272dbmz5747wxqy9pxasxk3a9f9wf31gf297qx7268ab1m"))))
     (properties `((upstream-name . "VertexSimilarity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (home-page "https://cran.r-project.org/package=VertexSimilarity")
     (synopsis "Creates Vertex Similarity Matrix for an Undirected Graph")
@@ -4954,6 +5482,9 @@ paper <DOI:10.1103/@code{PhysRevE.73.026120>}.")
         (base32 "1g382ig1lw1jn50ijw4nmcy5xbcdcci2f8h4vs53f8256arj0ky7"))))
     (properties `((upstream-name . "versus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tibble
@@ -4984,6 +5515,9 @@ between two data frames.")
         (base32 "00r0h2iqlfq0nidqbhx4fv29rlppfx43jv2n2zp38lpx5vbqjhnj"))))
     (properties `((upstream-name . "versionsort")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=versionsort")
     (synopsis "Sort and Order Version Codes")
     (description
@@ -5003,6 +5537,9 @@ forms.  No strong dependencies guaranteed.")
         (base32 "0r4ffd1s9warfan7ldcd6sn98qimsllf77dhxfygblr8spxcl7h5"))))
     (properties `((upstream-name . "versioning")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-terra
                              r-sf
@@ -5037,6 +5574,9 @@ folder.")
         (base32 "0wy7ml7z09n3hr4xma8nblv83bqpnsd6hmh9cqhqbndcrm3nbfby"))))
     (properties `((upstream-name . "vermeulen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-memoise))
     (home-page "https://github.com/ramiromagno/vermeulen")
     (synopsis "Biomarker Data Set by Vermeulen et al. (2009)")
@@ -5066,6 +5606,9 @@ series x 3 replicates + no template controls (NTC) x 3 replicates).")
         (base32 "095b0s2i2j655xfwjrddlz9pia0a1njzh7r3cjnfk84dp43a03hl"))))
     (properties `((upstream-name . "verification")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-fields r-dtw r-circstats r-boot))
     (home-page "https://cran.r-project.org/package=verification")
     (synopsis "Weather Forecast Verification Utilities")
@@ -5086,6 +5629,9 @@ forecasts expressed as parametric distributions are included.")
         (base32 "0kpxpl5s5342ajg22cwb7y9ks240drp37q1g67n19krdy6ih14kz"))))
     (properties `((upstream-name . "verhoeff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=verhoeff")
     (synopsis "Implementation of the 'Verhoeff' Check Digit Algorithm")
     (description
@@ -5108,6 +5654,9 @@ input number.")
         (base32 "0xkqz3hbxp885bsxxiqh0a240745wi13f6kqvxfb5jgacmbpwyi7"))))
     (properties `((upstream-name . "verbalisr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ribd r-pedtools))
     (home-page "https://github.com/magnusdv/verbalisr")
     (synopsis "Describe Pedigree Relationships in Words")
@@ -5131,6 +5680,9 @@ online app @code{QuickPed} at <https://magnusdv.shinyapps.io/quickped>.")
         (base32 "16ndjpsfp700h5wz3y7hram6x8lp4piykcrz7y4ybrkgwyaik851"))))
     (properties `((upstream-name . "verbaliseR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr))
     (home-page "https://github.com/cararthompson/verbaliseR")
     (synopsis "Make your Text Mighty Fine")
@@ -5153,6 +5705,9 @@ managing capitalisations in tidy data.")
         (base32 "0x59awa1zsjwk5qb1jzv6d2mn2fm4aq1lq8zlbnf1da0h4837yab"))))
     (properties `((upstream-name . "vennplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rgl r-rcpp))
     (home-page "https://cran.r-project.org/package=vennplot")
     (synopsis "Venn Diagrams in 2D and 3D")
@@ -5171,6 +5726,9 @@ managing capitalisations in tidy data.")
         (base32 "1ga9ckhpd6my0xjf6xarhn3b98d88075fa0zkad4sxca7k6v7hbd"))))
     (properties `((upstream-name . "venneuler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjava))
     (home-page "https://www.rforge.net/venneuler/")
     (synopsis "Venn and Euler Diagrams")
@@ -5189,6 +5747,9 @@ managing capitalisations in tidy data.")
         (base32 "1hmwgrp9vj7qwmsvnvgry8h707kj53wp5chpxqsbgxi9jryabpc0"))))
     (properties `((upstream-name . "vembedr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-magrittr
                              r-lifecycle
@@ -5216,6 +5777,9 @@ video in your R Markdown documents or Shiny applications.")
         (base32 "0a67vmv05cxc9f27aqzr6nkgy2mj3fhykwj5nb23qwfqa669a5hi"))))
     (properties `((upstream-name . "velociraptr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf))
     (home-page "https://cran.r-project.org/package=velociraptr")
     (synopsis "Fossil Analysis")
@@ -5237,6 +5801,9 @@ and analyzing fossil data from the Paleobiology Database
         (base32 "0ph67wfbs9r0fam79lmikbf0j0zbk0qqip7maxrxiy2zdbbf6xg2"))))
     (properties `((upstream-name . "vek")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/samsemegne/vek")
     (synopsis "Predicate Helper Functions for Testing Simple Atomic Vectors")
     (description
@@ -5259,6 +5826,9 @@ values, infinities, blank characters, or names attribute; or having length 1).")
         (base32 "018nnldvawijw9qnh6d4l9gy0x5chb2nx0fga7bpb91p20vd7lfd"))))
     (properties `((upstream-name . "vein")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units r-sf r-dotcall64 r-data-table r-cptcity))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/atmoschem/vein")
@@ -5286,6 +5856,9 @@ create a structure of directories and scripts.")
         (base32 "0q854isd0bm53xxj45h64cxnvkck0hm43vrxizyxxgqwqf0syg3z"))))
     (properties `((upstream-name . "vegtable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegdata
                              r-taxlist
                              r-stringi
@@ -5313,6 +5886,9 @@ import/export routines for exchange of data with Juice
         (base32 "0m10m85cf0qk2q2ln1qziqicv79rbjqqi9py18r412j7m43pn013"))))
     (properties `((upstream-name . "vegperiod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://rnuske.github.io/vegperiod/")
     (synopsis "Determine Thermal Vegetation Periods")
     (description
@@ -5333,6 +5909,9 @@ based on daily mean temperatures and the day of the year.")
         (base32 "1fgha0sxgymiqnr6gwa3pjmbvb76iwxnpxs666zifscch4fz3z99"))))
     (properties `((upstream-name . "vegdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-stringr
                              r-rsqlite
@@ -5369,6 +5948,9 @@ appropriate taxonomic lists, e.g. the German taxonomic standard list
         (base32 "18v1iqgabhsdxi76kvy9wgp9h2i17aw4c43kcki7lzyqiyyql0nx"))))
     (properties `((upstream-name . "vegclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan))
     (native-inputs (list r-knitr))
     (home-page "https://emf-creaf.github.io/vegclust/")
@@ -5394,6 +5976,8 @@ composition (De Caceres et al, 2013) <doi:10.1111/2041-210X.12116>.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5438,6 +6022,9 @@ a means to interact with signals, events, and datasets in a Vega chart using
         (base32 "0y8x11551gaal2v4nyd97pwxaw5bqazfqywwrdj4wkp0gidn3hhh"))))
     (properties `((upstream-name . "vegan3d")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan r-scatterplot3d r-rgl r-cluster))
     (home-page "https://cran.r-project.org/")
     (synopsis
@@ -5461,6 +6048,8 @@ analysis, especially with the vegan package.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5509,6 +6098,9 @@ htmlwidget'.")
         (base32 "08kkwb5k0n4hjy9rw7bdgpls14a8xdnw3v0g56hhhxnwxf6whmly"))))
     (properties `((upstream-name . "VedicDateTime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-swephr))
     (native-inputs (list r-knitr))
     (home-page "https://www.neerajbokde.in/viggnette/2022-09-05-VedicDateTime")
@@ -5531,6 +6123,9 @@ systems, and helpful in examining its impact in the time series analysis domain.
         (base32 "1z0gl28hgrqgx0ynv248a80fh190pm15c9cg1l1665acrw62kqs7"))))
     (properties `((upstream-name . "vectorwavelet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spam
                              r-rcpp
                              r-maps
@@ -5561,6 +6156,9 @@ analyses.")
         (base32 "0n4k7mrwdj8y6dd7wlvl7i4rkbw37rsxal509h4l697ranvd1mq6"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rstudioapi
@@ -5595,6 +6193,9 @@ Additionally provides functions for analysis and visualization.")
         (base32 "005nd55syn2f2a54ilbw3mi8r51gn5qfw4rdnkygpbgfngza01f8"))))
     (properties `((upstream-name . "VectorCodeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse r-tidyr r-readxl r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VectorCodeR")
@@ -5624,6 +6225,9 @@ Needham, R., Naemi, R., & Chockalingam, N. (2015)
         (base32 "1hgygcmyfaib72j9ck88312f4nqk0s5m01jqyizsy1j3ss8jaqi6"))))
     (properties `((upstream-name . "vectorbitops")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=vectorbitops")
     (synopsis "Vector Bitwise Operations")
     (description
@@ -5644,16 +6248,19 @@ well as infix operators for all of the binary bitwise operations.")
         (base32 "0v6l8kmshb6ipcvjx9i26mwrc810z7lv4ys8qqyzzpz0wwnlii7m"))))
     (properties `((upstream-name . "vecsets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (home-page "https://cran.r-project.org/package=vecsets")
     (synopsis "Like Set Tools in 'Base' Package but Keeps Duplicate Elements")
     (description
-     "The base tools union() intersect(), etc., follow the algebraic definition that
-each element of a set must be unique.  Since it's often helpful to compare all
-elements of two vectors, this toolset treats every element as unique for
-counting purposes.  For ease of use, all functions in vecsets have an argument
-multiple which, when set to FALSE, reverts them to the base::sets (alias for all
-the items) tools functionality.")
+     "The base tools @code{union()} @code{intersect()}, etc., follow the algebraic
+definition that each element of a set must be unique.  Since it's often helpful
+to compare all elements of two vectors, this toolset treats every element as
+unique for counting purposes.  For ease of use, all functions in vecsets have an
+argument multiple which, when set to FALSE, reverts them to the base::sets
+(alias for all the items) tools functionality.")
     (license license:lgpl3)))
 
 (define-public r-vecdep
@@ -5668,6 +6275,9 @@ the items) tools functionality.")
         (base32 "1zm1ri2lmh5qxi4lnla7xgrj0vjihv6nkvhbzf63x20gh4c1sw0v"))))
     (properties `((upstream-name . "VecDep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sets
                              r-rmpfr
                              r-reticulate
@@ -5705,6 +6315,9 @@ Keyser & Gijbels (2024) <doi:10.1016/j.jmva.2024.105336>, De Keyser & Gijbels
         (base32 "0ylpzdbq5c3cpmyciss9y60b5pg6fg7svv54ilb9ml589320zmax"))))
     (properties `((upstream-name . "VeccTMVN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-truncatednormal
                              r-rcpparmadillo
@@ -5743,6 +6356,9 @@ Under Linear Restrictions: Simulation and Estimation via Minimax Tilting\"
         (base32 "03nyyxvhhwfxxg5w6qflk7q234ipbhj9fd4abcp50sxz3diabch1"))))
     (properties `((upstream-name . "veccompare")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-venndiagram
                              r-reshape2
                              r-qgraph
@@ -5772,6 +6388,9 @@ for use with RStudio'.")
         (base32 "0sxsbm1q7v58b907xvpppwfljmqm2pyrch2zc82nmb10wfiha8k8"))))
     (properties `((upstream-name . "vec2dtransf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp))
     (home-page "https://github.com/gacarrillor/vec2dtransf")
     (synopsis "2D Cartesian Coordinate Transformation")
@@ -5794,6 +6413,9 @@ allowing to obtain residuals and RMSE.")
         (base32 "1hrmmhvk3mhd3bdl0msnm5shcj4cjgd3pn1rkfkv8fh4llqvz7w8"))))
     (properties `((upstream-name . "VDSPCalibration")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VDSPCalibration")
     (synopsis
      "Statistical Methods for Designing and Analyzing a Calibration Study")
@@ -5818,6 +6440,9 @@ method is described in Tian, Durazo-Arvizu, Myers, et al. (2014)
         (base32 "09h09av2yydq1vwd77lgfjjk87432sas60905sxkw0mjixf6hq22"))))
     (properties `((upstream-name . "VDSM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-plyr
                              r-knitr
@@ -5832,11 +6457,11 @@ and uncertainty of the selected model is often hard to evaluate.  How to
 characterize the random behavior of the model selection procedure is the key to
 understand and quantify the model selection uncertainty.  This R package offers
 several graphical tools to visualize the distribution of the selected model.
-For example, Gplot(), Hplot(), VDSM_scatterplot() and VDSM_heatmap().  To the
-best of our knowledge, this is the first attempt to visualize such a
-distribution.  About what distribution of selected model is and how it work
-please see Qin,Y.and Wang,L. (2021) \"Visualization of Model Selection
-Uncertainty\" <https://homepages.uc.edu/~qinyn/VDSM/VDSM.html>.")
+For example, @code{Gplot()}, @code{Hplot()}, @code{VDSM_scatterplot()} and
+@code{VDSM_heatmap()}.  To the best of our knowledge, this is the first attempt
+to visualize such a distribution.  About what distribution of selected model is
+and how it work please see Qin,Y.and Wang,L. (2021) \"Visualization of Model
+Selection Uncertainty\" <https://homepages.uc.edu/~qinyn/VDSM/VDSM.html>.")
     (license license:gpl2+)))
 
 (define-public r-vdpo
@@ -5851,6 +6476,9 @@ Uncertainty\" <https://homepages.uc.edu/~qinyn/VDSM/VDSM.html>.")
         (base32 "0x3sv4f4v2wnnhs02dq3fw9lrqif4qkq9bl16rs804vlmw8npb47"))))
     (properties `((upstream-name . "VDPO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sop r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://pavel-hernadez-amaro.github.io/VDPO/")
@@ -5877,6 +6505,9 @@ functional data analysis in R'.  See Amaro et al. (2024)
         (base32 "1aqjhkcj3bd5hk7iz0f2cy5nfp23gvhqsmg6nzlxd9klwc6xpq2h"))))
     (properties `((upstream-name . "VDJgermlines")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringdist r-ape))
     (home-page "https://cran.r-project.org/package=VDJgermlines")
     (synopsis "Variable, Diversity and Joining Sequences from Various Species")
@@ -5900,6 +6531,9 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
         (base32 "0xgazc1appn9z1qj7kqaydknskvcphz4y822sryygmngl9608xgz"))))
     (properties `((upstream-name . "vDiveR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-stringdist
@@ -5936,6 +6570,9 @@ refer <https://vdiver-manual.readthedocs.io/en/latest/> for more information.")
         (base32 "00c7ayc791h0lr124a3l1cxrc5wsnbdm47jf5d7ws02xvd1p8fbq"))))
     (properties `((upstream-name . "vdg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-proxy r-gridextra r-ggplot2))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=vdg")
@@ -5965,16 +6602,19 @@ alternative.")
         (base32 "061ahwf8gyjqs5j9mkqnpn7899mivn4qbygnnzihmv065xj5vpd9"))))
     (properties `((upstream-name . "vdar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-compositions))
     (home-page "https://cran.r-project.org/package=vdar")
     (synopsis "Discriminant Analysis Incorporating Individual Uncertainties")
     (description
-     "The qda() function from package MASS is extended to calculate a weighted linear
-(LDA) and quadratic discriminant analysis (QDA) by changing the group variances
-and group means based on cell-wise uncertainties.  The uncertainties can be
-derived e.g. through relative errors for each individual measurement (cell), not
-only row-wise or column-wise uncertainties.  The method can be applied
-compositional data (e.g. portions of substances, concentrations) and
+     "The @code{qda()} function from package MASS is extended to calculate a weighted
+linear (LDA) and quadratic discriminant analysis (QDA) by changing the group
+variances and group means based on cell-wise uncertainties.  The uncertainties
+can be derived e.g. through relative errors for each individual measurement
+(cell), not only row-wise or column-wise uncertainties.  The method can be
+applied compositional data (e.g. portions of substances, concentrations) and
 non-compositional data.")
     (license license:gpl3)))
 
@@ -5990,6 +6630,9 @@ non-compositional data.")
         (base32 "134x4aisaim72xkyzb1vb8vhl2m4i12yzh6cj858a1ag7b0ing3n"))))
     (properties `((upstream-name . "VDAP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-reshape2 r-ggplot2 r-drc))
     (home-page "https://cran.r-project.org/package=VDAP")
     (synopsis "Peptide Array Analysis Tools")
@@ -6014,6 +6657,9 @@ generate peptides that follow the observed compositional trends.")
         (base32 "0mip0v8gv358aadc3b4913dcz27kscx3dv15nwns20pan5jvyhv2"))))
     (properties `((upstream-name . "vcvComp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vcvComp")
     (synopsis "Comparison of Variance - Covariance Patterns")
@@ -6038,6 +6684,9 @@ dataset from Kerschbaumer et al. (2013) <doi:10.5061/dryad.fc02f>.")
         (base32 "048bkayjhgy6h47pmy0cld9yzmrg93mk3rv5afpn518c42gjsc69"))))
     (properties `((upstream-name . "vctsfr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/franciscomartinezdelrio/vctsfr")
@@ -6061,6 +6710,9 @@ information in a collection of time series.")
         (base32 "0vz8wss290q6m0234syqwxnrk6c3jm64r2rccsj44sypbf887db5"))))
     (properties `((upstream-name . "vcrpart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-ucminf
                              r-strucchange
@@ -6081,39 +6733,6 @@ variables in longitudinal regression.  A description of a part of this package
 was published by Burgin and Ritschard (2017) <doi:10.18637/jss.v080.i06>.")
     (license license:gpl2+)))
 
-(define-public r-vcr
-  (package
-    (name "r-vcr")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vcr" version))
-       (sha256
-        (base32 "0jp6p9k6y2rshxyq5hb3gv3idk2l426cizy1j2aqcz3s503axsxf"))))
-    (properties `((upstream-name . "vcr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-webmockr
-                             r-urltools
-                             r-rprojroot
-                             r-r6
-                             r-httr2
-                             r-httr
-                             r-crul
-                             r-base64enc))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/vcr/")
-    (synopsis "Record 'HTTP' Calls to Disk")
-    (description
-     "Record test suite HTTP requests and replays them during future runs.  A port of
-the Ruby gem of the same name (<https://github.com/vcr/vcr/>).  Works by hooking
-into the webmockr R package for matching HTTP requests by various rules ('HTTP
-method, URL', query parameters, headers, body, etc.), and then caching real HTTP
-responses on disk in cassettes'.  Subsequent HTTP requests matching any previous
-requests in the same cassette use a cached HTTP response.")
-    (license license:expat)))
-
 (define-public r-vcpen
   (package
     (name "r-vcpen")
@@ -6126,6 +6745,9 @@ requests in the same cassette use a cached HTTP response.")
         (base32 "0gg5ln9r7i8rh91pf7789fic4aah22jc259qyg606bax2w57qmi5"))))
     (properties `((upstream-name . "vcpen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-knitr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vcpen")
@@ -6145,6 +6767,9 @@ requests in the same cassette use a cached HTTP response.")
         (base32 "11dn0l1w46shw4dqkwad5y91hfs9crkwrj6d1l4n9sc3f71b3zxq"))))
     (properties `((upstream-name . "vcPB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist r-lme4 r-kernsmooth))
     (home-page "https://github.com/SangkyuStat/vcPB")
     (synopsis "Longitudinal PB Varying-Coefficient Groupwise Disparity Model")
@@ -6170,6 +6795,9 @@ the Peters-Belson method which was originally published in Peters
         (base32 "1w89mr8dk6436bxap28rszajgm9k7sjfqsr1i4p68dlhw8zk4yq1"))))
     (properties `((upstream-name . "vcov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/MichaelChirico/vcov")
     (synopsis "Variance-Covariance Matrices and Standard Errors")
     (description
@@ -6192,6 +6820,9 @@ time computing other summary statistics which are summarily ignored.")
         (base32 "0122xzfwsvxv0rwdaf331nwlikcwm409lya9wm8k037dk46gx2w3"))))
     (properties `((upstream-name . "vcmeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-mathjaxr r-ggplot2))
     (home-page "https://github.com/dgbonett/vcmeta")
     (synopsis "Varying Coefficient Meta-Analysis")
@@ -6218,6 +6849,9 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
         (base32 "0dcw8bhhynmn15xwas4qwzzvm1pmil7sdh7wvfvghkjfa6nibf5v"))))
     (properties `((upstream-name . "vchartr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rlang r-magrittr r-htmlwidgets
                              r-ggplot2))
     (native-inputs (list r-knitr))
@@ -6242,6 +6876,9 @@ storyteller.  VChart examples and documentation are available here:
         (base32 "1xq3l8qirr37w0j3dwvbpz30mvih3grzsbsa12s4wy6pszy5wk3b"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib openssl openssh curl))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list pkg-config r-knitr))
@@ -6268,6 +6905,9 @@ manipulation.")
         (base32 "09kpfnyi6q7xn4x6f7i3k8g6f2fdnm7kk81lxjmlhhn36jxc2p2i"))))
     (properties `((upstream-name . "vcdExtra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcd
                              r-tidyr
                              r-stringr
@@ -6286,11 +6926,11 @@ manipulation.")
      "This package provides additional data sets, methods and documentation to
 complement the vcd package for Visualizing Categorical Data and the gnm package
 for Generalized Nonlinear Models.  In particular, @code{vcdExtra} extends
-mosaic, assoc and sieve plots from vcd to handle glm() and gnm() models and adds
-a 3D version in mosaic3d'.  Additionally, methods are provided for comparing and
-visualizing lists of glm and loglm objects.  This package is now a support
-package for the book, \"Discrete Data Analysis with R\" by Michael Friendly and
-David Meyer.")
+mosaic, assoc and sieve plots from vcd to handle @code{glm()} and @code{gnm()}
+models and adds a 3D version in mosaic3d'.  Additionally, methods are provided
+for comparing and visualizing lists of glm and loglm objects.  This package is
+now a support package for the book, \"Discrete Data Analysis with R\" by Michael
+Friendly and David Meyer.")
     (license license:gpl2+)))
 
 (define-public r-vccp
@@ -6305,6 +6945,9 @@ David Meyer.")
         (base32 "1c0mk46c74kj5y9rfniywbxxmwb2z16szzpq6b2sw8q0qi1cf5ji"))))
     (properties `((upstream-name . "vccp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vinecopula r-mvtnorm r-mosum))
     (home-page "https://cran.r-project.org/package=vccp")
     (synopsis "Vine Copula Change Point Detection in Multivariate Time Series")
@@ -6332,6 +6975,9 @@ data.  For details on the VCCP methodology, please see Xiong & Cribben (2021).")
         (base32 "0bw951rkbxg6ccy1iqmaamx5fwa41c3pp8zyzk2njkcgi4w5b90m"))))
     (properties `((upstream-name . "VCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-matrix r-lme4))
     (native-inputs (list r-rmarkdown r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=VCA")
@@ -6364,6 +7010,9 @@ description of the features.")
         (base32 "1kadz36cw12qipf25dqykm58hh775wk3aq793ckphl7y9vqpvl36"))))
     (properties `((upstream-name . "VC2copula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vinecopula r-copula))
     (home-page "https://github.com/tnagler/VC2copula")
     (synopsis
@@ -6387,6 +7036,9 @@ from the @code{VineCopula} API can easily be converted.")
         (base32 "1nrdcvkdv38xl67qi9igcp3l5j4hckiyg3klg7z0rfj6zzpszm71"))))
     (properties `((upstream-name . "VBV")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VBV")
     (synopsis "The Generalized Berlin Method for Time Series Decomposition")
     (description
@@ -6414,6 +7066,9 @@ Applied Econometrics.  Springer 2014, p.  9-40.")
         (base32 "052d4vykm87z3d9rmh8bfx7qkcyx6gkrnsyb79ag1z9lb0gpky17"))))
     (properties `((upstream-name . "VBTree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tensora))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/CubicZebra/VBTree")
@@ -6440,6 +7095,9 @@ Zhang et al. (2020) <doi:10.35566/isdsa2019c8>.")
         (base32 "0h1kzz7rjh4wn4nbq1v3r4f6nrmlh0lscww2vwfz886x1w2c9sys"))))
     (properties `((upstream-name . "VBsparsePCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-mass))
     (home-page "https://cran.r-project.org/package=VBsparsePCA")
     (synopsis "The Variational Bayesian Method for Sparse PCA")
@@ -6448,7 +7106,7 @@ Zhang et al. (2020) <doi:10.35566/isdsa2019c8>.")
 proposed by Ning (2020) <@code{arXiv:2102.00305>}.  There are two algorithms:
 the PX-CAVI algorithm (if assuming the loadings matrix is jointly row-sparse)
 and the batch PX-CAVI algorithm (if without this assumption).  The outputs of
-the main function, V@code{BsparsePCA}(), include the mean and covariance of the
+the main function, @code{VBsparsePCA()}, include the mean and covariance of the
 loadings matrix, the score functions, the variable selection results, and the
 estimated variance of the random noise.")
     (license license:gpl3)))
@@ -6465,6 +7123,9 @@ estimated variance of the random noise.")
         (base32 "13qwqpnhdxd5lriz5p4w1dcng7msxbm4z2lfj93w7wcwidl93jw9"))))
     (properties `((upstream-name . "VBLPCM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-sna r-network r-mclust r-ergm))
     (home-page "https://www.r-project.org")
@@ -6487,6 +7148,9 @@ fast Variational Bayes approximation developed in Salter-Townshend and Murphy
         (base32 "0g7mmjba8pyfz92p7fgp9shpm9pclymacm45y3h6hlmsbpc7sh3p"))))
     (properties `((upstream-name . "VBJM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-statmod
                              r-rcppensmallen
@@ -6520,6 +7184,9 @@ inference and is computationally efficient.")
         (base32 "02371k5mvzqkj0x9sbbg3ah6kzrcr16bwm1qrci7nh06qy1hq3hg"))))
     (properties `((upstream-name . "VBel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://github.com/jlimrasc/VBel")
     (synopsis
@@ -6542,6 +7209,9 @@ W., & Bondell, H. D. (2023) <doi:10.1080/01621459.2023.2169701>.")
         (base32 "1vjc2bm3i41di1nxjplgb347cghnv9ymv43c83dydkywa3wzqx1d"))))
     (properties `((upstream-name . "vaxpmx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mass r-dplyr))
     (home-page "https://cran.r-project.org/package=vaxpmx")
     (synopsis "Vaccines Pharmacometrics")
@@ -6567,6 +7237,9 @@ time-to-event models\" by Julie Dudasova, Zdenek Valenta, and Jeffrey R. Sachs
         (base32 "1dbwr50jsx8m615wdlk437ac23y4dk9iqcihlbnail470hfdq5gw"))))
     (properties `((upstream-name . "vaultr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-r6 r-jsonlite r-httr r-getpass))
     (native-inputs (list r-knitr))
@@ -6593,6 +7266,9 @@ through several backends including user name/password and authentication via
         (base32 "1jmfd6qksvw1dnlp4dyb33mr7y9phq9yw0k9qjla0z1jqc0gsnps"))))
     (properties `((upstream-name . "vatcheckapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://vatcheckapi.com")
@@ -6616,6 +7292,9 @@ subscription.  You can find the full API documentation at
         (base32 "0hlac3p6mm7x88wdlqc93byx1s2a287kvhwzhz01pz4anap30683"))))
     (properties `((upstream-name . "vasicekreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mvtnorm r-gamlss-dist r-gamlss))
     (home-page "https://cran.r-project.org/package=vasicekreg")
     (synopsis "Regression Modeling Using Vasicek Distribution")
@@ -6640,6 +7319,9 @@ functions are written in C++ using Rcpp', developed by Eddelbuettel and Francois
         (base32 "04g5dfn8zlm8n8sxmdq9xgkf0qbvvznqx27nyan268s5wlnnabd6"))))
     (properties `((upstream-name . "vasicek")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://github.com/statcompute/vasicek")
     (synopsis "Miscellaneous Functions for Vasicek Distribution")
@@ -6660,6 +7342,9 @@ distribution with the intent to make the lives of risk modelers easier.")
         (base32 "1dfych3qhqq4qadizxjgh4lswnm47m2g59gv14c8j349ji94i8qh"))))
     (properties `((upstream-name . "varycoef")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spam
                              r-smoof
                              r-pbapply
@@ -6696,6 +7381,9 @@ package and its capabilities are described in (Dambon et al. (2021c)
         (base32 "1qxbx1hwylybm4nza6a7bqgck0krvbcvwabp1710dhkk7skfgk8x"))))
     (properties `((upstream-name . "varTestnlme")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-saemix
                              r-quadprog
                              r-nlme
@@ -6736,6 +7424,9 @@ Estelle Kuhn (2019) <doi:10.18637/jss.v107.i06>.")
         (base32 "0bnfyp6qh19nxsl9hzkz7ib9jgbv00vywzqwz6jvvcrxlii7023z"))))
     (properties `((upstream-name . "vartest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-suppdists r-psych))
     (home-page "https://cran.r-project.org/package=vartest")
     (synopsis "Tests for Variance Homogeneity")
@@ -6756,6 +7447,9 @@ variance homogeneity.")
         (base32 "09hysmxxawcbyfx6bia546aqydryl2r5p3ai7bvl6ghdckw5mnpl"))))
     (properties `((upstream-name . "VARshrink")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vars
                              r-strucchange
                              r-mvtnorm
@@ -6792,6 +7486,9 @@ S.-H. Kim (2016) <doi:10.1016/j.csda.2016.03.007> and Ni and Sun (2005)
         (base32 "03rg7zh1cq55vfc0ak6j7crs4n7fnbsxz8nllmplklx8wm47krf5"))))
     (properties `((upstream-name . "VarSelLCM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rcpparmadillo r-rcpp r-mgcv r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "http://varsellcm.r-forge.r-project.org/")
@@ -6818,6 +7515,9 @@ interpretation of the results.")
         (base32 "0hfcy00zynrg2vfqym17zfs3ggm4wvsvjf2qib4pbd53qfhzabwa"))))
     (properties `((upstream-name . "VARSELECTEXPOSURE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=VARSELECTEXPOSURE")
     (synopsis "Variable Selection Methods Including an Exposure Variable")
@@ -6838,6 +7538,9 @@ Effect.")
         (base32 "05dk2s4lzd4sxrwsfs2yqsj08qrdrfwx1fs07nb9a8sd0in6vlpj"))))
     (properties `((upstream-name . "varSel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=varSel")
     (synopsis
      "Sequential Forward Floating Selection using Jeffries-Matusita Distance")
@@ -6862,6 +7565,9 @@ Sensing, 51, 2632-2645, <DOI:10.1109/TGRS.2012.2216272>.")
         (base32 "1i8ldzb44wnlaww8a0k6sgfj1khgah5v445gi45d7vgv68rg0gcv"))))
     (properties `((upstream-name . "vars")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urca r-strucchange r-sandwich r-mass r-lmtest))
     (home-page "https://www.pfaffikus.de")
     (synopsis "VAR Modelling")
@@ -6883,6 +7589,9 @@ models and estimation of SVAR and SVEC models.")
         (base32 "06n8bb4h722k1d83hbzgjasl9jrcj7pwj895zdkkdalw7crim88m"))))
     (properties `((upstream-name . "VarReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-sn))
     (home-page "https://cran.r-project.org/package=VarReg")
     (synopsis "Semi-Parametric Variance Regression")
@@ -6905,6 +7614,9 @@ each.")
         (base32 "0h44m8850q4aksrqj11yr2a2qj37w8fhv0plpvdzcl087ifyj0g9"))))
     (properties `((upstream-name . "VarRedOpt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VarRedOpt")
     (synopsis "Framework for Variance Reduction")
     (description
@@ -6931,6 +7643,9 @@ package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
         (base32 "0f2k18v6ygb5cwd6jri9ws97zq47znrqacv2adkd2yqp3jhwd24f"))))
     (properties `((upstream-name . "varrank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fnn))
     (native-inputs (list r-knitr))
     (home-page "https://www.math.uzh.ch/pages/varrank/")
@@ -6961,6 +7676,9 @@ ranking with respect to a set of features of interest.")
         (base32 "034bycqwlz23rm2hm4i1qpqs1s74mk5axv965h09xj7yzvy9qjkm"))))
     (properties `((upstream-name . "varoc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-proc r-corrplot))
     (home-page "https://cran.r-project.org/package=varoc")
     (synopsis "Value Added Receiver Operating Characteristics Curve")
@@ -6983,6 +7701,9 @@ models.")
         (base32 "1xgy3n57pxhv6wrsw9h4dranxbw6hdpm1f9ra3kwlzrpz5c3289x"))))
     (properties `((upstream-name . "varjmcm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-jmcm r-expm))
     (home-page "https://cran.r-project.org/package=varjmcm")
     (synopsis
@@ -7010,6 +7731,9 @@ Maadooliat, M. Pourahmadi and J. Z. Huang (2013)
         (base32 "16y0fcisdf4pypwqshy9c45v57axa25k8cpp1pr2ij95zycs3g1k"))))
     (properties `((upstream-name . "varitas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list perl bwa bedtools))
     (propagated-inputs (list r-yaml
                              r-venndiagram
@@ -7043,6 +7767,9 @@ variant information.")
         (base32 "031k19ric26xvrva3rs9894n7ak87h96d2c4ip1lrr0lhhbk3awv"))))
     (properties `((upstream-name . "vaRiskScore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=vaRiskScore")
     (synopsis "VA CVD Risk Score")
     (description
@@ -7067,6 +7794,9 @@ X., Tsai, S., Ramanan, B., & Ebrahimi, R. (2021) <doi:10.1161/JAHA.120.019217>."
         (base32 "09cxigii0sj78yqd18p4mm9jjqvd1k2cgjy43pxpmqdhia0q2pmv"))))
     (properties `((upstream-name . "variosig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat r-sp r-gstat))
     (home-page "https://cran.r-project.org/package=variosig")
     (synopsis "Testing Spatial Dependence Using Empirical Variogram")
@@ -7089,6 +7819,9 @@ for hypothesis test.")
         (base32 "1bxlfqxi8iiv6raawl9668yhlmbak96ahd0ljzwrilnciqbclc2b"))))
     (properties `((upstream-name . "varImp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-party r-measures))
     (home-page "https://cran.r-project.org/package=varImp")
     (synopsis "RF Variable Importance for Arbitrary Measures")
@@ -7112,6 +7845,9 @@ extra functions exist (@code{varImpACC} and @code{varImpAUC}).")
         (base32 "1qdbl72a251q3l72d6zjd2ins2q924yvmj394qa7yvb7q2wkw5sw"))))
     (properties `((upstream-name . "variationalDCM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/khijikata/variationalDCM")
@@ -7147,6 +7883,9 @@ variational Bayesian estimation methods for various DCMs.")
         (base32 "13hkp6l64hi7xlll09gin7kdlkqrkn0lggrw8147zy9ivhknhk59"))))
     (properties `((upstream-name . "variantspark")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparklyr))
     (home-page "https://cran.r-project.org/package=variantspark")
     (synopsis "'Sparklyr' Extension for 'VariantSpark'")
@@ -7175,6 +7914,9 @@ read VCF files, run analyses and return the output in a spark data frame.")
         (base32 "1ihzwr8g7cmasicjw79fyksfm6kl9qzx04611a73ql0gp0pmq62y"))))
     (properties `((upstream-name . "VarianceGamma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-generalizedhyperbolic r-distributionutils))
     (home-page "https://cran.r-project.org/package=VarianceGamma")
     (synopsis "The Variance Gamma Distribution")
@@ -7199,6 +7941,9 @@ different sets of parameterizations for the variance gamma distribution.")
         (base32 "0jyw46qx2w19h02mrwv3w3n8qc1n4b3ckm38qly1y4a4w9ib6c2i"))))
     (properties `((upstream-name . "varian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstan r-mass r-gridextra r-ggplot2 r-formula))
     (home-page "https://github.com/ElkhartGroup/varian")
     (synopsis "Variability Analysis in R")
@@ -7219,6 +7964,9 @@ and use that as an outcome or a predictor in a second stage model.")
         (base32 "0djfpv46fhc3x4jvmjr93lyh4fxfzzvyrs3wjncx3h0z0s9n6w45"))))
     (properties `((upstream-name . "VariableScreening")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-gee r-expm r-energy))
     (home-page "https://cran.r-project.org/package=VariableScreening")
     (synopsis
@@ -7227,10 +7975,10 @@ and use that as an outcome or a predictor in a second stage model.")
      "This package implements variable screening techniques for ultra-high dimensional
 regression settings.  Techniques for independent (iid) data, varying-coefficient
 models, and longitudinal data are implemented.  The package currently contains
-three screen functions: @code{screenIID}(), @code{screenLD}() and
-@code{screenVCM}(), and six methods for simulating dataset:
-@code{simulateDCSIS}(), @code{simulateLD}, @code{simulateMVSIS}(),
-@code{simulateMVSISNY}(), @code{simulateSIRS}() and @code{simulateVCM}().  The
+three screen functions: @code{screenIID()}, @code{screenLD()} and
+@code{screenVCM()}, and six methods for simulating dataset:
+@code{simulateDCSIS()}, @code{simulateLD}, @code{simulateMVSIS()},
+@code{simulateMVSISNY()}, @code{simulateSIRS()} and @code{simulateVCM()}.  The
 package is based on the work of Li-Ping ZHU, Lexin LI, Runze LI, and Li-Xing ZHU
 (2011) <DOI:10.1198/jasa.2011.tm10563>, Runze LI, Wei ZHONG, & Liping ZHU (2012)
 <DOI:10.1080/01621459.2012.695654>, Jingyuan LIU, Runze LI, & Rongling WU (2014)
@@ -7251,6 +7999,9 @@ REIMHERR (2016) <DOI:10.1214/16-AOAS912>.")
         (base32 "13hji43m9nb7rpc8p4bz1qva5jhxwdk16mcprvhb5pxp78w7clyf"))))
     (properties `((upstream-name . "variables")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://ctm.R-forge.R-project.org")
     (synopsis "Variable Descriptions")
     (description "Abstract descriptions of (yet) unobserved variables.")
@@ -7268,6 +8019,9 @@ REIMHERR (2016) <DOI:10.1214/16-AOAS912>.")
         (base32 "1nwb6jlkgzmnhkfcfww3gci5p9g21wwg4z78n8xiq6r760byaz67"))))
     (properties `((upstream-name . "variability")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=variability")
     (synopsis "Genetic Variability Analysis for Plant Breeding Research")
     (description
@@ -7291,6 +8045,9 @@ Chaudhary, B.D. (1977, ISBN:81766330709788176633079).")
         (base32 "0i6nsxl5w4zipzrmdvx8plmxr33n405w2qhks3s7zzs3kcys32v6"))))
     (properties `((upstream-name . "varEst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sam r-lm-beta r-glmnet r-caret))
     (home-page "https://cran.r-project.org/package=varEst")
     (synopsis "Variance Estimation")
@@ -7312,6 +8069,9 @@ Bootstrap-refitted cross validation, Ensemble method.")
         (base32 "0k65ip5q4zgyklvn8mbc1ykz7kpfr5xvz041g1pq88f43g2sgv4b"))))
     (properties `((upstream-name . "VaRES")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VaRES")
     (synopsis
      "Computes Value at Risk and Expected Shortfall for over 100 Parametric Distributions")
@@ -7335,6 +8095,9 @@ Afuecheta (2015) <doi:10.1080/03610918.2014.944658> for more details.")
         (base32 "16j9p2a143y4hqclsv1mig0fccrzjx2r0lll0wz8isjp9x1wzjv8"))))
     (properties `((upstream-name . "VarED")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VarED")
     (synopsis "Variance Estimation using Difference-Based Methods")
     (description
@@ -7354,6 +8117,9 @@ difference-based estimation functions.")
         (base32 "0jqls76xhhxc5hppy3pq5wkj9gjx3g3pzfbhnis7k10ysn76a1qj"))))
     (properties `((upstream-name . "vardpoor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-surveyplanning
                              r-stringr
                              r-mass
@@ -7393,6 +8159,9 @@ of variation, the margin of error, confidence interval, design effect.")
         (base32 "07i0wv84sw035bpjil3cfw69fdgbcf2j8wq4k22narkrz83iyi2z"))))
     (properties `((upstream-name . "vardiag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/edzer/vardiag/")
     (synopsis "Variogram Diagnostics")
     (description "Interactive variogram diagnostics.")
@@ -7410,6 +8179,9 @@ of variation, the margin of error, confidence interval, design effect.")
         (base32 "1g28rcmlm16yiz156rmdslvhy173pazij0lw7b5gxqv3dgl4mcd0"))))
     (properties `((upstream-name . "VARDetect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsevar
                              r-rcpparmadillo
                              r-rcpp
@@ -7445,6 +8217,9 @@ algorithms and related extensions from Safikhani and Shojaie (2020)
         (base32 "0knmfq3pn38j8p29j6sqapdv3g5335si3gwiw932ml5z49a8ga5m"))))
     (properties `((upstream-name . "varclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-pesel r-foreach r-dorng
                              r-doparallel))
     (native-inputs (list r-knitr))
@@ -7470,6 +8245,9 @@ initializations of cluster centers.")
         (base32 "0sjna51mz433s24dkjcq2aal6ss41gx6xlm2l45rm6s1q1k4m87f"))))
     (properties `((upstream-name . "varbvs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-nor1mix r-matrix r-latticeextra
                              r-lattice))
     (native-inputs (list r-knitr))
@@ -7499,6 +8277,9 @@ over a million variables and thousands of samples.")
         (base32 "0gcynwc0vx7qlp3z0pcc4i7mjlnxkwy8ydxz2wr244fw32qgp4kq"))))
     (properties `((upstream-name . "varbin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart))
     (home-page "https://cran.r-project.org/package=varbin")
     (synopsis "Optimal Binning of Continuous and Categorical Variables")
@@ -7531,6 +8312,9 @@ functional forms and maximum information value.")
         (base32 "16z66rx7xq5zan8pnw100c9r5syw1ml4hgzi9mch52aia23v21p9"))))
     (properties `((upstream-name . "varband")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/hugogogo/varband")
@@ -7553,6 +8337,9 @@ available at <https://arxiv.org/abs/1604.07451>.")
         (base32 "0sz4r4c9zzz1p77v7vcsl8w5gldy9mlipf64fjiwdrddgwrv4rwd"))))
     (properties `((upstream-name . "VAR.spec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VAR.spec")
     (synopsis
      "Allows Specifying a Bivariate VAR (Vector Autoregression) with Desired Spectral Characteristics")
@@ -7596,6 +8383,9 @@ by leakage.")
         (base32 "03zybsn28r6jz8rshmifgqavx4kmfvj92wbqjf5fvfj4fypis8kx"))))
     (properties `((upstream-name . "VAR.etp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=VAR.etp")
     (synopsis "VAR Modelling: Estimation, Testing, and Prediction")
     (description
@@ -7615,6 +8405,9 @@ testing, prediction for stationary vector autoregressive models.")
         (base32 "18icwn62mpjjrfn7y19svyipq1xziz3vag5vmgp7wxy5i8q5kvch"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib
                   proj
                   pcre2
@@ -7647,6 +8440,9 @@ only what GDAL does, to enable developing further tools.")
         (base32 "01di1j36npl7vnyhgsagvyf6j8bxcw867dwf9dgi7l1328s7lf0l"))))
     (properties `((upstream-name . "vanquish")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-ggplot2 r-e1071 r-changepoint))
     (home-page "https://cran.r-project.org/package=vanquish")
     (synopsis "Variant Quality Investigation Helper")
@@ -7672,6 +8468,9 @@ support vector machine, the contamination of a sample can be detected.")
         (base32 "0fzs2w2rqmdl4a595xi34l7b0sw68yik3yv4mxzqfznwsxiaj8m4"))))
     (properties `((upstream-name . "vannstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rstatix
                              r-rlang
@@ -7689,9 +8488,10 @@ support vector machine, the contamination of a sample can be detected.")
     (description
      "Simplifies functions assess normality for bivariate and multivariate statistical
 techniques.  Includes functions designed to replicate plots and tables that
-would result from similar calls in SPSS', including hst(), box(), qq(), tab(),
-cormat(), and residplot().  Also includes simplified formulae, such as mode(),
-scatter(), p.corr(), ow.anova(), and rm.anova().")
+would result from similar calls in SPSS', including @code{hst()}, @code{box()},
+@code{qq()}, @code{tab()}, @code{cormat()}, and @code{residplot()}.  Also
+includes simplified formulae, such as @code{mode()}, @code{scatter()},
+@code{p.corr()}, @code{ow.anova()}, and @code{rm.anova()}.")
     (license license:gpl3)))
 
 (define-public r-vangogh
@@ -7706,6 +8506,9 @@ scatter(), p.corr(), ow.anova(), and rm.anova().")
         (base32 "1ny4dgwkk54pgwgg3lwcv8vcdnizlajdck68ihpzh2s1yz4n38bm"))))
     (properties `((upstream-name . "vangogh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cherylisabella/vangogh")
@@ -7725,6 +8528,9 @@ scatter(), p.corr(), ow.anova(), and rm.anova().")
         (base32 "06lfxcn5f042vkxprkagfcwp0dlm5pgw82k63a89ya9yfq71xhsw"))))
     (properties `((upstream-name . "vandalico")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rocr))
     (home-page "https://cran.r-project.org/package=vandalico")
     (synopsis "Evaluation of Presence-Absence Models")
@@ -7749,6 +8555,9 @@ the representativeness effect in presence-absence models.  Methods Ecol.  Evol,
         (base32 "1dc6vcszck1kk4kc910kvvcgzva5f35hcqs69mllws8bs899la58"))))
     (properties `((upstream-name . "VancouvR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urltools
                              r-tibble
                              r-sf
@@ -7781,6 +8590,9 @@ and access data and geographic records.")
         (base32 "137sdv4shmjg1cpndjknrys2jkvyq3p9l11nrdh0bzp9xxc1wkh1"))))
     (properties `((upstream-name . "vampyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-semplot
                              r-psych
                              r-pcovr
@@ -7811,6 +8623,9 @@ described in Ferrando, Lorenzo-Seva & Chico (2009)
         (base32 "04kkli4xzf3gzvs215lzch8bl877cdq3awh3mz1k321zhsa1d0jn"))))
     (properties `((upstream-name . "vamc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vamc")
@@ -7836,6 +8651,9 @@ large variable annuities.  The main valuation methodology was proposed by Gan
         (base32 "1nl4kzp3j424cy6m5p8n9lf742vls2aw60ywy6dig4963nl4jdkh"))))
     (properties `((upstream-name . "VAM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=VAM")
     (synopsis "Variance-Adjusted Mahalanobis")
@@ -7856,6 +8674,9 @@ RNA sequencing data.")
         (base32 "06cb1hz1gp5gzbxbnv7306fyvvczggnaclab9llsbvfnmacbc2k5"))))
     (properties `((upstream-name . "valueSetCompare")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2 r-eq5dsuite r-dplyr))
     (home-page "https://cran.r-project.org/package=valueSetCompare")
     (synopsis "Comparing HRQoL Instrument Value Sets")
@@ -7884,6 +8705,9 @@ using cross-sectional data with external health anchors.")
         (base32 "1mmk60njwbylgp3nn5lkbkvyw6xkq4gg9k18smjlr47ys6bn6k4p"))))
     (properties `((upstream-name . "valuemap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-leaflet
                              r-htmltools
@@ -7910,6 +8734,9 @@ analysts efforts & time with pre-set visualize options.")
         (base32 "1w1l07s1rfxc1ba6kdq0l1vmb2qib6gmdm91706cmy1azfa92n4d"))))
     (properties `((upstream-name . "valueEQ5D")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=valueEQ5D")
@@ -7950,6 +8777,9 @@ Hout et al (2012) <doi: 10.1016/j.jval.2012.02.008>.")
         (base32 "0rlv8agm9ng4jcb9ixqifh7kjczvkx7047brq8yf9kg7rb8mzgpz"))))
     (properties `((upstream-name . "valottery")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=valottery")
     (synopsis "Results from the Virginia Lottery Draw Games")
     (description
@@ -7969,6 +8799,9 @@ downloaded from https://www.valottery.com/.")
         (base32 "06vczszpkipsxfs7h6ld33vvxb5ci62rwg3cglwy3lcfifhbnsfi"))))
     (properties `((upstream-name . "valorate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "http://bioinformatica.mty.itesm.mx/valorate")
     (synopsis "Velocity and Accuracy of the LOg-RAnk TEst")
@@ -7996,6 +8829,9 @@ analysis of large datasets in few minutes
         (base32 "1fdaljdfvfmqarxdyjs9pcd8ji2z9i379vcxf65jvnhiaqlsms57"))))
     (properties `((upstream-name . "valmetrics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=valmetrics")
     (synopsis "Metrics and Plots for Model Evaluation")
@@ -8018,6 +8854,9 @@ Johanna Wetterlind, Mats Soderstrom and Bo Stenberg (2021).
         (base32 "04kcisl7xwxzinqi0rzm3ixf814l2wihhpinnncna6sffzd9g3xd"))))
     (properties `((upstream-name . "validmind")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown
                              r-reticulate
                              r-plotly
@@ -8047,6 +8886,9 @@ into trained models all from an R environment.")
         (base32 "1glcvzrbc7glxmbmas3zzb114a5cfl7gsf7xlxaifrrgvcahrvnx"))))
     (properties `((upstream-name . "VALIDICLUST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr r-diptest))
     (home-page "https://cran.r-project.org/package=VALIDICLUST")
     (synopsis "VALID Inference for Clusters Separation Testing")
@@ -8071,6 +8913,9 @@ testing: valid inference and practical considerations\",
         (base32 "16pgqk96daz0dgsq2r9kfl6mkc4fffkai0ir1sh2js9v6d5c74k0"))))
     (properties `((upstream-name . "validatetools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-validate r-lpsolveapi))
     (home-page "https://github.com/data-cleaning/validatetools")
     (synopsis "Checking and Simplifying Validation Rule Sets")
@@ -8092,6 +8937,9 @@ set a rules formulated with validate'.")
         (base32 "0pp2zan5ri3bh4ianqdzgylwbq53n7zcd3pxk85rrqx0jxyj3fy9"))))
     (properties `((upstream-name . "validatesuggest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-whisker r-validate r-rpart))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/data-cleaning/validatesuggest")
@@ -8114,6 +8962,9 @@ validate'.")
         (base32 "16lcbn853rfnyh8hlvjdxh4abx6wkzsn876fh4mlfkpbcrnmp0ps"))))
     (properties `((upstream-name . "validateIt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm r-snowballc r-rlang r-pymturkr r-here))
     (home-page "https://cran.r-project.org/package=validateIt")
     (synopsis "Validating Topic Coherence and Topic Labels")
@@ -8140,6 +8991,9 @@ information, please visit
         (base32 "0c7f33cm6v0rngbpgdkkqzjf3v024lzk6fjn6xd5sbnlbfrrkiqz"))))
     (properties `((upstream-name . "validate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-settings))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/data-cleaning/validate")
@@ -8166,6 +9020,9 @@ file as well.  See also Van der Loo and De Jonge (2018)
         (base32 "01ghnkkhqgjllpwdvphcqymps7jq3wd919rplk092iiwwq1mpb9m"))))
     (properties `((upstream-name . "validata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -8206,6 +9063,9 @@ kind of overlap or mapping exists between 2 columns?")
         (base32 "00c0hkjiv8n7mksx6sknb4xkkivxr1ml31k697csv4imwrk09dy5"))))
     (properties `((upstream-name . "validann")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-moments))
     (home-page "http://github.com/gbhumphrey1/validann")
     (synopsis "Validation Tools for Artificial Neural Networks")
@@ -8228,6 +9088,9 @@ fitting feed-forward ANNs with a single hidden layer.")
         (base32 "1lgdcvbk5g8xq9b18aqfq434cvdcshl3b6s28sx4r3jb8fxkia26"))))
     (properties `((upstream-name . "valhallr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -8268,6 +9131,9 @@ be downloaded from <https://github.com/valhalla/valhalla>.")
         (base32 "0xgp3rzwyshjw8s9ncpals8naja7fc2yk81abl08gh43zp294scm"))))
     (properties `((upstream-name . "valet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr
                              r-purrr
                              r-magrittr
@@ -8296,6 +9162,9 @@ responses as a list.")
         (base32 "15z8234jhh7hv3gijrvy8hap6gdgvm6qll9b00qbji7vyc3dg4pg"))))
     (properties `((upstream-name . "VALERIE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rsamtools
                              r-plyr
@@ -8339,14 +9208,17 @@ by Wickham (2007) <https://CRAN.R-project.org/package=ggplot2>.")
         (base32 "028sm53cvsspbjdyr74xzbwjn96542x9vglhnlk531v6a6xscwg5"))))
     (properties `((upstream-name . "valentine")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openai r-glue))
     (home-page "https://github.com/tadascience/valentine")
     (synopsis "Spread the Love for R Packages with Poetry")
     (description
      "Uses @code{ChatGPT} <https://openai.com/> to create poems about R packages.
-Currently contains the roses() function to make \"roses are red, ...\" style poems
-and the prompt() function to only assemble the prompt without submitting it to
-@code{ChatGPT}'.")
+Currently contains the @code{roses()} function to make \"roses are red, ...\"
+style poems and the @code{prompt()} function to only assemble the prompt without
+submitting it to @code{ChatGPT}'.")
     (license license:expat)))
 
 (define-public r-valection
@@ -8361,6 +9233,9 @@ and the prompt() function to only assemble the prompt without submitting it to
         (base32 "0104zcg3cw57ksgmb321hnyv095mn3frxci9vikj1smwarpnrpzc"))))
     (properties `((upstream-name . "valection")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat))
     (home-page "http://labs.oicr.on.ca/boutros-lab/software/valection")
     (synopsis "Sampler for Verification Studies")
@@ -8386,6 +9261,9 @@ Valection: Design Optimization for Validation and Verification Studies; Biorxiv
         (base32 "03l4c6vbzaxcrzc0ykx52h420r8cp3vrqxzl8jzxq8c8a9ms1xsi"))))
     (properties `((upstream-name . "valaddin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lazyeval))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/egnha/valaddin")
@@ -8408,6 +9286,9 @@ interactive use.")
         (base32 "1bgpf0z23yqyaz7dfmqilyqvr5v4w891027xrlr0mk9grj4srmiq"))))
     (properties `((upstream-name . "vagam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm r-mvtnorm r-mgcv r-matrix r-gamm4))
     (home-page "https://cran.r-project.org/package=vagam")
     (synopsis "Variational Approximations for Generalized Additive Models")
@@ -8434,6 +9315,9 @@ Hui et al. (2018) <doi:10.1080/01621459.2018.1518235>.")
         (base32 "0zakpg5p9kif61d35as08f2dac3wncyvhpc83rqjp96g99wjf701"))))
     (properties `((upstream-name . "vagalumeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-purrr
                              r-magrittr
@@ -8460,6 +9344,9 @@ artists/bands.")
         (base32 "0bfbpdjnykvb9r0p28bz8lrqxksy4jvwnd28y6gdlprpisiipiic"))))
     (properties `((upstream-name . "vaersvax")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://gitlab.com/iembry/vaers")
     (synopsis
      "US Vaccine Adverse Event Reporting System (VAERS) Vaccine Data for Present")
@@ -8494,6 +9381,9 @@ about vaccination/immunization hazards, visit
         (base32 "0hvw7vbxs87c9xkdv3617fkjwz2dbawscbd7dgaixhdhcr3k823a"))))
     (properties `((upstream-name . "vaersNDvax")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://gitlab.com/iembry/vaersND")
     (synopsis
      "Non-Domestic Vaccine Adverse Event Reporting System (VAERS) Vaccine Data for Present")
@@ -8529,6 +9419,9 @@ hazards, visit <http://www.questionuniverse.com/rethink.html/#vaccine>.")
         (base32 "1xjak5xlgpk0ds4l825kq90dg6kk5i5al5zmjqjqn8b7xdgix8mf"))))
     (properties `((upstream-name . "vader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm))
     (home-page "https://cran.r-project.org/package=vader")
     (synopsis "Valence Aware Dictionary and sEntiment Reasoner (VADER)")
@@ -8551,6 +9444,9 @@ texts from other domains.  Hutto & Gilbert (2014)
         (base32 "0cmlvlz83gyga05g71hrnq4kpck9flq0qlhjviqqz9zrmljzin0x"))))
     (properties `((upstream-name . "vacuum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Sielinski/vacuum")
@@ -8576,6 +9472,9 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
         (base32 "1w8nc8rmp6d2553dc4gflqzh2cksd437daqcm5hzzs4w1vzp95qa"))))
     (properties `((upstream-name . "vachette")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
@@ -8612,6 +9511,9 @@ cohesive plots that can highlight model misspecification.")
         (base32 "1cvcfp8a229i3i1s725i9g5qgbaj22h9k69yyfpwmbjbp14lmgm7"))))
     (properties `((upstream-name . "vaccineff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-scales
                              r-rlang
@@ -8643,6 +9545,9 @@ vaccineff class.")
         (base32 "0pqgavah2bjb0mw8irgri9sglaff3assx10xmhqnixb4jig8d87r"))))
     (properties `((upstream-name . "vaccine")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-survml
                              r-survival

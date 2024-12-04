@@ -53,6 +53,9 @@
         (base32 "0anchmlgp4nwgr59k5ryi05fcq63d5b2aqs3nmnvr3p3rma16xq7"))))
     (properties `((upstream-name . "JWileymisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-robustbase
                              r-rms
@@ -94,6 +97,9 @@ distributions, and generic functions for residual and model diagnostics.")
         (base32 "0zh0dc6wqlrxn5r2yv9vkpyfb8xsbdidkjv9g6qr94fyxlbs4yci"))))
     (properties `((upstream-name . "jvnVaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=jvnVaR")
     (synopsis "Value at Risk")
     (description
@@ -113,12 +119,15 @@ the report: Value at Risk <researchgate.net>.")
         (base32 "1ixmz3pj18zddgah59iqd4zbm5praw0dvn6c93dn5mrwx92pa65c"))))
     (properties `((upstream-name . "jvcoords")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/seehuhn/jvcoords")
     (synopsis "Principal Component Analysis (PCA) and Whitening")
     (description
      "This package provides functions to standardize and whiten data, and to perform
 Principal Component Analysis (PCA).  The main advantage of this package over
-alternatives like prcomp() is, that jvcoords makes it easy to convert
+alternatives like @code{prcomp()} is, that jvcoords makes it easy to convert
 (additional) data between the original and the transformed coordinates.  The
 package also provides a class coords, which can represent affine coordinate
 transformations.  This class forms the basis of the transformations provided by
@@ -139,6 +148,9 @@ alternatives.")
         (base32 "0bd7sn4sn95kal5q2x1q78fsk1mhakr5fax3z6ny2yda2h266af9"))))
     (properties `((upstream-name . "JustifyAlpha")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-superpower
                              r-stringr
                              r-shinydashboard
@@ -169,6 +181,9 @@ Maier & Lakens (2021) <doi:10.31234/osf.io/ts4r6>).")
         (base32 "0zpmxcgaa0y5qpk82m4jmkljvfrsv8fm8dmzxhvblicyl28d33bs"))))
     (properties `((upstream-name . "justifier")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yum
                              r-yaml
                              r-purrr
@@ -201,6 +216,9 @@ machine-readable, facilitating efficient extraction and organisation.")
         (base32 "1g82g4lhdk8mf1v4j47y2pgdrryz4175djx42kmg85vw7mlpvlcj"))))
     (properties `((upstream-name . "just.install")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-remotes r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=just.install")
@@ -222,6 +240,9 @@ it will be skipped.")
         (base32 "1jv8vn826ii1mvpcikg5bhm2arjgr180y0rqy0qkmn4bsm3cbnqx"))))
     (properties `((upstream-name . "junctions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rcppparallel r-rcpp r-nloptr))
     (native-inputs (list r-knitr))
     (home-page "https//github.com/thijsjanzen/junctions")
@@ -246,6 +267,9 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2020,
         (base32 "0i84vpzgs9bj0idxxjl885x818hq23drxy0h2pl6zbyz2z1v331m"))))
     (properties `((upstream-name . "JUMP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=JUMP")
     (synopsis "Replicability Analysis of High-Throughput Experiments")
@@ -268,6 +292,9 @@ manuscript corresponding to this package [Lyu, P. et al., (2023),
         (base32 "0m1rn9ix66p5qgzhvlw1a7j91k21pc6kmfjr3p1c62fq6jdrzgip"))))
     (properties `((upstream-name . "JuliaFormulae")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rrapply))
     (home-page "https://cran.r-project.org/package=JuliaFormulae")
     (synopsis "Translate R Regression Model Formulae to 'Julia' Syntax")
@@ -292,6 +319,9 @@ where possible (or a modified string, if not a valid formula in R).")
         (base32 "1f1bh6acf88gxlkx3mzv0lrxz1ys4a55lbjw8aivqx8yvgk9ymb9"))))
     (properties `((upstream-name . "JuliaConnectoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=JuliaConnectoR")
     (synopsis "Functionally Oriented Interface for Integrating 'Julia' with R")
     (description
@@ -315,6 +345,8 @@ corresponding article <doi:10.18637/jss.v101.i06>.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -357,6 +389,9 @@ language like Julia'.")
         (base32 "0ynzxflz92y38z7bl9g8nhrgvz2ay716izpya398b29h4qfb1w4r"))))
     (properties `((upstream-name . "Julia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/msuzen/Julia")
     (synopsis "Fractal Image Data Generator")
     (description
@@ -376,6 +411,9 @@ plane in the given region and resolution.  Benoit B Mandelbrot (1982).")
         (base32 "0ap1nsyihlagc1yqvwr2x9s16kzb3c8azfi50mzv95275a5l3xb4"))))
     (properties `((upstream-name . "juicyjuice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8))
     (home-page "https://github.com/rich-iannone/juicyjuice")
     (synopsis "Inline CSS Properties into HTML Tags Using 'juice'")
@@ -402,6 +440,13 @@ these CSS transformations when given HTML text and it does so by using the
         (base32 "0vkbgbagcgaxj6k62b033ik85jnkzvshg8dm9cz7vq4yjqj3icip"))))
     (properties `((upstream-name . "juicr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-xml r-rcurl))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=juicr")
@@ -427,6 +472,9 @@ R-independent extraction reports as fully-embedded .html records.")
         (base32 "1fvplx2p8510ayl32l04db728fajyp06jcfzivm47v8px434f2pf"))))
     (properties `((upstream-name . "juicedown")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xfun
                              r-stringr
@@ -463,6 +511,13 @@ more about juicedown at <https://kenjisato.github.io/juicedown/>.")
         (base32 "1j2y44pfx9z2k169lh42b4dnfrrnk8jqsjn3wz4l9iscr6r91lx7"))))
     (properties `((upstream-name . "jubilee")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-xts
@@ -497,6 +552,9 @@ cycles, optimal interest rate, and recession forecasts.")
         (base32 "04g9r8pfvzkx7x1gjwlc93wrbpcwhk8cc7y0niqk3gg0z8q6vz7y"))))
     (properties `((upstream-name . "jtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-sandwich
                              r-rlang
@@ -530,6 +588,9 @@ models produced by the survey and lme4 packages are points of emphasis.")
         (base32 "1m7c0b4n9l8nbqgi4xgqkdxrn2k3zl0l2gi2gba03bgd6kdphq6j"))))
     (properties `((upstream-name . "jti")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparta r-rcpparmadillo r-rcpp r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mlindsk/jti")
@@ -553,6 +614,9 @@ the paper <doi:10.18637/jss.v111.i02>.")
         (base32 "14v0nvrfvxqf1lxcshk2apfkksnqgjvyg8kiybksnb1kpzrsnwm6"))))
     (properties `((upstream-name . "jtdm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-mvtnorm
                              r-mniw
@@ -584,6 +648,9 @@ et al. (2023) <doi:10.1111/geb.13706>.")
         (base32 "0jikzazdp6id72d5csplhsa2yrm9cb02f00bfzriyhgfl43v09mh"))))
     (properties `((upstream-name . "JSUparameters")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=JSUparameters")
     (synopsis "Estimate Parameters of the Best-Fitting JohnsonSU Distribution")
     (description
@@ -611,6 +678,8 @@ the Golden Section Search Method for Numerical Optimization\",
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -664,6 +733,8 @@ server side file system.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -701,6 +772,9 @@ R Markdown documents.")
         (base32 "1n5l6wz93bjhhhpikmvmjd5famxbrsk3d6z61bb7sp6xvslychlj"))))
     (properties `((upstream-name . "jstor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-tibble
@@ -734,6 +808,9 @@ full-texts delivered by Data for Research by JSTOR.")
         (base32 "136qzh5ymag7m6vyn9qq7yc9i3i4izlx6780ysvkkxclwamvc7rg"))))
     (properties `((upstream-name . "jstager")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-rvest
@@ -761,6 +838,9 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
         (base32 "13f407r2sxch736w8kwzxm4kbdyrz3q0z4a6fn698if8m6xvdiyv"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-tableone
                              r-survival
@@ -796,6 +876,9 @@ survey-weighted Cox model results for publication.")
         (base32 "0n13arzf063x0sw0kmm86bny440jpijan4lh1ikxayrz2skg8zbz"))))
     (properties `((upstream-name . "JSparO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma))
     (home-page "https://cran.r-project.org/package=JSparO")
     (synopsis
@@ -819,6 +902,9 @@ J@code{SparO}.")
         (base32 "0936nhm6zx4la7i6fwigz0kvgf9dirz422vhrzjr45f37pyfvkxy"))))
     (properties `((upstream-name . "jsonStrings")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-r6))
     (home-page "https://github.com/stla/jsonStrings")
     (synopsis "Manipulation of JSON Strings")
@@ -839,6 +925,9 @@ JSON string, merge two JSON strings, and more.")
         (base32 "0p0d3snl1971p5ikrkmwqrjjh4fy0b89qk3rnd1dayfb0r80xnnj"))))
     (properties `((upstream-name . "jsonstat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-jsonlite r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zedoul/jsonstat")
@@ -860,6 +949,9 @@ format for data dissemination.")
         (base32 "1szvi8c0r75jv7y2y1jsampb783svvx04x4rvyw8v9qkiw0qpfis"))))
     (properties `((upstream-name . "jsonNormalize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8 r-rstudioapi))
     (home-page "https://github.com/stla/jsonNormalize")
     (synopsis "Normalization of 'JSON' Strings")
@@ -883,6 +975,8 @@ provides RStudio addins for the same purpose.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -921,18 +1015,21 @@ expanding and compacting JSON-LD documents.")
         (base32 "19q8qgf4wnd3np12ajy180klpjy0g2csw5micwb4sl7qfzl6wc7j"))))
     (properties `((upstream-name . "json64")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (home-page "https://cran.r-project.org/package=json64")
     (synopsis
      "'Base64' Encode/Decode Package with Support for JSON Output/Input and UTF-8")
     (description
      "Encode/Decode base64', with support for JSON format, using two functions:
-j_encode() and j_decode().  Base64 is a group of similar binary-to-text encoding
-schemes that represent binary data in an ASCII string format by translating it
-into a radix-64 representation, used when there is a need to encode binary data
-that needs to be stored and transferred over media that are designed to deal
-with textual data, ensuring that the data will remain intact and without
-modification during transport.
+@code{j_encode()} and @code{j_decode()}.  Base64 is a group of similar
+binary-to-text encoding schemes that represent binary data in an ASCII string
+format by translating it into a radix-64 representation, used when there is a
+need to encode binary data that needs to be stored and transferred over media
+that are designed to deal with textual data, ensuring that the data will remain
+intact and without modification during transport.
 <https://developer.mozilla.org/en-US/docs/Web/API/@code{WindowBase64/Base64_encoding_and_decoding>}
 On the other side, JSON (@code{JavaScript} Object Notation) is a lightweight
 data-interchange format.  Easy to read, write, parse and generate.  It is based
@@ -941,10 +1038,10 @@ format that is completely language independent but uses conventions that are
 familiar to programmers of the C-family of languages, including C, C++, C#,
 Java, @code{JavaScript}, Perl, Python, and many others.  JSON structure is built
 around name:value pairs and ordered list of values. <https://www.json.org> The
-first function, j_encode(), let you transform a data.frame or list to a base64
-encoded JSON (or JSON string).  The j_decode() function takes a base64 string
-(could be an encoded JSON) and transform it to a data.frame (or list, depending
-of the JSON structure).")
+first function, @code{j_encode()}, let you transform a data.frame or list to a
+base64 encoded JSON (or JSON string).  The @code{j_decode()} function takes a
+base64 string (could be an encoded JSON) and transform it to a data.frame (or
+list, depending of the JSON structure).")
     (license license:expat)))
 
 (define-public r-json2args
@@ -959,14 +1056,17 @@ of the JSON structure).")
         (base32 "0n1kj1kll6x7ar00y32pf8z38z7z1bnj29nlv9dx068n4kmy89v7"))))
     (properties `((upstream-name . "json2aRgs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-jsonlite))
     (home-page "https://github.com/VForWaTer/json2aRgs")
     (synopsis "Parse Parameters Inside a Docker Container")
     (description
-     "The function get_parameters() is intended to be used within a docker container
-to read keyword arguments from a .json file automagically.  A tool.yaml file
-contains specifications on these keyword arguments, which are then passed as
-input to containerized R tools in the [tool-runner
+     "The function @code{get_parameters()} is intended to be used within a docker
+container to read keyword arguments from a .json file automagically.  A
+tool.yaml file contains specifications on these keyword arguments, which are
+then passed as input to containerized R tools in the [tool-runner
 framework](<https://github.com/hydrocode-de/tool-runner>).  A template for a
 containerized R tool, which can be used as a basis for developing new tools, is
 available at the following URL:
@@ -985,6 +1085,9 @@ available at the following URL:
         (base32 "0vb2n7shvnawj36cyacd8pnbr2lxpjjmcfagixcm00n8q74i81y7"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timeroc
                              r-survival
                              r-survidinri
@@ -1040,6 +1143,9 @@ survival analysis.")
         (base32 "0lgd00gvg4g6sbsnaaqzqa8c3wjf2h8mkijghx926p3591b19nv8"))))
     (properties `((upstream-name . "JSmediation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tibble
                              r-rlang
@@ -1072,6 +1178,9 @@ Judd. (2018) <doi:10.1037/pspa0000132>.")
         (base32 "0vcsay1jpjlfdwykad4hp319swr9lv1ajlcyhmiizwr1ph3f1az9"))))
     (properties `((upstream-name . "JSM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-statmod r-rcppeigen r-rcpp r-nlme))
     (home-page "https://cran.r-project.org/package=JSM")
     (synopsis
@@ -1094,6 +1203,9 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
         (base32 "00a0ggcm26gb0m1zm46ascd9hrd99mh83gqr858f4m3lj4p4fa6h"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-survey
                              r-scales
@@ -1104,8 +1216,9 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
     (home-page "https://github.com/jinseob2kim/jskm")
     (synopsis "Kaplan-Meier Plot with 'ggplot2'")
     (description
-     "The function jskm() creates publication quality Kaplan-Meier plot with at risk
-tables below.  svyjskm() provides plot for weighted Kaplan-Meier estimator.")
+     "The function @code{jskm()} creates publication quality Kaplan-Meier plot with at
+risk tables below. @code{svyjskm()} provides plot for weighted Kaplan-Meier
+estimator.")
     (license license:asl2.0)))
 
 (define-public r-jshintr
@@ -1120,6 +1233,9 @@ tables below.  svyjskm() provides plot for weighted Kaplan-Meier estimator.")
         (base32 "08j28c2ab9fh6g7qp2vl8j5hz5kkikvl2id979kv92ach9vranyd"))))
     (properties `((upstream-name . "jshintr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-htmlwidgets r-htmltools))
     (home-page "https://github.com/stla/jshintr")
     (synopsis "Lint 'JavaScript' Files")
@@ -1140,6 +1256,9 @@ addin.  The report appears in the RStudio viewer pane.")
         (base32 "1sw5bdf3mmnp3wqbnlifxh6ppb62rv6x46l5nfnxadmcv503c0f2"))))
     (properties `((upstream-name . "JSDNE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rvcg r-nnet r-molar r-mass r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=JSDNE")
@@ -1166,6 +1285,9 @@ Collection in Coimbra, and the CAL Milano Cemetery Skeletal Collection in Milan.
         (base32 "1rqy6xh6qhvmfgjnjlbkq71dr6c0fdwddvs7cbvv1p5qvf12zhx9"))))
     (properties `((upstream-name . "jSDM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-stringi
                              r-rcppgsl
@@ -1198,14 +1320,18 @@ computation efficiency.")
         (base32 "0hb63l10cwvpvix155d16v35lp1v88lp69f6q1s09njc6qdsg212"))))
     (properties `((upstream-name . "jScore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/liliulab/jscore")
     (synopsis "Calculates the j-Score Between Two Clustering Assignments")
     (description
-     "The jscore() function in the package calculates the J-Score metric between two
-clustering assignments.  The score is designed to address some problems with
-existing common metrics such as problem of matching.  The details of J-score is
-described in Ahmadinejad and Liu. (2021) <@code{arXiv:2109.01306>}.")
+     "The @code{jscore()} function in the package calculates the J-Score metric
+between two clustering assignments.  The score is designed to address some
+problems with existing common metrics such as problem of matching.  The details
+of J-score is described in Ahmadinejad and Liu. (2021)
+<@code{arXiv:2109.01306>}.")
     (license license:expat)))
 
 (define-public r-jsconsole
@@ -1220,6 +1346,9 @@ described in Ahmadinejad and Liu. (2021) <@code{arXiv:2109.01306>}.")
         (base32 "1jpa48xb7hh4ap25sqrl67rzqra53qhcfwpfgs6hmpjnrld8n3ha"))))
     (properties `((upstream-name . "JSconsole")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8 r-rstudioapi))
     (home-page "https://github.com/stla/JSconsole")
     (synopsis "'RStudio' Addin to Send 'JavaScript' Code to the 'V8' Console")
@@ -1243,6 +1372,8 @@ selected lines.  This is useful to test the code.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -1279,6 +1410,9 @@ optimize and analyze @code{JavaScript} code.")
         (base32 "0g3w65avys5chni0zlahzwqgv09z9na08yhay385ax33ddwrcrjv"))))
     (properties `((upstream-name . "jrvFinance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jrvarma/jrvFinance")
     (synopsis "Basic Finance; NPV/IRR/Annuities/Bond-Pricing; Black Scholes")
@@ -1302,6 +1436,9 @@ pricing and Greeks are also provided.")
         (base32 "03k5dgqqzhhd6n4pdpcyq0zy4dj35yj41c6wnz4pa2i0i16jgfdq"))))
     (properties `((upstream-name . "jrt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-psych
                              r-mirt
@@ -1335,6 +1472,9 @@ functions.")
         (base32 "1ai3maxl1gmgr9bvc813xnfz5lk9kgzm6a46p8iidjpnv5p42c4v"))))
     (properties `((upstream-name . "jrSiCKLSNMF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-umap
                              r-scran
                              r-rlang
@@ -1383,6 +1523,9 @@ details on the methods used in this package please see Ellis, Roy, and Datta
         (base32 "1y486bfqmfg3f22wm0lfk3lh20ljgi8qrgn5jji0f417wh48nf0x"))))
     (properties `((upstream-name . "jrich")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ape))
     (home-page "https://github.com/Dmirandae/jrich")
     (synopsis
@@ -1408,6 +1551,9 @@ conservation analysis.  The algorithm is described in: Miranda-Esquivel, D
         (base32 "0zqif6csh4r5vbcw1dl12x2psb27r5lv0k5z0vv8bk3xk5r6vwlq"))))
     (properties `((upstream-name . "jrc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-r6
@@ -1435,6 +1581,9 @@ session.")
         (base32 "0d926hngv4r6zl5f6yai3jwhl9hql2hv6ja3yjgplglkns66g4lh"))))
     (properties `((upstream-name . "JQL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest r-pdist r-caret))
     (home-page "https://cran.r-project.org/package=JQL")
     (synopsis "Jump Q-Learning for Individualized Interval-Valued Dose Rule")
@@ -1469,6 +1618,8 @@ Bootstrap.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -1507,6 +1658,9 @@ about @code{jQuery} @code{QueryBuilder} see <https://querybuilder.js.org/>.")
         (base32 "1vzqipxk019f9chm9nxcsifiv3i2cmqvwgyx45zrh2cxsrn8bhvk"))))
     (properties `((upstream-name . "jpstat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -1540,6 +1694,9 @@ statistics, and RESAS (Regional Economy and Society Analyzing System,
         (base32 "0q8adf582h92qwdwgh4dk53s8rixrrh96r8vzy6bwxvizqf0i3y8"))))
     (properties `((upstream-name . "jpmesh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-units
                              r-tibble
@@ -1571,6 +1728,9 @@ mesh code using ggplot2 and leaflet', etc.")
         (base32 "01x2iyc37pfd1rz4avgiv1ng1d5g4hpi4viv8y0pcb9rpv3dymw1"))))
     (properties `((upstream-name . "jpgrid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-units
                              r-tidyr
@@ -1606,6 +1766,9 @@ different scales, and vice versa.")
         (base32 "12rvp5bmlkwyr1gg336k655hp09gym0d2wwry70c1rz30x1sf2zs"))))
     (properties `((upstream-name . "JPEN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=JPEN")
     (synopsis
@@ -1627,6 +1790,9 @@ Covariance Matrices.")
         (base32 "0lm748kch50k9fh87z9r4pv0rcgb98hgshknm4wv3gmb4bm9zmlz"))))
     (properties `((upstream-name . "jpcity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tibble
                              r-stringr
@@ -1658,6 +1824,9 @@ city codes at a specific point in time.")
         (base32 "10ww6y3c9h3y2h8dpgq2asl1nyphkkl3xp3p3vj68nlnprkdanq9"))))
     (properties `((upstream-name . "joyn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lifecycle r-data-table r-collapse r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/randrescastaneda/joyn")
@@ -1681,6 +1850,9 @@ city codes at a specific point in time.")
         (base32 "0f3rr7aw20nvmlpqrq3wzgmr55lqdqhk3wphpqq7msgvaf1zrcl7"))))
     (properties `((upstream-name . "JOUSBoost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-rcpp r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=JOUSBoost")
     (synopsis "Implements Under/Oversampling for Probability Estimation")
@@ -1701,6 +1873,9 @@ used with machine learning methods such as @code{AdaBoost}, random forests, etc.
         (base32 "0cp319v6r70kralxblfwvii8glx040fxwiqbfrdq50cpyvf7vv5k"))))
     (properties `((upstream-name . "journalabbr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytable
                              r-stringr
                              r-stringi
@@ -1732,6 +1907,9 @@ that can be directly used for latex paper writing based on Rmd files.")
         (base32 "0pzlj9vcz7p3zcg2y32cir593x193cxswkc3y9d1xh58vamrgs60"))))
     (properties `((upstream-name . "jot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-cli))
     (home-page "http://christophertkenny.com/jot/")
     (synopsis "Jot Down Values for Later")
@@ -1757,6 +1935,9 @@ version histories.")
         (base32 "0si1mg325fwx9zgjdbqspw9v6prl5mn3iccg7vki4bpzmwhd953q"))))
     (properties `((upstream-name . "jose")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openssl r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://r-lib.r-universe.dev/jose")
@@ -1783,6 +1964,9 @@ OAuth 2.0, @code{LetsEncrypt}, and Github Apps.")
         (base32 "0q6kjk3mjxwbqvq3zz0ylpi1viznp9pxzngqpjzv5sibv0ndh0lf"))))
     (properties `((upstream-name . "josaplay")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-utf8 r-magrittr))
     (home-page "https://github.com/mrchypark/josaplay")
     (synopsis "Add Josa Based on Previous Letter in Korean")
@@ -1805,6 +1989,9 @@ determine which josa is appropriate.")
         (base32 "1vjxzbfs8a7kpmn2lb9dca67d4njmzjr3pl16s0r9ihmmxxwwili"))))
     (properties `((upstream-name . "JoSAE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme))
     (home-page "https://cran.r-project.org/package=JoSAE")
     (synopsis "Unit-Level and Area-Level Small Area Estimation")
@@ -1829,6 +2016,9 @@ vignette further explains the use of the implemented functions.")
         (base32 "1c5s12s3qbffk5rlmigmy5hhqd6ln43z5scn5vl4cc05ix64zh15"))))
     (properties `((upstream-name . "jordan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadform r-onion r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/jordan")
@@ -1854,6 +2044,9 @@ Hankin (2023) <doi:10.48550/@code{arXiv.2303.06062>}.")
         (base32 "0qnycf7yd1sas0v6jclmc1y0jq9bslqlf66mqyirpxcs2lsk0327"))))
     (properties `((upstream-name . "JOPS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spats
                              r-spam
                              r-semipar
@@ -1884,6 +2077,9 @@ Marx (2021, ISBN:978-1108482950).")
         (base32 "1l76bckjz5r1kdsh0s10i0gpca12rkfkp14346fn7avdcw73v23i"))))
     (properties `((upstream-name . "joinXL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timeseries
                              r-timedate
                              r-rjava
@@ -1897,13 +2093,13 @@ Marx (2021, ISBN:978-1108482950).")
     (home-page "http://github.com/yvonneglanville/joinXL")
     (synopsis "Perform Joins or Minus Queries on 'Excel' Files")
     (description
-     "This package performs Joins and Minus Queries on Excel Files @code{fulljoinXL}()
+     "This package performs Joins and Minus Queries on Excel Files @code{fulljoinXL()}
 Merges all rows of 2 Excel files based upon a common column in the files.
-@code{innerjoinXL}() Merges all rows from base file and join file when the join
-condition is met. @code{leftjoinXL}() Merges all rows from the base file, and
-all rows from the join file if the join condition is met. @code{rightjoinXL}()
+@code{innerjoinXL()} Merges all rows from base file and join file when the join
+condition is met. @code{leftjoinXL()} Merges all rows from the base file, and
+all rows from the join file if the join condition is met. @code{rightjoinXL()}
 Merges all rows from the join file, and all rows from the base file if the join
-condition is met. @code{minusXL}() Performs 2 operations source-minus-target and
+condition is met. @code{minusXL()} Performs 2 operations source-minus-target and
 target-minus-source If the files are identical all output files will be empty.
 Choose two Excel files via a dialog box, and then follow prompts at the console
 to choose a base or source file and columns to merge or minus on.")
@@ -1921,6 +2117,9 @@ to choose a base or source file and columns to merge or minus on.")
         (base32 "0297n9n5n6mjkc5lhbxy8ab5k5b23anj8kwhx73i4zzxbdh7y2h1"))))
     (properties `((upstream-name . "jointVIP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggrepel r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ldliao/jointVIP")
@@ -1955,6 +2154,9 @@ beginner friendly user introduction.")
         (base32 "0zilkxk30w3l9mwikmsgvpy5misjggs98c3bjrjy1pfc4b0is943"))))
     (properties `((upstream-name . "jointseg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixstats r-dnacopy r-acnr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mpierrejean/jointseg")
@@ -1980,6 +2182,9 @@ cancer studies.  The methods are described in Pierre-Jean, Rigaill and Neuvial
         (base32 "0z3icbmgz0j3a2gg4gsw9h6wr0gd54kh36q57a7z71hlsrniwyfn"))))
     (properties `((upstream-name . "jointPm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=jointPm")
     (synopsis "Risk Estimation Using the Joint Probability Method")
     (description
@@ -2002,6 +2207,9 @@ bivariate extreme value models as described in Zheng, Westra, and Sisson (2013)
         (base32 "0ibh7hqkpzlfk3bk4d2dd64jhr8cvw563k082vwnljiam7k5nj4b"))))
     (properties `((upstream-name . "jointNmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=jointNmix")
     (synopsis "Joint N-Mixture Models for Site-Associated Species")
     (description
@@ -2022,6 +2230,9 @@ through empirical Bayes methods.")
         (base32 "1cai5g63n11dirn9fldzkqxcnkxc20ndr9ygrr9rk0s1qz8x63pb"))))
     (properties `((upstream-name . "jointMeanCov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glasso))
     (home-page "https://cran.r-project.org/package=jointMeanCov")
     (synopsis "Joint Mean and Covariance Estimation for Matrix-Variate Data")
@@ -2043,6 +2254,9 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
         (base32 "04wswyp9pibhkmjksn9ndzymgj1sjmdj6wscpw1wj6hwsi6vrdmw"))))
     (properties `((upstream-name . "JointFPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-statmod
                              r-rstpm2
@@ -2075,6 +2289,9 @@ exposure groups, are also available.")
         (base32 "18x6rxaxhz9hcp6rfmjlanbfsc5q61p6xcxixnc8ayyxbdq7q6rf"))))
     (properties `((upstream-name . "jointDiag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/gouypailler/jointDiag")
     (synopsis "Joint Approximate Diagonalization of a Set of Square Matrices")
     (description
@@ -2101,6 +2318,9 @@ found in Gouy-Pailler et al (2010) <doi:10.1109/TBME.2009.2032162>.")
         (base32 "0md4rmb7f3k6zy1y8s43p14wwrx2bv3j5j03sn7qh9mhpyssl8hn"))))
     (properties `((upstream-name . "jointCalib")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survey
                              r-sampling
                              r-mathjaxr
@@ -2135,6 +2355,9 @@ be used.  See the paper by BerÄsewicz and Szymkowiak (2023) for details
         (base32 "1vckbn4y27bdc6176nnjpwa2wm6kyzxkvndf128jw4871964szp5"))))
     (properties `((upstream-name . "JointAI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-survival
                              r-rlang
@@ -2170,6 +2393,9 @@ help of the package rjags'.")
         (base32 "0i2lf4q5w3893wppcig85r3ljr84j0d2m2id9kw9g194c8qgaqmm"))))
     (properties `((upstream-name . "joint.Cox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=joint.Cox")
     (synopsis
@@ -2205,6 +2431,9 @@ also available.")
         (base32 "1r285jymjqqpzfj8cw7p6pc8fp33wih4y9i4zqc9w8517zx54agr"))))
     (properties `((upstream-name . "joinet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-palasso r-glmnet r-cornet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rauschenberger/joinet")
@@ -2232,6 +2461,9 @@ comparisons, install @code{remMap} from @code{GitHub}
         (base32 "07drhpyvsmmsbv4knx4ma91f773f48jf14lnpn8cdl5sslc6f4pp"))))
     (properties `((upstream-name . "joineRML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survival
                              r-rcpparmadillo
@@ -2276,6 +2508,9 @@ Medical Research Council (Grant number MR/M013227/1).")
         (base32 "0hf83115g5m0m1wv9yji2wvyzb5j4wrzbzkspdcswk9i4hkmp4h7"))))
     (properties `((upstream-name . "joineR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-statmod r-nlme r-mass r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/graemeleehickey/joineR/")
@@ -2308,6 +2543,9 @@ Research Council (Grant numbers G0400615 and MR/M013227/1).")
         (base32 "1my6fc4awrc822ibsvx3hiz4l49vp8dx0j05v56r7d27xizy8j0j"))))
     (properties `((upstream-name . "JoF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=JoF")
     (synopsis "Modelling and Simulating Judgments of Frequency")
@@ -2335,6 +2573,9 @@ decay, and presented frequency) that can be compared to empirical results.")
         (base32 "1i9n3r16pq6r4sy3fc1rxpil5ws8v2is0xdxafinvwr1hzkv1gz6"))))
     (properties `((upstream-name . "jocre")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsp r-plyr r-kernsmooth r-boot))
     (home-page "https://cran.r-project.org/package=jocre")
     (synopsis "Joint Confidence Regions")
@@ -2360,6 +2601,9 @@ well.")
         (base32 "0k1jdy5wdzdswzl6kz9d1r6imj3cqcmkyz7ka1d6pcbysjsj9ynn"))))
     (properties `((upstream-name . "JNplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-nlme r-ape))
     (home-page "https://github.com/kenstoyama/JNplots")
     (synopsis "Visualize Outputs from the 'Johnson-Neyman' Technique")
@@ -2382,6 +2626,9 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
         (base32 "0iqp762fp6qks0jrvqk6z1f6bc61zyda1znfkw02cwbqs1rlm3c4"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://sjentsch.github.io/jmvReadWrite/")
@@ -2406,6 +2653,9 @@ easy transfer of data and analyses between jamovi and R.")
         (base32 "02micn8g1l21x10sqcw6h2866drb8828723spvn3wg5gqm19f15p"))))
     (properties `((upstream-name . "jmvcore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-r6 r-jsonlite r-base64enc))
     (home-page "https://www.jamovi.org")
     (synopsis "Dependencies for the 'jamovi' Framework")
@@ -2426,6 +2676,9 @@ jamovi platform (see <https://www.jamovi.org> for more information).")
         (base32 "17zyl1cdkain0l1sl8i1ajysmhm60585w4bjrwjjafz2r0rpydxg"))))
     (properties `((upstream-name . "jmvconnect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-rcpp
                              r-rappdirs
@@ -2452,6 +2705,9 @@ spreadsheet (see <https://www.jamovi.org> for more information) from R.")
         (base32 "070bwzq9i3xznx44vlpxw41ja0ry9w08jdnyxf5i58ndshpf1jbz"))))
     (properties `((upstream-name . "jmv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcdextra
                              r-vcd
                              r-rocr
@@ -2497,6 +2753,9 @@ information).")
         (base32 "1vj9n1hsf780f7l0a22kmi3qm84j4dzjybjkh5zwh6bhwfjnjws3"))))
     (properties `((upstream-name . "jmuOutlier")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=jmuOutlier")
     (synopsis "Permutation Tests for Nonparametric Statistics")
     (description
@@ -2520,6 +2779,9 @@ triangular distributions.  Performs power calculations for the binomial test.")
         (base32 "0b2qllpfgs6q5fwfhxl5b4xdyzbvnja7ld766akf0xxznxvglkrg"))))
     (properties `((upstream-name . "jmotif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/jMotif/jmotif-R")
     (synopsis
@@ -2543,6 +2805,9 @@ discovery along with interpretable time series classification.")
         (base32 "0fcch7rg8gn92855smd7h2andr33h9dnccjy12w2bx0px8rnqa0s"))))
     (properties `((upstream-name . "Jmisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Jmisc")
     (synopsis "Julian Miscellaneous Function")
     (description "Some handy function in R.")
@@ -2560,6 +2825,9 @@ discovery along with interpretable time series classification.")
         (base32 "05phkwfb9v4g9jixlvbj6br7sbi64zvrgjwfr0v87ijddkxc9si9"))))
     (properties `((upstream-name . "JMI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=JMI")
     (synopsis "Jackknife Mutual Information")
@@ -2581,6 +2849,9 @@ provides the p-value for dependence tests.  See Zeng, X., Xia, Y. and Tong, H.
         (base32 "1n41vhr07ylqb393bsw8lrv1h77a10qshwfxrkyx2y1hsq1bh3iy"))))
     (properties `((upstream-name . "JMH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timeroc
                              r-survival
                              r-statmod
@@ -2618,6 +2889,9 @@ using an Expectation Maximization algorithm.")
         (base32 "1if1kxx8apgkbxpkjnlj2lpsfnyj2splsg1p3j5vxa7q6wx70f9j"))))
     (properties `((upstream-name . "jmetrik")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=jmetrik")
     (synopsis "Tools for Interacting with 'jMetrik'")
     (description
@@ -2644,6 +2918,9 @@ data type, item scoring, special data codes, and variable label.")
         (base32 "12y9g9m38qbvibay1pm0s9zyw5hxczdysm1hxcpjqi265z9wr9wd"))))
     (properties `((upstream-name . "JMdesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=JMdesign")
     (synopsis
      "Joint Modeling of Longitudinal and Survival Data - Power Calculation")
@@ -2665,6 +2942,9 @@ Sigma_theta, is unknown.")
         (base32 "15zrxgd5fgi4wzp4s963pnwj3vkgxs4ygqrcpncy9b6j2cxrivdc"))))
     (properties `((upstream-name . "jmdem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-statmod))
     (home-page "https://cran.r-project.org/package=jmdem")
     (synopsis "Fitting Joint Mean and Dispersion Effects Models")
@@ -2690,6 +2970,13 @@ power on the other.  Wu & Li (2016) <doi:10.1016/j.csda.2016.04.015>.")
         (base32 "1dpm94k2s2vx3dvd5rk7xrsq786phl0hq7xi9fjjxbr8qfmxhsck"))))
     (properties `((upstream-name . "jmcm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-roptim r-rcpparmadillo r-rcpp r-formula))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ypan1988/jmcm/")
@@ -2713,6 +3000,9 @@ algebra and @code{RcppArmadillo} glue.")
         (base32 "05923dckm91x7al1fglglqfr0iwra73ky2dg0z67qq4f6ikcrlsd"))))
     (properties `((upstream-name . "jmBIG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rstanarm
                              r-nlme
@@ -2751,6 +3041,9 @@ medical and health sciences.")
         (base32 "13p848ix1581p9yd6dgkifqj7bha8w2m7drkcz718bwmjlm83z61"))))
     (properties `((upstream-name . "JMbayes2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rcpparmadillo
                              r-rcpp
@@ -2782,6 +3075,9 @@ accommodated.  Rizopoulos (2012, ISBN:9781439872864).")
         (base32 "0s11jpzflc2zg60g4ffcw23c2f4zz3mzddrc2cl5y43xl2v304lb"))))
     (properties `((upstream-name . "JMbayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-xtable
                              r-survival
@@ -2815,6 +3111,9 @@ data using MCMC; Dimitris Rizopoulos (2016) <doi:10.18637/jss.v072.i07>.")
         (base32 "1na1jqm9ck6qwlk09f9ab34sf0kamgcay5a7rxclz5skrxzjffci"))))
     (properties `((upstream-name . "jmatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-memuse))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=jmatrix")
@@ -2850,6 +3149,9 @@ matrices of any standard data type.")
         (base32 "0cwripcb5j3x893j6v095dzzjr64q9ibp1wj0aq4cc8a51p0gjp8"))))
     (properties `((upstream-name . "jmastats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-units
                              r-tidyselect
@@ -2892,6 +3194,9 @@ handle earthquake record files.")
         (base32 "133s565gp18ddnbawhzix978p4yj11lp4vlaqs0dq52ww46f3byj"))))
     (properties `((upstream-name . "JM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-nlme r-mass))
     (home-page "http://jmr.r-forge.r-project.org/")
     (synopsis "Joint Modeling of Longitudinal and Survival Data")
@@ -2912,6 +3217,9 @@ data.")
         (base32 "0xagw84mgbqrdyz9h8d9fw2yibx7k9cp5y1pd8v835n4s10m8wx2"))))
     (properties `((upstream-name . "JLPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-stringr r-randtoolbox r-marqlevalg
                              r-lcmm))
     (native-inputs (list gfortran))
@@ -2937,6 +3245,9 @@ estimation.  See Saulnier et al, 2022 <doi:10.1016/j.ymeth.2022.03.003>.")
         (base32 "16k325cpsnvd4j97r8j2i8fwwd5mabizg7dbqnwxq5j8l2qr8b9w"))))
     (properties `((upstream-name . "jlmerclusterperm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list julia))
     (propagated-inputs (list r-lme4
                              r-juliaformulae
@@ -2972,6 +3283,9 @@ functionalities for interfacing with Julia from R powered by the
         (base32 "1xfz8x6vxfcia12vwyzfz4zwyh75fd37bjwwykwa8ap3hidf85zj"))))
     (properties `((upstream-name . "jlme")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list julia))
     (propagated-inputs (list r-mass r-juliaformulae r-juliaconnector
                              r-generics))
@@ -2998,6 +3312,9 @@ data frame summary functionalities for Julia regression models.")
         (base32 "0l8piz0m9iv9lbw35yx1ww0db0pv0qhbvkz4l36fwjsgnjlh8f6a"))))
     (properties `((upstream-name . "jlctree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rpart r-lme4))
     (home-page "https://cran.r-project.org/package=jlctree")
     (synopsis
@@ -3022,6 +3339,9 @@ association.  See Zhang and Simonoff (2018) <@code{arXiv:1812.01774>}.")
         (base32 "0y9yvnzg6xngz1fvzl5jm4yb1pg6wrp3id0gysv214wcznf3gna9"))))
     (properties `((upstream-name . "jjb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/coatless/jjb")
     (synopsis "Balamuta Miscellaneous")
     (description
@@ -3042,6 +3362,9 @@ scaling, and more!")
         (base32 "0pi85gl0knyi5r32bdmy2x0w805kczs41nx3r45bq0zs66g14fix"))))
     (properties `((upstream-name . "jipApprox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sampling))
     (home-page "https://cran.r-project.org/package=jipApprox")
     (synopsis "Approximate Inclusion Probabilities for Survey Sampling")
@@ -3064,6 +3387,9 @@ probabilities of a general sampling design as in Fattorini (2006)
         (base32 "0d65a85pain2h642h4dd7sry58jkn2rkmaavzwiixp63j0gmixn8"))))
     (properties `((upstream-name . "jinjar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-jsonlite r-fs r-cpp11 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://davidchall.github.io/jinjar/")
@@ -3087,6 +3413,9 @@ such as variables, loops, conditions and inheritance.")
         (base32 "1wadpcdca4pm56r8q22y4axmqdbb2dazsh2vlhjy73rpymqfcph4"))))
     (properties `((upstream-name . "jiebaRD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/qinwf/jiebaRD/")
     (synopsis "Chinese Text Segmentation Data for jiebaR Package")
     (description
@@ -3106,6 +3435,9 @@ speech tagging.  This package provides the data files required by @code{jiebaR}.
         (base32 "08v64xwr9jp4vh88x7y935khh4cmj8rwsjaxfd2c67n0445qppmd"))))
     (properties `((upstream-name . "jiebaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-jiebard))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/qinwf/jiebaR/")
@@ -3126,6 +3458,9 @@ speech tagging.  This package provides the data files required by @code{jiebaR}.
         (base32 "08ah7bjwkxm8fdk1s0vj3lpc7dvgz9llyhh4z9xsgpf4w98rwsvb"))))
     (properties `((upstream-name . "JICO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist r-nleqslv r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=JICO")
     (synopsis "Joint and Individual Regression")
@@ -3152,6 +3487,9 @@ cross-validation function to perform hyperparameter tuning.")
         (base32 "1k0jcfjxn5qf67533br3p6zj464knnakxvr563lvgvqxjv4j8sh2"))))
     (properties `((upstream-name . "jgsbook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statip r-jsonlite r-httr r-curl))
     (home-page "https://cran.r-project.org/package=jgsbook")
     (synopsis
@@ -3173,6 +3511,9 @@ by grosse Schlarmann (2010-2024) <https://www.produnis.de/R/>.")
         (base32 "1rcmbgxwzwhzh5fa0lghjdllcfkpirdavdghvxx5fjysn7a38mjv"))))
     (properties `((upstream-name . "JGR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-javagd))
     (home-page "https://rforge.net/JGR/")
@@ -3195,6 +3536,9 @@ application which depends on your OS.")
         (base32 "0zsvr20vaxhkac2mdlqzd12xqpgw4yvx4bkqwgsbvhpl34pz7dy2"))))
     (properties `((upstream-name . "JGL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (home-page "https://cran.r-project.org/package=JGL")
     (synopsis
@@ -3222,6 +3566,9 @@ Witten DM. (2013) <doi:10.1111/rssb.12033>.")
         (base32 "08655vgfb2ll8hwjsj5lsw4849rahn3blisdqn8bwfhclrwd24xn"))))
     (properties `((upstream-name . "JFM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rvcg
                              r-rockfab
                              r-rgl
@@ -3248,6 +3595,9 @@ derived from point cloud and makes data available for structural analysis.")
         (base32 "06ll163l0qr03vjp3jdlq4g7lff1hi3shmbqicqm9yr00ip94jj6"))))
     (properties `((upstream-name . "JFE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts))
     (home-page "https://cran.r-project.org/package=JFE")
     (synopsis
@@ -3270,6 +3620,9 @@ enhanced procedures for computing the investment performance indices of Bacon
         (base32 "19vr5146fp0gnsjp4nif2gms27f7x98awjvyi05fxklddkrl6j44"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncdist
                              r-stanheaders
                              r-rstantools
@@ -3311,6 +3664,9 @@ Derks et al. (2024) <doi:10.2308/AJPT-2021-086>, and Derks et al. (2022)
         (base32 "100lj4ydw7gx93lmnckxivb65yzjwi0cn5l070ss8532wrm297r3"))))
     (properties `((upstream-name . "jewel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-smut
                              r-purrr
                              r-matrixcalc
@@ -3341,6 +3697,9 @@ Implementation of the method described in Angelini, De Canditiis and Plaksienko
         (base32 "0c2vvayci7jm1p97ccgb5nccrgvdyid4fgh12cab18xwrwx1hzxx"))))
     (properties `((upstream-name . "jetpack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-renv r-remotes r-docopt r-desc))
     (home-page "https://github.com/ankane/jetpack")
     (synopsis "Friendly Package Manager")
@@ -3363,6 +3722,9 @@ dependencies with a single function.")
         (base32 "0yq1nkaakzajjdk3w6hzikl6pwqx0546mcb1ik688b0l55vmwphc"))))
     (properties `((upstream-name . "jenga")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tictoc
                              r-scales
                              r-rfast
@@ -3401,6 +3763,9 @@ search.")
         (base32 "15n0k0i1wwp72g8zqrjmglnckab3p65q3rnpg6d6h8hjcpv82i7g"))))
     (properties `((upstream-name . "jeek")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pcapp r-lpsolve r-igraph))
     (home-page "https://github.com/QData/jeek")
     (synopsis
@@ -3432,6 +3797,9 @@ Related Sparse Gaussian Graphical Models\" (ICML 2018) <@code{arXiv:1806.00548>}
         (base32 "1ylpq3b6vqi8gj2q2vfkl9zshkwcn08mqms9rpvlwc34wrp09ian"))))
     (properties `((upstream-name . "jds.rmd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown r-bookdown))
     (home-page "https://github.com/wenjie2wang/jds.rmd")
     (synopsis "R Markdown Templates for Journal of Data Science")
@@ -3452,6 +3820,13 @@ Science.")
         (base32 "14wprvxjyx1da1642z11wkzjiyxd5rbpaw1mzq4x6aw53dvh1kgv"))))
     (properties `((upstream-name . "Jdmbs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-png r-igraph r-ggplot2))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=Jdmbs")
@@ -3480,6 +3855,9 @@ affect each other.")
         (base32 "19gczsf3b00rm1hbqf2azsxh698h0xbbdn3fx3nj5hr7ka24chzr"))))
     (properties `((upstream-name . "jdenticon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yesno
                              r-processx
                              r-magick
@@ -3506,6 +3884,9 @@ reduce user dependencies.")
         (base32 "1bizsg3j29zf79qngxs17pvm0z2ivf664xlg89snzfnq6vcgkcxl"))))
     (properties `((upstream-name . "JDCruncheR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-openxlsx))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/InseeFr/JDCruncheR")
@@ -3529,6 +3910,9 @@ series scores).  The latest version of the cruncher can be downloaded here:
         (base32 "0n4lb1y3h4lwslrfb8shaaxfr4yb5b9b1045aplnirl31wvap5wq"))))
     (properties `((upstream-name . "Jcvrisk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Jcvrisk")
     (synopsis "Risk Calculator for Cardiovascular Disease in Japan")
     (description
@@ -3548,6 +3932,9 @@ cardiovascular disease from various risk models (Hisayama, Suita, EPOCH Japan)."
         (base32 "1i7853i8k03nq7ax9rypm9qcl5qgyddblgbfjp3yxi1s3a6bkwk1"))))
     (properties `((upstream-name . "JCRImpactFactor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr))
     (home-page "https://cran.r-project.org/package=JCRImpactFactor")
     (synopsis
@@ -3570,6 +3957,9 @@ journals only that were included Journal Citation Reports JCR'.")
         (base32 "120hhysgnb5992ss2ays7ksyy0xb251lsxgnxihc11h2rqg6wqv8"))))
     (properties `((upstream-name . "jcp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=jcp")
     (synopsis "Joint Change Point Detection")
     (description
@@ -3593,6 +3983,9 @@ of changes in expectation and variance, Scandinavian Journal of Statistics, DOI
         (base32 "13rwxavq6zrzq9k6x436ydl1rr98qz7ab6npkg82hwqvx3k30n57"))))
     (properties `((upstream-name . "jcolors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://jaredhuling.org/jcolors/")
@@ -3615,6 +4008,9 @@ by the package author.")
         (base32 "02zppiyq3gy551zi1g00gam1w4y1wgzn5zi9wrcz8yw915dla0ix"))))
     (properties `((upstream-name . "jcext")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sp
                              r-rworldmap
@@ -3643,6 +4039,9 @@ during the period considered for the analysis.  See Otero et al., (2017)
         (base32 "1b8khcdxz77rd7k87462vwwykr2gi5lv0lzj7nm9famid3q7gh1l"))))
     (properties `((upstream-name . "jcalendaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/indenkun/jcalendaR")
     (synopsis
      "Interconversion Between the Japanese Calendar System and the Western Calendar")
@@ -3665,6 +4064,9 @@ calculate each calendar method, it converts to the Julian Day Number.")
         (base32 "1v90lzp3md56r4mjskipq4kjvi3szv0qqcdya1hmbjklgmkygvvl"))))
     (properties `((upstream-name . "JBrowseR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-readr
                              r-reactr
@@ -3700,6 +4102,9 @@ custom theme.")
         (base32 "0qyszpw9bvz29dgf3wqx61h4rzpp0v7y63k214dz53jbrcd2wak0"))))
     (properties `((upstream-name . "Jaya")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/neerajdhanraj/Jaya")
     (synopsis
@@ -3726,6 +4131,9 @@ early stopping.  For further details, see R.V. Rao (2016)
         (base32 "1wl31k02x3j9hpf8c8gsmi3k3b3vz9a3y38pz6wa9r41r791rnr1"))))
     (properties `((upstream-name . "JavaGD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjava))
     (home-page "https://www.rforge.net/JavaGD/")
     (synopsis "Java Graphics Device")
@@ -3747,6 +4155,9 @@ Simple AWT and Swing implementations are included.")
         (base32 "01nqj3w690gn4iqy35v215451agfx1dfgc5vbmmc5wp5r2rk2p09"))))
     (properties `((upstream-name . "JATSdecoder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-opennlp r-nlp))
     (home-page "https://github.com/ingmarboeschen/JATSdecoder")
     (synopsis "Metadata and Text Extraction and Manipulation Tool Set")
@@ -3756,16 +4167,17 @@ and study characteristics from scientific articles in NISO-JATS format.
 Articles in PDF format can be converted to NISO-JATS with the Content
 @code{ExtRactor} and MINEr ('CERMINE',
 <https://github.com/@code{CeON/CERMINE>}).  For convenience, two functions
-bundle the extraction heuristics: JATSdecoder() converts NISO-JATS'-tagged XML
-files to a structured list with elements title, author, journal, history, DOI',
-abstract, sectioned text and reference list.  study.character() extracts
-multiple study characteristics like number of included studies, statistical
-methods used, alpha error, power, statistical results, correction method for
-multiple testing, software used.  An estimation of the involved sample size is
-performed based on reports within the abstract and the reported degrees of
-freedom within statistical results.  In addition, the package contains some
-useful functions to process text (text2sentences(), text2num(), ngram(),
-strsplit2(), grep2()).  See BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z>
+bundle the extraction heuristics: @code{JATSdecoder()} converts
+NISO-JATS'-tagged XML files to a structured list with elements title, author,
+journal, history, DOI', abstract, sectioned text and reference list.
+@code{study.character()} extracts multiple study characteristics like number of
+included studies, statistical methods used, alpha error, power, statistical
+results, correction method for multiple testing, software used.  An estimation
+of the involved sample size is performed based on reports within the abstract
+and the reported degrees of freedom within statistical results.  In addition,
+the package contains some useful functions to process text
+@code{(text2sentences()}, @code{text2num()}, @code{ngram()}, @code{strsplit2()},
+@code{grep2()}).  See BÃ¶schen, I. (2021) <doi:10.1007/s11192-021-04162-z>
 BÃ¶schen, I. (2021) <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
 <doi:10.1038/s41598-022-27085-y>.")
     (license license:gpl3)))
@@ -3782,6 +4194,9 @@ BÃ¶schen, I. (2021) <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
         (base32 "12w0qh06n7p6xj5krlm8jqgrswcjspsp3yd5rrr0vgj2csk3jpck"))))
     (properties `((upstream-name . "jarbes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-tidyr
                              r-rjags
@@ -3817,6 +4232,9 @@ results of observational studies (OS).")
         (base32 "0rd2q23s9r075ns47ccmr8fjvdcv2jncjs9w1c668s597cwkf6lb"))))
     (properties `((upstream-name . "japanstat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
@@ -3850,6 +4268,9 @@ formatting.")
         (base32 "0dpd24qxwlnrrjyx2gffsmfbsf1schfnq9ck75k9935gmwy2ig04"))))
     (properties `((upstream-name . "janus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tictoc
                              r-tensorflow
                              r-statrank
@@ -3885,6 +4306,9 @@ deep-neural networks using tensorflow'.")
         (base32 "1rf1alz45lc1k1wj8c9r56g3lmc0y0k54ql36g91pc3i0368nd2f"))))
     (properties `((upstream-name . "JANE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringdist
                              r-scales
                              r-rlang
@@ -3923,6 +4347,9 @@ clustering and connectivity patterns.")
         (base32 "0rrfbci413mqq53p5fyj8rjangdx21iyin6hzqkxyrxrv3n5mfbx"))))
     (properties `((upstream-name . "JamendoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
     (home-page "https://github.com/MaxGreil/JamendoR")
     (synopsis "Access to 'Jamendo' API")
@@ -3945,6 +4372,9 @@ information for a given Jamendo user (including yourself!) or enter an artist's
         (base32 "19smqrhvab8f2xb8pa8x6gmvr0r2lwvqisfahixs7aa8lxi708jw"))))
     (properties `((upstream-name . "jalcal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jalilian/jalcal")
     (synopsis
      "Conversion Between Jalali (Persian or Solar Hijri) and Gregorian Calendar Dates")
@@ -3968,6 +4398,9 @@ tools for converting the Jalali and Gregorian dates.")
         (base32 "012s8dcfaxvswwyjjff0x5c7cpvqqqx0zav0wjqm8gzq9pyv0lsn"))))
     (properties `((upstream-name . "jagsUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-rjags r-coda))
     (native-inputs (list r-knitr))
@@ -3997,6 +4430,9 @@ switching between MCMC samplers.")
         (base32 "1ybdbmvkxgk159ajfdxsf1i5rq56z1p5kx4ibgvns1s7gdadncrc"))))
     (properties `((upstream-name . "JAGStree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-r2jags
                              r-mcmcplots
@@ -4030,6 +4466,9 @@ found in Flynn (2023) <http://hdl.handle.net/2429/86174>.")
         (base32 "1nhlqn30p2hzpvr9wspccmd68fkc192pcfanvi059ry1zn31iwvh"))))
     (properties `((upstream-name . "jagstargets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyselect
                              r-tibble
@@ -4072,6 +4511,9 @@ methodology, please refer to the documentation of targets
         (base32 "1i214hkg0g2zbln5cy9s175w1jf3akz3jpzf9wydd9wcbl9j0qa2"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-jagsui))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mbtyers/jagshelper")
@@ -4097,6 +4539,9 @@ can be found at <DOI:10.1214/ss/1177011136>.")
         (base32 "0qd4kwcc8zcvg2p1njcv7z4y5ssg77zsylph5bcaqdjxq996q7rv"))))
     (properties `((upstream-name . "jaggR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glue r-formatr))
     (home-page "https://cran.r-project.org/package=jaggR")
     (synopsis
@@ -4123,6 +4568,9 @@ time, further information can be obtained by emailing James Curran.")
         (base32 "159qgsj0syk6vg4sn4y2kk18hsm1xcp5i2cfjq8srgq14cdh91bd"))))
     (properties `((upstream-name . "jage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-mvtnorm r-data-table))
     (home-page "https://cran.r-project.org/package=jage")
     (synopsis "Estimation of Developmental Age")
@@ -4147,6 +4595,9 @@ scoring is based on Moorrees, Fanning, and Hunt (1963)
         (base32 "1919qm9b5nb6bjwbqhsnimgn5lhcrrhd90ndnsc9kj3z3khw9mkd"))))
     (properties `((upstream-name . "jadeLizardOptions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-magrittr r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=jadeLizardOptions")
     (synopsis "Trading Jade Lizard Option Strategies")
@@ -4172,6 +4623,9 @@ essential reference for option traders (First edition.)â, 2019, ISBN:
         (base32 "12v7vpis5gw9gqainmk15gkk15fqp7wak20bzcjx1rnshg5xngrp"))))
     (properties `((upstream-name . "Jacquard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://www.r-project.org")
@@ -4199,6 +4653,9 @@ inbreeding coefficients and kinship coefficients.")
         (base32 "0kq6rn33civ2g6i5nwfqvcgmnn5k2dwmw60lkmz4ywm0y4xxlkai"))))
     (properties `((upstream-name . "jacpop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=jacpop")
     (synopsis "Jaccard Index for Population Structure Identification")
     (description
@@ -4220,6 +4677,9 @@ rare variant analysis.")
         (base32 "1jm63w2jn89pk725x3d9myq010mb0g5ir8vhv29mkiwgrqig6iw1"))))
     (properties `((upstream-name . "JacobiEigen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=JacobiEigen")
@@ -4242,6 +4702,9 @@ Mainly as a programming example for teaching purposes.")
         (base32 "1i2v5sgwlbihavrj46g4mkni2b8p6qb7alrnaab30c8lwblsc8g8"))))
     (properties `((upstream-name . "jacobi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rvcg r-rgl r-rcpp r-carlson))
     (home-page "https://github.com/stla/jacobi")
     (synopsis "Jacobi Theta Functions and Related Functions")
@@ -4266,6 +4729,9 @@ Dixon elliptic functions.  Complex values of the variable are supported.")
         (base32 "12n3n759wb1p51y27hx7rnw5qy1apbakc2aphgbn68hsy9vvlnw6"))))
     (properties `((upstream-name . "jackstraw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsvd
                              r-irlba
                              r-genio
@@ -4311,6 +4777,9 @@ unsupervised evaluation of cell identities in single cell RNA-seq
         (base32 "09y9pgb920lnbzlgm6j188q8lw1air83kx383a2f89zz7hhgg7jr"))))
     (properties `((upstream-name . "jackstrap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-rlang
@@ -4346,6 +4815,9 @@ Frontier Measurements for Outliers.\" <doi:10.1007/s11123-005-4702-4>.")
         (base32 "0s2kf0r102gwcrjd2ggimyxw99nwcdd0pfwgyw922f2kzwf0rxq6"))))
     (properties `((upstream-name . "jackknifeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=jackknifeR")
     (synopsis "Delete-d Jackknife for Point and Interval Estimation")
@@ -4370,6 +4842,9 @@ intervals based on the methodology discussed by Quenouille (1956)
         (base32 "18k130d95k0zd7f88gbh0gnjmc41kyii82phslmrhyigrizhjq82"))))
     (properties `((upstream-name . "jackalope")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-zlibbioc
                              r-rhtslib
@@ -4412,6 +4887,9 @@ file formats.")
         (base32 "03kfvd43b3skx3x4ky3qxg80m3w1cj2vln018qq7fj7b47ddfiqy"))))
     (properties `((upstream-name . "jack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list mpfr gmp))
     (propagated-inputs (list r-syt
                              r-symbolicqspray
@@ -4455,6 +4933,9 @@ polynomials.  Mainly based on Demmel & Koev's paper (2006)
         (base32 "1dmla6qc1k8iw2d7zfjqhf13gqd2lpsrj09yh47ljf994fpab936"))))
     (properties `((upstream-name . "jaccard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-qvalue r-magrittr r-dplyr))
     (home-page "https://cran.r-project.org/package=jaccard")
     (synopsis
@@ -4476,6 +4957,9 @@ for binary data.")
         (base32 "18rfaiv2w7lvd5psj6qkyfdc363y3xfrrg5fhmcv4s4n0cj8kbsv"))))
     (properties `((upstream-name . "jab.adverse.reactions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://gitlab.com/iembry/jab.adverse.reactions")
     (synopsis
      "Possible Adverse Events/Reactions from the Vaccinations/Experimental Gene Therapies")
@@ -4503,6 +4987,9 @@ information about vaccination$/immunization$ hazards, visit
         (base32 "0npqpb6p4ap64mn5x2y424ayz1gy9s2b1ls4f4bs9l9mhr60z4jy"))))
     (properties `((upstream-name . "jaatha")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/statgenlmu/jaatha")

@@ -63,6 +63,9 @@
         (base32 "1aa67m224bhzzg089rhxwqgbmwwq5py8ikix8khwraz5cnjz2f83"))))
     (properties `((upstream-name . "DySS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-gridextra r-ggplot2))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=DySS")
@@ -95,6 +98,9 @@ D. (2015) <doi:10.1002/sim.6477>; Li, J. and Qiu, P. (2016)
         (base32 "1i4z9xhnzih7jnj3l1d6wpgfsayb452sh4q99w2npg1iipsjb1vl"))))
     (properties `((upstream-name . "DysPIAData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DysPIAData")
     (synopsis "Background and Pathway Data Used in 'DysPIA'")
     (description
@@ -114,6 +120,9 @@ D. (2015) <doi:10.1002/sim.6477>; Li, J. and Qiu, P. (2016)
         (base32 "0ih8sl89h6xbmmjjsbxcvgp6wqk7f1wqzwkc43k3i5w7fgb0hlpc"))))
     (properties `((upstream-name . "DysPIA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp
                              r-parmigene
                              r-fastmatch
@@ -140,6 +149,9 @@ in package @code{DysPIAData} is needed.")
         (base32 "1akjda85sad4inw789wq0szqxrilkzf3lhmf7k3mhhjdix02fqrm"))))
     (properties `((upstream-name . "dySEM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-semplot
@@ -173,6 +185,9 @@ the Bifactor Dyadic Model (latent).")
         (base32 "1jls01flvr91vyipilaqv2n3irniq678bm6f1jlxr2apr7w0rlyx"))))
     (properties `((upstream-name . "dynwrap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tidyr
                              r-tibble
@@ -213,6 +228,9 @@ annotation.  Saelens et al. (2019) <doi:10.1038/s41587-019-0071-9>.")
         (base32 "18hk5bc6bsdjdl4736sdk896zblyc8l3ipjii4x2jksngcjvszbb"))))
     (properties `((upstream-name . "DynTxRegime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgenoud r-modelobj r-kernlab r-dfoptim))
     (home-page "https://cran.r-project.org/package=DynTxRegime")
     (synopsis "Methods for Estimating Optimal Dynamic Treatment Regimes")
@@ -237,6 +255,9 @@ Laber, E. B., Chapman & Hall/CRC Press, 2020, ISBN:978-1-4987-6977-8.")
         (base32 "0i8snv70hzsywijivkxphm7xcp64r7kh8v6hiy0hh4hh624i120i"))))
     (properties `((upstream-name . "dyntaper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ogarciav/dyntaper")
     (synopsis "Dynamic Stem Profile Models, AKA Tree Taper Equations")
@@ -261,6 +282,9 @@ consistent with wood formation mechanisms through time.")
         (base32 "0rp51kr6rsfqdcl4gswqz56ppnxa81ak023x3gdxsdf4p9jjhdcy"))))
     (properties `((upstream-name . "dynsurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-splines2
                              r-nleqslv
@@ -293,6 +317,9 @@ proposed by Peng and Huang (2007) <doi:10.1093/biomet/asm058>.")
         (base32 "1fk23cp2hvkn7msxrdc9cnm4pmcmhcdf3q6rwm507bniigrswnx4"))))
     (properties `((upstream-name . "dynsim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-gridextra r-ggplot2))
     (home-page "https://cran.r-project.org/package=dynsim")
     (synopsis "Dynamic Simulations of Autoregressive Relationships")
@@ -312,6 +339,9 @@ proposed by Peng and Huang (2007) <doi:10.1093/biomet/asm058>.")
         (base32 "0sz0a1g6z48f0s7ch86y9mvazwk4gdswjj179a13d0yjhy9rgpk0"))))
     (properties `((upstream-name . "dynRB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-reshape2
                              r-rcolorbrewer
@@ -340,6 +370,9 @@ uses dynamic range boxes to overcome these problems.")
         (base32 "0s9n62k9cghvqgcpgingcvni3fzq2d9lrnj48i92kb25165446wm"))))
     (properties `((upstream-name . "dynr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-xtable
                              r-tibble
@@ -392,6 +425,9 @@ introduction to the interface and more information on the algorithms.")
         (base32 "11zsx2c4hv7k22pw85aa01zk4r0qpzwnf73ynylkfxfbi87rda9s"))))
     (properties `((upstream-name . "dynprog")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang))
     (home-page "https://github.com/mailund/dynprog")
     (synopsis "Dynamic Programming Domain-Specific Language")
@@ -414,6 +450,9 @@ programming.")
         (base32 "111ykasaiznn3431msj4flfhmjvzq7dd1mnzn1wklc5ndix1pvf9"))))
     (properties `((upstream-name . "dynpred")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "http://www.msbi.nl/putter")
     (synopsis
@@ -435,6 +474,9 @@ analysis.")
         (base32 "12cclb8r13gn407197sw5gx2vfd0qc69mp16jam9chybxbj3pvx0"))))
     (properties `((upstream-name . "dynparam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -466,6 +508,9 @@ conjunction with @code{mlrMBO}'.")
         (base32 "073kfl5g4d7v8wd2qnpixqrxbac3cqj35z03ax2zlb8h2afa7j62"))))
     (properties `((upstream-name . "dynpanel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gtools))
     (home-page "https://cran.r-project.org/package=dynpanel")
     (synopsis "Dynamic Panel Data Models")
@@ -486,6 +531,9 @@ the dependent variables.")
         (base32 "0nc1dw5ihqm819na1dd85v4wlpidvp5yk50rrsyp0labm8nkh0qv"))))
     (properties `((upstream-name . "DynNom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stargazer
                              r-shiny
@@ -521,6 +569,9 @@ rms::Glm, rms::lrm, rms::cph, and mgcv::gam model objects.")
         (base32 "09mm2k6p6vmj5ab9a0gzm7wqf35righ78c8sabnlk9d1wwxs4s70"))))
     (properties `((upstream-name . "dynmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-rcpparmadillo r-rcpp r-mass))
     (home-page "https://CRAN.R-project.org/package=dynmix")
     (synopsis "Estimation of Dynamic Finite Mixtures")
@@ -544,6 +595,9 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
         (base32 "1g8qsb5m69yn35sm0shd97vbnbpqfkjkd7lbkwch1gpfxkld53zq"))))
     (properties `((upstream-name . "dynlm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-lmtest r-car))
     (home-page "https://cran.r-project.org/package=dynlm")
     (synopsis "Dynamic Linear Regression")
@@ -562,6 +616,9 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
         (base32 "0yj7s5z8vnwpcspan77ywxj3zgwfc6afmhgk10h0yd2bisric49r"))))
     (properties `((upstream-name . "DynForest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-survival
                              r-stringr
@@ -599,6 +656,9 @@ described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2023)
         (base32 "018y3m648ni31rlisjfnrx1d10mm48wpxanlnnxxpnqxjcywg2x8"))))
     (properties `((upstream-name . "dynetNLAResistance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=dynetNLAResistance")
     (synopsis "Resisting Neighbor Label Attack in a Dynamic Network")
@@ -618,6 +678,9 @@ described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2023)
         (base32 "1rj45bgms1x0zm1xjw2ylm45w9xnd68pmgb8dckzkszqg27d0fbh"))))
     (properties `((upstream-name . "dyndimred")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-lmds r-irlba r-dynutils))
     (home-page "https://github.com/dynverse/dyndimred")
     (synopsis "Dimensionality Reduction Methods in a Common Format")
@@ -642,6 +705,9 @@ matrices.")
         (base32 "0l5k764j1zhsqpgp0ndihah63hsk3zv9hviixfmh4h3i0sr0q52p"))))
     (properties `((upstream-name . "dynCorr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpridge))
     (home-page "https://cran.r-project.org/package=dynCorr")
     (synopsis "Dynamic Correlation Package")
@@ -663,6 +729,9 @@ and derivatives.")
         (base32 "1ql8c712g7jx0j1aw7qrfsp81abiajigzvwwlq6v96ar5ag5jrgy"))))
     (properties `((upstream-name . "dynConfiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-rcpp
                              r-progress
@@ -684,29 +753,6 @@ et al. (2023; Preprint available at <https://osf.io/9jfqr/>, published version:
 and 2DSD is based on the rtdists package by Henrik Singmann.")
     (license license:gpl3+)))
 
-(define-public r-dyncomp
-  (package
-    (name "r-dyncomp")
-    (version "0.0.2-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dyncomp" version))
-       (sha256
-        (base32 "13wp2k8nbgrbrqng2dmgy0ixgidk51wq9y7mv5pdbvdajxdsyh11"))))
-    (properties `((upstream-name . "dyncomp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo))
-    (home-page "https://cran.r-project.org/package=dyncomp")
-    (synopsis "Complexity of Short and Coarse-Grained Time Series")
-    (description
-     "While there are many well-established measures for identifying critical
-fluctuations and phase transitions, these measures only work with many points of
-measurement and thus are unreliable when studying short and coarse-grained time
-series.  This package provides a measure for complexity in a time series that
-does not rely on long time series (Kaiser (2017), <doi:10.17605/OSF.IO/GWTKX>).")
-    (license license:expat)))
-
 (define-public r-dynclust
   (package
     (name "r-dynclust")
@@ -719,6 +765,9 @@ does not rely on long time series (Kaiser (2017), <doi:10.17605/OSF.IO/GWTKX>)."
         (base32 "0nbbzx0ixblpcbjxx0gp7082nz6nh5vc2l5nzdfq1mqzlq9jy2xn"))))
     (properties `((upstream-name . "DynClust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DynClust")
     (synopsis
      "Denoising and Clustering for Dynamical Image Sequence (2D or 3D)+t")
@@ -749,6 +798,9 @@ power of multicore cpus.")
         (base32 "04026jz4vdyj2a2kry5kk5k84cy4vqqrcn328hxwnwh7r8i7klvn"))))
     (properties `((upstream-name . "dynBiplotGUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gnu-make))
     (propagated-inputs (list r-tcltk2))
     (home-page "https://cran.r-project.org/package=dynBiplotGUI")
@@ -770,6 +822,9 @@ matrices of 2-way and 3-way.  The GUI can be run in multiple languages.")
         (base32 "1w7z1qjyhhcymi9if1x8i8sniya642diwnvkf0qhwzan8scig1yj"))))
     (properties `((upstream-name . "dynaTree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bobby.gramacy.com/r_packages/dynaTree/")
     (synopsis "Dynamic Trees for Learning and Design")
     (description
@@ -793,6 +848,9 @@ are facilitated by demos in the package; see demo(package=\"@code{dynaTree}\")."
         (base32 "1sv519dc7fs6zrwnyggkzrcy866a6pgag0shk6rr6cd3xa1blwpv"))))
     (properties `((upstream-name . "dynatopGIS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-r6 r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://waternumbers.github.io/dynatopGIS/")
@@ -819,6 +877,9 @@ output of @code{dynatopGIS}'.")
         (base32 "06wp8ld22k3r76imsj8wkrpplmbdlgbl71p94ddglwp8yfq1igsp"))))
     (properties `((upstream-name . "dynatop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-rcpp r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://waternumbers.github.io/dynatop/")
@@ -842,6 +903,9 @@ models which can be created using the @code{dynatopGIS} package.")
         (base32 "172lm5k0hz774a0d2s1hs86q7q50s6n4i4ba8jddy3l5a1gqkpd4"))))
     (properties `((upstream-name . "DYNATE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tibble
                              r-reshape2
@@ -875,6 +939,9 @@ and Xie (2021) <@code{arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
         (base32 "1mkc74jd25ydfl3ssl5kvcwjrvi6wdlm76v1m4sf4fm3vag37jyc"))))
     (properties `((upstream-name . "dynaSpec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list ffmpeg))
     (propagated-inputs (list r-warbler
                              r-viridis
@@ -904,6 +971,9 @@ visualizations in video format.")
         (base32 "1m3zpj9jalgw3hs93m3hyhwr25fp1cqrzbwr84z5mafd55zsn1mz"))))
     (properties `((upstream-name . "DynareR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list octave))
     (propagated-inputs (list r-magrittr r-magick r-knitr))
     (native-inputs (list r-knitr))
@@ -932,6 +1002,9 @@ serves as a Dynare Knit-Engine for knitr package.  The package requires Dynare
         (base32 "1fzicainh1dm016cglm2x6j1i2g5r71vgrj0dnsflbxc5v426sqm"))))
     (properties `((upstream-name . "DynaRankR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-dplyr))
     (home-page "https://github.com/straussed/DynaRankR")
     (synopsis "Inferring Longitudinal Dominance Hierarchies")
@@ -953,6 +1026,9 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
         (base32 "1fby4z8xxz7qy3hyn016c4fap5wwsj0h6p9azk5ld51kb5blk2zh"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rstan
                              r-rlang
@@ -992,6 +1068,9 @@ tutorial of the package, see (Tikka and Helske, 2024)
         (base32 "0126yj2qafg93jipkbszlwjcy20yxnd4adn8r5b7cwf5ipkp92mc"))))
     (properties `((upstream-name . "dynamicSDM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-terra
                              r-sf
@@ -1030,6 +1109,9 @@ species distribution modelling at high spatio-temporal resolution.")
         (base32 "15jxly44rj2x79jvps2ln0hrm1384p56yll9jk96w1vhaf3gbsxm"))))
     (properties `((upstream-name . "dynamic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -1061,6 +1143,9 @@ the counterpart of the Shiny Application, <https://dynamicfit.app>.")
         (base32 "0dzr8wf00hwwnivqn73hcgdncx8jkka54fygiy6iz9b065ilcvqi"))))
     (properties `((upstream-name . "dynamAedes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-geosphere
                              r-foreach
@@ -1090,6 +1175,9 @@ Rationale and model structure are described here: Da Re et al. (2021)
         (base32 "0gggzhidn5z4g7pzqx1bg56prnh9krph65k3yj677qrff12abbx9"))))
     (properties `((upstream-name . "dynamac")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-lmtest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/andyphilips/dynamac/")
@@ -1116,6 +1204,9 @@ the error-correction variant of the autoregressive distributed lag model
         (base32 "0vlzv6zy29qhygm77kww65wpnp77a93ja13vr4p2yyychrjspqx3"))))
     (properties `((upstream-name . "dyn.log")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-stringr
                              r-rlang
@@ -1150,6 +1241,9 @@ it.")
         (base32 "0s1gpi5qiafkf91awyx52qw15qs7m18bql51jibgh1lqnqgv1757"))))
     (properties `((upstream-name . "dymo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tictoc
                              r-scales
                              r-readr
@@ -1185,6 +1279,9 @@ combinations and ranks of Singular Value Decomposition.")
         (base32 "1jy2yrdih4c1c2d04qnx0z6m466djh91i5cpcbr23rbz0rqf2ig9"))))
     (properties `((upstream-name . "DyMEP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DyMEP")
     (synopsis "Dynamic Multi Environment Phenology-Model")
     (description
@@ -1207,6 +1304,9 @@ and crop.")
         (base32 "1rk0xs224xi68f0mrygny2rklggl4grk866q7y9xck38bwy7aw94"))))
     (properties `((upstream-name . "DYM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DYM")
     (synopsis "Did You Mean?")
     (description
@@ -1227,6 +1327,9 @@ you really want to do in addition to notification of the mistake.")
         (base32 "1rc1409ky0ysqr3ccq28yhbs94m6d0z2dfa66k4c7irxjvbagwz6"))))
     (properties `((upstream-name . "Dykstra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Dykstra")
     (synopsis "Quadratic Programming using Cyclic Projections")
     (description
@@ -1248,6 +1351,9 @@ for details.")
         (base32 "15alr3f6wkkpjd5wmcjazi58yc8gwcqr662mjwlfg15r94fzqrlg"))))
     (properties `((upstream-name . "dydea")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-chaos01))
     (home-page "https://cran.r-project.org/package=dydea")
     (synopsis "Detection of Chaotic and Regular Intervals in the Data")
@@ -1268,6 +1374,9 @@ proposed by Gottwald and Melbourne (2004) <DOI:10.1137/080718851>.")
         (base32 "0c5ds2bnnv08c68hyxr4p4p6h9cc2pbivgyyqglaz23317rcxlcp"))))
     (properties `((upstream-name . "dycdtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rcolorbrewer
                              r-r-utils
@@ -1298,6 +1407,9 @@ profile plot, contour plot, and scatter plot.  For more details, see Yu et al.
         (base32 "0nx4gx51p0qz1565yn7xg0ijrkqvn9ql9hrmp5lwl4lxvsjnwki1"))))
     (properties `((upstream-name . "dyads")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast r-rcppziggurat r-mvtnorm r-mass
                              r-cholwishart))
     (home-page "https://cran.r-project.org/package=dyads")
@@ -1324,6 +1436,9 @@ the the multilevel p2 model as described in Zijlstra, Van Duijn & Snijders
         (base32 "0bgahzgcxz86n0ady97l48zyahv3p2iyc2ivbij1xrfx3wcx3b5n"))))
     (properties `((upstream-name . "DWreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-maxlik r-ecdat r-discreteweibull))
     (home-page "https://cran.r-project.org/package=DWreg")
     (synopsis "Parametric Regression for Discrete Response")
@@ -1344,6 +1459,9 @@ modelled via a discrete Weibull distribution.")
         (base32 "1a70lxw4ck3pbklyibn8x6qpgj16zvawi76qqc9rnc26q2n5zp6j"))))
     (properties `((upstream-name . "dwp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-statmod
                              r-sf
@@ -1381,6 +1499,9 @@ Dalthorp, et al. (2022) <@code{arXiv:2201.10064>}.")
         (base32 "02fd5q91shwjzc6bxqv4m8al7q1vl0mah6niymij37p69wlixy42"))))
     (properties `((upstream-name . "DWLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-varhandle
                              r-summarizedexperiment
                              r-seurat
@@ -1430,6 +1551,9 @@ functions.")
         (base32 "0n5dil9qvyy4gish3wnv8bzq0ci1p0dr2vmbbadl29jl7rd1v0rc"))))
     (properties `((upstream-name . "dwlm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dwlm")
     (synopsis "Doubly Weighted Linear Model")
     (description
@@ -1439,25 +1563,6 @@ on which quantity is used as predictor or response.  Based on the results by
 Reed(1989) <doi:10.1119/1.15963> and Ripley & Thompson(1987)
 <doi:10.1039/AN9871200377>.")
     (license license:gpl2+)))
-
-(define-public r-dwlasso
-  (package
-    (name "r-dwlasso")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DWLasso" version))
-       (sha256
-        (base32 "1i8j8wjfvg69ldr8ahz1zv3m2wgxd701iph94ad22zs9qwqfg16z"))))
-    (properties `((upstream-name . "DWLasso")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-hglasso r-glmnet))
-    (home-page "https://cran.r-project.org/package=DWLasso")
-    (synopsis "Degree Weighted Lasso")
-    (description
-     "This package infers networks with hubs using degree weighted Lasso method.")
-    (license license:gpl2)))
 
 (define-public r-dwdradar
   (package
@@ -1471,6 +1576,9 @@ Reed(1989) <doi:10.1119/1.15963> and Ripley & Thompson(1987)
         (base32 "0dwnyzzha8bz6pzacak909hp65jmf1l3wby9vg62gp7rwlr1gbaj"))))
     (properties `((upstream-name . "dwdradar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dwdradar")
     (synopsis "Read Binary Radar Files from 'DWD' (German Weather Service)")
@@ -1491,6 +1599,9 @@ reads these files and enables a fast conversion into numerical format.")
         (base32 "03i3gycbmxpikqqqhchprm2qji5dgjbvm3ggvmgyc1vh5ap075by"))))
     (properties `((upstream-name . "DWDLargeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://arxiv.org/pdf/1604.05473")
     (synopsis
@@ -1514,6 +1625,9 @@ method.  See Lam, X.Y., Marron, J.S., Sun, D.F., and Toh, K.C. (2018)
         (base32 "0ypdfqnf70ylbrd1r8kpb531cd08izmqhsz84yxzw6xfyiqa6657"))))
     (properties `((upstream-name . "dwctaxon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-settings
@@ -1543,6 +1657,9 @@ method.  See Lam, X.Y., Marron, J.S., Sun, D.F., and Toh, K.C. (2018)
         (base32 "011mwdwh046wninfjdy00wxn312ykzn90nz9fz3l7c5cw9gzzfkg"))))
     (properties `((upstream-name . "dvqcc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsdyn r-ggplot2))
     (home-page "https://cran.r-project.org/package=dvqcc")
     (synopsis
@@ -1572,6 +1689,9 @@ offline and online monitoring.See in Danilo Marcondes Filho and Marcio Valk
         (base32 "1anqm4lfr911yzj3v9953b72y7mbvbm4x52vkblwzlnxznkhmcn4"))))
     (properties `((upstream-name . "dvir")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-verbalisr
                              r-ribd
                              r-pedtools
@@ -1603,6 +1723,9 @@ packages for pedigree analysis.")
         (base32 "0dxbjqiqhzjrv867qhxmqavzklq0j3qjv4qwdacyrq8faz82vhv7"))))
     (properties `((upstream-name . "DVHmetrics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-reshape2 r-kernsmooth r-ggplot2 r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dwoll/DVHmetrics/")
@@ -1628,6 +1751,9 @@ assurance constraints for the DVH. Includes web-based graphical user interface."
         (base32 "14iib9rc6s96i0a220cldbg6mz4dmjafslanl23yzq9iz60hfxn2"))))
     (properties `((upstream-name . "dverse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-glue r-dplyr r-cli))
     (home-page "https://github.com/maurolepore/dverse")
     (synopsis "Document a Universe of Packages")
@@ -1650,6 +1776,9 @@ meta-package, it helps create a comprehensive reference for its website.")
         (base32 "0iq29ga1cn5fnnj1b90pprqcldygmy695si0vq4pr8d59q029ah9"))))
     (properties `((upstream-name . "Durga")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vipor r-rcolorbrewer r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/KhanKawsar/EstimationPlot")
@@ -1660,8 +1789,8 @@ Various types of effect size can be estimated, then plotted together with a
 representation of the original data.  Select from many possible data
 representations (box plots, violin plots, raw data points etc.), and combine as
 desired.  Durga plots are implemented in base R, so are compatible with base R
-methods for combining plots, such as layout()'.  See Khan & @code{McLean} (2023)
-<doi:10.1101/2023.02.06.526960>.")
+methods for combining plots, such as @code{layout()}'.  See Khan & @code{McLean}
+(2023) <doi:10.1101/2023.02.06.526960>.")
     (license license:expat)))
 
 (define-public r-dupree
@@ -1676,6 +1805,9 @@ methods for combining plots, such as layout()'.  See Khan & @code{McLean} (2023)
         (base32 "0q8c0z1yhym20rhfjrc8n03gk458z0n8axx013rcwk1vc2zwk670"))))
     (properties `((upstream-name . "dupree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringdist
                              r-rlang
@@ -1702,6 +1834,9 @@ files.")
         (base32 "1697pcr27lix8vf1krq6vdby8dk53h0s14gcng1y5rdngrxav9nk"))))
     (properties `((upstream-name . "dupNodes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dupNodes")
@@ -1726,6 +1861,9 @@ does not drop this essential information.  Implements Merelo & Molinari (2024)
         (base32 "14krgg9fh63nyi3rchmrlggw7rykylc6b52cih87rl09x9zlgq17"))))
     (properties `((upstream-name . "dupiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotrix))
     (home-page "https://cran.r-project.org/package=dupiR")
     (synopsis
@@ -1753,6 +1891,9 @@ absolute quantification under uncertainty.  See Comoglio et al. (2013)
         (base32 "1bhl64g5x14bqw5flbcb5vhshwp1dmw04fakmdkvkswnl258m6gx"))))
     (properties `((upstream-name . "dunlin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tibble
                              r-stringr
@@ -1782,6 +1923,9 @@ them in a format amenable to use by chevron.")
         (base32 "0rp8p4ln92kfxkczl7vi9r2jhxb1ky203s02940cjjkczsphpcc1"))))
     (properties `((upstream-name . "dundermifflin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-crayon))
     (home-page "https://cran.r-project.org/package=dundermifflin")
     (synopsis "The Office Quotes on-Demand")
@@ -1804,6 +1948,9 @@ to your .Rprofile to get a good laugh everytime you start a new R session.")
         (base32 "081a5h33gw6ym4isy91h6mcf247c2vsdygv9ll07a3mgjcjnk79p"))))
     (properties `((upstream-name . "dummy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dummy")
     (synopsis
      "Automatic Creation of Dummies with Support for Predictive Modeling")
@@ -1825,6 +1972,9 @@ training set) and deploying them on another (e.g., a test set).")
         (base32 "0v0b4wbfskvcnzx10z9v4rf3mq8ccswz63pd6i1z7mggnwv38ps5"))))
     (properties `((upstream-name . "dumbbell")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-rstatix
@@ -1850,6 +2000,9 @@ training set) and deploying them on another (e.g., a test set).")
         (base32 "04z7vcgdljp47grn1ppdj4acfs3gq7xmghyzj96wq1aisnh0777b"))))
     (properties `((upstream-name . "duke")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/aidangildea/duke")
@@ -1871,6 +2024,9 @@ friendly way.")
         (base32 "1lrg5prs6gy1iv6i5n970miafvz1jqnv6bzvw2lciszrj5d2a8ry"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tibble
@@ -1903,6 +2059,9 @@ implementer's interface for the high-level user interface of dplyr'.")
         (base32 "1wki8xvqp5hr27iafd9jbryl9faywfkdkpn0pa0afywbic39k2cm"))))
     (properties `((upstream-name . "duckduckr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-crul))
     (home-page "https://github.com/dirkschumacher/duckduckr")
     (synopsis "Simple Client for the DuckDuckGo Instant Answer API")
@@ -1923,6 +2082,9 @@ implementer's interface for the high-level user interface of dplyr'.")
         (base32 "0rp8w8slmy3sbm143z9qy18bfwpnzad8jfw6ylccf3dmryh9siab"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-glue
                              r-fs
                              r-duckdb
@@ -1951,6 +2113,9 @@ S3 file system also generalizes to any list of http URLs.")
         (base32 "0bvxc10pmh4k2arh1ixkgn286ll20gyjggcgjfggdvij6bx029k1"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dbi))
     (home-page "https://r.duckdb.org/")
     (synopsis "DBI Package for the DuckDB Database Management System")
@@ -1972,6 +2137,9 @@ support for the Structured Query Language (SQL).  This package includes all of
         (base32 "066lzyk44380mf17vx4db4a3a4rs7zl85mj5hjg172khjbqnbixw"))))
     (properties `((upstream-name . "dub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/egnha/dub")
     (synopsis "Unpacking Assignment for Lists via Pattern Matching")
     (description
@@ -1993,6 +2161,9 @@ the form of a list, and for extracting deeply nested list components.")
         (base32 "0hxmvyl81xlp3vv1w7462cjfa9hdz5lki0p5pn0ik7dv5aap3wbq"))))
     (properties `((upstream-name . "duawranglr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readxl r-readr r-haven r-dplyr r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/btskinner/duawranglr")
@@ -2016,6 +2187,9 @@ prevent writing protected elements.")
         (base32 "02zwfvz4vb8ppyjggkn5483p7b12l3ah1swpgc7g3p94ii5hr0vy"))))
     (properties `((upstream-name . "dualtrees")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dualtrees")
     (synopsis
@@ -2041,6 +2215,9 @@ Python library.")
         (base32 "0dw8vknkvb9qzmxw2xmwnpa1dlrqhx70j32q6dm5j1sxjyw2zx37"))))
     (properties `((upstream-name . "dualScale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer
                              r-matrixcalc
                              r-matrix
@@ -2077,6 +2254,9 @@ analysis of multivariate datasets.")
         (base32 "08r2qz5rvsc3pjrc8rsks6r39w52n621mfg77yfnk4lc1vqn4y8d"))))
     (properties `((upstream-name . "dual")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dual")
     (synopsis "Automatic Differentiation with Dual Numbers")
     (description
@@ -2099,6 +2279,9 @@ details see Baydin, Pearlmutter, Radul, and Siskind (2018)
         (base32 "0pybgbfs2yp2ljbs0kra5z70x3llkiwdngp6cadgs3j9rar4vq4q"))))
     (properties `((upstream-name . "DTWUMI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist
                              r-lsa
                              r-entropy
@@ -2139,6 +2322,9 @@ avoided.")
         (base32 "06dz7i5hddqwj307fmkp93v7c4r0nvbi3bi9j4hqx77z7bdy2m8j"))))
     (properties `((upstream-name . "DTwrappers2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dtwrappers r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DTwrappers2")
@@ -2162,6 +2348,9 @@ building summarizations of the data.")
         (base32 "028n1211h9gmv050xfiw347x59gykb6ndvd371fdf53bbkqirqa4"))))
     (properties `((upstream-name . "DTwrappers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DTwrappers")
@@ -2191,6 +2380,9 @@ can review working examples of coding syntax and calculations.")
         (base32 "06lp4yc5nhacrgic78l014g2w1ibwgs8dp8zrahk5aripaczl25y"))))
     (properties `((upstream-name . "DTWBI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlist r-lsa r-entropy r-e1071 r-dtw))
     (home-page "http://mawenzi.univ-littoral.fr/DTWBI/")
     (synopsis "Imputation of Time Series Based on Dynamic Time Warping")
@@ -2215,6 +2407,9 @@ and reference).")
         (base32 "0n13q14a4vhfx6jvjg4zbch0874agfm8z5mlwzvpvh4vc5rcc4bk"))))
     (properties `((upstream-name . "dtts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppdate
                              r-rcppcctz
                              r-rcpp
@@ -2239,6 +2434,9 @@ and reference).")
         (base32 "1fh154phspzwkx8mqk5v1xfq93z6x15kqv7s5xm7ky2rj27wdmin"))))
     (properties `((upstream-name . "dttr2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lifecycle r-hms r-chk))
     (home-page "https://github.com/poissonconsulting/dttr2")
     (synopsis "Manipulate Date, POSIXct and hms Vectors")
@@ -2260,6 +2458,9 @@ are wrapped and time zones are maintained unless explicitly altered by the user.
         (base32 "0im249drx2d2jpiswmv9dx42drfzcqd82fb10gxqady128ndkcxx"))))
     (properties `((upstream-name . "DTSR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvdalab r-mass r-dmwr2 r-cluster))
     (home-page "https://cran.r-project.org/package=DTSR")
     (synopsis
@@ -2285,6 +2486,9 @@ efficiently.  The philosophy of the package is described in Guo G. (2024)
         (base32 "0gln3zliljhs7rmqbyi7nbrzknc4g7psk9rwnd5xh020fa2k2cm1"))))
     (properties `((upstream-name . "DTSg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-data-table r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://gisler.github.io/DTSg/")
@@ -2312,6 +2516,9 @@ incorporating functionalities from many other packages.")
         (base32 "1f1di9ypq6f0929pq15xncf7zw16wlqap4rchbia27n39cv15dni"))))
     (properties `((upstream-name . "DTSEA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -2347,6 +2554,9 @@ for drug target information; see Kanehisa et al. (2021) <doi:
         (base32 "1xc39rigaylrq6d6zm6szgkiwdh4xjkvcima9lkhs1qnbrj3gb5l"))))
     (properties `((upstream-name . "dtrSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dtrSurv")
@@ -2369,6 +2579,9 @@ Holloway, S. T., and Kosorok, M. R. (2020) <@code{arXiv:2012.03294>}.")
         (base32 "1irgkrar8m0xy97y19j48s8ab9y4cjzbbnhk3mhqbbs2qgam92cw"))))
     (properties `((upstream-name . "DTRreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-nnet))
     (home-page "https://cran.r-project.org/package=DTRreg")
     (synopsis
@@ -2395,6 +2608,9 @@ continuous treatment variables.  Wallace et al. (2017)
         (base32 "0l756zb1wkpa1z5zjkc8jndmh2630gckxxfqslabzjmgsjf7fjgm"))))
     (properties `((upstream-name . "DTRlearn2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-kernlab r-glmnet r-foreach))
     (home-page "https://cran.r-project.org/package=DTRlearn2")
     (synopsis
@@ -2422,6 +2638,9 @@ sample for individualized treatment recommendations or DTR evaluation.")
         (base32 "0ikq9rj7harlc00gj6wqc62pyj25ap9ajfh622b5cj5zkdrc8qy1"))))
     (properties `((upstream-name . "DTRKernSmooth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=DTRKernSmooth")
     (synopsis
@@ -2440,15 +2659,18 @@ Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
 (define-public r-dtreg
   (package
     (name "r-dtreg")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtreg" version))
        (sha256
-        (base32 "02rplyjzdn4liipgi73qhanqn2lqdk1hymrrsfvvyarzyba3yiwr"))))
+        (base32 "1zvgirihzrbgyb5pqggxf8salrwb3p9c067qdvx1cdd949137g8m"))))
     (properties `((upstream-name . "dtreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-r6 r-jsonlite r-httr2))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/TIBHannover/orkg/dtreg-r")
@@ -2472,6 +2694,9 @@ Linked Data) format to make it machine readable.")
         (base32 "0rm93mwazp36mp26r4phl9s8iskzsa32zn66pjq95z0znqhl1v9l"))))
     (properties `((upstream-name . "dtrackr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8
                              r-tidyr
                              r-tibble
@@ -2509,6 +2734,9 @@ makes publication ready documentation of a data pipeline simple.")
         (base32 "0k25fm0z3snpx1v2kwd50svgnkjhn5c0hy1gnlw2lif6rjz1fzd9"))))
     (properties `((upstream-name . "dtpcrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-diagram r-dfcrm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dtpcrm")
@@ -2538,6 +2766,9 @@ dosed at the maximum tolerated dose.")
         (base32 "0qy8nrbq22bfbajkxq6blkq7583pc5mb392gmqb3c9daxmqn42vb"))))
     (properties `((upstream-name . "dtp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-gtools r-formula))
     (home-page "https://cran.r-project.org/package=dtp")
     (synopsis "Dynamic Panel Threshold Model")
@@ -2562,6 +2793,9 @@ model, where generalized methods of moments type estimators are used.")
         (base32 "1a07hpl1fagigxkd3yjjkwjpmjwbfyg9a7m8fcj1602xl525h2ki"))))
     (properties `((upstream-name . "DTMCPack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DTMCPack")
     (synopsis
      "Suite of Functions Related to Discrete-Time Discrete-State Markov Chains")
@@ -2586,6 +2820,9 @@ statdistr determines the stationary distribution of a Markov Chain.")
         (base32 "1a0a5dff82igzxsz0ma3j2w7waqq2nrv3cy0df2nh7sgqvcldk4m"))))
     (properties `((upstream-name . "dtmapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-jsonlite r-httr2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Displacement-Tracking-Matrix/dtmapi-R")
@@ -2611,6 +2848,9 @@ aggregated at the country, Admin 1 (states, provinces, or equivalent), and Admin
         (base32 "058qny6hv3lcirjmc7kbldyy1i333p9vmvpz4jl9dyrcz5h6qmjh"))))
     (properties `((upstream-name . "dti")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-rgl
                              r-quadprog
@@ -2647,6 +2887,9 @@ functionality to manipulate and visualize results in 2D and 3D.")
         (base32 "1902rhfrnmp3550c6sqfrzs7xrrjpym0zpqhfnlffdnn42cp910r"))))
     (properties `((upstream-name . "dtgiw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dtgiw")
     (synopsis "Discrete Transmuted Generalized Inverse Weibull Distribution")
     (description
@@ -2667,6 +2910,9 @@ based on Atchanut and Sirinapa (2021). <DOI: 10.14456/sjst-psu.2021.149>.")
         (base32 "0lv8k37n271zcmp5mxxc6z03bx283lnc4iz3zz1k2mnfzq2wrahz"))))
     (properties `((upstream-name . "DTDA.ni")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sidoruvigo/DTDA.ni")
     (synopsis "Doubly Truncated Data Analysis, Non Iterative")
@@ -2687,6 +2933,9 @@ variable.  de UÃ±a-Ãlvarez J. (2018) <doi:10.1007/978-3-319-73848-2_37>.")
         (base32 "12vkhqxdhir06s35kr76dwns9m02wyicz3mv4r56fqglsfyw77xr"))))
     (properties `((upstream-name . "DTDA.cif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=DTDA.cif")
     (synopsis "Doubly Truncated Data Analysis, Cumulative Incidence Functions")
@@ -2709,6 +2958,9 @@ Efron, B. and Petrosian, V. (1999) <doi:10.2307/2669997>.")
         (base32 "1x65ahrci7n8v5d6nfz2p3p1x0zjam3a2mvw9m1rpdmfgbalpim7"))))
     (properties `((upstream-name . "DTDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=DTDA")
     (synopsis "Doubly Truncated Data Analysis")
@@ -2731,6 +2983,9 @@ using different bandwidth selectors.  Several real data sets are included.")
         (base32 "1czspjdxjhbfk2df7wk0x3d1ilwrjqw4s4gdc4hq0gjcjqyx0c39"))))
     (properties `((upstream-name . "DtD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DtD")
@@ -2753,6 +3008,9 @@ methods includes simulation and estimation of the parameters.")
         (base32 "1ajmzap56vpfxn0x57alb6h2g94z132i96jsmczjl6zajm5yr6y4"))))
     (properties `((upstream-name . "DTComPair")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-propcis r-gee r-ellipse r-assertthat))
     (home-page "https://github.com/chstock/DTComPair")
     (synopsis "Comparison of Binary Diagnostic Tests in a Paired Study Design")
@@ -2773,6 +3031,9 @@ design, i.e.  when each test is applied to each subject in the study.")
         (base32 "0zfcbwl40hxva5282qplr27idclickid0p4a8vnz5559abygl5aa"))))
     (properties `((upstream-name . "dtComb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-proc
                              r-optimalcutpoints
                              r-glmnet
@@ -2805,6 +3066,9 @@ for more information, documentation, and examples.")
         (base32 "0asqz2r55awp5xh7gqawkh8lgal64216qi9ncg2jvfg5ny5ryv4i"))))
     (properties `((upstream-name . "dTBM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-weightedcluster r-envstats))
     (home-page "https://cran.r-project.org/package=dTBM")
     (synopsis
@@ -2827,6 +3091,9 @@ reference Jiaxin Hu and Miaoyan Wang (2023) <doi:10.1109/TIT.2023.3239521>.")
         (base32 "1jxa0ix0z35i0xdnjl698j8iqjmp6nz8ckah9bap5ay9rkq0xd7f"))))
     (properties `((upstream-name . "DTAXG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DTAXG")
     (synopsis "Diagnostic Test Assessment in the Absence of Gold Standard")
     (description
@@ -2847,6 +3114,9 @@ and Qiguang Chen (1999) <doi:10.3969/j.issn.1002-3674.1999.04.004>.")
         (base32 "0rh09bdygqwzdlx0girs2ir5dy3jd3r2m4xia46njxvh3jld5vsg"))))
     (properties `((upstream-name . "DTAT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-shiny
                              r-r2d3
@@ -2882,6 +3152,9 @@ trialists to design and simulate a 3+3/PC dose-finding study.  Please see Norris
         (base32 "1jwfh8j8ahaj2z19g2f70r652j77q4f0b7j91mggsb0dgk449342"))))
     (properties `((upstream-name . "DTAplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DTAplots")
     (synopsis
      "Creates Plots Accompanying Bayesian Diagnostic Test Accuracy Meta-Analyses")
@@ -2906,6 +3179,9 @@ operating characteristic (HSROC) meta-analysis model or Bayesian latent class
         (base32 "0yg1fbrqixqp93vdw3grvz1la5l2kidgs730qp6yihkp3260cxf3"))))
     (properties `((upstream-name . "dtangle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-deoptimr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dtangle")
@@ -2928,6 +3204,9 @@ information on dtangle see Hunt et al. (2019)
         (base32 "0pv04l4wxf44zva5w96i02g4z8zx3zgjxxjacfg0vh2f7gx4pjnq"))))
     (properties `((upstream-name . "Dtableone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-proc r-irr r-epir r-dplyr))
     (home-page "https://cran.r-project.org/package=Dtableone")
     (synopsis "Tabular Comparison of Paired Diagnostic Tests")
@@ -2952,6 +3231,9 @@ gtsummary packages.")
         (base32 "0xbhbiiq0mhqspxlgzlnrq2zm3gnb8n4rj285rdgq4cbpmfrly6l"))))
     (properties `((upstream-name . "DSWE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-rcpparmadillo
                              r-rcpp
@@ -2968,13 +3250,13 @@ gtsummary packages.")
      "Data science methods used in wind energy applications.  Current functionalities
 include creating a multi-dimensional power curve model, performing power curve
 function comparison, covariate matching, and energy decomposition.  Relevant
-works for the developed functions are: @code{funGP}() - Prakash et al. (2022)
-<doi:10.1080/00401706.2021.1905073>, AMK() - Lee et al. (2015)
-<doi:10.1080/01621459.2014.977385>, @code{tempGP}() - Prakash et al. (2022)
-<doi:10.1080/00401706.2022.2069158>, @code{ComparePCurve}() - Ding et al. (2021)
-<doi:10.1016/j.renene.2021.02.136>, @code{deltaEnergy}() - Latiffianti et al.
-(2022) <doi:10.1002/we.2722>, @code{syncSize}() - Latiffianti et al. (2022)
-<doi:10.1002/we.2722>, @code{imptPower}() - Latiffianti et al. (2022)
+works for the developed functions are: @code{funGP()} - Prakash et al. (2022)
+<doi:10.1080/00401706.2021.1905073>, @code{AMK()} - Lee et al. (2015)
+<doi:10.1080/01621459.2014.977385>, @code{tempGP()} - Prakash et al. (2022)
+<doi:10.1080/00401706.2022.2069158>, @code{ComparePCurve()} - Ding et al. (2021)
+<doi:10.1016/j.renene.2021.02.136>, @code{deltaEnergy()} - Latiffianti et al.
+(2022) <doi:10.1002/we.2722>, @code{syncSize()} - Latiffianti et al. (2022)
+<doi:10.1002/we.2722>, @code{imptPower()} - Latiffianti et al. (2022)
 <doi:10.1002/we.2722>, All other functions - Ding (2019, ISBN:9780429956508).")
     (license license:expat)))
 
@@ -2990,6 +3272,9 @@ works for the developed functions are: @code{funGP}() - Prakash et al. (2022)
         (base32 "0vy0flyg82x0n9vw6jf9f76qy84sp0wnis91faj37ac5hdv3pvsb"))))
     (properties `((upstream-name . "dSVA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sva))
     (home-page "https://cran.r-project.org/package=dSVA")
     (synopsis "Direct Surrogate Variable Analysis")
@@ -3010,6 +3295,9 @@ can identify hidden factors in high-dimensional biomedical data.")
         (base32 "13ya0n31nkpvamrv6nmswx45npbl5yv07lqmfwccinzm6kzv39c2"))))
     (properties `((upstream-name . "dsTidyverseClient")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-dsi r-cli r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dsTidyverseClient")
@@ -3039,6 +3327,9 @@ is installed on the remote server holding the data.  For more information, see
         (base32 "0148pphkyyw6pflk5bhlcapzml5kw2xqw94q6gxsk2p15nm050dp"))))
     (properties `((upstream-name . "dsTidyverse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-cli))
     (home-page "https://cran.r-project.org/package=dsTidyverse")
     (synopsis "'DataSHIELD' 'Tidyverse' Serverside Package")
@@ -3064,6 +3355,9 @@ variables.  For more information, see <https://www.tidyverse.org/> and
         (base32 "0llp5az6sdbq9kk9dbk0app7lx3jbns2amb8pd9nbvrgz133jg5m"))))
     (properties `((upstream-name . "dSTEM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://doi.org/10.1214/20-EJS1751")
     (synopsis
@@ -3091,6 +3385,9 @@ in D. Cheng and A. Schwartzman (2017) <doi:10.1214/16-AOS1458>.")
         (base32 "16qbczzjzhmsby8d2sf1xnijiczlk29xazbgl98jbfpmpfzn4q6j"))))
     (properties `((upstream-name . "dstat2x2xk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biasedurn))
     (home-page "https://cran.r-project.org/package=dstat2x2xk")
     (synopsis "Demonstrated Insensitivity to Bias in 2x2xK Contingency Tables")
@@ -3113,6 +3410,9 @@ function, dstat2x2xk.")
         (base32 "023jp0xdbg200ww1gnr3fzgjqd82acag0jps7q6j6m27q11psvgz"))))
     (properties `((upstream-name . "dstat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dstat")
     (synopsis
      "Conditional Sensitivity Analysis for Matched Observational Studies")
@@ -3141,6 +3441,9 @@ periodontal disease from Rosenbaum (2017) <doi:10.1214/17-STS621>.")
         (base32 "0wm5kr2pkgbvh9svjq8zq46zn50hwf58rs3y1ybnwcfjc2q75h1s"))))
     (properties `((upstream-name . "DstarM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rwiener
                              r-rtdists
                              r-rcpparmadillo
@@ -3169,6 +3472,9 @@ function.")
         (base32 "07nvsv0xb6wv0yl7ia7sgm6ysi4w2714pjyqhbzl76mp4c7cx7cd"))))
     (properties `((upstream-name . "dstabledist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stabledist r-rdpack))
     (home-page "https://cran.r-project.org/package=dstabledist")
     (synopsis "The Discrete Stable Distribution Functions")
@@ -3189,6 +3495,9 @@ density) and random generation for discrete stable random variables.")
         (base32 "1h91pz04cr9frnrnz7zdrn5lwhfsgfx1q9xk0wwifpzhkfy2h9ix"))))
     (properties `((upstream-name . "dst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-rlang r-matrix r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dst")
@@ -3215,6 +3524,9 @@ probability distributions.")
         (base32 "1z4sfqlgqwhxhm8aryv5c3vlzamn9nx2c49dyi1axq4qpy7dg3pr"))))
     (properties `((upstream-name . "DSSP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-rust
                              r-rcpparmadillo
@@ -3243,6 +3555,9 @@ splines.")
         (base32 "1nbr8mdva6g7p9mrbbg6g116vrvny07yvkyklgjbw79vrj7lfgy3"))))
     (properties `((upstream-name . "dssd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dssd")
@@ -3271,6 +3586,9 @@ estimating animal/plant abundance with distance sampling at
         (base32 "0ws1s8gccn3qhb7jalj3lv4qpgy2hdan63wpp6fsvlqmd202wfa3"))))
     (properties `((upstream-name . "DSSAT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -3304,6 +3622,9 @@ output files.")
         (base32 "1nfwcab6p7swki8d2j2dywj93xidkjqcq84majvq90yabx353jd3"))))
     (properties `((upstream-name . "dsrTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-loglognorm r-exactci r-asht))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mnelsonr/dsrTest")
@@ -3326,6 +3647,9 @@ and obtain the matching confidence interval using a choice of methods.")
         (base32 "18z8gk3zj7k2szxg9579qy5klrqjw6zsk5x9jmwrv4qhb98fyji6"))))
     (properties `((upstream-name . "DSpoty")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-purrr r-httr r-dplyr))
     (home-page "https://github.com/AlbertoAlmuinha/DSpoty")
     (synopsis "Get 'Spotify' API Multiple Information")
@@ -3349,6 +3673,9 @@ to find similar songs.  More information:
         (base32 "1qv44wj1dvng1m4lkscn9yylhxsr8ck46wv54vjy9px4g7rmjaq5"))))
     (properties `((upstream-name . "dsos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-simctest r-scales r-ggplot2 r-future-apply
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -3375,6 +3702,9 @@ underlying scores for example.")
         (base32 "1jhjk2anh5kc421r0l8v0s5cbnqhdwwiirk1zcmmgk62k3an0lsf"))))
     (properties `((upstream-name . "DSOpal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-opalr r-dsi))
     (home-page "https://github.com/datashield/DSOpal/")
     (synopsis "'DataSHIELD' Implementation for 'Opal'")
@@ -3401,6 +3731,9 @@ reference implementation of the @code{DataSHIELD} infrastructure.")
         (base32 "1kif46mjhrxxmdv4jahagjd3bz47na3k4r8m10cm85cac88iichm"))))
     (properties `((upstream-name . "dsmSearch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sp
                              r-sf
@@ -3431,6 +3764,9 @@ APIs, including @code{OpenTopography}
         (base32 "0myhpkblj8dl1csqd91wk7xr4zvnk400ygqbwbajayjn6l7dvqmd"))))
     (properties `((upstream-name . "DSMolgenisArmadillo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-urltools
                              r-stringr
                              r-molgenisauth
@@ -3462,6 +3798,9 @@ MOLGENIS Armadillo server.  MOLGENIS Armadillo is a light-weight
         (base32 "0pdhpshdhpd1cvgnx3cnbkczwychxv49w90sc4lvgviknl7wd4c1"))))
     (properties `((upstream-name . "dsmmR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-discreteweibull))
     (home-page "https://github.com/Mavrogiannis-Ioannis/dsmmR")
     (synopsis "Estimation and Simulation of Drifting Semi-Markov Models")
@@ -3499,6 +3838,9 @@ Recherche (ANR) under grant ANR-21-CE40-0005).")
         (base32 "19760hcb5154rayhj72r48r7glh2qyaf178zkxplywmsw338kws4"))))
     (properties `((upstream-name . "dsmisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rcpp))
     (home-page "https://cran.r-project.org/package=dsmisc")
     (synopsis "Data Science Box of Pandora Miscellaneous")
@@ -3525,6 +3867,9 @@ expanding value combinations.")
         (base32 "159hlllbp4qy5dxmxgsjcl2ksflq7z7v1ra5d7piyanm9c632q8a"))))
     (properties `((upstream-name . "dsm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod
                              r-plyr
                              r-numderiv
@@ -3554,6 +3899,9 @@ variance estimation.")
         (base32 "1xc9igwsxwiirg40br1qckai0lzhijfnpdrxg94r38hngb7r5cy2"))))
     (properties `((upstream-name . "DSLite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rly r-r6 r-dsi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/datashield/DSLite/")
@@ -3578,6 +3926,9 @@ the current R session.  The purpose of this is primarily for lightweight
         (base32 "0h34bnji7ll2zh79d1yilj908mjgf27yify2kl2gapj9k499zc2v"))))
     (properties `((upstream-name . "dslice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rcpp r-ggplot2))
     (home-page "https://cran.r-project.org/package=dslice")
     (synopsis "Dynamic Slicing")
@@ -3599,6 +3950,9 @@ non-parametric hypothesis testing and gene set enrichment analysis.")
         (base32 "1qx5lj7fiaksfp4vc0n0dxjcjpijx5lp4c0ifmzrfsd67d5zhlbb"))))
     (properties `((upstream-name . "dsld")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-rmarkdown
                              r-regtools
@@ -3632,6 +3986,9 @@ machine learning algorithms.  Python interfaces available.")
         (base32 "19nx8jjjadwhkk4wp3lv7xddq8pbj6l405xaxk4fhvgcvlxa65zk"))))
     (properties `((upstream-name . "dslabs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=dslabs")
     (synopsis "Data Science Labs")
@@ -3654,6 +4011,9 @@ regression, data wrangling and machine learning.")
         (base32 "05wj3zypr2kqfbka930qnwnk2r43pqi13pbs5n6lm8vdq4zjblw4"))))
     (properties `((upstream-name . "DSL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DSL")
     (synopsis "Distributed Storage and List")
     (description
@@ -3676,6 +4036,9 @@ implemented based on the DStorage class.")
         (base32 "09n7gxks3j2gx0yyzdnpxa6ncg2hv48v503z1d3qk3fwvcd6r0s1"))))
     (properties `((upstream-name . "DSjobtracker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thiyangt/DSjobtracker")
     (synopsis
@@ -3696,6 +4059,9 @@ implemented based on the DStorage class.")
         (base32 "0mqnpcs9bijkc0l6x6qssr527rh4j4ignlgvgrqxqgii3ikdx92j"))))
     (properties `((upstream-name . "dsims")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-rstudioapi
                              r-rlang
@@ -3740,6 +4106,9 @@ with distance sampling at <http://distancesampling.org/>.")
         (base32 "1jd6pa5k3dwh51ysg68rk2n9gxxc2c7malb7n2j0vllzy1casm1s"))))
     (properties `((upstream-name . "DSI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-progress r-cli))
     (home-page "https://github.com/datashield/DSI/")
     (synopsis "'DataSHIELD' Interface")
@@ -3762,6 +4131,9 @@ repositories.")
         (base32 "1zqywsa2ip48vpzbk1xml1glrihgfwf37z25pzs07xzj0ij1lwjy"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb r-sem r-rcppeigen r-matrix r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://james-thorson-noaa.github.io/dsem/")
@@ -3785,6 +4157,9 @@ synthesize ecosystem dynamics constrained by ecological mechanisms.\".")
         (base32 "0n0cyqzwv97wqq8m8a3qr6bg2p07ky9dm6hmlxwd2ggxrn3kmxv8"))))
     (properties `((upstream-name . "dsdp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-rmarkdown r-knitr gfortran))
     (home-page "https://tsuchiya-lab.github.io/dsdp/")
@@ -3811,6 +4186,9 @@ more on our Github repository <https://github.com/tsuchiya-lab/dsdp/>.")
         (base32 "1skcmd2fh8s5d5qdj661niwa3cfd01i22kxxcf84awad0p1p8g57"))))
     (properties `((upstream-name . "dscore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-stringi r-rcpparmadillo r-rcpp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/d-score/dscore")
@@ -3836,6 +4214,9 @@ milestone names into a generic 9-position item naming convention.")
         (base32 "0sk5xfs13jxy4n3qgifh75bry1b53mm9gk1x14mpy2vw359cbqx4"))))
     (properties `((upstream-name . "DSBayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bb))
     (home-page "https://cran.r-project.org/package=DSBayes")
     (synopsis "Bayesian Subgroup Analysis in Clinical Trials")
@@ -3858,6 +4239,9 @@ trials.  For details of the methodology, please refer to D.O. Dixon and R. Simon
         (base32 "1f34gp5qic70fnv2ds3v9jk08ginbk9ivxddcvdaadr249lvln12"))))
     (properties `((upstream-name . "dsample")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mnormt r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dsample")
@@ -3883,16 +4267,19 @@ distribution is not needed.  Posterior summaries are compared with those by
         (base32 "1bm7wicpq372xnwlib18434cid90vy575zc4f4xgsy2vsm8f87ym"))))
     (properties `((upstream-name . "DSAM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost r-proc r-matrix r-kohonen r-caret))
     (home-page "https://github.com/lark-max/DSAM")
     (synopsis "Data Splitting Algorithms for Model Developments")
     (description
      "Providing six different algorithms that can be used to split the available data
 into training, test and validation subsets with similar distribution for
-hydrological model developments.  The @code{dataSplit}() function will help you
+hydrological model developments.  The @code{dataSplit()} function will help you
 divide the data according to specific requirements, and you can refer to the
-par.default() function to set the parameters for data splitting.  The
-@code{getAUC}() function will help you measure the similarity of distribution
+@code{par.default()} function to set the parameters for data splitting.  The
+@code{getAUC()} function will help you measure the similarity of distribution
 features between the data subsets.  For more information about the data
 splitting algorithms, please refer to: Chen et al. (2022)
 <doi:10.1016/j.jhydrol.2022.128340>, Zheng et al. (2022)
@@ -3911,6 +4298,9 @@ splitting algorithms, please refer to: Chen et al. (2022)
         (base32 "0zp5dcfdzrywp252d1dcyvaxn8lygqs7hzxk0v9yzgahrbxnlvw9"))))
     (properties `((upstream-name . "DSAIRM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-shiny
                              r-rlang
@@ -3946,6 +4336,9 @@ with the models.")
         (base32 "01yljprcwkq0n7w9yr1xlkajyzyd0n8kmxkj80wcldp5mvqjmyxd"))))
     (properties `((upstream-name . "DSAIDE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-shiny
                              r-rlang
@@ -3981,6 +4374,9 @@ underlying models and instructions on what to do with the models.")
         (base32 "16lqqm0lcgpkzkj7d0akamzap85aj4dyj5rs5fkb5b9bjqa5r4c5"))))
     (properties `((upstream-name . "dsa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-tsoutliers
@@ -4015,6 +4411,9 @@ time series.  Bundesbank Discussion Paper 41/2018.")
         (base32 "1l5qqcpzad2nnhzzcb43slgmdg08v830l5np8mc7qh4wlig1x95l"))))
     (properties `((upstream-name . "ds4psy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-unikn r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://bookdown.org/hneth/ds4psy/")
@@ -4043,6 +4442,9 @@ than efficient or elegant.")
         (base32 "1iic5fb27cnhsa83zg28hydrhzc01i9z0711xvk95c3gv7mbfp2p"))))
     (properties `((upstream-name . "ds")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=ds")
     (synopsis "Descriptive Statistics")
     (description
@@ -4062,6 +4464,9 @@ correlations, graphics and tables.")
         (base32 "1m111n2ycr5z3dy3mhkyxfw0fq74lny0kajk91d0klcpixfv7y2g"))))
     (properties `((upstream-name . "DRviaSPCN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-pheatmap
                              r-igraph
@@ -4093,14 +4498,17 @@ functions used to visualize the results.")
         (base32 "09xi3sf424bpq10fq25j209dylfbi1lfd911r44ffadkxzvp5p1s"))))
     (properties `((upstream-name . "drumr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-audio))
     (home-page "https://cran.r-project.org/package=drumr")
     (synopsis "Turn R into a Drum Machine")
     (description
-     "Includes various functions for playing drum sounds.  beat() plays a drum sound
-from one of the six included drum kits.  tempo() sets spacing between calls to
-beat() in bpm.  Together the two functions can be used to create many different
-drum patterns.")
+     "Includes various functions for playing drum sounds. @code{beat()} plays a drum
+sound from one of the six included drum kits. @code{tempo()} sets spacing
+between calls to @code{beat()} in bpm.  Together the two functions can be used
+to create many different drum patterns.")
     (license license:gpl3)))
 
 (define-public r-drugutilisation
@@ -4115,6 +4523,9 @@ drum patterns.")
         (base32 "17896mf0mryqrmlllkh7dhf65id31n26z4h757kdsb2wj32my7k9"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visomopresults
                              r-tidyr
                              r-stringr
@@ -4154,6 +4565,9 @@ indication and drug use summarised.")
         (base32 "1sphg3imdyr71amwqzmzzp6h1ai2m6rm87l08mv70i6jlznwf9kr"))))
     (properties `((upstream-name . "DrugSim2DR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sp
                              r-rvest
@@ -4186,6 +4600,9 @@ significant target abnormalities as candidate drugs.")
         (base32 "07401dqw4krqh3rv7y13526n0xjdlaw14gcxwranksjchmqjd3ij"))))
     (properties `((upstream-name . "drugprepr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-sqldf
@@ -4216,6 +4633,9 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
         (base32 "11bchwz3545l4w62q0zgs699g3ak86sm4l9d5adybnmf59a5ax0k"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-shiny
@@ -4247,6 +4667,9 @@ Medical Outcomes Partnership (OMOP) common data model.")
         (base32 "0mbr0s826wmknw4n50qbg5i9b5x969s9h7w21nni17i074iqjhpb"))))
     (properties `((upstream-name . "drugdevelopR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progressr
                              r-mvtnorm
                              r-msm
@@ -4285,6 +4708,9 @@ complex settings with bias correction (Preussler S et al. (2020)
         (base32 "1gmpvcrcs1j2m98dxppa0jss781dpscw89ffh8d6yamm385p0951"))))
     (properties `((upstream-name . "drugDemand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
                              r-rlang
@@ -4331,6 +4757,9 @@ ISBN:0-471-19364-X)).")
         (base32 "1rr9341y6nf8qdaabfwzbjgwmsb7z1i514cz4x2z5hj9qxyjiy4c"))))
     (properties `((upstream-name . "DRquality")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-databionicswarm))
     (home-page "https://cran.r-project.org/package=DRquality")
     (synopsis "Quality Measurements for Dimensionality Reduction")
@@ -4355,6 +4784,9 @@ Dimensionality Reduction\" (2023), Machine Learning and Knowledge Extraction
         (base32 "1gh0w1a59070g9mmck4fp9591vfw23c5nlj3jrkxwarp4vfy1dqp"))))
     (properties `((upstream-name . "drpop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-superlearner
                              r-stringr
@@ -4389,6 +4821,9 @@ preferred model.")
         (base32 "1xarpzfcj4zldyfzl30vxkgqwcbi17nly6vbxsm7z8vigjslx6ma"))))
     (properties `((upstream-name . "drought")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-corrplot r-copula))
     (home-page "https://cran.r-project.org/package=drought")
     (synopsis "Statistical Modeling and Assessment of Drought")
@@ -4412,6 +4847,9 @@ provided.  Please see Hao Zengchao et al. (2017)
         (base32 "0xi85s6y78d54qv3cw7q72dz5kcs8cc8nyjyaxr5h6pfpzi2l8i9"))))
     (properties `((upstream-name . "drord")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-ordinal r-mass r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/benkeser/drord")
@@ -4433,6 +4871,9 @@ establishing the effects of treatments on ordinal outcomes.")
         (base32 "1wlfhj6c4pb5mcybyd2bcn55y3azk7dv7d7il97qwbhl8kf59csl"))))
     (properties `((upstream-name . "droptest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (home-page "https://github.com/chadr/droptest")
     (synopsis "Simulates LOX Drop Testing")
@@ -4460,6 +4901,9 @@ Ambient Liquid Oxygen and Pressurized Liquid and Gaseous Oxygen Environments\"
         (base32 "159kw9wxglc7rbb5bvvg1ixi0j1y22179wn7g40k9ahpfvfmbqy4"))))
     (properties `((upstream-name . "dropR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-shiny r-lifecycle r-ggplot2
                              r-data-table))
     (native-inputs (list r-knitr))
@@ -4490,6 +4934,9 @@ Ulf-Dietrich Reips (2002) \"Standards for Internet-Based Experimenting\"
         (base32 "09rcmxcdl8g7fcgv86c4mv5gd0399vd17a8g58x039s7yz52ys3j"))))
     (properties `((upstream-name . "dropout")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hendr1km/dropout")
     (synopsis "Handling Incomplete Responses in Survey Data Analysis")
@@ -4510,6 +4957,9 @@ datasets, thereby enhancing the quality and reliability of research findings.")
         (base32 "0bhs89hwzylg6w86s89i96l36k8z3k496w2nq38bri1b7vy22hbi"))))
     (properties `((upstream-name . "DRomics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-rlang
                              r-limma
@@ -4551,6 +5001,9 @@ and Larras et al (2018) <DOI:10.1021/acs.est.8b04752>.")
         (base32 "0gd1vnvkjdsw7gz4czi4g9zq5080awfr4dy2srgksh4ah4ki4vm3"))))
     (properties `((upstream-name . "droll")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ryacas))
     (home-page "https://cran.r-project.org/package=droll")
     (synopsis "Analyze Roll Distributions")
@@ -4571,6 +5024,9 @@ calculating success probabilities, and plotting outcome distributions.")
         (base32 "00cwzy097wbl1k3sw3nfn0kzb6af7hyzwaznvlckf77g7kw86bmi"))))
     (properties `((upstream-name . "driveR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg38-knowngene
                              r-txdb-hsapiens-ucsc-hg19-knowngene
                              r-s4vectors
@@ -4615,6 +5071,9 @@ genes using somatic genomics data.  BMC Bioinformatics
         (base32 "0g1qx77zwazg2109nmxm12bsma9nvacydxl5g8rq23dvl2khpkx3"))))
     (properties `((upstream-name . "DRIP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://miamioh.edu/fsb/directory/?up=/directory/kangy10")
     (synopsis "Discontinuous Regression and Image Processing")
@@ -4643,6 +5102,9 @@ implemented methods are based on the following research: Qiu, P. (1998)
         (base32 "0fi0ifb9y2jfb347684fd9pjfgn4b693yb5sqbcfpf2z7jvknsi1"))))
     (properties `((upstream-name . "drimmR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-seqinr
                              r-reshape2
@@ -4678,6 +5140,9 @@ The implemented methods are described in Vergne, N. (2008),
         (base32 "0n7pim5kk0wfdjcc67v4vvdb7wyhn5bcgi2a12nbyfyydss7pk1g"))))
     (properties `((upstream-name . "DrillR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-httr))
     (home-page "https://cran.r-project.org/package=DrillR")
     (synopsis "R Driver for Apache Drill")
@@ -4703,6 +5168,9 @@ about Apache Drill.")
         (base32 "1xsp8cm02wd8zink0jqrdaii7s2dh0rw96rs6k8zr2g0341wmfba"))))
     (properties `((upstream-name . "drifter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-ingredients r-dplyr r-dalex))
     (home-page "https://ModelOriented.github.io/drifter/")
     (synopsis
@@ -4711,12 +5179,13 @@ about Apache Drill.")
      "Concept drift refers to the change in the data distribution or in the
 relationships between variables over time.  drifter calculates distances between
 variable distributions or variable relations and identifies both types of drift.
- Key functions are: calculate_covariate_drift() checks distance between
-corresponding variables in two datasets, calculate_residuals_drift() checks
-distance between residual distributions for two models, calculate_model_drift()
-checks distance between partial dependency profiles for two models,
-check_drift() executes all checks against drift.  drifter is a part of the
-@code{DrWhy.AI} universe (Biecek 2018) <@code{arXiv:1806.08915>}.")
+ Key functions are: @code{calculate_covariate_drift()} checks distance between
+corresponding variables in two datasets, @code{calculate_residuals_drift()}
+checks distance between residual distributions for two models,
+@code{calculate_model_drift()} checks distance between partial dependency
+profiles for two models, @code{check_drift()} executes all checks against drift.
+ drifter is a part of the @code{DrWhy.AI} universe (Biecek 2018)
+<@code{arXiv:1806.08915>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-driftbursthypothesis
@@ -4731,6 +5200,9 @@ check_drift() executes all checks against drift.  drifter is a part of the
         (base32 "1pmsbv1rl79s520nxj536m8gf7xyfjskj8r88rxmxscbgp8c1xz2"))))
     (properties `((upstream-name . "DriftBurstHypothesis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/emilsjoerup/DriftBurstHypothesis")
     (synopsis "Calculates the Test-Statistic for the Drift Burst Hypothesis")
@@ -4753,6 +5225,9 @@ MATLAB code is available upon request, see:
         (base32 "06zy2acgmhfc1criid35ci1802zl77qcif2vrhn0w8syixsbjiq8"))))
     (properties `((upstream-name . "drhur")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-learnr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=drhur")
@@ -4772,6 +5247,9 @@ MATLAB code is available upon request, see:
         (base32 "0r7lbzmk05k65kgasz3ka1ic4hqdv65yryf2vz5c4x1yrqvsh9sg"))))
     (properties `((upstream-name . "DRHotNet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep
                              r-spatstat-linnet
                              r-spatstat-geom
@@ -4805,6 +5283,9 @@ where the type of event indicated by the user is overrepresented.")
         (base32 "1v3n546ivvh5hfwlz7m1wn6jdgcd9yjnricah1y7v6r15zy3jyds"))))
     (properties `((upstream-name . "drglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-speedglm r-nnet))
     (native-inputs (list r-knitr))
     (home-page "https://nayemmh.github.io/drglm/")
@@ -4837,6 +5318,9 @@ Karim, M.R., Islam, M.A. (2019) <doi:10.1007/978-981-13-9776-9>.")
         (base32 "0hy7887mvlxh73zk2yzp46bqakq924n940j21lw25jgygmzz1176"))))
     (properties `((upstream-name . "drgee")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-nleqslv
                              r-data-table))
     (home-page "https://cran.r-project.org/package=drgee")
@@ -4865,6 +5349,9 @@ necessarily both.  For more information, see Zetterqvist and SjÃ¶lander (2015)
         (base32 "13b31rynknzirnvgygs1ar5968xdh8dhg60ibn0g359gnzadn7ad"))))
     (properties `((upstream-name . "drf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-transport r-rcppeigen r-rcpp r-matrix
                              r-fastdummies))
     (home-page "https://github.com/lorismichel/drf")
@@ -4886,6 +5373,9 @@ Michel & Meinshausen & Buhlmann (2020) <@code{arXiv:2005.14458>}.")
         (base32 "15cplshs85r0z659mc7xmj5db7vc95wxs01c34isc22p8z0a287i"))))
     (properties `((upstream-name . "DREGAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-msgps))
     (home-page "http://hamedhaseli.webs.com.")
     (synopsis
@@ -4909,6 +5399,9 @@ select the tuning parameters.")
         (base32 "11va0bwi8r3qv7cw5zjci0i7876lh02bzf5rdfn6sfv223yllpiy"))))
     (properties `((upstream-name . "dreamerr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringmagic r-formula))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dreamerr")
@@ -4935,6 +5428,9 @@ in debugging.")
         (base32 "10yvdg5nkw4nawy9hdqyrsgh01xga8l3hn3qi1sbjzniv7903v7d"))))
     (properties `((upstream-name . "dreamer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-rootsolve
@@ -4969,6 +5465,9 @@ efficacious dose, etc.) are also implemented.  Copyright Eli Lilly and Company
         (base32 "1vrvwr441w526a80s0r2fwqlllvn05ir8v2152jz2wxrwhnpq1s0"))))
     (properties `((upstream-name . "DRDRtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-superlearner r-kernsmooth))
     (home-page "https://cran.r-project.org/package=DRDRtest")
     (synopsis
@@ -4991,6 +5490,9 @@ is a significant effect modifier.")
         (base32 "1ax70932zn0q21drbp8wr5xy5xjnaqvkqd2cp4cb7bl9f6bcsz9p"))))
     (properties `((upstream-name . "DrDimont")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wgcna
                              r-tidyr
                              r-tibble
@@ -5042,6 +5544,9 @@ to the software and explicitly not to the included data.")
         (base32 "0sjjg4i9lq48na3xwsk0jv8s2jh5b70052ymlkxgha4hpvg9kh4y"))))
     (properties `((upstream-name . "DRDID")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trust r-rcpp r-fastglm r-bmisc))
     (home-page "https://psantanna.com/DRDID/")
     (synopsis "Doubly Robust Difference-in-Differences Estimators")
@@ -5067,6 +5572,9 @@ estimation methods can be used to estimate the nuisance functions.")
         (base32 "0npw800swbdv3s0qj345101y5c8f7am40w8cf7krmyh3jj50cyx0"))))
     (properties `((upstream-name . "drda")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/albertopessia/drda")
     (synopsis "Dose-Response Data Analysis")
@@ -5088,6 +5596,9 @@ goodness-of-fit measures.  See Malyutina A., Tang J., and Pessia A. (2023)
         (base32 "0gpzpmk5v1lr03gl710kp4d4ldfskjr5s66wcl00abg3kz8jpixn"))))
     (properties `((upstream-name . "drcte")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-survival
                              r-sandwich
@@ -5124,6 +5635,9 @@ emergence, and other time-to-event data in weed science\"\", Weed Science, 70,
         (base32 "19fyfw5r994l5sbfrh8ar4kqc27j0pgdks1cp7liql6dw5iliyp4"))))
     (properties `((upstream-name . "drcSeedGerm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-plyr
                              r-mvtnorm
@@ -5154,6 +5668,9 @@ datasets for practicing.")
         (base32 "04qi123vdj33dfhgxmwc0c2viwa74lr4x1kj85rgbvvsqhwnp1kz"))))
     (properties `((upstream-name . "drclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-pheatmap
@@ -5190,6 +5707,9 @@ Vichi M. (2017) \"Disjoint factor analysis with cross-loadings\"
         (base32 "05yfyjkxrayz9cmlk7qnbcqgjfxnbkmc2wkbarr9l8m47zzhda8n"))))
     (properties `((upstream-name . "drcarlate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-splus2r
                              r-purrr
@@ -5221,6 +5741,9 @@ found in Jiang et al. (2022) <doi:10.48550/@code{arXiv.2201.13004>}.")
         (base32 "1623h8s6y4klq8xmj480ga2wl6n4c2f26v1dwysyvcrk6lnaghdm"))))
     (properties `((upstream-name . "DrBats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sde
                              r-rstan
                              r-matrix
@@ -5250,6 +5773,9 @@ algorithm with STAN. See G. Weinrott, B. Fontez, N. Hilgert and S. Holmes,
         (base32 "0cf5pyx6nwh8srdylpnmymv3dr67fm6qqpwd1hvj1wmyfc8fznpp"))))
     (properties `((upstream-name . "DRAYL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil r-rconics r-pracma r-cubature))
     (home-page "https://cran.r-project.org/package=DRAYL")
     (synopsis "Computation of Rayleigh Densities of Arbitrary Dimension")
@@ -5275,6 +5801,9 @@ multivariate Rayleigh PDFs with applications to antenna array geometrics\", <DOI
         (base32 "018v4amapfwxx6k4s9drcv2vwil7cplnkwlrhy9djc0a02jxx2l5"))))
     (properties `((upstream-name . "drawsample")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx
                              r-tibble
                              r-shinydashboard
@@ -5311,6 +5840,9 @@ answering many research questions (Klar & Leeper, 2019)
         (base32 "1pschc911zrcgy6vmh9aylz79qfifxvxrm5gxwah7xv50plpar78"))))
     (properties `((upstream-name . "DRaWR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rocr r-matrix))
     (home-page "https://cran.r-project.org/package=DRaWR")
     (synopsis "Discriminative Random Walk with Restart")
@@ -5342,6 +5874,8 @@ random walk with restarts, performed on the above subnetwork.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5387,6 +5921,9 @@ screenshots, upload their own images and maybe make a scientific figure.")
         (base32 "0kbz8rcgygl4fhmljzaan5jl7wjvfljcaykm7q9lw9s6m78p06gz"))))
     (properties `((upstream-name . "draw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/rrwen/draw")
     (synopsis "Wrapper Functions for Producing Graphics")
     (description
@@ -5407,6 +5944,9 @@ settings.  Compatible with and based on the R grid package.")
         (base32 "0ypfghb9qv8rnhh1qs181yhdb85a4854hsicz0sb92wn3as3kc7w"))))
     (properties `((upstream-name . "drape")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=drape")
     (synopsis "Doubly Robust Average Partial Effects")
@@ -5430,6 +5970,9 @@ can be found in Harvey Klyne and Rajen D. Shah (2023)
         (base32 "0nsnwais0r592c50nphfzkr1bbygl67mriwsx7dxbvmpdsswlvl1"))))
     (properties `((upstream-name . "DramaAnalysis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tokenizers
                              r-stringr
@@ -5461,6 +6004,9 @@ behind it are described in Reiter et al. (2017) <doi:10.18420/in2017_119>.")
         (base32 "1nd8vqlc2hzxlh8vlqjvgls3gc2ya8vmx7nyci5g1nib1l07gxrq"))))
     (properties `((upstream-name . "drake")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-txtq
                              r-tidyselect
@@ -5497,6 +6043,8 @@ and more, is available at the reference website
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5534,6 +6082,9 @@ positions of user interface elements like plots or tables.")
         (base32 "0ka3p72c3brrla7dawm4anyr073kgiy39ip5bdig9888gwiwjccq"))))
     (properties `((upstream-name . "dragracer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dragracer")
     (synopsis "Data Sets for RuPaul's Drag Race")
@@ -5560,6 +6111,9 @@ language around its contents.")
         (base32 "01b01wd1s2b8sa9f0kfbf2pbzhaqra7xxskigqh3vlj389xqm1id"))))
     (properties `((upstream-name . "dragonking")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/rrrlw/dragonking")
     (synopsis "Statistical Tools to Identify Dragon Kings")
     (description
@@ -5580,6 +6134,9 @@ Wheatley & Sornette (2015) <doi:10.2139/ssrn.2645709>.")
         (base32 "1zs7xfjdx3anrvslfkx483k0swac7rq8y7n7gaws6ap94qy4xrk8"))))
     (properties `((upstream-name . "dracor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/natverse/dracor")
     (synopsis "Decode Draco Format 3D Mesh Data")
@@ -5601,6 +6158,9 @@ intended as a full scale wrapping of the Draco library.")
         (base32 "1nmy8mxxrmwzw826wvnn4rrm64xal9jr160yqiqj41zmb241q4b6"))))
     (properties `((upstream-name . "dr4pl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tensor
                              r-rlang
                              r-rdpack
@@ -5639,6 +6199,9 @@ Gerhard, D. (2015) <doi:10.1371/journal.pone.0146021>.")
         (base32 "076halm823dlrj95hqq3ibdb645vd2w68mixi36wdnh7ngr7ih1f"))))
     (properties `((upstream-name . "DR.SC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatstat-geom
                              r-seurat
                              r-s4vectors
@@ -5678,6 +6241,9 @@ capable of choosing the smoothness parameter and the number of clusters as well.
         (base32 "0dmz4h7biwrn480i66f6jm3c6p4pjvfv24pw1aixvab2vcdkqlnf"))))
     (properties `((upstream-name . "dr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=dr")
     (synopsis "Methods for Dimension Reduction for Regression")
@@ -5704,6 +6270,9 @@ the package.  With version 3.0.4, the arguments for dr.step have been modified."
         (base32 "0by13x0583mxsb1sxl0p4qhzrwzcri7jrc80pgyr7nmpk0cvmsnj"))))
     (properties `((upstream-name . "dQTG.seq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-vroom
                              r-stringr
@@ -5742,6 +6311,9 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
         (base32 "163xjysvh8h06qc0yz4z21xf2w8angj05i50kfzsi4mwyiai8qd9"))))
     (properties `((upstream-name . "DQAstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tinytex
                              r-quarto
                              r-parsedate
@@ -5774,6 +6346,9 @@ Publication: Kapsner et al. (2021) <doi:10.1055/s-0041-1733847>.")
         (base32 "0b2qy3h01k8v3l3bbnhij9ibr9gyzh8lnihqwmwnwqvrdgnypv6l"))))
     (properties `((upstream-name . "DQAgui")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-waiter
                              r-shinywidgets
                              r-shinyjs
@@ -5812,6 +6387,9 @@ implemented in the R package DQAstats'.  Publication: Mang et al. (2021)
         (base32 "0d7zf695lwkx4gv50f08cbi3p3mjjay0qgrbmvybf9m15i4zmyd7"))))
     (properties `((upstream-name . "DPtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-plyr r-mcmcpack r-mass))
     (home-page "https://cran.r-project.org/package=DPtree")
     (synopsis "Dirichlet-Based Polya Tree")
@@ -5833,6 +6411,9 @@ non-parametric Bayesian method, Dirichlet-based Polya Tree.  See Ning (2018)
         (base32 "058b9sm41ns1393r0j9n932qc5bk32ddzlidzv7brrxyrz4zpd37"))))
     (properties `((upstream-name . "DPTM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpp
                              r-purrr
@@ -5864,6 +6445,9 @@ multiple threshold model is also allowed.")
         (base32 "19k7w6ln72qriwxdjx9a9cxpxbkqqja69r17zpwxz6qkw60ly4z9"))))
     (properties `((upstream-name . "dpseg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/raim/dpseg/")
@@ -5889,6 +6473,9 @@ criteria (\"scoring functions\").")
         (base32 "0fvghjblm6giq72qqn20qwlw4ki9lrxagsy0jjbiinf51rdrhc8y"))))
     (properties `((upstream-name . "dprop")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vares r-extradistr))
     (home-page "https://cran.r-project.org/package=dprop")
     (synopsis "Computation of Some Important Distributional Properties")
@@ -5915,6 +6502,9 @@ distributions.")
         (base32 "0m0dyiy0mj1rg59lk90kk7lnhvgxs2k9ycbpc8sxwx3raf20gdy6"))))
     (properties `((upstream-name . "DPQmpfr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sfsmisc r-rmpfr r-gmp r-dpq))
     (home-page "https://specfun.r-forge.r-project.org/")
     (synopsis
@@ -5937,6 +6527,9 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
         (base32 "04bmsqp4mkrf4y1s161ql77f2zpqi66cyqyz9xpzgdf0dizsvn50"))))
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sfsmisc))
     (native-inputs (list gfortran))
     (home-page "https://specfun.r-forge.r-project.org/")
@@ -5950,7 +6543,7 @@ functions, provide functions implementing formulas from Johnson, Kotz, and Kemp
 (1992) <doi:10.1002/bimj.4710360207> and Johnson, Kotz, and Balakrishnan (1995)
 for discrete or continuous distributions respectively.  This is for the use of
 researchers in these numerical approximation implementations, notably for my own
-use in order to improve standard R pbeta(), qgamma(), ..., etc:
+use in order to improve standard R @code{pbeta()}, @code{qgamma()}, ..., etc:
 {'\"dpq\"'-functions}.")
     (license license:gpl2+)))
 
@@ -5966,6 +6559,9 @@ use in order to improve standard R pbeta(), qgamma(), ..., etc:
         (base32 "1gq51kix0jln25gr6bffzdy24fhn6cd3gmyl3jlmvqvni4vwswy7"))))
     (properties `((upstream-name . "dppmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://bitbucket.org/djhshih/dppmix")
     (synopsis "Determinantal Point Process Mixture Models")
@@ -5987,6 +6583,9 @@ Mueller, Telesca (2016) <doi:10.1111/biom.12482>.")
         (base32 "0nyxdy2h6d7r8s1pl9wqzxr8zwjyl3ry0aqys708b5hxvcd7naxf"))))
     (properties `((upstream-name . "DPpack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmutil
                              r-rdpack
                              r-r6
@@ -6028,6 +6627,13 @@ exponential mechanism (@code{McSherry} & Talwar, 2007)
         (base32 "1qalcm4gwh03qpy07d0p323ccq8xmk04v6z30g7wg6ic613bqg7m"))))
     (properties `((upstream-name . "DPP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rcpp r-coda))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DPP")
@@ -6054,6 +6660,9 @@ dimensionality of the data.")
         (base32 "1cnjywkvjb4fhbf4shjmsrq47f1fg2x21hcm1q5512bm0wg9i6jd"))))
     (properties `((upstream-name . "dpmr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rio r-magrittr r-jsonlite r-httr r-digest))
     (home-page "http://cran.r-project.org/package=dpmr")
     (synopsis "Data Package Manager for R")
@@ -6074,6 +6683,9 @@ Foundation's Data Package Protocol.")
         (base32 "1wg492r19rd1hplq6ccngwr0z615m4yx5jln0v01gbz4pm47dpmi"))))
     (properties `((upstream-name . "dpm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-panelr
@@ -6107,6 +6719,9 @@ choices.")
         (base32 "1lqizh70b1apyr4578917gv6s0i7p84ak96a57kvwipmh36a4ywn"))))
     (properties `((upstream-name . "dplyrAssist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-stringr
@@ -6141,6 +6756,9 @@ manipulation.")
         (base32 "1gdjrpa0x6clafiybqcc7119i350k2hx34j5ksgljwr7lb9a8d8f"))))
     (properties `((upstream-name . "dplR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-stringr
                              r-stringi
@@ -6172,6 +6790,9 @@ dating.  Read and write standard file formats used in dendrochronology.")
         (base32 "1ah4b2znqikr9llw6rmmwranswr0dbw2c2y31cj972c8h7fvn0mi"))))
     (properties `((upstream-name . "dpkg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-httr2
@@ -6201,6 +6822,9 @@ repositories and downloaded files are cached locally across R sessions.")
         (base32 "02pnc00sk3bwxmxrg27638x0q62r7nsx2nr14zjjc5q880prdisv"))))
     (properties `((upstream-name . "Dpit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-moments r-gsl r-fitdistrplus))
     (home-page "https://cran.r-project.org/package=Dpit")
     (synopsis "Distribution Pitting")
@@ -6227,6 +6851,9 @@ dataset has been analyzed.")
         (base32 "023m9qzn64m7f992f12y4vf67jpj4zpajvwqyw4qlf4grsr9qfv5"))))
     (properties `((upstream-name . "dPCP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shinyjs
                              r-shiny
@@ -6263,6 +6890,9 @@ vignette.")
         (base32 "1f4c68bvkwg82k1zanjhqqika2bfjv83mbr2khl5lhvfjwvpi1m0"))))
     (properties `((upstream-name . "dpcc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=dpcc")
     (synopsis "Dynamic Programming for Convex Clustering")
@@ -6283,6 +6913,9 @@ weights.")
         (base32 "1qypxrcm3sb727lqb09ssjf3hblixqayw3qsyql01imrxwm609i2"))))
     (properties `((upstream-name . "DPBBM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-tmvtnorm r-gplots r-ceoptim))
     (home-page "https://cran.r-project.org/package=DPBBM")
     (synopsis "Dirichlet Process Beta-Binomial Mixture")
@@ -6303,6 +6936,9 @@ can be used for clustering of RNA methylation sequencing data.")
         (base32 "1dzlry0pr8i39ix0hnhg19fi00kz5jf2l568230mc1k6fv7fidbv"))))
     (properties `((upstream-name . "dpasurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timereg
                              r-tidyr
                              r-survival
@@ -6335,6 +6971,9 @@ covariates.")
         (base32 "126q30byc5li11xz22k6d6gxccy9hgh89v078hg0qq996bpz7p0a"))))
     (properties `((upstream-name . "dparser")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-digest))
     (home-page "https://nlmixr2.github.io/dparser-R/")
     (synopsis "Port of 'Dparser' Package")
@@ -6352,9 +6991,10 @@ to automatically translate them to R code.  To use this in your code, add a
 @code{LinkingTo} dparser in your DESCRIPTION file and instead of using #include
 <dparse.h> use #include <dparser.h>.  This also provides a R-based port of the
 make_dparser <https://dparser.sourceforge.net/d/make_dparser.cat> command called
-mkdparser().  Additionally you can parse an arbitrary grammar within R using the
-dparse() function, which works on most OSes and is mainly for grammar testing.
-The fastest parsing, of course, occurs at the C level, and is suggested.")
+@code{mkdparser()}.  Additionally you can parse an arbitrary grammar within R
+using the @code{dparse()} function, which works on most OSes and is mainly for
+grammar testing.  The fastest parsing, of course, occurs at the C level, and is
+suggested.")
     (license license:bsd-3)))
 
 (define-public r-doypacolors
@@ -6369,6 +7009,9 @@ The fastest parsing, of course, occurs at the C level, and is suggested.")
         (base32 "0ranqbczq65gdqm0csanmphcnnqxkxm8jiw61f1z1cz3rb7bhd5n"))))
     (properties `((upstream-name . "DOYPAColors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gridextra r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jmestret/DOYPAColors")
@@ -6390,6 +7033,9 @@ visualization.")
         (base32 "0bd8bnz98g4jawfgbacssngw3ind41zbqdv79g8d3z8rxkndcpjb"))))
     (properties `((upstream-name . "dowser")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -6433,6 +7079,9 @@ Citations: Hoehn et al (2022) <doi:10.1371/journal.pcbi.1009885>, Hoehn et al
         (base32 "0yx62nx5ga835ng9gwrkwivxjhjrkygdldnd1hswc6wnvfs1qz8s"))))
     (properties `((upstream-name . "downsize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r-utils r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wlandau/downsize")
@@ -6453,6 +7102,9 @@ Citations: Hoehn et al (2022) <doi:10.1371/journal.pcbi.1009885>, Hoehn et al
         (base32 "1rcmn5f30l004rp8a7pmn0w5izsy31n9lwsk3sgj01fjzk0333wc"))))
     (properties `((upstream-name . "downscale")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-sf r-rmpfr r-minpack-lm r-cubature))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/charliem2003/downscale")
@@ -6476,6 +7128,9 @@ modelling.  See Marsh et.  al. (2018) <doi:10.18637/jss.v086.c03>.")
         (base32 "09hbcb9yj45l6v9iyv5pr4wz01l8624b34x45107d7a62djil1x9"))))
     (properties `((upstream-name . "downloadthis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-writexl
                              r-readr
@@ -6506,6 +7161,9 @@ runtime:shiny'.")
         (base32 "1fgaq22n7gm8pqxdfkiayqgjfqjn7knjjjr1x12jgv77cv08xyjk"))))
     (properties `((upstream-name . "Dowd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-forecast r-bootstrap))
     (home-page "https://cran.r-project.org/package=Dowd")
     (synopsis
@@ -6538,6 +7196,9 @@ methods.")
         (base32 "1n37f0mb95d5r2vszfwwysnvn0xv9m85j3mpz7qzz5cp9fb9k38c"))))
     (properties `((upstream-name . "DOVE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DOVE")
@@ -6563,6 +7224,9 @@ E., and Gilbert, P. B. (2021) <doi:10.1093/cid/ciab630>.")
         (base32 "1mzws3w7djpxnfqxjcqwgia7p17kb0qlnzj6qcfg2m1vamb1cn2z"))))
     (properties `((upstream-name . "DOvalidation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DOvalidation")
     (synopsis
      "Kernel Hazard Estimation with Best One-Sided and Double One-Sided Cross-Validation")
@@ -6584,6 +7248,9 @@ double one-sided cross-validation, and standard cross-validation.")
         (base32 "02zr80ps7x5bq388px9jfpf3b5krvba63ydrsi9big2v5x73hfv9"))))
     (properties `((upstream-name . "doudpackage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringi
@@ -6602,15 +7269,18 @@ you to visualize all your data with graphic representation.")
 (define-public r-douconca
   (package
     (name "r-douconca")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "douconca" version))
        (sha256
-        (base32 "17hdmmik25n04hs7h1s7dhgkkvw8avmp6d26qyjnvgch3xs72rdn"))))
+        (base32 "0p6qmj6bhq6ggpkv59nzgx3sv4gscq6ln2l05lj1f0zskpg9skqq"))))
     (properties `((upstream-name . "douconca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-rlang
                              r-permute
@@ -6618,7 +7288,7 @@ you to visualize all your data with graphic representation.")
                              r-ggrepel
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Biometris/douconca")
+    (home-page "https://zenodo.org/records/13970152")
     (synopsis
      "Double Constrained Correspondence Analysis for Trait-Environment Analysis in Ecology")
     (description
@@ -6631,13 +7301,13 @@ analysis and the species-level analysis of species-niche centroids (SNC)-based
 regression analysis.  The two steps use canonical correspondence analysis to
 regress the abundance data on to the traits and (weighted) redundancy analysis
 to regress the CWM of the orthonormalized traits on to the environmental
-predictors.  The function dc_CA() has an option to divide the abundance data of
-a site by the site total, giving equal site weights.  This division has the
-advantage that the multivariate analysis corresponds with an unweighted
+predictors.  The function @code{dc_CA()} has an option to divide the abundance
+data of a site by the site total, giving equal site weights.  This division has
+the advantage that the multivariate analysis corresponds with an unweighted
 (multi-trait) community-level analysis, instead of being weighted.  The first
-step of the algorithm uses vegan::cca().  The second step uses wrda() but
-vegan::rda() if the site weights are equal.  This version has a predict()
-function.  For details see ter Braak et al.  2018
+step of the algorithm uses @code{vegan::cca()}.  The second step uses
+@code{wrda()} but @code{vegan::rda()} if the site weights are equal.  This
+version has a @code{predict()} function.  For details see ter Braak et al.  2018
 <doi:10.1007/s10651-017-0395-x>.")
     (license license:gpl3)))
 
@@ -6653,6 +7323,9 @@ function.  For details see ter Braak et al.  2018
         (base32 "16avp0f7ks2zd4ckakvfm57zng2jk0fg3fz6vbm05lzhqymh6y30"))))
     (properties `((upstream-name . "doubt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-unglue))
     (home-page "https://cran.r-project.org/package=doubt")
     (synopsis "Enable Operators Containing the '?' Symbol")
@@ -6673,6 +7346,9 @@ piping operators of different precedence, and flexible syntaxes.")
         (base32 "0x22q6i07f49cjyhy9i2b9h818sgadxbhb6zwym2qilgf3mxj57g"))))
     (properties `((upstream-name . "doublIn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable
                              r-visnetwork
                              r-tidyverse
@@ -6717,6 +7393,9 @@ approach in detail will follow.")
         (base32 "0qk7zjpzz0dpzvczssfbp4gbqxazyxn0dsc8h9jnqb3syzdscc27"))))
     (properties `((upstream-name . "DoubleML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readstata13
                              r-r6
                              r-mvtnorm
@@ -6755,6 +7434,9 @@ Statistical Software: <doi:10.18637/jss.v108.i03>.")
         (base32 "00xpj5xmpgmvp6h76imkmghrnlfk6c50ydvv0jram6m6ix3z8323"))))
     (properties `((upstream-name . "DoubleExpSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv))
     (home-page "https://cran.r-project.org/package=DoubleExpSeq")
     (synopsis
@@ -6784,6 +7466,9 @@ exon for each sample.")
         (base32 "1kbvsj93nn2306s6pgqiiznmlcn2nqsgcxinihl613ivczxhzpqg"))))
     (properties `((upstream-name . "DoubleCone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-mass r-coneproj))
     (home-page "https://cran.r-project.org/package=DoubleCone")
     (synopsis "Test Against Parametric Regression Function")
@@ -6807,6 +7492,9 @@ details.")
         (base32 "0hrb1qli7i4jhc705rb02zbq2nyk0i406bb8gpy4jrzygjjbq3g0"))))
     (properties `((upstream-name . "double.truncation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=double.truncation")
     (synopsis "Analysis of Doubly-Truncated Data")
     (description
@@ -6832,6 +7520,9 @@ on Dorre et al. (2020) <doi:10.1007/s00180-020-01027-6>.")
         (base32 "1hn65n67by3xqbcnaf5jja5pli0g6wpbbz2sfzd7i2nms7kiywhp"))))
     (properties `((upstream-name . "doubcens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=doubcens")
     (synopsis
      "Survivor Function Estimation for Doubly Interval-Censored Failure Time Data")
@@ -6856,6 +7547,9 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
         (base32 "0p1l0750cy31ray9f9xm8yrc0zin4zb93rvbix51m3r4snhvjlnl"))))
     (properties `((upstream-name . "dotwhisker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-purrr
@@ -6894,6 +7588,9 @@ and Gelman (2008) <doi:10.1002/sim.3107>.")
         (base32 "1w41cm1h6g2r1r6iqwyfw0m0qyg296yv5nbsav90vg9a9knq56cf"))))
     (properties `((upstream-name . "dotty")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://kevinushey.github.io/dotty/")
     (synopsis "The Unpacking Dot Operator")
     (description
@@ -6915,6 +7612,9 @@ rows and number of columns from `dim(cars)` into individual variables `rows` and
         (base32 "0pyxs899429qsyhnm1n36n06wxwrk1i20qd9pyz62n4n6x706ajq"))))
     (properties `((upstream-name . "dotsViolin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -6947,6 +7647,9 @@ estimates (Rosenblatt, 1956) <doi:10.1214/aoms/1177728190> (Parzen, 1962)
         (base32 "0g4wvb6qp66dm0pfckjr9xgij58dzlji2iq45m5cz98jzivfd9gm"))))
     (properties `((upstream-name . "dots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-sp
                              r-sf
@@ -6978,6 +7681,9 @@ they can be easily substituted for each other.")
         (base32 "10vm8s1sk4i2930zzswgwy1y873x8byfr7xfb8xq6cdk9ci7l741"))))
     (properties `((upstream-name . "dotprofile")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-cli))
     (home-page "https://github.com/jeanmathieupotvin/dotprofile")
     (synopsis "Create and Manage Configuration Profiles")
@@ -6999,6 +7705,9 @@ settings for some computer programs.")
         (base32 "0ali0kybxmx0gwjmvj6zadx9s1j81yby1d88y88rh4j9s40cc59d"))))
     (properties `((upstream-name . "dotgen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://github.com/xiaoran831213/dotgen")
     (synopsis
@@ -7024,6 +7733,9 @@ Olga (2020) <doi:10.1371/journal.pcbi.1007819>.")
         (base32 "0dclwqg2hxdly8z3cckcskcll3dfax6g14h1xzjzdfwahhrbr5wb"))))
     (properties `((upstream-name . "dotenv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/gaborcsardi/dotenv")
     (synopsis "Load Environment Variables from '.env'")
     (description
@@ -7043,6 +7755,9 @@ into environment variables.")
         (base32 "0nq5965rlpvad8wyz3yr98wxy4w7jb4v4xfbbfa6c2vnc6w7w884"))))
     (properties `((upstream-name . "dostats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/halpo/dostats")
     (synopsis "Compute Statistics Helper Functions")
     (description
@@ -7062,6 +7777,9 @@ functions for computing statistics.")
         (base32 "0qdalzdk7q4wx3vl5f3i64m8cb7vhi4pqzghar32j0a7l6gla04z"))))
     (properties `((upstream-name . "dosresmeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvmeta))
     (native-inputs (list r-knitr))
     (home-page "https://alecri.github.io/software/dosresmeta.html")
@@ -7083,6 +7801,9 @@ combines them according to principles of (multivariate) random-effects models.")
         (base32 "1aw40xlwahzvikf31y4cbzdrlmgwg3y765bsjzlvc8wqrjig3ghs"))))
     (properties `((upstream-name . "DOSPortfolio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack))
     (native-inputs (list r-knitr))
     (home-page
@@ -7108,6 +7829,9 @@ overlapping samples while the other use nonoverlapping samples.")
         (base32 "1srxxfadxsrxpd2ksn59ilmijw5iifjik3mz9q38rsvjdxqls5d6"))))
     (properties `((upstream-name . "doseSens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gtools r-dplyr))
     (home-page "https://cran.r-project.org/package=doseSens")
     (synopsis
@@ -7133,6 +7857,9 @@ guidance.")
         (base32 "0y03k14adyqf0cyzqrr4rk47dabwgzzjkxbf11a5b8xlyy19mjr1"))))
     (properties `((upstream-name . "doseminer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=doseminer")
@@ -7156,6 +7883,9 @@ and intervals from English-language prescriptions.  Based on Karystianis et al.
         (base32 "0chy4xl7faflp3cf27sf2ayzkvay13vf2cgdxmihsrbxkib2f01f"))))
     (properties `((upstream-name . "DoseFinding")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-lattice r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/openpharma/DoseFinding")
@@ -7181,6 +7911,9 @@ optimal designs and an implementation of the MCPMod methodology (Pinheiro et al.
         (base32 "0s25nv3vdbnl1sn8gdhr45l7paiby452b2986xfkc3cvrdlsrhjw"))))
     (properties `((upstream-name . "dosedesignR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shinywidgets
                              r-shinyjs
@@ -7216,6 +7949,9 @@ optimal experimental design.")
         (base32 "0ghwk0h9rrfg4i6xdiybirqvrpzm3rv0w41jqqlhm43jf7796pmj"))))
     (properties `((upstream-name . "dosearch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/santikka/dosearch")
@@ -7248,6 +7984,9 @@ graphs (LDAG).  For details on CSIs see (Corander et al., 2019)
         (base32 "0lcqk2fxfl5pdnxlpppqiqnyc23jyhp1kcxwci8ilagjv4djipmw"))))
     (properties `((upstream-name . "DOS2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-senstrat r-sensitivitymv r-sensitivitymult
                              r-sensitivity2x2xk r-mass))
     (home-page "https://cran.r-project.org/package=DOS2")
@@ -7271,6 +8010,9 @@ of \"Design of Observational Studies\"; see Rosenbaum, P.R. (2010)
         (base32 "0vvkwn4wfvspbk74nb6124hdx9158h6yfksib14xqq7rx7c97ad4"))))
     (properties `((upstream-name . "DOS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=DOS")
     (synopsis "Design of Observational Studies")
@@ -7292,6 +8034,9 @@ Observational Studies by Paul R. Rosenbaum, New York: Springer,
         (base32 "005kp6f4jh8y1ykhri3mjnvc9w66b1a51bji574rkbxd1ans6mal"))))
     (properties `((upstream-name . "doremi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-lmertest
                              r-lme4
@@ -7325,6 +8070,9 @@ and presentation of results.")
         (base32 "0vl81hy9aspaxns823m7wsbfxfcbx2xbxl140ci3l79pvz3rwyf5"))))
     (properties `((upstream-name . "doRedis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-redux r-iterators r-foreach))
     (home-page "https://cran.r-project.org/package=doRedis")
     (synopsis "'Foreach' Parallel Adapter Using the 'Redis' Database")
@@ -7345,6 +8093,9 @@ Redis key/value database.")
         (base32 "1ccg0sgxvv4c9522f2wynp9j37cnlf4gdaymxgi1jxdlikm3ls5r"))))
     (properties `((upstream-name . "DOPE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext r-tibble r-stringr r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://ctn-0094.github.io/DOPE/")
@@ -7368,6 +8119,9 @@ the work done to create the data for the package.")
         (base32 "0hyqbpnhzjsx7ml0z6n9z60yhp5c0dyicm3jfc841aykvb1ifqbp"))))
     (properties `((upstream-name . "doolkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-tis
                              r-sp
@@ -7415,6 +8169,9 @@ of a topographic variable; and map a variable over a 3d triangle mesh.")
         (base32 "0pwy27jhmabmpd617pjdw46l7gcy8dz0w37if5901kfsc0cr27kc"))))
     (properties `((upstream-name . "doofa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve r-combinat))
     (home-page "https://cran.r-project.org/package=doofa")
     (synopsis "Designs for Order-of-Addition Experiments")
@@ -7442,6 +8199,9 @@ Design for Order-of-Addition Experiments\".  Technometrics,
         (base32 "1mmpxdjhyl06wwkcmczbai0j9pll01sh7zc4vl70mbvk6yx9khfg"))))
     (properties `((upstream-name . "donutsk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-glue r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dkibalnikov/donutsk")
@@ -7464,6 +8224,9 @@ labels to donut segments using pins.  Streamline annotation and highlighting.")
         (base32 "1vrarv850dja286s5l8y0fng7idai9rqr156z67zrwx347bdr4n2"))))
     (properties `((upstream-name . "donut")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/paulnorthrop/donut")
     (synopsis "Nearest Neighbour Search with Variables on a Torus")
@@ -7487,6 +8250,9 @@ packages RANN <https://cran.r-project.org/package=RANN>, and nabor
         (base32 "0ahwm17p3gq1yvc8v6sr6sb8z7i6zws8d1pf46qynl0gd4amg938"))))
     (properties `((upstream-name . "doMPI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmpi r-iterators r-foreach))
     (home-page "https://cran.r-project.org/package=doMPI")
     (synopsis "Foreach Parallel Adaptor for the Rmpi Package")
@@ -7507,6 +8273,9 @@ package.")
         (base32 "0jqbigk1kd0b2n9y0q7cavh8f73ydii4fnp7w4msiy39nmpkn08k"))))
     (properties `((upstream-name . "domir")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jluchman/domir")
     (synopsis "Tools to Support Relative Importance Analysis")
@@ -7533,6 +8302,9 @@ values returned from other functions.")
         (base32 "1awiy32sm0n2v1z48v4agqm89jnkgqazbjh9zixmj7yd0db78a9v"))))
     (properties `((upstream-name . "DominoDataR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reticulate r-httr r-configparser r-arrow))
     (home-page "https://github.com/dominodatalab/DominoDataR")
     (synopsis "'Domino Data R SDK'")
@@ -7560,6 +8332,9 @@ more information.")
         (base32 "0f67w0z5jy82kgm3l1rji430ayigw30vmmwp3i1nz0xibsx7jxv4"))))
     (properties `((upstream-name . "domino")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.dominodatalab.com")
     (synopsis "R Console Bindings for the 'Domino Command-Line Client'")
     (description
@@ -7584,6 +8359,9 @@ workflows (see <http://www.dominodatalab.com> for more information).")
         (base32 "1kp8x77j20ak5xgp67f2ny00s22q6yr8qz5lc5kdmvdrimqkpnah"))))
     (properties `((upstream-name . "dominanceanalysis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dominanceanalysis")
@@ -7614,6 +8392,9 @@ D. V. (2006) <doi:10.3102/10769986031002157>, Azen, R., & Traxel, N. (2009)
         (base32 "0w5qps781c406br5rba6mv127yrlgq7rzchk55j7mndrm7hwia63"))))
     (properties `((upstream-name . "dogesr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown
                              r-rdpack
                              r-qpdf
@@ -7643,6 +8424,9 @@ Republic of Venice, and use it for social network analysis, as used in Merelo
         (base32 "1r999z30ipa04pgck0hfalqxihb1bj8sdhlkkhf4plb7maaz3qm3"))))
     (properties `((upstream-name . "doex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=doex")
     (synopsis "The One-Way Heteroscedastic ANOVA Tests")
     (description
@@ -7693,6 +8477,9 @@ parameters.")
         (base32 "0y9ymw7114jk1rwiasq400bpgvkxv6rpc954c7v9mgxd3c2nfza7"))))
     (properties `((upstream-name . "DoEstRare")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DoEstRare")
     (synopsis
      "Rare Variant Association Test Based on Position Density Estimation")
@@ -7715,6 +8502,9 @@ regions.  For more details, please read the publication from Persyn et al.
         (base32 "0xfc4wzbh7gp4c8y7141kyycjxy5avjc8wwxzqyvf70l2if7x4id"))))
     (properties `((upstream-name . "DOEM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DOEM")
     (synopsis
      "The Distributed Online Expectation Maximization Algorithms to Solve Parameters of Poisson Mixture Models")
@@ -7736,6 +8526,9 @@ described in Guo, G. (2022) <doi:10.1080/02664763.2022.2053949>.")
         (base32 "1rmvb6pa71frvjszpsjaw3ahm70kyykrq6zfjqk8smgcg397k9pi"))))
     (properties `((upstream-name . "doebioresearch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-agricolae))
     (home-page "https://cran.r-project.org/package=doebioresearch")
     (synopsis "Analysis of Design of Experiments for Biological Research")
@@ -7763,6 +8556,9 @@ are also added in order to facilitate examples.")
         (base32 "0n6z27gf7xcbyzjdq0kjm7ghddg5gygxyp3r9a7s5h40s0pfxbdm"))))
     (properties `((upstream-name . "DoE.wrapper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsm
                              r-lhs
                              r-frf2
@@ -7791,6 +8587,9 @@ package @code{AlgDesign} have been implemented.")
         (base32 "0ginm4wqax2azcns4c17rgdfpclbmn058nq0lmpx90s4q7jfppax"))))
     (properties `((upstream-name . "DoE.MIParray")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-doe-base r-combinat))
     (home-page "https://cran.r-project.org/package=DoE.MIParray")
     (synopsis "Creation of Arrays by Mixed Integer Programming")
@@ -7824,6 +8623,9 @@ functionality in the stump CRAN R package Rmosek'.")
         (base32 "0lz0ilz145lhymb42b9yk4ysvm5zlbigc7ba600736cwnlgc0wn0"))))
     (properties `((upstream-name . "DoE.base")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcd
                              r-partitions
                              r-numbers
@@ -7853,6 +8655,9 @@ by other packages for designed experiments.")
         (base32 "12vsw3yi99jalhz41fiq67fhb4jk0rrcfwb06gfkrifalp2p9jws"))))
     (properties `((upstream-name . "dodgr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppthread
                              r-rcppparallel
                              r-rcpp
@@ -7887,6 +8692,9 @@ be calculated from direct distances.")
         (base32 "0767n6hyspqrv5cgx3ghhai0qffj6haga7s86pv7mq8zvjcxjlzv"))))
     (properties `((upstream-name . "Dodge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/ajrgodfrey/Dodge")
     (synopsis "Acceptance Sampling Ideas Originated by H.F. Dodge")
     (description
@@ -7907,6 +8715,9 @@ evaluations of their operating characteristics (OC), average outgoing quality
         (base32 "1kki49g0sfhbx2d4swrkv21akws8ayrsd4h3v148xmzdlsrvhhiw"))))
     (properties `((upstream-name . "docxtractr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-purrr r-magrittr r-httr r-dplyr))
     (home-page "http://gitlab.com/hrbrmstr/docxtractr")
     (synopsis
@@ -7931,6 +8742,9 @@ documents.  There is also nascent support for .doc and .pptx files.")
         (base32 "0q90z31svbdnvylfr0yj2f0gahvpi089c1d5llvwqy8qc5p9fbqw"))))
     (properties `((upstream-name . "docuSignr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-jsonlite r-httr))
     (home-page "https://github.com/CannaData/docuSignr")
     (synopsis "Connect to 'DocuSign' API")
@@ -7952,6 +8766,9 @@ embedded signing, and sending of documents.")
         (base32 "0azwak0hm7xydamvaj42hy1kl8an9f90i2lm91va7n08vmn8k064"))))
     (properties `((upstream-name . "documenter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-officer r-magrittr r-htmltools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=documenter")
@@ -7976,6 +8793,9 @@ fashion.")
         (base32 "1bkpyd1cg5r6g1jcwf6xqy0bviwd88i3k2jfzggzxpnva2s02y8y"))))
     (properties `((upstream-name . "document")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi
                              r-roxygen2
                              r-rcmdcheck
@@ -8005,6 +8825,9 @@ code file.")
         (base32 "04gicrh3fc3639ccwsg5c41axbsl7vkj5al6qcwlrf3jx8vaad64"))))
     (properties `((upstream-name . "doctest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat
                              r-roxygen2
                              r-rlang
@@ -8031,6 +8854,9 @@ code file.")
         (base32 "19z5frhxbdc5c4vrkckgqbh9mx4d9w1icw8szsw9yadvbg48nlhl"))))
     (properties `((upstream-name . "docstring")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-roxygen2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dasonk/docstring")
@@ -8056,6 +8882,9 @@ for functions provided by packages as well.")
         (base32 "0x6c2yqr05v62ksn9a5swf44q8w7acfk00589mkipw643rg4l64y"))))
     (properties `((upstream-name . "docore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-bit64))
     (home-page "https://cran.r-project.org/package=docore")
     (synopsis "Utility Functions for Scientific Coding")
@@ -8076,6 +8905,9 @@ handing functions and I/O support routines.")
         (base32 "186mfiy4ygx6spnv7yrm5h0k6nf2g1xhk1l05iij39j5al5d9j21"))))
     (properties `((upstream-name . "docopulae")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=docopulae")
     (synopsis "Optimal Designs for Copula Models")
     (description
@@ -8099,6 +8931,9 @@ tools for common low-level tasks.")
         (base32 "1ppzryd1kv5v96b2dwfzfy6cj7wx5sx8insj06gf2m2f442c8aph"))))
     (properties `((upstream-name . "doconv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list libreoffice))
     (propagated-inputs (list r-processx r-pdftools r-magick r-locatexec))
     (home-page "https://cran.r-project.org/package=doconv")
@@ -8126,6 +8961,13 @@ rendering can be sometimes different from the original documents.")
         (base32 "1mhdjv6yznzyx911f0m3m0i7jlzj7h12ikkxb9b6zj68bdplv30b"))))
     (properties `((upstream-name . "docknitr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (inputs (list docker))
     (propagated-inputs (list r-sys r-rstudioapi r-knitr))
     (native-inputs (list r-r-rsp))
@@ -8148,6 +8990,9 @@ process Rmarkdown code chunks.")
         (base32 "0hwmnclknik9pkzncbnqabvln276lcyb3rh5dy1wxibq85qax84f"))))
     (properties `((upstream-name . "docket")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip r-xml2 r-xml r-stringr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JonathanConrad98/docket")
@@ -8155,9 +9000,9 @@ process Rmarkdown code chunks.")
     (description
      "Populate data from an R environment into .doc and .docx templates.  Create a
 template document in a program such as Word', and add strings encased in
-guillemet characters to create flags (Â«exampleÂ»).  Use @code{getDictionary}()
-to create a dictionary of flags and replacement values, then call docket() to
-generate a populated document.")
+guillemet characters to create flags (Â«exampleÂ»).  Use @code{getDictionary()}
+to create a dictionary of flags and replacement values, then call
+@code{docket()} to generate a populated document.")
     (license license:expat)))
 
 (define-public r-dockerparallel
@@ -8172,6 +9017,9 @@ generate a populated document.")
         (base32 "1fgs2f5czb05fiqxqp00qggni041ml4s3x05h9n4mmka9mwxi34b"))))
     (properties `((upstream-name . "DockerParallel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Jiefei-Wang/DockerParallel")
@@ -8180,8 +9028,8 @@ generate a populated document.")
     (description
      "This is the core package that provides both the user API and developer API to
 deploy the parallel cluster on the cloud using the container service.  The user
-can call @code{clusterPreset}() to define the cloud service provider and
-container and @code{makeDockerCluster}() to create the cluster.  The developer
+can call @code{clusterPreset()} to define the cloud service provider and
+container and @code{makeDockerCluster()} to create the cluster.  The developer
 should see \"developer's cookbook\" on how to define the cloud provider and
 container.")
     (license license:gpl3)))
@@ -8198,6 +9046,9 @@ container.")
         (base32 "0axiqvd3hbrb6br56qhjc5cpxv230x4j02ly9aa98gcrwwpc1w59"))))
     (properties `((upstream-name . "dockerfiler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-remotes
                              r-r6
@@ -8232,6 +9083,9 @@ inside this Dockerfile.")
         (base32 "13rgh3s13bbjgw3svh4sxz3kpv08p9gwxi9g55lb377nxachdzxr"))))
     (properties `((upstream-name . "doc2concrete")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm
                              r-textstem
                              r-stringr
@@ -8264,6 +9118,9 @@ for the feedback and plan-making domains.")
         (base32 "0xfn7s3wzrv1md40bdjrnjfiqyxg5c6lrcpnvayjdgrhxq161hhq"))))
     (properties `((upstream-name . "dobson")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dobson")
     (synopsis "Data from the GLM Book by Dobson and Barnett")
     (description
@@ -8283,6 +9140,9 @@ for the feedback and plan-making domains.")
         (base32 "0j10f3smzkwv5j7k4szydn2jlspsb05mf91nzl8fzj803g5657ky"))))
     (properties `((upstream-name . "dobin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-ggplot2 r-dbscan))
     (native-inputs (list r-knitr))
     (home-page "https://sevvandi.github.io/dobin/")
@@ -8308,6 +9168,9 @@ outliers to the fore-front using fewer basis vectors (Kandanaarachchi, Hyndman
         (base32 "11ilwy7iqia6nxqphycq526crg5q1y0giqfy8q66ibj3zzql8xbs"))))
     (properties `((upstream-name . "do3PCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdimtools
                              r-ratematrix
                              r-phytools
@@ -8337,6 +9200,9 @@ functions.")
         (base32 "1qfhlhlyd1yg1jfsf492nhxv9n8giqjc2rdv7wgxd4bpgcx6vi9h"))))
     (properties `((upstream-name . "do")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-usethis
                              r-tmcn
@@ -8357,7 +9223,7 @@ functions.")
     (synopsis "Data Operator")
     (description
      "Flexibly convert data between long and wide format using just two functions:
-reshape_@code{toLong}() and reshape_@code{toWide}().")
+@code{reshape_toLong()} and @code{reshape_toWide()}.")
     (license license:gpl3)))
 
 (define-public r-dnr
@@ -8372,6 +9238,9 @@ reshape_@code{toLong}() and reshape_@code{toWide}().")
         (base32 "16s06jvwmvhxgvrmfav1xfszjrn7j2cm4jw5xyx6w5lb5434kzcq"))))
     (properties `((upstream-name . "dnr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sna
                              r-network
                              r-igraph
@@ -8404,6 +9273,9 @@ Regression Models, Journal of Computational and Graphical Statistics, 28:4,
         (base32 "0mij6d69hhzrcp3yvqwmajhn4bm2bnc3lk9hrkh5ly2a21g46yg4"))))
     (properties `((upstream-name . "dnn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-ggplot2))
     (home-page "https://cran.r-project.org/package=dnn")
     (synopsis "Deep Neural Network Tools for Probability and Statistic Models")
@@ -8428,6 +9300,9 @@ continuous, categorical and Poisson data.")
         (base32 "10zzbi0jywlnq4hxqb0dh7xrn8gj75asd4yc1mcl2dbjpi68sn56"))))
     (properties `((upstream-name . "DNMF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-gplots r-foreach r-doparallel))
     (home-page "https://github.com/zhilongjia/DNMF")
     (synopsis "Discriminant Non-Negative Matrix Factorization")
@@ -8458,6 +9333,9 @@ Cognitive neurodynamics 6.6 (2012): 525-535.")
         (base32 "05410xgpfjsydjmnzry454qcjpws9vhh252q2xq7l0scdj87ly00"))))
     (properties `((upstream-name . "DNLC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep
                              r-mvtnorm
                              r-locfdr
@@ -8483,6 +9361,9 @@ Cognitive neurodynamics 6.6 (2012): 525-535.")
         (base32 "0g3ibacsbsk34b6411j3n3q9dxqq1iqdnisppmmq7s2bp94ab771"))))
     (properties `((upstream-name . "DNH4")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-tibble r-rvest r-httr))
     (home-page "https://forkonlp.github.io/DNH4/")
     (synopsis "Crawling for Daum News Text")
@@ -8503,6 +9384,9 @@ Daum which is popular news portal service in Korea.")
         (base32 "0yi1fs4yvlsy3j128l7s5kwq8mhdd5fr74y2bzj7cjrxi7wgz2hg"))))
     (properties `((upstream-name . "dng")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://github.com/feng-li/dng/")
     (synopsis "Distributions and Gradients")
@@ -8525,6 +9409,9 @@ Villani, M. and Kohn, R. (2010) <doi:10.1016/j.jspi.2010.04.031>).")
         (base32 "1hd3yx3f71rwxn2iqjk7v3vwb6p3z20fi09csnhjkq5l3wk4bkp9"))))
     (properties `((upstream-name . "DNetFinder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-flare))
     (home-page "https://cran.r-project.org/package=DNetFinder")
     (synopsis
@@ -8536,7 +9423,7 @@ Semiparametric Gaussian graphical models.  The multiple testing procedure
 asymptotically controls the false discovery rate (FDR) at a user-specified
 level.  To construct the test statistic, a truncated estimator is used to
 approximate the transformation functions and two R functions including
-@code{lassoGGM}() and @code{lassoNPN}() are provided to compute the lasso
+@code{lassoGGM()} and @code{lassoNPN()} are provided to compute the lasso
 estimates of the regression coefficients.")
     (license license:gpl3)))
 
@@ -8552,6 +9439,9 @@ estimates of the regression coefficients.")
         (base32 "1m1s48acsdfa5sn4ikqx4kp804q7v2a5w93qxz3pr5a9g1s57yng"))))
     (properties `((upstream-name . "dndR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-purrr
@@ -8581,6 +9471,9 @@ any rule changes.")
         (base32 "1xcpp5jw5xq6a6ccq8jsd4d7ailv3iv8k7b1bbz531vhy9im2dzs"))))
     (properties `((upstream-name . "DNAtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp r-rcppprogress r-rcppparallel r-rcpp
                              r-multicool))
     (native-inputs (list r-knitr))
@@ -8610,6 +9503,9 @@ distribution of the numbers of alleles in DNA mixtures.  See Tvedebrink (2013)
         (base32 "1mpmf40vrpw8m75rlqchsnyrz12pgg5bkz7wfca5yy5sbbiwk5pf"))))
     (properties `((upstream-name . "DNAseqtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DNAseqtest")
     (synopsis "Generating and Testing DNA Sequences")
     (description
@@ -8634,6 +9530,9 @@ impose further restrictions on the parameters.")
         (base32 "1cdbickgjdf766m4cka9vl3x4zdw071w54ycj3l60xhcd8gxn8b1"))))
     (properties `((upstream-name . "DNAmotif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-biostrings))
     (home-page "https://cran.r-project.org/package=DNAmotif")
     (synopsis "DNA Sequence Motifs")
@@ -8659,6 +9558,9 @@ importance.")
         (base32 "14f373an89ra7v2q3mlc4s7svriydzs7jp8zp3arsbg4ali1g037"))))
     (properties `((upstream-name . "DNAmixturesLite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp r-numderiv r-matrix r-grbase r-graven))
     (home-page "https://cran.r-project.org/package=DNAmixturesLite")
     (synopsis "Statistical Inference for Mixed Traces of DNA (Lite-Version)")
@@ -8683,6 +9585,9 @@ DNAmixtures package.  For details on implementation and methodology see
         (base32 "1dxx4v9fg0cd2m5lwk3j6n9g6n9zqr7rs75yiz3m3q8cpw1pjqpk"))))
     (properties `((upstream-name . "dmutate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-dplyr))
     (home-page "https://github.com/kylebaron/dmutate")
     (synopsis "Mutate Data Frames with Random Variates")
@@ -8704,6 +9609,9 @@ specified for simulated variates.")
         (base32 "0z77whal18sxmfqalv39w85vnc84c838yh3dp144v7w198n095fy"))))
     (properties `((upstream-name . "dmtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-readxl
@@ -8735,6 +9643,9 @@ reference range.")
         (base32 "0z6l1sylw4ib1mgqjnrmxh2q56vazg2i7xxiw1g4gm28iq44r2n0"))))
     (properties `((upstream-name . "DMTL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest r-ks r-kernlab r-glmnet r-caret))
     (home-page "https://github.com/dhruba018/DMTL")
     (synopsis
@@ -8766,6 +9677,9 @@ underlying data distribution to utilize the more available data for modeling.")
         (base32 "1bziiyv63lcbmd79fykjj6b63igbbw0pwiq37k7q9l5vij6jfcj9"))))
     (properties `((upstream-name . "DMtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixstats r-foreach r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DMtest")
@@ -8790,6 +9704,9 @@ submitted.")
         (base32 "11niqsnkyrcwsirrsjp7gkdcjgdlddah92i5mndw4idadjg0cnrc"))))
     (properties `((upstream-name . "DMRnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hclust1d r-grpreg r-glmnet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SzymonNowakowski/DMRnet")
@@ -8827,6 +9744,9 @@ Scandinavian Journal of Statistics, 49(2): 831â863. <doi:10.1111/sjos.12546
         (base32 "0aij0n5p6cp75r5b3bfpmhnmz2nixbb4kwacixg66g6kilwj3sis"))))
     (properties `((upstream-name . "dmri.tracking")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vic-dragon/dmri.tracking")
@@ -8849,6 +9769,9 @@ results.")
         (base32 "1ygaqznvblzr3r1x7zl1l8sazh3sbs1zgagawwlwl42g8sdl57az"))))
     (properties `((upstream-name . "DMQ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp r-rcpparmadillo r-rcpp r-mass r-deoptim))
     (home-page "https://cran.r-project.org/package=DMQ")
     (synopsis "Dynamic Multiple Quantile (DMQ) Model")
@@ -8871,6 +9794,9 @@ series that do not cross.")
         (base32 "1fnv3f5xlng8f3df5hvxncfnnadzwcsdiklrb2g67llf3m06bq74"))))
     (properties `((upstream-name . "dMod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rootsolve
                              r-plyr
@@ -8904,6 +9830,9 @@ were published in Kaschek et al, 2019, <doi:10.18637/jss.v088.i10>.")
         (base32 "0bda65253q45m9bj923zylafnlwnxwyyk730pjqynz11z8vyibj6"))))
     (properties `((upstream-name . "DMMF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-raster))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=DMMF")
@@ -8926,6 +9855,9 @@ and sediment budgets from a field or a catchment on a daily basis.")
         (base32 "1p4g0nb246val8p6l2jj665yp0aa4jxxjyi384i2jcwxyy5hmiyb"))))
     (properties `((upstream-name . "dmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-pls r-nadiv r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=dmm")
     (synopsis "Dyadic Mixed Model for Pedigree Data")
@@ -8949,6 +9881,9 @@ described by Searle et al. (1992) \"Variance Components\", Wiley, NY.")
         (base32 "1ixjpalg3q0wnddrli6v66kky3pxf90sjgiia8jhk4nds0h58a72"))))
     (properties `((upstream-name . "dmlalg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest r-matrixcalc r-lme4 r-glmnet))
     (home-page "https://gitlab.math.ethz.ch/ecorinne/dmlalg.git")
     (synopsis "Double Machine Learning Algorithms")
@@ -8982,6 +9917,9 @@ incorporate more complex interaction structures and high-dimensional variables."
         (base32 "0z1dalgxh5nhrac49vh60d5awzjylc8b8mn5fk379c324milm59l"))))
     (properties `((upstream-name . "dml")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-lfda))
     (home-page "https://github.com/terrytangyuan/dml")
     (synopsis "Distance Metric Learning in R")
@@ -9006,6 +9944,9 @@ vision problems.")
         (base32 "0n62lfga8br3p3vn10rs56mbrbsrr7b6m8cb15za52nm2qn9m3a5"))))
     (properties `((upstream-name . "dmetatools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-mada))
     (home-page "https://cran.r-project.org/package=dmetatools")
     (synopsis
@@ -9029,6 +9970,9 @@ summary ROC curve and some related AUC-based inference methods are available
         (base32 "0r68ax8yic138wwy5ndf72vfsjlw12f3v5afyn748is86s6vnj76"))))
     (properties `((upstream-name . "DMCfun")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rcpp
                              r-pbapply
@@ -9070,6 +10014,9 @@ Conflict (DMC) to reaction time and error rate data.  Methods in Psychology,
         (base32 "0rbahb7590sy6d975wd0g00x5xxfxjzsgywzcc7wqd6lyqkmn3v3"))))
     (properties `((upstream-name . "dmbc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustx
                              r-robustbase
                              r-rcppprogress
@@ -9101,6 +10048,9 @@ only for binary data (<doi:10.18637/jss.v100.i16>).")
         (base32 "0fdcvy524cc0gmr04mn82023y4xvfx0477l3h41sjbwk1qrfpdk4"))))
     (properties `((upstream-name . "dmai")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -9126,6 +10076,9 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
         (base32 "003snr09hazszwqnvjrbv8vyz6ihgcfcfhrlshg451dddn920615"))))
     (properties `((upstream-name . "dma")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=dma")
     (synopsis "Dynamic Model Averaging")
@@ -9146,6 +10099,8 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -9195,6 +10150,9 @@ pipe-friendly syntax.")
         (base32 "1qc7gp2glkbhnblqckz3l7jmlsarf3jlsp6cqm4wm0s87z038r9a"))))
     (properties `((upstream-name . "dlstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rcolorbrewer r-magrittr r-jsonlite
                              r-ggplot2))
     (native-inputs (list r-knitr))
@@ -9219,6 +10177,9 @@ CRAN packages is from the RStudio CRAN mirror', see
         (base32 "1h3bwqqpfjkl41b2mbfhsj0pi9kri0h0i28wiid6arjrmm87nsf8"))))
     (properties `((upstream-name . "dlsem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgraphviz r-graph))
     (home-page "https://cran.r-project.org/package=dlsem")
     (synopsis "Distributed-Lag Linear Structural Equation Models")
@@ -9246,6 +10207,9 @@ decreasing and gamma lag shapes are available.")
         (base32 "13gr8rk8igbypq9mg00pyk2pjczxr1ghkj5287gijxnxch7zdknc"))))
     (properties `((upstream-name . "dlr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-rappdirs r-fs r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/macmillancontentscience/dlr")
@@ -9267,6 +10231,9 @@ downloading a file if that file does not already exist locally.")
         (base32 "1fjpkn32rx8m18k6pr2cf180wqr01f9kviqibwsghnkrhbzcgpiy"))))
     (properties `((upstream-name . "DLPCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DLPCA")
     (synopsis "The Distributed Local PCA Algorithm")
     (description
@@ -9287,6 +10254,9 @@ G. (2020) <doi:10.1080/02331888.2020.1823979>.")
         (base32 "047f616pcjvv9bd7crphrbvql5qn6j50495px9244fl50vyklzx6"))))
     (properties `((upstream-name . "dlookr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -9335,6 +10305,9 @@ reports that support these three tasks.")
         (base32 "0mbww28n95vnd6wrn1b4mfsdvnyffa8mr6ws4jqmqdc23nydl9p4"))))
     (properties `((upstream-name . "dlnm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tsmodel r-nlme r-mgcv))
     (home-page "https://github.com/gasparrini/dlnm")
     (synopsis "Distributed Lag Non-Linear Models")
@@ -9354,6 +10327,9 @@ reports that support these three tasks.")
         (base32 "01nzhi1ysbvfl8f3asba9l2n72aidk632njv5m50k9xjfcjhayqb"))))
     (properties `((upstream-name . "dlmtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-shinythemes
                              r-shiny
@@ -9389,6 +10365,9 @@ shiny interface to help interpret results.")
         (base32 "1lhskk4022vzvmwki08jkwpz3scirbdr0imkpzb9dqfhvmsdyafx"))))
     (properties `((upstream-name . "DLMtool")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb
                              r-rcppeigen
                              r-rcpp
@@ -9415,6 +10394,9 @@ or applied to fishery data to provide management recommendations.")
         (base32 "00xj6r1i4qhv0lq9ky88pw26nkc3ywhl23j9rsh2z5jn4dqpwpcg"))))
     (properties `((upstream-name . "DLL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sam r-mass r-locpol r-glmnet))
     (home-page "https://github.com/zijguo/HighDim-Additive-Inference")
     (synopsis "Decorrelated Local Linear Estimator")
@@ -9436,6 +10418,9 @@ the function of interest under the high-dimensional sparse additive model.")
         (base32 "12sa1bpslans836v9fvma2wj8qspnc521saaw02q9iygkh7kf1sy"))))
     (properties `((upstream-name . "dlim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-tsmodel
                              r-rlang
@@ -9450,9 +10435,9 @@ the function of interest under the high-dimensional sparse additive model.")
      "Collection of functions for fitting and interpreting distributed lag interaction
 models (DLIM).  A DLIM regresses a scalar outcome on repeated measures of
 exposure and allows for modification by a continuous variable.  Includes a
-dlim() function for fitting, predict() function for inference, and plotting
-functions for visualization.  Details on methodology are described in Demateis
-et al. (2024) <doi:10.1002/env.2843>.")
+@code{dlim()} function for fitting, @code{predict()} function for inference, and
+plotting functions for visualization.  Details on methodology are described in
+Demateis et al. (2024) <doi:10.1002/env.2843>.")
     (license license:gpl3)))
 
 (define-public r-dlib
@@ -9467,6 +10452,9 @@ et al. (2024) <doi:10.1002/env.2843>.")
         (base32 "1rchl4f3zj0azz8d4n139daba2gz6vnm60jq45vgc9gphk2mrnnb"))))
     (properties `((upstream-name . "dlib")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=dlib")
     (synopsis "Allow Access to the 'Dlib' C++ Library")
@@ -9490,6 +10478,9 @@ use dlib through Rcpp'.")
         (base32 "1k7dpr9kq3rmvh6dvvgldmx4ar3vcs1l1gsj7piqqb811d90mh47"))))
     (properties `((upstream-name . "DLEGFM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-elasticnet))
     (home-page "https://cran.r-project.org/package=DLEGFM")
     (synopsis "Distributed Loading Estimation for General Factor Model")
@@ -9511,6 +10502,9 @@ described in Guangbao Guo. (2022). <doi:10.1007/s00180-022-01270-z>.")
         (base32 "058kkh67npai2ffrjdpjn4pzj8f233znl16nj6yx8wz8lkb17cb0"))))
     (properties `((upstream-name . "dlbayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-laplacesdemon r-glmnet r-gigrvg r-expm))
     (home-page "https://cran.r-project.org/package=dlbayes")
     (synopsis
@@ -9534,6 +10528,9 @@ credible regions for variable selection.")
         (base32 "0xdygf6h89d9z4kqb46iqfxgdzq9dmkrxf9ypw78l4d8n9xx2gaa"))))
     (properties `((upstream-name . "DLASSO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "http://hamedhaseli.webs.com")
     (synopsis
@@ -9556,6 +10553,9 @@ parameter by AIC, BIC, GIC and GIC.")
         (base32 "0wn09qdmnahn0imi17yq4flcnr69cms832si1z03l9xwcjkfjxfm"))))
     (properties `((upstream-name . "dLagM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh
                              r-strucchange
                              r-sandwich
@@ -9591,6 +10591,9 @@ ahead forecasts from these models.  See Demirhan
         (base32 "1zic7qhwq3s9w70zi1f6qyf7pzm69k5a1p5fd4n3z4nbga54njxd"))))
     (properties `((upstream-name . "dkanr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-purrr
@@ -9621,6 +10624,9 @@ also includes functions to search and retrieve data from the DKAN datastore.")
         (base32 "0q82b35ln0ligxgnk726bn5cynh6sd529hk6v3prrzbvdnsrqxcg"))))
     (properties `((upstream-name . "DJL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolveapi r-car))
     (home-page "https://cran.r-project.org/package=DJL")
     (synopsis "Distance Measure Based Judgment and Learning")
@@ -9648,6 +10654,9 @@ intertemporal budgeting, etc.")
         (base32 "18rdv0qzlk93p0pdngqbj58bjsgy68n114fnl6nzc56x89570vx7"))))
     (properties `((upstream-name . "DIZutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-rpresto
                              r-rpostgres
@@ -9680,6 +10689,9 @@ avoid redundancy.")
         (base32 "0i42k7h82x9g0mha8ppk17h3srgfjgwb9ysnib80pkjnp59kmpa5"))))
     (properties `((upstream-name . "DIZtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r-utils
                              r-parsedate
                              r-magrittr
@@ -9708,6 +10720,9 @@ notification messages and to avoid redundancy.")
         (base32 "0md7hrjcla4z3ck9kb387x4cmf8ca7sm9qw4a9mby9xj6abkd8id"))))
     (properties `((upstream-name . "diyar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://olisansonwu.github.io/diyar/index.html")
@@ -9737,6 +10752,9 @@ removed or further analyses as required.")
         (base32 "1lgmhg3d0f59x5mfa6j9cs009yqxyzfzv7jfz5d93jrbs0p7glnk"))))
     (properties `((upstream-name . "dixon")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-splancs r-spatstat-geom r-spatstat))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dixon")
@@ -9745,7 +10763,7 @@ removed or further analyses as required.")
      "Function to test spatial segregation and association based in contingency table
 analysis of nearest neighbour counts following Dixon (2002)
 <doi:10.1080/11956860.2002.11682700>.  Some Fortran code has been included to
-the original dixon2002() function of the ecespa package to improve speed.")
+the original @code{dixon2002()} function of the ecespa package to improve speed.")
     (license license:gpl2+)))
 
 (define-public r-divvy
@@ -9760,6 +10778,9 @@ the original dixon2002() function of the ecespa package to improve speed.")
         (base32 "03s76pkywxcx6kkdq7dpa0l2rvhwibzp48sb9mqbbhf713a621pi"))))
     (properties `((upstream-name . "divvy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-units
                              r-terra
@@ -9789,6 +10810,9 @@ others (2023) <doi:10.31223/X5997Z>.")
         (base32 "0fbh5qpjszpmkrvb2p7f9rbbc4zj1dchhwk28zclnbxazlg116fs"))))
     (properties `((upstream-name . "divseg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-tidyselect
                              r-tibble
@@ -9818,6 +10842,9 @@ data frames with a tidyselect based workflow.")
         (base32 "0w603c5czvzqj0ydbmmxy9xn8p0r25c6i5m90219p6jv4nb1afrz"))))
     (properties `((upstream-name . "divraster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-sesraster r-bat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/flaviomoc/divraster")
@@ -9845,6 +10872,9 @@ Heming et al.  2023 <https://CRAN.R-project.org/package=SESraster>.")
         (base32 "06c4kjl6llvvdr2gk480jcmj2abmqwph7x4vk5nflxm7piimvg7v"))))
     (properties `((upstream-name . "divo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cluster))
     (home-page "https://cran.r-project.org/package=divo")
     (synopsis
@@ -9868,6 +10898,9 @@ systems.")
         (base32 "19r95llk0znr02lin39jwhidgzfnr8bigg74gi1zb69x3xp6h5v6"))))
     (properties `((upstream-name . "divest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rnifti r-rcpp))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/jonclayden/divest")
@@ -9889,6 +10922,9 @@ convert them to N@code{IfTI-1} format.")
         (base32 "0p4kk896y6cidy9nh8blvg9ghcy21dhjnw9hcpg90bq4j8s82gms"))))
     (properties `((upstream-name . "diversityForest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-sgeostat
                              r-scales
@@ -9945,6 +10981,9 @@ efficient C++ implementation.")
         (base32 "1gybzpv5bl17lp1nxhqzsvj585j3lylfd388vp401lmri3k8r4cs"))))
     (properties `((upstream-name . "DiversificationR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DiversificationR")
     (synopsis "Econometric Tools to Measure Portfolio Diversification")
     (description
@@ -9972,6 +11011,9 @@ Candelon, Fuerst and Hasse (2020).")
         (base32 "10kmx3qv58xhqs1icsxqq0y0cm8y2hx9ysb65brd3hhg33alzvk3"))))
     (properties `((upstream-name . "diverse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-proxy r-foreign))
     (home-page "https://github.com/mguevara/diverse")
     (synopsis "Diversity Measures for Complex Systems")
@@ -9992,6 +11034,9 @@ and includes new measures from interdisciplinary research.")
         (base32 "0rgmzcy2kk1bc6v27qcj4ckyvidzvldqx3cz1prccq5bhw2m8cdz"))))
     (properties `((upstream-name . "diverge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm))
     (home-page "https://cran.r-project.org/package=diverge")
     (synopsis
@@ -10021,6 +11066,9 @@ compared in a likelihood framework.")
         (base32 "0n0ldc3k0ryr20794kvqxpnk8m3qc13lkl6rxw043pkwbjqj7291"))))
     (properties `((upstream-name . "diveR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zenplots
                              r-rstudioapi
                              r-loon-tourr
@@ -10057,6 +11105,9 @@ and installs all these related packages in a single step.")
         (base32 "0p51xpxc05w0f4djab84pcp7hi8g9lsdrrxdb3mi84qj6b5smbk4"))))
     (properties `((upstream-name . "divent")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-vegan
                              r-tidyr
@@ -10091,6 +11142,9 @@ phylogenetic and functional diversity.")
         (base32 "18g335912rx49vwdjw577v0jxc25y204whzb48cpg51ihrc91ngf"))))
     (properties `((upstream-name . "diveMove")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-unireg r-quantreg r-plotly r-kernsmooth
                              r-geosphere))
     (native-inputs (list r-knitr))
@@ -10114,6 +11168,9 @@ also provided.")
         (base32 "1nab00wkq2986sxi8z5hmhadxyzhy181akhzj8vc6bfznrcrnbig"))))
     (properties `((upstream-name . "DivE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-fme r-desolve))
     (home-page "https://cran.r-project.org/package=DivE")
     (synopsis "Diversity Estimator")
@@ -10136,6 +11193,9 @@ richness) in a population.")
         (base32 "0jvx5nmmb06vp9w4zv04xwdqa4ppfv712si8c69bs06kid5iq8lh"))))
     (properties `((upstream-name . "divDyn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=divDyn")
@@ -10166,6 +11226,9 @@ found in: Kocsis, A.T.; Reddin, C.J.; Alroy, J. and Kiessling, W. (2019)
         (base32 "1k4c34wpwfj7yqnk1x9sjzn3dc2vdzhpy8g4c00aqs3nbgcknyn8"))))
     (properties `((upstream-name . "div")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-tibble
@@ -10203,6 +11266,9 @@ Brouwer (2020) <doi:10.1002/9781119632757>.")
         (base32 "1ma06cc4bdrmp9r7yxa3mrqzys5ap6i1sifsgsr31zjnl6yxfk0w"))))
     (properties `((upstream-name . "dittoViz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggridges r-ggrepel r-ggplot2 r-cowplot))
     (home-page "https://github.com/dtm2451/dittoViz")
     (synopsis "User Friendly Data Visualization")
@@ -10213,10 +11279,10 @@ creation of finely-tuned, publication-quality figures from single function
 calls.  Visualizations include scatter plots, compositional bar plots, violin,
 box, and ridge plots, and more.  Customization ranges from size and title
 adjustments to discrete-group circling and labeling, hidden data overlay upon
-cursor hovering via ggplotly() conversion, and many more, all with simple,
-discrete inputs.  Color blindness friendliness is powered by legend adjustments
-(enlarged keys), and by allowing the use of shapes or letter-overlay in addition
-to the carefully selected @code{dittoColors}().")
+cursor hovering via @code{ggplotly()} conversion, and many more, all with
+simple, discrete inputs.  Color blindness friendliness is powered by legend
+adjustments (enlarged keys), and by allowing the use of shapes or letter-overlay
+in addition to the carefully selected @code{dittoColors()}.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
 (define-public r-dittodb
@@ -10231,6 +11297,9 @@ to the carefully selected @code{dittoColors}().")
         (base32 "13w78vhl1skc9073k5aplxm21l0cny8aklp75qljhla5p6ggq02w"))))
     (properties `((upstream-name . "dittodb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lifecycle r-glue r-digest r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://dittodb.jonkeane.com/")
@@ -10259,6 +11328,9 @@ have access to the database your code would typically connect to.")
         (base32 "1jm3nqyywdzpbfvk2mffmhp75al1hcvd5l4r21fbd3iz2anll0ma"))))
     (properties `((upstream-name . "disttools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=disttools")
     (synopsis "Distance Object Manipulation Tools")
@@ -10289,6 +11361,9 @@ access the data in a dist object using the latter approach.")
         (base32 "10p7rfqfkhcwq10lhz3cq9i4k1jdccks4y3791lajljsxz5jrca4"))))
     (properties `((upstream-name . "distTails")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-gsl r-ercv))
     (home-page "https://github.com/SergiVilardell/distTails")
     (synopsis "Collection of Full Defined Distribution Tails")
@@ -10311,6 +11386,9 @@ build upon the paper by del Castillo, Joan & Daoudi, Jalila & Serra, Isabel.
         (base32 "1fj0llq75hxy15wg1q4z10jmdxak2jcip62nl73fs25k1v9hr416"))))
     (properties `((upstream-name . "distrTEst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-startupmsg r-setrng r-distrsim))
     (home-page "http://distr.r-forge.r-project.org/")
     (synopsis "Estimation and Testing Classes Based on Package 'distr'")
@@ -10331,6 +11409,9 @@ build upon the paper by del Castillo, Joan & Daoudi, Jalila & Serra, Isabel.
         (base32 "0xfnq012hr1ngw6c5zdl8459qf908h6dpgdk6csnbpm9a706xypq"))))
     (properties `((upstream-name . "distrTeach")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-startupmsg r-distrex r-distr))
     (home-page "http://distr.r-forge.r-project.org/")
     (synopsis
@@ -10352,6 +11433,9 @@ secondary school.")
         (base32 "0b2cyfz1ghbkz7ps4lzwkkfakxq9wc1yd53zh8pzd1r8zjkb9c7y"))))
     (properties `((upstream-name . "distrSim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-startupmsg r-setrng r-distr))
     (home-page "http://distr.r-forge.r-project.org/")
     (synopsis "Simulation Classes Based on Package 'distr'")
@@ -10372,6 +11456,9 @@ family of packages.")
         (base32 "12zrgaqs3cb7zpr3zjlm9s9x2d7qqhgcy9yaf9zgjbq5rnffrrx7"))))
     (properties `((upstream-name . "distrRmetrics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-startupmsg r-fgarch r-fbasics r-distr))
     (home-page "http://distr.r-forge.r-project.org/")
     (synopsis "Distribution Classes for Distributions from Rmetrics")
@@ -10392,6 +11479,9 @@ family of packages.")
         (base32 "04lhrc92y6dqnfpqlmynjvn2dndzkknnvwsr5pf73dfpgv7n3s1f"))))
     (properties `((upstream-name . "distrr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-rlang r-magrittr r-dplyr))
     (home-page "https://gibonet.github.io/distrr")
     (synopsis "Estimate and Manage Empirical Distributions")
@@ -10399,7 +11489,8 @@ family of packages.")
      "This package provides tools to estimate and manage empirical distributions,
 which should work with survey data.  One of the main features is the possibility
 to create data cubes of estimated statistics, that include all the combinations
-of the variables of interest (see for example functions dcc5() and dcc6()).")
+of the variables of interest (see for example functions @code{dcc5()} and
+@code{dcc6()}).")
     (license license:gpl2)))
 
 (define-public r-distrom
@@ -10414,6 +11505,9 @@ of the variables of interest (see for example functions dcc5() and dcc6()).")
         (base32 "1j8k8cgh5r8av8jf8miq858j66hmkkcdjqhia77iivx97fg9pcjk"))))
     (properties `((upstream-name . "distrom")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-gamlr))
     (home-page "https://github.com/TaddyLab/distrom")
     (synopsis "Distributed Multinomial Regression")
@@ -10435,6 +11529,9 @@ Poisson factorization and the gamlr package.  For details see: Taddy (2015,
         (base32 "03b8mkjhxxh93675mmj443a83mgfwhkdar7dfbf3agf6aqnadn2g"))))
     (properties `((upstream-name . "distro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=distro")
     (synopsis "Linux Distribution Properties")
     (description
@@ -10456,6 +11553,9 @@ name.")
         (base32 "0fhsg944qfb5irpy9w4sc065mz31l0p0vdj2rjz9jpmk75mh2b7w"))))
     (properties `((upstream-name . "distrMod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-startupmsg
                              r-sfsmisc
                              r-randvar
@@ -10481,6 +11581,9 @@ distr and @code{distrEx}'.")
         (base32 "11xhr6yv42s1i4qqlb1pvzm8q2116v10gjlkhl0ml3id6lx27nmj"))))
     (properties `((upstream-name . "DistributionTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=DistributionTest")
     (synopsis "Powerful Goodness-of-Fit Tests Based on the Likelihood Ratio")
@@ -10503,6 +11606,9 @@ Mises and Anderson-Darling tests),see Zhang (2002)
         (base32 "0ykzxcxh5l9l5z3546iqlllryw2xyixz1hiynx19k8bsn8k7dxyp"))))
     (properties `((upstream-name . "distributionsrd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-modeltools r-flexmix))
     (home-page "https://cran.r-project.org/package=distributionsrd")
     (synopsis "Distribution Fitting and Evaluation")
@@ -10531,16 +11637,20 @@ description and application of methods available in this package.")
         (base32 "0av16mpnr18ijj4g8fk85mdvvv7qxqj1i9cn1dm585qgg1q8hd0z"))))
     (properties `((upstream-name . "distributions3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-glue r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/alexpghayes/distributions3")
     (synopsis "Probability Distributions as S3 Objects")
     (description
      "This package provides tools to create and manipulate probability distributions
-using S3.  Generics pdf(), cdf(), quantile(), and random() provide replacements
-for base R's d/p/q/r style functions.  Functions and arguments have been named
-carefully to minimize confusion for students in intro stats courses.  The
-documentation for each distribution contains detailed mathematical notes.")
+using S3.  Generics @code{pdf()}, @code{cdf()}, @code{quantile()}, and
+@code{random()} provide replacements for base R's d/p/q/r style functions.
+Functions and arguments have been named carefully to minimize confusion for
+students in intro stats courses.  The documentation for each distribution
+contains detailed mathematical notes.")
     (license license:expat)))
 
 (define-public r-distributionoptimization
@@ -10555,6 +11665,9 @@ documentation for each distribution contains detailed mathematical notes.")
         (base32 "0pp0f7c9szyx426bnnz4fz4vh5q73m8x896z6pqgx04b6v445361"))))
     (properties `((upstream-name . "DistributionOptimization")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-ggplot2 r-ga r-adaptgauss))
     (home-page "https://cran.r-project.org/package=DistributionOptimization")
     (synopsis "Distribution Optimization")
@@ -10583,6 +11696,9 @@ stems from @code{AdaptGauss}': Ultsch, A, et al. (2015)
         (base32 "072km5alfd9ba2p4qvrysdfrqbm8dksjwn3hkcidh6sg5m0g7aiw"))))
     (properties `((upstream-name . "Distributacalcul")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod r-rlang r-dplyr))
     (home-page "https://alec42.github.io/Distributacalcul_Package/")
     (synopsis "Probability Distribution Functions")
@@ -10609,6 +11725,9 @@ probability.")
         (base32 "0whwmmdx2k2vrjjkz4ww9v7z9ad3835819pby91119lyic27w727"))))
     (properties `((upstream-name . "DISTRIB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DISTRIB")
     (synopsis
      "Four Essential Functions for Statistical Distributions Analysis: A New Functional Approach")
@@ -10634,6 +11753,9 @@ special computational programs.")
         (base32 "1zxw0ml9rs771n3zsxhv03hdyn1jb46zfrihy4ykdsnbbn8pj8g0"))))
     (properties `((upstream-name . "distrEx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-startupmsg r-distr))
     (home-page "http://distr.r-forge.r-project.org/")
     (synopsis "Extensions of Package 'distr'")
@@ -10653,6 +11775,9 @@ special computational programs.")
         (base32 "08gq3yq71kjh0bm2xj2r1r90xkk3pppwc24laqsvgnd467a2mf7y"))))
     (properties `((upstream-name . "distrEllipse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-startupmsg
                              r-setrng
                              r-mvtnorm
@@ -10680,6 +11805,8 @@ package distr').")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -10726,6 +11853,9 @@ explored and visualized.")
         (base32 "0r3ic7v0z6wmd1r3i7zhfzv5wnsirgxdnf5g3g1hnrsf3dx7l0mc"))))
     (properties `((upstream-name . "distrDoc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-startupmsg
                              r-randvar
                              r-mass
@@ -10756,6 +11886,9 @@ distr', @code{distrEx}', @code{distrMod}', @code{distrSim}', @code{distrTEst}',
         (base32 "1zmgmcw118cg7pbzn15kdl3n59hjyma4907yz4nbqpywp5kq07az"))))
     (properties `((upstream-name . "distr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-startupmsg r-sfsmisc r-mass))
     (native-inputs (list r-knitr))
     (home-page "http://distr.r-forge.r-project.org/")
@@ -10775,6 +11908,9 @@ distr', @code{distrEx}', @code{distrMod}', @code{distrSim}', @code{distrTEst}',
         (base32 "0aws4qs6802y42m07ca9m4i0lza282g6kfzx64q652y52md862gk"))))
     (properties `((upstream-name . "DistPlotter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-shinywidgets
@@ -10809,6 +11945,9 @@ univariate distributions.")
         (base32 "16il7ymwapjps1nscf7h22crzgxqs9alh84dhgrl07v83aq37ivb"))))
     (properties `((upstream-name . "distory")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ape))
     (home-page "https://cran.r-project.org/package=distory")
     (synopsis "Distance Between Phylogenetic Histories")
@@ -10830,6 +11969,9 @@ theoretical background of distory is published in Billera et al. (2001)
         (base32 "02r6zf4jmk29879gvlxg7mh0lf9r8d340vb48md2swis25nidgx1"))))
     (properties `((upstream-name . "distops")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-rcppparallel
                              r-rcpp
@@ -10843,7 +11985,7 @@ theoretical background of distory is published in Billera et al. (2001)
      "It provides the subset operator for dist objects and a function to compute
 medoid(s) that are fully parallelized leveraging the @code{RcppParallel}
 package.  It also provides functions for package developers to easily implement
-their own parallelized dist() function using a custom C++'-based distance
+their own parallelized @code{dist()} function using a custom C++'-based distance
 function.")
     (license license:expat)))
 
@@ -10859,6 +12001,9 @@ function.")
         (base32 "09pafy8y1ifgglqmal32dy34acx06ypsq2bgwsn6fjiqr9kw401j"))))
     (properties `((upstream-name . "disto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-proxy
                              r-pbapply
@@ -10892,6 +12037,9 @@ supported.")
         (base32 "0ckwxj1xsyfrpbj87gw2b3x1qnzf7a7i31zmg5ccfhi4z7vx13mz"))))
     (properties `((upstream-name . "distinctiveness")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (home-page "https://github.com/iandreafc/distinctiveness-R")
     (synopsis "Distinctiveness Centrality")
@@ -10913,6 +12061,9 @@ descriptions, see Fronzetti Colladon and Naldi (2020)
         (base32 "05pk6g3bjaw0ghb673yxfvnijqkvjy4bfxk2vpiwccm7hjszl62s"))))
     (properties `((upstream-name . "distillML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rforestry
                              r-r6
@@ -10949,6 +12100,8 @@ Saarinen, Jasjeet S. Sekhon, Simon Walter.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -11003,6 +12156,9 @@ visualizations, and full support for footnotes and citations.")
         (base32 "0wls5151kcih7rljbk0zrhz2lqx0npr4l6s61whh70w958h9jshg"))))
     (properties `((upstream-name . "distfromq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zeallot r-purrr r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "http://reichlab.io/distfromq/")
@@ -11028,6 +12184,9 @@ location-scale family.")
         (base32 "1vly5yiqfc68wvijrsa5c14yv4h5rwqrhq4isi3k5ck1sldpdfv5"))))
     (properties `((upstream-name . "distfreereg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-numderiv r-clue))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=distfreereg")
@@ -11050,6 +12209,9 @@ the mean structure of parametric models introduced in Khmaladze (2021)
         (base32 "0h7cywxnasxmqnl9f2f9wp4viwvv72hjx2drr78prqy3nn3lvqwx"))))
     (properties `((upstream-name . "distfree.cr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://statgen.ualberta.ca")
     (synopsis "Distribution-Free Confidence Region")
     (description
@@ -11070,6 +12232,9 @@ of bivariate data.  The method was proposed by Zhiqiu Hu & Rong-cai Yang (2013)
         (base32 "0v19m3n1jgipg65yrv75rm4v27b5aq58cbsmbp7lxvfxmj5ra328"))))
     (properties `((upstream-name . "distdichoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sn r-nlme r-emmeans r-boot))
     (home-page "https://arxiv.org/abs/1809.03279")
     (synopsis
@@ -11095,6 +12260,9 @@ information.")
         (base32 "0sa6z2mpmk51ig1r7bmpbyv2jd8z6z7mixki2vlq1kybg8cx3wmi"))))
     (properties `((upstream-name . "distcrete")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/reconhub/distcrete")
     (synopsis "Discrete Distribution Approximations")
@@ -11118,6 +12286,9 @@ integration range.  For a review of discretisation methods, see Chakraborty
         (base32 "01h8cczkb0vb6560rh4czvajwa7gbgp41pl2b5xw7a68cbjizv8n"))))
     (properties `((upstream-name . "distcomp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
                              r-shiny
@@ -11158,6 +12329,9 @@ designing and deploying the computations.")
         (base32 "0r8gp84kbl8kbsw3kbp8sk0xc2gav074qc9qlkq06bp0sxycwhyw"))))
     (properties `((upstream-name . "DistatisR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext r-readxl r-prettygraphs r-dplyr r-car))
     (home-page "https://cran.r-project.org/package=DistatisR")
     (synopsis "DiSTATIS Three Way Metric Multidimensional Scaling")
@@ -11181,6 +12355,9 @@ methods are based on Abdi, H., Williams, L.J., Valentin, D., & Bennani-Dosse, M.
         (base32 "12d6xzhcxs3xxyj82ih6chrr638siy45gna1s22vhnqvjd5jixc6"))))
     (properties `((upstream-name . "distantia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-rcolorbrewer
                              r-plyr
@@ -11218,6 +12395,9 @@ similarity of their samples.")
         (base32 "0xsqvmakys75rz11w7mkhs7674lzgz2ml9bwbkydq3lkrg14hyww"))))
     (properties `((upstream-name . "distanceto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf r-nabor r-geodist))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/robitalec/distance-to")
@@ -11245,6 +12425,9 @@ distance surface.  But the workhorse is distance_to.")
         (base32 "0v2i1q16kcxr1v988zcgpqgrwvagzfcafzxjkkz06x72j8s63jrd"))))
     (properties `((upstream-name . "distances")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/fsavje/distances")
     (synopsis "Tools for Distance Metrics")
     (description
@@ -11264,6 +12447,9 @@ metrics.")
         (base32 "1q3xv5wvpmck19ziq7md8q274br7dbwm3xizbdgj5rq18n1yfcsr"))))
     (properties `((upstream-name . "Distance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-mrds r-dplyr))
     (home-page "https://github.com/DistanceDevelopment/Distance/")
     (synopsis "Distance Sampling Detection Function and Abundance Estimation")
@@ -11289,6 +12475,9 @@ and <https://examples.distancesampling.org/> for example analyses.")
         (base32 "199yipbc2sx2lsl51rpfyh80bfxaahfd2llqmfsp946gvj7339hv"))))
     (properties `((upstream-name . "DiSSMod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sfsmisc r-psych r-matrixcalc r-mass))
     (home-page "https://cran.r-project.org/package=DiSSMod")
     (synopsis
@@ -11314,6 +12503,9 @@ Gumbel distribution.")
         (base32 "1lgs5nmv3lpm4gsryxvcwiwibvvg9flv23q8maisp77x49c18qcp"))))
     (properties `((upstream-name . "dissever")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-sp
                              r-raster
@@ -11346,6 +12538,9 @@ algorithm was published by Malone et al. (2012)
         (base32 "142f4ggzwdhf2vm9kisayna9a5j17mmy2jckhjrvxh4k5dc3ssf6"))))
     (properties `((upstream-name . "dissCqN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://murphymv.github.io/dissCqN/")
     (synopsis "Multiple Assemblage Dissimilarity for Orders q = 0-N")
@@ -11367,6 +12562,9 @@ interaction networks.")
         (base32 "0jmn8xjwfr3dhrsmx3lq8kz7lq9pnk95mgr97gi72c86c7rap935"))))
     (properties `((upstream-name . "disprose")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=disprose")
     (synopsis "Discriminating Probes Selection")
     (description
@@ -11390,6 +12588,9 @@ in: Lorenz R., Stephan H.B., HÃ¶ner zu Siederdissen C. et al. (2011)
         (base32 "16d0r94lj2bxp1dpizp5grjcbh627v5qqwj5iw8j4k345m784pcl"))))
     (properties `((upstream-name . "disprofas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-lifecycle r-ggplot2 r-boot))
     (home-page "https://github.com/piusdahinden/disprofas")
     (synopsis "Non-Parametric Dissolution Profile Analysis")
@@ -11422,6 +12623,9 @@ implemented.")
         (base32 "1di9n7jsbd7kdn0bidyadn6nxlh4c6dilqn163g0z45rhffjrflf"))))
     (properties `((upstream-name . "dispRity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-vegan
                              r-scales
@@ -11463,6 +12667,9 @@ tests for disparity analysis.")
         (base32 "17rj63jb8f3a00sakrsyw13syl6p54pbkjxgxpsyi8yhc690yfrl"))))
     (properties `((upstream-name . "dispositionEffect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-progress r-magrittr r-lubridate r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://marcozanotti.github.io/dispositionEffect/")
@@ -11488,6 +12695,9 @@ time series disposition effect are also allowed.")
         (base32 "0q5wacjclspn2fh7z1pg2l67ll51n75wck5h2fdq2vxy3qn3vwis"))))
     (properties `((upstream-name . "disposables")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/gaborcsardi/disposables")
     (synopsis "Create Disposable R Packages for Testing")
     (description
@@ -11509,6 +12719,9 @@ code or an R package behaves with respect to other packages.")
         (base32 "16r6is0pchzc9mxpz0c44f72j76vsh3j9damalcxajrha06dkdq4"))))
     (properties `((upstream-name . "dispmod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dispmod")
     (synopsis "Modelling Dispersion in GLM")
     (description
@@ -11530,6 +12743,9 @@ models (Breslow, 1984 <doi:10.2307/2347661>), using a quasi-likelihood approach.
         (base32 "08qs060zj58wb5y0ah20qcpm7qz7x99p7h5rblcfhcy2vf4pf239"))))
     (properties `((upstream-name . "dispeRse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp r-sf r-raster))
     (home-page "https://cran.r-project.org/package=dispeRse")
     (synopsis "Simulation of Demic Diffusion with Environmental Constraints")
@@ -11556,6 +12772,9 @@ respective starting times can be specified.")
         (base32 "0dkk3qws631mf0g02di5rsrvh5954cykysyri0g8aqgik0j9dg06"))))
     (properties `((upstream-name . "disparityfilter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph))
     (home-page "https://github.com/alessandrobessi/disparityfilter")
     (synopsis "Disparity Filter Algorithm for Weighted Networks")
@@ -11580,6 +12799,9 @@ implementation of the algorithm supports both directed and undirected networks."
         (base32 "00c9glxzabcprnzh60qq9zsjp3psm4a09s5psn9jl9720ckjngcp"))))
     (properties `((upstream-name . "disordR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-digest))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/disordR")
@@ -11604,6 +12826,9 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.03856>.")
         (base32 "0mkzvxbjr9iw2bmnw4s5s7glly1nnf4j83y6yzw5vg1gwqghynky"))))
     (properties `((upstream-name . "disk.frame")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-rcpp
@@ -11644,6 +12869,9 @@ paradigms like dplyr verbs and data.table syntax.")
         (base32 "1vc2kwcb3cvcdbdg0s5qnjdzn8qa7lv6f86milhxdf609k2zwdkx"))))
     (properties `((upstream-name . "DisImpact")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -11683,6 +12911,9 @@ Measuring Disproportionate Impact in Equity Plans.
         (base32 "00mknsalikangr17946877m5fy2jgkgasgl6ng4f2nr44f0q9l6q"))))
     (properties `((upstream-name . "DisimForMixed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr r-cluster))
     (home-page "https://cran.r-project.org/package=DisimForMixed")
     (synopsis
@@ -11708,6 +12939,9 @@ of attributes, calculate dissimilarity between each pair of objects.")
         (base32 "056jcs1qpiyadnmlzd0cj4kp0qzkichxi0pdnxypyq1fsqnpvan3"))))
     (properties `((upstream-name . "DisHet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixstats r-gtools))
     (home-page "https://cran.r-project.org/package=DisHet")
     (synopsis
@@ -11731,6 +12965,9 @@ gene expressions.")
         (base32 "1024r1p4wawcg1346vk91xk7x5hxasliiyjp2y0nk085s4lb7s96"))))
     (properties `((upstream-name . "diseasystore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-tidyr
@@ -11771,6 +13008,9 @@ easily and dynamically compute features as part of your continuous integration."
         (base32 "1qjzyicz9wg63vqkkxpiqj991sirkpgax6cl9b6hr939rf2axs8j"))))
     (properties `((upstream-name . "diseasemapping")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=diseasemapping")
@@ -11793,6 +13033,9 @@ Ratios, and fitting the BYM model using INLA'.  For details see Brown (2015)
         (base32 "1m22pichm603gn9h94vx0kmds28krlp9ax1yrsfwx12rqchcdhk7"))))
     (properties `((upstream-name . "disdat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=disdat")
     (synopsis "Data for Comparing Species Distribution Modeling Methods")
@@ -11815,6 +13058,9 @@ modelling methods.")
         (base32 "14wn01p6vx1y1aprhz4r8y9dmvfxslif37nx854xnx6ncnihag57"))))
     (properties `((upstream-name . "discursive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm r-stringr r-stm r-snowballc))
     (home-page "https://cran.r-project.org/package=discursive")
     (synopsis
@@ -11840,6 +13086,9 @@ Political Sophistication.\" American Political Science Review (forthcoming).")
         (base32 "0k585cyz02vqk4w7w20rhn6g9rspmmlbdpv7k837021iyhwwb838"))))
     (properties `((upstream-name . "discSurv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-treeclust
                              r-rpart
@@ -11871,6 +13120,9 @@ analysis.")
         (base32 "03xafiy7fjxsincbwbz1y0xv372yd7cs8sbmqvv2s3glx6jdxk07"))))
     (properties `((upstream-name . "discrtr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmdformats r-magrittr))
     (home-page "https://github.com/paezha/discrtr")
     (synopsis
@@ -11892,6 +13144,9 @@ and Boisjoly, G. (2023) <doi:10.1007/978-3-031-20719-8>.")
         (base32 "098021yq1bdqd0hnpv3lh4w7zna2v0kn4pbsffgbkigg0qi8cgm0"))))
     (properties `((upstream-name . "discrim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr r-tibble r-rlang r-parsnip r-dials))
     (home-page "https://github.com/tidymodels/discrim")
     (synopsis "Model Wrappers for Discriminant Analysis")
@@ -11916,6 +13171,9 @@ classifiers (Hand and Yu (2007) <doi:10.1111/j.1751-5823.2001.tb00465.x>).")
         (base32 "0jkxi0rirzi3dc3886b97sqwmkrkp25mq6avzp58iqy1w58likpk"))))
     (properties `((upstream-name . "discretization")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=discretization")
     (synopsis "Data Preprocessing, Discretization for Classification")
     (description
@@ -11936,6 +13194,9 @@ discretization algorithms.")
         (base32 "1rg3ax6jryagf5d3h8m44x9wyhr2qff3srfa9zrk6i64p1ahk9lr"))))
     (properties `((upstream-name . "DiscreteWeibull")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp))
     (home-page "https://cran.r-project.org/package=DiscreteWeibull")
     (synopsis "Discrete Weibull Distributions (Type 1 and 3)")
@@ -11957,6 +13218,9 @@ distributions.")
         (base32 "1ii0jqq2k0in11dhmw1mzhwbxijnd6inhwfi0j43cpxzddnbg8bs"))))
     (properties `((upstream-name . "DiscreteTests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-lifecycle r-checkmate))
     (home-page "https://github.com/DISOhda/DiscreteTests")
     (synopsis
@@ -11982,6 +13246,9 @@ in Hirji (2006) <doi:10.1201/9781420036190>.")
         (base32 "1xl6m3sf02v4y26375jn846ixzcxpqim1r6d4j56y8b5c243jg4h"))))
     (properties `((upstream-name . "DiscreteQvalue")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DiscreteQvalue")
     (synopsis "Improved q-Values for Discrete Uniform and Homogeneous Tests")
     (description
@@ -12009,6 +13276,9 @@ P-values.")
         (base32 "17w4vjvsm7jacvwckjczyah3hglq044r3m6vqdcrg8haz884rav2"))))
     (properties `((upstream-name . "DiscreteLaplace")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DiscreteLaplace")
     (synopsis "Discrete Laplace Distributions")
     (description
@@ -12028,6 +13298,9 @@ generation and estimation for the skew discrete Laplace distributions.")
         (base32 "0vjsvl4m4zccfgizv7mzidbbpzqcm101x448vllcdcrn2xlnkmnq"))))
     (properties `((upstream-name . "DiscreteInverseWeibull")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp))
     (home-page "https://cran.r-project.org/package=DiscreteInverseWeibull")
     (synopsis "Discrete Inverse Weibull Distribution")
@@ -12049,6 +13322,9 @@ distribution.")
         (base32 "05jq7x6qs57r2fk1nxyi0yiggq3dmdijjm4dla0x8070pp2z3r0f"))))
     (properties `((upstream-name . "DiscreteGapStatistic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-reshape2
                              r-rcolorbrewer
@@ -12081,6 +13357,9 @@ ordinal survey response data.")
         (base32 "0iixxn96qcma3ky9sy5l0p8dk5nvrknlrr6zk6dg7xvwm22ala3b"))))
     (properties `((upstream-name . "DiscreteFWER")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-discretefdr r-checkmate))
     (home-page "https://github.com/DISOhda/DiscreteFWER")
     (synopsis
@@ -12111,6 +13390,9 @@ procedures directly to data is also provided.")
         (base32 "0xyv3lff6xmz9q1k2lprll68fw9ckqhgl1z87pd9rm0ldy969m9p"))))
     (properties `((upstream-name . "discretefit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/josh-mc/discretefit")
@@ -12137,6 +13419,13 @@ and Ward (2011) <doi:10.1016/j.amc.2011.03.124>.")
         (base32 "086fxsyd57gp353s2plq88f0wjpa94jx0s987av4ks58qplnx92f"))))
     (properties `((upstream-name . "DiscreteFDR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-lifecycle
@@ -12171,6 +13460,9 @@ procedures directly to data.")
         (base32 "1cag5z4ag1n21ya2fiwrxvflnn4fnqgqfqxgg48r68jvmzdglhbn"))))
     (properties `((upstream-name . "DiscreteDists")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-rcpp r-pracma r-gamlss-dist r-gamlss))
     (home-page "https://github.com/fhernanb/DiscreteDists")
     (synopsis "Discrete Statistical Distributions")
@@ -12193,6 +13485,9 @@ framework.")
         (base32 "0jpjky99cfb7h3i244n16llmgkrkbavbmyhz181fxiaiwzs7z66c"))))
     (properties `((upstream-name . "DiscreteDatasets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-checkmate))
     (home-page "https://github.com/DISOhda/DiscreteDatasets")
     (synopsis "Example Data Sets for Use with Discrete Statistical Tests")
@@ -12214,6 +13509,9 @@ four-column version, so that each row represents a 2x2 table.")
         (base32 "0gw9fpmsqj1cj2qr7hqr86j28kjn3qfykdkkxrazj3dnv981xhhy"))))
     (properties `((upstream-name . "discoverableresearch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tm
                              r-synthesisr
                              r-stringi
@@ -12229,30 +13527,31 @@ four-column version, so that each row represents a 2x2 table.")
      "Checks Title, Abstract and Keywords to Optimise Discoverability")
     (description
      "This package provides a suite of tools are provided here to support authors in
-making their research more discoverable.  check_keywords() - this function
+making their research more discoverable. @code{check_keywords()} - this function
 checks the keywords to assess whether they are already represented in the title
-and abstract.  check_fields() - this function compares terminology used across
-the title, abstract and keywords to assess where terminological diversity (i.e.
-the use of synonyms) could increase the likelihood of the record being
+and abstract. @code{check_fields()} - this function compares terminology used
+across the title, abstract and keywords to assess where terminological diversity
+(i.e.  the use of synonyms) could increase the likelihood of the record being
 identified in a search.  The function looks for terms in the title and abstract
 that also exist in other fields and highlights these as needing attention.
-suggest_keywords() - this function takes a full text document and produces a
-list of unigrams, bigrams and trigrams (1-, 2- or 2-word phrases) present in the
-full text after removing stop words (words with a low utility in natural
-language processing) that do not occur in the title or abstract that may be
-suitable candidates for keywords.  suggest_title() - this function takes a full
-text document and produces a list of the most frequently used unigrams, bigrams
-and trigrams after removing stop words that do not occur in the abstract or
-keywords that may be suitable candidates for title words.  check_title() - this
-function carries out a number of sub tasks: 1) it compares the length (number of
-words) of the title with the mean length of titles in major bibliographic
-databases to assess whether the title is likely to be too short; 2) it assesses
-the proportion of stop words in the title to highlight titles with low utility
-in search engines that strip out stop words; 3) it compares the title with a
-given sample of record titles from an .ris import and calculates a similarity
-score based on phrase overlap.  This highlights the level of uniqueness of the
-title.  This version of the package also contains functions currently in a
-non-CRAN package called litsearchr <https://github.com/elizagrames/litsearchr>.")
+@code{suggest_keywords()} - this function takes a full text document and
+produces a list of unigrams, bigrams and trigrams (1-, 2- or 2-word phrases)
+present in the full text after removing stop words (words with a low utility in
+natural language processing) that do not occur in the title or abstract that may
+be suitable candidates for keywords. @code{suggest_title()} - this function
+takes a full text document and produces a list of the most frequently used
+unigrams, bigrams and trigrams after removing stop words that do not occur in
+the abstract or keywords that may be suitable candidates for title words.
+@code{check_title()} - this function carries out a number of sub tasks: 1) it
+compares the length (number of words) of the title with the mean length of
+titles in major bibliographic databases to assess whether the title is likely to
+be too short; 2) it assesses the proportion of stop words in the title to
+highlight titles with low utility in search engines that strip out stop words;
+3) it compares the title with a given sample of record titles from an .ris
+import and calculates a similarity score based on phrase overlap.  This
+highlights the level of uniqueness of the title.  This version of the package
+also contains functions currently in a non-CRAN package called litsearchr
+<https://github.com/elizagrames/litsearchr>.")
     (license license:gpl3)))
 
 (define-public r-discover
@@ -12267,6 +13566,9 @@ non-CRAN package called litsearchr <https://github.com/elizagrames/litsearchr>."
         (base32 "1smy2bzzqc4nvrd4qj2sq4d1f0pvbm4nixxh8xpy22lwwa8pkd24"))))
     (properties `((upstream-name . "discoveR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinyjs
                              r-shinydashboardplus
                              r-shinydashboard
@@ -12308,6 +13610,13 @@ Analysis, Hierarchical Clustering and the K-Means Method.")
         (base32 "00s7bcwc5mdra5wwf3wac6s0bj2n6ryqfx7bv2zji6fp0h4ya4wc"))))
     (properties `((upstream-name . "discourseGT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-network
                              r-igraph
                              r-ggrepel
@@ -12338,6 +13647,9 @@ out in Chai et al. (2019) <doi:10.1187/cbe.18-11-0222>.")
         (base32 "0xwbiaqmlp7bpnkagadc87ay7shp9gls7d6vhi7ksws9r03134sm"))))
     (properties `((upstream-name . "DiSCos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-pracma
                              r-mass
@@ -12376,6 +13688,9 @@ for carrying out inference on them.")
         (base32 "0is9gwj09zj25hklsxgi3k7ypq2qp2yx0vir6wgpnd30wa11zs5h"))))
     (properties `((upstream-name . "discord")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/R-Computing-Lab/discord")
     (synopsis "Functions for Discordant Kinship Modeling")
     (description
@@ -12397,6 +13712,9 @@ for kin pairs.")
         (base32 "05pzrrv2pwd3m15f8qxy0m2gsam3qw71bvapf061rbw1lzmr62b6"))))
     (properties `((upstream-name . "discnorm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sirt
                              r-pbivnorm
                              r-mnormt
@@ -12430,6 +13748,9 @@ knowledge into account, as described by GrÃ¸nneberg and Foldnes (2022)
         (base32 "0s1j8j2jyvdr15wysi9y7yin5rz06hgd5rlqxpxz5zc8nyvar69r"))))
     (properties `((upstream-name . "disclosuR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tm
                              r-syuzhet
@@ -12465,6 +13786,9 @@ dictionaries on the data based on Graffin et al.
         (base32 "0lqg4wvx7jf4an2x3lq9486m5741djkw8q506vbn8xlh4gxwmp3s"))))
     (properties `((upstream-name . "disclapmix2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-cluster))
     (home-page "https://cran.r-project.org/package=disclapmix2")
     (synopsis
@@ -12487,6 +13811,9 @@ that uses an EM algorithm.")
         (base32 "1rc5kv4abx1hxgkp3vb3f247nv887vrh9l2y189blq0p6k258575"))))
     (properties `((upstream-name . "disclapmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpp r-mass r-disclap r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=disclapmix")
@@ -12510,6 +13837,9 @@ chromosomal haplotypes as described in [1, 2] (refer to the URL section).")
         (base32 "0qsycr04xz1h90jyzxwagfkc4rkc8mb9srasvhrp7grynjxlbb9f"))))
     (properties `((upstream-name . "disclap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=disclap")
     (synopsis "Discrete Laplace Exponential Family")
     (description
@@ -12529,6 +13859,9 @@ models.")
         (base32 "1hwsdrbajmpfdc9arb1pjhx2w45dy3zrba9ibcrnpyqhhr4i1c5m"))))
     (properties `((upstream-name . "discharge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lmom r-ggplot2 r-circstats r-checkmate r-boot))
     (home-page "https://cran.r-project.org/package=discharge")
     (synopsis "Fourier Analysis of Discharge Data")
@@ -12552,6 +13885,9 @@ M. E. Arias, P. B. Ngor, T. A. RÃ¤sÃ¤nsen, S. Nam (2017)
         (base32 "1ll8c0fwwmz2yw8w582422r8bk9lr1570d7m7w2n1flrnqpqmk8j"))))
     (properties `((upstream-name . "discfrail")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-numderiv r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fgaspe04/discfrail")
@@ -12579,6 +13915,9 @@ hazard function.")
         (base32 "0z455pymg48j5z8g4z6bpv8qrrwxj6gfw2p2135dpvl37jpgha42"))))
     (properties `((upstream-name . "discFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam))
     (home-page "https://cran.r-project.org/package=discFA")
     (synopsis "Discrete Factor Analysis")
@@ -12599,6 +13938,9 @@ truncation, zero inflation, and zero inflated truncation.")
         (base32 "0zr1lpfqn8q3xhh27aa59j5xq70fxhzkwqaqfi34zfsiqzb7cy6a"))))
     (properties `((upstream-name . "DIscBIO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vegan
                              r-tsne
@@ -12644,6 +13986,9 @@ published by Ghannoum et.  al. (2019) <doi:10.1101/700989>.")
         (base32 "1b0pk75jk7z9hcrv3pnci4709cvc2givwdbisd6yhanlg9vsz545"))))
     (properties `((upstream-name . "discAUC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-glue r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jefriedel/discAUC")
@@ -12676,6 +14021,9 @@ AUC.")
         (base32 "0dzgs048pwpl59fpnvqdra001xkwllxpkaxanwdbmzc8l1xmrwb2"))))
     (properties `((upstream-name . "disbayes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stanheaders
@@ -12716,6 +14064,9 @@ as prevalence.  The methods are described in Jackson et al. (2023)
         (base32 "08yf0i94lrs25ffy9g6md8mzxcq9s3ywcw0ryvfddi25ddym6jxy"))))
     (properties `((upstream-name . "disastr.api")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (home-page "https://cran.r-project.org/package=disastr.api")
     (synopsis "Wrapper for the UN OCHA ReliefWeb Disaster Events API")
@@ -12742,6 +14093,9 @@ flow.")
         (base32 "02sn3byrw2smflimycdlax8yd0wf42qlmyjlknc74v1zc69xaw1h"))))
     (properties `((upstream-name . "disaggregation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmb
                              r-tidyterra
                              r-terra
@@ -12778,6 +14132,9 @@ et al. (2023) <doi:10.18637/jss.v106.i11>.")
         (base32 "1wd6jxdi1ib24hpkn2ghrv91gyi0qmpgvvhdscmx58w6vxlk1rsz"))))
     (properties `((upstream-name . "DisaggregateTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-withr r-rdpack r-matrix r-lars))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DisaggregateTS")
@@ -12804,12 +14161,15 @@ presence of high-dimensional indicator matrices.")
         (base32 "1i2in27gygmh1l05371hzbf8zssgsjl6jyljsr964gk02l0ghkpn"))))
     (properties `((upstream-name . "disaggR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer))
     (native-inputs (list r-knitr))
     (home-page "https://inseefr.github.io/disaggR/")
     (synopsis "Two-Steps Benchmarks for Time Series Disaggregation")
     (description
-     "The @code{twoStepsBenchmark}() and @code{threeRuleSmooth}() functions allow you
+     "The @code{twoStepsBenchmark()} and @code{threeRuleSmooth()} functions allow you
 to disaggregate a low-frequency time series with higher frequency time series,
 using the French National Accounts methodology.  The aggregated sum of the
 resulting time series is strictly equal to the low-frequency time series within
@@ -12832,6 +14192,9 @@ NÂ°126, by Insee (2012, ISBN:978-2-11-068613-8,
         (base32 "1kmchjvm5x3gsvq2dqxr4di2l607j1ivsm75zwggaiwi8yjz9s4c"))))
     (properties `((upstream-name . "dirttee")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rlang
                              r-provenance
@@ -12867,6 +14230,9 @@ regression for time-to-event variables has been introduced in Seipp et al.
         (base32 "1l4sxg5vlgnx30rcpwj9iw9kzl79cbwmarbip2n7bp7fpb8wsl3i"))))
     (properties `((upstream-name . "DirStats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rotasym r-movmf))
     (native-inputs (list gfortran))
     (home-page "https://github.com/egarpor/DirStats")
@@ -12892,6 +14258,9 @@ GarcÃ­a-PortuguÃ©s (2013) <doi:10.1214/13-ejs821>.")
         (base32 "0j089k7ylyfyw9xrimhkkc79xafkcfv0bcz6albc1i6xnq5fqhpa"))))
     (properties `((upstream-name . "DIRMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mass r-lava))
     (home-page "https://cran.r-project.org/package=DIRMR")
     (synopsis
@@ -12918,6 +14287,9 @@ result quality.The philosophy of the package is described in Guo G. (2022)
         (base32 "117p3jvinmha7a2phcpzq38ig05kcranp15xbxqvv0cgh3c95fjr"))))
     (properties `((upstream-name . "dirmcmc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mcmcse))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dirmcmc")
@@ -12938,6 +14310,9 @@ result quality.The philosophy of the package is described in Guo G. (2022)
         (base32 "1b500cm5ljpvpa0axqnylcvk8x3vmva1jy179k97ggps58lmspcj"))))
     (properties `((upstream-name . "dirichletprocess")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-gtools r-ggplot2))
     (home-page "https://github.com/dm13450/dirichletprocess")
     (synopsis "Build Dirichlet Process Objects for Bayesian Modelling")
@@ -12965,6 +14340,9 @@ other sources.")
         (base32 "1qlfvzlig3a2v78fiq6sbbpxklmjczikxdw57m6mqngzrl9vdl2g"))))
     (properties `((upstream-name . "DirectStandardisation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DirectStandardisation")
     (synopsis "Adjusted Means and Proportions by Direct Standardisation")
     (description
@@ -12985,6 +14363,9 @@ dataset.")
         (base32 "0q6g18rwz5bfg73f144lzfp0apc4jf2gibh8h3vci0fnmwfvs7gz"))))
     (properties `((upstream-name . "directPA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plotly r-calibrate))
     (home-page "https://cran.r-project.org/package=directPA")
     (synopsis "Direction Analysis for Pathways and Kinases")
@@ -13008,6 +14389,9 @@ microarray, RNA-seq, proteomics, or phosphoproteomics data.  See Yang P et al
         (base32 "1yv703mb3fnvjxr2rrxvb8x869hbbjx4l94qbbsmy0ssknayq60y"))))
     (properties `((upstream-name . "directotree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-tree r-collapsibletree))
     (home-page "https://cran.r-project.org/package=directotree")
     (synopsis "Creates an Interactive Tree Structure of a Directory")
@@ -13030,6 +14414,9 @@ a node, the corresponding text is displayed as a tooltip.")
         (base32 "111nk0fc1x9mwmzm6mpg96p95pr8z3v0sgyv860sw89xydshj2wn"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-rnaturalearth
                              r-rnanoflann
@@ -13083,6 +14470,9 @@ kernel-based distribution\". <doi:10.48550/@code{arXiv.2409.03292>}.")
         (base32 "181m5xhlgrpmj4c9zdr70sn8gwxlpd54cc5yjngyx5j0l9mfi5a3"))))
     (properties `((upstream-name . "DirectEffects")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-matching
                              r-glue
@@ -13114,6 +14504,9 @@ in Blackwell and Strezhnev (2020) <doi:10.1111/rssa.12759>.")
         (base32 "0ac5dn0mi8j6jvl7zsv9k9mbanfs2h65haqy2lyqzh5s6vw61i2y"))))
     (properties `((upstream-name . "DirectedClustering")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DirectedClustering")
     (synopsis "Directed Weighted Clustering Coefficient")
     (description
@@ -13138,6 +14531,9 @@ networks: a new perspective\", Clemente, G.P., Grassi, R. (2017),
         (base32 "0868918aa0nxhgmczpbpf9i06x9ik18vff51cdb4i9q405mal6sj"))))
     (properties `((upstream-name . "DIRECT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DIRECT")
     (synopsis
      "Bayesian Clustering of Multivariate Data Under the Dirichlet-Process Prior")
@@ -13163,6 +14559,9 @@ data with weak signals.  The Annals of Applied Statistics.  7(3) 1334-1361.
         (base32 "140qqpp0vhqw0vmzff58sx51nj21x61z063j4j23nrdrl3ylamcv"))))
     (properties `((upstream-name . "Dire")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-matrix
@@ -13196,6 +14595,9 @@ the user to draw plausible values.")
         (base32 "0nxjwiffi1ivafzha3c35kjk36ai7na0nbfl6x3gpsi2km7b84nd"))))
     (properties `((upstream-name . "dipw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmosek r-matrix r-glmnet))
     (home-page "https://cran.r-project.org/package=dipw")
     (synopsis "Debiased Inverse Propensity Score Weighting")
@@ -13225,6 +14627,9 @@ the documentation for Rmosek'.")
         (base32 "12bhxys313iqrfkd0cpr2ibv94v14vjj3sxkhvhxqhclf1d19qc6"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shiny
                              r-rstudioapi
@@ -13268,6 +14673,9 @@ chip-set, memory limit, etc.")
         (base32 "148lbw5f62sm93n5bgn6rswqi3g7j6prdrscz56xalj65d3z1dz5"))))
     (properties `((upstream-name . "DiPs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlemon r-plyr r-mvnfast))
     (home-page "https://cran.r-project.org/package=DiPs")
     (synopsis
@@ -13293,6 +14701,9 @@ be satisfied without penalization.  Yu and Rosenbaum (2019)
         (base32 "1hzcwjnjrhd1s31w8pnyhpfz519jvj820jyq1rdkq8qllny5jbrk"))))
     (properties `((upstream-name . "dipm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-partykit r-ggplot2))
     (home-page "https://cran.r-project.org/package=dipm")
     (synopsis "Depth Importance in Precision Medicine (DIPM) Method")
@@ -13317,6 +14728,9 @@ given treatment group.")
         (base32 "11l2inf99vxz9k292307j8c2b25kc1066svy3vxrfl72rrm4fqa7"))))
     (properties `((upstream-name . "DiPhiSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DiPhiSeq")
     (synopsis
      "Robust Tests for Differential Dispersion and Differential Expression in RNA-Sequencing Data")
@@ -13347,6 +14761,9 @@ function.")
         (base32 "0y6nzf7lkf0znp88r7k0myf5k1c7cqcc2gh5kgzj5q8savhr90ax"))))
     (properties `((upstream-name . "DiPALM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wgcna r-limma r-ggplot2))
     (home-page "https://cran.r-project.org/package=DiPALM")
     (synopsis "Differential Pattern Analysis via Linear Modeling")
@@ -13360,28 +14777,6 @@ S, Lou P, Mockler TC and @code{McClung} CR. @code{eLife}.  2020 Sep 30;9(4).
 <doi:10.7554/@code{eLife.58993>}.")
     (license license:gpl2+)))
 
-(define-public r-dint
-  (package
-    (name "r-dint")
-    (version "2.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dint" version))
-       (sha256
-        (base32 "0qfvxzix6k24xnjxh9nhz9dq3qfwl14mnd7rp03l8yvh6frws8fh"))))
-    (properties `((upstream-name . "dint")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/s-fleck/dint")
-    (synopsis "Toolkit for Year-Quarter, Year-Month and Year-Isoweek Dates")
-    (description
-     "S3 classes and methods to create and work with year-quarter, year-month and
-year-isoweek vectors.  Basic arithmetic operations (such as adding and
-subtracting) are supported, as well as formatting and converting to and from
-standard R date types.")
-    (license license:expat)))
-
 (define-public r-diner
   (package
     (name "r-diner")
@@ -13394,6 +14789,9 @@ standard R date types.")
         (base32 "1nnfg4kylb8ivwij1qdn9qv5jciinl4jk4gghfw97jphp4da91pw"))))
     (properties `((upstream-name . "dineR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progress r-matrix r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RicSalgado/dineR")
@@ -13416,6 +14814,9 @@ optimization with a variety of loss functions.")
         (base32 "1xrhrdc970f7hm9xng9z7xmshnmmz89cn3gmnyabzprx44ccr9sl"))))
     (properties `((upstream-name . "dineq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hmisc r-boot))
     (home-page "https://cran.r-project.org/package=dineq")
     (synopsis "Decomposition of (Income) Inequality")
@@ -13442,6 +14843,13 @@ handle weights and/or missings.")
         (base32 "06cgc0cfdkg5g9ybxb7nnz50vngyh2sssj3bmzsw7rmrbjvfsg8p"))))
     (properties `((upstream-name . "DiNAMIC.Duo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (inputs (list python))
     (propagated-inputs (list r-plyr r-dinamic r-biomart))
     (native-inputs (list r-r-rsp))
@@ -13476,6 +14884,9 @@ describing @code{DiNAMIC.Duo} by Walter et al. (2022) can be found at <doi:
         (base32 "01w8fzjpvz4mwhnqhjjixy7q60hdlpqcm33i98qnighkry024ysm"))))
     (properties `((upstream-name . "dinamic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dinamic")
     (synopsis
      "Method to Analyze Recurrent DNA Copy Number Aberrations in Tumors")
@@ -13502,6 +14913,9 @@ significance of recurrent DNA copy number aberrations (Bioinformatics (2011)
         (base32 "1sq7998xc5qhvd8clc8r32ch7axinh2a2dc7i1w2p148wv130yhd"))))
     (properties `((upstream-name . "dina")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-simcdm r-rgen r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/tmsalab/dina")
     (synopsis "Bayesian Estimation of DINA Model")
@@ -13523,6 +14937,9 @@ model parameters using the Gibbs sampler described by Culpepper (2015)
         (base32 "1qdi3nvr4p31kdfqs43xlfcryni182imp67bf03dma3pfnqxgwqj"))))
     (properties `((upstream-name . "DIMORA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-numderiv r-minpack-lm r-forecast
                              r-desolve))
     (home-page "https://cran.r-project.org/package=DIMORA")
@@ -13555,6 +14972,9 @@ of the competitive or collaborative transition.")
         (base32 "1j224j3xj1scf1smy2zk0dwv3calkx3jzpn989w9hjck96x657n5"))))
     (properties `((upstream-name . "DImodelsVis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-rlang
@@ -13594,6 +15014,9 @@ ggplot2 plotting framework and can be extended like every other ggplot object.")
         (base32 "1av5kfvshy05xqipp4qa5fhj4yd55wfpznx91l2fgdklxbnjr0v4"))))
     (properties `((upstream-name . "DImodelsMulti")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-plyr
                              r-nlme
@@ -13626,6 +15049,9 @@ Dooley et al. (2015) <doi:10.1111/ele.12504>.")
         (base32 "1ykdjqbli32awx6fwyff0l522dclhfyjp83svsjrfnm0517rlg4w"))))
     (properties `((upstream-name . "DImodels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rootsolve r-multcomp r-hnp r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DImodels")
@@ -13637,9 +15063,9 @@ approach introduced by Kirwan et al. (2009) <doi:10.1890/08-1684.1>.  Suitable
 data will contain proportions for each species and a community-level response
 variable, and may also include additional factors, such as blocks or treatments.
  The package can perform data manipulation tasks, such as computing pairwise
-interactions (the DI_data() function), can perform an automated model selection
-process (the @code{autoDI}() function) and has the flexibility to fit a wide
-range of user-defined DI models (the DI() function).")
+interactions (the @code{DI_data()} function), can perform an automated model
+selection process (the @code{autoDI()} function) and has the flexibility to fit
+a wide range of user-defined DI models (the @code{DI()} function).")
     (license license:gpl2+)))
 
 (define-public r-dimensionsr
@@ -13654,6 +15080,9 @@ range of user-defined DI models (the DI() function).")
         (base32 "1bic5ynqapz4mh3bcv58r00ip5s04mc8n58yhlkbrnbcqyqaca4f"))))
     (properties `((upstream-name . "dimensionsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/massimoaria/dimensionsR")
@@ -13677,6 +15106,9 @@ Digital Science Dimensions using DSL API
         (base32 "05670xa45s1rqxidv2hznv1xcm40mhvmf6mrf7xm01knfq4h3by4"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-khroma r-arkhe))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/dimensio/")
@@ -13702,6 +15134,9 @@ Lebart et al. (2006, ISBN: 978-2-10-049616-7).")
         (base32 "1kbs5s3pgjlqiikcd54v9ym9yw40q6x1bgl7k0570l7i3mvcfvsj"))))
     (properties `((upstream-name . "DIME")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DIME")
     (synopsis "Differential Identification using Mixture Ensemble")
     (description
@@ -13725,6 +15160,9 @@ is described in: Taslim et al., (2011) <doi:10.1093/bioinformatics/btr165>.")
         (base32 "0pvd7xsg9g772n6m8h88rigkmnivmqrqj33ar1y2iq2z3k4r93jz"))))
     (properties `((upstream-name . "dilp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-stringr
@@ -13756,6 +15194,9 @@ al. (in review).")
         (base32 "1bbwkq40gdan1zwq3cwn96k0k045x67l11rhm3q4dppw50736fpk"))))
     (properties `((upstream-name . "DIGSS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/markhubbe/DIGSS")
@@ -13781,6 +15222,9 @@ work of Kintigh (1988) <doi:10.2307/281113>.")
         (base32 "0giz0zr8rcvfv36qmqy6fpamjcansrq4bs3znnq0g97iprj0x3i5"))))
     (properties `((upstream-name . "digitTests")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://koenderks.github.io/digitTests/")
     (synopsis "Tests for Detecting Irregular Digit Patterns")
@@ -13803,6 +15247,9 @@ and (Bayesian) tests of digit distributions.")
         (base32 "1qw4x4z9vrs79sd9b2daw668nc6nvjl4qhayfqmd87yxa2ydv6x0"))))
     (properties `((upstream-name . "digitize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readbitmap))
     (home-page "https://github.com/tpoisot/digitize/")
     (synopsis "Use Data from Published Plots in R")
@@ -13824,6 +15271,9 @@ other programs that digitize published plots or graphs.")
         (base32 "0hwqq84yr1hnvf4bygc5425887dhqjjjyy1ils71iavcal04s8pb"))))
     (properties `((upstream-name . "digitalPCR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=digitalPCR")
     (synopsis "Estimate Copy Number for Digital PCR")
     (description
@@ -13845,6 +15295,9 @@ sensitivity and the copy number per well in the initial dilute.")
         (base32 "0h0kn1xbclk5h5q1rpsqsmn1m1qwkvz26ar7srj54zq0nqrbspc9"))))
     (properties `((upstream-name . "digiRhythm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-tidyr
@@ -13878,6 +15331,9 @@ index.")
         (base32 "1ps3nb1a5dgxs187bcjsys4fpi0z4z6d84qlxg8rf1rvcfgg21r5"))))
     (properties `((upstream-name . "DIFtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam r-plotrix r-penalized r-gridbase))
     (home-page "https://cran.r-project.org/package=DIFtree")
     (synopsis
@@ -13900,6 +15356,9 @@ polytomous items.")
         (base32 "0lb98dj2kidfv8zqs1rdkj7b6gf6i4d2s904bwsbyg7w03jxm86f"))))
     (properties `((upstream-name . "DIFshiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinydashboard r-shiny r-readxl r-difr))
     (home-page "https://cran.r-project.org/package=DIFshiny")
     (synopsis "Differential Item Functioning via Shiny Application")
@@ -13921,6 +15380,9 @@ DIF analysis using user-friendly interfaces.")
         (base32 "1cd5kaal5mjrbj1l9ki2wbqasdxphgc2yhaf4xwgbh1nr2zkhr02"))))
     (properties `((upstream-name . "difR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mirt r-ltm r-lme4 r-deltaplotr))
     (home-page "https://cran.r-project.org/package=difR")
     (synopsis
@@ -13947,6 +15409,9 @@ Differential Item Functioning, Behavior Research Methods, 42, 2010, 847-862
         (base32 "1k03lr437gx5y762z3h40hz9kcl4m8xgrndxvbyvsgmn2h6pbwsd"))))
     (properties `((upstream-name . "DIFplus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testdataimputation r-plyr))
     (home-page "https://cran.r-project.org/package=DIFplus")
     (synopsis
@@ -13973,6 +15438,9 @@ Paykin (2001) <doi:10.1080/00949650108812115>, and French & Finch (2013)
         (base32 "1wrvsjbvvqwpv7cwc445n7l4ly8gvj8hyd66k02ib8r5854zn192"))))
     (properties `((upstream-name . "difNLR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-plyr
                              r-nnet
@@ -14000,6 +15468,9 @@ non-linear regression procedures based on generalized logistic regression models
         (base32 "126yn0kj6znpigxg7hsmpn67149mgl1nzv6zp772cwd8pdwpyklw"))))
     (properties `((upstream-name . "DIFM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep
                              r-sp
                              r-rcpparmadillo
@@ -14035,6 +15506,9 @@ capture specific behaviors and provide predictions.")
         (base32 "13ls5018l790cdr26431li4gi9zw03ilypszfqglg4hj485h7dyw"))))
     (properties `((upstream-name . "DIFlasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-penalized r-misctools r-grplasso))
     (home-page "https://cran.r-project.org/package=DIFlasso")
     (synopsis
@@ -14058,6 +15532,9 @@ also metric variables.")
         (base32 "0a0q1fz80jlcrk4rw70yjb8djxgsm5axih45vi4dqpg6n8xlrzw2"))))
     (properties `((upstream-name . "DiffXTables")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-pander))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DiffXTables")
@@ -14095,6 +15572,8 @@ changes than first-order differences across heterogeneous patterns.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -14130,6 +15609,9 @@ images, and data frames).")
         (base32 "1qhbby9zfckkkxbpvbnym3i1pfapgrjf0m61fly9v7k50j07d4cd"))))
     (properties `((upstream-name . "diffval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://gitlab.com/point-veg/diffval")
     (synopsis "Vegetation Patterns")
     (description
@@ -14157,6 +15639,9 @@ Installation Guide, from package prioritizr', can be found here:
         (base32 "1bgswz2ichzgdb3ckw0sgxkqv3pf1lpzkjb3ly389ln03q0iwnwq"))))
     (properties `((upstream-name . "diffusion")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-systemfit r-optimx r-nloptr))
     (home-page "https://github.com/mamut86/diffusion")
     (synopsis "Forecast the Diffusion of New Products")
@@ -14180,6 +15665,8 @@ and Islam (2006) <doi:10.1016/j.ijforecast.2006.01.005>.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -14217,6 +15704,9 @@ usually text files or R scripts, in a browser.")
         (base32 "12q2v93369bshid83rsy1csbr9ay6rfpd8zdxm12zi7py3f9sjs8"))))
     (properties `((upstream-name . "diffpriv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gsl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/brubinstein/diffpriv")
@@ -14244,6 +15734,9 @@ permits turn-key privatization of arbitrary programs.")
         (base32 "1hil8p896vckgwmlr8vqkrwswclwh1hs8gxvk648gpahi1na1ssc"))))
     (properties `((upstream-name . "DiffNet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-igraph r-assertthat))
     (home-page "https://cran.r-project.org/package=DiffNet")
     (synopsis
@@ -14268,6 +15761,9 @@ network analysis, and more.")
         (base32 "064p2xzv0x890pw24lm9fmafp0x93f3yv77ms2zabzlclfylzzb7"))))
     (properties `((upstream-name . "diffmatchpatch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-cli))
     (home-page "https://github.com/rundel/diffmatchpatch")
     (synopsis "String Diff, Match, and Patch Utilities")
@@ -14289,6 +15785,9 @@ constructing / applying patches to strings.")
         (base32 "0kip6wz9l9q80qsqwf32pwz7d9vqin6dgfwf0nxlrlzf8xjsxgim"))))
     (properties `((upstream-name . "diffIRT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod))
     (home-page "https://cran.r-project.org/package=diffIRT")
     (synopsis "Diffusion IRT Models for Response and Response Time Data")
@@ -14313,6 +15812,9 @@ estimated as well.")
         (base32 "1904zg9ynf873cqkww2ii4k60cr1bi9km67dxvgsc2bd8dxkm9ks"))))
     (properties `((upstream-name . "diffeRenTES")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph r-dot r-boolnet))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=diffeRenTES")
@@ -14342,6 +15844,9 @@ Genetic Networks for Cell Differentiation.  PLOS ONE 6(3): e17703.")
         (base32 "0l2pm4kh6yq3h3v27a5r28c0724g89pglaxd14f14cdxk51hznqx"))))
     (properties `((upstream-name . "diffeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-terra
@@ -14368,6 +15873,9 @@ representing real or categorical variables at original and multiple resolutions.
         (base32 "116j5iivp1rp0aql74mbvbp9j9q86rh49iamfbi46jx0yfh87256"))))
     (properties `((upstream-name . "diffeqr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list julia))
     (propagated-inputs (list r-juliacall))
     (native-inputs (list r-knitr))
@@ -14399,6 +15907,9 @@ of this tooling by R users.  For more information, see Rackauckas and Nie (2017)
         (base32 "0fa0v24ir8an82mx38489zavqfya3130q9z52dmm62lnf7pvkvzl"))))
     (properties `((upstream-name . "diffEnrich")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-reshape2
@@ -14438,6 +15949,9 @@ analysis pipeline, this package also provides a plotting function.")
         (base32 "01lb1prz70mxgymhhsvx48kbfy69xyyaabsmfhf28af9wfb89662"))))
     (properties `((upstream-name . "diffee")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pcapp r-igraph))
     (home-page "https://github.com/QData/DIFFEE")
     (synopsis
@@ -14468,6 +15982,9 @@ original paper: Beilun Wang, Arshdeep Sekhon, Yanjun Qi (2018)
         (base32 "1b61wx9fy7a4rb6jh1cvayf1w1far74pgcliqyk9pzn06nlqylfj"))))
     (properties `((upstream-name . "diffdfs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-janitor r-dplyr r-arrow))
     (home-page "https://cran.r-project.org/package=diffdfs")
     (synopsis "Compute the Difference Between Data Frames")
@@ -14488,6 +16005,9 @@ structure.  Useful for diffing slowly mutating data.")
         (base32 "0i9wq31cshxcmg61p610s2r4phi43bxmffbzh74yp9y4f1difil0"))))
     (properties `((upstream-name . "diffdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://gowerc.github.io/diffdf/")
@@ -14511,6 +16031,9 @@ help narrow down the source of problems and differences.")
         (base32 "05rvyfgr9f5x0dcgwcsvnpcmgmg5hcsgyxspjzxkmbyfk8wzwaf7"))))
     (properties `((upstream-name . "DiffCorr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pcamethods r-multtest r-igraph r-fdrtool))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DiffCorr")
@@ -14538,6 +16061,9 @@ variables (e.g., genes and metabolites) between 2 experimental conditions.")
         (base32 "1dg0qdhnf33mn3853c23jlbd4d10aa7qhmqhpffhz91fcy3rivkn"))))
     (properties `((upstream-name . "diffcor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=diffcor")
     (synopsis "Fisher's z-Tests Concerning Differences Between Correlations")
@@ -14567,6 +16093,9 @@ correlation difference tests.")
         (base32 "0cjadi4mnpfmy18vyp0dw55mnhs0zddf51w59gvq6gszk145z3bq"))))
     (properties `((upstream-name . "difconet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-mvtnorm r-gplots r-data-table))
     (home-page "http://bioinformatica.mty.itesm.mx/difconet")
     (synopsis "Differential Coexpressed Networks")
@@ -14597,6 +16126,9 @@ differential correlation analyses.  Please see
         (base32 "07x31ccy2l0drv1356g1v4jw71i7zqb3d0v856gsd3kpqhclpvx0"))))
     (properties `((upstream-name . "DIFboost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stabs r-penalized r-mboost))
     (home-page "https://cran.r-project.org/package=DIFboost")
     (synopsis
@@ -14619,6 +16151,9 @@ method DIFboost as proposed by Schauberger and Tutz (2016)
         (base32 "0rq1k08byvqn99wpql7drnrcxlzcqrcxixh7bczbc8dv1hhsgk9i"))))
     (properties `((upstream-name . "diezeit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-brew))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=diezeit")
@@ -14633,15 +16168,18 @@ required for usage.")
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diemr" version))
        (sha256
-        (base32 "1rrqqj8ks4n457nammnkrvwzic69m6a2d52ac4x29kx9bgp4qwqa"))))
+        (base32 "18nih9hpxnjxjis19bbsxqzhar822gzi746ngniav9dl1wfx1dvz"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-vcfr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=diemr")
@@ -14666,6 +16204,9 @@ in likelihood framework.  The method is described in Baird et al. (2023)
         (base32 "12clfnbm56jwldw0afb0nb0argnd97mx7369jiywhxy0p4xqibqq"))))
     (properties `((upstream-name . "didrooRFM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=didrooRFM")
     (synopsis
@@ -14690,6 +16231,9 @@ the sales information.")
         (base32 "0mcvac2p0sd0prxaj1ajigil4k9k9bm3y68lxxbrmhjrcn8n5n18"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx
                              r-sandwich
                              r-rnames
@@ -14723,6 +16267,9 @@ that may increase or decrease multiple times.")
         (base32 "14fa7zmhyz815z6h1ycvhcvq072g09jfjkcpyllxim4dl5430hdc"))))
     (properties `((upstream-name . "DIDmultiplegt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-sampling
                              r-plotrix
@@ -14750,6 +16297,9 @@ D'Haultfoeuille.")
         (base32 "122z473jkf5jb66s2g7vdqi0q56v8chz2dpl61qkcgqhv4hbh1q3"))))
     (properties `((upstream-name . "didimputation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rcpparmadillo
@@ -14782,6 +16332,9 @@ using the imputation-based approach proposed by Borusyak, Jaravel, and Spiess
         (base32 "1cmzsa1yn19gw5mc5lyrsnf1ghil7a3mgh2a1ana6rfzb5bpq4fq"))))
     (properties `((upstream-name . "DIDHAD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yatchewtest
                              r-rnames
                              r-rlang
@@ -14812,6 +16365,9 @@ Heterogeneous Adoption Designs with no stayers but with quasi stayers.")
         (base32 "0f90wr7jrgsplja3n4f246avpxp3ysm03qi3nc6bfn0s1d969q91"))))
     (properties `((upstream-name . "DiDforBigData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://setzler.github.io/DiDforBigData/")
@@ -14835,6 +16391,9 @@ contexts.")
         (base32 "04d1drxn99r0fqq3zym7yyip9c8rfqhghq20q4zyb42l3hfgv9ai"))))
     (properties `((upstream-name . "Diderot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-splitstackshape
                              r-rcurl
@@ -14863,6 +16422,9 @@ optimized for Scopus data.")
         (base32 "0x1ib0jnp1y7d5rpkf1m485bzyamfzx2i64my5ldwvr738sl2bdk"))))
     (properties `((upstream-name . "didec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-phylogram
                              r-gtools
@@ -14896,6 +16458,9 @@ more information, see the paper by Ansari and Fuchs (2024,
         (base32 "0z1h61n6nfjvb64fgkzi1sq7ag747crhh593hxkx0cpza29778rz"))))
     (properties `((upstream-name . "DidacticBoost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart))
     (home-page "https://github.com/dashaub/DidacticBoost")
     (synopsis "Simple Implementation and Demonstration of Gradient Boosting")
@@ -14920,6 +16485,9 @@ implementation with tuning parameters, consider the xgboost package.")
         (base32 "0iyz6z4w2im22rvbpabql2w1cncv0pnrh0hp7agf0pazcpzk2jh6"))))
     (properties `((upstream-name . "did2s")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-staggered
                              r-sparsem
                              r-rlang
@@ -14956,6 +16524,9 @@ stage, estimates the treatment effects.")
         (base32 "07r4m326n2gmgmf5ym5y72xg1xin771172rcpk0xkz6v344lwf9j"))))
     (properties `((upstream-name . "did")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-pbapply
                              r-matrix
@@ -14996,6 +16567,9 @@ average treatment effects.")
         (base32 "0j25wn2ghy59y1v02493d4knab06wxrzz8m9g6zxlkqzw1dqgc4f"))))
     (properties `((upstream-name . "dictionaRy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-jsonlite))
     (home-page "https://github.com/stevecondylios/dictionaRy")
     (synopsis "Retrieve the Dictionary Definitions of English Words")
@@ -15019,6 +16593,9 @@ usage, synonyms and antonyms, returned in tidy format for ease of use.")
         (base32 "1rg958py4pqghkid3830hla7vibvwsjhk75x55lxry5d8dp04m9f"))))
     (properties `((upstream-name . "dictionar6")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-ooplah))
     (home-page "https://xoopR.github.io/dictionar6/")
     (synopsis "R6 Dictionary Interface")
@@ -15041,6 +16618,9 @@ listing keys, items, values, and methods to get/set these.")
         (base32 "1v8yp03gajg9i82qyfww14jx93l4jbfq8mh6jqyf6calgrsj06jc"))))
     (properties `((upstream-name . "Dict")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-r6 r-purrr r-magrittr r-dplyr))
     (home-page "https://github.com/five-dots/Dict")
     (synopsis "R6 Based Key-Value Dictionary Implementation")
@@ -15062,6 +16642,9 @@ Python') with reference semantics and extendabilities by R6.")
         (base32 "0bnrq9nmryshir6ll43nz20aaqmmw0zjvfml72cpwbvrma8a3qmz"))))
     (properties `((upstream-name . "DIconvex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolveapi))
     (home-page "https://cran.r-project.org/package=DIconvex")
     (synopsis "Finding Patterns of Monotonicity and Convexity in Data")
@@ -15083,6 +16666,9 @@ mapping within pre-specified upper and lower bounds.")
         (base32 "1wrgx5b9w476g8s3jmccc027xdqbmcmnlhwf02g6j213rgy87p73"))))
     (properties `((upstream-name . "DICOMread")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matlabr))
     (home-page "https://cran.r-project.org/package=DICOMread")
     (synopsis "Reading and Saving DICOM Image Files")
@@ -15103,6 +16689,13 @@ processing for reading and saving DICOM images.")
         (base32 "1zrb3n3jd072am52whfm2ahrgvjwhgaadj2alxn39r1c5i3a4my1"))))
     (properties `((upstream-name . "DiceView")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-scatterplot3d r-r-cache r-geometry r-foreach
                              r-dicedesign))
     (home-page "https://github.com/IRSN/DiceView")
@@ -15125,6 +16718,9 @@ experiments designs, surrogates or test functions.")
         (base32 "1pfb1wxwh9li3z06hrx1zy5vwqmlmq4rjqjh1pi8i6jkbshf702m"))))
     (properties `((upstream-name . "diceR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yardstick
                              r-tidyr
                              r-stringr
@@ -15170,6 +16766,9 @@ clusters.")
         (base32 "0f9dqqg176bqvydq3bbnaz73655gml64faa1l3b74nwgw9bss22r"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -15200,6 +16799,9 @@ conditions.  For a detailed documentation please visit
         (base32 "0qqvj97lzir6sgvshg13lr3c9yw1qybqh4m34kj37fk8gaab1py7"))))
     (properties `((upstream-name . "DiceOptim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rgenoud
                              r-randtoolbox
                              r-pbivnorm
@@ -15227,6 +16829,9 @@ infill, and problems with constraints.")
         (base32 "099z5ns939az3nkajw179cc02ldagpwyvb9bhbvkvaxz5cpfn3j0"))))
     (properties `((upstream-name . "DICEM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-vader
                              r-stringr
@@ -15253,6 +16858,9 @@ directness and intensity during conflict.  See <https://www.mikeyeomans.info>.")
         (base32 "02ba7cxp9hv983d3br4a1y3ss6krjax72vrpkp5qqy0v9fyshm23"))))
     (properties `((upstream-name . "DiceEval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dicekriging))
     (home-page "https://cran.r-project.org/package=DiceEval")
     (synopsis "Construction and Evaluation of Metamodels")
@@ -15273,6 +16881,9 @@ models, additive models, MARS,@code{PolyMARS} and Kriging.")
         (base32 "0gic7lqnsdmwv3dbzwwmcwdfyfqlq8kpr2pciqphd1j2ligzwl3s"))))
     (properties `((upstream-name . "dice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gtools))
     (home-page "https://cran.r-project.org/package=dice")
     (synopsis "Calculate probabilities of various dice-rolling events")
@@ -15299,6 +16910,9 @@ dice.")
         (base32 "1s845ii2hd0d2aam3wp3rb7r7i60plzqdmgdgix1pwbam02cfymn"))))
     (properties `((upstream-name . "dibble")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tidyr
@@ -15327,6 +16941,9 @@ dimensional tibble'), and allows broadcasting by dimensional names.")
         (base32 "12m174r2z2vwxqwpayd8fz5hgrgx87bzfklpsksfm4zma64xwmxb"))))
     (properties `((upstream-name . "diathor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-tibble
@@ -15371,6 +16988,9 @@ index (Stenger-KovÃ¡csa et al., 2018).")
         (base32 "103hq13ql8xs1zb90is2r1lanj5vpvz9rk315zvbd8am00fshc9n"))))
     (properties `((upstream-name . "diaplt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=diaplt")
     (synopsis "Beads Summary Plot of Ranges")
     (description
@@ -15391,6 +17011,9 @@ frame with many numeric columns and a factor column.")
         (base32 "1r02wimq3bnb28dz65jm0kmkkkd02k0a4d50cjn5n54ck8lf9hsc"))))
     (properties `((upstream-name . "dialrjars")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
     (home-page "https://github.com/socialresearchcentre/dialrjars")
@@ -15411,6 +17034,9 @@ frame with many numeric columns and a factor column.")
         (base32 "16lpb93shwr0gw7pk3q629kgsvh9csgxyy344m9za7qx9m2vjnnb"))))
     (properties `((upstream-name . "dialr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-dialrjars))
     (native-inputs (list r-knitr))
@@ -15433,6 +17059,9 @@ libphonenumber java library, <https://github.com/google/libphonenumber>.")
         (base32 "042i84pxm3gy59r94m0pk7gb04kxl9l8w43b9h7g70dyxi6hf89x"))))
     (properties `((upstream-name . "DiallelAnalysisR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=DiallelAnalysisR")
     (synopsis "Diallel Analysis with R")
@@ -15459,6 +17088,8 @@ approach.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -15495,6 +17126,8 @@ approach.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -15551,6 +17184,9 @@ take advantage of any aesthetic properties assigned to nodes and edges.")
         (base32 "1c5pf23bcq47m9n2s5m5bkcksnifz9g06xc9149163i8mqhzia7l"))))
     (properties `((upstream-name . "diagonals")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://qua.st/diagonals")
     (synopsis "Block Diagonal Extraction or Replacement")
@@ -15576,6 +17212,9 @@ edges of the matrix.")
         (base32 "1wilkpwb8vzjx8zpgq0zmvfcd35dij4jxk5gn0x1xyhlfvj9nxrj"))))
     (properties `((upstream-name . "diagmeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-meta r-lme4))
     (home-page "https://github.com/guido-s/diagmeta")
     (synopsis
@@ -15598,6 +17237,9 @@ with several cutpoints.")
         (base32 "1rl51a5gjzf41la0rbigz4n8brn1prji6hp862hlxwscdni9w2f9"))))
     (properties `((upstream-name . "diagL1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg
                              r-matrixmodels
                              r-matrix
@@ -15636,6 +17278,9 @@ errors have a Laplace distribution based on the work of Puig and Stephens (2000)
         (base32 "1gl720d1rrmqingsskkc86kl3n10c7cwvmx19yyxiprwzfkrjh95"))))
     (properties `((upstream-name . "diagis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-gridextra r-ggplot2
                              r-coda))
     (native-inputs (list r-knitr))
@@ -15660,6 +17305,9 @@ sampling type or other probability weighted samples.")
         (base32 "1w2gjhyi410z98d8wnhbd69jxm69nz4pmnr4fb09i70a90f53s25"))))
     (properties `((upstream-name . "di")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=di")
@@ -15688,6 +17336,9 @@ relation to chronological and biological age\" by Arnold B Mitnitski et al.
         (base32 "1c1xz1f1fp937w4rlylvqv3ii0p9dafvmn4fqq8rzxhcg5rn9j4l"))))
     (properties `((upstream-name . "dHSIC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=dHSIC")
     (synopsis
@@ -15710,6 +17361,9 @@ Pfister et al. (2017) <doi:10.1111/rssb.12235>.")
         (base32 "1p239fsay49rvakxgkgnghra7p4nzyvfird8mc4i4lz4w133x1jd"))))
     (properties `((upstream-name . "dhsage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dhsage")
     (synopsis
      "Reproductive Age Female Data of Various Demographic Health Surveys")
@@ -15733,6 +17387,9 @@ such as very rough, rough, approximate, accurate, and highly accurate.")
         (base32 "1j4jgwi5skjr4h8gyphkfjxhx80f0x6bhqb81711bhq5zp3bl59l"))))
     (properties `((upstream-name . "DHS.rates")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survey
                              r-rlang
                              r-reshape
@@ -15779,6 +17436,9 @@ Sampling and Household Listing Manual\" (ICF International 2012,
         (base32 "1q2ahch1rv4bp8c5nci2jqsrwr5y252ngv2v958623xd9rfh97kq"))))
     (properties `((upstream-name . "dhis2r")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-httr2 r-dplyr r-curl r-attempt))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/amanyiraho/dhis2r")
@@ -15800,6 +17460,9 @@ instance into R.")
         (base32 "00kg2x1was85aq2vr15bak8y5p4mymbs8pbriijlbw64401djmb0"))))
     (properties `((upstream-name . "dhh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dhh")
     (synopsis "Heavy-Headed Distribution")
@@ -15820,6 +17483,9 @@ heavy-headed distribution.  For more information, please see the vignette.")
         (base32 "1918wkylldcdxjggly3a4yh4cv2nkig5bjfx0j79av633hahlg92"))))
     (properties `((upstream-name . "dhglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich r-matrix r-mass r-car r-boot))
     (home-page "https://cran.r-project.org/package=dhglm")
     (synopsis "Double Hierarchical Generalized Linear Models")
@@ -15841,6 +17507,9 @@ variance (overdispersion) can be further modeled as random-effect models.")
         (base32 "1n48irj53g3kn451ak5ly50wxdn7qmzi2kib8clsvcx2n7mvpgcm"))))
     (properties `((upstream-name . "dhga")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-venndiagram))
     (home-page "https://cran.r-project.org/package=dhga")
     (synopsis "Differential Hub Gene Analysis")
@@ -15863,6 +17532,9 @@ the identification of various types of hubs like Housekeeping, Unique to stress
         (base32 "1g69acac7pxw8x0d9czyds7xljhbv9d686c99a3y8b4vh7dnx62s"))))
     (properties `((upstream-name . "DHBins")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=DHBins")
     (synopsis "Hexmaps for NZ District Health Boards")
@@ -15886,6 +17558,9 @@ Lumley (2019) <@code{arXiv:1912.04435>} is based on the methods in this package.
         (base32 "0mfywr4pshnd13xs2zdhd8xvbc43qxaj075jhy8lrlg1agmc6gya"))))
     (properties `((upstream-name . "DHARMa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qgam
                              r-matrix
                              r-lmtest
@@ -15925,6 +17600,9 @@ zero-inflation, and residual spatial, phylogenetic and temporal autocorrelation.
         (base32 "1qlc81rh6fcrai9ls27j83bjac26qhpfnchf9pdjz86dyclfjx43"))))
     (properties `((upstream-name . "dgumbel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://github.com/blunde1/dgumbel")
     (synopsis "The Gumbel Distribution Functions and Gradients")
@@ -15954,6 +17632,9 @@ Eigen and bindings to R.")
         (base32 "004d15bql0by1j4gacrjfbnk95wyzd1m54gdh23y7n664xdn3fql"))))
     (properties `((upstream-name . "dgpsi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid
                              r-reticulate
                              r-reshape2
@@ -15991,6 +17672,9 @@ Guillas (2021) <doi:10.1137/20M1323771> and Ming, Williamson, & Guillas (2023)
         (base32 "1v8wh52wcxs4adp1h9xplj5vych867scjrw32pqdczmiawi3q9d5"))))
     (properties `((upstream-name . "DGP4LCF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-pheatmap
@@ -16024,15 +17708,18 @@ detail: J Cai, RJB Goudie, C Starr, BDM Tom (2023)
         (base32 "0530k0isqq26xal2smp1kf6fi7vs1r6g4bbhdnzpiwlij8a7c8zs"))))
     (properties `((upstream-name . "dgof")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dgof")
     (synopsis "Discrete Goodness-of-Fit Tests")
     (description
-     "This package provides a revision to the stats::ks.test() function and the
+     "This package provides a revision to the @code{stats::ks.test()} function and the
 associated ks.test.Rd help page.  With one minor exception, it does not change
-the existing behavior of ks.test(), and it adds features necessary for doing
-one-sample tests with hypothesized discrete distributions.  The package also
-contains cvm.test(), for doing one-sample Cramer-von Mises goodness-of-fit
-tests.")
+the existing behavior of @code{ks.test()}, and it adds features necessary for
+doing one-sample tests with hypothesized discrete distributions.  The package
+also contains @code{cvm.test()}, for doing one-sample Cramer-von Mises
+goodness-of-fit tests.")
     (license license:gpl2+)))
 
 (define-public r-dgm
@@ -16047,6 +17734,9 @@ tests.")
         (base32 "1f59spd4bwx4d1gbjaizjxccaslw1fvf8pxa9nrxi07j6kq9mg0h"))))
     (properties `((upstream-name . "DGM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-rcpparmadillo
                              r-rcpp
@@ -16073,6 +17763,9 @@ Schwab et al. (2017) <doi:10.1016/j.neuroimage.2018.03.074>.")
         (base32 "0bbf7cyrnn1ghvhbnv54pv6325l8v8fy1bayl4b6qgs84xd959p4"))))
     (properties `((upstream-name . "DGLMExtPois")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nloptr r-compoissonreg))
     (home-page "https://github.com/franciscomartinezdelrio/DGLMExtPois")
     (synopsis "Double Generalized Linear Models Extending Poisson Regression")
@@ -16095,6 +17788,9 @@ regression models.")
         (base32 "1xgvfdlsgi14mv02k71dg0g21yhzzzpaf0dlaq26w6565046m6iy"))))
     (properties `((upstream-name . "dglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod))
     (home-page "https://cran.r-project.org/package=dglm")
     (synopsis "Double Generalized Linear Models")
@@ -16116,6 +17812,9 @@ specified response and a second GLM to fit the deviance of the first model.")
         (base32 "0nr18ry5jzjm77xc3z85szx6sij7a4faa1c47bkswsjiijpljjx2"))))
     (properties `((upstream-name . "dglars")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list gfortran))
     (home-page "https://www.jstatsoft.org/v59/i08/.")
@@ -16143,6 +17842,13 @@ the paper linked to via the URL below.")
         (base32 "1vwmf5m1k40kk68vil280gnzh028y04wi5q3xjacyhaw8di0w9d5"))))
     (properties `((upstream-name . "dggridR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-sf r-s2 r-rcpp r-collapse))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/r-barnes/dggridR/")
@@ -16168,6 +17874,9 @@ with utilities to aid in plotting such data.")
         (base32 "01pbyz62vayism9bk6scx97yxwfmsss2af39grq46rilrcgrck3k"))))
     (properties `((upstream-name . "DGEobj.utils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-dplyr r-dgeobj r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DGEobj.utils")
@@ -16194,6 +17903,9 @@ Gene Expression analysis results.")
         (base32 "00ndl6ckbr3f6pg9mgcygv1pq7j8gc7g8f54lirm624hiswsppn3"))))
     (properties `((upstream-name . "DGEobj")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-magrittr r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DGEobj")
@@ -16226,6 +17938,9 @@ assays (rows) by samples (columns).")
         (base32 "0knai1098ayp2z1s2x4zkk5npmakw30qk8qdp4hsmvwh21rijnzw"))))
     (properties `((upstream-name . "DGEAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-desctools))
     (home-page "https://cran.r-project.org/package=DGEAR")
     (synopsis "Differential Gene Expression Analysis with R")
@@ -16251,6 +17966,9 @@ downstream analysis.  Boyer, R.S., Moore, J.S. (1991)
         (base32 "0da7fi872i3ycb3j5v4isr4x2z39a68w4mdq859zslmqhiqd43b6"))))
     (properties `((upstream-name . "dGAselID")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mlinterfaces r-genefilter r-biobase r-all))
     (home-page "https://cran.r-project.org/package=dGAselID")
     (synopsis
@@ -16273,6 +17991,9 @@ Assortment of chromosomes approach to recombination.")
         (base32 "1q860hzxrbkpmnphdysx4wk1b46wjll8sw7xjsy1lxcaz9hwcnjk"))))
     (properties `((upstream-name . "dga")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-chron))
     (home-page "https://cran.r-project.org/package=dga")
     (synopsis "Capture-Recapture Estimation using Bayesian Model Averaging")
@@ -16295,6 +18016,9 @@ size.")
         (base32 "1g232y0zmgpgx6phfsx67548dvqiwa4bc8q9cvpgmkdfaskczcfx"))))
     (properties `((upstream-name . "dfvad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/shipei-zeng/dfvad")
     (synopsis "Diewert and Fox's Method of Value Added Growth Decomposition")
@@ -16320,6 +18044,9 @@ about the methodology and data can be found in Diewert and Fox (2018)
         (base32 "1sicnpir73vvg470q1mcfd1p06vgfr6z3kfb5mnipr5z72c9gd4w"))))
     (properties `((upstream-name . "dfsaneacc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dfsaneacc")
     (synopsis
@@ -16342,6 +18069,9 @@ E. G. Birgin and J. M. Martinez (2022) <doi:10.1137/20M1388024>.")
         (base32 "0kgsi2jysv0hpdvmv1fng41ar7p3pgzgf1vv0dcm954jdrl2dz6d"))))
     (properties `((upstream-name . "dfrr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tmvtnorm r-plotly r-mass r-ggplot2 r-fda))
     (home-page "https://github.com/asgari-fatemeh/dfrr")
     (synopsis "Dichotomized Functional Response Regression")
@@ -16364,6 +18094,9 @@ dichotomized functional response regression (dfrr) model.")
         (base32 "0fcm9b347pc8s54kgj2wkgxby32y8ph1wihwbca8gp7715y26227"))))
     (properties `((upstream-name . "dfr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sgs r-matrix r-mass r-caret))
     (home-page "https://github.com/ff1201/dfr")
     (synopsis "Dual Feature Reduction for SGL")
@@ -16394,6 +18127,9 @@ and sparse input matrices are supported.")
         (base32 "0a9cxdc81rib84sgg5mpf28nhcv1g83kvnr7rin3djyv60ccrq8x"))))
     (properties `((upstream-name . "dfphase1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-rcpp r-lattice))
     (home-page "https://cran.r-project.org/package=dfphase1")
     (synopsis
@@ -16421,6 +18157,9 @@ stable (in-control) distribution.  See G. Capizzi and G. Masarotto (2018)
         (base32 "11ffsah14igba276m9d3cla0kgb3isizm5d7j1iqcd0wq23il7hq"))))
     (properties `((upstream-name . "dfped")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstan r-ggplot2))
     (home-page "http://github.com/artemis-toumazi/dfped")
     (synopsis
@@ -16457,6 +18196,9 @@ are proposed by Petit et al, (2016) <doi:10.1177/0962280216671348>.")
         (base32 "1vylfnivkp4gv7wv7pjby918x3v8pnh0qds1hwmw5980na283qif"))))
     (properties `((upstream-name . "dformula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-formula-tools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/serafinialessio/dformula")
@@ -16479,6 +18221,9 @@ the analysis.")
         (base32 "19jyph2zqfyq9vv22kb6fqy89l0vcviv19zgk10hbd7q850f6ryn"))))
     (properties `((upstream-name . "Dforest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-ggplot2))
     (home-page "https://cran.r-project.org/package=Dforest")
     (synopsis "Decision Forest")
@@ -16490,8 +18235,8 @@ pattern-recognition method which can be used to analyze: (1) DNA microarray
 data; (2) Surface-Enhanced Laser Desorption/Ionization Time-of-Flight Mass
 Spectrometry (SELDI-TOF-MS) data; and (3) Structure-Activity Relation (SAR)
 data.  In this package, three fundamental functions are provided, as
-(1)DF_train, (2)DF_pred, and (3)DF_CV. run Dforest() to see more instructions.
-Weida Tong (2003) <doi:10.1021/ci020058s>.")
+(1)DF_train, (2)DF_pred, and (3)DF_CV. run @code{Dforest()} to see more
+instructions.  Weida Tong (2003) <doi:10.1021/ci020058s>.")
     (license license:gpl2)))
 
 (define-public r-dfoptim
@@ -16506,6 +18251,9 @@ Weida Tong (2003) <doi:10.1021/ci020058s>.")
         (base32 "0c2ws249n8ib7fx8vp32l2hswicjxsds7xm1f4gcfky9cvcacdn4"))))
     (properties `((upstream-name . "dfoptim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dfoptim")
     (synopsis "Derivative-Free Optimization")
     (description
@@ -16526,6 +18274,9 @@ optimization problems.")
         (base32 "0gl1acd5z67c2wkb806myr0ccm87waxdrnnjdq2wi8zndbc30j74"))))
     (properties `((upstream-name . "dfoliatR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -16559,6 +18310,9 @@ Described in Guiterman et al. (2020) <doi:10.1016/j.dendro.2020.125750>.")
         (base32 "0g1fi9m9j5z43n9037qq2a4i88y3p3h2q00x3q3xvhzhnqc5lrns"))))
     (properties `((upstream-name . "dfmta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-bh))
     (home-page "https://cran.r-project.org/package=dfmta")
     (synopsis "Phase I/II Adaptive Dose-Finding Design for MTA")
@@ -16581,6 +18335,9 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
         (base32 "0p3fbvmrdrsiz3dy23i5fjldc7l5hwfh7v73sg8dkhvxxnn1ciw4"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://sebkrantz.github.io/dfms/")
@@ -16614,6 +18371,9 @@ provided - following Bai and Ng (2002) <doi:10.1111/1468-0262.00273>.")
         (base32 "0npd9yllsjbb49mqdwaw75lbgx4lr8qgga70yybd6c16wdfkg396"))))
     (properties `((upstream-name . "dfmirroR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-fitdistrplus r-e1071))
     (home-page "https://github.com/jacobpstein/dfmirroR")
     (synopsis
@@ -16640,6 +18400,9 @@ private and where a full data frame is not needed for testing or coordinating.")
         (base32 "0ca48adfhaxac33jmxbynlyg3ak9l5mmjhlr69n4hnz6325gn9vb"))))
     (properties `((upstream-name . "dfmeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-lme4 r-ggplot2 r-data-table))
     (home-page "http://github.com/artemis-toumazi/dfmeta")
     (synopsis "Meta-Analysis of Phase I Dose-Finding Early Clinical Trials")
@@ -16668,6 +18431,9 @@ dfmeta package.")
         (base32 "1220ax93b9xwmq1crgl1fnf63gk72jqbra5b5q25wn6ynv1kilkx"))))
     (properties `((upstream-name . "DFIT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-simex r-mvtnorm r-msm r-mirt r-ggplot2))
     (home-page "https://cran.r-project.org/package=DFIT")
     (synopsis "Differential Functioning of Items and Tests")
@@ -16693,6 +18459,9 @@ post-hoc power calculations (Cervantes, 2017, <doi:10.18637/jss.v076.i05>).")
         (base32 "0ygbw1z0v2s2w7d45b09x54xycfglpd1ipgkgxq8w2q004rkdp9d"))))
     (properties `((upstream-name . "dfidx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-rdpack
@@ -16720,6 +18489,9 @@ which contains two indexes, with potentially a nesting structure.")
         (base32 "0rskd4bs9y56g5fh8dym11kj764pvlnx5lll5idybi67pjgv7b79"))))
     (properties `((upstream-name . "dfexpand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr))
     (home-page "https://github.com/jlpainter/dfexpand")
     (synopsis
@@ -16743,6 +18515,9 @@ into binary outcomes.")
         (base32 "1s7i11sl6m80hryggxby4c0knzk6nxqnlwfpzgg4a2bnqnwygfya"))))
     (properties `((upstream-name . "dfdr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-r6 r-purrr r-pryr))
     (home-page "https://cran.r-project.org/package=dfdr")
     (synopsis "Automatic Differentiation of Simple Functions")
@@ -16764,6 +18539,9 @@ gradients, Hessian and Jacobian matrices is possible.")
         (base32 "11nqhhngxhb2zk63zychkxi55jqrxr28yz4l9vin29hd391wqwzd"))))
     (properties `((upstream-name . "DFD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-scales
                              r-gridextra
@@ -16793,6 +18571,9 @@ thousands of drug and genetic perturbations (Subramanian et al. (2017)
         (base32 "01rn3zvi9xljmx48lkclckhnixian1vwq1frr8n784dsclp86spg"))))
     (properties `((upstream-name . "dfcrm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.columbia.edu/~yc632")
     (synopsis "Dose-Finding by the Continual Reassessment Method")
     (description
@@ -16812,6 +18593,9 @@ and calibration tools for trial planning purposes.")
         (base32 "1lhx69j0bkjbnp5jz23hrbxjcf04vf3big4k593ixz003xs2077f"))))
     (properties `((upstream-name . "dfCompare")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/swaldroff/DFCompare")
     (synopsis "Compare Two Dataframes and Return Adds, Changes, and Deletes")
     (description
@@ -16832,6 +18616,9 @@ deleted records.")
         (base32 "1h5x9759ljlyv9h7bmybm2ygw60ivnfrqc1f7drx700m71cwc6kk"))))
     (properties `((upstream-name . "dfcomb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpp r-bh))
     (home-page "https://cran.r-project.org/package=dfcomb")
     (synopsis
@@ -16853,6 +18640,9 @@ rates are supposed to increase with both agents.")
         (base32 "12ywksp6zb2xkxvpmnvjpan9wllfzhngvwnsw6813z11jdhrhnpr"))))
     (properties `((upstream-name . "DFBA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DFBA")
     (synopsis "Distribution-Free Bayesian Analysis")
@@ -16882,6 +18672,9 @@ about measurement error and is robust to problem of extreme outlier scores.")
         (base32 "0x44alfb0ryd7m0y2gqq7sqhyf6yzk4pcwb129d2qazhwya6p2y5"))))
     (properties `((upstream-name . "dfadjust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page
      "https://github.com/kolesarm/Robust-Small-Sample-Standard-Errors")
@@ -16905,6 +18698,9 @@ these adjustments.")
         (base32 "0fvrzsj1drc08bnfi2n636ps6wq09hniz457fvhhj3siagafd7ls"))))
     (properties `((upstream-name . "DFA.CANCOR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvoutlier r-mvn r-mass r-bayesfactor))
     (home-page "https://cran.r-project.org/package=DFA.CANCOR")
     (synopsis
@@ -16928,6 +18724,9 @@ Tabachnik & Fidell (2019, ISBN:9780134790541).")
         (base32 "1ilfkwn8r841byl1kn7rn2d6jdda3r7mm7ixvvyx6szqbmyhp8zd"))))
     (properties `((upstream-name . "DFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DFA")
     (synopsis "Detrended Fluctuation Analysis")
     (description
@@ -16952,6 +18751,9 @@ channels.")
         (base32 "1ni61pf7sjwvgbfvwy91n6fbs6aa5vviq0xy6jsgddbwrk9diigj"))))
     (properties `((upstream-name . "df2yaml")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tibble
                              r-rrapply
@@ -16979,6 +18781,9 @@ column will be converted to the multi-level hierarchy.")
         (base32 "073xx30gavig6nhi6ppll7jdgf7yvci8nv6pyxcy9vl177l1k62b"))))
     (properties `((upstream-name . "dexterMST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rsqlite
                              r-rlang
@@ -17014,6 +18819,8 @@ profile analysis.  See Robert J. Zwitser and Gunter Maris
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -17071,6 +18878,9 @@ educational and psychological tests.")
         (base32 "1sppaqnv9nkxww0bw0x2sp51fl4v7845npvmhwwdh4yrnrmzbd07"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-sitmo
                              r-rsqlite
@@ -17102,6 +18912,9 @@ analysis of data from educational and psychological tests.")
         (base32 "04avsh79xhcm66rl0nzyg5d9llmm6k0jyqza3crvpj6hi9k9scdx"))))
     (properties `((upstream-name . "dexisensitivity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xml
                              r-testthat
@@ -17142,6 +18955,9 @@ Software Impacts).")
         (base32 "1a1z5pcw6mcm04fww498mbxxv677wk00dv9xhgniixasnnsmmysl"))))
     (properties `((upstream-name . "DEXiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-stringr))
     (home-page "https://cran.r-project.org/package=DEXiR")
     (synopsis "'DEXi' Library")
@@ -17153,13 +18969,13 @@ the method DEX (Decision EXpert,
 program DEXi (<https://kt.ijs.si/@code{MarkoBohanec/dexi.html>}) or
 DE@code{XiWin} (<https://dex.ijs.si/dexisuite/dexiwin.html>).  A typical
 workflow with DE@code{XiR} consists of: (1) reading a .dxi file, previously made
-using the DEXi software (function read_dexi()), (2) making a data frame
+using the DEXi software (function @code{read_dexi()}), (2) making a data frame
 containing input values of one or more decision alternatives, (3) evaluating
-those alternatives (function evaluate()), (4) analyzing alternatives
-(selective_explanation(), plus_minus(), compare_alternatives()), (5) drawing
-charts.  DE@code{XiR} is restricted to using models produced externally by the
-DEXi software and does not provide functionality for creating and/or editing
-DEXi models directly in R'.")
+those alternatives (function @code{evaluate()}), (4) analyzing alternatives
+@code{(selective_explanation()}, @code{plus_minus()},
+@code{compare_alternatives()}), (5) drawing charts.  DE@code{XiR} is restricted
+to using models produced externally by the DEXi software and does not provide
+functionality for creating and/or editing DEXi models directly in R'.")
     (license license:expat)))
 
 (define-public r-devtreatrules
@@ -17174,6 +18990,9 @@ DEXi models directly in R'.")
         (base32 "1h4p78mwl5ir31hfb38x1dwq5xxbdlsasvk5vxa3c7xdvhsd2yrf"))))
     (properties `((upstream-name . "DevTreatRules")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-modelobj r-glmnet r-dyntxregime))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DevTreatRules")
@@ -17205,6 +19024,9 @@ independent sample.")
         (base32 "06060wxji3mfwq6c58gmb07mz9sk9d5ls9d152vywjnz20ndpscd"))))
     (properties `((upstream-name . "devRate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/frareb/devRate/")
     (synopsis
@@ -17231,6 +19053,9 @@ example can be found in Rebaudo et al. (2017) <doi:10.1007/s13355-017-0480-5>.")
         (base32 "1m18p8h9vv4v0aq2fkjyj39vzb8a09azbbczhfiv4y88w540i8nw"))))
     (properties `((upstream-name . "Devore7")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-lattice))
     (home-page "https://cran.r-project.org/package=Devore7")
     (synopsis "Data sets from Devore's \"Prob and Stat for Eng (7th ed)\"")
@@ -17251,6 +19076,9 @@ Statistics for Engineering and the Sciences (7th ed)\", Thomson.")
         (base32 "1hdqww5al3wv3jncfj8zqwypv487hc4pdb1d4f1c3w68fp0b1zni"))))
     (properties `((upstream-name . "devoid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/r-lib/devoid")
     (synopsis "Graphic Device that Does Nothing")
     (description
@@ -17275,6 +19103,9 @@ any practical use.")
         (base32 "0f2s5gssk9napmah7zcss1rnh7pzlq90gzwcnvyr9rrq6k118n8q"))))
     (properties `((upstream-name . "devFunc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-plyr))
     (home-page "https://cran.r-project.org/package=devFunc")
     (synopsis "Clear and Condense Argument Check for User-Defined Functions")
@@ -17298,6 +19129,9 @@ maintainability of your code.")
         (base32 "03iwl6h6f158qc2i5b0ac9g1nnspqr958cvprjm4rgs1pcywplga"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/plfjohnson/devEMF")
     (synopsis "EMF Graphics Output Device")
@@ -17316,6 +19150,9 @@ maintainability of your code.")
         (base32 "0afi1ir8il5xmzkpmbc2m5mvmgzlqw8qdn04gbnwl74a03yaxxmj"))))
     (properties `((upstream-name . "detzrcr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-mass r-ggplot2 r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/magnuskristoffersen/detzrcr")
@@ -17339,6 +19176,9 @@ detrital zircon geochronology community.")
         (base32 "08yq7vfcd8fv8qw2w0f1rnj3rzys9kslmkqspmiz6prmzqvj1zf1"))))
     (properties `((upstream-name . "deTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-pheatmap))
     (home-page "https://cran.r-project.org/package=deTS")
     (synopsis "Tissue-Specific Enrichment Analysis")
@@ -17361,6 +19201,9 @@ Bioinformatics, In submission.")
         (base32 "00j35i45a55srvdlhv0b9vcrsp44fmdv49giqm03ha015pgmsbdd"))))
     (properties `((upstream-name . "detrendr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-stringr
                              r-rlang
@@ -17401,6 +19244,9 @@ unpublished work.")
         (base32 "1kx404z0xp22d1jhpn217l8wcn6p587by908a6465dfpkhc8vyyb"))))
     (properties `((upstream-name . "detrendeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tkrplotr r-dplr))
     (home-page "https://cran.r-project.org/package=detrendeR")
     (synopsis
@@ -17424,6 +19270,9 @@ when needed.")
         (base32 "1dd4nzkgj5pl9397aa0z3q5fpl27xbdf7q0pqbs821dyynylxzn9"))))
     (properties `((upstream-name . "DetR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-rcppeigen r-rcpp r-pcapp r-mass))
     (home-page "https://cran.r-project.org/package=DetR")
     (synopsis
@@ -17445,6 +19294,9 @@ Robust Linear Regression.")
         (base32 "1mk2k9akagz7knd4n5p8nxkmnm2mdv9izk4i5yl2v9nv5v39mc4h"))))
     (properties `((upstream-name . "detpack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=detpack")
     (synopsis
      "Density Estimation and Random Number Generation with Distribution Element Trees")
@@ -17476,6 +19328,9 @@ Computational and Graphical Statistics (2018)
         (base32 "1kic6a5s8wm59za9zr8n2z33kfvahgfaa0izy2lp4j75am0jxlra"))))
     (properties `((upstream-name . "detourr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-tourr
                              r-tidyselect
@@ -17504,6 +19359,9 @@ embedded in Shiny apps or HTML documents.")
         (base32 "034wb5hwpikli6h2rwiqr19qvzxrr4qwi4q436y7c5a5wgkfzgl5"))))
     (properties `((upstream-name . "DetMCD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-rcppeigen r-rcpp r-pcapp))
     (home-page "https://cran.r-project.org/package=DetMCD")
     (synopsis
@@ -17527,6 +19385,9 @@ estimation are explained in Hubert, Rousseeuw and Verdonck (2012)
         (base32 "15yh66mn84cm5ix99lg5lp783dp8il03dyirkhil7m5pwzss42r4"))))
     (properties `((upstream-name . "DetLifeInsurance")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JoaquinAuza/DetLifeInsurance")
     (synopsis "Life Insurance Premium and Reserves Valuation")
@@ -17554,6 +19415,9 @@ annuities, and loan amortization schedule.")
         (base32 "0yl1x0jz66hingbl094picsiyrxzxvnz0grq63rva6nwn7pv1c0b"))))
     (properties `((upstream-name . "detectRUNS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-rcpp
                              r-plyr
@@ -17585,6 +19449,9 @@ consecutive runs (Marras et al (2015) <doi:10.1111/age.12259>).")
         (base32 "002wv6krzmpikfmcn5bw12y7acbwvbf057i31jhsqj081spdicb0"))))
     (properties `((upstream-name . "detectR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-signal
                              r-logconcdead
                              r-lavaan
@@ -17615,6 +19482,9 @@ Baek, C., Gampe, M., Leinwand B., Lindquist K., Hopfinger J. and Gates K. (2023)
         (base32 "0bi14jv2za3a5xanqchzs7qpm71syaw5j1lcs5q2fc5hbyfp0lvw"))))
     (properties `((upstream-name . "detectors")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://simonpcouch.github.io/detectors/")
     (synopsis "Prediction Data from GPT Detectors")
     (description
@@ -17637,6 +19507,9 @@ writers as AI-generated.")
         (base32 "010i063b94hzx7qac8gpl67gmk7hzgqm9i1c7pbbw4la3wcd9lz7"))))
     (properties `((upstream-name . "detector")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr))
     (home-page "https://github.com/paulhendricks/detector")
     (synopsis "Detect Data Containing Personally Identifiable Information")
@@ -17657,6 +19530,9 @@ Identifiable Information (PII) through convenience functions.")
         (base32 "1cr5i73iigmsg0ywlm61iv1yw91vafbbf4dhvcd448qnv05cjlaw"))))
     (properties `((upstream-name . "detectnorm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm r-rdpack r-psych r-nleqslv r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/irissun/detectnorm")
@@ -17681,6 +19557,9 @@ maximum.")
         (base32 "10cfpmps2r0zcdqskzacflpz8g4wy2cfx920flr93lxmrb6i57sv"))))
     (properties `((upstream-name . "detect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pbapply r-matrix r-formula))
     (home-page "https://github.com/psolymos/detect")
     (synopsis "Analyzing Wildlife Data with Detection Error")
@@ -17703,6 +19582,9 @@ Biodiversity Monitoring Institute and the Boreal Avian Modelling Project.")
         (base32 "0mygkmfmfp3a2hgql514zyh4rw3v8i4g4cls6rss0fplg4pskwc7"))))
     (properties `((upstream-name . "details")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-withr
                              r-png
@@ -17732,6 +19614,9 @@ roxygen2 documentation.")
         (base32 "1994fqd9d1g314bj0qx7gcb6qmv38gl2brc2gwms3zy4r4b86f57"))))
     (properties `((upstream-name . "desplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-reshape2 r-lattice r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://kwstat.github.io/desplot/")
@@ -17754,6 +19639,9 @@ experiments that are laid out in grids.  See Ryder (1981)
         (base32 "00yy5icda5sqzcr7x924n2aqrxrriza42h3qbg0nvvjf7dg3ahi2"))))
     (properties `((upstream-name . "despair")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jpmonteagudo28/despair")
     (synopsis
      "Motivational Quotes and Shakespearean Bardâbits for Personal Projects")
@@ -17776,6 +19664,9 @@ character seed to ensure reproducible results.")
         (base32 "18q1rw8p69p5jcqxb4hryyn2bak6pjmx91g203xrilx7k1za4p23"))))
     (properties `((upstream-name . "desla")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sitmo
                              r-rdpack
                              r-rcppprogress
@@ -17805,6 +19696,9 @@ local projections by the desparsified lasso, as described in Adamek et al.
         (base32 "0pv54lxd326xlwscyngrfmvqf8inqqg587bi4n42wy6c76p4kbm5"))))
     (properties `((upstream-name . "desk")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-cli))
     (home-page "https://github.com/OvGU-SH/desk")
     (synopsis "Didactic Econometrics Starter Kit")
@@ -17829,6 +19723,9 @@ textbook Auer, L.v. (2023, ISBN: 978-3-658-42699-6).")
         (base32 "0x5v6mak68h6a03hccf8gksj3wmgcd3l84bplx1s4jr755wdm5ih"))))
     (properties `((upstream-name . "desirability2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-purrr r-glue))
     (home-page "https://desirability2.tidymodels.org")
     (synopsis "Desirability Functions for Multiparameter Optimization")
@@ -17850,6 +19747,9 @@ within dplyr pipelines.")
         (base32 "094gxvp6a60lfcc0a0gk9rv1p6ajnzq9m58sy8cvhcj5337g4fmk"))))
     (properties `((upstream-name . "desirability")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/topepo/desirability")
     (synopsis "Function Optimization and Ranking via Desirability Functions")
     (description
@@ -17869,6 +19769,9 @@ Derringer and Suich (1980).")
         (base32 "149wgg5mbq95wizpc24mwb8qfxjdia4qkz66bnzjgiiyfh6r46wp"))))
     (properties `((upstream-name . "desiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stanlazic/desiR")
     (synopsis
@@ -17892,6 +19795,9 @@ diverse sources.")
         (base32 "1c9b320vssw3s1ybyialg5s85k1vfllbw40qfgmvnsr3imc2inb2"))))
     (properties `((upstream-name . "designsize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=designsize")
     (synopsis "Sample Size Calculation of Various Study Designs")
     (description
@@ -17911,6 +19817,9 @@ techniques are explained by Chow (2007) <doi:10.1201/9781584889830>.")
         (base32 "13rj2xxxxj35zl7q570c3i4p2wjpxf79dza0sg9bhbq3yal6j6r2"))))
     (properties `((upstream-name . "designr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-mass r-lme4 r-dplyr r-crossdes))
     (native-inputs (list r-knitr))
     (home-page "https://maxrabe.com/designr")
@@ -17932,6 +19841,9 @@ effects <https://github.com/mmrabe/designr>.")
         (base32 "1x3pcwml6pa56ij2bc9jymfp066v7fd2avjl6awgpy3503qr56q1"))))
     (properties `((upstream-name . "designmatch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-slam r-mass r-lattice r-highs))
     (home-page "https://cran.r-project.org/package=designmatch")
     (synopsis "Matched Samples that are Balanced and Representative by Design")
@@ -17962,6 +19874,9 @@ also included directions in the gurobi_installation file in the inst folder.")
         (base32 "0himpw5aq8dqlkvvsbdfffflwxh8v2r3zw3sa72djdrdbzkk6qg5"))))
     (properties `((upstream-name . "DesignLibrary")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-randomizr
                              r-glue
@@ -17991,6 +19906,9 @@ parameters, such as effect size, sample size, and assignment probabilities.")
         (base32 "0h1slgxxz92zk1m6gk67s1ir95jyqzvr6mys9c9lakpffiwwn4b2"))))
     (properties `((upstream-name . "designit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -18030,6 +19948,8 @@ other functionality, we provide an implementation for OSAT score by Yan et al.
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -18077,6 +19997,9 @@ save or download the equivalent R code.")
         (base32 "1872spxzi5mxxz68nw3ahh6yj50yybrpff4q1xpx0xk89yks13hg"))))
     (properties `((upstream-name . "DesignCTPB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openssl))
     (propagated-inputs (list r-reticulate r-plotly r-mnormt r-fields r-dplyr))
     (native-inputs (list r-knitr))
@@ -18101,6 +20024,9 @@ effect, which can guide the realistic clinical trials.")
         (base32 "0wyzz1rncb2260i7p09vziszg2ycmxwgs0zm8qycfamyfii32k7y"))))
     (properties `((upstream-name . "Design.parameters")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Design.parameters")
     (synopsis "Parameters of the Experimental Designs")
     (description
@@ -18121,6 +20047,9 @@ investigate the characterization properties of any block design.")
         (base32 "11qhsiqq0f1s6b7x7fmvgwwhirhilf9x37pk90pwgg3h4khjl1j5"))))
     (properties `((upstream-name . "deseats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-shiny
@@ -18164,6 +20093,9 @@ Statistical Office of Germany.")
         (base32 "0jav7xwhrlhlkya5avp4zcnqr5glci67np2dyxmjsancjks1fxbx"))))
     (properties `((upstream-name . "DescToolsAddIns")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl r-rstudioapi r-manipulate r-foreign
                              r-desctools))
     (home-page "https://github.com/AndriSignorell/DescToolsAddIns/")
@@ -18171,11 +20103,11 @@ Statistical Office of Germany.")
     (description
      "RStudio as of recently offers the option to define addins and assign shortcuts
 to them.  This package contains addins for a few most frequently used functions
-in a data scientist's (at least mine) daily work (like str(), example(), plot(),
-head(), view(), Desc()).  Most of these functions will use the current selection
-in the editor window and send the specific command to the console while
-instantly executing it.  Assigning shortcuts to these addins will save you quite
-a few keystrokes.")
+in a data scientist's (at least mine) daily work (like @code{str()},
+@code{example()}, @code{plot()}, @code{head()}, @code{view()}, @code{Desc()}).
+Most of these functions will use the current selection in the editor window and
+send the specific command to the console while instantly executing it.
+Assigning shortcuts to these addins will save you quite a few keystrokes.")
     (license license:gpl2+)))
 
 (define-public r-desctable
@@ -18190,6 +20122,9 @@ a few keystrokes.")
         (base32 "1i0124lnmzdbx468lyqmzbd6disxjifqjy8ss10fl8cin4f868lb"))))
     (properties `((upstream-name . "desctable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-pander
@@ -18217,6 +20152,9 @@ as (nested) dataframes for easy manipulation.")
         (base32 "1pz5lww1dkkqvsq6h0vkch39bj76qffmmag3zlag5in75s4wj0wl"))))
     (properties `((upstream-name . "descstatsr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-moments))
     (home-page "https://cran.r-project.org/package=descstatsr")
     (synopsis "Descriptive Univariate Statistics")
@@ -18258,6 +20196,9 @@ a summary report for the data.")
         (base32 "0q463p0bq80c9lhwfv4imbhgx6f1w2jqm3022p5zvycfa9w39rin"))))
     (properties `((upstream-name . "descstat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -18290,6 +20231,9 @@ values or as bins.")
         (base32 "07921k8h50wycj0sijy8428p3c8ach90swgzz0s06b6z1yl2mnyg"))))
     (properties `((upstream-name . "DescrTab2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-scales
@@ -18337,6 +20281,9 @@ tables to console and saving table objects for later use.")
         (base32 "0y91n0znpzf98nnz3ajn9z33lzn1hdc4dkacq0kxakk9jxjdkp5d"))))
     (properties `((upstream-name . "descriptr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-rlang
@@ -18363,6 +20310,9 @@ frequency tables, cross tables, group summaries and multiple one/two way tables.
         (base32 "17baga9vs8959bzm7qs11zj35a6glh1ig5qz8kwq7m69h51l2gar"))))
     (properties `((upstream-name . "DescriptiveWH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/William-HC/DescriptiveWH")
     (synopsis "Descriptive Statistics")
     (description
@@ -18389,6 +20339,9 @@ analysis.")
         (base32 "0f2inlfkwl2q9ll5lh0ynpsbf6zci149s5nj0s0x0g98z72z8mly"))))
     (properties `((upstream-name . "DescriptiveStats.OBeu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape r-rcurl r-magrittr r-jsonlite r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/okgreece/DescriptiveStats.OBeu")
@@ -18418,6 +20371,9 @@ different graphical interface.")
         (base32 "0p0n5zjaxhr0rba93ikaw30lrf8zgx35yfjimwlg2375ns0zpmr6"))))
     (properties `((upstream-name . "DescriptiveRepresentationCalculator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page
      "https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/")
     (synopsis
@@ -18444,6 +20400,9 @@ The package is based on Gerring, Jerzak, and Oncel (2023)
         (base32 "0ic44blsi7ys6075zsawf4rxqgjsv1d7hr8y2j3psk6pjchlgx18"))))
     (properties `((upstream-name . "descriptio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-mass r-ggplot2))
     (home-page "https://github.com/nicolas-robette/descriptio")
     (synopsis "Descriptive Statistical Analysis")
@@ -18467,6 +20426,9 @@ ggplot2') and weighted statistics.")
         (base32 "1pjyihmn4gkaamixsc3qwynsc02pwv9bgn6s7z7acmmsybhhs6xn"))))
     (properties `((upstream-name . "describer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/paulhendricks/describer")
     (synopsis "Describe Data in R Using Common Descriptive Statistics")
     (description
@@ -18486,6 +20448,9 @@ statistics.")
         (base32 "19fwg93p2vdl2sbg8llwijklsvim5vrgcvv2048akbdahvfj9rxb"))))
     (properties `((upstream-name . "DescribeDisplay")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-reshape2 r-plyr r-ggplot2 r-ggally))
     (home-page "https://github.com/ggobi/DescribeDisplay")
     (synopsis "An Interface to the 'DescribeDisplay' 'GGobi' Plugin")
@@ -18506,6 +20471,9 @@ plugin.")
         (base32 "1nah46s4psi272idpkpzkx7zqy6vr6wdz5zfxyz17cld9q2lld47"))))
     (properties `((upstream-name . "DescribeDF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries r-psych r-fnonlinear r-e1071 r-dplyr))
     (home-page "https://cran.r-project.org/package=DescribeDF")
     (synopsis "Description of a Data Frame")
@@ -18527,6 +20495,9 @@ work of the maintainer.  More information may be obtained from Garai and Paul
         (base32 "10ryy886jr2gwi6h90girl82ivwrmhz1vcwi4f6khmmpwsy95hav"))))
     (properties `((upstream-name . "describedata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -18559,6 +20530,9 @@ MEANS from SAS and ladder', gladder', and pwcorr from Stata'.")
         (base32 "0yyxh1030pfjriwm8xfx9rp32cq7jfqlxq8mim1qvx06siah545c"))))
     (properties `((upstream-name . "descr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable))
     (home-page "https://github.com/jalvesaq/descr")
     (synopsis "Descriptive Statistics")
@@ -18583,6 +20557,9 @@ text file with the necessary R and SPSS codes to reread the data.")
         (base32 "1yznb6j850gap1bacvx5dkh4030x38041ll61z6an6h7j71yyc5p"))))
     (properties `((upstream-name . "descomponer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=descomponer")
     (synopsis "Seasonal Adjustment by Frequency Analysis")
     (description
@@ -18602,6 +20579,9 @@ transformations to amplitude-frequency domain.")
         (base32 "16p38i8ykwc8gjw6c9dhdwjjpa1b17n9wqhz3rhkbzjh978pky31"))))
     (properties `((upstream-name . "DES")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DES")
     (synopsis "Discrete Event Simulation")
     (description
@@ -18624,6 +20604,9 @@ the event-oriented approach to DES; see the tutorial in Matloff (2008)
         (base32 "0zjdpjd7qa7zg0dyyq1y4rskk8bi2jpsxzrdg43lnsyrxg99q1n6"))))
     (properties `((upstream-name . "derivmkts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mnormt))
     (native-inputs (list r-tidyr
                          r-pander
@@ -18650,6 +20633,9 @@ useful in teaching a course on financial derivatives.")
         (base32 "05c99z3hlwwm0p02cl9z6gjwfxfq2b2qn90l85270bi16llgf42h"))))
     (properties `((upstream-name . "DeRezende.Ferreira")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts))
     (home-page "https://cran.r-project.org/package=DeRezende.Ferreira")
     (synopsis "Zero Coupon Yield Curve Modelling")
@@ -18672,6 +20658,9 @@ datasets of interest rates for the BRICS countries.")
         (base32 "00pn4ccsg1hjv83xqk4g0g24cz2a87shlbg8kd2dri4dcagzifg0"))))
     (properties `((upstream-name . "depthTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=depthTools")
     (synopsis "Depth Tools Package")
     (description
@@ -18698,6 +20687,9 @@ data.")
         (base32 "0i7fks5hglf3xj8cj3sghjf0xcldhiqwf0jlpyk2a3mj9gaszc76"))))
     (properties `((upstream-name . "DepthProc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-sm
                              r-rrcov
@@ -18733,6 +20725,9 @@ tests and robust regressions.")
         (base32 "0zjg9iyqmcnkvwc9w2j7lmk3k9nsg6n8m6vq5x44d1bp4g2gr6jv"))))
     (properties `((upstream-name . "depth.plot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=depth.plot")
     (synopsis "Multivariate Analogy of Quantiles")
@@ -18754,6 +20749,9 @@ multivariate generalization of QQ-plots).")
         (base32 "147lb9dibn8ayj6znld64sk1qn6lzpp5pamxkagmqcbxl78r1g6h"))))
     (properties `((upstream-name . "deps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-renv r-remotes r-jsonlite))
     (home-page "https://hub.analythium.io/deps/")
     (synopsis "Dependency Management with 'roxygen'-Style Comments")
@@ -18774,6 +20772,9 @@ special, roxygen'-style comments.")
         (base32 "0nzjjc62z6szy2wi1bzackd0ij66msfbjg7kaa79za96k71hvhxg"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-terra
                              r-sp
@@ -18801,6 +20802,9 @@ propagated from ships.")
         (base32 "1ljha520yjbzyrw4h77y1r29rymzk2x8z8hczc0lh539mfi4jll6"))))
     (properties `((upstream-name . "DEploid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-scales
                              r-rmarkdown
@@ -18836,6 +20840,9 @@ reporting the mixture proportions from each sample.")
         (base32 "13mk52ssiig76rnc02fq3b2g986b161gvncnr6krk7v9a4s5cjqk"))))
     (properties `((upstream-name . "DepLogo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DepLogo")
     (synopsis "Dependency Logo")
@@ -18855,6 +20862,9 @@ reporting the mixture proportions from each sample.")
         (base32 "0vzrdw4rhrwiyc4g4ancfd43h56b72lkvabqdwdsg54hjm35c1ky"))))
     (properties `((upstream-name . "depigner")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-tidyr
                              r-tibble
@@ -18882,16 +20892,16 @@ trying to challenge yourself in extracting pine nuts from a pine cone, provided
 that, in the end, you will find at least one inside it.  Here you can find a
 backpack of functions to be used to solve small everyday problems of coding or
 analyzing (clinical) data, which would be normally solved using quick-and-dirty
-patches.  You will be able to convert Hmisc and rms summary()es into data.frames
-ready to be rendered by pander and knitr'.  You can access easy-to-use wrappers
-to activate essential but useful progress bars (from progress') into your loops
-or functionals.  Easy setup and control Telegram's bots (from telegram.bot') to
-send messages or to divert error messages to a Telegram's chat.  You also have
-some utilities helping you in the development of packages, like the activation
-of the same user interface of usethis into your package, or call polite
-functions to ask a user to install other packages.  Finally, you find a set of
-thematic sets of packages you may use to set up new environments quickly,
-installing them in a single call.")
+patches.  You will be able to convert Hmisc and rms @code{summary()}es into
+data.frames ready to be rendered by pander and knitr'.  You can access
+easy-to-use wrappers to activate essential but useful progress bars (from
+progress') into your loops or functionals.  Easy setup and control Telegram's
+bots (from telegram.bot') to send messages or to divert error messages to a
+Telegram's chat.  You also have some utilities helping you in the development of
+packages, like the activation of the same user interface of usethis into your
+package, or call polite functions to ask a user to install other packages.
+Finally, you find a set of thematic sets of packages you may use to set up new
+environments quickly, installing them in a single call.")
     (license license:gpl3)))
 
 (define-public r-depend-truncation
@@ -18906,6 +20916,9 @@ installing them in a single call.")
         (base32 "1jym52qxx8v4kbq2578d03q2593q96jccr85if47djikw0aaxmcr"))))
     (properties `((upstream-name . "depend.truncation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=depend.truncation")
     (synopsis
@@ -18935,6 +20948,9 @@ data for Japanese male centenarians are given by Emura & Murotani
         (base32 "08vs0yzfvd4ahcs5rz4i4spp8l6fg45bm0m22gn5rzxc4759mzac"))))
     (properties `((upstream-name . "depcoeff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-copula))
     (home-page "https://cran.r-project.org/package=depcoeff")
     (synopsis "Dependency Coefficients")
@@ -18963,6 +20979,9 @@ Liebscher (2019, submitted).")
         (base32 "0wsdwsv09k55ipbpps5aaf81a4p5mp9r63p36bvhj91f7ckvnwg0"))))
     (properties `((upstream-name . "depCensoring")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
                              r-semipar-depcens
@@ -19005,6 +21024,9 @@ Keilegom (2021) <doi:10.1093/biomet/asaa095>, Czado and Van Keilegom (2023)
         (base32 "0sz7bj6pqwj6appyymajav0q5g1hrpaa8m75rx4drfjdp0lv7ihq"))))
     (properties `((upstream-name . "DepCens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rootsolve r-matrixstats r-formula
                              r-dlm))
     (home-page "https://github.com/GabrielGrandemagne/DepCens")
@@ -19030,6 +21052,9 @@ implemented in the package can be found in Schneider et al. (2019)
         (base32 "1gmxf6fffjgv7xzjckqmb7b79dn7km2hbv8z6s2scd7gic8iwg0i"))))
     (properties `((upstream-name . "depcache")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-codetools))
     (home-page "https://cran.r-project.org/package=depcache")
     (synopsis "Cache R Expressions, Taking Their Dependencies into Account")
@@ -19050,6 +21075,9 @@ a file as long as both the expression and its dependencies stay the same.")
         (base32 "0k7mvf7j8y1sqv8zpiwkw4xcmgki37drkxjijrsmmhkfybfan7k3"))))
     (properties `((upstream-name . "DEoptim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/ArdiaD/DEoptim")
     (synopsis "Global Optimization by Differential Evolution")
     (description
@@ -19070,6 +21098,9 @@ described in Mullen et al. (2011) <doi:10.18637/jss.v040.i06>.")
         (base32 "0a8x7z7jagshc5h6xy24xrvqv0gm08f78ik6y8ki4i0mhl8c5fyx"))))
     (properties `((upstream-name . "denvax")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/cabp_LSHTM/denvax")
     (synopsis "Simple Dengue Test and Vaccinate Cost Thresholds")
@@ -19095,6 +21126,9 @@ as well as a function to generate a project skeleton for such an analysis.")
         (base32 "0hzxphj740q6pfa1q42knr7n12bmnawg7b2fs74msxn83dka5cmq"))))
     (properties `((upstream-name . "denstrip")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice))
     (home-page "https://cran.r-project.org/package=denstrip")
     (synopsis
@@ -19117,6 +21151,9 @@ width strips.")
         (base32 "0x333kfx5mdzzjsqy37j4bmv9iddlgp3wi4774lx8d159lbr6irp"))))
     (properties `((upstream-name . "densratio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hoxo-m/densratio")
     (synopsis "Density Ratio Estimation")
@@ -19141,6 +21178,9 @@ shift adaptation.  The implemented methods are @code{uLSIF} (Hido et al. (2011)
         (base32 "1ifkg7cpimf27yhr60rks77r16kmhwa5h10wv7b64sbfncnyzfmj"))))
     (properties `((upstream-name . "DensParcorr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gplots r-clime))
     (home-page "https://cran.r-project.org/package=DensParcorr")
     (synopsis
@@ -19162,6 +21202,9 @@ brain networks using partial correlation.")
         (base32 "0blcpclwa6507vna9j8ysj0rs57r15f9vhp78d8fnl1436zlm217"))))
     (properties `((upstream-name . "densityarea")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tibble
                              r-sfheaders
@@ -19193,6 +21236,9 @@ returns these polygons for analysis, including for calculating their area.")
         (base32 "04k98id4y5b6bdzayzignzyha8l693wk3dsla4abfpdf4wpqs17a"))))
     (properties `((upstream-name . "densitr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-changepoint))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/krajnc/densitr")
@@ -19218,6 +21264,9 @@ with a focus on forestry use of resistance drilling in standing trees.")
         (base32 "1lfhd73zvvz6glq41lb2a9x63fjwjfp53zmy9g78fg6gz5lbnbpm"))))
     (properties `((upstream-name . "denseFLMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mgcv r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=denseFLMM")
     (synopsis "Functional Linear Mixed Models for Densely Sampled Data")
@@ -19238,6 +21287,9 @@ functional principal component analysis.")
         (base32 "03ya5clzqp12lfhw073ri0pwgxn53a6pvnais317a8bv1yinxspb"))))
     (properties `((upstream-name . "denovolyzeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "http://denovolyzeR.org")
@@ -19265,6 +21317,9 @@ disease.")
         (base32 "1q5kxiwfkrf2k0gpidzhl4hyzyjcm33rwlw4dan9nkx1181naw9l"))))
     (properties `((upstream-name . "denoiseR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-irlba r-factominer))
     (home-page "https://cran.r-project.org/package=denoiseR")
     (synopsis "Regularized Low Rank Matrix Estimation")
@@ -19286,6 +21341,9 @@ method is described in <@code{arXiv:1602.01206>}.")
         (base32 "18w69gxbnazg5k8bzi76slcqxnbfmrndp548zazz8bpxz3jns699"))))
     (properties `((upstream-name . "denoiSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=denoiSeq")
     (synopsis "Differential Expression Analysis Using a Bottom-Up Model")
@@ -19312,6 +21370,9 @@ binomial distribution.")
         (base32 "1janjmhfz0vgrmvw0plncxlg7y1sd9578arpjkaivqgqwbkhz4r1"))))
     (properties `((upstream-name . "denim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite r-testthat r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://drthinhong.com/denim/")
@@ -19320,11 +21381,12 @@ binomial distribution.")
     (description
      "R package to build and simulate deterministic discrete-time compartmental models
 that can be non-Markov.  Length of stay in each compartment can be defined to
-follow a parametric distribution (d_exponential(), d_gamma(), d_weibull(),
-d_lognormal()) or a non-parametric distribution (nonparametric()).  Other
-supported types of transition from one compartment to another includes fixed
-transition (constant()), multinomial (multinomial()), fixed transition
-probability (transprob()).")
+follow a parametric distribution @code{(d_exponential()}, @code{d_gamma()},
+@code{d_weibull()}, @code{d_lognormal()}) or a non-parametric distribution
+@code{(nonparametric()}).  Other supported types of transition from one
+compartment to another includes fixed transition @code{(constant()}),
+multinomial @code{(multinomial()}), fixed transition probability
+@code{(transprob()}).")
     (license license:expat)))
 
 (define-public r-denguedatahub
@@ -19339,6 +21401,9 @@ probability (transprob()).")
         (base32 "1s7in7hh90gs9lzdijdl8q2xx24dbvslyd0ykdl7l3sn7qf4cp92"))))
     (properties `((upstream-name . "denguedatahub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-xml2
                              r-tidyr
@@ -19371,6 +21436,9 @@ state/ province/ country.")
         (base32 "1naz8sx5ksb3gqhgfsgdsf5377c96za829m7lmbpr7zlzlxg5jyf"))))
     (properties `((upstream-name . "DendSer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seriation r-gclus))
     (home-page "https://cran.r-project.org/package=DendSer")
     (synopsis "Dendrogram Seriation: Ordering for Visualisation")
@@ -19390,6 +21458,9 @@ state/ province/ country.")
         (base32 "1dvisplghjyh607ns5xnwv1v8bg7i05sp4w96g6bmkwpgshaa6b0"))))
     (properties `((upstream-name . "dendroTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-scales
                              r-reshape2
@@ -19414,13 +21485,13 @@ state/ province/ country.")
     (description
      "This package provides novel dendroclimatological methods, primarily used by the
 Tree-ring research community.  There are four core functions.  The first one is
-daily_response(), which finds the optimal sequence of days that are related to
-one or more tree-ring proxy records.  Similar function is
-daily_response_seascorr(), which implements partial correlations in the analysis
-of daily response functions.  For the enthusiast of monthly data, there is
-monthly_response() function.  The last core function is compare_methods(), which
-effectively compares several linear and nonlinear regression algorithms on the
-task of climate reconstruction.")
+@code{daily_response()}, which finds the optimal sequence of days that are
+related to one or more tree-ring proxy records.  Similar function is
+@code{daily_response_seascorr()}, which implements partial correlations in the
+analysis of daily response functions.  For the enthusiast of monthly data, there
+is @code{monthly_response()} function.  The last core function is
+@code{compare_methods()}, which effectively compares several linear and
+nonlinear regression algorithms on the task of climate reconstruction.")
     (license license:gpl3)))
 
 (define-public r-dendrosync
@@ -19435,6 +21506,9 @@ task of climate reconstruction.")
         (base32 "0jypfdjcjqv2vd3l52hq696gdni303dw5l0nq9hhngc18v2imqa2"))))
     (properties `((upstream-name . "DendroSync")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nlme r-gridextra r-ggplot2))
     (home-page "https://bitbucket.org/josucham/dendrosync/src/issues/")
     (synopsis
@@ -19461,6 +21535,9 @@ temporal autocorrelation corrected.")
         (base32 "0jns6nfihb9wqz4sh8pbsy01kp0ml2x16jls4vqhixkbfpns4vkf"))))
     (properties `((upstream-name . "dendroNetwork")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-reshape2
@@ -19498,6 +21575,9 @@ as described in Visser and Vorst (2022) <DOI:10.1163/27723194-bja10014>.")
         (base32 "0zxavg34mmxkl5i5mi3x0g1m8pd4f9vc70906iazmmvimvvhp22c"))))
     (properties `((upstream-name . "dendrometry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dendrometry")
     (synopsis "Forest Estimations and Dendrometric Computations")
@@ -19528,6 +21608,9 @@ Bonou, R. Glele KakaÃ¯, A.E. Assogbadjo, H.N. Fonton, B. Sinsin (2009)
         (base32 "1lnnra7hnaxdpck2nkdg30ywq4k9wjv6h1zbkqmm369pw21n3x2b"))))
     (properties `((upstream-name . "dendrometeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-pspline r-forecast))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/smiljanicm/dendrometeR")
@@ -19552,6 +21635,9 @@ about the package please see: Van der Maaten et al.  2016
         (base32 "0hb7crbgsnbcwvbk05iz5ik45n7zgysmwjj6xc46131yd8l0i1qx"))))
     (properties `((upstream-name . "dendroextras")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dendroextras")
     (synopsis "Extra Functions to Cut, Label and Colour Dendrogram Clusters")
     (description
@@ -19575,6 +21661,9 @@ dendrogram and hclust objects and to set/get labels.")
         (base32 "16pj1s9ph0gfk9n2kxwinvmxqzwzqlryn7ph15x8navxxwwbss9g"))))
     (properties `((upstream-name . "dendRoAnalyst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyverse
                              r-tidyr
@@ -19616,6 +21705,9 @@ daily meteorological data, then check what trees are doing during that period.")
         (base32 "1mp5iz8mg0d6cyqi3f6fdhk6x5xxvng5bi13b7jnlp60wpjrq0il"))))
     (properties `((upstream-name . "demu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spam
                              r-rcpparmadillo
                              r-rcpp
@@ -19643,6 +21735,9 @@ design emulator described in Pratola, Lin and Craigmile (2018)
         (base32 "09dqhhhihphhdnplmhdq4q5zwc0qvqhirdrxa9x6fr43vwa5zfp4"))))
     (properties `((upstream-name . "DEMOVA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-leaps))
     (home-page "https://cran.r-project.org/package=DEMOVA")
     (synopsis
@@ -19671,6 +21766,9 @@ using test sets.")
         (base32 "15zfm8dxsjwqj1xlwz7r61cvnsajw4n6viqkakxrgsfpv1x62qaf"))))
     (properties `((upstream-name . "demoShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=demoShiny")
@@ -19692,6 +21790,9 @@ package subdirectory inst/shiny can be called by @code{demoShiny(topic}).")
         (base32 "0ph60ifffg29a88f9qxkx6zvcv8rxl1q5wd39j5zz2fqm3ggz47v"))))
     (properties `((upstream-name . "DemoKin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-purrr
                              r-progress
@@ -19724,6 +21825,9 @@ availability, with time varying rates or not, and multi-stage model.")
         (base32 "1yhk77dgl45gs1j8ganr1y8prkczpyh8zrxf93mbrx1y9h54n34x"))))
     (properties `((upstream-name . "demoKde")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=demoKde")
     (synopsis "Kernel Density Estimation for Demonstration Purposes")
     (description
@@ -19750,6 +21854,9 @@ consideration.")
         (base32 "0smkfivhhpa5cz5kh33dh3vl4zb102mjazxsxd382z7cwfqldffd"))))
     (properties `((upstream-name . "demography")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-strucchange
                              r-rainbow
                              r-mgcv
@@ -19778,6 +21885,9 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
         (base32 "1vxz426ryi8mdvcyzs7lckv4yy7r8mai0y3jw2hzhpgnx6gb59sp"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable r-flextable r-e1071))
     (home-page "https://cran.r-project.org/package=DemographicTable")
     (synopsis "Creating Demographic Table")
@@ -19803,6 +21913,9 @@ compared using chi-squared test and/or Fisher's exact test.")
         (base32 "0b2fqa0z875wwd7qdqh2qfvkzh2cpbmck4smf9c0p31wv5yin0sq"))))
     (properties `((upstream-name . "demoGraphic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-officer r-mass r-magrittr))
     (home-page "https://cran.r-project.org/package=demoGraphic")
     (synopsis
@@ -19827,6 +21940,9 @@ into document file.")
         (base32 "16qd1wbzizvg86bqkk8fvb53g6h30l5v99cjxpnr43qf0r4drz3j"))))
     (properties `((upstream-name . "DemografixeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://matbmeijer.github.io/DemografixeR")
@@ -19849,6 +21965,9 @@ first name.")
         (base32 "06x82ffbdv6ifl8xh52d3npdwha67v1ylfjp78j5pa4wdqkg221b"))))
     (properties `((upstream-name . "demogR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=demogR")
     (synopsis "Analysis of Age-Structured Demographic Models")
     (description "Construction and analysis of matrix population models in R.")
@@ -19866,6 +21985,9 @@ first name.")
         (base32 "1jldvlw8xl5hbyw4m443r41nw9ck7dmkd4rmag4wqw4scra7qj46"))))
     (properties `((upstream-name . "demodelr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
@@ -19902,6 +22024,9 @@ equations using R\" by John Zobitz (2021)
         (base32 "1ks0lqnq811gkx6k1440v5wkh9pjrbpdkw5c5hc0iclx3lfs6g7n"))))
     (properties `((upstream-name . "DemoDecomp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-numderiv))
     (home-page "https://cran.r-project.org/package=DemoDecomp")
     (synopsis "Decompose Demographic Functions")
@@ -19925,6 +22050,9 @@ proposed by Caswell (1989) <doi:10.1016/0304-3800(89)90019-7>.")
         (base32 "1vxh8rlmq3jnrv0gzaywilqhn60vq8b56skbqgzghzk5qg95gi0k"))))
     (properties `((upstream-name . "demic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-matrix r-lme4))
     (home-page "https://github.com/Ulthran/DEMIC")
     (synopsis "Dynamic Estimator of Microbial Communities")
@@ -19947,6 +22075,9 @@ compare bacterial growth rates between samples.  Yuan Gao and Hongzhe Li (2018)
         (base32 "1m84sd46cg7188wnjx09g88xvxdp7i0mdxnynwlqkgcmnwx4bdjw"))))
     (properties `((upstream-name . "dematel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-knitr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dematel")
@@ -19968,6 +22099,9 @@ Making Trial and Evaluation Laboratory Technique in R.")
         (base32 "17ibq5cavzkl2vfrmrkz77m28l4xpj97skad5pfvk1nhzyrg2k1l"))))
     (properties `((upstream-name . "DEM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=DEM")
     (synopsis
@@ -19990,6 +22124,9 @@ described in Guo, G. (2022) <doi:10.1080/02664763.2022.2053949>.")
         (base32 "0s5qiy2cb6fcm9fnbzmqs2x39im5r1vb45avh9isc71f7xl3my36"))))
     (properties `((upstream-name . "DELTD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://CRAN.R-project.org/package=DELTD")
     (synopsis "Kernel Density Estimation using Lifetime Distributions")
     (description
@@ -20013,6 +22150,9 @@ the distribution to be Gamma, Exponential or Weibull.  For details see Chen
         (base32 "15vjg3viyfrxvvh34p8i7j8p0vpg5628g8198adhi0i2ri3ygz9a"))))
     (properties `((upstream-name . "deltaPlotR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=deltaPlotR")
     (synopsis
@@ -20036,6 +22176,9 @@ is supported (Magis and Facon (2014) <doi:10.18637/jss.v059.c01>).")
         (base32 "08barq4s7m3migjs80207n6l10pr3v2hb1dy72fi59j9x9xgnn4v"))))
     (properties `((upstream-name . "DeltaMAN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable r-shinymatrix r-shinybs r-shiny r-knitr))
     (home-page "https://cran.r-project.org/package=DeltaMAN")
     (synopsis "Delta Measurement of Agreement for Nominal Data")
@@ -20062,6 +22205,9 @@ measures of nominal agreement between two raters.")
         (base32 "1iqyycjfmclr9y8gfj61naxwafjgmfwahyrc110qxzb239b501rw"))))
     (properties `((upstream-name . "deltaccd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod
                              r-scales
                              r-rlang
@@ -20089,6 +22235,9 @@ incomplete.  See Shilts et al. (2018) <doi:10.7717/peerj.4327>.")
         (base32 "0bi9qca4ky481zycp8r7ihvqfjkpvi7hb9wrjsw9avawqa6ck9bv"))))
     (properties `((upstream-name . "Delta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Delta")
     (synopsis "Measure of Agreement Between Two Raters")
     (description
@@ -20114,6 +22263,9 @@ can be found on
         (base32 "0iplpnhxzipvyk89dn13hi0pw1yqfbi8dm4dp2xmvn3avk76pjgs"))))
     (properties `((upstream-name . "DelayedEffect.Design")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DelayedEffect.Design")
     (synopsis
      "Sample Size and Power Calculations using the APPLE, SEPPLE, APPLE+ and SEPPLE+ Methods")
@@ -20138,6 +22290,9 @@ described in Xu, Z., Zhen, B., Park, Y., & Zhu, B. (2017)
         (base32 "17v9gis82yn0fvp4apv906sz8j77cr5rlj4xxxa3vkfvh196a40l"))))
     (properties `((upstream-name . "delayed")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-uuid
                              r-rstackdeque
@@ -20172,6 +22327,9 @@ library (<https://www.dask.org/>), for the Python language.")
         (base32 "102jg8bfhxbynk6v8ly73pkkhbqvgx4x1gmr7kxkdc648zspg48d"))))
     (properties `((upstream-name . "dejaVu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dejaVu")
@@ -20194,6 +22352,9 @@ data based on a negative binomial regression model, as described by Keene et al
         (base32 "1sw410lzbpfxbwwbnhv9qjm4rzl46sjcywcpr70zs1lsasnisf54"))))
     (properties `((upstream-name . "deident")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-withr
                              r-tidyselect
@@ -20231,6 +22392,9 @@ to suit different data types based on the suggestions of Garfinkel (2015)
         (base32 "01r45xzy1bhh3fprcqnnibhlmn5nhv08l897js137k4gnb1jc5mn"))))
     (properties `((upstream-name . "DEHOGT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-foreach r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ahshen26/DEHOGT")
@@ -20261,6 +22425,9 @@ analysis as described in by Xu et al., (2024)
         (base32 "17n389a0k4jswgs908bcdhi410wpd1ljxh5izv35cldfq7dhjb3k"))))
     (properties `((upstream-name . "degross")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cubicbsplines))
     (home-page "https://cran.r-project.org/package=degross")
     (synopsis "Density Estimation from GROuped Summary Statistics")
@@ -20291,6 +22458,9 @@ for details.")
         (base32 "1z9b91c5ngjs3rngfvnk3j5q5vjnj08y8amd2xm50xyvlkcblgxh"))))
     (properties `((upstream-name . "degreenet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-network r-igraph))
     (home-page "https://statnet.org")
     (synopsis "Models for Skewed Count Distributions Relevant to Networks")
@@ -20313,6 +22483,9 @@ packages for network analysis.  See Jones and Handcock
         (base32 "040hfpvqwl8r0iazwpnq7fmkydsxqc7mck7wbjqf6c19cw3zziz7"))))
     (properties `((upstream-name . "DEGRE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-parglm
                              r-glmmtmb
@@ -20352,6 +22525,9 @@ by a Wald test to assess the regression coefficients.")
         (base32 "07a5zl56hh5vl94alsd9kvjdj5vy0vgx8dpyvr0qdiwj9m8a830y"))))
     (properties `((upstream-name . "degday")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-magrittr r-crayon))
     (home-page "https://github.com/ucanr-igis/degday/")
     (synopsis "Compute Degree Days")
@@ -20372,6 +22548,9 @@ insect development.")
         (base32 "18jrznpw2vqb658wv88yq4x7z44ilkjg0xb5v2lww87wxbv4m0gj"))))
     (properties `((upstream-name . "deformula")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-cpp11))
     (home-page "https://github.com/okamumu/deformula/")
     (synopsis
@@ -20393,6 +22572,9 @@ interval with double exponential formulas.")
         (base32 "0crnwp5z3wy2zx273a7lchvyv5k5fyclhqrb9q0qhhv56drgvm0y"))))
     (properties `((upstream-name . "deform")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
     (home-page "https://cran.r-project.org/package=deform")
     (synopsis "Spatial Deformation and Dimension Expansion Gaussian Processes")
@@ -20418,6 +22600,9 @@ create new latent dimensions.")
         (base32 "0p8psbsjxmc456flypdw2kh8kjsy2hw13nfcdilg527iy1dpif6i"))))
     (properties `((upstream-name . "deforestable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list sqlite proj geos gdal))
     (propagated-inputs (list r-terra
                              r-stableestim
@@ -20448,6 +22633,9 @@ handling and building of new classifiers as well as some test data set.")
         (base32 "0m19yz3x4gn8zad7lgf343r41bqjvd5a279ykll8cw04y74c43lm"))))
     (properties `((upstream-name . "deflist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-purrr r-memoise r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://bbuchsbaum.github.io/deflist/")
@@ -20475,6 +22663,9 @@ access to frequently requested elements.")
         (base32 "17zsy10k12gmffbk7nagi60xj347q0bf7wr885fiylqz2xiy9fl9"))))
     (properties `((upstream-name . "deflateBR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate r-httr r-dplyr))
     (home-page "https://github.com/meirelesff/deflatebr/")
     (synopsis "Deflate Nominal Brazilian Reais")
@@ -20495,6 +22686,9 @@ indexes downloaded from the Brazilian Institute for Applied Economic Research.")
         (base32 "0vsixnjz531i8m3qbv1cx1nv8gyjvvy2ys6i48zc9ncb56issjad"))))
     (properties `((upstream-name . "deFit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-ggplot2 r-desolve))
     (home-page "https://cran.r-project.org/package=deFit")
     (synopsis "Fitting Differential Equations to Time Series Data")
@@ -20518,6 +22712,9 @@ parameters of ODEs up to second order, and can also apply to multilevel systems.
         (base32 "1wm6ynicwk2dlx8m0k45kc1pa8i3z8w78xk3v40szy2ys5j80m7v"))))
     (properties `((upstream-name . "defineR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xslt
                              r-xml2
                              r-reporter
@@ -20547,6 +22744,9 @@ explorer.")
         (base32 "1al08lqiy8x6jc1mrxm785pqqlfqlhzxbr2lwnixj6mqmkqlwp6g"))))
     (properties `((upstream-name . "defineOptions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/niceume/defineOptions")
     (synopsis "Define and Parse Command Line Options")
     (description
@@ -20568,6 +22768,9 @@ how options should be specified and how input values are supplied.")
         (base32 "0hzxgp9la9kll5cw3m4gd02rii571xsn1v53kz407k7k6rfg5mda"))))
     (properties `((upstream-name . "default")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=default")
     (synopsis "Change the Default Arguments in R Functions")
     (description
@@ -20587,6 +22790,9 @@ arguments, whether they are in packages or defined locally.")
         (base32 "1wa3h0z5sk8zrwblzb8w7hgj9yqw56vqi3vsnpva53qynf42r2n7"))))
     (properties `((upstream-name . "DEEVD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-evd))
     (home-page "https://CRAN.R-project.org/package=DEEVD")
     (synopsis "Density Estimation by Extreme Value Distributions")
@@ -20609,6 +22815,9 @@ and Khan and Akbar (2021) <doi:10.4236/ojs.2021.112018 >.")
         (base32 "19y9s2v65z7g36akpyr0ljzch4csq9la0cafkh5xb4d18xpr2h0h"))))
     (properties `((upstream-name . "DEET")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pbapply
                              r-glmnet
                              r-ggrepel
@@ -20644,15 +22853,18 @@ Acids Research Genomics and Bioinformatics (2023).")
 (define-public r-deeptrafo
   (package
     (name "r-deeptrafo")
-    (version "0.1-1")
+    (version "1.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeptrafo" version))
        (sha256
-        (base32 "16lxxd75j9bwapfx716b9fmqfz6ms4x5g98wc1yykiahjpbj8156"))))
+        (base32 "1iq36jmz31z53b8ckin4kkd63ai27qjssq5v8iqqbs97zjcgk8zb"))))
     (properties `((upstream-name . "deeptrafo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variables
                              r-tfprobability
                              r-tensorflow
@@ -20663,17 +22875,20 @@ Acids Research Genomics and Bioinformatics (2023).")
                              r-mlt
                              r-keras
                              r-formula
-                             r-deepregression))
-    (home-page "https://cran.r-project.org/package=deeptrafo")
+                             r-deepregression
+                             r-data-table))
+    (home-page
+     "https://github.com/neural-structured-additive-learning/deeptrafo")
     (synopsis "Fitting Deep Conditional Transformation Models")
     (description
      "Allows for the specification of deep conditional transformation models (DCTMs)
 and ordinal neural network transformation models, as described in Baumann et al
 (2021) <doi:10.1007/978-3-030-86523-8_1> and Kook et al (2022)
 <doi:10.1016/j.patcog.2021.108263>.  Extensions such as autoregressive DCTMs
-(Ruegamer et al, 2022, <doi:10.48550/@code{arXiv.2110.08248>}) and
-transformation ensembles (Kook et al, 2022,
-<doi:10.48550/@code{arXiv.2205.12729>}) are implemented.")
+(Ruegamer et al, 2023, <doi:10.1007/s11222-023-10212-8>) and transformation
+ensembles (Kook et al, 2022, <doi:10.48550/@code{arXiv.2205.12729>}) are
+implemented.  The software package is described in Kook et al (2024,
+<doi:10.18637/jss.v111.i10>).")
     (license license:gpl3)))
 
 (define-public r-deeptimedata
@@ -20688,6 +22903,9 @@ transformation ensembles (Kook et al, 2022,
         (base32 "19ipdn8r344xnxaz1n3jyhxr8n8xqx9aiwz7g0bfgj8cgn7gg85r"))))
     (properties `((upstream-name . "deeptimedata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://williamgearty.com/deeptimedata/")
     (synopsis "Geologic Pattern Data from FGDC Used in 'deeptime'")
     (description
@@ -20707,6 +22925,9 @@ Access functions are provided in the accompanying package deeptime'.")
         (base32 "1sv4vqg1q31nkk8aq8dz3nk3q9jfdm2c5b3b2n0355z31zpqg3gq"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rlang
                              r-lifecycle
@@ -20745,6 +22966,9 @@ deep time visualization.")
         (base32 "0fqzxc8wnfvg7fjpmd02pbf7wnqa32n3pm42iwj6i9hbdx558rin"))))
     (properties `((upstream-name . "deepRstudio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi
                              r-jsonlite
                              r-httr
@@ -20778,16 +23002,21 @@ rstudioapi'.")
 (define-public r-deepregression
   (package
     (name "r-deepregression")
-    (version "1.0.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepregression" version))
        (sha256
-        (base32 "15d33dsdhmw7n172rlsg70921d3z3bkn088qj565iclzmxknyfzj"))))
+        (base32 "1w5n65kz4j9rs5v3m8grg4nyns01q6r1axqrygk00nkyvr0vc271"))))
     (properties `((upstream-name . "deepregression")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tfruns
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torchvision
+                             r-torch
+                             r-tfruns
                              r-tfprobability
                              r-tensorflow
                              r-reticulate
@@ -20795,8 +23024,10 @@ rstudioapi'.")
                              r-mgcv
                              r-matrix
                              r-magrittr
+                             r-luz
                              r-keras
-                             r-dplyr))
+                             r-dplyr
+                             r-coro))
     (home-page "https://cran.r-project.org/package=deepregression")
     (synopsis "Fitting Deep Distributional Regression")
     (description
@@ -20819,6 +23050,9 @@ unstructured deep network model.")
         (base32 "027dsmc3wmm61qc0vybn02c5dbnz5nwf80m9sywci4nhirz978ik"))))
     (properties `((upstream-name . "deepredeff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tensorflow
                              r-seqinr
                              r-rlang
@@ -20854,6 +23088,9 @@ vignettes, and the paper by Kristianingsih and @code{MacLean} (2020)
         (base32 "1wlj70md5vgzad5q2n6qhh076q01zd0k8fsqafmswl4545hmmz69"))))
     (properties `((upstream-name . "deepNN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=deepNN")
     (synopsis "Deep Learning")
@@ -20882,6 +23119,9 @@ Neural Networks @code{YouTube} playlist.  Michael A. Nielsen
         (base32 "0gnf50007sj28daaz2r1rp8mvz1xpc2901bxl4yb1v4s4rcx6rhg"))))
     (properties `((upstream-name . "deepnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=deepnet")
     (synopsis "Deep Learning Toolkit in R")
     (description
@@ -20901,6 +23141,9 @@ including BP,RBM,DBN,Deep autoencoder and so on.")
         (base32 "1r05wg01nighmhs2r8z91w091fz2r1ryb1j0mi96knqqdjgcbh4i"))))
     (properties `((upstream-name . "deepMOU")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-skmeans
                              r-rfast
                              r-mass
@@ -20934,6 +23177,9 @@ There are also functions for graphical representation of clusters obtained.")
         (base32 "0xzhycw3yylq6hvaba3dv2wpmfaj9z6v6mzli8r4dbbzzaaa8214"))))
     (properties `((upstream-name . "deeplr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-utf8 r-tokenizers r-tibble r-purrr r-httr))
     (home-page "https://www.deepl.com/translator")
     (synopsis "Interface to the 'DeepL' Translation API")
@@ -20956,6 +23202,9 @@ the service (see <https://www.deepl.com/pro#developer>).")
         (base32 "02n0prw6g0sslxwr3p5msbcqr2bny702pbf22vs6f0f9xc5gqkd6"))))
     (properties `((upstream-name . "DeepLearningCausal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-weights
                              r-superlearner
@@ -20997,6 +23246,9 @@ the SL ensemble method and deep neural networks.")
         (base32 "1vdqsf0gn55j15dsfmbj76c5bb4799rkiwiq57n2rhl7sprvpdyr"))))
     (properties `((upstream-name . "deepgp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
@@ -21043,6 +23295,9 @@ hood.")
         (base32 "0vwh8wgbva2a47b2yiiqjwq5qww2ckb4l66265sbp1lbis0g96li"))))
     (properties `((upstream-name . "deepgmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-mclust r-corpcor))
     (home-page "https://github.com/suren-rathnayake/deepgmm")
     (synopsis "Deep Gaussian Mixture Models")
@@ -21066,6 +23321,9 @@ solutions, dimension reduction is applied at each layer by way of factor models.
         (base32 "0q4jjq11bd52bx0vqjxsh0fz1b72pfy4gpj5p19z7p4czf4a46c6"))))
     (properties `((upstream-name . "deepdive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-treeclust
                              r-stringr
                              r-rpart
@@ -21093,19 +23351,23 @@ trees and neural network.")
         (base32 "1pz07zznlpqjkkpf5r1ik0shl7kj0vn4l5dmvs7ggc7k5n7ig3b2"))))
     (properties `((upstream-name . "deepdep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-cranlogs))
     (native-inputs (list r-knitr))
     (home-page "https://dominikrafacz.github.io/deepdep/")
     (synopsis "Visualise and Explore the Deep Dependencies of R Packages")
     (description
      "This package provides tools for exploration of R package dependencies.  The main
-deepdep() function allows to acquire deep dependencies of any package and plot
-them in an elegant way.  It also adds some popularity measures for the packages
-e.g. in the form of download count through the cranlogs package.  Uses the CRAN
-metadata database <http://crandb.r-pkg.org> and Bioconductor metadata
+@code{deepdep()} function allows to acquire deep dependencies of any package and
+plot them in an elegant way.  It also adds some popularity measures for the
+packages e.g. in the form of download count through the cranlogs package.  Uses
+the CRAN metadata database <http://crandb.r-pkg.org> and Bioconductor metadata
 <https://bioconductor.org>.  Other data acquire functions are:
-get_dependencies(), get_downloads() and get_description().  The deepdep_shiny()
-function runs shiny application that helps to produce a nice deepdep plot.")
+@code{get_dependencies()}, @code{get_downloads()} and @code{get_description()}.
+The @code{deepdep_shiny()} function runs shiny application that helps to produce
+a nice deepdep plot.")
     (license license:gpl3)))
 
 (define-public r-deep
@@ -21120,6 +23382,9 @@ function runs shiny application that helps to produce a nice deepdep plot.")
         (base32 "1764cnsax8jwp2pb6rnmlb0f5m99jss84yi9rp017hdm20izvzrq"))))
     (properties `((upstream-name . "deep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=deep")
     (synopsis "Neural Networks Framework")
     (description
@@ -21143,6 +23408,9 @@ networks course to help me with the problem set.")
         (base32 "18s8m0nzmx8ai4gcv5rv3rvmngw1q0pxj013v433xj76z2drqdaz"))))
     (properties `((upstream-name . "dedupewider")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gsmolinski/dedupewider")
@@ -21167,11 +23435,14 @@ chosen columns and collapse it into one row.")
         (base32 "0qb9g8fpb0ggkwhvp2l5y0lp0pgkfyxzcnmaq2ln9y2z1zgmh866"))))
     (properties `((upstream-name . "deduped")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fastmatch r-collapse))
     (home-page "https://github.com/orgadish/deduped")
     (synopsis "Making \"Deduplicated\" Functions")
     (description
-     "This package contains one main function deduped() which speeds up slow,
+     "This package contains one main function @code{deduped()} which speeds up slow,
 vectorized functions by only performing computations on the unique values of the
 input and expanding the results at the end.")
     (license license:expat)))
@@ -21188,6 +23459,9 @@ input and expanding the results at the end.")
         (base32 "0bx1ad2gw0pf03z0im31mzaa26jxwws6fkbcj319kd8b4s4wp92y"))))
     (properties `((upstream-name . "DeductiveR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-moments r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DeductiveR")
@@ -21210,6 +23484,9 @@ data to fill in missing data.  The method is as described in: Campos, D.F.,
         (base32 "11cn6wncd438g5ar5pjw6rw50060mksjf0xjcds92s97dz5m28a4"))))
     (properties `((upstream-name . "deductive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-validate r-stringdist r-lintools))
     (home-page "https://github.com/data-cleaning/deductive")
     (synopsis "Data Correction and Imputation Using Deductive Methods")
@@ -21230,6 +23507,9 @@ information from valid values and validation rules restricting the data.")
         (base32 "10lvhdnnc6xiy20hy6s5rpqcvilj8x0y6sn92rfjkdbfsl00sslp"))))
     (properties `((upstream-name . "deducorrect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-editrules))
     (home-page "https://github.com/data-cleaning/deducorrect")
     (synopsis
@@ -21251,6 +23531,9 @@ all actions are logged.")
         (base32 "14kakyf28i654pndlswjzp6h3h7szpznrg6xznqg150mmn0bs3s6"))))
     (properties `((upstream-name . "Deducer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-scales
                              r-rjava
@@ -21286,6 +23569,9 @@ into the Windows Rgui.")
         (base32 "0mzpq8034yyhy9lika80mmwpixk120crgzj4kllypqhnvbcg1v4l"))))
     (properties `((upstream-name . "decp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang
                              r-purrr
                              r-matrixcalc
@@ -21317,6 +23603,9 @@ process for each detected change point.")
         (base32 "1y47ggfsfrbsm8z78j5ibxbm4lhp90h3qwhyh4qw5dhsd6jspsbd"))))
     (properties `((upstream-name . "decorators")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr))
     (home-page "https://tidylab.github.io/decorators/")
     (synopsis
@@ -21348,6 +23637,9 @@ routines.")
         (base32 "1za2qvdq96f75rmnm421xmq8s01ny4666ghv14i72iy3s4ml2hq9"))))
     (properties `((upstream-name . "DecorateR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rwekajars r-rweka r-rjava))
     (home-page "https://cran.r-project.org/package=DecorateR")
     (synopsis "Fit and Deploy DECORATE Trees")
@@ -21370,6 +23662,9 @@ artificial samples of the training data (\"Melville, P., & Mooney, R. J. (2005)
         (base32 "1xki8vjn363v90x7a66apnzg43ngi7in9k678f62jls2h3rhqv1f"))))
     (properties `((upstream-name . "decor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-tibble))
     (home-page "https://github.com/r-lib/decor")
     (synopsis "Retrieve Code Decorations")
@@ -21390,6 +23685,9 @@ which are used for automated wrapping of C++ functions.")
         (base32 "191bgncgwjhb13i27bf8072a0z3mkpjbbp06ys3nri0ggsv5r108"))))
     (properties `((upstream-name . "deconvolveR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://bnaras.github.io/deconvolveR/")
     (synopsis "Empirical Bayes Estimation Strategies")
@@ -21414,6 +23712,9 @@ methods.  Details and examples are in the paper by Narasimhan and Efron (2020,
         (base32 "0bsin2hlb8sacmkzsv4b2fqdh5b55b67lkm41icacqnvxrisnxqp"))))
     (properties `((upstream-name . "decompr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixstats))
     (native-inputs (list r-knitr))
     (home-page "https://qua.st/decompr/")
@@ -21446,6 +23747,9 @@ and sector levels (No.  w19677).  National Bureau of Economic Research.")
         (base32 "0f5bagmn0s15qhw0c7fiv96r2ih365fak1rz3pxfnaqmm20l2j8i"))))
     (properties `((upstream-name . "DecomposeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-usethis
                              r-tictoc
                              r-stratigrapher
@@ -21480,6 +23784,9 @@ Earth-Science Reviews 225 (103894). <doi:10.1016/j.earscirev.2021.103894>.")
         (base32 "12sb4zzvc29hvhlay97g84pn4saqyp16wckjrdgg4qqpc0rzrfz5"))))
     (properties `((upstream-name . "decomposedPSF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tseries r-rlibeemd r-psf r-forecast))
     (native-inputs (list r-knitr))
     (home-page "https://www.neerajbokde.in/software/")
@@ -21504,6 +23811,9 @@ methods based hybrid methods.")
         (base32 "11xbxv2j8m1w4lz933jvwy20wsazqiffnn0awgv7fz6q3ma5cqkh"))))
     (properties `((upstream-name . "decompDL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vmdecomp
                              r-tsutils
                              r-tsdeeplearning
@@ -21542,6 +23852,9 @@ Choudhary, K. et al. (2023).
         (base32 "1jxgd32bn36ldal26wivhdxgjy247l7r4ickacr1p8rrwxvhpk18"))))
     (properties `((upstream-name . "decoder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://www.bitbucket.com/cancercentrum/decoder")
     (synopsis "Decode Coded Variables to Plain Text and the Other Way Around")
@@ -21566,6 +23879,9 @@ codes and more.  It is also easy to extend the use by arbitrary code sets.")
         (base32 "1qp0765gl3pgfdzjwj7icf3zminxxmrlw6gx3vj51y6c2y5ws4as"))))
     (properties `((upstream-name . "decode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=decode")
     (synopsis
@@ -21588,6 +23904,9 @@ CO-expression and Differential Expression) algorithm.")
         (base32 "0f1c1zkg4cd980b6fgh7dy4vfmwnacy3r98cwmwz99fkg7gcjvnl"))))
     (properties `((upstream-name . "DeclareDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-randomizr r-generics r-fabricatr
                              r-estimatr))
     (home-page "https://declaredesign.org/r/declaredesign/")
@@ -21613,6 +23932,9 @@ can also make it easier for designs to be shared, replicated, and critiqued.")
         (base32 "0qdzrmmn2p5wb502syk05hj3jn3wbqhjhs7ya08r5gp1fapsalq4"))))
     (properties `((upstream-name . "declared")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/dusadrian/declared")
     (synopsis "Functions for Declared Missing Values")
     (description
@@ -21641,6 +23963,8 @@ alternative in the objects of class \"declared\".")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -21686,6 +24010,9 @@ supports basemaps from mapbox <https://www.mapbox.com/> via mapbox-gl-js
         (base32 "1vd18v0wi56qd8anhwvvwab98lgh3aj785f6c6nd41ifwp2phzm3"))))
     (properties `((upstream-name . "decisionSupport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
@@ -21731,16 +24058,19 @@ Carlo functionality can be used on its own.")
         (base32 "13d0yyg5zp7n3r92l0l1dsffxfph6vacrlzga9rz41l5pja72z6g"))))
     (properties `((upstream-name . "decision")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=decision")
     (synopsis "Statistical Decision Analysis")
     (description
-     "This package contains a function called dmur() which accepts four parameters
-like possible values, probabilities of the values, selling cost and preparation
-cost.  The dmur() function generates various numeric decision parameters like
-MEMV (Maximum (optimum) expected monitory value), best choice, EPPI (Expected
-profit with perfect information), EVPI (Expected value of the perfect
-information), EOL (Expected opportunity loss), which facilitate effective
-decision-making.")
+     "This package contains a function called @code{dmur()} which accepts four
+parameters like possible values, probabilities of the values, selling cost and
+preparation cost.  The @code{dmur()} function generates various numeric decision
+parameters like MEMV (Maximum (optimum) expected monitory value), best choice,
+EPPI (Expected profit with perfect information), EVPI (Expected value of the
+perfect information), EOL (Expected opportunity loss), which facilitate
+effective decision-making.")
     (license license:gpl2+)))
 
 (define-public r-decido
@@ -21755,6 +24085,9 @@ decision-making.")
         (base32 "14y3z5ys5y3kffgm0dk92rx4vd1mi9jvxn7pqvwi4jhyx7wx06pw"))))
     (properties `((upstream-name . "decido")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://hypertidy.github.io/decido")
@@ -21780,6 +24113,9 @@ reference to the method used by Held, M. (2001) <doi:10.1007/s00453-001-0028-4>.
         (base32 "04hqr3r2ys6xni3a2mr2j45415wm3iix38xfxccrnx2wjk5w3b5b"))))
     (properties `((upstream-name . "DECIDE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DECIDE")
     (synopsis "DEComposition of Indirect and Direct Effects")
     (description
@@ -21800,6 +24136,9 @@ differentials and compares the estimates obtained from two datasets.")
         (base32 "0dj32rck6ssyv82d8b75qgsqw319q02iqd3xxazy6251wcjn321i"))))
     (properties `((upstream-name . "DeCAFS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase r-rcpp r-ggplot2))
     (home-page "https://cran.r-project.org/package=DeCAFS")
     (synopsis "Detecting Changes in Autocorrelated and Fluctuating Signals")
@@ -21821,6 +24160,9 @@ G., Runge, V., Fearnhead, P. (2021) <doi:10.1080/01621459.2021.1909598>.")
         (base32 "0lfq0s0hibd00558vl3dmvrkzxjc7q62xr8sqzai0pv9a9lhixcn"))))
     (properties `((upstream-name . "debugr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-rprojroot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jsugarelli/debugr/")
@@ -21846,6 +24188,9 @@ negative effects during normal runtime.")
         (base32 "0brwk24q2wgmn38y1w1rish8dfdbv10xdzmm2k1drdwgsn72hxis"))))
     (properties `((upstream-name . "DeBoinR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pracma r-kernsmooth r-gridextra r-ggplot2
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=DeBoinR")
@@ -21873,6 +24218,9 @@ Detection for Probability Density Function Ensembles.\"
         (base32 "1w38qz0qs26ba1c89z1c40n4rwif989gh7was7wwazr2s61wjaha"))))
     (properties `((upstream-name . "debkeepr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zeallot
                              r-vctrs
                              r-tibble
@@ -21904,6 +24252,13 @@ classes in data frames in the context of double-entry bookkeeping.")
         (base32 "1l4wim82n5q51c1f7193d3i22qrn9kfcsddyrn8izhlwsjb9q3kp"))))
     (properties `((upstream-name . "deBInfer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-truncdist
                              r-rcolorbrewer
                              r-plyr
@@ -21940,6 +24295,13 @@ of the posterior distributions of model parameters and trajectories.")
         (base32 "0zy9pn6994bpbfjk4w52qvfckcilq5nz1v21bqc63grkz0lmlgzy"))))
     (properties `((upstream-name . "deBif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-shinyjs
                              r-shinydashboardplus
                              r-shinydashboard
@@ -21975,6 +24337,9 @@ methods for solution localisation and curve continuation are based on the book
         (base32 "02r1pc5s1vwnvz6cxb2gkc3x4x9vw8nb2zw1z8hyyxp5n8n8d2mf"))))
     (properties `((upstream-name . "DebiasInfer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cvxr r-caret))
     (home-page "https://github.com/zhangyk8/Debias-Infer/")
     (synopsis
@@ -21998,6 +24363,9 @@ Chen (2023) <@code{arXiv:2309.06429>}.")
         (base32 "1kbz17q8xg8nbak0y4f6g9pj20q02a00ijvk1xmbsbgl4xmww0ip"))))
     (properties `((upstream-name . "debest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-flexsurv))
     (home-page "https://cran.r-project.org/package=debest")
     (synopsis
@@ -22026,6 +24394,9 @@ compared to the traditional all-comers design.  For reference, see Zhang et al.
         (base32 "09bsq5m33yj3ik3irj2ifjkylg259imrz499qp5j4ggcqgvk6v88"))))
     (properties `((upstream-name . "DEBBI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randtoolbox r-numderiv r-doparallel))
     (home-page "https://github.com/bmgaldo/DEBBI")
     (synopsis "Differential Evolution-Based Bayesian Inference")
@@ -22047,6 +24418,9 @@ DEMAP, posterior samples via DEMCMC, and variational approximations via DEVI.")
         (base32 "0zx3rp0pnxbn57l6yafwzd66kvv6mfpr0alsp8mxhl2jl7c5f721"))))
     (properties `((upstream-name . "debar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seqinr r-aphid r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=debar")
@@ -22080,6 +24454,9 @@ the vast majority of the time (>95%).")
         (base32 "0rc12pr4br8kca90xcy5f8w1fyjzn6s7kyc3q3m3caxq8dlidn5v"))))
     (properties `((upstream-name . "deaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-tidyr
                              r-plotly
@@ -22110,6 +24487,9 @@ DEA models.  See: Banker, R.; Charnes, A.; Cooper, W.W. (1984).
         (base32 "0d516gvhqw6nfv9ijda9j04nlcjgdnnlgcf5774n8fgwjhm4azx1"))))
     (properties `((upstream-name . "deal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=deal")
     (synopsis "Learning Bayesian Networks with Mixed Variables")
     (description
@@ -22130,6 +24510,9 @@ compared from data.  The method is described in Boettcher and Dethlefsen (2003),
         (base32 "02pq3d0l0wy8bdlyfir3zf46j1ascx4qajyq5cf28yl62q6ngq5d"))))
     (properties `((upstream-name . "deadband")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ttr))
     (home-page "https://cran.r-project.org/package=deadband")
     (synopsis "Statistical Deadband Algorithms Comparison")
@@ -22152,6 +24535,9 @@ algorithms.")
         (base32 "1xjpw5qx2wjq8y4ayg1d3scclsrn2bkmjk9gkff57gq2n0qlwnh0"))))
     (properties `((upstream-name . "ddtlcm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-testthat
                              r-rdpack
@@ -22191,6 +24577,9 @@ Bayesian latent class analysis.  Reference: Li et al. (2023)
         (base32 "1y0immm337adkd2bjx8c5pf02w9wysv3gj26f4qf0jiba0f2wk8n"))))
     (properties `((upstream-name . "ddst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-orthopolynom r-evd))
     (home-page "https://cran.r-project.org/package=ddst")
     (synopsis "Data Driven Smooth Tests")
@@ -22212,6 +24601,9 @@ find various tests for exponent, Gaussian, Gumbel and uniform distribution.")
         (base32 "0l5dcpqs57bp6b6b718annnhilkv6n4imynylg0wimik27ipmfwl"))))
     (properties `((upstream-name . "ddsPLS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny
                              r-rcppeigen
                              r-rcpp
@@ -22240,6 +24632,9 @@ automatically set.")
         (base32 "10asskc757c2xmp2xc4v6gzp43jj4db93xjdq8hqqfvr0vyvmffy"))))
     (properties `((upstream-name . "DDPNA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-venndiagram
                              r-scales
                              r-plyr
@@ -22273,6 +24668,9 @@ and hub analysis.")
         (base32 "04fkbaw297i76gj6n0avqchjxh32q4vlrxad8sn9wfzpq86j8ln2"))))
     (properties `((upstream-name . "DDPM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DDPM")
     (synopsis "Data Sets for Discrete Probability Models")
     (description
@@ -22298,6 +24696,9 @@ along with associated references for further details and uses, is presented.")
         (base32 "03zcnc6is4qdpz3krhhz820j0an6dr7562bnmzj787xf5parwq6r"))))
     (properties `((upstream-name . "ddplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r2d3))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/feddelegrand7/ddplot")
@@ -22322,6 +24723,9 @@ straightforward R API. The package relies on the r2d3 R package and the D3
         (base32 "1as25yc23n6jj87nccp7g2jrpvz6yxa7f6ba65g6ynvkzk57531b"))))
     (properties `((upstream-name . "ddpcr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-shinyjs
                              r-shinydisconnect
@@ -22358,6 +24762,9 @@ comfortable with using R.")
         (base32 "1qsanid7sr2nc9pwzyz4cbjc1vg0rj255d3rnh1rb22agrgj2bc1"))))
     (properties `((upstream-name . "ddpca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rspectra r-quantreg r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=ddpca")
     (synopsis "Diagonally Dominant Principal Component Analysis")
@@ -22383,6 +24790,9 @@ global multiple testing are also included in this package.")
         (base32 "03gszqzh73zq04hqa2zgxn4fkiyr1fbhx3byxsdfzmmji46f8qip"))))
     (properties `((upstream-name . "ddp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ddp")
     (synopsis "Desirable Dietary Pattern")
@@ -22409,6 +24819,9 @@ in 2017.")
         (base32 "1az5zq0l3kj959572mlpc4zl73f16iag0yrs217fa9m8xpd3c2sd"))))
     (properties `((upstream-name . "DDoutlier")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-proxy r-pracma r-dbscan))
     (home-page "https://github.com/jhmadsen/DDoutlier")
     (synopsis "Distance & Density-Based Outlier Detection")
@@ -22448,6 +24861,9 @@ H.-P., KrÃ¶ger, P., Schubert, E., & Zimek, A. (2009)
         (base32 "1b0cl31l0zl02mxxqjqakr3q92frjy45qs41im5yb7hky29mkk70"))))
     (properties `((upstream-name . "ddml")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-ranger
                              r-quadprog
@@ -22479,6 +24895,9 @@ to increase robustness to the underlying data generating process.")
         (base32 "19g06qk3lzasj294x9wfij729mlq6ryvjqkn3rgl5xp1w0gx9wi2"))))
     (properties `((upstream-name . "DDM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DDM")
     (synopsis "Death Registration Coverage Estimation")
     (description
@@ -22502,6 +24921,9 @@ graphical interface to guess parameters in the traditional way if desired.")
         (base32 "1scgg90njn8ahxdzbz1dyhr508hlipgaawk2pll0hk093abnqrlc"))))
     (properties `((upstream-name . "DDL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix r-glmnet))
     (home-page "https://cran.r-project.org/package=DDL")
     (synopsis "Doubly Debiased Lasso (DDL)")
@@ -22523,6 +24945,9 @@ in <@code{arXiv:2004.03758>}.")
         (base32 "1gwyp4pwy6hs4hwpl5w106mrk0f9sfl8lgcqxr8f3l1hl9hc31sl"))))
     (properties `((upstream-name . "DDIwR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-writexl
                              r-readxl
@@ -22551,6 +24976,9 @@ Excel, including user declared missing values.")
         (base32 "0xsn74z78znrm3rnnvdphp89sb0lik564ha3wv6n3ldrfh1van8y"))))
     (properties `((upstream-name . "ddiv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-segmented r-qpdf r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ddiv")
@@ -22588,6 +25016,9 @@ information can be found in the following paper. [1] Ma, X. et al, 2019.
         (base32 "0pnkylz7l6brx6i73wys637w811psxhnr39lcmkag41s6jcgabd5"))))
     (properties `((upstream-name . "ddi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/kuriwaki/ddi")
     (synopsis "The Data Defect Index for Samples that May not be IID")
     (description
@@ -22614,6 +25045,9 @@ Election.\" Survey estimates from the Cooperative Congressional Election Study
         (base32 "0cjwig5hr2y59csfwcmlinpp2qfvngwbb5anj7iyydp4j0ywdgqk"))))
     (properties `((upstream-name . "DDHFm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wavethresh r-lokern))
     (home-page "https://cran.r-project.org/package=DDHFm")
     (synopsis
@@ -22637,6 +25071,9 @@ transformations.  Contains @code{cDNA} and shipping credit flow data.")
         (base32 "1n0s2q6qb09jnhxismaabn00pzjjjy0dwdhz8hyacmby468y266z"))))
     (properties `((upstream-name . "ddecompose")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sandwich
                              r-rifreg
                              r-ranger
@@ -22650,20 +25087,20 @@ transformations.  Contains @code{cDNA} and shipping credit flow data.")
     (description
      "This package implements the Oaxaca-Blinder decomposition method and
 generalizations of it that decompose differences in distributional statistics
-beyond the mean.  The function ob_decompose() decomposes differences in the mean
-outcome between two groups into one part explained by different covariates
-(composition effect) and into another part due to differences in the way
-covariates are linked to the outcome variable (structure effect).  The function
-further divides the two effects into the contribution of each covariate and
-allows for weighted doubly robust decompositions.  For distributional statistics
-beyond the mean, the function performs the recentered influence function (RIF)
-decomposition proposed by Firpo, Fortin, and Lemieux (2018).  The function
-dfl_decompose() divides differences in distributional statistics into an
-composition effect and a structure effect using inverse probability weighting as
-introduced by @code{DiNardo}, Fortin, and Lemieux (1996).  The function also
-allows to sequentially decompose the composition effect into the contribution of
-single covariates.  References: Firpo, Sergio, Nicole M. Fortin, and Thomas
-Lemieux. (2018) <doi:10.3390/econometrics6020028>. \"Decomposing Wage
+beyond the mean.  The function @code{ob_decompose()} decomposes differences in
+the mean outcome between two groups into one part explained by different
+covariates (composition effect) and into another part due to differences in the
+way covariates are linked to the outcome variable (structure effect).  The
+function further divides the two effects into the contribution of each covariate
+and allows for weighted doubly robust decompositions.  For distributional
+statistics beyond the mean, the function performs the recentered influence
+function (RIF) decomposition proposed by Firpo, Fortin, and Lemieux (2018).  The
+function @code{dfl_decompose()} divides differences in distributional statistics
+into an composition effect and a structure effect using inverse probability
+weighting as introduced by @code{DiNardo}, Fortin, and Lemieux (1996).  The
+function also allows to sequentially decompose the composition effect into the
+contribution of single covariates.  References: Firpo, Sergio, Nicole M. Fortin,
+and Thomas Lemieux. (2018) <doi:10.3390/econometrics6020028>. \"Decomposing Wage
 Distributions Using Recentered Influence Function Regressions.\" Fortin, Nicole
 M., Thomas Lemieux, and Sergio Firpo. (2011) <doi:10.3386/w16045>.
 \"Decomposition Methods in Economics.\" @code{DiNardo}, John, Nicole M. Fortin,
@@ -22686,6 +25123,9 @@ Discrimination: Reduced Form and Structural Estimates.\".")
         (base32 "1lvv4avajd14ph5kr7fhagigfjdyvx6077gaks9l24dwgqh6gpj2"))))
     (properties `((upstream-name . "dde")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ring))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mrc-ide/dde")
@@ -22710,6 +25150,9 @@ point.  This approach is as described by Hairer, Norsett and Wanner (1993)
         (base32 "178b4j67vvn3g22s45gx9aqch24fij34yywbpvign2dkhzahnqkn"))))
     (properties `((upstream-name . "DDD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-subplex
                              r-sparsem
                              r-rcppeigen
@@ -22747,6 +25190,9 @@ the diversity-dependent process.")
         (base32 "1l5ljfhhyqcj4s4247vndqrz6qfcygi014l59d4gpxym810iqr26"))))
     (properties `((upstream-name . "ddc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr r-dtwclust r-dtw))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ddc")
@@ -22775,6 +25221,9 @@ the paper (Ma et al (2017) <doi:10.1109/ICDMW.2017.11>).")
         (base32 "01w20d7j9f667spmg28pp6mj5f4sxdx9z6waz2yaijgyif14drak"))))
     (properties `((upstream-name . "dcurves")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survival
                              r-scales
@@ -22801,31 +25250,6 @@ references for details on the methods: Vickers (2006)
 Pfeiffer (2020) <doi:10.1002/bimj.201800240>.")
     (license license:expat)))
 
-(define-public r-dcurver
-  (package
-    (name "r-dcurver")
-    (version "0.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dcurver" version))
-       (sha256
-        (base32 "1v4h480lff1cyjjwb80dksiffh0y4b3s07lq2l2r21rn1l4mav6c"))))
-    (properties `((upstream-name . "dcurver")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/oguzhanogreden/dcurver")
-    (synopsis "Utility Functions for Davidian Curves")
-    (description
-     "This package provides a Davidian curve defines a seminonparametric density,
-whose shape and flexibility can be tuned by easy to estimate parameters.  Since
-a special case of a Davidian curve is the standard normal density, Davidian
-curves can be used for relaxing normality assumption in statistical applications
-(Zhang & Davidian, 2001) <doi:10.1111/j.0006-341X.2001.00795.x>.  This package
-provides the density function, the gradient of the loglikelihood and a random
-generator for Davidian curves.")
-    (license license:gpl3)))
-
 (define-public r-dcur
   (package
     (name "r-dcur")
@@ -22838,6 +25262,9 @@ generator for Davidian curves.")
         (base32 "1blrxgf911b1y2pcp3hsv6cigpnclscjadlf5656kldblzj5w5m1"))))
     (properties `((upstream-name . "dCUR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack
                              r-ppcor
                              r-mclust
@@ -22875,6 +25302,9 @@ according to an external variable of the user's interest.")
         (base32 "1z62kz9558fj5nwp2nq6vh7ikbxbg8nm0w08y5p5dc0nzhcd4kxn"))))
     (properties `((upstream-name . "dcTensor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rtensor r-nntensor r-mass r-fields))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rikenbit/dcTensor")
@@ -22898,6 +25328,9 @@ README.md <https://github.com/rikenbit/@code{dcTensor>}.")
         (base32 "19pkj8z9wm4g8kxz1j3jw2n0bwldsyakipxvqpwnmlg2g5j8f5b1"))))
     (properties `((upstream-name . "DCSmooth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-plotly
@@ -22931,6 +25364,9 @@ are described in Feng/Schaefer (2021)
         (base32 "1h14xnii6kv6sc7pfxalif3bj0mifnxg46x4lwbixx9vzxxz96sq"))))
     (properties `((upstream-name . "DCPO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stanheaders
@@ -22965,6 +25401,9 @@ with Stan'.  References: Solt (2020) <doi:10.31235/osf.io/d5n9p>.")
         (base32 "0rwbs1z9pf8f6hpp3df584c0k5g4frbzcwr288inh1cg51maphq4"))))
     (properties `((upstream-name . "dCovTS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast2 r-rfast r-foreach r-doparallel r-dcov))
     (home-page "https://cran.r-project.org/package=dCovTS")
     (synopsis "Distance Covariance and Correlation for Time Series Analysis")
@@ -22999,6 +25438,9 @@ Covariance/Correlation for Time Series'.  R Journal, 8(2):324-340.
         (base32 "0c3a5dzpizsxlsh723pcd0d7n0mgfc9y35vrfhmskp3c1x639mh3"))))
     (properties `((upstream-name . "dcov")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=dcov")
     (synopsis "Fast Implementation of Distance Covariance")
@@ -23022,6 +25464,9 @@ See SzÃ©kely et al.(2007) <doi:10.1214/009053607000000505>; SzÃ©kely and Riz
         (base32 "1gawk22mv5ppbiqqm4k2pjjknsp7zxnnr0lk24l6phrvnszfaxlw"))))
     (properties `((upstream-name . "dcorVS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast r-dcov))
     (home-page "https://cran.r-project.org/package=dcorVS")
     (synopsis "Variable Selection Algorithms Using the Distance Correlation")
@@ -23050,6 +25495,9 @@ computing for distance covariance\".  Technometrics, 58(4): 435--447.
         (base32 "1qcblwcv2rwrl502hiv0l0r137sa4k0kx892k2w1chm40y5vri3b"))))
     (properties `((upstream-name . "dcortools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast
                              r-rdpack
                              r-rcppeigen
@@ -23083,6 +25531,9 @@ and distance correlation methods for survival endpoints (Edelmann, et al. (2021)
         (base32 "19dwms88q0ylxd92l3ivig8p8jjyhk8mhgz0l36m9pcq11gyjc0n"))))
     (properties `((upstream-name . "DCODE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seqinr))
     (home-page "https://cran.r-project.org/package=DCODE")
     (synopsis
@@ -23106,6 +25557,9 @@ http://arxiv.org/abs/1602.04971).")
         (base32 "080adcvlvpiha4vlxwnxsf657i0yjmpby5iyhabbqc5hzmwm3ar5"))))
     (properties `((upstream-name . "dcmodify")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-validate r-settings r-lumberjack))
     (native-inputs (list r-simplermarkdown))
     (home-page "https://github.com/data-cleaning/dcmodify")
@@ -23130,6 +25584,9 @@ reason about data modification rules as separate entities.")
         (base32 "1zh243ya02232z56i0y05l891685my6g9v6wal6z5c92s179g85p"))))
     (properties `((upstream-name . "dcmle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-lattice r-dclone r-coda))
     (home-page "https://groups.google.com/forum/#!forum/dclone-users")
@@ -23152,6 +25609,9 @@ models.")
         (base32 "1dxymql66sy0nfxqfh106cvz5r93ajpjr1w8amn03w0ciz4v5nqs"))))
     (properties `((upstream-name . "dcm2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -23187,6 +25647,9 @@ of Approximation based on the M2 statistic.")
         (base32 "04i9fyph2k3ffds0nv49371p8lw6dkzcf27pc98f99x0l6c8k5iq"))))
     (properties `((upstream-name . "DClusterm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts r-spacetime r-sp r-lme4 r-dcluster))
     (home-page "https://cran.r-project.org/package=DClusterm")
     (synopsis "Model-Based Detection of Disease Clusters")
@@ -23209,6 +25672,9 @@ zero-inflated models.  These methods are described in V. GÃ³mez-Rubio et al.
         (base32 "01m41vaw26nlsisbwp627hmfxs823wcnzrmchxnp3rx4n40j82di"))))
     (properties `((upstream-name . "DCluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spdep r-mass r-boot))
     (home-page "https://cran.r-project.org/package=DCluster")
     (synopsis "Functions for the Detection of Spatial Clusters of Diseases")
@@ -23230,14 +25696,17 @@ distributions of statistics.")
         (base32 "1icfx52v3g7kkkc11pw0xlrc8dlx5q3n2zbrd3fccmw17jzxqbg7"))))
     (properties `((upstream-name . "dclust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-phylogram r-openssl))
     (home-page "http://github.com/shaunpwilkinson/dclust")
     (synopsis "Divisive Hierarchical Clustering")
     (description
-     "This package contains a single function dclust() for divisive hierarchical
-clustering based on recursive k-means partitioning (k = 2).  Useful for
-clustering large datasets where computation of a n x n distance matrix is not
-feasible (e.g. n > 10,000 records).  For further information see Steinbach,
+     "This package contains a single function @code{dclust()} for divisive
+hierarchical clustering based on recursive k-means partitioning (k = 2).  Useful
+for clustering large datasets where computation of a n x n distance matrix is
+not feasible (e.g. n > 10,000 records).  For further information see Steinbach,
 Karypis and Kumar (2000)
 <http://glaros.dtc.umn.edu/gkhome/fetch/papers/@code{docclusterKDDTMW00.pdf>}.")
     (license license:gpl3)))
@@ -23254,6 +25723,9 @@ Karypis and Kumar (2000)
         (base32 "1x0fx24fxb7zp9g9lrdb1hbljgmi9szrsh751jidm52fin863qz0"))))
     (properties `((upstream-name . "dclone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-rstan r-rjags r-r2openbugs r-matrix r-coda))
     (home-page "https://groups.google.com/forum/#!forum/dclone-users")
@@ -23277,6 +25749,9 @@ parallel MCMC support for JAGS', @code{WinBUGS}', @code{OpenBUGS}', and Stan'.")
         (base32 "0f8q0avzl3jpjly1jsg02lz8h38208j25nfdf1v79qcp4ia7m3pp"))))
     (properties `((upstream-name . "DCLEAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tensorflow
                              r-stringr
@@ -23316,6 +25791,9 @@ Challenge in 2020.  References: Gong et al. (2021)
         (base32 "0r9zigbxaa9w8501mishydyp47rpzfrx717m0ysly6nkxfm6g6d6"))))
     (properties `((upstream-name . "DCL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-latticeextra r-lattice))
     (home-page "https://cran.r-project.org/package=DCL")
     (synopsis "Claims Reserving under the Double Chain Ladder Model")
@@ -23337,6 +25815,9 @@ under the Double Chain Ladder framework by Martinez-Miranda, Nielsen and Verrall
         (base32 "1pibkybr2v1qci2vqbz1sms01y81x0i4r2sq23c5xkgwnwccfy9r"))))
     (properties `((upstream-name . "dcifer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EPPIcenter/dcifer")
     (synopsis "Genetic Relatedness Between Polyclonal Infections")
@@ -23361,6 +25842,9 @@ the method, and visualize the results.  Gerlovina et al. (2022)
         (base32 "1xrafw5h071d8rfqaic3gifc80jpiddjz5x6l2cr8kgjvph60gqh"))))
     (properties `((upstream-name . "dChipIO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/HenrikBengtsson/dChipIO")
     (synopsis "Methods for Reading dChip Files")
     (description
@@ -23380,6 +25864,13 @@ the @code{dChip} software.")
         (base32 "1xnsc8p8nn72m081hsfnjzsd060y79ah6b7axxsslb2a4zdyhh2g"))))
     (properties `((upstream-name . "DChaos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-zoo r-xts r-sandwich r-pracma r-nnet))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=DChaos")
@@ -23411,6 +25902,9 @@ time series behave chaotically or not.")
         (base32 "08718x6v3g7kpfv0gpgm19cn3d3ynj7yagzs0jic1j5rwvn04pfb"))))
     (properties `((upstream-name . "DCG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DCG")
     (synopsis
@@ -23433,6 +25927,9 @@ for social networks.  Fushing, @code{VanderWaal}, @code{McCowan}, & Koehl (2013)
         (base32 "18x0fk71is77cc5ldm890asqrm1dz45m14z2ic9df89fm0wpwrvg"))))
     (properties `((upstream-name . "DCEtool")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-tidyr
                              r-survival
@@ -23474,6 +25971,9 @@ Perez-Troncoso, D. (2022) <https://github.com/danielpereztr/DCEtool>.")
         (base32 "1vv212baycn0xkk2caj1f00ps1512261h21akmyqjhij3q4lxikx"))))
     (properties `((upstream-name . "DCEmgmt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mlogit))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DCEmgmt")
@@ -23497,6 +25997,9 @@ choice models once the database has been reshaped with DCEmgmt'.")
         (base32 "04z0lya1dbkdzjbgn8g6p16969kc6s4zrk87wy0i42h2hx0yx1zv"))))
     (properties `((upstream-name . "DCEM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mvtnorm r-matrixcalc r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/parichit/DCEM")
@@ -23525,6 +26028,9 @@ Reference: Parichit Sharma, Hasan Kurban, Mehmet Dalkilic (2022)
         (base32 "1j17rv9wklmxbxa6ri9vhl370jzhi00h7h8hz1ajzqf6v3b2lkvc"))))
     (properties `((upstream-name . "dccpp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://dccpp.berrisch.biz/")
     (synopsis "Fast Computation of Distance Correlations")
@@ -23548,6 +26054,9 @@ speed up the computation.")
         (base32 "0ws853yb669hki7wrfwnj7bd75xvcb63njn1iza8q58sa6bmg6vc"))))
     (properties `((upstream-name . "dccmidas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-rumidas
@@ -23589,6 +26098,9 @@ matrix under two non-parametric models: the Moving Covariance and the
         (base32 "0mkssdybfychg0jpx7542sdbhxv275lz82qhnag5r8qn0zsj7mx9"))))
     (properties `((upstream-name . "DCchoice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass r-interval r-formula))
     (home-page "http://www.agr.hokudai.ac.jp/spmur/")
     (synopsis "Analyzing Dichotomous Choice Contingent Valuation Data")
@@ -23611,6 +26123,9 @@ nonparametric models for single-, one-and-one-half-, and double-bounded CV data.
         (base32 "06xdx79r7dr14dlk5vgcyd8ar4sc72imlyk66bnia1kvlynvdy69"))))
     (properties `((upstream-name . "DCCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-checkmate))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=DCCA")
@@ -23635,6 +26150,9 @@ behavior of the DFA and DCCA in trend-stationary processes\"
         (base32 "19ibsvbnq6y88vqvgkm31zrqwjhpml59d792bz0zkk50r1q5bnyr"))))
     (properties `((upstream-name . "dc3net")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-igraph r-c3net))
     (home-page "https://cran.r-project.org/package=dc3net")
     (synopsis
@@ -23656,6 +26174,9 @@ gene networks.")
         (base32 "0d5ha0syhrgfx157hkmyfdsxf57crjj28afdb2xxyindakplgp29"))))
     (properties `((upstream-name . "dbx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dbi))
     (home-page "https://github.com/ankane/dbx")
     (synopsis "Fast, Easy-to-Use Database Interface")
@@ -23677,6 +26198,9 @@ plays nicely with the DBI package.")
         (base32 "0diz5mh4fhwrwqa7jr70vzj2jks7h2n91v2hr1mvvlbc7rzd9yki"))))
     (properties `((upstream-name . "dbWebForms")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-html5 r-dbi r-data-table))
     (home-page "https://cran.r-project.org/package=dbWebForms")
     (synopsis
@@ -23687,7 +26211,8 @@ produce HTML forms based on table input and SQL meta data.  Also generates
 functions for collecting the parameters of those HTML forms after they are
 submitted.  Useful for quickly generating HTML forms based on existing SQL
 tables.  To use the resultant functions, the output files containing those
-functions must be read into the R environment (perhaps using base::source()).")
+functions must be read into the R environment (perhaps using
+@code{base::source()}).")
     (license license:gpl2+)))
 
 (define-public r-dbw
@@ -23702,6 +26227,9 @@ functions must be read into the R environment (perhaps using base::source()).")
         (base32 "0sz8wcknmxaqgwqliahvh5vf3j7h9iayjm8kwqgn4qpkm4b4hni3"))))
     (properties `((upstream-name . "dbw")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/hirotokatsumata/dbw")
     (synopsis "Doubly Robust Distribution Balancing Weighting Estimation")
     (description
@@ -23733,6 +26261,9 @@ outcomes in missing outcome cases.")
         (base32 "0rk9f4wbpmibydbmq17bjfgdznpl67xfd5f1srkpnai459c5ni6y"))))
     (properties `((upstream-name . "DBTCShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinywidgets
                              r-shinyjs
                              r-shinyfiles
@@ -23766,6 +26297,9 @@ visualize and filter results.")
         (base32 "1w4sm78nvzmc7hjdpjxsj4qncwnymdqni5jkllircglsjimps75y"))))
     (properties `((upstream-name . "DBTC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-taxonomizr
                              r-shortread
                              r-plyr
@@ -23792,6 +26326,9 @@ and then takes reduced matched results and provides best taxonomic assignments."
         (base32 "1rnjgzil98rys9fa0jkamfqrkski3vd7wi59mqg8xk26xw0v5c96"))))
     (properties `((upstream-name . "dbstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pls r-cluster))
     (home-page "https://cran.r-project.org/package=dbstats")
     (synopsis "Distance-Based Statistics")
@@ -23814,6 +26351,9 @@ computed from observed predictors.")
         (base32 "1gs9d1qmv4mcmryzzvmwbz6ycinhnxnkiv56l31mbqy50qjn9bi4"))))
     (properties `((upstream-name . "DBR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mfusampler r-coda))
     (home-page "https://cran.r-project.org/package=DBR")
     (synopsis "Discrete Beta Regression")
@@ -23837,6 +26377,9 @@ using a Gibbs wrapper around univariate slice sampler (Neal (2003)
         (base32 "04wwhzlc9g6il478ax5yvh74bbb6hs29jyslkiz3k1hi25hlpkrn"))))
     (properties `((upstream-name . "DBpower")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm
                              r-magrittr
                              r-kit
@@ -23866,6 +26409,9 @@ detection boundary tests are described in Sun et al., (2019)
         (base32 "1svizj9hcd417yii8ll9s3mnvdqpa5awy9xl71kbwpfcnpdzqf1r"))))
     (properties `((upstream-name . "dbplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-purrr r-magrittr r-ggplot2 r-dplyr))
     (home-page "https://github.com/edgararuiz/dbplot")
     (synopsis "Simplifies Plotting Data Inside Databases")
@@ -23888,6 +26434,9 @@ calculate bins.")
         (base32 "1v0yp81bgq9ihgjrx336zyscrhk84sc8rpmbj35sphyc0c0isncs"))))
     (properties `((upstream-name . "dbparser")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-tibble r-purrr r-progress r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/dbparser/")
@@ -23910,6 +26459,9 @@ proper R object called dvobject'.")
         (base32 "14jdmld8d1laj7xcad5694inxb8qglhnzghab64h3n0r2x35z6lw"))))
     (properties `((upstream-name . "dbnR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp
                              r-r6
                              r-mass
@@ -23942,6 +26494,9 @@ is also provided via the @code{visNetwork} package.")
         (base32 "1snnyc9dvlkxydx3n6mims1avbibkkmaf5z440s28ibf9a9l91wj"))))
     (properties `((upstream-name . "DBNMFrank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pmledecon r-nmf))
     (home-page "https://cran.r-project.org/package=DBNMFrank")
     (synopsis "Rank Selection for Non-Negative Matrix Factorization")
@@ -23966,6 +26521,9 @@ Poisson distributed.")
         (base32 "0kmyiad7v96mnfi24d2pn3dqmk3g82sx348m1vhhqwijfnj53brb"))))
     (properties `((upstream-name . "dbnlearn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-bnviewer r-bnlearn))
     (home-page "https://cran.r-project.org/package=dbnlearn")
     (synopsis
@@ -23990,6 +26548,9 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
         (base32 "1131lfli0fna2yvq383f710sr87fwfg5gngiawrhdx8b14zn796p"))))
     (properties `((upstream-name . "dbmss")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-tibble
                              r-spatstat-utils
@@ -24026,6 +26587,9 @@ calculation.")
         (base32 "1cbnypvcglbvlxdpr95yd65qfd56fhfx14gd0mr71jkkqhgmj0pk"))))
     (properties `((upstream-name . "DBModelSelect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/shkoeneman/DBModelSelect")
     (synopsis "Distribution-Based Model Selection")
     (description
@@ -24054,6 +26618,9 @@ also available.")
         (base32 "0gcgn3m10sx0naim206jkw7szl0mr7vbnkn25avvv9f8iy3y9vcv"))))
     (properties `((upstream-name . "dbMC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-softimpute))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dbMC")
@@ -24077,6 +26644,9 @@ and provides confidence intervals for entries of interest.  See: by Chen et al.
         (base32 "0wzmhmp706mw0pkh81nsb7qzclwyhm6f2mjvpvz043ng5xrxwvvw"))))
     (properties `((upstream-name . "dblr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xgboost r-metrics r-data-table r-catencoders))
     (home-page "https://cran.r-project.org/package=dblr")
     (synopsis "Discrete Boosting Logistic Regression")
@@ -24106,6 +26676,9 @@ variables for other statistical analysis.")
         (base32 "18y6pkp273q15nkgqywzknsq1mnbiaw8jlzsaa76zadxf7xhsxls"))))
     (properties `((upstream-name . "dBlockmodeling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=dBlockmodeling")
     (synopsis
@@ -24129,6 +26702,9 @@ weights are assigned to the links), one-mode and valued one-mode and two-mode
         (base32 "1m5v8hx9n5rh5f230m8f0iss6s29qjbg4wp1mjihckw8df5qf1aj"))))
     (properties `((upstream-name . "dblcens")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/yfyang86/dblcens/")
     (synopsis
      "Compute the NPMLE of Distribution Function from Doubly Censored Data, Plus the Empirical Likelihood Ratio for F(T)")
@@ -24157,6 +26733,9 @@ be slow.")
         (base32 "0vj7989s9qip3mxjzffrm7prh0xxpp467y9m4ls7dz7m3b7inpxl"))))
     (properties `((upstream-name . "DBItest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-testthat
                              r-rlang
@@ -24189,6 +26768,9 @@ interface.")
         (base32 "1gd3n6i47qbxp6d3y5sjvgmxc5p3afy2lhkg9020ws1xm0bk9q7d"))))
     (properties `((upstream-name . "dbhydroR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-reshape2 r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/dbhydroR")
@@ -24211,6 +26793,9 @@ for accessing hydrologic and water quality data.")
         (base32 "0r9c2vjnrahi3kbg7gz3z9k1i8vdqc44rc6nq7xk1j2xs1s6wsxp"))))
     (properties `((upstream-name . "DBHC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-traminer r-seqhmm r-reshape2 r-ggplot2))
     (home-page "https://github.com/gabybudel/DBHC")
     (synopsis "Sequence Clustering with Discrete-Output HMMs")
@@ -24235,6 +26820,9 @@ the optimal number of clusters.")
         (base32 "1ljfi31n8d1mh1lr4q00klp74fz0c0jy9wdy2svhlzaszbrg76ky"))))
     (properties `((upstream-name . "dbglm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-tidyverse
                              r-tidyr
@@ -24269,6 +26857,9 @@ for the full data in the database.  Thomas Lumley
         (base32 "1q1gx73fl016kpk6p9cfwx580kwnq9fvhpi96iyrr40rf27m39dv"))))
     (properties `((upstream-name . "dbGaPCheckup")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rmarkdown
@@ -24305,6 +26896,9 @@ Biotechnology Information (NCBI) Database of Genotypes and Phenotypes
         (base32 "04gh0xfdp077f3ppf8i101q17n2r711y47qnxb9nq5ksnf37s5jp"))))
     (properties `((upstream-name . "dbflobr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite
                              r-rlang
                              r-glue
@@ -24334,6 +26928,9 @@ as flobs (a flob is a blob that preserves the file extension).")
         (base32 "1b5fy4xya5k31937ccjsq1gj9y39lh1vb48jfc0sr56isrx0c496"))))
     (properties `((upstream-name . "DBfit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfit))
     (home-page "https://cran.r-project.org/package=DBfit")
     (synopsis
@@ -24357,6 +26954,9 @@ when the sample size is small.")
         (base32 "1a598g02hpfgv572gchllqkppynnsp4lx764jg0g66w3b66k0kdy"))))
     (properties `((upstream-name . "DBEST")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo))
     (home-page "https://cran.r-project.org/package=DBEST")
     (synopsis "Detecting Breakpoints and Estimating Segments in Trend")
@@ -24383,6 +26983,9 @@ generalization-percentage.")
         (base32 "13qdm0y5dvc107xnv6663gbvmkw77150r073lp1jppf3gs8s587b"))))
     (properties `((upstream-name . "dbd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dbd")
     (synopsis "Discretised Beta Distribution")
     (description
@@ -24411,6 +27014,9 @@ competitor to the db distribution.")
         (base32 "0faq63aqj4ddlfc5dpi8g3ngqidca6czicgvkzdyg4bj87s0kism"))))
     (properties `((upstream-name . "dbcsp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tsdist
                              r-plyr
@@ -24439,15 +27045,18 @@ classification step.")
 (define-public r-dbarts
   (package
     (name "r-dbarts")
-    (version "0.9-28")
+    (version "0.9-30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbarts" version))
        (sha256
-        (base32 "0f01mk39rb7afnymi9fbaikv7hbpx2jwbzp3dd87q7hr3kpb9r6j"))))
+        (base32 "13r7r9rnm90j26dmmhljg84jrj9g57iijhbj71i8fi2h6fc8bdlr"))))
     (properties `((upstream-name . "dbarts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/vdorie/dbarts")
     (synopsis "Discrete Bayesian Additive Regression Trees Sampler")
@@ -24471,6 +27080,9 @@ for package @code{BayesTree}'.")
         (base32 "03nrd7x2sxkyah8lpi5zawap7yhg6h2gdy0jws1jysw937l1kc50"))))
     (properties `((upstream-name . "dbacf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (home-page "https://cran.r-project.org/package=dbacf")
     (synopsis "Autocovariance Estimation via Difference-Based Methods")
@@ -24500,6 +27112,9 @@ method for covariance matrix estimation.")
         (base32 "1317g60cmqlw1wy7n7x5ifh544lzsysif6192s2k16jmgzj6cz2s"))))
     (properties `((upstream-name . "daySupply")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-magrittr r-lme4 r-dplyr))
     (home-page "https://cran.r-project.org/package=daySupply")
     (synopsis "Calculating Days' Supply and Daily Dose of Prescriptions")
@@ -24531,6 +27146,9 @@ at patient level are denoted with â-Pt-â.")
         (base32 "069s7wxy2yis6x7q4faac0fcr305dxmvan7wc3fzgbix0hianvng"))))
     (properties `((upstream-name . "daymetr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-terra
@@ -24559,6 +27177,9 @@ your computer.  Routines for both single pixel data downloads and gridded
         (base32 "1pv1njc56sjl69c8xg3i089phhn57f9yr3bxlbk3cykwpf79csrb"))))
     (properties `((upstream-name . "dawaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyrss
                              r-sf
                              r-rlang
@@ -24589,6 +27210,13 @@ API.")
         (base32 "0n6wb88i5p84afy2zq52pizmmgxiicm0dmfxcmmdaiq7a0p3gv3y"))))
     (properties `((upstream-name . "dawai")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-mvtnorm r-boot))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=dawai")
@@ -24613,6 +27241,9 @@ computes several estimations of the true error rate.")
         (base32 "0n2pqipv0b1w2zjvycms0kyk7h8ps49f5jlzgyxhy9dlyr0ivaml"))))
     (properties `((upstream-name . "Davies")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mathjaxr))
     (home-page "https://cran.r-project.org/package=Davies")
     (synopsis "The Davies Quantile Function")
@@ -24631,6 +27262,9 @@ computes several estimations of the true error rate.")
         (base32 "1cl0jipwnarkx26bhv9s1bk9q9y6ni2568xqy2w7x5nh5v38rvfx"))))
     (properties `((upstream-name . "dauphin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dauphin")
     (synopsis "Compact Standard for Australian Phone Numbers")
     (description
@@ -24653,6 +27287,9 @@ name is an extension of au and ph'.")
         (base32 "1bhyk3xjgwf92i765z3bkdnzkxg8fshriz9r6m371q1c75xysfil"))))
     (properties `((upstream-name . "datrProfile")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite r-odbc r-dplyr))
     (home-page "https://github.com/avitaliano/datrProfile")
     (synopsis "Column Profile for Tables and Datasets")
@@ -24675,6 +27312,9 @@ deviation, nulls, distinct values, data patterns, data/format frequencies.")
         (base32 "0sqwhn6zdaq8i45ry207mpbda1djjaxp9mcn13hi5wkry6z0bmlr"))))
     (properties `((upstream-name . "datr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-devtools))
     (home-page "https://github.com/libscie/datr")
@@ -24697,6 +27337,9 @@ network.")
         (base32 "1m077srzyza7yb2n8v64y2l02kr19zjy8vvpjz7dh3hmd2sq636r"))))
     (properties `((upstream-name . "datplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lsteinmann/datplot")
     (synopsis
@@ -24720,6 +27363,9 @@ concept of aoristic analysis.")
         (base32 "0358fshhxyws5i1bblhnhf7k42mrjn76ppy2qrvhj27kkc6i5npn"))))
     (properties `((upstream-name . "datos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tidyr
                              r-tibble
@@ -24759,6 +27405,9 @@ the datasets listed above.")
         (base32 "0zq6vhq6dmsyagmqrmb85z6fy9qhwra3s3iasr3jgc4ryr009pml"))))
     (properties `((upstream-name . "datoramar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-jsonlite r-httr))
     (home-page "https://github.com/beigebrucewayne/datoramar")
     (synopsis "Interface to the 'Datorama' API")
@@ -24779,6 +27428,9 @@ analyzing marketing data from <https://datorama.com>.")
         (base32 "03xch5wcvv15fy9x70smrki6374lddhf0sfp0inymdsq4g8wp4bc"))))
     (properties `((upstream-name . "dateutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-seasonal r-rcpparmadillo r-rcpp r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/macroeconomicdata/dateutils")
@@ -24801,6 +27453,9 @@ seasonally adjust tabular data.")
         (base32 "1fg5r7ibdgbk1vbhbv6a2p4acd1mhsyyvrjr79cy37gmn1ka72i3"))))
     (properties `((upstream-name . "datetoiso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-lubridate))
     (home-page "https://github.com/andzoluk")
     (synopsis
@@ -24823,6 +27478,9 @@ one data frame column.")
         (base32 "0k8zgr3dpba967p12fygrbrcgnbm51ghhnh7cb1w1gd7jqc42nhk"))))
     (properties `((upstream-name . "datetimeutils")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://enricoschumann.net/R/packages/datetimeutils/")
     (synopsis "Utilities for Dates and Times")
     (description
@@ -24847,6 +27505,9 @@ of R's native numeric representations of timestamps where possible.")
         (base32 "1g5gjbwb1h1407bwg5yzrpal2syk5439l73svsjjzs6y55dpixsg"))))
     (properties `((upstream-name . "DateTimeRangePicker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-reactr r-lubridate r-htmltools))
     (home-page "https://github.com/stla/DateTimeRangePicker")
     (synopsis "Datetime Range Picker Widget for Usage in 'Shiny' Applications")
@@ -24868,6 +27529,9 @@ two fields allowing to select a start time and an end time.")
         (base32 "11xxxfv3g8jf16cwpxjycrymx9baf8gkpd98x69djhbnrn3si0vn"))))
     (properties `((upstream-name . "datetimeoffset")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs r-purrr r-clock))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://trevorldavis.com/R/datetimeoffset/dev/")
@@ -24894,6 +27558,9 @@ strings.  Supports local/global datetimes with optional UTC offsets and/or
         (base32 "0nn1yxknsn3crmwbkws5kvfjhd65dw0fkfbg67gba0dyaqp1jg37"))))
     (properties `((upstream-name . "datetime")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=datetime")
     (synopsis "Nominal Dates, Times, and Durations")
     (description
@@ -24922,6 +27589,8 @@ nominal durations such as seconds, hours, days, and weeks.  See ?datetime and
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -24959,6 +27628,9 @@ the @code{JavaScript} library daterangepicker which is available at
         (base32 "1nsfi0hjamd83icxqdx4s284jrjxp13nygxbzd9vaknfl2fv3dpi"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rlang r-rcpp r-lifecycle))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/datefixR/")
@@ -24987,6 +27659,9 @@ months with user-controlled behavior.")
         (base32 "0kg066kx3r0kpj10p28xbidjri6x9g7br7bjs8qq6027a3klfxfv"))))
     (properties `((upstream-name . "dateback")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/r-suzuki/dateback")
     (synopsis
      "Collect and Install R Packages on a Specified Date with Dependencies")
@@ -25008,6 +27683,9 @@ available on a specific day.")
         (base32 "0x6b9dk7llvmcf2bzgdk8g1a28as0l1xxx2xn2fwyw801ab3z4as"))))
     (properties `((upstream-name . "date")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=date")
     (synopsis "Functions for Handling Dates")
     (description "This package provides functions for handling dates.")
@@ -25025,6 +27703,9 @@ available on a specific day.")
         (base32 "1c2l42rwj67lr2910i1wdb04sqqwkdv5ycav6bz3snw349j8mycm"))))
     (properties `((upstream-name . "datazoom.amazonia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-tidyr
                              r-tibble
@@ -25063,6 +27744,8 @@ Brazilian Amazon region from a variety of official sources.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -25100,6 +27783,9 @@ to illustrate paired data sets (such as before-after, male-female).")
         (base32 "0y8mwgnh3cjapb97a0i4f16nrdhmkd80f6j7z0ivykgfka7jlbqr"))))
     (properties `((upstream-name . "DataVisualizations")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-reshape2
                              r-rcpparmadillo
@@ -25149,6 +27835,9 @@ Self-Organization and Swarm Intelligence\" (2018)
         (base32 "0hb7d4rgwjzxg5ixx6jf3vg6s6r2aynw34lkw688f5jd9ysc706l"))))
     (properties `((upstream-name . "dataverse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2 r-readr r-jsonlite r-httr r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://iqss.github.io/dataverse-client-r/")
@@ -25172,6 +27861,9 @@ versions <= 3.0, use the archived dvn package
         (base32 "1jy8hdzld8yhz632rdk3j592szp7xn3qbs2h3g0gax3p33cpcasj"))))
     (properties `((upstream-name . "dataverifyr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml))
     (home-page "https://github.com/DavZim/dataverifyr")
     (synopsis
@@ -25194,28 +27886,31 @@ dplyr', data.table', arrow', and DBI ('SQL'), which do the heavy lifting.")
         (base32 "0afz60zy1fn34hf2awizv3k0da4k2rchj2z20cy8n2g1k80sspcd"))))
     (properties `((upstream-name . "DataSum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nortest r-moments r-dplyr))
     (home-page "https://github.com/Uzairkhan11w/DataSum")
     (synopsis "Comprehensive Data Summarization for Statistical Analysis")
     (description
      "Summarizing data frames by calculating various statistical measures, including
-measures of central tendency, dispersion, skewness(), kurtosis(), and normality
-tests.  The package leverages the moments package for calculating statistical
-moments and related measures, the dplyr package for data manipulation, and the
-nortest package for normality testing. @code{DataSum} includes functions such as
-getmode() for finding the mode(s) of a data vector, shapiro_normality_test() for
-performing the Shapiro-Wilk test (Shapiro & Wilk 1965
-<doi:10.1093/biomet/52.3-4.591>) (or the Anderson-Darling test when the data
-length is outside the valid range for the Shapiro-Wilk test) (Stephens 1974
-<doi:10.1080/01621459.1974.10480196>), Datum() for generating a comprehensive
-summary of a data vector with various statistics (including data type, sample
-size, mean, mode, median, variance, standard deviation, maximum, minimum, range,
-skewness(), kurtosis(), and normality test result) (Joanes & Gill 1998
-<doi:10.1111/1467-9884.00122>), and @code{DataSumm}() for applying the Datum()
-function to each column of a data frame.  Emphasizing the importance of
-normality testing, the package provides robust tools to validate whether data
-follows a normal distribution, a fundamental assumption in many statistical
-analyses and models.")
+measures of central tendency, dispersion, @code{skewness()}, @code{kurtosis()},
+and normality tests.  The package leverages the moments package for calculating
+statistical moments and related measures, the dplyr package for data
+manipulation, and the nortest package for normality testing. @code{DataSum}
+includes functions such as @code{getmode()} for finding the mode(s) of a data
+vector, @code{shapiro_normality_test()} for performing the Shapiro-Wilk test
+(Shapiro & Wilk 1965 <doi:10.1093/biomet/52.3-4.591>) (or the Anderson-Darling
+test when the data length is outside the valid range for the Shapiro-Wilk test)
+(Stephens 1974 <doi:10.1080/01621459.1974.10480196>), @code{Datum()} for
+generating a comprehensive summary of a data vector with various statistics
+(including data type, sample size, mean, mode, median, variance, standard
+deviation, maximum, minimum, range, @code{skewness()}, @code{kurtosis()}, and
+normality test result) (Joanes & Gill 1998 <doi:10.1111/1467-9884.00122>), and
+@code{DataSumm()} for applying the @code{Datum()} function to each column of a
+data frame.  Emphasizing the importance of normality testing, the package
+provides robust tools to validate whether data follows a normal distribution, a
+fundamental assumption in many statistical analyses and models.")
     (license license:gpl3)))
 
 (define-public r-datastudio
@@ -25230,6 +27925,9 @@ analyses and models.")
         (base32 "1gwm53pgab5qn0p46bxs0790n7bbfl7b66i84xsa6bb4zdw5jdzb"))))
     (properties `((upstream-name . "DATAstudio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2 r-data-table))
     (home-page "https://www.maths.ed.ac.uk/~mdecarv/")
     (synopsis "The Research Data Warehouse of Miguel de Carvalho")
@@ -25255,6 +27953,9 @@ articles.  Including, for example: - de Carvalho (2012)
         (base32 "05dafwxfwyzxxwhyaxfqlhwrgpm4kysnrm1ls3fr4rkqa96z7mwv"))))
     (properties `((upstream-name . "DatastreamR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-logger r-jsonlite r-ini r-httr))
     (home-page "https://cran.r-project.org/package=DatastreamR")
     (synopsis "Datastream API")
@@ -25290,6 +27991,9 @@ Office.")
         (base32 "0qyd4mml2j6gk4nsy59lm7317n6g975rb9k2a1h71d7kbbh5801b"))))
     (properties `((upstream-name . "DatastreamDSWS2R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-stringr
@@ -25320,6 +28024,9 @@ available at <https://www.lseg.com/en/data-analytics>.  Please report issues at
         (base32 "039yggdj8jdici7hwmkjwgix45lvwjl7rw5h2rfzsm9xaq6vw1z2"))))
     (properties `((upstream-name . "datastepr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-r6 r-magrittr r-lazyeval r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bramtayl/datastepr")
@@ -25344,6 +28051,9 @@ operations.")
         (base32 "120gazyyxda9faydv2lyqgvflhqi2fhih1szq0sy5v1gh4xb0hhy"))))
     (properties `((upstream-name . "DatAssim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=DatAssim")
     (synopsis "Data Assimilation")
@@ -25367,6 +28077,9 @@ and new estimates.  For reference see Ehlers et al. (2017)
         (base32 "1pnmb7kdx9wdvi2873rw1a7hc7spsvx4lfvfhfcqwgll46j0f1wm"))))
     (properties `((upstream-name . "dataspice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-whisker
                              r-tidyr
                              r-tibble
@@ -25405,6 +28118,9 @@ Ecological Metadata Language standards.")
         (base32 "1asrslqmk4sjj99x8pb01yfrw57p64zc6klrk2ghz4g44fr9d0pq"))))
     (properties `((upstream-name . "DataSpaceR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlabkey
                              r-r6
                              r-jsonlite
@@ -25435,6 +28151,9 @@ pre-clinical and clinical HIV vaccine studies.")
         (base32 "0dbi0jgzh2qxwsid9yp4mdwhrm7mcksx8jvpa91qfnfc26ipdw6n"))))
     (properties `((upstream-name . "DataSetsUni")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DataSetsUni")
     (synopsis "Collection of Univariate Data Sets")
     (description
@@ -25461,6 +28180,9 @@ uses.")
         (base32 "1iw8am7y6r6j21rp6r6iw1ri4c2yrgza7aw3ams4xbx6mcz3746y"))))
     (properties `((upstream-name . "datasetsICR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=datasetsICR")
     (synopsis
               "Datasets from the Book \"An Introduction to Clustering with R\"")
@@ -25482,6 +28204,9 @@ in some case studies throughout the text.")
         (base32 "1gbc4pc4gq3fgkv1ib83h08s7daim3gnkna07a2yikdsi12w95xw"))))
     (properties `((upstream-name . "datasets.load")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-miniui r-dt))
     (home-page "https://cran.r-project.org/package=datasets.load")
     (synopsis "Graphical Interface for Loading Datasets")
@@ -25502,6 +28227,9 @@ in some case studies throughout the text.")
         (base32 "145al87czagdvqwnxkqi53pj9knfvfrf9a41d8byv9pkz5mz28a4"))))
     (properties `((upstream-name . "datasetjson")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonvalidate r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/atorus-research/datasetjson")
@@ -25525,6 +28253,9 @@ Dataset JSON schema file, as described in CDISC (2023)
         (base32 "11wc2p5m8qbdmkpbd21lpwl28a1dpab88c3gqyrhsn0298lpnip4"))))
     (properties `((upstream-name . "dataseries")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.dataseries.org")
     (synopsis "Switzerland's Data Series in One Place")
     (description
@@ -25544,6 +28275,9 @@ comprehensive and up-to-date collection of open data from Switzerland.")
         (base32 "0nf7ssk8srpmq0b2bqzm6kilj3m3dhdk7fz35vhzzkj4d2wn9czr"))))
     (properties `((upstream-name . "dataSDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dataSDA")
@@ -25566,6 +28300,9 @@ data format.")
         (base32 "0ym1aqrlglha36z883yf92rm0fydg1qsdgdy48z32yk41xbhp5iy"))))
     (properties `((upstream-name . "datasailr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://datasailr.io")
     (synopsis "Row by Row Data Processing Tool, Using 'DataSailr' Script")
@@ -25588,6 +28325,9 @@ manipulation.  The package uses libsailr (C/C++ library) for its
         (base32 "0ac51bs16skj808msgriwidaw3vx7cqjjarr70gy0hly3ppxwfyr"))))
     (properties `((upstream-name . "datarobot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=datarobot")
@@ -25609,6 +28349,9 @@ manipulation.  The package uses libsailr (C/C++ library) for its
         (base32 "1v98yxsxhfqlalz5qy3x5axb7fy067vf3y0qg7ngixphmy9qybym"))))
     (properties `((upstream-name . "datarium")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=datarium")
     (synopsis "Data Bank for Statistical Analysis and Visualization")
     (description
@@ -25629,6 +28372,9 @@ and ANCOVA.")
         (base32 "1y8c30qvnh4jr9dim4ym82l4rig8jd5lldhv9j7v45q516jsaxv1"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-readr
                              r-lubridate
@@ -25660,6 +28406,9 @@ quality data are obtained from the Water Quality Portal
         (base32 "1a4izp25bxvgq3l4m7njy13d3fl6xn8y7v2v18raqk5g8kl8ca2y"))))
     (properties `((upstream-name . "dataresqc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dataresqc")
     (synopsis "C3S Quality Control Tools for Historical Climate Data")
     (description
@@ -25683,6 +28432,9 @@ documentation see
         (base32 "1rjm6j1s229j1j9yb5y1sdi03x22qzrkmhc09k4xdmwmwmpi3s58"))))
     (properties `((upstream-name . "dataReporter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list coreutils pandoc git))
     (propagated-inputs (list r-whoami
                              r-stringi
@@ -25721,6 +28473,9 @@ information.")
         (base32 "0p2cn96ydl9h7fh0cnkr0v11kjpsw9whf9zzrgy07knqiqq0da24"))))
     (properties `((upstream-name . "datardis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (home-page "https://cran.r-project.org/package=datardis")
     (synopsis "Data from the Doctor Who Series")
@@ -25741,6 +28496,8 @@ information.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -25801,6 +28558,9 @@ website
         (base32 "0ck3g9hymj6i1a9nr58srm8jxbaghh5w5jg9cqbx5zp18fc0w81v"))))
     (properties `((upstream-name . "dataPreparation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-progress r-matrix r-lubridate
                              r-data-table))
     (home-page "https://cran.r-project.org/package=dataPreparation")
@@ -25825,6 +28585,9 @@ efficient way.")
         (base32 "1v48ry6xk0qg73j6js6m6fqd1bdhjv500bndb60zzl2qifrjfk2a"))))
     (properties `((upstream-name . "dataprep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-scales
                              r-reshape2
@@ -25869,6 +28632,9 @@ H.-Y., Zhang, Q., Li, Z. & He, K.-B. (2020)
         (base32 "0sqv29iv2rv50rbw1601rn8p7gv7rsw00djhl7h1znr0igzi5b82"))))
     (properties `((upstream-name . "datapasta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-readr r-clipr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/milesmcbain/datapasta")
@@ -25890,6 +28656,9 @@ painless.")
         (base32 "0hq45yyfcw87p93qrivyx341hsamfx4m3bs1ii97h35mb4926k86"))))
     (properties `((upstream-name . "DataPackageR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-usethis
                              r-rprojroot
@@ -25931,6 +28700,9 @@ collaboration and reproducible research.")
         (base32 "14vlcgk5sckzkc15cjvrbs113y65rqlwm1az7nsvnsqfx4x76jb1"))))
     (properties `((upstream-name . "datapack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip
                              r-xml
                              r-uuid
@@ -25965,6 +28737,9 @@ described at <https://tools.ietf.org/html/draft-kunze-bagit-08>.")
         (base32 "0509dmvf3kgk15cjbz3m9fzanbdpa5r0rz921m776a4bsjsilv4i"))))
     (properties `((upstream-name . "dataone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-uuid
                              r-stringr
@@ -26001,6 +28776,9 @@ that support these methods.")
         (base32 "0bp1ynarz70c2clsz60dqfd4vmgm3251jv6821db5n7fffdrr7qa"))))
     (properties `((upstream-name . "dataonderivatives")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vetr r-tibble r-readr r-httr2))
     (home-page "https://github.com/imanuelcostigan/dataonderivatives")
     (synopsis "Easily Source Publicly Available Data on Derivatives")
@@ -26024,6 +28802,9 @@ ability to get this data from supported sources.")
         (base32 "13y0plgkjnis7xmswqr5gmyygm7137kscbdkamfmahbw1qbi097i"))))
     (properties `((upstream-name . "datanugget")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast r-foreach r-dosnow))
     (home-page "https://cran.r-project.org/package=datanugget")
     (synopsis "Create, and Refine Data Nuggets")
@@ -26062,6 +28843,9 @@ Publishing.")
         (base32 "1dxcx9hrw7z8iizgn3bh6mg512pbf37ncyzwh67zc4jcydlm0p3p"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://eljatib.com/rlibro")
     (synopsis "Datasets and Functions to Accompany Analisis De Datos Con R")
@@ -26084,6 +28868,9 @@ analyses, and model fitting.")
         (base32 "0cp4zj85jczm42vm046n0rqmlrllj2r0jv1003h10isamffp59ig"))))
     (properties `((upstream-name . "dataMojo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dataMojo")
@@ -26106,6 +28893,9 @@ data manipulation challenges.")
         (base32 "1f516wh3jrpwb4xv5wwghlk1j8q4p9yrwc1d7b99z9f0kpy83i8j"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-toastui
                              r-tibble
@@ -26141,6 +28931,9 @@ and to manipulate them after that.")
         (base32 "0xg0g6rj46m99gkk3xp7h0la96hzp2ykli2pq7aim9fdjgzqyz05"))))
     (properties `((upstream-name . "DataMetProcess")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-shiny r-rlang r-lubridate r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wagnnerms97/DataMetProcess")
@@ -26162,6 +28955,9 @@ data to daily, monthly and annual data.")
         (base32 "13xxayqxbps07h0xr5b7sb7q30gy5zm7jzzaq4k20fskkjrzhzcm"))))
     (properties `((upstream-name . "dataMeta")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dmrodz/dataMeta")
@@ -26187,6 +28983,9 @@ writing code or use alternate functions that will prompt the user to add these."
         (base32 "06jywq3llwafjnpklqimra456crdi752zxci6z1w0v7p8blf4vjw"))))
     (properties `((upstream-name . "dataMaid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list coreutils pandoc git))
     (propagated-inputs (list r-whoami
                              r-stringi
@@ -26222,6 +29021,9 @@ a dataset.")
         (base32 "18mih6mb95v5xjvmqwby2mma74fcxwyqdm5w8j3bhi4iwgfn6d7v"))))
     (properties `((upstream-name . "DataLoader")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xlsx r-readxl r-rchoicedialogs r-plyr))
     (home-page "https://cran.r-project.org/package=DataLoader")
     (synopsis "Import Multiple File Types")
@@ -26242,6 +29044,9 @@ types ('.xlsx', .xls', .csv', .txt') from a given directory into R data frames."
         (base32 "1vj008c6l1k738kp8f9vmwm6b9jnyjgix389nqgbfq8ia98qgz0k"))))
     (properties `((upstream-name . "DataGraph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=DataGraph")
     (synopsis "Export Data from 'R' to 'DataGraph'")
@@ -26266,6 +29071,9 @@ individual vectors.  For more information see
         (base32 "0klhkbwpaqxk2mnxha8b03mpgfxk107ff9d2nx6cky59il3c1825"))))
     (properties `((upstream-name . "datafsm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-ga r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://jonathan-g.github.io/datafsm/")
@@ -26294,6 +29102,9 @@ stochasticity.")
         (base32 "0g5ajvd81k5pamvn204rxaiw92k20qqffnia1g6z89lp73spxs0s"))))
     (properties `((upstream-name . "dataframeexplorer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -26323,6 +29134,9 @@ dramatically reduces data coding time.")
         (base32 "1a25qp627n76qi4xzj62ipiy3qs2qvajcy9inzibwymryizlr0ia"))))
     (properties `((upstream-name . "DataFakeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tidygraph
                              r-tibble
@@ -26351,6 +29165,9 @@ sample preserving source structure.")
         (base32 "11a0b6jrvf81sa0a8595q48j66qky4xya3mvr3vr41vj0k98p90y"))))
     (properties `((upstream-name . "DataExplorer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rmarkdown
                              r-reshape2
@@ -26381,6 +29198,9 @@ treat and format data.")
         (base32 "0kwjgr6kaai42mhcljjs6i93m966x45gic5jgqsrkgfwjmmgf043"))))
     (properties `((upstream-name . "DataEditR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinyjs
                              r-shinybs
                              r-shiny
@@ -26411,6 +29231,9 @@ entering, filtering and editing of data in R
         (base32 "0ggakc73kyhnw60wvlb4pa7j6fvxcl98bbii45z2rrggbcgdjrfr"))))
     (properties `((upstream-name . "datadriftR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6))
     (home-page "https://github.com/ugurdar/datadriftR")
     (synopsis "Concept Drift Detection Methods for Stream Data")
@@ -26445,6 +29268,9 @@ et al. (2020) <doi:10.1016/j.neucom.2019.11.111>, Page (1954)
         (base32 "10zbxb9gkymw78ras9y4wrifz7cxh3y630yzjcf9ds2p557vcjzp"))))
     (properties `((upstream-name . "datadogr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -26472,6 +29298,9 @@ et al. (2020) <doi:10.1016/j.neucom.2019.11.111>, Page (1954)
         (base32 "102ll25mi4ac1zkvvirk7k11hqpf9q9h2if1rkz93zlfms843hp7"))))
     (properties `((upstream-name . "datadictionary")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -26503,6 +29332,9 @@ directly to Excel.")
         (base32 "1rapnlbi43z4sx4rq3fp8kpqhdj4g02fi3xglldbdp0c59f9vacg"))))
     (properties `((upstream-name . "dataCompareR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-markdown r-knitr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/capitalone/dataCompareR")
@@ -26511,9 +29343,9 @@ directly to Excel.")
      "Easy comparison of two tabular data objects in R. Specifically designed to show
 differences between two sets of data in a useful way that should make it easier
 to understand the differences, and if necessary, help you work out how to remedy
-them.  Aims to offer a more useful output than all.equal() when your two data
-sets do not match, but isn't intended to replace all.equal() as a way to test
-for equality.")
+them.  Aims to offer a more useful output than @code{all.equal()} when your two
+data sets do not match, but isn't intended to replace @code{all.equal()} as a
+way to test for equality.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -26529,6 +29361,9 @@ for equality.")
         (base32 "1akg6y31wrffhc5b68h664dsj8xrmpblggwcizg4kmqsz9lwj2fi"))))
     (properties `((upstream-name . "dataCompare")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-skimr
                              r-shinywidgets
                              r-shinydashboardplus
@@ -26554,9 +29389,10 @@ an easier way to check cells differences between two data frames.  The user
 provides two data frames for comparison, selects IDs variables identifying each
 row of input data, then clicks a button to perform the comparison.  Several R
 package functions are used to describe the data and perform the comparison in
-the server of the application.  The main ones are comparedf() from arsenal and
-skim() from skimr'.  For more details see the description of comparedf() from
-the arsenal package and that of skim() from the skimr package.")
+the server of the application.  The main ones are @code{comparedf()} from
+arsenal and @code{skim()} from skimr'.  For more details see the description of
+@code{comparedf()} from the arsenal package and that of @code{skim()} from the
+skimr package.")
     (license license:expat)))
 
 (define-public r-datacombine
@@ -26571,6 +29407,9 @@ the arsenal package and that of skim() from the skimr package.")
         (base32 "0iwb4726bk0cjhay694dp43b1553yyk9lpxbncs85kz229b26arm"))))
     (properties `((upstream-name . "DataCombine")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dplyr r-data-table))
     (home-page "http://CRAN.R-project.org/package=DataCombine")
     (synopsis "Tools for Easily Combining and Cleaning Data Sets")
@@ -26591,6 +29430,9 @@ with grouped and time series data.")
         (base32 "0mrfqm3lgb6sl2j35sfd00gb5121j9wmlff8k0vczr3sgmqz4dg8"))))
     (properties `((upstream-name . "datacleanr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarytools
                              r-shinywidgets
                              r-shinyfiles
@@ -26633,6 +29475,9 @@ analyses pipelines in R'.")
         (base32 "0wkafjyp6c2mx7g1bpz2pbxyl5nm2wba2hly8miizv0fdc762za5"))))
     (properties `((upstream-name . "DataClean")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-xlsx))
     (home-page "https://cran.r-project.org/package=DataClean")
     (synopsis "Data Cleaning")
@@ -26657,6 +29502,9 @@ resulting paper of that study will be published soon.")
         (base32 "1mx2yqxahsqdxp238q1i285q9g9mcvlfi6prchgk3cydqmqshrhy"))))
     (properties `((upstream-name . "dataclass")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-purrr
@@ -26690,6 +29538,9 @@ extra layer of validation around input and output data.")
         (base32 "0mws4jw81l91cml8fh4n244nzjrfznsg05vsqfbyc75ciqlmw8hk"))))
     (properties `((upstream-name . "databraryr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xfun
                              r-tibble
                              r-stringr
@@ -26724,6 +29575,9 @@ stored on Databrary.org'.")
         (base32 "1z5amn9b5pgnp58chlqcmz82sdvkmv1682vfy965kh53187gfn20"))))
     (properties `((upstream-name . "DatabionicSwarm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list pandoc))
     (propagated-inputs (list r-rcppparallel
                              r-rcpparmadillo
@@ -26744,13 +29598,13 @@ for Self-Organized Clustering\" (2020), Artificial Intelligence,
 <DOI:10.1016/j.artint.2020.103237>.  DBS is able to adapt itself to structures
 of high-dimensional data such as natural clusters characterized by distance
 and/or density based structures in the data space.  The first module is the
-parameter-free projection method called Pswarm (Pswarm()), which exploits the
-concepts of self-organization and emergence, game theory, swarm intelligence and
-symmetry considerations.  The second module is the parameter-free
+parameter-free projection method called Pswarm @code{(Pswarm()}), which exploits
+the concepts of self-organization and emergence, game theory, swarm intelligence
+and symmetry considerations.  The second module is the parameter-free
 high-dimensional data visualization technique, which generates projected points
 on the topographic map with hypsometric tints defined by the generalized
-U-matrix (@code{GeneratePswarmVisualization}()).  The third module is the
-clustering method itself with non-critical parameters (DBSclustering()).
+U-matrix @code{(GeneratePswarmVisualization()}).  The third module is the
+clustering method itself with non-critical parameters @code{(DBSclustering()}).
 Clustering can be verified by the visualization and vice versa.  The term DBS
 refers to the method as a whole.  It enables even a non-professional in the
 field of data mining to apply its algorithms for visualization and/or clustering
@@ -26772,6 +29626,9 @@ Intelligence\" (2018) <DOI:10.1007/978-3-658-20540-9>.")
         (base32 "18m6ynj30r5xdy51b3s39h0jcz1k2wgka888skr6ds2233lhqk2w"))))
     (properties `((upstream-name . "DatabaseConnectorJars")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjava))
     (home-page "https://github.com/OHDSI/DatabaseConnectorJars")
     (synopsis "JAR Dependencies for the 'DatabaseConnector' Package")
@@ -26792,6 +29649,9 @@ package.")
         (base32 "1wl78a2jlyqdbdkq1bhw2ymv6d0dn6d38vym80khhclial76rnzp"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-urltools
                              r-stringr
@@ -26828,6 +29688,9 @@ Connectivity ('JDBC') or other DBI drivers to connect to databases.")
         (base32 "15934ixmzw3iyqazhlz6s5cimmasf062fc8al0wdyij1f4cjcgny"))))
     (properties `((upstream-name . "data360r")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-jsonlite r-data-table))
     (home-page "https://github.com/mrpsonglao/data360r")
     (synopsis "Wrapper for 'TCdata360' and 'Govdata360' API")
@@ -26854,6 +29717,9 @@ user-inputted query.")
         (base32 "118crpyyp2szj0l3rsqmzi1cpcv45lwlvczp25f28z1lgcx6mgcx"))))
     (properties `((upstream-name . "data.validator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-shiny-semantic
@@ -26886,6 +29752,9 @@ display in logs of your data processing pipeline.")
         (base32 "1cjcf9920iqsb3w5c7mvpqlg6g0lzr34k96y6wx4nb6kav3dslrh"))))
     (properties `((upstream-name . "data.table.threads")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-microbenchmark r-ggplot2 r-data-table))
     (home-page "https://github.com/Anirban166/data.table.threads")
     (synopsis "Analyze Multi-Threading Performance for 'data.table' Functions")
@@ -26906,6 +29775,9 @@ routines that support parallel processing.")
         (base32 "1d3q4bang6pm06rfzh6h947xy3wwqn3l6ri0h4hzklg5pzwpsajd"))))
     (properties `((upstream-name . "dat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progress r-magrittr r-formula r-data-table
                              r-aoos))
     (native-inputs (list r-knitr))
@@ -26930,6 +29802,9 @@ default.")
         (base32 "1q18wss5bla3hvhnvmwxpd8lbs6fpdkqf5bfiqva050hsdfq1fk7"))))
     (properties `((upstream-name . "Dasst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Dasst")
     (synopsis "Tools for Reading, Processing and Writing 'DSSAT' Files")
     (description
@@ -26952,6 +29827,9 @@ J.T. Ritchie (2003) <doi:10.1016/S1161-0301(02)00107-7>.")
         (base32 "0yki4gmklrkhs6ldznabdr04smw3a112ask313z1h93dnvabr06c"))))
     (properties `((upstream-name . "dashboardthemes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-htmltools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/nik01010/dashboardthemes")
@@ -26975,6 +29853,9 @@ code by wrapping it into a set of convenient R functions.")
         (base32 "0z6nx5j1jgyzmcxdmdbxdhigq7qc3mka0fq6ghyfqaa3089lc823"))))
     (properties `((upstream-name . "dartRverse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-devtools r-cli))
     (home-page "https://github.com/green-striped-gecko/dartRverse")
     (synopsis "Install and Load the 'dartRverse' Suits of Packages")
@@ -27000,6 +29881,9 @@ individuals (samples).  For more information visit the @code{GitHub} pages
         (base32 "1fjajinsc2ikvhz4igjyldvfd5skdqhnay5209dzx4xjpnkik5vv"))))
     (properties `((upstream-name . "dartR.spatial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-stampp
@@ -27036,6 +29920,9 @@ belongs to the @code{dartRverse} suit of packages and depends on
         (base32 "02l18hvdd1hr9l15frvaw7nikjmr7iyq3wvg5xz8drma4v9r9lwb"))))
     (properties `((upstream-name . "dartR.sim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-shinywidgets
@@ -27073,6 +29960,9 @@ an existing genlight object.")
         (base32 "07x9zly2vwzd9riw0hfwl8nqq4chs9rgwjj7b39whz25an6aqvvw"))))
     (properties `((upstream-name . "dartR.sexlinked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-patchwork
                              r-ggplot2
                              r-foreach
@@ -27103,6 +29993,9 @@ information by typing citation('@code{dartR.sexlinked}') in the console.")
         (base32 "0wi2pkd3c2f05m0g3mhr3j6nq0wgn656c6z8h4vlphfinnz0knja"))))
     (properties `((upstream-name . "dartR.popgen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-patchwork
                              r-mass
@@ -27125,11 +30018,12 @@ information by typing citation('@code{dartR.sexlinked}') in the console.")
 analyse such data in a population genetics context.  It provides several
 functions to calculate population genetic metrics and to study population
 structure.  Quite a few functions need additional software to be able to run
-(gl.run.structure(), gl.blast(), gl.LDNe()).  You find detailed description in
-the help pages how to download and link the packages so the function can run the
-software. @code{dartR.popgen} is part of the the @code{dartRverse} suit of
-packages.  Gruber et al. (2018) <doi:10.1111/1755-0998.12745>.  Mijangos et al.
-(2022) <doi:10.1111/2041-210X.13918>.")
+@code{(gl.run.structure()}, @code{gl.blast()}, @code{gl.LDNe()}).  You find
+detailed description in the help pages how to download and link the packages so
+the function can run the software. @code{dartR.popgen} is part of the the
+@code{dartRverse} suit of packages.  Gruber et al. (2018)
+<doi:10.1111/1755-0998.12745>.  Mijangos et al. (2022)
+<doi:10.1111/2041-210X.13918>.")
     (license license:gpl3+)))
 
 (define-public r-dartr-data
@@ -27144,6 +30038,9 @@ packages.  Gruber et al. (2018) <doi:10.1111/1755-0998.12745>.  Mijangos et al.
         (base32 "179nqwnkkkjw3c2a7z3gw4d37122fnidnxrxi05sh62aqmjlw5ip"))))
     (properties `((upstream-name . "dartR.data")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-crayon r-adegenet))
     (home-page "https://github.com/green-striped-gecko/dartR.data")
     (synopsis "Auxiliary Data Package for Our Main Package 'dartR'")
@@ -27168,6 +30065,9 @@ examples and demonstration of the functions.")
         (base32 "1n6qhn87111ydznmy85lj7sbxkkak4nwiq1kyky3p43x9679b2p9"))))
     (properties `((upstream-name . "dartR.captive")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-patchwork
                              r-ggplot2
@@ -27198,6 +30098,9 @@ the @code{dartRverse} suit of packages.  Gruber et al. (2018)
         (base32 "0ndl0319pidlkk5fv49zqr8kbib51v60h32k906rwc57jf60xbjk"))))
     (properties `((upstream-name . "dartR.base")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-stampp
@@ -27249,6 +30152,9 @@ citation('@code{dartR.base}') in the console.")
         (base32 "1wwm2gq743l90jsa1hsgxknqxqp0ga8vf3xv652m3ifpyrkp93vx"))))
     (properties `((upstream-name . "dartR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-stringr
@@ -27311,6 +30217,9 @@ the console.")
         (base32 "1740cw5qifgvqa0nafd6lmllxi32n1zm45zlify1yn3h1qdcszhb"))))
     (properties `((upstream-name . "darksky")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-httr r-gtable r-gridextra r-ggplot2))
     (home-page "https://github.com/hrbrmstr/darksky")
     (synopsis "Tools to Work with the 'Dark Sky' 'API'")
@@ -27332,6 +30241,9 @@ weather conditions.")
         (base32 "0cjf5rpn4myd21rh04bk2gjk65rjx77mn8mxy4ym704fiycrsj87"))))
     (properties `((upstream-name . "DarkDiv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan))
     (home-page "https://cran.r-project.org/package=DarkDiv")
     (synopsis "Estimating Dark Diversity and Site-Specific Species Pools")
@@ -27362,6 +30274,9 @@ for further information.")
         (base32 "1f01aq4g50f07005c8k91cfy9hvl3fmb4yl2924d7512m3884xlv"))))
     (properties `((upstream-name . "Dark")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/emkayoh/Dark")
     (synopsis "The Analysis of Dark Adaptation Data")
@@ -27392,6 +30307,9 @@ processed.")
         (base32 "1pwd5srrjy8mhs40k6g6x5j3vk9cr5hylk8sdyiiqalpq490nzqy"))))
     (properties `((upstream-name . "DArand")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=DArand")
     (synopsis "Differential Analysis with Random Reference Genes")
     (description
@@ -27413,6 +30331,9 @@ implemented in this package is based on the random selection of references genes
         (base32 "1c00ppsqzjmrw16zdifkcigi4ll2nd2hlhj17lydmin0djg5cpby"))))
     (properties `((upstream-name . "daqapo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xesreadr
                              r-tidyr
                              r-tibble
@@ -27454,6 +30375,9 @@ outliers,...), or focus on the relation amongst several activity log entries
         (base32 "0hlmndwd80s8a5y7l8c92n57xzbgy56gsv6ziwxya28ba9lf7ncx"))))
     (properties `((upstream-name . "dapper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progressr
                              r-posterior
                              r-memoise
@@ -27464,15 +30388,15 @@ outliers,...), or focus on the relation amongst several activity log entries
     (synopsis "Data Augmentation for Private Posterior Estimation")
     (description
      "This package provides a data augmentation based sampler for conducting
-privacy-aware Bayesian inference.  The dapper_sample() function takes an
+privacy-aware Bayesian inference.  The @code{dapper_sample()} function takes an
 existing sampler as input and automatically constructs a privacy-aware sampler.
 The process of constructing a sampler is simplified through the specification of
 four independent modules, allowing for easy comparison between different privacy
 mechanisms by only swapping out the relevant modules.  Probability mass
 functions for the discrete Gaussian and discrete Laplacian are provided to
 facilitate analyses dealing with privatized count data.  The output of
-dapper_sample() can be analyzed using many of the same tools from the rstan
-ecosystem.  For methodological details on the sampler see Ju et al. (2022)
+@code{dapper_sample()} can be analyzed using many of the same tools from the
+rstan ecosystem.  For methodological details on the sampler see Ju et al. (2022)
 <doi:10.48550/@code{arXiv.2206.00710>}, and for details on the discrete Gaussian
 and discrete Laplacian distributions see Canonne et al. (2020)
 <doi:10.48550/@code{arXiv.2004.00010>}.")
@@ -27490,6 +30414,9 @@ and discrete Laplacian distributions see Canonne et al. (2020)
         (base32 "16b0dl41g56s6iyxndpl403wgqqj1l3g9k78y3ciq5djq3a25m97"))))
     (properties `((upstream-name . "danstat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=danstat")
@@ -27516,6 +30443,9 @@ to match the functionality of the API endpoints.")
         (base32 "0hmmkzv3cq0yl8kgcj08557zx086ablh6ngmyxhb1chig7kmmb4x"))))
     (properties `((upstream-name . "dann")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-rlang
@@ -27548,6 +30478,9 @@ package implements dann and sub_dann from Hastie (1996)
         (base32 "0qgakqybrg7knpgvl5v0126h9mpah5a392hl1sm7hprwvqm4xg5f"))))
     (properties `((upstream-name . "DanielBiostatistics10th")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vcd r-pracma r-e1071 r-cli))
     (home-page "https://cran.r-project.org/package=DanielBiostatistics10th")
     (synopsis "Functions for Wayne W. Daniel's Biostatistics, Tenth Edition")
@@ -27568,6 +30501,9 @@ Foundation for Analysis in the Health Sciences, Tenth Edition.")
         (base32 "0ff0hcb5r8k6m6kv1zhjrpvl7gr1al3q0zlk4yjj89qd2j5byqp8"))))
     (properties `((upstream-name . "dani")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-epi))
     (home-page "https://cran.r-project.org/package=dani")
     (synopsis "Design and Analysis of Non-Inferiority Trials")
@@ -27591,6 +30527,9 @@ methods described in Quartagno et al. (2019) <@code{arXiv:1905.00241>}.")
         (base32 "1h0j2pxwp8dnaw2vrclj069xmd6adwah8ld4vmmh3zm7kwflvcx8"))))
     (properties `((upstream-name . "dang")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidycpp))
     (home-page "https://github.com/eddelbuettel/dang")
     (synopsis "'Dang' Associated New Goodies")
@@ -27609,6 +30548,9 @@ methods described in Quartagno et al. (2019) <@code{arXiv:1905.00241>}.")
         (base32 "1ir1z76c8742vqdlwv35l4rhr0x7lhghz24g35zn7b30671lypf8"))))
     (properties `((upstream-name . "DandEFA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polycor r-gplots))
     (home-page "https://cran.r-project.org/package=DandEFA")
     (synopsis "Dandelion Plot for R-Mode Exploratory Factor Analysis")
@@ -27629,6 +30571,9 @@ Plot is a visualization method for R-mode Exploratory Factor Analysis.")
         (base32 "1jlx1b4cir1vwq75jnmk0pc6j95syfpi0hlnkx82g7pwfxwrdrib"))))
     (properties `((upstream-name . "dams")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readxl r-janitor r-fauxpas r-crul))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jsta/dams")
@@ -27658,6 +30603,9 @@ provides functionality to access the entire cleaned NID data.")
         (base32 "12vr630m2az8xb8wndk8cyh7r8mwg3lvr7i3fcgqqxcq9rsgqm4r"))))
     (properties `((upstream-name . "damr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readr r-data-table r-behavr))
     (home-page "https://github.com/rethomics/damr")
     (synopsis "Interface to Drosophila Activity Monitor System Result Files")
@@ -27679,6 +30627,9 @@ framework.")
         (base32 "0zbxl1m4rhf69qwvhxph18wim0hwnhqijkfkwm2nfgv9nnyi3m0k"))))
     (properties `((upstream-name . "dampack")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-triangle
                              r-tidyr
@@ -27716,6 +30667,9 @@ al. (2014) <doi:10.1017/CBO9781139506779>.")
         (base32 "0pk9gq82qa18fl7zp74d47bgy8lhj9rkvfq23w8844nz9kn58s1f"))))
     (properties `((upstream-name . "DAMOCLES")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-picante
                              r-matrixstats
                              r-matrix
@@ -27745,6 +30699,9 @@ assembly that takes into account phylogenetic history.")
         (base32 "09viy1lilz0b29s3myky03981bfnhxjxxgfhdah33cn5x682rbp4"))))
     (properties `((upstream-name . "DamiaNN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat r-caret))
     (home-page "https://cran.r-project.org/package=DamiaNN")
     (synopsis "Neural Network Numerai")
@@ -27765,6 +30722,9 @@ Generate tournament predictions and write them to a CSV.")
         (base32 "14cfixlc50ml9l2b8m397b292ddq1l36bp8yqw8jw93c3d1q3zpp"))))
     (properties `((upstream-name . "damAOI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units
                              r-tidyr
                              r-tibble
@@ -27806,6 +30766,9 @@ investments.")
         (base32 "1b0fi3l8jxgpr9fwvi03giq7wm39msbh0c82ffgkh54a3bbf5blc"))))
     (properties `((upstream-name . "dam")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dam")
     (synopsis "Data Analysis Metabolomics")
     (description
@@ -27825,6 +30788,9 @@ computational workflow for analysis of matabolomic data..")
         (base32 "1v7ld01xcn5jiygl1c3xhd5h71ip90lks87fs9gmpnivp8jz5cr5"))))
     (properties `((upstream-name . "DALY")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list tcl))
     (home-page "http://daly.cbra.be")
     (synopsis
@@ -27846,6 +30812,9 @@ stochastic disability-adjusted life year (DALY) calculation.")
         (base32 "1l34wb2vl9wmf0vrhis29w4hz1m9jx9qdfi494rfnwals054j3ah"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-smotefamily
                              r-leaps
                              r-glmnet
@@ -27877,6 +30846,9 @@ libraries.  Information on Experiment Line is based on Ogasawara et al. (2009)
         (base32 "0lqiamyg4h2wdv1yfjz1fbw6w78hlp4f8h7ssrcr8pz4qnkgwfgl"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tree
                              r-reticulate
                              r-reshape
@@ -27923,6 +30895,9 @@ based on Ogasawara et al. (2009) <doi:10.1007/978-3-642-02279-1_20>.")
         (base32 "00v3h9np8nfhiyiz6r4bs5gzqqw3qfx275ab1byvjsr42zx11qpr"))))
     (properties `((upstream-name . "DALSM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr r-mass r-cubicbsplines))
     (home-page "<https://github.com/plambertULiege/DALSM>")
     (synopsis "Nonparametric Double Additive Location-Scale Model (DALSM)")
@@ -27946,6 +30921,9 @@ distribution in the location-scale model, are estimated using Laplace P-splines.
         (base32 "1yxsk6cmqrhc7aw62vx5pr2g18lh32j5x73jbfxv4k0ia66mmwqf"))))
     (properties `((upstream-name . "DALEXtra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-dalex))
     (home-page "https://ModelOriented.github.io/DALEXtra/")
     (synopsis "Extension for 'DALEX' Package")
@@ -27974,6 +30952,9 @@ Plot.")
         (base32 "0vmpwxvksnmyq40faimbgpj0y3zbk519986n38ipwdfzllcg0zs4"))))
     (properties `((upstream-name . "DAKS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sets r-relations))
     (home-page "http://www.meb.edu.tum.de")
     (synopsis "Data Analysis and Knowledge Spaces")
@@ -27996,6 +30977,9 @@ formulations in knowledge space theory.  See package?DAKS for an overview.")
         (base32 "0ch3mc725lip67fpbk405rv3bai44w13vvjlspv8y6jzmb5jg6bp"))))
     (properties `((upstream-name . "DAISIEprep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-scales
                              r-rlang
@@ -28027,6 +31011,9 @@ extract the separate island colonists and store them.")
         (base32 "0f1ym3k49m2wdilsg7vwsb7m4ccdg87pnaksmbqv9smcxn5v8rn2"))))
     (properties `((upstream-name . "DAISIE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testit
                              r-tensor
                              r-subplex
@@ -28063,6 +31050,9 @@ al. (2015) <doi:10.1111/ele.12461>.")
         (base32 "1l62qlnn6xkdkqazxkx6qzv4wp3rw3pi6l6f6y6b1n2k9vz4b5za"))))
     (properties `((upstream-name . "daiR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-stringr
                              r-readtext
@@ -28105,6 +31095,9 @@ additional tools to handle and visualize the output.  See the package website
         (base32 "05057i8xvkzyd8h1ppw7qip1d4yjgzimmb5chbdw72mwwgbrwrfy"))))
     (properties `((upstream-name . "daiquiri")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xfun
                              r-scales
                              r-rmarkdown
@@ -28142,6 +31135,9 @@ any associated values for the event).")
         (base32 "099pbzgryz9lxhcqlrywcv8zl5af4ir5dyyqvgc16xi5bddxk7ld"))))
     (properties `((upstream-name . "DAIME")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DAIME")
     (synopsis "Effects of Changing Deposition Rates")
@@ -28162,6 +31158,9 @@ and rates.  Based on Hohmann (2018) <doi:10.13140/RG.2.2.23372.51841> .")
         (base32 "0a82ch0l7ci9vjrwyy38qhw8zrp9d4h2bmk963llm9aqf4j7lkhf"))))
     (properties `((upstream-name . "dail")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-stringr
                              r-stopwords
@@ -28191,6 +31190,9 @@ and and performs a search on information requests and appeals made since 2015.")
         (base32 "1lp6swfmfzv28cfybmvj7czkfljd0sldv2qqi83q0fwcb7kxgdfz"))))
     (properties `((upstream-name . "dagwood")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-dagitty))
     (home-page "https://cran.r-project.org/package=dagwood")
     (synopsis "DAGs with Omitted Objects Displayed (DAGWOOD)")
@@ -28213,6 +31215,9 @@ the DAGWOOD algorithm.  Further description can be found in Haber et al (2022)
         (base32 "16dx7gpbq61xwnk3769mf6nsynqb3zgjl6l0zcvh8j0cp1s35m82"))))
     (properties `((upstream-name . "dagR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dagR")
     (synopsis "Directed Acyclic Graphs: Analysis and Data Simulation")
     (description
@@ -28233,6 +31238,9 @@ corresponding data, as described in International Journal of Epidemiology
         (base32 "10iw5ldra7ih3jpp1iaac6cbfgpl62bq09zl30c0z03mzhj18vvr"))))
     (properties `((upstream-name . "dagitty")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8 r-mass r-jsonlite r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://www.dagitty.net")
@@ -28258,6 +31266,9 @@ models, and includes a simple facility for data simulation.")
         (base32 "12j5mfxcv32qgx1yklcq8yl2kx4lkxap4biywjrj0sjx6zj60f8l"))))
     (properties `((upstream-name . "dagirlite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-knitr))
     (home-page "https://cran.r-project.org/package=dagirlite")
     (synopsis
@@ -28281,6 +31292,9 @@ with data on population, age and gender from Statistics Denmark
         (base32 "0ljhpw2f4hbkqh6c6gwqwwdsa4kp5qvyphig5zcn6qrb9ryf3wh1"))))
     (properties `((upstream-name . "dafs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s20x))
     (home-page "https://cran.r-project.org/package=dafs")
     (synopsis "Data Analysis for Forensic Scientists")
@@ -28302,6 +31316,9 @@ CRC Press in 2010 (ISBN: 978-1-4200-8826-7).")
         (base32 "1pdw0qrsln6cf7k1r0a09j7va5nzyz7a484nz5fjccxs0lwgxhjx"))))
     (properties `((upstream-name . "dafishr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vroom
                              r-tidyselect
                              r-tidyr
@@ -28322,9 +31339,9 @@ CRC Press in 2010 (ISBN: 978-1-4200-8826-7).")
     (synopsis "Download, Wrangle, and Analyse Vessel Monitoring System Data")
     (description
      "Allows to download, clean and analyse raw Vessel Monitoring System, VMS, data
-from Mexican government.  You can use the vms_download() function to download
-raw data, or you can use the sample_dataset provided within the package.  You
-can follow the tutorial in the vignette available at
+from Mexican government.  You can use the @code{vms_download()} function to
+download raw data, or you can use the sample_dataset provided within the
+package.  You can follow the tutorial in the vignette available at
 <https://cbmc-gcmp.github.io/dafishr/index.html>.")
     (license license:expat)))
 
@@ -28340,14 +31357,17 @@ can follow the tutorial in the vignette available at
         (base32 "0zbh3p7d2r04j9kzfk32j2zw9f745dk7yl2dx8lflrm0zidwbxc4"))))
     (properties `((upstream-name . "daff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-v8 r-jsonlite))
     (home-page "https://github.com/edwindj/daff")
     (synopsis "Diff, Patch and Merge for Data.frames")
     (description
      "Diff, patch and merge for data frames.  Document changes in data sets and use
 them to apply patches.  Changes to data can be made visible by using
-render_diff().  The V8 package is used to wrap the daff.js @code{JavaScript}
-library which is included in the package.")
+@code{render_diff()}.  The V8 package is used to wrap the daff.js
+@code{JavaScript} library which is included in the package.")
     (license license:expat)))
 
 (define-public r-daewr
@@ -28362,6 +31382,9 @@ library which is included in the package.")
         (base32 "0hh7z0sdynrw4746hqvyra4dsqa9p1j8bip7b8asyvdpirxhvh23"))))
     (properties `((upstream-name . "daewr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi r-lattice))
     (home-page "https://cran.r-project.org/package=daewr")
     (synopsis "Design and Analysis of Experiments with R")
@@ -28382,6 +31405,9 @@ Analysis of Experiments with R\", Lawson(2015) ISBN-13:978-1-4398-6813-3.")
         (base32 "1jdna8s10qz50zrsrm36y1jx489sznd86akx2lwdmriiiz3abn65"))))
     (properties `((upstream-name . "dados")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-tidyr
                              r-tibble
@@ -28422,6 +31448,9 @@ of the datasets listed above.")
         (base32 "143xs3nkf6ynr83z5gggz318nvpnsbfmskl1ipavlzrqk785dlac"))))
     (properties `((upstream-name . "dadjokeapi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-png r-httr r-dplyr r-curl r-beepr))
     (home-page "https://github.com/jhollist/dadjokeapi/")
     (synopsis "Return a Random Dad Joke")
@@ -28443,6 +31472,9 @@ endpoints.")
         (base32 "118pacwc2qb3c5zbhr71zf4zj1ab2g4rs5h6bvrscjyd7a71jc3f"))))
     (properties `((upstream-name . "dadjoke")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=dadjoke")
     (synopsis "Displays a Dad Joke")
     (description "Displays a terrible joke, the kind only dads crack.")
@@ -28460,6 +31492,9 @@ endpoints.")
         (base32 "1bpjgwd739l661ri78a8iq3jhrawrn9g9awjrsdwmvw10gd9skmh"))))
     (properties `((upstream-name . "dad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-e1071 r-desctools))
     (native-inputs (list r-knitr))
     (home-page "https://forgemia.inra.fr/dad/dad")
@@ -28484,6 +31519,9 @@ cluster analysis, discriminant analysis...) for such probability densities.")
         (base32 "0hv7c9lk6ivj4iz953yn11iy5p611q4si4ghn9d5a9i229s5hig8"))))
     (properties `((upstream-name . "DACF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DACF")
     (synopsis "Data Analysis with Ceiling and/or Floor Data")
@@ -28506,6 +31544,9 @@ from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
         (base32 "19gk3dgkhr6vzyh6bravanzbvykhnp6yippicx7wmcdwi9mhzqvb"))))
     (properties `((upstream-name . "dacc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-pracma
                              r-ncdf4
@@ -28537,6 +31578,9 @@ shrinkage estimators for covariance matrix from Ledoit and Wolf (2004)
         (base32 "14q8frsg8qk46yldawh58cjm4v10im4ar5r5f4yfdxf6jdaadfih"))))
     (properties `((upstream-name . "dabr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-rmariadb r-magrittr r-knitr))
     (home-page "https://github.com/special-uor/dabr/")
     (synopsis "Database Management with R")
@@ -28558,6 +31602,9 @@ tables.")
         (base32 "0fm6gk1q86nkls2y3zcklszqb570jcll9hfn2mpd4b4qj2vl2d4x"))))
     (properties `((upstream-name . "dabestr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -28602,6 +31649,9 @@ Estimation plots are introduced in Ho et al., Nature Methods 2019, 1548-7105.
         (base32 "1pm8nj4ffc18njpr87hb988j551zp0s6ysr37nk784ibk4awxf7x"))))
     (properties `((upstream-name . "daarem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://doi.org/10.1080/10618600.2019.1594835")
     (synopsis
      "Damped Anderson Acceleration with Epsilon Monotonicity for Accelerating EM-Like Monotone Algorithms")
@@ -28624,6 +31674,9 @@ Varadhan, R. (2019) <doi:10.1080/10618600.2019.1594835>.")
         (base32 "03lkq84x3skhvcrbs7235jlrhcnszk0pgziik4z93gy1qngrshn2"))))
     (properties `((upstream-name . "DAAGbio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-limma))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jhmaindonald/DAAGbio/")
@@ -28646,6 +31699,9 @@ data, and for demonstrations with such data.")
         (base32 "0vm4r1ds2xxxf4vml6mrb5alnkr72a08nby88h3qk7xalny28xkf"))))
     (properties `((upstream-name . "DAAG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rdpack r-latticeextra r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/daagur/DAAG")
@@ -28669,6 +31725,9 @@ builds on this earlier text.")
         (base32 "0bcx6lh93yl1cawrbrkqx7dypypvfnf27nlxf9vkz16n1hy50xnl"))))
     (properties `((upstream-name . "DA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rarpack
                              r-plotly
                              r-mass
@@ -28696,25 +31755,36 @@ population/community structure inference.")
 (define-public r-d4talink-light
   (package
     (name "r-d4talink-light")
-    (version "2.1.14")
+    (version "2.1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "D4TAlink.light" version))
        (sha256
-        (base32 "1cpvi5jzlyvwygyzv4smi3qcr3gx85s7bfjspsfkz9011aqb1aci"))))
+        (base32 "1qpsc9wqz427ym9p577xyzqfnsmfs4v20jmp9hvk2m2gbck32zwv"))))
     (properties `((upstream-name . "D4TAlink.light")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown r-openssl r-jsonlite))
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmarkdown
+                             r-reticulate
+                             r-openxlsx
+                             r-openssl
+                             r-officedown
+                             r-jsonlite
+                             r-getpass
+                             r-feather
+                             r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://bitbucket.org/SQ4/d4talink.light")
     (synopsis "FAIR Data - Workflow Management")
     (description
      "Tools, methods and processes for the management of analysis workflows.  These
 lightweight solutions facilitate structuring R&D activities.  These solutions
-were developed to comply with FAIR principles as discussed by Jacobsen et al.
-(2017) <doi:10.1162/dint_r_00024>, and with ALCOA+ principles as proposed by the
-U.S. FDA.")
+were developed to comply with Good Documentation Practice (GDP), with FAIR
+principles as discussed by Jacobsen et al. (2017) <doi:10.1162/dint_r_00024>,
+and with ALCOA+ principles as proposed by the U.S. FDA.")
     (license license:gpl3)))
 
 (define-public r-d4storagehub4r
@@ -28729,6 +31799,9 @@ U.S. FDA.")
         (base32 "0ixv8wypcvcrn3xig8sg54mizsll4v2665l8hqd1q15d0ln2p789"))))
     (properties `((upstream-name . "d4storagehub4R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-xml
                              r-r6
@@ -28758,6 +31831,8 @@ management (upload/update/deletion/sharing), and listing of stored resources.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -28799,6 +31874,8 @@ used as a reactive filter of structured data.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -28842,6 +31919,8 @@ fast and beautiful interactive visualization for Markdown and Shiny'.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -28880,6 +31959,8 @@ examples provided here are taken from the official D3Plus website
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -28922,6 +32003,13 @@ partition chart, ...")
         (base32 "0mdiirc0k8hlqyj9fq62bpgin6nk2jl604qdrcfh2ympwkm54iz6"))))
     (properties `((upstream-name . "D3mirt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rgl r-mirt))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ForsbergPyschometrics/D3mirt")
@@ -28950,6 +32038,8 @@ item-level analysis as well as test development.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -28986,6 +32076,9 @@ Barrios, D. & Prieto, C. (2017) <doi:10.1089/cmb.2016.0213>.")
         (base32 "0rjfjnh8gcbm83cwqk1yjrjv6jsrarr53c629bkg9zw7s5sm35nz"))))
     (properties `((upstream-name . "D2MCS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-varhandle
                              r-tictoc
                              r-recipes

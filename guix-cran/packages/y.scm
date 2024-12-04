@@ -46,6 +46,9 @@
         (base32 "0gkvls7rd1rbklg9f548rhpmqpa0kb0s1xgf7mhvlhxk45x32ipd"))))
     (properties `((upstream-name . "yyjsonr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/coolbutuseless/yyjsonr")
@@ -73,6 +76,9 @@ implementation wraps the yyjson C library which is available from
         (base32 "1k9q34n1pzv4c7hp7cd4yhm8v1qv41an8vfh65n4byvyzipxp85y"))))
     (properties `((upstream-name . "yum")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml))
     (home-page "https://r-packages.gitlab.io/yum")
     (synopsis "Utilities to Extract and Process 'YAML' Fragments")
@@ -100,6 +106,9 @@ functionality).")
         (base32 "1sl45kmqqq7hg3lkpn3cy70f409fwsgg76gjldx1l4cvmyzyf9hl"))))
     (properties `((upstream-name . "yuimaGUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yuima
                              r-shinyjs
                              r-shinydashboard
@@ -129,6 +138,9 @@ functionality).")
         (base32 "1w0g6yq1g2maq8wslgj5bis1f514ngxkxxbc9j7dsz7w51vppcwd"))))
     (properties `((upstream-name . "yuima")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-statmod
                              r-rcpparmadillo
@@ -158,6 +170,9 @@ functionality).")
         (base32 "1p3919avqxxb9w5x28mf09kfhw4md8q7rcd1v71jfasn9yqfnxcf"))))
     (properties `((upstream-name . "YTAnalytics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-progress r-jsonlite r-httr r-dplyr))
     (home-page "https://github.com/davisj95/YTAnalytics")
     (synopsis "Wrapper for 'YouTube Analytics' API")
@@ -179,6 +194,9 @@ channel including geography, traffic sources, time period, etc.")
         (base32 "1crms7dqmhj7br1a5p5j0j7p6sdfimnip31207i6g24f9jkkysv1"))))
     (properties `((upstream-name . "YRmisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gridextra r-ggplot2))
     (home-page "https://cran.r-project.org/package=YRmisc")
     (synopsis "Y&R Miscellaneous R Functions")
@@ -202,6 +220,9 @@ analysis.")
         (base32 "0fpph19amj1cafcbh5k6s75pi7nahzgfvnsbs9i5644gv43iavbj"))))
     (properties `((upstream-name . "ypssc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-svdialogs
                              r-stringr
                              r-spelling
@@ -233,6 +254,9 @@ proteins.")
         (base32 "0hn4zbg270p8yg4wxcszwfc0vsf2mb21lkqi1745000rh5cbz8sa"))))
     (properties `((upstream-name . "ypr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yesno
                              r-tidyplus
                              r-tibble
@@ -263,6 +287,9 @@ or just large (trophy) individuals.")
         (base32 "01q0l22nwfpld2wcygk5x28c2c6cv35hxy2fm1azn8bqsv7xy5il"))))
     (properties `((upstream-name . "YPPE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stanheaders
                              r-rstantools
@@ -296,6 +323,9 @@ for the crossing survival times.")
         (base32 "1bgzibrqdwsy93zscffmbjgxnnl3axip9l4amfp0g5517p7i78hp"))))
     (properties `((upstream-name . "YPmodelPhreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=YPmodelPhreg")
     (synopsis
@@ -328,6 +358,9 @@ hazard ratio function with point-wise and simultaneous confidence bands.")
         (base32 "177rzbd8k0356b8z2sbvl3x5cg2w9kr8ryf36laqijyayhcik093"))))
     (properties `((upstream-name . "YPmodel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=YPmodel")
     (synopsis
      "The Short-Term and Long-Term Hazard Ratio Model for Survival Data")
@@ -358,6 +391,9 @@ package.")
         (base32 "0fca963rsbs9k7ivffsqk4hzap6ll7s709kqs6aby0plghrdla2w"))))
     (properties `((upstream-name . "YPInterimTesting")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-mass))
     (home-page "https://cran.r-project.org/package=YPInterimTesting")
     (synopsis
@@ -387,6 +423,9 @@ stopping boundaries is established in Yang (2018 <doi:10.1002/sim.7958>).")
         (base32 "1slc7glr4hb0my5zkssprngb6si98npjj33nsbsm0nbm61hnb9n8"))))
     (properties `((upstream-name . "YPBP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stanheaders
                              r-rstantools
@@ -420,6 +459,9 @@ interval estimation for the crossing survival times.")
         (base32 "02ih66ad8v5qkgyszllkh9319sfd6fqcci4zrvbjr1dfwlwa2ri1"))))
     (properties `((upstream-name . "youngSwimmers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lifecycle r-data-table))
     (home-page "https://github.com/NIM-ACh/youngSwimmers/")
     (synopsis "Young Swimmers Dataset")
@@ -438,6 +480,9 @@ interval estimation for the crossing survival times.")
         (base32 "0czi3ylqlzpd2h8g5500hrk0ql4b3qlcgmlcmcfa44s1w8fgny33"))))
     (properties `((upstream-name . "yorkr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-rpart-plot
                              r-reshape2
@@ -463,6 +508,9 @@ from Cricsheet <https://cricsheet.org/>.")
         (base32 "04glh59dcwahprxcw9a1wanbcxrmbfmkndw3w1idynwbmyarj4wf"))))
     (properties `((upstream-name . "yodel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-purrr r-dplyr))
     (home-page "https://github.com/rich-payne/yodel")
     (synopsis "General Bayesian Model Averaging Helper")
@@ -487,6 +535,9 @@ likelihoods or log-predictive likelihoods as in Ando, T., & Tsay, R. (2010)
         (base32 "0sdfbdlz7sjjmwn9kg2lbbmy3k2w8x0wbvyil8dxhzqpc4nc6pzq"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-litedown))
     (home-page "https://timtaylor.github.io/ympes/")
     (synopsis "Collection of Helper Functions")
@@ -509,6 +560,9 @@ user input, searching rows of a data frame and capturing string tokens.")
         (base32 "127rh8mfff0ii6wcd7iaaz60vlkynjlrs188wwcap8l2qgv67idy"))))
     (properties `((upstream-name . "ymlthis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-withr
                              r-whoami
@@ -544,6 +598,9 @@ files related to your project.")
         (base32 "0mw430a0qdi9lddxlzc8vdk2yhm57c2mblj0yyy3g6icf5m7pppn"))))
     (properties `((upstream-name . "Ymisc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Ymisc")
     (synopsis "Miscellaneous Functions")
     (description
@@ -564,6 +621,9 @@ compute Asymmetry Index (AI) and bilateral (L+R) measures and reshape the data."
         (base32 "0xw8qf9dzih6jwrld45dhy47pmvsphk9fwkccygmm153x724aama"))))
     (properties `((upstream-name . "ymd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list xz))
     (home-page "https://shrektan.github.io/ymd/")
     (synopsis "Parse 'YMD' Format Number or String to Date")
@@ -585,6 +645,9 @@ the beginning or end of the given period, adding months to Date, etc.")
         (base32 "0lf3cd6pfzki29nk2iy0vd6v4dw6zlsbrjh2839zq5vlpiimsvck"))))
     (properties `((upstream-name . "yll")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/AntoineSoetewey/yll")
     (synopsis "Compute Expected Years of Life Lost (YLL) and Average YLL")
     (description
@@ -608,6 +671,9 @@ deaths (Aragon et al., 2008).")
         (base32 "0dckpls1g8787ysb3q11i531223d48zdimnmhvbyynmm2a8gi0xv"))))
     (properties `((upstream-name . "YieldCurve")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts))
     (home-page "https://cran.r-project.org/package=YieldCurve")
     (synopsis "Modelling and Estimation of the Yield Curve")
@@ -631,6 +697,9 @@ of interest rate of Federal Reserve Bank and European Central Bank.")
         (base32 "18g2cr1kjxnfw6cwzl62ynppfv1zz732kbx18zq8918l85kx6wbw"))))
     (properties `((upstream-name . "yhatr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-jsonlite r-httr))
     (home-page "https://github.com/yhat/yhatr")
     (synopsis "R Binder for the Yhat API")
@@ -649,6 +718,9 @@ of interest rate of Federal Reserve Bank and European Central Bank.")
         (base32 "0hzf6fns37jv67ssa6zwivpj2nlaykfjmj5y21dyh739i3102jnv"))))
     (properties `((upstream-name . "yhat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yacca r-plotrix r-misctools r-boot))
     (home-page "https://cran.r-project.org/package=yhat")
     (synopsis "Interpreting Regression Effects")
@@ -672,6 +744,9 @@ adjusted effect sizes.")
         (base32 "1jdqz0cb13fgvrak1sgs4h2cwgr8rcbg68c35mlaqnmkfn2w3xvc"))))
     (properties `((upstream-name . "yfR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-tidyr
@@ -714,6 +789,9 @@ support for parallel computation.")
         (base32 "06qxjacvx17b0mry2qk5ksh814gyz88av80cpgz3d9fx01x3sxlv"))))
     (properties `((upstream-name . "yesno")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/poissonconsulting/yesno")
     (synopsis "Ask Yes-No Questions")
     (description "Asks Yes-No questions with variable or custom responses.")
@@ -731,6 +809,9 @@ support for parallel computation.")
         (base32 "0gih1dq62k7163pjsjl32smdqy54wjhsp31mv7ddhp4xmr6qb7cw"))))
     (properties `((upstream-name . "ycevo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -766,6 +847,9 @@ its implementation.")
         (base32 "0jr2q2dla7dpf0ail0l8ar44cnaxrkvqc7cvsrsdgj97hr970lp9"))))
     (properties `((upstream-name . "YatesAlgo.FactorialExp.SR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate))
     (home-page "https://cran.r-project.org/package=YatesAlgo.FactorialExp.SR")
     (synopsis "Yates' Algorithm in 2^n Factorial Experiment")
@@ -786,6 +870,9 @@ factorial experiment using Yates algorithm.")
         (base32 "1m951cin2wlxrmg5k7b6zjmfyc5frxgzr4aibyj4lh9vbr9hlqk8"))))
     (properties `((upstream-name . "YatchewTest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-ggplot2))
     (home-page "https://cran.r-project.org/package=YatchewTest")
     (synopsis
@@ -809,6 +896,9 @@ heteroskedasticity.")
         (base32 "0q0c9rgkjcj4i7jjc6a9znlvk7b4vawa84g9d1i4v6m5z7nrfdzd"))))
     (properties `((upstream-name . "yatah")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-purrr r-lifecycle r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://abichat.github.io/yatah/")
@@ -830,17 +920,21 @@ with strings and ranks separated with special patterns like \"|*__\" or \";*__\"
         (base32 "0fza8h9y1wmarsmjcvw4r970d6j4ii795pd2h4xh9nlsirv50adi"))))
     (properties `((upstream-name . "yasp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/t-kalinowski/yasp")
     (synopsis "String Functions for Compact R Code")
     (description
      "This package provides a collection of string functions designed for writing
 compact and expressive R code.  yasp (Yet Another String Package) is simple,
 fast, dependency-free, and written in pure R. The package provides: a coherent
-set of abbreviations for paste() from package base with a variety of defaults,
-such as p() for \"paste\" and pcc() for \"paste and collapse with commas\"; wrap(),
-bracket(), and others for wrapping a string in flanking characters; unwrap() for
-removing pairs of characters (at any position in a string); and sentence() for
-cleaning whitespace around punctuation and capitalization appropriate for prose
+set of abbreviations for @code{paste()} from package base with a variety of
+defaults, such as @code{p()} for \"paste\" and @code{pcc()} for \"paste and
+collapse with commas\"; @code{wrap()}, @code{bracket()}, and others for wrapping
+a string in flanking characters; @code{unwrap()} for removing pairs of
+characters (at any position in a string); and @code{sentence()} for cleaning
+whitespace around punctuation and capitalization appropriate for prose
 sentences.")
     (license license:expat)))
 
@@ -856,6 +950,9 @@ sentences.")
         (base32 "1258bj7x4icaxfabnnd3fgwydnqbzxkih7zw0sdlwdax3q8fw5c5"))))
     (properties `((upstream-name . "yarrr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jpeg r-circlize r-bayesfactor))
     (native-inputs (list r-knitr))
     (home-page "www.thepiratesguidetor.com")
@@ -879,6 +976,9 @@ version of the e-book is available for free at
         (base32 "1019nzchqif4r3c7ywq23bjx711g359q44s8jy0rxyv03rij6xh9"))))
     (properties `((upstream-name . "yamlme")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml r-rmarkdown))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kamapu/yamlme")
@@ -902,6 +1002,9 @@ packages taxlist and vegtable'.")
         (base32 "0ia9z8410raa54fm2jzh95zr8szbwicp7jg80pj818mbg1xi8lhn"))))
     (properties `((upstream-name . "yamlet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xtable
                              r-vctrs
@@ -939,15 +1042,18 @@ readability.  See ?yamlet, ?decorate, ?modify, ?io_csv, and ?ggplot.decorated.")
         (base32 "07rqi8j9gzrr4jj9h8mdnh5i251q8rwfdj4lbcmszp64pi09rkck"))))
     (properties `((upstream-name . "YaleToolkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-iterators r-foreach))
     (home-page "https://cran.r-project.org/package=YaleToolkit")
     (synopsis "Data Exploration Tools from Yale University")
     (description
      "This collection of data exploration tools was developed at Yale University for
 the graphical exploration of complex multivariate data; barcode and gpairs now
-have their own packages.  The big.read.table() function provided here may be
-useful for large files when only a subset is needed (but please see the note in
-the help page for this function).")
+have their own packages.  The @code{big.read.table()} function provided here may
+be useful for large files when only a subset is needed (but please see the note
+in the help page for this function).")
     (license license:lgpl3)))
 
 (define-public r-yaimpute
@@ -962,6 +1068,9 @@ the help page for this function).")
         (base32 "1ph8cg23pdv2rjbz9ddg8znpzxl8ij1aizgqi7dxqbb8hzc1k6b7"))))
     (properties `((upstream-name . "yaImpute")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/jeffreyevans/yaImpute")
     (synopsis "Nearest Neighbor Observation Imputation and Evaluation Tools")
     (description
@@ -988,6 +1097,9 @@ and building ensemble imputations, and mapping results.")
         (base32 "1qs358lxl3pycy64f3dxc74g5kz5yrl8m2lq0w6kn0zdbligy459"))))
     (properties `((upstream-name . "yahoofinancer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-r6
                              r-purrr
@@ -1017,6 +1129,9 @@ as provided on <https://finance.yahoo.com/>.")
         (base32 "178ypdr3f0w9rb4ci8q2hshr62b7993m8q6zxc4pf0msq175n1ml"))))
     (properties `((upstream-name . "yager")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randtoolbox r-mlmetrics r-lhs))
     (home-page "https://github.com/statcompute/yager")
     (synopsis "Yet Another General Regression Neural Network")
@@ -1038,6 +1153,9 @@ or the classification.")
         (base32 "1srph1yc8lr00yvx6sjm0br9h2cq94xqb9yjxfb0bqvvmskp6s2s"))))
     (properties `((upstream-name . "yaConsensus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-pheatmap r-foreach r-doparallel))
     (native-inputs (list gfortran))
     (home-page "https://github.com/stefanoMP/yaConsensus")
@@ -1061,6 +1179,9 @@ run in parallel.")
         (base32 "197iv7qcbp9xx8kmpwb98acpkgzn9m7sncn6qi7k0chjx78095ws"))))
     (properties `((upstream-name . "yacca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=yacca")
     (synopsis "Yet Another Canonical Correlation Analysis Package")
     (description

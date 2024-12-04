@@ -52,6 +52,9 @@
         (base32 "14szpp8yv315wjn4d35l858bzkv2pd4s720ib921wsvpgn3xfx5d"))))
     (properties `((upstream-name . "QZ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrix))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=QZ")
@@ -76,6 +79,9 @@ precision of LAPACK library (version 3.10.0 or later).")
         (base32 "1zv3yg5b32irh3paz2qwwhj2cn3a9laqi4d5gwlk8qmjiacxq6bh"))))
     (properties `((upstream-name . "qwraps2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xfun r-rcpparmadillo r-rcpp r-knitr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dewittpe/qwraps2/")
@@ -104,6 +110,9 @@ fundamentally different from qwraps'.")
         (base32 "1rqbj4m90x1cg32hjzck4gmpvfmz28pgqk83vr527bvhaxbr4vmb"))))
     (properties `((upstream-name . "QWDAP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-pls r-corelearn))
     (home-page "https://cran.r-project.org/package=QWDAP")
     (synopsis "Quantum Walk-Based Data Analysis and Prediction")
@@ -128,6 +137,9 @@ package for reference.")
         (base32 "0mxzx782lvdrm0hx0v6xgzvw3r9zlfp9bz1vss2l59fgdqlhavn4"))))
     (properties `((upstream-name . "qwalkr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lifecycle))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vitormarquesr/qwalkr")
@@ -152,6 +164,9 @@ spectral decomposition of the Hamiltonian.  E. Farhi (1997):
         (base32 "12hw8r6liknirdmyiarhjbhvj00dp9ybc2z8qfrgz11p56gnawmh"))))
     (properties `((upstream-name . "qvirus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gridextra r-ggplot2 r-factoextra r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/juanv66x/qvirus")
@@ -184,6 +199,9 @@ efficacy.")
         (base32 "17sr4100ciy5jp0b8sxvqjxf4m176ayzd5yyaw40ri4xf6h0z7la"))))
     (properties `((upstream-name . "qvcalc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://davidfirth.github.io/qvcalc/")
     (synopsis "Quasi Variances for Factor Effects in Statistical Models")
     (description
@@ -203,6 +221,9 @@ measures of approximation error.")
         (base32 "0nvfl4nkm5fwziba7cligr2xg18w2h7ibj5bff2zh189n87n3ly9"))))
     (properties `((upstream-name . "qVarSel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-lpsolveapi))
     (home-page "https://cran.r-project.org/package=qVarSel")
     (synopsis "Select Variables for Optimal Clustering")
@@ -229,6 +250,9 @@ accurate.  Tests can be found in Benati et al.(2017)
         (base32 "1pq2w268si3dxnzf436d2lzz7k09x7k6mydl0b8wpjjzbpqpbayp"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-plyr
                              r-nloptr
                              r-matrix
@@ -262,6 +286,9 @@ during Q-matrix validating are available.")
         (base32 "0md97jgyl7lkq46zsl6svgdhyg95is92f8yn5szkaylfdb2cglg3"))))
     (properties `((upstream-name . "QurvE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-shiny
@@ -313,6 +340,9 @@ knowledge.  The package is described in further detail in Wirth et al. (2023)
         (base32 "108d797l9ggggc5b61pl7f6avzknmnnib2ys5vrg385zfbx9srvw"))))
     (properties `((upstream-name . "quRan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/andrewheiss/quRan")
     (synopsis "Complete Text of the Qur'an")
     (description
@@ -333,6 +363,9 @@ translations), formatted to be convenient for text analysis.")
         (base32 "11cswg9bmddsl1axxcdz11flq46p1zkpv022526f2vgl4qsprwbm"))))
     (properties `((upstream-name . "quotedargs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=quotedargs")
     (synopsis "Way of Writing Functions that Quote their Arguments")
     (description
@@ -353,6 +386,9 @@ quoted, and may pass them as quoted to other functions.")
         (base32 "1gdb5zvi7hs2mpzv07w1mbm9w4ksidbz28mjb6w20bfpy6casfz5"))))
     (properties `((upstream-name . "quoradsR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://windsor.ai/")
@@ -374,6 +410,9 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
         (base32 "1qvgajd7bx38nhisb7y5i48fmw9vx6di34s08dkna34rjhafak0a"))))
     (properties `((upstream-name . "quollr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tibble
                              r-rsample
@@ -406,6 +445,9 @@ distributions.")
         (base32 "1fmzdnikskq8f70h6bh5ig5s6d227bzd6q93n2c05ymj1m5s9ban"))))
     (properties `((upstream-name . "quint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rpart r-partykit r-formula))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=quint")
@@ -429,6 +471,9 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
         (base32 "0r76rgzxqlm74brzh4kwxns3jb7hs9bfzfxdp8156cfrpjk7hxs0"))))
     (properties `((upstream-name . "quincunx")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexl
                              r-vroom
                              r-tidyr
@@ -465,6 +510,9 @@ PGS Catalog data by accessing the REST API <https://www.pgscatalog.org/rest/>.")
         (base32 "1my36y9kf52jm6w923qmffi3809d0xcc68sm5ngvfacszn665k23"))))
     (properties `((upstream-name . "quiltr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=quiltr")
     (synopsis "Qualtrics for Labelling Text using R")
@@ -487,6 +535,9 @@ Format .txt file that read into Qualtrics.")
         (base32 "1f923dllhchgf49bp2d9186v3cxzdya6i56ww6cj0n0mh8gfi27z"))))
     (properties `((upstream-name . "quietR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/thomascjohnson/quietR")
     (synopsis "Simplify Output Verbosity")
     (description
@@ -507,6 +558,9 @@ set of simple toggle functions to be used to suppress console output.")
         (base32 "10kiyn1all58klyygmz6zw0w9nfl9vq19qybmkqh410rd5ryjz3p"))))
     (properties `((upstream-name . "quiddich")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ape))
     (home-page "https://cran.r-project.org/package=quiddich")
     (synopsis "QUick IDentification of DIagnostic CHaracters")
@@ -534,6 +588,9 @@ CHaracters.\".")
         (base32 "10qfby1w3q3z0vwqk3nnxxlf62cr5v60ipagx0wb79vanl318pp0"))))
     (properties `((upstream-name . "quid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -574,6 +631,9 @@ See Haaf and Rouder (2017) <doi:10.1037/met0000156>; Haaf, Klaassen and Rouder
         (base32 "0ajl92rsp8kikpvslsg72g3jbnjhq8khmsirlr947mdzx7mab7fj"))))
     (properties `((upstream-name . "QuICSeedR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wrs2
                              r-tidyselect
                              r-tidyr
@@ -613,6 +673,9 @@ details.")
         (base32 "1q5d8v8a704pjgwf6n228qiqaqpfw488ylkzzvmzg5zznbgbh2d0"))))
     (properties `((upstream-name . "quicR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-slider
@@ -645,6 +708,9 @@ of raw data into the R environment.")
         (base32 "1z0sspi8q7dvgxqbj5na56v458pv6jhxrssnm6j23156dchgw39h"))))
     (properties `((upstream-name . "quickregression")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-car))
     (home-page "https://cran.r-project.org/package=quickregression")
     (synopsis "Quick Linear Regression")
@@ -666,6 +732,9 @@ Factor (VIF) level.")
         (base32 "1l1v3k8albxlaz18l2b2x2ryifq4pbdq6n4q7555hnfcik9rqmw5"))))
     (properties `((upstream-name . "quickReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-rlang
                              r-psych
@@ -698,6 +767,9 @@ ggplot2'.")
         (base32 "1igxjrmli16lxf07xawkslb8gkas63sdpmxrl07vfwl8yq8n6wwl"))))
     (properties `((upstream-name . "quickPWCR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-pbmcapply r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=quickPWCR")
@@ -722,6 +794,9 @@ proposed by JVitter (1985) <doi:10.1145/3147.3165>.")
         (base32 "0dfqlpghnw79idw3ir03cxx9n88sqs5p14jz7jgpkdwvjpw1y4q9"))))
     (properties `((upstream-name . "quickpsy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mpdir r-ggplot2 r-dplyr r-deoptim))
     (home-page "http://dlinares.org/quickpsy.html")
     (synopsis "Fits Psychometric Functions for Multiple Groups")
@@ -742,6 +817,9 @@ or any function defined by the user) for multiple groups.")
         (base32 "0228mcv6cz74whzxmgcdb79w0k8mibszw4kwnjjs6pljz41rxcbq"))))
     (properties `((upstream-name . "quickPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-fpcompare r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://quickplot.predictiveecology.org")
@@ -770,6 +848,9 @@ fastshp can be installed from the repository
         (base32 "01gnvnpfxry354qf772m187mfvjigqngjpi1k9y1g5nvlv7a4d62"))))
     (properties `((upstream-name . "quickNmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-optimparallel r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=quickNmix")
     (synopsis "Asymptotic N-Mixture Model Fitting")
@@ -801,6 +882,9 @@ Simon Fraser University.\".")
         (base32 "1r369153zfxy7xzwzixigpz6ai6avmc5kvcqrf7nvr210xbs72r1"))))
     (properties `((upstream-name . "quickmatch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scclust r-sandwich r-distances))
     (home-page "https://github.com/fsavje/quickmatch")
     (synopsis "Quick Generalized Full Matching")
@@ -815,18 +899,21 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "0wfy21p76xk1s3f9sj7p7gw6bdcwhxs9bns2x9xxfrsjh429adx8"))))
+        (base32 "04dcjc7l7213hcr7p6zlk5zhc52l18svjqfy8zgjqf19gs0q6y2c"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-polychrome r-fitdistrplus))
     (native-inputs (list r-knitr))
-    (home-page "https://quickcode.obi.obianom.com")
+    (home-page "https://quickcode.rpkg.net")
     (synopsis "Quick and Essential 'R' Tricks for Better Scripts")
     (description
      "The NOT functions, R tricks and a compilation of some simple quick plus often
@@ -846,6 +933,9 @@ of R scripts.")
         (base32 "0rm3pvhyqg1px8fp31cmbmv0zk9mvqhzl8qx9gm51kih2zfrksqy"))))
     (properties `((upstream-name . "quickcheck")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-testthat
                              r-purrr
@@ -873,6 +963,9 @@ is designed to seamlessly integrate with testthat'.")
         (base32 "0xlx6g73qxrijxmjzbw980abvk60rvkm847b5in1izwf5fiv7m0p"))))
     (properties `((upstream-name . "quickblock")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scclust r-distances))
     (home-page "https://github.com/fsavje/quickblock")
     (synopsis "Quick Threshold Blocking")
@@ -895,6 +988,9 @@ quicker than other methods.")
         (base32 "0hw1ykm24cjpfwh7ac7fjf7mhc59mq8wy2g07aacpy5ibwi8bbsf"))))
     (properties `((upstream-name . "queueing")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://www.r-project.org")
     (synopsis "Analysis of Queueing Networks and Models")
     (description
@@ -920,6 +1016,9 @@ calculators.  This work is dedicated to the memory of D. Sixto Rios Insua.")
         (base32 "0qlcj4rqfkp8qanzwi1p2s7r89x5w6aa8zwkcl7rqapbd4nwayhc"))))
     (properties `((upstream-name . "queuecomputer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-rcpparmadillo r-rcpp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AnthonyEbert/queuecomputer")
@@ -943,6 +1042,9 @@ arbitrary arrival and service times.  Please see Ebert, Wu, Mengersen & Ruggeri
         (base32 "1vvvraqgy570dj86km4qpiax4a0zhfym94am0fn6ld43p3iixg02"))))
     (properties `((upstream-name . "QuESTr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kernlab r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/takakoizumi/QuESTr")
@@ -972,6 +1074,7 @@ genetic information.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f list
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -1007,6 +1110,9 @@ metadata handling, and several convenience functions.")
         (base32 "0a3slzskacp0pj0whnnqysqiclf6fby5x81i4mjdvckidgdyjprf"))))
     (properties `((upstream-name . "quest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-str2str
                              r-psych
                              r-plyr
@@ -1029,9 +1135,10 @@ are functions to investigate missing data, reshape data, validate responses,
 recode variables, score questionnaires, center variables, aggregate by groups,
 shift scores (i.e., leads or lags), etc.  It provides functions for both single
 level and multilevel (i.e., grouped) data.  With a few exceptions (e.g.,
-ncases()), functions without an \"s\" at the end of their primary word (e.g.,
-center_by()) act on atomic vectors, while functions with an \"s\" at the end of
-their primary word (e.g., centers_by()) act on multiple columns of a data.frame.")
+@code{ncases()}), functions without an \"s\" at the end of their primary word
+(e.g., @code{center_by()}) act on atomic vectors, while functions with an \"s\" at
+the end of their primary word (e.g., @code{centers_by()}) act on multiple
+columns of a data.frame.")
     (license license:gpl2+)))
 
 (define-public r-queryup
@@ -1046,6 +1153,9 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
         (base32 "0rl31vs1m7qjbix1qgmvnxrvjf2k2ikd8p9frz1yia7xxaq1m286"))))
     (properties `((upstream-name . "queryup")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/VoisinneG/queryup")
@@ -1067,6 +1177,9 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
         (base32 "0va2h1midvf8adymqwg79flpqq7ciznk285kmyqdskkn87argjd2"))))
     (properties `((upstream-name . "queryparser")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/ianmcook/queryparser")
     (synopsis "Translate 'SQL' Queries into 'R' Expressions")
     (description
@@ -1085,6 +1198,9 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
         (base32 "1d06qmnni2mbn63fxbfj23sql82wmn9ziqf5891wbb88xa0wp4mi"))))
     (properties `((upstream-name . "queryBuilder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlang r-purrr r-magrittr r-glue r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=queryBuilder")
@@ -1109,6 +1225,9 @@ operations.")
         (base32 "09fakiyj9kz9ac05jmis0zp9jmizvdyc8cid0js5xzm308dxnlsd"))))
     (properties `((upstream-name . "QuClu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=QuClu")
     (synopsis "Quantile-Based Clustering Algorithms")
     (description
@@ -1132,6 +1251,9 @@ Electronic Journal of Statistics.  13 (2) 4849 - 4883 <doi:10.1214/19-EJS1640>."
         (base32 "0aicg3b840rai7m6hkm5kanzj1zfq5qx9n2pkdxz4m205gy44xdj"))))
     (properties `((upstream-name . "quaxnat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra))
     (home-page "https://github.com/MaximilianAxer/quaxnat")
     (synopsis "Estimation of Natural Regeneration Potential")
@@ -1156,6 +1278,9 @@ potential for forest restoration as described in Axer et al (2021)
         (base32 "18403v03hh57fm09csg6jmxh6biih7dgq9sakn0hg6x3kn8vnnaf"))))
     (properties `((upstream-name . "quarto")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-rstudioapi
                              r-rmarkdown
@@ -1183,6 +1308,9 @@ formats using Quarto'.")
         (base32 "0j5qgk3ha621l3njah54rnxf12ndafcai5bdvv96n888c3yki3nd"))))
     (properties `((upstream-name . "quartets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/r-causal/quartets")
     (synopsis "Datasets to Help Teach Statistics")
     (description
@@ -1211,6 +1339,9 @@ Causal Quartets\" (Gelman et al.  2023) <doi:10.48550/@code{arXiv.2302.12878>}."
         (base32 "082g4wxbvrkqwkaak29ngpd523d3ygxpffghf1vfp1r2v6761s9r"))))
     (properties `((upstream-name . "Quartet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-treetools
                              r-ternary
@@ -1245,6 +1376,9 @@ general trees, Bioinformatics, 30, 2079â2080
         (base32 "13fdmmrgn23xd9vpywmcl7pf729gmcxjfl1wxs30axsbp4h1s6rk"))))
     (properties `((upstream-name . "quarrint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-neuralnet))
     (home-page "https://github.com/jojo-/quarrint")
     (synopsis
@@ -1268,6 +1402,9 @@ and the other is relying on an artificial neural network.")
         (base32 "0srachhn2jxyz3i7ky5hb982232xnngaq66q76ffr3p1v4yfvgw3"))))
     (properties `((upstream-name . "quarks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yfr
                              r-xts
                              r-smoots
@@ -1305,6 +1442,9 @@ well as @code{McNeil}, J., Frey, R., and Embrechts, P. (2015)
         (base32 "0gl1myf7q444imyvsjvxiaxaahf0n0bsggwbd0z3az73l6yf1gjh"))))
     (properties `((upstream-name . "QuantumOps")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=QuantumOps")
     (synopsis
      "Performs Common Linear Algebra Operations Used in Quantum Computing and Implements Quantum Algorithms")
@@ -1336,6 +1476,9 @@ decomposition into the Clifford+T set.")
         (base32 "1azwxxn4831fdqfz36mb5bv5ji4das2wh0r6qakrycqj1zjilk6k"))))
     (properties `((upstream-name . "quantspec")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-snowfall r-rcpp r-quantreg r-abind))
     (home-page "https://github.com/tobiaskley/quantspec")
     (synopsis "Quantile-Based Spectral Analysis of Time Series")
@@ -1357,6 +1500,9 @@ periodograms for univariate and multivariate time series.  See Kley (2016)
         (base32 "0mvlbhx74jjpqcyz032sgc4rz27sv4ppi4a29ql496ix0q22xsv2"))))
     (properties `((upstream-name . "quantsig")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=quantsig")
     (synopsis "Sigmoidal Quantile Function Estimator")
     (description
@@ -1379,6 +1525,9 @@ the method introduced in Hutson (2024) <doi:10.1080/03610918.2022.2032161>.")
         (base32 "1a9q2prr790bpw6s0y5ni5ppd3vqkjr0v4nqp6ywcj5n3sk69pvx"))))
     (properties `((upstream-name . "quantregRanger")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-ranger))
     (home-page "https://github.com/PhilippPro/quantregRanger")
     (synopsis "Quantile Regression Forests for 'ranger'")
@@ -1399,6 +1548,9 @@ forest package ranger'.")
         (base32 "07hj5kanas42kj70p03h77j5m9vnvsnsb02r31snai4smbaps4ad"))))
     (properties `((upstream-name . "quantregGrowth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsem r-quantreg))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=quantregGrowth")
@@ -1428,6 +1580,9 @@ fitted curves are allowed, see Muggeo and others (2013)
         (base32 "0jjjrkj45148s2rymvgzkqpbg2bw7nvf3851153qpl8kp13mxgr1"))))
     (properties `((upstream-name . "QuantRegGLasso")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
     (home-page "https://github.com/egpivo/SpatPCA")
     (synopsis
@@ -1458,6 +1613,9 @@ simulation studies. (Toshio Honda, Ching-Kang Ing, Wei-Ying Wu, 2019,
         (base32 "0b1xmjcv0wrad7il1gg1gaggq19v37akp8zh31dvsnnpmrk05zsp"))))
     (properties `((upstream-name . "quantregForest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-randomforest))
     (native-inputs (list gfortran))
     (home-page "https://github.com/lorismichel/quantregForest")
@@ -1481,6 +1639,9 @@ dependent on the package @code{randomForest}', written by Andy Liaw.")
         (base32 "1f9120awnkwsgdiqg98lg7xs5l4y80930869x6k9q76595r5m92k"))))
     (properties `((upstream-name . "quantreg.nonpar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rearrangement r-quantreg r-mnormt r-fda))
     (home-page "https://cran.r-project.org/package=quantreg.nonpar")
     (synopsis "Nonparametric Series Quantile Regression")
@@ -1505,6 +1666,9 @@ resampling methods.")
         (base32 "0f9vy9yhya4wpya8n345s6n7a5sb29chdkl5fz6dwa31lp1mvvj3"))))
     (properties `((upstream-name . "quantoptr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-rgenoud r-rdpack r-quantreg))
     (home-page "https://cran.r-project.org/package=quantoptr")
     (synopsis "Algorithms for Quantile- And Mean-Optimal Treatment Regimes")
@@ -1528,6 +1692,9 @@ treatment regime is also included.")
         (base32 "1hds9ybwsgnmcpa22vlmgdq02ilhn0c6a7z1qjiq4i5iqjd4gwf6"))))
     (properties `((upstream-name . "QuantNorm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=QuantNorm")
     (synopsis
      "Mitigating the Adverse Impact of Batch Effects in Sample Pattern Detection")
@@ -1552,6 +1719,9 @@ has been published in Bioinformatics (Fei et al, 2018,
         (base32 "0v6kckgzhgsn3158sc06xszdhmk8sfny10j1qyppxsl2hk89n8jf"))))
     (properties `((upstream-name . "quantkriging")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2 r-matrix r-hetgp r-ggplot2))
     (home-page "https://cran.r-project.org/package=quantkriging")
     (synopsis "Quantile Kriging for Stochastic Simulations with Replication")
@@ -1577,6 +1747,9 @@ ability to automatically perform leave-one-out cross validation.")
         (base32 "0rybq5q5airh01lp779hmqw448szx0i56sp5fv8aza2hmh6f7gxz"))))
     (properties `((upstream-name . "quantities")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-units r-rcpp r-errors))
     (native-inputs (list r-knitr))
     (home-page "https://r-quantities.github.io/quantities/")
@@ -1603,6 +1776,9 @@ vignettes; see citation(\"quantities\") for details.")
         (base32 "1r5fg0jj1f7knabbr7h13sjniy6f6jnk4lnq41acq5sllxm565ip"))))
     (properties `((upstream-name . "quantilogram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-rlang r-quantreg r-np r-ggplot2))
     (home-page "https://cran.r-project.org/package=quantilogram")
     (synopsis "Cross-Quantilogram")
@@ -1638,6 +1814,9 @@ Econometrics, 193(1), 251-270 <doi:10.1016/j.jeconom.2016.03.001>.")
         (base32 "043lkg1pyaja7a4f9lmcwrvdjpfly2z378s15snwnxj8vb5pgr38"))))
     (properties `((upstream-name . "QuantileNPCI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=QuantileNPCI")
     (synopsis "Nonparametric Confidence Intervals for Quantiles")
@@ -1659,6 +1838,9 @@ statistics\", Journal of Applied Statistics, 26:3, 343-353.")
         (base32 "1zwc6bg636gk8zll7wpznd3pzl611hcj2fmzp8b9505rra13p0g2"))))
     (properties `((upstream-name . "QuantileGradeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page
      "http://www.kingcounty.gov/depts/health/environmental-health/food-safety/inspection-system/food-safety-rating.aspx")
     (synopsis "Quantile-Adjusted Restaurant Grading")
@@ -1679,16 +1861,17 @@ sufficient violation points to warrant a return visit).  Third, the quantile
 adjustment equalizes the proportion of establishments in a flexible number of
 grading categories (e.g., A/B/C) across areas (e.g., ZIP codes, inspector areas)
 to account for inspector differences.  Fourth, the package implements a refined
-quantile adjustment that addresses two limitations with the stats::quantile()
-function when applied to inspection score datasets with large numbers of score
-ties.  The quantile adjustment algorithm iterates over quantiles until, over all
-restaurants in all areas, grading proportions are within a tolerance of desired
-global proportions.  In addition the package allows a modified definition of
-\"quantile\" from \"Nearest Rank\".  Instead of requiring that at least p[1]% of
-restaurants receive the top grade and at least (p[1]+p[2])% of restaurants
-receive the top or second best grade for quantiles p, the algorithm searches for
-cutoffs so that as close as possible p[1]% of restaurants receive the top grade,
-and as close as possible to p[2]% of restaurants receive the second top grade.")
+quantile adjustment that addresses two limitations with the
+@code{stats::quantile()} function when applied to inspection score datasets with
+large numbers of score ties.  The quantile adjustment algorithm iterates over
+quantiles until, over all restaurants in all areas, grading proportions are
+within a tolerance of desired global proportions.  In addition the package
+allows a modified definition of \"quantile\" from \"Nearest Rank\".  Instead of
+requiring that at least p[1]% of restaurants receive the top grade and at least
+(p[1]+p[2])% of restaurants receive the top or second best grade for quantiles
+p, the algorithm searches for cutoffs so that as close as possible p[1]% of
+restaurants receive the top grade, and as close as possible to p[2]% of
+restaurants receive the second top grade.")
     (license license:gpl2+)))
 
 (define-public r-quantilegh
@@ -1703,6 +1886,9 @@ and as close as possible to p[2]% of restaurants receive the second top grade.")
         (base32 "0zsdvvx567dq17b5n9rdx2qmnm0ph9qnvffmgh7n4csz0c1ca4xg"))))
     (properties `((upstream-name . "QuantileGH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tukeygh77 r-tclust r-mixtools r-fmx))
     (home-page "https://cran.r-project.org/package=QuantileGH")
     (synopsis
@@ -1724,6 +1910,9 @@ of finite mixtures of Tukey g-and-h distributions.")
         (base32 "136rjrim7q07pl3w76xs77nhsv7xvi8isw2924ngxmfp35hbhq16"))))
     (properties `((upstream-name . "quantileDA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=quantileDA")
     (synopsis "Quantile Classifier")
     (description "Code for centroid, median and quantile classifiers.")
@@ -1741,6 +1930,9 @@ of finite mixtures of Tukey g-and-h distributions.")
         (base32 "116cp88q9cmizxc2a8lsysa1vwyp1y86457fx5qkq5dcm4g721g8"))))
     (properties `((upstream-name . "quantification")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-car))
     (home-page "https://cran.r-project.org/package=quantification")
     (synopsis "Quantification of Qualitative Survey Data")
@@ -1762,6 +1954,9 @@ balance approach and the conditional expectations method.")
         (base32 "0bzlbwjlwjrmwa1anzarhmbgzsg0gwynlwpwxv786yb235x8znrn"))))
     (properties `((upstream-name . "quanteda.textstats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-rcpparmadillo
                              r-rcpp
@@ -1793,6 +1988,9 @@ quanteda package and are specially designed for sparse textual data.")
         (base32 "1lgardgbwc3rhla6bxq4cy4wif7w0s3s5pyvyswb9fz6yyfw0wrk"))))
     (properties `((upstream-name . "quanteda.textplots")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-sna
                              r-rcpp
@@ -1826,6 +2024,9 @@ keyness plots.")
         (base32 "0k6kx0aym2gyl5c537kj728pbf6l3zzcr7mfrv6i5r4gfdcx4bw5"))))
     (properties `((upstream-name . "quanteda.textmodels")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringi
                              r-sparsem
                              r-rspectra
@@ -1861,6 +2062,9 @@ fast Naive Bayes and linear SVMs specially designed for sparse textual data.")
         (base32 "0w6jdd6i4wxbk4fp44rmy32mwq9ng63zwamq8zpa1hlfbm5qh4s2"))))
     (properties `((upstream-name . "quantdr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-mvtnorm r-kernsmooth r-dr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/elianachristou/quantdr")
@@ -1882,6 +2086,9 @@ Nonparametric estimation of conditional quantiles is also available.")
         (base32 "1xlrbxslm4i3cwhzw3xa67vib43gpfclz18hkjbvas5ij68axvap"))))
     (properties `((upstream-name . "quantdates")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lubridate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/quantilma/quantdates")
@@ -1907,6 +2114,9 @@ Derivatives Association (ISDA) (2006)
         (base32 "0z00agd4q157cjkc4gwyfw3kka043wcf5j7yzn8cqm281fqh1jny"))))
     (properties `((upstream-name . "quantCurves")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreggrowth r-quantreg r-np r-locpol
                              r-kernsmooth))
     (home-page "https://cran.r-project.org/package=quantCurves")
@@ -1930,6 +2140,9 @@ al.(2019) <doi:10.1186/s12874-019-0666-3>.")
         (base32 "1w6zlf8wvfh4568aa0l9l3p502hjmj8lhnkagv6dqg332jz0ikhr"))))
     (properties `((upstream-name . "QuantBondCurves")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp r-quantdates r-lubridate))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=QuantBondCurves")
@@ -1957,6 +2170,9 @@ Serrat, A. (2022, ISBN: 978-1-119-83555-4).")
         (base32 "1bsba6blbcq0my8wm0qcy0qabbgx344gjljnjwaqfrqkjcphf5xs"))))
     (properties `((upstream-name . "Quandl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo r-xts r-jsonlite r-httr))
     (home-page "https://github.com/quandl/quandl-r")
     (synopsis "API Wrapper for Quandl.com")
@@ -1980,6 +2196,9 @@ on the package itself go to <https://www.quandl.com/tools/r>.")
         (base32 "1nbkbc5lcglrpp4k3jphdzqr9xl5kgdv6sg05ibdcwidn6bk3y5l"))))
     (properties `((upstream-name . "QUALYPSO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rfast r-mass r-expm))
     (home-page "https://cran.r-project.org/package=QUALYPSO")
     (synopsis
@@ -2005,6 +2224,9 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
         (base32 "1c7b7lcyq2l46sslk185r6xfh5fb35z9qihrhnh294sw1k52bffa"))))
     (properties `((upstream-name . "qualvar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "http://joelgombin.github.io/qualvar/")
     (synopsis
@@ -2026,6 +2248,9 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
         (base32 "1f63524a4xwdd2wgv4b8ny24xqc4kgcca7ql9c0v71l7yx6ia06r"))))
     (properties `((upstream-name . "qualtRics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-tibble
@@ -2066,6 +2291,9 @@ community-maintained and is not officially supported by Qualtrics'.")
         (base32 "13mahl7v1sldy35ssmr9k0anhx569g1rv44kgvdw5w5s8dm28512"))))
     (properties `((upstream-name . "qualpalr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-randtoolbox r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://jolars.github.io/qualpalr/")
@@ -2089,6 +2317,9 @@ colors that are maximally distinct are chosen algorithmically.")
         (base32 "1ych61nb3jxvd23d13dlw5y47n94gs0k6ncq7i4rbk01594bk5al"))))
     (properties `((upstream-name . "qualmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sf
                              r-rlang
                              r-purrr
@@ -2119,6 +2350,9 @@ can be entered as vectors and transformed using qualmap.")
         (base32 "134dksflv43bixqa5lhcjgwqnahzpb2fnzl4dhc81wdb9pcqsg7v"))))
     (properties `((upstream-name . "qualitycontrol")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-readxl r-openxlsx r-janitor r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luisgarcez11/qualitycontrol")
@@ -2141,6 +2375,9 @@ control.")
         (base32 "15i68ykbr0ld8cfcha1ywf4lmsf7zpgi7qsn2rpf44k92fp6hzc7"))))
     (properties `((upstream-name . "quadtree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dfriend21/quadtree/")
@@ -2170,6 +2407,9 @@ resistance surface.")
         (base32 "1h05cywpi83saaqg1m8zb49nxn9ablzb8152yd5rynp877cc636h"))))
     (properties `((upstream-name . "quadrupen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-reshape2
                              r-rcpparmadillo
@@ -2197,6 +2437,9 @@ model selection purpose (cross-validation, stability selection).")
         (base32 "1ixh4ikp8pqa7py4di9fgmi5rhjgsvh57j2f59g6xdcyl068c3g6"))))
     (properties `((upstream-name . "QuadRoot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=QuadRoot")
     (synopsis "Quadratic Root for any Quadratic Equation")
@@ -2217,6 +2460,9 @@ equation.")
         (base32 "1mpz90vww1vp0as70yfyv6p9sg9gnggzs4c5qld3ig4krzal7d3j"))))
     (properties `((upstream-name . "QuadratiK")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sn
                              r-scatterplot3d
                              r-rrcov
@@ -2256,6 +2502,9 @@ Markatou, M. (2020) <doi:10.1080/10618600.2020.1740713>.")
         (base32 "07v71anh0kz898x6j677bxx5lyarc4r0z1j0vx501ffi38icc1f0"))))
     (properties `((upstream-name . "quadraticSD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-ggplot2))
     (home-page "https://cran.r-project.org/package=quadraticSD")
     (synopsis "Visualizing the SD using a Quadratic Curve")
@@ -2280,6 +2529,9 @@ the Standard Deviaton?, Nepalese Journal of Statistics, Vol.  3, 1-10.")
         (base32 "1yna2kx9pr58vyy6f4mwx4a6avjz84wwhcary88v1k0ihhv9swcz"))))
     (properties `((upstream-name . "quadprogXT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog))
     (home-page "https://cran.r-project.org/package=quadprogXT")
     (synopsis "Quadratic Programming with Absolute Value Constraints")
@@ -2300,6 +2552,9 @@ constraints and absolute values in the objective function.")
         (base32 "0af795r29976ir0ma48chmlm17001xg5wd29waz356cfhinzs2nk"))))
     (properties `((upstream-name . "quadmesh")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-scales
                              r-reproj
@@ -2334,6 +2589,9 @@ dtriangmesh functions.")
         (base32 "0nngrvvbalmrr6g9bq9f5qrllvwfq5p1b9yhs4zb098s3wga8jms"))))
     (properties `((upstream-name . "quadmatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-matrixcalc r-geigen))
     (home-page "https://cran.r-project.org/package=quadmatrix")
     (synopsis "Solving Quadratic Matrix Equations")
@@ -2354,6 +2612,9 @@ dtriangmesh functions.")
         (base32 "0w01v688xfb9zl7yr2prr9hwpylbx2cc8qwidxkzyzxzk21ywdn3"))))
     (properties `((upstream-name . "quadform")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mathjaxr))
     (home-page "https://github.com/RobinHankin/quadform")
     (synopsis "Efficient Evaluation of Quadratic Forms")
@@ -2375,6 +2636,9 @@ consistently.")
         (base32 "1kiadc6wwq89yb6pdld646afqhh7i3xs1f667vab3svygfqn670x"))))
     (properties `((upstream-name . "quadcleanR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DominiqueMaucieri/quadcleanR")
@@ -2397,6 +2661,9 @@ comparability between quadrats collected under different methodologies.")
         (base32 "1llckj25x2wr3g3wa1m43fqa6v9ddyf444wbwwjdfwc9ix9j5fkj"))))
     (properties `((upstream-name . "qtwAcademic")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fs))
     (native-inputs (list r-knitr))
     (home-page "https://andreaczhang.github.io/qtwAcademic/")
@@ -2420,6 +2687,9 @@ customization.")
         (base32 "167c8mfj0if4j9m3rjbi1gnhwypq5ky297zyb437p42b3856qagi"))))
     (properties `((upstream-name . "Qtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-quantreg
@@ -2457,6 +2727,9 @@ and included in the package.")
         (base32 "0wlbxk1rd56k02jf3pfzbx6xx5mmf6sb7gvds0067cvb7m42ghcr"))))
     (properties `((upstream-name . "QTOCen")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rgenoud r-rdpack r-quantreg
                              r-matrixmodels))
     (home-page "https://cran.r-project.org/package=QTOCen")
@@ -2484,6 +2757,9 @@ model of a dynamic treatment experiment proposed in literature.")
         (base32 "1brxlvqlcax0f5l0bnc9cirn2v6xwhb851cvzkwrgsxi4m7xn839"))))
     (properties `((upstream-name . "QTLRel")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lattice r-gdata))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=QTLRel")
@@ -2512,6 +2788,9 @@ genotypic data in certain circumstances.")
         (base32 "1lcfb19akddxljwvgsryjvhks0lqkdg7f1br1l2szd6qyd4mmdvs"))))
     (properties `((upstream-name . "qtlpoly")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rlrsim
                              r-rcppprogress
                              r-rcpparmadillo
@@ -2549,6 +2828,9 @@ al. (2020) <doi:10.1534/genetics.120.303080>.")
         (base32 "0jdf3hyzas0lyv2v4gqai9mhh7218a1mvm0nlwv9hfdbij0hi84v"))))
     (properties `((upstream-name . "qtlnet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sem r-qtl r-pcalg r-igraph r-graph))
     (home-page "http://www.stat.wisc.edu/~yandell/sysgen")
     (synopsis "Causal Inference of QTL Networks")
@@ -2574,6 +2856,9 @@ Annals of Applied Statistics 4: 320-339. <doi:10.1214/09-AOAS288>.")
         (base32 "0gf0fsq91g830vqg5kz01zznm40qpjncy964ccvmms3i6d3hxd9m"))))
     (properties `((upstream-name . "qtlhot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qtl r-mnormt r-corpcor))
     (home-page "http://www.stat.wisc.edu/~yandell/statgen")
     (synopsis "Inference for QTL Hotspots")
@@ -2599,6 +2884,9 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
         (base32 "1w2h094ihvfybaq7gr9l0x6b1d81yvf921rki1bz263jbc9x57h3"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-gtools))
     (home-page "https://github.com/py-chung/QTLEMM")
     (synopsis "QTL Mapping and Hotspots Detection")
@@ -2644,6 +2932,9 @@ C.-H. Kao (2021) <doi: 10.1093/g3journal/jkab056>.")
         (base32 "1lgdmkvmakad7w40pm79gdas1zraz2rcymdsysas0hyfvwxyly95"))))
     (properties `((upstream-name . "qtlDesign")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.senresearch.org")
     (synopsis "Design of QTL (Quantitative Trait Locus) Experiments")
     (description
@@ -2668,6 +2959,8 @@ provides tools to help make such choices.  Sen and others (2007)
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -2706,6 +2999,9 @@ variation in quantitative traits.  Broman (2015)
         (base32 "17ij4alx4qg556b5kq7qsjygj5jf8iyx1f0v52pvx1z2sm6nppww"))))
     (properties `((upstream-name . "qtlc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tiff r-rgl r-plot3d))
     (home-page "https://cran.r-project.org/package=qtlc")
     (synopsis "Densitometric Analysis of Thin-Layer Chromatography Plates")
@@ -2726,6 +3022,9 @@ chromatography (TLC) plates.")
         (base32 "1c849xy2ki7niddajv5wnsm0zdp5381w8zm9lc8rvkdbs2v6rhf4"))))
     (properties `((upstream-name . "qtlbook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://rqtl.org/book")
     (synopsis "Datasets for the R/qtl Book")
     (description
@@ -2745,6 +3044,9 @@ chromatography (TLC) plates.")
         (base32 "0az71vgj1gv7rfz0hnc9rysh49ak2pnkvmih5mwmymr4an84c34k"))))
     (properties `((upstream-name . "qtl2pleio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-rcppeigen
@@ -2779,6 +3081,9 @@ multiparental populations.")
         (base32 "12ysbqcf7bq1ibdyznlzc3kg71k7vd6cgy9xgmmhmdv8hkhdlf26"))))
     (properties `((upstream-name . "qtl2pattern")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -2811,6 +3116,9 @@ handle multiple traits together.  See <https://github.com/byandell/qtl2pattern>.
         (base32 "0ygadcm05fqkpa8j2h6rpcxpd287g2av7qnlwlqp1s86zfxshk96"))))
     (properties `((upstream-name . "qtl2ggplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -2843,6 +3151,9 @@ to better handle high-dimensional data and complex cross designs.")
         (base32 "1n1abgqw5q0l731ypzl02aar8n2hwp6japwhwijm0mh3zwfppb8n"))))
     (properties `((upstream-name . "qtl2fst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qtl2 r-fst))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rqtl/qtl2fst")
@@ -2867,6 +3178,9 @@ reduced memory usage with only a modest increase in computation time.")
         (base32 "1rpg74gblh30qy0byxvyhlrimcgx7ml5jn7dxs032my7pa58mspf"))))
     (properties `((upstream-name . "qtl2convert")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-qtl2 r-qtl))
     (home-page "https://kbroman.org/qtl2/")
     (synopsis "Convert Data among QTL Mapping Packages")
@@ -2887,6 +3201,9 @@ qtl', and DOQTL packages for mapping quantitative trait loci (QTL).")
         (base32 "0a155vl869i3li2i67b89p056x50ycqp9yk0ll5g3fp3xcdl80zs"))))
     (properties `((upstream-name . "QTL.gCIMapping.GUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-shiny
                              r-rcpp
@@ -2925,6 +3242,9 @@ identified by likelihood radio test.  See Wen et al. (2018)
         (base32 "17f2xmgklbi8kicv7v951zm3bf1q4bdx9lcfbxpac3i7xm985fgr"))))
     (properties `((upstream-name . "QTL.gCIMapping")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-readxl
                              r-rcpp
@@ -2964,6 +3284,9 @@ et al. (2018) <doi:10.1093/bib/bby058>.")
         (base32 "0bplhks1sbhx5h34ijx3xdalgvczl8zg4vi6hh7iyp92wncid1vx"))))
     (properties `((upstream-name . "qtkit")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-tibble
                              r-stringr
@@ -3003,6 +3326,9 @@ can also be used as a standalone package for text analysis.")
         (base32 "13cs1l2x0lz36zpy8bpz0jwgq5yg4rm7vvjsaadzli5drky6ymip"))))
     (properties `((upstream-name . "QTE.RD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-plotrix))
     (home-page "https://cran.r-project.org/package=QTE.RD")
     (synopsis
@@ -3027,6 +3353,9 @@ robust bias correction methods of Qu, Yoon, Perron (2024)
         (base32 "1hz3rwsi3w2b1xjigf5s3866djcxdkjz7jwcz0rin22v5h6sql80"))))
     (properties `((upstream-name . "qte")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-texreg
                              r-quantreg
                              r-pbapply
@@ -3063,6 +3392,9 @@ Callaway and Li (2019) <doi:10.3982/QE935>, Callaway, Li, and Oka (2018)
         (base32 "0ygys183pj420jr9bz13x009qis3qr1aqxgw3l2d4xx3xv90iy3g"))))
     (properties `((upstream-name . "qsub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-ssh
@@ -3076,8 +3408,8 @@ Callaway and Li (2019) <doi:10.3982/QE935>, Callaway, Li, and Oka (2018)
     (home-page "https://github.com/rcannood/qsub")
     (synopsis "Running Commands Remotely on 'Gridengine' Clusters")
     (description
-     "Run lapply() calls in parallel by submitting them to gridengine clusters using
-the qsub command.")
+     "Run @code{lapply()} calls in parallel by submitting them to gridengine clusters
+using the qsub command.")
     (license license:gpl3)))
 
 (define-public r-qst
@@ -3092,6 +3424,9 @@ the qsub command.")
         (base32 "0f5c4088y9c5fxyy2dyfkp049lnzvys3zyizazxsa82xwkwsbc8a"))))
     (properties `((upstream-name . "qst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rsqlite
                              r-magrittr
@@ -3105,8 +3440,8 @@ the qsub command.")
 data.frame to file in SQLite format.  The name stands for *Store Tables using
 SQLite'*, or alternatively for *Quick Store Tables* (either way, it could be
 pronounced as *Quest*).  For data.frames containing the supported data types it
-is intended to work as a drop-in replacement for the write_*() and read_*()
-functions provided by similar packages.")
+is intended to work as a drop-in replacement for the @code{write_*()} and
+@code{read_*()} functions provided by similar packages.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
 
 (define-public r-qspray
@@ -3121,6 +3456,9 @@ functions provided by similar packages.")
         (base32 "0i5sq29zdcvdrmzsd0xxrw200q6nhg8b00n2jwya8hq4al9xq2z6"))))
     (properties `((upstream-name . "qspray")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gmp))
     (propagated-inputs (list r-ryacas
                              r-rcpp
@@ -3158,6 +3496,8 @@ of coefficients.")
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -3196,6 +3536,9 @@ allow to construct spherical curves.  References: Barry and Goldman
         (base32 "1xvp29dijfa2207wyw3z09rmffn61fngfy0f00qjk284n1jnnvrg"))))
     (properties `((upstream-name . "qsort")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-purrr r-gridextra r-ggplot2 r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=qsort")
@@ -3225,6 +3568,9 @@ Preschool Q-set (Baumrind, 1968 revised by Wanda Bronson,
         (base32 "0df8988pr0kcz8xdi8sgl99mifs8djzjrannx52n42yck58g5hky"))))
     (properties `((upstream-name . "qslice")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=qslice")
     (synopsis "Implementations of Various Slice Samplers")
@@ -3252,6 +3598,9 @@ Metropolis-Hastings sampler.")
         (base32 "00022yyfwpv7f28isbnqy8001nm6xvxnfb2sbjckl8vbv0sjvs9n"))))
     (properties `((upstream-name . "qsimulatR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HISKP-LQCD/qsimulatR")
     (synopsis "Quantum Computer Simulator")
@@ -3278,6 +3627,9 @@ hardware <https://quantum-computing.ibm.com/>.")
         (base32 "0dhldnh0jzzb4assycc0l14s45ymvha48w04jbnr34lrwgr9krh4"))))
     (properties `((upstream-name . "QSARdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://qsardata.r-forge.r-project.org/")
     (synopsis "Quantitative Structure Activity Relationship (QSAR) Data Sets")
     (description
@@ -3287,15 +3639,18 @@ hardware <https://quantum-computing.ibm.com/>.")
 (define-public r-qs2
   (package
     (name "r-qs2")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qs2" version))
        (sha256
-        (base32 "1zdz4x7fzv067iczjgzz19qbkzmvla03i8a20w56qwbmpxqg4hdw"))))
+        (base32 "11b5a2xi75sx0a98sxjp97hh2yflahqbsxgdk2j2c93lnb7ypasv"))))
     (properties `((upstream-name . "qs2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringfish r-rcppparallel r-rcpp))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/qsbase/qs2")
@@ -3322,6 +3677,9 @@ format, ensuring long-term compatibility with future versions of R.")
         (base32 "1jacj0ybcbfhll5nvx31h00jm1rlcyzw3kcbxffrmpa9hd1spxql"))))
     (properties `((upstream-name . "qrnn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=qrnn")
     (synopsis "Quantile Regression Neural Network")
     (description
@@ -3344,6 +3702,9 @@ the ability to fit multiple non-crossing quantile functions following Cannon
         (base32 "0kzyk01c20bzglkdapy8gwnvkmrjndakm2lj9svx4lhl80v1jh31"))))
     (properties `((upstream-name . "qrNLMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg
                              r-psych
                              r-progress
@@ -3373,6 +3734,9 @@ convergence and fitting results.")
         (base32 "0j46rlxyfahz271hckcr42i437n0vc77bvg5p1fi5zb6pywlxvji"))))
     (properties `((upstream-name . "qrng")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=qrng")
     (synopsis "(Randomized) Quasi-Random Number Generators")
     (description
@@ -3392,6 +3756,9 @@ dimensions.")
         (base32 "1vv9y6mmvqnlimghw3dl873r4l47imwcp2x58yzrn53fa2y7b6mi"))))
     (properties `((upstream-name . "qrmtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-xts
                              r-rugarch
@@ -3422,6 +3789,9 @@ Management practice.")
         (base32 "1r695d9bmmngvblh9jj0rnjymdaln9w0jywz51wla0bdssssf845"))))
     (properties `((upstream-name . "qrmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-mass))
     (home-page "https://cran.r-project.org/package=qrmix")
     (synopsis "Quantile Regression Mixture Models")
@@ -3442,6 +3812,9 @@ based on quantile regression proposed by Emir et al., 2017 (unpublished).")
         (base32 "0982sm22dshg70sk62jgrsy5rryv0bb5sdhnkq6icg292z6p3mix"))))
     (properties `((upstream-name . "qrmdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xts))
     (home-page "https://cran.r-project.org/package=qrmdata")
     (synopsis "Data Sets for Quantitative Risk Management Practice")
@@ -3463,6 +3836,9 @@ practice.")
         (base32 "15dyk3zfy92vj4xny04dh5mqcyb8qh61566m313qs17mxwibvn2a"))))
     (properties `((upstream-name . "QRM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-timeseries
                              r-timedate
                              r-rcpp
@@ -3492,6 +3868,9 @@ Ruediger Frey, and Paul Embrechts.")
         (base32 "0j42akh84jawjq4dslqcf0yg5k4r6dz8psgv812l4qmrl3s9frnz"))))
     (properties `((upstream-name . "qrLMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-psych r-mvtnorm r-lqr r-ald))
     (home-page "https://cran.r-project.org/package=qrLMM")
     (synopsis "Quantile Regression for Linear Mixed-Effects Models")
@@ -3516,6 +3895,9 @@ results.")
         (base32 "1bv76d3fkficcaqg4kzkkxjq1p24c6hxd25jyfia96nkmxyds44m"))))
     (properties `((upstream-name . "qrlabelr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uuid
                              r-shinywidgets
                              r-shinyjs
@@ -3559,6 +3941,9 @@ design for non-R users.  It builds on the methods described by Wu et al. (2020)
         (base32 "0dvz5adawy143r0ddgrblzac76igwmngnblr6vq57sxlvj1nsm7h"))))
     (properties `((upstream-name . "qrjoint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-matrix r-kernlab r-coda))
     (home-page "https://cran.r-project.org/package=qrjoint")
     (synopsis "Joint Estimation in Linear Quantile Regression")
@@ -3579,6 +3964,9 @@ regression setting.")
         (base32 "1qyipdmw7ygxlclnyf726bjkirskkkf4cygyv0y421c9x7dgznij"))))
     (properties `((upstream-name . "QRISK3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=QRISK3")
     (synopsis "10-Year Cardiovascular Disease Risk Calculator (QRISK3 2017)")
     (description
@@ -3600,6 +3988,9 @@ published open-sourced free risk prediction algorithm QRISK3-2017
         (base32 "0nx4x4ywgwg55fpv9cr30r09in4rzm6070fm0g88qpvgvrihs9a6"))))
     (properties `((upstream-name . "qris")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
                              r-rcpparmadillo
@@ -3636,15 +4027,18 @@ Computational Statistics, 1-22 <doi:10.1007/s00180-022-01262-z>.")
         (base32 "0xqc72p3jm61kifha77c8sfk7b1p7cfdskzkm29w4j06009qd8a8"))))
     (properties `((upstream-name . "QRIpkg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-ggplot2))
     (home-page "https://cran.r-project.org/package=QRIpkg")
     (synopsis "Quantile Regression Index Score")
     (description
-     "The QRI_func() function performs quantile regression analysis using age and sex
-as predictors to calculate the Quantile Regression Index (QRI) score for each
-individualâs regional brain imaging metrics and then averages across the
+     "The @code{QRI_func()} function performs quantile regression analysis using age
+and sex as predictors to calculate the Quantile Regression Index (QRI) score for
+each individualâs regional brain imaging metrics and then averages across the
 regional scores to generate an average tissue specific score for each subject.
-The QRI_plot() is used to plot QRI and generate the normative curves for
+The @code{QRI_plot()} is used to plot QRI and generate the normative curves for
 individual measurements.")
     (license license:gpl2+)))
 
@@ -3660,6 +4054,9 @@ individual measurements.")
         (base32 "1d3dlpcf6w4bj6bwmydr3rlnscfdqyad6j2cm1rda7565q7k9iyf"))))
     (properties `((upstream-name . "qreport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-rms
                              r-knitr
@@ -3675,7 +4072,7 @@ individual measurements.")
 in Quarto and RMarkdown reports and that produce Quarto elements for special
 formatting such as tabs and marginal notes and graphs.  Some of the functions
 produce entire report sections with tabs, e.g., the missing data report created
-by @code{missChk}().  Functions for inserting variables and tables inside
+by @code{missChk()}.  Functions for inserting variables and tables inside
 graphviz and mermaid diagrams are included, and so are special clinical trial
 graphics for adverse event reporting.")
     (license license:gpl2+)))
@@ -3692,6 +4089,9 @@ graphics for adverse event reporting.")
         (base32 "1lg60lg2fiqdw0m228i8pln2p0kqp9f21qmrx6r6rwxifvwlfhv8"))))
     (properties `((upstream-name . "qrencoder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-raster r-png r-base64enc))
     (home-page "http://github.com/hrbrmstr/qrencoder")
     (synopsis "Quick Response Code (QR Code) / Matrix Barcode Creator")
@@ -3716,6 +4116,9 @@ via the included libqrencoder library created by Kentaro Fukuchi.")
         (base32 "0fcydkf6r2qxd59ylr8vn76bkxks91v58gfzvq3rjd5mqf9vsaaq"))))
     (properties `((upstream-name . "QRegVCM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncsp r-sparsem r-quantreg))
     (home-page "https://cran.r-project.org/package=QRegVCM")
     (synopsis "Quantile Regression in Varying-Coefficient Models")
@@ -3738,6 +4141,9 @@ General heteroscedastic VCM.")
         (base32 "0rihfd2542wpfv43115pkxh233ma1qwkwxivawqs9f4faypyi5mh"))))
     (properties `((upstream-name . "QregBB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg))
     (home-page "https://cran.r-project.org/package=QregBB")
     (synopsis "Block Bootstrap Methods for Quantile Regression in Time Series")
@@ -3761,6 +4167,9 @@ time series.  The Annals of Statistics, 46(3), 1138-1166.")
         (base32 "0jzam1wb7mhjr35jq4xplnm3abbvhc0dngn0jaaqz87habd0v9wq"))))
     (properties `((upstream-name . "qrcode")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-assertthat))
     (home-page "https://thierryo.github.io/qrcode/")
     (synopsis "Generate QRcodes with R")
@@ -3783,6 +4192,9 @@ friendly QR codes.")
         (base32 "10yqksn9761fryjvx6srv2z1pzmlr5m69bch16j256j9k2lknsr4"))))
     (properties `((upstream-name . "qrcmNP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-qrcm))
     (home-page "https://cran.r-project.org/package=qrcmNP")
     (synopsis
@@ -3805,6 +4217,9 @@ functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
         (base32 "0ia1dbb6yfaagpkb90qhdfni1qizysvw7sapbfff2mkd569hin6y"))))
     (properties `((upstream-name . "qrcm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-pch r-icenreg))
     (home-page "https://cran.r-project.org/package=qrcm")
     (synopsis "Quantile Regression Coefficients Modeling")
@@ -3824,6 +4239,9 @@ functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
         (base32 "1f924r5bf5vjfl12hk1n5m3f94g30f6vmvzq2bn8295dflyndck0"))))
     (properties `((upstream-name . "QRank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg))
     (home-page "https://cran.r-project.org/package=QRank")
     (synopsis "Novel Quantile Regression Approach for eQTL Discovery")
@@ -3844,6 +4262,9 @@ expression quantitative trait loci.")
         (base32 "06ka6n9sh7h8ka6mklbvk8f7sqmz50mk74fjaj1r4l774wribxaq"))))
     (properties `((upstream-name . "QRAGadget")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sp
                              r-shinywidgets
                              r-shiny
@@ -3873,6 +4294,9 @@ configurations.")
         (base32 "0wx0lz8a7qc1fdpvgyfhpbryy7wk7yi90ii2yirh57dvpyfq54m0"))))
     (properties `((upstream-name . "qra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown
                              r-lme4
                              r-latticeextra
@@ -3908,6 +4332,9 @@ also Maindonald, Waddell, and Petry (2001) <doi:10.1016/S0925-5214(01)00082-5>."
         (base32 "1xar0mj8s2nb8sks8dzf4wn1axc4rhmhx1qsjn2blsi4i8gfncka"))))
     (properties `((upstream-name . "QR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tinytest))
     (native-inputs (list r-knitr))
     (home-page
@@ -3931,6 +4358,9 @@ Guide\".  Third Edition.  SIAM.")
         (base32 "1fli4v1slmnwcmzmmfw84sa4mx3xzv3im1q0plb8811sbsgmwdvl"))))
     (properties `((upstream-name . "qqvases")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinythemes r-shiny))
     (home-page "https://cran.r-project.org/package=qqvases")
     (synopsis "Animated Normal Quantile-Quantile Plots")
@@ -3955,6 +4385,9 @@ distributions, either as samples or continuous functions.")
         (base32 "1v0qbbp2dpqflpg7yif7hipwdbz27isfyfwcia1ln7z0nnvkjm8c"))))
     (properties `((upstream-name . "qqtest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rwoldford/qqtest")
     (synopsis "Self Calibrating Quantile-Quantile Plots for Visual Testing")
@@ -3988,6 +4421,9 @@ that the data come from the test distribution.")
         (base32 "0kj1m7m04599d3b6227vja02zwq5d2vc0cyz2c7jvki4g3q2knxf"))))
     (properties `((upstream-name . "qqplotr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-robustbase
                              r-qqconf
                              r-opdisdownsampling
@@ -4013,6 +4449,9 @@ that the data come from the test distribution.")
         (base32 "1rsipw7cn2gqpqpa0ysj99ms5jpnbynjs4gkkmbr2w0c2466fhgx"))))
     (properties `((upstream-name . "qqboxplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=qqboxplot")
@@ -4038,6 +4477,9 @@ extend to the Q-Q boxplot.")
         (base32 "1mlv9yc929w8ypfzhfplhjbxxj1qdx4v9gh6dr68lylvm9ahx032"))))
     (properties `((upstream-name . "qpNCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-magrittr r-knitr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=qpNCA")
@@ -4064,6 +4506,9 @@ ISBN:978-91-9765-100-4), and Gibaldi and Perrier (1982, ISBN:978-0824710422).")
         (base32 "0krv3zhr42z2mkkbn2bkglzfxbf06dmd9vnnc3rcyhm1r85n4fbq"))))
     (properties `((upstream-name . "qpmadr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-checkmate))
     (home-page "https://github.com/anderic1/qpmadr")
     (synopsis "Interface to the 'qpmad' Quadratic Programming Solver")
@@ -4085,6 +4530,9 @@ constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
         (base32 "1m9niwqva1b7spkk8xn4n6f7xnfv9zmh1ardahaq10wr7c0x11sy"))))
     (properties `((upstream-name . "qPCRtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rstatix
@@ -4113,6 +4561,9 @@ constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
         (base32 "0v1d4k2v2sgcy0xh2vq21yv9sw71bj44rc273g9ggg214zqdprxd"))))
     (properties `((upstream-name . "qPCRhelper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstatix r-magrittr r-ggpubr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=qPCRhelper")
@@ -4120,7 +4571,7 @@ constraints.  The method used is outlined in D. Goldfarb, and A. Idnani (1983)
     (description
      "Computes normalized cycle threshold (Ct) values (delta Ct) from raw quantitative
 polymerase chain reaction (@code{qPCR}) Ct values and conducts test of
-significance using t.test().  Plots expression values based from
+significance using @code{t.test()}.  Plots expression values based from
 log2(2^(-1*delta delta Ct)) across groups per gene of interest.  Methods for
 calculation of delta delta Ct and relative expression (2^(-1*delta delta Ct))
 values are described in: Livak & Schmittgen, (2001)
@@ -4139,6 +4590,9 @@ values are described in: Livak & Schmittgen, (2001)
         (base32 "00g1ykwlmc4w0bmzj0jg9ckr2bvkl8qcxd67wdc12alccqqd584v"))))
     (properties `((upstream-name . "QoLMiss")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-missmethods r-dplyr))
     (home-page "https://cran.r-project.org/package=QoLMiss")
     (synopsis "Scales Score Calculation from Quality of Life Data")
@@ -4164,6 +4618,9 @@ original data set.")
         (base32 "1zia8k95lmxpqfpkci6kln5d8n86fnnahyb8xd52ivqglifv5g56"))))
     (properties `((upstream-name . "qoi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/JohannesFriedrich/qoi4R")
     (synopsis "Read and Write QOI Images")
     (description
@@ -4185,6 +4642,9 @@ and write both files and in-memory raw vectors.")
         (base32 "11m42xw10vll9l1ij73f48ig9cwirnnz1rphpckfc33bm43vpn27"))))
     (properties `((upstream-name . "qmvs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=qmvs")
     (synopsis "Queueing Model of Visual Search")
     (description
@@ -4210,6 +4670,9 @@ distance between the empirical response times and the model prediction.")
         (base32 "0d17b64gzf5xlhc5z8qxjj759c1paiv8kxikk2r6ph6zfwvvxw0y"))))
     (properties `((upstream-name . "qmrparser")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=qmrparser")
     (synopsis "Parser Combinator in R")
     (description
@@ -4229,6 +4692,9 @@ files.")
         (base32 "0smkqqq8pcxix4lf35skkf9p5jw9mc3llkmyr334qkk85kvgnwn6"))))
     (properties `((upstream-name . "qmethod")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable r-psych r-knitr r-digest))
     (home-page "https://github.com/aiorazabala/qmethod")
     (synopsis "Analysis of Subjective Perspectives Using Q Methodology")
@@ -4267,6 +4733,9 @@ online and offline use.")
         (base32 "15y1bivli3jy09l4j37zp327x1nchkg6qm8hs46srcxznh9zb99d"))))
     (properties `((upstream-name . "qmd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-qad r-ggplot2 r-dplyr r-cowplot))
     (home-page "https://cran.r-project.org/package=qmd")
     (synopsis "Quantification of Multivariate Dependence")
@@ -4289,6 +4758,9 @@ Statistics, 16, 2206-2251.")
         (base32 "02xvq1mw83gln7phacbi3vhkvb100crggbldv13mhwq3wjnmg5k2"))))
     (properties `((upstream-name . "qmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-fitdistrplus))
     (home-page "https://cran.r-project.org/package=qmap")
     (synopsis
@@ -4310,6 +4782,9 @@ Statistics, 16, 2206-2251.")
         (base32 "1r1pxj35k5vyvq3gc7nzp7q2zwvvqjzs9xzw3i8pv5sixmaqv47a"))))
     (properties `((upstream-name . "qlifetable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=qlifetable")
     (synopsis "Managing and Building of Quarterly Life Tables")
     (description
@@ -4337,6 +4812,9 @@ this research.")
         (base32 "1bx77yxsnzh0ny3ghala5fw54lxzrxqk9s32qk3dzvfbyp4paggn"))))
     (properties `((upstream-name . "QLearning")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=QLearning")
     (synopsis "Reinforcement Learning using the Q Learning Algorithm")
     (description
@@ -4357,6 +4835,9 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
         (base32 "13bznvc1915igbaj5bkc96lzsjpvpbkixs3gqpdgl1nzmakrlpjj"))))
     (properties `((upstream-name . "qlcVisualize")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stars
                              r-spatstat-random
                              r-spatstat-geom
@@ -4396,6 +4877,9 @@ geographical Voronoi-maps (\"weighted map\").")
         (base32 "0zwmp5567v7mzjki8sf0xc7vzzyb3bfsnmr2liak5j2a7dsp81hb"))))
     (properties `((upstream-name . "qlcData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-stringi
                              r-shiny
@@ -4425,6 +4909,9 @@ recoding of nominal data.")
         (base32 "0gp16hc3fbq07f1qai9sy1bwzjmmrf0gkb8xnnszqapiv2b1m96x"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-bh))
     (home-page "https://github.com/qlcal/qlcal-r")
     (synopsis "R Bindings to the Calendaring Functionality of 'QuantLib'")
@@ -4448,6 +4935,9 @@ Quantuccia').")
         (base32 "14inry2hqvkmy0y2y3cl75ri4vri0hirv98gw2rymny69lia5x0s"))))
     (properties `((upstream-name . "qkerntool")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-class))
     (home-page "https://cran.r-project.org/package=qkerntool")
     (synopsis
@@ -4474,6 +4964,9 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
         (base32 "1h10qcp0yiga5yw5mvw2snp2y02bmi6z5q2s6i144w362vn5hxn8"))))
     (properties `((upstream-name . "Qindex.data")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Qindex.data")
     (synopsis "Data for Package 'Qindex'")
     (description "Example data used in package Qindex'.")
@@ -4491,6 +4984,9 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
         (base32 "0dx812cvpkhl8gz6wql6kmkcjx4dwdbmjr6gz1ddh1axldwdiy6b"))))
     (properties `((upstream-name . "Qindex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-rpart r-plotly r-mgcv r-matrixstats))
     (home-page "https://cran.r-project.org/package=Qindex")
     (synopsis
@@ -4514,6 +5010,9 @@ optimally dichotomized numeric predictor(s), as in Yi, et.  al. (2023)
         (base32 "0qbqx7g4np2ygyxiqmq5cww1az6ijjx6na6b1mp4ywmyxkjg3k29"))))
     (properties `((upstream-name . "qiitr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-purrr r-jsonlite r-httr))
     (home-page "https://github.com/yutannihilation/qiitr")
     (synopsis "R Interface to Qiita API")
@@ -4534,6 +5033,9 @@ programmers.  See <https://qiita.com/api/v2/docs> for more information.")
         (base32 "12azs7c0anpd71d5663y1jrhirry6cr78wislp4fk64hmsbx7sx4"))))
     (properties `((upstream-name . "qif")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=qif")
@@ -4561,6 +5063,9 @@ B. (2000) <doi:10.1093/biomet/87.4.823>.")
         (base32 "12r191bb1fri33h5lcb8lcpzv0f916a8x36fg87i31zh6id94vyc"))))
     (properties `((upstream-name . "qicharts2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/anhoej/qicharts2")
@@ -4588,6 +5093,9 @@ rule [Mohammed, Worthington, Woodall (2008) <doi:10.1136/qshc.2004.012047>].")
         (base32 "1n8jvb9dfb2k60zi9z99sncpwqbbj0h8zngmqq2k795zpa79gf1d"))))
     (properties `((upstream-name . "qicharts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales r-latticeextra r-lattice r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=qicharts")
@@ -4596,8 +5104,8 @@ rule [Mohammed, Worthington, Woodall (2008) <doi:10.1136/qshc.2004.012047>].")
      "This package provides functions for making run charts [Anhoej, Olesen (2014)
 <doi:10.1371/journal.pone.0113825>] and basic Shewhart control charts [Mohammed,
 Worthington, Woodall (2008) <doi:10.1136/qshc.2004.012047>] for measure and
-count data.  The main function, qic(), creates run and control charts and has a
-simple interface with a rich set of options to control data analysis and
+count data.  The main function, @code{qic()}, creates run and control charts and
+has a simple interface with a rich set of options to control data analysis and
 plotting, including options for automatic data aggregation by subgroups, easy
 analysis of before-and-after data, exclusion of one or more data points from
 analysis, and splitting charts into sequential time periods.  Missing values and
@@ -4616,6 +5124,9 @@ empty subgroups are handled gracefully.")
         (base32 "1r65xq892mga54dfbh5va5zji5d1dx8k0fy611kbdviwqf0dfhx5"))))
     (properties `((upstream-name . "QI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=QI")
     (synopsis "Quantity-Intensity Relationship of Soil Potassium")
@@ -4642,6 +5153,9 @@ to denote the quantity factor.")
         (base32 "1axl0scvk5q127rcffdfv8k9ikvq0wamrbnqaimm3smcyfbcyyqm"))))
     (properties `((upstream-name . "QHScrnomo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rms r-hmisc r-cmprsk))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ClevelandClinicQHS/QHScrnomo")
@@ -4666,6 +5180,9 @@ Kattan MW, Heller G, Brennan MF (2003).")
         (base32 "02z0n2jawd6m7bvyvpcy0j13p1c0zm036g62n56xva18qnq5c9lb"))))
     (properties `((upstream-name . "QHOT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=QHOT")
     (synopsis "QTL Hotspot Detection")
     (description
@@ -4686,6 +5203,9 @@ including the flanking markers of QTLs.")
         (base32 "0ydhwg4abn8n9pwnjnwf1n1k854zw31z8f2splzdm5j279lsjg3r"))))
     (properties `((upstream-name . "qgshiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shiny r-rmarkdown))
     (home-page "https://cran.r-project.org/package=qgshiny")
     (synopsis
@@ -4710,6 +5230,9 @@ ISBN:978-0972072427).")
         (base32 "0l3rql8w12kqgaz6fczmm4b7mxxagm60d3fvw1i2sv1wdqwlb269"))))
     (properties `((upstream-name . "qgisprocess")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-vctrs
                              r-tibble
@@ -4744,6 +5267,9 @@ are supported.  The native processing algorithms are documented by QGIS.org
         (base32 "0ghvicz4ia1180byj28lmg49889hqhb94g1jrkhm6hnzgqbjnfmd"))))
     (properties `((upstream-name . "QGglmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-cubature))
     (home-page "https://cran.r-project.org/package=QGglmm")
     (synopsis
@@ -4766,6 +5292,9 @@ phenotypic variance and additive genetic variance.")
         (base32 "0195fzcr0xy2dns4jl5kn3nigy989l47syn8iavfdpqb76zsh0a3"))))
     (properties `((upstream-name . "qgg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-statmod
                              r-rcpparmadillo
                              r-rcpp
@@ -4798,6 +5327,9 @@ association analyses.  Rohde et al. (2019) <doi:10.1101/503631>.")
         (base32 "0v2b7rr6m5mx3wyclbryxlcdly1a2vj8z0ywsyq4vvj66g2aa0yk"))))
     (properties `((upstream-name . "qgcompint")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival
                              r-qgcomp
                              r-gridextra
@@ -4831,6 +5363,9 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
         (base32 "0qllrh5zmmd63kwjn7j3f5z56zr27q7czf6shdzcrf6ajy99risp"))))
     (properties `((upstream-name . "qgcomp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survival
                              r-pscl
@@ -4868,6 +5403,9 @@ mixtures; <doi:10.1289/EHP5838>.")
         (base32 "02xy35xg4swr1ldnsbywnz2h0ga1pbsivnj0aqmpll7kvwl9qz4c"))))
     (properties `((upstream-name . "qGaussian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zipfr r-robustbase r-rcpp))
     (home-page "https://cran.r-project.org/package=qGaussian")
     (synopsis "The q-Gaussian Distribution")
@@ -4888,6 +5426,9 @@ q-gaussian distribution with parameters mu and sig.")
         (base32 "0h3qkb0zg6km3s89bjnv9503hgcng4wfywfy1x5dsbj5azs9hs5w"))))
     (properties `((upstream-name . "QGameTheory")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-r-utils r-dplyr))
     (home-page "https://github.com/indrag49/QGameTheory")
     (synopsis "Quantum Game Theory Simulator")
@@ -4916,6 +5457,9 @@ Problem (Flitney and Abbott 2002) <@code{arXiv:quant-ph/0109035>}.")
         (base32 "1qwcm1x4qcfyrkwx16s1dgxnix2axh9w0qxwrv1j0iwdc8mp32g9"))))
     (properties `((upstream-name . "QGA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://barcaroli.github.io/QGA/")
     (synopsis "Quantum Genetic Algorithm")
@@ -4951,6 +5495,9 @@ optimization.")
         (base32 "02fixwxc97lgdp1ajhk9z12qj1cdl79vyl6q3jy37i6k7xh9mdfl"))))
     (properties `((upstream-name . "QFRM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://Oleg.Rice.edu")
     (synopsis "Pricing of Vanilla and Exotic Option Contracts")
     (description
@@ -4975,6 +5522,9 @@ Spring 2015.")
         (base32 "06d0ixwp29h1xjdrdwv52ngpg1wszpkjhjqlax1r56c5mdjbrx19"))))
     (properties `((upstream-name . "qfratio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list gsl))
     (propagated-inputs (list r-rcppeigen r-rcpp r-mass))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -5007,6 +5557,9 @@ arguments.")
         (base32 "14370bmq4qx5j02va13wz52m2lgl4vb992p9587z9v2sxl1v4jjg"))))
     (properties `((upstream-name . "qfasar")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsolnp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=qfasar")
@@ -5038,6 +5591,9 @@ Please refer to the vignette for additional details and references.")
         (base32 "09rdlw30jlag9lyqdvmpcqxqsrwxwrarsqkp2vp4ay11nn6xi6ka"))))
     (properties `((upstream-name . "QFASA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-tmb
                              r-rsolnp
@@ -5078,6 +5634,9 @@ fatty acid signature analysis (QFASA) to study predator diets.")
         (base32 "1cawddpspdwrnc7ysp0v109j3k1lqpl9gyhp0jg5ribfiipyszww"))))
     (properties `((upstream-name . "qfa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rhpcblasctl
                              r-quantreg
                              r-nlme
@@ -5112,6 +5671,9 @@ transform, quantile series, and nonparametric estimation of quantile spectra\",
         (base32 "0kvhvpj28293i65wh00jyz7fsbqk5q8x5i05bsk29n2rfrf627bl"))))
     (properties `((upstream-name . "QF")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcppgsl r-rcpp))
     (home-page "https://cran.r-project.org/package=QF")
     (synopsis "Density, Cumulative and Quantile Functions of Quadratic Forms")
@@ -5136,6 +5698,9 @@ algorithm based on the numerical inversion of Mellin transforms.")
         (base32 "0vl5nhnjijzqvk2s8l9rr6f7hqjh867w7b3w3j1b4kwzfpzsfcqc"))))
     (properties `((upstream-name . "Qest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-pch r-matrixstats))
     (native-inputs (list gfortran))
     (home-page
@@ -5161,6 +5726,9 @@ parametric quantile functions. <doi:10.1016/j.csda.2022.107471>.")
         (base32 "1pgrzahn1wlk5c8zy1zvfg07xqmmn5ky4y1ksgj48gvilzgjqjwk"))))
     (properties `((upstream-name . "qeML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tufte
                              r-toweranna
                              r-tm
@@ -5195,6 +5763,9 @@ convenient, and uniform interface.")
         (base32 "0cfxyy8s5zfb7867f9xv9scq9blq2qnw68x66m7y7nqlrrff5xdr"))))
     (properties `((upstream-name . "qdm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=qdm")
     (synopsis
      "Fitting a Quadrilateral Dissimilarity Model to Same-Different Judgments")
@@ -5218,6 +5789,9 @@ Fechnerian distances can be computed.")
         (base32 "0r1rbg3azh7y4f5r9w0zj6qa658f63gyq6b007q514iivkzxib1c"))))
     (properties `((upstream-name . "QDiabetes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/Feakster/qdiabetes")
     (synopsis "Type 2 Diabetes Risk Calculator")
     (description
@@ -5237,6 +5811,9 @@ algorithms derived by @code{ClinRisk}'.")
         (base32 "0y4494r3ixkyh58xr9md7c6xgcj1hgbjzfybvqqdbawjxvy5p38i"))))
     (properties `((upstream-name . "QDComparison")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=QDComparison")
     (synopsis
      "Modern Nonparametric Tools for Two-Sample Quantile and Distribution Comparisons")
@@ -5260,6 +5837,9 @@ statistics.  The primary reference is Jungreis, D. (2019, Technical Report).")
         (base32 "1cf42lxzqha2ah0yjl144pch50imfr5rf6g0b59xr5jf9x96dsjp"))))
     (properties `((upstream-name . "qdapTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-rcurl r-data-table r-chron))
     (home-page "https://github.com/trinker/qdapTools")
     (synopsis "Tools for the 'qdap' Package")
@@ -5280,6 +5860,9 @@ that may be useful outside of the context of text analysis.")
         (base32 "0jdx7bxmvc4p41jb4fhaagg5jsbsi7gva870cmyia72li52grhyn"))))
     (properties `((upstream-name . "qdapDictionaries")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://trinker.github.com/qdapDictionaries/")
     (synopsis "Dictionaries and Word Lists for the 'qdap' Package")
     (description
@@ -5299,6 +5882,9 @@ for use with the qdap package.")
         (base32 "1dr48b0187w003v98qckzi4zxb6r0yi3jh8f6krknv4c4qasfn9n"))))
     (properties `((upstream-name . "qdap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml
                              r-wordcloud
                              r-venneuler
@@ -5350,14 +5936,18 @@ Language Processing.")
         (base32 "0hf02l9c1cpzs02mfn9swfc8l635qsvh6xrhj21g19h5rxaf8jwg"))))
     (properties `((upstream-name . "qcv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=qcv")
     (synopsis "Quantifying Construct Validity")
     (description
      "Primarily, the qcv package computes key indices related to the Quantifying
 Construct Validity procedure (QCV; Westen & Rosenthal, 2003
 <doi:10.1037/0022-3514.84.3.608>; see also Furr & Heuckeroth, in press).  The
-qcv() function is the heart of the qcv package, but additional functions in the
-package provide useful ancillary information related to the QCV procedure.")
+@code{qcv()} function is the heart of the qcv package, but additional functions
+in the package provide useful ancillary information related to the QCV
+procedure.")
     (license license:gpl2+)))
 
 (define-public r-qcsis
@@ -5372,6 +5962,9 @@ package provide useful ancillary information related to the QCV procedure.")
         (base32 "0ibh3060jxf426svdfxiryvfhr8pwk991xs653d50ip4f9290y3a"))))
     (properties `((upstream-name . "QCSIS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.r-project.org")
     (synopsis
      "Sure Independence Screening via Quantile Correlation and Composite Quantile Correlation")
@@ -5393,6 +5986,9 @@ data.")
         (base32 "1ff7xagnzibhrwrmkqyky4ik3kx7rrlajrs1ypm210sl1d73jwvs"))))
     (properties `((upstream-name . "QCSimulator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/tvganesh/QCSimulator")
     (synopsis "5-Qubit Quantum Computing Simulator")
@@ -5413,6 +6009,9 @@ qubit quantum gates.")
         (base32 "14nilw60p2kcabh9w5k8bvdjqx4lm5lj79qiigg3i372byq5gb7r"))))
     (properties `((upstream-name . "qcr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-qcc r-mvtnorm r-mass r-fda-usc))
     (home-page "https://github.com/mflores72000/qcr")
     (synopsis "Quality Control Review")
@@ -5445,6 +6044,9 @@ capability plots.  See Flores et al. (2021) <doi:10.32614/RJ-2021-034>.")
         (base32 "1298zla8z5w9z4idc07v3ca9rc1afx853y7iz3jmqnqnv8mr0s48"))))
     (properties `((upstream-name . "qcQpcr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=qcQpcr")
     (synopsis "Histone ChIP-Seq qPCR Analyzer")
@@ -5470,6 +6072,9 @@ International Human Epigenomic Consortium (IHEC).")
         (base32 "09akywvxry40lgpbw1kvfilh40jd7ck8547idskqczsql232jn9d"))))
     (properties `((upstream-name . "qcpm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg r-csem r-broom))
     (home-page "https://cran.r-project.org/package=qcpm")
     (synopsis "Quantile Composite Path Modeling")
@@ -5495,6 +6100,9 @@ among constructs and between constructs and observed variables.")
         (base32 "1d2mcyzfnpmr4pv036crhsc91gypj0jrn6hmd9jcnm49khqc0lan"))))
     (properties `((upstream-name . "qch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-rcpparmadillo
                              r-rcpp
@@ -5531,6 +6139,9 @@ derived from the posterior probabilities.")
         (base32 "1ds129gvp5pvvm3v6ys5102d5g59mb6cb074zmz9fb3q3p4yknvd"))))
     (properties `((upstream-name . "QCGWAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=QCGWAS")
     (synopsis "Quality Control of Genome Wide Association Study Results")
     (description
@@ -5550,6 +6161,9 @@ results of Genome Wide Association Studies.")
         (base32 "02xl3ydh1mlf3jaixhm5wm5ndcbfhyqkagb4ywi46vs8dj2jl7q3"))))
     (properties `((upstream-name . "QCEWAS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=QCEWAS")
     (synopsis "Fast and Easy Quality Control of EWAS Results Files")
     (description
@@ -5569,6 +6183,9 @@ results of Epigenome-Wide Association Studies.")
         (base32 "0lwrmf2809zzdj5f25bb1psh57ibyw90ra41fy2i9vjmgph9wgiq"))))
     (properties `((upstream-name . "qccrs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble r-purrr r-magrittr r-dplyr))
     (home-page "https://github.com/myaseen208/qccrs")
     (synopsis "Quality Control Charts under Repetitive Sampling")
@@ -5591,6 +6208,9 @@ under repetitive sampling as given in Aslam et al. (2014)
         (base32 "0lc26w7p3d023lfr8v6v75m2vwqg9vi9pdipap19l4vbdq29l4zz"))))
     (properties `((upstream-name . "qcc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luca-scr/qcc")
@@ -5613,6 +6233,9 @@ and EWMA charts.  Operating characteristic curves.  Process capability analysis.
         (base32 "0dayvrhy3y0ksslgxiwwv330k0x7cqmpjjz2l4z6c8s2mjz0j9iv"))))
     (properties `((upstream-name . "qCBA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava r-arulescba r-arules r-arc))
     (home-page "https://github.com/kliegr/QCBA")
@@ -5640,6 +6263,9 @@ result of the post-processing is an ordered CBA-like rule list.")
         (base32 "1jry8xg6q4d9bxznrw8jxlbivnf5y944xdzv320fv4milk22g30x"))))
     (properties `((upstream-name . "qcauchyreg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quantreg))
     (home-page "<https://www.r-project.org>")
     (synopsis "Quantile Regression Quasi-Cauchy")
@@ -5663,6 +6289,9 @@ quantile approach.")
         (base32 "1q49l2mf02hqvz2ahqjdx7i3yxniy7dn2s74xjl9l6zdq8bypfw2"))))
     (properties `((upstream-name . "QCAtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-qca r-ggplot2 r-directlabels))
     (home-page "https://cran.r-project.org/package=QCAtools")
     (synopsis "Helper Functions for QCA in R")
@@ -5684,6 +6313,9 @@ and coverage measures.")
         (base32 "1glfb1x1h05cs07nq5glqvlil58wp3c0kaxi1l7k94y797i8r7hq"))))
     (properties `((upstream-name . "QCApro")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve))
     (home-page "https://cran.r-project.org/package=QCApro")
     (synopsis
@@ -5707,6 +6339,9 @@ sensitivity diagnostics and methodological evaluations of QCA.")
         (base32 "14vszidjvyi8namwv5k0hpgdw1dpns5ilvxfwa920ivdg35709ki"))))
     (properties `((upstream-name . "qcapower")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-ggforce r-devtools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ingorohlfing/qcapower")
@@ -5734,6 +6369,9 @@ introducing power estimation for QCA is: Rohlfing, Ingo (2018)
         (base32 "094p11c9arry793zibr8x3xhpbrym9bfky95nds53g3yliprdd63"))))
     (properties `((upstream-name . "QCAcluster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-upsetr
                              r-testit
                              r-stringi
@@ -5762,17 +6400,19 @@ diversity of the cases under analysis within and across partitions (see
 (define-public r-qca
   (package
     (name "r-qca")
-    (version "3.22")
+    (version "3.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QCA" version))
        (sha256
-        (base32 "0w7ap7dqd5qhvkw41r7fy2zn1hsn7mq099b45l3p330lzdzz1grr"))))
+        (base32 "016xvl4mwq51l55v3k5pvi996lvzvak71arggfjr7r0sfa6b1kym"))))
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
+      list
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -5789,7 +6429,7 @@ diversity of the cases under analysis within and across partitions (see
                                   '())))))))
     (propagated-inputs (list r-venn r-shiny r-lpsolve r-declared r-admisc))
     (native-inputs (list esbuild))
-    (home-page "https://cran.r-project.org/package=QCA")
+    (home-page "https://github.com/dusadrian/QCA")
     (synopsis "Qualitative Comparative Analysis")
     (description
      "An extensive set of functions to perform Qualitative Comparative Analysis: crisp
@@ -5812,6 +6452,9 @@ minimal causal configuration associated with a given phenomenon.")
         (base32 "0licmg1599dvzc6h9s9h29m9zx1l4wd7mwnwl13wcsp7mwdr4s6j"))))
     (properties `((upstream-name . "qbr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -5843,6 +6486,9 @@ follow tidyverse philosophy.")
         (base32 "07f05n7zxgwyxg2r5fz691ra64m218w9v874xfzjx6671c40y1q2"))))
     (properties `((upstream-name . "qboxplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=qboxplot")
     (synopsis "Quantile-Based Boxplot")
     (description "Produce quantile-based box-and-whisker plot(s).")
@@ -5860,6 +6506,9 @@ follow tidyverse philosophy.")
         (base32 "1b75qvcwm7c1f0387igw5ayafl66k8yrp1b78cb0yczhmaxx3bvm"))))
     (properties `((upstream-name . "QBMS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-terra
                              r-rsqlite
                              r-rnetcdf
@@ -5896,6 +6545,9 @@ sources, including @code{TerraClimate}
         (base32 "0zz2n8f4cn03k80wakfgjhablxhbr8hxj5ydl4m7zlya4kdkl5md"))))
     (properties `((upstream-name . "qbld")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stablegr
                              r-rmarkdown
                              r-rcppdist
@@ -5926,6 +6578,9 @@ posterior inference.")
         (base32 "0mv3xfy847lqh95mpccjiw5jjbml7dwrna7i16532sdqcxaq4m02"))))
     (properties `((upstream-name . "Qapprox")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Qapprox")
     (synopsis
      "Approximation to the Survival Functions of Quadratic Forms of Gaussian Variables")
@@ -5948,6 +6603,9 @@ Hong Zhang, Judong Shen and Zheyang Wu (2020) <@code{arXiv:2005.00905>}.")
         (base32 "18ryi0mxpm6rcfqj8dl4rvmkcpkch4yv001lwkbsipdm206704ys"))))
     (properties `((upstream-name . "qape")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape2
                              r-plyr
                              r-mvtnorm
@@ -5976,6 +6634,9 @@ bootstrap is used.  The test of normality using Cholesky decomposition is added.
         (base32 "04ygizvplvrzhf1p0vwj75x7k8sl0ym5zbrsvn63y983awih2p6i"))))
     (properties `((upstream-name . "QAIG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-formula))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/shubh-b/QAIG")
@@ -6001,6 +6662,9 @@ multiple-choice type of items (see Embretson, Kingston (2018)
         (base32 "1pvdm6h5zilvrpggvy5qq5lhxxblslkjvjjfdj1f5zaick2hmf3s"))))
     (properties `((upstream-name . "qad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-rcpp
                              r-ggplot2
@@ -6032,6 +6696,9 @@ the paper by Junker, Griessenberger & Trutschnig (2021,
         (base32 "0rmxmaaa162w1qrbkcm2fd2rnrp2kqjjh6mpszpv1lpfdaq7p4yq"))))
     (properties `((upstream-name . "qacBase")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
@@ -6064,6 +6731,9 @@ data visualization.")
         (base32 "09jhqraajvlm7iiri4f7xlllkcx8q5h3sg472ishj47wg5qf2rym"))))
     (properties `((upstream-name . "Q7")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Q7")
@@ -6087,6 +6757,9 @@ to R6, Q7 is simpler and more flexible, and is more friendly in syntax.")
         (base32 "0i72p3hga75fm42svnyfwc5x4viv6pq6js7wx8h01kamiv5yl8hz"))))
     (properties `((upstream-name . "Q2q")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://cran.r-project.org/package=Q2q")
     (synopsis "Interpolating Age-Specific Mortality Rates at All Ages")
     (description
