@@ -15950,13 +15950,13 @@ plotted in a number of ways with nice barplots and boxplots.")
 (define-public r-portfolioanalytics
   (package
     (name "r-portfolioanalytics")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PortfolioAnalytics" version))
        (sha256
-        (base32 "0rncchlc3n5kyfw7hfbxivi45gr64i89ylzr20mh9lqrqi0rif6a"))))
+        (base32 "0r8h5va6pkq98ap0m8j7gh1lpwdwy0l9sfnc826nz8hhv6jfaybv"))))
     (properties `((upstream-name . "PortfolioAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -30026,13 +30026,13 @@ circular analysis are based on methods from - Batschelet (1981)
 (define-public r-pharmr
   (package
     (name "r-pharmr")
-    (version "1.0.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmr" version))
        (sha256
-        (base32 "0vxaas0rrzfcia47bhqd54d2sjnwgx3djbfy9ggf2hr3cw3dz7fg"))))
+        (base32 "027zmkkd9jdqlbln7yisp9bf3w5zjkyvx54qz3517d8zzi121nh3"))))
     (properties `((upstream-name . "pharmr")))
     (build-system r-build-system)
     (arguments
@@ -34538,13 +34538,13 @@ Supervised Penalty Learning Algorithms for Peak Detection\"
 (define-public r-peaksegjoint
   (package
     (name "r-peaksegjoint")
-    (version "2024.10.1")
+    (version "2024.12.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeakSegJoint" version))
        (sha256
-        (base32 "176pzc2qhnv6xq00chjnavlbav42nmr64hiib73h3cia4x7v9693"))))
+        (base32 "02vsr438zqm49ivimf1indbifl046a5i581dnww1a45s9vq7y71s"))))
     (properties `((upstream-name . "PeakSegJoint")))
     (build-system r-build-system)
     (arguments

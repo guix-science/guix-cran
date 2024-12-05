@@ -15857,13 +15857,13 @@ representing real or categorical variables at original and multiple resolutions.
 (define-public r-diffeqr
   (package
     (name "r-diffeqr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffeqr" version))
        (sha256
-        (base32 "116j5iivp1rp0aql74mbvbp9j9q86rh49iamfbi46jx0yfh87256"))))
+        (base32 "0l1v2dgdsp77ppmkv8b70kbajz0kabj4pcs612zmpqfy27hdk7da"))))
     (properties `((upstream-name . "diffeqr")))
     (build-system r-build-system)
     (arguments
@@ -20959,13 +20959,13 @@ Liebscher (2019, submitted).")
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depCensoring" version))
        (sha256
-        (base32 "0wsdwsv09k55ipbpps5aaf81a4p5mp9r63p36bvhj91f7ckvnwg0"))))
+        (base32 "0xf6v3xc2lpdkjn3hznwyg7dbn8xycbpn010yh20g2gmmpfc0ahg"))))
     (properties `((upstream-name . "depCensoring")))
     (build-system r-build-system)
     (arguments
@@ -20973,7 +20973,6 @@ Liebscher (2019, submitted).")
       #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
-                             r-semipar-depcens
                              r-rvinecopulib
                              r-rafalib
                              r-pbivnorm
@@ -20985,7 +20984,8 @@ Liebscher (2019, submitted).")
                              r-matrixcalc
                              r-mass
                              r-foreach
-                             r-doparallel))
+                             r-doparallel
+                             r-copula))
     (home-page "https://cran.r-project.org/package=depCensoring")
     (synopsis "Statistical Methods for Survival Data with Dependent Censoring")
     (description
@@ -20997,7 +20997,8 @@ between survival time and dependent censoring time, based solely on observed
 survival data.  For more details on the methods, refer to Deresa and Van
 Keilegom (2021) <doi:10.1093/biomet/asaa095>, Czado and Van Keilegom (2023)
 <doi:10.1093/biomet/asac067>, Crommen et al. (2024)
-<doi:10.1007/s11749-023-00903-9> and Willems et al. (2024+)
+<doi:10.1007/s11749-023-00903-9>, Deresa and Van Keilegom (2024)
+<doi:10.1080/01621459.2022.2161387> and Willems et al. (2024+)
 <doi:10.48550/@code{arXiv.2403.11860>}.")
     (license license:gpl3)))
 
@@ -30788,13 +30789,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolboxdp
   (package
     (name "r-daltoolboxdp")
-    (version "1.0.767")
+    (version "1.0.777")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolboxdp" version))
        (sha256
-        (base32 "1l34wb2vl9wmf0vrhis29w4hz1m9jx9qdfi494rfnwals054j3ah"))))
+        (base32 "0qb0wmfwcnx861ib9cvgcs53dnb8wyigj3bv123xp3npz874lm7f"))))
     (properties `((upstream-name . "daltoolboxdp")))
     (build-system r-build-system)
     (arguments

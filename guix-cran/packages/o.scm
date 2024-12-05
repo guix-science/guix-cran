@@ -7205,13 +7205,13 @@ the JSON file.")
 (define-public r-opendataformat
   (package
     (name "r-opendataformat")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opendataformat" version))
        (sha256
-        (base32 "0x10gw6329lqfbyz1y7lanqk9ymy12h88i9k4ifbxnvbw2dar69z"))))
+        (base32 "1xy5zg9bh2vkj7jhm3wrpvrb4lrr9x8q6h304zfygz0hadvaiqq1"))))
     (properties `((upstream-name . "opendataformat")))
     (build-system r-build-system)
     (arguments

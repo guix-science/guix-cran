@@ -5004,13 +5004,13 @@ models.  See Wang (2011) <doi:10.1201/b10954> for an overview.")
 (define-public r-assignr
   (package
     (name "r-assignr")
-    (version "2.4.1")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assignR" version))
        (sha256
-        (base32 "1ml8yk9a8rm05whcygaxha8lrrp0npr50fvsb3pcdikxing1khdm"))))
+        (base32 "1cafim3ihi7ifg6ff7q81g548qczjzxrc70zdwy6z03g1b06d5l8"))))
     (properties `((upstream-name . "assignR")))
     (build-system r-build-system)
     (arguments

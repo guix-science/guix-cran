@@ -2400,13 +2400,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "1svmwipqz96sal2lp6plshmyz0fdid9qqak7xbbqb8207jfl0c75"))))
+        (base32 "1apn1wdmpn2ymb4g7lskw60dc9fhdppfyk5g3ckfkh7x9fv2vqyi"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (arguments

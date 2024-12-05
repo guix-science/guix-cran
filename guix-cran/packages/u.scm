@@ -4397,13 +4397,13 @@ Shape.")
 (define-public r-ugmar
   (package
     (name "r-ugmar")
-    (version "3.5.0")
+    (version "3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uGMAR" version))
        (sha256
-        (base32 "0bd5qj3sqb5swirjpind4rap3yssldjv2zd874p52z88rnf3qhys"))))
+        (base32 "1a8krmhpi6pd79rbgdiqigz4dvgknx05wzs95qa11giz433d5r6y"))))
     (properties `((upstream-name . "uGMAR")))
     (build-system r-build-system)
     (arguments

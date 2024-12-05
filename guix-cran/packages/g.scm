@@ -11911,13 +11911,13 @@ maximisation algorithm.  Bernhardt (2015) <doi:10.1016/j.csda.2014.11.011>.")
 (define-public r-gmvarkit
   (package
     (name "r-gmvarkit")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmvarkit" version))
        (sha256
-        (base32 "06w822gq2zigynzmqndd3wilqyh1clbx2a52c9x5mg9km4pp95mb"))))
+        (base32 "188xy6kys2l7s5ah2lqww53jpvdnsljd8gkxg6pm29d85ypy6qq8"))))
     (properties `((upstream-name . "gmvarkit")))
     (build-system r-build-system)
     (arguments
@@ -11937,7 +11937,7 @@ forecasting, and estimation of generalized impulse response function and
 generalized forecast error variance decomposition.  Leena Kalliovirta, Mika
 Meitz, Pentti Saikkonen (2016) <doi:10.1016/j.jeconom.2016.02.012>, Savi
 Virolainen (forthcoming) <doi:10.1080/07350015.2024.2322090>, Savi Virolainen
-(2022) <@code{arXiv:2109.13648>}.")
+(2022) <doi:10.48550/@code{arXiv.2109.13648>}.")
     (license license:gpl3)))
 
 (define-public r-gmtfd
@@ -17611,32 +17611,6 @@ These dimensions will then be used when you save the plot.")
 versatiles con ggplot: Analisis visuales de datos\", by Raymond L. Tremblay and
 Julian Hernandez-Serano.")
     (license license:gpl2)))
-
-(define-public r-ggupset
-  (package
-    (name "r-ggupset")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggupset" version))
-       (sha256
-        (base32 "0cycnnycn1qazy35s4w746zlfraayf109bq40fglklmick6kfwsz"))))
-    (properties `((upstream-name . "ggupset")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-scales r-rlang r-gtable r-ggplot2))
-    (home-page "https://github.com/const-ae/ggupset")
-    (synopsis "Combination Matrix Axis for 'ggplot2' to Create 'UpSet' Plots")
-    (description
-     "Replace the standard x-axis in ggplots with a combination matrix to visualize
-complex set overlaps. @code{UpSet} has introduced a new way to visualize the
-overlap of sets as an alternative to Venn diagrams.  This package provides a
-simple way to produce such plots using ggplot2'.  In addition it can convert any
-categorical axis into a combination matrix axis.")
-    (license license:gpl3)))
 
 (define-public r-ggum
   (package
@@ -24847,13 +24821,13 @@ Theoretical background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostan" version))
        (sha256
-        (base32 "083p56ij3w14ixrbcndqywbhhffc56ry5gkq2pp0npfrj9cs6430"))))
+        (base32 "0z1zqyd762pzxqxd0923n7r2jdshrlvwjk38zpbdyayw305a71pg"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (arguments
@@ -27362,13 +27336,13 @@ allows running the hybrid multi-group approach (Lamberti (2021)
 (define-public r-genotriplo
   (package
     (name "r-genotriplo")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenoTriplo" version))
        (sha256
-        (base32 "04v1llw3ppzx9s9cm8wp78n5hpm65bpmkmsliczlp33l91cbspp8"))))
+        (base32 "1ri88zwn438m33fkqgcb1a2wmmvy9x1r5q3mnax6yg42bq8iz8zv"))))
     (properties `((upstream-name . "GenoTriplo")))
     (build-system r-build-system)
     (arguments

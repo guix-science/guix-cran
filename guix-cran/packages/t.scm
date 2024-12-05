@@ -3224,13 +3224,13 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.0.777")
+    (version "1.0.787")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "0yqgd9rlqldplcsq8hk1wkgjq0931sbqdxd31ynylkpiy4d0psca"))))
+        (base32 "0zyfmwr8sbkn27xwvzdk3wl1ycnrjfdampx2sakqxirdrapn2w2b"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
     (arguments

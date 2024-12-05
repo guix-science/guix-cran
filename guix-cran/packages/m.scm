@@ -31063,13 +31063,13 @@ SIRS(Zhu et al. (2011)<doi:10.1198/jasa.2011.tm10563>), DC-SIS (Li et al. (2012)
 (define-public r-mfpp
   (package
     (name "r-mfpp")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfpp" version))
        (sha256
-        (base32 "1z250grk06cmclyz4v3qnxdy43dm5vcrcq1rglpps3cfrg09i2g1"))))
+        (base32 "0gji3qsh6938f5sxii4x6f9hjn45rij81cv6lxaxshlg54qvjj13"))))
     (properties `((upstream-name . "mfpp")))
     (build-system r-build-system)
     (arguments

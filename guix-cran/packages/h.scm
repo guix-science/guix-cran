@@ -11260,13 +11260,13 @@ Sophie DABO-NIANG and Michael GENIN (2023) <doi:10.1093/jrsssc/qlad017>.")
 (define-public r-hdsinrdata
   (package
     (name "r-hdsinrdata")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDSinRdata" version))
        (sha256
-        (base32 "1wkhy6xf5ahj12sg9s32k53j7z2zpqj7rq0ficngdbyfzs2y6w48"))))
+        (base32 "1fvvzmqnqwxql6ny5zq0hv8w8sv5k0canzww9bc8w8vaxdpv47x7"))))
     (properties `((upstream-name . "HDSinRdata")))
     (build-system r-build-system)
     (arguments

@@ -14430,13 +14430,13 @@ the research papers published by Pereira et al.(2018)
 (define-public r-corels
   (package
     (name "r-corels")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corels" version))
        (sha256
-        (base32 "1ygbvhnz304y4y708ygr4x6kbwv7bfpjd5hhcrcc6lma59h7arfn"))))
+        (base32 "1ixgsgk0pbdwvk3j62lm010fwngrz6x16i9jhxs5g09lbxy2pr29"))))
     (properties `((upstream-name . "corels")))
     (build-system r-build-system)
     (arguments
@@ -14448,9 +14448,10 @@ the research papers published by Pereira et al.(2018)
      "R Binding for the 'Certifiably Optimal RulE ListS (Corels)' Learner")
     (description
      "The Certifiably Optimal @code{RulE} @code{ListS} (Corels) learner by Angelino et
-al described in <@code{arXiv:1704.01701>} provides interpretable decision rules
-with an optimality guarantee, and is made available to R with this package.  See
-the file AUTHORS for a list of copyright holders and contributors.")
+al described in <doi:10.48550/@code{arXiv.1704.01701>} provides interpretable
+decision rules with an optimality guarantee, and is made available to R with
+this package.  See the file AUTHORS for a list of copyright holders and
+contributors.")
     (license license:gpl2+)))
 
 (define-public r-corelearn
@@ -20422,13 +20423,13 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "7.1")
+    (version "7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "0x3q2cb2b6jgzczjxlw619q5id3ysldp8a3qvp937a212nqpvqks"))))
+        (base32 "0n9hg8vpzj8ckbkkfk48rlmkh7k3kv7q355qz96cr4cfdj2ilzj5"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
@@ -20438,11 +20439,9 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
                              r-rnanoflann
                              r-rfast2
                              r-rfast
-                             r-regda
                              r-quantreg
                              r-quadprog
                              r-nnet
-                             r-mvhtests
                              r-mixture
                              r-minpack-lm
                              r-mda
@@ -20488,15 +20487,15 @@ predictor variables with or without zero values\".  Journal of Data Science,
 17(1): 219--238. <doi:10.6339/JDS.201901_17(1).0010>.  i) Tsagris M. and Stewart
 C. (2020). \"A folded model for compositional data analysis\".  Australian and New
 Zealand Journal of Statistics, 62(2): 249--277. <doi:10.1111/anzs.12289>.  j)
-Alenazi A. (2021).  Alenazi, A. (2023). \"A review of compositional data analysis
-and recent advances\".  Communications in Statistics--Theory and Methods, 52(16):
-5535--5567. <doi:10.1080/03610926.2021.2014890>.  k) Alenazi A.A. (2022).
-\"f-divergence regression models for compositional data\".  Pakistan Journal of
-Statistics and Operation Research, 18(4): 867--882.
-<doi:10.18187/pjsor.v18i4.3969>.  l) Tsagris M. and Stewart C. (2022). \"A Review
+Alenazi A.A. (2022). \"f-divergence regression models for compositional data\".
+Pakistan Journal of Statistics and Operation Research, 18(4): 867--882.
+<doi:10.18187/pjsor.v18i4.3969>.  k) Tsagris M. and Stewart C. (2022). \"A Review
 of Flexible Transformations for Modeling Compositional Data\".  In Advances and
 Innovations in Statistics and Data Science, pp.  225--234.
-<doi:10.1007/978-3-031-08329-7_10>.  m) Tsagris M., Alenazi A. and Stewart C.
+<doi:10.1007/978-3-031-08329-7_10>.  l) Alenazi A. (2023). \"A review of
+compositional data analysis and recent advances\".  Communications in
+Statistics--Theory and Methods, 52(16): 5535--5567.
+<doi:10.1080/03610926.2021.2014890>.  m) Tsagris M., Alenazi A. and Stewart C.
 (2023). \"Flexible non-parametric regression models for compositional response
 data with zeros\".  Statistics and Computing, 33(106).
 <doi:10.1007/s11222-023-10277-5>.  n) Tsagris.  M. (2024). \"Constrained least

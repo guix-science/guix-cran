@@ -4290,13 +4290,13 @@ multivariate cases.")
 (define-public r-iq
   (package
     (name "r-iq")
-    (version "1.10")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iq" version))
        (sha256
-        (base32 "0wvzgry5add1y8ip1asqrfpddl32nz3a7il5bm8v53k5d7jzfhwf"))))
+        (base32 "02k3ccp5flkh007dcbyb67hrlv63cbp0w3vm8c6q1hvys17lbsfh"))))
     (properties `((upstream-name . "iq")))
     (build-system r-build-system)
     (arguments
