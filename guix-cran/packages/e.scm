@@ -6498,13 +6498,13 @@ and R. W. Jones (1987) <doi:10.3905/jpm.1987.409131> and H. E. Leland (1980)
 (define-public r-etrep
   (package
     (name "r-etrep")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETRep" version))
        (sha256
-        (base32 "1yq34l655ydy4wx9b23kp37fkl5zffzic2nk87rqw2wbf085c75w"))))
+        (base32 "1m422fj0pnskb3ag0vacfpiydjj7h9hxb6vny51xp19wbfd8a0ja"))))
     (properties `((upstream-name . "ETRep")))
     (build-system r-build-system)
     (arguments
@@ -6538,10 +6538,12 @@ package is based on the references: Taheri, M., Pizer, S. M., & Schulz, J.
 Statistics via Skeletal Structures\", @code{PhD} Thesis, University of Stavanger,
 Norway <doi:10.13140/RG.2.2.34500.23685>.  Key features include constructing
 discrete elliptical tubes, calculating transformations, validating structures
-under the Relative Curvature Condition, computing means, and generating
+under the Relative Curvature Condition (RCC), computing means, and generating
 simulations.  Supports intrinsic and non-intrinsic mean calculations and
 transformations, size estimation, plotting, and random sample generation based
-on a reference tube.")
+on a reference tube.  The intrinsic approach relies on the interior path of the
+original non-convex space, incorporating the RCC, while the non-intrinsic
+approach uses a basic robotic arm transformation that disregards the RCC.")
     (license license:expat)))
 
 (define-public r-etree
@@ -8618,6 +8620,36 @@ updating of the dependence modelling (see Sheu et al., 2016,
     (description
      "Estimate the effective reproduction number from wastewater and clinical data
 sources.")
+    (license license:expat)))
+
+(define-public r-erlangc
+  (package
+    (name "r-erlangc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ErlangC" version))
+       (sha256
+        (base32 "101f54qvac4qffyhf875ra9p58ididdh3j0a363r45gb5dbjac3n"))))
+    (properties `((upstream-name . "ErlangC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shiny
+                             r-lubridate
+                             r-gmp
+                             r-dt
+                             r-bslib
+                             r-bsicons))
+    (home-page "https://cran.r-project.org/package=ErlangC")
+    (synopsis "Solve Erlang-C Model")
+    (description
+     "This package provides a set of functions to solve Erlang-C model.  The Erlang C
+formula was invented by the Danish Mathematician A.K. Erlang and is used to
+calculate the number of advisors and the service level.")
     (license license:expat)))
 
 (define-public r-erify
@@ -19714,6 +19746,32 @@ evolution of the distribution of educational attainments: The cumulative
 distribution function and the Lorenz curve.")
     (license license:gpl2+)))
 
+(define-public r-educationr
+  (package
+    (name "r-educationr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "educationR" version))
+       (sha256
+        (base32 "1rriwdvb3018bhq850chfzs6dh09plzdsipbcppakifyvn9kfr7s"))))
+    (properties `((upstream-name . "educationR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/educationr")
+    (synopsis "Comprehensive Collection of Educational Datasets")
+    (description
+     "This package provides a comprehensive collection of datasets related to
+education, covering topics such as student performance, learning methods, test
+scores, absenteeism, and other educational metrics.  This package serves as a
+resource for educational researchers, data analysts, and statisticians to
+explore and analyze data in the field of education.")
+    (license license:gpl3)))
+
 (define-public r-educationdata
   (package
     (name "r-educationdata")
@@ -23386,13 +23444,13 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (define-public r-ebvcube
   (package
     (name "r-ebvcube")
-    (version "0.2.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebvcube" version))
        (sha256
-        (base32 "0637q8795n7k2mnwdvnamnkdrz4akh458ijry7x3068kfzgr778y"))))
+        (base32 "19x83fmpbfz79ry956czzagqybga0dgbh07c4rs5g4lkhq0hxs2j"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
     (arguments
@@ -23414,7 +23472,7 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
                              r-delayedarray
                              r-curl
                              r-checkmate))
-    (home-page "https://github.com/LuiseQuoss/ebvcube")
+    (home-page "https://github.com/EBVCube/ebvcube")
     (synopsis "Working with netCDF for Essential Biodiversity Variables")
     (description
      "The concept of Essential Biodiversity Variables (EBV,

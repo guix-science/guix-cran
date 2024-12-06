@@ -5695,13 +5695,13 @@ more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "185y3rbvqxah9vw7f7jrgy726akjm16zm8df3vp90w4c2l7yngg5"))))
+        (base32 "11hwwbp6s3g621wvfik7i4ch4rlxq44ck9hkwkwwc01mbs5n1hms"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -22762,13 +22762,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text" version))
        (sha256
-        (base32 "0mgjc9yjrb3y1avzdqzx01zbdy1sl7glfgv2yvjrxkw3lw9lwjlb"))))
+        (base32 "1q7kpmc27jjq54xsqmvn34pf6nmmx9aps7mxvkf7b1bdlgjs5csj"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (arguments
@@ -22778,6 +22778,7 @@ molecular sequences.")
     (propagated-inputs (list r-yardstick
                              r-workflows
                              r-tune
+                             r-topics
                              r-tidyr
                              r-tibble
                              r-stringi
@@ -22787,7 +22788,6 @@ molecular sequences.")
                              r-recipes
                              r-purrr
                              r-parsnip
-                             r-overlapping
                              r-magrittr
                              r-ggrepel
                              r-ggplot2

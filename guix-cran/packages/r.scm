@@ -5925,13 +5925,13 @@ Stata commands (both inline and from a .do file) from R.")
 (define-public r-rstanemax
   (package
     (name "r-rstanemax")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstanemax" version))
        (sha256
-        (base32 "0n15dw6bz7g5j5dng32zna1r4p4ywkmspc82q1b3lcg3zbjmda3f"))))
+        (base32 "1vm6dqinrzgy3f3s626rxn7pii0l114iaz3qm9f3dvvghbba1gjz"))))
     (properties `((upstream-name . "rstanemax")))
     (build-system r-build-system)
     (arguments
@@ -5945,9 +5945,11 @@ Stata commands (both inline and from a .do file) from R.")
                              r-rcppeigen
                              r-rcpp
                              r-purrr
+                             r-posterior
                              r-magrittr
                              r-ggplot2
                              r-dplyr
+                             r-boot
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yoshidk6/rstanemax")
@@ -6331,13 +6333,13 @@ validation options, input preprocessing and plotting tools.")
 (define-public r-rsquaredmi
   (package
     (name "r-rsquaredmi")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSquaredMI" version))
        (sha256
-        (base32 "0wvyad08014zsh1q0csna185x96p5kixasm9zw5knd0bsnp18sba"))))
+        (base32 "0ag9ddxz535dmhisffqdak62m6cxw8ndbqx66z61pz46zklcljag"))))
     (properties `((upstream-name . "RSquaredMI")))
     (build-system r-build-system)
     (arguments
@@ -17135,6 +17137,31 @@ Mueller, C.,(2019) <@code{arXiv:1909.04990>}.")
      "Three-Step Regression and Inference for Cellwise and Casewise Contamination")
     (description
      "Three-step regression and inference for cellwise and casewise contamination.")
+    (license license:gpl2+)))
+
+(define-public r-robqda
+  (package
+    (name "r-robqda")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robqda" version))
+       (sha256
+        (base32 "0pclh76g3p51xcijp8q5adkm78h47gyfr6k3696ily1h4vq9qrpz"))))
+    (properties `((upstream-name . "robqda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast2 r-rfast r-mass))
+    (home-page "https://cran.r-project.org/package=robqda")
+    (synopsis "Robust Quadratic Discriminant Analysis")
+    (description
+     "The minimum covariance determinant estimator is used to perform robust quadratic
+discriminant analysis, including cross-validation.  References: Friedman J.,
+Hastie T. and Tibshirani R. (2009). \"The elements of statistical learning\", 2nd
+edition.  Springer, Berlin. <doi:10.1007/978-0-387-84858-7>.")
     (license license:gpl2+)))
 
 (define-public r-robper
@@ -34664,13 +34691,13 @@ Research Institute.  Hahsler and Dunham (2010) <doi:10.18637/jss.v035.i05>.")
 (define-public r-remla
   (package
     (name "r-remla")
-    (version "1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REMLA" version))
        (sha256
-        (base32 "1j094h38047vlbql8vvlbbdnwxqpw7vnvc08qa2c95jqw8kvhwa6"))))
+        (base32 "0qjrck92fjmvwmwix5kniaqhh3y81xgpbmbfcsgimjjgpj1dqmma"))))
     (properties `((upstream-name . "REMLA")))
     (build-system r-build-system)
     (arguments
@@ -36720,6 +36747,40 @@ parameters in item response theory (IRT) models (Belzak & Bauer, 2020)
 expectation-maximization algorithm.")
     (license license:expat)))
 
+(define-public r-regddm
+  (package
+    (name "r-regddm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RegDDM" version))
+       (sha256
+        (base32 "1dj3m2ixvbxi707fwwhx2vsrbz598n55s1fvdi39kbm4l2qg0f13"))))
+    (properties `((upstream-name . "RegDDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rtdists
+                             r-rstan
+                             r-rlang
+                             r-purrr
+                             r-dplyr))
+    (home-page "https://github.com/biorabbit/RegDDM")
+    (synopsis "Generalized Linear Regression with DDM")
+    (description
+     "Drift-Diffusion Model (DDM) has been widely used to model binary decision-making
+tasks, and many research studies the relationship between DDM parameters and
+other characteristics of the subject.  This package uses RStan to perform
+generalized liner regression analysis over DDM parameters via a single Bayesian
+Hierarchical model.  Compared to estimating DDM parameters followed by a
+separate regression model, @code{RegDDM} reduces bias and improves statistical
+power.")
+    (license license:gpl3+)))
+
 (define-public r-regda
   (package
     (name "r-regda")
@@ -38621,6 +38682,32 @@ analysis with terminal events\" (Furberg et al., 2021)
 <doi:10.1007/s10985-021-09533-5>.")
     (license license:gpl2+)))
 
+(define-public r-rectpacker
+  (package
+    (name "r-rectpacker")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rectpacker" version))
+       (sha256
+        (base32 "1kav3zfagds94b6ip6a7q5ayn254az2r5dqslwfcd45kz3523y44"))))
+    (properties `((upstream-name . "rectpacker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/coolbutuseless/rectpacker")
+    (synopsis "Rectangle Packing")
+    (description
+     "Rectangle packing is a packing problem where rectangles are placed into a larger
+rectangular region (without overlapping) in order to maximise the use space.
+Rectangles are packed using the skyline heuristic as discussed in Lijun et al
+(2011) A Skyline-Based Heuristic for the 2D Rectangular Strip Packing Problem
+<doi:10.1007/978-3-642-21827-9_29>.  A function is also included for determining
+a good small-sized box for containing a given set of rectangles.")
+    (license license:expat)))
+
 (define-public r-recosystem
   (package
     (name "r-recosystem")
@@ -39309,6 +39396,44 @@ humid climates.  Model algorithms are based on the research of Dubois, E. et al.
 (2021a) <doi:10.5683/SP3/EUDV3H> and Dubois, E. et al. (2021b)
 <doi:10.5194/hess-25-6567-2021>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-recforest
+  (package
+    (name "r-recforest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "recforest" version))
+       (sha256
+        (base32 "0vzx37aayp92q4g2dwsgfzkvl99k7ms47a81cqzpk60s8cx3lxja"))))
+    (properties `((upstream-name . "recforest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timereg
+                             r-tibble
+                             r-survival
+                             r-reda
+                             r-purrr
+                             r-mets
+                             r-magrittr
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=recforest")
+    (synopsis "Random Survival Forest for Recurrent Events")
+    (description
+     "Analyze recurrent events with right-censored data and the potential presence of
+a terminal event (that prevents further occurrences, like death).  recofest
+extends the random survival forest algorithm, adapting splitting rules and node
+estimators to handle complexities of recurrent events.  The methodology is fully
+described in Murris, J., Bouaziz, O., Jakubczak, M., Katsahian, S., & Lavenu, A.
+(2024) (<https://hal.science/hal-04612431v1/document>).")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-recexcavaar
   (package
@@ -44759,13 +44884,13 @@ objects from the Matrix package class hierarchy.")
 (define-public r-rcpa3
   (package
     (name "r-rcpa3")
-    (version "1.2.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCPA3" version))
        (sha256
-        (base32 "1xcrlnd41r9f7p4ql258hjh81alzah1p19pk9kady0ardp0xq1zz"))))
+        (base32 "1nfhvb26yi9iki6qh9vx2y08f83ci5h0w2i4lvd4rcd97nnfqgsv"))))
     (properties `((upstream-name . "RCPA3")))
     (build-system r-build-system)
     (arguments
@@ -51343,6 +51468,32 @@ without a test dataset\".")
      "This package provides a collection of HTML', @code{JavaScript}', CSS and fonts
 assets that generate @code{RapiDoc} documentation from an @code{OpenAPI}
 Specification: <https://mrin9.github.io/@code{RapiDoc/>}.")
+    (license license:expat)))
+
+(define-public r-rapidfuzz
+  (package
+    (name "r-rapidfuzz")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RapidFuzz" version))
+       (sha256
+        (base32 "0sidnjdqcykjnhl8ilc31sdrrbhyyxjpdxznfr9n8n8m4ihv12ng"))))
+    (properties `((upstream-name . "RapidFuzz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "<https://github.com/StrategicProjects/RapidFuzz>")
+    (synopsis "String Similarity Computation Using 'RapidFuzz'")
+    (description
+     "This package provides a high-performance interface for calculating string
+similarities and distances, leveraging the efficient library @code{RapidFuzz}
+<https://github.com/rapidfuzz/rapidfuzz-cpp>.  This package integrates the C++
+implementation, allowing R users to access cutting-edge algorithms for fuzzy
+matching and text analysis.")
     (license license:expat)))
 
 (define-public r-rapidatetime

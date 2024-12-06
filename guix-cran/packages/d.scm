@@ -5213,6 +5213,48 @@ MATLAB code is available upon request, see:
 <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2842535>.")
     (license license:gpl3)))
 
+(define-public r-drhutools
+  (package
+    (name "r-drhutools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drhutools" version))
+       (sha256
+        (base32 "1j55vig4idmx3gys1n9bmcl1h4454hkhjlsg18mx3lp1696rs24n"))))
+    (properties `((upstream-name . "drhutools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-webshot
+                             r-sp
+                             r-sf
+                             r-purrr
+                             r-png
+                             r-mapview
+                             r-magick
+                             r-leaflet
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggplot2
+                             r-gganimate
+                             r-dplyr
+                             r-animation))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.drhuyue.site/software/drhutools/")
+    (synopsis "Political Science Academic Research Gears")
+    (description
+     "Using these tools to simplify the research process of political science and
+other social sciences.  The current version can create folder system for
+academic project in political science, calculate psychological trait scores,
+visualize experimental and spatial data, and set up color-blind palette,
+functions used in academic research of political psychology or political science
+in general.")
+    (license license:expat)))
+
 (define-public r-drhur
   (package
     (name "r-drhur")
@@ -7481,18 +7523,19 @@ details.")
 (define-public r-double-truncation
   (package
     (name "r-double-truncation")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "double.truncation" version))
        (sha256
-        (base32 "0hrb1qli7i4jhc705rb02zbq2nyk0i406bb8gpy4jrzygjjbq3g0"))))
+        (base32 "103gdz24piak6ynl9dbk25fvzvar1sjpid50x66n4zm0q0af07cm"))))
     (properties `((upstream-name . "double.truncation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=double.truncation")
     (synopsis "Analysis of Doubly-Truncated Data")
     (description
@@ -7503,7 +7546,7 @@ under various models.  Nonparametric models are based on Efron and Petrosian
 exponential family (SEF) are based on Hu and Emura (2015)
 <doi:10.1007/s00180-015-0564-z> and Emura, Hu and Konno (2017)
 <doi:10.1007/s00362-015-0730-y>.  The parametric location-scale models are based
-on Dorre et al. (2020) <doi:10.1007/s00180-020-01027-6>.")
+on Dorre et al. (2021) <doi:10.1007/s00180-020-01027-6>.")
     (license license:gpl2)))
 
 (define-public r-doubcens
@@ -14400,13 +14443,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "6.9")
+    (version "7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "111nk0fc1x9mwmzm6mpg96p95pr8z3v0sgyv860sw89xydshj2wn"))))
+        (base32 "0193cfnazfvxf522g541v7smp2c1ag86l3crmz91vpflm6bbaaz0"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (arguments
@@ -14430,27 +14473,28 @@ a node, the corresponding text is displayed as a tooltip.")
 massive data, with millions of observations) analysis.  Hypothesis testing,
 discriminant and regression analysis, MLE of distributions and more are
 included.  The standard textbook for such data is the \"Directional Statistics\"
-by Mardia, K. V. and Jupp, P. E. (2000).  Other references include a) Phillip J.
-Paine, Simon P. Preston, Michail Tsagris and Andrew T. A. Wood (2018). \"An
-elliptically symmetric angular Gaussian distribution\".  Statistics and Computing
-28(3): 689-697. <doi:10.1007/s11222-017-9756-4>.  b) Tsagris M. and Alenazi A.
-(2019). \"Comparison of discriminant analysis methods on the sphere\".
-Communications in Statistics: Case Studies, Data Analysis and Applications
-5(4):467--491. <doi:10.1080/23737484.2019.1684854>.  c) P. J. Paine, S. P.
-Preston, M. Tsagris and Andrew T. A. Wood (2020). \"Spherical regression models
-with general covariates and anisotropic errors\".  Statistics and Computing
-30(1): 153--165. <doi:10.1007/s11222-019-09872-2>.  d) Tsagris M. and Alenazi A.
-(2024). \"An investigation of hypothesis testing procedures for circular and
-spherical mean vectors\".  Communications in Statistics-Simulation and
-Computation, 53(3): 1387--1408. <doi:10.1080/03610918.2022.2045499>.  e) Zehao
-Yu and Xianzheng Huang (2024).  A new parameterization for elliptically
-symmetric angular Gaussian distributions of arbitrary dimension.  Electronic
-Journal of Statistics, 18(1): 301--334. <doi:10.1214/23-EJS2210>.  f) Tsagris M.
-and Alzeley O. (2024). \"Circular and spherical projected Cauchy distributions: A
-Novel Framework for Circular and Directional Data Modeling\".
-<doi:10.48550/@code{arXiv.2302.02468>}.  g) Tsagris M. and Papastamoulis P.
-(2024). \"Directional data analysis using the spherical Cauchy and the Poisson
-kernel-based distribution\". <doi:10.48550/@code{arXiv.2409.03292>}.")
+by Mardia, K. V. and Jupp, P. E. (2000).  Other references include: a) Paine
+J.P., Preston S.P., Tsagris M. and Wood A.T.A. (2018). \"An elliptically
+symmetric angular Gaussian distribution\".  Statistics and Computing 28(3):
+689-697. <doi:10.1007/s11222-017-9756-4>.  b) Tsagris M. and Alenazi A. (2019).
+\"Comparison of discriminant analysis methods on the sphere\".  Communications in
+Statistics: Case Studies, Data Analysis and Applications 5(4):467--491.
+<doi:10.1080/23737484.2019.1684854>.  c) Paine J.P., Preston S.P., Tsagris M.
+and Wood A.T.A. (2020). \"Spherical regression models with general covariates and
+anisotropic errors\".  Statistics and Computing 30(1): 153--165.
+<doi:10.1007/s11222-019-09872-2>.  d) Tsagris M. and Alenazi A. (2024). \"An
+investigation of hypothesis testing procedures for circular and spherical mean
+vectors\".  Communications in Statistics-Simulation and Computation, 53(3):
+1387--1408. <doi:10.1080/03610918.2022.2045499>.  e) Yu Z. and Huang X. (2024).
+A new parameterization for elliptically symmetric angular Gaussian distributions
+of arbitrary dimension.  Electronic Journal of Statistics, 18(1): 301--334.
+<doi:10.1214/23-EJS2210>.  f) Tsagris M. and Alzeley O. (2024). \"Circular and
+spherical projected Cauchy distributions: A Novel Framework for Circular and
+Directional Data Modeling\".  Australian & New Zealand Journal of Statistics
+(Accepted for publication). <doi:10.48550/@code{arXiv.2302.02468>}.  g) Tsagris
+M., Papastamoulis P. and Kato S. (2024). \"Directional data analysis using the
+spherical Cauchy and the Poisson kernel-based distribution\".
+<doi:10.48550/@code{arXiv.2409.03292>}.")
     (license license:gpl2+)))
 
 (define-public r-directeffects

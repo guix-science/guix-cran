@@ -17023,13 +17023,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaangui
   (package
     (name "r-lavaangui")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaangui" version))
        (sha256
-        (base32 "03vql5cip31zvj657k77analql9sj5kw2737z7jsjwggdm393p2x"))))
+        (base32 "04wna8rphdqb9va9pklw74ccjl85daqw5k0zr6cyicwqy95gbswv"))))
     (properties `((upstream-name . "lavaangui")))
     (build-system r-build-system)
     (arguments

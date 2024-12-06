@@ -1063,6 +1063,33 @@ data frame into an interactive Tableau'-like interface, leveraging the
 graphic-walker @code{JavaScript} library and the htmlwidgets package.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-gvs
+  (package
+    (name "r-gvs")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GVS" version))
+       (sha256
+        (base32 "1ss6ddsvm41mh29h30wmcgn1mdh0ilf3l9ssdp6x6a422a0d0zli"))))
+    (properties `((upstream-name . "GVS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GVS")
+    (synopsis "'Geocoordinate Validation Service'")
+    (description
+     "The Geocoordinate Validation Service (GVS) runs checks of coordinates in
+latitude/longitude format.  It returns annotated coordinates with additional
+flags and metadata that can be used in data cleaning.  Additionally, the package
+has functions related to attribution and metadata information.  More information
+can be found at <https://github.com/ojalaquellueva/gvs/tree/master/api>.")
+    (license license:expat)))
+
 (define-public r-gvlma
   (package
     (name "r-gvlma")
@@ -9919,13 +9946,13 @@ rmarkdown documents and shiny apps thanks to @code{jQuery} @code{GoTop}
 (define-public r-gosset
   (package
     (name "r-gosset")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gosset" version))
        (sha256
-        (base32 "0k50vjfrqqkw9anq012pbq861lnq3ihjh310rp12xyvzbzf6d6c7"))))
+        (base32 "0gmbjlc4ywcdlxwma9acc91bb9a2lraym5hzjk3kqr1fdfalsrk0"))))
     (properties `((upstream-name . "gosset")))
     (build-system r-build-system)
     (arguments
@@ -10851,6 +10878,33 @@ applications.  The animations are activated using the Animate.css library.  See
      "This package provides a zero-inflated quasi-Poisson factor model to display
 similarity between samples visually in a low (2 or 3) dimensional space.")
     (license license:gpl2+)))
+
+(define-public r-goldprice
+  (package
+    (name "r-goldprice")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GOLDprice" version))
+       (sha256
+        (base32 "0mr132l59xg91zcr1681xkkrp5r63irm89vh3yvxc7kdx7dxjs83"))))
+    (properties `((upstream-name . "GOLDprice")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readxl))
+    (home-page "https://cran.r-project.org/package=GOLDprice")
+    (synopsis "Gold Price Data")
+    (description
+     "This package provides a collection of gold price data in various currencies in
+the form of USD, EUR, JPY, GBP, CAD, CHF, INR, CNY, TRY, SAR, IDR, AED, THB,
+VND, EGP, KRW, RUB, ZAR, and AUD. This data comes from the World Gold Council.
+In addition, the data is in the form of daily, weekly, monthly (average and the
+end of period), quarterly (average and the end of period), and yearly (average
+and the end of period).")
+    (license license:gpl3)))
 
 (define-public r-goldfish
   (package
@@ -30875,6 +30929,36 @@ dimension via hypothesis testing, see Chen et al. (2021)
      "Model and estimate the model parameters for the spatial model of
 individual-level infectious disease transmission in
 Susceptible-Infected-Recovered (SIR) framework.")
+    (license license:expat)))
+
+(define-public r-gdilm-seirs
+  (package
+    (name "r-gdilm-seirs")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GDILM.SEIRS" version))
+       (sha256
+        (base32 "0qld4a2qcw0wnj09yczv6ildkk5n05582sm0xkcmyy0yvf3in6sm"))))
+    (properties `((upstream-name . "GDILM.SEIRS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ngspatial r-mvtnorm r-mass))
+    (home-page "https://cran.r-project.org/package=GDILM.SEIRS")
+    (synopsis
+     "Spatial Individual Level Modeling of Infectious Disease Transmission with Reinfection Dynamics")
+    (description
+     "Geographically Dependent Individual Level Models (GDILMs) within the
+Susceptible-Exposed-Infectious-Recovered-Susceptible (SEIRS) framework are
+applied to model infectious disease transmission, incorporating reinfection
+dynamics.  This package employs a likelihood based Monte Carlo Expectation
+Conditional Maximization (MCECM) algorithm for estimating model parameters.  It
+also provides tools for GDILM fitting, parameter estimation, AIC calculation on
+real pandemic data, and simulation studies customized to user-defined model
+settings.")
     (license license:expat)))
 
 (define-public r-gdilm-me

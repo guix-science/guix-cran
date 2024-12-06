@@ -279,13 +279,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.12")
+    (version "2.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "1fs3rhnijyirc8zcjjadkjvgp2qbhc0bnlzxvhdglz9a1xy9yyyi"))))
+        (base32 "0i2rkfzjsp98h70iww7ipnyvzpvmnlby62hc0zr9s7bs48ml3l0p"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (arguments
@@ -14145,13 +14145,13 @@ implications for the growth and form of living organisms.  Please see Shi et al.
 (define-public r-biogas
   (package
     (name "r-biogas")
-    (version "1.23.2")
+    (version "1.61")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogas" version))
        (sha256
-        (base32 "05g6nyi872skvr34kw5c71ggnnjc3fv95imc327yjqhmqmwx3m19"))))
+        (base32 "18c3dn7a4gq6rlwq3wv28infrf11w7dzsb74map6n2cdvs9lf757"))))
     (properties `((upstream-name . "biogas")))
     (build-system r-build-system)
     (arguments
@@ -14167,16 +14167,18 @@ from a chemical formula.  Measured gas volume can be corrected for water vapor
 and to (possibly user-defined) standard temperature and pressure.  Gas quantity
 can be converted between volume, mass, and moles.  Gas composition, cumulative
 production, or other variables can be interpolated to a specified time.
-Cumulative biogas and methane production (and rates) can be calculated using
-volumetric, manometric, gravimetric, or gas density methods for any number of
-bottles.  With cumulative methane production data and data on bottle contents,
-biochemical methane potential (BMP) can be calculated and summarized, including
-subtraction of the inoculum contribution and normalization by substrate mass.
-Cumulative production and production rates can be summarized in several
-different ways (e.g., omitting normalization) using the same function.  Biogas
-quantity and composition can be predicted from substrate composition and
-additional, optional data.  Lastly, inoculum and substrate mass can be
-determined for planning BMP experiments.")
+Cumulative biogas and methane production (and rates) can be calculated from raw
+data obtained using volumetric, manometric, gravimetric, or gas density methods
+for any number of bottles.  With cumulative methane production data and data on
+bottle contents, biochemical methane potential (BMP) or specific methane
+production (SMP) can be calculated and summarized, including subtraction of the
+inoculum contribution and normalization by substrate mass.  Cumulative
+production and production rates can be summarized in several different ways
+(e.g., omitting normalization) using the same function.  Biogas quantity and
+composition can be predicted from substrate composition and additional, optional
+data.  Inoculum and substrate mass can be determined for planning BMP
+experiments.  Finally, first-order models can be fit to measurements in order to
+extract estimates of ultimate yield and kinetic constants.")
     (license license:gpl2)))
 
 (define-public r-biodry
@@ -18138,13 +18140,13 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.4.1")
+    (version "0.1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "0d5aaiwb0xayw7kr25klmjxrh1rzg967r9qlxzvkg260iryn8g0g"))))
+        (base32 "0jcapsfq55ca3bkm6gbp3c3g0vq1cs74plq9b0vgnq4vw0i2h0cw"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (arguments
@@ -25979,6 +25981,39 @@ parameter associated to the mean.  And calculates different adjustment
 statistics such as the Akaike information criterion and Bayesian information
 criterion.")
     (license license:gpl2+)))
+
+(define-public r-bayesianfitforecast
+  (package
+    (name "r-bayesianfitforecast")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianFitForecast" version))
+       (sha256
+        (base32 "1z4mlr0ki2sy8p3qrc4qavmxiffcma9kpga7s8wc1f5k6frlv8mq"))))
+    (properties `((upstream-name . "BayesianFitForecast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstan
+                             r-readxl
+                             r-openxlsx
+                             r-ggplot2
+                             r-dplyr
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gchowell/BayesianFitForecast")
+    (synopsis
+     "Bayesian Parameter Estimation and Forecasting for Epidemiological Models")
+    (description
+     "This package provides methods for Bayesian parameter estimation and forecasting
+in epidemiological models.  Functions enable model fitting using Bayesian
+methods and generate forecasts with uncertainty quantification.  Implements
+approaches described in <doi:10.48550/@code{arXiv.2411.05371>} and
+<doi:10.1002/sim.9164>.")
+    (license license:cc0)))
 
 (define-public r-bayesianfactorzoo
   (package

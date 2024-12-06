@@ -17374,13 +17374,13 @@ Parraga-Alava, J. et.  al. (2018) <doi:10.1186/s13040-018-0178-4>.")
 (define-public r-mobsim
   (package
     (name "r-mobsim")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mobsim" version))
        (sha256
-        (base32 "0ny924lsj12fqfagjwd2pq8prk0xgm89ray5b07dw7yfdcisx90i"))))
+        (base32 "0qc00aiv40q79xlhzk58062jl29inxawja76b0y520mm2phzsxrj"))))
     (properties `((upstream-name . "mobsim")))
     (build-system r-build-system)
     (arguments
@@ -20625,20 +20625,20 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.5.0")
+    (version "4.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "1sn9ij9jjzdda4qwm144rvd8vi9mv1maqfpxm1nbshpa9q2ij2qf"))))
+        (base32 "0dg1pva7nwshb3zsv6wabiy8js75jrg8a8fszqhf3m9936d194dw"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp))
-    (home-page "https://www.mlpack.org/doc/mlpack-git/r_documentation.html")
+    (home-page "https://www.mlpack.org/doc/user/bindings/r.html")
     (synopsis "'Rcpp' Integration for the 'mlpack' Library")
     (description
      "This package provides a fast, flexible machine learning library, written in C++,
@@ -23915,6 +23915,34 @@ functions are provided to connect Kendall's tau to latent correlation under the
 Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 (2020) <doi:10.1093/biomet/asaa007> and Yoon, Mueller and Gaynanova (2021)
 <doi:10.1080/10618600.2021.1882468>.")
+    (license license:gpl3)))
+
+(define-public r-mixedbiastest
+  (package
+    (name "r-mixedbiastest")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixedbiastest" version))
+       (sha256
+        (base32 "080gwmygpwgzncr3xn62waliwlw3xmrm4ha07vfnhpa6n4w1xsl4"))))
+    (properties `((upstream-name . "mixedbiastest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-matrix r-lme4 r-ggplot2))
+    (home-page "https://cran.r-project.org/package=mixedbiastest")
+    (synopsis "Bias Diagnostic for Linear Mixed Models")
+    (description
+     "This package provides a function to perform bias diagnostics on linear mixed
+models fitted with @code{lmer()} from the lme4 package.  Implements permutation
+tests for assessing the bias of fixed effects, as described in Karl and
+Zimmerman (2021) <doi:10.1016/j.jspi.2020.06.004>.  Karl and Zimmerman (2020)
+<doi:10.17632/tmynggddfm.1> provide R code for implementing the test using
+@code{mvglmmRank} output.  Development of this package was assisted by GPT
+o1-preview for code structure and documentation.")
     (license license:gpl3)))
 
 (define-public r-mixedbayes
@@ -27688,6 +27716,43 @@ tidygraph objects, and on one-mode and two-mode (bipartite) networks.")
     (description
      "This package provides tools for estimating, measuring and working with migration
 data.")
+    (license license:gpl3)))
+
+(define-public r-migee
+  (package
+    (name "r-migee")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MIGEE" version))
+       (sha256
+        (base32 "112wi3zs0fh2jlgrihr76f4vlqsmp3j2q76r6y264a1mhgf7yzfs"))))
+    (properties `((upstream-name . "MIGEE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vim
+                             r-reshape2
+                             r-readr
+                             r-mice
+                             r-lme4
+                             r-ggplot2
+                             r-ggeffects
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=MIGEE")
+    (synopsis "Impute Missing Values and Fitting Linear Mixed Effect Model")
+    (description
+     "This package implements methods for estimating generalized estimating equations
+(GEE) with advanced options for flexible modeling and handling missing data.
+This package provides tools to fit and analyze GEE models for longitudinal data,
+allowing users to address missingness using a variety of imputation techniques.
+It supports both univariate and multivariate modeling, visualization of missing
+data patterns, and facilitates the transformation of data for efficient
+statistical analysis.  Designed for researchers working with complex datasets,
+it ensures robust estimation and inference in longitudinal and clustered data
+settings.")
     (license license:gpl3)))
 
 (define-public r-migconnectivity

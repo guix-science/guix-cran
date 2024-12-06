@@ -4179,13 +4179,13 @@ BÃ¶schen, I. (2021) <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
 (define-public r-jarbes
   (package
     (name "r-jarbes")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jarbes" version))
        (sha256
-        (base32 "12w0qh06n7p6xj5krlm8jqgrswcjspsp3yd5rrr0vgj2csk3jpck"))))
+        (base32 "16777dmig327jc1hrnhn3yr5g972wbqa3pqmsnavblkjwcxpr7mv"))))
     (properties `((upstream-name . "jarbes")))
     (build-system r-build-system)
     (arguments

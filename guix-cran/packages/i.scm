@@ -16635,13 +16635,13 @@ conducting simulations on composite scores.")
 (define-public r-idlfm
   (package
     (name "r-idlfm")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IDLFM" version))
        (sha256
-        (base32 "12rlc234n566xaqg476ni9psmz18xkiyi81s4xhixj25fg5n8n4w"))))
+        (base32 "10a3c5522rlwy3fvhqmrsqba26l8qak539qzj3spplfd0lfk22nd"))))
     (properties `((upstream-name . "IDLFM")))
     (build-system r-build-system)
     (arguments
@@ -17955,44 +17955,37 @@ Ising prior to capture structure of predictors in the modeling process.  More
 information can be found in the papers listed in the URL below.")
     (license license:gpl2+)))
 
-(define-public r-iclustervb
+(define-public r-iclogcondist
   (package
-    (name "r-iclustervb")
-    (version "0.1.3")
+    (name "r-iclogcondist")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "iClusterVB" version))
+       (uri (cran-uri "iclogcondist" version))
        (sha256
-        (base32 "13mca1cbm2h641jvwzc742jxih1hv8v7ii52wsv0smfr7l48q42g"))))
-    (properties `((upstream-name . "iClusterVB")))
+        (base32 "0agmyghl4zw7llydz0vbgzsfhjs2fff3jdkk4smix7hw28bf34pa"))))
+    (properties `((upstream-name . "iclogcondist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-varsellcm
-                             r-rcpparmadillo
+    (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
-                             r-r-utils
-                             r-polca
-                             r-pheatmap
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-mclust
+                             r-monotone
+                             r-icenreg
                              r-ggplot2
-                             r-cowplot
-                             r-clustmixtype
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AbdalkarimA/iClusterVB")
+                             r-flexsurv
+                             r-fdrtool))
+    (home-page "https://cran.r-project.org/package=iclogcondist")
     (synopsis
-     "Fast Integrative Clustering and Feature Selection for High Dimensional Data")
+     "Log-Concave Distribution Estimation with Interval-Censored Data")
     (description
-     "This package provides a variational Bayesian approach for fast integrative
-clustering and feature selection, facilitating the analysis of multi-view, mixed
-type, high-dimensional datasets with applications in fields like cancer
-research, genomics, and more.")
-    (license license:expat)))
+     "We consider the non-parametric maximum likelihood estimation of the underlying
+distribution function, assuming log-concavity, based on mixed-case
+interval-censored data.  The algorithm implemented is base on Chi Wing Chu, Hok
+Kan Ling and Chaoyu Yuan (2024, <doi:10.48550/@code{arXiv.2411.19878>}).")
+    (license license:gpl3)))
 
 (define-public r-iclick
   (package

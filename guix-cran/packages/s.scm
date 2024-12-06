@@ -11256,13 +11256,13 @@ and functions for various c-structuredness indices.")
 (define-public r-stoppingrule
   (package
     (name "r-stoppingrule")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stoppingrule" version))
        (sha256
-        (base32 "026464lkdxi6s79csb1fgm705yvszxxwq6993p92843zr344cffi"))))
+        (base32 "0vcqz35l3xid1d98a6xaxz2yas23fh29k1q17mxq9vr568gcxcwp"))))
     (properties `((upstream-name . "stoppingrule")))
     (build-system r-build-system)
     (arguments
@@ -12831,13 +12831,13 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "12wq9ifxg5909h2qc67wfisixbksfwbjd49vppbd2ch58f2vhgq1"))))
+        (base32 "1s0dq1n5qmb01x7z2rssk2mxcsjc7x6g3p5xqjfgymy5gj6wrxn6"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (arguments
@@ -12852,7 +12852,6 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
                              r-shinycssloaders
                              r-shiny
                              r-rmarkdown
-                             r-purrr
                              r-mass
                              r-ggrepel
                              r-ggplot2
@@ -21759,13 +21758,13 @@ are defined by spdep package.")
 (define-public r-spmoran
   (package
     (name "r-spmoran")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmoran" version))
        (sha256
-        (base32 "0xdlcwhbhlrbawwpdk32wi9ymch0vwzxiyfb14jspynpfl5jjnzg"))))
+        (base32 "056jy286hd27rpfiwql1ligczh9q2dy9c8kk9j0xph0ibjfm5mh6"))))
     (properties `((upstream-name . "spmoran")))
     (build-system r-build-system)
     (arguments
@@ -66258,13 +66257,13 @@ compatibility is ensured for the Landsat Global Land Survey data set.")
 (define-public r-sate
   (package
     (name "r-sate")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sate" version))
        (sha256
-        (base32 "137q4636x0wizfiq2smf8gc8x3k31mkm5i6nmb7s3arl250qcv0n"))))
+        (base32 "0z8mjab1rndzspz7388641k5v39sypwz86r9hv2rx72d4b2pdw3n"))))
     (properties `((upstream-name . "sate")))
     (build-system r-build-system)
     (arguments

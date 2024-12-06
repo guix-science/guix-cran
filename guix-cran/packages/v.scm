@@ -7168,13 +7168,13 @@ inference and is computationally efficient.")
 (define-public r-vbel
   (package
     (name "r-vbel")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VBel" version))
        (sha256
-        (base32 "02371k5mvzqkj0x9sbbg3ah6kzrcr16bwm1qrci7nh06qy1hq3hg"))))
+        (base32 "0jdr0r6m6lza884lx4khv8rbh960h113rvicxr9apg8lyh7fbqaw"))))
     (properties `((upstream-name . "VBel")))
     (build-system r-build-system)
     (arguments

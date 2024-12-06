@@ -10559,19 +10559,19 @@ Diego.; Luo & Xu (2022) <doi:10.48550/@code{arXiv.2206.02296>}; Rava (2021)
 (define-public r-cowsay
   (package
     (name "r-cowsay")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cowsay" version))
        (sha256
-        (base32 "18jr8v0c4vvwvixklcl3kggwzhq1xnpi3brdjiby48zh873b2chd"))))
+        (base32 "1l9455777dchi09bmq8nnqvixvb22xq5xw1s92s4pwms3ab41gbs"))))
     (properties `((upstream-name . "cowsay")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmsfact r-fortunes r-crayon))
+    (propagated-inputs (list r-rlang r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sckott/cowsay")
     (synopsis "Messages, Warnings, Strings with Ascii Animals")
@@ -17826,53 +17826,6 @@ individuals with access to the project along with their access level.")
 and the pins package.  It automates the display of schemata, tables, views, as
 well as the preview of the table's top 1000 records.")
     (license license:expat)))
-
-(define-public r-connectednessapproach
-  (package
-    (name "r-connectednessapproach")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ConnectednessApproach" version))
-       (sha256
-        (base32 "1vbnj2r4x8pfzdagky33xz9kpb23d7vz5ddgms8fp15zjilsz2nw"))))
-    (properties `((upstream-name . "ConnectednessApproach")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-urca
-                             r-rugarch
-                             r-rmgarch
-                             r-riskparityportfolio
-                             r-quantreg
-                             r-progress
-                             r-performanceanalytics
-                             r-moments
-                             r-mass
-                             r-l1pack
-                             r-igraph
-                             r-glmnet
-                             r-frequencyconnectedness
-                             r-car))
-    (home-page "https://cran.r-project.org/package=ConnectednessApproach")
-    (synopsis "Connectedness Approach")
-    (description
-     "The estimation of static and dynamic connectedness measures is created in a
-modular and user-friendly way.  Besides, the time domain connectedness
-approaches, this package further allows to estimate the frequency connectedness
-approach, the joint spillover index and the extended joint connectedness
-approach.  In addition, all connectedness frameworks can be based upon
-orthogonalized and generalized VAR, QVAR, LASSO VAR, Ridge VAR, Elastic Net VAR
-and TVP-VAR models.  Furthermore, the package includes the conditional,
-decomposed and partial connectedness measures as well as the pairwise
-connectedness index, influence index and corrected total connectedness index.
-Finally, a battery of datasets are available allowing to replicate a variety of
-connectedness papers.")
-    (license license:gpl3)))
 
 (define-public r-connectapi
   (package
@@ -31716,13 +31669,13 @@ computes occurrence probabilities), first- or higher-order Markov chains.")
 (define-public r-clickr
   (package
     (name "r-clickr")
-    (version "0.9.43")
+    (version "0.9.45")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clickR" version))
        (sha256
-        (base32 "00qd4m6w5q99v6rm9wcxc8mwwi9ik8iiis0pzydb3qwrx0bfaj5m"))))
+        (base32 "05k2is7y8v4x4x1kfg27191ayw9k3j1q2ap7nchw41yw8biad94a"))))
     (properties `((upstream-name . "clickR")))
     (build-system r-build-system)
     (arguments

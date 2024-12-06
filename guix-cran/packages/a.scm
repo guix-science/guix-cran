@@ -1293,13 +1293,13 @@ Ye, C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
 (define-public r-avesperu
   (package
     (name "r-avesperu")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avesperu" version))
        (sha256
-        (base32 "0s92sdxhgc8d5qwv3frig87j4fxnj28kaykrqiqvdgjwjd6yhgbh"))))
+        (base32 "14yfxmzmxsqqzf2yh56mqhgm1nfliclf3a48a2jj9l88zyjmg67p"))))
     (properties `((upstream-name . "avesperu")))
     (build-system r-build-system)
     (arguments
@@ -9794,13 +9794,13 @@ States for reapportionment after the Census, as described in
 (define-public r-appnn
   (package
     (name "r-appnn")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "appnn" version))
        (sha256
-        (base32 "0wkpr6lcd68wlzk6n622ab7sd99l837073czn4k56hw8bw9v68j3"))))
+        (base32 "0y97ia2fn4h4wr9xdwc8rngzlbim2d6d1cnkck1p2ip4r30rlyn4"))))
     (properties `((upstream-name . "appnn")))
     (build-system r-build-system)
     (arguments
@@ -17303,6 +17303,55 @@ meteorological diagnostics.")
 introduce algorithm characteristics such as stability, effectiveness and
 anomalousness (Kandanaarachchi, Smith-Miles 2020)
 <doi:10.13140/RG.2.2.11363.09760>.")
+    (license license:gpl3)))
+
+(define-public r-airship
+  (package
+    (name "r-airship")
+    (version "1.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "airship" version))
+       (sha256
+        (base32 "17c68w08669ab4m7cv3w6il22mxcc47h9r887fn4p00036zk4cak"))))
+    (properties `((upstream-name . "airship")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shinybusy
+                             r-shinybs
+                             r-shinyalert
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-plotly
+                             r-mvtnorm
+                             r-magrittr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-data-table
+                             r-colourpicker
+                             r-cairo))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=airship")
+    (synopsis
+     "Visualization of Simulated Datasets with Multiple Simulation Input Dimensions")
+    (description
+     "Plots simulation results of clinical trials.  Its main feature is allowing users
+to simultaneously investigate the impact of several simulation input dimensions
+through dynamic filtering of the simulation results.  A more detailed
+description of the app can be found in Meyer et al.
+<DOI:10.1016/j.softx.2023.101347> or the vignettes on @code{GitHub}'.")
     (license license:gpl3)))
 
 (define-public r-airr

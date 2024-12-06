@@ -16660,13 +16660,13 @@ Petersen A. (2019) <@code{arXiv:1910.03134>}.")
 (define-public r-fglsnet
   (package
     (name "r-fglsnet")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fglsnet" version))
        (sha256
-        (base32 "00qn4k4xm1zfkz77lys468c1mfx3vyfjkf19wdbcvgssrmf6w0xd"))))
+        (base32 "1srv60svg3ig4xp4k25cq5jw56izf1hcwr9acnpx09y2sqh11y70"))))
     (properties `((upstream-name . "fglsnet")))
     (build-system r-build-system)
     (arguments

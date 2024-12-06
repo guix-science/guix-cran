@@ -17017,22 +17017,25 @@ published soon.")
 (define-public r-pooltestr
   (package
     (name "r-pooltestr")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoolTestR" version))
        (sha256
-        (base32 "0n9fihb2yc6jnxs1v0yq872pg7b1jd7lx7bwa9d1r8yv36haxzvr"))))
+        (base32 "01av654dz2pk01751ijd2n5c0lp98jzxkwcyk5md5x1v9q377dib"))))
     (properties `((upstream-name . "PoolTestR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tibble
+                             r-stringr
                              r-stanheaders
                              r-rstantools
                              r-rstan
+                             r-rlang
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-progress
@@ -17649,13 +17652,13 @@ provided in the separate package pomdp.  Kaelbling, Littman and Cassandra (1998)
 (define-public r-pomdp
   (package
     (name "r-pomdp")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomdp" version))
        (sha256
-        (base32 "1l873a4p0fzfmgz52v57i2ccmpsrv10lvbrm7mr39qwqsaklh3bv"))))
+        (base32 "0r9sh9954nl38nk465h8dgs4yd40s0xr6q1q5smlbgzc9rcrv228"))))
     (properties `((upstream-name . "pomdp")))
     (build-system r-build-system)
     (arguments
@@ -25889,13 +25892,13 @@ to predicted output.")
 (define-public r-pipeflow
   (package
     (name "r-pipeflow")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pipeflow" version))
        (sha256
-        (base32 "1k3734m6wrm25ip42kxgwafgp5wlsss39s4yqpbwv6ff9zms498s"))))
+        (base32 "023c02bgjnx8y1fq02h6rcci31n9vqd26r9xrgasjyqyqxlpmzhf"))))
     (properties `((upstream-name . "pipeflow")))
     (build-system r-build-system)
     (arguments
@@ -25903,15 +25906,17 @@ to predicted output.")
       #:tests? #f))
     (propagated-inputs (list r-r6 r-lgr r-jsonlite r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pipeflow")
-    (synopsis "Implement Data Analysis Workflows with Pipelines")
+    (home-page "https://rpahl.github.io/pipeflow/")
+    (synopsis "Lightweight, General-Purpose Data Analysis Pipelines")
     (description
-     "This package provides a lightweight yet powerful framework for creating data
-analysis pipelines.  You build your pipelines simply by defining a sequence of R
-functions and pipeflow takes care of tracking dependencies among steps and
-managing all the analysis parameters.  The framework is easy to get started with
-for the typical R user, but also provides advanced features to enable complex
-workflows.")
+     "This package provides a lightweight yet powerful framework for building robust
+data analysis pipelines.  With pipeflow', you initialize a pipeline with your
+dataset and construct your workflow step by step by seamlessly adding R
+functions.  Modify, remove, or insert steps at any stage while pipeflow ensures
+the integrity and correctness of your pipeline.  Designed to help you focus on
+the what rather than the how', this package simplifies the implementation of
+complex workflows, making even large-scale data analysis projects manageable,
+adaptable, and reusable with ease.")
     (license license:gpl3)))
 
 (define-public r-pipefittr
@@ -27638,13 +27643,13 @@ prevalence.")
 (define-public r-phylolm-hp
   (package
     (name "r-phylolm-hp")
-    (version "0.0-2")
+    (version "0.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylolm.hp" version))
        (sha256
-        (base32 "1yc3mh6560kbsy1xrnskri19mqx64wvvwirxdah9wdqx3km57cn1"))))
+        (base32 "1v0l8h6c2i3wysjnx4p6mhzv7jq9p47nqpa19bjs4y997s0lfiva"))))
     (properties `((upstream-name . "phylolm.hp")))
     (build-system r-build-system)
     (arguments

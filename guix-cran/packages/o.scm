@@ -9683,13 +9683,13 @@ counts and trends.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "0a2sdigf1gx8zzpcr926b6pysvz5haf79pmma74sw3ifg1i6kxma"))))
+        (base32 "02rmgl0jgyhg1j7vdz72n32n5mfz5x4x38kd88zppiyzrlhc5hs6"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments

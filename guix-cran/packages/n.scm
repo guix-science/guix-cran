@@ -14123,13 +14123,13 @@ nephrology based on different biomechimal traits.")
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonUtilities" version))
        (sha256
-        (base32 "0mx0pj6zxi0kqn2bqhyrn4bwg9jl151lv3fhk7llswivxp8fzd1p"))))
+        (base32 "0jpfgiaznpglc499qa6kqbyswpm9nf5004sqqxg797fv4n9z72jy"))))
     (properties `((upstream-name . "neonUtilities")))
     (build-system r-build-system)
     (arguments
