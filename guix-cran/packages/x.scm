@@ -345,13 +345,13 @@ style-sheet.")
 (define-public r-xrscc
   (package
     (name "r-xrscc")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XRSCC" version))
        (sha256
-        (base32 "0hs2whjsd02avaz79zkrd8gjw9qd7l6ysxmhx4w1r7gb1cj9rr7c"))))
+        (base32 "14qh2rpnv0iynj9wn0n00ykax9y7yphyy3097xl9jgk7xw5j0h8y"))))
     (properties `((upstream-name . "XRSCC")))
     (build-system r-build-system)
     (arguments

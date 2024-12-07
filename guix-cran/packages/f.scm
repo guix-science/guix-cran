@@ -18984,13 +18984,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "14d46sq4rwp2xd24jq9fhgclcf9r6gyfpls2sv58412avaalv0g8"))))
+        (base32 "0qr8p7lajpfgbc0np9am6dx8773n861534nv5g3q1pyfbdpzqcgw"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (arguments

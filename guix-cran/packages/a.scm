@@ -19572,13 +19572,13 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "1npfr3k0221zmchv0rjnskaj13wd3hrnnbl78zghz6whgkjb48ah"))))
+        (base32 "1qgnk39n7y46vgw44qmsg99jya4a8grdhsp7k2n8k98zvkqwkb9x"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
     (arguments

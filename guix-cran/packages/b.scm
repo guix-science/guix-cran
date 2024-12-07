@@ -12998,13 +12998,13 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
 (define-public r-biostatsuhnplus
   (package
     (name "r-biostatsuhnplus")
-    (version "0.0.10")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiostatsUHNplus" version))
        (sha256
-        (base32 "0wrppamh4m47zczci3csqfijf2hyz4lb5ks2z8h2ybn8lcnbjxgp"))))
+        (base32 "1kyali61sgx3b5h9wi7n5v0lrs9i5vrbl3ncrhq8jacz70i75mq7"))))
     (properties `((upstream-name . "BiostatsUHNplus")))
     (build-system r-build-system)
     (arguments
@@ -25488,13 +25488,13 @@ with varying prior information.  See Lu and TraunmÃ¼ller (2021)
 (define-public r-bayeslife
   (package
     (name "r-bayeslife")
-    (version "5.2-0")
+    (version "5.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesLife" version))
        (sha256
-        (base32 "116wa3sqxkp8ywc0s83clg1pp81bf1rhddpvjbcw9pyim57h4kxm"))))
+        (base32 "0rfp9rhaym10li0m0jm8nlr39f8jmjlirkk772plyswjjcwmfpib"))))
     (properties `((upstream-name . "bayesLife")))
     (build-system r-build-system)
     (arguments

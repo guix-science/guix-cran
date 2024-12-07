@@ -11078,13 +11078,13 @@ be available at the later version.")
 (define-public r-gofkernel
   (package
     (name "r-gofkernel")
-    (version "2.1-1")
+    (version "2.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GoFKernel" version))
        (sha256
-        (base32 "0xygsdmggl35fafyp431mkwalwixw2r3f32qll1pf72dfwd8y8d3"))))
+        (base32 "0ny34fq4y6xdnh222qb24d8qcfvh99v73v7lf3xd87rlr24x5z7r"))))
     (properties `((upstream-name . "GoFKernel")))
     (build-system r-build-system)
     (arguments
@@ -11094,7 +11094,8 @@ be available at the later version.")
     (home-page "https://cran.r-project.org/package=GoFKernel")
     (synopsis "Testing Goodness-of-Fit with the Kernel Density Estimator")
     (description
-     "Tests of goodness-of-fit based on a kernel smoothing of the data.")
+     "Tests of goodness-of-fit based on a kernel smoothing of the data.  References:
+PavÃ­a (2015) <doi:10.18637/jss.v066.c01>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-gofig
@@ -12252,13 +12253,13 @@ polynomials with rational coefficients.")
 (define-public r-gmotree
   (package
     (name "r-gmotree")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmoTree" version))
        (sha256
-        (base32 "07n3qy3i7yyb0z3i49x0pa3z697gppixk7jz31zk5d0144hxl4zi"))))
+        (base32 "13cspi2zz1drwmbki7vjkgrn91606r3zcqwjji3jqp835hyplsvk"))))
     (properties `((upstream-name . "gmoTree")))
     (build-system r-build-system)
     (arguments

@@ -23342,13 +23342,13 @@ GarcÃ­a-PortuguÃ©s (2024) <doi:10.48550/@code{arXiv.2405.13531>}.")
 (define-public r-sphet
   (package
     (name "r-sphet")
-    (version "2.0")
+    (version "2.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sphet" version))
        (sha256
-        (base32 "1qr4n4kbmc58qmr8niqq3mnwv18x9q2f24c1kg67asf7n3pnmy77"))))
+        (base32 "0j3innblmsbxfwzi38cbmknx16nxzarcq3y8yhssjmj3mc2mldq9"))))
     (properties `((upstream-name . "sphet")))
     (build-system r-build-system)
     (arguments
@@ -23403,19 +23403,19 @@ to/from multivariate polar/spherical coordinates are also provided.")
 (define-public r-spheresmooth
   (package
     (name "r-spheresmooth")
-    (version "0.1.0")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spheresmooth" version))
        (sha256
-        (base32 "1xf1cg3y7dvx274ccmia97lj278ghpx2p1ayqrfxxl1cnw4p53rv"))))
+        (base32 "1i0s3nfwlmmnwr0hkanwbr8fx47wsh8g65vl74ml9yg2by8pc9pc"))))
     (properties `((upstream-name . "spheresmooth")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=spheresmooth")
+    (home-page "https://kybak90.github.io/spheresmooth/")
     (synopsis "Piecewise Geodesic Smoothing for Spherical Data")
     (description
      "Fitting a smooth path to a given set of noisy spherical data observed at known
@@ -30830,6 +30830,56 @@ Based on the work described in Rodriguez-Alvarez et al. (2015)
 <doi:10.1007/s11222-018-9818-2>, and Eilers and Marx (1996)
 <doi:10.1214/ss/1038425655>.")
     (license license:gpl2)))
+
+(define-public r-sooty
+  (package
+    (name "r-sooty")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sooty" version))
+       (sha256
+        (base32 "1mp88bnsi1f3nngcpy0dpxqz75jfg6p0n6rsdcinbba4xfmjvmy7"))))
+    (properties `((upstream-name . "sooty")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-memoise r-dplyr r-curl r-cachem r-arrow))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/mdsumner/sooty")
+    (synopsis
+     "Data Source Catalogues Online for Southern Ocean Ecosystem Research")
+    (description
+     "Obtains lists of files of remote sensing collections for Southern Ocean surface
+properties.  Commonly used data sources of sea surface temperature, sea ice
+concentration, and altimetry products such as sea surface height and sea surface
+currents are cached in object storage on the Pawsey Supercomputing Research
+Centre facility.  Functions to retrieve these object storage catalogues are
+provided.  The catalogues include complete collections of datasets Reynolds et
+al. (2008) \"NOAA Optimum Interpolation Sea Surface Temperature (OISST) Analysis,
+Version 2.1\" <doi:10.7289/V5SQ8XB5>, Spreen et al. (2008) \"Artist Advanced
+Microwave Scanning Radiometer for Earth Observing System (AMSR-E) sea ice
+concentration\" <doi:10.1029/2005JC003384>.  In future releases helpers will be
+added to identify particular data collections and target specific dates for
+earth observation data for reading, as well as helpers to retrieve data set
+citation and provenance details.")
+    (license license:expat)))
 
 (define-public r-sonify
   (package
@@ -46784,13 +46834,13 @@ tracking, customizable submit actions, easy survey-theming, and more.")
 (define-public r-shinystoreplus
   (package
     (name "r-shinystoreplus")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyStorePlus" version))
        (sha256
-        (base32 "08xyd26wcfv629a4791s20f690faf472rn33qhnlsjbddnmla62z"))))
+        (base32 "1f2gpfh3y68njc6bq77bjia53g9pl6kklz7bw2s165kawi9cc18w"))))
     (properties `((upstream-name . "shinyStorePlus")))
     (build-system r-build-system)
     (arguments
@@ -46800,13 +46850,13 @@ tracking, customizable submit actions, easy survey-theming, and more.")
     (native-inputs (list r-knitr))
     (home-page "https://shinystoreplus.obi.obianom.com")
     (synopsis
-     "Secure in-Browser Storage for 'Shiny' Inputs, Outputs and Variables")
+     "Secure in-Browser and Database Storage for 'shiny' Inputs, Outputs, Views and User Likes")
     (description
-     "Store persistent and synchronized data from Shiny inputs within the browser in a
-secure format.  Refresh Shiny applications and preserve user-inputs over
-multiple sessions.  A database-like storage format is implemented using Dexie.js
-<https://dexie.org>, a minimal wrapper for @code{IndexedDB}'.  Transfer browser
-link parameters to Shiny input or output values.")
+     "Store persistent and synchronized data from shiny inputs within the browser.
+Refresh shiny applications and preserve user-inputs over multiple sessions.  A
+database-like storage format is implemented using Dexie.js <https://dexie.org>,
+a minimal wrapper for @code{IndexedDB}'.  Transfer browser link parameters to
+shiny input or output values.  Store app visitor views, likes and followers.")
     (license license:expat)))
 
 (define-public r-shinysir
@@ -52331,13 +52381,13 @@ Francisco data portal (@code{DataSF})
 (define-public r-sfnetworks
   (package
     (name "r-sfnetworks")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfnetworks" version))
        (sha256
-        (base32 "0q64ki4ylgkwnz4g43pq43hv9lspi1akyssjpbd4947x69hlyhiz"))))
+        (base32 "047g34fl1klmykls4fxw99w8pcq2c8jynf5lfhp0q7p285ciq7pb"))))
     (properties `((upstream-name . "sfnetworks")))
     (build-system r-build-system)
     (arguments
@@ -61284,13 +61334,13 @@ use with Rscript'.")
 (define-public r-scregclust
   (package
     (name "r-scregclust")
-    (version "0.1.10")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scregclust" version))
        (sha256
-        (base32 "0acqqbdrnch7mjagpw3z5vi58i4aaql0q5f4fv3575dw3g1l1jsp"))))
+        (base32 "0pcnwyv3qx1wbjr27576zp0jfi1axplmghgc0yf9rjdxsh6hp44b"))))
     (properties `((upstream-name . "scregclust")))
     (build-system r-build-system)
     (arguments

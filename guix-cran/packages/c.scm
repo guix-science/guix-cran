@@ -8660,13 +8660,13 @@ sorting.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.10")
+    (version "0.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "07y5gkxdr12v715zy9skgjhw3sjsjlscpfril4hcdz0qwhr5cy5d"))))
+        (base32 "0svv8lz2654142p62rjskpwqiwhqiclx3v8swskk40738f8nw6d7"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (arguments
@@ -22056,13 +22056,13 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-comets
   (package
     (name "r-comets")
-    (version "0.0-3")
+    (version "0.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comets" version))
        (sha256
-        (base32 "1rkw49b0pxn0vg3ahrk3i2xd61v2px00b8jbws8s40r19ak27a19"))))
+        (base32 "19j0k4603888kljpibfp7m7d1hd59g2mdnrin4ay1qkbx83lxmkn"))))
     (properties `((upstream-name . "comets")))
     (build-system r-build-system)
     (arguments
@@ -24762,13 +24762,13 @@ inhabit only freshwater.")
 (define-public r-coffee
   (package
     (name "r-coffee")
-    (version "0.4.1")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coffee" version))
        (sha256
-        (base32 "1i5jical8rvv7v5mbni619z664c290wniqca82gymqvvdx0c67av"))))
+        (base32 "1bbl3kpigwm54k2ixlir8i9imrp8ykm5an0ijvc18fzwg8f2904x"))))
     (properties `((upstream-name . "coffee")))
     (build-system r-build-system)
     (arguments
@@ -24820,13 +24820,13 @@ from the base matrix.")
 (define-public r-cofad
   (package
     (name "r-cofad")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cofad" version))
        (sha256
-        (base32 "00m32r1rbc5f2b7viks68ff3sv7p4qvc1i8qag0z75l2jxi839f0"))))
+        (base32 "18czr2l9cm4n6vxmjdxasvykn6y17xrkrxyfmlf4z1hbbci3w6sy"))))
     (properties `((upstream-name . "cofad")))
     (build-system r-build-system)
     (arguments

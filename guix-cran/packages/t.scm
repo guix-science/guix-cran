@@ -17530,13 +17530,13 @@ components using a consistent and intuitive syntax.")
 (define-public r-tidyplate
   (package
     (name "r-tidyplate")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplate" version))
        (sha256
-        (base32 "19zrs9z3yjhgxpx33r18jjy76d1gz0gj1y9ar3qs70bjllas9xqz"))))
+        (base32 "14jiw2mzghl3d7id2v5yzl151psmjrg7wcmw6z759bqavxxq9wic"))))
     (properties `((upstream-name . "tidyplate")))
     (build-system r-build-system)
     (arguments
@@ -30009,6 +30009,32 @@ customizable, with support for html and pdf provided by @code{kableExtra}'.
 Respects original column order, column labels, and factor level order.  See
 ?tablet.data.frame and vignettes.")
     (license license:gpl3)))
+
+(define-public r-tablespan
+  (package
+    (name "r-tablespan")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tablespan" version))
+       (sha256
+        (base32 "0zs7m967pjk313pi8m8qj6irj4ywvcr5dxqisyj0nfm6wzywp88c"))))
+    (properties `((upstream-name . "tablespan")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-openxlsx r-gt r-dplyr))
+    (home-page "https://github.com/jhorzek/tablespan")
+    (synopsis
+     "Create Satisficing 'Excel', 'HTML', 'LaTeX', and 'RTF' Tables using a Simple Formula")
+    (description
+     "Create \"good enough\" tables with a single formula.  tablespan tables can be
+exported to Excel', HTML', @code{LaTeX}', and RTF by leveraging the packages
+openxlsx and gt'.  See <https://jhorzek.github.io/tablespan/> for an
+introduction.")
+    (license license:gpl3+)))
 
 (define-public r-tablesgg
   (package

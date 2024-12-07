@@ -34010,26 +34010,29 @@ to find differentially expressed genes.")
 (define-public r-metalyzer
   (package
     (name "r-metalyzer")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetAlyzer" version))
        (sha256
-        (base32 "0b5kznmqq7kda5qan5jyxy5s41y367dmq2fxk7mihjnmn9fp282n"))))
+        (base32 "151z2mjgfqbsm2z0hpvcj1nxif7925b17y2vqkgqxqmg2qap7ina"))))
     (properties `((upstream-name . "MetAlyzer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-viridislite
+                             r-viridis
+                             r-tidyr
                              r-tibble
                              r-summarizedexperiment
                              r-stringr
                              r-s4vectors
                              r-rlang
-                             r-qvalue
+                             r-plotly
                              r-openxlsx
+                             r-limma
                              r-ggrepel
                              r-ggplot2
                              r-dplyr
@@ -42926,13 +42929,13 @@ maximin effect.")
 (define-public r-maximin
   (package
     (name "r-maximin")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maximin" version))
        (sha256
-        (base32 "1nk2qdj9kap16fakwzvswzhc3id7p06xhw48j8nnz5ffg79ai604"))))
+        (base32 "1lbgyn8qis4d8rqg29ysjg3yib9iyd7clxa5qvkmq3sm8rvknj70"))))
     (properties `((upstream-name . "maximin")))
     (build-system r-build-system)
     (arguments

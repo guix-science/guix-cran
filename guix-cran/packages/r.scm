@@ -4476,13 +4476,13 @@ into a local @code{TiddlyWiki} node.js server if it is available.")
 (define-public r-rticulate
   (package
     (name "r-rticulate")
-    (version "1.7.3")
+    (version "1.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rticulate" version))
        (sha256
-        (base32 "0h22ixngz4nw85s79ssanms9ysvx0kgp0srq2nvyfk4mm7g4hfi7"))))
+        (base32 "1z5hngx3vk5i1q2w2qpp6j0hwc5bagrq4k091dnnvv9kdrkvn0zh"))))
     (properties `((upstream-name . "rticulate")))
     (build-system r-build-system)
     (arguments
@@ -5925,13 +5925,13 @@ Stata commands (both inline and from a .do file) from R.")
 (define-public r-rstanemax
   (package
     (name "r-rstanemax")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstanemax" version))
        (sha256
-        (base32 "1vm6dqinrzgy3f3s626rxn7pii0l114iaz3qm9f3dvvghbba1gjz"))))
+        (base32 "0i3a54cxx2zhiiy8wk6wigm5v2kfz35i63sbprbssi531c4dlgcj"))))
     (properties `((upstream-name . "rstanemax")))
     (build-system r-build-system)
     (arguments
@@ -11233,25 +11233,24 @@ in Lafaye de Micheaux et al. (2014) <doi:10.1080/10543406.2013.860156>.")
 (define-public r-rpostgis
   (package
     (name "r-rpostgis")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpostgis" version))
        (sha256
-        (base32 "1fnizm0xb7div6mrg3s9a4mv8dbm6lrq9azjxi786261jmv3dbvg"))))
+        (base32 "1mz2a0g6y94hzfvmbbykdbjw0qwi3n7w16f4k9zg3hbpzgq7864j"))))
     (properties `((upstream-name . "rpostgis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-terra
-                             r-sp
                              r-sf
                              r-rpostgresql
-                             r-raster
-                             r-purrr
-                             r-dbi))
+                             r-lifecycle
+                             r-dbi
+                             r-cli))
     (home-page "https://cidree.github.io/rpostgis/")
     (synopsis "R Interface to a 'PostGIS' Database")
     (description
@@ -14443,19 +14442,20 @@ detection of events or structural breaks.")
 (define-public r-rollama
   (package
     (name "r-rollama")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollama" version))
        (sha256
-        (base32 "1sldaddmklqljfmmxqri0xfbsa977qg3kgymcprkybd59wbxxrd4"))))
+        (base32 "1ck5xbqpw6kb64gipzcdvr52vkyc4hx2pyqks32dfr59lkglr9lz"))))
     (properties `((upstream-name . "rollama")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-withr
+                             r-tibble
                              r-rlang
                              r-purrr
                              r-prettyunits
@@ -14466,7 +14466,7 @@ detection of events or structural breaks.")
                              r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://jbgruber.github.io/rollama/")
-    (synopsis "Communicate with 'Ollama'")
+    (synopsis "Communicate with 'Ollama' to Run Large Language Models Locally")
     (description
      "Wraps the Ollama <https://ollama.com> API, which can be used to communicate with
 generative large language models locally.")

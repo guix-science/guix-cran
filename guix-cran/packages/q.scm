@@ -6086,6 +6086,32 @@ It exploits quantile regression to investigate changes in the relationships
 among constructs and between constructs and observed variables.")
     (license license:gpl3)))
 
+(define-public r-qcluster
+  (package
+    (name "r-qcluster")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qcluster" version))
+       (sha256
+        (base32 "1zkl11r0fnmhp1z2qd7jc407g63a0i8fyichb6q1iw6d43bwv2az"))))
+    (properties `((upstream-name . "qcluster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-iterators r-foreach r-doparallel r-cluster))
+    (home-page "https://cran.r-project.org/package=qcluster")
+    (synopsis "Clustering via Quadratic Scoring")
+    (description
+     "This package performs tuning of clustering models, methods and algorithms
+including the problem of determining an appropriate number of clusters.
+Validation of cluster analysis results is performed via quadratic scoring using
+resampling methods, as in Coraggio, L. and Coretto, P. (2023)
+<doi:10.1016/j.jmva.2023.105181>.")
+    (license license:gpl2+)))
+
 (define-public r-qch
   (package
     (name "r-qch")

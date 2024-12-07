@@ -7390,13 +7390,13 @@ observing the project already carried out.")
 (define-public r-projections
   (package
     (name "r-projections")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "projections" version))
        (sha256
-        (base32 "0wpqklw5aif9vgcp6hyc7j5k8ifxwx5bhhd50llwgrh5xiy9yxyq"))))
+        (base32 "0giqd30gzlxgy93r033ds5cf51p3cbvhkhpkr8pdzglv11xffwjp"))))
     (properties `((upstream-name . "projections")))
     (build-system r-build-system)
     (arguments
@@ -29021,6 +29021,44 @@ in formats compatible with commonly used genetic association software ('gemma',
 bimbam', plink', snptest', @code{LiMMBo}').")
     (license license:expat)))
 
+(define-public r-phenotyper
+  (package
+    (name "r-phenotyper")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhenotypeR" version))
+       (sha256
+        (base32 "1hrib4fpiyxrp195246r04jwdqs02y2q6c3553a5m2vbf66hqmgc"))))
+    (properties `((upstream-name . "PhenotypeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-usethis
+                             r-rlang
+                             r-purrr
+                             r-omopsketch
+                             r-omopgenerics
+                             r-magrittr
+                             r-incidenceprevalence
+                             r-dplyr
+                             r-cohortconstructor
+                             r-cohortcharacteristics
+                             r-codelistgenerator
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/PhenotypeR/")
+    (synopsis "Assess Study Cohorts Using a Common Data Model")
+    (description
+     "Phenotype study cohorts in data mapped to the Observational Medical Outcomes
+Partnership Common Data Model.  Diagnostics are run at the database, code list,
+cohort, and population level to assess whether study cohorts are ready for
+research.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-phenotype
   (package
     (name "r-phenotype")
@@ -36468,13 +36506,13 @@ For details see Montgomery, D. C. (2019, ISBN:978-1-119-39930-8).")
 (define-public r-pchc
   (package
     (name "r-pchc")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pchc" version))
        (sha256
-        (base32 "0h1b1n9mw22wsh51nciphgyqk2cp98qkm4wskxw4ryj6lyqjk4k2"))))
+        (base32 "1w48x0ggkk8417yd1hl5k2w0wqad2k49c9x8sdzqpghns6qqm04y"))))
     (properties `((upstream-name . "pchc")))
     (build-system r-build-system)
     (arguments
@@ -36491,15 +36529,16 @@ For details see Montgomery, D. C. (2019, ISBN:978-1-119-39930-8).")
     (home-page "https://cran.r-project.org/package=pchc")
     (synopsis "Bayesian Network Learning with the PCHC and Related Algorithms")
     (description
-     "Bayesian network learning using the PCHC algorithm.  PCHC stands for PC
-Hill-Climbing, a new hybrid algorithm that uses PC to construct the skeleton of
-the BN and then applies the Hill-Climbing greedy search.  More algorithms and
-variants have been added, such as MMHC, FEDHC, and the Tabu search variants,
-PCTABU, MMTABU and FEDTABU. The relevant papers are: a) Tsagris M. (2021).  A
-new scalable Bayesian network learning algorithm with applications to economics.
- Computational Economics, 57(1): 341-367. <doi:10.1007/s10614-020-10065-7>.  b)
-Tsagris M. (2022).  The FEDHC Bayesian Network Learning Algorithm.  Mathematics
-2022, 10(15): 2604. <doi:10.3390/math10152604>.")
+     "Bayesian network learning using the PCHC, FEDHC, MMHC and variants of these
+algorithms.  PCHC stands for PC Hill-Climbing, a new hybrid algorithm that uses
+PC to construct the skeleton of the BN and then applies the Hill-Climbing greedy
+search.  More algorithms and variants have been added, such as MMHC, FEDHC, and
+the Tabu search variants, PCTABU, MMTABU and FEDTABU. The relevant papers are:
+a) Tsagris M. (2021). \"A new scalable Bayesian network learning algorithm with
+applications to economics\".  Computational Economics, 57(1): 341-367.
+<doi:10.1007/s10614-020-10065-7>.  b) Tsagris M. (2022). \"The FEDHC Bayesian
+Network Learning Algorithm\".  Mathematics 2022, 10(15): 2604.
+<doi:10.3390/math10152604>.")
     (license license:gpl2+)))
 
 (define-public r-pch
