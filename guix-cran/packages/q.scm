@@ -3274,30 +3274,25 @@ et al. (2018) <doi:10.1093/bib/bby058>.")
 (define-public r-qtkit
   (package
     (name "r-qtkit")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtkit" version))
        (sha256
-        (base32 "0bplhks1sbhx5h34ijx3xdalgvczl8zg4vi6hh7iyp92wncid1vx"))))
+        (base32 "0ra0wjb85i1i5wqlknpqixfqlnygw88d24yxsvwridsmjkpag0zg"))))
     (properties `((upstream-name . "qtkit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidytext
-                             r-tibble
-                             r-stringr
+    (propagated-inputs (list r-xml2
                              r-rlang
-                             r-readr
-                             r-purrr
                              r-openai
                              r-matrix
                              r-knitr
                              r-kableextra
                              r-gutenbergr
-                             r-glue
                              r-ggplot2
                              r-dplyr
                              r-chromote))

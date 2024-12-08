@@ -24621,13 +24621,13 @@ various missing data conditions, as described in Tabouy, Barbillon and Chiquet
 (define-public r-missranger
   (package
     (name "r-missranger")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missRanger" version))
        (sha256
-        (base32 "1qwjimdzb88pmqscpkl35y2lawrybps5wn3dnrpkh2zj2zxjf1md"))))
+        (base32 "0nk8ivmpwgwqfsajinn4makzdcczj2ny8xv3p3pkb4dvl2wv3nim"))))
     (properties `((upstream-name . "missRanger")))
     (build-system r-build-system)
     (arguments
@@ -45889,13 +45889,13 @@ inspired by the \"comment\" window of <https://github.com/>.")
 (define-public r-mark
   (package
     (name "r-mark")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mark" version))
        (sha256
-        (base32 "0azc4smx9l77wb8qdr8n4gzrngg3ffwqr4pb5g1p7gmch1w1s1pf"))))
+        (base32 "1j6x92ghrzf129spc3vckgvamy17b2h9hgsgmjbkj1xc85lnmsfh"))))
     (properties `((upstream-name . "mark")))
     (build-system r-build-system)
     (arguments

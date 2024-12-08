@@ -3342,19 +3342,26 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "1nnkm178jzyrc1w0wvnz82lpzalkrmd91rym6rirv8aqwd7jwnw0"))))
+        (base32 "0xzgg42sxbgrwqdfbi0aafwqv343v15xsqpfsd2kyrv4xv8ibyd5"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lhs r-glmnet r-ggplot2 r-gamlss-dist r-gamlss))
+    (propagated-inputs (list r-lhs
+                             r-glmnet
+                             r-ggplot2
+                             r-gamlss-dist
+                             r-gamlss
+                             r-foreach
+                             r-dorng
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SVEMnet")
     (synopsis "Self-Validated Ensemble Models with Elastic Net Regression")
@@ -15379,13 +15386,13 @@ constructed from stock market prices or returns, as explained in Andersen et al.
 (define-public r-startup
   (package
     (name "r-startup")
-    (version "0.22.0")
+    (version "0.23.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "startup" version))
        (sha256
-        (base32 "04hifi5cck1vzhacmy9kg7k1f278lvvsrj6p0d1n61fiiv3fqscm"))))
+        (base32 "1v7zn20k4m49xj8wmwssgsh036av5im2kgiqnl4fj1ffpj3pwpw6"))))
     (properties `((upstream-name . "startup")))
     (build-system r-build-system)
     (arguments
@@ -17030,13 +17037,13 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "1vqwz8gmjhn127bcsgclrk30mviffy351i35rimw1idg5cccmssi"))))
+        (base32 "0ybl84pfh4x96z0ahkyn5c7zhk4fp0hrj3l687ppryq3iqswvpn2"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -25080,13 +25087,13 @@ likelihood inference for Spearman's rho (de Carvalho and Marques (2012)
 (define-public r-speakr
   (package
     (name "r-speakr")
-    (version "3.2.2")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speakr" version))
        (sha256
-        (base32 "159ir49i2fdw5fcq93rqdhf5ij5s9sfr2ygdy2snbgnx3rgi1sfc"))))
+        (base32 "1d1vx364g6lbj966a574l0jkdw9f6gf0ai44z7ixci5xprkgmkqy"))))
     (properties `((upstream-name . "speakr")))
     (build-system r-build-system)
     (arguments

@@ -1474,13 +1474,13 @@ locally stationary time series analysis.")
 (define-public r-lstbook
   (package
     (name "r-lstbook")
-    (version "0.5.0")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSTbook" version))
        (sha256
-        (base32 "140b0zd8zqlx5qqyq39nq0dhnamvh92lgix0zx4x57x46bzp5rs9"))))
+        (base32 "11zr03frp2wg33c3y828m8rmzj4kl0k43dxlfvr35by99kbkal0f"))))
     (properties `((upstream-name . "LSTbook")))
     (build-system r-build-system)
     (arguments
@@ -1495,7 +1495,7 @@ locally stationary time series analysis.")
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://dtkaplan.github.io/LSTbook/")
+    (home-page "https://github.com/dtkaplan/LSTbook")
     (synopsis "Data and Software for \"Lessons in Statistical Thinking\"")
     (description
      "\"Lessons in Statistical Thinking\" D.T. Kaplan (2014)
@@ -18218,13 +18218,13 @@ Barrett, Peter H Thrall (2018) <doi:10.1371/journal.pcbi.1006067>.")
 (define-public r-landscaper
   (package
     (name "r-landscaper")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landscapeR" version))
        (sha256
-        (base32 "1q9ylzslaxx9rz9fwskx326ywca3yw3gmgv5b5a6bzzbxh7a68w8"))))
+        (base32 "1x8lfsvg995hkhik526w256phzdwwvb61i97zapyzwqpdqrrng9m"))))
     (properties `((upstream-name . "landscapeR")))
     (build-system r-build-system)
     (arguments

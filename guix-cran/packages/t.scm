@@ -1594,13 +1594,13 @@ or estimated by sampling.")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tutorial.helpers" version))
        (sha256
-        (base32 "0q8rwa2x7ail9rswlldbi8i7dly0yafc4ch4pbz7widgxv1wwc7l"))))
+        (base32 "1cm4rc3jjdd2czjw21brav9d86dxjg9s2mh05xhkhhfvindv2wmw"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (arguments
@@ -1625,7 +1625,7 @@ or estimated by sampling.")
      "Helper functions for creating, editing, and testing tutorials created with the
 learnr package.  Provides a simple method for allowing students to download
 their answers to tutorial questions.  For examples of its use, see the
-r4ds.tutorials and primer.tutorials packages.")
+r4ds.tutorials package.")
     (license license:expat)))
 
 (define-public r-tushare
@@ -18307,13 +18307,13 @@ are very messy.")
 (define-public r-tidygam
   (package
     (name "r-tidygam")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidygam" version))
        (sha256
-        (base32 "1m2lzmbvxflnyqf7m0waq0svgwhqh1snc2zn3n8wjh70lkzclpkx"))))
+        (base32 "0gd5qvwmzfrjzvpx8mrd3a0pvk8m7div330kcvcbmaz83kd3qjvg"))))
     (properties `((upstream-name . "tidygam")))
     (build-system r-build-system)
     (arguments

@@ -334,13 +334,13 @@ corresponding article <doi:10.18637/jss.v101.i06>.")
 (define-public r-juliacall
   (package
     (name "r-juliacall")
-    (version "0.17.5")
+    (version "0.17.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JuliaCall" version))
        (sha256
-        (base32 "036rxp2lygvpxpykpxx2lqyyzidzzi95lv6g30n70hzy0agjym4j"))))
+        (base32 "0qws98k7byqk3cq041pbnnhxywf35vy4ldv9v5zyykfgq2g0v061"))))
     (properties `((upstream-name . "JuliaCall")))
     (build-system r-build-system)
     (arguments
@@ -363,7 +363,7 @@ corresponding article <doi:10.18637/jss.v101.i06>.")
     (inputs (list))
     (propagated-inputs (list r-rjson r-rcpp r-knitr))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/Non-Contradiction/JuliaCall")
+    (home-page "https://github.com/JuliaInterop/JuliaCall")
     (synopsis "Seamless Integration Between R and 'Julia'")
     (description
      "This package provides an R interface to Julia', which is a high-level,

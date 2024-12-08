@@ -12263,31 +12263,26 @@ on the work of Rothman and Greenland (2018).")
 (define-public r-precipe
   (package
     (name "r-precipe")
-    (version "3.0.1-3")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pRecipe" version))
        (sha256
-        (base32 "0mwv2xrxp4iws19dwph713xqnkgq3fnwfq1vmw68934qacyjmk79"))))
+        (base32 "0kiwc4zs3xbi6r6f1symrf5kcw85nz71av9h5krj4850y8w0knrn"))))
     (properties `((upstream-name . "pRecipe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list proj gdal))
-    (propagated-inputs (list r-sp
-                             r-sf
+    (propagated-inputs (list r-twc
                              r-scales
                              r-raster
                              r-openair
-                             r-ncdf4
                              r-magrittr
-                             r-lubridate
                              r-ggpubr
                              r-ggplot2
-                             r-foreach
-                             r-doparallel
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MiRoVaGo/pRecipe")
@@ -21941,13 +21936,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.3.6")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "1d06piy84r5x5wdjkd17jxya214ih1chh6s2cfs6ijqbjj1qhw2m"))))
+        (base32 "03gnpyanj5fs64zii47ss2k31l25hm1ps4dqkgxhi7dxciarz0f5"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments

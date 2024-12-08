@@ -1742,19 +1742,24 @@ assurance constraints for the DVH. Includes web-based graphical user interface."
 (define-public r-dverse
   (package
     (name "r-dverse")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dverse" version))
        (sha256
-        (base32 "14iib9rc6s96i0a220cldbg6mz4dmjafslanl23yzq9iz60hfxn2"))))
+        (base32 "0f6agiv2fgkzykvfacg0pa0gbzp0ppdvrby4kjvzjg52nri657cb"))))
     (properties `((upstream-name . "dverse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-glue r-dplyr r-cli))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-glue
+                             r-dplyr
+                             r-curl
+                             r-cli))
     (home-page "https://github.com/maurolepore/dverse")
     (synopsis "Document a Universe of Packages")
     (description
@@ -26757,13 +26762,13 @@ be slow.")
 (define-public r-dbitest
   (package
     (name "r-dbitest")
-    (version "1.8.1")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DBItest" version))
        (sha256
-        (base32 "0vj7989s9qip3mxjzffrm7prh0xxpp467y9m4ls7dz7m3b7inpxl"))))
+        (base32 "1zm3y5fsmsyz4bi3fqvl3zp13jjbi029i21xi4l81h7wxrc8p5y5"))))
     (properties `((upstream-name . "DBItest")))
     (build-system r-build-system)
     (arguments
@@ -27201,13 +27206,13 @@ your computer.  Routines for both single pixel data downloads and gridded
 (define-public r-dawar
   (package
     (name "r-dawar")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dawaR" version))
        (sha256
-        (base32 "1pv1njc56sjl69c8xg3i089phhn57f9yr3bxlbk3cykwpf79csrb"))))
+        (base32 "128fhl975c9a3qmc9amv7cnglisl58sl420mxf7i9ashj1l2592a"))))
     (properties `((upstream-name . "dawaR")))
     (build-system r-build-system)
     (arguments

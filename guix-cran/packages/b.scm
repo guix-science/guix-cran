@@ -25100,34 +25100,6 @@ Lee, R. D., & Carter, L. R. (1992) <doi:10.1080/01621459.1992.10475265> and
 Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.")
     (license license:gpl3)))
 
-(define-public r-bayesmlogit
-  (package
-    (name "r-bayesmlogit")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesmlogit" version))
-       (sha256
-        (base32 "1958kyagp41ji9xlwr03g6yv4jrd68kzc7g2hm0wgjdrksifmwp8"))))
-    (properties `((upstream-name . "bayesmlogit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-magrittr r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bayesmlogit")
-    (synopsis
-     "Multistate Life Table (MSLT) Methodology Based on Bayesian Approach")
-    (description
-     "Create life tables with a Bayesian approach, which can be very useful for
-modelling a complex health process when considering multiple predisposing
-factors and multiple coexisting health conditions.  Details for this method can
-be found in: Lynch, Scott, et al., (2022) <doi:10.1177/00811750221112398>; Zang,
-Emma, et al., (2022) <doi:10.1093/geronb/gbab149>.")
-    (license license:gpl3+)))
-
 (define-public r-bayesmixsurv
   (package
     (name "r-bayesmixsurv")

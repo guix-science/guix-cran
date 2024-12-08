@@ -30935,13 +30935,13 @@ Susceptible-Infected-Recovered (SIR) framework.")
 (define-public r-gdilm-seirs
   (package
     (name "r-gdilm-seirs")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDILM.SEIRS" version))
        (sha256
-        (base32 "0qld4a2qcw0wnj09yczv6ildkk5n05582sm0xkcmyy0yvf3in6sm"))))
+        (base32 "12vmpav9hbx50nxb6gah31yh78q92p1wzjm4ka1xpj67lx75sm51"))))
     (properties `((upstream-name . "GDILM.SEIRS")))
     (build-system r-build-system)
     (arguments
@@ -30949,8 +30949,7 @@ Susceptible-Infected-Recovered (SIR) framework.")
       #:tests? #f))
     (propagated-inputs (list r-ngspatial r-mvtnorm r-mass))
     (home-page "https://cran.r-project.org/package=GDILM.SEIRS")
-    (synopsis
-     "Spatial Individual Level Modeling of Infectious Disease Transmission with Reinfection Dynamics")
+    (synopsis "Spatial Modeling of Infectious Disease with Reinfection")
     (description
      "Geographically Dependent Individual Level Models (GDILMs) within the
 Susceptible-Exposed-Infectious-Recovered-Susceptible (SEIRS) framework are

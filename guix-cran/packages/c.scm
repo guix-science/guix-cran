@@ -2813,13 +2813,13 @@ the Journal of Statistical Software reference: <doi:10.18637/jss.v110.i07>.")
 (define-public r-cubar
   (package
     (name "r-cubar")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cubar" version))
        (sha256
-        (base32 "1hggjq1p6xcffvr13pxjc4345gzrbaxppryn6ijf2b56ffzy7xgx"))))
+        (base32 "0sdns7kfp6p3vrij56w6klfqlvzrppfqyrip4bw8ghydak3rnx0v"))))
     (properties `((upstream-name . "cubar")))
     (build-system r-build-system)
     (arguments
@@ -15976,36 +15976,6 @@ use of the website.  Here we provide tools for working with cookies in shiny
 apps, in part by wrapping the js-cookie @code{JavaScript} library
 <https://github.com/js-cookie/js-cookie>.")
     (license license:expat)))
-
-(define-public r-cookiemonster
-  (package
-    (name "r-cookiemonster")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cookiemonster" version))
-       (sha256
-        (base32 "1fs8a7i2h1v4xvcjnccnvxapiprffyz49pgrdjp67k14r6nk2fha"))))
-    (properties `((upstream-name . "cookiemonster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-urltools
-                             r-tibble
-                             r-stringi
-                             r-rappdirs
-                             r-openssl
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cookiemonster")
-    (synopsis "Your Friendly Solution to Managing Browser Cookies")
-    (description
-     "This package provides a convenient tool to store and format browser cookies and
-use them in HTTP requests (for example, through httr2', httr or curl').")
-    (license license:gpl3+)))
 
 (define-public r-cookiecutter
   (package
@@ -42928,13 +42898,13 @@ and discriminant analysis (CCDA).  Environmental Modelling & Software.
 (define-public r-ccd
   (package
     (name "r-ccd")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCd" version))
        (sha256
-        (base32 "168yaz1vg0hp7vsi2mxrpds0qrwn6zhp299bmi40dxg28fxzmn8w"))))
+        (base32 "0mkhh4nj6bzxxn5v8lrvznkpkk9qm5byk36dr486zrls6vy1qkqa"))))
     (properties `((upstream-name . "CCd")))
     (build-system r-build-system)
     (arguments
