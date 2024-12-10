@@ -11,6 +11,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages base)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages libreoffice)
   #:use-module (gnu packages docker)
@@ -20,7 +21,6 @@
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (gnu packages version-control)
@@ -2078,13 +2078,13 @@ implementer's interface for the high-level user interface of dplyr'.")
 (define-public r-duckdbfs
   (package
     (name "r-duckdbfs")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdbfs" version))
        (sha256
-        (base32 "0rp8w8slmy3sbm143z9qy18bfwpnzad8jfw6ylccf3dmryh9siab"))))
+        (base32 "0mds09cx1hx5crk9giq5xhmnl750paa5wfw2shdd33rcfl4zfhxc"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
     (arguments
@@ -2109,18 +2109,19 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.1.3")
+    (version "1.1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "0bvxc10pmh4k2arh1ixkgn286ll20gyjggcgjfggdvij6bx029k1"))))
+        (base32 "1r08xibqddmph5r03c224fyp400rw8qms0g6x8s1r442r6jfbxk1"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list xz))
     (propagated-inputs (list r-dbi))
     (home-page "https://r.duckdb.org/")
     (synopsis "DBI Package for the DuckDB Database Management System")
@@ -4519,20 +4520,19 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "17896mf0mryqrmlllkh7dhf65id31n26z4h757kdsb2wj32my7k9"))))
+        (base32 "16wpqib6cscnbclq8cbh9qx96rm4kkvcdlwhg1lzdwmw87xrb8fa"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-visomopresults
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
                              r-purrr
@@ -4541,14 +4541,12 @@ to create many different drum patterns.")
                              r-lifecycle
                              r-glue
                              r-dplyr
-                             r-dbplyr
                              r-codelistgenerator
                              r-clock
                              r-cli
-                             r-checkmate
                              r-cdmconnector))
     (native-inputs (list r-knitr))
-    (home-page "https://darwin-eu-dev.github.io/DrugUtilisation/")
+    (home-page "https://darwin-eu.github.io/DrugUtilisation/")
     (synopsis
      "Summarise Patient-Level Drug Utilisation in Data Mapped to the OMOP Common Data Model")
     (description
@@ -13356,13 +13354,13 @@ distribution.")
 (define-public r-discretegapstatistic
   (package
     (name "r-discretegapstatistic")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteGapStatistic" version))
        (sha256
-        (base32 "05jq7x6qs57r2fk1nxyi0yiggq3dmdijjm4dla0x8070pp2z3r0f"))))
+        (base32 "0y6xcpsf5frm74id9mksk8gg10jjny0b4m8fhgy74avrw8yd5iv8"))))
     (properties `((upstream-name . "DiscreteGapStatistic")))
     (build-system r-build-system)
     (arguments
@@ -13377,7 +13375,8 @@ distribution.")
                              r-ggplot2
                              r-dplyr
                              r-cultevo
-                             r-complexheatmap))
+                             r-complexheatmap
+                             r-cluster))
     (home-page "https://github.com/ecortesgomez/DiscreteGapStatistic")
     (synopsis "An Extension of the Gap Statistic for Ordinal/Categorical Data")
     (description
@@ -20796,6 +20795,40 @@ multivariate generalization of QQ-plots).")
     (description
      "Manage your source code dependencies by decorating your existing R code with
 special, roxygen'-style comments.")
+    (license license:expat)))
+
+(define-public r-depower
+  (package
+    (name "r-depower")
+    (version "2024.12.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "depower" version))
+       (sha256
+        (base32 "1chh8ml5nrgf9h7q7dgdir339qiv4h4ss8ymf8zkh9rcsdm345p3"))))
+    (properties `((upstream-name . "depower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rdpack
+                             r-mvnfast
+                             r-multidplyr
+                             r-glmmtmb
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://brettklamer.com/work/depower/")
+    (synopsis "Power Analysis for Differential Expression Studies")
+    (description
+     "This package provides a convenient framework to simulate, test, power, and
+visualize data for differential expression studies with lognormal or negative
+binomial outcomes.  Supported designs are two-sample comparisons of independent
+or dependent outcomes.  Power may be summarized in the context of controlling
+the per-family error rate or family-wise error rate.  Negative binomial methods
+are described in Yu, Fernandez, and Brock (2017) <doi:10.1186/s12859-017-1648-2>
+and Yu, Fernandez, and Brock (2020) <doi:10.1186/s12859-020-3541-7>.")
     (license license:expat)))
 
 (define-public r-depons2r

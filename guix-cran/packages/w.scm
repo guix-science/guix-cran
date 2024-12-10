@@ -2049,13 +2049,13 @@ static since 2013.")
 (define-public r-worldbank
   (package
     (name "r-worldbank")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldbank" version))
        (sha256
-        (base32 "0cqnp8c3n7kvbkv2s4jqqvmzf8g86drywv7y05mnrgidynhr975d"))))
+        (base32 "0kpiihqc87cl583r1my8w2in8a7b1g2a2ng3gvzs54bb7v0wv4ak"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
     (arguments
@@ -9171,6 +9171,41 @@ the stable nitrogen isotope ratios of them.  Bone collagen turnover rates
 estimated anew and the approximate Bayesian computation (ABC) were adopted in
 this package.")
     (license license:gpl3+)))
+
+(define-public r-warehousetools
+  (package
+    (name "r-warehousetools")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "warehouseTools" version))
+       (sha256
+        (base32 "1qw7rmr7jh61icbjq4fd3y02bkqamgq4np6k6fxb9kvzf09r7fs7"))))
+    (properties `((upstream-name . "warehouseTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr r-clustersim))
+    (home-page "https://cran.r-project.org/package=warehouseTools")
+    (synopsis
+     "Heuristics for Solving the Traveling Salesman Problem in Warehouse Layouts")
+    (description
+     "Heuristic methods to solve the routing problems in a warehouse management.
+Package includes several heuristics such as the Midpoint, Return, S-Shape and
+Semi-Optimal Heuristics for designation of the pickerâs route in order
+picking.  The heuristics aim to provide the acceptable travel distances while
+considering warehouse layout constraints such as aisles and shelves.  It also
+includes implementation of the COPRAS (COmplex PRoportional ASsessment) method
+for supporting selection of locations to be visited by the picker in shared
+storage systems.  The package is designed to facilitate more efficient warehouse
+routing and logistics operations.  see: Bartholdi, J. J., Hackman, S. T. (2019).
+\"WAREHOUSE & DISTRIBUTION SCIENCE. Release 0.98.1.\" The Supply Chain & Logistics
+Institute.  H. Milton Stewart School of Industrial and Systems Engineering.
+Georgia Institute of Technology.
+<https://www.warehouse-science.com/book/editions/wh-sci-0.98.1.pdf>.")
+    (license license:gpl3)))
 
 (define-public r-warbler
   (package

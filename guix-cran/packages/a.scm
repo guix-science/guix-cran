@@ -1436,6 +1436,42 @@ This package interfaces directly to the C API and does not require any command
 line utilities.")
     (license license:expat)))
 
+(define-public r-auxsurvey
+  (package
+    (name "r-auxsurvey")
+    (version "0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AuxSurvey" version))
+       (sha256
+        (base32 "1wh51p54nh7a2k8372md0mfl92gja4qqla69d1yib0xpifa0qvpx"))))
+    (properties `((upstream-name . "AuxSurvey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey
+                             r-stringr
+                             r-rstanarm
+                             r-rlang
+                             r-mgcv
+                             r-gtools
+                             r-gridextra
+                             r-dplyr
+                             r-coda
+                             r-bart))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AuxSurvey")
+    (synopsis "Survey Analysis with Auxiliary Discretized Variables")
+    (description
+     "Probability surveys often use auxiliary continuous data from administrative
+records, but the utility of this data is diminished when it is discretized for
+confidentiality.  We provide a set of survey estimators to make full use of
+information from the discretized variables.  See Williams, S.Z., Zou, J., Liu,
+Y., Si, Y., Galea, S. and Chen, Q. (2024) <doi:10.1002/sim.10270> for details.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-autowmm
   (package
     (name "r-autowmm")
@@ -3832,13 +3868,13 @@ W911NF-17-1-0007.")
 (define-public r-atmchile
   (package
     (name "r-atmchile")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AtmChile" version))
        (sha256
-        (base32 "0r8js8racs93vxbq62b44qj9m1vsp24dv81bmsg0a3smpk67zd46"))))
+        (base32 "1swcbxjk18qib7dshwr4x41l75fh72m9bnnll1x6nk1c5vwc5y36"))))
     (properties `((upstream-name . "AtmChile")))
     (build-system r-build-system)
     (arguments
@@ -3857,7 +3893,7 @@ W911NF-17-1-0007.")
      "Download air quality and meteorological information of Chile from the National
 Air Quality System (S.I.N.C.A.)<https://sinca.mma.gob.cl/> dependent on the
 Ministry of the Environment and the Meteorological Directorate of Chile
-(D.M.C.)<http://www.meteochile.gob.cl/> dependent on the Directorate General of
+(D.M.C.)<https://www.meteochile.gob.cl/> dependent on the Directorate General of
 Civil Aeronautics.")
     (license license:gpl3)))
 
@@ -4887,13 +4923,13 @@ association strength between individuals using each method.")
 (define-public r-assocbin
   (package
     (name "r-assocbin")
-    (version "1.0-0")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssocBin" version))
        (sha256
-        (base32 "16pl18b2jd45ys2cc4h74k2llc5daw8b727nmby4qdrja3qnifbr"))))
+        (base32 "0ral2sxq9y5basagx0ipk0ix2hnj9jkcc76fwjlg1v065bhci066"))))
     (properties `((upstream-name . "AssocBin")))
     (build-system r-build-system)
     (arguments
@@ -7247,13 +7283,13 @@ El-Moussaoui et al. (2021) <doi:10.1007/978-3-030-66840-2_3>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkhe" version))
        (sha256
-        (base32 "0ilw5mz9p67vpvr76asr9ck4prykr02qyvf4kznhazyv1h6lly18"))))
+        (base32 "06b2w9q8af7akm1355ddwqcgpjl8rc1hwxdjvgbdh55mnnnsj2qa"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (arguments

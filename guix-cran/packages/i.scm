@@ -5053,13 +5053,13 @@ finance, banking, telecommunications or operational marketing.")
 (define-public r-ipedsuploadables
   (package
     (name "r-ipedsuploadables")
-    (version "2.9.0")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEDSuploadables" version))
        (sha256
-        (base32 "163v3n9c7dqpn05wy0lwvic0sjlqrcihwk5ng9594fv4k9hiqj41"))))
+        (base32 "06dnq83rjbzbz9js6d7mk0syl613dm0pcl03mkmq33f3x8amy54v"))))
     (properties `((upstream-name . "IPEDSuploadables")))
     (build-system r-build-system)
     (arguments
@@ -11875,19 +11875,20 @@ using the algorithm of Sharma et al. (2017) <doi:10.13140/RG.2.2.33786.62407>.")
 (define-public r-imuf
   (package
     (name "r-imuf")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imuf" version))
        (sha256
-        (base32 "1r4fgy3jdd0jiiial8wsq3krksd19n85qpz2rfv56mdi0476v55g"))))
+        (base32 "10jwp0yrvgwpy6y9wmplwcjpavds4kzhhf3y80yvh1l6pw5yi9yd"))))
     (properties `((upstream-name . "imuf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/gitboosting/imuf")
     (synopsis "Estimate Orientation of an Inertial Measurement Unit")
     (description
@@ -17954,6 +17955,44 @@ regression which sparse coefficients.  This package allows incorporating the
 Ising prior to capture structure of predictors in the modeling process.  More
 information can be found in the papers listed in the URL below.")
     (license license:gpl2+)))
+
+(define-public r-iclustervb
+  (package
+    (name "r-iclustervb")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iClusterVB" version))
+       (sha256
+        (base32 "1jmnb6l86svqjip48c3zbprbpmcgspimnxwlnnjrm6l69pap8xjd"))))
+    (properties `((upstream-name . "iClusterVB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-varsellcm
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-polca
+                             r-pheatmap
+                             r-mvtnorm
+                             r-mcmcpack
+                             r-mclust
+                             r-ggplot2
+                             r-cowplot
+                             r-clustmixtype
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AbdalkarimA/iClusterVB")
+    (synopsis
+     "Fast Integrative Clustering and Feature Selection for High Dimensional Data")
+    (description
+     "This package provides a variational Bayesian approach for fast integrative
+clustering and feature selection, facilitating the analysis of multi-view, mixed
+type, high-dimensional datasets with applications in fields like cancer
+research, genomics, and more.")
+    (license license:expat)))
 
 (define-public r-iclogcondist
   (package

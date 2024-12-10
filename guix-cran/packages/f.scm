@@ -12017,6 +12017,37 @@ proportional and non linear effects are described in Remontet, L. et al. (2007)
 <doi:10.1002/sim.2656> and Mahboubi, A. et al. (2011) <doi:10.1002/sim.4208>.")
     (license license:gpl2+)))
 
+(define-public r-flexrl
+  (package
+    (name "r-flexrl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FlexRL" version))
+       (sha256
+        (base32 "00rcvx9cmj1jz4msjmr05x38410w9sy220y5w90hg1s5qvjgqqml"))))
+    (properties `((upstream-name . "FlexRL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-testit r-rcpp r-progress r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FlexRL")
+    (synopsis "Flexible Model for Record Linkage")
+    (description
+     "Implementation of the Stochastic Expectation Maximisation (@code{StEM}) approach
+to Record Linkage described in the paper by K. Robach, S. L. van der Pas, M. A.
+van de Wiel and M. H. Hof (2024, <doi:10.48550/@code{arXiv.2407.06835>}); see
+citation(\"@code{FlexRL}\") for details.  This is a record linkage method, for
+finding the common set of records among 2 data sources based on Partially
+Identifying Variables (PIVs) available in both sources.  It includes modelling
+of dynamic Partially Identifying Variables (e.g. postal code) that may evolve
+over time and registration errors (missing values and mistakes in the
+registration).  Low memory footprint.")
+    (license license:gpl3+)))
+
 (define-public r-flexreg
   (package
     (name "r-flexreg")
@@ -12514,13 +12545,13 @@ series of packages.")
 (define-public r-flashr
   (package
     (name "r-flashr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flashr" version))
        (sha256
-        (base32 "0fqxr1j5mf9mc1agkkdlzx97qvv4phlxdcmb99x55ivhagwgvidq"))))
+        (base32 "03a88rz64qqj048rvmczcycqqxqhgx770c1jl58iq558rxdiyzsj"))))
     (properties `((upstream-name . "flashr")))
     (build-system r-build-system)
     (arguments

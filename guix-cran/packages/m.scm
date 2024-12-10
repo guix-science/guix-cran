@@ -4843,6 +4843,32 @@ Martin Fortin, JosÃ© Almirall, and Kathryn Nicholson
 (2017)<doi:10.15256/joc.2017.7.122>.")
     (license license:expat)))
 
+(define-public r-multimolang
+  (package
+    (name "r-multimolang")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multimolang" version))
+       (sha256
+        (base32 "075crgi9p96hfiifc7g7cggzr1nxw73jwr4lrrzyyq35sl7lbnvw"))))
+    (properties `((upstream-name . "multimolang")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/daedalusLAB/multimolang")
+    (synopsis "'multimolang': Multimodal Language Analysis")
+    (description
+     "Process @code{OpenPose} human body keypoints for computer vision, including data
+structuring and user-defined linear transformations for standardization.  It
+optionally, includes metadata extraction from filenames in the UCLA
+@code{NewsScape} archive.")
+    (license license:gpl3)))
+
 (define-public r-multimode
   (package
     (name "r-multimode")
@@ -8106,13 +8132,13 @@ states and analyze cancer incidence.")
 (define-public r-mssearchr
   (package
     (name "r-mssearchr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mssearchr" version))
        (sha256
-        (base32 "0w5i2vcnargw8z80sgmh0qrb5sdv5s3fi3b05qvyc0mx0k6b77lh"))))
+        (base32 "06fvsy7dhvf2rc1jml33336jbr84kslc0fg00jd80hdiwa58wzb4"))))
     (properties `((upstream-name . "mssearchr")))
     (build-system r-build-system)
     (arguments
@@ -12471,13 +12497,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move2
   (package
     (name "r-move2")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move2" version))
        (sha256
-        (base32 "0ms6s0znjdrf7sfs7ydy6jfic39xi8fbd4r89z3scks7lhm0q1qb"))))
+        (base32 "1byr5akkax53v8ik52ks9z2pagkayg8z0b7jw9a32m03mb8hsg5r"))))
     (properties `((upstream-name . "move2")))
     (build-system r-build-system)
     (arguments
@@ -31564,13 +31590,13 @@ by Li, Xiao, and Luo (2020) <doi: 10.1002/sta4.245>.")
 (define-public r-mf-beta4
   (package
     (name "r-mf-beta4")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MF.beta4" version))
        (sha256
-        (base32 "0fa4145bqap461v1my1bk3xg5zjqrdlnw9iqdbzb5ldkq3dk1pf8"))))
+        (base32 "10cnkb4a32cdm8xfbkyvp4p8pwx2xpnk6j545vaj1g07snphs3gd"))))
     (properties `((upstream-name . "MF.beta4")))
     (build-system r-build-system)
     (arguments
@@ -46835,13 +46861,13 @@ build-in functions provided in mapping or with other packages already available.
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "0a4mn0hc2znys81cmydn4xsmcv5cgvjvm8hfjvlyjk89yv1nfrw5"))))
+        (base32 "02vvva8d0qq9ghkgillrd0xqizhcyif6wav9shqak5vbzcj5ks75"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
@@ -47826,13 +47852,13 @@ visualizing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "19gxwxjl29323dq5idgwyirkzwszy3bqdh9lv8i3938bjkh8bz3y"))))
+        (base32 "0ppd42xysg388s6b8d09w7rfj043354zmvszahxz0sdng8vsf9m4"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (arguments

@@ -3349,13 +3349,13 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.7.6")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "1kbnw6s71y7arafcvwrbr67nplvxcyqnhdawl1i526qmf7cfvz6x"))))
+        (base32 "05njx6d6rrcsycp0q55ja5yx53nv8gpp2mnmp5kzmsdnlghimyg5"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (arguments
@@ -17490,13 +17490,13 @@ various bootstrap procedures for mediation analysis on simulated data.")
 (define-public r-robmed
   (package
     (name "r-robmed")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robmed" version))
        (sha256
-        (base32 "1l4svmlgzsi7nja75l6m5pffvi3hl4cbmy46x5wb28crrr8dacli"))))
+        (base32 "081ykspsaw4abr7b8viam4fzrs27v9c0dhpis7bylj66l3109sh1"))))
     (properties `((upstream-name . "robmed")))
     (build-system r-build-system)
     (arguments
@@ -24034,13 +24034,13 @@ others discovered during ongoing testing and code simplification.")
 (define-public r-rjaf
   (package
     (name "r-rjaf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjaf" version))
        (sha256
-        (base32 "1hcd45c9l1d5n2n935wb9in208p3knh9hz56advgna6v7sab3ryb"))))
+        (base32 "0053nrd7pxzj67aafx9s6xv34wdd2bgg50pnc7q4bbi9ynyz8r1l"))))
     (properties `((upstream-name . "rjaf")))
     (build-system r-build-system)
     (arguments
@@ -38165,13 +38165,13 @@ documents, e.g. using Sweave'.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapTidieR" version))
        (sha256
-        (base32 "0f4d7xk3n9gjslk23g3f2jckdcj4fyprxnafhpwl8ap1ni3mvvgx"))))
+        (base32 "0rppaxj1p27vmjq79va2x8g0jg5f1k84qwflw9yhxzbwxnlcv7rr"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (arguments
@@ -38192,6 +38192,7 @@ documents, e.g. using Sweave'.")
                              r-lobstr
                              r-glue
                              r-formattable
+                             r-forcats
                              r-dplyr
                              r-cli
                              r-checkmate))

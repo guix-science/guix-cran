@@ -5698,13 +5698,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "0qkydablpwjmp15pamdgh063pkq03zc2hyx9vnr08fyj9n2jdaaz"))))
+        (base32 "0mykacbfj27ms7q89nqhisyvdrxkd0h1xiq8x7v64xvvkmp19nzn"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (arguments
@@ -14272,13 +14272,13 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.10.5")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "1yq80s4j7riw2hrgcxjys5ljx32vm6ckhx0mcbxjqq6wggkwhzzl"))))
+        (base32 "0cjf6i9sd8b51am619kk31bi9j3wfawwqyapdwhcpf2lx33nk9b4"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (arguments
@@ -21876,13 +21876,13 @@ wide or long format using the functions @code{gg_corset()} or
 (define-public r-ggcompare
   (package
     (name "r-ggcompare")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggcompare" version))
        (sha256
-        (base32 "0pdby6vjxg50zhxbi7vybfgf8i484bxgaj7y4cqv50gvywcpsns6"))))
+        (base32 "03gjcwsq9dn076rcwgv1i3bmwzyhb41i8q222rlhfrw10id0p2yz"))))
     (properties `((upstream-name . "ggcompare")))
     (build-system r-build-system)
     (arguments
@@ -22570,6 +22570,39 @@ and arranging plots.  It is designed to consistently align a specific axis
 across multiple ggplot objects, making it especially useful for plots requiring
 data order manipulation.  A typical use case includes organizing combinations
 like a dendrogram and a heatmap.")
+    (license license:expat)))
+
+(define-public r-gg1d
+  (package
+    (name "r-gg1d")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gg1d" version))
+       (sha256
+        (base32 "1qgwvi02j57fb7lj2h20kr908xbggrlfyphrwapqlxbd6559kvid"))))
+    (properties `((upstream-name . "gg1d")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rank
+                             r-patchwork
+                             r-ggtext
+                             r-ggplot2
+                             r-ggiraph
+                             r-cli
+                             r-assertions))
+    (home-page "https://github.com/selkamand/gg1d")
+    (synopsis "Exploratory Data Analysis using Tiled One-Dimensional Graphics")
+    (description
+     "Streamlines exploratory data analysis by providing a turnkey approach to
+visualising n-dimensional data which graphically reveals correlative or
+associative relationships between 2 or more features.  Represents all dataset
+features as distinct, vertically aligned bar or tile plots, with plot types
+auto-selected based on whether variables are categorical or numeric.")
     (license license:expat)))
 
 (define-public r-gfunctions
@@ -32438,13 +32471,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.9.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "0hygyj4l1ah31h7dlh54z5zni08cgzaxsn6zzh8xvcm2hnlvs54r"))))
+        (base32 "07a2xv55y153xhn8irvz40sjkkz7514s7j210mzl22ibaq2hc28g"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (arguments

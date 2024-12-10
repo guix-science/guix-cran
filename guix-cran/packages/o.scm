@@ -5465,28 +5465,40 @@ computations.")
 (define-public r-opticskxi
   (package
     (name "r-opticskxi")
-    (version "0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opticskxi" version))
        (sha256
-        (base32 "1vdz5sgjgyh2nj034w87d2yxcbbg97f1b0vijlwzwjkrfz5knfhl"))))
+        (base32 "0v19qa102xzxfwvaymvq464kl272ynld8kk4j11dwc4drqm037p8"))))
     (properties `((upstream-name . "opticskxi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-ggplot2))
+    (propagated-inputs (list r-rlang r-magrittr r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=opticskxi")
+    (home-page "https://gitlab.com/thomaschln/opticskxi")
     (synopsis "OPTICS K-Xi Density-Based Clustering")
     (description
-     "This package provides a novel density-based cluster extraction method, OPTICS
-k-Xi, and a framework to compare k-Xi models using distance-based metrics to
-investigate datasets with unknown number of clusters.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
+     "Density-based clustering methods are well adapted to the clustering of
+high-dimensional data and enable the discovery of core groups of various shapes
+despite large amounts of noise.  This package provides a novel density-based
+cluster extraction method, OPTICS k-Xi, and a framework to compare k-Xi models
+using distance-based metrics to investigate datasets with unknown number of
+clusters.  The vignette first introduces density-based algorithms with simulated
+datasets, then presents and evaluates the k-Xi cluster extraction method.
+Finally, the models comparison framework is described and experimented on 2
+genetic datasets to identify groups and their discriminating features.  The k-Xi
+algorithm is a novel OPTICS cluster extraction method that specifies directly
+the number of clusters and does not require fine-tuning of the steepness
+parameter as the OPTICS Xi method.  Combined with a framework that compares
+models with varying parameters, the OPTICS k-Xi method can identify groups in
+noisy datasets with unknown number of clusters.  Results on summarized genetic
+data of 1,200 patients are in Charlon T. (2019)
+<doi:10.13097/archive-ouverte/unige:161795>.")
+    (license license:gpl3)))
 
 (define-public r-optical
   (package

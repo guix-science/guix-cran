@@ -5130,6 +5130,33 @@ calculation, estimation of expected precision for the estimates of totals, and
 calculation of optimal sample size allocation.")
     (license license:gpl2+)))
 
+(define-public r-surveynnet
+  (package
+    (name "r-surveynnet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surveynnet" version))
+       (sha256
+        (base32 "17qzac2zi2mx90k0r8v05bwmh6bchg64whvaw06g3n53l9kqrr6b"))))
+    (properties `((upstream-name . "surveynnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-survey r-practools r-nnet r-dplyr))
+    (home-page "https://github.com/237triangle/surveynnet")
+    (synopsis "Neural Network for Complex Survey Data")
+    (description
+     "The goal of surveynnet is to extend the functionality of nnet', which already
+supports survey weights, by enabling it to handle clustered and stratified data.
+ It achieves this by incorporating design effects through the use of effective
+sample sizes as outlined by Chen and Rust (2017), <doi:10.1093/jssam/smw036>,
+and performed by @code{deffCR} in the package @code{PracTools} (Valliant, Dever,
+and Kreuter (2018), <doi:10.1007/978-3-319-93632-1>).")
+    (license license:expat)))
+
 (define-public r-surveygraph
   (package
     (name "r-surveygraph")
@@ -6139,6 +6166,31 @@ surrogate outcome to improve inference on a partially missing target outcome\"
      "Uses a novel rank-based nonparametric approach to evaluate a surrogate marker in
 a small sample size setting.  Details are described in Parast et al (2024)
 <doi:10.1093/biomtc/ujad035>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-surrogateparadoxtest
+  (package
+    (name "r-surrogateparadoxtest")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurrogateParadoxTest" version))
+       (sha256
+        (base32 "0ib1smiwycrxq9x7q9wkmj1swvmkd8dhfrc7x1jyi7xcqmmd7nzs"))))
+    (properties `((upstream-name . "SurrogateParadoxTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=SurrogateParadoxTest")
+    (synopsis "Empirical Testing of Surrogate Paradox Assumptions")
+    (description
+     "This package provides functions to nonparametrically assess assumptions
+necessary to prevent the surrogate paradox through hypothesis tests of
+stochastic dominance, monotonicity of regression functions, and non-negative
+residual treatment effects.  More details are available in Hsiao et al 2024
+(under review).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-surrogateoutcome
@@ -28709,13 +28761,13 @@ thresholding operators.")
 (define-public r-sparsechol
   (package
     (name "r-sparsechol")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SparseChol" version))
        (sha256
-        (base32 "1gva9665mlr8g14l7g6z591yhz2j6xpf56bhqhm6is3dbhl2ga24"))))
+        (base32 "19lr6dd5fp31s30chfwx2f1g7q57l3hg398df5w83sr6qw49r6ik"))))
     (properties `((upstream-name . "SparseChol")))
     (build-system r-build-system)
     (arguments
@@ -36392,13 +36444,13 @@ smallsets vignette.")
 (define-public r-smallcountrounding
   (package
     (name "r-smallcountrounding")
-    (version "1.0.8")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmallCountRounding" version))
        (sha256
-        (base32 "0g3sl4xv2smq6cxi4lcqvg1qra5s8xf1vm9myfzbxzb8cn1cz7ax"))))
+        (base32 "0a80xkf4pj8w4n6n1wai0lxacmln9bbkch7syrmsriggwgysjj1p"))))
     (properties `((upstream-name . "SmallCountRounding")))
     (build-system r-build-system)
     (arguments
@@ -49080,13 +49132,13 @@ for an example implementation.")
 (define-public r-shinycox
   (package
     (name "r-shinycox")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyCox" version))
        (sha256
-        (base32 "16hba9y3629x0vvl6gal70nffssmy04p7xsrnq2j0gk7gk1p6gbg"))))
+        (base32 "16i1n0624rbzrs8jv0g50bm8n7m9bs28fqhh4282wdk423qy51k2"))))
     (properties `((upstream-name . "shinyCox")))
     (build-system r-build-system)
     (arguments
@@ -65610,6 +65662,50 @@ N-gram models (Brants et al., 2007,
 structure of rivers.")
     (license license:expat)))
 
+(define-public r-sbmtrees
+  (package
+    (name "r-sbmtrees")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SBMTrees" version))
+       (sha256
+        (base32 "0kfkbrda9h64pc6qa3s17hhxswijshsywvpn47hzvw8vr2hc3a2g"))))
+    (properties `((upstream-name . "SBMTrees")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sn
+                             r-rcppprogress
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-nnet
+                             r-mvtnorm
+                             r-mice
+                             r-matrix
+                             r-lme4
+                             r-dplyr
+                             r-arm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SBMTrees")
+    (synopsis
+     "Sequential Imputation with Bayesian Trees Mixed-Effects Models for Longitudinal Data")
+    (description
+     "This package implements a sequential imputation framework using Bayesian
+Mixed-Effects Trees ('SBMTrees') for handling missing data in longitudinal
+studies.  The package supports a variety of models, including non-linear
+relationships and non-normal random effects and residuals, leveraging Dirichlet
+Process priors for increased flexibility.  Key features include handling Missing
+at Random (MAR) longitudinal data, imputation of both covariates and outcomes,
+and generating posterior predictive samples for further analysis.  The
+methodology is designed for applications in epidemiology, biostatistics, and
+other fields requiring robust handling of missing data in longitudinal settings.")
+    (license license:gpl2)))
+
 (define-public r-sbmsplitmerge
   (package
     (name "r-sbmsplitmerge")
@@ -68626,13 +68722,13 @@ from classic data sets in R.")
 (define-public r-sampcompr
   (package
     (name "r-sampcompr")
-    (version "0.2.4")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sampcompR" version))
        (sha256
-        (base32 "02v0lqav2cx1y5zwl362hmcvqhp52rb2qj448db04nigkc2wbpdb"))))
+        (base32 "14rxs1dn8pwlhxhlny0swxkaajydl59h45chk32bk4b37kvlcac6"))))
     (properties `((upstream-name . "sampcompR")))
     (build-system r-build-system)
     (arguments
@@ -68671,9 +68767,10 @@ for the surveys.  And on multivariate levels a function can calculate
 significant differences in model coefficients between the surveys of comparison.
  All of those differences can be easily plotted and outputted as a table.  For
 more detailed information on the methods and example use see Rohr, B., Silber,
-H., & Felderer, B. (2024).  âComparing the Accuracy of Univariate, Bivariate,
-and Multivariate Estimates across Probability and Non-Probability Surveys with
-Population Benchmarksâ <doi:10.31235/osf.io/n6ehf>.")
+H., & Felderer, B. (2024).  Comparing the Accuracy of Univariate, Bivariate, and
+Multivariate Estimates across Probability and Nonprobability Surveys with
+Population Benchmarks.  Sociological Methodology
+<doi:10.1177/00811750241280963>.")
     (license license:gpl3)))
 
 (define-public r-sampbias

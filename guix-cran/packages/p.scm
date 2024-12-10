@@ -26224,13 +26224,13 @@ across projects and with your colleagues.  You can pin objects to a variety of
 (define-public r-pinp
   (package
     (name "r-pinp")
-    (version "0.0.10")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pinp" version))
        (sha256
-        (base32 "1qah1b9chn237pfxisjsn6rr4h9h9zdqrk323c0k1qds7vm0xpra"))))
+        (base32 "1yqlhmc4zl6hclcf4463wyyzp73n4z75swxdz1l6xlfxq4bl3gp0"))))
     (properties `((upstream-name . "pinp")))
     (build-system r-build-system)
     (arguments
@@ -26238,13 +26238,12 @@ across projects and with your colleagues.  You can pin objects to a variety of
       #:tests? #f))
     (propagated-inputs (list r-rmarkdown r-knitr))
     (native-inputs (list r-knitr))
-    (home-page "http://dirk.eddelbuettel.com/code/pinp.html")
+    (home-page "https://github.com/eddelbuettel/pinp")
     (synopsis "'pinp' is not 'PNAS'")
     (description
      "This package provides a PNAS'-alike style for rmarkdown', derived from the
 Proceedings of the National Academy of Sciences of the United States of America
-('PNAS', see <https://www.pnas.org>) @code{LaTeX} style, and adapted for use
-with markdown and pandoc'.")
+('PNAS') @code{LaTeX} style, and adapted for use with markdown and pandoc'.")
     (license license:gpl3)))
 
 (define-public r-pinochet
@@ -40502,6 +40501,35 @@ for creating, manipulating and plotting pedigrees with or without marker data
 (the actual plotting is done by the kinship2 package).")
     (license license:gpl2+)))
 
+(define-public r-paramix
+  (package
+    (name "r-paramix")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paramix" version))
+       (sha256
+        (base32 "136c1pqk8plx5kzx12xbvd502hgqdlc169f9cjwkbr7p51mwhsyk"))))
+    (properties `((upstream-name . "paramix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cmmid.github.io/paramix/")
+    (synopsis
+     "Aggregate and Disaggregate Continuous Parameters for Compartmental Models")
+    (description
+     "This package provides a convenient framework for aggregating and disaggregating
+continuously varying parameters (for example, case fatality ratio, with age) for
+proper parametrization of lower-resolution compartmental models (for example,
+with broad age categories) and subsequent upscaling of model outputs to high
+resolution (for example, as needed when calculating age-sensitive measures like
+years-life-lost).")
+    (license license:expat)))
+
 (define-public r-paramhetero
   (package
     (name "r-paramhetero")
@@ -41363,13 +41391,13 @@ generalized linear model extension thereof using GEE.")
 (define-public r-panelpomp
   (package
     (name "r-panelpomp")
-    (version "1.4")
+    (version "1.5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "panelPomp" version))
        (sha256
-        (base32 "1ld0f2pf24lf20xalgapkid9zh7gmc202lkmnqih2sx4gh4l1086"))))
+        (base32 "0apsnji5xg0w8r0ry6k29drr32lv8vjsgz1xap3y1jykrpwdkw4k"))))
     (properties `((upstream-name . "panelPomp")))
     (build-system r-build-system)
     (arguments
@@ -43145,13 +43173,13 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
 (define-public r-pakpc
   (package
     (name "r-pakpc")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PakPC" version))
        (sha256
-        (base32 "01vff15b6ipq6xmkwdwz7k7f39scnb32xsjnwaxkqcm77l68kq10"))))
+        (base32 "0pmgzhjs4wpwf0371brhyy0ibkn0zjnj92gj4v5mad8121j2rm04"))))
     (properties `((upstream-name . "PakPC")))
     (build-system r-build-system)
     (arguments

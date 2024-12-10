@@ -8337,37 +8337,6 @@ ISBN:978-1-4612-4380-9), the delete-1 jackknife by Quenouille (1956)
 <doi:10.1214/aos/1176345338>.")
     (license license:gpl2)))
 
-(define-public r-lmap
-  (package
-    (name "r-lmap")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lmap" version))
-       (sha256
-        (base32 "08bdznssicrl493zv5qa1vyjh38zhb83rwnipq83zi4qfp2s8n5p"))))
-    (properties `((upstream-name . "lmap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rfast
-                             r-nnet
-                             r-mass
-                             r-magrittr
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggforce
-                             r-fmdu
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=lmap")
-    (synopsis "Logistic Mapping")
-    (description
-     "Set of tools for mapping of categorical response variables based on principal
-component analysis (pca) and multidimensional unfolding (mdu).")
-    (license license:bsd-2)))
-
 (define-public r-lm-br
   (package
     (name "r-lm-br")
@@ -13175,13 +13144,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.3.8")
+    (version "4.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "1p3921xgvjiydnr8ikvyqn9haxwzgqmsrm9hdslzf51g1bi0nva4"))))
+        (base32 "1qdxs84q0nd9pam09zglywjc556943b4kan6c3ml3cafsi2x9bgi"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments

@@ -8408,24 +8408,24 @@ correlation, and descriptive statistics table for the securities.")
 (define-public r-bolasso
   (package
     (name "r-bolasso")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bolasso" version))
        (sha256
-        (base32 "1fbd39jyxq0zfbybrzzwnyql2w8hf2b9133jj0nl99d1326wr7dh"))))
+        (base32 "1b31wnpappjhnrfnl5awzcbyxamam0c1sm72shmzscdlfa116ys2"))))
     (properties `((upstream-name . "bolasso")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
-                             r-rdpack
                              r-progressr
                              r-matrix
                              r-glmnet
                              r-ggplot2
+                             r-generics
                              r-gamlr
                              r-future-apply))
     (home-page "https://www.dmolitor.com/bolasso/")
@@ -8434,7 +8434,7 @@ correlation, and descriptive statistics table for the securities.")
      "This package implements the bolasso algorithm for consistent variable selection
 and estimation accuracy.  Includes support for many parallel backends via the
 future package.  For details see: Bach (2008), Bolasso: model consistent Lasso
-estimation through the bootstrap', <@code{arXiv:0804.1302>}.")
+estimation through the bootstrap', <doi:10.48550/@code{arXiv.0804.1302>}.")
     (license license:expat)))
 
 (define-public r-boj
@@ -18593,13 +18593,13 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.11")
+    (version "0.5.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFS" version))
        (sha256
-        (base32 "19zizch8k142c94x8i47v10hn1cz3w85ksnxp5ip83bvxdvmmrd6"))))
+        (base32 "1n5bw68sf03apji46p3dk702zhbach5f2qqfb5ija3w3zn7wma18"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (arguments
@@ -25099,6 +25099,34 @@ the mortality in the following years and to do improvement analysis, as seen in
 Lee, R. D., & Carter, L. R. (1992) <doi:10.1080/01621459.1992.10475265> and
 Pedroza, C. (2006) <doi:10.1093/biostatistics/kxj024>.")
     (license license:gpl3)))
+
+(define-public r-bayesmlogit
+  (package
+    (name "r-bayesmlogit")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesmlogit" version))
+       (sha256
+        (base32 "1958kyagp41ji9xlwr03g6yv4jrd68kzc7g2hm0wgjdrksifmwp8"))))
+    (properties `((upstream-name . "bayesmlogit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bayesmlogit")
+    (synopsis
+     "Multistate Life Table (MSLT) Methodology Based on Bayesian Approach")
+    (description
+     "Create life tables with a Bayesian approach, which can be very useful for
+modelling a complex health process when considering multiple predisposing
+factors and multiple coexisting health conditions.  Details for this method can
+be found in: Lynch, Scott, et al., (2022) <doi:10.1177/00811750221112398>; Zang,
+Emma, et al., (2022) <doi:10.1093/geronb/gbab149>.")
+    (license license:gpl3+)))
 
 (define-public r-bayesmixsurv
   (package

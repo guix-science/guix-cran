@@ -11307,13 +11307,13 @@ Annals of Applied Statistics.  A preprint may be found at
 (define-public r-neuroimagene
   (package
     (name "r-neuroimagene")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuroimaGene" version))
        (sha256
-        (base32 "1r85vfy8pim0kys5g8z7il7kf91s1m1l7g730psc52abxqr16xs5"))))
+        (base32 "0j0z6l93b2pxa2dyw5xi7s1cgijx06w0mzyqh5d2s5rhdr5ihzvg"))))
     (properties `((upstream-name . "neuroimaGene")))
     (build-system r-build-system)
     (arguments

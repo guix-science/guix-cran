@@ -15528,13 +15528,13 @@ software.")
 (define-public r-copernicusdem
   (package
     (name "r-copernicusdem")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusDEM" version))
        (sha256
-        (base32 "00rpdfspyd94jr2ahw7dc661wdgxnxzcxgg40yn48c1v6hxjhfhp"))))
+        (base32 "16j3r7b0rhyhrll2l62g4hphzczryb23j6maxd8vvcscbljg9i3b"))))
     (properties `((upstream-name . "CopernicusDEM")))
     (build-system r-build-system)
     (arguments
@@ -15976,6 +15976,36 @@ use of the website.  Here we provide tools for working with cookies in shiny
 apps, in part by wrapping the js-cookie @code{JavaScript} library
 <https://github.com/js-cookie/js-cookie>.")
     (license license:expat)))
+
+(define-public r-cookiemonster
+  (package
+    (name "r-cookiemonster")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cookiemonster" version))
+       (sha256
+        (base32 "1fs8a7i2h1v4xvcjnccnvxapiprffyz49pgrdjp67k14r6nk2fha"))))
+    (properties `((upstream-name . "cookiemonster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-urltools
+                             r-tibble
+                             r-stringi
+                             r-rappdirs
+                             r-openssl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cookiemonster")
+    (synopsis "Your Friendly Solution to Managing Browser Cookies")
+    (description
+     "This package provides a convenient tool to store and format browser cookies and
+use them in HTTP requests (for example, through httr2', httr or curl').")
+    (license license:gpl3+)))
 
 (define-public r-cookiecutter
   (package
@@ -28654,13 +28684,13 @@ soft spatial/geographical constraints.")
 (define-public r-clustervar
   (package
     (name "r-clustervar")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClusterVAR" version))
        (sha256
-        (base32 "1596imfnk0kfygw3p7pcn3wkcppkq15rqvm1sdn3kfykwcb794jr"))))
+        (base32 "1h8m0kpkdg975a9xhydr35rj9vkl2adldwshi68plk7k8dpa4azq"))))
     (properties `((upstream-name . "ClusterVAR")))
     (build-system r-build-system)
     (arguments

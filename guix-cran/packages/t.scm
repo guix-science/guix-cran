@@ -1999,6 +1999,29 @@ also provided.")
 objects.")
     (license license:gpl2+)))
 
+(define-public r-tugboat
+  (package
+    (name "r-tugboat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tugboat" version))
+       (sha256
+        (base32 "13l9pn7zfkilbcyaw1b8d8s7fhlv0yys0vn2y7qarw3n9d9jvrdq"))))
+    (properties `((upstream-name . "tugboat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-renv r-here r-dockerfiler))
+    (home-page "https://www.dmolitor.com/tugboat/")
+    (synopsis "Build a Docker Image from a Directory or Project")
+    (description
+     "Simple utilities to generate a Dockerfile from a directory or project, build the
+corresponding Docker image, and push the image to @code{DockerHub}.")
+    (license license:gpl3+)))
+
 (define-public r-tufterhandout
   (package
     (name "r-tufterhandout")
@@ -9598,13 +9621,13 @@ groups of sequences.")
 (define-public r-traminer
   (package
     (name "r-traminer")
-    (version "2.2-10")
+    (version "2.2-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TraMineR" version))
        (sha256
-        (base32 "19l51vjn4ljyfghsl93amh94zqsvf290ahvb7r4z6kqgdbz8j5lb"))))
+        (base32 "05fb5w1wz3aqc7ngr4vp84dwbwpxm10lpkqlin55h895wph5529x"))))
     (properties `((upstream-name . "TraMineR")))
     (build-system r-build-system)
     (arguments
@@ -14916,6 +14939,37 @@ project template for Rstudio'.")
 legends, facets, and various other enhancements.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-tinylens
+  (package
+    (name "r-tinylens")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinylens" version))
+       (sha256
+        (base32 "01p2z3xzsqvr74bmqdvjgx7jcdjckjnjvhfnkp0b3a694r8mj0pn"))))
+    (properties `((upstream-name . "tinylens")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-s7 r-rlang))
+    (home-page "https://github.com/arbelt/tinylens")
+    (synopsis "Minimal Implementation of Functional Lenses")
+    (description
+     "This package provides utilities to create and use lenses to simplify data
+manipulation.  Lenses are composable getter/setter pairs that provide a
+functional approach to manipulating deeply nested data structures, e.g.,
+elements within list columns in data frames.  The implementation is based on the
+earlier lenses R package <https://github.com/cfhammill/lenses>, which was
+inspired by the Haskell lens package by Kmett (2012)
+<https://github.com/ekmett/lens>, one of the most widely referenced
+implementations of lenses.  For additional background and history on the theory
+of lenses, see the lens package wiki:
+<https://github.com/ekmett/lens/wiki/History-of-Lenses>.")
+    (license license:expat)))
+
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
@@ -17873,13 +17927,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidyllm
   (package
     (name "r-tidyllm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyllm" version))
        (sha256
-        (base32 "0ykjs91bnmfvmjqdx3rnrc2vfvaqc2ip6znybccnmlk1p0hy1km8"))))
+        (base32 "0h6wisq34499l4bl5g8s8pxcq25x82lj5gms2fcwq9b474a9d4gl"))))
     (properties `((upstream-name . "tidyllm")))
     (build-system r-build-system)
     (arguments
@@ -17887,8 +17941,8 @@ approach, but an uninformative prior is also available.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
+                             r-s7
                              r-rlang
-                             r-r6
                              r-purrr
                              r-png
                              r-pdftools

@@ -6428,27 +6428,28 @@ front-end for irr'.")
 (define-public r-kappagold
   (package
     (name "r-kappagold")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kappaGold" version))
        (sha256
-        (base32 "10kh8rkcp2xpg055yv5zivi9c07agffhxnwkbwjhnknx74389a5v"))))
+        (base32 "04kzzvc5pbx3cw1i41pffhhq53s49h30i0d0qkx35vcr7ihsdfi7"))))
     (properties `((upstream-name . "kappaGold")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-purrr r-future-apply))
+    (propagated-inputs (list r-tidyr r-tibble r-rlang r-purrr r-future-apply))
     (home-page "https://cran.r-project.org/package=kappaGold")
-    (synopsis "Agreement of Nominal Scale Raters with a Gold Standard")
+    (synopsis "Agreement of Nominal Scale Raters (with a Gold Standard)")
     (description
      "Estimate agreement of a group of raters with a gold standard rating on a nominal
 scale.  For a single gold standard rater the average pairwise agreement of
-raters with this gold standard is provided.  For a group of gold standard raters
-the approach of S. Vanbelle, A. Albert (2009) <doi:10.1007/s11336-009-9116-1> is
-implemented.  Bias and standard error are estimated via delete-1 jackknife.")
+raters with this gold standard is provided.  For a group of (gold standard)
+raters the approach of S. Vanbelle, A. Albert (2009)
+<doi:10.1007/s11336-009-9116-1> is implemented.  Bias and standard error are
+estimated via delete-1 jackknife.")
     (license license:expat)))
 
 (define-public r-kaphom
