@@ -13834,6 +13834,31 @@ squared out-of-sample error, the projected out-of-sample R-squared, and a vector
 of out-of-sample \"hat\" or \"leverage\" values, as defined in the paper.")
     (license license:expat)))
 
+(define-public r-moonboot
+  (package
+    (name "r-moonboot")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moonboot" version))
+       (sha256
+        (base32 "0igcs4jjsvm25lirjdmlzckd18fswld7ihmi55fzlyh6ir6s90b9"))))
+    (properties `((upstream-name . "moonboot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=moonboot")
+    (synopsis "m-Out-of-n Bootstrap Functions")
+    (description
+     "This package provides functions and examples based on the m-out-of-n bootstrap
+suggested by Politis, D.N. and Romano, J.P. (1994) <doi:10.1214/aos/1176325770>.
+ Additionally there are functions to estimate the scaling factor tau and the
+subsampling size m.  For a detailed description and a full list of references,
+see Dalitz, C. and LÃ¶gler, F. (2024) <doi:10.48550/@code{arXiv.2412.05032>}.")
+    (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
+
 (define-public r-moodler
   (package
     (name "r-moodler")
@@ -47828,13 +47853,13 @@ visualizing networks with sensible defaults.")
 (define-public r-manymome-table
   (package
     (name "r-manymome-table")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome.table" version))
        (sha256
-        (base32 "01znxw82k2ycp8cncbayn0c4jhkydd5nvydfyxv1bwgixdkad1ff"))))
+        (base32 "1zpr0xqybabm7k9xxh7ahg8iyc0wqpw42711225pwpdzl7y43bi7"))))
     (properties `((upstream-name . "manymome.table")))
     (build-system r-build-system)
     (arguments

@@ -2721,6 +2721,34 @@ the model to the seed germination time course.  Details can be found in Bradford
 <https://www.jstor.org/stable/23433495>.")
     (license license:gpl3)))
 
+(define-public r-htsdegenerater
+  (package
+    (name "r-htsdegenerater")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htsDegenerateR" version))
+       (sha256
+        (base32 "1flvq2dk5lb3y5d011ysy3v5izrimaxrszrbc3px6p5qvb17llnw"))))
+    (properties `((upstream-name . "htsDegenerateR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sparsem))
+    (home-page "https://cran.r-project.org/package=htsDegenerateR")
+    (synopsis "Degenerate Hierarchical Time Series Reconciliation")
+    (description
+     "Takes the @code{MinT} implementation of the
+hts'<https://cran.r-project.org/package=hts> package and adapts it to allow
+degenerate hierarchical structures.  Instead of the \"nodes\" argument, this
+function takes an S matrix which is more versatile in the structures it allows.
+For a demo, see Steinmeister and Pauly (2024)<doi:10.15488/17729>.  The
+@code{MinT} algorithm is based on Wickramasuriya et al.
+(2019)<doi:10.1080/01621459.2018.1448825>.")
+    (license license:gpl2+)))
+
 (define-public r-hts
   (package
     (name "r-hts")

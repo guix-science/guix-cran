@@ -3283,13 +3283,13 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "152wnzhq1wx3qd8n0szl0mpxrbabrcq5736pc0zdzni8j0h1zz0c"))))
+        (base32 "0q810igj994xqk1b5lngq3bfh3aj1q8g6y4whdiqlafgcf4bshgc"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments

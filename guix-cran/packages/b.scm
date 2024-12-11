@@ -12845,24 +12845,26 @@ GPL-3).")
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioVizSeq" version))
        (sha256
-        (base32 "0xyws7rmq4cp5mjmnkswfkbl9sfcnzjpgs4rycap3wsch6c2dg97"))))
+        (base32 "1inzbhc5xvcks6mcrhppl29nn4sz3g01qv20rsjcymrcsxlmj8vb"))))
     (properties `((upstream-name . "BioVizSeq")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-treeio
+                             r-tidyr
                              r-stringr
                              r-seqinr
                              r-rcolorbrewer
                              r-magrittr
                              r-httr
+                             r-ggtree
                              r-ggplot2
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=BioVizSeq")

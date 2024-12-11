@@ -14583,13 +14583,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.1-6")
+    (version "0.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm.hp" version))
        (sha256
-        (base32 "1lrda4b6v22r3fq4p42p237hivjfmgd9h3wn49982j2gvbfna227"))))
+        (base32 "19kaw7az1b8as136v9drli6fszsv9xl3y9ix90mrp0n71kw8gv4w"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (arguments
@@ -29863,19 +29863,19 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.5.2")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "1xppmjpsm670nak4c8bc7ssasrzjh56144xwsrc0sfnb28lp3n2l"))))
+        (base32 "0hgb9bp8gy8fy8g1lkw4lmp1wpiqj4v5raqzgzdhpmsmn8dc02sh"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-httr2 r-cli r-base64enc))
+    (propagated-inputs (list r-rstudioapi r-httr2 r-cli r-base64enc))
     (home-page "https://github.com/jhk0530/gemini.R")
     (synopsis "Interface for 'Google Gemini' API")
     (description

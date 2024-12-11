@@ -3873,6 +3873,38 @@ t-designs. (Mcsorley, J.P., Phillips, N.C., Wallis, W.D. and Yucas, J.L.
 (2005).<doi:10.1007/s10623-003-6149-9>).")
     (license license:gpl2+)))
 
+(define-public r-irisseismic
+  (package
+    (name "r-irisseismic")
+    (version "1.6.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRISSeismic" version))
+       (sha256
+        (base32 "1xh8r8qky8m2i5h1y41jycaygvb93lmj1b92ax71b1lg5p245j5d"))))
+    (properties `((upstream-name . "IRISSeismic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml
+                             r-stringr
+                             r-signal
+                             r-seismicroll
+                             r-rcurl
+                             r-pracma))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=IRISSeismic")
+    (synopsis "Classes and Methods for Seismic Data Analysis")
+    (description
+     "This package provides classes and methods for seismic data analysis.  The base
+classes and methods are inspired by the python code found in the @code{ObsPy}
+python toolbox <https://github.com/obspy/obspy>.  Additional classes and methods
+support data returned by web services provided by @code{EarthScope}.
+<https://service.earthscope.org/>.")
+    (license license:gpl2+)))
+
 (define-public r-irishdirectorates
   (package
     (name "r-irishdirectorates")

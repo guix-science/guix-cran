@@ -5862,13 +5862,13 @@ weights.  This package has been developed using algorithm of Armstrong (1989)
 (define-public r-weightedcluster
   (package
     (name "r-weightedcluster")
-    (version "1.8-0")
+    (version "1.8-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightedCluster" version))
        (sha256
-        (base32 "1sgaz5r92xslhcr2wsc020938fzj0j0b3zl3bpr8npdwz1bwhim0"))))
+        (base32 "0nyzn9v50kd9wnswzhqb3glrz7p4ci5gawlylc3fgjasxry9iyfs"))))
     (properties `((upstream-name . "WeightedCluster")))
     (build-system r-build-system)
     (arguments

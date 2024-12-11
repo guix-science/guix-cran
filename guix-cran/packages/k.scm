@@ -6681,13 +6681,13 @@ Switching: Classical and Gibbs-Sampling Approaches with Applications\"
 (define-public r-kairos
   (package
     (name "r-kairos")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kairos" version))
        (sha256
-        (base32 "07vlw4vyrkx1j12z8ik7fl9xqy3zmvx6nhcv8vwmzjbzhr3bv2j6"))))
+        (base32 "1j590bbbnji5yrwq464xmykgsipcq82y4l5inna9dja3nw49bxlv"))))
     (properties `((upstream-name . "kairos")))
     (build-system r-build-system)
     (arguments

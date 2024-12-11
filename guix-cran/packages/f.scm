@@ -3436,13 +3436,13 @@ The package contains plotting and summary functions as well as the analyses.")
 (define-public r-fsn
   (package
     (name "r-fsn")
-    (version "0.2")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fsn" version))
        (sha256
-        (base32 "12n1v8nhfn5pjjsrp41wk848yw797wxa9anx9dm8rd278smrk01f"))))
+        (base32 "1bx8m2ghxybmp319cbsdrwpl5n1l6hfvd9i39fvkzlfp7mcd5sb1"))))
     (properties `((upstream-name . "fsn")))
     (build-system r-build-system)
     (arguments
@@ -13282,13 +13282,13 @@ Jackson 1976 <doi:10.1137/0713060>).")
 (define-public r-fitzroy
   (package
     (name "r-fitzroy")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitzRoy" version))
        (sha256
-        (base32 "0fw0prfl6iivbsprv0qw13dg5ff80621ziwz5gcy012v6hsbpk25"))))
+        (base32 "01c5khphb8w2jwh4zw4irmfy99wq1fl9rfjhchgsdlfj32spccyh"))))
     (properties `((upstream-name . "fitzRoy")))
     (build-system r-build-system)
     (arguments
@@ -18015,13 +18015,13 @@ application is included.")
 (define-public r-feddata
   (package
     (name "r-feddata")
-    (version "4.1.0")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FedData" version))
        (sha256
-        (base32 "01lr1dlbd14y7xvx77i7z556b5az44239av6rsr7hr69an2kv2rx"))))
+        (base32 "0lq3mrbqhkhdn6r97yc5il11hqv3nryns84rr75hcc5m2y9xj30c"))))
     (properties `((upstream-name . "FedData")))
     (build-system r-build-system)
     (arguments
@@ -18040,13 +18040,13 @@ application is included.")
                              r-magrittr
                              r-lubridate
                              r-lifecycle
+                             r-jsonlite
                              r-igraph
                              r-httr
                              r-glue
                              r-ggplot2
                              r-dplyr
-                             r-curl
-                             r-arcgislayers))
+                             r-curl))
     (home-page "https://docs.ropensci.org/FedData/")
     (synopsis
      "Download Geospatial Data Available from Several Federated Data Sources")
@@ -20645,6 +20645,34 @@ these icons as favicons in shiny applications and other HTML pages.")
      "Estimate a FAVAR model by a Bayesian method, based on Bernanke et al. (2005)
 <DOI:10.1162/0033553053327452>.")
     (license license:gpl3)))
+
+(define-public r-fava
+  (package
+    (name "r-fava")
+    (version "1.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FAVA" version))
+       (sha256
+        (base32 "07p0dbd33pqrfdp6vwi69yxqkc1snwn90m399zbmy7gi28vcxdy8"))))
+    (properties `((upstream-name . "FAVA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-stringr r-rlang r-ggplot2 r-dplyr))
+    (home-page "https://maikemorrison.github.io/FAVA/")
+    (synopsis
+     "Quantify Compositional Variability Across Relative Abundance Vectors")
+    (description
+     "This package implements the statistic FAVA, an Fst-based Assessment of
+Variability across vectors of relative Abundances, as well as a suite of helper
+functions which enable the visualization and statistical analysis of relative
+abundance data.  The FAVA R package accompanies the paper, âQuantifying
+compositional variability in microbial communities with FAVAâ by Morrison,
+Xue, and Rosenberg (2024) <doi:10.1101/2024.07.03.601929>.")
+    (license license:expat)))
 
 (define-public r-fauxnaif
   (package
@@ -23666,13 +23694,13 @@ intervals.")
 (define-public r-familial
   (package
     (name "r-familial")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "familial" version))
        (sha256
-        (base32 "1vsxl1a001wfmwf7bwcq2zc898y8y8bf354jndqmacci7zy6l38g"))))
+        (base32 "05bcxs0sj0059pnbxcg5jzri6rzxw04kf78f9a7ry0lq0xwjh5mr"))))
     (properties `((upstream-name . "familial")))
     (build-system r-build-system)
     (arguments

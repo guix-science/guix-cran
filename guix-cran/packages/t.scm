@@ -8924,6 +8924,70 @@ running the vignette (optional), install fwelnet from @code{GitHub}
 <https://github.com/kjytay/fwelnet>.")
     (license license:gpl3)))
 
+(define-public r-transpror
+  (package
+    (name "r-transpror")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TransProR" version))
+       (sha256
+        (base32 "1wx5p59glih3p6ggy5kj5l9ngpgk75vwd7vzfgbv9vicb8sl7rlm"))))
+    (properties `((upstream-name . "TransProR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tidygraph
+                             r-tibble
+                             r-sva
+                             r-stringr
+                             r-spiralize
+                             r-rlang
+                             r-magrittr
+                             r-limma
+                             r-hrbrthemes
+                             r-hmisc
+                             r-ggvenndiagram
+                             r-ggtreeextra
+                             r-ggtree
+                             r-ggraph
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggdensity
+                             r-ggalt
+                             r-geomtextpath
+                             r-edger
+                             r-dplyr
+                             r-deseq2
+                             r-data-table
+                             r-complexheatmap
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SSSYDYSSS/TransProRBook")
+    (synopsis "Analysis and Visualization of Multi-Omics Data")
+    (description
+     "This package provides a tool for comprehensive transcriptomic data analysis,
+with a focus on transcript-level data preprocessing, expression profiling,
+differential expression analysis, and functional enrichment.  It enables
+researchers to identify key biological processes, disease biomarkers, and gene
+regulatory mechanisms. @code{TransProR} is aimed at researchers and
+bioinformaticians working with RNA-Seq data, providing an intuitive framework
+for in-depth analysis and visualization of transcriptomic datasets.  The package
+includes comprehensive documentation and usage examples to guide users through
+the entire analysis pipeline.  The differential expression analysis methods
+incorporated in the package include limma (Ritchie et al., 2015,
+<doi:10.1093/nar/gkv007>; Smyth, 2005, <doi:10.1007/0-387-29362-0_23>),
+@code{edgeR} (Robinson et al., 2010, <doi:10.1093/bioinformatics/btp616>),
+DESeq2 (Love et al., 2014, <doi:10.1186/s13059-014-0550-8>), and Wilcoxon tests
+(Li et al., 2022, <doi:10.1186/s13059-022-02648-4>), providing flexible and
+robust approaches to RNA-Seq data analysis.  For more information, refer to the
+package vignettes and related publications.")
+    (license license:expat)))
+
 (define-public r-transport
   (package
     (name "r-transport")
@@ -24037,13 +24101,13 @@ tune the detection algorithms and obtain the best possible results.")
 (define-public r-tesselle
   (package
     (name "r-tesselle")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tesselle" version))
        (sha256
-        (base32 "10ahssk9qaj7a0x82364cdqigx8af1vrxvnm2z44x7j688mc17cg"))))
+        (base32 "0h7znhyjy80040irxwyk1pf1sgvhf7mwfjs4wr5mqnqi7gx3a71c"))))
     (properties `((upstream-name . "tesselle")))
     (build-system r-build-system)
     (arguments

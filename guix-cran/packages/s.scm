@@ -34891,13 +34891,13 @@ self-explaining structure.")
 (define-public r-smof
   (package
     (name "r-smof")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smof" version))
        (sha256
-        (base32 "1fd6xfdxp714fg79n2mr3gb6rs9x8k3p31dca1dvf18d3776vbb9"))))
+        (base32 "1vd9bya14jh41f3gzqhmmvn9szm8fdxjbp2fnb7k0y04rvvsmz7m"))))
     (properties `((upstream-name . "smof")))
     (build-system r-build-system)
     (arguments
@@ -51132,13 +51132,13 @@ objects.")
 (define-public r-shapepattern
   (package
     (name "r-shapepattern")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShapePattern" version))
        (sha256
-        (base32 "1vlzvfns6grxc2g0d4slsckg6lzzr0k38brncf2akb41jkczbyak"))))
+        (base32 "0myjl344qd0ibzg5im6ys3z3fbf78jr62s1p7wl87rki9g691hbj"))))
     (properties `((upstream-name . "ShapePattern")))
     (build-system r-build-system)
     (arguments

@@ -4201,13 +4201,13 @@ survey 2014-15 from Pakistan Bureau of Statistics (<http://www.pbs.gov.pk/>).")
 (define-public r-psinference
   (package
     (name "r-psinference")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSinference" version))
        (sha256
-        (base32 "0smhh9gnaiwhjxmkzwd63c30l9frs8svkfaz4kw9lxn9i906py77"))))
+        (base32 "0dhk46vj0np9j4vkvbmaw510ca9bijvq0p4j28qkj6xlla5dkyhn"))))
     (properties `((upstream-name . "PSinference")))
     (build-system r-build-system)
     (arguments
@@ -40860,13 +40860,13 @@ visualization of economic inequalities.")
 (define-public r-parabar
   (package
     (name "r-parabar")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parabar" version))
        (sha256
-        (base32 "0kxf9xnippw59pxcgww3aihk78h84vfs0jpmm5zh55fvw947bavn"))))
+        (base32 "1kzfjyirrhjcsp11fmv1zxi5aw3mrnhvs83sw2ypdms83g2v6rmi"))))
     (properties `((upstream-name . "parabar")))
     (build-system r-build-system)
     (arguments

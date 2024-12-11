@@ -125,13 +125,13 @@ reporting summary statistics.")
 (define-public r-utsf
   (package
     (name "r-utsf")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "utsf" version))
        (sha256
-        (base32 "195b7s4mjlrhgg87xp3bh4z2c6y1rsjcpi06xgnxihh5sqrj9sgl"))))
+        (base32 "1bfhms7j1042j30v9k84i9jsvsahjdx6h5dfplynlvwb1isb5hi8"))))
     (properties `((upstream-name . "utsf")))
     (build-system r-build-system)
     (arguments
@@ -1564,19 +1564,19 @@ around the @code{JavaScript} library @code{UpSet.js}'.")
 (define-public r-upndown
   (package
     (name "r-upndown")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "upndown" version))
        (sha256
-        (base32 "0yri819zib1m7cj669x007183x9062xgz0pmhghbh6mfaz6rbclj"))))
+        (base32 "15dlzn52nyk37naqjxxzy6wmspv3ambc0rg5xc9ffrbiai4j2sqr"))))
     (properties `((upstream-name . "upndown")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-numbers r-expm r-cir))
+    (propagated-inputs (list r-plyr r-numbers r-expm r-cir))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=upndown")
     (synopsis "Utilities and Design Aids for Up-and-Down Dose-Finding Studies")

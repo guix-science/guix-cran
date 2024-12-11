@@ -546,13 +546,13 @@ publishable @code{LaTeX} code to present the sample information.")
 (define-public r-overturer
   (package
     (name "r-overturer")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overtureR" version))
        (sha256
-        (base32 "0x4z1dyijw4qrf5g89mskvmxvy01xa94bkdk2ybp2ykfgbh3svcy"))))
+        (base32 "15j9i2c1admjbgc41y4kv1bs2b9pqzrvzq6fc8cqkmb9xkxz52xd"))))
     (properties `((upstream-name . "overtureR")))
     (build-system r-build-system)
     (arguments
@@ -7060,6 +7060,32 @@ stresses.  To our knowledge this the first multiclass classifier for predicting
 histone modification in plants. <doi:10.1186/s12864-019-5489-4>.")
     (license license:gpl3)))
 
+(define-public r-opengraph
+  (package
+    (name "r-opengraph")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opengraph" version))
+       (sha256
+        (base32 "0aa83saicrmg724qmm75z6yrpkhps171nr81fdcqi9vpy7bzqz1m"))))
+    (properties `((upstream-name . "opengraph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvest))
+    (home-page "https://github.com/christopherkenny/opengraph")
+    (synopsis "Process Metadata from the Open Graph Protocol")
+    (description
+     "Social media sites often embed cards when links are shared, based on metadata in
+the Open Graph Protocol (<https://ogp.me/>).  This supports extracting that
+metadata from a website.  It further allows for the creation of tags to add to a
+website to support the Open Graph Protocol and provides a list of the standard
+tags and their required properties.")
+    (license license:expat)))
+
 (define-public r-openfda
   (package
     (name "r-openfda")
@@ -9226,6 +9252,35 @@ and the survival analysis extensions by Therneau and Grambsch (2000, ISBN
 visualizations with ggplot2'.")
     (license license:asl2.0)))
 
+(define-public r-oncodatasets
+  (package
+    (name "r-oncodatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OncoDataSets" version))
+       (sha256
+        (base32 "0nn02dihm5gq46yrwx37z9gj069dzzxkcnv1r1d53d2kjbnng3zx"))))
+    (properties `((upstream-name . "OncoDataSets")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/oncodatasets")
+    (synopsis
+     "Comprehensive Collection of Cancer Types and Cancer-Related Datasets")
+    (description
+     "Offers a rich collection of data focused on cancer research, covering survival
+rates, genetic studies, biomarkers, and epidemiological insights.  Designed for
+researchers, analysts, and bioinformatics practitioners, the package includes
+datasets on various cancer types such as melanoma, leukemia, breast, ovarian,
+and lung cancer, among others.  It aims to facilitate advanced research,
+analysis, and understanding of cancer epidemiology, genetics, and treatment
+outcomes.")
+    (license license:gpl3)))
+
 (define-public r-oncobayes2
   (package
     (name "r-oncobayes2")
@@ -10811,6 +10866,42 @@ a high-dimensional linear regression model via OGA+HDIC+Trim.")
 via Softmax regression, under the Harville <doi:10.1080/01621459.1973.10482425>
 and Henery <doi:10.1111/j.2517-6161.1981.tb01153.x> models.")
     (license license:lgpl3)))
+
+(define-public r-ohdsishinyappbuilder
+  (package
+    (name "r-ohdsishinyappbuilder")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OhdsiShinyAppBuilder" version))
+       (sha256
+        (base32 "0rxrl9y7m5bcmq499ydhansjv6xy9q1i41bvjxif13h1fs9sv6s3"))))
+    (properties `((upstream-name . "OhdsiShinyAppBuilder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinydashboard
+                             r-shiny
+                             r-rlang
+                             r-resultmodelmanager
+                             r-parallellogger
+                             r-dplyr
+                             r-devtools
+                             r-databaseconnector
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OhdsiShinyAppBuilder")
+    (synopsis
+     "Viewing Observational Health Data Sciences and Informatics Results via 'shiny' Modules")
+    (description
+     "Users can build a single shiny app for exploring population characterization,
+population-level causal effect estimation, and patient-level prediction results
+generated via the R analyses packages in HADES (see
+<https://ohdsi.github.io/Hades/>).  Learn more about @code{OhdsiShinyAppBuilder}
+at <https://ohdsi.github.io/@code{OhdsiShinyAppBuilder/>}.")
+    (license license:asl2.0)))
 
 (define-public r-ohcspackage
   (package

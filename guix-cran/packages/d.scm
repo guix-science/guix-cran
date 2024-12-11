@@ -15140,13 +15140,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "05670xa45s1rqxidv2hznv1xcm40mhvmf6mrf7xm01knfq4h3by4"))))
+        (base32 "0jpgv66f2zgqfya6bjd2gh1ys4sx6867y74iwyjpcbmkaky7hhxs"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (arguments
@@ -25007,13 +25007,13 @@ in <@code{arXiv:2004.03758>}.")
 (define-public r-ddiwr
   (package
     (name "r-ddiwr")
-    (version "0.18")
+    (version "0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDIwR" version))
        (sha256
-        (base32 "1gwyp4pwy6hs4hwpl5w106mrk0f9sfl8lgcqxr8f3l1hl9hc31sl"))))
+        (base32 "1mwdprr1qkp1s6cb8zkaqg1jwj9jahmb9valvrdq0i11rip3a49n"))))
     (properties `((upstream-name . "DDIwR")))
     (build-system r-build-system)
     (arguments
@@ -25526,13 +25526,13 @@ See SzÃ©kely et al.(2007) <doi:10.1214/009053607000000505>; SzÃ©kely and Riz
 (define-public r-dcorvs
   (package
     (name "r-dcorvs")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcorVS" version))
        (sha256
-        (base32 "1gawk22mv5ppbiqqm4k2pjjknsp7zxnnr0lk24l6phrvnszfaxlw"))))
+        (base32 "011lafpnxlxqf4i2w2905pshk75p4jylym892yqvfy7xgfid3dbn"))))
     (properties `((upstream-name . "dcorVS")))
     (build-system r-build-system)
     (arguments
@@ -26826,6 +26826,36 @@ be slow.")
      "This package provides a helper that tests DBI back ends for conformity to the
 interface.")
     (license license:lgpl2.1+)))
+
+(define-public r-dbi-table
+  (package
+    (name "r-dbi-table")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dbi.table" version))
+       (sha256
+        (base32 "05dnrwwmmgbmhsra7rv1qmygx7p4mwlsv7adniwznb46in8z0z42"))))
+    (properties `((upstream-name . "dbi.table")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi
+                             r-rlang
+                             r-dbplyr
+                             r-dbi
+                             r-data-table
+                             r-bit64))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kjellpk/dbi.table")
+    (synopsis "Database Queries Using 'data.table' Syntax")
+    (description
+     "Query database tables over a DBI connection using data.table syntax.  Attach
+database schemas to the search path.  Automatically merge using foreign key
+constraints.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-dbhydror
   (package

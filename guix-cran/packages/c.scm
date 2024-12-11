@@ -7466,13 +7466,13 @@ user input for use in downstream applications.")
 (define-public r-crm12comb
   (package
     (name "r-crm12comb")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crm12Comb" version))
        (sha256
-        (base32 "0dp9gqgcvm6x37a8pbjj1bmica9a93xyrrh28vw6dwv50xjkslf7"))))
+        (base32 "19k32zbb6dl6iiz3qfiwagh5vzn50kdha1kjd7scjn1m87rcckx7"))))
     (properties `((upstream-name . "crm12Comb")))
     (build-system r-build-system)
     (arguments
@@ -32410,6 +32410,37 @@ approximate proportion of the total classified text bytes (e.g. 80% English and
 a neural network model instead.")
     (license license:asl2.0)))
 
+(define-public r-clc
+  (package
+    (name "r-clc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clc" version))
+       (sha256
+        (base32 "08v096xvnjxahb3xlf7yvmcamn0ik4d7zs57n0f5ls214h31nr66"))))
+    (properties `((upstream-name . "clc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-terra
+                             r-sf
+                             r-rpostgres
+                             r-rlang
+                             r-ggplot2
+                             r-gdalutilities))
+    (native-inputs (list r-knitr))
+    (home-page "https://josesamos.github.io/clc/")
+    (synopsis "CORINE Land Cover Data and Styles")
+    (description
+     "Streamline the management, analysis, and visualization of CORINE Land Cover
+data.  Addresses challenges associated with its classification system and
+related styles, such as color mappings and descriptive labels.")
+    (license license:expat)))
+
 (define-public r-clast
   (package
     (name "r-clast")
@@ -35101,13 +35132,13 @@ implemented for comparison.")
 (define-public r-cici
   (package
     (name "r-cici")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICI" version))
        (sha256
-        (base32 "1qfj7achaac0c9pi5v80d978g3y7jk9i8pga0p7cwdmxmdrqs1xw"))))
+        (base32 "171yxkmsvbcca4j4658v3cgkxgdf1psz4c9fvvwjvxad407vylfp"))))
     (properties `((upstream-name . "CICI")))
     (build-system r-build-system)
     (arguments
@@ -35668,13 +35699,13 @@ Entab <https://github.com/bovee/entab>, and @code{ThermoRawFileParser}
 (define-public r-christmas
   (package
     (name "r-christmas")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "christmas" version))
        (sha256
-        (base32 "0gqyxvhx8nvcrjxqrybvxyc3dgwvd3z9ln4fig6q3zamfpdmljb7"))))
+        (base32 "0hyhdz6xamhank6z23vjmpngqz6mi6318i9rflq2414xw6bmkf7p"))))
     (properties `((upstream-name . "christmas")))
     (build-system r-build-system)
     (arguments
@@ -37825,13 +37856,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.9.91")
+    (version "0.9.92")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "0fmqmsjzhcvc66vp7ks8kmmk0gsgxz61z3j456q567gbwm6pa6ji"))))
+        (base32 "0vr3jgr430pxvicaw5ci5v56gm26ajrzb9v3hwxjjs8rmmzgwhay"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments
@@ -37987,13 +38018,13 @@ season Y sales\".")
 (define-public r-charlesschwabapi
   (package
     (name "r-charlesschwabapi")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "charlesschwabapi" version))
        (sha256
-        (base32 "1qqii54np02df2livqr9ajj71zrws9njfbx7ad8b0wh9zbz2kdy4"))))
+        (base32 "0r3sa4fiz8d6z37wdav5434mibq5k5p6aaznawqgrncvrs1br5n3"))))
     (properties `((upstream-name . "charlesschwabapi")))
     (build-system r-build-system)
     (arguments

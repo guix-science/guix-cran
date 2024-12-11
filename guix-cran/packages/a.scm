@@ -5353,13 +5353,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.40")
+    (version "4.4.43")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "1k8zyk4jdndsmkm5cfx9lyg2j7hqlrjxkzga9yx9rm3avmk8g3f5"))))
+        (base32 "0hvjcd877n5a0hiziyy0yhq4f4i2pkx3a70xgc9204ingmm95imz"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (arguments
@@ -17860,13 +17860,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "0d3mv42v2i1xj93la35ld8dp14x3f29n00z4zq3sibsk2dyr4lic"))))
+        (base32 "1hn7h9y2ig4b8xcyxzsv2v8s9qkd23xqqqw19hfzy3vq96bi7iqv"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (arguments
