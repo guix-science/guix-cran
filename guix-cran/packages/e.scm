@@ -11967,13 +11967,13 @@ the endemic channel method (Bortman, M. (1999)
 (define-public r-epicmodel
   (package
     (name "r-epicmodel")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epicmodel" version))
        (sha256
-        (base32 "1l1vppgmh6s7h558b7cq1civm27z543iwxpm2mlf952jkq0wf9nh"))))
+        (base32 "0f75yrai6f8ggf6nasxwl0j16pmg2mxpd3flijlnpv8pznw1q4zz"))))
     (properties `((upstream-name . "epicmodel")))
     (build-system r-build-system)
     (arguments
@@ -13622,13 +13622,13 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.1.9")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmSdmX" version))
        (sha256
-        (base32 "1z791qw9m03rf8m81xf4qzxn53glh9faq37ywbsl7714lsalg2m3"))))
+        (base32 "0ksgysrpamwc3bdzkbl1pycxikc7rwbq2mvqh5vcrys06vafyp1m"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (arguments
@@ -18883,13 +18883,13 @@ motifs of interest using regular expression searches and hidden Markov models
 (define-public r-effectplots
   (package
     (name "r-effectplots")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "effectplots" version))
        (sha256
-        (base32 "0q79yv08ly33kpswr49lzlz704rcpx14d9ghclzq39js6alsvbld"))))
+        (base32 "1q0xk8kgvdjj541jc85njr57aqim2rqmx9njz1s11bwyjdi9wjhh"))))
     (properties `((upstream-name . "effectplots")))
     (build-system r-build-system)
     (arguments

@@ -3942,13 +3942,13 @@ Diekmann, B. Lisser, M. Nool, B. Sommeijer & A.M. de Roos (2001)
 (define-public r-pspline
   (package
     (name "r-pspline")
-    (version "1.0-20")
+    (version "1.0-21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pspline" version))
        (sha256
-        (base32 "12pbjdxvb92qwzxrdag3cgaa12v9psy5whvw8p7i0p8dhydwv9za"))))
+        (base32 "1jmb710jcrdmv8lhgb3xixrglamfhigjn59xsdndm39prywkjmvz"))))
     (properties `((upstream-name . "pspline")))
     (build-system r-build-system)
     (arguments
@@ -41914,13 +41914,13 @@ visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.12.1")
+    (version "1.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMmisc" version))
        (sha256
-        (base32 "0xv4bm1gzvhybgaww24nikwcbn8wq8299gbr1n831gscnzablzp3"))))
+        (base32 "0d07i8kp8v6yczx7ydykjly896a15vbia9vack9iybbhl3i6gbbx"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (arguments
@@ -41939,7 +41939,6 @@ visualization.")
                              r-purrr
                              r-pambinaries
                              r-ncdf4
-                             r-magrittr
                              r-lubridate
                              r-httr
                              r-ggplot2

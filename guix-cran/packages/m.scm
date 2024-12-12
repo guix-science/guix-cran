@@ -22461,13 +22461,13 @@ hinges), negative logarithms and generalized logarithms for ggplot2 (Wickham
 (define-public r-mkde
   (package
     (name "r-mkde")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mkde" version))
        (sha256
-        (base32 "1g6g8zh0inza6lak4l6az2czqz22c8sf1pbcakibbhc5f1h2b8g9"))))
+        (base32 "1fn1ldvik2y25ihpvnyy3jmifqv3l30q41f3fyal5mh0pc945b9h"))))
     (properties `((upstream-name . "mkde")))
     (build-system r-build-system)
     (arguments
@@ -24303,13 +24303,13 @@ GarcÃ­a-FiÃ±ana (2018, Stat.  Meth.  in Med.  Res)
 (define-public r-mix
   (package
     (name "r-mix")
-    (version "1.0-12")
+    (version "1.0-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mix" version))
        (sha256
-        (base32 "05a3mklaawkch7spcin1rfzx556w315bklwipd64kzhfxj5nds1x"))))
+        (base32 "12sdyz4nsxxd7m0qvblqx0mx8ihqwhy7jrxs3ngxbm7pw704nv80"))))
     (properties `((upstream-name . "mix")))
     (build-system r-build-system)
     (arguments
@@ -40424,13 +40424,13 @@ plotting Monte Carlo estimates versus sample size.")
 (define-public r-mcmcsae
   (package
     (name "r-mcmcsae")
-    (version "0.7.7")
+    (version "0.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcsae" version))
        (sha256
-        (base32 "0q3rw6xbx5wqpa0hf0jldplcs9ry80bck95bn9g6bhzj0128ysm4"))))
+        (base32 "03y1mbdikwg63facvs4jkh670cj01w7s5nyxg1hnzmg3dc22k38j"))))
     (properties `((upstream-name . "mcmcsae")))
     (build-system r-build-system)
     (arguments
@@ -49501,6 +49501,51 @@ viewer pane, and send (draft) email using gmailr'.")
      "Collect your data on digital marketing campaigns from Mailchimp using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
+
+(define-public r-maictools
+  (package
+    (name "r-maictools")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MAICtools" version))
+       (sha256
+        (base32 "0s5a0157p82f55r835dkb6zp2vwk9grzzp22alxw3hphw6ni6jmn"))))
+    (properties `((upstream-name . "MAICtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vim
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-survminer
+                             r-survival
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-broom
+                             r-boot
+                             r-assertthat))
+    (home-page "https://cran.r-project.org/package=MAICtools")
+    (synopsis "Performing Matched-Adjusted Indirect Comparisons (MAIC)")
+    (description
+     "This package provides a generalised workflow for Matching-Adjusted Indirect
+Comparison (MAIC) analysis, which supports both anchored and non-anchored MAIC
+methods.  In MAIC, unbiased trial outcome comparison is achieved by weighting
+the subject-level outcomes of the intervention trial so that the weighted
+aggregate measures of prognostic or effect-modifying variables match those of
+the comparator trial.  Measurements supported include time-to-event (e.g.,
+overall survival) and binary (e.g., objective tumor response).  The method is
+described in Signorovitch et al. (2010) <doi:10.2165/11538370-000000000-00000>
+and Signorovitch et al. (2012) <doi:10.1016/j.jval.2012.05.004>.")
+    (license license:expat)))
 
 (define-public r-maicplus
   (package

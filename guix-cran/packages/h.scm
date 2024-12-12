@@ -15244,13 +15244,13 @@ so that any function in the API is also available in h3r'.")
 (define-public r-h3lib
   (package
     (name "r-h3lib")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h3lib" version))
        (sha256
-        (base32 "1zrda5g2b50iz6qxk1dz18dnanp1dr6d5wldiwh1ap5qclz7w9b4"))))
+        (base32 "193df3bzbydj85a0mwza3jd59391nglqrzyy599qz5qd3fh5y16l"))))
     (properties `((upstream-name . "h3lib")))
     (build-system r-build-system)
     (arguments

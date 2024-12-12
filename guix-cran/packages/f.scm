@@ -839,13 +839,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.3.4")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "1f6p28kzy87gd3wl24w7cj2a9wza9dz92igci2a6h6x8ji3y09mr"))))
+        (base32 "045a7mxbddjp36kcvw7a155cvsm5vhf0fcdlgx9j9r1lh0aihgnh"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (arguments
@@ -2463,13 +2463,13 @@ identify any @code{library()} calls to unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcharts" version))
        (sha256
-        (base32 "1klw181lmxr0hph9hq87ka9c85jhyjgdkb8mkpbp6arkx57vh0gz"))))
+        (base32 "1bgd88091l69fwzi8zh9affakv4x5k7rh2233lzx4sm70pi94x08"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (arguments
@@ -2477,6 +2477,8 @@ identify any @code{library()} calls to unused packages.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-spatstat-univar
+                             r-scam
                              r-rspectra
                              r-rrcov
                              r-rofanova
@@ -2487,7 +2489,7 @@ identify any @code{library()} calls to unused packages.")
                              r-rcpparmadillo
                              r-rcpp
                              r-patchwork
-                             r-mvtnorm
+                             r-mgcv
                              r-matrixstats
                              r-matrix
                              r-mass
@@ -2502,9 +2504,11 @@ identify any @code{library()} calls to unused packages.")
      "This package provides functional control charts for statistical process
 monitoring of functional data, using the methods of Capezza et al. (2020)
 <doi:10.1002/asmb.2507>, Centofanti et al. (2021)
-<doi:10.1080/00401706.2020.1753581>, and Capezza et al. (2024)
-<doi:10.1080/00401706.2024.2327346>.  The package is thoroughly illustrated in
-the paper of Capezza et al (2023) <doi:10.1080/00224065.2023.2219012>.")
+<doi:10.1080/00401706.2020.1753581>, Capezza et al. (2024)
+<doi:10.1080/00401706.2024.2327346>, Capezza et al. (2024)
+<doi:10.1080/00224065.2024.2383674>, Centofanti et al. (2022)
+<doi:10.48550/@code{arXiv.2205.06256>}.  The package is thoroughly illustrated
+in the paper of Capezza et al (2023) <doi:10.1080/00224065.2023.2219012>.")
     (license license:gpl3)))
 
 (define-public r-funcdiv
@@ -11416,13 +11420,13 @@ and from databases.")
 (define-public r-flipscores
   (package
     (name "r-flipscores")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flipscores" version))
        (sha256
-        (base32 "0idsd8xkly5k14wf06w2fqjfz1bg66qs6v25mdlf1hkrvsf5djfq"))))
+        (base32 "1mb95jdspi3363x75y972g1pg3cy7qhsgplm0vhl6l3mzcvvcnwi"))))
     (properties `((upstream-name . "flipscores")))
     (build-system r-build-system)
     (arguments
@@ -21526,6 +21530,30 @@ available from <https://github.com/randy408/libspng/>.")
      "This package provides a full set of fast data manipulation tools with a tidy
 front-end and a fast back-end using collapse and cheapr'.")
     (license license:expat)))
+
+(define-public r-fastpls
+  (package
+    (name "r-fastpls")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastPLS" version))
+       (sha256
+        (base32 "1cjmpci3jwq6zpav1rydis77fgcqblpqlbhhpg2wcv432z28yyl0"))))
+    (properties `((upstream-name . "fastPLS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
+    (home-page "https://cran.r-project.org/package=fastPLS")
+    (synopsis "Fast Implementation of Partial Least Square")
+    (description
+     "An implementation in Rcpp / @code{RcppArmadillo} of Partial Least Square
+algorithms.  This package includes other functions to perform the double
+cross-validation and a fast correlation.")
+    (license license:gpl3)))
 
 (define-public r-fastpcs
   (package

@@ -3905,6 +3905,39 @@ support data returned by web services provided by @code{EarthScope}.
 <https://service.earthscope.org/>.")
     (license license:gpl2+)))
 
+(define-public r-irismustangmetrics
+  (package
+    (name "r-irismustangmetrics")
+    (version "2.4.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRISMustangMetrics" version))
+       (sha256
+        (base32 "1v034hmb3v8kaw1i7xpjd43wb0hz2ir5m7f6g8n4kq61di64cs7m"))))
+    (properties `((upstream-name . "IRISMustangMetrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml
+                             r-stringr
+                             r-signal
+                             r-seismicroll
+                             r-rcurl
+                             r-pracma
+                             r-irisseismic
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=IRISMustangMetrics")
+    (synopsis "Statistics and Metrics for Seismic Data")
+    (description
+     "This package provides classes and functions for metrics calculation as part of
+the @code{EarthScope} MUSTANG project.  The functionality in this package builds
+upon the base classes of the IRISSeismic package.  Metrics include basic
+statistics as well as higher level health metrics that can help identify
+problematic seismometers.")
+    (license license:gpl2+)))
+
 (define-public r-irishdirectorates
   (package
     (name "r-irishdirectorates")

@@ -12997,13 +12997,13 @@ gene expressions.")
 (define-public r-diseasystore
   (package
     (name "r-diseasystore")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diseasystore" version))
        (sha256
-        (base32 "1024r1p4wawcg1346vk91xk7x5hxasliiyjp2y0nk085s4lb7s96"))))
+        (base32 "1fls0xnf32rswa502rybmqkkcfcikjf0h1zdic8dmcsn6mi8f2xn"))))
     (properties `((upstream-name . "diseasystore")))
     (build-system r-build-system)
     (arguments
@@ -13018,6 +13018,7 @@ gene expressions.")
                              r-readr
                              r-r6
                              r-purrr
+                             r-pkgcond
                              r-lubridate
                              r-jsonlite
                              r-isoweek
@@ -13025,6 +13026,7 @@ gene expressions.")
                              r-dplyr
                              r-dbplyr
                              r-dbi
+                             r-curl
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ssi-dk/diseasystore")

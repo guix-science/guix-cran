@@ -15217,13 +15217,13 @@ allows R to connect to any DBMS that has a ODBC driver.")
 (define-public r-rodbc
   (package
     (name "r-rodbc")
-    (version "1.3-23")
+    (version "1.3-25.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RODBC" version))
        (sha256
-        (base32 "0fqgbs2zanq7xjl252s1fpqivqz4ll23nnf74122kcxgq1dd3k8m"))))
+        (base32 "1lgj9y5zlk2qw16xph7468c51sq0xz0i36s4h0mzh5pkhkgh7dyp"))))
     (properties `((upstream-name . "RODBC")))
     (build-system r-build-system)
     (arguments
@@ -32683,13 +32683,13 @@ to simplify the creation of maps of the data.")
 (define-public r-rerddap
   (package
     (name "r-rerddap")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddap" version))
        (sha256
-        (base32 "0s3xgk7z2j6g5f67j899f6d49igx1si562mbfqywba830a3ixn40"))))
+        (base32 "0kqh0q3ighlqj1bhd64hpf62jsgk92vq4gjm7qym2cjxcnc6sfq2"))))
     (properties `((upstream-name . "rerddap")))
     (build-system r-build-system)
     (arguments
@@ -32698,6 +32698,7 @@ to simplify the creation of maps of the data.")
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-ncdf4
+                             r-nanoparquet
                              r-lubridate
                              r-jsonlite
                              r-hoardr
@@ -32707,11 +32708,11 @@ to simplify the creation of maps of the data.")
                              r-crul))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/rerddap/")
-    (synopsis "General Purpose Client for 'ERDDAP' Servers")
+    (synopsis "General Purpose Client for 'ERDDAPâ¢' Servers")
     (description
-     "General purpose R client for ERDDAP servers.  Includes functions to search for
-datasets', get summary information on datasets', and fetch datasets', in either
-csv or @code{netCDF} format.  ERDDAP information:
+     "General purpose R client for ERDDAPâ¢ servers.  Includes functions to search
+for datasets', get summary information on datasets', and fetch datasets', in
+either csv or @code{netCDF} format.  ERDDAPâ¢ information:
 <https://upwell.pfeg.noaa.gov/erddap/information.html>.")
     (license license:expat)))
 
@@ -44572,13 +44573,13 @@ API in the Rcpp package.")
 (define-public r-rcppcgal
   (package
     (name "r-rcppcgal")
-    (version "5.6.4")
+    (version "6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCGAL" version))
        (sha256
-        (base32 "0dll6s8asylvghdzjjj1sxckyczkdjw111bfdiz0rb0ylc27yf7x"))))
+        (base32 "1pfwdxcan0jqzccvp2a7lmhh5yzz4zzhwcbzd8gqyi0wyd985zv7"))))
     (properties `((upstream-name . "RcppCGAL")))
     (build-system r-build-system)
     (arguments
@@ -44594,7 +44595,7 @@ Geometry Algorithms Library) header files in Rcpp'.  There are a variety of
 potential uses for the software such as Hilbert sorting, K-D Tree nearest
 neighbors, and convex hull algorithms.  For more information about how to use
 the header files, see the CGAL documentation at <https://www.cgal.org>.
-Currently downloads version 5.6.1 of the CGAL header files.")
+Currently downloads version 6.0.1 of the CGAL header files.")
     (license license:gpl3)))
 
 (define-public r-rcppcensspatial
@@ -48152,13 +48153,13 @@ text files and more...")
 (define-public r-rbmi
   (package
     (name "r-rbmi")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbmi" version))
        (sha256
-        (base32 "0swc3vp6301kp5d9y488mp32p7k67hswg7x7gxsicg4991wvrcqz"))))
+        (base32 "1m9dlf8f13jqzjvrjsigbdf6q7vcx1fzy0jb1k264k48ibbq0xyj"))))
     (properties `((upstream-name . "rbmi")))
     (build-system r-build-system)
     (arguments

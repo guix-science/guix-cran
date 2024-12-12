@@ -8337,6 +8337,37 @@ ISBN:978-1-4612-4380-9), the delete-1 jackknife by Quenouille (1956)
 <doi:10.1214/aos/1176345338>.")
     (license license:gpl2)))
 
+(define-public r-lmap
+  (package
+    (name "r-lmap")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lmap" version))
+       (sha256
+        (base32 "04sk5f4f753b8r24w1004dx13gc9m7ix9vi1r9wlcn5rg0k4j1g1"))))
+    (properties `((upstream-name . "lmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast
+                             r-nnet
+                             r-mass
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggforce
+                             r-fmdu
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=lmap")
+    (synopsis "Logistic Mapping")
+    (description
+     "Set of tools for mapping of categorical response variables based on principal
+component analysis (pca) and multidimensional unfolding (mdu).")
+    (license license:bsd-2)))
+
 (define-public r-lm-br
   (package
     (name "r-lm-br")

@@ -21007,6 +21007,30 @@ bandwidth for any time series, and performs autocorrelation frequency analysis.
 It also calculates the periodicity of a time series.")
     (license license:gpl3)))
 
+(define-public r-adsiht
+  (package
+    (name "r-adsiht")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ADSIHT" version))
+       (sha256
+        (base32 "0jakh6fn682pshk7kgn92hbmvgp30fp5g12vh76y2ylmn2m4jyv1"))))
+    (properties `((upstream-name . "ADSIHT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-mvnfast r-matrix))
+    (home-page "https://cran.r-project.org/package=ADSIHT")
+    (synopsis "Adaptive Double Sparse Iterative Hard Thresholding")
+    (description
+     "Solving the high-dimensional double sparse linear regression via iterative hard
+thresholding algorithm.  For more details, please see Zhang et al. (2024,
+<DOI:10.48550/@code{arXiv.2305.04182>}).")
+    (license license:gpl3+)))
+
 (define-public r-adsdatahubr
   (package
     (name "r-adsdatahubr")

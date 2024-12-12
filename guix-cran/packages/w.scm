@@ -2152,6 +2152,39 @@ git2r') to generate a website containing time-stamped, versioned, and documented
 results.")
     (license license:expat)))
 
+(define-public r-wordvector
+  (package
+    (name "r-wordvector")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wordvector" version))
+       (sha256
+        (base32 "08wmg84lgi6n77dhb78f3270ra1hzjbkzwxywxvrfsijv0nrss5q"))))
+    (properties `((upstream-name . "wordvector")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi
+                             r-rsvd
+                             r-rspectra
+                             r-rcpp
+                             r-quanteda
+                             r-proxyc
+                             r-matrix
+                             r-irlba))
+    (home-page "https://github.com/koheiw/wordvector")
+    (synopsis "Word and Document Vector Models")
+    (description
+     "Create dense vector representation of words and documents using quanteda'.
+Currently implements Word2vec (Mikolov et al., 2013)
+<doi:10.48550/@code{arXiv.1310.4546>} and Latent Semantic Analysis (Deerwester
+et al., 1990)
+<doi:10.1002/(SICI)1097-4571(199009)41:6%3C391::AID-ASI1%3E3.0.CO;2-9>.")
+    (license license:asl2.0)))
+
 (define-public r-wordsalad
   (package
     (name "r-wordsalad")
@@ -9210,13 +9243,13 @@ Georgia Institute of Technology.
 (define-public r-warbler
   (package
     (name "r-warbler")
-    (version "1.1.32")
+    (version "1.1.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "warbleR" version))
        (sha256
-        (base32 "0wkblxs30a8iz63dp7yls03jsa12w05nnb9p5kc986m589nrj5a6"))))
+        (base32 "1a3s2211whjnki77xkimjd71gyjp07ayyis85d8kgm21hmlqiiyq"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
     (arguments
@@ -9233,8 +9266,10 @@ Georgia Institute of Technology.
                              r-naturesounds
                              r-monitor
                              r-knitr
+                             r-httr
                              r-fftw
                              r-dtw
+                             r-curl
                              r-cli
                              r-bioacoustics))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -9244,17 +9279,11 @@ Georgia Institute of Technology.
      "This package provides functions aiming to facilitate the analysis of the
 structure of animal acoustic signals in R'. @code{warbleR} makes use of the
 basic sound analysis tools from the packages @code{tuneR} and seewave', and
-offers new tools for acoustic structure analysis.  The main features of the
-package are the use of loops to apply tasks through acoustic signals referenced
-in a selection (annotation) table and the production of spectrograms in image
-files that allow to organize data and verify acoustic analyzes.  The package
-offers functions to explore, organize and manipulate multiple sound files,
-explore and download Xeno-Canto recordings, create spectrograms of complete
-recordings or individual signals, run different measures of acoustic signal
-structure, evaluate the performance of measurement methods, catalog signals,
-characterize different structural levels in acoustic signals, run statistical
-analysis of duet coordination and consolidate databases and annotation tables,
-among others.")
+offers new tools for explore and quantify acoustic signal structure.  The
+package allows to organize and manipulate multiple sound files, create
+spectrograms of complete recordings or individual signals in different formats,
+run several measures of acoustic structure, and characterize different
+structural levels in acoustic signals.")
     (license license:gpl2+)))
 
 (define-public r-warabandi

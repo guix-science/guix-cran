@@ -11033,13 +11033,13 @@ correlated with each of the variates.  More details can be found in Sei (2016)
 (define-public r-ofpetrial
   (package
     (name "r-ofpetrial")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ofpetrial" version))
        (sha256
-        (base32 "1wid8d4m8bk087z8fi4ls493p1g30cymyl5xcbzcv0an2rkd739j"))))
+        (base32 "0ig54jjanjgxmrsaca8cd72rfyhzxmzcd3p87xay1ncvwsqniyjw"))))
     (properties `((upstream-name . "ofpetrial")))
     (build-system r-build-system)
     (arguments

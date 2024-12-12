@@ -5276,13 +5276,13 @@ phenotypic variance and additive genetic variance.")
 (define-public r-qgg
   (package
     (name "r-qgg")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgg" version))
        (sha256
-        (base32 "0195fzcr0xy2dns4jl5kn3nigy989l47syn8iavfdpqb76zsh0a3"))))
+        (base32 "1szvrv7mn4dpgbv3rxz48y6s0zjfl7r5n3y2m3php82ghcp664fx"))))
     (properties `((upstream-name . "qgg")))
     (build-system r-build-system)
     (arguments
@@ -5292,6 +5292,7 @@ phenotypic variance and additive genetic variance.")
                              r-rcpparmadillo
                              r-rcpp
                              r-mcmcpack
+                             r-matrix
                              r-mass
                              r-data-table
                              r-corpcor

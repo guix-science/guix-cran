@@ -7165,6 +7165,40 @@ image.  Paths to the cropped image are returned for plotting with ggplot2'.
 Also includes cropping to a hexagon, heart, parallelogram, and square.")
     (license license:expat)))
 
+(define-public r-cropbreeding
+  (package
+    (name "r-cropbreeding")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CropBreeding" version))
+       (sha256
+        (base32 "053jml7sp39gm2kgiaydvhbn0a7jr0hz27x53m8sj4fx979mc5md"))))
+    (properties `((upstream-name . "CropBreeding")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-metan r-dplyr))
+    (home-page "https://cran.r-project.org/package=CropBreeding")
+    (synopsis "Stability Analysis in Crop Breeding")
+    (description
+     "This package provides tools for crop breeding analysis including Genetic
+Coefficient of Variation (GCV), Phenotypic Coefficient of Variation (PCV),
+heritability, genetic advance calculations, stability analysis using the
+Eberhart-Russell model, two-way ANOVA for genotype-environment interactions, and
+Additive Main Effects and Multiplicative Interaction (AMMI) analysis.  These
+tools are developed for crop breeding research and stability evaluation under
+various environmental conditions.  The methods are based on established
+statistical and biometrical principles.  Refer to Eberhart and Russell (1966)
+<doi:10.2135/cropsci1966.0011183X000600010011x> for stability parameters, Fisher
+(1935) \"The Design of Experiments\" <ISBN:9780198522294>, Falconer (1996)
+\"Introduction to Quantitative Genetics\" <ISBN:9780582243026>, and Singh and
+Chaudhary (1985) \"Biometrical Methods in Quantitative Genetic Analysis\"
+<ISBN:9788122433764> for foundational methodologies.")
+    (license license:expat)))
+
 (define-public r-crop
   (package
     (name "r-crop")
@@ -19545,6 +19579,38 @@ procedures for the simplifying assumption (proposed in Derumigny and Fermanian
 (2017) <doi:10.1515/demo-2017-0011> and Derumigny, Fermanian and Min (2022)
 <doi:10.1002/cjs.11742>).")
     (license license:gpl3)))
+
+(define-public r-condathis
+  (package
+    (name "r-condathis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "condathis" version))
+       (sha256
+        (base32 "0nk7j5di9pmmislm4xnx44b9pkclhpl95q1mk6157iz3xzznqpqc"))))
+    (properties `((upstream-name . "condathis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-processx
+                             r-jsonlite
+                             r-fs
+                             r-cli))
+    (home-page "https://github.com/luciorq/condathis")
+    (synopsis "Run Any CLI Tool on a 'Conda' Environment")
+    (description
+     "Simplifies the execution of command line interface (CLI) tools within isolated
+and reproducible environments.  It enables users to effortlessly manage Conda
+environments, execute command line tools, handle dependencies, and ensure
+reproducibility in their data analysis workflows.")
+    (license license:expat)))
 
 (define-public r-cond
   (package

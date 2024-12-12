@@ -27638,59 +27638,6 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 <doi:10.1002/essoar.10507995.1>.")
     (license license:expat)))
 
-(define-public r-bawir
-  (package
-    (name "r-bawir")
-    (version "1.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BAwiR" version))
-       (sha256
-        (base32 "138irq8f7yinjbz9ycsvvb42bh35a8a2jmncg9fcfc1gm9dlfmzb"))))
-    (properties `((upstream-name . "BAwiR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-scales
-                             r-rworldmap
-                             r-rvest
-                             r-reshape2
-                             r-readr
-                             r-qdapregex
-                             r-purrr
-                             r-plyr
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-ggplot2
-                             r-dplyr
-                             r-anthropometry))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.uv.es/vivigui/basketball_platform.html")
-    (synopsis "Analysis of Basketball Data")
-    (description
-     "Collection of tools to work with European basketball data.  Functions available
-are related to friendly web scraping, data management and visualization.  Data
-were obtained from <https://www.euroleaguebasketball.net/euroleague/>,
-<https://www.euroleaguebasketball.net/eurocup/> and <https://www.acb.com/>,
-following the instructions of their respectives robots.txt files, when
-available.  Box score data are available for the three leagues.  Play-by-play
-data are also available for the Spanish league.  Methods for analysis include a
-population pyramid, 2D plots, circular plots of players percentiles, plots of
-players monthly/yearly stats, team heatmaps, team shooting plots, team four
-factors plots, cross-tables with the results of regular season games, maps of
-nationalities, combinations of lineups, possessions-related variables, timeouts,
-performance by periods, personal fouls and offensive rebounds.  Please see Vinue
-(2020) <doi:10.1089/big.2018.0124>.")
-    (license license:gpl2+)))
-
 (define-public r-batteryreduction
   (package
     (name "r-batteryreduction")

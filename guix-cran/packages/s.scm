@@ -7436,6 +7436,33 @@ SUNDIALS library to be installed on the local machine.")
 al. (2016) <DOI:10.1111/rssb.12174>).")
     (license license:gpl3)))
 
+(define-public r-suncalcmeeus
+  (package
+    (name "r-suncalcmeeus")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SunCalcMeeus" version))
+       (sha256
+        (base32 "18sx9s3jh792lasy9pbl98mh7w2mwqyh04np3pm8jrda7bfdvav0"))))
+    (properties `((upstream-name . "SunCalcMeeus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-lubridate r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.r4photobiology.info/SunCalcMeeus/")
+    (synopsis "Sun Position and Daylight Calculations")
+    (description
+     "Compute the position of the sun, and local solar time using Meeus formulae.
+Compute day and/or night length using different twilight definitions or
+arbitrary sun elevation angles.  This package is part of the r4photobiology
+suite, Aphalo, P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.  Algorithms from
+Meeus (1998, ISBN:0943396611).")
+    (license license:gpl2+)))
+
 (define-public r-suncalc
   (package
     (name "r-suncalc")
@@ -18174,13 +18201,13 @@ implemented for the fast computation.  Details can be found in Feng et al.
 (define-public r-sshaarp
   (package
     (name "r-sshaarp")
-    (version "1.1.0")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSHAARP" version))
        (sha256
-        (base32 "0x8dinhhfk4q1cck7ms78f4k23430c4wyvlh2qclq0c83acjj4y9"))))
+        (base32 "00yzn0acgj3dib89a28x90v865czh05ig65dbsxc9silr3fwl10j"))))
     (properties `((upstream-name . "SSHAARP")))
     (build-system r-build-system)
     (arguments
@@ -18188,6 +18215,9 @@ implemented for the fast computation.  Details can be found in Feng et al.
       #:tests? #f))
     (inputs (list gmt ghostscript))
     (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-purrr
+                             r-hlatools
                              r-gtools
                              r-gmt
                              r-filesstrings
@@ -18201,14 +18231,16 @@ implemented for the fast computation.  Details can be found in Feng et al.
     (description
      "Processes amino acid alignments produced by the IPD-IMGT/HLA (Immuno
 Polymorphism-@code{ImMunoGeneTics/Human} Leukocyte Antigen) Database to identify
-user-defined amino acid residue motifs shared across HLA alleles, and calculates
-the frequencies of those motifs based on HLA allele frequency data.  SSHAARP
-(Searching Shared HLA Amino Acid Residue Prevalence) uses Generic Mapping Tools
-(GMT) software and the GMT R package to generate global frequency heat maps that
-illustrate the distribution of each user-defined map around the globe.  SSHAARP
-analyzes the allele frequency data described by Solberg et al. (2008)
-<doi:10.1016/j.humimm.2008.05.001>, a global set of 497 population samples from
-185 published datasets, representing 66,800 individuals total.")
+user-defined amino acid residue motifs shared across HLA alleles, HLA alleles,
+or HLA haplotypes, and calculates frequencies based on HLA allele frequency
+data.  SSHAARP (Searching Shared HLA Amino Acid Residue Prevalence) uses Generic
+Mapping Tools (GMT) software and the GMT R package to generate global frequency
+heat maps that illustrate the distribution of each user-defined map around the
+globe.  SSHAARP analyzes the allele frequency data described by Solberg et al.
+(2008) <doi:10.1016/j.humimm.2008.05.001>, a global set of 497 population
+samples from 185 published datasets, representing 66,800 individuals total.
+Users may also specify their own datasets, but file conventions must follow the
+prebundled Solberg dataset, or the mock haplotype dataset.")
     (license license:gpl3+)))
 
 (define-public r-ssh
@@ -42827,13 +42859,13 @@ Toni and others (2009) <doi:10.1098/rsif.2008.0172>.")
 (define-public r-simile
   (package
     (name "r-simile")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Simile" version))
        (sha256
-        (base32 "1izyjp18m1inac3svkf59z3lddrv44m7pdkhisgkr987xs8gdch4"))))
+        (base32 "0lism5ivrs32246pf3k8pqpvkib790rdjj48n1npnd07wwazk00v"))))
     (properties `((upstream-name . "Simile")))
     (build-system r-build-system)
     (arguments
@@ -42843,7 +42875,7 @@ Toni and others (2009) <doi:10.1098/rsif.2008.0172>.")
     (synopsis "Interact with Simile Models")
     (description
      "Allows a Simile model saved as a compiled binary to be loaded, parameterized,
-executed and interrogated.  This version works with Simile v5.97 on.")
+executed and interrogated.  This version works with Simile v6 on.")
     (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-similaritymeasures
@@ -59624,13 +59656,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "1frncyb68w3c8dv4wpcxvdaknszafg2x112gj7h2b785m5fqxjjy"))))
+        (base32 "0q8v3lqijjjvzj16z4shazsqzkwz6amijx3xk8w3ls0rhj7m53zq"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (arguments
@@ -65665,13 +65697,13 @@ structure of rivers.")
 (define-public r-sbmtrees
   (package
     (name "r-sbmtrees")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SBMTrees" version))
        (sha256
-        (base32 "0kfkbrda9h64pc6qa3s17hhxswijshsywvpn47hzvw8vr2hc3a2g"))))
+        (base32 "00mj0k4id9gqkyvf74h32yiw4k7jy53q5r7kk00k1clkf2dqkns1"))))
     (properties `((upstream-name . "SBMTrees")))
     (build-system r-build-system)
     (arguments
@@ -66304,6 +66336,38 @@ Inference and learning in stochastic automata was by Karl-Heinz Zimmermann(2017)
     (description
      "Bayesian inference of graphical model structures using spanning trees.")
     (license license:gpl2)))
+
+(define-public r-saturncoefficient
+  (package
+    (name "r-saturncoefficient")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SaturnCoefficient" version))
+       (sha256
+        (base32 "0yzim5wpris227i6ncjn7n9lzms9gb7wmz8vz2zbzd00syvv7fa4"))))
+    (properties `((upstream-name . "SaturnCoefficient")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-umap r-projectionbasedclustering
+                             r-matrixcorrelation))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/davidechicco/SaturnCoefficient")
+    (synopsis "Statistical Evaluation of UMAP Dimensionality Reductions")
+    (description
+     "This package provides a metric expressing the quality of a UMAP layout.  This is
+a package that contains the @code{Saturn_coefficient()} function that reads an
+input matrix, its dimensionality reduction produced by UMAP, and evaluates the
+quality of this dimensionality reduction by producing a real value in the [0; 1]
+interval.  We call this real value Saturn coefficient.  A higher value means
+better dimensionality reduction; a lower value means worse dimensionality
+reduction.  Reference: Davide Chicco et al. \"The Saturn coefficient for
+evaluating the quality of UMAP dimensionality reduction results\" (2025, in
+preparation).")
+    (license license:gpl3)))
 
 (define-public r-satres
   (package

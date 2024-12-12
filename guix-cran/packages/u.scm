@@ -4746,13 +4746,13 @@ datasets from 1998-2014.")
 (define-public r-ucomp
   (package
     (name "r-ucomp")
-    (version "5.0.4")
+    (version "5.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UComp" version))
        (sha256
-        (base32 "0wvam2fg9adpz53jbyc5ksfldg0kllvij0968acz0y3qkgm06a5x"))))
+        (base32 "1h8gq9cnfl2id7rm8q7kjf8lw24ql4fg9r75pc5q26p1s484b0n6"))))
     (properties `((upstream-name . "UComp")))
     (build-system r-build-system)
     (arguments

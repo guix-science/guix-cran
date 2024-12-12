@@ -1735,13 +1735,13 @@ information on teams, staff, sets, matches, and player-in-match statistics
 (define-public r-volker
   (package
     (name "r-volker")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "volker" version))
        (sha256
-        (base32 "057y2l50gsnsc81z47kqvgkp349f30ypj92l92d358bal1nc3ndk"))))
+        (base32 "09h3g2c9psp9c5cpjbvlr8z9d4523aipd0s464q1jdk8r1ky88m6"))))
     (properties `((upstream-name . "volker")))
     (build-system r-build-system)
     (arguments

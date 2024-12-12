@@ -8524,6 +8524,41 @@ and Mean Decrease Impurity using out-of-bag samples (MDI-oob) feature importance
 measures based on the work of Li et al. (2019) <@code{arXiv:1906.10845>}.")
     (license license:expat)))
 
+(define-public r-tredesigns
+  (package
+    (name "r-tredesigns")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TREDesigns" version))
+       (sha256
+        (base32 "0wcgj7hvyrh1s4dkry6jffbbaqhx0l51jh51x0awyc7abympl23g"))))
+    (properties `((upstream-name . "TREDesigns")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=TREDesigns")
+    (synopsis "Ternary Residual Effect Designs")
+    (description
+     "There are some experimental scenarios where each experimental unit receives a
+sequence of treatments across multiple periods, and treatment effects persist
+beyond the period of application.  It focuses on the construction and
+calculation of the parametric value of the residual effect designs balanced for
+carryover effects, also referred to as crossover designs, change-over designs,
+or repeated measurements designs (Aggarwal and Jha,
+2010<doi:10.1080/15598608.2010.10412013>).  The primary objective of the package
+is to generate a new class of Balanced Ternary Residual Effect Designs (BTREDs),
+balanced for carryover effects tailored explicitly for situations where the
+number of periods is less than or equal to the number of treatments.  In
+addition, the package provides four new classes of Partially Balanced Ternary
+Residual Effect Designs (PBTREDs), constructed using incomplete block designs,
+initial sequences, and rectangular association scheme.  In addition, one extra
+function is included to help study the parametric properties of a given residual
+effect design.")
+    (license license:gpl2+)))
+
 (define-public r-treats
   (package
     (name "r-treats")
@@ -13170,6 +13205,45 @@ graph snapshots.  Further, all methods can run in parallel up to the number of
 nodes in the network.")
     (license license:gpl3)))
 
+(define-public r-tna
+  (package
+    (name "r-tna")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tna" version))
+       (sha256
+        (base32 "0lcs2jv0zjnq6acym4llhg7ff4vycdlahg5mdffib55b2h6c93h7"))))
+    (properties `((upstream-name . "tna")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rcolorbrewer
+                             r-qgraph
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr
+                             r-colorspace
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sonsoleslp/tna/")
+    (synopsis "Transition Network Analysis (TNA)")
+    (description
+     "This package provides tools for performing Transition Network Analysis (TNA) to
+study relational dynamics, including functions for building and plotting TNA
+models, calculating centrality measures, and identifying dominant events and
+patterns.  TNA statistical techniques (e.g., bootstrapping and permutation
+tests) ensure the reliability of observed insights and confirm that identified
+dynamics are meaningful.  See (Saqr et al., 2024)
+<doi:10.48550/@code{arXiv.2411.15486>} for more details on TNA.")
+    (license license:expat)))
+
 (define-public r-tmvtnsim
   (package
     (name "r-tmvtnsim")
@@ -16979,13 +17053,13 @@ convenient way of visualizing terra objects with ggplot2'.")
 (define-public r-tidytable
   (package
     (name "r-tidytable")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytable" version))
        (sha256
-        (base32 "0mhwfa8zaljnsxm5bkhkfjy3v5a4hlf55qjvy840rgyyw06vfw06"))))
+        (base32 "12h6znlsdj8pkb0c7f1gl8fimkwyhy0shica3p2lxlkh31wpygqz"))))
     (properties `((upstream-name . "tidytable")))
     (build-system r-build-system)
     (arguments
@@ -25885,13 +25959,13 @@ been published.")
 (define-public r-tectonicr
   (package
     (name "r-tectonicr")
-    (version "0.4.0")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tectonicr" version))
        (sha256
-        (base32 "154kxk5ggzqz2s4cira9i3anl3bw9v4a5h0gqvixsq6gjsrj115c"))))
+        (base32 "11avniwd068yrdg78fa3j01fy9y0gqldvkdnv3nz6pj6m5h3nj8k"))))
     (properties `((upstream-name . "tectonicr")))
     (build-system r-build-system)
     (arguments
