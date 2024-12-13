@@ -28378,6 +28378,35 @@ documentation is available at
 <https://github.com/Tautulli/Tautulli/blob/master/API.md>.")
     (license license:expat)))
 
+(define-public r-taustar
+  (package
+    (name "r-taustar")
+    (version "1.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TauStar" version))
+       (sha256
+        (base32 "1lr0p9ilm5mg4ks6bmp2q8kh45n2dq03k3n1cldc8myy512w4ivp"))))
+    (properties `((upstream-name . "TauStar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=TauStar")
+    (synopsis
+     "Efficient Computation and Testing of the Bergsma-Dassios Sign Covariance")
+    (description
+     "Computes the t* statistic corresponding to the tau* population coefficient
+introduced by Bergsma and Dassios (2014) <DOI:10.3150/13-BEJ514> and does so in
+O(n^2) time following the algorithm of Heller and Heller (2016)
+<DOI:10.48550/@code{arXiv.1605.08732>} building off of the work of Weihs, Drton,
+and Leung (2016) <DOI:10.1007/s00180-015-0639-x>.  Also allows for independence
+testing using the asymptotic distribution of t* as described by Nandy, Weihs,
+and Drton (2016) <DOI:10.1214/16-EJS1166>.")
+    (license license:gpl3+)))
+
 (define-public r-tauprocess
   (package
     (name "r-tauprocess")

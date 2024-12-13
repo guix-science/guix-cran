@@ -9,6 +9,8 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages version-control)
+  #:use-module (gnu packages xml)
+  #:use-module (gnu packages pdf)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
@@ -3893,6 +3895,48 @@ monotonic', increasing', decreasing order; is_constant and is_incremental test
 for the degree of ordering. `ordering` provides a numeric indication of ordering
 -2 (strictly decreasing) to 2 (strictly increasing).")
     (license license:gpl2+)))
+
+(define-public r-orderanalyzer
+  (package
+    (name "r-orderanalyzer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orderanalyzer" version))
+       (sha256
+        (base32 "1r680i3a9c55d86m4kzav92kcmbalyp9yjnqr7qq3y44g43nw9qi"))))
+    (properties `((upstream-name . "orderanalyzer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list poppler-data libxml2 libxml2))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlist
+                             r-quanteda
+                             r-purrr
+                             r-matrixcalc
+                             r-lubridate
+                             r-dplyr
+                             r-digest
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=orderanalyzer")
+    (synopsis
+     "Extracting Order Position Tables from PDF-Based Order Documents")
+    (description
+     "This package provides functions for extracting text and tables from PDF-based
+order documents.  It provides an n-gram-based approach for identifying the
+language of an order document.  It furthermore uses R-package pdftools to
+extract the text from an order document.  In the case that the PDF document is
+only including an image (because it is scanned document), R package tesseract is
+used for OCR. Furthermore, the package provides functionality for identifying
+and extracting order position tables in order documents based on a clustering
+approach.")
+    (license license:gpl3)))
 
 (define-public r-orddisp
   (package

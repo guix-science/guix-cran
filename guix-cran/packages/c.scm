@@ -11914,13 +11914,13 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (define-public r-coursekata
   (package
     (name "r-coursekata")
-    (version "0.18.0")
+    (version "0.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coursekata" version))
        (sha256
-        (base32 "05rqbi8sxr2fgaldg8fppil43a7pdw86wxpsgizln1bgncjpyywf"))))
+        (base32 "0j3c42f3ay3k5w2jrlq0yd2jh0p38q5lywp5rawhvls2ibg45ibm"))))
     (properties `((upstream-name . "coursekata")))
     (build-system r-build-system)
     (arguments
@@ -18048,6 +18048,35 @@ controlled manner such that the data seems real.  This methodology is generic
 and therefore benefits both the academic and industrial research.")
     (license license:expat)))
 
+(define-public r-conjointchecks
+  (package
+    (name "r-conjointchecks")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConjointChecks" version))
+       (sha256
+        (base32 "0z995ns8253qv1nfwsgbmzgxy3mwb5yckdqr0i61y3fcl6vl51bk"))))
+    (properties `((upstream-name . "ConjointChecks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/ben-domingue/ConjointChecks")
+    (synopsis
+     "Implementation of a Method to Check the Cancellation Axioms of Additive Conjoint Measurement")
+    (description
+     "Implementation of a procedure---Domingue (2012)
+<https://eric.ed.gov/?id=ED548657>, Domingue (2014)
+<doi:10.1007/s11336-013-9342-4>; see also Karabatsos (2001)
+<https://psycnet.apa.org/record/2002-01665-005> and Kyngdon (2011)
+<doi:10.1348/2044-8317.002004>---to test the single and double cancellation
+axioms of conjoint measure in data that is dichotomously coded and measured with
+error.")
+    (license license:gpl2+)))
+
 (define-public r-conjoint
   (package
     (name "r-conjoint")
@@ -21232,20 +21261,19 @@ from uni/multivariate continuous observations.")
 (define-public r-comparetests
   (package
     (name "r-comparetests")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompareTests" version))
        (sha256
-        (base32 "1z96kh851bpr2szgyjszkpv6m5ma6abz7hrm50fgvfpgxkj7f4yi"))))
+        (base32 "076hk4af6klmf4r4zbpkcaalv3b80d0mk7fkambziwcnh0hicc5j"))))
     (properties `((upstream-name . "CompareTests")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page
-     "http://dceg.cancer.gov/about/staff-directory/biographies/A-J/katki-hormuzd")
+    (home-page "https://dceg.cancer.gov/about/staff-directory/katki-hormuzd")
     (synopsis
      "Correct for Verification Bias in Diagnostic Accuracy & Agreement")
     (description
@@ -26049,13 +26077,13 @@ samples to obtain bias-free, inter-dataset corrected data.")
 (define-public r-cocons
   (package
     (name "r-cocons")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocons" version))
        (sha256
-        (base32 "164iw0hs6l2i6z2lbar0m8szshgfg0lq7daax0zl3fyhmxcmzyrw"))))
+        (base32 "18lwz284g95kfzf8vbn9s0gp3k32f2m5liz9hf85lb1d0f6r95bw"))))
     (properties `((upstream-name . "cocons")))
     (build-system r-build-system)
     (arguments
@@ -26074,7 +26102,7 @@ samples to obtain bias-free, inter-dataset corrected data.")
     (description
      "Estimation, prediction, and simulation of nonstationary Gaussian process with
 modular covariate-based covariance functions.  Sources of nonstationarity, such
-as trend, variance, geometric anisotropy, smoothness, and nugget, can be
+as spatial mean, variance, geometric anisotropy, smoothness, and nugget, can be
 considered based on spatial characteristics.  An induced compact-supported
 nonstationary covariance function is provided, enabling fast and
 memory-efficient computations when handling densely sampled domains.")
@@ -29037,13 +29065,13 @@ and mouse cell identity markers sourced from a variety of databases.")
 (define-public r-clustermi
   (package
     (name "r-clustermi")
-    (version "1.2.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterMI" version))
        (sha256
-        (base32 "0sn4jadkn8iy2801zz37vdc0b03bmk9f30zxhskgrff11k02n4qa"))))
+        (base32 "09acbglcih51d0i9mlazps3fab4nw8bmap14gsdc3v562mgl7084"))))
     (properties `((upstream-name . "clusterMI")))
     (build-system r-build-system)
     (arguments

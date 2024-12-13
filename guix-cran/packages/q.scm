@@ -3632,13 +3632,13 @@ hardware <https://quantum-computing.ibm.com/>.")
 (define-public r-qs2
   (package
     (name "r-qs2")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qs2" version))
        (sha256
-        (base32 "11b5a2xi75sx0a98sxjp97hh2yflahqbsxgdk2j2c93lnb7ypasv"))))
+        (base32 "011g2q769ak57g4kzyyr89ksiar3wxgpgzcnwkk8mc1xcjlcipn2"))))
     (properties `((upstream-name . "qs2")))
     (build-system r-build-system)
     (arguments

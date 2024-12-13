@@ -8428,13 +8428,13 @@ ordering proposed in Guinness (2018) <@code{arXiv:1609.05372>}.")
 (define-public r-gpvam
   (package
     (name "r-gpvam")
-    (version "3.1-2")
+    (version "3.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPvam" version))
        (sha256
-        (base32 "0rk3h767rpgdcjhy73kk77mcqbnl1g2x0f505cknp61i3fc5djaf"))))
+        (base32 "03s8yl56rl2hpjfhfmbkckfjhxiz6ac6qcqsq75m0ajlyvzicvhl"))))
     (properties `((upstream-name . "GPvam")))
     (build-system r-build-system)
     (arguments
@@ -8665,13 +8665,13 @@ cool things with language!")
 (define-public r-gptoolsstan
   (package
     (name "r-gptoolsstan")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gptoolsStan" version))
        (sha256
-        (base32 "1f2aigkqpmbi8hxcivrbbfrpl3qs8fi2hcbvmcdc3k7j6znv4al3"))))
+        (base32 "1cdvfy451grnyzplivzfndmfaxhr1g81z8nr12rqr35sxnk03s2z"))))
     (properties `((upstream-name . "gptoolsStan")))
     (build-system r-build-system)
     (arguments
@@ -8688,7 +8688,7 @@ inference in Stan'.  First, a sparse approximation of the likelihood that is
 generally applicable and, second, an exact method for regularly spaced data
 modeled by stationary kernels using fast Fourier methods.  Utility functions are
 provided to compile and fit Stan models using the cmdstanr interface.
-References: Hoffmann and Onnela (2022) <@code{arXiv:2301.08836>}.")
+References: Hoffmann and Onnela (2022) <doi:10.48550/@code{arXiv.2301.08836>}.")
     (license license:expat)))
 
 (define-public r-gpseqclus
@@ -14272,13 +14272,13 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "0cjf6i9sd8b51am619kk31bi9j3wfawwqyapdwhcpf2lx33nk9b4"))))
+        (base32 "1k31ls4agxq63cpjm2xzk5vls7lqgbpy62kniqq2w1r1banh1784"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (arguments
@@ -33563,13 +33563,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "04h07fnvhvrg7c0ycv2pzlvd902cxi42fcvlpqqffx25krnrakb0"))))
+        (base32 "16n8l0ysq17kwf265i3jafnwld030i9p2zlkqa0g3wv02b8x44a4"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (arguments
@@ -33584,10 +33584,10 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 data source.  A generative model consisting of a generator and a discriminator
 network is trained.  During iterative training the distribution of generated
 data is converging to that of the data source.  Direct applications of
-generative data are the created functions for data evaluation and missing data
-completion.  A software service for accelerated training of generative models on
-graphics processing units is available.  Reference: Goodfellow et al. (2014)
-<doi:10.48550/@code{arXiv.1406.2661>}.")
+generative data are the created functions for data evaluation, missing data
+completion and data classification.  A software service for accelerated training
+of generative models on graphics processing units is available.  Reference:
+Goodfellow et al. (2014) <doi:10.48550/@code{arXiv.1406.2661>}.")
     (license license:gpl2+)))
 
 (define-public r-gandatamodel

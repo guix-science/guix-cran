@@ -21043,13 +21043,13 @@ Liebscher (2019, submitted).")
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depCensoring" version))
        (sha256
-        (base32 "0xf6v3xc2lpdkjn3hznwyg7dbn8xycbpn010yh20g2gmmpfc0ahg"))))
+        (base32 "0y1qc0kibhj8pl7k41ywyvj49k28avdw55fgwa10gf9ap11bidav"))))
     (properties `((upstream-name . "depCensoring")))
     (build-system r-build-system)
     (arguments
@@ -21066,8 +21066,10 @@ Liebscher (2019, submitted).")
                              r-nleqslv
                              r-mvtnorm
                              r-matrixcalc
+                             r-matrix
                              r-mass
                              r-foreach
+                             r-envstats
                              r-doparallel
                              r-copula))
     (home-page "https://cran.r-project.org/package=depCensoring")
@@ -21083,7 +21085,7 @@ Keilegom (2021) <doi:10.1093/biomet/asaa095>, Czado and Van Keilegom (2023)
 <doi:10.1093/biomet/asac067>, Crommen et al. (2024)
 <doi:10.1007/s11749-023-00903-9>, Deresa and Van Keilegom (2024)
 <doi:10.1080/01621459.2022.2161387> and Willems et al. (2024+)
-<doi:10.48550/@code{arXiv.2403.11860>}.")
+<doi:10.48550/@code{arXiv.2403.11860>} and Ding and Van Keilegom (2024).")
     (license license:gpl3)))
 
 (define-public r-depcens

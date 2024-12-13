@@ -7201,6 +7201,40 @@ algorithm is specially tailored for climate data with missing measurements from
 several monitors along a given region.")
     (license license:gpl2+)))
 
+(define-public r-mtscr
+  (package
+    (name "r-mtscr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mtscr" version))
+       (sha256
+        (base32 "132dp97sx6177j8apla2qlw8gfw75dmg2vrbv3h99sd99jnhb8yz"))))
+    (properties `((upstream-name . "mtscr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lifecycle
+                             r-glue
+                             r-glmmtmb
+                             r-dplyr
+                             r-cli
+                             r-broom-mixed))
+    (home-page "https://github.com/jakub-jedrusiak/mtscr")
+    (synopsis "Multidimensional Top Scoring for Creativity Research")
+    (description
+     "Implementation of Multidimensional Top Scoring method for creativity assessment
+proposed in Boris Forthmann, Maciej Karwowski, Roger E. Beaty (2023)
+<doi:10.1037/aca0000571>.")
+    (license license:expat)))
+
 (define-public r-mts
   (package
     (name "r-mts")
@@ -13462,6 +13496,37 @@ is selected with an information criterion.  This package expands on the previous
 regions package (Jones et al., Science 2018) with improved computation and more
 fitting and plotting options.")
     (license license:gpl2+)))
+
+(define-public r-morphomenses
+  (package
+    (name "r-morphomenses")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moRphomenses" version))
+       (sha256
+        (base32 "058bm66w688y5awxvvph9wqm4haf4fd158crx2alh18vqwfbh387"))))
+    (properties `((upstream-name . "moRphomenses")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "<https://github.com/ClancyLabUIUC/moRphomenses>")
+    (synopsis
+     "Geometric Morphometric Tools to Align, Scale, and Compare \"Shape\" of Menstrual Cycle Hormones")
+    (description
+     "Mitteroecker & Gunz (2009) <doi:10.1007/s11692-009-9055-x> describe how
+geometric morphometric methods allow researchers to quantify the size and shape
+of physical biological structures.  We provide tools to extend geometric
+morphometric principles to the study of non-physical structures, hormone
+profiles, as outlined in Ehrlich et al (2021) <doi:10.1002/ajpa.24514>.  Easily
+transform daily measures into multivariate landmark-based data.  Includes custom
+functions to apply multivariate methods for data exploration as well as
+hypothesis testing.  Also includes shiny web app to streamline data exploration.
+ Developed to study menstrual cycle hormones but functions have been generalized
+and should be applicable to any biomarker over any time period.")
+    (license license:gpl3+)))
 
 (define-public r-morphomap
   (package
@@ -26477,36 +26542,6 @@ minimax approximation.")
 family, but computationally a lot more tractible.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-minimapr
-  (package
-    (name "r-minimapr")
-    (version "0.0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "minimapR" version))
-       (sha256
-        (base32 "1cf0mp0mc3zalsi4fa2khz139hky0vjzj0cfay70prh5cll7dm3b"))))
-    (properties `((upstream-name . "minimapR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsamtools r-pafr r-git2r))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jake-bioinfo/minimapR")
-    (synopsis "Wrapper for 'minimap2'")
-    (description
-     "Wrapper for Minimap2'.  Minimap2 is a very valuable long read aligner for the
-Pacbio and Oxford Nanopore Technologies sequencing platforms. @code{minimapR} is
-an R wrapper for minimap2 which was developed by Heng Li <me@@liheng.org>.
-*SPECIAL NOTES 1.  Examples can only be run from @code{GitHub} installation.  2.
- If using a Windows operating system, installation of the MSYS2 Linux emulator
-is required.  3.  If using a Mac operating system, installation of Homebrew is
-required.  Li, Heng (2018) <doi:10.1093/bioinformatics/bty191> \"Minimap2:
-pairwise alignment for nucleotide sequences\".")
-    (license license:expat)))
-
 (define-public r-minimap
   (package
     (name "r-minimap")
@@ -39008,6 +39043,31 @@ generates track identifiers that are unique over the clusters.  See the project
 page for more information and examples.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-mdfs
+  (package
+    (name "r-mdfs")
+    (version "1.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MDFS" version))
+       (sha256
+        (base32 "1wryjmyk4baxxhdfwjczpkv1c12dalx0bmmrry4c9xa03yz483rl"))))
+    (properties `((upstream-name . "MDFS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://www.mdfs.it/")
+    (synopsis "MultiDimensional Feature Selection")
+    (description
+     "This package provides functions for @code{MultiDimensional} Feature Selection
+(MDFS): calculating multidimensional information gains, scoring variables,
+finding important variables, plotting selection results.  This package includes
+an optional CUDA implementation that speeds up information gain calculation
+using NVIDIA GPGPUs.  R. Piliszek et al. (2019) <doi:10.32614/RJ-2019-019>.")
+    (license license:gpl3)))
 
 (define-public r-mdendro
   (package

@@ -2140,13 +2140,13 @@ Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
 (define-public r-publicworksfinanceit
   (package
     (name "r-publicworksfinanceit")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PublicWorksFinanceIT" version))
        (sha256
-        (base32 "1b4shyr3snh5ghx7q7h4dfv0vhrl89qjlcnihvjz0axg1b7zqmxn"))))
+        (base32 "0pvkxf0425np1ld6z7s3sfphiykf2gm1a4410l0hj07f860pmrsh"))))
     (properties `((upstream-name . "PublicWorksFinanceIT")))
     (build-system r-build-system)
     (arguments
@@ -4448,30 +4448,6 @@ method.  For details on this method see: Sulewski (2019)
 <doi:10.1080/03610918.2019.1664580>.")
     (license license:gpl3)))
 
-(define-public r-psgd
-  (package
-    (name "r-psgd")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PSGD" version))
-       (sha256
-        (base32 "00013hw99kwk6jlypyb38fly0smyyk6gzxvcfd33n2cbv14jx4gk"))))
-    (properties `((upstream-name . "PSGD")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=PSGD")
-    (synopsis "Projected Subset Gradient Descent")
-    (description
-     "This package provides functions to generate ensembles of generalized linear
-models using a greedy projected subset gradient descent algorithm.  The sparsity
-and diversity tuning parameters are selected by cross-validation.")
-    (license license:gpl2+)))
-
 (define-public r-psfmi
   (package
     (name "r-psfmi")
@@ -4857,19 +4833,24 @@ the Healthy Hearts formula.")
 (define-public r-psc
   (package
     (name "r-psc")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psc" version))
        (sha256
-        (base32 "0v0v57pixxpmgwgm9m8wvxl2q3abyqa59nxlz7m7zv5vw05n2lr4"))))
+        (base32 "1pb1jbdkh4vpvggvhmc7slvxy0fbfz4mm1il0rh0qbk85xakg0d3"))))
     (properties `((upstream-name . "psc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-mvtnorm r-flexsurv r-enrichwith))
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-mvtnorm
+                             r-ggplot2
+                             r-flexsurv
+                             r-enrichwith))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/richjjackson/psc/")
     (synopsis "Personalised Synthetic Controls")
@@ -13217,6 +13198,48 @@ functions.  The user's guide pps-ug.pdf is included in the .../pps/doc
 directory.  The methods are described in standard survey sampling theory books
 such as Cochran's \"Sampling Techniques\"; see the user's guide for references.")
     (license license:gpl2+)))
+
+(define-public r-pprof
+  (package
+    (name "r-pprof")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pprof" version))
+       (sha256
+        (base32 "1i5vf2815gli269jj5y2b181mjv1spr7q5ybnk876nvry4g807lr"))))
+    (properties `((upstream-name . "pprof")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-scales
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-proc
+                             r-poibin
+                             r-olsrr
+                             r-matrix
+                             r-magrittr
+                             r-lme4
+                             r-ggplot2
+                             r-dplyr
+                             r-caret))
+    (home-page "https://github.com/UM-KevinHe/pprof")
+    (synopsis "Modeling, Standardization and Testing for Provider Profiling")
+    (description
+     "This package implements linear and generalized linear models for provider
+profiling, incorporating both fixed and random effects.  For large-scale
+providers, the linear profiled-based method and the @code{SerBIN} method for
+binary data reduce the computational burden.  Provides post-modeling features,
+such as indirect and direct standardization measures, hypothesis testing,
+confidence intervals, and post-estimation visualization.  For more information,
+see Wu et al. (2022) <doi:10.1002/sim.9387>.")
+    (license license:expat)))
 
 (define-public r-pprl
   (package
@@ -26327,13 +26350,13 @@ The parametric bootstrap and Kenward-Roger-type adjustment by Noma et al. (2022)
 (define-public r-pingr
   (package
     (name "r-pingr")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pingr" version))
        (sha256
-        (base32 "0wq7xaawbks12a1089920p4s9xgrywcicy3096gh1zg3wcmkr92l"))))
+        (base32 "152zffi2bg5yyjbk7h83fdn1n6ab24m14d69qb2xhs4bydjad2r1"))))
     (properties `((upstream-name . "pingr")))
     (build-system r-build-system)
     (arguments
@@ -28626,13 +28649,13 @@ module for calculating the Phoenix pediatric sepsis score and criteria\" by
 (define-public r-phoenics
   (package
     (name "r-phoenics")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phoenics" version))
        (sha256
-        (base32 "1a7dws11pf2bpgkvchddr14v6zvbn16xwqrdmmz9plw9lindc00j"))))
+        (base32 "178bw6fbgdsbm2b6l1dikyj5vfvp5h3gd26zrqnz50zp83v366k9"))))
     (properties `((upstream-name . "phoenics")))
     (build-system r-build-system)
     (arguments
@@ -29518,13 +29541,13 @@ quantile estimates, mean estimates, or any statistical function of interest.")
 (define-public r-pheindicatormethods
   (package
     (name "r-pheindicatormethods")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHEindicatormethods" version))
        (sha256
-        (base32 "0gjlq8vnfgc5hlscy64ypx08vafwvc2xbk971nznby4v2fkkm1h3"))))
+        (base32 "1kn6awnyqh9wiv3z4kk5k3iq1mw8dbjgdhs5hirgqa9cl1gawslj"))))
     (properties `((upstream-name . "PHEindicatormethods")))
     (build-system r-build-system)
     (arguments
@@ -29535,6 +29558,7 @@ quantile estimates, mean estimates, or any statistical function of interest.")
                              r-tibble
                              r-rlang
                              r-purrr
+                             r-lifecycle
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
@@ -29544,7 +29568,7 @@ quantile estimates, mean estimates, or any statistical function of interest.")
      "This package provides functions to calculate commonly used public health
 statistics and their confidence intervals using methods approved for use in the
 production of Public Health England indicators such as those presented via
-Fingertips (<http://fingertips.phe.org.uk/>).  It provides functions for the
+Fingertips (<https://fingertips.phe.org.uk/>).  It provides functions for the
 generation of proportions, crude rates, means, directly standardised rates,
 indirectly standardised rates, standardised mortality ratios, slope and relative
 index of inequality and life expectancy.  Statistical methods are referenced in
@@ -29555,7 +29579,9 @@ the following publications.  Breslow NE, Day NE (1987)
 978-0-727-91375-3).  Chiang CL. (1968, ISBN: 978-0-882-75200-6).  Newell C.
 (1994, ISBN: 978-0-898-62451-9).  Eayres DP, Williams ES (2004)
 <doi:10.1136/jech.2003.009654>.  Silcocks PBS et al (2001)
-<doi:10.1136/jech.55.1.38>.  Low and Low (2004) <doi:10.1093/pubmed/fdh175>.")
+<doi:10.1136/jech.55.1.38>.  Low and Low (2004) <doi:10.1093/pubmed/fdh175>.
+Fingertips Public Health Technical Guide:
+<https://fingertips.phe.org.uk/static-reports/public-health-technical-guidance/>.")
     (license license:gpl3)))
 
 (define-public r-phecodemap
@@ -38231,13 +38257,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0sc6f5mdnhiifq28vr8r4agd817nx6g2x29n2hbnl2c2m1hq4m8k"))))
+        (base32 "1k3m2x3hnnmhjv6b37kp055zq1d2yaxf125wmjr7wlmdjdp9nf1l"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments

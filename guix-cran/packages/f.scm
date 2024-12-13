@@ -6609,13 +6609,13 @@ estimated variance.")
 (define-public r-fpdclustering
   (package
     (name "r-fpdclustering")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FPDclustering" version))
        (sha256
-        (base32 "04m75z320x9bxa3qi3yi60pl6b8fb1lxvx83q81iv42qw4998kd0"))))
+        (base32 "1ybicjbi7zrpk27abkcidch4ifb3ns0qh12hnhgvgvk89bks1iry"))))
     (properties `((upstream-name . "FPDclustering")))
     (build-system r-build-system)
     (arguments
@@ -6634,16 +6634,17 @@ estimated variance.")
     (home-page "https://cran.r-project.org/package=FPDclustering")
     (synopsis "PD-Clustering and Related Methods")
     (description
-     "Probabilistic distance clustering (PD-clustering) is an iterative, distribution
-free, probabilistic clustering method.  PD-clustering assigns units to a cluster
-according to their probability of membership, under the constraint that the
-product of the probability and the distance of each point to any cluster centre
-is a constant.  PD-clustering is a flexible method that can be used with
-non-spherical clusters, outliers, or noisy data.  PDQ is an extension of the
-algorithm for clusters of different size.  GPDC and TPDC uses a dissimilarity
-measure based on densities.  Factor PD-clustering (FPDC) is a factor clustering
-method that involves a linear transformation of variables and a cluster
-optimizing the PD-clustering criterion.  It works on high dimensional data sets.")
+     "Probabilistic distance clustering (PD-clustering) is an iterative,
+distribution-free, probabilistic clustering method.  PD-clustering assigns units
+to a cluster according to their probability of membership under the constraint
+that the product of the probability and the distance of each point to any
+cluster center is a constant.  PD-clustering is a flexible method that can be
+used with elliptical clusters, outliers, or noisy data.  PDQ is an extension of
+the algorithm for clusters of different sizes.  GPDC and TPDC use a
+dissimilarity measure based on densities.  Factor PD-clustering (FPDC) is a
+factor clustering method that involves a linear transformation of variables and
+a cluster optimizing the PD-clustering criterion.  It works on high-dimensional
+data sets.")
     (license license:gpl2+)))
 
 (define-public r-fpcompare

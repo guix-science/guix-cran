@@ -12803,32 +12803,6 @@ details of the stepwise algorithm can be found in Romano and Wolf (2007)
 <DOI:10.1093/jjfinec/nbu014>.")
     (license license:gpl2+)))
 
-(define-public r-stepsplitreg
-  (package
-    (name "r-stepsplitreg")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stepSplitReg" version))
-       (sha256
-        (base32 "04ks599bb3rbyc81kyakj6nmj7i8fvkb1pild0gd3i6j84j70071"))))
-    (properties `((upstream-name . "stepSplitReg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-splitglm r-rcpparmadillo r-rcpp r-nnls))
-    (home-page "https://cran.r-project.org/package=stepSplitReg")
-    (synopsis "Stepwise Split Regularized Regression")
-    (description
-     "This package provides functions to perform stepwise split regularized
-regression.  The approach first uses a stepwise algorithm to split the variables
-into the models with a goodness of fit criterion, and then regularization is
-applied to each model.  The weights of the models in the ensemble are determined
-based on a criterion selected by the user.")
-    (license license:gpl2+)))
-
 (define-public r-stepsignalmargilike
   (package
     (name "r-stepsignalmargilike")
@@ -19197,43 +19171,6 @@ Swartz, 2001, <doi:10.2307/3316080>; Nestler, 2018,
 <doi:10.3102/1076998617741106>) and least squares estimation is supported (Bond
 & Malloy, 2018, <doi:10.1016/B978-0-12-811967-9.00014-X>).")
     (license license:gpl2+)))
-
-(define-public r-srlts
-  (package
-    (name "r-srlts")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "srlTS" version))
-       (sha256
-        (base32 "1alqywbp36adgnak1s78mcwfg0gcg90a9412nypylsk6bfa7wgsv"))))
-    (properties `((upstream-name . "srlTS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick r-rlang r-rcpproll r-ncvreg r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://petersonr.github.io/srlTS/")
-    (synopsis "Sparsity-Ranked Lasso for Time Series")
-    (description
-     "An implementation of sparsity-ranked lasso for time series data.  This
-methodology is especially useful for large time series with exogenous features
-and/or complex seasonality.  Originally described in Peterson and Cavanaugh
-(2022) <doi:10.1007/s10182-021-00431-7> in the context of variable selection
-with interactions and/or polynomials, ranked sparsity is a philosophy with
-methods useful for variable selection in the presence of prior informational
-asymmetry.  This situation exists for time series data with complex seasonality,
-as shown in Peterson and Cavanaugh (2023+)
-<doi:10.48550/@code{arXiv.2211.01492>}, which also describes this package in
-greater detail.  The Sparsity-Ranked Lasso (SRL) for Time Series implemented in
-@code{srlTS} can fit large/complex/high-frequency time series quickly, even with
-a high-dimensional exogenous feature set.  The SRL is considerably faster than
-its competitors, while often producing more accurate predictions.  Also included
-is a long hourly series of arrivals into the University of Iowa Emergency
-Department with concurrent local temperature.")
-    (license license:gpl3+)))
 
 (define-public r-srlars
   (package
@@ -37766,13 +37703,13 @@ a model checking plot to help assess the adequacy of the fitted model.")
 (define-public r-slca
   (package
     (name "r-slca")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slca" version))
        (sha256
-        (base32 "1cv3ylj1jcx22jaabmya84z4v3anz11kdgg1qdlfng0shrda4kzf"))))
+        (base32 "09pawakcljv7bl7jhbllbsvaapaqkfkdnhz774n8xlx9lg2mrk6c"))))
     (properties `((upstream-name . "slca")))
     (build-system r-build-system)
     (arguments

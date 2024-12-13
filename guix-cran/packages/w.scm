@@ -5693,13 +5693,13 @@ Supporting Packages\" for instructions on how to install any package
 (define-public r-weightedtreemaps
   (package
     (name "r-weightedtreemaps")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightedTreemaps" version))
        (sha256
-        (base32 "05vw0a2y4279f04q3y8vjk3rf2mcj9asq8k2nnv0ar2k65m5hb41"))))
+        (base32 "0kwp25iv7m1yi0r71m65g4p0kc1lr0hf90czgzhpv7w0l01aq8nx"))))
     (properties `((upstream-name . "WeightedTreemaps")))
     (build-system r-build-system)
     (arguments

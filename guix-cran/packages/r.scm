@@ -15217,13 +15217,13 @@ allows R to connect to any DBMS that has a ODBC driver.")
 (define-public r-rodbc
   (package
     (name "r-rodbc")
-    (version "1.3-25.1")
+    (version "1.3-26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RODBC" version))
        (sha256
-        (base32 "1lgj9y5zlk2qw16xph7468c51sq0xz0i36s4h0mzh5pkhkgh7dyp"))))
+        (base32 "0qawr81jzii33n39397c7m2m1z50qg4m0xfwvswfvfiv0grh1rps"))))
     (properties `((upstream-name . "RODBC")))
     (build-system r-build-system)
     (arguments
@@ -17516,13 +17516,13 @@ found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.")
 (define-public r-robma
   (package
     (name "r-robma")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RoBMA" version))
        (sha256
-        (base32 "0cq1hjm49sj4lnzvninf6wlpm0p0rbw3mk6sa36167b6snr6rra2"))))
+        (base32 "17agkqwxw81v1dski13x02ngp73pm2rwf47cg3cxqqcpzac77cnd"))))
     (properties `((upstream-name . "RoBMA")))
     (build-system r-build-system)
     (arguments
@@ -17535,6 +17535,7 @@ found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.")
                              r-rdpack
                              r-mvtnorm
                              r-ggplot2
+                             r-coda
                              r-bayestools))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://fbartos.github.io/RoBMA/")
@@ -23789,13 +23790,13 @@ and trading day adjustment models made with RJDemetra'.")
 (define-public r-rjdemetra
   (package
     (name "r-rjdemetra")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJDemetra" version))
        (sha256
-        (base32 "0q1jxcg95r1av0glqapvn9np3gv8gvpwrh4pm70kb2d03yhycv7p"))))
+        (base32 "0z7qyvpn48a51mlj43yiznf38z78yby8g5l6abll8mjwg45nwbvl"))))
     (properties `((upstream-name . "RJDemetra")))
     (build-system r-build-system)
     (arguments
@@ -33026,13 +33027,13 @@ aware of.) The PROJ library is available at <https://proj.org/>.")
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "2.1.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducible" version))
        (sha256
-        (base32 "0axrhjzd8wv17f2djx6yg8f4kiwrcs267jwj4h4a10jykqrl9p4v"))))
+        (base32 "1b9q0dbsl1vazm3hxjqvkacq3bd9zkln9mnz58x8cz1njz3f2cf0"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
     (arguments
@@ -33043,7 +33044,8 @@ aware of.) The PROJ library is available at <https://proj.org/>.")
                              r-fpcompare
                              r-filelock
                              r-digest
-                             r-data-table))
+                             r-data-table
+                             r-cli))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://reproducible.predictiveecology.org")
     (synopsis "Enhance Reproducibility of R Code")
@@ -33052,13 +33054,13 @@ aware of.) The PROJ library is available at <https://proj.org/>.")
 tools for making reproducible and reusable content in R. The two workhorse
 functions are @code{Cache()} and @code{prepInputs()}. @code{Cache()} allows for
 nested caching, is robust to environments and objects with environments (like
-functions), and has deals with some classes of file-backed R objects e.g., from
+functions), and deals with some classes of file-backed R objects e.g., from
 terra and raster packages.  Both functions have been developed to be
 foundational components of data retrieval and processing in continuous workflow
 situations.  In both functions, efforts are made to make the first and
 subsequent calls of functions have the same result, but faster at subsequent
 times by way of checksums and digesting.  Several features are still under
-development, including cloud storage of cached objects, allowing for sharing
+development, including cloud storage of cached objects allowing for sharing
 between users.  Several advanced options are available, see
 @code{?reproducibleOptions()}.")
     (license license:gpl3)))
@@ -44645,13 +44647,13 @@ Moreover, it has a function that performs spatial prediction in new locations.")
 (define-public r-rcppcctz
   (package
     (name "r-rcppcctz")
-    (version "0.2.12")
+    (version "0.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCCTZ" version))
        (sha256
-        (base32 "1jr4hi3zbm935q6ykkvnywlma36d3jl7fxmqhxs62jxbnyyqf81a"))))
+        (base32 "1wmbyaj08fbl4g47aq0mfkkvqwpah3d2j94fzc813dijxlsi847l"))))
     (properties `((upstream-name . "RcppCCTZ")))
     (build-system r-build-system)
     (arguments

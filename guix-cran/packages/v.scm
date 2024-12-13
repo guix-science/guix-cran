@@ -16,6 +16,8 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages python)
+  #:use-module (gnu packages image-processing)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
@@ -5397,13 +5399,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "1g9qi5yyqy30q0s4klsjv6fb6fn7b0yfi6gj834s91m7bzi8a3g6"))))
+        (base32 "0qvxqy70c1nidrc9nymm6c9kvrnj8hcjnnnmyhva2yf5zanpqhvk"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments
@@ -5413,6 +5415,7 @@ Factorization algorithms - Random generators of diferent types of integers.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
+    (inputs (list vtk python))
     (propagated-inputs (list r-stringr
                              r-reticulate
                              r-rappdirs

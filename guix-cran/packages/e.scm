@@ -1047,13 +1047,13 @@ users to customize all aspects of the analysis.")
 (define-public r-extremaldep
   (package
     (name "r-extremaldep")
-    (version "0.0.4-2")
+    (version "0.0.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtremalDep" version))
        (sha256
-        (base32 "0kq61mpdl3634kpp8bmdw9c7i6dpyjra1vbs4sq5s47xmpqin3y9"))))
+        (base32 "0mhm4w2rlws9z89x8q3lrj0wgq1qfksb355dr6y2mx7yfi7ls331"))))
     (properties `((upstream-name . "ExtremalDep")))
     (build-system r-build-system)
     (arguments
@@ -1069,7 +1069,8 @@ users to customize all aspects of the analysis.")
                              r-fda
                              r-evd
                              r-doparallel
-                             r-copula))
+                             r-copula
+                             r-cluster))
     (home-page "https://faculty.unibocconi.it/simonepadoan/")
     (synopsis "Extremal Dependence Models")
     (description
@@ -8973,34 +8974,6 @@ and Morris (2008) <doi:10.18637/jss.v024.i03> and Krivitsky, Hunter, Morris, and
 Klumb (2023) <doi:10.18637/jss.v105.i06>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
-(define-public r-erfe
-  (package
-    (name "r-erfe")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "erfe" version))
-       (sha256
-        (base32 "1v6xca2zwdg494mdb97dwg2xlqsr51919plylnl04d8dgg5adhz9"))))
-    (properties `((upstream-name . "erfe")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-matrix))
-    (home-page "https://arxiv.org/abs/2108.04737")
-    (synopsis "Fits Expectile Regression for Panel Fixed Effect Model")
-    (description
-     "Fits the Expectile Regression for Fixed Effect (ERFE) estimator.  The ERFE model
-extends the within-transformation strategy to solve the incidental parameter
-problem within the expectile regression framework.  The ERFE model estimates the
-regressor effects on the expectiles of the response distribution.  The ERFE
-estimate corresponds to the classical fixed-effect within-estimator when the
-asymmetric point is 0.5.  The paper by Barry, Oualkacha, and Charpentier (2021,
-<@code{arXiv:2108.04737>}) gives more details about the ERFE model.")
-    (license license:gpl3)))
-
 (define-public r-erer
   (package
     (name "r-erer")
@@ -14092,13 +14065,13 @@ the models are discussed in Peng (2023) <doi:10.1287/isre.2022.1113>.")
 (define-public r-enderecobr
   (package
     (name "r-enderecobr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enderecobr" version))
        (sha256
-        (base32 "1svh49l60hnng9d10xkkhbqc7gr8h0dgxwpg0bq2b4lygx1c1d8l"))))
+        (base32 "0pc1y9g9bji4jc7g3g8pg2bl8p1k4pzwjgwksmqv0rvawiq6qs76"))))
     (properties `((upstream-name . "enderecobr")))
     (build-system r-build-system)
     (arguments

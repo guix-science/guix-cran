@@ -3805,13 +3805,13 @@ stratified sample of 80 talkers of Dutch.")
 (define-public r-hqm
   (package
     (name "r-hqm")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HQM" version))
        (sha256
-        (base32 "0zf0640pkpjmg1svp205l97c2qbfjpdnhhrrhc7l7dd2r8xh3xqr"))))
+        (base32 "0wxmhbpi5j3pixq8zqr0h3icnwajng52x45zv82ckfg5lvf76fb7"))))
     (properties `((upstream-name . "HQM")))
     (build-system r-build-system)
     (arguments
@@ -9008,13 +9008,13 @@ lost nor inappropriately cut.")
 (define-public r-hexfont
   (package
     (name "r-hexfont")
-    (version "0.4.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexfont" version))
        (sha256
-        (base32 "0pi64rzrzjrfpbjpgvj8fpf81550jfsy5sjsvgc4a0gv9b1dswr6"))))
+        (base32 "0pxn1b5w8nzj23m4js8b93cbs6sx06jb1mqicwldd91a58xpz8jx"))))
     (properties `((upstream-name . "hexfont")))
     (build-system r-build-system)
     (arguments
@@ -9029,7 +9029,7 @@ lost nor inappropriately cut.")
 <https://unifoundry.com/unifont/> compressed by xz'.  GNU Unifont is a duospaced
 bitmap font that attempts to cover all the official Unicode glyphs plus several
 of the artificial scripts in the (Under-)@code{ConScript} Unicode Registry
-<http://www.kreativekorp.com/ucsur/>.  Provides a convenience function for
+<https://www.kreativekorp.com/ucsur/>.  Provides a convenience function for
 loading in several of them at the same time as a bittermelon bitmap font object
 for easy rendering of the glyphs in an R terminal or graphics device.")
     (license license:gpl2+)))
@@ -15219,13 +15219,13 @@ and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
 (define-public r-h3r
   (package
     (name "r-h3r")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h3r" version))
        (sha256
-        (base32 "0i4k66092aqj32snh94pifhml95md2f03y698zvzscl8bgxwlra7"))))
+        (base32 "09z588pnpmz3isxdnkfwjm0645546fvldfnm6zcbfn2blp80xld2"))))
     (properties `((upstream-name . "h3r")))
     (build-system r-build-system)
     (arguments
