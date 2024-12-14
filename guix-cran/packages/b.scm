@@ -4466,6 +4466,43 @@ sets.  Multi-threading is available through @code{OpenMP}
 <https://gcc.gnu.org/wiki/openmp>.")
     (license license:gpl2+)))
 
+(define-public r-bridgr
+  (package
+    (name "r-bridgr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bridgr" version))
+       (sha256
+        (base32 "1z5wcz1c44p8j8ynfq2im2j3f2r1fgf3v4cn0180r0q2xx9xp0hj"))))
+    (properties `((upstream-name . "bridgr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsbox
+                             r-rlang
+                             r-magrittr
+                             r-lubridate
+                             r-generics
+                             r-forecast
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/marcburri/bridgr")
+    (synopsis "Bridging Data Frequencies for Timely Economic Forecasts")
+    (description
+     "This package implements bridge models for nowcasting and forecasting
+macroeconomic variables by linking high-frequency indicator variables (e.g.,
+monthly data) to low-frequency target variables (e.g., quarterly GDP).
+Simplifies forecasting and aggregating indicator variables to match the target
+frequency, enabling timely predictions ahead of official data releases.  For
+more on bridge models, see Baffigi, A., Golinelli, R., & Parigi, G. (2004)
+<doi:10.1016/S0169-2070(03)00067-0>, Burri (2023)
+<https://www5.unine.ch/@code{RePEc/ftp/irn/pdfs/WP23-02.pdf>} or Schumacher
+(2016) <doi:10.1016/j.ijforecast.2015.07.004>.")
+    (license license:expat)))
+
 (define-public r-bridger2
   (package
     (name "r-bridger2")
@@ -18297,13 +18334,13 @@ the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
 (define-public r-bggm
   (package
     (name "r-bggm")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGGM" version))
        (sha256
-        (base32 "15yqbifnxlpwk25ki1yxfylkyb061375cxwq7dbid2381lvnslih"))))
+        (base32 "0gib33wzkqkdx496lmiqdr34y0jym16vmxpy08nf6i4fp9jkq0cr"))))
     (properties `((upstream-name . "BGGM")))
     (build-system r-build-system)
     (arguments
@@ -18324,7 +18361,7 @@ the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
                              r-ggally
                              r-bfpack))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BGGM")
+    (home-page "https://donaldrwilliams.github.io/BGGM/")
     (synopsis "Bayesian Gaussian Graphical Models")
     (description
      "Fit Bayesian Gaussian graphical models.  The methods are separated into two

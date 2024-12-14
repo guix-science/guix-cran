@@ -3029,24 +3029,30 @@ Ramirez-Ramirez, L.L. (2017) <DOI:10.1080/03610926.2015.1133826>.")
 (define-public r-tssim
   (package
     (name "r-tssim")
-    (version "0.1.7")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tssim" version))
        (sha256
-        (base32 "154snb0npy8zbkspp475nv9rvv1ls6rbgxz3jr152j79vsiis3ng"))))
+        (base32 "1n05b1m5058gsxq0d7x4xlrkapjdkg7wj942p5di5fqvm61j47c2"))))
     (properties `((upstream-name . "tssim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts r-tsbox r-timedate r-dsa))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tsbox
+                             r-timedate
+                             r-mvtnorm
+                             r-forecast
+                             r-dsa))
     (home-page "https://cran.r-project.org/package=tssim")
     (synopsis "Simulation of Daily and Monthly Time Series")
     (description
      "Flexible simulation of time series using time series components, including
-seasonal, calendar and outlier effects.  Algorithm described in Ollech, D.
+seasonal, calendar and outlier effects.  Main algorithm described in Ollech, D.
 (2021) <doi:10.1515/jtse-2020-0028>.")
     (license license:gpl3)))
 
@@ -23090,13 +23096,13 @@ discriminant analyses.")
 (define-public r-texor
   (package
     (name "r-texor")
-    (version "1.5.0")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texor" version))
        (sha256
-        (base32 "15r8a7m46cv6s80rjhmafiff4zs34n4m5nkcdgg9s1zhrwd3pc0j"))))
+        (base32 "1d62c35faq3hjgdc750pvrinx33j7350b10w5mkwih3gxwfm55g3"))))
     (properties `((upstream-name . "texor")))
     (build-system r-build-system)
     (arguments

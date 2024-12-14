@@ -17081,6 +17081,65 @@ compute IDEA indicators, draw modern and aesthetic plots, and produce a wide
 range of reporting materials.")
     (license license:gpl3)))
 
+(define-public r-ideanet
+  (package
+    (name "r-ideanet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ideanet" version))
+       (sha256
+        (base32 "0p1gkz1qhplw3zh41951azlbspma7g0xfl2jaa5rm0a1f36bc2m9"))))
+    (properties `((upstream-name . "ideanet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sna
+                             r-shiny
+                             r-rspectra
+                             r-rlang
+                             r-readxl
+                             r-network
+                             r-moments
+                             r-matrix
+                             r-magrittr
+                             r-linkcomm
+                             r-jsonlite
+                             r-intergraph
+                             r-igraph
+                             r-gridgraphics
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-data-table
+                             r-cowplot
+                             r-concorr
+                             r-colorspace
+                             r-cluster
+                             r-cliquepercolation))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ideanet")
+    (synopsis
+     "Integrating Data Exchange and Analysis for Networks ('ideanet')")
+    (description
+     "This package provides a suite of convenient tools for social network analysis
+geared toward students, entry-level users, and non-expert practitioners.
+âideanetâ features unique functions for the processing and measurement of
+sociocentric and egocentric network data.  These functions automatically
+generate node- and system-level measures commonly used in the analysis of these
+types of networks.  Outputs from these functions maximize the ability of novice
+users to employ network measurements in further analyses while making all users
+less prone to common data analytic errors.  Additionally, âideanetâ features
+an R Shiny graphic user interface that allows novices to explore network data
+with minimal need for coding.")
+    (license license:gpl3+)))
+
 (define-public r-ideamdb
   (package
     (name "r-ideamdb")

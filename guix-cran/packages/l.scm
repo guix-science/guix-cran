@@ -6987,13 +6987,13 @@ mode, normality test, histogram and correlation.")
 (define-public r-loa
   (package
     (name "r-loa")
-    (version "0.2.49.4")
+    (version "0.3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loa" version))
        (sha256
-        (base32 "0j7m460nhgl0b8g7q7ysd6pzmc4zvqnv593wkwhsd9q2bf9b21fk"))))
+        (base32 "1akcdzy5sf1gw05chzmv2aqx6xx6v7abbd4vrn5py0cynn7am60r"))))
     (properties `((upstream-name . "loa")))
     (build-system r-build-system)
     (arguments
@@ -7008,12 +7008,12 @@ mode, normality test, histogram and correlation.")
                              r-mgcv
                              r-mass
                              r-lattice))
-    (home-page "http://loa.r-forge.r-project.org/loa.intro.html")
+    (home-page "https://loa.r-forge.r-project.org/")
     (synopsis "Lattice Options and Add-Ins")
     (description
      "Various plots and functions that make use of the lattice/trellis plotting
-framework.  The plots, which include @code{loaPlot()}, @code{RgoogleMapsPlot()}
-and @code{trianglePlot()}, use @code{panelPal()}, a function that extends
+framework.  The plots, which include @code{loaPlot()}, @code{loaMapPlot()} and
+@code{trianglePlot()}, and use @code{panelPal()}, a function that extends
 lattice and hexbin package methods to automate plot subscript and panel-to-panel
 and panel-to-key synchronization/management.")
     (license license:gpl2+)))
@@ -11956,13 +11956,13 @@ penalty.")
 (define-public r-libr
   (package
     (name "r-libr")
-    (version "1.3.7")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libr" version))
        (sha256
-        (base32 "0baak1x27rj36jr3sswwyia0mav274wiywblzd22173hbmbxwpln"))))
+        (base32 "0rx7g1nf3xgmqsikjxw1shp2hkb93cz146frmi4gg6h0kw83j5fn"))))
     (properties `((upstream-name . "libr")))
     (build-system r-build-system)
     (arguments
@@ -11973,7 +11973,6 @@ penalty.")
                              r-readr
                              r-rcpp
                              r-openxlsx
-                             r-nanoparquet
                              r-haven
                              r-dplyr
                              r-data-table
@@ -17935,13 +17934,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.9")
+    (version "5.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "01f84919xak8fc5y0zxispkg6m8577cwjffz03yb0ary3r766bpa"))))
+        (base32 "0cx40lxkrgdp5z6rx51b21nl3ki42apbjgyw240k73dw6r1gvayy"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (arguments
@@ -17967,9 +17966,9 @@ visualization tools.")
     (description
      "Auxiliary package for better/faster analytics, visualization, data mining, and
 machine learning tasks.  With a wide variety of family functions, like Machine
-Learning, Data Wrangling, MMM, Exploratory, API, and Scrapper, it helps the
-analyst or data scientist to get quick and robust results, without the need of
-repetitive coding or advanced R programming skills.")
+Learning, Data Wrangling, Marketing Mix Modeling (Robyn), Exploratory, API, and
+Scrapper, it helps the analyst or data scientist to get quick and robust
+results, without the need of repetitive coding or advanced R programming skills.")
     (license license:agpl3)))
 
 (define-public r-lar

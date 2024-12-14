@@ -9399,13 +9399,13 @@ and scientific computing.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "1kd66cfmxgbh45358iy031hxxqcx4y4yrbc04sqlpjyqif31ja25"))))
+        (base32 "1zw5v8k3wh6amm5djghlcsz5a9n6k3k2ixw9m8mcgy7zwmg82h3b"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (arguments
@@ -21973,13 +21973,13 @@ and be free of commas (for that call).")
 (define-public r-comma
   (package
     (name "r-comma")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COMMA" version))
        (sha256
-        (base32 "0bxb3bv2zr0n1fzxskwpjpbz04lf4561h7jdvwyif76wlxr7qwjr"))))
+        (base32 "125dazk7s8p2g67dvm4zyfsgqcqmrr4vbf30xvgdldsambly5nmy"))))
     (properties `((upstream-name . "COMMA")))
     (build-system r-build-system)
     (arguments
@@ -40176,6 +40176,37 @@ A. T. PeÃ±a, L. Liu, and R. A. Levine (2018)
 useful when deploying models and code.  Serialize these object prototypes to
 JSON so they can be used to check and coerce data in production systems, and
 deserialize JSON back to the correct object prototypes.")
+    (license license:expat)))
+
+(define-public r-cercospora
+  (package
+    (name "r-cercospora")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cercospoRa" version))
+       (sha256
+        (base32 "0bp76m2kj1hlr6ynq762vr1bvla16np5dlj64chmy38vx2026f8b"))))
+    (properties `((upstream-name . "cercospoRa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-minpack-lm
+                             r-lubridate
+                             r-data-table
+                             r-circular))
+    (native-inputs (list r-knitr))
+    (home-page "https://paul.melloy.com.au/cercospoRa/")
+    (synopsis
+     "Process Based Epidemiological Model for Cercospora Leaf Spot of Sugar Beet")
+    (description
+     "Estimates sugar beet canopy closure with remotely sensed leaf area index and
+estimates when action might be needed to protect the crop from a Leaf Spot
+epidemic with a negative prognosis model based on published models.")
     (license license:expat)))
 
 (define-public r-ceramic

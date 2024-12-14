@@ -4180,6 +4180,34 @@ Information Criterion for model selection.  See a vignette for a tutorial and
 more on our Github repository <https://github.com/tsuchiya-lab/dsdp/>.")
     (license license:expat)))
 
+(define-public r-dscoremsm
+  (package
+    (name "r-dscoremsm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dscoreMSM" version))
+       (sha256
+        (base32 "1rh9si0kyjn2bfsknplqz2mblsw4hkcf294fcgv515wawvniqjfi"))))
+    (properties `((upstream-name . "dscoreMSM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-timeroc r-survival r-rjags r-mstate r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dscoreMSM")
+    (synopsis
+     "Survival Proximity Score Matching in Multi-State Survival Model")
+    (description
+     "This package implements survival proximity score matching in multi-state
+survival models.  Includes tools for simulating survival data and estimating
+transition-specific coxph models with frailty terms.  The primary methodological
+work on multistate censored data modeling using propensity score matching has
+been published by Bhattacharjee et al.(2024) <doi:10.1038/s41598-024-54149-y>.")
+    (license license:gpl3)))
+
 (define-public r-dscore
   (package
     (name "r-dscore")
@@ -27107,6 +27135,36 @@ working with the beta-binomial distribution which has been proposed as a
 competitor to the db distribution.")
     (license license:gpl2+)))
 
+(define-public r-dbcvindex
+  (package
+    (name "r-dbcvindex")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DBCVindex" version))
+       (sha256
+        (base32 "1a0kwxb6vacw4b0s2mksx20x1kniyl2hd15vwgrrbidzhr0923iy"))))
+    (properties `((upstream-name . "DBCVindex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pacman r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/davidechicco/DBCVindex")
+    (synopsis
+     "Calculates the Density-Based Clustering Validation Index (DBCV) Index")
+    (description
+     "This package provides a metric called Density-Based Clustering Validation index
+(DBCV) index to evaluate clustering results, following the
+<https://github.com/@code{FelSiq/DBCV>} Python implementation by Felipe Alves
+Siqueira.  Original DBCV index article: Moulavi, D., Jaskowiak, P. A., Campello,
+R. J., Zimek, A., & Sander, J. (2014, April). \"Density-based clustering
+validation\", Proceedings of SDM 2014 -- the 2014 SIAM International Conference
+on Data Mining (pp.  839-847), <doi:10.1137/1.9781611973440.96>.")
+    (license license:gpl3)))
+
 (define-public r-dbcsp
   (package
     (name "r-dbcsp")
@@ -28140,6 +28198,31 @@ iteratively importing slices of existing dataframes, conducting analyses, and
 exporting to a results frame.  This is particularly useful for differential or
 time-series analyses, which are often not well suited to vector- based
 operations.")
+    (license license:cc0)))
+
+(define-public r-datastat
+  (package
+    (name "r-datastat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datastat" version))
+       (sha256
+        (base32 "0xaisb2493z2j7wrasdiy8ssxh426lnsw9p46icj7mli5x8jr5ad"))))
+    (properties `((upstream-name . "datastat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=datastat")
+    (synopsis "Dataset for Statistical Analysis")
+    (description
+     "Data are essential in statistical analysis.  This data package consists of four
+datasets for descriptive statistics, two datasets for statistical hypothesis
+testing, and two datasets for regression analysis.  All of the datasets are
+based on Rattanalertnusorn, A. (2024)
+<https://www.researchgate.net/publication/371944275_porkaermxarlaeakarprayuktchingan_R_and_its_applications>.")
     (license license:cc0)))
 
 (define-public r-datassim

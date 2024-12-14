@@ -10455,43 +10455,6 @@ parallel using @code{mclapply()} or @code{future_lapply()}
 <https://cran.r-project.org/package=future.apply>.")
     (license license:gpl2+)))
 
-(define-public r-mrg
-  (package
-    (name "r-mrg")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MRG" version))
-       (sha256
-        (base32 "1n72qcmc7fn4rbxhkdjj1nxkq82kq3rsflg64dry31misfss41qy"))))
-    (properties `((upstream-name . "MRG")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vardpoor
-                             r-tidyselect
-                             r-tidyr
-                             r-terra
-                             r-stars
-                             r-sjmisc
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-plyr
-                             r-magrittr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MRG")
-    (synopsis "Create Non-Confidential Multi-Resolution Grids")
-    (description
-     "Functionality for creating gridded data, respecting the confidentiality rules,
-such as a minimum number of units and dominance by one or more units in the grid
-cell.  The functions also include the possibility for contextual suppression of
-data.")
-    (license license:gpl3+)))
-
 (define-public r-mrfse
   (package
     (name "r-mrfse")
@@ -24036,13 +23999,13 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 (define-public r-mixedbiastest
   (package
     (name "r-mixedbiastest")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedbiastest" version))
        (sha256
-        (base32 "080gwmygpwgzncr3xn62waliwlw3xmrm4ha07vfnhpa6n4w1xsl4"))))
+        (base32 "0xy388hqj5gscx8q5wklx3n5gsaqsm56qi0dl9mq1agxy2jpjynm"))))
     (properties `((upstream-name . "mixedbiastest")))
     (build-system r-build-system)
     (arguments
@@ -26187,6 +26150,41 @@ distributions (which, in turn can be multidimensional).  The package also
 provides an application of the IPFP to simulate multivariate Bernoulli
 distributions.")
     (license license:gpl2)))
+
+(define-public r-mintyr
+  (package
+    (name "r-mintyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mintyr" version))
+       (sha256
+        (base32 "0va4r4497j09afac01camqah4vrjgl1w394zx6mikm07nxzsvx9v"))))
+    (properties `((upstream-name . "mintyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rstatix
+                             r-rsample
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-dplyr
+                             r-data-table
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://tony2015116.github.io/mintyr/")
+    (synopsis "Streamlined Data Processing Tools for Genomic Selection")
+    (description
+     "This package provides a toolkit for genomic selection in animal breeding with
+emphasis on multi-breed and multi-trait nested grouping operations.  Streamlines
+iterative analysis workflows when working with ASReml-R package.  Includes
+utility functions for phenotypic data processing commonly used by animal
+breeders.")
+    (license license:expat)))
 
 (define-public r-mintplates
   (package
@@ -32157,13 +32155,13 @@ utilize metricminer'.")
 (define-public r-metricgraph
   (package
     (name "r-metricgraph")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetricGraph" version))
        (sha256
-        (base32 "1pd10pxqvdvqh1jml6rpn2j5w6j0hw87wd9f272yfwd4q9d2c29r"))))
+        (base32 "03dx07ah0dpqlx4nwslh83n9j3s6ys3cmq9d2m13dbypv9l6r59x"))))
     (properties `((upstream-name . "MetricGraph")))
     (build-system r-build-system)
     (arguments
@@ -32176,6 +32174,7 @@ utilize metricminer'.")
                              r-rspde
                              r-rcppeigen
                              r-rcpp
+                             r-rann
                              r-r6
                              r-matrix
                              r-magrittr

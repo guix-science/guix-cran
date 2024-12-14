@@ -3060,13 +3060,13 @@ National Football League players.")
 (define-public r-gsheet
   (package
     (name "r-gsheet")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsheet" version))
        (sha256
-        (base32 "0b8q44cqkjfy6vnffm94czq4ag8xfbxik52026ahq95kcf9v2j91"))))
+        (base32 "19xcqaqxs6220zs1ajmi8j9i8pwxfk1dl3klz2w3051bdsh8byk1"))))
     (properties `((upstream-name . "gsheet")))
     (build-system r-build-system)
     (arguments
@@ -17367,6 +17367,43 @@ file.  For more details see Reza Rawassizadeh (2019)
      "Colour palettes inspired by Studio Ghibli
 <https://en.wikipedia.org/wiki/Studio_Ghibli> films, ported to R for your
 enjoyment.")
+    (license license:expat)))
+
+(define-public r-ghcnr
+  (package
+    (name "r-ghcnr")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GHCNr" version))
+       (sha256
+        (base32 "1ck53nn6xs0346kpxbgi57jppkwrpbqjj129ikynx1jdq6br8l7m"))))
+    (properties `((upstream-name . "GHCNr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-terra
+                             r-rlang
+                             r-readr
+                             r-httr2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GHCNr")
+    (synopsis "Download Weather Station Data from GHCN")
+    (description
+     "The goal of GHCNr is to provide a fast and friendly interface with the Global
+Historical Climatology Network daily (GHCNd) database, which contains daily
+summaries of weather station data worldwide
+(<https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily>).
+ GHCNd is accessed through the web API
+<https://www.ncei.noaa.gov/access/services/data/v1>.  GHCNr main functionalities
+consist of downloading data from GHCNd, filter it, and to aggregate it at
+monthly and annual scales.")
     (license license:expat)))
 
 (define-public r-ghcm

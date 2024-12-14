@@ -5222,13 +5222,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.5.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "139ym9gd6s0mk22sn60c37j9vymmq4vn7z8239alw2xfljvlj1vw"))))
+        (base32 "04w5bxgscrniv2cn1babk6z758wd15wm8jq1mpg2rmmsvy2gr0q6"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -21160,6 +21160,32 @@ spatial population can be utilized in Geographically Weighted Regression model
 based analysis for studying the spatially varying relationships among the
 variables.  Furthermore, various statistical analysis can be performed on this
 spatially generated data.")
+    (license license:gpl2+)))
+
+(define-public r-spphpr
+  (package
+    (name "r-spphpr")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spphpr" version))
+       (sha256
+        (base32 "085brpsqd5yyhjq3lgvlwb8qaynz7820vih2nfmprjv7qcy2z8p7"))))
+    (properties `((upstream-name . "spphpr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=spphpr")
+    (synopsis "Spring Phenological Prediction")
+    (description
+     "Predicts the occurrence times (in day of year) of spring phenological events.
+Three methods, including the accumulated degree days (ADD) method, the
+accumulated days transferred to a standardized temperature (ADTS) method, and
+the accumulated developmental progress (ADP) method, were used.  See Shi et al.
+(2017a) <doi:10.1016/j.agrformet.2017.04.001> and Shi et al. (2017b)
+<doi:10.1093/aesa/sax063> for details.")
     (license license:gpl2+)))
 
 (define-public r-sppcomb
@@ -39481,19 +39507,19 @@ their situation, retention and drop out.")
 (define-public r-sisireg
   (package
     (name "r-sisireg")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sisireg" version))
        (sha256
-        (base32 "1jw1nl8l7kh5fa3hh7zh418brck6zayhhqm50nqhbghlmjs7y67i"))))
+        (base32 "0xwi1c60xlcl1ykgacxdk35wanmc4rbp1wl97s91xhvcfmfpvj4k"))))
     (properties `((upstream-name . "sisireg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-reticulate r-raster))
+    (propagated-inputs (list r-zoo r-reticulate))
     (home-page "https://cran.r-project.org/package=sisireg")
     (synopsis "Sign-Simplicity-Regression-Solver")
     (description

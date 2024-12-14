@@ -513,13 +513,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.26")
+    (version "4.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "187aj0kl8kmz9s2zsrpkxpjd5qpwaf90s9ivy3hyv1gjl0ra8njs"))))
+        (base32 "1ph7iq0mz99d3czqxmv8biw06i88fdchrjcrvibsw3km6a4k6z54"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -535,13 +535,14 @@ interpolation, trend surface analysis, and prevalence-independent favourability
 obtained from probability of presence), as well as pair-wise fuzzy similarity
 (based on fuzzy logic versions of commonly used similarity indices) among those
 occurrence patterns.  Includes also functions for model consensus and comparison
-(overlap and fuzzy similarity, loss or gain), and for data preparation, such as
-obtaining unique abbreviations of species names, cleaning and gridding
-(thinning) point occurrence data onto raster maps, selecting absences under
-specified criteria, converting species lists (long format) to presence-absence
-tables (wide format), transposing part of a data frame, selecting relevant
-variables for models, assessing the false discovery rate, or analysing and
-dealing with multicollinearity.  Initially described in Barbosa (2015)
+(overlap and fuzzy similarity, fuzzy loss, fuzzy gain), and for data
+preparation, such as obtaining unique abbreviations of species names, defining
+the background region, cleaning and gridding (thinning) point occurrence data
+onto raster maps, selecting among (pseudo)absences to address survey bias,
+converting species lists (long format) to presence-absence tables (wide format),
+transposing part of a data frame, selecting relevant variables for models,
+assessing the false discovery rate, or analysing and dealing with
+multicollinearity.  Initially described in Barbosa (2015)
 <doi:10.1111/2041-210X.12372>.")
     (license license:gpl3)))
 

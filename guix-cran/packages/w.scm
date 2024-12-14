@@ -9240,6 +9240,46 @@ Georgia Institute of Technology.
 <https://www.warehouse-science.com/book/editions/wh-sci-0.98.1.pdf>.")
     (license license:gpl3)))
 
+(define-public r-warden
+  (package
+    (name "r-warden")
+    (version "0.99.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WARDEN" version))
+       (sha256
+        (base32 "1aw6pd7lbn35fl2fdjgwbhjk5y44vx13xzxs34binic0gy03nqxg"))))
+    (properties `((upstream-name . "WARDEN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-purrr
+                             r-progressr
+                             r-mass
+                             r-magrittr
+                             r-future
+                             r-foreach
+                             r-flexsurv
+                             r-dofuture
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://jsanchezalv.github.io/WARDEN/")
+    (synopsis
+     "Workflows for Health Technology Assessments in R using Discrete EveNts")
+    (description
+     "Toolkit to support and perform discrete event simulations without resource
+constraints in the context of health technology assessments (HTA).  The package
+focuses on cost-effectiveness modelling and aims to be submission-ready to
+relevant HTA bodies in alignment with NICE TSD 15
+<https://www.sheffield.ac.uk/nice-dsu/tsds/patient-level-simulation>.  More
+details an examples can be found in the package website
+<https://jsanchezalv.github.io/WARDEN/>.")
+    (license license:gpl3+)))
+
 (define-public r-warbler
   (package
     (name "r-warbler")

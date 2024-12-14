@@ -21852,19 +21852,19 @@ Evolution, <doi:10.1111/2041-210X.12907>.")
 (define-public r-economiccomplexity
   (package
     (name "r-economiccomplexity")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "economiccomplexity" version))
        (sha256
-        (base32 "1xx4fpf2rjizwhicb6sfrgl5xjfin9b9zi0q4kq47gjp8kzahkg3"))))
+        (base32 "1zddl25rp9fcmqp7h43xhn28j4l7h1jvg1p430az04m4dpwpnhk9"))))
     (properties `((upstream-name . "economiccomplexity")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-matrix r-igraph))
+    (propagated-inputs (list r-rdpack r-igraph r-cpp11armadillo r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://pacha.dev/economiccomplexity/")
     (synopsis "Computational Methods for Economic Complexity")
@@ -21874,7 +21874,7 @@ equations introduced in The Atlas of Economic Complexity and related literature.
  This package provides standard matrix and graph output that can be used
 seamlessly with other packages.  See <doi:10.21105/joss.01866> for a summary of
 these methods and its evolution in literature.")
-    (license license:gpl3)))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-econgeo
   (package

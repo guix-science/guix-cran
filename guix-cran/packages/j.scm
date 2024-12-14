@@ -1811,13 +1811,13 @@ city codes at a specific point in time.")
 (define-public r-joyn
   (package
     (name "r-joyn")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joyn" version))
        (sha256
-        (base32 "10ww6y3c9h3y2h8dpgq2asl1nyphkkl3xp3p3vj68nlnprkdanq9"))))
+        (base32 "1r1wydrgsh1zjlbgzrv9l6bcc1y5xp22a2ynsqipd55aw78gx3h5"))))
     (properties `((upstream-name . "joyn")))
     (build-system r-build-system)
     (arguments

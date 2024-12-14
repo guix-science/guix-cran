@@ -7973,13 +7973,13 @@ are implemented using lp_solve'.")
 (define-public r-prodigenr
   (package
     (name "r-prodigenr")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prodigenr" version))
        (sha256
-        (base32 "07r6xiqany2qzarfqphs90pcwx7zbki0z7mp329l7szfz01wxiqr"))))
+        (base32 "1ypnzgkalm7xz8zvhqyxxh4va7fbra48v39pqi1xwj3k5nx2qbds"))))
     (properties `((upstream-name . "prodigenr")))
     (build-system r-build-system)
     (arguments
@@ -7988,8 +7988,8 @@ are implemented using lp_solve'.")
     (propagated-inputs (list r-withr
                              r-whisker
                              r-rprojroot
-                             r-rmarkdown
                              r-rlang
+                             r-gert
                              r-fs
                              r-cli))
     (native-inputs (list r-knitr))
