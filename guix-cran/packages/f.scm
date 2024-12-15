@@ -5615,13 +5615,13 @@ Gaussian frailty models.")
 (define-public r-frailtypack
   (package
     (name "r-frailtypack")
-    (version "3.6.4")
+    (version "3.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frailtypack" version))
        (sha256
-        (base32 "0y7144kkcfyg7i5aljsbxdd9cg9wk6szj68bx49n2i4b92kpwycz"))))
+        (base32 "1v9sskldqkc9fc1j8f16fkygrvjh057vangryfk56l9ik2b5iq8y"))))
     (properties `((upstream-name . "frailtypack")))
     (build-system r-build-system)
     (arguments

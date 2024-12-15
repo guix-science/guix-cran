@@ -21098,34 +21098,6 @@ include detection of associated SNPs with MLMM, model selection by lowest
 selected model and graphical functions.")
     (license license:gpl3)))
 
-(define-public r-mlml2r
-  (package
-    (name "r-mlml2r")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MLML2R" version))
-       (sha256
-        (base32 "1jgk0h3chab831g5nsppgc6p0xplv11j82491iymnxixqfswb08w"))))
-    (properties `((upstream-name . "MLML2R")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/samarafk/MLML2R")
-    (synopsis
-     "Maximum Likelihood Estimation of DNA Methylation and Hydroxymethylation Proportions")
-    (description
-     "Maximum likelihood estimates (MLE) of the proportions of 5-@code{mC} and
-5-@code{hmC} in the DNA using information from BS-conversion, TAB-conversion,
-and @code{oxBS-conversion} methods.  One can use information from all three
-methods or any combination of two of them.  Estimates are based on Binomial
-model by Qu et al. (2013) <doi:10.1093/bioinformatics/btt459> and Kiihl et al.
-(2019) <doi:10.1515/sagmb-2018-0031>.")
-    (license license:expat)))
-
 (define-public r-mlmi
   (package
     (name "r-mlmi")
@@ -33876,13 +33848,13 @@ network stability.")
 (define-public r-metan
   (package
     (name "r-metan")
-    (version "1.18.0")
+    (version "1.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metan" version))
        (sha256
-        (base32 "0m7czvd7djv80c6kly8ckgs9m5ld0rqnd92y76n181d2xk9l6ypc"))))
+        (base32 "1l63rcr1wn2dvl26cmfn2q8yk6mhg84zcz0l5wla4ii6dmlz002r"))))
     (properties `((upstream-name . "metan")))
     (build-system r-build-system)
     (arguments
@@ -33904,7 +33876,7 @@ network stability.")
                              r-ggally
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/TiagoOlivoto/metan")
+    (home-page "https://github.com/nepem-ufsc/metan")
     (synopsis "Multi Environment Trials Analysis")
     (description
      "This package performs stability analysis of multi-environment trial data using
@@ -33924,12 +33896,11 @@ Olivoto et al. (2019a) <doi:10.2134/agronj2019.03.0220>, and multi-trait
 stability index by Olivoto et al. (2019b) <doi:10.2134/agronj2019.03.0221>.
 Non-parametric methods includes superiority index by Lin & Binns (1988)
 <doi:10.4141/cjps88-018>, nonparametric measures of phenotypic stability by
-Huehn (1990) <https://link.springer.com/article/10.1007/BF00024241>, TOP third
-statistic by Fox et al. (1990) <doi:10.1007/BF00040364>.  Functions for
-computing biometrical analysis such as path analysis, canonical correlation,
-partial correlation, clustering analysis, and tools for inspecting,
-manipulating, summarizing and plotting typical multi-environment trial data are
-also provided.")
+Huehn (1990) <doi:10.1007/BF00024241>, TOP third statistic by Fox et al. (1990)
+<doi:10.1007/BF00040364>.  Functions for computing biometrical analysis such as
+path analysis, canonical correlation, partial correlation, clustering analysis,
+and tools for inspecting, manipulating, summarizing and plotting typical
+multi-environment trial data are also provided.")
     (license license:gpl3)))
 
 (define-public r-metamisc

@@ -13482,13 +13482,13 @@ and Ward (2011) <doi:10.1016/j.amc.2011.03.124>.")
 (define-public r-discretefdr
   (package
     (name "r-discretefdr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteFDR" version))
        (sha256
-        (base32 "086fxsyd57gp353s2plq88f0wjpa94jx0s987av4ks58qplnx92f"))))
+        (base32 "1p52b54fhmn15dd0666i5hn4smj8vi8qyvm06clarfaldknbai68"))))
     (properties `((upstream-name . "DiscreteFDR")))
     (build-system r-build-system)
     (arguments
@@ -17692,28 +17692,33 @@ Eigen and bindings to R.")
 (define-public r-dgpsi
   (package
     (name "r-dgpsi")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dgpsi" version))
        (sha256
-        (base32 "004d15bql0by1j4gacrjfbnk95wyzd1m54gdh23y7n664xdn3fql"))))
+        (base32 "16af7pdzyqzgikwidszjlzcjm9v2437pgcx884xmvgglddp8znp7"))))
     (properties `((upstream-name . "dgpsi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid
+    (propagated-inputs (list r-visnetwork
+                             r-uuid
+                             r-tidyr
+                             r-rlang
                              r-reticulate
                              r-reshape2
                              r-patchwork
+                             r-magrittr
+                             r-lifecycle
                              r-lhs
+                             r-kableextra
                              r-ggplot2
                              r-ggforce
                              r-dplyr
                              r-clhs
-                             r-bitops
                              r-benchmarkme))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mingdeyu/dgpsi-R")
@@ -17725,7 +17730,7 @@ process, and linked deep Gaussian process emulations of computer models and
 networks using stochastic imputation (SI).  The implementations follow Ming &
 Guillas (2021) <doi:10.1137/20M1323771> and Ming, Williamson, & Guillas (2023)
 <doi:10.1080/00401706.2022.2124311> and Ming & Williamson (2023)
-<@code{arXiv:2306.01212>}.  To get started with the package, see
+<doi:10.48550/@code{arXiv.2306.01212>}.  To get started with the package, see
 <https://mingdeyu.github.io/dgpsi-R/>.")
     (license license:expat)))
 

@@ -3491,18 +3491,19 @@ use.  It also provides a number of utility functions such as BIC calculations.")
 (define-public r-lovecraftr
   (package
     (name "r-lovecraftr")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lovecraftr" version))
        (sha256
-        (base32 "0nr7avgg18pxmbsf1j589kraksjgmcxk6nrkvky2smnlrmxjpm20"))))
+        (base32 "16pnbfqdbn0n0zmm9dzpbpx7gyifrh5qybqy3w0swi3clvz007ds"))))
     (properties `((upstream-name . "lovecraftr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-stringr r-rvest r-magrittr))
     (home-page "https://github.com/SergejRuff/lovecraftr")
     (synopsis "Collection of Lovecraftian Tales and Texts")
     (description
@@ -13681,13 +13682,13 @@ ETS and simulation function for VES.")
 (define-public r-legendry
   (package
     (name "r-legendry")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "legendry" version))
        (sha256
-        (base32 "0yyc4pd7cmrx4irbm543x1jk0ay7ppwcw9g9gs9yx6d4fiirgx8q"))))
+        (base32 "0syvk61c47pd27cx3q89hd1abvrd6j29mlq983w6a1a0cd1fp9zn"))))
     (properties `((upstream-name . "legendry")))
     (build-system r-build-system)
     (arguments

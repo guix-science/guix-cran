@@ -5901,13 +5901,13 @@ review).")
 (define-public r-bqror
   (package
     (name "r-bqror")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bqror" version))
        (sha256
-        (base32 "1pisp3p3w5r9bfv5m5yykk410z5qvwsqdblmv7vsj1sc1nwf5y2v"))))
+        (base32 "1ac9wgg7h64z2qmrgc8lr82hzrhgl40rg6r9r7c3sdql750vdnpy"))))
     (properties `((upstream-name . "bqror")))
     (build-system r-build-system)
     (arguments

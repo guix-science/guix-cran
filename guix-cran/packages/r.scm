@@ -521,13 +521,13 @@ study with RNA-seq data.")
 (define-public r-rxode2ll
   (package
     (name "r-rxode2ll")
-    (version "2.0.12")
+    (version "2.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2ll" version))
        (sha256
-        (base32 "18ymbl472wiinnnk2s4z3z6awsr16mmjd0cqbhbm3rnkqyhr7c2v"))))
+        (base32 "0czg97cyky78564drmdyy4cm7zhxm3ql1jyvcchsk3lx3f9ffwa0"))))
     (properties `((upstream-name . "rxode2ll")))
     (build-system r-build-system)
     (arguments
@@ -7129,13 +7129,13 @@ mixed effects models.")
 (define-public r-rsmatrix
   (package
     (name "r-rsmatrix")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsmatrix" version))
        (sha256
-        (base32 "1yc9zhfpzadlk39z7lzxd26qmg9hq24c32md7bkny6yyrhy857sn"))))
+        (base32 "1wr2jidal5iynv9hiy0c62x6nq07ncc54c4qjdqbfan1116hw5rp"))))
     (properties `((upstream-name . "rsmatrix")))
     (build-system r-build-system)
     (arguments

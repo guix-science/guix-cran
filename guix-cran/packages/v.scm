@@ -3731,13 +3731,13 @@ among other things.  See <http://www.virustotal.com> for more information.")
 (define-public r-virusparies
   (package
     (name "r-virusparies")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Virusparies" version))
        (sha256
-        (base32 "0n7am416gyxk0akbpabcw2x4skqqa3jj4vd3j7zrhbhhq8qfd8fx"))))
+        (base32 "1jy2fab9lskf18sr2vz2gmqs36ws249vdwl936zhjnc8gn2igr84"))))
     (properties `((upstream-name . "Virusparies")))
     (build-system r-build-system)
     (arguments

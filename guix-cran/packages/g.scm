@@ -28,7 +28,6 @@
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages pcre)
-  #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -30694,13 +30693,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.3")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "0l64v55pq3kyvd4bkmy9xrh9vhiw3fwy12ivbc2vc8nrnn4996g4"))))
+        (base32 "1gp96xxri06d821z886s86ml6gkgkq47g74z224lwv03s1av3v59"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (arguments
@@ -31304,49 +31303,6 @@ utility functions that abstract file system operations on URLs, cloud storage
 services, Zip'/'GZip'/'7z'/'RAR archives, and in-memory files.  gdalraster may
 be useful in applications that need scalable, low-level I/O, or prefer a direct
 GDAL API.")
-    (license license:expat)))
-
-(define-public r-gdalcubes
-  (package
-    (name "r-gdalcubes")
-    (version "0.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gdalcubes" version))
-       (sha256
-        (base32 "1bpskiv7pc09pwmh3ghf5l6wswbwlbmwx6sjqlqx7vs8d7gk6972"))))
-    (properties `((upstream-name . "gdalcubes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib
-                  sqlite
-                  proj
-                  pcre2
-                  openssl
-                  openssh
-                  netcdf
-                  gdal
-                  curl))
-    (propagated-inputs (list r-rcpp r-ncdf4 r-jsonlite r-bh))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/appelmar/gdalcubes")
-    (synopsis "Earth Observation Data Cubes from Satellite Image Collections")
-    (description
-     "Processing collections of Earth observation images as on-demand multispectral,
-multitemporal raster data cubes.  Users define cubes by spatiotemporal extent,
-resolution, and spatial reference system and let gdalcubes automatically apply
-cropping, reprojection, and resampling using the Geospatial Data Abstraction
-Library ('GDAL').  Implemented functions on data cubes include reduction over
-space and time, applying arithmetic expressions on pixel band values, moving
-window aggregates over time, filtering by space, time, bands, and predicates on
-pixel values, exporting data cubes as @code{netCDF} or @code{GeoTIFF} files,
-plotting, and extraction from spatial and or spatiotemporal features.  All
-computational parts are implemented in C++, linking to the GDAL',
-@code{netCDF}', CURL', and SQLite libraries.  See Appel and Pebesma (2019)
-<doi:10.3390/data4030092> for further details.")
     (license license:expat)))
 
 (define-public r-gdadata

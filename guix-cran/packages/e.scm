@@ -18044,13 +18044,13 @@ Denny, and Van Driest (2018) <doi:10.1093/bioinformatics/bty306>.")
 (define-public r-ehof
   (package
     (name "r-ehof")
-    (version "1.15")
+    (version "1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eHOF" version))
        (sha256
-        (base32 "0i7iki5sgwa5ngjs86jhkc3iw2x9ph43ksn9gq84rlm5hgimwb8v"))))
+        (base32 "01sashvaf6m8k60kz8bzsamahqjs2cy4mqjdrlj2n6lbir73x6bp"))))
     (properties `((upstream-name . "eHOF")))
     (build-system r-build-system)
     (arguments

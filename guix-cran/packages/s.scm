@@ -7387,13 +7387,13 @@ Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 (define-public r-sundialr
   (package
     (name "r-sundialr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sundialr" version))
        (sha256
-        (base32 "1rqcl6m6p06j3c3i9m33mc2bs489c27jqarqlxcgmh5jnsbrs08r"))))
+        (base32 "0l9rp5afpsbd3flqq4fczamm6zjw23f99kb81f63lfn3q06qga4k"))))
     (properties `((upstream-name . "sundialr")))
     (build-system r-build-system)
     (arguments
@@ -21611,13 +21611,13 @@ completely show them when clicking on them.")
 (define-public r-spoccupancy
   (package
     (name "r-spoccupancy")
-    (version "0.7.6")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spOccupancy" version))
        (sha256
-        (base32 "0gl6z2dch254nmyd19w7z3jmivadzvv27ymsbn1rk08qm19bf69g"))))
+        (base32 "0l3l4i7n9n16qkdkd3aq223qacvnhx6h95xnczhiy3mhgq26mvl1"))))
     (properties `((upstream-name . "spOccupancy")))
     (build-system r-build-system)
     (arguments
@@ -21630,7 +21630,7 @@ completely show them when clicking on them.")
                              r-doparallel
                              r-coda
                              r-abind))
-    (home-page "https://www.jeffdoser.com/files/spoccupancy-web")
+    (home-page "https://www.doserlab.com/files/spoccupancy-web")
     (synopsis
      "Single-Species, Multi-Species, and Integrated Spatial Occupancy Models")
     (description
@@ -32216,13 +32216,13 @@ National Cooperative Soil Survey (NCSS) databases.")
 (define-public r-soilconservation
   (package
     (name "r-soilconservation")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoilConservation" version))
        (sha256
-        (base32 "17jwz338h2km43fddnp21hf4ri0gb0y2jiggm1236m5wl87livxx"))))
+        (base32 "0m1v90y3315ip3n4d84yhqqr17b26l06h9q16zy0q8ka6fnaxnnc"))))
     (properties `((upstream-name . "SoilConservation")))
     (build-system r-build-system)
     (arguments
@@ -38409,13 +38409,13 @@ skew-normal-Cauchy presented in Kahrari et al. (2020)
 (define-public r-skewlmm
   (package
     (name "r-skewlmm")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skewlmm" version))
        (sha256
-        (base32 "04jxf7bwh71r33s1s2xhiy0ipfaqz97ya86rr4m0f5kxnb942ggv"))))
+        (base32 "0n3hhg2hwgmfqjys88c6hgblc48914f7k6y1p6n051k7pbypnmfk"))))
     (properties `((upstream-name . "skewlmm")))
     (build-system r-build-system)
     (arguments
@@ -38440,10 +38440,11 @@ skew-normal-Cauchy presented in Kahrari et al. (2020)
     (home-page "https://github.com/fernandalschumacher/skewlmm")
     (synopsis "Scale Mixture of Skew-Normal Linear Mixed Models")
     (description
-     "It fits scale mixture of skew-normal linear mixed models using an
-expectationâmaximization (EM) type algorithm, including some possibilities for
-modeling the within-subject dependence.  Details can be found in Schumacher,
-Lachos and Matos (2021) <doi:10.1002/sim.8870>.")
+     "It fits scale mixture of skew-normal linear mixed models using either an
+expectationâmaximization (EM) type algorithm or its accelerated version
+(Damped Anderson Acceleration with Epsilon Monotonicity, DAAREM), including some
+possibilities for modeling the within-subject dependence.  Details can be found
+in Schumacher, Lachos and Matos (2021) <doi:10.1002/sim.8870>.")
     (license license:expat)))
 
 (define-public r-skewhyperbolic

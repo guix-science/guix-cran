@@ -44023,13 +44023,13 @@ effects.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "11n2xhnrigphhqx9y72kqbal7sjch7ffbfwnp6g3265bimk12wi5"))))
+        (base32 "0l8xpvym181s46sj4xzy01iskpkx7hab7gnprj5m22qh47v494yy"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (arguments
