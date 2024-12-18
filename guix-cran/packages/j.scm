@@ -2273,6 +2273,32 @@ event functions, e.g. the differences in mean number of events between two
 exposure groups, are also available.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
+(define-public r-jointest
+  (package
+    (name "r-jointest")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jointest" version))
+       (sha256
+        (base32 "13pzg4g2ajfx9dnnjn6fgw4zcicdxqrp95mxx1ramk887wym4pls"))))
+    (properties `((upstream-name . "jointest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-flipscores r-flip))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=jointest")
+    (synopsis "Multivariate Testing Through Joint Resampling-Based Tests")
+    (description
+     "Runs resampling-based tests jointly, e.g., sign-flip score tests from Hemerik et
+al., (2020) <doi:10.1111/rssb.12369>, to allow for multivariate testing, i.e.,
+weak and strong control of the Familywise Error Rate or True Discovery
+Proportion.")
+    (license license:gpl2)))
+
 (define-public r-jointdiag
   (package
     (name "r-jointdiag")

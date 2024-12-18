@@ -1352,6 +1352,37 @@ then inflated as a package.  Inflating the template copies the relevant chunks
 and sections in the appropriate files required for package development.")
     (license license:expat)))
 
+(define-public r-fusemlr
+  (package
+    (name "r-fusemlr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fuseMLR" version))
+       (sha256
+        (base32 "00v8rf38l3pkld5sfcg5kbbj6qc3llpkv1wdwwb7g1ih9ds53wmb"))))
+    (properties `((upstream-name . "fuseMLR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6 r-digest))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=fuseMLR")
+    (synopsis "Fusing Machine Learning in R")
+    (description
+     "Recent technological advances have enable the simultaneous collection of
+multi-omics data i.e., different types or modalities of molecular data,
+presenting challenges for integrative prediction modeling due to the
+heterogeneous, high-dimensional nature and possible missing modalities of some
+individuals.  We introduce this package for late integrative prediction
+modeling, enabling modality-specific variable selection and prediction modeling,
+followed by the aggregation of the modality-specific predictions to train a
+final meta-model.  This package facilitates conducting late integration
+predictive modeling in a systematic, structured, and reproducible way.")
+    (license license:gpl3)))
+
 (define-public r-fusedmgm
   (package
     (name "r-fusedmgm")
@@ -4222,13 +4253,13 @@ may depend on packages with priority base').")
 (define-public r-fritools
   (package
     (name "r-fritools")
-    (version "4.3.0")
+    (version "4.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fritools" version))
        (sha256
-        (base32 "0l8h605c00a6fgkp4qr6rddwdrjs1ywjw982n90cjx2s6znrv966"))))
+        (base32 "0p1mj4icl1qjfyf2c53yjdg52r7ak3mjw5jbl26rgpr366q6ijrg"))))
     (properties `((upstream-name . "fritools")))
     (build-system r-build-system)
     (arguments
@@ -8363,44 +8394,6 @@ in 2012 by adopting the idea of moment matching optimization related by Hoyland
 and Wallace (2001) <doi: 10.1287/mnsc.47.2.295.9834>.")
     (license license:gpl3+)))
 
-(define-public r-forestdata
-  (package
-    (name "r-forestdata")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forestdata" version))
-       (sha256
-        (base32 "0aw4sm3blby3d01l6r4g8p0r343ydwd0sn9hpgvl1hg8csqz6iq7"))))
-    (properties `((upstream-name . "forestdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-terra
-                             r-stringr
-                             r-stringi
-                             r-sf
-                             r-rvest
-                             r-rlang
-                             r-purrr
-                             r-lifecycle
-                             r-foreign
-                             r-dplyr
-                             r-crayon
-                             r-archive))
-    (home-page "https://cidree.github.io/forestdata/")
-    (synopsis "Download Forestry Data")
-    (description
-     "This package provides functions for downloading forestry and land use data for
-use in spatial analysis.  This packages offers a user-friendly solution to
-quickly obtain datasets such as forest height, forest types, tree species under
-various climate change scenarios, or land use data among others.")
-    (license license:gpl3+)))
-
 (define-public r-forestcontrol
   (package
     (name "r-forestcontrol")
@@ -10190,13 +10183,13 @@ other types of functions.")
 (define-public r-fmdu
   (package
     (name "r-fmdu")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmdu" version))
        (sha256
-        (base32 "0g27a19kw23niqbj3jx5y9p1a693zi69nnfraj85mmfkyhmqilpi"))))
+        (base32 "0l730shz8c7d8mvxzaf4s6w5rvx8nx65gapprmildi8sh6rprgk9"))))
     (properties `((upstream-name . "fmdu")))
     (build-system r-build-system)
     (arguments
@@ -18347,13 +18340,13 @@ enabled based on custom criteria.")
 (define-public r-featurefinder
   (package
     (name "r-featurefinder")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "featurefinder" version))
        (sha256
-        (base32 "024g3adhxx1ynl9wnc2yl3illj4347ak6wkfmvqxfwd6llsa79ld"))))
+        (base32 "1l7jmr7w7xdvmnvfgvmyd2cyspvx0rjfvi3rs5j7500mhpi5qi8x"))))
     (properties `((upstream-name . "featurefinder")))
     (build-system r-build-system)
     (arguments
@@ -18364,11 +18357,10 @@ enabled based on custom criteria.")
     (home-page "https://cran.r-project.org/package=featurefinder")
     (synopsis "Feature Finder")
     (description
-     "Finds modelling features through a detailed analysis of model residuals using
-rpart classification and regression trees.  Scans the residuals of a model
-across subsets of the data to identify areas where the model prediction differs
-from the actual target variable.  S. Chatterjee, A. S. Hadi (2006)
-<doi:10.1002/0470055464>.")
+     "Finds features through a detailed analysis of model residuals using rpart
+classification and regression trees.  Scans the residuals of a model across
+subsets of the data to identify areas where the model differs from the actual
+data.")
     (license license:expat)))
 
 (define-public r-featureextraction
@@ -21667,13 +21659,13 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "18ddpwkxy2ms4b6l2yp9r3bicnwymh5bxhifrvacbdm9s381f8rq"))))
+        (base32 "09kqxmrkb0gsr94jdsz5jfca20wl866sqk34mixqrr2ml5gghz9m"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
@@ -21681,19 +21673,28 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
       #:tests? #f))
     (propagated-inputs (list r-yardstick
                              r-workflows
+                             r-viridislite
                              r-tune
                              r-tibble
                              r-rsample
                              r-rlang
                              r-reshape2
                              r-recipes
+                             r-rcolorbrewer
+                             r-probably
+                             r-plsmod
                              r-parsnip
                              r-magrittr
                              r-ggplot2
-                             r-foreach
+                             r-future
+                             r-finetune
                              r-dplyr
-                             r-doparallel
-                             r-dials))
+                             r-dofuture
+                             r-discrim
+                             r-dials
+                             r-dalex
+                             r-bonsai
+                             r-baguette))
     (home-page "https://cran.r-project.org/package=fastml")
     (synopsis "Fast Machine Learning Model Training and Evaluation")
     (description
@@ -22301,6 +22302,43 @@ Statistics.")
      "Implementation of the fast univariate inference approach (Cui et al. (2022)
 <doi:10.1080/10618600.2021.1950006>, Loewinger et al. (2023)
 <doi:10.1101/2023.11.06.565896>) for fitting functional mixed models.")
+    (license license:gpl3+)))
+
+(define-public r-fasterraster
+  (package
+    (name "r-fasterraster")
+    (version "8.4.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fasterRaster" version))
+       (sha256
+        (base32 "01ra0xxjb2c5i3422ha6zss97077cmj5kxwkbfrkb9sd4rr2rwxk"))))
+    (properties `((upstream-name . "fasterRaster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list grass))
+    (propagated-inputs (list r-terra
+                             r-shiny
+                             r-sf
+                             r-rpanel
+                             r-rgrass
+                             r-omnibus
+                             r-dt
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/adamlilith/fasterRaster")
+    (synopsis "Faster Raster and Spatial Vector Processing Using 'GRASS GIS'")
+    (description
+     "Processing of large-in-memory/large-on disk rasters and spatial vectors using
+GRASS GIS <https://grass.osgeo.org/>.  Most functions in the terra package
+are	recreated.  Processing of medium-sized and smaller spatial objects will
+nearly always be faster using terra or sf', but for
+large-in-memory/large-on-disk objects, @code{fasterRaster} may be faster.  To
+use most of the functions, you must have the stand-alone version (not the
+OS@code{GeoW4} installer version) of GRASS GIS 8.0 or higher.")
     (license license:gpl3+)))
 
 (define-public r-fasterelasticnet

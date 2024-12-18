@@ -1206,13 +1206,13 @@ the number of vowel sequences for words not found.")
 (define-public r-nswgeo
   (package
     (name "r-nswgeo")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nswgeo" version))
        (sha256
-        (base32 "18s7mkcf32h7si5b9n1djqz9jl24n6f6pg38ifafb1a5jnkwqs2f"))))
+        (base32 "1czb617hhf7ghirfkdaywzazgdjys4ybhkjphklvqbyjdi26g61n"))))
     (properties `((upstream-name . "nswgeo")))
     (build-system r-build-system)
     (arguments
@@ -5285,13 +5285,13 @@ API documentation.")
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nominatimlite" version))
        (sha256
-        (base32 "0vnpd21ybwmkkafsd65zg9bdcnmffxwqxrdfhgwdv82sclnd8xa8"))))
+        (base32 "0n0q5g4r5m8rq0m94ddbrsv91c67jvca9ca02f9id1qyha7pbkvz"))))
     (properties `((upstream-name . "nominatimlite")))
     (build-system r-build-system)
     (arguments
@@ -6096,13 +6096,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.9.4")
+    (version "10.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "0bikdi7mkcjlq8xf7r4h4nzw0s3dzqfm4mcip3jwryrxg3kvr4sc"))))
+        (base32 "1haccrw3n3jfswh8g9h6i96nv54rlazm6h70xamghma8rk39nryy"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -6678,19 +6678,19 @@ workflows by users to help with analyzing and interpreting NMR data.")
 (define-public r-nmrphasing
   (package
     (name "r-nmrphasing")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMRphasing" version))
        (sha256
-        (base32 "16ri24gkm2pqdrmrfifm9fqgpbl82300xb0a945zg8k71w2si2qn"))))
+        (base32 "1s71n8mwqw3fazcgvdisk9m1s25x033v1id80mvra78kpalw3vzg"))))
     (properties `((upstream-name . "NMRphasing")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-massspecwavelet r-baseline))
+    (propagated-inputs (list r-signal r-massspecwavelet r-baseline))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=NMRphasing")
     (synopsis
@@ -9142,13 +9142,13 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimble" version))
        (sha256
-        (base32 "11r5h2v8q4n50i843va2lm5is8cfq5268dyvhkp56xav7vkp319f"))))
+        (base32 "0kn7r3l70cwqjrhy9734dx9h58niv5778434z1xj1qys6q94ja9l"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (arguments
@@ -10229,13 +10229,13 @@ viewer after creation in Shiny.")
 (define-public r-ngchm
   (package
     (name "r-ngchm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NGCHM" version))
        (sha256
-        (base32 "1gclzn4ps2jx452w3rvp38mc4sj8920w2dmhvafxnfk0dj25pada"))))
+        (base32 "1sjaq4ll8g0s6a23clb4w4akmyrmibny8bc71jabjrdw1zg9y1bc"))))
     (properties `((upstream-name . "NGCHM")))
     (build-system r-build-system)
     (arguments

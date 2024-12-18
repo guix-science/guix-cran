@@ -8631,13 +8631,13 @@ or with a static data set.  Example is provided at
 (define-public r-archeofrag
   (package
     (name "r-archeofrag")
-    (version "0.8.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag" version))
        (sha256
-        (base32 "1xnfb4midmjlhq2x8mv6r0mrjbm529xnfm8y0q9wll73igg696yl"))))
+        (base32 "153w5744y9smgajwv0h76pgngry3i0wasxymwzfb6pgq175s0f4k"))))
     (properties `((upstream-name . "archeofrag")))
     (build-system r-build-system)
     (arguments
@@ -8646,20 +8646,22 @@ or with a static data set.  Example is provided at
     (propagated-inputs (list r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sebastien-plutniak/archeofrag")
-    (synopsis "Refitting and Spatial Analysis in Archaeology")
+    (synopsis "Spatial Analysis in Archaeology from Refitting Fragments")
     (description
-     "This package provides methods to analyse fragmented objects in archaeology using
-refitting relationships between fragments scattered in archaeological spatial
-units (e.g. stratigraphic layers).  Graphs and graph theory are used to model
-archaeological observations.  The package is mainly based on the igraph package
-for graph analysis.  Functions can: 1) create, manipulate, and simulate
-fragmentation graphs, 2) measure the cohesion and admixture of archaeological
-spatial units, and 3) characterise the topology of a specific set of refitting
-relationships.  An empirical dataset is also provided as an example.
-Documentation about archeofrag is provided by the vignette included in this
-package and by the accompanying scientific papers: Plutniak (2021, Journal of
-Archaeological Science, <doi:10.1016/j.jas.2021.105501>) and Plutniak (2022,
-Journal of Open Source Software, <doi:10.21105/joss.04335>).")
+     "This package provides methods to analyse spatial units in archaeology from the
+relationships between refitting fragmented objects scattered in these units
+(e.g. stratigraphic layers).  Graphs are used to model archaeological
+observations.  The package is mainly based on the igraph package for graph
+analysis.  Functions can: 1) create, manipulate, and simulate fragmentation
+graphs, 2) measure the cohesion and admixture of archaeological spatial units,
+and 3) characterise the topology of a specific set of refitting relationships.
+Empirical datasets are provided as examples.  Documentation about archeofrag is
+provided by the vignette included in this package, by the accompanying
+scientific papers: Plutniak (2021, Journal of Archaeological Science,
+<doi:10.1016/j.jas.2021.105501>) and Plutniak (2022, Journal of Open Source
+Software, <doi:10.21105/joss.04335>).  This package is complemented by a
+companion GUI application available at
+<https://analytics.huma-num.fr/Sebastien.Plutniak/archeofrag/>.")
     (license license:gpl3)))
 
 (define-public r-archdata
@@ -8850,13 +8852,13 @@ the Geocode service API reference
 (define-public r-arcgeocoder
   (package
     (name "r-arcgeocoder")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgeocoder" version))
        (sha256
-        (base32 "02bzhdz8k5c65rzx9dkwxw5v69wq8nbsxk6c6lf2v9wqhq705krp"))))
+        (base32 "1lann7gbvx4sy5jaynlclh8j4ysmx3kjx00rd9rn825hmp5ia6km"))))
     (properties `((upstream-name . "arcgeocoder")))
     (build-system r-build-system)
     (arguments
@@ -10210,13 +10212,13 @@ stem.leaf.backback plots back-to-back versions of stem and leaf plot.")
 (define-public r-aplotextra
   (package
     (name "r-aplotextra")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aplotExtra" version))
        (sha256
-        (base32 "0sh3c78p37kn00hkps5ai3aqz391wwpbck2rar4rdvwclg4818my"))))
+        (base32 "0lpp285cnb76byf6mm4m3qzam447ldabnsda82vw1pmxgpgzrrql"))))
     (properties `((upstream-name . "aplotExtra")))
     (build-system r-build-system)
     (arguments

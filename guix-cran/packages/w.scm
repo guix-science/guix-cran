@@ -6643,13 +6643,13 @@ online at <https://webpower.psychstat.org>.")
 (define-public r-webp
   (package
     (name "r-webp")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webp" version))
        (sha256
-        (base32 "1ppwjlmpy43d6v789v4vvp5p0wxrkzrjghcgr1qqmk3f5vj30sbq"))))
+        (base32 "0gm238kmn51r0z3yrg1i1w49r3gph6xqyb8w75r76agic6nv9p9s"))))
     (properties `((upstream-name . "webp")))
     (build-system r-build-system)
     (arguments

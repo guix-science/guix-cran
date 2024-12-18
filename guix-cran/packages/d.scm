@@ -2078,13 +2078,13 @@ implementer's interface for the high-level user interface of dplyr'.")
 (define-public r-duckdbfs
   (package
     (name "r-duckdbfs")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdbfs" version))
        (sha256
-        (base32 "0mds09cx1hx5crk9giq5xhmnl750paa5wfw2shdd33rcfl4zfhxc"))))
+        (base32 "05vrlqj7bzhmfil8g6bv06ll1dcm50j65fznl5vk50cv8k45cdsv"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
     (arguments
@@ -12800,6 +12800,32 @@ models (Aitkin, 1987 <doi:10.2307/2347792>), overdispersed binomial logit models
 models (Breslow, 1984 <doi:10.2307/2347661>), using a quasi-likelihood approach.")
     (license license:gpl2+)))
 
+(define-public r-displease
+  (package
+    (name "r-displease")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "displease" version))
+       (sha256
+        (base32 "1wyx0dvw8f8c65lzgk75z0w3xiradap6imx60cv937a3k1lnjiqw"))))
+    (properties `((upstream-name . "displease")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/coolbutuseless/displease")
+    (synopsis "Numeric and Color Sequences with Non-Linear Interpolation")
+    (description
+     "When visualising changes between two values over time, a strict linear
+interpolation can look jarring and unnatural.  By applying a non-linear easing
+to the transition, the motion between values can appear smoother and more
+natural.  This package includes functions for applying such non-linear easings
+to colors and numeric values, and is useful where smooth animated movement and
+transitions are desired.")
+    (license license:expat)))
+
 (define-public r-disperse
   (package
     (name "r-disperse")
@@ -14691,13 +14717,13 @@ the documentation for Rmosek'.")
 (define-public r-dipsaus
   (package
     (name "r-dipsaus")
-    (version "0.2.9")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dipsaus" version))
        (sha256
-        (base32 "12bhxys313iqrfkd0cpr2ibv94v14vjj3sxkhvhxqhclf1d19qc6"))))
+        (base32 "0xqza66p4lr8kmw9h8v2vzzhjynlqsmcfqkbsdc2w6c56i20vxik"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
     (arguments
@@ -19757,33 +19783,6 @@ local projections by the desparsified lasso, as described in Adamek et al.
 (2022) <@code{arXiv:2209.03218>}.")
     (license license:gpl2+)))
 
-(define-public r-desk
-  (package
-    (name "r-desk")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "desk" version))
-       (sha256
-        (base32 "0pv54lxd326xlwscyngrfmvqf8inqqg587bi4n42wy6c76p4kbm5"))))
-    (properties `((upstream-name . "desk")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rstudioapi r-cli))
-    (home-page "https://github.com/OvGU-SH/desk")
-    (synopsis "Didactic Econometrics Starter Kit")
-    (description
-     "Written to help undergraduate as well as graduate students to get started with R
-for basic econometrics without the need to import specific functions and
-datasets from many different sources.  Primarily, the package is meant to
-accompany the German textbook Auer, L.v., Hoffmann, S., Kranz, T. (2023, ISBN:
-978-3-662-68263-0) from which the exercises cover all the topics from the
-textbook Auer, L.v. (2023, ISBN: 978-3-658-42699-6).")
-    (license license:gpl3+)))
-
 (define-public r-desirability2
   (package
     (name "r-desirability2")
@@ -23559,19 +23558,24 @@ input and expanding the results at the end.")
 (define-public r-deductiver
   (package
     (name "r-deductiver")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeductiveR" version))
        (sha256
-        (base32 "0bx1ad2gw0pf03z0im31mzaa26jxwws6fkbcj319kd8b4s4wp92y"))))
+        (base32 "1ra5vyh1mzr4215sa1ryx7cxa0f2rwmpr5asl7zy0lzghhxk5ffh"))))
     (properties `((upstream-name . "DeductiveR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-moments r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-reshape2
+                             r-moments
+                             r-lmomco
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DeductiveR")
     (synopsis "Deductive Rational Method")
@@ -31158,13 +31162,13 @@ formulations in knowledge space theory.  See package?DAKS for an overview.")
 (define-public r-daisieprep
   (package
     (name "r-daisieprep")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAISIEprep" version))
        (sha256
-        (base32 "0ch3mc725lip67fpbk405rv3bai44w13vvjlspv8y6jzmb5jg6bp"))))
+        (base32 "0blm4nprjms5ylmxcl90qim9qv27l59bgl5fz6wy1j7pn6zgkgxs"))))
     (properties `((upstream-name . "DAISIEprep")))
     (build-system r-build-system)
     (arguments

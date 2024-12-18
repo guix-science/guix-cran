@@ -11029,25 +11029,19 @@ body mass index etc.  related to fitness and health of a person.")
 (define-public r-healthatlas
   (package
     (name "r-healthatlas")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthatlas" version))
        (sha256
-        (base32 "0yl2rvz92cb4y3k408gi66dgv835h4k86vgf258h87psmg3kr6md"))))
+        (base32 "1zxdcqmckfs4g7bxi6ssk0bxj8h0gn03qf1gd44p9asjzdwmindv"))))
     (properties `((upstream-name . "healthatlas")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-sf
-                             r-purrr
-                             r-httr2
-                             r-dplyr
-                             r-curl))
+    (propagated-inputs (list r-tibble r-sf r-httr2 r-curl r-chk))
     (native-inputs (list r-knitr))
     (home-page "https://ryanzomorrodi.github.io/healthatlas/")
     (synopsis

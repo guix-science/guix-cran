@@ -4458,6 +4458,51 @@ ggplot2 implementation of the boxplot, possible modifications to the boxplot
 extend to the Q-Q boxplot.")
     (license license:expat)))
 
+(define-public r-qpraentry
+  (package
+    (name "r-qpraentry")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qPRAentry" version))
+       (sha256
+        (base32 "1nqhwim7irm8n64a3fjjaqhvzajz8dxh6rbnq43nwvd2ih42s5mv"))))
+    (properties `((upstream-name . "qPRAentry")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shiny
+                             r-sf
+                             r-purrr
+                             r-memoise
+                             r-giscor
+                             r-ggplot2
+                             r-ggiraph
+                             r-eurostat
+                             r-dt
+                             r-dplyr
+                             r-bsplus))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=qPRAentry")
+    (synopsis "Quantitative Pest Risk Assessment at the Entry Step")
+    (description
+     "Supports risk assessors in performing the entry step of the quantitative Pest
+Risk Assessment.  It allows the estimation of the amount of a plant pest
+entering a risk assessment area (in terms of founder populations) through the
+calculation of the imported commodities that could be potential pathways of pest
+entry, and the development of a pathway model.  Two Shiny apps based on the
+functionalities of the package are included, that simplify the process of
+assessing the risk of entry of plant pests.  The approach is based on the work
+of the European Food Safety Authority (EFSA PLH Panel et al., 2018)
+<doi:10.2903/j.efsa.2018.5350>.")
+    (license license:gpl3+)))
+
 (define-public r-qpnca
   (package
     (name "r-qpnca")
@@ -5276,13 +5321,13 @@ phenotypic variance and additive genetic variance.")
 (define-public r-qgg
   (package
     (name "r-qgg")
-    (version "1.1.3")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgg" version))
        (sha256
-        (base32 "1szvrv7mn4dpgbv3rxz48y6s0zjfl7r5n3y2m3php82ghcp664fx"))))
+        (base32 "06bs565ylv4h8g0lp08x13si0lnjaj17a5znc172lql48qgnmw6z"))))
     (properties `((upstream-name . "qgg")))
     (build-system r-build-system)
     (arguments

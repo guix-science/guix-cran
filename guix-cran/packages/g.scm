@@ -28,6 +28,7 @@
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages pcre)
+  #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -793,13 +794,13 @@ and Lima, A. O. (2017) <doi:10.1016/j.spasta.2017.07.011>.")
 (define-public r-gwavr
   (package
     (name "r-gwavr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gwavr" version))
        (sha256
-        (base32 "1hr1d66n5xf7ppmag70lzdnwp3m2jcs1qmh1nzrqq0nbqmqg8nck"))))
+        (base32 "1275whdsnrjn14r4ir25g6lkqsg4czaragxjalj2n65y7dps7az7"))))
     (properties `((upstream-name . "gwavr")))
     (build-system r-build-system)
     (arguments
@@ -813,6 +814,7 @@ and Lima, A. O. (2017) <doi:10.1016/j.spasta.2017.07.011>.")
                              r-shiny
                              r-sf
                              r-scales
+                             r-rlang
                              r-purrr
                              r-promises
                              r-nhdplustools
@@ -4269,6 +4271,56 @@ the inflection point.  Method described in Sprouffske and Wagner (2016)
 <doi:10.1186/s12859-016-1016-7>.")
     (license license:gpl2+)))
 
+(define-public r-growthcurveme
+  (package
+    (name "r-growthcurveme")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GrowthCurveME" version))
+       (sha256
+        (base32 "1awrfr71rfimmm57v5pvs583hr5v7rbbcvz2igd6j0iyyih99a4g"))))
+    (properties `((upstream-name . "GrowthCurveME")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-saemix
+                             r-rlang
+                             r-patchwork
+                             r-moments
+                             r-minpack-lm
+                             r-magrittr
+                             r-knitr
+                             r-investr
+                             r-ggplot2
+                             r-flextable
+                             r-dplyr))
+    (home-page "https://github.com/cancermodels-org/GrowthCurveME")
+    (synopsis "Mixed-Effects Modeling for Growth Data")
+    (description
+     "Simple and user-friendly wrappers to the saemix package for performing linear
+and non-linear mixed-effects regression modeling for growth data to account for
+clustering or longitudinal analysis via repeated measurements.  The package
+allows users to fit a variety of growth models, including linear, exponential,
+logistic, and Gompertz functions.  For non-linear models, starting values are
+automatically calculated using initial least-squares estimates.  The package
+includes functions for summarizing models, visualizing data and results,
+calculating doubling time and other key statistics, and generating model
+diagnostic plots and residual summary statistics.  It also provides functions
+for generating publication-ready summary tables for reports.  Additionally,
+users can fit linear and non-linear least-squares regression models if
+clustering is not applicable.  The mixed-effects modeling methods in this
+package are based on Comets, Lavenu, and Lavielle (2017)
+<doi:10.18637/jss.v080.i03> as implemented in the saemix package.  Please
+contact us at models@@dfci.harvard.edu with any questions.")
+    (license license:gpl3+)))
+
 (define-public r-growthcleanr
   (package
     (name "r-growthcleanr")
@@ -5842,6 +5894,32 @@ traditional methods are also implemented, as described in Yang, Knoke (2001)
 greta'.  You can then them to define either full rank or sparse Gaussian
 processes.  This is an extension to the greta software, Golding (2019)
 <doi:10.21105/joss.01601>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-greta-gam
+  (package
+    (name "r-greta-gam")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "greta.gam" version))
+       (sha256
+        (base32 "1071pi8pzxjgi9gk7hgm7pln2196lg2xhvh76aqcc7fzgvr3444j"))))
+    (properties `((upstream-name . "greta.gam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-mgcv r-greta r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/greta-dev/greta.gam")
+    (synopsis "Generalised Additive Models in 'greta' using 'mgcv'")
+    (description
+     "This package provides a greta (Golding (2019) <doi:10.21105/joss.01601>) module
+that lets you use mgcv smoother functions and formula syntax to define smooth
+terms for use in a greta model.  You can then define your own likelihood to
+complete the model, and fit it by Markov Chain Monte Carlo (MCMC).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-greta-dynamics
@@ -14233,13 +14311,13 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmroptim
   (package
     (name "r-glmmroptim")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrOptim" version))
        (sha256
-        (base32 "0aic2wc1f1qdj2g9g7zsaz4hckrgpy7w293harpjmq9ll3gxpfcz"))))
+        (base32 "1b9s53lwsn1hymx6rzgd5xjbj7hm5bsf1zrq1s904w74164wr9fj"))))
     (properties `((upstream-name . "glmmrOptim")))
     (build-system r-build-system)
     (arguments
@@ -22315,13 +22393,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "11.0.0")
+    (version "11.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "1r74czqsrr2s0vkblhln4spin5y1g2gpp27hy77yvgy4hjvkjda6"))))
+        (base32 "1c3wdxcdcn42afzal8qw4vgj3k823dbj620va4yd5v4svjxj1y95"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (arguments
@@ -22335,11 +22413,11 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
                              r-scales
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-lubridate
                              r-labelled
                              r-hms
                              r-ggplot2
+                             r-ggblend
                              r-forcats
                              r-farver
                              r-dplyr
@@ -30500,13 +30578,13 @@ modeling, as discussed in the forthcoming work of Dimitrova et al. (2024).")
 (define-public r-gecko
   (package
     (name "r-gecko")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gecko" version))
        (sha256
-        (base32 "1q0wzg3mkb6z7zs81zynj6x159w99h5an20a6m8wdqbday5sccyc"))))
+        (base32 "0kvzzlw4069csjwbp514gk92y1yarhq5yhrazl6jgvjcqca4mjy9"))))
     (properties `((upstream-name . "gecko")))
     (build-system r-build-system)
     (arguments
@@ -30518,13 +30596,14 @@ modeling, as discussed in the forthcoming work of Dimitrova et al. (2024).")
                              r-kernlab
                              r-geosphere
                              r-biomod2))
-    (home-page "https://cran.r-project.org/package=gecko")
+    (home-page "https://github.com/VascoBranco/gecko")
     (synopsis "Geographical Ecology and Conservation Knowledge Online")
     (description
      "Includes a collection of geographical analysis functions aimed primarily at
 ecology and conservation science studies, allowing processing of both point and
-raster data.  Future versions will integrate species threat datasets developed
-by the authors.")
+raster data.  Now integrates SPECTRE
+(<https://biodiversityresearch.org/spectre/>), a dataset of global geospatial
+threat data, developed by the authors.")
     (license license:gpl2)))
 
 (define-public r-gecal
@@ -31303,6 +31382,49 @@ utility functions that abstract file system operations on URLs, cloud storage
 services, Zip'/'GZip'/'7z'/'RAR archives, and in-memory files.  gdalraster may
 be useful in applications that need scalable, low-level I/O, or prefer a direct
 GDAL API.")
+    (license license:expat)))
+
+(define-public r-gdalcubes
+  (package
+    (name "r-gdalcubes")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gdalcubes" version))
+       (sha256
+        (base32 "1bpskiv7pc09pwmh3ghf5l6wswbwlbmwx6sjqlqx7vs8d7gk6972"))))
+    (properties `((upstream-name . "gdalcubes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib
+                  sqlite
+                  proj
+                  pcre2
+                  openssl
+                  openssh
+                  netcdf
+                  gdal
+                  curl))
+    (propagated-inputs (list r-rcpp r-ncdf4 r-jsonlite r-bh))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/appelmar/gdalcubes")
+    (synopsis "Earth Observation Data Cubes from Satellite Image Collections")
+    (description
+     "Processing collections of Earth observation images as on-demand multispectral,
+multitemporal raster data cubes.  Users define cubes by spatiotemporal extent,
+resolution, and spatial reference system and let gdalcubes automatically apply
+cropping, reprojection, and resampling using the Geospatial Data Abstraction
+Library ('GDAL').  Implemented functions on data cubes include reduction over
+space and time, applying arithmetic expressions on pixel band values, moving
+window aggregates over time, filtering by space, time, bands, and predicates on
+pixel values, exporting data cubes as @code{netCDF} or @code{GeoTIFF} files,
+plotting, and extraction from spatial and or spatiotemporal features.  All
+computational parts are implemented in C++, linking to the GDAL',
+@code{netCDF}', CURL', and SQLite libraries.  See Appel and Pebesma (2019)
+<doi:10.3390/data4030092> for further details.")
     (license license:expat)))
 
 (define-public r-gdadata
@@ -34536,13 +34658,13 @@ Introduction with R', Wood (2006,2017) CRC.")
 (define-public r-gam-hp
   (package
     (name "r-gam-hp")
-    (version "0.0-2")
+    (version "0.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gam.hp" version))
        (sha256
-        (base32 "0zhnwl533vb094vbn5bxggav3fqh0ahrdrhjliwrgwh2h3bwqpp7"))))
+        (base32 "1cjjdd2vmn7916401dwr1dcycy7g2xz5bwy3l4bw1hblrs3np7kw"))))
     (properties `((upstream-name . "gam.hp")))
     (build-system r-build-system)
     (arguments

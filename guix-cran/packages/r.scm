@@ -98,13 +98,13 @@ decoding.  The method is fully described in Druet and Gautier (2017)
 (define-public r-rzmq
   (package
     (name "r-rzmq")
-    (version "0.9.14")
+    (version "0.9.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rzmq" version))
        (sha256
-        (base32 "1ngyjlr30lfab7q2z9dw1q7jhagjn29z6jilld0k6i97rpl6kagc"))))
+        (base32 "003i4k6gl62hx9ai5v1cq4j1fzl621hb976gcaiibvd4brfyjmjf"))))
     (properties `((upstream-name . "rzmq")))
     (build-system r-build-system)
     (arguments
@@ -553,13 +553,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "0qib3jkxaklpvjwx1zxwshfy0aby1b6flb9z75zfa3a29q8y0zk5"))))
+        (base32 "0sjv3pqv78ncaklb4h2yyxbazngsfvknl0fh0vrmz1lwzqrsgyf8"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -8029,13 +8029,13 @@ without interaction term incorporating neighbour effects.")
 (define-public r-rsdmx
   (package
     (name "r-rsdmx")
-    (version "0.6-3")
+    (version "0.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsdmx" version))
        (sha256
-        (base32 "0axy02p6kh67sc1nqp67sa1i2n3r24j1cdd3lczxzfkxms0qznc7"))))
+        (base32 "1gphviy39dqixjn8m77786kl2mfhsvvc73zsa96h1xgpn7w78f0s"))))
     (properties `((upstream-name . "rsdmx")))
     (build-system r-build-system)
     (arguments
@@ -10506,13 +10506,13 @@ package.")
 (define-public r-rpyants
   (package
     (name "r-rpyants")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpyANTs" version))
        (sha256
-        (base32 "1dmlpwx9x1gh2x0a4krp0v5a4km7pp65zalvbibb6r69iqmqr858"))))
+        (base32 "11044d5vi825g1b597hwkrw121m0q7vf5p5v17dq56zkrnr5jyx8"))))
     (properties `((upstream-name . "rpyANTs")))
     (build-system r-build-system)
     (arguments
@@ -16135,13 +16135,13 @@ sample location test, also known as the Fligner-Policello test.")
 (define-public r-robustprediction
   (package
     (name "r-robustprediction")
-    (version "0.1.4")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobustPrediction" version))
        (sha256
-        (base32 "15v33n7ic3scah1c9pjk77i3c3fvmjxj2j4sm8sgg98znq68l8by"))))
+        (base32 "14c2il0n13xsxysb0wqp4b9j480yqy86f8fakj6ydg7lmk8j19j6"))))
     (properties `((upstream-name . "RobustPrediction")))
     (build-system r-build-system)
     (arguments
@@ -16157,13 +16157,19 @@ sample location test, also known as the Fligner-Policello test.")
     (synopsis "Robust Tuning and Training for Cross-Source Prediction")
     (description
      "This package provides robust parameter tuning and model training for predictive
-models across data sources.  This package implements three primary tuning
-methods: cross-validation-based internal tuning, external tuning, and the
-@code{RobustTuneC} method.  It supports Lasso, Ridge, Random Forest, Boosting,
-and Support Vector Machine classifiers.  The tuning methods are based on the
-paper by Nicole Ellenbach, Anne-Laure Boulesteix, Bernd Bischl, Kristian Unger,
-and Roman Hornung (2021) \"Improved Outcome Prediction Across Data Sources
-Through Robust Parameter Tuning\" <doi:10.1007/s00357-020-09368-z>.")
+models applied across data sources where the data distribution varies slightly
+from source to source.  This package implements three primary tuning methods:
+cross-validation-based internal tuning, external tuning, and the
+@code{RobustTuneC} method.  External tuning includes a conservative option where
+parameters are tuned internally on the training data and validating on an
+external dataset, providing a slightly pessimistic estimate.  It supports Lasso,
+Ridge, Random Forest, Boosting, and Support Vector Machine classifiers.
+Currently, only binary classification is supported.  The response variable must
+be the first column of the dataset and a factor with exactly two levels.  The
+tuning methods are based on the paper by Nicole Ellenbach, Anne-Laure
+Boulesteix, Bernd Bischl, Kristian Unger, and Roman Hornung (2021) \"Improved
+Outcome Prediction Across Data Sources Through Robust Parameter Tuning\"
+<doi:10.1007/s00357-020-09368-z>.")
     (license license:gpl3)))
 
 (define-public r-robustmeta
@@ -19519,19 +19525,20 @@ Grange et al. (2021) <doi:10.5194/acp-2020-1171>.")
 (define-public r-rmvp
   (package
     (name "r-rmvp")
-    (version "1.1.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rMVP" version))
        (sha256
-        (base32 "156bmpdp8r69097cig07bq5h9pqb1d5zkd57qxfjm1070h3f39xw"))))
+        (base32 "1c7y8lql419fsjvfq3c2y1b4brbh2v2l2vx372q6w37c918ybgih"))))
     (properties `((upstream-name . "rMVP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppprogress
+    (propagated-inputs (list r-rhpcblasctl
+                             r-rcppprogress
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -35776,13 +35783,13 @@ Learning\", N. Matloff, 2017, CRC, ISBN 9781498710916.")
 (define-public r-regtomean
   (package
     (name "r-regtomean")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regtomean" version))
        (sha256
-        (base32 "0xw0pany9cwfxdn26ckk6fdjnqx1916288mhphsnvwns3383nq4k"))))
+        (base32 "1j13sc4lklw4rnfrg62b26sy7rcw3spa0a0bzc0mrbvinsq7b5dc"))))
     (properties `((upstream-name . "regtomean")))
     (build-system r-build-system)
     (arguments
@@ -35790,10 +35797,10 @@ Learning\", N. Matloff, 2017, CRC, ISBN 9781498710916.")
       #:tests? #f))
     (propagated-inputs (list r-sjplot
                              r-sjmisc
-                             r-sjlabelled
-                             r-plyr
                              r-plotrix
                              r-mefa
+                             r-htmlwidgets
+                             r-ggplot2
                              r-formattable
                              r-effsize))
     (home-page "https://cran.r-project.org/package=regtomean")
@@ -35808,7 +35815,11 @@ where treatment effects are likely to occur when regression toward the mean is
 present.  Ostermann, T., Willich, Stefan N. & Luedtke, Rainer. (2008).
 Regression toward the mean - a detection method for unknown population mean
 based on Mee and Chua's algorithm.  BMC Medical Research
-Methodology.<doi:10.1186/1471-2288-8-52>.")
+Methodology.<doi:10.1186/1471-2288-8-52>.  Acknowledgments: We would like to
+acknowledge \"Lena Roth\" and \"Nico Steckhan\" for the package's initial updates
+(Q3 2024) and continued supervision and guidance.  Both have contributed to
+discussing and integrating these methods into the package, ensuring they are
+up-to-date and contextually relevant.")
     (license license:expat)))
 
 (define-public r-regsubseq
@@ -42336,13 +42347,13 @@ from the DHS website, (4) loading datasets and associate metadata into R, and
 (define-public r-rdhonest
   (package
     (name "r-rdhonest")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RDHonest" version))
        (sha256
-        (base32 "15mfv573sqqhsa1snswcjbh4kyz26kldim0nx16hypzx09x6rrrc"))))
+        (base32 "162la7ilid7ljbdhzpz82fvwslxwaca80lvmvg80inp3is3kypfp"))))
     (properties `((upstream-name . "RDHonest")))
     (build-system r-build-system)
     (arguments
@@ -49393,13 +49404,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "0c1gafx2kwkzss3s8bwdk0pnk5c9q8lqg67fzlz7fdiqzbx0j506"))))
+        (base32 "1a4837437g8g4lfraqcqlgbryzqfn0ki66s33465b06v832skdsa"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (arguments
@@ -50226,13 +50237,13 @@ in research.  Trends in Ecology and Evolution, 37: 725-728.")
 (define-public r-rasterpic
   (package
     (name "r-rasterpic")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterpic" version))
        (sha256
-        (base32 "03p24iw384dxws25mwfzclhpfj9hm3wrv8xmhgrcsffw61q3ad0x"))))
+        (base32 "1q2kl95rf0c77nngf83805rqbpirzcl2xwzbpdaf8yqvcs780jfh"))))
     (properties `((upstream-name . "rasterpic")))
     (build-system r-build-system)
     (arguments

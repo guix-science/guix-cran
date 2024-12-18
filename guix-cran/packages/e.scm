@@ -838,19 +838,18 @@ confidence bands for the extremograms.")
 (define-public r-extremevalues
   (package
     (name "r-extremevalues")
-    (version "2.3.4")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extremevalues" version))
        (sha256
-        (base32 "0ka4j43b8h2h5289wdbwsvcrmrasnhwxv3s9zz3v1z40li9yvmm6"))))
+        (base32 "1m8nmaqxhd2ppvgx5sq2xg5j025ys02pis2a23dxpk1kv8gp3h81"))))
     (properties `((upstream-name . "extremevalues")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-gwidgets2tcltk r-gwidgets2))
     (home-page "https://github.com/markvanderloo/extremevalues")
     (synopsis "Univariate Outlier Detection")
     (description "Detect outliers in one-dimensional data.")
@@ -2835,6 +2834,48 @@ both.  Execution speed is optimized by using a multi-threaded C++ backend, and
 memory issues are solved by by only storing the best results during execution
 and thus keeping memory usage constant.")
     (license license:gpl3+)))
+
+(define-public r-exhaustiverasch
+  (package
+    (name "r-exhaustiverasch")
+    (version "0.3.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exhaustiveRasch" version))
+       (sha256
+        (base32 "17b2dinlygd3swys6h2d3k1ahwx7892wj13y4mlmy8sk2lc7plvk"))))
+    (properties `((upstream-name . "exhaustiveRasch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tictoc
+                             r-psychotree
+                             r-psychotools
+                             r-psych
+                             r-pbapply
+                             r-pairwise
+                             r-erm
+                             r-arrangements))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chrgrebe/exhaustiveRasch")
+    (synopsis "Item Selection and Exhaustive Search for Rasch Models")
+    (description
+     "Automation of the item selection processes for Rasch scales by means of
+exhaustive search for suitable Rasch models (dichotomous, partial credit,
+rating-scale) in a list of item-combinations.  The item-combinations to test can
+be either all possible combinations or item-combinations can be defined by
+several rules (forced inclusion of specific items, exclusion of combinations,
+minimum/maximum items of a subset of items).  Tests for model fit and item fit
+include ordering of the thresholds, item fit-indices, likelihood ratio test,
+Martin-LÃ¶f test, Wald-like test, person-item distribution, person separation
+index, principal components of Rasch residuals, empirical representation of all
+raw scores or Rasch trees for detecting differential item functioning.  The
+tests, their ordering and their parameters can be defined by the user.  For
+parameter estimation and model tests, functions of the packages @code{eRm}',
+psychotools or pairwise can be used.")
+    (license license:gpl3)))
 
 (define-public r-exgaussestim
   (package
@@ -6441,26 +6482,27 @@ asked to correct it.")
 (define-public r-etwfe
   (package
     (name "r-etwfe")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "etwfe" version))
        (sha256
-        (base32 "06y9xw8fdfijxv4kh0fxin6dgj6vavnjnyh9a75m14i0i69hd8bd"))))
+        (base32 "1lb7crk14cz0bh1mbzgvc9b1llrvlj5p8605lr2p6psmrn94ikip"))))
     (properties `((upstream-name . "etwfe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-marginaleffects r-formula r-fixest r-data-table))
+    (propagated-inputs (list r-tinyplot r-marginaleffects r-formula r-fixest
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://grantmcdermott.com/etwfe/")
     (synopsis "Extended Two-Way Fixed Effects")
     (description
      "Convenience functions for implementing extended two-way fixed effect regressions
-a la Wooldridge (2021, 2022) <doi:10.2139/ssrn.3906345>,
-<doi:10.2139/ssrn.4183726>.")
+a la Wooldridge (2021, 2023) <doi:10.2139/ssrn.3906345>,
+<doi:10.1093/ectj/utad016>.")
     (license license:expat)))
 
 (define-public r-etrm
@@ -12301,13 +12343,13 @@ systems.")
 (define-public r-epanet2toolkit
   (package
     (name "r-epanet2toolkit")
-    (version "1.0.5")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epanet2toolkit" version))
        (sha256
-        (base32 "0y9mk5w1ds31g7nwx4xkpay8h2h6cqbh9i2hl01zhycjdgh4ddfg"))))
+        (base32 "0fjhlhnb2a3y7m2hxgya48pgrzk5g5jxjiq38qbxbqcbj11knpdg"))))
     (properties `((upstream-name . "epanet2toolkit")))
     (build-system r-build-system)
     (arguments
@@ -19620,13 +19662,13 @@ potential EEG data.")
 (define-public r-eefanalytics
   (package
     (name "r-eefanalytics")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eefAnalytics" version))
        (sha256
-        (base32 "1xrrrizzs23vm0s1ysiz2f527vb2jw90jwcwsypcna2sjmbldy48"))))
+        (base32 "0s5wa76zxgvpkyj2rrmqhyrknywdb56y91h3hai5h4bprnb7847q"))))
     (properties `((upstream-name . "eefAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -19639,7 +19681,7 @@ potential EEG data.")
                              r-ggplot2
                              r-coda))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/germaine86/eefAnalytics")
+    (home-page "https://cran.r-project.org/package=eefAnalytics")
     (synopsis
      "Robust Analytical Methods for Evaluating Educational Interventions using Randomised Controlled Trials Designs")
     (description
@@ -23417,13 +23459,13 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (define-public r-ebvcube
   (package
     (name "r-ebvcube")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebvcube" version))
        (sha256
-        (base32 "19x83fmpbfz79ry956czzagqybga0dgbh07c4rs5g4lkhq0hxs2j"))))
+        (base32 "1y27asswm3cgagkqp3b6c250raab1w24ja22cljlfm53nd5k5mp8"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
     (arguments

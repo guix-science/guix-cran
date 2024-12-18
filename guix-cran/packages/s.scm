@@ -7296,13 +7296,13 @@ Cousineau & Laurencelle (2016) <doi:10.1037/met0000055>, Cousineau & O'Brien
 (define-public r-super
   (package
     (name "r-super")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "super" version))
        (sha256
-        (base32 "0w6f5i655gjfba9dcs3bvc6w9v3n16wjslf4vrip168ss462gl7r"))))
+        (base32 "0a61zsg08j4kbcpcawcpzyplb6w8nx3b4kw55d3yk3dhzwi1spxb"))))
     (properties `((upstream-name . "super")))
     (build-system r-build-system)
     (arguments
@@ -18605,13 +18605,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.36")
+    (version "1.5.37")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "1hr2pz9fgdhhgg8hiwbcyb0vvn87wrkpyvm6lg45sp6hhsdxz6xs"))))
+        (base32 "1q83r1v6q6rrjhmml7x1im7axlh5vxna2f52igmsgb9mf8hccnmm"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -24256,6 +24256,31 @@ parliamentary minutes, to tidy data.frame where each observation is the
 intervention of a single legislator.")
     (license license:gpl3)))
 
+(define-public r-spedm
+  (package
+    (name "r-spedm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spEDM" version))
+       (sha256
+        (base32 "02g9i3vs0whhwndgpblp752l8kmvjnqj5q23if5zm3d6zkc474w6"))))
+    (properties `((upstream-name . "spEDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sdsfun r-rcppthread r-rcpp r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://stscl.github.io/spEDM/")
+    (synopsis "Spatial Empirical Dynamic Modeling")
+    (description
+     "Integrates empirical dynamic modeling (EDM) with geospatial cross-sectional data
+to analyze causality via geographical convergent cross mapping (GCCM) described
+in Gao et al. (2023) <doi:10.1038/s41467-023-41619-6>.")
+    (license license:gpl3)))
+
 (define-public r-spedinstabr
   (package
     (name "r-spedinstabr")
@@ -29322,13 +29347,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.24.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "1a7n29lz6j1pqfl8k58b0gj3plw2289zar22qfla2p2pzrklrl1q"))))
+        (base32 "1vp70xsjfdsp4w8fscr7mhf2six1l4xam41q96df038wqh6b7zfg"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -29351,7 +29376,7 @@ of the American Statistical Association 105(490): 713-726.")
                              r-expm
                              r-abind))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://martin3141.github.io/spant/")
+    (home-page "https://spantdoc.wilsonlab.co.uk/")
     (synopsis "MR Spectroscopy Analysis Tools")
     (description
      "This package provides tools for reading, visualising and processing Magnetic
@@ -41352,13 +41377,13 @@ please refer to Perera, A., and Ramanayake, A. (2019)
 (define-public r-simputation
   (package
     (name "r-simputation")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simputation" version))
        (sha256
-        (base32 "02l7j2s74mjd4vgly4nnf2w7as9m3m6qifa292r29iaw12l0zj81"))))
+        (base32 "1hs2sndxnry3y5ldwx9y71y8nbph5bj3iw7gkbfbmgv8wzngnc98"))))
     (properties `((upstream-name . "simputation")))
     (build-system r-build-system)
     (arguments
@@ -59863,13 +59888,13 @@ occur.")
 (define-public r-sdmtune
   (package
     (name "r-sdmtune")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDMtune" version))
        (sha256
-        (base32 "0zzra0vig3gyz3b0h66fdlkpl2ii939d7k6p7ym5mzhz1vqdaljz"))))
+        (base32 "13i80qi52x18gmd9l3f028ib68dd16ykj9ifqd40s76yca3nnb27"))))
     (properties `((upstream-name . "SDMtune")))
     (build-system r-build-system)
     (arguments
@@ -61582,13 +61607,13 @@ contents, using XPath or CSS selectors.")
 (define-public r-scr
   (package
     (name "r-scr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scR" version))
        (sha256
-        (base32 "0irqjdcn3wc5imszc8v888ysjdpdys8r4aqfnnmk3m4lakgd8aj8"))))
+        (base32 "15gs6hm8fc6h3lv67hdy5mq2ilpxah72xidnfmf7v0iczyrsdbij"))))
     (properties `((upstream-name . "scR")))
     (build-system r-build-system)
     (arguments
@@ -66304,13 +66329,13 @@ Inference and learning in stochastic automata was by Karl-Heinz Zimmermann(2017)
 (define-public r-saturncoefficient
   (package
     (name "r-saturncoefficient")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SaturnCoefficient" version))
        (sha256
-        (base32 "0yzim5wpris227i6ncjn7n9lzms9gb7wmz8vz2zbzd00syvv7fa4"))))
+        (base32 "10dc55pvhn6mhgfxax3ml9d8xpw9l5yr2h3608yw98gs6k19749v"))))
     (properties `((upstream-name . "SaturnCoefficient")))
     (build-system r-build-system)
     (arguments
@@ -66319,7 +66344,7 @@ Inference and learning in stochastic automata was by Karl-Heinz Zimmermann(2017)
     (propagated-inputs (list r-umap r-projectionbasedclustering
                              r-matrixcorrelation))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/davidechicco/SaturnCoefficient")
+    (home-page "https://github.com/davidechicco/SaturnCoefficient_R_package")
     (synopsis "Statistical Evaluation of UMAP Dimensionality Reductions")
     (description
      "This package provides a metric expressing the quality of a UMAP layout.  This is

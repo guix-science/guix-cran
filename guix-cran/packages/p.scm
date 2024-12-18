@@ -2329,13 +2329,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.1.1")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "0gsxw00v5qfgbwdxksp7fxnsdp9h899pz9wn4wskvy4xy4cg41pm"))))
+        (base32 "1s10jp2z5bc5ig3m03v6i6qhqa9zfq79ncnr9jfwk26msw52zr40"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (arguments
@@ -27797,30 +27797,6 @@ level interfaces for methods like aot', ecovolve', bladj', phylomatic', and
 more.")
     (license license:bsd-2)))
 
-(define-public r-phyloclim
-  (package
-    (name "r-phyloclim")
-    (version "0.9.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phyloclim" version))
-       (sha256
-        (base32 "107kilh0gwr84ig54g92zyk7zv553pky2bzpjqgf9fjwbm6fvmrs"))))
-    (properties `((upstream-name . "phyloclim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sp r-raster r-ape))
-    (home-page "https://cran.r-project.org/package=phyloclim")
-    (synopsis "Integrating Phylogenetics and Climatic Niche Modeling")
-    (description
-     "This package implements some methods in phyloclimatic modeling: estimation of
-ancestral climatic niches, age-range-correlation, niche equivalency test and
-background-similarity test.")
-    (license license:gpl2+)))
-
 (define-public r-phylocanvas
   (package
     (name "r-phylocanvas")
@@ -35466,13 +35442,13 @@ README'-file.")
 (define-public r-pdfetch
   (package
     (name "r-pdfetch")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdfetch" version))
        (sha256
-        (base32 "19c4xylyvx9fxk9bxvbsvzkbl2hwgfk9l5xnykdx951kh8ssd274"))))
+        (base32 "14fjvzwzgiz4wsmij9154psmss8y4q95cv7v9xpbx4wq0cdlj86a"))))
     (properties `((upstream-name . "pdfetch")))
     (build-system r-build-system)
     (arguments
@@ -40886,13 +40862,13 @@ visualization of economic inequalities.")
 (define-public r-parabar
   (package
     (name "r-parabar")
-    (version "1.3.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parabar" version))
        (sha256
-        (base32 "1kzfjyirrhjcsp11fmv1zxi5aw3mrnhvs83sw2ypdms83g2v6rmi"))))
+        (base32 "01vpqhpadj20rf384fc8nk14v8mbqjgip7rg3i9b7fldsbxqkc9n"))))
     (properties `((upstream-name . "parabar")))
     (build-system r-build-system)
     (arguments
@@ -43904,6 +43880,47 @@ quadripartite genome structure and the location of individual genes.  For more
 information, please see Gruenstaeudl and Jenke (2020)
 <doi:10.1186/s12859-020-3475-0>.")
     (license (license:fsdg-compatible "BSD 3-clause License + file LICENSE"))))
+
+(define-public r-pacu
+  (package
+    (name "r-pacu")
+    (version "0.1.44")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pacu" version))
+       (sha256
+        (base32 "0dfpqrlnnv571qzjdr528mwny8w94gvx9iv5r0l09xqxwvki2czc"))))
+    (properties `((upstream-name . "pacu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml
+                             r-units
+                             r-tmap
+                             r-stars
+                             r-sf
+                             r-jsonlite
+                             r-httr
+                             r-gstat
+                             r-concaveman
+                             r-apsimx))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pacu")
+    (synopsis "Precision Agriculture Computational Utilities")
+    (description
+     "Support for a variety of commonly used precision agriculture operations.
+Includes functions to download and process raw satellite images from Sentinel-2
+<https://documentation.dataspace.copernicus.eu/APIs/OData.html>.  Includes
+functions that download vegetation index statistics for a given period of time,
+without the need to download the raw images
+<https://documentation.dataspace.copernicus.eu/APIs/@code{SentinelHub/Statistical.html>}.
+ There are also functions to download and visualize weather data in a historical
+context.  Lastly, the package also contains functions to process yield monitor
+data.  These functions can build polygons around recorded data points, evaluate
+the overlap between polygons, clean yield data, and smooth yield maps.")
+    (license license:gpl3+)))
 
 (define-public r-pacs
   (package

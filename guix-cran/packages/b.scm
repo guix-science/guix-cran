@@ -6385,31 +6385,6 @@ Association for the Advancement of Medical Instrumentation (2003,
 ISBN:1-57020-183-8).")
     (license license:gpl2)))
 
-(define-public r-bpa
-  (package
-    (name "r-bpa")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bpa" version))
-       (sha256
-        (base32 "0np7q1nasrq4j7ssaipvbjgrsi9n612p9lp96frq1dgix95mcgf0"))))
-    (properties `((upstream-name . "bpa")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-magrittr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bgreenwell/bpa")
-    (synopsis "Basic Pattern Analysis")
-    (description
-     "Run basic pattern analyses on character sets, digits, or combined input
-containing both characters and numeric digits.  Useful for data cleaning and for
-identifying columns containing multiple or nonstandard formats.")
-    (license license:gpl2+)))
-
 (define-public r-bp
   (package
     (name "r-bp")
@@ -16854,6 +16829,33 @@ as described by Hollenbach JA, Mack SJ, Thomson G, Gourraud PA (2012)
 <doi:10.1007/978-1-61779-842-9_14>.")
     (license license:gpl3+)))
 
+(define-public r-bigdatape
+  (package
+    (name "r-bigdatape")
+    (version "0.0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BigDataPE" version))
+       (sha256
+        (base32 "1m5hm221yib22dkzxb4fm7ngla642fjncksfdp7swzx0wla7p92n"))))
+    (properties `((upstream-name . "BigDataPE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-keyring r-httr2 r-dplyr))
+    (home-page "<https://github.com/StrategicProjects/bigdatape>")
+    (synopsis "Secure and Intuitive Access to 'BigDataPE' 'API' Datasets")
+    (description
+     "Designed to simplify the process of retrieving datasets from the
+@code{BigDataPE} platform using secure token-based authentication.  It provides
+functions for securely storing, retrieving, and managing tokens associated with
+specific datasets, as well as fetching and processing data using the httr2
+package.  The integration with keyring ensures that tokens are stored securely
+within the systemâs credential manager.")
+    (license license:expat)))
+
 (define-public r-bigdatadist
   (package
     (name "r-bigdatadist")
@@ -21813,13 +21815,13 @@ Core compatible.")
 (define-public r-bdc
   (package
     (name "r-bdc")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdc" version))
        (sha256
-        (base32 "1z79bsg0jz5ffl47sjgxj2bigyhbn76m0kz9sqbzkph7srcc6vpr"))))
+        (base32 "1v88dz54sqb878rb2c0fg97qd01hgzf7lgwsmwsrkmak361kcsdi"))))
     (properties `((upstream-name . "bdc")))
     (build-system r-build-system)
     (arguments
@@ -21844,8 +21846,8 @@ Core compatible.")
                              r-foreach
                              r-dt
                              r-dplyr
+                             r-doparallel
                              r-coordinatecleaner))
-    (native-inputs (list r-knitr))
     (home-page
      "https://brunobrr.github.io/bdc/https://github.com/brunobrr/bdc")
     (synopsis "Biodiversity Data Cleaning")

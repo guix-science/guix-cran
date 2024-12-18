@@ -13973,13 +13973,13 @@ provided as well.")
 (define-public r-learnnonparam
   (package
     (name "r-learnnonparam")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LearnNonparam" version))
        (sha256
-        (base32 "0nz6l0lxx9f0kxvspbgzl4179ry5szlw1kk6zb1bm9dlxhshy2pm"))))
+        (base32 "17923sjch3hysddxidzlldfrn2xrd71qsg4j0iv76p4qja0wgsyw"))))
     (properties `((upstream-name . "LearnNonparam")))
     (build-system r-build-system)
     (arguments

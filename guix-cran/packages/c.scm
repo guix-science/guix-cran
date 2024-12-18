@@ -3017,13 +3017,13 @@ pages and storing task view information in the repository (server-side tools).")
 (define-public r-cttvis
   (package
     (name "r-cttvis")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CTTvis" version))
        (sha256
-        (base32 "0blhy34jxf1g24b2iaynsb35y3hnkzim1gw835ynfh1l755lrcgn"))))
+        (base32 "1mi0rj496wv7iqpf0m4l18x1hjv0g8qmklkbgrx28293dc30x9q4"))))
     (properties `((upstream-name . "CTTvis")))
     (build-system r-build-system)
     (arguments
@@ -3575,20 +3575,19 @@ al. (2017) <@code{arXiv:1706.10029>}).")
 (define-public r-ctmed
   (package
     (name "r-ctmed")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cTMed" version))
        (sha256
-        (base32 "1zcm9njkl24rxqhq3x3raxj30fln5igx3l8s6mqac1nmixr7pn6l"))))
+        (base32 "1hsicqizv88p4x5hpwd62q5fz2lavvradfcvcajbl10frchrdbz0"))))
     (properties `((upstream-name . "cTMed")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-simstatespace r-rcpparmadillo r-rcpp r-numderiv
-                             r-ctsem))
+    (propagated-inputs (list r-simstatespace r-rcpparmadillo r-rcpp r-numderiv))
     (home-page "https://github.com/jeksterslab/cTMed")
     (synopsis "Continuous Time Mediation")
     (description
@@ -7299,19 +7298,19 @@ useful for methods development.  Main reference: E. Smith, G. Evans, J. Foadi
 (define-public r-cronbach
   (package
     (name "r-cronbach")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cronbach" version))
        (sha256
-        (base32 "1gkapi7pgf1mwidhgdf3y5cm4bz5igzb7mdflz560aa67asp1qyf"))))
+        (base32 "0c9lc6w9lba0j530n3kyrsvr9gn75gddbc6igns5friaz5j6jrla"))))
     (properties `((upstream-name . "Cronbach")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-boot))
+    (propagated-inputs (list r-rfast r-boot))
     (home-page "https://cran.r-project.org/package=Cronbach")
     (synopsis "Cronbach's Alpha")
     (description
@@ -14854,13 +14853,13 @@ records match based on id.")
 (define-public r-cor
   (package
     (name "r-cor")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COR" version))
        (sha256
-        (base32 "1a6zfapk91qqzn11ap11m2dwv04919j7kykylmsqrmrfxw5irwhq"))))
+        (base32 "1w20csdyq3lzjyqz3cqz52vj82idq8qjrryqdzc87q97gxv0wlsy"))))
     (properties `((upstream-name . "COR")))
     (build-system r-build-system)
     (arguments
@@ -14870,9 +14869,9 @@ records match based on id.")
     (synopsis "The COR for Optimal Subset Selection in Distributed Estimation")
     (description
      "An algorithm of optimal subset selection, related to Covariance matrices,
-Observation matrices and Response vectors (COR) to select the optimal subsets in
+observation matrices and Response vectors (COR) to select the optimal subsets in
 distributed estimation.  The philosophy of the package is described in Guo G.
-(2020) <doi:10.1080/02331888.2020.1823979>.")
+(2024) <doi:10.1007/s11222-024-10471-z>.")
     (license license:expat)))
 
 (define-public r-copyseparator
@@ -15521,43 +15520,6 @@ traits, while simultaneously addressing confounding due to linkage
 disequilibrium.  For details see Manipur et al (2023)
 <doi:10.1101/2023.06.29.546856>.")
     (license license:gpl3)))
-
-(define-public r-copernicusmarine
-  (package
-    (name "r-copernicusmarine")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CopernicusMarine" version))
-       (sha256
-        (base32 "09kv2c7lkbnpzfs0i48dp3gvx6mwn89q0y3f4hbmm9iiyksrdw2i"))))
-    (properties `((upstream-name . "CopernicusMarine")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-stringr
-                             r-sf
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-leaflet
-                             r-httr2
-                             r-dplyr
-                             r-crayon))
-    (home-page "https://github.com/pepijn-devries/CopernicusMarine")
-    (synopsis
-     "Search Download and Handle Data from Copernicus Marine Service Information")
-    (description
-     "Subset and download data from EU Copernicus Marine Service Information:
-<https://data.marine.copernicus.eu>.  Import data on the oceans physical and
-biogeochemical state from Copernicus into R without the need of external
-software.")
-    (license license:gpl3+)))
 
 (define-public r-copernicusdem
   (package
@@ -23300,6 +23262,34 @@ grouping aligns to naturally occurring clusters.")
 treemaps and 3D scatterplots of image compositions.  Color palettes can also be
 created.")
     (license license:gpl2+)))
+
+(define-public r-colorfast
+  (package
+    (name "r-colorfast")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "colorfast" version))
+       (sha256
+        (base32 "04z9n4hbv4yb68sl0gzfbawm4bcm7gyqrlla5yl8fj8z0z965hr3"))))
+    (properties `((upstream-name . "colorfast")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=colorfast")
+    (synopsis
+     "Fast Conversion of R Colors to Color Component Values and Native Packed Integer Format")
+    (description
+     "Color values in R are often represented as strings of hexadecimal colors or
+named colors.  This package offers fast conversion of these color
+representations to either an array of red/green/blue/alpha values or to the
+packed integer format used in native raster objects.  This fast conversion of
+colors is implemented using an order-preserving minimal perfect hash derived
+from Majewski et al (1996) A Family of Perfect Hashing Methods
+<doi:10.1093/comjnl/39.6.547>.")
+    (license license:expat)))
 
 (define-public r-colorednoise
   (package
@@ -44023,13 +44013,13 @@ effects.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "0l8xpvym181s46sj4xzy01iskpkx7hab7gnprj5m22qh47v494yy"))))
+        (base32 "0cvagjv4nqa42wcwnhp9jlpzvqlpr6wipwxmlamwdbfb0bb64lk7"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (arguments
@@ -46950,13 +46940,13 @@ developments) in ecological time series using fitted Weibull functions.")
 (define-public r-card-pro
   (package
     (name "r-card-pro")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "card.pro" version))
        (sha256
-        (base32 "1qhca4lyzqwwkf6q2kni3d8wns0wjm1dpxrj40dfnh76ixrpqldg"))))
+        (base32 "1sysvc68bqrl8b77g0wqbzgnzapwd0mj7dk2shzkzdssaj4ms65g"))))
     (properties `((upstream-name . "card.pro")))
     (build-system r-build-system)
     (arguments
@@ -46981,11 +46971,12 @@ developments) in ecological time series using fitted Weibull functions.")
     (home-page "https://cardpro.rpkg.net")
     (synopsis "Lightweight Modern & Responsive Card Component for 'shiny'")
     (description
-     "Responsive and modern HTML card essentials for shiny dashboard.  This novel card
-component in Bootstrap provides a flexible and extensible content container with
-multiple variants and options for building robust R based apps e.g for graph
-build or machine learning projects.  The features rely on a combination of
-JQuery <https://jquery.com> and CSS styles to improve the card functionality.")
+     "Responsive and modern HTML card essentials for shiny applications and
+dashboards.  This novel card component in Bootstrap provides a flexible and
+extensible content container with multiple variants and options for building
+robust R based apps e.g for graph build or machine learning projects.  The
+features rely on a combination of JQuery <https://jquery.com> and CSS styles to
+improve the card functionality.")
     (license license:expat)))
 
 (define-public r-card

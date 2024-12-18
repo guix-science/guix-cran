@@ -2002,19 +2002,19 @@ objects.")
 (define-public r-tugboat
   (package
     (name "r-tugboat")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tugboat" version))
        (sha256
-        (base32 "13l9pn7zfkilbcyaw1b8d8s7fhlv0yys0vn2y7qarw3n9d9jvrdq"))))
+        (base32 "0kxhnswyrsy03ad6qc73x5pm60m9jkpv3f0dmg315pk92jln2hv1"))))
     (properties `((upstream-name . "tugboat")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-renv r-here r-dockerfiler))
+    (propagated-inputs (list r-renv r-here))
     (home-page "https://www.dmolitor.com/tugboat/")
     (synopsis "Build a Docker Image from a Directory or Project")
     (description
@@ -8357,6 +8357,38 @@ S.D.W. Frost (2017) <doi:10.1093/ve/vex025>.")
 leaf predictors when the predictor variables are structured according to a tree,
 as described in Fukuyama et al. (2017) <doi:10.1371/journal.pcbi.1005706>.")
     (license license:gpl2)))
+
+(define-public r-treeclim
+  (package
+    (name "r-treeclim")
+    (version "2.0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treeclim" version))
+       (sha256
+        (base32 "1bmb2ccqm47x1lzp8c7pg61j74x01n98p0sfs6ih8svvgydq4fk1"))))
+    (properties `((upstream-name . "treeclim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-plyr
+                             r-np
+                             r-lmtest
+                             r-lmodel2
+                             r-ggplot2
+                             r-boot
+                             r-abind))
+    (home-page "https://github.com/cszang/treeclim")
+    (synopsis "Numerical Calibration of Proxy-Climate Relationships")
+    (description
+     "Bootstrapped response and correlation functions, seasonal correlations and
+evaluation of reconstruction skills for use in dendroclimatology and
+dendroecology, see Zang and Biondi (2015) <doi:10.1111/ecog.01335>.")
+    (license license:gpl3)))
 
 (define-public r-treebugs
   (package
@@ -17685,13 +17717,13 @@ behaviors such as @code{if_else2()} and @code{str_detect2()}.")
 (define-public r-tidyplots
   (package
     (name "r-tidyplots")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplots" version))
        (sha256
-        (base32 "1p5bsyzdakj3yfrnznmmqyqk7930ymvvkla58gky25av2nc5i77m"))))
+        (base32 "07qkywn6nmd1m6h2npg0grysi8rd5rip3ivvj5cfs8cqjk7s9zin"))))
     (properties `((upstream-name . "tidyplots")))
     (build-system r-build-system)
     (arguments
@@ -18637,13 +18669,13 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "02wrjpzs9xhggrz4m334bxp56ds63ipal1v4njdgjrizc21kq48g"))))
+        (base32 "1ipny1zf02gqy23r0ac12f2cjay9n6myf76a9da7d8kghk68kvam"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (arguments

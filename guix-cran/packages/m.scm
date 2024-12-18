@@ -6343,19 +6343,19 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "0a52vkyydlvimqc9x6plx71k6fk639am57l54xbxdnzd5l899zql"))))
+        (base32 "0s9p8sqxd5kjx9nw17xxdgjfamhny1dihphhr16mx6c4lrzphdic"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-wrapr r-pracma r-hablar r-ggplot2))
+    (propagated-inputs (list r-zoo r-pracma r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MultiATSM")
     (synopsis "Multicountry Term Structure of Interest Rates Models")
@@ -15642,13 +15642,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1bi1g46ylggrnv5qq6w0agymsiv7y7kxyj8kpqhy5xshcc41fxbw"))))
+        (base32 "0dzkar23k58170sc9lmbihg5w1wyia53hrh9s2c60mp6jj27lvy0"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -21098,6 +21098,34 @@ include detection of associated SNPs with MLMM, model selection by lowest
 selected model and graphical functions.")
     (license license:gpl3)))
 
+(define-public r-mlml2r
+  (package
+    (name "r-mlml2r")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLML2R" version))
+       (sha256
+        (base32 "1jgk0h3chab831g5nsppgc6p0xplv11j82491iymnxixqfswb08w"))))
+    (properties `((upstream-name . "MLML2R")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/samarafk/MLML2R")
+    (synopsis
+     "Maximum Likelihood Estimation of DNA Methylation and Hydroxymethylation Proportions")
+    (description
+     "Maximum likelihood estimates (MLE) of the proportions of 5-@code{mC} and
+5-@code{hmC} in the DNA using information from BS-conversion, TAB-conversion,
+and @code{oxBS-conversion} methods.  One can use information from all three
+methods or any combination of two of them.  Estimates are based on Binomial
+model by Qu et al. (2013) <doi:10.1093/bioinformatics/btt459> and Kiihl et al.
+(2019) <doi:10.1515/sagmb-2018-0031>.")
+    (license license:expat)))
+
 (define-public r-mlmi
   (package
     (name "r-mlmi")
@@ -21735,13 +21763,13 @@ maximum likelihood estimate(s) via Cox-Snell Methodology.")
 (define-public r-mle
   (package
     (name "r-mle")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLE" version))
        (sha256
-        (base32 "1c3i5fw4n7yimdnk8yj6ncbhzb5gjqgwjwmsk3k3f0va2jws4ciy"))))
+        (base32 "0g7416dsd110pq5xl65fzcd1ci65ln1db039r4711vgvq3nr0699"))))
     (properties `((upstream-name . "MLE")))
     (build-system r-build-system)
     (arguments
@@ -21755,6 +21783,8 @@ maximum likelihood estimate(s) via Cox-Snell Methodology.")
                              r-geppe
                              r-directional
                              r-compositional
+                             r-compoissonreg
+                             r-ccd
                              r-bivpois
                              r-bgfd))
     (home-page "https://cran.r-project.org/package=MLE")
@@ -29001,13 +29031,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.10.0")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "0iqy5pnikd2b4kf39imi3d4ksl91wqy53a97qzqyxxqg1xarigpr"))))
+        (base32 "0iba14hpddas231nf0ykwmdk1qw0pj7ncbz14mpsxs3amvf7j2vz"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
@@ -46618,13 +46648,13 @@ departments, provinces and districts of Peru.")
 (define-public r-mapspain
   (package
     (name "r-mapspain")
-    (version "0.9.2")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapSpain" version))
        (sha256
-        (base32 "1jbwvw9r37yq32ynb6jq682ln6lh97k2vmc91g6sc1kqyc5kq059"))))
+        (base32 "0ylaca6vnyazfna17ybf41sncj57qwpfgv5xb2i8fw4c8jxn8f4s"))))
     (properties `((upstream-name . "mapSpain")))
     (build-system r-build-system)
     (arguments

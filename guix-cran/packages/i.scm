@@ -2541,6 +2541,30 @@ algorithms, based on @code{LogitBoost}, that incorporate this isotonicity
 information, yielding more accurate and easily interpretable rules.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-iso8601
+  (package
+    (name "r-iso8601")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iso8601" version))
+       (sha256
+        (base32 "1mnj19223sw9a15sjjdcx6pwdbsjvrk74d33428hp2af5wx34szp"))))
+    (properties `((upstream-name . "iso8601")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/djvanderlaan/iso8601/tree/main/R-package")
+    (synopsis "Working with ISO8601 Dates and Times")
+    (description
+     "This package provides functions to parse strings with ISO8601 dates, times, and
+date-times into R-objects.  Additionally, there are functions to determine the
+type of ISO8601 string and to standardise ISO8601 strings.")
+    (license license:gpl3)))
+
 (define-public r-iso11784tools
   (package
     (name "r-iso11784tools")
@@ -4259,13 +4283,13 @@ with user-provided data.")
 (define-public r-irace
   (package
     (name "r-irace")
-    (version "4.0")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irace" version))
        (sha256
-        (base32 "1c5gdmfgr2b4d3pv3cqk724ckm499bx1xadzqwr7nwcgkwz6njr6"))))
+        (base32 "0383gw288nps1lb0zawbxqdb18hcdl59x8vav26c6fg15vr8n9x2"))))
     (properties `((upstream-name . "irace")))
     (build-system r-build-system)
     (arguments
@@ -15348,13 +15372,13 @@ recording and analysing neuronal data.  See
 (define-public r-igor
   (package
     (name "r-igor")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igoR" version))
        (sha256
-        (base32 "06f9f363zf1k026a0xg5myydzhgl6kgkqp74sz0jwgl44j2zp44s"))))
+        (base32 "10kjnik4s1kq13ff0lskr6f05gd6d559zc5f1aza8d33z2wci215"))))
     (properties `((upstream-name . "igoR")))
     (build-system r-build-system)
     (arguments
