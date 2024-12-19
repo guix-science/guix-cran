@@ -12494,13 +12494,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move2
   (package
     (name "r-move2")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move2" version))
        (sha256
-        (base32 "1byr5akkax53v8ik52ks9z2pagkayg8z0b7jw9a32m03mb8hsg5r"))))
+        (base32 "0i60pcp26biq3hp6bcg2yjcxxq9c9f1nxz5x84yi77ivmhw5fjy4"))))
     (properties `((upstream-name . "move2")))
     (build-system r-build-system)
     (arguments
@@ -21440,13 +21440,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.18.0")
+    (version "2.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "1rkf5xhscxkw3191xj3jh89nmbdm3mgkbn4aan8lv4sxx3adkryb"))))
+        (base32 "0kcaw4cvdxf4gfiibw9ga6368hxhsmq6xq3mmz2fh95av9n49rjw"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -42283,13 +42283,13 @@ distributions used in insurance modeling as described in Bernegger (1997)
 (define-public r-mbbefd
   (package
     (name "r-mbbefd")
-    (version "0.8.12")
+    (version "0.8.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mbbefd" version))
        (sha256
-        (base32 "107mld5bq62zj7rar0g7402xiiy6rx2xwg4mhna0pdjq31plb27b"))))
+        (base32 "1q1726x9gi3qvdvggm39yvpnfcm679s4fhisv0sl4amq2s23g6zf"))))
     (properties `((upstream-name . "mbbefd")))
     (build-system r-build-system)
     (arguments

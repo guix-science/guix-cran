@@ -18537,13 +18537,13 @@ are very messy.")
 (define-public r-tidygam
   (package
     (name "r-tidygam")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidygam" version))
        (sha256
-        (base32 "0gd5qvwmzfrjzvpx8mrd3a0pvk8m7div330kcvcbmaz83kd3qjvg"))))
+        (base32 "0kw0x686zz9j6vyg76dwv8izy7cmzg1vf82m8aagi4y6bpbp49q4"))))
     (properties `((upstream-name . "tidygam")))
     (build-system r-build-system)
     (arguments
@@ -20651,13 +20651,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "this.path" version))
        (sha256
-        (base32 "0ickm26sqlgi6kz8vh92408l04brxqznwrrmhcs2pvk2czj6dr0p"))))
+        (base32 "193a97z3v7zjvdj92nwl6j2s3fn9zakmcyd85cxa1v7qlygm4y51"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (arguments
@@ -20666,13 +20666,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
     (home-page "https://github.com/ArcadeAntics/this.path")
     (synopsis "Get Executing Script's Path")
     (description
-     "Determine the path of the executing script.  Compatible with a few popular GUIs:
-Rgui', RStudio', VSCode', Jupyter', Emacs', and Rscript (shell).  Compatible
-with several functions and packages: @code{source()}', @code{sys.source()}',
-@code{debugSource()} in RStudio', @code{compiler::loadcmp()}',
-@code{utils::Sweave()}', @code{box::use()}', @code{knitr::knit()}',
-@code{plumber::plumb()}', @code{shiny::runApp()}', package:targets', and
-@code{testthat::source_file()}'.")
+     "Determine the path of the executing script.  Compatible with several popular
+GUIs: Rgui', RStudio', Positron', VSCode', Jupyter', Emacs', and Rscript
+(shell).  Compatible with several functions and packages: @code{source()}',
+@code{sys.source()}', @code{debugSource()} in RStudio',
+@code{compiler::loadcmp()}', @code{utils::Sweave()}', @code{box::use()}',
+@code{knitr::knit()}', @code{plumber::plumb()}', @code{shiny::runApp()}',
+package:targets', and @code{testthat::source_file()}'.")
     (license license:expat)))
 
 (define-public r-thinkr
@@ -28492,6 +28492,32 @@ performances over time.")
     (description "Utilities for text analysis.")
     (license license:gpl2)))
 
+(define-public r-tatooheene
+  (package
+    (name "r-tatooheene")
+    (version "0.19.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tatooheene" version))
+       (sha256
+        (base32 "07f7jv4nq4r45bv7816d8y6br9rh27msygxyzpg4y7h1153sqxxn"))))
+    (properties `((upstream-name . "tatooheene")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-dplyr r-assertthat))
+    (home-page "https://cran.r-project.org/package=tatooheene")
+    (synopsis
+     "Technology Appraisal Toolbox for Health Economic Evaluations in the Netherlands")
+    (description
+     "This package provides functions to support economic modelling in R based on the
+methods of the Dutch guideline for economic evaluations in healthcare
+<https://www.zorginstituutnederland.nl/publicaties/publicatie/2024/01/16/richtlijn-voor-het-uitvoeren-van-economische-evaluaties-in-de-gezondheidszorg>,
+CBS data <https://www.cbs.nl/>, and OECD data <https://www.oecd.org/en.html>.")
+    (license license:expat)))
+
 (define-public r-tatoo
   (package
     (name "r-tatoo")
@@ -30434,13 +30460,13 @@ differences.  Weighted data are supported via the survey package.")
 (define-public r-tablemonster
   (package
     (name "r-tablemonster")
-    (version "1.7")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TableMonster" version))
        (sha256
-        (base32 "1xa4bkcpzhm50dwbpya346swjjfw46n2x26xm30p8gppilg5c0lb"))))
+        (base32 "104jm458s6880l0qpp3gbbq7kwlyqnwh9cd43igk03yj8mh86i8z"))))
     (properties `((upstream-name . "TableMonster")))
     (build-system r-build-system)
     (arguments

@@ -574,6 +574,54 @@ plans at a set of time varying alternatives.  See Izmirlian, G. (2014)
 <doi:10.4310/SII.2014.v7.n1.a4>.")
     (license license:gpl2+)))
 
+(define-public r-pwrfdr
+  (package
+    (name "r-pwrfdr")
+    (version "3.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pwrFDR" version))
+       (sha256
+        (base32 "1awcf65pwr8p2cp478yywnn9dfkhbwv64134nwqy8vfc0lydgqpi"))))
+    (properties `((upstream-name . "pwrFDR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tablemonster r-stringr r-mvtnorm r-ggplot2
+                             r-flextable))
+    (home-page "https://cran.r-project.org/package=pwrFDR")
+    (synopsis "FDR Power")
+    (description
+     "Computing Average and TPX Power under various BHFDR type sequential procedures.
+All of these procedures involve control of some summary of the distribution of
+the FDP, e.g. the proportion of discoveries which are false in a given
+experiment.  The most widely known of these, the BH-FDR procedure, controls the
+FDR which is the mean of the FDP. A lesser known procedure, due to Lehmann and
+Romano, controls the FDX, or probability that the FDP exceeds a user provided
+threshold.  This is less conservative than FWE control procedures but much more
+conservative than the BH-FDR proceudre.  This package and the references
+supporting it introduce a new procedure for controlling the FDX which we call
+the BH-FDX procedure.  This procedure iteratively identifies, given alpha and
+lower threshold delta, an alpha* less than alpha at which BH-FDR guarantees FDX
+control.  This uses asymptotic approximation and is only slightly more
+conservative than the BH-FDR procedure.  Likewise, we can think of the power in
+multiple testing experiments in terms of a summary of the distribution of the
+True Positive Proportion (TPP), the portion of tests truly non-null distributed
+that are called significant.  The package will compute power, sample size or any
+other missing parameter required for power defined as (i) the mean of the TPP
+(average power) or (ii) the probability that the TPP exceeds a given value,
+lambda, (TPX power) via asymptotic approximation.  All supplied theoretical
+results are also obtainable via simulation.  The suggested approach is to narrow
+in on a design via the theoretical approaches and then make final
+adjustments/verify the results by simulation.  The theoretical results are
+described in Izmirlian, G (2020) Statistics and Probability letters,
+\"<doi:10.1016/j.spl.2020.108713>\", and an applied paper describing the
+methodology with a simulation study is in preparation.  See
+citation(\"@code{pwrFDR}\").")
+    (license license:gpl2+)))
+
 (define-public r-pwrab
   (package
     (name "r-pwrab")
@@ -4447,6 +4495,30 @@ intamap package.  More details on implementation (Barillec et.  al.', 2010,
 method.  For details on this method see: Sulewski (2019)
 <doi:10.1080/03610918.2019.1664580>.")
     (license license:gpl3)))
+
+(define-public r-psgd
+  (package
+    (name "r-psgd")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSGD" version))
+       (sha256
+        (base32 "0nmxcwrznibx2xzgv3zl456qf1251457f31dapyj0mxg4r8pdl8r"))))
+    (properties `((upstream-name . "PSGD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=PSGD")
+    (synopsis "Projected Subset Gradient Descent")
+    (description
+     "This package provides functions to generate ensembles of generalized linear
+models using a greedy projected subset gradient descent algorithm.  The sparsity
+and diversity tuning parameters are selected by cross-validation.")
+    (license license:gpl2+)))
 
 (define-public r-psfmi
   (package

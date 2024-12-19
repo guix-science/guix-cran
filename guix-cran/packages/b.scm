@@ -6385,6 +6385,31 @@ Association for the Advancement of Medical Instrumentation (2003,
 ISBN:1-57020-183-8).")
     (license license:gpl2)))
 
+(define-public r-bpa
+  (package
+    (name "r-bpa")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bpa" version))
+       (sha256
+        (base32 "0np7q1nasrq4j7ssaipvbjgrsi9n612p9lp96frq1dgix95mcgf0"))))
+    (properties `((upstream-name . "bpa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plyr r-magrittr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bgreenwell/bpa")
+    (synopsis "Basic Pattern Analysis")
+    (description
+     "Run basic pattern analyses on character sets, digits, or combined input
+containing both characters and numeric digits.  Useful for data cleaning and for
+identifying columns containing multiple or nonstandard formats.")
+    (license license:gpl2+)))
+
 (define-public r-bp
   (package
     (name "r-bp")
@@ -29426,6 +29451,33 @@ see Ouyang, Z (2008) \"Bayesian Additive Regression Kernels\", Duke University.
 Regression Kernels, Annals of Statistics Vol (39) pages 1916-1962
 <doi:10.1214/11-AOS889>.")
     (license license:gpl3+)))
+
+(define-public r-bareb
+  (package
+    (name "r-bareb")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BAREB" version))
+       (sha256
+        (base32 "1h6lpgqk3q6fbx6zxnvfs7sfs7glsaiba97z494vpiiysfdwih8d"))))
+    (properties `((upstream-name . "BAREB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=BAREB")
+    (synopsis "Bayesian Repulsive Biclustering Model for Periodontal Data")
+    (description
+     "Simultaneously clusters the Periodontal diseases (PD) patients and their tooth
+sites after taking the patient- and site-level covariates into consideration.
+BAREB uses the determinantal point process (DPP) prior to induce diversity among
+different biclusters to facilitate parsimony and interpretability.  Essentially,
+BAREB is a cluster-wise linear model based on Yuliang (2020)
+<doi:10.1002/sim.8536>.")
+    (license license:gpl3)))
 
 (define-public r-bardr
   (package

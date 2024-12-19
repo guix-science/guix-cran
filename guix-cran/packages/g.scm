@@ -4786,13 +4786,13 @@ the C++ code file from John Burkardt and John Denker (Brent, 2002).")
 (define-public r-groupdata2
   (package
     (name "r-groupdata2")
-    (version "2.0.3")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupdata2" version))
        (sha256
-        (base32 "0r126mq7cyc19nizyh8xk5a0pfi1sic8lxfvnlmhhhbpn97lqyqz"))))
+        (base32 "0zq8np8h652z04zhzzf8vb6gglpjw4jws4h0f1sa5x9j18690ciz"))))
     (properties `((upstream-name . "groupdata2")))
     (build-system r-build-system)
     (arguments
@@ -20429,19 +20429,24 @@ ggplot2'.")
 (define-public r-ggmapinset
   (package
     (name "r-ggmapinset")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmapinset" version))
        (sha256
-        (base32 "1cakn2iqjk117ngb0ssc68hxx8s4mgc8z8bl6mfvwffvjsyjyxyp"))))
+        (base32 "0v2q81f1ya05xbl6wi8pc07z08825aa28gcilc534rr9dgbw4gry"))))
     (properties `((upstream-name . "ggmapinset")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sf r-rlang r-ggplot2 r-cli))
+    (propagated-inputs (list r-vctrs
+                             r-sf
+                             r-rlang
+                             r-lifecycle
+                             r-ggplot2
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cidm-ph/ggmapinset")
     (synopsis "Add Inset Panels to Maps")
@@ -26389,13 +26394,13 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
 (define-public r-geofis
   (package
     (name "r-geofis")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoFIS" version))
        (sha256
-        (base32 "0akcs04ip30jb37jh0nmc3vdmhlr8zmpspgnbsaz9w3qxklhlarw"))))
+        (base32 "0p47qj2qrc2a30im7mff137g0ffxrl7jpzwpzs3ac01xnrayar7y"))))
     (properties `((upstream-name . "GeoFIS")))
     (build-system r-build-system)
     (arguments

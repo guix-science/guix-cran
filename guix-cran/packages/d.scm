@@ -18763,18 +18763,19 @@ about measurement error and is robust to problem of extreme outlier scores.")
 (define-public r-dfadjust
   (package
     (name "r-dfadjust")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfadjust" version))
        (sha256
-        (base32 "0x44alfb0ryd7m0y2gqq7sqhyf6yzk4pcwb129d2qazhwya6p2y5"))))
+        (base32 "1lrzyy6w6vl1a2x47c5j20a90zpppbj11alw0h6h64dy66pw66xv"))))
     (properties `((upstream-name . "dfadjust")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-collapse))
     (native-inputs (list r-knitr))
     (home-page
      "https://github.com/kolesarm/Robust-Small-Sample-Standard-Errors")
@@ -29513,6 +29514,41 @@ et al. (2020) <doi:10.1016/j.neucom.2019.11.111>, Page (1954)
 environment.  You can opt to add variable labels.  You can write the object
 directly to Excel.")
     (license license:expat)))
+
+(define-public r-datacutr
+  (package
+    (name "r-datacutr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datacutr" version))
+       (sha256
+        (base32 "1k9yqimgabmw6b128cbvbwljaw76s7591258ssvhnbc604q9wd35"))))
+    (properties `((upstream-name . "datacutr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-reactable
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr
+                             r-assertthat
+                             r-admiraldev))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/datacutr/")
+    (synopsis "SDTM Datacut")
+    (description
+     "Supports the process of applying a cut to Standard Data Tabulation Model (SDTM),
+as part of the analysis of specific points in time of the data, normally as part
+of investigation into clinical trials.  The functions support different
+approaches of cutting to the different domains of SDTM normally observed.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-datacomparer
   (package

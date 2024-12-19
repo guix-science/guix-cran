@@ -23371,6 +23371,47 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 <doi:10.1109/TCYB.2018.2816984>.")
     (license license:gpl3)))
 
+(define-public r-adas-utils
+  (package
+    (name "r-adas-utils")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adas.utils" version))
+       (sha256
+        (base32 "0yca2ag4lvz7bggsdwdqvr7vajarx064s2kszgf2rqr1dw51s4yz"))))
+    (properties `((upstream-name . "adas.utils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-ggplot2
+                             r-gghalfnorm
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=adas.utils")
+    (synopsis "Design of Experiments and Factorial Plans Utilities")
+    (description
+     "This package provides a number of functions to create and analyze factorial
+plans according to the Design of Experiments (@code{DoE}) approach, with the
+addition of some utility function to perform some statistical analyses.
+@code{DoE} approach follows the approach in \"Design and Analysis of Experiments\"
+by Douglas C. Montgomery (2019, ISBN:978-1-119-49244-3).  The package also
+provides utilities used in the course \"Analysis of Data and Statistics\" at the
+University of Trento, Italy.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-adar
   (package
     (name "r-adar")

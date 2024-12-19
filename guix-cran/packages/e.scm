@@ -500,19 +500,20 @@ the approach see Mirman, Dixon & Magnuson (2008)
 (define-public r-eyetools
   (package
     (name "r-eyetools")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyetools" version))
        (sha256
-        (base32 "0mzy88x4z6gxs6qqsrcm9bnvqd1frn0dkk637dmz0nf27dnvpgqr"))))
+        (base32 "1059m9b5p1irjkq3plgxsm40cvgaxnwd0dpgp5philbq6bqbdgn9"))))
     (properties `((upstream-name . "eyetools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo
+                             r-viridis
                              r-rlang
                              r-rdist
                              r-pbapply
@@ -1046,13 +1047,13 @@ users to customize all aspects of the analysis.")
 (define-public r-extremaldep
   (package
     (name "r-extremaldep")
-    (version "0.0.4-3")
+    (version "0.0.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExtremalDep" version))
        (sha256
-        (base32 "0mhm4w2rlws9z89x8q3lrj0wgq1qfksb355dr6y2mx7yfi7ls331"))))
+        (base32 "1k0b7i14vib00z79wymxk5jh413acqb3pp8bz4m0iv0xsmf38l2n"))))
     (properties `((upstream-name . "ExtremalDep")))
     (build-system r-build-system)
     (arguments
@@ -16065,6 +16066,34 @@ Naimi, B., Hamm, N. A., Groen, T. A., Skidmore, A. K., Toxopeus, A. G., &
 Alibakhshi, S. (2019) <doi:10.1016/j.spasta.2018.10.001>.")
     (license license:gpl3+)))
 
+(define-public r-elrm
+  (package
+    (name "r-elrm")
+    (version "1.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "elrm" version))
+       (sha256
+        (base32 "1xqwqkjjd616bpzn2k3hvdxpqraglw0v0m2alshs1w4hr1mrmfk9"))))
+    (properties `((upstream-name . "elrm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-coda))
+    (home-page "https://cran.r-project.org/package=elrm")
+    (synopsis "Exact Logistic Regression via MCMC")
+    (description
+     "This package implements a Markov Chain Monte Carlo algorithm to approximate
+exact conditional inference for logistic regression models.  Exact conditional
+inference is based on the distribution of the sufficient statistics for the
+parameters of interest given the sufficient statistics for the remaining
+nuisance parameters.  Using model formula notation, users specify a logistic
+model and model terms of interest for exact inference.  See Zamar et al. (2007)
+<doi:10.18637/jss.v021.i03> for more details.")
+    (license license:gpl2+)))
+
 (define-public r-elosteepness
   (package
     (name "r-elosteepness")
@@ -24100,13 +24129,13 @@ models (Tversky & Sattath, 1979 <doi:10.1037/0033-295X.86.6.542>).")
 (define-public r-eattools
   (package
     (name "r-eattools")
-    (version "0.7.7")
+    (version "0.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatTools" version))
        (sha256
-        (base32 "00w39z9jjgrqsg0fn7y07m3znpm6bv780g3v8hkmrslxw7cxfc51"))))
+        (base32 "0ias68g4gyhvyw96hdzl4iv4dv7x1rrs8afpi8bbsz8b45yncjk0"))))
     (properties `((upstream-name . "eatTools")))
     (build-system r-build-system)
     (arguments

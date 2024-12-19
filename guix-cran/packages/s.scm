@@ -7387,18 +7387,19 @@ Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 (define-public r-sundialr
   (package
     (name "r-sundialr")
-    (version "0.1.6")
+    (version "0.1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sundialr" version))
        (sha256
-        (base32 "0l9rp5afpsbd3flqq4fczamm6zjw23f99kb81f63lfn3q06qga4k"))))
+        (base32 "10b9il73v2vy32pq75vh2gssrmwrilvn271ll6aymzlrp5jv1l0m"))))
     (properties `((upstream-name . "sundialr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list cmake))
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sn248/sundialr")
@@ -12803,6 +12804,32 @@ details of the stepwise algorithm can be found in Romano and Wolf (2007)
 <DOI:10.1093/jjfinec/nbu014>.")
     (license license:gpl2+)))
 
+(define-public r-stepsplitreg
+  (package
+    (name "r-stepsplitreg")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stepSplitReg" version))
+       (sha256
+        (base32 "1nvpb1wd4na49rcy8ixwnhkmkw9si8xkajcddl7x9c3rc8zyzm10"))))
+    (properties `((upstream-name . "stepSplitReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splitglm r-rcpparmadillo r-rcpp r-nnls))
+    (home-page "https://cran.r-project.org/package=stepSplitReg")
+    (synopsis "Stepwise Split Regularized Regression")
+    (description
+     "This package provides functions to perform stepwise split regularized
+regression.  The approach first uses a stepwise algorithm to split the variables
+into the models with a goodness of fit criterion, and then regularization is
+applied to each model.  The weights of the models in the ensemble are determined
+based on a criterion selected by the user.")
+    (license license:gpl2+)))
+
 (define-public r-stepsignalmargilike
   (package
     (name "r-stepsignalmargilike")
@@ -14188,20 +14215,20 @@ designed to be suitable for use at the console, in Rmarkdown and @code{LaTeX}.")
 (define-public r-statpsych
   (package
     (name "r-statpsych")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statpsych" version))
        (sha256
-        (base32 "1kxgwzg6qwkrlih0rwllmm31c9yyxp6w051wslb4q695piq4las2"))))
+        (base32 "0cm384ii8978v5l0x8801najvfz7zpv5ik75a91jsigq7pmx3kh3"))))
     (properties `((upstream-name . "statpsych")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rdpack r-mnonr r-mathjaxr))
-    (home-page "https://cran.r-project.org/package=statpsych")
+    (home-page "https://github.com/dgbonett/statpsych/")
     (synopsis "Statistical Methods for Psychologists")
     (description
      "This package implements confidence interval and sample size methods that are
@@ -14209,14 +14236,14 @@ especially useful in psychological research.  The methods can be applied in
 1-group, 2-group, paired-samples, and multiple-group designs and to a variety of
 parameters including means, medians, proportions, slopes, standardized mean
 differences, standardized linear contrasts of means, plus several measures of
-correlation and association.  The confidence intervals and sample size functions
-are applicable to single parameters as well as differences, ratios, and linear
-contrasts of parameters.  The sample size functions can be used to approximate
-the sample size needed to estimate a parameter or function of parameters with
-desired confidence interval precision or to perform a variety of hypothesis
-tests (directional two-sided, equivalence, superiority, noninferiority) with
-desired power.  For details see: Statistical Methods for Psychologists, Volumes
-1 â 4, <https://dgbonett.sites.ucsc.edu/>.")
+correlation and association.  Confidence interval and sample size functions are
+given for single parameters as well as differences, ratios, and linear contrasts
+of parameters.  The sample size functions can be used to approximate the sample
+size needed to estimate a parameter or function of parameters with desired
+confidence interval precision or to perform a variety of hypothesis tests
+(directional two-sided, equivalence, superiority, noninferiority) with desired
+power.  For details see: Statistical Methods for Psychologists, Volumes 1 â 4,
+<https://dgbonett.sites.ucsc.edu/>.")
     (license license:gpl3)))
 
 (define-public r-statprograms
@@ -22648,6 +22675,32 @@ recursive formulas.  It also contains a C++ head-only library integrated with
 Rcpp.  See Wang and Yan (2021) <doi:10.6339/21-JDS1020> for details.")
     (license license:gpl3+)))
 
+(define-public r-splinecox
+  (package
+    (name "r-splinecox")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "splineCox" version))
+       (sha256
+        (base32 "1d3gbw3znmfmpwk074smghcah2graljgwcrajg82cdanzql6x8gg"))))
+    (properties `((upstream-name . "splineCox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-joint-cox))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=splineCox")
+    (synopsis
+     "Two-Stage Estimation Approach to Cox Regression Using M-Spline Function")
+    (description
+     "This package implements a two-stage estimation approach for Cox regression using
+five-parameter M-spline functions to model the baseline hazard.  It allows for
+flexible hazard shapes and model selection based on log-likelihood criteria.")
+    (license license:gpl3+)))
+
 (define-public r-splice
   (package
     (name "r-splice")
@@ -29432,6 +29485,57 @@ M. S. D. (2004) <doi:10.1590/S1413-70542004000100018>).  For both methods, there
 are three multicomparison procedure available: Tukey, multivariate T, and
 Scott-Knott.")
     (license license:gpl3)))
+
+(define-public r-spanishoddata
+  (package
+    (name "r-spanishoddata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spanishoddata" version))
+       (sha256
+        (base32 "1fwj6568g199m1fjblw8ypfmfy0922sh62zhn417j19y5f7i18v9"))))
+    (properties `((upstream-name . "spanishoddata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-parallelly
+                             r-memuse
+                             r-lubridate
+                             r-httr2
+                             r-here
+                             r-glue
+                             r-fs
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-curl
+                             r-checkmate))
+    (native-inputs (list r-quarto))
+    (home-page "https://rOpenSpain.github.io/spanishoddata/")
+    (synopsis "Get Spanish Origin-Destination Data")
+    (description
+     "Gain seamless access to origin-destination (OD) data from the Spanish Ministry
+of Transport, hosted at
+<https://www.transportes.gob.es/ministerio/proyectos-singulares/estudios-de-movilidad-con-big-data/opendata-movilidad>.
+ This package simplifies the management of these large datasets by providing
+tools to download zone boundaries, handle associated origin-destination data,
+and process it efficiently with the duckdb database interface.  Local caching
+minimizes repeated downloads, streamlining workflows for researchers and
+analysts.  Extensive documentation is available at
+<https://ropenspain.github.io/spanishoddata/index.html>, offering guides on
+creating static and dynamic mobility flow visualizations and transforming large
+datasets into analysis-ready formats.")
+    (license license:expat)))
 
 (define-public r-spanish
   (package
@@ -49266,6 +49370,35 @@ Allows users to send messages and view messages from other users.  Messages can
 be stored in a database or a .rds file.")
     (license license:gpl3+)))
 
+(define-public r-shinychat
+  (package
+    (name "r-shinychat")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinychat" version))
+       (sha256
+        (base32 "0fy6b56dniccir93h6a2cxi9j83bzclgffpdg0x7386snzahqm1s"))))
+    (properties `((upstream-name . "shinychat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-promises
+                             r-htmltools
+                             r-coro
+                             r-bslib))
+    (home-page "https://github.com/jcheng5/shinychat")
+    (synopsis "Chat UI Component for 'shiny'")
+    (description
+     "This package provides a scrolling chat interface with multiline input, suitable
+for creating chatbot apps based on Large Language Models (LLMs).  Designed to
+work particularly well with the elmer R package for calling LLMs.")
+    (license license:expat)))
+
 (define-public r-shinychakraui
   (package
     (name "r-shinychakraui")
@@ -50717,19 +50850,19 @@ ratio, for heavy-tailed data (see <@code{arXiv:1505.01333>}).")
 (define-public r-sharper
   (package
     (name "r-sharper")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SharpeR" version))
        (sha256
-        (base32 "1xq2m53n2gc706lyd16gccllx2wgwdrqkfpf79jwwdmipqfqnxjx"))))
+        (base32 "1xc7bl6khkvgxwj3xsdcdx5li626wkaq2wz43lk875a6akv0v586"))))
     (properties `((upstream-name . "SharpeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-matrixcalc))
+    (propagated-inputs (list r-zoo r-matrixcalc r-epsiwal))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/shabbychef/SharpeR")
     (synopsis "Statistical Significance of the Sharpe Ratio")
@@ -61607,13 +61740,13 @@ contents, using XPath or CSS selectors.")
 (define-public r-scr
   (package
     (name "r-scr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scR" version))
        (sha256
-        (base32 "15gs6hm8fc6h3lv67hdy5mq2ilpxah72xidnfmf7v0iczyrsdbij"))))
+        (base32 "1c0snhiv9pnhsfjv896ylhnxp5mlkmpn816y40cf2sigqkw26kl6"))))
     (properties `((upstream-name . "scR")))
     (build-system r-build-system)
     (arguments
@@ -69283,13 +69416,13 @@ paths of the sparse and coupled sparse asymmetric least squares, including the
 (define-public r-salad
   (package
     (name "r-salad")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salad" version))
        (sha256
-        (base32 "1pd6g24k4d1vhk5nssck47dxaw2wl8lx4airpqqpfxvy5q9gy7qi"))))
+        (base32 "0bfd6249wm9p1z14d48wms3hnwmziv8jkwx3502bpxdk6hi2vxnk"))))
     (properties `((upstream-name . "salad")))
     (build-system r-build-system)
     (arguments

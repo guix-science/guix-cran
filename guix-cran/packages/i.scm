@@ -628,33 +628,6 @@ cluster effect ratio.  To test the third estimand, user needs to install Gurobi
 <https://www.gurobi.com/documentation/9.0/refman/ins_the_r_package.html>.")
     (license license:gpl3)))
 
-(define-public r-ivdesc
-  (package
-    (name "r-ivdesc")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ivdesc" version))
-       (sha256
-        (base32 "0b28xghncvq182kl19m8k1frnr2cqj7nvnhcd831kfd84bk2sz13"))))
-    (properties `((upstream-name . "ivdesc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsample r-purrr r-knitr))
-    (home-page "https://github.com/sumtxt/ivdesc/")
-    (synopsis
-     "Profiling Compliers and Non-Compliers for Instrumental Variable Analysis")
-    (description
-     "Estimating the mean and variance of a covariate for the complier, never-taker
-and always-taker subpopulation in the context of instrumental variable
-estimation.  This package implements the method described in Marbach and
-Hangartner (2020) <doi:10.1017/pan.2019.48> and Hangartner, Marbach, Henckel,
-Maathuis, Kelz and Keele (2021) <@code{arXiv:2103.06328>}.")
-    (license license:gpl3)))
-
 (define-public r-ivabss
   (package
     (name "r-ivabss")
@@ -2544,13 +2517,13 @@ information, yielding more accurate and easily interpretable rules.")
 (define-public r-iso8601
   (package
     (name "r-iso8601")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iso8601" version))
        (sha256
-        (base32 "1mnj19223sw9a15sjjdcx6pwdbsjvrk74d33428hp2af5wx34szp"))))
+        (base32 "129sz6kicyaxhyj8lnrg466gvs9hidd89ch14rxmb34ygspdyyfb"))))
     (properties `((upstream-name . "iso8601")))
     (build-system r-build-system)
     (arguments

@@ -32016,13 +32016,13 @@ elevation variance spectral density.")
 (define-public r-resmush
   (package
     (name "r-resmush")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resmush" version))
        (sha256
-        (base32 "0d4mldxxgfypfm9p2b38iqr55j31vcyim018m7csqxplmvxrs45b"))))
+        (base32 "0g1z0scy49a6av77x907h1khl2ppvmlgy5myc30jgm8k11pakf58"))))
     (properties `((upstream-name . "resmush")))
     (build-system r-build-system)
     (arguments

@@ -17826,13 +17826,13 @@ well as the preview of the table's top 1000 records.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "0pyga0ma190vf8l3iyys9j3b4qc76j4pap30x9g1vixjirc2xqzw"))))
+        (base32 "1468qi4g7q9asak833nj7gbvbvy51691klpk20ksphbf9n27mwcp"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (arguments
@@ -45408,6 +45408,43 @@ tibbles, lists, etc..")
      "Access public spatial data available under the INSPIRE directive.  Tools for
 downloading references and addresses of properties, as well as map images.")
     (license license:gpl2)))
+
+(define-public r-catalytic
+  (package
+    (name "r-catalytic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "catalytic" version))
+       (sha256
+        (base32 "0mxxla5ibz127lc8r795jpl1lw8bf12d5w5ql7jxwg7yvcmigplz"))))
+    (properties `((upstream-name . "catalytic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-survival
+                             r-rstan
+                             r-rlang
+                             r-quadform
+                             r-mass
+                             r-lme4
+                             r-invgamma
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=catalytic")
+    (synopsis "Tools for Applying Catalytic Priors in Statistical Modeling")
+    (description
+     "To improve estimation accuracy and stability in statistical modeling, catalytic
+prior distributions are employed, integrating observed data with synthetic data
+generated from a simpler model's predictive distribution.  This approach
+enhances model robustness, stability, and flexibility in complex data scenarios.
+ The catalytic prior distributions are introduced by Huang et al. (2020,
+<doi:10.1073/pnas.1920913117>), Li and Huang (2023,
+<doi:10.48550/@code{arXiv.2312.01411>}).")
+    (license license:expat)))
 
 (define-public r-catalog
   (package

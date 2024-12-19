@@ -9024,13 +9024,13 @@ increased MCMC efficiency.")
 (define-public r-nimblehmc
   (package
     (name "r-nimblehmc")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimbleHMC" version))
        (sha256
-        (base32 "0xy8rhpskfb41pa2gsx2qy1bza3rqh5ihiaipc8xpsd2d22c1xnc"))))
+        (base32 "0wzxiynx952a4rls08z2krn5hys4r9914jmkp87aigfxs7g3d1bl"))))
     (properties `((upstream-name . "nimbleHMC")))
     (build-system r-build-system)
     (arguments
@@ -10020,13 +10020,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhdplusTools" version))
        (sha256
-        (base32 "13jms0cfccydcc5jz2mv6ych8zwsvxf2g6qzspa9vqxyjdq1wzqn"))))
+        (base32 "0imh5zkapzxgv45804n412ypa5x4jqr6xzk19znzib6cmypcp20k"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (arguments
@@ -17025,13 +17025,13 @@ number of useful other related data sets.")
 (define-public r-nasapower
   (package
     (name "r-nasapower")
-    (version "4.2.1")
+    (version "4.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nasapower" version))
        (sha256
-        (base32 "064n7yd5qkaqx1q5s16bm6fvkjlqjknrkkcpin5hz2nishmkqqwb"))))
+        (base32 "0735j9lcb15j20g3hv28wz77mfnrwfh6wz7r5fvq8q5mgyy46d0z"))))
     (properties `((upstream-name . "nasapower")))
     (build-system r-build-system)
     (arguments
