@@ -4414,13 +4414,13 @@ different ways (i.e., model structures).")
 (define-public r-viewscape
   (package
     (name "r-viewscape")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viewscape" version))
        (sha256
-        (base32 "19hqxy260dmy6scwag3wd7kis0f5f3lchqx4cr4h4lpi6h2v6lnh"))))
+        (base32 "1647masd0bb3lmpya119m3dvy7fpbv8g2zybk1wgd06q2y1g6k16"))))
     (properties `((upstream-name . "viewscape")))
     (build-system r-build-system)
     (arguments

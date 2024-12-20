@@ -11623,13 +11623,13 @@ decision-making should be based on accountable and interpretable algorithms.")
 (define-public r-neuralestimators
   (package
     (name "r-neuralestimators")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeuralEstimators" version))
        (sha256
-        (base32 "08f1g4mwb17f7wjr6bvbbhw2fbkjhphknbpi8pqzm55x16qqr0nn"))))
+        (base32 "05nfh2ny2snii9ai0cy52llfxzn6dclp0ycgnklz33zaabnn6zik"))))
     (properties `((upstream-name . "NeuralEstimators")))
     (build-system r-build-system)
     (arguments

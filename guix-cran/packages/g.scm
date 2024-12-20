@@ -7014,13 +7014,13 @@ lines.")
 (define-public r-gratia
   (package
     (name "r-gratia")
-    (version "0.9.2")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gratia" version))
        (sha256
-        (base32 "0jjjncs5c3zd3jlxk5ywkg31lhxafdj5b58k664yd29193f2w3m0"))))
+        (base32 "1b5qkjmip4sb64q65d7pw1cjhb2npvkh0q21a072jkra009lzaih"))))
     (properties `((upstream-name . "gratia")))
     (build-system r-build-system)
     (arguments
@@ -7032,6 +7032,7 @@ lines.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-scales
                              r-rlang
                              r-purrr
                              r-pillar
@@ -11725,13 +11726,13 @@ Nadarajah (2005) <doi:10.1080/02664760500079464> is used.")
 (define-public r-gnonadd
   (package
     (name "r-gnonadd")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gnonadd" version))
        (sha256
-        (base32 "1yhh6s5hzvpdy6qrvnjx84basrbvi1r7dcgapwf7g8677c8f5fdb"))))
+        (base32 "00wrqz5qgkbcig39rkygqffk3mj2i476kk6hnvn3fzim6hcnyhzc"))))
     (properties `((upstream-name . "gnonadd")))
     (build-system r-build-system)
     (arguments
@@ -16939,13 +16940,13 @@ imaging data.")
 (define-public r-gift
   (package
     (name "r-gift")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GIFT" version))
        (sha256
-        (base32 "0ngrci818f0k21aiy7dnzpip33sikjf2kp7j9l3r7mwp35h6q2qd"))))
+        (base32 "0znnpc1mf92p4biwh4d1i80avnjky2ixmjd52fxak5jxyyqjgfw1"))))
     (properties `((upstream-name . "GIFT")))
     (build-system r-build-system)
     (arguments

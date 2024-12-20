@@ -50246,13 +50246,13 @@ retrospective data harmonization (Fortier I and al. (2017)
 (define-public r-madrat
   (package
     (name "r-madrat")
-    (version "3.6.4")
+    (version "3.15.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "madrat" version))
        (sha256
-        (base32 "03wkzpr0nx50li0g69fn2fznfh6nbg4sdpymsilx3387v50vc9vs"))))
+        (base32 "025mh4x0035q3xgscghpvdwfysm2rzimr156la1bhrbp9dpf7iyl"))))
     (properties `((upstream-name . "madrat")))
     (build-system r-build-system)
     (arguments

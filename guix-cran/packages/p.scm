@@ -25067,13 +25067,13 @@ present).")
 (define-public r-pkggraphr
   (package
     (name "r-pkggraphr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgGraphR" version))
        (sha256
-        (base32 "0qmrbwgm6aclzdgpcwr2c2bvakh3rcrf9z8m5mqd9vxgjykjfgks"))))
+        (base32 "060p7f6s1q0zfig82lvhhsr6nlxy9jyhxqkpypks9lmc4jj4r3p7"))))
     (properties `((upstream-name . "pkgGraphR")))
     (build-system r-build-system)
     (arguments

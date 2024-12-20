@@ -17229,13 +17229,13 @@ scrapers, ...) are allowed to access specific resources on a domain.")
 (define-public r-robotoolbox
   (package
     (name "r-robotoolbox")
-    (version "1.3.2")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robotoolbox" version))
        (sha256
-        (base32 "0aj7819za3abw40rflvpwndf8i8gpmqmzb691km7shy9xq4sq48s"))))
+        (base32 "0j62dqix9awb3dxm2afzgix4pkinirxcaan8q3b63bcwzpphy4df"))))
     (properties `((upstream-name . "robotoolbox")))
     (build-system r-build-system)
     (arguments
@@ -19835,13 +19835,13 @@ panels.  The full documentation and tutorials are at
 (define-public r-rmss
   (package
     (name "r-rmss")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMSS" version))
        (sha256
-        (base32 "18hm626yr3xrsi9spzr42y9pf547xdx7byqq15bvh9f04qaalck3"))))
+        (base32 "01hf291czmdijm1152ckdrd33a8w2m0rdwclaj607b81hb1431q0"))))
     (properties `((upstream-name . "RMSS")))
     (build-system r-build-system)
     (arguments
@@ -25415,13 +25415,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rintcal" version))
        (sha256
-        (base32 "08a3rd2irfswg4cc3rs74sgsvgf7chkbgsyh5w13fzbgfxkp2kwy"))))
+        (base32 "0b5rc0b6crgc6830k30yjiivlbpys957yq494amsdl2x1aaap426"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (arguments
@@ -27415,13 +27415,13 @@ target distribution.")
 (define-public r-rgv
   (package
     (name "r-rgv")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rGV" version))
        (sha256
-        (base32 "1a2nlvwdw9zhqp8hw2di68y5y0zbp50xwb8fdgzyvx6l80y3z8b4"))))
+        (base32 "11z8chazz9h2i9083xcb2y5826azr3lkrxl01615ijjvba7jn94v"))))
     (properties `((upstream-name . "rGV")))
     (build-system r-build-system)
     (arguments
@@ -27540,6 +27540,38 @@ Bai and Lynna Chu (2023) <@code{arXiv:2307.12325>}.")
 Number for Repetitive Group Sampling Plan Based on Cpk as given in Aslam et al.
 (2013) (<DOI:10.1080/00949655.2012.663374>).")
     (license license:gpl2)))
+
+(define-public r-rgs
+  (package
+    (name "r-rgs")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RGS" version))
+       (sha256
+        (base32 "0zwj6hnpkb2zixr35hfybaizrsmb53p7jj0xijihib5hy2xj8w30"))))
+    (properties `((upstream-name . "RGS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-semipar r-rms))
+    (home-page "https://cran.r-project.org/package=RGS")
+    (synopsis "Recursive Gradient Scanning Algorithm")
+    (description
+     "This package provides a recursive gradient scanning algorithm for discretizing
+continuous variables in Logistic and Cox regression models.  This algorithm is
+especially effective in identifying optimal cut-points for variables with
+U-shaped relationships to @code{lnOR} (the natural logarithm of the odds ratio)
+or @code{lnHR} (the natural logarithm of the hazard ratio), thereby enhancing
+model fit, interpretability, and predictive power.  By iteratively scanning and
+calculating gradient changes, the method accurately pinpoints critical
+cut-points within nonlinear relationships, transforming continuous variables
+into categorical ones.  This approach improves risk classification and
+regression analysis performance, increasing interpretability and practical
+relevance in clinical and risk management settings.")
+    (license license:expat)))
 
 (define-public r-rgroovy
   (package
@@ -28453,6 +28485,33 @@ On the one hand, it scales the dimension of our data, on the other it performs
 inference.  The method is fully described in the paper \"Scalable Geometric
 Density Estimation\" by Y. Wang, A. Canale, D. Dunson (2016)
 <http://proceedings.mlr.press/v51/wang16e.pdf>.")
+    (license license:gpl2+)))
+
+(define-public r-rgeoda
+  (package
+    (name "r-rgeoda")
+    (version "0.0.11-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgeoda" version))
+       (sha256
+        (base32 "0p9r8l4wpcchjnbxmhnkc1x1jppsdsph6ynz9wcs2774c1vm0zmg"))))
+    (properties `((upstream-name . "rgeoda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-rcpp r-digest r-bh))
+    (home-page "https://github.com/geodacenter/rgeoda/")
+    (synopsis "R Library for Spatial Data Analysis")
+    (description
+     "This package provides spatial data analysis functionalities including
+Exploratory Spatial Data Analysis, Spatial Cluster Detection and Clustering
+Analysis, Regionalization, etc.  based on the C++ source code of @code{GeoDa}',
+which is an open-source software tool that serves as an introduction to spatial
+data analysis.  The @code{GeoDa} software and its documentation are available at
+<https://geodacenter.github.io>.")
     (license license:gpl2+)))
 
 (define-public r-rgenoud
@@ -31400,13 +31459,13 @@ gracefully handle errors at any step.")
 (define-public r-restriktor
   (package
     (name "r-restriktor")
-    (version "0.5-90")
+    (version "0.6-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restriktor" version))
        (sha256
-        (base32 "1fsai03i25idd59n20ca268123plmiw5v1yjys4pvgaf7zj6a18j"))))
+        (base32 "0v8mnccvgsayaqfggqchxfp523l72sinw5mxqmcg80s85rkvsn0x"))))
     (properties `((upstream-name . "restriktor")))
     (build-system r-build-system)
     (arguments

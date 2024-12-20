@@ -13,11 +13,12 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages check)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages image)
+  #:use-module (gnu packages compression)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
@@ -8194,6 +8195,38 @@ Swap quotes.  References: Damiano Brigo, Massimo Morini, Andrea Pallavicini
 9781118818589.  Â© 2013 John Wiley & Sons Ltd.")
     (license license:expat)))
 
+(define-public r-creditr
+  (package
+    (name "r-creditr")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "creditr" version))
+       (sha256
+        (base32 "16qqvsbbs0i3xfqkkpb6lbclkwc8maal9c9ky38cqwpbicz5zkdn"))))
+    (properties `((upstream-name . "creditr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-xml
+                             r-rcurl
+                             r-rcpp
+                             r-quantmod
+                             r-devtools))
+    (home-page "https://github.com/yanrong-stacy-song/creditr")
+    (synopsis "Credit Default Swaps")
+    (description
+     "Price credit default swaps using C code from the International Swaps and
+Derivatives Association CDS Standard Model.  See
+<https://www.cdsmodel.com/cdsmodel/documentation.html> for more information
+about the model and <https://www.cdsmodel.com/cdsmodel/cds-disclaimer.html> for
+license details for the C code.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
+
 (define-public r-creditmodel
   (package
     (name "r-creditmodel")
@@ -9371,6 +9404,32 @@ shiny application.  Cppcheck can spot many error types and it can also give some
 recommendations on the code.")
     (license license:gpl3)))
 
+(define-public r-cpp11qpdf
+  (package
+    (name "r-cpp11qpdf")
+    (version "1.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpp11qpdf" version))
+       (sha256
+        (base32 "0i13isvc0qnsp2yvn68w4nmhs9b8sghczg99yr64rlbcmhg43blw"))))
+    (properties `((upstream-name . "cpp11qpdf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib libjpeg-turbo))
+    (propagated-inputs (list r-curl r-cpp11))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://pacha.dev/cpp11qpdf/")
+    (synopsis "Split, Combine and Compress PDF Files")
+    (description
+     "Bindings to qpdf': qpdf (<https://qpdf.sourceforge.io/>) is a an open-source PDF
+rendering library that allows to conduct content-preserving transformations of
+PDF files such as split, combine, and compress PDF files.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-cpp11eigen
   (package
     (name "r-cpp11eigen")
@@ -9398,18 +9457,19 @@ and scientific computing.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "1zw5v8k3wh6amm5djghlcsz5a9n6k3k2ixw9m8mcgy7zwmg82h3b"))))
+        (base32 "0hyh94savyq90rqbvfirzz32s3kjwd7s7k4089q59d2mn85qnsw2"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-cpp11))
     (native-inputs (list r-knitr))
     (home-page "https://pacha.dev/cpp11armadillo/")
     (synopsis "An 'Armadillo' Interface")
@@ -32241,6 +32301,41 @@ geometry problems, and eliminate (at least reduce) the likelihood of having
 issues when doing spatial data processing.")
     (license license:gpl2+)))
 
+(define-public r-cleanet
+  (package
+    (name "r-cleanet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Cleanet" version))
+       (sha256
+        (base32 "1vv1x8g3nwinic6ksqyrxkip1xb1sim9fjrj9h28rrcrasg3f561"))))
+    (properties `((upstream-name . "Cleanet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-reshape2
+                             r-readr
+                             r-rcpphnsw
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Cleanet")
+    (synopsis
+     "Automated Doublet Detection and Classification for Cytometry Data")
+    (description
+     "Automated method for doublet detection in flow or mass cytometry data, based on
+simulating doublets and finding events whose protein expression patterns are
+similar to the simulated doublets.")
+    (license license:gpl3)))
+
 (define-public r-cleaner
   (package
     (name "r-cleaner")
@@ -41884,20 +41979,19 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "100mgicli60fwzk5bgzs1f2c3kshwvllqdn31v6hczqihwxwjjq0"))))
+        (base32 "18c5cqg47s2kql8i0p9p3ajvcsmq6bka5pr7yhy0krsl1c7y4267"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr
-                             r-waldo
                              r-tidyselect
                              r-tidyr
                              r-stringr
@@ -41910,7 +42004,6 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
                              r-jsonlite
                              r-glue
                              r-generics
-                             r-fs
                              r-dplyr
                              r-dbplyr
                              r-dbi
@@ -47622,6 +47715,36 @@ scores and interpretations from raw data.")
 Annuity loan functions.  Also computes Loan Amortization Schedules including
 schedules with irregular payments.")
     (license license:gpl3)))
+
+(define-public r-capesr
+  (package
+    (name "r-capesr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "capesR" version))
+       (sha256
+        (base32 "18wvcxi5ibi1mrk07idyryvnm6qcqg9h7077rv796hy5vllw3j6g"))))
+    (properties `((upstream-name . "capesR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rlang r-magrittr r-dplyr r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/hugoavmedeiros/capesR>")
+    (synopsis "Access to CAPES Data")
+    (description
+     "This package provides simplified access to the data from the Catalog of Theses
+and Dissertations of the Brazilian Coordination for the Improvement of Higher
+Education Personnel (CAPES, <https://catalogodeteses.capes.gov.br>) for the
+years 1987 through 2022.  The dataset includes variables such as Higher
+Education Institution (institution), Area of Concentration (area), Graduate
+Program Name (program_name), Type of Work (type), Language of Work (language),
+Author Identification (author), Abstract (abstract), Advisor Identification
+(advisor), Development Region (region), State (state).")
+    (license license:gpl2+)))
 
 (define-public r-capesdata
   (package

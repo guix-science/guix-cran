@@ -4319,13 +4319,13 @@ deep-neural networks using tensorflow'.")
 (define-public r-jane
   (package
     (name "r-jane")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JANE" version))
        (sha256
-        (base32 "1rf1alz45lc1k1wj8c9r56g3lmc0y0k54ql36g91pc3i0368nd2f"))))
+        (base32 "142qxlc1lxcg6v8wnzpyv2s42z96x1sz1ik08xl8f91rk3mlg7qr"))))
     (properties `((upstream-name . "JANE")))
     (build-system r-build-system)
     (arguments

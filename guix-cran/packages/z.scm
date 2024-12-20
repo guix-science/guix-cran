@@ -644,6 +644,33 @@ with Zero-Inflated Innovations (ZINAR(1)) and Estimates its Parameters as
 described in Garay et al. (2021) <doi:10.1007/978-3-030-82110-4_2>.")
     (license license:gpl3+)))
 
+(define-public r-zim4rv
+  (package
+    (name "r-zim4rv")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIM4rv" version))
+       (sha256
+        (base32 "00d5h2h67iqkdyzr4rjm490micx63vjvp8681ns25pr05bh1hk68"))))
+    (properties `((upstream-name . "ZIM4rv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-skat r-rnomni r-pscl r-data-table
+                             r-compquadform))
+    (home-page "https://github.com/fanx0037/ZIM4rv")
+    (synopsis
+     "Geneâbased Association Tests of Zeroâinflated Count Phenotype for Rare Variants")
+    (description
+     "Geneâbased association tests to model count data with excessive zeros and rare
+variants using zero-inflated Poisson/zero-inflated negative Binomial regression
+framework.  This method was originally described by Fan, Sun, and Li in Genetic
+Epidemiology 46(1):73-86 <doi:10.1002/gepi.22438>.")
+    (license license:gpl3)))
+
 (define-public r-zillowr
   (package
     (name "r-zillowr")

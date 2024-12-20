@@ -3728,13 +3728,13 @@ reference implementation of the @code{DataSHIELD} infrastructure.")
 (define-public r-dsmsearch
   (package
     (name "r-dsmsearch")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsmSearch" version))
        (sha256
-        (base32 "1kif46mjhrxxmdv4jahagjd3bz47na3k4r8m10cm85cac88iichm"))))
+        (base32 "0lkxvsicb1gs09n23n9i6pbll210v1lbv19608d04ygjj39jk7y3"))))
     (properties `((upstream-name . "dsmSearch")))
     (build-system r-build-system)
     (arguments
@@ -4548,13 +4548,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "16wpqib6cscnbclq8cbh9qx96rm4kkvcdlwhg1lzdwmw87xrb8fa"))))
+        (base32 "0lb1yy0z5g1iqgjy1h6hkamskyrdaw5xgmv81124qcv13bgc2qjc"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -5492,13 +5492,13 @@ in debugging.")
 (define-public r-dreamer
   (package
     (name "r-dreamer")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dreamer" version))
        (sha256
-        (base32 "10yvdg5nkw4nawy9hdqyrsgh01xga8l3hn3qi1sbjzniv7903v7d"))))
+        (base32 "1hav4i6kg652xm3a9hzgjvri7gy0nc6js23jkhsk909xfxbyw0aj"))))
     (properties `((upstream-name . "dreamer")))
     (build-system r-build-system)
     (arguments
@@ -5515,15 +5515,17 @@ in debugging.")
                              r-dplyr
                              r-coda))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rich-payne/dreamer")
+    (home-page "https://rich-payne.github.io/dreamer/")
     (synopsis "Dose Response Models for Bayesian Model Averaging")
     (description
-     "Fits (longitudinal) dose-response models utilizing a Bayesian model averaging
-approach as outlined in Gould (2019) <doi:10.1002/bimj.201700211> for both
-continuous and binary responses.  Functions for plotting and calculating various
-posterior quantities (e.g. posterior mean, quantiles, probability of minimum
-efficacious dose, etc.) are also implemented.  Copyright Eli Lilly and Company
-(2019).")
+     "Fits dose-response models utilizing a Bayesian model averaging approach as
+outlined in Gould (2019) <doi:10.1002/bimj.201700211> for both continuous and
+binary responses.  Longitudinal dose-response modeling is also supported in a
+Bayesian model averaging framework as outlined in Payne, Ray, and Thomann (2024)
+<doi:10.1080/10543406.2023.2292214>.  Functions for plotting and calculating
+various posterior quantities (e.g. posterior mean, quantiles, probability of
+minimum efficacious dose, etc.) are also implemented.  Copyright Eli Lilly and
+Company (2019).")
     (license license:expat)))
 
 (define-public r-drdrtest
@@ -8177,6 +8179,32 @@ Redis key/value database.")
 drugs tracked by the DEA. There are functions that will search synonyms and
 return the drug names and types.  The vignettes have extensive information on
 the work done to create the data for the package.")
+    (license license:expat)))
+
+(define-public r-doparabar
+  (package
+    (name "r-doparabar")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "doParabar" version))
+       (sha256
+        (base32 "08vz3rpsq0kar3rk7sgb9w8vx276kqkcyav6bdn9j5jhsn7p5s9w"))))
+    (properties `((upstream-name . "doParabar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-parabar r-iterators r-foreach))
+    (home-page "https://github.com/mihaiconstantin/doParabar")
+    (synopsis "'foreach' Parallel Adapter for 'parabar' Backends")
+    (description
+     "This package provides a foreach parallel adapter for parabar backends.  This
+package offers a minimal implementation of the %dopar% operator, enabling users
+to run foreach loops in parallel, leveraging the parallel and progress-tracking
+capabilities of the parabar package.  Learn more about parabar and
+@code{doParabar} at <https://parabar.mihaiconstantin.com>.")
     (license license:expat)))
 
 (define-public r-doolkit
@@ -15385,13 +15413,13 @@ sensitivity and the copy number per well in the initial dilute.")
 (define-public r-digirhythm
   (package
     (name "r-digirhythm")
-    (version "2.3")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "digiRhythm" version))
        (sha256
-        (base32 "0h0kn1xbclk5h5q1rpsqsmn1m1qwkvz26ar7srj54zq0nqrbspc9"))))
+        (base32 "0ixydyh5s16zanpwb8yz53nk1bziqnsfrn9s03w97h86k7rz89jp"))))
     (properties `((upstream-name . "digiRhythm")))
     (build-system r-build-system)
     (arguments
@@ -15528,13 +15556,13 @@ Paykin (2001) <doi:10.1080/00949650108812115>, and French & Finch (2013)
 (define-public r-difnlr
   (package
     (name "r-difnlr")
-    (version "1.4.2-1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "difNLR" version))
        (sha256
-        (base32 "1wrvsjbvvqwpv7cwc445n7l4ly8gvj8hyd66k02ib8r5854zn192"))))
+        (base32 "1hcba1zrrisjz5bmhaq1r0davc06ng20l9jw5hri3bvcpg8qvyg7"))))
     (properties `((upstream-name . "difNLR")))
     (build-system r-build-system)
     (arguments
@@ -20895,6 +20923,35 @@ tracks simulated using the DEPONS model <https://www.depons.eu> (v.3.0), for
 manipulating input raster files, shipping routes and for analyzing sound
 propagated from ships.")
     (license license:gpl3)))
+
+(define-public r-deploid-utils
+  (package
+    (name "r-deploid-utils")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DEploid.utils" version))
+       (sha256
+        (base32 "1b2ky80sdcym8pzn7awr5s9c93sfqwr2yr6vvqncmwlwmx10chyq"))))
+    (properties `((upstream-name . "DEploid.utils")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-scales r-rcpp r-magrittr r-combinat))
+    (home-page "https://cran.r-project.org/package=DEploid.utils")
+    (synopsis "'DEploid' Data Analysis and Results Interpretation")
+    (description
+     "DEploid (Zhu et.al.  2018 <doi:10.1093/bioinformatics/btx530>) is designed for
+deconvoluting mixed genomes with unknown proportions.  Traditional phasing
+programs are limited to diploid organisms.  Our method modifies Li and
+Stephenâs algorithm with Markov chain Monte Carlo (MCMC) approaches, and
+builds a generic framework that allows haloptype searches in a multiple
+infection setting.  This package provides R functions to support data analysis
+and results interpretation.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-deploid
   (package

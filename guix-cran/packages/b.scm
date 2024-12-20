@@ -12120,6 +12120,31 @@ computes the estimators based on the method of moments.")
      "This package contains functions mainly focused to plotting bivariate maps.")
     (license license:gpl3)))
 
+(define-public r-bivariateleaflet
+  (package
+    (name "r-bivariateleaflet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bivariateLeaflet" version))
+       (sha256
+        (base32 "0q9bjwwkfmbalq4afh9s1x006nzgc02a122c2drmjkyimsi78d9v"))))
+    (properties `((upstream-name . "bivariateLeaflet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-rlang r-leaflet r-htmltools r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bivariateLeaflet")
+    (synopsis "Create Bivariate Choropleth Maps with 'Leaflet'")
+    (description
+     "This package creates bivariate choropleth maps using Leaflet'.  This package
+provides tools for visualizing the relationship between two variables through a
+color matrix representation on an interactive map.")
+    (license license:expat)))
+
 (define-public r-bivariate-pareto
   (package
     (name "r-bivariate-pareto")

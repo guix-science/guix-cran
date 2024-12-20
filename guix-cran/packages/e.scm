@@ -500,13 +500,13 @@ the approach see Mirman, Dixon & Magnuson (2008)
 (define-public r-eyetools
   (package
     (name "r-eyetools")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyetools" version))
        (sha256
-        (base32 "1059m9b5p1irjkq3plgxsm40cvgaxnwd0dpgp5philbq6bqbdgn9"))))
+        (base32 "0h4cpb273x40lyc6hnrr4mfbkh8ip255az2yfk9n9qgcr2v7iaw4"))))
     (properties `((upstream-name . "eyetools")))
     (build-system r-build-system)
     (arguments
@@ -515,7 +515,6 @@ the approach see Mirman, Dixon & Magnuson (2008)
     (propagated-inputs (list r-zoo
                              r-viridis
                              r-rlang
-                             r-rdist
                              r-pbapply
                              r-magick
                              r-lifecycle

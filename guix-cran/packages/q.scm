@@ -6812,19 +6812,19 @@ to R6, Q7 is simpler and more flexible, and is more friendly in syntax.")
 (define-public r-q2q
   (package
     (name "r-q2q")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Q2q" version))
        (sha256
-        (base32 "0i72p3hga75fm42svnyfwc5x4viv6pq6js7wx8h01kamiv5yl8hz"))))
+        (base32 "0v50kc22cnkcwazwhclxsra7v8h023ih52mpwnrl2vj8cl58c9k2"))))
     (properties `((upstream-name . "Q2q")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=Q2q")
+    (home-page "https://github.com/Farid-FLICI/Q2q")
     (synopsis "Interpolating Age-Specific Mortality Rates at All Ages")
     (description
      "Mortality rates are typically provided in an abridged format, i.e., by age

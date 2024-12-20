@@ -1261,19 +1261,24 @@ Mukherjee, G. (2017) <doi:10.1111/rssb.12226> and T.Banerjee et al. (2017)
 (define-public r-fusionchartsr
   (package
     (name "r-fusionchartsr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fusionchartsR" version))
        (sha256
-        (base32 "0bbaciwgjrv85arakghbjfg50ghbyc3dnbz451g97i6kacpaaamy"))))
+        (base32 "1sis1wl4dpag9q4f206jcc478x5995y0wglzpfy8i0k1sy3yjw1c"))))
     (properties `((upstream-name . "fusionchartsR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-magrittr r-jsonlite r-htmlwidgets))
+    (propagated-inputs (list r-shiny
+                             r-scales
+                             r-magrittr
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-ggplot2))
     (home-page "https://alexym1.github.io/fusionchartsR/")
     (synopsis "Embedding FusionCharts in R")
     (description
@@ -9997,6 +10002,31 @@ available includes stock prices, market indexes, company fundamentals, 13F
 holdings data, and much more.  A valid API token must be set to enable
 functions.")
     (license license:gpl3)))
+
+(define-public r-fmpapi
+  (package
+    (name "r-fmpapi")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fmpapi" version))
+       (sha256
+        (base32 "0rwmvqv3zwdn409lkr9rsxgxw7yaky26wjd0w3sf0lzvqck064zc"))))
+    (properties `((upstream-name . "fmpapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2 r-dplyr r-cli))
+    (home-page "https://github.com/tidy-finance/r-fmpapi")
+    (synopsis "Flexible Client for the 'Financial Modeling Prep' API")
+    (description
+     "This package provides a flexible interface to the Financial Modeling Prep API
+<https://site.financialmodelingprep.com/developer/docs>.  The package supports
+all available endpoints and parameters, enabling R users to interact with a wide
+range of financial data.")
+    (license license:expat)))
 
 (define-public r-fmp
   (package
@@ -25775,13 +25805,13 @@ regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
 (define-public r-faasr
   (package
     (name "r-faasr")
-    (version "1.3.0")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FaaSr" version))
        (sha256
-        (base32 "093m5mrxckgl1g3ipab4v77g4129pmb5z9z1fbk2kj9jsb8gznlk"))))
+        (base32 "1g75nkxj66wridz9lxy94w28fv89lk23q40n4m1id45fvs9bl2sk"))))
     (properties `((upstream-name . "FaaSr")))
     (build-system r-build-system)
     (arguments

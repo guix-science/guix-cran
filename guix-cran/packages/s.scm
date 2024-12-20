@@ -8536,6 +8536,40 @@ overall test and separate tests in subgroups, correcting for multiple testing
 using the joint distribution.")
     (license license:gpl2)))
 
+(define-public r-subincomer
+  (package
+    (name "r-subincomer")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "subincomeR" version))
+       (sha256
+        (base32 "07942h6c714j5w3ji23llan84a0888l4wlfg5cwbc5jy6b5d4vaf"))))
+    (properties `((upstream-name . "subincomeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-tidygeocoder
+                             r-sf
+                             r-rlang
+                             r-dplyr
+                             r-curl
+                             r-countrycode))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pablogguz/subincomeR")
+    (synopsis "Access to Global Sub-National Income Data")
+    (description
+     "This package provides access to granular sub-national income data from the
+MCC-PIK Database Of Sub-national Economic Output (DOSE).  The package downloads
+and processes the data from its open repository on Zenodo
+(<https://zenodo.org/records/13773040>).  Functions are provided to fetch data
+at multiple geographic levels, match coordinates to administrative regions, and
+access associated geometries.")
+    (license license:expat)))
+
 (define-public r-subgxe
   (package
     (name "r-subgxe")
@@ -9678,13 +9712,13 @@ Spanos, A. (2022) <doi:10.3390/econometrics10020017>.  Spanos, A. (1994)
 (define-public r-streetscape
   (package
     (name "r-streetscape")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streetscape" version))
        (sha256
-        (base32 "0dyvliwf4wz348xlwc36dimv0v0nfvs0lskcgzmy0g7rbd2xikan"))))
+        (base32 "1m4zrqvi0rlqps46vfrsz2wnqhn6a392nfmxhbs22rdgzwh9j3qq"))))
     (properties `((upstream-name . "streetscape")))
     (build-system r-build-system)
     (arguments
@@ -24312,13 +24346,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "02g9i3vs0whhwndgpblp752l8kmvjnqj5q23if5zm3d6zkc474w6"))))
+        (base32 "0nrgfa8v336vsddr0pqqyn8n97pnxq3qn44d90dcmfacingb7vsp"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -70768,6 +70802,49 @@ using Parametric Bootstrap approach.  For non-sampled cases, MSE are estimated
 using modified approach proposed by Haris F and Ubaidillah A
 <doi:10.4108/eai.2-8-2019.2290339>.")
     (license license:gpl3)))
+
+(define-public r-sae-projection
+  (package
+    (name "r-sae-projection")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sae.projection" version))
+       (sha256
+        (base32 "09rrl7xb2hxxd7z62zhl07kj32gr5h8fqshi01sakqarbky2qc14"))))
+    (properties `((upstream-name . "sae.projection")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tune
+                             r-tidymodels
+                             r-survey
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-ranger
+                             r-parsnip
+                             r-lightgbm
+                             r-dplyr
+                             r-doparallel
+                             r-cli
+                             r-bonsai))
+    (home-page "https://github.com/Alfrzlp/sae.projection")
+    (synopsis "Small Area Estimation Using Model-Assisted Projection Method")
+    (description
+     "Combines information from two independent surveys using a model-assisted
+projection method.  Designed for survey sampling scenarios where a large sample
+collects only auxiliary information (Survey 1) and a smaller sample provides
+data on both variables of interest and auxiliary variables (Survey 2).
+Implements a working model to generate synthetic values of the variable of
+interest by fitting the model to Survey 2 data and predicting values for Survey
+1 based on its auxiliary variables (Kim & Rao, 2012)
+<doi:10.1093/biomet/asr063>.")
+    (license license:expat)))
 
 (define-public r-sae
   (package
