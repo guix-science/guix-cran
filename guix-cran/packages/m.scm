@@ -2899,6 +2899,33 @@ presented in the book \"Multiple Testing Problems in Pharmaceutical Statistics\"
 Chapman and Hall/CRC Press 2009.")
     (license license:gpl2)))
 
+(define-public r-multvardiv
+  (package
+    (name "r-multvardiv")
+    (version "1.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multvardiv" version))
+       (sha256
+        (base32 "05lx348s9bqawrbmgg88zz11bddd7rzhh059p7gq3y1dspnxz6bw"))))
+    (properties `((upstream-name . "multvardiv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl r-mass r-data-table))
+    (home-page "https://forgemia.inra.fr/imhorphen/multvardiv")
+    (synopsis "Multivariate Probability Distributions, Statistical Divergence")
+    (description
+     "Multivariate generalized Gaussian distribution, Multivariate Cauchy
+distribution, Multivariate t distribution.  Distance between two distributions
+(see N. Bouhlel and A. Dziri (2019): <doi:10.1109/LSP.2019.2915000>, N. Bouhlel
+and D. Rousseau (2022): <doi:10.3390/e24060838>, N. Bouhlel and D. Rousseau
+(2023): <doi:10.1109/LSP.2023.3324594>).  Manipulation of these multivariate
+probability distributions.")
+    (license license:gpl3+)))
+
 (define-public r-multsurvtests
   (package
     (name "r-multsurvtests")
@@ -3526,13 +3553,13 @@ methods at the masters program of Applied Statistics at University of Ljubljana.
 (define-public r-multitraits
   (package
     (name "r-multitraits")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiTraits" version))
        (sha256
-        (base32 "0yi2xc23zxfj0vphw9dp5p2zy286765pgy5lcsf976isz2lczcmc"))))
+        (base32 "0dm9cv2d2yb6k1z4swsaxrip3hr9sy18jjgafs9a0cm7xrvhrzsx"))))
     (properties `((upstream-name . "MultiTraits")))
     (build-system r-build-system)
     (arguments

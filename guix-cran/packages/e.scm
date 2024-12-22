@@ -8125,13 +8125,13 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
 (define-public r-esci
   (package
     (name "r-esci")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esci" version))
        (sha256
-        (base32 "1vyrx2ga32mgc6rlmywxm7wpmhcv8rwhaiddq03wgyn9515addn9"))))
+        (base32 "1cz5kc4m9lvnjk18g0x79xlz62h56j9sy05r5a77rf2f7ll297vv"))))
     (properties `((upstream-name . "esci")))
     (build-system r-build-system)
     (arguments
@@ -8146,11 +8146,11 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
                              r-multcomp
                              r-metafor
                              r-mathjaxr
+                             r-legendry
                              r-jmvcore
                              r-glue
                              r-ggtext
                              r-ggplot2
-                             r-ggh4x
                              r-ggdist
                              r-ggbeeswarm))
     (home-page "https://github.com/rcalinjageman/esci/")
@@ -13689,13 +13689,13 @@ objects and coordinate reference systems.")
 (define-public r-enmpa
   (package
     (name "r-enmpa")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmpa" version))
        (sha256
-        (base32 "07v4jqmppmvarqc8a4z2zhl52z16w2biq7mga3fd6gz5z43c9yb8"))))
+        (base32 "055fmp2jzrzycqm6jccdbg5wg41c1q3mdn5sx54h8r9gjdyx4ifw"))))
     (properties `((upstream-name . "enmpa")))
     (build-system r-build-system)
     (arguments

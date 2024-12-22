@@ -18626,46 +18626,6 @@ and a supplied data frame.  The package contains methods for traversing abstract
 syntax trees from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
     (license license:expat)))
 
-(define-public r-tidyfit
-  (package
-    (name "r-tidyfit")
-    (version "0.7.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyfit" version))
-       (sha256
-        (base32 "10zsyr7mimqp7pb7yb6lcs8p83s7fzn46pysswgp4bkz6kib4xl6"))))
-    (properties `((upstream-name . "tidyfit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick
-                             r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-rsample
-                             r-rlang
-                             r-purrr
-                             r-progressr
-                             r-mass
-                             r-magrittr
-                             r-generics
-                             r-furrr
-                             r-dplyr
-                             r-dials
-                             r-crayon
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://tidyfit.residualmetrics.com")
-    (synopsis "Regularized Linear Modeling with Tidy Data")
-    (description
-     "An extension to the R tidy data environment for automated machine learning.  The
-package allows fitting and cross validation of linear regression and
-classification algorithms on grouped data.")
-    (license license:gpl3)))
-
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
@@ -19632,13 +19592,13 @@ automatically summarize the properties of the binned columns.")
 (define-public r-tidybde
   (package
     (name "r-tidybde")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyBdE" version))
        (sha256
-        (base32 "0fi19bgc8m0ykv9daiaa91n24cvjfq81sznn4fmiz0y2f03z985q"))))
+        (base32 "1ck1ah6nh6pa10x02iczllddnwzgff6qvwajrkkqri3jp8si9d0h"))))
     (properties `((upstream-name . "tidyBdE")))
     (build-system r-build-system)
     (arguments

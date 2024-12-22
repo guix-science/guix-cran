@@ -4056,13 +4056,13 @@ implemented based on the DStorage class.")
 (define-public r-dsims
   (package
     (name "r-dsims")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsims" version))
        (sha256
-        (base32 "0mqnpcs9bijkc0l6x6qssr527rh4j4ignlgvgrqxqgii3ikdx92j"))))
+        (base32 "1n8l43971wg48jjwvscrz2pihzdq44ljplx120bgajvms6qdq1nw"))))
     (properties `((upstream-name . "dsims")))
     (build-system r-build-system)
     (arguments
@@ -4079,7 +4079,6 @@ implemented based on the DStorage class.")
                              r-dssd
                              r-dplyr
                              r-distance))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/DistanceDevelopment/dsims")
     (synopsis "Distance Sampling Simulations")
     (description
@@ -4097,7 +4096,7 @@ Distance Sampling, Buckland et.  al. (2008, ISBN-13: 978-0199225873).  General
 distance sampling methods are detailed in Introduction to Distance Sampling:
 Estimating Abundance of Biological Populations, Buckland et.  al. (2004,
 ISBN-13: 978-0198509271).  Find out more about estimating animal/plant abundance
-with distance sampling at <http://distancesampling.org/>.")
+with distance sampling at <https://distancesampling.org/>.")
     (license license:gpl2+)))
 
 (define-public r-dsi
@@ -17057,13 +17056,13 @@ dimensional tibble'), and allows broadcasting by dimensional names.")
 (define-public r-diathor
   (package
     (name "r-diathor")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diathor" version))
        (sha256
-        (base32 "12m174r2z2vwxqwpayd8fz5hgrgx87bzfklpsksfm4zma64xwmxb"))))
+        (base32 "0z3pvd5262aayx4ax7324hp3h5xcnkmlz3ry2wxiif5h3nfxhpki"))))
     (properties `((upstream-name . "diathor")))
     (build-system r-build-system)
     (arguments
@@ -17081,24 +17080,31 @@ dimensional tibble'), and allows broadcasting by dimensional names.")
     (synopsis "Calculate Ecological Information and Diatom Based Indices")
     (description
      "Calculate multiple biotic indices using diatoms from environmental samples.
-Diatom species are identified by their species names through a heuristic search,
-and ecological data is retrieved from multiple sources.  The package includes
-the calculation of chloroplast diversity indices, size classes, ecological
-guilds, and various biotic indices.  It outputs both a dataframe with all the
-results and plots of the obtained data in a specified output folder.  Sample
-data is sourced from Nicolosi Gelis, Cochero, & GÃ³mez (2020,
-<doi:10.1016/j.ecolind.2019.105951>).  The package utilizes the Diat.Barcode
-database for morphological and ecological information by Rimet & Couchez (2012,
-<doi:10.1051/kmae/2012018>), along with the combined classification of guilds
-and size classes from B-Beres et al. (2017,
-<doi:10.1016/j.ecolind.2017.07.007>).  Currently supported diatom-based biotic
-indices include DES index (Descy, 1979); EPID index (Dell'Uomo, 1996); IDAP
-index (Prygiel & Coste, 1993); ID-CH index (HÃ¼rlimann & Niederhauser, 2007);
-IDP index (GÃ³mez & Licursi, 2001); ILM index (Leclercq & Maquet, 1987); IPS
-index (Coste, 1982); LOBO index (Lobo, Callegaro, & Bender, 2002); SLA index
-(Sladecek, 1986); TDI index (Kelly & Whitton, 1995); SPEAR(herbicide) index
-(Wood et al., 2019); PBIDW index (Castro-Roa & Pinilla-Agudelo, 2014); DISP
-index (Stenger-KovÃ¡csa et al., 2018).")
+Diatom species are recognized by their species name using a heuristic search,
+and their ecological data is retrieved from multiple sources.  It includes
+number/shape of chloroplasts diversity indices, size classes, ecological guilds,
+and multiple biotic indices.  It outputs both a dataframe with all the results
+and plots of all the obtained data in a defined output folder. - Sample data was
+taken from Nicolosi Gelis, Cochero & GÃ³mez (2020,
+<doi:10.1016/j.ecolind.2019.105951>). - The package uses the Diat.Barcode
+database to calculate morphological and ecological information by Rimet &
+Couchez (2012, <doi:10.1051/kmae/2012018>),and the combined classification of
+guilds and size classes established by B-BÃ©res et al. (2017,
+<doi:10.1016/j.ecolind.2017.07.007>). - Current diatom-based biotic indices
+include the DES index by Descy (1979) - EPID index by Dell'Uomo (1996, ISBN:
+3950009002) - IDAP index by Prygiel & Coste (1993, <doi:10.1007/BF00028033>) -
+ID-CH index by HÃ¼rlimann & Niederhauser (2007) - IDP index by GÃ³mez & Licursi
+(2001, <doi:10.1023/A:1011415209445>) - ILM index by Leclercq & Maquet (1987) -
+IPS index by Coste (1982) - LOBO index by Lobo, Callegaro, & Bender (2002,
+ISBN:9788585869908) - SLA by SlÃ¡deÄek (1986, <doi:10.1002/aheh.19860140519>) -
+TDI index by Kelly, & Whitton (1995, <doi:10.1007/BF00003802>) -
+SPEAR(herbicide) index by Wood, Mitrovic, Lim, Warne, Dunlop, & Kefford (2019,
+<doi:10.1016/j.ecolind.2018.12.035>) - PBIDW index by Castro-Roa &
+Pinilla-Agudelo (2014) - DISP index by Stenger-KovÃ¡cs et al. (2018,
+<doi:10.1016/j.ecolind.2018.07.026>) - EDI index by Chamorro et al. (2024,
+<doi:10.1021/acsestwater.4c00126>) - DDI index by Ãlvarez-Blanco et al. (2013,
+<doi: 10.1007/s10661-012-2607-z>) - PDISE index by Kahlert et al. (2023,
+<doi:10.1007/s10661-023-11378-4>).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-diaplt
@@ -19812,6 +19818,33 @@ local projections by the desparsified lasso, as described in Adamek et al.
 (2022) <@code{arXiv:2209.03218>}.")
     (license license:gpl2+)))
 
+(define-public r-desk
+  (package
+    (name "r-desk")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "desk" version))
+       (sha256
+        (base32 "0sddwphfnv2ljjx0mm30pdnxmwb7prf7ndn0hk6cy72963pwdgv5"))))
+    (properties `((upstream-name . "desk")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstudioapi r-cli))
+    (home-page "https://github.com/OvGU-SH/desk")
+    (synopsis "Didactic Econometrics Starter Kit")
+    (description
+     "Written to help undergraduate as well as graduate students to get started with R
+for basic econometrics without the need to import specific functions and
+datasets from many different sources.  Primarily, the package is meant to
+accompany the German textbook Auer, L.v., Hoffmann, S., Kranz, T. (2024, ISBN:
+978-3-662-68263-0) from which the exercises cover all the topics from the
+textbook Auer, L.v. (2023, ISBN: 978-3-658-42699-6).")
+    (license license:gpl3+)))
+
 (define-public r-desirability2
   (package
     (name "r-desirability2")
@@ -22042,29 +22075,25 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
 (define-public r-demographictable
   (package
     (name "r-demographictable")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemographicTable" version))
        (sha256
-        (base32 "1vxz426ryi8mdvcyzs7lckv4yy7r8mai0y3jw2hzhpgnx6gb59sp"))))
+        (base32 "0wyhgmgv94xwgsmsvk08c7kjfyppb0lmpy0nybgsaah8n1zlfgkv"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xtable r-flextable r-e1071))
+    (propagated-inputs (list r-scales r-officer r-flextable))
     (home-page "https://cran.r-project.org/package=DemographicTable")
     (synopsis "Creating Demographic Table")
     (description
-     "This package provides functions for creating demographic table with simple
-summary statistics, with optional comparison(s) over one or more groups.
-Numeric variables are summarized in means, standard deviations, medians,
-inter-quartile-ranges (IQR), skewness, Shapiro-Wilk normality test and ranges,
-and compared using two-sample t-test, Wilcoxon test, ANOVA and/or Kruskal-Wallis
-test.  Logical and factor variables are summarized in counts and percentages and
-compared using chi-squared test and/or Fisher's exact test.")
+     "This package provides functions for creating demographic table of simple summary
+statistics and comparison(s) over one or more groups.  Returned value is printed
+via package flextable'.")
     (license license:gpl2)))
 
 (define-public r-demographic
@@ -27201,36 +27230,6 @@ likelihood parameter estimates.  In addition it provides analogous tools for
 working with the beta-binomial distribution which has been proposed as a
 competitor to the db distribution.")
     (license license:gpl2+)))
-
-(define-public r-dbcvindex
-  (package
-    (name "r-dbcvindex")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DBCVindex" version))
-       (sha256
-        (base32 "1a0kwxb6vacw4b0s2mksx20x1kniyl2hd15vwgrrbidzhr0923iy"))))
-    (properties `((upstream-name . "DBCVindex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pacman r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/davidechicco/DBCVindex")
-    (synopsis
-     "Calculates the Density-Based Clustering Validation Index (DBCV) Index")
-    (description
-     "This package provides a metric called Density-Based Clustering Validation index
-(DBCV) index to evaluate clustering results, following the
-<https://github.com/@code{FelSiq/DBCV>} Python implementation by Felipe Alves
-Siqueira.  Original DBCV index article: Moulavi, D., Jaskowiak, P. A., Campello,
-R. J., Zimek, A., & Sander, J. (2014, April). \"Density-based clustering
-validation\", Proceedings of SDM 2014 -- the 2014 SIAM International Conference
-on Data Mining (pp.  839-847), <doi:10.1137/1.9781611973440.96>.")
-    (license license:gpl3)))
 
 (define-public r-dbcsp
   (package

@@ -354,13 +354,13 @@ used, see Reiter & Raghunathan (2007) <doi:10.1198/016214507000000932>.")
 (define-public r-synthpop
   (package
     (name "r-synthpop")
-    (version "1.8-0")
+    (version "1.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synthpop" version))
        (sha256
-        (base32 "0ljq3vhprzxj0p5s57pr223n3mxbiwz0p5bdvjcdkw4xykx7zkka"))))
+        (base32 "0ij574d7c1xx5qv5w79a1lrrgvk9hvd6l1cjvylfkc0s6b9rj39c"))))
     (properties `((upstream-name . "synthpop")))
     (build-system r-build-system)
     (arguments
@@ -382,9 +382,10 @@ used, see Reiter & Raghunathan (2007) <doi:10.1198/016214507000000932>.")
                              r-lattice
                              r-ggplot2
                              r-foreign
+                             r-forcats
                              r-classint
                              r-broman))
-    (home-page "https://www.synthpop.org.uk/")
+    (home-page "<https://www.synthpop.org.uk/>")
     (synopsis
      "Generating Synthetic Versions of Sensitive Microdata for Statistical Disclosure Control")
     (description
@@ -401,7 +402,10 @@ which can be largely automated, if default settings are used, or with methods
 defined by the user.  Optional parameters can be used to influence the
 disclosure risk and the analytical quality of the synthesised data.  For a
 description of the implemented method see Nowok, Raab and Dibben (2016)
-<doi:10.18637/jss.v074.i11>.")
+<doi:10.18637/jss.v074.i11>.  Functions to assess identity and attribute
+disclosure for the original and for the synthetic data are included in the
+package, and their use is illustrated in a vignette on disclosure (Practical
+Privacy Metrics for Synthetic Data).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-synthetic
@@ -3342,13 +3346,13 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svemnet
   (package
     (name "r-svemnet")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVEMnet" version))
        (sha256
-        (base32 "0xzgg42sxbgrwqdfbi0aafwqv343v15xsqpfsd2kyrv4xv8ibyd5"))))
+        (base32 "1jwb0m9w513d9b1i8h52ya9zkaf4r73kr07avbx7ngh3cj632ggx"))))
     (properties `((upstream-name . "SVEMnet")))
     (build-system r-build-system)
     (arguments
@@ -3360,7 +3364,6 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
                              r-gamlss-dist
                              r-gamlss
                              r-foreach
-                             r-dorng
                              r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SVEMnet")
@@ -8983,6 +8986,33 @@ dataset and additional information is available at
 genetic algorithms, brute force, or random sampling.  Schultze (2017)
 <doi:10.17169/refubium-622>.")
     (license license:gpl3)))
+
+(define-public r-stsd
+  (package
+    (name "r-stsd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sTSD" version))
+       (sha256
+        (base32 "0cxp34kcxnfvi8jz6cm24n8mpzpg373aigw57y9614blwx73d15m"))))
+    (properties `((upstream-name . "sTSD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=sTSD")
+    (synopsis "Simulate Time Series Diagnostics")
+    (description
+     "These are tools that allow users to do time series diagnostics, primarily tests
+of unit root, by way of simulation.  While there is nothing necessarily wrong
+with the received wisdom of critical values generated decades ago, simulation
+provides its own perks.  Not only is simulation broadly informative as to what
+these various test statistics do and what are their plausible values, simulation
+provides more flexibility for assessing unit root by way of different thresholds
+or different hypothesized distributions.")
+    (license license:gpl2+)))
 
 (define-public r-sts
   (package

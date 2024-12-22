@@ -2517,13 +2517,13 @@ information, yielding more accurate and easily interpretable rules.")
 (define-public r-iso8601
   (package
     (name "r-iso8601")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iso8601" version))
        (sha256
-        (base32 "129sz6kicyaxhyj8lnrg466gvs9hidd89ch14rxmb34ygspdyyfb"))))
+        (base32 "1wkbcwgxf86j5lyr18k2xx9pnk49qj8wlrwhh2wx9hayb4v8k39f"))))
     (properties `((upstream-name . "iso8601")))
     (build-system r-build-system)
     (arguments

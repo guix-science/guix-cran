@@ -3628,6 +3628,34 @@ Neubert and Brunner (2007) <doi:10.1016/j.csda.2006.05.024>, and are written
 with FORTRAN.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-bruneimap
+  (package
+    (name "r-bruneimap")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bruneimap" version))
+       (sha256
+        (base32 "0phxn05i35d2kkgg0aixa3xvn2hcxx5ksixvnj55yn30zrbiwg7n"))))
+    (properties `((upstream-name . "bruneimap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-lifecycle r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Bruneiverse/bruneimap")
+    (synopsis "Maps and Spatial Data of Brunei")
+    (description
+     "This package provides spatial data for mapping Brunei, including boundaries for
+districts, mukims, and kampongs, as well as locations of key infrastructure such
+as masjids, hospitals, clinics, and schools.  The package supports researchers,
+analysts, and developers working with Bruneiâs geographic and demographic
+data, offering a quick and accessible foundation for creating maps and
+conducting spatial studies.")
+    (license license:gpl3+)))
+
 (define-public r-brulee
   (package
     (name "r-brulee")
@@ -22247,13 +22275,13 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
 (define-public r-bcmaps
   (package
     (name "r-bcmaps")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcmaps" version))
        (sha256
-        (base32 "0cpghf8acq7dpmiaw314n1h2aa310513f3qwnl8p74pyr940gwvn"))))
+        (base32 "07pczf0hkw3pq9jl6rdk2nghad2irf6njhn20915xws0d0p2c5c8"))))
     (properties `((upstream-name . "bcmaps")))
     (build-system r-build-system)
     (arguments
@@ -25360,13 +25388,13 @@ C (2020) <doi:10.18637/jss.v093.i06>, or Roever C and Friede T (2022)
 (define-public r-bayesmeanscale
   (package
     (name "r-bayesmeanscale")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesMeanScale" version))
        (sha256
-        (base32 "0zkfv6f50z83d8iih2f9p0dkla2bffcfjhfbmpicybicfi35f480"))))
+        (base32 "1q7majv5jx7lw6i4wn5cgvywa684qqh7hvfi1ikd7c20n59fb778"))))
     (properties `((upstream-name . "bayesMeanScale")))
     (build-system r-build-system)
     (arguments
@@ -31316,6 +31344,35 @@ from Goodman-Bacon (2018) <doi:10.3386/w25018>.")
 sampling algorithm to fit a progressive compartmental model of disease in a
 Bayesian framework Morsomme, R.N., Holloway, S.T., Ryser, M.D. and Xu J. (2024)
 <doi:10.48550/@code{arXiv.2408.14625>}.")
+    (license license:gpl3)))
+
+(define-public r-backtestgraphics
+  (package
+    (name "r-backtestgraphics")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "backtestGraphics" version))
+       (sha256
+        (base32 "0q6hpq1i6x2aryr154y1c3d4a0hfjvdbzg2vi2zf05iias6yk9zs"))))
+    (properties `((upstream-name . "backtestGraphics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xts r-shiny r-scales r-dygraphs r-dplyr))
+    (home-page "https://cran.r-project.org/package=backtestGraphics")
+    (synopsis "Interactive Graphics for Portfolio Data")
+    (description
+     "This package creates an interactive graphics interface to visualize backtest
+results of different financial instruments, such as equities, futures, and
+credit default swaps.  The package does not run backtests on the given data set
+but displays a graphical explanation of the backtest results.  Users can look at
+backtest graphics for different instruments, investment strategies, and
+portfolios.  Summary statistics of different portfolio holdings are shown in the
+left panel, and interactive plots of profit and loss (P\\&L), net market value
+(NMV) and gross market value (GMV) are displayed in the right panel.")
     (license license:gpl3)))
 
 (define-public r-backtest

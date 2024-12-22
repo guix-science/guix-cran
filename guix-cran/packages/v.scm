@@ -668,13 +668,13 @@ levels (levels seen during application, but not during training).  Reference:
 (define-public r-vtable
   (package
     (name "r-vtable")
-    (version "1.4.7")
+    (version "1.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vtable" version))
        (sha256
-        (base32 "1pjcvyid8i5j86jw0l6r3sd7gr6lc41vskiwbmi369g7k4fpgl6y"))))
+        (base32 "0n96r41i5w778z4ljg2rn99q96j60fp04h9g15awxj15g3n45xrj"))))
     (properties `((upstream-name . "vtable")))
     (build-system r-build-system)
     (arguments
@@ -6863,13 +6863,13 @@ storyteller.  VChart examples and documentation are available here:
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "1xq3l8qirr37w0j3dwvbpz30mvih3grzsbsa12s4wy6pszy5wk3b"))))
+        (base32 "08xra1bjiklwgl2xfqr756ndscvbdpprzl3sj78yxxh43rgpj1mf"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (arguments

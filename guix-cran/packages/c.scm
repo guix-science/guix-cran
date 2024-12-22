@@ -22712,13 +22712,13 @@ missing values is assigned to each palette.")
 (define-public r-cols
   (package
     (name "r-cols")
-    (version "1.3")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols" version))
        (sha256
-        (base32 "10f65sys91jsdiq1qa0b5wyfnds77dd7jrmb1g5aywx973p8yl35"))))
+        (base32 "1ral7v3y9mvp8qlh15pk8a04r6k2swjr2iisk5wq30kp1lv76nrb"))))
     (properties `((upstream-name . "cols")))
     (build-system r-build-system)
     (arguments
@@ -24214,13 +24214,13 @@ Cap <https://coinmarketcap.com/api/>.")
 (define-public r-coimp
   (package
     (name "r-coimp")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoImp" version))
        (sha256
-        (base32 "1hn6nf37z90pwhixfwjj5r9avv03k6bsc099j3d4j8g3wc40mlx4"))))
+        (base32 "1bd3y4aqmjgk5894rc2vp7z245gshmlyralyywghyrg3dhnhsd8z"))))
     (properties `((upstream-name . "CoImp")))
     (build-system r-build-system)
     (arguments
@@ -31545,13 +31545,13 @@ Guralnick <doi:10.17161/bi.v14i0.9786> Biodiversity Informatics.")
 (define-public r-climate
   (package
     (name "r-climate")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "climate" version))
        (sha256
-        (base32 "16fwli2dhj9rf9qz3h6iy7g06y7z3vi7mndbhf4vx110iyjsh2wa"))))
+        (base32 "1p8l7sdplrkc5n1f28xbmvmpz8akhbxzqm522gcgs7jg754zlxhb"))))
     (properties `((upstream-name . "climate")))
     (build-system r-build-system)
     (arguments
@@ -34746,6 +34746,30 @@ package].  Users are able to set the styles of lines and points.  This package
 contains the function to calculate odds ratios and their confidence intervals
 from the result of logistic regression.")
     (license license:gpl2+)))
+
+(define-public r-ciphertext
+  (package
+    (name "r-ciphertext")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ciphertext" version))
+       (sha256
+        (base32 "0jkhsq3n42dsr6cg3sp039cp4dah9cdc25q5h51rsq65m4bxmh9k"))))
+    (properties `((upstream-name . "ciphertext")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/Luigi-Annic/ciphertext")
+    (synopsis "Classical Cryptography Methods for Words and Phrases")
+    (description
+     "Classical cryptography methods for words and brief phrases.  Substitution,
+transposition and concealment (null) ciphers are available, like Caesar,
+VigenÃ¨re, Atbash, affine, simple substitution, Playfair, rail fence, Scytale,
+single column, and Polybius ciphers.")
+    (license license:gpl3)))
 
 (define-public r-cipher
   (package
@@ -40008,6 +40032,47 @@ tidyvpc and ggplot2 code directly from the user interface and download R or Rmd
 scripts to reproduce the VPCs in R.")
     (license license:lgpl3)))
 
+(define-public r-certara-rsnlme-modelbuilder
+  (package
+    (name "r-certara-rsnlme-modelbuilder")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Certara.RsNLME.ModelBuilder" version))
+       (sha256
+        (base32 "0bdgkrmlyyjrj97zrydfh0d8662wn9ayvnj9bqs561y0zy871fmr"))))
+    (properties `((upstream-name . "Certara.RsNLME.ModelBuilder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shinymeta
+                             r-shinyjs
+                             r-shinyace
+                             r-shiny
+                             r-magrittr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggplot2
+                             r-ggforce
+                             r-fs
+                             r-dt
+                             r-data-table
+                             r-certara-rsnlme
+                             r-bslib))
+    (home-page "https://certara.github.io/R-RsNLME-model-builder/")
+    (synopsis "Pharmacometric Model Building Using 'shiny'")
+    (description
+     "Develop Nonlinear Mixed Effects (NLME) models for pharmacometrics using a shiny
+interface.  The Pharmacometric Modeling Language (PML) code updates in real time
+given changes to user inputs.  Models can be executed using the
+Certara.@code{RsNLME} package.  Additional support to generate the underlying
+Certara.@code{RsNLME} code to recreate the corresponding model in R is provided
+in the user interface.")
+    (license license:lgpl3)))
+
 (define-public r-certara-rsnlme
   (package
     (name "r-certara-rsnlme")
@@ -41639,32 +41704,30 @@ Spurek, P. and Tabor, J. (2014) <doi:10.1016/j.patcog.2014.03.006>.")
 (define-public r-ceas
   (package
     (name "r-ceas")
-    (version "1.0.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ceas" version))
        (sha256
-        (base32 "0xxinxavqkfg3zfl62mz64msivr5j8l88sshqc1z56kxldyv0xfn"))))
+        (base32 "1h6zd8hcxd8k6lnmq066gjgp683y6f7kfisyf1zbasbr1l4gp0fx"))))
     (properties `((upstream-name . "ceas")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-readxl r-ggplot2 r-data-table))
+    (propagated-inputs (list r-readxl r-lme4 r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://jamespeapen.github.io/ceas/")
     (synopsis "Cellular Energetics Analysis Software")
     (description
-     "Analysis and visualization of cellular energetics data from Agilent Seahorse
-XF96.  Cellular energetics is how cells make, use, and distribute units of
-energy (primarily ATP).  Measuring real-time cellular energetics is essential to
-understanding a tissue or cellâs bioenergetic state and fuel dependencies.
-The Seahorse machine measures a cellâs or matrixâs oxygen consumption rate
-(OCR) â a proxy of oxidative phosphorylation â and extracellular
-acidification rate â a proxy of glycolysis.  This package offers flexible and
-fast analysis and plotting capabilities for such data using the methods
-described by Mookerjee et al. (2017) <doi:10.1074/jbc.m116.774471>.")
+     "Measuring cellular energetics is essential to understanding a matrixâs (e.g.
+cell, tissue or biofluid) metabolic state.  The Agilent Seahorse machine is a
+common method to measure real-time cellular energetics, but existing analysis
+tools are highly manual or lack functionality.  The Cellular Energetics Analysis
+Software (ceas) R package fills this analytical gap by providing modular and
+automated Seahorse data analysis and visualization using the methods described
+by Mookerjee et al. (2017) <doi:10.1074/jbc.m116.774471>.")
     (license license:expat)))
 
 (define-public r-cdvinecopulaconditional
@@ -49261,13 +49324,13 @@ functions.")
 (define-public r-calendrio
   (package
     (name "r-calendrio")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calendRio" version))
        (sha256
-        (base32 "152fb5yaazb2hh99ag1aq675gc5f8xw990w55nkhxqhg6w5p0ln9"))))
+        (base32 "0y1psmsfllj3x00z7ci84cz0wr29vlj693z510iy6cr803yd0asq"))))
     (properties `((upstream-name . "calendRio")))
     (build-system r-build-system)
     (arguments

@@ -22136,13 +22136,13 @@ weight, variable weight, tracking subjects used in each tree, etc.")
 (define-public r-rloptimal
   (package
     (name "r-rloptimal")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLoptimal" version))
        (sha256
-        (base32 "1id1124wgr2qw67a7yfr1z6l3w8czg8wmw1xq6zlcpb8gs5mj9jd"))))
+        (base32 "0jzs037qx6rcljqyqzjslqv6kysxwz5xy2wzni955qyl4chix098"))))
     (properties `((upstream-name . "RLoptimal")))
     (build-system r-build-system)
     (arguments

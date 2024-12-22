@@ -139,13 +139,13 @@ dating, and monitoring (de facto) exchange rate regimes.")
 (define-public r-fxl
   (package
     (name "r-fxl")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fxl" version))
        (sha256
-        (base32 "0i7c30vaysrfav9z4ikfmjy287qvcnx3yi3898qcszkip28n9zx7"))))
+        (base32 "10wypbkh7ypsrf2598ia81ldadz6gn9a40x9b1zvq77gjz3934vk"))))
     (properties `((upstream-name . "fxl")))
     (build-system r-build-system)
     (arguments
@@ -840,13 +840,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.3.6")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "045a7mxbddjp36kcvw7a155cvsm5vhf0fcdlgx9j9r1lh0aihgnh"))))
+        (base32 "02lm2lq9mxwcah6ah1pbls1y05dwj7l1mka0mmpaz13zpsmi6cf2"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (arguments

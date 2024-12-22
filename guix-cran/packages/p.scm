@@ -3872,13 +3872,13 @@ proposed by Wang, Tolos, and Wang (2010) <DOI:10.1002/cjs.10068>.")
 (define-public r-pss-health
   (package
     (name "r-pss-health")
-    (version "1.0.2")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSS.Health" version))
        (sha256
-        (base32 "0vkg727rhh267vvcf8zkf5k6wm0k54vqysrsm4zc3sin3w1chnaf"))))
+        (base32 "062yav2kwjq0jglfjvhw7wca3405wij8v88dq0f8l1nlgkm2qz9z"))))
     (properties `((upstream-name . "PSS.Health")))
     (build-system r-build-system)
     (arguments
@@ -12896,13 +12896,13 @@ fixed effects with penalized intercepts by LASSO.")
 (define-public r-pqrbayes
   (package
     (name "r-pqrbayes")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrBayes" version))
        (sha256
-        (base32 "0mbhkha99qyk5hkpk13ysb0686lcn6q9vq34838fz1l7xy47mzw3"))))
+        (base32 "1pkdhs73xjg7qgcvj24yqwkxibg55c9kdjskm6v44nnks11shinl"))))
     (properties `((upstream-name . "pqrBayes")))
     (build-system r-build-system)
     (arguments
@@ -12913,17 +12913,16 @@ fixed effects with penalized intercepts by LASSO.")
     (synopsis "Bayesian Penalized Quantile Regression")
     (description
      "The quantile varying coefficient model is robust to data heterogeneity, outliers
-and heavy-tailed distributions in the response variable due to the check loss
-function in quantile regression.  In addition, it can flexibly model the dynamic
-pattern of regression coefficients through nonparametric varying coefficient
-functions.  Although high dimensional quantile varying coefficient model has
-been examined extensively in the frequentist framework, the corresponding
-Bayesian variable selection methods have rarely been developed.  In this
-package, we have implemented the Gibbs samplers of the penalized Bayesian
-quantile varying coefficient model with the spike-and-slab priors [Zhou et
-al.(2023)]<doi:10.1016/j.csda.2023.107808>.  The Markov Chain Monte Carlo (MCMC)
-algorithms of the proposed and alternative models can be efficiently performed
-by using the package.")
+and heavy-tailed distributions in the response variable.  In addition, it can
+flexibly model dynamic patterns of regression coefficients through nonparametric
+varying coefficient functions.  In this package, we have implemented the Gibbs
+samplers of the penalized Bayesian quantile varying coefficient model with
+spike-and-slab priors [Zhou et al.(2023)]<doi:10.1016/j.csda.2023.107808> for
+efficient Bayesian shrinkage estimation, variable selection and statistical
+inference.  In particular, valid Bayesian inferences on sparse quantile varying
+coefficient functions can be validated on finite samples.  The Markov Chain
+Monte Carlo (MCMC) algorithms of the proposed and alternative models can be
+efficiently performed by using the package.")
     (license license:gpl2)))
 
 (define-public r-pqlseq

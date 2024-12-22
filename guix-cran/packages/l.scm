@@ -5667,34 +5667,33 @@ conditional inference framework is described by Hothorn T, Hornik K, Zeileis A
 (define-public r-logib
   (package
     (name "r-logib")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logib" version))
        (sha256
-        (base32 "09c528wrgyk0cg1flx2fsl53q4v9442rr44g9kh5jznqs788608b"))))
+        (base32 "1zf6xw88ikp587g9whqx4cs0lrf2lxivqqpxz0457v7r971g02ih"))))
     (properties `((upstream-name . "logib")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-readxl r-lubridate))
-    (home-page "https://cran.r-project.org/package=logib")
+    (home-page "https://github.com/admin-ebg/logib")
     (synopsis
      "Salary Analysis by the Swiss Federal Office for Gender Equality")
     (description
      "Implementation of the Swiss Confederation's standard analysis model for salary
-analyses
-<https://www.ebg.admin.ch/dam/ebg/en/dokumente/lohngleichheit/infos-zu-analysen/standard-analysemodellzurueberpruefungderlohngleichheitzwischenf.pdf.download.pdf/methodological_approachformonitoringcompliancewithwageequalitybe.pdf>
-in R. The analysis is run at company-level and the model is intended for
-companies with 50 or more employees (apprentices, trainees/interns and expats
-are not included in the analysis).  Employees with at least 100 employees are
-required by the Gender Equality Act to conduct an equal pay analysis.  This
-package allows users to run the equal salary analysis in R, providing additional
-transparency with respect to the methodology and simple automation
-possibilities.")
-    (license license:gpl3)))
+analyses <https://www.ebg.admin.ch/en/equal-pay-analysis-with-logib> in R. The
+analysis is run at company-level and the model is intended for medium-sized and
+large companies.  It can technically be used with 50 or more employees
+(apprentices, trainees/interns and expats are not included in the analysis).
+Employees with at least 100 employees are required by the Gender Equality Act to
+conduct an equal pay analysis.  This package allows users to run the equal
+salary analysis in R, providing additional transparency with respect to the
+methodology and simple automation possibilities.")
+    (license license:gpl3+)))
 
 (define-public r-loggit2
   (package
@@ -6988,13 +6987,13 @@ mode, normality test, histogram and correlation.")
 (define-public r-loa
   (package
     (name "r-loa")
-    (version "0.3.0.1")
+    (version "0.3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loa" version))
        (sha256
-        (base32 "1akcdzy5sf1gw05chzmv2aqx6xx6v7abbd4vrn5py0cynn7am60r"))))
+        (base32 "1j99lh6sv6gax29q66277w4yxwnyv99gm4nixqlrhn9b2q6rjwbd"))))
     (properties `((upstream-name . "loa")))
     (build-system r-build-system)
     (arguments
@@ -13999,13 +13998,13 @@ unified framework for performing or creating custom permutation tests.")
 (define-public r-learningtower
   (package
     (name "r-learningtower")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "learningtower" version))
        (sha256
-        (base32 "041hx9a1jq5aw6gbgb1xj8pl9dhc3kb85cx670nkc3ngaj4j2g17"))))
+        (base32 "1vs115cyzji1ngpv3nyg1xdn84f1nm5hxqc474xrh9pcagy8qhyp"))))
     (properties `((upstream-name . "learningtower")))
     (build-system r-build-system)
     (arguments
@@ -14014,7 +14013,7 @@ unified framework for performing or creating custom permutation tests.")
     (propagated-inputs (list r-tibble r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://kevinwang09.github.io/learningtower/")
-    (synopsis "OECD PISA Datasets from 2000-2018 in an Easy-to-Use Format")
+    (synopsis "OECD PISA Datasets from 2000-2022 in an Easy-to-Use Format")
     (description
      "The Programme for International Student Assessment (PISA) is a global study
 conducted by the Organization for Economic Cooperation and Development (OECD) in

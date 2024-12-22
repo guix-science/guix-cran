@@ -9601,13 +9601,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0alnlypk4bkmph3i2739vwx8j7c5drqbjfsi6a3xcya2lghc43a8"))))
+        (base32 "13gmp546xh233shbf7836jjsa8krfc5pbsh3v8l5qbg87qz86491"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -17450,13 +17450,13 @@ enjoyment.")
 (define-public r-ghcnr
   (package
     (name "r-ghcnr")
-    (version "0.8.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GHCNr" version))
        (sha256
-        (base32 "1ck53nn6xs0346kpxbgi57jppkwrpbqjj129ikynx1jdq6br8l7m"))))
+        (base32 "09k0fdyc9mqa299bhchhz7gcq9vka138dhd50kkfq5rcazqprvhf"))))
     (properties `((upstream-name . "GHCNr")))
     (build-system r-build-system)
     (arguments
@@ -17469,7 +17469,8 @@ enjoyment.")
                              r-rlang
                              r-readr
                              r-httr2
-                             r-dplyr))
+                             r-dplyr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GHCNr")
     (synopsis "Download Weather Station Data from GHCN")
@@ -18017,6 +18018,47 @@ the University of Ljubljana.")
 a light, pastel aesthetic.  Syntax follows the viridis package.")
     (license license:gpl3+)))
 
+(define-public r-ggtaxplot
+  (package
+    (name "r-ggtaxplot")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggtaxplot" version))
+       (sha256
+        (base32 "004kbplbh72a0yg5m130r5pc4963qj7r70xpb9sgy61b6a7cphny"))))
+    (properties `((upstream-name . "ggtaxplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tidyverse
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-ggplot2
+                             r-ggalluvial
+                             r-dplyr
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggtaxplot")
+    (synopsis "Create Plots to Visualize Taxonomy")
+    (description
+     "This package provides a comprehensive suite of functions for processing and
+visualizing taxonomic data.  It includes functionality to clean and transform
+taxonomic data, categorize it into hierarchical ranks (such as Phylum, Class,
+Order, Family, and Genus), and calculate the relative abundance of each
+category.  The package also generates a color palette for visual representation
+of the taxonomic data, allowing users to easily identify and differentiate
+between various taxonomic groups.  Additionally, it features a river plot
+visualization to effectively display the distribution of individuals across
+different taxonomic ranks, facilitating insights into taxonomic visualization.")
+    (license license:gpl3)))
+
 (define-public r-ggswissmaps
   (package
     (name "r-ggswissmaps")
@@ -18479,13 +18521,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "096wqinvvv7mr15nk5ymvk6qkbnv833m3yiz9kv06b4gnzfl5m2i"))))
+        (base32 "0lyy0rxjdvbskqwx69l0gf5hsl5k69yr15n7hr1hanc329r4flqn"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
@@ -32976,13 +33018,13 @@ Bithell (1991) <doi:10.1002/sim.4780101112>.")
 (define-public r-gastempt
   (package
     (name "r-gastempt")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gastempt" version))
        (sha256
-        (base32 "1lpjx9yxdm3fk9wmal3ii49gxk6nvagzdmz9zk1f44dq7kpi19kb"))))
+        (base32 "0ddnr4052mkaqyk3810xhxfllgr3l46vh37c8909dbkphm3isi9y"))))
     (properties `((upstream-name . "gastempt")))
     (build-system r-build-system)
     (arguments

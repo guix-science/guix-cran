@@ -19,6 +19,7 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -1439,13 +1440,13 @@ line utilities.")
 (define-public r-auxsurvey
   (package
     (name "r-auxsurvey")
-    (version "0.9")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AuxSurvey" version))
        (sha256
-        (base32 "1wh51p54nh7a2k8372md0mfl92gja4qqla69d1yib0xpifa0qvpx"))))
+        (base32 "1qg75i5gv2z2yv944ngjnayq946v0n09ixc3p54hw3vjy8hs6z2b"))))
     (properties `((upstream-name . "AuxSurvey")))
     (build-system r-build-system)
     (arguments
@@ -1469,7 +1470,9 @@ line utilities.")
 records, but the utility of this data is diminished when it is discretized for
 confidentiality.  We provide a set of survey estimators to make full use of
 information from the discretized variables.  See Williams, S.Z., Zou, J., Liu,
-Y., Si, Y., Galea, S. and Chen, Q. (2024) <doi:10.1002/sim.10270> for details.")
+Y., Si, Y., Galea, S. and Chen, Q. (2024), Improving Survey Inference Using
+Administrative Records Without Releasing Individual-Level Continuous Data.
+Statistics in Medicine, 43: 5803-5813. <doi:10.1002/sim.10270> for details.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-autowmm
@@ -18017,19 +18020,20 @@ and
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "0.3.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "0lnxbvmsalis942nxgf0c3j602wcdzpvdm9r194c2ci0xpybc6ls"))))
+        (base32 "0vvx5midssgcy32bxbxkxi8jgl5ac3ivdm4hh7qfx35xi0ypbjca"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (inputs (list python-pytorch))
+    (propagated-inputs (list r-stringi
                              r-smotefamily
                              r-rlang
                              r-reticulate
@@ -18037,11 +18041,9 @@ and
                              r-rcpparmadillo
                              r-rcpp
                              r-irrcac
-                             r-irr
                              r-iotarelr
                              r-foreach
-                             r-doparallel
-                             r-abind))
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://fberding.github.io/aifeducation/")
     (synopsis "Artificial Intelligence for Education")
@@ -18052,18 +18054,17 @@ or the use of data is restricted by privacy policies.  This often leads to small
 data sets.  Furthermore, in the educational and social sciences, data is often
 unbalanced in terms of frequencies.  To support educators as well as educational
 and social researchers in using the potentials of AI for their work, this
-package provides a unified interface for neural nets in keras', tensorflow', and
-pytorch to deal with natural language problems.  In addition, the package ships
-with a shiny app, providing a graphical user interface.  This allows the usage
-of AI for people without skills in writing python/R scripts.  The tools
-integrate existing mathematical and statistical methods for dealing with small
-data sets via pseudo-labeling (e.g. Lee (2013)
-<https://www.researchgate.net/publication/280581078_Pseudo-Label_The_Simple_and_Efficient_Semi-Supervised_Learning_Method_for_Deep_Neural_Networks>,
-Cascante-Bonilla et al. (2020) <doi:10.48550/@code{arXiv.2001.06001>}) and
-imbalanced data via the creation of synthetic cases (e.g. Bunkhumpornpat et al.
-(2012) <doi:10.1007/s10489-011-0287-y>).  Performance evaluation of AI is
-connected to measures from content analysis which educational and social
-researchers are generally more familiar with (e.g. Berding & Pargmann (2022)
+package provides a unified interface for neural nets in @code{PyTorch} to deal
+with natural language problems.  In addition, the package ships with a shiny
+app, providing a graphical user interface.  This allows the usage of AI for
+people without skills in writing python/R scripts.  The tools integrate existing
+mathematical and statistical methods for dealing with small data sets via
+pseudo-labeling (e.g. Cascante-Bonilla et al. (2020)
+<doi:10.48550/@code{arXiv.2001.06001>}) and imbalanced data via the creation of
+synthetic cases (e.g. Bunkhumpornpat et al. (2012)
+<doi:10.1007/s10489-011-0287-y>).  Performance evaluation of AI is connected to
+measures from content analysis which educational and social researchers are
+generally more familiar with (e.g. Berding & Pargmann (2022)
 <doi:10.30819/5581>, Gwet (2014) <ISBN:978-0-9708062-8-4>, Krippendorff (2019)
 <doi:10.4135/9781071878781>).  Estimation of energy consumption and CO2
 emissions during model training is done with the python library codecarbon'.

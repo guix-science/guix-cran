@@ -5037,13 +5037,13 @@ vocational choices.  A theory of vocational personalities and work environments.
 (define-public r-holiglm
   (package
     (name "r-holiglm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "holiglm" version))
        (sha256
-        (base32 "02i6smmwmvbkx351ahjzz247kky377r6ara06c5wk5jrfsfjbbr7"))))
+        (base32 "10j0h5x5rqaw9gwiyk32imzb05fakpz8hmg4jilg3qlqk97bwfrn"))))
     (properties `((upstream-name . "holiglm")))
     (build-system r-build-system)
     (arguments

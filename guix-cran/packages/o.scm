@@ -1029,13 +1029,13 @@ method is trained on a reference data, it can be applied to new data.")
 (define-public r-outcomeweights
   (package
     (name "r-outcomeweights")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OutcomeWeights" version))
        (sha256
-        (base32 "11kcx26as5ncb2yikal5fy228ib84m9q3kgjrr9rvwmf54h3mvnr"))))
+        (base32 "1m7wzwnb2v5x40gryb88swkzqbdzqrlyk0jx4sb06qa3l865j2lc"))))
     (properties `((upstream-name . "OutcomeWeights")))
     (build-system r-build-system)
     (arguments
@@ -4171,19 +4171,19 @@ object from the graph package.")
 (define-public r-orbital
   (package
     (name "r-orbital")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbital" version))
        (sha256
-        (base32 "167hpki2v1m8n0fpx3giy7pdc49lwcsn1qacgi38f7m8v0dca4ga"))))
+        (base32 "08nhyh73fkyzh1q65lnx4m2z279my595b672p8cwyaf9sl08g1cn"))))
     (properties `((upstream-name . "orbital")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-dplyr r-cli))
+    (propagated-inputs (list r-rlang r-generics r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tidymodels/orbital")
     (synopsis "Predict with 'tidymodels' Workflows in Databases")
