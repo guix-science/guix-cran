@@ -15581,6 +15581,41 @@ disequilibrium.  For details see Manipur et al (2023)
 <doi:10.1101/2023.06.29.546856>.")
     (license license:gpl3)))
 
+(define-public r-copernicusmarine
+  (package
+    (name "r-copernicusmarine")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CopernicusMarine" version))
+       (sha256
+        (base32 "06jx1lq3f2w1iyw500q8da9i8vbwqj5cqjb6i9cnm0syvcsqpixc"))))
+    (properties `((upstream-name . "CopernicusMarine")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-leaflet
+                             r-httr2
+                             r-dplyr
+                             r-crayon))
+    (home-page "https://github.com/pepijn-devries/CopernicusMarine")
+    (synopsis
+     "Search Download and Handle Data from Copernicus Marine Service Information")
+    (description
+     "Subset and download data from EU Copernicus Marine Service Information:
+<https://data.marine.copernicus.eu>.  Import data on the oceans physical and
+biogeochemical state from Copernicus into R without the need of external
+software.")
+    (license license:gpl3+)))
+
 (define-public r-copernicusdem
   (package
     (name "r-copernicusdem")

@@ -4654,13 +4654,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.10")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "11bchwz3545l4w62q0zgs699g3ak86sm4l9d5adybnmf59a5ax0k"))))
+        (base32 "1g3207j1hh8f8ppc2ix7k1nzgrvccrl1j8clgrha57i146wz7b1s"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments

@@ -2843,13 +2843,13 @@ models, Technical report.")
 (define-public r-fude
   (package
     (name "r-fude")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fude" version))
        (sha256
-        (base32 "06aacagrq4vjzq8r3xayyic8i0gjls7b7b94cnmspprh0bk9d7dw"))))
+        (base32 "120rhlvj3q0qbsgsrazv2k7z91bkl3h14fb5ga08f8glsd7k5vml"))))
     (properties `((upstream-name . "fude")))
     (build-system r-build-system)
     (arguments
@@ -2857,13 +2857,15 @@ models, Technical report.")
       #:tests? #f))
     (propagated-inputs (list r-units
                              r-tidyr
-                             r-stringi
+                             r-shiny
                              r-sf
                              r-rlang
                              r-purrr
                              r-magrittr
+                             r-leaflet
                              r-glue
                              r-forcats
+                             r-dt
                              r-dplyr))
     (home-page "https://github.com/takeshinishimura/fude")
     (synopsis "Utilities for Fude Polygon")

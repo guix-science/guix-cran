@@ -16756,13 +16756,13 @@ family of distributions available in Galarza et.al. (2017)
 (define-public r-alcyon
   (package
     (name "r-alcyon")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alcyon" version))
        (sha256
-        (base32 "0kd9jw167p4cay301y5g4jfkpwgnzxpp6lpnn9q056c6jh447gix"))))
+        (base32 "1lsk2hb0a6lmmy439dga2llsij6ng7bqrfigwsb5zcfi7gkh0kd4"))))
     (properties `((upstream-name . "alcyon")))
     (build-system r-build-system)
     (arguments

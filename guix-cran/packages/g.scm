@@ -5576,13 +5576,13 @@ points on curves, tangents to curves, and normals to curves.")
 (define-public r-grfa
   (package
     (name "r-grfa")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GrFA" version))
        (sha256
-        (base32 "1qlj3zxv7fy7mwqrmpidn2z3ni8vwp1yvz8w5gvzrxac39xqc2dv"))))
+        (base32 "11fwfzzq8biqrlyh4pd5gbssj52k6c1kk526zv9mmwb3vjqajr5v"))))
     (properties `((upstream-name . "GrFA")))
     (build-system r-build-system)
     (arguments

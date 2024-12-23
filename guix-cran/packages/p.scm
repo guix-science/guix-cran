@@ -22105,13 +22105,13 @@ models (SEMMs).")
 (define-public r-plotscaper
   (package
     (name "r-plotscaper")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotscaper" version))
        (sha256
-        (base32 "1hsqya9ffm26sff9rcnvn76gw9viimi34srynci9m5w7191i5ra0"))))
+        (base32 "1fv6vkfa54fqim543wx5k4z94561xn37cqmkinj3glq22lxp068a"))))
     (properties `((upstream-name . "plotscaper")))
     (build-system r-build-system)
     (arguments
@@ -25981,13 +25981,13 @@ to predicted output.")
 (define-public r-pipeflow
   (package
     (name "r-pipeflow")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pipeflow" version))
        (sha256
-        (base32 "023c02bgjnx8y1fq02h6rcci31n9vqd26r9xrgasjyqyqxlpmzhf"))))
+        (base32 "1kdqgs0phaq1bqp2lbwjbi9zs4g67sy4bl5g3nxnpxmpnscm44xr"))))
     (properties `((upstream-name . "pipeflow")))
     (build-system r-build-system)
     (arguments
@@ -26000,12 +26000,11 @@ to predicted output.")
     (description
      "This package provides a lightweight yet powerful framework for building robust
 data analysis pipelines.  With pipeflow', you initialize a pipeline with your
-dataset and construct your workflow step by step by seamlessly adding R
-functions.  Modify, remove, or insert steps at any stage while pipeflow ensures
-the integrity and correctness of your pipeline.  Designed to help you focus on
-the what rather than the how', this package simplifies the implementation of
-complex workflows, making even large-scale data analysis projects manageable,
-adaptable, and reusable with ease.")
+dataset and construct workflows step by step by adding R functions.  You can
+modify, remove, or insert steps and parameters at any stage, while pipeflow
+ensures the pipeline's integrity.  Overall, this package offers a
+beginner-friendly framework that simplifies and streamlines the development of
+data analysis pipelines by making them modular, intuitive, and adaptable.")
     (license license:gpl3)))
 
 (define-public r-pipefittr
@@ -27088,24 +27087,27 @@ Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
 (define-public r-phytosanitarycalculator
   (package
     (name "r-phytosanitarycalculator")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhytosanitaryCalculator" version))
        (sha256
-        (base32 "1545xy338wanrkpy55ji4ap9wf7pldrb07pmhxcmhp73w3l82r2c"))))
+        (base32 "08jp6wvmzaybf9w8srny3yd010wb524wka655gvj7lrj1d5wigz7"))))
     (properties `((upstream-name . "PhytosanitaryCalculator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-acceptancesampling))
+    (propagated-inputs (list r-shiny r-rmarkdown r-htmltools
+                             r-acceptancesampling))
     (home-page "https://cran.r-project.org/package=PhytosanitaryCalculator")
     (synopsis "Phytosanitary Calculator for Inspection Plans Based on Risks")
     (description
      "This package provides a Shiny application for calculating phytosanitary
-inspection plans based on risks.")
+inspection plans based on risks.  It generates a diagram of pallets in a lot,
+highlights the units to be sampled, and documents them based on the selected
+sampling method (simple random or systematic sampling).")
     (license license:gpl3)))
 
 (define-public r-phytools

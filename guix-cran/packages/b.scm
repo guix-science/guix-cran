@@ -12935,13 +12935,13 @@ GPL-3).")
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioVizSeq" version))
        (sha256
-        (base32 "1inzbhc5xvcks6mcrhppl29nn4sz3g01qv20rsjcymrcsxlmj8vb"))))
+        (base32 "006b5pqqc685b7266i21zhyyv867cr0kdg031fg1lq5jgi03a5q1"))))
     (properties `((upstream-name . "BioVizSeq")))
     (build-system r-build-system)
     (arguments
@@ -12950,6 +12950,7 @@ GPL-3).")
     (propagated-inputs (list r-treeio
                              r-tidyr
                              r-stringr
+                             r-shiny
                              r-seqinr
                              r-rcolorbrewer
                              r-magrittr
@@ -18414,13 +18415,13 @@ the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
 (define-public r-bggm
   (package
     (name "r-bggm")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGGM" version))
        (sha256
-        (base32 "0gib33wzkqkdx496lmiqdr34y0jym16vmxpy08nf6i4fp9jkq0cr"))))
+        (base32 "1n9dslghpaqki18v64is04zbrrlq08hg4b8s598n06019aqs5nzy"))))
     (properties `((upstream-name . "BGGM")))
     (build-system r-build-system)
     (arguments

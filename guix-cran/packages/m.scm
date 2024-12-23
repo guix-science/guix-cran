@@ -7833,13 +7833,13 @@ gain and symmetrical uncertainty of categorical variables.")
 (define-public r-mstudentd
   (package
     (name "r-mstudentd")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mstudentd" version))
        (sha256
-        (base32 "0s5kidcz6sv9gaa0mdx2lawn79qd1y5j3vpr76bpv91fibfpzpa6"))))
+        (base32 "0412nmbiw97rb7g86f650x2j58qfrdg9chagnnahjg4dvnzrsyfa"))))
     (properties `((upstream-name . "mstudentd")))
     (build-system r-build-system)
     (arguments
@@ -30841,13 +30841,13 @@ Genome Informatics Group (2024) <doi:10.1093/genetics/iyae031>.")
 (define-public r-mggd
   (package
     (name "r-mggd")
-    (version "1.3.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mggd" version))
        (sha256
-        (base32 "07ajrhbsxr608688qppg6p2q7i3bh67fr6q9hvl9cs12av4bdznq"))))
+        (base32 "1ygyi16vv8xdqbi8kw0223iapc0i88qimsqnzvy9nh3nwv15fa6x"))))
     (properties `((upstream-name . "mggd")))
     (build-system r-build-system)
     (arguments
@@ -41655,13 +41655,13 @@ multiple ca and ordered multiple ca via orthogonal polynomials of Emerson.")
 (define-public r-mcauchyd
   (package
     (name "r-mcauchyd")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcauchyd" version))
        (sha256
-        (base32 "1n0vgp526wlyf553n2cvxkawzxdvvzqhgar5sqnhiidas7iri3zc"))))
+        (base32 "157mfbq4zz8brzxixmaipcfw267cr4gv3my5d51aqv0figij9ay9"))))
     (properties `((upstream-name . "mcauchyd")))
     (build-system r-build-system)
     (arguments

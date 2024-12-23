@@ -4301,13 +4301,13 @@ variables in a data frame.")
 (define-public r-hospitalnetwork
   (package
     (name "r-hospitalnetwork")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HospitalNetwork" version))
        (sha256
-        (base32 "183nb9h9b1z1ifpnzcxa8wh3xm2id6fnq9vqd4vkbxzw7wlyd86b"))))
+        (base32 "1vjiny64s71wfr7vzav9mx8dgpvidl04i4yrcwzkqf4wh2n77p6h"))))
     (properties `((upstream-name . "HospitalNetwork")))
     (build-system r-build-system)
     (arguments
@@ -9872,13 +9872,13 @@ routes and isolines are returned as sf objects.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.7.1")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heplots" version))
        (sha256
-        (base32 "0k9klz37ix3v3hwirznjxd0d73d9a6wbnvx9nlkdjv3lnsl9v03w"))))
+        (base32 "19xb2fih45vx17xbkr3vlv19xdzy2vzhx63xqwrvjjshzqnqfcb4"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (arguments

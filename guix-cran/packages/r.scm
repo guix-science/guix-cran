@@ -38512,13 +38512,13 @@ obtain updated taxonomic details, and explore the dataset.")
 (define-public r-redatamx
   (package
     (name "r-redatamx")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatamx" version))
        (sha256
-        (base32 "193ywbrbvgj5wwxpy8n28lw7rpbcdxvmcx6026bv497msw8g99j7"))))
+        (base32 "0924yw0lwzfk7v57kmslazg3mz5c7di4q7b6j5yxqba1s5m9s6h4"))))
     (properties `((upstream-name . "redatamx")))
     (build-system r-build-system)
     (arguments
@@ -55269,13 +55269,13 @@ to quality science.")
 (define-public r-r6p
   (package
     (name "r-r6p")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R6P" version))
        (sha256
-        (base32 "18qy69zwyzp27fiqlplcjh0034d2pn9dhnfkraarh4jxnbi7masm"))))
+        (base32 "12zfq33v2bfyasgyq601mywzva4g5405fw3jk8m2mjdlg430rlif"))))
     (properties `((upstream-name . "R6P")))
     (build-system r-build-system)
     (arguments
@@ -55285,7 +55285,6 @@ to quality science.")
                              r-tibble
                              r-stringr
                              r-r6
-                             r-purrr
                              r-dplyr
                              r-collections))
     (home-page "https://tidylab.github.io/R6P/")
