@@ -34188,6 +34188,44 @@ typically used for exploratory analysis in a clinical study (referred to as
 Table 1').")
     (license license:gpl3+)))
 
+(define-public r-metalite-sl
+  (package
+    (name "r-metalite-sl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metalite.sl" version))
+       (sha256
+        (base32 "0m7xdaglkz5xwgvxn03y8b88a21ba89zhiwsh40wxkd6mkkx30j4"))))
+    (properties `((upstream-name . "metalite.sl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-stringr
+                             r-rlang
+                             r-reactable
+                             r-r2rtf
+                             r-plotly
+                             r-metalite-ae
+                             r-metalite
+                             r-htmltools
+                             r-glue
+                             r-forestly
+                             r-brew))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=metalite.sl")
+    (synopsis "Subject-Level Analysis Using 'metalite'")
+    (description
+     "Analyzes subject-level data in clinical trials using the metalite data
+structure.  The package simplifies the workflow to create production-ready
+tables, listings, and figures discussed in the subject-level analysis chapters
+of \"R for Clinical Study Reports and Submission\" by Zhang et al. (2022)
+<https://r4csr.org/>.")
+    (license license:gpl3+)))
+
 (define-public r-metalite-ae
   (package
     (name "r-metalite-ae")

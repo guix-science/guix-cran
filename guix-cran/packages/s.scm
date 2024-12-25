@@ -44684,6 +44684,37 @@ generalized linear regression setting for: (1) linear functionals
 <doi:10.48550/@code{arXiv.1909.01503>}, (4) inner product, (5) distance.")
     (license license:gpl3)))
 
+(define-public r-sigugr
+  (package
+    (name "r-sigugr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sigugr" version))
+       (sha256
+        (base32 "1mr28fr3rxih6mdizr90d8c2n9saapb0sdaafn36g3nyh4j5xc6d"))))
+    (properties `((upstream-name . "sigugr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-snakecase
+                             r-sf
+                             r-rpostgis
+                             r-jsonlite
+                             r-httr
+                             r-gdalutilities
+                             r-clc))
+    (native-inputs (list r-knitr))
+    (home-page "https://josesamos.github.io/sigugr/")
+    (synopsis "Workflow for Geographic Data")
+    (description
+     "Streamlines geographic data transformation, storage and publication, simplifying
+data preparation and enhancing interoperability across formats and platforms.")
+    (license license:expat)))
+
 (define-public r-sigtree
   (package
     (name "r-sigtree")
@@ -61804,13 +61835,13 @@ contents, using XPath or CSS selectors.")
 (define-public r-scr
   (package
     (name "r-scr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scR" version))
        (sha256
-        (base32 "1c0snhiv9pnhsfjv896ylhnxp5mlkmpn816y40cf2sigqkw26kl6"))))
+        (base32 "1fb3n4n77i2yss9g08mm1vdma5v35a0m898gic7spyg8qrkn3pfp"))))
     (properties `((upstream-name . "scR")))
     (build-system r-build-system)
     (arguments

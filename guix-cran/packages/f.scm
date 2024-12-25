@@ -8255,6 +8255,49 @@ prediction errors as proposed by Lu and Hardin (2021).  This package is
 compatible with several existing packages that implement random forests in R.")
     (license license:gpl3)))
 
+(define-public r-forestelementsr
+  (package
+    (name "r-forestelementsr")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ForestElementsR" version))
+       (sha256
+        (base32 "1yjazlx7qxf5g30ikzrn4wk9hd4gpngxdmr1xdq6bj8xk9k3qajx"))))
+    (properties `((upstream-name . "ForestElementsR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-doby))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ForestElementsR")
+    (synopsis "Data Structures and Functions for Working with Forest Data")
+    (description
+     "This package provides generic data structures and algorithms for use with forest
+mensuration data in a consistent framework.  The functions and objects included
+are a collection of broadly applicable tools.  More specialized applications
+should be implemented in separate packages that build on this foundation.
+Documentation about @code{ForestElementsR} is provided by three vignettes
+included in this package.  For an introduction to the field of forest
+mensuration, refer to the textbooks by Kershaw et al. (2017)
+<doi:10.1002/9781118902028>, and van Laar and Akca (2007)
+<doi:10.1007/978-1-4020-5991-9>.")
+    (license license:gpl3+)))
+
 (define-public r-forested
   (package
     (name "r-forested")

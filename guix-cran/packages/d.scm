@@ -20989,13 +20989,13 @@ and results interpretation.")
 (define-public r-deploid
   (package
     (name "r-deploid")
-    (version "0.5.4")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DEploid" version))
        (sha256
-        (base32 "1ljha520yjbzyrw4h77y1r29rymzk2x8z8hczc0lh539mfi4jll6"))))
+        (base32 "1mm83kia4jp6r8dqbav76kapdmz0nzx685815f3aybpqgpj3hnxf"))))
     (properties `((upstream-name . "DEploid")))
     (build-system r-build-system)
     (arguments
@@ -21007,7 +21007,8 @@ and results interpretation.")
                              r-rcpp
                              r-plotly
                              r-magrittr
-                             r-htmlwidgets))
+                             r-htmlwidgets
+                             r-deploid-utils))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DEploid-dev/DEploid-r")
     (synopsis "Deconvolute Mixed Genomes with Unknown Proportions")
@@ -28492,6 +28493,40 @@ Dataset JSON (@code{JavaScript} Object Notation) files, while validating per the
 Dataset JSON schema file, as described in CDISC (2023)
 <https://www.cdisc.org/dataset-json>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-dataset
+  (package
+    (name "r-dataset")
+    (version "0.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dataset" version))
+       (sha256
+        (base32 "1hcab09cfnim1w52v7165nfs860dzj84vxwxlxa03sl519s1vjq8"))))
+    (properties `((upstream-name . "dataset")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-pillar
+                             r-labelled
+                             r-isocodes
+                             r-haven
+                             r-cli
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://dataset.dataobservatory.eu/")
+    (synopsis "Create Data Frames that are Easier to Exchange and Reuse")
+    (description
+     "The aim of the dataset package is to make tidy datasets easier to release,
+exchange and reuse.  It organizes and formats data frame R objects into
+well-referenced, well-described, interoperable datasets into release and reuse
+ready form.")
+    (license license:gpl3+)))
 
 (define-public r-dataseries
   (package

@@ -3575,6 +3575,33 @@ Introduction to R'', is completely included in this package, for all other
 chapters, a vignette containing all data analyses is available.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-hsar
+  (package
+    (name "r-hsar")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HSAR" version))
+       (sha256
+        (base32 "12817y630208nkhv3q69xdqq520ajnh8djrygh4k7vswp9rgyrxm"))))
+    (properties `((upstream-name . "HSAR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep r-spatialreg r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://spatlyu.github.io/HSAR/")
+    (synopsis "Hierarchical Spatial Autoregressive Model")
+    (description
+     "This package provides a Hierarchical Spatial Autoregressive Model (HSAR), based
+on a Bayesian Markov Chain Monte Carlo (MCMC) algorithm (Dong and Harris (2014)
+<doi:10.1111/gean.12049>).  The creation of this package was supported by the
+Economic and Social Research Council (ESRC) through the Applied Quantitative
+Methods Network: Phase II, grant number ES/K006460/1.")
+    (license license:gpl2+)))
+
 (define-public r-hrw
   (package
     (name "r-hrw")
@@ -11191,6 +11218,33 @@ CP-decomposition for matrix time series proposed by Chang et al. (2023)
 density matrix proposed by Chang et al. (2022)
 <doi:10.48550/@code{arXiv.2212.13686>}.")
     (license license:gpl3)))
+
+(define-public r-hdthreshold
+  (package
+    (name "r-hdthreshold")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdthreshold" version))
+       (sha256
+        (base32 "0zmikbad74vpbk66ylixzk585si6lh984a1v85ggm91c4jidi4mq"))))
+    (properties `((upstream-name . "hdthreshold")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdrobust r-kernsmooth r-fdrtool))
+    (home-page "https://cran.r-project.org/package=hdthreshold")
+    (synopsis
+     "Inference on Many Jumps in Nonparametric Panel Regression Models")
+    (description
+     "This package provides uniform testing procedures for existence and heterogeneity
+of threshold effects in high-dimensional nonparametric panel regression models.
+The package accompanies the paper Chen, Keilbar, Su and Wang (2023) \"Inference
+on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
+<doi:10.48550/@code{arXiv.2312.01162>}.")
+    (license license:expat)))
 
 (define-public r-hdstim
   (package

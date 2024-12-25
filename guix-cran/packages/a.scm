@@ -1808,13 +1808,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "1jz6mwsh8jc79x656f37zr7nys0av1v5bdi3x3f5lb0z036rlrip"))))
+        (base32 "0ybiazk3r7zbyh0zlv9cvymwjlyk0sn3wbj1k1am4qbmf1rggag3"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -1825,28 +1825,19 @@ relationships between categorical and continuous variables in the data set.")
                              r-tern
                              r-survival
                              r-stringr
-                             r-rvg
                              r-rtables
                              r-rlistings
                              r-rlang
-                             r-readxl
-                             r-purrr
                              r-officer
-                             r-magrittr
-                             r-lubridate
                              r-gridextra
-                             r-googlesheets4
-                             r-glue
-                             r-ggpubr
                              r-ggplot2
-                             r-formatters
                              r-forcats
                              r-flextable
-                             r-filters
                              r-dplyr
                              r-cli
                              r-checkmate
                              r-assertthat))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/insightsengineering/autoslider.core")
     (synopsis "Slide Automation for Tables, Listings and Figures")
     (description
@@ -22356,27 +22347,28 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-adfexplorer
   (package
     (name "r-adfexplorer")
-    (version "0.1.8")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adfExplorer" version))
        (sha256
-        (base32 "0lpabd2gvcl0nja6q3d2hcxmam0gclnw21q1mxjf2idhqxcwscaj"))))
+        (base32 "0nhq4bv08xvd0cz9phjs3sw47jrkk8bxmh40vlkc3sfb81fm5jh7"))))
     (properties `((upstream-name . "adfExplorer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-vctrs r-cpp11))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/pepijn-devries/adfExplorer")
-    (synopsis "Import from and Export to Amiga Disk Files")
+    (home-page "https://pepijn-devries.github.io/adfExplorer/")
+    (synopsis "Access and Manipulate Amiga Disk Files")
     (description
      "Amiga Disk Files (ADF) are virtual representations of 3.5 inch floppy disks for
 the Commodore Amiga.  Most disk drives from other systems (including modern
-drives) are not able to read these disks.  To be able to emulate this system,
-the ADF format was created.  This package enables you to read ADF files and
-import and export files from and to such virtual DOS-formatted disks.")
+drives) are not able to read these disks.  The @code{adfExplorer} package
+enables you to establish R connections to files on such virtual DOS-formatted
+disks, which can be use to read from and write to those files.")
     (license license:gpl3+)))
 
 (define-public r-adestr

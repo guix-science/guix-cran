@@ -401,6 +401,44 @@ including a 1-degree-of-freedom test for row*column non-additivity', linear in
 the row and column effects.")
     (license license:gpl3)))
 
+(define-public r-twotimescales
+  (package
+    (name "r-twotimescales")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TwoTimeScales" version))
+       (sha256
+        (base32 "1v0m8kfr7079jjvf5bhn8k4x3sa2wrh879qx1ricf9q44nc4lhgb"))))
+    (properties `((upstream-name . "TwoTimeScales")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-ucminf
+                             r-spam
+                             r-reshape2
+                             r-popepi
+                             r-lmmsolver
+                             r-jops
+                             r-fields
+                             r-epi
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AngelaCar/TwoTimeScales")
+    (synopsis "Analysis of Event Data with Two Time Scales")
+    (description
+     "Analyse time to event data with two time scales by estimating a smooth hazard
+that varies over two time scales and also, if covariates are available, to
+estimate a proportional hazards model with such a two-dimensional baseline
+hazard.  Functions are provided to prepare the raw data for estimation, to
+estimate and to plot the two-dimensional smooth hazard.  Extension to a
+competing risks model are implemented.  For details about the method please
+refer to Carollo et al. (2024) <doi:10.1002/sim.10297>.")
+    (license license:gpl3)))
+
 (define-public r-twostepclogit
   (package
     (name "r-twostepclogit")

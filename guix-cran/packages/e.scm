@@ -11334,13 +11334,13 @@ methodology of Gressani et al. (2022) <doi:10.1371/journal.pcbi.1010618>.")
 (define-public r-epilogi
   (package
     (name "r-epilogi")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epilogi" version))
        (sha256
-        (base32 "13x07w7idik7lmsp0zgbgdf49yxl5igy1dbnfyxf1bsn8id06ric"))))
+        (base32 "184nlaxp2w3k860fws91vm3v7igyixiaidf8z5yb3q7sdclpckj2"))))
     (properties `((upstream-name . "epilogi")))
     (build-system r-build-system)
     (arguments
@@ -11354,7 +11354,7 @@ methodology of Gressani et al. (2022) <doi:10.1371/journal.pcbi.1010618>.")
 continuous response and predictor variables.  The relevant paper is: Lakiotaki
 K., Papadovasilakis Z., Lagani V., Fafalios S., Charonyktakis P., Tsagris M. and
 Tsamardinos I. (2023). \"Automated machine learning for Genome Wide Association
-Studies\".  Bioinformatics. <doi:10.1093/bioinformatics/btad545>.")
+Studies\".  Bioinformatics, 39(9): btad545. <doi:10.1093/bioinformatics/btad545>.")
     (license license:gpl2+)))
 
 (define-public r-epikit

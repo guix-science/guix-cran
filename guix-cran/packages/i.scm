@@ -1047,6 +1047,37 @@ centrality, blockmodels, clustering).  Examining the key players in the ITN and
 regional trade patterns.")
     (license license:gpl3)))
 
+(define-public r-itmsa
+  (package
+    (name "r-itmsa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itmsa" version))
+       (sha256
+        (base32 "1q6c2pkx271p4gv1n1kz8qk40c3rk4jwj0q3jdaxvcv37nw23vja"))))
+    (properties `((upstream-name . "itmsa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-sdsfun
+                             r-rcppthread
+                             r-rcpp
+                             r-purrr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://stscl.github.io/itmsa/")
+    (synopsis "Information-Theoretic Measures for Spatial Association")
+    (description
+     "Leveraging information-theoretic measures like mutual information and v-measure
+to quantify spatial associations between patterns (Nowosad and Stepinski (2018)
+<doi:10.1080/13658816.2018.1511794>; Bai, H. et al. (2023)
+<doi:10.1080/24694452.2023.2223700>).")
+    (license license:gpl3)))
+
 (define-public r-itertools2
   (package
     (name "r-itertools2")
