@@ -9085,13 +9085,13 @@ random or systematic sampling).")
 (define-public r-inspectdf
   (package
     (name "r-inspectdf")
-    (version "0.0.12")
+    (version "0.0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inspectdf" version))
        (sha256
-        (base32 "1k9dszjfpvpc10qr9nbw5r55mdwslgblhlrgnqjnwx9i89j03mlk"))))
+        (base32 "0abw58w1ndfkni35plkgzphfxa6vaarg26wnzm9hxa1bvjszjvrm"))))
     (properties `((upstream-name . "inspectdf")))
     (build-system r-build-system)
     (arguments
