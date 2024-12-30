@@ -954,29 +954,6 @@ data, and converting degrees, minutes, and seconds latitude and longitude
 coordinates to decimal degrees.")
     (license license:gpl3+)))
 
-(define-public r-rwisp
-  (package
-    (name "r-rwisp")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rwisp" version))
-       (sha256
-        (base32 "0wxc2zzfgqnygx6q7b0gjb04vphdl8x1idfp5pz33apwv2192viw"))))
-    (properties `((upstream-name . "rwisp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/dioubernardo/rwisp")
-    (synopsis "WISP Multiple Criteria Sorting Method")
-    (description
-     "Implementation of the Integrated Simple Weighted Sum Product Method (WISP), a
-multiple criteria sorting method create by Dragisa Stanujkic (2021)
-<doi:10.1109/TEM.2021.3075783>.")
-    (license license:gpl3+)))
-
 (define-public r-rwishart
   (package
     (name "r-rwishart")
