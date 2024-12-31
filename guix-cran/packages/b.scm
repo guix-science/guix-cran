@@ -15482,13 +15482,13 @@ districts, counties, and states.")
 (define-public r-bindata
   (package
     (name "r-bindata")
-    (version "0.9-21")
+    (version "0.9-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bindata" version))
        (sha256
-        (base32 "0s1f7jvlr8xjn89ns5kq0wyvcibdvhyaw92pz1p14nbmg8lqky5d"))))
+        (base32 "00s5hzfryzzb2dngfsklrs89117mmw4w4jm7lg9fw9fik1nbibzw"))))
     (properties `((upstream-name . "bindata")))
     (build-system r-build-system)
     (arguments
