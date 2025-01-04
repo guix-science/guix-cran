@@ -30021,6 +30021,34 @@ insufficient resources Tobin (1958) <doi:10.2307/1907382>, or infrequency of
 purchase Deaton and Irish (1984) <doi:10.1016/0047-2727(84)90067-7>.")
     (license license:gpl2+)))
 
+(define-public r-mhtrajectoryr
+  (package
+    (name "r-mhtrajectoryr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MHTrajectoryR" version))
+       (sha256
+        (base32 "13idcjx7pjpwvr4c52938yqhhaj1gprb8hjhaim3jx4062wf9pla"))))
+    (properties `((upstream-name . "MHTrajectoryR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgcv))
+    (home-page "https://cran.r-project.org/package=MHTrajectoryR")
+    (synopsis
+     "Bayesian Model Selection in Logistic Regression for the Detection of Adverse Drug Reactions")
+    (description
+     "Spontaneous adverse event reports have a high potential for detecting adverse
+drug reactions.  However, due to their dimension, the analysis of such databases
+requires statistical methods.  We propose to use a logistic regression whose
+sparsity is viewed as a model selection challenge.  Since the model space is
+huge, a Metropolis-Hastings algorithm carries out the model selection by
+maximizing the BIC criterion.")
+    (license license:gpl2+)))
+
 (define-public r-mhtmult
   (package
     (name "r-mhtmult")

@@ -46781,29 +46781,6 @@ application provides an intuitive and accessible interface, making WGD analysis
 accessible to researchers and bioinformaticians of all levels.")
     (license license:gpl3)))
 
-(define-public r-shinyvalidate
-  (package
-    (name "r-shinyvalidate")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shinyvalidate" version))
-       (sha256
-        (base32 "01qlqzp0g6782maj73yygmwlchhv4xcnlc7j0w3lp6dcj7qkzz68"))))
-    (properties `((upstream-name . "shinyvalidate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-rlang r-htmltools r-glue))
-    (home-page "https://rstudio.github.io/shinyvalidate/")
-    (synopsis "Input Validation for Shiny Apps")
-    (description
-     "Improves the user experience of Shiny apps by helping to provide feedback when
-required inputs are missing, or input values are not valid.")
-    (license license:expat)))
-
 (define-public r-shinytoastr
   (package
     (name "r-shinytoastr")
