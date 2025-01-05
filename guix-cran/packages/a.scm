@@ -10135,44 +10135,6 @@ a single function `apng'.  Call the apng function with a vector of file names
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-apmx
-  (package
-    (name "r-apmx")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "apmx" version))
-       (sha256
-        (base32 "0i9296dvlzmaxhkp3rj2irxyjmlaazl6abcbgkc2izfn29l2d8nm"))))
-    (properties `((upstream-name . "apmx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-this-path
-                             r-purrr
-                             r-officer
-                             r-flextable
-                             r-dplyr
-                             r-arsenal))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stephen-amori/apmx")
-    (synopsis "Automated Population Pharmacokinetic Dataset Assembly")
-    (description
-     "Automated methods to assemble population PK (pharmacokinetic) and PKPD
-(pharmacodynamic) datasets for analysis in NONMEM (non-linear mixed effects
-modeling) by Bauer (2019) <doi:10.1002/psp4.12404>.  The package includes
-functions to build datasets from SDTM (study data tabulation module)
-<https://www.cdisc.org/standards/foundational/sdtm>, A@code{DaM} (analysis
-dataset module) <https://www.cdisc.org/standards/foundational/adam>, or other
-dataset formats.  The package will combine population datasets, add covariates,
-and create documentation to support regulatory submission and internal
-communication.")
-    (license license:gpl3+)))
-
 (define-public r-aplpack
   (package
     (name "r-aplpack")
