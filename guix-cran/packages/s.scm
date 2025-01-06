@@ -4290,36 +4290,6 @@ time-to-event analysis if events presented with uncertainty by different
 methods.")
     (license license:gpl2)))
 
-(define-public r-survmetrics
-  (package
-    (name "r-survmetrics")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SurvMetrics" version))
-       (sha256
-        (base32 "14hpvqg0k3ww5qla4s08nrqwcy27y76kfp7b0g1hzs3vv046fb7i"))))
-    (properties `((upstream-name . "SurvMetrics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survminer r-survival r-randomforestsrc r-pec
-                             r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/skyee1/SurvMetrics")
-    (synopsis "Predictive Evaluation Metrics in Survival Analysis")
-    (description
-     "An implementation of popular evaluation metrics that are commonly used in
-survival prediction including Concordance Index, Brier Score, Integrated Brier
-Score, Integrated Square Error, Integrated Absolute Error and Mean Absolute
-Error.  For a detailed information, see (Ishwaran H, Kogalur UB, Blackstone EH
-and Lauer MS (2008) <doi:10.1214/08-AOAS169>) and (Moradian H, Larocque D and
-Bellavance F (2017) <doi:10.1007/s10985-016-9372-1>) for different evaluation
-metrics.")
-    (license license:gpl2+)))
-
 (define-public r-survma
   (package
     (name "r-survma")

@@ -5309,38 +5309,6 @@ sampling waves iteratively, and organize a complex survey design.  Also includes
 a Shiny application for observing the effects of different strata splits.")
     (license license:gpl3)))
 
-(define-public r-optimalgoldstandarddesigns
-  (package
-    (name "r-optimalgoldstandarddesigns")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OptimalGoldstandardDesigns" version))
-       (sha256
-        (base32 "1rw3syj5wb1v8ryqc9vkchi62pf02460f5i5zapq2azgfg99l66y"))))
-    (properties `((upstream-name . "OptimalGoldstandardDesigns")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rdpack
-                             r-nloptr
-                             r-mvtnorm
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jan-imbi/OptimalGoldstandardDesigns")
-    (synopsis
-     "Design Parameter Optimization for Gold-Standard Non-Inferiority Trials")
-    (description
-     "This package provides methods to calculate optimal design parameters for one-
-and two-stage three-arm group-sequential gold-standard non-inferiority trial
-designs with or without binding or nonbinding futility boundaries, as described
-in Meis et al. (2023) <doi:10.1002/sim.9630>.")
-    (license license:gpl3+)))
-
 (define-public r-optimaldesign
   (package
     (name "r-optimaldesign")

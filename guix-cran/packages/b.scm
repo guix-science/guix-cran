@@ -15586,34 +15586,6 @@ theme by Rob J Hyndman.  Additional (free) fonts may be needed: Metropolis
 prefers Fira', and IQSS requires Libertinus'.")
     (license license:gpl2+)))
 
-(define-public r-binarymm
-  (package
-    (name "r-binarymm")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "binaryMM" version))
-       (sha256
-        (base32 "0vjs3in8rih5iinlfcrilpqwqjxkdf01h6giv993zy8l3s28r9yd"))))
-    (properties `((upstream-name . "binaryMM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-mass r-fastghquad))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=binaryMM")
-    (synopsis "Flexible Marginalized Models for Binary Correlated Outcomes")
-    (description
-     "Estimates marginalized mean and dependence model parameters for correlated
-binary response data.  Dependence model may include transition and/or latent
-variable terms.  Methods are described in: Schildcrout and Heagerty (2007)
-<doi:10.1111/j.1541-0420.2006.00680.x>, Heagerty (1999)
-<doi:10.1111/j.0006-341x.1999.00688.x>, Heagerty (2002)
-<doi:10.1111/j.0006-341x.2002.00342.x>.")
-    (license license:expat)))
-
 (define-public r-binarygp
   (package
     (name "r-binarygp")

@@ -16581,30 +16581,6 @@ this package can be referenced from Brown MC (1994) <doi:
 10.1016/0277-9536(94)90189-9>.")
     (license license:gpl3)))
 
-(define-public r-gina
-  (package
-    (name "r-gina")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GiNA" version))
-       (sha256
-        (base32 "0his7wsgnggyv9526blxzxa1ni8hwq2ws64wkmha45nvvnm3dsiw"))))
-    (properties `((upstream-name . "GiNA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-png r-foreach r-ebimage r-doparallel))
-    (home-page "http://www.wisc.edu")
-    (synopsis "High Throughput Phenotyping")
-    (description
-     "This package performs image segmentation in fruit or seeds pictures in order to
-measure physical features in a high-throughput manner for genome-wide
-association (GWAS) and genomic selection programs.")
-    (license license:gpl3)))
-
 (define-public r-gimms
   (package
     (name "r-gimms")
