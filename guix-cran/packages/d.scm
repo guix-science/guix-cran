@@ -140,13 +140,13 @@ in package @code{DysPIAData} is needed.")
 (define-public r-dysem
   (package
     (name "r-dysem")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dySEM" version))
        (sha256
-        (base32 "1akjda85sad4inw789wq0szqxrilkzf3lhmf7k3mhhjdix02fqrm"))))
+        (base32 "1znq6wszmcshchyjp7n7qnsp4x861spff6p2wy44iw3wnk81paaf"))))
     (properties `((upstream-name . "dySEM")))
     (build-system r-build-system)
     (arguments
@@ -9359,6 +9359,32 @@ Stable Multiple Time Step Simulation/Prediction From Lagged Dynamic Network
 Regression Models, Journal of Computational and Graphical Statistics, 28:4,
 967-979, <DOI: 10.1080/10618600.2019.1594834>.")
     (license license:gpl3)))
+
+(define-public r-dnnsim
+  (package
+    (name "r-dnnsim")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DNNSIM" version))
+       (sha256
+        (base32 "1lp9ly2l1hx31mrsnhgq36isy9iqgmj5g51xr7qsqkq3fgjp8mxs"))))
+    (properties `((upstream-name . "DNNSIM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate r-rdpack))
+    (home-page "https://cran.r-project.org/package=DNNSIM")
+    (synopsis "Single-Index Neural Network for Skewed Heavy-Tailed Data")
+    (description
+     "This package provides a deep neural network model with a monotonic increasing
+single index function tailored for periodontal disease studies.  The residuals
+are assumed to follow a skewed T distribution, a skewed normal distribution, or
+a normal distribution.  More details can be found at Liu, Huang, and Bai (2024)
+<doi:10.1016/j.csda.2024.108012>.")
+    (license license:gpl3+)))
 
 (define-public r-dnn
   (package

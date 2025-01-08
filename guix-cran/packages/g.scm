@@ -17426,13 +17426,13 @@ enjoyment.")
 (define-public r-ghcnr
   (package
     (name "r-ghcnr")
-    (version "1.0.0")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GHCNr" version))
        (sha256
-        (base32 "09k0fdyc9mqa299bhchhz7gcq9vka138dhd50kkfq5rcazqprvhf"))))
+        (base32 "0r20ij9kl69jbk979352a7qhf0691z73r1kdak0zj669p25zpcp1"))))
     (properties `((upstream-name . "GHCNr")))
     (build-system r-build-system)
     (arguments
@@ -17449,7 +17449,7 @@ enjoyment.")
                              r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GHCNr")
-    (synopsis "Download Weather Station Data from GHCN")
+    (synopsis "Download Weather Station Data from GHCNd")
     (description
      "The goal of GHCNr is to provide a fast and friendly interface with the Global
 Historical Climatology Network daily (GHCNd) database, which contains daily
@@ -18497,34 +18497,37 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "0lyy0rxjdvbskqwx69l0gf5hsl5k69yr15n7hr1hanc329r4flqn"))))
+        (base32 "1qxjzp6yxjwxq21ipbgg7ha53zxqx8sgqqyhdmb5c50ll96qdvqg"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-svglite
+    (propagated-inputs (list r-umap
+                             r-svglite
                              r-shiny
+                             r-rtsne
                              r-lavaan
                              r-igraph
                              r-ggplot2
                              r-dt
+                             r-cowplot
                              r-colourpicker))
     (home-page "https://smin95.github.io/ggsem/")
     (synopsis "Interactively Visualize Structural Equation Modeling Diagrams")
     (description
-     "It allows users to perform interactive and reproducible visualizations of path
-diagrams for structural equation modeling (SEM) and small-to-medium sized
-networks using the ggplot2 engine.  Its shiny app provides an interface that
-allows extensive customization, and creates CSV outputs, which can then be used
-to recreate the figures either using the shiny app or in a typical ggplot2
-workflow.")
+     "It is an R package and web-based application, allowing users to perform
+interactive and reproducible visualizations of path diagrams for structural
+equation modeling (SEM) and networks using the ggplot2 engine.  Its app (built
+with shiny') provides an interface that allows extensive customization, and
+creates CSV outputs, which can then be used to recreate the figures either using
+the web app or script-based workflow.")
     (license license:gpl2)))
 
 (define-public r-ggseg3d
@@ -25719,13 +25722,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0bkwbkkmwdxw8l4sgxdhk1i2ichn86z01jk0ma9mi2rrxxdaclv6"))))
+        (base32 "0fb9qpcd400biziazhk20vf0amb73lgha2ldwl69q5xbbk967y7m"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments
@@ -26942,13 +26945,13 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
 (define-public r-geocausal
   (package
     (name "r-geocausal")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocausal" version))
        (sha256
-        (base32 "0fjlir1ya2ldp95wgb4gz6fl00xmxfvblf85pb8fsdans83ch0dp"))))
+        (base32 "17x0npa6x0hycxd8vbrap7mlw9x3fc2pz7aynmmj7fkq22iksyw2"))))
     (properties `((upstream-name . "geocausal")))
     (build-system r-build-system)
     (arguments

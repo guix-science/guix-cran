@@ -672,13 +672,13 @@ diagnostics.")
 (define-public r-xpose
   (package
     (name "r-xpose")
-    (version "0.4.18")
+    (version "0.4.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose" version))
        (sha256
-        (base32 "18l8dcg9zng47gzmyxf3ksz22xqxsyqz64bqlxg2yl6d068sk3k9"))))
+        (base32 "0nbi2va2giff0zax50ihpxyxzwz6lvzmpnp60irmgkr47bajn325"))))
     (properties `((upstream-name . "xpose")))
     (build-system r-build-system)
     (arguments
@@ -707,13 +707,13 @@ graphics for data exploration and model diagnostics.")
 (define-public r-xportr
   (package
     (name "r-xportr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xportr" version))
        (sha256
-        (base32 "1s0wz7zs8g2j88a0vxi2zywb4a8sysjk5h71fslg5xnxkqm5jx2m"))))
+        (base32 "167m68ihi93gvxz3zr84mya50jpigbwr47s05g8xdn0jv1vifb7r"))))
     (properties `((upstream-name . "xportr")))
     (build-system r-build-system)
     (arguments

@@ -5364,13 +5364,13 @@ with some modifications.")
 (define-public r-ipd
   (package
     (name "r-ipd")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipd" version))
        (sha256
-        (base32 "0fv5jk2pb2vw85rgf7zavzsl8kyjp677jirnh6gx2zb8337v2wxi"))))
+        (base32 "0yl6zcffpkmg2032mfpm6cikvnqsc3q3llx36spcpla7a57z5r0r"))))
     (properties `((upstream-name . "ipd")))
     (build-system r-build-system)
     (arguments
@@ -15260,13 +15260,13 @@ faculty friendship network, domestic US flights network, etc.")
 (define-public r-igr
   (package
     (name "r-igr")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igr" version))
        (sha256
-        (base32 "18lkbx6r11p06y1i1jl6iwxijnwlv6qycm95609qh8ckhqr9qiwp"))))
+        (base32 "1j6gdn8vh615yy12z801wbbh88sdwlzvl4zhvd6jlgjh8drx30h4"))))
     (properties `((upstream-name . "igr")))
     (build-system r-build-system)
     (arguments

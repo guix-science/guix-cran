@@ -212,25 +212,26 @@ measures of approximation error.")
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "1pq2w268si3dxnzf436d2lzz7k09x7k6mydl0b8wpjjzbpqpbayp"))))
+        (base32 "19ac7xkpnxdf8dkiasb9rsyac4nv9g4fldjss3zm57ahl9yvycbd"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr
+    (propagated-inputs (list r-rcpp
+                             r-plyr
                              r-nloptr
                              r-matrix
                              r-mass
                              r-glmnet
                              r-gdina))
-    (home-page "https://cran.r-project.org/package=Qval")
+    (home-page "https://haijiangqin.com/Qval/")
     (synopsis "The Q-Matrix Validation Methods Framework")
     (description
      "Provide a variety of Q-matrix validation methods for the generalized cognitive
@@ -241,8 +242,11 @@ Torre and Chiu (2016) <DOI:10.1007/s11336-015-9467-8>, the step-wise Wald test
 method (the Wald method) by Ma and de la Torre (2020) <DOI:10.1111/bmsp.12156>,
 the Hull method by Najera et al. (2021) <DOI:10.1111/bmsp.12228>, the multiple
 logistic regressionâbased Qâmatrix validation method (the MLR-B method) by
-Tu et al. (2022) <DOI:10.3758/s13428-022-01880-x>.  Different research methods
-during Q-matrix validating are available.")
+Tu et al. (2022) <DOI:10.3758/s13428-022-01880-x>, the beta method based on
+signal detection theory by Li and Chen (2024) <DOI:10.1111/bmsp.12371> and
+Q-matrix validation based on relative fit index by Chen et la. (2013)
+<DOI:10.1111/j.1745-3984.2012.00185.x>.  Different research methods and
+iterative procedures during Q-matrix validating are available.")
     (license license:gpl3)))
 
 (define-public r-qurve

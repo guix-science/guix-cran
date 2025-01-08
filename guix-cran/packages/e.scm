@@ -1319,19 +1319,20 @@ Defined).")
 (define-public r-extractox
   (package
     (name "r-extractox")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extractox" version))
        (sha256
-        (base32 "16yi911yhjsh4am005b5dy59kyf288yxiwygnzl2zbzmgp7m4k23"))))
+        (base32 "02vmd3zask41qhxrcmjkzrxqjjx94nva16fimxf9rccjlq0n0p05"))))
     (properties `((upstream-name . "extractox")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-webchem
+    (propagated-inputs (list r-withr
+                             r-webchem
                              r-rvest
                              r-readxl
                              r-pingr
@@ -1345,10 +1346,11 @@ Defined).")
 scientific agencies and resources, including the Comparative Toxicogenomics
 Database <https://ctdbase.org/>, the Integrated Chemical Environment
 <https://ice.ntp.niehs.nih.gov/>, the Integrated Risk Information System
-<https://cfpub.epa.gov/ncea/iris/>, the @code{CompTox} Chemicals Dashboard
-Resource Hub
+<https://cfpub.epa.gov/ncea/iris/>, Provisional Peer-Reviewed Toxicity Values
+<https://www.epa.gov/pprtv/provisional-peer-reviewed-toxicity-values-pprtvs-assessments>,
+the @code{CompTox} Chemicals Dashboard Resource Hub
 <https://www.epa.gov/comptox-tools/comptox-chemicals-dashboard-resource-hub>,
-and @code{PubChem} <https://pubchem.ncbi.nlm.nih.gov/>.")
+@code{PubChem} <https://pubchem.ncbi.nlm.nih.gov/>, and others.")
     (license license:expat)))
 
 (define-public r-extmallows
@@ -6114,19 +6116,20 @@ function).")
 (define-public r-eurocordexr
   (package
     (name "r-eurocordexr")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eurocordexr" version))
        (sha256
-        (base32 "1srn0n1imp975b3sfaz27yz1fxm8gs7h34wa6mf5xw551gm6kwwv"))))
+        (base32 "0xwmh8q3nw3dl1qxsa54ckpsli1r1jp4pby81l8j0pmd0xgs5r71"))))
     (properties `((upstream-name . "eurocordexr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pcict
+    (propagated-inputs (list r-rnetcdf
+                             r-pcict
                              r-ncdf4-helpers
                              r-ncdf4
                              r-magrittr
@@ -19196,13 +19199,13 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
 (define-public r-efafactors
   (package
     (name "r-efafactors")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAfactors" version))
        (sha256
-        (base32 "073fy8fnr8546i5bjq4aap6bhhkns77mgggw6r5jkvfpmz6g5av8"))))
+        (base32 "18w06dgqgmmknzy358cs5lfgr21gmihgrjp0blwlxpvshg6brxnd"))))
     (properties `((upstream-name . "EFAfactors")))
     (build-system r-build-system)
     (arguments
@@ -19216,12 +19219,12 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
                              r-ranger
                              r-psych
                              r-proxy
-                             r-paramhelpers
                              r-mlr
                              r-matrix
                              r-mass
                              r-ineq
                              r-ddpcr
+                             r-checkmate
                              r-bbmisc))
     (home-page "https://haijiangqin.com/EFAfactors/")
     (synopsis

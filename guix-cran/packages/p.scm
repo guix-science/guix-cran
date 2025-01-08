@@ -9122,13 +9122,13 @@ playing cards (Joker optional).")
 (define-public r-prismjs
   (package
     (name "r-prismjs")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prismjs" version))
        (sha256
-        (base32 "0m655x662r29c5s5yzb6p268lp60rp5y3lxkiar5mrrg96j6g44i"))))
+        (base32 "12g7pbcbv6ipy7djap5j7cvm7fq56dzwbyw959gj2b1mgqfm1z11"))))
     (properties `((upstream-name . "prismjs")))
     (build-system r-build-system)
     (arguments
@@ -22105,13 +22105,13 @@ models (SEMMs).")
 (define-public r-plotscaper
   (package
     (name "r-plotscaper")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotscaper" version))
        (sha256
-        (base32 "1fv6vkfa54fqim543wx5k4z94561xn37cqmkinj3glq22lxp068a"))))
+        (base32 "1kcr89bmyfgy1rzz3rfir053h5f4ywi9va3191bvb155wzpfhgj3"))))
     (properties `((upstream-name . "plotscaper")))
     (build-system r-build-system)
     (arguments
@@ -25066,13 +25066,13 @@ present).")
 (define-public r-pkggraphr
   (package
     (name "r-pkggraphr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgGraphR" version))
        (sha256
-        (base32 "060p7f6s1q0zfig82lvhhsr6nlxy9jyhxqkpypks9lmc4jj4r3p7"))))
+        (base32 "07dw8v7iisf4m2s8fv0qcq1dcmsk7xgkmbs5nl6xff354l7pkhi9"))))
     (properties `((upstream-name . "pkgGraphR")))
     (build-system r-build-system)
     (arguments
@@ -27113,13 +27113,13 @@ sampling method (simple random or systematic sampling).")
 (define-public r-phytools
   (package
     (name "r-phytools")
-    (version "2.3-0")
+    (version "2.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phytools" version))
        (sha256
-        (base32 "10fh8svaxdk7s9abbzih9pj6carmv4r6fzbxlfafygxyjnk20c4p"))))
+        (base32 "1i25dlikdx9av5653ra2709sjm9fc3fsis1yfsb7zagivi408ph9"))))
     (properties `((upstream-name . "phytools")))
     (build-system r-build-system)
     (arguments
@@ -33678,23 +33678,21 @@ results, which is described in Tian et al. (2023) <@code{arXiv:2302.02310>}.")
 (define-public r-pems-utils
   (package
     (name "r-pems-utils")
-    (version "0.2.29.1")
+    (version "0.3.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pems.utils" version))
        (sha256
-        (base32 "0nmawl1l2wf77r02qpazqwm5708fk98k7l07wyybviwb1j3x1pqj"))))
+        (base32 "0r6s0y67i5s6ld32l4bylgw7bp7akgizlq1jcf2ik69hy9cwsd83"))))
     (properties `((upstream-name . "pems.utils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-rcpp
-                             r-rcolorbrewer
+    (propagated-inputs (list r-tibble
+                             r-rlang
                              r-loa
-                             r-latticeextra
                              r-lattice
                              r-ggplot2
                              r-dplyr
@@ -34435,13 +34433,13 @@ likelihoods and forrel for estimating pairwise relatedness.")
 (define-public r-pedbp
   (package
     (name "r-pedbp")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedbp" version))
        (sha256
-        (base32 "0yrlmwiizdwpyvdd4dlhq6s9bjs3xjcrpzp6wx3vr4sbzfjjqmwm"))))
+        (base32 "00h4ddmrssx2axaf7p0ak41hxa85mwl7j5mpwnncdnch9pkj09jw"))))
     (properties `((upstream-name . "pedbp")))
     (build-system r-build-system)
     (arguments
@@ -42492,13 +42490,13 @@ relationships among taxon units.")
 (define-public r-paleopop
   (package
     (name "r-paleopop")
-    (version "2.1.6")
+    (version "2.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paleopop" version))
        (sha256
-        (base32 "0cxwx159krfdhf1ifdaidhsqq27y6ladmi1s70cw27aipmylrlrn"))))
+        (base32 "1jz01rrbk7vdin9vx50dp8yliy3fpa1ajjhkhph5lc3m9mzqg3hl"))))
     (properties `((upstream-name . "paleopop")))
     (build-system r-build-system)
     (arguments
@@ -43745,13 +43743,13 @@ graphics.")
 (define-public r-pagedown
   (package
     (name "r-pagedown")
-    (version "0.21")
+    (version "0.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pagedown" version))
        (sha256
-        (base32 "1hb4h2bq3gvlmbwbbhkn2c5cbdfi8jmbv4gb4xssc9z37297v56k"))))
+        (base32 "0i3jsq3bvmr3r5xlbihpb65ss71b5y86xv0s4km9d534322jvcaz"))))
     (properties `((upstream-name . "pagedown")))
     (build-system r-build-system)
     (arguments

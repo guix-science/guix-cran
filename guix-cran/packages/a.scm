@@ -23965,13 +23965,13 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actxps" version))
        (sha256
-        (base32 "1mabhbv5mg4afcxwv4fn2f7847scmddmyfqzzhypypj4pll61nr3"))))
+        (base32 "0pfh080isw7rcdgqmvss6i6nqi3p41ig1npfvrc08c7masi3w54g"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
     (arguments
@@ -23991,7 +23991,8 @@ component, and push it to an Acumos platform.")
                              r-ggplot2
                              r-generics
                              r-dplyr
-                             r-clock))
+                             r-clock
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mattheaphy/actxps/")
     (synopsis

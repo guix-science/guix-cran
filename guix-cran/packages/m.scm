@@ -2792,6 +2792,47 @@ job postings of the American Political Science Association.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-mupetflow
+  (package
+    (name "r-mupetflow")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MuPETFlow" version))
+       (sha256
+        (base32 "136p223gwp0gn0z6i263d9qyi07byp9g7l5fsg2j44r90qmghs2z"))))
+    (properties `((upstream-name . "MuPETFlow")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-shinythemes
+                             r-shiny
+                             r-markdown
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-flowcore
+                             r-dt
+                             r-dplyr
+                             r-biocmanager))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MuPETFlow")
+    (synopsis
+     "Multiple Ploidy Estimation Tool for all Species Compatible with Flow Cytometry")
+    (description
+     "This package provides a graphical user interface tool to estimate ploidy from
+DNA cells stained with fluorescent dyes and analyzed by flow cytometry,
+following the methodology of GÃ³mez-MuÃ±oz and Fischer (2024)
+<doi:10.1101/2024.01.24.577056>.  Features include multiple file uploading and
+configuration, peak fluorescence intensity detection, histogram visualizations,
+peak error curation, ploidy and genome size calculations, and easy results
+export.")
+    (license license:gpl3+)))
+
 (define-public r-munsellinterpol
   (package
     (name "r-munsellinterpol")
@@ -24056,13 +24097,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "1jcbkbai1sm0nncixkmfbzphf1x2gnwi52bri31bay9d591p4w9h"))))
+        (base32 "0l50jmivqc7gfd4y3466203pnrmf81yz75wvnwyjq89xvr55fc92"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -24076,19 +24117,13 @@ o1-preview for code structure and documentation.")
 leading to correlations among the repeated measurements.  Properly accounting
 for the intra-cluster correlations in the presence of data heterogeneity and
 long tailed distributions of the disease phenotype is challenging, especially in
-the context of high dimensional regressions.  Here, we aim at developing novel
-Bayesian regularized quantile mixed effect models to tackle these challenges.
-We have proposed a Bayesian variable selection in the mixed effect models for
-longitudinal genomics studies.  To dissect important gene - environment
-interactions, our model can simultaneously identify important main and
-interaction effects on the individual and group level, which have been
-facilitated by imposing the spike- and -slab priors through Laplacian shrinkage
-in the Bayesian quantile hierarchical models.  The within - subject dependence
-among data can be accommodated by incorporating the random effects.  An
-efficient Gibbs sampler has been developed to facilitate fast computation.  The
-Markov chain Monte Carlo algorithms of the proposed and alternative methods are
-efficiently implemented in C++'.  The development of this software package and
-the associated statistical methods have been partially supported by an
+the context of high dimensional regressions.  In this package, we developed a
+Bayesian quantile mixed effects model with spike- and -slab priors dissect
+important gene - environment interactions under longitudinal genomics studies.
+An efficient Gibbs sampler has been developed to facilitate fast computation.
+The Markov chain Monte Carlo algorithms of the proposed and alternative methods
+are efficiently implemented in C++'.  The development of this software package
+and the associated statistical methods have been partially supported by an
 Innovative Research Award from Johnson Cancer Research Center, Kansas State
 University.")
     (license license:gpl2)))
@@ -29058,13 +29093,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.11.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "0iba14hpddas231nf0ykwmdk1qw0pj7ncbz14mpsxs3amvf7j2vz"))))
+        (base32 "08hhi1am00xvvf16qlhr8zcayyh0552ra6lcn3gd3b66w6n1xdi4"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
@@ -29078,6 +29113,7 @@ curation of microhaplotypes from short read sequences.")
                              r-rcolorbrewer
                              r-r6
                              r-magrittr
+                             r-lifecycle
                              r-igraph
                              r-ggplot2
                              r-dplyr
@@ -36414,13 +36450,13 @@ HTML theme will be added in the future.")
 (define-public r-memoir
   (package
     (name "r-memoir")
-    (version "1.2-10")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memoiR" version))
        (sha256
-        (base32 "1lqaw3a4wlfvbgxphzr6fwykl3b4glj3cmb7jywcdhbik2lngjfn"))))
+        (base32 "1gmdf5hjgvkyda01i69ziqllk2kvq17q4d0lskrhl04gvmhs6qqb"))))
     (properties `((upstream-name . "memoiR")))
     (build-system r-build-system)
     (arguments
@@ -38013,13 +38049,13 @@ D, Stefanski LA & Crainiceanu CM (2006, ISBN:1584886331).")
 (define-public r-meconetcomp
   (package
     (name "r-meconetcomp")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meconetcomp" version))
        (sha256
-        (base32 "00k9n3sbr6216zld4prl0v6mig472mhwca4ah8hr2s8q24v6ridx"))))
+        (base32 "1pza2f5c7b5aryi9wwczfcx358k70s3javwnppfspqzly2d3jx9d"))))
     (properties `((upstream-name . "meconetcomp")))
     (build-system r-build-system)
     (arguments
@@ -43454,13 +43490,13 @@ Segal, et al. (2019) <doi:10.1007/s11336-018-9647-4> for more information.")
 (define-public r-matrixset
   (package
     (name "r-matrixset")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrixset" version))
        (sha256
-        (base32 "0ijh8nlg86f31az7x82px1m0805mrfal5xdpwzlalgzbq0irg69v"))))
+        (base32 "1i6l8gbw3ki6p72ii0k4mnprwn1wbhvcy85cmqghj3c0g60ng61q"))))
     (properties `((upstream-name . "matrixset")))
     (build-system r-build-system)
     (arguments
@@ -43477,6 +43513,7 @@ Segal, et al. (2019) <doi:10.1007/s11336-018-9647-4> for more information.")
                              r-purrr
                              r-pillar
                              r-matrix
+                             r-lifecycle
                              r-dplyr
                              r-crayon
                              r-cli))
@@ -49124,13 +49161,13 @@ Clean, Func, Do\" structure described by Josh Reich.")
 (define-public r-makepipe
   (package
     (name "r-makepipe")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "makepipe" version))
        (sha256
-        (base32 "0mhabnmpvjamgam63nrjdimn94azn8crafr9jcwsr08lzlbv9kmv"))))
+        (base32 "1lk58zz9qdf4impbqsn1smjzrh7mkchczsi6q00ar94p312qdfhz"))))
     (properties `((upstream-name . "makepipe")))
     (build-system r-build-system)
     (arguments
@@ -50155,13 +50192,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "086rmgiswpwy1d5zpcdrna8afgpa0b252xyllj5bvq1iv71sv1c5"))))
+        (base32 "0niz85a3hgbr4w3wc1gfp8fzaclzzf1fc60p5511f7zf6zr4cykd"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments
@@ -50180,7 +50217,7 @@ sensitivity analyses, scenario analyses, etc.")
                              r-glue
                              r-dplyr
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://github.com/whipson/maestro")
     (synopsis "Orchestration of Data Pipelines")
     (description

@@ -4043,13 +4043,13 @@ samples for several distributional assumptions.  Hubeaux, S. and Rufibach, K.
 (define-public r-survpresmooth
   (package
     (name "r-survpresmooth")
-    (version "1.1-11")
+    (version "1.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survPresmooth" version))
        (sha256
-        (base32 "1rgz4g4irm6kg1ysb1sz9jar5i7l87blfhlhcmsg5bjbw0ih5xbn"))))
+        (base32 "12f59lqcfxzrb41ffigal0ybkmpcrvn0v9xdjy2k1chb6wdv4w4k"))))
     (properties `((upstream-name . "survPresmooth")))
     (build-system r-build-system)
     (arguments
@@ -7585,13 +7585,13 @@ over the data-generated characteristics.  Tini, Giulia, et al (2019)
 (define-public r-summer
   (package
     (name "r-summer")
-    (version "1.4.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SUMMER" version))
        (sha256
-        (base32 "0x93mppdaah7sznzk1rrw76ia07fnjmb676q1rrya6bzkv5fbf5z"))))
+        (base32 "0fagff6lwq4djc1p0ib935kwvvgvh4qh67nd06waqi761jwvvblw"))))
     (properties `((upstream-name . "SUMMER")))
     (build-system r-build-system)
     (arguments
@@ -7613,6 +7613,7 @@ over the data-generated characteristics.  Tini, Giulia, et al (2019)
                              r-reshape2
                              r-rcolorbrewer
                              r-matrix
+                             r-lifecycle
                              r-haven
                              r-ggridges
                              r-ggplot2
@@ -7628,7 +7629,7 @@ demographic and health indicators using survey data, with particular focus on
 estimating and projecting under-five mortality rates, described in Mercer et al.
 (2015) <doi:10.1214/15-AOAS872>, Li et al. (2019)
 <doi:10.1371/journal.pone.0210645>, Wu et al. (DHS Spatial Analysis Reports No.
-21, 2021), and Li et al. (2023) <@code{arXiv:2007.05117>}.")
+21, 2021), and Li et al. (2023) <doi:10.48550/@code{arXiv.2007.05117>}.")
     (license license:gpl2+)))
 
 (define-public r-summclust
@@ -40276,13 +40277,13 @@ improve feature extraction.  Benjamin B.Risk, Irina Gaynanova (2021)
 (define-public r-singlercapture
   (package
     (name "r-singlercapture")
-    (version "0.2.1.3")
+    (version "0.2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singleRcapture" version))
        (sha256
-        (base32 "0nybr15cdwzgz69jk28nxb609jf7ncyhly43nd73xlr5fknxfczm"))))
+        (base32 "06jhdb7n50xscd8k0rd9v18v4n0h5axmcx4lmxdyya6rimxh139g"))))
     (properties `((upstream-name . "singleRcapture")))
     (build-system r-build-system)
     (arguments
@@ -43773,13 +43774,13 @@ facilitate communicating the simulation setup.")
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "160q8f65na8kbl3069hrjapz8cb9f1kk5kxp7928756jkak7ifvq"))))
+        (base32 "0sfh4szg52awvi5zzn1vnlm5iajwcg25877rjzkp42qrxzs4c4s7"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
     (arguments
@@ -58513,13 +58514,13 @@ the first stages of root water absorption.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "1v5cy47asihjsxkywfa3rpc93a7s6qkmfmk2sbqygx9gr08r8ac0"))))
+        (base32 "1c6rgyb8dqqydidnn726yhspavpla7jpbmd2y3f91bcmxkvizpfa"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (arguments

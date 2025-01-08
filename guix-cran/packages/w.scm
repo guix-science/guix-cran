@@ -2155,13 +2155,13 @@ results.")
 (define-public r-wordvector
   (package
     (name "r-wordvector")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordvector" version))
        (sha256
-        (base32 "08wmg84lgi6n77dhb78f3270ra1hzjbkzwxywxvrfsijv0nrss5q"))))
+        (base32 "09sr2xary7aysm75bbzkc1m79cnxifqb4c5xb6ip9g20m8k7vni0"))))
     (properties `((upstream-name . "wordvector")))
     (build-system r-build-system)
     (arguments
@@ -2459,13 +2459,13 @@ where available, or direct download from
 (define-public r-wordmap
   (package
     (name "r-wordmap")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordmap" version))
        (sha256
-        (base32 "1hvnf5r82gymlyr08gkmyd2y8q51a66b9k47pzgagmv5fi1bpilm"))))
+        (base32 "0qf20qr29wmd0m56nvwgfx1wkgwfqcych54nx1p1zw97010izxm7"))))
     (properties `((upstream-name . "wordmap")))
     (build-system r-build-system)
     (arguments
@@ -2596,13 +2596,13 @@ given parallel corpus.")
 (define-public r-worcs
   (package
     (name "r-worcs")
-    (version "0.1.15")
+    (version "0.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worcs" version))
        (sha256
-        (base32 "0hqsviiznr5rp3bg1fajpcpcnnb9819h96i198vslqn9qjr10a9q"))))
+        (base32 "0xmqa17y5glsz0xicr3fm0j4dhgv9rczy2hqkbdl0nnalni0a8n2"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
     (arguments
@@ -2620,7 +2620,8 @@ given parallel corpus.")
                              r-gh
                              r-gert
                              r-digest
-                             r-credentials))
+                             r-credentials
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cjvanlissa/worcs")
     (synopsis "Workflow for Open Reproducible Code in Science")
@@ -3381,6 +3382,33 @@ error-checking routines and meaningful error messages have been added.  Includes
 single and multi-season occupancy, closed capture population estimation,
 survival, species richness and distance measures.")
     (license license:gpl3)))
+
+(define-public r-wipf
+  (package
+    (name "r-wipf")
+    (version "0.1.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WIPF" version))
+       (sha256
+        (base32 "18lkp3bd17f9i3bi9w9pxmk35zvvpb5bw5fd7lqsjs9hhw3nipdg"))))
+    (properties `((upstream-name . "WIPF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=WIPF")
+    (synopsis "Weighted Iterative Proportional Fitting")
+    (description
+     "Implementation of the weighted iterative proportional fitting (WIPF) procedure
+for updating/adjusting a N-dimensional array (currently N<=3) given a weight
+structure and some target marginals.  Acknowledgements: The author wish to thank
+Ministerio de Ciencia, InnovaciÃ³n y Universidades (grant PID2021-128228NB-I00)
+and FundaciÃ³n Mapfre (grant ModelizaciÃ³n espacial e intra-anual de la
+mortalidad en EspaÃ±a.  Una herramienta automÃ¡tica para el cÃ¡lculo de
+productos de vida') for supporting this research.")
+    (license license:gpl2+)))
 
 (define-public r-wintime
   (package
@@ -7306,13 +7334,13 @@ networks.")
 (define-public r-wdm
   (package
     (name "r-wdm")
-    (version "0.2.4")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdm" version))
        (sha256
-        (base32 "1lrmscy29ir292vxrgr5b1nprbi1zp3rj65nq963kf9gx829rlg2"))))
+        (base32 "04kv1x9nv3g3sckbi7i0amnps7q91mk5a3820cgv3jp2icq6hblz"))))
     (properties `((upstream-name . "wdm")))
     (build-system r-build-system)
     (arguments

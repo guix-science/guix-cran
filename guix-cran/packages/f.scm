@@ -7313,13 +7313,13 @@ other manipulation packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "6.3.0")
+    (version "6.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forsearch" version))
        (sha256
-        (base32 "0z8d6mr9yswribbcx0wwgldzvwjbzg8wjwqvy6g65kkklnyrj46w"))))
+        (base32 "0xjrwdb4804lhi986hdwjchggir213vrzsyqjkh974hz3pnp9vpw"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (arguments
@@ -7328,6 +7328,7 @@ other manipulation packages such as dplyr and tidyr'.")
     (inputs (list gmp))
     (propagated-inputs (list r-tibble
                              r-survival
+                             r-rlang
                              r-nlme
                              r-hmisc
                              r-ggplot2
@@ -7524,13 +7525,13 @@ plugin: <https://github.com/qlands/formshare_sql_plugin> .")
 (define-public r-formods
   (package
     (name "r-formods")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formods" version))
        (sha256
-        (base32 "012mkdv5ifi4jpx35saadiakz2i1457xyrf08c4dv59bvkj17j85"))))
+        (base32 "1r9bjnd53zlr4smvmi4qzxwl8zhjvv1m634dwmgf2mvdra19fvh0"))))
     (properties `((upstream-name . "formods")))
     (build-system r-build-system)
     (arguments

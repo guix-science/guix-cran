@@ -658,13 +658,13 @@ a null model of random rotation, as explained in De la Cruz et al. (2017)
 (define-public r-overlapping
   (package
     (name "r-overlapping")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overlapping" version))
        (sha256
-        (base32 "1dq2xsinl5rh8sf2bayv6xs7x8i0d54c405p8l82ji3xrkz49clf"))))
+        (base32 "0dy96ija3lkywv3v0mzmc2lwsjz8hrqbzzzcvx1sk34mhabp4r8r"))))
     (properties `((upstream-name . "overlapping")))
     (build-system r-build-system)
     (arguments

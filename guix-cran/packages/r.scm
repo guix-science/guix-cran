@@ -5412,13 +5412,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.3.16")
+    (version "9.3.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "09p0cyd904a0l644ydrj2ssbs6kimgcdk580qs2a9vb4x94dgjvk"))))
+        (base32 "1dkglnsvs4s0rs4xlmhcdai9mnm2cin35wzn28rna8dml0jfisgg"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -14997,13 +14997,13 @@ file illustrates how to use this package.")
 (define-public r-roi-models-globalopttests
   (package
     (name "r-roi-models-globalopttests")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROI.models.globalOptTests" version))
        (sha256
-        (base32 "1zj636cmjhhqbn6hh6760bi5y8lf6y7qqkz72yijq7dj2y1za2ph"))))
+        (base32 "1qj37l2bqhb5bk8kbk1bnif0ycx3iqrvfvqyrcikvadnqpm516w9"))))
     (properties `((upstream-name . "ROI.models.globalOptTests")))
     (build-system r-build-system)
     (arguments
@@ -20804,31 +20804,6 @@ estimating regression models on these datasets.  For more information see Lall
 and Robinson (2023) <doi:10.18637/jss.v107.i09>.")
     (license license:asl2.0)))
 
-(define-public r-rmi
-  (package
-    (name "r-rmi")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rmi" version))
-       (sha256
-        (base32 "1y0395l9lhskdrk3x9ps2dmv0sznsba0n6a9fmma33dc9dhywgf9"))))
-    (properties `((upstream-name . "rmi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
-    (home-page "https://cran.r-project.org/package=rmi")
-    (synopsis "Mutual Information Estimators")
-    (description
-     "This package provides mutual information estimators based on k-nearest neighbor
-estimators by A. Kraskov, et al. (2004) <doi:10.1103/@code{PhysRevE.69.066138>},
-S. Gao, et al. (2015) <http://proceedings.mlr.press/v38/gao15.pdf> and local
-density estimators by W. Gao, et al. (2017) <doi:10.1109/ISIT.2017.8006749>.")
-    (license license:gpl3)))
-
 (define-public r-rmgarch
   (package
     (name "r-rmgarch")
@@ -24531,6 +24506,35 @@ Titration Calorimetry (ITC) data using the most commonly used one-to-one binding
 reaction model.")
     (license license:gpl3)))
 
+(define-public r-ritalic
+  (package
+    (name "r-ritalic")
+    (version "0.10.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ritalic" version))
+       (sha256
+        (base32 "0gfv8pjlral6g76scnlqsx9grmjybyh6b1vn67raxmglfwfivnch"))))
+    (properties `((upstream-name . "ritalic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://github.com/plant-data/ritalic")
+    (synopsis "Interface to the ITALIC Database of Lichen Biodiversity")
+    (description
+     "This package provides a programmatic interface to the Web Service methods
+provided by ITALIC (<https://italic.units.it>).  ITALIC is a database of lichen
+data in Italy and bordering European countries.  ritalic includes functions for
+retrieving information about lichen scientific names, geographic distribution,
+ecological data, morpho-functional traits and identification keys.  More
+information about the data is available at
+<https://italic.units.it/?procedure=base&t=59&c=60>.  The API documentation is
+available at <https://italic.units.it/?procedure=api>.")
+    (license license:expat)))
+
 (define-public r-rita
   (package
     (name "r-rita")
@@ -26505,20 +26509,24 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "1hzgm5fip9ircf2nzr5zmyw7vjr4nl7i13wyabh7p2qivcb93y6w"))))
+        (base32 "1j0n1pxvvxa6q0bqqpch1ycycni4jb3zcww8w8sa685g7ybcm4rs"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rnaturalearthdata r-rnaturalearth r-rlang
-                             r-rintcal r-ggplot2))
+    (propagated-inputs (list r-sf
+                             r-rnaturalearth
+                             r-rlang
+                             r-rintcal
+                             r-maps
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rice")
     (synopsis "Radiocarbon Equations")
@@ -26529,7 +26537,7 @@ well as options to calculate different radiocarbon realms (C14 age, F14C,
 offsets (Reimer and Reimer 2001 <doi:10.1017/S0033822200038339>).  The methods
 follow long-established recommendations such as Stuiver and Polach (1977)
 <doi:10.1017/S0033822200003672> and Reimer et al. (2004)
-<doi:10.1017/S0033822200033154>.  This package accompanies the data package
+<doi:10.1017/S0033822200033154>.  This package complements the data package
 rintcal'.")
     (license license:gpl2+)))
 
@@ -40708,19 +40716,19 @@ formats: akterm, dmna, Scintec Format-1, and Campbell Scientific TOA5.")
 (define-public r-readmdtable
   (package
     (name "r-readmdtable")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readMDTable" version))
        (sha256
-        (base32 "0bwhf02sb1v6p7mck93sk1vl1q73la38lwq2gs3a5g8mi11a3ykv"))))
+        (base32 "0bxfpnkzps19f9dlp05mdixd5vbs43wrvp5zqf157lp0y2gclhhh"))))
     (properties `((upstream-name . "readMDTable")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-readr r-httr2 r-cli))
+    (propagated-inputs (list r-stringr r-readr r-purrr r-httr2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jrdnbradford/readMDTable")
     (synopsis "Read Markdown Tables into Tibbles")
@@ -54110,13 +54118,13 @@ abbreviation of R @code{agGrid}'.")
 (define-public r-rage
   (package
     (name "r-rage")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rage" version))
        (sha256
-        (base32 "0scpig0glh1ajc5fp7xrdb0b5f11x1f5ls43wb6b9kjif4fi25cl"))))
+        (base32 "111bbil6f5c8prrnwhzwaqhg4r4bawh2d2jjs7sbl8p7pr19h7sj"))))
     (properties `((upstream-name . "Rage")))
     (build-system r-build-system)
     (arguments

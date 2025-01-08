@@ -2436,13 +2436,13 @@ ordered alternatives.")
 (define-public r-npmv
   (package
     (name "r-npmv")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npmv" version))
        (sha256
-        (base32 "04lfks2rlax59gxdnbgkpmk2vaax718z6hkgsvmyxf52iby6rvlr"))))
+        (base32 "0svzifh2cy75wvclzyqs9a7493np4zcc61rv5p63b1lbgl1xydmz"))))
     (properties `((upstream-name . "npmv")))
     (build-system r-build-system)
     (arguments

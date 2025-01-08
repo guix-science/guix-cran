@@ -8082,6 +8082,29 @@ Inspiration also comes from packages.  future by Bengtsson (2021)
 Surmann (2017) <doi:10.21105/joss.00135>.")
     (license license:expat)))
 
+(define-public r-creepyalien
+  (package
+    (name "r-creepyalien")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "creepyalien" version))
+       (sha256
+        (base32 "13xm9yyy71f6v8p4qc7b76rycnddnmff0p1q8qnkapl4abdrhkxb"))))
+    (properties `((upstream-name . "creepyalien")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glue r-cli r-beepr))
+    (home-page "https://github.com/rolkra/creepyalien")
+    (synopsis "Puzzle Game for the R Console")
+    (description
+     "Puzzle game that can be played in the R console.  Help the alien to find the
+ship.")
+    (license license:expat)))
+
 (define-public r-credule
   (package
     (name "r-credule")
@@ -9453,6 +9476,32 @@ PDF files such as split, combine, and compress PDF files.")
 facilitate communication between R and the Eigen C++ library for linear algebra
 and scientific computing.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-cpp11bigwig
+  (package
+    (name "r-cpp11bigwig")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpp11bigwig" version))
+       (sha256
+        (base32 "1dc0w7ck0c4h2fiqrglgcrjb84klzh5rzwralgqmgnnvvc8ayk7w"))))
+    (properties `((upstream-name . "cpp11bigwig")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-tibble r-iranges r-genomicranges r-cpp11))
+    (home-page "https://rnabioco.github.io/cpp11bigwig/")
+    (synopsis "Read bigWig and bigBed Files")
+    (description
+     "Read @code{bigWig} and @code{bigBed} files using \"@code{libBigWig}\"
+<https://github.com/dpryan79/@code{libBigWig>}.  Provides lightweight access to
+the binary @code{bigWig} and @code{bigBed} formats developed by the UCSC Genome
+Browser group.")
+    (license license:expat)))
 
 (define-public r-cpp11armadillo
   (package
@@ -17247,13 +17296,13 @@ output.  See the paper for more details on the model and its utility.")
 (define-public r-constrainedkriging
   (package
     (name "r-constrainedkriging")
-    (version "0.2-8")
+    (version "0.2-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constrainedKriging" version))
        (sha256
-        (base32 "0qbbjb1dhdsrgpnnsfwys28xhlsy8xj35pdqrza8hih5z2vp4nq6"))))
+        (base32 "00w5g7mpxwr0z9x4kir3qqqj8yjvk09bv071m398hzckb6py8bgg"))))
     (properties `((upstream-name . "constrainedKriging")))
     (build-system r-build-system)
     (arguments
@@ -40067,6 +40116,51 @@ tidyvpc and ggplot2 code directly from the user interface and download R or Rmd
 scripts to reproduce the VPCs in R.")
     (license license:lgpl3)))
 
+(define-public r-certara-rsnlme-modelexecutor
+  (package
+    (name "r-certara-rsnlme-modelexecutor")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Certara.RsNLME.ModelExecutor" version))
+       (sha256
+        (base32 "100ss3qfxvzxjywhxx5bvsgbi1i5jxznsczny42729qzpyykjwfk"))))
+    (properties `((upstream-name . "Certara.RsNLME.ModelExecutor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-shinywidgets
+                             r-shinymeta
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shinyace
+                             r-shiny
+                             r-reshape
+                             r-promises
+                             r-magrittr
+                             r-jsonlite
+                             r-htmltools
+                             r-ggplot2
+                             r-future
+                             r-fs
+                             r-dt
+                             r-dplyr
+                             r-certara-rsnlme
+                             r-certara-nlme8
+                             r-bslib))
+    (home-page "https://certara.github.io/R-RsNLME-model-executor/")
+    (synopsis "Execute Pharmacometric Models Using 'shiny'")
+    (description
+     "Execute Nonlinear Mixed Effects (NLME) models for pharmacometrics using a shiny
+interface.  Specify engine parameters and select from different run options,
+including simple estimation, stepwise covariate search, bootstrapping,
+simulation, visual predictive check, and more.  Models are executed using the
+Certara.@code{RsNLME} package.")
+    (license license:lgpl3)))
+
 (define-public r-certara-rsnlme-modelbuilder
   (package
     (name "r-certara-rsnlme-modelbuilder")
@@ -41886,13 +41980,13 @@ is in no way officially related to or endorsed by Copernicus.")
 (define-public r-cdsampling
   (package
     (name "r-cdsampling")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDsampling" version))
        (sha256
-        (base32 "1gv3yxakhj3qxl19fyf5xdgxr81fn7m3vcz0nff6kzpp1vhs2m1a"))))
+        (base32 "0s2i68m3cczfkp44p4ddi9ygvr8ymxqnvpnh8b5cng246haavzld"))))
     (properties `((upstream-name . "CDsampling")))
     (build-system r-build-system)
     (arguments
@@ -42403,13 +42497,13 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
 (define-public r-cdatanet
   (package
     (name "r-cdatanet")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDatanet" version))
        (sha256
-        (base32 "1qzfxz72zpxi48djqhypqlmajk6rx91m0i997vsr0zry0dp2zrzb"))))
+        (base32 "03mn0bdkrik26w0xmvbvki4gyhlnafg76rpw4khbm7rfgsjyk9vh"))))
     (properties `((upstream-name . "CDatanet")))
     (build-system r-build-system)
     (arguments
@@ -42586,13 +42680,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "1pcfilz9a06vlgj4g25aghpacdqmfwghqahlsf3h1hnxfzi50y4z"))))
+        (base32 "0qlkiz1pgba075qh3sysl1jhldh87ppyq3cy2fyr69fc3wkw9z3g"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (arguments
@@ -44750,13 +44844,13 @@ randomization, which is described in Charpignon et al. (2022)
 (define-public r-causalbatch
   (package
     (name "r-causalbatch")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalBatch" version))
        (sha256
-        (base32 "0jq5a6ch12v55x8fwz6as43wb4q5nc56hqb97jcsgksvsy9cn2g3"))))
+        (base32 "1m7yznyjcyi92b15id9bjnfrg42mzzipghnydrv3nr21p9wkmwhk"))))
     (properties `((upstream-name . "causalBatch")))
     (build-system r-build-system)
     (arguments
@@ -44766,8 +44860,10 @@ randomization, which is described in Charpignon et al. (2022)
                              r-nnet
                              r-matchit
                              r-magrittr
+                             r-genefilter
                              r-dplyr
-                             r-cdcsis))
+                             r-cdcsis
+                             r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/neurodata/causal_batch")
     (synopsis "Causal Batch Effects")
@@ -44776,11 +44872,11 @@ randomization, which is described in Charpignon et al. (2022)
 group-level effects from high-dimensional scientific data which, when combined
 with additional assumptions, allow for causal conclusions, as-described in our
 manuscripts Bridgeford et al. (2024) <doi:10.1101/2021.09.03.458920> and
-Bridgeford et al. (2023) <@code{arXiv:2307.13868>}.  Also provides a number of
-useful utilities for generating simulations and balancing covariates across
-multiple groups/batches of data via matching and propensity trimming for more
-than two groups.")
-    (license license:expat)))
+Bridgeford et al. (2023) <doi:10.48550/@code{arXiv.2307.13868>}.  Also provides
+a number of useful utilities for generating simulations and balancing covariates
+across multiple groups/batches of data via matching and propensity trimming for
+more than two groups.")
+    (license license:gpl3)))
 
 (define-public r-causal-decomp
   (package

@@ -4706,13 +4706,13 @@ regimes.  Tests can be conducted for TVAR as well as for TVECM (Hansen and Seo
 (define-public r-tsdt
   (package
     (name "r-tsdt")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSDT" version))
        (sha256
-        (base32 "0h2nwlzq6p11735nhkkqz6r7lpmw98bwy9dpdmvj4wqb7c64p90p"))))
+        (base32 "01r4fcs3mfyvv0whj5p4cqb2g4azlx7pcf6xms7r9ap65zyl3nfl"))))
     (properties `((upstream-name . "TSDT")))
     (build-system r-build-system)
     (arguments
@@ -14137,13 +14137,13 @@ trimming, and converts them to distribution parameters.")
 (define-public r-tlm
   (package
     (name "r-tlm")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tlm" version))
        (sha256
-        (base32 "1iw08pa70nb25fnv64834s5c8vl456a2rcng7x6v9vs5q37610g6"))))
+        (base32 "0sxspxi92x0x13ihb5lh96zybawln63rwyvg2z6mssmmjsj7c42v"))))
     (properties `((upstream-name . "tlm")))
     (build-system r-build-system)
     (arguments
@@ -14158,8 +14158,9 @@ trimming, and converts them to distribution parameters.")
      "Computation of effects under linear, logistic and Poisson regression models with
 transformed variables.  Logarithm and power transformations are allowed.
 Effects can be displayed both numerically and graphically in both the original
-and the transformed space of the variables.")
-    (license license:gpl2+)))
+and the transformed space of the variables.  The methods are described in
+Barrera-Gomez and Basagana (2015) <doi:10.1097/EDE.0000000000000247>.")
+    (license license:gpl3+)))
 
 (define-public r-tlic
   (package
@@ -17239,13 +17240,13 @@ with others or used to report statistics in scientific papers.")
 (define-public r-tidysq
   (package
     (name "r-tidysq")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysq" version))
        (sha256
-        (base32 "1v92jpifcjh51igh3izr7r0x0dz7xmc6mx6rz0xndylgi4418wcf"))))
+        (base32 "0wdj0fxvlm06rik0nic406w3y5dcbpbia5r8q2fg3j5p0pw0hmbh"))))
     (properties `((upstream-name . "tidysq")))
     (build-system r-build-system)
     (arguments
@@ -26854,13 +26855,13 @@ sap flow rates at the tree and plot scale (For more information see : Granier
 (define-public r-tdlm
   (package
     (name "r-tdlm")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDLM" version))
        (sha256
-        (base32 "05gjbmhnamm94facg590sd1m7l3x51crd7x21ly6gmwyq5rjlffm"))))
+        (base32 "1p1k60fdmgb1szbz4f8bkb2ywfa070pnxqv3b6xya74qabqgkz86"))))
     (properties `((upstream-name . "TDLM")))
     (build-system r-build-system)
     (arguments
@@ -28146,13 +28147,13 @@ tests in selection: Discussion and tables\" <doi:10.1037/h0057079>.")
 (define-public r-taylor
   (package
     (name "r-taylor")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taylor" version))
        (sha256
-        (base32 "179kb49ch0178vmvbx2vmrvnld4nq36gvq65bj334338sc85fmsl"))))
+        (base32 "049vyibjmzxw7hf6h3jl0lbma92ih8lda6j6acr0ncdp5m18d24s"))))
     (properties `((upstream-name . "taylor")))
     (build-system r-build-system)
     (arguments
@@ -28165,7 +28166,7 @@ tests in selection: Discussion and tables\" <doi:10.1037/h0057079>.")
                              r-lifecycle
                              r-glue
                              r-ggplot2
-                             r-crayon))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://taylor.wjakethompson.com")
     (synopsis "Lyrics and Song Data for Taylor Swift's Discography")

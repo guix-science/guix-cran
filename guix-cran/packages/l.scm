@@ -13712,13 +13712,13 @@ colour displays.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.3.1")
+    (version "6.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "1avwk08ngvr5l0mvrz6zfljgwhf6bnffllarwgq8w4pna9102m2l"))))
+        (base32 "199bhkhrhhdamaj6dihskkv62ixkfkv755jd166y070npinpg2w5"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (arguments
@@ -20149,13 +20149,13 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
 (define-public r-l1centrality
   (package
     (name "r-l1centrality")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1centrality" version))
        (sha256
-        (base32 "19kbq768r5zcnqlqw00llalsa1mwkq2x9ds54k2jxiqgpqi5m697"))))
+        (base32 "0dbbdrkyra5wrl9qh78m58siyaxrbbwzjagy19nrgwjayhga06za"))))
     (properties `((upstream-name . "L1centrality")))
     (build-system r-build-system)
     (arguments

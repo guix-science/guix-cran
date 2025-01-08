@@ -359,6 +359,29 @@ research.")
 for publication.")
     (license license:lgpl2.0+)))
 
+(define-public r-utf8ify
+  (package
+    (name "r-utf8ify")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "utf8ify" version))
+       (sha256
+        (base32 "18a0glmyc86xnxgz6igjvphhjrnsr4ma57vx5j6w3hj395pgw4rr"))))
+    (properties `((upstream-name . "utf8ify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rolkra/utf8ify")
+    (synopsis "Format Text Using Unicode")
+    (description
+     "Format text (bold, italic, ...) and numbers using UTF-8.  Offers functions to
+search for emojis and include them in your text.")
+    (license license:expat)))
+
 (define-public r-utc
   (package
     (name "r-utc")
@@ -5002,13 +5025,13 @@ modify the original data set biasing it towards the user preferences.")
 (define-public r-ubiquity
   (package
     (name "r-ubiquity")
-    (version "2.0.3")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ubiquity" version))
        (sha256
-        (base32 "1w1agdarsh45zf66cbczvippzk3f0ns5dajfbr1181j274f39rnh"))))
+        (base32 "19qb2cc0x75mzviqs049n52n6y98ss4c3l8n8y0iwnp25ldwyj12"))))
     (properties `((upstream-name . "ubiquity")))
     (build-system r-build-system)
     (arguments
@@ -5026,7 +5049,6 @@ modify the original data set biasing it towards the user preferences.")
                              r-optimx
                              r-onbrand
                              r-mass
-                             r-magrittr
                              r-knitr
                              r-ggplot2
                              r-foreach
@@ -5037,7 +5059,7 @@ modify the original data set biasing it towards the user preferences.")
                              r-desolve
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://ubiquity.tools/rworkflow")
+    (home-page "https://r.ubiquity.tools")
     (synopsis "PKPD, PBPK, and Systems Pharmacology Modeling Tools")
     (description
      "Complete work flow for the analysis of pharmacokinetic pharmacodynamic (PKPD),

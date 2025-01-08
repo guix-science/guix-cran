@@ -9304,13 +9304,13 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
 (define-public r-bnlearn
   (package
     (name "r-bnlearn")
-    (version "5.0.1")
+    (version "5.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnlearn" version))
        (sha256
-        (base32 "17pr1b3dg576fsrzgvhdh0c4vfi3cl4ngkak8njddd6v4favsli4"))))
+        (base32 "054cvgcxh48x1zc36zivplnaf9i6x4hdkk7an1mmnwd78a47dadw"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
     (arguments
@@ -10564,13 +10564,13 @@ the Limit of Quantification.\" Statistics in Biopharmaceutical Research (2020):
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.19")
+    (version "1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blogdown" version))
        (sha256
-        (base32 "0glxgks9aql3k5hxjr9yfinvp4n69fdh99v7q33mgjk7n2ja88q5"))))
+        (base32 "1k4djijqhy2drqbw0l13cx68lxqm7x0vwqf18mwvppl1ka9q1d8b"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (arguments
@@ -11599,13 +11599,13 @@ format and checked for compatibility.  Supports dataframes, tibbles and
 (define-public r-blackmarbler
   (package
     (name "r-blackmarbler")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blackmarbler" version))
        (sha256
-        (base32 "05wg5n7zbg7cpj44f3f7j889gbrcp155cza3csc4x43bflfbqgml"))))
+        (base32 "1scrkn7kagb8wkz0h87xnbbkpdqyvwc110km890rakm0qgpgf1w9"))))
     (properties `((upstream-name . "blackmarbler")))
     (build-system r-build-system)
     (arguments
@@ -11619,8 +11619,6 @@ format and checked for compatibility.  Supports dataframes, tibbles and
                              r-purrr
                              r-lubridate
                              r-httr2
-                             r-httr
-                             r-hdf5r
                              r-exactextractr
                              r-dplyr))
     (home-page "https://worldbank.github.io/blackmarbler/")
@@ -16317,13 +16315,13 @@ utilizes the Julia package Bigsimr.jl for its core routines.")
 (define-public r-bigrquerystorage
   (package
     (name "r-bigrquerystorage")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigrquerystorage" version))
        (sha256
-        (base32 "1x48msnh3lhi5x74n1v7icd3vzxwqw9yaq8llcr0a79mj6abiwar"))))
+        (base32 "0w96zb7y8mgnlgjmq2j2whrrw5yakq1cgixwk6jcic5q0ig837iy"))))
     (properties `((upstream-name . "bigrquerystorage")))
     (build-system r-build-system)
     (arguments

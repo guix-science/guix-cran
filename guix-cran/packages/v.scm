@@ -6143,13 +6143,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "0n4k7mrwdj8y6dd7wlvl7i4rkbw37rsxal509h4l697ranvd1mq6"))))
+        (base32 "0w04r2473iriyalazc0m72665jnp0j6lxvlw394nxn07cmq4bm05"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (arguments
@@ -6158,14 +6158,12 @@ analyses.")
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rstudioapi
-                             r-plotly
                              r-magrittr
                              r-lubridate
                              r-knitr
                              r-kableextra
                              r-jsonlite
                              r-httr
-                             r-ggplot2
                              r-dt
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -9532,13 +9530,13 @@ vaccineff class.")
 (define-public r-vaccine
   (package
     (name "r-vaccine")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaccine" version))
        (sha256
-        (base32 "0pqgavah2bjb0mw8irgri9sglaff3assx10xmhqnixb4jig8d87r"))))
+        (base32 "0w7rqhd6ik5bknv56i2vnz2zh1r6bvaygqf2az065ypjjfmpdj3m"))))
     (properties `((upstream-name . "vaccine")))
     (build-system r-build-system)
     (arguments
@@ -9548,7 +9546,6 @@ vaccineff class.")
                              r-survml
                              r-survival
                              r-superlearner
-                             r-simest
                              r-rsolnp
                              r-rlang
                              r-ranger
@@ -9559,7 +9556,7 @@ vaccineff class.")
                              r-e1071
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Avi-Kenny/vaccine")
+    (home-page "https://avi-kenny.github.io/vaccine/")
     (synopsis
      "Statistical Tools for Immune Correlates Analysis of Vaccine Clinical Trial Data")
     (description
@@ -9571,5 +9568,5 @@ statistics and estimation of risk, vaccine efficacy, controlled effects
 Gilbert P, Fong Y, Kenny A, and Carone, M (2022)
 <doi:10.1093/biostatistics/kxac024> and Fay MP and Follmann DA (2023)
 <doi:10.48550/@code{arXiv.2208.06465>}.")
-    (license license:gpl3+)))
+    (license license:gpl3)))
 

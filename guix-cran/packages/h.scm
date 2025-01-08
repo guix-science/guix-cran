@@ -13118,13 +13118,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.6.5")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "1zivik69va92mbqhv46xh3pj98jxbc6z3x5i4isb07k8incv4wcy"))))
+        (base32 "102dq590np43bbw524c0m2bzbpx5bqwka1x0sd59wi0a0mg2z2jr"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (arguments
