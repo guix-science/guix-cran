@@ -1633,6 +1633,31 @@ best solutions from one generation to the next.  Population objective function
 values may optionally be evaluated in parallel.")
     (license license:gpl2)))
 
+(define-public r-kofm
+  (package
+    (name "r-kofm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KOFM" version))
+       (sha256
+        (base32 "1f2z067wpqhdwc3adgc0x25l2b28ybqgwfc744h0h9fmxkyhdd62"))))
+    (properties `((upstream-name . "KOFM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tensormiss r-rspectra r-mefm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=KOFM")
+    (synopsis "Test the Kronecker Product Structure in Tensor Factor Models")
+    (description
+     "To test if a tensor time series following a Tucker-decomposition factor model
+has a Kronecker product structure.  Supplementary functions for tensor reshape
+and its reversal are also included.")
+    (license license:gpl3)))
+
 (define-public r-kofdata
   (package
     (name "r-kofdata")
@@ -3880,13 +3905,13 @@ common ones with rio (C-h.  Chan and al. (2018))
 (define-public r-khroma
   (package
     (name "r-khroma")
-    (version "1.14.0")
+    (version "1.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "khroma" version))
        (sha256
-        (base32 "00kb8k5np6inxdjcjbmr36xp6qckf3qmc9p210g7r70pshzxgszp"))))
+        (base32 "0vxx7pgcfmj8zbkvfbblb33j19ir2vv2j6azd941m7l7gsjafpd7"))))
     (properties `((upstream-name . "khroma")))
     (build-system r-build-system)
     (arguments
@@ -5789,27 +5814,28 @@ Nagler (2018) <doi:10.18637/jss.v084.i07>.")
 (define-public r-kde1d
   (package
     (name "r-kde1d")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kde1d" version))
        (sha256
-        (base32 "1z6g54qhiry04hx39akz1ll78rw49w7gwkcbjagxyrfq8gswa2yn"))))
+        (base32 "0im5cvkc3jkgrlqnfv1z4dz07zcfny05hwdjp7r33jxn5cs4xmsr"))))
     (properties `((upstream-name . "kde1d")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcppeigen r-rcpp r-randtoolbox r-bh))
-    (home-page "https://github.com/tnagler/kde1d")
+    (home-page "https://tnagler.github.io/kde1d/")
     (synopsis "Univariate Kernel Density Estimation")
     (description
      "This package provides an efficient implementation of univariate local polynomial
 kernel density estimators that can handle bounded and discrete data.  See
-Geenens (2014) <@code{arXiv:1303.4121>}, Geenens and Wang (2018)
-<@code{arXiv:1602.04862>}, Nagler (2018a) <@code{arXiv:1704.07457>}, Nagler
-(2018b) <@code{arXiv:1705.05431>}.")
+Geenens (2014) <doi:10.48550/@code{arXiv.1303.4121>}, Geenens and Wang (2018)
+<doi:10.48550/@code{arXiv.1602.04862>}, Nagler (2018a)
+<doi:10.48550/@code{arXiv.1704.07457>}, Nagler (2018b)
+<doi:10.48550/@code{arXiv.1705.05431>}.")
     (license license:expat)))
 
 (define-public r-kcsnbshiny
@@ -6317,29 +6343,6 @@ is the first package implementing Karel in R.")
     (description
      "Attempts to remove vocals from a stereo .wav recording of a song.")
     (license license:gpl3)))
-
-(define-public r-karadacolor
-  (package
-    (name "r-karadacolor")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "KaradaColor" version))
-       (sha256
-        (base32 "0hndz1inl4s7vgkg570npk73zh9hglr7kwa1yrkgdsk5lf8l8z4m"))))
-    (properties `((upstream-name . "KaradaColor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-crayon))
-    (home-page "https://github.com/KaradaGood/KaradaColor")
-    (synopsis "Color Palettes Inspired by Japanese Landscape and Culture")
-    (description
-     "The palette includes motifs from Japanese landscape and culture.  And it
-provides commands for color manipulation and ggplot2 color scales.")
-    (license license:gpl3+)))
 
 (define-public r-kappasize
   (package

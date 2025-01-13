@@ -4800,13 +4800,13 @@ turbines.")
 (define-public r-breathteststan
   (package
     (name "r-breathteststan")
-    (version "0.8.8")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "breathteststan" version))
        (sha256
-        (base32 "0mwknbwxfdry48cyv7j0hzxi7lxwd0k6zbz5rl2l3bglbv219502"))))
+        (base32 "1cybi9nvwsh3z34jgw8j1ls34flk9sppv101qnd9mcx06apkhhmn"))))
     (properties `((upstream-name . "breathteststan")))
     (build-system r-build-system)
     (arguments
@@ -4833,13 +4833,13 @@ same author.  Stan functions are refactored here for easier testing.")
 (define-public r-breathtestcore
   (package
     (name "r-breathtestcore")
-    (version "0.8.8")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "breathtestcore" version))
        (sha256
-        (base32 "110xsdfd1c2l5vj2h3wnymljwjsj8h8llf3g8sm5b7kf8m4cj58r"))))
+        (base32 "1zwk5brp8ka9ys4b9lh6vipznzq9jgxpamh7jjrkpjp6s02hhicd"))))
     (properties `((upstream-name . "breathtestcore")))
     (build-system r-build-system)
     (arguments
@@ -9793,19 +9793,24 @@ of distributions, including Mohammadi and et al. (2013)
 (define-public r-bmisc
   (package
     (name "r-bmisc")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMisc" version))
        (sha256
-        (base32 "1j1qxa5hgc9zdmk1y4xa87jcxi8m75hms88ishfvbqg8n2k9ah1h"))))
+        (base32 "1iblh3yrdnr2zkxsr78msra4primhgvahpghzlzlnirha70f6hlb"))))
     (properties `((upstream-name . "BMisc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dplyr r-data-table))
+    (propagated-inputs (list r-tidyr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-dplyr
+                             r-data-table
+                             r-caret))
     (home-page "https://bcallaway11.github.io/BMisc/")
     (synopsis
      "Miscellaneous Functions for Panel Data, Quantiles, and Printing Results")
@@ -11291,13 +11296,13 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
 (define-public r-blavaan
   (package
     (name "r-blavaan")
-    (version "0.5-6")
+    (version "0.5-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blavaan" version))
        (sha256
-        (base32 "0lbvsga6ba4n05xnzahmj2dw3jjpjhkg93p9kadb656wxffkq7qy"))))
+        (base32 "00pxi5zj68796b3qkil3w66z446ib61xl2l5v1qia1mc9fznlzri"))))
     (properties `((upstream-name . "blavaan")))
     (build-system r-build-system)
     (arguments
@@ -11849,13 +11854,13 @@ support by NSF DMS-1925119 and DMS-212324.")
 (define-public r-bizdays
   (package
     (name "r-bizdays")
-    (version "1.0.16")
+    (version "1.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bizdays" version))
        (sha256
-        (base32 "0drdmry39k6rxyy4x7d667znsv8r8ias66z0bvxkfk5vamsv744i"))))
+        (base32 "10jfzqpmvx82glkvkjb6qr6v9dc1gjnngycy78krsrd0afpwfv3z"))))
     (properties `((upstream-name . "bizdays")))
     (build-system r-build-system)
     (arguments
@@ -12040,13 +12045,13 @@ event data analysis.  Includes non-parametric and semi-parametric methods.")
 (define-public r-bivpois
   (package
     (name "r-bivpois")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bivpois" version))
        (sha256
-        (base32 "1pajy04wy11nxzy9dvpg6zpp99fb6splfv0nn8hg76kk8j3zn844"))))
+        (base32 "102zi0l7hdy29h6svva37w5rq5pz2an4yxpz3nlqq7zf788m04x2"))))
     (properties `((upstream-name . "bivpois")))
     (build-system r-build-system)
     (arguments
@@ -12933,13 +12938,13 @@ GPL-3).")
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioVizSeq" version))
        (sha256
-        (base32 "006b5pqqc685b7266i21zhyyv867cr0kdg031fg1lq5jgi03a5q1"))))
+        (base32 "1yq646n6rn4knd9fagbqx7k2myrhbh83nm1f8s87i0im2rrcz5kd"))))
     (properties `((upstream-name . "BioVizSeq")))
     (build-system r-build-system)
     (arguments
@@ -14345,13 +14350,13 @@ calculations needed by Biological Dosimetry Laboratories.")
 (define-public r-biodiversityr
   (package
     (name "r-biodiversityr")
-    (version "2.16-1")
+    (version "2.17-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiodiversityR" version))
        (sha256
-        (base32 "059kj0cnb3fpqngww6560mqg6c4dsh5w6484v23wnmng064rf1fi"))))
+        (base32 "096vpg8lagi84gw516n240hd36g67l92zhsrnxx6v32g83xg8z6a"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
     (arguments
@@ -19376,13 +19381,13 @@ functional and phylogenetic beta diversity.")
 (define-public r-betanb
   (package
     (name "r-betanb")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaNB" version))
        (sha256
-        (base32 "1qfpp4y3drqh492y7x67jkqbabkqbmsbc2yqvbzc427pd3n9ijs5"))))
+        (base32 "113w49x7j4x4qlv0awrrfrf6r2s4br05n41gmzvqzb4asl66y658"))))
     (properties `((upstream-name . "betaNB")))
     (build-system r-build-system)
     (arguments
@@ -19391,7 +19396,7 @@ functional and phylogenetic beta diversity.")
     (home-page "https://github.com/jeksterslab/betaNB")
     (synopsis "Bootstrap for Regression Effect Sizes")
     (description
-     "Generates nonparametric bootstrap confidence intervals (Efron & Tibshirani,
+     "Generates nonparametric bootstrap confidence intervals (Efron and Tibshirani,
 1993: <doi:10.1201/9780429246593>) for standardized regression coefficients
 (beta) and other effect sizes, including multiple correlation, semipartial
 correlations, improvement in R-squared, squared partial correlations, and
@@ -19981,6 +19986,33 @@ and arrays, fit multiple functions.")
 advanced computational algorithms.  Described in Bouranis, L., Demiris, N.,
 Kalogeropoulos, K., and Ntzoufras, I. (2022) <@code{arXiv:2211.15229>}.")
     (license license:gpl3+)))
+
+(define-public r-berkeleyforestsanalytics
+  (package
+    (name "r-berkeleyforestsanalytics")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BerkeleyForestsAnalytics" version))
+       (sha256
+        (base32 "05anwljbk19v362apn766wws9jyfq8452rwy6qdnwhg638a37j7x"))))
+    (properties `((upstream-name . "BerkeleyForestsAnalytics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kearutherford/BerkeleyForestsAnalytics")
+    (synopsis "Compute and Summarize Core Forest Metrics from Field Data")
+    (description
+     "This package provides a suite of open-source R functions designed to produce
+standard metrics for forest management and ecology from forest inventory data.
+The overarching goal is to minimize potential inconsistencies introduced by the
+algorithms used to compute and summarize core forest metrics.  Learn more about
+the purpose of the package and the specific algorithms used in the package at
+<https://github.com/kearutherford/@code{BerkeleyForestsAnalytics>}.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-bergm
   (package
@@ -20618,34 +20650,45 @@ Projections.  2013. <doi:10.1007/978-94-007-7551-0>.")
 (define-public r-beezdiscounting
   (package
     (name "r-beezdiscounting")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beezdiscounting" version))
        (sha256
-        (base32 "07m1mjswrjcq7573drq511vzpgcj8gp8jwzzxvnc6bl4a58wh8y0"))))
+        (base32 "0lyqbz2a399xwmi2is2q25a16kmb06n2kr6028hs6i35hqlw3r68"))))
     (properties `((upstream-name . "beezdiscounting")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
+                             r-purrr
                              r-psych
+                             r-minpack-lm
                              r-magrittr
                              r-gtools
-                             r-dplyr))
+                             r-ggplot2
+                             r-dplyr
+                             r-broom
+                             r-beezdemand))
     (home-page "https://github.com/brentkaplan/beezdiscounting")
     (synopsis "Behavioral Economic Easy Discounting")
     (description
      "Facilitates some of the analyses performed in studies of behavioral economic
 discounting.  The package supports scoring of the 27-Item Monetary Choice
-Questionnaire (see Kaplan et al., 2016; <doi:10.1007/s40614-016-0070-9>) and
-scoring of the minute discounting task (see Koffarnus & Bickel, 2014;
-<doi:10.1037/a0035973>) using the Qualtrics 5-trial discounting template (see
-the Qualtrics Minute Discounting User Guide; <doi:10.13140/RG.2.2.26495.79527>),
-which is also available as a .qsf file in this package.")
+Questionnaire (see Kaplan et al., 2016; <doi:10.1007/s40614-016-0070-9>),
+calculating k values (Mazur's simple hyperbolic and exponential) using nonlinear
+regression, calculating various Area Under the Curve (AUC) measures, plotting
+regression curves for both fit-to-group and two-stage approaches, checking for
+unsystematic discounting (Johnson & Bickel, 2008;
+<doi:10.1037/1064-1297.16.3.264>) and scoring of the minute discounting task
+(see Koffarnus & Bickel, 2014; <doi:10.1037/a0035973>) using the Qualtrics
+5-trial discounting template (see the Qualtrics Minute Discounting User Guide;
+<doi:10.13140/RG.2.2.26495.79527>), which is also available as a .qsf file in
+this package.")
     (license license:gpl2+)))
 
 (define-public r-beezdemand
@@ -21473,13 +21516,13 @@ validity of the results as well as several measures of goodness-of-fit.")
 (define-public r-bdsvd
   (package
     (name "r-bdsvd")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdsvd" version))
        (sha256
-        (base32 "02fhhwlnq31yzf0m3qyk14w1f9d4xn0ygnjcwx7m28z34l18547m"))))
+        (base32 "0l8g394xvg0gnkk73qdhn6ylnk7r843ax14jprmxyhy8icaa3x06"))))
     (properties `((upstream-name . "bdsvd")))
     (build-system r-build-system)
     (arguments
@@ -21491,8 +21534,8 @@ validity of the results as well as several measures of goodness-of-fit.")
     (description
      "This package performs block diagonal covariance matrix detection using singular
 vectors (BD-SVD), which can be extended to hierarchical variable clustering
-(HC-SVD).  The methods are described in Bauer (202Xa)
-<doi:10.48550/@code{arXiv.2211.16155>} and Bauer (202Xb)
+(HC-SVD).  The methods are described in Bauer (2024)
+<doi:10.1080/10618600.2024.2422985> and Bauer (202X)
 <doi:10.48550/@code{arXiv.2308.06820>}.")
     (license license:gpl2+)))
 
@@ -23734,13 +23777,13 @@ Science Framework (May 18).")
 (define-public r-bayesvarsel
   (package
     (name "r-bayesvarsel")
-    (version "2.2.5")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesVarSel" version))
        (sha256
-        (base32 "1hp8cy9dbna32r57pjpsi9kx9vm18s0xr3gk1ndj0rbzn4193jdn"))))
+        (base32 "1ziq5sprz7maj4fkj5alp6s37d5ln5di3w8ypyb5xdpq3a1x8gni"))))
     (properties `((upstream-name . "BayesVarSel")))
     (build-system r-build-system)
     (arguments
@@ -25221,13 +25264,13 @@ Emma, et al., (2022) <doi:10.1093/geronb/gbab149>.")
 (define-public r-bayesmixsurv
   (package
     (name "r-bayesmixsurv")
-    (version "0.9.1")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMixSurv" version))
        (sha256
-        (base32 "19kf39881q00pap9afwvvggk4s4w3qpz17b7065nig1mvk8dnp8r"))))
+        (base32 "0kg44sfqrpd7cyb6wm0m8ya75azm6k6wzhm7jz50ayln8whad87l"))))
     (properties `((upstream-name . "BayesMixSurv")))
     (build-system r-build-system)
     (arguments
@@ -25359,13 +25402,13 @@ C (2020) <doi:10.18637/jss.v093.i06>, or Roever C and Friede T (2022)
 (define-public r-bayesmeanscale
   (package
     (name "r-bayesmeanscale")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesMeanScale" version))
        (sha256
-        (base32 "1q7majv5jx7lw6i4wn5cgvywa684qqh7hvfi1ikd7c20n59fb778"))))
+        (base32 "136jnvx1nx983f3z1399hzkaglvycjzk4dj0015372yljhz6jpb4"))))
     (properties `((upstream-name . "bayesMeanScale")))
     (build-system r-build-system)
     (arguments
@@ -26604,6 +26647,39 @@ baseline hazards.  The method is described in Scott and Lewin (2024)
 al. (2024) <doi:10.48550/@code{arXiv.2408.04327>}.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-bayesestdft
+  (package
+    (name "r-bayesestdft")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesestdft" version))
+       (sha256
+        (base32 "1s61vifgljpk2mqd1pp8hdh7mas0n9ip5p0s1r54mrhhhx1rk01l"))))
+    (properties `((upstream-name . "bayesestdft")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-dplyr))
+    (home-page "https://github.com/Roy-SR-007/bayesestdft")
+    (synopsis
+     "Estimating the Degrees of Freedom of the Student's t-Distribution under a Bayesian Framework")
+    (description
+     "This package provides a Bayesian framework to estimate the Student's
+t-distribution's degrees of freedom is developed.  Markov Chain Monte Carlo
+sampling routines are developed as in <doi:10.3390/axioms11090462> to sample
+from the posterior distribution of the degrees of freedom.  A random walk
+Metropolis algorithm is used for sampling when Jeffrey's and Gamma priors are
+endowed upon the degrees of freedom.  In addition, the Metropolis-adjusted
+Langevin algorithm for sampling is used under the Jeffrey's prior specification.
+ The Log-normal prior over the degrees of freedom is posed as a viable choice
+with comparable performance in simulations and real-data application, against
+other prior choices, where an Elliptical Slice Sampler is used to sample from
+the concerned posterior.")
+    (license license:expat)))
+
 (define-public r-bayesess
   (package
     (name "r-bayesess")
@@ -26674,13 +26750,13 @@ and misclassified pixels.")
 (define-public r-bayesdp
   (package
     (name "r-bayesdp")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesDP" version))
        (sha256
-        (base32 "0li063187icw96shrbawfa00vkb42m5y38a4j2aahryajjlsva57"))))
+        (base32 "06lsip1sm8qs21jd6glw317n3yyyhavi6z85q65grwd00afza9ni"))))
     (properties `((upstream-name . "bayesDP")))
     (build-system r-build-system)
     (arguments
@@ -31074,13 +31150,13 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 (define-public r-bage
   (package
     (name "r-bage")
-    (version "0.7.4")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bage" version))
        (sha256
-        (base32 "1pld907impj1l4sbr8ndk9dsxcy6kzlb799pni2pqldriaax1xwc"))))
+        (base32 "0gwi563bgryxcvp3lw06qk9cp7blnz0272l87s3avk9n7gr75f7j"))))
     (properties `((upstream-name . "bage")))
     (build-system r-build-system)
     (arguments
@@ -31089,10 +31165,10 @@ name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
     (propagated-inputs (list r-vctrs
                              r-tmb
                              r-tibble
+                             r-sparsemvn
                              r-rvec
                              r-rcppeigen
                              r-poputils
-                             r-matrixstats
                              r-matrix
                              r-generics
                              r-cli))
@@ -31320,19 +31396,24 @@ Bayesian framework Morsomme, R.N., Holloway, S.T., Ryser, M.D. and Xu J. (2024)
 (define-public r-backtestgraphics
   (package
     (name "r-backtestgraphics")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "backtestGraphics" version))
        (sha256
-        (base32 "0q6hpq1i6x2aryr154y1c3d4a0hfjvdbzg2vi2zf05iias6yk9zs"))))
+        (base32 "0krf0b38x545p9gi2d7f861b19n797cnzmlfs7lpldqdx4kz9xii"))))
     (properties `((upstream-name . "backtestGraphics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xts r-shiny r-scales r-dygraphs r-dplyr))
+    (propagated-inputs (list r-xts
+                             r-tibble
+                             r-shiny
+                             r-scales
+                             r-dygraphs
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=backtestGraphics")
     (synopsis "Interactive Graphics for Portfolio Data")
     (description
@@ -31342,7 +31423,7 @@ credit default swaps.  The package does not run backtests on the given data set
 but displays a graphical explanation of the backtest results.  Users can look at
 backtest graphics for different instruments, investment strategies, and
 portfolios.  Summary statistics of different portfolio holdings are shown in the
-left panel, and interactive plots of profit and loss (P\\&L), net market value
+left panel, and interactive plots of profit and loss (P&L), net market value
 (NMV) and gross market value (GMV) are displayed in the right panel.")
     (license license:gpl3)))
 

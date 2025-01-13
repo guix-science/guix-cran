@@ -10,8 +10,8 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
@@ -626,6 +626,34 @@ include (1) testing a cluster-level constant proportional treatment effect
 cluster effect ratio.  To test the third estimand, user needs to install Gurobi
 (>= 9.0.1) optimizer via its R API. Please refer to
 <https://www.gurobi.com/documentation/9.0/refman/ins_the_r_package.html>.")
+    (license license:gpl3)))
+
+(define-public r-ivcor
+  (package
+    (name "r-ivcor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IVCor" version))
+       (sha256
+        (base32 "1x4jyha50q1dqcwsbfynbyy56a1yfga9rl8fhncds9rayyw3g3v8"))))
+    (properties `((upstream-name . "IVCor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quantreg r-quantdr r-bwquant))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=IVCor")
+    (synopsis "Robust Integrated Variance Correlation")
+    (description
+     "This package provides a integrated variance correlation is proposed to measure
+the dependence between a categorical or continuous random variable and a
+continuous random variable or vector.  This package is designed to estimate the
+new correlation coefficient with parametric and nonparametric approaches.  Test
+of independence for different problems can also be implemented via the new
+correlation coefficient with this package.")
     (license license:gpl3)))
 
 (define-public r-ivabss
@@ -1631,13 +1659,13 @@ information visit the IS@code{RaD} website at: <https://soilradiocarbon.org/>.")
 (define-public r-isr
   (package
     (name "r-isr")
-    (version "2022.4.22")
+    (version "2025-01-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISR" version))
        (sha256
-        (base32 "0j31qicbpjgl0igmk37qg10zng31xk6w4dd1izz5pzjwb3w9qkli"))))
+        (base32 "1pv24cz6c6v17qnhkcqnfrfji6lcx73av5klq86sw5xmsc6lsixg"))))
     (properties `((upstream-name . "ISR")))
     (build-system r-build-system)
     (arguments
@@ -1645,12 +1673,11 @@ information visit the IS@code{RaD} website at: <https://soilradiocarbon.org/>.")
       #:tests? #f))
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=ISR")
-    (synopsis "The Iterated Score Regression-Based Estimation Algorithm")
+    (synopsis "The Iterated Score Regression-Based Estimation")
     (description
-     "Algorithm to handle with PCA-based missing data, where ISR is for PCA-based
-missing data with high correlation and DISR is for distributed PCA-based missing
-data.  The philosophy of the package is described in Guo G. (2020)
-<doi:10.1080/02331888.2020.1823979>.")
+     "We use the ISR to handle with PCA-based missing data with high correlation, and
+the DISR to handle with distributed PCA-based missing data.  The philosophy of
+the package is described in Guo G. (2024) <doi:10.1080/03610918.2022.2091779>.")
     (license license:expat)))
 
 (define-public r-ispdata
@@ -1776,39 +1803,40 @@ adapted from Bowen et al. (2018, <doi:10.1007/s00442-018-4192-5>).")
 (define-public r-isotree
   (package
     (name "r-isotree")
-    (version "0.6.1-1")
+    (version "0.6.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotree" version))
        (sha256
-        (base32 "0v0lr1aimlvgm6bpnaz1z4707fnrqvzfc3rziz0vcbzgycs0abvd"))))
+        (base32 "14vn0460qnaf91030r15b3jr2w23hr3sqbpcbdg9n0pv1xz0vs1j"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-jsonlite))
+    (propagated-inputs (list r-rhpcblasctl r-rcpp r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/david-cortes/isotree")
     (synopsis "Isolation-Based Outlier Detection")
     (description
      "Fast and multi-threaded implementation of isolation forest (Liu, Ting, Zhou
 (2008) <doi:10.1109/ICDM.2008.17>), extended isolation forest (Hariri, Kind,
-Brunner (2018) <@code{arXiv:1811.02141>}), S@code{CiForest} (Liu, Ting, Zhou
-(2010) <doi:10.1007/978-3-642-15883-4_18>), fair-cut forest (Cortes (2021)
-<@code{arXiv:2110:13402>}), robust random-cut forest (Guha, Mishra, Roy,
-Schrijvers (2016) <http://proceedings.mlr.press/v48/guha16.html>), and
-customizable variations of them, for isolation-based outlier detection,
+Brunner (2018) <doi:10.48550/@code{arXiv.1811.02141>}), S@code{CiForest} (Liu,
+Ting, Zhou (2010) <doi:10.1007/978-3-642-15883-4_18>), fair-cut forest (Cortes
+(2021) <doi:10.48550/@code{arXiv.2110.13402>}), robust random-cut forest (Guha,
+Mishra, Roy, Schrijvers (2016) <http://proceedings.mlr.press/v48/guha16.html>),
+and customizable variations of them, for isolation-based outlier detection,
 clustered outlier detection, distance or similarity approximation (Cortes (2019)
-<@code{arXiv:1910.12362>}), isolation kernel calculation (Ting, Zhu, Zhou (2018)
-<doi:10.1145/3219819.3219990>), and imputation of missing values (Cortes (2019)
-<@code{arXiv:1911.06646>}), based on random or guided decision tree splitting,
-and providing different metrics for scoring anomalies based on isolation depth
-or density (Cortes (2021) <@code{arXiv:2111.11639>}).  Provides simple
-heuristics for fitting the model to categorical columns and handling missing
-data, and offers options for varying between random and guided splits, and for
-using different splitting criteria.")
+<doi:10.48550/@code{arXiv.1910.12362>}), isolation kernel calculation (Ting,
+Zhu, Zhou (2018) <doi:10.1145/3219819.3219990>), and imputation of missing
+values (Cortes (2019) <doi:10.48550/@code{arXiv.1911.06646>}), based on random
+or guided decision tree splitting, and providing different metrics for scoring
+anomalies based on isolation depth or density (Cortes (2021)
+<doi:10.48550/@code{arXiv.2111.11639>}).  Provides simple heuristics for fitting
+the model to categorical columns and handling missing data, and offers options
+for varying between random and guided splits, and for using different splitting
+criteria.")
     (license license:bsd-2)))
 
 (define-public r-isotracer
@@ -2144,13 +2172,13 @@ soil texture charts, ceramic phase diagram).")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopam" version))
        (sha256
-        (base32 "1sl2z73133wilgrs68gsnkszg7rhqsn2jifnnj0nmig1rp13abr1"))))
+        (base32 "0c6kwvdv629dv7paqhv1jhfjdfyvmh0bz8jmb3qxzicwd7p92dac"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (arguments
@@ -5760,32 +5788,6 @@ requires IP2Location Python module.  At the terminal, please run pip install
 IP2Location to install the module.")
     (license license:expat)))
 
-(define-public r-ip
-  (package
-    (name "r-ip")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IP" version))
-       (sha256
-        (base32 "0m2xmash5371iaw1mdf6245702mwaahv2ds5995f9q8ys3h4kspj"))))
-    (properties `((upstream-name . "IP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://cran.r-project.org/package=IP")
-    (synopsis "Classes and Methods for 'IP' Addresses")
-    (description
-     "This package provides S4 classes for Internet Protocol (IP) versions 4 and 6
-addresses and efficient methods for IP addresses comparison, arithmetic, bit
-manipulation and lookup.  Both IPv4 and IPv6 arbitrary ranges are also supported
-as well as internationalized (IDN) domain lookup with and whois query.")
-    (license license:gpl2+)))
-
 (define-public r-iotarelr
   (package
     (name "r-iotarelr")
@@ -6356,6 +6358,50 @@ used to simulate the prior and posterior predictive distributions.  More details
 can be found in Cahoy and Sedransk (2019) <doi:10.1007/s42519-018-0027-2>.  The
 package can also be used as a teaching demo for introductory Bayesian courses.")
     (license license:gpl3+)))
+
+(define-public r-invivopkfit
+  (package
+    (name "r-invivopkfit")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "invivoPKfit" version))
+       (sha256
+        (base32 "04d0qlkddjwkcznaw2amfqp0b6v0rxm0npn1ahm1bs0xkkkfiqg1"))))
+    (properties `((upstream-name . "invivoPKfit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-pracma
+                             r-pk
+                             r-optimx
+                             r-numderiv
+                             r-multidplyr
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-httk
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-devtools
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=invivoPKfit")
+    (synopsis "Fits Toxicokinetic Models to In Vivo PK Data Sets")
+    (description
+     "Takes in vivo toxicokinetic concentration-time data and fits parameters of
+1-compartment and 2-compartment models for each chemical.  These methods are
+described in detail in \"Informatics for Toxicokinetics\" (submitted).")
+    (license license:gpl3)))
 
 (define-public r-invgauss
   (package
@@ -7081,13 +7127,13 @@ provided by Chen (2016) <doi:10.2139/ssrn.3101695>.")
 (define-public r-intnmf
   (package
     (name "r-intnmf")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IntNMF" version))
        (sha256
-        (base32 "09qzyvv7d4wr68qrlhcd4ivr65is3mypv1vaxpswwcjmcmyr4gzp"))))
+        (base32 "1cfkcaa96i2hq5rw9i1gx6r0xy3p21k3rgc99qjj35q7nj8pr4l2"))))
     (properties `((upstream-name . "IntNMF")))
     (build-system r-build-system)
     (arguments
@@ -7446,13 +7492,13 @@ statistics.")
 (define-public r-intersim
   (package
     (name "r-intersim")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InterSIM" version))
        (sha256
-        (base32 "14yccan88szf26w1hg1lkvmssids961gng7il3bjr2f1l0k8vd3b"))))
+        (base32 "1k089ans63lphs7v04dbfarmi8vdwlmvkkvihm36lj3kfpzp0a9n"))))
     (properties `((upstream-name . "InterSIM")))
     (build-system r-build-system)
     (arguments
@@ -7462,8 +7508,11 @@ statistics.")
     (home-page "https://cran.r-project.org/package=InterSIM")
     (synopsis "Simulation of Inter-Related Genomic Datasets")
     (description
-     "Generates three inter-related genomic datasets : methylation, gene expression
-and protein expression.")
+     "Generates three inter-related genomic datasets: methylation, gene expression and
+protein expression having user specified cluster patterns.  The simulation
+utilizes the realistic inter- and intra- relationships from real DNA
+methylation, @code{mRNA} expression and protein expression data from the TCGA
+ovarian cancer study, Chalise (2016) <doi:10.1016/j.cmpb.2016.02.011>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-inters
@@ -9465,13 +9514,13 @@ Details can be found in the accompanying scientific paper: Koenen & Wright
 (define-public r-inlpubs
   (package
     (name "r-inlpubs")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlpubs" version))
        (sha256
-        (base32 "1l9xngsia76yfq3g550nwgj7s2d33jl0s2k7f89majvkaxldbs47"))))
+        (base32 "108jxs1qp4ypcw0c4rkybhh1dxydiy8gy3d4lfz1d7vf93gk3jji"))))
     (properties `((upstream-name . "inlpubs")))
     (build-system r-build-system)
     (arguments
@@ -11968,19 +12017,19 @@ using the algorithm of Sharma et al. (2017) <doi:10.13140/RG.2.2.33786.62407>.")
 (define-public r-imuf
   (package
     (name "r-imuf")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imuf" version))
        (sha256
-        (base32 "10jwp0yrvgwpy6y9wmplwcjpavds4kzhhf3y80yvh1l6pw5yi9yd"))))
+        (base32 "08h38wcln48nn1gn59b469l9g2kkwrszrfg75zwpcv6n7xir13gg"))))
     (properties `((upstream-name . "imuf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-htmlwidgets r-htmltools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gitboosting/imuf")
     (synopsis "Estimate Orientation of an Inertial Measurement Unit")
@@ -11990,7 +12039,7 @@ accelerometer and a 3-axis gyroscope using a complementary filter.  imuf takes
 an IMU's accelerometer and gyroscope readings, time duration, its initial
 orientation, and a gain factor as inputs, and returns an estimate of the IMU's
 final orientation.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-imtest
   (package
@@ -14604,13 +14653,13 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
 (define-public r-ilsamerge
   (package
     (name "r-ilsamerge")
-    (version "1.3.0")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAmerge" version))
        (sha256
-        (base32 "14r2wrn617dii8pdvpab73bi6akmvgv06rnrkf1bd0823kaispdr"))))
+        (base32 "1l3bx0ysa2h2rc1avyjpidz3g0h5hngxsivdwgjrzvg2m149lm0w"))))
     (properties `((upstream-name . "ILSAmerge")))
     (build-system r-build-system)
     (arguments
@@ -14624,8 +14673,8 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
     (description
      "Merges and downloads SPSS data from different International Large-Scale
 Assessments (ILSA), including: Trends in International Mathematics and Science
-Study (TIMSS), Progress in International Reading Literacy Study (PIRLS),
-Programme for International Student Assessment (PISA), and others.")
+Study (TIMSS), Progress in International Reading Literacy Study (PIRLS), and
+others.")
     (license license:gpl3+)))
 
 (define-public r-ils
@@ -15737,19 +15786,19 @@ association data, especially with large controls re-sequenced data.")
 (define-public r-iforecast
   (package
     (name "r-iforecast")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iForecast" version))
        (sha256
-        (base32 "184nfvh7syrhsifpdk3ma4spsmil52q0lih5l4sc02gx06za5drb"))))
+        (base32 "1z2zf2hni9670f1svs10nck584rwb8pz1psxah6q4h7xnpqbfv10"))))
     (properties `((upstream-name . "iForecast")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-magrittr r-caret))
+    (propagated-inputs (list r-zoo r-caret))
     (home-page "https://cran.r-project.org/package=iForecast")
     (synopsis "Machine Learning Time Series Forecasting")
     (description

@@ -875,42 +875,6 @@ generalised linear models, linear models with negative constraints, generalised
 additive models,shape constrained additive models, and I-splines.")
     (license license:gpl3)))
 
-(define-public r-zerotradeflow
-  (package
-    (name "r-zerotradeflow")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "zerotradeflow" version))
-       (sha256
-        (base32 "03fvhk3yd6grqs0d6m3j537xzy0n9s64947g7gagaqbrm3n8j1m6"))))
-    (properties `((upstream-name . "zerotradeflow")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-dplyr
-                             r-cli))
-    (home-page "https://github.com/AlexandreLoures/zerotradeflow")
-    (synopsis "An Implementation for the Gravitational Models of Trade")
-    (description
-     "This package provides a system for creating the bilateral trade flow between a
-country pair equal to zero.  You provide the data, tell
-@code{get_zerotradeflow()} which variables are of interest and it expands the
-base by creating the bilateral zero trade flow.  The bases on the flow of trade
-between countries only report positive trade (greater than zero), however, for
-some analyzes of gravitacional models, data on zero flow is also necessary.
-Some examples for Gravity Model: Figueiredo and Loures (2016)
-<doi:10.5935/0034-7140.20160015> and Yotov, Piermartini, Monteiro and Larch
-<https://vi.unctad.org/tpa/web/docs/vol2/book.pdf>.")
-    (license license:expat)))
-
 (define-public r-zeroeqpart
   (package
     (name "r-zeroeqpart")

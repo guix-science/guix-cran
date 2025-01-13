@@ -1866,13 +1866,13 @@ observations are provided.")
 (define-public r-mvhtests
   (package
     (name "r-mvhtests")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvhtests" version))
        (sha256
-        (base32 "1820d8gd2rmszqp3kd5d01c5v2znxm1l6dm7cjr4mn51v1rxzhhk"))))
+        (base32 "1dqvci7n3m6ccb6gsiksql84gzqspcy56iq2kplcf3xi31mlnr5h"))))
     (properties `((upstream-name . "mvhtests")))
     (build-system r-build-system)
     (arguments
@@ -2185,13 +2185,13 @@ with univariate or multivariate responses.")
 (define-public r-mvcor
   (package
     (name "r-mvcor")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvcor" version))
        (sha256
-        (base32 "0i9g2h05cwhkiaryzb2ghr1ix3i27bpxmvnay5vgrc36k5dmllyr"))))
+        (base32 "0him20r0p9h8r03di93q11f066m40ijvm3hgcj9s3bnnn3jdc45b"))))
     (properties `((upstream-name . "mvcor")))
     (build-system r-build-system)
     (arguments
@@ -5305,13 +5305,13 @@ Models include longitudinal generalized linear models (Liang and Zeger, 1986)
 (define-public r-multilevelmediation
   (package
     (name "r-multilevelmediation")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevelmediation" version))
        (sha256
-        (base32 "0aq38qz4i05sn3qa1f0lwpf57r4aya30i028gfdj66w0nh766pg0"))))
+        (base32 "1qdwpdcicd67b9i5z9svw3pfh2raxy9cn8kcbdyn229vnmzh3273"))))
     (properties `((upstream-name . "multilevelmediation")))
     (build-system r-build-system)
     (arguments
@@ -5323,6 +5323,7 @@ Models include longitudinal generalized linear models (Liang and Zeger, 1986)
                              r-nlme
                              r-mcmcpack
                              r-matrixcalc
+                             r-glmmtmb
                              r-future
                              r-furrr
                              r-brms))
@@ -6353,13 +6354,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "07kcdgfqmgdw7da81z88mz4fcxv7pwr1bxd834xs3z1v6bh444bk"))))
+        (base32 "1nwcrcvrcbjcrcn6mw7ssyn8j3yxgmqfykj172gnl7kzp40lijlw"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (arguments
@@ -9606,34 +9607,6 @@ science courses at the MÃ¼nster School of Business.  The datasets refer to
 different business topics but also other domains, e.g. sports, traffic, etc.")
     (license license:gpl3+)))
 
-(define-public r-msbp
-  (package
-    (name "r-msbp")
-    (version "1.4-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "msBP" version))
-       (sha256
-        (base32 "1n833ghqh9n5m2qx8njsq5njbcap67y1v71a0vm1p2igh0f8b54i"))))
-    (properties `((upstream-name . "msBP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=msBP")
-    (synopsis "Multiscale Bernstein Polynomials for Densities")
-    (description
-     "This package performs Bayesian nonparametric multiscale density estimation and
-multiscale testing of group differences with multiscale Bernstein polynomials
-(@code{msBP}) mixtures as in Canale and Dunson (2016).")
-    (license license:gpl2)))
-
 (define-public r-msbox
   (package
     (name "r-msbox")
@@ -11027,13 +11000,13 @@ analyses.")
 (define-public r-mratios
   (package
     (name "r-mratios")
-    (version "1.4.2")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mratios" version))
        (sha256
-        (base32 "18pi0dks0qmw0gv76yqm4gvxdqrcvr25j1vb8k4mkp5p35kzkzff"))))
+        (base32 "00gnbpxzphhbq5ryjljswggksywng21wf1klb870wxjm5zhdr84a"))))
     (properties `((upstream-name . "mratios")))
     (build-system r-build-system)
     (arguments
@@ -13296,19 +13269,24 @@ description of the method see Pascariu et al. (2017).
 (define-public r-mortaar
   (package
     (name "r-mortaar")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mortAAR" version))
        (sha256
-        (base32 "1n3s704k2lqpcbzk8rqa28jcqz37g2bdjkj6x1bygcbfdic2z0dc"))))
+        (base32 "0xw904x458lnmlajrz2arzjd2w5npcbxgifjawswdwcnjli6q6p5"))))
     (properties `((upstream-name . "mortAAR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-reshape2 r-rdpack r-magrittr))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-reshape2
+                             r-rdpack
+                             r-magrittr
+                             r-flexsurv))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ISAAKiel/mortAAR")
     (synopsis "Analysis of Archaeological Mortality Data")
@@ -13318,7 +13296,9 @@ archaeological mortality data (on the topic see e.g. Chamberlain 2006
 <https://books.google.de/books?id=@code{nG5FoO_becAC&lpg=PA27&ots=LG0b_xrx6O&dq=life%20table%20archaeology&pg=PA27#v=onepage&q&f=false>}).
  It takes demographic data in different formats and displays the result in a
 standard life table as well as plots the relevant indices (percentage of deaths,
-survivorship, probability of death, life expectancy, percentage of population).")
+survivorship, probability of death, life expectancy, percentage of population).
+It also checks for possible biases in the age structure and applies corrections
+to life tables.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -13392,13 +13372,13 @@ survival (GUTS).  See our companion paper Baudrot and Charles (2021)
 (define-public r-morrowplots
   (package
     (name "r-morrowplots")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "morrowplots" version))
        (sha256
-        (base32 "09kpsarbv32cylr0qp067m184lnj95p50ayi49w7sgwrs70xdanb"))))
+        (base32 "1c88nwbp0h2kvmv3k22dsdvh2r9agwkbv2gcgiv3grj0a27mxbk8"))))
     (properties `((upstream-name . "morrowplots")))
     (build-system r-build-system)
     (arguments
@@ -13531,13 +13511,13 @@ fitting and plotting options.")
 (define-public r-morphomenses
   (package
     (name "r-morphomenses")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moRphomenses" version))
        (sha256
-        (base32 "058bm66w688y5awxvvph9wqm4haf4fd158crx2alh18vqwfbh387"))))
+        (base32 "1jv63sd27mf9zbn24r92jlhf52y76ljjwvi734hrgma6nxskpljr"))))
     (properties `((upstream-name . "moRphomenses")))
     (build-system r-build-system)
     (arguments
@@ -14055,6 +14035,34 @@ examples and a shiny app.")
 elements taking advantage of the power that R offers.  In this first version, it
 allows the definition of questions to be included in the question bank.")
     (license license:expat)))
+
+(define-public r-moode
+  (package
+    (name "r-moode")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MOODE" version))
+       (sha256
+        (base32 "198i665rhc7kibl5z3gjkk7m8hsnrlyb7w3dg8qh2jb7358qwf2r"))))
+    (properties `((upstream-name . "MOODE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rdpack r-progressr r-far r-cli))
+    (home-page "https://github.com/vkstats/MOODE")
+    (synopsis "Multi-Objective Optimal Design of Experiments")
+    (description
+     "This package provides functionality to generate compound optimal designs for
+targeting the multiple experimental objectives directly, ensuring that the full
+set of research questions is answered as economically as possible.  Designs can
+be found using point or coordinate exchange algorithms combining estimation,
+inference and lack-of-fit criteria that account for model inadequacy.  Details
+and examples are given by Koutra et al. (2024)
+<doi:10.48550/@code{arXiv.2412.17158>}.")
+    (license license:gpl3+)))
 
 (define-public r-moocore
   (package
@@ -16916,13 +16924,13 @@ with easy-to-remember syntax.")
 (define-public r-modeler
   (package
     (name "r-modeler")
-    (version "3.4.5")
+    (version "3.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Modeler" version))
        (sha256
-        (base32 "15gbg5568qj81wp6yy31amb2b7wl1wvlmgpmdp29lvz1p33jx2y1"))))
+        (base32 "1drfdcj7vd9a0a83wn39i4lz8n6dgb0m9qip3p5ky2rplzmncx59"))))
     (properties `((upstream-name . "Modeler")))
     (build-system r-build-system)
     (arguments
@@ -20369,13 +20377,13 @@ and prediction are supported for packages terra', raster and stars'.")
 (define-public r-mlr3shiny
   (package
     (name "r-mlr3shiny")
-    (version "0.3.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3shiny" version))
        (sha256
-        (base32 "0rv5ybg6l1n7j6gq8wmvl1gd1mdmqd52vl91hkpv9k1l1w8m8mph"))))
+        (base32 "025mqkcagkmck63pg9r7wa53a0a6z8mn7cmiwf9ds2nava9v8795"))))
     (properties `((upstream-name . "mlr3shiny")))
     (build-system r-build-system)
     (arguments
@@ -20390,11 +20398,14 @@ and prediction are supported for packages terra', raster and stars'.")
                              r-purrr
                              r-plyr
                              r-patchwork
+                             r-mlr3viz
                              r-mlr3pipelines
                              r-mlr3measures
                              r-mlr3learners
                              r-mlr3
                              r-metrics
+                             r-ggparty
+                             r-ggally
                              r-dt
                              r-dplyr
                              r-data-table))
@@ -20853,19 +20864,20 @@ underlying methods in Train (2009) <doi:10.1017/CBO9780511805271>.")
 (define-public r-mlmusingr
   (package
     (name "r-mlmusingr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLMusingR" version))
        (sha256
-        (base32 "0ra3r9qrjv6pl36c0imvwzkkm12jk0xpm60n08siys3pj57ljh8z"))))
+        (base32 "1861gw4wb426d575g12x7ia1vqh2d8cm60m4m9nj59pwvv5kvcqk"))))
     (properties `((upstream-name . "MLMusingR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-wemix
+                             r-tibble
                              r-performance
                              r-nlme
                              r-matrix
@@ -23445,13 +23457,13 @@ normal and t mixture models.")
 (define-public r-mixlm
   (package
     (name "r-mixlm")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixlm" version))
        (sha256
-        (base32 "0ghs818zdlrjs390223qrr69amx3ca9zfdc7w1sapj5np70wmljb"))))
+        (base32 "0hy6rrxm8dpl3ljhnj8n5smrcyv3kq9cziwf9bxsqf3h1iwk54vh"))))
     (properties `((upstream-name . "mixlm")))
     (build-system r-build-system)
     (arguments
@@ -26119,13 +26131,13 @@ MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "1.3.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "0gyhbipql7gsd9mb2ks334k44zs8pmc0bvxkwg80wmbai0h5576d"))))
+        (base32 "0ri2bayqpbsxcq5r5nd0pv47dzbiwwajvsjd3a06jc0n3zhfjdqm"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (arguments
@@ -31970,13 +31982,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-mets
   (package
     (name "r-mets")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mets" version))
        (sha256
-        (base32 "0yisa6v0apxxw5ycjhc3hcghlmvzzaq431z8nzsrw5jc2g13c0ca"))))
+        (base32 "0ccc0arq55dz1dnq166616ybja5jwgqi6lvm3x072cmr9li24w4s"))))
     (properties `((upstream-name . "mets")))
     (build-system r-build-system)
     (arguments
@@ -35818,13 +35830,13 @@ clean, tidy data frames so that students have a clean example to work towards.")
 (define-public r-messi
   (package
     (name "r-messi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "messi" version))
        (sha256
-        (base32 "1z3fjxfmvxc9zr98zmkd84rj27iabjmw71hwqgnbjwcw5mnw2b5h"))))
+        (base32 "1mnhyfhjgvzaf80czxbavc98vdcfg783fjk60kxzm39822wzz3kz"))))
     (properties `((upstream-name . "messi")))
     (build-system r-build-system)
     (arguments
@@ -35832,11 +35844,10 @@ clean, tidy data frames so that students have a clean example to work towards.")
       #:tests? #f))
     (propagated-inputs (list r-progress r-patchwork r-mass r-ggplot2))
     (home-page "https://github.com/umich-cphds/messi")
-    (synopsis
-     "Mediation Analysis with External Summary-Level Information on Total Effect")
+    (synopsis "Mediation with External Summary Statistic Information")
     (description
-     "Fits the hard constraint, soft constraint, and unconstrained models in Boss et
-al. (2023) <@code{arXiv:2306.17347>} for mediation analyses with external
+     "Fits the MESSI, hard constraint, and unconstrained models in Boss et al. (2023)
+<doi:10.48550/@code{arXiv.2306.17347>} for mediation analyses with external
 summary-level information on the total effect.")
     (license license:gpl2)))
 
@@ -36502,20 +36513,19 @@ performance by eliminating unnecessary computation or data retrieval activities.
 (define-public r-memochange
   (package
     (name "r-memochange")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memochange" version))
        (sha256
-        (base32 "144134kpchb7ps8b2g7pyga5add0iqphzcwygf11aybmbzmp90x7"))))
+        (base32 "04qv201vcyfipp7p32i9b1paanimbi3h39mzsx26b7nm46pp1nws"))))
     (properties `((upstream-name . "memochange")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-urca
-                             r-strucchange
+    (propagated-inputs (list r-strucchange
                              r-sandwich
                              r-longmemoryts
                              r-longmemo
@@ -44502,13 +44512,13 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.6.0")
+    (version "4.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchIt" version))
        (sha256
-        (base32 "05d8ms2q26jyis7i5jzh67y5wdf2hma81syg3np0mxmjninwfxvs"))))
+        (base32 "0z1si29hlnnq4ax4hg5zxxx5a5szg163bwafs68ki4wmvw4wbc6b"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (arguments
@@ -50424,6 +50434,42 @@ probabilities.")
 multidimensional-valued functions with respect to multidimensional independent
 variables.  Automatic differentiation is via forward accumulation'.")
     (license license:lgpl3)))
+
+(define-public r-madmmplasso
+  (package
+    (name "r-madmmplasso")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MADMMplasso" version))
+       (sha256
+        (base32 "1r6xdhx7hkvj10r498qwpvkv0b4sw2di2qpz8avca12av9wav1q5"))))
+    (properties `((upstream-name . "MADMMplasso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-sparse
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-foreach
+                             r-doparallel
+                             r-class))
+    (home-page "https://cran.r-project.org/package=MADMMplasso")
+    (synopsis "Multi Variate Multi Response ADMM with Interaction Effects")
+    (description
+     "This system allows one to model a multi-variate, multi-response problem with
+interaction effects.  It combines the usual squared error loss for the
+multi-response problem with some penalty terms to encourage responses that
+correlate to form groups and also allow for modeling main and interaction
+effects that exit within the covariates.  The optimization method employed is
+the Alternating Direction Method of Multipliers (ADMM).  The implementation is
+based on the methodology presented on Quachie Asenso, T., & Zucknick, M. (2023)
+<doi:10.48550/@code{arXiv.2303.11155>}.")
+    (license license:gpl3)))
 
 (define-public r-maditr
   (package

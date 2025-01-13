@@ -1665,6 +1665,29 @@ application.  The computation of the Voronoi treemaps are based on Nocaj and
 Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
     (license license:gpl3)))
 
+(define-public r-voronoifortune
+  (package
+    (name "r-voronoifortune")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "voronoifortune" version))
+       (sha256
+        (base32 "1birs9wv2if7c9cxn0lr12ks7mh2vmxhbwicbcswiy359psjcb6a"))))
+    (properties `((upstream-name . "voronoifortune")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/emmanuelparadis/voronoifortune")
+    (synopsis "Voronoi Tessellation by Fortune Algorithm")
+    (description
+     "Fortune's (1987, <doi:10.1007/BF01840357>) algorithm is a very efficient method
+to perform Voronoi tessellation and Delaunay triangulation.  This package is a
+port of the original code published in the early 1990's by Steven Fortune.")
+    (license license:gpl3)))
+
 (define-public r-volumodel
   (package
     (name "r-volumodel")
@@ -4106,42 +4129,16 @@ linear regression.  This package aims to be a simple and quick visualization
 tool for comparing means and assessing trends of categorical factors.")
     (license license:gpl3)))
 
-(define-public r-vines
-  (package
-    (name "r-vines")
-    (version "1.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vines" version))
-       (sha256
-        (base32 "057d2fdh03cq9kh4vz94arqscahmz14xbr2g59l0vn205lnyilf1"))))
-    (properties `((upstream-name . "vines")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tsp r-cubature r-copula r-adgoftest))
-    (home-page "https://github.com/yasserglez/vines")
-    (synopsis "Multivariate Dependence Modeling with Vines")
-    (description
-     "Implementation of the vine graphical model for building high-dimensional
-probability distributions as a factorization of bivariate copulas and marginal
-density functions.  This package provides S4 classes for vines (C-vines and
-D-vines) and methods for inference, goodness-of-fit tests, density/distribution
-function evaluation, and simulation.")
-    (license license:gpl2+)))
-
 (define-public r-vinereg
   (package
     (name "r-vinereg")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vinereg" version))
        (sha256
-        (base32 "0r4xg3a2mk7030z2vc1w5g0390vkhbnq757cj9j5imki2ii2xfnz"))))
+        (base32 "0a6sh34fn9p1lnb9qwzy6iwz5mm5x25zgsj5fscc8d5l8kspxdcx"))))
     (properties `((upstream-name . "vinereg")))
     (build-system r-build-system)
     (arguments
@@ -4162,7 +4159,7 @@ function evaluation, and simulation.")
      "This package implements D-vine quantile regression models with parametric or
 nonparametric pair-copulas.  See Kraus and Czado (2017)
 <doi:10.1016/j.csda.2016.12.009> and Schallhorn et al. (2017)
-<@code{arXiv:1705.08310>}.")
+<doi:10.48550/@code{arXiv.1705.08310>}.")
     (license license:gpl3)))
 
 (define-public r-vinecopula
@@ -5894,6 +5891,40 @@ import/export routines for exchange of data with Juice
 manner.  Start and end dates of the vegetation periods are calculated solely
 based on daily mean temperatures and the day of the year.")
     (license license:gpl3+)))
+
+(define-public r-vegindexcalc
+  (package
+    (name "r-vegindexcalc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vegIndexCalc" version))
+       (sha256
+        (base32 "1wcns71sw91d643p5mk2vyy4iq8a0v5sa0g1a6x4yx25zlqpxgic"))))
+    (properties `((upstream-name . "vegIndexCalc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=vegIndexCalc")
+    (synopsis
+     "Vegetation Indices (VIs) Calculation for Remote Sensing Analysis")
+    (description
+     "It provides a comprehensive toolkit for calculating a suite of common vegetation
+indices (VIs) derived from remote sensing imagery.  VIs are essential tools used
+to quantify vegetation characteristics, such as biomass, leaf area index (LAI)
+and photosynthetic activity, which are essential parameters in various
+ecological, agricultural, and environmental studies.  Applications of this
+package include biomass estimation, crop monitoring, forest management, land use
+and land cover change analysis and climate change studies.  For method details
+see, Deb,D.,Deb,S.,Chakraborty,D.,Singh,J.P.,Singh,A.K.,Dutta,P.and
+Choudhury,A.(2020)<doi:10.1080/10106049.2020.1756461>.  Utilizing this R
+package, users can effectively extract and analyze critical information from
+remote sensing imagery, enhancing their comprehension of vegetation dynamics and
+their importance in global ecosystems.  The package includes the function
+@code{vegetation_indices()}.")
+    (license license:gpl3)))
 
 (define-public r-vegdata
   (package
@@ -8199,6 +8230,38 @@ algorithms and related extensions from Safikhani and Shojaie (2020)
 <doi:10.1109/TSP.2020.2993145>.")
     (license license:gpl2)))
 
+(define-public r-varcpdetectonline
+  (package
+    (name "r-varcpdetectonline")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VARcpDetectOnline" version))
+       (sha256
+        (base32 "1yqavkqfg0qqdkv59gix0vb62pyrb6dz2cwd63nr97vs6sdp5bhb"))))
+    (properties `((upstream-name . "VARcpDetectOnline")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sparsevar r-mass))
+    (home-page "https://github.com/Helloworld9293/VARcpDetectOnline")
+    (synopsis
+     "Sequential Change Point Detection for High-Dimensional VAR Models")
+    (description
+     "This package implements the algorithm introduced in Tian, Y., and Safikhani, A.
+(2024) <doi:10.5705/ss.202024.0182>, \"Sequential Change Point Detection in
+High-dimensional Vector Auto-regressive Models\".  This package provides tools
+for detecting change points in the transition matrices of Vector Auto-Regressive
+(VAR) models, effectively identifying shifts in temporal and cross-correlations
+within high-dimensional time series data.  The package includes functions to
+generate synthetic VAR data, detect change points in high-dimensional time
+series, and analyze real-world data.  It also demonstrates an application to
+financial data: the daily log returns of 186 S&P 500 stocks from 2004-02-06 to
+2016-03-02.")
+    (license license:expat)))
+
 (define-public r-varclust
   (package
     (name "r-varclust")
@@ -8453,13 +8516,13 @@ support vector machine, the contamination of a sample can be detected.")
 (define-public r-vannstats
   (package
     (name "r-vannstats")
-    (version "1.3.4.14")
+    (version "1.5.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vannstats" version))
        (sha256
-        (base32 "0fzs2w2rqmdl4a595xi34l7b0sw68yik3yv4mxzqfznwsxiaj8m4"))))
+        (base32 "1qmrvkh5hc9glna9911i8m8c5ywd6iz7x96ibg9ba3kgh70q9537"))))
     (properties `((upstream-name . "vannstats")))
     (build-system r-build-system)
     (arguments
@@ -8476,9 +8539,10 @@ support vector machine, the contamination of a sample can be detected.")
                              r-ggplot2
                              r-gdata
                              r-formula-tools
-                             r-dplyr))
+                             r-dplyr
+                             r-desctools))
     (home-page "https://cran.r-project.org/package=vannstats")
-    (synopsis "Simplified Statistics for PA 606")
+    (synopsis "Simplified Statistical Procedures for Social Sciences")
     (description
      "Simplifies functions assess normality for bivariate and multivariate statistical
 techniques.  Includes functions designed to replicate plots and tables that

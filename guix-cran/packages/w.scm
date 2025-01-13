@@ -2596,13 +2596,13 @@ given parallel corpus.")
 (define-public r-worcs
   (package
     (name "r-worcs")
-    (version "0.1.16")
+    (version "0.1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worcs" version))
        (sha256
-        (base32 "0xmqa17y5glsz0xicr3fm0j4dhgv9rczy2hqkbdl0nnalni0a8n2"))))
+        (base32 "1pbl6vnxmf21lcscq1rg7k3j0mj1i4y4j71g79rxd9vnl2jryrcm"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
     (arguments
@@ -2614,6 +2614,7 @@ given parallel corpus.")
                              r-tinytex
                              r-rticles
                              r-rmarkdown
+                             r-rlang
                              r-renv
                              r-ranger
                              r-prereg
@@ -6911,13 +6912,13 @@ to web development.")
 (define-public r-webdav
   (package
     (name "r-webdav")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webdav" version))
        (sha256
-        (base32 "1llqzzh7rlrs7f2d4kb9y7n5fgiv1n2fkm07jh3kbv3yzi5x3yy1"))))
+        (base32 "0zad3cjq8y2naa3rnjjswhcj355wzq62kc02m07zg0q731ajhkz7"))))
     (properties `((upstream-name . "webdav")))
     (build-system r-build-system)
     (arguments

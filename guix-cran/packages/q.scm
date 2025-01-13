@@ -212,13 +212,13 @@ measures of approximation error.")
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "19ac7xkpnxdf8dkiasb9rsyac4nv9g4fldjss3zm57ahl9yvycbd"))))
+        (base32 "1dclgb9vxk9plgl6rj3l12hwzz94skpwcywhi254zyqwb6q5v3xl"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
     (arguments
@@ -729,33 +729,6 @@ could build regression models automatically, extract results into a data frame
 and provide a quicker way to summarize models statistical findings using
 ggplot2'.")
     (license license:gpl2)))
-
-(define-public r-quickpwcr
-  (package
-    (name "r-quickpwcr")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quickPWCR" version))
-       (sha256
-        (base32 "1igxjrmli16lxf07xawkslb8gkas63sdpmxrl07vfwl8yq8n6wwl"))))
-    (properties `((upstream-name . "quickPWCR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-pbmcapply r-dplyr))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=quickPWCR")
-    (synopsis
-     "Quickly construct and rating large binary pairwiesd comparisons")
-    (description
-     "This package provides a collection of functions for constructing large pairwised
-comparisons and rating them using Elo rating system with supporting parallel
-processing.  The method of random sample pairs is based on Reservoir Sampling
-proposed by JVitter (1985) <doi:10.1145/3147.3165>.")
-    (license license:gpl3)))
 
 (define-public r-quickpsy
   (package
@@ -2106,13 +2079,13 @@ al.(2019) <doi:10.1186/s12874-019-0666-3>.")
 (define-public r-quantbondcurves
   (package
     (name "r-quantbondcurves")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuantBondCurves" version))
        (sha256
-        (base32 "1w6zlf8wvfh4568aa0l9l3p502hjmj8lhnkagv6dqg332jz0ikhr"))))
+        (base32 "0x4yirvdqg56n70va7kdnj4xlxbxl3w33q2m9rilcr27fg13wrf1"))))
     (properties `((upstream-name . "QuantBondCurves")))
     (build-system r-build-system)
     (arguments
@@ -5639,13 +5612,13 @@ fatty acid signature analysis (QFASA) to study predator diets.")
 (define-public r-qfa
   (package
     (name "r-qfa")
-    (version "3.1")
+    (version "4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qfa" version))
        (sha256
-        (base32 "1f16xw2nilhv99gg5a5pxi5hsnsw0njrjcq0nj3jkjbxn6z8688b"))))
+        (base32 "1jp1b4vd8p3fkbfddxi67zli11rvi6f9zc1jxpw93czi5ird51bf"))))
     (properties `((upstream-name . "qfa")))
     (build-system r-build-system)
     (arguments
@@ -5665,14 +5638,17 @@ fatty acid signature analysis (QFASA) to study predator diets.")
     (synopsis "Quantile-Frequency Analysis (QFA) of Time Series")
     (description
      "Quantile-frequency analysis (QFA) of time series based on trigonometric quantile
-regression.  References: [1] Li, T.-H. (2012) \"Quantile periodograms\", Journal
+regression.  Spline quantile regression (SQR) for regression coefficient
+estimation.  References: [1] Li, T.-H. (2012) \"Quantile periodograms\", Journal
 of the American Statistical Association, 107, 765â776,
 <doi:10.1080/01621459.2012.682815>. [2] Li, T.-H. (2014) Time Series with Mixed
 Spectra, CRC Press, <doi:10.1201/b15154> [3] Li, T.-H. (2022) \"Quantile Fourier
 transform, quantile series, and nonparametric estimation of quantile spectra\",
 <doi:10.48550/@code{arXiv.2211.05844>}. [4] Li, T.-H. (2024) \"Quantile crossing
 spectrum and spline autoregression estimation,\"
-<doi:10.48550/@code{arXiv.2412.02513>}.")
+<doi:10.48550/@code{arXiv.2412.02513>}. [5] Li, T.-H. (2024) \"Spline
+autoregression method for estimation of quantile spectrum\",
+<doi:10.48550/@code{arXiv.2412.17163>}.")
     (license license:gpl2+)))
 
 (define-public r-qf
@@ -6484,13 +6460,13 @@ minimal causal configuration associated with a given phenomenon.")
 (define-public r-qbr
   (package
     (name "r-qbr")
-    (version "1.2.4")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qbr" version))
        (sha256
-        (base32 "0licmg1599dvzc6h9s9h29m9zx1l4wd7mwnwl13wcsp7mwdr4s6j"))))
+        (base32 "12ryph64x3219fcsnx59xpr9wf22d7akqz6y8znc52xz6ikmrkry"))))
     (properties `((upstream-name . "qbr")))
     (build-system r-build-system)
     (arguments
@@ -6690,6 +6666,41 @@ automatic item generation (AIG) focused on generating quantitative
 multiple-choice type of items (see Embretson, Kingston (2018)
 <doi:10.1111/jedm.12166>).")
     (license license:gpl3)))
+
+(define-public r-qaensemble
+  (package
+    (name "r-qaensemble")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QAEnsemble" version))
+       (sha256
+        (base32 "1w4bw8h6glvl1g0p0kwykk36y19wp1kmm57sqisc5zgq4zxnhgdr"))))
+    (properties `((upstream-name . "QAEnsemble")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=QAEnsemble")
+    (synopsis
+     "Ensemble Quadratic and Affine Invariant Markov Chain Monte Carlo")
+    (description
+     "The Ensemble Quadratic and Affine Invariant Markov chain Monte Carlo algorithms
+provide an efficient way to perform Bayesian inference in difficult parameter
+space geometries.  The Ensemble Quadratic Monte Carlo algorithm was developed by
+Militzer (2023) <doi:10.3847/1538-4357/ace1f1>.  The Ensemble Affine Invariant
+algorithm was developed by Goodman and Weare (2010)
+<doi:10.2140/camcos.2010.5.65> and it was implemented in Python by
+Foreman-Mackey et al (2013) <doi:10.48550/@code{arXiv.1202.3665>}.  The
+Quadratic Monte Carlo method was shown to perform better than the Affine
+Invariant method in the paper by Militzer (2023) <doi:10.3847/1538-4357/ace1f1>
+and the Quadratic Monte Carlo method is the default method used.  The Chen-Shao
+Highest Posterior Density Estimation algorithm is used for obtaining credible
+intervals and the potential scale reduction factor diagnostic is used for
+checking the convergence of the chains.")
+    (license license:gpl2+)))
 
 (define-public r-qad
   (package

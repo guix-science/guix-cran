@@ -1074,13 +1074,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "1bqi16iyg1jbi021jg1c02ww3dh2fbrybg9zvvqy1k20aiv16cf7"))))
+        (base32 "1pwldmc0nz8577zlqns8gf0cs433jq4agr2w7b93bpbzhc2hsk3w"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (arguments
@@ -1192,13 +1192,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.6")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "00a0ggcm26gb0m1zm46ascd9hrd99mh83gqr858f4m3lj4p4fa6h"))))
+        (base32 "05hh5inbqg5s040r4gl70k3s064iqqdc9zchjnsrslf3prvscgpk"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -3706,6 +3706,33 @@ also allows to generate simulation data and evaluate the performance.
 Implementation of the method described in Angelini, De Canditiis and Plaksienko
 (2022) <doi:10.3390/math10213983>.")
     (license license:gpl2)))
+
+(define-public r-jetty
+  (package
+    (name "r-jetty")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jetty" version))
+       (sha256
+        (base32 "00wwfvws95rf42gmni7lcw2gqz676bnlfyc705x8v83s7v95shc2"))))
+    (properties `((upstream-name . "jetty")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-renv))
+    (home-page "https://github.com/dmolitor/jetty")
+    (synopsis "Execute R in a 'Docker' Context")
+    (description
+     "The goal of jetty is to execute R functions and code snippets in an isolated R
+subprocess within a Docker container and return the evaluated results to the
+local R session.  jetty can install necessary packages at runtime and seamlessly
+propagates errors and outputs from the Docker subprocess back to the main
+session.  jetty is primarily designed for sandboxed testing and quick execution
+of example code.")
+    (license license:gpl3+)))
 
 (define-public r-jetpack
   (package

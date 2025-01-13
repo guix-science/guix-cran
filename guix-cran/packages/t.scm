@@ -7513,13 +7513,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.12.0")
+    (version "1.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "1pqz5nnrwp4v7h0kz21ny3mdlw9qdqf69hh2mrc92piivx1w3ck5"))))
+        (base32 "0kdyn0vm265fha76gad3rvsznqpipbr8pp5h3979ml115y0xbgnk"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (arguments
@@ -8120,13 +8120,13 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.9.1")
+    (version "2.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "1l8wc0g6aq9i9r9imgl63s5qdp954mad767yr7agn9dd47q17vl2"))))
+        (base32 "1w5s1dqrcgvz0n06kv3kasjvh8acgax5q208v45lmam8f5aa16hl"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (arguments
@@ -12766,13 +12766,13 @@ GK (1972).  Wricke G (1962).")
 (define-public r-toolsforcoda
   (package
     (name "r-toolsforcoda")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ToolsForCoDa" version))
        (sha256
-        (base32 "1rns11sddijajjnp5xc8b9n0k88zr6022ra7afd9qmf7k8pmpdp3"))))
+        (base32 "1a9j09d7hc2fh02amndi3x3j2dsy9snr2b6gymif478v0i0bmidc"))))
     (properties `((upstream-name . "ToolsForCoDa")))
     (build-system r-build-system)
     (arguments
@@ -15188,13 +15188,13 @@ of lenses, see the lens package wiki:
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "0pc0dlp5s96g37bm1d8fy64rmg8ji4ysr98wd6yddx4j3vghlm9d"))))
+        (base32 "0346swvcaiwvik30j5fcmbp4d9hxx4c7fkfbv3war17p81kmphxx"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (arguments
@@ -16948,13 +16948,13 @@ description of the source.")
 (define-public r-tidytreatment
   (package
     (name "r-tidytreatment")
-    (version "0.2.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytreatment" version))
        (sha256
-        (base32 "04z3afharkqyjk5kk097kpqlrmvq5220bsdlzmbzwl5k56vgxgxx"))))
+        (base32 "1kwvyzh4lv0566zc841ixbb951352v8dm9f8sw10p354h2h726dc"))))
     (properties `((upstream-name . "tidytreatment")))
     (build-system r-build-system)
     (arguments
@@ -16965,7 +16965,11 @@ description of the source.")
                              r-rlang
                              r-readr
                              r-purrr
-                             r-dplyr))
+                             r-magrittr
+                             r-dplyr
+                             r-dbarts
+                             r-coda
+                             r-bart))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bonStats/tidytreatment")
     (synopsis "Tidy Methods for Bayesian Treatment Effect Models")
@@ -17095,13 +17099,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "1viqpi1gzgy6y2qhh7qbfp1yjvb9ycnz9a9am7jypmdqkl13g78m"))))
+        (base32 "16qn01lnd7i4xj3ywdsnvcx9zbg35j6gp03qrbgj6yj5n4j0vzbs"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (arguments
@@ -17642,13 +17646,13 @@ package.")
 (define-public r-tidyquant
   (package
     (name "r-tidyquant")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyquant" version))
        (sha256
-        (base32 "1caazsqwf505i7anhn8cr48c8x26msvg4bwpj3i412b8rim25xx7"))))
+        (base32 "033xy6al7hnbw3wdn3fzr7qp3k6i5a400mlgrarzm44vv3blva27"))))
     (properties `((upstream-name . "tidyquant")))
     (build-system r-build-system)
     (arguments
@@ -17662,6 +17666,7 @@ package.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-robstattm
                              r-rlang
                              r-readxl
                              r-readr
@@ -17689,6 +17694,44 @@ functions with the tidyverse functions including purrr', dplyr', tidyr',
 ggplot2', lubridate', etc.  See the tidyquant website for more information,
 documentation and examples.")
     (license license:expat)))
+
+(define-public r-tidyprompt
+  (package
+    (name "r-tidyprompt")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyprompt" version))
+       (sha256
+        (base32 "15i3d94ar88rrmniwl4dldi6xx5icyvv08ax37v5rb0b0xy4ka2c"))))
+    (properties `((upstream-name . "tidyprompt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tjarkvandemerwe/tidyprompt")
+    (synopsis "Prompt Large Language Models and Enhance Their Functionality")
+    (description
+     "Easily construct prompts and associated logic for interacting with large
+language models (LLMs).  tidyprompt introduces the concept of prompt wraps,
+which are building blocks that you can use to quickly turn a simple prompt into
+a complex one.  Prompt wraps do not just modify the prompt text, but also add
+extraction and validation functions that will be applied to the response of the
+LLM. This ensures that the user gets the desired output.  tidyprompt can add
+various features to prompts and their evaluation by LLMs, such as structured
+output, automatic feedback, retries, reasoning modes, autonomous R function
+calling, and R code generation and evaluation.  It is designed to be compatible
+with any LLM provider that offers chat completion.")
+    (license (list license:gpl3+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-tidypmc
   (package
@@ -17913,37 +17956,6 @@ translates the filter value or index expressions to array-slicing form.  No data
 is read until explicitly requested, as a data frame or list of arrays via
 @code{hyper_tibble()} or @code{hyper_array()}.")
     (license license:gpl3)))
-
-(define-public r-tidymv
-  (package
-    (name "r-tidymv")
-    (version "3.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidymv" version))
-       (sha256
-        (base32 "0jl6lhi47nz8a7crlqmrqm0cnj4gx3l06gxjvdw8p52y706a478a"))))
-    (properties `((upstream-name . "tidymv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-mgcv
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stefanocoretta/tidymv")
-    (synopsis "Tidy Model Visualisation for Generalised Additive Models")
-    (description
-     "This package provides functions for visualising generalised additive models and
-getting predicted values using tidy tools from the tidyverse packages.")
-    (license license:gpl3+)))
 
 (define-public r-tidymultiqc
   (package
@@ -28182,13 +28194,13 @@ album covers.")
 (define-public r-taxonomizr
   (package
     (name "r-taxonomizr")
-    (version "0.10.6")
+    (version "0.10.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxonomizr" version))
        (sha256
-        (base32 "1g4r42zc9h6f0x875b0nyg56frzn4q7k5vk1jkwczz6ic5cbwigj"))))
+        (base32 "1jjrya4nwqg747spc6z1rdzpj16phbnwq4f1pi2n5h6wd1qs3fp2"))))
     (properties `((upstream-name . "taxonomizr")))
     (build-system r-build-system)
     (arguments
@@ -30068,13 +30080,13 @@ retrieval.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "3.1.1")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabula" version))
        (sha256
-        (base32 "0vw1ksjv82azg97k2kvszvp5d8nqprk9g3i0i5mx20iymxjjv032"))))
+        (base32 "13m13527s57awp4qnfh49lriiwazdc1qv6wy8in8if99aafgjy8z"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
     (arguments

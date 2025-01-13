@@ -3728,13 +3728,13 @@ reference implementation of the @code{DataSHIELD} infrastructure.")
 (define-public r-dsmsearch
   (package
     (name "r-dsmsearch")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsmSearch" version))
        (sha256
-        (base32 "0lkxvsicb1gs09n23n9i6pbll210v1lbv19608d04ygjj39jk7y3"))))
+        (base32 "0q0m95zrdbridjav6x3avq6m27rlm7jl3yf822p5v1r5jyf36jq6"))))
     (properties `((upstream-name . "dsmSearch")))
     (build-system r-build-system)
     (arguments
@@ -4488,24 +4488,19 @@ correlations, graphics and tables.")
 (define-public r-drviaspcn
   (package
     (name "r-drviaspcn")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRviaSPCN" version))
        (sha256
-        (base32 "1m111n2ycr5z3dy3mhkyxfw0fq74lny0kajk91d0klcpixfv7y2g"))))
+        (base32 "0pmq96kpp4vs745sa9am5xf6di8yr96ilb7rnvdk8c2rirxxxxpc"))))
     (properties `((upstream-name . "DRviaSPCN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sp
-                             r-pheatmap
-                             r-igraph
-                             r-gsva
-                             r-clusterprofiler
-                             r-chemminer))
+    (propagated-inputs (list r-pheatmap r-igraph r-gsva r-clusterprofiler))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DRviaSPCN")
     (synopsis "Drug Repurposing in Cancer via a Subpathway Crosstalk Network")
@@ -4975,6 +4970,28 @@ Ulf-Dietrich Reips (2002) \"Standards for Internet-Based Experimenting\"
 datasets, thereby enhancing the quality and reliability of research findings.")
     (license license:expat)))
 
+(define-public r-drone
+  (package
+    (name "r-drone")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drone" version))
+       (sha256
+        (base32 "0w9qd26nwqp1wicbiq9wrrccfjghpzrrwsmvfvnvzln6vbp3zrq2"))))
+    (properties `((upstream-name . "drone")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=drone")
+    (synopsis "Data for Data Visualisation Geometries Encyclopedia")
+    (description
+     "This is the companion package to the Data Visualization Geometries Encyclopedia,
+providing seamless access to the associated data.")
+    (license license:gpl2+)))
+
 (define-public r-dromics
   (package
     (name "r-dromics")
@@ -5217,6 +5234,39 @@ profiles for two models, @code{check_drift()} executes all checks against drift.
  drifter is a part of the @code{DrWhy.AI} universe (Biecek 2018)
 <@code{arXiv:1806.08915>}.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-driftdm
+  (package
+    (name "r-driftdm")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dRiftDM" version))
+       (sha256
+        (base32 "0c9vzbs5cmrmzvx12nisikhgzg4k7jv3y29j02dvpr809mpcasby"))))
+    (properties `((upstream-name . "dRiftDM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-rdpack
+                             r-rcpp
+                             r-progress
+                             r-dfoptim
+                             r-deoptim))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bucky2177/dRiftDM")
+    (synopsis "Estimating (Time-Dependent) Drift Diffusion Models")
+    (description
+     "Fit and explore Drift Diffusion Models (DDMs), a common tool in psychology for
+describing decision processes in simple tasks.  It can handle both
+time-independent and time-dependent DDMs. You either choose prebuilt models or
+create your own, and the package takes care of model predictions and parameter
+estimation.  Model predictions are derived via the numerical solutions provided
+by Richter, Ulrich, and Janczyk (2023, <doi:10.1016/j.jmp.2023.102756>).")
+    (license license:expat)))
 
 (define-public r-driftbursthypothesis
   (package
@@ -6853,13 +6903,13 @@ dating.  Read and write standard file formats used in dendrochronology.")
 (define-public r-dpkg
   (package
     (name "r-dpkg")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dpkg" version))
        (sha256
-        (base32 "1ah4b2znqikr9llw6rmmwranswr0dbw2c2y31cj972c8h7fvn0mi"))))
+        (base32 "0cjdl53r569cc3hcjb7nn3dbnfmpjfz7vjwmz5r81bp97rg5ci9y"))))
     (properties `((upstream-name . "dpkg")))
     (build-system r-build-system)
     (arguments
@@ -9474,29 +9524,6 @@ Cognitive neurodynamics 6.6 (2012): 525-535.")
      "Using Local Moran's I for detection of differential network local consistency.")
     (license license:gpl2+)))
 
-(define-public r-dnh4
-  (package
-    (name "r-dnh4")
-    (version "0.1.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DNH4" version))
-       (sha256
-        (base32 "0g3ibacsbsk34b6411j3n3q9dxqq1iqdnisppmmq7s2bp94ab771"))))
-    (properties `((upstream-name . "DNH4")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-rvest r-httr))
-    (home-page "https://forkonlp.github.io/DNH4/")
-    (synopsis "Crawling for Daum News Text")
-    (description
-     "This package provides some utils to get Korean text sample from news articles in
-Daum which is popular news portal service in Korea.")
-    (license license:expat)))
-
 (define-public r-dng
   (package
     (name "r-dng")
@@ -12000,13 +12027,13 @@ distr', @code{distrEx}', @code{distrMod}', @code{distrSim}', @code{distrTEst}',
 (define-public r-distr
   (package
     (name "r-distr")
-    (version "2.9.5")
+    (version "2.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distr" version))
        (sha256
-        (base32 "1zmgmcw118cg7pbzn15kdl3n59hjyma4907yz4nbqpywp5kq07az"))))
+        (base32 "0k13kfjs1kcmxxcb942wswhnbx7xzv8njnclg864yl6lpgpcvyrk"))))
     (properties `((upstream-name . "distr")))
     (build-system r-build-system)
     (arguments
@@ -12468,42 +12495,40 @@ methods are based on Abdi, H., Williams, L.J., Valentin, D., & Bennani-Dosse, M.
 (define-public r-distantia
   (package
     (name "r-distantia")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distantia" version))
        (sha256
-        (base32 "12d6xzhcxs3xxyj82ih6chrr638siy45gna1s22vhnqvjd5jixc6"))))
+        (base32 "1ky3fih7nfnilrg4i0prmgc2dxa7bsbinnqm8av19mb3kqnv5dx1"))))
     (properties `((upstream-name . "distantia")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-rcolorbrewer
-                             r-plyr
-                             r-iterators
+    (propagated-inputs (list r-zoo
+                             r-rcpp
+                             r-progressr
+                             r-lubridate
+                             r-future-apply
                              r-foreach
-                             r-fields
-                             r-doparallel
-                             r-data-table
-                             r-arrangements))
+                             r-dofuture))
     (home-page "https://blasbenito.github.io/distantia/")
-    (synopsis "Assessing Dissimilarity Between Multivariate Time Series")
+    (synopsis
+     "Advanced Toolset for Efficient Time Series Dissimilarity Analysis")
     (description
-     "This package provides tools to assess the dissimilarity between multivariate
-time-series.  It is based on the psi measure described by Birks and Gordon (1985
-<doi:10.1002/jqs.3390020110>), which computes dissimilarity between irregular
-time-series constrained by sample order.  However, in this package the original
-idea has been extended to work with any kind of multivariate time-series, no
-matter whether they are regular, irregular, aligned or unaligned.  Furthermore,
-the package allows to assess the significance of dissimilarity values by
-applying a restricted permutation test, allows to measure the contribution of
-individual variables to dissimilarity, and offers tools to transfer attributes
-(generally time or age, but other are possible) between sequences based on the
-similarity of their samples.")
-    (license license:gpl2+)))
+     "Fast C++ implementation of Dynamic Time Warping for time series dissimilarity
+analysis, with applications in environmental monitoring and sensor data
+analysis, climate science, signal processing and pattern recognition, and
+financial data analysis.  Built upon the ideas presented in Benito and Birks
+(2020) <doi:10.1111/ecog.04895>, provides tools for analyzing time series of
+varying lengths and structures, including irregular multivariate time series.
+Key features include individual variable contribution analysis, restricted
+permutation tests for statistical significance, and imputation of missing data
+via GAMs. Additionally, the package provides an ample set of tools to prepare
+and manage time series data.")
+    (license license:expat)))
 
 (define-public r-distanceto
   (package
@@ -15249,13 +15274,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "0jpgv66f2zgqfya6bjd2gh1ys4sx6867y74iwyjpcbmkaky7hhxs"))))
+        (base32 "0c1iy2gwxj6ifq6xgp2jr29kk824fhxbcbdhf6djz4dxm9vcfz3s"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (arguments
@@ -17477,6 +17502,50 @@ Arnold B. Mitnitski et al. (2001), The Scientific World Journal 1,
 <DOI:10.1100/tsw.2001.58>; (ii) \"Frailty, fitness and late-life mortality in
 relation to chronological and biological age\" by Arnold B Mitnitski et al.
 (2001), BMC Geriatrics2002 2(1), <DOI:10.1186/1471-2318-2-1>.")
+    (license license:gpl3)))
+
+(define-public r-dhsr
+  (package
+    (name "r-dhsr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DHSr" version))
+       (sha256
+        (base32 "1h0my9zj19pkm7qzibjbmyr58jpls5a7mixqry08drs8jb5i7ljv"))))
+    (properties `((upstream-name . "DHSr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-spdep
+                             r-sf
+                             r-rlang
+                             r-nlme
+                             r-mumin
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DHSr")
+    (synopsis
+     "Create Large Scale Repeated Regression Summary Statistics Dataset and Visualization Seamlessly")
+    (description
+     "Mapping, spatial analysis, and statistical modeling of microdata from sources
+such as the Demographic and Health Surveys <https://www.dhsprogram.com/> and
+Integrated Public Use Microdata Series <https://www.ipums.org/>.  It can also be
+extended to other datasets.  The package supports spatial correlation index
+construction and visualization, along with empirical Bayes approximation of
+regression coefficients in a multistage setup.  The main functionality is
+repeated regression â for example, if we have to run regression for n groups,
+the group ID should be vertically composed into the variable for the parameter
+`location_var`.  It can perform various kinds of regression, such as Generalized
+Regression Models, logit, probit, and more.  Additionally, it can incorporate
+interaction effects.  The key benefit of the package is its ability to store the
+regression results performed repeatedly on a dataset by the group ID, along with
+respective p-values and map those estimates.")
     (license license:gpl3)))
 
 (define-public r-dhsic
@@ -20645,13 +20714,13 @@ work of the maintainer.  More information may be obtained from Garai and Paul
 (define-public r-describedata
   (package
     (name "r-describedata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "describedata" version))
        (sha256
-        (base32 "10ryy886jr2gwi6h90girl82ivwrmhz1vcwi4f6khmmpwsy95hav"))))
+        (base32 "156w07pz4b67ydad83pvwgbh3g88qamzlxiifhgicrzv7jgmhbwv"))))
     (properties `((upstream-name . "describedata")))
     (build-system r-build-system)
     (arguments
@@ -20668,7 +20737,7 @@ work of the maintainer.  More information may be obtained from Garai and Paul
                              r-forcats
                              r-dplyr
                              r-broom))
-    (home-page "https://cran.r-project.org/package=describedata")
+    (home-page "https://github.com/craigjmcgowan/describedata")
     (synopsis "Miscellaneous Descriptive Functions")
     (description
      "Helper functions for descriptive tasks such as making print-friendly bivariate
@@ -20919,50 +20988,16 @@ multivariate generalization of QQ-plots).")
 special, roxygen'-style comments.")
     (license license:expat)))
 
-(define-public r-depower
-  (package
-    (name "r-depower")
-    (version "2024.12.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "depower" version))
-       (sha256
-        (base32 "1chh8ml5nrgf9h7q7dgdir339qiv4h4ss8ymf8zkh9rcsdm345p3"))))
-    (properties `((upstream-name . "depower")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-rdpack
-                             r-mvnfast
-                             r-multidplyr
-                             r-glmmtmb
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://brettklamer.com/work/depower/")
-    (synopsis "Power Analysis for Differential Expression Studies")
-    (description
-     "This package provides a convenient framework to simulate, test, power, and
-visualize data for differential expression studies with lognormal or negative
-binomial outcomes.  Supported designs are two-sample comparisons of independent
-or dependent outcomes.  Power may be summarized in the context of controlling
-the per-family error rate or family-wise error rate.  Negative binomial methods
-are described in Yu, Fernandez, and Brock (2017) <doi:10.1186/s12859-017-1648-2>
-and Yu, Fernandez, and Brock (2020) <doi:10.1186/s12859-020-3541-7>.")
-    (license license:expat)))
-
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DEPONS2R" version))
        (sha256
-        (base32 "0nzjjc62z6szy2wi1bzackd0ij66msfbjg7kaa79za96k71hvhxg"))))
+        (base32 "0p3d4ys38b0ifrxk2rmkvx0i5hzril9hhjssjlkjwcmrjq3jh7wx"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (arguments
@@ -20973,7 +21008,8 @@ and Yu, Fernandez, and Brock (2020) <doi:10.1186/s12859-020-3541-7>.")
                              r-sp
                              r-sf
                              r-raster
-                             r-jsonlite))
+                             r-jsonlite
+                             r-adehabitatlt))
     (home-page "https://cran.r-project.org/package=DEPONS2R")
     (synopsis "Read, Plot and Analyse Output from the DEPONS Model")
     (description
@@ -25542,6 +25578,36 @@ For the details of the methods, see the reference section of @code{GitHub}
 README.md <https://github.com/rikenbit/@code{dcTensor>}.")
     (license license:expat)))
 
+(define-public r-dcsvm
+  (package
+    (name "r-dcsvm")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dcsvm" version))
+       (sha256
+        (base32 "0cy8hkknykbj59d0f5hdl7arpjbg0sidfl06379as18bs7p8pv32"))))
+    (properties `((upstream-name . "dcsvm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=dcsvm")
+    (synopsis "Density Convoluted Support Vector Machines")
+    (description
+     "This package implements an efficient algorithm for solving sparse-penalized
+support vector machines with kernel density convolution.  This package is
+designed for high-dimensional classification tasks, supporting lasso (L1) and
+elastic-net penalties for sparse feature selection and providing options for
+tuning kernel bandwidth and penalty weights.  The dcsvm is applicable to fields
+such as bioinformatics, image analysis, and text classification, where
+high-dimensional data commonly arise.  Learn more about the methodology and
+algorithm at Wang, Zhou, Gu, and Zou (2023) <doi:10.1109/TIT.2022.3222767>.")
+    (license license:gpl2)))
+
 (define-public r-dcsmooth
   (package
     (name "r-dcsmooth")
@@ -26590,38 +26656,6 @@ using a Gibbs wrapper around univariate slice sampler (Neal (2003)
 <DOI:10.1214/aos/1056562461>), as implemented in the R package @code{MfUSampler}
 (Mahani and Sharabiani (2017) <DOI: 10.18637/jss.v078.c01>).")
     (license license:gpl2+)))
-
-(define-public r-dbpower
-  (package
-    (name "r-dbpower")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DBpower" version))
-       (sha256
-        (base32 "04wwhzlc9g6il478ax5yvh74bbb6hs29jyslkiz3k1hi25hlpkrn"))))
-    (properties `((upstream-name . "DBpower")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mvtnorm
-                             r-magrittr
-                             r-kit
-                             r-gbj
-                             r-dplyr
-                             r-combinat))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DBpower")
-    (synopsis "Finite Sample Power Calculations for Detection Boundary Tests")
-    (description
-     "Calculates lower bound on power, upper bound on power, and exact power (small
-sets only) for detection boundary tests (e.g. Berk-Jones, Generalized
-Berk-Jones, innovated Berk-Jones) used in set-based inference studies.  These
-detection boundary tests are described in Sun et al., (2019)
-<doi:10.1080/01621459.2019.1660170>.")
-    (license license:gpl3)))
 
 (define-public r-dbplot
   (package
@@ -27776,13 +27810,13 @@ two fields allowing to select a start time and an end time.")
 (define-public r-datetimeoffset
   (package
     (name "r-datetimeoffset")
-    (version "0.3.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetimeoffset" version))
        (sha256
-        (base32 "11xxxfv3g8jf16cwpxjycrymx9baf8gkpd98x69djhbnrn3si0vn"))))
+        (base32 "1vg55zg965iij2wx9i0n966b5y0fsbdrpd9n16lsqk2zcrppb6l2"))))
     (properties `((upstream-name . "datetimeoffset")))
     (build-system r-build-system)
     (arguments
@@ -27790,7 +27824,7 @@ two fields allowing to select a start time and an end time.")
       #:tests? #f))
     (propagated-inputs (list r-vctrs r-purrr r-clock))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://trevorldavis.com/R/datetimeoffset/dev/")
+    (home-page "https://trevorldavis.com/R/datetimeoffset/")
     (synopsis
      "Datetimes with Optional UTC Offsets and/or Heterogeneous Time Zones")
     (description
@@ -29534,19 +29568,19 @@ entering, filtering and editing of data in R
 (define-public r-datadriftr
   (package
     (name "r-datadriftr")
-    (version "0.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datadriftR" version))
        (sha256
-        (base32 "0ggakc73kyhnw60wvlb4pa7j6fvxcl98bbii45z2rrggbcgdjrfr"))))
+        (base32 "028zcs5nm15q1y3yzc93ayk0s5xhcgi01sszhzimh5x188crqfal"))))
     (properties `((upstream-name . "datadriftR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6))
+    (propagated-inputs (list r-r6 r-fda-usc r-doremi))
     (home-page "https://github.com/ugurdar/datadriftR")
     (synopsis "Concept Drift Detection Methods for Stream Data")
     (description
@@ -29559,8 +29593,9 @@ over time.  The package supports several tests, such as Drift Detection Method
 Hinkley (PH) tests.  The methods implemented in this package are based on
 established research and have been demonstrated to be effective in real-time
 data analysis.  For more details on the methods, please check to the following
-sources.  Gama et al. (2004) <doi:10.1007/978-3-540-28645-5_29>, Baena-Garcia et
-al. (2006)
+sources.  KobyliÅska et al. (2023) <doi:10.48550/@code{arXiv.2308.11446>}, S.
+Kullback & R.A. Leibler (1951) <doi:10.1214/aoms/1177729694>, Gama et al. (2004)
+<doi:10.1007/978-3-540-28645-5_29>, Baena-Garcia et al. (2006)
 <https://www.researchgate.net/publication/245999704_Early_Drift_Detection_Method>,
 FrÃ­as-Blanco et al. (2014) <https://ieeexplore.ieee.org/document/6871418>, Raab
 et al. (2020) <doi:10.1016/j.neucom.2019.11.111>, Page (1954)
@@ -29635,13 +29670,13 @@ directly to Excel.")
 (define-public r-datacutr
   (package
     (name "r-datacutr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datacutr" version))
        (sha256
-        (base32 "1k9yqimgabmw6b128cbvbwljaw76s7591258ssvhnbc604q9wd35"))))
+        (base32 "0g6f2ywk3wv0m19s1qfvnplk1l6syzzpgnq0jn8c7qb9x1g75rx7"))))
     (properties `((upstream-name . "datacutr")))
     (build-system r-build-system)
     (arguments
@@ -30485,71 +30520,6 @@ other packages, we recommend to install the @code{dartRverse} package, that
 supports the installation of all packages in the @code{dartRverse}'.  If you
 want to cite @code{dartR}', you find the information by typing
 citation('@code{dartR.base}') in the console.")
-    (license license:gpl3+)))
-
-(define-public r-dartr
-  (package
-    (name "r-dartr")
-    (version "2.9.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dartR" version))
-       (sha256
-        (base32 "1wwm2gq743l90jsa1hsgxknqxqp0ga8vf3xv652m3ifpyrkp93vx"))))
-    (properties `((upstream-name . "dartR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-tidyr
-                             r-stringr
-                             r-stampp
-                             r-sp
-                             r-snprelate
-                             r-shiny
-                             r-reshape2
-                             r-raster
-                             r-popgenreport
-                             r-plyr
-                             r-patchwork
-                             r-mass
-                             r-gridextra
-                             r-ggplot2
-                             r-foreach
-                             r-fields
-                             r-dplyr
-                             r-data-table
-                             r-dartr-data
-                             r-crayon
-                             r-ape
-                             r-adegenet))
-    (native-inputs (list r-knitr))
-    (home-page "https://green-striped-gecko.github.io/dartR/")
-    (synopsis
-     "Importing and Analysing 'SNP' and 'Silicodart' Data Generated by Genome-Wide Restriction Fragment Analysis")
-    (description
-     "This package provides functions are provided that facilitate the import and
-analysis of SNP (single nucleotide polymorphism) and silicodart
-(presence/absence) data.  The main focus is on data generated by @code{DarT}
-(Diversity Arrays Technology), however, data from other sequencing platforms can
-be used once SNP or related fragment presence/absence data from any source is
-imported.  Genetic datasets are stored in a derived genlight format (package
-adegenet'), that allows for a very compact storage of data and metadata.
-Functions are available for importing and exporting of SNP and silicodart data,
-for reporting on and filtering on various criteria (e.g. @code{CallRate}',
-heterozygosity, reproducibility, maximum allele frequency).  Additional
-functions are available for visualization (e.g. Principle Coordinate Analysis)
-and creating a spatial representation using maps. @code{dartR} supports also the
-analysis of 3rd party software package such as newhybrid', structure',
-@code{NeEstimator} and blast'.  Since version 2.0.3 we also implemented
-simulation functions, that allow to forward simulate SNP dynamics under
-different population and evolutionary dynamics.  Comprehensive tutorials and
-support can be found at our github repository:
-github.com/green-striped-gecko/@code{dartR}/.  If you want to cite
-@code{dartR}', you find the information by typing citation('@code{dartR}') in
-the console.")
     (license license:gpl3+)))
 
 (define-public r-darksky

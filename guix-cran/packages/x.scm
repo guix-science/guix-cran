@@ -1635,19 +1635,19 @@ pharmacokinetics and pharmacodynamics (PKPD) datasets.")
 (define-public r-xgrove
   (package
     (name "r-xgrove")
-    (version "0.1-13")
+    (version "0.1-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xgrove" version))
        (sha256
-        (base32 "1x2fwg7n0k1lxjy53la5xacphx14ak49v3wd5cha2qsrsm9pdrl0"))))
+        (base32 "0hd5jy10wp5d3jcgh15ns4zbvp8qak3cf1pda84d4m5c1khrnfjm"))))
     (properties `((upstream-name . "xgrove")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rpart-plot r-rpart r-gbm r-dplyr))
+    (propagated-inputs (list r-rpart-plot r-rpart r-ggplot2 r-gbm r-dplyr))
     (home-page "https://cran.r-project.org/package=xgrove")
     (synopsis "Explanation Groves")
     (description

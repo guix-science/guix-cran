@@ -1308,6 +1308,35 @@ and accompanying documentation by @code{McKay} and Fischenich (2011,
 <https://erdc-library.erdc.dren.mil/jspui/bitstream/11681/2034/1/CHETN-VII-11.pdf>).")
     (license license:gpl3)))
 
+(define-public r-hydreng
+  (package
+    (name "r-hydreng")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydReng" version))
+       (sha256
+        (base32 "0jzm7cxv8gbkg9xzz9cxy62il8a726faxkb2qzj7q6ikvg0fvpjr"))))
+    (properties `((upstream-name . "hydReng")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/NiccoloGalatioto/hydReng")
+    (synopsis "Hydraulic Engineering Tools")
+    (description
+     "The @code{hydReng} package provides a set of functions for hydraulic engineering
+tasks and natural hazard assessments.  It includes basic hydraulics (wetted
+area, wetted perimeter, flow, flow velocity, flow depth, and maximum flow) for
+open channels with arbitrary geometry under uniform flow conditions.  For
+structures such as circular pipes, weirs, and gates, the package includes
+calculations for pressure flow, backwater depth, and overflow over a weir crest.
+ Additionally, it provides formulas for calculating bedload transport.  The
+formulas used can be found in standard literature on hydraulics, such as
+Bollrich (2019, ISBN:978-3-410-29169-5) or Hager (2011, ISBN:978-3-642-77430-0).")
+    (license license:gpl3)))
+
 (define-public r-hydraulics
   (package
     (name "r-hydraulics")
@@ -1890,13 +1919,13 @@ one-liners to print data to a new document.")
 (define-public r-hutilscpp
   (package
     (name "r-hutilscpp")
-    (version "0.10.6")
+    (version "0.10.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hutilscpp" version))
        (sha256
-        (base32 "0yvrzkpgjdk0pq8p2v771rl6nj5yszzlr8k6ajif62qndvxkwc64"))))
+        (base32 "11g25lk4adwpv27hihsp67bf7x54av11719kr5andir0p3lic0w0"))))
     (properties `((upstream-name . "hutilscpp")))
     (build-system r-build-system)
     (arguments
@@ -2911,44 +2940,6 @@ embedded Python code, custom JS ('@code{JavaScript}') and CSS (Cascading Style
 Sheets), and wrappers for @code{CanvasXpress} plots, networks and more.  Based
 on <https://pypi.org/project/py-report-html/>, its sister project.")
     (license license:gpl3+)))
-
-(define-public r-htmldf
-  (package
-    (name "r-htmldf")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "htmldf" version))
-       (sha256
-        (base32 "19brwxqnsxzvgsqq3gsjkcyag9ag3xa3mrl5c4s7x48xx2knfh9q"))))
-    (properties `((upstream-name . "htmldf")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-urltools
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-ranger
-                             r-r-utils
-                             r-progress
-                             r-processx
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-dplyr
-                             r-cld3))
-    (home-page "https://github.com/alastairrushworth/htmldf/")
-    (synopsis "Simple Scraping and Tidy Webpage Summaries")
-    (description
-     "Simple tools for scraping webpages, extracting common html tags and parsing
-contents to a tidy, tabular format.  Tools help with extraction of page titles,
-links, images, rss feeds, social media handles and page metadata.")
-    (license license:gpl2)))
 
 (define-public r-html5
   (package
@@ -8123,20 +8114,20 @@ meaningful relational structure.")
 (define-public r-hidradenitis
   (package
     (name "r-hidradenitis")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hidradenitis" version))
        (sha256
-        (base32 "0dzdllmsj98yl178fg25vny0vaxhra88zd6ifzv06fcjma53svrj"))))
+        (base32 "08xdcvbsdqqrxsiszg80s8rbrffblvf8qraa1c2r0f40fsjqqiwr"))))
     (properties `((upstream-name . "hidradenitis")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-checkmate))
-    (home-page "https://billdenney.github.io/hidradenitis/")
+    (home-page "https://humanpred.github.io/hidradenitis/")
     (synopsis
      "Calculate Clinical Scores for Hidradenitis Suppurativa (HS), a Dermatologic Disease")
     (description
@@ -9658,6 +9649,37 @@ based on original observations given in Wang and Akritas (2010a)
 Akritas (2010b) <doi:10.1016/j.jmva.2010.03.012>.")
     (license license:gpl2)))
 
+(define-public r-hessrna
+  (package
+    (name "r-hessrna")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HEssRNA" version))
+       (sha256
+        (base32 "0xl308dlh42lzk61slg2r0jwkxgi5pxnv2pa5zyn1jdlf95m0whs"))))
+    (properties `((upstream-name . "HEssRNA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-ssizerna
+                             r-rdpack
+                             r-magrittr
+                             r-dplyr
+                             r-deseq2))
+    (home-page "https://cran.r-project.org/package=HEssRNA")
+    (synopsis "Heritability-Based Estimation of Sample Size for RNA-Seq Data")
+    (description
+     "This package provides tools for estimating sample sizes primarily based on
+heritability, while also considering additional parameters such as statistical
+power and fold change.  The package normalizes heritability values according to
+trait-specific heritability and classification to enhance accuracy in sample
+size estimation.")
+    (license license:gpl3)))
+
 (define-public r-hesim
   (package
     (name "r-hesim")
@@ -10868,13 +10890,13 @@ consistent verb framework that takes the guesswork out of everything.")
 (define-public r-healthyaddress
   (package
     (name "r-healthyaddress")
-    (version "0.4.3")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyAddress" version))
        (sha256
-        (base32 "0rj2cd34dw17bdw3m6dkgyaji72f3sapf9jnvlr8sima6nfiacqd"))))
+        (base32 "0kx0mxdpdcsr6nzcxg41nlmy27c54pwvqw1bgb2c64l5vaxa5cgs"))))
     (properties `((upstream-name . "healthyAddress")))
     (build-system r-build-system)
     (arguments

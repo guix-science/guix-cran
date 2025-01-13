@@ -778,13 +778,13 @@ lineup, and examine the distributions of metrics.")
 (define-public r-nuggets
   (package
     (name "r-nuggets")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuggets" version))
        (sha256
-        (base32 "0i7w2jf9v1kfa4cgbgvz45bxm3giy8yf4d608dld8f6h4458djwd"))))
+        (base32 "10apa4gwjnv9cgprkyhd855lbamgc10qfw3q9yybimkxh84byj4m"))))
     (properties `((upstream-name . "nuggets")))
     (build-system r-build-system)
     (arguments
@@ -794,10 +794,14 @@ lineup, and examine the distributions of metrics.")
                              r-tidyr
                              r-tibble
                              r-testthat
+                             r-stringr
                              r-rlang
                              r-rcpp
+                             r-purrr
+                             r-lifecycle
                              r-cli))
-    (home-page "https://cran.r-project.org/package=nuggets")
+    (native-inputs (list r-knitr))
+    (home-page "https://beerda.github.io/nuggets/")
     (synopsis "Extensible Data Pattern Searching Framework")
     (description
      "Extensible framework for subgroup discovery (Atzmueller (2015)
@@ -2633,6 +2637,32 @@ along a chromosome, with marker names displayed along the top border.  There are
 also routines for generating BED and @code{BedGraph} custom tracks for viewing
 in the UCSC genome browser.  The data reformatting program Mega2 uses this
 package to plot output from a variety of programs.")
+    (license license:gpl3+)))
+
+(define-public r-npiv
+  (package
+    (name "r-npiv")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npiv" version))
+       (sha256
+        (base32 "1r27majz1zswwqs8rqbrhmy6y7zp3crzybqcdxqjhqci6hnisyca"))))
+    (properties `((upstream-name . "npiv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-progress r-mass r-formula))
+    (home-page "https://cran.r-project.org/package=npiv")
+    (synopsis "Nonparametric Instrumental Variables Estimation and Inference")
+    (description
+     "This package implements methods introduced in Chen, Christensen, and Kankanala
+(2024) <doi:10.1093/restud/rdae025> for estimating and constructing uniform
+confidence bands for nonparametric structural functions using instrumental
+variables, including data-driven choice of tuning parameters.  All methods in
+this package apply to nonparametric regression as a special case.")
     (license license:gpl3+)))
 
 (define-public r-npistats
@@ -6096,13 +6126,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.9.6")
+    (version "11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "1haccrw3n3jfswh8g9h6i96nv54rlazm6h70xamghma8rk39nryy"))))
+        (base32 "1jfahryk70a2xy6433amcy69sicmwz4aa7qpbg4frymcvr6bsjzi"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -7595,19 +7625,26 @@ nonnormal distributions.")
 (define-public r-nls-multstart
   (package
     (name "r-nls-multstart")
-    (version "1.3.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nls.multstart" version))
        (sha256
-        (base32 "1fv6zw87n6fkblfn8q5mj957j9gx0qgjnkpypjdlircafb849gkf"))))
+        (base32 "1b9z6cmif3cbsphbkplql21kqjabgcgd4dxw4g0zywqgmi4y8m6f"))))
     (properties `((upstream-name . "nls.multstart")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr r-tibble r-purrr r-minpack-lm r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-minpack-lm
+                             r-lhs
+                             r-dplyr
+                             r-cli))
     (home-page "https://cran.r-project.org/package=nls.multstart")
     (synopsis "Robust Non-Linear Regression using AIC Scores")
     (description
@@ -9845,13 +9882,13 @@ dedicated SCAN function.")
 (define-public r-nhppp
   (package
     (name "r-nhppp")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhppp" version))
        (sha256
-        (base32 "1v85by6jlnvn49061jxkx9ba7rgvcp5hh4pnyp45q30lf6xba2wp"))))
+        (base32 "060y05h9mqnv22cp9fc8wxxisj9gf049ca4va768wmh4dh31zjha"))))
     (properties `((upstream-name . "nhppp")))
     (build-system r-build-system)
     (arguments
@@ -9864,10 +9901,11 @@ dedicated SCAN function.")
     (description
      "Simulates events from one dimensional nonhomogeneous Poisson point processes
 (NHPPPs) as per Trikalinos and Sereda (2024,
-<doi:10.48550/@code{arXiv.2402.00358>}).  Functions are based on three
-algorithms that provably sample from a target NHPPP: the time-transformation of
-a homogeneous Poisson process (of intensity one) via the inverse of the
-integrated intensity function (Cinlar E, \"Theory of stochastic processes\" (1975,
+<doi:10.48550/@code{arXiv.2402.00358>} and 2024,
+<doi:10.1371/journal.pone.0311311>).  Functions are based on three algorithms
+that provably sample from a target NHPPP: the time-transformation of a
+homogeneous Poisson process (of intensity one) via the inverse of the integrated
+intensity function (Cinlar E, \"Theory of stochastic processes\" (1975,
 ISBN:0486497996)); the generation of a Poisson number of order statistics from a
 fixed density function; and the thinning of a majorizing NHPPP via an
 acceptance-rejection scheme (Lewis PAW, Shedler, GS (1979)
@@ -10061,6 +10099,35 @@ available in the NHDPlus documentation available from the US Environmental
 Protection Agency <https://www.epa.gov/waterdata/basic-information>.")
     (license license:cc0)))
 
+(define-public r-nhanesa
+  (package
+    (name "r-nhanesa")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhanesA" version))
+       (sha256
+        (base32 "15agbx1p69pfcksvz8w8lqg3flimdc294b2m722w8rbvqqxnr8wc"))))
+    (properties `((upstream-name . "nhanesA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rvest
+                             r-plyr
+                             r-foreign
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=nhanesA")
+    (synopsis "NHANES Data Retrieval")
+    (description
+     "Utility to retrieve data from the National Health and Nutrition Examination
+Survey (NHANES) website <https://www.cdc.gov/nchs/nhanes/>.")
+    (license license:gpl2+)))
+
 (define-public r-nhanes
   (package
     (name "r-nhanes")
@@ -10140,13 +10207,13 @@ given sequence of text) tokenizer to be used with the tm package with no
 (define-public r-ngramr
   (package
     (name "r-ngramr")
-    (version "1.9.3")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ngramr" version))
        (sha256
-        (base32 "0iiaw8w3z8r45i129r78jwj4yicrp3lfzp7im6qmfn9k6v2bpsfv"))))
+        (base32 "1cqzvvifzymzqbg5m8x5qylq2ff55av1jxkzb5c3cfmwz5v8xkb5"))))
     (properties `((upstream-name . "ngramr")))
     (build-system r-build-system)
     (arguments
@@ -11903,13 +11970,13 @@ Kenneth Lange (2003, ISBN:978-8181281135).")
 (define-public r-networklite
   (package
     (name "r-networklite")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkLite" version))
        (sha256
-        (base32 "12vifn3vnhk0nk357759zp154v3l8hyapjqygkz31czhz3a5baxa"))))
+        (base32 "1sxfwz6h8x2c8ll8l69irn30kl52blqaysyqig0bhjbwypijmkkk"))))
     (properties `((upstream-name . "networkLite")))
     (build-system r-build-system)
     (arguments
@@ -14300,13 +14367,13 @@ and joining tables.")
 (define-public r-neoniso
   (package
     (name "r-neoniso")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NEONiso" version))
        (sha256
-        (base32 "1nkwymy6zyyk8g6lxk45srqf285329x60plhkbkm0wif6kx777s0"))))
+        (base32 "1vb6zxgb3a3q71rpspdh0alqfk49csnf2b461sa7k453l9syp1jn"))))
     (properties `((upstream-name . "NEONiso")))
     (build-system r-build-system)
     (arguments
@@ -14338,7 +14405,7 @@ isotope calibration details are found in Fiorella et al. (2021)
 <doi:10.1029/2020JG005862>, and the readme file at
 <https://github.com/lanl/NEONiso>.  Tools for calibrating water isotope products
 have been added as of 0.6.0, but have known deficiencies and should be
-considered very experimental currently.")
+considered experimental and unsupported.")
     (license license:gpl3)))
 
 (define-public r-neojags
@@ -17256,13 +17323,13 @@ sequentially observed data.")
 (define-public r-nanotime
   (package
     (name "r-nanotime")
-    (version "0.3.10")
+    (version "0.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanotime" version))
        (sha256
-        (base32 "0iql143mv58j7i1v97ana17q25qssyivrm6pclyf58slvashndiy"))))
+        (base32 "19q8xklkdp8jsq1hjj78wzr0q00fy8z5p2skyz2xlzvam3555pnb"))))
     (properties `((upstream-name . "nanotime")))
     (build-system r-build-system)
     (arguments

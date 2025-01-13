@@ -2019,13 +2019,13 @@ visualization.")
 (define-public r-gtfstools
   (package
     (name "r-gtfstools")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtfstools" version))
        (sha256
-        (base32 "1gdizd3lkli60jkkfs7xd7yak8nc4w9sy21sjikdxbhh3xwks775"))))
+        (base32 "1hja1xpilhcqm04az0ipgpwxgjgacbx9hlm5pphw4mpmq4il5h3y"))))
     (properties `((upstream-name . "gtfstools")))
     (build-system r-build-system)
     (arguments
@@ -2040,6 +2040,7 @@ visualization.")
                              r-gtfsio
                              r-data-table
                              r-curl
+                             r-cpp11
                              r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
@@ -3629,6 +3630,38 @@ Obtaining the list of Quantitative Trait Loci hit genes along with their
 overlapped Quantitative Trait Loci names.")
     (license license:gpl2+)))
 
+(define-public r-gsaot
+  (package
+    (name "r-gsaot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gsaot" version))
+       (sha256
+        (base32 "1phbbcnx4c60p0c62pvapqvkcks5q7ijpwb4m4q5wm6xlanbhn24"))))
+    (properties `((upstream-name . "gsaot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-transport
+                             r-rdpack
+                             r-rcppeigen
+                             r-rcpp
+                             r-patchwork
+                             r-ggplot2
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pietrocipolla/gsaot")
+    (synopsis
+     "Compute Global Sensitivity Analysis Indices Using Optimal Transport")
+    (description
+     "Computing Global Sensitivity Indices from given data using Optimal Transport, as
+defined in Borgonovo et al (2024) <doi:10.1287/mnsc.2023.01796>.  You provide an
+input sample, an output sample, decide the algorithm, and compute the indices.")
+    (license license:gpl3+)))
+
 (define-public r-gsafishercombined
   (package
     (name "r-gsafishercombined")
@@ -4174,13 +4207,13 @@ growth curves) at isolated time points.")
 (define-public r-growthpheno
   (package
     (name "r-growthpheno")
-    (version "2.1.25")
+    (version "3.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthPheno" version))
        (sha256
-        (base32 "1bz1411ka1pghaa67ad0jkdzykadd64wzn8g37gp7z8zm1ablhzh"))))
+        (base32 "01kj8ka0wy8grin5v76bhlxkfdf5zyf3qv71pdlrycfp6vkfarih"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
     (arguments
@@ -10984,6 +11017,39 @@ end of period), quarterly (average and the end of period), and yearly (average
 and the end of period).")
     (license license:gpl3)))
 
+(define-public r-goldilocks
+  (package
+    (name "r-goldilocks")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "goldilocks" version))
+       (sha256
+        (base32 "1zbn427wn4pfn42rmn8dmgyk839ygxfk06xl6g4rckl4a1lxx64g"))))
+    (properties `((upstream-name . "goldilocks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rlang
+                             r-rcpp
+                             r-pweall
+                             r-pbmcapply
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/graemeleehickey/goldilocks")
+    (synopsis "Goldilocks Adaptive Trial Designs for Time-to-Event Endpoints")
+    (description
+     "This package implements the Goldilocks adaptive trial design for a time to event
+outcome using a piecewise exponential model and conjugate Gamma prior
+distributions.  The method closely follows the article by Broglio and colleagues
+<doi:10.1080/10543406.2014.888569>, which allows users to explore the operating
+characteristics of different trial designs.")
+    (license license:gpl3)))
+
 (define-public r-goldfish
   (package
     (name "r-goldfish")
@@ -12044,13 +12110,13 @@ maximisation algorithm.  Bernhardt (2015) <doi:10.1016/j.csda.2014.11.011>.")
 (define-public r-gmvarkit
   (package
     (name "r-gmvarkit")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmvarkit" version))
        (sha256
-        (base32 "188xy6kys2l7s5ah2lqww53jpvdnsljd8gkxg6pm29d85ypy6qq8"))))
+        (base32 "0kpsfdqn3sislc20dv8rfia5zlvhzl245h8paf04xqmlfvv2i75j"))))
     (properties `((upstream-name . "gmvarkit")))
     (build-system r-build-system)
     (arguments
@@ -12069,8 +12135,8 @@ models, quantile residual tests, graphical diagnostics, simulations,
 forecasting, and estimation of generalized impulse response function and
 generalized forecast error variance decomposition.  Leena Kalliovirta, Mika
 Meitz, Pentti Saikkonen (2016) <doi:10.1016/j.jeconom.2016.02.012>, Savi
-Virolainen (forthcoming) <doi:10.1080/07350015.2024.2322090>, Savi Virolainen
-(2022) <doi:10.48550/@code{arXiv.2109.13648>}.")
+Virolainen (2025) <doi:10.1080/07350015.2024.2322090>, Savi Virolainen (2022)
+<doi:10.48550/@code{arXiv.2109.13648>}.")
     (license license:gpl3)))
 
 (define-public r-gmtfd
@@ -12970,13 +13036,13 @@ described multiple test procedures.")
 (define-public r-gmapsdistance
   (package
     (name "r-gmapsdistance")
-    (version "4.0.4")
+    (version "4.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmapsdistance" version))
        (sha256
-        (base32 "0gvpmannzhzxrgihi7fvj2kww637hq3zjvl52f8zp4psjpyd752s"))))
+        (base32 "0glpbvv2sk3zrd08mqzsy2knc0dp98hrm2ww6gc2mka3ff45xbfr"))))
     (properties `((upstream-name . "gmapsdistance")))
     (build-system r-build-system)
     (arguments
@@ -18206,13 +18272,13 @@ draw the scatter plot.")
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
-    (version "0.3.14")
+    (version "0.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggspectra" version))
        (sha256
-        (base32 "0yxy06aa6w9hyjk4p6y7d72ypx3kzkj8zak2wbld4avlc457341m"))))
+        (base32 "0yxax1xbc4h94fgm4wi9c4n63kgwanbgvjah7s3d42pyghj8754n"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
     (arguments
@@ -20713,13 +20779,13 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.8.11")
+    (version "0.8.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggiraph" version))
        (sha256
-        (base32 "13mz5y9djiydz715zpa6n9jgfp9rh5rgsaialrl6nwc3smq77gni"))))
+        (base32 "0mxmlfl2clvg3lilbypyy2nl1n5gq0zwngkm1syp90g682nlym58"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (arguments
@@ -25341,13 +25407,13 @@ Kurnia, A. (2018)<doi:10.21082/jpptp.v2n2.2018.p101-110>.")
 (define-public r-georob
   (package
     (name "r-georob")
-    (version "0.3-20")
+    (version "0.3-21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "georob" version))
        (sha256
-        (base32 "0z1g26z4dbayxbh506ynh03v51v0q9dgz2b98l3cfbb9g53q1d7q"))))
+        (base32 "1d412nnsf0yaqmbl1k5862c5b8gsv4hmv8ik9kyy4jk82q0976dh"))))
     (properties `((upstream-name . "georob")))
     (build-system r-build-system)
     (arguments
@@ -28014,13 +28080,13 @@ some of the stability issues in the previous version (0.1).")
 (define-public r-genmcmcdiag
   (package
     (name "r-genmcmcdiag")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genMCMCDiag" version))
        (sha256
-        (base32 "0vf9r9qc477mdjvi54sh0m67lscb8j6lfc7ikqpd4xnzsd4aklb6"))))
+        (base32 "1wcbmisviwkhha0y9ld7mplcpfjci9h50xxmz9hxbl4y3kfqkc48"))))
     (properties `((upstream-name . "genMCMCDiag")))
     (build-system r-build-system)
     (arguments
@@ -28357,6 +28423,54 @@ Souliotis et al. (2022)<doi:10.3390/math10183350>.  They proposed a method for
 the construction of fuzzy numbers via a cumulative distribution function based
 on the possibility theory.")
     (license license:gpl3)))
+
+(define-public r-geneviewer
+  (package
+    (name "r-geneviewer")
+    (version "0.1.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geneviewer" version))
+       (sha256
+        (base32 "17x35lycklk2qdghwrs8ibhlxf1xinr9n76wqzgkk8zxm2lj3176"))))
+    (properties `((upstream-name . "geneviewer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-magrittr
+                             r-htmlwidgets
+                             r-fontawesome
+                             r-dplyr))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/nvelden/geneviewer")
+    (synopsis "Gene Cluster Visualizations")
+    (description
+     "This package provides tools for plotting gene clusters and transcripts by
+importing data from @code{GenBank}, FASTA, and GFF files.  It performs BLASTP
+and MUMmer alignments [Altschul et al. (1990)
+<doi:10.1016/S0022-2836(05)80360-2>; Delcher et al. (1999)
+<doi:10.1093/nar/27.11.2369>] and displays results on gene arrow maps.
+Extensive customization options are available, including legends, labels,
+annotations, scales, colors, tooltips, and more.")
+    (license license:expat)))
 
 (define-public r-genetit
   (package
@@ -30743,13 +30857,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.4.5")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GE" version))
        (sha256
-        (base32 "0fnf6z08989g132p0prif49zqa3a399wq0wzz7n964cqvz5g3j5f"))))
+        (base32 "1mhjkag4my8hbil62gy6rqgwck9p14dapdl52h17aidvjyiivlks"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (arguments
@@ -30761,15 +30875,14 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
     (description
      "Some tools for developing general equilibrium models and some general
 equilibrium models.  These models can be used for teaching economic theory and
-are built by the methods of new structural economics (see
-<https://www.nse.pku.edu.cn/> and LI Wu, 2019, ISBN: 9787521804225, General
-Equilibrium and Structural Dynamics: Perspectives of New Structural Economics.
-Beijing: Economic Science Press).  The model form and mathematical methods can
-be traced back to J. von Neumann (1945, A Model of General Economic Equilibrium.
- The Review of Economic Studies, 13.  pp.  1-9), J. G. Kemeny, O. Morgenstern
-and G. L. Thompson (1956, A Generalization of the von Neumann Model of an
-Expanding Economy, Econometrica, 24, pp.  115-135) et al.  By the way, J. G.
-Kemeny is a co-inventor of the computer language BASIC.")
+are built by the methods of new structural economics (see LI Wu, 2019, ISBN:
+9787521804225, General Equilibrium and Structural Dynamics: Perspectives of New
+Structural Economics.  Beijing: Economic Science Press).  The model form and
+mathematical methods can be traced back to J. von Neumann (1945, A Model of
+General Economic Equilibrium.  The Review of Economic Studies, 13.  pp.  1-9),
+J. G. Kemeny, O. Morgenstern and G. L. Thompson (1956, A Generalization of the
+von Neumann Model of an Expanding Economy, Econometrica, 24, pp.  115-135) et
+al.  By the way, J. G. Kemeny is a co-inventor of the computer language BASIC.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-gdxdt
@@ -30967,13 +31080,13 @@ components required for a given reconstruction accuracy.")
 (define-public r-gdm
   (package
     (name "r-gdm")
-    (version "1.6.0-4")
+    (version "1.6.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdm" version))
        (sha256
-        (base32 "1fw7grjbhqar3x2a4406bagl89klg974pga5w859fz8w4724wyck"))))
+        (base32 "00qzpdg351ydqqw3hkg6hcpb68ffnkih6zcgsc479nkhaasmx1pa"))))
     (properties `((upstream-name . "gdm")))
     (build-system r-build-system)
     (arguments

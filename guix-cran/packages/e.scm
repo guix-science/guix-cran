@@ -570,13 +570,13 @@ between metric length and visual degrees.")
 (define-public r-eyelinkreader
   (package
     (name "r-eyelinkreader")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eyelinkReader" version))
        (sha256
-        (base32 "1vx02qaaw56qdb7kiz2zs17s4x7yxcrlkhwvb2xi3khp9smmx2vi"))))
+        (base32 "135kbl69f28il2zchfxa7iyzshzva0w5j4wh3cvisny2y57w184b"))))
     (properties `((upstream-name . "eyelinkReader")))
     (build-system r-build-system)
     (arguments
@@ -3455,6 +3455,32 @@ of the R/exams package (see <http://www.r-exams.org/>) are transformed into XML
 format required by @code{MyLearn}'.")
     (license license:gpl3)))
 
+(define-public r-exams-forge-data
+  (package
+    (name "r-exams-forge-data")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exams.forge.data" version))
+       (sha256
+        (base32 "1bzla2wqm3x1yi5m8pqaspdf8avp9x2m5axhwn8hsyx6dsbn6cfj"))))
+    (properties `((upstream-name . "exams.forge.data")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=exams.forge.data")
+    (synopsis "Precomputed Dataset Collection Used in 'exams.forge'")
+    (description
+     "The dataset collection supports Pearson correlation and linear regression
+analysis, with datasets for n=100,200,400,800,1000, where n is the sum of
+squared values in x.  Each dataset has x values summing to zero, with sample
+sizes (observations in x) ranging from 2 to 10.  Additional data frames include
+variables with German names and measurement levels, and distribution details
+with R function names, @code{LaTeX} names, discreteness, and package origins.")
+    (license license:gpl3)))
+
 (define-public r-exams-forge
   (package
     (name "r-exams-forge")
@@ -3637,13 +3663,13 @@ psychological, and social science research.")
 (define-public r-exactmultinom
   (package
     (name "r-exactmultinom")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExactMultinom" version))
        (sha256
-        (base32 "1ygsiwcsmda0pbp7lzr03sb461mr9fff7hxp1lil40y9z0xgdmmb"))))
+        (base32 "13qzrb33rkahi24an1pkj4si3xqzfsyrk8xdz4473znnaq5x5xf4"))))
     (properties `((upstream-name . "ExactMultinom")))
     (build-system r-build-system)
     (arguments
@@ -3655,9 +3681,10 @@ psychological, and social science research.")
     (description
      "Computes exact p-values for multinomial goodness-of-fit tests based on multiple
 test statistics, namely, Pearson's chi-square, the log-likelihood ratio and the
-probability mass statistic.  Implements the algorithm detailed in Resin (2020)
-<@code{arXiv:2008.12682>}.  Estimates based on the classical asymptotic
-chi-square approximation or Monte-Carlo simulation can also be computed.")
+probability mass statistic.  Implements the algorithm detailed in Resin (2023)
+<doi:10.1080/10618600.2022.2102026>.  Estimates based on the classical
+asymptotic chi-square approximation or Monte-Carlo simulation can also be
+computed.")
     (license license:gpl2+)))
 
 (define-public r-exactmed
@@ -11052,6 +11079,41 @@ parameters.  It stores the data for the epiparameter R package.  Epidemiological
 parameter estimates are extracted from the literature.")
     (license license:cc0)))
 
+(define-public r-epiparameter
+  (package
+    (name "r-epiparameter")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiparameter" version))
+       (sha256
+        (base32 "05lxhakf27n7dw9bzvar2dp2s8qdqk8y53xls4s1sknz6p1aqwl3"))))
+    (properties `((upstream-name . "epiparameter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-pillar
+                             r-lifecycle
+                             r-epiparameterdb
+                             r-distributional
+                             r-distcrete
+                             r-cli
+                             r-checkmate
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epiverse-trace/epiparameter/")
+    (synopsis
+     "Classes and Helper Functions for Working with Epidemiological Parameters")
+    (description
+     "This package provides classes and helper functions for loading, extracting,
+converting, manipulating, plotting and aggregating epidemiological parameters
+for infectious diseases.  Epidemiological parameters extracted from the
+literature are loaded from the @code{epiparameterDB} R package.")
+    (license license:expat)))
+
 (define-public r-epiomics
   (package
     (name "r-epiomics")
@@ -11940,47 +12002,6 @@ contacts.")
 contact data, composed of case line lists and contacts between cases.  Also
 contains procedures for data handling, interactive graphics, and statistics.")
     (license license:gpl2+)))
-
-(define-public r-epico
-  (package
-    (name "r-epico")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epiCo" version))
-       (sha256
-        (base32 "1x7icsihh7yk0l13xr5l2jsx2hwxdww8gi8pl9xil5hjclpiasbi"))))
-    (properties `((upstream-name . "epiCo")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-treemapify
-                             r-spdep
-                             r-scales
-                             r-rlang
-                             r-rcolorbrewer
-                             r-magrittr
-                             r-lubridate
-                             r-leaflet
-                             r-incidence
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://epiverse-trace.github.io/epiCo/")
-    (synopsis
-     "Statistical and Viz Tools for Vector-Borne Diseases in Colombia")
-    (description
-     "This package provides statistical and visualization tools for the analysis of
-demographic indicators, and spatio-temporal behavior and characterization of
-outbreaks of vector-borne diseases (VBDs) in Colombia.  It implements travel
-times estimated in Bravo-Vega C., Santos-Vega M., & Cordovez J.M. (2022), and
-the endemic channel method (Bortman, M. (1999)
-<https://iris.paho.org/handle/10665.2/8562>).")
-    (license license:expat)))
 
 (define-public r-epicmodel
   (package
@@ -13430,13 +13451,13 @@ forecasts and weather observations
 (define-public r-ensemblebase
   (package
     (name "r-ensemblebase")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EnsembleBase" version))
        (sha256
-        (base32 "1wbkh89gz6m2m9hxbcymsymz3b7pynhdwfyq4qg3h4wn8409anxy"))))
+        (base32 "05qdmhnkxcvvhw1adrjmmckqxm8rbry6wqk8jzqfbm5yn1wh41kz"))))
     (properties `((upstream-name . "EnsembleBase")))
     (build-system r-build-system)
     (arguments
@@ -15530,13 +15551,13 @@ Spectrum, The R Journal, 1, 40-46).")
 (define-public r-emcluster
   (package
     (name "r-emcluster")
-    (version "0.2-16")
+    (version "0.2-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMCluster" version))
        (sha256
-        (base32 "1hy2w7i367id0s6vl8m87d1s275638y767fx39xim9jrz6dwdzvx"))))
+        (base32 "172a1pf3kcnysk80znf7kf2n18862zwazpcgbcy26m8lfg24y10n"))))
     (properties `((upstream-name . "EMCluster")))
     (build-system r-build-system)
     (arguments
@@ -16373,6 +16394,40 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
 <doi:10.1016/j.neucom.2005.12.126>.")
     (license license:gpl2+)))
 
+(define-public r-ellmer
+  (package
+    (name "r-ellmer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ellmer" version))
+       (sha256
+        (base32 "1qx1riiynkkl5kkhl0f86ws0nympzq7ci7a1cwsv04sfna7g6hpq"))))
+    (properties `((upstream-name . "ellmer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7
+                             r-rlang
+                             r-r6
+                             r-promises
+                             r-later
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-coro
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://ellmer.tidyverse.org")
+    (synopsis "Chat with Large Language Models")
+    (description
+     "Chat with large language models from a range of providers including Claude
+<https://claude.ai>, @code{OpenAI} <https://chatgpt.com>, and more.  Supports
+streaming, asynchronous calls, tool calling, and structured data extraction.")
+    (license license:expat)))
+
 (define-public r-ellipticalsymmetry
   (package
     (name "r-ellipticalsymmetry")
@@ -16911,33 +16966,30 @@ Dirichlet-tree prior distributions.  Everest et al. (2022)
 (define-public r-electdecomp
   (package
     (name "r-electdecomp")
-    (version "0.0.1-1")
+    (version "0.0.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ElectDecomp" version))
        (sha256
-        (base32 "1wqcmrbmhi6fpmbb40yy59s6il02k9bxmw1nfk21m4rgb65ssggk"))))
+        (base32 "1pfmdkd0qpgkxbm8h1yzizbid408rf7hdvr10ncj277f1j6msyp1"))))
     (properties `((upstream-name . "ElectDecomp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=ElectDecomp")
-    (synopsis
-     "Decomposition of Seats-to-Votes Distortion in Multimember Elections")
+    (synopsis "Decomposition of Seats-to-Votes Distortions")
     (description
-     "Decomposes the seat-to-vote distortion for every party (individual party bias or
-individual party deviation from proportional representation) into segments that
-can be attributed to separate causes for the party infra or over-representation:
-the electoral system effect (separating the mean and the variance effect within
-it) and the population effect (separating malapportionment and unequal
-participation effect within it).  It works on (single tired) districted
-electoral systems with any number of seats per district.  In addition, the
-package aggregates the individual party distortion into an index of deviation
-from proportionality (the Losemore-Hanby index) whose value is also decomposed
-into segments attributed to the major causes of deviation from proportionality
-(plus the interactions among them).")
+     "Analyses districted electoral systems of any magnitude by computing
+district-party conversion ratios and seats-to-votes deviations, decomposing the
+sources of deviation.  Traditional indexes are also computed.  References:
+Kedar, O., Harsgor, L. and Sheinerman, R.A. (2016). <doi:10.1111/ajps.12225>.
+Penades, A and Pavia, J.M. (2025) The decomposition of seats-to-votes distortion
+in elections: mean, variance, malapportionment and participation''.
+Acknowledgements: The authors wish to thank ConsellerÃ­a de EducaciÃ³n, Cultura,
+Universidades y Empleo, Generalitat Valenciana (grant CIACO/2023/031) for
+supporting this research.")
     (license (license:fsdg-compatible "EPL"))))
 
 (define-public r-elect
@@ -18929,19 +18981,25 @@ motifs of interest using regular expression searches and hidden Markov models
 (define-public r-effectplots
   (package
     (name "r-effectplots")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "effectplots" version))
        (sha256
-        (base32 "1q0xk8kgvdjj541jc85njr57aqim2rqmx9njz1s11bwyjdi9wjhh"))))
+        (base32 "0qmiqi56sd02rqnysdr7yw7mhwmb0l8lsfvjjqbb618n456f47li"))))
     (properties `((upstream-name . "effectplots")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-plotly r-patchwork r-ggplot2 r-collapse))
+    (propagated-inputs (list r-scales
+                             r-rcpp
+                             r-plotly
+                             r-patchwork
+                             r-labeling
+                             r-ggplot2
+                             r-collapse))
     (home-page "https://github.com/mayer79/effectplots")
     (synopsis "Effect Plots")
     (description
@@ -19693,13 +19751,13 @@ potential EEG data.")
 (define-public r-eefanalytics
   (package
     (name "r-eefanalytics")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eefAnalytics" version))
        (sha256
-        (base32 "0s5wa76zxgvpkyj2rrmqhyrknywdb56y91h3hai5h4bprnb7847q"))))
+        (base32 "0r5asq7nxc33b0ldfhzalcld23539z827316fiz837zxnv9i65jj"))))
     (properties `((upstream-name . "eefAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -23010,13 +23068,13 @@ using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarty" version))
        (sha256
-        (base32 "1rwb2y3wz8jismj9wjkq6q5wm0mxfpsbgr79ryayv1fjwhbl5faa"))))
+        (base32 "1gal3ra84v2iwa9kjka3pqxzxa2w55a584jv70v4marqzpfvcbmi"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (arguments
@@ -23037,7 +23095,7 @@ using echelon scan method proposed by Kurihara (2003)
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-htmlwidgets r-dplyr r-data-tree))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-rmarkdown r-knitr esbuild))
     (home-page "https://helgasoft.github.io/echarty/")
     (synopsis "Minimal R/Shiny Interface to JavaScript Library 'ECharts'")
     (description
@@ -23310,38 +23368,6 @@ tailed data, specifically data with power law decay on the tails.  Routines for
 annotating the plot, comparing data to a model, fitting a nonparametric model,
 and some multivariate extensions are given.")
     (license license:gpl3+)))
-
-(define-public r-ecdata
-  (package
-    (name "r-ecdata")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ecdata" version))
-       (sha256
-        (base32 "11pmcl5f376xm56v4g2fhkfaf7safg1r5chqf3n2475pzc0nypz5"))))
-    (properties `((upstream-name . "ecdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-rlang
-                             r-piggyback
-                             r-memoise
-                             r-glue
-                             r-curl
-                             r-cli
-                             r-cachem
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Executive-Communications-Dataset/ecdata")
-    (synopsis "Loads Data from the Executive Communications Dataset")
-    (description
-     "This package provides a minimal package for downloading data from @code{GitHub}
-repositories of the Executive Communications Database.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-ecce
   (package
@@ -24161,13 +24187,13 @@ to Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
 (define-public r-eatrep
   (package
     (name "r-eatrep")
-    (version "0.14.7")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatRep" version))
        (sha256
-        (base32 "11yz0g83ngzab8gqi2mq4s28j7yvl06jf4clwb8vfjqa7lwpfcgq"))))
+        (base32 "0p8qgvrl9c20xbpaz883iva908pvp9bjxmh8mv2bwdwx69q2va69"))))
     (properties `((upstream-name . "eatRep")))
     (build-system r-build-system)
     (arguments
@@ -24182,15 +24208,19 @@ to Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
                              r-miceadds
                              r-mice
                              r-lme4
+                             r-lifecycle
                              r-lavaan
                              r-janitor
                              r-hmisc
+                             r-future
                              r-fmsb
                              r-estimatr
                              r-effectliter
                              r-eattools
                              r-eatgads
+                             r-dplyr
                              r-combinat
+                             r-checkmate
                              r-car
                              r-boot
                              r-bifiesurvey))
@@ -24199,11 +24229,12 @@ to Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
     (synopsis "Educational Assessment Tools for Replication Methods")
     (description
      "Replication methods to compute some basic statistic operations (means, standard
-deviations, frequency tables, percentiles and generalized linear models) in
-complex survey designs comprising multiple imputed variables and/or a clustered
-sampling structure which both deserve special procedures at least in estimating
-standard errors.  See the package documentation for a more detailed description
-along with references.")
+deviations, frequency tables, percentiles, mean comparisons using weighted
+effect coding, generalized linear models, and linear multilevel models) in
+complex survey designs comprising multiple imputed or nested imputed variables
+and/or a clustered sampling structure which both deserve special procedures at
+least in estimating standard errors.  See the package documentation for a more
+detailed description along with references.")
     (license license:gpl2+)))
 
 (define-public r-eatme
@@ -24822,13 +24853,13 @@ extended structural equation modeling package, @code{OpenMx}'.")
 (define-public r-easylabel
   (package
     (name "r-easylabel")
-    (version "0.2.8")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easylabel" version))
        (sha256
-        (base32 "0rl17iccmczd380yzcdkw6943x8pxyb4sqg6q6jj5jqqzalvqshb"))))
+        (base32 "0yw3kbxfxks2scidv756cw6zd2jx17z4rw8g1fp9mk2qxavp9aii"))))
     (properties `((upstream-name . "easylabel")))
     (build-system r-build-system)
     (arguments
@@ -24840,18 +24871,23 @@ extended structural equation modeling package, @code{OpenMx}'.")
                              r-rlang
                              r-rcolorbrewer
                              r-plotly
+                             r-memoise
                              r-gtools
                              r-ggplot2
                              r-dt))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=easylabel")
+    (home-page "https://github.com/myles-lewis/easylabel")
     (synopsis "Interactive Scatter Plot and Volcano Plot Labels")
     (description
      "Interactive labelling of scatter plots, volcano plots and Manhattan plots using
 a shiny and plotly interface.  Users can hover over points to see where specific
 points are located and click points on/off to easily label them.  Labels can be
 dragged around the plot to place them optimally.  Plots can be exported directly
-to PDF for publication.")
+to PDF for publication.  For plots with large numbers of points, points can
+optionally be rasterized as a bitmap, while all other elements (axes, text,
+labels & lines) are preserved as vector objects.  This can dramatically reduce
+file size for plots with millions of points such as Manhattan plots, and is
+ideal for publication.")
     (license license:expat)))
 
 (define-public r-easydifferentialgenecoexpression

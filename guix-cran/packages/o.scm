@@ -4196,19 +4196,20 @@ dependency prediction locally or directly in databases.")
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OralOpioids" version))
        (sha256
-        (base32 "0r090bhdv221ng4acwwppzk907h3vb10nachy32zdx2nfs0dqid7"))))
+        (base32 "18hy0vhbj08zw45yn1gv4pqlpjz2hlva5fc0vqczc506jqq19dz5"))))
     (properties `((upstream-name . "OralOpioids")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2
+                             r-writexl
                              r-tidyr
                              r-stringr
                              r-rvest
@@ -4220,6 +4221,7 @@ dependency prediction locally or directly in databases.")
                              r-openxlsx
                              r-magrittr
                              r-jsonlite
+                             r-httr
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ankonahouston/OralOpioids")
@@ -4474,35 +4476,6 @@ interface (GUI) R package tcltk to ensure that it is user friendly.")
     (description
      "Solves linear systems of form Ax=b via Gauss elimination, LU decomposition,
 Gauss-Seidel, Conjugate Gradient Method (CGM) and Cholesky methods.")
-    (license license:gpl2+)))
-
-(define-public r-optpart
-  (package
-    (name "r-optpart")
-    (version "3.0-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optpart" version))
-       (sha256
-        (base32 "18h659gbgzflq81lcchc058xjgljkmhpsjkh51ylygwrv1qjrz2i"))))
-    (properties `((upstream-name . "optpart")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotrix r-mass r-labdsv r-cluster))
-    (native-inputs (list gfortran))
-    (home-page "http://ecology.msu.montana.edu/labdsv/R")
-    (synopsis "Optimal Partitioning of Similarity Relations")
-    (description
-     "This package contains a set of algorithms for creating partitions and coverings
-of objects largely based on operations on (dis)similarity relations (or
-matrices).  There are several iterative re-assignment algorithms optimizing
-different goodness-of-clustering criteria.  In addition, there are covering
-algorithms clique which derives maximal cliques, and maxpact which creates a
-covering of maximally compact sets.  Graphical analyses and conversion routines
-are also included.")
     (license license:gpl2+)))
 
 (define-public r-optmatch
@@ -6766,6 +6739,33 @@ Assessment Methods toolkit) packages.  By loading and installing
 these packages.  Learn more about @code{openMSE} at <https://openmse.com/>.")
     (license license:gpl3)))
 
+(define-public r-openmpt
+  (package
+    (name "r-openmpt")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openmpt" version))
+       (sha256
+        (base32 "0qspyhgahzv2p82rxb89jccs5dypkyc0id9zjjw5y41s16ldlwzf"))))
+    (properties `((upstream-name . "openmpt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-cpp11 r-av))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://pepijn-devries.github.io/openmpt/")
+    (synopsis "Open 'ModPlug' Tracker Port")
+    (description
+     "Tracker music uses audio samples and pattern tables to organise musical
+compositions.  Such music is stored in module files.  This package reads,
+renders and plays module files using the libopenmpt library
+<https://lib.openmpt.org/>.")
+    (license license:gpl3+)))
+
 (define-public r-openml
   (package
     (name "r-openml")
@@ -8782,13 +8782,13 @@ machine learning models and the rules are often helpful heuristics.")
 (define-public r-onemap
   (package
     (name "r-onemap")
-    (version "3.0.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onemap" version))
        (sha256
-        (base32 "0h5bi4zyiglic60msrkfny28k1rb7avqbs87ipzwwayb452b970c"))))
+        (base32 "1rpbx3j6q31m2niqbnxjkzh31a22l879f3x1j84ldx465zdpxdfv"))))
     (properties `((upstream-name . "onemap")))
     (build-system r-build-system)
     (arguments
@@ -8809,7 +8809,7 @@ machine learning models and the rules are often helpful heuristics.")
                              r-dplyr
                              r-dendextend))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/augusto-garcia/onemap")
+    (home-page "https://github.com/cristianetaniguti/onemap")
     (synopsis "Construction of Genetic Maps in Experimental Crosses")
     (description
      "Analysis of molecular marker data from model (backcrosses, F2 and recombinant
@@ -9718,34 +9718,29 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "1lgh0cyd5qpg4bzs1s6iwvfif7mwwjwxn3wjqhidpg6nhhiv1dga"))))
+        (base32 "1am3a577fim9qcfsj47r7ga8rn11y454wijwb4z1n2f14qihyk32"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-visomopresults
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
-                             r-omock
-                             r-gt
-                             r-ggplot2
-                             r-flextable
-                             r-duckdb
+                             r-lifecycle
+                             r-glue
                              r-dplyr
                              r-cohortconstructor
-                             r-cohortcharacteristics
                              r-clock
                              r-cli
                              r-cdmconnector))
@@ -10389,13 +10384,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-ollamar
   (package
     (name "r-ollamar")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ollamar" version))
        (sha256
-        (base32 "0l9k84hf5y46ci6l2sy1zi3423akip2jr0zi8cnjh337dfww9sis"))))
+        (base32 "0linklrdf4swczaz5xi8z7iyxdnlvlqdbnif3ciyil0h75bz6sq5"))))
     (properties `((upstream-name . "ollamar")))
     (build-system r-build-system)
     (arguments
@@ -10407,6 +10402,7 @@ different authors in the recent years.  See Alizadeh (2019)
                              r-glue
                              r-crayon
                              r-base64enc))
+    (native-inputs (list r-knitr))
     (home-page "https://hauselin.github.io/ollama-r/")
     (synopsis "'Ollama' Language Models")
     (description
@@ -12678,24 +12674,19 @@ technology). - Create frozen maps with the possibility to add labels.")
 (define-public r-oceanic
   (package
     (name "r-oceanic")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oceanic" version))
        (sha256
-        (base32 "0nfz257i0gfkqvnpi4gaki79mgh1ff6h075dyylk0fs0gw01dddm"))))
+        (base32 "09ysrq81lpws1m07i7ak7hd2kimscm5varxczqh8lxcs2sfx03m4"))))
     (properties `((upstream-name . "oceanic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spdata
-                             r-sp
-                             r-sf
-                             r-maps
-                             r-ggplot2
-                             r-broom))
+    (propagated-inputs (list r-spdata r-sf r-maps r-ggplot2 r-broom))
     (home-page "https://cran.r-project.org/package=oceanic")
     (synopsis "Location Identify Tool")
     (description

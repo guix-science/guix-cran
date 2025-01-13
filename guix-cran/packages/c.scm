@@ -1661,13 +1661,13 @@ the different distribution rules.")
 (define-public r-customizedtraining
   (package
     (name "r-customizedtraining")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "customizedTraining" version))
        (sha256
-        (base32 "0kjp22bzv7a3xynhm9xmabfcms21586p8caz1nk1w88qdvidqfqd"))))
+        (base32 "1ddaridylc4wh7bkga68n8xn5md4csxp7w2yh5slv81x6rj30xkj"))))
     (properties `((upstream-name . "customizedTraining")))
     (build-system r-build-system)
     (arguments
@@ -2925,13 +2925,13 @@ types while checking for values outside the type limits, NA values, etc.")
 (define-public r-ctxr
   (package
     (name "r-ctxr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctxR" version))
        (sha256
-        (base32 "1m3hj5cwghm7nx9s5z3j6yby2i04ykich213x6j0gps4n4c8zanr"))))
+        (base32 "19lz6sg45980v25qhpg2s5p0dv5gn6mk1wcqq954kxwmxjr5b99k"))))
     (properties `((upstream-name . "ctxR")))
     (build-system r-build-system)
     (arguments
@@ -2952,7 +2952,8 @@ types while checking for values outside the type limits, NA values, etc.")
     (synopsis "Utilities for Interacting with the 'CTX' APIs")
     (description
      "Access chemical, hazard, bioactivity, and exposure data from the Computational
-Toxicology and Exposure ('CTX') APIs <https://api-ccte.epa.gov/docs/>.
+Toxicology and Exposure ('CTX') APIs
+<https://www.epa.gov/comptox-tools/computational-toxicology-and-exposure-apis>.
 @code{ctxR} was developed to streamline the process of accessing the information
 available through the CTX APIs without requiring prior knowledge of how to use
 APIs.  Most data is also available on the @code{CompTox} Chemical Dashboard
@@ -3576,13 +3577,13 @@ al. (2017) <@code{arXiv:1706.10029>}).")
 (define-public r-ctmed
   (package
     (name "r-ctmed")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cTMed" version))
        (sha256
-        (base32 "1hsicqizv88p4x5hpwd62q5fz2lavvradfcvcajbl10frchrdbz0"))))
+        (base32 "1cd1lxzidk2p9dbvmm9wbr1x269vq9v2gyqilqq4v2jw9wcbz67y"))))
     (properties `((upstream-name . "cTMed")))
     (build-system r-build-system)
     (arguments
@@ -9356,13 +9357,13 @@ equality operations are calculated using cpp11'.")
 (define-public r-cppcontainers
   (package
     (name "r-cppcontainers")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cppcontainers" version))
        (sha256
-        (base32 "0r7580rlc84zfqh8cj1bhinz0sdsamcw80xkky1cbrwczwmjhxy9"))))
+        (base32 "0hkcxbf63b8i0ij0rnfzic1iwzjby4kggqrjhpnb1pkpzz0x57af"))))
     (properties `((upstream-name . "cppcontainers")))
     (build-system r-build-system)
     (arguments
@@ -11511,30 +11512,6 @@ smaller version from dbdataset package.  It contains only information about
 COVID-19 possible treatment.")
     (license license:cc0)))
 
-(define-public r-covid19brazil
-  (package
-    (name "r-covid19brazil")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "covid19brazil" version))
-       (sha256
-        (base32 "014i0wnr7nn6knyz28hv9dymkr5yy2qwd2jqybzjdlfikf42baba"))))
-    (properties `((upstream-name . "covid19brazil")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-dplyr r-devtools))
-    (home-page "https://github.com/alexandreloures/covid19Brazil")
-    (synopsis "COVID-19 Dataset for Brazil")
-    (description
-     "Dataset with strategic information about COVID-19 in Brazil.  Data for
-municipalities, states, region and Brazil.  Data source: Sistema Unico de Saude
-- SUS.")
-    (license license:expat)))
-
 (define-public r-covid19br
   (package
     (name "r-covid19br")
@@ -11776,13 +11753,13 @@ distribution by Johnstone (2008) <DOI:10.1214/08-AOS605>.")
 (define-public r-coveffectsplot
   (package
     (name "r-coveffectsplot")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coveffectsplot" version))
        (sha256
-        (base32 "0arh7i7dyz67q6lmq9hf4wws0712mmmlip62bcwrxw8aiy1mn5nz"))))
+        (base32 "1725j0wppdj1ww00s8bb12rmnhch346x41pizqj64k3d45yc9jyc"))))
     (properties `((upstream-name . "coveffectsplot")))
     (build-system r-build-system)
     (arguments
@@ -13557,19 +13534,19 @@ values with confidence intervals.  See Friendly (2002)
 (define-public r-corrfuns
   (package
     (name "r-corrfuns")
-    (version "1.0")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corrfuns" version))
        (sha256
-        (base32 "07d15qyp7nbnr5qzvkhfrm0a7rl7asiqkv2s8q0wd4jwiml1v3lj"))))
+        (base32 "0fqlvzpilcafyrx6ggv3nfq70mzxsysy68dihgr3qqmdmb60wxnl"))))
     (properties `((upstream-name . "corrfuns")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rfast))
+    (propagated-inputs (list r-rfast2 r-rfast))
     (home-page "https://cran.r-project.org/package=corrfuns")
     (synopsis "Correlation Coefficient Related Functions")
     (description
@@ -13577,7 +13554,8 @@ values with confidence intervals.  See Friendly (2002)
 correlations, partial correlations and hypothesis testing using asymptotic tests
 and computer intensive methods (bootstrap and permutation).  References include
 Mardia K.V., Kent J.T. and Bibby J.M. (1979). \"Multivariate Analysis\".  ISBN:
-978-0124712522.  London: Academic Press.")
+978-0124712522.  London: Academic Press and Owen A. B. (2001). \"Empirical
+likelihood\".  Chapman and Hall/CRC Press.  ISBN: 9781584880714.")
     (license license:gpl2+)))
 
 (define-public r-correspondencetables
@@ -14365,18 +14343,19 @@ allows for both mean and overdispersion covariates.")
 (define-public r-cormid
   (package
     (name "r-cormid")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CorMID" version))
        (sha256
-        (base32 "1hj5sr9ig3qaqvc0ah8bqizyjrmwn9c8lm6b9hpamfnm1m9llcy8"))))
+        (base32 "1zdd6mdv35l0i8kvad7h89mflh8l38lz3k52d854ppra4i5528rk"))))
     (properties `((upstream-name . "CorMID")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/janlisec/CorMID")
     (synopsis "Correct Mass Isotopologue Distribution Vectors")
@@ -14833,13 +14812,13 @@ the data into separate modules.")
 (define-public r-corbouli
   (package
     (name "r-corbouli")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corbouli" version))
        (sha256
-        (base32 "0hdl5f426wp2f5k8nc9fhc1g1rbpqsm6kjkvyfk120anvcj09nyk"))))
+        (base32 "0a89s50waz2qh0sp0xqihm37p4zac1fkw20gdpxhqavgz59gjja8"))))
     (properties `((upstream-name . "corbouli")))
     (build-system r-build-system)
     (arguments
@@ -15174,34 +15153,6 @@ and Remillard (2023) <@code{arXiv:2301.13408>}.")
     (description
      "Estimation of 2-level factor copula-based regression models for clustered data
 where the response variable can be either discrete or continuous.")
-    (license license:gpl2+)))
-
-(define-public r-copulaedas
-  (package
-    (name "r-copulaedas")
-    (version "1.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "copulaedas" version))
-       (sha256
-        (base32 "01wp8jnz7kndknj7lh9ia7mm41k1vbaksalyy9v19bb77yhgzmba"))))
-    (properties `((upstream-name . "copulaedas")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vines r-truncnorm r-mvtnorm r-copula))
-    (home-page "https://github.com/yasserglez/copulaedas")
-    (synopsis "Estimation of Distribution Algorithms Based on Copulas")
-    (description
-     "This package provides a platform where EDAs (estimation of distribution
-algorithms) based on copulas can be implemented and studied.  The package offers
-complete implementations of various EDAs based on copulas and vines, a group of
-well-known optimization problems, and utility functions to study the performance
-of the algorithms.  Newly developed EDAs can be easily integrated into the
-package by extending an S4 class with generic functions for their main
-components.")
     (license license:gpl2+)))
 
 (define-public r-copuladata
@@ -15880,13 +15831,13 @@ goodness-of-fit.")
 (define-public r-coortweet
   (package
     (name "r-coortweet")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CooRTweet" version))
        (sha256
-        (base32 "0gziybfp640p2gskbz80kx9ikmg3mpk0m937iq44k1906lrvp9p2"))))
+        (base32 "0ml9iqhm26adbyrpwzczmjl1lr4md335k91kjsm53jciclvmxjyi"))))
     (properties `((upstream-name . "CooRTweet")))
     (build-system r-build-system)
     (arguments
@@ -17233,13 +17184,13 @@ research.")
 (define-public r-constructive
   (package
     (name "r-constructive")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constructive" version))
        (sha256
-        (base32 "1w75ydhpm49a4prkb9kys1866jn552i85p71y446qj7cj46m8yih"))))
+        (base32 "126k4dpcmsqn3wdvjni8w8d30srfl33a8mnvavplz8gfdxkh3zq2"))))
     (properties `((upstream-name . "constructive")))
     (build-system r-build-system)
     (arguments
@@ -20479,13 +20430,13 @@ events in hydrology and climatology.  Please see Hao Zengchao et al. (2019)
 (define-public r-compound-cox
   (package
     (name "r-compound-cox")
-    (version "3.31")
+    (version "3.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compound.Cox" version))
        (sha256
-        (base32 "0ynv2mpsph40dpkkf6fxw3kvk9x41wdfrk6332ghvfm7xn1aa97h"))))
+        (base32 "1xgl45i764x1lmqbv6q16jhfn211m28zyqhaj4xmv8g6i11sxy3j"))))
     (properties `((upstream-name . "compound.Cox")))
     (build-system r-build-system)
     (arguments
@@ -21073,13 +21024,13 @@ the analysed objects.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compind" version))
        (sha256
-        (base32 "0k45gazca94dscqhy05p68k755al4gd1gilz5svq5h6cv5fijhxk"))))
+        (base32 "07yvprvp4170lgxr68ma81mnwd8nbrj3gzhai38iislqhj5rjizs"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (arguments
@@ -21111,10 +21062,9 @@ the analysed objects.")
      "This package provides a collection of functions to calculate Composite
 Indicators methods, focusing, in particular, on the normalisation and
 weighting-aggregation steps, as described in OECD Handbook on constructing
-composite indicators: methodology and user guide
-<https://www.oecd-ilibrary.org/economics/handbook-on-constructing-composite-indicators-methodology-and-user-guide_9789264043466-en>,
-Vidoli and Fusco and Mazziotta <doi:10.1007/s11205-014-0710-y>, Mazziotta and
-Pareto (2016) <doi:10.1007/s11205-015-0998-2>, Van Puyenbroeck and Rogge
+composite indicators: methodology and user guide, 2008, Vidoli and Fusco and
+Mazziotta <doi:10.1007/s11205-014-0710-y>, Mazziotta and Pareto (2016)
+<doi:10.1007/s11205-015-0998-2>, Van Puyenbroeck and Rogge
 <doi:10.1016/j.ejor.2016.07.038> and other authors.")
     (license license:gpl3)))
 
@@ -22848,13 +22798,13 @@ Neural Information Processing Systems 35 (in press)\".")
 (define-public r-colourvision
   (package
     (name "r-colourvision")
-    (version "2.0.4")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colourvision" version))
        (sha256
-        (base32 "1abrp6x9wdl5bdbysgziznzmiaik8v4n76b4bgnlk13mwbhfn47h"))))
+        (base32 "1h24iyqyby805j3h9r8lp4acz1hhvj40cfm3ng0d5dvrhpl09vdk"))))
     (properties `((upstream-name . "colourvision")))
     (build-system r-build-system)
     (arguments
@@ -22867,7 +22817,7 @@ Neural Information Processing Systems 35 (in press)\".")
     (description
      "Colour vision models, colour spaces and colour thresholds.  Provides flexibility
 to build user-defined colour vision models for n number of photoreceptor types.
-Also includes Vorobyev & Osorio (1998) Receptor Noise Limited models
+Includes Vorobyev & Osorio (1998) Receptor Noise Limited models
 <doi:10.1098/rspb.1998.0302>, Chittka (1992) colour hexagon
 <doi:10.1007/BF00199331>, and Endler & Mielke (2005) model
 <doi:10.1111/j.1095-8312.2005.00540.x>.  Models have been extended to accept any
@@ -23630,6 +23580,40 @@ the user to select the desired database and download it without having to do the
 exhausting acquisition process.")
     (license license:expat)))
 
+(define-public r-colombiapi
+  (package
+    (name "r-colombiapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ColombiAPI" version))
+       (sha256
+        (base32 "015h8kx36yjrn9djvzfwdb1hgjimai5kyaqasn8m1a3dyd81y8mb"))))
+    (properties `((upstream-name . "ColombiAPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/colombiapi")
+    (synopsis "Access Colombia's Public Data via 'API-Colombia'")
+    (description
+     "This package provides a seamless interface to access diverse public data about
+Colombia through the API-Colombia', a RESTful API. The package enables users to
+explore various aspects of Colombia, including general information, geography,
+and cultural insights.  It includes five API-related functions to retrieve data
+on topics such as Colombia's general information, airports, departments,
+regions, and presidents.  Additionally, @code{ColombiAPI} offers a built-in
+function to view the datasets available within the package.  The package also
+includes curated datasets covering Bogota air stations, business and holiday
+dates, public schools, Colombian coffee exports, cannabis licenses, Medellin
+rainfall, and malls in Bogota, making it a comprehensive tool for exploring
+Colombia's data.  For more details on the API-Colombia', see
+<https://api-colombia.com/>.")
+    (license license:gpl3)))
+
 (define-public r-colocr
   (package
     (name "r-colocr")
@@ -23957,6 +23941,30 @@ Basagana and Barrera-Gomez (2021) <doi:10.1093/ije/dyab179>.")
     (description
      "Check for namespace collisions between a string input (your function or package
 name) and half a million packages and functions on CRAN.")
+    (license license:expat)))
+
+(define-public r-collett
+  (package
+    (name "r-collett")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "collett" version))
+       (sha256
+        (base32 "1bjx47dlpkjxyczaayhzh6zc01qlka9q8cx6d4p7rfnxgw6wn8fz"))))
+    (properties `((upstream-name . "collett")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/mclements/collett")
+    (synopsis
+     "Datasets from \"Modelling Survival Data in Medical Research\" by Collett")
+    (description
+     "Datasets for the book entitled \"Modelling Survival Data in Medical Research\" by
+Collett (2023) <doi:10.1201/9781003282525>.  The datasets provide extensive
+examples of time-to-event data.")
     (license license:expat)))
 
 (define-public r-collegescorecard
@@ -24930,38 +24938,6 @@ Barnabani(2017)<doi:10.1080/03610918.2014.963612>, Hu et
 al.(2020)<doi:10.1007/s00180-019-00924-9>.")
     (license license:gpl3+)))
 
-(define-public r-cofra
-  (package
-    (name "r-cofra")
-    (version "0.1002")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CoFRA" version))
-       (sha256
-        (base32 "0ldf84dxaanww3qkf64mz5gv3yv2rjp9m6dy64xckds66vw6x0m3"))))
-    (properties `((upstream-name . "CoFRA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-gplots))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CoFRA")
-    (synopsis "Complete Functional Regulation Analysis")
-    (description
-     "Calculates complete functional regulation analysis and visualize the results in
-a single heatmap.  The provided example data is for biological data but the
-methodology can be used for large data sets to compare quantitative entities
-that can be grouped.  For example, a store might divide entities into cloth,
-food, car products etc and want to see how sales changes in the groups after
-some event.  The theoretical background for the calculations are provided in New
-insights into functional regulation in MS-based drug profiling, Ana Sofia
-Carvalho, Henrik Molina & Rune Matthiesen, Scientific Reports
-<doi:10.1038/srep18826>.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-cofid
   (package
     (name "r-cofid")
@@ -25048,13 +25024,13 @@ from the base matrix.")
 (define-public r-cofad
   (package
     (name "r-cofad")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cofad" version))
        (sha256
-        (base32 "18czr2l9cm4n6vxmjdxasvykn6y17xrkrxyfmlf4z1hbbci3w6sy"))))
+        (base32 "008qlq47kyfvdgfm43vz5ziv67km5af7mydzlxdxg14kidiv16bf"))))
     (properties `((upstream-name . "cofad")))
     (build-system r-build-system)
     (arguments
@@ -25744,13 +25720,13 @@ data frame.")
 (define-public r-codebook
   (package
     (name "r-codebook")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codebook" version))
        (sha256
-        (base32 "1jh5qm2qzsvs9pzb67c3z0v5shdzhmqklzp7a9zq9izr9385ilmy"))))
+        (base32 "15j5g7f6a0g6rx8dds0gdmj7h8glfiakjp43bz2bl1j45di2g6zq"))))
     (properties `((upstream-name . "codebook")))
     (build-system r-build-system)
     (arguments
@@ -26705,13 +26681,13 @@ analysis of ecological count data (Harrison et al.  2020
 (define-public r-cnum
   (package
     (name "r-cnum")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cnum" version))
        (sha256
-        (base32 "0iphbx5ii4ij0bi9nqdz793i4gk2164jlgz5xn8yzsayjmizhdk2"))))
+        (base32 "1iddlf4xwr27sfzb1p3qplmik8qk6kgw9j40k6ihmzla0mb8vcxk"))))
     (properties `((upstream-name . "cnum")))
     (build-system r-build-system)
     (arguments
@@ -26725,10 +26701,10 @@ analysis of ecological count data (Harrison et al.  2020
 and Arabic numerals as well as detection and extraction of Chinese numerals in
 character objects and string.  This package supports the casual scale naming
 system and the respective SI prefix systems used in mainland China and Taiwan:
-\"China Statutory Measurement Units\" State Administration for Market Regulation
-(2019) <http://gkml.samr.gov.cn/nsjg/jls/201902/t20190225_291134.html> \"Names,
-Definitions and Symbols of the Legal Units of Measurement and the Decimal
-Multiples and Submultiples\" Ministry of Economic Affairs (2019)
+\"The State Council's Order on the Unified Implementation of Legal Measurement
+Units in Our Country\" The State Council of the People's Republic of China (1984)
+\"Names, Definitions and Symbols of the Legal Units of Measurement and the
+Decimal Multiples and Submultiples\" Ministry of Economic Affairs (2019)
 <https://gazette.nat.gov.tw/@code{egFront/detail.do?metaid=108965>}.")
     (license license:expat)))
 
@@ -27727,6 +27703,41 @@ closed-form solution in Bui (2022) <doi:10.1016/j.patrec.2022.11.007>) and
 conditional ISOMAP in Bui (2021) <@code{arXiv:2111.13646>}.")
     (license license:gpl2)))
 
+(define-public r-cmhsu
+  (package
+    (name "r-cmhsu")
+    (version "0.0.6.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CMHSU" version))
+       (sha256
+        (base32 "1kvnjc1fz8j88jn0j8rrhwlh0z4c4ka9jmm3j42pzqjmbdcw8djz"))))
+    (properties `((upstream-name . "CMHSU")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-purrr r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CMHSU")
+    (synopsis
+     "Mental Health Status, Substance Use Status and their Concurrent Status in North American Healthcare Administrative Databases")
+    (description
+     "Patients Mental Health (MH) status, Substance Use (SU) status, and concurrent
+MH/SU status in the American/Canadian Healthcare Administrative Databases can be
+identified.  The detection is based on given parameters of interest by
+clinicians including the list of plausible ICD MH/SU codes (3/4/5 characters),
+the required number of visits of hospital for MH/SU , the required number of
+visits of service physicians for MH/SU, and the maximum time span within MH
+visits, within SU visits, and, between MH and SU visits.  Methods are described
+in: Khan S <https://pubmed.ncbi.nlm.nih.gov/29044442/>, Keen C, et al. (2021)
+<doi:10.1111/add.15580>, Lavergne MR, et al. (2022)
+<doi:10.1186/s12913-022-07759-z>, Casillas, S M, et al. (2022)
+<doi:10.1016/j.abrep.2022.100464>, CIHI (2022) <https://www.cihi.ca/en>, CDC
+(2024) <https://www.cdc.gov>, WHO (2019) <https://icd.who.int/en>.")
+    (license license:gpl3)))
+
 (define-public r-cmhnpa
   (package
     (name "r-cmhnpa")
@@ -28148,13 +28159,13 @@ plot.")
 (define-public r-cmahalanobis
   (package
     (name "r-cmahalanobis")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmahalanobis" version))
        (sha256
-        (base32 "1lbw1ffn3lhillzmgg8q4klqybw4hka1jn37b3npzixc0mij8ywb"))))
+        (base32 "02i2szrgvp2mxhlqi3ga5i4lklxrlg8ygczk6c064pyg8xr97bkp"))))
     (properties `((upstream-name . "cmahalanobis")))
     (build-system r-build-system)
     (arguments
@@ -28166,13 +28177,15 @@ plot.")
      "Calculate Distance Measures for a Given List of Data Frames with Factors")
     (description
      "It provides functions that calculate Mahalanobis distance, Euclidean distance,
-Manhattan distance and Chebyshev distance between each pair of species in a list
-of data frames.  These metrics are fundamental in various fields, such as
-cluster analysis, classification, and other applications of machine learning and
-data mining, where assessing similarity or dissimilarity between data is
-crucial.  The package is designed to be flexible and easily integrated into data
-analysis workflows, providing reliable tools for evaluating distances in
-multidimensional contexts.")
+Manhattan distance, Chebyshev distance, Hamming distance, Canberra distance,
+Minkowski distance, Cosine distance, Bhattacharyya distance, Jaccard distance,
+Hellinger distance, Bray-Curtis distance, Sorensen-Dice distance between each
+pair of species in a list of data frames.  These metrics are fundamental in
+various fields, such as cluster analysis, classification, and other applications
+of machine learning and data mining, where assessing similarity or dissimilarity
+between data is crucial.  The package is designed to be flexible and easily
+integrated into data analysis workflows, providing reliable tools for evaluating
+distances in multidimensional contexts.")
     (license license:gpl3)))
 
 (define-public r-cmaesr
@@ -29135,13 +29148,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermq" version))
        (sha256
-        (base32 "1zr3na4if3a6za0fmx37slz3gjhgddc6ca78mvmgfi7n9wlczhyx"))))
+        (base32 "0d7yikm6n8gykm38bn9xqs5ndafkx29v2g5wxhav43q5ncl8hmdf"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (arguments
@@ -33043,13 +33056,13 @@ analysis, applied to isotope data extracted from clams.")
 (define-public r-clam
   (package
     (name "r-clam")
-    (version "2.6.1")
+    (version "2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clam" version))
        (sha256
-        (base32 "0kfkr5rnzmfj1jjf2jwkaxnddalid982gbd44pgz4y1nw00kj71c"))))
+        (base32 "1ad6cir6kzrmws3yq9xwdiz8mg01z4ibxk7596s6v136z76rxacd"))))
     (properties `((upstream-name . "clam")))
     (build-system r-build-system)
     (arguments
@@ -34834,13 +34847,13 @@ from the result of logistic regression.")
 (define-public r-ciphertext
   (package
     (name "r-ciphertext")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciphertext" version))
        (sha256
-        (base32 "0jkhsq3n42dsr6cg3sp039cp4dah9cdc25q5h51rsq65m4bxmh9k"))))
+        (base32 "1shspipq5symjhx95x1hn1i0sd3icicvrdw9y6ibxg1sx0qgkrra"))))
     (properties `((upstream-name . "ciphertext")))
     (build-system r-build-system)
     (arguments
@@ -34852,7 +34865,7 @@ from the result of logistic regression.")
      "Classical cryptography methods for words and brief phrases.  Substitution,
 transposition and concealment (null) ciphers are available, like Caesar,
 VigenÃ¨re, Atbash, affine, simple substitution, Playfair, rail fence, Scytale,
-single column, and Polybius ciphers.")
+single column, bifid, trifid, and Polybius ciphers.")
     (license license:gpl3)))
 
 (define-public r-cipher
@@ -41673,20 +41686,19 @@ which was extended and enhanced by Giessing and Tent (2019)
 (define-public r-cego
   (package
     (name "r-cego")
-    (version "2.4.3")
+    (version "2.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CEGO" version))
        (sha256
-        (base32 "0pr3mkygnwcaslf0z8np7vhf7y70l9xqbx61bp98my5gq8gfzcxg"))))
+        (base32 "0b9rvmiyz993bivghnhd22c1xmiqb701f8q4vn7zrrxs3cvkvxhy"))))
     (properties `((upstream-name . "CEGO")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-quadprog
-                             r-paramhelpers
                              r-matrix
                              r-mass
                              r-fastmatch
@@ -41980,13 +41992,13 @@ is in no way officially related to or endorsed by Copernicus.")
 (define-public r-cdsampling
   (package
     (name "r-cdsampling")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDsampling" version))
        (sha256
-        (base32 "0s2i68m3cczfkp44p4ddi9ygvr8ymxqnvpnh8b5cng246haavzld"))))
+        (base32 "14rz54r5cykvpb2kz0bzb9s8mw72im71j5g119854rnjjqdlxd1i"))))
     (properties `((upstream-name . "CDsampling")))
     (build-system r-build-system)
     (arguments
@@ -42258,6 +42270,32 @@ sets can be cached for later off-line use.")
 to quantify the increase in life expectancy if a certain cause of death is
 removed.  See Adamic, P. (2015)
 (<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2689352>).")
+    (license license:gpl2)))
+
+(define-public r-cdid
+  (package
+    (name "r-cdid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cdid" version))
+       (sha256
+        (base32 "0zi5vlsrlfrxapv15haym0n48y4mji2c5rhdy3bdv5p6nf9l7689"))))
+    (properties `((upstream-name . "cdid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr r-matrix r-mass r-did r-bmisc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/joelcuerrier/cdid")
+    (synopsis "The Chained Difference-in-Differences")
+    (description
+     "Extends the did package to improve efficiency and handling of unbalanced panel
+data.  Bellego, Benatia, and Dortet-Bernadet (2024), \"The Chained
+Difference-in-Differences\", Journal of Econometrics,
+<doi:10.1016/j.jeconom.2024.105783>.")
     (license license:gpl2)))
 
 (define-public r-cdghmm
@@ -45015,35 +45053,6 @@ with applications to high-dimensional data sets\".  Statistics and Computing, 34
 26. <doi:10.1007/s11222-023-10328-x>.")
     (license license:gpl2+)))
 
-(define-public r-cauchycp
-  (package
-    (name "r-cauchycp")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CauchyCP" version))
-       (sha256
-        (base32 "0sv1gfvgwqvm7zb3rhlhmfgfwm2i49wzzkg473gdmamvvpvzih43"))))
-    (properties `((upstream-name . "CauchyCP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival))
-    (home-page "https://cran.r-project.org/package=CauchyCP")
-    (synopsis "Powerful Test for Survival Data under Non-Proportional Hazards")
-    (description
-     "An omnibus test of change-point Cox regression models to improve the statistical
-power of detecting signals of non-proportional hazards patterns.  The technical
-details can be found in Hong Zhang, Qing Li, Devan Mehrotra and Judong Shen
-(2021) <@code{arXiv:2101.00059>}.  Extensive simulation studies demonstrate
-that, compared to existing tests under non-proportional hazards, the proposed
-@code{CauchyCP} test 1) controls the type I error better at small alpha levels;
-2) increases the power of detecting time-varying effects; and 3) is more
-computationally efficient.")
-    (license license:gpl2)))
-
 (define-public r-cattexact
   (package
     (name "r-cattexact")
@@ -45847,13 +45856,13 @@ Chapman and Hall.")
 (define-public r-cast
   (package
     (name "r-cast")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAST" version))
        (sha256
-        (base32 "1ga9j2c17gp14hgjd5wa8liak1m0qnhp27hl0r1iqk3gkxq3z5c9"))))
+        (base32 "17qqlx73aiyqd0w9948hm304b6jqhhd2bv5q4w0dwpfcc1hbg9rh"))))
     (properties `((upstream-name . "CAST")))
     (build-system r-build-system)
     (arguments
@@ -45888,7 +45897,8 @@ Meyer et al. (2018) <doi:10.1016/j.envsoft.2017.12.001>; Meyer et al. (2019)
 <doi:10.1111/2041-210X.13650>; MilÃ  et al. (2022)
 <doi:10.1111/2041-210X.13851>; Meyer and Pebesma (2022)
 <doi:10.1038/s41467-022-29838-9>; Linnenbrink et al. (2023)
-<doi:10.5194/egusphere-2023-1308>.  The package is described in detail in Meyer
+<doi:10.5194/egusphere-2023-1308>; Schumacher et al. (2024)
+<doi:10.5194/egusphere-2024-2730>.  The package is described in detail in Meyer
 et al. (2024) <doi:10.48550/@code{arXiv.2404.06978>}.")
     (license license:gpl2+)))
 
@@ -46059,13 +46069,13 @@ machine.  Try to build your fortune before you succumb to the gambler's ruin!")
 (define-public r-cases
   (package
     (name "r-cases")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cases" version))
        (sha256
-        (base32 "16yfypaqjnl3b99a55mri2j55xaj7dixw76wbpbfa3s4y0zylwpz"))))
+        (base32 "10x514wnahf2i95xsxz2zqsmq8qymha5azal95bfyg3lpk89gm1d"))))
     (properties `((upstream-name . "cases")))
     (build-system r-build-system)
     (arguments
@@ -46089,9 +46099,9 @@ machine.  Try to build your fortune before you succumb to the gambler's ruin!")
      "Enables simultaneous statistical inference for the accuracy of multiple
 classifiers in multiple subgroups (strata).  For instance, allows to perform
 multiple comparisons in diagnostic accuracy studies with co-primary endpoints
-sensitivity and specificity. (Westphal, Max, and Antonia Zapf. (2021).
-\"Statistical Inference for Diagnostic Test Accuracy Studies with Multiple
-Comparisons.\" <@code{arXiv:2105.13469>}.).")
+sensitivity and specificity (Westphal M, Zapf A. Statistical inference for
+diagnostic test accuracy studies with multiple comparisons.  Statistical Methods
+in Medical Research.  2024;0(0). <doi:10.1177/09622802241236933>).")
     (license license:expat)))
 
 (define-public r-casematch
@@ -48929,13 +48939,13 @@ plot refinement over time.")
 (define-public r-calsim
   (package
     (name "r-calsim")
-    (version "0.5.2")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CalSim" version))
        (sha256
-        (base32 "1ij3xaizq1lpq5vg25i8pz4khm7ab81kzfayp6a914n0jgxvprj7"))))
+        (base32 "1apd7rwn9k6f9vqngscf5qffgq3z0bbxz1hdp1g6ncskg9jbrkyk"))))
     (properties `((upstream-name . "CalSim")))
     (build-system r-build-system)
     (arguments

@@ -670,13 +670,13 @@ your probability of winning a battle.  This speeds the game up significantly.")
 (define-public r-aws-wrfsmn
   (package
     (name "r-aws-wrfsmn")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aws.wrfsmn" version))
        (sha256
-        (base32 "1ayyk0phq7afc9p0p8xjgdpzyylx91hc9j02rp2hcq1rf0fnkaw7"))))
+        (base32 "09hzf3pnm9jzw5c87639jyjfh0kyv0c3fx3g8h5hlqcas3fybz2n"))))
     (properties `((upstream-name . "aws.wrfsmn")))
     (build-system r-build-system)
     (arguments
@@ -1808,13 +1808,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "0ybiazk3r7zbyh0zlv9cvymwjlyk0sn3wbj1k1am4qbmf1rggag3"))))
+        (base32 "0xpk6pxqgaarlxcbs6i2bsm8pg1mzfdjbz3b2lrbv538qby3csyn"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -1825,11 +1825,13 @@ relationships between categorical and continuous variables in the data set.")
                              r-tern
                              r-survival
                              r-stringr
+                             r-rvg
                              r-rtables
                              r-rlistings
                              r-rlang
                              r-officer
                              r-gridextra
+                             r-ggpubr
                              r-ggplot2
                              r-forcats
                              r-flextable
@@ -5170,40 +5172,6 @@ well as the method of moments estimator of Frei and Wunsch (2018)
 <doi:10.21314/JCR.2017.231> for auto-correlated time series.")
     (license license:gpl3)))
 
-(define-public r-assetallocation
-  (package
-    (name "r-assetallocation")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AssetAllocation" version))
-       (sha256
-        (base32 "0qd58478bwg20x7ivfasmhs87swl6wj98vzlp608y208madl8ss6"))))
-    (properties `((upstream-name . "AssetAllocation")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-xts
-                             r-riskportfolios
-                             r-riskparityportfolio
-                             r-quantmod
-                             r-performanceanalytics
-                             r-nmof
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rubetron/AssetAllocation")
-    (synopsis "Backtesting Simple Asset Allocation Strategies")
-    (description
-     "Easy and quick testing of customizable asset allocation strategies.  Users can
-rely on their own data, or have the package automatically download data from
-Yahoo Finance (<https://finance.yahoo.com/>).  Several pre-loaded portfolios
-with data are available, including some which are discussed in Faber (2015,
-ISBN:9780988679924).")
-    (license license:gpl3+)))
-
 (define-public r-assessor
   (package
     (name "r-assessor")
@@ -6929,13 +6897,13 @@ only for the normal case).  Olivari et all (2021)
 (define-public r-arpaldata
   (package
     (name "r-arpaldata")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARPALData" version))
        (sha256
-        (base32 "1mkaryyrzj7mkd7lam122nkq5r02wylhaiyl5r4q7hk8jw3cxpxk"))))
+        (base32 "0lav1c3fnai65jyxd1832f8vcvd93vqa389c8dsiwfzknkq3z9d9"))))
     (properties `((upstream-name . "ARPALData")))
     (build-system r-build-system)
     (arguments
@@ -8622,6 +8590,44 @@ or with a static data set.  Example is provided at
 <https://analytics.huma-num.fr/archeoviz/en>.")
     (license license:gpl3)))
 
+(define-public r-archeofrag-gui
+  (package
+    (name "r-archeofrag-gui")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "archeofrag.gui" version))
+       (sha256
+        (base32 "1anfxw2zq4zr05bdncpmmqgnr6d02xvyjkq6i8ax468pm8scj1rx"))))
+    (properties `((upstream-name . "archeofrag.gui")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinythemes
+                             r-shiny
+                             r-igraph
+                             r-ggplot2
+                             r-foreach
+                             r-dt
+                             r-doparallel
+                             r-dendextend
+                             r-archeofrag))
+    (home-page "https://github.com/sebastien-plutniak/archeofrag.gui")
+    (synopsis "Spatial Analysis in Archaeology from Refitting Fragments (GUI)")
+    (description
+     "This package provides a Shiny application to access the functionalities and
+datasets of the archeofrag package for spatial analysis in archaeology from
+refitting data.  Quick and seamless exploration of archaeological refitting
+datasets.  Features include: exclusive focus on connection relationships (i.e.
+physical refits), built-in documentation and convenient workflow, plot
+generation and export, R code generation to re-execute the simulations in R and
+ensure reproducibility, support for parallel computing to speed up computation.
+A demonstration version of the app is available at
+<https://analytics.huma-num.fr/Sebastien.Plutniak/archeofrag/>.")
+    (license license:gpl3)))
+
 (define-public r-archeofrag
   (package
     (name "r-archeofrag")
@@ -9456,13 +9462,13 @@ and legends.")
 (define-public r-aqeval
   (package
     (name "r-aqeval")
-    (version "0.5.7")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AQEval" version))
        (sha256
-        (base32 "07f0jgk9hb6gnnsj0vic202smyr5n7xrfrwcaldc6v2lm7sxk5dx"))))
+        (base32 "1208g41km6hiyfzg5v9xcjsndxiq5if8pw5qx5d9qng99zsxyzfc"))))
     (properties `((upstream-name . "AQEval")))
     (build-system r-build-system)
     (arguments
@@ -9478,7 +9484,8 @@ and legends.")
                              r-loa
                              r-ggtext
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-data-table))
     (home-page "https://github.com/karlropkins/AQEval")
     (synopsis "Air Quality Evaluation")
     (description
@@ -9709,6 +9716,29 @@ Draper and H. Smith (3rd Ed., 1998) including all the accompanying datasets.")
      "Collect your data on digital marketing campaigns from Appsflyer using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
+
+(define-public r-approxot
+  (package
+    (name "r-approxot")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "approxOT" version))
+       (sha256
+        (base32 "0hj6pb4ng11xppn1a3y7i9d93xfvz20p3nagd0hd1aa30fli4114"))))
+    (properties `((upstream-name . "approxOT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-bh))
+    (home-page "https://github.com/ericdunipace/approxOT")
+    (synopsis "Approximate and Exact Optimal Transport Methods")
+    (description
+     "R and C++ functions to perform exact and approximate optimal transport.  All C++
+methods can be linked to other R packages via their header files.")
+    (license (license:fsdg-compatible "GPL (== 3.0)"))))
 
 (define-public r-approxmatch
   (package
@@ -10551,45 +10581,6 @@ lines.  If you want to control the selection of the elements, you can pass a
 list, with each element being a vector giving the selection for each dimension.")
     (license license:cc-by-sa4.0)))
 
-(define-public r-apear
-  (package
-    (name "r-apear")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aPEAR" version))
-       (sha256
-        (base32 "08rlfcwwrdy8zz102p67zk4zazjjs7wb08y3kyljn2ps82hmwi19"))))
-    (properties `((upstream-name . "aPEAR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-reshape2
-                             r-mcl
-                             r-lsa
-                             r-igraph
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggforce
-                             r-dplyr
-                             r-data-table
-                             r-bayesbio
-                             r-arules))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/vugene/aPEAR")
-    (synopsis "Advanced Pathway Enrichment Analysis Representation")
-    (description
-     "Simplify pathway enrichment analysis results by detecting clusters of similar
-pathways and visualizing it as an enrichment network, where nodes and edges
-describe the pathways and similarity between them, respectively.  This reduces
-the redundancy of the overlapping pathways and helps to notice the most
-important biological themes in the data (Kerseviciute and Gordevicius (2023)
-<doi:10.1101/2023.03.28.534514>).")
-    (license license:expat)))
-
 (define-public r-apdesign
   (package
     (name "r-apdesign")
@@ -11422,13 +11413,13 @@ it.")
 (define-public r-anyflights
   (package
     (name "r-anyflights")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anyflights" version))
        (sha256
-        (base32 "1dycpzc36n31zd21f7iniij6l70cdmgcc3sgar7m8msvhimkafkj"))))
+        (base32 "01cyhmfq0q2nzkaf2phjl278aqqccsvfdw4zm5agaqv9hrjfm36h"))))
     (properties `((upstream-name . "anyflights")))
     (build-system r-build-system)
     (arguments
@@ -11436,6 +11427,7 @@ it.")
       #:tests? #f))
     (propagated-inputs (list r-vroom
                              r-usethis
+                             r-tidyr
                              r-stringr
                              r-roxygen2
                              r-readr
@@ -14328,13 +14320,13 @@ instruments simultaneously.")
 (define-public r-amigaffh
   (package
     (name "r-amigaffh")
-    (version "0.4.5")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AmigaFFH" version))
        (sha256
-        (base32 "09227l3sq4bcph9x2w2qqh9zy2xrjr0makjyfx2vlp76r2xw394h"))))
+        (base32 "0amc6ypf3qmgb3fm2dj4j5bpgxm8rwgmazh57jdw0flksy46pxvy"))))
     (properties `((upstream-name . "AmigaFFH")))
     (build-system r-build-system)
     (arguments
@@ -14914,13 +14906,13 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
 (define-public r-amadeus
   (package
     (name "r-amadeus")
-    (version "1.1.6")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amadeus" version))
        (sha256
-        (base32 "09r0zx7l9x2g8cm1bpfk504yzdh96qqp0phygz0l3lwls17lz49p"))))
+        (base32 "1x8jmx1d66d3mfsa9nj9v6df9qcdy1njxcvdlr25waqxgqzrfwn7"))))
     (properties `((upstream-name . "amadeus")))
     (build-system r-build-system)
     (arguments
@@ -14939,8 +14931,6 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
                              r-parallelly
                              r-nhdplustools
                              r-httr
-                             r-future-apply
-                             r-future
                              r-exactextractr
                              r-dplyr
                              r-data-table
@@ -17938,19 +17928,21 @@ is 50%, 80% and 100% completeness.")
 (define-public r-aihuman
   (package
     (name "r-aihuman")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aihuman" version))
        (sha256
-        (base32 "0isd6j3qfhl9dfcknzsfyipvvni7bw6cpdkk4v5azpi3mcixbq4n"))))
+        (base32 "1jh2x1qrcdpg7a5cfry6r8ljkibil84in43qibxjrq457ylbrp77"))))
     (properties `((upstream-name . "aihuman")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -17958,9 +17950,11 @@ is 50%, 80% and 100% completeness.")
                              r-metr
                              r-mass
                              r-magrittr
-                             r-lme4
+                             r-glmmadaptive
                              r-ggplot2
+                             r-gbm
                              r-foreach
+                             r-forcats
                              r-dplyr
                              r-doparallel
                              r-coda
@@ -17973,10 +17967,12 @@ is 50%, 80% and 100% completeness.")
      "This package provides statistical methods for analyzing experimental evaluation
 of the causal impacts of algorithmic recommendations on human decisions
 developed by Imai, Jiang, Greiner, Halen, and Shin (2023)
-<doi:10.1093/jrsssa/qnad010>.  The data used for this paper, and made available
-here, are interim, based on only half of the observations in the study and (for
-those observations) only half of the study follow-up period.  We use them only
-to illustrate methods, not to draw substantive conclusions.")
+<doi:10.1093/jrsssa/qnad010> and Ben-Michael, Greiner, Huang, Imai, Jiang, and
+Shin (2024) <doi:10.48550/@code{arXiv.2403.12108>}.  The data used for this
+paper, and made available here, are interim, based on only half of the
+observations in the study and (for those observations) only half of the study
+follow-up period.  We use them only to illustrate methods, not to draw
+substantive conclusions.")
     (license license:gpl2+)))
 
 (define-public r-aifftools
@@ -20490,13 +20486,13 @@ introduced by Dongming and Zinde-Walsh (2009)
 (define-public r-aelab
   (package
     (name "r-aelab")
-    (version "0.4.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aelab" version))
        (sha256
-        (base32 "0v4mm9nq5l7hm3mh421xw5rnc0ibhc9jy5pqfqhcw3brygffdhbf"))))
+        (base32 "1dwkwhvdjqiqhahxz25yinrmx9if1rijfxb236plw53ml74gnkha"))))
     (properties `((upstream-name . "aelab")))
     (build-system r-build-system)
     (arguments
@@ -20504,6 +20500,7 @@ introduced by Dongming and Zinde-Walsh (2009)
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-stringr
                              r-readxl
                              r-readr
                              r-openxlsx
@@ -20512,15 +20509,15 @@ introduced by Dongming and Zinde-Walsh (2009)
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=aelab")
-    (synopsis "Calculation of Greenhouse Gas Flux")
+    (synopsis "Data Processing for Aquatic Ecology")
     (description
-     "Facilitate the analysis of data related to ecology, specifically the
+     "Facilitate the analysis of data related to aquatic ecology, specifically the
 establishment of carbon budget.  Currently, the package allows the below
 analysis. (i) the calculation of greenhouse gas flux based on data obtained from
 trace gas analyzer using the method described in Lin et al. (2024). (ii) the
 calculation of Dissolved Oxygen (DO) metabolism based on data obtained from
 dissolved oxygen data logger using the method described in Staehr et al. (2010).
- Lin et al. (2024) <doi:10.1016/j.scitotenv.2024.170768>.  Staehr et al. (2024)
+ Yong et al. (2024) <doi:10.5194/bg-21-5247-2024>.  Staehr et al. (2010)
 <doi:10.4319/lom.2010.8.0628>.")
     (license license:gpl3+)))
 
@@ -20665,13 +20662,13 @@ models, consult Henrik Madsen and Poul Thyregod's book (2011), ISBN:
 (define-public r-aebdata
   (package
     (name "r-aebdata")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aebdata" version))
        (sha256
-        (base32 "0y15179vy547wsi0bjycnx0fffc46vb769dvi99a4j5dr4gfsdaj"))))
+        (base32 "19wcs3khp4mk2n78m6lq44wvfgqifw3s4wm5vjj4ycl55641xag4"))))
     (properties `((upstream-name . "aebdata")))
     (build-system r-build-system)
     (arguments
@@ -22347,13 +22344,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-adfexplorer
   (package
     (name "r-adfexplorer")
-    (version "2.0.0")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adfExplorer" version))
        (sha256
-        (base32 "0nhq4bv08xvd0cz9phjs3sw47jrkk8bxmh40vlkc3sfb81fm5jh7"))))
+        (base32 "11pf89hwjjag26ng68hyj8p7bf9baz5n6axnscpl2j79mlwks6iy"))))
     (properties `((upstream-name . "adfExplorer")))
     (build-system r-build-system)
     (arguments
@@ -25112,13 +25109,13 @@ ISBN: 978-0387310732).")
 (define-public r-accelstab
   (package
     (name "r-accelstab")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccelStab" version))
        (sha256
-        (base32 "1abnydhn86g5vg5fpv711887a4nr1xzlrqi45bgy00gfag00pqih"))))
+        (base32 "1v2m3i2m48nndr3nwgpj8y73ni2xcysb7l4na8xpcj9ijwiq1s12"))))
     (properties `((upstream-name . "AccelStab")))
     (build-system r-build-system)
     (arguments

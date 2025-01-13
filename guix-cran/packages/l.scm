@@ -992,34 +992,6 @@ data.  The LTRC trees can also be used to fit survival tree with time-varying
 covariates.")
     (license license:gpl3)))
 
-(define-public r-ltrcforests
-  (package
-    (name "r-ltrcforests")
-    (version "0.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LTRCforests" version))
-       (sha256
-        (base32 "13ypp0fyca536bs8mlg1a3f4zp03788vg7g3yyh1xy2r0q66xb4g"))))
-    (properties `((upstream-name . "LTRCforests")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-survival r-prodlim r-partykit r-ipred))
-    (home-page "https://cran.r-project.org/package=LTRCforests")
-    (synopsis
-     "Ensemble Methods for Survival Data with Time-Varying Covariates")
-    (description
-     "This package implements the conditional inference forest and relative risk
-forest algorithm to modeling left-truncated right-censored data with
-time-invariant covariates, and (left-truncated) right-censored survival data
-with time-varying covariates.  It also provides functions to tune the parameters
-and evaluate the model fit.  See Yao et al. (2022)
-<doi:10.1177/09622802221111549>.")
-    (license license:gpl2+)))
-
 (define-public r-ltpdvar
   (package
     (name "r-ltpdvar")
@@ -1360,29 +1332,26 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSX" version))
        (sha256
-        (base32 "1qch23k8qs9v19npsh90nxv8wznp1lqga8k995117vsjj8h7i7s3"))))
+        (base32 "1skqb72wqma8j5hjdv0sb4fjlvf5k0hggcp2y1njnlp60f1qwayp"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stringi
-                             r-rsvd
                              r-rspectra
-                             r-rsparse
                              r-reshape2
                              r-quanteda-textstats
                              r-quanteda
                              r-proxyc
                              r-matrix
                              r-locfit
-                             r-irlba
                              r-ggrepel
                              r-ggplot2
                              r-digest))
@@ -3835,26 +3804,27 @@ document.")
 (define-public r-lordif
   (package
     (name "r-lordif")
-    (version "0.3-3")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lordif" version))
        (sha256
-        (base32 "1yby9fvzdi1dzvzp6d6h144k1p9nfacd8l5bd66dmhnc8sp2nlx5"))))
+        (base32 "1zrgkzma47vv5qfrr9rjidkdj6a3r0x37xcgvxq8sjl0alfflyqp"))))
     (properties `((upstream-name . "lordif")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rms r-mirt))
+    (propagated-inputs (list r-rms r-mirt r-foreach r-dosnow))
     (home-page "https://cran.r-project.org/package=lordif")
     (synopsis
      "Logistic Ordinal Regression Differential Item Functioning using IRT")
     (description
-     "Analysis of Differential Item Functioning (DIF) for dichotomous and polytomous
-items using an iterative hybrid of ordinal logistic regression and item response
-theory (IRT).")
+     "This package performs analysis of Differential Item Functioning (DIF) for
+dichotomous and polytomous items using an iterative hybrid of ordinal logistic
+regression and item response theory (IRT) according to Choi, Gibbons, and Crane
+(2011) <doi:10.18637/jss.v039.i08>.")
     (license license:gpl2+)))
 
 (define-public r-lorad
@@ -8038,13 +8008,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.2.4")
+    (version "3.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMest" version))
        (sha256
-        (base32 "0hhjkdlmp198bvs5cmj9qpqxppwjwah2yh5vzgkrz0ysr8wis91g"))))
+        (base32 "0db9my1gvml2j625an7zivqavcbnishhpsi584d5z3qj7dm1lbb3"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (arguments
@@ -10156,6 +10126,51 @@ distance matrix computation is parallelized leveraging the @code{RcppThread}
 package.")
     (license license:gpl2+)))
 
+(define-public r-linevis
+  (package
+    (name "r-linevis")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "linevis" version))
+       (sha256
+        (base32 "1dysg3q967njf1l7mm2bbk2cmhjz3aran12fkndmmi2qg3ca9xr8"))))
+    (properties `((upstream-name . "linevis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-shiny
+                             r-rmarkdown
+                             r-magrittr
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-crosstalk))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://gitlab.com/thomaschln/linevis")
+    (synopsis "Interactive Time Series Visualizations")
+    (description
+     "Create interactive time series visualizations.  linevis includes an extensive
+API to manipulate time series after creation, and supports getting data out of
+the visualization.  Based on the timevis package and the vis.js Timeline
+@code{JavaScript} library <https://visjs.github.io/vis-timeline/docs/graph2d/>.")
+    (license license:gpl3)))
+
 (define-public r-lineupjs
   (package
     (name "r-lineupjs")
@@ -11956,13 +11971,13 @@ penalty.")
 (define-public r-libr
   (package
     (name "r-libr")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libr" version))
        (sha256
-        (base32 "0rx7g1nf3xgmqsikjxw1shp2hkb93cz146frmi4gg6h0kw83j5fn"))))
+        (base32 "17f3qkxx1zk562ai5nzqgzrsr580cl9wz6kqcldgvh5cphw85a15"))))
     (properties `((upstream-name . "libr")))
     (build-system r-build-system)
     (arguments
@@ -13174,13 +13189,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.3.9")
+    (version "4.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "1qdxs84q0nd9pam09zglywjc556943b4kan6c3ml3cafsi2x9bgi"))))
+        (base32 "1k6c88762jfcq2jbayblfwa0247apz4yna2vi0i5xvwh7bd6w1wl"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -13209,11 +13224,11 @@ regression analysis, ANOVA and t-test, visualizations including the
 Violin/Box/Scatter plot for a numerical variable, bar chart, histogram, box
 plot, density curves, calibrated power curve, reading multiple data formats with
 the same function call, variable labels, time series with aggregation and
-forecasting, color themes, and Trellis graphics.  Also includes a confirmatory
-factor analysis of multiple indicator measurement models, pedagogical routines
-for data simulation such as for the Central Limit Theorem, generation and
-rendering of regression instructions for interpretative output, and interactive
-visualizations.")
+forecasting, color themes, and Trellis (facet) graphics.  Also includes a
+confirmatory factor analysis of multiple indicator measurement models,
+pedagogical routines for data simulation such as for the Central Limit Theorem,
+generation and rendering of regression instructions for interpretative output,
+and interactive visualizations.")
     (license license:gpl2+)))
 
 (define-public r-less
@@ -14143,6 +14158,34 @@ undergraduate level with the aim of being helpful to young students with little
 programming skills.")
     (license license:gpl2)))
 
+(define-public r-learner
+  (package
+    (name "r-learner")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "learner" version))
+       (sha256
+        (base32 "0wh5ikr6rcafr2g4apssk76kcqa5a5ci8b13l3jzsra4mxij36y5"))))
+    (properties `((upstream-name . "learner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-screenot r-foreach r-doparallel))
+    (home-page "https://github.com/stmcg/learner")
+    (synopsis "Latent Space-Based Transfer Learning")
+    (description
+     "This package implements transfer learning methods for low-rank matrix
+estimation.  These methods leverage similarity in the latent row and column
+spaces between the source and target populations to improve estimation in the
+target population.  The methods include the @code{LatEnt} @code{spAce-based}
+@code{tRaNsfer} @code{lEaRning} (LEARNER) method and the direct projection
+LEARNER (D-LEARNER) method described by @code{McGrath} et al. (2024)
+<doi:10.48550/@code{arXiv.2412.20605>}.")
+    (license license:gpl3+)))
+
 (define-public r-learnclust
   (package
     (name "r-learnclust")
@@ -14601,13 +14644,13 @@ single map.")
 (define-public r-leaflet-extras2
   (package
     (name "r-leaflet-extras2")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflet.extras2" version))
        (sha256
-        (base32 "0r17wj2qg85y6wcszmbq6nf49k5ddsfprqdscqg2bwdszxrvw2c9"))))
+        (base32 "0m9f0y0y4rvcxpdh05yvgw6rm3qnaxsm04rm0d5cba8rl5vj4d3i"))))
     (properties `((upstream-name . "leaflet.extras2")))
     (build-system r-build-system)
     (arguments
@@ -17934,13 +17977,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.10")
+    (version "5.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "0cx40lxkrgdp5z6rx51b21nl3ki42apbjgyw240k73dw6r1gvayy"))))
+        (base32 "105mm1r72l7zif653zm88l5nsc9xal31jvdjkfnbzrvgsjawifgi"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (arguments
@@ -18248,13 +18291,13 @@ are raster dataset exportable to any common GIS format.")
 (define-public r-landscapemetrics
   (package
     (name "r-landscapemetrics")
-    (version "2.1.4")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landscapemetrics" version))
        (sha256
-        (base32 "0yq04y8gchwssmaj0xg02jxixx9q7ffdfl91l31q6hkibh4lz8pl"))))
+        (base32 "049x5nd1dfab06cpsibspdri713pi9f7a4klip2maj457x5va2cm"))))
     (properties `((upstream-name . "landscapemetrics")))
     (build-system r-build-system)
     (arguments
@@ -18589,13 +18632,13 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "0fwrazhwc2b87an19dy3krfgvb2a0mf7gq1f30harqyxm3yx9cng"))))
+        (base32 "0gcg0wbf33cmx4n3f4nwkyzh0j4mkplpw8lscbh0ch612033msw1"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments
@@ -18603,6 +18646,7 @@ observed variables and multiple	group models.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-rlang
+                             r-reticulate
                              r-r6
                              r-r-utils
                              r-purrr

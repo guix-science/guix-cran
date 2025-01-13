@@ -890,13 +890,13 @@ indicators.")
 (define-public r-pvstatem
   (package
     (name "r-pvstatem")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PvSTATEM" version))
        (sha256
-        (base32 "1951md1r40y9axrkrhp0996663psjlnx3wsqhgy94ccrvv2fsh3r"))))
+        (base32 "05qrf1w7k3p0fgwg59i97a05yfb4if5n3pqff7i3ixqljzcn0ivv"))))
     (properties `((upstream-name . "PvSTATEM")))
     (build-system r-build-system)
     (arguments
@@ -914,6 +914,7 @@ indicators.")
                              r-lubridate
                              r-ggrepel
                              r-ggplot2
+                             r-fs
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "<https://github.com/mini-pw/PvSTATEM>")
@@ -953,53 +954,6 @@ project aiming for malaria elimination.")
 eigenvectors regression (PVR) and phylogenetic signal-representation (PSR)
 curve, along with some plot utilities.")
     (license license:gpl2+)))
-
-(define-public r-pvplr
-  (package
-    (name "r-pvplr")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PVplr" version))
-       (sha256
-        (base32 "1hrd2r3m2qy8r4wjacbhpqsmlchdjqk6iyydiy5k1ccrmv8da74a"))))
-    (properties `((upstream-name . "PVplr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-stlplus
-                             r-segmented
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-minpack-lm
-                             r-magrittr
-                             r-ggplot2
-                             r-forecast
-                             r-dplyr
-                             r-cluster
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PVplr")
-    (synopsis "Performance Loss Rate Analysis Pipeline")
-    (description
-     "The pipeline contained in this package provides tools used in the Solar
-Durability and Lifetime Extension Center (SDLE) for the analysis of Performance
-Loss Rates (PLR) in real world photovoltaic systems.  Functions included allow
-for data cleaning, feature correction, power predictive modeling, PLR
-determination, and uncertainty bootstrapping through various methods
-<doi:10.1109/PVSC40753.2019.8980928>.  The vignette \"Pipeline Walkthrough\" gives
-an explicit run through of typical package usage.  This material is based upon
-work supported by the U.S Department of Energy's Office of Energy Efficiency and
-Renewable Energy (EERE) under Solar Energy Technologies Office (SETO) Agreement
-Number DE-EE-0008172.  This work made use of the High Performance Computing
-Resource in the Core Facility for Advanced Research Computing at Case Western
-Reserve University.")
-    (license license:expat)))
 
 (define-public r-pvlrt
   (package
@@ -2445,13 +2399,13 @@ model for each response.")
 (define-public r-ptxqc
   (package
     (name "r-ptxqc")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PTXQC" version))
        (sha256
-        (base32 "0855xir9b604lhhymxf3rhin2sikxvg25zbgd5gvwgc5n3114d3m"))))
+        (base32 "1z425vs9kbpcxkjipng1wgxix19rf8v74240k9hcslszks9za2ip"))))
     (properties `((upstream-name . "PTXQC")))
     (build-system r-build-system)
     (arguments
@@ -2463,6 +2417,7 @@ model for each response.")
                              r-seqinr
                              r-rmzqc
                              r-rmarkdown
+                             r-rlang
                              r-reshape2
                              r-rcolorbrewer
                              r-r6p
@@ -5804,13 +5759,13 @@ the day of the month.")
 (define-public r-provenance
   (package
     (name "r-provenance")
-    (version "4.3")
+    (version "4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "provenance" version))
        (sha256
-        (base32 "07dhpbwkn5x876i2zjrmc8rb5463956lqx6snddcraywc3jplgvb"))))
+        (base32 "0hh9808rm5fndl735p2qxjqy53l7lf0db0vn9kvffkp4ncbyqpf8"))))
     (properties `((upstream-name . "provenance")))
     (build-system r-build-system)
     (arguments
@@ -9384,13 +9339,13 @@ offers options to deal with block-wise missingness in multi-omics data.")
 (define-public r-prioritizr
   (package
     (name "r-prioritizr")
-    (version "8.0.4")
+    (version "8.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prioritizr" version))
        (sha256
-        (base32 "18z5zm34ry45kapp0a146gvwij41wyhhxxyzwiz7ly79l6lwgs9s"))))
+        (base32 "1calig2j27nqps39892dgbc9xhch7z2w2b2g5m3h1pk3fnmvdl55"))))
     (properties `((upstream-name . "prioritizr")))
     (build-system r-build-system)
     (arguments
@@ -9436,7 +9391,8 @@ and the @code{cplexAPI} R package (available at
 <https://github.com/cran/@code{cplexAPI>}).  Additionally, the rcbc R package
 (available at <https://github.com/dirkschumacher/rcbc>) can be used to generate
 solutions using the CBC optimization software
-(<https://github.com/coin-or/Cbc>).")
+(<https://github.com/coin-or/Cbc>).  For further details, see Hanson et al.
+(2024) <doi:10.1111/cobi.14376>.")
     (license license:gpl3)))
 
 (define-public r-prioriactions
@@ -17626,13 +17582,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "5.11")
+    (version "6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "059j6g2ckyr0818llabwr05p1hfjwr9pb7bwyd9qgc6mdkdc0p50"))))
+        (base32 "1ynb96r3gyp4wfgcbrm5rs58can27iiszcqzrljpd542nvva411n"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (arguments
@@ -22030,13 +21986,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "03gnpyanj5fs64zii47ss2k31l25hm1ps4dqkgxhi7dxciarz0f5"))))
+        (base32 "08fwph3g8xrzhzpa76yadv3fxkrlgsvcjql2qxjs7sng0rgbna4v"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments
@@ -22258,19 +22214,24 @@ produced by @code{glm()} and it will convert the estimates to odds ratios with a
 (define-public r-plotmm
   (package
     (name "r-plotmm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotmm" version))
        (sha256
-        (base32 "0ad8bkfbwrcv447wgygsh1akzc7v8mxgfw2ywb5024jy39zbj56b"))))
+        (base32 "01rcb0dqy6mqaf7f2kcah7xc0hry90zw13rgxdry6my882mrzir0"))))
     (properties `((upstream-name . "plotmm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wesanderson r-ggplot2 r-amerika))
+    (propagated-inputs (list r-wesanderson
+                             r-mixtools
+                             r-ggplot2
+                             r-flexmix
+                             r-emcluster
+                             r-amerika))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=plotmm")
     (synopsis "Tidy Tools for Visualizing Mixture Models")
@@ -24873,13 +24834,13 @@ package directory, and/or a vector of verbs implement via the usethis
 (define-public r-pkgsearch
   (package
     (name "r-pkgsearch")
-    (version "3.1.3")
+    (version "3.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgsearch" version))
        (sha256
-        (base32 "0b4w6sk65r77sfkvnyirxk0mpikqladi14pmc9sqhfcjbwvqgjx7"))))
+        (base32 "00hymwv23myqzkn66vmmxvf0mzy8yrc02mhaiz4fg8h43pimn5jm"))))
     (properties `((upstream-name . "pkgsearch")))
     (build-system r-build-system)
     (arguments
@@ -26505,13 +26466,13 @@ Higgins et al. (2009) <doi:10.1111/j.1467-985X.2008.00552.x>, Partlett and Riley
 (define-public r-pim
   (package
     (name "r-pim")
-    (version "2.0.2")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pim" version))
        (sha256
-        (base32 "0kwlm6n23ccs0jz4plsqprg6inj3qv74zhvg9gpxyj3ksvdxp58i"))))
+        (base32 "1r4d2xgcbqxmfq9nmvgfc2sf1mpflpjmpbv1sr4sjr56mcsmkmkp"))))
     (properties `((upstream-name . "pim")))
     (build-system r-build-system)
     (arguments
@@ -26590,13 +26551,13 @@ Pijavski method, which was published in Pijavski (1972)
 (define-public r-pii
   (package
     (name "r-pii")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pii" version))
        (sha256
-        (base32 "1pibrfycgci331bpkgj4qn7b2w1vdwg9gvgkjnw7mxdfgr8f4qxm"))))
+        (base32 "0fwk8cqbmwh71vrm9hmnz7f6ysxbl2z26l3razzx1a5j04ka2gks"))))
     (properties `((upstream-name . "pii")))
     (build-system r-build-system)
     (arguments
@@ -26725,13 +26686,13 @@ more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.13.11")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piecepackr" version))
        (sha256
-        (base32 "12xcl0p85dxa1zr5ps4aa3jqqlf2hnwyghj8g00f5km7534irxcs"))))
+        (base32 "1bw3xy17braf7952v2120bbl1x09cdbwxpqiph2phga82crk48q0"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
     (arguments
@@ -26745,7 +26706,8 @@ more.")
                              r-png
                              r-jpeg
                              r-grimport2
-                             r-gridgeometry))
+                             r-gridgeometry
+                             r-affiner))
     (home-page "https://trevorldavis.com/piecepackr/")
     (synopsis "Board Game Graphics")
     (description
@@ -28085,13 +28047,13 @@ efficient and reproducible.")
 (define-public r-phreeqc
   (package
     (name "r-phreeqc")
-    (version "3.8.5")
+    (version "3.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phreeqc" version))
        (sha256
-        (base32 "0gc30wzin5ld0f24nyn491snrx2inh58wx2m4qqhr9bfww0wr8mb"))))
+        (base32 "0p7nywjqcpv5czamrshhpmq10dvdza83071nasx9qf019hv0apgr"))))
     (properties `((upstream-name . "phreeqc")))
     (build-system r-build-system)
     (arguments
@@ -28337,13 +28299,13 @@ suite Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologyplants
   (package
     (name "r-photobiologyplants")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyPlants" version))
        (sha256
-        (base32 "0va72n6fa5w0xffyyhqsmpgy4ac6mva5gxdxl907ch1d02r8zgya"))))
+        (base32 "0y5009im0vpgck7yg312bzsiq4bisjm8kh9pmp9k9676sh3rcmff"))))
     (properties `((upstream-name . "photobiologyPlants")))
     (build-system r-build-system)
     (arguments
@@ -34490,13 +34452,13 @@ Bennett, Dixon, et al (2016) <doi:10.1097/PCC.0000000000000934>.")
 (define-public r-pecora
   (package
     (name "r-pecora")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pecora" version))
        (sha256
-        (base32 "0l66brd5d24hn279ck785jy4qnxiv9lc3d1czh4f3l25d0hj99xi"))))
+        (base32 "1j875gwcaf9bwvzrynxz6s7pxpjrhpvy7amn9w5vp9q83xnvbsda"))))
     (properties `((upstream-name . "pecora")))
     (build-system r-build-system)
     (arguments
@@ -37056,13 +37018,13 @@ tasks and retrieve results.")
 (define-public r-pcapam50
   (package
     (name "r-pcapam50")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCAPAM50" version))
        (sha256
-        (base32 "18bqdsqvbkgrxa5cdh57f88065xs9l20c5jscr2yklmc3zq2c86x"))))
+        (base32 "12k0zwxrlkkcfrczpksq5yhy8a6j5zfhb8b1dvxw698v8miwfdd5"))))
     (properties `((upstream-name . "PCAPAM50")))
     (build-system r-build-system)
     (arguments
@@ -38211,29 +38173,38 @@ image segmentation.")
 (define-public r-patterncausality
   (package
     (name "r-patterncausality")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patterncausality" version))
        (sha256
-        (base32 "01k4sg4vab8263vxyx7bc1phv1lj2x85wqw7nrpv4mzcq0pywr9d"))))
+        (base32 "07z3mxkj7avmd1s8qhaa7nay79hfmhfv0fciivvwxgvx5x1h4z6i"))))
     (properties `((upstream-name . "patterncausality")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plot3d r-corrplot))
+    (propagated-inputs (list r-tidyr
+                             r-statebins
+                             r-scales
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-plot3d
+                             r-gridextra
+                             r-ggthemes
+                             r-ggrepel
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/skstavroglou/pattern_causality/")
     (synopsis "Pattern Causality Algorithm")
     (description
-     "The model proposes a robust methodology for detecting and reconstructing the
-hidden structure of dynamic complex systems through short-term forecasts and
-information embedded in reconstructed state spaces.  The approach not only
-identifies critical components and causal interactions within these systems but
-also provides a practical tool for optimizing system performance and stability.")
-    (license license:expat)))
+     "This package provides a comprehensive package for detecting and analyzing causal
+relationships in complex systems using pattern-based approaches.  Key features
+include state space reconstruction, pattern identification, and causality
+strength evaluation.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-patternator
   (package
@@ -38938,13 +38909,13 @@ Leonardi et al. (2023) <doi:10.1111/ecog.06481>.")
 (define-public r-pastboon
   (package
     (name "r-pastboon")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pastboon" version))
        (sha256
-        (base32 "06xp6p4vrdkblhypz745r6sl0n1a7wxhinfb6sx18hiaaaw73ixh"))))
+        (base32 "1xzgd69glik4fpsjjf1flj2qwnn1s92j89ghwjycjym5c0x32ryx"))))
     (properties `((upstream-name . "pastboon")))
     (build-system r-build-system)
     (arguments
@@ -43992,6 +43963,49 @@ context.  Lastly, the package also contains functions to process yield monitor
 data.  These functions can build polygons around recorded data points, evaluate
 the overlap between polygons, clean yield data, and smooth yield maps.")
     (license license:gpl3+)))
+
+(define-public r-pacta-multi-loanbook
+  (package
+    (name "r-pacta-multi-loanbook")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pacta.multi.loanbook" version))
+       (sha256
+        (base32 "19gaik1625lwi2crwac4ljjf5dbz7g5rm7anbbqfc11kwvwdr3i7"))))
+    (properties `((upstream-name . "pacta.multi.loanbook")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yesno
+                             r-yaml
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-r2dii-plot
+                             r-r2dii-match
+                             r-r2dii-data
+                             r-r2dii-analysis
+                             r-glue
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggalluvial
+                             r-dplyr
+                             r-config
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://rmi-pacta.github.io/pacta.multi.loanbook/")
+    (synopsis "Run 'PACTA' on Multiple Loan Books Easily")
+    (description
+     "Run Paris Agreement Capital Transition Assessment ('PACTA') analyses on multiple
+loan books in a structured way.  Provides access to standard PACTA metrics and
+additional PACTA'-related metrics for multiple loan books.  Results take the
+form of csv files and plots and are exported to user-specified project paths.")
+    (license license:expat)))
 
 (define-public r-pacs
   (package

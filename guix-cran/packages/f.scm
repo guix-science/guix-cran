@@ -2474,13 +2474,13 @@ Pearson's chi-squared or Fisher's exact tests.")
 (define-public r-funchir
   (package
     (name "r-funchir")
-    (version "0.2.2")
+    (version "0.3.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funchir" version))
        (sha256
-        (base32 "1a5nwqnnv0bn2wrw4lbnwbxkb9xr273sq8m8lnv8wy7wzfyfjaxz"))))
+        (base32 "0ys9slad9hkffs5pmq8vk724h85srcwi1wi9gv3ma087p6v1xy8w"))))
     (properties `((upstream-name . "funchir")))
     (build-system r-build-system)
     (arguments
@@ -2492,10 +2492,9 @@ Pearson's chi-squared or Fisher's exact tests.")
     (description
      "YACFP (Yet Another Convenience Function Package). @code{get_age()} is a fast &
 accurate tool for measuring fractional years between two dates.
-@code{abbr_to_colClass()} is a much more concise way of feeding many types to a
-@code{colClass} argument in a data reader. @code{stale_package_check()} tries to
-identify any @code{library()} calls to unused packages.")
-    (license license:gpl2+)))
+@code{stale_package_check()} tries to identify any @code{library()} calls to
+unused packages.")
+    (license license:expat)))
 
 (define-public r-funcharts
   (package
@@ -7567,13 +7566,13 @@ react and interact as well as generate code to create reproducible analyses.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.5.9")
+    (version "0.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatters" version))
        (sha256
-        (base32 "0j17k51gnydp9x71xlfsbvl412y2dyg8kqax9dwl103pp0lzpw2w"))))
+        (base32 "07bxb8579i9rs3f2anx0c9g1frchl3pccsk1cw8f1jvy1bkz09l7"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
     (arguments
@@ -8020,13 +8019,13 @@ Husch (2016). <doi:10.1002/9781118902028>.")
 (define-public r-forestly
   (package
     (name "r-forestly")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestly" version))
        (sha256
-        (base32 "0ihn48bmnlhjqwvaxzinfdbnzjz9cqn3amw0gnyqzdlai81md3dx"))))
+        (base32 "1gxbap25wgjlj4swwadraxijb18ygkb9qfnhxja1ylir58k2z331"))))
     (properties `((upstream-name . "forestly")))
     (build-system r-build-system)
     (arguments
@@ -8187,13 +8186,13 @@ Tropical Forest Canopy Gaps.  Details were published in Silva and others (2019)
 (define-public r-forestfit
   (package
     (name "r-forestfit")
-    (version "2.2.3")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForestFit" version))
        (sha256
-        (base32 "0r8hr1hl5js7bc0wggxr7j0psydizlysfgqd5l55i8s79jx9bqhp"))))
+        (base32 "1fbbddq3j4ckf2vky6sadhyjml74gihr90rvdnlsga1zd3pxpq6d"))))
     (properties `((upstream-name . "ForestFit")))
     (build-system r-build-system)
     (arguments
@@ -8220,8 +8219,8 @@ function, cumulative distribution function, and generating realizations from
 gamma shape mixture model introduced by Venturini et al. (2008)
 <doi:10.1214/07-AOAS156> , 8 ) The Bayesian inference, computing probability
 density function, cumulative distribution function, and generating realizations
-from four-parameter Johnson SB distribution, 9 ) Robust multiple linear
-regression analysis when error term follows skewed t distribution, 10 )
+from univariate and bivariate Johnson SB distribution, 9 ) Robust multiple
+linear regression analysis when error term follows skewed t distribution, 10 )
 Estimating parameters of a given distribution fitted to grouped data using
 method of maximum likelihood, and 11 ) Estimating parameters of the Johnson SB
 distribution through the Bayesian, method of moment, conditional maximum
@@ -9235,32 +9234,33 @@ business), and emissions metric (e.g. carbon dioxide equivalent, methane).")
 (define-public r-footbayes
   (package
     (name "r-footbayes")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "footBayes" version))
        (sha256
-        (base32 "0gp784ad34ygnn06r4p1y3nqdx372ypgcgm94fcm1lqslsn7akj0"))))
+        (base32 "1lswg1b7srmvq4wkhg0zb2kd22db08hhibaf1bjgjm2s6j9g4fjr"))))
     (properties `((upstream-name . "footBayes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list pandoc pandoc))
-    (propagated-inputs (list r-tidyverse
+    (propagated-inputs (list r-tidyr
                              r-rstan
+                             r-rlang
                              r-reshape2
                              r-numderiv
                              r-metrology
                              r-matrixstats
                              r-magrittr
+                             r-ggridges
                              r-ggplot2
                              r-extradistr
                              r-dplyr
                              r-bayesplot
                              r-arm))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/leoegidi/footbayes")
     (synopsis "Fitting Bayesian and MLE Football Models")
     (description
@@ -10594,33 +10594,6 @@ fluxes from the raw data, quality assessment, plotting for visual check and
 calculation of fluxes based on the setup specific parameters (chamber size, plot
 area, ...).")
     (license license:gpl3+)))
-
-(define-public r-fluxfinder
-  (package
-    (name "r-fluxfinder")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fluxfinder" version))
-       (sha256
-        (base32 "1baqgwwcrxizckq12jz4ii3kd7h4rs7p31a60qy85qkh7k8shk3x"))))
-    (properties `((upstream-name . "fluxfinder")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-lubridate r-jsonlite r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/COMPASS-DOE/fluxfinder")
-    (synopsis
-     "Parsing, Computation, and Diagnostics for Greenhouse Gas Measurements")
-    (description
-     "Parse static-chamber greenhouse gas measurement files generated by a variety of
-instruments; compute flux rates using multi-observation metadata; and generate
-diagnostic metrics and plots.  Designed to be easy to integrate into
-reproducible scientific workflows.")
-    (license license:expat)))
 
 (define-public r-flux
   (package
@@ -17997,41 +17970,6 @@ explore them.")
 a small set of functions with a common interface.")
     (license license:expat)))
 
-(define-public r-fedmatch
-  (package
-    (name "r-fedmatch")
-    (version "2.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fedmatch" version))
-       (sha256
-        (base32 "06clj31qk6ama56jmd9vpq5h1v7250aixgvaywh5j8fsrp1l7qg2"))))
-    (properties `((upstream-name . "fedmatch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-stringdist
-                             r-snowballc
-                             r-scales
-                             r-rcpp
-                             r-purrr
-                             r-magrittr
-                             r-forcats
-                             r-data-table
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fedmatch")
-    (synopsis "Fast, Flexible, and User-Friendly Record Linkage Methods")
-    (description
-     "This package provides a flexible set of tools for matching two un-linked data
-sets.  fedmatch allows for three ways to match data: exact matches, fuzzy
-matches, and multi-variable matches.  It also allows an easy combination of
-these three matches via the tier matching function.")
-    (license license:expat)))
-
 (define-public r-fedirt
   (package
     (name "r-fedirt")
@@ -19230,13 +19168,13 @@ Journal of Computational and Graphical Statistics.
 (define-public r-fdapde
   (package
     (name "r-fdapde")
-    (version "1.1-20")
+    (version "1.1-21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaPDE" version))
        (sha256
-        (base32 "1w4zgjy0bqg6njdx3dcxi1rcifn6vgb33l6aif3hg5jc9x2ww5kc"))))
+        (base32 "1khw2k9dagpd8q8l6kv3h95wgj2q296a4n34z6yczz0lid27770s"))))
     (properties `((upstream-name . "fdaPDE")))
     (build-system r-build-system)
     (arguments
@@ -19530,38 +19468,33 @@ Wang, J.L. (2005) <doi:10.1214/009053605000000660>.  SentÃ¼rk, D., MÃ¼ller, 
 (define-public r-fdacluster
   (package
     (name "r-fdacluster")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdacluster" version))
        (sha256
-        (base32 "0mpnhd6qp4hif1sbxv52dyg3yfff8icn8xz7sximcjn00g81p343"))))
+        (base32 "1mg1i15jbckg6kw0zch9vc378kabnisz0p2vizj3nhsxxw4jlw4y"))))
     (properties `((upstream-name . "fdacluster")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
-                             r-purrr
                              r-progressr
                              r-nloptr
                              r-lpsolve
                              r-ggplot2
-                             r-furrr
-                             r-forcats
+                             r-future-apply
                              r-fdasrvf
-                             r-dplyr
                              r-dbscan
                              r-cluster
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://astamm.github.io/fdacluster/index.html")
+    (home-page "https://astamm.github.io/fdacluster/")
     (synopsis "Joint Clustering and Alignment of Functional Data")
     (description
      "Implementations of the k-means, hierarchical agglomerative and DBSCAN clustering
@@ -21735,13 +21668,13 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "09kqxmrkb0gsr94jdsz5jfca20wl866sqk34mixqrr2ml5gghz9m"))))
+        (base32 "1cpgpz78ki04pdlv4rk9bv38a6larr2ff4x7wa7hf3x55aw574p5"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
@@ -21750,25 +21683,47 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
     (propagated-inputs (list r-yardstick
                              r-workflows
                              r-viridislite
+                             r-vim
+                             r-upsetr
                              r-tune
+                             r-tidyr
                              r-tibble
+                             r-stringr
+                             r-skimr
+                             r-scales
                              r-rsample
+                             r-rmarkdown
                              r-rlang
                              r-reshape2
                              r-recipes
                              r-rcolorbrewer
+                             r-proc
                              r-probably
                              r-plsmod
+                             r-plotly
+                             r-patchwork
                              r-parsnip
+                             r-naniar
+                             r-moments
                              r-magrittr
+                             r-knitr
+                             r-kableextra
+                             r-janitor
+                             r-htmlwidgets
+                             r-gridextra
+                             r-ggpubr
                              r-ggplot2
+                             r-ggally
                              r-future
                              r-finetune
+                             r-dt
                              r-dplyr
                              r-dofuture
                              r-discrim
                              r-dials
+                             r-dbscan
                              r-dalex
+                             r-broom
                              r-bonsai
                              r-baguette))
     (home-page "https://cran.r-project.org/package=fastml")
@@ -23780,13 +23735,13 @@ relatives, kinship networks and other topics in multi-generation populations.")
 (define-public r-familias
   (package
     (name "r-familias")
-    (version "2.6.1")
+    (version "2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Familias" version))
        (sha256
-        (base32 "1hx35xj5yjpbkpf4hz8kx7i4q3s2m5dvwb0mcnz1svibim04hll0"))))
+        (base32 "0ykhpja1b471n8892y9im2yqxl8sacg6y9mr6jy074j6c18ghr12"))))
     (properties `((upstream-name . "Familias")))
     (build-system r-build-system)
     (arguments
