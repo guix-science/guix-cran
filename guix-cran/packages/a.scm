@@ -12746,13 +12746,13 @@ correlation and regression analysis of the local network metrics.")
 (define-public r-anipaths
   (package
     (name "r-anipaths")
-    (version "0.10.3")
+    (version "0.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anipaths" version))
        (sha256
-        (base32 "03vhxva67b0nr75dr8ddz661jr1ha3kryibqy2nhqk851jx5vywx"))))
+        (base32 "187wkzfc1g3sb6ln3dx5if3sinj390340kb75b9q31zx4bjaxcb5"))))
     (properties `((upstream-name . "anipaths")))
     (build-system r-build-system)
     (arguments
@@ -20298,13 +20298,13 @@ help meet accessibility guidance.")
 (define-public r-afcharts
   (package
     (name "r-afcharts")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "afcharts" version))
        (sha256
-        (base32 "1bgm5sq9q8qn6764p7xwb7igg4akx652zb9vi57c3caxybhyir6f"))))
+        (base32 "1gbakh67r0qi7arz3xdai6h4gn1a80iagfbml6crfxjlyh5z43jc"))))
     (properties `((upstream-name . "afcharts")))
     (build-system r-build-system)
     (arguments

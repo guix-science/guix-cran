@@ -22116,13 +22116,13 @@ weight, variable weight, tracking subjects used in each tree, etc.")
 (define-public r-rloptimal
   (package
     (name "r-rloptimal")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLoptimal" version))
        (sha256
-        (base32 "0jzs037qx6rcljqyqzjslqv6kysxwz5xy2wzni955qyl4chix098"))))
+        (base32 "06ry5hvhgrgx4is385sw55n44k3h3kim7w6q79qls03liwklvwbl"))))
     (properties `((upstream-name . "RLoptimal")))
     (build-system r-build-system)
     (arguments
@@ -25592,6 +25592,39 @@ open source software that builds installers for Windows programs
      "Circular / ring buffers in R and C. There are a couple of different buffers here
 with different implementations that represent different trade-offs.")
     (license license:expat)))
+
+(define-public r-rineq
+  (package
+    (name "r-rineq")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rineq" version))
+       (sha256
+        (base32 "16bn8bggw5xb2x4pazq5cl2a2wjlissz8nc5dsc3q3pbmw8qv5zs"))))
+    (properties `((upstream-name . "rineq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/kdevkdev/rineq")
+    (synopsis "Concentration Index and Decomposition for Health Inequalities")
+    (description
+     "Relative, generalized, and Erreygers corrected concentration index; plot Lorenz
+curves; and decompose health inequalities into contributing factors.  The
+package currently works with (generalized) linear models, survival models,
+complex survey models, and marginal effects probit models.  originally forked by
+Brecht Devleesschauwer from the decomp package (no longer on CRAN), rineq is now
+maintained by Kaspar Walter Meili.  Compared to the earlier rineq version on
+github by Brecht Devleesschauwer (<https://github.com/brechtdv/rineq>), the
+regression tree functionality has been removed.  Improvements compared to
+earlier versions include improved plotting of decomposition and concentration,
+added functionality to calculate the concentration index with different methods,
+calculation of robust standard errors, and support for the decomposition
+analysis using marginal effects probit regression models.  The development
+version is available at <https://github.com/kdevkdev/rineq>.")
+    (license license:gpl2+)))
 
 (define-public r-rinat
   (package
@@ -30168,13 +30201,13 @@ reproducibility.  For more information on FACTS itself, please visit
 (define-public r-rfacebookstat
   (package
     (name "r-rfacebookstat")
-    (version "2.11.0")
+    (version "2.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfacebookstat" version))
        (sha256
-        (base32 "1xlj65pg87hhpc9cg9cz8xzg8f0dx4qcg76bvgpvdsd55pn8qilf"))))
+        (base32 "04ky7xrddqybrw1sx9650i967yq3fsgrnv2ac9xa1mk8yd0vnkrz"))))
     (properties `((upstream-name . "rfacebookstat")))
     (build-system r-build-system)
     (arguments
@@ -35062,24 +35095,20 @@ also offers some useful tools for exploring other forensic DNA situations.")
 (define-public r-relmix
   (package
     (name "r-relmix")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "relMix" version))
        (sha256
-        (base32 "17b0121yqnkl36jkn03qzlkhibl528jz95rzrj602jf2gpah4a9x"))))
+        (base32 "0vr84gpvpa2b1yrlilb6908l68s0qlyav05dks7hvqj7wwynmr4q"))))
     (properties `((upstream-name . "relMix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pedtools
-                             r-pedfamilias
-                             r-officer
-                             r-gwidgets2tcltk
-                             r-gwidgets2
-                             r-flextable
+    (inputs (list tk))
+    (propagated-inputs (list r-pedtools r-pedfamilias r-officer r-flextable
                              r-familias))
     (native-inputs (list r-knitr))
     (home-page "https://gdorum.github.io/relMix/")
@@ -35093,9 +35122,9 @@ mixtures, and in criminal cases where the contributors to a mixed DNA stain may
 be related.  Relationships are represented by pedigrees and can include kinship
 between more than two individuals.  The main function is @code{relMix()} and its
 graphical user interface @code{relMixGUI()}.  The implementation and method is
-described in Dorum et al. (2017) <doi:doi.org/10.1007/s00414-016-1526-x>,
-Hernandis et al. (2019) <doi:doi.org/10.1016/j.fsigss.2019.09.085> and Kaur et
-al. (2016) <doi:doi.org/10.1007/s00414-015-1276-1>.")
+described in Dorum et al. (2017) <doi:10.1007/s00414-016-1526-x>, Hernandis et
+al. (2019) <doi:10.1016/j.fsigss.2019.09.085> and Kaur et al. (2016)
+<doi:10.1007/s00414-015-1276-1>.")
     (license license:gpl2+)))
 
 (define-public r-relliptical
@@ -46673,13 +46702,13 @@ Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
 (define-public r-rclabels
   (package
     (name "r-rclabels")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCLabels" version))
        (sha256
-        (base32 "0nb1032mlqbs9aslq4hsmahfn3bp1qvg26pfbgk784rj64ibd6gz"))))
+        (base32 "1qx0jngyihjhcy6kwgnx10fi0xcn1llb6yhc5iri7l67r577wzb4"))))
     (properties `((upstream-name . "RCLabels")))
     (build-system r-build-system)
     (arguments
@@ -51536,19 +51565,20 @@ with slight modifications by this package.")
 (define-public r-rapi
   (package
     (name "r-rapi")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rapi" version))
        (sha256
-        (base32 "044c3qs6vyijl8j21rs351jvmz2f6i864bzzy8vrh4p58j7zhq0d"))))
+        (base32 "10iymfwixd4s3h0jgiir6j61w4mipl17r86ylqskd1z1pvdfvzkm"))))
     (properties `((upstream-name . "Rapi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-writexl
+                             r-tibble
                              r-stringr
                              r-rlist
                              r-rlang
@@ -51566,9 +51596,9 @@ with slight modifications by this package.")
     (home-page "https://github.com/DataRapi/Rapi")
     (synopsis "Interface for Multiple Data Providers 'EDDS' and 'FRED'")
     (description
-     "Interface for multiple data sources, such as the EDDS API
+     "Interface for multiple data sources, such as the `EDDS` API
 <https://evds2.tcmb.gov.tr/index.php?/evds/@code{userDocs>} of the Central Bank
-of the Republic of TÃ¼rkiye and the FRED API
+of the Republic of TÃ¼rkiye and the `FRED` API
 <https://fred.stlouisfed.org/docs/api/fred/> of the Federal Reserve Bank.  Both
 data providers require API keys for access, which users can easily obtain by
 creating accounts on their respective websites.  The package provides caching
@@ -53467,13 +53497,13 @@ chart, gauge chart, boxplot chart, pie chart, and 100% stacked bar chart.")
 (define-public r-ramcharts
   (package
     (name "r-ramcharts")
-    (version "2.1.15")
+    (version "2.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rAmCharts" version))
        (sha256
-        (base32 "0fcspbmzyyk6hinpjp29dv2banm0gssn9vy2zjf2p498hmysy3db"))))
+        (base32 "1mp2i027v07fcpb6vdfg84kn2vbvxkm78fx4gj9w9hjfknp7fkdw"))))
     (properties `((upstream-name . "rAmCharts")))
     (build-system r-build-system)
     (arguments

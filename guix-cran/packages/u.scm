@@ -1326,6 +1326,30 @@ analytic functions.  Specifically developed for Bit.ly (which requires OAuth
 2.0) and is.gd (no API key).")
     (license license:asl2.0)))
 
+(define-public r-urlparse
+  (package
+    (name "r-urlparse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "urlparse" version))
+       (sha256
+        (base32 "076pbnk9gjl8pm83q8k396kynm4b0b0vgd3sl8mi0gar71gwsi5n"))))
+    (properties `((upstream-name . "urlparse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/dyfanjones/urlparse")
+    (synopsis "Fast Simple URL Parser")
+    (description
+     "This package provides a fast and simple URL parser package for R'.  This package
+provides functions to parse URLs into their components, such as scheme, user,
+password, host, port, path, query, and fragment.")
+    (license license:expat)))
+
 (define-public r-urbin
   (package
     (name "r-urbin")

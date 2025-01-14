@@ -6216,13 +6216,13 @@ methylation Infinium 450K array data) without reference samples.")
 (define-public r-bplsr
   (package
     (name "r-bplsr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bplsr" version))
        (sha256
-        (base32 "06ybazc211ij5z81kjczfz6clxcimh4pndp36hp64d5rrz00i5rq"))))
+        (base32 "02f7hlcb497yan6bf11nfhvj8vav3h705qj2zy04jrkd6xqc64rk"))))
     (properties `((upstream-name . "bplsr")))
     (build-system r-build-system)
     (arguments
@@ -9232,6 +9232,36 @@ addition to the bootstrapping of training samples, the features can be
 subsampled in each baselearner to break the correlation between them.  The Rcpp
 package is used to speed up the computation.")
     (license license:gpl3)))
+
+(define-public r-bnns
+  (package
+    (name "r-bnns")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bnns" version))
+       (sha256
+        (base32 "1m6ndah3pki5i6yrixg147b0cd08zfai4da4pagi4flvnn0g4w0h"))))
+    (properties `((upstream-name . "bnns")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstan r-rcppeigen r-proc r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/swarnendu-stat/bnns")
+    (synopsis "Bayesian Neural Network with 'Stan'")
+    (description
+     "Offers a flexible formula-based interface for building and training Bayesian
+Neural Networks powered by Stan'.  The package supports modeling complex
+relationships while providing rigorous uncertainty quantification via posterior
+distributions.  With features like user chosen priors, clear predictions, and
+support for regression, binary, and multi-class classification, it is
+well-suited for applications in clinical trials, finance, and other fields
+requiring robust Bayesian inference and decision-making.  References: Neal(1996)
+<doi:10.1007/978-1-4612-0745-0>.")
+    (license license:expat)))
 
 (define-public r-bnmonitor
   (package
@@ -24639,13 +24669,13 @@ piecewise constant hazard is detailed in Ibrahim et al. (2001)
 (define-public r-bayesppd
   (package
     (name "r-bayesppd")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesPPD" version))
        (sha256
-        (base32 "0c015l8ih1ck1qb31vvnn95fivf5r3ns58pdlm4x5bf7giprjxf4"))))
+        (base32 "1clmvzail7hp13adnmxsv9n28xdwrpr1qqipsdi1pqqm3x0q3j2z"))))
     (properties `((upstream-name . "BayesPPD")))
     (build-system r-build-system)
     (arguments
@@ -24659,9 +24689,10 @@ piecewise constant hazard is detailed in Ibrahim et al. (2001)
     (description
      "Bayesian power/type I error calculation and model fitting using the power prior
 and the normalized power prior for generalized linear models.  Detailed examples
-of applying the package are available at <doi:10.32614/RJ-2023-016>.  The
-Bayesian clinical trial design methodology is described in Chen et al. (2011)
-<doi:10.1111/j.1541-0420.2011.01561.x>, and Psioda and Ibrahim (2019)
+of applying the package are available at <doi:10.32614/RJ-2023-016>.  Models for
+time-to-event outcomes are implemented in the R package @code{BayesPPDSurv}'.
+The Bayesian clinical trial design methodology is described in Chen et al.
+(2011) <doi:10.1111/j.1541-0420.2011.01561.x>, and Psioda and Ibrahim (2019)
 <doi:10.1093/biostatistics/kxy009>.  The normalized power prior is described in
 Duan et al. (2006) <doi:10.1002/env.752> and Ibrahim et al. (2015)
 <doi:10.1002/sim.6728>.")

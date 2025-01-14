@@ -6778,19 +6778,20 @@ models proposed by Asano and Hirakawa (2017)
 (define-public r-intsdm
   (package
     (name "r-intsdm")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intSDM" version))
        (sha256
-        (base32 "1h8npxwv9rnnaxkxf82s82qg9yc90shz99xi6bgsx2p9pf74d5mg"))))
+        (base32 "13qh4aa96hkrq1q7n22m8b6g64i5nw4n2wq320izqnc8nkrq3hv5"))))
     (properties `((upstream-name . "intSDM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyterra
+    (propagated-inputs (list r-units
+                             r-tidyterra
                              r-terra
                              r-sf
                              r-rgbif
@@ -6800,6 +6801,7 @@ models proposed by Asano and Hirakawa (2017)
                              r-giscor
                              r-ggplot2
                              r-geodata
+                             r-fmesher
                              r-blockcv))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=intSDM")
@@ -14030,13 +14032,13 @@ psychometric quality standards (see Blum & Holling, 2018)
 (define-public r-imagine
   (package
     (name "r-imagine")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imagine" version))
        (sha256
-        (base32 "0ifg21d4hp4zx64p3jhspb3rf3jyfifn61fibg0bwb635qvmdzd8"))))
+        (base32 "1g3azzrvj2djr7raiajvmp0jr8qjxbv3pjv55b725dg633kz5f7l"))))
     (properties `((upstream-name . "imagine")))
     (build-system r-build-system)
     (arguments
@@ -16094,13 +16096,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "0jja6laclbvza77s1c92f0z4c75hvjb137pddqlx4k7jmnq1dlig"))))
+        (base32 "1gxd80l1g4bzbxbjp5l9wyfp1hknnjbiycahjjmxv77b3l65b08l"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (arguments
@@ -16932,6 +16934,49 @@ identify differential networks between two groups.  The methods are described in
 Class et.  al., (2018) <doi:10.1093/bioinformatics/btx750> and Ha et.  al.,
 (2015) <doi:10.1093/bioinformatics/btv406>.")
     (license license:gpl2)))
+
+(define-public r-idiffomix
+  (package
+    (name "r-idiffomix")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idiffomix" version))
+       (sha256
+        (base32 "1idkcnm7j6dpqmla1yz64d2k09f7r46cinvxfvp3f88dcmnvqg5a"))))
+    (properties `((upstream-name . "idiffomix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-scales
+                             r-reshape2
+                             r-mclust
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-foreach
+                             r-edger
+                             r-dplyr
+                             r-doparallel
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=idiffomix")
+    (synopsis
+     "Integrated Differential Analysis of Multi Omics Data using a Joint Mixture Model")
+    (description
+     "This package provides a joint mixture model has been developed by Majumdar et
+al. (2025) <doi:10.48550/@code{arXiv.2412.17511>} that integrates information
+from gene expression data and methylation data at the modelling stage to capture
+their inherent dependency structure, enabling simultaneous identification of
+differentially methylated cytosine-guanine dinucleotide (@code{CpG}) sites and
+differentially expressed genes.  The model leverages a joint likelihood function
+that accounts for the nested structure in the data, with parameter estimation
+performed using an expectation-maximisation algorithm.")
+    (license license:gpl3)))
 
 (define-public r-idf
   (package

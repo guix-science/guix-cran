@@ -4853,6 +4853,40 @@ variations in language, character set, and spelling.  For more information go to
 <https://viaf.org/>.")
     (license license:gpl3)))
 
+(define-public r-viafoundry
+  (package
+    (name "r-viafoundry")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viafoundry" version))
+       (sha256
+        (base32 "06lli76b0abixczfajk11byc5gwygxbgmik90rmarmcj9wca4mxw"))))
+    (properties `((upstream-name . "viafoundry")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr r-jsonlite r-httr r-dplyr r-askpass))
+    (home-page "https://github.com/ViaScientific/viafoundry-R-SDK")
+    (synopsis "R Client for 'Via Foundry' API")
+    (description
+     "Via Foundry API provides streamlined tools for interacting with and extracting
+data from structured responses, particularly for use cases involving
+hierarchical data from Foundry's API. It includes functions to fetch and parse
+process-level and file-level metadata, allowing users to efficiently query and
+manipulate nested data structures.  Key features include the ability to list all
+unique process names, retrieve file metadata for specific or all processes, and
+dynamically load or download files based on their type.  With built-in support
+for handling various file formats (e.g., tabular and non-tabular files) and
+seamless integration with API through authentication, this package is designed
+to enhance workflows involving large-scale data management and analysis.  Robust
+error handling and flexible configuration ensure reliable performance across
+diverse data environments.  Please consult the documentation for the API
+endpoint for your installation.")
+    (license license:asl2.0)))
+
 (define-public r-via
   (package
     (name "r-via")

@@ -3446,13 +3446,13 @@ to wintime.\".")
 (define-public r-wins
   (package
     (name "r-wins")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WINS" version))
        (sha256
-        (base32 "02b6y08qhs3w4l58yra6f7yw9pqmlbrmac7qinwwm63s7jl95z9q"))))
+        (base32 "0f7rwaa701g3qis43wbjm5jh9r53dklkpv34ymxci8kqqv52a056"))))
     (properties `((upstream-name . "WINS")))
     (build-system r-build-system)
     (arguments

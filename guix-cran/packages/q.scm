@@ -730,6 +730,32 @@ and provide a quicker way to summarize models statistical findings using
 ggplot2'.")
     (license license:gpl2)))
 
+(define-public r-quickpwcr
+  (package
+    (name "r-quickpwcr")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quickPWCR" version))
+       (sha256
+        (base32 "0is6ay9p7dmqs9112zyzi145h3f5yl7nmydvj3acb59n6iwmz0bi"))))
+    (properties `((upstream-name . "quickPWCR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-pbmcapply r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=quickPWCR")
+    (synopsis "Quickly Construct and Rate Large Binary Pairwised Comparisons")
+    (description
+     "This package provides a collection of functions for constructing large pairwised
+comparisons and rating them using Elo rating system with supporting parallel
+processing.  The method of random sample pairs is based on Reservoir Sampling
+proposed by JVitter (1985) <doi:10.1145/3147.3165>.")
+    (license license:gpl3)))
+
 (define-public r-quickpsy
   (package
     (name "r-quickpsy")
@@ -6083,13 +6109,13 @@ among constructs and between constructs and observed variables.")
 (define-public r-qcluster
   (package
     (name "r-qcluster")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qcluster" version))
        (sha256
-        (base32 "1zkl11r0fnmhp1z2qd7jc407g63a0i8fyichb6q1iw6d43bwv2az"))))
+        (base32 "0w6m2iasr0q2r8a1jy31x11cxjgkjb8f6l2lcxsh91c80p4g17jj"))))
     (properties `((upstream-name . "qcluster")))
     (build-system r-build-system)
     (arguments

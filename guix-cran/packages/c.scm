@@ -3245,13 +3245,13 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.10.1")
+    (version "3.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsem" version))
        (sha256
-        (base32 "040risfqqb8zbnd9ingfv6labqg8lry43943h2kr6vlaq4h3jdwb"))))
+        (base32 "03wvjsmsgpchh1nm0xxfyv707g768wgsfdshpmm16c5adq3pn987"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (arguments
@@ -3604,13 +3604,13 @@ these models.")
 (define-public r-ctmcmove
   (package
     (name "r-ctmcmove")
-    (version "1.2.9")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctmcmove" version))
        (sha256
-        (base32 "1pxyxbbhfa8arqfb7qw10ya1b8hy9ylqbqqzys6d9dsixvdk98h0"))))
+        (base32 "1fy2i9nrvmz15nsgapigqsfzh69b9d3k5crpfhmwjf27070ww0yr"))))
     (properties `((upstream-name . "ctmcmove")))
     (build-system r-build-system)
     (arguments
@@ -20528,13 +20528,13 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "7.2")
+    (version "7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "0n9hg8vpzj8ckbkkfk48rlmkh7k3kv7q355qz96cr4cfdj2ilzj5"))))
+        (base32 "1syf4krq5f1cn9hha208zvqjywwc23jh6zhay17b99ngnm22arvx"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (arguments
@@ -20603,9 +20603,11 @@ Statistics--Theory and Methods, 52(16): 5535--5567.
 <doi:10.1080/03610926.2021.2014890>.  m) Tsagris M., Alenazi A. and Stewart C.
 (2023). \"Flexible non-parametric regression models for compositional response
 data with zeros\".  Statistics and Computing, 33(106).
-<doi:10.1007/s11222-023-10277-5>.  n) Tsagris.  M. (2024). \"Constrained least
-squares simplicial-simplicial regression\".
-<doi:10.48550/@code{arXiv.2403.19835>}.")
+<doi:10.1007/s11222-023-10277-5>.  n) Tsagris.  M. (2025). \"Constrained least
+squares simplicial-simplicial regression\".  Statistics and Computing, 35(27).
+<doi:10.1007/s11222-024-10560-z>.  o) Sevinc V. and Tsagris.  M. (2024). \"Energy
+Based Equality of Distributions Testing for Compositional Data\".
+<doi:10.48550/@code{arXiv.2412.05199>}.")
     (license license:gpl2+)))
 
 (define-public r-compositereliabilityinnesteddesigns
@@ -23360,28 +23362,30 @@ created.")
 (define-public r-colorfast
   (package
     (name "r-colorfast")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorfast" version))
        (sha256
-        (base32 "04z9n4hbv4yb68sl0gzfbawm4bcm7gyqrlla5yl8fj8z0z965hr3"))))
+        (base32 "1cz5pjvvh9vn67458h3p8fsykk4kp1j575jkwqf06i9ac5j7j76q"))))
     (properties `((upstream-name . "colorfast")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=colorfast")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/colorfast")
     (synopsis
      "Fast Conversion of R Colors to Color Component Values and Native Packed Integer Format")
     (description
      "Color values in R are often represented as strings of hexadecimal colors or
 named colors.  This package offers fast conversion of these color
 representations to either an array of red/green/blue/alpha values or to the
-packed integer format used in native raster objects.  This fast conversion of
-colors is implemented using an order-preserving minimal perfect hash derived
-from Majewski et al (1996) A Family of Perfect Hashing Methods
+packed integer format used in native raster objects.  Functions for conversion
+are also exported at the C level for use in other packages.  This fast
+conversion of colors is implemented using an order-preserving minimal perfect
+hash derived from Majewski et al (1996) \"A Family of Perfect Hashing Methods\"
 <doi:10.1093/comjnl/39.6.547>.")
     (license license:expat)))
 

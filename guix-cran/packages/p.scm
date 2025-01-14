@@ -5932,19 +5932,19 @@ successor of @code{ProTrackR} providing better performance.")
 (define-public r-protrackr
   (package
     (name "r-protrackr")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProTrackR" version))
        (sha256
-        (base32 "08c53ndrfgaw8hxvrw13ypcbm62nlxgfnip7p9pivvlrjpiiryvj"))))
+        (base32 "00n6gxyjh2knvf6w2iw6mq5vpl93bszl4fwbl2glmxw9djqadwcc"))))
     (properties `((upstream-name . "ProTrackR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml r-tuner r-signal r-lattice r-audio))
+    (propagated-inputs (list r-tuner r-signal r-lattice r-audio))
     (home-page "https://pepijn-devries.github.io/ProTrackR/")
     (synopsis "Manipulate and Play 'ProTracker' Modules")
     (description
@@ -9312,6 +9312,51 @@ of the posterior to power-scaling perturbations of the prior and likelihood.")
 priorities and takes the predicted values as an offset for the next block.  Also
 offers options to deal with block-wise missingness in multi-omics data.")
     (license license:gpl2)))
+
+(define-public r-priorityelasticnet
+  (package
+    (name "r-priorityelasticnet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "priorityelasticnet" version))
+       (sha256
+        (base32 "1q76swqyl0gz7icd9q6v0fivnwndvk22y1yh4aasipn2bwc12ba6"))))
+    (properties `((upstream-name . "priorityelasticnet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-shiny
+                             r-prroc
+                             r-proc
+                             r-plotrix
+                             r-magrittr
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr
+                             r-cvms
+                             r-checkmate
+                             r-caret
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=priorityelasticnet")
+    (synopsis
+     "Comprehensive Analysis of Multi-Omics Data Using an Offset-Based Method")
+    (description
+     "Priority-@code{ElasticNet} extends the Priority-LASSO method (Klau et al. (2018)
+<doi:10.1186/s12859-018-2344-6>) by incorporating the @code{ElasticNet} penalty,
+allowing for both L1 and L2 regularization.  This approach fits successive
+@code{ElasticNet} models for several blocks of (omics) data with different
+priorities, using the predicted values from each block as an offset for the
+subsequent block.  It also offers robust options to handle block-wise
+missingness in multi-omics data, improving the flexibility and applicability of
+the model in the presence of incomplete datasets.")
+    (license license:gpl3)))
 
 (define-public r-prioritizrdata
   (package
@@ -19651,13 +19696,13 @@ point forecast.")
 (define-public r-pointedsdms
   (package
     (name "r-pointedsdms")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PointedSDMs" version))
        (sha256
-        (base32 "0cy5a6v1qn5n6rzw21lwx0yz9x6d6jc85ypr8sijvirqkw4h6x46"))))
+        (base32 "1gscdi8gzl9hd794iwxvl41m2jrhh3chb8h7dxqghln1s1bqi6g3"))))
     (properties `((upstream-name . "PointedSDMs")))
     (build-system r-build-system)
     (arguments
@@ -19671,6 +19716,8 @@ point forecast.")
                              r-r-devices
                              r-inlabru
                              r-ggplot2
+                             r-fnn
+                             r-fmesher
                              r-blockcv))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PhilipMostert/PointedSDMs")
@@ -20929,41 +20976,6 @@ nature enables programers to implement new @code{pMEM} by defining new spatial
 weighting functions.")
     (license license:gpl3)))
 
-(define-public r-pmd
-  (package
-    (name "r-pmd")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pmd" version))
-       (sha256
-        (base32 "14xra1d6qx6gxnpiwfsxz200qhmm7s4zy2j8h5kwbvbpnykdyr5c"))))
-    (properties `((upstream-name . "pmd")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer r-igraph r-envigcms r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://yufree.github.io/pmd/")
-    (synopsis
-     "Paired Mass Distance Analysis for GC/LC-MS Based Non-Targeted Analysis and Reactomics Analysis")
-    (description
-     "Paired mass distance (PMD) analysis proposed in Yu, Olkowicz and Pawliszyn
-(2018) <doi:10.1016/j.aca.2018.10.062> for gas/liquid chromatographyâmass
-spectrometry (GC/LC-MS) based non-targeted analysis.  PMD analysis including
-@code{GlobalStd} algorithm and structure/reaction directed analysis.
-@code{GlobalStd} algorithm could found independent peaks in m/z-retention time
-profiles based on retention time hierarchical cluster analysis and frequency
-analysis of paired mass distances within retention time groups.  Structure
-directed analysis could be used to find potential relationship among those
-independent peaks in different retention time groups based on frequency of
-paired mass distances.  Reactomics analysis could also be performed to build PMD
-network, assign sources and make biomarker reaction discovery.  GUIs for PMD
-analysis is also included as shiny applications.")
-    (license license:gpl2)))
-
 (define-public r-pmclust
   (package
     (name "r-pmclust")
@@ -21421,6 +21433,33 @@ so that R code can be used to power Tableau workbooks.")
     (description
      "Kernel density estimation with global bandwidth selection via \"plug-in\".")
     (license license:gpl2+)))
+
+(define-public r-plug
+  (package
+    (name "r-plug")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plug" version))
+       (sha256
+        (base32 "1100icc6wxmsss1zqp04hrr1mhm3vnnwm9c6212ffr5wl0mjra3m"))))
+    (properties `((upstream-name . "plug")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-keyring r-httr2 r-glue))
+    (home-page "<https://github.com/StrategicProjects/plug>")
+    (synopsis "Secure and Intuitive Access to 'Plug' Interface")
+    (description
+     "This package provides a secure and user-friendly interface to interact with the
+Plug <https://plugbytpf.com.br> API'.  It enables developers to store and manage
+tokens securely using the keyring package, retrieve data from API endpoints with
+the httr2 package, and handle large datasets with chunked data fetching.
+Designed for simplicity and security, the package facilitates seamless
+integration with Plug ecosystem.")
+    (license license:expat)))
 
 (define-public r-plu
   (package
@@ -26551,13 +26590,13 @@ Pijavski method, which was published in Pijavski (1972)
 (define-public r-pii
   (package
     (name "r-pii")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pii" version))
        (sha256
-        (base32 "0fwk8cqbmwh71vrm9hmnz7f6ysxbl2z26l3razzx1a5j04ka2gks"))))
+        (base32 "15vjz4p41bhqm86qyaydqbxyyhmf5lm85d83qhww1xvycd84zwz3"))))
     (properties `((upstream-name . "pii")))
     (build-system r-build-system)
     (arguments

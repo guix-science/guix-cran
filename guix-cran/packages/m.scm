@@ -10700,44 +10700,6 @@ Gehlert, T.; Thrun, M.C. Multiresolution Forecasting for Industrial
 Applications.  Processes 2021, 9, 1697. <doi:10.3390/pr9101697>.")
     (license license:gpl3)))
 
-(define-public r-mregions2
-  (package
-    (name "r-mregions2")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mregions2" version))
-       (sha256
-        (base32 "1hhl3y8x777yfnn5l92nv6cc4kfk1alg64anzaz589g8802al7aw"))))
-    (properties `((upstream-name . "mregions2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-wrapr
-                             r-sf
-                             r-rdflib
-                             r-memoise
-                             r-magrittr
-                             r-isocodes
-                             r-httr2
-                             r-glue
-                             r-dplyr
-                             r-digest
-                             r-curl
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/mregions2")
-    (synopsis "Access Data from Marineregions.org: Gazetteer & Data Products")
-    (description
-     "Explore and retrieve marine geospatial data from the Marine Regions Gazetteer
-<https://marineregions.org/gazetteer.php?p=webservices> and the Marine Regions
-Data Products <https://marineregions.org/webservices.php>.")
-    (license license:expat)))
-
 (define-public r-mreg
   (package
     (name "r-mreg")
@@ -20497,6 +20459,40 @@ with variable size train sets.")
 machine learning data, tasks and experiments.  The @code{OpenML} objects can be
 automatically converted to mlr3 objects.  For a more sophisticated interface
 with more upload options, see the @code{OpenML} package.")
+    (license license:lgpl3)))
+
+(define-public r-mlr3inferr
+  (package
+    (name "r-mlr3inferr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlr3inferr" version))
+       (sha256
+        (base32 "0cw0a194hcairl7va6lvx62k0bn25x15ylczbgcaxjj54bagqslm"))))
+    (properties `((upstream-name . "mlr3inferr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-r6
+                             r-paradox
+                             r-mlr3misc
+                             r-mlr3measures
+                             r-mlr3
+                             r-lgr
+                             r-future
+                             r-data-table
+                             r-checkmate))
+    (home-page "https://mlr3inferr.mlr-org.com")
+    (synopsis "Inference on the Generalization Error")
+    (description
+     "An mlr3 extension that provides various resampling-based confidence interval
+(CI) methods for estimating the generalization error.  These CI methods are
+implemented as mlr3 measures, enabling the evaluation of individual algorithms
+on specific tasks as well as the comparison of different learning algorithms.")
     (license license:lgpl3)))
 
 (define-public r-mlr3fda
@@ -32282,13 +32278,13 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.16.0")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metR" version))
        (sha256
-        (base32 "0pimgvgxq494qlh339hq0v38y444i9syc46vl4r071bv15nar5dp"))))
+        (base32 "1khfqqkqmbmmswbfac6x72ligal0is75zgbbmcfq47mb694z3jxy"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (arguments
@@ -46468,6 +46464,39 @@ based on Markov Chain Monte Carlo.  The core algorithms of the package have been
 developed in C++'.")
     (license license:gpl2)))
 
+(define-public r-maraca
+  (package
+    (name "r-maraca")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maraca" version))
+       (sha256
+        (base32 "1mdjsm2rdrbzmkrfqb3v960mmm6xg4msb4nczr7sy5x4s3s7w2la"))))
+    (properties `((upstream-name . "maraca")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-patchwork
+                             r-lifecycle
+                             r-hce
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AstraZeneca/maraca")
+    (synopsis "The Maraca Plot: Visualizing Hierarchical Composite Endpoints")
+    (description
+     "Supports visual interpretation of hierarchical composite endpoints (HCEs).  HCEs
+are complex constructs used as primary endpoints in clinical trials, combining
+outcomes of different types into ordinal endpoints, in which each patient
+contributes the most clinically important event (one and only one) to the
+analysis.  See Karpefors M et al. (2022) <doi:10.1177/17407745221134949>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-mar1s
   (package
     (name "r-mar1s")
@@ -47363,13 +47392,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "1xs2csjagz7brlfjc7msnhs9csbfw61lfvbs1682wj4hnmzn0mmg"))))
+        (base32 "1jsax742pv6bqr3aczcfai79w18pggn27zqd80dmrb8axzjhsz1n"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments
@@ -47390,6 +47419,7 @@ samples.")
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-terra
+                             r-shiny
                              r-sf
                              r-rlang
                              r-htmlwidgets

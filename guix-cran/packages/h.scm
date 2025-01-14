@@ -2424,13 +2424,13 @@ estimates) from multiple models into an aggregated ensemble model output.")
 (define-public r-hubeau
   (package
     (name "r-hubeau")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hubeau" version))
        (sha256
-        (base32 "1fzy24wx93rc9niiksir0hys2f1slafrng9rkwmjaf51lsj0n1qw"))))
+        (base32 "1n54pzjmfnqjnppsrcm8lgzs9xbx59ikdlyasg046bcp1zg5nzqj"))))
     (properties `((upstream-name . "hubeau")))
     (build-system r-build-system)
     (arguments
@@ -3061,13 +3061,13 @@ and Yao (2018), Journal of Statistical Computation and Simulation, 88:14,
 (define-public r-htetree
   (package
     (name "r-htetree")
-    (version "0.1.19")
+    (version "0.1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htetree" version))
        (sha256
-        (base32 "16wjx56c5h9vbbh9gw9j646q0hdylcbgc70v6x3fdvis457nxv7a"))))
+        (base32 "0jv26dwx21nqd600lp257rwf2q3v3xn2pgmcm6vxzwixnyjg483y"))))
     (properties `((upstream-name . "htetree")))
     (build-system r-build-system)
     (arguments
@@ -10778,13 +10778,13 @@ that takes the guesswork out of everything.")
 (define-public r-healthyr-data
   (package
     (name "r-healthyr-data")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR.data" version))
        (sha256
-        (base32 "1g8fd2s60i6yhfp6z2g0ib6zz4n2xvwswbzacbffbvakf21djwvc"))))
+        (base32 "09iicmirkr1z46v2v7m8n3a9liyapk7d3ck08mdlca3vwqmsa173"))))
     (properties `((upstream-name . "healthyR.data")))
     (build-system r-build-system)
     (arguments

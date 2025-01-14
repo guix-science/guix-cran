@@ -6576,30 +6576,6 @@ combination of greedy local search and a genetic algorithm (see
 <@code{arXiv:2002:11577>} for more details).")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-grec
-  (package
-    (name "r-grec")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "grec" version))
-       (sha256
-        (base32 "1zv71cb6kj4bm11ihygzxhmc5hcxn7m4pmyga4fpxmc2xz8pv1sz"))))
-    (properties `((upstream-name . "grec")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-raster r-lifecycle r-imagine r-abind))
-    (home-page "https://github.com/LuisLauM/grec")
-    (synopsis
-     "Gradient-Based Recognition of Spatial Patterns in Environmental Data")
-    (description
-     "This package provides algorithms for detection of spatial patterns from
-oceanographic data using image processing methods based on Gradient Recognition.")
-    (license license:gpl3+)))
-
 (define-public r-greatr
   (package
     (name "r-greatr")
@@ -13182,34 +13158,6 @@ representation.  Generates and embeds music scores and audio files in RStudio',
 R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
 @code{MusicXML} <https://github.com/w3c/musicxml> to represent music, and
 @code{MuseScore} <https://musescore.org/> to convert @code{MusicXML}'.")
-    (license license:expat)))
-
-(define-public r-glycanr
-  (package
-    (name "r-glycanr")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glycanr" version))
-       (sha256
-        (base32 "1ic2v2dim0a8kzl38vx8an80jrbzimng0plrx62a1ps1jnczihl9"))))
-    (properties `((upstream-name . "glycanr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-coin))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/iugrina/glycanr")
-    (synopsis "Tools for Analysing N-Glycan Data")
-    (description
-     "Useful utilities in N-glycan data analysis.  This package tries to fill the gap
-in N-glycan data analysis by providing easy to use functions for basic
-operations on data (see <https://en.wikipedia.org/wiki/Glycomics> for more
-details on Glycomics).  At the moment glycanr is mostly oriented to data
-obtained by UPLC (Ultra Performance Liquid Chromatography) and LCMS (Liquid
-chromatographyâmass spectrometry) analysis of Plasma and @code{IgG} glycome.")
     (license license:expat)))
 
 (define-public r-glvmfit
@@ -26184,13 +26132,13 @@ US.")
 (define-public r-geojsonr
   (package
     (name "r-geojsonr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geojsonR" version))
        (sha256
-        (base32 "0l4zwyf3f827jpwbsv097d0h8i7pjwpkvdr89hc6vv9pzavfymhp"))))
+        (base32 "10li5xj0vx6a86nccwql4inwfbjycvaxqfbjdp4h1p5qxyibnls3"))))
     (properties `((upstream-name . "geojsonR")))
     (build-system r-build-system)
     (arguments
@@ -26203,10 +26151,10 @@ US.")
     (description
      "Includes functions for processing @code{GeoJson} objects
 <https://en.wikipedia.org/wiki/@code{GeoJSON>} relying on RFC 7946
-<https://datatracker.ietf.org/doc/pdf/rfc7946.pdf>.  The geojson encoding is
-based on json11', a tiny JSON library for C++11
-<https://github.com/dropbox/json11>.  Furthermore, the source code is exported
-in R through the Rcpp and @code{RcppArmadillo} packages.")
+<https://datatracker.ietf.org/doc/html/rfc7946>.  The geojson encoding is based
+on json11', a tiny JSON library for C++11 <https://github.com/dropbox/json11>.
+Furthermore, the source code is exported in R through the Rcpp and
+@code{RcppArmadillo} packages.")
     (license license:expat)))
 
 (define-public r-geojsonio
@@ -31223,13 +31171,13 @@ Susceptible-Infected-Recovered (SIR) framework.")
 (define-public r-gdilm-seirs
   (package
     (name "r-gdilm-seirs")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDILM.SEIRS" version))
        (sha256
-        (base32 "12vmpav9hbx50nxb6gah31yh78q92p1wzjm4ka1xpj67lx75sm51"))))
+        (base32 "1w24s1c729hpzw942zijl7gm65mmsxpjj6g002vh2pffmq8y6pkh"))))
     (properties `((upstream-name . "GDILM.SEIRS")))
     (build-system r-build-system)
     (arguments
@@ -32491,13 +32439,13 @@ local and remote access are described in <https://duckdb.org/why_duckdb> and
 (define-public r-gbfs
   (package
     (name "r-gbfs")
-    (version "1.3.9")
+    (version "1.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gbfs" version))
        (sha256
-        (base32 "0748gicg4mf3csgf75rcpkcsf0c8md4clyavh3kxs77jhq8h6j48"))))
+        (base32 "0hqz96gzflwbljk1g1kgh44i4mjr3na9adpixrv7czc3c9qns00z"))))
     (properties `((upstream-name . "gbfs")))
     (build-system r-build-system)
     (arguments

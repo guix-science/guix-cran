@@ -4127,19 +4127,26 @@ repositories.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "1zqywsa2ip48vpzbk1xml1glrihgfwf37z25pzs07xzj0ij1lwjy"))))
+        (base32 "0kc17d1n4drp04vz793hijq9rhnb2rk6ikgldji802560cf1jji2"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tmb r-sem r-rcppeigen r-matrix r-igraph))
+    (propagated-inputs (list r-tmb
+                             r-sem
+                             r-rtmb
+                             r-rcppeigen
+                             r-matrix
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://james-thorson-noaa.github.io/dsem/")
     (synopsis "Fit Dynamic Structural Equation Models")
@@ -11528,13 +11535,13 @@ build upon the paper by del Castillo, Joan & Daoudi, Jalila & Serra, Isabel.
 (define-public r-distrtest
   (package
     (name "r-distrtest")
-    (version "2.8.2")
+    (version "2.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrTEst" version))
        (sha256
-        (base32 "1fj0llq75hxy15wg1q4z10jmdxak2jcip62nl73fs25k1v9hr416"))))
+        (base32 "00pzfqjlmlp2gisavxcf4apsy3nzgxxczhxwn491drwx27wbq8dq"))))
     (properties `((upstream-name . "distrTEst")))
     (build-system r-build-system)
     (arguments
@@ -11551,13 +11558,13 @@ build upon the paper by del Castillo, Joan & Daoudi, Jalila & Serra, Isabel.
 (define-public r-distrteach
   (package
     (name "r-distrteach")
-    (version "2.9.1")
+    (version "2.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrTeach" version))
        (sha256
-        (base32 "0xfnq012hr1ngw6c5zdl8459qf908h6dpgdk6csnbpm9a706xypq"))))
+        (base32 "0zbmr7x3l2wm2chl55ij4vdqbp4i1aacjrxiyy2pc3p1r7f9qcq2"))))
     (properties `((upstream-name . "distrTeach")))
     (build-system r-build-system)
     (arguments
@@ -11575,13 +11582,13 @@ secondary school.")
 (define-public r-distrsim
   (package
     (name "r-distrsim")
-    (version "2.8.3")
+    (version "2.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrSim" version))
        (sha256
-        (base32 "0b2cyfz1ghbkz7ps4lzwkkfakxq9wc1yd53zh8pzd1r8zjkb9c7y"))))
+        (base32 "1likfhs1wzabial302wxgi985zdw73pm0i2y3dmvmpjjfpgcmblw"))))
     (properties `((upstream-name . "distrSim")))
     (build-system r-build-system)
     (arguments
@@ -11598,13 +11605,13 @@ family of packages.")
 (define-public r-distrrmetrics
   (package
     (name "r-distrrmetrics")
-    (version "2.8.2")
+    (version "2.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrRmetrics" version))
        (sha256
-        (base32 "12zrgaqs3cb7zpr3zjlm9s9x2d7qqhgcy9yaf9zgjbq5rnffrrx7"))))
+        (base32 "10fxj77z4gnxnvn30350jw2qyv9f9a5p7l3makjixwbb601blr8x"))))
     (properties `((upstream-name . "distrRmetrics")))
     (build-system r-build-system)
     (arguments
@@ -11895,13 +11902,13 @@ special computational programs.")
 (define-public r-distrex
   (package
     (name "r-distrex")
-    (version "2.9.5")
+    (version "2.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrEx" version))
        (sha256
-        (base32 "1zxw0ml9rs771n3zsxhv03hdyn1jb46zfrihy4ykdsnbbn8pj8g0"))))
+        (base32 "0qd0cw5q1k1n3hl61wn4sz65bm6azb8n59f7ik4za6dyxd2z5w74"))))
     (properties `((upstream-name . "distrEx")))
     (build-system r-build-system)
     (arguments
@@ -11917,13 +11924,13 @@ special computational programs.")
 (define-public r-distrellipse
   (package
     (name "r-distrellipse")
-    (version "2.8.3")
+    (version "2.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrEllipse" version))
        (sha256
-        (base32 "08gq3yq71kjh0bm2xj2r1r90xkk3pppwc24laqsvgnd467a2mf7y"))))
+        (base32 "1cssd1fbwcrl1yqsbkxdl931px1h2q2sjhdy3w445aqmbwrvaldz"))))
     (properties `((upstream-name . "distrEllipse")))
     (build-system r-build-system)
     (arguments
@@ -16340,6 +16347,31 @@ metadata from the ZEIT archive and from ZEIT ONLINE. A personal API key is
 required for usage.")
     (license license:expat)))
 
+(define-public r-dietr
+  (package
+    (name "r-dietr")
+    (version "1.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dietr" version))
+       (sha256
+        (base32 "0qvmcbnibl5bqn5x5xx5k93rdl0w2grlfzzqaa43j7zpwp00y8r9"))))
+    (properties `((upstream-name . "dietr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfishbase))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sborstein/dietr")
+    (synopsis "Diet Estimated Trophic Levels")
+    (description
+     "Estimates fractional trophic level from quantitative and qualitative diet data
+and calculates electivity indices in R. Borstein (2020)
+<doi:10.1007/s10750-020-04417-5>.")
+    (license license:gpl2+)))
+
 (define-public r-diemr
   (package
     (name "r-diemr")
@@ -18730,6 +18762,41 @@ which contains two indexes, with potentially a nesting structure.")
 frame filled with multiple values separated by delimiters.  This automates the
 process of creating separate columns for each unique value, transforming them
 into binary outcomes.")
+    (license license:gpl3+)))
+
+(define-public r-dfer
+  (package
+    (name "r-dfer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dfeR" version))
+       (sha256
+        (base32 "0m8asc8in14i5ny9mq3b6j0y6psm3b5rp8aw78vv4zcnh25zdr89"))))
+    (properties `((upstream-name . "dfeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-usethis
+                             r-tidyselect
+                             r-rlang
+                             r-renv
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-emoji
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://dfe-analytical-services.github.io/dfeR/")
+    (synopsis "Common Department for Education Analysis Tasks")
+    (description
+     "Preferred methods for common analytical tasks that are undertaken across the
+Department, including number formatting, project templates and curated reference
+data.")
     (license license:gpl3+)))
 
 (define-public r-dfdr

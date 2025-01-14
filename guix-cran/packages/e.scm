@@ -1203,13 +1203,13 @@ or its extensions.")
 (define-public r-extras
   (package
     (name "r-extras")
-    (version "0.7.3")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extras" version))
        (sha256
-        (base32 "1r0i9l49klkvibbylcj13wvbmxqn9xmpzm42s606v75mwmqgvxg1"))))
+        (base32 "0h4xyjk5y6qshgwiwgpg6aqsk6f4j35lrgbis0z034vy4bxv2i99"))))
     (properties `((upstream-name . "extras")))
     (build-system r-build-system)
     (arguments
@@ -6383,13 +6383,13 @@ plots.  The App is called using @code{eufmdis.adapt::run_adapt()}.")
 (define-public r-eudract
   (package
     (name "r-eudract")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eudract" version))
        (sha256
-        (base32 "1gqsm9nhl6ap7q9v1794yv4qvnhq7ikszvjd9cgyq4375jahlkmp"))))
+        (base32 "1x3x74ynnd752ia65b1azdi32dh8crh8k82nfcww0fqp8klnvlfh"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
     (arguments
@@ -12851,38 +12851,6 @@ centroidization or intensoid calculation.  Batch processing, resolution
 interpolation, wrapper, adduct calculations and molecular formula parsing.
 Loos, M., Gerber, C., Corona, F., Hollender, J., Singer, H. (2015)
 <doi:10.1021/acs.analchem.5b00941>.")
-    (license license:gpl2)))
-
-(define-public r-envigcms
-  (package
-    (name "r-envigcms")
-    (version "0.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "enviGCMS" version))
-       (sha256
-        (base32 "1rk7y24lld16zk7f3aak3zf9i3xd27l8mffcvlxwqi7cpl1pqa9b"))))
-    (properties `((upstream-name . "enviGCMS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdisop
-                             r-rcolorbrewer
-                             r-mixtools
-                             r-igraph
-                             r-data-table
-                             r-biocparallel
-                             r-animation))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/yufree/enviGCMS")
-    (synopsis "GC/LC-MS Data Analysis for Environmental Science")
-    (description
-     "Gas/Liquid Chromatography-Mass Spectrometer(GC/LC-MS) Data Analysis for
-Environmental Science.  This package covered topics such molecular isotope
-ratio, matrix effects and Short-Chain Chlorinated Paraffins analysis etc.  in
-environmental analysis.")
     (license license:gpl2)))
 
 (define-public r-envi

@@ -10082,13 +10082,13 @@ geodesic methods as provided by Charles F. F. Karney (2013)
 (define-public r-trainsplit
   (package
     (name "r-trainsplit")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trainsplit" version))
        (sha256
-        (base32 "12qmjpqi7ib4p6lbk3v6z63xdygbyry0a33whgy42jm0jcjswwx8"))))
+        (base32 "0ypmp1ybc74m12vv1jlrvc14mcnczq3xk99zbp1pn3c90pc6ylp4"))))
     (properties `((upstream-name . "trainsplit")))
     (build-system r-build-system)
     (arguments
@@ -15052,13 +15052,13 @@ framework, and @code{LaTeX} code with the tabularray package.")
 (define-public r-tinysnapshot
   (package
     (name "r-tinysnapshot")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinysnapshot" version))
        (sha256
-        (base32 "15sg7pp8clx1kmq94v5j9sc4m0j9x9k3ap0m9078jdp7psi4av8w"))))
+        (base32 "1kppqqn54xw99r0hrr4bk5shypm7zc8ckwqz2rcxy287ap93pd9j"))))
     (properties `((upstream-name . "tinysnapshot")))
     (build-system r-build-system)
     (arguments
@@ -30511,13 +30511,13 @@ differences.  Weighted data are supported via the survey package.")
 (define-public r-tablemonster
   (package
     (name "r-tablemonster")
-    (version "1.7.5")
+    (version "1.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TableMonster" version))
        (sha256
-        (base32 "104jm458s6880l0qpp3gbbq7kwlyqnwh9cd43igk03yj8mh86i8z"))))
+        (base32 "0ybvg7xxrdp6j51m0lrcqdlwh1skx3zhcb3f0wlyx4q7xiay2fx4"))))
     (properties `((upstream-name . "TableMonster")))
     (build-system r-build-system)
     (arguments

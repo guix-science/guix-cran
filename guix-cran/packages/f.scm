@@ -21285,6 +21285,40 @@ algorithms that which require O(n^2) operations to sample a random graph, where
 n is the number of nodes.")
     (license license:expat)))
 
+(define-public r-fastrerandomize
+  (package
+    (name "r-fastrerandomize")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastrerandomize" version))
+       (sha256
+        (base32 "0kfgcfbx3hdxkyyfa2sa5sxqgm7r9274hi33kww45px96ykl48hw"))))
+    (properties `((upstream-name . "fastrerandomize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cjerzak/fastrerandomize-software")
+    (synopsis "Hardware-Accelerated Rerandomization for Improved Balance")
+    (description
+     "This package provides hardware-accelerated tools for performing rerandomization
+and randomization testing in experimental research.  Using a JAX backend, the
+package enables exact rerandomization inference even for large experiments with
+hundreds of billions of possible randomizations.  Key functionalities include
+generating pools of acceptable rerandomizations based on covariate balance,
+conducting exact randomization tests, and performing pre-analysis evaluations to
+determine optimal rerandomization acceptance thresholds.  The package supports
+various hardware acceleration frameworks including CPU', CUDA', and METAL',
+making it versatile across accelerated computing environments.  This allows
+researchers to efficiently implement stringent rerandomization designs and
+conduct valid inference even with large sample sizes.  The package is partly
+based on Jerzak and Goldstein (2023) <doi:10.48550/@code{arXiv.2310.00861>}.")
+    (license license:gpl3)))
+
 (define-public r-fastrep
   (package
     (name "r-fastrep")
@@ -21474,19 +21508,20 @@ to stabilize in Schoenbrodt and Perugini's definition of sequential stability
 (define-public r-fastpng
   (package
     (name "r-fastpng")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastpng" version))
        (sha256
-        (base32 "00jajshdg6sjmyxv33c171ss0mpbr80f9h41xqsrgi9p8fknx9lq"))))
+        (base32 "1zb2d89659r912yxg003zhbxacvh1qrwi33hpqnmr4afhsqgw34f"))))
     (properties `((upstream-name . "fastpng")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list zlib))
+    (propagated-inputs (list r-colorfast))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/coolbutuseless/fastpng")
     (synopsis
@@ -24821,6 +24856,42 @@ Couper D. (2016) <DOI:10.1111/biom.12507> Leifer ES, Troendle JF, Kolecki A,
 Follmann DA. (2020)
 <https://github.com/@code{EricSLeifer/factorial2x2/blob/master/Leifer%20et%20al.%20paper.pdf>}.")
     (license license:gpl2)))
+
+(define-public r-factorhet
+  (package
+    (name "r-factorhet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FactorHet" version))
+       (sha256
+        (base32 "0is84j57hsnlsd17hl1xjr637yjijzvpanr76jl4k6kasj4bpfaz"))))
+    (properties `((upstream-name . "FactorHet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-smoof
+                             r-rcppeigen
+                             r-rcpp
+                             r-paramhelpers
+                             r-mlrmbo
+                             r-mlr
+                             r-matrix
+                             r-lbfgs
+                             r-ggplot2))
+    (home-page "https://github.com/mgoplerud/FactorHet")
+    (synopsis
+     "Estimate Heterogeneous Effects in Factorial Experiments Using Grouping and Sparsity")
+    (description
+     "Estimates heterogeneous effects in factorial (and conjoint) models.  The
+methodology employs a Bayesian finite mixture of regularized logistic
+regressions, where moderators can affect each observation's probability of group
+membership and a sparsity-inducing prior fuses together levels of each factor
+while respecting ANOVA-style sum-to-zero constraints.  Goplerud, Imai, and
+Pashley (2024) <doi:10.48550/ARXIV.2201.01357> provide further details.")
+    (license license:gpl2+)))
 
 (define-public r-factorcopula
   (package

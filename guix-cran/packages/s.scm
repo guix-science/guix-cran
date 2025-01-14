@@ -6710,35 +6710,6 @@ et al. (2015) <doi:10.1017/CBO9781107337855> for details on best-worst scaling,
 and Aizaki and Fogarty (2023) <doi:10.1016/j.jocm.2022.100394> for the package.")
     (license license:gpl2+)))
 
-(define-public r-suppdata
-  (package
-    (name "r-suppdata")
-    (version "1.1-9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "suppdata" version))
-       (sha256
-        (base32 "0h8yl68x61r8dwz6jdx0mss9n2d6nxcxhacbmfkjfmxlyb7rsgd6"))))
-    (properties `((upstream-name . "suppdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2 r-rcrossref r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/suppdata/")
-    (synopsis "Downloading Supplementary Data from Published Manuscripts")
-    (description
-     "Downloads data supplementary materials from manuscripts, using papers DOIs as
-references.  Facilitates open, reproducible research workflows: scientists
-re-analyzing published datasets can work with them as easily as if they were
-stored on their own computer, and others can track their analysis workflow
-painlessly.  The main function @code{suppdata()} returns a (temporary) location
-on the user's computer where the file is stored, making it simple to use
-@code{suppdata()} with standard functions like @code{read.csv()}.")
-    (license license:expat)))
-
 (define-public r-supmz
   (package
     (name "r-supmz")
@@ -17521,34 +17492,6 @@ description of methods used to calculate and format the spatial data can be
 found in Peterson, E.E. and Ver Hoef, J.M., (2014) <doi:10.18637/jss.v056.i02>.")
     (license license:gpl3+)))
 
-(define-public r-ssnbayes
-  (package
-    (name "r-ssnbayes")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SSNbayes" version))
-       (sha256
-        (base32 "1smfd7mas19y8n4jpywphck54crxn15lnc8dpi9s5il50icr2hls"))))
-    (properties `((upstream-name . "SSNbayes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-ssn2 r-sf r-rstan r-plyr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/EdgarSantos-Fernandez/SSNbayes")
-    (synopsis "Bayesian Spatio-Temporal Analysis in Stream Networks")
-    (description
-     "Fits Bayesian spatio-temporal models and makes predictions on stream networks
-using the approach by Santos-Fernandez, Edgar, et al. (2022).\"Bayesian
-spatio-temporal models for stream networks\". <@code{arXiv:2103.03538>}.  In
-these models, spatial dependence is captured using stream distance and flow
-connectivity, while temporal autocorrelation is modelled using vector
-autoregression methods.")
-    (license license:gpl2)))
-
 (define-public r-ssn2
   (package
     (name "r-ssn2")
@@ -24383,6 +24326,33 @@ distribution, and returns the estimator as a function.")
 But does much more: probabilities of any set of genes descending from any other
 set of genes.")
     (license license:gpl2+)))
+
+(define-public r-spectrolab
+  (package
+    (name "r-spectrolab")
+    (version "0.0.19")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spectrolab" version))
+       (sha256
+        (base32 "1q8f3rbrd0mpm76f8x1wsbl9iwzmvj81jlm9p41v7y441k6nb6ky"))))
+    (properties `((upstream-name . "spectrolab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinyjs r-shiny r-rcolorbrewer))
+    (native-inputs (list r-knitr))
+    (home-page "https://CRAN.R-project.org/package=spectrolab")
+    (synopsis "Class and Methods for Spectral Data")
+    (description
+     "Input/Output, processing and visualization of spectra taken with different
+spectrometers, including SVC (Spectra Vista), ASD and PSR (Spectral Evolution).
+Implements an S3 class spectra that other packages can build on.  Provides
+methods to access, plot, manipulate, splice sensor overlap, vector normalize and
+smooth spectra.")
+    (license license:gpl3)))
 
 (define-public r-spectrino
   (package
@@ -32367,6 +32337,47 @@ glass, mica, and platinum\".  Khasawneh FE (1971).
 growth\".")
     (license license:gpl3+)))
 
+(define-public r-soilassessment
+  (package
+    (name "r-soilassessment")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "soilassessment" version))
+       (sha256
+        (base32 "0k1jy2pc9ylckv2ixrr4n2rh2p4f5160345njy1ciwfnkflyypww"))))
+    (properties `((upstream-name . "soilassessment")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-soiltexture
+                             r-sf
+                             r-raster
+                             r-randomforest
+                             r-png
+                             r-nnet
+                             r-hmisc
+                             r-googledrive
+                             r-fuzzyahp
+                             r-e1071
+                             r-desolve
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=soilassessment")
+    (synopsis
+     "Soil Health Assessment Models for Assessing Soil Conditions and Suitability")
+    (description
+     "Soil health assessment builds information to improve decision in soil
+management.  It facilitates assessment of soil conditions for crop suitability
+[such as those given by FAO
+<https://www.fao.org/land-water/databases-and-software/crop-information/en/>],
+groundwater recharge, fertility, erosion, salinization [<doi:10.1002/ldr.4211>],
+carbon sequestration, irrigation potential, and status of soil resources.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-soil
   (package
     (name "r-soil")
@@ -37855,43 +37866,6 @@ Statistical Learning with Big Dependent Data by Daniel PeÃ±a and Ruey S. Tsay
 linear regression model described in Centofanti et al. (2020)
 <@code{arXiv:2007.00529>}.")
     (license license:gpl3+)))
-
-(define-public r-slapmeg
-  (package
-    (name "r-slapmeg")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SlaPMEG" version))
-       (sha256
-        (base32 "1w5iq0hkr1bx493cjzzaaxfypkvqf50nhidhxgxm337z05j55np7"))))
-    (properties `((upstream-name . "SlaPMEG")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-mvtnorm
-                             r-magic
-                             r-lme4
-                             r-lcmm
-                             r-globaltest
-                             r-ggplot2))
-    (home-page "https://cran.r-project.org/package=SlaPMEG")
-    (synopsis "Pathway Testing for Longitudinal Omics")
-    (description
-     "This package provides a self-contained hypothesis is tested for a given pathway
-of longitudinal omics. @code{SlaPMEG} is a two-step procedure.  First, a shared
-latent process mixed model is fitted over the longitudinal measures of omics in
-a pathway.  This shared model allows deviation from the shared process at
-subject level (a random intercept, slope, or both per subject) and also at omic
-level (a random effect per omic).  These random effects summarize the
-longitudinal trend of the observations which can be used to test for group
-differences using Globaltest in the second step.  If the pathway is large or the
-shared effect is small, the package fits a series of pairwise models and
-estimates the shared random effects based on them.")
-    (license license:gpl2+)))
 
 (define-public r-slap
   (package
@@ -53821,6 +53795,33 @@ implementation, special care has been taken to assure numerical stability of the
 methods even for such large sample sizes.")
     (license license:gpl2+)))
 
+(define-public r-sequencer
+  (package
+    (name "r-sequencer")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sequenceR" version))
+       (sha256
+        (base32 "1vy5mgz5vnax1339qhski091w15pqx9wj7v1i3prf35pab658hzp"))))
+    (properties `((upstream-name . "sequenceR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tuner))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/benRenard/sequenceR")
+    (synopsis "Simple Sequencer for Data Sonification")
+    (description
+     "This package provides a rudimentary sequencer to define, manipulate and mix
+sound samples.  The underlying motivation is to sonify data, as demonstrated in
+the blog <https://globxblog.github.io/>, the presentation by Renard and Le
+Bescond (2022, <https://hal.science/hal-03710340v1>) or the poster by Renard et
+al. (2023, <https://hal.inrae.fr/hal-04388845v1>).")
+    (license license:gpl3)))
+
 (define-public r-seqtrie
   (package
     (name "r-seqtrie")
@@ -59744,13 +59745,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "0q8v3lqijjjvzj16z4shazsqzkwz6amijx3xk8w3ls0rhj7m53zq"))))
+        (base32 "0mq07vlscl9qafcvih1zz0lka2vlhw6f256z0sfcjcn7y0bml3cy"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (arguments
@@ -66039,13 +66040,13 @@ latent class analyses, and reduced rank regressions.")
 (define-public r-sbi
   (package
     (name "r-sbi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SBI" version))
        (sha256
-        (base32 "0kbcy95dq8kkqaknj8yi33nhvhhd3si2yj0xg1swq15v48ffnrak"))))
+        (base32 "0p24ffpqlw4g6pli9rjd6ipmb63s6p5hws6wlsywy9awig7bhch2"))))
     (properties `((upstream-name . "SBI")))
     (build-system r-build-system)
     (arguments
@@ -66055,8 +66056,9 @@ latent class analyses, and reduced rank regressions.")
     (synopsis "Simple Blinding Index for Randomized Controlled Trials")
     (description
      "Computes a simple blinding index for randomized controlled trials introduced in
-the paper \"A simple blinding index for randomized controlled trials\" by Petroff,
-Bacak, Dagres, Dilk and Wachter, which has been submitted for publication.")
+Petroff, Bacak, Dagres, Dilk, Wachter: A simple blinding index for randomized
+controlled trials.  Contemp Clin Trials Commun.  2024 Nov 26;42:101393.
+<doi:10.1016/j.conctc.2024.101393>.  PMID: 39686958.")
     (license license:gpl3)))
 
 (define-public r-sbgcop
