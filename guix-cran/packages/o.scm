@@ -2112,13 +2112,13 @@ or public projects.")
 (define-public r-osfd
   (package
     (name "r-osfd")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OSFD" version))
        (sha256
-        (base32 "1xw76hi34vgq1r6r22z4bqp114nzg4h85mvz6pya724vyf110vhg"))))
+        (base32 "1ll9dlrqa7n5xrxcza2vzy25g1inmdqas19gyv80iiv5qhraqpxk"))))
     (properties `((upstream-name . "OSFD")))
     (build-system r-build-system)
     (arguments
@@ -2128,12 +2128,13 @@ or public projects.")
     (home-page "https://cran.r-project.org/package=OSFD")
     (synopsis "Output Space-Filling Design")
     (description
-     "This package provides a method to generate a design in the input space that
+     "This package provides methods to generate a design in the input space that
 sequentially fills the output space of a black-box function.  The output
-space-filling design will be helpful in inverse design or feature-based modeling
-problem.  Please see Wang et al.(2023) <DOI:10.48550/@code{arXiv.2305.07202>}
-for details.  This work is supported by U.S. National Foundation grant
-CMMI-1921646.")
+space-filling designs are helpful in inverse design or feature-based modeling
+problems.  See Wang, Shangkun, Adam P. Generale, Surya R. Kalidindi, and V.
+Roshan Joseph. (2024), Sequential designs for filling output spaces,
+Technometrics, 66, 65â76.  for details.  This work is supported by U.S.
+National Foundation grant CMMI-1921646.")
     (license license:gpl2+)))
 
 (define-public r-osdr
@@ -6627,6 +6628,33 @@ functions to quantitatively analyze and visualize repertory grid data (e.g.
 Fransella', Bell', & Bannister', 2004, ISBN: 978-0-470-09080-0).  The package is
 part of the The package is part of the <https://openrepgrid.org/> project.")
     (license license:gpl2+)))
+
+(define-public r-openrange
+  (package
+    (name "r-openrange")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpenRange" version))
+       (sha256
+        (base32 "0ml6khipzrhkc74bjpzj61k80cw9rg2xay9ylbzghv4hbjq8gj0s"))))
+    (properties `((upstream-name . "OpenRange")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf r-rpostgresql r-jsonlite r-httr r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OpenRange")
+    (synopsis "Code to Access Open Access Species Range Maps")
+    (description
+     "Allows access to a proof-of-concept database containing Open Access species
+range models and relevant metadata.  Access to the database is via both
+@code{PostgreSQL} connection and API
+<https://github.com/@code{EnquistLab/Biendata-Frontend>}, allowing diverse
+use-cases.")
+    (license license:expat)))
 
 (define-public r-openoise
   (package

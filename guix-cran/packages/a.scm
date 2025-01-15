@@ -3143,13 +3143,13 @@ Area Under Minimum.")
 (define-public r-auk
   (package
     (name "r-auk")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "auk" version))
        (sha256
-        (base32 "055blr0pbhjy0c20xh21pl1cndvxy742hmn4nlddzvd1phknfkzz"))))
+        (base32 "02bhki208rzlzcxnhzby654r5z2rm0i65yb4952g92bmaf70a56f"))))
     (properties `((upstream-name . "auk")))
     (build-system r-build-system)
     (arguments
@@ -3655,13 +3655,13 @@ posts and followers from the network or posting content.")
 (define-public r-atrisk
   (package
     (name "r-atrisk")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atRisk" version))
        (sha256
-        (base32 "17rs5jjk4av4b6qv14yl5qcnrjxms0va6alhdjxyln4hwrrd97km"))))
+        (base32 "0msrv70nz879zdprlpaiz6qgzwdva730y3f54dl8nhls410a07p8"))))
     (properties `((upstream-name . "atRisk")))
     (build-system r-build-system)
     (arguments
@@ -6096,13 +6096,13 @@ with the book.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.9-7")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asbio" version))
        (sha256
-        (base32 "05as9c0x20wyzzysbpr4mabyfbvhy0c0irdndv33j73psish15y2"))))
+        (base32 "0s34clzpxdqhp6hn2hyxpzd1p9jxqjrzjm2f34vvvzpylnh8lz14"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (arguments
@@ -25423,13 +25423,13 @@ the presentation of simulation results.")
 (define-public r-abm
   (package
     (name "r-abm")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ABM" version))
        (sha256
-        (base32 "1sdjazf02kx7ddxizfz9nb9r7yaqcw7k6xkxmxqmm2a3wi1xvfap"))))
+        (base32 "0lkaqvj7i2bih6c8h4m3djm75cg4f1320fkglz2d2bgaxjiqsn1i"))))
     (properties `((upstream-name . "ABM")))
     (build-system r-build-system)
     (arguments

@@ -1906,13 +1906,13 @@ calculated distance matrices from figshare <https://figshare.com>.")
 (define-public r-worldmet
   (package
     (name "r-worldmet")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldmet" version))
        (sha256
-        (base32 "146zygpdlxgwv871mb5x1whh6lzj3s1cma3rmgfip9h0fypd17q4"))))
+        (base32 "0fadyla3f48cx7bb6q2sf4bz23ni30pl0inp0llphc9aqg6m9vf3"))))
     (properties `((upstream-name . "worldmet")))
     (build-system r-build-system)
     (arguments
@@ -1928,15 +1928,15 @@ calculated distance matrices from figshare <https://figshare.com>.")
                              r-foreach
                              r-dplyr
                              r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://davidcarslaw.github.io/worldmet/index.html")
+    (home-page "https://openair-project.github.io/worldmet/")
     (synopsis
      "Import Surface Meteorological Data from NOAA Integrated Surface Database (ISD)")
     (description
      "This package provides functions to import data from more than 30,000 surface
 meteorological sites around the world managed by the National Oceanic and
-Atmospheric Administration (NOAA) Integrated Surface Database (ISD).")
-    (license license:gpl2+)))
+Atmospheric Administration (NOAA) Integrated Surface Database (ISD, see
+<https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database>).")
+    (license license:expat)))
 
 (define-public r-worldmapr
   (package

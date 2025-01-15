@@ -958,13 +958,13 @@ validation.")
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvms" version))
        (sha256
-        (base32 "08l33vianqd7kdxy5mys54cqahnp10sdzs2pmpd3iq97cs1qx4qb"))))
+        (base32 "06gl3m1v23bd5wr4a9vyw56acxsswy4qmmkxhbcki7b3givqavv7"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (arguments

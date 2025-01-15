@@ -7813,13 +7813,13 @@ clustering method.")
 (define-public r-boot-pval
   (package
     (name "r-boot-pval")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boot.pval" version))
        (sha256
-        (base32 "0572n82402i609q0jl6p2ar1gq5jlqqssv28xs3rxsr3nza49dxv"))))
+        (base32 "0ydwazvlwh74bhfdnlbgyb98cryfjk762m0vbl1c88f821a1g5qd"))))
     (properties `((upstream-name . "boot.pval")))
     (build-system r-build-system)
     (arguments
@@ -7833,7 +7833,8 @@ clustering method.")
                              r-flextable
                              r-car
                              r-boot))
-    (home-page "https://cran.r-project.org/package=boot.pval")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mthulin/boot.pval")
     (synopsis "Bootstrap p-Values")
     (description
      "Computation of bootstrap p-values through inversion of confidence intervals,
@@ -12257,6 +12258,32 @@ if monobit <https://github.com/robhagemans/monobit> is installed can also
 read/write several additional bitmap font formats.")
     (license license:expat)))
 
+(define-public r-bitstreamio
+  (package
+    (name "r-bitstreamio")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bitstreamio" version))
+       (sha256
+        (base32 "0sjmlcj44cm057ypksbcj50gplizh4pb0ccrb6a7050vvx3x2d27"))))
+    (properties `((upstream-name . "bitstreamio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/bitstreamio")
+    (synopsis "Read and Write Bits from Files, Connections and Raw Vectors")
+    (description
+     "Bit-level reading and writing are necessary when dealing with many file formats
+e.g. compressed data and binary files.  Currently, R connections are manipulated
+at the byte level.  This package wraps existing connections and raw vectors so
+that it is possible to read bits, bit sequences, unaligned bytes and low-bit
+representations of integers.")
+    (license license:expat)))
+
 (define-public r-bitrina
   (package
     (name "r-bitrina")
@@ -12566,6 +12593,31 @@ appropriate for bivariate mapping and scale functions for ggplot2 calls that
 adds those palettes to maps.  Tools for creating bivariate legends are also
 included.")
     (license license:gpl3)))
+
+(define-public r-bis
+  (package
+    (name "r-bis")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BIS" version))
+       (sha256
+        (base32 "0i6lfmn1bblxx2ls44dxvhy6d1wy6ccq231h1x9p82sihkgwix0z"))))
+    (properties `((upstream-name . "BIS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2 r-rvest r-readr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stefanangrick/BIS")
+    (synopsis "Programmatic Access to Bank for International Settlements Data")
+    (description
+     "This package provides an interface to data provided by the Bank for
+International Settlements <https://www.bis.org>, allowing for programmatic
+retrieval of a large quantity of (central) banking data.")
+    (license license:cc0)))
 
 (define-public r-birtr
   (package
@@ -22643,19 +22695,20 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
 (define-public r-bcea
   (package
     (name "r-bcea")
-    (version "2.4.6")
+    (version "2.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCEA" version))
        (sha256
-        (base32 "0qmnwh3j0mksgvnfnbkym7fpcngdnf1j83lqfilp5gn46akdqyvn"))))
+        (base32 "0bjwf3x6gxn8v9z9bwfvw7fxfqh4b84gwmr72zz8gkwk90fkqpas"))))
     (properties `((upstream-name . "BCEA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-voi
+                             r-scales
                              r-rstan
                              r-rlang
                              r-reshape2
@@ -23907,13 +23960,13 @@ Chipman, George, @code{McCulloch} (2010).")
 (define-public r-bayestools
   (package
     (name "r-bayestools")
-    (version "0.2.17")
+    (version "0.2.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesTools" version))
        (sha256
-        (base32 "1vwc64s1a10d2haw7bi5896hhipbb1y7aks4mzjpfrp4zavbzlpn"))))
+        (base32 "0yp3s568pss7bap8bllsh24i56siv0skg7blp9l9rwcz6sb6awzg"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
     (arguments
@@ -25461,13 +25514,13 @@ models can be computed.")
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "1jgv654k0qkspardlma2z7a854zw7zxk4fflc027wf7mlvs29b4h"))))
+        (base32 "0lrhsgp2mbkmv6sgj9sim0jz7nanl8zzk7zl84ch6jxr7gla5bsw"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (arguments

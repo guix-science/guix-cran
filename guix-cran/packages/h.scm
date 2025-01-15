@@ -2551,22 +2551,18 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "0p1vxy8pl38aqa6xq84g1pandc4h0cg53aykn6xf1difbkjz9a9z"))))
+        (base32 "167813rx1kwpyi81f1dzwym78zjv5k5852pqrmph9b2m2mhly8q9"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-survey
                              r-rdpack
@@ -2577,7 +2573,7 @@ performance.")
                              r-ggplot2
                              r-desolve
                              r-data-table))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page
      "https://www.epa.gov/chemical-research/rapid-chemical-exposure-and-dose-research")
     (synopsis "High-Throughput Toxicokinetics")
@@ -4798,13 +4794,13 @@ Bartlett, M. S. (1937) <doi:10.1098/rspa.1937.0109> Bhandary, M., & Dai, H.
 (define-public r-hommel
   (package
     (name "r-hommel")
-    (version "1.6")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hommel" version))
        (sha256
-        (base32 "1lvlazvvgmaqbawalgry1a59qmqxv2qy9g0ijhpcawwv2cfxmdja"))))
+        (base32 "0jx9c4c3cj5xsmahv25246qz4hg0lz6d3q8csxk1n1ym6xx7xlk7"))))
     (properties `((upstream-name . "hommel")))
     (build-system r-build-system)
     (arguments
@@ -4820,8 +4816,7 @@ particular, calculates adjusted p-values for Hommel's multiple testing method,
 and provides lower confidence bounds for true discovery proportions.  A robust
 but more conservative variant of the closed testing procedure that does not
 require the assumption of Simes inequality is also implemented.  The methods
-have been described in detail in Goeman et al (2016)
-<@code{arXiv:1611.06739v2>}.")
+have been described in detail in Goeman et al (Biometrika 106, 841-856, 2019).")
     (license license:gpl2+)))
 
 (define-public r-homeric
@@ -8448,6 +8443,42 @@ Reference: Ren, M., Zhang, Q., Zhang, S., Zhong, T., Huang, J. & Ma, S. (2022).
 \"Hierarchical cancer heterogeneity analysis based on histopathological imaging
 features\".  Biometrics, <doi:10.1111/biom.13426>.")
     (license license:gpl2)))
+
+(define-public r-hhmr
+  (package
+    (name "r-hhmr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hhmR" version))
+       (sha256
+        (base32 "1fk5sp8yvwhnz5axgp6spq25bnbygm685z7ililx5p3q9yy0jkzy"))))
+    (properties `((upstream-name . "hhmR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sgmmahon/hhmR")
+    (synopsis "Hierarchical Heatmaps")
+    (description
+     "Allows users to create high-quality heatmaps from labelled, hierarchical data.
+Specifically, for data with a two-level hierarchical structure, it will produce
+a heatmap where each row and column represents a category at the lower level.
+These rows and columns are then grouped by the higher-level group each category
+belongs to, with the names for each category and groups shown in the margins.
+While other packages (e.g. dendextend') allow heatmap rows and columns to be
+arranged by groups only, @code{hhmR} also allows the labelling of the data at
+both the category and group level.")
+    (license license:expat)))
 
 (define-public r-hhi
   (package

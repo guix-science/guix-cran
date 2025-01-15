@@ -18677,46 +18677,6 @@ and a supplied data frame.  The package contains methods for traversing abstract
 syntax trees from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
     (license license:expat)))
 
-(define-public r-tidyfit
-  (package
-    (name "r-tidyfit")
-    (version "0.7.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyfit" version))
-       (sha256
-        (base32 "10zsyr7mimqp7pb7yb6lcs8p83s7fzn46pysswgp4bkz6kib4xl6"))))
-    (properties `((upstream-name . "tidyfit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yardstick
-                             r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-rsample
-                             r-rlang
-                             r-purrr
-                             r-progressr
-                             r-mass
-                             r-magrittr
-                             r-generics
-                             r-furrr
-                             r-dplyr
-                             r-dials
-                             r-crayon
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://tidyfit.residualmetrics.com")
-    (synopsis "Regularized Linear Modeling with Tidy Data")
-    (description
-     "An extension to the R tidy data environment for automated machine learning.  The
-package allows fitting and cross validation of linear regression and
-classification algorithms on grouped data.")
-    (license license:gpl3)))
-
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
@@ -20994,6 +20954,35 @@ like to thank Grant Duffy (University of Otago, Dundedin, New Zealand) for
 granting us permission to use the source code for the Test of Total Equivalency
 function.")
     (license license:gpl3)))
+
+(define-public r-theorytools
+  (package
+    (name "r-theorytools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "theorytools" version))
+       (sha256
+        (base32 "0xxbkf5z8a737x0yvh8q4jgn8hdpyc3wq8gfsa04iqb542mfs2lr"))))
+    (properties `((upstream-name . "theorytools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-worcs r-jsonlite r-gh r-gert r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cjvanlissa/theorytools")
+    (synopsis "FAIR Theory Construction")
+    (description
+     "An integrated suite of tools for creating, maintaining, and reusing FAIR
+(Findable, Accessible, Interoperable, Reusable) theories.  Designed to support
+transparent and collaborative theory development, the package enables users to
+formalize theories, track changes with version control, assess pre-empirical
+coherence, and derive testable hypotheses.  Aligning with open science
+principles and workflows, theorytools facilitates the systematic improvement of
+theoretical frameworks and enhances their discoverability and usability.")
+    (license license:gpl3+)))
 
 (define-public r-theopenair
   (package

@@ -7331,13 +7331,13 @@ Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 (define-public r-sundialr
   (package
     (name "r-sundialr")
-    (version "0.1.6.1")
+    (version "0.1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sundialr" version))
        (sha256
-        (base32 "10b9il73v2vy32pq75vh2gssrmwrilvn271ll6aymzlrp5jv1l0m"))))
+        (base32 "1s1mp42mv009hc39l0ryq5fg5qms9qjvdh7vvcjsm0ll8wkdfm2a"))))
     (properties `((upstream-name . "sundialr")))
     (build-system r-build-system)
     (arguments
@@ -9766,19 +9766,19 @@ equations.")
 (define-public r-streamdag
   (package
     (name "r-streamdag")
-    (version "1.5")
+    (version "1.5-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamDAG" version))
        (sha256
-        (base32 "1zzpjp1k0x0kh4jja8x0yjv35pygp5qb8ivqqg7wc7dr5plv87y5"))))
+        (base32 "0p88riahsbla9f9fd00lkgpbf3fqzamc14r7vn1fp0j3z767vcdh"))))
     (properties `((upstream-name . "streamDAG")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plotrix r-igraph r-asbio))
+    (propagated-inputs (list r-plotrix r-missforest r-igraph r-asbio))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=streamDAG")
     (synopsis "Analytical Methods for Stream DAGs")
@@ -17492,6 +17492,34 @@ description of methods used to calculate and format the spatial data can be
 found in Peterson, E.E. and Ver Hoef, J.M., (2014) <doi:10.18637/jss.v056.i02>.")
     (license license:gpl3+)))
 
+(define-public r-ssnbayes
+  (package
+    (name "r-ssnbayes")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SSNbayes" version))
+       (sha256
+        (base32 "1smfd7mas19y8n4jpywphck54crxn15lnc8dpi9s5il50icr2hls"))))
+    (properties `((upstream-name . "SSNbayes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ssn2 r-sf r-rstan r-plyr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EdgarSantos-Fernandez/SSNbayes")
+    (synopsis "Bayesian Spatio-Temporal Analysis in Stream Networks")
+    (description
+     "Fits Bayesian spatio-temporal models and makes predictions on stream networks
+using the approach by Santos-Fernandez, Edgar, et al. (2022).\"Bayesian
+spatio-temporal models for stream networks\". <@code{arXiv:2103.03538>}.  In
+these models, spatial dependence is captured using stream distance and flow
+connectivity, while temporal autocorrelation is modelled using vector
+autoregression methods.")
+    (license license:gpl2)))
+
 (define-public r-ssn2
   (package
     (name "r-ssn2")
@@ -18332,22 +18360,18 @@ information to a Sweave report.")
 (define-public r-ssdtools
   (package
     (name "r-ssdtools")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssdtools" version))
        (sha256
-        (base32 "1j9l32mlf52llwrsvs1k4i7jznpv8h9si3c9aq4han76c75wskgg"))))
+        (base32 "0vfabdcv9bmfwzzkn67734vqx1imkv92abpw2lwq3f0aqf9x5i0q"))))
     (properties `((upstream-name . "ssdtools")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-withr
                              r-universals
                              r-tmb
@@ -18363,12 +18387,13 @@ information to a Sweave report.")
                              r-lifecycle
                              r-goftest
                              r-glue
+                             r-ggtext
                              r-ggplot2
                              r-generics
                              r-furrr
                              r-chk
                              r-abind))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/bcgov/ssdtools")
     (synopsis "Species Sensitivity Distributions")
     (description
@@ -18378,7 +18403,7 @@ Posthuma et al.(2001) <isbn:9781566705783>.  The ssdtools package uses Maximum
 Likelihood to fit distributions such as the gamma, log-logistic, log-normal and
 log-normal log-normal mixture.  Multiple distributions can be averaged using
 Akaike Information Criteria.  Confidence intervals on hazard concentrations and
-proportions are produced by parametric bootstrapping.")
+proportions are produced by bootstrapping.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -21710,6 +21735,51 @@ retaining all the advantages of NMF -- such as interpretability, and being based
 on a simple biological intuition.")
     (license license:gpl3)))
 
+(define-public r-spnetwork
+  (package
+    (name "r-spnetwork")
+    (version "0.4.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spNetwork" version))
+       (sha256
+        (base32 "11jlz1hnmwl4q542r3ipxy8rylxas1c87z0mzkk3l3bhl7l9q5yd"))))
+    (properties `((upstream-name . "spNetwork")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep
+                             r-sfheaders
+                             r-sf
+                             r-rdpack
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-igraph
+                             r-ggplot2
+                             r-future-apply
+                             r-dbscan
+                             r-data-table
+                             r-cubature
+                             r-cpprouting
+                             r-bh
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://jeremygelb.github.io/spNetwork/")
+    (synopsis "Spatial Analysis on Network")
+    (description
+     "Perform spatial analysis on network.  Implement several methods for spatial
+analysis on network: Network Kernel Density estimation, building of spatial
+matrices based on network distance ('listw objects from spdep package), K
+functions estimation for point pattern analysis on network, k nearest neighbours
+on network, reachable area calculation, and graph generation References: Okabe
+et al (2019) <doi:10.1080/13658810802475491>; Okabe et al (2012,
+ISBN:978-0470770818);Baddeley et al (2015, ISBN:9781482210200).")
+    (license license:gpl2)))
+
 (define-public r-spnaf
   (package
     (name "r-spnaf")
@@ -24221,19 +24291,24 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "0nrgfa8v336vsddr0pqqyn8n97pnxq3qn44d90dcmfacingb7vsp"))))
+        (base32 "08j8f66v5wzgsya532w40ssn2sv8m2scbd6w49hn74mgrslii7xr"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-sdsfun r-rcppthread r-rcpp r-dplyr))
+    (propagated-inputs (list r-terra
+                             r-sdsfun
+                             r-rcppthread
+                             r-rcpp
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://stscl.github.io/spEDM/")
     (synopsis "Spatial Empirical Dynamic Modeling")
@@ -46934,13 +47009,13 @@ tracking, customizable submit actions, easy survey-theming, and more.")
 (define-public r-shinystoreplus
   (package
     (name "r-shinystoreplus")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyStorePlus" version))
        (sha256
-        (base32 "1f2gpfh3y68njc6bq77bjia53g9pl6kklz7bw2s165kawi9cc18w"))))
+        (base32 "0n7c3zdf1yrl94v6py00d0p0w57623ba8f5jjwbvjhl82lab4f6n"))))
     (properties `((upstream-name . "shinyStorePlus")))
     (build-system r-build-system)
     (arguments
@@ -52301,6 +52376,40 @@ etc.  use this package to simulate a Google search and retrieve its \"Popular
 Times\" and geographic location information and save them in Comma-Separated
 Values files.  This package also downloads a list of restaurants and bars of
 Ushuaia city, Argentina.")
+    (license license:expat)))
+
+(define-public r-sgapi
+  (package
+    (name "r-sgapi")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgapi" version))
+       (sha256
+        (base32 "0fzfssaivqldyvmv367aszdni76l9p1fn9fxkq09zi9qzpw4rzhn"))))
+    (properties `((upstream-name . "sgapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-sf
+                             r-readr
+                             r-magrittr
+                             r-httr
+                             r-dplyr))
+    (home-page
+     "https://defra-data-science-centre-of-excellence.github.io/sgapi/")
+    (synopsis
+     "Aid Querying 'nomis' and 'Office for National Statistics Open Geography' APIs")
+    (description
+     "Facilitates extraction of geospatial data from the Office for National
+Statistics Open Geography and nomis Application Programming Interfaces (APIs).
+Simplifies process of querying nomis datasets <https://www.nomisweb.co.uk/> and
+extracting desired datasets in dataframe format.  Extracts area shapefiles at
+chosen resolution from Office for National Statistics Open Geography
+<https://geoportal.statistics.gov.uk/>.")
     (license license:expat)))
 
 (define-public r-sg

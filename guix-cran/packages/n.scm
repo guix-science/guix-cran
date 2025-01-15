@@ -10809,13 +10809,13 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
 (define-public r-nexus
   (package
     (name "r-nexus")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nexus" version))
        (sha256
-        (base32 "0288hjbw5xisrv1wsd2msl8i7migpw1yi2lnwh4cl5r42mn2wcj9"))))
+        (base32 "0vaw9b83znz9wxrbf2m6xf1k14sqnq4x25fywrmmp2q4j29mdkfr"))))
     (properties `((upstream-name . "nexus")))
     (build-system r-build-system)
     (arguments
@@ -11690,13 +11690,13 @@ decision-making should be based on accountable and interpretable algorithms.")
 (define-public r-neuralestimators
   (package
     (name "r-neuralestimators")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeuralEstimators" version))
        (sha256
-        (base32 "05nfh2ny2snii9ai0cy52llfxzn6dclp0ycgnklz33zaabnn6zik"))))
+        (base32 "1573lkzh7bgq85infzyjj0zv28pvnpw2pmwycwqpd2xgln7hp0wr"))))
     (properties `((upstream-name . "NeuralEstimators")))
     (build-system r-build-system)
     (arguments

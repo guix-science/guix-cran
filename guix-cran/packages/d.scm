@@ -4690,13 +4690,13 @@ Medical Outcomes Partnership (OMOP) common data model.")
 (define-public r-drugdevelopr
   (package
     (name "r-drugdevelopr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drugdevelopR" version))
        (sha256
-        (base32 "0mbr0s826wmknw4n50qbg5i9b5x969s9h7w21nni17i074iqjhpb"))))
+        (base32 "05s6bkp5aqbjvv7zbj8bs8h2030j4xcqhb7vjlxygacfnjqh2a5s"))))
     (properties `((upstream-name . "drugdevelopR")))
     (build-system r-build-system)
     (arguments
@@ -11702,13 +11702,13 @@ name.")
 (define-public r-distrmod
   (package
     (name "r-distrmod")
-    (version "2.9.6")
+    (version "2.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrMod" version))
        (sha256
-        (base32 "0fhsg944qfb5irpy9w4sc065mz31l0p0vdj2rjz9jpmk75mh2b7w"))))
+        (base32 "1abiw5hkgvpgrynz2rinn1vqbbaiygqifxb3hvhdg48j627h0phi"))))
     (properties `((upstream-name . "distrMod")))
     (build-system r-build-system)
     (arguments
@@ -12001,13 +12001,13 @@ explored and visualized.")
 (define-public r-distrdoc
   (package
     (name "r-distrdoc")
-    (version "2.8.4")
+    (version "2.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrDoc" version))
        (sha256
-        (base32 "0r3ic7v0z6wmd1r3i7zhfzv5wnsirgxdnf5g3g1hnrsf3dx7l0mc"))))
+        (base32 "0b843caa5vvsc7ir8ix486hdnk0km8j6gs1lai1rbjnnal0f686d"))))
     (properties `((upstream-name . "distrDoc")))
     (build-system r-build-system)
     (arguments
@@ -20657,29 +20657,29 @@ different graphical interface.")
 (define-public r-descriptiverepresentationcalculator
   (package
     (name "r-descriptiverepresentationcalculator")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DescriptiveRepresentationCalculator" version))
        (sha256
-        (base32 "0p0n5zjaxhr0rba93ikaw30lrf8zgx35yfjimwlg2375ns0zpmr6"))))
+        (base32 "0p5z2zkrnkb0k4fsxjqjkc52n2ynhva25wg2ylxw3packnvcjx3r"))))
     (properties `((upstream-name . "DescriptiveRepresentationCalculator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (native-inputs (list r-knitr))
     (home-page
      "https://github.com/cjerzak/DescriptiveRepresentationCalculator-software/")
-    (synopsis
-     "Descriptive Representation Calculator: Characterizing Observed and Expected Representation")
+    (synopsis "Characterizing Observed and Expected Representation")
     (description
      "This package provides a system for analyzing descriptive representation,
 especially for comparing the composition of a political body to the population
 it represents.  Users can compute the expected degree of representation for a
 body under a random sampling model, the expected degree of representation
 variability, as well as representation scores from observed political bodies.
-The package is based on Gerring, Jerzak, and Oncel (2023)
+The package is based on Gerring, Jerzak, and Oncel (2024)
 <doi:10.1017/S0003055423000680>.")
     (license license:gpl3)))
 
@@ -30649,13 +30649,13 @@ for further information.")
 (define-public r-dark
   (package
     (name "r-dark")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Dark" version))
        (sha256
-        (base32 "1f01aq4g50f07005c8k91cfy9hvl3fmb4yl2924d7512m3884xlv"))))
+        (base32 "17779ls51p9kfihws9mz7j9d4qz6mlp5hirn443vm9g58aq366zn"))))
     (properties `((upstream-name . "Dark")))
     (build-system r-build-system)
     (arguments

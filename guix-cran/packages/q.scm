@@ -873,13 +873,13 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "04dcjc7l7213hcr7p6zlk5zhc52l18svjqfy8zgjqf19gs0q6y2c"))))
+        (base32 "14vy8gp05massc1b16dp5yszhmlc5gmfb5lqrzxs0cxw4pms1r7p"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (arguments
@@ -3248,13 +3248,13 @@ et al. (2018) <doi:10.1093/bib/bby058>.")
 (define-public r-qtkit
   (package
     (name "r-qtkit")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtkit" version))
        (sha256
-        (base32 "0ra0wjb85i1i5wqlknpqixfqlnygw88d24yxsvwridsmjkpag0zg"))))
+        (base32 "0qzi66i64zq12hll3mwj4cc6kg3whym7bzh8jlqxhvw7afm1yxlp"))))
     (properties `((upstream-name . "qtkit")))
     (build-system r-build-system)
     (arguments

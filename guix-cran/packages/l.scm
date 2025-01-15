@@ -7697,25 +7697,19 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "07klvcs24niwj04x298ljhiszf5g2n66112r3zn57wbmj0n8yssq"))))
+        (base32 "1q8dcl3ihf5vs016x85xp13a4yn1d0xg4zdwxawf85il6mhgng21"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spam
-                             r-sf
-                             r-rcpp
-                             r-matrix
-                             r-maps
-                             r-ggplot2
-                             r-agridat))
+    (propagated-inputs (list r-spam r-rcpp r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://biometris.github.io/LMMsolver/index.html")
     (synopsis "Linear Mixed Model Solver")

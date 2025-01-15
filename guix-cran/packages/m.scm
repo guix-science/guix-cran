@@ -23453,13 +23453,13 @@ normal and t mixture models.")
 (define-public r-mixlm
   (package
     (name "r-mixlm")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixlm" version))
        (sha256
-        (base32 "0hy6rrxm8dpl3ljhnj8n5smrcyv3kq9cziwf9bxsqf3h1iwk54vh"))))
+        (base32 "1dvcq2apqwnabhi383n2zhpkfg3hcdwszrarx7nbfhmpj3h3v7hq"))))
     (properties `((upstream-name . "mixlm")))
     (build-system r-build-system)
     (arguments
@@ -31495,25 +31495,25 @@ exogenous covariate sampled at a lower frequency.")
 (define-public r-mfdp
   (package
     (name "r-mfdp")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mFDP" version))
        (sha256
-        (base32 "0mvqg3qpv1zcj5lsk36dw4qs75i66cmv4qazpmsilhfh0v46p2dx"))))
+        (base32 "01v01hnjsnl5gpkf0zg7ql194kwc963b4l5g74ns2qxxhz8q1f3s"))))
     (properties `((upstream-name . "mFDP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=mFDP")
-    (synopsis "Flexible Control of the mFDP")
+    (synopsis "Control of the Median of the FDP")
     (description
-     "Computes bounds for the median of the false discovery proportion (@code{mFDP}).
-These 50 percent confidence bounds for the FDP are simultaneously valid.  The
-method takes a vector of p-values as input.  Also provides @code{mFDP-adjusted}
-p-values.  Can be used for flexible @code{mFDP} control.")
+     "This package provides methods for controlling the median of the false discovery
+proportion (@code{mFDP}).  Depending on the method, simultaneous or
+non-simultaneous inference is provided.  The methods take a vector of p-values
+or test statistics as input.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mfdfa

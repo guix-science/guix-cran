@@ -15800,13 +15800,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "1wh5vz2vy1b1fqqjz20mdv9fckdxx1076bs4a74lddjn4q7m6xif"))))
+        (base32 "1pg5p0d29rf2pm4nknagbypiry29i96v974pisaz1qa4bb670ns3"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -18217,6 +18217,39 @@ developed the package, it is like the geom_point of ggplot2'.  It can be used to
 draw the scatter plot.")
     (license license:artistic2.0)))
 
+(define-public r-ggstackplot
+  (package
+    (name "r-ggstackplot")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggstackplot" version))
+       (sha256
+        (base32 "0p22ml657g1fn8p3120dxwmwlif29gqnnxij5479l9074z9k4k24"))))
+    (properties `((upstream-name . "ggstackplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-rcolorbrewer
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggstackplot")
+    (synopsis "Create Overlapping Stacked Plots")
+    (description
+     "Easily create overlapping grammar of graphics plots for scientific data
+visualization.  This style of plotting is particularly common in climatology and
+oceanography research communities.")
+    (license license:expat)))
+
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
@@ -20491,6 +20524,39 @@ ggplot2'.")
 gives you a drop-in replacement for @code{geom_sf()} that supports adding a
 zoomed inset map without having to create and embed a separate plot.")
     (license license:expat)))
+
+(define-public r-ggmapcn
+  (package
+    (name "r-ggmapcn")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggmapcn" version))
+       (sha256
+        (base32 "0x5s6z02amh683y5iysg3wxic3cbijbzfswxkbmfifbl11bj8gcz"))))
+    (properties `((upstream-name . "ggmapcn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyterra
+                             r-terra
+                             r-sf
+                             r-rlang
+                             r-ggspatial
+                             r-ggplot2
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://rimagination.github.io/ggmapcn/")
+    (synopsis "Customizable China Map Visualizations")
+    (description
+     "This package provides a ggplot2 extension for visualizing Chinaâs map,
+offering customizable projections, boundary styles, and buffer zones for
+thematic maps.  Suitable for spatial data analysis and enhancing map
+visualization with flexible styling options.")
+    (license license:gpl3)))
 
 (define-public r-gglorenz
   (package
@@ -25651,13 +25717,13 @@ functions from this package.")
 (define-public r-geomtextpath
   (package
     (name "r-geomtextpath")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomtextpath" version))
        (sha256
-        (base32 "1a33rcks9hvg3jyiplzsm1na6n80n934zvbcm57n3jg6gxcv2v5s"))))
+        (base32 "1paq6xv6mmljzgwk25sb8dsdag4m52lpnn5x1r55zfss5x3s1bz0"))))
     (properties `((upstream-name . "geomtextpath")))
     (build-system r-build-system)
     (arguments
@@ -25736,13 +25802,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.9")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0fb9qpcd400biziazhk20vf0amb73lgha2ldwl69q5xbbk967y7m"))))
+        (base32 "1h2yqhxznsrcdknhhgd6mxjknjxm03mcd21iz3b4fdcsk8hzsid7"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (arguments

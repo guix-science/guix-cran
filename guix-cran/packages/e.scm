@@ -2725,13 +2725,13 @@ Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exiftoolr" version))
        (sha256
-        (base32 "05gdmyn01br93smw5gxc0jvfhrr9x2ly0jbfrcfvf3r2bw3kjwnr"))))
+        (base32 "0cw4ha0bzw4xs0izaz3drzsfqbknx4pp1yc4aw1rsqnrq3nq6wjb"))))
     (properties `((upstream-name . "exiftoolr")))
     (build-system r-build-system)
     (arguments
@@ -12853,6 +12853,38 @@ Loos, M., Gerber, C., Corona, F., Hollender, J., Singer, H. (2015)
 <doi:10.1021/acs.analchem.5b00941>.")
     (license license:gpl2)))
 
+(define-public r-envigcms
+  (package
+    (name "r-envigcms")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "enviGCMS" version))
+       (sha256
+        (base32 "1wjp3hk32j4f7pf2awllxcf9lrcfc0ppc1frzcksgw8phpbkd40q"))))
+    (properties `((upstream-name . "enviGCMS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdisop
+                             r-rcolorbrewer
+                             r-mixtools
+                             r-igraph
+                             r-data-table
+                             r-biocparallel
+                             r-animation))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yufree/enviGCMS")
+    (synopsis "GC/LC-MS Data Analysis for Environmental Science")
+    (description
+     "Gas/Liquid Chromatography-Mass Spectrometer(GC/LC-MS) Data Analysis for
+Environmental Science.  This package covered topics such molecular isotope
+ratio, matrix effects and Short-Chain Chlorinated Paraffins analysis etc.  in
+environmental analysis.")
+    (license license:gpl2)))
+
 (define-public r-envi
   (package
     (name "r-envi")
@@ -14099,13 +14131,13 @@ the models are discussed in Peng (2023) <doi:10.1287/isre.2022.1113>.")
 (define-public r-enderecobr
   (package
     (name "r-enderecobr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enderecobr" version))
        (sha256
-        (base32 "0pc1y9g9bji4jc7g3g8pg2bl8p1k4pzwjgwksmqv0rvawiq6qs76"))))
+        (base32 "1sjsy7qp3w98z23h7709253zvxbnjpl8njbgasn0bbf8g7ii0axi"))))
     (properties `((upstream-name . "enderecobr")))
     (build-system r-build-system)
     (arguments
@@ -23919,13 +23951,13 @@ Bayes estimation procedure based on Dynamic Bayesian Networks.")
 (define-public r-ebcobart
   (package
     (name "r-ebcobart")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBcoBART" version))
        (sha256
-        (base32 "1vys4wb35pgh03331glbbiiw4kyis04d2ygyqng9l7h9jjh7d5xj"))))
+        (base32 "1wx6s913b3mywbhzm597ff09mnhgp4lrppnh0r7xph9vc9d3v333"))))
     (properties `((upstream-name . "EBcoBART")))
     (build-system r-build-system)
     (arguments

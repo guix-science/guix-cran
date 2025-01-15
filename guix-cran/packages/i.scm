@@ -15452,13 +15452,13 @@ Project <https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al.
 (define-public r-iglu
   (package
     (name "r-iglu")
-    (version "4.2.0")
+    (version "4.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglu" version))
        (sha256
-        (base32 "09ky2mg1x8kqxb87qs8piwmbbkd3z56f46k0bvpxz8sj1c1pq2vj"))))
+        (base32 "0ndaq9isgkvgcpnvj0pv3grz650rdzirgrdk3w1zpaa9zfvi8fnn"))))
     (properties `((upstream-name . "iglu")))
     (build-system r-build-system)
     (arguments

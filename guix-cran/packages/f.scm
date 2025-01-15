@@ -1320,13 +1320,13 @@ and Mukherjee (2017) <@code{arXiv:1611.00953>}.")
 (define-public r-fusen
   (package
     (name "r-fusen")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fusen" version))
        (sha256
-        (base32 "0d7ljc7b26www60ln1ww4gn2haymlybjbd3rz8k7z8i9ckq10kkp"))))
+        (base32 "0njv30pp5j7rb8h1ksp41q63qg16x6by30kc14dx6v5w9mizvjhl"))))
     (properties `((upstream-name . "fusen")))
     (build-system r-build-system)
     (arguments
@@ -1338,6 +1338,7 @@ and Mukherjee (2017) <@code{arXiv:1611.00953>}.")
                              r-tibble
                              r-stringi
                              r-roxygen2
+                             r-pkgload
                              r-magrittr
                              r-lightparser
                              r-here
@@ -12624,6 +12625,33 @@ existing built-in decks or create their own from CSV files or vectors of
 function names.")
     (license license:expat)))
 
+(define-public r-flashmm
+  (package
+    (name "r-flashmm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FLASHMM" version))
+       (sha256
+        (base32 "0116hjgsi2xh7p23j1716brg5n0kwdfsq3d80nl6qd9hc8296kl4"))))
+    (properties `((upstream-name . "FLASHMM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BaderLab/FLASHMM")
+    (synopsis
+     "Fast and Scalable Single Cell Differential Expression Analysis using Mixed-Effects Models")
+    (description
+     "This package provides a fast and scalable linear mixed-effects model (LMM)
+estimation algorithm for analysis of single-cell differential expression.  The
+algorithm uses summary-level statistics and requires less computer memory to fit
+the LMM.")
+    (license license:expat)))
+
 (define-public r-flashlight
   (package
     (name "r-flashlight")
@@ -19468,13 +19496,13 @@ Wang, J.L. (2005) <doi:10.1214/009053605000000660>.  SentÃ¼rk, D., MÃ¼ller, 
 (define-public r-fdacluster
   (package
     (name "r-fdacluster")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdacluster" version))
        (sha256
-        (base32 "1mg1i15jbckg6kw0zch9vc378kabnisz0p2vizj3nhsxxw4jlw4y"))))
+        (base32 "0dbw3i769b1r0r0cyww84ngpdca5mi2l9xkb2v8k31aa3q537aqg"))))
     (properties `((upstream-name . "fdacluster")))
     (build-system r-build-system)
     (arguments
@@ -19504,11 +19532,11 @@ possibly evaluating in multivariate codomains.  It supports functional data
 defined in arrays but also via the fd and @code{funData} classes for functional
 data defined in the fda and @code{funData} packages respectively.  It currently
 supports shift, dilation and affine warping functions for functional data
-defined on the real line and uses the SRSF framework to handle
+defined on the real line and uses the SRVF framework to handle
 boundary-preserving warping for functional data defined on a specific interval.
 Main reference for the k-means algorithm: Sangalli L.M., Secchi P., Vantini S.,
 Vitelli V. (2010) \"k-mean alignment for curve clustering\"
-<doi:10.1016/j.csda.2009.12.008>.  Main reference for the SRSF framework:
+<doi:10.1016/j.csda.2009.12.008>.  Main reference for the SRVF framework:
 Tucker, J. D., Wu, W., & Srivastava, A. (2013) \"Generative models for functional
 data using phase and amplitude separation\" <doi:10.1016/j.csda.2012.12.001>.")
     (license license:gpl3+)))
@@ -21288,13 +21316,13 @@ n is the number of nodes.")
 (define-public r-fastrerandomize
   (package
     (name "r-fastrerandomize")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastrerandomize" version))
        (sha256
-        (base32 "0kfgcfbx3hdxkyyfa2sa5sxqgm7r9274hi33kww45px96ykl48hw"))))
+        (base32 "181m2163a4ss7i46cqwnwldqb2a71x528fg65razd9sln5223gcb"))))
     (properties `((upstream-name . "fastrerandomize")))
     (build-system r-build-system)
     (arguments

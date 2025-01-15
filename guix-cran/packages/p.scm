@@ -577,13 +577,13 @@ plans at a set of time varying alternatives.  See Izmirlian, G. (2014)
 (define-public r-pwrfdr
   (package
     (name "r-pwrfdr")
-    (version "3.2.2")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pwrFDR" version))
        (sha256
-        (base32 "1awcf65pwr8p2cp478yywnn9dfkhbwv64134nwqy8vfc0lydgqpi"))))
+        (base32 "1chfr10qvzaw0cafz7z2qkldqjib3g0fw8jmacymv6p8m96nykpq"))))
     (properties `((upstream-name . "pwrFDR")))
     (build-system r-build-system)
     (arguments
@@ -1900,6 +1900,28 @@ in Cavicchia, Vichi, Zaccaria (2024) <doi:10.1007/s11222-024-10405-9>,
 Cavicchia, Vichi, Zaccaria (2022) <doi:10.1007/s11634-021-00488-x> and
 Cavicchia, Vichi, Zaccaria (2020) <doi:10.1007/s11634-020-00400-z>.")
     (license license:expat)))
+
+(define-public r-pudu
+  (package
+    (name "r-pudu")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pudu" version))
+       (sha256
+        (base32 "0fk4pgng3ki816skyaspgchv2svdzjqdssm3par2cyiz089v6ncq"))))
+    (properties `((upstream-name . "pudu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://pacha.dev/pudu/")
+    (synopsis "C++ Tools for Cleaning Strings")
+    (description
+     "This package provides function declarations and inline function definitions that
+facilitate cleaning strings in C++ code before passing them to R.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-pubtatordb
   (package
@@ -8898,6 +8920,35 @@ Patient-Reported Outcomes version of the Common Terminology Criteria for Adverse
 Events (PRO-CTCAE) and other PRO measurements.")
     (license license:gpl3)))
 
+(define-public r-proactive
+  (package
+    (name "r-proactive")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProActive" version))
+       (sha256
+        (base32 "0x6bifjjsk9s4p521gi76kwfbia6fc0vb70kfd21djw484db4a8s"))))
+    (properties `((upstream-name . "ProActive")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jlmaier12/ProActive")
+    (synopsis "Detect Elevations and Gaps in Mapped Sequencing Read Coverage")
+    (description
+     "Automate the detection of gaps and elevations in mapped sequencing read coverage
+using a 2D pattern-matching algorithm. @code{ProActive} detects, characterizes
+and visualizes read coverage patterns in both genomes and metagenomes.
+Optionally, users may provide gene predictions associated with their genome or
+metagenome in the form of a .gff file.  In this case, @code{ProActive} will
+generate an additional output table containing the gene predictions found within
+the detected regions of gapped and elevated read coverage.")
+    (license license:gpl2)))
+
 (define-public r-pro
   (package
     (name "r-pro")
@@ -12806,13 +12857,13 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
 (define-public r-praatpicture
   (package
     (name "r-praatpicture")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praatpicture" version))
        (sha256
-        (base32 "1w7gzkkdjy2m5p82b9q7vksdakycay33kc7w3jvvp633b7pa0grp"))))
+        (base32 "1bizcha6k8vp7z7bij1fk4q0slhs0f1jm8qs784ca54y7fiz0in9"))))
     (properties `((upstream-name . "praatpicture")))
     (build-system r-build-system)
     (arguments
@@ -12841,7 +12892,7 @@ similar to those made in Praat using either derived signals generated directly
 in R with wrassp or imported derived signals from Praat'.  Provides easy and
 fast out-of-the-box solutions but also a high extent of flexibility.  Also
 provides options for embedding audio in figures and animating figures.")
-    (license license:expat)))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-pra
   (package
@@ -20720,13 +20771,13 @@ supported by this package.")
 (define-public r-pmparser
   (package
     (name "r-pmparser")
-    (version "1.0.20")
+    (version "1.0.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmparser" version))
        (sha256
-        (base32 "0csjvy730c0pd7b2rq732whv7wb3pahnrc1mvzh33ymlbhd6jng8"))))
+        (base32 "1xbkyy91ab1kvm0j1qsbvnfj37i57mviwxn4kylbps25j7z65wzy"))))
     (properties `((upstream-name . "pmparser")))
     (build-system r-build-system)
     (arguments
@@ -21547,6 +21598,34 @@ important implications for the correct interpretation of these models.")
 methods include filter methods, wrapper methods and embedded methods.  Both
 regression and classification is supported.")
     (license license:gpl2+)))
+
+(define-public r-plstests
+  (package
+    (name "r-plstests")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PLStests" version))
+       (sha256
+        (base32 "0148rgxzn67d1srm0gzl3964v79a59bs3cyn73fj53fsqpfaccfk"))))
+    (properties `((upstream-name . "PLStests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-mass r-harmonicmeanp r-glmnet))
+    (home-page "https://cran.r-project.org/package=PLStests")
+    (synopsis
+     "Model Checking for High-Dimensional GLMs via Random Projections")
+    (description
+     "This package provides methods for testing the goodness-of-fit of generalized
+linear models (GLMs) using random projections.  It is specifically designed for
+high-dimensional scenarios where the number of predictors substantially exceeds
+the sample size.  The statistical methodologies implemented in this package are
+detailed in the paper by Wen Chen and Falong Tan (2024,
+<doi:10.48550/@code{arXiv.2412.10721>}).")
+    (license license:gpl3)))
 
 (define-public r-plsrglm
   (package
@@ -42153,6 +42232,39 @@ files created by Pamguard (<https://www.pamguard.org/>).  All functions for
 directly reading the binary data files are based on MATLAB code written by
 Michael Oswald.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-pam
+  (package
+    (name "r-pam")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pam" version))
+       (sha256
+        (base32 "0kzi22pw2fln7rdzpj0lxswfk1pgzcg24y3kvqskjap9ca7mwyj0"))))
+    (properties `((upstream-name . "pam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minpack-lm
+                             r-gridextra
+                             r-ggthemes
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-cowplot))
+    (home-page "https://github.com/biotoolbox/pam")
+    (synopsis "Fast and Efficient Processing of PAM Data")
+    (description
+     "Processing Chlorophyll Fluorescence & P700 Absorbance data generated by WALZ
+hardware.  Four models are provided for the regression of Pi curves, which can
+be compared with each other in order to select the most suitable model for the
+data set.  Control plots ensure the successful verification of each regression.
+Bundled output of alpha, ETRmax, Ik etc.  enables fast and reliable further
+processing of the data.")
+    (license license:gpl3)))
 
 (define-public r-palr
   (package

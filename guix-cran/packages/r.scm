@@ -10620,13 +10620,13 @@ Lindy Hop and West Coast Swing dance contests.")
 (define-public r-rprotobuf
   (package
     (name "r-rprotobuf")
-    (version "0.4.22")
+    (version "0.4.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RProtoBuf" version))
        (sha256
-        (base32 "0zldxpc1nmwpv3ngrqgjp1pyhki0z7gnmcy6y8g2s192cwbh5f3m"))))
+        (base32 "0a26mm9rrb8iy4cdsivbkr5bbvfg15rmp2l31q4z96slm8m5hfhv"))))
     (properties `((upstream-name . "RProtoBuf")))
     (build-system r-build-system)
     (arguments
@@ -12307,6 +12307,74 @@ parameter on a graph by animating it with a slider or a \"doublebutton\", up to
 more sophisticated control panels.  Some functions for specific graphical tasks,
 referred to as cartoons', are provided.")
     (license license:gpl2+)))
+
+(define-public r-rpanda
+  (package
+    (name "r-rpanda")
+    (version "2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RPANDA" version))
+       (sha256
+        (base32 "17133hisxlzcxpn5ff4n4k63vsy13nggk7lqa2f5j0c6qz5di1yf"))))
+    (properties `((upstream-name . "RPANDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tess
+                             r-rmpfr
+                             r-rcolorbrewer
+                             r-raster
+                             r-r-utils
+                             r-pvclust
+                             r-pspline
+                             r-pracma
+                             r-picante
+                             r-phytools
+                             r-phangorn
+                             r-parallellogger
+                             r-mvtnorm
+                             r-mvmorph
+                             r-matrix
+                             r-igraph
+                             r-gunifrac
+                             r-glassofast
+                             r-geiger
+                             r-fpc
+                             r-fields
+                             r-desolve
+                             r-coda
+                             r-cluster
+                             r-bipartite
+                             r-bb
+                             r-ape))
+    (home-page "https://github.com/hmorlon/PANDA")
+    (synopsis "Phylogenetic ANalyses of DiversificAtion")
+    (description
+     "This package implements macroevolutionary analyses on phylogenetic trees.  See
+Morlon et al. (2010) <DOI:10.1371/journal.pbio.1000493>, Morlon et al. (2011)
+<DOI:10.1073/pnas.1102543108>, Condamine et al. (2013) <DOI:10.1111/ele.12062>,
+Morlon et al. (2014) <DOI:10.1111/ele.12251>, Manceau et al. (2015)
+<DOI:10.1111/ele.12415>, Lewitus & Morlon (2016) <DOI:10.1093/sysbio/syv116>,
+Drury et al. (2016) <DOI:10.1093/sysbio/syw020>, Manceau et al. (2016)
+<DOI:10.1093/sysbio/syw115>, Morlon et al. (2016) <DOI:10.1111/2041-210X.12526>,
+Clavel & Morlon (2017) <DOI:10.1073/pnas.1606868114>, Drury et al. (2017)
+<DOI:10.1093/sysbio/syx079>, Lewitus & Morlon (2017)
+<DOI:10.1093/sysbio/syx095>, Drury et al. (2018)
+<DOI:10.1371/journal.pbio.2003563>, Clavel et al. (2019)
+<DOI:10.1093/sysbio/syy045>, Maliet et al. (2019)
+<DOI:10.1038/s41559-019-0908-0>, Billaud et al. (2019)
+<DOI:10.1093/sysbio/syz057>, Lewitus et al. (2019) <DOI:10.1093/sysbio/syz061>,
+Aristide & Morlon (2019) <DOI:10.1111/ele.13385>, Maliet et al. (2020)
+<DOI:10.1111/ele.13592>, Drury et al. (2021) <DOI:10.1371/journal.pbio.3001270>,
+Perez-Lamarque & Morlon (2022) <DOI:10.1111/mec.16478>, Perez-Lamarque et al.
+(2022) <DOI:10.1101/2021.08.30.458192>, Mazet et al. (2023)
+<DOI:10.1111/2041-210X.14195>, Drury et al. (2024)
+<DOI:10.1016/j.cub.2023.12.055>.")
+    (license license:gpl2)))
 
 (define-public r-rpaleoclim
   (package
@@ -18100,13 +18168,13 @@ packages; is currently used by package @code{RobExtremes} only.")
 (define-public r-robastbase
   (package
     (name "r-robastbase")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobAStBase" version))
        (sha256
-        (base32 "08b6jdvgs711zppjknzbskay04h3j0nkw5ld81k2wg42yh1b6ari"))))
+        (base32 "1fniz76syav2gwwb49bpkx57qb70ysn0daglnnq6aywvkd44c7q0"))))
     (properties `((upstream-name . "RobAStBase")))
     (build-system r-build-system)
     (arguments
@@ -52290,13 +52358,13 @@ with Rocker <https://rocker-project.org>.")
 (define-public r-randvar
   (package
     (name "r-randvar")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RandVar" version))
        (sha256
-        (base32 "1w7dv3cskmwnln0i76kqqis23i4zqlcfs43rkl9sp60rprfihm7w"))))
+        (base32 "11mh3840w87l33xpjqmyz0jpvk9z50hrckiv65f4mqqqbkxrfqv0"))))
     (properties `((upstream-name . "RandVar")))
     (build-system r-build-system)
     (arguments
