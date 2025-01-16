@@ -2795,13 +2795,13 @@ job postings of the American Political Science Association.")
 (define-public r-mupetflow
   (package
     (name "r-mupetflow")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MuPETFlow" version))
        (sha256
-        (base32 "136p223gwp0gn0z6i263d9qyi07byp9g7l5fsg2j44r90qmghs2z"))))
+        (base32 "080zw4z2vmd8qfm57jlg1p2ilmwqwz0lasnjm79aygpa9ym4xbq5"))))
     (properties `((upstream-name . "MuPETFlow")))
     (build-system r-build-system)
     (arguments
@@ -2815,7 +2815,6 @@ job postings of the American Political Science Association.")
                              r-gridextra
                              r-ggrepel
                              r-ggplot2
-                             r-flowcore
                              r-dt
                              r-dplyr
                              r-biocmanager))
@@ -30287,13 +30286,13 @@ data.  Implementing the method described in Dai and Lopez-Pintado (2022)
 (define-public r-mhctools
   (package
     (name "r-mhctools")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MHCtools" version))
        (sha256
-        (base32 "0y41m6727ls56sqvqir9n3lja6vmxk9bwnsy45jpjfav286fqlgd"))))
+        (base32 "00vbp7rijd4955nbgqcmwi26h41xffl9r6s7aqwrcjgyb1ivvy2m"))))
     (properties `((upstream-name . "MHCtools")))
     (build-system r-build-system)
     (arguments
@@ -30329,7 +30328,7 @@ visually inspecting elbow plots of BIC- vs. k-values.  The @code{ClusterMatch()}
 function is a tool for evaluating whether different @code{k-means()} clustering
 models identify similar clusters, and summarize bootstrap model stats as means
 for different estimated values of k.  It is designed to take files produced by
-the @code{BootKmeans()} function as input, but other data can be analysed if the
+the @code{BootKmeans()} function as input, but other data can be analyzed if the
 descriptions of the required data formats are observed carefully.  The
 @code{PapaDiv()} function compares parent pairs in the data set and calculate
 their joint MHC diversity, taking into account sequence variants that occur in

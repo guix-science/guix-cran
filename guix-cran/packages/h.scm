@@ -13676,29 +13676,6 @@ number of jumps of the process on a given interval, such as mean, variance or
 autocorrelation of process jumps on time intervals separated by a lag.")
     (license license:gpl2+)))
 
-(define-public r-hassediagram
-  (package
-    (name "r-hassediagram")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hasseDiagram" version))
-       (sha256
-        (base32 "1ni4wzj8g6qmpgz1xj62vawkcpm3jr4jqqr1xaxlh5nzbj9fn57h"))))
-    (properties `((upstream-name . "hasseDiagram")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rgraphviz r-graph))
-    (home-page "https://github.com/kciomek/hasseDiagram")
-    (synopsis "Drawing Hasse Diagram")
-    (description
-     "Drawing Hasse diagram - visualization of transitive reduction of a finite
-partially ordered set.")
-    (license license:expat)))
-
 (define-public r-hassani-silva
   (package
     (name "r-hassani-silva")

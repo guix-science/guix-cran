@@ -3131,13 +3131,13 @@ package has been developed using concept of Yang et al.
 (define-public r-svines
   (package
     (name "r-svines")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svines" version))
        (sha256
-        (base32 "0pmipkywpffs5zkvgdncz4ila6wndhvcm73bl73ncg7jqrrsi86r"))))
+        (base32 "037f68ibz25xpvp5lw5a9blix3q4lwqqidbhwcmj03q2kpn8zjbs"))))
     (properties `((upstream-name . "svines")))
     (build-system r-build-system)
     (arguments
@@ -14018,13 +14018,13 @@ measures (Anova & Multiple Regression). - Clinical Assay.")
 (define-public r-stats19
   (package
     (name "r-stats19")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stats19" version))
        (sha256
-        (base32 "152wv2m72n6c8w5p1ih4z6n34wqx8cgkw1nvskz1rjv7y0rv13v8"))))
+        (base32 "1iy4fnii04hmxpifkqzvf9n1l1458jdha56k5yripryxmdsfc63w"))))
     (properties `((upstream-name . "stats19")))
     (build-system r-build-system)
     (arguments
@@ -29977,18 +29977,19 @@ difference metrics are included.")
 (define-public r-spacesrgb
   (package
     (name "r-spacesrgb")
-    (version "1.6-1")
+    (version "1.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spacesRGB" version))
        (sha256
-        (base32 "0qb9w4igmrjf2qx8wrlvhpfmy3cz44635xgcn39fa59zm3s7krj0"))))
+        (base32 "0s1yblkx041bn00308097i75rlhm2rfb8b97afxwdfl0g42v2440"))))
     (properties `((upstream-name . "spacesRGB")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-logger))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=spacesRGB")
     (synopsis
@@ -47240,6 +47241,46 @@ automatically downloaded as a PNG image, or it can also be saved on the server.
 Powered by the html2canvas @code{JavaScript} library.")
     (license license:expat)))
 
+(define-public r-shinyscholar
+  (package
+    (name "r-shinyscholar")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyscholar" version))
+       (sha256
+        (base32 "0xa4b5qhkjsm3qyafm662p2hc5884ccrrlf8ysdf5r7686mhgdcz"))))
+    (properties `((upstream-name . "shinyscholar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-shiny
+                             r-magrittr
+                             r-leaflet
+                             r-knitr
+                             r-glue
+                             r-gargoyle
+                             r-devtools
+                             r-curl))
+    (home-page "https://simon-smart88.github.io/shinyscholar/")
+    (synopsis "Template for Creating Reproducible 'shiny' Applications")
+    (description
+     "Create a skeleton shiny application with @code{create_template()} that is
+reproducible, can be saved and meets academic standards for attribution.  Forked
+from wallace'.  Code is split into modules that are loaded and linked together
+automatically and each call one function.  Guidance pages explain modules to
+users and flexible logging informs them of any errors.  Options enable
+asynchronous operations, viewing of source code, interactive maps and data
+tables.  Use to create complex analytical applications, following best practices
+in open science and software development.  Includes functions for automating
+repetitive development tasks and an example application at
+@code{run_shinyscholar()} that requires install.packages(\"shinyscholar\",
+dependencies = TRUE).")
+    (license license:gpl3)))
+
 (define-public r-shinysbm
   (package
     (name "r-shinysbm")
@@ -52799,6 +52840,35 @@ association (Getis and Ord (1992) <doi:10.1111/j.1538-4632.1992.tb00261.x>) and
 hot-spot classification (Chainey (2020) ISBN:158948584X).")
     (license license:expat)))
 
+(define-public r-sfhelper
+  (package
+    (name "r-sfhelper")
+    (version "0.2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sfhelper" version))
+       (sha256
+        (base32 "147zlsxbfa68pbwl1q6xif2ra49qfc4dmvcwly62vb4gpcwg36m0"))))
+    (properties `((upstream-name . "sfhelper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-sf
+                             r-rjson
+                             r-rcurl
+                             r-mapview
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=sfhelper")
+    (synopsis "Repair Functions for 'sf' Package Objects")
+    (description
+     "This package provides a group of functions that support the sf package, focused
+primarily on repairing polygons that break when re-projected.")
+    (license license:expat)))
+
 (define-public r-sfflhd
   (package
     (name "r-sfflhd")
@@ -54159,13 +54229,13 @@ Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
 (define-public r-seqimpute
   (package
     (name "r-seqimpute")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqimpute" version))
        (sha256
-        (base32 "0acagq51d2fs6sf59xxlvfkf3f6qbaki9mgylfrdyfsxjjj42bc1"))))
+        (base32 "0nr2my9k91yr09b43bxgrpr39lvrsb39b1mf7djml2ss3lgiyry3"))))
     (properties `((upstream-name . "seqimpute")))
     (build-system r-build-system)
     (arguments
@@ -54181,6 +54251,7 @@ Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
                              r-rms
                              r-ranger
                              r-plyr
+                             r-parallelly
                              r-nnet
                              r-mlr
                              r-mice
@@ -54195,11 +54266,12 @@ Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
     (home-page "https://github.com/emerykevin/seqimpute")
     (synopsis "Imputation of Missing Data in Sequence Analysis")
     (description
-     "Multiple imputation of missing data present in a dataset through the prediction
-based on either a random forest or a multinomial regression model.  Covariates
-and time-dependent covariates can be included in the model.  The prediction of
-the missing values is based on the method of Halpin (2012)
-<https://researchrepository.ul.ie/articles/report/Multiple_imputation_for_life-course_sequence_data/19839736>.")
+     "Multiple imputation of missing data in a dataset using MICT or MICT-timing
+methods.  The core idea of the algorithms is to fill gaps of missing data, which
+is the typical form of missing data in a longitudinal setting, recursively from
+their edges.  Prediction is based on either a multinomial or random forest
+regression model.  Covariates and time-dependent covariates can be included in
+the model.")
     (license license:gpl2)))
 
 (define-public r-seqicp
@@ -68657,6 +68729,33 @@ methods described by Mahto (2019)
 <https://CRAN.R-project.org/package=splitstackshape>.  Data from VADIR are not
 provided as part of this package.")
     (license license:gpl3+)))
+
+(define-public r-samplesizesinglearmsurvival
+  (package
+    (name "r-samplesizesinglearmsurvival")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SampleSizeSingleArmSurvival" version))
+       (sha256
+        (base32 "11h4p3ayaca9xznl2f7py806fx9kgs4zl42jlshgr79z21hl5j1m"))))
+    (properties `((upstream-name . "SampleSizeSingleArmSurvival")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://cran.r-project.org/package=SampleSizeSingleArmSurvival")
+    (synopsis "Calculate Sample Size for Single-Arm Survival Studies")
+    (description
+     "This package provides methods to calculate sample size for single-arm survival
+studies using the arcsine transformation, incorporating uniform accrual and
+exponential survival assumptions.  Includes functionality for detailed numerical
+integration and simulation.  This method is based on Nagashima et al. (2021)
+<doi:10.1002/pst.2090>.")
+    (license license:expat)))
 
 (define-public r-samplesizeproportions
   (package

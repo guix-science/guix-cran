@@ -1986,44 +1986,6 @@ lexical dispersion plots, scaling plots, network visualisations, and word
 keyness plots.")
     (license license:gpl3)))
 
-(define-public r-quanteda-textmodels
-  (package
-    (name "r-quanteda-textmodels")
-    (version "0.9.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quanteda.textmodels" version))
-       (sha256
-        (base32 "0k6kx0aym2gyl5c537kj728pbf6l3zzcr7mfrv6i5r4gfdcx4bw5"))))
-    (properties `((upstream-name . "quanteda.textmodels")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-sparsem
-                             r-rspectra
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quanteda
-                             r-matrix
-                             r-liblinear
-                             r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/quanteda/quanteda.textmodels")
-    (synopsis "Scaling Models and Classifiers for Textual Data")
-    (description
-     "Scaling models and classifiers for sparse matrix objects representing textual
-data in the form of a document-feature matrix.  Includes original
-implementations of Laver', Benoit', and Garry's (2003)
-<doi:10.1017/S0003055403000698>, Wordscores model, the Perry and Benoit (2017)
-<doi:10.48550/@code{arXiv.1710.08963>} class affinity scaling model, and the
-Slapin and Proksch (2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model,
-as well as methods for correspondence analysis, latent semantic analysis, and
-fast Naive Bayes and linear SVMs specially designed for sparse textual data.")
-    (license license:gpl3)))
-
 (define-public r-quantdr
   (package
     (name "r-quantdr")
@@ -4691,6 +4653,35 @@ distance between the empirical response times and the model prediction.")
      "Basic functions for building parsers, with an application to PC-AXIS format
 files.")
     (license license:gpl3+)))
+
+(define-public r-qmj
+  (package
+    (name "r-qmj")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qmj" version))
+       (sha256
+        (base32 "18ks9b06xrd8zx9nlba7sdpvlj3bghdckcgw7lg93gv8f2krbw73"))))
+    (properties `((upstream-name . "qmj")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-reticulate r-quantmod r-dplyr))
+    (home-page "https://cran.r-project.org/package=qmj")
+    (synopsis "Quality Scores for the Russell 3000")
+    (description
+     "This package produces quality scores for each of the US companies from the
+Russell 3000, following the approach described in \"Quality Minus Junk\" (Asness,
+Frazzini, & Pedersen, 2013)
+<http://www.aqr.com/library/working-papers/quality-minus-junk>.  The package
+includes datasets for users who wish to view the most recently uploaded quality
+scores.  It also provides tools to automatically gather relevant financials and
+stock price information, allowing users to update their data and customize their
+universe for further analysis.")
+    (license license:gpl3)))
 
 (define-public r-qmethod
   (package

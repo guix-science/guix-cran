@@ -8073,13 +8073,13 @@ function.")
 (define-public r-grainscape
   (package
     (name "r-grainscape")
-    (version "0.4.4")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grainscape" version))
        (sha256
-        (base32 "0c9ms97xnz7z5r2hhwbw0qpcmknp2wk327z95x751yjvgbps3lkg"))))
+        (base32 "14siqjxbmsd7ymr3aj95g5mqcl9fccx523kga8sw1xicbmd1gb2d"))))
     (properties `((upstream-name . "grainscape")))
     (build-system r-build-system)
     (arguments
@@ -15220,13 +15220,13 @@ model\"<doi:10.1080/10543406.2021.1934854>.")
 (define-public r-glcmtextures
   (package
     (name "r-glcmtextures")
-    (version "0.4.2")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLCMTextures" version))
        (sha256
-        (base32 "0sfa05nm2riv8mnldq9hf7p0rcwwycc627ccwjkgh9a754fzxhcv"))))
+        (base32 "0342zfb5lkhf6z6zni66qv6qxj3kk716hwnspav6y56kwik106vy"))))
     (properties `((upstream-name . "GLCMTextures")))
     (build-system r-build-system)
     (arguments
@@ -18544,13 +18544,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "1qxjzp6yxjwxq21ipbgg7ha53zxqx8sgqqyhdmb5c50ll96qdvqg"))))
+        (base32 "1ydl0nk8q1xhafw91ds9q68mfkibp5ixfpb0p4hg99wrzy4cw9b7"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
@@ -18558,6 +18558,7 @@ added and tweaked using + and regular ggplot2 functions.")
       #:tests? #f))
     (propagated-inputs (list r-umap
                              r-svglite
+                             r-smplot2
                              r-shiny
                              r-rtsne
                              r-lavaan

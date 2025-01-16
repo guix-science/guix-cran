@@ -3928,6 +3928,30 @@ functions.  The methods are largely described by Nocedal and Wright (2006)
 <doi:10.1007/978-0-387-40065-5>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-pspower
+  (package
+    (name "r-pspower")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSpower" version))
+       (sha256
+        (base32 "1528jc65fy39jkb328w1wpp56la99r2mvsaarkav2mmb8xjjssvd"))))
+    (properties `((upstream-name . "PSpower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=PSpower")
+    (synopsis "Sample Size Calculation for Propensity Score Analysis")
+    (description
+     "Sample size calculations in causal inference with observational data are
+increasingly desired.  This package is a tool to calculate sample size under
+prespecified power with minimal summary quantities needed.")
+    (license license:expat)))
+
 (define-public r-pspmanalysis
   (package
     (name "r-pspmanalysis")
@@ -4415,6 +4439,52 @@ resulting model is summarized by a decision tree in which the probabilities that
 the given treatment is best for a given subgroup is shown in the corresponding
 terminal node of the tree.")
     (license license:gpl2+)))
+
+(define-public r-psharmonize
+  (package
+    (name "r-psharmonize")
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psHarmonize" version))
+       (sha256
+        (base32 "1x3c5gmmr3i1w8cvpvwm886ggdn2mpjl4kl9qhdrf00141bn8xlx"))))
+    (properties `((upstream-name . "psHarmonize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rmarkdown
+                             r-rlang
+                             r-rcolorbrewer
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NUDACC/psHarmonize")
+    (synopsis "Creates a Harmonized Dataset Based on a Set of Instructions")
+    (description
+     "This package provides functions which facilitate harmonization of data from
+multiple different datasets.  Data harmonization involves taking data sources
+with differing values, creating coding instructions to create a harmonized set
+of values, then making those data modifications. @code{psHarmonize} will assist
+with data modification once the harmonization instructions are written.  Coding
+instructions are written by the user to create a \"harmonization sheet\".  This
+sheet catalogs variable names, domains (e.g. clinical, behavioral, outcomes),
+provides R code instructions for mapping or conversion of data, specifies the
+variable name in the harmonized data set, and tracks notes.  The package will
+then harmonize the source datasets according to the harmonization sheet to
+create a harmonized dataset.  Once harmonization is finished, the package also
+has functions that will create descriptive statistics using RMarkdown'.  Data
+Harmonization guidelines have been described by Fortier I, Raina P, Van den
+Heuvel ER, et al. (2017) <doi:10.1093/ije/dyw075>.  Additional details of our R
+package have been described by Stephen JJ, Carolan P, Krefman AE, et al. (2024)
+<doi:10.1016/j.patter.2024.101003>.")
+    (license license:expat)))
 
 (define-public r-psgp
   (package
@@ -6312,6 +6382,57 @@ for Biotechnology Information (NCBI) database.  Nature Structural Biology 10,
 980 (2003) <doi:10.1038/nsb1203-980>.  US National Library of Medicine (2021)
 <https://www.ncbi.nlm.nih.gov/datasets/docs/reference-docs/data-reports/virus/>.")
     (license license:cc0)))
+
+(define-public r-prote
+  (package
+    (name "r-prote")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProtE" version))
+       (sha256
+        (base32 "1y784gnd8y2k9nrrg7s65ldx1ns4sy62183xlj7nivkqsgyy9z2l"))))
+    (properties `((upstream-name . "ProtE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vsn
+                             r-vim
+                             r-vegan
+                             r-tidyr
+                             r-stringr
+                             r-reshape2
+                             r-openxlsx
+                             r-missranger
+                             r-limma
+                             r-ggpubr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-complexheatmap
+                             r-circlize
+                             r-car
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/theomargel/ProtE")
+    (synopsis
+     "Processing Proteomics Data, Statistical Analysis and Visualization")
+    (description
+     "The Proteomics Eye ('@code{ProtE}') offers a comprehensive and intuitive
+framework for the univariate analysis of label-free proteomics data.  By
+integrating essential data wrangling and processing steps into a single
+function, @code{ProtE} streamlines pairwise statistical comparisons for
+categorical variables.  It provides quality checks and generates
+publication-ready visualizations, enabling efficient and robust data analysis.
+@code{ProtE} is compatible with proteomics data outputs from @code{MaxQuant}
+(Cox & Mann, (2008) <doi:10.1038/nbt.1511>), DIA-NN (Demichev et al., (2020)
+<doi:10.1038/s41592-019-0638-x>), and Proteome Discoverer (Thermo Fisher
+Scientific, version 2.5).  The package leverages ggplot2 for visualization
+(Wickham, (2016) <doi:10.1007/978-3-319-24277-4>) and limma for statistical
+analysis (Ritchie et al., (2015) <doi:10.1093/nar/gkv007>).")
+    (license license:expat)))
 
 (define-public r-protag
   (package
@@ -13254,13 +13375,13 @@ efficiency designs.")
 (define-public r-ppsbm
   (package
     (name "r-ppsbm")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppsbm" version))
        (sha256
-        (base32 "0y4whxv14jqx7mqxj7n427vpbxb5rkwj8xvx0mj4knnwy9v437z4"))))
+        (base32 "1yrnnzc4ccdrxybrghlhqkbv6da9xgd48q5gpx76czs9si4hgqrw"))))
     (properties `((upstream-name . "ppsbm")))
     (build-system r-build-system)
     (arguments
@@ -17579,6 +17700,32 @@ graph.  Finds total order consistent with partial order or directed graph
 (so-called topological sort).")
     (license license:expat)))
 
+(define-public r-poobly
+  (package
+    (name "r-poobly")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poobly" version))
+       (sha256
+        (base32 "1rjl9p7wgd1b84zj85z9b25b507ivdkhc3c0l9diyz1y5vb0nrn7"))))
+    (properties `((upstream-name . "poobly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plm))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/cadam00/poobly")
+    (synopsis "Poolability Tests in Panel Data")
+    (description
+     "Homogeneity tests of the coefficients in panel data.  Currently, only the Hsiao
+test for determining coefficient homogeneity between the panel data individuals
+is implemented, as described in Hsiao (2022), \"Analysis of Panel Data\"
+(<doi:10.1017/9781009057745>).")
+    (license license:gpl3)))
+
 (define-public r-poms
   (package
     (name "r-poms")
@@ -21026,6 +21173,43 @@ a range parameter, and sometimes also a shape parameter.  The code's modular
 nature enables programers to implement new @code{pMEM} by defining new spatial
 weighting functions.")
     (license license:gpl3)))
+
+(define-public r-pmd
+  (package
+    (name "r-pmd")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmd" version))
+       (sha256
+        (base32 "1q5lw0j44y2kwjn8hp05zcbg14mpyl04shrr2a1znmzay7789244"))))
+    (properties `((upstream-name . "pmd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer r-igraph r-envigcms))
+    (native-inputs (list r-knitr))
+    (home-page "https://yufree.github.io/pmd/")
+    (synopsis
+     "Paired Mass Distance Analysis for GC/LC-MS Based Non-Targeted Analysis and Reactomics Analysis")
+    (description
+     "Paired mass distance (PMD) analysis proposed in Yu, Olkowicz and Pawliszyn
+(2018) <doi:10.1016/j.aca.2018.10.062> and PMD based reactomics analysis
+proposed in Yu and Petrick (2020) <doi:10.1038/s42004-020-00403-z> for
+gas/liquid chromatographyâmass spectrometry (GC/LC-MS) based non-targeted
+analysis.  PMD analysis including @code{GlobalStd} algorithm and
+structure/reaction directed analysis. @code{GlobalStd} algorithm could found
+independent peaks in m/z-retention time profiles based on retention time
+hierarchical cluster analysis and frequency analysis of paired mass distances
+within retention time groups.  Structure directed analysis could be used to find
+potential relationship among those independent peaks in different retention time
+groups based on frequency of paired mass distances.  Reactomics analysis could
+also be performed to build PMD network, assign sources and make biomarker
+reaction discovery.  GUIs for PMD analysis is also included as shiny
+applications.")
+    (license license:gpl2)))
 
 (define-public r-pmclust
   (package
@@ -30937,13 +31121,13 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
 (define-public r-pgenlibr
   (package
     (name "r-pgenlibr")
-    (version "0.3.7")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgenlibr" version))
        (sha256
-        (base32 "1wbbm4n9ilwwa7mgb3z81nj0kh11nrgbfbc936cb95pjgs18v4h3"))))
+        (base32 "1l41m6ms5lvz8prk6r8qq8f35kr2r72jj54c0g5cy9j19jqql9xn"))))
     (properties `((upstream-name . "pgenlibr")))
     (build-system r-build-system)
     (arguments
@@ -42236,13 +42420,13 @@ Michael Oswald.")
 (define-public r-pam
   (package
     (name "r-pam")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pam" version))
        (sha256
-        (base32 "0kzi22pw2fln7rdzpj0lxswfk1pgzcg24y3kvqskjap9ca7mwyj0"))))
+        (base32 "1lnyn1g1g4za6ywprknlh9s997ax4cnz6q14zkvdy6fskfc6igfx"))))
     (properties `((upstream-name . "pam")))
     (build-system r-build-system)
     (arguments

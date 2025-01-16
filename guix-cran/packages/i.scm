@@ -382,19 +382,20 @@ diagnostics in addition to other standard model tools.")
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivo.table" version))
        (sha256
-        (base32 "1h9k5xn04fs86g2iny18cwnlpsdyd4mvxi9h2hlll3rp35nfglvx"))))
+        (base32 "0i5izb85s7z1fsl1jigp129p8xiidm785nqp2bsqpjanszhp638d"))))
     (properties `((upstream-name . "ivo.table")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr r-officer r-flextable r-dplyr r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mthulin/ivo.table")
     (synopsis "Nicely Formatted Contingency Tables and Frequency Tables")
     (description
@@ -12019,13 +12020,13 @@ using the algorithm of Sharma et al. (2017) <doi:10.13140/RG.2.2.33786.62407>.")
 (define-public r-imuf
   (package
     (name "r-imuf")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imuf" version))
        (sha256
-        (base32 "08h38wcln48nn1gn59b469l9g2kkwrszrfg75zwpcv6n7xir13gg"))))
+        (base32 "1vxfmsh2a6jfw5jjk332s0y6d4gp89hffpbs4gz10h74a28nca1j"))))
     (properties `((upstream-name . "imuf")))
     (build-system r-build-system)
     (arguments

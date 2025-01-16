@@ -4628,13 +4628,13 @@ quantitative genetics tools.  Melo D, Garcia G, Hubbe A, Assis A P, Marroig G.
 (define-public r-evolmap
   (package
     (name "r-evolmap")
-    (version "1.2.33")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evolMap" version))
        (sha256
-        (base32 "1wcm6d96mvp8yr6qjm3610rzdxjq6vjwz3zmbrimc1q4pwxg0rvd"))))
+        (base32 "1qf9gwpljl6wmndi37sw9ym22r9442184rx5k0gkqam56m96s4iw"))))
     (properties `((upstream-name . "evolMap")))
     (build-system r-build-system)
     (arguments
@@ -12003,6 +12003,46 @@ contact data, composed of case line lists and contacts between cases.  Also
 contains procedures for data handling, interactive graphics, and statistics.")
     (license license:gpl2+)))
 
+(define-public r-epico
+  (package
+    (name "r-epico")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiCo" version))
+       (sha256
+        (base32 "1pw7rlrzax0cqbyf1n211hd7rz5p5zdddxwcikn7a79h00vhdxl2"))))
+    (properties `((upstream-name . "epiCo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treemapify
+                             r-spdep
+                             r-scales
+                             r-rlang
+                             r-magrittr
+                             r-lubridate
+                             r-leaflet
+                             r-incidence
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiverse-trace.github.io/epiCo/")
+    (synopsis
+     "Statistical and Viz Tools for Vector-Borne Diseases in Colombia")
+    (description
+     "This package provides statistical and visualization tools for the analysis of
+demographic indicators, and spatio-temporal behavior and characterization of
+outbreaks of vector-borne diseases (VBDs) in Colombia.  It implements travel
+times estimated in Bravo-Vega C., Santos-Vega M., & Cordovez J.M. (2022), and
+the endemic channel method (Bortman, M. (1999)
+<https://iris.paho.org/handle/10665.2/8562>).")
+    (license license:expat)))
+
 (define-public r-epicmodel
   (package
     (name "r-epicmodel")
@@ -17287,13 +17327,13 @@ Valeinis, E. Cers (2011)
 (define-public r-eks
   (package
     (name "r-eks")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eks" version))
        (sha256
-        (base32 "1l4ciysx20i5a9vp8364znbnflxsg2id52yj8ispibn5k3g5y3w0"))))
+        (base32 "0mdias69r0snz11yj741jrsc2cgg00ir1yknl5wf8zfhzdv12rpp"))))
     (properties `((upstream-name . "eks")))
     (build-system r-build-system)
     (arguments
@@ -23068,13 +23108,13 @@ using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarty" version))
        (sha256
-        (base32 "1gal3ra84v2iwa9kjka3pqxzxa2w55a584jv70v4marqzpfvcbmi"))))
+        (base32 "0abdxvl6b6nf1m4csnpbx169pjw16rjkm23sndcvzww49vs03a7v"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (arguments

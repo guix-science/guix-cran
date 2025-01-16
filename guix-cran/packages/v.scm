@@ -3308,13 +3308,13 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "0q810igj994xqk1b5lngq3bfh3aj1q8g6y4whdiqlafgcf4bshgc"))))
+        (base32 "077dhwzpxqx9y04nbswsvzrmdn1h449zmxk774jsk5wzi5jhbrlj"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
@@ -3325,7 +3325,6 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
                              r-rlang
                              r-purrr
                              r-omopgenerics
-                             r-lifecycle
                              r-glue
                              r-generics
                              r-dplyr
@@ -3335,7 +3334,7 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
     (synopsis "Graphs and Tables for OMOP Results")
     (description
      "This package provides methods to transform omop_result objects into formatted
-tables and figures, facilitating the visualization of study results working with
+tables and figures, facilitating the visualisation of study results working with
 the Observational Medical Outcomes Partnership (OMOP) Common Data Model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
@@ -3367,19 +3366,19 @@ International Meteor Organization <https://www.imo.net/>.")
 (define-public r-visitorcounts
   (package
     (name "r-visitorcounts")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisitorCounts" version))
        (sha256
-        (base32 "0iaik54zcq0vxfzfdgq90lxrr1b1824q5zicbpbczm4dxlc17q2q"))))
+        (base32 "19gqksyipmzhd0ck350kgpv4m3cm46qzqx5cy6hscr0zsk2y7n4g"))))
     (properties `((upstream-name . "VisitorCounts")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-rssa r-ggplot2))
+    (propagated-inputs (list r-zoo r-rssa r-ggplot2 r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VisitorCounts")
     (synopsis "Modeling and Forecasting Visitor Counts Using Social Media")
@@ -6899,13 +6898,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vchartr
   (package
     (name "r-vchartr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vchartr" version))
        (sha256
-        (base32 "0dcw8bhhynmn15xwas4qwzzvm1pmil7sdh7wvfvghkjfa6nibf5v"))))
+        (base32 "0v1py0qib4gsn5cr6002p6r9j2sbh8k7wzyszac6f4njpp7yl6ks"))))
     (properties `((upstream-name . "vchartr")))
     (build-system r-build-system)
     (arguments
@@ -9364,6 +9363,45 @@ Valection: Design Optimization for Validation and Verification Studies; Biorxiv
      "This package provides a set of basic tools to transform functions into functions
 with input validation checks, in a manner suitable for both programmatic and
 interactive use.")
+    (license license:expat)))
+
+(define-public r-vajointsurv
+  (package
+    (name "r-vajointsurv")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VAJointSurv" version))
+       (sha256
+        (base32 "00v1h7gxphhyp6601dix5jwigay76lf5spqgjhjlv6n14lwgdfxl"))))
+    (properties `((upstream-name . "VAJointSurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-testthat
+                             r-survival
+                             r-simsurvnmarker
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-psqn
+                             r-matrix
+                             r-lme4))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/boennecd/VAJointSurv")
+    (synopsis "Variational Approximation for Joint Survival and Marker Models")
+    (description
+     "Estimates joint marker (longitudinal) and survival (time-to-event) outcomes
+using variational approximations.  The package supports multivariate markers
+allowing for correlated error terms and multiple types of survival outcomes
+which may be left-truncated, right-censored, and recurrent.  Time-varying fixed
+and random covariate effects are supported along with non-proportional hazards.")
     (license license:expat)))
 
 (define-public r-vagam

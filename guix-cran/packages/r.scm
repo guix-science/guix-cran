@@ -1418,13 +1418,13 @@ as found in Harel and Koren (2001)
 (define-public r-rwc
   (package
     (name "r-rwc")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rwc" version))
        (sha256
-        (base32 "1qhgkbkp4nz0wq5c4x8232xiszpiyzcdklfgvpnx4cbp3bbfdi4g"))))
+        (base32 "1w1fhi97q919kqdjxyjn9y88hcd0wwjd10i8hri0gy9jpppmb475"))))
     (properties `((upstream-name . "rwc")))
     (build-system r-build-system)
     (arguments
@@ -13561,13 +13561,13 @@ adjusted such that the observed acceptance ratio is kept near to the desired
 (define-public r-roptest
   (package
     (name "r-roptest")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROptEst" version))
        (sha256
-        (base32 "0hkasa1lzxyj6d4lbrgq9pghgvgpvj8hbygizyb7iywcdsaakz1f"))))
+        (base32 "1rp0kimlkw3n8a4k4asvv487im87cdmpvxrp4167wdv4ba43qf44"))))
     (properties `((upstream-name . "ROptEst")))
     (build-system r-build-system)
     (arguments
@@ -17555,13 +17555,13 @@ found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.")
 (define-public r-robma
   (package
     (name "r-robma")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RoBMA" version))
        (sha256
-        (base32 "17agkqwxw81v1dski13x02ngp73pm2rwf47cg3cxqqcpzac77cnd"))))
+        (base32 "1b8qs5k7fp32kwhn6wwy27ch15xcka4f0z5mcnn1ccng3xw5c2is"))))
     (properties `((upstream-name . "RoBMA")))
     (build-system r-build-system)
     (arguments
@@ -17580,19 +17580,18 @@ found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.")
     (home-page "https://fbartos.github.io/RoBMA/")
     (synopsis "Robust Bayesian Meta-Analyses")
     (description
-     "This package provides a framework for estimating ensembles of meta-analytic
-models (assuming either presence or absence of the effect, heterogeneity, and
-publication bias).  The @code{RoBMA} framework uses Bayesian model-averaging to
-combine the competing meta-analytic models into a model ensemble, weights the
-posterior parameter distributions based on posterior model probabilities and
-uses Bayes factors to test for the presence or absence of the individual
-components (e.g., effect vs. no effect; BartoÅ¡ et al., 2022,
-<doi:10.1002/jrsm.1594>; Maier, BartoÅ¡ & Wagenmakers, 2022,
-<doi:10.1037/met0000405>).  Users can define a wide range of non-informative or
-informative prior distributions for the effect size, heterogeneity, and
-publication bias components (including selection models and PET-PEESE).  The
-package provides convenient functions for summary, visualizations, and fit
-diagnostics.")
+     "This package provides a framework for estimating ensembles of meta-analytic and
+meta-regression models (assuming either presence or absence of the effect,
+heterogeneity, publication bias, and moderators).  The @code{RoBMA} framework
+uses Bayesian model-averaging to combine the competing meta-analytic models into
+a model ensemble, weights the posterior parameter distributions based on
+posterior model probabilities and uses Bayes factors to test for the presence or
+absence of the individual components (e.g., effect vs. no effect; BartoÅ¡ et
+al., 2022, <doi:10.1002/jrsm.1594>; Maier, BartoÅ¡ & Wagenmakers, 2022,
+<doi:10.1037/met0000405>).  Users can define a wide range of prior distributions
+for + the effect size, heterogeneity, publication bias (including selection
+models and PET-PEESE), and moderator components.  The package provides
+convenient functions for summary, visualizations, and fit diagnostics.")
     (license license:gpl3)))
 
 (define-public r-robloxbioc
@@ -17632,13 +17631,13 @@ expression data (Kohl and Deigner (2010), <doi:10.1186/1471-2105-11-583>).")
 (define-public r-roblox
   (package
     (name "r-roblox")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobLox" version))
        (sha256
-        (base32 "0dc1hrzx63wv85djzivzimzkjj4ywilm3xm5kmqlmrkfpzsm9qs2"))))
+        (base32 "01hmv1b9b7y6san9064jvxc56ziyiniir4851xd6yjnaahzlgidl"))))
     (properties `((upstream-name . "RobLox")))
     (build-system r-build-system)
     (arguments
@@ -17950,13 +17949,13 @@ replacement and shift detection is provided; see Fried (2004)
 (define-public r-robextremes
   (package
     (name "r-robextremes")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobExtremes" version))
        (sha256
-        (base32 "1l0csq3qldaz6wn87bfx3yw04ay7fxakm80q4ynsy2vw27rjkjck"))))
+        (base32 "06x744b60ja6zxaz1jp7yzmdlb72xgfkjvnppwf30jslnasklvnb"))))
     (properties `((upstream-name . "RobExtremes")))
     (build-system r-build-system)
     (arguments
@@ -18145,13 +18144,13 @@ are partially sampled and/or with missing values.")
 (define-public r-robastrda
   (package
     (name "r-robastrda")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobAStRDA" version))
        (sha256
-        (base32 "156cdx2l3q5ccaan3knfb4khsmr0n2vf7j7yiq5z24z493l2g65w"))))
+        (base32 "1cm2xnal2rnmrr1lyk1znnngg73p9rn955kh88kvpay098bjym0r"))))
     (properties `((upstream-name . "RobAStRDA")))
     (build-system r-build-system)
     (arguments
@@ -22447,6 +22446,36 @@ account.")
 jobs, share updates with their network, and create group discussions.  For more
 information about using the API please visit <https://developer.linkedin.com/>.")
     (license license:gpl2)))
+
+(define-public r-rlibkriging
+  (package
+    (name "r-rlibkriging")
+    (version "0.9-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rlibkriging" version))
+       (sha256
+        (base32 "1p6bwy2d3mwc72gar98b1lhdr4c0fjrldbyb3k4hzmm4v0avs9hz"))))
+    (properties `((upstream-name . "rlibkriging")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list gfortran gcc cmake))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/libKriging")
+    (synopsis "Kriging Models using the 'libKriging' Library")
+    (description
+     "Interface to @code{libKriging} C++ library
+<https://github.com/@code{libKriging>} that should provide most standard Kriging
+/ Gaussian process regression features (like in @code{DiceKriging}', kergp or
+@code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
+algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
+around by Pascal Have of lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard
+Byrd, Jorge Nocedal and Jose Luis Morales used for hyperparameters optimization.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rlibkdv
   (package
@@ -42988,13 +43017,13 @@ Evolution,13: 782-788 <DOI:10.1111/2041-210X.13800>.")
 (define-public r-rd3plot
   (package
     (name "r-rd3plot")
-    (version "1.1.21")
+    (version "1.1.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rD3plot" version))
        (sha256
-        (base32 "1jjfr1ncfv0dxlzhlyfkdvx19cdxixzv89xl7y2piyvx1rbi14j6"))))
+        (base32 "0dn97z27knh4kqgg72rakyabzlq32429wnyf2h35nzkkrzxnk180"))))
     (properties `((upstream-name . "rD3plot")))
     (build-system r-build-system)
     (arguments
@@ -43293,6 +43322,32 @@ simple steps, namely, set-selection, estimation, diagnosis, and validation.
 RCTrep provides a simple dashboard to review the obtained results.  The
 validation approach is introduced by Shen, L., Geleijnse, G. and Kaptein, M.
 (2023) <doi:10.21203/rs.3.rs-2559287/v2>.")
+    (license license:expat)))
+
+(define-public r-rctrecruit
+  (package
+    (name "r-rctrecruit")
+    (version "0.1.24")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RCTRecruit" version))
+       (sha256
+        (base32 "0bkzrxvf1i5s9bs3wh1jg12c33wy9jf08r5xi4g0rlqgcj2gm4qc"))))
+    (properties `((upstream-name . "RCTRecruit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-lubridate))
+    (home-page "https://github.com/imalagaris/RCTRecruit")
+    (synopsis
+     "Non-Parametric Recruitment Prediction for Randomized Clinical Trials")
+    (description
+     "Accurate prediction of subject recruitment for Randomized Clinical Trials (RCT)
+remains an ongoing challenge.  Many previous prediction models rely on
+parametric assumptions.  We present functions for non-parametric RCT recruitment
+prediction under several scenarios.")
     (license license:expat)))
 
 (define-public r-rct3
@@ -44316,13 +44371,13 @@ of system variables.  This package provides similar functionality.")
 (define-public r-rcppfastfloat
   (package
     (name "r-rcppfastfloat")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppFastFloat" version))
        (sha256
-        (base32 "09g4nk9nyg7fqrsgfmh10dmxbrb9fpcl3jayrjhv38h58hbvvxfm"))))
+        (base32 "1sm1cr4v3ihp062m6rpg6kd1q1kqw40zxdrrv0qz1mvyy4v0s6p9"))))
     (properties `((upstream-name . "RcppFastFloat")))
     (build-system r-build-system)
     (arguments
@@ -44336,8 +44391,8 @@ of system variables.  This package provides similar functionality.")
      "Converting ascii text into (floating-point) numeric values is a very common
 problem.  The fast_float header-only C++ library by Daniel Lemire does it very
 well and very fast at up to or over to 1 gigabyte per second as described in
-more detail in <@code{arXiv:2101.11408>}.  fast_float is licensed under the
-Apache 2.0 license and provided here for use by other R packages via a simple
+more detail in <doi:10.1002/spe.2984>.  fast_float is licensed under the Apache
+2.0 license and provided here for use by other R packages via a simple
 @code{LinkingTo}: statement.")
     (license license:gpl2+)))
 

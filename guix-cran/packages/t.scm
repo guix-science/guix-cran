@@ -29008,13 +29008,13 @@ for fast dimension reduction, see package?tapkee and
 (define-public r-tapes
   (package
     (name "r-tapes")
-    (version "0.13.0")
+    (version "0.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TapeS" version))
        (sha256
-        (base32 "1j2xqv99sganr3byi1zscg20h28ajg7192dpyppzlv39lgzqxg8c"))))
+        (base32 "15yp0gfxjlhqy0yybb724187wbii46nxamxklw99prqd7zyiyzlp"))))
     (properties `((upstream-name . "TapeS")))
     (build-system r-build-system)
     (arguments
@@ -29034,8 +29034,8 @@ species code, one or multiple diameters in arbitrary measuring height and tree
 height.  The functions then provide information on diameters along the stem,
 bark thickness, height of diameters, volume of the total or parts of the trunk
 and total and component above-ground biomass.  It is also possible to calculate
-assortments from the taper curves.  For diameter and volume estimation,
-uncertainty information is given.")
+assortments from the taper curves.  Uncertainty information is provided for
+diameter, volume and component biomass estimation.")
     (license license:bsd-2)))
 
 (define-public r-taper

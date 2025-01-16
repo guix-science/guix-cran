@@ -17190,6 +17190,31 @@ Pinilla-Agudelo (2014) - DISP index by Stenger-KovÃ¡cs et al. (2018,
 <doi:10.1007/s10661-023-11378-4>).")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-diario
+  (package
+    (name "r-diario")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diario" version))
+       (sha256
+        (base32 "048b9c9hqvjn20l8sv907zk2sjwc47brg11babvf9y858j4lvzwf"))))
+    (properties `((upstream-name . "diario")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-keyring r-httr2))
+    (home-page "<https://github.com/StrategicProjects/diario>")
+    (synopsis "'R' Interface to the 'Diariodeobras' Application")
+    (description
+     "This package provides a set of functions for securely storing API tokens and
+interacting with the <https://diariodeobras.net> system.  Includes convenient
+wrappers around the httr2 package to perform authenticated requests, retrieve
+project details, tasks, reports, and more.")
+    (license license:expat)))
+
 (define-public r-diaplt
   (package
     (name "r-diaplt")
@@ -18767,13 +18792,13 @@ into binary outcomes.")
 (define-public r-dfer
   (package
     (name "r-dfer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfeR" version))
        (sha256
-        (base32 "0m8asc8in14i5ny9mq3b6j0y6psm3b5rp8aw78vv4zcnh25zdr89"))))
+        (base32 "18bsg5j8xar4q2m659fh6nr2frnbk5w6hz49gg1x99c16gkdwcnz"))))
     (properties `((upstream-name . "dfeR")))
     (build-system r-build-system)
     (arguments
@@ -30089,13 +30114,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "6.3.2")
+    (version "6.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabaseConnector" version))
        (sha256
-        (base32 "1wl78a2jlyqdbdkq1bhw2ymv6d0dn6d38vym80khhclial76rnzp"))))
+        (base32 "12xngbg3g94j5ci7blbx66jkb582bkimi505ni9awangc3hk6w3h"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (arguments

@@ -1983,13 +1983,13 @@ series.")
 (define-public r-funkyheatmap
   (package
     (name "r-funkyheatmap")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funkyheatmap" version))
        (sha256
-        (base32 "1rgb49pzhz91qlw75zp0bi231nc9frf1wrp1xd22hpydccklvq6r"))))
+        (base32 "062f2n1jja7qkrd5k9izmpli6q7sz52aph1b6wp50497bmsb7g4w"))))
     (properties `((upstream-name . "funkyheatmap")))
     (build-system r-build-system)
     (arguments
@@ -2013,11 +2013,10 @@ series.")
     (home-page "https://funkyheatmap.github.io/funkyheatmap/")
     (synopsis "Generating Funky Heatmaps for Data Frames")
     (description
-     "Allows generating heatmap-like visualisations for benchmark data frames.  Funky
-heatmaps can be fine-tuned by providing annotations of the columns and rows,
-which allows assigning multiple palettes or geometries or grouping rows and
-columns together in categories.  Saelens et al. (2019)
-<doi:10.1038/s41587-019-0071-9>.")
+     "Allows generating heatmap-like visualisations for data frames.  Funky heatmaps
+can be fine-tuned by providing annotations of the columns and rows, which allows
+assigning multiple palettes or geometries or grouping rows and columns together
+in categories.  Saelens et al. (2019) <doi:10.1038/s41587-019-0071-9>.")
     (license license:expat)))
 
 (define-public r-funkycells
@@ -2878,13 +2877,13 @@ downloadable from the Ministry of Agriculture, Forestry and Fisheries website
 (define-public r-fucom
   (package
     (name "r-fucom")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fucom" version))
        (sha256
-        (base32 "162dnk554can240q6v8dz280qvgs336mkjklbsgnhlvj1vvd62lj"))))
+        (base32 "0p08fa2a6cyb65iyx3ca59lfi4wfv908bykd5xc0wz2k8fa80i2v"))))
     (properties `((upstream-name . "fucom")))
     (build-system r-build-system)
     (arguments
@@ -4145,6 +4144,77 @@ and cumulants over running fixed length windows can be computed, as well as over
 time-based windows.  Moment computations are via a generalization of Welford's
 method, as described by Bennett et. (2009) <doi:10.1109/CLUSTR.2009.5289161>.")
     (license license:lgpl3)))
+
+(define-public r-fromhere
+  (package
+    (name "r-fromhere")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fromhere" version))
+       (sha256
+        (base32 "18vsx1rg8r1x5z6j9b65221s67jmdfza09v351zs9m87q0g74afy"))))
+    (properties `((upstream-name . "fromhere")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rprojroot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mitchelloharawild/fromhere")
+    (synopsis "File Paths Relative to Project Roots")
+    (description
+     "This package provides a set of helper functions for constructing file paths
+relative to the root of various types of projects, such as R packages, Git
+repositories, and more.  File paths are specified with function arguments, or
+`$` to navigate into folders to specific files supported by auto-completion.")
+    (license license:expat)))
+
+(define-public r-frogger
+  (package
+    (name "r-frogger")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "froggeR" version))
+       (sha256
+        (base32 "067knwlmgj5aadxz08qb0ipk5hpxm318cdn5p6y0xc096v3agsif"))))
+    (properties `((upstream-name . "froggeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-usethis
+                             r-stringr
+                             r-rstudioapi
+                             r-readr
+                             r-rappdirs
+                             r-quarto
+                             r-here
+                             r-glue
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://kylegrealis.github.io/froggeR/")
+    (synopsis "Enhance 'Quarto' Project Workflows and Standards")
+    (description
+     "Streamlines Quarto workflows by providing tools for consistent project setup and
+documentation.  Enables portability through reusable metadata, automated project
+structure creation, and standardized templates.  Features include enhanced
+project initialization, pre-formatted Quarto documents, comprehensive data
+protection settings, custom styling, and structured documentation generation.
+Designed to improve efficiency and collaboration in R data science projects by
+reducing repetitive setup tasks while maintaining consistent formatting across
+multiple documents.  There are many valuable resources providing in-depth
+explanations of customizing Quarto templates and theme styling by the Posit
+team:
+<https://quarto.org/docs/output-formats/html-themes.html#customizing-themes> &
+<https://quarto.org/docs/output-formats/html-themes-more.html>, and at the
+Bootstrap community's @code{GitHub} at
+<https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss>.")
+    (license license:expat)))
 
 (define-public r-frlr
   (package
@@ -17166,6 +17236,35 @@ complex algorithms because they require very little information, are easy to
 understand and communicate, and are robust against overfitting.")
     (license license:cc0)))
 
+(define-public r-fftab
+  (package
+    (name "r-fftab")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fftab" version))
+       (sha256
+        (base32 "1vf2yi43v5k6f49r2cjzprp74d0np9qgrcnj6ihgix36yvrvr4rs"))))
+    (properties `((upstream-name . "fftab")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-lifecycle r-ggplot2 r-dplyr))
+    (home-page "https://github.com/thk686/fftab")
+    (synopsis "Tidy Manipulation of Fourier Transformed Data")
+    (description
+     "The fftab package stores Fourier coefficients in a tibble and allows their
+manipulation in various ways.  Functions are available for converting between
+complex, rectangular ('re', im'), and polar ('mod', arg') representations, as
+well as for extracting components as vectors or matrices.  Inputs can include
+vectors, time series, and arrays of arbitrary dimensions, which are restored to
+their original form when inverting the transform.  Since fftab stores Fourier
+frequencies as columns in the tibble, many standard operations on spectral data
+can be easily performed using tidy packages like dplyr'.")
+    (license license:expat)))
+
 (define-public r-ffscrapr
   (package
     (name "r-ffscrapr")
@@ -20731,6 +20830,37 @@ Xue, and Rosenberg (2024) <doi:10.1101/2024.07.03.601929>.")
     (description
      "This package provides a replacement for @code{dplyr::na_if()}.  Allows you to
 specify multiple values to be replaced with NA using a single function.")
+    (license license:expat)))
+
+(define-public r-faux
+  (package
+    (name "r-faux")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "faux" version))
+       (sha256
+        (base32 "06z9bn24pgckg7dysba4yskgh80hw6cdslqpz06w803v6whcn46i"))))
+    (properties `((upstream-name . "faux")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm
+                             r-rlang
+                             r-lme4
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/debruine/faux")
+    (synopsis "Simulation for Factorial Designs")
+    (description
+     "Create datasets with factorial structure through simulation by specifying
+variable parameters.  Extended documentation at
+<https://debruine.github.io/faux/>.  Described in @code{DeBruine} (2020)
+<doi:10.5281/zenodo.2669586>.")
     (license license:expat)))
 
 (define-public r-faulttree
@@ -24715,13 +24845,13 @@ environmental sensitivities as in Millet et al. (2019)
 (define-public r-factoshiny
   (package
     (name "r-factoshiny")
-    (version "2.6")
+    (version "2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Factoshiny" version))
        (sha256
-        (base32 "14ija58kscww8bf4p1lcbwvd7yxmp4h8jnk8898q9qh08rbahram"))))
+        (base32 "0sf63g0gn0kvwnd22jlp2byxl6jffza2jjqn4zdh0qr040x63sfr"))))
     (properties `((upstream-name . "Factoshiny")))
     (build-system r-build-system)
     (arguments

@@ -9357,13 +9357,13 @@ equality operations are calculated using cpp11'.")
 (define-public r-cppcontainers
   (package
     (name "r-cppcontainers")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cppcontainers" version))
        (sha256
-        (base32 "0hkcxbf63b8i0ij0rnfzic1iwzjby4kggqrjhpnb1pkpzz0x57af"))))
+        (base32 "01dn5m9p66w1j32iimbqrw6xsm6n506f1nbp677qybqiw03xykc7"))))
     (properties `((upstream-name . "cppcontainers")))
     (build-system r-build-system)
     (arguments
@@ -22955,18 +22955,19 @@ P20GM113109.")
 (define-public r-colorspec
   (package
     (name "r-colorspec")
-    (version "1.5-0")
+    (version "1.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorSpec" version))
        (sha256
-        (base32 "0vqh6nnp6myv46x520hisfz4ggfyhki88d1bggf9kq7p0723w4lk"))))
+        (base32 "1qn7h8hjb1grfx50p08y7za0v6gm7sa1zkmsgv2yib2x23yxsix8"))))
     (properties `((upstream-name . "colorSpec")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-logger))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=colorSpec")
     (synopsis "Color Calculations with Emphasis on Spectral Data")
@@ -39502,18 +39503,19 @@ displays of results are emphasized.")
 (define-public r-cftime
   (package
     (name "r-cftime")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFtime" version))
        (sha256
-        (base32 "171xbi6jb2d88i15gian5p4lfjhrsyp3j99mbcrg3196dw1dfrjq"))))
+        (base32 "0q1gsps9v05mbw9nlligjmsbv0gjwnmf6bywazq0jlmggrsjrfbn"))))
     (properties `((upstream-name . "CFtime")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pvanlaake/CFtime")
     (synopsis "Using CF-Compliant Calendars with Climate Projection Data")
@@ -39526,7 +39528,7 @@ change scientists and the Intergovernmental Panel on Climate Change (IPCC).
 This package specifically allows the user to work with any of the CF-compliant
 calendars (many of which are not compliant with POSIXt).  The CF time coordinate
 is formally defined in the CF Metadata Conventions document available at
-<https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#time-coordinate>.")
+<https://cfconventions.org/Data/cf-conventions/cf-conventions-1.12/cf-conventions.html#time-coordinate>.")
     (license license:expat)))
 
 (define-public r-cft
@@ -44958,13 +44960,13 @@ R-squared values as sensitivity parameters (Park, Kang, Lee, and Ma, 2023).")
 (define-public r-causact
   (package
     (name "r-causact")
-    (version "0.5.5")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causact" version))
        (sha256
-        (base32 "0sf32v47n18sf3x5f08pzl7mc66g95fw6nym02vvyr6a30zv1b5b"))))
+        (base32 "1n6m32g9z9294yn20vpqfps2fbydz52mpshqna8zxwdmnacirnr6"))))
     (properties `((upstream-name . "causact")))
     (build-system r-build-system)
     (arguments
@@ -47278,13 +47280,13 @@ developments) in ecological time series using fitted Weibull functions.")
 (define-public r-card-pro
   (package
     (name "r-card-pro")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "card.pro" version))
        (sha256
-        (base32 "1sysvc68bqrl8b77g0wqbzgnzapwd0mj7dk2shzkzdssaj4ms65g"))))
+        (base32 "0w022bbvjjj576d21kxzh63vhcf1z7hrkqzi2hk626in83ny9dcg"))))
     (properties `((upstream-name . "card.pro")))
     (build-system r-build-system)
     (arguments

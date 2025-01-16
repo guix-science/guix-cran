@@ -8777,6 +8777,35 @@ Installation instructions for arcgisbinding can be found at
 <https://r.esri.com/r-bridge-site/docs/installation.html>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-arcgisplaces
+  (package
+    (name "r-arcgisplaces")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcgisplaces" version))
+       (sha256
+        (base32 "0g4aidz4vw4l1zg3ym795wlh7m1f4gg88y5sgwrfmqfd6nhlqwrc"))))
+    (properties `((upstream-name . "arcgisplaces")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openssl openssl))
+    (propagated-inputs (list r-wk r-rlang r-httr2 r-cli r-arcgisutils))
+    (home-page "https://cran.r-project.org/package=arcgisplaces")
+    (synopsis "Search for POIs using ArcGIS 'Places Service'")
+    (description
+     "The @code{ArcGIS} Places service is a ready-to-use location service that can
+search for businesses and geographic locations around the world.  It allows you
+to find, locate, and discover detailed information about each place.  Query for
+places near a point, within a bounding box, filter based on categories, or
+provide search text.  arcgisplaces integrates with sf for out of the box
+compatibility with other spatial libraries.  Learn more in the Places service
+API reference <https://developers.arcgis.com/rest/places/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-arcgislayers
   (package
     (name "r-arcgislayers")
@@ -21767,13 +21796,13 @@ extension package of the admiral package.")
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiraldev" version))
        (sha256
-        (base32 "0cpdhyiis0mwd219h3y4l1scy49bl3qjd9sy2kln4ymy0xsbasyg"))))
+        (base32 "0fkm3bg0ha5gsdxzv2blr3lip3dyy12d8jp6vp1g3jb3y24amrxd"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (arguments
@@ -21827,13 +21856,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "0g669is6kj6hqpi2i6ik6c0c5mrx3750dd8dsnjmv25aiy60hnzp"))))
+        (base32 "1pk20c5y6zi8k5915wj507r7spzxy9ybpk4gv3wfpphwfbhriw3m"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (arguments
@@ -24980,13 +25009,13 @@ for screen reader users.")
 (define-public r-accessr
   (package
     (name "r-accessr")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "accessr" version))
        (sha256
-        (base32 "0hlf1kdxmw1rqscqazan8d3dqr5kfsxngrmkdb41pi5k5qsvbcx4"))))
+        (base32 "1n2q6sxc680zxqlmx2b3v0yh0hvlarb6f3ymzpxmfkpnn2ffq51w"))))
     (properties `((upstream-name . "accessr")))
     (build-system r-build-system)
     (arguments

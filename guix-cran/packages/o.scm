@@ -2112,13 +2112,13 @@ or public projects.")
 (define-public r-osfd
   (package
     (name "r-osfd")
-    (version "2.0")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OSFD" version))
        (sha256
-        (base32 "1ll9dlrqa7n5xrxcza2vzy25g1inmdqas19gyv80iiv5qhraqpxk"))))
+        (base32 "02apmrn34v4fm4fjgkmvqnf1p7sambjy35w2z5di04l2jjg8md6l"))))
     (properties `((upstream-name . "OSFD")))
     (build-system r-build-system)
     (arguments
@@ -7283,13 +7283,13 @@ the JSON file.")
 (define-public r-opendataformat
   (package
     (name "r-opendataformat")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opendataformat" version))
        (sha256
-        (base32 "1xy5zg9bh2vkj7jhm3wrpvrb4lrr9x8q6h304zfygz0hadvaiqq1"))))
+        (base32 "099crzflz9larfz5ja3r9xqcp5bjjcci4n5fj6ri169b7c3jsxp3"))))
     (properties `((upstream-name . "opendataformat")))
     (build-system r-build-system)
     (arguments
