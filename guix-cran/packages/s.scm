@@ -13269,6 +13269,39 @@ their normalization in representative sample, or by import of premade scoring
 table.")
     (license license:expat)))
 
+(define-public r-stenographer
+  (package
+    (name "r-stenographer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stenographer" version))
+       (sha256
+        (base32 "13p527fxpi04sjnn9j05cczzpbgfb55k7anrfx3gj5d41arcz192"))))
+    (properties `((upstream-name . "stenographer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-r6
+                             r-jsonlite
+                             r-fs
+                             r-dbi
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dereckmezquita/stenographer")
+    (synopsis "Flexible and Customisable Logging System")
+    (description
+     "This package provides a comprehensive logging framework for R applications that
+provides hierarchical logging levels, database integration, and contextual
+logging capabilities.  The package supports SQLite storage for persistent logs,
+provides colour-coded console output for better readability, includes parallel
+processing support, and implements structured error reporting with JSON
+formatting.")
+    (license license:expat)))
+
 (define-public r-stencilaschema
   (package
     (name "r-stencilaschema")
@@ -16408,13 +16441,13 @@ grammar for tidymodels'-aligned model stacking.")
 (define-public r-stacking
   (package
     (name "r-stacking")
-    (version "0.1.3")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stacking" version))
        (sha256
-        (base32 "0clxlkzz4dmri2ykk9aj9mfixpi2k0jhn2jw6zf6yyq1w70vscr7"))))
+        (base32 "0sx8ysi1kh4v0i93psmrkwvpqa8p98pyibslhkcs8xd2fc534vgx"))))
     (properties `((upstream-name . "stacking")))
     (build-system r-build-system)
     (arguments
@@ -16427,8 +16460,7 @@ grammar for tidymodels'-aligned model stacking.")
      "Building predictive models with stacking which is a type of ensemble learning.
 Learners can be specified from those implemented in caret'.  For more
 information of the package, see Nukui and Onogi (2023)
-<doi:10.1101/2023.06.06.543970>.  Packages caret, parallel, snow, and packages
-for base and meta learners should be installed.")
+<doi:10.1101/2023.06.06.543970>.")
     (license license:expat)))
 
 (define-public r-stackimpute
@@ -31761,19 +31793,19 @@ and sunset.")
 (define-public r-solar2
   (package
     (name "r-solar2")
-    (version "0.10")
+    (version "0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "solaR2" version))
        (sha256
-        (base32 "0bs9pwskdi9pw2d1bkdb8gdsgvwwj4s9f8i2py8588qrjrrxn5wn"))))
+        (base32 "0vrqrhmm6xi9gxm0afnk6pn54jylyd8w0vkx959rgakhy459n1hc"))))
     (properties `((upstream-name . "solaR2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer r-latticeextra r-lattice
+    (propagated-inputs (list r-rcolorbrewer r-latticeextra r-lattice r-httr2
                              r-data-table))
     (home-page "https://solarization.github.io/solaR2/")
     (synopsis "Radiation and Photovoltaic Systems")
@@ -32332,13 +32364,13 @@ distribution by Perfect et al. (1992)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.5")
+    (version "2.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "01q563q8yzb62hzznh8gk7lvgk87isfbcgvvvmhw3y91ggsbz8hy"))))
+        (base32 "0dqgd9p62a8zqczri7vay55xvhalzvfgwziymh2y1mh2lbyljmp0"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (arguments
@@ -35733,6 +35765,40 @@ introduced by Kulldorff and Nagarwalla (1995) <doi:10.1002/sim.4780140809> and
 Kulldorff (1997) <doi:10.1080/03610929708831995>.")
     (license license:gpl2+)))
 
+(define-public r-smer
+  (package
+    (name "r-smer")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smer" version))
+       (sha256
+        (base32 "1k5z40agsn785h56wmnas89b1sdfhms25gm5zy7rvi751cz14638"))))
+    (properties `((upstream-name . "smer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-rhdf5lib
+                             r-rcppeigen
+                             r-rcpp
+                             r-mvmapit
+                             r-logging
+                             r-genio
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lcrawlab/sme")
+    (synopsis "Sparse Marginal Epistasis Test")
+    (description
+     "The Sparse Marginal Epistasis Test is a computationally efficient genetics
+method which detects statistical epistasis in complex traits; see Stamp et al.
+(2025, <doi:10.1101/2025.01.11.632557>) for details.")
+    (license license:expat)))
+
 (define-public r-smdocker
   (package
     (name "r-smdocker")
@@ -38555,13 +38621,13 @@ a P-P plot and a tail plot.")
 (define-public r-sketchy
   (package
     (name "r-sketchy")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sketchy" version))
        (sha256
-        (base32 "090gsly8ih3k8c6vbs32ikwd5j5l906mwj3xfbpa1mr2pdpg7sxd"))))
+        (base32 "1lv8i0jbdlf899lmv4cd7lrgllw683qal7gbs8mfccgq69kcrny8"))))
     (properties `((upstream-name . "sketchy")))
     (build-system r-build-system)
     (arguments
@@ -45296,6 +45362,42 @@ clusters, @code{SigClust} can be used iteratively.")
      "Facilitate extraction of key information from common datasets.")
     (license license:expat)))
 
+(define-public r-sifinet
+  (package
+    (name "r-sifinet")
+    (version "1.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SiFINeT" version))
+       (sha256
+        (base32 "01za6cgl354i715rzcv6i7l65yr7km9r15ifhfa1f76gwb36fiyz"))))
+    (properties `((upstream-name . "SiFINeT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-quantreg
+                             r-matrix
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SiFINeT")
+    (synopsis "Single Cell Feature Identification with Network Topology")
+    (description
+     "Cluster-independent method based on topology structure of gene co-expression
+network for identifying feature gene sets, extracting cellular subpopulations,
+and elucidating intrinsic relationships among these subpopulations.  Without
+prior cell clustering, @code{SifiNet} circumvents potential inaccuracies in
+clustering that may influence subsequent analyses.  This method is introduced in
+Qi Gao, Zhicheng Ji, Liuyang Wang, Kouros Owzar, Qi-Jing Li, Cliburn Chan,
+Jichun Xie \"@code{SifiNet}: a robust and accurate method to identify feature
+gene sets and annotate cells\" (2024) <doi:10.1093/nar/gkae307>.")
+    (license license:gpl3)))
+
 (define-public r-sievetest
   (package
     (name "r-sievetest")
@@ -49978,6 +50080,36 @@ be used seamlessly in Shiny apps.")
 installations.")
     (license license:expat)))
 
+(define-public r-shiny-ollama
+  (package
+    (name "r-shiny-ollama")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shiny.ollama" version))
+       (sha256
+        (base32 "1d9wynxs9bxhnyc1d4n7nf2hpq9g6hlr0n2gw4kisy54lc27nbi9"))))
+    (properties `((upstream-name . "shiny.ollama")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-mockery
+                             r-markdown
+                             r-jsonlite
+                             r-httr
+                             r-bslib))
+    (home-page "https://www.indraneelchakraborty.com/shiny.ollama/")
+    (synopsis
+     "R 'Shiny' Interface for Chatting with Large Language Models Offline on Local with 'ollama'")
+    (description
+     "Chat with large language models on your machine without internet with complete
+privacy via ollama', powered by R shiny interface.  For more information on
+ollama', visit <https://ollama.com>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-shiny-info
   (package
     (name "r-shiny-info")
@@ -51082,24 +51214,20 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapr
   (package
     (name "r-shapr")
-    (version "0.2.2")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapr" version))
        (sha256
-        (base32 "0c8vivr1ia7x4jvdsffv06nl2yahxx38r5xbws5cdkalhbhlwv4h"))))
+        (base32 "04rpvzqv281njmgmiz362sf2daf588rvgk8hdn1a94v7iidmqgw9"))))
     (properties `((upstream-name . "shapr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mvnfast
-                             r-matrix
-                             r-data-table
-                             r-condmvnorm))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-future-apply
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://norskregnesentral.github.io/shapr/")
     (synopsis "Prediction Explanation with Dependence-Aware Shapley Values")
@@ -51109,9 +51237,10 @@ situations it is crucial to understand and explain why a model made a specific
 prediction.  Shapley values is the only method for such prediction explanation
 framework with a solid theoretical foundation.  Previously known methods for
 estimating the Shapley values do, however, assume feature independence.  This
-package implements the method described in Aas, Jullum and LÃ¸land (2019)
-<@code{arXiv:1903.10464>}, which accounts for any feature dependence, and
-thereby produces more accurate estimates of the true Shapley values.")
+package implements methods which accounts for any feature dependence, and
+thereby produces more accurate estimates of the true Shapley values.  An
+accompanying Python wrapper ('shaprpy') is available through the @code{GitHub}
+repository.")
     (license license:expat)))
 
 (define-public r-shapper
@@ -57834,13 +57963,13 @@ proteins.")
 (define-public r-segtest
   (package
     (name "r-segtest")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "segtest" version))
        (sha256
-        (base32 "1mj9difdlxn0dpnni65f75qbzbfmpvxah37rwi711x7g0383bwhv"))))
+        (base32 "17r0k61wxry2bcb1aqrvvpbavqkf04qcaql2cn8qnbyfm5gxdhm4"))))
     (properties `((upstream-name . "segtest")))
     (build-system r-build-system)
     (arguments
@@ -57861,7 +57990,7 @@ proteins.")
      "This package provides a suite of tests for segregation distortion in F1
 polyploid populations (for now, just tetraploids).  This is under different
 assumptions of meiosis.  Details of these methods are described in Gerard et al.
-(2024) <doi:10.1101/2024.02.07.579361>.  This material is based upon work
+(2025) <doi:10.1007/s00122-025-04816-z>.  This material is based upon work
 supported by the National Science Foundation under Grant No.  2132247.  The
 opinions, findings, and conclusions or recommendations expressed are those of
 the author and do not necessarily reflect the views of the National Science

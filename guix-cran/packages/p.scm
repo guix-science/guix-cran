@@ -27697,6 +27697,40 @@ of phylogenetic trees.")
 trees in NEXUS and Newick formats, while preserving annotations.")
     (license license:expat)))
 
+(define-public r-phylosignaldb
+  (package
+    (name "r-phylosignaldb")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phylosignalDB" version))
+       (sha256
+        (base32 "08wibnqnrqx1z2g32hyp2w7kyx9brq275r1bkkhpm90wiv92a5np"))))
+    (properties `((upstream-name . "phylosignalDB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-foreach r-doparallel r-cluster r-castor r-ape))
+    (home-page "https://github.com/anonymous-eco/phylosignalDB")
+    (synopsis "Explore Phylogenetic Signals Using Distance-Based Methods")
+    (description
+     "This package provides a unified method, called M statistic, is provided for
+detecting phylogenetic signals in continuous traits, discrete traits, and
+multi-trait combinations.  Blomberg and Garland (2002)
+<doi:10.1046/j.1420-9101.2002.00472.x> provided a widely accepted statistical
+definition of the phylogenetic signal, which is the \"tendency for related
+species to resemble each other more than they resemble species drawn at random
+from the tree\".  The M statistic strictly adheres to the definition of
+phylogenetic signal, formulating an index and developing a method of testing in
+strict accordance with the definition, instead of relying on correlation
+analysis or evolutionary models.  The novel method equivalently expressed the
+textual definition of the phylogenetic signal as an inequality equation of the
+phylogenetic and trait distances and constructed the M statistic.  Also, there
+are more distance-based methods under development.")
+    (license license:gpl3+)))
+
 (define-public r-phylosignal
   (package
     (name "r-phylosignal")
@@ -27863,35 +27897,6 @@ efficient functions to compute more standard conservation measures such as
 phylogenetic diversity, phylogenetic endemism, evolutionary distinctiveness and
 global endangerment, as well as compositional turnover (e.g., beta diversity).")
     (license license:agpl3)))
-
-(define-public r-phyloraster
-  (package
-    (name "r-phyloraster")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phyloraster" version))
-       (sha256
-        (base32 "0xildxiv8k2hrxdp0zkf939zbag62griq1ksalq0vfb32sb5l106"))))
-    (properties `((upstream-name . "phyloraster")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-sesraster r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://CRAN.R-project.org/package=phyloraster")
-    (synopsis "Evolutionary Diversity Metrics for Raster Data")
-    (description
-     "Phylogenetic Diversity (PD, Faith 1992), Evolutionary Distinctiveness (ED, Isaac
-et al.  2007), Phylogenetic Endemism (PE, Rosauer et al.  2009; Laffan et al.
-2016), and Weighted Endemism (WE, Laffan et al.  2016) for presence-absence
-raster.  Faith, D. P. (1992) <doi:10.1016/0006-3207(92)91201-3> Isaac, N. J. et
-al. (2007) <doi:10.1371/journal.pone.0000296> Laffan, S. W. et al. (2016)
-<doi:10.1111/2041-210X.12513> Rosauer, D. et al. (2009)
-<doi:10.1111/j.1365-294X.2009.04311.x>.")
-    (license license:gpl3+)))
 
 (define-public r-phylopath
   (package
@@ -39547,6 +39552,37 @@ herein originally inspired from code written by Jeffrey D. Bogan, but then
 completely re-written.")
     (license license:expat)))
 
+(define-public r-parttree
+  (package
+    (name "r-parttree")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "parttree" version))
+       (sha256
+        (base32 "0hvafg5fvwh34g218hi59fv70vvnhz40jx9y3vwdn3brkdq72m22"))))
+    (properties `((upstream-name . "parttree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tinyplot r-rpart r-rlang r-partykit
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://grantmcdermott.com/parttree/")
+    (synopsis "Visualize Simple 2-D Decision Tree Partitions")
+    (description
+     "Visualize the partitions of simple decision trees, involving one or two
+predictors, on the scale of the original data.  Provides an intuitive
+alternative to traditional tree diagrams, by visualizing how a decision tree
+divides the predictor space in a simple 2D plot alongside the original data.
+The parttree package supports both classification and regression trees from
+rpart and partykit', as well as trees produced by popular frontend systems like
+tidymodels and mlr3'.  Visualization methods are provided for both base R
+graphics and ggplot2'.")
+    (license license:expat)))
+
 (define-public r-parttime
   (package
     (name "r-parttime")
@@ -40928,13 +40964,13 @@ by time-resolved spectroscopy via a Shiny GUI.")
 (define-public r-paramdemo
   (package
     (name "r-paramdemo")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paramDemo" version))
        (sha256
-        (base32 "165fz12cqpc88cmfx0xq80dnbxgkmbn8v84dxv96ggh9jsxh06d9"))))
+        (base32 "180ygqr9k6bjg4k4ikm80wa9jv6vfkyp2y4dghmqlghrgyva4hh6"))))
     (properties `((upstream-name . "paramDemo")))
     (build-system r-build-system)
     (arguments
@@ -43625,13 +43661,13 @@ decisions based on timely and detailed economic insights.")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.8.0")
+    (version "0.8.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pak" version))
        (sha256
-        (base32 "0rr8ikhy0zg2n0dqjrdmjdb8qdmzncrpizy1dqzqqlmfrpmxsgw5"))))
+        (base32 "0il9yyhbx9yk3wwmzwbqhqx19czwskswfrzszs5a69p9659ka9df"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (arguments

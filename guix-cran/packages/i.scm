@@ -2173,13 +2173,13 @@ soil texture charts, ceramic phase diagram).")
 (define-public r-isopam
   (package
     (name "r-isopam")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopam" version))
        (sha256
-        (base32 "0c6kwvdv629dv7paqhv1jhfjdfyvmh0bz8jmb3qxzicwd7p92dac"))))
+        (base32 "03az31npwlmc10xd6s14nb2w05gyf08ybypvkqw4xq93m904bqnx"))))
     (properties `((upstream-name . "isopam")))
     (build-system r-build-system)
     (arguments
@@ -11635,13 +11635,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "196kghflwndvd8mnki2z8ai14758cl50r86gm9pq32qir8482vmm"))))
+        (base32 "1ra7bjz9y2xlgryyc4csg02kn7a3ckqdm4mkk4d15a9b23mhb37x"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (arguments
@@ -11654,13 +11654,10 @@ delay distribution.")
                              r-patientprofiles
                              r-omopgenerics
                              r-magrittr
-                             r-lifecycle
                              r-glue
                              r-dplyr
-                             r-dbplyr
                              r-clock
                              r-cli
-                             r-checkmate
                              r-cdmconnector))
     (native-inputs (list r-knitr))
     (home-page "https://darwin-eu.github.io/IncidencePrevalence/")

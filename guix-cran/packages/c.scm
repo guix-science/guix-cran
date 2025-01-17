@@ -31383,13 +31383,13 @@ combined to construct new indices.")
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
-    (version "1.2")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimMobTools" version))
        (sha256
-        (base32 "1kx1hkyn96bhw237hvzrkr1hc8nf02p90lz9gg0rzcjx0zhks4s7"))))
+        (base32 "0lwhn04qxi3kiwiyyx2avgckvhsckw44swzaqkshm3yrz1v4z4wd"))))
     (properties `((upstream-name . "ClimMobTools")))
     (build-system r-build-system)
     (arguments
@@ -33524,20 +33524,19 @@ drive heterogeneity in the predicted individual-level effects.")
 (define-public r-cjar
   (package
     (name "r-cjar")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cjar" version))
        (sha256
-        (base32 "0rq9ryhp2h3p927227chzwbjn7x22h9ckkha2kclhx0jh7swf5y7"))))
+        (base32 "0jdvkzc39r1g6p1r5ghfnib52czjnrf3p6f3mccyvc38fvplcpqs"))))
     (properties `((upstream-name . "cjar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs
-                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
@@ -33550,6 +33549,7 @@ drive heterogeneity in the predicted individual-level effects.")
                              r-lubridate
                              r-jsonlite
                              r-jose
+                             r-httr2
                              r-httr
                              r-glue
                              r-dplyr
@@ -33557,7 +33557,7 @@ drive heterogeneity in the predicted individual-level effects.")
     (home-page "https://cran.r-project.org/package=cjar")
     (synopsis "R Client for 'Customer Journey Analytics' ('CJA') API")
     (description
-     "Connect to the CJA API, which powers CJA Workspace
+     "Connect and pull data from the CJA API, which powers CJA Workspace
 <https://github.com/@code{AdobeDocs/cja-apis>}.  The package was developed with
 the analyst in mind and will continue to be developed with the guiding
 principles of iterative, repeatable, timely analysis.  New features are actively
@@ -36266,13 +36266,13 @@ Press.")
 (define-public r-choosegcm
   (package
     (name "r-choosegcm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chooseGCM" version))
        (sha256
-        (base32 "1458dl21d0pslwcmqr791y3gk36l3pisn62pprf2akzwmyba08cl"))))
+        (base32 "1iwd6favpk03g00m3zx8a2fkygcpwprfmbwm9crwx2id122js0by"))))
     (properties `((upstream-name . "chooseGCM")))
     (build-system r-build-system)
     (arguments
@@ -36297,7 +36297,8 @@ Press.")
 (GCMs) in the context of projecting models to future scenarios.  It is provided
 clusterization algorithms, distance and correlation metrics, as well as a
 tailor-made algorithm to detect the optimum subset of GCMs that recreate the
-environment of all GCMs.")
+environment of all GCMs as proposed in Esser et al. (2025)
+<doi:10.1111/gcb.70008>.")
     (license license:expat)))
 
 (define-public r-cholwishart
@@ -37673,13 +37674,13 @@ functions work on model objects from - optionally weighted - linear regression
 (define-public r-chem16s
   (package
     (name "r-chem16s")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chem16S" version))
        (sha256
-        (base32 "0jjxirnjg966rbjv1lv889xpzjlspp0a3d41f90x8hqys6bbkln7"))))
+        (base32 "1vf8wir9g2b468lvvsl9ryrx27hv79iyly2d5h6vba3ng0g4ajzz"))))
     (properties `((upstream-name . "chem16S")))
     (build-system r-build-system)
     (arguments

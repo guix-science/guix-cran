@@ -8662,13 +8662,13 @@ updating of the dependence modelling (see Sheu et al., 2016,
 (define-public r-ern
   (package
     (name "r-ern")
-    (version "2.0.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ern" version))
        (sha256
-        (base32 "13hw1ji3d8dqr8al4rykg75a392w4306gmr3m2mlrwdy7rzi9pyi"))))
+        (base32 "1c38ly6q1gwyb02dg50c5c2wj9xcy2sndgrqqx7in2w24217056n"))))
     (properties `((upstream-name . "ern")))
     (build-system r-build-system)
     (arguments
@@ -9872,13 +9872,13 @@ data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.15.5")
+    (version "0.15.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5d" version))
        (sha256
-        (base32 "1n0g7jsxyhhrh2ls391lrk79a0dx35x7nyp48q1lh12s7r8xj050"))))
+        (base32 "1cj4mqx7d0cblfi9qnb9waswic28vc9y3gjgnxl38xn8mq0w774h"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (arguments
@@ -9905,7 +9905,7 @@ clinical and economic evaluation of health care as well as in population health
 surveys.  The eq5d package provides methods to calculate index scores from a
 subject's dimension scores.  32 TTO and 11 VAS EQ-5D-3L value sets including
 those for countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and
-Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 44 EQ-5D-5L EQ-VT value
+Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 45 EQ-5D-5L EQ-VT value
 sets, the EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
 <doi:10.1016/j.jval.2012.02.008>, the crosswalk value sets for Bermuda, Jordan
 and Russia and the reverse crosswalk value sets.  10 EQ-5D-Y value sets are also
@@ -10528,13 +10528,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.3-2")
+    (version "0.6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "1r5r7n62sk3dwqgin4pmafb5g3hfw3ikyfwxc15gyxgx3v4cs52h"))))
+        (base32 "1w9xszsivx81dsxfv5v578q9hk4k0wmflr8fih4blgf19kjnnhfw"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments
@@ -14140,13 +14140,13 @@ effect modification.")
 (define-public r-endogeneity
   (package
     (name "r-endogeneity")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "endogeneity" version))
        (sha256
-        (base32 "19hhs46sz7m7qsnwrz81740iq6g8n0z3rnw2shv6sakc5z0z7jga"))))
+        (base32 "0wqmpvm5k38nchgahhmlg8s1xb3806anpgkf16bl99m852aixwyi"))))
     (properties `((upstream-name . "endogeneity")))
     (build-system r-build-system)
     (arguments

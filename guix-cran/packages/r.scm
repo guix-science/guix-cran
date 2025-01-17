@@ -954,6 +954,37 @@ data, and converting degrees, minutes, and seconds latitude and longitude
 coordinates to decimal degrees.")
     (license license:gpl3+)))
 
+(define-public r-rwlifetable
+  (package
+    (name "r-rwlifetable")
+    (version "0.1.0-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rwlifetable" version))
+       (sha256
+        (base32 "09pkzn3iysjv43fmxc7w4cqlgi0idlfgg522ayz3q618zizzya4c"))))
+    (properties `((upstream-name . "rwlifetable")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=rwlifetable")
+    (synopsis "Estimation of Life Tables Using Rolling Windows")
+    (description
+     "Estimates life tables, specifically (crude) death rates and (raw and graduated)
+death probabilities, using rolling windows in one (e.g., age), two (e.g., age
+and time) or three (e.g., age, time and income) dimensions.  The package can
+also be utilised for summarising statistics and smoothing continuous variables
+through rolling windows in other domains, such as estimating averages of
+self-positioning ideology in political science.  Acknowledgements: The authors
+wish to thank Ministerio de Ciencia, InnovaciÃ³n y Universidades (grant
+PID2021-128228NB-I00) and Generalitat Valenciana (grants HIECPU/2023/2,
+Conselleria de Hacienda, EconomÃ­a y AdministraciÃ³n PÃºblica, and CIGE/2023/7,
+Conselleria de EducaciÃ³n, Cultura, Universidades y Empleo) for supporting this
+research.")
+    (license (license:fsdg-compatible "EPL"))))
+
 (define-public r-rwisp
   (package
     (name "r-rwisp")
@@ -12257,30 +12288,6 @@ rpart package.")
 algorithm from the 1984 book by Breiman, Friedman, Olshen and Stone in addition
 to the rpart package (Breiman, Friedman, Olshen, Stone (1984,
 ISBN:9780412048418).")
-    (license license:gpl3)))
-
-(define-public r-rpanglaodb
-  (package
-    (name "r-rpanglaodb")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rPanglaoDB" version))
-       (sha256
-        (base32 "1ykzih3idgp2yhbw4039hhhzv0nmrmn3wx2c4dxmgp5qzhrg42nf"))))
-    (properties `((upstream-name . "rPanglaoDB")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2 r-xml r-seurat r-pbapply r-matrix))
-    (home-page "https://github.com/dosorio/rPanglaoDB/")
-    (synopsis
-     "Download and Merge Single-Cell RNA-Seq Data from the PanglaoDB Database")
-    (description
-     "Download and merge labeled single-cell RNA-seq data from the @code{PanglaoDB}
-<https://panglaodb.se/> into a Seurat object.")
     (license license:gpl3)))
 
 (define-public r-rpanel
@@ -48372,6 +48379,34 @@ Asso Miettinen, Pauli and others (2008) <doi:10.1109/TKDE.2008.53>,
 (2010) <doi:10.1016/j.jcss.2009.05.002> , @code{topFiberM} A. Desouki, M.
 Roeder, A. Ngonga (2019) <@code{arXiv:1903.10326>}.")
     (license license:gpl3)))
+
+(define-public r-rbm25
+  (package
+    (name "r-rbm25")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbm25" version))
+       (sha256
+        (base32 "0iz2knnva5zbw5gpmfqgshk3v6xsnxsfk180q1pqqrcm134fh31j"))))
+    (properties `((upstream-name . "rbm25")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-r6))
+    (home-page "https://davzim.github.io/rbm25/")
+    (synopsis
+     "Light Wrapper Around the 'BM25' 'Rust' Crate for Okapi BM25 Text Search")
+    (description
+     "BM25 is a ranking function used by search engines to rank matching documents
+according to their relevance to a user's search query.  This package provides a
+light wrapper around the BM25 rust crate for Okapi BM25 text search.  For more
+information, see Robertson et al. (1994)
+<https://trec.nist.gov/pubs/trec3/t3_proceedings.html>.")
+    (license license:expat)))
 
 (define-public r-rblt
   (package

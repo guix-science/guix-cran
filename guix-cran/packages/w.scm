@@ -6698,13 +6698,13 @@ the jpeg and png packages.")
 (define-public r-webmap
   (package
     (name "r-webmap")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webmap" version))
        (sha256
-        (base32 "1j73d0hx9rrvc81id98lp2s2ya4whdkppw27cbz4rcwpa6lgzyg3"))))
+        (base32 "09waqr34fy0bg6d2n3i8i0i8qv5w4f2srv0rh2054lr44dl1mj8d"))))
     (properties `((upstream-name . "webmap")))
     (build-system r-build-system)
     (arguments

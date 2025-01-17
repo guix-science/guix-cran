@@ -957,6 +957,39 @@ API, allowing users to send and receive text messages from R. See
 <https://www.twilio.com/docs/> for more information.")
     (license license:expat)))
 
+(define-public r-twig
+  (package
+    (name "r-twig")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twig" version))
+       (sha256
+        (base32 "0x46y3az5dg488jjp6pby5k5qaqqa49z62s1m52lssmdrq850x2y"))))
+    (properties `((upstream-name . "twig")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2 r-ggplot2 r-foreach r-doparallel
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.dashlab.ca/")
+    (synopsis
+     "For Streamlining Decision and Economic Evaluation Models using Grammar of Modeling")
+    (description
+     "This package provides tools for building decision and cost-effectiveness
+analysis models.  It enables users to write these models concisely, simulate
+outcomesâincluding probabilistic analysesâefficiently using optimized
+vectorized processes and parallel computing, and produce results.  The package
+employs a Grammar of Modeling approach, inspired by the Grammar of Graphics, to
+streamline model construction.  For an interactive graphical user interface, see
+@code{DecisionTwig} at <https://www.dashlab.ca/projects/decision_twig/>.
+Comprehensive tutorials and vignettes are available at
+<https://hjalal.github.io/twig/>.")
+    (license license:gpl3+)))
+
 (define-public r-twfy
   (package
     (name "r-twfy")
@@ -10790,6 +10823,39 @@ detailed description can be found in C. Lee, L. Li, H. Zhang, and M. Wang
 sign series for trace regression (ASSIST) algorithm.")
     (license license:gpl2+)))
 
+(define-public r-trace
+  (package
+    (name "r-trace")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trace" version))
+       (sha256
+        (base32 "0y54cz3glr42gcn3lbg2r69z8sbapxg4cgjgm5fa20wc49r8cm5h"))))
+    (properties `((upstream-name . "trace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-seqinr
+                             r-pracma
+                             r-plotly
+                             r-mgcv
+                             r-lme4))
+    (native-inputs (list r-knitr))
+    (home-page "https://zachariahmclean.github.io/trace/")
+    (synopsis "Tandem Repeat Analysis by Capillary Electrophoresis")
+    (description
+     "This package provides a pipeline for short tandem repeat instability analysis
+from fragment analysis data.  Inputs of fsa files or peak tables, and a user
+supplied metadata data-frame.  The package identifies ladders, calls peaks,
+identifies the modal peaks, calls repeats, then calculates repeat instability
+metrics (e.g. expansion index from Lee et al. (2010)
+<doi:10.1186/1752-0509-4-29>).")
+    (license license:expat)))
+
 (define-public r-tr8
   (package
     (name "r-tr8")
@@ -15862,44 +15928,6 @@ can create @code{timeR} objects and use them to record all timings, and extract
 recordings as data frame for later use.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-timeplyr
-  (package
-    (name "r-timeplyr")
-    (version "0.8.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "timeplyr" version))
-       (sha256
-        (base32 "1fcczr3q7c1sqwsk2i4vqy8bpipzvl5f99j1q972c3syzyas0rqa"))))
-    (properties `((upstream-name . "timeplyr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-timechange
-                             r-tidyselect
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-pillar
-                             r-lubridate
-                             r-ggplot2
-                             r-dplyr
-                             r-data-table
-                             r-cppdoubles
-                             r-cpp11
-                             r-collapse
-                             r-cheapr))
-    (home-page "https://cran.r-project.org/package=timeplyr")
-    (synopsis "Fast Tidy Tools for Date and Date-Time Manipulation")
-    (description
-     "This package provides a set of fast tidy functions for wrangling, completing and
-summarising date and date-time data.  It combines tidyverse syntax with the
-efficiency of data.table and speed of collapse'.")
-    (license license:gpl2+)))
 
 (define-public r-timeperiodsr
   (package

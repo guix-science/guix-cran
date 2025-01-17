@@ -14935,13 +14935,13 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
 (define-public r-amadeus
   (package
     (name "r-amadeus")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amadeus" version))
        (sha256
-        (base32 "1x8jmx1d66d3mfsa9nj9v6df9qcdy1njxcvdlr25waqxgqzrfwn7"))))
+        (base32 "0czy5vpxyss419jcc9bnvsidyxdq2sxijvslq06xgwa8r2f0zkiq"))))
     (properties `((upstream-name . "amadeus")))
     (build-system r-build-system)
     (arguments
@@ -14957,7 +14957,6 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
                              r-rvest
                              r-rlang
                              r-rdpack
-                             r-parallelly
                              r-nhdplustools
                              r-httr
                              r-exactextractr
@@ -21308,13 +21307,13 @@ uncertainty and conditional (given stage-one outcome) constraints are supported.
 (define-public r-adobeanalyticsr
   (package
     (name "r-adobeanalyticsr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adobeanalyticsr" version))
        (sha256
-        (base32 "1cbr86ssnd0bl6pvqziz16nvh3gzmd170pkk8wr2rkhm0rryh2l4"))))
+        (base32 "1q6kh83jfd57l7ihc30a8ssxz728p860vq1gpigrck7r46zsm73y"))))
     (properties `((upstream-name . "adobeanalyticsr")))
     (build-system r-build-system)
     (arguments
@@ -21334,6 +21333,7 @@ uncertainty and conditional (given stage-one outcome) constraints are supported.
                              r-lifecycle
                              r-jsonlite
                              r-jose
+                             r-httr2
                              r-httr
                              r-glue
                              r-ggplot2
@@ -21681,13 +21681,13 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (define-public r-admiralpeds
   (package
     (name "r-admiralpeds")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralpeds" version))
        (sha256
-        (base32 "06821f08f7mgl20p1i90h6bwzhhcnb6clmqxrygxn9fs9iza4ha0"))))
+        (base32 "05zyg8gxgj72vz63y6fjxz1wki0524y3g8nfrky0y53wfchl2fdw"))))
     (properties `((upstream-name . "admiralpeds")))
     (build-system r-build-system)
     (arguments
@@ -21719,13 +21719,13 @@ extension package of the admiral package for pediatric clinical trials.")
 (define-public r-admiralophtha
   (package
     (name "r-admiralophtha")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralophtha" version))
        (sha256
-        (base32 "1690id6s5633r47av68wivg436h5s13a5qlg9a1dyfghd6wfa79f"))))
+        (base32 "1rsyl8qq36zw6bhd6dmq8m6vjcrpyrvm3bd52iyxpmb0xca2j83x"))))
     (properties `((upstream-name . "admiralophtha")))
     (build-system r-build-system)
     (arguments
@@ -21741,6 +21741,7 @@ extension package of the admiral package for pediatric clinical trials.")
                              r-lifecycle
                              r-hms
                              r-dplyr
+                             r-cli
                              r-admiraldev
                              r-admiral))
     (native-inputs (list r-knitr))
@@ -23434,13 +23435,13 @@ University of Trento, Italy.")
 (define-public r-adar
   (package
     (name "r-adar")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaR" version))
        (sha256
-        (base32 "0vd79id211n1w8hqr3jpncdf3x8rg80gkdwfg4618hkadzdf2a2h"))))
+        (base32 "1gap73h3xmgnyi8zbkgskvfy2sch02pirbhdq3h80qp21jhbj2wp"))))
     (properties `((upstream-name . "adaR")))
     (build-system r-build-system)
     (arguments

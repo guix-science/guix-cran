@@ -3218,13 +3218,13 @@ in spreadsheet files.")
 (define-public r-unhcrthemes
   (package
     (name "r-unhcrthemes")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unhcrthemes" version))
        (sha256
-        (base32 "1qi3clng771mzbaa4j6a80wn6am0fl2gix2xdmy3d6ygrrgkgd7r"))))
+        (base32 "02qvqjwxyxdxc8g3irm1ircz3qyd7w7x84fp2dvqjpxk27qcwki6"))))
     (properties `((upstream-name . "unhcrthemes")))
     (build-system r-build-system)
     (arguments

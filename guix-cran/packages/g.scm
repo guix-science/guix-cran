@@ -3006,13 +3006,13 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
 (define-public r-gslnls
   (package
     (name "r-gslnls")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gslnls" version))
        (sha256
-        (base32 "1rfzdd9qsiqam5m9f2pi909lchcmmb1ljqiiwd5dpblbk8nqhm82"))))
+        (base32 "16wg6nwpa4lpfb1cc9xhak672i0vddsbfly4m3mr0mp7v4n0rsgr"))))
     (properties `((upstream-name . "gslnls")))
     (build-system r-build-system)
     (arguments
@@ -3024,16 +3024,19 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
     (home-page "https://github.com/JorisChau/gslnls")
     (synopsis "GSL Multi-Start Nonlinear Least-Squares Fitting")
     (description
-     "An R interface to nonlinear least-squares optimization with the GNU Scientific
-Library (GSL), see M. Galassi et al. (2009, ISBN:0954612078).  The available
-trust region methods include the Levenberg-Marquardt algorithm with and without
-geodesic acceleration, the Steihaug-Toint conjugate gradient algorithm for large
-systems and several variants of Powell's dogleg algorithm.  Multi-start
-optimization based on quasi-random samples is implemented using a modified
-version of the algorithm in Hickernell and Yuan (1997, OR Transactions).
-Bindings are provided to tune a number of parameters affecting the low-level
-aspects of the trust region algorithms.  The interface mimics R's @code{nls()}
-function and returns model objects inheriting from the same class.")
+     "An R interface to weighted nonlinear least-squares optimization with the GNU
+Scientific Library (GSL), see M. Galassi et al. (2009, ISBN:0954612078).  The
+available trust region methods include the Levenberg-Marquardt algorithm with
+and without geodesic acceleration, the Steihaug-Toint conjugate gradient
+algorithm for large systems and several variants of Powell's dogleg algorithm.
+Multi-start optimization based on quasi-random samples is implemented using a
+modified version of the algorithm in Hickernell and Yuan (1997, OR
+Transactions).  Robust nonlinear regression can be performed using various
+robust loss functions, in which case the optimization problem is solved by
+iterative reweighted least squares (IRLS).  Bindings are provided to tune a
+number of parameters affecting the low-level aspects of the trust region
+algorithms.  The interface mimics R's @code{nls()} function and returns model
+objects inheriting from the same class.")
     (license license:lgpl3)))
 
 (define-public r-gsisdecoder
@@ -31760,13 +31763,13 @@ to quantify model sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.10.0")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcplyr" version))
        (sha256
-        (base32 "04g8p92aw8ihndlrlxlhvhrqgqv9x6izykpfs8rfn1jc3bisbyyd"))))
+        (base32 "1vxslc0n6dimalxqiw3qzpva4aqjkarnp88k81zrmr8j1qgwhf7v"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
     (arguments

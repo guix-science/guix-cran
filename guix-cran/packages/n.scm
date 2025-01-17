@@ -3457,6 +3457,35 @@ incorporates an interactive shiny web application, @code{nonparboot_app()},
 offering intuitive, user-friendly data exploration.")
     (license license:expat)))
 
+(define-public r-npbbbdaefficiency
+  (package
+    (name "r-npbbbdaefficiency")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPBBBDAefficiency" version))
+       (sha256
+        (base32 "1gsfh6674w5qz42bbpl6k40q2gxzgpb74slnhqy5l66gkcc91m26"))))
+    (properties `((upstream-name . "NPBBBDAefficiency")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=NPBBBDAefficiency")
+    (synopsis
+     "A-Efficiency for Nested Partially Balanced Bipartite Block (NPBBB) Designs")
+    (description
+     "Nested Partially Balanced Bipartite Block (NPBBB) designs involve two levels of
+blocking: (i) The block design (ignoring sub-block classification) serves as a
+partially balanced bipartite block (PBBB) design, and (ii) The sub-block design
+(ignoring block classification) also serves as a PBBB design.  More details on
+constructions of the PBBB designs and their characterization properties are
+available in Vinayaka et al.(2023) <doi:10.1080/03610926.2023.2251623>.  This
+package calculates A-efficiency values for both block and sub-block structures,
+along with all parameters of a given NPBBB design.")
+    (license license:gpl3)))
+
 (define-public r-npbayesimputecat
   (package
     (name "r-npbayesimputecat")

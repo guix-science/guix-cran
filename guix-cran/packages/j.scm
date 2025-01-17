@@ -2639,13 +2639,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.8")
+    (version "0.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "0iqp762fp6qks0jrvqk6z1f6bc61zyda1znfkw02cwbqs1rlm3c4"))))
+        (base32 "0zhj9f523n1s8vb5pidb7zv8p88yx2xqg5kj7r3ls9wv7s5n1hjv"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (arguments

@@ -4549,13 +4549,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "0lb1yy0z5g1iqgjy1h6hkamskyrdaw5xgmv81124qcv13bgc2qjc"))))
+        (base32 "0fjw19k6zb8ifhq065d7c3v3mcrxwc1vbbc75gx9b4iq0sz8b7nk"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -4619,6 +4619,43 @@ using the similarity constructed a weighted drug similarity network.  Finally,
 it used a network propagation algorithm on the network to identify drugs with
 significant target abnormalities as candidate drugs.")
     (license license:gpl2+)))
+
+(define-public r-drugsens
+  (package
+    (name "r-drugsens")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drugsens" version))
+       (sha256
+        (base32 "1rhgixw2iyf86r65ni6zabgd00m9lf16iws12dn3q1x84yikws73"))))
+    (properties `((upstream-name . "drugsens")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-testthat
+                             r-stringr
+                             r-roxygen2
+                             r-knitr
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://git.scicore.unibas.ch/ovca-research/drugsens/")
+    (synopsis
+     "Automated Analysis of 'QuPath' Output Data and Metadata Extraction")
+    (description
+     "This package provides a comprehensive toolkit for analyzing microscopy data
+output from @code{QuPath} software.  Provides functionality for automated data
+processing, metadata extraction, and statistical analysis of imaging results.
+The methodology implemented in this package is based on Labrosse et al. (2024)
+<doi:10.1016/j.xpro.2024.103274> \"Protocol for quantifying drug sensitivity in
+3D patient-derived ovarian cancer models\", which describes the complete workflow
+for drug sensitivity analysis in patient-derived cancer models.")
+    (license license:expat)))
 
 (define-public r-drugprepr
   (package
@@ -5694,13 +5731,13 @@ estimation methods can be used to estimate the nuisance functions.")
 (define-public r-drda
   (package
     (name "r-drda")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drda" version))
        (sha256
-        (base32 "0npw800swbdv3s0qj345101y5c8f7am40w8cf7krmyh3jj50cyx0"))))
+        (base32 "1f93g35yg3kqybqnby08n5l7bgqghxypkpp4ivj9164b3yj8iy39"))))
     (properties `((upstream-name . "drda")))
     (build-system r-build-system)
     (arguments

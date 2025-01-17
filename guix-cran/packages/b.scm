@@ -12233,13 +12233,13 @@ color matrix representation on an interactive map.")
 (define-public r-bittermelon
   (package
     (name "r-bittermelon")
-    (version "2.0.2")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bittermelon" version))
        (sha256
-        (base32 "0nd0jn28rfkqzvji54i4b53qjzl4xjbwnhsw55vyb3209hk84q1w"))))
+        (base32 "1q2b892x1h2fpgfxzh1a7skj23pl382wminwanr30sq083rll2xy"))))
     (properties `((upstream-name . "bittermelon")))
     (build-system r-build-system)
     (arguments
@@ -23108,19 +23108,25 @@ Large-Scale Gene Expression Data, P@code{LoS} ONE 7(3): e33624,
 (define-public r-bbw
   (package
     (name "r-bbw")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbw" version))
        (sha256
-        (base32 "0gycjqn36msa6cl4zdrjv2bpv14xm8m6nsc3rfjm8mw9zjjzrw6g"))))
+        (base32 "0a4sj2bmp6kwi99k7p7sb1fl8pd7wfk9kzacf3rs8ny5ag4a1g53"))))
     (properties `((upstream-name . "bbw")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-car))
+    (propagated-inputs (list r-withr
+                             r-stringr
+                             r-parallelly
+                             r-foreach
+                             r-doparallel
+                             r-cli
+                             r-car))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rapidsurveys/bbw")
     (synopsis "Blocked Weighted Bootstrap")
@@ -28397,13 +28403,13 @@ depicting species relationships.  Cardoso et al. (2015)
 (define-public r-basta
   (package
     (name "r-basta")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BaSTA" version))
        (sha256
-        (base32 "1db4qyg6dmcq2mzmf55n3lxxqk4i7jfz9s32560754h9n0y1l92p"))))
+        (base32 "18w549z5pqh84xy8zfdbjrj53xf0w9yqys6ihvsnjvajfw3yps4l"))))
     (properties `((upstream-name . "BaSTA")))
     (build-system r-build-system)
     (arguments
@@ -31707,6 +31713,38 @@ Statistics group for their support in developing the BACCT package.")
 vignette that illustrates the constituent packages (emulator, approximator,
 calibrator) in use.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-babytimer
+  (package
+    (name "r-babytimer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "babyTimeR" version))
+       (sha256
+        (base32 "1aq96ngp22ca6bx4mycbz5jl6slhb998vhqjkn0v23hrzbwy8dnw"))))
+    (properties `((upstream-name . "babyTimeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-snakecase
+                             r-readr
+                             r-lubridate
+                             r-janitor
+                             r-glue
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=babyTimeR")
+    (synopsis "Parse Output from 'BabyTime' Application")
+    (description
+     "@code{BabyTime} is an application for tracking infant and toddler care
+activities like sleeping, eating, etc.  This package will take the outputted
+.zip files and parse it into a usable list object with cleaned data.  It handles
+malformed and incomplete data gracefully and is designed to parse one directory
+at a time.")
+    (license license:expat)))
 
 (define-public r-babynamesil
   (package

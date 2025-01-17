@@ -2443,19 +2443,19 @@ Calculus.")
 (define-public r-mutualinf
   (package
     (name "r-mutualinf")
-    (version "1.2.2")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mutualinf" version))
        (sha256
-        (base32 "1k878nvsgs05krzndabi7aghzq2fzf0ncqj2sxy4czx4gf0ii3zv"))))
+        (base32 "1vm17nmpf6nj2x4x2rkffniapp4jwgmlv6xrcs2fn7griwhv10m9"))))
     (properties `((upstream-name . "mutualinf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-runner r-data-table))
+    (propagated-inputs (list r-runner r-rcpparmadillo r-rcpp r-data-table))
     (home-page "https://github.com/RafaelFuentealbaC/mutualinf")
     (synopsis "Computation and Decomposition of the Mutual Information Index")
     (description
@@ -5442,34 +5442,6 @@ for different item parameterizations and are based on the
 Expectation-Maximization paradigm.  Individual covariates affecting the class
 weights may be included in the new version (since 2.1).")
     (license license:gpl2+)))
-
-(define-public r-multilaterals
-  (package
-    (name "r-multilaterals")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multilaterals" version))
-       (sha256
-        (base32 "11zfdhn6qzqz0n31g23bn40wnfzkjndb753iiqvihirphzb74v5v"))))
-    (properties `((upstream-name . "multilaterals")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph r-ape))
-    (home-page "https://cran.r-project.org/package=multilaterals")
-    (synopsis "Transitive Index Numbers for Cross-Sections and Panel Data")
-    (description
-     "Computing transitive (and non-transitive) index numbers (Coelli et al., 2005
-<doi:10.1007/b136381>) for cross-sections and panel data.  For the calculation
-of transitive indexes, the EKS (Coelli et al., 2005 <doi:10.1007/b136381>; Rao
-et al., 2002 <doi:10.1007/978-1-4615-0851-9_4>) and Minimum spanning tree (Hill,
-2004 <doi:10.1257/0002828043052178>) methods are implemented.  Traditional
-fixed-base and chained indexes, and their growth rates, can also be derived
-using the Paasche, Laspeyres, Fisher and Tornqvist formulas.")
-    (license license:gpl3)))
 
 (define-public r-multikink
   (package
@@ -26126,13 +26098,13 @@ MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "0ri2bayqpbsxcq5r5nd0pv47dzbiwwajvsjd3a06jc0n3zhfjdqm"))))
+        (base32 "18x6sb0dwwk5xq20h3j5kyxrb0z6rnhi8z5bw7af2kwf3wwspr29"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (arguments
