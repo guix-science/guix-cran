@@ -16134,19 +16134,19 @@ time-dependent model parameters, in preparation.")
 (define-public r-timedepfrail
   (package
     (name "r-timedepfrail")
-    (version "0.0.0.9")
+    (version "0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TimeDepFrail" version))
        (sha256
-        (base32 "01b2lw40ycym3n2rjwpvhwrlip19vxhq8ywcx19wmc4bf1b1nrai"))))
+        (base32 "0jqvd40k9lab0lrmbxb64pi9kmzmf4vxg5dygkxf1ahk3d8gz2an"))))
     (properties `((upstream-name . "TimeDepFrail")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=TimeDepFrail")
+    (home-page "https://alessandragni.github.io/TimeDepFrail/")
     (synopsis "Time Dependent Shared Frailty Cox Model")
     (description
      "Fits time-dependent shared frailty Cox model (specifically the adapted Paik et
@@ -18704,6 +18704,46 @@ helpers by evaluating @code{dplyr::select()} with the relevant selection helper
 and a supplied data frame.  The package contains methods for traversing abstract
 syntax trees from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
     (license license:expat)))
+
+(define-public r-tidyfit
+  (package
+    (name "r-tidyfit")
+    (version "0.7.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyfit" version))
+       (sha256
+        (base32 "1c8ydjwszgbp0y49iiqyhvfkx2gbiz6y0kg98kz0hfgd63k66lk5"))))
+    (properties `((upstream-name . "tidyfit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yardstick
+                             r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-rsample
+                             r-rlang
+                             r-purrr
+                             r-progressr
+                             r-mass
+                             r-magrittr
+                             r-generics
+                             r-furrr
+                             r-dplyr
+                             r-dials
+                             r-crayon
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://tidyfit.residualmetrics.com")
+    (synopsis "Regularized Linear Modeling with Tidy Data")
+    (description
+     "An extension to the R tidy data environment for automated machine learning.  The
+package allows fitting and cross validation of linear regression and
+classification algorithms on grouped data.")
+    (license license:gpl3)))
 
 (define-public r-tidyfinance
   (package
@@ -24645,13 +24685,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "1psvwx3ylwxdd2v5li8c9ymc4a303gci0b9k4bh4wd2nbikb4wfl"))))
+        (base32 "0a7rl7k08m75l97q5gz95926ii994p1nvh50x9v8gxv77y0p8950"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (arguments
@@ -24664,6 +24704,7 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
                              r-rtables
                              r-rlang
                              r-rdpack
+                             r-nestcolor
                              r-mass
                              r-magrittr
                              r-lifecycle

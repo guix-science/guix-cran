@@ -2017,6 +2017,50 @@ training set) and deploying them on another (e.g., a test set).")
 friendly way.")
     (license license:expat)))
 
+(define-public r-duet
+  (package
+    (name "r-duet")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "duet" version))
+       (sha256
+        (base32 "02z2k39chd14d5phwji6x4hvy8mfcd6jm58cl820kq58kkazgl8z"))))
+    (properties `((upstream-name . "duet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list ffmpeg))
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-signal
+                             r-rlang
+                             r-rjson
+                             r-reshape2
+                             r-patchwork
+                             r-kza
+                             r-ggthemes
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=duet")
+    (synopsis
+     "Analysing Non-Verbal Communication in Dyadic Interactions from Video Data")
+    (description
+     "Analyzes non-verbal communication by processing data extracted from video
+recordings of dyadic interactions.  It supports integration with open source
+tools, currently limited to @code{OpenPose} (Cao et al. (2019)
+<doi:10.1109/TPAMI.2019.2929257>), converting its outputs into CSV format for
+further analysis.  The package includes functions for data pre-processing,
+visualization, and computation of motion indices such as velocity, acceleration,
+and jerkiness (Cook et al. (2013) <doi:10.1093/brain/awt208>), facilitating the
+analysis of non-verbal cues in paired interactions and contributing to research
+on human communication dynamics.")
+    (license license:expat)))
+
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")

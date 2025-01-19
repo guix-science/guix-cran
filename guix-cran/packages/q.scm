@@ -1712,13 +1712,13 @@ ability to automatically perform leave-one-out cross validation.")
 (define-public r-quantities
   (package
     (name "r-quantities")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantities" version))
        (sha256
-        (base32 "0rybq5q5airh01lp779hmqw448szx0i56sp5fv8aza2hmh6f7gxz"))))
+        (base32 "1hvfabq11ji6llwh6kp2yvl0cfppf7k9fgm7bb30csqimbs188x1"))))
     (properties `((upstream-name . "quantities")))
     (build-system r-build-system)
     (arguments
@@ -4958,13 +4958,13 @@ embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
 (define-public r-qindex-data
   (package
     (name "r-qindex-data")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qindex.data" version))
        (sha256
-        (base32 "1h10qcp0yiga5yw5mvw2snp2y02bmi6z5q2s6i144w362vn5hxn8"))))
+        (base32 "0a9y8b2pp4y8d6qvqmmakigz2bwa3i3iq8vndc8yg6dd4shjiybl"))))
     (properties `((upstream-name . "Qindex.data")))
     (build-system r-build-system)
     (arguments

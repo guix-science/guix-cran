@@ -8118,13 +8118,13 @@ with various graphical options - Greene et al.  2017
 (define-public r-ontologics
   (package
     (name "r-ontologics")
-    (version "0.7.0")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ontologics" version))
        (sha256
-        (base32 "1ggdnydxl5xdh8vjjxna778d3c3wvw1rcvvjdcnrllms8i30cvga"))))
+        (base32 "1hmwrc7sricrm1kywflz0lm17r1qxcr63jk2xv81ixq5r90p8v4g"))))
     (properties `((upstream-name . "ontologics")))
     (build-system r-build-system)
     (arguments

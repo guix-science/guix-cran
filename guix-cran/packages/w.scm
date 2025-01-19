@@ -3740,6 +3740,37 @@ windows as selection methods.  Election of the best model among those computed
 based on error metrics.  Chen et al.(2017) <doi:10.1007/s00216-017-0218-9>.")
     (license license:expat)))
 
+(define-public r-windfarmga
+  (package
+    (name "r-windfarmga")
+    (version "4.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "windfarmGA" version))
+       (sha256
+        (base32 "1ngxr4ysvxfijp17cmj8m6waxxwrq034qlqjhj9k3xi9s1832592"))))
+    (properties `((upstream-name . "windfarmGA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-calibrate))
+    (home-page "https://ysosirius.github.io/windfarmGA/index.html")
+    (synopsis "Genetic Algorithm for Wind Farm Layout Optimization")
+    (description
+     "The genetic algorithm is designed to optimize wind farms of any shape.  It
+requires a predefined amount of turbines, a unified rotor radius and an average
+wind speed value for each incoming wind direction.  A terrain effect model can
+be included that downloads an SRTM elevation model and loads a Corine Land Cover
+raster to approximate surface roughness.")
+    (license license:expat)))
+
 (define-public r-windex
   (package
     (name "r-windex")
@@ -9312,13 +9343,13 @@ details an examples can be found in the package website
 (define-public r-warbler
   (package
     (name "r-warbler")
-    (version "1.1.33")
+    (version "1.1.34")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "warbleR" version))
        (sha256
-        (base32 "1a3s2211whjnki77xkimjd71gyjp07ayyis85d8kgm21hmlqiiyq"))))
+        (base32 "005kdz24xgi5nk84msvmcl68x8rmd0p20vip6ln0aj39y3y7zyr7"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
     (arguments

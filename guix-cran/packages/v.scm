@@ -3043,13 +3043,13 @@ Also provided on the graph is the mean and variance of the distribution.")
 (define-public r-visualfields
   (package
     (name "r-visualfields")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visualFields" version))
        (sha256
-        (base32 "0p8a3xjhw6sjhnq5gscz5nsqk9fnzp6si5k2sa00qw6x70ihw0gk"))))
+        (base32 "0s03b7r9i3y0kksq2raqcn77icrar4jkpdxg5zybzzlw86nhkzpc"))))
     (properties `((upstream-name . "visualFields")))
     (build-system r-build-system)
     (arguments
@@ -6145,6 +6145,41 @@ spec files and to generate code which will enable plots to be embedded in
 properly configured web pages.  The default behavior is to generate an
 htmlwidget'.")
     (license (license:fsdg-compatible "AGPL + file LICENSE"))))
+
+(define-public r-veesa
+  (package
+    (name "r-veesa")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "veesa" version))
+       (sha256
+        (base32 "07f6pcd76cy1bxbfmbkmvhrlbhwg15qj9lk4z5bfqqnsmzqb9y7b"))))
+    (properties `((upstream-name . "veesa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-ggplot2
+                             r-forcats
+                             r-fdasrvf
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=veesa")
+    (synopsis "Pipeline for Explainable Machine Learning with Functional Data")
+    (description
+     "This package implements the Variable importance Explainable Elastic Shape
+Analysis pipeline for explainable machine learning with functional data inputs.
+Converts training and testing data functional inputs to elastic shape analysis
+principal components that account for vertical and/or horizontal variability.
+Computes feature importance to identify important principal components and
+visualizes variability captured by functional principal components.  See Goode
+et al. (2025) <doi:10.48550/@code{arXiv.2501.07602>} for technical details about
+the methodology.")
+    (license license:expat)))
 
 (define-public r-vedicdatetime
   (package

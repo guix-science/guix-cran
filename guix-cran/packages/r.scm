@@ -5156,6 +5156,41 @@ input validation, history recording, column formatters, packaged themes and
 more.")
     (license license:expat)))
 
+(define-public r-rtables-officer
+  (package
+    (name "r-rtables-officer")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtables.officer" version))
+       (sha256
+        (base32 "0g9bxa3x8j6v19h08kfdb8wz9pk70cx2fpvsxr5vayqdsfavx1wy"))))
+    (properties `((upstream-name . "rtables.officer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi
+                             r-rtables
+                             r-officer
+                             r-magrittr
+                             r-lifecycle
+                             r-formatters
+                             r-flextable
+                             r-checkmate))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/insightsengineering/rtables.officer")
+    (synopsis "Exporting Tools for 'rtables'")
+    (description
+     "Designed to create and display complex tables with R, the rtables R package
+allows cells in an rtables object to contain any high-dimensional data
+structure, which can then be displayed with cell-specific formatting
+instructions.  Additionally, the rtables.officer package supports export formats
+related to the Microsoft Office software suite, including Microsoft Word
+('docx') and Microsoft @code{PowerPoint} ('pptx').")
+    (license license:asl2.0)))
+
 (define-public r-rtables
   (package
     (name "r-rtables")
@@ -40269,42 +40304,6 @@ and how to use it visit <https://www.ready4-dev.com/>.  For a background to the
 methodological issues that the framework is attempting to help solve, see
 Hamilton et al. (2024) <doi:10.1007/s40273-024-01378-8>.")
     (license license:gpl3)))
-
-(define-public r-readwritesqlite
-  (package
-    (name "r-readwritesqlite")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "readwritesqlite" version))
-       (sha256
-        (base32 "1p80ghra71j83xrrsqrpqkdaylp4sl1daw1paxw9jpajw679n986"))))
-    (properties `((upstream-name . "readwritesqlite")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-sf
-                             r-rsqlite
-                             r-rlang
-                             r-lifecycle
-                             r-hms
-                             r-glue
-                             r-dbi
-                             r-crayon
-                             r-chk))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/poissonconsulting/readwritesqlite")
-    (synopsis "Enhanced Reading and Writing for 'SQLite' Databases")
-    (description
-     "Reads and writes data frames to SQLite databases while preserving time zones
-(for POSIXct columns), projections (for sfc columns), units (for units columns),
-levels (for factors and ordered factors) and classes for logical, Date and hms
-columns.  It also logs changes to tables and provides more informative error
-messages.")
-    (license license:expat)))
 
 (define-public r-readtextgrid
   (package

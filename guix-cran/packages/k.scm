@@ -3027,34 +3027,6 @@ existed dataset and remove abundant features by lasso.  Z Dai, L Jiayi, T Gong,
 C Wang (2021) <doi:10.1088/1742-6596/1955/1/012047>.")
     (license license:gpl2)))
 
-(define-public r-klexdatr
-  (package
-    (name "r-klexdatr")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "klexdatr" version))
-       (sha256
-        (base32 "141xs03sb0ixhjpr388fwf5h124mqkbj0k1xqw0whdhrm5051qsz"))))
-    (properties `((upstream-name . "klexdatr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf))
-    (home-page "https://github.com/poissonconsulting/klexdatr")
-    (synopsis "Kootenay Lake Exploitation Study Data")
-    (description
-     "Six relational tibbles from the Kootenay Lake Large Trout Exploitation study.
-The study which ran from 2008 to 2014 caught, tagged and released large Rainbow
-Trout and Bull Trout in Kootenay Lake by boat angling.  The fish were tagged
-with internal acoustic tags and/or high reward external tags and subsequently
-detected by an acoustic receiver array as well as reported by anglers.  The data
-are analysed by Thorley and Andrusak (1994) <doi:10.7717/peerj.2874> to estimate
-the natural and fishing mortality of both species.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
-
 (define-public r-kldtools
   (package
     (name "r-kldtools")

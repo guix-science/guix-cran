@@ -2443,13 +2443,13 @@ Calculus.")
 (define-public r-mutualinf
   (package
     (name "r-mutualinf")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mutualinf" version))
        (sha256
-        (base32 "1vm17nmpf6nj2x4x2rkffniapp4jwgmlv6xrcs2fn7griwhv10m9"))))
+        (base32 "0l600cfpwb8jlrlix249fx0a4zh3kcg3yvhpzwidl9p881r01913"))))
     (properties `((upstream-name . "mutualinf")))
     (build-system r-build-system)
     (arguments
@@ -3911,13 +3911,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
-    (version "0.8.3")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiscaleDTM" version))
        (sha256
-        (base32 "13kslxxbyil5y4ci5s9r0n0ymsrh8c65wvsdzhcgafh9ldr6l1ww"))))
+        (base32 "0j4jlak8r3p0aqfayfcq9m6lsxqh894ipjl7y85805sjda6mryk9"))))
     (properties `((upstream-name . "MultiscaleDTM")))
     (build-system r-build-system)
     (arguments
@@ -14134,6 +14134,31 @@ simulation output.  Dennis D. Boos and Jason A. Osborne (2015)
      "Estimates monotone regression and variance functions in a nonparametric model,
 based on Dette, Holger, Neumeyer, and Pilz (2006) <doi:10.3150/bj/1151525131>.")
     (license license:gpl2+)))
+
+(define-public r-monotonicitytest
+  (package
+    (name "r-monotonicitytest")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MonotonicityTest" version))
+       (sha256
+        (base32 "1zx7bimxa72alm1ghiwj7kykkzgig679ql2g21fbcdksv1kk8rgn"))))
+    (properties `((upstream-name . "MonotonicityTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-rcppeigen r-rcpp r-ggplot2))
+    (home-page "https://cran.r-project.org/package=MonotonicityTest")
+    (synopsis "Nonparametric Bootstrap Test for Regression Monotonicity")
+    (description
+     "This package implements nonparametric bootstrap tests for detecting monotonicity
+in regression functions from Hall, P. and Heckman, N. (2000)
+<doi:10.1214/aos/1016120363> Includes tools for visualizing results using
+Nadaraya-Watson kernel regression and supports efficient computation with C++'.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-monotonicity
   (package
@@ -27469,13 +27494,13 @@ from <https://www.gurobi.com> after obtaining a license.")
 (define-public r-milag
   (package
     (name "r-milag")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miLAG" version))
        (sha256
-        (base32 "16bkab769ip0xcyjk4mfxb9p4481819jyarvsqd4yqkm01xbkzr8"))))
+        (base32 "0vxc2gryxrkzhl81cyi2ggjcakbd4nr95kmk9r29cq0zbkhvpyhd"))))
     (properties `((upstream-name . "miLAG")))
     (build-system r-build-system)
     (arguments
@@ -27493,9 +27518,10 @@ sizes and times of measurements.  This package allows to use such growth curve
 data to determine the duration of \"microbial lag phase\" i.e.  the time needed
 for microbes to restart divisions.  It implements the most commonly used methods
 to calculate the lag duration, these methods are discussed and described in
-Opalek et.al.  2022.  Citation: \"How to determine microbial lag phase
-duration?\", M. Opalek, B. Smug, D. Wloch-Salamon (2022)
-<doi:10.1101/2022.11.16.516631>.")
+Opalek et.al.  2022.  Citation: Smug, B. J., Opalek, M., Necki, M., &
+Wloch-Salamon, D. (2024).  Microbial lag calculator: A shiny-based application
+and an R package for calculating the duration of microbial lag phase.  Methods
+in Ecology and Evolution, 15, 301â307 <doi:10.1111/2041-210X.14269>.")
     (license license:gpl3)))
 
 (define-public r-mikropml
@@ -30258,13 +30284,13 @@ data.  Implementing the method described in Dai and Lopez-Pintado (2022)
 (define-public r-mhctools
   (package
     (name "r-mhctools")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MHCtools" version))
        (sha256
-        (base32 "00vbp7rijd4955nbgqcmwi26h41xffl9r6s7aqwrcjgyb1ivvy2m"))))
+        (base32 "1crg0z9d4ipcqhq7g7ki9mjfrlvwygghrzn6w2k5vp0psw5fb26h"))))
     (properties `((upstream-name . "MHCtools")))
     (build-system r-build-system)
     (arguments
@@ -43405,13 +43431,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.10")
+    (version "0.6.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsbyname" version))
        (sha256
-        (base32 "1444a6gl24ra64p5zldia0kyn4hq01g5r49rc2mv0zq0gygxv67d"))))
+        (base32 "1v69vvdmbmywdaidgfvyrid2ckndbsxf3zgp8vfzi1h74g3pbj9i"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (arguments

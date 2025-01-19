@@ -3006,13 +3006,13 @@ core data for 0-800 ka <doi:10.5194/cp-12-1-2016>.")
 (define-public r-gslnls
   (package
     (name "r-gslnls")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gslnls" version))
        (sha256
-        (base32 "16wg6nwpa4lpfb1cc9xhak672i0vddsbfly4m3mr0mp7v4n0rsgr"))))
+        (base32 "0anzd5cn78cd01zzjp5agyrynb83r2prdc8bnc9s4jsmpcpklsih"))))
     (properties `((upstream-name . "gslnls")))
     (build-system r-build-system)
     (arguments
@@ -7071,13 +7071,13 @@ well as tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "1xglxba5i31hmam49mvklp17vwzagqc0gj05v61aq48ay0kj7pbv"))))
+        (base32 "12gd6m6jzf46kid5jd0m3dpj4r6s021pj4h7s4l08h6xnhp4ifnx"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (arguments
@@ -12281,13 +12281,13 @@ code with modular coding guidelines.")
 (define-public r-gmresls
   (package
     (name "r-gmresls")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmresls" version))
        (sha256
-        (base32 "1xzry0z02qb54ygvrykq3jyfrrs39zq0as8f54i7sdzx7nryxas3"))))
+        (base32 "1ciww5sr2m19hpi16376kf1frndh8cj580qy93zfwy1ni7i0ics0"))))
     (properties `((upstream-name . "gmresls")))
     (build-system r-build-system)
     (arguments
@@ -14138,13 +14138,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.5-4")
+    (version "0.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "0wd8ga9cabz9alzs6fpvpig9d0m4qlfasi7p7xv19n20hzd2106d"))))
+        (base32 "05crxkym6cbm0g1ciin8fgfgm9a6b5vi2z1x6fj4j5phak7kvmq5"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (arguments
@@ -25425,13 +25425,13 @@ Kurnia, A. (2018)<doi:10.21082/jpptp.v2n2.2018.p101-110>.")
 (define-public r-georob
   (package
     (name "r-georob")
-    (version "0.3-21")
+    (version "0.3-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "georob" version))
        (sha256
-        (base32 "1d412nnsf0yaqmbl1k5862c5b8gsv4hmv8ik9kyy4jk82q0976dh"))))
+        (base32 "0f4065cqvkp3y6ls3ax1xi5c7bl122xgz230xcnw5jdpfqnbky5z"))))
     (properties `((upstream-name . "georob")))
     (build-system r-build-system)
     (arguments

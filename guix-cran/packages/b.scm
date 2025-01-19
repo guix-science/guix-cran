@@ -29088,13 +29088,13 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
 (define-public r-basefun
   (package
     (name "r-basefun")
-    (version "1.1-4")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basefun" version))
        (sha256
-        (base32 "1m258ycxc9m2xdpvqzjk0hz3fg3bwbj3z2yx6raf315ws4s2h47f"))))
+        (base32 "0qdkby652lj7k9bm86djw7jzhbwnijyd2097c683bdk24jg0qh7h"))))
     (properties `((upstream-name . "basefun")))
     (build-system r-build-system)
     (arguments

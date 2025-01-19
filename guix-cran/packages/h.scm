@@ -436,13 +436,13 @@ al. (2024) <doi:10.1016/j.envsoft.2024.106094>.")
 (define-public r-hypervolume
   (package
     (name "r-hypervolume")
-    (version "3.1.4")
+    (version "3.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypervolume" version))
        (sha256
-        (base32 "1vw9s85gr1mv7c21x7rk66bz7wg3nfy874ixrhbcksyrxjq82q3c"))))
+        (base32 "1gca148ch6mr1s1s501d1fh830l6b74friygm09y2a89mc2g6g14"))))
     (properties `((upstream-name . "hypervolume")))
     (build-system r-build-system)
     (arguments
@@ -5232,13 +5232,13 @@ R., & Grassi, R. (2023) <doi:10.48550/@code{arXiv.2304.01737>}.")
 (define-public r-hoardr
   (package
     (name "r-hoardr")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hoardr" version))
        (sha256
-        (base32 "0dws91z1a25ynkdjj3f1lgp6qbgvfgnqi0mw14f4b13m670il0sf"))))
+        (base32 "0ffl1kd51n72lnhvqzs5q0fxsmbjcpf9wzhbck18gy5xz5bk6w3f"))))
     (properties `((upstream-name . "hoardr")))
     (build-system r-build-system)
     (arguments
@@ -14526,13 +14526,13 @@ shiny app for handwriter'.")
 (define-public r-handwriter
   (package
     (name "r-handwriter")
-    (version "3.2.3")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriter" version))
        (sha256
-        (base32 "1b17w22sc71h9gn20lvfwzh0i4jb58rg5vlzcjj82c2phz05cpxa"))))
+        (base32 "0ikvcpwbgfay6bi4r9160f5nn8j3brzravkyln41brlixaf7ivdn"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
     (arguments

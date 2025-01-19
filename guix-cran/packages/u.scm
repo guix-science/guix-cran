@@ -1991,41 +1991,6 @@ predictors.")
 on unsystematic sub-samples.")
     (license license:gpl2)))
 
-(define-public r-unstruwwel
-  (package
-    (name "r-unstruwwel")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "unstruwwel" version))
-       (sha256
-        (base32 "01zaa1vbflbjx6pgaclcbnymkmlnnmy3y3ggiy185iq5p5hhaw1i"))))
-    (properties `((upstream-name . "unstruwwel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-r6
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-dplyr
-                             r-assertthat))
-    (home-page "https://github.com/stefanieschneider/unstruwwel")
-    (synopsis "Detect and Parse Historic Dates")
-    (description
-     "Automatically converts language-specific verbal information, e.g., \"1st half of
-the 19th century,\" to its standardized numerical counterparts, e.g.,
-\"1801-01-01/1850-12-31.\" It follows the recommendations of the MIDAS ('Marburger
-Informations-, Dokumentations- und Administrations-System'), see
-<doi:10.11588/artdok.00003770>.")
-    (license license:gpl3)))
-
 (define-public r-unrtf
   (package
     (name "r-unrtf")
@@ -3243,6 +3208,38 @@ in spreadsheet files.")
      "This package provides a ggplot2 theme and color palettes following the United
 Nations High Commissioner for Refugees (UNHCR) Data Visualization Guidelines
 recommendations.")
+    (license license:expat)))
+
+(define-public r-unhcrdown
+  (package
+    (name "r-unhcrdown")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unhcrdown" version))
+       (sha256
+        (base32 "0hb1a7fsxqfdvvy4hrmazp0f3c5g4db48rvdw3a2pz4yf0askn6d"))))
+    (properties `((upstream-name . "unhcrdown")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xaringan
+                             r-rmarkdown
+                             r-pagedown
+                             r-officedown
+                             r-magick
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/unhcr-dataviz/unhcrdown")
+    (synopsis "UNHCR Branded Templates for R Markdown Documents")
+    (description
+     "Create United Nations High Commissioner for Refugees (UNHCR) branded documents,
+presentations, and reports using R Markdown templates.  This package provides
+customized formats that align with UNHCR's official brand guidelines for
+creating professional PDF reports, Word documents, @code{PowerPoint}
+presentations, and HTML outputs.")
     (license license:expat)))
 
 (define-public r-ungroup

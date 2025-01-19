@@ -4670,13 +4670,13 @@ periods.")
 (define-public r-evola
   (package
     (name "r-evola")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evola" version))
        (sha256
-        (base32 "14vpr9rds2z0pcxnhwq7w5p6h4xfsngwq34l037i5a017afh7nrr"))))
+        (base32 "0yyvy84afxrvwjff1rxc63193kg7jb8pb4hfrrjlg3hzbzbipxq4"))))
     (properties `((upstream-name . "evola")))
     (build-system r-build-system)
     (arguments
@@ -8465,13 +8465,13 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
 (define-public r-errors
   (package
     (name "r-errors")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errors" version))
        (sha256
-        (base32 "17almk09rl6q0g88kwkdcf30280s56ay6vx3sancnn9qfsp9zzrg"))))
+        (base32 "1sks7n3821lak567wr9z26mipkcsl009rmjwdkxcha969l5ic8f5"))))
     (properties `((upstream-name . "errors")))
     (build-system r-build-system)
     (arguments
@@ -20127,13 +20127,13 @@ Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
 (define-public r-ednajoint
   (package
     (name "r-ednajoint")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDNAjoint" version))
        (sha256
-        (base32 "0iwgrh18aaij88j9hxv0bq7hvdml339rmcz7pm21hrskv7j7gvk3"))))
+        (base32 "1sp8yra57yhkqclwizfhnc06m5kz73mzly00p5nbpzy38n60b4n1"))))
     (properties `((upstream-name . "eDNAjoint")))
     (build-system r-build-system)
     (arguments
@@ -20148,7 +20148,6 @@ Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
-                             r-magrittr
                              r-loo
                              r-lifecycle
                              r-ggplot2
@@ -20161,16 +20160,15 @@ Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
     (description
      "Models integrate environmental DNA (@code{eDNA}) detection data and traditional
 survey data to jointly estimate species catch rate (see package vignette:
-<https://bookdown.org/abigailkeller/@code{eDNAjoint_vignette/>}).  Models can be
-used with count data via traditional survey methods (i.e., trapping,
-electrofishing, visual) and replicated @code{eDNA} detection/nondetection data
-via polymerase chain reaction (i.e., PCR or @code{qPCR}) from multiple survey
-locations.  Estimated parameters include probability of a false positive
-@code{eDNA} detection, a site-level covariates that scale the sensitivity of
-@code{eDNA} surveys relative to traditional surveys, and catchability
-coefficients for traditional gear types.  Models are implemented with a Bayesian
-framework (Markov chain Monte Carlo) using the Stan probabilistic programming
-language.")
+<https://ednajoint.netlify.app/>).  Models can be used with count data via
+traditional survey methods (i.e., trapping, electrofishing, visual) and
+replicated @code{eDNA} detection/nondetection data via polymerase chain reaction
+(i.e., PCR or @code{qPCR}) from multiple survey locations.  Estimated parameters
+include probability of a false positive @code{eDNA} detection, a site-level
+covariates that scale the sensitivity of @code{eDNA} surveys relative to
+traditional surveys, and catchability coefficients for traditional gear types.
+Models are implemented with a Bayesian framework (Markov chain Monte Carlo)
+using the Stan probabilistic programming language.")
     (license license:gpl3)))
 
 (define-public r-edmdata

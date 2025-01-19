@@ -1808,13 +1808,13 @@ relationships between categorical and continuous variables in the data set.")
 (define-public r-autoslider-core
   (package
     (name "r-autoslider-core")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoslider.core" version))
        (sha256
-        (base32 "0xpk6pxqgaarlxcbs6i2bsm8pg1mzfdjbz3b2lrbv538qby3csyn"))))
+        (base32 "06m0w6ixnmqgd9f62r8y1pb3j93b30cl62r11a5nzwhdp2zkgphv"))))
     (properties `((upstream-name . "autoslider.core")))
     (build-system r-build-system)
     (arguments
@@ -11590,13 +11590,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.7")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "1rmgyscggir90rw34ksw9rd2snbi4zxxrhh4fdcpk4y931x312py"))))
+        (base32 "1lfsdp15wqlmw72cy68p60dl6h4i771v7ywzc4rkn7k6fm83gj6f"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (arguments
@@ -19083,13 +19083,13 @@ method).  Silva, Teixeira, and Manzione (2019)
 (define-public r-agriutilities
   (package
     (name "r-agriutilities")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agriutilities" version))
        (sha256
-        (base32 "17707cdhrzpxcr0xm6kavy3p762yzrjxg4anwgfrhdmrhvygpirf"))))
+        (base32 "1gdx642jbzjlz1aylcz0l2jh01941xrsaqd6sp6kldcg2zasazkm"))))
     (properties `((upstream-name . "agriutilities")))
     (build-system r-build-system)
     (arguments
@@ -19124,7 +19124,7 @@ complex analyses with confidence.  With built-in functions for fitting Linear
 Mixed Models, agriutilities is the ideal choice for anyone who wants to save
 time and focus on interpreting their results.  Some of the functions require the
 R package asreml for the ASReml software, this can be obtained upon purchase
-from VSN international (<https://vsni.co.uk/software/asreml-r>).")
+from VSN international <https://vsni.co.uk/software/asreml-r/>.")
     (license license:expat)))
 
 (define-public r-agritutorial

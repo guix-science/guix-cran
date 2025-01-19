@@ -8959,19 +8959,20 @@ or different hypothesized distributions.")
 (define-public r-sts
   (package
     (name "r-sts")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sts" version))
        (sha256
-        (base32 "1sz2g4zclyq6s29zydv5pifq6pxmnkr19v654w3gpnzl8ngna0aw"))))
+        (base32 "1jlqa2vn6r4zpx13m3hxz5dir0wi70q6v2ydw6d9d7p9skyg3skf"))))
     (properties `((upstream-name . "sts")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stm
+    (propagated-inputs (list r-tm
+                             r-stm
                              r-slam
                              r-rcpparmadillo
                              r-rcpp
@@ -8982,6 +8983,7 @@ or different hypothesized distributions.")
                              r-ggplot2
                              r-foreach
                              r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=sts")
     (synopsis
      "Estimation of the Structural Topic and Sentiment-Discourse Model for Text Analysis")
@@ -29983,18 +29985,19 @@ spatio-temporally uncorrelated random fields.")
 (define-public r-spacesxyz
   (package
     (name "r-spacesxyz")
-    (version "1.3-0")
+    (version "1.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spacesXYZ" version))
        (sha256
-        (base32 "10pmmfskgj1gfwfk5s44wdfk81l7kmga8xsirz49qnwy6xs148pv"))))
+        (base32 "096nyjcy4cnpxqfgvy4l7lq7cz152zdrgf3pmlrjc708pdqfm967"))))
     (properties `((upstream-name . "spacesXYZ")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-logger))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=spacesXYZ")
     (synopsis "CIE XYZ and some of Its Derived Color Spaces")
@@ -30108,13 +30111,13 @@ ggplot2 package.")
 (define-public r-spacci
   (package
     (name "r-spacci")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaCCI" version))
        (sha256
-        (base32 "1917yyh1dw21rbpr7cxg36rlxfnx4f6lsnkb46zbc79v9wrmciq7"))))
+        (base32 "0yzkb0lnd6xjw9y5xmhn595s3r6jd5jwm4i33z2pclfw6nrrri6x"))))
     (properties `((upstream-name . "SpaCCI")))
     (build-system r-build-system)
     (arguments
@@ -30130,6 +30133,7 @@ ggplot2 package.")
                              r-matrix
                              r-ggrepel
                              r-ggplot2
+                             r-fnn
                              r-dplyr
                              r-circlize))
     (home-page "https://cran.r-project.org/package=SpaCCI")
@@ -47346,13 +47350,13 @@ Powered by the html2canvas @code{JavaScript} library.")
 (define-public r-shinyscholar
   (package
     (name "r-shinyscholar")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyscholar" version))
        (sha256
-        (base32 "0xa4b5qhkjsm3qyafm662p2hc5884ccrrlf8ysdf5r7686mhgdcz"))))
+        (base32 "090yvfvzwivjka540jd6ch6b8kaq01qwsvqrylmks38xrciqvjnc"))))
     (properties `((upstream-name . "shinyscholar")))
     (build-system r-build-system)
     (arguments
@@ -47380,7 +47384,8 @@ tables.  Use to create complex analytical applications, following best practices
 in open science and software development.  Includes functions for automating
 repetitive development tasks and an example application at
 @code{run_shinyscholar()} that requires install.packages(\"shinyscholar\",
-dependencies = TRUE).")
+dependencies = TRUE).  A guide to developing applications can be found on the
+package website.")
     (license license:gpl3)))
 
 (define-public r-shinysbm
@@ -58721,6 +58726,32 @@ demonstrate the ability of @code{SeedMatchR} to detect cumulative changes in
 differential gene expression attributed to @code{siRNA} seed regions.")
     (license license:expat)))
 
+(define-public r-seedmaker
+  (package
+    (name "r-seedmaker")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeedMaker" version))
+       (sha256
+        (base32 "05bc8zrgv4v5yhhcgs42zrfi6dfzlj63kacidx866iz34q16n5qa"))))
+    (properties `((upstream-name . "SeedMaker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-tibble r-rlang r-dplyr r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hdhshowalter/SeedMaker")
+    (synopsis "Generate a Collection of Seeds from a Single Seed")
+    (description
+     "This package provides a mechanism for easily generating and organizing a
+collection of seeds from a single seed, which may be subsequently used to ensure
+reproducibility in processes/pipelines that utilize multiple random components
+(e.g., trial simulation).")
+    (license license:expat)))
+
 (define-public r-seedimbibition
   (package
     (name "r-seedimbibition")
@@ -65544,13 +65575,13 @@ online book Analyzing single-case data with R and scan', Juergen Wilbert (2023)
 (define-public r-scam
   (package
     (name "r-scam")
-    (version "1.2-17")
+    (version "1.2-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scam" version))
        (sha256
-        (base32 "00h5wcvh8wz2xqqh7j2qpdamhzdl3yawswyvwbp0r4ys30mfcgdk"))))
+        (base32 "0a9dr53ma3fq8nfh7q191wml3mm74gy8rl9c46p0y40h1va2y3qx"))))
     (properties `((upstream-name . "scam")))
     (build-system r-build-system)
     (arguments
@@ -68529,19 +68560,23 @@ linear predictor.")
 (define-public r-samprior
   (package
     (name "r-samprior")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMprior" version))
        (sha256
-        (base32 "1xp3wvgjp9252l8w42fsr61bh6ggs3b21df182rw3irh2ijn1mc0"))))
+        (base32 "1n1i1db04lsc9wqici1gyblikm8ka9pigyypp9kzsaas6c69yh4r"))))
     (properties `((upstream-name . "SAMprior")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rbest r-metrics r-ggplot2 r-checkmate
+    (propagated-inputs (list r-rbest
+                             r-metrics
+                             r-matchit
+                             r-ggplot2
+                             r-checkmate
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SAMprior")
@@ -71541,13 +71576,13 @@ the R package fs'.")
 (define-public r-s3-resourcer
   (package
     (name "r-s3-resourcer")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s3.resourcer" version))
        (sha256
-        (base32 "0njl93c1pxsg04fr74pnrpvx3z5m8nk2xv700l0jhbygshw8k5z2"))))
+        (base32 "1fm5axcz6xr3ddh0fw1kkwsk76920k4136g27skfwjyh82s5ynpd"))))
     (properties `((upstream-name . "s3.resourcer")))
     (build-system r-build-system)
     (arguments

@@ -1018,13 +1018,13 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
 (define-public r-pvda
   (package
     (name "r-pvda")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvda" version))
        (sha256
-        (base32 "0m7lw5wplwv3w7bwcflk6ijw83rv85zdch3flvcnx8slqxzaidrg"))))
+        (base32 "1mqavfghbvi9vw12asldipcfdym4vpsabc2qh77jil5fvcki6a33"))))
     (properties `((upstream-name . "pvda")))
     (build-system r-build-system)
     (arguments
@@ -23351,13 +23351,13 @@ Tardella (2017) <doi.org/10.1007/s11336-016-9530-0> and Mollica and Tardella
 (define-public r-plm
   (package
     (name "r-plm")
-    (version "2.6-4")
+    (version "2.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plm" version))
        (sha256
-        (base32 "0xpd6r75g2mc9dsf8ckafbd3pjyrvlyrh12izj9yaqfw4v0vr9fx"))))
+        (base32 "1aya449l2cp7xv41rdyggybpzqhy9z8gpb5s71f9a040nchcp24v"))))
     (properties `((upstream-name . "plm")))
     (build-system r-build-system)
     (arguments
@@ -27898,6 +27898,35 @@ phylogenetic diversity, phylogenetic endemism, evolutionary distinctiveness and
 global endangerment, as well as compositional turnover (e.g., beta diversity).")
     (license license:agpl3)))
 
+(define-public r-phyloraster
+  (package
+    (name "r-phyloraster")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phyloraster" version))
+       (sha256
+        (base32 "0xildxiv8k2hrxdp0zkf939zbag62griq1ksalq0vfb32sb5l106"))))
+    (properties `((upstream-name . "phyloraster")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-sesraster r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://CRAN.R-project.org/package=phyloraster")
+    (synopsis "Evolutionary Diversity Metrics for Raster Data")
+    (description
+     "Phylogenetic Diversity (PD, Faith 1992), Evolutionary Distinctiveness (ED, Isaac
+et al.  2007), Phylogenetic Endemism (PE, Rosauer et al.  2009; Laffan et al.
+2016), and Weighted Endemism (WE, Laffan et al.  2016) for presence-absence
+raster.  Faith, D. P. (1992) <doi:10.1016/0006-3207(92)91201-3> Isaac, N. J. et
+al. (2007) <doi:10.1371/journal.pone.0000296> Laffan, S. W. et al. (2016)
+<doi:10.1111/2041-210X.12513> Rosauer, D. et al. (2009)
+<doi:10.1111/j.1365-294X.2009.04311.x>.")
+    (license license:gpl3+)))
+
 (define-public r-phylopath
   (package
     (name "r-phylopath")
@@ -29359,13 +29388,13 @@ bimbam', plink', snptest', @code{LiMMBo}').")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1hrib4fpiyxrp195246r04jwdqs02y2q6c3553a5m2vbf66hqmgc"))))
+        (base32 "1dlih70x4q7f16y17xw0320jkzzffyjxmm84rgzdzny7wvbfcdd5"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments

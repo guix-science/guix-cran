@@ -901,6 +901,29 @@ bias-corrected and accelerated bootstrap method as described in \"An Introductio
 to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
     (license license:gpl2)))
 
+(define-public r-zephyr
+  (package
+    (name "r-zephyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zephyr" version))
+       (sha256
+        (base32 "1p6f830m6h620az21yfrflj9b8glmlp0kbph522vl3a31b3f9k3r"))))
+    (properties `((upstream-name . "zephyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-glue r-cli))
+    (home-page "https://novonordisk-opensource.github.io/zephyr/")
+    (synopsis "Structured Messages and Options")
+    (description
+     "This package provides a structured framework for consistent user communication
+and configuration management for package developers.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-zenstats
   (package
     (name "r-zenstats")

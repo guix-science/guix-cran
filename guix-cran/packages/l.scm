@@ -2369,13 +2369,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "1apn1wdmpn2ymb4g7lskw60dc9fhdppfyk5g3ckfkh7x9fv2vqyi"))))
+        (base32 "1r9ry2z60ryvfc2bfnr3vmv9r7m59sv9lhcw32jnjk8ric0fpxfb"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (arguments
@@ -8197,13 +8197,13 @@ on fitted lme or gls models.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.40")
+    (version "1.0.50")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "1dlgdpd1gzwkkvijqg479r6fx4jbzg6ifv0hwrxqlilxva84fya0"))))
+        (base32 "0d1xkb0jk0jdlzviv195676wk409966fbvs5i9rgl9kn4fnnmnqw"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (arguments
@@ -8444,13 +8444,13 @@ median of the distribution.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "0ydsh92lcp3vd3b81j59flqwi4y7y4d12p8978dv8ach2ip9djgp"))))
+        (base32 "08sfxmlvbaryrnp063vmbdykyrncqdm4f5l1fc3pc2l0y7y5l655"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
@@ -8464,8 +8464,10 @@ median of the distribution.")
 Language Model (LLM) APIs such as @code{OpenAI} (see
 <https://platform.openai.com/docs/quickstart> for details), Anthropic (see
 <https://docs.anthropic.com/en/api/getting-started> for details), Groq (see
-<https://console.groq.com/docs/api-reference> for details), and Together AI (see
-<https://docs.together.ai/docs/quickstart> for details).  Allows users to
+<https://console.groq.com/docs/api-reference> for details), Together AI (see
+<https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek} (see
+<https://api-docs.deepseek.com> for details), and Voyage AI (see
+<https://docs.voyageai.com/docs/introduction> for details).  Allows users to
 configure API parameters, send messages, and retrieve responses seamlessly
 within R.")
     (license license:expat)))

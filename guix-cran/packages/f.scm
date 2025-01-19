@@ -2972,13 +2972,13 @@ and Rice, Wirjanto, and Zhao (2020) <doi:10.1111/jtsa.12532>.")
 (define-public r-ftsa
   (package
     (name "r-ftsa")
-    (version "6.4")
+    (version "6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ftsa" version))
        (sha256
-        (base32 "14s3qr8czycqgn6a462bmy575mn77lrhrb4ahpaa67m2xlcqpw4v"))))
+        (base32 "0ljs77an344rp0m8hmxf9kf6z5dqva9da3j42v8kld1vaqr885vs"))))
     (properties `((upstream-name . "ftsa")))
     (build-system r-build-system)
     (arguments

@@ -8285,13 +8285,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1i4vdh5malwg4r81ik5n5p3b1iw2y8apvdnsy9r9fz39s4m4yia0"))))
+        (base32 "14fil8fy0l1dxk8kzlhin2f8mdcybx8svy40wl5fprl5x2w6kqwz"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -16651,13 +16651,13 @@ system in real-world conditions.")
 (define-public r-naturesounds
   (package
     (name "r-naturesounds")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NatureSounds" version))
        (sha256
-        (base32 "1l8c0zn0bbrcdf098pcbr8fvrl614cl6iq820q0sd7sr36n3k1jr"))))
+        (base32 "1l1r28c91wljr1nlwmkjkacwklniv5jdshj7x5sg2mbg6f8cfkbp"))))
     (properties `((upstream-name . "NatureSounds")))
     (build-system r-build-system)
     (arguments

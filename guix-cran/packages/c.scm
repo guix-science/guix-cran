@@ -2898,13 +2898,13 @@ keeping the column and/or row totals, performing these by blocks...")
 (define-public r-ctypesio
   (package
     (name "r-ctypesio")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctypesio" version))
        (sha256
-        (base32 "0flgxsby1nazs3dwnjwzkz1p964qygyivmifnrb2b2sy7smda41f"))))
+        (base32 "14g5j670bqdgalp351xbvr0df45jbw26jzvm5j9xccgyfqvzwr2r"))))
     (properties `((upstream-name . "ctypesio")))
     (build-system r-build-system)
     (arguments
@@ -2913,7 +2913,7 @@ keeping the column and/or row totals, performing these by blocks...")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/coolbutuseless/ctypesio")
     (synopsis
-     "Read and Write Standard C Types from Files, Connections and Raw Vectors")
+     "Read and Write Standard 'C' Types from Files, Connections and Raw Vectors")
     (description
      "Interacting with binary files can be difficult because R's types are a subset of
 what is generally supported by C'.  This package provides a suite of functions
@@ -10461,13 +10461,13 @@ confidence intervals.")
 (define-public r-coxmos
   (package
     (name "r-coxmos")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Coxmos" version))
        (sha256
-        (base32 "052af5hx820wmvflvz4pv3jlmmwap9d0lzx9k7v1ps6cidarz0wm"))))
+        (base32 "04pchdph9mmjnnlbry9yb1c0nfpninaza973mr27djmgjxl50y8n"))))
     (properties `((upstream-name . "Coxmos")))
     (build-system r-build-system)
     (arguments
@@ -10960,41 +10960,6 @@ appropriate for mixed data is used otherwise.")
 nearest neighbor variance estimation (NNVE) method of Wang and Raftery (2002)
 <DOI:10.1198/016214502388618780>.")
     (license license:gpl2+)))
-
-(define-public r-covregrf
-  (package
-    (name "r-covregrf")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CovRegRF" version))
-       (sha256
-        (base32 "0pzcdbwj1an8fls04g7znhbfaybqdp4rsjgnsvrh8rcmphnh48c9"))))
-    (properties `((upstream-name . "CovRegRF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-diagrammer r-data-tree r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CovRegRF")
-    (synopsis "Covariance Regression with Random Forests")
-    (description
-     "Covariance Regression with Random Forests (@code{CovRegRF}) is a random forest
-method for estimating the covariance matrix of a multivariate response given a
-set of covariates.  Random forest trees are built with a new splitting rule
-which is designed to maximize the distance between the sample covariance matrix
-estimates of the child nodes.  The method is described in Alakus et al. (2023)
-<doi:10.1186/s12859-023-05377-y>. @code{CovRegRF} uses @code{randomForestSRC}
-package (Ishwaran and Kogalur, 2022)
-<https://cran.r-project.org/package=@code{randomForestSRC>} by freezing at the
-version 3.1.0.  The custom splitting rule feature is utilised to apply the
-proposed splitting rule.  The @code{randomForestSRC} package implements
-@code{OpenMP} by default, contingent upon the support provided by the target
-architecture and operating system.  In this package, LAPACK and BLAS libraries
-are used for matrix decompositions.")
-    (license license:gpl3+)))
 
 (define-public r-covkcd
   (package
@@ -24624,13 +24589,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "1cwwznd4si0ch50mplzycc33m5zcic7r0psvggds0wrhc6b4dqnq"))))
+        (base32 "0qlajy98ldrgjs09h27m9nc9r4r8wqx1yr79p0vf1ldn778c8xxb"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (arguments
@@ -37397,13 +37362,13 @@ place in Washington, DC.")
 (define-public r-cherry
   (package
     (name "r-cherry")
-    (version "0.6-14")
+    (version "0.6-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cherry" version))
        (sha256
-        (base32 "03ipvd2ldzk7xsalkgcx0cyp9cp9b8qqjvz8nl0am412j3z9i5wg"))))
+        (base32 "004h4gzqapc14cplvvzz92zhzxhc8rinpr53g0wrrv4xmzirvgv9"))))
     (properties `((upstream-name . "cherry")))
     (build-system r-build-system)
     (arguments
@@ -38293,6 +38258,34 @@ knowledge discovery and data analysis (see @code{OpenAI} Web APIs details
 translation and image generation have been moved to other packages
 @code{deepRstudio} and @code{stableDiffusion4R}'.")
     (license license:artistic2.0)))
+
+(define-public r-chartreview
+  (package
+    (name "r-chartreview")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chartreview" version))
+       (sha256
+        (base32 "18q4gb47x4qwydywdqfc0nzfa5n6hpcqqvr7i87d3dg3hi5bfkln"))))
+    (properties `((upstream-name . "chartreview")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-weights r-rdpack r-anesrake))
+    (home-page "https://cran.r-project.org/package=chartreview")
+    (synopsis "Adaptive Multi-Wave Sampling for Efficient Chart Validation")
+    (description
+     "Functionality to perform adaptive multi-wave sampling for efficient chart
+validation.  Code allows one to define strata, adaptively sample using several
+types of confidence bounds for the quantity of interest (Lai's confidence bands,
+Bayesian credible intervals, normal confidence intervals), and sampling
+strategies (random sampling, stratified random sampling, Neyman's sampling, see
+Neyman (1934) <doi:10.2307/2342192> and Neyman (1938)
+<doi:10.1080/01621459.1938.10503378>).")
+    (license license:gpl2+)))
 
 (define-public r-chartql
   (package
@@ -49226,13 +49219,13 @@ Bioinformatics 2019, 35(14):2458-2465.")
 (define-public r-calibrationcurves
   (package
     (name "r-calibrationcurves")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CalibrationCurves" version))
        (sha256
-        (base32 "102kpgjfasyyrfpxrv1mzrl40fhh6blml6lbiha4s6p0fav7dj8n"))))
+        (base32 "0vd48vj3ma0qaa1d3zf3lbw3y9k3kspb4jr0x7r2cng6iacqh58r"))))
     (properties `((upstream-name . "CalibrationCurves")))
     (build-system r-build-system)
     (arguments
