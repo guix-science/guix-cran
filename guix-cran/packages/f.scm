@@ -10829,51 +10829,6 @@ estimating errors, calculating pairwise similarities, determining pairwise
 similarity loci, and generating a similarity matrix.")
     (license license:gpl3)))
 
-(define-public r-flsss
-  (package
-    (name "r-flsss")
-    (version "9.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FLSSS" version))
-       (sha256
-        (base32 "1ld0lrzwjj47gb95zii7v9qbp1dbiwww6hxq7vc82l6jlllsw3f6"))))
-    (properties `((upstream-name . "FLSSS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcpp))
-    (home-page "https://cran.r-project.org/package=FLSSS")
-    (synopsis "Mining Rigs for Problems in the Subset Sum Family")
-    (description
-     "Specialized solvers for combinatorial optimization problems in the Subset Sum
-family.  The solvers differ from the mainstream in the options of (i)
-restricting subset size, (ii) bounding subset elements, (iii) mining real-value
-multisets with predefined subset sum errors, (iv) finding one or more subsets in
-limited time.  A novel algorithm for mining the one-dimensional Subset Sum
-induced algorithms for the multi-Subset Sum and the multidimensional Subset Sum.
- The multi-threaded framework for the latter offers exact algorithms to the
-multidimensional Knapsack and the Generalized Assignment problems.  Historical
-updates include (a) renewed implementation of the multi-Subset Sum,
-multidimensional Knapsack and Generalized Assignment solvers; (b) availability
-of bounding solution space in the multidimensional Subset Sum; (c) fundamental
-data structure and architectural changes for enhanced cache locality and better
-chance of SIMD vectorization; (d) option of mapping floating-point instance to
-compressed 64-bit integer instance with user-controlled precision loss, which
-could yield substantial speedup due to the dimension reduction and efficient
-compressed integer arithmetic via bit-manipulations; (e) distributed computing
-infrastructure for multidimensional subset sum; (f) arbitrary-precision
-zero-margin-of-error multidimensional Subset Sum accelerated by a simplified
-Bloom filter.  The package contains a copy of @code{xxHash} from
-<https://github.com/Cyan4973/@code{xxHash>}.  Package vignette
-(<doi:10.48550/@code{arXiv.1612.04484>}) detailed a few historical updates.
-Functions prefixed with aux (auxiliary) are independent implementations of
-published algorithms for solving optimization problems less relevant to Subset
-Sum.")
-    (license license:gpl3)))
-
 (define-public r-flsa
   (package
     (name "r-flsa")
@@ -18420,38 +18375,6 @@ random permutation of feature values.  An explanation of permutation feature
 importance in general can be found here:
 <https://christophm.github.io/interpretable-ml-book/feature-importance.html>.")
     (license license:gpl3)))
-
-(define-public r-featurehashing
-  (package
-    (name "r-featurehashing")
-    (version "0.9.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FeatureHashing" version))
-       (sha256
-        (base32 "05cap6251dk3x7802ii33zv41pahng68h7fvx5z8y6ii4vzlgd57"))))
-    (properties `((upstream-name . "FeatureHashing")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-matrix r-magrittr r-digest r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/wush978/FeatureHashing")
-    (synopsis
-     "Creates a Model Matrix via Feature Hashing with a Formula Interface")
-    (description
-     "Feature hashing, also called as the hashing trick, is a method to transform
-features of a instance to a vector.  Thus, it is a method to transform a real
-dataset to a matrix.  Without looking up the indices in an associative array, it
-applies a hash function to the features and uses their hash values as indices
-directly.  The method of feature hashing in this package was proposed in
-Weinberger et al. (2009) <@code{arXiv:0902.2206>}.  The hashing algorithm is the
-murmurhash3 from the digest package.  Please see the README in
-<https://github.com/wush978/@code{FeatureHashing>} for more information.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-featureflag
   (package

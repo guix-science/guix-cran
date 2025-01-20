@@ -21224,13 +21224,13 @@ and results interpretation.")
 (define-public r-deploid
   (package
     (name "r-deploid")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DEploid" version))
        (sha256
-        (base32 "1mm83kia4jp6r8dqbav76kapdmz0nzx685815f3aybpqgpj3hnxf"))))
+        (base32 "02949v2k8v69dm5vndifmvxmdi040l5jkhymxmna7hvwg5hwv283"))))
     (properties `((upstream-name . "DEploid")))
     (build-system r-build-system)
     (arguments

@@ -4919,13 +4919,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groundhog" version))
        (sha256
-        (base32 "00lp733avwjxap5drc3p3763y4xhhphlck7zp7g5cijcbga4k54s"))))
+        (base32 "1dklqr2fj4w42isiz15glqnisakjwbwx9lic24z5xsdv3xaccqhd"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (arguments
@@ -11542,13 +11542,13 @@ weighted graphs.  Methods are described in Sosa et al. (2023)
 (define-public r-goat
   (package
     (name "r-goat")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goat" version))
        (sha256
-        (base32 "154x643dlh614nasx8q77rksp0q9n19a6qnmc5gki0pxv6ysgyj6"))))
+        (base32 "1q4a9ka8w0yg4dvzffg6rl91gh7s17z1i8nbm3lcn1w9kbm4yns8"))))
     (properties `((upstream-name . "goat")))
     (build-system r-build-system)
     (arguments
@@ -11575,7 +11575,7 @@ weighted graphs.  Methods are described in Sosa et al. (2023)
     (description
      "Perform gene set enrichment analyses using the Gene set Ordinal Association Test
 (GOAT) algorithm and visualize your results.  Koopmans, F. (2024)
-<doi:10.1101/2023.12.10.570979>.")
+<doi:10.1038/s42003-024-06454-5>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-goalp
@@ -31492,13 +31492,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.11.1")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "0vf28id5yq4f491b25fbmap1yzpzxxkkqmzfln1qc4hxfhbirv1p"))))
+        (base32 "1dik3lyplawvsj67pmx78x91ci547hj9b59bv8jv5636j9p2w5yk"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (arguments

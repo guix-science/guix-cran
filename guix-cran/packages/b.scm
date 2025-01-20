@@ -7903,35 +7903,6 @@ learner.  The package implements this algorithm and allows cross-validation and
 stability selection.")
     (license license:gpl2+)))
 
-(define-public r-boostmtree
-  (package
-    (name "r-boostmtree")
-    (version "1.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "boostmtree" version))
-       (sha256
-        (base32 "17na38k052lzjrssvxssllm9fwpnzhr29g9wwcfkbja6rv2pw9p1"))))
-    (properties `((upstream-name . "boostmtree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-randomforestsrc r-nlme))
-    (home-page "https://ishwaran.org/ishwaran.html")
-    (synopsis "Boosted Multivariate Trees for Longitudinal Data")
-    (description
-     "This package implements Friedman's gradient descent boosting algorithm for
-modeling longitudinal response using multivariate tree base learners.
-Longitudinal response could be continuous, binary, nominal or ordinal.  A
-time-covariate interaction effect is modeled using penalized B-splines
-(P-splines) with estimated adaptive smoothing parameter.  Although the package
-is design for longitudinal data, it can handle cross-sectional data as well.
-Implementation details are provided in Pande et al. (2017), Mach Learn
-<DOI:10.1007/s10994-016-5597-1>.")
-    (license license:gpl3+)))
-
 (define-public r-boostmlr
   (package
     (name "r-boostmlr")
@@ -8506,13 +8477,13 @@ estimation through the bootstrap', <doi:10.48550/@code{arXiv.0804.1302>}.")
 (define-public r-boj
   (package
     (name "r-boj")
-    (version "0.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BOJ" version))
        (sha256
-        (base32 "1x9lz01fjdk0aybs6zsbbq2xfjvh99qiimmnrkbcd6sj880vn3a3"))))
+        (base32 "0xw7kj3n6mk538rcf6a3whc818wd3q02avgskdnngzc79zxgdvyz"))))
     (properties `((upstream-name . "BOJ")))
     (build-system r-build-system)
     (arguments
@@ -8525,7 +8496,7 @@ estimation through the bootstrap', <doi:10.48550/@code{arXiv.0804.1302>}.")
                              r-readr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BOJ")
+    (home-page "https://github.com/stefanangrick/BOJ")
     (synopsis "Interface to Bank of Japan Statistics")
     (description
      "This package provides an interface to Bank of Japan <https://www.boj.or.jp>

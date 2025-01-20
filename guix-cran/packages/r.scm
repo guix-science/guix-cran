@@ -17639,13 +17639,13 @@ convenient functions for summary, visualizations, and fit diagnostics.")
 (define-public r-robloxbioc
   (package
     (name "r-robloxbioc")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobLoxBioC" version))
        (sha256
-        (base32 "1fhf5svfb1sf792aj9xydaj8r9d99ia68b9n5g4nha1ia8jcixwl"))))
+        (base32 "1n191xqxk52mr04996lj5019hp16dylwaf68hyavd3j538mzcfkj"))))
     (properties `((upstream-name . "RobLoxBioC")))
     (build-system r-build-system)
     (arguments
@@ -39712,13 +39712,13 @@ NAID:20001644490, Cohen (1988) ISBN:0-12-179060-6, Darroch (1961)
 (define-public r-recalibratinn
   (package
     (name "r-recalibratinn")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recalibratiNN" version))
        (sha256
-        (base32 "1xa70a8w9fi3yq6x1f5jch0ids5zkxq1ij5y5hd124q53bp0q90l"))))
+        (base32 "0pxqr60s4fsgw5hm3q1xf2k0hjwi6pjajp1614ywz6lbq5pg0mji"))))
     (properties `((upstream-name . "recalibratiNN")))
     (build-system r-build-system)
     (arguments
@@ -41313,13 +41313,13 @@ in the server code.")
 (define-public r-re2
   (package
     (name "r-re2")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "re2" version))
        (sha256
-        (base32 "116fnvvg2mm9a7bpi6flh132yffhqbgz2mp0kpq2g84ic51qnwxf"))))
+        (base32 "0wh7pzcnayjldpkjvvj34gfgsxkh1m4318568p5n4s5254923dzr"))))
     (properties `((upstream-name . "re2")))
     (build-system r-build-system)
     (arguments
@@ -44110,13 +44110,13 @@ large earlier pull request of mine.")
 (define-public r-rcppmsgpack
   (package
     (name "r-rcppmsgpack")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppMsgPack" version))
        (sha256
-        (base32 "0ffdw5ckkax8j87q0ykjhyp45l7gvxjppdi73kc4r5qxvijll2g3"))))
+        (base32 "0hjj1y2yz2l0s5v6iwr51xf1x5j6dd2mjkvbk6z6r810qb3wkwqf"))))
     (properties `((upstream-name . "RcppMsgPack")))
     (build-system r-build-system)
     (arguments
@@ -44124,7 +44124,7 @@ large earlier pull request of mine.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RcppMsgPack")
+    (home-page "https://github.com/eddelbuettel/rcppmsgpack")
     (synopsis "'MsgPack' C++ Header Files and Interface Functions for R")
     (description
      "@code{MsgPack} header files are provided for use by R packages, along with the

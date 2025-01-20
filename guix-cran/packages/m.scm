@@ -2443,13 +2443,13 @@ Calculus.")
 (define-public r-mutualinf
   (package
     (name "r-mutualinf")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mutualinf" version))
        (sha256
-        (base32 "0l600cfpwb8jlrlix249fx0a4zh3kcg3yvhpzwidl9p881r01913"))))
+        (base32 "1cva93ck88d5j03a92m5v593xklas49pcfr5p144mzwbhvmpzg72"))))
     (properties `((upstream-name . "mutualinf")))
     (build-system r-build-system)
     (arguments
@@ -2835,22 +2835,23 @@ export.")
 (define-public r-munsellinterpol
   (package
     (name "r-munsellinterpol")
-    (version "3.0-0")
+    (version "3.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "munsellinterpol" version))
        (sha256
-        (base32 "15314dr42sikw8i1qdi5rw8r52whgxsda6m2jbldxdc67vlwmcwd"))))
+        (base32 "1ry94w2rpayx9g3p4v07k7fn2dgrb09pxzxs8wwkkil3iirjpcly"))))
     (properties `((upstream-name . "munsellinterpol")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spacesxyz r-spacesrgb r-rootsolve))
+    (propagated-inputs (list r-spacesxyz r-spacesrgb r-rootsolve r-logger))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=munsellinterpol")
-    (synopsis "Interpolate Munsell Renotation Data from Hue/Chroma to CIE/RGB")
+    (synopsis
+     "Interpolate Munsell Renotation Data from Hue Value/Chroma to CIE/RGB")
     (description
      "This package provides methods for interpolating data in the Munsell color system
 following the ASTM D-1535 standard.  Hues and chromas with decimal values can be

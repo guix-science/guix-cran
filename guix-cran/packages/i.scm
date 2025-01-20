@@ -352,13 +352,13 @@ in this package were inspired by James Allen's interval algebra, Allen (1983)
 (define-public r-ivreg
   (package
     (name "r-ivreg")
-    (version "0.6-4")
+    (version "0.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivreg" version))
        (sha256
-        (base32 "10navv8n1hivr5s5916fss8lywnzgpkjk10va37vfa6xn03hyag2"))))
+        (base32 "0z8wv23y1bgmms4pvrngjvcjy8bsnjzj077fg59ww3ivhrhych8k"))))
     (properties `((upstream-name . "ivreg")))
     (build-system r-build-system)
     (arguments

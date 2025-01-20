@@ -15705,19 +15705,19 @@ files.")
 (define-public r-ncdfcf
   (package
     (name "r-ncdfcf")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncdfCF" version))
        (sha256
-        (base32 "0fqn438yi85i17xkgxd9i63fsfxfwz99mghi6bp687hp4g6vh5fd"))))
+        (base32 "1cyvlhx1dxrhqrwbwv3b8v0974qnaab8ly5pvmpzzyx3b5pyabam"))))
     (properties `((upstream-name . "ncdfCF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-rnetcdf r-r6 r-cftime))
+    (propagated-inputs (list r-stringr r-rnetcdf r-r6 r-cftime r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pvanlaake/ncdfCF")
     (synopsis "Easy Access to NetCDF Files with CF Metadata Conventions")

@@ -9488,13 +9488,13 @@ offers options to deal with block-wise missingness in multi-omics data.")
 (define-public r-priorityelasticnet
   (package
     (name "r-priorityelasticnet")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorityelasticnet" version))
        (sha256
-        (base32 "1q76swqyl0gz7icd9q6v0fivnwndvk22y1yh4aasipn2bwc12ba6"))))
+        (base32 "0hr54a6jkn6rcbvr3sdckblnkhvdcw394zpgvks5k33cylqaw7n4"))))
     (properties `((upstream-name . "priorityelasticnet")))
     (build-system r-build-system)
     (arguments
@@ -40099,13 +40099,13 @@ run locally, see examples on <https://github.com/@code{SachaEpskamp/parSim>}.")
 (define-public r-parserpdr
   (package
     (name "r-parserpdr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parseRPDR" version))
        (sha256
-        (base32 "1ih4mrk0vfr8rkm55zgx4rlv3791asvsahk9w4pavns3r0wiq6av"))))
+        (base32 "18wl0l1p4pmxmwi0isiakv6ilsg5xnqwjgxhfdij1qrfwp2zw1g8"))))
     (properties `((upstream-name . "parseRPDR")))
     (build-system r-build-system)
     (arguments

@@ -9481,13 +9481,13 @@ and scientific computing.")
 (define-public r-cpp11bigwig
   (package
     (name "r-cpp11bigwig")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11bigwig" version))
        (sha256
-        (base32 "1dc0w7ck0c4h2fiqrglgcrjb84klzh5rzwralgqmgnnvvc8ayk7w"))))
+        (base32 "0i9rbjj2f8m5x2z594fg7rqqiajf2sjlxj6g66fpl65gr9n7hch8"))))
     (properties `((upstream-name . "cpp11bigwig")))
     (build-system r-build-system)
     (arguments
@@ -23001,13 +23001,13 @@ colors to make plots in base R', ggplot2', or other graphics frameworks.")
 (define-public r-colorrepel
   (package
     (name "r-colorrepel")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorrepel" version))
        (sha256
-        (base32 "0p5zfcmyrs567ddn7jilzbvs2k1qr213ims5m0zx1swylxpvjda7"))))
+        (base32 "0ba2fr274wwqr4ra8srn3jy3b9y2w0wf4yxdkhimkmwwnb0sfrg8"))))
     (properties `((upstream-name . "colorrepel")))
     (build-system r-build-system)
     (arguments
@@ -23015,7 +23015,9 @@ colors to make plots in base R', ggplot2', or other graphics frameworks.")
       #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-purrr
+                             r-polychrome
                              r-png
+                             r-plyr
                              r-plotly
                              r-matrixstats
                              r-matrix

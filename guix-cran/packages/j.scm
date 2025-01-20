@@ -3013,13 +3013,13 @@ algebra and @code{RcppArmadillo} glue.")
 (define-public r-jmbig
   (package
     (name "r-jmbig")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmBIG" version))
        (sha256
-        (base32 "05923dckm91x7al1fglglqfr0iwra73ky2dg0z67qq4f6ikcrlsd"))))
+        (base32 "0kxs0mi9yyj1hf2896ph7c6q8ji2bbraak7bvfxfn6im98w2g63i"))))
     (properties `((upstream-name . "jmBIG")))
     (build-system r-build-system)
     (arguments

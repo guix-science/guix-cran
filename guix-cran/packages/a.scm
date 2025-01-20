@@ -3623,13 +3623,13 @@ ARIMA in SAS.")
 (define-public r-atrrr
   (package
     (name "r-atrrr")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atrrr" version))
        (sha256
-        (base32 "1zcifxzx15p4v2nlpz7jvrcnvnqgzc3mbjqk2xqlsyb5g316v52i"))))
+        (base32 "0lhja4spmmj3a1xmdyiqj9lpnckvakqblfgnr6avzp7clha6rkvr"))))
     (properties `((upstream-name . "atrrr")))
     (build-system r-build-system)
     (arguments

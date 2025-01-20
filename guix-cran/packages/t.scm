@@ -8636,13 +8636,13 @@ measures based on the work of Li et al. (2019) <@code{arXiv:1906.10845>}.")
 (define-public r-tredesigns
   (package
     (name "r-tredesigns")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TREDesigns" version))
        (sha256
-        (base32 "0wcgj7hvyrh1s4dkry6jffbbaqhx0l51jh51x0awyc7abympl23g"))))
+        (base32 "0g27asz0vc1b2hlp21zk3nkyxq5qp381nh6r8wbhdi247c0s1g8c"))))
     (properties `((upstream-name . "TREDesigns")))
     (build-system r-build-system)
     (arguments
@@ -17827,13 +17827,13 @@ behaviors such as @code{if_else2()} and @code{str_detect2()}.")
 (define-public r-tidyplots
   (package
     (name "r-tidyplots")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplots" version))
        (sha256
-        (base32 "07qkywn6nmd1m6h2npg0grysi8rd5rip3ivvj5cfs8cqjk7s9zin"))))
+        (base32 "0y0z9s16g50s5rsgphp235jzvjqgq0vns8ak0b5wylwrp2fddwih"))))
     (properties `((upstream-name . "tidyplots")))
     (build-system r-build-system)
     (arguments
