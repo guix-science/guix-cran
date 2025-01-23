@@ -7514,19 +7514,19 @@ informed decisions during formulation design and optimization.")
 (define-public r-formulops
   (package
     (name "r-formulops")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formulops" version))
        (sha256
-        (base32 "1mkpv5xjykrhgknq0gh4yg2a3j4xb8q2d6dh0wv8zd9h59hvrzda"))))
+        (base32 "0547680lyf9y3kzw3559hrawrryky0dwxhdhm7wmshs84xcv87bi"))))
     (properties `((upstream-name . "formulops")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/billdenney/formulops")
+    (home-page "https://github.com/humanpred/formulops")
     (synopsis "Mathematical Operations on R Formula")
     (description
      "Perform mathematical operations on R formula (add, subtract, multiply, etc.) and
@@ -8440,41 +8440,6 @@ for the Bayesian neighborhood competition linear regression model of Allen
 evaluating the effect of competitor species identity using permutation tests,
 and evaluating model performance using spatial cross-validation.")
     (license license:expat)))
-
-(define-public r-forestdynr
-  (package
-    (name "r-forestdynr")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "forestdynR" version))
-       (sha256
-        (base32 "03bpq34wh5ja1hfsgkqvhm0fxr38sc7am5r06b8j9d3pmbclpy7h"))))
-    (properties `((upstream-name . "forestdynR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-biomass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/higuchip/forestdynR")
-    (synopsis "Calculate Forest Dynamics")
-    (description
-     "Determines the dynamics of tree species communities (mortality rates,
-recruitment, loss and gain in basal area, net changes and turnover).  Important
-notes are a) The forest_df argument (data) must contain the columns plot (plot
-identification), spp (species identification), DBH_1 (Diameter at breast height
-in first year of measure) and DBH_2 (Diameter at breast height in second year of
-measure).  DBH_1 and DBH_2 must be numeric values; b) example input file in
-data(forest_df_example)'; c) The argument inv_time represents the time between
-inventories, in years; d) The coord argument must be of the type c(longitude,
-latitude)', with decimal degree values; e) Argument add_wd represents a
-dataframe with wood density values (g cm-3) format with three columns ('genus',
-species', wd').  This argument is set to NULL by default, and if isn't provided,
-the wood density will be estimated with the @code{getWoodDensity()} function
-from the BIOMASS package.")
-    (license license:gpl2+)))
 
 (define-public r-forestdisc
   (package
@@ -11155,13 +11120,13 @@ style-polymorphic plant populations.\".")
 (define-public r-flowchart
   (package
     (name "r-flowchart")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowchart" version))
        (sha256
-        (base32 "0ll0s7ci5ml269i0ccabyy8kn1w7gxidd27mysnd42xmdss05qyb"))))
+        (base32 "0d4b4sqkrz58k53ix8rlx9zx323wb347ijrrrd4l0a9wf0y87pgs"))))
     (properties `((upstream-name . "flowchart")))
     (build-system r-build-system)
     (arguments
@@ -12414,6 +12379,47 @@ covariate effects are determined.  For the response function a strictly monotone
 P-spline is used while the covariate effects are estimated based on a modified
 Fisher-Scoring algorithm.  Overall the estimation relies on the mgcv'-package.")
     (license license:gpl2)))
+
+(define-public r-flexfitr
+  (package
+    (name "r-flexfitr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexFitR" version))
+       (sha256
+        (base32 "0rwrqxf35kpg8sjj6iisxcb4brq6g4vy7plga7ddgyld9l863na8"))))
+    (properties `((upstream-name . "flexFitR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-subplex
+                             r-rlang
+                             r-progressr
+                             r-optimx
+                             r-numderiv
+                             r-ggplot2
+                             r-future
+                             r-foreach
+                             r-dplyr
+                             r-dofuture
+                             r-agriutilities))
+    (native-inputs (list r-knitr))
+    (home-page "https://apariciojohan.github.io/flexFitR/")
+    (synopsis "Flexible Non-Linear Least Square Model Fitting")
+    (description
+     "This package provides tools for flexible non-linear least squares model fitting
+using general-purpose optimization techniques.  The package supports a variety
+of optimization algorithms, including those provided by the optimx package,
+making it suitable for handling complex non-linear models.  Features include
+parallel processing support via the future and foreach packages, comprehensive
+model diagnostics, and visualization capabilities.  Implements methods described
+in Nash and Varadhan (2011, <doi:10.18637/jss.v043.i09>).")
+    (license license:expat)))
 
 (define-public r-flexdir
   (package
@@ -14935,6 +14941,41 @@ formats (adjacency matrix, incidence matrix, edge list, igraph', network').
 There are also ad-hoc functions for the Fiedler value, global network
 efficiency, and cascade-failure analysis.")
     (license license:gpl3+)))
+
+(define-public r-finna
+  (package
+    (name "r-finna")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "finna" version))
+       (sha256
+        (base32 "0km33va3l3frjq1wb73s3v2krczq2hb0axnhdyg5mravayz6cqni"))))
+    (properties `((upstream-name . "finna")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://ropengov.github.io/finna/")
+    (synopsis "Access the 'Finna' API")
+    (description
+     "This package provides functions to access and retrieve metadata from the Finna
+API <https://api.finna.fi/>, which aggregates content from Finnish archives,
+libraries, and museums.")
+    (license license:bsd-2)))
 
 (define-public r-finity
   (package

@@ -2214,13 +2214,13 @@ biplots for the low-rank approximations of the interactions.")
 (define-public r-lsasim
   (package
     (name "r-lsasim")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsasim" version))
        (sha256
-        (base32 "1qxnf2s02sw5zx9snyszr6h5n2qw81d2qrj8i1d37kzk1hzkvxcd"))))
+        (base32 "0nflqz1zwgyrk75jyyizv69jvxcskz94pp0m325x8210ldhrdfd9"))))
     (properties `((upstream-name . "lsasim")))
     (build-system r-build-system)
     (arguments
@@ -16476,13 +16476,13 @@ convergence issues.")
 (define-public r-lbi
   (package
     (name "r-lbi")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBI" version))
        (sha256
-        (base32 "0ackpjc253j0bbrqzxhl09fs55qb7agl99zx7carr2l1213vplfg"))))
+        (base32 "1g265caip36vgpbx7lsjb8bpkk3ag86xxdl03hr81yh6gxx3gv98"))))
     (properties `((upstream-name . "LBI")))
     (build-system r-build-system)
     (arguments
@@ -18628,13 +18628,13 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "0gcg0wbf33cmx4n3f4nwkyzh0j4mkplpw8lscbh0ch612033msw1"))))
+        (base32 "1yyd4l6sxnlr6p7800kn0rs8f6clwzr1gi5mcsd34yxq11fybazl"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments

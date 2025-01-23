@@ -9007,13 +9007,13 @@ networks whose edge weights are counts.  See Krivitsky (2012)
 (define-public r-ergm
   (package
     (name "r-ergm")
-    (version "4.7.5")
+    (version "4.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm" version))
        (sha256
-        (base32 "15icc5m4q8w6fmlf71cpzgzymvnnnkydqb7qz9s4yngr8kgnixzl"))))
+        (base32 "1q676npmhlncyxvafwmjlcw4zzg3cszar5lriq5m7wklfnghcaw7"))))
     (properties `((upstream-name . "ergm")))
     (build-system r-build-system)
     (arguments
@@ -15695,13 +15695,13 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
 (define-public r-embed
   (package
     (name "r-embed")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embed" version))
        (sha256
-        (base32 "1mc4rh1mp81j4613s82z45zz0y12bkpg5kjjkx12i85nh953y1x1"))))
+        (base32 "0jx0l08a2595xmrlwm6zjmmcl75n4kgyr39hd52aazn61svpssvz"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
     (arguments
@@ -15719,14 +15719,16 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
                              r-lifecycle
                              r-glue
                              r-generics
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://embed.tidymodels.org")
     (synopsis "Extra Recipes for Encoding Predictors")
     (description
      "Predictors can be converted to one or more numeric representations using a
 variety of methods.  Effect encodings using simple generalized linear models
-<@code{arXiv:1611.09477>} or nonlinear models <@code{arXiv:1604.06737>} can be
-used.  There are also functions for dimension reduction and other approaches.")
+<doi:10.48550/@code{arXiv.1611.09477>} or nonlinear models
+<doi:10.48550/@code{arXiv.1604.06737>} can be used.  There are also functions
+for dimension reduction and other approaches.")
     (license license:expat)))
 
 (define-public r-embc
@@ -18172,6 +18174,43 @@ functions to those users non-experienced in R coding. (SÃ¡ez et al.  2020)
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-ehrmuse
+  (package
+    (name "r-ehrmuse")
+    (version "0.0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EHRmuse" version))
+       (sha256
+        (base32 "1viisy9phr17x7w0ciw5l0pz8fqbm850mb8rrl37fahwd45p68wq"))))
+    (properties `((upstream-name . "EHRmuse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-survey
+                             r-simplexreg
+                             r-nnet
+                             r-nleqslv
+                             r-mass
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://github.com/Ritoban1/EHRmuse")
+    (synopsis
+     "Multi-Cohort Selection Bias Correction using IPW and AIPW Methods")
+    (description
+     "Comprehensive toolkit for addressing selection bias in binary disease models
+across diverse non-probability samples, each with unique selection mechanisms.
+It utilizes Inverse Probability Weighting (IPW) and Augmented Inverse
+Probability Weighting (AIPW) methods to reduce selection bias effectively in
+multiple non-probability cohorts by integrating data from either
+individual-level or summary-level external sources.  The package also provides a
+variety of variance estimation techniques.  Please refer to Kundu et al.
+<doi:10.48550/@code{arXiv.2412.00228>}.")
+    (license license:gpl2+)))
+
 (define-public r-ehr
   (package
     (name "r-ehr")
@@ -18528,13 +18567,13 @@ Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
 (define-public r-egocor
   (package
     (name "r-egocor")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EgoCor" version))
        (sha256
-        (base32 "135k9yccmzbkzhf8dlzm00pawaav01bzw4r2y45mcb1fdfwf5fg2"))))
+        (base32 "1y3fvgj0mbvcp82yhlrranjv7izg6a0l8ap0w7ycn89xq6p5ip7b"))))
     (properties `((upstream-name . "EgoCor")))
     (build-system r-build-system)
     (arguments
@@ -22864,13 +22903,13 @@ calculation of isotopic gross structures is also supported.")
 (define-public r-ecic
   (package
     (name "r-ecic")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecic" version))
        (sha256
-        (base32 "1b8jwxmbqs3hzjf1iy1f74way8ymi1lac38jd8zvc2np39szq2i8"))))
+        (base32 "1n1h9s0lgbd11f4z05a0cxx9av86jhrrvq9qdlz3jynvc7pqrl2n"))))
     (properties `((upstream-name . "ecic")))
     (build-system r-build-system)
     (arguments

@@ -7958,13 +7958,13 @@ Montanari, 2018 <@code{arXiv:1803.00374>}.")
 (define-public r-grandr
   (package
     (name "r-grandr")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grandR" version))
        (sha256
-        (base32 "1cb8mkckbwkdi3zy108z3yhq3mssshhx1l9yb1j8rhgfg9abirly"))))
+        (base32 "058cvcjrqhgm14vyhlm1mdhs3z0kfpjlfc3msadsvlhlb7p676sn"))))
     (properties `((upstream-name . "grandR")))
     (build-system r-build-system)
     (arguments
@@ -9613,13 +9613,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.5")
+    (version "1.5.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "13gmp546xh233shbf7836jjsa8krfc5pbsh3v8l5qbg87qz86491"))))
+        (base32 "157md25a03g34pbgh90fqgdbjh3q9frz88ams5bp52q165qq6ivq"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -10922,6 +10922,47 @@ explicitly discussed in the following article : Manjang et al (2020)
 without population denominators.  This method is described in Goldstein et al.
 (2023) <doi:10.1007/s11113-023-09785-z>.")
     (license license:gpl3+)))
+
+(define-public r-gomp
+  (package
+    (name "r-gomp")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gomp" version))
+       (sha256
+        (base32 "1kvvz5qvca46vi47l7d21f94l38i70s0psd8alzilz2lkb8rawbv"))))
+    (properties `((upstream-name . "gomp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rfast2
+                             r-rfast
+                             r-quantreg
+                             r-ordinal
+                             r-nnet
+                             r-mass
+                             r-hmisc
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=gomp")
+    (synopsis "The gamma-OMP Feature Selection Algorithm")
+    (description
+     "The gamma-Orthogonal Matching Pursuit (gamma-OMP) is a recently suggested
+modification of the OMP feature selection algorithm for a wide range of response
+variables.  The package offers many alternative regression models, such linear,
+robust, survival, multivariate etc., including k-fold cross-validation.
+References: Tsagris M., Papadovasilakis Z., Lakiotaki K. and Tsamardinos I.
+(2018). \"Efficient feature selection on gene expression data: Which algorithm to
+use?\" @code{BioRxiv}. <doi:10.1101/431734>.  Tsagris M., Papadovasilakis Z.,
+Lakiotaki K. and Tsamardinos I. (2022). \"The gamma-OMP algorithm for feature
+selection with application to gene expression data\".  IEEE/ACM Transactions on
+Computational Biology and Bioinformatics 19(2): 1214--1224.
+<doi:10.1109/TCBB.2020.3029952>.")
+    (license license:gpl2+)))
 
 (define-public r-gomogomonomi
   (package
@@ -15803,13 +15844,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "1pg5p0d29rf2pm4nknagbypiry29i96v974pisaz1qa4bb670ns3"))))
+        (base32 "0r3353z1j8yi0m5j6qwcqqlkw6vzfdzhj12vrmpcq0ki4dnxr0wv"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -18547,13 +18588,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "1ydl0nk8q1xhafw91ds9q68mfkibp5ixfpb0p4hg99wrzy4cw9b7"))))
+        (base32 "01fzrj79h1v72vx8xp49x65vx189ly15v8x5kxn3k2vsimakby9k"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
@@ -18568,7 +18609,6 @@ added and tweaked using + and regular ggplot2 functions.")
                              r-igraph
                              r-ggplot2
                              r-dt
-                             r-cowplot
                              r-colourpicker))
     (home-page "https://smin95.github.io/ggsem/")
     (synopsis "Interactively Visualize Structural Equation Modeling Diagrams")
@@ -21434,13 +21474,13 @@ uses the layered grammar of graphics of ggplot2 to create simple flowcharts.")
 (define-public r-ggfixest
   (package
     (name "r-ggfixest")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfixest" version))
        (sha256
-        (base32 "0i05lvm45kp8l2shxlznlk5yw96rzcilwmm9i9194x0zxz29q5nf"))))
+        (base32 "0r20g98g23k4qj6wc0s5kf0ggc6s3cfnyicx039np75iqkfmch4i"))))
     (properties `((upstream-name . "ggfixest")))
     (build-system r-build-system)
     (arguments
@@ -21448,12 +21488,12 @@ uses the layered grammar of graphics of ggplot2 to create simple flowcharts.")
       #:tests? #f))
     (propagated-inputs (list r-scales
                              r-marginaleffects
+                             r-legendry
                              r-ggplot2
-                             r-ggh4x
                              r-fixest
                              r-dreamerr))
     (native-inputs (list r-knitr))
-    (home-page "http://grantmcdermott.com/ggfixest/")
+    (home-page "https://grantmcdermott.com/ggfixest/")
     (synopsis "Dedicated 'ggplot2' Methods for 'fixest' Objects")
     (description
      "This package provides ggplot2 equivalents of @code{fixest::coefplot()} and
@@ -30690,13 +30730,13 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "02c3hrpgp2y2il1db1da73zi3jikzihaaafp8snsdfw516q0a1pc"))))
+        (base32 "1ig334j26m4dvqbnqaiybcmnipvb7lgnvj9566vqw815gj8cjxk2"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (arguments

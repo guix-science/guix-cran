@@ -2527,19 +2527,19 @@ efficiently.  The philosophy of the package is described in Guo G. (2024)
 (define-public r-dtsg
   (package
     (name "r-dtsg")
-    (version "1.1.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTSg" version))
        (sha256
-        (base32 "0gln3zliljhs7rmqbyi7nbrzknc4g7psk9rwnd5xh020fa2k2cm1"))))
+        (base32 "04a5hlribhfq2srv3pdzsqasq3j8l1l3gca3158djrcm31mpi49b"))))
     (properties `((upstream-name . "DTSg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-data-table r-checkmate))
+    (propagated-inputs (list r-timechange r-r6 r-data-table r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://gisler.github.io/DTSg/")
     (synopsis
@@ -9932,6 +9932,44 @@ variability in discovering cancer methylation markers\", Biostatistics,
 submitted.")
     (license license:gpl2+)))
 
+(define-public r-dmrs
+  (package
+    (name "r-dmrs")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dMrs" version))
+       (sha256
+        (base32 "0zl5gm186kmyzvqdqz0vd48pkl4kf39zm9ayzvg7v4n1669cp0qy"))))
+    (properties `((upstream-name . "dMrs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-sqldf
+                             r-rmpfr
+                             r-relsurv
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-gplots
+                             r-ggplot2
+                             r-data-table
+                             r-copula))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dMrs")
+    (synopsis "Competing Risk in Dependent Net Survival Analysis")
+    (description
+     "This package provides statistical tools for analyzing net and relative survival,
+with a key feature of relaxing the assumption of independent censoring and
+incorporating the effect of dependent competing risks.  It employs a
+copula-based methodology, specifically the Archimedean copula, to simulate data,
+conduct survival analysis, and offer comparisons with other methods.  This
+approach is detailed in the work of Adatorwovor et al. (2022)
+<doi:10.1515/ijb-2021-0016>.")
+    (license license:gpl3+)))
+
 (define-public r-dmrnet
   (package
     (name "r-dmrnet")
@@ -16456,13 +16494,13 @@ and calculates electivity indices in R. Borstein (2020)
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diemr" version))
        (sha256
-        (base32 "18nih9hpxnjxjis19bbsxqzhar822gzi746ngniav9dl1wfx1dvz"))))
+        (base32 "0j6883k3bhayqn4gg9933vybgxjlrpf675hx9yff01jvp1b20z7r"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (arguments
@@ -16510,22 +16548,22 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "2.0.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "0mcvac2p0sd0prxaj1ajigil4k9k9bm3y68lxxbrmhjrcn8n5n18"))))
+        (base32 "11xvl8mgaz2aqy3q856y202cviwwmghsx3546202wj4v58pd7c1g"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xlsx
-                             r-sandwich
+    (propagated-inputs (list r-sandwich
                              r-rnames
                              r-plm
+                             r-openxlsx
                              r-matlib
                              r-lmtest
                              r-haven
@@ -16534,13 +16572,13 @@ the sales information.")
                              r-data-table
                              r-cowplot
                              r-car))
-    (home-page "https://cran.r-project.org/package=DIDmultiplegtDYN")
+    (home-page "https://github.com/chaisemartinPackages/did_multiplegt_dyn")
     (synopsis
      "Estimation in Difference-in-Difference Designs with Multiple Groups and Periods")
     (description
-     "Estimation of event-study Difference-in-Difference (DID) estimators in designs
-with multiple groups and periods, and with a potentially non-binary treatment
-that may increase or decrease multiple times.")
+     "Estimation of heterogeneity-robust difference-in-differences estimators, with a
+binary, discrete, or continuous treatment, in designs where past treatments may
+affect the current outcome.")
     (license license:expat)))
 
 (define-public r-didmultiplegt
@@ -21497,29 +21535,6 @@ implemented in the package can be found in Schneider et al. (2019)
      "Hash an expression with its dependencies and store its value, reloading it from
 a file as long as both the expression and its dependencies stay the same.")
     (license license:gpl3+)))
-
-(define-public r-deoptim
-  (package
-    (name "r-deoptim")
-    (version "2.2-8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DEoptim" version))
-       (sha256
-        (base32 "0k7mvf7j8y1sqv8zpiwkw4xcmgki37drkxjijrsmmhkfybfan7k3"))))
-    (properties `((upstream-name . "DEoptim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/ArdiaD/DEoptim")
-    (synopsis "Global Optimization by Differential Evolution")
-    (description
-     "This package implements the Differential Evolution algorithm for global
-optimization of a real-valued function of a real-valued parameter vector as
-described in Mullen et al. (2011) <doi:10.18637/jss.v040.i06>.")
-    (license license:gpl2+)))
 
 (define-public r-denvax
   (package

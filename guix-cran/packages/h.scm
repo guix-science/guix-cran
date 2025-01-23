@@ -5997,19 +5997,20 @@ curves and related statistics.")
 (define-public r-hmdhfdplus
   (package
     (name "r-hmdhfdplus")
-    (version "2.0.3")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMDHFDplus" version))
        (sha256
-        (base32 "1cz9q0kydb926v1n15z96cj1a7d1nyv2ffkxf00vay5l70n05137"))))
+        (base32 "0mbh153jnxhy5kkdigmzprmz9sv4ww069ypq5q0832ygf9c7dcwg"))))
     (properties `((upstream-name . "HMDHFDplus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-stringr
                              r-rvest
                              r-rlang
@@ -6018,7 +6019,7 @@ curves and related statistics.")
                              r-janitor
                              r-httr
                              r-dplyr))
-    (home-page "https://github.com/timriffe/TR1")
+    (home-page "https://github.com/timriffe/HMDHFDplus")
     (synopsis
      "Read Human Mortality Database and Human Fertility Database Data from the Web")
     (description
@@ -10255,6 +10256,29 @@ alpha-helical oligopeptides.  See Wadhwa RR, et al. (2018)
 <doi:10.21105/joss.01008> for more information.")
     (license license:gpl3)))
 
+(define-public r-heiscore-data
+  (package
+    (name "r-heiscore-data")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heiscore.data" version))
+       (sha256
+        (base32 "1phjjw4lw53pdpv6pw7bs59s9w3vady7rssh48qnmg075c1zc9d3"))))
+    (properties `((upstream-name . "heiscore.data")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=heiscore.data")
+    (synopsis "Data Only Package to 'heiscore'")
+    (description
+     "This package contains the National Health and Nutrition Examination Survey
+24-hour dietary recall data and Healthy Eating Index scoring standards used by
+the heiscore package.")
+    (license license:cc0)))
+
 (define-public r-heiscore
   (package
     (name "r-heiscore")
@@ -12812,13 +12836,13 @@ available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
 (define-public r-hdanova
   (package
     (name "r-hdanova")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDANOVA" version))
        (sha256
-        (base32 "1w6c2pwngx1f55zzxsvxnmg2bv5i0ywirchvdncl3iy7mpcsm6vm"))))
+        (base32 "1iy7bbz2z7cjj514ifzxp9dl5r9hwqgsg7jfrgmbsy55rx71svkc"))))
     (properties `((upstream-name . "HDANOVA")))
     (build-system r-build-system)
     (arguments
@@ -12832,7 +12856,7 @@ available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
                              r-lme4
                              r-car))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/khliland/HDANOVA/")
+    (home-page "https://khliland.github.io/HDANOVA/")
     (synopsis "High-Dimensional Analysis of Variance")
     (description
      "This package provides functions and datasets to support Smilde, Marini,
@@ -13232,13 +13256,13 @@ between communities.")
 (define-public r-hcci
   (package
     (name "r-hcci")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hcci" version))
        (sha256
-        (base32 "1rkbds3inpkhpvqb7rhvvakf9n0xf1yr74c3ywm35lwv6lj8pi21"))))
+        (base32 "1m3s1cf4vl61ng06f2xf79pcm10iin95jf42f0samb3n19i8x7z3"))))
     (properties `((upstream-name . "hcci")))
     (build-system r-build-system)
     (arguments

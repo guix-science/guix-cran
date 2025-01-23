@@ -2470,25 +2470,26 @@ translators.")
 (define-public r-ttdo
   (package
     (name "r-ttdo")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ttdo" version))
        (sha256
-        (base32 "0i0qw4zxi1cbqzdfxfdrm2vfppiddgsyf795wny6hz03fl416xkp"))))
+        (base32 "0bjrqzfwl1dpvmhsd38ppb18bmhg15ixpmm82j6jqgrcb05af943"))))
     (properties `((upstream-name . "ttdo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tinytest r-diffobj))
+    (propagated-inputs (list r-tinytest r-tinysnapshot r-diffobj r-base64enc))
     (home-page "https://github.com/eddelbuettel/ttdo/")
-    (synopsis "Extend 'tinytest' with 'diffobj'")
+    (synopsis "Extend 'tinytest' with 'diffobj' and 'tinysnapshot'")
     (description
      "The tinytest package offers a light-weight zero-dependency unit-testing
-framework to which this package adds support of the diffobj package for
-diff'-style comparison of R objects.")
+framework to which this package adds support via the diffobj package for
+diff'-style textual comparison of R objects, as well as via tinysnapshot package
+for visual differences in plots.")
     (license license:gpl2+)))
 
 (define-public r-ttcg
@@ -2845,19 +2846,19 @@ file without reading the whole file into memory.")
 (define-public r-tsvc
   (package
     (name "r-tsvc")
-    (version "1.5.3")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSVC" version))
        (sha256
-        (base32 "1cfl6rzxkqjilhl44izd1746yilammbsrpm92bp2gs4a2kka8i9y"))))
+        (base32 "1f4wl6b5q4ksv5iz9kc8a77d0sys7hg38bk19yisd3cw4fvvqjhm"))))
     (properties `((upstream-name . "TSVC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plotrix r-mgcv))
+    (propagated-inputs (list r-vgam r-tibble r-plotrix r-mgcv))
     (home-page "https://cran.r-project.org/package=TSVC")
     (synopsis "Tree-Structured Modelling of Varying Coefficients")
     (description
@@ -15118,13 +15119,13 @@ framework, and @code{LaTeX} code with the tabularray package.")
 (define-public r-tinysnapshot
   (package
     (name "r-tinysnapshot")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinysnapshot" version))
        (sha256
-        (base32 "1kppqqn54xw99r0hrr4bk5shypm7zc8ckwqz2rcxy287ap93pd9j"))))
+        (base32 "14srcrc034rq266s1gvw2508fs4n4h1vc9jyqphdvz2hhzvmamvb"))))
     (properties `((upstream-name . "tinysnapshot")))
     (build-system r-build-system)
     (arguments
@@ -16824,13 +16825,13 @@ get tidy data frames in response, and cache data in a local database.")
 (define-public r-tidywater
   (package
     (name "r-tidywater")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidywater" version))
        (sha256
-        (base32 "1jjy2zk08n6bnsd3ppplxd3wsiv5zsfjdj32sh7abqrzj9zrv7jy"))))
+        (base32 "0bpwdsb77vgldykx56ksdav3998g3scvmfn4yid4b521zj1160r6"))))
     (properties `((upstream-name . "tidywater")))
     (build-system r-build-system)
     (arguments
@@ -24759,13 +24760,13 @@ for the test of independence.")
 (define-public r-term
   (package
     (name "r-term")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "term" version))
        (sha256
-        (base32 "1ig1hvyv18d1x19jmvkg66m6nn8kdlffj5hx70vzd4sxz68j2k0v"))))
+        (base32 "1k0f99hsp7yg4ff63rq79ynchssn6y2zxab2lhisr7ymhjqyd9mb"))))
     (properties `((upstream-name . "term")))
     (build-system r-build-system)
     (arguments
@@ -26522,13 +26523,13 @@ and accurate reports.")
 (define-public r-teal-logger
   (package
     (name "r-teal-logger")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.logger" version))
        (sha256
-        (base32 "05841x1g48av438hja6x6vd2wdzx385qnxyjp2v9x2aqhf2492cq"))))
+        (base32 "1x4w169zq7wbjc7rr8dqkli5cbb2rsik0gpjl09aaw0s7p2h60lp"))))
     (properties `((upstream-name . "teal.logger")))
     (build-system r-build-system)
     (arguments
@@ -29077,13 +29078,13 @@ for fast dimension reduction, see package?tapkee and
 (define-public r-tapes
   (package
     (name "r-tapes")
-    (version "0.13.1")
+    (version "0.13.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TapeS" version))
        (sha256
-        (base32 "15yp0gfxjlhqy0yybb724187wbii46nxamxklw99prqd7zyiyzlp"))))
+        (base32 "05lknyj6699y951rprsvsm2mfsrs0wx4grqcn6hvqi1lvhfgzq7i"))))
     (properties `((upstream-name . "TapeS")))
     (build-system r-build-system)
     (arguments

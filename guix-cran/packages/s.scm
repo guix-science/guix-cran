@@ -287,6 +287,54 @@ isoprobability ellipsoid in d dimensions (Flood, Mark D. & Korenko, George G.
 the Matlab code published by Flood & Korenko in above-mentioned paper.")
     (license license:cc0)))
 
+(define-public r-sysagnps
+  (package
+    (name "r-sysagnps")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sysAgNPs" version))
+       (sha256
+        (base32 "0ja9kqqi1vjrvzi3wfqvhhqcl1s7vw2j8jc23bm41fh12gicnikd"))))
+    (properties `((upstream-name . "sysAgNPs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rio
+                             r-rcolorbrewer
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-forcats
+                             r-expm
+                             r-dplyr))
+    (home-page "https://github.com/xitingwang-ida/sysAgNPs")
+    (synopsis
+     "Systematic Quantification of AgNPs to Unleash their Potential for Applicability")
+    (description
+     "There is variation across @code{AgNPs} due to differences in characterization
+techniques and testing metrics employed in studies.  To address this problem, we
+have developed a systematic evaluation framework called @code{sysAgNPs}'.
+Within this framework, Distribution Entropy (DE) is utilized to measure the
+uncertainty of feature categories of @code{AgNPs}, Proclivity Entropy (PE)
+assesses the preference of these categories, and Combination Entropy (CE)
+quantifies the uncertainty of feature combinations of @code{AgNPs}.
+Additionally, a Markov chain model is employed to examine the relationships
+among the sub-features of @code{AgNPs} and to determine a Transition Score (TS)
+scoring standard that is based on steady-state probabilities.  The
+@code{sysAgNPs} framework provides metrics for evaluating @code{AgNPs}, which
+helps to unravel their complexity and facilitates effective comparisons among
+different @code{AgNPs}, thereby advancing the scientific research and
+application of these @code{AgNPs}.")
+    (license license:gpl3+)))
+
 (define-public r-syrup
   (package
     (name "r-syrup")
@@ -4066,13 +4114,13 @@ Lopez-de-Ullibarri and Jacome (2013) <doi:10.18637/jss.v054.i11>.")
 (define-public r-survpen
   (package
     (name "r-survpen")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survPen" version))
        (sha256
-        (base32 "1b6w7fvyhryjz4cds1xn7kcvfx10jwzkbxy8lli4q4lzdc5x8lnf"))))
+        (base32 "1gab8gyxb83srxyx2hy48l5n9d43jrqx4cgb9a9whaa8hqarznfn"))))
     (properties `((upstream-name . "survPen")))
     (build-system r-build-system)
     (arguments
@@ -6144,26 +6192,28 @@ a small sample size setting.  Details are described in Parast et al (2024)
 (define-public r-surrogateparadoxtest
   (package
     (name "r-surrogateparadoxtest")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurrogateParadoxTest" version))
        (sha256
-        (base32 "0ib1smiwycrxq9x7q9wkmj1swvmkd8dhfrc7x1jyi7xcqmmd7nzs"))))
+        (base32 "13wpbv31rkxyxv5mhfa2jq172z45qaxc90w5nmxqf9q6db9qhvk7"))))
     (properties `((upstream-name . "SurrogateParadoxTest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-monotonicitytest))
     (home-page "https://cran.r-project.org/package=SurrogateParadoxTest")
     (synopsis "Empirical Testing of Surrogate Paradox Assumptions")
     (description
      "This package provides functions to nonparametrically assess assumptions
 necessary to prevent the surrogate paradox through hypothesis tests of
 stochastic dominance, monotonicity of regression functions, and non-negative
-residual treatment effects.  More details are available in Hsiao et al 2024
-(under review).")
+residual treatment effects.  More details are available in Hsiao et al 2025
+(under review).  A tutorial for this package can be found at
+<https://laylaparast.com/home/@code{SurrogateParadoxTest.html>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-surrogateoutcome
@@ -9683,6 +9733,46 @@ Spanos, A. (2022) <doi:10.3390/econometrics10020017>.  Spanos, A. (1994)
 <http://www.jstor.org/stable/3532870>.")
     (license license:gpl2)))
 
+(define-public r-streetscape
+  (package
+    (name "r-streetscape")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "streetscape" version))
+       (sha256
+        (base32 "01invz9lzvi917mhdk1i398diwmz1k6yy54hqq50p9c5z3qg0j4v"))))
+    (properties `((upstream-name . "streetscape")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-superpixelimagesegmentation
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-reticulate
+                             r-quickpwcr
+                             r-pbmcapply
+                             r-parallelly
+                             r-osmdata
+                             r-openimager
+                             r-mapview
+                             r-httr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=streetscape")
+    (synopsis "Collect and Investigate Street Views for Urban Science")
+    (description
+     "This package provides a collection of functions to search and download street
+view imagery ('Mapilary <https://www.mapillary.com/developer/api-documentation>)
+and to extract, quantify, and visualize visual features.  Moreover, there are
+functions provided to generate Qualtrics survey in TXT format using the
+collection of street views for various research purposes.")
+    (license license:gpl3)))
+
 (define-public r-streammoa
   (package
     (name "r-streammoa")
@@ -11418,13 +11508,13 @@ models).")
 (define-public r-stokes
   (package
     (name "r-stokes")
-    (version "1.2-1")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stokes" version))
        (sha256
-        (base32 "02pia2szr5mbl3cyr6agiydq5py0sjariws3mhaqmcni8infapvh"))))
+        (base32 "1pmyrvhdn5f925rcs7inbb5iyjbxpglj5b9jac4vwv015a0vb1y6"))))
     (properties `((upstream-name . "stokes")))
     (build-system r-build-system)
     (arguments
@@ -11438,9 +11528,9 @@ models).")
      "This package provides functionality for working with tensors, alternating forms,
 wedge products, Stokes's theorem, and related concepts from the exterior
 calculus.  Uses @code{disordR} discipline (Hankin, 2022,
-<doi:10.48550/ARXIV.2210.03856>).  The canonical reference would be M. Spivak
-(1965, ISBN:0-8053-9021-9) \"Calculus on Manifolds\".  To cite the package in
-publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.17008>.")
+<doi:10.48550/@code{arXiv.2210.03856>}).  The canonical reference would be M.
+Spivak (1965, ISBN:0-8053-9021-9) \"Calculus on Manifolds\".  To cite the package
+in publications please use Hankin (2022) <doi:10.48550/@code{arXiv.2210.17008>}.")
     (license license:gpl2)))
 
 (define-public r-stoichcalc
@@ -12817,13 +12907,13 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.5.6")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "1s0dq1n5qmb01x7z2rssk2mxcsjc7x6g3p5xqjfgymy5gj6wrxn6"))))
+        (base32 "1cdyib2xhy1y6wh3dwfn2klvcfbkibgjijcrc22xjpfvgw9jc9c9"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (arguments
@@ -21772,13 +21862,13 @@ on a simple biological intuition.")
 (define-public r-spnetwork
   (package
     (name "r-spnetwork")
-    (version "0.4.4.4")
+    (version "0.4.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spNetwork" version))
        (sha256
-        (base32 "11jlz1hnmwl4q542r3ipxy8rylxas1c87z0mzkk3l3bhl7l9q5yd"))))
+        (base32 "18g7v3zzyg1gcxi98qv5zg2iffrqlqg7b7fcf27hzg80lx8wlfj0"))))
     (properties `((upstream-name . "spNetwork")))
     (build-system r-build-system)
     (arguments
@@ -23809,13 +23899,13 @@ and accuracy rate (for classification problems).")
 (define-public r-spfilter
   (package
     (name "r-spfilter")
-    (version "1.1.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spfilteR" version))
        (sha256
-        (base32 "1s11d88y4jwzd85lyircgz9j67mwbqld1jicynxb7wayk8akfyf4"))))
+        (base32 "108z39bw70zgmm2d92x4xhbl0fayfv2yiljpfqdj3wy9qcyadmpl"))))
     (properties `((upstream-name . "spfilteR")))
     (build-system r-build-system)
     (arguments
@@ -27933,13 +28023,13 @@ translated from the Matlab functions in <https://github.com/jiayi-ma/VFC>.")
 (define-public r-sparsevctrs
   (package
     (name "r-sparsevctrs")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsevctrs" version))
        (sha256
-        (base32 "18w5d1ggyxvwm6rcf0bspsblf6s5m0snr4pf22y9sqfjb282vdz0"))))
+        (base32 "12izzvx4vjxxh43f4bl13a3sgdwqyffpbssadr0awyiybvm0dy04"))))
     (properties `((upstream-name . "sparsevctrs")))
     (build-system r-build-system)
     (arguments
@@ -30466,13 +30556,13 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.7.1")
+    (version "2.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "11l01hnj4r3rsgz3d3nxjbvp9dcwik06270f1vjxdpqv5hv571h7"))))
+        (base32 "1707qcr5dasrszrfac93svysvwjpabcyqshw01hszp46bcnikqrq"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (arguments
@@ -36051,13 +36141,13 @@ Relationship Management, Wiley: New York.")
 (define-public r-smcfcs
   (package
     (name "r-smcfcs")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smcfcs" version))
        (sha256
-        (base32 "0vz651qfmbif1ay2zrmnhb8i2vx16yli0k4n3dyhs0980y4ycm8p"))))
+        (base32 "17316nnr3gsvra3az15zm31dkmhsmqdahm3xj0ilqi53vic649pp"))))
     (properties `((upstream-name . "smcfcs")))
     (build-system r-build-system)
     (arguments
@@ -37039,6 +37129,41 @@ with continuous covariates.  See also Hansen (1997) <doi:10.2307/2411186>,
 Butler & King (2004) <doi:10.1086/426002>, Hansen et al. (2008)
 <doi:10.1111/j.1558-5646.2008.00412.x>.")
     (license license:gpl2)))
+
+(define-public r-slos
+  (package
+    (name "r-slos")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SLOS" version))
+       (sha256
+        (base32 "1ckk8qgyjxy9rk65ippjqrr8gahx06jarq6cc6grv24wg3nlwr6j"))))
+    (properties `((upstream-name . "SLOS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ranger
+                             r-mlmetrics
+                             r-magrittr
+                             r-httr
+                             r-ggplot2
+                             r-ems
+                             r-dplyr
+                             r-caretensemble))
+    (home-page "https://cran.r-project.org/package=SLOS")
+    (synopsis "ICU Length of Stay Prediction and Efficiency Evaluation")
+    (description
+     "This package provides tools for predicting ICU length of stay and assessing ICU
+efficiency.  It is based on the methodologies proposed by Peres et al. (2022,
+2023), which utilize data-driven approaches for modeling and validation,
+offering insights into ICU performance and patient outcomes.  References: Peres
+et al. (2022)<https://pubmed.ncbi.nlm.nih.gov/35988701/>, Peres et al.
+(2023)<https://pubmed.ncbi.nlm.nih.gov/37922007/>.  More information:
+<https://github.com/igor-peres/ICU-Length-of-Stay-Prediction>.")
+    (license license:expat)))
 
 (define-public r-slope
   (package
@@ -53598,6 +53723,29 @@ developed by extending the SETAR-Tree.  The SETAR-Forest combines the forecasts
 provided by a collection of diverse SETAR-Trees during the forecasting process.")
     (license license:expat)))
 
+(define-public r-setariaviridis
+  (package
+    (name "r-setariaviridis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "setariaviridis" version))
+       (sha256
+        (base32 "0s6cv8ry63ilf8p8sx8h29zhp5w3bhzs8x5mdpx9xnsaippm82cj"))))
+    (properties `((upstream-name . "setariaviridis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/NONONOexe/setariaviridis")
+    (synopsis "Field-Collected Data of Green Foxtail")
+    (description
+     "Setaria viridis (green foxtail) is a common weed.  This package contains
+measurements from individual branches of a wild Setaria viridis plant collected
+near the author's home.  The data is intended for use in data analysis practice.")
+    (license license:expat)))
+
 (define-public r-set
   (package
     (name "r-set")
@@ -58936,19 +59084,20 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "002cszzsykwgvxwbqhpfxbf6vsbwq6rqkb1qhbdvfmfvgfplr8wi"))))
+        (base32 "06z0470ggpn8l2kg6ziakb88hkq6bix8498ysxysmddacj68xkir"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-performance
+                             r-patchwork
                              r-parameters
                              r-modelbased
                              r-insight
@@ -64094,13 +64243,13 @@ matrices using a pre-determined sequence of notes.")
 (define-public r-schemr
   (package
     (name "r-schemr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "schemr" version))
        (sha256
-        (base32 "0g27w49mg3sd2mc82cj18dafhg757nig1gax8aiqyraga55a4hb1"))))
+        (base32 "0ps9w67wyyjjmaa07hxp6rjdvmmrr1843ajcx3474xdzvx46rfqk"))))
     (properties `((upstream-name . "schemr")))
     (build-system r-build-system)
     (arguments
@@ -64112,7 +64261,7 @@ matrices using a pre-determined sequence of notes.")
                              r-magrittr
                              r-dplyr
                              r-apcluster))
-    (home-page "https://cran.r-project.org/package=schemr")
+    (home-page "https://github.com/stuart-morrison/schemr")
     (synopsis "Convert Images to Usable Color Schemes")
     (description
      "This package provides a fast and adaptable tool to convert photos and images
@@ -71323,6 +71472,35 @@ analyze the spatial scale, degree of anisotropy and preferred direction in each
 field.  These structural attributes are compared by a series of scores.  An
 experimental algorithm for the correction of these errors is included as well.")
     (license license:expat)))
+
+(define-public r-sacrebleu
+  (package
+    (name "r-sacrebleu")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sacRebleu" version))
+       (sha256
+        (base32 "1x9zgp426s8r4bd6cipls681p8pi5rlbf7lbddmmg98cd12nmmw3"))))
+    (properties `((upstream-name . "sacRebleu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rcpp r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LazerLambda/sacRebleu")
+    (synopsis "Metrics for Assessing the Quality of Generated Text")
+    (description
+     "Implementation of the BLEU-Score in C++ to evaluate the quality of generated
+text.  The BLEU-Score, introduced by Papineni et al. (2002)
+<doi:10.3115/1073083.1073135>, is a metric for evaluating the quality of
+generated text.  It is based on the n-gram overlap between the generated text
+and reference texts.  Additionally, the package provides some smoothing methods
+as described in Chen and Cherry (2014) <doi:10.3115/v1/W14-3346>.")
+    (license license:gpl2+)))
 
 (define-public r-saccadr
   (package

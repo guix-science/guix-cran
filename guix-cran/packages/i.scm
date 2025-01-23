@@ -10756,13 +10756,13 @@ et al. (2020) <doi:10.1111/1440-1703.12102> for statistical background.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "074lz7ld2q4h1dk0anxjwk5dpgbp42lvgh5r9c3pz0k6wj4vsk1s"))))
+        (base32 "10r58yyf436xli6ckgjrxh7xmbnh7jd9riigkfpj3s93n7wl5ij0"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (arguments
@@ -14742,13 +14742,13 @@ data modeling.")
 (define-public r-ilabelled
   (package
     (name "r-ilabelled")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ilabelled" version))
        (sha256
-        (base32 "1s37k1ylcyayckk4ib52bm3i76q42grd51nayj8vdkv62fdyjbsz"))))
+        (base32 "1c02irr3dqib0rnj219z767y0lf9zw61r77rz9avxi1vdpfqi64s"))))
     (properties `((upstream-name . "ilabelled")))
     (build-system r-build-system)
     (arguments

@@ -1753,13 +1753,13 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
 (define-public r-rvinecopulib
   (package
     (name "r-rvinecopulib")
-    (version "0.6.3.1.1")
+    (version "0.7.1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvinecopulib" version))
        (sha256
-        (base32 "0cmzijh03mbl3b3x8gin3vzgc52yrxmai45dxw5a6zrfal3x15fz"))))
+        (base32 "0pp28b79bnmdvfcwdck6kppy14l48ijzbzzcb67yhmfgri5apdbj"))))
     (properties `((upstream-name . "rvinecopulib")))
     (build-system r-build-system)
     (arguments
@@ -1773,7 +1773,7 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
                              r-kde1d
                              r-bh
                              r-assertthat))
-    (home-page "https://cran.r-project.org/package=rvinecopulib")
+    (home-page "https://vinecopulib.github.io/rvinecopulib/")
     (synopsis "High Performance Algorithms for Vine Copula Modeling")
     (description
      "This package provides an interface to vinecopulib', a C++ library for vine
@@ -1783,7 +1783,7 @@ vine copula and bivariate copula models.  Advantages over @code{VineCopula} are
 a sleeker and more modern API, improved performances, especially in high
 dimensions, nonparametric and multi-parameter families, and the ability to model
 discrete variables.  The rvinecopulib package includes vinecopulib as
-header-only C++ library (currently version 0.6.2).  Thus users do not need to
+header-only C++ library (currently version 0.7.1).  Thus users do not need to
 install vinecopulib itself in order to use rvinecopulib'.  Since their initial
 releases, vinecopulib is licensed under the MIT License, and rvinecopulib is
 licensed under the GNU GPL version 3.")
@@ -7538,13 +7538,13 @@ An overview of these models is given in Snijders (2017),
 (define-public r-rsi
   (package
     (name "r-rsi")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsi" version))
        (sha256
-        (base32 "0gcyzpr7am9hzc3741y90l70df32m0j744x2na0c9lv4pkp1a92k"))))
+        (base32 "1syzbli0zphpl6bxcc02ivpq4aqlmz86706sgmfjyxvqscy3hsjj"))))
     (properties `((upstream-name . "rsi")))
     (build-system r-build-system)
     (arguments
@@ -14373,6 +14373,42 @@ name.  The user can select and create different lists of colour names and
 different colour metrics for the conversion.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-rolluptree
+  (package
+    (name "r-rolluptree")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rollupTree" version))
+       (sha256
+        (base32 "0g46n1ahq9abp7h9wnjs3m119mdm2ycb3qarb1gdrjsxqqy8rz6c"))))
+    (properties `((upstream-name . "rollupTree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://jsjuni.github.io/rollupTree/")
+    (synopsis "Perform Recursive Computations")
+    (description
+     "Mass rollup for a Bill of Materials is an example of a class of computations in
+which elements are arranged in a tree structure and some property of each
+element is a computed function of the corresponding values of its child
+elements.  Leaf elements, i.e., those with no children, have values assigned.
+In many cases, the combining function is simple arithmetic sum; in other cases
+(e.g., mass properties), the combiner may involve other information such as the
+geometric relationship between parent and child, or statistical relations such
+as root-sum-of-squares (RSS).  This package implements a general function for
+such problems.  It is adapted to specific recursive computations by functional
+programming techniques; the caller passes a function as the update parameter to
+@code{rollup()} (or, at a lower level, passes functions as the get, set,
+combine, and override parameters to @code{update_prop()}) at runtime to specify
+the desired operations.  The implementation relies on graph-theoretic algorithms
+from the igraph package of CsÃ¡rdi, et al. (2006 <doi:10.5281/zenodo.7682609>).")
+    (license license:expat)))
+
 (define-public r-rollup
   (package
     (name "r-rollup")
@@ -17854,19 +17890,20 @@ Du, Yanyao Yi, Ting Ye (2024) <doi:10.48550/@code{arXiv.2306.10213>}.")
 (define-public r-robin
   (package
     (name "r-robin")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robin" version))
        (sha256
-        (base32 "0d61gibxs2cx6k8l4j0g8vcrprpa4m4242r9qcq5p3slr4hwrk2q"))))
+        (base32 "11gg5d8y21ssz6q1isvsij833df1vmiwjw24kxz3yyy6dk1351s9"))))
     (properties `((upstream-name . "robin")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-spam
+                             r-reshape2
                              r-qpdf
                              r-perturbr
                              r-networkd3
@@ -19599,13 +19636,13 @@ Grange et al. (2021) <doi:10.5194/acp-2020-1171>.")
 (define-public r-rmvp
   (package
     (name "r-rmvp")
-    (version "1.3.5")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rMVP" version))
        (sha256
-        (base32 "13lky75yskp6vhzxwvfkn987ir7m0ngm5v8jp7afk58qc48w55wj"))))
+        (base32 "1f4qrfqbil953wqy22p4jks6zgp5w3pdbx0dlkkjma4sjd8qm26p"))))
     (properties `((upstream-name . "rMVP")))
     (build-system r-build-system)
     (arguments
@@ -23834,13 +23871,13 @@ combinations, fast transformations, and more...")
 (define-public r-rjdworkspace
   (package
     (name "r-rjdworkspace")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjdworkspace" version))
        (sha256
-        (base32 "1kfwii7hxfwamzdg78lrb1vl53x4hhxdri762llsk1skkamv0q91"))))
+        (base32 "154s42323nglipn9cs3qfghhdc3d3lf36c7l82axnnn2720cppz2"))))
     (properties `((upstream-name . "rjdworkspace")))
     (build-system r-build-system)
     (arguments
@@ -24237,13 +24274,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.14.3")
+    (version "0.14.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "0m1sv3hn0s2awiywprgrzk1s5whrygy5dcyhrlghlivxfvjfmahl"))))
+        (base32 "19473hz26hy8faba9ymlnh260gv4mjiih6s1v83wdy7ivkv0qwnk"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (arguments
@@ -25268,13 +25305,13 @@ content and performance on assessments.")
 (define-public r-risca
   (package
     (name "r-risca")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RISCA" version))
        (sha256
-        (base32 "1ysd3al4bai3nrzqxrs4bq9613h77d4wm54pchp6g89cgnrgzn3v"))))
+        (base32 "1yvywpggplllxa2kr3kgrq4776dnfm1py2m9phvckprlqa5hddr0"))))
     (properties `((upstream-name . "RISCA")))
     (build-system r-build-system)
     (arguments
@@ -25296,7 +25333,6 @@ content and performance on assessments.")
                              r-glmnet
                              r-foreach
                              r-doparallel
-                             r-date
                              r-cubature
                              r-caret))
     (home-page "https://cran.r-project.org/package=RISCA")
@@ -30207,40 +30243,6 @@ Steve Horvath (2006) <doi:10.1198/106186006X94072> & Monti et al (2003)
 <doi:10.1023/A:1023949509487> .")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-rfcca
-  (package
-    (name "r-rfcca")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RFCCA" version))
-       (sha256
-        (base32 "004lgbdfk04vnmdjs02z72awz6mspcd3psd19a2qk85i6hxkycsh"))))
-    (properties `((upstream-name . "RFCCA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pma r-cca))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/calakus/RFCCA")
-    (synopsis "Random Forest with Canonical Correlation Analysis")
-    (description
-     "Random Forest with Canonical Correlation Analysis (RFCCA) is a random forest
-method for estimating the canonical correlations between two sets of variables
-depending on the subject-related covariates.  The trees are built with a
-splitting rule specifically designed to partition the data to maximize the
-canonical correlation heterogeneity between child nodes.  The method is
-described in Alakus et al. (2021) <doi:10.1093/bioinformatics/btab158>.  RFCCA
-uses @code{randomForestSRC} package (Ishwaran and Kogalur, 2020) by freezing at
-the version 2.9.3.  The custom splitting rule feature is utilised to apply the
-proposed splitting rule.  The @code{randomForestSRC} package implements
-@code{OpenMP} by default, contingent upon the support provided by the target
-architecture and operating system.  In this package, LAPACK and BLAS libraries
-are used for matrix decompositions.")
-    (license license:gpl3+)))
-
 (define-public r-rfast2
   (package
     (name "r-rfast2")
@@ -31335,6 +31337,47 @@ concentration, and cell-line.  Based on the cell lines used as surrogates, the
 returned profiles represent the unique transcriptional changes induced by a
 compound in a given disease.")
     (license license:gpl3)))
+
+(define-public r-retimer
+  (package
+    (name "r-retimer")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "retimer" version))
+       (sha256
+        (base32 "1z1gsasc6ascq5xvbkpi3mavlc9ab60hn908ppsqjglr6y6sj4sz"))))
+    (properties `((upstream-name . "retimer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tuner
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-signal
+                             r-seewave
+                             r-rpraat
+                             r-purrr
+                             r-phontools
+                             r-gsignal
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=retimer")
+    (synopsis "Retime and Analyse Speech Signals")
+    (description
+     "Retime speech signals with a native Waveform Similarity Overlap-Add (WSOLA)
+implementation translated from the TSM toolbox by Driedger & MÃ¼ller (2014)
+<https://www.audiolabs-erlangen.de/content/resources/MIR/TSMtoolbox/2014_@code{DriedgerMueller_TSM-Toolbox_DAFX.pdf>}.
+ Design retimings and pitch (f0) transformations with tidy data and apply them
+via Praat interface.  Produce spectrograms, spectra, and amplitude envelopes.
+Includes implementation of vocalic speech envelope analysis (fft_spectrum)
+technique and example data (mm1) from Tilsen, S., & Johnson, K. (2008)
+<doi:10.1121/1.2947626>.")
+    (license license:expat)))
 
 (define-public r-rethnicity
   (package
@@ -35178,19 +35221,24 @@ similarities, cycles or triads can be calculated and analyzed over time.")
 (define-public r-relsurv
   (package
     (name "r-relsurv")
-    (version "2.2-9")
+    (version "2.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "relsurv" version))
        (sha256
-        (base32 "0y2dsyiqqzyc0rnnf3nna1saww3ipngknz462h9qv5y02rf46rp9"))))
+        (base32 "1bn0lb5wgx8dlkbsqgy23nxbzb9kx8qs4ljy8qv4cqikny5nf6rk"))))
     (properties `((upstream-name . "relsurv")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-scales r-pammtools r-ggplot2 r-date))
+    (propagated-inputs (list r-survival
+                             r-scales
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pammtools
+                             r-ggplot2))
     (home-page "https://cran.r-project.org/package=relsurv")
     (synopsis "Relative Survival")
     (description
@@ -35200,7 +35248,7 @@ ratio, crude mortality, methods for fitting and checking additive and
 multiplicative regression models, transformation approach, methods for dealing
 with population mortality tables.  Work has been described in Pohar Perme,
 Pavlic (2018) <doi:10.18637/jss.v087.i08>.")
-    (license (list license:gpl2+ license:gpl3+))))
+    (license license:gpl2+)))
 
 (define-public r-relsim
   (package
@@ -37653,13 +37701,13 @@ significantly enhance finite-sample performance.")
 (define-public r-ref-icar
   (package
     (name "r-ref-icar")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ref.ICAR" version))
        (sha256
-        (base32 "1mix12qxap6rqs6dg4nlbm9vlkzxgr1ivkjjkzap3k0km0agldx9"))))
+        (base32 "0d7lc1rqs7v55lki1n3wc3879bz8lpl4mq80fn1m59lg2d07x2j7"))))
     (properties `((upstream-name . "ref.ICAR")))
     (build-system r-build-system)
     (arguments
@@ -40928,6 +40976,47 @@ using the open-source experiment builder @code{OpenSesame}
      "Reads data files acquired by Bruker Daltonics matrix-assisted laser
 desorption/ionization-time-of-flight mass spectrometer of the *flex series.")
     (license license:gpl3+)))
+
+(define-public r-readapra
+  (package
+    (name "r-readapra")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "readapra" version))
+       (sha256
+        (base32 "0wz917szm469h57hxaq51511c3744qd4l388q3pfi46f2ws56h6j"))))
+    (properties `((upstream-name . "readapra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyxl
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-rvest
+                             r-robotstxt
+                             r-rlang
+                             r-ratelimitr
+                             r-purrr
+                             r-polite
+                             r-memoise
+                             r-lubridate
+                             r-janitor
+                             r-httr
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/javanderwal/readapra")
+    (synopsis
+     "Download and Tidy Data from the Australian Prudential Regulation Authority")
+    (description
+     "Download the latest data from the Australian Prudential Regulation Authority
+<https://www.apra.gov.au/> and import it into R as a tidy data frame.")
+    (license license:expat)))
 
 (define-public r-readabs
   (package
@@ -48807,13 +48896,13 @@ distribution and random vectors from the Dirichlet distribution.")
 (define-public r-rbest
   (package
     (name "r-rbest")
-    (version "1.8-0")
+    (version "1.8-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RBesT" version))
        (sha256
-        (base32 "0zz1na8ngy2n5d9f0bbi3iwp7f7j7c3d6xriq8syaxrd67180gpq"))))
+        (base32 "04aah2ldppkiah7yrzqqhvz6bfr7k6z61nhf41gn0vvp2pj0cbjr"))))
     (properties `((upstream-name . "RBesT")))
     (build-system r-build-system)
     (arguments
@@ -54493,13 +54582,13 @@ information, see <https://randomuser.me/>.")
 (define-public r-radonc
   (package
     (name "r-radonc")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RadOnc" version))
        (sha256
-        (base32 "0nc8f2f2yvfvx81xm87zr08asisyar9zdx3fwqz0lvz5xgrwkp3x"))))
+        (base32 "0c6ars9xcviqcm022dn2p3irck3dmhz399vbrlb2dwg87s3k89yx"))))
     (properties `((upstream-name . "RadOnc")))
     (build-system r-build-system)
     (arguments

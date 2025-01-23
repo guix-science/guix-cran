@@ -4841,35 +4841,6 @@ methods: the simplex method of Spendley et al. (1962)
 (1989) <https://www.cs.wm.edu/~va/research/thesis.pdf>, etc...")
     (license (license:fsdg-compatible "CeCILL-2"))))
 
-(define-public r-optimparallel
-  (package
-    (name "r-optimparallel")
-    (version "1.0-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optimParallel" version))
-       (sha256
-        (base32 "178ayfaivkbxkghxbg97lx4gl27kxkmgaaw9y8q5206r4cncd6qg"))))
-    (properties `((upstream-name . "optimParallel")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/florafauna/optimParallel-R")
-    (synopsis "Parallel Version of the L-BFGS-B Optimization Method")
-    (description
-     "This package provides a parallel version of the L-BFGS-B method of
-@code{optim()}.  The main function of the package is @code{optimParallel()},
-which has the same usage and output as @code{optim()}.  Using
-@code{optimParallel()} can significantly reduce the optimization time.")
-    (license license:gpl2+)))
-
 (define-public r-optimos-prime
   (package
     (name "r-optimos-prime")

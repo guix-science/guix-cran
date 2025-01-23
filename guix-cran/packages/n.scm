@@ -13042,13 +13042,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "2.9-0")
+    (version "3.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "1d7grw2dp4ghh5aapnd1j1w84nixm0vgaca0pchjwjjmg7rdgvad"))))
+        (base32 "0lwik7fzfr8na2gz6b7bms2ddqg3m7cjfpb8lb3yw4hhgqvgm70q"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (arguments
@@ -13058,9 +13058,18 @@ call @code{NetMHCIIpan} from R.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-metafor r-meta r-mass r-magic r-ggplot2))
+    (propagated-inputs (list r-mvtnorm
+                             r-metafor
+                             r-meta
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-magic
+                             r-ggplot2
+                             r-dplyr
+                             r-colorspace))
     (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=netmeta")
+    (home-page "https://github.com/guido-s/netmeta")
     (synopsis "Network Meta-Analysis using Frequentist Methods")
     (description
      "This package provides a comprehensive set of functions providing frequentist
@@ -13072,8 +13081,9 @@ frequentist network meta-analysis following RÃ¼cker (2012)
 treatments (RÃ¼cker et al., 2020) <doi:10.1002/bimj.201800167>; - network
 meta-analysis of binary data using the Mantel-Haenszel or non-central
 hypergeometric distribution method (Efthimiou et al., 2019)
-<doi:10.1002/sim.8158>; - rankograms and ranking of treatments by the Surface
-under the cumulative ranking curve (SUCRA) (Salanti et al., 2013)
+<doi:10.1002/sim.8158>, or penalised logistic regression (Evrenoglou et al.,
+2022) <doi:10.1002/sim.9562>; - rankograms and ranking of treatments by the
+Surface under the cumulative ranking curve (SUCRA) (Salanti et al., 2013)
 <doi:10.1016/j.jclinepi.2010.03.016>; - ranking of treatments using P-scores
 (frequentist analogue of SUCRAs without resampling) according to RÃ¼cker &
 Schwarzer (2015) <doi:10.1186/s12874-015-0060-8>; - split direct and indirect
@@ -13089,7 +13099,9 @@ of treatment rankings ('poset') and Hasse diagram for poset (Carlsen &
 Bruggemann, 2014) <doi:10.1002/cem.2569>; (RÃ¼cker & Schwarzer, 2017)
 <doi:10.1002/jrsm.1270>; - contribution matrix as described in Papakonstantinou
 et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
-<doi:10.1002/sim.9346>.")
+<doi:10.1002/sim.9346>; - subgroup network meta-analysis.  The suggested package
+@code{hasseDiagram} is available from
+<https://github.com/kciomek/@code{hasseDiagram>}.")
     (license license:gpl2+)))
 
 (define-public r-netmediate
@@ -14041,21 +14053,21 @@ versions of nested household data.")
 (define-public r-nestcolor
   (package
     (name "r-nestcolor")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nestcolor" version))
        (sha256
-        (base32 "1d5fajwh59raw1nxaw6ibh92qrazsgrn7kjph3sv87zq8aqy3snn"))))
+        (base32 "1v9cncccm6qvz0fcrw08743grbihxqg4c83fjczfybm1p35fh16a"))))
     (properties `((upstream-name . "nestcolor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-lifecycle r-ggplot2 r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/insightsengineering/nestcolor/")
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://insightsengineering.github.io/nestcolor/")
     (synopsis "Colors for NEST Graphs")
     (description
      "Clinical reporting figures require to use consistent colors and configurations.
@@ -15938,13 +15950,13 @@ or output).  A quick start guide for using this package can be found here:
 (define-public r-nc
   (package
     (name "r-nc")
-    (version "2024.9.20")
+    (version "2025.1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nc" version))
        (sha256
-        (base32 "0q1xf2mf0si8j80ppddnn88x0mnx4ij0bf8azpv781m5sl6dklyx"))))
+        (base32 "0z3v46k6mjg79ffkj0zxw5bh5mw683fv58dy3ncs073l8gc0n25p"))))
     (properties `((upstream-name . "nc")))
     (build-system r-build-system)
     (arguments
@@ -17073,28 +17085,36 @@ R package uses the Nasdaq Data Link API. For more information go to
 (define-public r-nascar-data
   (package
     (name "r-nascar-data")
-    (version "1.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nascaR.data" version))
        (sha256
-        (base32 "0hipjm9xxskmb8qvipvsiry5qmfpw7blnyip9ldx3xnjik7lx87c"))))
+        (base32 "18d5j1wpr1ni9hckpx66cnpvj4cnjf0pn5h1nvadcxqfdmysnnz5"))))
     (properties `((upstream-name . "nascaR.data")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-quarto))
-    (home-page "https://github.com/kyleGrealis/nascaR.data/")
+    (propagated-inputs (list r-stringr
+                             r-stringdist
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-dplyr))
+    (home-page "https://kylegrealis.github.io/nascaR.data/")
     (synopsis "NASCAR Race Data")
     (description
      "This package provides a collection of NASCAR race, driver, owner and
 manufacturer data across the three major NASCAR divisions: NASCAR Cup Series,
 NASCAR Xfinity Series, and NASCAR Craftsman Truck Series.  The curated data
-begins with the 1949 season and extends through the end of the 2023 season.
-Data was sourced with permission from @code{DriverAverages.com}.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
+begins with the 1949 season and extends through the end of the 2024 season.
+Explore race, season, or career performance for drivers, teams, and
+manufacturers throughout NASCAR's history.  Data was sourced with permission
+from @code{DriverAverages.com}.")
+    (license license:gpl3+)))
 
 (define-public r-nasaweather
   (package

@@ -17040,13 +17040,13 @@ regression framework developed by Rodriguez et al.
 (define-public r-contentid
   (package
     (name "r-contentid")
-    (version "0.0.18")
+    (version "0.0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contentid" version))
        (sha256
-        (base32 "1lcg7bhvkb3q0c41wlf5hmkx1nhp7h3qv5lc7jcqhsyi80aq8p2s"))))
+        (base32 "1hcf4xrlny6sbycz7i7h4sqrsn1jmqj3sv5xgpp3qxcg4aycrmfn"))))
     (properties `((upstream-name . "contentid")))
     (build-system r-build-system)
     (arguments
@@ -22533,6 +22533,57 @@ the purpose of combination p-values.  All methods used can referenced here:
 Heard & Rubin-Delanchy (2017) <@code{arXiv:1707.06897>}.")
     (license license:expat)))
 
+(define-public r-combatfamqc
+  (package
+    (name "r-combatfamqc")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ComBatFamQC" version))
+       (sha256
+        (base32 "06r6q1c4vgbnjam9g2c0i8dhkrnr63q4v0m3qxqw85hbmz3szhc3"))))
+    (properties `((upstream-name . "ComBatFamQC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shinydashboard
+                             r-shiny
+                             r-rtsne
+                             r-pbkrtest
+                             r-openxlsx
+                             r-mgcv
+                             r-mdmr
+                             r-magrittr
+                             r-lme4
+                             r-invgamma
+                             r-ggplot2
+                             r-gamlss-dist
+                             r-gamlss
+                             r-dt
+                             r-dplyr
+                             r-car
+                             r-bslib
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Zheng206/ComBatFamQC")
+    (synopsis "Comprehensive Batch Effect Diagnostics and Harmonization")
+    (description
+     "This package provides a comprehensive framework for batch effect diagnostics,
+harmonization, and post-harmonization downstream analysis.  Features include
+interactive visualization tools, robust statistical tests, and a range of
+harmonization techniques.  Additionally, @code{ComBatFamQC} enables the creation
+of life-span age trend plots with estimated age-adjusted centiles and
+facilitates the generation of covariate-corrected residuals for analytical
+purposes.  Methods for harmonization are based on approaches described in
+Johnson et al., (2007) <doi:10.1093/biostatistics/kxj037>, Beer et al., (2020)
+<doi:10.1016/j.neuroimage.2020.117129>, Pomponio et al., (2020)
+<doi:10.1016/j.neuroimage.2019.116450>, and Chen et al., (2021)
+<doi:10.1002/hbm.25688>.")
+    (license license:expat)))
+
 (define-public r-combat-enigma
   (package
     (name "r-combat-enigma")
@@ -24404,13 +24455,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "1x6pnji3x7wflrgc4yspwib53fa9mf4q00cbd6zq4yka8gx0jj8v"))))
+        (base32 "1ys65ccpi4grnk1jxs8i5pgwpvynpni2pq8iksip6j5xbdrhpyzs"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (arguments
@@ -24425,11 +24476,11 @@ Common Data Model.")
                              r-patientprofiles
                              r-omopgenerics
                              r-magrittr
-                             r-lubridate
                              r-lifecycle
                              r-dplyr
                              r-dbplyr
                              r-dbi
+                             r-clock
                              r-cli
                              r-checkmate
                              r-cdmconnector
@@ -25576,13 +25627,13 @@ search strategy, a candidate code list will be returned.")
 (define-public r-codecountr
   (package
     (name "r-codecountr")
-    (version "0.0.4.5")
+    (version "0.0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codecountR" version))
        (sha256
-        (base32 "1vhmgnhhpf409gy1db4n5hsvgcmbdamp7mzcvn6b85imf6wlk60y"))))
+        (base32 "0pqfrnhqjw6pskfgz0sz0ixvixpns01vikmxqi9190lhh62jjnd8"))))
     (properties `((upstream-name . "codecountR")))
     (build-system r-build-system)
     (arguments
@@ -25595,15 +25646,15 @@ search strategy, a candidate code list will be returned.")
      "Data analysis often requires coding, especially when data are collected through
 interviews, observations, or questionnaires.  As a result, code counting and
 data preparation are essential steps in the analysis process.  Analysts may need
-to count the codes in a text (tokenization and counting of pre-established
-codes) and prepare the data (e.g., min-max normalization, Z-score, robust
-scaling, Box-Cox transformation, and non-parametric bootstrap).  For the Box-Cox
-transformation (Box & Cox, 1964, <https://www.jstor.org/stable/2984418>), the
-optimal Lambda is determined using the log-likelihood method.  Non-parametric
-bootstrap involves randomly sampling data with replacement.  Two random number
-generators are also integrated: a Lehmer congruential generator for uniform
-distribution and a Box-Muller generator for normal distribution.  Package for
-educational purposes.")
+to count the codes in a text (Tokenization, counting of pre-established codes,
+computing the co-occurrence matrix by line) and prepare the data (e.g., min-max
+normalization, Z-score, robust scaling, Box-Cox transformation, and
+non-parametric bootstrap).  For the Box-Cox transformation (Box & Cox, 1964,
+<https://www.jstor.org/stable/2984418>), the optimal Lambda is determined using
+the log-likelihood method.  Non-parametric bootstrap involves randomly sampling
+data with replacement.  Two random number generators are also integrated: a
+Lehmer congruential generator for uniform distribution and a Box-Muller
+generator for normal distribution.  Package for educational purposes.")
     (license license:gpl3)))
 
 (define-public r-codecollection
@@ -25822,6 +25873,40 @@ The compositional data analysis approach implemented is outlined in Dumuid et
 al. (2017a) <doi:10.1177/0962280217710835> and Dumuid et al. (2017b)
 <doi:10.1177/0962280217737805>.")
     (license license:gpl2)))
+
+(define-public r-codalomic
+  (package
+    (name "r-codalomic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoDaLoMic" version))
+       (sha256
+        (base32 "1z240vsjcnszd9wy01rdm2ahq7rgmvswymmxai3lqklay87lh06q"))))
+    (properties `((upstream-name . "CoDaLoMic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zcompositions
+                             r-xtable
+                             r-reshape2
+                             r-r2jags
+                             r-mass
+                             r-ggplot2
+                             r-ggbiplot
+                             r-compositions
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=CoDaLoMic")
+    (synopsis "Compositional Models to Longitudinal Microbiome Data")
+    (description
+     "Implementation of models to analyse compositional microbiome time series taking
+into account the interaction between groups of bacteria.  The models implemented
+are described in Creus-MartÃ­ et al (2018, ISBN:978-84-09-07541-6), Creus-MartÃ­
+et al (2021) <doi:10.1155/2021/9951817> and Creus-MartÃ­ et al (2022)
+<doi:10.1155/2022/4907527>.")
+    (license license:gpl3)))
 
 (define-public r-codalm
   (package
@@ -38129,13 +38214,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.9.92")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "0vr3jgr430pxvicaw5ci5v56gm26ajrzb9v3hwxjjs8rmmzgwhay"))))
+        (base32 "1xlmyvim2z91chsa6p4bw196cncn0vvg4la2zvz62rnzk0swlnzk"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments
@@ -44338,13 +44423,13 @@ effects.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "0cvagjv4nqa42wcwnhp9jlpzvqlpr6wipwxmlamwdbfb0bb64lk7"))))
+        (base32 "1la4rraghc057grls4mjfk3ys8a3fhmw3i9i2xck142q9kwv6df2"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (arguments

@@ -3912,13 +3912,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
-    (version "0.9")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiscaleDTM" version))
        (sha256
-        (base32 "0j4jlak8r3p0aqfayfcq9m6lsxqh894ipjl7y85805sjda6mryk9"))))
+        (base32 "1pg947za6kkkqw6csgnn9jqcn4xfbnfi6gz74g05lkh5crv1kr4k"))))
     (properties `((upstream-name . "MultiscaleDTM")))
     (build-system r-build-system)
     (arguments
@@ -6217,13 +6217,13 @@ system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
 (define-public r-multiblock
   (package
     (name "r-multiblock")
-    (version "0.8.8.2")
+    (version "0.8.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiblock" version))
        (sha256
-        (base32 "05z6zf9vh94as4m2si5kam101swhyfyv2vm0k9js1pxakwziavkq"))))
+        (base32 "08z8klbhhdidnf0psy6wmimknm2wxmy87c4lls7xqyc86ar8cpny"))))
     (properties `((upstream-name . "multiblock")))
     (build-system r-build-system)
     (arguments
@@ -6240,7 +6240,7 @@ system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
                              r-plotrix
                              r-mixlm
                              r-mass
-                             r-lme4
+                             r-hdanova
                              r-car
                              r-ade4))
     (native-inputs (list r-knitr))
@@ -15677,13 +15677,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "0dzkar23k58170sc9lmbihg5w1wyia53hrh9s2c60mp6jj27lvy0"))))
+        (base32 "0lj2n7amfqqcflmkffhgfq3al4jdh9xg0gg7qwb25jv68f8n9zvc"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -15694,6 +15694,7 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
+                             r-plotly
                              r-nlme
                              r-mvtnorm
                              r-mvnfast
@@ -15716,7 +15717,7 @@ equations (LMS) approach (Klein & Moosbrugger, 2000).  The quasi-maximum
 likelihood (QML) approach (Klein & MuthÃ©n, 2007) (temporarily unavailable) The
 constrained- unconstrained, residual- and double centering- approaches are
 estimated via lavaan (Rosseel, 2012), whilst the LMS- and QML- approaches are
-estimated via by modsem it self.  Alternatively model can be estimated via Mplus
+estimated via modsem it self.  Alternatively model can be estimated via Mplus
 (MuthÃ©n & MuthÃ©n, 1998-2017).  References: Algina, J., & Moulder, B. C.
 (2001). <doi:10.1207/S15328007SEM0801_3>. \"A note on estimating the
 JÃ¶reskog-Yang model for latent variable interaction using LISREL 8.3.\" Klein,
@@ -25570,6 +25571,30 @@ by integrating a large number of tools.  Important features are described in
 TaudiÃ¨re A. (2023) <doi:10.21105/joss.06038>.")
     (license license:agpl3)))
 
+(define-public r-miscmath
+  (package
+    (name "r-miscmath")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MiscMath" version))
+       (sha256
+        (base32 "0awvlval83ng39hhkgm6bipr2kwhzlvs16ba6y3lkk7zkwy2yfi1"))))
+    (properties `((upstream-name . "MiscMath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-randomforest))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=MiscMath")
+    (synopsis "Miscellaneous Mathematical Tools")
+    (description
+     "Some basic math calculators for finding angles for triangles and for finding the
+greatest common divisor of two numbers and so on.")
+    (license license:gpl2+)))
+
 (define-public r-misclassglm
   (package
     (name "r-misclassglm")
@@ -29588,6 +29613,39 @@ added benefits of returning out of bag error and variable importance estimates,
 as well as being simple to run in parallel.")
     (license license:expat)))
 
+(define-public r-micer
+  (package
+    (name "r-micer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "micer" version))
+       (sha256
+        (base32 "1pdcinfjazfwgd6lpskgqwba9hglfiz19aprlz13sq6zs9irp087"))))
+    (properties `((upstream-name . "micer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maxwell-geospatial/micer")
+    (synopsis "Map Image Classification Efficacy")
+    (description
+     "Map image classification efficacy (MICE) adjusts the accuracy rate relative to a
+random classification baseline (Shao et al.
+(2021)<doi:10.1109/ACCESS.2021.3116526> and Tang et al.
+(2024)<doi:10.1109/TGRS.2024.3446950>).  Only the proportions from the reference
+labels are considered, as opposed to the proportions from the reference and
+predictions, as is the case for the Kappa statistic.  This package offers means
+to calculate MICE and adjusted versions of class-level user's accuracy (i.e.,
+precision) and producer's accuracy (i.e., recall) and F1-scores.  Class-level
+metrics are aggregated using macro-averaging.  Functions are also made available
+to estimate confidence intervals using bootstrapping and statistically compare
+two classification results.")
+    (license license:gpl3+)))
+
 (define-public r-micemd
   (package
     (name "r-micemd")
@@ -31493,13 +31551,13 @@ exogenous covariate sampled at a lower frequency.")
 (define-public r-mfdp
   (package
     (name "r-mfdp")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mFDP" version))
        (sha256
-        (base32 "01v01hnjsnl5gpkf0zg7ql194kwc963b4l5g74ns2qxxhz8q1f3s"))))
+        (base32 "12f6w0dzjn93wfrqqp8hmx92w66zjg1rmpwa326fmki62l95bmds"))))
     (properties `((upstream-name . "mFDP")))
     (build-system r-build-system)
     (arguments
@@ -32040,13 +32098,13 @@ Metropolis algorithm was originally described in Metropolis et al (1953);
 (define-public r-metrology
   (package
     (name "r-metrology")
-    (version "0.9-28-1")
+    (version "0.9-29-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metRology" version))
        (sha256
-        (base32 "1syjwblyd18myxrs0hx4m91fgb6zs3r4g7w701j2f2pw6j9mvz0y"))))
+        (base32 "0w7q0xz9b11kh0b56dprqlpn0mrxiwij1nw5vfij8l66lkccbx1v"))))
     (properties `((upstream-name . "metRology")))
     (build-system r-build-system)
     (arguments
@@ -35427,6 +35485,42 @@ components and covariates analysis and mixtures of probabilistic principal
 components models to metabolomic spectral data.")
     (license license:gpl2)))
 
+(define-public r-metabodecon
+  (package
+    (name "r-metabodecon")
+    (version "1.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metabodecon" version))
+       (sha256
+        (base32 "1fxx9c9bv0jm4jmzx62n52xpz8lcdy1hfi5yfvdy93v9j7jdj57b"))))
+    (properties `((upstream-name . "metabodecon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-toscutil
+                             r-speaq
+                             r-readjdx
+                             r-mathjaxr
+                             r-data-table))
+    (home-page "https://github.com/spang-lab/metabodecon/")
+    (synopsis "Deconvolution and Alignment of 1d NMR Spectra")
+    (description
+     "This package provides a framework for deconvolution, alignment and
+postprocessing of 1-dimensional (1d) nuclear magnetic resonance (NMR) spectra,
+resulting in a data matrix of aligned signal integrals.  The deconvolution part
+uses the algorithm described in Koh et al. (2009)
+<doi:10.1016/j.jmr.2009.09.003>.  The alignment part is based on functions from
+the speaq package, described in Beirnaert et al. (2018)
+<doi:10.1371/journal.pcbi.1006018> and Vu et al. (2011)
+<doi:10.1186/1471-2105-12-405>.  A detailed description and evaluation of an
+early version of the package, @code{MetaboDecon1D} v0.2.2', can be found in
+Haeckl et al. (2021) <doi:10.3390/metabo11070452>.")
+    (license license:gpl3+)))
+
 (define-public r-metabodata
   (package
     (name "r-metabodata")
@@ -35671,13 +35765,13 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
 (define-public r-meta
   (package
     (name "r-meta")
-    (version "8.0-1")
+    (version "8.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meta" version))
        (sha256
-        (base32 "09m7qbc04lmfz7hk79dhps53jh2czrblxq0var5cgnkkb2sdnls4"))))
+        (base32 "0sgzalxymm2r5pcgd5rcq5a64nvzmar351habmhznckhmc06cg0x"))))
     (properties `((upstream-name . "meta")))
     (build-system r-build-system)
     (arguments
@@ -35701,13 +35795,14 @@ al. (2021) <doi:10.3390/axioms10040267>, Taketomi et al. (2022)
 supporting Schwarzer, Carpenter, and RÃ¼cker <DOI:10.1007/978-3-319-21416-0>,
 \"Meta-Analysis with R\" (2015): - common effect and random effects meta-analysis;
 - several plots (forest, funnel, Galbraith / radial, L'Abbe, Baujat, bubble); -
-three-level meta-analysis model; - generalised linear mixed model; -
-Hartung-Knapp method for random effects model; - Kenward-Roger method for random
-effects model; - prediction interval; - statistical tests for funnel plot
-asymmetry; - trim-and-fill method to evaluate bias in meta-analysis; -
-meta-regression; - cumulative meta-analysis and leave-one-out meta-analysis; -
-import data from @code{RevMan} 5'; - produce forest plot summarising several
-(subgroup) meta-analyses.")
+three-level meta-analysis model; - generalised linear mixed model; - logistic
+regression with penalised likelihood for rare events; - Hartung-Knapp method for
+random effects model; - Kenward-Roger method for random effects model; -
+prediction interval; - statistical tests for funnel plot asymmetry; -
+trim-and-fill method to evaluate bias in meta-analysis; - meta-regression; -
+cumulative meta-analysis and leave-one-out meta-analysis; - import data from
+@code{RevMan} 5'; - produce forest plot summarising several (subgroup)
+meta-analyses.")
     (license license:gpl2+)))
 
 (define-public r-mestim
@@ -45405,13 +45500,13 @@ standard deviation across subgroups.  See A. Marradi \"L'analisi monovariata\"
 (define-public r-marquee
   (package
     (name "r-marquee")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marquee" version))
        (sha256
-        (base32 "150rnn4pk8wc5h1gpb7grsyxxbf3xjjain03xfc0hnx8s6c3fjzg"))))
+        (base32 "080nw8k9ws1ciwly1cbkqmshgy62zkdxw890rzcvnmjzaks808pi"))))
     (properties `((upstream-name . "marquee")))
     (build-system r-build-system)
     (arguments

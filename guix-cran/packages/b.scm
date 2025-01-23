@@ -1191,13 +1191,13 @@ the supply chain.  Marchena Marlene (2010) <@code{arXiv:1009.3977>}.")
 (define-public r-bullseye
   (package
     (name "r-bullseye")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bullseye" version))
        (sha256
-        (base32 "03lzd4xw9yh3kgp53w3cpli6n0m8z1ww5744pii35vyw9456bdik"))))
+        (base32 "155wr4ppay2i9kq7hqpgkmpjy59rsp4hqq3v1kwj8ywg32mqdf1i"))))
     (properties `((upstream-name . "bullseye")))
     (build-system r-build-system)
     (arguments
@@ -4630,13 +4630,13 @@ Gaussian.")
 (define-public r-brickster
   (package
     (name "r-brickster")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickster" version))
        (sha256
-        (base32 "0xglzh73vyfwfvd4k2dwrp06ynxxxfak6aqk4gsv2y3jy4qrz451"))))
+        (base32 "1x2yk4k49klliv9d9vkyh5ik2m5a9kpphp7d2llfry4q66d4xpq2"))))
     (properties `((upstream-name . "brickster")))
     (build-system r-build-system)
     (arguments
@@ -6216,13 +6216,13 @@ methylation Infinium 450K array data) without reference samples.")
 (define-public r-bplsr
   (package
     (name "r-bplsr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bplsr" version))
        (sha256
-        (base32 "02f7hlcb497yan6bf11nfhvj8vav3h705qj2zy04jrkd6xqc64rk"))))
+        (base32 "0jfr3fxmb2azm37p089690sql89ca5zghd51syf96pzxxh3wjiqm"))))
     (properties `((upstream-name . "bplsr")))
     (build-system r-build-system)
     (arguments
@@ -7398,6 +7398,33 @@ methods for finite populations, see Mashreghi et Al. (2016)
     (description
      "Model selection by bootstrapping the @code{stepAIC()} procedure.")
     (license license:gpl2+)))
+
+(define-public r-bootstatespace
+  (package
+    (name "r-bootstatespace")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bootStateSpace" version))
+       (sha256
+        (base32 "14x3i5fa3xhawysqz1bbgxhrr9xi5qvw1860zlixg960yr5fmmgd"))))
+    (properties `((upstream-name . "bootStateSpace")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-simstatespace r-dynr))
+    (home-page "https://github.com/jeksterslab/bootStateSpace")
+    (synopsis "Bootstrap for State Space Models")
+    (description
+     "This package provides a streamlined and user-friendly framework for
+bootstrapping in state space models, particularly when the number of
+subjects/units (n) exceeds one, a scenario commonly encountered in social and
+behavioral sciences.  For an introduction to state space models in social and
+behavioral sciences, refer to Chow, Ho, Hamaker, and Dolan (2010)
+<doi:10.1080/10705511003661553>.")
+    (license license:gpl3+)))
 
 (define-public r-bootruin
   (package
@@ -10634,6 +10661,36 @@ continuous variable.  The package implements methods described in Grimmer,
 Marble, and Tanigawa-Lau (2023) <doi:10.31235/osf.io/c9fkg>.")
     (license license:gpl3+)))
 
+(define-public r-blocktools
+  (package
+    (name "r-blocktools")
+    (version "0.6.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockTools" version))
+       (sha256
+        (base32 "1apdn3yqhq59nwbx0vdc8wnm5phwrpfbfb4a4pjlbljy8h06s5j8"))))
+    (properties `((upstream-name . "blockTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-mass r-dplyr))
+    (home-page "https://www.ryantmoore.org/html/software.blockTools.html")
+    (synopsis
+     "Block, Assign, and Diagnose Potential Interference in Randomized Experiments")
+    (description
+     "Blocks units into experimental blocks, with one unit per treatment condition, by
+creating a measure of multivariate distance between all possible pairs of units.
+ Maximum, minimum, or an allowable range of differences between units on one
+variable can be set.  Randomly assign units to treatment conditions.  Diagnose
+potential interference between units assigned to different treatment conditions.
+ Write outputs to .tex and .csv files.  For more information on the methods
+implemented, see Moore (2012) <doi:10.1093/pan/mps025>.")
+    (license (list license:gpl2+
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-blocksdesign
   (package
     (name "r-blocksdesign")
@@ -11232,13 +11289,13 @@ randomization method for assessing sources of model error.")
 (define-public r-blend
   (package
     (name "r-blend")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Blend" version))
        (sha256
-        (base32 "18dib7pb44z9kacmhsypvzpn3345m9wy042pf5vlli7wms5fz9zz"))))
+        (base32 "1vg14321yx2002j148yyz7mf8dl2rc7cr4j1jacqn836xm7myz8c"))))
     (properties `((upstream-name . "Blend")))
     (build-system r-build-system)
     (arguments
@@ -11247,9 +11304,9 @@ randomization method for assessing sources of model error.")
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-ggplot2))
     (home-page "https://github.com/kunfa/Blend")
     (synopsis
-     "Bayesian Longitudinal Regularized Semiparametric Quantile Mixed Models")
+     "Robust Bayesian Longitudinal Regularized Semiparametric Mixed Models")
     (description
-     "Our recently developed fully Bayesian semiparametric quantile mixed-effect model
+     "Our recently developed fully robust Bayesian semiparametric mixed-effect model
 for high-dimensional longitudinal studies with heterogeneous observations can be
 implemented through this package.  This model can distinguish between
 time-varying interactions and constant-effect-only cases to avoid model
@@ -13891,42 +13948,6 @@ purchased as asreml-R from VSNi <https://vsni.co.uk/>, who will supply a zip
 file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
     (license license:expat)))
 
-(define-public r-biomass
-  (package
-    (name "r-biomass")
-    (version "2.1.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BIOMASS" version))
-       (sha256
-        (base32 "1qbx7hxzzwnwp00rdvdwqxawm54chn1pcql3009cwdydc249v0dh"))))
-    (properties `((upstream-name . "BIOMASS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra
-                             r-sf
-                             r-rappdirs
-                             r-proj4
-                             r-minpack-lm
-                             r-jsonlite
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/umr-amap/BIOMASS")
-    (synopsis
-     "Estimating Aboveground Biomass and Its Uncertainty in Tropical Forests")
-    (description
-     "This package contains functions to estimate aboveground biomass/carbon and its
-uncertainty in tropical forests.  These functions allow to (1) retrieve and to
-correct taxonomy, (2) estimate wood density and its uncertainty, (3) construct
-height-diameter models, (4) manage tree and plot coordinates, (5) estimate the
-aboveground biomass/carbon at the stand level with associated uncertainty.  To
-cite BIOMASS', please use citation(\"BIOMASS\").  See more in the article of
-RÃ©jou-MÃ©chain et al. (2017) <doi:10.1111/2041-210X.12753>.")
-    (license license:gpl2)))
-
 (define-public r-biomark
   (package
     (name "r-biomark")
@@ -14403,13 +14424,13 @@ calculations needed by Biological Dosimetry Laboratories.")
 (define-public r-biodiversityr
   (package
     (name "r-biodiversityr")
-    (version "2.17-1")
+    (version "2.17-1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiodiversityR" version))
        (sha256
-        (base32 "096vpg8lagi84gw516n240hd36g67l92zhsrnxx6v32g83xg8z6a"))))
+        (base32 "1n6m42zvav6ghwgl3g50sb1fcab0w2hkhyix2syjfy4i87qza7qz"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
     (arguments
@@ -17692,13 +17713,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.3.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "1cas914ach2d2r8pjybyx2lvhydlsx89y2bgkqn40vhg8d40zc5d"))))
+        (base32 "18hgbmlgjhlfpyvjsvjpn8nklgrqfxclflrjfsk8pfjw1dgvvnkw"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments
@@ -17706,6 +17727,7 @@ They can be used to test the different features of the package bibliometrix
       #:tests? #f))
     (propagated-inputs (list r-tidytext
                              r-tidyr
+                             r-stringr
                              r-stringi
                              r-stringdist
                              r-snowballc
@@ -17713,6 +17735,7 @@ They can be used to test the different features of the package bibliometrix
                              r-rscopus
                              r-readxl
                              r-readr
+                             r-purrr
                              r-pubmedr
                              r-plotly
                              r-openxlsx
@@ -21591,6 +21614,38 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
 <doi:10.1080/10618600.2024.2422985> and Bauer (202X)
 <doi:10.48550/@code{arXiv.2308.06820>}.")
     (license license:gpl2+)))
+
+(define-public r-bdsm
+  (package
+    (name "r-bdsm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bdsm" version))
+       (sha256
+        (base32 "0q28m70v04mha9d2d5c71lv9igyd5pcrpamw4r574ccci85h4jdq"))))
+    (properties `((upstream-name . "bdsm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rootsolve
+                             r-rlang
+                             r-rje
+                             r-optimbase
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=bdsm")
+    (synopsis "Bayesian Dynamic Systems Modeling")
+    (description
+     "This package implements methods for building and analyzing models based on panel
+data as described in the paper by Moral-Benito (2013,
+<doi:10.1080/07350015.2013.818003>).  The package provides functions to estimate
+dynamic panel data models and analyze the results of the estimation.")
+    (license license:expat)))
 
 (define-public r-bdscale
   (package
@@ -27866,13 +27921,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "138irq8f7yinjbz9ycsvvb42bh35a8a2jmncg9fcfc1gm9dlfmzb"))))
+        (base32 "0ipkgscxa9i52wshnkvjw0lf55c2ji0plfzmxcqi8jcxqabghfvd"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments
@@ -27913,7 +27968,7 @@ players monthly/yearly stats, team heatmaps, team shooting plots, team four
 factors plots, cross-tables with the results of regular season games, maps of
 nationalities, combinations of lineups, possessions-related variables, timeouts,
 performance by periods, personal fouls and offensive rebounds.  Please see Vinue
-(2020) <doi:10.1089/big.2018.0124>.")
+(2020) <doi:10.1089/big.2018.0124> and Vinue (2024) <doi:10.1089/big.2023.0177>.")
     (license license:gpl2+)))
 
 (define-public r-batteryreduction
@@ -31805,13 +31860,13 @@ Bayesian phylogenetics easily and reproducibly from R'.")
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babelmixr2" version))
        (sha256
-        (base32 "0qa4hmlan67gqbgmggzkqmiw307yqfwsm968bsqh8yb2z006lmbb"))))
+        (base32 "101aa4qiwjijzmzjar6r0pqnis9m6h9ccdk5vqlw611qd0ajmlj3"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
     (arguments

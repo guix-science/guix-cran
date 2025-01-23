@@ -3623,13 +3623,13 @@ ARIMA in SAS.")
 (define-public r-atrrr
   (package
     (name "r-atrrr")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atrrr" version))
        (sha256
-        (base32 "0lhja4spmmj3a1xmdyiqj9lpnckvakqblfgnr6avzp7clha6rkvr"))))
+        (base32 "1h3qizyhi59lh6n11z8kl0af6x8r0k0jd63njl4bkg4l7b2l3b4b"))))
     (properties `((upstream-name . "atrrr")))
     (build-system r-build-system)
     (arguments
@@ -3976,13 +3976,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2024.11.29")
+    (version "2025.1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "0aqwbzvdy1snyb78mhra1hdp8238wgi2vvzrv4vjrxjs57hrbvf0"))))
+        (base32 "1qqmww4yfycw0qi7s4m8ydkav4arcrdj2z1g1q0kbl3cqgmsys09"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (arguments
@@ -7889,13 +7889,13 @@ matrices, data frames, formulas, etc.")
 (define-public r-arealdb
   (package
     (name "r-arealdb")
-    (version "0.6.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arealDB" version))
        (sha256
-        (base32 "08mmalw9ii4i6ills6i77bfgy3ybzd4161wmag36b0q9fvkkcyhr"))))
+        (base32 "16anvjgwvpyciib01wga7b1zbl8x0wiy6ibqfibj6i5qyv7jikyw"))))
     (properties `((upstream-name . "arealDB")))
     (build-system r-build-system)
     (arguments
@@ -7914,8 +7914,11 @@ matrices, data frames, formulas, etc.")
                              r-progress
                              r-ontologics
                              r-magrittr
+                             r-fuzzyjoin
                              r-dplyr
-                             r-checkmate))
+                             r-checkmate
+                             r-beepr
+                             r-archive))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/luckinet/arealDB")
     (synopsis "Harmonise and Integrate Heterogeneous Areal Data")
@@ -11590,13 +11593,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.9")
+    (version "0.8.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "1lfsdp15wqlmw72cy68p60dl6h4i771v7ywzc4rkn7k6fm83gj6f"))))
+        (base32 "1611z6yw10d3xh9l07vymw48k6rc1nb6zry6crv75qf43gvwyi47"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (arguments
@@ -12852,13 +12855,13 @@ a second model trained on the classes of interest.")
 (define-public r-animint2
   (package
     (name "r-animint2")
-    (version "2024.11.2")
+    (version "2025.1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animint2" version))
        (sha256
-        (base32 "0sapq1qjwsdbw4l5yg88q6djnrljj3sgawfm1g9cwhx6zfjlvhg4"))))
+        (base32 "1r6rig5r6va0mj3cq6rppkx9s0wsdi66n82s3z4d0n9qkrn1k6di"))))
     (properties `((upstream-name . "animint2")))
     (build-system r-build-system)
     (arguments
@@ -14320,6 +14323,41 @@ Effects and Multiplicative Model (AMMI) for continuous data.  Biplot with the
 averages and regions of confidence can be generated.  The chains run in parallel
 on Linux systems and run serially on Windows.")
     (license license:gpl2+)))
+
+(define-public r-amisforinfectiousdiseases
+  (package
+    (name "r-amisforinfectiousdiseases")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AMISforInfectiousDiseases" version))
+       (sha256
+        (base32 "1razasqc5c13njr67sp6bwfwy7zgw34sfj52dp0szvi4b1r0fshn"))))
+    (properties `((upstream-name . "AMISforInfectiousDiseases")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-weights
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mnormt
+                             r-mclust
+                             r-hmisc))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/drsimonspencer/AMISforInfectiousDiseases-dev")
+    (synopsis "Implement the AMIS Algorithm for Infectious Disease Models")
+    (description
+     "This package implements the Adaptive Multiple Importance Sampling (AMIS)
+algorithm, as described by Retkute et al. (2021, <doi:10.1214/21-AOAS1486>), to
+estimate key epidemiological parameters by combining outputs from a
+geostatistical model of infectious diseases (such as prevalence, incidence, or
+relative risk) with a disease transmission model.  Utilising the resulting
+posterior distributions, the package enables forward projections at the local
+level.")
+    (license license:expat)))
 
 (define-public r-amim
   (package
@@ -16765,19 +16803,19 @@ family of distributions available in Galarza et.al. (2017)
 (define-public r-alcyon
   (package
     (name "r-alcyon")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alcyon" version))
        (sha256
-        (base32 "1lsk2hb0a6lmmy439dga2llsij6ng7bqrfigwsb5zcfi7gkh0kd4"))))
+        (base32 "02cga5p6pq7fa4v4nbcmsfafs2h054ha4azfgfbixnkb1h7k5jjh"))))
     (properties `((upstream-name . "alcyon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stars r-sf r-rcpp r-cli))
+    (propagated-inputs (list r-withr r-stars r-sf r-rcpp r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/spatialnous/alcyon")
     (synopsis "Spatial Network Analysis")
@@ -19216,13 +19254,13 @@ multi-environment trials, uniformity trials, yield monitors, and more.")
 (define-public r-agricolaeplotr
   (package
     (name "r-agricolaeplotr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agricolaeplotr" version))
        (sha256
-        (base32 "0fy9h4r55dn7yxnjlxhy74sf9lcg22mllcg6nwaivp92w03vkccy"))))
+        (base32 "0khkh6s2ki9q0jpr7wji6crgg41s25bgd82acqm7lnabvgv41xjs"))))
     (properties `((upstream-name . "agricolaeplotr")))
     (build-system r-build-system)
     (arguments
@@ -19230,6 +19268,7 @@ multi-environment trials, uniformity trials, yield monitors, and more.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-stringr
                              r-stplanr
                              r-sp
                              r-sf
@@ -21794,6 +21833,47 @@ Implementation Guide\" (CDISC Analysis Data Model Team (2021),
 extension package of the admiral package.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-admiralmetabolic
+  (package
+    (name "r-admiralmetabolic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "admiralmetabolic" version))
+       (sha256
+        (base32 "1xj1l33ss9hpqx5i5wml051izf2c36q57xh7drrjpyi4lizwzzcj"))))
+    (properties `((upstream-name . "admiralmetabolic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-dplyr
+                             r-cli
+                             r-admiraldev
+                             r-admiral))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/admiralmetabolic/")
+    (synopsis "Metabolism Extension Package for ADaM in 'R' Asset Library")
+    (description
+     "This package provides a toolbox for programming Clinical Data Standards
+Interchange Consortium (CDISC) compliant Analysis Data Model (A@code{DaM})
+datasets in R. A@code{DaM} datasets are a mandatory part of any New Drug or
+Biologics License Application submitted to the United States Food and Drug
+Administration (FDA).  Analysis derivations are implemented in accordance with
+the \"Analysis Data Model Implementation Guide\" (CDISC Analysis Data Model Team,
+2021, <https://www.cdisc.org/standards/foundational/adam>).  The package is an
+extension package of the admiral package focusing on the metabolism therapeutic
+area.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
@@ -23256,13 +23336,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.15.0")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "0gp8p1pp3nsnx4nv1ag7q0qkx4wqrmqmwn56czz2wjf68zxfdx3i"))))
+        (base32 "1rkj3ppmg840brgd9q8664g7r9h6sdr48fwszq8vidpjl6qgsx0b"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (arguments
@@ -23283,13 +23363,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.15.0")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "1pyhgnbgy41z1wylzrh24x0l44aram7ssp675bsadwym0mc9dcpm"))))
+        (base32 "1cnsjq4glz2a5czdhfs5p8xf0krhay1y4hs98j6p461vfmzich6g"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (arguments
@@ -23311,13 +23391,13 @@ and query parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.15.0")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "0n556snnm8i5a4njq75sazp0wz0cajcgddzjm3w4378pamxmmm79"))))
+        (base32 "1aaq0va91yxp4izmdc44pbsyz3qmi8gz1wxvac0rjwks6y53nz8k"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (arguments
@@ -25139,13 +25219,13 @@ ISBN: 978-0387310732).")
 (define-public r-accelstab
   (package
     (name "r-accelstab")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccelStab" version))
        (sha256
-        (base32 "1v2m3i2m48nndr3nwgpj8y73ni2xcysb7l4na8xpcj9ijwiq1s12"))))
+        (base32 "0c2b7z2yn70vn7gck5imxc4dc05bvkvxjiskbk28gpwsyk73ny07"))))
     (properties `((upstream-name . "AccelStab")))
     (build-system r-build-system)
     (arguments

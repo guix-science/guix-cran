@@ -387,6 +387,43 @@ used by different statistical organizations around the globe for data
 dissemination.")
     (license license:gpl3)))
 
+(define-public r-pxmake
+  (package
+    (name "r-pxmake")
+    (version "0.14.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pxmake" version))
+       (sha256
+        (base32 "1bxz71h8sgcb9573rjyld89v28irmf3xy6jh80ibk21f7d8abcg7"))))
+    (properties `((upstream-name . "pxmake")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-openxlsx
+                             r-magrittr
+                             r-furrr
+                             r-dplyr
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/StatisticsGreenland/pxmake")
+    (synopsis "Make PX-Files in R")
+    (description
+     "Create PX-files from scratch or read and modify existing ones.  Includes a
+function for every PX keyword, making metadata manipulation simple and
+human-readable.")
+    (license license:expat)))
+
 (define-public r-pwt9
   (package
     (name "r-pwt9")
@@ -9044,13 +9081,13 @@ Events (PRO-CTCAE) and other PRO measurements.")
 (define-public r-proactive
   (package
     (name "r-proactive")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProActive" version))
        (sha256
-        (base32 "0x6bifjjsk9s4p521gi76kwfbia6fc0vb70kfd21djw484db4a8s"))))
+        (base32 "1j1yc9aykqdr8g0nx2w06z5phkhhfrws3967qm2czz9lv00gz514"))))
     (properties `((upstream-name . "ProActive")))
     (build-system r-build-system)
     (arguments
@@ -9064,10 +9101,11 @@ Events (PRO-CTCAE) and other PRO measurements.")
      "Automate the detection of gaps and elevations in mapped sequencing read coverage
 using a 2D pattern-matching algorithm. @code{ProActive} detects, characterizes
 and visualizes read coverage patterns in both genomes and metagenomes.
-Optionally, users may provide gene predictions associated with their genome or
+Optionally, users may provide gene annotations associated with their genome or
 metagenome in the form of a .gff file.  In this case, @code{ProActive} will
-generate an additional output table containing the gene predictions found within
-the detected regions of gapped and elevated read coverage.")
+generate an additional output table containing the gene annotations found within
+the detected regions of gapped and elevated read coverage.  Additionally, users
+can search for gene annotations of interest in the output read coverage plots.")
     (license license:gpl2)))
 
 (define-public r-pro
@@ -10879,6 +10917,42 @@ nonparametric regression are also alternatives which have been implemented.  The
 idea behind the presmoothed landmark estimators is to use the presmoothing
 techniques developed by Cao et al. (2005) <doi:10.1007/s00180-007-0076-6> in the
 landmark estimation of the transition probabilities.")
+    (license license:gpl3)))
+
+(define-public r-presmoothedtp
+  (package
+    (name "r-presmoothedtp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "presmoothedTP" version))
+       (sha256
+        (base32 "1rr5az5v7pa1w64n2g4nyhlkwxyjl7n8f8k1l9x53vahmpr401g8"))))
+    (properties `((upstream-name . "presmoothedTP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-plyr r-mstate))
+    (home-page "https://cran.r-project.org/package=presmoothedTP")
+    (synopsis
+     "Presmoothed Landmark Aalen-Johansen Estimator of Transition Probabilities for Complex Multi-State Models")
+    (description
+     "Multi-state models are essential tools in longitudinal data analysis.  One
+primary goal of these models is the estimation of transition probabilities, a
+critical metric for predicting clinical prognosis across various stages of
+diseases or medical conditions.  Traditionally, inference in multi-state models
+relies on the Aalen-Johansen (AJ) estimator which is consistent under the Markov
+assumption.  However, in many practical applications, the Markovian nature of
+the process is often not guaranteed, limiting the applicability of the AJ
+estimator in more complex scenarios.  This package extends the landmark
+Aalen-Johansen estimator (Putter, H, Spitoni, C (2018)
+<doi:10.1177/0962280216674497>) incorporating presmoothing techniques described
+by Soutinho, Meira-Machado and Oliveira (2020)
+<doi:10.1080/03610918.2020.1762895>, offering a robust alternative for
+estimating transition probabilities in non-Markovian multi-state models with
+multiple states and potential reversible transitions.")
     (license license:gpl3)))
 
 (define-public r-presize
@@ -17195,29 +17269,6 @@ framework.  This work is part of the FRB-CESAB working group
      "Simulate the dynamic of wolf populations using a specific Individual-Based Model
 (IBM) compiled in C, see Chapron et al. (2016)
 <doi:10.1016/j.ecolmodel.2016.08.012>.")
-    (license license:gpl3)))
-
-(define-public r-pop-lion
-  (package
-    (name "r-pop-lion")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pop.lion" version))
-       (sha256
-        (base32 "1rj95wwcxvsfd1smd21717y9c0672a8vnpnbdsa63pxbzdxc4kaj"))))
-    (properties `((upstream-name . "pop.lion")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-testthat r-abind))
-    (home-page "https://cran.r-project.org/package=pop.lion")
-    (synopsis "Models for Simulating Lion Populations")
-    (description
-     "Simulate the dynamic of lion populations using a specific Individual-Based Model
-(IBM) compiled in C.")
     (license license:gpl3)))
 
 (define-public r-pop
@@ -24517,13 +24568,13 @@ saving output from the website.")
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planr" version))
        (sha256
-        (base32 "1dw4n4jmpqmrklpcxi2yfcbqbf81kbrqr6sw3fwrg2ppn3hiz9af"))))
+        (base32 "0n0y1lx3x573pwgqif4yng8rjgwx2nxwbphfd9dmz6g0swhfcvl2"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
     (arguments
@@ -27373,58 +27424,6 @@ inspection plans based on risks.  It generates a diagram of pallets in a lot,
 highlights the units to be sampled, and documents them based on the selected
 sampling method (simple random or systematic sampling).")
     (license license:gpl3)))
-
-(define-public r-phytools
-  (package
-    (name "r-phytools")
-    (version "2.4-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "phytools" version))
-       (sha256
-        (base32 "1i25dlikdx9av5653ra2709sjm9fc3fsis1yfsb7zagivi408ph9"))))
-    (properties `((upstream-name . "phytools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scatterplot3d
-                             r-phangorn
-                             r-optimparallel
-                             r-numderiv
-                             r-nlme
-                             r-mnormt
-                             r-mass
-                             r-maps
-                             r-foreach
-                             r-expm
-                             r-doparallel
-                             r-deoptim
-                             r-combinat
-                             r-coda
-                             r-clustergeneration
-                             r-ape))
-    (home-page "https://github.com/liamrevell/phytools")
-    (synopsis "Phylogenetic Tools for Comparative Biology (and Other Things)")
-    (description
-     "This package provides a wide range of methods for phylogenetic analysis -
-concentrated in phylogenetic comparative biology, but also including numerous
-techniques for visualizing, analyzing, manipulating, reading or writing, and
-even inferring phylogenetic trees.  Included among the functions in phylogenetic
-comparative biology are various for ancestral state reconstruction,
-model-fitting, and simulation of phylogenies and trait data.  A broad range of
-plotting methods for phylogenies and comparative data include (but are not
-restricted to) methods for mapping trait evolution on trees, for projecting
-trees into phenotype space or a onto a geographic map, and for visualizing
-correlated speciation between trees.  Lastly, numerous functions are designed
-for reading, writing, analyzing, inferring, simulating, and manipulating
-phylogenetic trees and comparative data.  For instance, there are functions for
-computing consensus phylogenies from a set, for simulating phylogenetic trees
-and data under a range of models, for randomly or non-randomly attaching species
-or clades to a tree, as well as for a wide range of other manipulations and
-analyses that phylogenetic biologists might find useful in their research.")
-    (license license:gpl2+)))
 
 (define-public r-phytoclass
   (package

@@ -341,13 +341,13 @@ experts.")
 (define-public r-kstio
   (package
     (name "r-kstio")
-    (version "0.4-0")
+    (version "0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kstIO" version))
        (sha256
-        (base32 "1qv4mg9hi62imk6xsldqprm6aca33qkh13jjihmvddaam7xxcm1z"))))
+        (base32 "1g661k00cijlvz6gi7y48h0qqhphckcyn7r2321svn0pd1xslhwi"))))
     (properties `((upstream-name . "kstIO")))
     (build-system r-build-system)
     (arguments
@@ -367,7 +367,7 @@ experts.")
 proposes mathematical formalisms to operationalize knowledge structures in a
 particular domain.  The @code{kstIO} package provides basic functionalities to
 read and write KST data from/to files to be used together with the kst',
-@code{kstMatrix}', pks or DAKS packages.")
+@code{kstMatrix}', CDSS', pks', or DAKS packages.")
     (license license:gpl3+)))
 
 (define-public r-kstatistics

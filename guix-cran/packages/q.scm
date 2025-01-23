@@ -5261,13 +5261,13 @@ are supported.  The native processing algorithms are documented by QGIS.org
 (define-public r-qgglmm
   (package
     (name "r-qgglmm")
-    (version "0.7.4")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QGglmm" version))
        (sha256
-        (base32 "0ghvicz4ia1180byj28lmg49889hqhb94g1jrkhm6hnzgqbjnfmd"))))
+        (base32 "199hyrbdgqfniby0fy651vqi86y6m0kkjmq18gn464aksmbr7c30"))))
     (properties `((upstream-name . "QGglmm")))
     (build-system r-build-system)
     (arguments
@@ -5358,13 +5358,13 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
 (define-public r-qgcomp
   (package
     (name "r-qgcomp")
-    (version "2.15.2")
+    (version "2.16.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgcomp" version))
        (sha256
-        (base32 "0qllrh5zmmd63kwjn7j3f5z56zr27q7czf6shdzcrf6ajy99risp"))))
+        (base32 "0l3h14mkjzp86lx7ajpia4n3153vjfxhy9fdghp7z8hzqv33874y"))))
     (properties `((upstream-name . "qgcomp")))
     (build-system r-build-system)
     (arguments
@@ -5372,7 +5372,9 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survival
+                             r-rootsolve
                              r-pscl
+                             r-numderiv
                              r-nnet
                              r-gridextra
                              r-ggplot2

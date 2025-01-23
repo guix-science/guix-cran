@@ -3471,13 +3471,13 @@ speech tagging.  This package provides the data files required by @code{jiebaR}.
 (define-public r-jico
   (package
     (name "r-jico")
-    (version "0.0")
+    (version "0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JICO" version))
        (sha256
-        (base32 "08ah7bjwkxm8fdk1s0vj3lpc7dvgz9llyhh4z9xsgpf4w98rwsvb"))))
+        (base32 "1q8z14ws071n9r197wn4kfg9ca78pwps33s6r8sblkh6079693w0"))))
     (properties `((upstream-name . "JICO")))
     (build-system r-build-system)
     (arguments
@@ -3487,14 +3487,12 @@ speech tagging.  This package provides the data files required by @code{jiebaR}.
     (home-page "https://cran.r-project.org/package=JICO")
     (synopsis "Joint and Individual Regression")
     (description
-     "This package implements the JICO algorithm [Wang, P., Wang, H., Li, Q., Shen,
-D., & Liu, Y. (2022). <@code{arXiv:2209.12388>}], which solves the multi-group
-regression problem.  The algorithm decomposes the responses from multiple groups
-into shared and group-specific components, which are driven by low-rank
-approximations of joint and individual structures from the covariates
-respectively.  It provides the implementation of the algorithm so solve the
-iterative continuum regression problem with fixed rank selection, as well as the
-cross-validation function to perform hyperparameter tuning.")
+     "An R package that implements the JICO algorithm [Wang, P., Wang, H., Li, Q.,
+Shen, D., & Liu, Y. (2024). <Journal of Computational and Graphical Statistics,
+33(3), 763-773>].  It aims at solving the multi-group regression problem.  The
+algorithm decomposes the responses from multiple groups into shared and
+group-specific components, which are driven by low-rank approximations of joint
+and individual structures from the covariates respectively.")
     (license license:gpl3+)))
 
 (define-public r-jgsbook
