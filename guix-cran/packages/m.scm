@@ -33699,13 +33699,13 @@ code, and functions to read solved @code{MetaPost} paths back into R.")
 (define-public r-metaplus
   (package
     (name "r-metaplus")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaplus" version))
        (sha256
-        (base32 "0cknvgnkvqdw00600akpxrrdbg7h0sdyv15vmhs9dsfdf1ag6z51"))))
+        (base32 "09naia49r44pwkb06pvxcqvdhwgkh0drqg57didia5wijp1cwjxi"))))
     (properties `((upstream-name . "metaplus")))
     (build-system r-build-system)
     (arguments
@@ -33722,7 +33722,6 @@ code, and functions to read solved @code{MetaPost} paths back into R.")
                              r-lme4
                              r-foreach
                              r-fastghquad
-                             r-dorng
                              r-doparallel
                              r-boot
                              r-bbmle))
@@ -40668,19 +40667,20 @@ and are useful in, for example, small area estimation.")
 (define-public r-mcmcr
   (package
     (name "r-mcmcr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcr" version))
        (sha256
-        (base32 "0ag8awdibrcylm7gshb60lxyv167k62zldffi7axni3z8w4s9cy5"))))
+        (base32 "16lphwsndzdl596s2wzbj73sr5vlk5fldzhvgm38rppyikpm1009"))))
     (properties `((upstream-name . "mcmcr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-universals
+                             r-tibble
                              r-term
                              r-purrr
                              r-nlist
@@ -47183,35 +47183,27 @@ Mapper, an algorithm from this area developed by Singh, MÃ©moli and Carlsson
 (define-public r-mapmixture
   (package
     (name "r-mapmixture")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapmixture" version))
        (sha256
-        (base32 "0wr7p5q0kin59cr9fayvbgb9c1jdm0nv8chy63nvznrhcw361xik"))))
+        (base32 "07aas15f63bp325q407hn79pbnh7wqdd5kc3zpm7cizinp69b78i"))))
     (properties `((upstream-name . "mapmixture")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-waiter
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinyfeedback
-                             r-shiny
                              r-sf
                              r-rnaturalearthdata
                              r-rlang
                              r-purrr
-                             r-htmltools
                              r-ggspatial
                              r-ggplot2
-                             r-dplyr
-                             r-colourpicker
-                             r-bslib))
+                             r-dplyr))
     (home-page "https://github.com/Tom-Jenkins/mapmixture")
     (synopsis "Spatial Visualisation of Admixture on a Projected Map")
     (description

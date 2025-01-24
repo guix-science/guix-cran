@@ -3279,6 +3279,34 @@ detailed description of the method and applications see Rizzi et al. (2015)
 <doi:10.1093/aje/kwv020>.")
     (license license:expat)))
 
+(define-public r-undidr
+  (package
+    (name "r-undidr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "undidR" version))
+       (sha256
+        (base32 "08q8q4fml66k241xjgd7pw5cqnhf4hqpp2pqk55mx4b9d3d2k0s5"))))
+    (properties `((upstream-name . "undidR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ebjamieson97/undidR")
+    (synopsis "Difference-in-Differences with Unpoolable Data")
+    (description
+     "This package provides a framework for estimating difference-in-differences with
+unpoolable data, based on Karim, Webb, Austin, and Strumpf (2024)
+<doi:10.48550/@code{arXiv.2403.15910>}.  Supports common or staggered adoption,
+multiple groups, and the inclusion of covariates.  Also computes p-values for
+the aggregate average treatment effect on the treated via the randomization
+inference procedure described in @code{MacKinnon} and Webb (2020)
+<doi:10.1016/j.jeconom.2020.04.024>.")
+    (license license:expat)))
+
 (define-public r-understandbpmn
   (package
     (name "r-understandbpmn")

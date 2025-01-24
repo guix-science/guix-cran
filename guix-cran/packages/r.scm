@@ -838,13 +838,13 @@ be plotted in rworldmap.")
 (define-public r-rworkflows
   (package
     (name "r-rworkflows")
-    (version "1.0.2")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rworkflows" version))
        (sha256
-        (base32 "1gl223swngk3v5q3s0drv245nxj8bbbxyhmawzj7n8da7y4a3pwx"))))
+        (base32 "1q7bm0kf9ni6l59pvw9iyhwk0hcdxc7qgqnbs48my1zgq4ih4rli"))))
     (properties `((upstream-name . "rworkflows")))
     (build-system r-build-system)
     (arguments
@@ -4043,13 +4043,13 @@ peaks and spectra using the ggplot2 package.")
 (define-public r-rtmpt
   (package
     (name "r-rtmpt")
-    (version "2.0-1")
+    (version "2.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtmpt" version))
        (sha256
-        (base32 "0isd7vwr1qbyzym0awmgb38fiix8v8r46ckl0d24q0hqls3aydz5"))))
+        (base32 "0pymd2kna7b6a38v9l21pk8jb100c7n7nv92ic0wbnfyjkih1yb7"))))
     (properties `((upstream-name . "rtmpt")))
     (build-system r-build-system)
     (arguments
@@ -19209,13 +19209,13 @@ Sato et al. (2021) <doi:10.1038/s41437-020-00401-w>.")
 (define-public r-rncep
   (package
     (name "r-rncep")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNCEP" version))
        (sha256
-        (base32 "19ja7pcp7ajwhqhqw92pdmvxzyjc4kw3943pllpx47s1zvi6dmci"))))
+        (base32 "17q7icczy8f17i3hhbla37kzbrr5i17d4z53i23gin4s2v334djw"))))
     (properties `((upstream-name . "RNCEP")))
     (build-system r-build-system)
     (arguments
@@ -19232,9 +19232,8 @@ Sato et al. (2021) <doi:10.1038/s41437-020-00401-w>.")
     (description
      "This package contains functions to retrieve, organize, and visualize weather
 data from the NCEP/NCAR Reanalysis
-(<http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis.html>) and
-NCEP/DOE Reanalysis II
-(<http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis2.html>)
+(<https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html>) and NCEP/DOE
+Reanalysis II (<https://psl.noaa.gov/data/gridded/data.ncep.reanalysis2.html>)
 datasets.  Data are queried via the Internet and may be obtained for a specified
 spatial and temporal extent or interpolated to a point in space and time.  We
 also provide functions to visualize these weather data on a map.  There are also
@@ -23629,13 +23628,13 @@ export the result.  rjwsacruncher allows to launch easily the JWSACruncher'.")
 (define-public r-rjtools
   (package
     (name "r-rjtools")
-    (version "1.0.13")
+    (version "1.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjtools" version))
        (sha256
-        (base32 "14asxv74bdddrc0k8pl8dylmsp6qgii55hmqwg6nci6n35a6qd34"))))
+        (base32 "0m5bp1n644h1d9igcqjav61h1nh7gvqi655jss0hinvfcrf0rx9r"))))
     (properties `((upstream-name . "rjtools")))
     (build-system r-build-system)
     (arguments
@@ -44333,34 +44332,6 @@ beginning of the input.  This simultaneous and deterministic process enables it
 to effectively perform tokenization, POS tagging, and lemmatization.")
     (license license:gpl2)))
 
-(define-public r-rcppint64
-  (package
-    (name "r-rcppint64")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppInt64" version))
-       (sha256
-        (base32 "1h4lshkn3p3c7swygbpmkg0pa80xcp3f9alck5q4bmml61hicwjk"))))
-    (properties `((upstream-name . "RcppInt64")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/eddelbuettel/rcppint64")
-    (synopsis
-     "'Rcpp'-Based Helper Functions to Pass 'Int64' and 'nanotime' Values Between 'R' and 'C++'")
-    (description
-     "Int64 values can be created and accessed via the bit64 package and its integer64
-class which package the int64 representation cleverly into a double'.  The
-nanotime packages builds on this to support nanosecond-resolution timestamps.
-This packages helps conversions between R and C++ via several helper functions
-provided via a single header file.  A complete example client package is
-included as an illustration.")
-    (license license:gpl2+)))
-
 (define-public r-rcpphungarian
   (package
     (name "r-rcpphungarian")
@@ -44629,35 +44600,6 @@ sample fitting applications.  Also supplies additional custom coders for the
 vtreat package.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-rcppdate
-  (package
-    (name "r-rcppdate")
-    (version "0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppDate" version))
-       (sha256
-        (base32 "1cnhvbgqfcjrwm1rx6bhhj4yf4dipcp6g1hjv1qa86pmxzyjp3dn"))))
-    (properties `((upstream-name . "RcppDate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/eddelbuettel/rcppdate")
-    (synopsis "'date' C++ Header Library for Date and Time Functionality")
-    (description
-     "This package provides a header-only C++ library is provided with support for
-dates, time zones, ISO weeks, Julian dates, and Islamic dates.  date offers
-extensive date and time functionality for the C++11, C++14 and C++17 standards
-and was written by Howard Hinnant and released under the MIT license.  A
-slightly modified version has been accepted (along with tz.h') as part of C++20.
- This package regroups all header files from the upstream repository by Howard
-Hinnant so that other R packages can use them in their C++ code.  At present,
-few of the types have explicit Rcpp wrappers though these may be added as
-needed.")
-    (license license:gpl2+)))
-
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
@@ -44894,31 +44836,6 @@ independent simulations of the missing data.  In contrast, the SAEM algorithm
 splits the E-step into simulation and integration steps.  This package also
 approximates the standard error of the estimates using the Louis method.
 Moreover, it has a function that performs spatial prediction in new locations.")
-    (license license:gpl2+)))
-
-(define-public r-rcppcctz
-  (package
-    (name "r-rcppcctz")
-    (version "0.2.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppCCTZ" version))
-       (sha256
-        (base32 "1wmbyaj08fbl4g47aq0mfkkvqwpah3d2j94fzc813dijxlsi847l"))))
-    (properties `((upstream-name . "RcppCCTZ")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/eddelbuettel/rcppcctz")
-    (synopsis "'Rcpp' Bindings for the 'CCTZ' Library")
-    (description
-     "Rcpp Access to the CCTZ timezone library is provided.  CCTZ is a C++ library for
-translating between absolute and civil times using the rules of a time zone.
-The CCTZ source code, released under the Apache 2.0 License, is included in this
-package.  See <https://github.com/google/cctz> for more details.")
     (license license:gpl2+)))
 
 (define-public r-rcppblaze

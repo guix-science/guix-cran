@@ -9792,13 +9792,13 @@ common data model.")
 (define-public r-omock
   (package
     (name "r-omock")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omock" version))
        (sha256
-        (base32 "13p5ms9c3lpbc8n2a4vjx6pfayv6pfllspyifxsq53pn9cfm2z6z"))))
+        (base32 "1hkkz0l9ai7sypzry571bm24bp2cjpm6yrig5b2h9sjz57qkpdwx"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
     (arguments

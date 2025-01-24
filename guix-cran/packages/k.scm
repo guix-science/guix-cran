@@ -1832,27 +1832,32 @@ curves.")
 (define-public r-knockofftrio
   (package
     (name "r-knockofftrio")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KnockoffTrio" version))
        (sha256
-        (base32 "198sy0ww4cc59yqgf66vg6r5g52wmgpn51v43cm51b3pi7g7klar"))))
+        (base32 "1x7cc1msyrqh4y0zfapzqp77q4d5k6v0bh12dqvjg6v8d9c6gpyb"))))
     (properties `((upstream-name . "KnockoffTrio")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=KnockoffTrio")
-    (synopsis "Trio Data Analysis with Knockoff Statistics for FDR Control")
+    (synopsis
+     "GWAS with Trio and Duo Data using Knockoff Statistics for FDR Control")
     (description
      "Identification of putative causal variants in genome-wide association studies
-with the trio design.  The package implements the methods in the paper: Yang,
-Y., Wang, C., Liu, L., Buxbaum, J., He, Z., & Ionita-Laza, I. (2022).
-@code{KnockoffTrio}: A knockoff framework for the identification of putative
-causal variants in genome-wide association studies with trio design.  The
-American Journal of Human Genetics, 109(10), 1761-1776.")
+with trio and duo families.  The package calculates the W feature statistics
+from @code{KnockoffTrio} and p-values from the family-based association test
+(FBAT) using trio and/or duo data.  Compared to previous versions, a significant
+improvement has been made in Version 1.1.0 to allow the package to be applied
+not only to trio families but also to duo families.  The package implements the
+methods in the paper: \"Yang, Y., Wang, C., Liu, L., Buxbaum, J., He, Z., &
+Ionita-Laza, I. (2022). @code{KnockoffTrio}: A knockoff framework for the
+identification of putative causal variants in genome-wide association studies
+with trio design.  The American Journal of Human Genetics, 109(10), 1761-1776.\".")
     (license license:gpl3)))
 
 (define-public r-knockoffscreen
@@ -5445,13 +5450,13 @@ information about Kendall random walks see Jasiulis-GoÅdyn (2014)
 (define-public r-kendallknight
   (package
     (name "r-kendallknight")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kendallknight" version))
        (sha256
-        (base32 "16b1hs3ck8l7j8v8nw6b6n0kn6i1r2drnsjj7rb4n3pqxxh881np"))))
+        (base32 "1gmg0kb8043n1344n91kjy58l5zjhlm366kdyh08rs1szwqhg989"))))
     (properties `((upstream-name . "kendallknight")))
     (build-system r-build-system)
     (arguments

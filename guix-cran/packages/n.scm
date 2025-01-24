@@ -610,37 +610,6 @@ case functions that are named in a way that is consistent with usage, making
 their names easy to remember and easy to deploy.")
     (license license:gpl2)))
 
-(define-public r-numero
-  (package
-    (name "r-numero")
-    (version "1.9.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Numero" version))
-       (sha256
-        (base32 "038nyc1chis326kgdbwzl0w24v7pk3cdwb5x94q2g6lvf5ffh5y3"))))
-    (properties `((upstream-name . "Numero")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=Numero")
-    (synopsis "Statistical Framework to Define Subgroups in Complex Datasets")
-    (description
-     "High-dimensional datasets that do not exhibit a clear intrinsic clustered
-structure pose a challenge to conventional clustering algorithms.  For this
-reason, we developed an unsupervised framework that helps scientists to better
-subgroup their datasets based on visual cues, please see Gao S, Mutter S, Casey
-A, Makinen V-P (2019) Numero: a statistical framework to define multivariable
-subgroups in complex population-based datasets, Int J Epidemiology, 48:369-37,
-<doi:10.1093/ije/dyy113>.  The framework includes the necessary functions to
-construct a self-organizing map of the data, to evaluate the statistical
-significance of the observed data patterns, and to visualize the results.")
-    (license license:gpl2+)))
-
 (define-public r-numbersbr
   (package
     (name "r-numbersbr")
@@ -7208,33 +7177,6 @@ within a missing data framework.  This package evaluates the accuracy of
 multiple diagnostic tests and also gives graphical representation of the
 results.")
     (license license:gpl2+)))
-
-(define-public r-nmadb
-  (package
-    (name "r-nmadb")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nmadb" version))
-       (sha256
-        (base32 "17r5vc57ilhy6cfcqpfyp9nzzjaa5gc8qkgfn3y8sppqh1g1mi40"))))
-    (properties `((upstream-name . "nmadb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-readxl r-rcurl r-jsonlite r-devtools))
-    (home-page "https://cran.r-project.org/package=nmadb")
-    (synopsis "Network Meta-Analysis Database API")
-    (description
-     "Set of functions for accessing database of network meta-analyses described in
-Petropoulou M, et al.  Bibliographic study showed improving statistical
-methodology of network meta-analyses published between 1999 and 2015
-<doi:10.1016/j.jclinepi.2016.11.002>.  The database is hosted in a REDcap
-database at the Institute of Social and Preventive Medicine (ISPM) in the
-University of Bern.")
-    (license license:gpl3)))
 
 (define-public r-nma
   (package
@@ -15900,6 +15842,43 @@ checks for population pharmacokinetic (PK) and/or pharmacodynamic (PKPD) models
 using NCA metrics.")
     (license license:gpl3)))
 
+(define-public r-ncaavolleyballr
+  (package
+    (name "r-ncaavolleyballr")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncaavolleyballr" version))
+       (sha256
+        (base32 "1vhkwfk542ld9iy3f5yi10zvif0kgp201x15znj30n220363xpgq"))))
+    (properties `((upstream-name . "ncaavolleyballr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-lifecycle
+                             r-httr2
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/JeffreyRStevens/ncaavolleyballr")
+    (synopsis "Extract Data from NCAA Women's and Men's Volleyball Website")
+    (description
+     "Extracts team records/schedules and player statistics for the 2020-2024 National
+Collegiate Athletic Association (NCAA) women's and men's divisions I, II, and
+III volleyball teams from <https://stats.ncaa.org>.  Functions can aggregate
+statistics for teams, conferences, divisions, or custom groups of teams.")
+    (license license:expat)))
+
 (define-public r-nca
   (package
     (name "r-nca")
@@ -17369,31 +17348,6 @@ average sample number (ASN), and also conducts sequential tests for a
 sequentially observed data.")
     (license license:gpl2+)))
 
-(define-public r-nanotime
-  (package
-    (name "r-nanotime")
-    (version "0.3.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nanotime" version))
-       (sha256
-        (base32 "19q8xklkdp8jsq1hjj78wzr0q00fy8z5p2skyz2xlzvam3555pnb"))))
-    (properties `((upstream-name . "nanotime")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-rcppdate r-rcppcctz r-rcpp r-bit64))
-    (home-page "https://github.com/eddelbuettel/nanotime")
-    (synopsis "Nanosecond-Resolution Time Support for R")
-    (description
-     "Full 64-bit resolution date and time functionality with nanosecond granularity
-is provided, with easy transition to and from the standard POSIXct type.  Three
-additional classes offer interval, period and duration functionality for
-nanosecond-resolution timestamps.")
-    (license license:gpl2+)))
-
 (define-public r-nanostringr
   (package
     (name "r-nanostringr")
@@ -17482,32 +17436,6 @@ operations, and synchronisation primitives allowing R to wait upon events
 signalled by concurrent threads.")
     (license license:gpl3+)))
 
-(define-public r-nanoarrow
-  (package
-    (name "r-nanoarrow")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nanoarrow" version))
-       (sha256
-        (base32 "0wad6dvc7f4z9ll0v5mvqlvk2waf2wfhpnd3sckxsjfpg2s1an6b"))))
-    (properties `((upstream-name . "nanoarrow")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://arrow.apache.org/nanoarrow/latest/r/")
-    (synopsis "Interface to the 'nanoarrow' 'C' Library")
-    (description
-     "This package provides an R interface to the nanoarrow C library and the Apache
-Arrow application binary interface.  Functions to import and export
-@code{ArrowArray}', @code{ArrowSchema}', and @code{ArrowArrayStream} C
-structures to and from R objects are provided alongside helpers to facilitate
-zero-copy data transfer among R bindings to libraries implementing the Arrow C
-data interface.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-nandb
   (package
     (name "r-nandb")
@@ -17581,13 +17509,13 @@ Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
 (define-public r-namer
   (package
     (name "r-namer")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "namer" version))
        (sha256
-        (base32 "1rv885vahmd2hym7w52lhf05asja38dhr9sq0qk85zhmjdjlc9h7"))))
+        (base32 "03fcrsc8ch24s89mpmixpwhh9k3wrgkqlxhli5yqaw2df0sfv0k6"))))
     (properties `((upstream-name . "namer")))
     (build-system r-build-system)
     (arguments

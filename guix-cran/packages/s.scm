@@ -6283,13 +6283,13 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Surrogate" version))
        (sha256
-        (base32 "1r4i12f6kmbszrm8v17gp2396ybwv913ngr3mnhqmvsl91fnpwi6"))))
+        (base32 "13p2lnp63y98fv59sa2s3bn6gwlp155ihdvxrkbh24s9ymdcn9i9"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (arguments
@@ -6302,15 +6302,13 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
                              r-rms
                              r-purrr
                              r-pbapply
-                             r-optimx
-                             r-numderiv
                              r-nlme
-                             r-msm
                              r-mbess
                              r-maxlik
                              r-mass
                              r-logistf
                              r-lme4
+                             r-lifecycle
                              r-latticeextra
                              r-lattice
                              r-ks
@@ -25496,33 +25494,6 @@ in Boag (1949) and Berkson and Gage (1952), and extended in Schmidt and Witte
 Models) using quantile-quantile bias correction technique.")
     (license license:gpl2)))
 
-(define-public r-spdl
-  (package
-    (name "r-spdl")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spdl" version))
-       (sha256
-        (base32 "185qzlwac7acq126xpvcd71nv25zgkrdr8m73gv2sn1zxj78hyid"))))
-    (properties `((upstream-name . "spdl")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppspdlog))
-    (home-page "https://github.com/eddelbuettel/spdl")
-    (synopsis "Easier Use of 'RcppSpdlog' Functions via Wrapper")
-    (description
-     "Logging functions in @code{RcppSpdlog} provide access to the logging
-functionality from the spdlog C++ library.  This package offers shorter
-convenience wrappers for the R functions which match the C++ functions, namely
-via, say, @code{spdl::debug()} at the debug level.  The actual formatting is
-done by the @code{fmt::format()} function from the fmtlib library (that is also
-@code{std::format()} in C++20 or later).")
-    (license license:gpl2+)))
-
 (define-public r-spdesign
   (package
     (name "r-spdesign")
@@ -31483,6 +31454,36 @@ were implemented using the xdrfile library available under open source license.
 The relevant information can be found in inst/COPYRIGHT.")
     (license license:gpl3)))
 
+(define-public r-somhca
+  (package
+    (name "r-somhca")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "somhca" version))
+       (sha256
+        (base32 "0dhzpwhbcvsv202sx9fxhqhcnsqaccjldk0yxhb4kc243ycn8lvk"))))
+    (properties `((upstream-name . "somhca")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcolorbrewer r-maptree r-kohonen r-dplyr
+                             r-awesom))
+    (home-page "https://cran.r-project.org/package=somhca")
+    (synopsis
+     "Self-Organising Maps Coupled with Hierarchical Cluster Analysis")
+    (description
+     "This package implements self-organising maps combined with hierarchical cluster
+analysis (SOM-HCA) for clustering and visualization of high-dimensional data.
+The package includes functions to estimate the optimal map size based on various
+quality measures and subsequently generates a model with the selected
+dimensions.  It also performs hierarchical clustering on the map nodes to group
+similar units Documentation about the SOM-HCA method is provided in Pastorelli
+et al. (2024) <doi:10.1002/xrs.3388>.")
+    (license license:expat)))
+
 (define-public r-somenv
   (package
     (name "r-somenv")
@@ -37388,6 +37389,51 @@ switch between regions of the images.  This can be especially useful for image
 comparison of the same region at different time stamps.")
     (license license:expat)))
 
+(define-public r-slidecna
+  (package
+    (name "r-slidecna")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SlideCNA" version))
+       (sha256
+        (base32 "1h2wwfa2g4lwh0g4s97pcrgigfjk4rcyw8c24pdzmm9ggwlsqijd"))))
+    (properties `((upstream-name . "SlideCNA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-seurat
+                             r-scales
+                             r-reshape2
+                             r-pheatmap
+                             r-mltools
+                             r-magrittr
+                             r-ggplot2
+                             r-futile-logger
+                             r-factoextra
+                             r-dplyr
+                             r-dendextend
+                             r-data-table
+                             r-cluster))
+    (home-page "https://cran.r-project.org/package=SlideCNA")
+    (synopsis "Calls Copy Number Alterations from Slide-Seq Data")
+    (description
+     "This takes spatial single-cell-type RNA-seq data (specifically designed for
+Slide-seq v2) that calls copy number alterations (CNAs) using pseudo-spatial
+binning, clusters cellular units (e.g. beads) based on CNA profile, and
+visualizes spatial CNA patterns.  Documentation about @code{SlideCNA} is
+included in the the pre-print by Zhang et al. (2022,
+<doi:10.1101/2022.11.25.517982>).  The package @code{enrichR} (>= 3.0),
+conditionally used to annotate @code{SlideCNA-determined} clusters with gene
+ontology terms, can be installed at <https://github.com/wjawaid/@code{enrichR>}
+or with install_github(\"wjawaid/@code{enrichR}\").")
+    (license license:gpl3+)))
+
 (define-public r-slide
   (package
     (name "r-slide")
@@ -41216,20 +41262,19 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "0bfrz2m0dl1ch74ar5dnr51hgdcm9q4jk6mmfcn5j2dpfk7h5480"))))
+        (base32 "0rwjj5nsrvfihzmgmy9vmm3di4fwab6ha6v2yg74kw3yrira6zjj"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list gsl))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dynr))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/jeksterslab/simStateSpace")
     (synopsis "Simulate Data from State Space Models")
     (description
@@ -49833,34 +49878,6 @@ Quarto documents, R Markdown documents, or any other HTML medium.  It also
 functions as an input/output widget in a shiny app.")
     (license license:expat)))
 
-(define-public r-shinyauthr
-  (package
-    (name "r-shinyauthr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shinyauthr" version))
-       (sha256
-        (base32 "0apaqjkxpr96kx9indl0pifk5y75gdx5npfcvxfg5k2crpx9vmxk"))))
-    (properties `((upstream-name . "shinyauthr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sodium
-                             r-shinyjs
-                             r-shiny
-                             r-rlang
-                             r-glue
-                             r-dplyr))
-    (home-page "https://github.com/paulc91/shinyauthr")
-    (synopsis "'Shiny' Authentication Modules")
-    (description
-     "Add in-app user authentication to shiny', allowing you to secure publicly hosted
-apps and build dynamic user interfaces from user information.")
-    (license license:expat)))
-
 (define-public r-shinyanimate
   (package
     (name "r-shinyanimate")
@@ -50077,30 +50094,6 @@ if you want to work purely in R and don't want to use, for instance HTML
 templates.  This package adds support for a powerful UI library Fomantic UI -
 <https://fomantic-ui.com/> (before Semantic).  It also supports universal UI
 input binding that works with various DOM elements.")
-    (license license:expat)))
-
-(define-public r-shiny-router
-  (package
-    (name "r-shiny-router")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shiny.router" version))
-       (sha256
-        (base32 "1zg8cdxmw620i1iv7jrghd768gw7iv52hi6lx79xvnfjz8w4si3x"))))
-    (properties `((upstream-name . "shiny.router")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-rlang r-htmltools r-glue))
-    (home-page "https://appsilon.github.io/shiny.router/")
-    (synopsis "Basic Routing for Shiny Web Applications")
-    (description
-     "It is a simple router for your Shiny apps.  The router allows you to create
-dynamic web applications with real-time User Interface and easily share url to
-pages within your Shiny apps.")
     (license license:expat)))
 
 (define-public r-shiny-reglog
@@ -57185,13 +57178,13 @@ technique.  Runtime examples are provided in the package function as well as at
 (define-public r-semdeep
   (package
     (name "r-semdeep")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEMdeep" version))
        (sha256
-        (base32 "0jwaliqxcw2rja7h87j096z02fkvrmfv8ssn10m16lcng9xy5gmm"))))
+        (base32 "148vdwf6nazc20y9ix71z1l30c7kamn2lk1ai35yifq28fw17r07"))))
     (properties `((upstream-name . "SEMdeep")))
     (build-system r-build-system)
     (arguments
@@ -57199,14 +57192,18 @@ technique.  Runtime examples are provided in the package function as well as at
       #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-torch
-                             r-shapr
                              r-semgraph
+                             r-rpart
                              r-ranger
+                             r-progress
                              r-nnet
                              r-neuralnettools
-                             r-mgcv
                              r-lavaan
+                             r-kernelshap
                              r-igraph
+                             r-glmnet
+                             r-foreach
+                             r-dosnow
                              r-corpcor
                              r-cito))
     (home-page "https://github.com/BarbaraTarantino/SEMdeep")
@@ -57506,13 +57503,13 @@ reproducible code, with no visible impact on the experience of the programmer.")
 (define-public r-selemix
   (package
     (name "r-selemix")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeleMix" version))
        (sha256
-        (base32 "03q5pdgxdfx944zwpl2w7gzf23va4flbd8in3g03980smq0ai2c1"))))
+        (base32 "0flc2ackvk54k5ixpbhmnkgybqssxbh5jz2g3bp7h6ff6xz49pb4"))))
     (properties `((upstream-name . "SeleMix")))
     (build-system r-build-system)
     (arguments

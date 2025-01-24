@@ -11676,6 +11676,46 @@ from the day of second shot.  Half-life of titer can also be calculated for each
 pair of sampling points.")
     (license license:gpl3)))
 
+(define-public r-antibodyforests
+  (package
+    (name "r-antibodyforests")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AntibodyForests" version))
+       (sha256
+        (base32 "1mk7nr88k8imadnc23b3cq04366x3pwqvk5i6240i6xv74b5fg8a"))))
+    (properties `((upstream-name . "AntibodyForests")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-stringr
+                             r-stringdist
+                             r-seqinr
+                             r-scales
+                             r-rlang
+                             r-pwalign
+                             r-magrittr
+                             r-igraph
+                             r-gtools
+                             r-dplyr
+                             r-biostrings
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AntibodyForests")
+    (synopsis "Delineating Inter- And Intra-Antibody Repertoire Evolution")
+    (description
+     "The generated wealth of immune repertoire sequencing data requires software to
+investigate and quantify inter- and intra-antibody repertoire evolution to
+uncover how B cells evolve during immune responses.  Here, we present
+@code{AntibodyForests}', a software to investigate and quantify inter- and
+intra-antibody repertoire evolution.")
+    (license license:gpl2)))
+
 (define-public r-anthropmmd
   (package
     (name "r-anthropmmd")
@@ -15171,13 +15211,13 @@ tested condition.")
 (define-public r-altdoc
   (package
     (name "r-altdoc")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "altdoc" version))
        (sha256
-        (base32 "0qp2k7mmpklh484ci2p9g4n7iyjy8ibzmh9w4a2h4sabvlm6v3f0"))))
+        (base32 "0g0p90ir8amlkb0893qchxacxi2l9aazrjif6l1qqfmr7qwbhjbd"))))
     (properties `((upstream-name . "altdoc")))
     (build-system r-build-system)
     (arguments

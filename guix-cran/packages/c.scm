@@ -3577,13 +3577,13 @@ al. (2017) <@code{arXiv:1706.10029>}).")
 (define-public r-ctmed
   (package
     (name "r-ctmed")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cTMed" version))
        (sha256
-        (base32 "1cd1lxzidk2p9dbvmm9wbr1x269vq9v2gyqilqq4v2jw9wcbz67y"))))
+        (base32 "0zgqski2pbj3w0px398w52xnbhy1ns4xcl07dfpmmzvfxl703m87"))))
     (properties `((upstream-name . "cTMed")))
     (build-system r-build-system)
     (arguments
@@ -19634,13 +19634,13 @@ procedures for the simplifying assumption (proposed in Derumigny and Fermanian
 (define-public r-condathis
   (package
     (name "r-condathis")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "condathis" version))
        (sha256
-        (base32 "0nk7j5di9pmmislm4xnx44b9pkclhpl95q1mk6157iz3xzznqpqc"))))
+        (base32 "1fd9g419gfq0rglwn77nvii6956q02j05m32x2knily6a5vqqlmd"))))
     (properties `((upstream-name . "condathis")))
     (build-system r-build-system)
     (arguments
@@ -35322,13 +35322,13 @@ technical details.")
 (define-public r-ciftitools
   (package
     (name "r-ciftitools")
-    (version "0.16.1")
+    (version "0.17.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciftiTools" version))
        (sha256
-        (base32 "07d7iws9d8r9ir37q8h1k2yl13sy4p9xnnlqlxhlyyfsz7pb23l3"))))
+        (base32 "0sqqhh10nz9bn0k819j0m3dcmajpzgdqm0jjzhyjz985q0fsj2q6"))))
     (properties `((upstream-name . "ciftiTools")))
     (build-system r-build-system)
     (arguments
@@ -35342,6 +35342,7 @@ technical details.")
                              r-oro-nifti
                              r-gifti
                              r-fields))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mandymejia/ciftiTools")
     (synopsis
      "Tools for Reading, Writing, Viewing and Manipulating CIFTI Files")

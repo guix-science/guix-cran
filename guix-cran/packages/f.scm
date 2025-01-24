@@ -5908,13 +5908,13 @@ for Polymerase Chain Reaction) in biparental populations such as F1, F2, BC
 (define-public r-fragility
   (package
     (name "r-fragility")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fragility" version))
        (sha256
-        (base32 "0y832d7r5q35pq0jnhfabzmhxfaw7xmzk5s0f7n4cz54gg6804sf"))))
+        (base32 "01cg41dqi5zaplgman9yp7hinwklsiqcks05m6vj0894gill95c5"))))
     (properties `((upstream-name . "fragility")))
     (build-system r-build-system)
     (arguments

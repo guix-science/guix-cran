@@ -23202,13 +23202,13 @@ Barreto-Souza, Mayrink and Simas (2020) <@code{arXiv:2003.05157>}.")
 (define-public r-bbnet
   (package
     (name "r-bbnet")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbnet" version))
        (sha256
-        (base32 "1g7hkiz6485200qabnpx31br6ixcr1jwgvzzdznz4qs8nwhswxqf"))))
+        (base32 "1nyfjfqrnwp0438kjjb126gi5pkdbrcfif79521d5248zyr8hvr6"))))
     (properties `((upstream-name . "bbnet")))
     (build-system r-build-system)
     (arguments

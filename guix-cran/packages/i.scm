@@ -13076,35 +13076,6 @@ Binary classification models.  Functions can be called either statically or
 interactively (as Shiny Apps).")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-imola
-  (package
-    (name "r-imola")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "imola" version))
-       (sha256
-        (base32 "087zdzn1vkyvqrdlwnackr6jyacrhg69q4b77s8z477kplickw8x"))))
-    (properties `((upstream-name . "imola")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-stringi
-                             r-shiny
-                             r-magrittr
-                             r-htmltools
-                             r-glue))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pedrocoutinhosilva/imola")
-    (synopsis "CSS Layouts (Grid and Flexbox) Implementation for R/Shiny")
-    (description
-     "Allows easy creation of CSS layouts (grid and flexbox) directly from R without
-added CSS.")
-    (license license:expat)))
-
 (define-public r-imnn
   (package
     (name "r-imnn")

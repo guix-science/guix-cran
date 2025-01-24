@@ -6579,6 +6579,30 @@ combination of greedy local search and a genetic algorithm (see
 <@code{arXiv:2002:11577>} for more details).")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-grec
+  (package
+    (name "r-grec")
+    (version "1.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "grec" version))
+       (sha256
+        (base32 "0wnimb9vjdm87zlnkirzmflr0aq14k2m60zgydi8mk9rp6z73qbm"))))
+    (properties `((upstream-name . "grec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-raster r-lifecycle r-imagine r-abind))
+    (home-page "https://github.com/LuisLauM/grec")
+    (synopsis
+     "Gradient-Based Recognition of Spatial Patterns in Environmental Data")
+    (description
+     "This package provides algorithms for detection of spatial patterns from
+oceanographic data using image processing methods based on Gradient Recognition.")
+    (license license:gpl3+)))
+
 (define-public r-greatr
   (package
     (name "r-greatr")
@@ -22544,13 +22568,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "11.1.0")
+    (version "12.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "1c3wdxcdcn42afzal8qw4vgj3k823dbj620va4yd5v4svjxj1y95"))))
+        (base32 "1npq8jqafkl765y9fkcp5dl7065d1mfk5f9kd1vffcrlmc0acp13"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (arguments
@@ -26238,34 +26262,6 @@ problems, such as linking different levels of spatial units or estimating how to
 break up units.  Functions exist for creating redistricting-focused data for the
 US.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
-
-(define-public r-geojsonr
-  (package
-    (name "r-geojsonr")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geojsonR" version))
-       (sha256
-        (base32 "10li5xj0vx6a86nccwql4inwfbjycvaxqfbjdp4h1p5qxyibnls3"))))
-    (properties `((upstream-name . "geojsonR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mlampros/geojsonR")
-    (synopsis "GeoJson Processing Toolkit")
-    (description
-     "Includes functions for processing @code{GeoJson} objects
-<https://en.wikipedia.org/wiki/@code{GeoJSON>} relying on RFC 7946
-<https://datatracker.ietf.org/doc/html/rfc7946>.  The geojson encoding is based
-on json11', a tiny JSON library for C++11 <https://github.com/dropbox/json11>.
-Furthermore, the source code is exported in R through the Rcpp and
-@code{RcppArmadillo} packages.")
-    (license license:expat)))
 
 (define-public r-geojsonio
   (package

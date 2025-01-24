@@ -17271,6 +17271,29 @@ framework.  This work is part of the FRB-CESAB working group
 <doi:10.1016/j.ecolmodel.2016.08.012>.")
     (license license:gpl3)))
 
+(define-public r-pop-lion
+  (package
+    (name "r-pop-lion")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pop.lion" version))
+       (sha256
+        (base32 "1rj95wwcxvsfd1smd21717y9c0672a8vnpnbdsa63pxbzdxc4kaj"))))
+    (properties `((upstream-name . "pop.lion")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-testthat r-abind))
+    (home-page "https://cran.r-project.org/package=pop.lion")
+    (synopsis "Models for Simulating Lion Populations")
+    (description
+     "Simulate the dynamic of lion populations using a specific Individual-Based Model
+(IBM) compiled in C.")
+    (license license:gpl3)))
+
 (define-public r-pop
   (package
     (name "r-pop")
@@ -30459,13 +30482,13 @@ used to interface Python from R.")
 (define-public r-pharmaversesdtm
   (package
     (name "r-pharmaversesdtm")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaversesdtm" version))
        (sha256
-        (base32 "19bf2nrwh04bnjczzgq1vqqnbmj1b0qfmbym37xcz88xdyky7w6n"))))
+        (base32 "1q0hid9v6bb73fnvqlrvsv94hsa5sgk0az4bb4p01p9wj11mzyw3"))))
     (properties `((upstream-name . "pharmaversesdtm")))
     (build-system r-build-system)
     (arguments
@@ -38566,6 +38589,29 @@ continuous dorsal pattern of a female brown anole lizard (Anolis sagrei) traced
 from @code{ImageJ}', an open platform for scientific image analysis (see
 <https://imagej.net> for more information), and extract common features such as
 the pattern sinuosity indices, coefficient of variation, and max-min width.")
+    (license license:gpl2+)))
+
+(define-public r-pattern-checks
+  (package
+    (name "r-pattern-checks")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pattern.checks" version))
+       (sha256
+        (base32 "12qz9h586c3g5fw3c973rpm7q69wsqh17yyaii3h07lnijy3madx"))))
+    (properties `((upstream-name . "pattern.checks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=pattern.checks")
+    (synopsis "Identifies Patterned Responses in Scales")
+    (description
+     "Identifies the entries with patterned responses for psychometric scales.  The
+patterns included in the package are identical (a, a, a), ascending (a, b, c),
+descending (c, b, a), alternative (a, b, a, b / a, b, c, a, b, c).")
     (license license:gpl2+)))
 
 (define-public r-patientprofilesvis

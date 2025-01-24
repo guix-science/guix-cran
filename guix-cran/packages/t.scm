@@ -19509,13 +19509,13 @@ packages.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.6.7")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "163l25li5smywz91ndcw2v7m7dcya309wkmb6pkjj7jqcyhlfv74"))))
+        (base32 "06c8qcrw2a3rihkvpjj1l1z0k6zj2rl3lbp2650p7cnmxixxg9b4"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (arguments
@@ -22375,13 +22375,13 @@ feature space consisting of all possible phrases.")
 (define-public r-textrecipes
   (package
     (name "r-textrecipes")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textrecipes" version))
        (sha256
-        (base32 "0c4l54vqawnwl1341mk5jvqwj1r0dwdprbp2fh362493c8fy04iv"))))
+        (base32 "1y59z12pjwk0ny9pmdw8323md2313wxgn9hz47a6ki8lnfxrwig2"))))
     (properties `((upstream-name . "textrecipes")))
     (build-system r-build-system)
     (arguments
@@ -22400,7 +22400,7 @@ feature space consisting of all possible phrases.")
                              r-glue
                              r-generics
                              r-dplyr
-                             r-cpp11))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tidymodels/textrecipes")
     (synopsis "Extra 'Recipes' for Text Processing")
@@ -25826,13 +25826,13 @@ seeks to create a profile that define a social group.")
 (define-public r-telescope
   (package
     (name "r-telescope")
-    (version "0.1-0")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "telescope" version))
        (sha256
-        (base32 "1r6ciiy12jy7z4hb2jhgv1ml7p57rqcpfbz2fs0bn5bc1jbzm3ch"))))
+        (base32 "09z91jmy82zvqiyvf3wj5fdl7fs07x1n6cjvrpfd0amqxym2227c"))))
     (properties `((upstream-name . "telescope")))
     (build-system r-build-system)
     (arguments

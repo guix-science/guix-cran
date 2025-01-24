@@ -1405,13 +1405,13 @@ install wmtsa from this archive if they prefer to use wmtsa based decomposition.
 (define-public r-wql
   (package
     (name "r-wql")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wql" version))
        (sha256
-        (base32 "1n28n7ijfypnqk7cwnvmkzhvp65sh7b00a9c2z72kdbxha0yn74w"))))
+        (base32 "1727g3ranrzwz9kbcvhdlzavmz0cl530qq733hgfg0xi81340i0i"))))
     (properties `((upstream-name . "wql")))
     (build-system r-build-system)
     (arguments

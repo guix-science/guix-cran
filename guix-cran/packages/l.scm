@@ -3731,19 +3731,19 @@ index.  Jargowsky and Wheeler (2018) <doi:10.1177/0081175018782579>.")
 (define-public r-lorentz
   (package
     (name "r-lorentz")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lorentz" version))
        (sha256
-        (base32 "1idkqxpmjqvh5jy8jmz0m40bbfyi6sk0h75hbb7sb36b1ryc5sn3"))))
+        (base32 "1c0srmraphjwjhycxx59y6crag1ykkjbxhxpxvb6df8wx0hpkkx6"))))
     (properties `((upstream-name . "lorentz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tensor r-magrittr r-magic r-emulator))
+    (propagated-inputs (list r-tensor r-quadform r-magrittr r-magic))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/lorentz")
     (synopsis "The Lorentz Transform in Relativistic Physics")
@@ -11801,13 +11801,13 @@ and other manipulations.")
 (define-public r-lidartree
   (package
     (name "r-lidartree")
-    (version "4.0.5")
+    (version "4.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidaRtRee" version))
        (sha256
-        (base32 "1a3c0lmmg3my5rwaq30gcg3jhrd1dndlsa49dgav3gv9l214ri3w"))))
+        (base32 "1nqf31bbgvy8b6ad4fa2vzzrjy3q42mfcp9hbv16363b64yl7nza"))))
     (properties `((upstream-name . "lidaRtRee")))
     (build-system r-build-system)
     (arguments
@@ -11821,19 +11821,19 @@ and other manipulations.")
                              r-imager
                              r-gvlma
                              r-car))
-    (home-page "https://gitlab.irstea.fr/jean-matthieu.monnet/lidaRtRee")
+    (home-page "https://lidar.pages.mia.inra.fr/lidaRtRee/")
     (synopsis "Forest Analysis with Airborne Laser Scanning (LiDAR) Data")
     (description
-     "This package provides functions for forest analysis using airborne laser
-scanning (@code{LiDAR} remote sensing) data: tree detection (method 1 in Eysn et
-al. (2015) <doi:10.3390/f6051721>) and segmentation; forest parameters
-estimation and mapping with the area-based approach.  It includes complementary
-steps for forest mapping: co-registration of field plots with @code{LiDAR} data
-(Monnet and Mermin (2014) <doi:10.3390/f5092307>); extraction of both physical
-(gaps, edges, trees) and statistical features from @code{LiDAR} data useful for
-e.g. habitat suitability modeling (Glad et al. (2020) <doi:10.1002/rse2.117>)
-and forest maturity mapping (Fuhr et al. (2022) <doi:10.1002/rse2.274>); model
-calibration with ground reference, and maps export.")
+     "This package provides functions for forest objects detection, structure metrics
+computation, model calibration and mapping with airborne laser scanning:
+co-registration of field plots (Monnet and Mermin (2014)
+<doi:10.3390/f5092307>); tree detection (method 1 in Eysn et al. (2015)
+<doi:10.3390/f6051721>) and segmentation; forest parameters estimation with the
+area-based approach: model calibration with ground reference, and maps export
+(Aussenac et al. (2023) <doi:10.12688/openreseurope.15373.2>); extraction of
+both physical (gaps, edges, trees) and statistical features useful for e.g.
+habitat suitability modeling (Glad et al. (2020) <doi:10.1002/rse2.117>) and
+forest maturity mapping (Fuhr et al. (2022) <doi:10.1002/rse2.274>).")
     (license license:gpl3)))
 
 (define-public r-lic
@@ -12590,13 +12590,13 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
 (define-public r-lfm
   (package
     (name "r-lfm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LFM" version))
        (sha256
-        (base32 "1lnwwh0v2a8qzx2nql9993a3qh4bqcy2mfkg5f3rlpcca44wzkip"))))
+        (base32 "11wpr9fx8nnnhi7n6g398mcfv0692pclv5zw7w0rbjzhxmbq11wi"))))
     (properties `((upstream-name . "LFM")))
     (build-system r-build-system)
     (arguments
@@ -12613,12 +12613,12 @@ LFMM program present in the LEA package (Frichot and Francois, 2015,
     (description
      "Enables the generation of Laplace factor models across diverse Laplace
 distributions and facilitates the application of Sparse Online Principal
-Component (SOPC), Incremental Principal Component (IPC), Parallel Principal
-Component (PPC), Sparse Approximate Principal Component (SAPC), Standard
-Principal Component (SPC), and Farm Test methods to these models.  Evaluates the
-efficacy of these methods within the context of Laplace factor models by
-scrutinizing parameter estimation accuracy, mean square error, and the degree of
-sparsity.")
+Component (SOPC), Incremental Principal Component (IPC), Projected Principal
+Component (PPC), Perturbation Principal Component (PPC), Stochastic
+Approximation Principal Component (SAPC), Sparse Principal Component (SPC) and
+other PC methods and Farm Test methods to these models.  Evaluates the efficacy
+of these methods within the context of Laplace factor models by scrutinizing
+parameter estimation accuracy, mean square error, and the degree of sparsity.")
     (license license:expat)))
 
 (define-public r-lfl

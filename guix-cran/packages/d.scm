@@ -12621,13 +12621,13 @@ methods are based on Abdi, H., Williams, L.J., Valentin, D., & Bennani-Dosse, M.
 (define-public r-distantia
   (package
     (name "r-distantia")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distantia" version))
        (sha256
-        (base32 "1ky3fih7nfnilrg4i0prmgc2dxa7bsbinnqm8av19mb3kqnv5dx1"))))
+        (base32 "161yygj13w8jsrzbaz5xxs9l5fh3rsmiviqqa6kcsnvjrbppfgb6"))))
     (properties `((upstream-name . "distantia")))
     (build-system r-build-system)
     (arguments
@@ -16469,13 +16469,13 @@ required for usage.")
 (define-public r-dietr
   (package
     (name "r-dietr")
-    (version "1.1.6")
+    (version "1.1.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dietr" version))
        (sha256
-        (base32 "0qvmcbnibl5bqn5x5xx5k93rdl0w2grlfzzqaa43j7zpwp00y8r9"))))
+        (base32 "0km8yn85f11vkqap1sc4wm086nl4vfaannmzc56yczl98jj2xy1c"))))
     (properties `((upstream-name . "dietr")))
     (build-system r-build-system)
     (arguments
@@ -21197,6 +21197,40 @@ multivariate generalization of QQ-plots).")
     (description
      "Manage your source code dependencies by decorating your existing R code with
 special, roxygen'-style comments.")
+    (license license:expat)))
+
+(define-public r-depower
+  (package
+    (name "r-depower")
+    (version "2025.1.20")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "depower" version))
+       (sha256
+        (base32 "1rn2ir31w3pqmr987rj91ipi40pq6hjg1m7cqsf58fy65q49qrkf"))))
+    (properties `((upstream-name . "depower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-rdpack
+                             r-mvnfast
+                             r-multidplyr
+                             r-glmmtmb
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://brettklamer.com/work/depower/")
+    (synopsis "Power Analysis for Differential Expression Studies")
+    (description
+     "This package provides a convenient framework to simulate, test, power, and
+visualize data for differential expression studies with lognormal or negative
+binomial outcomes.  Supported designs are two-sample comparisons of independent
+or dependent outcomes.  Power may be summarized in the context of controlling
+the per-family error rate or family-wise error rate.  Negative binomial methods
+are described in Yu, Fernandez, and Brock (2017) <doi:10.1186/s12859-017-1648-2>
+and Yu, Fernandez, and Brock (2020) <doi:10.1186/s12859-020-3541-7>.")
     (license license:expat)))
 
 (define-public r-depons2r
