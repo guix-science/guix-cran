@@ -3606,13 +3606,13 @@ derived from point cloud and makes data available for structural analysis.")
 (define-public r-jfe
   (package
     (name "r-jfe")
-    (version "2.5.7")
+    (version "2.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JFE" version))
        (sha256
-        (base32 "06ll163l0qr03vjp3jdlq4g7lff1hi3shmbqicqm9yr00ip94jj6"))))
+        (base32 "0gyaiwi89x4wh7vvgg4d176p51apf618ixb2yx6djalwp8zlv9kn"))))
     (properties `((upstream-name . "JFE")))
     (build-system r-build-system)
     (arguments
@@ -3708,13 +3708,13 @@ Implementation of the method described in Angelini, De Canditiis and Plaksienko
 (define-public r-jetty
   (package
     (name "r-jetty")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jetty" version))
        (sha256
-        (base32 "00wwfvws95rf42gmni7lcw2gqz676bnlfyc705x8v83s7v95shc2"))))
+        (base32 "0v8j6i1ivxf4wi5i7xfpmvzj6vmkjmdwmid7a4qy4aqvl87fapis"))))
     (properties `((upstream-name . "jetty")))
     (build-system r-build-system)
     (arguments

@@ -19053,21 +19053,22 @@ roles in networks.  It is a wrapper around the rgraph library (Guimera & Amaral,
 (define-public r-rnest
   (package
     (name "r-rnest")
-    (version "0.0.0.2")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rnest" version))
        (sha256
-        (base32 "1m7ay3ngqnavxzyhwa0dbw40z70dlqc4zdk5fmw6czcmc1iqhyw6"))))
+        (base32 "16l6w0zm39ykmaiky3pg1i2q0rd7q7hc9wx0sviqgbsbxgncpz7w"))))
     (properties `((upstream-name . "Rnest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales
-                             r-psych
+                             r-mvtnorm
                              r-mass
+                             r-lavaan
                              r-ggplot2
                              r-fungible
                              r-efa-mrfa
@@ -33550,13 +33551,13 @@ ratio), NLR (negative likelihood ratio), PPV (positive predictive value), NPV
 (define-public r-reportrmd
   (package
     (name "r-reportrmd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reportRmd" version))
        (sha256
-        (base32 "0z0k6g0dxxni78x9z6h29ybgdj38cyb8ywn1b1lbjqb1nkjc9phs"))))
+        (base32 "1qmkf1k6mj8pmwqjr1ph1fbqaar8z4kvvd46nng0ryz5y38jsydz"))))
     (properties `((upstream-name . "reportRmd")))
     (build-system r-build-system)
     (arguments
@@ -33576,7 +33577,8 @@ ratio), NLR (negative likelihood ratio), PPV (positive predictive value), NPV
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-tidyselect
+                             r-survival
                              r-scales
                              r-rstatix
                              r-rlang
@@ -33590,8 +33592,10 @@ ratio), NLR (negative likelihood ratio), PPV (positive predictive value), NPV
                              r-ggpubr
                              r-ggplot2
                              r-geepack
+                             r-dplyr
                              r-cowplot
                              r-cmprsk
+                             r-boot
                              r-aod))
     (native-inputs (list r-rmarkdown r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=reportRmd")
@@ -36369,43 +36373,6 @@ linear unbiased predictors, BLUPs).  Clifford and @code{McCullagh} (2006)
 patterns containing named groups.  It allows easy retrieval of matched portions
 and targeted replacements by group name, improving both code clarity and
 maintainability.")
-    (license license:expat)))
-
-(define-public r-regrcoeffsexplorer
-  (package
-    (name "r-regrcoeffsexplorer")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RegrCoeffsExplorer" version))
-       (sha256
-        (base32 "08xglcibfff5wg4347n8yj008wfw8yw54fyz5cgwyx7y70bzz927"))))
-    (properties `((upstream-name . "RegrCoeffsExplorer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-magrittr
-                             r-gridextra
-                             r-glmnet
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://vadimtyuryaev.github.io/RegrCoeffsExplorer/")
-    (synopsis
-     "Efficient Visualization of Regression Coefficients for lm(), glm(), and glmnet() Objects")
-    (description
-     "The visualization tool offers a nuanced understanding of regression dynamics,
-going beyond traditional per-unit interpretation of continuous variables versus
-categorical ones.  It highlights the impact of unit changes as well as larger
-shifts like interquartile changes, acknowledging the distribution of empirical
-data.  Furthermore, it generates visualizations depicting alterations in Odds
-Ratios for predictors across minimum, first quartile, median, third quartile,
-and maximum values, aiding in comprehending predictor-outcome interplay within
-empirical data distributions, particularly in logistic regression frameworks.")
     (license license:expat)))
 
 (define-public r-regrap
@@ -40785,13 +40752,13 @@ formats: akterm, dmna, Scintec Format-1, and Campbell Scientific TOA5.")
 (define-public r-readmdtable
   (package
     (name "r-readmdtable")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readMDTable" version))
        (sha256
-        (base32 "0bxfpnkzps19f9dlp05mdixd5vbs43wrvp5zqf157lp0y2gclhhh"))))
+        (base32 "1l67x8pr1bmswfqwv6rc5kplhirgmq8zv7k424il7sayivxk0v1y"))))
     (properties `((upstream-name . "readMDTable")))
     (build-system r-build-system)
     (arguments
@@ -44929,13 +44896,13 @@ Fortran implementation of these functions see Amos (1995)
 (define-public r-rcppbdt
   (package
     (name "r-rcppbdt")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppBDT" version))
        (sha256
-        (base32 "11l70rlayg2xzmg34sg3896adzpfpvplciyicjpk963bddjb2ys8"))))
+        (base32 "1a6bmq6l4svcdgxzbgwk8bcd2rx53sqdf0vnxzm3xjwjymsrjswj"))))
     (properties `((upstream-name . "RcppBDT")))
     (build-system r-build-system)
     (arguments
@@ -44948,8 +44915,8 @@ Fortran implementation of these functions see Amos (1995)
      "Access to Boost Date_Time functionality for dates, durations (both for days and
 date time objects), time zones, and posix time ('ptime') is provided by using
 Rcpp modules'.  The posix time implementation can support high-resolution of up
-to nano-second precision by using 96 bits (instead of R's 64) to present a ptime
-object (but this needs recompilation with a #define set).")
+to nano-second precision by using 96 bits (instead of 64 with R) to present a
+ptime object (but this needs recompilation with a #define set).")
     (license license:gpl2+)))
 
 (define-public r-rcpparray
@@ -49590,13 +49557,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "1a4837437g8g4lfraqcqlgbryzqfn0ki66s33465b06v832skdsa"))))
+        (base32 "13f7ai9ackbkyw10hl1ys6ax30inmvwhjra9zga6wxyr6xdyhk5q"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (arguments
@@ -56433,13 +56400,13 @@ soon to be archived from CRAN.")
 (define-public r-r2pmml
   (package
     (name "r-r2pmml")
-    (version "0.29.0")
+    (version "0.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2pmml" version))
        (sha256
-        (base32 "11z3imzsghd2z85i52mynqi0jz9hgxm22jl2jwn5zv5rp1hhkz1l"))))
+        (base32 "0lk11884z5a336z6j9xp7qch8lzj4xyd5h75zapcpcxrcx4n43mq"))))
     (properties `((upstream-name . "r2pmml")))
     (build-system r-build-system)
     (arguments

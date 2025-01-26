@@ -6909,13 +6909,13 @@ boundary statistics are described in: Fortin, Drapeau, and Jacquez (1996)
 (define-public r-botor
   (package
     (name "r-botor")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "botor" version))
        (sha256
-        (base32 "0avw7h0m2dm9nn5ya1y6kcgdh438v63y42w3y2dag24iyligx0wq"))))
+        (base32 "17mnniks6733nw9i3rpq2063f8g1g9ff3dg7h7p8izwg45ha9qga"))))
     (properties `((upstream-name . "botor")))
     (build-system r-build-system)
     (arguments
@@ -13867,13 +13867,13 @@ networks, i.e.  data graph structured.")
 (define-public r-biomod2
   (package
     (name "r-biomod2")
-    (version "4.2-5-2")
+    (version "4.2-6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biomod2" version))
        (sha256
-        (base32 "1rdlkspi0hkgnrc4qs7vgbmcpsf74nzdq8w0akg59bynp0ks8k0w"))))
+        (base32 "0p44vj0j7xygwfzszmhlfrfcfk5bjvcbi61iwdvq0vfxi0avykhw"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
     (arguments
@@ -13901,7 +13901,7 @@ and evaluation, ensemble of models, ensemble forecasting and visualization.  The
 package permits to run consistently up to 10 single models on a
 presence/absences (resp presences/pseudo-absences) dataset and to combine them
 in ensemble models and ensemble projections.  Some bench of other evaluation and
-visualisation tools are also available within the package.")
+visualization tools are also available within the package.")
     (license license:gpl3)))
 
 (define-public r-biometryassist
@@ -29350,13 +29350,13 @@ necessarily reflect the views of the National Science Foundation.")
 (define-public r-barulho
   (package
     (name "r-barulho")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baRulho" version))
        (sha256
-        (base32 "0ymdz8dpkk8xw4baiz0xamwx526gmaf59w3nzbppckiqacjr6qvd"))))
+        (base32 "15mk65an0cg4mvhiyh4xksb11wdpm6b7prpdc978zgw2i0xsw5qj"))))
     (properties `((upstream-name . "baRulho")))
     (build-system r-build-system)
     (arguments

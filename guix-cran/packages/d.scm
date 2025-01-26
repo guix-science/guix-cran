@@ -560,13 +560,13 @@ rms::Glm, rms::lrm, rms::cph, and mgcv::gam model objects.")
 (define-public r-dynmix
   (package
     (name "r-dynmix")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynmix" version))
        (sha256
-        (base32 "09mm2k6p6vmj5ab9a0gzm7wqf35righ78c8sabnlk9d1wwxs4s70"))))
+        (base32 "1j91svrhapj24y5b3wga17cyrrfiqixx27rhaklkhz6zwhllp3qg"))))
     (properties `((upstream-name . "dynmix")))
     (build-system r-build-system)
     (arguments
@@ -2153,13 +2153,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.1.3-1")
+    (version "1.1.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "1r08xibqddmph5r03c224fyp400rw8qms0g6x8s1r442r6jfbxk1"))))
+        (base32 "1d4racr5b6v4jrs6yppf6adzscfbj6qzl5xha59spx3smrxr91wj"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (arguments
@@ -13778,13 +13778,13 @@ framework.")
 (define-public r-discretedatasets
   (package
     (name "r-discretedatasets")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteDatasets" version))
        (sha256
-        (base32 "0jpjky99cfb7h3i244n16llmgkrkbavbmyhz181fxiaiwzs7z66c"))))
+        (base32 "15z3wf2shwvz954cxylpmblcqv0l9mqv8qrdwg5fz4f2k1ql2a9q"))))
     (properties `((upstream-name . "DiscreteDatasets")))
     (build-system r-build-system)
     (arguments
@@ -17824,30 +17824,6 @@ Sampling and Household Listing Manual\" (ICF International 2012,
 <https://dhsprogram.com/pubs/pdf/DHSM4/DHS6_Sampling_Manual_Sept2012_DHSM4.pdf>).")
     (license license:gpl2)))
 
-(define-public r-dhis2r
-  (package
-    (name "r-dhis2r")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dhis2r" version))
-       (sha256
-        (base32 "1q2ahch1rv4bp8c5nci2jqsrwr5y252ngv2v958623xd9rfh97kq"))))
-    (properties `((upstream-name . "dhis2r")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-httr2 r-dplyr r-curl r-attempt))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/amanyiraho/dhis2r")
-    (synopsis "Client for the 'DHIS2' Web API")
-    (description
-     "Connect and pull data from a DHIS2 (District Health Information Software 2)
-instance into R.")
-    (license license:expat)))
-
 (define-public r-dhh
   (package
     (name "r-dhh")
@@ -21236,13 +21212,13 @@ and Yu, Fernandez, and Brock (2020) <doi:10.1186/s12859-020-3541-7>.")
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DEPONS2R" version))
        (sha256
-        (base32 "0p3d4ys38b0ifrxk2rmkvx0i5hzril9hhjssjlkjwcmrjq3jh7wx"))))
+        (base32 "1zki7fwlhjbzqvyz50l3mmgj6d9z1pa2101zphc792lnmsj6ncch"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (arguments
@@ -32074,13 +32050,13 @@ from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
 (define-public r-dacc
   (package
     (name "r-dacc")
-    (version "0.0-5")
+    (version "0.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dacc" version))
        (sha256
-        (base32 "19gk3dgkhr6vzyh6bravanzbvykhnp6yippicx7wmcdwi9mhzqvb"))))
+        (base32 "0lzmy1f8apn64q446zkd64knv53sjhbfwdbwjfpgqnvbxbxmwbrx"))))
     (properties `((upstream-name . "dacc")))
     (build-system r-build-system)
     (arguments

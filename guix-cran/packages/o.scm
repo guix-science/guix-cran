@@ -8778,47 +8778,6 @@ together with extensive diagnostic functions.  It is useful as a baseline for
 machine learning models and the rules are often helpful heuristics.")
     (license license:expat)))
 
-(define-public r-onemap
-  (package
-    (name "r-onemap")
-    (version "3.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "onemap" version))
-       (sha256
-        (base32 "1rpbx3j6q31m2niqbnxjkzh31a22l879f3x1j84ldx465zdpxdfv"))))
-    (properties `((upstream-name . "onemap")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vcfr
-                             r-tidyr
-                             r-smacof
-                             r-reshape2
-                             r-rebus
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-princurve
-                             r-plotly
-                             r-htmlwidgets
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr
-                             r-dendextend))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cristianetaniguti/onemap")
-    (synopsis "Construction of Genetic Maps in Experimental Crosses")
-    (description
-     "Analysis of molecular marker data from model (backcrosses, F2 and recombinant
-inbred lines) and non-model systems (i.  e.  outcrossing species).  For the
-later, it allows statistical analysis by simultaneously estimating linkage and
-linkage phases (genetic map construction) according to Wu et al. (2002)
-<doi:10.1006/tpbi.2002.1577>.  All analysis are based on multipoint approaches
-using hidden Markov models.")
-    (license license:gpl3)))
-
 (define-public r-onelogin
   (package
     (name "r-onelogin")
@@ -10458,6 +10417,39 @@ generating figures to visualize the results of the statistical analysis.  The
 goal of this package is to help users extract biological insights from proteomic
 data run on the Olink platform.")
     (license license:agpl3+)))
+
+(define-public r-oldr
+  (package
+    (name "r-oldr")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oldr" version))
+       (sha256
+        (base32 "1bb3cdcfla6sa82j2dfjlffy0b4s9v1s4g1fxr030wgvbxzsn5x5"))))
+    (properties `((upstream-name . "oldr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tinytex
+                             r-tibble
+                             r-rmarkdown
+                             r-cli
+                             r-car
+                             r-bbw))
+    (native-inputs (list r-knitr))
+    (home-page "https://rapidsurveys.io/oldr/")
+    (synopsis "An Implementation of Rapid Assessment Method for Older People")
+    (description
+     "An implementation of the Rapid Assessment Method for Older People or RAM-OP
+<https://www.helpage.org/resource/rapid-assessment-method-for-older-people-ramop-manual/>.
+ It provides various functions that allow the user to design and plan the
+assessment and analyse the collected data.  RAM-OP provides accurate and
+reliable estimates of the needs of older people.")
+    (license license:gpl3)))
 
 (define-public r-olctools
   (package

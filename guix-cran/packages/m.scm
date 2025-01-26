@@ -48118,13 +48118,13 @@ visualizing networks with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.2.5")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "0ppd42xysg388s6b8d09w7rfj043354zmvszahxz0sdng8vsf9m4"))))
+        (base32 "1w72vrsp4q81cqcv5kaakransksbaqgd3y10vffr8fsfm89wy3mf"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (arguments
@@ -48144,7 +48144,7 @@ visualizing networks with sensible defaults.")
      "Computes indirect effects, conditional effects, and conditional indirect effects
 in a structural equation model or path model after model fitting, with no need
 to define any user parameters or label any paths in the model syntax, using the
-approach presented in Cheung and Cheung (2023) <doi:10.3758/s13428-023-02224-z>.
+approach presented in Cheung and Cheung (2024) <doi:10.3758/s13428-023-02224-z>.
  Can also form bootstrap confidence intervals by doing bootstrapping only once
 and reusing the bootstrap estimates in all subsequent computations.  Supports
 bootstrap confidence intervals for standardized (partially or completely)
@@ -49235,13 +49235,13 @@ starting at 1 and allowing users to customise suffix format.")
 (define-public r-maketools
   (package
     (name "r-maketools")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maketools" version))
        (sha256
-        (base32 "03ng6lfs1phi41zvpdc2mp336c4smb7882hh76nis5qn8njmpf3b"))))
+        (base32 "0897clw72iqxjnjczwa2q5v01q63hnmhkp6di45mlpnvvrgix3hf"))))
     (properties `((upstream-name . "maketools")))
     (build-system r-build-system)
     (arguments

@@ -9329,6 +9329,29 @@ complex loops.  The coefficient vector and cumulative baseline hazard function
 can be estimated, along with the corresponding standard errors and P values.")
     (license license:gpl2+)))
 
+(define-public r-transltr
+  (package
+    (name "r-transltr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transltr" version))
+       (sha256
+        (base32 "0mhjdgcvc1w363hfls264zj4xf51xnyhkgl8vcf0x8rkh13jg17v"))))
+    (properties `((upstream-name . "transltr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-r6 r-digest))
+    (home-page "https://github.com/jeanmathieupotvin/transltr")
+    (synopsis "Support Many Languages in R Programs")
+    (description
+     "An object model for source text and translations.  Find and extract translatable
+strings.  Provide translations and seamlessly retrieve them at runtime.")
+    (license license:expat)))
+
 (define-public r-translit-uk
   (package
     (name "r-translit-uk")
@@ -10748,13 +10771,13 @@ instead.")
 (define-public r-tracenma
   (package
     (name "r-tracenma")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tracenma" version))
        (sha256
-        (base32 "087bqwnl8n8aqb7k2xc39flvdn6c1z353p0zk8z1rn4nbyswp2nv"))))
+        (base32 "1h3w1njp9k7rbzmad9syih86pknfasqzxg3rb24sgy05af7q15li"))))
     (properties `((upstream-name . "tracenma")))
     (build-system r-build-system)
     (arguments
@@ -15071,13 +15094,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "07ffil0s846sbqk1znr2qk2gc02hb99hri0c03nsbb7hcj7l5yz8"))))
+        (base32 "15c88jawdp45yc2mdpxv8plx6dlh62gkwjx13ra72kn0gdrvgdy8"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -17795,13 +17818,13 @@ references.")
 (define-public r-tidyplus
   (package
     (name "r-tidyplus")
-    (version "0.0.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplus" version))
        (sha256
-        (base32 "0a8wdl2jz4fijfnzph0g9a1861lvgspl5ppa2hwihrxwr4srv98g"))))
+        (base32 "0lzs6z49xpca3zzc1dqyi2a395539nqrq9aww0d1gdfv2qdd8xx9"))))
     (properties `((upstream-name . "tidyplus")))
     (build-system r-build-system)
     (arguments
@@ -17814,9 +17837,10 @@ references.")
                              r-stringr
                              r-stringi
                              r-rlang
+                             r-lifecycle
                              r-dplyr
                              r-chk))
-    (home-page "https://github.com/poissonconsulting/tidyplus")
+    (home-page "https://poissonconsulting.github.io/tidyplus/")
     (synopsis "Additional 'tidyverse' Functions")
     (description
      "This package provides functions such as @code{str_crush()},
@@ -26385,13 +26409,13 @@ displays filtered and unfiltered observation counts.")
 (define-public r-teal-reporter
   (package
     (name "r-teal-reporter")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.reporter" version))
        (sha256
-        (base32 "1hgp17rjmwjqi00w28qgh5h13vn58wnwhx4y8825qnc8v45vchb5"))))
+        (base32 "0q36pw6db7f4xf09sc3akn7icxyr6345im17ag0p802fbbwk4q24"))))
     (properties `((upstream-name . "teal.reporter")))
     (build-system r-build-system)
     (arguments
@@ -26402,7 +26426,10 @@ displays filtered and unfiltered observation counts.")
                              r-shinywidgets
                              r-shinybusy
                              r-shiny
+                             r-rtables-officer
+                             r-rtables
                              r-rmarkdown
+                             r-rlistings
                              r-r6
                              r-lifecycle
                              r-knitr
@@ -26410,7 +26437,7 @@ displays filtered and unfiltered observation counts.")
                              r-flextable
                              r-checkmate
                              r-bslib))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/insightsengineering/teal.reporter")
     (synopsis "Reporting Tools for 'shiny' Modules")
     (description

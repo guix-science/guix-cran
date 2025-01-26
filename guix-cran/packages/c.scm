@@ -15760,13 +15760,13 @@ marginal likelihood, and distributional transform), for three types of outcomes
 (define-public r-copbasic
   (package
     (name "r-copbasic")
-    (version "2.2.6")
+    (version "2.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copBasic" version))
        (sha256
-        (base32 "01yi81v1s893b8wqwkwz5613a7j7dcb41mdnd7hbxfg3s443w8iv"))))
+        (base32 "1gx49q1psf0pifiaym2w2bff1cwhjw5dhkh326nq29w452xps7kr"))))
     (properties `((upstream-name . "copBasic")))
     (build-system r-build-system)
     (arguments
@@ -22536,13 +22536,13 @@ Heard & Rubin-Delanchy (2017) <@code{arXiv:1707.06897>}.")
 (define-public r-combatfamqc
   (package
     (name "r-combatfamqc")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ComBatFamQC" version))
        (sha256
-        (base32 "06r6q1c4vgbnjam9g2c0i8dhkrnr63q4v0m3qxqw85hbmz3szhc3"))))
+        (base32 "137m7ir8wffff5bvx2g4smsz83bq650y2va5mwxdx0kkqblmpx6z"))))
     (properties `((upstream-name . "ComBatFamQC")))
     (build-system r-build-system)
     (arguments
@@ -35966,13 +35966,13 @@ finding.  Howard Y. Chang(2019) <doi:10.1038/s41587-019-0206-z>.")
 (define-public r-chromote
   (package
     (name "r-chromote")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromote" version))
        (sha256
-        (base32 "0iwxrw3sbdanqzd49p809hvw839fmv93g7a862s2rf8m00x5ccx2"))))
+        (base32 "07g5vw9ijghys0zw7harz8dszgxvxk22bb6mldm18a2kn6cymsa4"))))
     (properties `((upstream-name . "chromote")))
     (build-system r-build-system)
     (arguments
@@ -37269,13 +37269,13 @@ comprehensive data checks and script generation functionality.")
 (define-public r-chestvolume
   (package
     (name "r-chestvolume")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChestVolume" version))
        (sha256
-        (base32 "01mg1a3cbsajdp5qnlswx89skq036p76racz5lmjpd5s9bwlclax"))))
+        (base32 "0ql147p3l5rlair2vlxjsa4ddfy6a4aiy4bra227kws0v0h7xvpf"))))
     (properties `((upstream-name . "ChestVolume")))
     (build-system r-build-system)
     (arguments
@@ -39858,13 +39858,13 @@ package.")
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cffr" version))
        (sha256
-        (base32 "1aja12kn1f6h3zydfichiq2l2qd0qd7fl794v6ypp433hh54yvxg"))))
+        (base32 "15dgv56v024rvnfa3xrb6wcmilc4rv363z7fb52jm04n7b8r2npj"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
     (arguments
@@ -39972,13 +39972,13 @@ or and with any mediator (any variable type and distribution).  See Sudharsanan
 (define-public r-cfda
   (package
     (name "r-cfda")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfda" version))
        (sha256
-        (base32 "1i3c6586x8g1vv8pkp9d23l4pzv7wapvhq4xsj98xl3fj3ngss52"))))
+        (base32 "0y0glpx941kbz2d2k3gl0kg2iwvq4hic5xcdf66qj6rbsbjfvp4j"))))
     (properties `((upstream-name . "cfda")))
     (build-system r-build-system)
     (arguments

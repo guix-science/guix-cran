@@ -3172,19 +3172,19 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistla" version))
        (sha256
-        (base32 "0r4l1jdphq3d075ypbc5ab7rsj77qpi43600b6sqqw418za5fqkz"))))
+        (base32 "0w90h0839dfbn8v8vr5116mfbh5id0qkp1yqhkzcljpjn6v6cv6l"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=vistla")
+    (home-page "https://gitlab.com/mbq/vistla")
     (synopsis "Detecting Influence Paths with Information Theory")
     (description
      "Traces information spread through interactions between features, utilising

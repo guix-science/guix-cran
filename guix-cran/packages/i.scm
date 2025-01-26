@@ -4686,13 +4686,13 @@ function with sample data sets.")
 (define-public r-ipsecr
   (package
     (name "r-ipsecr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipsecr" version))
        (sha256
-        (base32 "10kliwx8rn4xrcrrmmmr0n2f01dynms5l9lk5xzbyr853x4am5bl"))))
+        (base32 "0swi1lyyd80g8qzynvyhs6y11g1rcrs2y0lkxrg9zw8jffy0dipz"))))
     (properties `((upstream-name . "ipsecr")))
     (build-system r-build-system)
     (arguments

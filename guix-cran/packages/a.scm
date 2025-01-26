@@ -3864,13 +3864,13 @@ W911NF-17-1-0007.")
 (define-public r-atmchile
   (package
     (name "r-atmchile")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AtmChile" version))
        (sha256
-        (base32 "1swcbxjk18qib7dshwr4x41l75fh72m9bnnll1x6nk1c5vwc5y36"))))
+        (base32 "1i20g6mz00pnsd61s58l8fl29rn13kabix7ihsjk0gnq9zs4nbxf"))))
     (properties `((upstream-name . "AtmChile")))
     (build-system r-build-system)
     (arguments

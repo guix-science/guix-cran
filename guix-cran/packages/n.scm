@@ -5969,25 +5969,26 @@ of studies.  O'Connor & Ermacora (2021, <doi:10.1037/cbs0000259>).")
 (define-public r-nntmvn
   (package
     (name "r-nntmvn")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nntmvn" version))
        (sha256
-        (base32 "0anv6vl9md127y59k6sqvpx7sacfwz62amgc4x0yb0rj7xwvzjnd"))))
+        (base32 "0hhlscdcvl3693863k4hzzcyvvnv9aga2n0bgwavffmn6q2km16k"))))
     (properties `((upstream-name . "nntmvn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-truncatednormal r-gpgp))
+    (propagated-inputs (list r-truncatednormal r-rcpp r-rann r-gpgp))
     (home-page "https://cran.r-project.org/package=nntmvn")
     (synopsis "Draw Samples of Truncated Multivariate Normal Distributions")
     (description
-     "Use the sequential nearest neighbor (SNN) method introduced in Jian Cao and
-Matthias Katzfuss (2024) <doi:10.48550/@code{arXiv.2406.17307>} to draw samples
-from the truncated multivariate normal (TMVN) distributions.")
+     "Draw samples from truncated multivariate normal distribution using the
+sequential nearest neighbor (SNN) method introduced in \"Scalable Sampling of
+Truncated Multivariate Normals Using Sequential Nearest-Neighbor Approximation\"
+<doi:10.48550/@code{arXiv.2406.17307>}.")
     (license license:gpl2+)))
 
 (define-public r-nntensor
@@ -6943,13 +6944,13 @@ the updating process.  See e.g. TomÃ© et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "0hz04rb6bkhkxln89wwjr31s1gdl4kjhryb9yfgr67nvw1fhmxz7"))))
+        (base32 "1f4jw1mk5cvfv7pq1dvpy2ba4g8ih8chgpp2rrimy800bq810ann"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (arguments

@@ -840,13 +840,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "02lm2lq9mxwcah6ah1pbls1y05dwj7l1mka0mmpaz13zpsmi6cf2"))))
+        (base32 "0h2xpy7lkxwklafdsy5bcpkaqji4r9w6wi2ghp572vgpp42499d7"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (arguments
@@ -10794,6 +10794,51 @@ estimating errors, calculating pairwise similarities, determining pairwise
 similarity loci, and generating a similarity matrix.")
     (license license:gpl3)))
 
+(define-public r-flsss
+  (package
+    (name "r-flsss")
+    (version "9.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FLSSS" version))
+       (sha256
+        (base32 "0maxazc3q1lwgyl2qgknrgrcxjf00dwkgf96d5675xyymbsrw7im"))))
+    (properties `((upstream-name . "FLSSS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpp))
+    (home-page "https://cran.r-project.org/package=FLSSS")
+    (synopsis "Mining Rigs for Problems in the Subset Sum Family")
+    (description
+     "Specialized solvers for combinatorial optimization problems in the Subset Sum
+family.  The solvers differ from the mainstream in the options of (i)
+restricting subset size, (ii) bounding subset elements, (iii) mining real-value
+multisets with predefined subset sum errors, (iv) finding one or more subsets in
+limited time.  A novel algorithm for mining the one-dimensional Subset Sum
+induced algorithms for the multi-Subset Sum and the multidimensional Subset Sum.
+ The multi-threaded framework for the latter offers exact algorithms to the
+multidimensional Knapsack and the Generalized Assignment problems.  Historical
+updates include (a) renewed implementation of the multi-Subset Sum,
+multidimensional Knapsack and Generalized Assignment solvers; (b) availability
+of bounding solution space in the multidimensional Subset Sum; (c) fundamental
+data structure and architectural changes for enhanced cache locality and better
+chance of SIMD vectorization; (d) option of mapping floating-point instance to
+compressed 64-bit integer instance with user-controlled precision loss, which
+could yield substantial speedup due to the dimension reduction and efficient
+compressed integer arithmetic via bit-manipulations; (e) distributed computing
+infrastructure for multidimensional subset sum; (f) arbitrary-precision
+zero-margin-of-error multidimensional Subset Sum accelerated by a simplified
+Bloom filter.  The package contains a copy of @code{xxHash} from
+<https://github.com/Cyan4973/@code{xxHash>}.  Package vignette
+(<doi:10.48550/@code{arXiv.1612.04484>}) detailed a few historical updates.
+Functions prefixed with aux (auxiliary) are independent implementations of
+published algorithms for solving optimization problems less relevant to Subset
+Sum.")
+    (license license:gpl3)))
+
 (define-public r-flsa
   (package
     (name "r-flsa")
@@ -18886,13 +18931,13 @@ with a focus on consistency , punctuality and completeness of data.")
 (define-public r-fdma
   (package
     (name "r-fdma")
-    (version "2.2.7")
+    (version "2.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fDMA" version))
        (sha256
-        (base32 "02710ynd3y13pkbypmqh7lid9g3xn282kxf59yr5p3d76384z0gg"))))
+        (base32 "1njyi2dnjhf0lmjfqbjlmk168kwlvck86bzny32nsknf32b6gb7c"))))
     (properties `((upstream-name . "fDMA")))
     (build-system r-build-system)
     (arguments

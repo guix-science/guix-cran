@@ -4051,13 +4051,13 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 (define-public r-grpnet
   (package
     (name "r-grpnet")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpnet" version))
        (sha256
-        (base32 "0ivkk669ycgghmbqzbkg6nz94y9gicixnyxd0np4bmrv62knz1h2"))))
+        (base32 "17wjk2mmzcfd2xl1hsbl3cvmz8chybw6b9n1ikcy58pj46cvmag2"))))
     (properties `((upstream-name . "grpnet")))
     (build-system r-build-system)
     (arguments
@@ -4071,13 +4071,13 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 group elastic net penalties as described in Helwig (2024)
 <doi:10.1080/10618600.2024.2362232>.  Implements group LASSO, group MCP, and
 group SCAD with an optional group ridge penalty.  Computes the regularization
-path for linear regression (gaussian), logistic regression (binomial),
-multinomial logistic regression (multinomial), log-linear count regression
-(poisson and negative.binomial), and log-linear continuous regression (gamma and
-inverse gaussian).  Supports default and formula methods for model
-specification, k-fold cross-validation for tuning the regularization parameters,
-and nonparametric regression via tensor product reproducing kernel (smoothing
-spline) basis function expansion.")
+path for linear regression (gaussian), multivariate regression (multigaussian),
+logistic regression (binomial), multinomial logistic regression (multinomial),
+log-linear count regression (poisson and negative.binomial), and log-linear
+continuous regression (gamma and inverse gaussian).  Supports default and
+formula methods for model specification, k-fold cross-validation for tuning the
+regularization parameters, and nonparametric regression via tensor product
+reproducing kernel (smoothing spline) basis function expansion.")
     (license license:gpl2+)))
 
 (define-public r-grplasso
@@ -16230,13 +16230,13 @@ on-premises remote option.")
 (define-public r-git2rdata
   (package
     (name "r-git2rdata")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "git2rdata" version))
        (sha256
-        (base32 "0vj308ilycfv9jhi6ixk7n3pg6m8dh86rzcjnh78rzrd72fvcg9h"))))
+        (base32 "198pyhcs3z1mld1cavspqcw24m2jf5zq96l3nkdrp43fi8lwwhzb"))))
     (properties `((upstream-name . "git2rdata")))
     (build-system r-build-system)
     (arguments
@@ -28635,13 +28635,13 @@ specifically developed for this kind of data ('Arciniegas-AlarcÃ³n 2014,
 (define-public r-genetic-algo-optimizer
   (package
     (name "r-genetic-algo-optimizer")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genetic.algo.optimizeR" version))
        (sha256
-        (base32 "14s8cwx7bx6a206cxm2i7rp8kisqz620qrgzj3cn1qg0pxd49ixj"))))
+        (base32 "00yff9pi3ghc9ag0p6qq17m6hjyr5k0j1l2kfjyiwg3ykssam929"))))
     (properties `((upstream-name . "genetic.algo.optimizeR")))
     (build-system r-build-system)
     (arguments

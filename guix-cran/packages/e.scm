@@ -11082,13 +11082,13 @@ parameter estimates are extracted from the literature.")
 (define-public r-epiparameter
   (package
     (name "r-epiparameter")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiparameter" version))
        (sha256
-        (base32 "05lxhakf27n7dw9bzvar2dp2s8qdqk8y53xls4s1sknz6p1aqwl3"))))
+        (base32 "0277q2c8mxibjbbw2px5m4hmgyfcvkrl05n99kdwsggy4qb1mnr3"))))
     (properties `((upstream-name . "epiparameter")))
     (build-system r-build-system)
     (arguments
@@ -12611,31 +12611,6 @@ even when zero carcasses have been found in searches, following Huso et al.
 (2015) <doi:10.1890/14-0764.1>, Dalthorp et al. (2017) <doi:10.3133/ds1055>, and
 Dalthorp and Huso (2015) <doi:10.3133/ofr20151227>.")
     (license license:gpl2)))
-
-(define-public r-envvar
-  (package
-    (name "r-envvar")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "envvar" version))
-       (sha256
-        (base32 "1nrcnipxljpwavfmm5m107zihvm2dj07wgrgkpzx3ph2mzjbzx81"))))
-    (properties `((upstream-name . "envvar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-lubridate r-fs r-cli))
-    (home-page "https://github.com/briandconnelly/envvar")
-    (synopsis
-     "Make Working with Environment Variables Easier and More Consistent")
-    (description
-     "This package provides a collection of functions that allows for easy and
-consistent use of environment variables.  This includes setting, checking,
-retrieving, transforming, and validating values stored in environment variables.")
-    (license license:expat)))
 
 (define-public r-envstat
   (package
@@ -15225,13 +15200,13 @@ functionalities through the R framework.")
 (define-public r-emissv
   (package
     (name "r-emissv")
-    (version "0.665.8.0")
+    (version "0.665.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EmissV" version))
        (sha256
-        (base32 "090xjvb5n05nd1rapqp2jaa23k3jzmys004bzfpn4nckb5nfs2nc"))))
+        (base32 "1749i9jr395qh34pkvlw0hhlmpv9lvrhxzhxb7iryz99hyh9llap"))))
     (properties `((upstream-name . "EmissV")))
     (build-system r-build-system)
     (arguments
@@ -18567,13 +18542,13 @@ Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
 (define-public r-egocor
   (package
     (name "r-egocor")
-    (version "1.3.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EgoCor" version))
        (sha256
-        (base32 "1y3fvgj0mbvcp82yhlrranjv7izg6a0l8ap0w7ycn89xq6p5ip7b"))))
+        (base32 "1vrxcyki6ijzzgg1x5480s4p0mki3q9f2mfs90p0867w9y9h2k05"))))
     (properties `((upstream-name . "EgoCor")))
     (build-system r-build-system)
     (arguments
@@ -20166,13 +20141,13 @@ Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
 (define-public r-ednajoint
   (package
     (name "r-ednajoint")
-    (version "0.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDNAjoint" version))
        (sha256
-        (base32 "1sp8yra57yhkqclwizfhnc06m5kz73mzly00p5nbpzy38n60b4n1"))))
+        (base32 "18lifx83r0is8mkd871bnf1r11dj53fc3hx6vq741hbg4q5xhhdi"))))
     (properties `((upstream-name . "eDNAjoint")))
     (build-system r-build-system)
     (arguments

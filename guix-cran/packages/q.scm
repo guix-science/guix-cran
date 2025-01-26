@@ -190,13 +190,13 @@ efficacy.")
 (define-public r-qvcalc
   (package
     (name "r-qvcalc")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qvcalc" version))
        (sha256
-        (base32 "17sr4100ciy5jp0b8sxvqjxf4m176ayzd5yyaw40ri4xf6h0z7la"))))
+        (base32 "0ngvv9jr2q92cdd38x08nm81hwhcnbx9gwv7s2xsd0kflnnkqh4h"))))
     (properties `((upstream-name . "qvcalc")))
     (build-system r-build-system)
     (arguments

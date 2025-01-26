@@ -6088,6 +6088,33 @@ Tian L (2019) ``Using a Surrogate Marker for Early Testing of a Treatment
 Effect\" Biometrics, 75(4):1253-1263. <doi:10.1111/biom.13067>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-surrogateseq
+  (package
+    (name "r-surrogateseq")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurrogateSeq" version))
+       (sha256
+        (base32 "0s5wh40fxa9y6nq1valarr97bgwabviwsj4jl02rsgibd3v7aj47"))))
+    (properties `((upstream-name . "SurrogateSeq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-ggplot2))
+    (home-page "https://cran.r-project.org/package=SurrogateSeq")
+    (synopsis
+     "Group Sequential Testing of a Treatment Effect Using a Surrogate Marker")
+    (description
+     "This package provides functions to implement group sequential procedures that
+allow for early stopping to declare efficacy using a surrogate marker and the
+possibility of futility stopping.  More details are available in: Parast, L. and
+Bartroff, J (2024) <doi:10.1093/biomtc/ujae108>.  A tutorial for this package
+can be found at <https://laylaparast.com/home/@code{SurrogateSeq.html>}.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-surrogatersq
   (package
     (name "r-surrogatersq")
@@ -9007,13 +9034,13 @@ or different hypothesized distributions.")
 (define-public r-sts
   (package
     (name "r-sts")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sts" version))
        (sha256
-        (base32 "1jlqa2vn6r4zpx13m3hxz5dir0wi70q6v2ydw6d9d7p9skyg3skf"))))
+        (base32 "0p1qh5mjymm67kr1x6v2di50b0s171hyy8b5arvk99669vkmngfz"))))
     (properties `((upstream-name . "sts")))
     (build-system r-build-system)
     (arguments
@@ -12711,13 +12738,13 @@ return values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevedata" version))
        (sha256
-        (base32 "0zhgagvndzjimbg03xfdm7ndqsxb75abdyng41caw8i9wjina90i"))))
+        (base32 "1dck595x51gb1b20nx6szz5p91xbw1p6zc0vvw7bb21yph94f165"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (arguments
@@ -28020,13 +28047,13 @@ data frames with sparse columns and functions to interact with sparse vectors.")
 (define-public r-sparsevb
   (package
     (name "r-sparsevb")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsevb" version))
        (sha256
-        (base32 "1cigq8hwymrrkiy3iyrxsjjbj228ahrd7mq9lqar4jlb925jzqx4"))))
+        (base32 "1n236mdym22xbddkvd1cilsrr9k5vfd5vs7l04znib30ili65xbr"))))
     (properties `((upstream-name . "sparsevb")))
     (build-system r-build-system)
     (arguments
@@ -28046,8 +28073,8 @@ an updating order prioritizing large, more relevant, coefficients.  Sparsity is
 induced via spike-and-slab priors with either Laplace or Gaussian slabs.  By
 default, the heavier-tailed Laplace density is used.  Formal derivations of the
 algorithms and asymptotic consistency results may be found in Kolyan Ray and
-Botond Szabo (2020) <doi:10.1080/01621459.2020.1847121> and Kolyan Ray, Botond
-Szabo, and Gabriel Clara (2020) <@code{arXiv:2010.11665>}.")
+Botond Szabo (JASA 2020) and Kolyan Ray, Botond Szabo, and Gabriel Clara
+(@code{NeurIPS} 2020).")
     (license license:gpl3+)))
 
 (define-public r-sparsevar
@@ -54027,6 +54054,49 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
 <doi:10.1007/978-1-4614-4072-7>.")
     (license license:expat)))
 
+(define-public r-serocalculator
+  (package
+    (name "r-serocalculator")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "serocalculator" version))
+       (sha256
+        (base32 "1glj0bgmnjvw3rnaxdn1cd1aj99q6sjf187l1h9md4v3pw7gwx2f"))))
+    (properties `((upstream-name . "serocalculator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rngtools
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-mixtools
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-cli
+                             r-and))
+    (home-page "https://github.com/UCD-SERG/serocalculator")
+    (synopsis "Estimating Infection Rates from Serological Data")
+    (description
+     "Translates antibody levels measured in cross-sectional population samples into
+estimates of the frequency with which seroconversions (infections) occur in the
+sampled populations.  Replaces the previous `seroincidence` package.")
+    (license license:gpl3)))
+
 (define-public r-serieslcb
   (package
     (name "r-serieslcb")
@@ -56585,13 +56655,13 @@ package by Rosseel (2012) <doi:10.18637/jss.v048.i02>.")
 (define-public r-semlbci
   (package
     (name "r-semlbci")
-    (version "0.11.2")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semlbci" version))
        (sha256
-        (base32 "131nbwq8g0l2imbjv61l83c5avhwqndhdgwkaf0hj0h6a0qwvhqa"))))
+        (base32 "1w8440qi5mg4xk60lxbh0fw0h3ffi9j8gx15yz5c74r1drfnj08q"))))
     (properties `((upstream-name . "semlbci")))
     (build-system r-build-system)
     (arguments
@@ -59386,13 +59456,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "5.1.0")
+    (version "5.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "1dy1mxbh6gag540165990g0qmmab13c366rgxxkq5pvgn214xh37"))))
+        (base32 "1xgv64hw03q5l1kifafhk4cvq36d8zyk4ir86hwm6wpaz87fd5c6"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (arguments

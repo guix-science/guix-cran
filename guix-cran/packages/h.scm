@@ -12202,6 +12202,31 @@ models.")
 models.")
     (license license:gpl2)))
 
+(define-public r-hdftsa
+  (package
+    (name "r-hdftsa")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdftsa" version))
+       (sha256
+        (base32 "0haf1p7qh2rw44q5cj7pd1xbkmypfvwwj827h08qfapfn311vw16"))))
+    (properties `((upstream-name . "hdftsa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ftsa))
+    (home-page "https://cran.r-project.org/package=hdftsa")
+    (synopsis "High-Dimensional Functional Time Series Analysis")
+    (description
+     "Offers methods for visualizing, modelling, and forecasting high-dimensional
+functional time series, also known as functional panel data.  Documentation
+about hdftsa is provided via the paper by Cristian F. Jimenez-Varon, Ying Sun
+and Han Lin Shang (2024, <doi:10.1080/10618600.2024.2319166>).")
+    (license license:gpl3)))
+
 (define-public r-hdfqlr
   (package
     (name "r-hdfqlr")
@@ -14080,13 +14105,13 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "happign" version))
        (sha256
-        (base32 "05lcl8r63f8rjzjs8bgl3n97lh73hnwaw7r4i0hz4qc68fxggn1r"))))
+        (base32 "18450rfx6imrmmif2y0md87d3dwgds73jbadjpci2j4a6vglq53k"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (arguments

@@ -9731,13 +9731,13 @@ binomial experiment.")
 (define-public r-priorcon
   (package
     (name "r-priorcon")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorCON" version))
        (sha256
-        (base32 "11ibhwz655q2xwma9d8010d6rkrirg0f3hy1sc45gj5k0bjk55if"))))
+        (base32 "1h32jhkfqwdwn7y7wfz2cvglwq3vz0kjvq8396zdifkxrjy7887s"))))
     (properties `((upstream-name . "priorCON")))
     (build-system r-build-system)
     (arguments
@@ -9769,13 +9769,13 @@ problems.")
 (define-public r-prior3d
   (package
     (name "r-prior3d")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prior3D" version))
        (sha256
-        (base32 "0x0wnxvjqc6b7ig9i1g8xgq2gzdjj2365myzka8aggq5knx9jxy5"))))
+        (base32 "1z7a94h9858ww5n1gp31fk6333cz05c3qzxr6xacgb3m8dzlc5k1"))))
     (properties `((upstream-name . "prior3D")))
     (build-system r-build-system)
     (arguments
@@ -9798,7 +9798,7 @@ prioritization analyses across multiple depth levels and ensuring efficient
 resource allocation throughout the water column.  It provides a structured
 workflow designed to address biodiversity conservation and management challenges
 in the 3 dimensions, while facilitating usersâ choices and parameterization
-(Doxa et al.  2024 <doi:10.1016/j.ecolmodel.2024.110919>).")
+(Doxa et al.  2025 <doi:10.1016/j.ecolmodel.2024.110919>).")
     (license license:gpl3)))
 
 (define-public r-priogene
@@ -10318,13 +10318,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "0f4d5lq1jm3fyafrwypgpp637kizqnkkh6sx0y6sncd610iv0jfg"))))
+        (base32 "00vjank2xvf99l59g72hl675vd60j9ymmd3mb17pfscqvw07mc96"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (arguments
@@ -13143,13 +13143,13 @@ fixed effects with penalized intercepts by LASSO.")
 (define-public r-pqrbayes
   (package
     (name "r-pqrbayes")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrBayes" version))
        (sha256
-        (base32 "1pkdhs73xjg7qgcvj24yqwkxibg55c9kdjskm6v44nnks11shinl"))))
+        (base32 "0g5xhjinj51sx63y23g7ici9ifczhhyx3y8kfdk329c6zsvxqdbg"))))
     (properties `((upstream-name . "pqrBayes")))
     (build-system r-build-system)
     (arguments
@@ -27719,6 +27719,34 @@ of phylogenetic trees.")
 trees in NEXUS and Newick formats, while preserving annotations.")
     (license license:expat)))
 
+(define-public r-phylospatial
+  (package
+    (name "r-phylospatial")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phylospatial" version))
+       (sha256
+        (base32 "06p68mcdcl8m7dgk1hadsvb7924pwrxqkcr0a05zmis4r7yjiv7l"))))
+    (properties `((upstream-name . "phylospatial")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-terra r-sf r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://matthewkling.github.io/phylospatial/")
+    (synopsis "Spatial Phylogenetic Analysis")
+    (description
+     "Conduct various analyses on spatial phylogenetics.  Use your data on an
+evolutionary tree and geographic distributions of the terminal taxa to compute
+diversity and endemism metrics, test significance with null model randomization,
+analyze community turnover and biotic regionalization, and perform spatial
+conservation prioritizations.  All functions support quantitative community data
+in addition to binary data.")
+    (license license:expat)))
+
 (define-public r-phylosignaldb
   (package
     (name "r-phylosignaldb")
@@ -34351,13 +34379,13 @@ from wild populations, and for visualizing pedigrees.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.7.1")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "0ip8r88xky8z6dphif2p86l7mfasgaxac0bgi1rrfj385lr5swbb"))))
+        (base32 "06qzvcfsdxaxldmvln3clmv37p6vqk2wzjswk77mhkyr5xv87l0w"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (arguments
@@ -35296,13 +35324,13 @@ neighborhoods.")
 (define-public r-pdxpower
   (package
     (name "r-pdxpower")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PDXpower" version))
        (sha256
-        (base32 "0dpwc3wpsqm844lzlymanfi4pj7ajhqsqf025vx64j815j3q1122"))))
+        (base32 "0frqrc8bz15x5znj7w8kzzbzkddzwq7j05m5n232qhpzpx6b7rgy"))))
     (properties `((upstream-name . "PDXpower")))
     (build-system r-build-system)
     (arguments
@@ -39290,13 +39318,13 @@ Leonardi et al. (2023) <doi:10.1111/ecog.06481>.")
 (define-public r-pastboon
   (package
     (name "r-pastboon")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pastboon" version))
        (sha256
-        (base32 "1xzgd69glik4fpsjjf1flj2qwnn1s92j89ghwjycjym5c0x32ryx"))))
+        (base32 "03b456f93iirxr99g5618gi7q0ys7268zq329ljffq7bmrh90zgr"))))
     (properties `((upstream-name . "pastboon")))
     (build-system r-build-system)
     (arguments

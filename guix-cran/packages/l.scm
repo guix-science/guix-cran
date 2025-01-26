@@ -6130,13 +6130,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "0g9cgj8rkq44n2s0yv6dh2viw6n2hgmjj88lrziq5vffhhxbpj4j"))))
+        (base32 "1nps6gwmiv7cl8bm404xk484fxcz4drakm54rkfjbdk1b15dnc05"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (arguments
@@ -6169,7 +6169,8 @@ Genetic or genomic data with gene annotation tracks are plotted via R base
 graphics, ggplot2 or plotly', allowing flexibility and easy customisation
 including laying out multiple locus plots on the same page.  It uses the LDlink
 API <https://ldlink.nih.gov/?tab=apiaccess> to query linkage disequilibrium data
-from the 1000 Genomes Project and can overlay this on plots.")
+from the 1000 Genomes Project and can overlay this on plots
+<doi:10.1093/bioadv/vbaf006>.")
     (license license:gpl3+)))
 
 (define-public r-locus
@@ -8304,13 +8305,13 @@ ISBN:978-1-4612-4380-9), the delete-1 jackknife by Quenouille (1956)
 (define-public r-lmap
   (package
     (name "r-lmap")
-    (version "0.1.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmap" version))
        (sha256
-        (base32 "04sk5f4f753b8r24w1004dx13gc9m7ix9vi1r9wlcn5rg0k4j1g1"))))
+        (base32 "0b5l1rab6cwpw3cc4lss0ab816xcz3931i7wyxn9nysbai6n5vrp"))))
     (properties `((upstream-name . "lmap")))
     (build-system r-build-system)
     (arguments
@@ -8320,7 +8321,9 @@ ISBN:978-1-4612-4380-9), the delete-1 jackknife by Quenouille (1956)
                              r-nnet
                              r-mass
                              r-magrittr
+                             r-haven
                              r-ggrepel
+                             r-ggpubr
                              r-ggplot2
                              r-ggforce
                              r-fmdu
