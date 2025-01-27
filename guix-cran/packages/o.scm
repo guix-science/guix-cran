@@ -6738,33 +6738,6 @@ Assessment Methods toolkit) packages.  By loading and installing
 these packages.  Learn more about @code{openMSE} at <https://openmse.com/>.")
     (license license:gpl3)))
 
-(define-public r-openmpt
-  (package
-    (name "r-openmpt")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "openmpt" version))
-       (sha256
-        (base32 "0qspyhgahzv2p82rxb89jccs5dypkyc0id9zjjw5y41s16ldlwzf"))))
-    (properties `((upstream-name . "openmpt")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-cpp11 r-av))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://pepijn-devries.github.io/openmpt/")
-    (synopsis "Open 'ModPlug' Tracker Port")
-    (description
-     "Tracker music uses audio samples and pattern tables to organise musical
-compositions.  Such music is stored in module files.  This package reads,
-renders and plays module files using the libopenmpt library
-<https://lib.openmpt.org/>.")
-    (license license:gpl3+)))
-
 (define-public r-openml
   (package
     (name "r-openml")

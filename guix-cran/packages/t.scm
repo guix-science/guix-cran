@@ -18467,13 +18467,13 @@ minimal code.")
 (define-public r-tidyheatmap
   (package
     (name "r-tidyheatmap")
-    (version "1.8.1")
+    (version "1.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyHeatmap" version))
        (sha256
-        (base32 "19gpp8p3ms60qzny26vx8h7x4zl495ynrfrvf1nndhm2njbx6i4m"))))
+        (base32 "12h131ygwva5k7gx2g8x528ws56y2s43v11qvlsdbs4jsgymvj6z"))))
     (properties `((upstream-name . "tidyHeatmap")))
     (build-system r-build-system)
     (arguments
@@ -26658,29 +26658,6 @@ analyzing clinical trials data.  teal currently provides a dynamic filtering
 facility and different data viewers.  teal shiny applications are built using
 standard shiny modules.")
     (license license:asl2.0)))
-
-(define-public r-teachnet
-  (package
-    (name "r-teachnet")
-    (version "0.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TeachNet" version))
-       (sha256
-        (base32 "12kkpr96mq0jr07k7ivcmwhrfgas1qrfqfhxa4gm7vv3vkjn0gs9"))))
-    (properties `((upstream-name . "TeachNet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=TeachNet")
-    (synopsis "Fits Neural Networks to Learn About Backpropagation")
-    (description
-     "Can fit neural networks with up to two hidden layer and two different error
-functions.  Also able to handle a weight decay.  But just able to compute one
-output neuron and very slow.")
-    (license license:gpl2+)))
 
 (define-public r-teachingsampling
   (package

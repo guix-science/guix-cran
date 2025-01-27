@@ -1884,29 +1884,6 @@ Tracer Addition Experiments\" by LÃ³pez-Sepulcre et al. (2020)
 <doi:10.1086/708546>.")
     (license license:gpl3)))
 
-(define-public r-isotoper
-  (package
-    (name "r-isotoper")
-    (version "0.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IsotopeR" version))
-       (sha256
-        (base32 "0xgha5alh5y5qfz00rl73q4xlamnmrwij7kckljmy6zgrlrdnl6x"))))
-    (properties `((upstream-name . "IsotopeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-runjags r-plotrix r-fgui r-ellipse r-colorspace))
-    (home-page "https://cran.r-project.org/package=IsotopeR")
-    (synopsis "Stable Isotope Mixing Model")
-    (description
-     "Estimates diet contributions from isotopic sources using JAGS. Includes
-estimation of concentration dependence and measurement error.")
-    (license license:gpl2+)))
-
 (define-public r-isotonic-pen
   (package
     (name "r-isotonic-pen")

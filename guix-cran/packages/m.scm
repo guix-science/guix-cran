@@ -3981,35 +3981,6 @@ integration sites.  Furthermore, facilities for filtering of the data and
 visualization of different steps in the pipeline are provided with the package.")
     (license license:lgpl2.0+)))
 
-(define-public r-multirr
-  (package
-    (name "r-multirr")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MultiRR" version))
-       (sha256
-        (base32 "1jrhx3nlqwsv3i6r8fs142llw88qad41rsh0sj1pv1gb928zpvl3"))))
-    (properties `((upstream-name . "MultiRR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mass r-lme4))
-    (home-page "https://cran.r-project.org/package=MultiRR")
-    (synopsis "Bias, Precision, and Power for Multi-Level Random Regressions")
-    (description
-     "Calculates bias, precision, and power for multi-level random regressions.
-Random regressions are types of hierarchical models in which data are structured
-in groups and (regression) coefficients can vary by groups.  Tools to estimate
-model performance are designed mostly for scenarios where (regression)
-coefficients vary at just one level. @code{MultiRR} provides simulation and
-analytical tools (based on lme4') to study model performance for random
-regressions that vary at more than one level (multi-level random regressions),
-allowing researchers to determine optimal sampling designs.")
-    (license license:gpl2)))
-
 (define-public r-multiroc
   (package
     (name "r-multiroc")
@@ -6697,29 +6668,6 @@ Multidimensional Scaling, among many others.  References can be found in the
 help of each procedure.")
     (license license:gpl2+)))
 
-(define-public r-multalloc
-  (package
-    (name "r-multalloc")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MultAlloc" version))
-       (sha256
-        (base32 "0c3sqfaa08s8mk4yz77kh6q6v9ic5xp52g9prfw1k2kv4nw1k2qd"))))
-    (properties `((upstream-name . "MultAlloc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rglpk))
-    (home-page "https://cran.r-project.org/package=MultAlloc")
-    (synopsis "Optimal Allocation in Stratified Sampling")
-    (description
-     "Integer Programming Formulations Applied to Univariate and Multivariate
-Allocation Problems.")
-    (license license:gpl2)))
-
 (define-public r-mult-latent-reg
   (package
     (name "r-mult-latent-reg")
@@ -8901,28 +8849,6 @@ net and adaptive lasso based on the generalized path seeking algorithm.  The
 optimal model can be selected by model selection criteria including Mallows Cp,
 bias-corrected AIC (AICc), generalized cross validation (GCV) and BIC.")
     (license license:gpl2+)))
-
-(define-public r-msgpackr
-  (package
-    (name "r-msgpackr")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "msgpackR" version))
-       (sha256
-        (base32 "0a6vm4q1zfy8wlvhl9wfy09ig1iag9fvjasz5w9bll7idky4ldx5"))))
-    (properties `((upstream-name . "msgpackR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=msgpackR")
-    (synopsis "library to serialize or unserialize data in MessagePack format")
-    (description
-     "This is the library that can serialize or unserialize @code{MessagePack} format
-data.")
-    (license license:bsd-2)))
 
 (define-public r-msgarchelm
   (package
@@ -13938,13 +13864,13 @@ examples and a shiny app.")
 (define-public r-moodef
   (package
     (name "r-moodef")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moodef" version))
        (sha256
-        (base32 "03crry7lkk04nm6vh9fgzmyq27xvzs4c8nal1j46bbrkb8i984bq"))))
+        (base32 "0rrw2z0khhy3p45w8761mm21d9n3f88jdq77gb685sv98xznvib8"))))
     (properties `((upstream-name . "moodef")))
     (build-system r-build-system)
     (arguments
@@ -13957,9 +13883,9 @@ examples and a shiny app.")
                              r-snakecase
                              r-readxl
                              r-readr
-                             r-purrr
                              r-magick
                              r-glue
+                             r-dplyr
                              r-blastula))
     (native-inputs (list r-knitr))
     (home-page "https://josesamos.github.io/moodef/")
@@ -13967,7 +13893,7 @@ examples and a shiny app.")
     (description
      "The main objective of this package is to support the definition of Moodle
 elements taking advantage of the power that R offers.  In this first version, it
-allows the definition of questions to be included in the question bank.")
+allows the definition of quizzes to be included in the question bank.")
     (license license:expat)))
 
 (define-public r-moode

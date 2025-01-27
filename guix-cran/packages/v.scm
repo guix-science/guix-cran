@@ -5196,34 +5196,6 @@ treatment of patients.")
 facilitate filtering across multiple outputs.")
     (license license:gpl3)))
 
-(define-public r-vfcp
-  (package
-    (name "r-vfcp")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vfcp" version))
-       (sha256
-        (base32 "0zj1ihqdx5x1695al1xyi8k001yw8x7gdss72myxlnh7b4flnp9m"))))
-    (properties `((upstream-name . "vfcp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr r-extradistr r-copula))
-    (home-page "https://cran.r-project.org/package=vfcp")
-    (synopsis "Computation of v Values for U and Copula C(U, v)")
-    (description
-     "Computation the value of one of two uniformly distributed marginals if the
-copula probability value is known and the value of the second marginal is also
-known.  Computation and plotting corresponding cumulative distribution function
-or survival function.  The numerical definition of a common area limited by
-lines of the cumulative distribution function and survival function.
-Approximate quantification of the probability of this area.  In addition to
-amh', the copula dimension may be larger than 2.")
-    (license license:gpl3+)))
-
 (define-public r-vewaningvariant
   (package
     (name "r-vewaningvariant")

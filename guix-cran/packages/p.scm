@@ -10504,25 +10504,30 @@ package, see Giorgi and Diggle (2017) <doi:10.18637/jss.v078.i08>.")
 (define-public r-preventr
   (package
     (name "r-preventr")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "preventr" version))
        (sha256
-        (base32 "1m7g2p38wb95m3rci29b4x65ks1m4cwlawxwkqqzshcwnknxm57g"))))
+        (base32 "1gs7xlqmggm9lqnmjl1zrq6xqjfapfl9nalr6c6i8sq08rix949y"))))
     (properties `((upstream-name . "preventr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://martingmayer.com/preventr")
-    (synopsis "An Implementation of the AHA PREVENT Equations")
+    (synopsis "An Implementation of the PREVENT and Pooled Cohort Equations")
     (description
-     "This package implements the American Heart Association (AHA) Predicting Risk of
+     "This package implements the American Heart Association Predicting Risk of
 cardiovascular disease EVENTs (PREVENT) equations from Khan SS, Matsushita K,
-Sang Y, and colleagues (2024) <doi:10.1161/CIRCULATIONAHA.123.067626>.")
+Sang Y, and colleagues (2023) <doi:10.1161/CIRCULATIONAHA.123.067626>, with
+optional comparison with their de facto predecessor, the Pooled Cohort Equations
+from the American Heart Association and American College of Cardiology (2013)
+<doi:10.1161/01.cir.0000437741.48606.98> and the revision to the Pooled Cohort
+Equations from Yadlowsky and colleagues (2018) <doi:10.7326/M17-3011>.")
     (license license:expat)))
 
 (define-public r-prevederer
@@ -36571,28 +36576,6 @@ criterion as described in Varet, S., Lacour, C., Massart, P., Rivoirard, V.,
 (2019) <https://hal.archives-ouvertes.fr/hal-02002275>.  It can be used with
 univariate and multivariate data.")
     (license license:gpl2+)))
-
-(define-public r-pco
-  (package
-    (name "r-pco")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pco" version))
-       (sha256
-        (base32 "0k1m450wfmlym976g7p9g8arqrvnsxgdpcazk5kh3m3jsrvrcchf"))))
-    (properties `((upstream-name . "pco")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=pco")
-    (synopsis "Panel Cointegration Tests")
-    (description
-     "Computation of the Pedroni (1999) panel cointegration test statistics.  Reported
-are the empirical and the standardized values.")
-    (license license:gpl2)))
 
 (define-public r-pcnetmeta
   (package

@@ -8917,29 +8917,6 @@ according to the type of way and mode of transport, yet lengths of routes must
 be calculated from direct distances.")
     (license license:gpl3)))
 
-(define-public r-dodge
-  (package
-    (name "r-dodge")
-    (version "0.9-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Dodge" version))
-       (sha256
-        (base32 "0767n6hyspqrv5cgx3ghhai0qffj6haga7s86pv7mq8zvjcxjlzv"))))
-    (properties `((upstream-name . "Dodge")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://github.com/ajrgodfrey/Dodge")
-    (synopsis "Acceptance Sampling Ideas Originated by H.F. Dodge")
-    (description
-     "This package provides a variety of sampling plans are able to be compared using
-evaluations of their operating characteristics (OC), average outgoing quality
-(OQ), average total inspection (ATI) etc.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-docxtractr
   (package
     (name "r-docxtractr")
@@ -9582,34 +9559,6 @@ Information Processing.  Springer Berlin Heidelberg, 2013.  and Lee, Soo-Young,
 Hyun-Ah Song, and Shun-ichi Amari. \"A new discriminant NMF algorithm and its
 application to the extraction of subtle emotional differences in speech.\"
 Cognitive neurodynamics 6.6 (2012): 525-535.")
-    (license license:gpl2+)))
-
-(define-public r-dnlc
-  (package
-    (name "r-dnlc")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DNLC" version))
-       (sha256
-        (base32 "05410xgpfjsydjmnzry454qcjpws9vhh252q2xq7l0scdj87ly00"))))
-    (properties `((upstream-name . "DNLC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spdep
-                             r-mvtnorm
-                             r-locfdr
-                             r-igraph
-                             r-gostats
-                             r-fdrtool
-                             r-catools))
-    (home-page "https://cran.r-project.org/package=DNLC")
-    (synopsis "Differential Network Local Consistency Analysis")
-    (description
-     "Using Local Moran's I for detection of differential network local consistency.")
     (license license:gpl2+)))
 
 (define-public r-dng
@@ -17823,29 +17772,6 @@ methodology of estimating the sampling errors indicators outlined in the \"DHS
 Sampling and Household Listing Manual\" (ICF International 2012,
 <https://dhsprogram.com/pubs/pdf/DHSM4/DHS6_Sampling_Manual_Sept2012_DHSM4.pdf>).")
     (license license:gpl2)))
-
-(define-public r-dhh
-  (package
-    (name "r-dhh")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dhh" version))
-       (sha256
-        (base32 "00kg2x1was85aq2vr15bak8y5p4mymbs8pbriijlbw64401djmb0"))))
-    (properties `((upstream-name . "dhh")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dhh")
-    (synopsis "Heavy-Headed Distribution")
-    (description
-     "The density, cumulative distribution, quantiles, and i.i.d random variables of a
-heavy-headed distribution.  For more information, please see the vignette.")
-    (license license:gpl2+)))
 
 (define-public r-dhglm
   (package
@@ -28260,13 +28186,13 @@ to illustrate paired data sets (such as before-after, male-female).")
 (define-public r-datavisualizations
   (package
     (name "r-datavisualizations")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataVisualizations" version))
        (sha256
-        (base32 "0y8mwgnh3cjapb97a0i4f16nrdhmkd80f6j7z0ivykgfka7jlbqr"))))
+        (base32 "1wxys6jds16pin670lkr7b87w87zgg36l3fva9408l2nkf8dndxp"))))
     (properties `((upstream-name . "DataVisualizations")))
     (build-system r-build-system)
     (arguments

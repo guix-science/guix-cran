@@ -19846,36 +19846,6 @@ classification look-up (via concordance to SITC2), and trade elasticity look-up
 (via concordance to HS0 or SITC3 codes).")
     (license license:gpl2)))
 
-(define-public r-conconpiwifun
-  (package
-    (name "r-conconpiwifun")
-    (version "0.4.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ConConPiWiFun" version))
-       (sha256
-        (base32 "1ziy646lbx297kia797xjxa8hyl826x1hiighyjslvnlvrhapx08"))))
-    (properties `((upstream-name . "ConConPiWiFun")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=ConConPiWiFun")
-    (synopsis
-     "Optimisation with Continuous Convex Piecewise (Linear and Quadratic) Functions")
-    (description
-     "Continuous convex piecewise linear (ccpl) resp.  quadratic (ccpq) functions can
-be implemented with sorted breakpoints and slopes.  This includes functions that
-are ccpl (resp.  ccpq) on a convex set (i.e.  an interval or a point) and
-infinite out of the domain.  These functions can be very useful for a large
-class of optimisation problems.  Efficient manipulation (such as log(N)
-insertion) of such data structure is obtained with map standard template library
-of C++ (that hides balanced trees).  This package is a wrapper on such a class
-based on Rcpp modules.")
-    (license license:gpl2+)))
-
 (define-public r-conconianaerobicthresholdtest
   (package
     (name "r-conconianaerobicthresholdtest")
@@ -26217,29 +26187,6 @@ be inserted into R Markdown documents.  This is analogous to the
 @code{apa_print()} functions in the papaja package but prints Markdown or
 @code{LaTeX} syntax.")
     (license license:gpl3+)))
-
-(define-public r-coconut
-  (package
-    (name "r-coconut")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "COCONUT" version))
-       (sha256
-        (base32 "1qjrhxn6dkxyimdca3nslaiw3hncfpk1pk4v01mcrnz550z001nz"))))
-    (properties `((upstream-name . "COCONUT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=COCONUT")
-    (synopsis "COmbat CO-Normalization Using conTrols (COCONUT)")
-    (description
-     "Allows for pooled analysis of microarray data by batch-correcting control
-samples, and then applying the derived correction parameters to non-control
-samples to obtain bias-free, inter-dataset corrected data.")
-    (license license:gpl3)))
 
 (define-public r-cocons
   (package
@@ -37199,29 +37146,6 @@ distribution, wrapping those for the chi-squared distribution in the stats
 package.")
     (license license:gpl2)))
 
-(define-public r-chff
-  (package
-    (name "r-chff")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CHFF" version))
-       (sha256
-        (base32 "0jv75p1bnwsad2vpxf1zwq97al9xxhk2hpnpsilf0jn0w7g9b2d3"))))
-    (properties `((upstream-name . "CHFF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=CHFF")
-    (synopsis
-     "Closest History Flow Field Forecasting for Bivariate Time Series")
-    (description
-     "The software matches the current history to the closest history in a time series
-to build a forecast.")
-    (license license:gpl3)))
-
 (define-public r-chevron
   (package
     (name "r-chevron")
@@ -42747,37 +42671,6 @@ quantification using linear calibration curve.  In addition, a shiny App is
 provided, allowing users to analyze their data using an interactive graphical
 user interface, without any programming requirements.")
     (license license:gpl3)))
-
-(define-public r-cctpack
-  (package
-    (name "r-cctpack")
-    (version "1.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CCTpack" version))
-       (sha256
-        (base32 "1kkxsk9x4jz2bvldmba7fsri3zc1cjz15z0xicjmfc7lj72ngdig"))))
-    (properties `((upstream-name . "CCTpack")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rjags
-                             r-r2jags
-                             r-psych
-                             r-polycor
-                             r-mvtnorm
-                             r-mass))
-    (home-page "https://cran.r-project.org/package=CCTpack")
-    (synopsis
-     "Consensus Analysis, Model-Based Clustering, and Cultural Consensus Theory Applications")
-    (description
-     "Consensus analysis, model-based clustering, and cultural consensus theory
-applications to response data (e.g. questionnaires).  The models are applied
-using hierarchical Bayesian inference.  The current package version supports
-binary, ordinal, and continuous data formats.")
-    (license license:gpl2+)))
 
 (define-public r-cctools
   (package

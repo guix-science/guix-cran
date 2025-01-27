@@ -1320,13 +1320,13 @@ and Mukherjee (2017) <@code{arXiv:1611.00953>}.")
 (define-public r-fusen
   (package
     (name "r-fusen")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fusen" version))
        (sha256
-        (base32 "0njv30pp5j7rb8h1ksp41q63qg16x6by30kc14dx6v5w9mizvjhl"))))
+        (base32 "06ff4lmhiszawydgs6520qw81z6jy0qxkq7ba6813gf1ss220482"))))
     (properties `((upstream-name . "fusen")))
     (build-system r-build-system)
     (arguments
@@ -23091,38 +23091,6 @@ to pull daily data directly from the Water Survey of Canada hydrometric database
      "This package provides a collection of functions to manage, to investigate and to
 analyze data sets of financial assets from different points of view.")
     (license license:gpl2+)))
-
-(define-public r-fasjem
-  (package
-    (name "r-fasjem")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fasjem" version))
-       (sha256
-        (base32 "1bbrcyyg96hakgla3604byrkn9034197vy2is048kdq20yr2y11n"))))
-    (properties `((upstream-name . "fasjem")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph))
-    (home-page "https://github.com/QData/JEM")
-    (synopsis
-     "Fast and Scalable Joint Estimator for Learning Multiple Related Sparse Gaussian Graphical Models")
-    (description
-     "This is an R implementation of \"A Fast and Scalable Joint Estimator for Learning
-Multiple Related Sparse Gaussian Graphical Models\" (FASJEM).  The FASJEM
-algorithm can be used to estimate multiple related precision matrices.  For
-instance, it can identify context-specific gene networks from multi-context gene
-expression datasets.  By performing data-driven network inference from
-high-dimensional and heterogonous data sets, this tool can help users
-effectively translate aggregated data into knowledge that take the form of
-graphs among entities.  Please run demo(fasjem) to learn the basic functions
-provided by this package.  For more details, please see
-<http://proceedings.mlr.press/v54/wang17e/wang17e.pdf>.")
-    (license license:gpl2)))
 
 (define-public r-faseg
   (package

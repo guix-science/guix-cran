@@ -7709,27 +7709,6 @@ high performance computing machines.  In order to use this package, Java and
      "Estimate the non-linear odds ratio and plot it against a continuous exposure.")
     (license license:gpl2+)))
 
-(define-public r-nlroot
-  (package
-    (name "r-nlroot")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NLRoot" version))
-       (sha256
-        (base32 "1x8mcdgqqrhyykr12bv4hl4wbh1zw2qgpnd2yrm68kb92iy95rh4"))))
-    (properties `((upstream-name . "NLRoot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=NLRoot")
-    (synopsis "searching for the root of equation")
-    (description
-     "This is a package which can help you search for the root of a equation.")
-    (license license:gpl2+)))
-
 (define-public r-nlreg
   (package
     (name "r-nlreg")
@@ -12411,29 +12390,6 @@ Implements the following: Amini, Chen, Bickel and Levina (2013)
 Zhang and Amini (2020) <@code{arXiv:2012.15047>} Le and Levina (2022)
 <doi:10.1214/21-EJS1971>.")
     (license license:expat)))
-
-(define-public r-netswan
-  (package
-    (name "r-netswan")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NetSwan" version))
-       (sha256
-        (base32 "1mwdy3ahagiifj2bd1ajrafvnxzi74a1x1d3i2laf1hqpz3fbgld"))))
-    (properties `((upstream-name . "NetSwan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph))
-    (home-page "https://cran.r-project.org/package=NetSwan")
-    (synopsis "Network Strengths and Weaknesses Analysis")
-    (description
-     "This package provides a set of functions for studying network robustness,
-resilience and vulnerability.")
-    (license license:gpl2+)))
 
 (define-public r-netstat
   (package

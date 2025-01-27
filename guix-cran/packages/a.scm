@@ -3864,13 +3864,13 @@ W911NF-17-1-0007.")
 (define-public r-atmchile
   (package
     (name "r-atmchile")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AtmChile" version))
        (sha256
-        (base32 "1i20g6mz00pnsd61s58l8fl29rn13kabix7ihsjk0gnq9zs4nbxf"))))
+        (base32 "07ja0r2fvdqb6y9xs9axdws7dqif9l92qjlmdh4rzfyf1gfqpcx8"))))
     (properties `((upstream-name . "AtmChile")))
     (build-system r-build-system)
     (arguments
@@ -4942,40 +4942,6 @@ versions of both and support visualization and the computation of summary
 statistics on final binnings.  For a complete description of the functionality
 and algorithm, see Salahub and Oldford (2023)
 <doi:10.48550/@code{arXiv.2311.08561>}.")
-    (license license:gpl3+)))
-
-(define-public r-assocafc
-  (package
-    (name "r-assocafc")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AssocAFC" version))
-       (sha256
-        (base32 "1rjiiir472dnr15xyvpn81s62nf01gl70khr8mrni65ssp5m30fb"))))
-    (properties `((upstream-name . "AssocAFC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-compquadform))
-    (home-page "https://www.r-project.org")
-    (synopsis "Allele Frequency Comparison")
-    (description
-     "When doing association analysis one does not always have the genotypes for the
-control population.  In such cases it may be necessary to fall back on frequency
-based tests using well known sources for the frequencies in the control
-population, for instance, from the 1000 Genomes Project.  The Allele Frequency
-Comparison ('@code{AssocAFC}') package performs multiple rare variant
-association analyses in both population and family-based GWAS (Genome-Wide
-Association Study) designs.  It includes three score tests that are based on the
-difference of the sum of allele frequencies between cases and controls.  Two of
-these tests, @code{Wcorrected()} and @code{Wqls()}, are collapsing-based tests
-and suffer from having protective and risk variants.  The third test,
-@code{afcSKAT()}, is a score test that overcomes the mix of SNP
-(Single-Nucleotide Polymorphism) effect directions.  For more details see Saad M
-and Wijsman EM (2017) <doi:10.1093/bib/bbx107>.")
     (license license:gpl3+)))
 
 (define-public r-assistant
@@ -10797,44 +10763,6 @@ factorial and fractional factorial designs and Plackett-Burman designs using the
 all possible comparisons (APC) methodology developed by Miller (2005)
 <doi:10.1198/004017004000000608>.")
     (license license:gpl3)))
-
-(define-public r-apcalign
-  (package
-    (name "r-apcalign")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "APCalign" version))
-       (sha256
-        (base32 "0g59k5hr9rj25xqawrnhdxjh1qfwbc1gzgzp56hbpp04n7dy4xwl"))))
-    (properties `((upstream-name . "APCalign")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-stringi
-                             r-stringdist
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-curl
-                             r-crayon
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://traitecoevo.github.io/APCalign/")
-    (synopsis "Resolving Plant Taxon Names Using the Australian Plant Census")
-    (description
-     "The process of resolving taxon names is necessary when working with biodiversity
-data.  APCalign uses the Australian Plant Census (APC) and the Australian Plant
-Name Index (APNI) to align and update plant taxon names to current, accepted
-standards.  APCalign also supplies information about the established status of
-plant taxa across different states/territories.")
-    (license license:expat)))
 
 (define-public r-apc
   (package
@@ -23063,42 +22991,6 @@ discrete data, using EM-type algorithms with more stable convergence properties
 than standard methods.")
     (license license:gpl2+)))
 
-(define-public r-additivedea
-  (package
-    (name "r-additivedea")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "additiveDEA" version))
-       (sha256
-        (base32 "15nxpdybsda6yhjk23bpafr8v1zdx8332pcxf26k795q3ypjpiy2"))))
-    (properties `((upstream-name . "additiveDEA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lpsolveapi r-benchmarking))
-    (home-page "https://www.r-project.org")
-    (synopsis "Additive Data Envelopment Analysis Models")
-    (description
-     "This package provides functions for calculating efficiency with two types of
-additive Data Envelopment Analysis models: (i) Generalized Efficiency Measures:
-unweighted additive model (Cooper et al., 2007 <doi:10.1007/978-0-387-45283-8>),
-Range Adjusted Measure (Cooper et al., 1999, <doi:10.1023/A:1007701304281>),
-Bounded Adjusted Measure (Cooper et al., 2011 <doi:10.1007/s11123-010-0190-2>),
-Measure of Inefficiency Proportions (Cooper et al., 1999
-<doi:10.1023/A:1007701304281>), and the Lovell-Pastor Measure (Lovell and
-Pastor, 1995 <doi:10.1016/0167-6377(95)00044-5>); and (ii) the Slacks-Based
-Measure (Tone, 2001 <doi:10.1016/S0377-2217(99)00407-5>).  The functions provide
-several options: (i) constant and variable returns to scale; (ii) fixed
-(non-controllable) inputs and/or outputs; (iii) bounding the slacks so that
-unrealistically large slack values are avoided; and (iv) calculating the
-efficiency of specific Decision-Making Units (DMUs), rather than of the whole
-sample.  Package @code{additiveDEA} also provides a function for reducing
-computation time when datasets are large.")
-    (license license:gpl2)))
-
 (define-public r-additive
   (package
     (name "r-additive")
@@ -25573,13 +25465,13 @@ the presentation of simulation results.")
 (define-public r-abm
   (package
     (name "r-abm")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ABM" version))
        (sha256
-        (base32 "0lkaqvj7i2bih6c8h4m3djm75cg4f1320fkglz2d2bgaxjiqsn1i"))))
+        (base32 "1bzf8q1z5akgfjyynfh0g111vj203ssf67q2q01qhfzfqnnlhwmi"))))
     (properties `((upstream-name . "ABM")))
     (build-system r-build-system)
     (arguments

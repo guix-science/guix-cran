@@ -5966,31 +5966,6 @@ provided.  For more information, see Wu et al. (2022) <doi:
 <doi:10.1177/09622802231181471>.")
     (license license:gpl3)))
 
-(define-public r-surtex
-  (package
-    (name "r-surtex")
-    (version "0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "suRtex" version))
-       (sha256
-        (base32 "0xcy3x1079v10bn3n3y6lxignb9n3h57w4hhrvzi5y14x05jjyda"))))
-    (properties `((upstream-name . "suRtex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=suRtex")
-    (synopsis "LaTeX descriptive statistic reporting for survey data")
-    (description
-     "@code{suRtex} was designed for easy descriptive statistic reporting of
-categorical survey data (e.g., Likert scales) in @code{LaTeX}. @code{suRtex}
-takes a matrix or data frame and produces the @code{LaTeX} code necessary for a
-sideways table creation.  Mean, median, standard deviation, and sample size are
-optional.")
-    (license license:gpl3)))
-
 (define-public r-surrosurvroc
   (package
     (name "r-surrosurvroc")
@@ -10066,30 +10041,6 @@ effects of other covariates are assumed to be constant across strata.  Please
 refer to Xiangdong Gu, David Shapiro, Michael D. Hughes and Raji Balasubramanian
 (2014) <doi:10.32614/RJ-2014-003> for more details.")
     (license license:gpl2+)))
-
-(define-public r-stratvns
-  (package
-    (name "r-stratvns")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stratvns" version))
-       (sha256
-        (base32 "01s3p9mml04pqfd7fydkmqdk0qf5jmzz3b3q3x5vavlma6fv8nwi"))))
-    (properties `((upstream-name . "stratvns")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-purrr r-partitions r-multalloc))
-    (home-page "https://cran.r-project.org/package=stratvns")
-    (synopsis "Optimal Stratification in Stratified Sampling")
-    (description
-     "An Optimization Algorithm Applied to Stratification Problem.This function aims
-at constructing optimal strata with an optimization algorithm based on a global
-optimisation technique called vns.")
-    (license license:gpl2)))
 
 (define-public r-stratus
   (package
@@ -34495,13 +34446,13 @@ generates random numbers.")
 (define-public r-smplot2
   (package
     (name "r-smplot2")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smplot2" version))
        (sha256
-        (base32 "1aigy0md8xgv9yfr0391wpc9a36566m5avm71g48688hg26djrh7"))))
+        (base32 "0w51q0nh1r6a587qhrf8ac2rqmvarfv6gh91h9lll0b24dzbcqlj"))))
     (properties `((upstream-name . "smplot2")))
     (build-system r-build-system)
     (arguments
@@ -34519,7 +34470,7 @@ generates random numbers.")
                              r-cowplot))
     (home-page "https://smin95.github.io/dataviz/")
     (synopsis
-     "Creating Standalone and Composite Plots in 'ggplot2' for Publications")
+     "Create Standalone and Composite Plots in 'ggplot2' for Publications")
     (description
      "This package provides functions for creating and annotating a composite plot in
 ggplot2'.  Offers background themes and shortcut plotting functions that produce
@@ -46135,33 +46086,6 @@ application for the psychometric analysis of educational tests, psychological
 assessments, health-related and other types of multi-item measurements, or
 ratings from multiple raters.")
     (license license:gpl3)))
-
-(define-public r-si
-  (package
-    (name "r-si")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SI" version))
-       (sha256
-        (base32 "0i6kpaw5yk39skm77nf56ai25clkparz3l8qx0223jrmdqbf97b7"))))
-    (properties `((upstream-name . "SI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SI")
-    (synopsis "Stochastic Integrating")
-    (description
-     "An implementation of four stochastic methods of integrating in R, including: 1.
-Stochastic Point Method (or Monte Carlo Method); 2.  Mean Value Method; 3.
-Important Sampling Method; 4.  Stratified Sampling Method.  It can be used to
-estimate one-dimension or multi-dimension integration by Monte Carlo methods.
-And the estimated variance (precision) is given.  Reference: Caflisch, R. E.
-(1998) <doi:10.1017/S0962492900002804>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-shutterplot
   (package

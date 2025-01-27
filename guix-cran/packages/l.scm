@@ -2431,54 +2431,6 @@ including graphical and gatekeeping procedures.")
      "This package provides S3 classes to represent low rank matrix decompositions.")
     (license license:expat)))
 
-(define-public r-lrmest
-  (package
-    (name "r-lrmest")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lrmest" version))
-       (sha256
-        (base32 "1yddkgza672z9y0ipgl92pg9prhmr387zsqf0qbi9k2yzfz2vvs6"))))
-    (properties `((upstream-name . "lrmest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-psych r-mass))
-    (home-page "https://cran.r-project.org/package=lrmest")
-    (synopsis "Different Types of Estimators to Deal with Multicollinearity")
-    (description
-     "When multicollinearity exists among predictor variables of the linear model,
-least square estimators does not provide a better solution for estimating
-parameters.  To deal with multicollinearity several estimators are proposed in
-the literature.  Some of these estimators are Ordinary Least Square Estimator
-(OLSE), Ordinary Generalized Ordinary Least Square Estimator (OGOLSE), Ordinary
-Ridge Regression Estimator (ORRE), Ordinary Generalized Ridge Regression
-Estimator (OGRRE), Restricted Least Square Estimator (RLSE), Ordinary
-Generalized Restricted Least Square Estimator (OGRLSE), Ordinary Mixed
-Regression Estimator (OMRE), Ordinary Generalized Mixed Regression Estimator
-(OGMRE), Liu Estimator (LE), Ordinary Generalized Liu Estimator (OGLE),
-Restricted Liu Estimator (RLE), Ordinary Generalized Restricted Liu Estimator
-(OGRLE), Stochastic Restricted Liu Estimator (SRLE), Ordinary Generalized
-Stochastic Restricted Liu Estimator (OGSRLE), Type (1),(2),(3) Liu Estimator
-(Type-1,2,3 LTE), Ordinary Generalized Type (1),(2),(3) Liu Estimator
-(Type-1,2,3 OGLTE), Type (1),(2),(3) Adjusted Liu Estimator (Type-1,2,3 ALTE),
-Ordinary Generalized Type (1),(2),(3) Adjusted Liu Estimator (Type-1,2,3
-OGALTE), Almost Unbiased Ridge Estimator (AURE), Ordinary Generalized Almost
-Unbiased Ridge Estimator (OGAURE), Almost Unbiased Liu Estimator (AULE),
-Ordinary Generalized Almost Unbiased Liu Estimator (OGAULE), Stochastic
-Restricted Ridge Estimator (SRRE), Ordinary Generalized Stochastic Restricted
-Ridge Estimator (OGSRRE), Restricted Ridge Regression Estimator (RRRE) and
-Ordinary Generalized Restricted Ridge Regression Estimator (OGRRRE).  To select
-the best estimator in a practical situation the Mean Square Error (MSE) is used.
- Using this package scalar MSE value of all the above estimators and Prediction
-Sum of Square (PRESS) values of some of the estimators can be obtained, and the
-variation of the MSE and PRESS values for the relevant estimators can be shown
-graphically.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-lrgs
   (package
     (name "r-lrgs")
@@ -2579,30 +2531,6 @@ Kozubowski (2007) <doi:10.1007/978-0-387-34918-3_26>.")
      "Lexical response data is a package that can be used for processing cued-recall,
 free-recall, and sentence responses from memory experiments.")
     (license license:lgpl3)))
-
-(define-public r-lrcontrast
-  (package
-    (name "r-lrcontrast")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LRcontrast" version))
-       (sha256
-        (base32 "0fs06p853r42nws2camvs87py39hb1ssxhfm6d5n9kkq81snfx4q"))))
-    (properties `((upstream-name . "LRcontrast")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-dosefinding))
-    (home-page "https://cran.r-project.org/package=LRcontrast")
-    (synopsis "Dose Response Signal Detection under Model Uncertainty")
-    (description
-     "This package provides functions for calculating test statistics, simulating
-quantiles and simulating p-values of likelihood ratio contrast tests in
-regression models with a lack of identifiability.")
-    (license license:gpl3)))
 
 (define-public r-lqr
   (package
@@ -7130,40 +7058,6 @@ Klein Entink and Van der Linden (2007), \"Modeling of Responses and Response
 Times with the Package cirt\", Journal of Statistical Software,
 <doi:10.18637/jss.v020.i07>.")
     (license license:gpl3)))
-
-(define-public r-lncpath
-  (package
-    (name "r-lncpath")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LncPath" version))
-       (sha256
-        (base32 "1cpsy681yq96867nr9g75xb0dilb016shqlhxpdn5xyiakrgjl4v"))))
-    (properties `((upstream-name . "LncPath")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-igraph))
-    (home-page "https://cran.r-project.org/package=LncPath")
-    (synopsis "Identifying the Pathways Regulated by LncRNA Sets of Interest")
-    (description
-     "Identifies pathways synergisticly regulated by the interested @code{lncRNA(long}
-non-coding RNA) sets based on a @code{lncRNA-mRNA(messenger} RNA) interaction
-network.  1) The @code{lncRNA-mRNA} interaction network was built from the
-protein-protein interactions and the @code{lncRNA-mRNA} co-expression
-relationships in 28 RNA-Seq data sets.  2) The interested @code{lncRNAs} can be
-mapped into networks as seed nodes and a random walk strategy will be performed
-to evaluate the rate of each coding genes influenced by the seed @code{lncRNAs}.
- 3) Pathways regulated by the @code{lncRNA} set will be evaluated by a weighted
-Kolmogorov-Smirnov statistic as an ES Score.  4) The p value and false discovery
-rate value will also be calculated through a permutation analysis.  5) The
-running score of each pathway can be plotted and the heat map of each pathway
-can also be plotted if an expression profile is provided.  6) The rank and
-scores of the gene list of each pathway can be printed.")
-    (license license:gpl2+)))
 
 (define-public r-lncfinder
   (package

@@ -6297,29 +6297,6 @@ statistic Q_n from Croux and Rousseeuw (1992) <doi:10.1007/978-3-662-26811-7_58>
 based on Johnson and Mizoguchi (1978) <doi:10.1137/0207013>.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-eulerian
-  (package
-    (name "r-eulerian")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eulerian" version))
-       (sha256
-        (base32 "0yhpnx9vnfly14vn1c2z009m7yipv0j59j3s826vgpczax6b48m0"))))
-    (properties `((upstream-name . "eulerian")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-graph))
-    (home-page "https://cran.r-project.org/package=eulerian")
-    (synopsis "eulerian: A package to find eulerian paths from graphs")
-    (description
-     "An eulerian path is a path in a graph which visits every edge exactly once.
-This package provides methods to handle eulerian paths or cycles.")
-    (license license:gpl2)))
-
 (define-public r-eufootball
   (package
     (name "r-eufootball")
@@ -12611,6 +12588,31 @@ even when zero carcasses have been found in searches, following Huso et al.
 (2015) <doi:10.1890/14-0764.1>, Dalthorp et al. (2017) <doi:10.3133/ds1055>, and
 Dalthorp and Huso (2015) <doi:10.3133/ofr20151227>.")
     (license license:gpl2)))
+
+(define-public r-envvar
+  (package
+    (name "r-envvar")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "envvar" version))
+       (sha256
+        (base32 "1nrcnipxljpwavfmm5m107zihvm2dj07wgrgkpzx3ph2mzjbzx81"))))
+    (properties `((upstream-name . "envvar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-lubridate r-fs r-cli))
+    (home-page "https://github.com/briandconnelly/envvar")
+    (synopsis
+     "Make Working with Environment Variables Easier and More Consistent")
+    (description
+     "This package provides a collection of functions that allows for easy and
+consistent use of environment variables.  This includes setting, checking,
+retrieving, transforming, and validating values stored in environment variables.")
+    (license license:expat)))
 
 (define-public r-envstat
   (package

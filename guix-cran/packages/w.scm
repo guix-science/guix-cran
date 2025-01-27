@@ -1345,29 +1345,6 @@ low false positive rate when utilizing WQS regression (Day et al. (2022)
 <doi:10.1289/EHP10570>).")
     (license license:gpl3)))
 
-(define-public r-wqs
-  (package
-    (name "r-wqs")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wqs" version))
-       (sha256
-        (base32 "14qaa9g9v4nqrv897laflib3wwhflyfaf9wpllmbi5xfv9223rcg"))))
-    (properties `((upstream-name . "wqs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rsolnp r-glm2))
-    (home-page "https://cran.r-project.org/package=wqs")
-    (synopsis "Weighted Quantile Sum Regression")
-    (description
-     "Fits weighted quantile sum regression models, calculates weighted quantile sum
-index and estimated component weights.")
-    (license license:gpl2+)))
-
 (define-public r-wqm
   (package
     (name "r-wqm")

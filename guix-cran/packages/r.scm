@@ -11202,29 +11202,6 @@ by many microarray scanner and software providers).  After normalization data
 can be visualized as boxplot, heatmap or dotplot.")
     (license license:lgpl2.0+)))
 
-(define-public r-rppairwisedesign
-  (package
-    (name "r-rppairwisedesign")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RPPairwiseDesign" version))
-       (sha256
-        (base32 "0k2vh698rhs5a0b5vhyvrnnwqnagdzs591zx6hn9vbmm8rm4y1dm"))))
-    (properties `((upstream-name . "RPPairwiseDesign")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=RPPairwiseDesign")
-    (synopsis
-     "Resolvable partially pairwise balanced design and Space-filling design via association scheme")
-    (description
-     "Using some association schemes to obtain a new series of resolvable partially
-pairwise balanced designs (RPPBD) and space-filling designs.")
-    (license license:gpl3)))
-
 (define-public r-rpowersamplesize
   (package
     (name "r-rpowersamplesize")
@@ -26316,32 +26293,6 @@ stations (airports) in the whole world thanks to the Iowa Environment Mesonet
 website.")
     (license license:gpl2+)))
 
-(define-public r-ridittools
-  (package
-    (name "r-ridittools")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ridittools" version))
-       (sha256
-        (base32 "1m9xbwxb277l4cd85qxmpw66gyavpwamgwr8kyf8vqarzfbwiilr"))))
-    (properties `((upstream-name . "ridittools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=ridittools")
-    (synopsis "Useful Functions for Ridit Analysis")
-    (description
-     "This package provides functions to compute ridit scores of vectors, compute mean
-ridits and their standard errors for vectors compared to a reference vector, as
-described in Fleiss (1981, ISBN:0-471-06428-9), and compute means/SEs for
-multiple groups in matrices.  Data can be either counts or proportions.
-Emphasis is on ridit analysis of ordered categorical data such as Likert items
-and pain-rating scales.")
-    (license (list license:gpl2 license:gpl3 license:expat))))
-
 (define-public r-ridigbio
   (package
     (name "r-ridigbio")
@@ -29907,34 +29858,6 @@ or sum of squares) variable importance scores, using an empirical Bayes
 approach.  See Dunne et al. (2022) <doi:10.1101/2022.04.06.487300>.")
     (license license:gpl3+)))
 
-(define-public r-rflexscan
-  (package
-    (name "r-rflexscan")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rflexscan" version))
-       (sha256
-        (base32 "0jlswyfdmi4c8jd2m56inid08injjjmmjy3m3hmqspm6arv9flq1"))))
-    (properties `((upstream-name . "rflexscan")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf r-rcpp r-igraph))
-    (home-page "https://tkhrotn.github.io/rflexscan/")
-    (synopsis "The Flexible Spatial Scan Statistic")
-    (description
-     "This package provides functions for the detection of spatial clusters using the
-flexible spatial scan statistic developed by Tango and Takahashi (2005)
-<doi:10.1186/1476-072X-4-11>.  This package implements a wrapper for the C
-routine used in the @code{FleXScan} 3.1.2
-<https://sites.google.com/site/flexscansoftware/home> developed by Takahashi,
-Yokoyama, and Tango.  For details, see Otani et al. (2021)
-<doi:10.18637/jss.v099.i13>.")
-    (license license:gpl3)))
-
 (define-public r-rflashtext
   (package
     (name "r-rflashtext")
@@ -31899,13 +31822,13 @@ background jobs for large datasets.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.23.2")
+    (version "0.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restatapi" version))
        (sha256
-        (base32 "1779ish3ny48961fp0fz9d22f72iqx4np0h34z5hjqah1g5pfjcb"))))
+        (base32 "0g6vjisrqlnsmcpp08b2nc7m08grxmd5yw55xfrx89ip8w6nsypd"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (arguments
@@ -33784,13 +33707,13 @@ footers, spanning headers, page by variables, and automatic page numbering.")
 (define-public r-report
   (package
     (name "r-report")
-    (version "0.5.9")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "report" version))
        (sha256
-        (base32 "075x4kzqjwrfqp2130ahcvj70vip9k000pg6z48y75ry58y80iyx"))))
+        (base32 "1d0xkgnws3cdkkzbaw1py0yj09bwm3f6m7rrpbr8j3hr7ghfm5w3"))))
     (properties `((upstream-name . "report")))
     (build-system r-build-system)
     (arguments
