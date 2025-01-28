@@ -6718,13 +6718,13 @@ estimated variance.")
 (define-public r-fpdclustering
   (package
     (name "r-fpdclustering")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FPDclustering" version))
        (sha256
-        (base32 "1ybicjbi7zrpk27abkcidch4ifb3ns0qh12hnhgvgvk89bks1iry"))))
+        (base32 "0h3p2rmdqjbvx8ry0bprq6cl4by5d1ichj6nmlmic6s12g9s4gr7"))))
     (properties `((upstream-name . "FPDclustering")))
     (build-system r-build-system)
     (arguments
@@ -9831,13 +9831,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.6.5")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "1q565knjq8hzazli5skjvfd02jsh2c220hsrvc1h4dly666qvxvl"))))
+        (base32 "01v527mh9s22ji1vp4zdh7a0m9h3xb46sjkjhqwiy45i7ziqxcz8"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (arguments

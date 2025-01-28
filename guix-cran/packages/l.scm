@@ -3476,13 +3476,13 @@ rxode2 and nlmixr2'.")
 (define-public r-lost
   (package
     (name "r-lost")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LOST" version))
        (sha256
-        (base32 "1zcs8vq4nkn059lfyw0nlb4wnn1rq2s1qiw1ggsr3mb847wka6ry"))))
+        (base32 "0wkixqzwlsygq8mly39j64mbxrxhs7rdxa62jlcl41jkr1c6w2k7"))))
     (properties `((upstream-name . "LOST")))
     (build-system r-build-system)
     (arguments
@@ -6417,6 +6417,38 @@ localization, as well as organize and check localization data and results.  The
 localization functions implement the modified steered response power algorithm
 described by Cobos et al. (2010) <doi:10.1109/LSP.2010.2091502>.")
     (license license:expat)))
+
+(define-public r-localsp
+  (package
+    (name "r-localsp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "localsp" version))
+       (sha256
+        (base32 "19ga1ih5i4cnplidg1l86j50w1li6sf6xazpx4ls9y3fbkcbrxlz"))))
+    (properties `((upstream-name . "localsp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-sdsfun
+                             r-purrr
+                             r-gdverse
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ausgis.github.io/localsp/")
+    (synopsis "Local Indicator of Stratified Power")
+    (description
+     "This package implements a local indicator of stratified power to analyze local
+spatial stratified association and demonstrate how spatial stratified
+association changes spatially and in local regions, as outlined in Hu et al.
+(2024) <doi:10.1080/13658816.2024.2437811>.")
+    (license license:gpl3)))
 
 (define-public r-localsolver
   (package
@@ -18525,13 +18557,13 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "1yyd4l6sxnlr6p7800kn0rs8f6clwzr1gi5mcsd34yxq11fybazl"))))
+        (base32 "1gx4xkg38gh6asd6jcskjiw34c0z06q9lfhcsq7s3vvxvwg7xxkk"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments

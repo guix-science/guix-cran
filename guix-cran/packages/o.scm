@@ -9275,6 +9275,43 @@ Neuenschwander et al. (2008) <doi:10.1002/sim.3230> and Neuenschwander et al.
 (2016) <doi:10.1080/19466315.2016.1174149> for details on the methodology.")
     (license license:gpl3+)))
 
+(define-public r-oncmap
+  (package
+    (name "r-oncmap")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oncmap" version))
+       (sha256
+        (base32 "0xnzb4jn2h0xs1xprxy74wv6wy92bzg1k3jfmc6zf6zyygqk8nmk"))))
+    (properties `((upstream-name . "oncmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-readxl
+                             r-readr
+                             r-lubridate
+                             r-hms
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=oncmap")
+    (synopsis "Analyze Data from Electronic Adherence Monitoring Devices")
+    (description
+     "Medication adherence, defined as medication-taking behavior that aligns with the
+agreed-upon treatment protocol, is critical for realizing the benefits of
+prescription medications.  Medication adherence can be assessed using electronic
+adherence monitoring devices (EAMDs), pill bottles or boxes that contain a
+computer chip that records the date and time of each opening (or
+âactuationâ).  Before researchers can use EAMD data, they must apply a
+series of decision rules to transform actuation data into adherence data.  The
+purpose of this R package ('oncmap') is to transform EAMD actuations in the form
+of a raw .csv file, information about the patient, regimen, and non-monitored
+periods into two daily adherence values -- Dose Taken and Correct Dose Taken.")
+    (license license:expat)))
+
 (define-public r-once
   (package
     (name "r-once")
@@ -10346,13 +10383,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "4.0.2")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "0gwm63xibgyg6ra2zs128dc586vx73mbr60gply1jgws7h95c3b0"))))
+        (base32 "1mm6ni66x3mhf4cb1mjgwarsp7cizn9ncrq2pivpgh46dqivj8jz"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (arguments

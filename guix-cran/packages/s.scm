@@ -5243,13 +5243,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "04w5bxgscrniv2cn1babk6z758wd15wm8jq1mpg2rmmsvy2gr0q6"))))
+        (base32 "13jlchvlawbvq1g5qsizrz8ac1143zb6z3ja1i3lnhaicvml496n"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -5267,11 +5267,14 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
                              r-quarto
                              r-pool
                              r-markdown
+                             r-jsonlite
                              r-htmltools
                              r-fs
                              r-dt
-                             r-dbi))
-    (native-inputs (list r-knitr))
+                             r-dotenv
+                             r-dbi
+                             r-cli
+                             r-bslib))
     (home-page "https://pkg.surveydown.org")
     (synopsis "Markdown-Based Surveys Using 'Quarto' and 'shiny'")
     (description
@@ -6809,6 +6812,38 @@ data mining to identify regions with abnormally high concentrations of data with
 large or small values.  This package extends this methodology so that it can be
 applied to binary classification problems and used for prediction.")
     (license license:gpl3)))
+
+(define-public r-superspreading
+  (package
+    (name "r-superspreading")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "superspreading" version))
+       (sha256
+        (base32 "0qs23j0d35xakk5qkh2qf6bibffkdc02050p16fhpax1c3991dx1"))))
+    (properties `((upstream-name . "superspreading")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epiverse-trace/superspreading")
+    (synopsis
+     "Understand Individual-Level Variation in Infectious Disease Transmission")
+    (description
+     "Estimate and understand individual-level variation in transmission.  Implements
+density and cumulative compound Poisson discrete distribution functions ('Kremer
+et al. (2021) <doi:10.1038/s41598-021-93578-x>), as well as functions to
+calculate infectious disease outbreak statistics given epidemiological
+parameters on individual-level transmission; including the probability of an
+outbreak becoming an epidemic/extinct ('Kucharski et al. (2020)
+<doi:10.1016/S1473-3099(20)30144-4>), or the cluster size statistics, e.g. what
+proportion of cases cause X\\% of transmission ('Lloyd-Smith et al. (2005)
+<doi:10.1038/nature04153>).")
+    (license license:expat)))
 
 (define-public r-superranker
   (package
@@ -8982,13 +9017,13 @@ genetic algorithms, brute force, or random sampling.  Schultze (2017)
 (define-public r-stsd
   (package
     (name "r-stsd")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sTSD" version))
        (sha256
-        (base32 "0cxp34kcxnfvi8jz6cm24n8mpzpg373aigw57y9614blwx73d15m"))))
+        (base32 "1y59y0kxrb1r9whgx09n8p9ip3xi63a11mkclxfvn2g3fqkq10w3"))))
     (properties `((upstream-name . "sTSD")))
     (build-system r-build-system)
     (arguments
@@ -22757,13 +22792,13 @@ Rcpp.  See Wang and Yan (2021) <doi:10.6339/21-JDS1020> for details.")
 (define-public r-splinecox
   (package
     (name "r-splinecox")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splineCox" version))
        (sha256
-        (base32 "14fkvy56q874wngb2wm92rrgsf12ndsz94npyp6rfa09ypwmfj05"))))
+        (base32 "1rlg86c2s05k77fhapl6d5160sb02gi2ivyvc7zcwx25kfwqfs53"))))
     (properties `((upstream-name . "splineCox")))
     (build-system r-build-system)
     (arguments
@@ -31435,13 +31470,13 @@ The relevant information can be found in inst/COPYRIGHT.")
 (define-public r-somhca
   (package
     (name "r-somhca")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "somhca" version))
        (sha256
-        (base32 "0dhzpwhbcvsv202sx9fxhqhcnsqaccjldk0yxhb4kc243ycn8lvk"))))
+        (base32 "0vfp94bp5mgjy0wyzvk39v6fis76axhlkjsmjl6slwfr6ibsp5qg"))))
     (properties `((upstream-name . "somhca")))
     (build-system r-build-system)
     (arguments
@@ -31456,10 +31491,10 @@ The relevant information can be found in inst/COPYRIGHT.")
      "This package implements self-organising maps combined with hierarchical cluster
 analysis (SOM-HCA) for clustering and visualization of high-dimensional data.
 The package includes functions to estimate the optimal map size based on various
-quality measures and subsequently generates a model with the selected
-dimensions.  It also performs hierarchical clustering on the map nodes to group
-similar units Documentation about the SOM-HCA method is provided in Pastorelli
-et al. (2024) <doi:10.1002/xrs.3388>.")
+quality measures and to generate a model using the selected dimensions.  It also
+performs hierarchical clustering on the map nodes to group similar units.
+Documentation about the SOM-HCA method is provided in Pastorelli et al. (2024)
+<doi:10.1002/xrs.3388>.")
     (license license:expat)))
 
 (define-public r-somenv
@@ -38458,13 +38493,13 @@ supported for continuous scores only.")
 (define-public r-skiptrack
   (package
     (name "r-skiptrack")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skipTrack" version))
        (sha256
-        (base32 "0s5w2jixm52pbpi2cmgf9s1d6prs49dz4kcrr135d0nbdx34ma2w"))))
+        (base32 "0cnih8f9zbjidw8b2wsgx1m2yfhz2qj3gz9i3bk3jm2c8wz0snk4"))))
     (properties `((upstream-name . "skipTrack")))
     (build-system r-build-system)
     (arguments
@@ -40375,13 +40410,13 @@ sum of independent non-identical binomial distribution with parameters
 (define-public r-singr
   (package
     (name "r-singr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singR" version))
        (sha256
-        (base32 "1xfmgavcm63imc5a57vk9x3yvdsf2y9599ipmimivdi6q0cxv7bc"))))
+        (base32 "1bgx23xwhizbhl7pndr7nibxfd7ls0f0pjzmwkr0b4x34mwwq9hz"))))
     (properties `((upstream-name . "singR")))
     (build-system r-build-system)
     (arguments
@@ -50157,13 +50192,13 @@ installations.")
 (define-public r-shiny-ollama
   (package
     (name "r-shiny-ollama")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny.ollama" version))
        (sha256
-        (base32 "1d9wynxs9bxhnyc1d4n7nf2hpq9g6hlr0n2gw4kisy54lc27nbi9"))))
+        (base32 "0qgv8jvddnc6v5m890bmsqhpn5x3cz7zdrqx3hz2yrly9zmfbs7c"))))
     (properties `((upstream-name . "shiny.ollama")))
     (build-system r-build-system)
     (arguments
@@ -50177,7 +50212,7 @@ installations.")
                              r-bslib))
     (home-page "https://www.indraneelchakraborty.com/shiny.ollama/")
     (synopsis
-     "R 'Shiny' Interface for Chatting with Large Language Models Offline on Local with 'ollama'")
+     "R 'shiny' Interface for Chatting with Large Language Models Offline on Local with 'ollama'")
     (description
      "Chat with large language models on your machine without internet with complete
 privacy via ollama', powered by R shiny interface.  For more information on
@@ -61297,13 +61332,13 @@ and for performing mixed gas calculations.")
 (define-public r-sctools
   (package
     (name "r-sctools")
-    (version "0.3.3")
+    (version "0.3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCtools" version))
        (sha256
-        (base32 "0mwpia145swzqgxfh0h6fzmd1v5jxwigbw2rqm4rmla60yapn5hz"))))
+        (base32 "0fzvpvkjpsfc1nlc0hsnmz4yjr7b4gh1x1xx381rhdr9f9ixq0i4"))))
     (properties `((upstream-name . "SCtools")))
     (build-system r-build-system)
     (arguments

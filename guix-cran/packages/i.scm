@@ -1660,13 +1660,13 @@ information visit the IS@code{RaD} website at: <https://soilradiocarbon.org/>.")
 (define-public r-isr
   (package
     (name "r-isr")
-    (version "2025-01-10")
+    (version "2025.01.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISR" version))
        (sha256
-        (base32 "1pv24cz6c6v17qnhkcqnfrfji6lcx73av5klq86sw5xmsc6lsixg"))))
+        (base32 "009bw27c3wifmzbsnh882ifg1n4cf099sicrf5vbmg7nx9c5vkdx"))))
     (properties `((upstream-name . "ISR")))
     (build-system r-build-system)
     (arguments

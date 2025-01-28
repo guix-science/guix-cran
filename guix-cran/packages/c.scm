@@ -5725,13 +5725,13 @@ learning.")
 (define-public r-crtspat
   (package
     (name "r-crtspat")
-    (version "1.3.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRTspat" version))
        (sha256
-        (base32 "0n60i8fx28mfgmzb33jz7nngrdhx8sj5lv3jl49h0xd80x7d9csb"))))
+        (base32 "0rh7drmxvd88185fw6lrah80r59sgamq27cwkp62qs9rpspq3lfr"))))
     (properties `((upstream-name . "CRTspat")))
     (build-system r-build-system)
     (arguments
@@ -5741,6 +5741,7 @@ learning.")
                              r-tidyr
                              r-spatstat-random
                              r-spatstat-geom
+                             r-sp
                              r-sf
                              r-oor
                              r-matrix
@@ -5749,7 +5750,7 @@ learning.")
                              r-lme4
                              r-jagsui
                              r-ggplot2
-                             r-geepack
+                             r-gee
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=CRTspat")
@@ -42287,13 +42288,13 @@ removed.  See Adamic, P. (2015)
 (define-public r-cdid
   (package
     (name "r-cdid")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdid" version))
        (sha256
-        (base32 "0zi5vlsrlfrxapv15haym0n48y4mji2c5rhdy3bdv5p6nf9l7689"))))
+        (base32 "0652j19lvasm37v48jfvvsl9zj2xwd2h0474hv7irjdjqb13n760"))))
     (properties `((upstream-name . "cdid")))
     (build-system r-build-system)
     (arguments

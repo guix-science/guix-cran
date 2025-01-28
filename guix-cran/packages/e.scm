@@ -25530,13 +25530,13 @@ the resulting color palette.")
 (define-public r-earthtide
   (package
     (name "r-earthtide")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "earthtide" version))
        (sha256
-        (base32 "1skcn33357vnqq4f485cf7w865jsr7bj0kwsl2b78y069qxp7dvr"))))
+        (base32 "17jdf7kl77pd0l6lkaki3niz4d37frwf3i92nlr6z0c7dw7midr1"))))
     (properties `((upstream-name . "earthtide")))
     (build-system r-build-system)
     (arguments

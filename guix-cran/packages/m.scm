@@ -6355,21 +6355,21 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "0s9p8sqxd5kjx9nw17xxdgjfamhny1dihphhr16mx6c4lrzphdic"))))
+        (base32 "0glg5kchgy5hg6r6nxmkb0bkfwsbzwbsjis7dbqhzrlmrckd0s5d"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-pracma r-ggplot2))
+    (propagated-inputs (list r-pracma r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MultiATSM")
+    (home-page "https://github.com/rubensmoura87/MultiATSM")
     (synopsis "Multicountry Term Structure of Interest Rates Models")
     (description
      "Estimation routines for several classes of affine term structure of interest
@@ -14641,13 +14641,13 @@ the database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "2.8.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolite" version))
        (sha256
-        (base32 "0fndymkqgghk7pswbvl37r0lg7ns7fnkly42s191r3lrbij437j9"))))
+        (base32 "0fn3khdx1kcci5j15fnf1j6cc479fbhy7jv8n22wgdbb4rqscb6c"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (arguments

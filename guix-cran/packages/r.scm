@@ -11650,6 +11650,50 @@ Optionally, the file could include data columns for showing confidence
 intervals.")
     (license license:gpl2+)))
 
+(define-public r-rplec
+  (package
+    (name "r-rplec")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rplec" version))
+       (sha256
+        (base32 "1f67cqgnp9qhz9arc69gqfg170300zjvfr406a29v9qqpfdxr198"))))
+    (properties `((upstream-name . "rplec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rpmm
+                             r-purrr
+                             r-pbapply
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rplec")
+    (synopsis
+     "Placental Epigenetic Clock to Estimate Aging by DNA Methylation")
+    (description
+     "Placental epigenetic clock to estimate aging based on gestational age using DNA
+methylation levels, so called placental epigenetic clock (@code{PlEC}).  We
+developed a @code{PlEC} for the 2024 Placental Clock DREAM Challenge
+(<https://www.synapse.org/Synapse:syn59520082/wiki/628063>).  Our @code{PlEC}
+achieved the top performance based on an independent test set. @code{PlEC} can
+be used to identify accelerated/decelerated aging of placenta for understanding
+placental dysfunction-related conditions, e.g., great obstetrical syndromes
+including preeclampsia, fetal growth restriction, preterm labor, preterm
+premature rupture of the membranes, late spontaneous abortion, and placental
+abruption.  Detailed methodologies and examples are documented in our vignette,
+available at
+<https://herdiantrisufriyana.github.io/rplec/doc/placental_aging_analysis.html>.")
+    (license license:expat)))
+
 (define-public r-rplanes
   (package
     (name "r-rplanes")
@@ -41288,6 +41332,42 @@ offers an alternative way to call reactive expressions to better identify them
 in the server code.")
     (license license:expat)))
 
+(define-public r-reacnorm
+  (package
+    (name "r-reacnorm")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Reacnorm" version))
+       (sha256
+        (base32 "1sz8ljl2da33zyhfgbqz6q3shvzkzh0v2jdsmnbj6bq09m8i696v"))))
+    (properties `((upstream-name . "Reacnorm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-stringi r-matrixstats r-cubature))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=Reacnorm")
+    (synopsis "Perform a Partition of Variance of Reaction Norms")
+    (description
+     "Partitions the phenotypic variance of a plastic trait, studied through its
+reaction norm.  The variance partition distinguishes between the variance
+arising from the average shape of the reaction norms (V_Plas) and the (additive)
+genetic variance .  The latter is itself separated into an environment-blind
+component (V_G/V_A) and the component arising from plasticity
+(V_@code{GxE/V_AxE}).  The package also provides a way to further partition
+V_Plas into aspects (slope/curvature) of the shape of the average reaction norm
+(pi-decomposition) and partition V_Add (gamma-decomposition) and V_@code{AxE}
+(iota-decomposition) into the impact of genetic variation in the reaction norm
+parameters.  Reference: de Villemereuil & Chevin (2025) <doi:10.32942/X2NC8B>.")
+    (license license:gpl3)))
+
 (define-public r-re2
   (package
     (name "r-re2")
@@ -43847,30 +43927,6 @@ AVX512).  By placing this library in this package, we offer an efficient
 distribution system for Xsimd <https://github.com/xtensor-stack/xsimd> for R
 packages using CRAN.")
     (license license:bsd-3)))
-
-(define-public r-rcppuuid
-  (package
-    (name "r-rcppuuid")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppUUID" version))
-       (sha256
-        (base32 "0sxdj5ay90i1bs3wizij31n21ym8l0q0c79959arp1gd303sd8b8"))))
-    (properties `((upstream-name . "RcppUUID")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://artemklevtsov.gitlab.io/rcppuuid")
-    (synopsis "Generating Universally Unique Identificators")
-    (description
-     "This package provides functions to generating a vector of Universally Unique
-Identifiers (UUID).  Used implementation from the Boost C++ library.  Supported
-random (version 4) and name (version 5) UUIDs.")
-    (license license:gpl2+)))
 
 (define-public r-rcpptn
   (package

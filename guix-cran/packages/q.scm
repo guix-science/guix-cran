@@ -4752,13 +4752,13 @@ Statistics, 16, 2206-2251.")
 (define-public r-qmap
   (package
     (name "r-qmap")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qmap" version))
        (sha256
-        (base32 "02xvq1mw83gln7phacbi3vhkvb100crggbldv13mhwq3wjnmg5k2"))))
+        (base32 "09r4b6f3rgf944vc4bg7qpil1q8dciipb3v80x0hxxrbrpmavccp"))))
     (properties `((upstream-name . "qmap")))
     (build-system r-build-system)
     (arguments

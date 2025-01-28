@@ -4819,13 +4819,13 @@ Geosci.  Model Dev., 11, 3481-3496, <doi:10.5194/gmd-11-3481-2018>\".")
 (define-public r-viafr
   (package
     (name "r-viafr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viafr" version))
        (sha256
-        (base32 "1b8gxn1zbr032xp11247agqyhi3iypr65a9jvkgg57l6b92hf6cq"))))
+        (base32 "0fq7dqpsnrfnf03dvz2zpxysj0qjapvpvclzl9ch1j5g06jpbdmg"))))
     (properties `((upstream-name . "viafr")))
     (build-system r-build-system)
     (arguments
@@ -5131,13 +5131,13 @@ included.  The VF analysis methods could be found in -- Musch et al. (1999)
 (define-public r-vfp
   (package
     (name "r-vfp")
-    (version "1.4.1")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VFP" version))
        (sha256
-        (base32 "14idww1vy695mp9v2h0nxqi6flmm41cr30i0yd2nwjsnriwqgzak"))))
+        (base32 "11fgfwr4p0a9sqiclidgpzv29x4976yvr22924hpp1shszx2z2nl"))))
     (properties `((upstream-name . "VFP")))
     (build-system r-build-system)
     (arguments
@@ -5150,12 +5150,11 @@ included.  The VF analysis methods could be found in -- Musch et al. (1999)
     (description
      "Variance function estimation for models proposed by W. Sadler in his variance
 function program ('VFP',
-<http://www.aacb.asn.au/resources/useful-tools/variance-function-program-v14>).
-Here, the idea is to fit multiple variance functions to a data set and
-consequently assess which function reflects the relationship Var ~ Mean best.
-For in-vitro diagnostic ('IVD') assays modeling this relationship is of great
-importance when individual test-results are used for defining follow-up
-treatment of patients.")
+www.aacb.asn.au/AACB/Resources/Variance-Function-Program).  Here, the idea is to
+fit multiple variance functions to a data set and consequently assess which
+function reflects the relationship Var ~ Mean best.  For in-vitro diagnostic
+('IVD') assays modeling this relationship is of great importance when individual
+test-results are used for defining follow-up treatment of patients.")
     (license license:gpl2+)))
 
 (define-public r-vfinputs

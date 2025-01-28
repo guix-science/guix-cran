@@ -1991,6 +1991,41 @@ predictors.")
 on unsystematic sub-samples.")
     (license license:gpl2)))
 
+(define-public r-unstruwwel
+  (package
+    (name "r-unstruwwel")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unstruwwel" version))
+       (sha256
+        (base32 "1j3l68lcsmkdlfpw20p7nqh2lalds1inz82xmy9kiw7lwpq74ycj"))))
+    (properties `((upstream-name . "unstruwwel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://github.com/stefanieschneider/unstruwwel")
+    (synopsis "Detect and Parse Historic Dates")
+    (description
+     "Automatically converts language-specific verbal information, e.g., \"1st half of
+the 19th century,\" to its standardized numerical counterparts, e.g.,
+\"1801-01-01/1850-12-31.\" It follows the recommendations of the MIDAS ('Marburger
+Informations-, Dokumentations- und Administrations-System'), see
+<doi:10.11588/artdok.00003770>.")
+    (license license:gpl3)))
+
 (define-public r-unrtf
   (package
     (name "r-unrtf")
@@ -2323,13 +2358,13 @@ nlist package implements many of the methods for its nlist class.")
 (define-public r-universalcvi
   (package
     (name "r-universalcvi")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UniversalCVI" version))
        (sha256
-        (base32 "0q8sgphhv07cv6ljgvkr41a8p12gksxs1klcly3sd3g906b8rbcv"))))
+        (base32 "12va8dv4ni2q1h493mx4h72h5ccya9di5220rp9ia8ishyvy0crk"))))
     (properties `((upstream-name . "UniversalCVI")))
     (build-system r-build-system)
     (arguments
@@ -2343,11 +2378,10 @@ nlist package implements many of the methods for its nlist class.")
 computing cluster validity indices, and generating plots for comparing them.
 The package is compatible with K-means, fuzzy C means, EM clustering, and
 hierarchical clustering (single, average, and complete linkage).  The details of
-the indices in this package can be found in: C. Alok. (2010)
-<https://hdl.handle.net/10603/93443>, J. C. Bezdek, M. Moshtaghi, T. Runkler, C.
-Leckie (2016) <doi:10.1109/TFUZZ.2016.2540063>, T. Calinski, J. Harabasz (1974)
-<doi:10.1080/03610927408827101>, C. H. Chou, M. C. Su, E. Lai (2004)
-<doi:10.1007/s10044-004-0218-1>, D. L. Davies, D. W. Bouldin (1979)
+the indices in this package can be found in: J. C. Bezdek, M. Moshtaghi, T.
+Runkler, C. Leckie (2016) <doi:10.1109/TFUZZ.2016.2540063>, T. Calinski, J.
+Harabasz (1974) <doi:10.1080/03610927408827101>, C. H. Chou, M. C. Su, E. Lai
+(2004) <doi:10.1007/s10044-004-0218-1>, D. L. Davies, D. W. Bouldin (1979)
 <doi:10.1109/TPAMI.1979.4766909>, J. C. Dunn (1973)
 <doi:10.1080/01969727308546046>, F. Haouas, Z. Ben Dhiaf, A. Hammouda, B.
 Solaiman (2017) <doi:10.1109/FUZZ-IEEE.2017.8015651>, M. Kim, R. S. Ramakrishna
@@ -2361,9 +2395,11 @@ M. Popescu, J. C. Bezdek, T. C. Havens, J. M. Keller (2013)
 <doi:10.1007/s10044-015-0525-8>, Y. Tang, F. Sun, Z. Sun (2005)
 <doi:10.1109/ACC.2005.1470111>, N. Wiroonsri (2024)
 <doi:10.1016/j.patcog.2023.109910>, N. Wiroonsri, O. Preedasawakul (2023)
-<@code{arXiv:2308.14785>}, C. H. Wu, C. S. Ouyang, L. W. Chen, L. W. Lu (2015)
-<doi:10.1109/TFUZZ.2014.2322495> and X. Xie, G. Beni (1991)
-<doi:10.1109/34.85677>.")
+<doi:10.48550/@code{arXiv.2308.14785>}, C. H. Wu, C. S. Ouyang, L. W. Chen, L.
+W. Lu (2015) <doi:10.1109/TFUZZ.2014.2322495>, X. Xie, G. Beni (1991)
+<doi:10.1109/34.85677> and Rousseeuw (1987) and Kaufman and Rousseeuw(2009)
+<doi:10.1016/0377-0427(87)90125-7> and <doi:10.1002/9780470316801> C. Alok.
+(2010).")
     (license license:gpl3+)))
 
 (define-public r-univariateml
@@ -5182,6 +5218,39 @@ selection by assigning prior weights to features and penalizing specific feature
 combinations.  U@code{BayFS} can be used for common feature selection as well as
 block feature selection.")
     (license license:gpl3)))
+
+(define-public r-ubair
+  (package
+    (name "r-ubair")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ubair" version))
+       (sha256
+        (base32 "17ddfphgr8j45ig0d6hbsyv6rnyf87g3wnqjl8qhv18rx25rjkvl"))))
+    (properties `((upstream-name . "ubair")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-rlang
+                             r-ranger
+                             r-lubridate
+                             r-lightgbm
+                             r-ggplot2
+                             r-forecast
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.opencode.de/uba-ki-lab/ubair")
+    (synopsis "Effects of External Conditions on Air Quality")
+    (description
+     "Analyzes the impact of external conditions on air quality using counterfactual
+approaches, featuring methods for data preparation, modeling, and visualization.")
+    (license license:gpl3+)))
 
 (define-public r-uavrmp
   (package

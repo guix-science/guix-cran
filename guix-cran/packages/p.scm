@@ -927,13 +927,13 @@ indicators.")
 (define-public r-pvstatem
   (package
     (name "r-pvstatem")
-    (version "0.1.3")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PvSTATEM" version))
        (sha256
-        (base32 "05qrf1w7k3p0fgwg59i97a05yfb4if5n3pqff7i3ixqljzcn0ivv"))))
+        (base32 "001437rvf0sc04r9l16afpnknvvam3h2ha85gic82dxhxy29w4sf"))))
     (properties `((upstream-name . "PvSTATEM")))
     (build-system r-build-system)
     (arguments
@@ -942,6 +942,7 @@ indicators.")
     (propagated-inputs (list r-svglite
                              r-stringr
                              r-stringi
+                             r-scales
                              r-readxl
                              r-readr
                              r-r6
@@ -954,7 +955,7 @@ indicators.")
                              r-fs
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "<https://github.com/mini-pw/PvSTATEM>")
+    (home-page "https://github.com/mini-pw/PvSTATEM")
     (synopsis
      "Reading, Quality Control and Preprocessing of MBA (Multiplex Bead Assay) Data")
     (description
@@ -27179,6 +27180,32 @@ those shared steps, along with a simple tokenizer.")
      "This function fits a reversible jump Bayesian piecewise exponential model that
 also includes the intensity of each event considered along with the rate of
 events.")
+    (license license:gpl2)))
+
+(define-public r-pie
+  (package
+    (name "r-pie")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PIE" version))
+       (sha256
+        (base32 "0nwg1szbydazzahxfilbzqn3fbhfri864ni89hw3gmq08v3lmdb7"))))
+    (properties `((upstream-name . "PIE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost r-gglasso))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PIE")
+    (synopsis "Partially Interpretable Model with Black-Box Refinement")
+    (description
+     "This package implements a novel predictive model, Partially Interpretable
+Estimators (PIE), which jointly trains an interpretable model and a black-box
+model to achieve high predictive performance as well as partial model.  See the
+paper, Wang, Yang, Li, and Wang (2021) <doi:10.48550/@code{arXiv.2105.02410>}.")
     (license license:gpl2)))
 
 (define-public r-pid

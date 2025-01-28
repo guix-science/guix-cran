@@ -17713,13 +17713,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.3.1")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "18hgbmlgjhlfpyvjsvjpn8nklgrqfxclflrjfsk8pfjw1dgvvnkw"))))
+        (base32 "0dpnwxlf35lvdl00gdl3608ki1jfg9wb13i0gc8c3dcqwijw9r8b"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments

@@ -13893,35 +13893,37 @@ Laplace approximation for the random effects.  This is demonstrated in Monnahan
 (define-public r-tmap
   (package
     (name "r-tmap")
-    (version "3.3-4")
+    (version "4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmap" version))
        (sha256
-        (base32 "1xxa9ya1gci4ys5z00v95kp39rq12vd8kppj8j8n1a913kbbqrn9"))))
+        (base32 "1m2bdlm00jp77np43xcys3nzsi6n9dnday27mwpry3jl4yb3k5yg"))))
     (properties `((upstream-name . "tmap")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-widgetframe
-                             r-viridislite
-                             r-units
+    (propagated-inputs (list r-units
                              r-tmaptools
                              r-stars
                              r-sf
+                             r-servr
+                             r-s2
                              r-rlang
-                             r-rcolorbrewer
                              r-leafsync
                              r-leaflet
+                             r-leaflegend
+                             r-leafgl
                              r-leafem
                              r-htmlwidgets
                              r-htmltools
-                             r-classint
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://r-tmap.github.io/tmap/")
+                             r-data-table
+                             r-cols4all
+                             r-cli
+                             r-classint))
+    (home-page "https://github.com/r-tmap/tmap")
     (synopsis "Thematic Maps")
     (description
      "Thematic maps are geographical maps in which spatial data distributions are
@@ -19403,13 +19405,13 @@ Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>."
 (define-public r-tidyclust
   (package
     (name "r-tidyclust")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyclust" version))
        (sha256
-        (base32 "1z5fhs4ws7cbvsxkwcd4plj968glfing2jgy2hqs1m49di8gjrib"))))
+        (base32 "09z4p01l76wyc1dzkz1ggvbwcdih1c515amwm54mx5rvpmvmdw64"))))
     (properties `((upstream-name . "tidyclust")))
     (build-system r-build-system)
     (arguments
@@ -19421,8 +19423,8 @@ Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>."
                              r-tibble
                              r-rsample
                              r-rlang
-                             r-rfast
                              r-prettyunits
+                             r-philentropy
                              r-parsnip
                              r-modelenv
                              r-hardhat
@@ -26599,20 +26601,20 @@ applications focusing on reproducibility and relational data.")
 (define-public r-teal-code
   (package
     (name "r-teal-code")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.code" version))
        (sha256
-        (base32 "0dhfvhdb61sp5i1za8lmp823y6la8dkisc8z9s9hvf4ypf63n05a"))))
+        (base32 "11kmj44rkrjqrvi24sy7250znb8lkw7k967jh1d9vj6x0bz4h88g"))))
     (properties `((upstream-name . "teal.code")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-lifecycle r-checkmate))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-rlang r-lifecycle r-cli r-checkmate))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.code/")
     (synopsis "Code Storage and Execution Class for 'teal' Applications")
     (description

@@ -2026,13 +2026,13 @@ static since 2013.")
 (define-public r-worldbank
   (package
     (name "r-worldbank")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldbank" version))
        (sha256
-        (base32 "0kpiihqc87cl583r1my8w2in8a7b1g2a2ng3gvzs54bb7v0wv4ak"))))
+        (base32 "1x7g9n69h0spvn7z2v8d44nkwl0wf6b5cjqr9xqrgx2aivm6f09d"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
     (arguments

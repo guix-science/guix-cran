@@ -16367,13 +16367,13 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "1zdm79h9mxwv72y9s1nznr39zxrpl4jmqyb6b9nc7nnij9w145yf"))))
+        (base32 "0xzipnhk4sfznkmbcpja2rnl2acd9lq5zlfi2g4v8inyib2bqdib"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (arguments
@@ -18612,13 +18612,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "01fzrj79h1v72vx8xp49x65vx189ly15v8x5kxn3k2vsimakby9k"))))
+        (base32 "0g7ksc7a9s3vgr498kqi0hhhqqwmwwr8wkpdpxsdi0gjvvgwhf7l"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
@@ -22568,13 +22568,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "12.0.0")
+    (version "12.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "1npq8jqafkl765y9fkcp5dl7065d1mfk5f9kd1vffcrlmc0acp13"))))
+        (base32 "063qida1lvi24p5rj2bzamfray2avv09g1vp6vslj2yl0q0b7za3"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (arguments

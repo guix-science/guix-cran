@@ -7168,13 +7168,13 @@ forecasting, not for planning your flight!")
 (define-public r-hima
   (package
     (name "r-hima")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HIMA" version))
        (sha256
-        (base32 "0cvzbcwavhb38ab603wqbgmbhhgwh9jh7gx6lkps3js3rbc58f4y"))))
+        (base32 "0yb2wn69b72vg4hkbnsjwrjs36p5g49dk4l74r7y21qz1y4398pp"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
     (arguments
@@ -7192,6 +7192,7 @@ forecasting, not for planning your flight!")
                              r-foreach
                              r-doparallel
                              r-conquer))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/YinanZheng/HIMA/")
     (synopsis "High-Dimensional Mediation Analysis")
     (description
@@ -11255,13 +11256,13 @@ elastic net methods.")
 (define-public r-hdtsa
   (package
     (name "r-hdtsa")
-    (version "1.0.5")
+    (version "1.0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDTSA" version))
        (sha256
-        (base32 "1p4mka4m2ladlxgd6ljqw181lky8bynh6vf9cfsgf21qq3pals1z"))))
+        (base32 "0ahzlfq8g5qnmyhm66b5p819039y1b51bgm84pjydh0bhs770n98"))))
     (properties `((upstream-name . "HDTSA")))
     (build-system r-build-system)
     (arguments
@@ -14504,13 +14505,13 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
 (define-public r-handwriterrf
   (package
     (name "r-handwriterrf")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriterRF" version))
        (sha256
-        (base32 "1a3q74kjgzfriikk739sib7jmzq0dgvab0l5k4wh4xyb4z0s1z99"))))
+        (base32 "1kgd6z39ir2jdy2qis31az04hrja6mchvi6aw5j3a0kqz32fykns"))))
     (properties `((upstream-name . "handwriterRF")))
     (build-system r-build-system)
     (arguments
@@ -14518,10 +14519,12 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-stringr
                              r-reshape2
                              r-ranger
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-handwriter
                              r-dplyr))
     (native-inputs (list r-knitr))

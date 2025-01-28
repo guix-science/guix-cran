@@ -30032,43 +30032,6 @@ pull from dynamic data sources such as databases and web APIs to provide an
 extra layer of validation around input and output data.")
     (license license:expat)))
 
-(define-public r-databraryr
-  (package
-    (name "r-databraryr")
-    (version "0.6.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "databraryr" version))
-       (sha256
-        (base32 "0mws4jw81l91cml8fh4n244nzjrfznsg05vsqfbyc75ciqlmw8hk"))))
-    (properties `((upstream-name . "databraryr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xfun
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-options
-                             r-magrittr
-                             r-magick
-                             r-lifecycle
-                             r-keyring
-                             r-httr2
-                             r-getpass
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://databrary.github.io/databraryr/")
-    (synopsis "Interact with the 'Databrary.org' API")
-    (description
-     "Databrary.org is a restricted access repository for research data, especially
-video and audio.  This package provides commands to interact with the data
-stored on Databrary.org'.")
-    (license license:expat)))
-
 (define-public r-databionicswarm
   (package
     (name "r-databionicswarm")

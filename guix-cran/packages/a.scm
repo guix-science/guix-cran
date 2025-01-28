@@ -648,13 +648,13 @@ estimates.  Based on the work of Aldirawi et al. (2022)
 (define-public r-axisandallies
   (package
     (name "r-axisandallies")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "axisandallies" version))
        (sha256
-        (base32 "0z1b17vy9vb8fm2vrhk4nf94ndqrpcpy8isfyb5n8xbm2mygr45m"))))
+        (base32 "1m55sj8jr8jpw9nvf9d6alwpmvrr7pa18n31w90ip7874rhm67b2"))))
     (properties `((upstream-name . "axisandallies")))
     (build-system r-build-system)
     (arguments
@@ -21767,13 +21767,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralonco" version))
        (sha256
-        (base32 "022cjygxyq40fg66bdky0pdffyv6dafq77s6g7skxmyqrp6wqhqd"))))
+        (base32 "0ni0czgg6m2bw9rhzvgiskjgkl3hnk96apswy9lsvpkiqacnqa1w"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (arguments
