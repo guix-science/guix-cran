@@ -2735,6 +2735,37 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
 research project in \"R Studio\".")
     (license license:expat)))
 
+(define-public r-rulestools
+  (package
+    (name "r-rulestools")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RulesTools" version))
+       (sha256
+        (base32 "0nq6w45lk2h194h9yvj8sqyg5z6n4m2y4q229f3m9inz9k2ii2k6"))))
+    (properties `((upstream-name . "RulesTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-mice
+                             r-magrittr
+                             r-ggplot2
+                             r-eulerr
+                             r-arules))
+    (home-page "https://github.com/nikolett0203/RulesTools")
+    (synopsis "Preparing, Analyzing, and Visualizing Association Rules")
+    (description
+     "Streamlines data preprocessing, analysis, and visualization for association rule
+mining.  Designed to work with the arules package, features include discretizing
+data frames, generating rule set intersections, and visualizing rules with
+heatmaps and Euler diagrams. @code{RulesTools} also includes a dataset on Brook
+trout detection from Nolan et al. (2022) <doi:10.1007/s13412-022-00800-x>.")
+    (license license:expat)))
+
 (define-public r-rules
   (package
     (name "r-rules")
@@ -31866,13 +31897,13 @@ background jobs for large datasets.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.24.1")
+    (version "0.24.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restatapi" version))
        (sha256
-        (base32 "0g6vjisrqlnsmcpp08b2nc7m08grxmd5yw55xfrx89ip8w6nsypd"))))
+        (base32 "1kg8ia33dsbmh0yph8vfrhyrqly5zvnyqsiapn8nhyghxbyq0i1p"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (arguments
@@ -35191,13 +35222,13 @@ similarities, cycles or triads can be calculated and analyzed over time.")
 (define-public r-relsurv
   (package
     (name "r-relsurv")
-    (version "2.3-1")
+    (version "2.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "relsurv" version))
        (sha256
-        (base32 "1bn0lb5wgx8dlkbsqgy23nxbzb9kx8qs4ljy8qv4cqikny5nf6rk"))))
+        (base32 "099aywvhzz5jxf7zirwxncj3ms5ng3jizr70pbvp4wlrnab6af1v"))))
     (properties `((upstream-name . "relsurv")))
     (build-system r-build-system)
     (arguments
@@ -51442,13 +51473,13 @@ header-only library.")
 (define-public r-rapidsplithalf
   (package
     (name "r-rapidsplithalf")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapidsplithalf" version))
        (sha256
-        (base32 "1ac7hpvi26gjzwxf6xma0307222aiap9029kpv8w9abpyz7v34jw"))))
+        (base32 "0r506lkjr62irsxm0fchz88b69agmj1hi64l7gjfqynnsjslf1g8"))))
     (properties `((upstream-name . "rapidsplithalf")))
     (build-system r-build-system)
     (arguments
@@ -51457,12 +51488,12 @@ header-only library.")
     (propagated-inputs (list r-rcpp r-foreach r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rapidsplithalf")
-    (synopsis "Fast Split-Half Reliability Algorithm")
+    (synopsis "Fast Permutation-Based Split-Half Reliability Algorithm")
     (description
      "Accurately estimates the reliability of cognitive tasks using a fast and
-flexible permutated split-half reliability algorithm that supports stratified
-splitting while maintaining equal split sizes.  See Kahveci, Bathke, and
-Blechert (2022) <doi:10.31234/osf.io/ta59r> for details.")
+flexible permutation-based split-half reliability algorithm that supports
+stratified splitting while maintaining equal split sizes.  See Kahveci, Bathke,
+and Blechert (2022) <doi:10.31234/osf.io/ta59r> for details.")
     (license license:gpl2+)))
 
 (define-public r-rapidraker

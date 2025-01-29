@@ -22695,19 +22695,19 @@ DMREF-1921873.")
 (define-public r-splinets
   (package
     (name "r-splinets")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Splinets" version))
        (sha256
-        (base32 "11wg4ddr2nscjnqlfvpphskbhmyglnq110v5lngvp8sszw84dwkc"))))
+        (base32 "1ks0kdn910hhvv2s8kj51d87ivs5clnwxfg8901q345ji20yxsxg"))))
     (properties `((upstream-name . "Splinets")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=Splinets")
+    (home-page "https://github.com/ranibasna/R-Splinets")
     (synopsis
      "Functional Data Analysis using Splines and Orthogonal Spline Bases")
     (description
@@ -22722,8 +22722,9 @@ for functional data analysis.  Random spline generator is implemented as well as
 all fundamental algebraic and calculus operations on splines.  The optimal, in
 the least square sense, functional fit by splinets to data consisting of sampled
 values of functions as well as splines build over another set of knots is
-obtained and used for functional data analysis. <@code{arXiv:2102.00733>},
-<doi:10.1016/j.cam.2022.114444>, <@code{arXiv:2302.07552>}.")
+obtained and used for functional data analysis.  The S4-version of the object
+oriented R is used. <doi:10.48550/@code{arXiv.2102.00733>},
+<doi:10.1016/j.cam.2022.114444>, <doi:10.48550/@code{arXiv.2302.07552>}.")
     (license license:gpl2+)))
 
 (define-public r-splinetree
@@ -35460,19 +35461,20 @@ residuals.")
 (define-public r-smle
   (package
     (name "r-smle")
-    (version "2.1-1")
+    (version "2.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMLE" version))
        (sha256
-        (base32 "1kfbvdimxrm8s5sizhb5r3mw2aiib75yxrcpz4drdaw5bd5mv8lf"))))
+        (base32 "1z2517wglbkqd1f9xqx2hnf70qg5rbvknyfgzwcrdvrp4dwi5d6b"))))
     (properties `((upstream-name . "SMLE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mvnfast r-matrixcalc r-glmnet))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SMLE")
     (synopsis "Joint Feature Screening via Sparse MLE")
     (description
@@ -51100,13 +51102,13 @@ Alham Saadat, Li Wang, Melina Claussnitzer, Manolis Kellis (2017)
 (define-public r-sharppen
   (package
     (name "r-sharppen")
-    (version "1.9")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharpPen" version))
        (sha256
-        (base32 "0ra1iq6bfiy87arj7nb4s4adiji3pcp7vrjhsfbm2agfw05k4zj4"))))
+        (base32 "0f9zjpk93vql003p3h148bv7s1rmf6czi31r77fjxk5gm2hpkdi6"))))
     (properties `((upstream-name . "sharpPen")))
     (build-system r-build-system)
     (arguments
@@ -63180,6 +63182,42 @@ unit sphere, as described in the paper : Das et al. (2019)
 single cluster from an in vitro dataset.  The score is assigned based on the the
 fraction of specific markers of the in vivo stage that are conserved in the in
 vitro clusters <https://github.com/@code{ScialdoneLab>}.")
+    (license license:gpl3)))
+
+(define-public r-scopr
+  (package
+    (name "r-scopr")
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scopr" version))
+       (sha256
+        (base32 "1c7sxqd0jrsjrxd39q4nkgrzdyz6whid7v8qj5snvc2cy04kj8ax"))))
+    (properties `((upstream-name . "scopr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-rsqlite
+                             r-readr
+                             r-memoise
+                             r-data-table
+                             r-behavr))
+    (home-page "https://github.com/rethomics/scopr")
+    (synopsis "Read Ethoscope Data")
+    (description
+     "Handling of behavioural data from the Ethoscope platform (Geissmann, Garcia
+Rodriguez, Beckwith, French, Jamasb and Gilestro (2017)
+<DOI:10.1371/journal.pbio.2003026>).  Ethoscopes
+(<https://giorgiogilestro.notion.site/Ethoscope-User-Manual-a9739373ae9f4840aa45b277f2f0e3a7>)
+are an open source/open hardware framework made of interconnected raspberry pis
+(<https://www.raspberrypi.org>) designed to quantify the behaviour of multiple
+small animals in a distributed and real-time fashion.  The default tracking
+algorithm records primary variables such as xy coordinates, dimensions and
+speed.  This package is part of the rethomics framework
+<https://rethomics.github.io/>.")
     (license license:gpl3)))
 
 (define-public r-scoper

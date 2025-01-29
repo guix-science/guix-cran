@@ -10097,13 +10097,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "6.3")
+    (version "6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "1qv127pa1zki42a4riw2lb05sajwp1mdschxlalvf5hfdhrq7i3g"))))
+        (base32 "1bcr9d4dbaax9kx1i7x9bmhw1p35qmpijf3c9ki0afa2rmyqgmrm"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (arguments
@@ -14505,13 +14505,13 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
 (define-public r-handwriterrf
   (package
     (name "r-handwriterrf")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriterRF" version))
        (sha256
-        (base32 "1kgd6z39ir2jdy2qis31az04hrja6mchvi6aw5j3a0kqz32fykns"))))
+        (base32 "0n9n4rjcxzgsxg4lkf4qhlwj9773jwdw34z73lmc0lxyb9x7sj8j"))))
     (properties `((upstream-name . "handwriterRF")))
     (build-system r-build-system)
     (arguments

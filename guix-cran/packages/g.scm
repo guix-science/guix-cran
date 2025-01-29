@@ -25489,13 +25489,13 @@ Kurnia, A. (2018)<doi:10.21082/jpptp.v2n2.2018.p101-110>.")
 (define-public r-georob
   (package
     (name "r-georob")
-    (version "0.3-22")
+    (version "0.3-23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "georob" version))
        (sha256
-        (base32 "0f4065cqvkp3y6ls3ax1xi5c7bl122xgz230xcnw5jdpfqnbky5z"))))
+        (base32 "01nrrqiayfz9b8c3lhphqiw2c7v5l202zy189880qxbflfv90009"))))
     (properties `((upstream-name . "georob")))
     (build-system r-build-system)
     (arguments
@@ -28985,6 +28985,43 @@ objects returned by @code{GenericML()}.  Parallel computing is supported.")
     (description
      "Allows users to quickly and easily generate fake data containing Personally
 Identifiable Information (PII) through convenience functions.")
+    (license license:expat)))
+
+(define-public r-generalrss
+  (package
+    (name "r-generalrss")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "generalRSS" version))
+       (sha256
+        (base32 "0lff24z4g9s4g4r03wmwyl2yah2nws65p8kaa47f0l4hgv4g901c"))))
+    (properties `((upstream-name . "generalRSS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rootsolve r-emplik))
+    (home-page "https://cran.r-project.org/package=generalRSS")
+    (synopsis
+     "Statistical Tools for Balanced and Unbalanced Ranked Set Sampling")
+    (description
+     "Ranked Set Sampling (RSS) is a stratified sampling method known for its
+efficiency compared to Simple Random Sampling (SRS).  When sample allocation is
+equal across strata, it is referred to as balanced RSS (BRSS) whereas unequal
+allocation is called unbalanced RSS (URSS), which is particularly effective for
+asymmetric or skewed distributions.  This package offers practical statistical
+tools and sampling methods for both BRSS and URSS, emphasizing flexible sampling
+designs and inference for population means, medians, proportions, and Area Under
+the Curve (AUC).  It incorporates parametric and nonparametric tests, including
+empirical likelihood ratio (LR) methods.  The package provides ranked set
+sampling methods from a given population, including sampling with imperfect
+ranking using auxiliary variables.  Furthermore, it provides tools for efficient
+sample allocation in URSS, ensuring greater efficiency than SRS and BRSS. For
+more details, refer e.g. to Chen et al. (2003) <doi:10.1007/978-0-387-21664-5>,
+Ahn et al. (2022) <doi:10.1007/978-3-031-14525-4_3>, and Ahn et al. (2024)
+<doi:10.1111/insr.12589>.")
     (license license:expat)))
 
 (define-public r-generaloaxaca
@@ -32937,13 +32974,13 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gausscov" version))
        (sha256
-        (base32 "0dv3ifhi72kij820bny5jikps8zywyinddbc78q4bdbska820rvn"))))
+        (base32 "0jg5hyzmvi8kwvazh94x2ypxzkbxwdmbs8x6sklvshvl7hidrpkr"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (arguments
@@ -32983,9 +33020,9 @@ valid subset.  A good default start is f1st(y,x,kmn=15) The best function for
 returning multiple approximations is f3st which repeatedly calls f1st.  For more
 information see the web site below and the accompanying papers: L. Davies and L.
 Duembgen, \"Covariate Selection Based on a Model-free Approach to Linear
-Regression with Exact Probabilities\", 2202,
+Regression with Exact Probabilities\", 2022,
 <doi:10.48550/@code{arXiv.2202.01553>}.  L. Davies, \"An Approximation Based
-Theory of Linear Regression\", 2402, <doi:10.48550/@code{arXiv.2402.09858>}.")
+Theory of Linear Regression\", 2024,<doi:10.48550/@code{arXiv.2402.09858>}.")
     (license license:gpl3)))
 
 (define-public r-gauser

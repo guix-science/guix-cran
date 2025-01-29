@@ -10764,6 +10764,44 @@ all possible comparisons (APC) methodology developed by Miller (2005)
 <doi:10.1198/004017004000000608>.")
     (license license:gpl3)))
 
+(define-public r-apcalign
+  (package
+    (name "r-apcalign")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "APCalign" version))
+       (sha256
+        (base32 "01ns5rikxchsh38s28is4y1xjbbca2c4a62q8mi2shmdr948kvpn"))))
+    (properties `((upstream-name . "APCalign")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-stringdist
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-curl
+                             r-crayon
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://traitecoevo.github.io/APCalign/")
+    (synopsis "Resolving Plant Taxon Names Using the Australian Plant Census")
+    (description
+     "The process of resolving taxon names is necessary when working with biodiversity
+data.  APCalign uses the Australian Plant Census (APC) and the Australian Plant
+Name Index (APNI) to align and update plant taxon names to current, accepted
+standards.  APCalign also supplies information about the established status of
+plant taxa across different states/territories.")
+    (license license:expat)))
+
 (define-public r-apc
   (package
     (name "r-apc")
@@ -11207,13 +11245,13 @@ through integer programming.  Communications in Statistics - Theory and Methods
 (define-public r-aopdata
   (package
     (name "r-aopdata")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aopdata" version))
        (sha256
-        (base32 "07vcxz1njl1hb8p25ni11l39llb9bl19yq3an5rarjj7mxyp8m40"))))
+        (base32 "1g9lz8b7ilmr7xybnapkg4nvpzkkphazr7irb1qs3vqbws8gxf8x"))))
     (properties `((upstream-name . "aopdata")))
     (build-system r-build-system)
     (arguments
@@ -12823,13 +12861,13 @@ a second model trained on the classes of interest.")
 (define-public r-animint2
   (package
     (name "r-animint2")
-    (version "2025.1.21")
+    (version "2025.1.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animint2" version))
        (sha256
-        (base32 "1r6rig5r6va0mj3cq6rppkx9s0wsdi66n82s3z4d0n9qkrn1k6di"))))
+        (base32 "01fy7wa5qyi1cqgmlcgdakznkssdhqvpdj3ika40ywx79w3vvc2c"))))
     (properties `((upstream-name . "animint2")))
     (build-system r-build-system)
     (arguments
@@ -18041,13 +18079,13 @@ and
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "0vvx5midssgcy32bxbxkxi8jgl5ac3ivdm4hh7qfx35xi0ypbjca"))))
+        (base32 "01pf61hsikn9a05lm5s5kx914rhvjbxph0gp7bxcyfnms09d6azf"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (arguments

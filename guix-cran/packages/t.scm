@@ -26577,20 +26577,20 @@ various log destinations, vectorization, and more.")
 (define-public r-teal-data
   (package
     (name "r-teal-data")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.data" version))
        (sha256
-        (base32 "05j05i6mxblza2xvmmx3bvhks2p30jrwm11i0lx3bh5n88hch02w"))))
+        (base32 "1v2790ddfjvqayz8qvi0lcmzf2dbafzm47kcps92cd7mag7ygz76"))))
     (properties `((upstream-name . "teal.data")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-teal-code r-rlang r-lifecycle r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.data/")
     (synopsis "Data Model for 'teal' Applications")
     (description
@@ -30414,19 +30414,19 @@ Respects original column order, column labels, and factor level order.  See
 (define-public r-tablespan
   (package
     (name "r-tablespan")
-    (version "0.1.7")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablespan" version))
        (sha256
-        (base32 "0zs7m967pjk313pi8m8qj6irj4ywvcr5dxqisyj0nfm6wzywp88c"))))
+        (base32 "090b341gf5qbj7pnwwa9nass188jwh55p9sfrsns7sbm0mgxzzlv"))))
     (properties `((upstream-name . "tablespan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-openxlsx r-gt r-dplyr))
+    (propagated-inputs (list r-tibble r-rlang r-openxlsx r-gt r-dplyr))
     (home-page "https://github.com/jhorzek/tablespan")
     (synopsis
      "Create Satisficing 'Excel', 'HTML', 'LaTeX', and 'RTF' Tables using a Simple Formula")

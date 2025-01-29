@@ -25558,23 +25558,23 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.3.1")
+    (version "3.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "1kd0d0jn6x3837va4ndd6k5ni1ikyhzn2vmnzgf08da8wyb8ni66"))))
+        (base32 "0p80zl3mc6n3vcd9ps7zqx7yvxpaykkz01r9axky99fi6snfcn4f"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-visomopresults
-                             r-vctrs
+    (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-stringr
+                             r-stringi
                              r-rlang
                              r-rjsonio
                              r-purrr
@@ -36967,25 +36967,28 @@ different platforms.).")
 (define-public r-childsds
   (package
     (name "r-childsds")
-    (version "0.8.0")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "childsds" version))
        (sha256
-        (base32 "1vv02kbw17b8zva2yc1qgi750z9yhyfv5xbig29dhyzvj8k00yvb"))))
+        (base32 "0c9s1aw9nk0240mcx4wpkjpxhlnbz0fsrp5231mhfzr1jr6pf4pw"))))
     (properties `((upstream-name . "childsds")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vgam
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-reshape2
                              r-purrrlyr
                              r-purrr
                              r-magrittr
+                             r-lubridate
+                             r-interp
                              r-gamlss-dist
                              r-gamlss
                              r-dplyr
@@ -39097,13 +39100,13 @@ CGP, print.CGP, summary.CGP, predict.CGP and @code{plotCGP}.")
 (define-public r-cgnm
   (package
     (name "r-cgnm")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CGNM" version))
        (sha256
-        (base32 "1m2cqwb8q2lirf09d5pmqjan4r1w8m9pkg2wzyr8jp7sg1dqaaw7"))))
+        (base32 "1d1kkh06xanpmcawaraspfqykgy8yhz6bkjxj3938kl9phk90qyp"))))
     (properties `((upstream-name . "CGNM")))
     (build-system r-build-system)
     (arguments
@@ -40097,6 +40100,45 @@ with the Canadian Election Study surveys.")
 Jackson (2020) <DOI:10.1017/pan.2019.38> to compute clustered standard errors of
 linear coefficients in regression models with grouped data.")
     (license license:expat)))
+
+(define-public r-certara-xpose-nlme
+  (package
+    (name "r-certara-xpose-nlme")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Certara.Xpose.NLME" version))
+       (sha256
+        (base32 "08irp7mfl07k531ancx1r85jv1rgg7fjhvjj2xlpxkskpw5ihcgj"))))
+    (properties `((upstream-name . "Certara.Xpose.NLME")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xpose
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-ggally
+                             r-egg
+                             r-dplyr))
+    (home-page "https://certara.github.io/R-Xpose-NLME/")
+    (synopsis
+     "Enhances 'xpose' Diagnostics for Pharmacometric Models from 'Certara.RsNLME' and Phoenix NLME")
+    (description
+     "Facilitates the creation of xpose data objects from Nonlinear Mixed Effects
+(NLME) model outputs produced by Certara.@code{RsNLME} or Phoenix NLME. This
+integration enables users to utilize all ggplot2'-based plotting functions
+available in xpose for thorough model diagnostics and data visualization.
+Additionally, the package introduces specialized plotting functions tailored for
+covariate model evaluation, extending the analytical capabilities beyond those
+offered by xpose alone.")
+    (license license:lgpl3)))
 
 (define-public r-certara-vpcresults
   (package

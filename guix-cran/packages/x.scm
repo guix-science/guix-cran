@@ -2109,13 +2109,13 @@ supporting in other packages maintained by Shichen Xie'.")
 (define-public r-xdnuts
   (package
     (name "r-xdnuts")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XDNUTS" version))
        (sha256
-        (base32 "0kn8gvmlykrwrpvf5gz0n1y2f3m9gc6cfxbp94zvy69kms6mn7hd"))))
+        (base32 "06w0jacf062ba5ifni2y975m5135gg65vhhcghdwk229ngvpxpg1"))))
     (properties `((upstream-name . "XDNUTS")))
     (build-system r-build-system)
     (arguments

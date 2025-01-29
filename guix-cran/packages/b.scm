@@ -1191,13 +1191,13 @@ the supply chain.  Marchena Marlene (2010) <@code{arXiv:1009.3977>}.")
 (define-public r-bullseye
   (package
     (name "r-bullseye")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bullseye" version))
        (sha256
-        (base32 "155wr4ppay2i9kq7hqpgkmpjy59rsp4hqq3v1kwj8ywg32mqdf1i"))))
+        (base32 "0dscd8v1i3rxa0b01brc2vr5gfp2k3j9mv1clmi0cizkhbd4anbi"))))
     (properties `((upstream-name . "bullseye")))
     (build-system r-build-system)
     (arguments
@@ -31096,13 +31096,13 @@ dataset for data exploration and visualisation.")
 (define-public r-baguette
   (package
     (name "r-baguette")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baguette" version))
        (sha256
-        (base32 "01pxk9angq2yrw3j5c748qhcdq92axpml5lr9cpf74a8hpg6ddjb"))))
+        (base32 "05cjcx9vlgq41nl2waq0y0s1b5yj27c01b00sx2izz031asmw2in"))))
     (properties `((upstream-name . "baguette")))
     (build-system r-build-system)
     (arguments
@@ -31122,6 +31122,7 @@ dataset for data exploration and visualisation.")
                              r-furrr
                              r-dplyr
                              r-dials
+                             r-cli
                              r-c50
                              r-butcher))
     (home-page "https://baguette.tidymodels.org")

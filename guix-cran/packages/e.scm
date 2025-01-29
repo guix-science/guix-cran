@@ -10505,13 +10505,13 @@ results interactively.")
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.6.0.0")
+    (version "0.6.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "1w9xszsivx81dsxfv5v578q9hk4k0wmflr8fih4blgf19kjnnhfw"))))
+        (base32 "1p08x41071jnb4r9cidgs625mw1gaw8r90jk125c8l5d5c4xygc5"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (arguments
@@ -15780,13 +15780,13 @@ this package is developed in C++'.")
 (define-public r-emayili
   (package
     (name "r-emayili")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emayili" version))
        (sha256
-        (base32 "04dlya7fki6gq98rws5b3577lrs0cd213ml3w8qcsyzn7bbpz7np"))))
+        (base32 "1v6zr8c4pcr7rigv708mmww3v83jhrpz7f1hli4y9jdrn41m3np3"))))
     (properties `((upstream-name . "emayili")))
     (build-system r-build-system)
     (arguments
@@ -18154,13 +18154,13 @@ functions to those users non-experienced in R coding. (SÃ¡ez et al.  2020)
 (define-public r-ehrmuse
   (package
     (name "r-ehrmuse")
-    (version "0.0.2.0")
+    (version "0.0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EHRmuse" version))
        (sha256
-        (base32 "1viisy9phr17x7w0ciw5l0pz8fqbm850mb8rrl37fahwd45p68wq"))))
+        (base32 "0l1bbbn1vw18lzysw7xgrmi3lm69y5fi2f47wmm9vm5mcw4hlcvm"))))
     (properties `((upstream-name . "EHRmuse")))
     (build-system r-build-system)
     (arguments
@@ -22258,6 +22258,39 @@ way that maximizes economic welfare.  Production efficiency and economic
 efficiency are calculated with the help of the formula given by (Kumar et al.,
 2017) <doi:10.21921/jas.v4i04.10202>.")
     (license license:gpl3)))
+
+(define-public r-ecometrics
+  (package
+    (name "r-ecometrics")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EcoMetrics" version))
+       (sha256
+        (base32 "1qlfrvn1ffl2986cairirkr0lbslaswmwl7r0bv5d8qpbi2hgrn9"))))
+    (properties `((upstream-name . "EcoMetrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tseries
+                             r-tibble
+                             r-moments
+                             r-lmtest
+                             r-insight
+                             r-ggplot2
+                             r-forecast
+                             r-car))
+    (home-page "https://cran.r-project.org/package=EcoMetrics")
+    (synopsis "Econometrics Model Building")
+    (description
+     "An intuitive and user-friendly package designed to aid undergraduate students in
+understanding and applying econometric methods in their studies, Tailored
+specifically for Econometrics and Regression Modeling courses, it provides a
+practical toolkit for modeling and analyzing econometric data with detailed
+inference capabilities.")
+    (license license:expat)))
 
 (define-public r-ecoltest
   (package

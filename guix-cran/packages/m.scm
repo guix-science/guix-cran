@@ -32746,13 +32746,13 @@ modeling, particularly crop and crop disease modeling.")
 (define-public r-meteoland
   (package
     (name "r-meteoland")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meteoland" version))
        (sha256
-        (base32 "1p08bm1hp6m5086g41wpri85j1y8z3lq2bb6xs3aamp85rjja70z"))))
+        (base32 "0v4xmjgblndm12za9hwlz6hqvzg91v0lwl7xgkqg8jnq5wlddxrf"))))
     (properties `((upstream-name . "meteoland")))
     (build-system r-build-system)
     (arguments
@@ -37760,13 +37760,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfateland
   (package
     (name "r-medfateland")
-    (version "2.4.7")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfateland" version))
        (sha256
-        (base32 "0fkpzz92ai7wfqx7ajdldba2mmcwxvgjq5yvdhzjkznnab7lhlj2"))))
+        (base32 "1p492vd826vbkysql7nf34fsl7q02yngh86fs6pym68psfz5kyqr"))))
     (properties `((upstream-name . "medfateland")))
     (build-system r-build-system)
     (arguments
@@ -37801,13 +37801,13 @@ including spatial processes such as lateral water transfer and seed dispersal.")
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "4.7.0")
+    (version "4.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfate" version))
        (sha256
-        (base32 "0fxzvqvg879ps59b7469cp4mhjs5hj7d55hl4q80p2zv31dc84k3"))))
+        (base32 "0vj8n22hpvlizwz963myq8jlmbd1s1s45fzzgwb0ksa0wrgi81r5"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (arguments
@@ -42056,6 +42056,57 @@ penalty term to minimize the differences between the total sub-annual flows and
 the annual flow.  The method is described in Nguyen et al (2020)
 <DOI:10.1002/essoar.10504791.1>.")
     (license license:gpl2+)))
+
+(define-public r-mbnmatime
+  (package
+    (name "r-mbnmatime")
+    (version "0.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MBNMAtime" version))
+       (sha256
+        (base32 "0grj4r5yzwwzglvmhv59zad1r0xnqanblkvia350mlc4rm7gdcq6"))))
+    (properties `((upstream-name . "MBNMAtime")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list jags))
+    (propagated-inputs (list r-zoo
+                             r-scales
+                             r-rjags
+                             r-reshape2
+                             r-rdpack
+                             r-r2jags
+                             r-png
+                             r-magrittr
+                             r-lspline
+                             r-knitr
+                             r-igraph
+                             r-gridextra
+                             r-ggplot2
+                             r-ggdist
+                             r-dplyr
+                             r-crayon
+                             r-checkmate))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://hugaped.github.io/MBNMAtime/")
+    (synopsis
+     "Run Time-Course Model-Based Network Meta-Analysis (MBNMA) Models")
+    (description
+     "Fits Bayesian time-course models for model-based network meta-analysis (MBNMA)
+that allows inclusion of multiple time-points from studies.  Repeated measures
+over time are accounted for within studies by applying different time-course
+functions, following the method of Pedder et al. (2019) <doi:10.1002/jrsm.1351>.
+ The method allows synthesis of studies with multiple follow-up measurements
+that can account for time-course for a single or multiple treatment comparisons.
+ Several general time-course functions are provided; others may be added by the
+user.  Various characteristics can be flexibly added to the models, such as
+correlation between time points and shared class effects.  The consistency of
+direct and indirect evidence in the network can be assessed using unrelated mean
+effects models and/or by node-splitting.")
+    (license license:gpl3)))
 
 (define-public r-mbmixture
   (package
