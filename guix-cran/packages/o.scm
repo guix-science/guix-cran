@@ -3425,6 +3425,49 @@ algorithm where the projection is calculated using a PAVA as well as Dykstra's
 cyclical projection algorithm.")
     (license license:gpl2+)))
 
+(define-public r-ordinalsimr
+  (package
+    (name "r-ordinalsimr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ordinalsimr" version))
+       (sha256
+        (base32 "0jdyyh7554kgpl5g34wifgimj36scvc7nzxrg9j3sksiwlsiib8x"))))
+    (properties `((upstream-name . "ordinalsimr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-shinywidgets
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-rms
+                             r-rlang
+                             r-rhandsontable
+                             r-magrittr
+                             r-golem
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-config
+                             r-coin
+                             r-bslib
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NeuroShepherd/ordinalsimr")
+    (synopsis "Compare Ordinal Endpoints Using Simulations")
+    (description
+     "Simultaneously evaluate multiple ordinal outcome measures.  Applied data
+analysts in particular are faced with uncertainty in choosing appropriate
+statistical tests for ordinal data.  The included shiny application allows users
+to simulate outcomes given different ordinal data distributions.")
+    (license license:expat)))
+
 (define-public r-ordinalrr
   (package
     (name "r-ordinalrr")

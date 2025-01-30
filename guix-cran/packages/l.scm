@@ -11434,6 +11434,31 @@ of Economic Entomology, Volume 93, Issue 2) <doi:10.1603/0022-0493-93.2.511>.")
 observations and create a report of the top sites to visit to see new species.")
     (license license:bsd-2)))
 
+(define-public r-lifepack
+  (package
+    (name "r-lifepack")
+    (version "0.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lifepack" version))
+       (sha256
+        (base32 "1h4zpkynbcisz83xl0m575wxnym5pl0gwy8lw1lj15zqkhbysd8r"))))
+    (properties `((upstream-name . "lifepack")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lifepack")
+    (synopsis "Insurance Reserve Calculations")
+    (description
+     "Calculates insurance reserves and equivalence premiums using advanced numerical
+methods, including the Runge-Kutta algorithm and product integrals for
+transition probabilities.  This package is useful for actuarial analyses and
+life insurance modeling, facilitating accurate financial projections.")
+    (license license:gpl3)))
+
 (define-public r-lifemapr
   (package
     (name "r-lifemapr")
@@ -16708,6 +16733,40 @@ automatically adjusts the bandwidth on a query-by-query basis through a
 leave-one-out cross-validation.")
     (license license:gpl2+)))
 
+(define-public r-layer
+  (package
+    (name "r-layer")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "layer" version))
+       (sha256
+        (base32 "06px61dffy95p7f09fpm5islibppv41hrb38wfg8rjvjqhgdk2yq"))))
+    (properties `((upstream-name . "layer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stars
+                             r-sf
+                             r-scico
+                             r-raster
+                             r-magrittr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-furrr
+                             r-dplyr))
+    (home-page "https://github.com/marcosci/layer")
+    (synopsis "Tilt your Maps and Turn Them into 'ggplot' Plots")
+    (description
+     "Simplifies the whole process of creating stacked tilted maps, that are often
+used in scientific publications to show different environmental layers for a
+geographical region.  Tilting maps and layering them allows to easily draw
+visual correlations between these environmental layers.")
+    (license license:cc0)))
+
 (define-public r-lay
   (package
     (name "r-lay")
@@ -18655,19 +18714,20 @@ on Torch'.")
 (define-public r-lama
   (package
     (name "r-lama")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LaMa" version))
        (sha256
-        (base32 "0hcmcal187azpz3hzhmr1damwyiqmn9aqa4mh100qq5cg7k9vwjw"))))
+        (base32 "0wxbld9hqwshlj7zgs9qxc2580g01mhk8bna8b81h21pb31758bx"))))
     (properties `((upstream-name . "LaMa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rtmb
+    (propagated-inputs (list r-sn
+                             r-rtmb
                              r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm

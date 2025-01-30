@@ -2145,13 +2145,13 @@ model under linear inequality constraints.")
 (define-public r-bsvarsigns
   (package
     (name "r-bsvarsigns")
-    (version "1.0.1")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsvarSIGNs" version))
        (sha256
-        (base32 "15kjmjzrn5vp9r35mjyh009v174jlz670kqchz6jhp7yqlxhnbqc"))))
+        (base32 "0m4n10ayl1c1cprvpdnpmv8rafs9rz00jlrpaccfbmv6c6dm2dhb"))))
     (properties `((upstream-name . "bsvarSIGNs")))
     (build-system r-build-system)
     (arguments
@@ -2159,7 +2159,8 @@ model under linear inequality constraints.")
       #:tests? #f))
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-r6
                              r-bsvars))
-    (home-page "https://bsvars.github.io/bsvarSIGNs/")
+    (native-inputs (list r-knitr))
+    (home-page "https://bsvars.org/bsvarSIGNs/")
     (synopsis "Bayesian SVARs with Sign, Zero, and Narrative Restrictions")
     (description
      "This package implements state-of-the-art algorithms for the Bayesian analysis of
@@ -2180,9 +2181,12 @@ and structural analyses using impulse responses, forecast error variance and
 historical decompositions, forecasting and conditional forecasting, as well as
 analyses of structural shocks and fitted values.  All this is complemented by
 colourful plots, user-friendly summary functions, and comprehensive
-documentation.  The @code{bsvarSIGNs} package is aligned regarding objects,
-workflows, and code structure with the R package bsvars by WoÅºniak (2024)
-<doi:10.32614/CRAN.package.bsvars>, and they constitute an integrated toolset.")
+documentation including the vignette by Wang & WoÅºniak (2024)
+<doi:10.48550/@code{arXiv.2501.16711>}.  The @code{bsvarSIGNs} package is
+aligned regarding objects, workflows, and code structure with the R package
+bsvars by WoÅºniak (2024) <doi:10.32614/CRAN.package.bsvars>, and they
+constitute an integrated toolset.  It was granted the Di Cook Open-Source
+Statistical Software Award by the Statistical Society of Australia in 2024.")
     (license license:gpl3+)))
 
 (define-public r-bsvars
@@ -7042,6 +7046,31 @@ unitary matrices, evaluation of matrix permanents (both real and complex) and
 evaluation of complex permanent minors.")
     (license license:gpl2)))
 
+(define-public r-bosfr
+  (package
+    (name "r-bosfr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bosfr" version))
+       (sha256
+        (base32 "134xrcri2bkxk78a2nj97jwy827g4ln7lvh7gjwccscrqbj3yzb1"))))
+    (properties `((upstream-name . "bosfr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-gtools))
+    (home-page "https://cran.r-project.org/package=bosfr")
+    (synopsis "Computes Exact Bounds of Spearman's Footrule with Missing Data")
+    (description
+     "Computes exact bounds of Spearman's footrule in the presence of missing data,
+and performs independence test based on the bounds with controlled Type I error
+regardless of the values of missing data.  Suitable only for distinct,
+univariate data where no ties is allowed.")
+    (license license:gpl3)))
+
 (define-public r-borrowr
   (package
     (name "r-borrowr")
@@ -11289,13 +11318,13 @@ randomization method for assessing sources of model error.")
 (define-public r-blend
   (package
     (name "r-blend")
-    (version "0.1.1")
+    (version "0.1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Blend" version))
        (sha256
-        (base32 "1vg14321yx2002j148yyz7mf8dl2rc7cr4j1jacqn836xm7myz8c"))))
+        (base32 "0ysk1nkqsqbj4g9zznwgpghb2dbknjy7sqfhyq87rn2sh9drxa89"))))
     (properties `((upstream-name . "Blend")))
     (build-system r-build-system)
     (arguments
@@ -27330,6 +27359,33 @@ distributions, from a Bayesian perspective.  Also, generates SMSN random
 variables.")
     (license license:gpl3)))
 
+(define-public r-bayescpclust
+  (package
+    (name "r-bayescpclust")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesCPclust" version))
+       (sha256
+        (base32 "0nd9nnnn71mmfrw4qvhl1gca75r8s712l9hp6rglps3g752asgsn"))))
+    (properties `((upstream-name . "BayesCPclust")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppalgos r-extradistr))
+    (home-page "https://cran.r-project.org/package=BayesCPclust")
+    (synopsis
+     "Bayesian Approach for Clustering Constant-Wise Change-Point Data")
+    (description
+     "This package provides a Gibbs sampler algorithm was developed to estimate change
+points in constant-wise data sequences while performing clustering
+simultaneously.  The algorithm is described in da Cruz, A. C. and de Souza, C.
+P. E \"A Bayesian Approach for Clustering Constant-wise Change-point Data\"
+<doi:10.48550/@code{arXiv.2305.17631>}.")
+    (license license:expat)))
+
 (define-public r-bayescount
   (package
     (name "r-bayescount")
@@ -29114,13 +29170,13 @@ sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
 (define-public r-basefun
   (package
     (name "r-basefun")
-    (version "1.2-1")
+    (version "1.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basefun" version))
        (sha256
-        (base32 "0qdkby652lj7k9bm86djw7jzhbwnijyd2097c683bdk24jg0qh7h"))))
+        (base32 "136yl6mznl1qh8pcfyhzrlnh5bns5wkpkizjf11y5bla4lrbkn4q"))))
     (properties `((upstream-name . "basefun")))
     (build-system r-build-system)
     (arguments

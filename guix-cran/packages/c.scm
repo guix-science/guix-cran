@@ -7533,29 +7533,6 @@ framework with empiric link function is described in: Wages and Conaway (2014)
 <doi:10.1002/sim.6097>.")
     (license license:gpl3+)))
 
-(define-public r-crm
-  (package
-    (name "r-crm")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CRM" version))
-       (sha256
-        (base32 "0jv2z1y3zyj1m86p4pmqww58hj8pvid1ss6ym67y46n9srzxsmj5"))))
-    (properties `((upstream-name . "CRM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=CRM")
-    (synopsis
-     "Continual Reassessment Method (CRM) for Phase I Clinical Trials")
-    (description
-     "This package provides functions for phase I clinical trials using the continual
-reassessment method.")
-    (license license:gpl2+)))
-
 (define-public r-critpath
   (package
     (name "r-critpath")
@@ -26166,19 +26143,19 @@ repository, as it is a part of RKWard.")
 (define-public r-cocoon
   (package
     (name "r-cocoon")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocoon" version))
        (sha256
-        (base32 "0dmpvdflwns02mf499nxsqraygbaxhgjp6b1kqylrf7vf3is8hzi"))))
+        (base32 "0b80g616vs8h9gkay7gym6iyvml56xgy9zclfyjjkb8fs9p3f8ll"))))
     (properties `((upstream-name . "cocoon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lifecycle r-dplyr))
+    (propagated-inputs (list r-rlang r-lifecycle r-dplyr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JeffreyRStevens/cocoon")
     (synopsis "Extract, Format, and Print Statistical Output")

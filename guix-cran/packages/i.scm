@@ -19,6 +19,7 @@
   #:use-module (gnu packages image)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages xorg)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -14715,13 +14716,13 @@ and recoding data.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ijtiff" version))
        (sha256
-        (base32 "1abidy6fvz0qzxicviggkpvcq434cpbz4rm8nbxbfmyj3ndbadv9"))))
+        (base32 "1jj8d3rm37413w31r7i1476947g987i7mh7caqq7x623j1zyhwfl"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (arguments
@@ -14729,13 +14730,15 @@ and recoding data.")
       #:tests? #f))
     (inputs (list zlib
                   zlib
+                  libx11
                   zstd
                   libwebp
                   libtiff
                   xz
                   libjpeg-turbo
                   libdeflate
-                  bzip2))
+                  bzip2
+                  fftw))
     (propagated-inputs (list r-zeallot
                              r-withr
                              r-stringr
@@ -14744,6 +14747,7 @@ and recoding data.")
                              r-readr
                              r-purrr
                              r-magrittr
+                             r-imager
                              r-fs
                              r-dplyr
                              r-cli

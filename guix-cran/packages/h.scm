@@ -7916,13 +7916,13 @@ syntax.")
 (define-public r-higarrote
   (package
     (name "r-higarrote")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiGarrote" version))
        (sha256
-        (base32 "0v7dd9sd9dkqylb53vx5f0npwpcyh0fd9b39havn99l1bzyl1cx5"))))
+        (base32 "0l58gck9s4pazb4djni9nfjq4ns302zmx9405w7pnrmwrc00mzw2"))))
     (properties `((upstream-name . "HiGarrote")))
     (build-system r-build-system)
     (arguments

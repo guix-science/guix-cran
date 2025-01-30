@@ -6224,13 +6224,13 @@ Ralston and Philip Rabinowitz (2001) <ISBN:9780486414546>.")
 (define-public r-greenfeedr
   (package
     (name "r-greenfeedr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenfeedr" version))
        (sha256
-        (base32 "075kv3ir9pffsx6asxq73laniyx2rz02i4rd73x5vv4sy64vrvb1"))))
+        (base32 "1ai91102d63lvcdjgl5br8vigfni07pp90b9k4f391sr17nljlqf"))))
     (properties `((upstream-name . "greenfeedr")))
     (build-system r-build-system)
     (arguments
@@ -26010,13 +26010,13 @@ performing high dimensional Bayesian variable selection.")
 (define-public r-geometa
   (package
     (name "r-geometa")
-    (version "0.8-0")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geometa" version))
        (sha256
-        (base32 "14f1g5ijm2hv0cncrddfr8fca9517g0dyrkfgc0k1v301nhlvcn4"))))
+        (base32 "1qxdq6s0w9fc6q100j4hvrvgdrmvqlypf48l27ckzl4jvpv6zpcj"))))
     (properties `((upstream-name . "geometa")))
     (build-system r-build-system)
     (arguments
@@ -26034,12 +26034,12 @@ performing high dimensional Bayesian variable selection.")
     (description
      "This package provides facilities to read, write and validate geographic metadata
 defined with ISO TC211 / OGC ISO geographic information metadata standards, and
-encoded using the ISO 19139 (XML) standard technical specification.  This
-includes ISO 19110 (Feature cataloguing), 19115 (dataset metadata), 19119
-(service metadata) and 19136 (GML).  Other interoperable schemas from the OGC
-are progressively supported as well, such as the Sensor Web Enablement (SWE)
-Common Data Model, the OGC GML Coverage Implementation Schema (GMLCOV), or the
-OGC GML Referenceable Grid (GMLRGRID).")
+encoded using the ISO 19139 and ISO 19115-3 (XML) standard technical
+specifications.  This includes ISO 19110 (Feature cataloguing), 19115 (dataset
+metadata), 19119 (service metadata) and 19136 (GML).  Other interoperable
+schemas from the OGC are progressively supported as well, such as the Sensor Web
+Enablement (SWE) Common Data Model, the OGC GML Coverage Implementation Schema
+(GMLCOV), or the OGC GML Referenceable Grid (GMLRGRID).")
     (license license:expat)))
 
 (define-public r-geomerge
@@ -29094,13 +29094,13 @@ Bevilacqua and Reinhard Furrer and Tarik Faouzi and Emilio Porcu (2019)
 (define-public r-generalizedumatrix
   (package
     (name "r-generalizedumatrix")
-    (version "1.2.6")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneralizedUmatrix" version))
        (sha256
-        (base32 "1mzxszsk2mzswndrq0j125l1b5qdmjryg2swb7f2mnipa5k3mqbm"))))
+        (base32 "1sysq3srdrnm5p2qp988hg5kavv1czmqsx0p4z3aagqi4bsl9rm0"))))
     (properties `((upstream-name . "GeneralizedUmatrix")))
     (build-system r-build-system)
     (arguments
@@ -33397,13 +33397,13 @@ tradeoff between speed and quality of the solution.")
 (define-public r-gasanalyzer
   (package
     (name "r-gasanalyzer")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasanalyzer" version))
        (sha256
-        (base32 "0ca6ywbsqxj84agbmk3azlc5jwb48hk7wci61j7wp2id5gmh3d11"))))
+        (base32 "0nmzmyf8iv4i4lp4s3czhbh9saczmv9my2dkin8g4nbspx6akhyr"))))
     (properties `((upstream-name . "gasanalyzer")))
     (build-system r-build-system)
     (arguments
@@ -33415,6 +33415,7 @@ tradeoff between speed and quality of the solution.")
                              r-tidyxl
                              r-tibble
                              r-stringi
+                             r-nleqslv
                              r-jsonify))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/plantphys/gasanalyzer")

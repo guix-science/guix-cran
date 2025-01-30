@@ -4520,13 +4520,13 @@ constraints in the same model.")
 (define-public r-survivalsl
   (package
     (name "r-survivalsl")
-    (version "0.96")
+    (version "0.97")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalSL" version))
        (sha256
-        (base32 "0mjaklq2zkz35z4y1w11yv5pc520a3xkinrynkkmrpdmvhlwjsk9"))))
+        (base32 "1dqabpy96y6i4jmkbf66x22ypc0qlf8a1fxdfpinbjvr499l57d4"))))
     (properties `((upstream-name . "survivalSL")))
     (build-system r-build-system)
     (arguments
@@ -21163,13 +21163,13 @@ to simulate spreading activation in a network.  Behavior Research Methods, 51,
 (define-public r-spray
   (package
     (name "r-spray")
-    (version "1.0-26")
+    (version "1.0-27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spray" version))
        (sha256
-        (base32 "05vq5hy2k5c1pa9nwnklyqwaxxwbhck9wsc5lngkk0xdy35sfqsg"))))
+        (base32 "0980zmwjgzs3q7xg2smprsp01ia8xfsj2q86xdzy63jdj1nk28vs"))))
     (properties `((upstream-name . "spray")))
     (build-system r-build-system)
     (arguments
@@ -28660,6 +28660,38 @@ Signal Processing, vol.  66, no.  1, pp.  155-170, Jan.  2018.
 <doi:10.1109/TSP.2017.2762286>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-sparseica
+  (package
+    (name "r-sparseica")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SparseICA" version))
+       (sha256
+        (base32 "1ji8vhh3kyxz531p7lv05804yzndy5yg94v8j7szcjdcbd9d2844"))))
+    (properties `((upstream-name . "SparseICA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-irlba
+                             r-clue
+                             r-ciftitools))
+    (home-page "https://github.com/thebrisklab/SparseICA")
+    (synopsis "Sparse Independent Component Analysis")
+    (description
+     "This package provides an implementation of the Sparse ICA method in Wang et al.
+(2024) <doi:10.1080/01621459.2024.2370593> for estimating sparse independent
+source components of cortical surface functional MRI data, by addressing a
+non-smooth, non-convex optimization problem through the relax-and-split
+framework.  This method effectively balances statistical independence and
+sparsity while maintaining computational efficiency.")
+    (license license:gpl3)))
 
 (define-public r-sparsehessianfd
   (package
@@ -36520,6 +36552,38 @@ the Foundation @code{SmarterPoland.pl}.  Among all: access to API of Google
 Maps, Central Statistical Office of Poland, @code{MojePanstwo}, Eurostat, WHO
 and other sources.")
     (license license:gpl3)))
+
+(define-public r-smarter
+  (package
+    (name "r-smarter")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smarter" version))
+       (sha256
+        (base32 "08mbi73lwz31kjsjbhc515f1njj2gh30726hp53wjaac4577hyxv"))))
+    (properties `((upstream-name . "smarter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-usethis
+                             r-rmarkdown
+                             r-rcurl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-gplots
+                             r-devtools))
+    (home-page "https://cran.r-project.org/package=smarter")
+    (synopsis
+     "Collection of Modified R Functions to Make Basic Coding More Convenient")
+    (description
+     "This package provides a collection of recycled and modified R functions to aid
+in file manipulation, data exploration, wrangling, optimization, and object
+manipulation.  Other functions aid in convenient data visualization, loop
+progression, software packaging, and installation.")
+    (license license:gpl3+)))
 
 (define-public r-smarteda
   (package
@@ -47508,13 +47572,13 @@ Powered by the html2canvas @code{JavaScript} library.")
 (define-public r-shinyscholar
   (package
     (name "r-shinyscholar")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyscholar" version))
        (sha256
-        (base32 "090yvfvzwivjka540jd6ch6b8kaq01qwsvqrylmks38xrciqvjnc"))))
+        (base32 "17si3a5wilcry1lsfayvyyy3a354x584plv2qqgv2isly1lk89gq"))))
     (properties `((upstream-name . "shinyscholar")))
     (build-system r-build-system)
     (arguments
@@ -49641,6 +49705,48 @@ instant filtering feedback with filter feedback plots.  The GUI panel is not
 only compatible with native shiny bookmarking, but also provides reproducible R
 code.")
     (license license:expat)))
+
+(define-public r-shinyclt
+  (package
+    (name "r-shinyclt")
+    (version "0.9.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyCLT" version))
+       (sha256
+        (base32 "1k075xqwby3k14njwhjxhb604q4xr7zqjji08dkc30876f80blrd"))))
+    (properties `((upstream-name . "shinyCLT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-waiter
+                             r-testthat
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinycssloaders
+                             r-shiny
+                             r-purrr
+                             r-plotly
+                             r-knitr
+                             r-gamlss
+                             r-future
+                             r-dplyr
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=shinyCLT")
+    (synopsis "Central Limit Theorem 'shiny' Application")
+    (description
+     "This package provides a shiny application estimating the operating
+characteristics of the Student's t-test by Student (1908)
+<doi:10.1093/biomet/6.1.1>, Welch's t-test by Welch (1947)
+<doi:10.1093/biomet/34.1-2.28>, and Wilcoxon test by Wilcoxon (1945)
+<doi:10.2307/3001968> in one-sample or two-sample cases, in settings defined by
+the user (conditional distribution, sample size per group, location parameter
+per group, nuisance parameter per group), using Monte Carlo simulations Malvin
+H. Kalos, Paula A. Whitlock (2008) <doi:10.1002/9783527626212>.")
+    (license license:gpl2)))
 
 (define-public r-shinychatr
   (package
@@ -57026,13 +57132,13 @@ with as few dependencies as possible.")
 (define-public r-semgraph
   (package
     (name "r-semgraph")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEMgraph" version))
        (sha256
-        (base32 "08lka7zv3w8m4l855whcjwijqyhv7x45m6bcqaivbw5clxhidmgw"))))
+        (base32 "12qrkdm7yndfszplwnfgr7ab74xmva293y5sy8yvvggsnpljfhal"))))
     (properties `((upstream-name . "SEMgraph")))
     (build-system r-build-system)
     (arguments
@@ -57061,10 +57167,10 @@ with as few dependencies as possible.")
      "Network Analysis and Causal Inference Through Structural Equation Modeling")
     (description
      "Estimate networks and causal relationships in complex systems through Structural
-Equation Modeling.  This package also includes functions to import, weight,
+Equation Modeling.  This package also includes functions for importing, weight,
 manipulate, and fit biological network models within the Structural Equation
-Modeling framework proposed in Grassi M, Palluzzi F, Tarantino B (2022)
-<doi:10.1093/bioinformatics/btac567>.")
+Modeling framework as outlined in the Supplementary Material of Grassi M,
+Palluzzi F, Tarantino B (2022) <doi:10.1093/bioinformatics/btac567>.")
     (license license:gpl3)))
 
 (define-public r-semgram

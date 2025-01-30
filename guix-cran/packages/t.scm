@@ -5822,13 +5822,13 @@ randomized clinical trials.")
 (define-public r-trtf
   (package
     (name "r-trtf")
-    (version "0.4-2")
+    (version "0.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtf" version))
        (sha256
-        (base32 "15aalp82igw23rlk36dqqkcnmcy8q869wjbr7ak19gygy8p525wn"))))
+        (base32 "0cl4jfczy79y0f88yyi0wr99avxdvh1mzjj12cx85y9n6li2nq7c"))))
     (properties `((upstream-name . "trtf")))
     (build-system r-build-system)
     (arguments
@@ -11865,13 +11865,13 @@ bounds in raw scale units or in terms of effect sizes.  See: Lakens (2017)
 (define-public r-tosr
   (package
     (name "r-tosr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tosr" version))
        (sha256
-        (base32 "1ab1jh60dp2b8vnd2vvva6w5rsidyavp8i9gsbwcqr5rmnmxg67q"))))
+        (base32 "0ckv23q4hgk97666akmhdbxac9albdln0vvryf1xl8fv7dwi3w2a"))))
     (properties `((upstream-name . "tosr")))
     (build-system r-build-system)
     (arguments
@@ -22919,6 +22919,31 @@ Features include code co-occurrence analysis, visualization of coding patterns,
 comparison of multiple coding sets, and export capabilities.  Supports
 collaborative qualitative research through standardized annotation formats and
 analysis tools.")
+    (license license:gpl3)))
+
+(define-public r-textanalyzer
+  (package
+    (name "r-textanalyzer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "textanalyzer" version))
+       (sha256
+        (base32 "0jpvbhjrck5ahachmq9v17vyn3n6i7ihhlfhd2067gpk048438s5"))))
+    (properties `((upstream-name . "textanalyzer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidytext r-tidyr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=textanalyzer")
+    (synopsis "'textanalyzer', an R Package to Analyze Text")
+    (description
+     "It analyzes text to create a count of top n-grams, including tokens (one-word),
+bigrams(two-word), and trigrams (three-word), while removing all stopwords.  It
+also plots the n-grams and corresponding counts as a bar chart.")
     (license license:gpl3)))
 
 (define-public r-textab

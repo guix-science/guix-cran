@@ -3047,32 +3047,30 @@ Journal of Fisheries and Aquatic Sciences: <doi:10.1139/cjfas-2018-0016>.")
 (define-public r-rtypeform
   (package
     (name "r-rtypeform")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtypeform" version))
        (sha256
-        (base32 "02qnsw2nd3fnyr0gbmx3690b78k899dxf04g4bqpjlg9y38g1cnr"))))
+        (base32 "1kc1ggag4ga4vkmfh2r2h0asrvxm4vxdzkgqnx15wjchxr1azn7y"))))
     (properties `((upstream-name . "rtypeform")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-rlang
                              r-purrr
                              r-lubridate
                              r-jsonlite
                              r-httr
                              r-glue
-                             r-dplyr
-                             r-assertthat))
+                             r-dplyr))
     (home-page "https://github.com/csgillespie/rtypeform")
     (synopsis "Interface to 'typeform' Results")
     (description
-     "An R interface to the typeform <https://typeform.com> application program
+     "An R interface to the typeform <https://www.typeform.com/> application program
 interface.  Also provides functions for downloading your results.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -33253,6 +33251,32 @@ provided by the GDAL library, a limitation which users of this package should be
 aware of.) The PROJ library is available at <https://proj.org/>.")
     (license license:gpl3)))
 
+(define-public r-reproduciblerchunks
+  (package
+    (name "r-reproduciblerchunks")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reproducibleRchunks" version))
+       (sha256
+        (base32 "1lcbs67z7d33xj4ds68sdmkzx6n9av72fdhcmlgz7491iqc247sq"))))
+    (properties `((upstream-name . "reproducibleRchunks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstudioapi r-knitr r-jsonlite r-digest))
+    (home-page "https://cran.r-project.org/package=reproducibleRchunks")
+    (synopsis "Automated Reproducibility Checks for R Markdown Documents")
+    (description
+     "Provide reproducible R chunks in R Markdown document that automatically check
+computational results for reproducibility.  This is achieved by creating json
+files storing metadata about computational results.  A comprehensive tutorial to
+the package is available as preprint by Brandmaier & Peikert (2024,
+<doi:10.31234/osf.io/3zjvf>).")
+    (license license:expat)))
+
 (define-public r-reproducible
   (package
     (name "r-reproducible")
@@ -34661,13 +34685,13 @@ volatility, and maximum drawdown, to assess the results.")
 (define-public r-remstimate
   (package
     (name "r-remstimate")
-    (version "2.3.11")
+    (version "2.3.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remstimate" version))
        (sha256
-        (base32 "0sa1fxpy9cpfxkm9pkb7kq6qbkv9bvq900j2182yrsx4g02sxa41"))))
+        (base32 "139hcqgjpn307j7xy1rmwhh2hzaqnq92f2srp6bs1wvl815nlrlj"))))
     (properties `((upstream-name . "remstimate")))
     (build-system r-build-system)
     (arguments
@@ -34701,13 +34725,13 @@ their analytical preferences.")
 (define-public r-remstats
   (package
     (name "r-remstats")
-    (version "3.2.2")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remstats" version))
        (sha256
-        (base32 "0ismgr1kj35hgaiam0xs03y28jmxl030l3xb46c45cdg44avhhdk"))))
+        (base32 "0c52xxsxl6b23962zd7dhlcjmslpn8wifknlvdnsg33v9d8vv1w2"))))
     (properties `((upstream-name . "remstats")))
     (build-system r-build-system)
     (arguments
@@ -35034,13 +35058,13 @@ things.")
 (define-public r-remify
   (package
     (name "r-remify")
-    (version "3.2.6")
+    (version "3.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remify" version))
        (sha256
-        (base32 "062bgggz4bkzm3ijpghsrlf9q813zmzisxdwgzlizpqhzppwvzig"))))
+        (base32 "07096b4isd9dniwb03a9pvm8xfpxrlvvkhh4cbjrml2vnr2871xp"))))
     (properties `((upstream-name . "remify")))
     (build-system r-build-system)
     (arguments
@@ -35048,7 +35072,7 @@ things.")
       #:tests? #f))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/TilburgNetworkGroup/remify")
+    (home-page "https://tilburgnetworkgroup.github.io/remify/")
     (synopsis "Processing and Transforming Relational Event History Data")
     (description
      "Efficiently processes relational event history data and transforms them into
@@ -38490,13 +38514,13 @@ or settings within REDCap, such as importing or exporting data.")
 (define-public r-redcapcast
   (package
     (name "r-redcapcast")
-    (version "24.12.1")
+    (version "25.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapCAST" version))
        (sha256
-        (base32 "107bwfv288qpc3bfr3bcsmqxbs9771jrjid4b7yydsv15vxd2q96"))))
+        (base32 "0xpjbzmn8vmg9wpk6q60njh0kw35f1mk0wbwyzxfxgc3c7158pm9"))))
     (properties `((upstream-name . "REDCapCAST")))
     (build-system r-build-system)
     (arguments
@@ -42259,6 +42283,41 @@ Vazquez-Bare (2016)
 for further methodological details.")
     (license license:gpl2)))
 
+(define-public r-rdlearn
+  (package
+    (name "r-rdlearn")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdlearn" version))
+       (sha256
+        (base32 "1ifvcmk2j3whiz3v2f3zc7lnifqjj44hpbx9iz6g9jx0j961jib1"))))
+    (properties `((upstream-name . "rdlearn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdrobust
+                             r-nprobust
+                             r-nnet
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kkawato/rdlearn")
+    (synopsis
+     "Safe Policy Learning under Regression Discontinuity Design with Multiple Cutoffs")
+    (description
+     "This package implements safe policy learning under regression discontinuity
+designs with multiple cutoffs, based on Zhang et al. (2022)
+<doi:10.48550/@code{arXiv.2208.13323>}.  The learned cutoffs are guaranteed to
+perform no worse than the existing cutoffs in terms of overall outcomes.  The
+rdlearn package also includes features for visualizing the learned cutoffs
+relative to the baseline and conducting sensitivity analyses.")
+    (license license:expat)))
+
 (define-public r-rdiversity
   (package
     (name "r-rdiversity")
@@ -42464,13 +42523,13 @@ for Guardian articles and retrieve both the content and metadata.")
 (define-public r-rdiagnosislist
   (package
     (name "r-rdiagnosislist")
-    (version "1.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdiagnosislist" version))
        (sha256
-        (base32 "1b4gj0m5m3av6p16dys69sb2cw679js9y2vwxrylif8z90p8mssh"))))
+        (base32 "0r93k390ysdx3ysrni0rgj176i5p549x71nxl9nqlrb7ag3gz2gp"))))
     (properties `((upstream-name . "Rdiagnosislist")))
     (build-system r-build-system)
     (arguments
@@ -42487,8 +42546,9 @@ convenient R environment, selecting SNOMED CT concepts using regular
 expressions, and navigating the SNOMED CT ontology.  It provides the
 SNOMEDconcept S3 class for a vector of SNOMED CT concepts (stored as 64-bit
 integers) and the SNOMEDcodelist S3 class for a table of concepts IDs with
-descriptions.  For more information about SNOMED CT visit
-<https://www.snomed.org/>.")
+descriptions.  The package can be used to construct sets of SNOMED CT concepts
+for research (<doi:10.1093/jamia/ocac158>).  For more information about SNOMED
+CT visit <https://www.snomed.org/>.")
     (license license:gpl3)))
 
 (define-public r-rdi
@@ -44016,13 +44076,13 @@ summary statistics) are automatically passed back to R as a data frame.")
 (define-public r-rcppstreams
   (package
     (name "r-rcppstreams")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppStreams" version))
        (sha256
-        (base32 "06il7q3afaws57m0fxf04f2p5dvs23l1f7gl78pxwzclacdy3839"))))
+        (base32 "0y1jpnqa8hgy25aij2ps1g1s2d9vgnarp1qw6650q81bfjhx85q7"))))
     (properties `((upstream-name . "RcppStreams")))
     (build-system r-build-system)
     (arguments
@@ -54272,6 +54332,31 @@ anti-ideal value, and the extent to which the anti-ideal value is considered
 worse.  The function standardizes the decision matrix, normalizes the data,
 applies weights, and returns the final sorted rankings.")
     (license license:gpl3+)))
+
+(define-public r-rafs
+  (package
+    (name "r-rafs")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RAFS" version))
+       (sha256
+        (base32 "0hmx9h9nnrb4lc3m6zq31x59khjl2mfy3czj3bb651xryglg7wpc"))))
+    (properties `((upstream-name . "RAFS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splittools r-mdfs r-fastcluster))
+    (home-page "https://www.mdfs.it/")
+    (synopsis "Robust Aggregative Feature Selection")
+    (description
+     "This package provides a cross-validated minimal-optimal feature selection
+algorithm.  It utilises popularity counting, hierarchical clustering with
+feature dissimilarity measures, and prefiltering with all-relevant feature
+selection method to obtain the minimal-optimal set of features.")
+    (license license:gpl3)))
 
 (define-public r-raem
   (package

@@ -2355,13 +2355,13 @@ grant tour method and other useful functions for the multivariate analysis.")
 (define-public r-mva
   (package
     (name "r-mva")
-    (version "1.0-8")
+    (version "1.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVA" version))
        (sha256
-        (base32 "1xd75qah05jrljl72gr8xzhfj43mnf821jnjv38gflavkvyn89mv"))))
+        (base32 "10il84lxl3mygi5mkrsbnk8x6xhcc1n5x0k37cpxq9p5kf2ymbr2"))))
     (properties `((upstream-name . "MVA")))
     (build-system r-build-system)
     (arguments
@@ -3026,13 +3026,13 @@ using latent effects based on the Chib and Winkelmann (2001)
 (define-public r-multpois
   (package
     (name "r-multpois")
-    (version "0.2.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multpois" version))
        (sha256
-        (base32 "0yk8c7qndsl45bfckk7ljqmky5yzd0p2kiaxz99c7np29v8hvrp1"))))
+        (base32 "1k7x1cni6dn0y0ar3vy23kwn13divbd7bmpgbh5iw1h5zv8y4qv2"))))
     (properties `((upstream-name . "multpois")))
     (build-system r-build-system)
     (arguments
@@ -19810,13 +19810,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.6-1")
+    (version "1.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "0zkvacasi4alqi1ag2dsppi5qj7a6ljv5nrldzgy0lb0gixw8j2r"))))
+        (base32 "1xwbf4yfhq2ql4cml1w633scvgy5wh6r78kgclkdn5f31xb07mi5"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -19825,6 +19825,7 @@ mlt.")
     (propagated-inputs (list r-variables
                              r-survival
                              r-sandwich
+                             r-quadprog
                              r-numderiv
                              r-nloptr
                              r-mvtnorm
@@ -24029,13 +24030,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.4")
+    (version "0.1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "0l50jmivqc7gfd4y3466203pnrmf81yz75wvnwyjq89xvr55fc92"))))
+        (base32 "1fhsdyl6dsgx6dy41xfdp8gnyajjmc4hy0rcik6rsz3s9xpamqz4"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -24050,7 +24051,7 @@ leading to correlations among the repeated measurements.  Properly accounting
 for the intra-cluster correlations in the presence of data heterogeneity and
 long tailed distributions of the disease phenotype is challenging, especially in
 the context of high dimensional regressions.  In this package, we developed a
-Bayesian quantile mixed effects model with spike- and -slab priors dissect
+Bayesian quantile mixed effects model with spike- and -slab priors to dissect
 important gene - environment interactions under longitudinal genomics studies.
 An efficient Gibbs sampler has been developed to facilitate fast computation.
 The Markov chain Monte Carlo algorithms of the proposed and alternative methods
@@ -25464,13 +25465,13 @@ default values for important parameters.")
 (define-public r-miscmetabar
   (package
     (name "r-miscmetabar")
-    (version "0.10.1")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiscMetabar" version))
        (sha256
-        (base32 "0x00g5yyl4w4dj8wsdba7s9jr03makxrbl3wywvjwh3qaa3lv5v7"))))
+        (base32 "0xpsvmma0csqwvsgymn7hrykx4825ff8hd1q17v4i2pcwb6kdxdy"))))
     (properties `((upstream-name . "MiscMetabar")))
     (build-system r-build-system)
     (arguments
@@ -37002,6 +37003,40 @@ W.-M., Zhang B. (2015) Multiscale Embedded Gene Co-expression Network Analysis.
 P@code{LoS} Comput Biol 11(11): e1004574. <doi: 10.1371/journal.pcbi.1004574>.")
     (license license:gpl3+)))
 
+(define-public r-megb
+  (package
+    (name "r-megb")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MEGB" version))
+       (sha256
+        (base32 "0dz0wb6mifv9zz643njwy3ll93djq04qw0mgsi4pd6wphl28sa26"))))
+    (properties `((upstream-name . "MEGB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-latex2exp r-gbm))
+    (home-page "https://cran.r-project.org/package=MEGB")
+    (synopsis "Gradient Boosting for Longitudinal Data")
+    (description
+     "Gradient boosting is a powerful statistical learning method known for its
+ability to model complex relationships between predictors and outcomes while
+performing inherent variable selection.  However, traditional gradient boosting
+methods lack flexibility in handling longitudinal data where within-subject
+correlations play a critical role.  In this package, we propose a novel approach
+Mixed Effect Gradient Boosting ('MEGB'), designed specifically for
+high-dimensional longitudinal data.  MEGB incorporates a flexible
+semi-parametric model that embeds random effects within the gradient boosting
+framework, allowing it to account for within-individual covariance over time.
+Additionally, the method efficiently handles scenarios where the number of
+predictors greatly exceeds the number of observations (p>>n) making it
+particularly suitable for genomics data and other large-scale biomedical
+studies.")
+    (license license:gpl2)))
+
 (define-public r-mega2r
   (package
     (name "r-mega2r")
@@ -43446,6 +43481,35 @@ metrics implemented in this package refer to Khamis, H. J., & Roche, A. F.
 <https://pubmed.ncbi.nlm.nih.gov/11932580/> and Cumming, Sean P. et al., (2017)
 <doi:10.1519/SSC.0000000000000281>.")
     (license license:expat)))
+
+(define-public r-mattransmix
+  (package
+    (name "r-mattransmix")
+    (version "0.1.18")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MatTransMix" version))
+       (sha256
+        (base32 "128l9aqjas3mz7qpq3dqai98mgq4vaidmqmzxrlg51zwfiq4mh5c"))))
+    (properties `((upstream-name . "MatTransMix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm))
+    (home-page "https://cran.r-project.org/package=MatTransMix")
+    (synopsis
+     "Clustering with Matrix Gaussian and Matrix Transformation Mixture Models")
+    (description
+     "This package provides matrix Gaussian mixture models, matrix transformation
+mixture models and their model-based clustering results.  The parsimonious
+models of the mean matrices and variance covariance matrices are implemented
+with a total of 196 variations.  For more information, please check: Xuwen Zhu,
+Shuchismita Sarkar, and Volodymyr Melnykov (2021), \"@code{MatTransMix}: an R
+package for matrix model-based clustering and parsimonious mixture modeling\",
+<doi:10.1007/s00357-021-09401-9>.")
+    (license license:gpl2+)))
 
 (define-public r-matskew
   (package

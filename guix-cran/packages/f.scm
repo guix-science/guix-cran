@@ -16308,13 +16308,13 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTAutils" version))
        (sha256
-        (base32 "11ny9cpgbw3lz98hxxsvsjfjxq0y1h8wlv53afwaxwrayckiv981"))))
+        (base32 "19m6w953m8y5h7bikdym6z4a0mimgrlv3wls1zs1fbmlvdj5rgkz"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (arguments

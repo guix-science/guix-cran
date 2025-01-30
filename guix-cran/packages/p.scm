@@ -5567,13 +5567,13 @@ run the reverse-dependency tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prqlr" version))
        (sha256
-        (base32 "05k2wj5dyqrbscc3dg1400i5zg0fvx1hgxq9djm9wiskmha2scj5"))))
+        (base32 "09x4cwwfzlcqd8v4m4ah1vzbh8a540a4w4c0s2ip63s9f68d7plh"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (arguments
@@ -16719,6 +16719,43 @@ based on Hyndman, R J and Mesgaran, M B and Cousens, R D (2015)
     (synopsis "Models for Simulating Populations")
     (description
      "Run population simulations using an Individual-Based Model (IBM) compiled in C.")
+    (license license:gpl3)))
+
+(define-public r-populater
+  (package
+    (name "r-populater")
+    (version "1.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PopulateR" version))
+       (sha256
+        (base32 "0vcm54v5l63slpjfq9pmipkb3fwsaxmmarvrzbfp7yi97ns0w79y"))))
+    (properties `((upstream-name . "PopulateR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyselect
+                             r-tidyr
+                             r-sn
+                             r-rlang
+                             r-plyr
+                             r-pearsonds
+                             r-magrittr
+                             r-igraph
+                             r-dplyr
+                             r-data-table
+                             r-braingraph))
+    (home-page "https://github.com/programgirl/PopulateR")
+    (synopsis
+     "Create Data Frames for the Micro-Simulation of Human Populations")
+    (description
+     "This package provides tools for constructing detailed synthetic human
+populations from frequency tables.  Add ages based on age groups and sex, create
+households, add students to education facilities, create employers, add
+employers to employees, and create interpersonal networks.")
     (license license:gpl3)))
 
 (define-public r-poptrend
@@ -29078,13 +29115,13 @@ module for calculating the Phoenix pediatric sepsis score and criteria\" by
 (define-public r-phoenics
   (package
     (name "r-phoenics")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phoenics" version))
        (sha256
-        (base32 "178bw6fbgdsbm2b6l1dikyj5vfvp5h3gd26zrqnz50zp83v366k9"))))
+        (base32 "0pjlsbbwdfwac5609wwqwxnmfq842abzw0chbdwbbmn2nfdww3w8"))))
     (properties `((upstream-name . "phoenics")))
     (build-system r-build-system)
     (arguments
@@ -29096,6 +29133,7 @@ module for calculating the Phoenix pediatric sepsis score and criteria\" by
                              r-factominer
                              r-factoextra
                              r-blme))
+    (native-inputs (list r-knitr))
     (home-page "https://forgemia.inra.fr/panoramics/phoenics")
     (synopsis
      "Pathways Longitudinal and Differential Analysis in Metabolomics")
@@ -42245,13 +42283,13 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
 (define-public r-pamscapes
   (package
     (name "r-pamscapes")
-    (version "0.7.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMscapes" version))
        (sha256
-        (base32 "1wk827dlpp4266mpvm7zhw94dxmm95xam4xx8znp7ricsr0fz1x3"))))
+        (base32 "1vjzzhp8pzgclpmf8hrnn4n4flfhgrdnz10fyydh72lyzcz4dib5"))))
     (properties `((upstream-name . "PAMscapes")))
     (build-system r-build-system)
     (arguments
@@ -42270,6 +42308,7 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
                              r-httr
                              r-ggplot2
                              r-geosphere
+                             r-future-apply
                              r-dplyr
                              r-data-table))
     (home-page "https://cran.r-project.org/package=PAMscapes")

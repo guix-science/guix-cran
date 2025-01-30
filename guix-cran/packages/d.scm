@@ -21101,6 +21101,46 @@ multivariate generalization of QQ-plots).")
 special, roxygen'-style comments.")
     (license license:expat)))
 
+(define-public r-deprivater
+  (package
+    (name "r-deprivater")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deprivateR" version))
+       (sha256
+        (base32 "0x3gqk1sxysws7rig1m2igihcp2dl52gznf6kfzh9pgz7s5cy1bj"))))
+    (properties `((upstream-name . "deprivateR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zipper
+                             r-tidyselect
+                             r-tidyr
+                             r-tidycensus
+                             r-tibble
+                             r-stringr
+                             r-sociome
+                             r-sf
+                             r-rlang
+                             r-ndi
+                             r-english
+                             r-dplyr
+                             r-classint))
+    (home-page "https://pfizer-opensource.github.io/deprivateR/")
+    (synopsis
+     "Calculating and Analyzing Measures of Deprivation in the United States")
+    (description
+     "This package provides a unified framework to building Area Deprivation Index
+(ADI), Social Vulnerability Index (SVI), and Neighborhood Deprivation Index
+(NDI) deprivation measures and accessing related data from the U.S. Census
+Bureau such as Gini coefficient data.  Tools are also available for calculating
+percentiles, quantiles, and for creating clear map breaks for data
+visualization.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-depower
   (package
     (name "r-depower")

@@ -1412,13 +1412,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "av" version))
        (sha256
-        (base32 "13x64g0ha6xxdd2cdx7d8mqbhz0z29i9ang5zirqx104n75gjypw"))))
+        (base32 "0y51j85rdxh96yzqs1sab2hijqcmc4cq4mwfv9ljbffxzk59pmvd"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (arguments
@@ -5602,13 +5602,13 @@ clustering and optimal marker ordering using MSTmap (see Wu et al.,2008).")
 (define-public r-asm
   (package
     (name "r-asm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asm" version))
        (sha256
-        (base32 "0irxfkhd344jk31lwp6zgvwpgi6v72y6xbpp5q20zj8220ck4ms8"))))
+        (base32 "0k2kdbvh82cd1w11yj8gql4cpc6ia4n3zngvdxp7svl0k73bs6la"))))
     (properties `((upstream-name . "asm")))
     (build-system r-build-system)
     (arguments
@@ -24583,13 +24583,13 @@ arbitrary text input.")
 (define-public r-acro
   (package
     (name "r-acro")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acro" version))
        (sha256
-        (base32 "0vgwzjwxhfs287k0jg8lbmggnanli69jig1wfsxph26yy4hddxfk"))))
+        (base32 "0vm1828zb90kqj7vz16mpai7b975frmgd4hvs357cdgiam1hga76"))))
     (properties `((upstream-name . "acro")))
     (build-system r-build-system)
     (arguments
@@ -24599,7 +24599,7 @@ arbitrary text input.")
     (propagated-inputs (list r-reticulate r-png r-admiraldev))
     (home-page "https://github.com/AI-SDC/ACRO-R")
     (synopsis
-     "Tool for Automating the Statistical Disclosure Control of Research Outputs")
+     "Tool for Semi-Automating the Statistical Disclosure Control of Research Outputs")
     (description
      "Assists researchers and output checkers by distinguishing between research
 output that is safe to publish, output that requires further analysis, and
