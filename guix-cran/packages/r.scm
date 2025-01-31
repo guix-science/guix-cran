@@ -29902,24 +29902,19 @@ set taken from Spira et al. (2004) <doi:10.1165/rcmb.2004-0273OC>.")
 (define-public r-rflocalfdr
   (package
     (name "r-rflocalfdr")
-    (version "0.8.5")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RFlocalfdr" version))
        (sha256
-        (base32 "0vp2zblx5419jhs1l6wg18k3wdf4kaslmrys4xml8432pkqmnja0"))))
+        (base32 "05s798vrd4bjvsfyhcxxx6fckk4yl5i2x0hh2afyfawfnknkw3nk"))))
     (properties `((upstream-name . "RFlocalfdr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vita
-                             r-sn
-                             r-rflocalfdr-data
-                             r-ranger
-                             r-randomforest
-                             r-minpack-lm
+    (propagated-inputs (list r-sn r-ranger r-randomforest r-minpack-lm
                              r-fitdistrplus))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=RFlocalfdr")

@@ -6957,13 +6957,13 @@ manipulation.")
 (define-public r-dplr
   (package
     (name "r-dplr")
-    (version "1.7.7")
+    (version "1.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dplR" version))
        (sha256
-        (base32 "1gdjrpa0x6clafiybqcc7119i350k2hx34j5ksgljwr7lb9a8d8f"))))
+        (base32 "0jrbcwq0cdv5m4i2wm9m2z93hssl08gnxg7nrsix644ifk0k737p"))))
     (properties `((upstream-name . "dplR")))
     (build-system r-build-system)
     (arguments
@@ -6977,6 +6977,8 @@ manipulation.")
                              r-png
                              r-matrixstats
                              r-matrix
+                             r-lme4
+                             r-lifecycle
                              r-lattice
                              r-digest
                              r-boot))
@@ -12656,6 +12658,37 @@ distance surface.  But the workhorse is distance_to.")
      "This package provides tools for constructing, manipulating and using distance
 metrics.")
     (license license:gpl3+)))
+
+(define-public r-distancehd
+  (package
+    (name "r-distancehd")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distanceHD" version))
+       (sha256
+        (base32 "12x96mwsczsg07cfl2qaj75vb841yxqb1vsq2wr1f0d7c0nd3iyb"))))
+    (properties `((upstream-name . "distanceHD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=distanceHD")
+    (synopsis "Distance Metrics for High-Dimensional Clustering")
+    (description
+     "We provide three distance metrics for measuring the separation between two
+clusters in high-dimensional spaces.  The first metric is the centroid distance,
+which calculates the Euclidean distance between the centers of the two groups.
+The second is a ridge Mahalanobis distance, which incorporates a ridge
+correction constant, alpha, to ensure that the covariance matrix is invertible.
+The third metric is the maximal data piling distance, which computes the
+orthogonal distance between the affine spaces spanned by each class.  These
+three distances are asymptotically interconnected and are applicable in tasks
+such as discrimination, clustering, and outlier detection in high-dimensional
+settings.")
+    (license license:gpl2+)))
 
 (define-public r-distance
   (package
@@ -28695,27 +28728,27 @@ in some case studies throughout the text.")
 (define-public r-datasetjson
   (package
     (name "r-datasetjson")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datasetjson" version))
        (sha256
-        (base32 "145al87czagdvqwnxkqi53pj9knfvfrf9a41d8byv9pkz5mz28a4"))))
+        (base32 "1g61jbczgmgfzdscnsvz9h8fmvylbv4vmxcpsnff7jqhwhgw9zvv"))))
     (properties `((upstream-name . "datasetjson")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonvalidate r-jsonlite))
+    (propagated-inputs (list r-yyjsonr r-jsonvalidate r-hms))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/atorus-research/datasetjson")
+    (home-page "https://atorus-research.github.io/datasetjson/")
     (synopsis "Read and Write CDISC Dataset JSON Files")
     (description
      "Read, construct and write CDISC (Clinical Data Interchange Standards Consortium)
 Dataset JSON (@code{JavaScript} Object Notation) files, while validating per the
 Dataset JSON schema file, as described in CDISC (2023)
-<https://www.cdisc.org/dataset-json>.")
+<https://www.cdisc.org/standards/data-exchange/dataset-json>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-dataset
@@ -30149,13 +30182,13 @@ package.")
 (define-public r-databaseconnector
   (package
     (name "r-databaseconnector")
-    (version "6.3.3")
+    (version "6.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabaseConnector" version))
        (sha256
-        (base32 "12xngbg3g94j5ci7blbx66jkb582bkimi505ni9awangc3hk6w3h"))))
+        (base32 "06ig86wswzrxcdgpnhqvkc8r86q8bjxxnyp0advdlsh64kikhfr7"))))
     (properties `((upstream-name . "DatabaseConnector")))
     (build-system r-build-system)
     (arguments
@@ -30180,9 +30213,10 @@ package.")
      "An R @code{DataBase} Interface ('DBI') compatible interface to various database
 platforms ('@code{PostgreSQL}', Oracle', Microsoft SQL Server', Amazon
 Redshift', Microsoft Parallel Database Warehouse', IBM Netezza', Apache Impala',
-Google @code{BigQuery}', Snowflake', Spark', and SQLite').  Also includes
-support for fetching data as Andromeda objects.  Uses either Java Database
-Connectivity ('JDBC') or other DBI drivers to connect to databases.")
+Google @code{BigQuery}', Snowflake', Spark', SQLite', and @code{InterSystems}
+IRIS').  Also includes support for fetching data as Andromeda objects.  Uses
+either Java Database Connectivity ('JDBC') or other DBI drivers to connect to
+databases.")
     (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-data360r

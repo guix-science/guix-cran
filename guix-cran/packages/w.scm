@@ -5389,13 +5389,13 @@ available at <https://imai.fas.harvard.edu/research/FEmatch.html>.")
 (define-public r-weyl
   (package
     (name "r-weyl")
-    (version "0.0-5")
+    (version "0.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weyl" version))
        (sha256
-        (base32 "18gapsjvv3xj161kk8y8cwq4c3zxc8gjamkmzxm68vfgixf8bkh8"))))
+        (base32 "045p3s713dlsffjcswcz1asjns2xzjpbmifnskrizm71s32242dg"))))
     (properties `((upstream-name . "weyl")))
     (build-system r-build-system)
     (arguments

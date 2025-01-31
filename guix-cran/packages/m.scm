@@ -45033,6 +45033,32 @@ Massachusetts Department of Environmental Protection (2020)
 estimation.")
     (license license:gpl2+)))
 
+(define-public r-massprops
+  (package
+    (name "r-massprops")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "massProps" version))
+       (sha256
+        (base32 "1bzsry67knkp2svdf0hm8ckvzl67cysrnsx97b103hh7cbapqxix"))))
+    (properties `((upstream-name . "massProps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rolluptree))
+    (native-inputs (list r-knitr))
+    (home-page "https://jsjuni.github.io/massProps/")
+    (synopsis "Calculate Mass Properties and Uncertainties of Tree Structures")
+    (description
+     "Recursively calculates mass properties (mass, center of mass, moments and
+products of inertia, and optionally, their uncertainties) for arbitrary
+decomposition trees.  R. L. Zimmerman, J. H. Nakai. (2005)
+<https://www.sawe.org/product/paper-3360/>).")
+    (license license:expat)))
+
 (define-public r-massivegst
   (package
     (name "r-massivegst")

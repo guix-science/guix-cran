@@ -2268,13 +2268,13 @@ R. There is also an interactive shiny app for monitoring the job status.")
 (define-public r-bstzinb
   (package
     (name "r-bstzinb")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BSTZINB" version))
        (sha256
-        (base32 "1zjvwvbldmr02lc3lyq1gggqfp62z6153za4rq18p45bj7r555vg"))))
+        (base32 "0jmrm76d6qrk7kdpagamjl3nkiggym0irgdqkxfvbsr35ynv9018"))))
     (properties `((upstream-name . "BSTZINB")))
     (build-system r-build-system)
     (arguments
@@ -3663,13 +3663,13 @@ conducting spatial studies.")
 (define-public r-brulee
   (package
     (name "r-brulee")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brulee" version))
        (sha256
-        (base32 "1lzn06q1i575n9b7axqxfp0ngycx2mdmh0cqw6zz80z3ikbi7hq9"))))
+        (base32 "17aw58jlmhh8f1qgslr7ywyl8f29x2bmrz2wflsh474nxq5bq7l2"))))
     (properties `((upstream-name . "brulee")))
     (build-system r-build-system)
     (arguments
@@ -11834,6 +11834,34 @@ posterior distribution of the model parameters. (d) Employing a tensor
 decomposition to reduce the number of estimated parameters. (e) Accelerating
 tensor operations and enabling graphics processing unit (GPU) acceleration with
 the torch package.")
+    (license license:expat)))
+
+(define-public r-bkt
+  (package
+    (name "r-bkt")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BKT" version))
+       (sha256
+        (base32 "0dy8c1yryvxgjpdj72cavqnm1kd225iibvl2j33ck8vhjdrpkwaw"))))
+    (properties `((upstream-name . "BKT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcurl))
+    (home-page "https://cran.r-project.org/package=BKT")
+    (synopsis "Bayesian Knowledge Tracing Model")
+    (description
+     "Fitting, cross-validating, and predicting with Bayesian Knowledge Tracing (BKT)
+models.  It is designed for analyzing educational datasets to trace student
+knowledge over time.  The package includes functions for fitting BKT models,
+evaluating their performance using various metrics, and making predictions on
+new data.  It provides the same functionality as the Python package @code{pyBKT}
+authored by Bulut et al. (2023, <doi:10.3390/psych5030050>) and @code{pyBKT} can
+be accessed via the site at <https://github.com/CAHLR/@code{pyBKT>}.")
     (license license:expat)))
 
 (define-public r-bkmrhat
@@ -22884,13 +22912,13 @@ Service ('WFS') using dplyr syntax.")
 (define-public r-bcdag
   (package
     (name "r-bcdag")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCDAG" version))
        (sha256
-        (base32 "1w6b72vcv9gdwxm5ynpy9jrw2qpbfi4qn8272qdbv4jz1p3k605n"))))
+        (base32 "1y8nsb1lf1kf52blzhdwffaixjkvdrpkzkwijcjv512czh1zw26v"))))
     (properties `((upstream-name . "BCDAG")))
     (build-system r-build-system)
     (arguments

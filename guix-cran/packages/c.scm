@@ -38144,13 +38144,13 @@ R functions, as well as some additional functions.")
 (define-public r-chattr
   (package
     (name "r-chattr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chattr" version))
        (sha256
-        (base32 "1jvzk62h5dgshqadin3n55600yy965xgssb6akywixyik8qipscl"))))
+        (base32 "0w0srhmy3kmfrbsivihk17k3pz7gvzd6rid19bbf0l7znsxg1ssx"))))
     (properties `((upstream-name . "chattr")))
     (build-system r-build-system)
     (arguments
@@ -39178,13 +39178,13 @@ for analyzing continuous glucose monitoring studies'.")
 (define-public r-cgmanalysis
   (package
     (name "r-cgmanalysis")
-    (version "2.7.7")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgmanalysis" version))
        (sha256
-        (base32 "19kvxbg4vs7bfs3y1bfvhklwr22kba46aiwsns58g7h9b88m4kw7"))))
+        (base32 "1aqc4yyns69ma3n7a1d91zhg8xr35pxsqaqq1ym5awfzw0la6vp6"))))
     (properties `((upstream-name . "cgmanalysis")))
     (build-system r-build-system)
     (arguments
@@ -39197,6 +39197,7 @@ for analyzing continuous glucose monitoring studies'.")
                              r-pracma
                              r-pastecs
                              r-parsedate
+                             r-mess
                              r-lubridate
                              r-ggplot2))
     (home-page "https://cran.r-project.org/package=cgmanalysis")

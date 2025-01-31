@@ -21440,6 +21440,47 @@ colourable & fillable shapes.  New shapes may be feature requested via a Github
 issue.")
     (license license:expat)))
 
+(define-public r-ggfootball
+  (package
+    (name "r-ggfootball")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggfootball" version))
+       (sha256
+        (base32 "03pa3byi582ydjksdkp7aazl7rbssrhw79nvqwjjqbhqv006dpp7"))))
+    (properties `((upstream-name . "ggfootball")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rvest
+                             r-readr
+                             r-qdapregex
+                             r-jsonlite
+                             r-highcharter
+                             r-glue
+                             r-ggsoccer
+                             r-ggplot2
+                             r-ggiraph
+                             r-gfonts
+                             r-gdtools
+                             r-dplyr
+                             r-base64enc))
+    (home-page "http://aymennasri.me/ggfootball/")
+    (synopsis "Plotting Expected Goals (xG) Stats with Understat Data")
+    (description
+     "Scrapes shots data from Understat <https://understat.com/> and visualizes it
+using interactive plots: - A detailed shot map displaying the location, type,
+and @code{xG} value of shots taken by both teams. - An @code{xG} timeline chart
+showing the cumulative @code{xG} for each team over time, annotated with the
+details of scored goals.")
+    (license license:gpl3+)))
+
 (define-public r-ggfocus
   (package
     (name "r-ggfocus")
@@ -34132,13 +34173,13 @@ Statistics, 60, 279-330 <DOI:10.1111/ANZS.12241>.")
 (define-public r-gammi
   (package
     (name "r-gammi")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gammi" version))
        (sha256
-        (base32 "1zvmfkbjj70h7aq0yx3gchq17klgfwbjqd468pnq7wfrpvg04dgy"))))
+        (base32 "0zrwadmq2yp89r09n4f12gaxr3s955l6ldwsmisx8hjwn92c1p1i"))))
     (properties `((upstream-name . "gammi")))
     (build-system r-build-system)
     (arguments

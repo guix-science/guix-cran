@@ -2611,6 +2611,41 @@ regions for the mean and variance of a normal distribution are available as
 well.")
     (license license:gpl2)))
 
+(define-public r-jobqueue
+  (package
+    (name "r-jobqueue")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jobqueue" version))
+       (sha256
+        (base32 "0zxn8ndv2yp1pcfz1bl3lbhl1wv9i2i5vla5gkll11vhwdfnrfi6"))))
+    (properties `((upstream-name . "jobqueue")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-semaphore
+                             r-rlang
+                             r-r6
+                             r-ps
+                             r-promises
+                             r-parallelly
+                             r-magrittr
+                             r-later
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cmmr.github.io/jobqueue/")
+    (synopsis "Run Interruptible Code Asynchronously")
+    (description
+     "Takes an R expression and returns a Job object with a @code{$stop()} method
+which can be called to terminate the background job.  Also provides timeouts and
+other mechanisms for automatically terminating a background job.  The result of
+the expression is available synchronously via $result or asynchronously with
+callbacks or through the promises package framework.")
+    (license license:expat)))
+
 (define-public r-jnplots
   (package
     (name "r-jnplots")
@@ -4164,6 +4199,39 @@ optimization problems without hyperparameters.  This package includes features
 such as multi-objective Pareto optimization, adaptive population adjustment, and
 early stopping.  For further details, see R.V. Rao (2016)
 <doi:10.5267/j.ijiec.2015.8.004>.")
+    (license license:expat)))
+
+(define-public r-javateak
+  (package
+    (name "r-javateak")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "javateak" version))
+       (sha256
+        (base32 "0f1lr5zqccf9sgr59j8nlg6l6dhsdr35lryjcq3ck6vrlf9s5rm5"))))
+    (properties `((upstream-name . "javateak")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=javateak")
+    (synopsis "Javanese Teak Above Ground Biomass Estimation")
+    (description
+     "Simplifies the process of estimating above ground biomass components for teak
+trees using a few basic inputs, based on the equations taken from the journal
+\"Allometric equations for estimating above ground biomass and leaf area of
+planted teak (Tectona grandis) forests under agroforestry management in East
+Java, Indonesia\" (Purwanto & Shiba, 2006) <doi:10.60409/forestresearch.76.0_1>.
+This function is most reliable when applied to trees from the same region where
+the equations were developed, specifically East Java, Indonesia.  This function
+help to estimate the stem diameter at the lowest major living branch (DB) using
+the stem diameter at breast height with R^2 = 0.969.  Estimate the branch dry
+weight (WB) using the stem diameter at breast height and tree height (R^2 =
+0.979).  Estimate the stem weight (WS) using the stem diameter at breast height
+and tree height (R^2 = 0.997.  Also estimate the leaf dry weight (WL) using the
+stem diameter at the lowest major living branch (R^2 = 0.996).")
     (license license:expat)))
 
 (define-public r-javagd

@@ -17149,13 +17149,13 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "18m9113dyfzaixq35y2kvjsz14324mqqmwqp7q0xi2ja836ip8hd"))))
+        (base32 "102dgy94hnnkrbkdnng3zz42iw7ls18dy2y18g0x2bm09w74cl17"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -35201,13 +35201,13 @@ been developed, one in each of the next references: Azzalini (2023)
 (define-public r-smnlmec
   (package
     (name "r-smnlmec")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMNlmec" version))
        (sha256
-        (base32 "0z1a9l5yzxmap9g5lv610wan0d88cifaxd7ab8dra41gbyhf58pn"))))
+        (base32 "0jdgxz0ay82cq8s280y6wib7bapbvbgssbb9rsa7ql6ljdwqh8rm"))))
     (properties `((upstream-name . "SMNlmec")))
     (build-system r-build-system)
     (arguments
@@ -35230,8 +35230,8 @@ been developed, one in each of the next references: Azzalini (2023)
 assumptions with a flexible class of distributions, such as the scale mixture of
 normal family distributions, considering a damped exponential correlation
 structure which was employed to account for within-subject autocorrelation among
-irregularly observed measures.  For more details, see Zhong et al. (2025,
-forthcoming in Statistics in Medicine).")
+irregularly observed measures.  For more details, see Kelin Zhong, Fernanda L.
+Schumacher, Luis M. Castro, Victor H. Lachos (2025) <doi:10.1002/sim.10295>.")
     (license license:gpl3)))
 
 (define-public r-smncensreg
@@ -43774,13 +43774,13 @@ shape constraints including different smoothness conditions.")
 (define-public r-simer
   (package
     (name "r-simer")
-    (version "0.9.0.5")
+    (version "0.9.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simer" version))
        (sha256
-        (base32 "00080aqr66qh86rp5yy7zmymy6rh1k0ihqm1y0jbfcqd51sch48i"))))
+        (base32 "157n20bfinsbwiqr0cx08g9hmsy1jnnlrgr920cjl1qxg1aab2ns"))))
     (properties `((upstream-name . "simer")))
     (build-system r-build-system)
     (arguments
@@ -46110,13 +46110,13 @@ the aim being to describe and compare their isotopic niche.")
 (define-public r-siatools
   (package
     (name "r-siatools")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIAtools" version))
        (sha256
-        (base32 "17gw4qz9k6m7wys9ik37b72x554ig240cb3ppbbihwryy3wzygw3"))))
+        (base32 "1p89b5ws1hb1a4dn38pw8kyz7vccfmcmzfvpmd44mbpfl8fdlvqc"))))
     (properties `((upstream-name . "SIAtools")))
     (build-system r-build-system)
     (arguments
@@ -46380,6 +46380,34 @@ FrÃ¼hwirth-Schnatter (2019) <doi:10.1016/j.jeconom.2018.11.006> and Cadonna et
 al. (2020) <doi:10.3390/econometrics8020020> and Knaus and FrÃ¼hwirth-Schnatter
 (2023) <doi:10.48550/@code{arXiv.2312.10487>}.  For details on the package,
 please see Knaus et al. (2021) <doi:10.18637/jss.v100.i13>.")
+    (license license:gpl2+)))
+
+(define-public r-shrinkgpr
+  (package
+    (name "r-shrinkgpr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shrinkGPR" version))
+       (sha256
+        (base32 "0yhlg82pc0r3d99a4z90j0a27rfn5fzy92744s80ivp858pjc3j4"))))
+    (properties `((upstream-name . "shrinkGPR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch r-rlang r-progress r-gsl))
+    (home-page "https://cran.r-project.org/package=shrinkGPR")
+    (synopsis
+     "Scalable Gaussian Process Regression with Hierarchical Shrinkage Priors")
+    (description
+     "Efficient variational inference methods for fully Bayesian Gaussian Process
+Regression (GPR) models with hierarchical shrinkage priors, including the triple
+gamma prior for effective variable selection and covariance shrinkage in
+high-dimensional settings.  The package leverages normalizing flows to
+approximate complex posterior distributions.  For details on implementation, see
+Knaus (2025) <doi:10.48550/@code{arXiv.2501.13173>}.")
     (license license:gpl2+)))
 
 (define-public r-shrinkem
@@ -51427,38 +51455,6 @@ habitat associations, one of the two components is randomized.  Methods are
 mainly based on Plotkin et al. (2000) <doi:10.1006/jtbi.2000.2158> and Harms et
 al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
     (license license:gpl3+)))
-
-(define-public r-shapr
-  (package
-    (name "r-shapr")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shapr" version))
-       (sha256
-        (base32 "04rpvzqv281njmgmiz362sf2daf588rvgk8hdn1a94v7iidmqgw9"))))
-    (properties `((upstream-name . "shapr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-future-apply
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://norskregnesentral.github.io/shapr/")
-    (synopsis "Prediction Explanation with Dependence-Aware Shapley Values")
-    (description
-     "Complex machine learning models are often hard to interpret.  However, in many
-situations it is crucial to understand and explain why a model made a specific
-prediction.  Shapley values is the only method for such prediction explanation
-framework with a solid theoretical foundation.  Previously known methods for
-estimating the Shapley values do, however, assume feature independence.  This
-package implements methods which accounts for any feature dependence, and
-thereby produces more accurate estimates of the true Shapley values.  An
-accompanying Python wrapper ('shaprpy') is available through the @code{GitHub}
-repository.")
-    (license license:expat)))
 
 (define-public r-shapper
   (package

@@ -19260,13 +19260,13 @@ multi-environment trials, uniformity trials, yield monitors, and more.")
 (define-public r-agricolaeplotr
   (package
     (name "r-agricolaeplotr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agricolaeplotr" version))
        (sha256
-        (base32 "0khkh6s2ki9q0jpr7wji6crgg41s25bgd82acqm7lnabvgv41xjs"))))
+        (base32 "1ik8gpkfjma162qhk7fia8y0617jzn6gz9jc4awx17ky3ls01fjs"))))
     (properties `((upstream-name . "agricolaeplotr")))
     (build-system r-build-system)
     (arguments
@@ -21216,6 +21216,38 @@ overlapping clustering.  For reference see Depril, Van Mechelen, Mirkin (2008)
 <doi:10.1016/j.csda.2008.04.014> and Depril, Van Mechelen, Wilderjans (2012)
 <doi:10.1007/s00357-012-9112-5>.")
     (license license:gpl3+)))
+
+(define-public r-adplots
+  (package
+    (name "r-adplots")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adplots" version))
+       (sha256
+        (base32 "08ggx5ly5f2ra2g2l7x92r59wzq5yghabxjaihdj1d3fa62m6yd3"))))
+    (properties `((upstream-name . "adplots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=adplots")
+    (synopsis
+     "Ad-Plot and Ud-Plot for Visualizing Distributional Properties and Normality")
+    (description
+     "The empirical cumulative average deviation function introduced by the author is
+utilized to develop both Ad- and Ud-plots.  The Ad-plot can identify symmetry,
+skewness, and outliers of the data distribution, including anomalies.  The
+Ud-plot created by slightly modifying Ad-plot is exceptional in assessing
+normality, outperforming normal QQ-plot, normal PP-plot, and their derivations.
+The d-value that quantifies the degree of proximity between the Ud-plot and the
+graph of the estimated normal density function helps guide to make decisions on
+confirmation of normality.  Full description of this methodology can be found in
+the article by Wijesuriya (2025) <doi:10.1080/03610926.2024.2440583>.")
+    (license license:gpl3)))
 
 (define-public r-adpf
   (package

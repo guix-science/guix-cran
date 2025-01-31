@@ -5181,13 +5181,13 @@ approach).")
 (define-public r-freegroup
   (package
     (name "r-freegroup")
-    (version "1.1-8")
+    (version "1.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freegroup" version))
        (sha256
-        (base32 "1qrawy5zngiph1lg2bcczbq84vsfgpd74kbxy1nh7bp9ps1p5ga4"))))
+        (base32 "09g8ms59mmb613ic3vva6wlrfig1al9akafvxi4gi7ab60vhv2il"))))
     (properties `((upstream-name . "freegroup")))
     (build-system r-build-system)
     (arguments

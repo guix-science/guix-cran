@@ -3940,13 +3940,13 @@ tidied, visualised, and forecasted.")
 (define-public r-tsibble
   (package
     (name "r-tsibble")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsibble" version))
        (sha256
-        (base32 "1ay4i9lc380y2h21l64sabv9lfz0dhzvldnhb6nakm0l176q6cg6"))))
+        (base32 "1fxp7ca06k6q3f1dh4y4yqxlx75lkcxbncqaj33fvlqjryailwfd"))))
     (properties `((upstream-name . "tsibble")))
     (build-system r-build-system)
     (arguments

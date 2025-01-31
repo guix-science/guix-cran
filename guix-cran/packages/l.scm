@@ -7392,13 +7392,13 @@ Cancers.  Cancer informatics, 13, CIN-S14021.")
 (define-public r-lmpdata
   (package
     (name "r-lmpdata")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMPdata" version))
        (sha256
-        (base32 "0k92ps7rjj2s2n2sa9v840nf6h87sws5fimijz1kpmjj5i96qkik"))))
+        (base32 "0d2g0w1ail82vknj9pwisxswmns9zsa24cnlm1yqhc7bqry23vgj"))))
     (properties `((upstream-name . "LMPdata")))
     (build-system r-build-system)
     (arguments
@@ -13937,13 +13937,13 @@ provided as well.")
 (define-public r-learnnonparam
   (package
     (name "r-learnnonparam")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LearnNonparam" version))
        (sha256
-        (base32 "17923sjch3hysddxidzlldfrn2xrd71qsg4j0iv76p4qja0wgsyw"))))
+        (base32 "00h8aj4z0ihp9qm5bpdbxd6q42v8b46gzb6r6kz4mwwr5a9xhjhq"))))
     (properties `((upstream-name . "LearnNonparam")))
     (build-system r-build-system)
     (arguments
@@ -17049,13 +17049,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaangui
   (package
     (name "r-lavaangui")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaangui" version))
        (sha256
-        (base32 "04wna8rphdqb9va9pklw74ccjl85daqw5k0zr6cyicwqy95gbswv"))))
+        (base32 "124g8b05syfybgnzsrswdnq2bkcf5d69np4b0idkwf3bd9l1wyfk"))))
     (properties `((upstream-name . "lavaangui")))
     (build-system r-build-system)
     (arguments
@@ -17075,7 +17075,7 @@ lavaan path model without having to write the DOT language graph specification."
                              r-digest
                              r-colorspace
                              r-base64enc))
-    (home-page "https://solo-fsw.shinyapps.io/lavaangui/")
+    (home-page "https://lavaangui.org/")
     (synopsis
      "Graphical User Interface with Integrated 'Diagrammer' for 'Lavaan'")
     (description

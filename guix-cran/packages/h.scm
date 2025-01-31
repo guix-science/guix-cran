@@ -3718,6 +3718,35 @@ provides computational efficiency and stability, and has also been shown to be
 statistical consistent.")
     (license license:gpl2+)))
 
+(define-public r-hrf
+  (package
+    (name "r-hrf")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hrf" version))
+       (sha256
+        (base32 "1gqwj572vhr4drp7ndisiv0haz56kcxidzf4n2gwb97lziidb6lh"))))
+    (properties `((upstream-name . "hrf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrixstats r-matrix r-fmritools r-ciftitools
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mandymejia/hrf")
+    (synopsis "Hemodynamic Response Function")
+    (description
+     "Computes the hemodynamic response function (HRF) for task functional magnetic
+resonance imaging (@code{fMRI}) data.  Also includes functions for constructing
+a design matrix from task @code{fMRI} event timings, and for comparing multiple
+design matrices in a general linear model (GLM).  A wrapper function is provided
+for GLM analysis of CIFTI-format data.  Lastly, there are supporting functions
+which provide visual summaries of the HRFs and design matrices.")
+    (license license:gpl3)))
+
 (define-public r-hrcomprisk
   (package
     (name "r-hrcomprisk")
@@ -7916,13 +7945,13 @@ syntax.")
 (define-public r-higarrote
   (package
     (name "r-higarrote")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiGarrote" version))
        (sha256
-        (base32 "0l58gck9s4pazb4djni9nfjq4ns302zmx9405w7pnrmwrc00mzw2"))))
+        (base32 "1wvwzsj4qrpax96xxy4jjjk3ymkyiawhrmld8gmzh15s9dg7wqb1"))))
     (properties `((upstream-name . "HiGarrote")))
     (build-system r-build-system)
     (arguments
@@ -7937,6 +7966,7 @@ syntax.")
                              r-purrr
                              r-nloptr
                              r-maxpro
+                             r-matrixcalc
                              r-matrix))
     (home-page "https://cran.r-project.org/package=HiGarrote")
     (synopsis
