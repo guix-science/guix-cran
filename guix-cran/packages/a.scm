@@ -3546,32 +3546,18 @@ Deep Learning\".")
 (define-public r-attachment
   (package
     (name "r-attachment")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "attachment" version))
        (sha256
-        (base32 "1plc7mplqky5als8gzp01g55378smikxx6l42b2xyp9knxxprysg"))))
+        (base32 "13lq5kd9iy1pgzs4sgwydi5py1if2x6rdz526dqzl4c6ls7g9fz5"))))
     (properties `((upstream-name . "attachment")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-withr
                              r-stringr
@@ -3582,7 +3568,7 @@ Deep Learning\".")
                              r-glue
                              r-desc
                              r-cli))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-knitr))
     (home-page "https://thinkr-open.github.io/attachment/")
     (synopsis "Deal with Dependencies")
     (description
@@ -21714,13 +21700,13 @@ quantities of interest for the target density itself.")
 (define-public r-admiralvaccine
   (package
     (name "r-admiralvaccine")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralvaccine" version))
        (sha256
-        (base32 "17p7l8rx40zjaxc2ap1n1pi1025qn1cw17m26haw6d5vr1p9sk1k"))))
+        (base32 "14wdqm4zjdsall0lg82f6ypf9sdpp4p8sj15z2jd6z9kp6kfalnh"))))
     (properties `((upstream-name . "admiralvaccine")))
     (build-system r-build-system)
     (arguments

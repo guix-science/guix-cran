@@ -797,6 +797,53 @@ support for parallel computation.")
     (description "Asks Yes-No questions with variable or custom responses.")
     (license license:expat)))
 
+(define-public r-yeab
+  (package
+    (name "r-yeab")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YEAB" version))
+       (sha256
+        (base32 "01snai59sbr08g247phmqf41vjipjprpn1xin3ayxvjqhw63sh14"))))
+    (properties `((upstream-name . "YEAB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-usethis
+                             r-sfsmisc
+                             r-scales
+                             r-polychrome
+                             r-minpack-lm
+                             r-mass
+                             r-magrittr
+                             r-ks
+                             r-kernsmooth
+                             r-infotheo
+                             r-gridextra
+                             r-ggplot2
+                             r-foreach
+                             r-fnn
+                             r-dplyr
+                             r-doparallel
+                             r-data-table
+                             r-cluster
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=YEAB")
+    (synopsis "Analyze Data from Analysis of Behavior Experiments")
+    (description
+     "Analyze data from behavioral experiments conducted using MED-PC software
+developed by Med Associates Inc.  Includes functions to fit exponential and
+hyperbolic models for delay discounting tasks, exponential mixtures for
+inter-response times, and Gaussian plus ramp models for peak procedure data,
+among others.  For more details, refer to Alcala et al. (2023)
+<doi:10.31234/osf.io/8aq2j>.")
+    (license license:gpl3+)))
+
 (define-public r-ycevo
   (package
     (name "r-ycevo")

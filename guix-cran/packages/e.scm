@@ -3629,20 +3629,20 @@ R.")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "025lm577yr5730f3j544nszjyscw8yk2amdbm2cjc4kjkq2qcm7w"))))
+        (base32 "199q4bhl6x1xwlrwxjvmczpd3waa39y46j98gs23vy3srx1n6inv"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-igraph))
-    (home-page "https://cran.r-project.org/package=exametrika")
+    (home-page "https://kosugitti.github.io/exametrika/")
     (synopsis "Test Theory Analysis and Biclustering")
     (description
      "This package implements comprehensive test data engineering methods as described
@@ -20457,13 +20457,13 @@ modules are intended for reuse across applications.")
 (define-public r-editbl
   (package
     (name "r-editbl")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "editbl" version))
        (sha256
-        (base32 "07nf808xlj3vh7nfv5rpx3d6jk7pdsygc31z25gi504mmda1y1hd"))))
+        (base32 "1754qg0ir1kb627wki2sxkpx41b84hd859n9vr65550pwhcqgncr"))))
     (properties `((upstream-name . "editbl")))
     (build-system r-build-system)
     (arguments
@@ -20473,6 +20473,7 @@ modules are intended for reuse across applications.")
                              r-tibble
                              r-shinyjs
                              r-shiny
+                             r-rlang
                              r-fontawesome
                              r-dt
                              r-dplyr))
@@ -21763,13 +21764,13 @@ priors for parameters.")
 (define-public r-ecospat
   (package
     (name "r-ecospat")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecospat" version))
        (sha256
-        (base32 "097cr6qwf2hqm8v3afabnm7lmmv2awih2kz26vd28jr179af8p65"))))
+        (base32 "0amxyf8bb2r51c2clwp8ymf2p3rn94wnqwj2nc9rr8zdy58dlgz7"))))
     (properties `((upstream-name . "ecospat")))
     (build-system r-build-system)
     (arguments

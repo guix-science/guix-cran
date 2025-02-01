@@ -9673,13 +9673,13 @@ covariance matrices (uncommon sigma) for the mixture components.")
 (define-public r-tramvs
   (package
     (name "r-tramvs")
-    (version "0.0-6")
+    (version "0.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramvs" version))
        (sha256
-        (base32 "1j0ymgr09vfhpcg684ggs0zynpy48mgmmymzkq806dqv85qhjq4f"))))
+        (base32 "1xrs7ircfvvqbynjsh7yqnik3dn7cgvkvp3hx8yc8z2xwv7amr0k"))))
     (properties `((upstream-name . "tramvs")))
     (build-system r-build-system)
     (arguments
@@ -9698,7 +9698,8 @@ covariance matrices (uncommon sigma) for the mixture components.")
      "Greedy optimal subset selection for transformation models (Hothorn et al., 2018,
 <doi:10.1111/sjos.12291> ) based on the abess algorithm (Zhu et al., 2020,
 <doi:10.1073/pnas.2014241117> ).  Applicable to models from packages tram and
-cotram'.")
+cotram'.  Application to shift-scale transformation models are described in
+Siegfried et al. (2024, <doi:10.1080/00031305.2023.2203177>).")
     (license license:gpl3)))
 
 (define-public r-trampr
@@ -9888,13 +9889,13 @@ found on the @code{TraMineR} web page.")
 (define-public r-tramicp
   (package
     (name "r-tramicp")
-    (version "0.0-2")
+    (version "0.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramicp" version))
        (sha256
-        (base32 "1d5dj695q16il35pmfi6kb0m78mdjj5gsirqb2sd74jwgj32qy5b"))))
+        (base32 "0lhnfrii2dxb6wmp8pd6mxjh6a63i2bwrlpp4m13i4drqm3r4rjl"))))
     (properties `((upstream-name . "tramicp")))
     (build-system r-build-system)
     (arguments
@@ -9912,14 +9913,14 @@ found on the @code{TraMineR} web page.")
                              r-cotram
                              r-coin
                              r-basefun))
-    (home-page "https://cran.r-project.org/package=tramicp")
+    (home-page "https://github.com/LucasKook/tramicp")
     (synopsis
      "Model-Based Causal Feature Selection for General Response Types")
     (description
      "Extends invariant causal prediction (Peters et al., 2016,
 <doi:10.1111/rssb.12167>) to generalized linear and transformation models
 (Hothorn et al., 2018, <doi:10.1111/sjos.12291>).  The methodology is described
-in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
+in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
     (license license:gpl3)))
 
 (define-public r-tram
@@ -19489,13 +19490,13 @@ knitr'/'markdown'.")
 (define-public r-tidychangepoint
   (package
     (name "r-tidychangepoint")
-    (version "0.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidychangepoint" version))
        (sha256
-        (base32 "15wdwpglm6pxq3211crqsi0m047b4lwvlk8bnm4d01vpgq3dz2iq"))))
+        (base32 "0lxhi7y1lf9hszw7iap8pw1cc2mvns1awzi2snr8apqm20x4y42k"))))
     (properties `((upstream-name . "tidychangepoint")))
     (build-system r-build-system)
     (arguments
@@ -19510,6 +19511,7 @@ knitr'/'markdown'.")
                              r-tibble
                              r-stringr
                              r-scales
+                             r-rlang
                              r-purrr
                              r-patchwork
                              r-memoise
@@ -19535,13 +19537,13 @@ packages.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "06c8qcrw2a3rihkvpjj1l1z0k6zj2rl3lbp2650p7cnmxixxg9b4"))))
+        (base32 "1l2fgbd2mpkpjryk0kmlb1j530bc47k4x9grvskh18fnff6a8z9m"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (arguments
@@ -26322,13 +26324,13 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
 (define-public r-teal-widgets
   (package
     (name "r-teal-widgets")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.widgets" version))
        (sha256
-        (base32 "0qdjc1w1kh0k155vp0w0rs5yh26lmds9i6xv4dhrgnn7h2gaqgv1"))))
+        (base32 "1kibv8xm8r6gbvjlpfl4xdzlx6ngblipcsf028zarq08wwjfkxfs"))))
     (properties `((upstream-name . "teal.widgets")))
     (build-system r-build-system)
     (arguments
@@ -26348,7 +26350,7 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
                              r-ggplot2
                              r-checkmate
                              r-bslib))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.widgets/")
     (synopsis "'shiny' Widgets for 'teal' Applications")
     (description
@@ -29600,13 +29602,13 @@ Einmahl, J.H.J., Kiriliouk, A., and Segers, J. (2018)
 (define-public r-tailclassifier
   (package
     (name "r-tailclassifier")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TailClassifier" version))
        (sha256
-        (base32 "10hf6lhc8vpx4bkyzgiyawgv0qgbkwdfgjjn3l7rx4vl24g3jlxy"))))
+        (base32 "06qiq9nbs12hxg2721sdblalyr5y832mw8djgbsjv9f0vzhd2x2k"))))
     (properties `((upstream-name . "TailClassifier")))
     (build-system r-build-system)
     (arguments

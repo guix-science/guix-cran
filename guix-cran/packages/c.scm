@@ -15199,13 +15199,13 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "1qmgbizmrjsprimlx2d32fx2w51xy021jq62fl9r7nwxfjgr3rak"))))
+        (base32 "0ngzyyabyfw34q7rsb80jvkrq586cdp877wi18c0zk63z1nv2rrq"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
     (arguments
@@ -17859,6 +17859,30 @@ individuals with access to the project along with their access level.")
      "Enables DBI compliant packages to integrate with the RStudio connections pane,
 and the pins package.  It automates the display of schemata, tables, views, as
 well as the preview of the table's top 1000 records.")
+    (license license:expat)))
+
+(define-public r-connectcreds
+  (package
+    (name "r-connectcreds")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "connectcreds" version))
+       (sha256
+        (base32 "0kcz3apcqwk4i313ahm60rbsx31iffagcgbnmbf3g24z36190bcz"))))
+    (properties `((upstream-name . "connectcreds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-httr2 r-cli))
+    (home-page "https://github.com/posit-dev/connectcreds")
+    (synopsis "Manage 'OAuth' Credentials from 'Posit Connect'")
+    (description
+     "This package provides a toolkit for making use of credentials mediated by Posit
+Connect'.  It handles the details of communicating with the Connect API
+correctly, OAuth token caching, and refresh behaviour.")
     (license license:expat)))
 
 (define-public r-connectapi
@@ -21156,6 +21180,32 @@ journal Wiegand M and Nadarajah S (2017) @code{CompDist}: Multisection composite
 distributions.")
     (license license:gpl2+)))
 
+(define-public r-compdb
+  (package
+    (name "r-compdb")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "compdb" version))
+       (sha256
+        (base32 "1b3irpg22rb1676s7bd07l3y5vxqs6h9fq3idcfm04rklny7lvva"))))
+    (properties `((upstream-name . "compdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-pkgbuild r-cli r-callr))
+    (home-page "https://github.com/cyianor/r-compdb")
+    (synopsis "Generate Compilation Database for Use with 'Clang' Tools")
+    (description
+     "Many modern C/C++ development tools in the clang toolchain, such as clang-tidy
+or clangd', rely on the presence of a compilation database in JSON format
+<https://clang.llvm.org/docs/JSON@code{CompilationDatabase.html>}.  This package
+temporarily injects additional build flags into the R build process to generate
+such a compilation database.")
+    (license license:expat)))
+
 (define-public r-compas
   (package
     (name "r-compas")
@@ -22121,13 +22171,13 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-comets
   (package
     (name "r-comets")
-    (version "0.1-0")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comets" version))
        (sha256
-        (base32 "19j0k4603888kljpibfp7m7d1hd59g2mdnrin4ay1qkbx83lxmkn"))))
+        (base32 "1qxdvayw6ncq8d0rpxi868b8fc6g3xxgzmp4qxwjm3ppxa3r5060"))))
     (properties `((upstream-name . "comets")))
     (build-system r-build-system)
     (arguments
@@ -22138,11 +22188,14 @@ to absolute humidity and evaluates the performance of comfort indices.")
     (synopsis "Covariance Measure Tests for Conditional Independence")
     (description
      "Covariance measure tests for conditional independence testing against
-conditional covariance and nonlinear conditional mean alternatives.  Contains
-versions of the generalised covariance measure test (Shah and Peters, 2020,
-<doi:10.1214/19-aos1857>) and projected covariance measure test (Lundborg et
-al., 2023, <doi:10.48550/@code{arXiv.2211.02039>}).  Applications can be found
-in Kook and Lundborg (2024, <doi:10.1093/bib/bbae475>).")
+conditional covariance and nonlinear conditional mean alternatives.  The package
+implements versions of the generalised covariance measure test (Shah and Peters,
+2020, <doi:10.1214/19-aos1857>) and projected covariance measure test (Lundborg
+et al., 2023, <doi:10.1214/24-AOS2447>).  The tram-GCM test, for censored
+responses, is implemented including the Cox model and survival forests (Kook et
+al., 2024, <doi:10.1080/01621459.2024.2395588>).  Application examples to
+variable significance testing and modality selection can be found in Kook and
+Lundborg (2024, <doi:10.1093/bib/bbae475>).")
     (license license:gpl3)))
 
 (define-public r-cometr
@@ -27838,49 +27891,6 @@ of multiple surrogate markers.  Details are described in Wang et al (2022)
 <doi:10.1111/biom.13677>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-cmfrec
-  (package
-    (name "r-cmfrec")
-    (version "3.5.1-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cmfrec" version))
-       (sha256
-        (base32 "0hlz10zrwdk9p0rybfqn04104bv0d9024d0ca1d6v66ymzy3gwlw"))))
-    (properties `((upstream-name . "cmfrec")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/david-cortes/cmfrec")
-    (synopsis "Collective Matrix Factorization for Recommender Systems")
-    (description
-     "Collective matrix factorization (a.k.a.  multi-view or multi-way factorization,
-Singh, Gordon, (2008) <doi:10.1145/1401890.1401969>) tries to approximate a
-(potentially very sparse or having many missing values) matrix X as the product
-of two low-dimensional matrices, optionally aided with secondary information
-matrices about rows and/or columns of X', which are also factorized using the
-same latent components.  The intended usage is for recommender systems,
-dimensionality reduction, and missing value imputation.  Implements extensions
-of the original model (Cortes, (2018) <@code{arXiv:1809.00366>}) and can produce
-different factorizations such as the weighted implicit-feedback model (Hu,
-Koren, Volinsky, (2008) <doi:10.1109/ICDM.2008.22>), the
-weighted-lambda-regularization model, (Zhou, Wilkinson, Schreiber, Pan, (2008)
-<doi:10.1007/978-3-540-68880-8_32>), or the enhanced model with implicit
-features (Rendle, Zhang, Koren, (2019) <@code{arXiv:1905.01395>}), with or
-without side information.  Can use gradient-based procedures or
-alternating-least squares procedures (Koren, Bell, Volinsky, (2009)
-<doi:10.1109/MC.2009.263>), with either a Cholesky solver, a faster conjugate
-gradient solver (Takacs, Pilaszy, Tikk, (2011) <doi:10.1145/2043932.2043987>),
-or a non-negative coordinate descent solver (Franc, Hlavac, Navara, (2005)
-<doi:10.1007/11556121_50>), providing efficient methods for sparse and dense
-data, and mixtures thereof.  Supports L1 and L2 regularization in the main
-models, offers alternative most-popular and content-based models, and implements
-functionality for cold-start recommendations and imputation of 2D data.")
-    (license license:expat)))
-
 (define-public r-cmf
   (package
     (name "r-cmf")
@@ -29664,34 +29674,52 @@ is also included.")
 (define-public r-clustassess
   (package
     (name "r-clustassess")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClustAssess" version))
        (sha256
-        (base32 "0b8p5dpb843rv8q1hsc74zhxyn9wjgdxwpwrbq2yx4jmy8v65gzq"))))
+        (base32 "0wpqxgb3nb2342mkq008jq1ikwjy4j3261aa92px6nvczcysxb0b"))))
     (properties `((upstream-name . "ClustAssess")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uwot
+    (propagated-inputs (list r-vioplot
+                             r-uwot
                              r-stringr
+                             r-shinywidgets
+                             r-shinylp
+                             r-shinyjs
+                             r-shiny
+                             r-seurat
                              r-rlang
                              r-reshape2
+                             r-rcppeigen
                              r-rcpp
+                             r-rann
+                             r-qualpalr
                              r-progress
+                             r-plotly
+                             r-paletteer
+                             r-matrixstats
                              r-matrix
-                             r-magrittr
-                             r-irlba
+                             r-leiden
+                             r-jsonlite
                              r-igraph
+                             r-gprofiler2
+                             r-gmedian
+                             r-glue
+                             r-ggtext
+                             r-ggrepel
+                             r-ggrastr
                              r-ggplot2
+                             r-ggnewscale
                              r-foreach
                              r-fastcluster
-                             r-dplyr
-                             r-doparallel))
-    (native-inputs (list r-knitr))
+                             r-dt
+                             r-dplyr))
     (home-page "https://github.com/Core-Bioinformatics/ClustAssess")
     (synopsis "Tools for Assessing Clustering")
     (description

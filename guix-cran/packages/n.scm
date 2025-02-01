@@ -11795,6 +11795,40 @@ various other measures associated with the reliability and reproducibility of
 network analysis.")
     (license license:gpl3+)))
 
+(define-public r-networksem
+  (package
+    (name "r-networksem")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "networksem" version))
+       (sha256
+        (base32 "1swbai9q8a002934przm4s2qyy6pn5sll20dp0ji7r66r7kg99s9"))))
+    (properties `((upstream-name . "networksem")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sna
+                             r-network
+                             r-lavaan
+                             r-latentnet
+                             r-influential
+                             r-igraph))
+    (home-page "https://cran.r-project.org/package=networksem")
+    (synopsis "Network Structural Equation Modeling")
+    (description
+     "Several methods have been developed to integrate structural equation modeling
+techniques with network data analysis to examine the relationship between
+network and non-network data.  Both node-based and edge-based information can be
+extracted from the network data to be used as observed variables in structural
+equation modeling.  To facilitate the application of these methods, model
+specification can be performed in the familiar syntax of the lavaan package,
+ensuring ease of use for researchers.  Technical details and examples can be
+found at <https://bigsem.psychstat.org>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-networkscaleup
   (package
     (name "r-networkscaleup")

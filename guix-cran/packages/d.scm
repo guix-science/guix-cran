@@ -12662,13 +12662,13 @@ metrics.")
 (define-public r-distancehd
   (package
     (name "r-distancehd")
-    (version "1.0")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distanceHD" version))
        (sha256
-        (base32 "12x96mwsczsg07cfl2qaj75vb841yxqb1vsq2wr1f0d7c0nd3iyb"))))
+        (base32 "15b2nmi0w0xl6ni8zvck96jyd4ks3hgb80j2szv2nk2vwsch2prq"))))
     (properties `((upstream-name . "distanceHD")))
     (build-system r-build-system)
     (arguments
@@ -25078,6 +25078,39 @@ soft-threshold estimation of the covariance matrices and therein introduces
 sparsity.  Number of components and regularization coefficients are
 automatically set.")
     (license license:expat)))
+
+(define-public r-ddpstar
+  (package
+    (name "r-ddpstar")
+    (version "1.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DDPstar" version))
+       (sha256
+        (base32 "18xv23fwzphfjrv9c2bzzj0sjy30z7nqkwkyfv49xcd05l70lq91"))))
+    (properties `((upstream-name . "DDPstar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-moments r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=DDPstar")
+    (synopsis
+     "Density Regression via Dirichlet Process Mixtures of Normal Structured Additive Regression Models")
+    (description
+     "This package implements a flexible, versatile, and computationally tractable
+model for density regression based on a single-weights dependent Dirichlet
+process mixture of normal distributions model for univariate continuous
+responses.  The model assumes an additive structure for the mean of each mixture
+component and the effects of continuous covariates are captured through smooth
+nonlinear functions.  The key components of our modelling approach are penalised
+B-splines and their bivariate tensor product extension.  The proposed method can
+also easily deal with parametric effects of categorical covariates, linear
+effects of continuous covariates, interactions between categorical and/or
+continuous covariates, varying coefficient terms, and random effects.  Please
+see Rodriguez-Alvarez, Inacio et al. (2025) for more details.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-ddpna
   (package

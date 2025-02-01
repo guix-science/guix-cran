@@ -18202,6 +18202,50 @@ the survey package that call ggplot2 to make bar charts, histograms, boxplots,
 and hexplots of survey data.")
     (license license:expat)))
 
+(define-public r-ggsurveillance
+  (package
+    (name "r-ggsurveillance")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggsurveillance" version))
+       (sha256
+        (base32 "0aff51vli0vynz0iidg9f4d2ybgvglx9pj5snnbzjr1kv0338r96"))))
+    (properties `((upstream-name . "ggsurveillance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsibble
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-lubridate
+                             r-isoweek
+                             r-glue
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://ggsurveillance.biostats.dev")
+    (synopsis
+     "Tools and 'ggplot2' Extensions for Infectious Disease Surveillance and Outbreak Investigation")
+    (description
+     "Create epicurves or epigantt charts in ggplot2'.  Prepare data for visualisation
+or other reporting for infectious disease surveillance and outbreak
+investigation.  Includes functions to solve date based transformations for
+common reporting tasks, like (A) seasonal date alignment for respiratory disease
+surveillance, (B) date-based case binning based on specified time intervals like
+isoweek, epiweek, month and more, (C) automated detection and marking of the new
+year based on the date/datetime axis of the ggplot2'.  An introduction on how to
+use epicurves can be found on the US CDC website (2012,
+<https://www.cdc.gov/training/quicklearns/epimode/index.html>).")
+    (license license:gpl3+)))
+
 (define-public r-ggstudent
   (package
     (name "r-ggstudent")
@@ -18288,13 +18332,13 @@ draw the scatter plot.")
 (define-public r-ggstackplot
   (package
     (name "r-ggstackplot")
-    (version "0.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggstackplot" version))
        (sha256
-        (base32 "0p22ml657g1fn8p3120dxwmwlif29gqnnxij5479l9074z9k4k24"))))
+        (base32 "0dj44kwcwxqnckwni25zc281ay4fqyg18din6a9mfzwjj8wkwz1i"))))
     (properties `((upstream-name . "ggstackplot")))
     (build-system r-build-system)
     (arguments
@@ -18310,7 +18354,7 @@ draw the scatter plot.")
                              r-cowplot
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggstackplot")
+    (home-page "https://ggstackplot.kopflab.org/")
     (synopsis "Create Overlapping Stacked Plots")
     (description
      "Easily create overlapping grammar of graphics plots for scientific data
@@ -21443,13 +21487,13 @@ issue.")
 (define-public r-ggfootball
   (package
     (name "r-ggfootball")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfootball" version))
        (sha256
-        (base32 "03pa3byi582ydjksdkp7aazl7rbssrhw79nvqwjjqbhqv006dpp7"))))
+        (base32 "1wpwgkzki22jh2nz9jhl529cn8yk1ggs52h9cjq14gwi6205g7d6"))))
     (properties `((upstream-name . "ggfootball")))
     (build-system r-build-system)
     (arguments
@@ -21472,7 +21516,7 @@ issue.")
                              r-dplyr
                              r-base64enc))
     (home-page "http://aymennasri.me/ggfootball/")
-    (synopsis "Plotting Expected Goals (xG) Stats with Understat Data")
+    (synopsis "Plotting Expected Goals (xG) Stats with 'Understat' Data")
     (description
      "Scrapes shots data from Understat <https://understat.com/> and visualizes it
 using interactive plots: - A detailed shot map displaying the location, type,
@@ -25733,13 +25777,13 @@ supplementary cartography for spatial representation.")
 (define-public r-geonapi
   (package
     (name "r-geonapi")
-    (version "0.7-2")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geonapi" version))
        (sha256
-        (base32 "0n6s9gvg9z8hn3sih0gj35x8zxspqa8h8bml50bhsl5y4gcfihgd"))))
+        (base32 "0pic50g4k6rjqqhj83kz0qqh1hcs4x4fh0amj9ynbv40mcn4rl98"))))
     (properties `((upstream-name . "geonapi")))
     (build-system r-build-system)
     (arguments
@@ -31212,13 +31256,13 @@ components required for a given reconstruction accuracy.")
 (define-public r-gdm
   (package
     (name "r-gdm")
-    (version "1.6.0-5")
+    (version "1.6.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdm" version))
        (sha256
-        (base32 "00qzpdg351ydqqw3hkg6hcpb68ffnkih6zcgsc479nkhaasmx1pa"))))
+        (base32 "1yv60cagsw3xi4cqlbj1gw0hyqbpvimnivm02zlr5f858f3530hp"))))
     (properties `((upstream-name . "gdm")))
     (build-system r-build-system)
     (arguments

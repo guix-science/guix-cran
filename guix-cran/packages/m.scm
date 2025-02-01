@@ -1113,13 +1113,13 @@ variables.")
 (define-public r-mvp
   (package
     (name "r-mvp")
-    (version "1.0-14")
+    (version "1.0-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvp" version))
        (sha256
-        (base32 "0dzf5h5ng0vx6nw8j8q9ydksicyxy940p363n367gbs56c8x47dk"))))
+        (base32 "1ppjwmd96hxznz8wc1zdmzfy8z70ascka1a9nrzm445pjgl7k8km"))))
     (properties `((upstream-name . "mvp")))
     (build-system r-build-system)
     (arguments
@@ -1129,7 +1129,6 @@ variables.")
                              r-partitions
                              r-numbers
                              r-mpoly
-                             r-magrittr
                              r-magic
                              r-disordr
                              r-digest))
@@ -1139,10 +1138,9 @@ variables.")
     (description
      "Fast manipulation of symbolic multivariate polynomials using the Map class of
 the Standard Template Library.  The package uses print and coercion methods from
-the mpoly package (Kahle 2013, \"Multivariate polynomials in R\", The R Journal,
-5(1):162), but offers speed improvements.  It is comparable in speed to the
-spray package for sparse arrays, but retains the symbolic benefits of mpoly'.
-To cite the package in publications, use Hankin 2022
+the mpoly package but offers speed improvements.  It is comparable in speed to
+the spray package for sparse arrays, but retains the symbolic benefits of
+mpoly'.  To cite the package in publications, use Hankin 2022
 <doi:10.48550/ARXIV.2210.15991>.  Uses @code{disordR} discipline.")
     (license license:gpl2+)))
 
@@ -5554,6 +5552,37 @@ the data.  It could help us in a better way to observe the behavior of the
 multigroup data with certain variables of interest.")
     (license license:gpl3)))
 
+(define-public r-multigrey
+  (package
+    (name "r-multigrey")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultiGrey" version))
+       (sha256
+        (base32 "07hskky879xcv8dhgn520dzdbvd4chjdwakirb63pjd5s6y5xbis"))))
+    (properties `((upstream-name . "MultiGrey")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo))
+    (home-page "https://cran.r-project.org/package=MultiGrey")
+    (synopsis
+     "Fitting and Forecasting of Grey Model for Multivariate Time Series Data")
+    (description
+     "Grey model is commonly used in time series forecasting when statistical
+assumptions are violated with a limited number of data points.  The minimum
+number of data points required to fit a grey model is four observations.  This
+package fits Grey model of First order and One Variable, i.e., GM (1,1) for
+multivariate time series data and returns the parameters of the model, model
+evaluation criteria and h-step ahead forecast values for each of the time series
+variables.  For method details see, Akay, D. and Atak, M. (2007)
+<DOI:10.1016/j.energy.2006.11.014>, Hsu, L. and Wang, C.
+(2007).<DOI:10.1016/j.techfore.2006.02.005>.")
+    (license license:gpl2+)))
+
 (define-public r-multigraphr
   (package
     (name "r-multigraphr")
@@ -7311,6 +7340,44 @@ to correct ring-width series.  The package provides a Shiny-based application,
 allowing R beginners to easily analyze tree ring images and export ring-width
 series in standard file formats.")
     (license license:gpl3)))
+
+(define-public r-mtrank
+  (package
+    (name "r-mtrank")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mtrank" version))
+       (sha256
+        (base32 "19wsg698z782dgwd6p49sxvgqq0j4s0ncwq23pglgc7jzmh1ah86"))))
+    (properties `((upstream-name . "mtrank")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plackettluce r-netmeta r-meta r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TEvrenoglou/mtrank")
+    (synopsis
+     "Ranking using Probabilistic Models and Treatment Choice Criteria")
+    (description
+     "Implementation of a novel frequentist approach to produce clinically relevant
+treatment hierarchies in network meta-analysis.  The method is based on
+treatment choice criteria (TCC) and probabilistic ranking models, as described
+by Evrenoglou et al. (2024) <DOI:10.48550/@code{arXiv.2406.10612>}.  The TCC are
+defined using a rule based on the minimal clinically important difference.
+Using the defined TCC, the study-level data (i.e., treatment effects and
+standard errors) are first transformed into a preference format, indicating
+either a treatment preference (e.g., treatment A > treatment B) or a tie
+(treatment A = treatment B).  The preference data are then synthesized using a
+probabilistic ranking model, which estimates the latent ability parameter of
+each treatment and produces the final treatment hierarchy.  This parameter
+represents each treatmentâs ability to outperform all the other competing
+treatments in the network.  Consequently, larger ability estimates indicate
+higher positions in the ranking list.")
+    (license license:gpl2+)))
 
 (define-public r-mtps
   (package
@@ -10202,6 +10269,31 @@ it can also be used to estimate sample sizes for standalone studies where
 sensitivity or AUC are the primary endpoints.  The methods implemented are based
 on the methods described in Zhou et.al. (2011) <doi:10.1002/9780470906514> and
 Obuchowski (2000) <doi:10.1097/EDE.0b013e3181a663cc>.")
+    (license license:expat)))
+
+(define-public r-mrmcbinary
+  (package
+    (name "r-mrmcbinary")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MRMCbinary" version))
+       (sha256
+        (base32 "04rq742xxxf8x0wbnclj546661y826zjsld00rqy6bqsgm3rm6xg"))))
+    (properties `((upstream-name . "MRMCbinary")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-desctools))
+    (home-page "https://github.com/seungjae2525/MRMCbinary")
+    (synopsis "Multi-Reader Multi-Case Analysis of Binary Diagnostic Tests")
+    (description
+     "The goal of MRMCbinary is to compare the performance of diagnostic tests (i.e.,
+sensitivity and specificity) for binary outcomes in multi-reader multi-case
+(MRMC) studies.  It is based on conditional logistic regression and Cochranâs
+Q test (or @code{McNemarâs} test when the number of modalities is equal to 2).")
     (license license:expat)))
 
 (define-public r-mrmcaov
@@ -21608,48 +21700,6 @@ the Caret train function results from repeated cross validation, then select the
 best model and analyse the results.  MLeval produces a range of evaluation
 metrics with confidence intervals.")
     (license license:agpl3)))
-
-(define-public r-mlergm
-  (package
-    (name "r-mlergm")
-    (version "0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlergm" version))
-       (sha256
-        (base32 "0bpdljmbn4lfm263jcsp0hrknixn49m7hqsx0jjk3pfwhgjlajh8"))))
-    (properties `((upstream-name . "mlergm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-sna
-                             r-reshape2
-                             r-plyr
-                             r-network
-                             r-matrix
-                             r-lpsolve
-                             r-ggplot2
-                             r-ggally
-                             r-ergm
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mlergm")
-    (synopsis "Multilevel Exponential-Family Random Graph Models")
-    (description
-     "Estimates exponential-family random graph models for multilevel network data,
-assuming the multilevel structure is observed.  The scope, at present, covers
-multilevel models where the set of nodes is nested within known blocks.  The
-estimation method uses Monte-Carlo maximum likelihood estimation (MCMLE) methods
-to estimate a variety of canonical or curved exponential family models for
-binary random graphs.  MCMLE methods for curved exponential-family random graph
-models can be found in Hunter and Handcock (2006) <DOI:
-10.1198/106186006X133069>.  The package supports parallel computing, and
-provides methods for assessing goodness-of-fit of models and visualization of
-networks.")
-    (license license:gpl3)))
 
 (define-public r-mlelod
   (package
@@ -42424,13 +42474,13 @@ transform (MBCn) â as is the Rank Resampling for Distributions and Dependen
 (define-public r-mbbefdlite
   (package
     (name "r-mbbefdlite")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBBEFDLite" version))
        (sha256
-        (base32 "1cczc45gw0ksisagjhyjf7zck00qqpdpa02w2wkbdx8bhvllkl62"))))
+        (base32 "0jm9az9qbj2bg5rbhs1ly58hfviff3lcxrabhlvs3h9qamyp8nnk"))))
     (properties `((upstream-name . "MBBEFDLite")))
     (build-system r-build-system)
     (arguments

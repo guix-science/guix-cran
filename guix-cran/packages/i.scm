@@ -11149,25 +11149,25 @@ regression [Sun and Wei (2004). <doi:10.1016/j.spl.2003.08.018>].")
 (define-public r-indgenerrors
   (package
     (name "r-indgenerrors")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IndGenErrors" version))
        (sha256
-        (base32 "1iwq53vahcaa0cqmk8g0484drdlphips7p95z4rh6miv2bxjh8fa"))))
+        (base32 "1miayr4zf91vq5bms02idv9d263hjarzihsmxkgvwsmbafskikkl"))))
     (properties `((upstream-name . "IndGenErrors")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-mixedindtests r-ggplot2))
     (home-page "https://cran.r-project.org/package=IndGenErrors")
     (synopsis
      "Tests of Independence Between Innovations of Generalized Error Models")
     (description
      "Computation of test statistics of independence between (continuous) innovations
-of time series.  They Can be used with stochastic volatility models and Hidden
+of time series.  They can be used with stochastic volatility models and Hidden
 Markov Models (HMM).  This improves the results in Duchesne, Ghoudi & Remillard
 (2012) <doi:10.1002/cjs.11141>.")
     (license license:gpl2+)))
@@ -20799,13 +20799,13 @@ does not require resampling or refitting black-box prediction models.")
 (define-public r-iadf
   (package
     (name "r-iadf")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iadf" version))
        (sha256
-        (base32 "18r9qyhicbfrkpqnxnn5i854s0afq4pnbaw2ckw1qrhy3pzys6zp"))))
+        (base32 "1f2xlnnsy6cmn2lg18ibissczssvci00kvk3pxqzpva3mzykf4cz"))))
     (properties `((upstream-name . "iadf")))
     (build-system r-build-system)
     (arguments

@@ -7780,6 +7780,40 @@ geometric adaptations based on Hillebrand et al. (1999)
 <doi:10.1285/i1825229Xv1n2p83>.")
     (license license:expat)))
 
+(define-public r-forgts
+  (package
+    (name "r-forgts")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forgts" version))
+       (sha256
+        (base32 "0zj2dhpwigznp0368q6lp6nj69sg5zm946klpbn4lx3ln3hxgs7x"))))
+    (properties `((upstream-name . "forgts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyxl
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-gt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/luisDVA/forgts")
+    (synopsis
+     "Convert Formatted Spreadsheets to Presentation-Ready Display Tables")
+    (description
+     "Reads cell contents plus formatting from a spreadsheet file and creates an
+editable gt object with the same data and formatting.  Supports the most
+commonly-used cell and text styles including colors, fills, font weights and
+decorations, and borders.")
+    (license license:expat)))
+
 (define-public r-foretell
   (package
     (name "r-foretell")
@@ -13147,6 +13181,39 @@ datasets becomes possible.  This package also contains a plot function for the
 visualization of the state vector and graphical diagnostics of the residuals.")
     (license license:gpl2+)))
 
+(define-public r-fkbma
+  (package
+    (name "r-fkbma")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fkbma" version))
+       (sha256
+        (base32 "1bf1vnr751xph8y3pf90yxl7rmgzjqv4zzcxfgi2r10jknpbbva8"))))
+    (properties `((upstream-name . "fkbma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstan
+                             r-rlang
+                             r-matrixstats
+                             r-mass
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=fkbma")
+    (synopsis "Free Knot-Bayesian Model Averaging")
+    (description
+     "Analysis of Bayesian adaptive enrichment clinical trial using Free-Knot Bayesian
+Model Averaging (FK-BMA) method of Maleyeff et al. (2024) for Gaussian data.
+Maleyeff, L., Golchi, S., Moodie, E. E. M., & Hudson, M. (2024) \"An adaptive
+enrichment design using Bayesian model averaging for selection and
+threshold-identification of predictive variables\" <doi:10.1093/biomtc/ujae141>.")
+    (license license:gpl3)))
+
 (define-public r-fjordlight
   (package
     (name "r-fjordlight")
@@ -18136,6 +18203,41 @@ explore them.")
     (description
      "An API for automatic data queries to the fedstat <https://www.fedstat.ru>, using
 a small set of functions with a common interface.")
+    (license license:expat)))
+
+(define-public r-fedmatch
+  (package
+    (name "r-fedmatch")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fedmatch" version))
+       (sha256
+        (base32 "07fb7qvsx3ibiigrw3r61nxpm4rhjg81q6iifsz4wxyl5w4xr95r"))))
+    (properties `((upstream-name . "fedmatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-stringdist
+                             r-snowballc
+                             r-scales
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-forcats
+                             r-data-table
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fedmatch")
+    (synopsis "Fast, Flexible, and User-Friendly Record Linkage Methods")
+    (description
+     "This package provides a flexible set of tools for matching two un-linked data
+sets.  fedmatch allows for three ways to match data: exact matches, fuzzy
+matches, and multi-variable matches.  It also allows an easy combination of
+these three matches via the tier matching function.")
     (license license:expat)))
 
 (define-public r-fedirt

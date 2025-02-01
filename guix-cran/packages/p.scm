@@ -17063,13 +17063,13 @@ generate output.")
 (define-public r-popepi
   (package
     (name "r-popepi")
-    (version "0.4.12")
+    (version "0.4.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "popEpi" version))
        (sha256
-        (base32 "13fasp84hxxpbn6gmfjfl1kzija7y11mvlhc77rpqnj1l5wcm1rn"))))
+        (base32 "0zikxba1wfnwp28akpb67cyxd7d7icpdkpixcj4hp8hyyyvkxi5r"))))
     (properties `((upstream-name . "popEpi")))
     (build-system r-build-system)
     (arguments

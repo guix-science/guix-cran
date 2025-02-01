@@ -4247,6 +4247,38 @@ distributions are generated using the method described by Bender (2003)
 Research, 35(6), 892â894.")
     (license license:gpl3+)))
 
+(define-public r-survnma
+  (package
+    (name "r-survnma")
+    (version "1.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survNMA" version))
+       (sha256
+        (base32 "1fvf4mak3bc2nwv185cr9i0qjf8ib71h74i795lhnqsaskw7cqax"))))
+    (properties `((upstream-name . "survNMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-netmeta))
+    (home-page "https://doi.org/10.1101/2025.01.23.25321051")
+    (synopsis "Network Meta-Analysis Combining Survival and Count Outcomes")
+    (description
+     "Network meta-analysis for survival outcome data often involves several studies
+only involve dichotomized outcomes (e.g., the numbers of event and sample sizes
+of individual arms).  To combine these different outcome data, Woods et al.
+(2010) <doi:10.1186/1471-2288-10-54> proposed a Bayesian approach using
+complicated hierarchical models.  Besides, frequentist approaches have been
+alternative standard methods for the statistical analyses of network
+meta-analysis, and the methodology has been well established.  We proposed an
+easy-to-implement method for the network meta-analysis based on the frequentist
+framework in Noma and Maruo (2025) <doi:10.1101/2025.01.23.25321051>.  This
+package involves some convenient functions to implement the simple synthesis
+method.")
+    (license license:gpl3)))
+
 (define-public r-survml
   (package
     (name "r-survml")
@@ -4794,6 +4826,32 @@ inference, a popular method in machine learning for scalable conditional
 inference.  Although approximate, the variational posterior provides excellent
 point estimates and good control of the false discovery rate.  For more
 information see Komodromos et al. (2021) <@code{arXiv:2112.10270>}.")
+    (license license:gpl3)))
+
+(define-public r-survimpute
+  (package
+    (name "r-survimpute")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurvImpute" version))
+       (sha256
+        (base32 "1v8p5ccyaz486sga7iw3qmq5k4n4rx5vx77677998szafvmc8rcl"))))
+    (properties `((upstream-name . "SurvImpute")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam r-survival r-mass))
+    (home-page "https://cran.r-project.org/package=SurvImpute")
+    (synopsis
+     "Multiple Imputation for Missing Covariates in Time-to-Event Data")
+    (description
+     "Generates multiple imputed datasets from a substantive model compatible fully
+conditional specification model for time-to-event data.  Our method assumes that
+the censoring process also depends on the covariates with missing values.
+Details will be available in an upcoming publication.")
     (license license:gpl3)))
 
 (define-public r-survimchd
@@ -10276,6 +10334,42 @@ allows users to apply transformations and customize the sampling process.  This
 package can be useful for statistical analysis and data preparation tasks.")
     (license license:expat)))
 
+(define-public r-stratifiedsampling
+  (package
+    (name "r-stratifiedsampling")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StratifiedSampling" version))
+       (sha256
+        (base32 "11wnrrkz7xh5cwjchwlavwq50xyx6zzz76h072prf4zwacd66r17"))))
+    (properties `((upstream-name . "StratifiedSampling")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-transport
+                             r-sampling
+                             r-rglpk
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-proxy
+                             r-matrix
+                             r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RJauslin/StratifiedSampling")
+    (synopsis "Different Methods for Stratified Sampling")
+    (description
+     "Integrating a stratified structure in the population in a sampling design can
+considerably reduce the variance of the Horvitz-Thompson estimator.  We propose
+in this package different methods to handle the selection of a balanced sample
+in stratified population.  For more details see RaphaÃ«l Jauslin, Esther
+Eustache and Yves TillÃ© (2021) <doi:10.1007/s42081-021-00134-y>.  The package
+propose also a method based on optimal transport and balanced sampling, see
+RaphaÃ«l Jauslin and Yves TillÃ© <doi:10.1016/j.jspi.2022.12.003>.")
+    (license license:gpl2+)))
+
 (define-public r-stratifiedrf
   (package
     (name "r-stratifiedrf")
@@ -11727,6 +11821,37 @@ Financial Analyst Program Curriculum 2020 Level I Volumes 1-6. (Vol.  4, pp.
 445-491)\", 2019, ISBN: 9781119593577).  Chartered Financial Analyst Institute
 (\"Chartered Financial Analyst Program Curriculum 2020 Level II Volumes 1-6.
 (Vol.  4, pp.  197-447)\", 2019, ISBN: 9781119593614).")
+    (license license:gpl3)))
+
+(define-public r-stochvoltmb
+  (package
+    (name "r-stochvoltmb")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stochvolTMB" version))
+       (sha256
+        (base32 "082pcr1dawbnn1ipd2p8758rqshw8ln49kjdbfkyj07vjvzv5mgw"))))
+    (properties `((upstream-name . "stochvolTMB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb
+                             r-sn
+                             r-rcppeigen
+                             r-mass
+                             r-ggplot2
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JensWahl/stochvolTMB")
+    (synopsis "Likelihood Estimation of Stochastic Volatility Models")
+    (description
+     "Parameter estimation for stochastic volatility models using maximum likelihood.
+The latent log-volatility is integrated out of the likelihood using the Laplace
+approximation.  The models are fitted via TMB (Template Model Builder)
+(Kristensen, Nielsen, Berg, Skaug, and Bell (2016) <doi:10.18637/jss.v070.i05>).")
     (license license:gpl3)))
 
 (define-public r-stochvol
@@ -46649,6 +46774,33 @@ this package is based on the works of Furusawa K, Hill AV, Parkinson JL (1927)
 10.3390/s24092894>.")
     (license license:expat)))
 
+(define-public r-shortr
+  (package
+    (name "r-shortr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shortr" version))
+       (sha256
+        (base32 "1m2jmflw4a1yfaifnz0yzd37pdg1gyq58zh6hl0gcabhpxaaf768"))))
+    (properties `((upstream-name . "shortr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/lfourni2/shortr")
+    (synopsis
+     "Optimal Subset Identification in Undirected Weighted Network Models")
+    (description
+     "Identifies what optimal subset of a desired number of items should be retained
+in a short version of a psychometric instrument to assess the âbroadestâ
+proportion of the construct-level content of the set of items included in the
+original version of the said psychometric instrument.  Expects a symmetric
+adjacency matrix as input (undirected weighted network model).  Supports brute
+force and simulated annealing combinatorial search algorithms.")
+    (license license:gpl3+)))
+
 (define-public r-shortirt
   (package
     (name "r-shortirt")
@@ -49646,13 +49798,13 @@ for an example implementation.")
 (define-public r-shinycox
   (package
     (name "r-shinycox")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyCox" version))
        (sha256
-        (base32 "16i1n0624rbzrs8jv0g50bm8n7m9bs28fqhh4282wdk423qy51k2"))))
+        (base32 "1wkgwpyic4ff41g59d2vn1a1lgxgcfd5k94nx4sfc87nvcc3zaw4"))))
     (properties `((upstream-name . "shinyCox")))
     (build-system r-build-system)
     (arguments
@@ -62543,13 +62695,13 @@ sequencing) data <https://github.com/fumi-github/@code{scPloidy>}.")
 (define-public r-scpi
   (package
     (name "r-scpi")
-    (version "2.2.6")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scpi" version))
        (sha256
-        (base32 "1xfw0paa05c9pzizyqpnxph0wwbv6ryvlxph35f9xfcs6fm97nl8"))))
+        (base32 "0qmx43x16xwiwzjhqzvic18nlf4wbmasfd2bw63rrazzgj8zhqpr"))))
     (properties `((upstream-name . "scpi")))
     (build-system r-build-system)
     (arguments
@@ -69156,13 +69308,13 @@ rows on a modern desktop computer.")
 (define-public r-samplezoo
   (package
     (name "r-samplezoo")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samplezoo" version))
        (sha256
-        (base32 "0v63f203knil6rzsrwx65nv1pazvz1lnl4pwazfb613w5vf2g0nl"))))
+        (base32 "1m0sqvsv1ncgjfd9lbi6vy7ynzifk5rrmfxm08jij6w1p3xwg305"))))
     (properties `((upstream-name . "samplezoo")))
     (build-system r-build-system)
     (arguments

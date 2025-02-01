@@ -13669,13 +13669,13 @@ bioassays for one or several strains/lines/populations.")
 (define-public r-bioregion
   (package
     (name "r-bioregion")
-    (version "1.1.1-1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioregion" version))
        (sha256
-        (base32 "17i7cbaf0pzjja71z5c3gr8s9hjkj74z6xcdk3h3wpm4wi3lm9z2"))))
+        (base32 "1y62r4qm0i6jfc0jpc4sjn34iakgjnnjb3jh8fvmvvd0cp06pba8"))))
     (properties `((upstream-name . "bioregion")))
     (build-system r-build-system)
     (arguments
@@ -13688,9 +13688,11 @@ bioassays for one or several strains/lines/populations.")
                              r-rlang
                              r-rdpack
                              r-rcpp
+                             r-phangorn
                              r-matrix
                              r-mathjaxr
                              r-igraph
+                             r-httr
                              r-ggplot2
                              r-fastkmedoids
                              r-fastcluster
@@ -13699,7 +13701,8 @@ bioassays for one or several strains/lines/populations.")
                              r-data-table
                              r-cluster
                              r-bipartite
-                             r-ape))
+                             r-ape
+                             r-apcluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bioRgeo/bioregion")
     (synopsis "Comparison of Bioregionalisation Methods")
@@ -17014,33 +17017,6 @@ as described by Hollenbach JA, Mack SJ, Thomson G, Gourraud PA (2012)
 <doi:10.1007/978-1-61779-842-9_14>.")
     (license license:gpl3+)))
 
-(define-public r-bigdatape
-  (package
-    (name "r-bigdatape")
-    (version "0.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BigDataPE" version))
-       (sha256
-        (base32 "1m5hm221yib22dkzxb4fm7ngla642fjncksfdp7swzx0wla7p92n"))))
-    (properties `((upstream-name . "BigDataPE")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-keyring r-httr2 r-dplyr))
-    (home-page "<https://github.com/StrategicProjects/bigdatape>")
-    (synopsis "Secure and Intuitive Access to 'BigDataPE' 'API' Datasets")
-    (description
-     "Designed to simplify the process of retrieving datasets from the
-@code{BigDataPE} platform using secure token-based authentication.  It provides
-functions for securely storing, retrieving, and managing tokens associated with
-specific datasets, as well as fetching and processing data using the httr2
-package.  The integration with keyring ensures that tokens are stored securely
-within the systemâs credential manager.")
-    (license license:expat)))
-
 (define-public r-bigdatadist
   (package
     (name "r-bigdatadist")
@@ -17682,13 +17658,13 @@ plot, as well as a summary of the matching procedure.")
 (define-public r-bibliorefer
   (package
     (name "r-bibliorefer")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliorefer" version))
        (sha256
-        (base32 "0sqj4gpdlx3ahaxh07jvgaidxa5svi3r014v2mmpmi90qym35fkl"))))
+        (base32 "1iq71gn6695dw4gqzy4jcdrf2s1k7z079wgswv9d1qwh261s2vxv"))))
     (properties `((upstream-name . "bibliorefer")))
     (build-system r-build-system)
     (arguments

@@ -1182,6 +1182,43 @@ the galaxy plot.  Hong C. et al(2020) <doi:10.1093/aje/kwz286>, Chongliang L. et
 al(2020) <doi:10.1101/2020.07.27.20161562>.")
     (license license:gpl2+)))
 
+(define-public r-xmap
+  (package
+    (name "r-xmap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xmap" version))
+       (sha256
+        (base32 "0jq9amaw3fi8vjn48m3hrmk17zr3kzy0qsahndmi14nabsybh0ck"))))
+    (properties `((upstream-name . "xmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-pillar
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cynthiahqy/xmap")
+    (synopsis "Transforming Data Between Statistical Classifications")
+    (description
+     "This package provides support for transformations of numeric aggregates between
+statistical classifications (e.g. occupation or industry categorisations) using
+the Crossmaps framework.  Implements classes for representing transformations
+between a source and target classification as graph structures, and methods for
+validating and applying crossmaps to transform data collected under the source
+classification into data indexed using the target classification codes.
+Documentation about the Crossmaps framework is provided in the included
+vignettes and in Huang (2024, <doi:10.48550/@code{arXiv.2406.14163>}).")
+    (license license:expat)))
+
 (define-public r-xlsxjars
   (package
     (name "r-xlsxjars")

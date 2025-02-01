@@ -9137,13 +9137,13 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
 (define-public r-rrpp
   (package
     (name "r-rrpp")
-    (version "2.0.4")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRPP" version))
        (sha256
-        (base32 "021f1d90rqr8yhgkhg9adym5lkm6gkyi6fyd1dh4caffm0g69281"))))
+        (base32 "050l1n39dl5zjz15x6pfmqpzlxb8y6z5l3c7g5gggbdrcgj1navk"))))
     (properties `((upstream-name . "RRPP")))
     (build-system r-build-system)
     (arguments
@@ -9615,26 +9615,31 @@ functionality on Redshift'.")
 (define-public r-rredlist
   (package
     (name "r-rredlist")
-    (version "0.7.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rredlist" version))
        (sha256
-        (base32 "11dfad1r93b8q6jbn319lz9w7qbw7nqwxyck3fs1kp0il8vhr8cj"))))
+        (base32 "188difrf4v4bidw1ihgwi29vicv3fsmvmqhpm7h7z25fds3y4xp5"))))
     (properties `((upstream-name . "rredlist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-crul))
-    (home-page
-     "https://github.com/ropensci/rredlisthttps://docs.ropensci.org/rredlist/")
+    (propagated-inputs (list r-rlang
+                             r-lifecycle
+                             r-jsonlite
+                             r-curl
+                             r-crul
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/rredlist/")
     (synopsis "'IUCN' Red List Client")
     (description
-     "IUCN Red List (<http://apiv3.iucnredlist.org/api/v3/docs>) client.  The IUCN Red
-List is a global list of threatened and endangered species.  Functions cover all
-of the Red List API routes.  An API key is required.")
+     "IUCN Red List (<https://api.iucnredlist.org/>) client.  The IUCN Red List is a
+global list of threatened and endangered species.  Functions cover all of the
+Red List API routes.  An API key is required.")
     (license license:expat)))
 
 (define-public r-rrecsys
@@ -17432,13 +17437,13 @@ the @code{KoboToolbox} API can be found at
 (define-public r-robomit
   (package
     (name "r-robomit")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robomit" version))
        (sha256
-        (base32 "1yma6m4bxy3hikc9kx7mslqgq1fpi4my7qij9pz77ag836r9hcxm"))))
+        (base32 "1dif5v10a9pb5cc0nad8g1g1vpzca8aaybqgdvly5pvg5k7axh1l"))))
     (properties `((upstream-name . "robomit")))
     (build-system r-build-system)
     (arguments
@@ -17454,12 +17459,15 @@ the @code{KoboToolbox} API can be found at
     (synopsis "Robustness Checks for Omitted Variable Bias")
     (description
      "Robustness checks for omitted variable bias.  The package includes robustness
-checks proposed by Oster (2019).  robomit the estimate i) the bias-adjusted
-treatment correlation or effect and ii) the degree of selection on unobservables
-relative to observables (with respect to the treatment variable) that would be
-necessary to eliminate the result based on the framework by Oster (2019).
-Additionally, robomit offers a set of sensitivity analysis and visualization
-functions.  See: Oster, E. 2019. <doi:10.1080/07350015.2016.1227711>.")
+checks proposed by Oster (2019).  The robomit package computes i) the
+bias-adjusted treatment correlation or effect and ii) the degree of selection on
+unobservables relative to observables (with respect to the treatment variable)
+that would be necessary to eliminate the result based on the framework by Oster
+(2019).  The code is based on the psacalc command in Stata'.  Additionally,
+robomit offers a set of sensitivity analysis and visualization functions.  See
+Oster, E. 2019. <doi:10.1080/07350015.2016.1227711>.  Additionally, see Diegert,
+P., Masten, M. A., & Poirier, A. (2022) for a recent discussion of the topic:
+<doi:10.48550/@code{arXiv.2206.02303>}.")
     (license license:expat)))
 
 (define-public r-robobayes
@@ -20437,6 +20445,36 @@ package was built as a fork of the GA package by Luca Scrucca(2017)
 <DOI:10.32614/RJ-2017-008> and implementing the Non-Dominated Sorting Genetic
 Algorithms proposed by K. Deb's.")
     (license license:gpl2+)))
+
+(define-public r-rmonocypher
+  (package
+    (name "r-rmonocypher")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmonocypher" version))
+       (sha256
+        (base32 "1i30f2xfy8i8yf6hr1ryjpxvpzxx1n4xcjpyydm6i26nv0p4rl5k"))))
+    (properties `((upstream-name . "rmonocypher")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/rmonocypher")
+    (synopsis "Easy Encryption of R Objects using Strong Modern Cryptography")
+    (description
+     "Encrypt R objects to a raw vector or file using modern cryptographic techniques.
+ Password-based key derivation is with Argon2
+(<https://en.wikipedia.org/wiki/Argon2>).  Objects are serialized and then
+encrypted using X@code{ChaCha20-Poly1305}
+(<https://en.wikipedia.org/wiki/@code{ChaCha20-Poly1305>}) which follows RFC
+8439 for authenticated encryption
+(<https://en.wikipedia.org/wiki/Authenticated_encryption>).  Cryptographic
+functions are provided by the included monocypher C library
+(<https://monocypher.org>).")
+    (license license:expat)))
 
 (define-public r-rmonize
   (package
@@ -26338,13 +26376,13 @@ for general exposition to statistics on manifolds.")
 (define-public r-riem
   (package
     (name "r-riem")
-    (version "0.3.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riem" version))
        (sha256
-        (base32 "0cvgddp7k7905k7cfz12cz48iv8ygli2n2nk1jyaxjxqvghv5zql"))))
+        (base32 "162rcw7qbcqlgi17icznw8b7bm1b6s9851m92j0ddiqpc1aypxjc"))))
     (properties `((upstream-name . "riem")))
     (build-system r-build-system)
     (arguments
@@ -44013,6 +44051,31 @@ AVX512).  By placing this library in this package, we offer an efficient
 distribution system for Xsimd <https://github.com/xtensor-stack/xsimd> for R
 packages using CRAN.")
     (license license:bsd-3)))
+
+(define-public r-rcppuuid
+  (package
+    (name "r-rcppuuid")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppUUID" version))
+       (sha256
+        (base32 "0zknj2vwmr4qd4a3gfrbglq6kidj6qjcm3yqv67hh36y2ci0f2mf"))))
+    (properties `((upstream-name . "RcppUUID")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-bh))
+    (home-page "https://github.com/eddelbuettel/rcppuuid")
+    (synopsis "Generating Universally Unique Identificators")
+    (description
+     "Using the implementation in Boost C++ library, functions are provided to
+generate vectors of Universally Unique Identifiers (UUID) from R supporting
+random (version 4) and name (version 5) UUIDs'.  The initial repository was
+<https://gitlab.com/artemklevtsov/rcppuuid>.")
+    (license license:gpl2+)))
 
 (define-public r-rcpptn
   (package

@@ -5716,26 +5716,26 @@ Methods are described in Gamiz, Limnios, and Segovia-Garcia (2023)
 (define-public r-hmmpa
   (package
     (name "r-hmmpa")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMMpa" version))
        (sha256
-        (base32 "0c3jmvcklywqsjmskx7zbw4d3l8i6bzr5h741v8iwgyw67mjn37g"))))
+        (base32 "09j0ar28ri9mywwnix9d9aigkn0sbsj2xpr2cs5gjg2bcknfx4mv"))))
     (properties `((upstream-name . "HMMpa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=HMMpa")
+    (home-page "https://github.com/bips-hb/HMMpa")
     (synopsis "Analysing Accelerometer Data Using Hidden Markov Models")
     (description
      "Analysing time-series accelerometer data to quantify length and intensity of
 physical activity using hidden Markov models.  It also contains the traditional
 cut-off point method.  Witowski V, Foraita R, Pitsiladis Y, Pigeot I, Wirsik N
-(2014)<doi:10.1371/journal.pone.0114089>.")
-    (license license:gpl3)))
+(2014). <doi:10.1371/journal.pone.0114089>.")
+    (license license:gpl2+)))
 
 (define-public r-hmmmlselect
   (package

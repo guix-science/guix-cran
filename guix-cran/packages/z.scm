@@ -129,13 +129,13 @@ at Arick Grootveld, Eva R. Kozak, Carmen Franco-Gordo (2023)
 (define-public r-zonohedra
   (package
     (name "r-zonohedra")
-    (version "0.3-0")
+    (version "0.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zonohedra" version))
        (sha256
-        (base32 "1xkli50nkhv7ygjrv7d9kcv4lq6wi7rxwvr13jg042571rml5l49"))))
+        (base32 "0b84ba66v17bindn43zr0s5a9sfb53wja45w2rvycvvs865f8204"))))
     (properties `((upstream-name . "zonohedra")))
     (build-system r-build-system)
     (arguments
@@ -698,6 +698,42 @@ the response into convenient, R-friendly data structures.  See
 Documentation.  NOTE: Zillow deprecated their API on 2021-09-30, and this
 package is now deprecated as a result.")
     (license license:gpl3+)))
+
+(define-public r-zigg
+  (package
+    (name "r-zigg")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zigg" version))
+       (sha256
+        (base32 "18jrvs8q4fygs9lm2v874xr0smqzas9r1p6r3qav3yc37vlklnaj"))))
+    (properties `((upstream-name . "zigg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=zigg")
+    (synopsis
+     "Lightweight Interfaces to the 'Ziggurat' Pseudo Random Number Generator")
+    (description
+     "The Ziggurat pseudo-random number generator (or PRNG), introduced by Marsaglia
+and Tsang (2000, <doi:10.18637/jss.v005.i08>) and further improved by Leong et
+al (2005, <doi:10.18637/jss.v012.i07>), offers a lightweight and very fast PRNG
+for the normal, exponential, and uniform distributions.  It is provided here in
+a small zero-dependency package.  It can be used from R as well as from C/C++
+code in other packages as is demonstrated by four included sample packages using
+four distinct methods to use the PRNG presented here in client package.  The
+implementation is influenced by our package @code{RcppZiggurat} which offers a
+comparison among multiple alternative implementations but presented here in a
+lighter-weight implementation that is easier to use by other packages.  The
+PRNGs provided are generally faster than the ones in base R: on our machine, the
+relative gains for normal, exponential and uniform are on the order of 7.4, 5.2
+and 4.7 times faster than base R. However, these generators are of potentially
+lesser quality and shorter period so if in doubt use of the base R functions
+remains the general recommendation.")
+    (license license:gpl2+)))
 
 (define-public r-zic
   (package
