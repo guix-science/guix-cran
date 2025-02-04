@@ -4026,13 +4026,13 @@ also provided.")
 (define-public r-kgraph
   (package
     (name "r-kgraph")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kgraph" version))
        (sha256
-        (base32 "04fh0rnihlyxbj19bhnvvcbszp4x7zimbra344gdyz2im4xlkmzh"))))
+        (base32 "1cbgmz8v6fdg77mmmqmra3w19lj6h1sjn8185jc4i0i9b3glyb6n"))))
     (properties `((upstream-name . "kgraph")))
     (build-system r-build-system)
     (arguments

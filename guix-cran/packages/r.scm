@@ -5845,13 +5845,13 @@ numbers from different sources.")
 (define-public r-rstoolbox
   (package
     (name "r-rstoolbox")
-    (version "1.0.0")
+    (version "1.0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RStoolbox" version))
        (sha256
-        (base32 "1haf2pi1jzlzh077gfanby5g4lp1djz01qcdinxiq0dgs98anrl8"))))
+        (base32 "1f73s22i81a1yq6rdh0lpd8jkwkgnz992kl96d741r3jyp1f659j"))))
     (properties `((upstream-name . "RStoolbox")))
     (build-system r-build-system)
     (arguments
@@ -27899,13 +27899,13 @@ open-source parallel database.  This is an extension of the RPostgres package
 (define-public r-rgrass
   (package
     (name "r-rgrass")
-    (version "0.4-4")
+    (version "0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgrass" version))
        (sha256
-        (base32 "00vbnc5p8fffkxl2bg4p5mvkygp3hqqlsmfqcixgs8mpigqyp04a"))))
+        (base32 "0a0x02j6lm1cmy1mcrfpmz6y5nbki10m0gcpi286x2ryzrm1cy30"))))
     (properties `((upstream-name . "rgrass")))
     (build-system r-build-system)
     (arguments
@@ -27914,7 +27914,7 @@ open-source parallel database.  This is an extension of the RPostgres package
     (inputs (list grass))
     (propagated-inputs (list r-xml2))
     (native-inputs (list r-knitr))
-    (home-page "https://rsbivand.github.io/rgrass/")
+    (home-page "https://osgeo.github.io/rgrass/")
     (synopsis
      "Interface Between 'GRASS' Geographical Information System and 'R'")
     (description
@@ -28210,13 +28210,13 @@ function for authorization and loading reports.")
 (define-public r-rgof
   (package
     (name "r-rgof")
-    (version "2.1.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rgof" version))
        (sha256
-        (base32 "0iplhy2rwkbwbkdipj52iwvjakmwc4klj1sj7clq55z83ayq6m9h"))))
+        (base32 "02x8kiqdnph959hw5i6j3vy0nx7h16ihb1rx2vr03nm8prywx9yd"))))
     (properties `((upstream-name . "Rgof")))
     (build-system r-build-system)
     (arguments
@@ -28229,7 +28229,9 @@ function for authorization and loading reports.")
     (description
      "Routines that allow the user to run a large number of goodness-of-fit tests.  It
 allows for data to be continuous or discrete.  It includes routines to estimate
-the power of the tests and display them as a power graph.")
+the power of the tests and display them as a power graph.  The routine
+run.studies allows a user to quickly study the power of a new method and how it
+compares to some of the standard ones.")
     (license license:gpl2+)))
 
 (define-public r-rgnparser
@@ -31525,6 +31527,41 @@ introduced in the manuscript Hiabu M., Hofman E. and Pittarello G. (2023)
 Extreme Gradient Boosting, and Cox model with splines to optimise the partial
 log-likelihood of proportional hazard models.")
     (license license:gpl2+)))
+
+(define-public r-resumir
+  (package
+    (name "r-resumir")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "resumiR" version))
+       (sha256
+        (base32 "1dw43xyilp297am4c596dbnsngqxhd3y5z25nax50b2imy8i7bs3"))))
+    (properties `((upstream-name . "resumiR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-ggplot2))
+    (home-page "https://github.com/juanMaSolisJujuy/resumiR")
+    (synopsis
+     "Medidas Resumen y Tablas de Frecuencia para Datos NumÃ©ricos / Summary Measures and Frequency Tables for Numerical Data")
+    (description
+     "Permite obtener rÃ¡pidamente una serie de medidas de resumen y grÃ¡ficos para
+datos numÃ©ricos discretos o continuos en series simples.  TambiÃ©n permite
+obtener tablas de frecuencia clÃ¡sicas y grÃ¡ficos cuando se desea realizar un
+anÃ¡lisis de series agrupadas.  Su objetivo es de aplicaciÃ³n didÃ¡ctica para un
+curso introductorio de BioestadÃ­stica utilizando el software R, para las
+carreras de grado las carreras de grado y otras ofertas educativas de la
+Facultad de Ciencias Agrarias de la UNJu / It generates summary measures and
+graphs for discrete or continuous numerical data in simple series.  It also
+enables the creation of classic frequency tables and graphs when analyzing
+grouped series.  Its purpose is for educational application in an introductory
+Biostatistics course using the R software, aimed at undergraduate programs and
+other educational offerings of the Faculty of Agricultural Sciences at the
+National University of Jujuy (UNJu).")
+    (license license:gpl3+)))
 
 (define-public r-resumer
   (package
@@ -34826,13 +34863,13 @@ W., et al. (2015)
 (define-public r-rempsyc
   (package
     (name "r-rempsyc")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rempsyc" version))
        (sha256
-        (base32 "0y5b0cv6zpdg51jlxkhnyvpk55v4pd188y87q2rx1zkj82v6cdlh"))))
+        (base32 "1zhha8yymwyv0nrnsqjcwggs3xqrwgbfr3ahyixi3fc61yqsrdx4"))))
     (properties `((upstream-name . "rempsyc")))
     (build-system r-build-system)
     (arguments
@@ -36158,13 +36195,13 @@ the methodology.")
 (define-public r-regsdc
   (package
     (name "r-regsdc")
-    (version "0.7.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RegSDC" version))
        (sha256
-        (base32 "19fr0xyaw8zyqy039mdcqs09ar500vwqmsmwn0id6llhxy3wpiiy"))))
+        (base32 "0gmmrghdkyr6bxy8n21i99qf09vir09bxdijgb2n0b1ydr32w7va"))))
     (properties `((upstream-name . "RegSDC")))
     (build-system r-build-system)
     (arguments
@@ -36428,6 +36465,42 @@ linear unbiased predictors, BLUPs).  Clifford and @code{McCullagh} (2006)
 patterns containing named groups.  It allows easy retrieval of matched portions
 and targeted replacements by group name, improving both code clarity and
 maintainability.")
+    (license license:expat)))
+
+(define-public r-regrcoeffsexplorer
+  (package
+    (name "r-regrcoeffsexplorer")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RegrCoeffsExplorer" version))
+       (sha256
+        (base32 "1aajr4jb09g7b6cwjn0aiwz05kbpkyd3nnws4xwahbahq5rhdfvs"))))
+    (properties `((upstream-name . "RegrCoeffsExplorer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-magrittr
+                             r-gridextra
+                             r-glmnet
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://vadimtyuryaev.github.io/RegrCoeffsExplorer/")
+    (synopsis
+     "Efficient Visualization of Regression Coefficients for Lm(), Glm(), and Glmnet() Objects")
+    (description
+     "The visualization tool offers a nuanced understanding of regression dynamics,
+going beyond traditional per-unit interpretation of continuous variables versus
+categorical ones.  It highlights the impact of unit changes as well as larger
+shifts like interquartile changes, acknowledging the distribution of empirical
+data.  Furthermore, it generates visualizations depicting alterations in Odds
+Ratios for predictors across minimum, first quartile, median, third quartile,
+and maximum values, aiding in comprehending predictor-outcome interplay within
+empirical data distributions, particularly in logistic regression frameworks.")
     (license license:expat)))
 
 (define-public r-regrap
@@ -48312,13 +48385,13 @@ estimators, Wilcoxon sum rank test, and for data with multiple matched controls.
 (define-public r-rborist
   (package
     (name "r-rborist")
-    (version "0.3-7")
+    (version "0.3-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rborist" version))
        (sha256
-        (base32 "15i5aj7p3lwp7r84kv7i9jfhwbs8r1yn44shpm9gf17kwvwzw7h1"))))
+        (base32 "070924i809lfkgsbgi4gizn8vi46jqvbsskjnmci5miv510mdnsk"))))
     (properties `((upstream-name . "Rborist")))
     (build-system r-build-system)
     (arguments
@@ -49359,13 +49432,13 @@ Blaauw & Christen (2011).")
 (define-public r-rayvertex
   (package
     (name "r-rayvertex")
-    (version "0.11.4")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayvertex" version))
        (sha256
-        (base32 "0xbhkv77238y742vpci6d2z87n6mnnp80qxv938rwb9hfs4c66j4"))))
+        (base32 "1p95nm5y8n5s490ks4xlx96s11dmipm51rhjiyyz10q1lfs896k9"))))
     (properties `((upstream-name . "rayvertex")))
     (build-system r-build-system)
     (arguments
@@ -49530,19 +49603,20 @@ Database) files for 3D rendering.")
 (define-public r-rayimage
   (package
     (name "r-rayimage")
-    (version "0.11.0")
+    (version "0.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayimage" version))
        (sha256
-        (base32 "056j9fbhglkf5hnh7ql99wfzf0qf6rls93wmdlyabpdnssq01nma"))))
+        (base32 "025dwffwyp0wwlmvn433rzmbim53sgjscanms5gj98cd1vfhv84m"))))
     (properties `((upstream-name . "rayimage")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tiff
+                             r-systemfonts
                              r-rcpparmadillo
                              r-rcpp
                              r-progress
@@ -49555,8 +49629,40 @@ Database) files for 3D rendering.")
 field, and other camera effects, using an image and an optional depth map.
 Accepts both filename inputs and in-memory array representations of images and
 matrices.  Includes functions to perform 2D convolutions, reorient and resize
-images/matrices, add image overlays, generate camera vignette effects, and add
-titles to images.")
+images/matrices, add image and text overlays, generate camera vignette effects,
+and add titles to images.")
+    (license license:gpl3)))
+
+(define-public r-raybevel
+  (package
+    (name "r-raybevel")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raybevel" version))
+       (sha256
+        (base32 "1jpf9if1c151473h2dqkjkdgiak5d68s2fvxj6xhjcl0gxa8bjrr"))))
+    (properties `((upstream-name . "raybevel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-rcppthread
+                             r-rcppcgal
+                             r-rcpp
+                             r-rayvertex
+                             r-progress
+                             r-digest
+                             r-decido
+                             r-bh))
+    (home-page "https://www.raybevel.com")
+    (synopsis "Generates Polygon Straight Skeletons and 3D Bevels")
+    (description
+     "Generates polygon straight skeletons and 3D models.  Provides functions to
+create and visualize interior polygon offsets, 3D beveled polygons, and 3D roof
+models.")
     (license license:gpl3)))
 
 (define-public r-raws-profile
@@ -56358,13 +56464,13 @@ using the package in question.")
 (define-public r-r2sample
   (package
     (name "r-r2sample")
-    (version "2.2.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2sample" version))
        (sha256
-        (base32 "11p3kw9v8lag06akdx8a50laxzgs14micv2baq3asgsbm983g5lx"))))
+        (base32 "1ysj3rdr0pqq6hiqpigidvvlnqmx8acad7dsg5q3alrq3zjvp7iv"))))
     (properties `((upstream-name . "R2sample")))
     (build-system r-build-system)
     (arguments
@@ -56379,7 +56485,8 @@ using the package in question.")
 using various test statistic.  The p values are found via permutation or large
 sample theory.  The routine @code{twosample_power()} allows the calculation of
 the power in various cases, and @code{plot_power()} draws the corresponding
-power graphs.")
+power graphs.  The routine run.studies allows a user to quickly study the power
+of a new method and how it compares to some of the standard ones.")
     (license license:gpl2+)))
 
 (define-public r-r2rtf

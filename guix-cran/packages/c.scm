@@ -1224,13 +1224,13 @@ vignette for more, including full details of citations.")
 (define-public r-cvdprevent
   (package
     (name "r-cvdprevent")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvdprevent" version))
        (sha256
-        (base32 "15r9p55pa55qy7dzaffzi1fg4c7nm3fh3qfj7pi9mwm03crqk4dm"))))
+        (base32 "14f9wpg4bjl918j1i23kchdw2dnyvnr3rwh5msghjm94js1l9z87"))))
     (properties `((upstream-name . "cvdprevent")))
     (build-system r-build-system)
     (arguments
@@ -8019,13 +8019,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.10.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "1ldvhh8yh8nd905hp651p0yc7f119ggbavqxadc13g6v6j8365x3"))))
+        (base32 "14cizn1xkcbphjx9kx4x1vrl1zmln72g1sw5r25blvsvq146zywc"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (arguments
@@ -17190,13 +17190,13 @@ output.  See the paper for more details on the model and its utility.")
 (define-public r-constrainedkriging
   (package
     (name "r-constrainedkriging")
-    (version "0.2-9")
+    (version "0.2-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constrainedKriging" version))
        (sha256
-        (base32 "00w5g7mpxwr0z9x4kir3qqqj8yjvk09bv071m398hzckb6py8bgg"))))
+        (base32 "0qyc9i9qqkijfmg1k6nb65bj2hnip9w96l6gify5jcpjv59gz7cp"))))
     (properties `((upstream-name . "constrainedKriging")))
     (build-system r-build-system)
     (arguments
@@ -20839,37 +20839,6 @@ space in line with the hypothesis by chance.  The package comes with a Shiny
 application in which the calculations can be conducted as well.")
     (license license:gpl2+)))
 
-(define-public r-complex
-  (package
-    (name "r-complex")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "complex" version))
-       (sha256
-        (base32 "1f1xyvapswfsd7gbw8279m1pdjrry68hkci69d9h3gwav2v3fi4l"))))
-    (properties `((upstream-name . "complex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-pracma
-                             r-nloptr
-                             r-mvtnorm
-                             r-legion
-                             r-greybox))
-    (home-page "https://github.com/config-i1/complex")
-    (synopsis "Time Series Analysis and Forecasting Using Complex Variables")
-    (description
-     "Set of function implementing the instruments for complex-valued modelling,
-including time series analysis and forecasting.  This is based on the monograph
-by Svetunkov Sergey and Svetunkov Ivan \"Complex-valued Econometrics with
-Examples in R\" which is in press by Springer (expected to be published in 2024).")
-    (license license:lgpl2.1)))
-
 (define-public r-completejourney
   (package
     (name "r-completejourney")
@@ -24350,38 +24319,6 @@ Cap <https://coinmarketcap.com/api/>.")
 missing multivariate data through conditional copulas.")
     (license license:gpl2+)))
 
-(define-public r-coil
-  (package
-    (name "r-coil")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coil" version))
-       (sha256
-        (base32 "1jkhci42r3kx554dvpbdnyfzml0l9csxa5fm1ds13c6ny6z54c06"))))
-    (properties `((upstream-name . "coil")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-seqinr r-aphid r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=coil")
-    (synopsis "Contextualization and Evaluation of COI-5P Barcode Data")
-    (description
-     "Designed for the cleaning, contextualization and assessment of cytochrome c
-oxidase I DNA barcode data (COI-5P, or the five prime portion of COI).  It
-contains functions for placing COI-5P barcode sequences into a common reading
-frame, translating DNA sequences to amino acids and for assessing the likelihood
-that a given barcode sequence includes an insertion or deletion error.  The
-error assessment relies on the comparison of input sequences against nucleotide
-and amino acid profile hidden Markov models (PHMMs) (for details see Durbin et
-al.  1998, ISBN: 9780521629713) trained on a taxonomically diverse set of
-reference sequences.  The functions are provided as a complete pipeline and are
-also available individually for efficient and targeted analysis of barcode data.")
-    (license license:gpl3)))
-
 (define-public r-cohorttools
   (package
     (name "r-cohorttools")
@@ -27806,13 +27743,13 @@ Non-Parametric ANOVA. The package also contains the data sets used in that text.
 (define-public r-cmhc
   (package
     (name "r-cmhc")
-    (version "0.2.9")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmhc" version))
        (sha256
-        (base32 "1dy8f0d6af1bqr16xk2sxxx2zyfs2dg0r34q1baqcfgqn12dffr9"))))
+        (base32 "0r53lhaml5cf8c9l0n05yg0202c8kgia8djjapibr1xvlf09yj7h"))))
     (properties `((upstream-name . "cmhc")))
     (build-system r-build-system)
     (arguments
@@ -27890,6 +27827,49 @@ explained (PTE) by the final combined score.  The primary function,
 of multiple surrogate markers.  Details are described in Wang et al (2022)
 <doi:10.1111/biom.13677>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-cmfrec
+  (package
+    (name "r-cmfrec")
+    (version "3.5.1-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cmfrec" version))
+       (sha256
+        (base32 "0hlz10zrwdk9p0rybfqn04104bv0d9024d0ca1d6v66ymzy3gwlw"))))
+    (properties `((upstream-name . "cmfrec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/david-cortes/cmfrec")
+    (synopsis "Collective Matrix Factorization for Recommender Systems")
+    (description
+     "Collective matrix factorization (a.k.a.  multi-view or multi-way factorization,
+Singh, Gordon, (2008) <doi:10.1145/1401890.1401969>) tries to approximate a
+(potentially very sparse or having many missing values) matrix X as the product
+of two low-dimensional matrices, optionally aided with secondary information
+matrices about rows and/or columns of X', which are also factorized using the
+same latent components.  The intended usage is for recommender systems,
+dimensionality reduction, and missing value imputation.  Implements extensions
+of the original model (Cortes, (2018) <@code{arXiv:1809.00366>}) and can produce
+different factorizations such as the weighted implicit-feedback model (Hu,
+Koren, Volinsky, (2008) <doi:10.1109/ICDM.2008.22>), the
+weighted-lambda-regularization model, (Zhou, Wilkinson, Schreiber, Pan, (2008)
+<doi:10.1007/978-3-540-68880-8_32>), or the enhanced model with implicit
+features (Rendle, Zhang, Koren, (2019) <@code{arXiv:1905.01395>}), with or
+without side information.  Can use gradient-based procedures or
+alternating-least squares procedures (Koren, Bell, Volinsky, (2009)
+<doi:10.1109/MC.2009.263>), with either a Cholesky solver, a faster conjugate
+gradient solver (Takacs, Pilaszy, Tikk, (2011) <doi:10.1145/2043932.2043987>),
+or a non-negative coordinate descent solver (Franc, Hlavac, Navara, (2005)
+<doi:10.1007/11556121_50>), providing efficient methods for sparse and dense
+data, and mixtures thereof.  Supports L1 and L2 regularization in the main
+models, offers alternative most-popular and content-based models, and implements
+functionality for cold-start recommendations and imputation of 2D data.")
+    (license license:expat)))
 
 (define-public r-cmf
   (package
@@ -34768,13 +34748,13 @@ Parsons et al (2020) <doi:10.1093/bioinformatics/btz730>.")
 (define-public r-cir
   (package
     (name "r-cir")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cir" version))
        (sha256
-        (base32 "11g2avmxcv87wjdjghblhxz9fwj6dqb89xbwp15fk2f47g7sf3f4"))))
+        (base32 "0vsbfrc9zci96b235fm9xvmyf48031gwbxfqdp01k202gb456ys0"))))
     (properties `((upstream-name . "cir")))
     (build-system r-build-system)
     (arguments
@@ -39206,13 +39186,13 @@ for analyzing continuous glucose monitoring studies'.")
 (define-public r-cgmanalysis
   (package
     (name "r-cgmanalysis")
-    (version "3.0")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgmanalysis" version))
        (sha256
-        (base32 "1aqc4yyns69ma3n7a1d91zhg8xr35pxsqaqq1ym5awfzw0la6vp6"))))
+        (base32 "1shvjy8km2xsi4qx3309c20iiwmd8hkyg0g7ajp261yg8fzbcd3r"))))
     (properties `((upstream-name . "cgmanalysis")))
     (build-system r-build-system)
     (arguments
@@ -43156,40 +43136,6 @@ when intermediate variables (mediators) are compositional and high-dimensional.
 Sohn, M.B. and Li, H. (2017).  Compositional Mediation Analysis for Microbiome
 Studies. (AOAS: In revision).")
     (license license:gpl2+)))
-
-(define-public r-ccml
-  (package
-    (name "r-ccml")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ccml" version))
-       (sha256
-        (base32 "1njd8fi5n7zi0a7cadxqqlc7cpmqjqqp42ig6q13n8d7a542dacl"))))
-    (properties `((upstream-name . "ccml")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-snftool
-                             r-plyr
-                             r-ggplot2
-                             r-dicer
-                             r-consensusclusterplus))
-    (home-page "https://cran.r-project.org/package=ccml")
-    (synopsis "Consensus Clustering for Different Sample Coverage Data")
-    (description
-     "Consensus clustering, also called meta-clustering or cluster ensembles, has been
-increasingly used in clinical data.  Current consensus clustering methods tend
-to ensemble a number of different clusters from mathematical replicates with
-similar sample coverage.  As the fact of common variety of sample coverage in
-the real-world data, a new consensus clustering strategy dealing with such
-biological replicates is required.  This is a two-step consensus clustering
-package, which is used to input multiple predictive labels with different sample
-coverage (missing labels).")
-    (license license:gpl2)))
 
 (define-public r-ccmestimator
   (package

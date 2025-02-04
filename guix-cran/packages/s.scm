@@ -1584,13 +1584,13 @@ United States Environmental Protection Agency (2015)
 (define-public r-swmpr
   (package
     (name "r-swmpr")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SWMPr" version))
        (sha256
-        (base32 "15193hv4hvr46l42qvpi5pd187bjjcmrs7akm13vm3nr6nlvzpkx"))))
+        (base32 "0l5gm50ng872lll3mzamlhi4qgp365kf1z69pwsq7ffvvv6pszrs"))))
     (properties `((upstream-name . "SWMPr")))
     (build-system r-build-system)
     (arguments
@@ -10759,13 +10759,13 @@ determining the p-values.")
 (define-public r-strata
   (package
     (name "r-strata")
-    (version "1.0.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strata" version))
        (sha256
-        (base32 "0yb9wchf31810yz24r135cwmbyjdzyzc0pm0m3simdgwi26szyab"))))
+        (base32 "06ckihl86180ly36kcjwihy7v6zrpvjw13w4bdi3d0768n8cyk7a"))))
     (properties `((upstream-name . "strata")))
     (build-system r-build-system)
     (arguments
@@ -10784,8 +10784,8 @@ determining the p-values.")
     (home-page "https://github.com/asenetcky/strata")
     (synopsis "Simple Framework for Simple Automation")
     (description
-     "This package provides a tool suite for building project frameworks for users
-with access to only the most basic of automation tools.")
+     "Build a project framework for users with access to only the most basic of
+automation tools.")
     (license license:expat)))
 
 (define-public r-strat
@@ -24552,21 +24552,23 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "08j8f66v5wzgsya532w40ssn2sv8m2scbd6w49hn74mgrslii7xr"))))
+        (base32 "16jkqjq1pi3wy7ay73xymhshc50mx6i5advfrh9ix98p1cdg6djn"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-terra
+                             r-sf
                              r-sdsfun
                              r-rcppthread
+                             r-rcpparmadillo
                              r-rcpp
                              r-ggplot2
                              r-dplyr))
@@ -24574,9 +24576,10 @@ intervention of a single legislator.")
     (home-page "https://stscl.github.io/spEDM/")
     (synopsis "Spatial Empirical Dynamic Modeling")
     (description
-     "Integrates empirical dynamic modeling (EDM) with geospatial cross-sectional data
-to analyze causality via geographical convergent cross mapping (GCCM) described
-in Gao et al. (2023) <doi:10.1038/s41467-023-41619-6>.")
+     "Inferring causal associations in cross-sectional earth system data with
+extensions to convergent cross mapping from Sugihara et al. (2012)
+<doi:10.1126/science.1227079> and partial cross mapping as described in Ma et
+al. (2020) <doi:10.1038/s41467-020-16238-0>.")
     (license license:gpl3)))
 
 (define-public r-spedinstabr
@@ -31561,13 +31564,13 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.3.6")
+    (version "4.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "1px2d66gzdymp0bvaf3xs240i2ikbfmy87v8xmsdnpnarq568y8c"))))
+        (base32 "1rnrskgvnfzwvdjqanr42xa3jms9g0ngv5sgk7kn470w90n3v3z9"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (arguments
@@ -35229,13 +35232,13 @@ cross validation for selection of the regularization parameter is provided.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smooth" version))
        (sha256
-        (base32 "14yprj4kwqad9a4vhspxcgjiqzfya3x9hhmvcw8h4s6s6r2wjxiq"))))
+        (base32 "1zfn5rwjrwy775pa7d7ij71f1y42nxiy8ry1p7z56zrbfqb77p4n"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (arguments
@@ -37373,13 +37376,13 @@ et al. (2022)<https://pubmed.ncbi.nlm.nih.gov/35988701/>, Peres et al.
 (define-public r-slope
   (package
     (name "r-slope")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLOPE" version))
        (sha256
-        (base32 "1fwfk6caj3hhb1nc3msky3faakfkvilxqna8564zki5hnmbjny69"))))
+        (base32 "02m9p43x6pacfvjd7zvnr1n5s6lkkbr858x0kmz9vd9qq9xpxzi6"))))
     (properties `((upstream-name . "SLOPE")))
     (build-system r-build-system)
     (arguments
@@ -47970,6 +47973,42 @@ facilitates valuable feedback collection.")
 option per row can be selected.")
     (license license:gpl3)))
 
+(define-public r-shinyr
+  (package
+    (name "r-shinyr")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyr" version))
+       (sha256
+        (base32 "0g441sd3957vqp1cs7rh5v66ilzi9aq7d6lpdyjcxh3r0ma17x3l"))))
+    (properties `((upstream-name . "shinyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordcloud
+                             r-tm
+                             r-shinydashboard
+                             r-shiny
+                             r-rcolorbrewer
+                             r-randomforest
+                             r-plotly
+                             r-nnet
+                             r-dplyr
+                             r-corrplot
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=shinyr")
+    (synopsis "Data Insights Through Inbuilt R Shiny App")
+    (description
+     "It builds dynamic R shiny based dashboards to analyze any CSV files.  It
+provides simple dashboard design to subset the data, perform exploratory data
+analysis and preliminary machine learning (supervised and unsupervised).  It
+also provides filters based on columns of interest.")
+    (license license:gpl3)))
+
 (define-public r-shinyquiz
   (package
     (name "r-shinyquiz")
@@ -49069,6 +49108,32 @@ click, or use keyboard input.")
 dynamical systems (described by ordinary differential equations) using gradient
 matching.  Please see the project page for more details.")
     (license license:gpl2)))
+
+(define-public r-shinykanban
+  (package
+    (name "r-shinykanban")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinykanban" version))
+       (sha256
+        (base32 "1iaf33ap3lbw05d1b2r2mkhwbjc8pa6fp1mrl7bdqdafqdzq6yqz"))))
+    (properties `((upstream-name . "shinykanban")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-reactr r-htmlwidgets r-htmltools
+                             r-bsicons))
+    (home-page "https://github.com/ugurdar/shinykanban")
+    (synopsis "Create Kanban Board in Shiny Applications")
+    (description
+     "This package provides an interactive Kanban board widget for shiny applications.
+ It allows users to manage tasks using a drag-and-drop interface and offers
+customizable styling options.  shinykanban is ideal for project management, task
+tracking, and agile workflows within shiny apps.")
+    (license license:expat)))
 
 (define-public r-shinyitemanalysis
   (package
@@ -51323,43 +51388,6 @@ individual SAR studies; as described in Solymos and Lele (2012)
 <doi:10.1111/j.1466-8238.2011.00655.x>.")
     (license license:gpl2)))
 
-(define-public r-sharpshootr
-  (package
-    (name "r-sharpshootr")
-    (version "2.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sharpshootR" version))
-       (sha256
-        (base32 "1b41bspxlbwbnwn51gd968vqlcahpmrkqgi0asa8h1rzs78db6x2"))))
-    (properties `((upstream-name . "sharpshootR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-soildb
-                             r-scales
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-plyr
-                             r-lattice
-                             r-e1071
-                             r-digest
-                             r-curl
-                             r-cluster
-                             r-circular
-                             r-aqp
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ncss-tech/sharpshootR")
-    (synopsis "Soil Survey Toolkit")
-    (description
-     "Miscellaneous soil data management, summary, visualization, and conversion
-utilities to support soil survey.")
-    (license license:gpl3+)))
-
 (define-public r-sharpr2
   (package
     (name "r-sharpr2")
@@ -52129,13 +52157,13 @@ and sampling approaches.")
 (define-public r-sgs
   (package
     (name "r-sgs")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgs" version))
        (sha256
-        (base32 "1rlpgd0b5fa7pl56kijivjy3d47p0ig95qimn8bl9kfql4bavb3z"))))
+        (base32 "0raxmjai7nh9a0s2dwqjh64q7cpkcb90cfadfybgh152wxb0v59i"))))
     (properties `((upstream-name . "sgs")))
     (build-system r-build-system)
     (arguments
@@ -64160,13 +64188,13 @@ data are obtained from mainly Web of Science and Scopus.")
 (define-public r-scientific
   (package
     (name "r-scientific")
-    (version "2024.2")
+    (version "2025.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scientific" version))
        (sha256
-        (base32 "04pnc8fnc7ijvagp4mxfhg6kkrsczcc1a9j6m72sbyavv0k4dcin"))))
+        (base32 "0l052rgkjpnv5lqj8x7kis26zfj4h2hkc012dl70mnrg63krqn2m"))))
     (properties `((upstream-name . "scientific")))
     (build-system r-build-system)
     (arguments
@@ -64189,14 +64217,13 @@ data are obtained from mainly Web of Science and Scopus.")
     (propagated-inputs (list r-xfun r-rmarkdown r-knitr r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://scientific.obi.obianom.com")
-    (synopsis "Highly Customizable 'rmarkdown' Theme for Scientific Reporting")
+    (synopsis
+     "Two Highly Customizable 'rmarkdown' Themes for Scientific Reports")
     (description
-     "Offers markdown output formats designed with various scientific styles, allowing
-users to generate PDF and HTML outputs.  The output has a contemporary
-appearance with vibrant visuals, providing numerous styles for effective
-highlighting.  The package also includes additional features specifically
-tailored for front-page slides, enhancing the overall presentation and
-customization options.  The package was created using the tufte
+     "Offers markdown output formats designed with various styles, allowing users to
+generate HTML reports tailored for scientific or machine learning showcase.  The
+output has a contemporary appearance with vibrant visuals, providing numerous
+styles for effective highlighting.  Created using the tufte
 <https://rstudio.github.io/tufte/> package code as a starting point.")
     (license license:expat)))
 
@@ -65198,13 +65225,13 @@ Ho (2022) <doi:10.1111/biom.13457>.")
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCDB" version))
        (sha256
-        (base32 "0cvb69vh5s74827ni61yp5s6kflijf0zf1q2nl82ik3cv4gjpszx"))))
+        (base32 "1jg2nhsi8qggv03igcv6mqb9va2n3dqmiqbwwqm1q69wxg293an9"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
     (arguments
@@ -65218,7 +65245,7 @@ Ho (2022) <doi:10.1111/biom.13457>.")
                              r-purrr
                              r-parallelly
                              r-openssl
-                             r-lifecycle
+                             r-magrittr
                              r-glue
                              r-dplyr
                              r-dbplyr

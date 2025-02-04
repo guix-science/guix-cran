@@ -3848,13 +3848,13 @@ stratified sample of 80 talkers of Dutch.")
 (define-public r-hqm
   (package
     (name "r-hqm")
-    (version "0.1.4")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HQM" version))
        (sha256
-        (base32 "0wxmhbpi5j3pixq8zqr0h3icnwajng52x45zv82ckfg5lvf76fb7"))))
+        (base32 "15wmh4k9wsvrr171m340irrc84ry0w2nj9pwklhqiyal3gb4wfgv"))))
     (properties `((upstream-name . "HQM")))
     (build-system r-build-system)
     (arguments
@@ -3865,9 +3865,11 @@ stratified sample of 80 talkers of Dutch.")
     (synopsis
      "Superefficient Estimation of Future Conditional Hazards Based on Marker Information")
     (description
-     "This package provides a nonparametric smoothed kernel density estimator for the
-future conditional hazard when time-dependent covariates are present.  It also
-provides pointwise and uniform confidence bands and a bandwidth selection.")
+     "This package provides a nonparametric smoothed kernel estimator for the future
+conditional hazard rate function when time-dependent covariates are present, a
+bandwidth selector for the estimator's implementation and pointwise and uniform
+confidence bands.  Methods used in the package refer to Bagkavos, Isakson,
+Mammen, Nielsen and Proust-Lima (2025) <doi:10.1093/biomet/asaf008>.")
     (license license:gpl2+)))
 
 (define-public r-hplb
@@ -9437,6 +9439,53 @@ More details will be available in the future in: Parast, L., Cai, T., Tian L
 (2021). \"Testing for Heterogeneity in the Utility of a Surrogate Marker.\"
 Biometrics, In press.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-hetseq
+  (package
+    (name "r-hetseq")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HetSeq" version))
+       (sha256
+        (base32 "1pd4b1dkvpb9xn9fv46sc4yi3xwgvpmhvyxhg794nwwx4jlvafc2"))))
+    (properties `((upstream-name . "HetSeq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seurat
+                             r-scales
+                             r-reshape2
+                             r-proc
+                             r-mlr3
+                             r-lpsolve
+                             r-igraph
+                             r-grandr
+                             r-ggrepel
+                             r-ggrastr
+                             r-ggplot2
+                             r-foreach
+                             r-e1071
+                             r-doubleml
+                             r-doparallel
+                             r-cowplot))
+    (home-page "https://github.com/erhard-lab/HetSeq")
+    (synopsis
+     "Identifying Modulators of Cellular Responses Leveraging Intercellular Heterogeneity")
+    (description
+     "Cellular responses to perturbations are highly heterogeneous and depend largely
+on the initial state of cells.  Connecting post-perturbation cells via cellular
+trajectories to untreated cells (e.g. by leveraging metabolic labeling
+information) enables exploitation of intercellular heterogeneity as a combined
+knock-down and overexpression screen to identify pathway modulators, termed
+Heterogeneity-seq (see Berg et al <doi:10.1101/2024.10.28.620481>).  This
+package contains functions to generate cellular trajectories based on
+@code{scSLAM-seq} (single-cell, thiol-(SH)-linked alkylation of RNA for
+metabolic labelling sequencing) time courses, functions to identify pathway
+modulators and to visualize the results.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-hetop
   (package

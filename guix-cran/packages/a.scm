@@ -2448,6 +2448,43 @@ background. @code{AutoKeras} provides functions to automatically search for
 architecture and hyperparameters of deep learning models.")
     (license license:expat)))
 
+(define-public r-autoimport
+  (package
+    (name "r-autoimport")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autoimport" version))
+       (sha256
+        (base32 "0ip2wzl7qlxg81apzmry8y9ag8n3dy8mvwwnqy2gnkd9hjf7yjv7"))))
+    (properties `((upstream-name . "autoimport")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shiny
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-digest
+                             r-diffviewer
+                             r-desc
+                             r-cli))
+    (home-page "https://github.com/DanChaltiel/autoimport")
+    (synopsis "Automatic Generation of @importFrom Tags")
+    (description
+     "This package provides a toolbox to read all R files inside a package and
+automatically generate @@@code{importFrom} roxygen2 tags in the right place.
+Includes a shiny application to review the changes before applying them.")
+    (license license:gpl3)))
+
 (define-public r-autoimage
   (package
     (name "r-autoimage")
@@ -2937,6 +2974,31 @@ selected.  It will be useful for non-statisticians in selection of variables.
 For more information, see the
 <http://www.ijcem.org/papers032013/ijcem_032013_06.pdf> web page.")
     (license license:gpl2)))
+
+(define-public r-authoritative
+  (package
+    (name "r-authoritative")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "authoritative" version))
+       (sha256
+        (base32 "106873mng2vljmgbragjr2awkfgp40dfhj60y7mjfv3k7al37661"))))
+    (properties `((upstream-name . "authoritative")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epiverse-connect/authoritative")
+    (synopsis "Parse and Deduplicate Author Names")
+    (description
+     "Utilities to parse authors fields from DESCRIPTION files and general purpose
+functions to deduplicate names in database, beyond the specific case of R
+package authors.")
+    (license license:expat)))
 
 (define-public r-auth0
   (package
@@ -7818,13 +7880,13 @@ interactively visualize Arena's results.")
 (define-public r-areaplot
   (package
     (name "r-areaplot")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "areaplot" version))
        (sha256
-        (base32 "0xqrjihg3w6ri16yc1l8kb25pdmnspfhkgc48vxmm4h8l1b0plzs"))))
+        (base32 "1lcqdkhywcvbr1akkj9zzhkbzhchhxn7cvy2z2jxkx5iyf19h9p8"))))
     (properties `((upstream-name . "areaplot")))
     (build-system r-build-system)
     (arguments
@@ -20721,13 +20783,13 @@ models, consult Henrik Madsen and Poul Thyregod's book (2011), ISBN:
 (define-public r-aebdata
   (package
     (name "r-aebdata")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aebdata" version))
        (sha256
-        (base32 "19wcs3khp4mk2n78m6lq44wvfgqifw3s4wm5vjj4ycl55641xag4"))))
+        (base32 "1g94hbypjq8kbvfwadiadphib2pj186bi5kfpqnrr6ggwvpiyih8"))))
     (properties `((upstream-name . "aebdata")))
     (build-system r-build-system)
     (arguments
@@ -25563,13 +25625,13 @@ information about the implementation and examples can be found at
 (define-public r-ablasso
   (package
     (name "r-ablasso")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ablasso" version))
        (sha256
-        (base32 "0xgj3bfjahvnq34r0312d00l3wpdwfnqv7a3j2lklazc69cg7wra"))))
+        (base32 "0789amx1409wzqamj5l5qwmsnf3fkfnxjxsc67ibhm5fc0j646r2"))))
     (properties `((upstream-name . "ablasso")))
     (build-system r-build-system)
     (arguments

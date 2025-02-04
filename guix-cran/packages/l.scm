@@ -11245,6 +11245,32 @@ validation of light logging data, verification of crucial metadata, calculation
 of common parameters, and semi-automated analysis and visualization.")
     (license license:gpl3+)))
 
+(define-public r-lightauc
+  (package
+    (name "r-lightauc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lightAUC" version))
+       (sha256
+        (base32 "00nh4vf8qh5n5sricqcpj800ln43k5bjv4yf2faxj4b54c04g8ip"))))
+    (properties `((upstream-name . "lightAUC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/cadam00/lightAUC")
+    (synopsis "Fast AUC Computation")
+    (description
+     "Fast calculation of Area Under Curve (AUC) metric of a Receiver Operating
+Characteristic (ROC) curve, using the algorithm of Fawcett (2006)
+<doi:10.1016/j.patrec.2005.10.010>.  Therefore it is appropriate for large-scale
+AUC metric calculations.")
+    (license license:gpl3)))
+
 (define-public r-lifx
   (package
     (name "r-lifx")
@@ -13139,13 +13165,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.4.0")
+    (version "4.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "1k6c88762jfcq2jbayblfwa0247apz4yna2vi0i5xvwh7bd6w1wl"))))
+        (base32 "06yf1habycchqb31zd7jlqzj98w00380hrrxkq2nkp0v231r05xw"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -13612,13 +13638,13 @@ from 16 countries.")
 (define-public r-legion
   (package
     (name "r-legion")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "legion" version))
        (sha256
-        (base32 "0463a743n6k21v6nyacmp2li9dngaaww9lh83150621s7pdycw3s"))))
+        (base32 "0axp8zhj18rgbwc9x9dyhh1d05fi34mm27yzd3jh1myhsf0p6llv"))))
     (properties `((upstream-name . "legion")))
     (build-system r-build-system)
     (arguments
@@ -13629,6 +13655,7 @@ from 16 countries.")
                              r-rcpparmadillo
                              r-rcpp
                              r-nloptr
+                             r-matrix
                              r-greybox
                              r-generics))
     (native-inputs (list r-knitr))
@@ -13640,8 +13667,9 @@ purposes of time series analysis and forecasting.  The focus of the package is
 on multivariate models, such as Vector Exponential Smoothing, Vector ETS
 (Error-Trend-Seasonal model) etc.  It currently includes Vector Exponential
 Smoothing (VES, de Silva et al., 2010, <doi:10.1177/1471082X0901000401>), Vector
-ETS and simulation function for VES.")
-    (license license:gpl2+)))
+ETS (Svetunkov et al., 2023, <doi:10.1016/j.ejor.2022.04.040>) and simulation
+function for VES.")
+    (license license:lgpl2.1)))
 
 (define-public r-legendry
   (package
@@ -15952,20 +15980,20 @@ results from internal standards or known metabolites.")
 (define-public r-lcmm
   (package
     (name "r-lcmm")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcmm" version))
        (sha256
-        (base32 "159hdi4800b7r25fqx2b4rlr4n7837f75hpmfp1qx85wyl5198nd"))))
+        (base32 "0knkdw3g29ql3lyvpbz793325qxzqhcim0g122arj97b2xk13ymw"))))
     (properties `((upstream-name . "lcmm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival
-                             r-randtoolbox
+                             r-spacefillr
                              r-numderiv
                              r-nlme
                              r-mvtnorm

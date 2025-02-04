@@ -3771,19 +3771,19 @@ details can be found in Garai and Paul (2023) <doi:10.1016/j.iswa.2023.200202>."
 (define-public r-tslstmplus
   (package
     (name "r-tslstmplus")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSLSTMplus" version))
        (sha256
-        (base32 "06jmy66brdk3c368qkljqi1a8kk7b3h0ld0ddzms1if63xgsl2cs"))))
+        (base32 "0y03by5sl3b07wk97hr9v40rabgw3z1n5lijdw34lhhn7h6w0ap0"))))
     (properties `((upstream-name . "TSLSTMplus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tsutils r-tensorflow r-keras r-abind))
+    (propagated-inputs (list r-tensorflow r-keras r-abind))
     (home-page "https://cran.r-project.org/package=TSLSTMplus")
     (synopsis "Long-Short Term Memory for Time-Series Forecasting, Enhanced")
     (description
@@ -9069,70 +9069,6 @@ running the vignette (optional), install fwelnet from @code{GitHub}
 <https://github.com/kjytay/fwelnet>.")
     (license license:gpl3)))
 
-(define-public r-transpror
-  (package
-    (name "r-transpror")
-    (version "0.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TransProR" version))
-       (sha256
-        (base32 "1wx5p59glih3p6ggy5kj5l9ngpgk75vwd7vzfgbv9vicb8sl7rlm"))))
-    (properties `((upstream-name . "TransProR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tidygraph
-                             r-tibble
-                             r-sva
-                             r-stringr
-                             r-spiralize
-                             r-rlang
-                             r-magrittr
-                             r-limma
-                             r-hrbrthemes
-                             r-hmisc
-                             r-ggvenndiagram
-                             r-ggtreeextra
-                             r-ggtree
-                             r-ggraph
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggnewscale
-                             r-ggdensity
-                             r-ggalt
-                             r-geomtextpath
-                             r-edger
-                             r-dplyr
-                             r-deseq2
-                             r-data-table
-                             r-complexheatmap
-                             r-circlize))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/SSSYDYSSS/TransProRBook")
-    (synopsis "Analysis and Visualization of Multi-Omics Data")
-    (description
-     "This package provides a tool for comprehensive transcriptomic data analysis,
-with a focus on transcript-level data preprocessing, expression profiling,
-differential expression analysis, and functional enrichment.  It enables
-researchers to identify key biological processes, disease biomarkers, and gene
-regulatory mechanisms. @code{TransProR} is aimed at researchers and
-bioinformaticians working with RNA-Seq data, providing an intuitive framework
-for in-depth analysis and visualization of transcriptomic datasets.  The package
-includes comprehensive documentation and usage examples to guide users through
-the entire analysis pipeline.  The differential expression analysis methods
-incorporated in the package include limma (Ritchie et al., 2015,
-<doi:10.1093/nar/gkv007>; Smyth, 2005, <doi:10.1007/0-387-29362-0_23>),
-@code{edgeR} (Robinson et al., 2010, <doi:10.1093/bioinformatics/btp616>),
-DESeq2 (Love et al., 2014, <doi:10.1186/s13059-014-0550-8>), and Wilcoxon tests
-(Li et al., 2022, <doi:10.1186/s13059-022-02648-4>), providing flexible and
-robust approaches to RNA-Seq data analysis.  For more information, refer to the
-package vignettes and related publications.")
-    (license license:expat)))
-
 (define-public r-transport
   (package
     (name "r-transport")
@@ -10052,13 +9988,13 @@ generalization, aggregation, intersection, simulation, and plotting.")
 (define-public r-traj
   (package
     (name "r-traj")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traj" version))
        (sha256
-        (base32 "1pv47ww443i290yjiqwx3bk1kynsv4kzhpq65mspbjdy61ilq5aq"))))
+        (base32 "06rc68v5n0wr488l45lq7ifa3xgwsrn3yvyx8469azr5gj5yai41"))))
     (properties `((upstream-name . "traj")))
     (build-system r-build-system)
     (arguments
@@ -10074,7 +10010,7 @@ generalization, aggregation, intersection, simulation, and plotting.")
 procedure involves (1) computing a number of \"measures of change\" capturing
 various features of the trajectories; (2) using a Principal Component Analysis
 based dimension reduction algorithm to select a subset of measures and (3) using
-the k-means clustering algorithm to identify clusters of trajectories.")
+the k-medoids or k-means algorithm to identify clusters of trajectories.")
     (license license:expat)))
 
 (define-public r-traitstrap
@@ -13891,6 +13827,32 @@ Laplace approximation for the random effects.  This is demonstrated in Monnahan
 & Kristensen (2018) <DOI:10.1371/journal.pone.0197954>.")
     (license license:gpl3+)))
 
+(define-public r-tmap-cartogram
+  (package
+    (name "r-tmap-cartogram")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tmap.cartogram" version))
+       (sha256
+        (base32 "0vw3acj54b9vr6sq1iq4w9iibj073gp7aqh9mykg1vr3nxq4xnp9"))))
+    (properties `((upstream-name . "tmap.cartogram")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmap r-sf r-cartogram))
+    (home-page "https://github.com/r-tmap/tmap.cartogram")
+    (synopsis "Extension to 'tmap' for Creating Cartograms")
+    (description
+     "This package provides new layer functions to tmap for creating various types of
+cartograms.  A cartogram is a type of thematic map in which geographic areas are
+resized or distorted based on a quantitative variable, such as population.  The
+goal is to make the area sizes proportional to the selected variable while
+preserving geographic positions as much as possible.")
+    (license license:gpl3)))
+
 (define-public r-tmap
   (package
     (name "r-tmap")
@@ -15956,6 +15918,47 @@ recordings as data frame for later use.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-timeplyr
+  (package
+    (name "r-timeplyr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timeplyr" version))
+       (sha256
+        (base32 "015app2m5rm7snajaslviz6dyvhhpv3qjmhhlwf1jwvkia1khnlm"))))
+    (properties `((upstream-name . "timeplyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-timechange
+                             r-tidyselect
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-pillar
+                             r-lubridate
+                             r-lifecycle
+                             r-ggplot2
+                             r-fastplyr
+                             r-dplyr
+                             r-data-table
+                             r-cppdoubles
+                             r-cpp11
+                             r-collapse
+                             r-cli
+                             r-cheapr))
+    (home-page "https://cran.r-project.org/package=timeplyr")
+    (synopsis "Fast Tidy Tools for Date and Date-Time Manipulation")
+    (description
+     "This package provides a set of fast tidy functions for wrangling, completing and
+summarising date and date-time data.  It combines tidyverse syntax with the
+efficiency of data.table and speed of collapse'.")
+    (license license:gpl2+)))
+
 (define-public r-timeperiodsr
   (package
     (name "r-timeperiodsr")
@@ -17154,13 +17157,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "16qn01lnd7i4xj3ywdsnvcx9zbg35j6gp03qrbgj6yj5n4j0vzbs"))))
+        (base32 "1hlri8rbisi41k9kxa93sl9qdqad72523b50l75ww61w131g0hkc"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (arguments
@@ -23951,27 +23954,26 @@ constructed to test the hypothesis.  See Cahoy (2010)
 (define-public r-testdriver
   (package
     (name "r-testdriver")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testDriveR" version))
        (sha256
-        (base32 "144bni3dg7bdmxnxyyal94j1nddqshgys9wfkdcc262n8y3v13i5"))))
+        (base32 "186lj171kpm3r1g9h358kyhl2hrw8abcdr42wab5sc0knagm472c"))))
     (properties `((upstream-name . "testDriveR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/chris-prener/testDriveR")
+    (home-page "https://chris-prener.github.io/testDriveR/")
     (synopsis "Teaching Data for Statistics and Data Science")
     (description
      "This package provides data sets for teaching statistics and data science
 courses.  It includes a sample of data from John Edmund Kerrich's famous
-coinflip experiment.  These are data that I used for teaching SOC 4015 / SOC
-5050 at Saint Louis University (SLU).  The package also contains an R Markdown
-template with the required formatting for assignments in my courses SOC 4015,
-SOC 4650, SOC 5050, and SOC 5650 at SLU.")
+coinflip experiment.  These are data that I used for statistics.  The package
+also contains an R Markdown template with the required formatting for
+assignments in my former courses.")
     (license license:gpl3)))
 
 (define-public r-testdimorph
@@ -26398,13 +26400,13 @@ facilitates dataset merging in teal framework.")
 (define-public r-teal-slice
   (package
     (name "r-teal-slice")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.slice" version))
        (sha256
-        (base32 "0vnp61cmmbxfjmli7y9i9b388yh6rqic33a061s2k61j925cisg0"))))
+        (base32 "1lrp0db68bw8bpcmssfza5iic5crmq4j0ixj9c696bqgbfm3951j"))))
     (properties `((upstream-name . "teal.slice")))
     (build-system r-build-system)
     (arguments
@@ -26417,6 +26419,7 @@ facilitates dataset merging in teal framework.")
                              r-shinyjs
                              r-shinycssloaders
                              r-shiny
+                             r-rlang
                              r-r6
                              r-plotly
                              r-logger
@@ -26426,7 +26429,7 @@ facilitates dataset merging in teal framework.")
                              r-dplyr
                              r-checkmate
                              r-bslib))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.slice/")
     (synopsis "Filter Module for 'teal' Applications")
     (description
@@ -27327,13 +27330,13 @@ the topic.")
 (define-public r-tda
   (package
     (name "r-tda")
-    (version "1.9.1")
+    (version "1.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDA" version))
        (sha256
-        (base32 "1zf01dlc95mi59yrwz98w6qridmixgm399r0dq4g02xinz7dnar3"))))
+        (base32 "0ynhpxrgi1n4z7mjhsal8nh1rvim58npg582a1s7y3qi9c6nim5s"))))
     (properties `((upstream-name . "TDA")))
     (build-system r-build-system)
     (arguments
@@ -27349,14 +27352,14 @@ the topic.")
     (home-page "https://cran.r-project.org/package=TDA")
     (synopsis "Statistical Tools for Topological Data Analysis")
     (description
-     "This package provides tools for the statistical analysis of persistent homology
-and for density clustering.  For that, this package provides an R interface for
-the efficient algorithms of the C++ libraries GUDHI
-<https://project.inria.fr/gudhi/software/>, Dionysus
+     "This package provides tools for Topological Data Analysis.  The package focuses
+on statistical analysis of persistent homology and density clustering.  For
+that, this package provides an R interface for the efficient algorithms of the
+C++ libraries GUDHI <https://project.inria.fr/gudhi/software/>, Dionysus
 <https://www.mrzv.org/software/dionysus/>, and PHAT
-<https://bitbucket.org/phat-code/phat/>.  This package also implements the
-methods in Fasy et al. (2014) <doi:10.1214/14-AOS1252> and Chazal et al. (2014)
-<doi:10.1145/2582112.2582128> for analyzing the statistical significance of
+<https://bitbucket.org/phat-code/phat/>.  This package also implements methods
+from Fasy et al. (2014) <doi:10.1214/14-AOS1252> and Chazal et al. (2015)
+<doi:10.20382/jocg.v6i2a8> for analyzing the statistical significance of
 persistent homology features.")
     (license license:gpl3)))
 

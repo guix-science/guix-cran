@@ -161,39 +161,6 @@ empirical Bayes, Lipovetsky & Conklin (2015) <doi:10.1142/S1793536915500028>;
 Elo, Hollis (2018) <doi:10.3758/s13428-017-0898-2>; and network-based measures.")
     (license license:expat)))
 
-(define-public r-bws
-  (package
-    (name "r-bws")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bws" version))
-       (sha256
-        (base32 "11gci4z434n68agc71ab16br8yp8fd1lylgnaqz7p7w676yrygn8"))))
-    (properties `((upstream-name . "bws")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-bh))
-    (home-page "https://cran.r-project.org/package=bws")
-    (synopsis "Bayesian Weighted Sums")
-    (description
-     "An interface to the Bayesian Weighted Sums model implemented in RStan'.  It
-estimates the summed effect of multiple, often moderately to highly correlated,
-continuous predictors.  Its applications can be found in analysis of exposure
-mixtures.  The model was proposed by Hamra, Maclehose, Croen, Kauffman, and
-Newschaffer (2021) <doi:10.3390/ijerph18041373>.  This implementation includes
-an extension to model binary outcome.")
-    (license license:gpl2+)))
-
 (define-public r-bwquant
   (package
     (name "r-bwquant")
@@ -13261,13 +13228,13 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
 (define-public r-biostatsuhnplus
   (package
     (name "r-biostatsuhnplus")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiostatsUHNplus" version))
        (sha256
-        (base32 "1kyali61sgx3b5h9wi7n5v0lrs9i5vrbl3ncrhq8jacz70i75mq7"))))
+        (base32 "0awxjp4sjr4qa7s12s1hk02aqxm2zqvfwp2vr1z4v3rl1cynvhg2"))))
     (properties `((upstream-name . "BiostatsUHNplus")))
     (build-system r-build-system)
     (arguments
@@ -23358,27 +23325,27 @@ now can be used with Seurat seamlessly.")
 (define-public r-bbk
   (package
     (name "r-bbk")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbk" version))
        (sha256
-        (base32 "12hx3l5yypmgj2drgq9g1c5k5xlyv4ivqpvkvl4c6ff1jqbs1lqs"))))
+        (base32 "07mc6lxjlwrldrns2wkdsyvgvip8jabrvis8l453qanbsvldk44x"))))
     (properties `((upstream-name . "bbk")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-httr2 r-curl))
+    (propagated-inputs (list r-xml2 r-jsonlite r-httr2 r-data-table r-curl))
     (home-page "https://m-muecke.github.io/bbk/")
-    (synopsis
-     "Client for the Deutsche Bundesbank and European Central Bank APIs")
+    (synopsis "Client for Central Bank APIs")
     (description
-     "Download data and metadata from the Bundesbank SDMX Web Service API found at
-<https://www.bundesbank.de/en/statistics/time-series-databases/help-for-sdmx-web-service/web-service-interface-data>
-and the ECB Data Portal API found at
-<https://data.ecb.europa.eu/help/api/overview>.")
+     "This package provides a client for retrieving data and metadata from major
+central bank APIs.  It supports access to the Bundesbank SDMX Web Service API
+(<https://www.bundesbank.de/en/statistics/time-series-databases/help-for-sdmx-web-service/web-service-interface-data>),
+the Swiss National Bank Data Portal (<https://data.snb.ch/en>), and the European
+Central Bank Data Portal API (<https://data.ecb.europa.eu/help/api/overview>).")
     (license license:expat)))
 
 (define-public r-bbi

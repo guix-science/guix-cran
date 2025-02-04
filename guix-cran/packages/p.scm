@@ -8941,13 +8941,13 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.4.4")
+    (version "1.0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "047c6090mbj6kfgfl9mv50b0hvgfi5hqdbwsbh93dqqns60ivc4v"))))
+        (base32 "10y5k5ycmlpfh3lnbbma7cjdcsar761x34syr5cs9iviq8dqgi7g"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (arguments
@@ -17531,13 +17531,13 @@ the package also includes utilities to manipulate standard allele count data
 (define-public r-pooledpeaks
   (package
     (name "r-pooledpeaks")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pooledpeaks" version))
        (sha256
-        (base32 "10nk65iyar9skh0dfz5mzh3alrmg55ysiyzbvxbc1jxvxj5msgfh"))))
+        (base32 "1wm7gysfz344r4r62a8rlb7qrv22zsjbaza65k8v30ivsiv8cqjn"))))
     (properties `((upstream-name . "pooledpeaks")))
     (build-system r-build-system)
     (arguments
@@ -17552,6 +17552,7 @@ the package also includes utilities to manipulate standard allele count data
                              r-fragman
                              r-dplyr
                              r-ape))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/kmkuesters/pooledpeaks")
     (synopsis "Genetic Analysis of Pooled Samples")
     (description
@@ -24328,42 +24329,6 @@ plasmid database using short-read sequence typing with the results of a blast
 analysis against the query results.")
     (license license:asl2.0)))
 
-(define-public r-plasmamutationdetector2
-  (package
-    (name "r-plasmamutationdetector2")
-    (version "1.1.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PlasmaMutationDetector2" version))
-       (sha256
-        (base32 "1dcmw6i488gxqqn52r0n9aclnz41ba2gc99vf6ac1wx5flcfm3l9"))))
-    (properties `((upstream-name . "PlasmaMutationDetector2")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-variantannotation
-                             r-summarizedexperiment
-                             r-s4vectors
-                             r-rtracklayer
-                             r-rsamtools
-                             r-robustbase
-                             r-ggplot2
-                             r-genomicranges))
-    (home-page "https://cran.r-project.org/package=PlasmaMutationDetector2")
-    (synopsis "Tumor Mutation Detection in Plasma using Barcoding")
-    (description
-     "Aims at detecting single nucleotide variation (SNV) and insertion/deletion
-(INDEL) in circulating tumor DNA (@code{ctDNA}), used as a surrogate marker for
-tumor, at each base position of an Next Generation Sequencing (NGS) analysis
-using barcoding.  Mutations are assessed by comparing the minor-allele frequency
-at each position to the measured PER in control samples.  This package has been
-used for Kjersti Tjensvoll, Morten Lapin, BjÃ¸rnar Gilje, Herish Garresori, Satu
-Oltedal, Rakel Brendsdal Forthun, Anders Molven, Yves Rozenholc and Oddmund
-N\\o{o}rdgaard (2022) <https://www.nature.com/articles/s41598-022-09698-5>.")
-    (license license:expat)))
-
 (define-public r-plasmamutationdetector
   (package
     (name "r-plasmamutationdetector")
@@ -28790,13 +28755,13 @@ r4photobiology suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologyinout
   (package
     (name "r-photobiologyinout")
-    (version "0.4.29")
+    (version "0.4.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyInOut" version))
        (sha256
-        (base32 "153yim3ggljxg4inijpsch0aipfgidy3xghjv2ap7rpzbdj6wmcb"))))
+        (base32 "1ahhdcllgkqv6l5pb2a64gi5rj7syhh4ald15lc5yxg97x2s78vb"))))
     (properties `((upstream-name . "photobiologyInOut")))
     (build-system r-build-system)
     (arguments
@@ -28805,6 +28770,7 @@ r4photobiology suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-suncalcmeeus
                              r-stringr
                              r-readxl
                              r-readr
@@ -28857,13 +28823,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.11.4")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "08qq7yc5gdflagg58f5g357ajrlhbyy87ici3z7r9pzanw7v6n09"))))
+        (base32 "0hc67q09802h63xh3cgn2a31r9d6rlc62rdn450241gr5k1c9pr0"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (arguments
@@ -28872,6 +28838,7 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-tibble
+                             r-suncalcmeeus
                              r-stringr
                              r-splus2r
                              r-rlang
@@ -31741,13 +31708,13 @@ these PE tests are presented in Yu, Li, and Xue (2022)
 (define-public r-petersenlab
   (package
     (name "r-petersenlab")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "petersenlab" version))
        (sha256
-        (base32 "1333k1kcy1ih9z09bl37zalsqrgf2xkqkqnsm28clc0r5np8df1d"))))
+        (base32 "00kgc9m39hwmkfyk7c4jm4fpgfyfr0v1w8cy193n33ark6vzjqs7"))))
     (properties `((upstream-name . "petersenlab")))
     (build-system r-build-system)
     (arguments
@@ -31760,6 +31727,7 @@ these PE tests are presented in Yu, Li, and Xue (2022)
                              r-scales
                              r-reshape2
                              r-rcolorbrewer
+                             r-purrr
                              r-psych
                              r-plyr
                              r-nlme
@@ -31782,9 +31750,12 @@ management, psychometric evaluation, extensions related to latent variable
 modeling, various plotting capabilities, and other miscellaneous useful
 functions.  By making the package available, we hope to make our methods
 reproducible and replicable by others and to help others perform their data
-processing and analysis methods more easily and efficiently.  The codebase is in
-<doi:10.5281/zenodo.7602890>.  The package is described in Petersen (2024)
-<doi:10.1201/9781003357421>, <doi:10.5281/zenodo.6466590>.")
+processing and analysis methods more easily and efficiently.  The codebase is
+provided in Petersen (2024) <doi:10.5281/zenodo.7602890> and on CRAN: <doi:
+10.32614/CRAN.package.petersenlab>.  The package is described in \"Principles of
+Psychological Assessment: With Applied Examples in R\" (Petersen, 2024, 2025)
+<doi:10.1201/9781003357421>, <doi:10.25820/work.007199>,
+<doi:10.5281/zenodo.6466589>.")
     (license license:expat)))
 
 (define-public r-petersen

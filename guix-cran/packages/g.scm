@@ -16830,6 +16830,54 @@ individual-level) relations.  See Gates & Molenaar (2012)
 <doi:10.1016/j.neuroimage.2012.06.026>.")
     (license license:gpl2)))
 
+(define-public r-gimap
+  (package
+    (name "r-gimap")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gimap" version))
+       (sha256
+        (base32 "1il46a0kivrg8hp8sqr2l57flhj8w4bsz5g4h0plkzxj8gw7pdcv"))))
+    (properties `((upstream-name . "gimap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vroom
+                             r-tidyr
+                             r-stringr
+                             r-rmarkdown
+                             r-readr
+                             r-purrr
+                             r-pheatmap
+                             r-openssl
+                             r-magrittr
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FredHutch/gimap")
+    (synopsis "Calculate Genetic Interactions for Paired CRISPR Targets")
+    (description
+     "Helps find meaningful patterns in complex genetic experiments.  First gimap
+takes data from paired CRISPR (Clustered regularly interspaced short palindromic
+repeats) screens that has been pre-processed to counts table of paired
+@code{gRNA} (guide Ribonucleic Acid) reads.  The input data will have cell
+counts for how well cells grow (or don't grow) when different genes or pairs of
+genes are disabled.  The output of the gimap package is genetic interaction
+scores which are the distance between the observed CRISPR score and the expected
+CRISPR score.  The expected CRISPR scores are what we expect for the CRISPR
+values to be for two unrelated genes.  The further away an observed CRISPR score
+is from its expected score the more we suspect genetic interaction.  The work in
+this package is based off of original research from the Alice Berger lab at Fred
+Hutchinson Cancer Center (2021) <doi:10.1016/j.celrep.2021.109597>.")
+    (license license:gpl3)))
+
 (define-public r-gim
   (package
     (name "r-gim")
@@ -18656,13 +18704,13 @@ added and tweaked using + and regular ggplot2 functions.")
 (define-public r-ggsem
   (package
     (name "r-ggsem")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsem" version))
        (sha256
-        (base32 "0g7ksc7a9s3vgr498kqi0hhhqqwmwwr8wkpdpxsdi0gjvvgwhf7l"))))
+        (base32 "1f26f92zzzw4pdyckgss8gzvqfirz2sr3lqjp60j5b5v76dhq1nq"))))
     (properties `((upstream-name . "ggsem")))
     (build-system r-build-system)
     (arguments
@@ -19896,13 +19944,13 @@ parameters manageably low.")
 (define-public r-ggpca
   (package
     (name "r-ggpca")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpca" version))
        (sha256
-        (base32 "13b3iks81mhjvjpghfamiyr3nbj63hg6jgl6922fclqml5i0rbdy"))))
+        (base32 "1w82y7fwv76rngbpsqrjm1jyscq6xccyp50r0niy0yzqzba0pdbx"))))
     (properties `((upstream-name . "ggpca")))
     (build-system r-build-system)
     (arguments

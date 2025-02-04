@@ -7971,13 +7971,13 @@ values of a moderator.")
 (define-public r-interfacer
   (package
     (name "r-interfacer")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interfacer" version))
        (sha256
-        (base32 "1jbcjny61n5wql1igxz0l75pi47wdzykl9dmlxnvqsscf9qhmkfn"))))
+        (base32 "0mx8x22af4l7ac0a90wpy5dc9iw52bdi4bzgdgrjnrj3fnfmvjm8"))))
     (properties `((upstream-name . "interfacer")))
     (build-system r-build-system)
     (arguments
@@ -7996,7 +7996,7 @@ values of a moderator.")
                              r-dplyr
                              r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://bristol-vaccine-centre.github.io/interfacer/")
+    (home-page "https://ai4ci.github.io/interfacer/")
     (synopsis
      "Define and Enforce Contracts for Dataframes as Function Parameters")
     (description

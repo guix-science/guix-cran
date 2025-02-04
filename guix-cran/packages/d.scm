@@ -4171,13 +4171,13 @@ repositories.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "0kc17d1n4drp04vz793hijq9rhnb2rk6ikgldji802560cf1jji2"))))
+        (base32 "1jv1a1aasrq943gdhgyg5a4a9wcdwm7ljx7i0kjl12gjn8sddmqz"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (arguments
@@ -12572,13 +12572,13 @@ methods are based on Abdi, H., Williams, L.J., Valentin, D., & Bennani-Dosse, M.
 (define-public r-distantia
   (package
     (name "r-distantia")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distantia" version))
        (sha256
-        (base32 "161yygj13w8jsrzbaz5xxs9l5fh3rsmiviqqa6kcsnvjrbppfgb6"))))
+        (base32 "0kxfqn90abzgxmxsjh3h9p2nd5h9dds84kprvhc9c9q5hn08adng"))))
     (properties `((upstream-name . "distantia")))
     (build-system r-build-system)
     (arguments
@@ -18425,13 +18425,13 @@ dichotomized functional response regression (dfrr) model.")
 (define-public r-dfr
   (package
     (name "r-dfr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfr" version))
        (sha256
-        (base32 "0fcm9b347pc8s54kgj2wkgxby32y8ph1wihwbca8gp7715y26227"))))
+        (base32 "0j0pi5dd6xy9kqci2yz6316yg3fcqalrvb09z3vxxsi6chabxnch"))))
     (properties `((upstream-name . "dfr")))
     (build-system r-build-system)
     (arguments
@@ -27249,24 +27249,19 @@ interface.")
 (define-public r-dbi-table
   (package
     (name "r-dbi-table")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbi.table" version))
        (sha256
-        (base32 "05dnrwwmmgbmhsra7rv1qmygx7p4mwlsv7adniwznb46in8z0z42"))))
+        (base32 "18gwlv6c2pipy1f1pp9ymbabnh67y438hm1scragv8y39gw6cr7v"))))
     (properties `((upstream-name . "dbi.table")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-rlang
-                             r-dbplyr
-                             r-dbi
-                             r-data-table
-                             r-bit64))
+    (propagated-inputs (list r-stringi r-rlang r-dbplyr r-dbi r-bit64))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kjellpk/dbi.table")
     (synopsis "Database Queries Using 'data.table' Syntax")
@@ -29900,13 +29895,13 @@ directly to Excel.")
 (define-public r-datacutr
   (package
     (name "r-datacutr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datacutr" version))
        (sha256
-        (base32 "0g6f2ywk3wv0m19s1qfvnplk1l6syzzpgnq0jn8c7qb9x1g75rx7"))))
+        (base32 "1dqqxprc4nkmgbmzljhyrgwpkfl3fnpy9d8gmmla4nhg51an84qr"))))
     (properties `((upstream-name . "datacutr")))
     (build-system r-build-system)
     (arguments
@@ -30627,39 +30622,6 @@ data in @code{dartR.data} is needed to run the examples provided in the
 @code{dartR} functions.  All available data sets are either based on actual data
 (but reduced in size) and/or simulated data sets to allow the fast execution of
 examples and demonstration of the functions.")
-    (license license:gpl3+)))
-
-(define-public r-dartr-captive
-  (package
-    (name "r-dartr-captive")
-    (version "0.75")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dartR.captive" version))
-       (sha256
-        (base32 "1n6qhn87111ydznmy85lj7sbxkkak4nwiq1kyky3p43x9679b2p9"))))
-    (properties `((upstream-name . "dartR.captive")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-patchwork
-                             r-ggplot2
-                             r-dartr-data
-                             r-dartr-base
-                             r-crayon
-                             r-adegenet))
-    (home-page "https://green-striped-gecko.github.io/dartR/")
-    (synopsis "Analysing 'SNP' Data to Support Captive Breeding")
-    (description
-     "This package provides functions are provided that facilitate the analysis of SNP
-(single nucleotide polymorphism) data to answer questions regarding captive
-breeding and relatedness between individuals. @code{dartR.captive} is part of
-the @code{dartRverse} suit of packages.  Gruber et al. (2018)
-<doi:10.1111/1755-0998.12745>.  Mijangos et al. (2022)
-<doi:10.1111/2041-210X.13918>.")
     (license license:gpl3+)))
 
 (define-public r-dartr-base

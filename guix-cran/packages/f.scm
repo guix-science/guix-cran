@@ -20699,20 +20699,20 @@ manuscript is currently under review.")
 (define-public r-fbati
   (package
     (name "r-fbati")
-    (version "1.0-9")
+    (version "1.0-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fbati" version))
        (sha256
-        (base32 "0i44a5mbcc5bj7d92k7cp8ljc66rrgzsa8flqx3sn017lq8smljv"))))
+        (base32 "01dvkc59js3bpsnz3pfxy70rigaicqmvl7hzfdaiy1c84lsms4mi"))))
     (properties `((upstream-name . "fbati")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rootsolve r-pbatr r-fgui))
-    (home-page "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3120904/")
+    (home-page "https://doi.org/10.1111/j.1541-0420.2011.01581.x")
     (synopsis
      "Gene by Environment Interaction and Conditional Gene Tests for Nuclear Families")
     (description

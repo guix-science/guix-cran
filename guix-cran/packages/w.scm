@@ -889,6 +889,35 @@ Batch reading (or writing) of sets of files and combining data to arrays is
 supported, too.")
     (license license:gpl3)))
 
+(define-public r-writer
+  (package
+    (name "r-writer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "writer" version))
+       (sha256
+        (base32 "03173c2gkw5bwxkr5m20w38xksy4sp092wzpq7drdg225plnywcd"))))
+    (properties `((upstream-name . "writer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli))
+    (home-page "https://github.com/talegari/writer")
+    (synopsis "Write from Multiple Sources to a Database Table")
+    (description
+     "This package provides unified syntax to write data from lazy dplyr tbl or dplyr
+sql query or a dataframe to a database table with modes such as create, append,
+insert, update, upsert, patch, delete, overwrite, overwrite_schema.")
+    (license license:lgpl3+)))
+
 (define-public r-write-snns
   (package
     (name "r-write-snns")

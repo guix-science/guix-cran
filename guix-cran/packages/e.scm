@@ -2153,41 +2153,6 @@ standard approach that is recommended by guidance Q1E \"Evaluation of stability
 data\" from the International Council for Harmonisation (ICH).")
     (license license:gpl2+)))
 
-(define-public r-expimage
-  (package
-    (name "r-expimage")
-    (version "0.10.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ExpImage" version))
-       (sha256
-        (base32 "1xl8g5782gwlz3ibqrx5szv5rnq9n5bigwcfxk4fxh8yfz6i73gi"))))
-    (properties `((upstream-name . "ExpImage")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-schemr
-                             r-rstudioapi
-                             r-raster
-                             r-randomforest
-                             r-progress
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.youtube.com/channel/UCDGyvLCJnv9RtTY1YMBMVNQ")
-    (synopsis "Analysis of Images in Experiments")
-    (description
-     "This package provides tools created for image analysis in researches.  There are
-functions associated with image editing, segmentation, and obtaining biometric
-measurements (Este pacote foi idealizado para para a analise de imagens em
-pesquisas.  Ha funcoes associadas a edicao de imagens, segmentacao, e obtencao
-de medidas biometricas) <https://www.expstat.com/pacotes-do-r/expimage>.")
-    (license license:gpl3)))
-
 (define-public r-expgenetic
   (package
     (name "r-expgenetic")

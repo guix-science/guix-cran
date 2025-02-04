@@ -9877,34 +9877,6 @@ outcomes is the estimator for marginal excursion effect (EMEE) by Qian et al.
 (2021) <doi:10.1093/biomet/asaa070>.")
     (license license:gpl3)))
 
-(define-public r-mrs
-  (package
-    (name "r-mrs")
-    (version "1.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MRS" version))
-       (sha256
-        (base32 "0rw3gmjn35118f1v1i8wa56zmz0cz2qbjahic87ylbyamnfsxz3l"))))
-    (properties `((upstream-name . "MRS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
-    (home-page "https://cran.r-project.org/package=MRS")
-    (synopsis "Multi-Resolution Scanning for Cross-Sample Differences")
-    (description
-     "An implementation of the MRS algorithm for comparison across distributions, as
-described in Jacopo Soriano, Li Ma (2017) <doi:10.1111/rssb.12180>.  The model
-is based on a nonparametric process taking the form of a Markov model that
-transitions between a \"null\" and an \"alternative\" state on a multi-resolution
-partition tree of the sample space.  MRS effectively detects and characterizes a
-variety of underlying differences.  These differences can be visualized using
-several plotting functions.")
-    (license license:gpl3+)))
-
 (define-public r-mrregression
   (package
     (name "r-mrregression")
@@ -11703,6 +11675,48 @@ generation.  It facilitates streamlined integration between Mplus and R',
 allowing users to run and manage multiple Mplus models simultaneously and
 efficiently in R'.")
     (license license:gpl3)))
+
+(define-public r-mpluslgm
+  (package
+    (name "r-mpluslgm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MplusLGM" version))
+       (sha256
+        (base32 "197maagv1w2j2jd5wa5bwmvkqaag2w8a7kckqrpvs0387fww5fyc"))))
+    (properties `((upstream-name . "MplusLGM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-mplusautomation
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/OlivierPDS/MplusLGM")
+    (synopsis "Automate Latent Growth Mixture Modelling in 'Mplus'")
+    (description
+     "Provide a suite of functions for conducting and automating Latent Growth
+Modeling (LGM) in Mplus', including Growth Curve Model (GCM), Growth-Based
+Trajectory Model (GBTM) and Latent Class Growth Analysis (LCGA).  The package
+builds upon the capabilities of the @code{MplusAutomation} package (Hallquist &
+Wiley, 2018) to streamline large-scale latent variable analyses.
+â@code{MplusAutomation}: An R Package for Facilitating Large-Scale Latent
+Variable Analyses in Mplus.â Structural Equation Modeling, 25(4), 621â638.
+<doi:10.1080/10705511.2017.1402334> The workflow implemented in this package
+follows the recommendations outlined in Van Der Nest et al. (2020).  âAn
+Overview of Mixture Modeling for Latent Evolutions in Longitudinal Data:
+Modeling Approaches, Fit Statistics, and Software.â Advances in Life Course
+Research, 43, Article 100323. <doi:10.1016/j.alcr.2019.100323>.")
+    (license license:gpl3+)))
 
 (define-public r-mplusautomation
   (package
@@ -14733,13 +14747,13 @@ the database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolite" version))
        (sha256
-        (base32 "0fn3khdx1kcci5j15fnf1j6cc479fbhy7jv8n22wgdbb4rqscb6c"))))
+        (base32 "0194x3bxg9ddkp0jnmv3qs49icks1i11llpilvmmhmz6xg5iq0ik"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (arguments
@@ -16549,13 +16563,13 @@ users about returned objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "185nnazkvqfnhiafzp0kdgrclsqvkpwa477ckfz0np32v9sykzqn"))))
+        (base32 "1bhbiw5g08zibzc3nzxwa2inhg901frn43ifj6s3fh704didjx09"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (arguments
@@ -19848,13 +19862,13 @@ Cumulative Distribution Functions.")
 (define-public r-mltest
   (package
     (name "r-mltest")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mltest" version))
        (sha256
-        (base32 "14gyssfph088v936mpywmd4y8z9vdv0zk8638vlg23j8cf5j4al2"))))
+        (base32 "0min7n9zrwag7bdv58h8162dxlw5ysigfdgcb9dnjdlc5f8xsfwy"))))
     (properties `((upstream-name . "mltest")))
     (build-system r-build-system)
     (arguments
@@ -21700,6 +21714,48 @@ the Caret train function results from repeated cross validation, then select the
 best model and analyse the results.  MLeval produces a range of evaluation
 metrics with confidence intervals.")
     (license license:agpl3)))
+
+(define-public r-mlergm
+  (package
+    (name "r-mlergm")
+    (version "0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlergm" version))
+       (sha256
+        (base32 "0bpdljmbn4lfm263jcsp0hrknixn49m7hqsx0jjk3pfwhgjlajh8"))))
+    (properties `((upstream-name . "mlergm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-sna
+                             r-reshape2
+                             r-plyr
+                             r-network
+                             r-matrix
+                             r-lpsolve
+                             r-ggplot2
+                             r-ggally
+                             r-ergm
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mlergm")
+    (synopsis "Multilevel Exponential-Family Random Graph Models")
+    (description
+     "Estimates exponential-family random graph models for multilevel network data,
+assuming the multilevel structure is observed.  The scope, at present, covers
+multilevel models where the set of nodes is nested within known blocks.  The
+estimation method uses Monte-Carlo maximum likelihood estimation (MCMLE) methods
+to estimate a variety of canonical or curved exponential family models for
+binary random graphs.  MCMLE methods for curved exponential-family random graph
+models can be found in Hunter and Handcock (2006) <DOI:
+10.1198/106186006X133069>.  The package supports parallel computing, and
+provides methods for assessing goodness-of-fit of models and visualization of
+networks.")
+    (license license:gpl3)))
 
 (define-public r-mlelod
   (package
@@ -24580,24 +24636,19 @@ full technical documentation.  All data is sourced from
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.6.8")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "0d43m9k7vsg7fqlsglzh68kx7l1c73lj22401sxxq3h6vrkij1bi"))))
+        (base32 "002ankqwsd163ni5wwaqxgxi6dzgp3b149rdrkgnm4j329n0v2qh"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstudioapi
-                             r-lme4
-                             r-lavaan
-                             r-haven
-                             r-ggplot2
-                             r-data-table))
+    (propagated-inputs (list r-rstudioapi r-lme4 r-lavaan r-haven r-ggplot2))
     (home-page "https://cran.r-project.org/package=misty")
     (synopsis "Miscellaneous Functions 'T. Yanagida'")
     (description
@@ -24613,10 +24664,10 @@ level-specific fit indices, cross-level measurement equivalence evaluation,
 multilevel composite reliability, and multilevel R-squared measures), (5) item
 analysis (e.g., confirmatory factor analysis, coefficient alpha and omega,
 between-group and longitudinal measurement equivalence evaluation), (6)
-statistical analysis (e.g., confidence intervals, collinearity and residual
-diagnostics, dominance analysis, between- and within-subject analysis of
-variance, latent class analysis, t-test, z-test, sample size determination), and
-(7) functions to interact with Blimp and Mplus'.")
+statistical analysis (e.g., bootstrap confidence intervals, collinearity and
+residual diagnostics, dominance analysis, between- and within-subject analysis
+of variance, latent class analysis, t-test, z-test, sample size determination),
+and (7) functions to interact with Blimp and Mplus'.")
     (license license:expat)))
 
 (define-public r-mistral
@@ -29668,13 +29719,13 @@ overimputation for mice'.")
 (define-public r-micefast
   (package
     (name "r-micefast")
-    (version "0.8.2")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miceFast" version))
        (sha256
-        (base32 "0n4hi9f28mzc9h41g7y3nnkr5lq7npafk6ias17xsqw28agc95ir"))))
+        (base32 "0wfzjx1zx3cdm06wyaavsb9p9dkfpvxm0wr9zaj7cag60rv99j16"))))
     (properties `((upstream-name . "miceFast")))
     (build-system r-build-system)
     (arguments
@@ -42856,13 +42907,13 @@ associated with a set of longitude/latitude pairs. (They also make cool maps.)."
 (define-public r-mazamaspatialplots
   (package
     (name "r-mazamaspatialplots")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaSpatialPlots" version))
        (sha256
-        (base32 "1i8gqywl2w7zjl1m5qw8vmy7wn44cp8fkiw4m2iwvf4s9q43xjnc"))))
+        (base32 "1q133nsl4zyin633vw4wic4jg6vw7xg1rxd4fxnfcv0gq7sa2gx6"))))
     (properties `((upstream-name . "MazamaSpatialPlots")))
     (build-system r-build-system)
     (arguments
@@ -44416,26 +44467,26 @@ and use of the API is subject to their terms and conditions.")
 (define-public r-mathml
   (package
     (name "r-mathml")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mathml" version))
        (sha256
-        (base32 "11mrrz0w9mzi9621d9cgnialyrhv8v91ak9slrcni5gx3i3fww84"))))
+        (base32 "1zllzr112ycx23sqhhg3kfbg9w7cdxcc8nxr3x0lsbk075msgwav"))))
     (properties `((upstream-name . "mathml")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rolog r-knitr))
+    (propagated-inputs (list r-xfun r-rolog r-knitr))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/mgondan/mathml")
     (synopsis "Translate R Expressions to 'MathML' and 'LaTeX'/'MathJax'")
     (description
      "Translate R expressions to @code{MathML} or @code{MathJax'/'LaTeX} so that they
-can be rendered in R Markdown documents and shiny apps.  This package depends on
-R package rolog', which requires an installation of the SWI-Prolog runtime
+can be rendered in R markdown documents and shiny apps.  This package depends on
+R package rolog', which requires an installation of the SWI'-'Prolog runtime
 either from swi-prolog.org or from R package rswipl'.")
     (license (license:fsdg-compatible "FreeBSD"))))
 
@@ -46407,13 +46458,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.24.0")
+    (version "0.25.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "047whcdmky8kq75f6696441ih17kn26mgrzdkjp3zam5scqaqr7p"))))
+        (base32 "0b5z3i4dmsgnw4945mss1gsw09hmqblqa0l2mdkj9fmrf11yf7d0"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (arguments
@@ -46426,6 +46477,7 @@ a conditional risk model.")
                              r-generics
                              r-data-table
                              r-checkmate))
+    (native-inputs (list r-quarto r-knitr))
     (home-page "https://marginaleffects.com/")
     (synopsis
      "Predictions, Comparisons, Slopes, Marginal Means, and Hypothesis Tests")

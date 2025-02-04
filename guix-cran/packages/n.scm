@@ -9101,32 +9101,6 @@ demographic inference (Crema and Shoda (2021)
 <doi:10.1371/journal.pone.0251695>) and other analyses.")
     (license license:gpl2+)))
 
-(define-public r-nimbleapt
-  (package
-    (name "r-nimbleapt")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nimbleAPT" version))
-       (sha256
-        (base32 "17sv1f5dnrp33qfv7gr1s3isvwd79vnfiphjz45c7b4l28h3g2i6"))))
-    (properties `((upstream-name . "nimbleAPT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nimble))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/DRJP/nimbleAPT")
-    (synopsis "Adaptive Parallel Tempering for 'NIMBLE'")
-    (description
-     "This package provides functions for adaptive parallel tempering (APT) with
-NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
-<DOI:10.1007/s11222-015-9579-0> and Miasojedow, Moulines and Vihola (2013)
-<DOI:10.1080/10618600.2013.778779>.")
-    (license license:bsd-3)))
-
 (define-public r-nimble
   (package
     (name "r-nimble")

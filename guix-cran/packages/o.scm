@@ -4073,32 +4073,36 @@ Proceedings of the 38th Conference on Uncertainty in Artificial Intelligence,
 (define-public r-ordbetareg
   (package
     (name "r-ordbetareg")
-    (version "0.7.2")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordbetareg" version))
        (sha256
-        (base32 "12z5ig4m62fy6j76anidj6gpy0g2xcr35yv0xv0avgi57wf4rpwv"))))
+        (base32 "0bmkczmpb8an538df6y7sxsf85vf3qgz39lxbsylv7y3219pmrwp"))))
     (properties `((upstream-name . "ordbetareg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-transformr
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rstantools
+                             r-insight
                              r-ggplot2
-                             r-gganimate
                              r-dplyr
-                             r-brms))
-    (native-inputs (list r-knitr))
+                             r-checkmate
+                             r-brms
+                             r-abind))
+    (native-inputs (list r-quarto))
     (home-page "https://cran.r-project.org/package=ordbetareg")
     (synopsis "Ordered Beta Regression Models with 'brms'")
     (description
      "This package implements ordered beta regression models, which are for modeling
 continuous variables with upper and lower bounds, such as survey sliders,
 dose-response relationships and indexes.  For more information, see Kubinec
-(2022) <doi:10.31235/osf.io/2sx6y>.  The package is a front-end to the R package
+(2023) <doi:10.31235/osf.io/2sx6y>.  The package is a front-end to the R package
 brms', which facilitates a range of regression specifications, including
 hierarchical, dynamic and multivariate modeling.")
     (license license:expat)))
@@ -4420,22 +4424,23 @@ variable selection for generalized linear models.")
 (define-public r-optrf
   (package
     (name "r-optrf")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optRF" version))
        (sha256
-        (base32 "02imgfmfigcps4z4028r7jp61153m4ircb4l1axszcaag0181gba"))))
+        (base32 "0330lvmx46k1jqs432yhfg1nwlpc1nhm4jpvbv14x8ig9959nhys"))))
     (properties `((upstream-name . "optRF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-ranger r-minpack-lm r-irr))
-    (home-page "https://cran.r-project.org/package=optRF")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tmlange/optRF")
     (synopsis
-     "Optimising Random Forest Stability Through Selection of the Optimal Number of Trees")
+     "Optimising Random Forest Stability by Determining the Optimal Number of Trees")
     (description
      "Calculating the stability of random forest with certain numbers of trees.  The
 non-linear relationship between stability and numbers of trees is described
@@ -6058,6 +6063,38 @@ transmissions and receptions considering an Opportunistic transport model.  It
 provides theoretical results and also estimated values based on Monte Carlo
 simulations.")
     (license license:gpl2+)))
+
+(define-public r-opl
+  (package
+    (name "r-opl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OPL" version))
+       (sha256
+        (base32 "0vvk5mif17hb6xfn02r102w4ipzdbmwb646nwl9gf2wxgwdyw38k"))))
+    (properties `((upstream-name . "OPL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-randomforest r-pander r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OPL")
+    (synopsis "Optimal Policy Learning")
+    (description
+     "This package provides functions for optimal policy learning in socioeconomic
+applications helping users to learn the most effective policies based on data in
+order to maximize empirical welfare.  Specifically, OPL allows to find
+\"treatment assignment rules\" that maximize the overall welfare, defined as the
+sum of the policy effects estimated over all the policy beneficiaries.
+Documentation about OPL is provided by several international articles via Athey
+et al (2021, <doi:10.3982/ECTA15732>), Kitagawa et al (2018,
+<doi:10.3982/ECTA13288>), Cerulli (2022, <doi:10.1080/13504851.2022.2032577>),
+the paper by Cerulli (201, <doi:10.1080/13504851.2020.1820939>) and the book by
+Gareth et al (2013, <doi:10.1007/978-1-4614-7138-7>).")
+    (license license:gpl3)))
 
 (define-public r-opitools
   (package
@@ -8967,42 +9004,6 @@ design method can be found in: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020).
 of functions that read a set of rules from a CSV or Excel file and apply them to
 a dataset.  Funded by the National Renewable Energy Laboratory and Possibility
 Lab, maintained by the Moore Institute for Plastic Pollution Research.")
-    (license license:expat)))
-
-(define-public r-ondisc
-  (package
-    (name "r-ondisc")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ondisc" version))
-       (sha256
-        (base32 "071jrldclkaz5lfp3k5fh1ilpgvvcnakh2vvnr69n3pri9dl3fls"))))
-    (properties `((upstream-name . "ondisc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rhdf5lib
-                             r-rhdf5
-                             r-readr
-                             r-rcpp
-                             r-matrix
-                             r-magrittr
-                             r-dplyr
-                             r-data-table
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://timothy-barry.github.io/ondisc/")
-    (synopsis
-     "Fast, Universal, and Intuitive Computing on Large-Scale Single-Cell Data")
-    (description
-     "Single-cell datasets are growing in size, posing challenges as well as
-opportunities for biology researchers.  ondisc (short for \"on-disk single cell\")
-enables users to easily and efficiently analyze large-scale single-cell data.
-ondisc makes computing on large-scale single-cell data FUN: Fast, Universal, and
-@code{iNtuitive}.")
     (license license:expat)))
 
 (define-public r-oncrawlr
@@ -12500,25 +12501,29 @@ k-means clustering (Steinley and Hubert, 2008, <doi:10.1007/s11336-008-9058-z>).
 (define-public r-ocf
   (package
     (name "r-ocf")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ocf" version))
        (sha256
-        (base32 "1vzpiy7dby61yydszgm2magdq9dah7c0pw9zl7bsrycrzs5qfxgs"))))
+        (base32 "0qdihd0znna495vpcqv242099sj4nvjxs4rc499z7q0wlr7d02h3"))))
     (properties `((upstream-name . "ocf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-rcppeigen
                              r-rcpp
                              r-ranger
                              r-orf
                              r-matrix
-                             r-glmnet))
+                             r-magrittr
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://riccardo-df.github.io/ocf/")
     (synopsis "Ordered Correlation Forest")
@@ -12529,7 +12534,7 @@ conditional choice probabilities and the covariatesâ marginal effects.  Und
 an \"honesty\" condition, the estimates are consistent and asymptotically normal
 and standard errors can be obtained by leveraging the weight-based
 representation of the random forest predictions.  Please reference the use as Di
-Francesco (2023) <doi:10.48550/@code{arXiv.2309.08755>}.")
+Francesco (2025) <doi:10.1080/07474938.2024.2429596>.")
     (license license:gpl3)))
 
 (define-public r-ocedata
