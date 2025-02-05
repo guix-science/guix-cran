@@ -4212,13 +4212,13 @@ L1-regularization.")
 (define-public r-irboost
   (package
     (name "r-irboost")
-    (version "0.1-1.5")
+    (version "0.2-1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irboost" version))
        (sha256
-        (base32 "0bn27mng7bacgxk13qf6pgyf0h0i6wphpdgp1ily00dphair6rva"))))
+        (base32 "1c6pc4lsx7l0s3m03fliwa6xz40dani9fd2hfkxpl9874w9an5cb"))))
     (properties `((upstream-name . "irboost")))
     (build-system r-build-system)
     (arguments
@@ -4239,7 +4239,7 @@ constitutes an application of iteratively reweighted convex optimization (IRCO),
 where convex optimization is performed using the functional descent boosting
 algorithm.  IRBoost assigns weights to facilitate outlier identification.
 Applications include robust generalized linear models and robust accelerated
-failure time models.  Wang (2021) <doi:10.48550/@code{arXiv.2101.07718>}.")
+failure time models.  Wang (2025) <doi:10.6339/24-JDS1138>.")
     (license license:gpl3+)))
 
 (define-public r-iraceplot

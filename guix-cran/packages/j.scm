@@ -2474,13 +2474,13 @@ comparisons, install @code{remMap} from @code{GitHub}
 (define-public r-joinerml
   (package
     (name "r-joinerml")
-    (version "0.4.6")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joineRML" version))
        (sha256
-        (base32 "07drhpyvsmmsbv4knx4ma91f773f48jf14lnpn8cdl5sslc6f4pp"))))
+        (base32 "15kj34czlgbwcykf6zmfvpmb9iyy1h2x6r18nbvf53n6hbx4ggan"))))
     (properties `((upstream-name . "joineRML")))
     (build-system r-build-system)
     (arguments

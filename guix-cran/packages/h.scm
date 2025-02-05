@@ -1827,13 +1827,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "24.9.1")
+    (version "25.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "00awnlswkwki1fjjf7rq6s6k4vahb3vyzbzj2wbbhc3ihbv354jf"))))
+        (base32 "1z37yiy8rg3j3g38m8hcwcxk1d7ncfgdi4r6zyl9vpfqzgg5qi78"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments
@@ -1844,7 +1844,6 @@ problems.")
                              r-splancs
                              r-scales
                              r-rtsne
-                             r-rlang
                              r-reshape2
                              r-purrr
                              r-plyr
@@ -1852,21 +1851,19 @@ problems.")
                              r-mass
                              r-markovchain
                              r-magrittr
-                             r-gifski
+                             r-gridextra
                              r-ggplot2
-                             r-ggforce
                              r-gganimate
                              r-fnn
                              r-dplyr
+                             r-deldir
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Mu-Sigma/HVT")
     (synopsis
      "Constructing Hierarchical Voronoi Tessellations and Overlay Heatmaps for Data Analysis")
     (description
-     "Facilitates building topology preserving maps for rich multivariate data.
-Credits to Mu Sigma for their continuous support throughout the development of
-the package.")
+     "Facilitates building topology preserving maps for data analysis.")
     (license license:asl2.0)))
 
 (define-public r-huxtable

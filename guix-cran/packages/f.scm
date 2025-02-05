@@ -7843,13 +7843,13 @@ Latent Class Discrete Weibull Models.This package is based on Fader and Hardie
 (define-public r-foresttools
   (package
     (name "r-foresttools")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForestTools" version))
        (sha256
-        (base32 "1c5p4j9kva63hi54zj76vxfydrgkfvszwzzlpn0ippijgrwmcf6j"))))
+        (base32 "15b78lwakh97s0wq7w6mrf2bqr76f4vs562apdn2gwd7zdqc3jsv"))))
     (properties `((upstream-name . "ForestTools")))
     (build-system r-build-system)
     (arguments
@@ -8649,13 +8649,13 @@ advances.")
 (define-public r-forensit
   (package
     (name "r-forensit")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forensIT" version))
        (sha256
-        (base32 "0zbkkdm3wzzqsg7m6854lisskql0v5k9sg1ly1z479w5iqknh7bl"))))
+        (base32 "093did5jwa7dal2mn0k6b2h67m30kddlvg4yp9d82i6hilar25wp"))))
     (properties `((upstream-name . "forensIT")))
     (build-system r-build-system)
     (arguments
@@ -8665,7 +8665,6 @@ advances.")
                              r-reshape2
                              r-pedtools
                              r-pedprobr
-                             r-paramlink
                              r-mispitools
                              r-magrittr
                              r-iterators
@@ -16416,13 +16415,13 @@ Forest Service data.")
 (define-public r-fiesta
   (package
     (name "r-fiesta")
-    (version "3.6.4")
+    (version "3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTA" version))
        (sha256
-        (base32 "1k7a58807mr32vgs8xgv1ni1ip0kfkd5b3vaxzzyf0jv85dfc8q0"))))
+        (base32 "1yv0c1213pw0gpgrvwr45z1qqscs6nm1kpv5v7l88wfjm69078l8"))))
     (properties `((upstream-name . "FIESTA")))
     (build-system r-build-system)
     (arguments
@@ -20535,29 +20534,27 @@ delete custom audiences, images, campaigns, ad sets, ads and related content.")
 (define-public r-fbnet
   (package
     (name "r-fbnet")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fbnet" version))
        (sha256
-        (base32 "0jz3jbd2qna4mnas0mjs32wvlk6vzlw61qb9fql65al40401b23x"))))
+        (base32 "0z0nx0dcps1czbc45mng42wqsd9vibcqhlr59a47yzyh47zcgpyy"))))
     (properties `((upstream-name . "fbnet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rsolnp r-paramlink r-igraph r-assertthat))
-    (home-page "https://github.com/MarsicoFL/fbnet")
+    (propagated-inputs (list r-igraph))
+    (home-page "https://marsicofl.github.io/fbnet/")
     (synopsis "Forensic Bayesian Networks")
     (description
      "Open-source package for computing likelihood ratios in kinship testing and human
-identification cases (Chernomoretz et al. (2021)
-<doi:10.1016/j.fsir.2020.100132>).  It has the core function of the software
-GENis, developed by FundaciÃ³n Sadosky.  It relies on a Bayesian Networks
-framework and is particularly well suited to efficiently perform large-size
-queries against databases of missing individuals (Darwiche (2009)
-<doi:10.1017/CBO9780511811357>).")
+identification cases.  It has the core function of the software GENis, developed
+by FundaciÃ³n Sadosky.  It relies on a Bayesian Networks framework and is
+particularly well suited to efficiently perform large-size queries against
+databases of missing individuals.")
     (license license:gpl3+)))
 
 (define-public r-fbn
@@ -21674,6 +21671,35 @@ Applications of Statistics: an Introduction using R\" (R Pruim, published by AMS
 2017), a text covering topics from probability and mathematical statistics at an
 advanced undergraduate level.  R is integrated throughout, and access to all the
 R code in the book is provided via the @code{snippet()} function.")
+    (license license:gpl2+)))
+
+(define-public r-fastqr
+  (package
+    (name "r-fastqr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastQR" version))
+       (sha256
+        (base32 "0g7dyjh3lrq0r192cy3srf7mjdf19qskxp6yzqhwbbbk29jxa80w"))))
+    (properties `((upstream-name . "fastQR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-rcppeigen r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=fastQR")
+    (synopsis "Fast QR Decomposition and Update")
+    (description
+     "Efficient algorithms for performing, updating, and downdating the QR
+decomposition, R decomposition, or the inverse of the R decomposition of a
+matrix as rows or columns are added or removed.  It also includes functions for
+solving linear systems of equations, normal equations for linear regression
+models, and normal equations for linear regression with a RIDGE penalty.  For a
+detailed introduction to these methods, see the book by Golub and Van Loan
+(2013, <doi:10.1007/978-3-319-05089-8>) for complete introduction to the
+methods.")
     (license license:gpl2+)))
 
 (define-public r-fastqq

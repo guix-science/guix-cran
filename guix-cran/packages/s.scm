@@ -18238,13 +18238,13 @@ adaptive bandwidth kernel function for irregular lattice-based maps.")
 (define-public r-ssifs
   (package
     (name "r-ssifs")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssifs" version))
        (sha256
-        (base32 "17q1p4cgdwmn3vlhkc4p49j1222wd8d6dcp7n5ngvqcfjn3lrarh"))))
+        (base32 "11krpqzjnbaxqpjzg0hvigr6254vgr6w09bha64cn6fry3z6n860"))))
     (properties `((upstream-name . "ssifs")))
     (build-system r-build-system)
     (arguments
@@ -18255,6 +18255,7 @@ adaptive bandwidth kernel function for irregular lattice-based maps.")
                              r-r2jags
                              r-plyr
                              r-netmeta
+                             r-meta
                              r-igraph
                              r-gtools
                              r-ggplot2))
@@ -18265,7 +18266,7 @@ adaptive bandwidth kernel function for irregular lattice-based maps.")
      "Evaluating the consistency assumption of Network Meta-Analysis both globally and
 locally in the Bayesian framework.  Inconsistencies are located by applying
 Bayesian variable selection to the inconsistency factors.  The implementation of
-the method is described by Seitidis et al. (2022) <@code{arXiv:2211.07258>}.")
+the method is described by Seitidis et al. (2023) <doi:10.1002/sim.9891>.")
     (license license:gpl3+)))
 
 (define-public r-sship
@@ -18946,13 +18947,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "1ibcq4fv71z88gwvqkai41lssjy34kgyrqiik4q8qp0smh7ccyc8"))))
+        (base32 "11ql755i2laig4djl9jnqc3wh20vibpikr8q3vyjzvbk6c3l05pc"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (arguments
@@ -20209,6 +20210,33 @@ queries may be interpolated with string literals.  Execution of individual
 statements and queries may be controlled with keywords.  Multiple connections
 may be defined with YAML and accessed by name.")
     (license license:gpl3+)))
+
+(define-public r-sqlformatter
+  (package
+    (name "r-sqlformatter")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SQLFormatteR" version))
+       (sha256
+        (base32 "1al8ndlpg2482mwrx88kg76q9pzjajnfd2had2waqmfwrijsvbgn"))))
+    (properties `((upstream-name . "SQLFormatteR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-assertthat))
+    (home-page "https://dataupsurge.github.io/SQLFormatteR/")
+    (synopsis "Format SQL Queries")
+    (description
+     "This package provides a convenient interface for formatting SQL queries directly
+within R'.  It acts as a wrapper around the sql_format Rust crate.  The package
+allows you to format SQL code with customizable options, including indentation,
+case formatting, and more, ensuring your SQL queries are clean, readable, and
+consistent.")
+    (license license:expat)))
 
 (define-public r-sqlcaser
   (package
@@ -40638,13 +40666,13 @@ improve feature extraction.  Benjamin B.Risk, Irina Gaynanova (2021)
 (define-public r-singlercapture
   (package
     (name "r-singlercapture")
-    (version "0.2.1.4")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singleRcapture" version))
        (sha256
-        (base32 "06jhdb7n50xscd8k0rd9v18v4n0h5axmcx4lmxdyya6rimxh139g"))))
+        (base32 "1i6aqgzfq31jw6xalk743gr4zl4qfz7ac9m41qi90hhp5nk96806"))))
     (properties `((upstream-name . "singleRcapture")))
     (build-system r-build-system)
     (arguments
@@ -40652,6 +40680,7 @@ improve feature extraction.  Benjamin B.Risk, Irina Gaynanova (2021)
       #:tests? #f))
     (propagated-inputs (list r-sandwich r-mathjaxr r-lamw r-foreach
                              r-doparallel))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ncn-foreigners/singleRcapture")
     (synopsis "Single-Source Capture-Recapture Models")
     (description
@@ -50319,6 +50348,32 @@ cross-platform data visualizations.  Includes the gg-aframe @code{JavaScript}
 package for a Grammar of Graphics declarative HTML syntax to create
 3-dimensional data visualizations with Mozilla A-Frame <https://aframe.io>.")
     (license license:agpl3)))
+
+(define-public r-shiny2docker
+  (package
+    (name "r-shiny2docker")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shiny2docker" version))
+       (sha256
+        (base32 "1hl2cql0lxvmmk18jzikf7pzard7lm4qwcfcq9j4p007kmf55m96"))))
+    (properties `((upstream-name . "shiny2docker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yesno r-here r-dockerfiler r-attachment))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/VincentGuyader/shiny2docker")
+    (synopsis "Generate Dockerfiles for 'Shiny' Applications")
+    (description
+     "Automates the creation of Dockerfiles for deploying Shiny applications.  By
+integrating with renv for dependency management and leveraging Docker-based
+solutions, it simplifies the process of containerizing Shiny apps, ensuring
+reproducibility and consistency across different environments.")
+    (license license:expat)))
 
 (define-public r-shiny-telemetry
   (package

@@ -1071,6 +1071,33 @@ analysis, strategy development, and monitoring of cryptocurrency market trends."
 Baraniuk (2016) <doi:10.1080/00031305.2015.1086685>.")
     (license license:expat)))
 
+(define-public r-kpiwidget
+  (package
+    (name "r-kpiwidget")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kpiwidget" version))
+       (sha256
+        (base32 "1b3lp421f63b9l4ix2lp399d408mj75p3a4k7vzd6qrwmslzi712"))))
+    (properties `((upstream-name . "kpiwidget")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-htmlwidgets r-crosstalk))
+    (native-inputs (list r-knitr))
+    (home-page "https://arnold-kakas.github.io/kpiwidget/")
+    (synopsis "KPI Widgets for Quarto Dashboards with Crosstalk")
+    (description
+     "This package provides an easy way to create interactive KPI (key performance
+indicator) widgets for Quarto dashboards using Crosstalk'.  The package enables
+visualization of key metrics in a structured format, supporting interactive
+filtering and linking with other Crosstalk'-enabled components.  Designed for
+use in Quarto Dashboards.")
+    (license license:expat)))
+
 (define-public r-kpeaks
   (package
     (name "r-kpeaks")

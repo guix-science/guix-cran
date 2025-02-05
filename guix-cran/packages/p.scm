@@ -9963,13 +9963,13 @@ citation(\"PRIMME\") for details.")
 (define-public r-primes
   (package
     (name "r-primes")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primes" version))
        (sha256
-        (base32 "1jpj7hq2hsv6x3qp409whim7480hswvmhd327b2yml8f734nv45d"))))
+        (base32 "1f4fn61pawlc67jmq6pnvqnikvwdbzmagdfvsxgj30gzbs3b8khy"))))
     (properties `((upstream-name . "primes")))
     (build-system r-build-system)
     (arguments
@@ -15892,13 +15892,13 @@ Nadarajah,Song and Si (2019) <DOI:10.1080/03610926.2019.1576893>.")
 (define-public r-posologyr
   (package
     (name "r-posologyr")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "posologyr" version))
        (sha256
-        (base32 "0cwqcsbp5mafimrvwmha78nqggssm3dm9n50cqkc5rfjcyxi953g"))))
+        (base32 "09kpj4f0q7syjj0pp96w87kms6gcmaz4dws8afmi385d5if34fa9"))))
     (properties `((upstream-name . "posologyr")))
     (build-system r-build-system)
     (arguments
@@ -15908,13 +15908,12 @@ Nadarajah,Song and Si (2019) <DOI:10.1080/03610926.2019.1576893>.")
     (home-page "https://levenc.github.io/posologyr/")
     (synopsis "Individual Dose Optimization using Population Pharmacokinetics")
     (description
-     "Optimize drug regimens through model-informed precision dosing, using individual
-pharmacokinetic (PK) and pharmacokinetic-pharmacodynamic (PK-PD) profiles.  By
-integrating therapeutic drug monitoring (TDM) data with population models,
-posologyr provides accurate posterior estimates and enables the calculation of
-personalized dosing regimens.  The empirical Bayes estimates are computed
-following the method described by Kang et al. (2012)
-<doi:10.4196/kjpp.2012.16.2.97>.")
+     "Personalize drug regimens using individual pharmacokinetic (PK) and
+pharmacokinetic-pharmacodynamic (PK-PD) profiles.  By combining therapeutic drug
+monitoring (TDM) data with a population model, posologyr offers accurate
+posterior estimates and helps compute optimal individualized dosing regimens.
+The empirical Bayes estimates are computed following the method described by
+Kang et al. (2012) <doi:10.4196/kjpp.2012.16.2.97>.")
     (license license:agpl3)))
 
 (define-public r-posiadjrsquared
@@ -22362,13 +22361,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "08fwph3g8xrzhzpa76yadv3fxkrlgsvcjql2qxjs7sng0rgbna4v"))))
+        (base32 "0n01xq19vqg1can0hgb692ffjailm0j15y4ganydk4vcx61fzlyd"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments

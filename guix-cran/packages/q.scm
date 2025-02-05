@@ -2387,13 +2387,13 @@ equation.")
 (define-public r-quadratik
   (package
     (name "r-quadratik")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuadratiK" version))
        (sha256
-        (base32 "1mpz90vww1vp0as70yfyv6p9sg9gnggzs4c5qld3ig4krzal7d3j"))))
+        (base32 "1f49hx9a5clif0d144k3vlkf101v1rasa6ayi7yxsw4xln5ifk59"))))
     (properties `((upstream-name . "QuadratiK")))
     (build-system r-build-system)
     (arguments

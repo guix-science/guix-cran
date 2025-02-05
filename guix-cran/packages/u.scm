@@ -3700,13 +3700,13 @@ Equation and Twin Modelling in R. Twin Research and Human Genetics, 22, 27-41.
 (define-public r-umpire
   (package
     (name "r-umpire")
-    (version "2.0.10")
+    (version "2.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Umpire" version))
        (sha256
-        (base32 "1bhz1yfvpszqz4nal2wwjgllbq0hj6y0jf2bja3nfb7amj2m10gg"))))
+        (base32 "1ss3pamkj3071376i3807bh363ybid9w8c3py9k1z6cz6zcvj4w3"))))
     (properties `((upstream-name . "Umpire")))
     (build-system r-build-system)
     (arguments

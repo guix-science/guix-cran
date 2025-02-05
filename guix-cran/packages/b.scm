@@ -161,6 +161,39 @@ empirical Bayes, Lipovetsky & Conklin (2015) <doi:10.1142/S1793536915500028>;
 Elo, Hollis (2018) <doi:10.3758/s13428-017-0898-2>; and network-based measures.")
     (license license:expat)))
 
+(define-public r-bws
+  (package
+    (name "r-bws")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bws" version))
+       (sha256
+        (base32 "11gci4z434n68agc71ab16br8yp8fd1lylgnaqz7p7w676yrygn8"))))
+    (properties `((upstream-name . "bws")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=bws")
+    (synopsis "Bayesian Weighted Sums")
+    (description
+     "An interface to the Bayesian Weighted Sums model implemented in RStan'.  It
+estimates the summed effect of multiple, often moderately to highly correlated,
+continuous predictors.  Its applications can be found in analysis of exposure
+mixtures.  The model was proposed by Hamra, Maclehose, Croen, Kauffman, and
+Newschaffer (2021) <doi:10.3390/ijerph18041373>.  This implementation includes
+an extension to model binary outcome.")
+    (license license:gpl2+)))
+
 (define-public r-bwquant
   (package
     (name "r-bwquant")
@@ -9818,13 +9851,13 @@ of distributions, including Mohammadi and et al. (2013)
 (define-public r-bmisc
   (package
     (name "r-bmisc")
-    (version "1.4.7")
+    (version "1.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMisc" version))
        (sha256
-        (base32 "1iblh3yrdnr2zkxsr78msra4primhgvahpghzlzlnirha70f6hlb"))))
+        (base32 "1ll532vdzx6iy0l26ns78mp4sx0l1f61115fd63nv96mih32q6hc"))))
     (properties `((upstream-name . "BMisc")))
     (build-system r-build-system)
     (arguments

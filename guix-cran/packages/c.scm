@@ -17190,13 +17190,13 @@ output.  See the paper for more details on the model and its utility.")
 (define-public r-constrainedkriging
   (package
     (name "r-constrainedkriging")
-    (version "0.2-10")
+    (version "0.2-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constrainedKriging" version))
        (sha256
-        (base32 "0qyc9i9qqkijfmg1k6nb65bj2hnip9w96l6gify5jcpjv59gz7cp"))))
+        (base32 "1qwk8dyq654myvynr615d22ndg9wb0pchk84814avb3cxa9fbi0i"))))
     (properties `((upstream-name . "constrainedKriging")))
     (build-system r-build-system)
     (arguments

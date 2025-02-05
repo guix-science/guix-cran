@@ -12441,13 +12441,13 @@ polynomials with rational coefficients.")
 (define-public r-gmotree
   (package
     (name "r-gmotree")
-    (version "1.3.1")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmoTree" version))
        (sha256
-        (base32 "13cspi2zz1drwmbki7vjkgrn91606r3zcqwjji3jqp835hyplsvk"))))
+        (base32 "0swfjhmnjk60r47jjnlqkn6kjmy2b07rjmc07qn32qdli5nbxkbc"))))
     (properties `((upstream-name . "gmoTree")))
     (build-system r-build-system)
     (arguments
@@ -12460,6 +12460,7 @@ polynomials with rational coefficients.")
                              r-plyr
                              r-pander
                              r-openxlsx
+                             r-lifecycle
                              r-knitr
                              r-dplyr
                              r-data-table))

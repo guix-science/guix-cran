@@ -8766,13 +8766,13 @@ from 2.3.1 to 9.5.1 on Windows, Linux and @code{macOS}.")
 (define-public r-rsaga
   (package
     (name "r-rsaga")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSAGA" version))
        (sha256
-        (base32 "0mdirx7d3z4l0k54wa6rb1c5gma470ypifd3flj2287m8y2wjqq5"))))
+        (base32 "00m55aq69pa4i1k2v2rnll66lz6hchnls9g4lprpz7695cnpj43l"))))
     (properties `((upstream-name . "RSAGA")))
     (build-system r-build-system)
     (arguments
@@ -14431,13 +14431,13 @@ different colour metrics for the conversion.")
 (define-public r-rolluptree
   (package
     (name "r-rolluptree")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollupTree" version))
        (sha256
-        (base32 "0g46n1ahq9abp7h9wnjs3m119mdm2ycb3qarb1gdrjsxqqy8rz6c"))))
+        (base32 "12lj5827zm51iynar7zrmhvks2x9vcx7zmz4b4s68lq7d2lkkihs"))))
     (properties `((upstream-name . "rollupTree")))
     (build-system r-build-system)
     (arguments
@@ -17691,13 +17691,13 @@ found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.")
 (define-public r-robma
   (package
     (name "r-robma")
-    (version "3.3.0")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RoBMA" version))
        (sha256
-        (base32 "1b8qs5k7fp32kwhn6wwy27ch15xcka4f0z5mcnn1ccng3xw5c2is"))))
+        (base32 "0xjp7sccznqvchh5zn5912q6blzw6ki81ma6vdmcn681rql4zlzc"))))
     (properties `((upstream-name . "RoBMA")))
     (build-system r-build-system)
     (arguments
@@ -21569,6 +21569,50 @@ several example datasets.  For more details, see the web documentation
 <https://lmarusich.github.io/rmcorr/index.html> and the original paper: Bakdash
 and Marusich (2017) <doi:10.3389/fpsyg.2017.00456>.")
     (license license:gpl2)))
+
+(define-public r-rmcmc
+  (package
+    (name "r-rmcmc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmcmc" version))
+       (sha256
+        (base32 "0v3b2vayfq4cv0rh3skmmf6x8v51f64v61gqngdzx748804x9zbn"))))
+    (properties `((upstream-name . "rmcmc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-rlang r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/UCL/rmcmc")
+    (synopsis "Robust Markov Chain Monte Carlo Methods")
+    (description
+     "This package provides functions for simulating Markov chains using the Barker
+proposal to compute Markov chain Monte Carlo (MCMC) estimates of expectations
+with respect to a target distribution on a real-valued vector space.  The Barker
+proposal, described in Livingstone and Zanella (2022) <doi:10.1111/rssb.12482>,
+is a gradient-based MCMC algorithm inspired by the Barker accept-reject rule.
+It combines the robustness of simpler MCMC schemes, such as random-walk
+Metropolis, with the efficiency of gradient-based methods, such as the
+Metropolis adjusted Langevin algorithm.  The key function provided by the
+package is @code{sample_chain()}, which allows sampling a Markov chain with a
+specified target distribution as its stationary distribution.  The chain is
+sampled by generating proposals and accepting or rejecting them using a
+Metropolis-Hasting acceptance rule.  During an initial warm-up stage, the
+parameters of the proposal distribution can be adapted, with adapters available
+to both: tune the scale of the proposals by coercing the average acceptance rate
+to a target value; tune the shape of the proposals to match covariance estimates
+under the target distribution.  As well as the default Barker proposal, the
+package also provides implementations of alternative proposal distributions,
+such as (Gaussian) random walk and Langevin proposals.  Optionally, if
+@code{BridgeStan's} R interface
+<https://roualdes.github.io/bridgestan/latest/languages/r.html>, available on
+@code{GitHub} <https://github.com/roualdes/bridgestan>, is installed, then
+@code{BridgeStan} can be used to specify the target distribution to sample from.")
+    (license license:expat)))
 
 (define-public r-rmcfs
   (package
@@ -29576,6 +29620,38 @@ see <https://en.wikipedia.org/wiki/FRACTRAN> .")
     (description
      "Floating Percentile Model with additional functions for optimizing inputs and
 evaluating outputs and assumptions.")
+    (license license:gpl3+)))
+
+(define-public r-rfplus
+  (package
+    (name "r-rfplus")
+    (version "1.2-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RFplus" version))
+       (sha256
+        (base32 "0xyg4g26701fb71gs7lvj5gd4vzhqj85klgpckk3s9krk2zkf3mr"))))
+    (properties `((upstream-name . "RFplus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-randomforest
+                             r-qmap
+                             r-pbapply
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Jonnathan-Landi/RFplus")
+    (synopsis "Progressive Bias Correction of Satellite Environmental Data")
+    (description
+     "This package implements a bias correction method that combines Random Forest
+models with Quantile Mapping to improve the accuracy of satellite-derived
+environmental datasets.  The model corrects biases in meteorological variables,
+such as precipitation and temperature, by integrating in situ measurements and a
+Digital Elevation Model (DEM).")
     (license license:gpl3+)))
 
 (define-public r-rfpermute

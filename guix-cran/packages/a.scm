@@ -18639,13 +18639,13 @@ Marcos (2021) <doi:10.13033/ijahp.v13i1.833>.")
 (define-public r-ahocorasicktrie
   (package
     (name "r-ahocorasicktrie")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AhoCorasickTrie" version))
        (sha256
-        (base32 "0zh3y5jd8m0xbj6lqr01zvwj9qd1xr3iq7vd6sgr3g3qh4kqm5pq"))))
+        (base32 "0cvq4r587srxcm8whryn48j2ynzzmn7hdalhxp50qx39qhpgrlps"))))
     (properties `((upstream-name . "AhoCorasickTrie")))
     (build-system r-build-system)
     (arguments

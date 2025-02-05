@@ -7875,6 +7875,45 @@ receiver operating characteristics curve (@code{LeDell}, Petersen, van der Laan
 (2015), <doi:10.1214/15-EJS1035>) and other metrics are included.")
     (license license:expat)))
 
+(define-public r-nlpembeds
+  (package
+    (name "r-nlpembeds")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nlpembeds" version))
+       (sha256
+        (base32 "0rspcvfr5zypfrw0sb4zx11hfbzm1ydcpmaah4hz4sdhf56s5wak"))))
+    (properties `((upstream-name . "nlpembeds")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsvd
+                             r-rsqlite
+                             r-reshape2
+                             r-rcppalgos
+                             r-matrix
+                             r-magrittr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/thomaschln/nlpembeds")
+    (synopsis "Natural Language Processing Embeddings")
+    (description
+     "This package provides efficient methods to compute co-occurrence matrices,
+pointwise mutual information (PMI) and singular value decomposition (SVD).  In
+the biomedical and clinical settings, one challenge is the huge size of
+databases, e.g. when analyzing data of millions of patients over tens of years.
+To address this, this package provides functions to efficiently compute monthly
+co-occurrence matrices, which is the computational bottleneck of the analysis,
+by using the @code{RcppAlgos} package and sparse matrices.  Furthermore, the
+functions can be called on SQL databases, enabling the computation of
+co-occurrence matrices of tens of gigabytes of data, representing millions of
+patients over tens of years.  Partly based on Hong C. (2021)
+<doi:10.1038/s41746-021-00519-z>.")
+    (license license:gpl3)))
+
 (define-public r-nlpclient
   (package
     (name "r-nlpclient")
@@ -12949,13 +12988,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "3.0-2")
+    (version "3.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "0lwik7fzfr8na2gz6b7bms2ddqg3m7cjfpb8lb3yw4hhgqvgm70q"))))
+        (base32 "05fam6rv93dbyikv0c6bh1hdmi16krskg5yb8h4l78h43c0ij3fx"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (arguments
@@ -12965,13 +13004,16 @@ call @code{NetMHCIIpan} from R.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-mvtnorm
+    (propagated-inputs (list r-rgraphviz
+                             r-mvtnorm
                              r-metafor
                              r-meta
                              r-matrix
                              r-mass
                              r-magrittr
                              r-magic
+                             r-igraph
+                             r-graph
                              r-ggplot2
                              r-dplyr
                              r-colorspace))
@@ -13006,10 +13048,9 @@ of treatment rankings ('poset') and Hasse diagram for poset (Carlsen &
 Bruggemann, 2014) <doi:10.1002/cem.2569>; (RÃ¼cker & Schwarzer, 2017)
 <doi:10.1002/jrsm.1270>; - contribution matrix as described in Papakonstantinou
 et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
-<doi:10.1002/sim.9346>; - subgroup network meta-analysis.  The suggested package
-@code{hasseDiagram} is available from
-<https://github.com/kciomek/@code{hasseDiagram>}.")
-    (license license:gpl2+)))
+<doi:10.1002/sim.9346>; - subgroup network meta-analysis.")
+    (license (list license:gpl2+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-netmediate
   (package

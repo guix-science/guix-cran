@@ -5144,26 +5144,29 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "1.5.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "0pmviwqsyb4lj8l4m359c2rynbb57k6ljsbvy3kg4nld9yyq9wa0"))))
+        (base32 "00fiixf18bnazp483nslvsv95fsrmn3zn32qg3zj5hwzgcrrfmsr"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tictoc
                              r-rcpparmadillo
                              r-rcpp
+                             r-pracma
                              r-mass
                              r-magrittr
                              r-klar
                              r-foreach
-                             r-dplyr))
+                             r-dplyr
+                             r-clustmixtype))
     (home-page "https://cran.r-project.org/package=multilevLCA")
     (synopsis
      "Estimates and Plots Single-Level and Multilevel Latent Class Models")
@@ -13024,6 +13027,32 @@ effect size metric, and allowing pretests and clustering.")
 optimization.  The model uses data provided by users to estimate the mosquito
 populations in the sampling area for the sampling time period, and the optimal
 time to apply a treatment or multiple treatments.")
+    (license license:expat)))
+
+(define-public r-mosemiind
+  (package
+    (name "r-mosemiind")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MOsemiind" version))
+       (sha256
+        (base32 "1gzw4ap2j97l9nvc9qafshcfgpyi8k67s7px8c11n94wn9ksll8m"))))
+    (properties `((upstream-name . "MOsemiind")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-pracma r-copula))
+    (home-page "https://cran.r-project.org/package=MOsemiind")
+    (synopsis "Marshall-Olkin Shock Models with Semi-Independent Time")
+    (description
+     "This package provides tools for analyzing Marshall-Olkin shock models
+semi-independent time.  It includes interactive shiny applications for exploring
+copula-based dependence structures, along with functions for modeling and
+visualization.  The methods are based on Mijanovic and Popovic (2024, submitted)
+\"An R package for Marshall-Olkin shock models with semi-independent times.\".")
     (license license:expat)))
 
 (define-public r-mosaicmodel
@@ -22867,13 +22896,13 @@ separately on two latent parameters.  It reports local false discovery rates
 (define-public r-mixturemissing
   (package
     (name "r-mixturemissing")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixtureMissing" version))
        (sha256
-        (base32 "1qlkj37znl7zjaq6hxqkwpnalg7npr8ig8lnh8bfx0cc4mix8aw4"))))
+        (base32 "1v5w24y6h7ndqn6639js1g4vsn3arsi26l7brljmmyyalqhhp6d8"))))
     (properties `((upstream-name . "MixtureMissing")))
     (build-system r-build-system)
     (arguments
@@ -33354,21 +33383,23 @@ treatment effect parameter which are described in Guenhan, Roever, and Friede
 (define-public r-metasnf
   (package
     (name "r-metasnf")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metasnf" version))
        (sha256
-        (base32 "0jydlpq10kfp7h425z1rmm24jlj9vdz1cjldw6158dy2ggawmph2"))))
+        (base32 "1yrna04zvi20hazjwqcy7s1l0c9i7hlhxhnd1ksixwdx0704jb4a"))))
     (properties `((upstream-name . "metasnf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-snftool
                              r-rlang
+                             r-rcolorbrewer
                              r-purrr
                              r-progressr
                              r-mclust
@@ -33376,7 +33407,9 @@ treatment effect parameter which are described in Guenhan, Roever, and Friede
                              r-ggplot2
                              r-dplyr
                              r-digest
-                             r-cluster))
+                             r-data-table
+                             r-cluster
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://branchlab.github.io/metasnf/")
     (synopsis "Meta Clustering with Similarity Network Fusion")
@@ -46898,13 +46931,13 @@ parallelization, uncomment the relevant flags in src/MAKEVARS before compiling."
 (define-public r-maptiles
   (package
     (name "r-maptiles")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maptiles" version))
        (sha256
-        (base32 "0y2jybibpy09pi5cbdxab2abj01rm7nx8i9sfyp5575xyqhc1d45"))))
+        (base32 "1h72jhrib6a6kfb9dvwpl463520hzai3qn5k7c9yy00bzrj8sx8m"))))
     (properties `((upstream-name . "maptiles")))
     (build-system r-build-system)
     (arguments
