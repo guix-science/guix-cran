@@ -17155,24 +17155,19 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.8.9")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "1y1ywc53xifc7df0c0vc5db1qxbi3k6ckbk7yk2i2dyv6adnvkn2"))))
+        (base32 "09nv765nlzih2xakcnk6mrmf8lrfn7bdfhf1mjr83d1jr2cfhylb"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-performance
-                             r-parameters
-                             r-insight
-                             r-effectsize
-                             r-datawizard
-                             r-bayestestr))
+    (propagated-inputs (list r-parameters r-insight r-datawizard r-bayestestr))
     (native-inputs (list r-knitr))
     (home-page "https://easystats.github.io/modelbased/")
     (synopsis "Estimation of Model-Based Predictions, Contrasts and Means")
@@ -43732,6 +43727,37 @@ data frame and expand a data frame of matrices into a tidy data frame.")
      "An implementation of matrix mathematics wherein operations are performed \"by
 name.\".")
     (license license:expat)))
+
+(define-public r-matriz
+  (package
+    (name "r-matriz")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "matriz" version))
+       (sha256
+        (base32 "1gsnr7fy2rc5nyyw4c6hhjk7qs7n76ndsnr4bni668mffqwdc29m"))))
+    (properties `((upstream-name . "matriz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-dplyr))
+    (home-page "https://github.com/jpmonteagudo28/matriz")
+    (synopsis
+     "Literature Matrix Synthesis Tools for Epidemiology and Health Science Research")
+    (description
+     "An easy-to-use workflow that provides tools to create, update and fill
+literature matrices commonly used in research, specifically epidemiology and
+health sciences research.  The project is born out of need as an easyâtoâuse
+tool for my research methods classes.")
+    (license license:agpl3+)))
 
 (define-public r-matrixstructest
   (package

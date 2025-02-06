@@ -4370,6 +4370,36 @@ time-to-event analysis if events presented with uncertainty by different
 methods.")
     (license license:gpl2)))
 
+(define-public r-survmetrics
+  (package
+    (name "r-survmetrics")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurvMetrics" version))
+       (sha256
+        (base32 "1a1x6ka2bkzlgb3kpka3fvyy0kazyqckfx86fg37h36935r96v6k"))))
+    (properties `((upstream-name . "SurvMetrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer r-survival r-pec r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/whcsu/SurvMetrics")
+    (synopsis "Predictive Evaluation Metrics in Survival Analysis")
+    (description
+     "An implementation of popular evaluation metrics that are commonly used in
+survival prediction including Concordance Index, Brier Score, Integrated Brier
+Score, Integrated Square Error, Integrated Absolute Error and Mean Absolute
+Error.  For a detailed information, see (Ishwaran H, Kogalur UB, Blackstone EH
+and Lauer MS (2008) <doi:10.1214/08-AOAS169>) , (Moradian H, Larocque D and
+Bellavance F (2017) <doi:10.1007/s10985-016-9372-1>), (Hanpu Zhou, Hong Wang,
+Sizheng Wang and Yi Zou (2023) <doi:10.32614/rj-2023-009>) for different
+evaluation metrics.")
+    (license license:gpl2+)))
+
 (define-public r-survma
   (package
     (name "r-survma")
@@ -7383,13 +7413,13 @@ Cousineau & Laurencelle (2016) <doi:10.1037/met0000055>, Cousineau & O'Brien
 (define-public r-super
   (package
     (name "r-super")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "super" version))
        (sha256
-        (base32 "0a61zsg08j4kbcpcawcpzyplb6w8nx3b4kw55d3yk3dhzwi1spxb"))))
+        (base32 "0wlrql16g3jmihk8fbsp3p7l2pz1hpqbjw9zbjrhd2h2kk2bhz83"))))
     (properties `((upstream-name . "super")))
     (build-system r-build-system)
     (arguments
@@ -14823,13 +14853,13 @@ mixed model approach for QTL Mapping as described in Li et al.
 (define-public r-statgenibd
   (package
     (name "r-statgenibd")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenIBD" version))
        (sha256
-        (base32 "1dw0riwycd59hcidnxczy61xib8if8m2hv6dni2qd6n2i99vfbpc"))))
+        (base32 "0sswnv1i8zfxfdmq4lxdfkhqddzairlynw43dvwnj4lxv64kfqdx"))))
     (properties `((upstream-name . "statgenIBD")))
     (build-system r-build-system)
     (arguments
@@ -23626,6 +23656,41 @@ of reciprocal monophyly.  Additionally, a sliding window function offers
 opportunities to analyse information across a gene, often used for marker design
 in degraded DNA studies.  Further information on the package has been published
 in Brown et al (2012) <doi:10.1111/j.1755-0998.2011.03108.x>.")
+    (license license:expat)))
+
+(define-public r-spichanges
+  (package
+    (name "r-spichanges")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SPIChanges" version))
+       (sha256
+        (base32 "16cvvgn5kc4bacjhmmly8r06fi39riyybj5ir09q85sc6idqfb2l"))))
+    (properties `((upstream-name . "SPIChanges")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-spsutil
+                             r-rlang
+                             r-mumin
+                             r-lubridate
+                             r-gamlss-dist
+                             r-gamlss
+                             r-brglm2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gabrielblain/SPIChanges")
+    (synopsis
+     "Improves the Interpretation of the Standardized Precipitation Index Under Changing Climate Conditions")
+    (description
+     "Improves the interpretation of the Standardized Precipitation Index under
+changing climate conditions.  The package uses the nonstationary approach
+proposed in Blain et al. (2022) <doi:10.1002/joc.7550> to detect trends in
+rainfall quantities and to quantify the effect of such trends on the probability
+of a drought event occurring.")
     (license license:expat)))
 
 (define-public r-spicefp
@@ -36949,13 +37014,13 @@ smallsets vignette.")
 (define-public r-smallcountrounding
   (package
     (name "r-smallcountrounding")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmallCountRounding" version))
        (sha256
-        (base32 "0a80xkf4pj8w4n6n1wai0lxacmln9bbkch7syrmsriggwgysjj1p"))))
+        (base32 "0gyc3m4qybj7cscli037vhvp56w5w0a7lp0hgpcscpklbchvlwsy"))))
     (properties `((upstream-name . "SmallCountRounding")))
     (build-system r-build-system)
     (arguments
@@ -45297,13 +45362,13 @@ properly by screen readers.")
 (define-public r-signnet
   (package
     (name "r-signnet")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "signnet" version))
        (sha256
-        (base32 "04w8wik8q15hi7yc9rp30bc31pvw15bkrvr3lnif46zrrhsq6cv8"))))
+        (base32 "178038anj8xig3zkkisc9ik6jwww84y9017as9hafaqgfh5m17qk"))))
     (properties `((upstream-name . "signnet")))
     (build-system r-build-system)
     (arguments
@@ -47784,13 +47849,13 @@ Powered by the html2canvas @code{JavaScript} library.")
 (define-public r-shinyscholar
   (package
     (name "r-shinyscholar")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyscholar" version))
        (sha256
-        (base32 "17si3a5wilcry1lsfayvyyy3a354x584plv2qqgv2isly1lk89gq"))))
+        (base32 "0aa88yvyi5bnqn82c0j3krmg8kfhwy5h3z9rdj45s3id2naxa6db"))))
     (properties `((upstream-name . "shinyscholar")))
     (build-system r-build-system)
     (arguments
@@ -62716,13 +62781,13 @@ based on model departure as a novel data representation.")
 (define-public r-scplot
   (package
     (name "r-scplot")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scplot" version))
        (sha256
-        (base32 "0ksk93i7vj616kbzs1i6wrngrzwqjb70imb1vmbk5r5lf9sningn"))))
+        (base32 "0ii9935s87kawmc1aada6w9pwnzq84x7v42fd1vwfaqwmd95lvn3"))))
     (properties `((upstream-name . "scplot")))
     (build-system r-build-system)
     (arguments
@@ -62737,7 +62802,7 @@ based on model departure as a novel data representation.")
 phase-based lines to indicate various statistical parameters, and predefined
 themes for presentations and publications.  More information and in depth
 examples can be found in the online book \"Analyzing Single-Case Data with R and
-scan\" JÃ¼rgen Wilbert (2023) <https://jazznbass.github.io/scan-Book/>.")
+scan\" JÃ¼rgen Wilbert (2025) <https://jazznbass.github.io/scan-Book/>.")
     (license license:gpl3+)))
 
 (define-public r-scploidy
@@ -66086,13 +66151,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.61.0")
+    (version "0.62.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scan" version))
        (sha256
-        (base32 "04a43vyz8brl4mzn2pzbhdap49zzb64rwb40lzc6150mqmb09bcs"))))
+        (base32 "0932clrrp67z4p0jl697gp94v90xcn3w9gdg2dgd9hrrbma9mywg"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (arguments
@@ -66114,10 +66179,10 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 managing single-case data.  These include piecewise linear regression models,
 multilevel models, overlap indices ('PND', PEM', PAND', PET', tau-u', baseline
 corrected tau', CDC'), and randomization tests.  Data preparation functions
-support outlier detection, handling missing values, scaling, truncation, rank
-transformation, and smoothing.  An export function helps to generate html and
-latex tables in a publication friendly style.  More details can be found in the
-online book Analyzing single-case data with R and scan', Juergen Wilbert (2023)
+support outlier detection, handling missing values, scaling, and custom
+transformations.  An export function helps to generate html, word, and latex
+tables in a publication friendly style.  More details can be found in the online
+book Analyzing single-case data with R and scan', Juergen Wilbert (2025)
 <https://jazznbass.github.io/scan-Book/>.")
     (license license:gpl3+)))
 

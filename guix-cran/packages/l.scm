@@ -11399,13 +11399,13 @@ model mortality pattern based on family and level as well as plot the results.")
 (define-public r-lifertable
   (package
     (name "r-lifertable")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Lifertable" version))
        (sha256
-        (base32 "0k7mgzhz92mrkhw8p87c4qy84vm3rjj8asm753xxw0h6z7fgvy3c"))))
+        (base32 "0zvm9ayr3r0bs9bpan04wipwm6ghxgh90bj902km3n8m2bc4h3n0"))))
     (properties `((upstream-name . "Lifertable")))
     (build-system r-build-system)
     (arguments

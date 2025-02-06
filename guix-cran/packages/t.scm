@@ -465,13 +465,13 @@ random coefficients: A stable and efficient two-step estimation method.")
 (define-public r-twostagedesigntmle
   (package
     (name "r-twostagedesigntmle")
-    (version "1.0")
+    (version "1.0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twoStageDesignTMLE" version))
        (sha256
-        (base32 "134yiwmkyqq80zvk328fl5mzyp5h2i68n8m544maipi5kjhv4sz7"))))
+        (base32 "0zphi1j5hby74zny1f6gfbsxp3y9ny2cjshdcgm3nwaj2h0lnaxj"))))
     (properties `((upstream-name . "twoStageDesignTMLE")))
     (build-system r-build-system)
     (arguments
@@ -9395,13 +9395,13 @@ directed acyclic graph with diverging number of nodes\".")
 (define-public r-transfr
   (package
     (name "r-transfr")
-    (version "1.0.11")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transfR" version))
        (sha256
-        (base32 "1qmkqn0gl4d6c0j1f07nmlv1gxh6in7d21dlp80ilmnaqyhb1fnj"))))
+        (base32 "1srlxay5waisddip6c9sxm7lpcqfi17djrzkh68rcva2vcg8db2g"))))
     (properties `((upstream-name . "transfR")))
     (build-system r-build-system)
     (arguments
@@ -9411,6 +9411,7 @@ directed acyclic graph with diverging number of nodes\".")
                              r-stars
                              r-sf
                              r-rdpack
+                             r-glmnet
                              r-foreach
                              r-doparallel))
     (native-inputs (list r-knitr gfortran))
@@ -15190,13 +15191,13 @@ project template for Rstudio'.")
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyplot" version))
        (sha256
-        (base32 "04f2r3xm2knrlj4yrkpbcm6r2zvpyzryqi6c9184as200ms5shsp"))))
+        (base32 "05vfd1mlm5v7grw2mbmv2zzshy94dsnygn7vl0khl09ag5ypzifv"))))
     (properties `((upstream-name . "tinyplot")))
     (build-system r-build-system)
     (arguments
@@ -15206,7 +15207,7 @@ project template for Rstudio'.")
     (synopsis "Lightweight Extension of the Base R Graphics System")
     (description
      "Lightweight extension of the base R graphics system, with support for automatic
-legends, facets, and various other enhancements.")
+legends, facets, themes, and various other enhancements.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-tinylens
@@ -24841,6 +24842,32 @@ for the test of independence.")
 terms are the labels used to reference values in vectors, matrices and arrays.
 They represent the names in coefficient tables and the column names in mcmc and
 mcmc.list objects.")
+    (license license:expat)))
+
+(define-public r-tergo
+  (package
+    (name "r-tergo")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tergo" version))
+       (sha256
+        (base32 "1s2ils0wf5m1bxai6fksb48a84rhybgxgv6nzbbm9ay75wldhy0y"))))
+    (properties `((upstream-name . "tergo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://rtergo.pagacz.io")
+    (synopsis "Style Your Code Fast")
+    (description
+     "This package provides a set of functions that allow users for styling their R
+code according to the tidyverse style guide.  The package uses a native Rust
+implementation to ensure the highest performance.  Learn more about tergo at
+<https://rtergo.pagacz.io>.")
     (license license:expat)))
 
 (define-public r-tergmlite

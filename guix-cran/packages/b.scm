@@ -2730,13 +2730,13 @@ Meyer, R. and Christensen, N., Statistics and Computing (2018).
 (define-public r-bspline
   (package
     (name "r-bspline")
-    (version "2.2.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspline" version))
        (sha256
-        (base32 "1m214gp6kjpl56vd7w8h1lwgwrh46pds5i77ilvgiv64nrccqih7"))))
+        (base32 "1jkj7pjrig1xicbr2dwk13dpy0r5v0xqwn3m1z6ncpwknf3f7mly"))))
     (properties `((upstream-name . "bspline")))
     (build-system r-build-system)
     (arguments
@@ -8562,13 +8562,13 @@ statistics.")
 (define-public r-boiwsa
   (package
     (name "r-boiwsa")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boiwsa" version))
        (sha256
-        (base32 "1ys3s4f2ydf5m1ab7y9yf1lvbjlarffn5cjcycq0yfis45gs8xqj"))))
+        (base32 "1x9kqpfyahrkw731n70m08ihfpg35xmw42bzbf8k32x4ja77z10i"))))
     (properties `((upstream-name . "boiwsa")))
     (build-system r-build-system)
     (arguments
@@ -8580,6 +8580,7 @@ statistics.")
                              r-hmisc
                              r-gridextra
                              r-ggplot2
+                             r-forecast
                              r-dplyr))
     (home-page "https://github.com/timginker/boiwsa")
     (synopsis "Seasonal Adjustment of Weekly Data")
@@ -11839,13 +11840,13 @@ the torch package.")
 (define-public r-bkt
   (package
     (name "r-bkt")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BKT" version))
        (sha256
-        (base32 "0dy8c1yryvxgjpdj72cavqnm1kd225iibvl2j33ck8vhjdrpkwaw"))))
+        (base32 "1whss3ip0dv2dcf3m5hjqbnb002pgk4ngh9lp40rkl2asr8bfwvs"))))
     (properties `((upstream-name . "BKT")))
     (build-system r-build-system)
     (arguments
@@ -11859,9 +11860,9 @@ the torch package.")
 models.  It is designed for analyzing educational datasets to trace student
 knowledge over time.  The package includes functions for fitting BKT models,
 evaluating their performance using various metrics, and making predictions on
-new data.  It provides the same functionality as the Python package @code{pyBKT}
-authored by Bulut et al. (2023, <doi:10.3390/psych5030050>) and @code{pyBKT} can
-be accessed via the site at <https://github.com/CAHLR/@code{pyBKT>}.")
+new data.  It provides the similar functionality as the Python package
+@code{pyBKT} authored by Zachary A. Pardos (zp@@berkeley.edu) at
+<https://github.com/CAHLR/@code{pyBKT>}.")
     (license license:expat)))
 
 (define-public r-bkmrhat
@@ -27660,6 +27661,30 @@ parameters to heterogeneous binary data.")
 this package a variant of MGARCH called BEKK (Baba, Engle, Kraft, Kroner)
 proposed by Engle and Kroner (1995) <http://www.jstor.org/stable/3532933> has
 been used to estimate the bivariate time series data using Bayesian technique.")
+    (license license:gpl3)))
+
+(define-public r-bayesat
+  (package
+    (name "r-bayesat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesAT" version))
+       (sha256
+        (base32 "0hfdb51b6lm3hqj2cvgb8fnn9zk7wi82ps1bcaq75zjfgdka015l"))))
+    (properties `((upstream-name . "BayesAT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BayesAT")
+    (synopsis "Bayesian Adaptive Trial")
+    (description
+     "Bayesian adaptive trial algorithm implements multiple-stage interim analysis.
+Package includes data generating function, and Bayesian hypothesis testing
+function.")
     (license license:gpl3)))
 
 (define-public r-bayesassurance

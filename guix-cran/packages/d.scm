@@ -17017,13 +17017,13 @@ experiments designs, surrogates or test functions.")
 (define-public r-dicer
   (package
     (name "r-dicer")
-    (version "2.2.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceR" version))
        (sha256
-        (base32 "1pfb1wxwh9li3z06hrx1zy5vwqmlmq4rjqjh1pi8i6jkbshf702m"))))
+        (base32 "195gc0cigl0ily9zbs2s1jrw5lkn9b4p2pk1vhfca1lyl7rppa4c"))))
     (properties `((upstream-name . "diceR")))
     (build-system r-build-system)
     (arguments
@@ -17035,7 +17035,7 @@ experiments designs, surrogates or test functions.")
                              r-rcpp
                              r-rankaggreg
                              r-purrr
-                             r-nmf
+                             r-pheatmap
                              r-mclust
                              r-magrittr
                              r-klar
@@ -17044,7 +17044,7 @@ experiments designs, surrogates or test functions.")
                              r-dplyr
                              r-clvalid
                              r-clv
-                             r-clustersim
+                             r-clustercrit
                              r-clue
                              r-class
                              r-assertthat
@@ -31475,13 +31475,13 @@ extract the separate island colonists and store them.")
 (define-public r-daisie
   (package
     (name "r-daisie")
-    (version "4.4.1")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAISIE" version))
        (sha256
-        (base32 "0f1ym3k49m2wdilsg7vwsb7m4ccdg87pnaksmbqv9smcxn5v8rn2"))))
+        (base32 "0pviqla4w5bqrkly7apnflpndzr2fq739cskwd51xgwv20lkyc3w"))))
     (properties `((upstream-name . "DAISIE")))
     (build-system r-build-system)
     (arguments

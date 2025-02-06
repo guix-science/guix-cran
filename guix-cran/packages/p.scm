@@ -13149,13 +13149,13 @@ fixed effects with penalized intercepts by LASSO.")
 (define-public r-pqrbayes
   (package
     (name "r-pqrbayes")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrBayes" version))
        (sha256
-        (base32 "0g5xhjinj51sx63y23g7ici9ifczhhyx3y8kfdk329c6zsvxqdbg"))))
+        (base32 "0jvi2b59bm7bzzcb4zx3kz5j3c6f5wjbrskac5vbavdakvznjad0"))))
     (properties `((upstream-name . "pqrBayes")))
     (build-system r-build-system)
     (arguments
@@ -22822,13 +22822,13 @@ within \"stat_function\" in a ggplot2 object.")
 (define-public r-plotftir
   (package
     (name "r-plotftir")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PlotFTIR" version))
        (sha256
-        (base32 "0wqkc11fks99nx391xigvzqciwsskzrhx3dj7j5yz0bqf7s461ww"))))
+        (base32 "00vx8qxbab7r4mh8caz9lwm05dhz845ak9l70nx460byf0zwarxv"))))
     (properties `((upstream-name . "PlotFTIR")))
     (build-system r-build-system)
     (arguments
@@ -29430,20 +29430,19 @@ bimbam', plink', snptest', @code{LiMMBo}').")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1dlih70x4q7f16y17xw0320jkzzffyjxmm84rgzdzny7wvbfcdd5"))))
+        (base32 "1xa54q626rrpvkig4ccij4xgmjay1c797wc2jk57caxscpyd2yvs"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs
-                             r-usethis
                              r-rlang
                              r-purrr
                              r-omopsketch
@@ -42987,13 +42986,13 @@ phylogeny and stratigraphy.")
 (define-public r-paleobuddy
   (package
     (name "r-paleobuddy")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paleobuddy" version))
        (sha256
-        (base32 "0kaq6vvzw5h0fpvggmvf6v2zg6a06kxcyajv1krzx0p9482nwyzi"))))
+        (base32 "02b3h7l1kgnd1wzq1l25csqq6rqa9827kbq6hlh36nfjay01sww9"))))
     (properties `((upstream-name . "paleobuddy")))
     (build-system r-build-system)
     (arguments

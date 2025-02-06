@@ -7622,13 +7622,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "0dy9knx2ihq8xfkiikfv0havwb4l51403pn09hhkg06955ypixm0"))))
+        (base32 "09px03xp2q300hpj2h4rh0k5i8ib4mz8405d5hf3clbbqp456whb"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (arguments
@@ -11091,13 +11091,13 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
 (define-public r-epinow2
   (package
     (name "r-epinow2")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiNow2" version))
        (sha256
-        (base32 "1061438cjx36kvvqv3s7s02y2zzp913wi4f30j1ss6gcx4s5dzsq"))))
+        (base32 "1y7124l1lgm5ybzxhk6vr0axfh249q4363vxyd4bvd4lsvlwc0wi"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
     (arguments

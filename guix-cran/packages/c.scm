@@ -7942,13 +7942,13 @@ data.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "1a6ix0fnpg41bpdrdgas0z066789gj3mxvv6k0hf1d2i6vxqpwv9"))))
+        (base32 "1mc04hsh704088b8qs9gyz7cj3j1k509wxbb5zcac9w9flx7bxi9"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (arguments
@@ -7981,13 +7981,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew-aws-batch
   (package
     (name "r-crew-aws-batch")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.aws.batch" version))
        (sha256
-        (base32 "0vgjrqdm6xcallx8mdwk3g9h3fv4shq2zv7pz2mf0z9drlyaw4lb"))))
+        (base32 "0dsh2j7szxgsiphb0rq8l715g2xsp68my8nmlvwg1cbq55hm1mbp"))))
     (properties `((upstream-name . "crew.aws.batch")))
     (build-system r-build-system)
     (arguments
@@ -13637,13 +13637,13 @@ Duan, W Nick Street, Yanchi Liu, Songhua Xu, and Brook Wu (2014)
 (define-public r-correctr
   (package
     (name "r-correctr")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "correctR" version))
        (sha256
-        (base32 "1qncaynl0fs06w97wbj4704whbcjs5vjqqhb1mkj95ngwi0rp37l"))))
+        (base32 "107bwdcj51v611zfvn6a4y59aw1mh43l2ciygsmb0dxl5qpfjh61"))))
     (properties `((upstream-name . "correctR")))
     (build-system r-build-system)
     (arguments
@@ -32885,13 +32885,13 @@ trees in practice.")
 (define-public r-classcomparison
   (package
     (name "r-classcomparison")
-    (version "3.3.2")
+    (version "3.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClassComparison" version))
        (sha256
-        (base32 "0lyc437cmf5yv6ikfcvqdi21z8f2pa60z0czf0cig1w1n65x3lw1"))))
+        (base32 "0xjnpdph0bmm7zaqj22qicfhjrbiq56imsrp7a0fmh0mhvs2wp6x"))))
     (properties `((upstream-name . "ClassComparison")))
     (build-system r-build-system)
     (arguments
@@ -34430,6 +34430,33 @@ and Mastrantonio G. et al. (2016) <doi: 10.1007/s11749-015-0458-y>.")
     (description
      "Detection of outliers in circular-circular regression models, modifying its and
 estimating of models parameters.")
+    (license license:gpl2+)))
+
+(define-public r-circnntsrsymmetric
+  (package
+    (name "r-circnntsrsymmetric")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CircNNTSRSymmetric" version))
+       (sha256
+        (base32 "16r7aqksb62r5bx3mbln4zzflls8bgq9dnnamsrssj5p7adjyms2"))))
+    (properties `((upstream-name . "CircNNTSRSymmetric")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-circnntsr))
+    (home-page "https://cran.r-project.org/package=CircNNTSRSymmetric")
+    (synopsis "Circular Data using Symmetric NNTS Models")
+    (description
+     "The statistical analysis of circular data using distributions based on symmetric
+Nonnegative Trigonometric Sums (NNTS).  It includes functions to perform
+empirical analysis and estimate the parameters of density functions.
+Fernandez-Duran, J.J. and Gregorio-Dominguez, M.M. (2025), \"Multimodal Symmetric
+Circular Distributions Based on Nonnegative Trigonometric Sums and a Likelihood
+Ratio Test for Reflective Symmetry\", <doi:10.48550/@code{arXiv.2412.19501>}.")
     (license license:gpl2+)))
 
 (define-public r-circnntsrmult

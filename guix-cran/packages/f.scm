@@ -14445,13 +14445,13 @@ log-normal, 2) Tweedie, or 3) Poisson-gamma (G)LMs.")
 (define-public r-fishmethods
   (package
     (name "r-fishmethods")
-    (version "1.12-1")
+    (version "1.13-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishmethods" version))
        (sha256
-        (base32 "0ladr3rl55v10kh0556725gygiw338mj3ncpifaij80rph99y66v"))))
+        (base32 "07y58zr4m2nb9q3m3rqjxbxysf9br6ss22l4857w59mcnjfrx8c7"))))
     (properties `((upstream-name . "fishmethods")))
     (build-system r-build-system)
     (arguments

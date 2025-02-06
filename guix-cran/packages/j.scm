@@ -1192,13 +1192,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.8")
+    (version "0.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "05hh5inbqg5s040r4gl70k3s064iqqdc9zchjnsrslf3prvscgpk"))))
+        (base32 "1cpvky58jdq85sfhjpdjhmx1y8qkk98jghaqygc3ixzbwxmrrkam"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments
@@ -1209,7 +1209,8 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
                              r-scales
                              r-patchwork
                              r-ggpubr
-                             r-ggplot2))
+                             r-ggplot2
+                             r-cmprsk))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jinseob2kim/jskm")
     (synopsis "Kaplan-Meier Plot with 'ggplot2'")

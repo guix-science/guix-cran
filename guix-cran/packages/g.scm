@@ -525,26 +525,21 @@ Tsutsumida (2017) <doi:10.1553/giscience2017_01_s36>).")
 (define-public r-gwnnegpca
   (package
     (name "r-gwnnegpca")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWnnegPCA" version))
        (sha256
-        (base32 "1yinzlp22z9z5fk9f1nm14i408yfm5kfgkn3pqnh4bkghs569ivg"))))
+        (base32 "12f532fk9fwd9wwvxjkf3pw27g14rqspvrasw3gjlg7ykymg03zl"))))
     (properties `((upstream-name . "GWnnegPCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list proj geos gdal))
-    (propagated-inputs (list r-spdata
-                             r-sp
-                             r-sf
-                             r-pracma
-                             r-nsprcomp
-                             r-geodist))
-    (home-page "https://cran.r-project.org/package=GWnnegPCA")
+    (propagated-inputs (list r-sf r-nsprcomp r-geodist))
+    (home-page "https://github.com/naru-T/GWnnegPCA")
     (synopsis
      "Geographically Weighted Non-Negative Principal Components Analysis")
     (description
@@ -552,7 +547,7 @@ Tsutsumida (2017) <doi:10.1553/giscience2017_01_s36>).")
 components analysis, which consists of the fusion of geographically weighted and
 sparse non-negative principal components analyses
 <doi:10.17608/k6.auckland.9850826.v1>.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-gwmodel
   (package
@@ -7095,19 +7090,19 @@ well as tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "12gd6m6jzf46kid5jd0m3dpj4r6s021pj4h7s4l08h6xnhp4ifnx"))))
+        (base32 "04lghmv9yv0y8p0qss36529bzc25z5ly86lvcykgn7rh2zbdlvgd"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-litedown))
     (home-page "https://www.reconverse.org/grates/")
     (synopsis "Grouped Date Classes")
     (description
@@ -25945,13 +25940,13 @@ in polar co-ordinates.")
 (define-public r-geomorph
   (package
     (name "r-geomorph")
-    (version "4.0.9")
+    (version "4.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomorph" version))
        (sha256
-        (base32 "0rshmlz9ccljl7c9fsz18jajdsdgm7zgiarx1sk2d85j31bfdhmb"))))
+        (base32 "0ygnzna9mrdwj61ljyc0d2cf4qfvw829pl4pfkxkkl5scx30cyyb"))))
     (properties `((upstream-name . "geomorph")))
     (build-system r-build-system)
     (arguments
@@ -30343,19 +30338,19 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.6.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "0hgb9bp8gy8fy8g1lkw4lmp1wpiqj4v5raqzgzdhpmsmn8dc02sh"))))
+        (base32 "1xbwx96lnxb7kk2n6gm8nacaa1zidfbg9v3kadfb5fpvlc9202a4"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstudioapi r-httr2 r-cli r-base64enc))
+    (propagated-inputs (list r-rstudioapi r-jsonlite r-httr2 r-cli r-base64enc))
     (home-page "https://github.com/jhk0530/gemini.R")
     (synopsis "Interface for 'Google Gemini' API")
     (description
@@ -33034,13 +33029,13 @@ or base R plotting.")
 (define-public r-gaussianhmm1d
   (package
     (name "r-gaussianhmm1d")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussianHMM1d" version))
        (sha256
-        (base32 "0c9khbg44yf04wp80bizd7j86gif1apqqafxyvi8692rrhf1r3ax"))))
+        (base32 "056zyq7xbw5fgjricfgb3mc5iqwbyx150y1k7jglnyaspm87sj02"))))
     (properties `((upstream-name . "GaussianHMM1d")))
     (build-system r-build-system)
     (arguments

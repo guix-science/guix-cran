@@ -8431,13 +8431,13 @@ which can be then easily used for further analysis.")
 (define-public r-archive
   (package
     (name "r-archive")
-    (version "1.1.10")
+    (version "1.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archive" version))
        (sha256
-        (base32 "0040r873hydba7n55n561x2hjh4pwv55clkbnpc389dk073071si"))))
+        (base32 "0xk6jdrclrmslz3wb0w4ppw97hmm9kykcwhn6s4z66da69gghnma"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
     (arguments
@@ -18127,13 +18127,13 @@ and
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "01pf61hsikn9a05lm5s5kx914rhvjbxph0gp7bxcyfnms09d6azf"))))
+        (base32 "1gafwamppzklxv4bs0ypxvwwfk97hq4hk3nphd3g6agxbjxvvzdr"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (arguments

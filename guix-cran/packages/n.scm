@@ -6647,13 +6647,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "0whkcvw888i72r11rp46jy15355xs99ilca0q34dqwnf9j88qn8h"))))
+        (base32 "0cw9w01rn32wldi7vg7hnz1j4543i8fmxiscmsbp78q1xbkagbri"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (arguments
@@ -12796,13 +12796,13 @@ methods, see Marrs, Fosdick, and @code{McCormick} (2017)
 (define-public r-netrankr
   (package
     (name "r-netrankr")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netrankr" version))
        (sha256
-        (base32 "0amvdgj0n32c9f46k0yqkahq2dzicc0522ivh76740l9n1hzbm4v"))))
+        (base32 "00rb2743n4b4nf0brvgc58kiiyzprcsy2rg65dzpqqlpsiy6ivd1"))))
     (properties `((upstream-name . "netrankr")))
     (build-system r-build-system)
     (arguments
@@ -17357,13 +17357,13 @@ sequentially observed data.")
 (define-public r-nanostringr
   (package
     (name "r-nanostringr")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanostringr" version))
        (sha256
-        (base32 "0a6avc8gzq0mdswlsmp9i8pzk83cw2ziwrxfjphqa42akafzd63k"))))
+        (base32 "051c32z6awjy5l1yrl6f0i0dsg0hkdazrvrqac3zs8gg36l37kl8"))))
     (properties `((upstream-name . "nanostringr")))
     (build-system r-build-system)
     (arguments

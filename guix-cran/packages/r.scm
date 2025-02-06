@@ -5985,13 +5985,13 @@ Stata commands (both inline and from a .do file) from R.")
 (define-public r-rstanemax
   (package
     (name "r-rstanemax")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstanemax" version))
        (sha256
-        (base32 "0i3a54cxx2zhiiy8wk6wigm5v2kfz35i63sbprbssi531c4dlgcj"))))
+        (base32 "0yh94y2pq88il2ay7l167rg9rjvsb7khfwvd8s0bq6f1n436svis"))))
     (properties `((upstream-name . "rstanemax")))
     (build-system r-build-system)
     (arguments
@@ -6007,6 +6007,7 @@ Stata commands (both inline and from a .do file) from R.")
                              r-purrr
                              r-posterior
                              r-magrittr
+                             r-lifecycle
                              r-ggplot2
                              r-dplyr
                              r-boot
@@ -31259,13 +31260,13 @@ and retrieving biological data.")
 (define-public r-returncurves
   (package
     (name "r-returncurves")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReturnCurves" version))
        (sha256
-        (base32 "0bcj8qcky9hqgnm2b1m7c207bx6ybzmd9v6v7ri20mddmxbpkz15"))))
+        (base32 "1w2x1spyg3dam6jrj85vc0n058fiziz0awz524hzh7nrm6ra0yly"))))
     (properties `((upstream-name . "ReturnCurves")))
     (build-system r-build-system)
     (arguments
@@ -31282,7 +31283,7 @@ and retrieving biological data.")
                              r-evd
                              r-dt))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ReturnCurves")
+    (home-page "https://github.com/lidiamandre/ReturnCurves")
     (synopsis "Estimation of Return Curves")
     (description
      "Estimates the p-probability return curve proposed by Murphy-Barltrop et al.

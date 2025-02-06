@@ -1827,13 +1827,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "25.2.1")
+    (version "25.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "1z37yiy8rg3j3g38m8hcwcxk1d7ncfgdi4r6zyl9vpfqzgg5qi78"))))
+        (base32 "1iiq18awgvd712mjarzrh5gsi2yglspz74a8a8cwn5yk2vpkqa5c"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments
@@ -4465,6 +4465,34 @@ computation of for example the posterior mean and posterior variance.  Finally,
 there is a function available to perform variable selection, using either a form
 of thresholding, or credible intervals.")
     (license license:gpl3)))
+
+(define-public r-horsekicks
+  (package
+    (name "r-horsekicks")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Horsekicks" version))
+       (sha256
+        (base32 "153fdjbxflwcz18nv7phv25fasmp5vsnjbz86wz51k7vrxyji2p8"))))
+    (properties `((upstream-name . "Horsekicks")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Horsekicks")
+    (synopsis
+     "Provide Extensions to the Prussian Army Death by Horsekick Data")
+    (description
+     "We provide extensions to the classical dataset \"Example 4: Death by the kick of
+a horse in the Prussian Army\" first used by Ladislaus von Bortkeiwicz in his
+treatise on the Poisson distribution \"Das Gesetz der kleinen Zahlen\",
+<DOI:10.1017/S0370164600019453>.  As well as an extended time series for the
+horse-kick death data, we also provide, in parallel, deaths by falling from a
+horse and by drowning.")
+    (license license:gpl2+)))
 
 (define-public r-hornpa
   (package
