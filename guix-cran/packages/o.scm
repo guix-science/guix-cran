@@ -6565,13 +6565,13 @@ score your own data directly from an R script.")
 (define-public r-openrouteservice
   (package
     (name "r-openrouteservice")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openrouteservice" version))
        (sha256
-        (base32 "18la6cy6xs0rlp4b40cri4fzs9xl4ddh8y1hq5kziv9rswckv6bv"))))
+        (base32 "1sb8rk0w023siia11wza5gfvpnwzkgqm4md6vvcxmlnhajygs6cv"))))
     (properties `((upstream-name . "openrouteservice")))
     (build-system r-build-system)
     (arguments
@@ -8859,6 +8859,35 @@ machine learning models and the rules are often helpful heuristics.")
 authentication via Single Sign On (SSO).  This package provides an R interface
 to their API.")
     (license license:expat)))
+
+(define-public r-oneinfl
+  (package
+    (name "r-oneinfl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oneinfl" version))
+       (sha256
+        (base32 "0hbmv5svppj54d4f70zsvb3k88z5lvfnkdfk4s7m20scvs1lf5f5"))))
+    (properties `((upstream-name . "oneinfl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=oneinfl")
+    (synopsis "Estimates OIPP and OIZTNB Regression Models")
+    (description
+     "Estimates one-inflated positive Poisson (OIPP) and one-inflated zero-truncated
+negative binomial (OIZTNB) regression models.  A suite of ancillary statistical
+tools are also provided, including: estimation of positive Poisson (PP) and
+zero-truncated negative binomial (ZTNB) models; marginal effects and their
+standard errors; diagnostic likelihood ratio and Wald tests; plotting; predicted
+counts and expected responses; and random variate generation.  The models and
+tools, as well as four applications, are shown in Godwin, R. T. (2024).
+\"One-inflated zero-truncated count regression models\" @code{arXiv} preprint
+<doi:10.48550/@code{arXiv.2402.02272>}.")
+    (license license:gpl3+)))
 
 (define-public r-onehot
   (package
@@ -11710,13 +11739,13 @@ submission_url'.")
 (define-public r-odin
   (package
     (name "r-odin")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odin" version))
        (sha256
-        (base32 "0rr3sg96z7f64pz84pfrcaaz8sqa6lgp4z7dj2pyrvzgjxjr3fjm"))))
+        (base32 "11mgmc1pk1xh3mhm6mbawrw2lwq59vylbj10mhjlqx7jpixpf1z7"))))
     (properties `((upstream-name . "odin")))
     (build-system r-build-system)
     (arguments

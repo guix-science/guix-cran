@@ -670,13 +670,13 @@ your probability of winning a battle.  This speeds the game up significantly.")
 (define-public r-aws-wrfsmn
   (package
     (name "r-aws-wrfsmn")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aws.wrfsmn" version))
        (sha256
-        (base32 "09hzf3pnm9jzw5c87639jyjfh0kyv0c3fx3g8h5hlqcas3fybz2n"))))
+        (base32 "0xkbf6ydn6l177q6ch99ymriq1y46hqlkah3sxl3db30ihkhrkrd"))))
     (properties `((upstream-name . "aws.wrfsmn")))
     (build-system r-build-system)
     (arguments
@@ -3608,13 +3608,13 @@ Deep Learning\".")
 (define-public r-attachment
   (package
     (name "r-attachment")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "attachment" version))
        (sha256
-        (base32 "13lq5kd9iy1pgzs4sgwydi5py1if2x6rdz526dqzl4c6ls7g9fz5"))))
+        (base32 "0ndsfw68737gbs76539fzc9h60j6x9jsd1kkw1pd69lq2zigk06v"))))
     (properties `((upstream-name . "attachment")))
     (build-system r-build-system)
     (arguments
@@ -6736,13 +6736,13 @@ options.")
 (define-public r-arrapply
   (package
     (name "r-arrapply")
-    (version "2.2")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arrApply" version))
        (sha256
-        (base32 "0bp30622md9zzdgv9g1kqp5k450cd5yzpqji51wwcjp8l347fb6y"))))
+        (base32 "0ivw0wfh4kdbjm160hv4d027mx7sxcs83dqbl436g3sx9xn60874"))))
     (properties `((upstream-name . "arrApply")))
     (build-system r-build-system)
     (arguments
@@ -8252,22 +8252,24 @@ manipulating and converting @code{ArcGIS} objects from R are also provided.")
 (define-public r-arcpullr
   (package
     (name "r-arcpullr")
-    (version "0.2.9")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpullr" version))
        (sha256
-        (base32 "1kkfksv7d9firyiwsyaxg1radzvcrxi26krx63hd9p52697ajxm8"))))
+        (base32 "1q1ncdwnybnksqqfqbxslz6wdwlyd9sw5mcwfj8gdld3sm5hg23r"))))
     (properties `((upstream-name . "arcpullr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-terra
                              r-sf
                              r-rlang
                              r-raster
+                             r-purrr
                              r-jsonlite
                              r-httr
                              r-ggplot2
@@ -25764,13 +25766,13 @@ screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
 (define-public r-aberrance
   (package
     (name "r-aberrance")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aberrance" version))
        (sha256
-        (base32 "0rpmapx5ji69hfszbhrhvjmn5i6a4jdgy0g11w59xdsrpzc40sv8"))))
+        (base32 "1qf9cj0npbwzmk9xfwvav1n26c0qxhsx6zvqx88s89sa8s85c66m"))))
     (properties `((upstream-name . "aberrance")))
     (build-system r-build-system)
     (arguments

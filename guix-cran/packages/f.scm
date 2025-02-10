@@ -8363,13 +8363,13 @@ compatible with several existing packages that implement random forests in R.")
 (define-public r-forestelementsr
   (package
     (name "r-forestelementsr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ForestElementsR" version))
        (sha256
-        (base32 "1yjazlx7qxf5g30ikzrn4wk9hd4gpngxdmr1xdq6bj8xk9k3qajx"))))
+        (base32 "0fva80sh5ar0xpc94bbw7vn60zbxbxn3dbhdns2y0qg7kqhz5mkz"))))
     (properties `((upstream-name . "ForestElementsR")))
     (build-system r-build-system)
     (arguments
@@ -12376,13 +12376,13 @@ trait metric, as described by Feuerstahler (2019)
 (define-public r-flexlsx
   (package
     (name "r-flexlsx")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexlsx" version))
        (sha256
-        (base32 "1widk2qzisqq2j22hzw0cmw7l3p5jkcyhxcgjjgirmdw7bg771r1"))))
+        (base32 "0g09dnfl6k5ylwrh4x8q85q4m22v0j6a0ygckkvphjg9rga8grz4"))))
     (properties `((upstream-name . "flexlsx")))
     (build-system r-build-system)
     (arguments
@@ -15333,13 +15333,13 @@ and plotting groups of statistically dependent columns.")
 (define-public r-findsvi
   (package
     (name "r-findsvi")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "findSVI" version))
        (sha256
-        (base32 "1m40v46gl34dhndf8gl3x4l1zwjkz7bfwhbzkf7qscrvfz4lbh7g"))))
+        (base32 "0ar9pg2addf2g70pmwlhi42z7zwgjff49sk2h920bm3cjq5qk447"))))
     (properties `((upstream-name . "findSVI")))
     (build-system r-build-system)
     (arguments
@@ -23528,13 +23528,13 @@ technique.  Yuning Hao, Ming Yan, Blake R. Heath, Yu L. Lei and Yuying Xie
 (define-public r-faraway
   (package
     (name "r-faraway")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "faraway" version))
        (sha256
-        (base32 "0w4mp3dpckr74js7ihkgybiim8crq3izkbxwrs0a52lhah03haz4"))))
+        (base32 "0p9dlls7pdmf40w7l6s6p03gmck6ssz4haiyzp18y0fgl22ysx0h"))))
     (properties `((upstream-name . "faraway")))
     (build-system r-build-system)
     (arguments
@@ -23542,13 +23542,13 @@ technique.  Yuning Hao, Ming Yan, Blake R. Heath, Yu L. Lei and Yuying Xie
       #:tests? #f))
     (propagated-inputs (list r-nlme r-lme4))
     (home-page "https://github.com/julianfaraway/faraway")
-    (synopsis "Functions and Datasets for Books by Julian Faraway")
+    (synopsis "Datasets and Functions for Books by Julian Faraway")
     (description
      "Books are \"Linear Models with R\" published 1st Ed.  August 2004, 2nd Ed.  July
-2014 by CRC press, ISBN 9781439887332, and \"Extending the Linear Model with R\"
-published by CRC press in 1st Ed.  December 2005 and 2nd Ed.  March 2016, ISBN
-9781584884248 and \"Practical Regression and ANOVA in R\" contributed
-documentation on CRAN (now very dated).")
+2014, 3rd Ed.  February 2025 by CRC press, ISBN 9781439887332, and \"Extending
+the Linear Model with R\" published by CRC press in 1st Ed.  December 2005 and
+2nd Ed.  March 2016, ISBN 9781584884248 and \"Practical Regression and ANOVA in
+R\" contributed documentation on CRAN (now very dated).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-far

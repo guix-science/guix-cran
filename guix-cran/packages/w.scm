@@ -3828,13 +3828,13 @@ raster to approximate surface roughness.")
 (define-public r-windex
   (package
     (name "r-windex")
-    (version "2.0.8")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "windex" version))
        (sha256
-        (base32 "0i8qvgc9r8j082m93bsvl082h32bsvjwqzmyn8cb6qnpynn4k2a0"))))
+        (base32 "1hl5hiwf2gh38424hdya2cra18dgzj93ny98193j2bgyhkx60cnl"))))
     (properties `((upstream-name . "windex")))
     (build-system r-build-system)
     (arguments
@@ -7865,13 +7865,13 @@ model.")
 (define-public r-wbids
   (package
     (name "r-wbids")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbids" version))
        (sha256
-        (base32 "0sx9w1y7hwhzjcswz0a1mjlzifqrhb9wmv5rwmfkpxba590hpv4h"))))
+        (base32 "018din2f2w5w8n9z6rgq1ljcdzwf7z337r1rpiqccpwzn69rxvqj"))))
     (properties `((upstream-name . "wbids")))
     (build-system r-build-system)
     (arguments
@@ -7881,6 +7881,7 @@ model.")
                              r-tidyr
                              r-rlang
                              r-purrr
+                             r-mime
                              r-httr2
                              r-dplyr
                              r-cli))
@@ -7889,7 +7890,7 @@ model.")
     (synopsis
      "Seamless Access to World Bank International Debt Statistics (IDS)")
     (description
-     "Access and analyze the World Bankâs International Debt Statistics (IDS)
+     "Access and analyze the World Bank's International Debt Statistics (IDS)
 <https://datacatalog.worldbank.org/search/dataset/0038015>.  IDS provides
 creditor-debtor relationships between countries, regions, and institutions.
 wbids enables users to download, process and work with IDS series across
@@ -8086,13 +8087,13 @@ series, nonstationary multiscale transfer function modeling, density estimation.
 (define-public r-wavesampling
   (package
     (name "r-wavesampling")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WaveSampling" version))
        (sha256
-        (base32 "1r8fzvihpmpaak0pkcf9s1nkj6dlvj2maw30yflpifa6422y15va"))))
+        (base32 "0nfpd6r1bjc1vl38lgfqmdfimwsz400v61q7vy51idp6zr00s58h"))))
     (properties `((upstream-name . "WaveSampling")))
     (build-system r-build-system)
     (arguments
@@ -9007,6 +9008,31 @@ services (see <https://waterservices.usgs.gov/> for more information), plots the
 data, addresses some common data problems, and calculates and plots anomalies.")
     (license (list (license:fsdg-compatible "Unlimited")
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-watcher
+  (package
+    (name "r-watcher")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "watcher" version))
+       (sha256
+        (base32 "147a3vm947a6rhm54siscgspn3n0zz17ssmnci0l41l4ycpij8lz"))))
+    (properties `((upstream-name . "watcher")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rlang r-r6 r-later))
+    (home-page "https://r-lib.github.io/watcher/")
+    (synopsis "Watch the File System for Changes")
+    (description
+     "R binding for libfswatch', a file system monitoring library.  Watch files, or
+directories recursively, for changes in the background.  Log activity, or run an
+R function every time a change event occurs.")
+    (license license:expat)))
 
 (define-public r-waspr
   (package

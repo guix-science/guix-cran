@@ -426,13 +426,13 @@ bounded-variable least squares.")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "171ngw5a8zbq2vaxs3ipr76jnan4614fxr8ka28fhlx6qh6fy703"))))
+        (base32 "13bpjn6z5g77nf53ynynr230mqzig76c22id5bv9i0r9ddvg9hys"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (arguments
@@ -440,12 +440,13 @@ bounded-variable least squares.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-rcppthread
+                             r-rcppspdlog
                              r-rcppeigen
                              r-rcpp
                              r-purrr
                              r-posterior
                              r-optimparallel
-                             r-magrittr
                              r-lifecycle
                              r-ggplot2
                              r-foreach
@@ -3005,13 +3006,13 @@ use this package, see An et al. (2022) <doi:10.18637/jss.v101.i11>.")
 (define-public r-bskyr
   (package
     (name "r-bskyr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bskyr" version))
        (sha256
-        (base32 "0qnw7mbsbg0w4afqnvrw69vzc7d1j5lpyk06zlpppkswp594bnbq"))))
+        (base32 "08n7gdvifwp1fi4ig0x3dls6kllx90lw0dkgnai7f761ijjgqrhj"))))
     (properties `((upstream-name . "bskyr")))
     (build-system r-build-system)
     (arguments
@@ -3043,13 +3044,13 @@ simple interface.")
 (define-public r-bsitar
   (package
     (name "r-bsitar")
-    (version "0.2.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsitar" version))
        (sha256
-        (base32 "1h18hk5qr3lcxy0iqhz2wfxhvyjl1bs45y78skx070qbxrgwai5z"))))
+        (base32 "0nsrjv9mx2v4cdafvmbhan5dhkvp3f7anvxqbl1s6v95yq3rxk26"))))
     (properties `((upstream-name . "bsitar")))
     (build-system r-build-system)
     (arguments
@@ -3068,6 +3069,8 @@ simple interface.")
                              r-loo
                              r-insight
                              r-dplyr
+                             r-data-table
+                             r-collapse
                              r-brms))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/Sandhu-SS/bsitar")
@@ -3076,25 +3079,26 @@ simple interface.")
     (description
      "The Super Imposition by Translation and Rotation (SITAR) model is a
 shape-invariant nonlinear mixed effect model that fits a natural cubic spline
-mean curve to the growth data, and aligns individual-specific growth curves to
+mean curve to the growth data and aligns individual-specific growth curves to
 the underlying mean curve via a set of random effects (see Cole, 2010
 <doi:10.1093/ije/dyq115> for details).  The non-Bayesian version of the SITAR
-model can be fit by using an already available R package sitar'.  While sitar
-package allows modelling of a single outcome only, the bsitar package offers a
-great flexibility in fitting models of varying complexities that include joint
-modelling of multiple outcomes such as height and weight (multivariate model).
-Also, the bsitar package allows simultaneous analysis of a single outcome
-separately for sub groups defined by a factor variable such as gender.  This is
-achieved by fitting separate models for each sub group (such as males and
-females for gender variable).  An advantage of such approach is that posterior
-draws for each sub group are part of a single model object that makes it
-possible to compare coefficients across groups and test hypotheses.  As bsitar
-package is a front-end to the R package brms', it offers an excellent support
-for post-processing of posterior draws via various functions that are directly
-available from the brms package.  In addition, the bsitar package include
-various customized functions that allow estimation and visualization growth
-curves such as distance (increase in size with age) and velocity (change in
-growth rate as a function of age).")
+model can be fit by using the already available R package sitar'.  While the
+sitar package allows modelling of a single outcome only, the bsitar package
+offers great flexibility in fitting models of varying complexities, including
+joint modelling of multiple outcomes such as height and weight (multivariate
+model).  Additionally, the bsitar package allows for the simultaneous analysis
+of an outcome separately for subgroups defined by a factor variable such as
+gender.  This is achieved by fitting separate models for each subgroup (for
+example males and females for gender variable).  An advantage of this approach
+is that posterior draws for each subgroup are part of a single model object,
+making it possible to compare coefficients across subgroups and test hypotheses.
+ Since the bsitar package is a front-end to the R package brms', it offers
+excellent support for post-processing of posterior draws via various functions
+that are directly available from the brms package.  In addition, the bsitar
+package includes various customized functions that allow for the visualization
+of distance (increase in size with age) and velocity (change in growth rate as a
+function of age), as well as the estimation of growth spurt parameters such as
+age at peak growth velocity and peak growth velocity.")
     (license license:gpl2)))
 
 (define-public r-bsims
@@ -9427,13 +9431,13 @@ using auxiliary data.")
 (define-public r-bndesr
   (package
     (name "r-bndesr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bndesr" version))
        (sha256
-        (base32 "0yx5grnaginmdxdi9philz24qvncr6gva01zrasl098p49dx0zpv"))))
+        (base32 "1vjh7861gnrqwd910vz9x27fqkhylp5a6wzjfsjx6wgvq4m6rdl3"))))
     (properties `((upstream-name . "bndesr")))
     (build-system r-build-system)
     (arguments
@@ -9445,8 +9449,7 @@ using auxiliary data.")
                              r-rcurl
                              r-lubridate
                              r-janitor
-                             r-dplyr
-                             r-curl))
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=bndesr")
     (synopsis "Access Data from the Brazilian Development Bank (BNDES)")
     (description
@@ -18861,13 +18864,13 @@ power and sample size calculations as described in Pawel and Held (2024)
 (define-public r-bfpack
   (package
     (name "r-bfpack")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFpack" version))
        (sha256
-        (base32 "0rdzkxcnv5nq78ic8hi5w3ci4r29b1a251hdka5drl7i2z2m590a"))))
+        (base32 "1w6p6nhd94zqbriwgqz8ydpmld5ysgy96rigvxg62951mvm1q9j0"))))
     (properties `((upstream-name . "BFpack")))
     (build-system r-build-system)
     (arguments
@@ -18899,7 +18902,9 @@ models, relational event models.  Parameters that can be tested are location
 parameters (e.g., group means, regression coefficients), variances (e.g., group
 variances), and measures of association (e.g,.
 polychoric/polyserial/biserial/tetrachoric/product moments correlations), among
-others.  The statistical underpinnings are described in Mulder and Xin (2022)
+others.  The statistical underpinnings are described in O'Hagan (1995)
+<DOI:10.1111/j.2517-6161.1995.tb02017.x>, De Santis and Spezzaferri (2001)
+<DOI:10.1016/S0378-3758(00)00240-8>, Mulder and Xin (2022)
 <DOI:10.1080/00273171.2021.1904809>, Mulder and Gelissen (2019)
 <DOI:10.1080/02664763.2021.1992360>, Mulder (2016)
 <DOI:10.1016/j.jmp.2014.09.004>, Mulder and Fox (2019) <DOI:10.1214/18-BA1115>,
@@ -18908,8 +18913,9 @@ Assen, Hofman, Hoijtink, and Mulder (2017) <DOI:10.1037/met0000116>, Hoijtink,
 Mulder, van Lissa, and Gu (2018) <DOI:10.1037/met0000201>, Gu, Mulder, and
 Hoijtink (2018) <DOI:10.1111/bmsp.12110>, Hoijtink, Gu, and Mulder (2018)
 <DOI:10.1111/bmsp.12145>, and Hoijtink, Gu, Mulder, and Rosseel (2018)
-<DOI:10.1037/met0000187>.  When using the packages, please refer to Mulder et
-al. (2021) <DOI:10.18637/jss.v100.i18>.")
+<DOI:10.1037/met0000187>.  When using the packages, please refer to the package
+Mulder et al. (2021) <DOI:10.18637/jss.v100.i18> and the relevant methodological
+papers.")
     (license license:gpl3+)))
 
 (define-public r-bfp
@@ -19002,35 +19008,6 @@ determine the shape and scale of the prior distributions defining the
 alternative hypotheses.  Plots of BFFs versus effect size provide informative
 summaries of hypothesis tests that can be easily aggregated across studies.")
     (license license:gpl2+)))
-
-(define-public r-bfboinet
-  (package
-    (name "r-bfboinet")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bfboinet" version))
-       (sha256
-        (base32 "03s4b0x7lfka09rm5a5fr9aiahk846znc6ag73s8gygmls58mvx5"))))
-    (properties `((upstream-name . "bfboinet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect r-magrittr r-iso r-dplyr r-copula))
-    (home-page "https://cran.r-project.org/package=bfboinet")
-    (synopsis
-     "Backfill Bayesian Optimal Interval Design Using Efficacy and Toxicity")
-    (description
-     "The backfill Bayesian optimal interval design using efficacy and toxicity
-outcomes for dose optimization (BF-BOIN-ET) design is a novel clinical trial
-design to allow patients to be backfilled at lower doses during a dose-finding
-trial while prioritizing the dose-escalation cohort to explore a higher dose.
-The advantages compared to the other designs in terms of the percentage of
-correct optimal dose (OD) selection, reducing the sample size, and shortening
-the duration of the trial, in various realistic setting.")
-    (license license:gpl3)))
 
 (define-public r-bfast
   (package
@@ -26142,22 +26119,36 @@ mediation effects are reported as analytic results.")
 (define-public r-bayesianmcpmod
   (package
     (name "r-bayesianmcpmod")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianMCPMod" version))
        (sha256
-        (base32 "1767rjyd5vl73lqknpxkgcv38rhxdm837zr7c3d5d6f9rdh8rgyw"))))
+        (base32 "0qcaknkasnrx7mxpd685p7iskz9zr97kpn52rkyjqvl6ks6jjj7d"))))
     (properties `((upstream-name . "BayesianMCPMod")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rbest r-nloptr r-ggplot2 r-dosefinding
                              r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Boehringer-Ingelheim/BayesianMCPMod")
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://boehringer-ingelheim.github.io/BayesianMCPMod/")
     (synopsis
      "Simulate, Evaluate, and Analyze Dose Finding Trials with Bayesian MCPMod")
     (description
@@ -30563,13 +30554,13 @@ Simon, Zeileis (2021) <doi:10.18637/jss.v100.i04>.")
 (define-public r-bamdit
   (package
     (name "r-bamdit")
-    (version "3.4.3")
+    (version "3.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamdit" version))
        (sha256
-        (base32 "0qi31rd9wphnmx7snk6kwk8l7p7j7sirdgnh97zj98xb79hqj6gv"))))
+        (base32 "11m36li9dgf100ra5rjpixaa7s2mqhrrpkpm4fk0r84zbc8xri6h"))))
     (properties `((upstream-name . "bamdit")))
     (build-system r-build-system)
     (arguments

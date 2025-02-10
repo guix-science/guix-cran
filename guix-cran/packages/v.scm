@@ -1936,13 +1936,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "08vcq5i7i3mm6pzzai6fnmm0phb0zxxbv1mav70jn2qs09ailm8q"))))
+        (base32 "16m92kc3y02c2gdxmzc43gcdv6yk2x4zbxw9iqjwwnnwcp0diids"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (arguments
@@ -3172,13 +3172,13 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "2.0.4")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistla" version))
        (sha256
-        (base32 "0w90h0839dfbn8v8vr5116mfbh5id0qkp1yqhkzcljpjn6v6cv6l"))))
+        (base32 "04qbd8nvf0qw68br3bjr2di1vcc7wij830ilqq2gr6m851930yia"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (arguments
@@ -5047,13 +5047,13 @@ changes.")
 (define-public r-vgamdata
   (package
     (name "r-vgamdata")
-    (version "1.1-12")
+    (version "1.1-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VGAMdata" version))
        (sha256
-        (base32 "10s0jinzwpb9wjvzkl0dihm3byr8q2mzmq4z86zpmnlw0blvkkvy"))))
+        (base32 "132kg8qg5y7mvfqpva6pg63lm0857izkjw7d2ir4l51d5wl1pn9k"))))
     (properties `((upstream-name . "VGAMdata")))
     (build-system r-build-system)
     (arguments
@@ -8231,76 +8231,6 @@ of variation, the margin of error, confidence interval, design effect.")
     (description "Interactive variogram diagnostics.")
     (license license:gpl2+)))
 
-(define-public r-vardetect
-  (package
-    (name "r-vardetect")
-    (version "0.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VARDetect" version))
-       (sha256
-        (base32 "1g28rcmlm16yiz156rmdslvhy173pazij0lw7b5gxqv3dgl4mcd0"))))
-    (properties `((upstream-name . "VARDetect")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sparsevar
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-pracma
-                             r-mvtnorm
-                             r-mts
-                             r-lattice
-                             r-igraph))
-    (home-page "https://cran.r-project.org/package=VARDetect")
-    (synopsis "Multiple Change Point Detection in Structural VAR Models")
-    (description
-     "Implementations of Thresholded Block Segmentation Scheme (TBSS) and Low-rank
-plus Sparse Two Step Procedure (LSTSP) algorithms for detecting multiple changes
-in structural VAR models.  The package aims to address the problem of change
-point detection in piece-wise stationary VAR models, under different settings
-regarding the structure of their transition matrices (autoregressive dynamics);
-specifically, the following cases are included: (i) (weakly) sparse, (ii)
-structured sparse, and (iii) low rank plus sparse.  It includes multiple
-algorithms and related extensions from Safikhani and Shojaie (2020)
-<doi:10.1080/01621459.2020.1770097> and Bai, Safikhani and Michailidis (2020)
-<doi:10.1109/TSP.2020.2993145>.")
-    (license license:gpl2)))
-
-(define-public r-varcpdetectonline
-  (package
-    (name "r-varcpdetectonline")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VARcpDetectOnline" version))
-       (sha256
-        (base32 "1yqavkqfg0qqdkv59gix0vb62pyrb6dz2cwd63nr97vs6sdp5bhb"))))
-    (properties `((upstream-name . "VARcpDetectOnline")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sparsevar r-mass))
-    (home-page "https://github.com/Helloworld9293/VARcpDetectOnline")
-    (synopsis
-     "Sequential Change Point Detection for High-Dimensional VAR Models")
-    (description
-     "This package implements the algorithm introduced in Tian, Y., and Safikhani, A.
-(2024) <doi:10.5705/ss.202024.0182>, \"Sequential Change Point Detection in
-High-dimensional Vector Auto-regressive Models\".  This package provides tools
-for detecting change points in the transition matrices of Vector Auto-Regressive
-(VAR) models, effectively identifying shifts in temporal and cross-correlations
-within high-dimensional time series data.  The package includes functions to
-generate synthetic VAR data, detect change points in high-dimensional time
-series, and analyze real-world data.  It also demonstrates an application to
-financial data: the daily log returns of 186 S&P 500 stocks from 2004-02-06 to
-2016-03-02.")
-    (license license:expat)))
-
 (define-public r-varclust
   (package
     (name "r-varclust")
@@ -9296,26 +9226,26 @@ by Wickham (2007) <https://CRAN.R-project.org/package=ggplot2>.")
 (define-public r-valentine
   (package
     (name "r-valentine")
-    (version "2024.2.14")
+    (version "2025.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valentine" version))
        (sha256
-        (base32 "028sm53cvsspbjdyr74xzbwjn96542x9vglhnlk531v6a6xscwg5"))))
+        (base32 "1h7hq2kasbvydwwi4m54744qm1kq97gdr44jd1fv4ypa5vnxxgpw"))))
     (properties `((upstream-name . "valentine")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-openai r-glue))
+    (propagated-inputs (list r-rlang r-glue r-ellmer r-cli))
     (home-page "https://github.com/tadascience/valentine")
     (synopsis "Spread the Love for R Packages with Poetry")
     (description
-     "Uses @code{ChatGPT} <https://openai.com/> to create poems about R packages.
-Currently contains the @code{roses()} function to make \"roses are red, ...\"
-style poems and the @code{prompt()} function to only assemble the prompt without
-submitting it to @code{ChatGPT}'.")
+     "Uses large language models to create poems about R packages.  Currently contains
+the @code{roses()} function to make \"roses are red, ...\" style poems and the
+@code{prompt()} function to only assemble the prompt without submitting it to
+the model.")
     (license license:expat)))
 
 (define-public r-valection

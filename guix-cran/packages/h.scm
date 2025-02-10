@@ -8600,13 +8600,13 @@ the results from the paper, see demo(\"hhh4contacts\")'.")
 (define-public r-hh
   (package
     (name "r-hh")
-    (version "3.1-52")
+    (version "3.1-53")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HH" version))
        (sha256
-        (base32 "10q3im2y5r9f5d80c35r2mmp89xclaf74hywkcyn3pk5vwc5wjfm"))))
+        (base32 "14lqyxnpx6dis5s40yrzrdqq5qvqspibzssr2bh3jkkfykjasxmj"))))
     (properties `((upstream-name . "HH")))
     (build-system r-build-system)
     (arguments

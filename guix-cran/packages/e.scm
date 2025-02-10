@@ -11485,38 +11485,6 @@ spatial and contact-network based models with two disease types:
 Susceptible-Infectious (SI) and Susceptible-Infectious-Removed (SIR).")
     (license license:gpl2+)))
 
-(define-public r-epigrowthfit
-  (package
-    (name "r-epigrowthfit")
-    (version "0.15.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epigrowthfit" version))
-       (sha256
-        (base32 "0j5gml3glnfsmc76qy554bmqx2g80y3kdrnbabzx0hqaz8sz8fgl"))))
-    (properties `((upstream-name . "epigrowthfit")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tmb r-rcppeigen r-nlme r-matrix))
-    (home-page "https://github.com/davidearn/epigrowthfit")
-    (synopsis "Nonlinear Mixed Effects Models of Epidemic Growth")
-    (description
-     "Maximum likelihood estimation of nonlinear mixed effects models of epidemic
-growth using Template Model Builder ('TMB').  Enables joint estimation for
-collections of disease incidence time series, including time series that
-describe multiple epidemic waves.  Supports a set of widely used
-phenomenological models: exponential, logistic, Richards (generalized logistic),
-subexponential, and Gompertz.  Provides methods for interrogating model objects
-and several auxiliary functions, including one for computing basic reproduction
-numbers from fitted values of the initial exponential growth rate.  Preliminary
-versions of this software were applied in Ma et al. (2014)
-<doi:10.1007/s11538-013-9918-2> and in Earn et al. (2020)
-<doi:10.1073/pnas.2004904117>.")
-    (license license:gpl3)))
-
 (define-public r-epigraphdb
   (package
     (name "r-epigraphdb")
@@ -13132,13 +13100,13 @@ visualizing distributional characteristics among multiple populations (groups)."
 (define-public r-entropart
   (package
     (name "r-entropart")
-    (version "1.6-15")
+    (version "1.6-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "entropart" version))
        (sha256
-        (base32 "07ppccnxl97v403hcmyx3aw82iv7vvfigxrkmqmh5iypn5zvyyg7"))))
+        (base32 "1ivljimzrz4zmd9jvvhb217dqd9qvdv0dyfpw5sh6m4fqxw2a539"))))
     (properties `((upstream-name . "entropart")))
     (build-system r-build-system)
     (arguments
@@ -15745,13 +15713,13 @@ this package is developed in C++'.")
 (define-public r-emayili
   (package
     (name "r-emayili")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emayili" version))
        (sha256
-        (base32 "1v6zr8c4pcr7rigv708mmww3v83jhrpz7f1hli4y9jdrn41m3np3"))))
+        (base32 "0a8c76x7wwp9ag4s8nx8lpvwkq3n057zyjmrwkannbzwa7gv3smb"))))
     (properties `((upstream-name . "emayili")))
     (build-system r-build-system)
     (arguments
@@ -16381,13 +16349,13 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
 (define-public r-ellmer
   (package
     (name "r-ellmer")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ellmer" version))
        (sha256
-        (base32 "1qx1riiynkkl5kkhl0f86ws0nympzq7ci7a1cwsv04sfna7g6hpq"))))
+        (base32 "1yq7xbd8z4i2y89rgdnrfxkj7fq9lz6wm9svzrfnmkvjhm9sb7ia"))))
     (properties `((upstream-name . "ellmer")))
     (build-system r-build-system)
     (arguments
@@ -16397,6 +16365,7 @@ Guang-Bin Huang, Qin-Yu Zhu, Chee-Kheong Siew (2006), Elsevier B.V,
                              r-rlang
                              r-r6
                              r-promises
+                             r-lifecycle
                              r-later
                              r-jsonlite
                              r-httr2
@@ -16894,35 +16863,6 @@ features, the package retrieves data on local and federal elections for all
 positions (city councilor, mayor, state deputy, federal deputy, governor, and
 president) aggregated by state, city, and electoral zones.")
     (license license:gpl2+)))
-
-(define-public r-elections-dtree
-  (package
-    (name "r-elections-dtree")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "elections.dtree" version))
-       (sha256
-        (base32 "199ms891xgr8jgb5w0lrp8z1aj8faqrfsx60bcgv152v7y12mjx0"))))
-    (properties `((upstream-name . "elections.dtree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-testthat
-                             r-rdpack
-                             r-rcppthread
-                             r-rcpp
-                             r-r6
-                             r-prefio))
-    (home-page "https://fleverest.github.io/elections.dtree/")
-    (synopsis "Ranked Voting Election Audits with Dirichlet-Trees")
-    (description
-     "Perform ballot-polling Bayesian audits for ranked voting elections using
-Dirichlet-tree prior distributions.  Everest et al. (2022)
-<@code{arXiv:2206.14605>}, <@code{arXiv:2209.03881>}.")
-    (license license:gpl3)))
 
 (define-public r-elections
   (package
@@ -19804,6 +19744,53 @@ multisite trials.  The methods can also be used more widely beyond education
 trials.  This package can be used to evaluate other intervention designs using
 Frequentist and Bayesian multilevel models.")
     (license license:agpl3+)))
+
+(define-public r-eeaaq
+  (package
+    (name "r-eeaaq")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EEAaq" version))
+       (sha256
+        (base32 "1wlhxjldzn48ib5hjahm7ih4gymi7rspl64myp286nl9mrbwqzc9"))))
+    (properties `((upstream-name . "EEAaq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-readr
+                             r-raster
+                             r-lubridate
+                             r-leaflet
+                             r-httr
+                             r-htmlwidgets
+                             r-gstat
+                             r-gifski
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-curl
+                             r-arrow))
+    (home-page "https://github.com/PaoloMaranzano/EEAaq_R")
+    (synopsis
+     "Handle Air Quality Data from the European Environment Agency Data Portal")
+    (description
+     "This software downloads and manages air quality data from the European
+Environmental Agency (EEA) dataflow
+(<https://www.eea.europa.eu/data-and-maps/data/aqereporting-9>).  See the web
+page <https://eeadmz1-downloads-webapp.azurewebsites.net/> for details on the
+EEA's Air Quality Download Service.  The package allows dynamically mapping the
+stations, summarising and time aggregating the measurements and building spatial
+interpolation maps.  See the web page <https://www.eea.europa.eu/en> for further
+information on EEA activities and history.  Further details, as well as, an
+extended vignette of the main functions included in the package, are available
+at the @code{GitHub} web page dedicated to the project.")
+    (license license:gpl3+)))
 
 (define-public r-edwards97
   (package
@@ -24549,13 +24536,13 @@ survival models using @code{flexsurv::flexsurvreg()}',
 (define-public r-easystats
   (package
     (name "r-easystats")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easystats" version))
        (sha256
-        (base32 "1mxkqm977wgnqd54paifyy5drl7zyb39lm2icps6vls4702zjzis"))))
+        (base32 "1c3xnzjwn46pdw7dz45704r38fq21qk8j5gsra0cizj1mi54cd2d"))))
     (properties `((upstream-name . "easystats")))
     (build-system r-build-system)
     (arguments
@@ -24906,13 +24893,13 @@ extended structural equation modeling package, @code{OpenMx}'.")
 (define-public r-easylabel
   (package
     (name "r-easylabel")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easylabel" version))
        (sha256
-        (base32 "0yw3kbxfxks2scidv756cw6zd2jx17z4rw8g1fp9mk2qxavp9aii"))))
+        (base32 "1l9k4dslzxzlmska911ml0g0ffpbrx92a8qrq5d275bh36ym5103"))))
     (properties `((upstream-name . "easylabel")))
     (build-system r-build-system)
     (arguments

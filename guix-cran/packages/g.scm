@@ -11281,6 +11281,43 @@ be available at the later version.")
 PavÃ­a (2015) <doi:10.18637/jss.v066.c01>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-gofigr
+  (package
+    (name "r-gofigr")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gofigR" version))
+       (sha256
+        (base32 "035ghj41sxfp7dayv39abls8k63p8sgsjgvsfkhaasm3qlqajdhr"))))
+    (properties `((upstream-name . "gofigR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xfun
+                             r-textutils
+                             r-stringr
+                             r-scriptname
+                             r-rstudioapi
+                             r-rlang
+                             r-readr
+                             r-qrcode
+                             r-magick
+                             r-knitr
+                             r-jsonlite
+                             r-httr
+                             r-getpass
+                             r-base64enc))
+    (home-page "https://github.com/GoFigr/gofigR")
+    (synopsis "Client for 'GoFigr.io'")
+    (description
+     "Integrates with your RMarkdown documents to automatically publish figures to the
+<https://@code{GoFigr.io>} service.  Supports both knitr and interactive
+execution within RStudio'.")
+    (license license:expat)))
+
 (define-public r-gofig
   (package
     (name "r-gofig")
@@ -17815,19 +17852,20 @@ around the one of wordcloud2.js'.")
 (define-public r-ggvolcano
   (package
     (name "r-ggvolcano")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggvolcano" version))
        (sha256
-        (base32 "1sj5g3gsdk3bi9vvnjmsfx6c68dhg0b4lpsq9ljxsx2xzapmilmm"))))
+        (base32 "0hdbpmv64w9iv2zaws063ks0n3walpvjj750kwd960s7q76n1wix"))))
     (properties `((upstream-name . "ggvolcano")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-shiny r-golem r-ggrepel r-ggplot2 r-config))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggvolcano")
     (synopsis "Publication-Ready Volcano Plots")
     (description
@@ -22961,13 +22999,13 @@ other available packages.")
 (define-public r-ggalign
   (package
     (name "r-ggalign")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggalign" version))
        (sha256
-        (base32 "17zcfwglgrn6lmjzym7q7qqgvy8fq97qc74mkmlwi0zgy6vnlb4g"))))
+        (base32 "1fjgnmn294vrw9sb733vfjyv9kaf4mnq7yspm18pyhk1lzcwim98"))))
     (properties `((upstream-name . "ggalign")))
     (build-system r-build-system)
     (arguments
@@ -22979,7 +23017,6 @@ other available packages.")
                              r-gtable
                              r-ggplot2
                              r-cli))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/Yunuuuu/ggalign")
     (synopsis "'ggplot2' Extension for Consistent Axis Alignment")
     (description
@@ -25265,13 +25302,13 @@ Elseberg et al. (2012) <https://hdl.handle.net/10446/86202>.")
 (define-public r-geostatsp
   (package
     (name "r-geostatsp")
-    (version "2.0.6")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostatsp" version))
        (sha256
-        (base32 "10xmdgmmd4f67778g02hyqzkk9zj9c0cdfs9cw8py1b413vfclyv"))))
+        (base32 "0mmbpkw01s5phvrq5q9bpm94sj2isl714ws4lznr2mraynqbrlw0"))))
     (properties `((upstream-name . "geostatsp")))
     (build-system r-build-system)
     (arguments
@@ -32946,13 +32983,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.9.2")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "07a2xv55y153xhn8irvz40sjkkz7514s7j210mzl22ibaq2hc28g"))))
+        (base32 "1z01gflll0qygg4sgzdz30885qc8s4wnw6ywv4mhkn5m2k4kxbcq"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (arguments
@@ -35270,19 +35307,20 @@ al. (2015) <doi:10.18637/jss.v067.i01>) and PLmixed (Rockwood and Jeon (2019)
 (define-public r-galah
   (package
     (name "r-galah")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galah" version))
        (sha256
-        (base32 "0byf7hh34grhar8nf6lqpsnhmj59wmz8ww6h9b9c2bimlg3s0h20"))))
+        (base32 "1bwr66815kdpw7j2jiw3s9x2gcbrpqa9vwzfmg0is5glnvczckbl"))))
     (properties `((upstream-name . "galah")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-xml2
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr

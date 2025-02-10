@@ -1329,13 +1329,13 @@ analytic functions.  Specifically developed for Bit.ly (which requires OAuth
 (define-public r-urlparse
   (package
     (name "r-urlparse")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "urlparse" version))
        (sha256
-        (base32 "076pbnk9gjl8pm83q8k396kynm4b0b0vgd3sl8mi0gar71gwsi5n"))))
+        (base32 "0csg848ic20ds31nq2ndp7j2bw6rvb1zd10b8qh1zjdshl0456hz"))))
     (properties `((upstream-name . "urlparse")))
     (build-system r-build-system)
     (arguments
@@ -4178,13 +4178,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.3.9")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "0si9v4hx2rpgx2s8v4nil99j8wk07r28fl7lpbs8cfmiry45b1wr"))))
+        (base32 "1xx7sn9ia8a7902q65qa7g4lcnj3zvr0ix7p9mkaf3v0pa9kygzc"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (arguments

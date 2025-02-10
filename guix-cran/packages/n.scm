@@ -5969,13 +5969,13 @@ of studies.  O'Connor & Ermacora (2021, <doi:10.1037/cbs0000259>).")
 (define-public r-nntmvn
   (package
     (name "r-nntmvn")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nntmvn" version))
        (sha256
-        (base32 "0hhlscdcvl3693863k4hzzcyvvnv9aga2n0bgwavffmn6q2km16k"))))
+        (base32 "050ibq3hwq1ir86rbpcyyz7nbb8hzi3hqhrxawylhb6vqdw8898v"))))
     (properties `((upstream-name . "nntmvn")))
     (build-system r-build-system)
     (arguments
@@ -12988,13 +12988,13 @@ call @code{NetMHCIIpan} from R.")
 (define-public r-netmeta
   (package
     (name "r-netmeta")
-    (version "3.1-0")
+    (version "3.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmeta" version))
        (sha256
-        (base32 "05fam6rv93dbyikv0c6bh1hdmi16krskg5yb8h4l78h43c0ij3fx"))))
+        (base32 "100pljm1gx21p8rjlgnhfnzj83hcdgjzjfs2d1q1alplk9xk4zxc"))))
     (properties `((upstream-name . "netmeta")))
     (build-system r-build-system)
     (arguments
@@ -13004,8 +13004,7 @@ call @code{NetMHCIIpan} from R.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rgraphviz
-                             r-mvtnorm
+    (propagated-inputs (list r-mvtnorm
                              r-metafor
                              r-meta
                              r-matrix
@@ -13013,7 +13012,6 @@ call @code{NetMHCIIpan} from R.")
                              r-magrittr
                              r-magic
                              r-igraph
-                             r-graph
                              r-ggplot2
                              r-dplyr
                              r-colorspace))

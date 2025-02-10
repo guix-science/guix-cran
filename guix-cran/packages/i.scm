@@ -800,13 +800,13 @@ CMCC-@code{BioClimInd} (see Noce, S., Caporaso, L. and Santini, M. (2020)
 (define-public r-itscalledsoccer
   (package
     (name "r-itscalledsoccer")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itscalledsoccer" version))
        (sha256
-        (base32 "0jw65h5ypn0wf6hlyk7vk7q3z2zm78yrwb1zd4a3ydpi06k15xmh"))))
+        (base32 "12fmj6sp710222k25vzp9y37zjjfim7vx4msvdxwbldgwjl2wr1w"))))
     (properties `((upstream-name . "itscalledsoccer")))
     (build-system r-build-system)
     (arguments
@@ -823,8 +823,7 @@ CMCC-@code{BioClimInd} (see Noce, S., Caporaso, L. and Santini, M. (2020)
                              r-glue
                              r-dplyr
                              r-data-table
-                             r-crayon
-                             r-clisymbols))
+                             r-cli))
     (home-page "https://github.com/American-Soccer-Analysis/itscalledsoccer-r")
     (synopsis "American Soccer Analysis API Client")
     (description

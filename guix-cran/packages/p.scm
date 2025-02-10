@@ -4749,6 +4749,39 @@ representative points, or pseudohouseholds, that can be used for travel burden
 analysis.  Parallel processing is supported.")
     (license license:expat)))
 
+(define-public r-pseudocure
+  (package
+    (name "r-pseudocure")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pseudoCure" version))
+       (sha256
+        (base32 "002cpsamgm6mqbrimmjhz99wwzsjn4gadsgbqh6bw4dch0zkb1lq"))))
+    (properties `((upstream-name . "pseudoCure")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-ggpubr
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=pseudoCure")
+    (synopsis
+     "Pseudo-Observations Approach for Analyzing Survival Data with a Cure Fraction")
+    (description
+     "This package provides a collection of easy-to-use tools for regression analysis
+of survival data with a cure fraction proposed in Su et al. (2022)
+<doi:10.1177/09622802221108579>.  The modeling framework is based on the Cox
+proportional hazards mixture cure model and the bounded cumulative hazard
+(promotion time cure) model.  The pseudo-observations approach is utilized to
+assess covariate effects and embedded in the variable selection procedure.")
+    (license license:gpl2+)))
+
 (define-public r-pseudobiber
   (package
     (name "r-pseudobiber")
@@ -11525,31 +11558,6 @@ feature.  Computes pattern models for paired comparisons, rankings, and ratings.
 models for paired comparison, rating and ranking patterns using a non-parametric
 ML approach.")
     (license license:gpl2+)))
-
-(define-public r-prefio
-  (package
-    (name "r-prefio")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prefio" version))
-       (sha256
-        (base32 "0zc8j1hj47iivx40i1wzilcn3456smbrzz2g6s1khqsx366mw9qr"))))
-    (properties `((upstream-name . "prefio")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-magrittr r-dplyr))
-    (home-page "https://github.com/fleverest/prefio/")
-    (synopsis "Structures for Preference Data")
-    (description
-     "Convenient structures for creating, sourcing, reading, writing and manipulating
-ordinal preference data.  Methods for writing to/from @code{PrefLib} formats.
-See Nicholas Mattei and Toby Walsh \"@code{PrefLib}: A Library of Preference
-Data\" (2013) <doi:10.1007/978-3-642-41575-3_20>.")
-    (license license:gpl3)))
 
 (define-public r-preference
   (package
@@ -18553,6 +18561,37 @@ polynomeaux, Theoretical Computer Science (Volume 161, Issue 1-2, July 1996,
 Pages 69-92) <doi:10.1016/0304-3975(95)00090-9>.")
     (license license:expat)))
 
+(define-public r-polymatching
+  (package
+    (name "r-polymatching")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "polymatching" version))
+       (sha256
+        (base32 "0rc6z16cjai2khwcz4hddnca3q6jhdn3dzcib7cq146ag7b6h5kq"))))
+    (properties `((upstream-name . "polymatching")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-optmatch
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=polymatching")
+    (synopsis "Matching Algorithm for Designs with Multiple Groups")
+    (description
+     "Includes functions implementing the conditionally optimal matching algorithm,
+which can be used to generate matched samples in designs with multiple groups.
+The algorithm is described in Nattino, Song and Lu (2022)
+<doi:10.1016/j.csda.2021.107364>.")
+    (license license:gpl3)))
+
 (define-public r-polymapr
   (package
     (name "r-polymapr")
@@ -22557,24 +22596,28 @@ site is completed.")
 (define-public r-plotor
   (package
     (name "r-plotor")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotor" version))
        (sha256
-        (base32 "1wfhdmlc6042yvqnj3lv34swfnkr75ygsd48yg2mldxjm2b8ma09"))))
+        (base32 "18997ayhqiw32gw4l3xmzzf8yf4659ajl18rsibqhb87kcasc3l0"))))
     (properties `((upstream-name . "plotor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
+                             r-stringr
                              r-scales
+                             r-rlang
                              r-purrr
                              r-glue
                              r-ggplot2
+                             r-forcats
                              r-dplyr
+                             r-cli
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/craig-parylo/plotor")
@@ -27347,37 +27390,6 @@ clustered PIC data.  Each random intercept/random effect can follow both a
 normal prior and a Dirichlet process mixture prior.  It also includes the
 corresponding functions for general interval-censored data.")
     (license license:gpl2+)))
-
-(define-public r-picasso
-  (package
-    (name "r-picasso")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "picasso" version))
-       (sha256
-        (base32 "1z7zm88wjp7fia7054l7i55f152iddrjj9wbcpcskhc8s6kfg53c"))))
-    (properties `((upstream-name . "picasso")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass))
-    (home-page "https://cran.r-project.org/package=picasso")
-    (synopsis "Pathwise Calibrated Sparse Shooting Algorithm")
-    (description
-     "Computationally efficient tools for fitting generalized linear model with convex
-or non-convex penalty.  Users can enjoy the superior statistical property of
-non-convex penalty such as SCAD and MCP which has significantly less estimation
-error and overfitting compared to convex penalty such as lasso and ridge.
-Computation is handled by multi-stage convex relaxation and the @code{PathwIse}
-CAlibrated Sparse Shooting @code{algOrithm} (PICASSO) which exploits warm start
-initialization, active set updating, and strong rule for coordinate preselection
-to boost computation, and attains a linear convergence to a unique sparse local
-optimum with optimal statistical properties.  The computation is
-memory-optimized using the sparse matrix output.")
-    (license license:gpl3)))
 
 (define-public r-piar
   (package
@@ -33588,13 +33600,13 @@ extensions and algorithms described in Kepplinger, D. (2020)
 (define-public r-penppml
   (package
     (name "r-penppml")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "penppml" version))
        (sha256
-        (base32 "1pxfnq5z7aygd2i3qcn2nvzvbw83gp4zhy3bavir3vpjd655llc3"))))
+        (base32 "09aarb08rf7ki989w0gjg4m82kfzhm375w8hmgk1mhaxx7lzvhsl"))))
     (properties `((upstream-name . "penppml")))
     (build-system r-build-system)
     (arguments
@@ -33815,13 +33827,13 @@ methods are provided.")
 (define-public r-pencal
   (package
     (name "r-pencal")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pencal" version))
        (sha256
-        (base32 "1wafrq4qgljycdmxhgc2jgbd2ayr9h4nbvss6l5dk2fxsq7yyv6x"))))
+        (base32 "09pym7fbiknyw8hgxcv7sh0sfa0iqr7nfg61hlvj5gwnz8n54fb4"))))
     (properties `((upstream-name . "pencal")))
     (build-system r-build-system)
     (arguments
@@ -40893,6 +40905,30 @@ possible that after a single trial or a few more, one won't find the precise
 parameters.  This enables one to look for the ideal RNG setting for a simulation
 that will accurately duplicate the desired parameters.")
     (license license:gpl2+)))
+
+(define-public r-params
+  (package
+    (name "r-params")
+    (version "0.7.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "params" version))
+       (sha256
+        (base32 "1jr6wvsn62xj6frfyr2znmraxdp93i76iqis8kg55lrqnv1sm5v3"))))
+    (properties `((upstream-name . "params")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-whisker r-readr r-rcpptoml r-purrr r-glue))
+    (home-page "https://github.com/sahilseth/params")
+    (synopsis "Simplify Parameters")
+    (description
+     "An interface to simplify organizing parameters used in a package, using external
+configuration files.  This attempts to provide a cleaner alternative to
+@code{options()}.")
+    (license license:gpl2)))
 
 (define-public r-paramlink2
   (package

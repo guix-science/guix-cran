@@ -32,6 +32,7 @@
   #:use-module (gnu packages databases)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages documentation)
+  #:use-module (gnu packages tbb)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -4531,6 +4532,43 @@ tide heights from the harmonics is based on XTide'.")
 sharing complex information.  rtiddlywiki is a R interface of @code{TiddlyWiki}
 <https://tiddlywiki.com> to create new tiddler from Rmarkdown file, and then put
 into a local @code{TiddlyWiki} node.js server if it is available.")
+    (license license:expat)))
+
+(define-public r-rticulate
+  (package
+    (name "r-rticulate")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rticulate" version))
+       (sha256
+        (base32 "01y6k877a5d62pmf8bmb9h7qcw2b6d2wdc1c1grsvclqmj2gp0im"))))
+    (properties `((upstream-name . "rticulate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-pracma
+                             r-mgcv
+                             r-magrittr
+                             r-gsignal
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stefanocoretta/rticulate")
+    (synopsis "Ultrasound Tongue Imaging")
+    (description
+     "This package provides a tool for processing Articulate Assistant Advancedâ¢
+(AAA) export files and plot tongue contour data from any system.")
     (license license:expat)))
 
 (define-public r-rthingsboard
@@ -9138,13 +9176,13 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
 (define-public r-rrpp
   (package
     (name "r-rrpp")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRPP" version))
        (sha256
-        (base32 "050l1n39dl5zjz15x6pfmqpzlxb8y6z5l3c7g5gggbdrcgj1navk"))))
+        (base32 "0nqjz4a0qkj8nrhf3jkxnj2gj5q0gz013z2mkgb9ldp851irkf1c"))))
     (properties `((upstream-name . "RRPP")))
     (build-system r-build-system)
     (arguments
@@ -17666,13 +17704,13 @@ various bootstrap procedures for mediation analysis on simulated data.")
 (define-public r-robmed
   (package
     (name "r-robmed")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robmed" version))
        (sha256
-        (base32 "081ykspsaw4abr7b8viam4fzrs27v9c0dhpis7bylj66l3109sh1"))))
+        (base32 "0myb9aa4wsdbxx21nn85f7p45sxvl21yhjz4alvys1xqdgmp949n"))))
     (properties `((upstream-name . "robmed")))
     (build-system r-build-system)
     (arguments
@@ -17686,7 +17724,9 @@ various bootstrap procedures for mediation analysis on simulated data.")
      "Perform mediation analysis via the fast-and-robust bootstrap test ROBMED
 (Alfons, Ates & Groenen, 2022a; <doi:10.1177/1094428121999096>), as well as
 various other methods.  Details on the implementation and code examples can be
-found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.")
+found in Alfons, Ates, and Groenen (2022b) <doi:10.18637/jss.v103.i13>.  Further
+discussion on robust mediation analysis can be found in Alfons & Schley (2024)
+<doi:10.31234/osf.io/2hqdy>.")
     (license license:gpl2+)))
 
 (define-public r-robma
@@ -18123,13 +18163,13 @@ be found in Ruckdeschel and Horbenko, (2013 and 2012),
 (define-public r-roben
   (package
     (name "r-roben")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roben" version))
        (sha256
-        (base32 "0ak3l17wmw2z0rgaymqczv40z8kqaflzzjj0fbdfcnskdik2ynfq"))))
+        (base32 "1v46c8icdgfrd42s3hhj5l8c27aj7rpfwgvw06zclara0np49a4d"))))
     (properties `((upstream-name . "roben")))
     (build-system r-build-system)
     (arguments
@@ -22891,13 +22931,13 @@ GJ18-04150Y'.")
 (define-public r-rlescalation
   (package
     (name "r-rlescalation")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLescalation" version))
        (sha256
-        (base32 "1wzqnrv9312871zbbcci8f7sgv29lf472l3i3xxlkqyi0q31qx05"))))
+        (base32 "1am8d35k5wxssxg88lajplqbic42wz4lq7qg4m4npk58v5c9z5n6"))))
     (properties `((upstream-name . "RLescalation")))
     (build-system r-build-system)
     (arguments
@@ -23733,13 +23773,13 @@ package.")
 (define-public r-rjwsacruncher
   (package
     (name "r-rjwsacruncher")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjwsacruncher" version))
        (sha256
-        (base32 "14yg801mxj0kvg3aswxvhbncs6mh63ddk0mnfawm39ycgwc19g3d"))))
+        (base32 "01vnn0i00yflw07kn52bk13swmf88chnb482cs660qdnq5lzkm7k"))))
     (properties `((upstream-name . "rjwsacruncher")))
     (build-system r-build-system)
     (arguments
@@ -26866,13 +26906,13 @@ Reference Interval Estimation\".  Clinical Chemistry (2022)
 (define-public r-ribd
   (package
     (name "r-ribd")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ribd" version))
        (sha256
-        (base32 "1g378kpi6660176d64r84kw8zk662sai83r33ayjxbfn6w8s48xy"))))
+        (base32 "0p5qh2s3hcbxgs1sqg5h00cq35nvxhw54xqr4jphl7bkwpbf89sz"))))
     (properties `((upstream-name . "ribd")))
     (build-system r-build-system)
     (arguments
@@ -33953,13 +33993,13 @@ footers, spanning headers, page by variables, and automatic page numbering.")
 (define-public r-report
   (package
     (name "r-report")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "report" version))
        (sha256
-        (base32 "1d0xkgnws3cdkkzbaw1py0yj09bwm3f6m7rrpbr8j3hr7ghfm5w3"))))
+        (base32 "0y8yj3qjb1pcy4lv5az3xks9gw8cnv8fwpcg6lllnn6wqjmm8jfs"))))
     (properties `((upstream-name . "report")))
     (build-system r-build-system)
     (arguments
@@ -36690,13 +36730,13 @@ and to enable outcome calculation.")
 (define-public r-regnet
   (package
     (name "r-regnet")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regnet" version))
        (sha256
-        (base32 "13d2awfq68im3zqab0pqg8mdi7ns7bam3ln94ysl8k86qi19i6ax"))))
+        (base32 "0p6lx1ba7yc8333bk98jc3qbsvlh13cfhk4l7k98cc1bhibjrxzx"))))
     (properties `((upstream-name . "regnet")))
     (build-system r-build-system)
     (arguments
@@ -48569,13 +48609,13 @@ text files and more...")
 (define-public r-rbmi
   (package
     (name "r-rbmi")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbmi" version))
        (sha256
-        (base32 "1m9dlf8f13jqzjvrjsigbdf6q7vcx1fzy0jb1k264k48ibbq0xyj"))))
+        (base32 "1rk3af5z02fsaxhyvx2d6gxcnalpgc3n36abnin053pv44vfr4jp"))))
     (properties `((upstream-name . "rbmi")))
     (build-system r-build-system)
     (arguments
@@ -48787,13 +48827,13 @@ the vector.")
 (define-public r-rbioapi
   (package
     (name "r-rbioapi")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbioapi" version))
        (sha256
-        (base32 "1ijmdqmmshqb3f6gv8rp6liz31cj00nmady28jdxadpxpp1bp34k"))))
+        (base32 "065621bbkxr9g6y6wl6ha41jqrh9bnagfdpcpmhi4sndp18vlz3n"))))
     (properties `((upstream-name . "rbioapi")))
     (build-system r-build-system)
     (arguments
@@ -49616,20 +49656,22 @@ file export, and the ability to save 3D visualizations to a 3D printable format.
 (define-public r-rayrender
   (package
     (name "r-rayrender")
-    (version "0.34.3")
+    (version "0.38.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayrender" version))
        (sha256
-        (base32 "1dcrkd4pncmxvi8n5lzy11amcbrrw7c7h2gxgjsywb180kimvv5g"))))
+        (base32 "13c2cmc0kc6cjl6j41kvxdjksmrjd9s0dnafxfvn6mfhgyw9mjw2"))))
     (properties `((upstream-name . "rayrender")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list tbb))
     (propagated-inputs (list r-withr
                              r-vctrs
+                             r-testthat
                              r-spacefillr
                              r-rcppthread
                              r-rcpp

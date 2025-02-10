@@ -2632,32 +2632,6 @@ and temperature in control and scenario simulation) and (4) transformation of
 time series at custom time scales.")
     (license license:gpl2)))
 
-(define-public r-music
-  (package
-    (name "r-music")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "music" version))
-       (sha256
-        (base32 "0fvj51h10pn5nbpv59z32jmfmm9xc76rg5rs3fiwh737q1fq5481"))))
-    (properties `((upstream-name . "music")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-crayon r-audio))
-    (home-page "https://github.com/egenn/music")
-    (synopsis "Learn and Experiment with Music Theory")
-    (description
-     "An aid for learning and using music theory.  You can build chords, scales, and
-chord progressions using 12-note equal temperament tuning (12-ET) or
-user-defined tuning.  Includes functions to visualize notes on a piano using
-ASCII plots in the console and to plot waveforms using base graphics.  It allows
-simple playback of notes and chords using the audio package.")
-    (license license:gpl3+)))
-
 (define-public r-musclesynergies
   (package
     (name "r-musclesynergies")
@@ -3024,13 +2998,13 @@ using latent effects based on the Chib and Winkelmann (2001)
 (define-public r-multpois
   (package
     (name "r-multpois")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multpois" version))
        (sha256
-        (base32 "1k7x1cni6dn0y0ar3vy23kwn13divbd7bmpgbh5iw1h5zv8y4qv2"))))
+        (base32 "0knpgila653wc565lbjqks73xhhjskgkq8wsbl8qwn9m16pbfp7x"))))
     (properties `((upstream-name . "multpois")))
     (build-system r-build-system)
     (arguments
@@ -3054,7 +3028,7 @@ Poisson regression as per Baker (1994) <doi:10.2307/2348134>.  Omnibus analyses
 of variance can be run along with post hoc pairwise comparisons.  For users
 wishing to analyze nominal responses from surveys or experiments, the functions
 in this package essentially act as though @code{stats::glm()} or
-@code{lme4::glmer()} had a family=multinomial option.")
+@code{lme4::glmer()} provide a family=multinomial option.")
     (license license:gpl2+)))
 
 (define-public r-multordrs
@@ -20233,13 +20207,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3torch
   (package
     (name "r-mlr3torch")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3torch" version))
        (sha256
-        (base32 "1q6jdyy0jyvjg3hab0i77p53iznx4z2hhxzx1rdj82n3q61wi8v2"))))
+        (base32 "0iqz66nszjqq731xkzi4xyq22ahiqfpr15pl28rbyhg64ghq0vfa"))))
     (properties `((upstream-name . "mlr3torch")))
     (build-system r-build-system)
     (arguments
@@ -25258,38 +25232,6 @@ correct analysis of time to disease recurrence.  Also includes a powerful set of
 object oriented survival data simulation functions.")
     (license license:gpl2+)))
 
-(define-public r-misscp
-  (package
-    (name "r-misscp")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MissCP" version))
-       (sha256
-        (base32 "0xmfkxwlkci11wwxdazs25k6z8apcl2vffkbpv8zic5lx1r9g2k4"))))
-    (properties `((upstream-name . "MissCP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sparsevar
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-glmnet
-                             r-ggplot2
-                             r-factoextra))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MissCP")
-    (synopsis "Change Point Detection with Missing Values")
-    (description
-     "This package provides a four step change point detection method that can detect
-break points with the presence of missing values proposed by Liu and Safikhani
-(2023)
-<https://drive.google.com/file/d/1a8@code{sV3RJ8VofLWikTDTQ7W4XJ76cEj4Fg/view?usp=drive_link>}.")
-    (license license:gpl2)))
-
 (define-public r-misscompare
   (package
     (name "r-misscompare")
@@ -26201,13 +26143,13 @@ MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "18x6sb0dwwk5xq20h3j5kyxrb0z6rnhi8z5bw7af2kwf3wwspr29"))))
+        (base32 "1wb4lmjgzbp6gvbqnjp439lzkhm3a6n7iji3i4j33vwp23p25pj0"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (arguments
@@ -26219,14 +26161,15 @@ MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
     (synopsis "Minimalist Async Evaluation Framework for R")
     (description
      "Designed for simplicity, a mirai evaluates an R expression asynchronously in a
-parallel process, locally or distributed over the network, with the result
-automatically available upon completion.  Modern networking and concurrency
-built on nanonext and NNG (Nanomsg Next Gen) ensure reliable and efficient
-scheduling, over fast inter-process communications or TCP/IP secured by TLS.
-Advantages include being inherently queued thus handling many more tasks than
-available processes, no storage on the file system, support for otherwise
-non-exportable reference objects, an event-driven promises implementation, and
-built-in asynchronous parallel map.")
+parallel process, locally or distributed over the network.  The result is
+automatically available upon completion.  Modern networking and concurrency,
+built on nanonext and NNG (Nanomsg Next Gen), ensures reliable and efficient
+scheduling over fast inter-process communications or TCP/IP secured by TLS.
+Distributed computing can launch remote resources via SSH or cluster managers.
+An inherently queued architecture handles many more tasks than available
+processes, and requires no storage on the file system.  Innovative features
+include support for otherwise non-exportable reference objects, event-driven
+promises, and asynchronous parallel map.")
     (license license:gpl3+)))
 
 (define-public r-mipplot
@@ -29176,13 +29119,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.12.0")
+    (version "1.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "08hhi1am00xvvf16qlhr8zcayyh0552ra6lcn3gd3b66w6n1xdi4"))))
+        (base32 "1b4cibxvx3wcv022khrm2p4hlpj15fwfmnyd4kh91cqdm2nahjsx"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
@@ -30068,6 +30011,51 @@ description of consortia, studies, annotated and searchable data dictionaries,
 and data access request management.  This Mica client allows to perform data
 extraction for reporting purposes.")
     (license license:gpl3)))
+
+(define-public r-mic
+  (package
+    (name "r-mic")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MIC" version))
+       (sha256
+        (base32 "196wax8wh14vns3kcs6z6qs2gxnrqcx34pzhmja6i43bbc54sk7h"))))
+    (properties `((upstream-name . "MIC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-rcpp
+                             r-purrr
+                             r-progressr
+                             r-lemon
+                             r-glue
+                             r-ggplot2
+                             r-future-apply
+                             r-forcats
+                             r-dplyr
+                             r-data-table
+                             r-biostrings
+                             r-amr))
+    (home-page "https://github.com/agerada/MIC")
+    (synopsis
+     "Analysis of Antimicrobial Minimum Inhibitory Concentration Data")
+    (description
+     "Analyse, plot, and tabulate antimicrobial minimum inhibitory concentration (MIC)
+data.  Validate the results of an MIC experiment by comparing observed MIC
+values to a gold standard assay, in line with standards from the International
+Organization for Standardization (2021)
+<https://www.iso.org/standard/79377.html>.  Perform MIC prediction from whole
+genome sequence data stored in the Pathosystems Resource Integration Center
+(2013) <doi:10.1093/nar/gkt1099> database or locally.")
+    (license license:gpl3+)))
 
 (define-public r-miamaxent
   (package
@@ -32568,13 +32556,13 @@ techniques used in this package are published in Gamble, Granger, & Mannion
 (define-public r-methodcompare
   (package
     (name "r-methodcompare")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethodCompare" version))
        (sha256
-        (base32 "10i9bxjsd7gdcdmrlyl1qymrhaikcb9jpzqi2hnnwcjaf0p1hfkr"))))
+        (base32 "1spaq490qky3c9ld9fgsyfp3yppryqnmv8mrw079afj91a0bbih8"))))
     (properties `((upstream-name . "MethodCompare")))
     (build-system r-build-system)
     (arguments
@@ -42270,6 +42258,48 @@ user.  Various characteristics can be flexibly added to the models, such as
 correlation between time points and shared class effects.  The consistency of
 direct and indirect evidence in the network can be assessed using unrelated mean
 effects models and/or by node-splitting.")
+    (license license:gpl3)))
+
+(define-public r-mbnmadose
+  (package
+    (name "r-mbnmadose")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MBNMAdose" version))
+       (sha256
+        (base32 "1ppkhgkb7ril3q2nbhsxh0g8lvhfpddpl2c5bl5m1j2gl21r0h9m"))))
+    (properties `((upstream-name . "MBNMAdose")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list jags))
+    (propagated-inputs (list r-scales
+                             r-rjags
+                             r-reshape2
+                             r-rdpack
+                             r-r2jags
+                             r-magrittr
+                             r-igraph
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://hugaped.github.io/MBNMAdose/")
+    (synopsis "Dose-Response MBNMA Models")
+    (description
+     "Fits Bayesian dose-response model-based network meta-analysis (MBNMA) that
+incorporate multiple doses within an agent by modelling different dose-response
+functions, as described by Mawdsley et al. (2016) <doi:10.1002/psp4.12091>.  By
+modelling dose-response relationships this can connect networks of evidence that
+might otherwise be disconnected, and can improve precision on treatment
+estimates.  Several common dose-response functions are provided; others may be
+added by the user.  Various characteristics and assumptions can be flexibly
+added to the models, such as shared class effects.  The consistency of direct
+and indirect evidence in the network can be assessed using unrelated mean
+effects models and/or by node-splitting at the treatment level.")
     (license license:gpl3)))
 
 (define-public r-mbmixture

@@ -17246,13 +17246,13 @@ Atmospheric Research.")
 (define-public r-latticedesign
   (package
     (name "r-latticedesign")
-    (version "2.0-5")
+    (version "3.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LatticeDesign" version))
        (sha256
-        (base32 "06pndvsp3v6gid46hcixh559pcmh2ckr9ss5065nbbrxhg2rf98b"))))
+        (base32 "05gqazrqq3mpkhkcrgs64bsl9c0lwddvw3pkjd660mipy3chdr31"))))
     (properties `((upstream-name . "LatticeDesign")))
     (build-system r-build-system)
     (arguments
@@ -17264,12 +17264,14 @@ Atmospheric Research.")
      "Lattice-based space-filling designs with fill or separation distance properties
 including interleaved lattice-based minimax distance designs proposed in Xu He
 (2017) <doi:10.1093/biomet/asx036>, interleaved lattice-based maximin distance
-designs proposed in Xu He (2018) <doi:10.1093/biomet/asy069>, (sliced) rotated
-sphere packing designs proposed in Xu He (2017)
-<doi:10.1080/01621459.2016.1222289> and Xu He (2019)
+designs proposed in Xu He (2018) <doi:10.1093/biomet/asy069>, interleaved
+lattice-based designs with low fill and high separation distance properties
+proposed in Xu He (2024) <doi:10.1137/23M156940X>, rotated sphere packing
+designs proposed in Xu He (2017) <doi:10.1080/01621459.2016.1222289>, sliced
+rotated sphere packing designs proposed in Xu He (2019)
 <doi:10.1080/00401706.2018.1458655>, and densest packing-based maximum
-projections designs proposed in Xu He (2020) <doi:10.1093/biomet/asaa057> and Xu
-He (2018) <@code{arXiv:1709.02062v2>}.")
+projections designs proposed in Xu He (2021) <doi:10.1093/biomet/asaa057> and Xu
+He (2018) <doi:10.48550/@code{arXiv.1709.02062>}.")
     (license license:lgpl2.1)))
 
 (define-public r-latte
@@ -19845,13 +19847,13 @@ multiple projects.")
 (define-public r-labeler
   (package
     (name "r-labeler")
-    (version "0.1.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labeleR" version))
        (sha256
-        (base32 "0a70jq7r9nvh84kaqig05qgv1yliv8vgf45f2nbpdq4slr5aq3rc"))))
+        (base32 "1lkpj5hhkihy51rxkchs2wlcwr1aa2i7fxdxqf9c143mg2igvyql"))))
     (properties `((upstream-name . "labeleR")))
     (build-system r-build-system)
     (arguments
@@ -19863,11 +19865,11 @@ multiple projects.")
      "Automate the Production of Custom Labels, Badges, Certificates, and Other Documents")
     (description
      "Create custom labels, badges, certificates and other documents.  Automate the
-production of potentially large numbers of accreditation badges, attendance and
-participation certificates, herbarium and collection labels, etc.  Documents are
-generated in PDF format, which requires a working installation of @code{LaTeX}',
-such as @code{TinyTeX}'.")
-    (license license:expat)))
+production of potentially large numbers of herbarium and collection labels,
+accreditation badges, attendance and participation certificates, etc, and
+deliver them automatically.  Documents are generated in PDF format, which
+requires a working installation of @code{LaTeX}', such as @code{TinyTeX}'.")
+    (license license:gpl3+)))
 
 (define-public r-label-switching
   (package

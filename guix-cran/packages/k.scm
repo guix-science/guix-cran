@@ -1074,13 +1074,13 @@ Baraniuk (2016) <doi:10.1080/00031305.2015.1086685>.")
 (define-public r-kpiwidget
   (package
     (name "r-kpiwidget")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kpiwidget" version))
        (sha256
-        (base32 "1b3lp421f63b9l4ix2lp399d408mj75p3a4k7vzd6qrwmslzi712"))))
+        (base32 "1lkg0yym3cqvb9zhfrfc1l8h2v5saqdwymr1ri68qq0zqh51ig9z"))))
     (properties `((upstream-name . "kpiwidget")))
     (build-system r-build-system)
     (arguments
@@ -1578,6 +1578,45 @@ international writers as it handles various paper formats well, provides layouts
 for many common window envelope types (e.g. German, US, French, Japanese) and
 lets you define your own layouts.  The package comes with a default letter
 layout based on DIN 5008B'.")
+    (license license:gpl3)))
+
+(define-public r-kollar
+  (package
+    (name "r-kollar")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kollaR" version))
+       (sha256
+        (base32 "1gn6203q2hky9vd56d9bjzg8d2y6sdlcb4ssb19k9hv7sx74b55z"))))
+    (properties `((upstream-name . "kollaR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-shiny
+                             r-scales
+                             r-plotly
+                             r-patchwork
+                             r-magick
+                             r-jpeg
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr
+                             r-base64enc))
+    (home-page "https://cran.r-project.org/package=kollaR")
+    (synopsis "Filtering, Visualization and Analysis of Eye Tracking Data")
+    (description
+     "This package provides functions for analysing eye tracking data, including event
+detection (I-VT, I-DT and two means clustering), visualizations and area of
+interest (AOI) based analyses.  See separate documentation for each function.
+The principles underlying I-VT and I-DT filters are described in Salvucci &
+Goldberg (2000,\\doi{10.1145/355017.355028}).  Two-means clustering is described
+in Hessels et al. (2017, \\doi{10.3758/s13428-016-0822-1}).")
     (license license:gpl3)))
 
 (define-public r-kokudosuuchi
@@ -3142,13 +3181,13 @@ project homepage.")
 (define-public r-klassr
   (package
     (name "r-klassr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "klassR" version))
        (sha256
-        (base32 "0kx774cddcwhqfawqiz73jnmibkafd78vwd3q8i6byawn1qa6v3b"))))
+        (base32 "006dpcbakxj56zsjq9dz2p0mj9pnqfb0yziyw6k8aywfacnmajj0"))))
     (properties `((upstream-name . "klassR")))
     (build-system r-build-system)
     (arguments

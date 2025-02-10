@@ -2064,13 +2064,13 @@ on human communication dynamics.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.4.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "1lrg5prs6gy1iv6i5n970miafvz1jqnv6bzvw2lciszrj5d2a8ry"))))
+        (base32 "117yb7wrg1bcp2ldrv60hl1skmx1zbsm3lqd9vr210bg801wa5wn"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (arguments
@@ -2080,6 +2080,9 @@ on human communication dynamics.")
                              r-tidyselect
                              r-tibble
                              r-rlang
+                             r-pillar
+                             r-memoise
+                             r-magrittr
                              r-lifecycle
                              r-jsonlite
                              r-glue
@@ -2088,12 +2091,13 @@ on human communication dynamics.")
                              r-dbi
                              r-collections
                              r-cli))
-    (home-page "https://duckdblabs.github.io/duckplyr/")
+    (native-inputs (list r-knitr))
+    (home-page "https://duckplyr.tidyverse.org")
     (synopsis "'DuckDB'-Backed Version of 'dplyr'")
     (description
      "This package provides a drop-in replacement for dplyr', powered by @code{DuckDB}
-for performance.  Also defines a set of generics that provide a low-level
-implementer's interface for the high-level user interface of dplyr'.")
+for performance.  Offers convenient utilities for working with in-memory and
+larger-than-memory data while retaining full dplyr compatibility.")
     (license license:expat)))
 
 (define-public r-duckduckr
@@ -4737,13 +4741,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "1g3207j1hh8f8ppc2ix7k1nzgrvccrl1j8clgrha57i146wz7b1s"))))
+        (base32 "1ldh6bdlig3hvlmrdnjhb919x92g6wygwlb9slf4xw0fdwyqy0a6"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -4753,6 +4757,7 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
                              r-tidyr
                              r-shiny
                              r-rlang
+                             r-r6
                              r-omopgenerics
                              r-magrittr
                              r-glue
@@ -6512,13 +6517,13 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
 (define-public r-dqastats
   (package
     (name "r-dqastats")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQAstats" version))
        (sha256
-        (base32 "163xjysvh8h06qc0yz4z21xf2w8angj05i50kfzsi4mwyiai8qd9"))))
+        (base32 "0q87wzqf53cw0b6f0i82iv6sjxhm4mmwg4g0ihij70w8lgan462q"))))
     (properties `((upstream-name . "DQAstats")))
     (build-system r-build-system)
     (arguments
@@ -6532,7 +6537,6 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
                              r-kableextra
                              r-jsonlite
                              r-future-apply
-                             r-future
                              r-dizutils
                              r-diztools
                              r-data-table))
@@ -6547,13 +6551,13 @@ Publication: Kapsner et al. (2021) <doi:10.1055/s-0041-1733847>.")
 (define-public r-dqagui
   (package
     (name "r-dqagui")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQAgui" version))
        (sha256
-        (base32 "0b2qy3h01k8v3l3bbnhij9ibr9gyzh8lnihqwmwnwqvrdgnypv6l"))))
+        (base32 "08d4v0hqqfrh9qiankp25fmsr3pg855l2d95yhgvw29m18nngmmc"))))
     (properties `((upstream-name . "DQAgui")))
     (build-system r-build-system)
     (arguments
@@ -11324,13 +11328,13 @@ and installs all these related packages in a single step.")
 (define-public r-divent
   (package
     (name "r-divent")
-    (version "0.4-4")
+    (version "0.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divent" version))
        (sha256
-        (base32 "0p51xpxc05w0f4djab84pcp7hi8g9lsdrrxdb3mi84qj6b5smbk4"))))
+        (base32 "1ljd4kfjdyc6qpi3bbqwli52mqkblvqc5syk5pbgjpwqfqbh9830"))))
     (properties `((upstream-name . "divent")))
     (build-system r-build-system)
     (arguments
@@ -11340,14 +11344,22 @@ and installs all these related packages in a single step.")
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-tibble
+                             r-spatstat-random
+                             r-spatstat-geom
+                             r-spatstat-explore
                              r-rlang
                              r-rdpack
+                             r-rcppparallel
+                             r-rcpp
                              r-rcolorbrewer
+                             r-igraph
                              r-ggplot2
                              r-entropyestimation
                              r-dplyr
+                             r-dbmss
                              r-cli
-                             r-ape))
+                             r-ape
+                             r-alphahull))
     (native-inputs (list r-knitr))
     (home-page "https://ericmarcon.github.io/divent/")
     (synopsis "Entropy Partitioning to Measure Diversity")
@@ -13730,6 +13742,40 @@ from package @code{DiscreteTests}', or a set of observed p-values and their
 discrete support under their nulls.  A shortcut function to obtain such p-values
 and supports is also provided, along with a wrapper allowing to apply discrete
 procedures directly to data.")
+    (license license:gpl3)))
+
+(define-public r-discretedlm
+  (package
+    (name "r-discretedlm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiscreteDLM" version))
+       (sha256
+        (base32 "0vshf403aqj4n7882d0f19wv188db48bsbf5zlnrdr221qvfm62x"))))
+    (properties `((upstream-name . "DiscreteDLM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmod
+                             r-reshape2
+                             r-ggridges
+                             r-ggplot2
+                             r-dplyr
+                             r-dlnm
+                             r-bayeslogit))
+    (home-page "https://github.com/DanDempsey/DiscreteDLM")
+    (synopsis
+     "Bayesian Distributed Lag Model Fitting for Binary and Count Response Data")
+    (description
+     "This package provides tools for fitting Bayesian Distributed Lag Models (DLMs)
+to longitudinal response data that is a count or binary.  Count data is fit
+using negative binomial regression and binary is fit using quantile regression.
+The contribution of the lags are fit via b-splines.  In addition, infers the
+predictor inclusion uncertainty.  Multimomial models are not supported.  Based
+on Dempsey and Wyse (2025) <doi:10.48550/@code{arXiv.2403.03646>}.")
     (license license:gpl3)))
 
 (define-public r-discretedists
@@ -17209,13 +17255,13 @@ dice.")
 (define-public r-dibble
   (package
     (name "r-dibble")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dibble" version))
        (sha256
-        (base32 "1s845ii2hd0d2aam3wp3rb7r7i60plzqdmgdgix1pwbam02cfymn"))))
+        (base32 "08mzgjhbcdha9f2nmryjv3mw19aahh6xkbz7mmylr6mzm0fj7nfi"))))
     (properties `((upstream-name . "dibble")))
     (build-system r-build-system)
     (arguments
@@ -18425,13 +18471,13 @@ dichotomized functional response regression (dfrr) model.")
 (define-public r-dfr
   (package
     (name "r-dfr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfr" version))
        (sha256
-        (base32 "0j0pi5dd6xy9kqci2yz6316yg3fcqalrvb09z3vxxsi6chabxnch"))))
+        (base32 "0pgwbdmkymd3790cvy02mwip7nq763yj0xpa4y54b2z3bpafynjm"))))
     (properties `((upstream-name . "dfr")))
     (build-system r-build-system)
     (arguments
@@ -19948,22 +19994,21 @@ Biodiversity Monitoring Institute and the Boreal Avian Modelling Project.")
 (define-public r-details
   (package
     (name "r-details")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "details" version))
        (sha256
-        (base32 "0mygkmfmfp3a2hgql514zyh4rw3v8i4g4cls6rss0fplg4pskwc7"))))
+        (base32 "1ya5m9bx5qyvkvgipmrjl67vd4nbsnxypw8zsca8da6wxq504vb1"))))
     (properties `((upstream-name . "details")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-xfun
                              r-withr
                              r-png
-                             r-magrittr
                              r-knitr
                              r-httr
                              r-htmltools
@@ -23935,13 +23980,13 @@ data to fill in missing data.  The method is as described in: Campos, D.F.,
 (define-public r-deductive
   (package
     (name "r-deductive")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deductive" version))
        (sha256
-        (base32 "11cn6wncd438g5ar5pjw6rw50060mksjf0xjcds92s97dz5m28a4"))))
+        (base32 "0r3p4664jsk705ybbrb6c5zhy86b0yl6hqqbcs9iabajn4wj4wpl"))))
     (properties `((upstream-name . "deductive")))
     (build-system r-build-system)
     (arguments

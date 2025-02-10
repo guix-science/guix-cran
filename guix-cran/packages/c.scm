@@ -342,13 +342,13 @@ CYSTINET, the European Network on taeniosis/cysticercosis, COST ACTION TD1302.")
 (define-public r-cyphr
   (package
     (name "r-cyphr")
-    (version "1.1.4")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cyphr" version))
        (sha256
-        (base32 "17lzkmbk4fds5z8jwd2rlpy8v611qr6pdybf575hlnh61w1nf99x"))))
+        (base32 "0zva1kig10p5sl2sajhprd0ad7k6lz4wlfplznwc45r2jfv7bkga"))))
     (properties `((upstream-name . "cyphr")))
     (build-system r-build-system)
     (arguments
@@ -1003,13 +1003,13 @@ P., Olsen, L. R., & Wambugu M. (2019, ISBN: 9781838550134).")
 (define-public r-cvmortalitymult
   (package
     (name "r-cvmortalitymult")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CvmortalityMult" version))
        (sha256
-        (base32 "0khfgzs0disnh089pyca04660gj5h3ycm49pndchcwpc7kp8yz80"))))
+        (base32 "02zzg4ygs843gwlcs5rk0lqklif0hv1ghj9hnx0gf50z2ibp9a9n"))))
     (properties `((upstream-name . "CvmortalityMult")))
     (build-system r-build-system)
     (arguments
@@ -1524,6 +1524,29 @@ predictor that has a U-shaped relationship with survival outcomes based on Cox
 regression model.  The optimal equal-HR method estimates two optimal cut-points
 that have approximately the same log hazard value based on Cox regression model
 and divides individuals into different groups according to their HR values.")
+    (license license:gpl3)))
+
+(define-public r-cutools
+  (package
+    (name "r-cutools")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CUtools" version))
+       (sha256
+        (base32 "0i7chi4glvkgsj807xiqrzn87gw0kk851klgq4bzaz93pcc9rxf7"))))
+    (properties `((upstream-name . "CUtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=CUtools")
+    (synopsis "Clinical Utility Tools to Analyze a Predictive Model")
+    (description
+     "Package to analyze the clinical utility of a biomarker.  It provides the
+clinical utility curve, clinical utility table, efficacy of a biomarker,
+clinical efficacy curve and tests to compare efficacy between markers.")
     (license license:gpl3)))
 
 (define-public r-cutoff
@@ -9332,33 +9355,6 @@ Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
 equality operations are calculated using cpp11'.")
     (license license:expat)))
 
-(define-public r-cppcontainers
-  (package
-    (name "r-cppcontainers")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cppcontainers" version))
-       (sha256
-        (base32 "01dn5m9p66w1j32iimbqrw6xsm6n506f1nbp677qybqiw03xykc7"))))
-    (properties `((upstream-name . "cppcontainers")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cdueben/cppcontainers")
-    (synopsis "'C++' Standard Template Library Containers")
-    (description
-     "Use C++ Standard Template Library containers interactively in R. Includes sets,
-unordered sets, multisets, unordered multisets, maps, unordered maps, multimaps,
-unordered multimaps, stacks, queues, priority queues, vectors, deques, forward
-lists, and lists.")
-    (license license:expat)))
-
 (define-public r-cppcheckr
   (package
     (name "r-cppcheckr")
@@ -10439,13 +10435,13 @@ confidence intervals.")
 (define-public r-coxmos
   (package
     (name "r-coxmos")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Coxmos" version))
        (sha256
-        (base32 "04pchdph9mmjnnlbry9yb1c0nfpninaza973mr27djmgjxl50y8n"))))
+        (base32 "0iljw8pj6khpgignqsa0wrbif19z42ww88bmllwx1i413qsyizdr"))))
     (properties `((upstream-name . "Coxmos")))
     (build-system r-build-system)
     (arguments
@@ -15279,13 +15275,13 @@ revision).")
 (define-public r-copula
   (package
     (name "r-copula")
-    (version "1.1-4")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copula" version))
        (sha256
-        (base32 "0kshyr77qiidcmi51dyapbdv46dkxv5n4p71vwh7cyb091zqpmzl"))))
+        (base32 "0429zsg14jkky7y38wspvp77n7pa8090jjz8m9gg1hc78an6y16x"))))
     (properties `((upstream-name . "copula")))
     (build-system r-build-system)
     (arguments
@@ -16286,13 +16282,13 @@ regression trees.")
 (define-public r-convertid
   (package
     (name "r-convertid")
-    (version "0.1.8")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convertid" version))
        (sha256
-        (base32 "0mprymgh5wbh9x6kn98q4r6c6rp2l108ddmp2g7lh9m635ys6v8m"))))
+        (base32 "1s4mr6cz9dsgwwcd83gvx295infrh6hcymrdw53h5z01x5hhdi20"))))
     (properties `((upstream-name . "convertid")))
     (build-system r-build-system)
     (arguments
@@ -24863,6 +24859,32 @@ P. (2024) <@code{arXiv:2403.18602>}.  Build multiple networks using the
 @code{coglasso()} function, select the best one with @code{stars_coglasso()}.")
     (license license:gpl2+)))
 
+(define-public r-cogirt
+  (package
+    (name "r-cogirt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cogirt" version))
+       (sha256
+        (base32 "1sbqgcpqmg8jyd8m6qkxf16z41vh26rkymw5p1pcyn8qsbbhlcyz"))))
+    (properties `((upstream-name . "cogirt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numderiv r-mvtnorm r-mass r-coda r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cogirt")
+    (synopsis "Cognitive Testing Using Item Response Theory")
+    (description
+     "Psychometrically analyze latent individual differences related to tasks,
+interventions, or maturational/aging effects in the context of experimental or
+longitudinal cognitive research using methods first described by Thomas et al.
+(2020) <doi:10.1177/0013164420919898>.")
+    (license license:gpl3+)))
+
 (define-public r-coga
   (package
     (name "r-coga")
@@ -29120,20 +29142,20 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermq" version))
        (sha256
-        (base32 "0d7yikm6n8gykm38bn9xqs5ndafkx29v2g5wxhav43q5ncl8hmdf"))))
+        (base32 "1yz37vcj605rwby27kjx9drp65nfk6va9s7q8fhbb9i1w26f2fz3"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list zlib))
-    (propagated-inputs (list r-rcpp r-r6 r-progress r-narray r-globals))
+    (propagated-inputs (list r-rcpp r-r6 r-progress r-globals))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://mschubert.github.io/clustermq/")
     (synopsis
@@ -31842,13 +31864,13 @@ cleaner interface than @code{processx::run()}.")
 (define-public r-clidamonger
   (package
     (name "r-clidamonger")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clidamonger" version))
        (sha256
-        (base32 "1rcfa6d3vfx6bbjjggrqfz10lppql7hjiy06jsrgybw2j0x73hmk"))))
+        (base32 "0dqq59cgjynccz4c9rs7mz7b3s8gldcr4s9m17wjmkjz2ldba3xr"))))
     (properties `((upstream-name . "clidamonger")))
     (build-system r-build-system)
     (arguments
@@ -35447,6 +35469,42 @@ regression of residuals, and the structural equation modeling approach are
 implemented for comparison.")
     (license license:gpl2)))
 
+(define-public r-cider
+  (package
+    (name "r-cider")
+    (version "0.99.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CIDER" version))
+       (sha256
+        (base32 "16cv4w38x9zadc28x0z1hajfyy32vhf0w818zcqcakarrz6y7d08"))))
+    (properties `((upstream-name . "CIDER")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-seurat
+                             r-pheatmap
+                             r-limma
+                             r-kernlab
+                             r-igraph
+                             r-ggplot2
+                             r-foreach
+                             r-edger
+                             r-doparallel
+                             r-dbscan))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zhiyuan-hu-lab/CIDER")
+    (synopsis "Meta-Clustering for scRNA-Seq Integration and Evaluation")
+    (description
+     "This package provides a workflow of (a) meta-clustering based on inter-group
+similarity measures and (b) a ground-truth-free test metric to assess the
+biological correctness of integration in real datasets.  See Hu Z, Ahmed A, Yau
+C (2021) <doi:10.1101/2021.03.29.437525> for more details.")
+    (license license:expat)))
+
 (define-public r-cici
   (package
     (name "r-cici")
@@ -37976,13 +38034,13 @@ following policies.")
 (define-public r-checkglobals
   (package
     (name "r-checkglobals")
-    (version "0.1.0")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checkglobals" version))
        (sha256
-        (base32 "1jcpga1bx8cx6fdf1ddjkfk7ap5dvm03g5xkni7as5bisggsp4jv"))))
+        (base32 "146d77mkb81d8nanyq3hw7cxn82941wcqxj70kb7m9g77ik4wzdq"))))
     (properties `((upstream-name . "checkglobals")))
     (build-system r-build-system)
     (arguments
@@ -38888,13 +38946,13 @@ models can be compared using an adjusted likelihood ratio test.")
 (define-public r-chainladder
   (package
     (name "r-chainladder")
-    (version "0.2.19")
+    (version "0.2.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChainLadder" version))
        (sha256
-        (base32 "0i5mif26m4kdii7rx7dvsk98d53qyrzdd2x7x9idqsrs7cl5srm9"))))
+        (base32 "0z6dm3h5dfxcvjgnz9dw4mxm57v3qm4295aypxk3jkg9j5jr8rwq"))))
     (properties `((upstream-name . "ChainLadder")))
     (build-system r-build-system)
     (arguments
@@ -40893,13 +40951,13 @@ show various ways to load them.  Refer to Pham (2020)
 (define-public r-centr
   (package
     (name "r-centr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "centr" version))
        (sha256
-        (base32 "0k6gyakzlxg089wlzxhr28cr4bqywlsw30308qcxvayy6fmvsf6d"))))
+        (base32 "08lvq00ss8dm95m8z3x6y9cqqbrr2cvmci79nx0fbx18l3yv1rgv"))))
     (properties `((upstream-name . "centr")))
     (build-system r-build-system)
     (arguments
@@ -43427,13 +43485,13 @@ Journal of Statistical Theory Practice, 16(3): 47.
 (define-public r-cccrm
   (package
     (name "r-cccrm")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccrm" version))
        (sha256
-        (base32 "15a797d9m90pwxc9lpa836dd3mml11pfmx256sgqysmd5rkn13fx"))))
+        (base32 "0sgh1q9rcxxpfrphr62fwghspwfnzr0lis7hj05bwa3iqjjsfcr1"))))
     (properties `((upstream-name . "cccrm")))
     (build-system r-build-system)
     (arguments
@@ -43446,7 +43504,9 @@ Journal of Statistical Theory Practice, 16(3): 47.
                              r-parallelly
                              r-nlmeu
                              r-nlme
+                             r-mass
                              r-lifecycle
+                             r-ggplot2
                              r-future
                              r-furrr
                              r-dplyr
@@ -48671,23 +48731,25 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "0sxyx72iy1mjx6cjgags39543c36df3dxhgi3xd7q40rbhckih5n"))))
+        (base32 "0hl7wjy70zxi39kzbqys139w17gjbl4dq8fy307x3s2j33b853yf"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
+                             r-rlang
                              r-readr
                              r-purrr
-                             r-plyr
+                             r-mass
                              r-magrittr
+                             r-laplacesdemon
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -48710,13 +48772,13 @@ mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.5.5")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "172wgp87wlpd20600hcyyxdshpq7ak6zf59yjvqryni1wcrc3l1m"))))
+        (base32 "0n2m57g7zrwbb2m6hjlx2n0rhxj325lpmjwhb107l67lqws0fbh1"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (arguments
@@ -48727,7 +48789,6 @@ mrgsolve'.")
                              r-rlang
                              r-purrr
                              r-progressr
-                             r-plyr
                              r-mass
                              r-ggplot2
                              r-future

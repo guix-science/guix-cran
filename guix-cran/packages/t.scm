@@ -5796,13 +5796,13 @@ more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "11hwwbp6s3g621wvfik7i4ch4rlxq44ck9hkwkwwc01mbs5n1hms"))))
+        (base32 "1a1wf72p51fgm843vbpsj7a2h7za6d3mknvy05jjmnh3d62z5vc3"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -8129,13 +8129,13 @@ customizable ggparty package for drawing decision trees.")
 (define-public r-treefit
   (package
     (name "r-treefit")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treefit" version))
        (sha256
-        (base32 "0258844r50ksxjivmnvgzr8f83qz1cqfyq7j5jgyxpqps62q5v7w"))))
+        (base32 "03l9jic64pdj8kzcw7djmsv73kqjxf706vr20hz152z8hna1sr3j"))))
     (properties `((upstream-name . "treefit")))
     (build-system r-build-system)
     (arguments
@@ -8728,13 +8728,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.7.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "12l5y4d9a1734ir1kaw1q7plhiirrm3lrpfwc7jdqsii3iss8hpj"))))
+        (base32 "16nj4p4wbfibdkbjbp0rrp6rzr00j75xd2ng23pacxf7z19w1c5b"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (arguments
@@ -8747,9 +8747,11 @@ details.")
                              r-shiny
                              r-r6
                              r-networkd3
+                             r-jsonlite
                              r-htmlwidgets
                              r-ggplot2
                              r-dplyr
+                             r-dbplyr
                              r-checkmate
                              r-andromeda))
     (native-inputs (list r-knitr))
@@ -11769,13 +11771,13 @@ from decennial census and American Community Survey 1-year and 5-year estimates.
 (define-public r-toster
   (package
     (name "r-toster")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TOSTER" version))
        (sha256
-        (base32 "1xp3hcx4nhxqw9mdqhk9h11wy3zpwci0z0hc38pryq7y6rx8908f"))))
+        (base32 "0j6sp54b5fj4n93b3nllza821yzlx4qbxxf2dz7wjpa7lz7i8s4r"))))
     (properties `((upstream-name . "TOSTER")))
     (build-system r-build-system)
     (arguments
@@ -18474,13 +18476,13 @@ minimal code.")
 (define-public r-tidyheatmap
   (package
     (name "r-tidyheatmap")
-    (version "1.11.4")
+    (version "1.11.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyHeatmap" version))
        (sha256
-        (base32 "12h131ygwva5k7gx2g8x528ws56y2s43v11qvlsdbs4jsgymvj6z"))))
+        (base32 "0fk0zgh0i4wv1fcqsd9bha6096c8y5a0cwpykqqq4sa1v3ji58pb"))))
     (properties `((upstream-name . "tidyHeatmap")))
     (build-system r-build-system)
     (arguments
@@ -28396,6 +28398,56 @@ backups from resulting R-objects.  Also quick displays are implemented as
 summary-methods.")
     (license license:gpl2+)))
 
+(define-public r-taxize
+  (package
+    (name "r-taxize")
+    (version "0.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taxize" version))
+       (sha256
+        (base32 "0ix2zcgd93cs8kljxv547swa0adzkwabh2hwg14p4q348l049dv4"))))
+    (properties `((upstream-name . "taxize")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xml2
+                             r-worrms
+                             r-wikitaxa
+                             r-tibble
+                             r-stringi
+                             r-rredlist
+                             r-rotl
+                             r-ritis
+                             r-r6
+                             r-phangorn
+                             r-natserv
+                             r-lifecycle
+                             r-jsonlite
+                             r-data-table
+                             r-curl
+                             r-crul
+                             r-crayon
+                             r-cli
+                             r-ape))
+    (home-page "https://docs.ropensci.org/taxize/")
+    (synopsis "Taxonomic Information from Around the Web")
+    (description
+     "Interacts with a suite of web application programming interfaces (API) for
+taxonomic tasks, such as getting database specific taxonomic identifiers,
+verifying species names, getting taxonomic hierarchies, fetching downstream and
+upstream taxonomic names, getting taxonomic synonyms, converting scientific to
+common names and vice versa, and more.  Some of the services supported include
+NCBI E-utilities (<https://www.ncbi.nlm.nih.gov/books/NBK25501/>), Encyclopedia
+of Life (<https://eol.org/docs/what-is-eol/data-services>), Global Biodiversity
+Information Facility (<https://techdocs.gbif.org/en/openapi/>), and many more.
+Links to the API documentation for other supported services are available in the
+documentation for their respective functions in this package.")
+    (license license:expat)))
+
 (define-public r-taxicabca
   (package
     (name "r-taxicabca")
@@ -29418,6 +29470,69 @@ medication similarities in the Anatomical Therapeutic Chemical Classification
 System, medication timing and medication amount or dosage.  Tools for
 summarizing, illustrating and manipulating the cluster objects are also
 available.")
+    (license license:expat)))
+
+(define-public r-tall
+  (package
+    (name "r-tall")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tall" version))
+       (sha256
+        (base32 "11jlczhf5x957sdz5fa4558qdz8b6ai9q21qah3nvx79hghkrfwk"))))
+    (properties `((upstream-name . "tall")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-udpipe
+                             r-topicmodels
+                             r-tidyr
+                             r-tidygraph
+                             r-textrank
+                             r-strucchange
+                             r-stringr
+                             r-sparkline
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shinydashboardplus
+                             r-shinycssloaders
+                             r-shiny
+                             r-rspectra
+                             r-rlang
+                             r-readxl
+                             r-readtext
+                             r-readr
+                             r-rcpp
+                             r-purrr
+                             r-promises
+                             r-plotly
+                             r-pdftools
+                             r-pagedown
+                             r-openxlsx
+                             r-ldatuning
+                             r-later
+                             r-jsonlite
+                             r-igraph
+                             r-fontawesome
+                             r-dt
+                             r-dplyr
+                             r-doparallel
+                             r-curl
+                             r-chromote
+                             r-ca))
+    (home-page "https://github.com/massimoaria/tall")
+    (synopsis "Text Analysis for All")
+    (description
+     "An R shiny app designed for diverse text analysis tasks, offering a wide range
+of methodologies tailored to Natural Language Processing (NLP) needs.  It is a
+versatile, general-purpose tool for analyzing textual data.  tall features a
+comprehensive workflow, including data cleaning, preprocessing, statistical
+analysis, and visualization, all integrated for effective text analysis.")
     (license license:expat)))
 
 (define-public r-talkr

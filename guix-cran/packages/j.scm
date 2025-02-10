@@ -3834,6 +3834,39 @@ Neighbors.  The compact set of hyper-parameters is tuned via grid or random
 search.")
     (license license:gpl3)))
 
+(define-public r-jellyfisher
+  (package
+    (name "r-jellyfisher")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jellyfisher" version))
+       (sha256
+        (base32 "0k7w94bnadn3xm4k93gyxzf0yllqi8akpq3a90fsi7vw3gs32jc1"))))
+    (properties `((upstream-name . "jellyfisher")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-htmlwidgets r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HautaniemiLab/jellyfisher")
+    (synopsis "Visualize Spatiotemporal Tumor Evolution with Jellyfish Plots")
+    (description
+     "Generates interactive Jellyfish plots to visualize spatiotemporal tumor
+evolution by integrating sample and phylogenetic trees into a unified plot.
+This approach provides an intuitive way to analyze tumor heterogeneity and
+evolution over time and across anatomical locations.  The Jellyfish plot
+visualization design was first introduced by Lahtinen, Lavikka, et al. (2023,
+<doi:10.1016/j.ccell.2023.04.017>).  This package also supports visualizing
+@code{ClonEvol} results, a tool developed by Dang, et al. (2017,
+<doi:10.1093/annonc/mdx517>), for analyzing clonal evolution from multi-sample
+sequencing data.  The clonevol package is not available on CRAN but can be
+installed from its @code{GitHub} repository
+(<https://github.com/hdng/clonevol>).")
+    (license license:expat)))
+
 (define-public r-jeek
   (package
     (name "r-jeek")

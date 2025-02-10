@@ -702,19 +702,19 @@ package is now deprecated as a result.")
 (define-public r-zigg
   (package
     (name "r-zigg")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zigg" version))
        (sha256
-        (base32 "18jrvs8q4fygs9lm2v874xr0smqzas9r1p6r3qav3yc37vlklnaj"))))
+        (base32 "1v1c11ajdjycp24z9afv7mysmih55jaj1r7vh36xxd7m9b2pr93c"))))
     (properties `((upstream-name . "zigg")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://cran.r-project.org/package=zigg")
+    (home-page "https://github.com/eddelbuettel/zigg")
     (synopsis
      "Lightweight Interfaces to the 'Ziggurat' Pseudo Random Number Generator")
     (description
