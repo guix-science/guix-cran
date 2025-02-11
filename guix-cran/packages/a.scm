@@ -2478,10 +2478,10 @@ architecture and hyperparameters of deep learning models.")
                              r-desc
                              r-cli))
     (home-page "https://github.com/DanChaltiel/autoimport")
-    (synopsis "Automatic Generation of @importFrom Tags")
+    (synopsis "Automatic Generation of importFrom Tags")
     (description
      "This package provides a toolbox to read all R files inside a package and
-automatically generate @@@code{importFrom} roxygen2 tags in the right place.
+automatically generate @code{importFrom} roxygen2 tags in the right place.
 Includes a shiny application to review the changes before applying them.")
     (license license:gpl3)))
 
