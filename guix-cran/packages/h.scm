@@ -1213,13 +1213,13 @@ Piper-Hill diagrams) of water analyses for major ions.")
 (define-public r-hydroevents
   (package
     (name "r-hydroevents")
-    (version "0.11")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroEvents" version))
        (sha256
-        (base32 "1w433lmzk6lr2lnqn1qcq13c980kpi0r881cdzm56n53s89zdh36"))))
+        (base32 "106072lvh4dwwihnsj8lskn0x5k8nzz14lsg3dhs24jw122ngxax"))))
     (properties `((upstream-name . "hydroEvents")))
     (build-system r-build-system)
     (arguments
@@ -9145,13 +9145,13 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
 (define-public r-hexdensity
   (package
     (name "r-hexdensity")
-    (version "1.4.5")
+    (version "1.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexDensity" version))
        (sha256
-        (base32 "08viz39hxb34w8xycs6r1qdrb2rfxai4frxc3vjlgg97b5lcnl0q"))))
+        (base32 "1wnhv4hhcwvzr73sb777j35amxs3xk5qric0s1n1viwbw031qi4j"))))
     (properties `((upstream-name . "hexDensity")))
     (build-system r-build-system)
     (arguments
@@ -11428,6 +11428,34 @@ on many jumps in nonparametric panel regression models\". @code{arXiv} preprint
 <doi:10.48550/@code{arXiv.2312.01162>}.")
     (license license:expat)))
 
+(define-public r-hdsvm
+  (package
+    (name "r-hdsvm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdsvm" version))
+       (sha256
+        (base32 "1dhbdy4b5vn2m4x9gffxicvdz3z9w8hi8r7yiscr4sgmzf424155"))))
+    (properties `((upstream-name . "hdsvm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=hdsvm")
+    (synopsis "Fast Algorithm for Support Vector Machine")
+    (description
+     "This package implements an efficient algorithm to fit and tune penalized Support
+Vector Machine models using the generalized coordinate descent algorithm.
+Designed to handle high-dimensional datasets effectively, with emphasis on
+precision and computational efficiency.  This package implements the algorithms
+proposed in Tang, Q., Zhang, Y., & Wang, B. (2022)
+<https://openreview.net/pdf?id=@code{RvwMTDYTOb>}.")
+    (license license:gpl2)))
+
 (define-public r-hdstim
   (package
     (name "r-hdstim")
@@ -11628,6 +11656,34 @@ algorithm.  In this package we also provide the code for traditional PCA, the
 Robust Two Step (RTS) method by He et al. (2022) and the Quantile Factor
 Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-hdqr
+  (package
+    (name "r-hdqr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdqr" version))
+       (sha256
+        (base32 "0vv9axz00g4iwz658hvq6ci48d6zsc5yvpmx07i4fzh2c231mrpd"))))
+    (properties `((upstream-name . "hdqr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=hdqr")
+    (synopsis "Fast Algorithm for Penalized Quantile Regression")
+    (description
+     "This package implements an efficient algorithm to fit and tune penalized
+quantile regression models using the generalized coordinate descent algorithm.
+Designed to handle high-dimensional datasets effectively, with emphasis on
+precision and computational efficiency.  This package implements the algorithms
+proposed in Tang, Q., Zhang, Y., & Wang, B. (2022)
+<https://openreview.net/pdf?id=@code{RvwMTDYTOb>}.")
+    (license license:gpl2)))
 
 (define-public r-hdpglm
   (package

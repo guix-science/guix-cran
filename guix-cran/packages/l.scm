@@ -6058,13 +6058,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "1nps6gwmiv7cl8bm404xk484fxcz4drakm54rkfjbdk1b15dnc05"))))
+        (base32 "02426a3m3mgpmhp8l0fy6fhd688h8s14ynswg3mmfg9xm4na8qlf"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (arguments
@@ -8373,20 +8373,20 @@ median of the distribution.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "08sfxmlvbaryrnp063vmbdykyrncqdm4f5l1fc3pc2l0y7y5l655"))))
+        (base32 "0kr8kir2nzx2mx6ibr3mcwjlkhi46yiq8fpk6d5s7fq8zw8mpcsd"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-purrr r-httr2))
-    (home-page "https://cran.r-project.org/package=LLMR")
+    (home-page "https://github.com/asanaei/LLMR")
     (synopsis "Interface for Large Language Model APIs in R")
     (description
      "This package provides a unified interface to interact with various Large
@@ -8395,7 +8395,8 @@ Language Model (LLM) APIs such as @code{OpenAI} (see
 <https://docs.anthropic.com/en/api/getting-started> for details), Groq (see
 <https://console.groq.com/docs/api-reference> for details), Together AI (see
 <https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek} (see
-<https://api-docs.deepseek.com> for details), and Voyage AI (see
+<https://api-docs.deepseek.com> for details), Gemini (see
+<https://aistudio.google.com> for details), and Voyage AI (see
 <https://docs.voyageai.com/docs/introduction> for details).  Allows users to
 configure API parameters, send messages, and retrieve responses seamlessly
 within R.")
@@ -11248,13 +11249,13 @@ of common parameters, and semi-automated analysis and visualization.")
 (define-public r-lightauc
   (package
     (name "r-lightauc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lightAUC" version))
        (sha256
-        (base32 "00nh4vf8qh5n5sricqcpj800ln43k5bjv4yf2faxj4b54c04g8ip"))))
+        (base32 "1vf2jgqq205bcms8rszvzacl317dcl46464mxlbak938mrwjrdys"))))
     (properties `((upstream-name . "lightAUC")))
     (build-system r-build-system)
     (arguments
@@ -11428,13 +11429,13 @@ of Economic Entomology, Volume 93, Issue 2) <doi:10.1603/0022-0493-93.2.511>.")
 (define-public r-lifer
   (package
     (name "r-lifer")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lifeR" version))
        (sha256
-        (base32 "0cr70wcj84k3h6vgxw9s98md7q63q4qvxdp5065j4vwf49igi492"))))
+        (base32 "042d3i12r7kp6dh6y7gl72hspv1blah7xgpzdhr71zrrila6azmm"))))
     (properties `((upstream-name . "lifeR")))
     (build-system r-build-system)
     (arguments
@@ -12092,13 +12093,13 @@ individuals have unknown sex.")
 (define-public r-lhd
   (package
     (name "r-lhd")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LHD" version))
        (sha256
-        (base32 "106563435lycw1z7bd54k6sjlkwhh3di5cjgl9ndgig37dw9fhns"))))
+        (base32 "0lj56c9sp62lyavji3fb6ilhfk4jfckpr4xb2q732w3kljm604h1"))))
     (properties `((upstream-name . "LHD")))
     (build-system r-build-system)
     (arguments
@@ -12644,13 +12645,13 @@ integrals and fuzzy transform.")
 (define-public r-lfe
   (package
     (name "r-lfe")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfe" version))
        (sha256
-        (base32 "0lj4xz5m9hvsfi5pyfrlbap64s3yxzsddv9qhr9l9gjpfk6phyw8"))))
+        (base32 "14barjzf87xrw9lpahi6ryw9qizvwggjisp9cd8kkapy0bxvy1y0"))))
     (properties `((upstream-name . "lfe")))
     (build-system r-build-system)
     (arguments
@@ -12669,7 +12670,7 @@ instrumental variables, conditional F statistics for weak instruments, robust
 and multi-way clustered standard errors, as well as limited mobility bias
 correction (Gaure 2014 <doi:10.1002/sta4.68>).  Since version 3.0, it provides
 dedicated functions to estimate Poisson models.")
-    (license license:expat)))
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-lfdrempiricalbayes
   (package
@@ -14863,6 +14864,30 @@ to write an @code{ImageJ} macro which is optimized for a leaf area analysis by
 default.")
     (license license:gpl2)))
 
+(define-public r-leadsense
+  (package
+    (name "r-leadsense")
+    (version "0.0.1.0000")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LeadSense" version))
+       (sha256
+        (base32 "166pbjmyag1gn3gf0vbsxb599gqs2jcggn4dy60706m7cpc18hnp"))))
+    (properties `((upstream-name . "LeadSense")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-ggpubr r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=LeadSense")
+    (synopsis "Medtronic Brain Sense Local Field Potencial Analysis")
+    (description
+     "Extracts and creates an analysis pipeline for the JSON data files from Brain
+Sense sessions using Medtronic's Deep Brain Stimulation surgery electrode
+implants.")
+    (license license:expat)))
+
 (define-public r-leadercluster
   (package
     (name "r-leadercluster")
@@ -15980,13 +16005,13 @@ results from internal standards or known metabolites.")
 (define-public r-lcmm
   (package
     (name "r-lcmm")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcmm" version))
        (sha256
-        (base32 "0knkdw3g29ql3lyvpbz793325qxzqhcim0g122arj97b2xk13ymw"))))
+        (base32 "04h1b7ws1q2j48i3kbfl6qpq7yzl1c6cbbm5qgjbmczvdghpz432"))))
     (properties `((upstream-name . "lcmm")))
     (build-system r-build-system)
     (arguments
@@ -18305,13 +18330,13 @@ are raster dataset exportable to any common GIS format.")
 (define-public r-landscapemetrics
   (package
     (name "r-landscapemetrics")
-    (version "2.2")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landscapemetrics" version))
        (sha256
-        (base32 "049x5nd1dfab06cpsibspdri713pi9f7a4klip2maj457x5va2cm"))))
+        (base32 "0vd7wdcjwy6v97xknl890knj5vjwbfpyxk1xns5wz077h8vkx3mj"))))
     (properties `((upstream-name . "landscapemetrics")))
     (build-system r-build-system)
     (arguments

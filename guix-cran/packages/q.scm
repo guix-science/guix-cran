@@ -1986,6 +1986,42 @@ lexical dispersion plots, scaling plots, network visualisations, and word
 keyness plots.")
     (license license:gpl3)))
 
+(define-public r-quanteda-textmodels
+  (package
+    (name "r-quanteda-textmodels")
+    (version "0.9.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quanteda.textmodels" version))
+       (sha256
+        (base32 "0y8rl02r51wq3993i07dcj9ivfalvqm7q8jhiis5sa0ngdf3g0hi"))))
+    (properties `((upstream-name . "quanteda.textmodels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringi
+                             r-rspectra
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quanteda
+                             r-matrix
+                             r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/quanteda/quanteda.textmodels")
+    (synopsis "Scaling Models and Classifiers for Textual Data")
+    (description
+     "Scaling models and classifiers for sparse matrix objects representing textual
+data in the form of a document-feature matrix.  Includes original
+implementations of Laver', Benoit', and Garry's (2003)
+<doi:10.1017/S0003055403000698>, Wordscores model, the Perry and Benoit (2017)
+<doi:10.48550/@code{arXiv.1710.08963>} class affinity scaling model, and the
+Slapin and Proksch (2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model,
+as well as methods for correspondence analysis, latent semantic analysis, and
+fast Naive Bayes and linear SVMs specially designed for sparse textual data.")
+    (license license:gpl3)))
+
 (define-public r-quantdr
   (package
     (name "r-quantdr")
@@ -2298,6 +2334,43 @@ can be entered as vectors and transformed using qualmap.")
 various range of functions that allow to establish an adaptable data quality
 control.")
     (license license:expat)))
+
+(define-public r-quadvar
+  (package
+    (name "r-quadvar")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadVAR" version))
+       (sha256
+        (base32 "1s0qlc6ji2345y72p0g4ng4qnr3d4kix1k3b1anva949mr737ix3"))))
+    (properties `((upstream-name . "quadVAR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinythemes
+                             r-shiny
+                             r-rlang
+                             r-ramp
+                             r-qgraph
+                             r-ncvreg
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/Sciurus365/quadVAR")
+    (synopsis "Quadratic Vector Autoregression")
+    (description
+     "Estimate quadratic vector autoregression models with the strong hierarchy using
+the Regularization Algorithm under Marginality Principle (RAMP) by Hao et al.
+(2018) <doi:10.1080/01621459.2016.1264956>, compare the performance with linear
+models, and construct networks with partial derivatives.")
+    (license license:gpl3+)))
 
 (define-public r-quadtree
   (package

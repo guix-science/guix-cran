@@ -380,6 +380,38 @@ including extensive functionality for computing and graphing regression
 diagnostics in addition to other standard model tools.")
     (license license:gpl2+)))
 
+(define-public r-ivpp
+  (package
+    (name "r-ivpp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IVPP" version))
+       (sha256
+        (base32 "0wg55i653rih1kdmsghmkhpmifhdfpyv2p9hbf5ryy0z5zg370s0"))))
+    (properties `((upstream-name . "IVPP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psychonetrics
+                             r-mvtnorm
+                             r-lifecycle
+                             r-graphicalvar
+                             r-dplyr
+                             r-clustergeneration
+                             r-bootnet))
+    (home-page "https://github.com/xinkaidupsy/IVPP")
+    (synopsis "Invariance Partial Pruning Test")
+    (description
+     "An implementation of the Invariance Partial Pruning (IVPP) approach described in
+Du, X., Johnson, S. U., Epskamp, S. (in prep)to comparing idiographic and panel
+network models.  IVPP is a two-step method that first test for global network
+structural difference with invariance test and then inspect specific edge
+difference with partial pruning.")
+    (license license:expat)))
+
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
@@ -4244,13 +4276,13 @@ failure time models.  Wang (2025) <doi:10.6339/24-JDS1138>.")
 (define-public r-iraceplot
   (package
     (name "r-iraceplot")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iraceplot" version))
        (sha256
-        (base32 "0j8im2x4zb2pzp8ichcrkv0xxqxvrrvhnm8r68g2mwlbp1dc8s93"))))
+        (base32 "0k1q87ln2mg08pkihi5p94bpxazpqhx836rgndykxmkkpwwwi017"))))
     (properties `((upstream-name . "iraceplot")))
     (build-system r-build-system)
     (arguments
@@ -4293,13 +4325,13 @@ with user-provided data.")
 (define-public r-irace
   (package
     (name "r-irace")
-    (version "4.1")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irace" version))
        (sha256
-        (base32 "0383gw288nps1lb0zawbxqdb18hcdl59x8vav26c6fg15vr8n9x2"))))
+        (base32 "1cd7wjpshl2fvmqrla1nbahzryhz0q4yfmqm85wim621f54fdksq"))))
     (properties `((upstream-name . "irace")))
     (build-system r-build-system)
     (arguments
@@ -4310,7 +4342,8 @@ with user-provided data.")
                              r-r6
                              r-matrixstats
                              r-fs
-                             r-data-table))
+                             r-data-table
+                             r-codetools))
     (native-inputs (list r-knitr))
     (home-page "https://mlopez-ibanez.github.io/irace/")
     (synopsis "Iterated Racing for Automatic Algorithm Configuration")
@@ -11994,13 +12027,13 @@ using the algorithm of Sharma et al. (2017) <doi:10.13140/RG.2.2.33786.62407>.")
 (define-public r-imuf
   (package
     (name "r-imuf")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imuf" version))
        (sha256
-        (base32 "1vxfmsh2a6jfw5jjk332s0y6d4gp89hffpbs4gz10h74a28nca1j"))))
+        (base32 "0r51ai4sih08bbzlk4ndgbsrmvvpy5362x3wknm1v9l4m42kzkwh"))))
     (properties `((upstream-name . "imuf")))
     (build-system r-build-system)
     (arguments
@@ -13914,24 +13947,25 @@ perform oversampling.")
 (define-public r-imanr
   (package
     (name "r-imanr")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imanr" version))
        (sha256
-        (base32 "1lkgyq4nkyjdz3hgygrx9gjcwhrvcnbwwq5s3a7qrcgl8gn8ls49"))))
+        (base32 "14bax8fgagskswgxb67kwqg9i11dqgf1ri1yil4sjps2qjbcplwn"))))
     (properties `((upstream-name . "imanr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ranger
+    (propagated-inputs (list r-xgboost
+                             r-tidymodels
                              r-missforest
                              r-foreach
                              r-dplyr
                              r-doparallel
-                             r-caret))
+                             r-bundle))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=imanr")
     (synopsis "Identify the Racial Complex of Native Corns from Mexico")
@@ -14601,13 +14635,13 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
 (define-public r-ilsamerge
   (package
     (name "r-ilsamerge")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSAmerge" version))
        (sha256
-        (base32 "1l3bx0ysa2h2rc1avyjpidz3g0h5hngxsivdwgjrzvg2m149lm0w"))))
+        (base32 "0y7860n3570djv7582iqw17li8r96vsd1djh94w235g9xzanx78v"))))
     (properties `((upstream-name . "ILSAmerge")))
     (build-system r-build-system)
     (arguments
@@ -14812,6 +14846,34 @@ independent data.  References: Ji et al. (2024)
      "Time parceling method and Bayesian variability modeling methods for modeling
 within individual variability indicators as predictors.For more details, see
 <https://github.com/xliu12/IIVpredicitor>.")
+    (license license:gpl2)))
+
+(define-public r-iis
+  (package
+    (name "r-iis")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IIS" version))
+       (sha256
+        (base32 "1n21pih5rzgwwpi0bwxr4vap4mi2p6r6m8x4dgy82y376apc0dg9"))))
+    (properties `((upstream-name . "IIS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfit r-nsm3 r-hmisc r-bsda r-asbio))
+    (home-page "https://cran.r-project.org/package=IIS")
+    (synopsis
+     "Datasets to Accompany Wolfe and Schneider - Intuitive Introductory Statistics")
+    (description
+     "These datasets and functions accompany Wolfe and Schneider (2017) - Intuitive
+Introductory Statistics (ISBN: 978-3-319-56070-0)
+<doi:10.1007/978-3-319-56072-4>.  They are used in the examples throughout the
+text and in the end-of-chapter exercises.  The datasets are meant to cover a
+broad range of topics in order to appeal to the diverse set of interests and
+backgrounds typically present in an introductory Statistics class.")
     (license license:gpl2)))
 
 (define-public r-iiproductionunknown

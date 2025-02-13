@@ -714,13 +714,13 @@ written out in English, French, or Spanish.")
 (define-public r-nullabor
   (package
     (name "r-nullabor")
-    (version "0.3.12")
+    (version "0.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nullabor" version))
        (sha256
-        (base32 "0ymdw07x6xh204nzcd05d40zmxgnk7ny73qwbvy1gz5qh9617v96"))))
+        (base32 "12maz2fvqin3pg6hlp6d6vv0acghm29za3nf4lykiplxjdrvhg38"))))
     (properties `((upstream-name . "nullabor")))
     (build-system r-build-system)
     (arguments
@@ -5890,52 +5890,6 @@ customized and tracked over time, so that the same input is always assigned the
 same pseudonym.")
     (license license:expat)))
 
-(define-public r-noaastormevents
-  (package
-    (name "r-noaastormevents")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "noaastormevents" version))
-       (sha256
-        (base32 "1d93h8av0bbv7a56g6m000qpsnzqpfdla0fmcj5y8fbbqkipxnfr"))))
-    (properties `((upstream-name . "noaastormevents")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml
-                             r-viridis
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rcurl
-                             r-rcolorbrewer
-                             r-plyr
-                             r-maps
-                             r-magrittr
-                             r-lubridate
-                             r-hurricaneexposure
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-data-table
-                             r-choroplethrmaps
-                             r-choroplethr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/geanders/noaastormevents")
-    (synopsis "Explore NOAA Storm Events Database")
-    (description
-     "Allows users to explore and plot data from the National Oceanic and Atmospheric
-Administration (NOAA) Storm Events database through R for United States
-counties.  Functionality includes matching storm event listings by time and
-location to hurricane best tracks data.  This work was supported by grants from
-the Colorado Water Center, the National Institute of Environmental Health
-Sciences (R00ES022631) and the National Science Foundation (1331399).")
-    (license license:gpl2+)))
-
 (define-public r-no-ping-pong
   (package
     (name "r-no-ping-pong")
@@ -6790,13 +6744,13 @@ probability weighting for non-monotone missing at random data.")
 (define-public r-nmixgof
   (package
     (name "r-nmixgof")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmixgof" version))
        (sha256
-        (base32 "0cbwrsxrcf8pn4ycn6r0z8jdidw5l6kdvwyrks69fq4pjzx988d6"))))
+        (base32 "1d9jian8zk6px54pl7vpny5c1j6lp7gmhlkmmdvl1f0y0s7yh7n5"))))
     (properties `((upstream-name . "nmixgof")))
     (build-system r-build-system)
     (arguments
@@ -7081,13 +7035,13 @@ of different treatments.")
 (define-public r-nmaoutlier
   (package
     (name "r-nmaoutlier")
-    (version "0.1.18")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMAoutlier" version))
        (sha256
-        (base32 "0h0pxjg6ppz9zv7wcv1dka5g0f9wxk3bnwicfpsv1advcam4vmmn"))))
+        (base32 "1jjypjfscsvi8x78jnrpw05fp8vd1dxlrdqld7m3a540scx056cj"))))
     (properties `((upstream-name . "NMAoutlier")))
     (build-system r-build-system)
     (arguments
@@ -14115,13 +14069,13 @@ protein-protein interaction network.")
 (define-public r-nephro
   (package
     (name "r-nephro")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nephro" version))
        (sha256
-        (base32 "12rrc46dniw09a6402ns868h9c6f0grpsk3wv29z4l92338waiwb"))))
+        (base32 "15d3izcfrd2v97syqwf1p1gbgsmyzpwgjq9isrc0xyqk1jdzrqfs"))))
     (properties `((upstream-name . "nephro")))
     (build-system r-build-system)
     (arguments
@@ -14130,8 +14084,8 @@ protein-protein interaction network.")
     (home-page "https://cran.r-project.org/package=nephro")
     (synopsis "Utilities for Nephrology")
     (description
-     "Set of functions to estimate kidney function and other phenotypes of interest in
-nephrology based on different biomechimal traits.")
+     "Set of functions to estimate kidney function and other traits of interest in
+nephrology.")
     (license license:gpl3+)))
 
 (define-public r-neotoma2
@@ -15372,13 +15326,13 @@ feature selection.  Plot functions.  Automated feature selections.  Kosztyan et.
 (define-public r-ncvreg
   (package
     (name "r-ncvreg")
-    (version "3.14.3")
+    (version "3.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncvreg" version))
        (sha256
-        (base32 "0kisb28qb8vya2b77jacfy0y4vdf7krqps4761b27nh0a8ybbdgd"))))
+        (base32 "0ssmmsa081s8k762yx5dis4y18mfzx7zhf36avzk1891f5fh3c3x"))))
     (properties `((upstream-name . "ncvreg")))
     (build-system r-build-system)
     (arguments
@@ -15610,20 +15564,21 @@ correlogram, (Partial) Mantel test.")
 (define-public r-ncdump
   (package
     (name "r-ncdump")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncdump" version))
        (sha256
-        (base32 "09g98mzpky32z41jf23ahzhyv34l34y1gqq99j2hl4pqlvvhxs9i"))))
+        (base32 "13j02y9kcwrx8a9fx1wi0d14xp7gbkcijz9xgq9ah8gz00939cx9"))))
     (properties `((upstream-name . "ncdump")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ncdf4 r-dplyr))
-    (home-page "https://github.com/r-gris/ncdump")
+    (propagated-inputs (list r-tibble r-rlang r-ncdf4 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hypertidy/ncdump")
     (synopsis "Extract Metadata from 'NetCDF' Files as Data Frames")
     (description
      "This package provides tools for handling @code{NetCDF} metadata in data frames.
@@ -17068,13 +17023,13 @@ R package uses the Nasdaq Data Link API. For more information go to
 (define-public r-nascar-data
   (package
     (name "r-nascar-data")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nascaR.data" version))
        (sha256
-        (base32 "18d5j1wpr1ni9hckpx66cnpvj4cnjf0pn5h1nvadcxqfdmysnnz5"))))
+        (base32 "0zwydi4ipg09s5mzqvqndm2fj75m1kk1d5f8s6gn7q7qr8yb1jrf"))))
     (properties `((upstream-name . "nascaR.data")))
     (build-system r-build-system)
     (arguments
@@ -17087,7 +17042,7 @@ R package uses the Nasdaq Data Link API. For more information go to
                              r-purrr
                              r-glue
                              r-dplyr))
-    (home-page "https://kylegrealis.github.io/nascaR.data/")
+    (home-page "https://azimuth-project.tech/nascaR.data/")
     (synopsis "NASCAR Race Data")
     (description
      "This package provides a collection of NASCAR race, driver, owner and
@@ -17390,13 +17345,13 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanoparquet
   (package
     (name "r-nanoparquet")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanoparquet" version))
        (sha256
-        (base32 "1g1669xhvj0w5x93j3khs29njn6y99n7jbwfdk8h90kb9jgknib5"))))
+        (base32 "0y9ygs8r39gzrga5361rlhw3gb5qd9c7mi1bxdfaansa4f99l8p8"))))
     (properties `((upstream-name . "nanoparquet")))
     (build-system r-build-system)
     (arguments

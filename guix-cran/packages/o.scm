@@ -5692,13 +5692,13 @@ forward, central and backward gradient approximation codes.")
 (define-public r-optedr
   (package
     (name "r-optedr")
-    (version "2.0.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optedr" version))
        (sha256
-        (base32 "17r0axfh7yjv5xj9060vi5vysnmi38pz5dsvm0fazfcpzzlxnld7"))))
+        (base32 "1s77d70qzjandnddh91nc1hrk9jbcg900qr9c4labfrc55pi1q1s"))))
     (properties `((upstream-name . "optedr")))
     (build-system r-build-system)
     (arguments
@@ -5715,10 +5715,10 @@ forward, central and backward gradient approximation codes.")
     (home-page "https://github.com/kezrael/optedr")
     (synopsis "Calculating Optimal and D-Augmented Designs")
     (description
-     "Calculates D-, Ds-, A- and I-optimal designs for non-linear models, via an
+     "Calculates D-, Ds-, A-, I- and L-optimal designs for non-linear models, via an
 implementation of the cocktail algorithm (Yu, 2011,
 <doi:10.1007/s11222-010-9183-2>).  Compares designs via their efficiency, and
-D-augments any design with a controlled efficiency.  An efficient rounding
+augments any design with a controlled efficiency.  An efficient rounding
 function has been provided to transform approximate designs to exact designs.")
     (license license:gpl3)))
 
@@ -7307,13 +7307,13 @@ the JSON file.")
 (define-public r-opendataformat
   (package
     (name "r-opendataformat")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opendataformat" version))
        (sha256
-        (base32 "099crzflz9larfz5ja3r9xqcp5bjjcci4n5fj6ri169b7c3jsxp3"))))
+        (base32 "0nkr01qx7fsbib78c6dbxlcvavnyrqlsx743cysjkfqdk7g26fzq"))))
     (properties `((upstream-name . "opendataformat")))
     (build-system r-build-system)
     (arguments
@@ -8287,13 +8287,13 @@ with new theme and colors.")
 (define-public r-onpoint
   (package
     (name "r-onpoint")
-    (version "1.0.6")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onpoint" version))
        (sha256
-        (base32 "0v45r1sjlhh17xcrw5498k3g82ar2y83b83qp1hfpv5hybghvr5x"))))
+        (base32 "069kf7fsl7n7pfwfzxbhrb0mwy12ki5wavj1991rizx0ifbv3bsj"))))
     (properties `((upstream-name . "onpoint")))
     (build-system r-build-system)
     (arguments

@@ -1754,13 +1754,13 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
 (define-public r-rvinecopulib
   (package
     (name "r-rvinecopulib")
-    (version "0.7.1.1.0")
+    (version "0.7.1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvinecopulib" version))
        (sha256
-        (base32 "0pp28b79bnmdvfcwdck6kppy14l48ijzbzzcb67yhmfgri5apdbj"))))
+        (base32 "11whjqvpad9ch23jkcxacx8sy5zgp7dyzn4k4fx0q1hr0634lfqp"))))
     (properties `((upstream-name . "rvinecopulib")))
     (build-system r-build-system)
     (arguments
@@ -9500,13 +9500,13 @@ supported by National Institutes of Health grants R37 GM-046255.")
 (define-public r-rrepest
   (package
     (name "r-rrepest")
-    (version "1.3.0")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rrepest" version))
        (sha256
-        (base32 "0j2siwnpp8isgb82qq9s1khjgnhgfygm8487grflw8qniz22cq5f"))))
+        (base32 "14wbr1zm2xzh99lh1nzraszvwhcic43v642kzg5rmasigiv48mfs"))))
     (properties `((upstream-name . "Rrepest")))
     (build-system r-build-system)
     (arguments
@@ -9528,15 +9528,16 @@ supported by National Institutes of Health grants R37 GM-046255.")
     (synopsis
      "An Analyzer of International Large Scale Assessments in Education")
     (description
-     "This package provides a fast way to analyze International Large-Scale
-Assessments (ILSAs) or any other dataset that includes replicated weights
-(Balanced Repeated Replication (BRR) weights, Jackknife replicate weights,...)
-and/or plausible values.  Rrepest contains functionalities that enable you to
-calculate basic statistics (means, correlations, etc.), frequencies, linear
-regression, or any other model already implemented in R that takes a data frame
-and weights as parameters.  It also includes options to prepare the results for
-publication, following the table formatting standards of the Organization for
-Economic Cooperation and Development (OECD).")
+     "An easy way to analyze international large-scale assessments and surveys in
+education or any other dataset that includes replicated weights (Balanced
+Repeated Replication (BRR) weights, Jackknife replicate weights,...).  It also
+allows for analyses with multiply imputed variables (plausible values).  It
+supports the estimation of univariate statistics (e.g. mean, variance, standard
+deviation, quantiles), frequencies, correlation, linear regression and any other
+model already implemented in R that takes a data frame and weights as
+parameters.  It also includes options to prepare the results for publication,
+following the table formatting standards of the Organization for Economic
+Cooperation and Development (OECD).")
     (license license:expat)))
 
 (define-public r-rrepast
@@ -15744,6 +15745,36 @@ from diagnostic test.")
 parameters or dot parameters are extracted from function documentations and
 turned into valid Rd character strings, which are ready to diffuse into the
 roxygen comments of another function by inserting inline code.")
+    (license license:expat)))
+
+(define-public r-rockx
+  (package
+    (name "r-rockx")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rockx" version))
+       (sha256
+        (base32 "1pgj9qbywssiizbwqim23llcn3c670hbki0g2lqsrpdks17w2qpm"))))
+    (properties `((upstream-name . "rockx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rockx")
+    (synopsis "Easily Import Data from Your 'ODK-X Sync Endpoint'")
+    (description
+     "This package provides helper functions for authenticating and retrieving data
+from your ODK-X Sync Endpoint'.  This is an early release intended for testing
+and feedback.")
     (license license:expat)))
 
 (define-public r-rockr
@@ -24547,13 +24578,13 @@ BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â26
 (define-public r-rivnet
   (package
     (name "r-rivnet")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rivnet" version))
        (sha256
-        (base32 "19ncnyfhh1rmq2xp0779j9fp7cfv99jam7ac5l0wzyp087f4w9g0"))))
+        (base32 "0h462y1bys1ggjizxa3xl6kn17g1hi35d445x4kiivqq2c05xh9s"))))
     (properties `((upstream-name . "rivnet")))
     (build-system r-build-system)
     (arguments
@@ -26938,13 +26969,13 @@ available through the online app @code{QuickPed} at
 (define-public r-rib
   (package
     (name "r-rib")
-    (version "0.23.1")
+    (version "0.25.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rib" version))
        (sha256
-        (base32 "17wjqyhjz2rdqg7vhcms50pjhm1k4vprwy14p5k8i8p90f7p5hwf"))))
+        (base32 "1bkxy9x6gr8fv8d05zxk8bxpavjz0blzrc5b4fqyc66nxprwp3j8"))))
     (properties `((upstream-name . "rib")))
     (build-system r-build-system)
     (arguments
@@ -31485,6 +31516,48 @@ concentration, and cell-line.  Based on the cell lines used as surrogates, the
 returned profiles represent the unique transcriptional changes induced by a
 compound in a given disease.")
     (license license:gpl3)))
+
+(define-public r-retmort
+  (package
+    (name "r-retmort")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "retmort" version))
+       (sha256
+        (base32 "15bjfl7939y7kr2mgn5pgm1f2w16pcvbahs4clf5iaq3rlaz6v01"))))
+    (properties `((upstream-name . "retmort")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rmarkdown
+                             r-readr
+                             r-patchwork
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=retmort")
+    (synopsis
+     "Estimate User-Based Tagging Mortality and Tag Loss in Mark-Recapture Studies")
+    (description
+     "We provide several avenues to predict and account for user-based mortality and
+tag loss during mark-recapture studies.  When planning a study on a target
+species, the @code{retentionmort_generation()} function can be used to produce
+multiple synthetic mark-recapture datasets to anticipate the error associated
+with a planned field study to guide method development to reduce error.
+Similarly, if field data was already collected, the @code{retentionmort()}
+function can be used to predict the error from already generated data to adjust
+for user-based mortality and tag loss.  The @code{test_dataset_retentionmort()}
+function will provide an example dataset of how data should be inputted into the
+function to run properly.  Lastly, the @code{retentionmort_figure()} function
+can be used on any dataset generated from either model function to produce an
+rmarkdown printout of preliminary analysis associated with the model, including
+summary statistics and figures.  Methods and results pertaining to the formation
+of this package can be found in @code{McCutcheon} et al. (in review, \"Predicting
+tagging-related mortality and tag loss during mark-recapture studies\").")
+    (license license:expat)))
 
 (define-public r-retimer
   (package
@@ -41704,13 +41777,13 @@ code that relies on regular expression-based pattern matching.")
 (define-public r-rdwplus
   (package
     (name "r-rdwplus")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdwplus" version))
        (sha256
-        (base32 "0bcdpza4rbvfzn69zws5s2l32rs7m39a5h3zxyz4gszff3yn37fx"))))
+        (base32 "1r4576xdncafg32g9w8v7qgkvb0rj7vlzqhfaq2firlvp02h9fzg"))))
     (properties `((upstream-name . "rdwplus")))
     (build-system r-build-system)
     (arguments
@@ -41718,7 +41791,7 @@ code that relies on regular expression-based pattern matching.")
       #:tests? #f))
     (propagated-inputs (list r-stringr r-stars r-sf r-rgrass))
     (home-page "https://cran.r-project.org/package=rdwplus")
-    (synopsis "An Implementation of IDW-PLUS")
+    (synopsis "Inverse Distance Weighted Percent Land Use for Streams")
     (description
      "Compute spatially explicit land-use metrics for stream survey sites in GRASS GIS
 and R as an open-source implementation of IDW-PLUS (Inverse Distance Weighted
@@ -42999,20 +43072,20 @@ sparse linear discriminant analysis (see Pun and Hadimaja (2019)
 (define-public r-rdecision
   (package
     (name "r-rdecision")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdecision" version))
        (sha256
-        (base32 "1jd5hgcj9idqs81l8gb8hq57zxjpbziqyj1dj67kzls6mr1kjzil"))))
+        (base32 "0vxxqbmgsppslfxdz5w3cm1hqkcblazp0hkcqn9h1nwms4p7p5ih"))))
     (properties `((upstream-name . "rdecision")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-withr r-rlang r-r6))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr r-igraph))
     (home-page "https://github.com/ajsims1704/rdecision")
     (synopsis "Decision Analytic Modelling in Health Economics")
     (description
@@ -44245,13 +44318,13 @@ packages using CRAN.")
 (define-public r-rcppuuid
   (package
     (name "r-rcppuuid")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppUUID" version))
        (sha256
-        (base32 "0zknj2vwmr4qd4a3gfrbglq6kidj6qjcm3yqv67hh36y2ci0f2mf"))))
+        (base32 "068fbq34as3wf6si1hlvwkpg1n3jwhf9s7zik63rj7khlqxkq5dw"))))
     (properties `((upstream-name . "RcppUUID")))
     (build-system r-build-system)
     (arguments
@@ -44261,10 +44334,10 @@ packages using CRAN.")
     (home-page "https://github.com/eddelbuettel/rcppuuid")
     (synopsis "Generating Universally Unique Identificators")
     (description
-     "Using the implementation in Boost C++ library, functions are provided to
-generate vectors of Universally Unique Identifiers (UUID) from R supporting
-random (version 4) and name (version 5) UUIDs'.  The initial repository was
-<https://gitlab.com/artemklevtsov/rcppuuid>.")
+     "Using the efficient implementation in the Boost C++ library, functions are
+provided to generate vectors of Universally Unique Identifiers (UUID) from R
+supporting random (version 4), name (version 5) and time (version 7) UUIDs'.
+The initial repository was at <https://gitlab.com/artemklevtsov/rcppuuid>.")
     (license license:gpl2+)))
 
 (define-public r-rcpptn
@@ -49324,13 +49397,13 @@ MIT license from the Bitcoin Unlimited website
 (define-public r-rbcc
   (package
     (name "r-rbcc")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbcc" version))
        (sha256
-        (base32 "1a1awv1cxdv45342dixzjf9664vzvriprdlnbm0k1swkbr2pa6l5"))))
+        (base32 "15crmxv2spkhnhivsr2sbq5kyhqbfisgriiz5dxq8d3f399wcxx6"))))
     (properties `((upstream-name . "rbcc")))
     (build-system r-build-system)
     (arguments
@@ -56980,13 +57053,13 @@ interest for working with data.table objects are included.")
 (define-public r-r2dii-plot
   (package
     (name "r-r2dii-plot")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.plot" version))
        (sha256
-        (base32 "0gfqhqkp9dnzjipgzf665am9mzyv5p7l13ahcw44bpmya4zrsifg"))))
+        (base32 "1r53mp6agk0pyg3mpihk8ymq745nw615qf0byb8my88aj8fph4zr"))))
     (properties `((upstream-name . "r2dii.plot")))
     (build-system r-build-system)
     (arguments
@@ -57001,7 +57074,7 @@ interest for working with data.table objects are included.")
                              r-ggrepel
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://github.com/RMI-PACTA/r2dii.plot")
+    (home-page "https://rmi-pacta.github.io/r2dii.plot/")
     (synopsis
      "Visualize the Climate Scenario Alignment of a Financial Portfolio")
     (description
@@ -57597,4 +57670,41 @@ structure optimization - Mauro Scanagatta (2016)
 (4) structure learning on incomplete data sets - Mauro Scanagatta (2018)
 <doi:10.1016/j.ijar.2018.02.004>.  Distributed under the LGPL-3 by IDSIA.")
     (license license:lgpl3)))
+
+(define-public r-r-alpha-home
+  (package
+    (name "r-r-alpha-home")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "R.AlphA.Home" version))
+       (sha256
+        (base32 "12wf6p5xjaaqkpwag8c8b71n2k841yaidn0q2xsq5cjybzm91bx8"))))
+    (properties `((upstream-name . "R.AlphA.Home")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinywidgets
+                             r-shiny
+                             r-rstudioapi
+                             r-r-utils
+                             r-openxlsx
+                             r-magrittr
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=R.AlphA.Home")
+    (synopsis
+     "Feel at Home using R, Thanks to Shortcuts Functions Making it Simple")
+    (description
+     "This package provides a collection of personal functions designed to simplify
+and streamline common R programming tasks.  This package provides reusable tools
+and shortcuts for frequently used calculations and workflows.")
+    (license license:gpl3)))
 

@@ -404,20 +404,22 @@ API.")
 (define-public r-vvauditor
   (package
     (name "r-vvauditor")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvauditor" version))
        (sha256
-        (base32 "10f9ylb7kpm28smw8nsnlmiqk8pp9zdfvkrk4qxk6pfyriv341jb"))))
+        (base32 "164vjd9rf0hxx3r8wjf3vyqdfm3fp3zzq2pqvirykpxjrr7j1bic"))))
     (properties `((upstream-name . "vvauditor")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
+                             r-readr
                              r-purrr
                              r-magrittr
                              r-lubridate
@@ -5011,13 +5013,13 @@ provide details on the variational algorithms.")
 (define-public r-vgamextra
   (package
     (name "r-vgamextra")
-    (version "0.0-6")
+    (version "0.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VGAMextra" version))
        (sha256
-        (base32 "061mlhiqdncgjzyflpjjhmssjp7z33k9xrz7dmcgsrw37fb97jrs"))))
+        (base32 "131f3kfsacfcqiv4h1xrg0n97d2f3yp4kkh4l7hx62l4zpqlfbrn"))))
     (properties `((upstream-name . "VGAMextra")))
     (build-system r-build-system)
     (arguments

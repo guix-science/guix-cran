@@ -575,39 +575,6 @@ Z., Rashid, M. M., Johnson, F., & Sharma, A. (2020)
 <doi:10.1016/j.envsoft.2020.104907>.")
     (license license:gpl3+)))
 
-(define-public r-synthacs
-  (package
-    (name "r-synthacs")
-    (version "1.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "synthACS" version))
-       (sha256
-        (base32 "1s4jawg2g0zy41y0ajacki4nif9m3r0hnaz63yhapcnizc37lyy1"))))
-    (properties `((upstream-name . "synthACS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-retry r-rcpp r-data-table r-acs))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://cran.r-project.org/package=synthACS")
-    (synopsis
-     "Synthetic Microdata and Spatial MicroSimulation Modeling for ACS Data")
-    (description
-     "This package provides access to curated American Community Survey (ACS) base
-tables via a wrapper to library(acs).  Builds synthetic micro-datasets at any
-user-specified geographic level with ten default attributes; and, conducts
-spatial microsimulation modeling (SMSM) via simulated annealing.  SMSM is
-conducted in parallel by default.  Lastly, we provide functionality for
-data-extensibility of micro-datasets <doi:10.18637/jss.v104.i07>.")
-    (license license:expat)))
-
 (define-public r-synth
   (package
     (name "r-synth")
@@ -6446,6 +6413,59 @@ explained by the surrogate marker using a Bayesian Model Averaging approach.
 Duan and Parast (2023) <doi:10.1002/sim.9986>.")
     (license license:gpl2+)))
 
+(define-public r-surrogate
+  (package
+    (name "r-surrogate")
+    (version "3.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Surrogate" version))
+       (sha256
+        (base32 "10j9zh9a9v18ib66qn1zfjihp14pw415l7lbzbazm8dxcnchq3ak"))))
+    (properties `((upstream-name . "Surrogate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-rvinecopulib
+                             r-rms
+                             r-purrr
+                             r-pbapply
+                             r-nlme
+                             r-mbess
+                             r-maxlik
+                             r-mass
+                             r-logistf
+                             r-lme4
+                             r-lifecycle
+                             r-latticeextra
+                             r-lattice
+                             r-ks
+                             r-flexsurv
+                             r-extradistr
+                             r-dplyr))
+    (home-page "https://github.com/florianstijven/Surrogate-development")
+    (synopsis "Evaluation of Surrogate Endpoints in Clinical Trials")
+    (description
+     "In a clinical trial, it frequently occurs that the most credible outcome to
+evaluate the effectiveness of a new therapy (the true endpoint) is difficult to
+measure.  In such a situation, it can be an effective strategy to replace the
+true endpoint by a (bio)marker that is easier to measure and that allows for a
+prediction of the treatment effect on the true endpoint (a surrogate endpoint).
+The package Surrogate allows for an evaluation of the appropriateness of a
+candidate surrogate endpoint based on the meta-analytic, information-theoretic,
+and causal-inference frameworks.  Part of this software has been developed using
+funding provided from the European Union's Seventh Framework Programme for
+research, technological development and demonstration (Grant Agreement no
+602552), the Special Research Fund (BOF) of Hasselt University (BOF-number:
+BOF2OCPO3), @code{GlaxoSmithKline} Biologicals, Baekeland Mandaat
+(HBC.2022.0145), and Johnson & Johnson Innovative Medicine.")
+    (license license:gpl2+)))
+
 (define-public r-surreal
   (package
     (name "r-surreal")
@@ -9916,6 +9936,30 @@ functions provided to generate Qualtrics survey in TXT format using the
 collection of street views for various research purposes.")
     (license license:gpl3)))
 
+(define-public r-streamy
+  (package
+    (name "r-streamy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "streamy" version))
+       (sha256
+        (base32 "15psvxgxj9wfi65y56y5y7qg9fs7fjaz3w7x34hh8wk84xpszdqr"))))
+    (properties `((upstream-name . "streamy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-rstudioapi r-rlang r-coro r-cli))
+    (home-page "https://github.com/simonpcouch/streamy")
+    (synopsis "Inline Asynchronous Generator Results into Documents")
+    (description
+     "Given a coro asynchronous generator instance that produces text, write that text
+into a document selection in RStudio and Positron'.  This is particularly
+helpful for streaming large language model responses into the user's editor.")
+    (license license:expat)))
+
 (define-public r-streammoa
   (package
     (name "r-streammoa")
@@ -12281,13 +12325,13 @@ analysis package.")
 (define-public r-stmgp
   (package
     (name "r-stmgp")
-    (version "1.0.4")
+    (version "1.0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stmgp" version))
        (sha256
-        (base32 "1yf0hr5gaql424ikjm9ra50vz4ppfsshhf89xphl7c9v9a6bjvw0"))))
+        (base32 "103l7zxk45ziwl3k0jm57p5aw9k7dgvkkm5sq5v7mkl7j8zsm1w4"))))
     (properties `((upstream-name . "stmgp")))
     (build-system r-build-system)
     (arguments
@@ -14856,32 +14900,30 @@ Biometris.")
 (define-public r-statgenmpp
   (package
     (name "r-statgenmpp")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenMPP" version))
        (sha256
-        (base32 "1if034avq7j5jxsppmxrvam0wl17bfnhmj9yzb5qv54zn6gpnr2f"))))
+        (base32 "0x8dny3dy8907zvqbrgljg6zvywaxwwf2rlk8skm0734rk04ysq5"))))
     (properties `((upstream-name . "statgenMPP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi
-                             r-statgenibd
+    (propagated-inputs (list r-statgenibd
                              r-statgengwas
                              r-spam
                              r-scales
                              r-rlang
-                             r-matrix
                              r-lmmsolver
                              r-gridextra
                              r-ggplot2
                              r-foreach
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=statgenMPP")
+    (home-page "https://biometris.github.io/statgenMPP/index.html")
     (synopsis "QTL Mapping for Multi Parent Populations")
     (description
      "For Multi Parent Populations (MPP) Identity By Descend (IBD) probabilities are
@@ -17691,6 +17733,48 @@ analysis of respondent-driven sampling data.  See Handcock, Gile and Mar (2014)
 Kim and Handcock (2021) <doi:10.1093/jssam/smz055>, and @code{McLaughlin}, et.
 al. (2023) <doi:10.1214/23-AOAS1807>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-sspm
+  (package
+    (name "r-sspm")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sspm" version))
+       (sha256
+        (base32 "0gwv9883fyj4y8c6kv8fjhi2h3nc5nn0r95csan6xphbyrpv0brq"))))
+    (properties `((upstream-name . "sspm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-mgcv
+                             r-magrittr
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://pedersen-fisheries-lab.github.io/sspm/")
+    (synopsis
+     "Spatial Surplus Production Model Framework for Northern Shrimp Populations")
+    (description
+     "Implement a GAM-based (Generalized Additive Models) spatial surplus production
+model (spatial SPM), aimed at modeling northern shrimp population in Atlantic
+Canada but potentially to any stock in any location.  The package is opinionated
+in its implementation of SPMs as it internally makes the choice to use penalized
+spatial gams with time lags.  However, it also aims to provide options for the
+user to customize their model.  The methods are described in Pedersen et al.
+(2022,
+<https://www.dfo-mpo.gc.ca/csas-sccs/Publications/@code{ResDocs-DocRech/2022/2022_062-eng.html>}).")
+    (license license:expat)))
 
 (define-public r-ssplots
   (package
@@ -23384,13 +23468,13 @@ spatially corrected model accuracy measures.")
 (define-public r-spinbayes
   (package
     (name "r-spinbayes")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spinBayes" version))
        (sha256
-        (base32 "1p3gfxw1jnnj22s43facsna1ivazfj3x431f1ckv8qycdv61h31d"))))
+        (base32 "1isxhsf96p3mr26ll6f04fmbyzjqv3s1v6vkzm9r3g9ncgbaiyn5"))))
     (properties `((upstream-name . "spinBayes")))
     (build-system r-build-system)
     (arguments
@@ -24735,13 +24819,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "16jkqjq1pi3wy7ay73xymhshc50mx6i5advfrh9ix98p1cdg6djn"))))
+        (base32 "19d6kpcmfcccn0zbw0qj6d661vchnhf0xfr0dvc7ksa7bxgn4wry"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -24759,10 +24843,12 @@ intervention of a single legislator.")
     (home-page "https://stscl.github.io/spEDM/")
     (synopsis "Spatial Empirical Dynamic Modeling")
     (description
-     "Inferring causal associations in cross-sectional earth system data with
-extensions to convergent cross mapping from Sugihara et al. (2012)
-<doi:10.1126/science.1227079> and partial cross mapping as described in Ma et
-al. (2020) <doi:10.1038/s41467-020-16238-0>.")
+     "Inferring causal associations in cross-sectional earth system data through
+empirical dynamic modeling (EDM), with extensions to convergent cross mapping
+from Sugihara et al. (2012) <doi:10.1126/science.1227079>, partial cross mapping
+as outlined in Leng et al. (2020) <doi:10.1038/s41467-020-16238-0>, and cross
+mapping cardinality as described in Tao et al.
+(2023)<doi:10.1016/j.fmre.2023.01.007>.")
     (license license:gpl3)))
 
 (define-public r-spedinstabr
@@ -32781,13 +32867,13 @@ distribution by Perfect et al. (1992)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.7")
+    (version "2.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "0dqgd9p62a8zqczri7vay55xvhalzvfgwziymh2y1mh2lbyljmp0"))))
+        (base32 "16g9bkjk4cxpyawca9apssvv1cpr9crh0nwri1sfcbdzlw57mlc2"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (arguments
@@ -36368,13 +36454,13 @@ Variables.")
 (define-public r-smd
   (package
     (name "r-smd")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smd" version))
        (sha256
-        (base32 "15npiffznxlvd8rih0z63vdxykhh8fcdsgbrjkjgnakd9fi5xad5"))))
+        (base32 "1f5pph3728jb15bmyv0xdanww490gjm5ixz9dbvdv27av02p12js"))))
     (properties `((upstream-name . "smd")))
     (build-system r-build-system)
     (arguments
@@ -39792,13 +39878,13 @@ consistency.")
 (define-public r-sits
   (package
     (name "r-sits")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sits" version))
        (sha256
-        (base32 "0k0wb18zranqzjsczxjrn5xl9mprn3vzi8ds6hx7n3cr63crwp9w"))))
+        (base32 "0298z2gisds07hsflchy7qi0686f833w2n25j5asxvvh1g0s7c9w"))))
     (properties `((upstream-name . "sits")))
     (build-system r-build-system)
     (arguments
@@ -39807,50 +39893,37 @@ consistency.")
     (propagated-inputs (list r-yaml
                              r-units
                              r-torch
+                             r-tmap
                              r-tidyr
                              r-tibble
                              r-terra
-                             r-sysfonts
                              r-slider
-                             r-showtext
                              r-sf
                              r-rstac
                              r-rcpparmadillo
                              r-rcpp
+                             r-randomforest
                              r-purrr
-                             r-magrittr
+                             r-luz
                              r-lubridate
-                             r-gdalutilities
+                             r-leaflet
                              r-dplyr))
     (home-page "https://github.com/e-sensing/sits/")
     (synopsis
      "Satellite Image Time Series Analysis for Earth Observation Data Cubes")
     (description
      "An end-to-end toolkit for land use and land cover classification using big Earth
-observation data, based on machine learning methods applied to satellite image
-data cubes, as described in Simoes et al (2021) <doi:10.3390/rs13132428>.
-Builds regular data cubes from collections in AWS, Microsoft Planetary Computer,
-Brazil Data Cube, Copernicus Data Space Environment (CDSE), Digital Earth
-Africa, Digital Earth Australia, NASA HLS using the Spatio-temporal Asset
-Catalog (STAC) protocol (<https://stacspec.org/>) and the gdalcubes R package
-developed by Appel and Pebesma (2019) <doi:10.3390/data4030092>.  Supports
-visualization methods for images and time series and smoothing filters for
-dealing with noisy time series.  Includes functions for quality assessment of
-training samples using self-organized maps as presented by Santos et al (2021)
-<doi:10.1016/j.isprsjprs.2021.04.014>.  Provides machine learning methods
-including support vector machines, random forests, extreme gradient boosting,
-multi-layer perceptrons, temporal convolutional neural networks proposed by
-Pelletier et al (2019) <doi:10.3390/rs11050523>, and temporal attention encoders
-by Garnot and Landrieu (2020) <doi:10.48550/@code{arXiv.2007.00586>}.  Supports
-GPU processing of deep learning models using torch <https://torch.mlverse.org/>.
- Performs efficient classification of big Earth observation data cubes and
-includes functions for post-classification smoothing based on Bayesian
-inference, and methods for active learning and uncertainty assessment.  Supports
-object-based time series analysis using package supercells
-<https://jakubnowosad.com/supercells/>.  Enables best practices for estimating
-area and assessing accuracy of land change as recommended by Olofsson et al
-(2014) <doi:10.1016/j.rse.2014.02.015>.  Minimum recommended requirements: 16 GB
-RAM and 4 CPU dual-core.")
+observation data.  Builds satellite image data cubes from cloud collections.
+Supports visualization methods for images and time series and smoothing filters
+for dealing with noisy time series.  Includes functions for quality assessment
+of training samples using self-organized maps and to reduce training samples
+imbalance.  Provides machine learning algorithms including support vector
+machines, random forests, extreme gradient boosting, multi-layer perceptrons,
+temporal convolution neural networks, and temporal attention encoders.  Performs
+efficient classification of big Earth observation data cubes and includes
+functions for post-classification smoothing based on Bayesian inference.
+Enables best practices for estimating area and assessing accuracy of land
+change.  Minimum recommended requirements: 16 GB RAM and 4 CPU dual-core.")
     (license license:gpl2)))
 
 (define-public r-sitreee
@@ -43306,19 +43379,21 @@ procedure.")
 (define-public r-simlandr
   (package
     (name "r-simlandr")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simlandr" version))
        (sha256
-        (base32 "1bgpka5z23763d8vlxz1pymgypqj0wyab3kcf6rkhliliksqqqp0"))))
+        (base32 "1qhar31s0s2056qrp3vn9h6l0kxs02kdn48hjf1hsnyg7286pbi5"))))
     (properties `((upstream-name . "simlandr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sim-diffproc
                              r-rlang
                              r-purrr
                              r-progress
@@ -43330,10 +43405,13 @@ procedure.")
                              r-htmlwidgets
                              r-ggplot2
                              r-gganimate
+                             r-furrr
                              r-forcats
                              r-dplyr
                              r-digest
+                             r-coda
                              r-bigmemory))
+    (native-inputs (list r-knitr))
     (home-page "https://sciurus365.github.io/simlandr/")
     (synopsis "Simulation-Based Landscape Construction for Dynamical Systems")
     (description
@@ -46041,6 +46119,38 @@ stochastic gradient descent estimator, Sieve-SGD, for online or large scale
 batch problems.  Details of the methods can be found in:
 <@code{arXiv:2206.02994>} <@code{arXiv:2104.00846><arXiv:2310.12140>}.")
     (license license:gpl2)))
+
+(define-public r-siera
+  (package
+    (name "r-siera")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "siera" version))
+       (sha256
+        (base32 "0nbf6bsrkpggigrg1jfyhyl9jvxp295cldawxpnrlbl75hwpxcxx"))))
+    (properties `((upstream-name . "siera")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-magrittr
+                             r-jsonlite
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=siera")
+    (synopsis "Generate Analysis Results Programmes Using ARS Metadata")
+    (description
+     "Analysis Results Standard (ARS), a foundational standard by CDISC (Clinical Data
+Interchange Standards Consortium), provides a logical data model for metadata
+describing all components to calculate Analysis Results.
+<https://www.cdisc.org/standards/foundational/analysis-results-standard> Using
+siera package, ARS metadata is ingested (JSON or Excel format), producing
+programmes to generate Analysis Results Datasets (ARDs).")
+    (license license:expat)))
 
 (define-public r-sier
   (package
@@ -53289,43 +53399,6 @@ Houpt, Blaha, @code{McIntire}, Havig, and Townsend (2013)
 Factorial Technology along with examples using the sft R package.")
     (license license:gpl2+)))
 
-(define-public r-sfsi
-  (package
-    (name "r-sfsi")
-    (version "1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SFSI" version))
-       (sha256
-        (base32 "1l4fqg55jjlyidbdfksvc80zkvjbg4vz89ibqxpm38j2c0vi4h9a"))))
-    (properties `((upstream-name . "SFSI")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridis
-                             r-tensorevd
-                             r-stringr
-                             r-scales
-                             r-reshape2
-                             r-igraph
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MarcooLopez/SFSI")
-    (synopsis "Sparse Family and Selection Index")
-    (description
-     "Here we provide tools for the estimation of coefficients in penalized
-regressions when the (co)variance matrix of predictors and the covariance vector
-between predictors and response, are provided.  These methods are extended to
-the context of a Selection Index (commonly used for breeding value prediction).
-The approaches offer opportunities such as the integration of high-throughput
-traits in genetic evaluations ('Lopez-Cruz et al., 2020')
-<doi:10.1038/s41598-020-65011-2> and solutions for training set optimization in
-Genomic Prediction ('Lopez-Cruz & de los Campos, 2021')
-<doi:10.1093/genetics/iyab030>.")
-    (license license:gpl3)))
-
 (define-public r-sfs
   (package
     (name "r-sfs")
@@ -53537,13 +53610,13 @@ can also be used via the website interface at <http://sfinx.ugent.be>.")
 (define-public r-sfhotspot
   (package
     (name "r-sfhotspot")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfhotspot" version))
        (sha256
-        (base32 "17vlayqqhv59p9mhrxzxs5r6gfqd6wyyi1k6p05n2sd9c06jzadb"))))
+        (base32 "0jndiiwf4h05fzchdvmrz1jdl3rvjvpqj28kgqqww1q2h4825mf8"))))
     (properties `((upstream-name . "sfhotspot")))
     (build-system r-build-system)
     (arguments
@@ -59141,67 +59214,6 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 <https://www.monash.edu/business/econometrics-and-business-statistics/research/publications/ebs/wp06-2018.pdf>.")
     (license license:gpl3)))
 
-(define-public r-seeker
-  (package
-    (name "r-seeker")
-    (version "1.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "seeker" version))
-       (sha256
-        (base32 "0xzlm0ph1g88ccv1f4k7nicsmmzcsdxmwbzpdx8vvpfihjy808qa"))))
-    (properties `((upstream-name . "seeker")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-withr
-                             r-tximport
-                             r-sessioninfo
-                             r-readr
-                             r-rcurl
-                             r-r-utils
-                             r-qs
-                             r-jsonlite
-                             r-glue
-                             r-geoquery
-                             r-foreach
-                             r-data-table
-                             r-curl
-                             r-checkmate
-                             r-biomart
-                             r-biocmanager
-                             r-annotationdbi
-                             r-affy))
-    (native-inputs (list r-knitr))
-    (home-page "https://seeker.hugheylab.org")
-    (synopsis
-     "Simplified Fetching and Processing of Microarray and RNA-Seq Data")
-    (description
-     "Wrapper around various existing tools and command-line interfaces, providing a
-standard interface, simple parallelization, and detailed logging.  For
-microarray data, maps probe sets to standard gene IDs, building on GEOquery
-Davis and Meltzer (2007) <doi:10.1093/bioinformatics/btm254>,
-@code{ArrayExpress} Kauffmann et al. (2009) <doi:10.1093/bioinformatics/btp354>,
-Robust multi-array average RMA Irizarry et al. (2003)
-<doi:10.1093/biostatistics/4.2.249>, and @code{BrainArray} Dai et al. (2005)
-<doi:10.1093/nar/gni179>.  For RNA-seq data, fetches metadata and raw reads from
-National Center for Biotechnology Information (NCBI) Sequence Read Archive
-(SRA), performs standard adapter and quality trimming using @code{TrimGalore}
-Krueger <https://github.com/@code{FelixKrueger/TrimGalore>}, performs quality
-control checks using @code{FastQC} Andrews
-<https://github.com/s-andrews/@code{FastQC>}, quantifies transcript abundances
-using salmon Patro et al. (2017) <doi:10.1038/nmeth.4197> and potentially
-refgenie Stolarczyk et al. (2020) <doi:10.1093/gigascience/giz149>, aggregates
-the results using @code{MultiQC} Ewels et al. (2016)
-<doi:10.1093/bioinformatics/btw354>, maps transcripts to genes using
-@code{biomaRt} Durinkck et al. (2009) <doi:10.1038/nprot.2009.97>, and
-summarizes transcript-level quantifications for gene-level analyses using
-tximport Soneson et al. (2015) <doi:10.12688/f1000research.7563.2>.")
-    (license license:expat)))
-
 (define-public r-seedvigorindex
   (package
     (name "r-seedvigorindex")
@@ -64549,6 +64561,38 @@ standard normal distribution.  SCI was originally developed for precipitation.
 In this case it is known as the Standardized Precipitation Index (SPI).")
     (license license:gpl2+)))
 
+(define-public r-schwabr
+  (package
+    (name "r-schwabr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "schwabr" version))
+       (sha256
+        (base32 "0sf189vgd228wh8kzs5l1166dvwqir9q1n50hml0xs723d7hr0yf"))))
+    (properties `((upstream-name . "schwabr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-urltools
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-base64enc))
+    (home-page "https://altanalytics.github.io/schwabr/")
+    (synopsis "'Schwab API' Interface for R")
+    (description
+     "Use R to interface with the Charles Schwab Trade API
+<https://developer.schwab.com/>.  Functions include authentication, trading,
+price requests, account information, and option chains.  A user will need a
+Schwab brokerage account and Schwab Individual Developer app.  See README for
+authentication process and examples.")
+    (license license:gpl3)))
+
 (define-public r-schumaker
   (package
     (name "r-schumaker")
@@ -68177,13 +68221,13 @@ drafted reports.")
 (define-public r-saros
   (package
     (name "r-saros")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saros" version))
        (sha256
-        (base32 "1nkz982bvppi5ddx95d063cckj3k5mrh8i9fmqbsrgvbsz0zd5zd"))))
+        (base32 "192y419lsdfbh760zla59jnmy9hnab8x9gyg4xjhbf95sgnd96ml"))))
     (properties `((upstream-name . "saros")))
     (build-system r-build-system)
     (arguments

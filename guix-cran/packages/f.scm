@@ -6715,47 +6715,6 @@ function in the package computes the estimated value of the total as well as
 estimated variance.")
     (license license:gpl3)))
 
-(define-public r-fpdclustering
-  (package
-    (name "r-fpdclustering")
-    (version "2.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FPDclustering" version))
-       (sha256
-        (base32 "0h3p2rmdqjbvx8ry0bprq6cl4by5d1ichj6nmlmic6s12g9s4gr7"))))
-    (properties `((upstream-name . "FPDclustering")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-threeway
-                             r-rootsolve
-                             r-mvtnorm
-                             r-mass
-                             r-klar
-                             r-ggplot2
-                             r-ggeasy
-                             r-ggally
-                             r-exposition
-                             r-cluster))
-    (home-page "https://cran.r-project.org/package=FPDclustering")
-    (synopsis "PD-Clustering and Related Methods")
-    (description
-     "Probabilistic distance clustering (PD-clustering) is an iterative,
-distribution-free, probabilistic clustering method.  PD-clustering assigns units
-to a cluster according to their probability of membership under the constraint
-that the product of the probability and the distance of each point to any
-cluster center is a constant.  PD-clustering is a flexible method that can be
-used with elliptical clusters, outliers, or noisy data.  PDQ is an extension of
-the algorithm for clusters of different sizes.  GPDC and TPDC use a
-dissimilarity measure based on densities.  Factor PD-clustering (FPDC) is a
-factor clustering method that involves a linear transformation of variables and
-a cluster optimizing the PD-clustering criterion.  It works on high-dimensional
-data sets.")
-    (license license:gpl2+)))
-
 (define-public r-fpcompare
   (package
     (name "r-fpcompare")
@@ -7421,13 +7380,13 @@ functions to display the descriptive statistics.")
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forrel" version))
        (sha256
-        (base32 "03hsnzn5vkhdnf63pv4fq4zxgj2hm4g7jxn0gdr3cg9l4ahwams2"))))
+        (base32 "1yylf1zxqz6j7729w8085b7h6y6h3zibawgfgxd1pd20khzy9n4j"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
     (arguments
@@ -7437,7 +7396,6 @@ functions to display the descriptive statistics.")
                              r-ribd
                              r-pedtools
                              r-pedprobr
-                             r-pedfamilias
                              r-pbapply
                              r-glue))
     (home-page "https://github.com/magnusdv/forrel")
@@ -7708,6 +7666,33 @@ single numbers in inline R code chunks and for rendering columns in tables.")
     (description
      "Format @code{BibTeX} entries and files in an opinionated way.")
     (license license:gpl3+)))
+
+(define-public r-forlion
+  (package
+    (name "r-forlion")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ForLion" version))
+       (sha256
+        (base32 "15khdfcz8sji2ljr78bz4zlz78wi4ldfyypah1ymd5cwqs2dvabr"))))
+    (properties `((upstream-name . "ForLion")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-psych r-cubature))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ForLion")
+    (synopsis "'ForLion' Algorithm to Find D-Optimal Designs for Experiments")
+    (description
+     "Designing experimental plans that involve both discrete and continuous factors
+with general parametric statistical models using the @code{ForLion} algorithm
+and EW @code{ForLion} algorithm.  The algorithms will search for locally optimal
+designs and EW optimal designs under the D-criterion.  Reference: Huang, Y., Li,
+K., Mandal, A., & Yang, J., (2024)<doi:10.1007/s11222-024-10465-x>.")
+    (license license:expat)))
 
 (define-public r-forit
   (package
@@ -10825,51 +10810,6 @@ machines, this package offers a suite of tools for data handling and analysis.
 It includes functions for converting Fluidigm data to format used by PLINK',
 estimating errors, calculating pairwise similarities, determining pairwise
 similarity loci, and generating a similarity matrix.")
-    (license license:gpl3)))
-
-(define-public r-flsss
-  (package
-    (name "r-flsss")
-    (version "9.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FLSSS" version))
-       (sha256
-        (base32 "0maxazc3q1lwgyl2qgknrgrcxjf00dwkgf96d5675xyymbsrw7im"))))
-    (properties `((upstream-name . "FLSSS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcpp))
-    (home-page "https://cran.r-project.org/package=FLSSS")
-    (synopsis "Mining Rigs for Problems in the Subset Sum Family")
-    (description
-     "Specialized solvers for combinatorial optimization problems in the Subset Sum
-family.  The solvers differ from the mainstream in the options of (i)
-restricting subset size, (ii) bounding subset elements, (iii) mining real-value
-multisets with predefined subset sum errors, (iv) finding one or more subsets in
-limited time.  A novel algorithm for mining the one-dimensional Subset Sum
-induced algorithms for the multi-Subset Sum and the multidimensional Subset Sum.
- The multi-threaded framework for the latter offers exact algorithms to the
-multidimensional Knapsack and the Generalized Assignment problems.  Historical
-updates include (a) renewed implementation of the multi-Subset Sum,
-multidimensional Knapsack and Generalized Assignment solvers; (b) availability
-of bounding solution space in the multidimensional Subset Sum; (c) fundamental
-data structure and architectural changes for enhanced cache locality and better
-chance of SIMD vectorization; (d) option of mapping floating-point instance to
-compressed 64-bit integer instance with user-controlled precision loss, which
-could yield substantial speedup due to the dimension reduction and efficient
-compressed integer arithmetic via bit-manipulations; (e) distributed computing
-infrastructure for multidimensional subset sum; (f) arbitrary-precision
-zero-margin-of-error multidimensional Subset Sum accelerated by a simplified
-Bloom filter.  The package contains a copy of @code{xxHash} from
-<https://github.com/Cyan4973/@code{xxHash>}.  Package vignette
-(<doi:10.48550/@code{arXiv.1612.04484>}) detailed a few historical updates.
-Functions prefixed with aux (auxiliary) are independent implementations of
-published algorithms for solving optimization problems less relevant to Subset
-Sum.")
     (license license:gpl3)))
 
 (define-public r-flsa
@@ -19264,13 +19204,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "0qr8p7lajpfgbc0np9am6dx8773n861534nv5g3q1pyfbdpzqcgw"))))
+        (base32 "0y1g0fhwmxjp1694mhnbf8bspb30zdny9xpdrnh7la4v3wdbccl4"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (arguments
@@ -21551,6 +21491,52 @@ algorithms that which require O(n^2) operations to sample a random graph, where
 n is the number of nodes.")
     (license license:expat)))
 
+(define-public r-fastret
+  (package
+    (name "r-fastret")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FastRet" version))
+       (sha256
+        (base32 "09q0pcc54dzjgbx27w9qvwzqca1hp526x254wv75hxs74whbysci"))))
+    (properties `((upstream-name . "FastRet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xlsx
+                             r-xgboost
+                             r-shinyjs
+                             r-shinyhelper
+                             r-shinybusy
+                             r-shiny
+                             r-readxl
+                             r-rcdk
+                             r-promises
+                             r-htmltools
+                             r-glmnet
+                             r-ggplot2
+                             r-future
+                             r-dt
+                             r-digest
+                             r-data-table
+                             r-cluster
+                             r-caret
+                             r-bslib))
+    (home-page "https://github.com/spang-lab/FastRet/")
+    (synopsis "Retention Time Prediction in Liquid Chromatography")
+    (description
+     "This package provides a framework for predicting retention times in liquid
+chromatography.  Users can train custom models for specific chromatography
+columns, predict retention times using existing models, or adjust existing
+models to account for altered experimental conditions.  The provided
+functionalities can be accessed either via the R console or via a graphical user
+interface.  Related work: Bonini et al. (2020)
+<doi:10.1021/acs.analchem.9b05765>.")
+    (license license:gpl3)))
+
 (define-public r-fastrerandomize
   (package
     (name "r-fastrerandomize")
@@ -22602,27 +22588,34 @@ Raimondo (2019), IEEE International Conference on Image Processing (ICIP), pp.
 (define-public r-fastgasp
   (package
     (name "r-fastgasp")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastGaSP" version))
        (sha256
-        (base32 "1bc2lc07jka3qjdkl23jkqdgz1495l6p2war9iwkxyfvwx5m130j"))))
+        (base32 "0w1zy6zw4f0fd256hxfdf005p8v8m2bji1nl7mfpy37ap17wym0x"))))
     (properties `((upstream-name . "FastGaSP")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (propagated-inputs (list r-rstiefel r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=FastGaSP")
     (synopsis "Fast and Exact Computation of Gaussian Stochastic Process")
     (description
      "This package implements fast and exact computation of Gaussian stochastic
 process with the Matern kernel using forward filtering and backward smoothing
-algorithm.  It allows for the cases with or without a noise.  See the reference:
-Mengyang Gu and Yanxun Xu, 2020, Journal of Computational and Graphical
-Statistics.")
+algorithm.  It includes efficient implementations of the inverse Kalman filter,
+with applications such as estimating particle interaction functions.  These
+tools support models with or without noise.  Additionally, the package offers
+algorithms for fast parameter estimation in latent factor models, where the
+factor loading matrix is orthogonal, and latent processes are modeled by
+Gaussian processes.  See the references: 1) Mengyang Gu and Yanxun Xu (2020),
+Journal of Computational and Graphical Statistics; 2) Xinyi Fang and Mengyang Gu
+(2024), <doi:10.48550/@code{arXiv.2407.10089>}; 3) Mengyang Gu and Weining Shen
+(2020), Journal of Machine Learning Research; 4) Yizi Lin, Xubo Liu, Paul Segall
+and Mengyang Gu (2025), <doi:10.48550/@code{arXiv.2501.01324>}.")
     (license license:gpl2+)))
 
 (define-public r-fastfmm

@@ -4175,13 +4175,13 @@ repositories.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "1jv1a1aasrq943gdhgyg5a4a9wcdwm7ljx7i0kjl12gjn8sddmqz"))))
+        (base32 "08dxnak06zxwaihlakhmxp2fm77nxpvh3kyxdg394342yy5dgbfq"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (arguments
@@ -4194,7 +4194,8 @@ repositories.")
                              r-matrix
                              r-igraph
                              r-ggraph
-                             r-ggplot2))
+                             r-ggplot2
+                             r-ggm))
     (native-inputs (list r-knitr))
     (home-page "https://james-thorson-noaa.github.io/dsem/")
     (synopsis "Fit Dynamic Structural Equation Models")
@@ -13887,13 +13888,13 @@ also contains functions currently in a non-CRAN package called litsearchr
 (define-public r-discover
   (package
     (name "r-discover")
-    (version "3.1.2")
+    (version "3.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "discoveR" version))
        (sha256
-        (base32 "1smy2bzzqc4nvrd4qj2sq4d1f0pvbm4nixxh8xpy22lwwa8pkd24"))))
+        (base32 "1iv6jh48jyhqvlxlhwxsabbrg7mnjz5d5gx9pd8vy1iglcsgdxiv"))))
     (properties `((upstream-name . "discoveR")))
     (build-system r-build-system)
     (arguments
@@ -13919,7 +13920,7 @@ also contains functions currently in a non-CRAN package called litsearchr
                              r-config
                              r-colourpicker
                              r-cluster))
-    (home-page "https://www.promidat.com")
+    (home-page "https://promidat.website/")
     (synopsis "Exploratory Data Analysis System")
     (description
      "This package performs an exploratory data analysis through a shiny interface.
@@ -14735,13 +14736,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "7.0")
+    (version "7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "0193cfnazfvxf522g541v7smp2c1ag86l3crmz91vpflm6bbaaz0"))))
+        (base32 "0zyihh16ra1d8iy1cfv9qq2ysq88n31zn2ah2nf9gzzfsnnj0cqx"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (arguments
@@ -14783,10 +14784,10 @@ of arbitrary dimension.  Electronic Journal of Statistics, 18(1): 301--334.
 <doi:10.1214/23-EJS2210>.  f) Tsagris M. and Alzeley O. (2024). \"Circular and
 spherical projected Cauchy distributions: A Novel Framework for Circular and
 Directional Data Modeling\".  Australian & New Zealand Journal of Statistics
-(Accepted for publication). <doi:10.48550/@code{arXiv.2302.02468>}.  g) Tsagris
-M., Papastamoulis P. and Kato S. (2024). \"Directional data analysis using the
-spherical Cauchy and the Poisson kernel-based distribution\".
-<doi:10.48550/@code{arXiv.2409.03292>}.")
+(Accepted for publication). <doi:10.1111/anzs.12434>.  g) Tsagris M.,
+Papastamoulis P. and Kato S. (2024). \"Directional data analysis: spherical
+Cauchy or Poisson kernel-based distribution\".  Statistics and Computing
+(Accepted for publication). <doi:10.48550/@code{arXiv.2409.03292>}.")
     (license license:gpl2+)))
 
 (define-public r-directeffects
@@ -18951,13 +18952,13 @@ gradients, Hessian and Jacobian matrices is possible.")
 (define-public r-dfd
   (package
     (name "r-dfd")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DFD" version))
        (sha256
-        (base32 "11nqhhngxhb2zk63zychkxi55jqrxr28yz4l9vin29hd391wqwzd"))))
+        (base32 "05jvmvd3980k6zxq30llxr9ahd2x7l0qsv283x67j668jkx8h89z"))))
     (properties `((upstream-name . "DFD")))
     (build-system r-build-system)
     (arguments

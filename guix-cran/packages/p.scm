@@ -3492,19 +3492,20 @@ multi-methods, spherical representation of a correlation matrix.")
 (define-public r-psweight
   (package
     (name "r-psweight")
-    (version "1.2.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSweight" version))
        (sha256
-        (base32 "1p0iq95jwhh6j3gw3zd8m58rryy8j33k2lrzypb5qzhwrgx2i41v"))))
+        (base32 "140gk4b8bzpi799hqslqzqw2pslba99a17h9k4vm6r6lqd5bpfwl"))))
     (properties `((upstream-name . "PSweight")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-superlearner
+    (propagated-inputs (list r-survey
+                             r-superlearner
                              r-numderiv
                              r-nnet
                              r-mass
@@ -5053,13 +5054,13 @@ application of Personalised Synthetic Controls.")
 (define-public r-psborrow2
   (package
     (name "r-psborrow2")
-    (version "0.0.3.4")
+    (version "0.0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psborrow2" version))
        (sha256
-        (base32 "05mcfbgkdlx6yfiysvh3yk75c8rdcci7ql89n76vlm9h17ff5fm1"))))
+        (base32 "07sclrgmc17vdhalagwf5xwmblr42xvmrm69nr21nbiqiah688w5"))))
     (properties `((upstream-name . "psborrow2")))
     (build-system r-build-system)
     (arguments
@@ -5093,7 +5094,7 @@ borrowing, dynamic borrowing) and other trial and borrowing characteristics
 set of functions to generate data for simulation studies, and also allows the
 user to specify their own data generation process.  This package is designed to
 use the sampling functions from cmdstanr which can be installed from
-<https://mc-stan.org/r-packages/>.")
+<https://stan-dev.r-universe.dev>.")
     (license license:asl2.0)))
 
 (define-public r-psborrow
@@ -10180,19 +10181,19 @@ aggregation of these tabular inputs.")
 (define-public r-primarycensored
   (package
     (name "r-primarycensored")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "primarycensored" version))
        (sha256
-        (base32 "133hk9z7m5zarky18arjdm6b6himjb54x3d41yddcj4kxkl4iz7a"))))
+        (base32 "10dsv71wwkcwxanbaxa1bahj1m64z42rghjqvplifs791rwvgmmy"))))
     (properties `((upstream-name . "primarycensored")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma))
+    (propagated-inputs (list r-rlang r-pracma r-lifecycle))
     (native-inputs (list r-knitr))
     (home-page "https://primarycensored.epinowcast.org")
     (synopsis "Primary Event Censored Distributions")
@@ -14803,6 +14804,35 @@ data, apply various data checks, and deal with conflicting columns.")
 power when passing laws in weighted voting situations.")
     (license license:gpl2)))
 
+(define-public r-powerhe
+  (package
+    (name "r-powerhe")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "powerHE" version))
+       (sha256
+        (base32 "0q5dyifbvygmbcwcr8rk2dplibsrrn5yvlfwpk27k796524g93zw"))))
+    (properties `((upstream-name . "powerHE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-skellam))
+    (home-page "https://cran.r-project.org/package=powerHE")
+    (synopsis "Power and Sample Size Calculations with Hierarchical Endpoints")
+    (description
+     "Calculate sample size or power for hierarchical endpoints.  The package can
+handle any type of outcomes (binary, continuous, count, ordinal, time-to-event)
+and any number of such endpoints.  It allows users to calculate sample size with
+a given power or to calculate power with a given sample size for hypothesis
+testing based on win ratios, win odds, net benefit, or DOOR (desirability of
+outcome ranking) as treatment effect between two groups for hierarchical
+endpoints.  The methods of this package are described further in the paper by
+Barnhart, H. X. et al. (2024, <doi:10.1080/19466315.2024.2365629>).")
+    (license license:gpl2+)))
+
 (define-public r-powergwasinteraction
   (package
     (name "r-powergwasinteraction")
@@ -18717,13 +18747,13 @@ translation services online.")
 (define-public r-polycub
   (package
     (name "r-polycub")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyCub" version))
        (sha256
-        (base32 "14hifd0ixppy3bg49y4kpjgvwhvz6nj43nh37hgwsy5qdifayzq7"))))
+        (base32 "19mxyrzca5psigi1h8h32px8m52w6258b4qd298jjxiiw0hlxlx6"))))
     (properties `((upstream-name . "polyCub")))
     (build-system r-build-system)
     (arguments
@@ -27488,13 +27518,13 @@ Chl a ratios for phytoplankton groups.")
 (define-public r-physortr
   (package
     (name "r-physortr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhySortR" version))
        (sha256
-        (base32 "19426xjdii74qds0wmq5sa88zys81nyqb9lvf9pfihbjgrjr770a"))))
+        (base32 "0y133mqkpwqw01wk9qlr5hnprfirfa6l7f52zw33fdbqzng7zrnk"))))
     (properties `((upstream-name . "PhySortR")))
     (build-system r-build-system)
     (arguments
@@ -32452,13 +32482,13 @@ Lee & Braun (2012) <doi:10.1111/j.1541-0420.2011.01675.x>.")
 (define-public r-permutations
   (package
     (name "r-permutations")
-    (version "1.1-5")
+    (version "1.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "permutations" version))
        (sha256
-        (base32 "1cw6z9cw1pvkyf6c9v0rkfx3mr0bpncji4hsj1smxpq3y0pdwajx"))))
+        (base32 "11q4mcigd7zmni98y6ykvi7js2b97s8v962vkkllhcipdfhbrvvx"))))
     (properties `((upstream-name . "permutations")))
     (build-system r-build-system)
     (arguments
@@ -38699,6 +38729,48 @@ patient profile report(s) or can be embedded in custom report(s).")
 Medical Outcomes Partnership (OMOP) common data model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-patientlevelprediction
+  (package
+    (name "r-patientlevelprediction")
+    (version "6.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PatientLevelPrediction" version))
+       (sha256
+        (base32 "0j1d7mypfpy31l1bqqgwyixnnccimb6m7gpc7zmnm00mghdd26qw"))))
+    (properties `((upstream-name . "PatientLevelPrediction")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sqlrender
+                             r-rlang
+                             r-prroc
+                             r-proc
+                             r-parallellogger
+                             r-memuse
+                             r-matrix
+                             r-featureextraction
+                             r-dplyr
+                             r-digest
+                             r-databaseconnector
+                             r-cyclops
+                             r-andromeda))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/PatientLevelPrediction/")
+    (synopsis "Develop Clinical Prediction Models Using the Common Data Model")
+    (description
+     "This package provides a user friendly way to create patient level prediction
+models using the Observational Medical Outcomes Partnership Common Data Model.
+Given a cohort of interest and an outcome of interest, the package can use data
+in the Common Data Model to build a large set of features.  These features can
+then be used to fit a predictive model with a number of machine learning
+algorithms.  This is further described in Reps (2017)
+<doi:10.1093/jamia/ocy032>.")
+    (license license:asl2.0)))
+
 (define-public r-pathwaytmb
   (package
     (name "r-pathwaytmb")
@@ -40229,6 +40301,30 @@ functionalities are parallelized for fast and efficient analyses.")
 the Boost Spirit X3 library.  It also includes a collection of high level
 functions for working with the resulting abstract syntax tree.")
     (license license:expat)))
+
+(define-public r-parselatex
+  (package
+    (name "r-parselatex")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "parseLatex" version))
+       (sha256
+        (base32 "0z9ap2lxqsv0ijf687zzqv08afpfwx2ji42pq3y840g35qdzcmzv"))))
+    (properties `((upstream-name . "parseLatex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dmurdoch/parseLatex")
+    (synopsis "Parse 'LaTeX' Code")
+    (description
+     "Exports an enhanced version of the @code{tools::parseLatex()} function to handle
+@code{LaTeX} syntax more accurately.  Also includes numerous functions for
+searching and modifying @code{LaTeX} source.")
+    (license license:gpl2+)))
 
 (define-public r-parsel
   (package

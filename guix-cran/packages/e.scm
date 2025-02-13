@@ -3241,13 +3241,13 @@ the result can be used in E-prime (<https://pstnet.com/products/e-prime/>).")
 (define-public r-excel-link
   (package
     (name "r-excel-link")
-    (version "0.9.13")
+    (version "0.9.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excel.link" version))
        (sha256
-        (base32 "1inpwdaa2ja4y9xgs3nnkikws55h3h1ac38wcq56lqjaqc6flnlj"))))
+        (base32 "1i7kaam0bg792i9sy0xqv5r12aifa60h7qxw48l6hjgg3ybsxwjv"))))
     (properties `((upstream-name . "excel.link")))
     (build-system r-build-system)
     (arguments
@@ -3267,30 +3267,6 @@ keep things as simple as possible - there are no needs in any additional
 installations besides R, only VBA code in the Excel workbook.  Microsoft Excel
 is required for this package.")
     (license license:gpl2+)))
-
-(define-public r-exceedprob
-  (package
-    (name "r-exceedprob")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "exceedProb" version))
-       (sha256
-        (base32 "02pb8b0rxygbv6501rcr2hb0bhz1r78k5znav161kk25fb9bxs5v"))))
-    (properties `((upstream-name . "exceedProb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://github.com/bdsegal/exceedProb")
-    (synopsis "Confidence Intervals for Exceedance Probability")
-    (description
-     "Computes confidence intervals for the exceedance probability of normally
-distributed estimators.  Currently only supports general linear models.  Please
-see Segal (2019) <@code{arXiv:1803.03356>} for more information.")
-    (license license:gpl3+)))
 
 (define-public r-exceedancetools
   (package
@@ -8889,13 +8865,13 @@ Krivitsky, Coletti, and Hens (2023) <doi:10.1080/01621459.2023.2242627>.")
 (define-public r-ergm-ego
   (package
     (name "r-ergm-ego")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.ego" version))
        (sha256
-        (base32 "0q9kmymli0056d4r2vgr94wc2zcc1vi5z617cpg7fmcnjnkfd489"))))
+        (base32 "09lhpfkbjbhb0qnshi69ghali83qmqwzqvn6scd38znmfnsyc90r"))))
     (properties `((upstream-name . "ergm.ego")))
     (build-system r-build-system)
     (arguments
@@ -12887,13 +12863,13 @@ using kernel density estimation can be found in J. F. Bithell (1991)
 (define-public r-enveomics-r
   (package
     (name "r-enveomics-r")
-    (version "1.9.1")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enveomics.R" version))
        (sha256
-        (base32 "1vw7pb5m13swwxql2c7raygs7rr5nrxbs93alhbv9bbmd01ga5zv"))))
+        (base32 "178yls4i544dhiz0hm0yid5s27a2i1p2py0dmcbaqa33r56v452k"))))
     (properties `((upstream-name . "enveomics.R")))
     (build-system r-build-system)
     (arguments
@@ -13702,31 +13678,28 @@ et al., (2019) <doi:10.7717/peerj.6281>, and Peterson et al., (2008)
 (define-public r-enmeval
   (package
     (name "r-enmeval")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ENMeval" version))
        (sha256
-        (base32 "1lb4bgnvig1sb88nfgylzps6kkw0jb5lz46yrqqk3ax71x33r7vd"))))
+        (base32 "1scrdv5b5xzn905wgl1smir3g0dd1ldi8kr77k6s5azdwj6wlj1c"))))
     (properties `((upstream-name . "ENMeval")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-terra
                              r-rlang
-                             r-raster
                              r-rangemodelmetadata
+                             r-predicts
                              r-maxnet
-                             r-magrittr
                              r-glmnet
                              r-ggplot2
                              r-foreach
-                             r-dplyr
-                             r-dosnow
-                             r-doparallel
-                             r-dismo))
+                             r-dplyr))
     (home-page "https://jamiemkass.github.io/ENMeval/")
     (synopsis "Automated Tuning and Evaluations of Ecological Niche Models")
     (description
@@ -13736,14 +13709,14 @@ tables to aid in selection of optimal model settings that balance
 goodness-of-fit and model complexity.  Also has functions to partition data
 spatially (or not) for cross validation, to plot multiple visualizations of
 results, to run null models to estimate significance and effect sizes of
-performance metrics, and to calculate niche overlap between model predictions,
+performance metrics, and to calculate range overlap between model predictions,
 among others.  The package was originally built for Maxent models (Phillips et
 al.  2006, Phillips et al.  2017), but the current version allows possible
 extensions for any modeling algorithm.  The extensive vignette, which guides
 users through most package functionality but unfortunately has a file size too
 big for CRAN, can be found here on the package's Github Pages website:
 <https://jamiemkass.github.io/ENMeval/articles/ENMeval-2.0-vignette.html>.")
-    (license (list license:gpl2+ license:gpl3+))))
+    (license license:gpl3)))
 
 (define-public r-engrexpt
   (package
@@ -22717,13 +22690,13 @@ type 2 error by using Permutational Multivariate Analysis of Variance, and (6)
 (define-public r-ecmwfr
   (package
     (name "r-ecmwfr")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecmwfr" version))
        (sha256
-        (base32 "0ryyx11685vnz2fkrzslp259l3k2iiczj7r70fbf7q0rcp0k7k94"))))
+        (base32 "06dwixvc4kjrj92329iw1qsvh7mxs2hvnzkdybvgbrgg37cwkxmq"))))
     (properties `((upstream-name . "ecmwfr")))
     (build-system r-build-system)
     (arguments
@@ -22896,6 +22869,41 @@ standard errors in @code{summary_ecic()}.  Results can be plotted with
 @code{plot_ecic()} aggregated over all cohort-group combinations or in an
 event-study style for either individual periods or individual quantiles.")
     (license license:expat)))
+
+(define-public r-echos
+  (package
+    (name "r-echos")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "echos" version))
+       (sha256
+        (base32 "162114g5xv3r0lizja02n5m9vz9anrg82hsd2qdz2nrg1hdwp1c1"))))
+    (properties `((upstream-name . "echos")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tsibble
+                             r-tidyr
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-matrix
+                             r-forecast
+                             r-fabletools
+                             r-dplyr
+                             r-distributional))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahaeusser/echos")
+    (synopsis "Echo State Networks for Time Series Modeling and Forecasting")
+    (description
+     "This package provides a lightweight implementation of functions and methods for
+fast and fully automatic time series modeling and forecasting using Echo State
+Networks (ESNs).")
+    (license license:gpl3)))
 
 (define-public r-echor
   (package
@@ -24227,13 +24235,13 @@ to Wolter (2007) <doi:10.1007/978-0-387-35099-8>.")
 (define-public r-eatrep
   (package
     (name "r-eatrep")
-    (version "0.15.0")
+    (version "0.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatRep" version))
        (sha256
-        (base32 "0p8qgvrl9c20xbpaz883iva908pvp9bjxmh8mv2bwdwx69q2va69"))))
+        (base32 "12wdakpy7a41m35k97sb65vp2c0jswl43adkgjvm699wc8x9197k"))))
     (properties `((upstream-name . "eatRep")))
     (build-system r-build-system)
     (arguments
@@ -25208,19 +25216,19 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easybio
   (package
     (name "r-easybio")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybio" version))
        (sha256
-        (base32 "0alnbb1pjvykagpgmw7wmn8bp0pkx3wx62nl97yvw9fwwdkg56hn"))))
+        (base32 "0wd09lsymfyvp63jj69q9xrajbjzb11pih5llidrnbr4x7a2nf3r"))))
     (properties `((upstream-name . "easybio")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6 r-limma r-ggplot2 r-data-table))
+    (propagated-inputs (list r-xml2 r-r6 r-httr2 r-ggplot2 r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/person-c/easybio")
     (synopsis

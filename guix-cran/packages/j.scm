@@ -1461,13 +1461,13 @@ functions.")
 (define-public r-jrsicklsnmf
   (package
     (name "r-jrsicklsnmf")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jrSiCKLSNMF" version))
        (sha256
-        (base32 "1ai3maxl1gmgr9bvc813xnfz5lk9kgzm6a46p8iidjpnv5p42c4v"))))
+        (base32 "1b0v8hq9dpif6l0gm9iyrd9l2mgdg7ksaj6zvip8rvqx1n5wdxdv"))))
     (properties `((upstream-name . "jrSiCKLSNMF")))
     (build-system r-build-system)
     (arguments
@@ -1486,6 +1486,7 @@ functions.")
                              r-kknn
                              r-irlba
                              r-igraph
+                             r-ggrepel
                              r-ggplot2
                              r-foreach
                              r-factoextra

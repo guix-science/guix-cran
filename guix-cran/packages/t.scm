@@ -3824,6 +3824,43 @@ package is based on Keras and @code{TensorFlow} modules and the algorithm of
 Paul and Garai (2021) <doi:10.1007/s00500-021-06087-4>.")
     (license license:gpl3)))
 
+(define-public r-tsla
+  (package
+    (name "r-tsla")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TSLA" version))
+       (sha256
+        (base32 "1lzaq5vjm336rvdhb40p7kdb40v1c69z3lqrj7cfcqjh5dl8wzpl"))))
+    (properties `((upstream-name . "TSLA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-prroc
+                             r-proc
+                             r-phytools
+                             r-matrix
+                             r-data-tree
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=TSLA")
+    (synopsis "Tree-Guided Rare Feature Selection and Logic Aggregation")
+    (description
+     "Implementation of the tree-guided feature selection and logic aggregation
+approach introduced in Chen et al. (2024) <doi:10.1080/01621459.2024.2326621>.
+The method enables the selection and aggregation of large-scale rare binary
+features with a known hierarchical structure using a convex,
+linearly-constrained regularized regression framework.  The package facilitates
+the application of this method to both linear regression and binary
+classification problems by solving the optimization problem via the smoothing
+proximal gradient descent algorithm (Chen et al. (2012)
+<doi:10.1214/11-AOAS514>).")
+    (license license:gpl3)))
+
 (define-public r-tsir
   (package
     (name "r-tsir")
@@ -10293,13 +10330,13 @@ traffic speed or the car entries for a selected time date.")
 (define-public r-trader
   (package
     (name "r-trader")
-    (version "1.2-5")
+    (version "1.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TRADER" version))
        (sha256
-        (base32 "1zy48a7lrbw1kx8mrdlsjhkqba5nc2dvq9hw6n7bqd7z3iv3gl0f"))))
+        (base32 "175cnv922w75qj38qys9fvsyh2xyxwj6z5l3rdayydzdqph84myk"))))
     (properties `((upstream-name . "TRADER")))
     (build-system r-build-system)
     (arguments
@@ -14223,13 +14260,13 @@ Barrera-Gomez and Basagana (2015) <doi:10.1097/EDE.0000000000000247>.")
 (define-public r-tlic
   (package
     (name "r-tlic")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TLIC" version))
        (sha256
-        (base32 "0li3qh0jn9sw8p0cq8wdr529nsldv0ff22yrbc5l9g0jbf0h6zby"))))
+        (base32 "1v16d9xkj1qmfm7czb9lgzzvibnqcki7nr2z8zh77wchlavxplwd"))))
     (properties `((upstream-name . "TLIC")))
     (build-system r-build-system)
     (arguments
@@ -17707,13 +17744,13 @@ package.")
 (define-public r-tidyquant
   (package
     (name "r-tidyquant")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyquant" version))
        (sha256
-        (base32 "033xy6al7hnbw3wdn3fzr7qp3k6i5a400mlgrarzm44vv3blva27"))))
+        (base32 "0bd7vzy6lxwcmn8mrrfg2yanhhgxg3an38dgri4rba9fdr6yc4mg"))))
     (properties `((upstream-name . "tidyquant")))
     (build-system r-build-system)
     (arguments
@@ -26392,13 +26429,13 @@ manipulation of application layout and plot or table settings.")
 (define-public r-teal-transform
   (package
     (name "r-teal-transform")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.transform" version))
        (sha256
-        (base32 "0g171h3lqym99w6h4msm00xx88fc23fq67n8lxal55zdrvv1flg0"))))
+        (base32 "0fpbynnsi1nd44c71wqy1pf2578ysxcpyzhbn43y7q6shkrzg5dw"))))
     (properties `((upstream-name . "teal.transform")))
     (build-system r-build-system)
     (arguments
@@ -26417,7 +26454,7 @@ manipulation of application layout and plot or table settings.")
                              r-lifecycle
                              r-dplyr
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.transform/")
     (synopsis
      "Functions for Extracting and Merging Data in the 'teal' Framework")

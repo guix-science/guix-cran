@@ -731,6 +731,30 @@ tables in both PDF and HTML using RMarkdown or Shiny'.")
 holidays and non-business hours.")
     (license license:agpl3)))
 
+(define-public r-bushtucker
+  (package
+    (name "r-bushtucker")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bushtucker" version))
+       (sha256
+        (base32 "0qgmf2pddq9m07jiyk2cniia8bqpdfschf104a4zx63mn9rl6i6q"))))
+    (properties `((upstream-name . "bushtucker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://chrisbrownlie.github.io/bushtucker/")
+    (synopsis "'I'm a Celebrity Get Me Out of Here' Data")
+    (description
+     "Data on the first 24 seasons of the UK TV show I'm a Celebrity, Get Me Out of
+Here', broadcast from 2002-2024.  Taken from the Wikipedia pages for each season
+and the main page available at
+<https://en.wikipedia.org/wiki/I%27m_a_Celebrity...Get_Me_Out_of_Here!_(British_TV_series)>.")
+    (license license:expat)))
+
 (define-public r-busdater
   (package
     (name "r-busdater")
@@ -8237,19 +8261,20 @@ in practical clinical trial analyses.")
 (define-public r-bonsai
   (package
     (name "r-bonsai")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bonsai" version))
        (sha256
-        (base32 "01k4b1d0rl6fry1y5594fca7rsp7i55d0wadm7ibydn9jf1hmsiv"))))
+        (base32 "171zrfwr7xpr4j7ppkfw5a27xakf1sxdpm365zg5am7zr3inhbb7"))))
     (properties `((upstream-name . "bonsai")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-withr
+                             r-tibble
                              r-rlang
                              r-purrr
                              r-parsnip
@@ -14012,6 +14037,42 @@ purchased as asreml-R from VSNi <https://vsni.co.uk/>, who will supply a zip
 file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
     (license license:expat)))
 
+(define-public r-biomass
+  (package
+    (name "r-biomass")
+    (version "2.1.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BIOMASS" version))
+       (sha256
+        (base32 "0z1qphza51agv5464rln6j58698c0r45nk6hcjmzb89kh8h9lsb2"))))
+    (properties `((upstream-name . "BIOMASS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rappdirs
+                             r-proj4
+                             r-minpack-lm
+                             r-jsonlite
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/umr-amap/BIOMASS")
+    (synopsis
+     "Estimating Aboveground Biomass and Its Uncertainty in Tropical Forests")
+    (description
+     "This package contains functions to estimate aboveground biomass/carbon and its
+uncertainty in tropical forests.  These functions allow to (1) retrieve and to
+correct taxonomy, (2) estimate wood density and its uncertainty, (3) construct
+height-diameter models, (4) manage tree and plot coordinates, (5) estimate the
+aboveground biomass/carbon at the stand level with associated uncertainty.  To
+cite BIOMASS', please use citation(\"BIOMASS\").  See more in the article of
+RÃ©jou-MÃ©chain et al. (2017) <doi:10.1111/2041-210X.12753>.")
+    (license license:gpl2)))
+
 (define-public r-biomark
   (package
     (name "r-biomark")
@@ -19008,6 +19069,35 @@ determine the shape and scale of the prior distributions defining the
 alternative hypotheses.  Plots of BFFs versus effect size provide informative
 summaries of hypothesis tests that can be easily aggregated across studies.")
     (license license:gpl2+)))
+
+(define-public r-bfboinet
+  (package
+    (name "r-bfboinet")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bfboinet" version))
+       (sha256
+        (base32 "0n9q9j7a386gylnm7cynbnb7bmn0v7l4yyrm5r2kn07ajdwp1p7p"))))
+    (properties `((upstream-name . "bfboinet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-magrittr r-iso r-dplyr r-copula))
+    (home-page "https://cran.r-project.org/package=bfboinet")
+    (synopsis
+     "Backfill Bayesian Optimal Interval Design Using Efficacy and Toxicity")
+    (description
+     "The backfill Bayesian optimal interval design using efficacy and toxicity
+outcomes for dose optimization (BF-BOIN-ET) design is a novel clinical trial
+design to allow patients to be backfilled at lower doses during a dose-finding
+trial while prioritizing the dose-escalation cohort to explore a higher dose.
+The advantages compared to the other designs in terms of the percentage of
+correct optimal dose (OD) selection, reducing the sample size, and shortening
+the duration of the trial, in various realistic setting.")
+    (license license:gpl3)))
 
 (define-public r-bfast
   (package
@@ -26851,6 +26941,46 @@ the concerned posterior.")
 models.  For a web-based Shiny application related to this package, see
 <https://implement.shinyapps.io/bayesess/>.")
     (license license:gpl2+)))
+
+(define-public r-bayesertools
+  (package
+    (name "r-bayesertools")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesERtools" version))
+       (sha256
+        (base32 "0vwxp3yin03a7xbvlq8kyf5rhr8ln0dyq2l1lv16ay4amlldmr23"))))
+    (properties `((upstream-name . "BayesERtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tidybayes
+                             r-rstanemax
+                             r-rstanarm
+                             r-rlang
+                             r-purrr
+                             r-posterior
+                             r-loo
+                             r-gt
+                             r-ggplot2
+                             r-dplyr
+                             r-cli
+                             r-bayestestr))
+    (native-inputs (list r-knitr))
+    (home-page "https://genentech.github.io/BayesERtools/")
+    (synopsis "Bayesian Exposure-Response Analysis Tools")
+    (description
+     "Suite of tools that facilitate exposure-response analysis using Bayesian
+methods.  The package provides a streamlined workflow for fitting types of
+models that are commonly used in exposure-response analysis - linear and Emax
+for continuous endpoints, logistic linear and logistic Emax for binary
+endpoints, as well as performing simulation and visualization.  Learn more about
+the workflow at <https://genentech.github.io/@code{BayesERbook/>}.")
+    (license license:asl2.0)))
 
 (define-public r-bayeseo
   (package

@@ -11780,19 +11780,20 @@ for linear and generalised linear models.")
 (define-public r-mpitbr
   (package
     (name "r-mpitbr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpitbR" version))
        (sha256
-        (base32 "01p82d0dzjlq3b0zyg25i7fh6l0amj55kcavcysqsjy2i0352fvb"))))
+        (base32 "1a8vglan5a68r5r9h028a46l0rlcj1i8zkz7r133qbqy99hgp0m0"))))
     (properties `((upstream-name . "mpitbR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survey r-purrr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/girelaignacio/mpitbR")
     (synopsis "Calculate Alkire-Foster Multidimensional Poverty Measures")
     (description
@@ -12478,13 +12479,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move2
   (package
     (name "r-move2")
-    (version "0.4.2")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move2" version))
        (sha256
-        (base32 "0i60pcp26biq3hp6bcg2yjcxxq9c9f1nxz5x84yi77ivmhw5fjy4"))))
+        (base32 "1ci6j2vvdbzgiwsbwlizqkhn9jxpcg344v3lx2nzlnv8kd2kj1ic"))))
     (properties `((upstream-name . "move2")))
     (build-system r-build-system)
     (arguments
@@ -18692,19 +18693,24 @@ Rosseel (2020) <doi:10.4324/9780429273872-14>.")
 (define-public r-mmints
   (package
     (name "r-mmints")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmints" version))
        (sha256
-        (base32 "0ddqbnj466sd56470sc8m1irzgch7nqidrbb01axwmyqjnfy56jv"))))
+        (base32 "1jx8sf9xabqw5fvnwki75as4iv4acv2j92ipm2027zvr8p2z3sxd"))))
     (properties `((upstream-name . "mmints")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-rpostgres r-pool r-dt))
+    (propagated-inputs (list r-sodium
+                             r-shinyauthr
+                             r-shiny
+                             r-rpostgres
+                             r-pool
+                             r-dt))
     (home-page "https://github.com/mightymetrika/mmints")
     (synopsis "Workflows for Building Web Applications")
     (description
@@ -24134,13 +24140,13 @@ o1-preview for code structure and documentation.")
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.4.1")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "1fhsdyl6dsgx6dy41xfdp8gnyajjmc4hy0rcik6rsz3s9xpamqz4"))))
+        (base32 "1c3bbsml04kwqm7wa14axpnkzkna0ppq2nf7lpgcxiqdkhbh2lzh"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (arguments
@@ -24606,13 +24612,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misuvi
   (package
     (name "r-misuvi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misuvi" version))
        (sha256
-        (base32 "0l62hm1d9bjxn53k50aq71i9f8fgj8v55m75l3f9qc88wr8fhqf2"))))
+        (base32 "0gcazsfn3bv5a4m5wjks72bx2vggn19s10q0j8navwm7qsfwwcfv"))))
     (properties `((upstream-name . "misuvi")))
     (build-system r-build-system)
     (arguments
@@ -24627,8 +24633,8 @@ DNA Heteroplasmy calculated from single-cell datasets
 metrics, percentiles, Z-scores, or rankings.  Data is available at both the
 County and Zip Code Tabulation Area (ZCTA) levels.  This package also includes a
 function to import shape files for easy mapping and a function to access the
-full technical documentation.  All data is sourced from
-(<https://www.michigan.gov/opioids/category-data>).")
+full technical documentation.  All data is sourced from the Michigan Department
+of Health and Human Services.")
     (license license:cc0)))
 
 (define-public r-misty
@@ -33609,6 +33615,40 @@ the metabolic theory of ecology (see Brown et al. (2004) <doi:10.1890/03-9000>
 and Brown, Sibly and Kodric-Brown (2012) <doi:10.1002/9781119968535.ch>).")
     (license license:gpl3)))
 
+(define-public r-metaquant
+  (package
+    (name "r-metaquant")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metaquant" version))
+       (sha256
+        (base32 "03dykasfxfhyn0cjka0mzy987d2ca2rkmb94f6rivrnvfjk1h159"))))
+    (properties `((upstream-name . "metaquant")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sld
+                             r-plotly
+                             r-magrittr
+                             r-gld
+                             r-ggplot2
+                             r-estmeansd
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=metaquant")
+    (synopsis
+     "Estimating Means, Standard Deviations and Visualising Distributions using Quantiles")
+    (description
+     "This package implements a novel density-based approach for estimating unknown
+means, visualizing distributions, and meta-analyses of quantiles.  A detailed
+vignettes with example datasets and code to prepare data and analyses is
+available at <https://bookdown.org/a2delivera/metaquant/>.  The methods are
+described in the pre-print by De Livera, Prendergast and Kumaranathunga (2024,
+<doi:10.48550/@code{arXiv.2411.10971>}).")
+    (license license:gpl3)))
+
 (define-public r-metaprotr
   (package
     (name "r-metaprotr")
@@ -35230,6 +35270,56 @@ Mikkelson 2002 <doi:10.1034/j.1600-0706.2002.970210.x>.  The package also
 includes functions to visualize ecological networks, and to calculate modularity
 as a replacement to boundary clumping.")
     (license license:gpl2)))
+
+(define-public r-metacoder
+  (package
+    (name "r-metacoder")
+    (version "0.3.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metacoder" version))
+       (sha256
+        (base32 "1j51ghvzspzwhnz6j1i3x1sn2qahqdf21a19wm8swx1x7djsd04r"))))
+    (properties `((upstream-name . "metacoder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-taxize
+                             r-stringr
+                             r-seqinr
+                             r-rlang
+                             r-readr
+                             r-rcurl
+                             r-rcpp
+                             r-r6
+                             r-magrittr
+                             r-lazyeval
+                             r-igraph
+                             r-ggplot2
+                             r-ggfittext
+                             r-ga
+                             r-dplyr
+                             r-crayon
+                             r-cowplot
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://grunwaldlab.github.io/metacoder_documentation/")
+    (synopsis
+     "Tools for Parsing, Manipulating, and Graphing Taxonomic Abundance Data")
+    (description
+     "Reads, plots, and manipulates large taxonomic data sets, like those generated
+from modern high-throughput sequencing, such as metabarcoding (i.e.
+amplification metagenomics, 16S metagenomics, etc).  It provides a tree-based
+visualization called \"heat trees\" used to depict statistics for every taxon in a
+taxonomy using color and size.  It also provides various functions to do common
+tasks in microbiome bioinformatics on data in the taxmap format defined by the
+taxa package.  The metacoder package is described in the publication by Foster
+et al. (2017) <doi:10.1371/journal.pcbi.1005404>.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-metacluster
   (package
@@ -48444,6 +48534,60 @@ It provides the ability to build, tune and obtain predictions of several models
 in one function.  The models are built using functions from caret with easier to
 read syntax.  Kuhn(2014) <@code{arXiv:1405.6974>}.")
     (license license:gpl2)))
+
+(define-public r-manydist
+  (package
+    (name "r-manydist")
+    (version "0.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "manydist" version))
+       (sha256
+        (base32 "114w4ylinkp8f5c82xlkzlnz272z0ph099xi81ypb95bpvb9whzk"))))
+    (properties `((upstream-name . "manydist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rsample
+                             r-rfast
+                             r-recipes
+                             r-readr
+                             r-purrr
+                             r-philentropy
+                             r-matrix
+                             r-magrittr
+                             r-fpc
+                             r-forcats
+                             r-fastdummies
+                             r-entropy
+                             r-dplyr
+                             r-distances
+                             r-data-table
+                             r-cluster))
+    (home-page "https://cran.r-project.org/package=manydist")
+    (synopsis "Unbiased Distances for Mixed-Type Data")
+    (description
+     "This package provides a comprehensive framework for calculating unbiased
+distances in datasets containing mixed-type variables (numerical and
+categorical).  The package implements a general formulation that ensures
+multivariate additivity and commensurability, meaning that variables contribute
+equally to the overall distance regardless of their type, scale, or
+distribution.  Supports multiple distance measures including Gower's distance,
+Euclidean distance, Manhattan distance, and various categorical variable
+distances such as simple matching, Eskin, occurrence frequency, and
+association-based distances.  Provides tools for variable scaling (standard
+deviation, range, robust range, and principal component scaling), and handles
+both independent and association-based category dissimilarities.  Implements
+methods to correct for biases that typically arise from different variable
+types, distributions, and number of categories.  Particularly useful for cluster
+analysis, data visualization, and other distance-based methods when working with
+mixed data.  Methods based on van de Velden et al. (2024)
+<doi:10.48550/@code{arXiv.2411.00429>} \"Unbiased mixed variables distance\".")
+    (license license:gpl3)))
 
 (define-public r-manydata
   (package

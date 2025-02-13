@@ -2226,25 +2226,25 @@ regression models that account for unmeasured confounders.")
 (define-public r-unmarked
   (package
     (name "r-unmarked")
-    (version "1.4.3")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unmarked" version))
        (sha256
-        (base32 "126svli0755263kc0gn6yf9lzhc3c3jpabsa481r2zf16l6r3br1"))))
+        (base32 "0kjrbfjxan7micc230vqnx34s3bl62vsrg2gqv3i2j9s348yhmqk"))))
     (properties `((upstream-name . "unmarked")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tmb
+                             r-reformulas
                              r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix
                              r-mass
-                             r-lme4
                              r-lattice))
     (native-inputs (list r-knitr))
     (home-page "https://groups.google.com/d/forum/unmarked")

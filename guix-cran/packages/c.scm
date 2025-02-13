@@ -3427,19 +3427,19 @@ methods introduced in Noonan et al. (2021) <doi:10.1101/2021.05.21.445056>.")
 (define-public r-ctost
   (package
     (name "r-ctost")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cTOST" version))
        (sha256
-        (base32 "15vynxc2zyqv0wly4paa4b2j5z0yw0qqkm2adsj9cm5x7cfv1k4p"))))
+        (base32 "0ip8binkz0yk552xn85q7mjl4m3kaibsm1fzhwbfbzfzvc44i3yf"))))
     (properties `((upstream-name . "cTOST")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmarkdown r-powertost r-owenq r-knitr r-cli))
+    (propagated-inputs (list r-rmarkdown r-powertost r-knitr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yboulag/cTOST")
     (synopsis
@@ -17884,13 +17884,13 @@ correctly, OAuth token caching, and refresh behaviour.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "1468qi4g7q9asak833nj7gbvbvy51691klpk20ksphbf9n27mwcp"))))
+        (base32 "0wps1px1jhrjzq66zi8gcr82ayhqc1bfzx2cg06lpn2sxqvds4hl"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (arguments
@@ -17911,7 +17911,7 @@ correctly, OAuth token caching, and refresh behaviour.")
                              r-fs
                              r-bit64))
     (native-inputs (list r-knitr))
-    (home-page "https://pkgs.rstudio.com/connectapi/")
+    (home-page "https://posit-dev.github.io/connectapi/")
     (synopsis "Utilities for Interacting with the 'Posit Connect' Server API")
     (description
      "This package provides a helpful R6 class and methods for interacting with the
@@ -22937,13 +22937,13 @@ P20GM113109.")
 (define-public r-colorspec
   (package
     (name "r-colorspec")
-    (version "1.6-0")
+    (version "1.7-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorSpec" version))
        (sha256
-        (base32 "1qn7h8hjb1grfx50p08y7za0v6gm7sa1zkmsgv2yib2x23yxsix8"))))
+        (base32 "1zgnkb3p82cnzjgwk1j5rdksqjv7sb3y47wy9xjbs7s637ssd9a9"))))
     (properties `((upstream-name . "colorSpec")))
     (build-system r-build-system)
     (arguments
@@ -22956,11 +22956,11 @@ P20GM113109.")
     (description
      "Calculate with spectral properties of light sources, materials, cameras, eyes,
 and scanners.  Build complex systems from simpler parts using a spectral product
-algebra.  For light sources, compute CCT, CRI, and SSI. For object colors,
-compute optimal colors and Logvinenko coordinates.  Work with the standard CIE
-illuminants and color matching functions, and read spectra from text files,
-including CGATS files.  Estimate a spectrum from its response.  A user guide and
-9 vignettes are included.")
+algebra.  For light sources, compute CCT, CRI, SSI, and IES TM-30 reports.  For
+object colors, compute optimal colors and Logvinenko coordinates.  Work with the
+standard CIE illuminants and color matching functions, and read spectra from
+text files, including CGATS files.  Estimate a spectrum from its response.  A
+user guide and 9 vignettes are included.")
     (license license:gpl3+)))
 
 (define-public r-colorscience
@@ -24351,13 +24351,13 @@ data.")
 (define-public r-cohortsymmetry
   (package
     (name "r-cohortsymmetry")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSymmetry" version))
        (sha256
-        (base32 "09q5vgxppba5hfhcs1dhybc89xh3pb5wlq5a6d76a7gnybxhmmyq"))))
+        (base32 "1pswcf7ri2qqb41hp9sz7x2an74g73psl4rjhdfalfszrmhjdwx9"))))
     (properties `((upstream-name . "CohortSymmetry")))
     (build-system r-build-system)
     (arguments
@@ -24371,6 +24371,7 @@ data.")
                              r-omopgenerics
                              r-omock
                              r-here
+                             r-ggplot2
                              r-duckdb
                              r-drugutilisation
                              r-dplyr
@@ -28055,6 +28056,32 @@ model-based clustering, including parsimonious procedure, optimal conditional
 order exploration, and visualization.")
     (license license:gpl2+)))
 
+(define-public r-cmatching
+  (package
+    (name "r-cmatching")
+    (version "2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CMatching" version))
+       (sha256
+        (base32 "1wzmihkbafbvl1h1zagfxfkr8gcv3hzq2lg23g375xh45vwdik8b"))))
+    (properties `((upstream-name . "CMatching")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-multiwayvcov r-matching r-lmtest r-lme4))
+    (home-page "https://cran.r-project.org/package=CMatching")
+    (synopsis "Matching Algorithms for Causal Inference with Clustered Data")
+    (description
+     "This package provides functions to perform matching algorithms for causal
+inference with clustered data, as described in B. Arpino and M. Cannas (2016)
+<doi:10.1002/sim.6880>.  Pure within-cluster and preferential within-cluster
+matching are implemented.  Both algorithms provide causal estimates with
+cluster-adjusted estimates of standard errors.")
+    (license license:gpl2)))
+
 (define-public r-cmars
   (package
     (name "r-cmars")
@@ -29206,18 +29233,22 @@ and mouse cell identity markers sourced from a variety of databases.")
 (define-public r-clustermi
   (package
     (name "r-clustermi")
-    (version "1.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterMI" version))
        (sha256
-        (base32 "09acbglcih51d0i9mlazps3fab4nw8bmap14gsdc3v562mgl7084"))))
+        (base32 "0xxbkylfy3k1fg1ivqqm3gkxh26fz9gpbqf074cprg52q70v818k"))))
     (properties `((upstream-name . "clusterMI")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-withr
                              r-rfast
                              r-reshape2
@@ -29238,7 +29269,7 @@ and mouse cell identity markers sourced from a variety of databases.")
                              r-dicer
                              r-clusterr
                              r-cat))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=clusterMI")
     (synopsis "Cluster Analysis with Missing Values by Multiple Imputation")
     (description
@@ -36168,48 +36199,6 @@ subdivision of a country.  This package was created for use with the choroplethr
 package.")
     (license license:bsd-3)))
 
-(define-public r-choroplethr
-  (package
-    (name "r-choroplethr")
-    (version "3.7.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "choroplethr" version))
-       (sha256
-        (base32 "053zs3bxr38izdkm1mhwqnrg7j5mb1dwjdx0dvsbv9l3nrb39par"))))
-    (properties `((upstream-name . "choroplethr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-wdi
-                             r-tigris
-                             r-tidyr
-                             r-tidycensus
-                             r-stringr
-                             r-rvest
-                             r-rgooglemaps
-                             r-r6
-                             r-hmisc
-                             r-gridextra
-                             r-ggplot2
-                             r-ggmap
-                             r-dplyr
-                             r-acs))
-    (home-page "www.choroplethr.com")
-    (synopsis "Simplify the Creation of Choropleth Maps in R")
-    (description
-     "Choropleths are thematic maps where geographic regions, such as states, are
-colored according to some metric, such as the number of people who live in that
-state.  This package simplifies this process by 1.  Providing ready-made
-functions for creating choropleths of common maps.  2.  Providing data and API
-connections to interesting data sources for making choropleths.  3.  Providing a
-framework for creating choropleths from arbitrary shapefiles.  4.  Overlaying
-those maps over reference maps from Google Maps.")
-    (license license:bsd-3)))
-
 (define-public r-chords
   (package
     (name "r-chords")
@@ -38213,13 +38202,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "1xlmyvim2z91chsa6p4bw196cncn0vvg4la2zvz62rnzk0swlnzk"))))
+        (base32 "1ig2g98q26q4aw17bnqpncg51lpnlaml0vvfnzv88gd297dw0inl"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments
@@ -38308,13 +38297,13 @@ developer in tedious coding tasks.")
 (define-public r-chatai4r
   (package
     (name "r-chatai4r")
-    (version "0.2.10")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chatAI4R" version))
        (sha256
-        (base32 "0iil1bl6l89lckxh4bdxjnjnww2h8q4gd83b29rbw4xfa1mlb8rb"))))
+        (base32 "165vvphjx69rs94gkx006b2fi6z2pgh9lwfsifqv2m9bakv758zg"))))
     (properties `((upstream-name . "chatAI4R")))
     (build-system r-build-system)
     (arguments
@@ -38329,8 +38318,10 @@ developer in tedious coding tasks.")
                              r-httr
                              r-future
                              r-deeprstudio
+                             r-curl
                              r-crayon
                              r-clipr
+                             r-base64enc
                              r-assertthat))
     (home-page "https://kumes.github.io/chatAI4R/")
     (synopsis "Chat-Based Interactive Artificial Intelligence for R")
@@ -42599,13 +42590,13 @@ assumption of two multivariate variable.")
 (define-public r-cdcplaces
   (package
     (name "r-cdcplaces")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDCPLACES" version))
        (sha256
-        (base32 "1hy6x2qicf1k7p00hpagm03h79xvw1d2wk04v74c4hlxxczyz29n"))))
+        (base32 "1926wxfgiisd5z7pjrqf3clw0ilcdbc1qz6ij09p2cxl4k1s6mmf"))))
     (properties `((upstream-name . "CDCPLACES")))
     (build-system r-build-system)
     (arguments

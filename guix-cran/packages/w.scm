@@ -9012,13 +9012,13 @@ data, addresses some common data problems, and calculates and plots anomalies.")
 (define-public r-watcher
   (package
     (name "r-watcher")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watcher" version))
        (sha256
-        (base32 "147a3vm947a6rhm54siscgspn3n0zz17ssmnci0l41l4ycpij8lz"))))
+        (base32 "05gc2jsz2c4arvy4x1y9vgp74dx55839y3y4nbfhw2yr7avd14sp"))))
     (properties `((upstream-name . "watcher")))
     (build-system r-build-system)
     (arguments

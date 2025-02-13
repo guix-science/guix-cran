@@ -2478,10 +2478,10 @@ architecture and hyperparameters of deep learning models.")
                              r-desc
                              r-cli))
     (home-page "https://github.com/DanChaltiel/autoimport")
-    (synopsis "Automatic Generation of importFrom Tags")
+    (synopsis "Automatic Generation of @@importFrom Tags")
     (description
      "This package provides a toolbox to read all R files inside a package and
-automatically generate @code{importFrom} roxygen2 tags in the right place.
+automatically generate @code{@@importFrom} roxygen2 tags in the right place.
 Includes a shiny application to review the changes before applying them.")
     (license license:gpl3)))
 
@@ -7725,20 +7725,21 @@ S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
 (define-public r-argentum
   (package
     (name "r-argentum")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Argentum" version))
        (sha256
-        (base32 "0f0d69hrx5a1wf6cx3m11q9cq8igmd28rc9gl1c1x9n8ys0gv2f0"))))
+        (base32 "0wsz5hr97yhdhvjvk394a2ykifz1j96gh30kbpxslsyv5x7vsj20"))))
     (properties `((upstream-name . "Argentum")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml2 r-sf r-readr r-httr))
-    (home-page "https://cran.r-project.org/package=Argentum")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thomasartopoulos/argentum/")
     (synopsis
      "Access and Import WMS and WFS Data from Argentine Organizations")
     (description
@@ -7746,8 +7747,8 @@ S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
 (WFS) and Web Map Service (WMS) layers from various Argentine organizations and
 import them into R for further analysis.  WFS and WMS are standardized protocols
 for serving georeferenced map data over the internet.  For more information on
-these services, see <https://www.ogc.org/standard/wfs/> and
-<https://www.ogc.org/standard/wms/>.")
+these services, see <https://www.ogc.org/publications/standard/wfs/> and
+<https://www.ogc.org/publications/standard/wms/>.")
     (license license:expat)))
 
 (define-public r-arfima
@@ -10817,13 +10818,13 @@ all possible comparisons (APC) methodology developed by Miller (2005)
 (define-public r-apcalign
   (package
     (name "r-apcalign")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APCalign" version))
        (sha256
-        (base32 "01ns5rikxchsh38s28is4y1xjbbca2c4a62q8mi2shmdr948kvpn"))))
+        (base32 "1a4casbisml8xsy8827dyg8prz2lxkaqryklnzdiabbfcdsiajd6"))))
     (properties `((upstream-name . "APCalign")))
     (build-system r-build-system)
     (arguments
@@ -11880,13 +11881,13 @@ visually explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.7.2")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresRead" version))
        (sha256
-        (base32 "1ihz7hdfq640sbdmq55mrsp070mwkpa97bn2l2bkn1qia1bxa2rn"))))
+        (base32 "19ci0ymrhvvrzrgh3wavv5a6w8m64sgg2zyn2gpv5yci3lr5fdpv"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (arguments
@@ -12876,26 +12877,23 @@ exploratory data analysis, and perhaps for preparation of presentations.")
 (define-public r-animl
   (package
     (name "r-animl")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animl" version))
        (sha256
-        (base32 "1r6vy8kc98av2xwxas59gzqiynaxvddc5dxdkbvfd5v9zsglqr0y"))))
+        (base32 "1x3xxgxnx993hnkm0ljkkql0jx25h4rjyi1h9jml5za886pvwjnz"))))
     (properties `((upstream-name . "animl")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tfdatasets
-                             r-tensorflow
+    (propagated-inputs (list r-rlang
                              r-reticulate
                              r-pbapply
                              r-magrittr
-                             r-keras
                              r-jpeg
-                             r-imager
                              r-exifr
                              r-dplyr
                              r-av))
@@ -17693,13 +17691,13 @@ Air Quality Index (AQI) are defined at the US Environmental Projection Agency
 (define-public r-airgrteaching
   (package
     (name "r-airgrteaching")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGRteaching" version))
        (sha256
-        (base32 "0dsxj20g63a4y4a865qsqdk8w1w0ybcam6x4f10bmppallkalagz"))))
+        (base32 "1aa11731mwdjkwbk2mz7zkni40hfqpqvaxajrr7fjcy73rd37mfn"))))
     (properties `((upstream-name . "airGRteaching")))
     (build-system r-build-system)
     (arguments

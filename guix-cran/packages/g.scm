@@ -3330,13 +3330,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.5")
+    (version "3.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "02rc0b69ay7gr3s91kqfy56n5laxxdirj61krll3p074123j9a65"))))
+        (base32 "13nm2gxp5g1a2nnb62w146zrarb7famkqd7563g1d6qqqn0h5kvn"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (arguments
@@ -13462,44 +13462,6 @@ analysis under heterogeneity.")
      "This package provides a framework for creating plots with glowing points.")
     (license license:gpl3)))
 
-(define-public r-glottospace
-  (package
-    (name "r-glottospace")
-    (version "0.0.112")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glottospace" version))
-       (sha256
-        (base32 "1bgyxki16mh38pw1476hq9f9r2899vs6ax7dsyrn1xzcad6x91y3"))))
-    (properties `((upstream-name . "glottospace")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-writexl
-                             r-units
-                             r-tmap
-                             r-tidyr
-                             r-tibble
-                             r-sf
-                             r-rnaturalearthdata
-                             r-rnaturalearth
-                             r-rlang
-                             r-readxl
-                             r-purrr
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/SietzeN/glottospace")
-    (synopsis
-     "Language Mapping and Geospatial Analysis of Linguistic and Cultural Data")
-    (description
-     "Streamlined workflows for geolinguistic analysis, including: accessing global
-linguistic and cultural databases, data import, data entry, data cleaning, data
-exploration, mapping, visualization and export.")
-    (license license:gpl3+)))
-
 (define-public r-glossr
   (package
     (name "r-glossr")
@@ -15901,13 +15863,13 @@ that all targets remain up to date.")
 (define-public r-gitstats
   (package
     (name "r-gitstats")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GitStats" version))
        (sha256
-        (base32 "0r3353z1j8yi0m5j6qwcqqlkw6vzfdzhj12vrmpcq0ki4dnxr0wv"))))
+        (base32 "1rdnnp84y9193f8brd2a2frblm26wnhqij0sq4jk5dwq5qcr2ndm"))))
     (properties `((upstream-name . "GitStats")))
     (build-system r-build-system)
     (arguments
@@ -18287,13 +18249,13 @@ and hexplots of survey data.")
 (define-public r-ggsurveillance
   (package
     (name "r-ggsurveillance")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsurveillance" version))
        (sha256
-        (base32 "0aff51vli0vynz0iidg9f4d2ybgvglx9pj5snnbzjr1kv0338r96"))))
+        (base32 "0pl1grsy81bi6kglkqrwv11v7p2bb4acfqck30sjbq3w3364bwvm"))))
     (properties `((upstream-name . "ggsurveillance")))
     (build-system r-build-system)
     (arguments
@@ -18315,11 +18277,11 @@ and hexplots of survey data.")
     (native-inputs (list r-knitr))
     (home-page "https://ggsurveillance.biostats.dev")
     (synopsis
-     "Tools and 'ggplot2' Extensions for Infectious Disease Surveillance and Outbreak Investigation")
+     "Tools for Outbreak Investigation/Infectious Disease Surveillance")
     (description
      "Create epicurves or epigantt charts in ggplot2'.  Prepare data for visualisation
 or other reporting for infectious disease surveillance and outbreak
-investigation.  Includes functions to solve date based transformations for
+investigation.  Includes tidy functions to solve date based transformations for
 common reporting tasks, like (A) seasonal date alignment for respiratory disease
 surveillance, (B) date-based case binning based on specified time intervals like
 isoweek, epiweek, month and more, (C) automated detection and marking of the new
@@ -19217,13 +19179,13 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrcs" version))
        (sha256
-        (base32 "16ywi8dgsp000w0869mwrn61lwk3gb40bb0i7yh9i1ch2cyc05v1"))))
+        (base32 "09xh17j1amvd8qp5g1a9wib3v4sc5lxb3ii5rm78b8cvrvaib5sg"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
     (arguments
@@ -26747,13 +26709,13 @@ data aggregation (Mora-Herrera et al.  2020) <doi:10.1016/j.compag.2020.105624>.
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.0.17")
+    (version "1.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geofi" version))
        (sha256
-        (base32 "1ihy8b94p6zqr7lpz6k5waqlhvpzyjp2sh73hh4kjmm4aazhx0x2"))))
+        (base32 "0frgqi7fhyldxq14rl9gvs59x4i7v8h90228bq5kdh7073251nf9"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (arguments
@@ -27177,6 +27139,53 @@ selected more effectively by using a method that weights based on geographical
 complexity.  By optimizing performance in spatial regression and spatial
 sampling tasks, the spatial bias of the model can be effectively reduced.")
     (license license:gpl3)))
+
+(define-public r-geocodebr
+  (package
+    (name "r-geocodebr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geocodebr" version))
+       (sha256
+        (base32 "0b1qhahwkhz40fkgcf77y956ngarfjf96dz3cf7z923h8mmr7jd8"))))
+    (properties `((upstream-name . "geocodebr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sfheaders
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-enderecobr
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-data-table
+                             r-cli
+                             r-checkmate
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ipeaGIT/geocodebr")
+    (synopsis
+     "GeolocalizaÃ§Ã£o De EndereÃ§os Brasileiros (Geocoding Brazilian Addresses)")
+    (description
+     "MÃ©todo simples e eficiente de geolocalizar dados no Brasil.  O pacote Ã©
+baseado em conjuntos de dados espaciais abertos de endereÃ§os brasileiros,
+utilizando principalmente o Cadastro Nacional de EndereÃ§os para Fins
+EstatÃ­sticos (CNEFE).  O CNEFE Ã© publicado pelo Instituto Brasileiro de
+Geografia e EstatÃ­stica (IBGE), Ã³rgÃ£o oficial de estatÃ­sticas e geografia do
+Brasil. (A simple and efficient method for geolocating data in Brazil.  The
+package is based on open spatial datasets of Brazilian addresses, primarily
+using the Cadastro Nacional de EndereÃ§os para Fins EstatÃ­sticos (CNEFE),
+published by the Instituto Brasileiro de Geografia e EstatÃ­stica (IBGE),
+Brazil's official statistics and geography agency.).")
+    (license license:expat)))
 
 (define-public r-geocmeans
   (package
@@ -30929,13 +30938,13 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "1ig334j26m4dvqbnqaiybcmnipvb7lgnvj9566vqw815gj8cjxk2"))))
+        (base32 "11kd97andcvf8sa1z80f3ip4blmnl27wziqigiq41hy0q9y4ngxf"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (arguments
@@ -33013,6 +33022,33 @@ frequencies can be replaced by synthetic decimal numbers as described in
 Langsrud (2019) <doi:10.1007/s11222-018-9848-9>.")
     (license license:expat)))
 
+(define-public r-gaussratiovegind
+  (package
+    (name "r-gaussratiovegind")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gaussratiovegind" version))
+       (sha256
+        (base32 "061qn262q3zrbb1c6n4hvsszx4pw0k65dddnm9ln14cjgcq0rpg1"))))
+    (properties `((upstream-name . "gaussratiovegind")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://forgemia.inra.fr/imhorphen/gaussratiovegind")
+    (synopsis "Distribution of Gaussian Ratios")
+    (description
+     "It is well known that the distribution of a Gaussian ratio does not follow a
+Gaussian distribution.  The lack of awareness among users of vegetation indices
+about this non-Gaussian nature could lead to incorrect statistical modeling and
+interpretation.  This package provides tools to accurately handle and analyse
+such ratios: density function, parameter estimation, simulation.  An example on
+the study of chlorophyll fluorescence can be found in A. El Ghaziri et al.
+(2023) <doi:10.3390/rs15020528>.")
+    (license license:gpl3+)))
+
 (define-public r-gaussquad
   (package
     (name "r-gaussquad")
@@ -34165,13 +34201,13 @@ utility functions to get an overview of GAMS data and to check its validity.")
 (define-public r-gamselbayes
   (package
     (name "r-gamselbayes")
-    (version "2.0-1")
+    (version "2.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamselBayes" version))
        (sha256
-        (base32 "1947lpxhiyf2kf22miliikx8plzhb1l97w440fb626vvgwfa340j"))))
+        (base32 "0id9q1z6yrlm6sj3nrwcb70b5fmymmv1n0bn1j9417wkkd01hwnb"))))
     (properties `((upstream-name . "gamselBayes")))
     (build-system r-build-system)
     (arguments
@@ -34188,7 +34224,7 @@ The approximate Bayesian inference engine options are: (1) Markov chain Monte
 Carlo and (2) mean field variational Bayes.  Markov chain Monte Carlo has better
 Bayesian inferential accuracy, but requires a longer run-time.  Mean field
 variational Bayes is faster, but less accurate.  The methodology is described in
-He and Wand (2023) <@code{arXiv:2201.00412>}.")
+He and Wand (2024) <doi:10.1007/s10182-023-00490-y>.")
     (license license:gpl2+)))
 
 (define-public r-gamsel
