@@ -2082,13 +2082,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "6.4")
+    (version "6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "0pkj5ai1c2j15kfk41f3pri5vsw9qrq8viihnbdfib3yq5nin0s6"))))
+        (base32 "18m9ld58ll7ipxn9p2pdm93r3n80rbyljcy8z627yfwzgw83hhdw"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (arguments
@@ -2122,13 +2122,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "6.4")
+    (version "6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "0rba6zfw2ilkm0l9pcr35dv8cfvnnvpirhla9pnc4hg1bza5mgcn"))))
+        (base32 "13hw8vgh0w5vi9chsj1xbc7ra8q4xgvi5zpqrwwdv8wng9j1rdm7"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (arguments
@@ -6024,30 +6024,6 @@ corresponds to the correct way to perform the popular log(Y + 1) transformation.
  For more details about how to use it, see the notebook at:
 <https://www.davidbenatia.com/>.")
     (license license:gpl3)))
-
-(define-public r-iohexperimenter
-  (package
-    (name "r-iohexperimenter")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IOHexperimenter" version))
-       (sha256
-        (base32 "0aacliznncl488rjsnx02pfj1mchhcyb36v816g959ll38pvc6bk"))))
-    (properties `((upstream-name . "IOHexperimenter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-magrittr r-bh r-assertthat))
-    (home-page "https://github.com/IOHprofiler/IOHexperimenter")
-    (synopsis "Benchmarking Part of the 'IOHprofiler'")
-    (description
-     "The benchmarking module for the Iterative Optimization Heuristics Profiler
-('IOHprofiler').  This module provides benchmarking in the IOHprofiler format,
-which can be visualized using the IOHanalyzer module.")
-    (license license:bsd-3)))
 
 (define-public r-iohanalyzer
   (package
@@ -15725,6 +15701,36 @@ structure.  Methods are based on results from Smith, Pittman and Xu (2024)
 <doi:10.48550/@code{arXiv.2411.01394>}.")
     (license license:expat)))
 
+(define-public r-iftpredictor
+  (package
+    (name "r-iftpredictor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IFTPredictor" version))
+       (sha256
+        (base32 "11nvxwlssf811cgv8wy7iqqdvkx8cn1a3mpn0rxsf4h6ldn4y685"))))
+    (properties `((upstream-name . "IFTPredictor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-diftree))
+    (home-page "https://cran.r-project.org/package=IFTPredictor")
+    (synopsis "Predictions Using Item-Focused Tree Models")
+    (description
+     "This function predicts item response probabilities and item responses using the
+item-focused tree model.  The item-focused tree model combines logistic
+regression with recursive partitioning to detect Differential Item Functioning
+in dichotomous items.  The model applies partitioning rules to the data,
+splitting it into homogeneous subgroups, and uses logistic regression within
+each subgroup to explain the data.  Differential Item Functioning detection is
+achieved by examining potential group differences in item response patterns.
+This method is useful for understanding how different predictors, such as
+demographic or psychological factors, influence item responses across subgroups.")
+    (license license:expat)))
+
 (define-public r-ifs
   (package
     (name "r-ifs")
@@ -15873,13 +15879,13 @@ References describing the methods: JefmaÅski (2020)
 (define-public r-ife
   (package
     (name "r-ife")
-    (version "0.1.0")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ife" version))
        (sha256
-        (base32 "08v2ab0wdyng9y3m75118d7pgck07hym2y8b7cz8xpzbwysgsba4"))))
+        (base32 "0gljx4czqlr3yv4m76n3p0q23q3lhrgaam40fwqns5n9cv0pyli0"))))
     (properties `((upstream-name . "ife")))
     (build-system r-build-system)
     (arguments
@@ -18612,13 +18618,13 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site."
 (define-public r-icesat2r
   (package
     (name "r-icesat2r")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IceSat2R" version))
        (sha256
-        (base32 "1l4lafbnlll3x9dyzb1mz4dw7dk2bdc22wq1vydwg22gd113wxxl"))))
+        (base32 "04n74fagkfbs18vad9h8vad0rx4drx7y4bp84sqmkm4cpcip6j7j"))))
     (properties `((upstream-name . "IceSat2R")))
     (build-system r-build-system)
     (arguments

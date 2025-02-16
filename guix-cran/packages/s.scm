@@ -2428,6 +2428,32 @@ formats as well as other swatch file formats can be found at
 <http://www.selapa.net/swatches/colors/fileformats.php>.")
     (license license:expat)))
 
+(define-public r-swash
+  (package
+    (name "r-swash")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "swash" version))
+       (sha256
+        (base32 "00b525xglpm8qwadj99ib2vm9rpscv5x37rjisbmnxqnpzqb10la"))))
+    (properties `((upstream-name . "swash")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=swash")
+    (synopsis "Swash-Backwash Model for the Single Epidemic Wave")
+    (description
+     "The Swash-Backwash Model for the Single Epidemic Wave was developed by Cliff and
+Haggett (2006) <doi:10.1007/s10109-006-0027-8> to model the velocity of spread
+of infectious diseases across space.  This package enables the calculation of
+the Swash-Backwash Model for user-supplied panel data on regional infections.
+The package also provides additional functions for bootstrap confidence
+intervals and data management.")
+    (license license:gpl2+)))
+
 (define-public r-swarmverse
   (package
     (name "r-swarmverse")
@@ -15316,29 +15342,27 @@ well as on the public pkgdown page at
 (define-public r-statconfr
   (package
     (name "r-statconfr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statConfR" version))
        (sha256
-        (base32 "0yzg2259r8w8b1kkrrj6494p9iyj7mk0zvxbwmgi8hbclrfqyw2n"))))
+        (base32 "0ccq4rvnw7880a2vckbq94fsggk56mb0gfz7fizgna63dsmzwgpx"))))
     (properties `((upstream-name . "statConfR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr))
+    (propagated-inputs (list r-rmisc r-plyr r-ggplot2))
     (home-page "https://github.com/ManuelRausch/StatConfR")
-    (synopsis "Models of Decision Confidence and Metacognition")
+    (synopsis "Models of Decision Confidence and Measures of Metacognition")
     (description
      "This package provides fitting functions and other tools for decision confidence
 and metacognition researchers, including meta-d'/d', often considered to be the
-gold standard to measure metacognitive efficiency.  Also allows to fit several
-static models of decision making and confidence to test the assumptions
-underlying meta-d'/d and which may serve as an alternative when the assumptions
-of meta-d'/d do not hold.  See also Rausch et al. (2023)
-<doi:10.1037/met0000634>.")
+gold standard to measure metacognitive efficiency, and information-theoretic
+measures of metacognition.  Also allows to fit several static models of decision
+making and confidence.")
     (license license:gpl3+)))
 
 (define-public r-statcomp
@@ -29915,13 +29939,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "1vp70xsjfdsp4w8fscr7mhf2six1l4xam41q96df038wqh6b7zfg"))))
+        (base32 "01y8vhx8l17vdrw3j7zbq1y8n6db9if6sv1py7z9sbdhabrxb9a3"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -32133,13 +32157,13 @@ is particularly useful in marine chemistry involving dissolved inorganic carbon.
 (define-public r-solvebio
   (package
     (name "r-solvebio")
-    (version "2.15.0")
+    (version "2.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "solvebio" version))
        (sha256
-        (base32 "0risi2s3m73hn7ip3x6gva6cr8dw9vmk237jncx9hcq07n5wr630"))))
+        (base32 "1mf7l1iwcs009hn7z379a00694h2ympy84b0pm7cxkligk9rfa18"))))
     (properties `((upstream-name . "solvebio")))
     (build-system r-build-system)
     (arguments
@@ -40859,13 +40883,13 @@ improve feature extraction.  Benjamin B.Risk, Irina Gaynanova (2021)
 (define-public r-singlercapture
   (package
     (name "r-singlercapture")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singleRcapture" version))
        (sha256
-        (base32 "1i6aqgzfq31jw6xalk743gr4zl4qfz7ac9m41qi90hhp5nk96806"))))
+        (base32 "13yhiqszb6cf2i2kin0qg8bwfv1w0n5p02jjmwan85j8l67k2b6p"))))
     (properties `((upstream-name . "singleRcapture")))
     (build-system r-build-system)
     (arguments
@@ -41691,13 +41715,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "0rwjj5nsrvfihzmgmy9vmm3di4fwab6ha6v2yg74kw3yrira6zjj"))))
+        (base32 "0j26vnqrxp0bpy3a3i2m2nsb3gi7q3bryh4nm597084v33zb50n1"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (arguments
@@ -53098,6 +53122,52 @@ scaling\". (ii) Lee, S., Liao, Y., Seo, M.H. and Shin, Y. (2023)
 <@code{arXiv:2209.14502>} \"Fast Inference for Quantile Regression with Tens of
 Millions of Observations\".")
     (license license:gpl3)))
+
+(define-public r-sgdgmf
+  (package
+    (name "r-sgdgmf")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgdGMF" version))
+       (sha256
+        (base32 "1kicbdix52v53d098hjahzjvj6i5l9zc0m7byvjsrq9vz4vp435i"))))
+    (properties `((upstream-name . "sgdGMF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-suppdists
+                             r-rspectra
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-ggpubr
+                             r-ggplot2
+                             r-generics
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CristianCastiglione/sgdGMF")
+    (synopsis
+     "Estimation of Generalized Matrix Factorization Models via Stochastic Gradient Descent")
+    (description
+     "Efficient framework to estimate high-dimensional generalized matrix
+factorization models using penalized maximum likelihood under a dispersion
+exponential family specification.  Either deterministic and stochastic methods
+are implemented for the numerical maximization.  In particular, the package
+implements the stochastic gradient descent algorithm with a block-wise
+mini-batch strategy to speed up the computations and an efficient adaptive
+learning rate schedule to stabilize the convergence.  All the theoretical
+details can be found in Castiglione et al. (2024,
+<doi:10.48550/@code{arXiv.2412.20509>}).  Other methods considered for the
+optimization are the alternated iterative re-weighted least squares and the
+quasi-Newton method with diagonal approximation of the Fisher information matrix
+discussed in Kidzinski et al. (2022, <http://jmlr.org/papers/v23/20-1104.html>).")
+    (license license:expat)))
 
 (define-public r-sgd
   (package
@@ -67517,13 +67587,13 @@ Inference and learning in stochastic automata was by Karl-Heinz Zimmermann(2017)
 (define-public r-saturncoefficient
   (package
     (name "r-saturncoefficient")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SaturnCoefficient" version))
        (sha256
-        (base32 "10dc55pvhn6mhgfxax3ml9d8xpw9l5yr2h3608yw98gs6k19749v"))))
+        (base32 "1lhk0xafgnfqc0zm9vpcicwvdxfvbfs7vw20v8gf1i4ns6hai0vn"))))
     (properties `((upstream-name . "SaturnCoefficient")))
     (build-system r-build-system)
     (arguments
@@ -71885,13 +71955,13 @@ using modified approach proposed by Haris F and Ubaidillah A
 (define-public r-sae-projection
   (package
     (name "r-sae-projection")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sae.projection" version))
        (sha256
-        (base32 "09rrl7xb2hxxd7z62zhl07kj32gr5h8fqshi01sakqarbky2qc14"))))
+        (base32 "0z4mbyyrq56s4f0scm82x4zw2ap227rdbq0pd9455j0d4ia6cdf0"))))
     (properties `((upstream-name . "sae.projection")))
     (build-system r-build-system)
     (arguments
@@ -71901,16 +71971,19 @@ using modified approach proposed by Haris F and Ubaidillah A
                              r-workflows
                              r-tune
                              r-tidymodels
+                             r-themis
                              r-survey
                              r-rsample
                              r-rlang
                              r-recipes
                              r-ranger
+                             r-randomforest
                              r-parsnip
                              r-lightgbm
                              r-dplyr
                              r-doparallel
                              r-cli
+                             r-caret
                              r-bonsai))
     (home-page "https://github.com/Alfrzlp/sae.projection")
     (synopsis "Small Area Estimation Using Model-Assisted Projection Method")

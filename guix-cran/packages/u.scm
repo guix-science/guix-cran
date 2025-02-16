@@ -2176,29 +2176,6 @@ optimize this method for the high-dimensional, low-sample size setting.  This
 method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.")
     (license license:gpl2+)))
 
-(define-public r-unnest
-  (package
-    (name "r-unnest")
-    (version "0.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "unnest" version))
-       (sha256
-        (base32 "091vmhk31i2qh7jzbpv03arnjs14zgz8z540w5vjvnm58yc7gnri"))))
-    (properties `((upstream-name . "unnest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/vspinu/unnest")
-    (synopsis "Unnest Hierarchical Data Structures")
-    (description
-     "Fast flattening of hierarchical data structures (e.g. JSON, XML) into
-data.frames with a flexible spec language.")
-    (license license:gpl2+)))
-
 (define-public r-unmconf
   (package
     (name "r-unmconf")

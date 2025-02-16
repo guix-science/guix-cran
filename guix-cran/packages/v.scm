@@ -8233,6 +8233,35 @@ of variation, the margin of error, confidence interval, design effect.")
     (description "Interactive variogram diagnostics.")
     (license license:gpl2+)))
 
+(define-public r-varcpdetectonline
+  (package
+    (name "r-varcpdetectonline")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VARcpDetectOnline" version))
+       (sha256
+        (base32 "0lakcxmsxxakdnrcddwwi44a27iyv4606gdnsm44584nwccai4yl"))))
+    (properties `((upstream-name . "VARcpDetectOnline")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass r-glmnet r-doparallel r-corpcor))
+    (home-page "https://github.com/Helloworld9293/VARcpDetectOnline")
+    (synopsis
+     "Sequential Change Point Detection for High-Dimensional VAR Models")
+    (description
+     "This package implements the algorithm introduced in Tian, Y., and Safikhani, A.
+(2024) <doi:10.5705/ss.202024.0182>, \"Sequential Change Point Detection in
+High-dimensional Vector Auto-regressive Models\".  This package provides tools
+for detecting change points in the transition matrices of VAR models,
+effectively identifying shifts in temporal and cross-correlations within
+high-dimensional time series data.")
+    (license (list license:gpl2
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-varclust
   (package
     (name "r-varclust")

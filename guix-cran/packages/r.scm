@@ -554,13 +554,13 @@ which runs the nlmixr2 models during estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "0sjv3pqv78ncaklb4h2yyxbazngsfvknl0fh0vrmz1lwzqrsgyf8"))))
+        (base32 "1d67md4rr08csv47yrls0ssq4lh6yhkm9n201zfyn1f9h731jhsj"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (arguments
@@ -3833,13 +3833,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "17jbwyi19h5x9sbn14rgpbp2c23qi4w3jxdsvscrbhfrmckwfj90"))))
+        (base32 "0b5kgbpyg7zgbx2pr2apvxsx80vqclviiqxljldipwcs0061ppsk"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -10319,13 +10319,13 @@ Partial Least Squares (PLS), and Random Forest algorithms.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "4.1.2")
+    (version "4.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqPen" version))
        (sha256
-        (base32 "1fdl7s76kii0vwy69506h2nnjnq079zw8wjkrx41w3hg10pmiipd"))))
+        (base32 "1mgxjys8hvaz6wjxzcz546bg7lyvnh57zvx0aaz731yfqbcflh5p"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (arguments
@@ -10413,13 +10413,13 @@ L. Knight (1995) <doi:10.1119/1.17904> for more details.")
 (define-public r-rqdeltact
   (package
     (name "r-rqdeltact")
-    (version "1.3.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQdeltaCT" version))
        (sha256
-        (base32 "1zwajwyiwhl12v1119w9xlyw07a9iigj3yy27nm65ninqjbfrn8j"))))
+        (base32 "0rapmwhh06afpg9c3y8hincn1wy8zg0mxfm1d8psb0hnij6gld5k"))))
     (properties `((upstream-name . "RQdeltaCT")))
     (build-system r-build-system)
     (arguments
@@ -14396,13 +14396,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.18")
+    (version "0.9.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolog" version))
        (sha256
-        (base32 "0wdz2mnmih0hxrylqnrqrzgpwji3gi7mxzk9h60idfpwdhgc1krq"))))
+        (base32 "0d6slxmi1c36zhgdll0fklvrk2dbq9sm4fr92nx7r25fdplqah5l"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (arguments
@@ -23557,13 +23557,13 @@ force of mortality.")
 (define-public r-rkin
   (package
     (name "r-rkin")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rKIN" version))
        (sha256
-        (base32 "0dp8m7x5a9glz7yvbv207j3l0226xjxmgf0k2x6rv7zwg9v6y5qk"))))
+        (base32 "1rslk7pranl29plxaxypdahb8q676vp3fmh51l3rn3kvnrly9fw8"))))
     (properties `((upstream-name . "rKIN")))
     (build-system r-build-system)
     (arguments
@@ -24478,13 +24478,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.14.4")
+    (version "0.15.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "19473hz26hy8faba9ymlnh260gv4mjiih6s1v83wdy7ivkv0qwnk"))))
+        (base32 "0wkckfwhjkjylvw8lnlff4pd4d5qvl4vn1i94himxnpi49ryj6lg"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (arguments
@@ -28015,13 +28015,13 @@ open-source parallel database.  This is an extension of the RPostgres package
 (define-public r-rgrass
   (package
     (name "r-rgrass")
-    (version "0.5-1")
+    (version "0.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgrass" version))
        (sha256
-        (base32 "0a0x02j6lm1cmy1mcrfpmz6y5nbki10m0gcpi286x2ryzrm1cy30"))))
+        (base32 "0z2n9rv6y5w2pp8x1xqp00hpsp8m6s9xrcvf2fkhh1ssj2x508lc"))))
     (properties `((upstream-name . "rgrass")))
     (build-system r-build-system)
     (arguments
@@ -31115,21 +31115,20 @@ probabilities.")
 (define-public r-revenerar
   (package
     (name "r-revenerar")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reveneraR" version))
        (sha256
-        (base32 "0l5l9lqwisphjpf2ni0c0a3cg4xpkxy3sk4nvj93f6pra2fmg4rg"))))
+        (base32 "1xvgkcdz0x9sx2wjssiklp7la4bqyyhbcwq83fdzl80h7ln0xx0z"))))
     (properties `((upstream-name . "reveneraR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-rlang
                              r-purrr
                              r-magrittr
                              r-jsonlite
@@ -31140,8 +31139,8 @@ probabilities.")
     (description
      "Facilitates making a connection to the Revenera API and executing various
 queries.  You can use it to get event data and metadata.  The Revenera
-documentation is available at <https://docs.revenera.com/ui560/report/>.  This
-package is not supported by Flexera (owner of the software).")
+documentation is available at <https://rui-api.redoc.ly/>.  This package is not
+supported by Flexera (owner of the software).")
     (license license:cc0)))
 
 (define-public r-revecor
@@ -45667,13 +45666,13 @@ by Wickham H. (2015) <ISBN:9781491910597> and Marwick B. et al. (2018)
 (define-public r-rcompanion
   (package
     (name "r-rcompanion")
-    (version "2.4.36")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcompanion" version))
        (sha256
-        (base32 "0r6kppwfm44h9y5wda3pfnxgsjvrdj3ysdmxclhrciq5rlzs2n8v"))))
+        (base32 "16mvpzgb3axqm2ndr4q01d8qqsf6nhq3fi4dn001wjqijbz26viw"))))
     (properties `((upstream-name . "rcompanion")))
     (build-system r-build-system)
     (arguments
@@ -47162,36 +47161,6 @@ interface of the Climacell v4 API <https://www.climacell.co/weather-api/>.  This
 package requires a valid API key.  See vignettes for instructions on use.")
     (license license:expat)))
 
-(define-public r-rclickhouse
-  (package
-    (name "r-rclickhouse")
-    (version "0.6.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RClickhouse" version))
-       (sha256
-        (base32 "06r3xn3xjhr2adpmh4cpykbx1ly5i7aw4izcg2xci7cm5xbg2vzl"))))
-    (properties `((upstream-name . "RClickhouse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-cli
-                             r-bit64))
-    (home-page "https://github.com/IMSMWU/RClickhouse")
-    (synopsis "'Yandex Clickhouse' Interface for R with Basic 'dplyr' Support")
-    (description
-     "Yandex Clickhouse (<https://clickhouse.com/>) is a high-performance relational
-column-store database to enable big data exploration and analytics scaling to
-petabytes of data.  Methods are provided that enable working with Yandex
-Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
-    (license license:gpl2)))
-
 (define-public r-rclabels
   (package
     (name "r-rclabels")
@@ -47305,6 +47274,31 @@ Its output is a sampled Markov chain from the posterior distribution of dates
 component the chronology.  The functions can also be applied to the analyse of
 mcmc output generated by Oxcal software.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-rchroma
+  (package
+    (name "r-rchroma")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rchroma" version))
+       (sha256
+        (base32 "1l44wx8hff8ckxzrzjd9j55i39f8ia09hckq0ydiqqjhf5x09psd"))))
+    (properties `((upstream-name . "rchroma")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cynkra/rchroma")
+    (synopsis "Client for 'ChromaDB'")
+    (description
+     "Client for @code{ChromaDB}', a vector database for storing and querying
+embeddings.  This package provides a convenient interface to interact with the
+REST API of @code{ChromaDB} <https://docs.trychroma.com>.")
+    (license license:expat)))
 
 (define-public r-rchoicedialogs
   (package
@@ -52680,6 +52674,35 @@ based on descending/ascending order. @code{smartrank()} is suitable for both
 numerical and categorical data.")
     (license license:expat)))
 
+(define-public r-rangr
+  (package
+    (name "r-rangr")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rangr" version))
+       (sha256
+        (base32 "1yrc4jxf5888m4k2rgzmnpbif9a9sgg1qjn3pcwrhgc097140ww7"))))
+    (properties `((upstream-name . "rangr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo r-terra r-pbapply r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/rangr")
+    (synopsis "Mechanistic Simulation of Species Range Dynamics")
+    (description
+     "Integrates population dynamics and dispersal into a mechanistic virtual species
+simulator.  The package can be used to study the effects of environmental change
+on population growth and range shifts.  It allows for simple and straightforward
+definition of population dynamics (including positive density dependence),
+extensive possibilities for defining dispersal kernels, and the ability to
+generate virtual ecologist data.  Learn more about the rangr at
+<https://docs.ropensci.org/rangr/>.")
+    (license license:expat)))
+
 (define-public r-ranglapunjab
   (package
     (name "r-ranglapunjab")
@@ -56758,13 +56781,13 @@ include in shiny', markdown and quarto documents.")
 (define-public r-r2redux
   (package
     (name "r-r2redux")
-    (version "1.0.17")
+    (version "1.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2redux" version))
        (sha256
-        (base32 "07666saxzxy48i2dd0gi0m1x912dn5s78m9rqriwnavnx76ca20i"))))
+        (base32 "19816ddmrhwg1i1mdhilpij29mhw5j7fwvgldgrywcawxmskjn06"))))
     (properties `((upstream-name . "r2redux")))
     (build-system r-build-system)
     (arguments
@@ -57090,13 +57113,13 @@ mitigation goals.")
 (define-public r-r2dii-match
   (package
     (name "r-r2dii-match")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.match" version))
        (sha256
-        (base32 "06a5l9fb9fan103nwb74720ls3s450j6y9zfqyvrps0sa53bwc0w"))))
+        (base32 "1gw9vjf84hgkqprbhrih8m1y89vlzmviq7rnv2ipklkfq7lra8mk"))))
     (properties `((upstream-name . "r2dii.match")))
     (build-system r-build-system)
     (arguments
@@ -57162,13 +57185,13 @@ development and use of PACTA in R.")
 (define-public r-r2dii-analysis
   (package
     (name "r-r2dii-analysis")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.analysis" version))
        (sha256
-        (base32 "02rawyr3z0zg2yhc04mdnjkwrczwwv2822vphwyv3vwwlayjy3fh"))))
+        (base32 "0i65gjyry3mc3jf38xy3qs1f77yjmg3x2w1v3l7lwlaprk80m0k2"))))
     (properties `((upstream-name . "r2dii.analysis")))
     (build-system r-build-system)
     (arguments
@@ -57183,7 +57206,7 @@ development and use of PACTA in R.")
                              r-lifecycle
                              r-glue
                              r-dplyr))
-    (home-page "https://github.com/RMI-PACTA/r2dii.analysis")
+    (home-page "https://rmi-pacta.github.io/r2dii.analysis/")
     (synopsis "Measure Climate Scenario Alignment of Corporate Loans")
     (description
      "These tools help you to assess if a corporate lending portfolio aligns with

@@ -1003,13 +1003,13 @@ P., Olsen, L. R., & Wambugu M. (2019, ISBN: 9781838550134).")
 (define-public r-cvmortalitymult
   (package
     (name "r-cvmortalitymult")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CvmortalityMult" version))
        (sha256
-        (base32 "02zzg4ygs843gwlcs5rk0lqklif0hv1ghj9hnx0gf50z2ibp9a9n"))))
+        (base32 "05aka0cyr4j0q77y1ihglfxd49q35gy0xg9jam4g067rvmdixk38"))))
     (properties `((upstream-name . "CvmortalityMult")))
     (build-system r-build-system)
     (arguments
@@ -22892,25 +22892,28 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.1.4.2")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "1544qyqxwyw3hdqx0prpp79lla8h9h05r8ypvkcvh1gdwxh9cr3x"))))
+        (base32 "072i9a195x4nbyccmqbamsnyzab199j96bq058bwphc0qc94z4xr"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (propagated-inputs (list r-testthat
+    (propagated-inputs (list r-tibble
+                             r-testthat
                              r-stringr
                              r-rlang
                              r-rcppeigen
                              r-rcpp
                              r-processx
+                             r-lubridate
+                             r-dplyr
                              r-data-table
                              r-callr))
     (native-inputs (list r-knitr))
@@ -22923,7 +22926,7 @@ models can be the sum or product of terms.  Each term is the product of
 exponential/linear functions of covariates.  Additionally sub-terms can be
 defined as a sum of exponential, linear threshold, and step functions.  Cox
 Proportional hazards <https://en.wikipedia.org/wiki/Proportional_hazards_model>,
-Poisson <https://en.wikipedia.org/wiki/Poisson_regression>, and Fine-Grey
+Poisson <https://en.wikipedia.org/wiki/Poisson_regression>, and Fine-Gray
 competing risks
 <https://www.publichealth.columbia.edu/research/population-health-methods/competing-risk-analysis>
 regression are supported.  This work was sponsored by NASA Grant 80NSSC19M0161
@@ -23959,13 +23962,13 @@ examples of time-to-event data.")
 (define-public r-collegescorecard
   (package
     (name "r-collegescorecard")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "collegeScorecard" version))
        (sha256
-        (base32 "06v8r8ldlx1n4wp5mhzizh92pyysj7zjvcn6vrh5n4w28f719i8q"))))
+        (base32 "17jghps5i824v6c20rs2714fmq29fjd7bhf5r2phrx9q7vd46bvi"))))
     (properties `((upstream-name . "collegeScorecard")))
     (build-system r-build-system)
     (arguments
@@ -29423,6 +29426,50 @@ groups individuals, that to be imputed, have a non-zero probability of having
 the same alleles in the entire sequence of SNP's.  Moreover, clusterhap
 calculates such probability from relative frequencies.")
     (license license:gpl3)))
+
+(define-public r-clustergvis
+  (package
+    (name "r-clustergvis")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClusterGVis" version))
+       (sha256
+        (base32 "0i14z0a6bf9r1c07k0rp57qbgclnz2di0hfw1h15pgsmm15g0ckp"))))
+    (properties `((upstream-name . "ClusterGVis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-scales
+                             r-reshape2
+                             r-purrr
+                             r-mfuzz
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-factoextra
+                             r-e1071
+                             r-dplyr
+                             r-complexheatmap
+                             r-colorramps
+                             r-clusterprofiler
+                             r-circlize
+                             r-biobase))
+    (home-page "https://cran.r-project.org/package=ClusterGVis")
+    (synopsis "One-Step to Cluster and Visualize Gene Expression Data")
+    (description
+     "Streamlining the clustering and visualization of time-series gene expression
+data from RNA-Seq experiments, this tool supports fuzzy c-means and k-means
+clustering algorithms.  It is compatible with outputs from widely-used packages
+such as Seurat', Monocle', and WGCNA', enabling seamless downstream
+visualization and analysis.  See Lokesh Kumar and Matthias E Futschik (2007)
+<doi:10.6026/97320630002005> for more details.")
+    (license license:expat)))
 
 (define-public r-clusteredmutations
   (package
@@ -41153,19 +41200,20 @@ cross-sectional and panel data.")
 (define-public r-censored
   (package
     (name "r-censored")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censored" version))
        (sha256
-        (base32 "171bfny4d8p8i82xv0mj315imb9ghvn2jzvirqmkm6k0cxmaqyrz"))))
+        (base32 "03aidqscw0h6582l9sjhlpn7kkm01v9m670a02dkblx42pqk7wc9"))))
     (properties `((upstream-name . "censored")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
                              r-tibble
                              r-survival
                              r-rlang
@@ -46036,13 +46084,13 @@ intervals for common ecological network metrics.")
 (define-public r-casmi
   (package
     (name "r-casmi")
-    (version "1.2.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CASMI" version))
        (sha256
-        (base32 "1xj2d2p75hf6ypz57vbkrlcmf1gk52pv1fadyv9d40lzy8rc3667"))))
+        (base32 "0grylns8blxfxwqkfvybzh0pqprhr5fmvbs8pvn7pabbkrcgg7m2"))))
     (properties `((upstream-name . "CASMI")))
     (build-system r-build-system)
     (arguments
@@ -46466,31 +46514,6 @@ engineering, and prediction in cascade networks.  Jung, N., Bertrand, F.,
 Bahram, S., Vallat, L., and Maumy-Bertrand, M. (2014)
 <doi:10.1093/bioinformatics/btt705>.")
     (license license:gpl2+)))
-
-(define-public r-casabourse
-  (package
-    (name "r-casabourse")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "casabourse" version))
-       (sha256
-        (base32 "1s7zp44cmfnq4l9rzydqpnv9s2z4v7bvng8diz3bhzkg2zhpglnq"))))
-    (properties `((upstream-name . "casabourse")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rvest r-rjsonio r-r-utils r-gsheet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AODiakite")
-    (synopsis "Casablanca Stock Exchange Data")
-    (description
-     "It provides real-time data from the Casablanca Stock Exchange.  The objective is
-to facilitate access to data for all users of the R programming language.  It
-includes a variety of data accessible just by function call.")
-    (license license:gpl2)))
 
 (define-public r-cartography
   (package

@@ -580,20 +580,20 @@ dbplyr data frames or materialized sf spatial data frames.")
 (define-public r-overturemapsr
   (package
     (name "r-overturemapsr")
-    (version "0.0.4")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overturemapsr" version))
        (sha256
-        (base32 "176vh7gp6ijqb4dqnk3shhrs1q0x3gz0gj1w24a7qrcp5zdp24ff"))))
+        (base32 "0a5hvdxav0li1km4q0b3436hdm2abs221m7s8kqzgqzpj5cxpx3d"))))
     (properties `((upstream-name . "overturemapsr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-sf r-dplyr r-arrow))
-    (home-page "https://cran.r-project.org/package=overturemapsr")
+    (home-page "https://github.com/denironyx/overturemapsr")
     (synopsis "Download Overture Maps Data in R")
     (description
      "Overture Maps offers free and open geospatial map data sourced from various
@@ -6311,13 +6311,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.12")
+    (version "1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "1vy5b6wizic7xi1gqjapkpzkr701g5ywkvb9aamx251l166l5nrp"))))
+        (base32 "159nwpp8kr7nf1j6mzazn8clvv3s7vzmba3356x196838fs10i0d"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (arguments
@@ -8863,13 +8863,13 @@ to their API.")
 (define-public r-oneinfl
   (package
     (name "r-oneinfl")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oneinfl" version))
        (sha256
-        (base32 "0hbmv5svppj54d4f70zsvb3k88z5lvfnkdfk4s7m20scvs1lf5f5"))))
+        (base32 "05bymyrvd8a6wxdspd9640m7gjgli0gzasx6vyga64g6wcddf4b5"))))
     (properties `((upstream-name . "oneinfl")))
     (build-system r-build-system)
     (arguments
@@ -9798,13 +9798,13 @@ counts and trends.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.4.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "02rmgl0jgyhg1j7vdz72n32n5mfz5x4x38kd88zppiyzrlhc5hs6"))))
+        (base32 "04f8ywk2i6p0bfl4l5519lw580g45mrqwinb62kwicfgi2ff0530"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments
@@ -12129,6 +12129,39 @@ for each network.  Then it models the features using time series methods.  Using
 time series residuals it detects anomalies.  This way, the temporal dependencies
 are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
 <@code{arXiv:2210.07407>}.")
+    (license license:gpl3+)))
+
+(define-public r-odbr
+  (package
+    (name "r-odbr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "odbr" version))
+       (sha256
+        (base32 "0gxg37wiqdq1nzyxdfk97qz1k3z0i492s00j0mab769b63vvy35h"))))
+    (properties `((upstream-name . "odbr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-r-utils
+                             r-piggyback
+                             r-haven
+                             r-fs
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://hsvab.github.io/odbr/")
+    (synopsis "Download Data from Brazil's Origin Destination Surveys")
+    (description
+     "Download data from Brazil's Origin Destination Surveys.  The package covers both
+data from household travel surveys, dictionaries of variables, and the spatial
+geometries of surveys conducted in different years and across various urban
+areas in Brazil.  For some cities, the package will include enhanced versions of
+the data sets with variables \"harmonized\" across different years.")
     (license license:gpl3+)))
 
 (define-public r-odbc

@@ -1528,6 +1528,44 @@ artifacts, tune hyperparameters, and share results.  Guild AI combines features
 from Git', SQLite', and Make to provide a lab notebook for machine learning.")
     (license license:asl2.0)))
 
+(define-public r-guider
+  (package
+    (name "r-guider")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "guideR" version))
+       (sha256
+        (base32 "0zb93rvhvjns6i0705nmwi8n55v7p05p0p2n47794fk2pgjiqzv8"))))
+    (properties `((upstream-name . "guideR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-srvyr
+                             r-scales
+                             r-rlang
+                             r-renv
+                             r-purrr
+                             r-patchwork
+                             r-pak
+                             r-lifecycle
+                             r-labelled
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://larmarange.github.io/guideR/")
+    (synopsis "Miscellaneous Statistical Functions Used in 'guide-R'")
+    (description
+     "Companion package for the manual guide-R : Guide pour lâanalyse de donnÃ©es
+dâenquÃªtes avec R available at <https://larmarange.github.io/guide-R/>.
+@code{guideR} implements miscellaneous functions introduced in guide-R to
+facilitate statistical analysis and manipulation of survey data.")
+    (license license:gpl3+)))
+
 (define-public r-guidedpls
   (package
     (name "r-guidedpls")
@@ -4941,13 +4979,13 @@ that date).  Load packages from CRAN, @code{GitHub}, or Gitlab.")
 (define-public r-groqr
   (package
     (name "r-groqr")
-    (version "0.0.1")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groqR" version))
        (sha256
-        (base32 "0q03yad36mlrm8yqavdssb9h55vphxnb3vp6kman78nm2nkf6zmq"))))
+        (base32 "0f30xdby0aq32m1vl2mw9cxs4yy8ylgg91njfan7s9jd6881gc15"))))
     (properties `((upstream-name . "groqR")))
     (build-system r-build-system)
     (arguments
@@ -16633,6 +16671,35 @@ and Zhang, J., (2018) <@code{arXiv:1809.09793>}.")
     (description
      "Estimation of the effect of each income source on income inequalities based on
 the decomposition of Lerman and Yitzhaki (1985) <doi:10.2307/1928447>.")
+    (license license:gpl3)))
+
+(define-public r-ginici
+  (package
+    (name "r-ginici")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "giniCI" version))
+       (sha256
+        (base32 "195ci9xkqfhd27c9nwd7xpp9bscixjcsk5js5pq5y2clyyykh9bv"))))
+    (properties `((upstream-name . "giniCI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-ggrepel r-ggpubr r-ggplot2 r-desctools))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=giniCI")
+    (synopsis "Gini-Based Composite Indicators")
+    (description
+     "An implementation of Gini-based weighting approaches in constructing composite
+indicators, providing functionalities for normalization, aggregation, and
+ranking comparison.")
     (license license:gpl3)))
 
 (define-public r-gini

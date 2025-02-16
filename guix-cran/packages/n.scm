@@ -7731,6 +7731,31 @@ framework of the nlme package.  It also provides four vignettes with extended
 examples.")
     (license license:gpl3)))
 
+(define-public r-nlpwavelet
+  (package
+    (name "r-nlpwavelet")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NLPwavelet" version))
+       (sha256
+        (base32 "1mlcn3aaw22x29bsy52n3j3n5ain95800y66m4lnvf9piq6c5lyc"))))
+    (properties `((upstream-name . "NLPwavelet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wavethresh r-rcpparmadillo r-rcpp))
+    (home-page "https://nilotpalsanyal.github.io/NLPwavelet/")
+    (synopsis "Bayesian Wavelet Analysis Using Non-Local Priors")
+    (description
+     "This package performs Bayesian wavelet analysis using individual non-local
+priors as described in Sanyal & Ferreira (2017) <DOI:10.1007/s13571-016-0129-3>
+and non-local prior mixtures as described in Sanyal (2025)
+<DOI:10.48550/@code{arXiv.2501.18134>}.")
+    (license license:gpl2+)))
+
 (define-public r-nlputils
   (package
     (name "r-nlputils")
@@ -8094,13 +8119,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "1f5pga8v3rs6vdbmk2m06swkn6d90l2i6pgnm1y9k9mk0324v9qz"))))
+        (base32 "1r6dyczhsrvich8gd6x1a8a53gxkhxqg05s7fllnhxjjid4v29qb"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (arguments
@@ -8364,21 +8389,23 @@ Mixed-Effects Models: A Step-by-Step Approach by Galecki and Burzykowski (2013).
 (define-public r-nlive
   (package
     (name "r-nlive")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlive" version))
        (sha256
-        (base32 "07an5ds2v7hv15062dcbggdl04b2jqx7mil8a50n6jzdr2x0rb54"))))
+        (base32 "0w5gy53yaclyxvyac78drqa7fcklfpxak1s1wxnznmq4n7c09nj5"))))
     (properties `((upstream-name . "nlive")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sqldf
+    (propagated-inputs (list r-viridis
+                             r-sqldf
                              r-sitar
                              r-saemix
+                             r-rmpfr
                              r-rmisc
                              r-nlraa
                              r-lcmm
@@ -9976,13 +10003,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhdplusTools" version))
        (sha256
-        (base32 "0imh5zkapzxgv45804n412ypa5x4jqr6xzk19znzib6cmypcp20k"))))
+        (base32 "0f6r0l5777mgc1nhzyxy7ir9xf4qyzs8i0sfs7wcbk38pxyw1rdx"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (arguments
@@ -14308,13 +14335,13 @@ and joining tables.")
 (define-public r-neoniso
   (package
     (name "r-neoniso")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NEONiso" version))
        (sha256
-        (base32 "1vb6zxgb3a3q71rpspdh0alqfk49csnf2b461sa7k453l9syp1jn"))))
+        (base32 "0yv6044xsf05c3r33rxbsvpq2hqgamk7rs5an32qcwpf5mq1l0j9"))))
     (properties `((upstream-name . "NEONiso")))
     (build-system r-build-system)
     (arguments

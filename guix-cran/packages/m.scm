@@ -5390,6 +5390,44 @@ Expectation-Maximization paradigm.  Individual covariates affecting the class
 weights may be included in the new version (since 2.1).")
     (license license:gpl2+)))
 
+(define-public r-multilandr
+  (package
+    (name "r-multilandr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multilandr" version))
+       (sha256
+        (base32 "08g9jas41dpjxgzwdzmhzwxch3l79zfhyh2cf6z9ywrfd36lp6hf"))))
+    (properties `((upstream-name . "multilandr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyterra
+                             r-terra
+                             r-sf
+                             r-landscapemetrics
+                             r-gridextra
+                             r-ggplot2
+                             r-ggally))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/phuais/multilandr")
+    (synopsis "Landscape Analysis at Multiple Spatial Scales")
+    (description
+     "This package provides a tidy workflow for landscape-scale analysis.  multilandr
+offers tools to generate landscapes at multiple spatial scales and compute
+landscape metrics, primarily using the landscapemetrics package.  It also
+features utility functions for plotting and analyzing multi-scale landscapes,
+exploring correlations between metrics, filtering landscapes based on specific
+conditions, generating landscape gradients for a given metric, and preparing
+datasets for further statistical analysis.  Documentation about multilandr is
+provided in an introductory vignette included in this package and in the paper
+by Huais (2024) <doi:10.1007/s10980-024-01930-z>; see citation(\"multilandr\") for
+details.")
+    (license license:gpl3+)))
+
 (define-public r-multikink
   (package
     (name "r-multikink")
@@ -18051,13 +18089,13 @@ parliament.  Documentation for the API itself can be found here:
 (define-public r-mnet
   (package
     (name "r-mnet")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mnet" version))
        (sha256
-        (base32 "02chp8g5303nbcbvfmm10lh63170290fyg9kbfxgr2krg08gbr1v"))))
+        (base32 "1ljbnpl0j3na3a87mv5rnv6bzik6xrl5r7s353cfwb7n918k3vlg"))))
     (properties `((upstream-name . "mnet")))
     (build-system r-build-system)
     (arguments
@@ -20213,13 +20251,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3torch
   (package
     (name "r-mlr3torch")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3torch" version))
        (sha256
-        (base32 "0iqz66nszjqq731xkzi4xyq22ahiqfpr15pl28rbyhg64ghq0vfa"))))
+        (base32 "0png7kiz4zkplxkfmyxk9dpkb74z35rdk97l9zadxx4fk25prrcc"))))
     (properties `((upstream-name . "mlr3torch")))
     (build-system r-build-system)
     (arguments
@@ -22498,13 +22536,13 @@ Graphical visualization by volcano and Bland-Altman plots (Bland and Altman
 (define-public r-mkin
   (package
     (name "r-mkin")
-    (version "1.2.6")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mkin" version))
        (sha256
-        (base32 "1k90z1kqk57rib0f7rm23qmcvk942b0rggbjfyc7jzrba3v65qpb"))))
+        (base32 "1jdd77lkxn8l92gfa7rhwqf8vwh8rnphf9dz71w4lpg7h4crr8sx"))))
     (properties `((upstream-name . "mkin")))
     (build-system r-build-system)
     (arguments
@@ -22528,11 +22566,10 @@ Graphical visualization by volcano and Bland-Altman plots (Bland and Altman
 a function for conveniently defining differential equation models, model
 solution based on eigenvalues if possible or using numerical solvers.  If a C
 compiler (on windows: Rtools') is installed, differential equation models are
-solved using automatically generated C functions.  Heteroscedasticity can be
-taken into account using variance by variable or two-component error models as
-described by Ranke and Meinecke (2018) <doi:10.3390/environments6120124>.
-Hierarchical degradation models can be fitted using nonlinear mixed-effects
-model packages as a back end as described by Ranke et al. (2021)
+solved using automatically generated C functions.  Non-constant errors can be
+taken into account using variance by variable or two-component error models
+<doi:10.3390/environments6120124>.  Hierarchical degradation models can be
+fitted using nonlinear mixed-effects model packages as a back end
 <doi:10.3390/environments8080071>.  Please note that no warranty is implied for
 correctness of results or fitness for a particular purpose.")
     (license (list license:gpl2+ license:gpl3+))))
@@ -28948,13 +28985,13 @@ incorporated and updated over a discrete time step.")
 (define-public r-micromapst
   (package
     (name "r-micromapst")
-    (version "3.0.4")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromapST" version))
        (sha256
-        (base32 "0h3fysynvy5gkydpjsklvas7hm5sidhjkdi674sw2789qdwyn1v2"))))
+        (base32 "0nr66hna3y9p1qw967jhmkphs9g8zd1ksq3ijky201yl9skdwi8a"))))
     (properties `((upstream-name . "micromapST")))
     (build-system r-build-system)
     (arguments
@@ -29001,7 +29038,7 @@ Visualizing Data Patterns with Micromaps, CRC Press, 2010.  Pickle, Pearson, and
 Carr (2015), @code{micromapST}: Exploring and Communicating Geospatial Patterns
 in US State Data., Journal of Statistical Software, 63(3), 1-25.,
 <https://www.jstatsoft.org/v63/i03/>.  Copyrighted 2013, 2014, 2015, 2016, 2022,
-2023, and 2024 by Carr, Pearson and Pickle.")
+2023, 2024, and 2025 by Carr, Pearson and Pickle.")
     (license license:gpl2+)))
 
 (define-public r-micromap
@@ -47482,18 +47519,19 @@ build-in functions provided in mapping or with other packages already available.
 (define-public r-mapperalgo
   (package
     (name "r-mapperalgo")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MapperAlgo" version))
        (sha256
-        (base32 "02vvva8d0qq9ghkgillrd0xqizhcyif6wav9shqak5vbzcj5ks75"))))
+        (base32 "0vgvy9cqznd9xkcrw92a78wqlff6sny89jlahyn0nk67cn8jn02k"))))
     (properties `((upstream-name . "MapperAlgo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-foreach r-doparallel))
     (home-page "https://github.com/kennywang112/MapperAlgo/")
     (synopsis "Topological Data Analysis: Mapper Algorithm")
     (description

@@ -123,13 +123,13 @@ information about the Google Trends API - pytrends', visit
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "1029way7vq02bi6hj78vxfqgq3ccbzyv7b758lv51rjm6fm9ckpr"))))
+        (base32 "196w9mp64nym5ljc3pwkr0k899668209p109cwyd9arlppll60mj"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (arguments
@@ -2838,6 +2838,41 @@ outside a polygon.  For a reference, see: Liu et al., A new point containment
 test algorithm based on preprocessing and determining triangles, Computer-Aided
 Design 42(12):1143-1150.")
     (license license:gpl2)))
+
+(define-public r-ptetools
+  (package
+    (name "r-ptetools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ptetools" version))
+       (sha256
+        (base32 "06gr5qj3zhwaih7mm35nm9frgzb9r09dc9mivwifa14lia14pikw"))))
+    (properties `((upstream-name . "ptetools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-splines2
+                             r-pbapply
+                             r-matrix
+                             r-ggplot2
+                             r-drdid
+                             r-dplyr
+                             r-bmisc))
+    (home-page "https://github.com/bcallaway11/ptetools")
+    (synopsis "Panel Treatment Effects Tools")
+    (description
+     "Generic code for estimating treatment effects with panel data.  The idea is to
+break into separate steps organizing the data, looping over groups and time
+periods, computing group-time average treatment effects, and aggregating
+group-time average treatment effects.  Often, one is able to implement a new
+identification/estimation procedure by simply replacing the step on estimating
+group-time average treatment effects.  See several different examples of this
+approach in the package documentation.")
+    (license license:gpl3)))
 
 (define-public r-pterp
   (package
@@ -9233,6 +9268,32 @@ distribution using the Inversion Principle Method and BOX-Muller transformation.
 numbers due to the sensitive nature of the maps being used.  The chaotic nature
 of the maps helps achieve randomness in the generator.  Additionally, the
 generator is capable of producing random bits.")
+    (license license:expat)))
+
+(define-public r-prmethods
+  (package
+    (name "r-prmethods")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PRMethods" version))
+       (sha256
+        (base32 "01jv4nkfnxijg7lbg5kanmivbxqrsflp5hr3g5vhw3q360axv3ik"))))
+    (properties `((upstream-name . "PRMethods")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PRMethods")
+    (synopsis
+     "D-Hondt, Sainte-Lague, and Modified Sainte-Lague Methods for Seat Allocation")
+    (description
+     "Calculates seat allocation using the D-Hondt method, Sainte-Lague method, and
+Modified Sainte-Lague method, all commonly used in proportional representation
+electoral systems.  For more information on these methods, see Michael Gallagher
+(1991)<doi:10.1016/0261-3794(91)90004-C>.")
     (license license:expat)))
 
 (define-public r-privatelr
@@ -28186,13 +28247,13 @@ phylogenetically based analyses using GLS.")
 (define-public r-phylogeneticem
   (package
     (name "r-phylogeneticem")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhylogeneticEM" version))
        (sha256
-        (base32 "1yxg13jm6jhciip76wh9936d10hxhjqdvlj15f249jzn7vfs6pyx"))))
+        (base32 "0w7gh7xlmzbh8hg7da5w4kqfi4x3vm7lcy6hkvfpflpbjn9z1nw1"))))
     (properties `((upstream-name . "PhylogeneticEM")))
     (build-system r-build-system)
     (arguments
@@ -29569,19 +29630,20 @@ denoising.  Background and details about the method can be found at Yu et al.
 (define-public r-phenopix
   (package
     (name "r-phenopix")
-    (version "2.4.4")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenopix" version))
        (sha256
-        (base32 "12nd5jfg70ysv51shkn00bdjaa1xm9891qyn9vvgq1k3fqnrr2n9"))))
+        (base32 "0w2q53gizpziz7jh0bcy3pgbb4kly8mhfwbx5f6rswjfn26n3b30"))))
     (properties `((upstream-name . "phenopix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo
+                             r-terra
                              r-strucchange
                              r-stringr
                              r-sp
@@ -32823,6 +32885,36 @@ see (i) Pankaj Das (2020)
 associated pictorial representations.  The pictorial representation is based on
 the principal coordinates of the group means.  There are some original results
 that will be published soon.")
+    (license license:gpl2+)))
+
+(define-public r-permallows
+  (package
+    (name "r-permallows")
+    (version "1.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PerMallows" version))
+       (sha256
+        (base32 "11kf6cma8vjr8vp0rg9jpbg8zxxl4fx0zjf03k02c1s3l7swc311"))))
+    (properties `((upstream-name . "PerMallows")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=PerMallows")
+    (synopsis "Permutations and Mallows Distributions")
+    (description
+     "Includes functions to work with the Mallows and Generalized Mallows Models.  The
+considered distances are Kendall's-tau, Cayley, Hamming and Ulam and it includes
+functions for making inference, sampling and learning such distributions, some
+of which are novel in the literature.  As a by-product, @code{PerMallows} also
+includes operations for permutations, paying special attention to those related
+with the Kendall's-tau, Cayley, Ulam and Hamming distances.  It is also possible
+to generate random permutations at a given distance, or with a given number of
+inversions, or cycles, or fixed points or even with a given length on LIS
+(longest increasing subsequence).")
     (license license:gpl2+)))
 
 (define-public r-permalgo
@@ -38574,13 +38666,13 @@ image segmentation.")
 (define-public r-patterncausality
   (package
     (name "r-patterncausality")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patterncausality" version))
        (sha256
-        (base32 "07z3mxkj7avmd1s8qhaa7nay79hfmhfv0fciivvwxgvx5x1h4z6i"))))
+        (base32 "0w9pl8xdpdpg3llpyrbr7y3c9jlz13983vc24hcdsglfsg862rir"))))
     (properties `((upstream-name . "patterncausality")))
     (build-system r-build-system)
     (arguments

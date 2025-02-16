@@ -7459,13 +7459,13 @@ methods for finite populations, see Mashreghi et Al. (2016)
 (define-public r-bootstatespace
   (package
     (name "r-bootstatespace")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootStateSpace" version))
        (sha256
-        (base32 "14x3i5fa3xhawysqz1bbgxhrr9xi5qvw1860zlixg960yr5fmmgd"))))
+        (base32 "0vn84xnjwjf311r1fj37g8qm8bmb0j2kyg8cgf4a1agf8g3hwq82"))))
     (properties `((upstream-name . "bootStateSpace")))
     (build-system r-build-system)
     (arguments
@@ -27618,6 +27618,36 @@ theory.  The methods can also be used as an alternative to a standard
 meta-analysis.")
     (license license:gpl3)))
 
+(define-public r-bayeschange
+  (package
+    (name "r-bayeschange")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesChange" version))
+       (sha256
+        (base32 "1d2s8y0ns6s5dijg70v2njbibziz8bh0wj8vy140p865vzjzvnkh"))))
+    (properties `((upstream-name . "BayesChange")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppgsl r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lucadanese/BayesChange")
+    (synopsis "Bayesian Methods for Change Points Analysis")
+    (description
+     "Perform change points detection on univariate and multivariate time series
+according to the methods presented by Asael Fabian MartÃ­nez and RamsÃ©s H. Mena
+(2014) <doi:10.1214/14-BA878> and Corradin, Danese and Ongaro (2022)
+<doi:10.1016/j.ijar.2021.12.019>.  It also clusters different types of time
+dependent data with common change points, see \"Model-based clustering of
+time-dependent observations with common structural changes\"
+(Corradin,Danese,@code{KhudaBukhsh} and Ongaro, 2024)
+<doi:10.48550/@code{arXiv.2410.09552>} for details.")
+    (license license:gpl3+)))
+
 (define-public r-bayescace
   (package
     (name "r-bayescace")
@@ -28127,13 +28157,13 @@ implemented in this package are described in Roman-Palacios et al. (2021)
 (define-public r-bawir
   (package
     (name "r-bawir")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAwiR" version))
        (sha256
-        (base32 "0ipkgscxa9i52wshnkvjw0lf55c2ji0plfzmxcqi8jcxqabghfvd"))))
+        (base32 "03bap0vcm3i6vwbbb8mqzdqvgxiba4pryh5f89xkxdfbgb2bmahz"))))
     (properties `((upstream-name . "BAwiR")))
     (build-system r-build-system)
     (arguments

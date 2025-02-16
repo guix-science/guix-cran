@@ -2713,13 +2713,13 @@ Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
 (define-public r-dtreg
   (package
     (name "r-dtreg")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtreg" version))
        (sha256
-        (base32 "1zvgirihzrbgyb5pqggxf8salrwb3p9c067qdvx1cdd949137g8m"))))
+        (base32 "0naikhkzm7j8njppd0218npppfr72g8xm6vj4vkrpdsnkhn3drh1"))))
     (properties `((upstream-name . "dtreg")))
     (build-system r-build-system)
     (arguments
@@ -11096,13 +11096,13 @@ Heming et al.  2023 <https://CRAN.R-project.org/package=SESraster>.")
 (define-public r-divo
   (package
     (name "r-divo")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divo" version))
        (sha256
-        (base32 "06c4kjl6llvvdr2gk480jcmj2abmqwph7x4vk5nflxm7piimvg7v"))))
+        (base32 "0ksmqp521wl2fv5lpc0x4hj79wjvxp9fxq6krzg6gx95wr55dd4b"))))
     (properties `((upstream-name . "divo")))
     (build-system r-build-system)
     (arguments
@@ -11114,9 +11114,9 @@ Heming et al.  2023 <https://CRAN.R-project.org/package=SESraster>.")
      "Tools for Analysis of Diversity and Similarity in Biological Systems")
     (description
      "This package provides a set of tools for empirical analysis of diversity (a
-number and frequency of different types in population) and similarity (a number
-and frequency of shared types in two populations) in biological or ecological
-systems.")
+number and frequency of different types in a population) and similarity (a
+number and frequency of shared types in two populations) in biological or
+ecological systems.")
     (license license:gpl3+)))
 
 (define-public r-divest
@@ -24791,13 +24791,13 @@ of the posterior distributions of model parameters and trajectories.")
 (define-public r-debif
   (package
     (name "r-debif")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deBif" version))
        (sha256
-        (base32 "0zy9pn6994bpbfjk4w52qvfckcilq5nz1v21bqc63grkz0lmlgzy"))))
+        (base32 "1c3pkajqxx76q2r1l42dv2hi429l4amwrhigqdaljmvcchv6vmsj"))))
     (properties `((upstream-name . "deBif")))
     (build-system r-build-system)
     (arguments
@@ -27563,6 +27563,37 @@ working with the beta-binomial distribution which has been proposed as a
 competitor to the db distribution.")
     (license license:gpl2+)))
 
+(define-public r-dbcvindex
+  (package
+    (name "r-dbcvindex")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DBCVindex" version))
+       (sha256
+        (base32 "17fvcwbp9y33vhnkghym3rjkmw1lscmafymvl4sa6b0vr6asjjlv"))))
+    (properties `((upstream-name . "DBCVindex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qpdf))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/davidechicco/DBCVindex")
+    (synopsis
+     "Calculates the Density-Based Clustering Validation (DBCV) Index")
+    (description
+     "This package provides a metric called Density-Based Clustering Validation index
+(DBCV) index to evaluate clustering results, following the
+<https://github.com/pajaskowiak/@code{clusterConfusion/blob/main/R/dbcv.R>} R
+implementation by Pablo Andretta Jaskowiak.  Original DBCV index article:
+Moulavi, D., Jaskowiak, P. A., Campello, R. J., Zimek, A., and Sander, J. (April
+2014), \"Density-based clustering validation\", Proceedings of SDM 2014 -- the
+2014 SIAM International Conference on Data Mining (pp.  839-847),
+<doi:10.1137/1.9781611973440.96>.")
+    (license license:gpl3)))
+
 (define-public r-dbcsp
   (package
     (name "r-dbcsp")
@@ -27729,13 +27760,13 @@ your computer.  Routines for both single pixel data downloads and gridded
 (define-public r-dawar
   (package
     (name "r-dawar")
-    (version "0.2.7")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dawaR" version))
        (sha256
-        (base32 "128fhl975c9a3qmc9amv7cnglisl58sl420mxf7i9ashj1l2592a"))))
+        (base32 "0vcn2wh5w583drwi1x6mi6lf2fmd79c5al5574w1y3z46f5zbs02"))))
     (properties `((upstream-name . "dawaR")))
     (build-system r-build-system)
     (arguments

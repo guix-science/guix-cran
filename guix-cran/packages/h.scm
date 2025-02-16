@@ -13696,13 +13696,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "07v7ddyl7gzxlwp6bjva9d5glplpg21s3bfs47i9d60lq3fs3j7y"))))
+        (base32 "13znj6kawy32q8syxjyxq8jslbzzj4dnyms8w6cb9sky6dh040j5"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (arguments

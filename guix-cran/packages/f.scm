@@ -6182,6 +6182,41 @@ and M. Ã.  Nielsen (2012) <doi:10.3982/ECTA9299>, @code{MacKinnon}, J. G. and
 M. Ã.  Nielsen (2014) <doi:10.1002/jae.2295>.")
     (license license:gpl3)))
 
+(define-public r-fracarma
+  (package
+    (name "r-fracarma")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fracARMA" version))
+       (sha256
+        (base32 "1cbb7j2kw4zc1zwv9ny5npbj35hnwgdbbsk34rzpfs61di0m7rgy"))))
+    (properties `((upstream-name . "fracARMA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fracdiff r-forecast))
+    (home-page "https://cran.r-project.org/package=fracARMA")
+    (synopsis "Fractionally Integrated ARMA Model")
+    (description
+     "This package implements fractional differencing with Autoregressive Moving
+Average models to analyse long-memory 	time series data.  Traditional ARIMA
+models typically use integer values for differencing, which are 	suitable for
+time series with short memory or anti-persistent behaviour.  In contrast, the
+Fractional ARIMA 	model allows fractional differencing, enabling it to
+effectively capture long memory characteristics in 	time series data.  The
+â@code{fracARMAâ} package is user-friendly and allows users to manually
+input the 	fractional differencing parameter, which can be obtained using
+various estimators such as the GPH 	estimator, Sperio method, or Wavelet method
+and many.  Additionally, the package enables users to directly 	feed the time
+series data, AR order, MA order, fractional differencing parameter, and the
+proportion of 	training data as a split ratio, all in a single command.  The
+package is based on the reference from the 	paper of Irshad and others (2024,
+<doi:10.22271/maths.2024.v9.i6b.1906>).")
+    (license license:gpl3)))
+
 (define-public r-frab
   (package
     (name "r-frab")
@@ -6714,6 +6749,47 @@ function simply supplies the required data for such a task.")
 function in the package computes the estimated value of the total as well as
 estimated variance.")
     (license license:gpl3)))
+
+(define-public r-fpdclustering
+  (package
+    (name "r-fpdclustering")
+    (version "2.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FPDclustering" version))
+       (sha256
+        (base32 "1c2r007gpm4xpa8f8pzfphdsy50afn8iclmp39qpli18kmisigwx"))))
+    (properties `((upstream-name . "FPDclustering")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-threeway
+                             r-rootsolve
+                             r-mvtnorm
+                             r-mass
+                             r-klar
+                             r-ggplot2
+                             r-ggeasy
+                             r-ggally
+                             r-exposition
+                             r-cluster))
+    (home-page "https://cran.r-project.org/package=FPDclustering")
+    (synopsis "PD-Clustering and Related Methods")
+    (description
+     "Probabilistic distance clustering (PD-clustering) is an iterative,
+distribution-free, probabilistic clustering method.  PD-clustering assigns units
+to a cluster according to their probability of membership under the constraint
+that the product of the probability and the distance of each point to any
+cluster center is a constant.  PD-clustering is a flexible method that can be
+used with elliptical clusters, outliers, or noisy data.  PDQ is an extension of
+the algorithm for clusters of different sizes.  GPDC and TPDC use a
+dissimilarity measure based on densities.  Factor PD-clustering (FPDC) is a
+factor clustering method that involves a linear transformation of variables and
+a cluster optimizing the PD-clustering criterion.  It works on high-dimensional
+data sets.")
+    (license license:gpl2+)))
 
 (define-public r-fpcompare
   (package
@@ -10608,22 +10684,24 @@ to calculate equilibrium stability.")
 (define-public r-fluxible
   (package
     (name "r-fluxible")
-    (version "0.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluxible" version))
        (sha256
-        (base32 "1d4j3qzqnsj842qzkkfi0g51ac6a2cgy0lkqi78y7f7sqx7pqzc1"))))
+        (base32 "00cgyzbdjs6c6skbi99xi4dgihqdh6cgy3cc2xq057sycg8aja9r"))))
     (properties `((upstream-name . "fluxible")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo
+                             r-tidyselect
                              r-tidyr
                              r-stringr
                              r-rlang
+                             r-purrrlyr
                              r-purrr
                              r-progress
                              r-lubridate
@@ -11958,13 +12036,13 @@ Tzourio, Woodward, Barbieri, Jacqmin-Gadda (2023) <@code{arXiv:2306.16785>}).")
 (define-public r-flexsurvcure
   (package
     (name "r-flexsurvcure")
-    (version "1.3.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexsurvcure" version))
        (sha256
-        (base32 "0mhpzcrqxsi7f2m565qy648vg26rsvy7d249ia7y7kd5wcildw8b"))))
+        (base32 "0f3fs8xxld83yj322qz51sqsvkq8xd9aik2h3cn4ldc94li8gz6w"))))
     (properties `((upstream-name . "flexsurvcure")))
     (build-system r-build-system)
     (arguments
@@ -13274,13 +13352,13 @@ output option for printing decision rules.")
 (define-public r-fixr
   (package
     (name "r-fixr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixr" version))
        (sha256
-        (base32 "074dr1l3bw8v1lrih1mc51dmx02kambis04r9jpx64vnpajjfv8p"))))
+        (base32 "17jix8plgxvjcvjlf8hc4zckpna3gdpgjckqz8sfgc4d746mq732"))))
     (properties `((upstream-name . "fixr")))
     (build-system r-build-system)
     (arguments
@@ -13674,19 +13752,20 @@ although the implementation differs.")
 (define-public r-fitpoly
   (package
     (name "r-fitpoly")
-    (version "3.0.0")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitPoly" version))
        (sha256
-        (base32 "0ws1vsh8if9i9i7820ak32b0bysjc0z09nbrk17qpms0b11cpc3g"))))
+        (base32 "0xyf0ps852gzbnw24wq5yvfjyngkknvk4jmmqwnk1j8l1231igbk"))))
     (properties `((upstream-name . "fitPoly")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-foreach))
+    (propagated-inputs (list r-foreach r-doparallel r-devemf))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fitPoly")
     (synopsis "Genotype Calling for Bi-Allelic Marker Assays")
     (description
@@ -13696,7 +13775,11 @@ collection of polyploid samples based on these signal intensities.
 @code{fitPoly} replaces the older package @code{fitTetra} that was limited
 (a.o.) to only tetraploid populations whereas @code{fitPoly} accepts any ploidy
 level.  Reference: Voorrips RE, Gort G, Vosman B (2011)
-<doi:10.1186/1471-2105-12-172>.")
+<doi:10.1186/1471-2105-12-172>.  New functions added on conversion of data from
+SNP array software formats, drawing of XY-scatterplots with or without genotype
+colors, checking against expected F1 segregation patterns, comparing results
+from two different assays (probes) for the same SNP, recovery from a
+@code{saveMarkerModels()} crash.")
     (license license:gpl2)))
 
 (define-public r-fitplc

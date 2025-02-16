@@ -4130,13 +4130,13 @@ and Doksum (1973, ISBN:013850363X).")
 (define-public r-wikkitidy
   (package
     (name "r-wikkitidy")
-    (version "0.1.13")
+    (version "0.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikkitidy" version))
        (sha256
-        (base32 "03gdzmmic45z82a4c6cvdmispjl2r8iwkmmdzxm2b7ag4f7araak"))))
+        (base32 "0arnz67spxpxn7zaysx1wdc21p68apqyrfwg9m0kflc7r3h1iyxv"))))
     (properties `((upstream-name . "wikkitidy")))
     (build-system r-build-system)
     (arguments
@@ -4155,6 +4155,7 @@ and Doksum (1973, ISBN:013850363X).")
                              r-httr2
                              r-glue
                              r-dplyr
+                             r-coro
                              r-cli))
     (home-page "https://wikihistories.github.io/wikkitidy/")
     (synopsis "Tidy Analysis of Wikipedia")
@@ -6997,13 +6998,13 @@ to web development.")
 (define-public r-webdav
   (package
     (name "r-webdav")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webdav" version))
        (sha256
-        (base32 "0zad3cjq8y2naa3rnjjswhcj355wzq62kc02m07zg0q731ajhkz7"))))
+        (base32 "0736cpi2kndhwa9w5jb95nxzkr3cccsy6pxddrkd860kg01cw14g"))))
     (properties `((upstream-name . "webdav")))
     (build-system r-build-system)
     (arguments
@@ -7016,7 +7017,8 @@ to web development.")
                              r-httr2
                              r-httpuv
                              r-glue
-                             r-dplyr))
+                             r-dplyr
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "<https://github.com/StrategicProjects/webdav>")
     (synopsis "Simple Interface for Interacting with 'WebDAV' Servers")
@@ -7026,7 +7028,7 @@ to web development.")
 MKCOL, MOVE, and others.  With built-in authentication and request handling, it
 allows for easy management of files and directories over the @code{WebDAV}
 protocol.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-webanalytics
   (package

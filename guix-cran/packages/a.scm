@@ -9404,20 +9404,26 @@ APHA(2017,ISBN:9780875532875).")
 (define-public r-aqp
   (package
     (name "r-aqp")
-    (version "2.1.0")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aqp" version))
        (sha256
-        (base32 "0gwq6r92swhjv2iaakqf3w6ha2y9kyxmshvjxvlzz2mq8xrla8ck"))))
+        (base32 "1q2pfswa8lm3zra1qvd7jx1jm885cpsa82l4vgg5rc0dw7bd8x0f"))))
     (properties `((upstream-name . "aqp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-lattice r-farver r-data-table
-                             r-cluster))
+    (propagated-inputs (list r-stringr
+                             r-lattice
+                             r-farver
+                             r-digest
+                             r-data-table
+                             r-colorspace
+                             r-cluster
+                             r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ncss-tech/aqp")
     (synopsis "Algorithms for Quantitative Pedology")
@@ -11952,13 +11958,13 @@ surpluses of consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.7.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresEditObject" version))
        (sha256
-        (base32 "06r23dgz0fbqxrk2j9i78jv7i2pi8wf6qc1a0d8igal4mzxv0v88"))))
+        (base32 "0xi1kdlszmqnlx3kd8iv1zcm9awbqjz28sa7537f8gm6hk3nhhzc"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (arguments
@@ -22809,13 +22815,13 @@ autocorrelation.  The package is described in Jombart et al (2010)
 (define-public r-adelie
   (package
     (name "r-adelie")
-    (version "1.0.2")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adelie" version))
        (sha256
-        (base32 "10sjpdp990jhzypkyywywl3hqrwnp0srdn2zgijm5g80w1420s52"))))
+        (base32 "1b4qy5vyr7rflbb1mn9p2l60b7fmyjvw8m69hw449wl27ljqdsr3"))))
     (properties `((upstream-name . "adelie")))
     (build-system r-build-system)
     (arguments
@@ -22835,7 +22841,7 @@ underlying the corresponding Python package adelie'.  These bindings offer a
 general purpose group elastic net solver, a wide range of matrix classes that
 can exploit special structure to allow large-scale inputs, and an assortment of
 generalized linear model classes for fitting various types of data.  The package
-includes The package is an implementation of Yang, J. and Hastie, T. (2024)
+is an implementation of Yang, J. and Hastie, T. (2024)
 <doi:10.48550/@code{arXiv.2405.08631>}.")
     (license license:expat)))
 

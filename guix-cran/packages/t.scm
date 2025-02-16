@@ -9108,6 +9108,69 @@ running the vignette (optional), install fwelnet from @code{GitHub}
 <https://github.com/kjytay/fwelnet>.")
     (license license:gpl3)))
 
+(define-public r-transpror
+  (package
+    (name "r-transpror")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TransProR" version))
+       (sha256
+        (base32 "1cdb1wd2agzbkrhkm53x114vdby0xc27qzvd023v5c3lyfw2gpd4"))))
+    (properties `((upstream-name . "TransProR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tidygraph
+                             r-tibble
+                             r-sva
+                             r-stringr
+                             r-spiralize
+                             r-rlang
+                             r-magrittr
+                             r-limma
+                             r-hrbrthemes
+                             r-hmisc
+                             r-ggvenndiagram
+                             r-ggtreeextra
+                             r-ggtree
+                             r-ggraph
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggdensity
+                             r-ggalt
+                             r-geomtextpath
+                             r-edger
+                             r-dplyr
+                             r-deseq2
+                             r-complexheatmap
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SSSYDYSSS/TransProRBook")
+    (synopsis "Analysis and Visualization of Multi-Omics Data")
+    (description
+     "This package provides a tool for comprehensive transcriptomic data analysis,
+with a focus on transcript-level data preprocessing, expression profiling,
+differential expression analysis, and functional enrichment.  It enables
+researchers to identify key biological processes, disease biomarkers, and gene
+regulatory mechanisms. @code{TransProR} is aimed at researchers and
+bioinformaticians working with RNA-Seq data, providing an intuitive framework
+for in-depth analysis and visualization of transcriptomic datasets.  The package
+includes comprehensive documentation and usage examples to guide users through
+the entire analysis pipeline.  The differential expression analysis methods
+incorporated in the package include limma (Ritchie et al., 2015,
+<doi:10.1093/nar/gkv007>; Smyth, 2005, <doi:10.1007/0-387-29362-0_23>),
+@code{edgeR} (Robinson et al., 2010, <doi:10.1093/bioinformatics/btp616>),
+DESeq2 (Love et al., 2014, <doi:10.1186/s13059-014-0550-8>), and Wilcoxon tests
+(Li et al., 2022, <doi:10.1186/s13059-022-02648-4>), providing flexible and
+robust approaches to RNA-Seq data analysis.  For more information, refer to the
+package vignettes and related publications.")
+    (license license:expat)))
+
 (define-public r-transport
   (package
     (name "r-transport")
@@ -9307,21 +9370,21 @@ can be estimated, along with the corresponding standard errors and P values.")
 (define-public r-transltr
   (package
     (name "r-transltr")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transltr" version))
        (sha256
-        (base32 "0mhjdgcvc1w363hfls264zj4xf51xnyhkgl8vcf0x8rkh13jg17v"))))
+        (base32 "0yxf4236rfsp34373cddw1rf3pfhvxmwakmjlyahf6na1gbyb64p"))))
     (properties `((upstream-name . "transltr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml r-r6 r-digest))
-    (home-page "https://github.com/jeanmathieupotvin/transltr")
-    (synopsis "Support Many Languages in R Programs")
+    (propagated-inputs (list r-yaml r-stringi r-r6 r-digest))
+    (home-page "https://transltr.ununoctium.dev")
+    (synopsis "Support Many Languages in R")
     (description
      "An object model for source text and translations.  Find and extract translatable
 strings.  Provide translations and seamlessly retrieve them at runtime.")
@@ -11658,13 +11721,13 @@ implement new behavior.")
 (define-public r-tourr
   (package
     (name "r-tourr")
-    (version "1.2.0")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tourr" version))
        (sha256
-        (base32 "1sbaf94ms03jw5bc04xf974zp7zgfdx9xv8yl4hch82kfmfcdmxy"))))
+        (base32 "1qh1cwi1jf58jblbigxgbsxkc8w3vh5kdi9zh0m2xn5mmnyjjspa"))))
     (properties `((upstream-name . "tourr")))
     (build-system r-build-system)
     (arguments
@@ -12971,6 +13034,31 @@ strings, pasting and combining rows together across columns, etc.")
     (description
      "Several functions to allow comparisons of data across different geographies, in
 particular for Canadian census data from different censuses.")
+    (license license:expat)))
+
+(define-public r-tomledit
+  (package
+    (name "r-tomledit")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tomledit" version))
+       (sha256
+        (base32 "0vyhz02gwcl7qclkwvk64y1wlkvbyl0pqjlgs68s6fsqjm3dic00"))))
+    (properties `((upstream-name . "tomledit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-rlang))
+    (home-page "https://josiahparry.github.io/tomledit/")
+    (synopsis "Parse, Read, and Edit 'TOML'")
+    (description
+     "This package provides a toolkit for working with TOML files in R while
+preserving formatting, comments, and structure.  tomledit enables serialization
+of R objects such as lists, data.frames, numeric, logical, and date vectors.")
     (license license:expat)))
 
 (define-public r-tomba
@@ -26648,13 +26736,13 @@ and accurate reports.")
 (define-public r-teal-logger
   (package
     (name "r-teal-logger")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.logger" version))
        (sha256
-        (base32 "1x4w169zq7wbjc7rr8dqkli5cbb2rsik0gpjl09aaw0s7p2h60lp"))))
+        (base32 "1d6d9rahc2nqzajp66v7yrif3x2w0l12z0v4ly87hnvy6dvkgfkp"))))
     (properties `((upstream-name . "teal.logger")))
     (build-system r-build-system)
     (arguments
@@ -26697,13 +26785,13 @@ applications focusing on reproducibility and relational data.")
 (define-public r-teal-code
   (package
     (name "r-teal-code")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.code" version))
        (sha256
-        (base32 "11kmj44rkrjqrvi24sy7250znb8lkw7k967jh1d9vj6x0bz4h88g"))))
+        (base32 "1766iih2n1rcr71h6yx6axc9q2gfd2r22wrwcrffq9r267p3nmb6"))))
     (properties `((upstream-name . "teal.code")))
     (build-system r-build-system)
     (arguments
@@ -27208,27 +27296,27 @@ Guangchuang Yu (2022, ISBN:9781032233574).")
 (define-public r-tdavec
   (package
     (name "r-tdavec")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDAvec" version))
        (sha256
-        (base32 "0g449p1y16sl35md9c4qnj3n7i5nx9appqx22d7ijjhr7zpv0p1s"))))
+        (base32 "0xzs201gir73a044p1is2zzmsnbn3n6wabl49nll08swqw1wxjvj"))))
     (properties `((upstream-name . "TDAvec")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tda r-rcpp r-microbenchmark))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=TDAvec")
+    (home-page "https://github.com/uislambekov/TDAvec")
     (synopsis "Vector Summaries of Persistence Diagrams")
     (description
      "This package provides tools for computing various vector summaries of
 persistence diagrams studied in Topological Data Analysis.  For improved
 computational efficiency, all code for the vector summaries is written in C++
-using the Rcpp package.")
+using the Rcpp and @code{RcppArmadillo} packages.")
     (license license:gpl2+)))
 
 (define-public r-tdaunif
@@ -29230,13 +29318,13 @@ for fast dimension reduction, see package?tapkee and
 (define-public r-tapes
   (package
     (name "r-tapes")
-    (version "0.13.2")
+    (version "0.13.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TapeS" version))
        (sha256
-        (base32 "05lknyj6699y951rprsvsm2mfsrs0wx4grqcn6hvqi1lvhfgzq7i"))))
+        (base32 "0hbskhixvgijl0kppzcld89in5skpaqk8b0an5fn5gmnkjm7cpsg"))))
     (properties `((upstream-name . "TapeS")))
     (build-system r-build-system)
     (arguments

@@ -5022,6 +5022,30 @@ see Wood, S.N., Pya, N. & Safken, B. (2016) <doi:10.1080/01621459.2016.1180986>.
 (2022) <doi:10.18637/jss.v103.i03>.")
     (license license:gpl3)))
 
+(define-public r-evesim
+  (package
+    (name "r-evesim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evesim" version))
+       (sha256
+        (base32 "02i0mg8wss1ndxg66fj37f6r85kjr98b8gadrkc3rjas5pn1mcrq"))))
+    (properties `((upstream-name . "evesim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel r-rcpp))
+    (home-page "http://qtj.me/evesim/")
+    (synopsis
+     "Evolution Emulator: Species Diversification under an Evolutionary Relatedness Dependent Scenario")
+    (description
+     "Evolutionary relatedness dependent diversification simulation powered by the
+Rcpp back-end @code{SimTable}'.")
+    (license license:expat)))
+
 (define-public r-eventwinratios
   (package
     (name "r-eventwinratios")
@@ -10250,13 +10274,13 @@ two-step estimator.  For technical details, see Naghi, Varadi and Zhelonkin
 (define-public r-epm
   (package
     (name "r-epm")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epm" version))
        (sha256
-        (base32 "1qd23jvx2i1n2ykxzci3xkr1rqp6mwa9s3a485mgxnfa68b1zsqg"))))
+        (base32 "0s7frjl457ww0njxdvrgxd68nlgp3n31ic9z4a2j5f5nzp41n7jw"))))
     (properties `((upstream-name . "epm")))
     (build-system r-build-system)
     (arguments
@@ -11035,13 +11059,13 @@ literature are loaded from the @code{epiparameterDB} R package.")
 (define-public r-epiomics
   (package
     (name "r-epiomics")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiomics" version))
        (sha256
-        (base32 "1rabliw91lz9b18x9ml2g0i402p9k256qblmg2vr56pzjq5gnyq2"))))
+        (base32 "1mfkh2wl2wd36ba1w0nd1klvbv8lmdls530bz8mzrvppy0glx7qi"))))
     (properties `((upstream-name . "epiomics")))
     (build-system r-build-system)
     (arguments
@@ -14544,13 +14568,13 @@ data.")
 (define-public r-empiricalcalibration
   (package
     (name "r-empiricalcalibration")
-    (version "3.1.3")
+    (version "3.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EmpiricalCalibration" version))
        (sha256
-        (base32 "1lw7wvf0v73wm84x9amymxy2jnzrqndby1k4b580qwvcq7sz49x9"))))
+        (base32 "1c6vj8ydzj9qyv8lj6pna2lg90slv570xkwr3gld4klgya6vzrv2"))))
     (properties `((upstream-name . "EmpiricalCalibration")))
     (build-system r-build-system)
     (arguments
@@ -24937,48 +24961,6 @@ labels & lines) are preserved as vector objects.  This can dramatically reduce
 file size for plots with millions of points such as Manhattan plots, and is
 ideal for publication.")
     (license license:expat)))
-
-(define-public r-easydifferentialgenecoexpression
-  (package
-    (name "r-easydifferentialgenecoexpression")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "easyDifferentialGeneCoexpression" version))
-       (sha256
-        (base32 "1isln1bbav2zxqbia8616f1ywnpywcx3772bxws5hphx64x6bqfh"))))
-    (properties `((upstream-name . "easyDifferentialGeneCoexpression")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-magrittr
-                             r-limma
-                             r-jetset
-                             r-geoquery
-                             r-geneexpressionfromgeo
-                             r-biobase
-                             r-annotate))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://github.com/davidechicco/easyDifferentialGeneCoexpression")
-    (synopsis "Easily Performs Differential Coexpression Analysis")
-    (description
-     "This package provides a function that reads in the GEO code of a list of
-probesets or gene symbols, a gene expression dataset GEO accession code, the
-name of the dataset feature discriminating the two conditions for the
-differential coexpression, and the values of the two different conditions for
-the differential coexpression, and returns the significant pairs of
-genes/probesets with highest differential coexpression (p-value < 0.005).  If
-the input gene list is made of gene symbols, this package associates the
-probesets to these gene symbols, if found.  Platforms available: GPL80, GPL8300,
-GPL80, GPL96, GPL570, GPL571, GPL20115, GPL1293, GPL6102, GPL6104, GPL6883,
-GPL6884, GPL13497, GPL14550, GPL17077, GPL6480.  GEO: Gene Expression Omnibus.
-ID: identifier code.  The GEO datasets are downloaded from the URL
-<https://ftp.ncbi.nlm.nih.gov/geo/series/>.")
-    (license license:gpl3)))
 
 (define-public r-easydescribe
   (package
