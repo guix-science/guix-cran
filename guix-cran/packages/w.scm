@@ -7930,13 +7930,13 @@ to Beguin and Hulliger (2008)
 (define-public r-waywiser
   (package
     (name "r-waywiser")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waywiser" version))
        (sha256
-        (base32 "0n6p7p6m5yspmxva7gb3s7drcznxmvx7yb6iccz6h7z8j7yvqv22"))))
+        (base32 "1lgcvzfvp4whkqr43gz3005yc1yjs1gwhic4iicnv81blbrdsmj5"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
     (arguments

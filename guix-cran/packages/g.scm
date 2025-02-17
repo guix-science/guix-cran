@@ -17314,13 +17314,13 @@ silicate packages.")
 (define-public r-gibasa
   (package
     (name "r-gibasa")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gibasa" version))
        (sha256
-        (base32 "1j6k11vq9n9bh8f1sdc14maj88nd5vacl3xq9v54nb2phi55rp72"))))
+        (base32 "1a0v2v2b9c0v014da4fbp4j0g8yfpfw9gmdzga1i48psxglah7xg"))))
     (properties `((upstream-name . "gibasa")))
     (build-system r-build-system)
     (arguments
@@ -17332,13 +17332,12 @@ silicate packages.")
                              r-readr
                              r-rcppparallel
                              r-rcpp
-                             r-purrr
                              r-matrix
                              r-dplyr))
     (home-page "https://paithiov909.github.io/gibasa/")
     (synopsis "An Alternative 'Rcpp' Wrapper of 'MeCab'")
     (description
-     "This package provides a plain Rcpp wrapper of @code{MeCab} that can segment
+     "This package provides a plain Rcpp wrapper for @code{MeCab} that can segment
 Chinese, Japanese, and Korean text into tokens.  The main goal of this package
 is to provide an alternative to tidytext using morphological analysis.")
     (license license:gpl3+)))

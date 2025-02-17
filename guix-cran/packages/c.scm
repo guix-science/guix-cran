@@ -23575,13 +23575,13 @@ exhausting acquisition process.")
 (define-public r-colombiapi
   (package
     (name "r-colombiapi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ColombiAPI" version))
        (sha256
-        (base32 "015h8kx36yjrn9djvzfwdb1hgjimai5kyaqasn8m1a3dyd81y8mb"))))
+        (base32 "14qpg8hih5qcmqyf63lcbckvscb719xqhj08ww5b69saqpxb72z8"))))
     (properties `((upstream-name . "ColombiAPI")))
     (build-system r-build-system)
     (arguments
@@ -24580,13 +24580,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "0qlajy98ldrgjs09h27m9nc9r4r8wqx1yr79p0vf1ldn778c8xxb"))))
+        (base32 "0m89xy7gnkm0d6mrw3ys9bfxw1pb42mf4pq8nlfankvgkk9i26b7"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (arguments
@@ -43640,13 +43640,13 @@ robust and nonparametric methods.")
 (define-public r-ccamlrgis
   (package
     (name "r-ccamlrgis")
-    (version "4.2.0")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCAMLRGIS" version))
        (sha256
-        (base32 "1yx589sfc3amwgq68cwbs4p4n3nn1i1kgd1hakvmpv10zn2v8fqa"))))
+        (base32 "0ida0lgn608gsazvw0i28sav7rvalihd2sr5lv4hbrkpc3pf94b7"))))
     (properties `((upstream-name . "CCAMLRGIS")))
     (build-system r-build-system)
     (arguments

@@ -8723,13 +8723,13 @@ using the joint distribution.")
 (define-public r-subincomer
   (package
     (name "r-subincomer")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "subincomeR" version))
        (sha256
-        (base32 "07942h6c714j5w3ji23llan84a0888l4wlfg5cwbc5jy6b5d4vaf"))))
+        (base32 "0b95nmhqwpc36wq72znlypy3dd9f5dhfa3y9a50g4br9sgawncr4"))))
     (properties `((upstream-name . "subincomeR")))
     (build-system r-build-system)
     (arguments

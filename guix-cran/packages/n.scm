@@ -15320,13 +15320,13 @@ onward), the package can retrieve the aspatial Gini Index based Gini (1921)
 (define-public r-nda
   (package
     (name "r-nda")
-    (version "0.1.15")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nda" version))
        (sha256
-        (base32 "18kl1c12anhladf2cr5wyxm67mxd83ykj52fig57gs806xzcafac"))))
+        (base32 "1jagqycs98khrfrsw9sqrnb6rj9wlxma5jzgywhwdmczk89gy51j"))))
     (properties `((upstream-name . "nda")))
     (build-system r-build-system)
     (arguments
@@ -15336,8 +15336,11 @@ onward), the package can retrieve the aspatial Gini Index based Gini (1921)
                              r-rfast
                              r-psych
                              r-ppcor
+                             r-metrics
+                             r-mco
                              r-matrix
                              r-mass
+                             r-lm-beta
                              r-leidenalg
                              r-igraph
                              r-energy))
@@ -17395,13 +17398,13 @@ See docs for limitations.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "1gy5cd44zm17cxynlb1cy62kq9akrc4bp54ajvay9vqmb5in6ksp"))))
+        (base32 "0a28vzzwhixhh8yxhlzdalmh2zx31l1g1c48xv50qw4g6mnxfwqk"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (arguments

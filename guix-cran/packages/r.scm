@@ -24399,13 +24399,13 @@ others discovered during ongoing testing and code simplification.")
 (define-public r-rjaf
   (package
     (name "r-rjaf")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjaf" version))
        (sha256
-        (base32 "0053nrd7pxzj67aafx9s6xv34wdd2bgg50pnc7q4bbi9ynyz8r1l"))))
+        (base32 "1rc8a3876hxrp83ancnl3h736lwm39bi5cl219x80q47w83jyzif"))))
     (properties `((upstream-name . "rjaf")))
     (build-system r-build-system)
     (arguments

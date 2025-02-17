@@ -13219,13 +13219,13 @@ fixed effects with penalized intercepts by LASSO.")
 (define-public r-pqrbayes
   (package
     (name "r-pqrbayes")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrBayes" version))
        (sha256
-        (base32 "0jvi2b59bm7bzzcb4zx3kz5j3c6f5wjbrskac5vbavdakvznjad0"))))
+        (base32 "08fcgf31axs75lxkf0ildd1m59ds2ll625bzr394fhhs7rrysbdj"))))
     (properties `((upstream-name . "pqrBayes")))
     (build-system r-build-system)
     (arguments
@@ -13235,17 +13235,17 @@ fixed effects with penalized intercepts by LASSO.")
     (home-page "https://github.com/cenwu/pqrBayes")
     (synopsis "Bayesian Penalized Quantile Regression")
     (description
-     "The quantile varying coefficient model is robust to data heterogeneity, outliers
-and heavy-tailed distributions in the response variable.  In addition, it can
-flexibly model dynamic patterns of regression coefficients through nonparametric
-varying coefficient functions.  In this package, we have implemented the Gibbs
-samplers of the penalized Bayesian quantile varying coefficient model with
-spike-and-slab priors [Zhou et al.(2023)]<doi:10.1016/j.csda.2023.107808> for
-efficient Bayesian shrinkage estimation, variable selection and statistical
-inference.  In particular, valid Bayesian inferences on sparse quantile varying
-coefficient functions can be validated on finite samples.  The Markov Chain
-Monte Carlo (MCMC) algorithms of the proposed and alternative models can be
-efficiently performed by using the package.")
+     "Bayesian regularized quantile regression utilizing sparse priors to impose exact
+sparsity leads to efficient Bayesian shrinkage estimation, variable selection
+and statistical inference.  In this package, we have implemented robust Bayesian
+variable selection with spike-and-slab priors under high-dimensional linear
+regression models (Fan et al. (2024) <doi:10.3390/e26090794> and Ren et al.
+(2023) <doi:10.1111/biom.13670>), and regularized quantile varying coefficient
+models (Zhou et al.(2023) <doi:10.1016/j.csda.2023.107808>).  In particular,
+valid robust Bayesian inferences under both models in the presence of
+heavy-tailed errors can be validated on finite samples.  The Markov Chain Monte
+Carlo (MCMC) algorithms of the proposed and alternative models are implemented
+in C++.")
     (license license:gpl2)))
 
 (define-public r-pqlseq
@@ -15063,44 +15063,6 @@ turning data frames into Power BI datasets and refreshing these datasets are
 provided.  Administrative tasks such as monitoring refresh statuses and pulling
 metadata about workspaces and users are also supported.")
     (license license:expat)))
-
-(define-public r-powerbal
-  (package
-    (name "r-powerbal")
-    (version "0.0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "poweRbal" version))
-       (sha256
-        (base32 "16n331pyc41cy59cvp9fidvy3dzi68nw64lg6862amzna72nk85b"))))
-    (properties `((upstream-name . "poweRbal")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-treebalance
-                             r-scales
-                             r-r-utils
-                             r-phytools
-                             r-diversitree
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=poweRbal")
-    (synopsis
-     "Phylogenetic Tree Models and the Power of Tree Shape Statistics")
-    (description
-     "The first goal of this package is to provide a multitude of tree models, i.e.,
-functions that generate rooted binary trees with a given number of leaves.
-Second, the package allows for an easy evaluation and comparison of tree shape
-statistics by estimating their power to differentiate between different tree
-models.  Please note that this R package was developed alongside the manuscript
-\"Tree balance in phylogenetic models\" by S. J. Kersting, K. Wicke, and M.
-Fischer (2024) <doi:10.48550/@code{arXiv.2406.05185>}, which provides further
-background and the respective mathematical definitions.  This project was
-supported by the project @code{ArtIGROW}, which is a part of the WIR!-Alliance
-@code{ArtIFARM} â Artificial Intelligence in Farming funded by the German
-Federal Ministry of Education and Research (No.  03WIR4805).")
-    (license license:gpl3+)))
 
 (define-public r-power2stage
   (package
@@ -29533,13 +29495,13 @@ bimbam', plink', snptest', @code{LiMMBo}').")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1xa54q626rrpvkig4ccij4xgmjay1c797wc2jk57caxscpyd2yvs"))))
+        (base32 "1p5b119iigkjpx98s5wq092a1k9vk5rbn86b267r554gdgbnq4xp"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments

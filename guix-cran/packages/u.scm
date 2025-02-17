@@ -1295,13 +1295,13 @@ are available for seasonal unit root tests.")
 (define-public r-urlshortener
   (package
     (name "r-urlshortener")
-    (version "1.5.7")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "urlshorteneR" version))
        (sha256
-        (base32 "0zfvcwcy2ykvkbnqgxhzxf99shcby81cx8fjbmy6b07rj9407arj"))))
+        (base32 "11i3q1mf911yycfifpmkqprbqklnm9s5q14wj8a1nl5g0xhns4r9"))))
     (properties `((upstream-name . "urlshorteneR")))
     (build-system r-build-system)
     (arguments

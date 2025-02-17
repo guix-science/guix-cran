@@ -16158,13 +16158,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.23")
+    (version "3.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "1xvkdmx9vywz2p807n98g2cx406iyz9rvfl8rwvqpgnbmzsmn81g"))))
+        (base32 "1yc83npl11j18k0sl3d4r4vd9gypixzlj3nd2fkhldxg2bcg3qvi"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (arguments
@@ -47543,13 +47543,13 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "1.3.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "11j696xds77dhvx351vlb968p4mari21yqpsidhvcmzrpdr1kbn4"))))
+        (base32 "143p2pjl6ykd1sklyyg4bg8h4x8z6ix5c67axr34y0d8ggvz473v"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (arguments

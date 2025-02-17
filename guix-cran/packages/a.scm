@@ -5189,13 +5189,13 @@ well as the method of moments estimator of Frei and Wunsch (2018)
 (define-public r-assessor
   (package
     (name "r-assessor")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assessor" version))
        (sha256
-        (base32 "1qpa2fd1ajk395x4chmarj6l50m4jaf5951qy1a79ncaa8f8g3x9"))))
+        (base32 "07z8cim55yabi3874mcgb6v37xmqph45h5rcfgggvdjalhfwywkl"))))
     (properties `((upstream-name . "assessor")))
     (build-system r-build-system)
     (arguments
@@ -5211,7 +5211,7 @@ semicontinuous outcomes proposed in Yang (2023)
 <doi:10.48550/@code{arXiv.2308.15596>}.  It calculates the double probability
 integral transform (DPIT) residuals, constructs QQ plots of residuals and the
 ordered curve for assessing mean structures.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-assertions
   (package
@@ -5329,13 +5329,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.43")
+    (version "4.4.46")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "0hvjcd877n5a0hiziyy0yhq4f4i2pkx3a70xgc9204ingmm95imz"))))
+        (base32 "0rg50mcrha21lzvl64zsw6zvzn9l5d48y8yawa4lkpfxy2g3v61g"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (arguments
