@@ -390,13 +390,13 @@ dissemination.")
 (define-public r-pxmake
   (package
     (name "r-pxmake")
-    (version "0.14.2")
+    (version "0.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pxmake" version))
        (sha256
-        (base32 "1bxz71h8sgcb9573rjyld89v28irmf3xy6jh80ibk21f7d8abcg7"))))
+        (base32 "025yl8nkvrawd7g6pvkvisllkwv59vhdah23n8n80yshgxzqxrin"))))
     (properties `((upstream-name . "pxmake")))
     (build-system r-build-system)
     (arguments
@@ -413,6 +413,7 @@ dissemination.")
                              r-openxlsx
                              r-magrittr
                              r-furrr
+                             r-forcats
                              r-dplyr
                              r-arrow))
     (native-inputs (list r-knitr))
@@ -923,50 +924,6 @@ hazard functions.  Also, to generate the crossover-adjusted event time random
 variable, a more efficient algorithm is used and the output includes crossover
 indicators.")
     (license license:gpl2+)))
-
-(define-public r-pvstatem
-  (package
-    (name "r-pvstatem")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PvSTATEM" version))
-       (sha256
-        (base32 "001437rvf0sc04r9l16afpnknvvam3h2ha85gic82dxhxy29w4sf"))))
-    (properties `((upstream-name . "PvSTATEM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-svglite
-                             r-stringr
-                             r-stringi
-                             r-scales
-                             r-readxl
-                             r-readr
-                             r-r6
-                             r-r-utils
-                             r-png
-                             r-nplr
-                             r-lubridate
-                             r-ggrepel
-                             r-ggplot2
-                             r-fs
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mini-pw/PvSTATEM")
-    (synopsis
-     "Reading, Quality Control and Preprocessing of MBA (Multiplex Bead Assay) Data")
-    (description
-     "Speeds up the process of loading raw data from MBA (Multiplex Bead Assay)
-examinations, performs quality control checks, and automatically normalises the
-data, preparing it for more advanced, downstream tasks.  The main objective of
-the package is to create a simple environment for a user, who does not
-necessarily have experience with R language.  The package is developed within
-the project of the same name - @code{PvSTATEM}', which is an international
-project aiming for malaria elimination.")
-    (license license:bsd-3)))
 
 (define-public r-pvr
   (package
@@ -6493,24 +6450,25 @@ for Biotechnology Information (NCBI) database.  Nature Structural Biology 10,
 (define-public r-prote
   (package
     (name "r-prote")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProtE" version))
        (sha256
-        (base32 "1y784gnd8y2k9nrrg7s65ldx1ns4sy62183xlj7nivkqsgyy9z2l"))))
+        (base32 "0zvia4nlvxj7kay329v4f6g83g2jwadzcklxigrbfbxj88isys2a"))))
     (properties `((upstream-name . "ProtE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vsn
-                             r-vim
+    (propagated-inputs (list r-vim
                              r-vegan
+                             r-uniprotr
                              r-tidyr
                              r-stringr
                              r-reshape2
+                             r-pheatmap
                              r-openxlsx
                              r-missranger
                              r-limma
@@ -6518,8 +6476,6 @@ for Biotechnology Information (NCBI) database.  Nature Structural Biology 10,
                              r-ggplot2
                              r-forcats
                              r-dplyr
-                             r-complexheatmap
-                             r-circlize
                              r-car
                              r-broom))
     (native-inputs (list r-knitr))
@@ -15064,6 +15020,44 @@ provided.  Administrative tasks such as monitoring refresh statuses and pulling
 metadata about workspaces and users are also supported.")
     (license license:expat)))
 
+(define-public r-powerbal
+  (package
+    (name "r-powerbal")
+    (version "0.0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poweRbal" version))
+       (sha256
+        (base32 "16n331pyc41cy59cvp9fidvy3dzi68nw64lg6862amzna72nk85b"))))
+    (properties `((upstream-name . "poweRbal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treebalance
+                             r-scales
+                             r-r-utils
+                             r-phytools
+                             r-diversitree
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=poweRbal")
+    (synopsis
+     "Phylogenetic Tree Models and the Power of Tree Shape Statistics")
+    (description
+     "The first goal of this package is to provide a multitude of tree models, i.e.,
+functions that generate rooted binary trees with a given number of leaves.
+Second, the package allows for an easy evaluation and comparison of tree shape
+statistics by estimating their power to differentiate between different tree
+models.  Please note that this R package was developed alongside the manuscript
+\"Tree balance in phylogenetic models\" by S. J. Kersting, K. Wicke, and M.
+Fischer (2024) <doi:10.48550/@code{arXiv.2406.05185>}, which provides further
+background and the respective mathematical definitions.  This project was
+supported by the project @code{ArtIGROW}, which is a part of the WIR!-Alliance
+@code{ArtIFARM} â Artificial Intelligence in Farming funded by the German
+Federal Ministry of Education and Research (No.  03WIR4805).")
+    (license license:gpl3+)))
+
 (define-public r-power2stage
   (package
     (name "r-power2stage")
@@ -18673,6 +18667,44 @@ allotetraploids.  Methods are described in a manuscript of Bourke et al. (2018)
 probabilistic genotypes are acceptable input; for more details on the latter see
 Liao et al. (2021) <doi:10.1007/s00122-021-03834-x>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-polykde
+  (package
+    (name "r-polykde")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "polykde" version))
+       (sha256
+        (base32 "1w9i24g42arxzwiy8pv52dj86p3ym3cf7pknzn2481frdihij10k"))))
+    (properties `((upstream-name . "polykde")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sphunif
+                             r-rotasym
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-movmf
+                             r-gsl
+                             r-future
+                             r-foreach
+                             r-dofuture
+                             r-abind))
+    (home-page "https://github.com/egarpor/polykde")
+    (synopsis "Polyspherical Kernel Density Estimation")
+    (description
+     "Kernel density estimation on the polysphere, hypersphere, and circle.  Includes
+functions for density estimation, regression estimation, ridge estimation,
+bandwidth selection, kernels, samplers, and homogeneity tests.  Companion
+package to GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila (2024)
+<doi:10.48550/@code{arXiv.2411.04166>} and GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila
+(2023) <doi:10.1007/978-3-031-32729-2_4>.")
+    (license license:gpl3)))
 
 (define-public r-polyhedralcubature
   (package
@@ -39087,13 +39119,13 @@ data related to gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathfindR" version))
        (sha256
-        (base32 "0lwjnw6krqz2yi39as07zcpyh13c6b4d0qxxhhqbqcms6anms7q3"))))
+        (base32 "0hqkwwva49kc8w9y2nkw37vpnjr8mxb10pdx1mm76xm0nrj82kp5"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (arguments
@@ -39133,7 +39165,7 @@ offers functionalities to cluster the enriched terms and identify representative
 terms in each cluster, to score the enriched terms per sample and to visualize
 analysis results.  The enrichment, clustering and other methods implemented in
 @code{pathfindR} are described in detail in Ulgen E, Ozisik O, Sezerman OU.
-2019. @code{pathfindR}: An R Package for Comprehensive Identification of
+2019. @code{pathfindR}': An R Package for Comprehensive Identification of
 Enriched Pathways in Omics Data Through Active Subnetworks.  Front.  Genet.
 <doi:10.3389/fgene.2019.00858>.")
     (license license:expat)))

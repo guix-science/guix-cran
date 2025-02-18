@@ -30,8 +30,8 @@
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages databases)
-  #:use-module (gnu packages pcre)
   #:use-module (gnu packages documentation)
+  #:use-module (gnu packages pcre)
   #:use-module (gnu packages tbb)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -6023,13 +6023,13 @@ Stata commands (both inline and from a .do file) from R.")
 (define-public r-rstanemax
   (package
     (name "r-rstanemax")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstanemax" version))
        (sha256
-        (base32 "0yh94y2pq88il2ay7l167rg9rjvsb7khfwvd8s0bq6f1n436svis"))))
+        (base32 "1grsihkmsa6dj9rc60kkqk481hsh7gspfjzl00w7d1r34ryd5q10"))))
     (properties `((upstream-name . "rstanemax")))
     (build-system r-build-system)
     (arguments
@@ -6048,7 +6048,6 @@ Stata commands (both inline and from a .do file) from R.")
                              r-lifecycle
                              r-ggplot2
                              r-dplyr
-                             r-boot
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yoshidk6/rstanemax")
@@ -9500,13 +9499,13 @@ supported by National Institutes of Health grants R37 GM-046255.")
 (define-public r-rrepest
   (package
     (name "r-rrepest")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rrepest" version))
        (sha256
-        (base32 "14wbr1zm2xzh99lh1nzraszvwhcic43v642kzg5rmasigiv48mfs"))))
+        (base32 "0rd9wh4mkqhm83dr1vi5qcsd0vfs6h4xj01d0vb2cfa4bv7kb82v"))))
     (properties `((upstream-name . "Rrepest")))
     (build-system r-build-system)
     (arguments
@@ -9530,8 +9529,8 @@ supported by National Institutes of Health grants R37 GM-046255.")
     (description
      "An easy way to analyze international large-scale assessments and surveys in
 education or any other dataset that includes replicated weights (Balanced
-Repeated Replication (BRR) weights, Jackknife replicate weights,...).  It also
-allows for analyses with multiply imputed variables (plausible values).  It
+Repeated Replication (BRR) weights, Jackknife replicate weights,...) while also
+allowing for analysis with multiply imputed variables (plausible values).  It
 supports the estimation of univariate statistics (e.g. mean, variance, standard
 deviation, quantiles), frequencies, correlation, linear regression and any other
 model already implemented in R that takes a data frame and weights as
@@ -12246,6 +12245,40 @@ custom requests, thereby enhancing usability and flexibility for researchers.")
      "This package provides tools to read, write, visualize Protein Data Bank (PDB)
 files and perform some structural manipulations.")
     (license license:gpl3+)))
+
+(define-public r-rpcss
+  (package
+    (name "r-rpcss")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rpcss" version))
+       (sha256
+        (base32 "111ya5cqdwhp0rl24cghsi2gc6wa685k5kcznj1pjbgr0z18gbrz"))))
+    (properties `((upstream-name . "rpcss")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rdpack
+                             r-mathjaxr
+                             r-gslnls
+                             r-ggrepel
+                             r-ggplot2
+                             r-factominer
+                             r-dplyr))
+    (home-page "https://github.com/aravind-j/rpcss")
+    (synopsis
+     "Constitution of Core Collections by Principal Component Scoring Strategy")
+    (description
+     "Generate a Core Collection with Principal Component Scoring Strategy (PCSS)
+using qualitative and/or quantitative trait data according to Hamon and Noirot
+(1990) <https://www.documentation.ird.fr/hor/fdi:36506>, Noirot et al. (1996)
+<doi:10.2307/2527837> and Noirot et al. (2003)
+<https://www.documentation.ird.fr/hor/fdi:010031886>.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-rpca
   (package
@@ -38183,35 +38216,6 @@ criteria, publications and other information.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-redland
-  (package
-    (name "r-redland")
-    (version "1.0.17-18")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "redland" version))
-       (sha256
-        (base32 "183m1bvgj52w74383b5v6rfm7gn4izijixans1zdycqp68ibm6g9"))))
-    (properties `((upstream-name . "redland")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib pcre2))
-    (propagated-inputs (list r-roxygen2))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://cran.r-project.org/package=redland")
-    (synopsis "RDF Library Bindings in R")
-    (description
-     "This package provides methods to parse, query and serialize information stored
-in the Resource Description Framework (RDF).  RDF is described at
-<https://www.w3.org/TR/rdf-primer/>.  This package supports RDF by implementing
-an R interface to the Redland RDF C library, described at
-<https://librdf.org/docs/api/index.html>.  In brief, RDF provides a structured
-graph consisting of Statements composed of Subject, Predicate, and Object Nodes.")
-    (license license:asl2.0)))
-
 (define-public r-redistverse
   (package
     (name "r-redistverse")
@@ -40686,13 +40690,13 @@ way to read these files into R.")
 (define-public r-readsparse
   (package
     (name "r-readsparse")
-    (version "0.1.5-6")
+    (version "0.1.5-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readsparse" version))
        (sha256
-        (base32 "0njvk51057bi6chd6vqcfwif5b18943k67biyk4gk80rj01ggscc"))))
+        (base32 "0i44b3f43qq289dmz3sz88q1jn7nk4krjxmlcfrlh494dx2s0555"))))
     (properties `((upstream-name . "readsparse")))
     (build-system r-build-system)
     (arguments
@@ -45575,13 +45579,13 @@ cloud that corresponds to a snapshot of the simulated forest.")
 (define-public r-rconics
   (package
     (name "r-rconics")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RConics" version))
        (sha256
-        (base32 "0r5sn5kx6r3pjnvrgz7yxpyznb1js2i58vnbsqyzpl7jhcdhpz5x"))))
+        (base32 "11zalkmfna0i2n510g16jlsijdi3bg6lbma7djki54w9ki0rpp4y"))))
     (properties `((upstream-name . "RConics")))
     (build-system r-build-system)
     (arguments

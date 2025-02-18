@@ -2560,29 +2560,6 @@ tools for common data manipulation steps: filtering rows, selecting columns,
 summarising grouped data, among others.")
     (license license:expat)))
 
-(define-public r-nplr
-  (package
-    (name "r-nplr")
-    (version "0.1-7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nplr" version))
-       (sha256
-        (base32 "1h3qv9dlw2gx8km3slyvrl588nif1n87df8xwmm6p75ziqhn2f56"))))
-    (properties `((upstream-name . "nplr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/fredcommo/nplr")
-    (synopsis "N-Parameter Logistic Regression")
-    (description
-     "Performing drug response analyses and IC50 estimations using n-Parameter
-logistic regression.  Can also be applied to proliferation analyses.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-nplplot
   (package
     (name "r-nplplot")
@@ -6079,13 +6056,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.0")
+    (version "11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "1jfahryk70a2xy6433amcy69sicmwz4aa7qpbg4frymcvr6bsjzi"))))
+        (base32 "074x7lpg1p7l1ygbz4nmhkwg6x531jxml9x4hcw997xam0wx5mc7"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -8180,13 +8157,13 @@ composition and modification functions to make model updates easier.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2extra" version))
        (sha256
-        (base32 "04w119h03xk6fdn008pbrn6p8lpma9ip669vrmw4wrypxjw2knz2"))))
+        (base32 "08qpcsi8zsnkyw2l8jj6x86sjx1z7c6d435nq769ikzv5m86s47r"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (arguments
@@ -9120,6 +9097,32 @@ well as a suite of functions for prior and posterior predictive checks for
 demographic inference (Crema and Shoda (2021)
 <doi:10.1371/journal.pone.0251695>) and other analyses.")
     (license license:gpl2+)))
+
+(define-public r-nimbleapt
+  (package
+    (name "r-nimbleapt")
+    (version "1.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleAPT" version))
+       (sha256
+        (base32 "0azab8y8k2a2q7fwcps0bd536p0i1fwnq1gvcmsxwa64x7hdpzqa"))))
+    (properties `((upstream-name . "nimbleAPT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nimble))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DRJP/nimbleAPT")
+    (synopsis "Adaptive Parallel Tempering for 'NIMBLE'")
+    (description
+     "This package provides functions for adaptive parallel tempering (APT) with
+NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
+<DOI:10.1007/s11222-015-9579-0> and Miasojedow, Moulines and Vihola (2013)
+<DOI:10.1080/10618600.2013.778779>.")
+    (license license:bsd-3)))
 
 (define-public r-nimble
   (package

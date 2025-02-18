@@ -38312,6 +38312,33 @@ comes with back-ends for @code{OpenAI}', @code{GitHub} Copilot', and
 @code{LlamaGPT}'.")
     (license license:expat)))
 
+(define-public r-chatrater
+  (package
+    (name "r-chatrater")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chatRater" version))
+       (sha256
+        (base32 "125n7y56sxsdwnhy6qdffcn282gfssvkgfqlb778124d0ab56spy"))))
+    (properties `((upstream-name . "chatRater")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyverse r-openai r-jsonlite r-httr))
+    (home-page "https://cran.r-project.org/package=chatRater")
+    (synopsis "Rating Text Using Large Language Models")
+    (description
+     "Generates ratings for textual stimuli using large language models.  It allows
+users to evaluate idioms and similar texts by combining context, prompts, and
+stimulus inputs.  The package supports both @code{OpenAI} and @code{DeepSeek}
+APIs by enabling users to switch models simply by specifying the model
+parameter.  It implements methods for constructing the request payload and
+parsing numeric ratings from the model outputs.")
+    (license license:expat)))
+
 (define-public r-chatgpt
   (package
     (name "r-chatgpt")
@@ -38867,6 +38894,44 @@ exciting point processes: <@code{arXiv:2006.03572>}; 9) dependent dynamic
 nonparametric random dot product graphs: <@code{arXiv:1911.07494>}; 10)
 univariate mean against adversarial attacks: <@code{arXiv:2105.10417>}.")
     (license license:gpl3+)))
+
+(define-public r-changepointga
+  (package
+    (name "r-changepointga")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "changepointGA" version))
+       (sha256
+        (base32 "1rcpscn60skmwmjrkc0zvdzvlsrv9f1cyxbv71gj6cw1jvrg8kfn"))))
+    (properties `((upstream-name . "changepointGA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-foreach r-doparallel
+                             r-clue))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mli171/changepointGA")
+    (synopsis "Changepoint Detection via Modified Genetic Algorithm")
+    (description
+     "The Genetic Algorithm (GA) is used to perform changepoint analysis in time
+series data.  The package also includes an extended island version of GA, as
+described in Lu, Lund, and Lee (2010, <doi:10.1214/09-AOAS289>).  By mimicking
+the principles of natural selection and evolution, GA provides a powerful
+stochastic search technique for solving combinatorial optimization problems.  In
+@code{changepointGA}', each chromosome represents a changepoint configuration,
+including the number and locations of changepoints, hyperparameters, and model
+parameters.  The package employs genetic operatorsâselection, crossover, and
+mutationâto iteratively improve solutions based on the given fitness
+(objective) function.  Key features of @code{changepointGA} include encoding
+changepoint configurations in an integer format, enabling dynamic and
+simultaneous estimation of model hyperparameters, changepoint configurations,
+and associated parameters.  The detailed algorithmic implementation can be found
+in the package vignettes and in the paper of Li (2024,
+<doi:10.48550/@code{arXiv.2410.15571>}).")
+    (license license:expat)))
 
 (define-public r-changepoint-np
   (package
@@ -39487,19 +39552,24 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.21")
+    (version "1.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "0dsiwam9fgvri14hznnplxcjj0f8ibi8vf64wryq3pcvi41di082"))))
+        (base32 "12mca8wq11nbc3n39bz8qh9n1xj8gvgibmkpjdkzvsmnbrhjl5gv"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-svdialogs r-statmod r-matrix r-lme4 r-coneproj))
+    (propagated-inputs (list r-svdialogs
+                             r-statmod
+                             r-splines2
+                             r-matrix
+                             r-lme4
+                             r-coneproj))
     (home-page "https://cran.r-project.org/package=cgam")
     (synopsis "Constrained Generalized Additive Model")
     (description
@@ -45873,13 +45943,13 @@ views).")
 (define-public r-cata
   (package
     (name "r-cata")
-    (version "0.1.0.7")
+    (version "0.1.0.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cata" version))
        (sha256
-        (base32 "049wrqbmw77jlcwcikgjqjsnw4s3f6w4hvhilp2kvljpflmvjymf"))))
+        (base32 "14w0i1nr54107wqifrgjywn8zm757d7bdb9083rqz2jl4ykk77l6"))))
     (properties `((upstream-name . "cata")))
     (build-system r-build-system)
     (arguments

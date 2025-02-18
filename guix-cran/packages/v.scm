@@ -2365,6 +2365,35 @@ Please see Chainarong Amornbunchornvej, Elena Zheleva, and Tanya Berger-Wolf
 (2021) <doi:10.1145/3441452> when referring to this package in publications.")
     (license license:gpl3)))
 
+(define-public r-vlmcx
+  (package
+    (name "r-vlmcx")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VLMCX" version))
+       (sha256
+        (base32 "1kwwg158556v4685j2dji4xjf1v9v5d9qdp4xhki022f5dv8h61h"))))
+    (properties `((upstream-name . "VLMCX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nnet r-berryfunctions))
+    (home-page "https://cran.r-project.org/package=VLMCX")
+    (synopsis "Variable Length Markov Chain with Exogenous Covariates")
+    (description
+     "Models categorical time series through a Markov Chain when a) covariates are
+predictors for transitioning into the next state/symbol and b) when the
+dependence in the past states has variable length.  The probability of
+transitioning to the next state in the Markov Chain is defined by a multinomial
+regression whose parameters depend on the past states of the chain and,
+moreover, the number of states in the past needed to predict the next state also
+depends on the observed states themselves.  See Zambom, Kim, and Garcia (2022)
+<doi:10.1111/jtsa.12615>.")
+    (license license:gpl2+)))
+
 (define-public r-vlmc
   (package
     (name "r-vlmc")

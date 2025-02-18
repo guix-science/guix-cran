@@ -11315,13 +11315,13 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
 (define-public r-floral
   (package
     (name "r-floral")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLORAL" version))
        (sha256
-        (base32 "13gqy0c3zz3rs9lv6r5qrl9mzmg4zvaimxirr1p5bvmvwbaa256r"))))
+        (base32 "17g20p2f0hm9g5i44g3bwfyy6s9sqjjyzq065x0k7sfmfk5kr686"))))
     (properties `((upstream-name . "FLORAL")))
     (build-system r-build-system)
     (arguments
@@ -11333,6 +11333,7 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
                              r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
+                             r-phyloseq
                              r-mvtnorm
                              r-msm
                              r-glmnet
@@ -11348,8 +11349,8 @@ visualization platform <https://developers.flourish.studio/api/introduction/>.")
     (synopsis "Fit Log-Ratio Lasso Regression for Compositional Data")
     (description
      "Log-ratio Lasso regression for continuous, binary, and survival outcomes with
-compositional features.  See Fei and others (2023)
-<doi:10.1101/2023.05.02.538599>.")
+(longitudinal) compositional features.  See Fei and others (2024)
+<doi:10.1016/j.crmeth.2024.100899>.")
     (license license:gpl3+)))
 
 (define-public r-florabr
@@ -11812,6 +11813,42 @@ which is, given that the sample is exchangeable, does a proposed grouping of the
 features into disjoint sets also produce statistically independent sets of
 features? See Aw, Spence and Song (2023) for the accompanying paper.")
     (license license:gpl3+)))
+
+(define-public r-flint
+  (package
+    (name "r-flint")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flint" version))
+       (sha256
+        (base32 "1yynchddn6gy1hna1azpzjgv3mzs1nr1yf7a1iaaa3p2yn198vi3"))))
+    (properties `((upstream-name . "flint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list mpfr gmp))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/jaganmn/flint")
+    (synopsis "Fast Library for Number Theory")
+    (description
+     "An R interface to FLINT <https://flintlib.org/>, a C library for number theory.
+FLINT extends GNU MP <https://gmplib.org/> and GNU MPFR <https://www.mpfr.org/>
+with support for arithmetic in standard rings (the integers, the integers modulo
+n, the rational, p-adic, real, and complex numbers) as well as vectors,
+matrices, polynomials, and power series over rings.  FLINT implements
+midpoint-radius interval arithmetic, also known as ball arithmetic, in the real
+and complex numbers, enabling computation in arbitrary precision with rigorous
+propagation of errors; see Johansson (2017) <doi:10.1109/TC.2017.2690633>.
+Finally, FLINT provides ball arithmetic implementations of many special
+mathematical functions, with high coverage of reference works such as the NIST
+Digital Library of Mathematical Functions <https://dlmf.nist.gov/>.  The R
+interface defines S4 classes, generic functions, and methods for representation
+and basic operations as well as plain R functions matching (and vectorizing)
+entry points in the C library.")
+    (license license:gpl2+)))
 
 (define-public r-flimo
   (package
@@ -14302,6 +14339,31 @@ especially for simulating a physical or biological system.")
 fossil calibrations, and diversification rate information for ray-finned fishes.")
     (license license:bsd-2)))
 
+(define-public r-fishstat
+  (package
+    (name "r-fishstat")
+    (version "2024.1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fishstat" version))
+       (sha256
+        (base32 "1kgl25svfkcgk74jd2897l3hkhrdsmmh1hn7d78crrxc42s03c8q"))))
+    (properties `((upstream-name . "fishstat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://www.fao.org/fishery/en/fishstat")
+    (synopsis "Global Fishery and Aquaculture Statistics")
+    (description
+     "The Food and Agriculture Organization of the United Nations (FAO)
+@code{FishStat} database is the leading source of global fishery and aquaculture
+statistics and provides unique information for sector analysis and monitoring.
+This package provides the global production data from all fisheries and
+aquaculture in R format, ready for analysis.")
+    (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
+
 (define-public r-fishrman
   (package
     (name "r-fishrman")
@@ -16286,30 +16348,6 @@ optionally annotated with metadata (titles, headers and footers).  Functions and
 supporting documentation are offered to streamline a variety of figure
 production task.")
     (license license:gpl2)))
-
-(define-public r-figpatch
-  (package
-    (name "r-figpatch")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "figpatch" version))
-       (sha256
-        (base32 "0sy63131al6z0hlhpb11aphlxdigb0pqk9bq9mxc9nbc59036jjq"))))
-    (properties `((upstream-name . "figpatch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-patchwork r-magrittr r-magick r-ggplot2))
-    (home-page "https://github.com/BradyAJohnston/figpatch")
-    (synopsis
-     "Easily Arrange External Figures with Patchwork Alongside 'ggplot2' Figures")
-    (description
-     "For including external figures into an assembled {patchwork}.  This enables the
-creation of more complex figures that include images alongside plots.")
-    (license license:expat)))
 
 (define-public r-figma
   (package
@@ -19287,13 +19325,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.3.5")
+    (version "2.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "0y1g0fhwmxjp1694mhnbf8bspb30zdny9xpdrnh7la4v3wdbccl4"))))
+        (base32 "0fwzs5m0gkmk2gygx3n9dv2k7a7hcfj8zfcm2fbzqgkj4ffhhymx"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (arguments

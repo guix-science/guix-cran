@@ -4648,13 +4648,13 @@ constraints in the same model.")
 (define-public r-survivalsl
   (package
     (name "r-survivalsl")
-    (version "0.97")
+    (version "0.97.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalSL" version))
        (sha256
-        (base32 "1dqabpy96y6i4jmkbf66x22ypc0qlf8a1fxdfpinbjvr499l57d4"))))
+        (base32 "1grcimk3pba04m5j7nya1ixcvk3nf8y6g5yb9n79waar0l1676za"))))
     (properties `((upstream-name . "survivalSL")))
     (build-system r-build-system)
     (arguments
@@ -14311,46 +14311,6 @@ making for the Coursera Specialization \"Statistics with R\".  See
 <https://github.com/@code{StatsWithR/statsr>} for more information.")
     (license license:expat)))
 
-(define-public r-statsomat
-  (package
-    (name "r-statsomat")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Statsomat" version))
-       (sha256
-        (base32 "1lfgbbf1pcfbih5nfb6rbiq2h0hlxg1fzmcf4330yc48r998q4x6"))))
-    (properties `((upstream-name . "Statsomat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shinydisconnect
-                             r-shiny
-                             r-rmarkdown
-                             r-reshape2
-                             r-readr
-                             r-knitr
-                             r-kableextra
-                             r-gridextra
-                             r-ggplot2
-                             r-energy
-                             r-ddoutlier
-                             r-data-table
-                             r-corrplot
-                             r-car))
-    (home-page "https://statsomat.com")
-    (synopsis
-     "Shiny Apps for Automated Data Analysis and Automated Interpretation")
-    (description
-     "Shiny apps for automated data analysis, annotated outputs and human-readable
-interpretation in natural language.  Designed especially for learners and
-applied researchers.  Currently available methods: EDA, EDA with Python,
-Correlation Analysis, Principal Components Analysis, Confirmatory Factor
-Analysis.")
-    (license (license:fsdg-compatible "AGPL"))))
-
 (define-public r-statsearchanalyticsr
   (package
     (name "r-statsearchanalyticsr")
@@ -19932,48 +19892,6 @@ covariates and overlapping groups.  See Van Nee et al. (2021)
 Shiny Dashboard, which can be used to visualize experimental results and
 analyses.")
     (license license:expat)))
-
-(define-public r-squat
-  (package
-    (name "r-squat")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "squat" version))
-       (sha256
-        (base32 "0a5vm1ldwysadf50jvq7p988gv9arszg2a1hppcfjvwq193ywy0g"))))
-    (properties `((upstream-name . "squat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-scales
-                             r-roahd
-                             r-rlang
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-purrr
-                             r-progressr
-                             r-mfpca
-                             r-ggrepel
-                             r-ggplot2
-                             r-furrr
-                             r-fundata
-                             r-fdacluster
-                             r-dtw
-                             r-dbscan
-                             r-cli))
-    (home-page "https://github.com/LMJL-Alea/squat")
-    (synopsis "Statistics for Quaternion Temporal Data")
-    (description
-     "An implementation of statistical tools for the analysis of rotation-valued time
-series and functional data.  It relies on pre-existing quaternion data structure
-provided by the Eigen C++ library.")
-    (license license:gpl3+)))
 
 (define-public r-squash
   (package
@@ -42147,6 +42065,30 @@ please refer to Perera, A., and Ramanayake, A. (2019)
 <https://www.aimr.tirdiconference.com/assets/images/portfolio/Conference-Proceeding-AIMR-19.pdf>.")
     (license license:gpl2)))
 
+(define-public r-simqi
+  (package
+    (name "r-simqi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simqi" version))
+       (sha256
+        (base32 "1wqqmndjqkxjf8y8vfvwmbkp2i29ain1qrhm7sjpgv4s58f6xhxc"))))
+    (properties `((upstream-name . "simqi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-stevemisc))
+    (home-page "https://cran.r-project.org/package=simqi")
+    (synopsis "Simulate Quantities of Interest from Regression Models")
+    (description
+     "This is an all-encompassing suite to facilitate the simulation of so-called
+quantities of interest by way of a multivariate normal distribution of the
+regression model's coefficients and variance-covariance matrix.")
+    (license license:gpl2)))
+
 (define-public r-simputation
   (package
     (name "r-simputation")
@@ -53207,13 +53149,13 @@ estimation, and convergence diagnostics.")
 (define-public r-sgboost
   (package
     (name "r-sgboost")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgboost" version))
        (sha256
-        (base32 "1x3ppg2sivl2r3w1pbqvam7cvrd86agxbqdmkgf2qkvy3hf5gdga"))))
+        (base32 "0z97gzjwssar79x9pdcnhcwavcxg3hmzsrzi4czvcl4kf4gyhy7b"))))
     (properties `((upstream-name . "sgboost")))
     (build-system r-build-system)
     (arguments

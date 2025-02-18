@@ -21912,13 +21912,13 @@ maximum likelihood estimate(s) via Cox-Snell Methodology.")
 (define-public r-mle
   (package
     (name "r-mle")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLE" version))
        (sha256
-        (base32 "0g7416dsd110pq5xl65fzcd1ci65ln1db039r4711vgvq3nr0699"))))
+        (base32 "1yknbj0qgkz709nh4q90ck3l110vbaz25k55a07d0y9vvcpcin55"))))
     (properties `((upstream-name . "MLE")))
     (build-system r-build-system)
     (arguments
@@ -25274,6 +25274,37 @@ imputation method that use general population mortality tables to allow a
 correct analysis of time to disease recurrence.  Also includes a powerful set of
 object oriented survival data simulation functions.")
     (license license:gpl2+)))
+
+(define-public r-misscp
+  (package
+    (name "r-misscp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MissCP" version))
+       (sha256
+        (base32 "1idw2fignwx7j462x9ih73gpd7q9vd993svm7ys3sqkd1yc8zcva"))))
+    (properties `((upstream-name . "MissCP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-glmnet
+                             r-ggplot2
+                             r-factoextra))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MissCP")
+    (synopsis "Change Point Detection with Missing Values")
+    (description
+     "This package provides a four step change point detection method that can detect
+break points with the presence of missing values proposed by Liu and Safikhani
+(2023)
+<https://drive.google.com/file/d/1a8@code{sV3RJ8VofLWikTDTQ7W4XJ76cEj4Fg/view?usp=drive_link>}.")
+    (license license:gpl2)))
 
 (define-public r-misscompare
   (package
@@ -49448,46 +49479,6 @@ and/or clusters to accommodate complex cherry-picking strategies.
 Alternatively, cherry-picking using taxonomic identification MALDI-TOF data is
 made easy with functions to import inconsistently formatted reports.")
     (license license:gpl3+)))
-
-(define-public r-maldicellassay
-  (package
-    (name "r-maldicellassay")
-    (version "0.4.47")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MALDIcellassay" version))
-       (sha256
-        (base32 "0bxspf3i57qz5hybjh3hfasn95m8k3ijfi2js1rsnz8pn9x6isqb"))))
-    (properties `((upstream-name . "MALDIcellassay")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-svmisc
-                             r-scales
-                             r-purrr
-                             r-nplr
-                             r-maldiquantforeign
-                             r-maldiquant
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CeMOS-Mannheim/MALDIcellassay")
-    (synopsis "Automated MALDI Cell Assays Using Dose-Response Curve Fitting")
-    (description
-     "Conduct automated cell-based assays using Matrix-Assisted Laser
-Desorption/Ionization (MALDI) methods for high-throughput screening of signals
-responsive to treatments.  The package efficiently identifies high variance
-signals and fits dose-response curves to them.  Quality metrics such as Z', V',
-log2FC, and CRS are provided for evaluating the potential of signals as
-biomarkers.  The methodologies were introduced by Weigt et al. (2018)
-<doi:10.1038/s41598-018-29677-z> and refined by Unger et al. (2021)
-<doi:10.1038/s41596-021-00624-z>.")
-    (license license:expat)))
 
 (define-public r-malaytextr
   (package

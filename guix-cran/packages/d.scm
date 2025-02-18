@@ -836,35 +836,6 @@ trees paper (Gramacy, Taddy & Polson (2011); <doi:10.1198/jasa.2011.ap09769>)
 are facilitated by demos in the package; see demo(package=\"@code{dynaTree}\").")
     (license license:lgpl2.0+)))
 
-(define-public r-dynatopgis
-  (package
-    (name "r-dynatopgis")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dynatopGIS" version))
-       (sha256
-        (base32 "1sv519dc7fs6zrwnyggkzrcy866a6pgag0shk6rr6cd3xa1blwpv"))))
-    (properties `((upstream-name . "dynatopGIS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-terra r-r6 r-jsonlite))
-    (native-inputs (list r-knitr))
-    (home-page "https://waternumbers.github.io/dynatopGIS/")
-    (synopsis
-     "Algorithms for Helping Build Dynamic TOPMODEL Implementations from Spatial Data")
-    (description
-     "This package provides a set of algorithms based on Quinn et al. (1991)
-<doi:10.1002/hyp.3360050106> for processing river network and digital elevation
-data to build implementations of Dynamic TOPMODEL, a semi-distributed
-hydrological model proposed in Beven and Freer (2001) <doi:10.1002/hyp.252>.
-The dynatop package implements simulation code for Dynamic TOPMODEL based on the
-output of @code{dynatopGIS}'.")
-    (license license:gpl2)))
-
 (define-public r-dynatop
   (package
     (name "r-dynatop")
@@ -25344,48 +25315,6 @@ and is simpler than the nutrition survey <http://www.nutrisurvey.de>.  The
 database to create weights and baseline values is the Indonesia national survey
 in 2017.")
     (license license:gpl3)))
-
-(define-public r-ddoutlier
-  (package
-    (name "r-ddoutlier")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DDoutlier" version))
-       (sha256
-        (base32 "1az5zq0l3kj959572mlpc4zl73f16iag0yrs217fa9m8xpd3c2sd"))))
-    (properties `((upstream-name . "DDoutlier")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-proxy r-pracma r-dbscan))
-    (home-page "https://github.com/jhmadsen/DDoutlier")
-    (synopsis "Distance & Density-Based Outlier Detection")
-    (description
-     "Outlier detection in multidimensional domains.  Implementation of notable
-distance and density-based outlier algorithms.  Allows users to identify local
-outliers by comparing observations to their nearest neighbors, reverse nearest
-neighbors, shared neighbors or natural neighbors.  For distance-based
-approaches, see Knorr, M., & Ng, R. T. (1997) <doi:10.1145/782010.782021>,
-Angiulli, F., & Pizzuti, C. (2002) <doi:10.1007/3-540-45681-3_2>, Hautamaki, V.,
-& Ismo, K. (2004) <doi:10.1109/ICPR.2004.1334558> and Zhang, K., Hutter, M. &
-Jin, H. (2009) <doi:10.1007/978-3-642-01307-2_84>.  For density-based
-approaches, see Tang, J., Chen, Z., Fu, A. W. C., & Cheung, D. W. (2002)
-<doi:10.1007/3-540-47887-6_53>, Jin, W., Tung, A. K. H., Han, J., & Wang, W.
-(2006) <doi:10.1007/11731139_68>, Schubert, E., Zimek, A. & Kriegel, H-P. (2014)
-<doi:10.1137/1.9781611973440.63>, Latecki, L., Lazarevic, A. & Prokrajac, D.
-(2007) <doi:10.1007/978-3-540-73499-4_6>, Papadimitriou, S., Gibbons, P. B., &
-Faloutsos, C. (2003) <doi:10.1109/ICDE.2003.1260802>, Breunig, M. M., Kriegel,
-H.-P., Ng, R. T., & Sander, J. (2000) <doi:10.1145/342009.335388>, Kriegel,
-H.-P., KrÃ¶ger, P., Schubert, E., & Zimek, A. (2009)
-<doi:10.1145/1645953.1646195>, Zhu, Q., Feng, Ji. & Huang, J. (2016)
-<doi:10.1016/j.patrec.2016.05.007>, Huang, J., Zhu, Q., Yang, L. & Feng, J.
-(2015) <doi:10.1016/j.knosys.2015.10.014>, Tang, B. & Haibo, He. (2017)
-<doi:10.1016/j.neucom.2017.02.039> and Gao, J., Hu, W., Zhang, X. & Wu, Ou.
-(2011) <doi:10.1007/978-3-642-20847-8_23>.")
-    (license license:expat)))
 
 (define-public r-ddml
   (package

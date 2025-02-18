@@ -27209,13 +27209,13 @@ sampling tasks, the spatial bias of the model can be effectively reduced.")
 (define-public r-geocodebr
   (package
     (name "r-geocodebr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocodebr" version))
        (sha256
-        (base32 "0b1qhahwkhz40fkgcf77y956ngarfjf96dz3cf7z923h8mmr7jd8"))))
+        (base32 "13w910rww8qg38h0kfi8vn111v26pak2qbnkp3mfr9i5ynzjbr4p"))))
     (properties `((upstream-name . "geocodebr")))
     (build-system r-build-system)
     (arguments
@@ -31244,13 +31244,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.3-1")
+    (version "1.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "1gp96xxri06d821z886s86ml6gkgkq47g74z224lwv03s1av3v59"))))
+        (base32 "0gml0dml32bpmsibxszpqm838xrv9sxlx16nshsh7995kxw2rh9r"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (arguments

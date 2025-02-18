@@ -10942,13 +10942,13 @@ kind are warmly welcomed.")
 (define-public r-blocklength
   (package
     (name "r-blocklength")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blocklength" version))
        (sha256
-        (base32 "06d62hgkf2pphr6h3nba1b5r0izr45bvmrymrzq0lyc7xiwrh6na"))))
+        (base32 "1p9awm3a6yda0jf1si0xz5gni293j10i60m1za0aklmcxf9897sv"))))
     (properties `((upstream-name . "blocklength")))
     (build-system r-build-system)
     (arguments
@@ -10962,10 +10962,12 @@ kind are warmly welcomed.")
     (description
      "This package provides a set of functions to select the optimal block-length for
 a dependent bootstrap (block-bootstrap).  Includes the Hall, Horowitz, and Jing
-(1995) <doi:10.1093/biomet/82.3.561> cross-validation method and the Politis and
-White (2004) <doi:10.1081/ETC-120028836> Spectral Density Plug-in method,
-including the Patton, Politis, and White (2009) <doi:10.1080/07474930802459016>
-correction with a corresponding set of S3 plot methods.")
+(1995) <doi:10.1093/biomet/82.3.561> subsampling-based cross-validation method,
+the Politis and White (2004) <doi:10.1081/ETC-120028836> Spectral Density
+Plug-in method, including the Patton, Politis, and White (2009)
+<doi:10.1080/07474930802459016> correction, and the Lahiri, Furukawa, and Lee
+(2007) <doi:10.1016/j.stamet.2006.08.002> nonparametric plug-in method, with a
+corresponding set of S3 plot methods.")
     (license license:gpl2+)))
 
 (define-public r-blockforest
@@ -17081,6 +17083,31 @@ Combines rare variants to a common class to account for sparse cells in tables
 as described by Hollenbach JA, Mack SJ, Thomson G, Gourraud PA (2012)
 <doi:10.1007/978-1-61779-842-9_14>.")
     (license license:gpl3+)))
+
+(define-public r-bigdatape
+  (package
+    (name "r-bigdatape")
+    (version "0.0.95")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BigDataPE" version))
+       (sha256
+        (base32 "0mg3644hsj0m5bbd9sjpq7k1p62sfyh668pvbl2144q1llyk1dxr"))))
+    (properties `((upstream-name . "BigDataPE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-httr2 r-dplyr))
+    (home-page "<https://github.com/StrategicProjects/bigdatape>")
+    (synopsis "Secure and Intuitive Access to 'BigDataPE' 'API' Datasets")
+    (description
+     "Designed to simplify the process of retrieving datasets from the Big Data PE
+platform using secure token-based authentication.  It provides functions for
+securely storing, retrieving, and managing tokens associated with specific
+datasets, as well as fetching and processing data using the httr2 package.")
+    (license license:expat)))
 
 (define-public r-bigdatadist
   (package
@@ -29239,19 +29266,19 @@ al. (1982) and Ellis et al. (1982) <doi:10.1093/JXB/38.6.1033>
 (define-public r-baseset
   (package
     (name "r-baseset")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BaseSet" version))
        (sha256
-        (base32 "0dn4qxmba4pwf5ig7wivqijr35krm2h1cxgr99z44678k9hd3ip5"))))
+        (base32 "1k2n841p7qrdx3q7vnixdh0a3c0ixivl6rzcs03mlnkn2pqnsl2i"))))
     (properties `((upstream-name . "BaseSet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
+    (propagated-inputs (list r-rlang r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/BaseSet")
     (synopsis "Working with Sets the Tidy Way")
@@ -31267,6 +31294,42 @@ For the statistical underpinnings, see Gu, Mulder, and Hoijtink (2018)
 <doi:10.1111/bmsp.12110>; Hoijtink, Gu, & Mulder, J. (2019)
 <doi:10.1111/bmsp.12145>; Hoijtink, Gu, Mulder, & Rosseel, (2019)
 <doi:10.31234/osf.io/q6h5w>.")
+    (license license:gpl3+)))
+
+(define-public r-bahzing
+  (package
+    (name "r-bahzing")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BaHZING" version))
+       (sha256
+        (base32 "0m2nl3bwr1b9mwq398bpx306nh4625467fnk15d7y2s92gmi5hxb"))))
+    (properties `((upstream-name . "BaHZING")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rjags
+                             r-r2jags
+                             r-pscl
+                             r-phyloseq
+                             r-magrittr
+                             r-dplyr
+                             r-bayestestr))
+    (home-page "https://cran.r-project.org/package=BaHZING")
+    (synopsis
+     "Bayesian Hierarchical Zero-Inflated Negative Binomial Regression with G-Computation")
+    (description
+     "This package provides a Bayesian model for examining the association between
+environmental mixtures and all Taxa measured in a hierarchical microbiome
+dataset in a single integrated analysis.  Compared with analyzing the
+associations of environmental mixtures with each Taxa individually,
+@code{BaHZING} controls Type 1 error rates and provides more stable effect
+estimates when dealing with small sample sizes.")
     (license license:gpl3+)))
 
 (define-public r-bahc

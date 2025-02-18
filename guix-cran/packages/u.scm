@@ -5315,6 +5315,66 @@ ua-parser project <https://github.com/ua-parser>.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-uahdatascienceuc
+  (package
+    (name "r-uahdatascienceuc")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UAHDataScienceUC" version))
+       (sha256
+        (base32 "1p1xyfcscwx9ahzmfiiwz8jxqac9h4v12nc5r76pmvk0v376k9hm"))))
+    (properties `((upstream-name . "UAHDataScienceUC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-proxy r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UAHDataScienceUC")
+    (synopsis "Learn Clustering Techniques Through Examples and Code")
+    (description
+     "This package provides a comprehensive educational package combining clustering
+algorithms with detailed step-by-step explanations.  Provides implementations of
+both traditional (hierarchical, k-means) and modern (Density-Based Spatial
+Clustering of Applications with Noise (DBSCAN), Gaussian Mixture Models (GMM),
+genetic k-means) clustering methods as described in Ezugwu et.  al., (2022)
+<doi:10.1016/j.engappai.2022.104743>.  Includes educational datasets
+highlighting different clustering challenges, based on scikit-learn examples
+(Pedregosa et al., 2011)
+<https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html>.  Features detailed
+algorithm explanations, visualizations, and weighted distance calculations for
+enhanced learning.")
+    (license license:expat)))
+
+(define-public r-uahdatasciencesc
+  (package
+    (name "r-uahdatasciencesc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UAHDataScienceSC" version))
+       (sha256
+        (base32 "1x9m9zgdad08rvs5y0ndshsav7n0plj4xpa8fysx75phhi8q6yx7"))))
+    (properties `((upstream-name . "UAHDataScienceSC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UAHDataScienceSC")
+    (synopsis
+     "Learn Supervised Classification Methods Through Examples and Code")
+    (description
+     "Supervised classification methods, which (if asked) can provide step-by-step
+explanations of the algorithms used, as described in PK Josephine et.  al.,
+(2021) <doi:10.59176/kjcs.v1i1.1259>; and datasets to test them on, which
+highlight the strengths and weaknesses of each technique.")
+    (license license:expat)))
+
 (define-public r-u5mr
   (package
     (name "r-u5mr")

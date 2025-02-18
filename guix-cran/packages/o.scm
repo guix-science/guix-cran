@@ -331,31 +331,6 @@ it on leaflet maps.")
 and data on global economic and social issues.")
     (license license:expat)))
 
-(define-public r-owenq
-  (package
-    (name "r-owenq")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OwenQ" version))
-       (sha256
-        (base32 "0az36s6vrnfa93w12549v9zf6q9xg0a4kvrq5hnkaqxl314zaz1y"))))
-    (properties `((upstream-name . "OwenQ")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcppnumerical r-rcppeigen r-rcpp r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/OwenQ")
-    (synopsis "Owen Q-Function")
-    (description
-     "Evaluates the Owen Q-function for an integer value of the degrees of freedom, by
-applying Owen's algorithm (1965) <doi:10.1093/biomet/52.3-4.437>.  It is useful
-for the calculation of the power of equivalence tests.")
-    (license license:bsd-3)))
-
 (define-public r-owea
   (package
     (name "r-owea")
@@ -6067,13 +6042,13 @@ simulations.")
 (define-public r-opl
   (package
     (name "r-opl")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPL" version))
        (sha256
-        (base32 "0vvk5mif17hb6xfn02r102w4ipzdbmwb646nwl9gf2wxgwdyw38k"))))
+        (base32 "1wdpj4dffz8ajzd02c0vxr3hawhlrz435f70q77yqllair8wqrwq"))))
     (properties `((upstream-name . "OPL")))
     (build-system r-build-system)
     (arguments
@@ -6092,7 +6067,7 @@ sum of the policy effects estimated over all the policy beneficiaries.
 Documentation about OPL is provided by several international articles via Athey
 et al (2021, <doi:10.3982/ECTA15732>), Kitagawa et al (2018,
 <doi:10.3982/ECTA13288>), Cerulli (2022, <doi:10.1080/13504851.2022.2032577>),
-the paper by Cerulli (201, <doi:10.1080/13504851.2020.1820939>) and the book by
+the paper by Cerulli (2021, <doi:10.1080/13504851.2020.1820939>) and the book by
 Gareth et al (2013, <doi:10.1007/978-1-4614-7138-7>).")
     (license license:gpl3)))
 

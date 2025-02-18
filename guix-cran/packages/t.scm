@@ -755,45 +755,6 @@ associated to specific statuses.  The main targets are regular HTML pages or
 dashboards.")
     (license license:expat)))
 
-(define-public r-twitterautomatedtrading
-  (package
-    (name "r-twitterautomatedtrading")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TwitterAutomatedTrading" version))
-       (sha256
-        (base32 "1aa6fxxvy0s8al30w19wa2pwzp60zbbdvp5myigv8x26k6w2jwgv"))))
-    (properties `((upstream-name . "TwitterAutomatedTrading")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-twitter
-                             r-tidytext
-                             r-tibble
-                             r-purrr
-                             r-plyr
-                             r-naptime
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lucasgodeiro/TwitterAutomatedTrading")
-    (synopsis "Automated Trading Using Tweets")
-    (description
-     "This package provides an integration to the metatrader 5'.  The functionalities
-carry out automated trading using sentiment indexes computed from twitter and/or
-stockwits'.  The sentiment indexes are based on the ph.d.  dissertation \"Essays
-on Economic Forecasting Models\" (Godeiro,2018)
-<https://repositorio.ufpb.br/jspui/handle/123456789/15198> The integration
-between the R and the metatrader 5 allows sending buy/sell orders to the
-brokerage.")
-    (license license:gpl3)))
-
 (define-public r-twitteradsr
   (package
     (name "r-twitteradsr")
@@ -817,28 +778,6 @@ brokerage.")
      "Collect your data on digital marketing campaigns from Twitter Ads using the
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
-
-(define-public r-twitter
-  (package
-    (name "r-twitter")
-    (version "1.1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "twitteR" version))
-       (sha256
-        (base32 "1hh055aqb8iddk9bdqw82r3df9rwjqsg5a0d2i0rs1bry8z4kzbr"))))
-    (properties `((upstream-name . "twitteR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rjson r-httr r-dbi r-bit64))
-    (home-page
-     "http://lists.hexdump.org/listinfo.cgi/twitter-users-hexdump.org")
-    (synopsis "R Based Twitter Client")
-    (description "This package provides an interface to the Twitter web API.")
-    (license license:artistic2.0)))
 
 (define-public r-twitmo
   (package

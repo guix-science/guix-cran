@@ -11234,6 +11234,36 @@ unique elements.  Indexes are important building blocks for many algorithms.
 The method is described at <https://github.com/lrberge/indexthis/>.")
     (license license:gpl3)))
 
+(define-public r-indexr
+  (package
+    (name "r-indexr")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "indexr" version))
+       (sha256
+        (base32 "08zins2klr2cv1m64xjdddxdgjma21ldrl997x612rfxaljfhjgk"))))
+    (properties `((upstream-name . "indexr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-readr r-glue r-dplyr r-digest))
+    (home-page "https://lharris421.github.io/indexr/")
+    (synopsis "Thoughtful Saver of Results")
+    (description
+     "Helps with the thoughtful saving, reading, and management of result files (using
+rds files).  The core functions take a list of parameters that are used to
+generate a unique hash to save results under.  Then, the same parameter list can
+be used to read those results back in.  This is helpful to avoid clunky file
+naming when running a large number of simulations.  Additionally, helper
+functions are available for compiling a flat file of parameters of saved
+results, monitoring result usage, and cleaning up unwanted or unused results.
+For more information, visit the indexr homepage
+<https://lharris421.github.io/indexr/>.")
+    (license license:gpl3)))
+
 (define-public r-indexnumr
   (package
     (name "r-indexnumr")

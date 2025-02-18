@@ -19215,13 +19215,13 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
 (define-public r-efafactors
   (package
     (name "r-efafactors")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAfactors" version))
        (sha256
-        (base32 "18w06dgqgmmknzy358cs5lfgr21gmihgrjp0blwlxpvshg6brxnd"))))
+        (base32 "0c75jz64292i8qyb65i9ggb8cpdjigg87z5abbbbpzpsanz90x40"))))
     (properties `((upstream-name . "EFAfactors")))
     (build-system r-build-system)
     (arguments
