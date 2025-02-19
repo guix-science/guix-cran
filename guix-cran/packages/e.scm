@@ -14078,13 +14078,13 @@ the models are discussed in Peng (2023) <doi:10.1287/isre.2022.1113>.")
 (define-public r-enderecobr
   (package
     (name "r-enderecobr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enderecobr" version))
        (sha256
-        (base32 "1sjsy7qp3w98z23h7709253zvxbnjpl8njbgasn0bbf8g7ii0axi"))))
+        (base32 "1w95kb1z9b6dzm2sx427dncqxd7h272lf17cmznrcbdgflfnd735"))))
     (properties `((upstream-name . "enderecobr")))
     (build-system r-build-system)
     (arguments

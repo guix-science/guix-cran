@@ -14580,6 +14580,35 @@ assessment methods.")
 Kirkkojarvi, Finland\".")
     (license license:gpl3+)))
 
+(define-public r-fishgrowth
+  (package
+    (name "r-fishgrowth")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fishgrowth" version))
+       (sha256
+        (base32 "01vk40wlqws0nvljjs7japbrjrdy0crsxm0cbm4p6wvxy28xbdwd"))))
+    (properties `((upstream-name . "fishgrowth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rtmb))
+    (home-page "https://github.com/arni-magnusson/fishgrowth")
+    (synopsis "Fit Growth Curves to Fish Data")
+    (description
+     "Fit growth models to otoliths and/or tagging data, using the RTMB package and
+maximum likelihood.  The otoliths (or similar measurements of age) provide
+direct observed coordinates of age and length.  The tagging data provide
+information about the observed length at release and length at recapture at a
+later time, where the age at release is unknown and estimated as a vector of
+parameters.  The growth models provided by this package can be fitted to
+otoliths only, tagging data only, or a combination of the two.  Growth
+variability can be modelled as constant or increasing with length.")
+    (license license:gpl3)))
+
 (define-public r-fisheye
   (package
     (name "r-fisheye")
@@ -21778,35 +21807,6 @@ Applications of Statistics: an Introduction using R\" (R Pruim, published by AMS
 2017), a text covering topics from probability and mathematical statistics at an
 advanced undergraduate level.  R is integrated throughout, and access to all the
 R code in the book is provided via the @code{snippet()} function.")
-    (license license:gpl2+)))
-
-(define-public r-fastqr
-  (package
-    (name "r-fastqr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastQR" version))
-       (sha256
-        (base32 "0g7dyjh3lrq0r192cy3srf7mjdf19qskxp6yzqhwbbbk29jxa80w"))))
-    (properties `((upstream-name . "fastQR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcppeigen r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=fastQR")
-    (synopsis "Fast QR Decomposition and Update")
-    (description
-     "Efficient algorithms for performing, updating, and downdating the QR
-decomposition, R decomposition, or the inverse of the R decomposition of a
-matrix as rows or columns are added or removed.  It also includes functions for
-solving linear systems of equations, normal equations for linear regression
-models, and normal equations for linear regression with a RIDGE penalty.  For a
-detailed introduction to these methods, see the book by Golub and Van Loan
-(2013, <doi:10.1007/978-3-319-05089-8>) for complete introduction to the
-methods.")
     (license license:gpl2+)))
 
 (define-public r-fastqq

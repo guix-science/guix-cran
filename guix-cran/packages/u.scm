@@ -1222,13 +1222,13 @@ itself.")
 (define-public r-ursa
   (package
     (name "r-ursa")
-    (version "3.11.2")
+    (version "3.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ursa" version))
        (sha256
-        (base32 "1r3klxwm07gjlvjmjx0dzqp9x4fgsnbkqsc56hbwrl899y9a2k5q"))))
+        (base32 "0qffmvz5nq25hkqxy9k02lw5g02sncfmlzv0mrmqspv6rxg3crip"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
     (arguments
@@ -5346,6 +5346,33 @@ highlighting different clustering challenges, based on scikit-learn examples
 <https://jmlr.csail.mit.edu/papers/v12/pedregosa11a.html>.  Features detailed
 algorithm explanations, visualizations, and weighted distance calculations for
 enhanced learning.")
+    (license license:expat)))
+
+(define-public r-uahdatasciencesf
+  (package
+    (name "r-uahdatasciencesf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UAHDataScienceSF" version))
+       (sha256
+        (base32 "1xm7nmbl8hx52md2avf4ypf0s8wqmfcnk8c532lyhdhn1s557jh3"))))
+    (properties `((upstream-name . "UAHDataScienceSF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magick r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UAHDataScienceSF")
+    (synopsis "Interactive Statistical Learning Functions")
+    (description
+     "An educational toolkit for learning statistical concepts through interactive
+exploration.  Provides functions for basic statistics (mean, variance, etc.) and
+probability distributions with step-by-step explanations and interactive
+learning modes.  Each function can be used for simple calculations, detailed
+learning with explanations, or interactive practice with feedback.")
     (license license:expat)))
 
 (define-public r-uahdatasciencesc

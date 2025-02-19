@@ -8202,13 +8202,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "14fil8fy0l1dxk8kzlhin2f8mdcybx8svy40wl5fprl5x2w6kqwz"))))
+        (base32 "0waknqb71djbjd22qh53fwinkmqqs7s2bv2hb6dcmpb8wm5fqnhj"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (arguments
@@ -17816,20 +17816,22 @@ particular clusters and clones within a repertoire.  Yang et al. (2023)
 (define-public r-nailer
   (package
     (name "r-nailer")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NaileR" version))
        (sha256
-        (base32 "11akkz0knfjhair6p163qnhjdmrrzdmpkxlr4rbz3hwwdw29x260"))))
+        (base32 "070j5nvm09xf5jkcahxz0kl928xfb94vzjqmhvrr8mm9w58v15mw"))))
     (properties `((upstream-name . "NaileR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tibble
+                             r-stringr
                              r-sensominer
+                             r-rlang
                              r-ollamar
                              r-magrittr
                              r-glue

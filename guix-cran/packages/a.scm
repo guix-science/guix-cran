@@ -18238,13 +18238,13 @@ available as dataframes in R.")
 (define-public r-aid
   (package
     (name "r-aid")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AID" version))
        (sha256
-        (base32 "0a3mw6m8saqqnmh500xgn975hp44bn3wn07nw30k3i22l4byyhix"))))
+        (base32 "0b8yr62anfsh0wv9qr7lcdxhaqinjn112z9sd5bj8ib0z2yvc974"))))
     (properties `((upstream-name . "AID")))
     (build-system r-build-system)
     (arguments

@@ -10742,13 +10742,13 @@ et al. (2020) <doi:10.1111/1440-1703.12102> for statistical background.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "10r58yyf436xli6ckgjrxh7xmbnh7jd9riigkfpj3s93n7wl5ij0"))))
+        (base32 "0f8yg6c2nmci5znpvbg599zs38kgwzp76k2qv6sknr2isv3jcfpl"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (arguments

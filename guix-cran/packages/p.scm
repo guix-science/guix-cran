@@ -6450,13 +6450,13 @@ for Biotechnology Information (NCBI) database.  Nature Structural Biology 10,
 (define-public r-prote
   (package
     (name "r-prote")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProtE" version))
        (sha256
-        (base32 "0zvia4nlvxj7kay329v4f6g83g2jwadzcklxigrbfbxj88isys2a"))))
+        (base32 "0lkhs2d96pvvb8wasw5ydba52w99dx32ak0xd645d6i55jv4rkm4"))))
     (properties `((upstream-name . "ProtE")))
     (build-system r-build-system)
     (arguments
@@ -23433,13 +23433,13 @@ response theory (IRT) models.")
 (define-public r-plmmr
   (package
     (name "r-plmmr")
-    (version "4.1.0")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plmmr" version))
        (sha256
-        (base32 "1x3g170sx6nh68mvd3l66rzzaslsh3s6k3fy7vhs368d298nlvwr"))))
+        (base32 "16757jw260bac3nvnbdykhmbj5pgddfmk51xj6hxz176zl94lf12"))))
     (properties `((upstream-name . "plmmr")))
     (build-system r-build-system)
     (arguments
@@ -27475,6 +27475,43 @@ clustered PIC data.  Each random intercept/random effect can follow both a
 normal prior and a Dirichlet process mixture prior.  It also includes the
 corresponding functions for general interval-censored data.")
     (license license:gpl2+)))
+
+(define-public r-pic
+  (package
+    (name "r-pic")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PiC" version))
+       (sha256
+        (base32 "1gxl0paj6yvr3bmq9dh1flhx8ggnwp2972fapwah1pjcld6sb8yj"))))
+    (properties `((upstream-name . "PiC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tictoc
+                             r-magrittr
+                             r-foreach
+                             r-dplyr
+                             r-dbscan
+                             r-data-table
+                             r-collapse))
+    (home-page "https://github.com/rupppy/PiC")
+    (synopsis
+     "Pointcloud Interactive Computation for Forest Structure Analysis")
+    (description
+     "This package provides advanced algorithms for analyzing pointcloud data in
+forestry applications.  Key features include fast voxelization of large
+datasets; segmentation of point clouds into forest floor, understorey, canopy,
+and wood components.  The package enables efficient processing of large-scale
+forest pointcloud data, offering insights into forest structure, connectivity,
+and fire risk assessment.  Algorithms to analyze pointcloud data (.xyz input
+file).  For more details, see Ferrara & Arrizza (2025)
+<https://hdl.handle.net/20.500.14243/533471>.  For single tree segmentation
+details, see Ferrara et al. (2018) <doi:10.1016/j.agrformet.2018.04.008>.")
+    (license license:gpl3+)))
 
 (define-public r-piar
   (package

@@ -9175,13 +9175,13 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
 (define-public r-rrpp
   (package
     (name "r-rrpp")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRPP" version))
        (sha256
-        (base32 "0nqjz4a0qkj8nrhf3jkxnj2gj5q0gz013z2mkgb9ldp851irkf1c"))))
+        (base32 "1xg3l097s2pax9arm4ykwm5lhazach7wadd66ac03k5syvasqwjq"))))
     (properties `((upstream-name . "RRPP")))
     (build-system r-build-system)
     (arguments
@@ -9196,13 +9196,12 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
      "Linear model calculations are made for many random versions of data.  Using
 residual randomization in a permutation procedure, sums of squares are
 calculated over many permutations to generate empirical probability
-distributions for evaluating model effects.  This packaged is described by
-Collyer & Adams (2018).  Additionally, coefficients, statistics, fitted values,
-and residuals generated over many permutations can be used for various
-procedures including pairwise tests, prediction, classification, and model
-comparison.  This package should provide most tools one could need for the
-analysis of high-dimensional data, especially in ecology and evolutionary
-biology, but certainly other fields, as well.")
+distributions for evaluating model effects.  Additionally, coefficients,
+statistics, fitted values, and residuals generated over many permutations can be
+used for various procedures including pairwise tests, prediction,
+classification, and model comparison.  This package should provide most tools
+one could need for the analysis of high-dimensional data, especially in ecology
+and evolutionary biology, but certainly other fields, as well.")
     (license license:gpl3+)))
 
 (define-public r-rrphylo
@@ -49617,6 +49616,47 @@ dates with prior information on accumulation rates and their variability.  See
 Blaauw & Christen (2011).")
     (license license:gpl2+)))
 
+(define-public r-rb3
+  (package
+    (name "r-rb3")
+    (version "0.0.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rb3" version))
+       (sha256
+        (base32 "0zxxkyk541vakhj7xr7xsw9y93ys5kjq6slw9qchp6w9bfw6wwxc"))))
+    (properties `((upstream-name . "rb3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-xml
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-proto
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-digest
+                             r-cli
+                             r-bizdays
+                             r-base64enc
+                             r-ascii))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/rb3")
+    (synopsis "Download and Parse Public Data Released by B3 Exchange")
+    (description
+     "Download and parse public files released by B3 and convert them into useful
+formats and data structures common to data analysis practitioners.")
+    (license license:expat)))
+
 (define-public r-rayvertex
   (package
     (name "r-rayvertex")
@@ -57080,13 +57120,13 @@ interest for working with data.table objects are included.")
 (define-public r-r2dii-plot
   (package
     (name "r-r2dii-plot")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.plot" version))
        (sha256
-        (base32 "1r53mp6agk0pyg3mpihk8ymq745nw615qf0byb8my88aj8fph4zr"))))
+        (base32 "1mmyzhf5ry5a6gxvgpbgdh8rhz5n2rp0jlid0px9l5jq42zwpyn7"))))
     (properties `((upstream-name . "r2dii.plot")))
     (build-system r-build-system)
     (arguments
@@ -57189,13 +57229,13 @@ development and use of PACTA in R.")
 (define-public r-r2dii-analysis
   (package
     (name "r-r2dii-analysis")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.analysis" version))
        (sha256
-        (base32 "0i65gjyry3mc3jf38xy3qs1f77yjmg3x2w1v3l7lwlaprk80m0k2"))))
+        (base32 "1ywd6sz8srbjx2in5bb7i2v4jbsxkvllk494lk9sa1ml38hyqn8d"))))
     (properties `((upstream-name . "r2dii.analysis")))
     (build-system r-build-system)
     (arguments

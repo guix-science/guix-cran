@@ -2007,20 +2007,19 @@ sampling positive stable variates not chi/sqrt(nu).")
 (define-public r-mvgam
   (package
     (name "r-mvgam")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvgam" version))
        (sha256
-        (base32 "03nirq7wn3rp9lwkagvqcjrzihq0vmj8dijpn350j8cxvcdvbscl"))))
+        (base32 "1r4zgcr0fbrw0yafd1wkw6mfs8qgvnzvv43054x3zqsswwlyawi7"))))
     (properties `((upstream-name . "mvgam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-smooth
+    (propagated-inputs (list r-tibble
                              r-rstantools
                              r-rstan
                              r-rlang
@@ -2028,15 +2027,15 @@ sampling positive stable variates not chi/sqrt(nu).")
                              r-rcpp
                              r-purrr
                              r-posterior
-                             r-pbapply
+                             r-patchwork
                              r-mvnfast
                              r-mgcv
-                             r-matrix
                              r-marginaleffects
                              r-magrittr
                              r-loo
                              r-insight
                              r-ggplot2
+                             r-generics
                              r-dplyr
                              r-brms
                              r-bayesplot))
@@ -2044,12 +2043,12 @@ sampling positive stable variates not chi/sqrt(nu).")
     (home-page "https://github.com/nicholasjclark/mvgam")
     (synopsis "Multivariate (Dynamic) Generalized Additive Models")
     (description
-     "Fit Bayesian Dynamic Generalized Additive Models to sets of time series.  Users
-can build dynamic nonlinear State-Space models that can incorporate
-semiparametric effects in observation and process components, using a wide range
-of observation families.  Estimation is performed using Markov Chain Monte Carlo
-with Hamiltonian Monte Carlo in the software Stan'.  References: Clark & Wells
-(2022) <doi:10.1111/2041-210X.13974>.")
+     "Fit Bayesian Dynamic Generalized Additive Models to multivariate observations.
+Users can build nonlinear State-Space models that can incorporate semiparametric
+effects in observation and process components, using a wide range of observation
+families.  Estimation is performed using Markov Chain Monte Carlo with
+Hamiltonian Monte Carlo in the software Stan'.  References: Clark & Wells (2022)
+<doi:10.1111/2041-210X.13974>.")
     (license license:expat)))
 
 (define-public r-mvet
@@ -2570,6 +2569,41 @@ or Prediction and Annotation of Variant Effects (PAVE)
 conversion between SO/PAVE and MAF terms and selection of the most severe
 consequence where multiple ampersand (&) delimited impacts are given.")
     (license license:lgpl3+)))
+
+(define-public r-musicxml
+  (package
+    (name "r-musicxml")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "musicXML" version))
+       (sha256
+        (base32 "1mmks8hmvryvh4hv32abcjbcm57566877bfvyj5wxdf8854hz1h0"))))
+    (properties `((upstream-name . "musicXML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=musicXML")
+    (synopsis "Data Sonification using 'musicXML'")
+    (description
+     "This package provides a set of tools to facilitate data sonification and handle
+the @code{musicXML} format
+<https://usermanuals.musicxml.com/@code{MusicXML/Content/XS-MusicXML.htm>}.
+Several classes are defined for basic musical objects such as note pitch, note
+duration, note, measure and score.  Moreover, sonification utilities functions
+are provided, e.g. to map data into musical attributes such as pitch, loudness
+or duration.  A typical sonification workflow hence looks like: get data; map
+them to musical attributes; create and write the @code{musicXML} score, which
+can then be further processed using specialized music software (e.g.
+@code{MuseScore}', @code{GuitarPro}', etc.).  Examples can be found in the blog
+<https://globxblog.github.io/>, the presentation by Renard and Le Bescond (2022,
+<https://hal.science/hal-03710340v1>) or the poster by Renard et al. (2023,
+<https://hal.inrae.fr/hal-04388845v1>).")
+    (license license:gpl3)))
 
 (define-public r-musicnmr
   (package
@@ -23915,22 +23949,27 @@ Cox-Ingersoll-Ross, with one or two random effects in the drift function.")
 (define-public r-mixedpsy
   (package
     (name "r-mixedpsy")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixedPsy" version))
        (sha256
-        (base32 "1iz3cl19xlznzbqxvichbjhyhams4v9611p9094r6q5fpmf71p88"))))
+        (base32 "0rdflzvpbmv7zx6snnci21x2z2z8ab3d14bikf6ly4m1ys2ixmz9"))))
     (properties `((upstream-name . "MixedPsy")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mnormt
+    (propagated-inputs (list r-tidyselect
+                             r-rlang
+                             r-purrr
+                             r-mnormt
                              r-matrix
+                             r-magrittr
                              r-lme4
                              r-ggplot2
+                             r-dplyr
                              r-brglm
                              r-boot
                              r-beepr))
@@ -34853,13 +34892,13 @@ Ecology and Evolution 7, 323-330 <doi:10.1111/2041-210X.12472>.")
 (define-public r-metage
   (package
     (name "r-metage")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaGE" version))
        (sha256
-        (base32 "01507d85fpiqrbir1rjy5vczrv9cjfscwbl3746rr8x1x8danz7w"))))
+        (base32 "0phs9scfdb4n3rfb5lpqzzj4swfvlyr2anw8pbh61dy4lmw9yj4x"))))
     (properties `((upstream-name . "metaGE")))
     (build-system r-build-system)
     (arguments
@@ -34878,6 +34917,7 @@ Ecology and Evolution 7, 323-330 <doi:10.1111/2041-210X.12472>.")
                              r-ggrepel
                              r-ggplot2
                              r-future
+                             r-furrr
                              r-emdbook
                              r-dplyr
                              r-data-table

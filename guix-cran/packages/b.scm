@@ -20533,13 +20533,13 @@ execution time of R expressions.")
 (define-public r-benchmarking
   (package
     (name "r-benchmarking")
-    (version "0.32")
+    (version "0.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Benchmarking" version))
        (sha256
-        (base32 "0fv0i4cpsisk5wa6hgvp75r170ir1zyr2wqbkzfz3qhr43z0jayx"))))
+        (base32 "1bdp43dksbcvywj5rc0nyfibg9z77vz9jap6s4icjhq7md0j7f3j"))))
     (properties `((upstream-name . "Benchmarking")))
     (build-system r-build-system)
     (arguments

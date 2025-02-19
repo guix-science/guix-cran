@@ -836,6 +836,35 @@ trees paper (Gramacy, Taddy & Polson (2011); <doi:10.1198/jasa.2011.ap09769>)
 are facilitated by demos in the package; see demo(package=\"@code{dynaTree}\").")
     (license license:lgpl2.0+)))
 
+(define-public r-dynatopgis
+  (package
+    (name "r-dynatopgis")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dynatopGIS" version))
+       (sha256
+        (base32 "1sv519dc7fs6zrwnyggkzrcy866a6pgag0shk6rr6cd3xa1blwpv"))))
+    (properties `((upstream-name . "dynatopGIS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-r6 r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://waternumbers.github.io/dynatopGIS/")
+    (synopsis
+     "Algorithms for Helping Build Dynamic TOPMODEL Implementations from Spatial Data")
+    (description
+     "This package provides a set of algorithms based on Quinn et al. (1991)
+<doi:10.1002/hyp.3360050106> for processing river network and digital elevation
+data to build implementations of Dynamic TOPMODEL, a semi-distributed
+hydrological model proposed in Beven and Freer (2001) <doi:10.1002/hyp.252>.
+The dynatop package implements simulation code for Dynamic TOPMODEL based on the
+output of @code{dynatopGIS}'.")
+    (license license:gpl2)))
+
 (define-public r-dynatop
   (package
     (name "r-dynatop")
@@ -8594,6 +8623,30 @@ D. V. (2006) <doi:10.3102/10769986031002157>, Azen, R., & Traxel, N. (2009)
 <doi:10.3102/1076998609332754> and Luo, W., & Azen, R. (2013)
 <doi:10.3102/1076998612458319>, respectively.")
     (license license:gpl2)))
+
+(define-public r-dogoftest
+  (package
+    (name "r-dogoftest")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Dogoftest" version))
+       (sha256
+        (base32 "0lf36mvng5qwsh0z0k54h1vhypnnpggbdgklraqqqnyr0np06rh1"))))
+    (properties `((upstream-name . "Dogoftest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=Dogoftest")
+    (synopsis
+     "Distributed Online Goodness-of-Fit Tests for Distributed Datasets")
+    (description
+     "Distributed Online Goodness-of-Fit Test can process the distributed datasets.
+The philosophy of the package is described in Guo G.(2024)
+<doi:10.1016/j.apm.2024.115709>.")
+    (license license:expat)))
 
 (define-public r-dogesr
   (package
@@ -24276,6 +24329,38 @@ Mode Decomposition (EMD) and Ensemble Empirical Mode Decomposition (EEMD)
 methods based hybrid methods.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-decompml
+  (package
+    (name "r-decompml")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "decompML" version))
+       (sha256
+        (base32 "06qr2zh8z39hp20bqq6ilapdhysm68d9v85f89869swbby4vpffa"))))
+    (properties `((upstream-name . "decompML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vmdecomp r-rlibeemd r-nnfor r-forecast))
+    (home-page "https://cran.r-project.org/package=decompML")
+    (synopsis "Decomposition Based Machine Learning Model")
+    (description
+     "The hybrid model is a highly effective forecasting approach that integrates
+decomposition techniques with machine learning to enhance time series prediction
+accuracy.  Each decomposition technique breaks down a time series into multiple
+intrinsic mode functions (IMFs), which are then individually modeled and
+forecasted using machine learning algorithms.  The final forecast is obtained by
+aggregating the predictions of all IMFs, producing an ensemble output for the
+time series.  The performance of the developed models is evaluated using
+international monthly maize price data, assessed through metrics such as root
+mean squared error (RMSE), mean absolute percentage error (MAPE), and mean
+absolute error (MAE).  For method details see Choudhary, K. et al. (2023).
+<https://ssca.org.in/media/14_SA44052022_R3_SA_21032023_Girish_Jha_FINAL_Finally.pdf>.")
+    (license license:gpl3)))
+
 (define-public r-decompdl
   (package
     (name "r-decompdl")
@@ -29548,6 +29633,47 @@ The user will have the option of entering variable and item descriptions by
 writing code or use alternate functions that will prompt the user to add these.")
     (license license:gpl3)))
 
+(define-public r-datamedios
+  (package
+    (name "r-datamedios")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datamedios" version))
+       (sha256
+        (base32 "0irv7670snkiyz204a2r4097bcxdrrbzbw4y9qvwn37z2d4496vx"))))
+    (properties `((upstream-name . "datamedios")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-wordcloud2
+                             r-tidyverse
+                             r-tidytext
+                             r-stringr
+                             r-rvest
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=datamedios")
+    (synopsis "Scraping Chilean Media")
+    (description
+     "This package provides a system for extracting news from Chilean media,
+specifically through Web Scapping from Chilean media.  The package allows for
+news searches using search phrases and date filters, and returns the results in
+a structured format, ready for analysis.  Additionally, it includes functions to
+clean the extracted data, visualize it, and store it in databases.  All of this
+can be done automatically, facilitating the collection and analysis of relevant
+information from Chilean media.")
+    (license license:expat)))
+
 (define-public r-datamaid
   (package
     (name "r-datamaid")
@@ -30421,19 +30547,19 @@ code by wrapping it into a set of convenient R functions.")
 (define-public r-dartrverse
   (package
     (name "r-dartrverse")
-    (version "1.0.2")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartRverse" version))
        (sha256
-        (base32 "0z6nx5j1jgyzmcxdmdbxdhigq7qc3mka0fq6ghyfqaa3089lc823"))))
+        (base32 "160kkjwxm0a2r2xf5dxzm7gkjql4rcdj01p8akaziwc0znsymrk1"))))
     (properties `((upstream-name . "dartRverse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-devtools r-cli))
+    (propagated-inputs (list r-rlang r-rcurl r-httr r-devtools r-cli))
     (home-page "https://github.com/green-striped-gecko/dartRverse")
     (synopsis "Install and Load the 'dartRverse' Suits of Packages")
     (description
@@ -30628,6 +30754,41 @@ data in @code{dartR.data} is needed to run the examples provided in the
 @code{dartR} functions.  All available data sets are either based on actual data
 (but reduced in size) and/or simulated data sets to allow the fast execution of
 examples and demonstration of the functions.")
+    (license license:gpl3+)))
+
+(define-public r-dartr-captive
+  (package
+    (name "r-dartr-captive")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dartR.captive" version))
+       (sha256
+        (base32 "17avrqp0miw0p6mi1hs7y5hrmdnfk3b61957k2j8hbsqdkgl1kj2"))))
+    (properties `((upstream-name . "dartR.captive")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-patchwork
+                             r-ggplot2
+                             r-data-table
+                             r-dartr-sim
+                             r-dartr-data
+                             r-dartr-base
+                             r-crayon
+                             r-adegenet))
+    (home-page "https://green-striped-gecko.github.io/dartR/")
+    (synopsis "Analysing 'SNP' Data to Support Captive Breeding")
+    (description
+     "This package provides functions are provided that facilitate the analysis of SNP
+(single nucleotide polymorphism) data to answer questions regarding captive
+breeding and relatedness between individuals. @code{dartR.captive} is part of
+the @code{dartRverse} suit of packages.  Gruber et al. (2018)
+<doi:10.1111/1755-0998.12745>.  Mijangos et al. (2022)
+<doi:10.1111/2041-210X.13918>.")
     (license license:gpl3+)))
 
 (define-public r-dartr-base

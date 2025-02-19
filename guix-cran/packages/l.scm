@@ -4883,13 +4883,13 @@ selection.")
 (define-public r-logrx
   (package
     (name "r-logrx")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logrx" version))
        (sha256
-        (base32 "1dnz6g3rz15gl747gn9vbr5y67zlyqffqwmp5rqvwg75ga5mhkx3"))))
+        (base32 "0b1dgpbx8mi8w67899r3nncqb8fa8kxk10w2qamk251lv86kw2g8"))))
     (properties `((upstream-name . "logrx")))
     (build-system r-build-system)
     (arguments
@@ -4966,6 +4966,32 @@ overcome the difficulty of the base R @code{sink()} command.  The
 @code{log_print()} function will print to both the console and the file log,
 without interfering in other write operations.")
     (license license:cc0)))
+
+(define-public r-logos
+  (package
+    (name "r-logos")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "logos" version))
+       (sha256
+        (base32 "1b5marbb3yi3q9xn8gka9xk2gp97vbc8qvazwgdgc48s3k20idhd"))))
+    (properties `((upstream-name . "logos")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://github.com/jpmonteagudo28/logos")
+    (synopsis "Access to the Hebrew, Greek, and English Version of the Bible")
+    (description
+     "Access to the Greek New Testament (27 books) and the Old Testament (39 books)
+and allow users to do textual analysis on the data.  The New and Old Testament
+have been provided in their original languages, Greek and Hebrew, respectively.
+Additionally, the Revised American Standard Bible is also provided for users
+who'd rather use a wordâforâword modern English translation.")
+    (license license:gpl3+)))
 
 (define-public r-logofgamma
   (package

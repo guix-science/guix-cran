@@ -23190,13 +23190,13 @@ analysis of spatial point pattern data; it has been ported to R and is in
 (define-public r-spiro
   (package
     (name "r-spiro")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spiro" version))
        (sha256
-        (base32 "08v290c62x915624hydzns6qdbfxh08zsbgffkgd89inn2bwj55g"))))
+        (base32 "1bknjpkbsfys5ma4cdc3gv90cdf8p5mffhg4spmmjkbdvavc95ai"))))
     (properties `((upstream-name . "spiro")))
     (build-system r-build-system)
     (arguments
@@ -41375,6 +41375,45 @@ coefficients, fixed effect sizes, and infinitesimal (multivariate normal).  GWAS
 method benchmarking functions are also provided.  Described in Yao and Ochoa
 (2022) <doi:10.1101/2022.03.25.485885>.")
     (license license:gpl3)))
+
+(define-public r-simtost
+  (package
+    (name "r-simtost")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SimTOST" version))
+       (sha256
+        (base32 "1dgjiw9g7yp3nfdl9nraqlkaazw8bm6k20jb52kdj619lvx9hnjv"))))
+    (properties `((upstream-name . "SimTOST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrixcalc r-mass
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://smartdata-analysis-and-statistics.github.io/SimTOST/")
+    (synopsis
+     "Sample Size Estimation for Bio-Equivalence Trials Through Simulation")
+    (description
+     "Sample size estimation for bio-equivalence trials is supported through a
+simulation-based approach that extends the Two One-Sided Tests (TOST) procedure.
+ The methodology provides flexibility in hypothesis testing, accommodates
+multiple treatment comparisons, and accounts for correlated endpoints.  Users
+can model complex trial scenarios, including parallel and crossover designs,
+intra-subject variability, and different equivalence margins.  Monte Carlo
+simulations enable accurate estimation of power and type I error rates, ensuring
+well-calibrated study designs.  The statistical framework builds on established
+methods for equivalence testing and multiple hypothesis testing in
+bio-equivalence studies, as described in Schuirmann (1987)
+<doi:10.1007/BF01068419>, Mielke et al. (2018)
+<doi:10.1080/19466315.2017.1371071>, Shieh (2022)
+<doi:10.1371/journal.pone.0269128>, and Sozu et al. (2015)
+<doi:10.1007/978-3-319-22005-5>.  Comprehensive documentation and vignettes
+guide users through implementation and interpretation of results.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-simtool
   (package
@@ -71897,13 +71936,13 @@ using modified approach proposed by Haris F and Ubaidillah A
 (define-public r-sae-projection
   (package
     (name "r-sae-projection")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sae.projection" version))
        (sha256
-        (base32 "0z4mbyyrq56s4f0scm82x4zw2ap227rdbq0pd9455j0d4ia6cdf0"))))
+        (base32 "0vs4hdv2kpfkjxqpp1ml5vbvs7x0s07i93al38j7vb8k6ghg6f67"))))
     (properties `((upstream-name . "sae.projection")))
     (build-system r-build-system)
     (arguments

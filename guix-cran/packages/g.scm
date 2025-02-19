@@ -16895,13 +16895,13 @@ individual-level) relations.  See Gates & Molenaar (2012)
 (define-public r-gimap
   (package
     (name "r-gimap")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimap" version))
        (sha256
-        (base32 "1il46a0kivrg8hp8sqr2l57flhj8w4bsz5g4h0plkzxj8gw7pdcv"))))
+        (base32 "0w90rdnzbczpj4h0686hyvq1m2hci93gpgdcddhnc69x34ixai43"))))
     (properties `((upstream-name . "gimap")))
     (build-system r-build-system)
     (arguments

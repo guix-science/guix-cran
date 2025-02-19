@@ -9050,13 +9050,13 @@ running the vignette (optional), install fwelnet from @code{GitHub}
 (define-public r-transpror
   (package
     (name "r-transpror")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TransProR" version))
        (sha256
-        (base32 "1cdb1wd2agzbkrhkm53x114vdby0xc27qzvd023v5c3lyfw2gpd4"))))
+        (base32 "1hvbgak6q2i9js8wrzs0rmf4arzzcmsdz54ks6kcfddma7309qhc"))))
     (properties `((upstream-name . "TransProR")))
     (build-system r-build-system)
     (arguments
@@ -9074,7 +9074,6 @@ running the vignette (optional), install fwelnet from @code{GitHub}
                              r-hrbrthemes
                              r-hmisc
                              r-ggvenndiagram
-                             r-ggtreeextra
                              r-ggtree
                              r-ggraph
                              r-ggpubr
