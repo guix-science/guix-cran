@@ -5553,6 +5553,44 @@ tests on the data, calculate lagged association rates, and performed multiple
 regression analysis on social network data.")
     (license license:gpl2)))
 
+(define-public r-asml
+  (package
+    (name "r-asml")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ASML" version))
+       (sha256
+        (base32 "1r4xkq4r378i49i6rsi85mjagrbb3k8s9y00yfx05rnvwk3mwc20"))))
+    (properties `((upstream-name . "ASML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rlang
+                             r-reshape2
+                             r-purrr
+                             r-polychrome
+                             r-ggplot2
+                             r-dplyr
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=ASML")
+    (synopsis "Algorithm Portfolio Selection with Machine Learning")
+    (description
+     "This package provides a wrapper for machine learning (ML) methods to select
+among a portfolio of algorithms based on the value of a key performance
+indicator (KPI).  A number of features is used to adjust a model to predict the
+value of the KPI for each algorithm, then, for a new value of the features the
+KPI is estimated and the algorithm with the best one is chosen.  To learn it can
+use the regression methods in caret package or a custom function defined by the
+user.  Several graphics available to analyze the results obtained.  This library
+has been used in Ghaddar et al. (2023) <doi:10.1287/ijoc.2022.0090>).")
+    (license license:gpl3)))
+
 (define-public r-asmbpls
   (package
     (name "r-asmbpls")
@@ -20049,6 +20087,32 @@ dependence working correlation structure can be specified in GEE's setting.
 Details on the least-squares estimation can be found in Chiou et al. (2014)
 <doi:10.1007/s10985-014-9292-x>.")
     (license license:gpl3+)))
+
+(define-public r-aftables
+  (package
+    (name "r-aftables")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aftables" version))
+       (sha256
+        (base32 "0s35snhrzbbh1wcm2pla4vsi3kl4r6lyi6fls82sqys2wr41a474"))))
+    (properties `((upstream-name . "aftables")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pillar r-openxlsx))
+    (native-inputs (list r-knitr))
+    (home-page "https://best-practice-and-impact.github.io/aftables/")
+    (synopsis "Create Spreadsheet Publications Following Best Practice")
+    (description
+     "Generate spreadsheet publications that follow best practice guidance from the UK
+government's Analysis Function, available at
+<https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/>,
+with a focus on accessibility.  See also the Python package gptables'.")
+    (license license:expat)))
 
 (define-public r-africamonitor
   (package

@@ -11091,13 +11091,13 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
 (define-public r-epinow2
   (package
     (name "r-epinow2")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiNow2" version))
        (sha256
-        (base32 "1y7124l1lgm5ybzxhk6vr0axfh249q4363vxyd4bvd4lsvlwc0wi"))))
+        (base32 "0m78lhfbjwp8ylhf1j98qagmgvif3fx2bgx6pmymcmvzj0ihspsa"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
     (arguments
@@ -11484,6 +11484,38 @@ models for infectious disease data analysis.  This epidemic model class contains
 spatial and contact-network based models with two disease types:
 Susceptible-Infectious (SI) and Susceptible-Infectious-Removed (SIR).")
     (license license:gpl2+)))
+
+(define-public r-epigrowthfit
+  (package
+    (name "r-epigrowthfit")
+    (version "0.15.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epigrowthfit" version))
+       (sha256
+        (base32 "0kf3a9998zcprwbvdn9y55005y57rwcrklj0slnkghzps7di1gh0"))))
+    (properties `((upstream-name . "epigrowthfit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmb r-rcppeigen r-nlme r-matrix))
+    (home-page "https://github.com/davidearn/epigrowthfit")
+    (synopsis "Nonlinear Mixed Effects Models of Epidemic Growth")
+    (description
+     "Maximum likelihood estimation of nonlinear mixed effects models of epidemic
+growth using Template Model Builder ('TMB').  Enables joint estimation for
+collections of disease incidence time series, including time series that
+describe multiple epidemic waves.  Supports a set of widely used
+phenomenological models: exponential, logistic, Richards (generalized logistic),
+subexponential, and Gompertz.  Provides methods for interrogating model objects
+and several auxiliary functions, including one for computing basic reproduction
+numbers from fitted values of the initial exponential growth rate.  Preliminary
+versions of this software were applied in Ma et al. (2014)
+<doi:10.1007/s11538-013-9918-2> and in Earn et al. (2020)
+<doi:10.1073/pnas.2004904117>.")
+    (license license:gpl3)))
 
 (define-public r-epigraphdb
   (package
@@ -25166,13 +25198,13 @@ maximum temperatures) for points and polygons within Europe.")
 (define-public r-easycensus
   (package
     (name "r-easycensus")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easycensus" version))
        (sha256
-        (base32 "0k8cc02f7qf9g5fi9i8lsz02mkb0kcvqkh5zh7bajsfkmmksrr17"))))
+        (base32 "17qybjns9hi191s3c890pcvla24ggvw2d4bv5jjvhik61hhd7fqr"))))
     (properties `((upstream-name . "easycensus")))
     (build-system r-build-system)
     (arguments
@@ -25393,25 +25425,24 @@ coupled-to-MCMC schemes are implemented.")
 (define-public r-easy-utils
   (package
     (name "r-easy-utils")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easy.utils" version))
        (sha256
-        (base32 "1f9iz4jssb4ail8sp18mnfbkvsxz4rx1inry60z6zi4jswr3q25m"))))
+        (base32 "01p6hp7ajb7k9disdzkxvgjinv9wqxhk4k24r89q31ljyvkfrqw6"))))
     (properties `((upstream-name . "easy.utils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-rlang r-polychrome r-fastmatch r-dplyr))
+    (propagated-inputs (list r-scales r-rlang r-fastmatch r-dplyr))
     (home-page "https://github.com/ycli1995/easy.utils")
     (synopsis "Frequently Used Functions for Easy R Programming")
     (description
-     "Some utility functions for validation, data manipulation or color palettes.
-These functions can be helpful to reduce internal codes everywhere in package
-development.")
+     "Some utility functions for validation and data manipulation.  These functions
+can be helpful to reduce internal codes everywhere in package development.")
     (license license:expat)))
 
 (define-public r-easy-glmnet

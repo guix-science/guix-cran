@@ -27580,13 +27580,13 @@ competitor to the db distribution.")
 (define-public r-dbcvindex
   (package
     (name "r-dbcvindex")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DBCVindex" version))
        (sha256
-        (base32 "17fvcwbp9y33vhnkghym3rjkmw1lscmafymvl4sa6b0vr6asjjlv"))))
+        (base32 "0dx6g6yl1sqxg1l3gry3sb3c1j7yhmbjk5z78azyxyjj83v2cvig"))))
     (properties `((upstream-name . "DBCVindex")))
     (build-system r-build-system)
     (arguments
@@ -28516,34 +28516,6 @@ data frame.  Emphasizing the importance of normality testing, the package
 provides robust tools to validate whether data follows a normal distribution, a
 fundamental assumption in many statistical analyses and models.")
     (license license:gpl3)))
-
-(define-public r-datastudio
-  (package
-    (name "r-datastudio")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DATAstudio" version))
-       (sha256
-        (base32 "1gwm53pgab5qn0p46bxs0790n7bbfl7b66i84xsa6bb4zdw5jdzb"))))
-    (properties `((upstream-name . "DATAstudio")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales r-ggplot2 r-data-table))
-    (home-page "https://www.maths.ed.ac.uk/~mdecarv/")
-    (synopsis "The Research Data Warehouse of Miguel de Carvalho")
-    (description
-     "Pulls together a collection of datasets from Miguel de Carvalho research
-articles.  Including, for example: - de Carvalho (2012)
-<doi:10.1016/j.jspi.2011.08.016>; - de Carvalho et al (2012)
-<doi:10.1080/03610926.2012.709905>; - de Carvalho et al (2012)
-<doi:10.1016/j.econlet.2011.09.007>); - de Carvalho and Davison (2014)
-<doi:10.1080/01621459.2013.872651>; - de Carvalho and Rua (2017)
-<doi:10.1016/j.ijforecast.2015.09.004>.")
-    (license license:gpl3+)))
 
 (define-public r-datastreamr
   (package

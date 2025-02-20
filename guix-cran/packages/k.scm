@@ -4905,13 +4905,13 @@ particularly for high-dimensional data.  Song, H. and Chen, H. (2022)
 (define-public r-kerntools
   (package
     (name "r-kerntools")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kerntools" version))
        (sha256
-        (base32 "0jgwqjkvxb8m3748h9x8a8kj1lpkhran1v7vymjblayk1hizqm2r"))))
+        (base32 "12vcmy6vkn78vkk8va2cq39plmw053fld7xs7gm57wl5lfwzy7xr"))))
     (properties `((upstream-name . "kerntools")))
     (build-system r-build-system)
     (arguments

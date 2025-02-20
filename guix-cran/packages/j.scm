@@ -1074,13 +1074,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.6.1")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "1pwldmc0nz8577zlqns8gf0cs433jq4agr2w7b93bpbzhc2hsk3w"))))
+        (base32 "0yk81bivqvgprnqivyf4rjg41zy8vdip6nmf0riz56zg2lmlsnds"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (arguments

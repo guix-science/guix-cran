@@ -11061,6 +11061,42 @@ functions to estimate the standard limited dependent variable models are also
 included.")
     (license license:gpl2)))
 
+(define-public r-oglcnac
+  (package
+    (name "r-oglcnac")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "oglcnac" version))
+       (sha256
+        (base32 "0dhkfq1bkbyxj4i9czdg97c7kvxs77948q2yblzmmvdfsq2pfn7p"))))
+    (properties `((upstream-name . "oglcnac")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny
+                             r-readxl
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dt
+                             r-cli
+                             r-bslib))
+    (home-page "https://cran.r-project.org/package=oglcnac")
+    (synopsis "Processing and Analysis of 'O-GlcNAcAtlas' Data")
+    (description
+     "This package provides tools for processing and analyzing data from the
+O-@code{GlcNAcAtlas} database <https://oglcnac.org/>, as described in Ma (2021)
+<doi:10.1093/glycob/cwab003>.  It integrates @code{UniProt}
+<https://www.uniprot.org/> API calls to retrieve additional information.  It is
+specifically designed for research workflows involving O-@code{GlcNAcAtlas}
+data, providing a flexible and user-friendly interface for customizing and
+downloading processed results.  Interactive elements allow users to easily
+adjust parameters and handle various biological datasets.")
+    (license license:gpl3)))
+
 (define-public r-ogi
   (package
     (name "r-ogi")

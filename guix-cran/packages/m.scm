@@ -417,13 +417,13 @@ Journal of Statistical Theory and Practice, 5:4, 627-648,
 (define-public r-mxfda
   (package
     (name "r-mxfda")
-    (version "0.2.2")
+    (version "0.2.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mxfda" version))
        (sha256
-        (base32 "1fzbnsfyqav87lhc8w910wzqilw429x8swm5s6a4991p5dy19pvr"))))
+        (base32 "08hh4g5cn66i01rjclf2i6nmi6iwv3j2xazgbh0s6gv433qvz6jx"))))
     (properties `((upstream-name . "mxfda")))
     (build-system r-build-system)
     (arguments
@@ -9596,6 +9596,42 @@ Two-Stage Clonal Expansion Model an exact solution is implemented assuming
 piecewise constant parameters.  Numerical solutions are provided for its
 extensions.")
     (license license:gpl2+)))
+
+(define-public r-msca
+  (package
+    (name "r-msca")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSCA" version))
+       (sha256
+        (base32 "0pakp6jlq32il9yk41a53cikv0nl6cy3g9dm9rl72srdfimzr55s"))))
+    (properties `((upstream-name . "MSCA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=MSCA")
+    (synopsis "Clustering of Multiple Censored Time-to-Event Endpoints")
+    (description
+     "This package provides basic tools for computing clusters of instances described
+by multiple time-to-event censored endpoints.  From long-format datasets, where
+one instance is described by one or more records of events, a procedure is used
+to compute state matrices.  Then, from state matrices, a procedure provides
+optimised computation of the Jaccard distance between instances.  The library is
+currently in development, and more options and tools allowing graphical
+representation of typologies are expected.  For methodological details, see our
+methodological paper: Delord M, Douiri A (2025)
+<doi:10.1186/s12874-025-02476-7>.")
+    (license license:gpl3)))
 
 (define-public r-msbstatsdata
   (package
@@ -25645,13 +25681,13 @@ default values for important parameters.")
 (define-public r-miscmetabar
   (package
     (name "r-miscmetabar")
-    (version "0.12.1")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiscMetabar" version))
        (sha256
-        (base32 "0xpsvmma0csqwvsgymn7hrykx4825ff8hd1q17v4i2pcwb6kdxdy"))))
+        (base32 "0xsd7gp2k3xwdcy9g55q228vag7w68r69irpz2j1mn99na7fj7m5"))))
     (properties `((upstream-name . "MiscMetabar")))
     (build-system r-build-system)
     (arguments
@@ -32351,22 +32387,26 @@ Furthermore, dplyr chains are supported.")
 (define-public r-metricminer
   (package
     (name "r-metricminer")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metricminer" version))
        (sha256
-        (base32 "156fzmcwgabi95qdjy7pq415l505y5mzcc99l77ykbf56w9fa9qs"))))
+        (base32 "0pnsm2am1jps9pcp05781avmawxnsxhp3japqzkanzjimyv5wjwd"))))
     (properties `((upstream-name . "metricminer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-yaml
+                             r-tidyr
                              r-stringr
+                             r-rvest
+                             r-rprojroot
                              r-purrr
                              r-openssl
+                             r-magrittr
                              r-lubridate
                              r-jsonlite
                              r-janitor
@@ -47614,13 +47654,13 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "143p2pjl6ykd1sklyyg4bg8h4x8z6ix5c67axr34y0d8ggvz473v"))))
+        (base32 "1dbg9sbkk12hz3rmfccsx3zy05dhxhj6wnh5kmh9nlls5px8q9kg"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (arguments
@@ -50788,13 +50828,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "0niz85a3hgbr4w3wc1gfp8fzaclzzf1fc60p5511f7zf6zr4cykd"))))
+        (base32 "17q84svqrcdf4219k6mh4y4zj61hwyg1876j8zz2bh3dahsnxkzs"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

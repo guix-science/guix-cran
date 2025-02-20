@@ -1827,13 +1827,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.0.4")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "1vh9lffll6l1d6wbzhmci9zy9m6kq6wbnc8x4ydplagr5nigdh05"))))
+        (base32 "0d27x881s5c0ijp0brqmibmssl8bxdcz3saasg9l4n2a6sq2008s"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (arguments
@@ -9670,13 +9670,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.5.1")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "157md25a03g34pbgh90fqgdbjh3q9frz88ams5bp52q165qq6ivq"))))
+        (base32 "09jiis8yc9jw7gqflrwn2xy373cpymmhy1zvwzpbv8azj8apjlpp"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (arguments
@@ -34204,6 +34204,44 @@ completion and data classification.  A software service for accelerated training
 of generative models on graphics processing units is available.  Reference:
 Goodfellow et al. (2014) <doi:10.48550/@code{arXiv.1406.2661>}.")
     (license license:gpl2+)))
+
+(define-public r-gander
+  (package
+    (name "r-gander")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gander" version))
+       (sha256
+        (base32 "0pzhc7jfn0fmmmfpw5d2yf6rr6m5c88im0df4k4w7fvj68y0hfs0"))))
+    (properties `((upstream-name . "gander")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treesitter-r
+                             r-treesitter
+                             r-streamy
+                             r-shiny
+                             r-rstudioapi
+                             r-rlang
+                             r-miniui
+                             r-glue
+                             r-ellmer
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/simonpcouch/gander")
+    (synopsis "High Performance, Low Friction Large Language Model Chat")
+    (description
+     "Introduces a Copilot'-like completion experience, but it knows how to talk to
+the objects in your R environment.  ellmer chats are integrated directly into
+your RStudio and Positron sessions, automatically incorporating relevant context
+from surrounding lines of code and your global environment (like data frame
+columns and types).  Open the package dialog box with a keyboard shortcut, type
+your request, and the assistant will stream its response directly into your
+documents.")
+    (license license:expat)))
 
 (define-public r-gandatamodel
   (package

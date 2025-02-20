@@ -9498,13 +9498,13 @@ supported by National Institutes of Health grants R37 GM-046255.")
 (define-public r-rrepest
   (package
     (name "r-rrepest")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rrepest" version))
        (sha256
-        (base32 "0rd9wh4mkqhm83dr1vi5qcsd0vfs6h4xj01d0vb2cfa4bv7kb82v"))))
+        (base32 "0p4iki9xhk8skal1hdpm2756vkd5gaslipi8ig6ycx6bmnmbv41h"))))
     (properties `((upstream-name . "Rrepest")))
     (build-system r-build-system)
     (arguments
@@ -52033,13 +52033,13 @@ Distances Method, under a Brownian Motion Model.  See Peng et al. (2021)
 (define-public r-rapidopgs
   (package
     (name "r-rapidopgs")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RapidoPGS" version))
        (sha256
-        (base32 "0jks5v9822gk4gip7027m2l26gccrm81iazn1006n1a0871caf98"))))
+        (base32 "11lwy0gfygxgmb8hr8fpfs08dqin9dd1xngk3mdfky02v4ahyskl"))))
     (properties `((upstream-name . "RapidoPGS")))
     (build-system r-build-system)
     (arguments

@@ -2560,6 +2560,29 @@ tools for common data manipulation steps: filtering rows, selecting columns,
 summarising grouped data, among others.")
     (license license:expat)))
 
+(define-public r-nplr
+  (package
+    (name "r-nplr")
+    (version "0.1-8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nplr" version))
+       (sha256
+        (base32 "1qyli81j38vphs311g3vpp6najl235xdr5d34ywbn0al9yap2nvb"))))
+    (properties `((upstream-name . "nplr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mini-pw/nplr")
+    (synopsis "N-Parameter Logistic Regression")
+    (description
+     "Performing drug response analyses and IC50 estimations using n-Parameter
+logistic regression.  Can also be applied to proliferation analyses.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-nplplot
   (package
     (name "r-nplplot")
@@ -8274,13 +8297,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2" version))
        (sha256
-        (base32 "1s5q6ik5y6yz127rra0xq5qafwjrk2z342wx3w72m3bn38jzisjm"))))
+        (base32 "0pf24k0773bmc3bv9853z2ldj9fj622c3ibsyhx8n62f4wfqsx2m"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (arguments
@@ -10938,13 +10961,13 @@ of the <https://github.com/kotartemiy/newscatcher> Python module.")
 (define-public r-newmanomics
   (package
     (name "r-newmanomics")
-    (version "1.0.11")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NewmanOmics" version))
        (sha256
-        (base32 "0r9hyidg3xlnz8vgr2k3kazvh3pxpcay8iixp5bz1r6hzi8q1cc2"))))
+        (base32 "1c9r7k2ilyfb9dj9hzfkk9cl712blay81qhk7l3486i9kdl6wwzv"))))
     (properties `((upstream-name . "NewmanOmics")))
     (build-system r-build-system)
     (arguments
@@ -13150,6 +13173,33 @@ can be integrated with a discrete event simulator, such as @code{SpaDES}
 (<https://cran.r-project.org/package=@code{SpaDES>}).  The suggested package
 fastshp can be installed with install.packages(\"fastshp\", repos =
 (\"<https://rforge.net>\"), type = \"source\")'.")
+    (license license:gpl3)))
+
+(define-public r-netknitr
+  (package
+    (name "r-netknitr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netknitr" version))
+       (sha256
+        (base32 "11md9q62rqsp1ppl1vwrh9y94qfgfv6i70y3hm9fdgnp16j1qwb8"))))
+    (properties `((upstream-name . "netknitr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork r-shinydashboard r-shiny r-openxlsx
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=netknitr")
+    (synopsis "Knit Network Map for any Dataset")
+    (description
+     "Designed to create interactive and visually compelling network maps using R
+Shiny.  It allows users to quickly analyze CSV files and visualize complex
+relationships, structures, and connections within data by leveraging powerful
+network analysis libraries and dynamic web interfaces.")
     (license license:gpl3)))
 
 (define-public r-netint

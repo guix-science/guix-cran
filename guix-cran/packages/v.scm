@@ -3174,13 +3174,13 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistla" version))
        (sha256
-        (base32 "04qbd8nvf0qw68br3bjr2di1vcc7wij830ilqq2gr6m851930yia"))))
+        (base32 "1r5i5h6hq59xk19j8is2w7qr0myh3mnx0i33iq2vkqb21vg96hm8"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (arguments
@@ -4001,13 +4001,13 @@ and computational biology for the benefit of understanding HIV dynamics.")
 (define-public r-viralmodels
   (package
     (name "r-viralmodels")
-    (version "1.3.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viralmodels" version))
        (sha256
-        (base32 "0ryjymbry92278sacbnfbkzl90i58cfk10dradkzp6rxl1ik9ryf"))))
+        (base32 "00x562cf0i50hpvam4xv9xp8g9b0f497qb4w26zfk70cdq5sb353"))))
     (properties `((upstream-name . "viralmodels")))
     (build-system r-build-system)
     (arguments

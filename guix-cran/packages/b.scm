@@ -14103,13 +14103,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "0p0gzmb3kdfpa3w48f1g5s71z14w1g3m000ka7p9ifilajy9hrnh"))))
+        (base32 "0nrdby8yr48clishclw69d9jray6gfj37lzsnqavg6921s4d93zn"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (arguments
@@ -18493,13 +18493,13 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGmisc" version))
        (sha256
-        (base32 "12m6c0b0nqgxiiy9vynygx186vb1v5i6s8gfjijsqn7wzpzfj6ig"))))
+        (base32 "0qrgwmmmvdm3rwgcrljyjqiyk79cc5iim0s76fzj1xa6axw1fg86"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
     (arguments
@@ -18511,9 +18511,14 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
     (home-page "https://github.com/R-Computing-Lab/BGmisc/")
     (synopsis "An R Package for Extended Behavior Genetics Analysis")
     (description
-     "The BGmisc R package offers a comprehensive suite of functions tailored for
-extended behavior genetics analysis, including model identification, calculating
-relatedness, pedigree conversion, pedigree simulation, and more.")
+     "This package provides functions for behavior genetics analysis, including
+variance component model identification [Hunter et al. (2021)
+<doi:10.1007/s10519-021-10055-x>], calculation of relatedness coefficients using
+path-tracing methods [Wright (1922) <doi:10.1086/279872>; @code{McArdle} &
+@code{McDonald} (1984) <doi:10.1111/j.2044-8317.1984.tb00802.x>], inference of
+relatedness, pedigree conversion, and simulation of multi-generational family
+data [Lyu et al. (2024) <doi:10.1101/2024.12.19.629449>].  For a full overview,
+see Garrison et al. (2025) <doi:10.21105/joss.06203>.")
     (license license:gpl3)))
 
 (define-public r-bgmfiles

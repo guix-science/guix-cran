@@ -3967,6 +3967,32 @@ examples are provided in the package function as well as at
 <https://jarvisatharva.shinyapps.io/@code{CategoricalDataAnalysis/>}.")
     (license license:gpl2)))
 
+(define-public r-ctablerseh
+  (package
+    (name "r-ctablerseh")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ctablerseh" version))
+       (sha256
+        (base32 "0s3ziw71r3ylw2d8xbd94yscdbgkq9vak4bliny6iacazc9w9xk0"))))
+    (properties `((upstream-name . "ctablerseh")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survey))
+    (home-page "https://cran.r-project.org/package=ctablerseh")
+    (synopsis
+     "Processing Survey Data with Confidence Intervals Like 'SPSS' Software")
+    (description
+     "Processes survey data and displays estimation results along with the relative
+standard error in a table, including the number of samples and also uses a
+t-distribution approach to compute confidence intervals, similar to SPSS
+(Statistical Package for the Social Sciences) software.")
+    (license license:gpl3+)))
+
 (define-public r-cta
   (package
     (name "r-cta")
@@ -19103,13 +19129,13 @@ contribution to the actual coverage function.")
 (define-public r-coneproj
   (package
     (name "r-coneproj")
-    (version "1.19")
+    (version "1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coneproj" version))
        (sha256
-        (base32 "0whnjdc24214kja1qbbyy95rmssabkq2x85p81nslcclr2krnxi2"))))
+        (base32 "142pjja9zjrf5vykx57dh9rpivyyj68ip8nqgsa1d7j1yhm4izf7"))))
     (properties `((upstream-name . "coneproj")))
     (build-system r-build-system)
     (arguments
@@ -25582,20 +25608,19 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.3.2")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "0p80zl3mc6n3vcd9ps7zqx7yvxpaykkz01r9axky99fi6snfcn4f"))))
+        (base32 "02q1paijpa5bkw7bmvpqz6dp83fvvmwcvszbkra9is62k8b6hsdn"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs
-                             r-tidyselect
                              r-tidyr
                              r-stringr
                              r-stringi
@@ -34672,13 +34697,13 @@ to calculate circular-circular and circular-linear distance correlations.")
 (define-public r-circlus
   (package
     (name "r-circlus")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circlus" version))
        (sha256
-        (base32 "0jwmsqm08crbmbbpbj0dn2vm33z1zsr18420cl09kjyz4yixwzb0"))))
+        (base32 "02dx3m9s9chr5rh2ihix0nc4d89c3z6hfnlcdy9wmgwbv2m8p8r4"))))
     (properties `((upstream-name . "circlus")))
     (build-system r-build-system)
     (arguments
@@ -34686,7 +34711,7 @@ to calculate circular-circular and circular-linear distance correlations.")
       #:tests? #f))
     (propagated-inputs (list r-torch r-tinflex r-rcpparmadillo r-rcpp
                              r-flexmix))
-    (home-page "https://cran.r-project.org/package=circlus")
+    (home-page "https://github.com/lsablica/circlus")
     (synopsis "Clustering and Simulation of Spherical Cauchy and PKBD Models")
     (description
      "This package provides tools for estimation and clustering of spherical data,
@@ -39583,13 +39608,13 @@ variables with respect to this measure.")
 (define-public r-cgam
   (package
     (name "r-cgam")
-    (version "1.22")
+    (version "1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgam" version))
        (sha256
-        (base32 "12mca8wq11nbc3n39bz8qh9n1xj8gvgibmkpjdkzvsmnbrhjl5gv"))))
+        (base32 "1rs5wryfw1ynxdvn7c7x4qdc661nh0k7w8y1j597mv58996ifdb1"))))
     (properties `((upstream-name . "cgam")))
     (build-system r-build-system)
     (arguments

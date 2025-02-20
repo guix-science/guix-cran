@@ -53661,13 +53661,13 @@ can also be used via the website interface at <http://sfinx.ugent.be>.")
 (define-public r-sfhotspot
   (package
     (name "r-sfhotspot")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfhotspot" version))
        (sha256
-        (base32 "0jndiiwf4h05fzchdvmrz1jdl3rvjvpqj28kgqqww1q2h4825mf8"))))
+        (base32 "0827wff1bldd90swrj6cxyhn9nisyzb6kb24wpmaxpryjdclhjkw"))))
     (properties `((upstream-name . "sfhotspot")))
     (build-system r-build-system)
     (arguments
@@ -53678,7 +53678,8 @@ can also be used via the website interface at <http://sfinx.ugent.be>.")
                              r-spatialkde
                              r-sf
                              r-rlang
-                             r-ggplot2))
+                             r-ggplot2
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "http://pkgs.lesscrime.info/sfhotspot/")
     (synopsis "Hot-Spot Analysis with Simple Features")
@@ -61179,6 +61180,53 @@ multiple sources, including @code{WorldClim} <https://www.worldclim.org/>,,
 ENVIREM <https://envirem.github.io/>, Bio-ORACLE <https://bio-oracle.org/> and
 MARSPEC <http://www.marspec.org/>.")
     (license license:expat)))
+
+(define-public r-sdmodels
+  (package
+    (name "r-sdmodels")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SDModels" version))
+       (sha256
+        (base32 "1psb06x9xvk2ybmmifbfpg6k0avja5jl9c8p3kdvzvzmc6g8qyam"))))
+    (properties `((upstream-name . "SDModels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rdpack
+                             r-pbapply
+                             r-locatexec
+                             r-grplasso
+                             r-gridextra
+                             r-gpumatrix
+                             r-ggplot2
+                             r-fda
+                             r-doparallel
+                             r-diagrammer
+                             r-data-tree))
+    (native-inputs (list r-knitr))
+    (home-page "https://markusul.github.io/SDModels/")
+    (synopsis "Spectrally Deconfounded Models")
+    (description
+     "Screen for and analyze non-linear sparse direct effects in the presence of
+unobserved confounding using the spectral deconfounding techniques (Äevid,
+BÃ¼hlmann, and Meinshausen (2020)<jmlr.org/papers/v21/19-545.html>, Guo, Äevid,
+and BÃ¼hlmann (2022) <doi:10.1214/21-AOS2152>).  These methods have been shown
+to be a good estimate for the true direct effect if we observe many covariates,
+e.g., high-dimensional settings, and we have fairly dense confounding.  Even if
+the assumptions are violated, it seems like there is not much to lose, and the
+deconfounded models will, in general, estimate a function closer to the true one
+than classical least squares optimization.  SDModels provides functions
+@code{SDAM()} for Spectrally Deconfounded Additive Models (Scheidegger, Guo, and
+BÃ¼hlmann (2025) <doi:10.1145/3711116>) and @code{SDForest()} for Spectrally
+Deconfounded Random Forests (Ulmer, Scheidegger, and BÃ¼hlmann (2025)
+<doi:10.48550/@code{arXiv.2502.03969>}).")
+    (license license:gpl3)))
 
 (define-public r-sdm
   (package

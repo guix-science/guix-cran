@@ -5092,13 +5092,13 @@ use the sampling functions from cmdstanr which can be installed from
 (define-public r-psborrow
   (package
     (name "r-psborrow")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psborrow" version))
        (sha256
-        (base32 "0m2jcf5awlwkzscsps0fczpaflxzi0w6m9qxlzm7abip277lhgpd"))))
+        (base32 "0zv50zfg1hmnjg0fyksfn93ib1cj6wjgd6h51408x8fz0jqrqs0s"))))
     (properties `((upstream-name . "psborrow")))
     (build-system r-build-system)
     (arguments
@@ -16840,6 +16840,34 @@ and time series based in Shryock research (Shryock et.  al. (1980)
 <https://books.google.co.cr/books?id=8Oo6AQAAMAAJ>).")
     (license license:gpl3)))
 
+(define-public r-popsom7
+  (package
+    (name "r-popsom7")
+    (version "7.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "popsom7" version))
+       (sha256
+        (base32 "1za6smq57pm7zs0sdk27871cyilqj16rrxfv8b49f382nq4bz9hz"))))
+    (properties `((upstream-name . "popsom7")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-som r-hash r-ggplot2 r-fields))
+    (home-page "https://github.com/lutzhamel/popsom7")
+    (synopsis "User-Friendly Implementation of Self-Organizing Maps")
+    (description
+     "Self-organizing maps with a number of distinguishing features: (1) Automatic
+centroid detection and cluster visualization using starbursts, for more details
+see the paper \"Improved Interpretability of the Unified Distance Matrix with
+Connected Components\" by Hamel and Brown (2011) in <ISBN:1-60132-168-6>. (2) Two
+models of the data: (a) a self organizing map model, (b) a centroid based
+clustering model. (3) A number of easily accessible quality metrics, Hamel
+(2016) <doi:10.1007/978-3-319-28518-4_4>.")
+    (license license:gpl3)))
+
 (define-public r-popreconstruct
   (package
     (name "r-popreconstruct")
@@ -21213,6 +21241,37 @@ Normal, Laplace or Beta distributed error.  For unknown error distribution, a
 pure error sample independent from the data is used.")
     (license license:gpl3+)))
 
+(define-public r-pmlbr
+  (package
+    (name "r-pmlbr")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmlbr" version))
+       (sha256
+        (base32 "0n9na4pswpsqdhnr7xb0hq3p5pfyp7wcnznzcv1ssvp5w9j5vhla"))))
+    (properties `((upstream-name . "pmlbr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-fnn))
+    (home-page "https://github.com/EpistasisLab/pmlbr")
+    (synopsis
+     "Interface to the Penn Machine Learning Benchmarks Data Repository")
+    (description
+     "Check available classification and regression data sets from the PMLB repository
+and download them.  The PMLB repository
+(<https://github.com/@code{EpistasisLab/pmlbr>}) contains a curated collection
+of data sets for evaluating and comparing machine learning algorithms.  These
+data sets cover a range of applications, and include binary/multi-class
+classification problems and regression problems, as well as combinations of
+categorical, ordinal, and continuous features.  There are currently over 150
+datasets included in the PMLB repository.")
+    (license (list license:gpl2
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-pmhtutorial
   (package
     (name "r-pmhtutorial")
@@ -25002,13 +25061,13 @@ times.")
 (define-public r-pl94171
   (package
     (name "r-pl94171")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PL94171" version))
        (sha256
-        (base32 "0www52svnfrhf1szgr820zj6fzqxzrlqiyd0vlshajmh3s091jjk"))))
+        (base32 "0krs7vnvwvfyyxn7z43m7fr153bwdl75sx50s1fmrn65czi76bzk"))))
     (properties `((upstream-name . "PL94171")))
     (build-system r-build-system)
     (arguments
@@ -42253,39 +42312,6 @@ accelerated by use of data.table.  This package intends to provide an interface
 that is less general and abstract than data.table but rather geared towards
 survey researchers.")
     (license license:gpl2)))
-
-(define-public r-pandora
-  (package
-    (name "r-pandora")
-    (version "24.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Pandora" version))
-       (sha256
-        (base32 "0zqsqc1wqmps3dd79w4qwxyl4idmrl1zn24s5nmsazk5l1i984p1"))))
-    (properties `((upstream-name . "Pandora")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-readods
-                             r-openxlsx
-                             r-magrittr
-                             r-jsonlite
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Pandora-IsoMemo/pandora-data")
-    (synopsis "Retrieve Data using the API of the 'Pandora' Data Platform")
-    (description
-     "API wrapper that contains functions to retrieve data from the Pandora databases.
- Web services for API: <https://pandora.earth/>.")
-    (license license:gpl3+)))
 
 (define-public r-pandocfilters
   (package

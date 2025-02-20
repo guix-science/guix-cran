@@ -7474,13 +7474,13 @@ Hollander et al. (2015, ISBN:9780470387375).")
 (define-public r-wdief
   (package
     (name "r-wdief")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdiEF" version))
        (sha256
-        (base32 "1gm3m1ds4yrmlhzwwd4sbsksq0yjkh8m511nnzp5kja6l9jbjlb7"))))
+        (base32 "06k30kp95s0h4amafqzm17prpqxhk8h90jpx27z7j9y3sbdqcsyj"))))
     (properties `((upstream-name . "wdiEF")))
     (build-system r-build-system)
     (arguments
@@ -8843,35 +8843,35 @@ modulation (PCM), signed 12, 16, 24 and 32 bit PCM and other encodings.")
 (define-public r-watson
   (package
     (name "r-watson")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watson" version))
        (sha256
-        (base32 "030ybj5cxgg17gixar9hggwyd2sgv3yli0pwpca698wz2b0mypnm"))))
+        (base32 "0wpkdqpayc87h6s2dsndsl8v5hww69y7mdsvq58b8jg0sk5axhsl"))))
     (properties `((upstream-name . "watson")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tinflex r-rcpparmadillo r-rcpp))
-    (home-page "https://cran.r-project.org/package=watson")
+    (home-page "https://github.com/lsablica/watson")
     (synopsis "Fitting and Simulating Mixtures of Watson Distributions")
     (description
      "This package provides tools for fitting and simulating mixtures of Watson
 distributions.  The random sampling scheme of the package offers two sampling
 algorithms that are based of the results of Sablica, Hornik and Leydold (2022)
-<https://research.wu.ac.at/en/publications/random-sampling-from-the-watson-distribution>.
- What is more, the package offers a smart tool to combine these two methods, and
-based on the selected parameters, it approximates the relative sampling speed
-for both methods and picks the faster one.  In addition, the package offers a
-fitting function for the mixtures of Watson distribution, that uses the
-expectation-maximization (EM) algorithm.  Special features are the possibility
-to use multiple variants of the E-step and M-step, sparse matrices for the data
-representation and state of the art methods for numerical evaluation of needed
-special functions using the results of Sablica and Hornik (2022)
-<https://www.ams.org/journals/mcom/2022-91-334/S0025-5718-2021-03690-X/>.")
+<doi:10.1080/10618600.2024.2416521>.  What is more, the package offers a smart
+tool to combine these two methods, and based on the selected parameters, it
+approximates the relative sampling speed for both methods and picks the faster
+one.  In addition, the package offers a fitting function for the mixtures of
+Watson distribution, that uses the expectation-maximization (EM) algorithm.
+Special features are the possibility to use multiple variants of the E-step and
+M-step, sparse matrices for the data representation and state of the art methods
+for numerical evaluation of needed special functions using the results of
+Sablica and Hornik (2022) <doi:10.1090/mcom/3690> and Sablica and Hornik (2024)
+<doi:10.1016/j.jmaa.2024.128262>.")
     (license license:gpl3)))
 
 (define-public r-wats
