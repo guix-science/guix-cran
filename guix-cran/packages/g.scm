@@ -16234,6 +16234,43 @@ git history book presentation helps organisms required to testify for every
 changes in their source code, in relation to features requests.")
     (license license:expat)))
 
+(define-public r-gitai
+  (package
+    (name "r-gitai")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GitAI" version))
+       (sha256
+        (base32 "1j8iqagiz1x0mil4i5wjq5746pkxnbsr9jpzf5anr7lryd3q34c8"))))
+    (properties `((upstream-name . "GitAI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-lubridate
+                             r-httr2
+                             r-glue
+                             r-gitstats
+                             r-ellmer
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GitAI")
+    (synopsis "Extracts Knowledge from 'Git' Repositories")
+    (description
+     "Scan multiple Git repositories, pull specified files content and process it with
+large language models.  You can summarize the content in specific way, extract
+information and data, or find answers to your questions about the repositories.
+The output can be stored in vector database and used for semantic search or as a
+part of a RAG (Retrieval Augmented Generation) prompt.")
+    (license license:expat)))
+
 (define-public r-git4r
   (package
     (name "r-git4r")
@@ -21061,13 +21098,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.1-5")
+    (version "3.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "1shcm0v3mjscf5kc2lhn9y2vwdffsx3kgawh7ddpklrgf250vzpx"))))
+        (base32 "1m2vnz5f71n3rr13kzzj32ws4rqm46wc211p6f4a46dpxmgm9pm0"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (arguments

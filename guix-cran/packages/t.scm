@@ -9109,6 +9109,40 @@ robust approaches to RNA-Seq data analysis.  For more information, refer to the
 package vignettes and related publications.")
     (license license:expat)))
 
+(define-public r-transportr
+  (package
+    (name "r-transportr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transportr" version))
+       (sha256
+        (base32 "055hlgbc7cxnzmqa2bgbywn97m1i3ajsnz3xnx8kmxyzrcib7653"))))
+    (properties `((upstream-name . "transportr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-r6
+                             r-origami
+                             r-mlr3superlearner
+                             r-ife
+                             r-generics
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/nt-williams/transportr")
+    (synopsis
+     "Transporting Intervention Effects from One Population to Another")
+    (description
+     "Doubly-robust, non-parametric estimators for the transported average treatment
+effect from Rudolph, Williams, Stuart, and Diaz (2023)
+<doi:10.48550/@code{arXiv.2304.00117>} and the intent-to-treatment average
+treatment effect from Rudolph and van der Laan (2017) <doi:10.1111/rssb.12213>.
+Estimators are fit using cross-fitting and nuisance parameters are estimated
+using the Super Learner algorithm.")
+    (license license:gpl3+)))
+
 (define-public r-transport
   (package
     (name "r-transport")

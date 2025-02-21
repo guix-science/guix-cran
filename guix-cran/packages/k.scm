@@ -1583,13 +1583,13 @@ layout based on DIN 5008B'.")
 (define-public r-kollar
   (package
     (name "r-kollar")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kollaR" version))
        (sha256
-        (base32 "1gn6203q2hky9vd56d9bjzg8d2y6sdlcb4ssb19k9hv7sx74b55z"))))
+        (base32 "01aj0z5z3qf3vz3zs1wwlssg32w3j6f4071gnrmcsdj9v6fs61rz"))))
     (properties `((upstream-name . "kollaR")))
     (build-system r-build-system)
     (arguments
@@ -5516,13 +5516,13 @@ information about Kendall random walks see Jasiulis-GoÅdyn (2014)
 (define-public r-kendallknight
   (package
     (name "r-kendallknight")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kendallknight" version))
        (sha256
-        (base32 "1gmg0kb8043n1344n91kjy58l5zjhlm366kdyh08rs1szwqhg989"))))
+        (base32 "0hqfiwvz6fkmgwp1d2hfh5d24vqkj9fcqv5lj5r31r8lqmlx860b"))))
     (properties `((upstream-name . "kendallknight")))
     (build-system r-build-system)
     (arguments
@@ -5530,7 +5530,7 @@ information about Kendall random walks see Jasiulis-GoÅdyn (2014)
       #:tests? #f))
     (propagated-inputs (list r-cpp11))
     (native-inputs (list r-knitr))
-    (home-page "https://pacha.dev/capybara/")
+    (home-page "https://pacha.dev/kendallknight/")
     (synopsis
      "Efficient Implementation of Kendall's Correlation Coefficient Computation")
     (description
@@ -5675,13 +5675,13 @@ development (<https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>).")
 (define-public r-kdml
   (package
     (name "r-kdml")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdml" version))
        (sha256
-        (base32 "042rzbrjmypxp7gb501hwnyr90c90g16pycakj4xbwky9bqb7c8a"))))
+        (base32 "1gaykb735zk2q1bdc29qm36rbi13qxfb4qr91ywccmb6c2106fby"))))
     (properties `((upstream-name . "kdml")))
     (build-system r-build-system)
     (arguments
@@ -5698,9 +5698,9 @@ calculate similarity functions and metrics, and selects variables relevant to
 the underlying distance through bandwidth selection via maximum similarity
 cross-validation.  These methods can be used in any distance-based algorithm,
 such as distance-based clustering.  For further details, we refer the reader to
-Ghashti and Thompson (2024) <<doi:10.48550/@code{arXiv.2306.01890>>} for
-@code{dkps()} methodology, and Ghashti (2024) <doi:10.14288/1.0443975> for
-@code{dkss()} methodology.")
+Ghashti and Thompson (2024) <doi:10.1007/s00357-024-09493-z> for @code{dkps()}
+methodology, and Ghashti (2024) <doi:10.14288/1.0443975> for @code{dkss()}
+methodology.")
     (license license:gpl2+)))
 
 (define-public r-kdist

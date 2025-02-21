@@ -11817,13 +11817,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flint
   (package
     (name "r-flint")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flint" version))
        (sha256
-        (base32 "1yynchddn6gy1hna1azpzjgv3mzs1nr1yf7a1iaaa3p2yn198vi3"))))
+        (base32 "0pcbidsh22pgh17p7l53rb40756wpn558cgf1h6xwpv4v3x1zw3r"))))
     (properties `((upstream-name . "flint")))
     (build-system r-build-system)
     (arguments
@@ -11835,7 +11835,7 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
     (synopsis "Fast Library for Number Theory")
     (description
      "An R interface to FLINT <https://flintlib.org/>, a C library for number theory.
-FLINT extends GNU MP <https://gmplib.org/> and GNU MPFR <https://www.mpfr.org/>
+FLINT extends GNU MPFR <https://www.mpfr.org/> and GNU MP <https://gmplib.org/>
 with support for arithmetic in standard rings (the integers, the integers modulo
 n, the rational, p-adic, real, and complex numbers) as well as vectors,
 matrices, polynomials, and power series over rings.  FLINT implements
@@ -11846,8 +11846,8 @@ Finally, FLINT provides ball arithmetic implementations of many special
 mathematical functions, with high coverage of reference works such as the NIST
 Digital Library of Mathematical Functions <https://dlmf.nist.gov/>.  The R
 interface defines S4 classes, generic functions, and methods for representation
-and basic operations as well as plain R functions matching (and vectorizing)
-entry points in the C library.")
+and basic operations as well as plain R functions matching and vectorizing entry
+points in the C library.")
     (license license:gpl2+)))
 
 (define-public r-flimo

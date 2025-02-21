@@ -9613,13 +9613,13 @@ Models.")
 (define-public r-niarules
   (package
     (name "r-niarules")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "niarules" version))
        (sha256
-        (base32 "03r7x4qaw40c9gd5lay8648r2f6269gp8x8qh5bfrs44aq0jbv3w"))))
+        (base32 "04bnwdlddalck0bxj2pc6qbgjbm35mn71s1br7v9bilk7d86c532"))))
     (properties `((upstream-name . "niarules")))
     (build-system r-build-system)
     (arguments

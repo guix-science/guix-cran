@@ -8130,13 +8130,13 @@ X., Yao, J. and Xue, L. (2022) <doi:10.1080/07350015.2020.1813589>.")
 (define-public r-suessr
   (package
     (name "r-suessr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SuessR" version))
        (sha256
-        (base32 "1rh792x7dyfnhnw6g0f6hb5wqw58j6j11k9xib11ba256qrnvwgc"))))
+        (base32 "19pvhiq67qmkf0khacyzyfc3428sfyf9kyr5g1kq7sja132k0bk3"))))
     (properties `((upstream-name . "SuessR")))
     (build-system r-build-system)
     (arguments
@@ -8147,7 +8147,7 @@ X., Yao, J. and Xue, L. (2022) <doi:10.1080/07350015.2020.1813589>.")
      "Suess and Laws Corrections for Marine Stable Carbon Isotope Data")
     (description
      "Generates region-specific Suess and Laws corrections for stable carbon isotope
-data from marine organisms collected between 1850 and 2022.  Version 0.1.5 of
+data from marine organisms collected between 1850 and 2023.  Version 0.1.6 of
 @code{SuessR} contains four built-in regions: the Bering Sea ('Bering Sea'), the
 Aleutian archipelago ('Aleutian Islands'), the Gulf of Alaska ('Gulf of
 Alaska'), and the subpolar North Atlantic ('Subpolar North Atlantic').  Users
@@ -10320,13 +10320,13 @@ to create dyadic data sets.")
 (define-public r-stratpal
   (package
     (name "r-stratpal")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StratPal" version))
        (sha256
-        (base32 "1ic4dfkkqpwanr8i4ycalrynryy60k8fckv7q1n4gk3x9jxdj3w4"))))
+        (base32 "0p0g9yix7rmxn3xvd86y1gyfy8c682an5k1acih4nkv75v9f928x"))))
     (properties `((upstream-name . "StratPal")))
     (build-system r-build-system)
     (arguments
@@ -18759,13 +18759,13 @@ information to a Sweave report.")
 (define-public r-ssdtools
   (package
     (name "r-ssdtools")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssdtools" version))
        (sha256
-        (base32 "0vfabdcv9bmfwzzkn67734vqx1imkv92abpw2lwq3f0aqf9x5i0q"))))
+        (base32 "1m0dkwrmpfld96c3cja859ix0hdkcn8ylsfigasb91pin37qsn3s"))))
     (properties `((upstream-name . "ssdtools")))
     (build-system r-build-system)
     (arguments
@@ -39023,6 +39023,33 @@ values.  See the reference: Hanmo Li, Yuedong Wang, Mengyang Gu (2023),
 <@code{arXiv:2310.18611>}.")
     (license license:gpl3+)))
 
+(define-public r-skewunit
+  (package
+    (name "r-skewunit")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "skewunit" version))
+       (sha256
+        (base32 "1hjnp9nkhhc6ykr920p1k1jpb4zcp3ya1qnmjdq3ir8n0325qxlh"))))
+    (properties `((upstream-name . "skewunit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-pracma))
+    (home-page "https://cran.r-project.org/package=skewunit")
+    (synopsis "Estimation and Other Tools for Skew-Unit Models")
+    (description
+     "Provide estimation and data generation tools for the skew-unit family discussed
+based on Mukhopadhyay and Brani (1995) <doi:10.2307/2348710>.  The family
+contains extensions for popular distributions such as the @code{ArcSin}
+discussed in Arnold and Groeneveld (1980) <doi:10.1080/01621459.1980.10477449>,
+triangular, U-quadratic and Johnson-SB proposed in Cortina-Borja (2006)
+<doi:10.1111/j.1467-985X.2006.00446_12.x> distributions, among others.")
+    (license license:gpl2+)))
+
 (define-public r-skewt
   (package
     (name "r-skewt")
@@ -42974,22 +43001,18 @@ parameter estimates for nonlinear least squares optimization.  Dattner & Yaari
 (define-public r-simnph
   (package
     (name "r-simnph")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimNPH" version))
        (sha256
-        (base32 "05qp6cnih319p88vrppwvxh595a7vawkc7508xzmzhvrjbn3p7jn"))))
+        (base32 "003fcw2xii9j5327lqph0rbh5w1z1z90gkcjr4fhqgy5fn8zkcnk"))))
     (properties `((upstream-name . "SimNPH")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-survival
@@ -43002,7 +43025,7 @@ parameter estimates for nonlinear least squares optimization.  Dattner & Yaari
                              r-minipch
                              r-dplyr
                              r-car))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-knitr))
     (home-page "https://simnph.github.io/SimNPH/")
     (synopsis "Simulate Non-Proportional Hazards")
     (description
@@ -43014,10 +43037,10 @@ package provides functions to calculate the true values of common summary
 statistics for the implemented scenarios and offers common analysis methods for
 time-to-event data.  Helper functions for running simulations with the
 @code{SimDesign} package and for aggregating and presenting the results are also
-included.  Results of the conducted simulation study are available as preprint:
-\"A neutral comparison of statistical methods for time-to-event analyses under
-non-proportional hazards\", Klinglmueller et al. (2023)
-<doi:10.48550/ARXIV.2310.05622>.")
+included.  Results of the conducted simulation study are available in the paper:
+\"A Comparison of Statistical Methods for Time-To-Event Analyses in Randomized
+Controlled Trials Under Non-Proportional Hazards\", KlinglmÃ¼ller et al. (2025)
+<doi:10.1002/sim.70019>.")
     (license (license:fsdg-compatible "BSL-1.0"))))
 
 (define-public r-simmulticorrdata

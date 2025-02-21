@@ -2188,6 +2188,67 @@ expression analysis of RNA-seq data, it is only applicable to hybrid offspring
 (including two sub-genomes) species for the time being.")
     (license license:agpl3+)))
 
+(define-public r-expertsurv
+  (package
+    (name "r-expertsurv")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "expertsurv" version))
+       (sha256
+        (base32 "1r1280i2j8ncncw29sa20w5yp439rfm6q4jjwikczmiciasnyxsa"))))
+    (properties `((upstream-name . "expertsurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-statmod
+                             r-stanheaders
+                             r-splines2
+                             r-sn
+                             r-shelf
+                             r-scales
+                             r-rstpm2
+                             r-rstantools
+                             r-rstan
+                             r-rms
+                             r-rlang
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quadprog
+                             r-purrr
+                             r-numderiv
+                             r-mvtnorm
+                             r-muhaz
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-broom
+                             r-bh
+                             r-assertthat
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=expertsurv")
+    (synopsis "Incorporate Expert Opinion with Parametric Survival Models")
+    (description
+     "Enables users to incorporate expert opinion with parametric survival analysis
+using a Bayesian or frequentist approach.  Expert Opinion can be provided on the
+survival probabilities at certain time-point(s) or for the difference in mean
+survival between two treatment arms.  Please reference it's use as Cooney, P.,
+White, A. (2023) <doi:10.1177/0272989X221150212>.")
+    (license license:expat)))
+
 (define-public r-expertchoice
   (package
     (name "r-expertchoice")

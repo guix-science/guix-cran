@@ -4164,13 +4164,13 @@ equally sized groups, and the unnesting of data.frames within fully named lists.
 (define-public r-csurvey
   (package
     (name "r-csurvey")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csurvey" version))
        (sha256
-        (base32 "0g41mh332imf03xwxpa3ghmi8dmdpva8wb1z794as3gp5hjddsh5"))))
+        (base32 "1zmspq2nav5zvy5qsz3b2czrwbnhisp2h3ckhjhrhyq94zg9a5b3"))))
     (properties `((upstream-name . "csurvey")))
     (build-system r-build-system)
     (arguments
@@ -9507,13 +9507,13 @@ Browser group.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.4.1")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "0hyh94savyq90rqbvfirzz32s3kjwd7s7k4089q59d2mn85qnsw2"))))
+        (base32 "1bi27haczkpccpxgiadgs7pgqwpviy9in6v8sma19zasp9vs0ykx"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (arguments
@@ -25644,6 +25644,31 @@ Partnership (OMOP) common data model based on string matching.  For a given
 search strategy, a candidate code list will be returned.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-codelist
+  (package
+    (name "r-codelist")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "codelist" version))
+       (sha256
+        (base32 "1w6lrn7fh6661w6rxwyhfaamvldzypdnyx477kf89cjvxarm621z"))))
+    (properties `((upstream-name . "codelist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-simplermarkdown))
+    (home-page "https://cran.r-project.org/package=codelist")
+    (synopsis "Working with Code Lists")
+    (description
+     "This package provides functions for working with code lists and vectors with
+codes.  These are an alternative for factor that keep track of both the codes
+and labels.  Methods allow for transforming between codes and labels.  Also
+supports hierarchical code lists.")
+    (license license:gpl3)))
+
 (define-public r-codecountr
   (package
     (name "r-codecountr")
@@ -37315,13 +37340,13 @@ package.")
 (define-public r-chevron
   (package
     (name "r-chevron")
-    (version "0.2.7")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chevron" version))
        (sha256
-        (base32 "15kqs0lcsfka159s1divhnji571dgrqc0n32h3mk9l05gznclsnk"))))
+        (base32 "1qh0rc2bwh3m7gifrc9naa79zk9nbsk6m8bzk6k3phfbw0amn4kb"))))
     (properties `((upstream-name . "chevron")))
     (build-system r-build-system)
     (arguments
@@ -37345,7 +37370,7 @@ package.")
                              r-dunlin
                              r-dplyr
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/chevron/")
     (synopsis "Standard TLGs for Clinical Trials Reporting")
     (description

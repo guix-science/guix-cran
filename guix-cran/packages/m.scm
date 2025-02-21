@@ -10331,13 +10331,13 @@ Obuchowski (2000) <doi:10.1097/EDE.0b013e3181a663cc>.")
 (define-public r-mrmcbinary
   (package
     (name "r-mrmcbinary")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRMCbinary" version))
        (sha256
-        (base32 "04rq742xxxf8x0wbnclj546661y826zjsld00rqy6bqsgm3rm6xg"))))
+        (base32 "161gvcqj5dqgvwqpk04mhs25b3ginapz2cmayz7fbgrhwxkwghvd"))))
     (properties `((upstream-name . "MRMCbinary")))
     (build-system r-build-system)
     (arguments
@@ -25678,42 +25678,6 @@ useful wrappers of common base R functions, which extend S3 generics or provide
 default values for important parameters.")
     (license license:gpl3)))
 
-(define-public r-miscmetabar
-  (package
-    (name "r-miscmetabar")
-    (version "0.14.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MiscMetabar" version))
-       (sha256
-        (base32 "0xsd7gp2k3xwdcy9g55q228vag7w68r69irpz2j1mn99na7fj7m5"))))
-    (properties `((upstream-name . "MiscMetabar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang
-                             r-purrr
-                             r-phyloseq
-                             r-lifecycle
-                             r-ggplot2
-                             r-dplyr
-                             r-dada2
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/adrientaudiere/MiscMetabar")
-    (synopsis "Miscellaneous Functions for Metabarcoding Analysis")
-    (description
-     "Facilitate the description, transformation, exploration, and reproducibility of
-metabarcoding analyses. @code{MiscMetabar} is mainly built on top of the
-phyloseq', dada2 and targets R packages.  It helps to build reproducible and
-robust bioinformatics pipelines in R. @code{MiscMetabar} makes ecological
-analysis of alpha and beta-diversity easier, more reproducible and more powerful
-by integrating a large number of tools.  Important features are described in
-TaudiÃ¨re A. (2023) <doi:10.21105/joss.06038>.")
-    (license license:agpl3)))
-
 (define-public r-miscmath
   (package
     (name "r-miscmath")
@@ -30655,20 +30619,25 @@ Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
 (define-public r-mgwrsar
   (package
     (name "r-mgwrsar")
-    (version "1.0.5")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgwrsar" version))
        (sha256
-        (base32 "0xhxx1x625igm54n5wpl4aavcqg9dx9nmazr330538p334df3z8h"))))
+        (base32 "1jvdv7y0clkiv8g09rsppi09w33d87in2mn4cs5id2y6r7apsshg"))))
     (properties `((upstream-name . "mgwrsar")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (propagated-inputs (list r-spgwr
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-stringr
                              r-sp
+                             r-smut
                              r-sf
                              r-rlang
                              r-rcppeigen
@@ -30688,13 +30657,13 @@ Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
                              r-dplyr
                              r-doparallel
                              r-caret))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=mgwrsar")
-    (synopsis "GWR and MGWR with Spatial Autocorrelation")
+    (synopsis "GWR, Mixed GWR and Multiscale GWR with Spatial Autocorrelation")
     (description
-     "This package provides functions for computing (Mixed) Geographically Weighted
-Regression with spatial autocorrelation, Geniaux and Martinetti (2017)
-<doi:10.1016/j.regsciurbeco.2017.04.001>.")
+     "This package provides functions for computing (Mixed and Multiscale)
+Geographically Weighted Regression with spatial autocorrelation, Geniaux and
+Martinetti (2017) <doi:10.1016/j.regsciurbeco.2017.04.001>.")
     (license license:gpl2+)))
 
 (define-public r-mgwrhw
@@ -47654,13 +47623,13 @@ each level set.  3.  Generate a complex from the clustering results.")
 (define-public r-mapper
   (package
     (name "r-mapper")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappeR" version))
        (sha256
-        (base32 "1dbg9sbkk12hz3rmfccsx3zy05dhxhj6wnh5kmh9nlls5px8q9kg"))))
+        (base32 "0sbf1armmhsjijm9l8q6vm17ws1k032dyi1s2lw8hcz5s3511hby"))))
     (properties `((upstream-name . "mappeR")))
     (build-system r-build-system)
     (arguments

@@ -4168,6 +4168,35 @@ course) profiles.  It implements the method described by Lin et al. (2012).")
 classification.")
     (license license:gpl2+)))
 
+(define-public r-orcamentobr
+  (package
+    (name "r-orcamentobr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orcamentoBR" version))
+       (sha256
+        (base32 "0kb1gqaxqrq6vj1iif90h8qdq74vd3qqxaanvax8fm99ig3sigrs"))))
+    (properties `((upstream-name . "orcamentoBR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://cran.r-project.org/package=orcamentoBR")
+    (synopsis "Download Official Data on Brazil's Federal Budget")
+    (description
+     "Allows users to download and analyze official data on Brazil's federal budget
+through the SPARQL endpoint provided by the Integrated Budget and Planning
+System ('SIOP').  This package enables access to detailed information on budget
+allocations and expenditures of the federal government, making it easier to
+analyze and visualize these data.  Technical information on the Brazilian
+federal budget is available (Portuguese only) at
+<https://www1.siop.planejamento.gov.br/mto/>.  The SIOP endpoint is available at
+<https://www1.siop.planejamento.gov.br/sparql/>.")
+    (license license:gpl3+)))
+
 (define-public r-orca
   (package
     (name "r-orca")

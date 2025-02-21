@@ -4717,6 +4717,32 @@ for estimation, and the bootstrap for inference.  A variety of post-estimation
 summary methods are provided, including print, summary, plot, and testing.")
     (license license:expat)))
 
+(define-public r-pseudorank
+  (package
+    (name "r-pseudorank")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pseudorank" version))
+       (sha256
+        (base32 "0lj6pfygbif92zy3i1wqdpjb3731d0gaz1ffpq1f7w9y3cbmrg7z"))))
+    (properties `((upstream-name . "pseudorank")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-doby))
+    (home-page "https://github.com/happma/pseudorank/")
+    (synopsis "Pseudo-Ranks")
+    (description
+     "Efficient calculation of pseudo-ranks and (pseudo)-rank based test statistics.
+In case of equal sample sizes, pseudo-ranks and mid-ranks are equal.  When used
+for inference mid-ranks may lead to paradoxical results.  Pseudo-ranks are in
+general not affected by such a problem.  See Happ et al. (2020,
+<doi:10.18637/jss.v095.c01>) for details.")
+    (license license:gpl3)))
+
 (define-public r-pseudohouseholds
   (package
     (name "r-pseudohouseholds")
@@ -10868,13 +10894,13 @@ tests developed in Pitarakis, J. (2023) <doi:10.1017/S0266466623000154>.")
 (define-public r-pressure
   (package
     (name "r-pressure")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pressuRe" version))
        (sha256
-        (base32 "14cidhyfngzimpxj7cgb1588dzr363dqbngh2rahhcg5rhivz9zc"))))
+        (base32 "1fcld5w2d5gmgs1in1rgixk8ni7nv43jq1pnsg00xsyykfq5q3xb"))))
     (properties `((upstream-name . "pressuRe")))
     (build-system r-build-system)
     (arguments
@@ -10884,9 +10910,11 @@ tests developed in Pitarakis, J. (2023) <doi:10.1017/S0266466623000154>.")
                              r-stringr
                              r-sf
                              r-scales
+                             r-rvcg
                              r-readxl
                              r-raster
                              r-pracma
+                             r-morpho
                              r-magrittr
                              r-magick
                              r-ggplot2
@@ -35469,13 +35497,13 @@ transparently in the R programming language.")
 (define-public r-pdynmc
   (package
     (name "r-pdynmc")
-    (version "0.9.11")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdynmc" version))
        (sha256
-        (base32 "0lw0hnqp3czwrjwm7jbbqmkdp1rwwkfffrahs28ywbxpka0mzv1v"))))
+        (base32 "1dqd2j9nmx7cvh5mkg38b7m52piqzc2a6638mbhdipbxnfzvn9vm"))))
     (properties `((upstream-name . "pdynmc")))
     (build-system r-build-system)
     (arguments
@@ -35510,7 +35538,7 @@ methods include functions to plot unbalanced panel structure, coefficient ranges
 and coefficient paths across GMM iterations (the latter is implemented according
 to the plot shown in Hansen and Lee, 2021 <doi:10.3982/ECTA16274>).  For a more
 detailed description of the GMM-based functionality, please see Fritsch, Pua,
-Schnurbus (2021) <doi:10.32614/RJ-2021-035>.  For more detail on the IV-based
+Schnurbus (2021) <doi:10.32614/RJ-2021-035>.  For more details on the IV-based
 estimation routines, see Fritsch, Pua, and Schnurbus (WP, 2024) and Han and
 Phillips (2010) <doi:10.1017/S026646660909063X>.")
     (license license:gpl2+)))
@@ -40487,13 +40515,13 @@ functions for working with the resulting abstract syntax tree.")
 (define-public r-parselatex
   (package
     (name "r-parselatex")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parseLatex" version))
        (sha256
-        (base32 "0z9ap2lxqsv0ijf687zzqv08afpfwx2ji42pq3y840g35qdzcmzv"))))
+        (base32 "1v86rk9b8gb32yj9rl65cw5jcpy68cav42a2nrqhzba1ncvyp155"))))
     (properties `((upstream-name . "parseLatex")))
     (build-system r-build-system)
     (arguments
@@ -44325,19 +44353,23 @@ Fisher's product method is included as well.")
 (define-public r-pagfl
   (package
     (name "r-pagfl")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAGFL" version))
        (sha256
-        (base32 "1yh4bcrn373g0fsrdv6a59l1jnqkm45cdyd5vjs54232rxr63v51"))))
+        (base32 "1k3acg3b6am95yaccrh4mk1lqa0y6sjyzb8a0bmjcy5qxbq4c2x0"))))
     (properties `((upstream-name . "PAGFL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-lifecycle
+    (propagated-inputs (list r-rcppthread
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-lifecycle
                              r-ggplot2))
     (home-page "https://github.com/Paul-Haimerl/PAGFL")
     (synopsis

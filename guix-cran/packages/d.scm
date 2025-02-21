@@ -1887,13 +1887,13 @@ absolute quantification under uncertainty.  See Comoglio et al. (2013)
 (define-public r-dunlin
   (package
     (name "r-dunlin")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dunlin" version))
        (sha256
-        (base32 "1bhl64g5x14bqw5flbcb5vhshwp1dmw04fakmdkvkswnl258m6gx"))))
+        (base32 "0q1nrjwrbxzm3xw8jhd9glgjzdp90l1snklwcwdyf8k38gg6dq05"))))
     (properties `((upstream-name . "dunlin")))
     (build-system r-build-system)
     (arguments
@@ -1908,7 +1908,7 @@ absolute quantification under uncertainty.  See Comoglio et al. (2013)
                              r-forcats
                              r-dplyr
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/dunlin/")
     (synopsis "Preprocessing Tools for Clinical Trial Data")
     (description
@@ -2157,13 +2157,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.1.3-2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "1d4racr5b6v4jrs6yppf6adzscfbj6qzl5xha59spx3smrxr91wj"))))
+        (base32 "1734mn6zsnd5f4hqdmb9sz49ky6s8a1s6dhfpb9n6hiv94l3za2q"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (arguments
@@ -28710,13 +28710,13 @@ Ecological Metadata Language standards.")
 (define-public r-dataspacer
   (package
     (name "r-dataspacer")
-    (version "0.7.6")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataSpaceR" version))
        (sha256
-        (base32 "1asrslqmk4sjj99x8pb01yfrw57p64zc6klrk2ghz4g44fr9d0pq"))))
+        (base32 "0n5aylmblwz0v2xixy7bg5d7hhdrfpp5vj264cy2kvzql190a2zs"))))
     (properties `((upstream-name . "DataSpaceR")))
     (build-system r-build-system)
     (arguments
@@ -29120,13 +29120,13 @@ information.")
 (define-public r-dataquier
   (package
     (name "r-dataquier")
-    (version "2.1.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataquieR" version))
        (sha256
-        (base32 "1y8s6igz7ckvqamz26lrks62fnh51w1gz18gv7saxkmiwcacfjh4"))))
+        (base32 "17g4njyx0bqqyjwk7zq0i5cnw8fzgrppclqaaf7m5na7vxxilmm6"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
     (arguments
@@ -29177,7 +29177,7 @@ which can be provided in spreadsheet tables.  Either standardized (e.g. as html5
 reports) or individually tailored reports can be generated.  For an introduction
 into the specification of corresponding metadata, please refer to the package
 website
-<https://dataquality.qihs.uni-greifswald.de/Annotation_of_Metadata.html>.")
+<https://dataquality.qihs.uni-greifswald.de/VIN_Annotation_of_Metadata.html>.")
     (license license:bsd-2)))
 
 (define-public r-datapreparation
@@ -30200,42 +30200,6 @@ and other variable cleaning processes.  It is originated from a author's project
 which focuses on creative performance in online education environment.  The
 resulting paper of that study will be published soon.")
     (license license:gpl3)))
-
-(define-public r-dataclass
-  (package
-    (name "r-dataclass")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dataclass" version))
-       (sha256
-        (base32 "1mx2yqxahsqdxp238q1i285q9g9mcvlfi6prchgk3cydqmqshrhy"))))
-    (properties `((upstream-name . "dataclass")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-glue
-                             r-dplyr
-                             r-cli))
-    (home-page "https://cran.r-project.org/package=dataclass")
-    (synopsis
-     "Easily Create Structured Lists or Data Frames with Input Validation")
-    (description
-     "Easily define templates for lists and data frames that validate each element.
-Specify the expected type (i.e., character, numeric, etc), expected length,
-minimum and maximum values, allowable values, and more for each element in your
-data.  Decide whether violations of these expectations should throw an error or
-a warning.  This package is useful for validating data within R processes which
-pull from dynamic data sources such as databases and web APIs to provide an
-extra layer of validation around input and output data.")
-    (license license:expat)))
 
 (define-public r-databionicswarm
   (package

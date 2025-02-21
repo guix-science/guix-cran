@@ -3614,6 +3614,48 @@ packages.  Functions that aid semiparametric regression analysis are also
 included.")
     (license license:gpl2+)))
 
+(define-public r-hrtnomaly
+  (package
+    (name "r-hrtnomaly")
+    (version "25.2.18")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HRTnomaly" version))
+       (sha256
+        (base32 "0idlvjn3xws7np8wv2f7rysnl228502irx9xcd7p1r5nxdpl179q"))))
+    (properties `((upstream-name . "HRTnomaly")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-purrr r-dplyr))
+    (home-page "https://cran.r-project.org/package=HRTnomaly")
+    (synopsis "Historical, Relational, and Tail Anomaly-Detection Algorithms")
+    (description
+     "The presence of outliers in a dataset can substantially bias the results of
+statistical analyses.  To correct for outliers, micro edits are manually
+performed on all records.  A set of constraints and decision rules is typically
+used to aid the editing process.  However, straightforward decision rules might
+overlook anomalies arising from disruption of linear relationships.
+Computationally efficient methods are provided to identify historical, tail, and
+relational anomalies at the data-entry level (Sartore et al., 2024;
+<doi:10.6339/24-JDS1136>).  A score statistic is developed for each anomaly
+type, using a distribution-free approach motivated by the BienaymÃ©-Chebyshev's
+inequality, and fuzzy logic is used to detect cellwise outliers resulting from
+different types of anomalies.  Each data entry is individually scored and
+individual scores are combined into a final score to determine anomalous
+entries.  In contrast to fuzzy logic, Bayesian bootstrap and a Bayesian test
+based on empirical likelihoods are also provided as studied by Sartore et al.
+(2024; <doi:10.3390/stats7040073>).  These algorithms allow for a more nuanced
+approach to outlier detection, as it can identify outliers at data-entry level
+which are not obviously distinct from the rest of the data. --- This research
+was supported in part by the U.S. Department of Agriculture, National
+Agriculture Statistics Service.  The findings and conclusions in this
+publication are those of the authors and should not be construed to represent
+any official USDA, or US Government determination or policy.")
+    (license license:agpl3)))
+
 (define-public r-hrtlfmc
   (package
     (name "r-hrtlfmc")
@@ -10020,13 +10062,13 @@ Arabidopsis thaliana.")
 (define-public r-herer
   (package
     (name "r-herer")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hereR" version))
        (sha256
-        (base32 "0nl8k58syhkbwdmy4jxc7as99bv8j5k9j87bqmr0y2jlfi9ny2d2"))))
+        (base32 "066lf3fsyn1y99f7qcvfr7wr7rnzj68z3imhalkbfxyzfsysinzc"))))
     (properties `((upstream-name . "hereR")))
     (build-system r-build-system)
     (arguments

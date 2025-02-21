@@ -11074,13 +11074,13 @@ functions that produce @code{LaTeX} code.")
 (define-public r-indicspecies
   (package
     (name "r-indicspecies")
-    (version "1.7.15")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "indicspecies" version))
        (sha256
-        (base32 "0h434wvqcl43k4wqqqch1jglcsqvp2z8xr9imrrw7xaa7dn1zgqp"))))
+        (base32 "0qiyaw162gp2avxb6sraiib460r5wsjmi2xfcpvasljbvxq0x4bf"))))
     (properties `((upstream-name . "indicspecies")))
     (build-system r-build-system)
     (arguments
@@ -11651,13 +11651,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "1ra7bjz9y2xlgryyc4csg02kn7a3ckqdm4mkk4d15a9b23mhb37x"))))
+        (base32 "0zicfym6h16m7lz8zasa4xv60lp6id1rp6rfihwfxkwd4r27ab2m"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (arguments

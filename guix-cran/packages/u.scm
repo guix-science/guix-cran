@@ -1222,13 +1222,13 @@ itself.")
 (define-public r-ursa
   (package
     (name "r-ursa")
-    (version "3.11.3")
+    (version "3.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ursa" version))
        (sha256
-        (base32 "0qffmvz5nq25hkqxy9k02lw5g02sncfmlzv0mrmqspv6rxg3crip"))))
+        (base32 "14wkf41k4ws79qc0w92ixh56dk1d5pdiipcgk3n61s6bg7yq7wry"))))
     (properties `((upstream-name . "ursa")))
     (build-system r-build-system)
     (arguments
@@ -5400,6 +5400,36 @@ learning with explanations, or interactive practice with feedback.")
 explanations of the algorithms used, as described in PK Josephine et.  al.,
 (2021) <doi:10.59176/kjcs.v1i1.1259>; and datasets to test them on, which
 highlight the strengths and weaknesses of each technique.")
+    (license license:expat)))
+
+(define-public r-uahdatascienceo
+  (package
+    (name "r-uahdatascienceo")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UAHDataScienceO" version))
+       (sha256
+        (base32 "0pg797p94q47qln11xkix63g17zz0kyw6qpmk6llnbfm8sdgxnbv"))))
+    (properties `((upstream-name . "UAHDataScienceO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UAHDataScienceO")
+    (synopsis
+     "Educational Outlier Detection Algorithms with Step-by-Step Tutorials")
+    (description
+     "This package provides implementations of some of the most important outlier
+detection algorithms.  Includes a tutorial mode option that shows a description
+of each algorithm and provides a step-by-step execution explanation of how it
+identifies outliers from the given data with the specified input parameters.
+References include the works of Azzedine Boukerche, Lining Zheng, and Omar
+Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
+<doi:10.1016/j.cosrev.2020.100306>, and Xiaogang Su, Chih-Ling Tsai (2011)
+<doi:10.1002/widm.19>.")
     (license license:expat)))
 
 (define-public r-u5mr

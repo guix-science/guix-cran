@@ -2243,13 +2243,13 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
 (define-public r-jointfpm
   (package
     (name "r-jointfpm")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JointFPM" version))
        (sha256
-        (base32 "04wswyp9pibhkmjksn9ndzymgj1sjmdj6wscpw1wj6hwsi6vrdmw"))))
+        (base32 "0ak3si4hzym3v0jkiarjkiq3v9zzgbyhvj99rmvrvy1ax0yl7c2v"))))
     (properties `((upstream-name . "JointFPM")))
     (build-system r-build-system)
     (arguments
@@ -2268,11 +2268,12 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
     (synopsis "Parametric Model for Estimating the Mean Number of Events")
     (description
      "Implementation of a parametric joint model for modelling recurrent and competing
-event processes using generalised survival models.  The joint model can
-subsequently be used to predict the mean number of events in the presence of
-competing risks at different time points.  Comparisons of the mean number of
-event functions, e.g. the differences in mean number of events between two
-exposure groups, are also available.")
+event processes using generalised survival models as described in Entrop et al.,
+(2005) <doi:10.1002/bimj.70038>.  The joint model can subsequently be used to
+predict the mean number of events in the presence of competing risks at
+different time points.  Comparisons of the mean number of event functions, e.g.
+the differences in mean number of events between two exposure groups, are also
+available.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-jointest

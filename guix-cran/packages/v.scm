@@ -2607,13 +2607,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.5.5")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "0pphz6zflf3ym8ldlfklgm5p8a7khmz3ix3hgmm1lj7zxkw0245w"))))
+        (base32 "0hj3byhvm6gs3bibgsqa48p6fcy33j8hqa45jwbbm5skxaan8wk4"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (arguments
@@ -2633,6 +2633,7 @@ Functions in vivaldi primarily operate on vcf files.")
                              r-lifecycle
                              r-igraph
                              r-htmltools
+                             r-glue
                              r-ggwordcloud
                              r-ggrepel
                              r-ggraph
@@ -6047,19 +6048,19 @@ a means to interact with signals, events, and datasets in a Vega chart using
 (define-public r-vegan3d
   (package
     (name "r-vegan3d")
-    (version "1.3-0")
+    (version "1.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vegan3d" version))
        (sha256
-        (base32 "0y8x11551gaal2v4nyd97pwxaw5bqazfqywwrdj4wkp0gidn3hhh"))))
+        (base32 "031cgbixrlaqv6gwyhwxpn0vyr6dgc0lyqwimna4gam8j3qnw4wm"))))
     (properties `((upstream-name . "vegan3d")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vegan r-scatterplot3d r-rgl r-cluster))
+    (propagated-inputs (list r-vegan r-scatterplot3d r-rgl r-lattice r-cluster))
     (home-page "https://cran.r-project.org/")
     (synopsis
      "Static and Dynamic 3D and Editable Interactive Plots for the 'vegan' Package")

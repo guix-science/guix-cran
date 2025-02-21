@@ -4537,13 +4537,13 @@ into a local @code{TiddlyWiki} node.js server if it is available.")
 (define-public r-rticulate
   (package
     (name "r-rticulate")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rticulate" version))
        (sha256
-        (base32 "01y6k877a5d62pmf8bmb9h7qcw2b6d2wdc1c1grsvclqmj2gp0im"))))
+        (base32 "0qd1rhwgm4nkixwrnv2wcki17d4n342iyzd9agyl5pg0p42jfs26"))))
     (properties `((upstream-name . "rticulate")))
     (build-system r-build-system)
     (arguments
@@ -4565,10 +4565,11 @@ into a local @code{TiddlyWiki} node.js server if it is available.")
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stefanocoretta/rticulate")
-    (synopsis "Ultrasound Tongue Imaging")
+    (synopsis "Articulatory Data Processing in R")
     (description
      "This package provides a tool for processing Articulate Assistant Advancedâ¢
-(AAA) export files and plot tongue contour data from any system.")
+(AAA) ultrasound tongue imaging data and Carstens AG500/1 electro-magnetic
+articulographic data.")
     (license license:expat)))
 
 (define-public r-rthingsboard
@@ -15782,13 +15783,13 @@ roxygen comments of another function by inserting inline code.")
 (define-public r-rockx
   (package
     (name "r-rockx")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rockx" version))
        (sha256
-        (base32 "1pgj9qbywssiizbwqim23llcn3c670hbki0g2lqsrpdks17w2qpm"))))
+        (base32 "03d0h5ghhhpppdhnhpgk6jr204wji66lv593pkqnvj2fjvyrz0np"))))
     (properties `((upstream-name . "rockx")))
     (build-system r-build-system)
     (arguments
@@ -17466,6 +17467,38 @@ light curves can be generated using the function @code{tsgen()}.  For more
 details see the corresponding article: Thieler, Fried and Rathjens (2016),
 Journal of Statistical Software 69(9), 1-36, <doi:10.18637/jss.v069.i09>.")
     (license license:gpl3)))
+
+(define-public r-robpc
+  (package
+    (name "r-robpc")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobPC" version))
+       (sha256
+        (base32 "0xpkp6hhprnjhnca180nkhbv1lf8czdvjz276iq5r5xrw4xnnj3v"))))
+    (properties `((upstream-name . "RobPC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-trimcluster))
+    (home-page "https://cran.r-project.org/package=RobPC")
+    (synopsis "Robust Panel Clustering Algorithm")
+    (description
+     "This package performs both classical and robust panel clustering by applying
+Principal Component Analysis (PCA) for dimensionality reduction and clustering
+via standard K-Means or Trimmed K-Means.  The method is designed to ensure
+stable and reliable clustering, even in the presence of outliers.  Suitable for
+analyzing panel data in domains such as economic research, financial
+time-series, healthcare analytics, and social sciences.  The package allows
+users to choose between classical K-Means for standard clustering and Trimmed
+K-Means for robust clustering, making it a flexible tool for various
+applications.  For this package, we have benefited from the studies Rencher
+(2003), Wang and Lu (2021) <DOI:10.25236/AJBM.2021.031018>, Cuesta-Albertos et
+al. (1997) <https://www.jstor.org/stable/2242558?seq=1>.")
+    (license license:gpl2)))
 
 (define-public r-robotstxt
   (package
@@ -19753,13 +19786,13 @@ values for further processing.")
 (define-public r-rmweather
   (package
     (name "r-rmweather")
-    (version "0.2.6")
+    (version "0.2.62")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmweather" version))
        (sha256
-        (base32 "04xa3v5nkffz4b7r3a7il9qy0gmcpv741jvcjbn24z05ks6b17q3"))))
+        (base32 "0s2y0a6fskczxn3v0d2qdlz40nhv0sxmvpiwsw07hpbhn4zgp0zx"))))
     (properties `((upstream-name . "rmweather")))
     (build-system r-build-system)
     (arguments
@@ -23423,13 +23456,13 @@ Foundation grant DMS-2310637.")
 (define-public r-rkorapclient
   (package
     (name "r-rkorapclient")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RKorAPClient" version))
        (sha256
-        (base32 "0g9qryraphgzlxg6cl2xdqkbgcvap0kk1pbwmki6kcpvmrnl4y36"))))
+        (base32 "0zk7sn1kqh963vrjv2hylqgchvl2wph4jns52ik25jm70k1i16rr"))))
     (properties `((upstream-name . "RKorAPClient")))
     (build-system r-build-system)
     (arguments
@@ -23450,7 +23483,7 @@ Foundation grant DMS-2310637.")
                              r-lubridate
                              r-keyring
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-highcharter
                              r-ggplot2
                              r-dplyr
@@ -38963,13 +38996,13 @@ SPC program and gets the results as data frames @code{(redatam_query()},
 (define-public r-redatam
   (package
     (name "r-redatam")
-    (version "2.0.4")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redatam" version))
        (sha256
-        (base32 "1fb6v1vsgnjnzg666njcn5ph3lz6f0cfnvcr2xhia5c0qkj4wpi3"))))
+        (base32 "1l517lns1pkrh2kvh47dky4mfmgkd3zkdm5ddq4dgc8qxyypg0xh"))))
     (properties `((upstream-name . "redatam")))
     (build-system r-build-system)
     (arguments
@@ -38985,9 +39018,9 @@ SPC program and gets the results as data frames @code{(redatam_query()},
     (home-page "https://github.com/litalbarkai/open-redatam")
     (synopsis "Import 'REDATAM' Files")
     (description
-     "Import REDATAM formats into R via the Open REDATAM C++ library
-<https://github.com/litalbarkai/open-redatam> based on De Grande (2016)
-<https://www.jstor.org/stable/24890658>.")
+     "Import REDATAM formats into R via the Open REDATAM C++ library.  The full
+context of this project and details about the implementation are available in
+<doi:10.1017/dap.2025.4> (Open Access).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-redas
