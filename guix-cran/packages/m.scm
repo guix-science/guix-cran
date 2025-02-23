@@ -164,13 +164,13 @@ of this package.")
 (define-public r-myclim
   (package
     (name "r-myclim")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myClim" version))
        (sha256
-        (base32 "1fbld4aarqhg1sjpk9k5lwz4lq9zwgv56m5b565r4rxd13wd2qmv"))))
+        (base32 "0dmlgfyck5jgxk8sc8hhjjm1fh1zfadmf1d31113mrr3cskbhx83"))))
     (properties `((upstream-name . "myClim")))
     (build-system r-build-system)
     (arguments
@@ -3600,13 +3600,13 @@ methods at the masters program of Applied Statistics at University of Ljubljana.
 (define-public r-multitraits
   (package
     (name "r-multitraits")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiTraits" version))
        (sha256
-        (base32 "0dm9cv2d2yb6k1z4swsaxrip3hr9sy18jjgafs9a0cm7xrvhrzsx"))))
+        (base32 "1088m69vqcvnnczcjzvqayxha9flkgqmpbhz3laszfn34zw7whl0"))))
     (properties `((upstream-name . "MultiTraits")))
     (build-system r-build-system)
     (arguments
@@ -13991,13 +13991,13 @@ of out-of-sample \"hat\" or \"leverage\" values, as defined in the paper.")
 (define-public r-moonboot
   (package
     (name "r-moonboot")
-    (version "0.9.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moonboot" version))
        (sha256
-        (base32 "0igcs4jjsvm25lirjdmlzckd18fswld7ihmi55fzlyh6ir6s90b9"))))
+        (base32 "0f06r0y8mngws347ix3afzzk6dxkaclgn4xgh1nlsj04zd2a9lnn"))))
     (properties `((upstream-name . "moonboot")))
     (build-system r-build-system)
     (arguments
@@ -16228,13 +16228,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.29")
+    (version "3.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "1yc83npl11j18k0sl3d4r4vd9gypixzlj3nd2fkhldxg2bcg3qvi"))))
+        (base32 "1s1ynz5x1gk5m370rf5vvpnpmmcccbzdm74jhw39yilz8qk8v6a8"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (arguments
@@ -34901,13 +34901,13 @@ Ecology and Evolution 7, 323-330 <doi:10.1111/2041-210X.12472>.")
 (define-public r-metage
   (package
     (name "r-metage")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaGE" version))
        (sha256
-        (base32 "0phs9scfdb4n3rfb5lpqzzj4swfvlyr2anw8pbh61dy4lmw9yj4x"))))
+        (base32 "0kpviym3sfz005xq4mrrfrak07wpl6cm48m7xn2gyf1kl5jqx1c7"))))
     (properties `((upstream-name . "metaGE")))
     (build-system r-build-system)
     (arguments
@@ -34942,8 +34942,8 @@ the data to the manhattan plot.  The procedure accounts for the potential
 correlation between studies.  In addition to the Fixed and Random models, one
 can investigate the relationship between QTL effects and some qualitative or
 quantitative covariate via the test of contrast and the meta-regression,
-respectively.  The methodology is available from: (De Walsche, A., et al. (2023)
-\\doi{10.1101/2023.03.01.530237}).")
+respectively.  The methodology is available from: (De Walsche, A., et al. (2025)
+\\doi{10.1371/journal.pgen.1011553}).")
     (license license:gpl3)))
 
 (define-public r-metagam
@@ -50271,13 +50271,13 @@ and Signorovitch et al. (2012) <doi:10.1016/j.jval.2012.05.004>.")
 (define-public r-maicplus
   (package
     (name "r-maicplus")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maicplus" version))
        (sha256
-        (base32 "0qcfpr78gj625svgndclkyy2l482fr57jn8pcnx8n015jvib8mya"))))
+        (base32 "1kg77i4mcawfjpiq2kwiwajy1qrzc2m1m0dr3gs6f5jsmlj32pqk"))))
     (properties `((upstream-name . "maicplus")))
     (build-system r-build-system)
     (arguments
@@ -50286,10 +50286,10 @@ and Signorovitch et al. (2012) <doi:10.1016/j.jval.2012.05.004>.")
     (propagated-inputs (list r-survival
                              r-stringr
                              r-sandwich
+                             r-matrixstats
                              r-mass
                              r-lubridate
                              r-lmtest
-                             r-desctools
                              r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/hta-pharma/maicplus/")

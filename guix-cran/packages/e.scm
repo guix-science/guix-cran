@@ -5148,13 +5148,13 @@ moderately sized data sets.")
 (define-public r-eventtrack
   (package
     (name "r-eventtrack")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventTrack" version))
        (sha256
-        (base32 "095xmsb0q32bk52q2130766irbcggbrvcliklaar3qg8v7p3dl4g"))))
+        (base32 "1g2zspjh4nmw3a69sb071447b39dadkmnz93nyylp3xrgfpjqxv8"))))
     (properties `((upstream-name . "eventTrack")))
     (build-system r-build-system)
     (arguments
@@ -7630,13 +7630,13 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
 (define-public r-esquisse
   (package
     (name "r-esquisse")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esquisse" version))
        (sha256
-        (base32 "1j01vvkjy3l948yw908yh3phdqpb6lmrykxvz52ynx3qk7y66nk2"))))
+        (base32 "0q7015wkj1scg3j09284v5f176czvghn16myb6hkf7w9zw3794lq"))))
     (properties `((upstream-name . "esquisse")))
     (build-system r-build-system)
     (arguments
@@ -7656,7 +7656,8 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-shinywidgets
+    (propagated-inputs (list r-zip
+                             r-shinywidgets
                              r-shinybusy
                              r-shiny
                              r-scales
@@ -8158,13 +8159,13 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
 (define-public r-esci
   (package
     (name "r-esci")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esci" version))
        (sha256
-        (base32 "1cz5kc4m9lvnjk18g0x79xlz62h56j9sy05r5a77rf2f7ll297vv"))))
+        (base32 "15zj5jlnbgylfj9vbv3n8828zy0llwxkb0mlmnc44ks1lh4p4a2a"))))
     (properties `((upstream-name . "esci")))
     (build-system r-build-system)
     (arguments

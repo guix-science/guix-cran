@@ -17428,13 +17428,13 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanoparquet
   (package
     (name "r-nanoparquet")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanoparquet" version))
        (sha256
-        (base32 "0y9ygs8r39gzrga5361rlhw3gb5qd9c7mi1bxdfaansa4f99l8p8"))))
+        (base32 "01jk8h7xkki53lyb8ja5vn5ipbaf4r0h35n14i7gm28al5hipvkq"))))
     (properties `((upstream-name . "nanoparquet")))
     (build-system r-build-system)
     (arguments

@@ -2884,13 +2884,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTLEMM" version))
        (sha256
-        (base32 "1w2h094ihvfybaq7gr9l0x6b1d81yvf921rki1bz263jbc9x57h3"))))
+        (base32 "0vzn6lx1gg9sfbsvyf5zr40h2n1ccic1zpkwfmx7rxjzzdnsa4pk"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (arguments
@@ -4624,6 +4624,39 @@ calculation of delta delta Ct and relative expression (2^(-1*delta delta Ct))
 values are described in: Livak & Schmittgen, (2001)
 <doi:10.1006/meth.2001.1262>.")
     (license license:gpl3)))
+
+(define-public r-qountstat
+  (package
+    (name "r-qountstat")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qountstat" version))
+       (sha256
+        (base32 "19dmn45q0db2g4kcwdwhnlvxpp8q8i8bfzsdi6lly4hm672ki13y"))))
+    (properties `((upstream-name . "qountstat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-multcomp))
+    (home-page "https://cran.r-project.org/package=qountstat")
+    (synopsis "Statistical Analysis of Count Data and Quantal Data")
+    (description
+     "This package provides methods for statistical analysis of count data and quantal
+data.  For the analysis of count data an implementation of the Closure Principle
+Computational Approach Test (\"CPCAT\") is provided (Lehmann, R et al. (2016)
+<doi:10.1007/s00477-015-1079-4>), as well as an implementation of a \"Dunnett
+GLM\" approach using a Quasi-Poisson regression (Hothorn, L, Kluxen, F (2020)
+<doi:10.1101/2020.01.15.907881>).  For the analysis of quantal data an
+implementation of the Closure Principle FisherâFreemanâHalton test
+(\"CPFISH\") is provided (Lehmann, R et al. (2018)
+<doi:10.1007/s00477-017-1392-1>).  P-values and no/lowest observed (adverse)
+effect concentration values are calculated.  All implemented methods include
+further functions to evaluate the power and the minimum detectable difference
+using a bootstrapping approach.")
+    (license license:expat)))
 
 (define-public r-qolmiss
   (package

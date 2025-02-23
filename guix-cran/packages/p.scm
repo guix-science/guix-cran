@@ -21529,26 +21529,19 @@ the High Performance Statistical Computing website
 (define-public r-pmcalibration
   (package
     (name "r-pmcalibration")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmcalibration" version))
        (sha256
-        (base32 "1zhg55jdf8jd92216waa2g18mvni8qh6j2idgf77k6mcwb63m9zw"))))
+        (base32 "1k4svrj13bx5zryvyrscxi3hbi40bk6b0k7grflap5vsdgv84w7n"))))
     (properties `((upstream-name . "pmcalibration")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
-                             r-pbapply
-                             r-mgcv
-                             r-mass
-                             r-hmisc
-                             r-chk
-                             r-checkmate))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-survival r-pbapply r-mgcv r-mass r-hmisc))
     (home-page "https://github.com/stephenrho/pmcalibration")
     (synopsis "Calibration Curves for Clinical Prediction Models")
     (description
@@ -27857,13 +27850,13 @@ of classical multidimensional scaling to multiple distance matrices.")
 (define-public r-phylotypr
   (package
     (name "r-phylotypr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylotypr" version))
        (sha256
-        (base32 "1p7k7qw89ihwzpkdvr5zcrrbj6j3n7vclch1miggs7mwb92apabq"))))
+        (base32 "14d1y30cgfkmip0v29y1bn87q7b8dbq57z1pd31rkqhk4p1wlzdq"))))
     (properties `((upstream-name . "phylotypr")))
     (build-system r-build-system)
     (arguments
@@ -27882,7 +27875,7 @@ used for any type of gene sequence.  The method was originally described by
 Wang, Garrity, Tiedje, and Cole in Applied and Environmental Microbiology
 73(16):5261-7 <doi:10.1128/AEM.00062-07>.  The package also provides functions
 to read in FASTA'-formatted sequence data.")
-    (license license:expat)))
+    (license license:gpl3)))
 
 (define-public r-phylotop
   (package

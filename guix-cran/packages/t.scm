@@ -6856,13 +6856,13 @@ a method you would like implemented, please get in touch.")
 (define-public r-trialemulation
   (package
     (name "r-trialemulation")
-    (version "0.0.4.0")
+    (version "0.0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialEmulation" version))
        (sha256
-        (base32 "1dd7gzi4lqbcfpv3q0am2pvlj8d64j9rxpi1lh1hi2pyd6xaqlmm"))))
+        (base32 "12w650aiv5vgp1ggq0nv7ha6g83dagq1g71jc6fyjk231r1s8ly7"))))
     (properties `((upstream-name . "TrialEmulation")))
     (build-system r-build-system)
     (arguments
@@ -8878,6 +8878,53 @@ distance.  Time-based searching gives users more opportunities for
 personalisation and delivers a more relevant search.")
     (license license:expat)))
 
+(define-public r-traumar
+  (package
+    (name "r-traumar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "traumar" version))
+       (sha256
+        (base32 "1dnyw5710wb8zzp1y1cbl64xvvp48qdvxzzf7cgn0hv0vpc4p9cp"))))
+    (properties `((upstream-name . "traumar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-lifecycle
+                             r-infer
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://bemts-hhs.github.io/traumar/")
+    (synopsis "Calculate Metrics for Trauma System Performance")
+    (description
+     "Hospitals, hospital systems, and even trauma systems that provide care to
+injured patients may not be aware of robust metrics that can help gauge the
+efficacy of their programs in saving the lives of injured patients.  traumar
+provides robust functions driven by the academic literature to automate the
+calculation of relevant metrics to individuals desiring to measure the
+performance of their trauma center or even a trauma system.  traumar also
+provides some helper functions for the data analysis journey.  Users can refer
+to the following publications for descriptions of the methods used in traumar'.
+TRISS methodology, including probability of survival, and the W, M, and Z Scores
+- Flora (1978) <doi:10.1097/00005373-197810000-00003>, Boyd et al. (1987,
+PMID:3106646), Llullaku et al. (2009) <doi:10.1186/1749-7922-4-2>, Singh et al.
+(2011) <doi:10.4103/0974-2700.86626>, Baker et al. (1974, PMID:4814394), and
+Champion et al. (1989) <doi:10.1097/00005373-198905000-00017>.  For the Relative
+Mortality Metric, see Napoli et al. (2017) <doi:10.1080/24725579.2017.1325948>,
+Schroeder et al. (2019) <doi:10.1080/10903127.2018.1489021>, and Kassar et al.
+(2016) <doi:10.1177/00031348221093563>.")
+    (license license:expat)))
+
 (define-public r-traudem
   (package
     (name "r-traudem")
@@ -10338,6 +10385,47 @@ training a neural network, select the most appropriate model and predict the
 traffic speed or the car entries for a selected time date.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-trading
+  (package
+    (name "r-trading")
+    (version "3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Trading" version))
+       (sha256
+        (base32 "01s1da5bramqacrqlly3gql6c8pvnd568lrpzhc13igmjwy3hs0f"))))
+    (properties `((upstream-name . "Trading")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate
+                             r-readxl
+                             r-rcppalgos
+                             r-performanceanalytics
+                             r-ggplot2
+                             r-data-table))
+    (home-page "https://openriskcalculator.com/")
+    (synopsis
+     "Trade Objects, Advanced Correlation & Beta Estimates, Betting Strategies")
+    (description
+     "This package contains performance analysis metrics of track records including
+entropy-based correlation and dynamic beta based on a state/space algorithm.
+The normalized sample entropy method has been implemented which produces
+accurate entropy estimation even on smaller datasets.  On a separate stream,
+trades from the five major assets classes and also functionality to use pricing
+curves, rating tables, Credit Support Annex and add-on tables.  The
+implementation follows an object oriented logic whereby each trade inherits from
+more abstract classes while also the curves/tables are objects.  Furthermore,
+odds calculators and P&L back-testing functionality has been implemented for the
+most widely used betting/trading strategies including martingale, DAlembert',
+Labouchere and Fibonacci.  Back testing has also been included for the
+@code{EuroMillions}', the @code{EuroJackpot}', the UK Lotto, the Set For Life
+and the UK @code{ThunderBall} lotteries.  Furthermore, some basic functionality
+about climate risk has been included.")
+    (license license:gpl3)))
 
 (define-public r-tradestatistics
   (package
@@ -30744,47 +30832,6 @@ other table-like objects.  A vignette is included that illustrates usage and
 options available in the package.")
     (license license:gpl3+)))
 
-(define-public r-tableschema-r
-  (package
-    (name "r-tableschema-r")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tableschema.r" version))
-       (sha256
-        (base32 "1lnl1xybwzg00hqksbj2g6r1hrzwlh2al08hhml0n42khmvpg05g"))))
-    (properties `((upstream-name . "tableschema.r")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-urltools
-                             r-stringr
-                             r-rlist
-                             r-rcurl
-                             r-r6
-                             r-purrr
-                             r-lubridate
-                             r-jsonvalidate
-                             r-jsonlite
-                             r-httr
-                             r-future
-                             r-config))
-    (home-page "https://github.com/frictionlessdata/tableschema-r")
-    (synopsis "Table Schema 'Frictionless Data'")
-    (description
-     "Allows to work with Table Schema
-(<https://specs.frictionlessdata.io/table-schema/>).  Table Schema is well
-suited for use cases around handling and validating tabular data in text formats
-such as csv', but its utility extends well beyond this core usage, towards a
-range of applications where data benefits from a portable schema format.  The
-tableschema.r package can load and validate any table schema descriptor, allow
-the creation and modification of descriptors, expose methods for reading and
-streaming data that conforms to a Table Schema via the Tabular Data Resource
-abstraction.")
-    (license license:expat)))
-
 (define-public r-tables
   (package
     (name "r-tables")
@@ -31277,6 +31324,31 @@ addition, users will have the option to use the partial, semipartial, and
 generalized partial correlations; where the partial and semipartial correlations
 use linear, logistic, or Poisson regression to modify the specified variable.")
     (license license:gpl3)))
+
+(define-public r-tab2xml
+  (package
+    (name "r-tab2xml")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tab2xml" version))
+       (sha256
+        (base32 "00d5rjj1hl3wj4qzk4b7ygpdmn7jc9a8jkrrj79b3g5z5p5l7ybq"))))
+    (properties `((upstream-name . "tab2xml")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-readxl r-readods))
+    (native-inputs (list r-knitr))
+    (home-page "https://josesamos.github.io/tab2xml/")
+    (synopsis "XML Generation from Tables")
+    (description
+     "Converting structured data from tables into XML format using predefined
+templates ensures consistency and flexibility, making it ideal for data
+exchange, reporting, and automated workflows.")
+    (license license:expat)))
 
 (define-public r-t4transport
   (package

@@ -2972,13 +2972,13 @@ and Rice, Wirjanto, and Zhao (2020) <doi:10.1111/jtsa.12532>.")
 (define-public r-ftsa
   (package
     (name "r-ftsa")
-    (version "6.5")
+    (version "6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ftsa" version))
        (sha256
-        (base32 "0ljs77an344rp0m8hmxf9kf6z5dqva9da3j42v8kld1vaqr885vs"))))
+        (base32 "1d0s5w14n2vc6md8c2zy0028ai48m9xssnjvw79ikr36xqnbj34a"))))
     (properties `((upstream-name . "ftsa")))
     (build-system r-build-system)
     (arguments
@@ -12516,13 +12516,13 @@ Fisher-Scoring algorithm.  Overall the estimation relies on the mgcv'-package.")
 (define-public r-flexfitr
   (package
     (name "r-flexfitr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexFitR" version))
        (sha256
-        (base32 "0rwrqxf35kpg8sjj6iisxcb4brq6g4vy7plga7ddgyld9l863na8"))))
+        (base32 "1b0rz9wf9k62x52hjay810f6xic3f0kgsyj2307nbhjpn86i8cry"))))
     (properties `((upstream-name . "flexFitR")))
     (build-system r-build-system)
     (arguments
@@ -17666,6 +17666,38 @@ maxima modelling, (v) estimation of @code{VaR} and C@code{VaR}, and (vi) the
 computation of the extreme index.")
     (license license:gpl2+)))
 
+(define-public r-fetwfe
+  (package
+    (name "r-fetwfe")
+    (version "0.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fetwfe" version))
+       (sha256
+        (base32 "0f9yjlwpra1cb2dz7hbhcjd722683aq906ngbxbrcgk49vzap2n6"))))
+    (properties `((upstream-name . "fetwfe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-grpreg r-glmnet r-expm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fetwfe")
+    (synopsis "Fused Extended Two-Way Fixed Effects")
+    (description
+     "Calculates the fused extended two-way fixed effects (FETWFE) estimator for
+unbiased and efficient estimation of difference-in-differences in panel data
+with staggered treatment adoption.  This estimator eliminates bias inherent in
+conventional two-way fixed effects estimators, while also employing a novel
+bridge regression regularization approach to improve efficiency and yield valid
+standard errors.  Provides flexible tuning parameters (including user-specified
+or data-driven choices for penalty parameters), detailed output including
+overall and cohort-specific treatment effects with confidence intervals, and
+extensive diagnostic tools.  See details in Faletto (2024)
+(<doi:10.48550/@code{arXiv.2312.05985>}).")
+    (license license:expat)))
+
 (define-public r-fetchsalesforcer
   (package
     (name "r-fetchsalesforcer")
@@ -21942,13 +21974,13 @@ available from <https://github.com/randy408/libspng/>.")
 (define-public r-fastplyr
   (package
     (name "r-fastplyr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastplyr" version))
        (sha256
-        (base32 "010hqjif0h9yvjfy65riqxliv87kxwld8zw5y028bgirxawlkchn"))))
+        (base32 "1z6idh1djqab3ljyhjsqvlwm41z7nl4q1gxkch398phsfvnr88h1"))))
     (properties `((upstream-name . "fastplyr")))
     (build-system r-build-system)
     (arguments

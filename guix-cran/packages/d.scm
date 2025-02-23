@@ -9738,6 +9738,46 @@ stationarity, homogeneity and reversibility for the Markov processes, and often
 impose further restrictions on the parameters.")
     (license license:gpl2)))
 
+(define-public r-dnapath
+  (package
+    (name "r-dnapath")
+    (version "0.7.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dnapath" version))
+       (sha256
+        (base32 "1da219hpvk715p50m5rw3ziny3lm2iwyqvfn7s0xlz0s9qcg43zc"))))
+    (properties `((upstream-name . "dnapath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wcorr
+                             r-tibble
+                             r-seqnet
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-igraph
+                             r-gtools
+                             r-ggplot2
+                             r-dplyr
+                             r-curl
+                             r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dnapath")
+    (synopsis "Differential Network Analysis using Gene Pathways")
+    (description
+     "Integrates pathway information into the differential network analysis of two
+gene expression datasets as described in Grimes, Potter, and Datta (2019)
+<doi:10.1038/s41598-019-41918-3>.  Provides summary functions to break down the
+results at the pathway, gene, or individual connection level.  The differential
+networks for each pathway of interest can be plotted, and the visualization will
+highlight any differentially expressed genes and all of the gene-gene
+associations that are significantly differentially connected.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-dnamotif
   (package
     (name "r-dnamotif")
@@ -22128,13 +22168,13 @@ Bonou, R. Glele KakaÃ¯, A.E. Assogbadjo, H.N. Fonton, B. Sinsin (2009)
 (define-public r-dendrometer
   (package
     (name "r-dendrometer")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendrometeR" version))
        (sha256
-        (base32 "1lnnra7hnaxdpck2nkdg30ywq4k9wjv6h1zbkqmm369pw21n3x2b"))))
+        (base32 "1a146h5x1gnlwby1rig45qjg5fmsar7fx0w9zkbgpzajqqxiq74i"))))
     (properties `((upstream-name . "dendrometeR")))
     (build-system r-build-system)
     (arguments

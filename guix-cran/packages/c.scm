@@ -3600,13 +3600,13 @@ al. (2017) <@code{arXiv:1706.10029>}).")
 (define-public r-ctmed
   (package
     (name "r-ctmed")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cTMed" version))
        (sha256
-        (base32 "0zgqski2pbj3w0px398w52xnbhy1ns4xcl07dfpmmzvfxl703m87"))))
+        (base32 "17cdmaygdqc0y7vrbv5ydb696gj2w0ls3pbj3ypwhbpz8m7zys7c"))))
     (properties `((upstream-name . "cTMed")))
     (build-system r-build-system)
     (arguments
@@ -9921,13 +9921,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.1-6")
+    (version "1.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "1kwi5bvzppsls97wsqpl7q6rzycdhp31bdq6bcisqybplp4zryj4"))))
+        (base32 "1z67s3jhjsb6fna1ra72jh1d02qjpf80k4c2h5yq5f21z7s3311d"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (arguments
@@ -12197,13 +12197,13 @@ models as in the article Faddy and Smith (2011) <doi:10.18637/jss.v069.i06> .")
 (define-public r-countries
   (package
     (name "r-countries")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countries" version))
        (sha256
-        (base32 "15fpw101jiw0fx2jl0ak0bq7dsy6w1iw7mvn72s24ycb3fnpwfz5"))))
+        (base32 "1725inz8syg2smcw224bn6kayy3p7icj44wyywy50rbvcaq9654q"))))
     (properties `((upstream-name . "countries")))
     (build-system r-build-system)
     (arguments
@@ -36327,6 +36327,42 @@ subdivision of a country.  This package was created for use with the choroplethr
 package.")
     (license license:bsd-3)))
 
+(define-public r-chores
+  (package
+    (name "r-chores")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chores" version))
+       (sha256
+        (base32 "0rbgybg3ck479pxn2xxnv80p2anq2m4rf52id43gflsc5id50kx5"))))
+    (properties `((upstream-name . "chores")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-streamy
+                             r-shiny
+                             r-rstudioapi
+                             r-rlang
+                             r-miniui
+                             r-glue
+                             r-ellmer
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/simonpcouch/chores")
+    (synopsis "Collection of Large Language Model Assistants")
+    (description
+     "This package provides a collection of ergonomic large language model assistants
+designed to help you complete repetitive, hard-to-automate tasks quickly.  After
+selecting some code, press the keyboard shortcut you've chosen to trigger the
+package app, select an assistant, and watch your chore be carried out.  While
+the package ships with a number of chore helpers for R package development,
+users can create custom helpers just by writing some instructions in a markdown
+file.")
+    (license license:expat)))
+
 (define-public r-chords
   (package
     (name "r-chords")
@@ -39844,13 +39880,13 @@ insight.  Web interface for USGS API can be found at
 (define-public r-cfr
   (package
     (name "r-cfr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfr" version))
        (sha256
-        (base32 "0sgjdapsiqn436xswl06p3m84j9z1savbyibxqzs2zc9x3imjfqr"))))
+        (base32 "0jl0afd8n6q5yyr15lcx3v0679kifzm9v81kgg7s1cl094f8x96r"))))
     (properties `((upstream-name . "cfr")))
     (build-system r-build-system)
     (arguments
@@ -42499,13 +42535,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.7.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "18c5cqg47s2kql8i0p9p3ajvcsmq6bka5pr7yhy0krsl1c7y4267"))))
+        (base32 "15aj7fzxl10b4rr913qdn3jp16p994gdjx00wblgsskkzgvg08n6"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (arguments
@@ -44589,13 +44625,13 @@ effects.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "1la4rraghc057grls4mjfk3ys8a3fhmw3i9i2xck142q9kwv6df2"))))
+        (base32 "1jdmsy970bx2qv8bmvkvn9dpiny77rf0r0pw1rz8hg8bnxd07l0f"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (arguments

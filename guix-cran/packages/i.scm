@@ -14638,6 +14638,30 @@ iteratively.  More details can be referred to Huazhen Lin, Wei Liu and Wei Lan.
 (2021) <doi:10.1080/07350015.2019.1635486>.")
     (license license:gpl3)))
 
+(define-public r-ilsastats
+  (package
+    (name "r-ilsastats")
+    (version "0.3.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ILSAstats" version))
+       (sha256
+        (base32 "14ffa10hhlbf8xxdwm0sr9z77bc8lb20ig1g9c6qj7rjxf5c8gy4"))))
+    (properties `((upstream-name . "ILSAstats")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ILSAstats")
+    (synopsis "Statistics for International Large-Scale Assessments (ILSA)")
+    (description
+     "Calculates point estimates and standard errors using replicate weights and
+plausible values for International Large-Scale Assessments (ILSA), including:
+means, proportions, quantiles, correlations, singlelevel regressions, and
+multilevel regressions.")
+    (license license:gpl3+)))
+
 (define-public r-ilsamerge
   (package
     (name "r-ilsamerge")

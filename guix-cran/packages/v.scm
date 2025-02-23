@@ -1938,13 +1938,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "16m92kc3y02c2gdxmzc43gcdv6yk2x4zbxw9iqjwwnnwcp0diids"))))
+        (base32 "1yyzjsfbyldfym5k96pxi4sypn3am1lq2d0pd6rafp0ldyjffgb6"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (arguments
@@ -4409,6 +4409,46 @@ regression models which select the important variables (i.e., the variables
 related to response variables) among the given explanatory variables in
 different ways (i.e., model structures).")
     (license license:expat)))
+
+(define-public r-vigicaen
+  (package
+    (name "r-vigicaen")
+    (version "0.15.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vigicaen" version))
+       (sha256
+        (base32 "0kswaaal774j502crccsp7hzh8cjbrxcv4cykll5vjz9944wr4fd"))))
+    (properties `((upstream-name . "vigicaen")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-lifecycle
+                             r-gridextra
+                             r-ggplot2
+                             r-fst
+                             r-dplyr
+                             r-data-table
+                             r-cli
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pharmacologie-caen/vigicaen")
+    (synopsis "'VigiBase' Pharmacovigilance Database Toolbox")
+    (description
+     "Perform the analysis of the World Health Organization (WHO) Pharmacovigilance
+database @code{VigiBase} (Extract Case Level version), <https://who-umc.org/>
+e.g., load data, perform data management, disproportionality analysis, and
+descriptive statistics.  Intended for pharmacovigilance routine use or studies.
+This package is NOT supported nor reflect the opinion of the WHO, or the Uppsala
+Monitoring Centre.  Disproportionality methods are described by NorÃ©n et al
+(2013) <doi:10.1177/0962280211403604>.")
+    (license (license:fsdg-compatible "CeCILL-2.1"))))
 
 (define-public r-viewscape
   (package

@@ -2973,13 +2973,13 @@ then to a composition of integers as suggested by Kuipers, J. and Moffa, G.
 (define-public r-uniexactfuntest
   (package
     (name "r-uniexactfuntest")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UniExactFunTest" version))
        (sha256
-        (base32 "03gnn36m735kycac526qrz5rkjhqcw9dp77x71z6qryy7i718qwv"))))
+        (base32 "00416fnqsyq7qzhafw5g2h77wliz657a76vdik1il0qnj7s6hynk"))))
     (properties `((upstream-name . "UniExactFunTest")))
     (build-system r-build-system)
     (arguments

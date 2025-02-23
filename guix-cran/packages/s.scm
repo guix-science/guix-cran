@@ -9507,13 +9507,13 @@ work by Zou et al (2022) <doi:10.1161/STROKEAHA.121.037744>.  The
 (define-public r-strmps
   (package
     (name "r-strmps")
-    (version "0.5.8")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "STRMPS" version))
        (sha256
-        (base32 "0vlmhrna0laqzjpbg4sgnscrli3cly2lc5d69n6iqfl213zsfz78"))))
+        (base32 "0114m1qbs866ghpms4iijmf7dx66dazzdv7j8mcx7lizzc80ws2d"))))
     (properties `((upstream-name . "STRMPS")))
     (build-system r-build-system)
     (arguments
@@ -9523,24 +9523,23 @@ work by Zou et al (2022) <doi:10.1161/STROKEAHA.121.037744>.  The
                              r-tibble
                              r-stringr
                              r-shortread
+                             r-pwalign
                              r-purrr
                              r-iranges
                              r-dplyr
                              r-biostrings))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=STRMPS")
     (synopsis
      "Analysis of Short Tandem Repeat (STR) Massively Parallel Sequencing (MPS) Data")
     (description
      "Loading, identifying, aggregating, manipulating, and analysing short tandem
-repeat regions of massively parallel sequencing data in forensic genetics.
-STRMPS can work with the package ST@code{RaitRazoR} (an R interface to the
-ST@code{RaitRazor} commandline tool) for added speed.  ST@code{RaitRazoR} only
-works on linux and can found at <https://github.com/svilsen/ST@code{RaitRazoR>}.
- The analyses and framework implemented in this package relies on the papers of
+repeat regions of massively parallel sequencing data in forensic genetics.  The
+analyses and framework implemented in this package relies on the papers of
 Vilsen et al. (2017) <doi:10.1016/j.fsigen.2017.01.017> and Vilsen et al. (2018)
-<doi:10.1016/j.fsigen.2018.04.003>.  Lastly, note that the parallelisation in
-the package relies on @code{mclapply()} and, thus, speed-ups will only be seen
-on UNIX based systems.")
+<doi:10.1016/j.fsigen.2018.04.003>.  Note: that the parallelisation in the
+package relies on @code{mclapply()} and, thus, speed-ups will only be seen on
+UNIX based systems.")
     (license license:expat)))
 
 (define-public r-stripless
@@ -13313,6 +13312,40 @@ with forward stagewise/forward stepwise variable selection procedure.")
 forward variable selection algorithm based on a penalized likelihood criterion
 that combines the L0 with L2 or L1 norms.")
     (license license:gpl2)))
+
+(define-public r-steppedwedge
+  (package
+    (name "r-steppedwedge")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "steppedwedge" version))
+       (sha256
+        (base32 "17x1wjy5q85zipq2yiscxhxlin3hv3cx7ba68qc9hxh3c1basb66"))))
+    (properties `((upstream-name . "steppedwedge")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-performance
+                             r-magrittr
+                             r-lme4
+                             r-ggplot2
+                             r-geepack
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://avi-kenny.github.io/steppedwedge/")
+    (synopsis "Analyze Data from Stepped Wedge Cluster Randomized Trials")
+    (description
+     "Provide various functions and tools to help fit models for estimating treatment
+effects in stepped wedge cluster randomized trials.  Implements methods
+described in Kenny, Voldal, Xia, and Heagerty (2022) \"Analysis of stepped wedge
+cluster randomized trials in the presence of a time-varying treatment effect\",
+<doi:10.1002/sim.9511>.")
+    (license license:gpl3)))
 
 (define-public r-steppedpower
   (package
@@ -24245,13 +24278,13 @@ and accuracy rate (for classification problems).")
 (define-public r-spfilter
   (package
     (name "r-spfilter")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spfilteR" version))
        (sha256
-        (base32 "108z39bw70zgmm2d92x4xhbl0fayfv2yiljpfqdj3wy9qcyadmpl"))))
+        (base32 "0xp0icysf4xqp3wjrckhccnianfy1h6namgg0ciz7g28jqq43vz1"))))
     (properties `((upstream-name . "spfilteR")))
     (build-system r-build-system)
     (arguments
@@ -47391,13 +47424,13 @@ applicability.  And deploy as a part of a package or an independent app.")
 (define-public r-shinywidgets
   (package
     (name "r-shinywidgets")
-    (version "0.8.7")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyWidgets" version))
        (sha256
-        (base32 "08kpf98spkyx7vq9jk5g3wnhdhzfmkkzq04p8gv44hjw2b2v9m5d"))))
+        (base32 "1m6nbi3j9das9y1cafhyl4ypz8nlc88mb5z3n3wxvmxq3lswx6s1"))))
     (properties `((upstream-name . "shinyWidgets")))
     (build-system r-build-system)
     (arguments
@@ -67872,19 +67905,19 @@ PDF', HTML', and DOCX file formats.")
 (define-public r-sasr
   (package
     (name "r-sasr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sasr" version))
        (sha256
-        (base32 "1cpmfclxphk5s3nr1znricm195j9xix5pw8jkyq3hhg0h7xirzi7"))))
+        (base32 "0vkfcs0j3f15f8grbz25z8dvd0hriwqmgy4cs2s81d8spv47gg97"))))
     (properties `((upstream-name . "sasr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reticulate r-checkmate))
+    (propagated-inputs (list r-reticulate r-lifecycle r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/insightsengineering/sasr/")
     (synopsis "'SAS' Interface")
@@ -69709,13 +69742,13 @@ rows on a modern desktop computer.")
 (define-public r-samplezoo
   (package
     (name "r-samplezoo")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samplezoo" version))
        (sha256
-        (base32 "1m0sqvsv1ncgjfd9lbi6vy7ynzifk5rrmfxm08jij6w1p3xwg305"))))
+        (base32 "1zkhn5gd8b5xyiy1gasrhdxf3whi66iz6sq2gd6l2s821qf3cixn"))))
     (properties `((upstream-name . "samplezoo")))
     (build-system r-build-system)
     (arguments

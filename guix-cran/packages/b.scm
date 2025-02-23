@@ -6075,13 +6075,13 @@ found in D'Angelo and Canale (2023) <doi:10.1080/10618600.2022.2123337>.")
 (define-public r-bpp
   (package
     (name "r-bpp")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpp" version))
        (sha256
-        (base32 "07vz00y9m71n3a847jpviwyy0zb59402yyklsfmyxmggjivpjshi"))))
+        (base32 "0b7aypcn5cd9i476sk333nb1pgx21r50f4y98z2nnz1lb6aaqh0d"))))
     (properties `((upstream-name . "bpp")))
     (build-system r-build-system)
     (arguments
@@ -10225,6 +10225,34 @@ analyzing them with a Bayesian model averaging approach.")
 refining procedure proposed by George Casella (1986) <doi:10.2307/3314658>.")
     (license license:gpl3)))
 
+(define-public r-bluecarbon
+  (package
+    (name "r-bluecarbon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BlueCarbon" version))
+       (sha256
+        (base32 "0jq0n3143b0dgfr7a3lnvyi8pbiidmccp2hw4p4zzk0fw03m878m"))))
+    (properties `((upstream-name . "BlueCarbon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape r-gridextra r-ggplot2 r-dplyr))
+    (home-page "https://github.com/EcologyR/BlueCarbon")
+    (synopsis
+     "Estimation of Organic Carbon Stocks and Sequestration Rates from Soil Core Data")
+    (description
+     "This package provides tools to estimate soil organic carbon stocks and
+sequestration rates in blue carbon ecosystems. @code{BlueCarbon} contains
+functions to estimate and correct for core compaction, estimate sample
+thickness, estimate organic carbon content from organic matter content, estimate
+organic carbon stocks and sequestration rates, and visualize the error of carbon
+stock extrapolation.")
+    (license license:gpl3+)))
+
 (define-public r-bluebike
   (package
     (name "r-bluebike")
@@ -12571,13 +12599,13 @@ the approximation.")
 (define-public r-bispdep
   (package
     (name "r-bispdep")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bispdep" version))
        (sha256
-        (base32 "1bcqj50snjzvggii3kd69wc0kqfldb6fc3w8nxwb1v828hml6b83"))))
+        (base32 "1d8law4ghs5blbcqrwi5wlgdn1a2dhm160wkmj66p4n1vs5d994w"))))
     (properties `((upstream-name . "bispdep")))
     (build-system r-build-system)
     (arguments
@@ -24973,13 +25001,13 @@ tool including JAGS', BUGS', MCMCpack', and Stan'.")
 (define-public r-bayespop
   (package
     (name "r-bayespop")
-    (version "10.0-1")
+    (version "11.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesPop" version))
        (sha256
-        (base32 "0jzxsqnrzvhz85wravjxbjwf6panwmylqgz99b0zknvgbf0vx6zh"))))
+        (base32 "1i35fy02in69rr2l700kjcxpfz31ira6w028a94n1da61ff21i3a"))))
     (properties `((upstream-name . "bayesPop")))
     (build-system r-build-system)
     (arguments
@@ -27653,13 +27681,13 @@ meta-analysis.")
 (define-public r-bayeschange
   (package
     (name "r-bayeschange")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesChange" version))
        (sha256
-        (base32 "1d2s8y0ns6s5dijg70v2njbibziz8bh0wj8vy140p865vzjzvnkh"))))
+        (base32 "197ikwlw15fl2bawy6i2d911bbmbgb9ibcv0mnd3baddhwd7mpa8"))))
     (properties `((upstream-name . "BayesChange")))
     (build-system r-build-system)
     (arguments

@@ -946,13 +946,13 @@ Tsay (2024), working paper, Universidad Carlos III de Madrid.")
 (define-public r-outlierensembles
   (package
     (name "r-outlierensembles")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outlierensembles" version))
        (sha256
-        (base32 "0m2iaf3rbpwvyrjz6qglbrinmz676hnbqqm6vc38zb3k3cjcllaq"))))
+        (base32 "1yfmqaxqcaabqbqhsnlcli0km5xj4cs3lb3c6vw8idvziyi2qq5q"))))
     (properties `((upstream-name . "outlierensembles")))
     (build-system r-build-system)
     (arguments

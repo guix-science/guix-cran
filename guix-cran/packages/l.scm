@@ -504,13 +504,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "0.9.26")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "0k443q3xr98y6wkz2b81d156swv1v9w6ms8gxbjsrzig4ggx31p4"))))
+        (base32 "00wmkzkr70cd8imy0vabqnx83ssfcgaw6743m3xcbqf4w4vsam19"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (arguments
@@ -520,10 +520,8 @@ environmental covariates.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-zoo
-                             r-xml
+    (propagated-inputs (list r-xml
                              r-shape
-                             r-readxl
                              r-rcpparmadillo
                              r-rcpp
                              r-minpack-lm
@@ -535,7 +533,7 @@ environmental covariates.")
                              r-deoptim
                              r-data-table
                              r-bbmle))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://r-lum.github.io/Luminescence/")
     (synopsis "Comprehensive Luminescence Dating Data Analysis")
     (description
@@ -1111,13 +1109,13 @@ genome-wide association studies, where family history was not considered.")
 (define-public r-ltertools
   (package
     (name "r-ltertools")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltertools" version))
        (sha256
-        (base32 "1xjcpwniaim9kxrydqnjbl8fchsxnisr44acxzdr7s0xbjz8lvmi"))))
+        (base32 "16h7b921ikzzqjgbdq9x8wacmifa7dzqjz82mpyaifgw3mfncd2m"))))
     (properties `((upstream-name . "ltertools")))
     (build-system r-build-system)
     (arguments

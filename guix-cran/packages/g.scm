@@ -11643,6 +11643,55 @@ diagrams, NMDS stress/scree plots, species response curves, merging of taxa as
 well as calculation and sorting of synoptic tables.")
     (license license:gpl2+)))
 
+(define-public r-godley
+  (package
+    (name "r-godley")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "godley" version))
+       (sha256
+        (base32 "131hm2ad74nkglrfc7k6fvkd6i7w5rqw1c09szm0gcn8436v51bg"))))
+    (properties `((upstream-name . "godley")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-vecsets
+                             r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rootsolve
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-magrittr
+                             r-lubridate
+                             r-igraph
+                             r-dplyr
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://gamrot.github.io/godley/")
+    (synopsis "Stock-Flow-Consistent Model Simulator")
+    (description
+     "Define, simulate, and validate stock-flow consistent (SFC) macroeconomic models.
+ The godley R package offers tools to dynamically define model structures by
+adding variables and specifying governing systems of equations.  With it, users
+can analyze how different macroeconomic structures affect key variables, perform
+parameter sensitivity analyses, introduce policy shocks, and visualize resulting
+economic scenarios.  The accounting structure of SFC models follows the approach
+outlined in the seminal study by Godley and Lavoie Godley and Lavoie (2007,
+ISBN:978-1-137-08599-3), ensuring a comprehensive integration of all economic
+flows and stocks.  The algorithms implemented to solve the models are based on
+methodologies from Kinsella and O'Shea (2010) <doi:10.2139/ssrn.1729205>,
+Peressini and Sullivan (1988, ISBN:0-387-96614-5), and contributions by Joao
+Macalos.")
+    (license license:gpl3+)))
+
 (define-public r-gocompare
   (package
     (name "r-gocompare")
@@ -11677,13 +11726,13 @@ weighted graphs.  Methods are described in Sosa et al. (2023)
 (define-public r-goat
   (package
     (name "r-goat")
-    (version "1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goat" version))
        (sha256
-        (base32 "1q4a9ka8w0yg4dvzffg6rl91gh7s17z1i8nbm3lcn1w9kbm4yns8"))))
+        (base32 "023lv7r4q3yw9mrj3w420nrxc0kbmhm633fsw9c6n43smbim0rhq"))))
     (properties `((upstream-name . "goat")))
     (build-system r-build-system)
     (arguments
@@ -26241,13 +26290,13 @@ performing high dimensional Bayesian variable selection.")
 (define-public r-geometa
   (package
     (name "r-geometa")
-    (version "0.9")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geometa" version))
        (sha256
-        (base32 "1qxdq6s0w9fc6q100j4hvrvgdrmvqlypf48l27ckzl4jvpv6zpcj"))))
+        (base32 "0a7qqf511rdm53jlw4pk9vimqbsvq0bxnk1qzkzf6pgi5ll4d6hz"))))
     (properties `((upstream-name . "geometa")))
     (build-system r-build-system)
     (arguments
@@ -35903,6 +35952,40 @@ objects.  Inputs are : data frame, RDA (package vegan') and PCA (package
 displayed in console and saved in tables ; displayed and saved objects of PCA
 graphic visualization of individuals and variables projections with multiple
 graphic parameters.")
+    (license license:expat)))
+
+(define-public r-gaawr2
+  (package
+    (name "r-gaawr2")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gaawr2" version))
+       (sha256
+        (base32 "07qkw5i0ay5yg1ki600v56nmi71csnrhhjh98j5jvivls82957jl"))))
+    (properties `((upstream-name . "gaawr2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-rdpack
+                             r-ggplot2
+                             r-gap-datasets
+                             r-gap
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://jinghuazhao.github.io/gaawr2/")
+    (synopsis "Genetic Association Analysis")
+    (description
+     "It gathers information, meta-data and scripts in a two-part Henry-Stewart talk
+by Zhao (2009, <doi:10.69645/DCRY5578>), which showcases analysis in aspects
+such as testing of polymorphic variant(s) for Hardy-Weinberg equilibrium,
+association with trait using genetic and statistical models as well as Bayesian
+implementation, power calculation in study design and genetic annotation.  It
+also covers R integration with the Linux environment, @code{GitHub}, package
+creation and web applications.")
     (license license:expat)))
 
 (define-public r-g3viz

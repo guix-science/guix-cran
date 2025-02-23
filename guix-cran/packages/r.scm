@@ -2540,6 +2540,37 @@ potential of individual players.  Manuscript forthcoming.  See Bukiet & Harold
 (1997) <doi:10.1287/opre.45.1.14> for implementation of discrete Markov chains.")
     (license license:lgpl2.0+)))
 
+(define-public r-runexampleswrapper
+  (package
+    (name "r-runexampleswrapper")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "runExamplesWrapper" version))
+       (sha256
+        (base32 "0kyxvq8d6mrcr4zgrbhsqxzf3zvn2j6i6h7m38jnddznj9hpa33m"))))
+    (properties `((upstream-name . "runExamplesWrapper")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-devtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=runExamplesWrapper")
+    (synopsis "Wrapper for 'run_examples()'")
+    (description
+     "Captures errors encountered when running @code{run_examples()}', and processes
+and archives them.  The function @code{run_examples()} within the devtools
+package allows batch execution of all of the examples within a given package.
+This is much more convenient than testing each example manually.  However, a
+major inconvenience is that if an error is encountered, the program stops and
+does not complete testing the remaining examples.  Also, there is not a
+systematic record of the results, namely which package functions had no
+examples, which had examples that failed, and which had examples that succeeded.
+ The current package provides the missing functionality.")
+    (license license:gpl2+)))
+
 (define-public r-runes
   (package
     (name "r-runes")
@@ -25574,13 +25605,13 @@ content and performance on assessments.")
 (define-public r-risca
   (package
     (name "r-risca")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RISCA" version))
        (sha256
-        (base32 "1yvywpggplllxa2kr3kgrq4776dnfm1py2m9phvckprlqa5hddr0"))))
+        (base32 "1x79pp7ml826xsdyikw8r5cmpyp0xzlpmmmw13him0aw454mjpwc"))))
     (properties `((upstream-name . "RISCA")))
     (build-system r-build-system)
     (arguments
@@ -34664,13 +34695,13 @@ repayment/mortgage plans.")
 (define-public r-repana
   (package
     (name "r-repana")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "repana" version))
        (sha256
-        (base32 "1iyxyq8fl7cbbw374xc32fsrxsl40306anvyia6fwjr5j5dy7v5g"))))
+        (base32 "0pc890w04q7yc24jrfmn8a6vip200syqlb798rkf2lkfjfal92sk"))))
     (properties `((upstream-name . "repana")))
     (build-system r-build-system)
     (arguments
@@ -39049,13 +39080,13 @@ Statistik (second edition).")
 (define-public r-redamor
   (package
     (name "r-redamor")
-    (version "0.7.6")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReDaMoR" version))
        (sha256
-        (base32 "1pl5yg7dxlg719zhbsywg4y9yqn8fyk5h6kqjl37gs7czb8s6ak1"))))
+        (base32 "0nb8i7hrgciyvbzighdhg96pqdcy7vm272lfx4m5fspmw4044v04"))))
     (properties `((upstream-name . "ReDaMoR")))
     (build-system r-build-system)
     (arguments
@@ -41299,13 +41330,13 @@ desorption/ionization-time-of-flight mass spectrometer of the *flex series.")
 (define-public r-readapra
   (package
     (name "r-readapra")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readapra" version))
        (sha256
-        (base32 "0wz917szm469h57hxaq51511c3744qd4l388q3pfi46f2ws56h6j"))))
+        (base32 "1mc5jih92saac74k36fxic4rlsd7pjmjbpjxkslax5rqi9wk12h2"))))
     (properties `((upstream-name . "readapra")))
     (build-system r-build-system)
     (arguments
@@ -56784,13 +56815,13 @@ of a new method and how it compares to some of the standard ones.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2rtf" version))
        (sha256
-        (base32 "0lhz6ay2f250hqalz96h4x8pshg8v8zljzz3x9lvrdsygcc8hjyn"))))
+        (base32 "134xrbhdxjdjh0wzwq410hpvbhr73si1rcz0hpaz003wsifk10g8"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (arguments
@@ -56799,9 +56830,9 @@ of a new method and how it compares to some of the standard ones.")
     (native-inputs (list r-knitr))
     (home-page "https://merck.github.io/r2rtf/")
     (synopsis
-     "Easily Create Production-Ready Rich Text Format (RTF) Table and Figure")
+     "Easily Create Production-Ready Rich Text Format (RTF) Tables and Figures")
     (description
-     "Create production-ready Rich Text Format (RTF) table and figure with flexible
+     "Create production-ready Rich Text Format (RTF) tables and figures with flexible
 format.")
     (license license:gpl3)))
 
