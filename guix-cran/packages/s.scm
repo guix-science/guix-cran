@@ -10391,13 +10391,13 @@ Computers & Geosciences, v.  51, no.  0, p.  193 - 205, <doi:
 (define-public r-stratifyr
   (package
     (name "r-stratifyr")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stratifyR" version))
        (sha256
-        (base32 "1kbpsyhx081rqr7q7gyjw377zlvvravsslpnykl2d16nap0rg0sq"))))
+        (base32 "12m40105wh3gkfx3b3adpsqx6wdjp9i5205abp3xpdybvbnj2plv"))))
     (properties `((upstream-name . "stratifyR")))
     (build-system r-build-system)
     (arguments
@@ -10426,7 +10426,7 @@ At present, it handles stratification for the populations where the study
 variable follows a continuous distribution, namely, Pareto, Triangular,
 Right-triangular, Weibull, Gamma, Exponential, Uniform, Normal, Log-normal and
 Cauchy distributions.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-stratifiedyh
   (package
@@ -16890,13 +16890,13 @@ model performance and robustness.")
 (define-public r-staccuracy
   (package
     (name "r-staccuracy")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "staccuracy" version))
        (sha256
-        (base32 "0nqnrkb7b5a892q9dsy7vqdk9aa1f9pbapg2m7pqwrbgcw6xnbph"))))
+        (base32 "16cvjw8y026v0sj9il38bjclw9a1skm5g649z90dminxznmxlil6"))))
     (properties `((upstream-name . "staccuracy")))
     (build-system r-build-system)
     (arguments
@@ -16911,7 +16911,7 @@ model performance and robustness.")
     (home-page "https://github.com/tripartio/staccuracy")
     (synopsis "Standardized Accuracy and Other Model Performance Metrics")
     (description
-     "Standardized accuracy (staccuracy) is framework for expressing accuracy scores
+     "Standardized accuracy (staccuracy) is a framework for expressing accuracy scores
 such that 50% represents a reference level of performance and 100% is a perfect
 prediction.  The staccuracy package provides tools for creating staccuracy
 functions as well as some recommended staccuracy measures.  It also provides
@@ -44458,13 +44458,13 @@ facilitate communicating the simulation setup.")
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "0sfh4szg52awvi5zzn1vnlm5iajwcg25877rjzkp42qrxzs4c4s7"))))
+        (base32 "1i625n9ri27sykccz82bzyaaaiwfncdpgflqj7r90kikcll1jhix"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
     (arguments

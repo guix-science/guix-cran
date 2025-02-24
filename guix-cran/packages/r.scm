@@ -26356,13 +26356,13 @@ between different classes of models.")
 (define-public r-rigma
   (package
     (name "r-rigma")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rigma" version))
        (sha256
-        (base32 "0h0fblnsbrkkvd0cimywa3gq4q7ay9p39f7x2rpis58kj28ra6fn"))))
+        (base32 "19jpb7xxrwjm3wqka8cg7c45y60mcahc6car11ip1lfa0zqx5zl3"))))
     (properties `((upstream-name . "Rigma")))
     (build-system r-build-system)
     (arguments
@@ -26381,6 +26381,7 @@ between different classes of models.")
                              r-glue
                              r-fs
                              r-dplyr
+                             r-cli
                              r-checkmate
                              r-bslib))
     (native-inputs (list r-knitr))

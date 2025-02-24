@@ -11817,13 +11817,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flint
   (package
     (name "r-flint")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flint" version))
        (sha256
-        (base32 "0pcbidsh22pgh17p7l53rb40756wpn558cgf1h6xwpv4v3x1zw3r"))))
+        (base32 "1fjf5n8jz5rrbvqbag34l1ir139kfnwwi3icf2jz1bx4732c3cj5"))))
     (properties `((upstream-name . "flint")))
     (build-system r-build-system)
     (arguments
@@ -11846,8 +11846,8 @@ Finally, FLINT provides ball arithmetic implementations of many special
 mathematical functions, with high coverage of reference works such as the NIST
 Digital Library of Mathematical Functions <https://dlmf.nist.gov/>.  The R
 interface defines S4 classes, generic functions, and methods for representation
-and basic operations as well as plain R functions matching and vectorizing entry
-points in the C library.")
+and basic operations as well as plain R functions mirroring and vectorizing
+entry points in the C library.")
     (license license:gpl2+)))
 
 (define-public r-flimo

@@ -26869,13 +26869,13 @@ reproducibility in teal applications.")
 (define-public r-teal
   (package
     (name "r-teal")
-    (version "0.15.2")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal" version))
        (sha256
-        (base32 "1kgdrkf6rx85ng3h51hgy9zzbmjrlbd68hr3vi2n7pq5fcxnx5qq"))))
+        (base32 "00vvvq3953mlhydyky0dchpfy0hpmp55p58wsjprc9k62dkl5g1m"))))
     (properties `((upstream-name . "teal")))
     (build-system r-build-system)
     (arguments
@@ -26890,12 +26890,13 @@ reproducibility in teal applications.")
                              r-shinyjs
                              r-shiny
                              r-rlang
-                             r-magrittr
                              r-logger
                              r-lifecycle
                              r-jsonlite
+                             r-htmltools
+                             r-cli
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal/")
     (synopsis "Exploratory Web Apps for Analyzing Clinical Trials Data")
     (description

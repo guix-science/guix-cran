@@ -5464,13 +5464,13 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
 (define-public r-qgcomp
   (package
     (name "r-qgcomp")
-    (version "2.16.4")
+    (version "2.17.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgcomp" version))
        (sha256
-        (base32 "0l3h14mkjzp86lx7ajpia4n3153vjfxhy9fdghp7z8hzqv33874y"))))
+        (base32 "0s75xzazvrab4jd1jy5n3w4ba9096x1imhighls6sndgzxibqhkq"))))
     (properties `((upstream-name . "qgcomp")))
     (build-system r-build-system)
     (arguments
@@ -5487,7 +5487,8 @@ the effects of exposure mixtures; <doi:10.1289/EHP5838>.")
                              r-generics
                              r-future-apply
                              r-future
-                             r-arm))
+                             r-arm
+                             r-aer))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/alexpkeil1/qgcomp/")
     (synopsis "Quantile G-Computation")

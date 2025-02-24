@@ -9722,37 +9722,6 @@ offers an exact correction of the p-value developed by B.Liquet & D.Commenges in
 2005.  The naive method with no correction is also available.")
     (license license:gpl3+)))
 
-(define-public r-cpmbigdata
-  (package
-    (name "r-cpmbigdata")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cpmBigData" version))
-       (sha256
-        (base32 "0fdch6hj6l620gj0pk8ffrl9j2rmd9jlin7yx7myfy46qij1cxpi"))))
-    (properties `((upstream-name . "cpmBigData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sparsem
-                             r-rms
-                             r-iterators
-                             r-hmisc
-                             r-foreach
-                             r-doparallel
-                             r-benchmarkme))
-    (home-page "https://cran.r-project.org/package=cpmBigData")
-    (synopsis
-     "Fitting Semiparametric Cumulative Probability Models for Big Data")
-    (description
-     "This package provides a big data version for fitting cumulative probability
-models using the @code{orm()} function from the rms package.  See Liu et al.
-(2017) <DOI:10.1002/sim.7433> for details.")
-    (license license:gpl2+)))
-
 (define-public r-cpm
   (package
     (name "r-cpm")
@@ -24744,13 +24713,13 @@ multiple filter types and reproducible R code.  Works standalone or with
 (define-public r-cohortalgebra
   (package
     (name "r-cohortalgebra")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortAlgebra" version))
        (sha256
-        (base32 "05sn073sfmngjbq2g198nckxw2zwk2jj69xf3pddlrka05v3a1b9"))))
+        (base32 "0sdmi5b2wizv0af0b5c828l7x5i07x0c3zjy2cfgf1fs9c1nqb36"))))
     (properties `((upstream-name . "CohortAlgebra")))
     (build-system r-build-system)
     (arguments
@@ -24763,7 +24732,7 @@ multiple filter types and reproducible R code.  Works standalone or with
                              r-databaseconnector
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/OHDSI/CohortAlgebra")
+    (home-page "https://ohdsi.github.io/CohortAlgebra/")
     (synopsis
      "Use of Interval Algebra to Create New Cohort(s) from Existing Cohorts")
     (description
@@ -48390,40 +48359,42 @@ and produce the resulting merge by time period and geographical region.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.3.17")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cansim" version))
        (sha256
-        (base32 "0lnc9idpcz043p3wb0l0x2042xx7j9mmfbx6sqkvrmi1gilsm7jx"))))
+        (base32 "1gv42zxnzx3069kl5877s6jcdigl4448g1r3wb2rvql2gya3dj8a"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-rvest
                              r-rsqlite
                              r-rlang
                              r-readr
                              r-purrr
-                             r-jsonlite
                              r-httr
                              r-dplyr
                              r-digest
-                             r-dbi))
+                             r-dbplyr
+                             r-dbi
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mountainMath/cansim")
     (synopsis "Accessing Statistics Canada Data Table and Vectors")
     (description
-     "Searches for, accesses, and retrieves new-format and old-format Statistics
-Canada data tables, as well as individual vectors, as tidy data frames.  This
-package deals with encoding issues, allows for bilingual English or French
+     "Searches for, accesses, and retrieves Statistics Canada data tables, as well as
+individual vectors, as tidy data frames.  This package enriches the tables with
+metadata, deals with encoding issues, allows for bilingual English or French
 language data retrieval, and bundles convenience functions to make it easier to
-work with retrieved table data.  Optional caching features are provided.")
+work with retrieved table data.  For more efficient data access the package
+allows for caching data in a local database and database level filtering, data
+manipulation and summarizing.")
     (license license:expat)))
 
 (define-public r-canprot

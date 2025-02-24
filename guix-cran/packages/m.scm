@@ -6375,13 +6375,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "1nwcrcvrcbjcrcn6mw7ssyn8j3yxgmqfykj172gnl7kzp40lijlw"))))
+        (base32 "13n7xp4hxrqdk6ajsaw2hawaw7w4v5nlv4rw3pazi4hrrkyhzfpw"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (arguments

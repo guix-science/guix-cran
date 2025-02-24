@@ -3993,20 +3993,19 @@ reduce user dependencies.")
 (define-public r-jdcruncher
   (package
     (name "r-jdcruncher")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JDCruncheR" version))
        (sha256
-        (base32 "1bizsg3j29zf79qngxs17pvm0z2ivf664xlg89snzfnq6vcgkcxl"))))
+        (base32 "0qzkvqd9whlql8z34yy4dz79sgl3azb6cz0dxhpaq0p532fgraws"))))
     (properties `((upstream-name . "JDCruncheR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-openxlsx))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/InseeFr/JDCruncheR")
     (synopsis
      "Interface Between the 'JDemetra+' Cruncher and R, and Quality Report Generator")

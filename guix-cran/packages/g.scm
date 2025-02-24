@@ -11646,13 +11646,13 @@ well as calculation and sorting of synoptic tables.")
 (define-public r-godley
   (package
     (name "r-godley")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "godley" version))
        (sha256
-        (base32 "131hm2ad74nkglrfc7k6fvkd6i7w5rqw1c09szm0gcn8436v51bg"))))
+        (base32 "1c47r1s9lvhwcd9bmdb7w25jby3dmbc9746bsgjisyhzyy0k6cxg"))))
     (properties `((upstream-name . "godley")))
     (build-system r-build-system)
     (arguments
@@ -11684,7 +11684,7 @@ adding variables and specifying governing systems of equations.  With it, users
 can analyze how different macroeconomic structures affect key variables, perform
 parameter sensitivity analyses, introduce policy shocks, and visualize resulting
 economic scenarios.  The accounting structure of SFC models follows the approach
-outlined in the seminal study by Godley and Lavoie Godley and Lavoie (2007,
+outlined in the seminal study by Godley and Lavoie (2007,
 ISBN:978-1-137-08599-3), ensuring a comprehensive integration of all economic
 flows and stocks.  The algorithms implemented to solve the models are based on
 methodologies from Kinsella and O'Shea (2010) <doi:10.2139/ssrn.1729205>,
@@ -33328,13 +33328,13 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gausscov" version))
        (sha256
-        (base32 "0jg5hyzmvi8kwvazh94x2ypxzkbxwdmbs8x6sklvshvl7hidrpkr"))))
+        (base32 "0bddglypz8g77z7dvn2iv0nm8p1p7wmv3rm3zs3ij3jngpxzk4ck"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (arguments
@@ -33374,9 +33374,9 @@ valid subset.  A good default start is f1st(y,x,kmn=15) The best function for
 returning multiple approximations is f3st which repeatedly calls f1st.  For more
 information see the web site below and the accompanying papers: L. Davies and L.
 Duembgen, \"Covariate Selection Based on a Model-free Approach to Linear
-Regression with Exact Probabilities\", 2022,
-<doi:10.48550/@code{arXiv.2202.01553>}.  L. Davies, \"An Approximation Based
-Theory of Linear Regression\", 2024,<doi:10.48550/@code{arXiv.2402.09858>}.")
+Regression with Exact Probabilities\", <doi:10.48550/@code{arXiv.2202.01553>}, L.
+Davies, \"An Approximation Based Theory of Linear Regression\", 2024,
+<doi:10.48550/@code{arXiv.2402.09858>}.")
     (license license:gpl3)))
 
 (define-public r-gauser

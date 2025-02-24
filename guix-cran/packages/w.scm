@@ -9225,33 +9225,6 @@ Health Initiative) branding.  Use washi to easily style your ggplot2 plots and
 flextable tables.")
     (license license:expat)))
 
-(define-public r-washex
-  (package
-    (name "r-washex")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "washex" version))
-       (sha256
-        (base32 "0g5cgs6y3l7ng4bcia1w3ysb8z7s3187ph5g052bssd3w01kim6g"))))
-    (properties `((upstream-name . "washex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-xml
-                             r-rlang
-                             r-purrr
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (home-page "https://github.com/rwrandles/washex-r")
-    (synopsis "Washington State Legislative Explorer")
-    (description "Gets data from the Washington State Legislature.")
-    (license license:expat)))
-
 (define-public r-washer
   (package
     (name "r-washer")

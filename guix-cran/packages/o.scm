@@ -2732,37 +2732,6 @@ for each dependent variable level.  It also adds a functionality to plot the
 model summary as a modifiable object.")
     (license license:expat)))
 
-(define-public r-ormbigdata
-  (package
-    (name "r-ormbigdata")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ormBigData" version))
-       (sha256
-        (base32 "1rq202k4assmij21bjjk1ba7121p5p3rp21k548cc6lk81xj1rcc"))))
-    (properties `((upstream-name . "ormBigData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sparsem
-                             r-rms
-                             r-iterators
-                             r-hmisc
-                             r-foreach
-                             r-doparallel
-                             r-benchmarkme))
-    (home-page "https://cran.r-project.org/package=ormBigData")
-    (synopsis
-     "Fitting Semiparametric Cumulative Probability Models for Big Data")
-    (description
-     "This package provides a big data version for fitting cumulative probability
-models using the @code{orm()} function.  See Liu et al. (2017)
-<DOI:10.1002/sim.7433> for details.")
-    (license license:gpl2+)))
-
 (define-public r-orloca-es
   (package
     (name "r-orloca-es")

@@ -11067,29 +11067,6 @@ calculations.  For a given sample size, the functions will return the precision
 (width of the confidence interval), and vice versa.")
     (license license:gpl3)))
 
-(define-public r-presiduals
-  (package
-    (name "r-presiduals")
-    (version "1.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PResiduals" version))
-       (sha256
-        (base32 "0mq16cs07hw5c9jj08vpgbb15xvjvz9h0npsbqphiibsb6ca5fwb"))))
-    (properties `((upstream-name . "PResiduals")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sparsem r-rms r-mass r-formula))
-    (home-page "https://cran.r-project.org/package=PResiduals")
-    (synopsis "Probability-Scale Residuals and Residual Correlations")
-    (description
-     "Computes probability-scale residuals and residual correlations for continuous,
-ordinal, binary, count, and time-to-event data <doi:10.18637/jss.v094.i12>.")
-    (license license:gpl2+)))
-
 (define-public r-presentes
   (package
     (name "r-presentes")
@@ -13203,13 +13180,13 @@ fixed effects with penalized intercepts by LASSO.")
 (define-public r-pqrbayes
   (package
     (name "r-pqrbayes")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrBayes" version))
        (sha256
-        (base32 "08fcgf31axs75lxkf0ildd1m59ds2ll625bzr394fhhs7rrysbdj"))))
+        (base32 "0hrs4m9i9rfp5nv73smhdlwk9fibmnsbvbbg6npn2wikxczwwvza"))))
     (properties `((upstream-name . "pqrBayes")))
     (build-system r-build-system)
     (arguments
@@ -22640,13 +22617,13 @@ models (SEMMs).")
 (define-public r-plotscaper
   (package
     (name "r-plotscaper")
-    (version "0.2.6")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotscaper" version))
        (sha256
-        (base32 "1kcr89bmyfgy1rzz3rfir053h5f4ywi9va3191bvb155wzpfhgj3"))))
+        (base32 "1vswqaz2m4z7kd0qqsdjchiabz1171jqi2wk5fv8dn98pflrz1y8"))))
     (properties `((upstream-name . "plotscaper")))
     (build-system r-build-system)
     (arguments
@@ -24762,13 +24739,13 @@ saving output from the website.")
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.4.3")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planr" version))
        (sha256
-        (base32 "0n0y1lx3x573pwgqif4yng8rjgwx2nxwbphfd9dmz6g0swhfcvl2"))))
+        (base32 "1i036zvxyn0zzsk2wzgrw1r9i771ksdxm6llc0jxh0sfqx1rmwmw"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
     (arguments
@@ -39548,13 +39525,13 @@ an example in the roxygen block.")
 (define-public r-pastclim
   (package
     (name "r-pastclim")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pastclim" version))
        (sha256
-        (base32 "0wdccbnb808wc2fr2ysr7z5i9d3rjgfdd8lcmgkipdprq0ymvqak"))))
+        (base32 "00nwxp512ghr5v17svpiiabj0cy4p8a3f3lif9iyz4j91pdna1zh"))))
     (properties `((upstream-name . "pastclim")))
     (build-system r-build-system)
     (arguments
@@ -39565,14 +39542,17 @@ an example in the roxygen block.")
                              r-sf
                              r-ncdf4
                              r-lubridate
+                             r-gstat
                              r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EvolEcolGroup/pastclim")
-    (synopsis "Manipulate Time Series of Palaeoclimate Reconstructions")
+    (synopsis "Manipulate Time Series of Climate Reconstructions")
     (description
-     "This package provides methods to easily extract and manipulate palaeoclimate
+     "This package provides methods to easily extract and manipulate climate
 reconstructions for ecological and anthropological analyses, as described in
-Leonardi et al. (2023) <doi:10.1111/ecog.06481>.")
+Leonardi et al. (2023) <doi:10.1111/ecog.06481>.  The package includes datasets
+of palaeoclimate reconstructions, present observations, and future projections
+from multiple climate models.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-pastboon

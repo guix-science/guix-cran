@@ -12286,13 +12286,13 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
 (define-public r-anomo
   (package
     (name "r-anomo")
-    (version "0.5.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anomo" version))
        (sha256
-        (base32 "12c1y2l6c2vhiairl5cxf0f2scyj2iwjgvagm7mhr8ingchxkvgm"))))
+        (base32 "1pf663vdv8027na4hfpz337p9fqz80x6wci0p2krpbkrll12v77q"))))
     (properties `((upstream-name . "anomo")))
     (build-system r-build-system)
     (arguments
@@ -12301,11 +12301,11 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
     (native-inputs (list r-rmarkdown r-markdown r-knitr))
     (home-page "https://cran.r-project.org/package=anomo")
     (synopsis
-     "Analysis of Moderation with the Monte Carlo Confidence Interval Method")
+     "Analysis of Moderation, Statistical Power, and Optimal Design for Studies Detecting Difference and Equivalence")
     (description
-     "Analysis of Moderation (anomo) uses the Monte Carlo confidence interval (MCCI)
-method to test the difference and equivalence of two effects with summary
-statistics from two studies.")
+     "Analysis of moderation (ANOMO) method conceptualizes the difference and
+equivalence tests as a moderation problem to test the difference and equivalence
+of two means (or two effects in two studies).")
     (license license:gpl3)))
 
 (define-public r-anominate
