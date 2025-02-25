@@ -6506,13 +6506,13 @@ Economics (http://www.sgh.waw.pl/en/).")
 (define-public r-localscore
   (package
     (name "r-localscore")
-    (version "1.0.11")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "localScore" version))
        (sha256
-        (base32 "1m3bd6vh6xcd614b6jmnijiywrjdf44i7iwl5qp09n50831s8881"))))
+        (base32 "0nfwbcr7hsv9i37rbrb5195dpwr9yh1pjyzpk469svd50hxnjzca"))))
     (properties `((upstream-name . "localScore")))
     (build-system r-build-system)
     (arguments
@@ -6526,10 +6526,10 @@ Economics (http://www.sgh.waw.pl/en/).")
      "Functionalities for calculating the local score and calculating statistical
 relevance (p-value) to find a local Score in a sequence of given distribution
 (S. Mercier and J.-J. Daudin (2001) <https://hal.science/hal-00714174/>) ; S.
-Karlin and S. Altschul (1990)
-<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC53667/> ; S. Mercier, D. Cellier
-and F. Charlot (2003) <https://hal.science/hal-00937529v1/> ; A. Lagnoux, S.
-Mercier and P. Valois (2017) <doi:10.1093/bioinformatics/btw699> ).")
+Karlin and S. Altschul (1990) <https://pmc.ncbi.nlm.nih.gov/articles/PMC53667/>
+; S. Mercier, D. Cellier and F. Charlot (2003)
+<https://hal.science/hal-00937529v1/> ; A. Lagnoux, S. Mercier and P. Valois
+(2017) <doi:10.1093/bioinformatics/btw699> ).")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -11227,13 +11227,13 @@ not create any visualizations.")
 (define-public r-lightlogr
   (package
     (name "r-lightlogr")
-    (version "0.3.8")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LightLogR" version))
        (sha256
-        (base32 "124kd9ai0xxqzdyqj1npa711nkia520glca6a9jqsrsk6ld30765"))))
+        (base32 "1ypkjx4c7krdv8yfhg375qqa8gpiqnnfmmps0any93bkik23fy4q"))))
     (properties `((upstream-name . "LightLogR")))
     (build-system r-build-system)
     (arguments
@@ -11241,6 +11241,7 @@ not create any visualizations.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-suntools
                              r-stringr
                              r-slider
                              r-scales
@@ -11252,6 +11253,7 @@ not create any visualizations.")
                              r-pkgload
                              r-magrittr
                              r-lubridate
+                             r-janitor
                              r-hms
                              r-ggtext
                              r-ggsci
@@ -11268,7 +11270,7 @@ measurement data from wearable devices.  The package implements features such as
 the import of data and metadata files, conversion of common file formats,
 validation of light logging data, verification of crucial metadata, calculation
 of common parameters, and semi-automated analysis and visualization.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-lightauc
   (package
@@ -15120,13 +15122,13 @@ with the rest of the inputs.")
 (define-public r-ldmppr
   (package
     (name "r-ldmppr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldmppr" version))
        (sha256
-        (base32 "1y9f4i149fhb4px8fv7m1smsqq75nm0c84r4ilj1c38map7xhckm"))))
+        (base32 "0pwyvfxlm4i97y15wj1k8ppm2pk2b9bbb6j37hq9zh765zjm73b5"))))
     (properties `((upstream-name . "ldmppr")))
     (build-system r-build-system)
     (arguments

@@ -18401,13 +18401,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidyllm
   (package
     (name "r-tidyllm")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyllm" version))
        (sha256
-        (base32 "0h6wisq34499l4bl5g8s8pxcq25x82lj5gms2fcwq9b474a9d4gl"))))
+        (base32 "1lan1rf2rdz26fax6lnkpilavkxgkc64mj1j904jjarxlfx5lj3g"))))
     (properties `((upstream-name . "tidyllm")))
     (build-system r-build-system)
     (arguments

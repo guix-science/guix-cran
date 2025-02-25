@@ -11736,13 +11736,13 @@ the partitioned data.  For details see Jones, Mair, Simon, & Zeileis (2020)
 (define-public r-networktools
   (package
     (name "r-networktools")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networktools" version))
        (sha256
-        (base32 "0w2q5ncni5nv7lg9vm3bpxj64pg0f6w0rxknli0dy1q0asq4aw47"))))
+        (base32 "05l93w58q4qydxy9z5kw0r7a8l5sl06i36lbvk8rkvl9ak53b7bm"))))
     (properties `((upstream-name . "networktools")))
     (build-system r-build-system)
     (arguments

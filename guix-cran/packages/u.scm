@@ -1449,26 +1449,24 @@ which includes various kind of ping, keep-alive and speed tests.  See
 (define-public r-uptasticsearch
   (package
     (name "r-uptasticsearch")
-    (version "0.4.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uptasticsearch" version))
        (sha256
-        (base32 "19sf3zdj424pz4ms0xg4asplf2bczvhl8p22y13jna1g51xyv92a"))))
+        (base32 "0qi75s0c7ngwgqhkyyrmnd0krr5din90f2xpa1w2s6rf7nz6z4sd"))))
     (properties `((upstream-name . "uptasticsearch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-purrr
                              r-jsonlite
-                             r-httr
                              r-futile-logger
                              r-data-table
-                             r-assertthat))
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/uptake/uptasticsearch")
     (synopsis "Get Data Frame Representations of 'Elasticsearch' Results")
@@ -3295,13 +3293,13 @@ detailed description of the method and applications see Rizzi et al. (2015)
 (define-public r-undidr
   (package
     (name "r-undidr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "undidR" version))
        (sha256
-        (base32 "08q8q4fml66k241xjgd7pw5cqnhf4hqpp2pqk55mx4b9d3d2k0s5"))))
+        (base32 "1dskv9pkv84xml4bjzzhrb00fwf8hz5m9l1wn2yvb4lasfw27xjw"))))
     (properties `((upstream-name . "undidR")))
     (build-system r-build-system)
     (arguments

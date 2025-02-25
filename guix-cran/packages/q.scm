@@ -6709,6 +6709,31 @@ effects and implements both a blocked and an unblocked Gibbs sampler for
 posterior inference.")
     (license license:gpl3)))
 
+(define-public r-qbinplots
+  (package
+    (name "r-qbinplots")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qbinplots" version))
+       (sha256
+        (base32 "0h05bx09ws4kp82s7vwz5v99ghlgyg3zir11wmi5mydpwabahv0h"))))
+    (properties `((upstream-name . "qbinplots")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-patchwork r-ggplot2 r-data-table))
+    (home-page "https://edwindj.github.io/qbinplots/")
+    (synopsis "Quantile Binned Plots")
+    (description
+     "Create quantile binned and conditional plots for Exploratory Data Analysis.  The
+package provides several plotting functions that are all based on quantile
+binning.  The plots are created with ggplot2 and patchwork and can be further
+adjusted.")
+    (license license:expat)))
+
 (define-public r-qapprox
   (package
     (name "r-qapprox")

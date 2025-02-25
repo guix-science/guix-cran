@@ -2602,13 +2602,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "0p2y119aqy947jkagw89hvy44pzwx3rhd1ipylpilhj57lzl4l63"))))
+        (base32 "12938j5irnbdq1381d2aswch60awhx5fv2gv8wvh9wfmc67ahx3m"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (arguments
@@ -2623,6 +2623,7 @@ of GPU-accelerated machine learning libraries powered by CUDA
                              r-glue
                              r-fs
                              r-dplyr
+                             r-cli
                              r-checkmate))
     (native-inputs (list r-quarto))
     (home-page "https://github.com/jakubsob/cucumber")
@@ -8773,6 +8774,37 @@ efficiently.")
      "This package provides functions for completing and recalculating rankings and
 sorting.")
     (license license:gpl2+)))
+
+(define-public r-crane
+  (package
+    (name "r-crane")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crane" version))
+       (sha256
+        (base32 "01pq9q77lykddz36nh7s4hgdqgvx1cqci2mxb135dnjv5r4m5yb2"))))
+    (properties `((upstream-name . "crane")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-gtsummary
+                             r-gt
+                             r-flextable
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/insightsengineering/crane")
+    (synopsis
+     "Supplements the 'gtsummary' Package for Pharmaceutical Reporting")
+    (description
+     "Tables summarizing clinical trial results are often complex and require detailed
+tailoring prior to submission to a health authority.  The crane package
+supplements the functionality of the gtsummary package for creating these often
+highly bespoke tables in the pharmaceutical industry.")
+    (license license:asl2.0)))
 
 (define-public r-crandep
   (package
@@ -26936,13 +26968,13 @@ smoothing irregularly sampled signals, see Hamilton et al (2018)
 (define-public r-cnid
   (package
     (name "r-cnid")
-    (version "1.3.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CNID" version))
        (sha256
-        (base32 "0lg3lw34jcgpnp311wqpq75vb0985c1x8mvb5x3hcirsy6vlq8v8"))))
+        (base32 "0110h8rjxrz05h4495p9xd5ml866czx4dg5n01dcbn80q9npzbvw"))))
     (properties `((upstream-name . "CNID")))
     (build-system r-build-system)
     (arguments
@@ -29286,13 +29318,13 @@ and mouse cell identity markers sourced from a variety of databases.")
 (define-public r-clustermi
   (package
     (name "r-clustermi")
-    (version "1.4.0")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterMI" version))
        (sha256
-        (base32 "0xxbkylfy3k1fg1ivqqm3gkxh26fz9gpbqf074cprg52q70v818k"))))
+        (base32 "1g4ccyippdb8vvy8k9lzvnfvqhlc06nkv0vvfxdnw6q91bsjrwkl"))))
     (properties `((upstream-name . "clusterMI")))
     (build-system r-build-system)
     (arguments
@@ -44631,6 +44663,45 @@ types given data, and calculate arbitrary queries.  Updating is implemented in
 stan'.  See Humphreys and Jacobs, 2023, Integrated Inferences (<DOI:
 10.1017/9781316718636>) and Pearl, 2009 Causality
 (<DOI:10.1017/CBO9780511803161>).")
+    (license license:expat)))
+
+(define-public r-causalqual
+  (package
+    (name "r-causalqual")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causalQual" version))
+       (sha256
+        (base32 "0l4kfjrpn1rac3ligzld0ll9jhl6r1jz230h5phla7ziji3xcjnf"))))
+    (properties `((upstream-name . "causalQual")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-sandwich
+                             r-rdrobust
+                             r-ocf
+                             r-magrittr
+                             r-lmtest
+                             r-grf
+                             r-ggsci
+                             r-ggplot2
+                             r-cli
+                             r-caret
+                             r-aer))
+    (native-inputs (list r-knitr))
+    (home-page "https://riccardo-df.github.io/causalQual/")
+    (synopsis "Causal Inference for Qualitative Outcomes")
+    (description
+     "This package implements the framework introduced in Di Francesco and Mellace
+(2025) <doi:10.48550/@code{arXiv.2502.11691>}, shifting the focus to
+well-defined and interpretable estimands that quantify how treatment affects the
+probability distribution over outcome categories.  It supports
+selection-on-observables, instrumental variables, regression discontinuity, and
+difference-in-differences designs.")
     (license license:expat)))
 
 (define-public r-causalpaf

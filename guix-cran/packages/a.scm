@@ -2611,19 +2611,26 @@ possible by representing R expressions using a tree structure.")
 (define-public r-autogam
   (package
     (name "r-autogam")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autogam" version))
        (sha256
-        (base32 "15wvyiya6hawkw1zz6q672rzwlgwzficja7q4fg1p1hsvj8dhp7j"))))
+        (base32 "1152nz7v4zxgq8wqkbss92pm13l77qs36kz3y6d8fiqryl8g1a0j"))))
     (properties `((upstream-name . "autogam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-purrr r-mgcv r-dplyr))
+    (propagated-inputs (list r-univariateml
+                             r-stringr
+                             r-staccuracy
+                             r-rlang
+                             r-purrr
+                             r-mgcv
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/tripartio/autogam")
     (synopsis "Automate the Creation of Generalized Additive Models (GAMs)")
     (description
@@ -7819,19 +7826,20 @@ version of this package lives; it can be installed using devtools.")
 (define-public r-arf
   (package
     (name "r-arf")
-    (version "0.2.0")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arf" version))
        (sha256
-        (base32 "1jcvlg1f4y32lg5dfpm0xrp63fbm9xhr82izgmxp0f2mccy6rn4g"))))
+        (base32 "010gs6cd8cyn19ajcfl2cix6qr3h5182mbz38r4xxax5wwgzxd1r"))))
     (properties `((upstream-name . "arf")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-truncnorm r-ranger r-foreach r-data-table))
+    (propagated-inputs (list r-truncnorm r-stringr r-ranger r-foreach
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bips-hb/arf")
     (synopsis "Adversarial Random Forests")
@@ -7846,7 +7854,7 @@ Methods for both are implemented in this package.  ARFs naturally handle
 unstructured data with mixed continuous and categorical covariates.  They
 inherit many of the benefits of random forests, including speed, flexibility,
 and solid performance with default parameters.  For details, see Watson et al.
-(2022) <@code{arXiv:2205.09435>}.")
+(2023) <https://proceedings.mlr.press/v206/watson23a.html>.")
     (license license:gpl3+)))
 
 (define-public r-arenar
@@ -24822,6 +24830,39 @@ making it a valuable resource for researchers.")
 number signals for Affymetrix SNP microarrays using non-negative matrix
 factorization (NMF).")
     (license license:lgpl2.1+)))
+
+(define-public r-acledr
+  (package
+    (name "r-acledr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "acledR" version))
+       (sha256
+        (base32 "0w4zz493klsvp0gmzcq8fv244d8mqw7b0xfkcsg6bz200bwp76gx"))))
+    (properties `((upstream-name . "acledR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://dtacled.github.io/acledR/")
+    (synopsis "Manipulate ACLED Data")
+    (description
+     "This package provides tools working with data from ACLED (Armed Conflict
+Location and Event Data).  Functions include simplified access to ACLED's API
+(<https://apidocs.acleddata.com/>), methods for keeping local versions of ACLED
+data up-to-date, and functions for common ACLED data transformations.")
+    (license license:gpl3+)))
 
 (define-public r-acled-api
   (package

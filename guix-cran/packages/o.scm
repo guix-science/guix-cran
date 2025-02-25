@@ -10429,13 +10429,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "4.1.2")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "1mm6ni66x3mhf4cb1mjgwarsp7cizn9ncrq2pivpgh46dqivj8jz"))))
+        (base32 "0mvrlw2h8a60xj0narhbird6sgcfyzc605n154vjdlzbs39knpzi"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (arguments

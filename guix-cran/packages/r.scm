@@ -29794,13 +29794,13 @@ evaluating outputs and assumptions.")
 (define-public r-rfplus
   (package
     (name "r-rfplus")
-    (version "1.2-2")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RFplus" version))
        (sha256
-        (base32 "0xyg4g26701fb71gs7lvj5gd4vzhqj85klgpckk3s9krk2zkf3mr"))))
+        (base32 "18fi60d5957fykazjv683kc15c821gqdj200ja0jyl8qkbhgfi9q"))))
     (properties `((upstream-name . "RFplus")))
     (build-system r-build-system)
     (arguments
@@ -29810,17 +29810,17 @@ evaluating outputs and assumptions.")
                              r-randomforest
                              r-qmap
                              r-pbapply
-                             r-dplyr
+                             r-hydrogof
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Jonnathan-Landi/RFplus")
-    (synopsis "Progressive Bias Correction of Satellite Environmental Data")
+    (synopsis
+     "Machine Learning for Merging Satellite and Ground Precipitation Data")
     (description
-     "This package implements a bias correction method that combines Random Forest
-models with Quantile Mapping to improve the accuracy of satellite-derived
-environmental datasets.  The model corrects biases in meteorological variables,
-such as precipitation and temperature, by integrating in situ measurements and a
-Digital Elevation Model (DEM).")
+     "This package provides a machine learning algorithm that merges satellite and
+ground precipitation data using Random Forest for spatial prediction, residual
+modeling for bias correction, and quantile mapping for adjustment, ensuring
+accurate estimates across temporal scales and regions.")
     (license license:gpl3+)))
 
 (define-public r-rfpermute
@@ -54293,13 +54293,13 @@ several spectra of plastic colorants.")
 (define-public r-ralsa
   (package
     (name "r-ralsa")
-    (version "1.5.0")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RALSA" version))
        (sha256
-        (base32 "1mvggmprqpgyj8d0fpyma44jkpx32dbfagjrh8mg5hny0bzzz5vm"))))
+        (base32 "0l47s3gpbp44xqn1anp3mxhzsx8kf6j5vrg2c0awj4qgc6gr3raq"))))
     (properties `((upstream-name . "RALSA")))
     (build-system r-build-system)
     (arguments
@@ -54322,12 +54322,13 @@ several spectra of plastic colorants.")
                              r-ggplot2
                              r-foreign
                              r-dt
-                             r-data-table))
+                             r-data-table
+                             r-archive))
     (home-page "https://ralsa.ineri.org/")
     (synopsis "R Analyzer for Large-Scale Assessments")
     (description
-     "Prepare and analyze data from large-scale assessments and surveys with complex
-sampling and assessment design (see Rutkowski', 2010
+     "Download, prepare and analyze data from large-scale assessments and surveys with
+complex sampling and assessment design (see Rutkowski', 2010
 <doi:10.3102/0013189X10363170>).  Such studies are, for example, international
 assessments like TIMSS', PIRLS and PISA'.  A graphical interface is available
 for the non-technical user.The package includes functions to covert the original

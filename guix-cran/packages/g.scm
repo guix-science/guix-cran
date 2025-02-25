@@ -23062,13 +23062,13 @@ based on interpolation; and an infix compose operator for scale transforms.")
 (define-public r-ggalignment
   (package
     (name "r-ggalignment")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggalignment" version))
        (sha256
-        (base32 "1rqndv1xqz350v6a23pfrl4zkwjyh4zg633kwcxnv57v0g01mmif"))))
+        (base32 "1axhjrg2a84lnm50fx4qya6zqhxaxprjnynx8py055mx035by1w0"))))
     (properties `((upstream-name . "ggalignment")))
     (build-system r-build-system)
     (arguments
@@ -23076,7 +23076,7 @@ based on interpolation; and an infix compose operator for scale transforms.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-magrittr r-ggplot2 r-ggimage r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ggalignment")
+    (home-page "https://github.com/aftonsteps/ggalignment")
     (synopsis "Plots 'D&D'-Style Alignment Charts")
     (description
      "D&D alignment charts show 9 boxes with values for good through evil and values
@@ -35184,20 +35184,20 @@ order to estimate multistate models.")
 (define-public r-gamboostlss
   (package
     (name "r-gamboostlss")
-    (version "2.0-7")
+    (version "2.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamboostLSS" version))
        (sha256
-        (base32 "1mx2aixdswmb8dgg1iawqzak2w7a1w4x6igk8wdwi05gifrgrs3i"))))
+        (base32 "1sk4fq0p2vmd1cbw7s0ncmjnbcpv1n1va51hj4s7c7w1dr3z2lgc"))))
     (properties `((upstream-name . "gamboostLSS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-stabs r-mboost))
-    (home-page "https://cran.r-project.org/package=gamboostLSS")
+    (home-page "https://github.com/boost-R/gamboostLSS")
     (synopsis "Boosting Methods for 'GAMLSS'")
     (description
      "Boosting models for fitting generalized additive models for location, shape and

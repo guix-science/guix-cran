@@ -2610,13 +2610,13 @@ type of ISO8601 string and to standardise ISO8601 strings.")
 (define-public r-iso11784tools
   (package
     (name "r-iso11784tools")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISO11784Tools" version))
        (sha256
-        (base32 "0nl7la7g6028bal6swnfplny81ngpfcrac46nlnpk2d99bpfvfs6"))))
+        (base32 "11w80mcn6hpql0ralj8br9x0zwallcky0hxwxjg3x2ws5n4xc30v"))))
     (properties `((upstream-name . "ISO11784Tools")))
     (build-system r-build-system)
     (arguments
@@ -4594,13 +4594,13 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
 (define-public r-ipumsr
   (package
     (name "r-ipumsr")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipumsr" version))
        (sha256
-        (base32 "0k1mz9i6xsaq8874m2gkdd9ip7x942sx47xndy8smr094jl5zmfr"))))
+        (base32 "1vvs92yd4cfxwr3izsw1vj3hs20wdlrky90l2xnjr47izipq6xlh"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (arguments

@@ -3850,13 +3850,13 @@ optionally used to sort the heatmap.")
 (define-public r-brpop
   (package
     (name "r-brpop")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brpop" version))
        (sha256
-        (base32 "0zklcvzygps99xz9qk4k2jqnk4p5pxhrkf7pjh98b6d12mq84hcw"))))
+        (base32 "1s8ccwshzwkinxgj5b0qmq67f320whwryz3yb8wba3a172jbrkr3"))))
     (properties `((upstream-name . "brpop")))
     (build-system r-build-system)
     (arguments
@@ -14070,13 +14070,13 @@ file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
 (define-public r-biomass
   (package
     (name "r-biomass")
-    (version "2.1.12")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIOMASS" version))
        (sha256
-        (base32 "0z1qphza51agv5464rln6j58698c0r45nk6hcjmzb89kh8h9lsb2"))))
+        (base32 "0zk0bcd5mafnxyzi3bcm34nrvqxhzving7i7inbbaspa7li5p7s6"))))
     (properties `((upstream-name . "BIOMASS")))
     (build-system r-build-system)
     (arguments
@@ -14088,9 +14088,10 @@ file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).")
                              r-proj4
                              r-minpack-lm
                              r-jsonlite
+                             r-ggplot2
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/umr-amap/BIOMASS")
+    (home-page "https://umr-amap.github.io/BIOMASS/")
     (synopsis
      "Estimating Aboveground Biomass and Its Uncertainty in Tropical Forests")
     (description
@@ -16992,13 +16993,13 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
 (define-public r-bigergm
   (package
     (name "r-bigergm")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigergm" version))
        (sha256
-        (base32 "1cwp7vqcspfg8xgjfrk8517xwnfpn1hphz16bfprjmwrr3xg5b2x"))))
+        (base32 "0bz6y119xg3s93lcbr4d5aqmmszrssx5cm3r61lz8wpzpd3i0qvz"))))
     (properties `((upstream-name . "bigergm")))
     (build-system r-build-system)
     (arguments
@@ -21266,13 +21267,13 @@ instead.")
 (define-public r-beastt
   (package
     (name "r-beastt")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beastt" version))
        (sha256
-        (base32 "0xgz9xjanybnc2fi0fqc9i0zq80y87rnll62q98nk08f919h7xs1"))))
+        (base32 "1kcg9100fnjs4circkwz8ipdmnrmcwzns0dj9ihiwwa9xrl3nkky"))))
     (properties `((upstream-name . "beastt")))
     (build-system r-build-system)
     (arguments
@@ -21280,7 +21281,13 @@ instead.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
                              r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
                              r-purrr
                              r-mixtools
                              r-ggplot2
@@ -21289,7 +21296,8 @@ instead.")
                              r-dplyr
                              r-distributional
                              r-cobalt
-                             r-cli))
+                             r-cli
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://gsk-biostatistics.github.io/beastt/")
     (synopsis
@@ -21299,7 +21307,7 @@ instead.")
 weighting for simulations and data analyses in clinical trials.  This makes it
 easy to use propensity score methods to balance covariate distributions between
 external and internal data.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+    (license license:gpl3+)))
 
 (define-public r-beastjar
   (package

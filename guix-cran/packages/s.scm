@@ -2431,13 +2431,13 @@ formats as well as other swatch file formats can be found at
 (define-public r-swash
   (package
     (name "r-swash")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swash" version))
        (sha256
-        (base32 "00b525xglpm8qwadj99ib2vm9rpscv5x37rjisbmnxqnpzqb10la"))))
+        (base32 "02sks9ci3rcfx9p52vk46k42ppl3pj2mhw7yhf8l6x01vx49ranb"))))
     (properties `((upstream-name . "swash")))
     (build-system r-build-system)
     (arguments
@@ -2451,7 +2451,7 @@ Haggett (2006) <doi:10.1007/s10109-006-0027-8> to model the velocity of spread
 of infectious diseases across space.  This package enables the calculation of
 the Swash-Backwash Model for user-supplied panel data on regional infections.
 The package also provides additional functions for bootstrap confidence
-intervals and data management.")
+intervals, country comparison, visualization of results, and data management.")
     (license license:gpl2+)))
 
 (define-public r-swarmverse
@@ -42344,13 +42344,13 @@ supersedure, etc.), and colony phenotype values.")
 (define-public r-simplyagree
   (package
     (name "r-simplyagree")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimplyAgree" version))
        (sha256
-        (base32 "10n63rn7kl4k1q7k3jz4f3macmn8y662jy41vdspgdwf0iqvf5in"))))
+        (base32 "0q1fgm1f2fx1ml7q1w3chik31r5397bm2grsmaypg1ykjfvfy3qj"))))
     (properties `((upstream-name . "SimplyAgree")))
     (build-system r-build-system)
     (arguments
@@ -54171,13 +54171,13 @@ them clearer and friendlier to the user.")
 (define-public r-sevenbridges2
   (package
     (name "r-sevenbridges2")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sevenbridges2" version))
        (sha256
-        (base32 "065r7qggr3hb4jzwbw5sfkimyvaqr9pgyqa5k7aagmy5xdsgzczp"))))
+        (base32 "0d2pb5idndszipy7gk8pscqw62hy9ndls98dhs7nbp0j0384r4a0"))))
     (properties `((upstream-name . "sevenbridges2")))
     (build-system r-build-system)
     (arguments
@@ -64719,13 +64719,13 @@ In this case it is known as the Standardized Precipitation Index (SPI).")
 (define-public r-schwabr
   (package
     (name "r-schwabr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "schwabr" version))
        (sha256
-        (base32 "0sf189vgd228wh8kzs5l1166dvwqir9q1n50hml0xs723d7hr0yf"))))
+        (base32 "02p6fbw8rm88p69a5z5gac1mxx9qywqffzyy1bjkrbz3p5kz8kyk"))))
     (properties `((upstream-name . "schwabr")))
     (build-system r-build-system)
     (arguments
@@ -64739,7 +64739,7 @@ In this case it is known as the Standardized Precipitation Index (SPI).")
                              r-dplyr
                              r-base64enc))
     (home-page "https://altanalytics.github.io/schwabr/")
-    (synopsis "'Schwab API' Interface for R")
+    (synopsis "'Schwab API' Interface")
     (description
      "Use R to interface with the Charles Schwab Trade API
 <https://developer.schwab.com/>.  Functions include authentication, trading,

@@ -5546,6 +5546,36 @@ about the methods: Sprague, Brian L. (2004) <doi:10.1529/biophysj.103.026765>;
 Day, Charles A. (2012) <doi:10.1002/0471142956.cy0219s62>.")
     (license license:expat)))
 
+(define-public r-frapp
+  (package
+    (name "r-frapp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FRApp" version))
+       (sha256
+        (base32 "0m5hyxnx4cr0l92yczcjg13yyjx98j3nlrm407jfvj0qchzrwc8w"))))
+    (properties `((upstream-name . "FRApp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-nlme r-gplots))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/gioiadc/FRApp")
+    (synopsis
+     "FRAP Data Analysis Using Nonlinear Mixed Effect Models with 'shiny'")
+    (description
+     "Analysis of Fluorescence Recovery After Photobleaching (FRAP) experiments using
+nonlinear mixed-effects regression models and analysis of the results.  FRApp is
+not limited to the analysis of FRAP experiments only.  Any nonlinear
+mixed-effects models with an asymptotic exponential functional relationship to
+hierarchical data in various domains can be fitted.  The analysis of data
+available in the package is presented in Di Credico, G., Pelucchi, S., Pauli, F.
+et al. (2025) <doi:10.1038/s41598-025-87154-w>.")
+    (license license:gpl3+)))
+
 (define-public r-frapo
   (package
     (name "r-frapo")

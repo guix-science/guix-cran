@@ -14575,6 +14575,32 @@ NÂ°126, by Insee (2012, ISBN:978-2-11-068613-8,
 <https://www.insee.fr/en/information/2579410>).")
     (license license:expat)))
 
+(define-public r-disagg2
+  (package
+    (name "r-disagg2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "disagg2" version))
+       (sha256
+        (base32 "1sfrwk53rrq353lal6rirrbfjn0zrm3plmrdmxic3z89f5h3qkpf"))))
+    (properties `((upstream-name . "disagg2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-polynomf))
+    (home-page "https://cran.r-project.org/package=disagg2")
+    (synopsis "Support Functions for Time Series Analysis Book")
+    (description
+     "This package contains the support functions for the Time Series Analysis book.
+We present a function to calculate MSE and MAE for inputs of actual and forecast
+values.  We also have the code for disaggregation as found in Wei and Stram
+(1990, <doi:10.1111/j.2517-6161.1990.tb01799.x>), and Hodgess and Wei (1996,
+\"Temporal Disaggregation of Time Series\").")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-dirttee
   (package
     (name "r-dirttee")
@@ -21128,6 +21154,33 @@ useful in teaching a course on financial derivatives.")
 (2011) <doi:10.1002/for.1256> five factor model with variable or fixed decaying
 parameters.  For explanatory purposes, the package also includes various short
 datasets of interest rates for the BRICS countries.")
+    (license license:gpl2+)))
+
+(define-public r-der
+  (package
+    (name "r-der")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DER" version))
+       (sha256
+        (base32 "05mmgpb1l094sy2l98lban30hdq5c21d6297rzz47ndnsbhp2mf5"))))
+    (properties `((upstream-name . "DER")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast2 r-rfast))
+    (home-page "https://cran.r-project.org/package=DER")
+    (synopsis "Income Polarization Index")
+    (description
+     "The DER (or @code{PaF}) income polarization index as proposed by Duclos J. Y.,
+Esteban, J. and Ray D. (2004). \"Polarization: concepts, measurement,
+estimation\".  Econometrica, 72(6): 1737--1772.
+<doi:10.1111/j.1468-0262.2004.00552.x>.  The index may be computed for a single
+or for a range of values of the alpha-parameter.  Bootstrapping is also
+available.")
     (license license:gpl2+)))
 
 (define-public r-depthtools

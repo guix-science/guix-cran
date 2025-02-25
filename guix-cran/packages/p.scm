@@ -20416,13 +20416,13 @@ principal orthogonal complements.")
 (define-public r-poems
   (package
     (name "r-poems")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poems" version))
        (sha256
-        (base32 "0pfiv55ql9kjqgkc4dblc5l36626mxknga2gbh1xw5wwzpbiw7xm"))))
+        (base32 "04szn1p9wqw0s5f1g5b6v67rkxqhgqmzj64264vh21cir7wqfqpd"))))
     (properties `((upstream-name . "poems")))
     (build-system r-build-system)
     (arguments
@@ -28754,13 +28754,13 @@ used for the final data analysis.")
 (define-public r-photon
   (package
     (name "r-photon")
-    (version "0.3.1")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photon" version))
        (sha256
-        (base32 "0gl6v57g1d2p6h90yhilqh0gy044lm8mm65dx7rjiam7r8zpii6z"))))
+        (base32 "097nanvyqrw6k3588f44cyfqi59p9w83ypx1ky61nx3d2l2q55m6"))))
     (properties `((upstream-name . "photon")))
     (build-system r-build-system)
     (arguments
@@ -31951,13 +31951,13 @@ Psychological Assessment: With Applied Examples in R\" (Petersen, 2024, 2025)
 (define-public r-petersen
   (package
     (name "r-petersen")
-    (version "2024.6.1")
+    (version "2025.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Petersen" version))
        (sha256
-        (base32 "03xhsmlgqgp037ccy2q2a65cspcy1qxm1vzb6yljhv61r60zfqjz"))))
+        (base32 "0m1r991rsg3cgzlhfs1vfhr8q2yql490xibpjbn3w86zp3xr5rwz"))))
     (properties `((upstream-name . "Petersen")))
     (build-system r-build-system)
     (arguments
@@ -31979,6 +31979,7 @@ Psychological Assessment: With Applied Examples in R\" (Petersen, 2024, 2025)
                              r-mass
                              r-ggplot2
                              r-formula-tools
+                             r-checkmate
                              r-btspas
                              r-bbmle
                              r-aiccmodavg))
@@ -42654,13 +42655,13 @@ visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.12.3")
+    (version "1.12.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMmisc" version))
        (sha256
-        (base32 "0d07i8kp8v6yczx7ydykjly896a15vbia9vack9iybbhl3i6gbbx"))))
+        (base32 "1yh1hx238czicsishg218iapizx2b8hkkjcim1z5gb0p5dnimq8n"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (arguments

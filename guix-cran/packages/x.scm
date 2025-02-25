@@ -14,6 +14,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages package-management)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages fontutils)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages perl)
@@ -2142,6 +2143,34 @@ computing environments) is available for all algorithms.  See
      "Miscellaneous functions used for x-engineering (feature engineering) or for
 supporting in other packages maintained by Shichen Xie'.")
     (license license:expat)))
+
+(define-public r-xdvir
+  (package
+    (name "r-xdvir")
+    (version "0.1-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xdvir" version))
+       (sha256
+        (base32 "0agnf1sqchd4jipy6yz4mrm04igihp845v56s4r49njsq5mp55v3"))))
+    (properties `((upstream-name . "xdvir")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list freetype))
+    (propagated-inputs (list r-tinytex r-systemfonts r-rlang r-hexview))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://cran.r-project.org/package=xdvir")
+    (synopsis "Render 'LaTeX' in Plots")
+    (description
+     "High-level functions to render @code{LaTeX} fragments in plots, including as
+labels and data symbols in ggplot2 plots, plus low-level functions to author
+@code{LaTeX} fragments (to produce @code{LaTeX} documents), typeset @code{LaTeX}
+documents (to produce DVI files), read DVI files (to produce \"DVI\" objects), and
+render \"DVI\" objects.")
+    (license license:gpl3)))
 
 (define-public r-xdnuts
   (package

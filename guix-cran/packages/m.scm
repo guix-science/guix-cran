@@ -8047,13 +8047,13 @@ thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
 (define-public r-mstest
   (package
     (name "r-mstest")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSTest" version))
        (sha256
-        (base32 "0r0dnayybpiq75fkwgwvwa6bviawylqjv6j95gns5p5hw03w4j7i"))))
+        (base32 "148bk8hszl83fxdw2076ri023qf455drkajbjx85zdwlw4zs0kjw"))))
     (properties `((upstream-name . "MSTest")))
     (build-system r-build-system)
     (arguments
@@ -8075,7 +8075,7 @@ thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
      "Implementation of hypothesis testing procedures described in Hansen (1992)
 <doi:10.1002/jae.3950070506>, Carrasco, Hu, & Ploberger (2014)
 <doi:10.3982/ECTA8609>, Dufour & Luger (2017)
-<doi:10.1080/07474938.2017.1307548>, and Rodriguez Rondon & Dufour (2022)
+<doi:10.1080/07474938.2017.1307548>, and Rodriguez Rondon & Dufour (2024)
 <https://grodriguezrondon.com/files/@code{RodriguezRondon_Dufour_2024_MonteCarlo_LikelihoodRatioTest_MarkovSwitchingModels_20241015.pdf>}
 that can be used to identify the number of regimes in Markov switching models.")
     (license license:gpl2+)))
@@ -32496,13 +32496,13 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metR" version))
        (sha256
-        (base32 "1khfqqkqmbmmswbfac6x72ligal0is75zgbbmcfq47mb694z3jxy"))))
+        (base32 "0zqjhphn9i0gzbwacpnc2ii7iailp6kh8v28mdv39wpv09xp21sr"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (arguments
@@ -36380,6 +36380,39 @@ algorithm, the imputation aim to keep the original mean and standard deviation
 consistent after imputation.")
     (license license:gpl3)))
 
+(define-public r-mermboost
+  (package
+    (name "r-mermboost")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mermboost" version))
+       (sha256
+        (base32 "0zca1wnyxj718w03yhwdy32pv8x6y3b1c59r7k4szi8l03x3iimy"))))
+    (properties `((upstream-name . "mermboost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stabs
+                             r-mboost
+                             r-matrix
+                             r-mass
+                             r-lme4
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=mermboost")
+    (synopsis "Gradient Boosting for Generalized Additive Mixed Models")
+    (description
+     "This package provides a novel framework to estimate mixed models via gradient
+boosting.  The implemented functions are based on mboost and lme4'.  Hence, the
+family range is predetermined by lme4'.  A correction mechanism for
+cluster-constant covariates is implemented as well as an estimation of random
+effects covariance.")
+    (license license:gpl2)))
+
 (define-public r-mergingtools
   (package
     (name "r-mergingtools")
@@ -38432,13 +38465,13 @@ D, Stefanski LA & Crainiceanu CM (2006, ISBN:1584886331).")
 (define-public r-meconetcomp
   (package
     (name "r-meconetcomp")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meconetcomp" version))
        (sha256
-        (base32 "1pza2f5c7b5aryi9wwczfcx358k70s3javwnppfspqzly2d3jx9d"))))
+        (base32 "1f1rmn9xvlrx55q8msi7zbxdcgq2j4ihzzg77pprp69fmrjcpmcc"))))
     (properties `((upstream-name . "meconetcomp")))
     (build-system r-build-system)
     (arguments

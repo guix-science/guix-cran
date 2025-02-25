@@ -5796,19 +5796,20 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "05mp6d7rwvqnxzml2zmxr3ffkx8z8hl5i9cik8b1vz7v3gd6h5q9"))))
+        (base32 "13fxcb7hhghzij3g5hz5352hi3jd7z5f69a50dfh2g6n4mhq67vc"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-sandwich
+                             r-rlang
                              r-ggplot2
                              r-generics
                              r-crayon
