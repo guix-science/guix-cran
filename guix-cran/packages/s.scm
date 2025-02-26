@@ -36893,13 +36893,13 @@ and other sources.")
 (define-public r-smarter
   (package
     (name "r-smarter")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smarter" version))
        (sha256
-        (base32 "08mbi73lwz31kjsjbhc515f1njj2gh30726hp53wjaac4577hyxv"))))
+        (base32 "16dbqrjckisw6g45nwdrvz86kdhfwplg7568adp2cmn5xnrnhm30"))))
     (properties `((upstream-name . "smarter")))
     (build-system r-build-system)
     (arguments
@@ -66653,6 +66653,36 @@ This package includes functions for implementing delta-dimensional alignment
 data.  This function also includes a wrapper for models fit using the TAM
 package.")
     (license license:gpl3)))
+
+(define-public r-scalablebayesm
+  (package
+    (name "r-scalablebayesm")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scalablebayesm" version))
+       (sha256
+        (base32 "19pxchggmyr0y1fcb0spb64l1g7phlrl02rrdxabzcgq4a3xpd76"))))
+    (properties `((upstream-name . "scalablebayesm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-bayesm))
+    (home-page "https://cran.r-project.org/package=scalablebayesm")
+    (synopsis
+     "Distributed Markov Chain Monte Carlo for Bayesian Inference in Marketing")
+    (description
+     "Estimates unit-level and population-level parameters from a hierarchical model
+in marketing applications.  The package includes: Hierarchical Linear Models
+with a mixture of normals prior and covariates, Hierarchical Multinomial Logits
+with a mixture of normals prior and covariates, Hierarchical Multinomial Logits
+with a Dirichlet Process prior and covariates.  For more details, see Bumbaca,
+F. (Rico), Misra, S., & Rossi, P. E. (2020) <doi:10.1177/0022243720952410>
+\"Scalable Target Marketing: Distributed Markov Chain Monte Carlo for Bayesian
+Hierarchical Models\".  Journal of Marketing Research, 57(6), 999-1018.")
+    (license license:gpl2+)))
 
 (define-public r-scagnostics
   (package

@@ -9613,13 +9613,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlaspacetime
   (package
     (name "r-inlaspacetime")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAspacetime" version))
        (sha256
-        (base32 "0kdcpy6dzzkp1j5x6b4shfd8xn248ryh6mq7j522i3a1vn1v3pjc"))))
+        (base32 "02q6r0nhns8k9jh57h5xbnl7w70aq9f7v0022x41pb1m346h396m"))))
     (properties `((upstream-name . "INLAspacetime")))
     (build-system r-build-system)
     (arguments

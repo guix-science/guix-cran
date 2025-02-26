@@ -3948,20 +3948,20 @@ common ones with rio (C-h.  Chan and al. (2018))
 (define-public r-khroma
   (package
     (name "r-khroma")
-    (version "1.15.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "khroma" version))
        (sha256
-        (base32 "0vxx7pgcfmj8zbkvfbblb33j19ir2vv2j6azd941m7l7gsjafpd7"))))
+        (base32 "023hrhn0iy0srr68ghqcya63pdhfs1zxb8jsmmw7wcmipxyw9lls"))))
     (properties `((upstream-name . "khroma")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://packages.tesselle.org/khroma/")
+    (home-page "https://codeberg.org/tesselle/khroma")
     (synopsis "Colour Schemes for Scientific Data Visualization")
     (description
      "Color schemes ready for each type of data (qualitative, diverging or

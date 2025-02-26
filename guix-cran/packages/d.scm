@@ -10144,13 +10144,13 @@ and sediment budgets from a field or a catchment on a daily basis.")
 (define-public r-dmm
   (package
     (name "r-dmm")
-    (version "2.1-10")
+    (version "3.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmm" version))
        (sha256
-        (base32 "1p4g0nb246val8p6l2jj665yp0aa4jxxjyi384i2jcwxyy5hmiyb"))))
+        (base32 "0rzi1bk1js3glyw83xic7yywvgp8dc4ah8za678ipqd86w8d536g"))))
     (properties `((upstream-name . "dmm")))
     (build-system r-build-system)
     (arguments
@@ -10160,11 +10160,13 @@ and sediment budgets from a field or a catchment on a daily basis.")
     (home-page "https://cran.r-project.org/package=dmm")
     (synopsis "Dyadic Mixed Model for Pedigree Data")
     (description
-     "Dyadic mixed model analysis with multi-trait responses and pedigree-based
-partitioning of individual variation into a range of environmental and genetic
-variance components for individual and maternal effects.  Method documented in
-@code{dmmOverview.pdf}; dmm is an implementation of dispersion mean model
-described by Searle et al. (1992) \"Variance Components\", Wiley, NY.")
+     "Mixed model analysis for quantitative genetics with multi-trait responses and
+pedigree-based partitioning of individual variation into a range of
+environmental and genetic variance components for individual and maternal
+effects.  Method documented in @code{dmmOverview.pdf}; dmm is an implementation
+of dispersion mean model described by Searle et al. (1992) \"Variance
+Components\", Wiley, NY. DMM can do MINQUE', bias-corrected-ML', and REML
+variance component estimates.")
     (license (list license:gpl2 license:gpl2+ license:gpl3))))
 
 (define-public r-dmlalg
@@ -11562,13 +11564,13 @@ Brouwer (2020) <doi:10.1002/9781119632757>.")
 (define-public r-dittoviz
   (package
     (name "r-dittoviz")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dittoViz" version))
        (sha256
-        (base32 "1ma06cc4bdrmp9r7yxa3mrqzys5ap6i1sifsgsr31zjnl6yxfk0w"))))
+        (base32 "12awba85sbr4ig7lk2d47ll19avlv2vmhyp9fnh9yn41wfmqnzlh"))))
     (properties `((upstream-name . "dittoViz")))
     (build-system r-build-system)
     (arguments
@@ -15519,13 +15521,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "0c1iy2gwxj6ifq6xgp2jr29kk824fhxbcbdhf6djz4dxm9vcfz3s"))))
+        (base32 "02zh6vs1yyp03sagx510mz8qxrrijhj4gbsjp20f1vrqnqk5qycx"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (arguments
@@ -15533,7 +15535,7 @@ Digital Science Dimensions using DSL API
       #:tests? #f))
     (propagated-inputs (list r-khroma r-arkhe))
     (native-inputs (list r-knitr))
-    (home-page "https://packages.tesselle.org/dimensio/")
+    (home-page "https://codeberg.org/tesselle/dimensio")
     (synopsis "Multivariate Data Analysis")
     (description
      "Simple Principal Components Analysis (PCA) and (Multiple) Correspondence

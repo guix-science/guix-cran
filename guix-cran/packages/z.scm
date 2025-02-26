@@ -346,13 +346,13 @@ cbind.")
 (define-public r-zipper
   (package
     (name "r-zipper")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zippeR" version))
        (sha256
-        (base32 "0cvgkaisig3h1rqwxxwn22wv8d0p5a8y3m93s7crqx2b8dabw2ql"))))
+        (base32 "1w5yqad9x8qncdzpdhn3j0w54zd432d5bgj5izir93j5x9cbf5mc"))))
     (properties `((upstream-name . "zippeR")))
     (build-system r-build-system)
     (arguments
@@ -369,7 +369,8 @@ cbind.")
                              r-purrr
                              r-jsonlite
                              r-httr
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pfizer-opensource/zippeR")
     (synopsis

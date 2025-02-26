@@ -4257,13 +4257,13 @@ Xie, Y (2014) <ISBN: 978-1-482-20353-0>.")
 (define-public r-rtl
   (package
     (name "r-rtl")
-    (version "1.3.5")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTL" version))
        (sha256
-        (base32 "0ajdrwg8g68imwj21l9mh8q9n1xc00d8lxw60p6vnb39m730d8vg"))))
+        (base32 "000fb8bim23lmpp7489zzly8rb51dqkysbhl1zisvg6m06mxhxki"))))
     (properties `((upstream-name . "RTL")))
     (build-system r-build-system)
     (arguments
@@ -4284,6 +4284,7 @@ Xie, Y (2014) <ISBN: 978-1-482-20353-0>.")
                              r-purrr
                              r-plotly
                              r-performanceanalytics
+                             r-numderiv
                              r-magrittr
                              r-lubridate
                              r-lifecycle
@@ -4293,7 +4294,7 @@ Xie, Y (2014) <ISBN: 978-1-482-20353-0>.")
                              r-ggplot2
                              r-dplyr))
     (home-page "https://github.com/risktoollib/RTL")
-    (synopsis "Risk Tool Library - Trading, Risk, 'Analytics' for Commodities")
+    (synopsis "Risk Tool Library - Trading, Risk, Analytics for Commodities")
     (description
      "This package provides a toolkit for Commodities analytics', risk management and
 trading professionals.  Includes functions for API calls to
@@ -31212,13 +31213,13 @@ probabilities.")
 (define-public r-revenerar
   (package
     (name "r-revenerar")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reveneraR" version))
        (sha256
-        (base32 "1xvgkcdz0x9sx2wjssiklp7la4bqyyhbcwq83fdzl80h7ln0xx0z"))))
+        (base32 "0a6dw0pbcd0snf34wbzr3h7l7pfdg3jg8aazsdhvkc0v22wr0f84"))))
     (properties `((upstream-name . "reveneraR")))
     (build-system r-build-system)
     (arguments
@@ -33226,13 +33227,13 @@ forms for both the recurrent event process and the terminal event.")
 (define-public r-rerddapxtracto
   (package
     (name "r-rerddapxtracto")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddapXtracto" version))
        (sha256
-        (base32 "0bamid5820zxbr4byqbzvflvgcbagd8lyyr72hbnfns9ficnj7xc"))))
+        (base32 "139zavwyws08ryf0bbgxaxckp8i2y6bmwx33lfkyi6pj3kaybmbb"))))
     (properties `((upstream-name . "rerddapXtracto")))
     (build-system r-build-system)
     (arguments
@@ -52840,6 +52841,31 @@ cherry-pick their own custom colors.  Users can view up to 3 palettes together.
 Users can also list all the palette choices.  And last but not least, users can
 see the photo that inspired a particular palette.")
     (license license:gpl2)))
+
+(define-public r-rangemodelr
+  (package
+    (name "r-rangemodelr")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rangemodelR" version))
+       (sha256
+        (base32 "1qb9l7ajmg5pcm01jhqq5dbazhny1j8j35534j8866zwbqiispda"))))
+    (properties `((upstream-name . "rangemodelR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spdep r-sf))
+    (home-page "https://cran.r-project.org/package=rangemodelR")
+    (synopsis "Mid-Domain Effect and Species Richness")
+    (description
+     "Used for generating randomized community matrices under strict range cohesion.
+The package can handle data where species occurrence are recorded across sites
+ordered along gradients such as elevation and latitude, as well as species
+occurrences recorded on spatial grids with known geographic coordinates.")
+    (license license:gpl2+)))
 
 (define-public r-rangemodelmetadata
   (package

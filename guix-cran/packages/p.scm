@@ -20768,6 +20768,38 @@ the official website <https://www.ibge.gov.br/>.  Further analysis must be made
 using package survey'.")
     (license license:gpl3)))
 
+(define-public r-pnd
+  (package
+    (name "r-pnd")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pnd" version))
+       (sha256
+        (base32 "0af8ds1m0r8pkh86y1xfizghvkxxrvk865ly9yqfc00qz3kyv2zm"))))
+    (properties `((upstream-name . "pnd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Fifis/pnd")
+    (synopsis
+     "Parallel Numerical Derivatives, Gradients, Jacobians, and Hessians of Arbitrary Accuracy Order")
+    (description
+     "Calculation of numerical derivatives through finite-difference approximations
+with parallel capabilities and optimal step-size selection to improve accuracy.
+These functions facilitate efficient computation of derivatives, gradients,
+Jacobians, and Hessians, allowing for more evaluations to reduce the
+mathematical and machine errors.  Designed for compatibility with the
+@code{numDeriv} package, which has not received updates in several years, it
+introduces advanced features such as computing derivatives of arbitrary order,
+improving the accuracy of Hessian approximations by avoiding repeated
+differencing, and parallelising slow functions on Windows, Mac, and Linux.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-pnar
   (package
     (name "r-pnar")
@@ -28658,6 +28690,51 @@ reactive-transport, and inverse geochemical calculations.")
 educational purpose as well as for text mining.")
     (license license:gpl3)))
 
+(define-public r-photosynthesislrc
+  (package
+    (name "r-photosynthesislrc")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "photosynthesisLRC" version))
+       (sha256
+        (base32 "01w49qb4caycqmb7532f1skhhpmn7plwx6x0gizqc9x1ycx18mgj"))))
+    (properties `((upstream-name . "photosynthesisLRC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-dplyr))
+    (home-page "https://github.com/heliotropichuman/photosynthesisLRC")
+    (synopsis
+     "Nonlinear Least Squares Models for Photosynthetic Light Response")
+    (description
+     "This package provides functions for modeling, comparing, and visualizing
+photosynthetic light response curves using established mechanistic and empirical
+models like the rectangular hyperbola Michaelis-Menton based models ((eq1 (Baly
+(1935) <doi:10.1098/rspb.1935.0026>)) (eq2 (Kaipiainenn (2009)
+<doi:10.1134/S1021443709040025>)) (eq3 (Smith (1936)
+<doi:10.1073/pnas.22.8.504>))), hyperbolic tangent based models ((eq4 (Jassby &
+Platt (1976) <doi:10.4319/LO.1976.21.4.0540>)) (eq5 (Abe et al. (2009)
+<doi:10.1111/j.1444-2906.2008.01619.x>))), the non-rectangular hyperbola model
+(eq6 (Prioul & Chartier (1977) <doi:10.1093/oxfordjournals.aob.a085354>)),
+exponential based models ((eq8 (Webb et al. (1974) <doi:10.1007/BF00345747>)),
+(eq9 (Prado & de Moraes (1997) <doi:10.1007/BF02982542>))), and finally the Ye
+model (eq11 (Ye (2007) <doi:10.1007/s11099-007-0110-5>)).  Each of these
+nonlinear least squares models are commonly used to express photosynthetic
+response under changing light conditions and has been well supported in the
+literature, but distinctions in each mathematical model represent moderately
+different assumptions about physiology and trait relationships which ultimately
+produce different calculated functional trait values.  These models were all
+thoughtfully discussed and curated by Lobo et al. (2013)
+<doi:10.1007/s11099-013-0045-y> to express the importance of selecting an
+appropriate model for analysis, and methods were established in Davis et al. (in
+review) to evaluate the impact of analytical choice in phylogenetic analysis of
+the function-valued traits.  Gas exchange data on 28 wild sunflower species from
+Davis et al.are included as an example data set here.")
+    (license license:expat)))
+
 (define-public r-photosynthesis
   (package
     (name "r-photosynthesis")
@@ -36218,6 +36295,37 @@ user-interface.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-pdcor
+  (package
+    (name "r-pdcor")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pdcor" version))
+       (sha256
+        (base32 "1qza222x30dd8larlza2byqx8pi4vbcynkdrr5nzmgkyvz1dwcmc"))))
+    (properties `((upstream-name . "pdcor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast2 r-rfast r-dcov))
+    (home-page "https://cran.r-project.org/package=pdcor")
+    (synopsis "Fast and Light-Weight Partial Distance Correlation")
+    (description
+     "Fast and memory-less computation of the partial distance correlation for vectors
+and matrices.  Permutation-based and asymptotic hypothesis testing for zero
+partial distance correlation are also performed.  References include: Szekely G.
+J. and Rizzo M. L. (2014). \"Partial distance correlation with methods for
+dissimilarities\".  The Annals Statistics, 42(6): 2382--2412.
+<doi:10.1214/14-AOS1255>.  Shen C., Panda S. and Vogelstein J. T. (2022). \"The
+Chi-Square Test of Distance Correlation\".  Journal of Computational and
+Graphical Statistics, 31(1): 254--262. <doi:10.1080/10618600.2021.1938585>.
+Szekely G. J. and Rizzo M. L. (2023). \"The Energy of Data and Distance
+Correlation\".  Chapman and Hall/CRC. <ISBN:9781482242744>.")
+    (license license:gpl2+)))
+
 (define-public r-pdc
   (package
     (name "r-pdc")
@@ -42815,19 +42923,20 @@ Michael Oswald.")
 (define-public r-pam
   (package
     (name "r-pam")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pam" version))
        (sha256
-        (base32 "1lnyn1g1g4za6ywprknlh9s997ax4cnz6q14zkvdy6fskfc6igfx"))))
+        (base32 "0hg8ax25pi4sbl6gasms6rpfmxhkk50b9gfa6v55mczji7jkgv1y"))))
     (properties `((upstream-name . "pam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-minpack-lm
+    (propagated-inputs (list r-rlang
+                             r-minpack-lm
                              r-gridextra
                              r-ggthemes
                              r-ggplot2

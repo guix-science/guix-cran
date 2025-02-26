@@ -2127,13 +2127,13 @@ offers enhanced visualizations with interactive elements.")
 (define-public r-expirest
   (package
     (name "r-expirest")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expirest" version))
        (sha256
-        (base32 "1pav81y4n23q42kfvbsdinfyklxwhspsxvfdyvs891zsvy2m93yn"))))
+        (base32 "0g8y640hgxzwk20jykv6zkf7dm4bws7aam68jxd78yh1f3nn23qa"))))
     (properties `((upstream-name . "expirest")))
     (build-system r-build-system)
     (arguments
@@ -10799,6 +10799,41 @@ Peter Makary, 2007.  CCTABLE Stata module to calculate summary table for
 case-control study Statistical Software Components S456878, Boston College
 Department of Economics.")
     (license license:lgpl3)))
+
+(define-public r-episimr
+  (package
+    (name "r-episimr")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EpiSimR" version))
+       (sha256
+        (base32 "1i73737sfrsmxqqrk3j08s39bxywlzq1049h0c7wxq4drh5rwkx2"))))
+    (properties `((upstream-name . "EpiSimR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinythemes
+                             r-shiny
+                             r-openxlsx
+                             r-dt
+                             r-dplyr
+                             r-desolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EpiSimR")
+    (synopsis
+     "'Shiny' App to Simulate the Dynamics of Epidemic and Endemic Diseases Spread")
+    (description
+     "The @code{EpiSimR} package provides an interactive shiny app based on
+deterministic compartmental mathematical modeling for simulating and visualizing
+the dynamics of epidemic and endemic disease spread.  It allows users to explore
+various intervention strategies, including vaccination and isolation, by
+adjusting key epidemiological parameters.  The methodology follows the approach
+described by Brauer (2008) <doi:10.1007/978-3-540-78911-6_2>.  Thanks to shiny
+package.")
+    (license license:gpl3+)))
 
 (define-public r-episignaldetection
   (package

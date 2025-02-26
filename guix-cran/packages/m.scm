@@ -14859,13 +14859,13 @@ the database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolite" version))
        (sha256
-        (base32 "0194x3bxg9ddkp0jnmv3qs49icks1i11llpilvmmhmz6xg5iq0ik"))))
+        (base32 "1kcwp1lwlx2x3r4pm8gc4zrkhgnzbyrykvchjfjfkxf6klbd13l5"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (arguments

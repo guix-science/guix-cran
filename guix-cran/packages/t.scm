@@ -9984,13 +9984,13 @@ in Kook et al. (2023, <doi:10.1080/01621459.2024.2395588>).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.2-0")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1awqv33j82rkl2s64hw9his0bxrz50cgys3cdb7v1j2xbzn3syx1"))))
+        (base32 "13arfam905zbpx40npfwx19yblqravd5rsmwl9md8m5df7qbaqbv"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (arguments
@@ -10021,7 +10021,9 @@ models for clustered data is provided (Barbanti and Hothorn, 2022,
 <DOI:10.1093/biostatistics/kxac048>).  Multivariate conditional transformation
 models (Klein et al, 2022, <DOI:10.1111/sjos.12501>) and shift-scale
 transformation models (Siegfried et al, 2023,
-<DOI:10.1080/00031305.2023.2203177>) can be fitted as well.")
+<DOI:10.1080/00031305.2023.2203177>) can be fitted as well.  The package
+contains an implementation of a doubly robust score test, described in Kook et
+al. (2024, <DOI:10.1080/01621459.2024.2395588>).")
     (license license:gpl2)))
 
 (define-public r-trajr
@@ -22011,21 +22013,22 @@ solving differential systems.")
 (define-public r-tfm
   (package
     (name "r-tfm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TFM" version))
        (sha256
-        (base32 "1pr020rxl8fzp55l3g23aizjpk4zz1r69pdx0wsmw3fxh8s3hr22"))))
+        (base32 "1n5ma0paw9kx77hybgb3walxxd5cabrm9sxdw39rgpms3v3ab3bv"))))
     (properties `((upstream-name . "TFM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sopc r-relliptical r-mvtnorm r-mass))
+    (propagated-inputs (list r-sopc r-relliptical r-mvtnorm r-matrixcalc
+                             r-mass))
     (home-page "https://cran.r-project.org/package=TFM")
-    (synopsis "Sparse Online Principal Component for TFM")
+    (synopsis "Sparse Online Principal Component for Truncated Factor Model")
     (description
      "The Truncated Factor Model is a statistical model designed to handle specific
 data structures in data analysis.  This R package focuses on the Sparse Online
@@ -22034,7 +22037,7 @@ the loading matrix and specific variance matrix for truncated data, thereby
 better explaining the relationship between common factors and original
 variables.  Additionally, the R package also provides other equations for
 comparison with the Sparse Online Principal Component Estimation method.The
-philosophy of the package is described in Guangbao Guo. (2023)
+philosophy of the package is described in thesis. (2023)
 <doi:10.1007/s00180-022-01270-z>.")
     (license license:expat)))
 

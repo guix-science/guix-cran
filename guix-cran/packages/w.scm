@@ -7781,6 +7781,42 @@ Centre for Demography and Human Capital Data Explorer
 <http://dataexplorer.wittgensteincentre.org/>.")
     (license license:gpl3)))
 
+(define-public r-wbwdi
+  (package
+    (name "r-wbwdi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wbwdi" version))
+       (sha256
+        (base32 "11a9431hx91rkyq9hbnvd8bssgx7vbrg4hpjyvp0zkviiqghpvgj"))))
+    (properties `((upstream-name . "wbwdi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tidy-intelligence/r-wbwdi")
+    (synopsis
+     "Seamless Access to World Bank World Development Indicators (WDI)")
+    (description
+     "Access and analyze the World Bankâs World Development Indicators (WDI) using
+the corresponding API
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation>.
+ WDI provides more than 24,000 country or region-level indicators for various
+contexts.  wbwdi enables users to download, process and work with WDI series
+across multiple countries, aggregates, and time periods.")
+    (license license:expat)))
+
 (define-public r-wbsts
   (package
     (name "r-wbsts")
@@ -9041,13 +9077,13 @@ data, addresses some common data problems, and calculates and plots anomalies.")
 (define-public r-watcher
   (package
     (name "r-watcher")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "watcher" version))
        (sha256
-        (base32 "05gc2jsz2c4arvy4x1y9vgp74dx55839y3y4nbfhw2yr7avd14sp"))))
+        (base32 "02y9gcr5zqlkcjqsfa994xfl5hi48gnm26z75q58z761pcfs1ipx"))))
     (properties `((upstream-name . "watcher")))
     (build-system r-build-system)
     (arguments
@@ -9055,7 +9091,7 @@ data, addresses some common data problems, and calculates and plots anomalies.")
       #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-rlang r-r6 r-later))
-    (home-page "https://r-lib.github.io/watcher/")
+    (home-page "https://watcher.r-lib.org")
     (synopsis "Watch the File System for Changes")
     (description
      "R binding for libfswatch', a file system monitoring library.  Watch files, or

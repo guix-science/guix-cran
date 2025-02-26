@@ -3156,13 +3156,13 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
 (define-public r-lpcde
   (package
     (name "r-lpcde")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpcde" version))
        (sha256
-        (base32 "06hfgqh4fdzajd1h9nc9bzb8qnpiajv7cjw3655ml7lr0r51c1pq"))))
+        (base32 "0b7hycykr29m7alsjfjlr34z70rvjpan9x9iich9bfmx9qs4662i"))))
     (properties `((upstream-name . "lpcde")))
     (build-system r-build-system)
     (arguments
@@ -3184,7 +3184,7 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
      "This package provides tools for estimation and inference of conditional
 densities, derivatives and functions.  This is the companion software for
 Cattaneo, Chandak, Jansson and Ma (2024) <doi:10.3150/23-BEJ1711>.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-lpc
   (package

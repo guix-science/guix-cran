@@ -4972,13 +4972,13 @@ using CSESA before doing the traditional serotyping.")
 (define-public r-csem
   (package
     (name "r-csem")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cSEM" version))
        (sha256
-        (base32 "0a0pv01ynlac53rdwjhw20alx72ip23izvcxv8bdkdxa41ai3bi5"))))
+        (base32 "1cxkdjbrpzl5mc3367k1271amv7zj3m3jmfr6plivclppg057vmz"))))
     (properties `((upstream-name . "cSEM")))
     (build-system r-build-system)
     (arguments
@@ -5006,7 +5006,7 @@ using CSESA before doing the traditional serotyping.")
                              r-cli
                              r-alabama))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/M-E-Rademaker/cSEM/")
+    (home-page "https://github.com/FloSchuberth/cSEM/")
     (synopsis "Composite-Based Structural Equation Modeling")
     (description
      "Estimate, assess, test, and study linear, nonlinear, hierarchical and multigroup
@@ -5016,7 +5016,7 @@ including estimation techniques such as partial least squares path modeling
 generalized structured component analysis (GSCA), generalized structured
 component analysis with uniqueness terms (GSCAm), generalized canonical
 correlation analysis (GCCA), principal component analysis (PCA), factor score
-regression (FSR) using sum score, regression or bartlett scores (including bias
+regression (FSR) using sum score, regression or Bartlett scores (including bias
 correction using Croonâs approach), as well as several tests and typical
 postestimation procedures (e.g., verify admissibility of the estimates, assess
 the model fit, test the model fit etc.).")
@@ -40600,6 +40600,32 @@ from parametric methods to individual and pooled data analysis
 Execution is supported both locally or on remote machines.")
     (license license:lgpl3)))
 
+(define-public r-certara-rdarwin
+  (package
+    (name "r-certara-rdarwin")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Certara.RDarwin" version))
+       (sha256
+        (base32 "15rc86zzbi244z120iharj125d4fz8jhwdgdmib54n093576xjid"))))
+    (properties `((upstream-name . "Certara.RDarwin")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-jsonlite))
+    (home-page "https://certara.github.io/R-Darwin/")
+    (synopsis
+     "Interface for 'pyDarwin' Machine Learning Pharmacometric Model Development")
+    (description
+     "Utilities that support the usage of @code{pyDarwin}
+(<https://certara.github.io/@code{pyDarwin/>}) for ease of setup and execution
+of a machine learning based pharmacometric model search with Certara's
+Non-Linear Mixed Effects (NLME) modeling engine.")
+    (license license:lgpl3)))
+
 (define-public r-certara-r
   (package
     (name "r-certara-r")
@@ -46100,13 +46126,13 @@ views).")
 (define-public r-cata
   (package
     (name "r-cata")
-    (version "0.1.0.26")
+    (version "0.1.0.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cata" version))
        (sha256
-        (base32 "14w0i1nr54107wqifrgjywn8zm757d7bdb9083rqz2jl4ykk77l6"))))
+        (base32 "1zyqrza3qjw7nv9b6hn69yrn8yji5ixv5y87n6vjlxz9ircb1fpr"))))
     (properties `((upstream-name . "cata")))
     (build-system r-build-system)
     (arguments
@@ -46123,7 +46149,9 @@ using b-cluster analysis, then evaluated using various measures; for details,
 see Castura, Meyners, Varela & NÃ¦s (2022) <doi:10.1016/j.foodqual.2022.104564>.
  Methods are adapted to cluster consumers based on their product-related hedonic
 responses; for details, see Castura, Meyners, Pohjanheimo, Varela & NÃ¦s (2023)
-<doi:10.1111/joss.12860>.")
+<doi:10.1111/joss.12860>.  Permutation tests based on the L1-norm methods are
+provided; for details, see Chaya, Castura & Greenacre (2025)
+<doi:10.48550/@code{arXiv.2502.15945>}.")
     (license license:gpl2+)))
 
 (define-public r-cat2cat

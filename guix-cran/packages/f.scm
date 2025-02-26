@@ -12461,13 +12461,13 @@ trait metric, as described by Feuerstahler (2019)
 (define-public r-flexlsx
   (package
     (name "r-flexlsx")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexlsx" version))
        (sha256
-        (base32 "0g09dnfl6k5ylwrh4x8q85q4m22v0j6a0ygckkvphjg9rga8grz4"))))
+        (base32 "1ki2p52pnbxxvsi708lwkwf9296rwqc633bk3256zjqq5ldgj632"))))
     (properties `((upstream-name . "flexlsx")))
     (build-system r-build-system)
     (arguments
@@ -12477,6 +12477,7 @@ trait metric, as described by Feuerstahler (2019)
                              r-tibble
                              r-stringi
                              r-rlang
+                             r-rcpp
                              r-purrr
                              r-openxlsx2
                              r-dplyr))
@@ -22844,13 +22845,13 @@ and Mengyang Gu (2025), <doi:10.48550/@code{arXiv.2501.01324>}.")
 (define-public r-fasterraster
   (package
     (name "r-fasterraster")
-    (version "8.4.0.3")
+    (version "8.4.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasterRaster" version))
        (sha256
-        (base32 "01ra0xxjb2c5i3422ha6zss97077cmj5kxwkbfrkb9sd4rr2rwxk"))))
+        (base32 "1q7hgpvdbwzqwp7dms546w8h12l1mnnmfsj7nawn8rfsn4bjhwzd"))))
     (properties `((upstream-name . "fasterRaster")))
     (build-system r-build-system)
     (arguments

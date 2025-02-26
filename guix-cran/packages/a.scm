@@ -7304,19 +7304,19 @@ El-Moussaoui et al. (2021) <doi:10.1007/978-3-030-66840-2_3>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkhe" version))
        (sha256
-        (base32 "06b2w9q8af7akm1355ddwqcgpjl8rc1hwxdjvgbdh55mnnnsj2qa"))))
+        (base32 "1dpsj0fbbscq26d404wnmk4ymcml2m5nys0dpz4yh9fdfzc79g83"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://packages.tesselle.org/arkhe/")
+    (home-page "https://codeberg.org/tesselle/arkhe")
     (synopsis "Tools for Cleaning Rectangular Data")
     (description
      "This package provides a dependency-free collection of simple functions for
@@ -13460,13 +13460,13 @@ Andrews, D. F. (1972) Plots of High-Dimensional Data.  Biometrics, 28(1),
 (define-public r-and
   (package
     (name "r-and")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "and" version))
        (sha256
-        (base32 "1i95ap4yba5c5ygwsvwmqb3am4r5agv7yhls7ji7pnly8nkrknyn"))))
+        (base32 "1g7zb6p24crcxg0pd5kp55r8pyj14sq053yicl6y0xw1jbrcvmqp"))))
     (properties `((upstream-name . "and")))
     (build-system r-build-system)
     (arguments
@@ -16357,20 +16357,20 @@ any repository.")
 (define-public r-alkahest
   (package
     (name "r-alkahest")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alkahest" version))
        (sha256
-        (base32 "18gfj0g1ccisvls4czh24bp3bcakyjfhddkl92fsmy9wpq2i3qhx"))))
+        (base32 "1zq70wbcnrkyd0gplxhv3lxip46jvl4z6g9w7p2jhzvi2ic291sh"))))
     (properties `((upstream-name . "alkahest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://packages.tesselle.org/alkahest/")
+    (home-page "https://codeberg.org/tesselle/alkahest")
     (synopsis "Pre-Processing XY Data from Experimental Methods")
     (description
      "This package provides a lightweight, dependency-free toolbox for pre-processing
@@ -17255,13 +17255,13 @@ procedure are also implemented for bandwidth selection.")
 (define-public r-akc
   (package
     (name "r-akc")
-    (version "0.9.9")
+    (version "0.9.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "akc" version))
        (sha256
-        (base32 "0m3n9qyz4z0xd535ma1nhh9qkg8abc4psa3xhzpq4spmgvk3an13"))))
+        (base32 "1d40if8bb2v3hl8pab9n2l33zrkvyphxqan59qd9wsdzkf9x8j5c"))))
     (properties `((upstream-name . "akc")))
     (build-system r-build-system)
     (arguments
@@ -19793,6 +19793,44 @@ conversion from an age to an interval, aggregation of ages with associated
 counts in to intervals and the splitting of interval counts based on specified
 age distributions.")
     (license license:gpl2)))
+
+(define-public r-agepopdenom
+  (package
+    (name "r-agepopdenom")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AgePopDenom" version))
+       (sha256
+        (base32 "0vwjha2hnpxknkad3h84wcq2lpzsvv96zad86jmz7mah9yh62bgf"))))
+    (properties `((upstream-name . "AgePopDenom")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tmb
+                             r-tidyr
+                             r-tibble
+                             r-terra
+                             r-sf
+                             r-pdist
+                             r-numderiv
+                             r-httr
+                             r-ggplot2
+                             r-exactextractr
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://truenomad.github.io/AgePopDenom/")
+    (synopsis
+     "Model Fine-Scale Age-Structured Population Data using Open-Source Data")
+    (description
+     "Automate the modelling of age-structured population data using survey data, grid
+population estimates and urban-rural extents.")
+    (license license:expat)))
 
 (define-public r-agena-ai
   (package

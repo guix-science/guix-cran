@@ -426,13 +426,13 @@ bounded-variable least squares.")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "13bpjn6z5g77nf53ynynr230mqzig76c22id5bv9i0r9ddvg9hys"))))
+        (base32 "0ll721rzc7ijls9bm0wppqry9dkgakbhv124v68v0nc1mfy24wxm"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (arguments
@@ -4701,19 +4701,20 @@ life functions to make Databricks simpler to use.")
 (define-public r-brickset
   (package
     (name "r-brickset")
-    (version "2024.0.0")
+    (version "2025.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brickset" version))
        (sha256
-        (base32 "0jfjqrc2d75zhygfxpschn2mqgjc35wwgczqrh9d3f58amkg5m61"))))
+        (base32 "1767d31ml2gwpzz57fwnz6pqgk225rcsaikknv1mn031c1daiyld"))))
     (properties `((upstream-name . "brickset")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-piggyback r-jsonlite r-httr r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jbryer/brickset")
     (synopsis
      "Interface with the Brickset API for Getting Data About LEGO Sets")
@@ -8453,6 +8454,34 @@ estimation for fully-visible Boltzmann machines.  It follows the methods
 described in Nguyen and Wood (2016a) <doi:10.1162/NECO_a_00813> and Nguyen and
 Wood (2016b) <doi:10.1109/TNNLS.2015.2425898>.")
     (license license:gpl3)))
+
+(define-public r-bolt4jr
+  (package
+    (name "r-bolt4jr")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bolt4jr" version))
+       (sha256
+        (base32 "1i7sv6575ywlgaks8an5c42yrz3syxw8mf43zjzwpifwlfj9bnr2"))))
+    (properties `((upstream-name . "bolt4jr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate r-purrr r-glue r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bolt4jr")
+    (synopsis "Interface for the 'Neo4j Bolt' Protocol")
+    (description
+     "Querying, extracting, and processing large-scale network data from Neo4j
+databases using the Neo4j Bolt <https://neo4j.com/docs/bolt/current/bolt/>
+protocol.  This interface supports efficient data retrieval, batch processing
+for large datasets, and seamless conversion of query results into R data frames,
+making it ideal for bioinformatics, computational biology, and other graph-based
+applications.")
+    (license license:expat)))
 
 (define-public r-bolstad2
   (package
