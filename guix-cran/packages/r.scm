@@ -33611,19 +33611,20 @@ aware of.) The PROJ library is available at <https://proj.org/>.")
 (define-public r-reproduciblerchunks
   (package
     (name "r-reproduciblerchunks")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducibleRchunks" version))
        (sha256
-        (base32 "1lcbs67z7d33xj4ds68sdmkzx6n9av72fdhcmlgz7491iqc247sq"))))
+        (base32 "0ymb2m853qb6ih6rzi75pwxi4pcizfjq03hhw84xnzpyyhhgha6v"))))
     (properties `((upstream-name . "reproducibleRchunks")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstudioapi r-knitr r-jsonlite r-digest))
+    (propagated-inputs (list r-rstudioapi r-rmarkdown r-knitr r-jsonlite
+                             r-digest))
     (home-page "https://cran.r-project.org/package=reproducibleRchunks")
     (synopsis "Automated Reproducibility Checks for R Markdown Documents")
     (description
@@ -47230,6 +47231,36 @@ interface of the Climacell v4 API <https://www.climacell.co/weather-api/>.  This
 package requires a valid API key.  See vignettes for instructions on use.")
     (license license:expat)))
 
+(define-public r-rclickhouse
+  (package
+    (name "r-rclickhouse")
+    (version "0.6.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RClickhouse" version))
+       (sha256
+        (base32 "1ickdgwba3m1mv8745lh65szkxiw27051niga16hny6h28d3dp0b"))))
+    (properties `((upstream-name . "RClickhouse")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli
+                             r-bit64))
+    (home-page "https://github.com/IMSMWU/RClickhouse")
+    (synopsis "'Yandex Clickhouse' Interface for R with Basic 'dplyr' Support")
+    (description
+     "Yandex Clickhouse (<https://clickhouse.com/>) is a high-performance relational
+column-store database to enable big data exploration and analytics scaling to
+petabytes of data.  Methods are provided that enable working with Yandex
+Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
+    (license license:gpl2)))
+
 (define-public r-rclabels
   (package
     (name "r-rclabels")
@@ -52787,13 +52818,13 @@ numerical and categorical data.")
 (define-public r-rangr
   (package
     (name "r-rangr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rangr" version))
        (sha256
-        (base32 "1yrc4jxf5888m4k2rgzmnpbif9a9sgg1qjn3pcwrhgc097140ww7"))))
+        (base32 "1cwjsibg749xzic5sqj12fcaqjan85c363r3qi7n96ghm3l47amb"))))
     (properties `((upstream-name . "rangr")))
     (build-system r-build-system)
     (arguments

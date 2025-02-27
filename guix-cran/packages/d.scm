@@ -32264,23 +32264,25 @@ tables.")
 (define-public r-dabestr
   (package
     (name "r-dabestr")
-    (version "2023.9.12")
+    (version "2025.3.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dabestr" version))
        (sha256
-        (base32 "0fm6gk1q86nkls2y3zcklszqb570jcll9hfn2mpd4b4qj2vl2d4x"))))
+        (base32 "1hb1rdp5k9mj77p5yavvbv0nc70f4sz6hphikd6ibksjdaa7500j"))))
     (properties `((upstream-name . "dabestr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-viridislite
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-scales
                              r-rlang
+                             r-rcolorbrewer
                              r-magrittr
                              r-ggsci
                              r-ggplot2

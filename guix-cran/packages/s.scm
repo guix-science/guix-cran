@@ -44190,13 +44190,13 @@ shape constraints including different smoothness conditions.")
 (define-public r-simer
   (package
     (name "r-simer")
-    (version "0.9.0.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simer" version))
        (sha256
-        (base32 "157n20bfinsbwiqr0cx08g9hmsy1jnnlrgr920cjl1qxg1aab2ns"))))
+        (base32 "0dn5z1ww82ca7ak4z57wlvmgjf8ghyv6jrkz56pkxdk5pqp3maah"))))
     (properties `((upstream-name . "simer")))
     (build-system r-build-system)
     (arguments
@@ -67935,13 +67935,13 @@ PDF', HTML', and DOCX file formats.")
 (define-public r-sasr
   (package
     (name "r-sasr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sasr" version))
        (sha256
-        (base32 "0vkfcs0j3f15f8grbz25z8dvd0hriwqmgy4cs2s81d8spv47gg97"))))
+        (base32 "1vzrvh4qrklymx6jfm0hkzzdvs57v47lrw8iaj3a7521i2j3yzrl"))))
     (properties `((upstream-name . "sasr")))
     (build-system r-build-system)
     (arguments

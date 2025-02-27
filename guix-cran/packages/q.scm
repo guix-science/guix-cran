@@ -639,13 +639,13 @@ details.")
 (define-public r-quicr
   (package
     (name "r-quicr")
-    (version "1.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quicR" version))
        (sha256
-        (base32 "1q5d8v8a704pjgwf6n228qiqaqpfw488ylkzzvmzg5zznbgbh2d0"))))
+        (base32 "04mf5yw533i2k1mnkwvygkky10nf9x7rrczqpdnj163lbc60r1w2"))))
     (properties `((upstream-name . "quicR")))
     (build-system r-build-system)
     (arguments
@@ -656,7 +656,9 @@ details.")
                              r-slider
                              r-reshape2
                              r-readxl
+                             r-purrr
                              r-openxlsx
+                             r-janitor
                              r-ggplot2
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=quicR")

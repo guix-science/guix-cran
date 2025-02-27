@@ -12461,13 +12461,13 @@ trait metric, as described by Feuerstahler (2019)
 (define-public r-flexlsx
   (package
     (name "r-flexlsx")
-    (version "0.3.2")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexlsx" version))
        (sha256
-        (base32 "1ki2p52pnbxxvsi708lwkwf9296rwqc633bk3256zjqq5ldgj632"))))
+        (base32 "07yh5fcv2jpkb266jx2ng42sybdpwkkpwn1axs41m37x5z749dz9"))))
     (properties `((upstream-name . "flexlsx")))
     (build-system r-build-system)
     (arguments
@@ -20736,29 +20736,28 @@ microarray data by using the FISH probes and their corresponding copy number.")
 (define-public r-fbms
   (package
     (name "r-fbms")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FBMS" version))
        (sha256
-        (base32 "01zj6alrqis2kclghr4zyz04vgfip3fxxb54f26aczmjhpg71vyd"))))
+        (base32 "052w4x751350x27jfsw11gfg6bdp6axls41b941s908aiv55q9s8"))))
     (properties `((upstream-name . "FBMS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-gensa r-fastglm))
+    (propagated-inputs (list r-rcpp r-r2r r-gensa r-fastglm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FBMS")
     (synopsis "Flexible Bayesian Model Selection and Model Averaging")
     (description
-     "This package implements MJMCMC (mode jumping MCMC) described in Hubin and
-Storvik (2018) <doi:10.1016/j.csda.2018.05.020> and GMJMCMC (genetically
-modified MJMCMC) described in Hubin et al. (2021) <doi:10.1613/jair.1.13047>
-algorithms as well as the subsampling counterpart described in Lachmann et al.
-(2022) <doi:10.1016/j.ijar.2022.08.018> for flexible Bayesian model selection
-and model averaging.")
+     "This package implements the Mode Jumping Markov Chain Monte Carlo algorithm
+described in <doi:10.1016/j.csda.2018.05.020> and its Genetically Modified
+counterpart described in <doi:10.1613/jair.1.13047> as well as the sub-sampling
+versions described in <doi:10.1016/j.ijar.2022.08.018> for flexible Bayesian
+model selection and model averaging.")
     (license license:gpl2)))
 
 (define-public r-fbglm

@@ -5278,13 +5278,13 @@ model/data set combination is close-to-linear or not.  See Bates and Watts
 (define-public r-ipeaplot
   (package
     (name "r-ipeaplot")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipeaplot" version))
        (sha256
-        (base32 "1vkfb651m8cs5m8y8vid0h4khzmhadcvywrlsys2g7qx9qbmv0zn"))))
+        (base32 "1f93irgd70yi8zcfs88agdv49w75br95svcxvlwd2awqp6pg00if"))))
     (properties `((upstream-name . "ipeaplot")))
     (build-system r-build-system)
     (arguments
@@ -7236,13 +7236,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "1kznq589q3x1pfjwfhr41x37b3qdidxmh2h6kfszxj3d57j34skn"))))
+        (base32 "1p919g7visvwywxg5qihk95z8ymv2ij553rfgv5ccanxka380ixk"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (arguments

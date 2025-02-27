@@ -5443,19 +5443,19 @@ computations.")
 (define-public r-opticskxi
   (package
     (name "r-opticskxi")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opticskxi" version))
        (sha256
-        (base32 "0v19qa102xzxfwvaymvq464kl272ynld8kk4j11dwc4drqm037p8"))))
+        (base32 "1na5x51jpwzqnw32mnnd84yywaijjdaskfg34ln2kk7njhnfkxrv"))))
     (properties `((upstream-name . "opticskxi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-magrittr r-ggplot2))
+    (propagated-inputs (list r-text2vec r-rlang r-magrittr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/thomaschln/opticskxi")
     (synopsis "OPTICS K-Xi Density-Based Clustering")
@@ -10956,6 +10956,48 @@ population-level causal effect estimation, and patient-level prediction results
 generated via the R analyses packages in HADES (see
 <https://ohdsi.github.io/Hades/>).  Learn more about @code{OhdsiShinyAppBuilder}
 at <https://ohdsi.github.io/@code{OhdsiShinyAppBuilder/>}.")
+    (license license:asl2.0)))
+
+(define-public r-ohdsireportgenerator
+  (package
+    (name "r-ohdsireportgenerator")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OhdsiReportGenerator" version))
+       (sha256
+        (base32 "0c3yr4ijp0fcfn90v11fyabnp9jhw7ci76k3g0zlkn9ksx7smraa"))))
+    (properties `((upstream-name . "OhdsiReportGenerator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rmarkdown
+                             r-rlang
+                             r-reactable
+                             r-quarto
+                             r-parallellogger
+                             r-kableextra
+                             r-htmltools
+                             r-ggpubr
+                             r-ggplot2
+                             r-forestplot
+                             r-dplyr
+                             r-databaseconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/OhdsiReportGenerator/")
+    (synopsis
+     "Observational Health Data Sciences and Informatics Report Generator")
+    (description
+     "Extract results into R from the Observational Health Data Sciences and
+Informatics result database (see
+<https://ohdsi.github.io/Strategus/results-schema/index.html>) and generate
+reports/presentations via quarto that summarize results in HTML format.  Learn
+more about @code{OhdsiReportGenerator} at
+<https://ohdsi.github.io/@code{OhdsiReportGenerator/>}.")
     (license license:asl2.0)))
 
 (define-public r-ohcspackage

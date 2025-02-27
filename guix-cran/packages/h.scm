@@ -1443,13 +1443,13 @@ published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyd1d" version))
        (sha256
-        (base32 "0k34blmjyradfbrq5j6lqkhs64q80k9a5pdrc3anyvanadcz32af"))))
+        (base32 "1b4zhzkgqs67gc8pgnkvfrzra0rzyni3v3a7dgifxpwadhgl1nl3"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
     (arguments
@@ -3617,13 +3617,13 @@ included.")
 (define-public r-hrtnomaly
   (package
     (name "r-hrtnomaly")
-    (version "25.2.18")
+    (version "25.2.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HRTnomaly" version))
        (sha256
-        (base32 "0idlvjn3xws7np8wv2f7rysnl228502irx9xcd7p1r5nxdpl179q"))))
+        (base32 "08ghyjcbv50n1qbf1sdy1qff97dd53fd1am1vyd7lp0jjblicrsm"))))
     (properties `((upstream-name . "HRTnomaly")))
     (build-system r-build-system)
     (arguments

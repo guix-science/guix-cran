@@ -17509,31 +17509,32 @@ the approach by Tobler (1965).")
 (define-public r-bidask
   (package
     (name "r-bidask")
-    (version "2.0.6")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidask" version))
        (sha256
-        (base32 "1kavjvllp1vf01xj9mnngd6k1r5zx48zp5kvsv5c8qsa53l5gzxl"))))
+        (base32 "09i3mqd8wkyva8r4avw0h9n29zlfj0gacdbbv045m2iy9i8nqm3k"))))
     (properties `((upstream-name . "bidask")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts))
+    (propagated-inputs (list r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eguidotti/bidask")
     (synopsis
      "Efficient Estimation of Bid-Ask Spreads from Open, High, Low, and Close Prices")
     (description
-     "This package implements an efficient estimator of bid-ask spreads from open,
-high, low, and close prices as described in Ardia, Guidotti, & Kroencke (2024)
+     "This package implements the efficient estimator of bid-ask spreads from open,
+high, low, and close prices described in Ardia, Guidotti, & Kroencke (JFE, 2024)
 <doi:10.1016/j.jfineco.2024.103916>.  It also provides an implementation of the
-estimators described in Roll (1984) <doi:10.1111/j.1540-6261.1984.tb03897.x>,
-Corwin & Schultz (2012) <doi:10.1111/j.1540-6261.2012.01729.x>, and Abdi &
-Ranaldo (2017) <doi:10.1093/rfs/hhx084>.")
-    (license license:gpl3)))
+estimators described in Roll (JF, 1984)
+<doi:10.1111/j.1540-6261.1984.tb03897.x>, Corwin & Schultz (JF, 2012)
+<doi:10.1111/j.1540-6261.2012.01729.x>, and Abdi & Ranaldo (RFS, 2017)
+<doi:10.1093/rfs/hhx084>.")
+    (license license:expat)))
 
 (define-public r-bidag
   (package

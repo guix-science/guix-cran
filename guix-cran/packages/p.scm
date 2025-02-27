@@ -925,6 +925,50 @@ variable, a more efficient algorithm is used and the output includes crossover
 indicators.")
     (license license:gpl2+)))
 
+(define-public r-pvstatem
+  (package
+    (name "r-pvstatem")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PvSTATEM" version))
+       (sha256
+        (base32 "0na5gkvgz1qx6y0hvxsakcc0f64kn8gjnzl3z4dgls5d3bmcw4p9"))))
+    (properties `((upstream-name . "PvSTATEM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-svglite
+                             r-stringr
+                             r-stringi
+                             r-scales
+                             r-readxl
+                             r-readr
+                             r-r6
+                             r-r-utils
+                             r-png
+                             r-nplr
+                             r-lubridate
+                             r-ggrepel
+                             r-ggplot2
+                             r-fs
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mini-pw/PvSTATEM")
+    (synopsis
+     "Reading, Quality Control and Preprocessing of MBA (Multiplex Bead Assay) Data")
+    (description
+     "Speeds up the process of loading raw data from MBA (Multiplex Bead Assay)
+examinations, performs quality control checks, and automatically normalises the
+data, preparing it for more advanced, downstream tasks.  The main objective of
+the package is to create a simple environment for a user, who does not
+necessarily have experience with R language.  The package is developed within
+the project of the same name - @code{PvSTATEM}', which is an international
+project aiming for malaria elimination.")
+    (license license:bsd-3)))
+
 (define-public r-pvr
   (package
     (name "r-pvr")
@@ -28645,13 +28689,13 @@ efficient and reproducible.")
 (define-public r-phreeqc
   (package
     (name "r-phreeqc")
-    (version "3.8.6")
+    (version "3.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phreeqc" version))
        (sha256
-        (base32 "0p7nywjqcpv5czamrshhpmq10dvdza83071nasx9qf019hv0apgr"))))
+        (base32 "1k3r1xqq51hw0siya9imdwwlyh5y6gx389ylkc2ng9qrxnhznhgw"))))
     (properties `((upstream-name . "phreeqc")))
     (build-system r-build-system)
     (arguments
@@ -29242,6 +29286,40 @@ with other packages: @code{rPraat}
 <https://CRAN.R-project.org/package=@code{rPraat>}, @code{textgRid}
 <https://CRAN.R-project.org/package=@code{textgRid>}.")
     (license license:gpl2+)))
+
+(define-public r-phonetisr
+  (package
+    (name "r-phonetisr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phonetisr" version))
+       (sha256
+        (base32 "0a5wyay0lxnplk03131f0am387x847x3cwrfpcgw9gj3akz0jil2"))))
+    (properties `((upstream-name . "phonetisr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-unicode
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-magrittr
+                             r-lifecycle
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stefanocoretta/phonetisr")
+    (synopsis "Naive IPA Tokeniser")
+    (description
+     "It provides users with functions to parse International Phonetic Alphabet (IPA)
+transcriptions into individual phones (tokenisation) based on default IPA
+symbols and optional user specified multi-character phones.  The tokenised
+transcriptions can be used for obtaining counts of phones or for searching for
+words matching phonetic patterns.")
+    (license license:expat)))
 
 (define-public r-phonenumber
   (package
@@ -38988,13 +39066,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "1k3m2x3hnnmhjv6b37kp055zq1d2yaxf125wmjr7wlmdjdp9nf1l"))))
+        (base32 "0qfgcmyja04zmviqqbp708x9k0fzw6z5xnnr9mc7kfilama9s61g"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments

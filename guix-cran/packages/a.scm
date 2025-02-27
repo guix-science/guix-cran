@@ -1105,6 +1105,35 @@ context.  This package is designed to be a lightweight solution to easily
 switching between week-based date definitions.")
     (license license:expat)))
 
+(define-public r-awdb
+  (package
+    (name "r-awdb")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "awdb" version))
+       (sha256
+        (base32 "1avkxh5y5h5bj7733s00c4f13z1fcdwscwkvhq62rssh7mqd22br"))))
+    (properties `((upstream-name . "awdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-sf r-rlang r-httr2 r-cli))
+    (home-page "https://github.com/kbvernon/awdb")
+    (synopsis "Query the USDA NWCC Air and Water Database REST API")
+    (description
+     "Query the four endpoints of the Air and Water Database (AWDB) REST API
+maintained by the National Water and Climate Center (NWCC) at the United States
+Department of Agriculture (USDA).  Endpoints include data, forecast,
+reference-data, and metadata.  The package is extremely light weight, with Rust
+via extendr doing most of the heavy lifting to deserialize and flatten deeply
+nested JSON responses.  The AWDB can be found at
+<https://wcc.sc.egov.usda.gov/@code{awdbRestApi/swagger-ui/index.html>}.")
+    (license license:expat)))
+
 (define-public r-avotrex
   (package
     (name "r-avotrex")
@@ -18018,13 +18047,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "1hn7h9y2ig4b8xcyxzsv2v8s9qkd23xqqqw19hfzy3vq96bi7iqv"))))
+        (base32 "0xfbnaf9v1qb9w756kc0r0nqc8hin6cvma7yc9q1hf6ycj40x8m6"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (arguments
@@ -18032,7 +18061,7 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
       #:tests? #f))
     (propagated-inputs (list r-arkhe))
     (native-inputs (list r-knitr))
-    (home-page "https://packages.tesselle.org/aion/")
+    (home-page "https://codeberg.org/tesselle/aion")
     (synopsis "Archaeological Time Series")
     (description
      "This package provides a toolkit for archaeological time series and time

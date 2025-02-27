@@ -14761,13 +14761,13 @@ DLTs, and apply isotonic regression to devise estimates of DLT probability.")
 (define-public r-titegboin
   (package
     (name "r-titegboin")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TITEgBOIN" version))
        (sha256
-        (base32 "088gc9i5zv6bysbrsmw7y6if6kgj0gz70dmsn2zj1053mq14pnkj"))))
+        (base32 "1g2ida9yiawdfcn6q7ilk2fwgr106dyjnldd9cdnicymdij0knks"))))
     (properties `((upstream-name . "TITEgBOIN")))
     (build-system r-build-system)
     (arguments
@@ -26379,13 +26379,13 @@ been published.")
 (define-public r-tectonicr
   (package
     (name "r-tectonicr")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tectonicr" version))
        (sha256
-        (base32 "11avniwd068yrdg78fa3j01fy9y0gqldvkdnv3nz6pj6m5h3nj8k"))))
+        (base32 "1zvn3shvyyw674mcbzag1g5vn1f7lai1i0423mggwdrfx0bm5ch6"))))
     (properties `((upstream-name . "tectonicr")))
     (build-system r-build-system)
     (arguments
@@ -26402,6 +26402,7 @@ been published.")
                              r-smoothr
                              r-sf
                              r-rcolorbrewer
+                             r-lifecycle
                              r-ggplot2
                              r-dplyr
                              r-circular

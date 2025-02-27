@@ -13718,30 +13718,30 @@ resamples or through k-fold cross-validation, as proposed by Nadeau and Bengio
 (define-public r-correctoverloadedpeaks
   (package
     (name "r-correctoverloadedpeaks")
-    (version "1.3.3")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CorrectOverloadedPeaks" version))
        (sha256
-        (base32 "00zb5wxygb95dmmn31wk6lmsljxpjypmpvwa047shysbyr4y5a4h"))))
+        (base32 "1n078q5gpdqfh58c78ny18j9a12ccjybg9vi4nn640zd10n2j7hp"))))
     (properties `((upstream-name . "CorrectOverloadedPeaks")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "<doi:10.1021/acs.analchem.6b02515>")
+    (home-page "https://github.com/janlisec/CorrectOverloadedPeaks")
     (synopsis "Correct Overloaded Peaks from GC-APCI-MS Data")
     (description
-     "Analyzes and modifies metabolomics raw data (generated using GC-APCI-MS, Gas
+     "Analyzes and modifies metabolomics raw data (generated using Gas
 Chromatography-Atmospheric Pressure Chemical Ionization-Mass Spectrometry) to
 correct overloaded signals, i.e.  ion intensities exceeding detector saturation
 leading to a cut-off peak.  Data in @code{xcmsRaw} format are accepted as input
 and @code{mzXML} files can be processed alternatively.  Overloaded signals are
-detected automatically and modified using an Gaussian or Isotopic-Ratio
-approach, QC plots are generated and corrected data are stored within the
-original @code{xcmsRaw} or @code{mzXML} respectively to allow further
+detected automatically and modified using an Gaussian or an Isotopic-Ratio
+approach.  Quality control plots are generated and corrected data are stored
+within the original @code{xcmsRaw} or @code{mzXML} respectively to allow further
 processing.")
     (license license:gpl3)))
 
@@ -26986,6 +26986,30 @@ smoothing irregularly sampled signals, see Hamilton et al (2018)
      "The Chinese ID number contains a lot of information, this package helps you get
 the date of birth, age, age based on year, gender, region, zodiac, constellation
 information from the Chinese ID number.")
+    (license license:expat)))
+
+(define-public r-cnd
+  (package
+    (name "r-cnd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cnd" version))
+       (sha256
+        (base32 "0f8sm06alrjc9v9va6rq1y4zahy8ljaj5l3x47844yaqxm12biwq"))))
+    (properties `((upstream-name . "cnd")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://jmbarbone.github.io/cnd/")
+    (synopsis "Create and Register Conditions")
+    (description
+     "An interface for creating new condition generators objects.  Generators are
+special functions that can be saved in registries and linked to other functions.
+ Utilities for documenting your generators, and new conditions is provided for
+package development.")
     (license license:expat)))
 
 (define-public r-cncagui

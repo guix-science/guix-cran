@@ -7393,13 +7393,13 @@ series in standard file formats.")
 (define-public r-mtrank
   (package
     (name "r-mtrank")
-    (version "0.1-0")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtrank" version))
        (sha256
-        (base32 "19wsg698z782dgwd6p49sxvgqq0j4s0ncwq23pglgc7jzmh1ah86"))))
+        (base32 "1vriyanhiia4drbrydj7hnxrrcnrdlpafkj6yjym6zjdzk13mphg"))))
     (properties `((upstream-name . "mtrank")))
     (build-system r-build-system)
     (arguments
