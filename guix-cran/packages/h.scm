@@ -1407,13 +1407,13 @@ Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
 (define-public r-hydflood
   (package
     (name "r-hydflood")
-    (version "0.5.9")
+    (version "0.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydflood" version))
        (sha256
-        (base32 "1275r7wqkbzcqf5ha5kxj4bf7mcqw9gki0s2m9i4mkq8dfhirlq8"))))
+        (base32 "00d5hjyf4916xlapz50mmh5amn4kxwq4jc9khrvglx0nmw9y02w4"))))
     (properties `((upstream-name . "hydflood")))
     (build-system r-build-system)
     (arguments
@@ -7023,20 +7023,20 @@ matrix.")
 (define-public r-hirestec
   (package
     (name "r-hirestec")
-    (version "0.62.3")
+    (version "0.63.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiResTEC" version))
        (sha256
-        (base32 "1wswcd68zy03qcajkywgrgi7c06v1kyj2rmvdxj1s4yc0pcw657q"))))
+        (base32 "1p4p8d7ahlk4z35jlsbd1pqbdlmpclx0220b34jd5ikv4gvy16v2"))))
     (properties `((upstream-name . "HiResTEC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-plyr r-openxlsx r-interpretmsspectrum r-cormid
-                             r-beeswarm))
+    (propagated-inputs (list r-plyr r-correctoverloadedpeaks))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/janlisec/HiResTEC")
     (synopsis
      "Non-Targeted Fluxomics on High-Resolution Mass-Spectrometry Data")
@@ -11226,13 +11226,13 @@ Absolute Concentration Index) also accept individual and survey data.")
 (define-public r-healthdb
   (package
     (name "r-healthdb")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthdb" version))
        (sha256
-        (base32 "1iyijm0hwqz0dypqfvk84iyj0qbh16sq09mcs2srj98yywd4nnz4"))))
+        (base32 "0d42g2jza57d2nmlydcvz84cxxl9hmj7hw776zg88r8z1ivw1byv"))))
     (properties `((upstream-name . "healthdb")))
     (build-system r-build-system)
     (arguments

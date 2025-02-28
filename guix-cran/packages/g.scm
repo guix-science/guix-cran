@@ -1889,13 +1889,13 @@ geographic representation of the results can be displayed.")
 (define-public r-gtreg
   (package
     (name "r-gtreg")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtreg" version))
        (sha256
-        (base32 "1ldlv43hgxb6dzs4d2ha1rd5qyyia5pyih2v7rfhmjdnz9qdwl6d"))))
+        (base32 "1awdp0dshyqw415g2621m39pr3gbrq6bvh4v2lsvl63am8w33vpm"))))
     (properties `((upstream-name . "gtreg")))
     (build-system r-build-system)
     (arguments
@@ -1910,8 +1910,7 @@ geographic representation of the results can be displayed.")
                              r-glue
                              r-forcats
                              r-dplyr
-                             r-cli
-                             r-broom-helpers))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/shannonpileggi/gtreg")
     (synopsis "Regulatory Tables for Clinical Research")
@@ -2368,6 +2367,33 @@ and Chen, H. (2022) <@code{arXiv:2205.13787>}.")
      "Four graph-based tests are provided for testing whether two samples are from the
 same distribution.  It works for both continuous data and discrete data.")
     (license license:gpl2+)))
+
+(define-public r-gtes
+  (package
+    (name "r-gtes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GTEs" version))
+       (sha256
+        (base32 "0p3vgfs4w3500pnsj99if0davmws7lky9wz0147d96nf1wihp23c"))))
+    (properties `((upstream-name . "GTEs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrixstats r-matrix r-dplyr))
+    (home-page "https://github.com/yzhou1999/GTEs")
+    (synopsis "Group Technical Effects")
+    (description
+     "Implementation of the GTE (Group Technical Effects) model for single-cell data.
+GTE is a quantitative metric to assess batch effects for individual genes in
+single-cell data.  For a single-cell dataset, the user can calculate the GTE
+value for individual features (such as genes), and then identify the highly
+batch-sensitive features.  Removing these highly batch-sensitive features
+results in datasets with low batch effects.")
+    (license license:gpl3)))
 
 (define-public r-gte
   (package
@@ -9503,13 +9529,13 @@ App](<https://gpem-r.shinyapps.io/GPEM-R/>).")
 (define-public r-gpcsign
   (package
     (name "r-gpcsign")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPCsign" version))
        (sha256
-        (base32 "0qijvdk6l8gjmikvq8bgglj5kp83b1qv7d860hrd2kw22s0gv0l7"))))
+        (base32 "12c4qzymij3zrpbx779kzqjwa5xap2w85dnfxajai6q48syxn0iw"))))
     (properties `((upstream-name . "GPCsign")))
     (build-system r-build-system)
     (arguments

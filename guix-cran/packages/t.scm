@@ -28508,13 +28508,13 @@ album covers.")
 (define-public r-taxonomizr
   (package
     (name "r-taxonomizr")
-    (version "0.10.7")
+    (version "0.10.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxonomizr" version))
        (sha256
-        (base32 "1jjrya4nwqg747spc6z1rdzpj16phbnwq4f1pi2n5h6wd1qs3fp2"))))
+        (base32 "0dbajn22iiz893n288qa0izrv7k47lis2ipcg5jziwiyq6jbzqdv"))))
     (properties `((upstream-name . "taxonomizr")))
     (build-system r-build-system)
     (arguments
@@ -28522,7 +28522,7 @@ album covers.")
       #:tests? #f))
     (propagated-inputs (list r-rsqlite r-r-utils r-data-table r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=taxonomizr")
+    (home-page "https://github.com/sherrillmix/taxonomizr/")
     (synopsis "Functions to Work with NCBI Accessions and Taxonomy")
     (description
      "This package provides functions for assigning taxonomy to NCBI accession numbers

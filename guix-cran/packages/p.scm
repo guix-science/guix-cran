@@ -21325,13 +21325,13 @@ pure error sample independent from the data is used.")
 (define-public r-pmlbr
   (package
     (name "r-pmlbr")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmlbr" version))
        (sha256
-        (base32 "0n9na4pswpsqdhnr7xb0hq3p5pfyp7wcnznzcv1ssvp5w9j5vhla"))))
+        (base32 "1l18srk6cd5mv4jfv038mg930d280hsjy97x1yfhvqkjci3724q5"))))
     (properties `((upstream-name . "pmlbr")))
     (build-system r-build-system)
     (arguments

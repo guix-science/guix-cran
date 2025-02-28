@@ -331,6 +331,36 @@ it on leaflet maps.")
 and data on global economic and social issues.")
     (license license:expat)))
 
+(define-public r-owidapi
+  (package
+    (name "r-owidapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "owidapi" version))
+       (sha256
+        (base32 "14npr3nf4iy59182lpzqi81hq0j754mgqnj8qpkrk4jkg8g4vfm6"))))
+    (properties `((upstream-name . "owidapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr2
+                             r-cli))
+    (home-page "https://github.com/tidy-intelligence/r-owidapi")
+    (synopsis "Access the Our World in Data Chart API")
+    (description
+     "Retrieve data from the Our World in Data (OWID) Chart API
+<https://docs.owid.io/projects/etl/api/>.  OWID provides public access to more
+than 5,000 charts focusing on global problems such as poverty, disease, hunger,
+climate change, war, existential risks, and inequality.")
+    (license license:expat)))
+
 (define-public r-owea
   (package
     (name "r-owea")
@@ -913,13 +943,13 @@ Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
 (define-public r-outliers-ts-oga
   (package
     (name "r-outliers-ts-oga")
-    (version "0.0.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outliers.ts.oga" version))
        (sha256
-        (base32 "1v10v4nw7xkrranv4pa4xqw3cayb1lq2p3qda76w6vxxwfch32pi"))))
+        (base32 "02db5a6nzi2j7xm8a086lczc3r16pmkk3avqlk4w450pyg4h9hkf"))))
     (properties `((upstream-name . "outliers.ts.oga")))
     (build-system r-build-system)
     (arguments
@@ -932,15 +962,16 @@ Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
                              r-forecast
                              r-caret))
     (home-page "https://cran.r-project.org/package=outliers.ts.oga")
-    (synopsis
-     "Efficient Outlier Detection in Heterogeneous Time Series Databases")
+    (synopsis "Efficient Outlier Detection for Large Time Series Databases")
     (description
      "Programs for detecting and cleaning outliers in single time series and in time
 series from homogeneous and heterogeneous databases using an Orthogonal Greedy
 Algorithm (OGA) for saturated linear regression models.  The programs implement
-the procedures presented in the paper entitled \"Efficient outlier detection in
-heterogeneous time series databases\" by Pedro Galeano, Daniel PeÃ±a and Ruey S.
-Tsay (2024), working paper, Universidad Carlos III de Madrid.")
+the procedures presented in the paper entitled \"Efficient Outlier Detection for
+Large Time Series Databases\" by Pedro Galeano, Daniel PeÃ±a and Ruey S. Tsay
+(2025), working paper, Universidad Carlos III de Madrid.  Version 1.0.1 contains
+some improvements to the algorithm, so the results may vary slightly compared to
+those obtained with version 0.0.1.")
     (license license:gpl3)))
 
 (define-public r-outlierensembles
@@ -6040,13 +6071,13 @@ simulations.")
 (define-public r-opl
   (package
     (name "r-opl")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPL" version))
        (sha256
-        (base32 "1wdpj4dffz8ajzd02c0vxr3hawhlrz435f70q77yqllair8wqrwq"))))
+        (base32 "01dvphgxij9ryhpsdbcjl41ijanp1z9kfckd9hr8npl0n1c706kc"))))
     (properties `((upstream-name . "OPL")))
     (build-system r-build-system)
     (arguments

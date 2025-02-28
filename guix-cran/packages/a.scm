@@ -2637,6 +2637,56 @@ output, runtime statistics and static code analysis.  The latter feature is made
 possible by representing R expressions using a tree structure.")
     (license license:expat)))
 
+(define-public r-autogo
+  (package
+    (name "r-autogo")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autoGO" version))
+       (sha256
+        (base32 "0gd7kgnq390wzg5j1v8x4793mdc5hjyyag1b7hibkjqan2jfzj0q"))))
+    (properties `((upstream-name . "autoGO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-textshape
+                             r-summarizedexperiment
+                             r-stringr
+                             r-reshape2
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-openxlsx
+                             r-msigdbr
+                             r-imgur
+                             r-gsva
+                             r-ggrepel
+                             r-ggplot2
+                             r-enrichr
+                             r-dplyr
+                             r-dichromat
+                             r-deseq2
+                             r-complexheatmap
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=autoGO")
+    (synopsis
+     "Auto-GO: Reproducible, Robust and High Quality Ontology Enrichment Visualizations")
+    (description
+     "Auto-GO is a framework that enables automated, high quality Gene Ontology
+enrichment analysis visualizations.  It also features a handy wrapper for
+Differential Expression analysis around the DESeq2 package described in Love et
+al. (2014) <doi:10.1186/s13059-014-0550-8>.  The whole framework is structured
+in different, independent functions, in order to let the user decide which steps
+of the analysis to perform and which plot to produce.")
+    (license license:expat)))
+
 (define-public r-autogam
   (package
     (name "r-autogam")
@@ -9925,13 +9975,13 @@ process, originally proposed by Kennedy and O'Hagan (2000), Biometrika 87(1):1."
 (define-public r-appriori
   (package
     (name "r-appriori")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "appRiori" version))
        (sha256
-        (base32 "1phy2v2dxk4gdzx1m2a3gghcwyb7iaj0csybpvpk3vl99difkfxd"))))
+        (base32 "00sfd7l14lqg9q69w45div62dvy1j17gp59lnp2qalqw8s6088vl"))))
     (properties `((upstream-name . "appRiori")))
     (build-system r-build-system)
     (arguments
@@ -9951,12 +10001,12 @@ process, originally proposed by Kennedy and O'Hagan (2000), Biometrika 87(1):1."
     (home-page "https://github.com/Ugranziol/appRiori")
     (synopsis "Code and Obtain Customized Planned Comparisons with 'appRiori'")
     (description
-     "With @code{appRiori}', users upload the research variables and the app guides
-them to the best set of comparisons fitting the hypotheses, for both main and
-interaction effects.  Through a graphical explanation and empirical examples on
-reproducible data, it is shown that it is possible to understand both the logic
-behind the planned comparisons and the way to interpret them when a model is
-tested.")
+     "With @code{appRiori} <doi:10.1177/25152459241293110>, users upload the research
+variables and the app guides them to the best set of comparisons fitting the
+hypotheses, for both main and interaction effects.  Through a graphical
+explanation and empirical examples on reproducible data, it is shown that it is
+possible to understand both the logic behind the planned comparisons and the way
+to interpret them when a model is tested.")
     (license license:gpl3+)))
 
 (define-public r-apportion

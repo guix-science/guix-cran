@@ -5017,13 +5017,13 @@ the composite performance of an individual.")
 (define-public r-ipkg
   (package
     (name "r-ipkg")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipkg" version))
        (sha256
-        (base32 "118k5kc3bn3h6yih1wmi1zh8cy2qn78xh12h9b8alwiag12r3486"))))
+        (base32 "1f67zxm1bl9884ndhi1m1jpva3awlbh5fwfh65v2943ahwpbd9i9"))))
     (properties `((upstream-name . "ipkg")))
     (build-system r-build-system)
     (arguments
@@ -5036,9 +5036,8 @@ the composite performance of an individual.")
     (description
      "When you want to install R package or download file from @code{GitHub}, but you
 can't access @code{GitHub}, this package helps you install R packages or
-download file from @code{GitHub} via the proxy website
-<https://mirror.ghproxy.com/> or <https://gh-proxy.com/>, which is in real-time
-sync with @code{GitHub}.")
+download file from @code{GitHub} via the proxy website <https://gh-proxy.com/>
+or <https://ghfast.top/>, which is in real-time sync with @code{GitHub}.")
     (license license:expat)))
 
 (define-public r-ipft

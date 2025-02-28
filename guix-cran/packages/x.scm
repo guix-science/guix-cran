@@ -321,13 +321,13 @@ significance of the periodicity are calculated using the chi-square periodogram.
 (define-public r-xslt
   (package
     (name "r-xslt")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xslt" version))
        (sha256
-        (base32 "15va9annf8hsx6zdf1xmi14jfa8hm614jqhrba05mqg5873hj9vh"))))
+        (base32 "157zmv3m3fyfn2li0bf9y7f2gv44ylvz2kg0dngp235sirvaza4a"))))
     (properties `((upstream-name . "xslt")))
     (build-system r-build-system)
     (arguments

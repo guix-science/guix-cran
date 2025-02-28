@@ -15649,6 +15649,37 @@ clustering of finite mixture Gaussian distribution with unstructured dispersion
 in both of unsupervised and semi-supervised learning.")
     (license (license:fsdg-compatible "Mozilla Public License 2.0"))))
 
+(define-public r-emcadr
+  (package
+    (name "r-emcadr")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emcAdr" version))
+       (sha256
+        (base32 "1v9lsj2n1dwfdy4vs324nplz2rp4s2dp54x3ggym72fbmdicfcds"))))
+    (properties `((upstream-name . "emcAdr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-umap
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggplot2
+                             r-dplyr
+                             r-dbscan))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=emcAdr")
+    (synopsis "Evolutionary Version of the Metropolis-Hastings Algorithm")
+    (description
+     "This package provides computational methods for detecting adverse high-order
+drug interactions from individual case safety reports using statistical
+techniques, allowing the exploration of higher-order interactions among drug
+cocktails.")
+    (license license:gpl3)))
+
 (define-public r-emc2
   (package
     (name "r-emc2")
@@ -17578,6 +17609,33 @@ Multinomial-Dirichlet ecological inference models.  Also provides tools for
 manipulating higher-dimension data objects.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-eiopt2
+  (package
+    (name "r-eiopt2")
+    (version "0.1.1-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eiopt2" version))
+       (sha256
+        (base32 "1kqgkzh7h5ai8j7p4aki4l92q0fhl7ns516i73pl7panm1ff8d69"))))
+    (properties `((upstream-name . "eiopt2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-quadprog r-alabama))
+    (home-page "https://cran.r-project.org/package=eiopt2")
+    (synopsis
+     "Ecological Inference for RxC Tables via Nonlinear Quadratic Optimization")
+    (description
+     "Estimates @code{RxC} (R by C) vote transfer matrices (ecological contingency
+tables) from aggregate data by simultaneously minimizing Euclidean
+row-standardized unit-to-global distances.  Acknowledgements: The authors wish
+to thank Generalitat Valenciana, ConsellerÃ­a de EducaciÃ³n, Cultura,
+Universidades y Empleo (grant CIAICO/2023/031) for supporting this research.")
+    (license license:gpl2+)))
 
 (define-public r-eiopar
   (package

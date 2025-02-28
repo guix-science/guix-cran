@@ -5152,13 +5152,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "00fiixf18bnazp483nslvsv95fsrmn3zn32qg3zj5hwzgcrrfmsr"))))
+        (base32 "1issqcw82fwcy48ryvi3h6rm1n7lmc3jhdrlpwn0rsskp41vhhxr"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (arguments
@@ -18985,6 +18985,40 @@ estimating model parameters, along with a novel criterion for selecting the
 optimal number of factors.  More details can be referred to Liu et al. (2024)
 <doi:10.48550/@code{arXiv.2408.10542>}.")
     (license license:gpl3)))
+
+(define-public r-mmeta
+  (package
+    (name "r-mmeta")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mmeta" version))
+       (sha256
+        (base32 "1isdi2vjqy6nvraa2d5j03pbax991wmvlrzcwkghxsqj9j2wbw0x"))))
+    (properties `((upstream-name . "mmeta")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2 r-aod))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=mmeta")
+    (synopsis "Multivariate Meta-Analysis")
+    (description
+     "Multiple 2 by 2 tables often arise in meta-analysis which combines statistical
+evidence from multiple studies.  Two risks within the same study are possibly
+correlated because they share some common factors such as environment and
+population structure.  This package implements a set of novel Bayesian
+approaches for multivariate meta analysis when the risks within the same study
+are independent or correlated.  The exact posterior inference of odds ratio,
+relative risk, and risk difference given either a single 2 by 2 table or
+multiple 2 by 2 tables is provided.  Luo, Chen, Su, Chu, (2014)
+<doi:10.18637/jss.v056.i11>, Chen, Luo, (2011) <doi:10.1002/sim.4248>, Chen,
+Chu, Luo, Nie, Chen, (2015) <doi:10.1177/0962280211430889>, Chen, Luo, Chu, Su,
+Nie, (2014) <doi:10.1080/03610926.2012.700379>, Chen, Luo, Chu, Wei, (2013)
+<doi:10.1080/19466315.2013.791483>.")
+    (license license:gpl2+)))
 
 (define-public r-mmem
   (package
@@ -48456,13 +48490,13 @@ et al. (2019) <doi:10.1093/jamia/ocz066>.).")
 (define-public r-maotai
   (package
     (name "r-maotai")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maotai" version))
        (sha256
-        (base32 "1axr16xs366011vkx3j8mljq98923kscz8wrl9m1zprw3pqif6jr"))))
+        (base32 "0rsn5dndr2xh6zi27i1swmrpkwk81mp4vf9255ndh4nl1prrpkkn"))))
     (properties `((upstream-name . "maotai")))
     (build-system r-build-system)
     (arguments

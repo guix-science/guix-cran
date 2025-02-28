@@ -2064,13 +2064,13 @@ on human communication dynamics.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "117yb7wrg1bcp2ldrv60hl1skmx1zbsm3lqd9vr210bg801wa5wn"))))
+        (base32 "1bnnzfavccj4ilvkjkrkb1xyqd13miakwm3gg71c9zn1a1crva38"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (arguments
@@ -3340,13 +3340,13 @@ can identify hidden factors in high-dimensional biomedical data.")
 (define-public r-dstidyverseclient
   (package
     (name "r-dstidyverseclient")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsTidyverseClient" version))
        (sha256
-        (base32 "13ya0n31nkpvamrv6nmswx45npbl5yv07lqmfwccinzm6kzv39c2"))))
+        (base32 "1wj5czcb3dnfka67kgrgiqqsffb13cmakkji5spyfdvzfdb0j2qb"))))
     (properties `((upstream-name . "dsTidyverseClient")))
     (build-system r-build-system)
     (arguments
@@ -3372,13 +3372,13 @@ is installed on the remote server holding the data.  For more information, see
 (define-public r-dstidyverse
   (package
     (name "r-dstidyverse")
-    (version "1.0.1")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsTidyverse" version))
        (sha256
-        (base32 "0148pphkyyw6pflk5bhlcapzml5kw2xqw94q6gxsk2p15nm050dp"))))
+        (base32 "09c01i61gqdq3pr1nddcry0ijp9m6g2m8nmzkjyjia1d1dvwszjn"))))
     (properties `((upstream-name . "dsTidyverse")))
     (build-system r-build-system)
     (arguments
@@ -3393,7 +3393,10 @@ open-source federated analysis solution in R. Currently, @code{DataSHIELD}
 contains very limited tools for data manipulation, so the aim of this package is
 to improve the researcher experience by implementing essential functions for
 data manipulation, including subsetting, filtering, grouping, and renaming
-variables.  For more information, see <https://www.tidyverse.org/> and
+variables.  This is the serverside package which should be installed on the
+server holding the data, and is used in conjuncture with the clientside package
+@code{dsTidyverseClient} which is installed in the local R environment of the
+analyst.  For more information, see <https://www.tidyverse.org/> and
 <https://datashield.org/>.")
     (license license:lgpl2.1+)))
 
@@ -9115,6 +9118,37 @@ their functions.  The documentation can be viewed just like any other help files
 for functions provided by packages as well.")
     (license license:gpl2)))
 
+(define-public r-docovt
+  (package
+    (name "r-docovt")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Docovt" version))
+       (sha256
+        (base32 "0kvdz1jd4zhnz21drq6b84237nrr6dh5h2lfi66fgj39p5bzbg8x"))))
+    (properties `((upstream-name . "Docovt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=Docovt")
+    (synopsis "Distributed Online Covariance Matrix Tests")
+    (description
+     "Distributed Online Covariance Matrix Tests is a powerful tool designed to
+efficiently process and analyze distributed datasets.  It enables users to
+perform covariance matrix tests in an online, distributed manner, making it
+highly suitable for large-scale data analysis.  By leveraging advanced
+computational techniques, Docovt ensures robust and scalable solutions for
+statistical analysis, particularly in scenarios where data is dispersed across
+multiple nodes or sources.  This package is ideal for researchers and
+practitioners working with high-dimensional data, providing a flexible and
+efficient framework for covariance matrix estimation and hypothesis testing.
+The philosophy of Docovt is described in Guo G.(2025)
+<doi:10.1016/j.physa.2024.130308>.")
+    (license license:expat)))
+
 (define-public r-docore
   (package
     (name "r-docore")
@@ -11989,6 +12023,33 @@ published under: Lerch, F., Ultsch, A., Lotsch, J. (2020)
 Scrucca, L. (2013) <doi:10.18637/jss.v053.i04> while the Gaussian Mixture Logic
 stems from @code{AdaptGauss}': Ultsch, A, et al. (2015)
 <doi:10.3390/ijms161025897>.")
+    (license license:expat)))
+
+(define-public r-distributioniv
+  (package
+    (name "r-distributioniv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DistributionIV" version))
+       (sha256
+        (base32 "0n1z2vq0avr0mmr0125zpv2qinwpnivrdjgfgnh9cx3ss76ghzam"))))
+    (properties `((upstream-name . "DistributionIV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-torch r-checkmate))
+    (home-page "https://cran.r-project.org/package=DistributionIV")
+    (synopsis "Distributional Instrumental Variable (DIV) Model")
+    (description
+     "Distributional instrumental variable (DIV) model for estimation of the
+interventional distribution of the outcome Y under a do-intervention on the
+treatment X. Instruments, predictors and targets can be univariate or
+multivariate.  Functionality includes estimation of the (conditional)
+interventional mean and quantiles, as well as sampling from the fitted
+(conditional) interventional distribution.")
     (license license:expat)))
 
 (define-public r-distributacalcul
@@ -29093,13 +29154,13 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.17")
+    (version "2.7.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "1y8c30qvnh4jr9dim4ym82l4rig8jd5lldhv9j7v45q516jsaxv1"))))
+        (base32 "0am07lj0jcb3fgirbb5y5354mznc7262fiyi10bncv5qmxgzmaxx"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (arguments
@@ -29109,10 +29170,10 @@ and ANCOVA.")
                              r-readr
                              r-lubridate
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://code.usgs.gov/water/dataRetrieval")
+    (home-page "https://cran.r-project.org/package=dataRetrieval")
     (synopsis
      "Retrieval Functions for USGS and EPA Hydrology and Water Quality Data")
     (description

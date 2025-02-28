@@ -11234,6 +11234,37 @@ scale.  These models are applicable to cohort and population-based case-control
 data.")
     (license license:gpl2+)))
 
+(define-public r-blit
+  (package
+    (name "r-blit")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blit" version))
+       (sha256
+        (base32 "1w4z9ln6rscpifad03md0csdxyp07p01nivssdxh0nrsagz8hcwb"))))
+    (properties `((upstream-name . "blit")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-sys
+                             r-rlang
+                             r-r6
+                             r-data-table
+                             r-cli))
+    (home-page "https://github.com/WangLabCSU/blit")
+    (synopsis "Bioinformatics Library for Integrated Tools")
+    (description
+     "An all-encompassing R toolkit designed to streamline the process of calling
+various bioinformatics software and then performing data analysis and
+visualization in R. With blit', users can easily integrate a wide array of
+bioinformatics command line tools into their workflows, leveraging the power of
+R for sophisticated data manipulation and graphical representation.")
+    (license license:gpl3+)))
+
 (define-public r-bliss
   (package
     (name "r-bliss")

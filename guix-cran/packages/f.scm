@@ -16682,13 +16682,13 @@ sciences.")
 (define-public r-fido
   (package
     (name "r-fido")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fido" version))
        (sha256
-        (base32 "1q46m55y8ni51b96ckc70ap11w6vjq13wivsm8q37aj464845yy4"))))
+        (base32 "1i6hdzg0vlyphv7zy9alccwvlpg9nj0ckddb36qamqfvcap8xzdv"))))
     (properties `((upstream-name . "fido")))
     (build-system r-build-system)
     (arguments

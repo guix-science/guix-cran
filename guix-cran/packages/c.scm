@@ -17595,13 +17595,13 @@ planning, biogeography and ecology.")
 (define-public r-consensusopls
   (package
     (name "r-consensusopls")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConsensusOPLS" version))
        (sha256
-        (base32 "1fv0a3hjqylrbqsfv7gfn33ni7cc8351shianwsp1caqjza85yr2"))))
+        (base32 "0zsvpwpsbsxq5fi38dwmamprs8hyw736x52c2kzyabvl3fdgd9nv"))))
     (properties `((upstream-name . "ConsensusOPLS")))
     (build-system r-build-system)
     (arguments
@@ -17617,18 +17617,18 @@ evaluating complex systems.  However, the inherent problems encountered when
 analyzing single tables are amplified with the generation of multi-block
 datasets, and finding the relationships between data layers of increasing
 complexity constitutes a challenging task.  For that purpose, a generic
-methodology is proposed by combining the strengths of established data analysis
+methodology is proposed by combining the strength of established data analysis
 strategies, i.e.  multi-block approaches and the Orthogonal Partial Least
 Squares (OPLS) framework to provide an efficient tool for the fusion of data
 obtained from multiple sources.  The package enables quick and efficient
 implementation of the consensus OPLS model for any horizontal multi-block data
-structure (observation-based matching).  Moreover, it offers an interesting
+structures (observation-based matching).  Moreover, it offers an interesting
 range of metrics and graphics to help to determine the optimal number of
 components and check the validity of the model through permutation tests.
-Interpretation tools include scores and loadings plots, as well as Variable
-Importance in Projection (VIP), and performance coefficients such as R2, Q2 and
-DQ2 coefficients.  J. Boccard and D.N. Rutledge (2013)
-<doi:10.1016/j.aca.2013.01.022>.")
+Interpretation tools include score and loading plots, Variable Importance in
+Projection (VIP), functionality predict for SHAP computing, and performance
+coefficients such as R2, Q2, and DQ2 coefficients.  J. Boccard and D.N. Rutledge
+(2013) <doi:10.1016/j.aca.2013.01.022>.")
     (license license:gpl3+)))
 
 (define-public r-consensusclustering

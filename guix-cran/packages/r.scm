@@ -8160,13 +8160,13 @@ without interaction term incorporating neighbour effects.")
 (define-public r-rsdmx
   (package
     (name "r-rsdmx")
-    (version "0.6-4")
+    (version "0.6-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsdmx" version))
        (sha256
-        (base32 "1gphviy39dqixjn8m77786kl2mfhsvvc73zsa96h1xgpn7w78f0s"))))
+        (base32 "1cyc4riy4r736d96946qjzfqf28dmgabqlgxql252mwfa4z83dsb"))))
     (properties `((upstream-name . "rsdmx")))
     (build-system r-build-system)
     (arguments
@@ -57458,6 +57458,45 @@ rendering D3 scripts, publishing D3 visualizations, incorporating D3 in R
 Markdown, creating interactive D3 applications with Shiny, and distributing D3
 based htmlwidgets in R packages.")
     (license license:bsd-3)))
+
+(define-public r-r2d2ordinal
+  (package
+    (name "r-r2d2ordinal")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "R2D2ordinal" version))
+       (sha256
+        (base32 "0b2vvhjmjs4h8vh6gdsmx2ia8fldnrd6b8zvfsgi7dlm6nn5akmi"))))
+    (properties `((upstream-name . "R2D2ordinal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-laplacesdemon
+                             r-gigrvg
+                             r-extradistr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=R2D2ordinal")
+    (synopsis "Implements Pseudo-R2D2 Prior for Ordinal Regression")
+    (description
+     "This package implements the pseudo-R2D2 prior for ordinal regression from the
+paper \"Psuedo-R2D2 prior for high-dimensional ordinal regression\" by Yanchenko
+(2025) <doi:10.48550/@code{arXiv.2502.17491>}.  In particular, it provides code
+to evaluate the probability distribution function for the cut-points, compute
+the log-likelihood, calculate the hyper-parameters for the global variance
+parameter, find the distribution of @code{McFadden's}
+coefficient-of-determination, and fit the model in rstan'.  Please cite the
+paper if you use these codes.")
+    (license license:expat)))
 
 (define-public r-r2d2
   (package

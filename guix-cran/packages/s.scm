@@ -17403,13 +17403,13 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "102dgy94hnnkrbkdnng3zz42iw7ls18dy2y18g0x2bm09w74cl17"))))
+        (base32 "0dv6smbsyn02dqqmniwgb5fn1kkg9n6pnj1mcsva7v5r54qajqz7"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (arguments
@@ -17422,16 +17422,17 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
     (synopsis
      "Toolkit for Reduced Form and Structural Smooth Transition Vector Autoregressive Models")
     (description
-     "Maximum likelihood estimation of smooth transition vector autoregressive models
-with various types of transition weight functions, conditional distributions,
-and identification methods.  Constrained estimation with various types of
-constraints is available.  Residual based model diagnostics, forecasting,
-simulations, and calculation of impulse response functions, generalized impulse
-response functions, and generalized forecast error variance decompositions.  See
-Heather Anderson, Farshid Vahid (1998) <doi:10.1016/S0304-4076(97)00076-6>,
-Helmut LÃ¼tkepohl, Aleksei NetÅ¡unajev (2017) <doi:10.1016/j.jedc.2017.09.001>,
-Markku Lanne, Savi Virolainen (2024) <doi:10.48550/@code{arXiv.2403.14216>},
-Savi Virolainen (2024) <doi:10.48550/@code{arXiv.2404.19707>}.")
+     "Penalized and non-penalized maximum likelihood estimation of smooth transition
+vector autoregressive models with various types of transition weight functions,
+conditional distributions, and identification methods.  Constrained estimation
+with various types of constraints is available.  Residual based model
+diagnostics, forecasting, simulations, and calculation of impulse response
+functions, generalized impulse response functions, and generalized forecast
+error variance decompositions.  See Heather Anderson, Farshid Vahid (1998)
+<doi:10.1016/S0304-4076(97)00076-6>, Helmut LÃ¼tkepohl, Aleksei NetÅ¡unajev
+(2017) <doi:10.1016/j.jedc.2017.09.001>, Markku Lanne, Savi Virolainen (2025)
+<doi:10.48550/@code{arXiv.2403.14216>}, Savi Virolainen (2025)
+<doi:10.48550/@code{arXiv.2404.19707>}.")
     (license license:gpl3)))
 
 (define-public r-sstack
@@ -36653,6 +36654,33 @@ common axis, amongst several samples.  See Warton et al.  2012
 <doi:10.1111/j.2041-210X.2011.00153.x> for methods description.")
     (license license:gpl2)))
 
+(define-public r-smash
+  (package
+    (name "r-smash")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SMASH" version))
+       (sha256
+        (base32 "0nwpcrgjsq2rpmlcrnlvxv7jdgn77xvhfk08w48mxslm16cm2mph"))))
+    (properties `((upstream-name . "SMASH")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-smarter r-reshape2 r-rcpparmadillo r-rcpp
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SMASH")
+    (synopsis "Subclone Multiplicity Allocation and Somatic Heterogeneity")
+    (description
+     "Cluster user-supplied somatic read counts with corresponding allele-specific
+copy number and tumor purity to infer feasible underlying intra-tumor
+heterogeneity in terms of number of subclones, multiplicity, and allocation
+(Little et al. (2019) <doi:10.1186/s13073-019-0643-9>).")
+    (license license:gpl3+)))
+
 (define-public r-smartsva
   (package
     (name "r-smartsva")
@@ -46707,13 +46735,13 @@ and noise variance under mild noise correlations.")
 (define-public r-sht
   (package
     (name "r-sht")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SHT" version))
        (sha256
-        (base32 "03mzjm0hx1i8jz7gam19zyr5w6whwk7a3gfid68h5hj8x60p04wx"))))
+        (base32 "03qp8yy93vvzjyc6pih4f2sgsg0g8drxs506zn5lyp56yi6arln8"))))
     (properties `((upstream-name . "SHT")))
     (build-system r-build-system)
     (arguments
@@ -50273,13 +50301,13 @@ code.")
 (define-public r-shinyclt
   (package
     (name "r-shinyclt")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyCLT" version))
        (sha256
-        (base32 "1k075xqwby3k14njwhjxhb604q4xr7zqjji08dkc30876f80blrd"))))
+        (base32 "0vi503n4xjzi0qc7yiabkwx4f7z23j6ag7mgxi1waqm9l4a6k6hv"))))
     (properties `((upstream-name . "shinyCLT")))
     (build-system r-build-system)
     (arguments
@@ -65632,13 +65660,13 @@ Ho (2022) <doi:10.1111/biom.13457>.")
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCDB" version))
        (sha256
-        (base32 "1jg2nhsi8qggv03igcv6mqb9va2n3dqmiqbwwqm1q69wxg293an9"))))
+        (base32 "186pl21p22fqprd155n73849j4fpk5zclps3n0irdfmvqd4b4gp8"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
     (arguments
