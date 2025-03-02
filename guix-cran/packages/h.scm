@@ -11312,13 +11312,13 @@ body mass index etc.  related to fitness and health of a person.")
 (define-public r-healthatlas
   (package
     (name "r-healthatlas")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthatlas" version))
        (sha256
-        (base32 "1zxdcqmckfs4g7bxi6ssk0bxj8h0gn03qf1gd44p9asjzdwmindv"))))
+        (base32 "1jc0bpz0bx1il7pk1xg50r4x9j7z0n17jjzflj74g26s5pz6dsn0"))))
     (properties `((upstream-name . "healthatlas")))
     (build-system r-build-system)
     (arguments

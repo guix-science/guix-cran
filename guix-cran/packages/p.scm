@@ -20815,13 +20815,13 @@ using package survey'.")
 (define-public r-pnd
   (package
     (name "r-pnd")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pnd" version))
        (sha256
-        (base32 "0af8ds1m0r8pkh86y1xfizghvkxxrvk865ly9yqfc00qz3kyv2zm"))))
+        (base32 "081ha5vlk7b9x3b0qc0mkss67qwijmmqkaw40syjmp30ycn5rpg5"))))
     (properties `((upstream-name . "pnd")))
     (build-system r-build-system)
     (arguments
@@ -20833,12 +20833,12 @@ using package survey'.")
     (synopsis
      "Parallel Numerical Derivatives, Gradients, Jacobians, and Hessians of Arbitrary Accuracy Order")
     (description
-     "Calculation of numerical derivatives through finite-difference approximations
-with parallel capabilities and optimal step-size selection to improve accuracy.
-These functions facilitate efficient computation of derivatives, gradients,
-Jacobians, and Hessians, allowing for more evaluations to reduce the
-mathematical and machine errors.  Designed for compatibility with the
-@code{numDeriv} package, which has not received updates in several years, it
+     "Numerical derivatives through finite-difference approximations can be calculated
+using the pnd package with parallel capabilities and optimal step-size selection
+to improve accuracy.  These functions facilitate efficient computation of
+derivatives, gradients, Jacobians, and Hessians, allowing for more evaluations
+to reduce the mathematical and machine errors.  Designed for compatibility with
+the @code{numDeriv} package, which has not received updates in several years, it
 introduces advanced features such as computing derivatives of arbitrary order,
 improving the accuracy of Hessian approximations by avoiding repeated
 differencing, and parallelising slow functions on Windows, Mac, and Linux.")
@@ -21011,13 +21011,13 @@ summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
 (define-public r-pmxcode
   (package
     (name "r-pmxcode")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxcode" version))
        (sha256
-        (base32 "1m183y1pfd7as9j3ph1in52fi1fi82f9y7fphbjh4r0ch3pl4dws"))))
+        (base32 "0339i3sialp81f5p7236jz1z17sx455dzigyh3flh0q7syrwfknl"))))
     (properties `((upstream-name . "pmxcode")))
     (build-system r-build-system)
     (arguments
@@ -28207,19 +28207,19 @@ global endangerment, as well as compositional turnover (e.g., beta diversity).")
 (define-public r-phyloraster
   (package
     (name "r-phyloraster")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phyloraster" version))
        (sha256
-        (base32 "0xildxiv8k2hrxdp0zkf939zbag62griq1ksalq0vfb32sb5l106"))))
+        (base32 "1issa723yfvg8rrp5nx443c9r7c02iyzrnsknxh8wq3d06qq62dj"))))
     (properties `((upstream-name . "phyloraster")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra r-sesraster r-ape))
+    (propagated-inputs (list r-terra r-sesraster r-purrr r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=phyloraster")
     (synopsis "Evolutionary Diversity Metrics for Raster Data")
@@ -34372,19 +34372,24 @@ failure time models in high dimensions, to appear in Statistics in Medicine
 (define-public r-pemultinom
   (package
     (name "r-pemultinom")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pemultinom" version))
        (sha256
-        (base32 "0xxcar0vmp6cc58471n5lnp5z5avrn3cv60mjdc96ifms0ghi3vl"))))
+        (base32 "0mc71qv40602987j512q42ixwhaqpjignvhzd8z67xipznaxj7g7"))))
     (properties `((upstream-name . "pemultinom")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-nnet r-magrittr r-foreach r-doparallel))
+    (propagated-inputs (list r-rcpp
+                             r-nnet
+                             r-magrittr
+                             r-lpsolve
+                             r-foreach
+                             r-doparallel))
     (home-page "https://cran.r-project.org/package=pemultinom")
     (synopsis "L1-Penalized Multinomial Regression with Statistical Inference")
     (description
@@ -34393,7 +34398,10 @@ statistical inference (calculating confidence intervals of coefficients and
 p-values for individual variables).  It implements 1) the coordinate descent
 algorithm to fit an l1-penalized multinomial regression model (parameterized
 with a reference level); 2) the debiasing approach to obtain the inference
-results, which is described in Tian et al. (2023) <@code{arXiv:2302.02310>}.")
+results, which is described in \"Tian, Y., Rusinek, H., Masurkar, A. V., & Feng,
+Y. (2024).  L1âPenalized Multinomial Regression: Estimation, Inference, and
+Prediction, With an Application to Risk Factor Identification for Different
+Dementia Subtypes.  Statistics in Medicine, 43(30), 5711-5747.\".")
     (license license:gpl2)))
 
 (define-public r-pems-utils

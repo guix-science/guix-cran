@@ -15,6 +15,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages image)
   #:use-module (gnu packages imagemagick)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -9304,19 +9305,19 @@ outcomes.")
 (define-public r-oncobayes2
   (package
     (name "r-oncobayes2")
-    (version "0.8-9")
+    (version "0.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OncoBayes2" version))
        (sha256
-        (base32 "06k0lbriyx6b1nlvpyjhf5g8dp8wa37wi1pmlpfqq7ryivp39v38"))))
+        (base32 "1bv93fmx714wriz956jrz4j4gzvk29ilccjxpxkyr4kvggzp1lha"))))
     (properties `((upstream-name . "OncoBayes2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (inputs (list pandoc pandoc))
+    (inputs (list pngquant pandoc))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -9328,12 +9329,15 @@ outcomes.")
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
+                             r-rbest
                              r-posterior
                              r-matrixstats
+                             r-lifecycle
                              r-ggplot2
                              r-formula
                              r-dplyr
                              r-checkmate
+                             r-brms
                              r-bh
                              r-bayesplot
                              r-assertthat
@@ -12249,13 +12253,13 @@ the data sets with variables \"harmonized\" across different years.")
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "1c49209bf1swsk5mhwb4zxymlg5dha9rg500nq83kbgib6ikkk9f"))))
+        (base32 "1lj5rm7avmh4vak3g34dg9l7rgqyq7h068g2zvdjb2p1kvaw7qlw"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (arguments

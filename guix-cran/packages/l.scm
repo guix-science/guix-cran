@@ -11490,18 +11490,19 @@ observations and create a report of the top sites to visit to see new species.")
 (define-public r-lifepack
   (package
     (name "r-lifepack")
-    (version "0.0.8")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lifepack" version))
        (sha256
-        (base32 "1h4zpkynbcisz83xl0m575wxnym5pl0gwy8lw1lj15zqkhbysd8r"))))
+        (base32 "0w61karznnr3swvzx9gnd6y80g47j4mvf6adfr4vbcxnvchf0ff1"))))
     (properties `((upstream-name . "lifepack")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lifepack")
     (synopsis "Insurance Reserve Calculations")

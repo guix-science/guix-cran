@@ -2617,13 +2617,13 @@ well.")
 (define-public r-jobqueue
   (package
     (name "r-jobqueue")
-    (version "1.4.1")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jobqueue" version))
        (sha256
-        (base32 "18jvsdpcfkyik29y2180p2dywmnrpygn9l2dqz3vrdlycmr90prn"))))
+        (base32 "0ci716axgkmmfg1vyicwn1wlniqrzi43289967nl6rhn0mxaap7s"))))
     (properties `((upstream-name . "jobqueue")))
     (build-system r-build-system)
     (arguments
@@ -3092,13 +3092,13 @@ medical and health sciences.")
 (define-public r-jmbayes2
   (package
     (name "r-jmbayes2")
-    (version "0.5-0")
+    (version "0.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMbayes2" version))
        (sha256
-        (base32 "13p848ix1581p9yd6dgkifqj7bha8w2m7drkcz718bwmjlm83z61"))))
+        (base32 "1bdd0d41ivs88yy2219zvnx1g5f6za57v5mbal47qryy47xs2fz5"))))
     (properties `((upstream-name . "JMbayes2")))
     (build-system r-build-system)
     (arguments

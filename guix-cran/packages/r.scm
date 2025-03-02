@@ -4661,13 +4661,13 @@ telegram channel analytics data.")
 (define-public r-rtg
   (package
     (name "r-rtg")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTG" version))
        (sha256
-        (base32 "00kdibqi54f6f3zjmmmjyrxh3kg91qvzi5pzwapx86fij8x188jb"))))
+        (base32 "0zkma9iib5y55c0vy69w895fnq74qvazjdw02q8pbilfqpzfa79r"))))
     (properties `((upstream-name . "rTG")))
     (build-system r-build-system)
     (arguments
@@ -22717,31 +22717,6 @@ heteroscedastic context.  See Wang et al. (2007), <doi:10.1198/106186007X180156>
 regarding homoscedastic framework.")
     (license license:gpl2+)))
 
-(define-public r-rllama
-  (package
-    (name "r-rllama")
-    (version "0.4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rllama" version))
-       (sha256
-        (base32 "0waxh1di0ga9ya40n3gs9r12vwsb2nq9hd38nqcasy98y2x9p5b7"))))
-    (properties `((upstream-name . "rllama")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-httr r-data-table))
-    (home-page "https://github.com/AlexTwoR/rllama")
-    (synopsis "Access and Analyze Data from 'DeFiLlama'")
-    (description
-     "This package provides an interface to access and analyze data from
-@code{DeFiLlama'<https://defillama.com>}.  This package simplifies the process
-of fetching and manipulating @code{DeFiLlama} data for further analysis and
-visualization.")
-    (license license:expat)))
-
 (define-public r-rlistings
   (package
     (name "r-rlistings")
@@ -24575,13 +24550,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.15.2")
+    (version "0.15.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "0wkckfwhjkjylvw8lnlff4pd4d5qvl4vn1i94himxnpi49ryj6lg"))))
+        (base32 "156m29cfmicdsmz3d61fqf3vcmc8zgbm7x53xa4wdch94xnc37w5"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (arguments
@@ -41011,13 +40986,13 @@ as plain-text tsv and HDF5'.")
 (define-public r-readmore
   (package
     (name "r-readmore")
-    (version "0.2-12")
+    (version "0.2-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readmoRe" version))
        (sha256
-        (base32 "18zxhnh8nzh3l5j94mrqf9l94bxvc82nzhl8sx5k9h08gj4f1zfw"))))
+        (base32 "1kngyhzrfna474jprbc6vy8dl2snqkjdbw0x7adwyzal79hizx0h"))))
     (properties `((upstream-name . "readmoRe")))
     (build-system r-build-system)
     (arguments
@@ -41374,13 +41349,13 @@ desorption/ionization-time-of-flight mass spectrometer of the *flex series.")
 (define-public r-readabs
   (package
     (name "r-readabs")
-    (version "0.4.16")
+    (version "0.4.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readabs" version))
        (sha256
-        (base32 "0f05x7lk2mvccqh6d9zwg35wjcjw59n8skl5n5awrp2hzpavdh57"))))
+        (base32 "1iqd7bsmm0v5364hh02zxh64nhy124bsvj6q7ay76iyrbqxb5yh0"))))
     (properties `((upstream-name . "readabs")))
     (build-system r-build-system)
     (arguments
@@ -49864,13 +49839,13 @@ file export, and the ability to save 3D visualizations to a 3D printable format.
 (define-public r-rayrender
   (package
     (name "r-rayrender")
-    (version "0.38.8")
+    (version "0.38.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayrender" version))
        (sha256
-        (base32 "13c2cmc0kc6cjl6j41kvxdjksmrjd9s0dnafxfvn6mfhgyw9mjw2"))))
+        (base32 "1qj25izdbld2ib1amd3f7damkq5z3nz04mgrbgajlj8a9s6ddzdm"))))
     (properties `((upstream-name . "rayrender")))
     (build-system r-build-system)
     (arguments
@@ -53537,45 +53512,6 @@ Square (GLS) based Random Forest (RF-GLS) detailed in Saha, Basu and Datta
 (2021) <doi:10.1080/01621459.2021.1950003>.")
     (license license:gpl2+)))
 
-(define-public r-randomforestexplainer
-  (package
-    (name "r-randomforestexplainer")
-    (version "0.10.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "randomForestExplainer" version))
-       (sha256
-        (base32 "1ny8c3vn2zvdx12avwvlm4lp648jigkrkcvnhf5qmj8rh0w069v0"))))
-    (properties `((upstream-name . "randomForestExplainer")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmarkdown
-                             r-reshape2
-                             r-ranger
-                             r-randomforest
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggally
-                             r-dt
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ModelOriented/randomForestExplainer")
-    (synopsis
-     "Explaining and Visualizing Random Forests in Terms of Variable Importance")
-    (description
-     "This package provides a set of tools to help explain which variables are most
-important in a random forests.  Various variable importance measures are
-calculated and visualized in different settings in order to get an idea on how
-their importance changes depending on our criteria (Hemant Ishwaran and Udaya B.
-Kogalur and Eiran Z. Gorodeski and Andy J. Minn and Michael S. Lauer (2010)
-<doi:10.1198/jasa.2009.tm08622>, Leo Breiman (2001)
-<doi:10.1023/A:1010933404324>).")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-randomcolor
   (package
     (name "r-randomcolor")
@@ -56874,13 +56810,13 @@ of a new method and how it compares to some of the standard ones.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2rtf" version))
        (sha256
-        (base32 "134xrbhdxjdjh0wzwq410hpvbhr73si1rcz0hpaz003wsifk10g8"))))
+        (base32 "08c8y7rg21r35id080j29k6bacfr7vd8bw9nh0bws0fa0nxd3la0"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (arguments

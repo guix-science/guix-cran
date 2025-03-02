@@ -13501,13 +13501,13 @@ nodes in the network.")
 (define-public r-tna
   (package
     (name "r-tna")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tna" version))
        (sha256
-        (base32 "0lcs2jv0zjnq6acym4llhg7ff4vycdlahg5mdffib55b2h6c93h7"))))
+        (base32 "1ws8lwvhkf1v3ym0hzzhci07xpbzcgfllxwaps48byiafi363pb0"))))
     (properties `((upstream-name . "tna")))
     (build-system r-build-system)
     (arguments
@@ -13533,8 +13533,8 @@ study relational dynamics, including functions for building and plotting TNA
 models, calculating centrality measures, and identifying dominant events and
 patterns.  TNA statistical techniques (e.g., bootstrapping and permutation
 tests) ensure the reliability of observed insights and confirm that identified
-dynamics are meaningful.  See (Saqr et al., 2024)
-<doi:10.48550/@code{arXiv.2411.15486>} for more details on TNA.")
+dynamics are meaningful.  See (Saqr et al., 2025) <doi:10.1145/3706468.3706513>
+for more details on TNA.")
     (license license:expat)))
 
 (define-public r-tmvtnsim
@@ -14270,13 +14270,13 @@ handling distributed corpus objects based on distributed list objects.")
 (define-public r-tm-plugin-alceste
   (package
     (name "r-tm-plugin-alceste")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tm.plugin.alceste" version))
        (sha256
-        (base32 "1l1vn7nn54s92l7ag6kk9vrxzchvp0mvmm62irigk9byqmvrnjcc"))))
+        (base32 "15dynm6f7513sh2wgwgkr8xjrrll0xiar96rs1im3niq2q7wkgb7"))))
     (properties `((upstream-name . "tm.plugin.alceste")))
     (build-system r-build-system)
     (arguments
@@ -26379,13 +26379,13 @@ been published.")
 (define-public r-tectonicr
   (package
     (name "r-tectonicr")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tectonicr" version))
        (sha256
-        (base32 "1zvn3shvyyw674mcbzag1g5vn1f7lai1i0423mggwdrfx0bm5ch6"))))
+        (base32 "08spags0jvfpsxhbzl9vp8bdm23jd7h48a0m5g40r4cdfpph3q17"))))
     (properties `((upstream-name . "tectonicr")))
     (build-system r-build-system)
     (arguments
@@ -26698,13 +26698,13 @@ supporting reproducible research and analysis.")
 (define-public r-teal-modules-general
   (package
     (name "r-teal-modules-general")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.general" version))
        (sha256
-        (base32 "0j07ak6g2rk8b16pix853j7hvyhac580akflwxxb97zvzipy51qx"))))
+        (base32 "1ym17lx8m83wca3j57j54zn9134ya3fzzsvqny3w6kavkvhcvg31"))))
     (properties `((upstream-name . "teal.modules.general")))
     (build-system r-build-system)
     (arguments
@@ -26721,20 +26721,34 @@ supporting reproducible research and analysis.")
                              r-teal-code
                              r-teal
                              r-stringr
+                             r-sparkline
                              r-shinywidgets
                              r-shinyvalidate
                              r-shinytree
                              r-shinyjs
                              r-shiny
                              r-scales
-                             r-logger
+                             r-rtables
+                             r-mass
+                             r-lifecycle
+                             r-lattice
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-gridextra
+                             r-goftest
+                             r-ggrepel
+                             r-ggpp
+                             r-ggpmisc
                              r-ggplot2
                              r-ggmosaic
+                             r-ggextra
+                             r-generics
                              r-forcats
                              r-dt
                              r-dplyr
+                             r-colourpicker
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.modules.general/")
     (synopsis "General Modules for 'teal' Applications")
     (description
@@ -26747,13 +26761,13 @@ and analysis.")
 (define-public r-teal-modules-clinical
   (package
     (name "r-teal-modules-clinical")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.modules.clinical" version))
        (sha256
-        (base32 "1fvy0xcbxjfskdyp3y4y70y7q6swmkjzpswkw7z3fq856fbnaz75"))))
+        (base32 "1hkd2vgkivmmy4fwp9bc58vqdhq5bxilsb7hlkdv5gayxh09wmga"))))
     (properties `((upstream-name . "teal.modules.clinical")))
     (build-system r-build-system)
     (arguments
@@ -26786,7 +26800,7 @@ and analysis.")
                              r-cowplot
                              r-checkmate
                              r-broom))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/teal.modules.clinical/")
     (synopsis "'teal' Modules for Standard Clinical Outputs")
     (description

@@ -16299,44 +16299,6 @@ to the sparse case by shrinking overdispersion towards 0 (Yu et al., 2013, ISSN:
 support only the classification task with this version.")
     (license license:gpl2+)))
 
-(define-public r-nbfar
-  (package
-    (name "r-nbfar")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nbfar" version))
-       (sha256
-        (base32 "1gr9q83ff950x2lcyv9apsnjah4kpi8805mci9m0s3gvr7llpjq4"))))
-    (properties `((upstream-name . "nbfar")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rrpack
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mpath
-                             r-mass
-                             r-magrittr
-                             r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/amishra-stats/nbfar")
-    (synopsis "Negative Binomial Factor Regression Models ('nbfar')")
-    (description
-     "We developed a negative binomial factor regression model to estimate structured
-(sparse) associations between a feature matrix X and overdispersed count data Y.
-With nbfar', microbiome count data Y can be used, for example, to associate host
-or environmental covariates with microbial abundances.  Currently, two models
-are available: a) Negative Binomial reduced rank regression (NB-RRR), b)
-Negative Binomial co-sparse factor regression (NB-FAR).  Please refer the
-manuscript Mishra, A. K., & MÃ¼ller, C. L. (2021).  Negative Binomial factor
-regression with application to microbiome data analysis. @code{bioRxiv}.  for
-more details.")
-    (license license:gpl3+)))
-
 (define-public r-nberwp
   (package
     (name "r-nberwp")

@@ -10259,13 +10259,13 @@ Browne (2015) <DOI:10.3102/1076998614556816>.")
 (define-public r-fmm
   (package
     (name "r-fmm")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMM" version))
        (sha256
-        (base32 "00rjk5lvkcj2ifxgplampqp4427cp68k13wlh7hwjgl2mb2rly23"))))
+        (base32 "0prh6myrg81gz441gfjd0cxvrsa264v5yv7chjw902vaigb8rc3i"))))
     (properties `((upstream-name . "FMM")))
     (build-system r-build-system)
     (arguments
@@ -10273,7 +10273,7 @@ Browne (2015) <DOI:10.3102/1076998614556816>.")
       #:tests? #f))
     (propagated-inputs (list r-rlang r-iterators r-foreach r-doparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/alexARC26/FMM")
+    (home-page "https://github.com/FMMGroupVa/FMM-base-R-package")
     (synopsis "Rhythmic Patterns Modeling by FMM Models")
     (description
      "This package provides a collection of functions to fit and explore single,
@@ -15290,34 +15290,6 @@ process.  This last method is not very accurate and only given here for
 completeness.")
     (license license:agpl3)))
 
-(define-public r-fingraph
-  (package
-    (name "r-fingraph")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fingraph" version))
-       (sha256
-        (base32 "130kfhxxxf6cg7ww71nfrwhwrkp52v7zc0qarpjv84826k00cpcq"))))
-    (properties `((upstream-name . "fingraph")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spectralgraphtopology r-progress r-mvtnorm
-                             r-mass))
-    (home-page "https://github.com/convexfi/fingraph/")
-    (synopsis "Learning Graphs for Financial Markets")
-    (description
-     "Learning graphs for financial markets with optimization algorithms.  This
-package contains implementations of the algorithms described in the paper:
-Cardoso JVM, Ying J, and Palomar DP (2021)
-<https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html>
-\"Learning graphs in heavy-tailed markets\", Advances in Neural Informations
-Processing Systems (@code{NeurIPS}).")
-    (license license:gpl3)))
-
 (define-public r-fingerpro
   (package
     (name "r-fingerpro")
@@ -15776,38 +15748,6 @@ files; and validation of Darwin Core Archives.")
      "Package for time value of money calculation, time series analysis and
 computational finance.")
     (license license:gpl2+)))
-
-(define-public r-finbipartite
-  (package
-    (name "r-finbipartite")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "finbipartite" version))
-       (sha256
-        (base32 "0sws39nya8y7v78v4nlaz5g2nj4sgq5n5iwhfkyyq6h87slw2h8c"))))
-    (properties `((upstream-name . "finbipartite")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spectralgraphtopology
-                             r-quadprog
-                             r-progress
-                             r-mvtnorm
-                             r-mass
-                             r-cvxr))
-    (home-page "https://github.com/convexfi/bipartite/")
-    (synopsis "Learning Bipartite Graphs: Heavy Tails and Multiple Components")
-    (description
-     "Learning bipartite and k-component bipartite graphs from financial datasets.
-This package contains implementations of the algorithms described in the paper:
-Cardoso JVM, Ying J, and Palomar DP (2022).
-<https://openreview.net/pdf?id=WN@code{SyF9qZaMd>} \"Learning bipartite graphs:
-heavy tails and multiple components, Advances in Neural Informations Processing
-Systems\" (@code{NeurIPS}).")
-    (license license:gpl3)))
 
 (define-public r-finbif
   (package
@@ -26365,13 +26305,13 @@ storage: Amazon Web Services (AWS) Simple Storage Service (S3)
 (define-public r-f1datar
   (package
     (name "r-f1datar")
-    (version "1.6.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1dataR" version))
        (sha256
-        (base32 "16j0fh3shnglrbywnilk76hp2x7fwfrigw9lw83vhvwadn5cs2x0"))))
+        (base32 "1mzfnsbjx51fq5nn9709bybqqgxxvq6nqqn4882xdcga3rm8jyyg"))))
     (properties `((upstream-name . "f1dataR")))
     (build-system r-build-system)
     (arguments
@@ -26397,8 +26337,8 @@ storage: Amazon Web Services (AWS) Simple Storage Service (S3)
     (home-page "https://scasanova.github.io/f1dataR/")
     (synopsis "Access Formula 1 Data")
     (description
-     "Obtain Formula 1 data via the Ergast API <https://ergast.com/mrd/> and the
-unofficial API <https://www.formula1.com/en/timing/f1-live> via the fastf1
-Python library <https://docs.fastf1.dev/>.")
+     "Obtain Formula 1 data via the Jolpica API <https://jolpi.ca> and the unofficial
+API <https://www.formula1.com/en/timing/f1-live> via the fastf1 Python library
+<https://docs.fastf1.dev/>.")
     (license license:expat)))
 

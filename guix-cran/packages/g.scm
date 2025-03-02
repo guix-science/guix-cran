@@ -14015,13 +14015,13 @@ development is given in a @code{PhD} chapter, see Ehrhardt (2019)
 (define-public r-glmtrans
   (package
     (name "r-glmtrans")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmtrans" version))
        (sha256
-        (base32 "10d9z1rrjnxkw3nmim01ql5yfn1w62sncgclmprznr5kbna49yj3"))))
+        (base32 "0ns0bm7r7kpj1rwk3dxxy27ynzzyy3j3jcx6mv9l2xw16kdfb72s"))))
     (properties `((upstream-name . "glmtrans")))
     (build-system r-build-system)
     (arguments
@@ -14044,7 +14044,9 @@ elastic-net penalized GLM with three popular families, including linear,
 logistic and Poisson regression models, can be fitted.  To avoid negative
 transfer, a transferable source detection algorithm is proposed.  We also
 provides visualization for the transferable source detection results.  The
-relevant paper is available on @code{arXiv}: <@code{arXiv:2105.14328>}.")
+details of methods can be found in \"Tian, Y., & Feng, Y. (2023).  Transfer
+learning under high-dimensional generalized linear models.  Journal of the
+American Statistical Association, 118(544), 2684-2697.\".")
     (license license:gpl2)))
 
 (define-public r-glmtoolbox
@@ -34631,13 +34633,13 @@ only supports Canberra CNF and TKA and Kromek SPE files.")
 (define-public r-gamlssx
   (package
     (name "r-gamlssx")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlssx" version))
        (sha256
-        (base32 "0lhn0rif1k6978j50cvb3krknn09dzvdln1dh4amz3h2jqsh6434"))))
+        (base32 "1jrbqdwag0zhk9dczjjq8a737pldbljri9rvl95w0zvb4w34gsd1"))))
     (properties `((upstream-name . "gamlssx")))
     (build-system r-build-system)
     (arguments

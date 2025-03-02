@@ -13996,13 +13996,13 @@ components from multiple estimates; -other functions useful in ICA.")
 (define-public r-stdreg2
   (package
     (name "r-stdreg2")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stdReg2" version))
        (sha256
-        (base32 "0vbiqm4cg4wnn94gl9f8616k6h6p92bn1myh4apak88c3vajhmyy"))))
+        (base32 "1limb5db39vdcpb73zi5gsqfq3376ngl4f7smya4vy9g9155c4af"))))
     (properties `((upstream-name . "stdReg2")))
     (build-system r-build-system)
     (arguments
@@ -23049,13 +23049,13 @@ of response trajectories.")
 (define-public r-splines2
   (package
     (name "r-splines2")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splines2" version))
        (sha256
-        (base32 "1p0xl3k33b539j6fifxaack956z3p4yfvhglcpvral315p8pnzn2"))))
+        (base32 "0izjcpcwi35b7m4i9yp2frk1nfij9nw338w7z1fwpkw75c7ac4av"))))
     (properties `((upstream-name . "splines2")))
     (build-system r-build-system)
     (arguments
@@ -25088,50 +25088,6 @@ data are obtained through the Google Earth Engine service
 spectral method of combining multiple diffusion maps, including creation of the
 spectra and visualization of maps.")
     (license license:gpl2)))
-
-(define-public r-spectralgraphtopology
-  (package
-    (name "r-spectralgraphtopology")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spectralGraphTopology" version))
-       (sha256
-        (base32 "09nsszm2f6q8kz84kn7ihhb627q186jwpvr6fm633l8app4ilf2x"))))
-    (properties `((upstream-name . "spectralGraphTopology")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-rlist
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-progress
-                             r-matrix
-                             r-mass))
-    (native-inputs (list r-rmarkdown r-r-rsp r-knitr r-cvxr))
-    (home-page "https://github.com/dppalomar/spectralGraphTopology")
-    (synopsis "Learning Graphs from Data via Spectral Constraints")
-    (description
-     "In the era of big data and hyperconnectivity, learning high-dimensional
-structures such as graphs from data has become a prominent task in machine
-learning and has found applications in many fields such as finance, health care,
-and networks. @code{spectralGraphTopology} is an open source, documented, and
-well-tested R package for learning graphs from data.  It provides
-implementations of state of the art algorithms such as Combinatorial Graph
-Laplacian Learning (CGL), Spectral Graph Learning (SGL), Graph Estimation based
-on Majorization-Minimization (GLE-MM), and Graph Estimation based on Alternating
-Direction Method of Multipliers (GLE-ADMM).  In addition, graph learning has
-been widely employed for clustering, where specific algorithms are available in
-the literature.  To this end, we provide an implementation of the Constrained
-Laplacian Rank (CLR) algorithm.")
-    (license license:gpl3)))
 
 (define-public r-spectralgp
   (package
@@ -33644,13 +33600,13 @@ Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
 (define-public r-snvecr
   (package
     (name "r-snvecr")
-    (version "3.9.4")
+    (version "3.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snvecR" version))
        (sha256
-        (base32 "1z383bbhbpz0hx3biwlh4dzzc0hmjqzka351xn572sb2pycxrgbb"))))
+        (base32 "0dvzyqfgrybbm15dkd86haywkvl7zgr9xga96ykrigb01b383ppk"))))
     (properties `((upstream-name . "snvecR")))
     (build-system r-build-system)
     (arguments
@@ -33658,6 +33614,7 @@ Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tibble
+                             r-stringr
                              r-rlang
                              r-readr
                              r-purrr
@@ -51570,13 +51527,13 @@ shell carbonate) through input parameters.")
 (define-public r-shelf
   (package
     (name "r-shelf")
-    (version "1.11.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SHELF" version))
        (sha256
-        (base32 "1pmbn3bqb6d5mdvyadxxf8dpdvkl8kc7g0cc1b0qvd3531b7zzaw"))))
+        (base32 "074av017ii88wxr2gg80wal1xyh2r1d52wgg159bh51yj6zsfrng"))))
     (properties `((upstream-name . "SHELF")))
     (build-system r-build-system)
     (arguments
@@ -53684,13 +53641,13 @@ Huber regression.The philosophy of the package is described in Guo G. (2023)
 (define-public r-sfislands
   (package
     (name "r-sfislands")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfislands" version))
        (sha256
-        (base32 "1x3jybr0nhms375ynik8v8nx9n2r9gada1fpnx9vhbykdiz5w8jm"))))
+        (base32 "10cagikcqwyamx07j48nxa35frb5d80486w19i73w1b1hhrfjwla"))))
     (properties `((upstream-name . "sfislands")))
     (build-system r-build-system)
     (arguments
@@ -53701,6 +53658,7 @@ Huber regression.The philosophy of the package is described in Guo G. (2023)
                              r-spdep
                              r-sf
                              r-purrr
+                             r-lifecycle
                              r-ggplot2
                              r-dplyr
                              r-broom-mixed))
@@ -63064,13 +63022,13 @@ based on model departure as a novel data representation.")
 (define-public r-scplot
   (package
     (name "r-scplot")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scplot" version))
        (sha256
-        (base32 "0ii9935s87kawmc1aada6w9pwnzq84x7v42fd1vwfaqwmd95lvn3"))))
+        (base32 "0pygj45m55qwwip18gxmjz8z5m451xkjpd3cns81cs0cs9xji9dw"))))
     (properties `((upstream-name . "scplot")))
     (build-system r-build-system)
     (arguments
@@ -66466,13 +66424,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.62.0")
+    (version "0.63.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scan" version))
        (sha256
-        (base32 "0932clrrp67z4p0jl697gp94v90xcn3w9gdg2dgd9hrrbma9mywg"))))
+        (base32 "02rkkjhvrh1d94w3vf9y71r2lcgyw0b1zhsalkzqfa9x2v2cfk5k"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (arguments
@@ -66480,6 +66438,7 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
       #:tests? #f))
     (propagated-inputs (list r-readxl
                              r-nlme
+                             r-mcmcglmm
                              r-mblm
                              r-magrittr
                              r-knitr

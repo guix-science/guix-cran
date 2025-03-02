@@ -5687,13 +5687,13 @@ input number.")
 (define-public r-verbalisr
   (package
     (name "r-verbalisr")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verbalisr" version))
        (sha256
-        (base32 "0xkqz3hbxp885bsxxiqh0a240745wi13f6kqvxfb5jgacmbpwyi7"))))
+        (base32 "05qclq6ng72fif1kymyys247cpb837mc7hy9h6k3h9p04h8l0r1q"))))
     (properties `((upstream-name . "verbalisr")))
     (build-system r-build-system)
     (arguments

@@ -14778,13 +14778,13 @@ and recoding data.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "2.3.5")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ijtiff" version))
        (sha256
-        (base32 "1jj8d3rm37413w31r7i1476947g987i7mh7caqq7x623j1zyhwfl"))))
+        (base32 "0mr5h2j34iznlqjiz2qf2bv5sqzpvq90c8hd25ihvmz9yfsifn6d"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (arguments
@@ -14802,13 +14802,14 @@ and recoding data.")
                   bzip2
                   fftw))
     (propagated-inputs (list r-zeallot
-                             r-withr
                              r-stringr
                              r-strex
                              r-rlang
                              r-readr
                              r-purrr
                              r-magrittr
+                             r-lubridate
+                             r-jsonlite
                              r-imager
                              r-fs
                              r-dplyr

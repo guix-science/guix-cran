@@ -1357,13 +1357,13 @@ identify the optimal estimator from among a prespecified set of candidates.")
 (define-public r-cvasi
   (package
     (name "r-cvasi")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvasi" version))
        (sha256
-        (base32 "0aab17g0pjbp6c22kyf7q7d2ka79nc05a9adsy1qzrvihi180rgz"))))
+        (base32 "1hrklwkwwdb5q1126d5daafdka9zc25nmi7qyx8zs8r8bi84hfm5"))))
     (properties `((upstream-name . "cvasi")))
     (build-system r-build-system)
     (arguments
@@ -17915,6 +17915,53 @@ and the pins package.  It automates the display of schemata, tables, views, as
 well as the preview of the table's top 1000 records.")
     (license license:expat)))
 
+(define-public r-connectednessapproach
+  (package
+    (name "r-connectednessapproach")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConnectednessApproach" version))
+       (sha256
+        (base32 "0wzhczs61vmq81k8p9pbm42gq28sv8gjlp5cs19nrxzsjfx56gx4"))))
+    (properties `((upstream-name . "ConnectednessApproach")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-urca
+                             r-rugarch
+                             r-rmgarch
+                             r-riskparityportfolio
+                             r-quantreg
+                             r-progress
+                             r-performanceanalytics
+                             r-moments
+                             r-mass
+                             r-l1pack
+                             r-igraph
+                             r-glmnet
+                             r-frequencyconnectedness
+                             r-car))
+    (home-page "https://cran.r-project.org/package=ConnectednessApproach")
+    (synopsis "Connectedness Approach")
+    (description
+     "The estimation of static and dynamic connectedness measures is created in a
+modular and user-friendly way.  Besides, the time domain connectedness
+approaches, this package further allows to estimate the frequency connectedness
+approach, the joint spillover index and the extended joint connectedness
+approach.  In addition, all connectedness frameworks can be based upon
+orthogonalized and generalized VAR, QVAR, LASSO VAR, Ridge VAR, Elastic Net VAR
+and TVP-VAR models.  Furthermore, the package includes the conditional,
+decomposed and partial connectedness measures as well as the pairwise
+connectedness index, influence index and corrected total connectedness index.
+Finally, a battery of datasets are available allowing to replicate a variety of
+connectedness papers.")
+    (license license:gpl3)))
+
 (define-public r-connectcreds
   (package
     (name "r-connectcreds")
@@ -24412,13 +24459,13 @@ data.")
 (define-public r-cohortsymmetry
   (package
     (name "r-cohortsymmetry")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSymmetry" version))
        (sha256
-        (base32 "1pswcf7ri2qqb41hp9sz7x2an74g73psl4rjhdfalfszrmhjdwx9"))))
+        (base32 "15nhp05nnhnhfgxsqiac6arg00qx0zm9xqhghj9lwvja424xfja2"))))
     (properties `((upstream-name . "CohortSymmetry")))
     (build-system r-build-system)
     (arguments
@@ -24432,8 +24479,6 @@ data.")
                              r-omopgenerics
                              r-omock
                              r-here
-                             r-ggplot2
-                             r-duckdb
                              r-drugutilisation
                              r-dplyr
                              r-codelistgenerator
@@ -25673,13 +25718,13 @@ supports hierarchical code lists.")
 (define-public r-codecountr
   (package
     (name "r-codecountr")
-    (version "0.0.4.7")
+    (version "0.0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codecountR" version))
        (sha256
-        (base32 "0pqfrnhqjw6pskfgz0sz0ixvixpns01vikmxqi9190lhh62jjnd8"))))
+        (base32 "13247vw88q2vx4pg830gl9hr2fgrq916m27167m6klxvslvmcb8d"))))
     (properties `((upstream-name . "codecountR")))
     (build-system r-build-system)
     (arguments
@@ -26968,13 +27013,13 @@ smoothing irregularly sampled signals, see Hamilton et al (2018)
 (define-public r-cnid
   (package
     (name "r-cnid")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CNID" version))
        (sha256
-        (base32 "0110h8rjxrz05h4495p9xd5ml866czx4dg5n01dcbn80q9npzbvw"))))
+        (base32 "1vz15bp50b053iama8hrh61f0z5nzylcg6wm528nl7535nz5xl8r"))))
     (properties `((upstream-name . "CNID")))
     (build-system r-build-system)
     (arguments
@@ -26984,7 +27029,7 @@ smoothing irregularly sampled signals, see Hamilton et al (2018)
     (synopsis "Get Basic Information from Chinese ID Number")
     (description
      "The Chinese ID number contains a lot of information, this package helps you get
-the date of birth, age, age based on year, gender, region, zodiac, constellation
+the region, date of birth, age, age based on year, gender, zodiac, constellation
 information from the Chinese ID number.")
     (license license:expat)))
 
@@ -41501,23 +41546,22 @@ fitting a bivariate copula.")
 (define-public r-censobr
   (package
     (name "r-censobr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censobr" version))
        (sha256
-        (base32 "1rgl8qbhrj0yv3gw6rqx0zj5gpwwhgfja28pcqmnkglyzf8d8i5n"))))
+        (base32 "1lvbmcng9y3ky0p1phd0xznlwx4dd88ig25jws6vg9lbl7y8pm6k"))))
     (properties `((upstream-name . "censobr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-fs
-                             r-duckplyr
+    (propagated-inputs (list r-glue
+                             r-fs
                              r-duckdb
                              r-dplyr
-                             r-dbi
                              r-curl
                              r-checkmate
                              r-arrow))

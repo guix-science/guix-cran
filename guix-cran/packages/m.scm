@@ -7663,13 +7663,13 @@ sub-optimal designs.")
 (define-public r-mtb
   (package
     (name "r-mtb")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtb" version))
        (sha256
-        (base32 "1xlm3s34y9g4g6nqzm7zwl08j6587qnzmr5xx0fwgiv5mr45jdz4"))))
+        (base32 "01g39afs77vh7qx377pzda1bzz820p69js1igpx5n9v1l8dr7c6f"))))
     (properties `((upstream-name . "mtb")))
     (build-system r-build-system)
     (arguments
@@ -7687,7 +7687,7 @@ growth charts or Thanksgiving kitchen schedule charts, etc.  Functions might
 include but not limited to: (1) aiding summarizing time related data; (2)
 generating axis transformation from data; and (3) aiding Markdown (with html
 output) and Shiny file editing.")
-    (license license:agpl3+)))
+    (license license:gpl3+)))
 
 (define-public r-mtarm
   (package
@@ -11076,35 +11076,6 @@ other essential parameters of the complex biological networks, are estimated.
 Besides, MR.RGM provides uncertainty quantification for specific network
 structures among response variables.")
     (license license:gpl3+)))
-
-(define-public r-mr-raps
-  (package
-    (name "r-mr-raps")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mr.raps" version))
-       (sha256
-        (base32 "069vyvsdgc5m7n2fd0h7jrllz789zvsxka7h5wiy36dc7lagd6f8"))))
-    (properties `((upstream-name . "mr.raps")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nortest))
-    (home-page "https://cran.r-project.org/package=mr.raps")
-    (synopsis
-     "Two Sample Mendelian Randomization using Robust Adjusted Profile Score")
-    (description
-     "Mendelian randomization is a method of identifying and estimating a confounded
-causal effect using genetic instrumental variables.  This packages implements
-methods for two-sample Mendelian randomization with summary statistics by using
-Robust Adjusted Profile Score (RAPS).  References: Qingyuan Zhao, Jingshu Wang,
-Jack Bowden, Dylan S. Small.  Statistical inference in two-sample summary-data
-Mendelian randomization using robust adjusted profile score.
-<@code{arXiv:1801.09652>}.")
-    (license license:gpl3)))
 
 (define-public r-mr-pivw
   (package
@@ -15339,13 +15310,13 @@ Used by MOLGENIS packages.")
 (define-public r-molgenisarmadillo
   (package
     (name "r-molgenisarmadillo")
-    (version "2.7.0")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MolgenisArmadillo" version))
        (sha256
-        (base32 "12js86ys9d80cf69qjl30q01i9a9nki500nq173hn4xym9sc2pcy"))))
+        (base32 "1k9cm34cym2l3srcl3wa5gdhr36i5nd7aadfknar176047sfqh9c"))))
     (properties `((upstream-name . "MolgenisArmadillo")))
     (build-system r-build-system)
     (arguments
@@ -28725,13 +28696,13 @@ Davenport (2021) <doi:10.18637/jss.v097.i02>.")
 (define-public r-microsoft365r
   (package
     (name "r-microsoft365r")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Microsoft365R" version))
        (sha256
-        (base32 "0vcp8nhphl9yp4rp53nvkm82zqmn1jsc9m6agxmmsqby8795p7h1"))))
+        (base32 "19jlm43jhvljbyajvyzf28qnq4rg79alriabdv1fzhq4dyhgnqdw"))))
     (properties `((upstream-name . "Microsoft365R")))
     (build-system r-build-system)
     (arguments
@@ -33346,6 +33317,43 @@ d_to_@code{logRR}), to compute and format inference in a meta-analysis
 (format_CI, format_stat, tau_CI), to scrape results from existing meta-analyses
 for re-analysis (scrape_meta, parse_CI_string, ci_to_var).")
     (license license:gpl2)))
+
+(define-public r-metaumbrella
+  (package
+    (name "r-metaumbrella")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metaumbrella" version))
+       (sha256
+        (base32 "1v1pmxw4izbkxzi224pr0ymf6mmadr6b5rddj1hy1ic30mqcx0pa"))))
+    (properties `((upstream-name . "metaumbrella")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xtable
+                             r-writexl
+                             r-withr
+                             r-readxl
+                             r-pwr
+                             r-powersurvepi
+                             r-metaconvert
+                             r-meta))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=metaumbrella")
+    (synopsis "Umbrella Review Package for R")
+    (description
+     "This package provides a comprehensive range of facilities to perform umbrella
+reviews with stratification of the evidence in R. The package accomplishes this
+aim by building on three core functions that: (i) automatically perform all
+required calculations in an umbrella review (including but not limited to
+meta-analyses), (ii) stratify evidence according to various classification
+criteria, and (iii) generate a visual representation of the results.  Note that
+if you are not familiar with R, the core features of this package are available
+from a web browser (<https://www.metaumbrella.org/>).")
+    (license license:gpl3)))
 
 (define-public r-metatools
   (package

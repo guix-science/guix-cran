@@ -7216,13 +7216,13 @@ estimators and functions for diagnostics of their finite-sample performance.")
 (define-public r-estimatr
   (package
     (name "r-estimatr")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estimatr" version))
        (sha256
-        (base32 "1v9fzqp7h48lb70d2kln4wq9fl36dsxhv7871hnmggkykzax3pvc"))))
+        (base32 "1yf6srvysl2j00jc1mgywr1bdvv9jcvhwrp09cq4cjzyaq7f2hsd"))))
     (properties `((upstream-name . "estimatr")))
     (build-system r-build-system)
     (arguments
@@ -9876,18 +9876,19 @@ data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.15.6")
+    (version "0.15.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5d" version))
        (sha256
-        (base32 "1cj4mqx7d0cblfi9qnb9waswic28vc9y3gjgnxl38xn8mq0w774h"))))
+        (base32 "0rdhvsp1fz7cpq82zksxih2kz25w9d0lxrg6jk694zzxm89gjknc"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rlang r-lifecycle))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fragla/eq5d")
     (synopsis
@@ -9909,7 +9910,7 @@ clinical and economic evaluation of health care as well as in population health
 surveys.  The eq5d package provides methods to calculate index scores from a
 subject's dimension scores.  32 TTO and 11 VAS EQ-5D-3L value sets including
 those for countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and
-Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 45 EQ-5D-5L EQ-VT value
+Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 46 EQ-5D-5L EQ-VT value
 sets, the EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
 <doi:10.1016/j.jval.2012.02.008>, the crosswalk value sets for Bermuda, Jordan
 and Russia and the reverse crosswalk value sets.  10 EQ-5D-Y value sets are also

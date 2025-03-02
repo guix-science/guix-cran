@@ -426,13 +426,13 @@ bounded-variable least squares.")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "0ll721rzc7ijls9bm0wppqry9dkgakbhv124v68v0nc1mfy24wxm"))))
+        (base32 "0gkgr000n90c0vw5glysxbswc9l95jdx85k3x67rj53x5dfhw09q"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (arguments
@@ -2013,52 +2013,6 @@ employ the Exponential Decayed Log-likelihood function, and we also apply the
 Lasso penalty for variance reduction and grouping.  The main algorithm applies
 the Augmented Lagrangian Method described by Masarotto and Varin (2012)
 <doi:10.1214/12-AOAS581>.")
-    (license license:gpl2+)))
-
-(define-public r-btb
-  (package
-    (name "r-btb")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "btb" version))
-       (sha256
-        (base32 "1gm03md6ky134nzmnnp054mi2w8kl4bgcgg4k65zf2cyniz4arxq"))))
-    (properties `((upstream-name . "btb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sf
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mapsf
-                             r-magrittr
-                             r-dplyr
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/InseeFr/btb")
-    (synopsis
-     "Beyond the Border - Kernel Density Estimation for Urban Geography")
-    (description
-     "The @code{kernelSmoothing()} function allows you to square and smooth geolocated
-data.  It calculates a classical kernel smoothing (conservative) or a
-geographically weighted median.  There are four major call modes of the
-function.  The first call mode is @code{kernelSmoothing(obs}, epsg, cellsize,
-bandwidth) for a classical kernel smoothing and automatic grid.  The second call
-mode is @code{kernelSmoothing(obs}, epsg, cellsize, bandwidth, quantiles) for a
-geographically weighted median and automatic grid.  The third call mode is
-@code{kernelSmoothing(obs}, epsg, cellsize, bandwidth, centroids) for a
-classical kernel smoothing and user grid.  The fourth call mode is
-@code{kernelSmoothing(obs}, epsg, cellsize, bandwidth, quantiles, centroids) for
-a geographically weighted median and user grid.  Geographically weighted summary
-statistics : a framework for localised exploratory data analysis, C.Brunsdon &
-al., in Computers, Environment and Urban Systems C.Brunsdon & al. (2002)
-<doi:10.1016/S0198-9715(01)00009-6>, Statistical Analysis of Spatial and
-Spatio-Temporal Point Patterns, Third Edition, Diggle, pp.  83-86, (2003)
-<doi:10.1080/13658816.2014.937718>.")
     (license license:gpl2+)))
 
 (define-public r-bt
@@ -20253,13 +20207,13 @@ and arrays, fit multiple functions.")
 (define-public r-bernadette
   (package
     (name "r-bernadette")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bernadette" version))
        (sha256
-        (base32 "08q0jarv737p4mis7kql1ny9hrm86w49kdn47r94id4895l052ck"))))
+        (base32 "0jfbg83rc8zv67xgxp00g283idznmq8jwm7bx0ksfdz6knknf63q"))))
     (properties `((upstream-name . "Bernadette")))
     (build-system r-build-system)
     (arguments
@@ -20283,7 +20237,8 @@ and arrays, fit multiple functions.")
     (description
      "Bayesian analysis for stochastic extensions of non-linear dynamic systems using
 advanced computational algorithms.  Described in Bouranis, L., Demiris, N.,
-Kalogeropoulos, K., and Ntzoufras, I. (2022) <@code{arXiv:2211.15229>}.")
+Kalogeropoulos, K., and Ntzoufras, I. (2022)
+<doi:10.48550/@code{arXiv.2211.15229>}.")
     (license license:gpl3+)))
 
 (define-public r-berkeleyforestsanalytics
@@ -23085,13 +23040,13 @@ Service ('WFS') using dplyr syntax.")
 (define-public r-bcdag
   (package
     (name "r-bcdag")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCDAG" version))
        (sha256
-        (base32 "1y8nsb1lf1kf52blzhdwffaixjkvdrpkzkwijcjv512czh1zw26v"))))
+        (base32 "1jr11jsc38vksvzdj802whprmbdairksbgfrqsmdbbim9gj5q79s"))))
     (properties `((upstream-name . "BCDAG")))
     (build-system r-build-system)
     (arguments

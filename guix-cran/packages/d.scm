@@ -13377,20 +13377,19 @@ gene expressions.")
 (define-public r-diseasystore
   (package
     (name "r-diseasystore")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diseasystore" version))
        (sha256
-        (base32 "1fls0xnf32rswa502rybmqkkcfcikjf0h1zdic8dmcsn6mi8f2xn"))))
+        (base32 "10ga36lvzr960g13pp1r92iwc4gg8392yh0xri11d0ssq0dvbfls"))))
     (properties `((upstream-name . "diseasystore")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
                              r-scdb

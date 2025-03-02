@@ -10895,13 +10895,13 @@ describing and investigating inter-cohort differences and life course dynamics."
 (define-public r-apcf
   (package
     (name "r-apcf")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apcf" version))
        (sha256
-        (base32 "0vf41nmw4i9idygxji27ij2qrmkfw5c5pxax0wrnwqhkib9wvqrp"))))
+        (base32 "062370z53348xicqwmyk5s4bb0img9xyvvrc5hgfcdwkiix3c3mp"))))
     (properties `((upstream-name . "apcf")))
     (build-system r-build-system)
     (arguments
@@ -23004,13 +23004,13 @@ autocorrelation.  The package is described in Jombart et al (2010)
 (define-public r-adelie
   (package
     (name "r-adelie")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adelie" version))
        (sha256
-        (base32 "1b4qy5vyr7rflbb1mn9p2l60b7fmyjvw8m69hw449wl27ljqdsr3"))))
+        (base32 "1xnkp6a1g5mhbmcbmrx24zwxpvsc81s8m77irmq1w6kc67ib2c2n"))))
     (properties `((upstream-name . "adelie")))
     (build-system r-build-system)
     (arguments
