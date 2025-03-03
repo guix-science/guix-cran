@@ -6416,13 +6416,13 @@ diagnostic plotting.")
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greeks" version))
        (sha256
-        (base32 "0vhb3k3fs57kx24bh3dnk3qgzrvn4qxnqakb2g8h1ah22i0qnvcs"))))
+        (base32 "1fz5ra1fi2z4x4wnh34yppg33xpgl91dri7a0yj6ksl1k2gm1xf6"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (arguments
@@ -18429,13 +18429,13 @@ and hexplots of survey data.")
 (define-public r-ggsurveillance
   (package
     (name "r-ggsurveillance")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsurveillance" version))
        (sha256
-        (base32 "0pl1grsy81bi6kglkqrwv11v7p2bb4acfqck30sjbq3w3364bwvm"))))
+        (base32 "1yyk58f60ggsc32i48sdqrpymbs5rbf5xsysknr1ic1syskzrjxp"))))
     (properties `((upstream-name . "ggsurveillance")))
     (build-system r-build-system)
     (arguments

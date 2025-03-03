@@ -32405,13 +32405,13 @@ utilize metricminer'.")
 (define-public r-metricgraph
   (package
     (name "r-metricgraph")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetricGraph" version))
        (sha256
-        (base32 "03dx07ah0dpqlx4nwslh83n9j3s6ys3cmq9d2m13dbypv9l6r59x"))))
+        (base32 "0yb0vjznhi6nrpamfy55ghmb0g74asczaagcfh4pla5208aidb2l"))))
     (properties `((upstream-name . "MetricGraph")))
     (build-system r-build-system)
     (arguments
@@ -46097,35 +46097,6 @@ parallelized and convergence relies on a stringent stopping criterion based on
 the first and second derivatives.  See Philipps et al, 2021
 <doi:10.32614/RJ-2021-089>.")
     (license license:gpl2+)))
-
-(define-public r-marp
-  (package
-    (name "r-marp")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "marp" version))
-       (sha256
-        (base32 "0vywqsvmhghldrpnh2dpkgz41r7q463whfhgrn38pg8jnyhliiwi"))))
-    (properties `((upstream-name . "marp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vgam r-statmod r-gtools))
-    (home-page "https://github.com/kanji709/marp")
-    (synopsis "Model-Averaged Renewal Process")
-    (description
-     "To implement a model-averaging approach with different renewal models, with a
-primary focus on forecasting large earthquakes.  Based on six renewal models
-(i.e., Poisson, Gamma, Log-Logistics, Weibull, Log-Normal and BPT),
-model-averaged point estimates are calculated using AIC (or BIC) weights.
-Additionally, both percentile and studentized bootstrapped model-averaged
-confidence intervals are constructed.  In comparison, point and interval
-estimation from the individual or \"best\" model (determined via model selection)
-can be retrieved.")
-    (license license:expat)))
 
 (define-public r-marmot
   (package

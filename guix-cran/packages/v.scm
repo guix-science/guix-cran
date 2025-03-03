@@ -1421,13 +1421,13 @@ cartograms and theme them.")
 (define-public r-vote
   (package
     (name "r-vote")
-    (version "2.4-3")
+    (version "2.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vote" version))
        (sha256
-        (base32 "0mayys5l755a0wdh49llpw37ssp88ifariivjghcd16i2yvpmwxz"))))
+        (base32 "18jj38dva2bvz7gl7hm3qrlycmds9glnln0w9pvjnbj800147ddw"))))
     (properties `((upstream-name . "vote")))
     (build-system r-build-system)
     (arguments

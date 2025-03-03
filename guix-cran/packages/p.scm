@@ -3528,13 +3528,13 @@ multi-methods, spherical representation of a correlation matrix.")
 (define-public r-psweight
   (package
     (name "r-psweight")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSweight" version))
        (sha256
-        (base32 "140gk4b8bzpi799hqslqzqw2pslba99a17h9k4vm6r6lqd5bpfwl"))))
+        (base32 "07kmcack636gj1xa6ggxvd737svnvxsa5bp2pkf7a236sjygziaj"))))
     (properties `((upstream-name . "PSweight")))
     (build-system r-build-system)
     (arguments
@@ -16892,29 +16892,36 @@ and time series based in Shryock research (Shryock et.  al. (1980)
 (define-public r-popsom7
   (package
     (name "r-popsom7")
-    (version "7.0.0")
+    (version "7.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "popsom7" version))
        (sha256
-        (base32 "1za6smq57pm7zs0sdk27871cyilqj16rrxfv8b49f382nq4bz9hz"))))
+        (base32 "1m65m6by4rsvaw2qn2nkn4vgjb6510q7w1rd3d0ksss447m3fmpr"))))
     (properties `((upstream-name . "popsom7")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-som r-hash r-ggplot2 r-fields))
+    (native-inputs (list gfortran))
     (home-page "https://github.com/lutzhamel/popsom7")
-    (synopsis "User-Friendly Implementation of Self-Organizing Maps")
+    (synopsis
+     "Fast, User-Friendly Implementation of Self-Organizing Maps (SOMs)")
     (description
-     "Self-organizing maps with a number of distinguishing features: (1) Automatic
-centroid detection and cluster visualization using starbursts, for more details
-see the paper \"Improved Interpretability of the Unified Distance Matrix with
-Connected Components\" by Hamel and Brown (2011) in <ISBN:1-60132-168-6>. (2) Two
-models of the data: (a) a self organizing map model, (b) a centroid based
-clustering model. (3) A number of easily accessible quality metrics, Hamel
-(2016) <doi:10.1007/978-3-319-28518-4_4>.")
+     "This package provides methods for building self-organizing maps (SOMs) with a
+number of distinguishing features such automatic centroid detection and cluster
+visualization using starbursts.  For more details see the paper \"Improved
+Interpretability of the Unified Distance Matrix with Connected Components\" by
+Hamel and Brown (2011) in <ISBN:1-60132-168-6>.  The package provides
+user-friendly access to two models we construct: (a) a SOM model and (b) a
+centroid based clustering model.  The package also exposes a number of quality
+metrics for the quantitative evaluation of the map, Hamel (2016)
+<doi:10.1007/978-3-319-28518-4_4>.  Finally, we reintroduced our fast,
+vectorized training algorithm for SOM with substantial improvements.  It is
+about an order of magnitude faster than the canonical, stochastic C
+implementation <doi:10.1007/978-3-030-01057-7_60>.")
     (license license:gpl3)))
 
 (define-public r-popreconstruct
@@ -21448,13 +21455,13 @@ Project Management Institute, Newtown Square, PA, ISBN 9781628256673 (pdf)).")
 (define-public r-pmetar
   (package
     (name "r-pmetar")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmetar" version))
        (sha256
-        (base32 "14vz227mq1kjrmhb0gknx4alk0krl6aaj7rss3mm2hf832kr5724"))))
+        (base32 "1x5kdihz5injh02n3yyr2hqy4r20chxyaph5pj59hkxlkys797aq"))))
     (properties `((upstream-name . "pmetar")))
     (build-system r-build-system)
     (arguments

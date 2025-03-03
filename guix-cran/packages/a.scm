@@ -12966,13 +12966,13 @@ correlation and regression analysis of the local network metrics.")
 (define-public r-anipaths
   (package
     (name "r-anipaths")
-    (version "0.10.4")
+    (version "0.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anipaths" version))
        (sha256
-        (base32 "187wkzfc1g3sb6ln3dx5if3sinj390340kb75b9q31zx4bjaxcb5"))))
+        (base32 "0rjq32vafbc6qgngfxsafasb4a0h2mw6apcgc0bh6xi2cqsjk9v8"))))
     (properties `((upstream-name . "anipaths")))
     (build-system r-build-system)
     (arguments

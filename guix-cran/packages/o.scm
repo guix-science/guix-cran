@@ -6649,13 +6649,13 @@ description of the interpretive clustering (IC) method.")
 (define-public r-openrepgrid
   (package
     (name "r-openrepgrid")
-    (version "0.1.16")
+    (version "0.1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenRepGrid" version))
        (sha256
-        (base32 "0dwvwfpjcbjq1vsr91df4rp552c4kvh5ygaa2ng84qryqmydcp48"))))
+        (base32 "1an9q33g0q5hsf8xz5cqxbnypp0jffhs0nshlal9d4svy1ks0nc9"))))
     (properties `((upstream-name . "OpenRepGrid")))
     (build-system r-build-system)
     (arguments
@@ -11272,13 +11272,13 @@ meta-filtering.  It can also analyze data from multiple ethnic groups.")
 (define-public r-offsetreg
   (package
     (name "r-offsetreg")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "offsetreg" version))
        (sha256
-        (base32 "1nxiaz5p3s4i3dxl3cph5c8aily3d6g212086wrxy38jyqk55xkm"))))
+        (base32 "0dvjqf6f0zqxphmf3xgh65h90pvncm328nddvn0lcm27y7c4pq96"))))
     (properties `((upstream-name . "offsetreg")))
     (build-system r-build-system)
     (arguments

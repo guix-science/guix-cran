@@ -54967,13 +54967,13 @@ al. (2023, <https://hal.inrae.fr/hal-04388845v1>).")
 (define-public r-seqtrie
   (package
     (name "r-seqtrie")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqtrie" version))
        (sha256
-        (base32 "12pkcb5ylqlr7ljzrwna6fjqvnikgvsr7k664bw6xkbx1g370s2a"))))
+        (base32 "1l9qjls0dzi39s1iz6cm8hjpz4bihs1zg5p14gyz7qrf99qs1k0h"))))
     (properties `((upstream-name . "seqtrie")))
     (build-system r-build-system)
     (arguments
@@ -54994,7 +54994,7 @@ al. (2023, <https://hal.inrae.fr/hal-04388845v1>).")
 similar sequences and calculating sequence distances (Levenshtein and other
 distance metrics).  This work was inspired by a trie implementation in Python:
 \"Fast and Easy Levenshtein distance using a Trie.\" Hanov (2011)
-<http://stevehanov.ca/blog/index.php?id=114>.")
+<https://stevehanov.ca/blog/index.php?id=114>.")
     (license license:gpl3)))
 
 (define-public r-seqtest
@@ -70168,13 +70168,13 @@ from classic data sets in R.")
 (define-public r-sampcompr
   (package
     (name "r-sampcompr")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sampcompR" version))
        (sha256
-        (base32 "14rxs1dn8pwlhxhlny0swxkaajydl59h45chk32bk4b37kvlcac6"))))
+        (base32 "0dmscwmz4ramcgrr7rh0m47xq0xnp85pjny2932l4kpkplmhv201"))))
     (properties `((upstream-name . "sampcompR")))
     (build-system r-build-system)
     (arguments
@@ -70185,6 +70185,7 @@ from classic data sets in R.")
                              r-svrep
                              r-survey
                              r-sandwich
+                             r-rlang
                              r-reshape2
                              r-readr
                              r-purrr

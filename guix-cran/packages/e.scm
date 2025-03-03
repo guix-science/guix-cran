@@ -6983,13 +6983,13 @@ descriptive statistics, with or without weighting the data.")
 (define-public r-et-nwfva
   (package
     (name "r-et-nwfva")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "et.nwfva" version))
        (sha256
-        (base32 "01jhy5043axgmv51ri2k3gl1shvsh569h9xy4y1ya1qjpdlbv0ky"))))
+        (base32 "03s6afwfgpf5c9pn8sjxjxj4n53206dnia1rplcbgd98asdr8wpw"))))
     (properties `((upstream-name . "et.nwfva")))
     (build-system r-build-system)
     (arguments
@@ -7011,7 +7011,7 @@ management concept.  The yield tables are provided along with methods for
 deriving the site index and for interpolating between age and site indices and
 extrapolating beyond age and site index ranges.  The inter-/extrapolations are
 performed traditionally by the rule of proportion or with a functional approach.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-esvis
   (package
@@ -23772,48 +23772,6 @@ the drc package in a way that is displayed a tidy data.frame as output.  Info
 about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (2015) <doi:10.1371/journal.pone.0146021>.")
     (license license:expat)))
-
-(define-public r-ebvcube
-  (package
-    (name "r-ebvcube")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ebvcube" version))
-       (sha256
-        (base32 "1y27asswm3cgagkqp3b6c250raab1w24ja22cljlfm53nd5k5mp8"))))
-    (properties `((upstream-name . "ebvcube")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tidyterra
-                             r-terra
-                             r-stringr
-                             r-rhdf5
-                             r-reshape2
-                             r-ncmeta
-                             r-ncdf4
-                             r-memuse
-                             r-jsonlite
-                             r-httr
-                             r-hdf5array
-                             r-ggplot2
-                             r-delayedarray
-                             r-curl
-                             r-checkmate))
-    (home-page "https://github.com/EBVCube/ebvcube")
-    (synopsis "Working with netCDF for Essential Biodiversity Variables")
-    (description
-     "The concept of Essential Biodiversity Variables (EBV,
-<https://geobon.org/ebvs/what-are-ebvs/>) comes with a data structure based on
-the Network Common Data Form (@code{netCDF}).  The ebvcube R package provides
-functionality to easily create, access and visualise this data.  The EBV
-@code{netCDFs} can be downloaded from the EBV Data Portal: Christian Langer/
-@code{iDiv} (2020) <https://portal.geobon.org/>.")
-    (license license:gpl3+)))
 
 (define-public r-ebtobit
   (package
