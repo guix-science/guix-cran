@@ -2119,13 +2119,13 @@ or public projects.")
 (define-public r-osfd
   (package
     (name "r-osfd")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OSFD" version))
        (sha256
-        (base32 "02apmrn34v4fm4fjgkmvqnf1p7sambjy35w2z5di04l2jjg8md6l"))))
+        (base32 "1c1hphfv5nw8ba108laq3c7mc2kv52k35cbr0lddsxagjra88xpq"))))
     (properties `((upstream-name . "OSFD")))
     (build-system r-build-system)
     (arguments

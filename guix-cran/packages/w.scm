@@ -2761,13 +2761,13 @@ Federal State of Hesse in Germany.")
 (define-public r-woodsimulatr
   (package
     (name "r-woodsimulatr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WoodSimulatR" version))
        (sha256
-        (base32 "170bakkny7k6j22qwal9z2sycils1a7imajzvlzjbrasjy81m2l7"))))
+        (base32 "1ddpygg7vdc2wls8j2mf920h419ij680jymdbpw967nv0cj4m8fs"))))
     (properties `((upstream-name . "WoodSimulatR")))
     (build-system r-build-system)
     (arguments
@@ -7993,13 +7993,13 @@ to Beguin and Hulliger (2008)
 (define-public r-waywiser
   (package
     (name "r-waywiser")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waywiser" version))
        (sha256
-        (base32 "1lgcvzfvp4whkqr43gz3005yc1yjs1gwhic4iicnv81blbrdsmj5"))))
+        (base32 "0zl1c687djrb78472bip1psg8szwnr7m9kzpq4x7bvabmbwvp7kw"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
     (arguments

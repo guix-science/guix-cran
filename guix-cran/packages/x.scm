@@ -848,13 +848,13 @@ function.")
 (define-public r-xpectr
   (package
     (name "r-xpectr")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpectr" version))
        (sha256
-        (base32 "0qpv2r4dz5g37v2b6y5jscsxm1hdmimq8pm0dwwf8df0pp351r3b"))))
+        (base32 "0bmj4qlpaiyilhphswvh22jz6cws81qpjhq0nb60450jy65asf5h"))))
     (properties `((upstream-name . "xpectr")))
     (build-system r-build-system)
     (arguments

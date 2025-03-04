@@ -18081,13 +18081,13 @@ treatment) subjects were assigned at randomization.")
 (define-public r-bhsbvar
   (package
     (name "r-bhsbvar")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BHSBVAR" version))
        (sha256
-        (base32 "184dhaajjzplslbfjmdm9zyr7h39zi1h3p549lac2sy6mrkglrc0"))))
+        (base32 "0vzlfk7raq2i86ynny6xy808cpq0iga16cdrsvpxdsc1gp1lkyf2"))))
     (properties `((upstream-name . "BHSBVAR")))
     (build-system r-build-system)
     (arguments
@@ -29899,13 +29899,13 @@ outcomes.  For more information see Sparapani, Spanbauer and @code{McCulloch}
 (define-public r-barrks
   (package
     (name "r-barrks")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "barrks" version))
        (sha256
-        (base32 "1rj69p5s8w191haavjind42kr36jf4pcv3l43qsqwkndnn0f253w"))))
+        (base32 "13r8qgg6x7f3fhq64vh7sqjwxxn1qqwpw8qv5virlqvj2l2av411"))))
     (properties `((upstream-name . "barrks")))
     (build-system r-build-system)
     (arguments

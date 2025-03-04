@@ -5345,13 +5345,13 @@ events.")
 (define-public r-eventglm
   (package
     (name "r-eventglm")
-    (version "1.2.2")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventglm" version))
        (sha256
-        (base32 "0f9vmm47g6cfvspil44zki2isd49zy6hx4cvl3vqksj57pbw8g0p"))))
+        (base32 "1a23izn6i88whipmkn18zw5rndx1pw8pw4vadsmwfgbj4k40w6m5"))))
     (properties `((upstream-name . "eventglm")))
     (build-system r-build-system)
     (arguments
@@ -23303,18 +23303,19 @@ package is to provide tools for use in courses in analytical chemistry.")
 (define-public r-echelon
   (package
     (name "r-echelon")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echelon" version))
        (sha256
-        (base32 "179s8s8wgii89676s98pb4rhh3ikdspavl3aifc5pl12an4hc5gr"))))
+        (base32 "175dz1bc9x65vbj1d95d3jspdkywr09fqn5l5ya1qv4zxy39s1ry"))))
     (properties `((upstream-name . "echelon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rcpp))
     (home-page "https://cran.r-project.org/package=echelon")
     (synopsis
      "The Echelon Analysis and the Detection of Spatial Clusters using Echelon Scan Method")

@@ -15913,13 +15913,13 @@ Paykin (2001) <doi:10.1080/00949650108812115>, and French & Finch (2013)
 (define-public r-difnlr
   (package
     (name "r-difnlr")
-    (version "1.5.0")
+    (version "1.5.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "difNLR" version))
        (sha256
-        (base32 "1hcba1zrrisjz5bmhaq1r0davc06ng20l9jw5hri3bvcpg8qvyg7"))))
+        (base32 "1mr8spi7az1l3ki71xymm0j27fv6nizv75javn2spjv0ynyv9h3v"))))
     (properties `((upstream-name . "difNLR")))
     (build-system r-build-system)
     (arguments
@@ -22817,6 +22817,31 @@ the distribution to be Gamma, Exponential or Weibull.  For details see Chen
 (2000a,b), Jin and Kawczak (2003) and Salha et al. (2014)
 <doi:10.12988/pms.2014.4616>.")
     (license license:gpl2)))
+
+(define-public r-deltatest
+  (package
+    (name "r-deltatest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "deltatest" version))
+       (sha256
+        (base32 "0h5m655b20rwvj1y3hjljk1fkrajykaghj0s9ygsvwaky2dn0khk"))))
+    (properties `((upstream-name . "deltatest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-r6 r-glue))
+    (home-page "https://github.com/hoxo-m/deltatest")
+    (synopsis "Statistical Hypothesis Testing Using the Delta Method")
+    (description
+     "Statistical hypothesis testing using the Delta method as proposed by Deng et al.
+(2018) <doi:10.1145/3219819.3219919>.  This method replaces the standard
+variance estimation formula in the Z-test with an approximate formula derived
+via the Delta method, which can account for within-user correlation.")
+    (license license:expat)))
 
 (define-public r-deltaplotr
   (package

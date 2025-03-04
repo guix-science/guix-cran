@@ -6082,13 +6082,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "02426a3m3mgpmhp8l0fy6fhd688h8s14ynswg3mmfg9xm4na8qlf"))))
+        (base32 "1rmxdpls33336wj7njkiwkisgsrmxr09jbplzyihxf3r8qi4j20m"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (arguments
@@ -12798,32 +12798,6 @@ Discriminant Analysis(LFDA), Kernel Fisher Discriminant Analysis(KLFDA), and
 Semi-supervised Local Fisher Discriminant Analysis(SELF).")
     (license license:expat)))
 
-(define-public r-lfc
-  (package
-    (name "r-lfc")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lfc" version))
-       (sha256
-        (base32 "1fh3i5mhzgz8k6y32m2y7lilxvm10kjkp5b70zm06iygazsk8bvz"))))
-    (properties `((upstream-name . "lfc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/erhard-lab/lfc")
-    (synopsis
-     "Log Fold Change Distribution Tools for Working with Ratios of Counts")
-    (description
-     "Ratios of count data such as obtained from RNA-seq are modelled using Bayesian
-statistics to derive posteriors for effects sizes.  This approach is described
-in Erhard & Zimmer (2015) <doi:10.1093/nar/gkv696> and Erhard (2018)
-<doi:10.1093/bioinformatics/bty471>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-lfapp
   (package
     (name "r-lfapp")
@@ -14167,19 +14141,19 @@ programming skills.")
 (define-public r-learner
   (package
     (name "r-learner")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "learner" version))
        (sha256
-        (base32 "0wh5ikr6rcafr2g4apssk76kcqa5a5ci8b13l3jzsra4mxij36y5"))))
+        (base32 "0mmwqjb19iz1iw6hrcacmg9njr4vpkjrsvf10wwsg5356gqnmz2a"))))
     (properties `((upstream-name . "learner")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-screenot r-foreach r-doparallel))
+    (propagated-inputs (list r-screenot r-rcppeigen r-rcpp))
     (home-page "https://github.com/stmcg/learner")
     (synopsis "Latent Space-Based Transfer Learning")
     (description

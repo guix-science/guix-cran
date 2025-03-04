@@ -11044,19 +11044,19 @@ provided assuming homogeneous or heterogeneous group variances.")
 (define-public r-mr-rgm
   (package
     (name "r-mr-rgm")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MR.RGM" version))
        (sha256
-        (base32 "116jbzjzkf2d366r4k3j4wjk5i8k4x57k3b4nsvlb6s7yhwwq9a4"))))
+        (base32 "14fg1pbb3yr7cs1f46zp6qdf51gj8qwqywca330zmhysvq9i6sfw"))))
     (properties `((upstream-name . "MR.RGM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
     (home-page "https://github.com/bitansa/MR.RGM")
     (synopsis "Multivariate Bidirectional Mendelian Randomization Networks")
     (description
@@ -11068,13 +11068,15 @@ to numerous factors has been tackled through this routine.  Based on Ni et al.
 (2018) <doi:10.1214/17-BA1087>, MR.RGM extends to a broader exploration of the
 causal landscape by leveraging on network structures and involves the
 construction of causal graphs that capture interactions between response
-variables and consequently between responses and instrument variables.  MR.RGM
-facilitates the navigation of various data availability scenarios effectively by
-accommodating three input formats, i.e., individual-level data and two types of
-summary-level data.  In the process, causal effects, adjacency matrices, and
-other essential parameters of the complex biological networks, are estimated.
-Besides, MR.RGM provides uncertainty quantification for specific network
-structures among response variables.")
+variables and consequently between responses and instrument variables.  The
+resulting Graph visually represents these causal connections, showing directed
+edges with effect sizes labeled.  MR.RGM facilitates the navigation of various
+data availability scenarios effectively by accommodating three input formats,
+i.e., individual-level data and two types of summary-level data.  In the
+process, causal effects, adjacency matrices, and other essential parameters of
+the complex biological networks, are estimated.  Besides, MR.RGM provides
+uncertainty quantification for specific network structures among response
+variables.")
     (license license:gpl3+)))
 
 (define-public r-mr-pivw
@@ -20073,13 +20075,13 @@ many models from <DOI:10.32614/CRAN.package.tram>.")
 (define-public r-mlsurvlrnrs
   (package
     (name "r-mlsurvlrnrs")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlsurvlrnrs" version))
        (sha256
-        (base32 "11yp41fvmr2ij3sqky5hjzblqsdwsywyn3r62cdld5b5fiv487hg"))))
+        (base32 "1kkxvkknll7xyd5jvsb5lcn69ilx1ga397z837m0xfpgn5g1vkqf"))))
     (properties `((upstream-name . "mlsurvlrnrs")))
     (build-system r-build-system)
     (arguments
@@ -21775,13 +21777,13 @@ SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
 (define-public r-mlexperiments
   (package
     (name "r-mlexperiments")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlexperiments" version))
        (sha256
-        (base32 "1l2zrlar8wv4hi1w76kcbrhx8fbnbh03wq0jj5y0sbmy9x3aza76"))))
+        (base32 "15h4xkkzg8v5cnv46pa0bn2r0gjb8v42f8vzihnbxj8hhr3fghlc"))))
     (properties `((upstream-name . "mlexperiments")))
     (build-system r-build-system)
     (arguments
@@ -42234,6 +42236,35 @@ Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, & Fowler
 <doi:10.18637/jss.v036.i03>, and Zuckerman (1994, ISBN:978-0521432009).")
     (license license:gpl2+)))
 
+(define-public r-mbx
+  (package
+    (name "r-mbx")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mbX" version))
+       (sha256
+        (base32 "1pmdnj8wa4fvfpf22qvvfnp7l4hvv1pa19had7z3skgimawl3krr"))))
+    (properties `((upstream-name . "mbX")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-readxl r-openxlsx r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mbX")
+    (synopsis "Comprehensive Microbiome Data Processing Pipeline")
+    (description
+     "This package provides tools for cleaning, processing, and preparing microbiome
+sequencing data (e.g., 16S @code{rRNA}) for downstream analysis.  Supports CSV,
+TXT, and Excel file formats.  The main function, @code{ezclean()}, automates
+microbiome data transformation, including format validation, transposition,
+numeric conversion, and metadata integration.  Also ensures efficient handling
+of taxonomic levels, resolves duplicated taxa entries, and outputs a
+well-structured, analysis-ready dataset.")
+    (license license:expat)))
+
 (define-public r-mbvs
   (package
     (name "r-mbvs")
@@ -44808,6 +44839,39 @@ their original counterparts, with more to come as this package grows.")
     (synopsis "'MATLAB' Emulation Package")
     (description "Emulate MATLAB code using R'.")
     (license license:artistic2.0)))
+
+(define-public r-maths-genealogy
+  (package
+    (name "r-maths-genealogy")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maths.genealogy" version))
+       (sha256
+        (base32 "1bwhccsc5mm158gf39g25qhjsx8avz9jqclfdb8xpp8bl7vsaxij"))))
+    (properties `((upstream-name . "maths.genealogy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-websocket
+                             r-rvest
+                             r-rlang
+                             r-later
+                             r-jsonlite
+                             r-httr2
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://genealogy.louisaslett.com/")
+    (synopsis "Mathematics PhD Genealogy Data and Plotting")
+    (description
+     "Query, extract, and plot genealogical data from The Mathematics Genealogy
+Project <https://mathgenealogy.org/>.  Data is gathered from the
+@code{WebSocket} server run by the geneagrapher-core project
+<https://github.com/davidalber/geneagrapher-core>.")
+    (license license:gpl2+)))
 
 (define-public r-mathpix
   (package
@@ -50350,13 +50414,13 @@ Signorovitch et al (2012) <doi:10.1016/j.jval.2012.05.004>.")
 (define-public r-maicchecks
   (package
     (name "r-maicchecks")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maicChecks" version))
        (sha256
-        (base32 "1c2n8avrhx0lvw9hi5slymm49lzf37hbkqzkqy230aikgmpv0cpa"))))
+        (base32 "0rjmzqv9y95jw21vaqhrcybdc5zsr9gh83x89gd6pkfmmhk2ahsm"))))
     (properties `((upstream-name . "maicChecks")))
     (build-system r-build-system)
     (arguments
@@ -50366,12 +50430,13 @@ Signorovitch et al (2012) <doi:10.1016/j.jval.2012.05.004>.")
                              r-data-table))
     (home-page "https://cran.r-project.org/package=maicChecks")
     (synopsis
-     "Assessing the Numerical Feasibility for Conducting a Matching-Adjusted Indirect Comparison (MAIC)")
+     "Exact Matching and Matching-Adjusted Indirect Comparison (MAIC)")
     (description
-     "This package provides a collection of easy-to-implement tools for checking
-whether a MAIC can be conducted.  An alternative way of calculating weights is
-also included.  These methods are introduced in Glimm & Yau (2021)
-<@code{arXiv:2108.01896>}.")
+     "The second version (0.2.0) contains implementation for exact matching which is
+an alternative to propensity score matching (see Glimm & Yau (2025)).  The
+initial version (0.1.2) contains a collection of easy-to-implement tools for
+checking whether a MAIC can be conducted, as well as an alternative way of
+calculating weights (see Glimm & Yau (2021) <doi:10.1002/pst.2210>.).")
     (license license:gpl3+)))
 
 (define-public r-maic

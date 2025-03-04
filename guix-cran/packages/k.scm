@@ -5329,13 +5329,13 @@ requiring you to change a few lines of code.")
 (define-public r-keras3
   (package
     (name "r-keras3")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keras3" version))
        (sha256
-        (base32 "05g2kqf9ffk94vgclndyf5hqx9g5gnl0skzn5bfx48qlsi9g3m37"))))
+        (base32 "077smx92rym88jkl0r4ag0v0ax41a6zwql5x39h8qxz4fkw1why1"))))
     (properties `((upstream-name . "keras3")))
     (build-system r-build-system)
     (arguments
@@ -5350,6 +5350,7 @@ requiring you to change a few lines of code.")
                              r-glue
                              r-generics
                              r-fastmap
+                             r-dotty
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://keras3.posit.co/")

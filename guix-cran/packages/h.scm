@@ -6359,13 +6359,13 @@ using either lmer in the lme4 package or lme in the nlme package.")
 (define-public r-hlatools
   (package
     (name "r-hlatools")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HLAtools" version))
        (sha256
-        (base32 "0k2hj0cqwsjbkgb98zm11c1ng278zi8gpk6yndi93fkcq3lmqdkj"))))
+        (base32 "16rq6zgjwisy1va681f3jg7w4v9p54bq41wgn4hdj5jyfbswiwxf"))))
     (properties `((upstream-name . "HLAtools")))
     (build-system r-build-system)
     (arguments
@@ -14876,13 +14876,13 @@ Webpage provided at: <https://github.com/CSAFE-ISU/handwriter>.")
 (define-public r-handlr
   (package
     (name "r-handlr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handlr" version))
        (sha256
-        (base32 "0l0jwlslz2pyg7q447k56acfhgmx5njsriqdrwd02zzbsc3g6wm5"))))
+        (base32 "1rclr5sqyyggj1c90npxm62dq2zp41c3nbfhrcvzaj0xcj21sba4"))))
     (properties `((upstream-name . "handlr")))
     (build-system r-build-system)
     (arguments

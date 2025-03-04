@@ -11290,6 +11290,29 @@ GEKS, GEKS-Tornqvist (or CCDI), Geary-Khamis and the weighted time product dummy
 indexes using several splicing methods.")
     (license license:gpl2)))
 
+(define-public r-indexnumbertools
+  (package
+    (name "r-indexnumbertools")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IndexNumberTools" version))
+       (sha256
+        (base32 "1rcrpqkh3899cgns4wh3gyf1l0cmwkcw6b9pdpr7cxq42ighc23r"))))
+    (properties `((upstream-name . "IndexNumberTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://mserrano-ine.github.io/IndexNumberTools/")
+    (synopsis "Working with Index Numbers")
+    (description
+     "This package provides a set of utilities for manipulating index numbers series
+including chain-linking, re-referencing, and computing growth rates.")
+    (license license:gpl3+)))
+
 (define-public r-indexnumber
   (package
     (name "r-indexnumber")
@@ -20289,13 +20312,13 @@ management.")
 (define-public r-ibdsim2
   (package
     (name "r-ibdsim2")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibdsim2" version))
        (sha256
-        (base32 "13w5cfbbm90v822ylz8m4khy33x7blmag6h0051lw9v655km2gcs"))))
+        (base32 "1sqh1sqm8pw6fwfc06pwsyid4z5dkdhl9cgjzsi64hij4h18xc5b"))))
     (properties `((upstream-name . "ibdsim2")))
     (build-system r-build-system)
     (arguments
@@ -20311,7 +20334,7 @@ al. (2019) <doi:10.1126/science.aau1043>), phased chromosomes are simulated for
 all pedigree members.  Applications include calculation of realised relatedness
 coefficients and IBD segment distributions.  ibdsim2 is part of the pedsuite
 collection of packages for pedigree analysis.  A detailed presentation of the
-ped suite', including a separate chapter on ibdsim2', is available in the book
+pedsuite', including a separate chapter on ibdsim2', is available in the book
 Pedigree analysis in R (Vigeland, 2021, ISBN:9780128244302).  A Shiny app for
 visualising and comparing IBD distributions is available at
 <https://magnusdv.shinyapps.io/ibdsim2-shiny/>.")

@@ -23199,20 +23199,20 @@ interactive version is available at <https://knuth.uca.es/shiny/DEA/>.")
 (define-public r-ade4tkgui
   (package
     (name "r-ade4tkgui")
-    (version "0.3-1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ade4TkGUI" version))
        (sha256
-        (base32 "1y0f62n8iv002ayd1nyl3bmszw558niwnfzjpvk0a7cbvfdyvwcg"))))
+        (base32 "0cnvs8vaa8nyhcxlda63ndinj7sqxrdlxcdrk39gr0hnsnsbkbcg"))))
     (properties `((upstream-name . "ade4TkGUI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-lattice r-adegraphics r-ade4))
-    (home-page "http://pbil.univ-lyon1.fr/ade4TkGUI/")
+    (home-page "https://github.com/adeverse/ade4TkGUI")
     (synopsis "'ade4' Tcl/Tk Graphical User Interface")
     (description
      "This package provides a Tcl/Tk GUI for some basic functions in the ade4 package.")

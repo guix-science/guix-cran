@@ -27852,6 +27852,33 @@ closed-form solution in Bui (2022) <doi:10.1016/j.patrec.2022.11.007>) and
 conditional ISOMAP in Bui (2021) <@code{arXiv:2111.13646>}.")
     (license license:gpl2)))
 
+(define-public r-cmip6visr
+  (package
+    (name "r-cmip6visr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CMIP6VisR" version))
+       (sha256
+        (base32 "11p30knmaaig9k62s07spmchsy5k9jp6qpxzc5a58h3jpar9yf56"))))
+    (properties `((upstream-name . "CMIP6VisR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra r-stringr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TycheLab/CMIP6VisR")
+    (synopsis
+     "Visualization and Analysis of Coupled Model Intercomparison Project, Phase-6 (CMIP6) Hydroclimatic Data")
+    (description
+     "Data manipulation for Coupled Model Intercomparison Project, Phase-6 (CMIP6)
+hydroclimatic data.  The files are archived in the Federated Research Data
+Repository (FRDR) (Rajulapati et al, 2024, <doi:10.20383/103.0829>).  The data
+set is described in Abdelmoaty et al. (2025, <doi:10.1038/s41597-025-04396-z>).")
+    (license license:gpl3)))
+
 (define-public r-cmhsu
   (package
     (name "r-cmhsu")
@@ -38502,28 +38529,32 @@ comes with back-ends for @code{OpenAI}', @code{GitHub} Copilot', and
 (define-public r-chatrater
   (package
     (name "r-chatrater")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chatRater" version))
        (sha256
-        (base32 "125n7y56sxsdwnhy6qdffcn282gfssvkgfqlb778124d0ab56spy"))))
+        (base32 "0fkzlmv9jlpmhlis79kz055fdxgak9vcx8rfyrjmfvmlal9r47ik"))))
     (properties `((upstream-name . "chatRater")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyverse r-openai r-jsonlite r-httr))
+    (propagated-inputs (list r-openai r-jsonlite r-httr))
     (home-page "https://cran.r-project.org/package=chatRater")
-    (synopsis "Rating Text Using Large Language Models")
+    (synopsis "Rating and Evaluating Texts Using Large Language Models")
     (description
-     "Generates ratings for textual stimuli using large language models.  It allows
-users to evaluate idioms and similar texts by combining context, prompts, and
-stimulus inputs.  The package supports both @code{OpenAI} and @code{DeepSeek}
-APIs by enabling users to switch models simply by specifying the model
-parameter.  It implements methods for constructing the request payload and
-parsing numeric ratings from the model outputs.")
+     "Generates ratings and psycholinguistic metrics for textual stimuli using large
+language models.  It enables users to evaluate idioms and other language
+materials by combining context, prompts, and stimulus inputs.  It supports
+multiple LLM APIs (such as @code{OpenAI}', @code{DeepSeek}', Anthropic',
+Cohere', Google @code{PaLM}', and Ollama') by allowing users to switch models
+with a single parameter.  In addition to generating numeric ratings,
+@code{chatRater} provides functions for obtaining detailed psycholinguistic
+metrics including word frequency (with optional corpus input), lexical coverage
+(with customizable vocabulary size and test basis), Zipf metric, Levenshtein
+distance, and semantic transparency.")
     (license license:expat)))
 
 (define-public r-chatgpt
@@ -39879,13 +39910,13 @@ displays of results are emphasized.")
 (define-public r-cftime
   (package
     (name "r-cftime")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFtime" version))
        (sha256
-        (base32 "0q1gsps9v05mbw9nlligjmsbv0gjwnmf6bywazq0jlmggrsjrfbn"))))
+        (base32 "1332h19cp4d8b2238aphyxjhs65fhx0wmqf8h23ffbcr5s5sl7xh"))))
     (properties `((upstream-name . "CFtime")))
     (build-system r-build-system)
     (arguments
@@ -40770,6 +40801,52 @@ supported <https://www.page-meeting.org/default.asp?abstract=2338>.  Execution
 is supported both locally or on remote machines.  Remote execution includes
 support for Linux Sun Grid Engine (SGE), Terascale Open-source Resource and
 Queue Manager (TORQUE) grids, Linux and Windows multicore, and individual runs.")
+    (license license:lgpl3)))
+
+(define-public r-certara-modelresults
+  (package
+    (name "r-certara-modelresults")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Certara.ModelResults" version))
+       (sha256
+        (base32 "15yi1bjfp5d056x111ijxcs1wdn85v3125l3lajxxpfixq73kyzl"))))
+    (properties `((upstream-name . "Certara.ModelResults")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xpose
+                             r-tidyr
+                             r-sortable
+                             r-shinywidgets
+                             r-shinytree
+                             r-shinymeta
+                             r-shinyjs
+                             r-shinyjqui
+                             r-shinyace
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-flextable
+                             r-dplyr
+                             r-colourpicker
+                             r-certara-xpose-nlme
+                             r-bslib))
+    (home-page "https://certara.github.io/R-model-results/")
+    (synopsis "Generate Diagnostics for Pharmacometric Models Using 'shiny'")
+    (description
+     "Utilize the shiny interface to generate Goodness of Fit (GOF) plots and tables
+for Non-Linear Mixed Effects (NLME / NONMEM) pharmacometric models.  From the
+interface, users can customize model diagnostics and generate the underlying R
+code to reproduce the diagnostic plots and tables outside of the shiny session.
+Model diagnostics can be included in a rmarkdown document and rendered to
+desired output format.")
     (license license:lgpl3)))
 
 (define-public r-certainty
@@ -49528,13 +49605,13 @@ source file.")
 (define-public r-callback
   (package
     (name "r-callback")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "callback" version))
        (sha256
-        (base32 "04j00c8i14i3ic3ccdglj8fyaa9924dsgmichidk8jh2qj7c22ny"))))
+        (base32 "1jg076kbkljs26qv0yhc9fzil3jq96xcccg6qh8ldm2ygagbbzkw"))))
     (properties `((upstream-name . "callback")))
     (build-system r-build-system)
     (arguments
@@ -49548,9 +49625,8 @@ source file.")
      "In discrimination experiments candidates are sent on the same test (e.g. job,
 house rental) and one examines whether they receive the same outcome.  The
 number of non negative answers are first examined in details looking for outcome
-differences.  Then various answering rates and their exacts confidence intervals
-are computed.  Last, exact and asymptotic discrimination tests are performed.
-Graphical methods are also available.")
+differences.  Then various statistics are computed.  This package can also be
+used for analyzing the results from random experiments.")
     (license license:gpl3)))
 
 (define-public r-calidad
@@ -50250,13 +50326,13 @@ described in Lee, Kim, Perera, @code{McLachlan} and Bae (2015)
 (define-public r-caesar-suite
   (package
     (name "r-caesar-suite")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAESAR.Suite" version))
        (sha256
-        (base32 "1ijyza7i7pw2mpqlg502crd7kmk0xg8ksbj0d9dnsddi87d7wy0y"))))
+        (base32 "10nyr5rvmv8dzcfin0djxk6z5iyp79z68qkmxkn8vizh91n0wrnz"))))
     (properties `((upstream-name . "CAESAR.Suite")))
     (build-system r-build-system)
     (arguments

@@ -1754,13 +1754,13 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
 (define-public r-rvinecopulib
   (package
     (name "r-rvinecopulib")
-    (version "0.7.1.1.1")
+    (version "0.7.1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvinecopulib" version))
        (sha256
-        (base32 "11whjqvpad9ch23jkcxacx8sy5zgp7dyzn4k4fx0q1hr0634lfqp"))))
+        (base32 "1y5nmfbvrpfrzvzh7rk2aq301h768fxaclr8c8rhgz63gd5ri4zv"))))
     (properties `((upstream-name . "rvinecopulib")))
     (build-system r-build-system)
     (arguments
@@ -3161,13 +3161,13 @@ packages who wish to use the 2bit C library in their own C'/'C++ code.")
 (define-public r-rtwig
   (package
     (name "r-rtwig")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTwig" version))
        (sha256
-        (base32 "1pkczwr4j9dm37b1hsgczdv0rkpjqkzz879xjld1rjgabphcmdfy"))))
+        (base32 "06rvpz3fnz6ldg151rw9w130h09k8zz03zawqabzyvxh0cwkc3jc"))))
     (properties `((upstream-name . "rTwig")))
     (build-system r-build-system)
     (arguments
@@ -20230,6 +20230,37 @@ to the publication (Teleman et al., (2014) <doi:10.1074/mcp.O114.037879>) for
 more details.")
     (license license:bsd-3)))
 
+(define-public r-rmsmd
+  (package
+    (name "r-rmsmd")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmsMD" version))
+       (sha256
+        (base32 "116zkbkj5frf4b33ldiivzz6yxl6jsqg7kl1d64ac3sydf8lkxg1"))))
+    (properties `((upstream-name . "rmsMD")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rms))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sjtingle/rmsMD")
+    (synopsis "Output Results from 'rms' Models for Medical Journals")
+    (description
+     "This takes the output of models performed using the rms package and returns a
+dataframe with the results.  This output is in the format required by medical
+journals.  For example for cox regression models, the hazard ratios, their 95%
+confidence intervals, and p values will be provided.  There are additional
+functions for outputs when the model included restricted cubic spline (RCS)
+terms.  Models using imputed data (eg from @code{aregimpute()}) and fitted used
+@code{fit.mult.impute()} can also be processed.  The dataframe which is returned
+can easily be turned into a publication ready table with packages flextable and
+officer'.")
+    (license license:expat)))
+
 (define-public r-rmsfuns
   (package
     (name "r-rmsfuns")
@@ -23629,13 +23660,13 @@ force of mortality.")
 (define-public r-rkin
   (package
     (name "r-rkin")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rKIN" version))
        (sha256
-        (base32 "1rslk7pranl29plxaxypdahb8q676vp3fmh51l3rn3kvnrly9fw8"))))
+        (base32 "0nx6i147qw1sqimdlrp5a3khmascnhzl15cibasp9zv95ngphwfk"))))
     (properties `((upstream-name . "rKIN")))
     (build-system r-build-system)
     (arguments
@@ -39604,13 +39635,13 @@ fitting and evaluation.")
 (define-public r-recolorize
   (package
     (name "r-recolorize")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recolorize" version))
        (sha256
-        (base32 "1biiyqqvnm3310gc9q0apwqfmvmh6cnj9pc77l44js4x3576w3aq"))))
+        (base32 "147v5xqfk0y7srmdns26f5rminijylxdc0566x55hhkpfkgfbl5n"))))
     (properties `((upstream-name . "recolorize")))
     (build-system r-build-system)
     (arguments
@@ -39626,7 +39657,7 @@ fitting and evaluation.")
                              r-colorramps
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=recolorize")
+    (home-page "https://hiweller.github.io/recolorize/")
     (synopsis "Color-Based Image Segmentation")
     (description
      "Automatic, semi-automatic, and manual functions for generating color maps from
@@ -45665,6 +45696,31 @@ lists.  Environment variables, R global variables, and configuration values can
 be substituted.")
     (license license:expat)))
 
+(define-public r-rconf
+  (package
+    (name "r-rconf")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rconf" version))
+       (sha256
+        (base32 "11vvcz8rvznkw9rvqg3c0npwjrrgwwvi4xzifdwr3ns65pjw1mw9"))))
+    (properties `((upstream-name . "rconf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rconf")
+    (synopsis "Minimal and Lightweight Configuration Tool")
+    (description
+     "Minimal and lightweight configuration tool that provides basic support for YAML
+configuration files without requiring additional package dependencies.  It
+offers a simple method for loading and parsing configuration settings, making it
+ideal for quick prototypes and lightweight projects.")
+    (license license:gpl3)))
+
 (define-public r-rcompendium
   (package
     (name "r-rcompendium")
@@ -47505,13 +47561,13 @@ change-points is not required.  The code is written in Go and interfaced with R.
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.4.2.0")
+    (version "4.4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "1gswy1vyd895ndslznvdkhbib4zjr846f2z9fgd15cc1vigqzixy"))))
+        (base32 "1rkhwckkhx8ddbj3zq1bcmalgl4g3wsrzmlrqymzarap32jvb41n"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (arguments
@@ -48751,13 +48807,13 @@ text files and more...")
 (define-public r-rbmi
   (package
     (name "r-rbmi")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbmi" version))
        (sha256
-        (base32 "1rk3af5z02fsaxhyvx2d6gxcnalpgc3n36abnin053pv44vfr4jp"))))
+        (base32 "0vr98fybp2115fa8s7z8miiyyj1l8q89b1kxrpx40f5vs9gnc8x8"))))
     (properties `((upstream-name . "rbmi")))
     (build-system r-build-system)
     (arguments
@@ -57325,13 +57381,13 @@ mitigation goals.")
 (define-public r-r2dictionary
   (package
     (name "r-r2dictionary")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dictionary" version))
        (sha256
-        (base32 "09xsmgb1vpqafn9z4yh64qc3gwpd1rpiyj4vpagck8779rxdkqph"))))
+        (base32 "1545ss1ajrc8v2fij2jlbff1y1ls7854gv09lrlfcjcsfjsyvw1g"))))
     (properties `((upstream-name . "r2dictionary")))
     (build-system r-build-system)
     (arguments
@@ -57340,18 +57396,14 @@ mitigation goals.")
     (propagated-inputs (list r-stringr r-rstudioapi))
     (native-inputs (list r-knitr))
     (home-page "https://r2dictionary.obi.obianom.com")
-    (synopsis "Mini-Dictionary for 'R', 'Shiny' and 'Rmarkdown' Documents")
+    (synopsis "Mini-Dictionary for 'R', 'shiny' and 'rmarkdown' Documents")
     (description
      "Despite the predominant use of R for data manipulation and various robust
 statistical calculations, in recent years, more people from various disciplines
-are beginning to use R for other purposes.  A critical milestone that has
-enabled large influx of users in the R community is the development of the
-Tidyverse family of packages and Rmarkdown.  With the latter, one can write all
-kinds of documents and produce output in formats such html and pdf very easily.
-In doing this seemlessly, further tools are needed for such users to easily and
-freely write in R for all kinds of purposes.  The r2dictionary introduces a
-means for users to directly search for definitions of terms within the R
-environment.")
+are beginning to use R for other purposes.  In doing this seemlessly, further
+tools are needed users to easily and freely write in R for all kinds of
+purposes.  The r2dictionary introduces a means for users to directly search for
+definitions of terms within the R environment.")
     (license license:expat)))
 
 (define-public r-r2d3

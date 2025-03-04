@@ -23573,13 +23573,13 @@ response theory (IRT) models.")
 (define-public r-plmmr
   (package
     (name "r-plmmr")
-    (version "4.2.0")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plmmr" version))
        (sha256
-        (base32 "16757jw260bac3nvnbdykhmbj5pgddfmk51xj6hxz176zl94lf12"))))
+        (base32 "1h071f5awp9qdp2lv0iips3cw2xadyfjszz6dx6hpy68k06q0zsf"))))
     (properties `((upstream-name . "plmmr")))
     (build-system r-build-system)
     (arguments
@@ -34120,6 +34120,34 @@ selection (Geminiani et al., 2021 <doi:10.1007/s11336-021-09751-8>).  Available
 penalties include lasso, adaptive lasso, scad, mcp, and ridge.")
     (license license:gpl3)))
 
+(define-public r-penetrance
+  (package
+    (name "r-penetrance")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "penetrance" version))
+       (sha256
+        (base32 "0sb2nbas097lhshaajh6rr7hxbnm2y024ycsnvfv324bvyfg5wkz"))))
+    (properties `((upstream-name . "penetrance")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass r-kinship2 r-clipp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nicokubi/penetrance")
+    (synopsis "Methods for Penetrance Estimation in Family-Based Studies")
+    (description
+     "This package implements statistical methods for estimating disease penetrance in
+family-based studies.  Penetrance refers to the probability of diseaseÂ§
+manifestation in individuals carrying specific genetic variants.  The package
+provides tools for age-specific penetrance estimation, handling missing data,
+and accounting for ascertainment bias in family studies.  Cite as: Kubista, N.,
+Braun, D. & Parmigiani, G. (2024) <doi:10.48550/@code{arXiv.2411.18816>}.")
+    (license license:gpl3)))
+
 (define-public r-pendensity
   (package
     (name "r-pendensity")
@@ -42394,13 +42422,13 @@ Mechanistic Models\" <doi:10.1080/01621459.2019.1604367>.")
 (define-public r-panelmatch
   (package
     (name "r-panelmatch")
-    (version "2.2.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PanelMatch" version))
        (sha256
-        (base32 "14y6msvs4h3xdpi83yi6q4a58xqbf1nxs5m0wbbzszzj7jdjiq79"))))
+        (base32 "11b296gr0bh9m5s77k79zxbcqr7clwlzx1fpawp16k4vlqs1q6x1"))))
     (properties `((upstream-name . "PanelMatch")))
     (build-system r-build-system)
     (arguments
@@ -42764,13 +42792,13 @@ by the intervention.")
 (define-public r-pampal
   (package
     (name "r-pampal")
-    (version "1.2.1")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMpal" version))
        (sha256
-        (base32 "1jb89rl1apb1nb1yfhq0knqkw7n6jcb2l4aqq61qy28iwl7vanr5"))))
+        (base32 "1ym1hq8ylzrgn3snryws097s67cimfvkljmlffg555n238cq50qw"))))
     (properties `((upstream-name . "PAMpal")))
     (build-system r-build-system)
     (arguments
@@ -42793,6 +42821,7 @@ by the intervention.")
                              r-ggplot2
                              r-geosphere
                              r-gam
+                             r-future-apply
                              r-dplyr
                              r-data-table))
     (home-page "https://cran.r-project.org/package=PAMpal")

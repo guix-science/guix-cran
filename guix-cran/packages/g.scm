@@ -3394,13 +3394,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.6")
+    (version "3.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "13nm2gxp5g1a2nnb62w146zrarb7famkqd7563g1d6qqqn0h5kvn"))))
+        (base32 "0nmi9yivakky05m2lj6vca5abjq94kzhl5fz8nd0cx2bw1qkkm1m"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (arguments
@@ -8037,49 +8037,6 @@ and conditional Granger-causality spectra, bootstrap inference on both, and
 inference on the difference between them via the bootstrap approach of Farne and
 Montanari, 2018 <@code{arXiv:1803.00374>}.")
     (license license:gpl2+)))
-
-(define-public r-grandr
-  (package
-    (name "r-grandr")
-    (version "0.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "grandR" version))
-       (sha256
-        (base32 "058cvcjrqhgm14vyhlm1mdhs3z0kfpjlfc3msadsvlhlb7p676sn"))))
-    (properties `((upstream-name . "grandR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-rlang
-                             r-reshape2
-                             r-rcurl
-                             r-plyr
-                             r-patchwork
-                             r-numderiv
-                             r-minpack-lm
-                             r-matrix
-                             r-mass
-                             r-lfc
-                             r-labeling
-                             r-ggplot2
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/erhard-lab/grandR")
-    (synopsis
-     "Comprehensive Analysis of Nucleotide Conversion Sequencing Data")
-    (description
-     "Nucleotide conversion sequencing experiments have been developed to add a
-temporal dimension to RNA-seq and single-cell RNA-seq.  Such experiments require
-specialized tools for primary processing such as GRAND-SLAM, (see JÃ¼rges et al
-<doi:10.1093/bioinformatics/bty256>) and specialized tools for downstream
-analyses. @code{grandR} provides a comprehensive toolbox for quality control,
-kinetic modeling, differential gene expression analysis and visualization of
-such data.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-grand
   (package

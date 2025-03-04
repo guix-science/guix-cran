@@ -289,19 +289,20 @@ applying it in different contexts (parametric or non-parametric).")
 (define-public r-fwb
   (package
     (name "r-fwb")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fwb" version))
        (sha256
-        (base32 "02r6p2ck56lm3ip105cp0m5q05lifynpq767bl2igf7zsvhjqpak"))))
+        (base32 "0k1bn3qnabrvkgzjyw0qbc4xwkydmpx33f4yqijjlzyqnskvmw9g"))))
     (properties `((upstream-name . "fwb")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rlang r-pbapply r-chk))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ngreifer/fwb")
     (synopsis "Fractional Weighted Bootstrap")
     (description
