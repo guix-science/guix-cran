@@ -5335,13 +5335,13 @@ profiles for two models, @code{check_drift()} executes all checks against drift.
 (define-public r-driftdm
   (package
     (name "r-driftdm")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dRiftDM" version))
        (sha256
-        (base32 "0c9vzbs5cmrmzvx12nisikhgzg4k7jv3y29j02dvpr809mpcasby"))))
+        (base32 "0bimxfw2w2vmxyyksyxsfvn06zhgvw9z4303800d70c83nv98mm9"))))
     (properties `((upstream-name . "dRiftDM")))
     (build-system r-build-system)
     (arguments
@@ -5351,6 +5351,7 @@ profiles for two models, @code{check_drift()} executes all checks against drift.
                              r-rdpack
                              r-rcpp
                              r-progress
+                             r-lifecycle
                              r-dfoptim
                              r-deoptim))
     (native-inputs (list r-knitr))
@@ -8626,6 +8627,37 @@ D. V. (2006) <doi:10.3102/10769986031002157>, Azen, R., & Traxel, N. (2009)
 <doi:10.3102/1076998609332754> and Luo, W., & Azen, R. (2013)
 <doi:10.3102/1076998612458319>, respectively.")
     (license license:gpl2)))
+
+(define-public r-domean
+  (package
+    (name "r-domean")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Domean" version))
+       (sha256
+        (base32 "160s0p7k5pnwivl5hxsiyygk3xwqmd441qyb00r696kwvc5ig9sm"))))
+    (properties `((upstream-name . "Domean")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=Domean")
+    (synopsis "Distributed Online Mean Tests")
+    (description
+     "Distributed Online Mean Tests is a powerful tool designed to efficiently process
+and analyze distributed datasets.  It enables users to perform mean tests in an
+online, distributed manner, making it highly suitable for large-scale data
+analysis.  By leveraging advanced computational techniques, Domean ensures
+robust and scalable solutions for statistical analysis, particularly in
+scenarios where data is dispersed across multiple nodes or sources.  This
+package is ideal for researchers and practitioners working with high-dimensional
+data, providing a flexible and efficient framework for mean testing.  The
+philosophy of Domean is described in Guo G.(2025)
+<doi:10.1016/j.physa.2024.130308>.")
+    (license license:expat)))
 
 (define-public r-dogoftest
   (package
@@ -25941,6 +25973,35 @@ The output includes cluster centers and clustering assignment, as described in
 the paper (Ma et al (2017) <doi:10.1109/ICDMW.2017.11>).")
     (license license:gpl2+)))
 
+(define-public r-dda
+  (package
+    (name "r-dda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dda" version))
+       (sha256
+        (base32 "1b7kmj5ql2ig3jj08564l5han6jcgwqwva0nfphxf7nras71pg1a"))))
+    (properties `((upstream-name . "dda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-foreach r-energy r-dhsic))
+    (home-page "https://github.com/wwiedermann/dda")
+    (synopsis "Direction Dependence Analysis")
+    (description
+     "This package provides a collection of tests to analyze the causal direction of
+dependence in linear models (Wiedermann, W., & von Eye, A., 2025, ISBN:
+9781009381390).  The package includes functions to perform Direction Dependence
+Analysis for variable distributions, residual distributions, and independence
+properties of predictors and residuals in competing causal models.  In addition,
+the package contains functions to test the causal direction of dependence in
+conditional models (i.e., models with interaction terms) For more information
+see <https://www.ddaproject.com>.")
+    (license license:expat)))
+
 (define-public r-dcurves
   (package
     (name "r-dcurves")
@@ -30910,13 +30971,13 @@ the @code{dartRverse} suit of packages.  Gruber et al. (2018)
 (define-public r-dartr-base
   (package
     (name "r-dartr-base")
-    (version "0.98")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartR.base" version))
        (sha256
-        (base32 "0ndl0319pidlkk5fv49zqr8kbib51v60h32k906rwc57jf60xbjk"))))
+        (base32 "1mqxyl54hdhrrih5d9ysm61h5v90c2w105q31nw6q24gpfb66znw"))))
     (properties `((upstream-name . "dartR.base")))
     (build-system r-build-system)
     (arguments
@@ -30925,9 +30986,11 @@ the @code{dartRverse} suit of packages.  Gruber et al. (2018)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-stampp
+                             r-snpstats
                              r-snprelate
                              r-snpassoc
                              r-reshape2
+                             r-raster
                              r-plyr
                              r-patchwork
                              r-mass

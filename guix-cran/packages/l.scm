@@ -11009,6 +11009,36 @@ quantitatively instead of qualitatively.  See the @code{likert()},
 @code{summary.likert()}, and @code{plot.likert()} functions to get started.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-likelihoodtools
+  (package
+    (name "r-likelihoodtools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "likelihoodTools" version))
+       (sha256
+        (base32 "1dagyiy75ckf1mxlg22k4p0qdki0fa40zl874ax347rkdl6xl9rx"))))
+    (properties `((upstream-name . "likelihoodTools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-ggplot2 r-dplyr))
+    (home-page "https://github.com/ajpelu/likelihoodTools")
+    (synopsis "Managing Results from Maximum Likelihood Estimation")
+    (description
+     "Managing and exploring parameter estimation results derived from Maximum
+Likelihood Estimation (MLE) using the likelihood package.  It provides functions
+for organizing, visualizing, and summarizing MLE outcomes, streamlining
+statistical analysis workflows.  By improving interpretation and facilitating
+model evaluation, it helps users gain deeper insights into parameter estimation
+and model fitting, making MLE result exploration more efficient and accessible.
+See Goffe et al. (1994) <doi:10.1016/0304-4076(94)90038-8> for details on MLE,
+and Canham and Uriarte (2006) <doi:10.1890/04-0657> for application of MLE using
+likelihood'.")
+    (license license:gpl3+)))
+
 (define-public r-likelihoodr
   (package
     (name "r-likelihoodr")
@@ -13676,13 +13706,13 @@ function for VES.")
 (define-public r-legendry
   (package
     (name "r-legendry")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "legendry" version))
        (sha256
-        (base32 "0syvk61c47pd27cx3q89hd1abvrd6j29mlq983w6a1a0cd1fp9zn"))))
+        (base32 "1nzw8r0iamgvmi9j40jn66dak3g5fdv41hjhz2pmf6p72vabf1cb"))))
     (properties `((upstream-name . "legendry")))
     (build-system r-build-system)
     (arguments

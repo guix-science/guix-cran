@@ -390,13 +390,13 @@ dissemination.")
 (define-public r-pxmake
   (package
     (name "r-pxmake")
-    (version "0.15.1")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pxmake" version))
        (sha256
-        (base32 "025yl8nkvrawd7g6pvkvisllkwv59vhdah23n8n80yshgxzqxrin"))))
+        (base32 "0dwmn6fc77kydlvfv3g8zjik2dg9lwn785pgx3rmp1gych3w4hqp"))))
     (properties `((upstream-name . "pxmake")))
     (build-system r-build-system)
     (arguments
@@ -410,10 +410,10 @@ dissemination.")
                              r-rlang
                              r-readxl
                              r-purrr
+                             r-pillar
                              r-openxlsx
                              r-magrittr
                              r-furrr
-                             r-forcats
                              r-dplyr
                              r-arrow))
     (native-inputs (list r-knitr))

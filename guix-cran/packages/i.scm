@@ -2157,19 +2157,19 @@ as well as 230Th-U evolution plots.")
 (define-public r-isopleuros
   (package
     (name "r-isopleuros")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isopleuros" version))
        (sha256
-        (base32 "0bbhysxxcxnq5l9bwgx7j2ksnf623rf86xd3yfgrl3yyj0h03i2l"))))
+        (base32 "1861v52yq2s7gd5lbyx2yg9p5i9cvzrx8p0df05sprp6qrxbah2g"))))
     (properties `((upstream-name . "isopleuros")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://packages.tesselle.org/isopleuros/")
+    (home-page "https://codeberg.org/tesselle/isopleuros")
     (synopsis "Ternary Plots")
     (description
      "Ternary plots made simple.  This package allows to create ternary plots using

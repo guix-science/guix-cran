@@ -32734,20 +32734,19 @@ anything if needed.")
 (define-public r-cleanepi
   (package
     (name "r-cleanepi")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cleanepi" version))
        (sha256
-        (base32 "10vpdynil63gnx9rdzzdcaprn6639qgc415wg615izykz7c0g42l"))))
+        (base32 "1w61hpfq1sfddjjgigyg2x8140gah7ci4d1hyrnf30iiqbbc044v"))))
     (properties `((upstream-name . "cleanepi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-snakecase
+    (propagated-inputs (list r-tibble
                              r-rlang
                              r-readr
                              r-numberize
@@ -32757,8 +32756,8 @@ anything if needed.")
                              r-linelist
                              r-janitor
                              r-dplyr
-                             r-checkmate
-                             r-arsenal))
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://epiverse-trace.github.io/cleanepi/")
     (synopsis "Clean and Standardize Epidemiological Data")
@@ -32766,9 +32765,8 @@ anything if needed.")
      "Cleaning and standardizing tabular data package, tailored specifically for
 curating epidemiological data.  It streamlines various data cleaning tasks that
 are typically expected when working with datasets in epidemiology.  It returns
-the processed data in the same format, ensuring seamless integration into
-existing workflows.  Additionally, it generates a comprehensive report detailing
-the outcomes of each cleaning task.")
+the processed data in the same format, and generates a comprehensive report
+detailing the outcomes of each cleaning task.")
     (license license:expat)))
 
 (define-public r-cleandata
@@ -38766,6 +38764,40 @@ within a range.")
 a vector of individual characters, making strings iterable.  This class enables
 vector operations on strings such as reverse, sort, head, and set operations.")
     (license license:expat)))
+
+(define-public r-characterization
+  (package
+    (name "r-characterization")
+    (version "2.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Characterization" version))
+       (sha256
+        (base32 "031krnry5wda00ca7ghyr23dpbyc959clax9rhq4cyli814qf741"))))
+    (properties `((upstream-name . "Characterization")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sqlrender
+                             r-rlang
+                             r-resultmodelmanager
+                             r-readr
+                             r-parallellogger
+                             r-featureextraction
+                             r-dplyr
+                             r-databaseconnector
+                             r-checkmate
+                             r-andromeda))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/Characterization/")
+    (synopsis "Implement Descriptive Studies Using the Common Data Model")
+    (description
+     "An end-to-end framework that enables users to implement various descriptive
+studies for a given set of target and outcome cohorts for data mapped to the
+Observational Medical Outcomes Partnership Common Data Model.")
+    (license license:asl2.0)))
 
 (define-public r-chaosgame
   (package

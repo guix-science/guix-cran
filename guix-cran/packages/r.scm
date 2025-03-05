@@ -27905,13 +27905,13 @@ host of glycemic variability metrics, and plots glucose over time.")
 (define-public r-rgugik
   (package
     (name "r-rgugik")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgugik" version))
        (sha256
-        (base32 "0a3bk0p7p4ay9nx3vz22fnlvb928isgab5ll50s1mffbzx32iwqd"))))
+        (base32 "16lsh0pmb9c6fxcc42qvhlp77q8zwaagqnxlpam3843py00vhvps"))))
     (properties `((upstream-name . "rgugik")))
     (build-system r-build-system)
     (arguments

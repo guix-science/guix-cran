@@ -30390,6 +30390,39 @@ functions to detect that change.  We provide a method for using the change in
 distribution of p values as a way to detect the true signals in the data.")
     (license license:gpl3)))
 
+(define-public r-mhqol
+  (package
+    (name "r-mhqol")
+    (version "0.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MHQoL" version))
+       (sha256
+        (base32 "0fdqwq7q554b9a82ard3nf33q08il31iyxdvhvaw1d4lpshpdyna"))))
+    (properties `((upstream-name . "MHQoL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-tidyr
+                             r-shinyalert
+                             r-shiny
+                             r-fmsb
+                             r-dt
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://cran.r-project.org/package=MHQoL")
+    (synopsis "Mental Health Quality of Life Toolkit")
+    (description
+     "Transforms, calculates, and presents results from the Mental Health Quality of
+Life Questionnaire (MH@code{QoL}), a measure of health-related quality of life
+for individuals with mental health conditions.  Provides scoring functions,
+summary statistics, and visualization tools to facilitate interpretation.  For
+more details see van Krugten et al.(2022) <doi:10.1007/s11136-021-02935-w>.")
+    (license license:expat)))
+
 (define-public r-mhorseshoe
   (package
     (name "r-mhorseshoe")

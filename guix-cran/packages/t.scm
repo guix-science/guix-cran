@@ -17597,13 +17597,13 @@ interact seamlessly with the tidyverse.")
 (define-public r-tidysem
   (package
     (name "r-tidysem")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidySEM" version))
        (sha256
-        (base32 "1da0hpapns93a1znlq8gh1nmjczczy4sg4c14kikkxhar1wq4lrk"))))
+        (base32 "0ghixlv0riz09d7lrh6w1jxydfsz4j1amyhbcc7s4syfkvcnrw9d"))))
     (properties `((upstream-name . "tidySEM")))
     (build-system r-build-system)
     (arguments
@@ -17612,7 +17612,6 @@ interact seamlessly with the tidyverse.")
     (propagated-inputs (list r-rann
                              r-psych
                              r-progressr
-                             r-openmx
                              r-nonnest2
                              r-mplusautomation
                              r-matrix

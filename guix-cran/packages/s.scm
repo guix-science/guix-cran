@@ -52521,13 +52521,13 @@ and sampling approaches.")
 (define-public r-sgs
   (package
     (name "r-sgs")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgs" version))
        (sha256
-        (base32 "1aizvsbql8ngqn3ybvkga9f46gddwx4x01aka9gr40lnhq3x0qal"))))
+        (base32 "1dvaw1mn6f4lwk04xnmwyhyr3iw8dvv9c1fpyws81i515r052h76"))))
     (properties `((upstream-name . "sgs")))
     (build-system r-build-system)
     (arguments
@@ -63216,13 +63216,13 @@ Abel Folch-Fortuny, Francisco Arteaga and Alberto Ferrer (2020).")
 (define-public r-scoutbar
   (package
     (name "r-scoutbar")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoutbaR" version))
        (sha256
-        (base32 "1pmyawanqcyyc623g5g2rh2a049x55063bqnnjf2y2fmx0dlnmkz"))))
+        (base32 "1aizgsbmdsmyrrxznqvqwk038vlbjwxzj6isnn11jcmb3845nd4p"))))
     (properties `((upstream-name . "scoutbaR")))
     (build-system r-build-system)
     (arguments
@@ -67828,13 +67828,13 @@ compatibility is ensured for the Landsat Global Land Survey data set.")
 (define-public r-sate
   (package
     (name "r-sate")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sate" version))
        (sha256
-        (base32 "1bjd8q9sfwpkg1g67xcp9ji7hn4ilbyf1sqi06vhymdmddl1c54m"))))
+        (base32 "1dv5pw2f9hhb5sin10r7qh2gmpy63953l5jbnf3gbsl6b2k0gbsz"))))
     (properties `((upstream-name . "sate")))
     (build-system r-build-system)
     (arguments

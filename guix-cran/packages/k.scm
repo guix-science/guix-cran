@@ -5790,13 +5790,13 @@ high-dimensional applications.")
 (define-public r-kdensity
   (package
     (name "r-kdensity")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdensity" version))
        (sha256
-        (base32 "07d1p3ysdm66a9sf0gih5xjb3wfab44c3sr8aaraz22s2a9q9b55"))))
+        (base32 "1gqa73ycs86in449y71dsasbc0ppflbbla44bhi13c9ma9kwbpc7"))))
     (properties `((upstream-name . "kdensity")))
     (build-system r-build-system)
     (arguments

@@ -7756,19 +7756,19 @@ single numbers in inline R code chunks and for rendering columns in tables.")
 (define-public r-formatbibtex
   (package
     (name "r-formatbibtex")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatBibtex" version))
        (sha256
-        (base32 "0abqvjmpnlrxzlmqcixbds10q7ssg7x2wdx1qqpy1ix2snd23s7w"))))
+        (base32 "0y5w8av97lr009k15pj3vfkwrpkr0rp7ly9g2r6ckij3naa19bnp"))))
     (properties `((upstream-name . "formatBibtex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (home-page "https://github.com/wenjie2wang/formatBibtex")
+    (home-page "https://wwenjie.org/formatbibtex")
     (synopsis "Format BibTeX Entries and Files")
     (description
      "Format @code{BibTeX} entries and files in an opinionated way.")
@@ -10063,13 +10063,13 @@ of Skew Heavy-Tailed Errors.")
 (define-public r-fmritools
   (package
     (name "r-fmritools")
-    (version "0.4.7")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRItools" version))
        (sha256
-        (base32 "0jpqv7g8xrq6m3rximpcxll8p84wnmww9fiy69fjqfxbg857x35w"))))
+        (base32 "14xsixhalba8dcqyf42347sakld7wpmba7xgz4gl0ncn2i3rp26l"))))
     (properties `((upstream-name . "fMRItools")))
     (build-system r-build-system)
     (arguments

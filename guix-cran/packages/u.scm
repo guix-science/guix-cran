@@ -2380,21 +2380,26 @@ W. Lu (2015) <doi:10.1109/TFUZZ.2014.2322495>, X. Xie, G. Beni (1991)
 (define-public r-univariateml
   (package
     (name "r-univariateml")
-    (version "1.1.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "univariateML" version))
        (sha256
-        (base32 "0a4h19hmw0k2x5yqs92xp48r2srycv4sax97p7gci8hahjw8qzdf"))))
+        (base32 "0jd7n3gvr1azhlmspyqy2d24r8khi4v25izghawshra3if75f4nx"))))
     (properties `((upstream-name . "univariateML")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tibble
+                             r-sads
+                             r-rlang
+                             r-rfast
+                             r-pracma
                              r-nakagami
                              r-logitnorm
+                             r-intervals
                              r-fgarch
                              r-extradistr
                              r-assertthat
