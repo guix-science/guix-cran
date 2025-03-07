@@ -4948,6 +4948,40 @@ accuracy, we recommend to predict the serotypes of unknown Salmonella isolates
 using CSESA before doing the traditional serotyping.")
     (license license:gpl2+)))
 
+(define-public r-cseqtl
+  (package
+    (name "r-cseqtl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CSeQTL" version))
+       (sha256
+        (base32 "1aljzc0wzjb3hyfl02v99vjkfgpr9vghczbbb8rcfj254ah6c4i6"))))
+    (properties `((upstream-name . "CSeQTL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-smarter
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r-utils
+                             r-multcomp
+                             r-matrixeqtl
+                             r-helpersmg
+                             r-ggplot2
+                             r-genomicfeatures
+                             r-emdbook
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CSeQTL")
+    (synopsis "Cell Type-Specific Expression Quantitative Trail Loci Mapping")
+    (description
+     "Perform bulk and cell type-specific expression quantitative trail loci mapping
+with our novel method (Little et al. (2023) <doi:10.1038/s41467-023-38795-w>).")
+    (license license:gpl3+)))
+
 (define-public r-cseqpat
   (package
     (name "r-cseqpat")
@@ -10462,13 +10496,13 @@ confidence intervals.")
 (define-public r-coxmos
   (package
     (name "r-coxmos")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Coxmos" version))
        (sha256
-        (base32 "0iljw8pj6khpgignqsa0wrbif19z42ww88bmllwx1i413qsyizdr"))))
+        (base32 "1jx7pph2fsdah6v9jmy8aylm5pbmd64ddfcw0dv1ys1ycrn6nykp"))))
     (properties `((upstream-name . "Coxmos")))
     (build-system r-build-system)
     (arguments
@@ -10483,6 +10517,7 @@ confidence intervals.")
                              r-rdpack
                              r-purrr
                              r-progress
+                             r-patchwork
                              r-mixomics
                              r-mass
                              r-glmnet
@@ -17962,6 +17997,31 @@ Finally, a battery of datasets are available allowing to replicate a variety of
 connectedness papers.")
     (license license:gpl3)))
 
+(define-public r-connected
+  (package
+    (name "r-connected")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "connected" version))
+       (sha256
+        (base32 "08d4myfljini5gakvw3cr7k5ig3y1kz141fvxdg96jzmfkkyvn3r"))))
+    (properties `((upstream-name . "connected")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reshape2 r-lfe r-lattice))
+    (native-inputs (list r-knitr))
+    (home-page "https://kwstat.github.io/connected/")
+    (synopsis "Visualize and Improve Connectedness of Factors in Tables")
+    (description
+     "Visualize the connectedness of factors in two-way tables.  Perform two-way
+filtering to improve the degree of connectedness.  See Weeks & Williams (1964)
+<doi:10.1080/00401706.1964.10490188>.")
+    (license license:gpl2+)))
+
 (define-public r-connectcreds
   (package
     (name "r-connectcreds")
@@ -21577,13 +21637,13 @@ changed in addition to summary statistics.")
 (define-public r-comparedesign
   (package
     (name "r-comparedesign")
-    (version "2.3.1")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompAREdesign" version))
        (sha256
-        (base32 "0jdfrn8p13d369gwfkyiydwv6451gvz8qiiij74bj2zjpq7z6kc7"))))
+        (base32 "0dv5i3b4s8c87gm02x0kzm8i8km99vg35vpdf64qa7642q267vrz"))))
     (properties `((upstream-name . "CompAREdesign")))
     (build-system r-build-system)
     (arguments
@@ -21591,7 +21651,8 @@ changed in addition to summary statistics.")
       #:tests? #f))
     (propagated-inputs (list r-rootsolve r-numderiv r-ggpubr r-ggplot2
                              r-copula))
-    (home-page "https://cran.r-project.org/package=CompAREdesign")
+    (native-inputs (list r-knitr))
+    (home-page "https://compare-composite.github.io/compare/")
     (synopsis
      "Statistical Functions for the Design of Studies with Composite Endpoints")
     (description
@@ -23644,13 +23705,13 @@ blog post at <http://www.vis4.net/blog/2018/02/automate-colorblind-checking/>.")
 (define-public r-colopendata
   (package
     (name "r-colopendata")
-    (version "0.3.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ColOpenData" version))
        (sha256
-        (base32 "1432552jj0mszpmm5n21a4phf5i54v8g5wvh1wzyn6svq480hisj"))))
+        (base32 "1sn5zkcy852dsm5f7nc0mybbsa0ifhgsba6g99s98gjs4hg2zkmp"))))
     (properties `((upstream-name . "ColOpenData")))
     (build-system r-build-system)
     (arguments
@@ -23670,11 +23731,11 @@ blog post at <http://www.vis4.net/blog/2018/02/automate-colorblind-checking/>.")
     (description
      "Downloads wrangled Colombian socioeconomic, geospatial,population and climate
 data from DANE <https://www.dane.gov.co/> (National Administrative Department of
-Statistics) and IDEAM <https://ideam.gov.co> (Institute of Hydrology,
-Meteorology and Environmental Studies).  It solves the problem of Colombian data
-being issued in different web pages and sources by using functions that allow
-the user to select the desired database and download it without having to do the
-exhausting acquisition process.")
+Statistics) and IDEAM (Institute of Hydrology, Meteorology and Environmental
+Studies).  It solves the problem of Colombian data being issued in different web
+pages and sources by using functions that allow the user to select the desired
+database and download it without having to do the exhausting acquisition
+process.")
     (license license:expat)))
 
 (define-public r-colombiapi
@@ -24822,13 +24883,13 @@ cohorts and create new cohorts.")
 (define-public r-cohetsurr
   (package
     (name "r-cohetsurr")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cohetsurr" version))
        (sha256
-        (base32 "148cccy7xb537jpqlrxwq9ysgc3am0vm3k0w9h55pjbana6k6cv6"))))
+        (base32 "1rhkqs1slw3y5ndw40d2d5x50sf9mb5svng24nh8gsy62li4jsz5"))))
     (properties `((upstream-name . "cohetsurr")))
     (build-system r-build-system)
     (arguments
@@ -24841,9 +24902,11 @@ cohorts and create new cohorts.")
      "This package provides functions to assess and test for complex heterogeneity in
 the utility of a surrogate marker with respect to multiple baseline covariates,
 using both a parametric model and a semiparametric two-step model.  More details
-will be available in the future in: Knowlton, R., Tian, L., Parast, L. (2024)
-``A General Framework to Assess Complex Heterogeneity in the Strength of a
-Surrogate Marker.\".")
+are available in: Knowlton, R., Tian, L., & Parast, L. (2025). \"A General
+Framework to Assess Complex Heterogeneity in the Strength of a Surrogate
+Marker,\" Statistics in Medicine, 44(5), e70001 <doi:10.1002/sim.70001>.  A
+tutorial for this package can be found at
+<https://laylaparast.com/home/cohetsurr.html>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-cohensdplibrary
@@ -31083,46 +31146,6 @@ clinical data.  Example datasets in SDTM and A@code{DaM} format, containing a
 subset of patients/domains from the CDISC Pilot 01 study are also available as R
 datasets to demonstrate the package functionalities.")
     (license license:expat)))
-
-(define-public r-clintrialx
-  (package
-    (name "r-clintrialx")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clintrialx" version))
-       (sha256
-        (base32 "1bzhw9mspxc45min7y0qa31iklahpq6i7c8v3n9m4fszb7xsyafs"))))
-    (properties `((upstream-name . "clintrialx")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xfun
-                             r-tibble
-                             r-rpostgresql
-                             r-rmarkdown
-                             r-readr
-                             r-progress
-                             r-lubridate
-                             r-httr
-                             r-dplyr
-                             r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.indraneelchakraborty.com/clintrialx/")
-    (synopsis "Connect and Work with Clinical Trials Data Sources")
-    (description
-     "Are you spending too much time fetching and managing clinical trial data?
-Struggling with complex queries and bulk data extraction? What if you could
-simplify this process with just a few lines of code? Introducing clintrialx -
-Fetch clinical trial data from sources like @code{ClinicalTrials.gov}
-<https://clinicaltrials.gov/> and the Clinical Trials Transformation Initiative
-- Access to Aggregate Content of @code{ClinicalTrials.gov} database
-<https://aact.ctti-clinicaltrials.org/>, supporting pagination and bulk
-downloads.  Also, you can generate HTML reports based on the data obtained from
-the sources!")
-    (license license:asl2.0)))
 
 (define-public r-clintrialpredict
   (package
@@ -41478,19 +41501,20 @@ arbitrary geographies.")
 (define-public r-censusapi
   (package
     (name "r-censusapi")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censusapi" version))
        (sha256
-        (base32 "1wswd6kmb0fbyc3zs3q3dhhaa1la1z5alz4vg485ac9wacnab60r"))))
+        (base32 "06m5lbhzm3hpnrdaslikm889rd23v4ha9li94wks6akygmz9ckjm"))))
     (properties `((upstream-name . "censusapi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
+    (propagated-inputs (list r-rlang r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
     (home-page "https://www.hrecht.com/censusapi/")
     (synopsis "Retrieve Data from the Census APIs")
     (description
@@ -43243,13 +43267,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "0qlkiz1pgba075qh3sysl1jhldh87ppyq3cy2fyr69fc3wkw9z3g"))))
+        (base32 "020x156ms7y9bl9nh846wbh2n6cfic4fqhkxbk3dzizpmz3wqaqi"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (arguments
@@ -44198,13 +44222,13 @@ downloaded at different frequencies using a variety of aggregation methods.")
 (define-public r-cbq
   (package
     (name "r-cbq")
-    (version "0.2.0.3")
+    (version "0.2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cbq" version))
        (sha256
-        (base32 "12ix60mvs4rlh3376m6qcq5zslng1925hrsz5byddfdjx5wilyv7"))))
+        (base32 "013i2qp2dv6ap9542mzpvvjdm5m25za30v33448fr2y24s6sjilj"))))
     (properties `((upstream-name . "cbq")))
     (build-system r-build-system)
     (arguments

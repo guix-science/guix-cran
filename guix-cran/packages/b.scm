@@ -7852,13 +7852,13 @@ clustering method.")
 (define-public r-boot-pval
   (package
     (name "r-boot-pval")
-    (version "0.6")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boot.pval" version))
        (sha256
-        (base32 "0ydwazvlwh74bhfdnlbgyb98cryfjk762m0vbl1c88f821a1g5qd"))))
+        (base32 "18b2d3ckspmgdy0li48c83q5kgdgril7q18ssgn1mhkhsapm6pcw"))))
     (properties `((upstream-name . "boot.pval")))
     (build-system r-build-system)
     (arguments
@@ -7877,7 +7877,7 @@ clustering method.")
     (synopsis "Bootstrap p-Values")
     (description
      "Computation of bootstrap p-values through inversion of confidence intervals,
-including convenience functions for regression models.")
+including convenience functions for regression models and tests of location.")
     (license license:expat)))
 
 (define-public r-boot-heterogeneity
@@ -12387,6 +12387,53 @@ color matrix representation on an interactive map.")
      "Perform competing risks analysis under bivariate Pareto models.  See Shih et al.
 (2019) <doi:10.1080/03610926.2018.1425450> for details.")
     (license license:gpl2)))
+
+(define-public r-bivarian
+  (package
+    (name "r-bivarian")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BiVariAn" version))
+       (sha256
+        (base32 "174n526awa7spiyaghwjbxbs63g8wl550y9i4nvziw21b57ifb3p"))))
+    (properties `((upstream-name . "BiVariAn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-table1
+                             r-scales
+                             r-rrtable
+                             r-rlang
+                             r-magrittr
+                             r-logistf
+                             r-lifecycle
+                             r-glue
+                             r-ggprism
+                             r-ggplot2
+                             r-fastdummies
+                             r-epitools
+                             r-dplyr
+                             r-desctools
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AndresFloresG/BiVariAn")
+    (synopsis "Bivariate Automatic Analysis")
+    (description
+     "Simplify bivariate and regression analyses by automating result generation,
+including summary tables, statistical tests, and customizable graphs.  It
+supports tests for continuous and dichotomous data, as well as stepwise
+regression for linear, logistic, and Firth penalized logistic models.  While not
+a substitute for tailored analysis, @code{BiVariAn} accelerates workflows and is
+expanding features like multilingual interpretations of results.The methods for
+selecting significant statistical tests, as well as the predictor selection in
+prediction functions, can be referenced in the works of Marc Kery (2003)
+<doi:10.1890/0012-9623(2003)84[92:NORDIG]2.0.CO;2> and Rainer Puhr (2017)
+<doi:10.1002/sim.7273>.")
+    (license license:gpl3+)))
 
 (define-public r-bittermelon
   (package
@@ -16904,13 +16951,13 @@ and return bulk ecosystem/canopy variables.")
 (define-public r-biglasso
   (package
     (name "r-biglasso")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biglasso" version))
        (sha256
-        (base32 "165bc1y5byma872yld5y5nxkhyhkfn6h4gfiqv5bkfw5hn77ijlc"))))
+        (base32 "0x22c86m2krrg2x82bcbahm9vhgqhpc35ryxg1bqpy8i4djzcc2s"))))
     (properties `((upstream-name . "biglasso")))
     (build-system r-build-system)
     (arguments
@@ -16923,14 +16970,13 @@ and return bulk ecosystem/canopy variables.")
                              r-bigmemory
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://pbreheny.github.io/biglasso/index.html")
+    (home-page "https://pbreheny.github.io/biglasso/")
     (synopsis "Extending Lasso Model Fitting to Big Data")
     (description
-     "Extend lasso and elastic-net model fitting for ultra high-dimensional,
-multi-gigabyte data sets that cannot be loaded into memory.  Designed to be more
-memory- and computation-efficient than existing lasso-fitting packages like
-glmnet and ncvreg', thus allowing the user to analyze big data analysis even on
-an ordinary laptop.")
+     "Extend lasso and elastic-net model fitting for large data sets that cannot be
+loaded into memory.  Designed to be more memory- and computation-efficient than
+existing lasso-fitting packages like glmnet and ncvreg', thus allowing the user
+to analyze big data with limited RAM <doi:10.32614/RJ-2021-001>.")
     (license license:gpl3)))
 
 (define-public r-bigl

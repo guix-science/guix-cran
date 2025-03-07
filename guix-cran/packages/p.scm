@@ -14601,26 +14601,28 @@ month).")
 (define-public r-powerpls
   (package
     (name "r-powerpls")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerPLS" version))
        (sha256
-        (base32 "1g36snvgm38g0x22b1ldryx331zir2yw5p2pvmk8i38n0fy6hqlc"))))
+        (base32 "0aa58z3rabp6524nw9xf1dxhg0v7q4px5dqsaxvxkzxgn938d5zr"))))
     (properties `((upstream-name . "powerPLS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-simukde
+                             r-proc
                              r-nipals
                              r-mvtnorm
                              r-mass
                              r-ks
                              r-foreach
                              r-fksum
-                             r-compositions))
+                             r-compositions
+                             r-caret))
     (home-page "https://github.com/angeella/powerPLS")
     (synopsis "Power Analysis for PLS Classification")
     (description
@@ -20822,13 +20824,13 @@ using package survey'.")
 (define-public r-pnd
   (package
     (name "r-pnd")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pnd" version))
        (sha256
-        (base32 "081ha5vlk7b9x3b0qc0mkss67qwijmmqkaw40syjmp30ycn5rpg5"))))
+        (base32 "1rad2yhnwk3dcv08bq7gfyk1daldidifmly79rnn974fqgzlzdmg"))))
     (properties `((upstream-name . "pnd")))
     (build-system r-build-system)
     (arguments
@@ -26732,6 +26734,35 @@ five strokes.  See <https://en.wikipedia.org/wiki/Wubi_method>) or user-defined
 codes.")
     (license license:expat)))
 
+(define-public r-pintervals
+  (package
+    (name "r-pintervals")
+    (version "0.7.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pintervals" version))
+       (sha256
+        (base32 "0r4gqq52gc4zmzhrpsil9w2wfh94bdwc3lzwwv4hi4p63sxizh1j"))))
+    (properties `((upstream-name . "pintervals")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-foreach r-dplyr))
+    (home-page "https://cran.r-project.org/package=pintervals")
+    (synopsis "Model Agnostic Prediction Intervals")
+    (description
+     "This package provides tools for estimating model-agnostic prediction intervals
+using conformal prediction, bootstrapping, and parametric prediction intervals.
+The package is designed for ease of use, offering intuitive functions for both
+binned and full conformal prediction methods, as well as parametric interval
+estimation with diagnostic checks.  Currently only working for continuous
+predictions.  For details on the conformal and bin-conditional conformal
+prediction methods, see Randahl, Williams, and Hegre (2024)
+<DOI:10.48550/@code{arXiv.2410.14507>}.")
+    (license license:expat)))
+
 (define-public r-pinterestadsr
   (package
     (name "r-pinterestadsr")
@@ -29846,6 +29877,46 @@ performs the best linear unbiased prediction (BLUP), help researchers quickly
 complete phenotypic data analysis.  H.P.Piepho. (2008)
 <doi:10.1007/s10681-007-9449-8>.")
     (license license:artistic2.0)))
+
+(define-public r-phenospectra
+  (package
+    (name "r-phenospectra")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhenoSpectra" version))
+       (sha256
+        (base32 "0hq2dn09zvb13vs6zryv46fanxaakjgmhbw35fdlc4nw59q0bmza"))))
+    (properties `((upstream-name . "PhenoSpectra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexl
+                             r-tidyr
+                             r-rlang
+                             r-readxl
+                             r-openxlsx
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr
+                             r-data-table
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PhenoSpectra")
+    (synopsis "Multispectral Data Analysis and Visualization")
+    (description
+     "This package provides tools for processing, analyzing, and visualizing spectral
+data collected from 3D laser-based scanning systems.  Supports applications in
+agriculture, forestry, environmental monitoring, industrial quality control, and
+biomedical research.  Enables evaluation of plant growth, productivity, resource
+efficiency, disease management, and pest monitoring.  Includes statistical
+methods for extracting insights from multispectral and hyperspectral data and
+generating publication-ready visualizations.  See Zieschank & Junker (2023)
+<doi:10.3389/fpls.2023.1141554> and Saric et al. (2022)
+<doi:10.1016/J.TPLANTS.2021.12.003> for related work.")
+    (license license:expat)))
 
 (define-public r-phenorm
   (package
@@ -36704,6 +36775,33 @@ and understand the complex communities.  It is designed to support researchers
 and practitioners in conducting in-depth and professional omics data analysis.")
     (license license:gpl3)))
 
+(define-public r-pct
+  (package
+    (name "r-pct")
+    (version "0.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pct" version))
+       (sha256
+        (base32 "1d606cjqlhy1q3hpv3br04mc5g7qgcva0s8wa2bs7zh2a4piba61"))))
+    (properties `((upstream-name . "pct")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stplanr r-sf r-readr r-crul r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://itsleeds.github.io/pct/")
+    (synopsis "Propensity to Cycle Tool")
+    (description
+     "This package provides functions and example data to teach and increase the
+reproducibility of the methods and code underlying the Propensity to Cycle Tool
+(PCT), a research project and web application hosted at <https://www.pct.bike/>.
+ For an academic paper on the methods, see Lovelace et al (2017)
+<doi:10.5198/jtlu.2016.862>.")
+    (license license:gpl3)))
+
 (define-public r-pcsteiner
   (package
     (name "r-pcsteiner")
@@ -39109,13 +39207,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0qfgcmyja04zmviqqbp708x9k0fzw6z5xnnr9mc7kfilama9s61g"))))
+        (base32 "1h2k2q4gz5y7ihwa9v69rnmxfvm7maanhivs7vbkiazjbilkgj4a"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (arguments

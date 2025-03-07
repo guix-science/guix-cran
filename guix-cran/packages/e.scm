@@ -15684,19 +15684,20 @@ cocktails.")
 (define-public r-emc2
   (package
     (name "r-emc2")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMC2" version))
        (sha256
-        (base32 "1rv2m7v8mhbwfrl3cwipnaxm1yxcs1mycp2vvhz5k9fbn9c0nwqk"))))
+        (base32 "0nrg7q29q0rscw1w1vd088kn6wngkwa3n2fq3xia05jpclz3h6z4"))))
     (properties `((upstream-name . "EMC2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-wienr
+                             r-rcpparmadillo
                              r-rcpp
                              r-psych
                              r-mvtnorm
@@ -15717,7 +15718,7 @@ cocktails.")
     (synopsis "Bayesian Hierarchical Analysis of Cognitive Models of Choice")
     (description
      "Fit Bayesian (hierarchical) cognitive models using a linear modeling language
-interface using particle metropolis Markov chain Monte Carlo sampling with Gibbs
+interface using particle Metropolis Markov chain Monte Carlo sampling with Gibbs
 steps.  The diffusion decision model (DDM), linear ballistic accumulator model
 (LBA), racing diffusion model (RDM), and the lognormal race model (LNR) are
 supported.  Additionally, users can specify their own likelihood function and/or
@@ -21622,6 +21623,35 @@ impacts of fishing.  This version contains catch trophic spectrum analysis
 functions.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-ecotrends
+  (package
+    (name "r-ecotrends")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecotrends" version))
+       (sha256
+        (base32 "0n3j4rjc607pvncx67slh2mhba1ycs6j5p0gwd3ybma1pwxf0n39"))))
+    (properties `((upstream-name . "ecotrends")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-trend
+                             r-terra
+                             r-modeva
+                             r-maxnet
+                             r-fuzzysim
+                             r-collinear))
+    (home-page "https://github.com/AMBarbosa/ecotrends")
+    (synopsis "Temporal Trends in Ecological Niche Models")
+    (description
+     "Computes temporal trends in environmental suitability obtained from ecological
+niche models, based on a set of species presence point coordinates and predictor
+variables.")
+    (license license:gpl3+)))
+
 (define-public r-ecotraj
   (package
     (name "r-ecotraj")
@@ -23774,6 +23804,48 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (2015) <doi:10.1371/journal.pone.0146021>.")
     (license license:expat)))
 
+(define-public r-ebvcube
+  (package
+    (name "r-ebvcube")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ebvcube" version))
+       (sha256
+        (base32 "1048vfm6rbring445v7frkj98b7a5fnc108d78fjixkbkm186ib4"))))
+    (properties `((upstream-name . "ebvcube")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyterra
+                             r-terra
+                             r-stringr
+                             r-rhdf5
+                             r-reshape2
+                             r-ncmeta
+                             r-ncdf4
+                             r-memuse
+                             r-jsonlite
+                             r-httr
+                             r-hdf5array
+                             r-ggplot2
+                             r-delayedarray
+                             r-curl
+                             r-checkmate))
+    (home-page "https://github.com/EBVCube/ebvcube")
+    (synopsis "Working with netCDF for Essential Biodiversity Variables")
+    (description
+     "The concept of Essential Biodiversity Variables (EBV,
+<https://geobon.org/ebvs/what-are-ebvs/>) comes with a data structure based on
+the Network Common Data Form (@code{netCDF}).  The ebvcube R package provides
+functionality to easily create, access and visualise this data.  The EBV
+@code{netCDFs} can be downloaded from the EBV Data Portal: Christian Langer/
+@code{iDiv} (2020) <https://portal.geobon.org/>.")
+    (license license:gpl3+)))
+
 (define-public r-ebtobit
   (package
     (name "r-ebtobit")
@@ -24051,6 +24123,34 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 <doi:10.1016/j.ijforecast.2014.08.001> and Montgomery, Hollenbach, and Ward
 (2012) <doi:10.1093/pan/mps002>.")
     (license license:gpl2+)))
+
+(define-public r-ebm
+  (package
+    (name "r-ebm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ebm" version))
+       (sha256
+        (base32 "0wc54ank9cy0ky764l7ijsxr85wpyv5yyrxb8z74bcz7sy1gln6h"))))
+    (properties `((upstream-name . "ebm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate r-lattice r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bgreenwell/ebm")
+    (synopsis "Explainable Boosting Machines")
+    (description
+     "An interface to the Python @code{InterpretML} framework for fitting explainable
+boosting machines (EBMs); see Nori et al. (2019)
+<doi:10.48550/@code{arXiv.1909.09223>} for details.  EBMs are a modern type of
+generalized additive model that use tree-based, cyclic gradient boosting with
+automatic interaction detection.  They are often as accurate as state-of-the-art
+blackbox models while remaining completely interpretable.")
+    (license license:expat)))
 
 (define-public r-ebirdst
   (package

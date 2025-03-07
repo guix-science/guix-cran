@@ -5754,13 +5754,13 @@ Gaussian frailty models.")
 (define-public r-frailtypack
   (package
     (name "r-frailtypack")
-    (version "3.6.5")
+    (version "3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frailtypack" version))
        (sha256
-        (base32 "1v9sskldqkc9fc1j8f16fkygrvjh057vangryfk56l9ik2b5iq8y"))))
+        (base32 "0rvixrb7nmybawvvmxmkp747wy3piw7fqm63cykwgd5acdgz1wbr"))))
     (properties `((upstream-name . "frailtypack")))
     (build-system r-build-system)
     (arguments
@@ -5772,6 +5772,7 @@ Gaussian frailty models.")
                              r-shiny
                              r-rootsolve
                              r-nlme
+                             r-matrixcalc
                              r-mass
                              r-doby
                              r-boot))
@@ -5817,7 +5818,12 @@ or normal distribution.  Now, you can also consider time-varying covariates
 effects in Cox, shared and joint frailty models (1-5).  The package includes
 concordance measures for Cox proportional hazards models and for shared frailty
 models.  14) Competing Joint Frailty Model: A single type of recurrent event and
-two terminal events.  Moreover, the package can be used with its shiny
+two terminal events.  15) functions to compute power and sample size for four
+Gamma-frailty-based designs: Shared Frailty Models, Nested Frailty Models, Joint
+Frailty Models, and General Joint Frailty Models.  Each design includes two
+primary functions: a power function, which computes power given a specified
+sample size; and a sample size function, which computes the required sample size
+to achieve a specified power.  Moreover, the package can be used with its shiny
 application, in a local mode or by following the link below.")
     (license license:gpl2+)))
 
@@ -6784,13 +6790,13 @@ estimated variance.")
 (define-public r-fpdclustering
   (package
     (name "r-fpdclustering")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FPDclustering" version))
        (sha256
-        (base32 "1c2r007gpm4xpa8f8pzfphdsy50afn8iclmp39qpli18kmisigwx"))))
+        (base32 "18l6w37jl19z6rrpkdlydihxbjha7i27kp1mw0i177j1rvmlcfba"))))
     (properties `((upstream-name . "FPDclustering")))
     (build-system r-build-system)
     (arguments
@@ -13270,13 +13276,13 @@ visualization of the state vector and graphical diagnostics of the residuals.")
 (define-public r-fkbma
   (package
     (name "r-fkbma")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fkbma" version))
        (sha256
-        (base32 "1bf1vnr751xph8y3pf90yxl7rmgzjqv4zzcxfgi2r10jknpbbva8"))))
+        (base32 "07cs7wqskjhkm40bzdbp85f38ndxjfypn53nm2fampsc934jnl05"))))
     (properties `((upstream-name . "fkbma")))
     (build-system r-build-system)
     (arguments
@@ -14998,38 +15004,6 @@ the text and script files to recreate most of the analyses in chapters 1-3 and 9
 plus parts of chapters 4 and 11.")
     (license license:gpl2+)))
 
-(define-public r-finreportr
-  (package
-    (name "r-finreportr")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "finreportr" version))
-       (sha256
-        (base32 "145idg2c6qmqp29afalnhxxzky08j21dmm05mp3zf63aq9mq41d4"))))
-    (properties `((upstream-name . "finreportr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-xbrl
-                             r-rvest
-                             r-httr
-                             r-dplyr
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sewardlee337/finreportr")
-    (synopsis "Financial Data from U.S. Securities and Exchange Commission")
-    (description
-     "Download and display company financial data from the U.S. Securities and
-Exchange Commission's EDGAR database.  It contains a suite of functions with web
-scraping and XBRL parsing capabilities that allows users to extract data from
-EDGAR in an automated and scalable manner.  See
-<https://www.sec.gov/edgar/searchedgar/companysearch.html> for more information.")
-    (license license:expat)))
-
 (define-public r-finnts
   (package
     (name "r-finnts")
@@ -15097,13 +15071,13 @@ financial forecasters.  Happy forecasting!")
 (define-public r-finnsurveytext
   (package
     (name "r-finnsurveytext")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finnsurveytext" version))
        (sha256
-        (base32 "0ypa3ylkn7acby7pr651ji16wpbzpi8nfl622gq007q6v4rj14qp"))))
+        (base32 "1s3wspbabqcq4skgp34k4q1sh4idpibrg8s5h8r3mlpi5kj8zxlm"))))
     (properties `((upstream-name . "finnsurveytext")))
     (build-system r-build-system)
     (arguments

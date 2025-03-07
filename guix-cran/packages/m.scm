@@ -8365,13 +8365,13 @@ information for the same.")
 (define-public r-msoutcomes
   (package
     (name "r-msoutcomes")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSoutcomes" version))
        (sha256
-        (base32 "037kpsi24anid9brf9s4yrknyxi5c9xyxnckvh2f5m1wxbl7bmlj"))))
+        (base32 "0g4dgn4dzjlm6hbl3c4ix549lgwi72xw79yxc9wlch9lnb7ks1wh"))))
     (properties `((upstream-name . "MSoutcomes")))
     (build-system r-build-system)
     (arguments
@@ -11604,13 +11604,13 @@ Aerobic Plate Count (APC) for similar microbial enumeration experiments.")
 (define-public r-mpmsim
   (package
     (name "r-mpmsim")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpmsim" version))
        (sha256
-        (base32 "0qvjicciqd3zgkz6s9pnp6z98g0irwz0bbmj0pvvy8bhjcs7yln4"))))
+        (base32 "0fg4c3ibci1lwn7z5442lj2j9cl2yj3hgamvhag8snacpc018mjx"))))
     (properties `((upstream-name . "mpmsim")))
     (build-system r-build-system)
     (arguments
@@ -11624,7 +11624,7 @@ Aerobic Plate Count (APC) for similar microbial enumeration experiments.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jonesor/mpmsim")
+    (home-page "https://jonesor.github.io/mpmsim/")
     (synopsis
      "Simulation of Matrix Population Models with Defined Life History Characteristics")
     (description
@@ -14832,13 +14832,13 @@ the database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolite" version))
        (sha256
-        (base32 "1kcwp1lwlx2x3r4pm8gc4zrkhgnzbyrykvchjfjfkxf6klbd13l5"))))
+        (base32 "191m18j1cck7l5fd1987w7j86yrg2jfg4r69f0zqm60fy5n8iwpg"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (arguments
@@ -15574,13 +15574,13 @@ particular security, obtain its profile information and so on.")
 (define-public r-moeclust
   (package
     (name "r-moeclust")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoEClust" version))
        (sha256
-        (base32 "0wixcga2f06kpp7mq1nb32ya2v2wlx5r9h74danjfbhi3nvky903"))))
+        (base32 "12mk09yhkvsaqh3smd8dvpr7afskjmv92a8r787chrhxamnyy6n0"))))
     (properties `((upstream-name . "MoEClust")))
     (build-system r-build-system)
     (arguments
@@ -18200,13 +18200,13 @@ variation.  Yousefi et al. (2023) <doi:10.1101/2023.01.22.525058>.")
 (define-public r-mnb
   (package
     (name "r-mnb")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MNB" version))
        (sha256
-        (base32 "01rq6bczqdbqj7w7aacvwb4zvfzy53pkxfawx5faxk60iwba8bj1"))))
+        (base32 "1v5splcaxp1g944x0nh949b0q364p4zc727bkcfr95za8nz86dvg"))))
     (properties `((upstream-name . "MNB")))
     (build-system r-build-system)
     (arguments
@@ -18214,14 +18214,16 @@ variation.  Yousefi et al. (2023) <doi:10.1101/2023.01.22.525058>.")
       #:tests? #f))
     (propagated-inputs (list r-numderiv r-flexsurv))
     (home-page "https://cran.r-project.org/package=MNB")
-    (synopsis "Diagnostic Tools for a Multivariate Negative Binomial Model")
+    (synopsis
+     "Diagnostic Tools for a Multivariate Negative Binomial Regression Model")
     (description
      "Diagnostic tools as residual analysis, global, local and total-local influence
 for the multivariate model from the random intercept Poisson generalized log
 gamma model are available in this package.  Including also, the estimation
-process by maximum likelihood method, for details see Fabio, L. F; Villegas, C.
-L.; Carrasco, J.M.F and de Castro, M. (2021)
-<doi:10.1080/03610926.2021.1939380>.")
+process by maximum likelihood method, for details see Fabio, L. C; Villegas, C.
+L.; Carrasco, J.M.F and de Castro, M. (2023) <doi:10.1080/03610926.2021.1939380>
+and FÃ¡bio, L. C.; Villegas, C.; Mamun, A. S. M. A. and Carrasco, J. M. F.
+(2025) <doi:10.28951/bjb.v43i1.728>.")
     (license license:gpl2+)))
 
 (define-public r-mnarclust
@@ -21475,13 +21477,13 @@ Analysis with Multilevel Additive Models\", P@code{LoS} ONE 15(10): e0241072.")
 (define-public r-mllrnrs
   (package
     (name "r-mllrnrs")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mllrnrs" version))
        (sha256
-        (base32 "0yrsab0m3p8fjxhbvb58k7lz3l2vvnf339gfb1wfc68wjmpczk5z"))))
+        (base32 "0m8mwlcbz42jnb1b3721rjgb3ivwkmq97zdww3lvlhc1pn5gw9j2"))))
     (properties `((upstream-name . "mllrnrs")))
     (build-system r-build-system)
     (arguments
@@ -23074,6 +23076,34 @@ data from continuous report short-term memory experiments using either the
 the 3-component mixture model of Bays et al. (2009) <doi:10.1167/9.10.7>.  Users
 are also able to simulate from these models.")
     (license license:gpl3)))
+
+(define-public r-mixtree
+  (package
+    (name "r-mixtree")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixtree" version))
+       (sha256
+        (base32 "1bw0gsnr596652rjpkscsg9cfbis1hsz0c5fsb6a822rbkcykijp"))))
+    (properties `((upstream-name . "mixtree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan r-treespace r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://cygei.github.io/mixtree/")
+    (synopsis "Statistical Framework for Comparing Sets of Trees")
+    (description
+     "Statistical framework for comparing sets of trees using hypothesis testing
+methods.  Designed for transmission trees, phylogenetic trees, and directed
+acyclic graphs (DAGs), the package implements chi-squared tests to compare edge
+frequencies between sets and PERMANOVA to analyse topological dissimilarities
+with customisable distance metrics, following Anderson (2001)
+<doi:10.1111/j.1442-9993.2001.01070.pp.x>.")
+    (license license:expat)))
 
 (define-public r-mixtox
   (package
@@ -35626,6 +35656,41 @@ be found in Cahoy and Sedransk (2023), Cahoy and Sedransk (2022)
 acquired in a certain period of time.  At least three QC per day are required.")
     (license license:gpl2)))
 
+(define-public r-metabolssmf
+  (package
+    (name "r-metabolssmf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MetabolSSMF" version))
+       (sha256
+        (base32 "05zl9fmj5qmiaszh23wfw2cz9rq17ydk6b2q50r0zi7fk21cb8b2"))))
+    (properties `((upstream-name . "MetabolSSMF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-nmf
+                             r-mclust
+                             r-lsei
+                             r-laplacesdemon
+                             r-iterators
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MetabolSSMF")
+    (synopsis
+     "Simplex-Structured Matrix Factorisation for Metabolomics Analysis")
+    (description
+     "This package provides a framework to perform soft clustering using
+simplex-structured matrix factorisation (SSMF).  The package contains a set of
+functions for determining the optimal number of prototypes, the optimal
+algorithmic parameters, the estimation confidence intervals and the diversity of
+clusters.  Abdolali, Maryam & Gillis, Nicolas (2020) <doi:10.1137/20M1354982>.")
+    (license license:expat)))
+
 (define-public r-metabolomicsbasics
   (package
     (name "r-metabolomicsbasics")
@@ -38607,20 +38672,21 @@ Thomas Brendan Murphy (2010) <doi:10.1016/j.stamet.2010.01.002>.")
 (define-public r-mecfda
   (package
     (name "r-mecfda")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MECfda" version))
        (sha256
-        (base32 "1b92p7g1s488pb750rj0i4ivr0x8yirkvmpnbfc6l7g2j8cn8bi7"))))
+        (base32 "1jkp91bzyhwsjij7074rj8wrj5jsxwbpk53jf02adra2i7cbbrni"))))
     (properties `((upstream-name . "MECfda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-refund
                              r-quantreg
+                             r-pracma
                              r-nlme
                              r-mgcv
                              r-matrix
@@ -44876,13 +44942,13 @@ their original counterparts, with more to come as this package grows.")
 (define-public r-maths-genealogy
   (package
     (name "r-maths-genealogy")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maths.genealogy" version))
        (sha256
-        (base32 "1bwhccsc5mm158gf39g25qhjsx8avz9jqclfdb8xpp8bl7vsaxij"))))
+        (base32 "1dzwwlpjqpvh8q01hq37852jqlh6avii5mbr5v5ny28ngmzn0i8q"))))
     (properties `((upstream-name . "maths.genealogy")))
     (build-system r-build-system)
     (arguments
@@ -45605,13 +45671,13 @@ estimation.")
 (define-public r-massprops
   (package
     (name "r-massprops")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "massProps" version))
        (sha256
-        (base32 "1bzsry67knkp2svdf0hm8ckvzl67cysrnsx97b103hh7cbapqxix"))))
+        (base32 "0qqksrf316rr6qyy627na6g5ikx0xyji4cidlqfcrdfjg6mh5r3y"))))
     (properties `((upstream-name . "massProps")))
     (build-system r-build-system)
     (arguments

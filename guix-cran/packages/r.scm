@@ -9473,34 +9473,6 @@ methods.  The basis of inference is an invariance assumption on the regression
 errors, e.g., clustered errors, or doubly-clustered errors.")
     (license license:gpl2)))
 
-(define-public r-rrf
-  (package
-    (name "r-rrf")
-    (version "1.9.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RRF" version))
-       (sha256
-        (base32 "05sswrqjrwyyk9aha7fvvw78iymgv89y0asl5cqfl9fg7gsw9ghs"))))
-    (properties `((upstream-name . "RRF")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (native-inputs (list gfortran))
-    (home-page "https://sites.google.com/site/houtaodeng/rrf")
-    (synopsis "Regularized Random Forest")
-    (description
-     "Feature Selection with Regularized Random Forest.  This package is based on the
-@code{randomForest} package by Andy Liaw.  The key difference is the
-@code{RRF()} function that builds a regularized random forest.  Fortran original
-by Leo Breiman and Adele Cutler, R port by Andy Liaw and Matthew Wiener,
-Regularized random forest for classification by Houtao Deng, Regularized random
-forest for regression by Xin Guan.  Reference: Houtao Deng (2013)
-<doi:10.48550/@code{arXiv.1306.0237>}.")
-    (license license:gpl2+)))
-
 (define-public r-rres
   (package
     (name "r-rres")
@@ -10267,13 +10239,13 @@ S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
 (define-public r-rqti
   (package
     (name "r-rqti")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqti" version))
        (sha256
-        (base32 "12jx51cvc7d9plmvjsrnkcgaadhn8hdxc5l3fqm592wd6sfw3l6x"))))
+        (base32 "0kwwdgw3qz85nf6hwbxcwhkkv8yy0646ic5bdk2k4dckxj8bl7m2"))))
     (properties `((upstream-name . "rqti")))
     (build-system r-build-system)
     (arguments
@@ -10289,6 +10261,7 @@ S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
                              r-rmarkdown
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-knitr
                              r-keyring
                              r-kableextra
@@ -11722,6 +11695,38 @@ that is robust to outliers in the residuals as well as to leverage points.  A
 specific weighting scheme is applied which avoids iterations, and leads to a
 highly efficient robust PLS estimator.")
     (license license:gpl3+)))
+
+(define-public r-rplotterpkg
+  (package
+    (name "r-rplotterpkg")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RplotterPkg" version))
+       (sha256
+        (base32 "195dz7sa5rg1b85i6fjpm5y9y276d7my02vbbx4rxs71z51iyl98"))))
+    (properties `((upstream-name . "RplotterPkg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-gtable
+                             r-gt
+                             r-glue
+                             r-ggplotify
+                             r-ggplot2
+                             r-data-table
+                             r-aplpack))
+    (home-page "https://github.com/deandevl/RplotterPkg")
+    (synopsis "R Plotting Functions Using 'ggplot2'")
+    (description
+     "Makes it easy to produce everyday ggplot2 charts in a functional way without an
+extensive \"tree\" implementation.  The package includes over 15 functions for the
+production and arrangement of basic graphing.")
+    (license license:expat)))
 
 (define-public r-rplotengine
   (package
@@ -14536,13 +14541,13 @@ different colour metrics for the conversion.")
 (define-public r-rolluptree
   (package
     (name "r-rolluptree")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollupTree" version))
        (sha256
-        (base32 "12lj5827zm51iynar7zrmhvks2x9vcx7zmz4b4s68lq7d2lkkihs"))))
+        (base32 "0bbhs6gj3cj38ny841zn8j1s5dc68phcgxagvjxlpw65sxbs9gwi"))))
     (properties `((upstream-name . "rollupTree")))
     (build-system r-build-system)
     (arguments
@@ -14806,6 +14811,39 @@ allow the definition of these transformations easily.  The implementation of the
 multidimensional database obtained can be exported to work with multidimensional
 analysis tools on spreadsheets or relational databases.")
     (license license:expat)))
+
+(define-public r-roket
+  (package
+    (name "r-roket")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ROKET" version))
+       (sha256
+        (base32 "15vjfbifkrqaxhlxycbgkhdj4qbjkg9gqf132bdxc11h13kzr1ns"))))
+    (properties `((upstream-name . "ROKET")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-smarter
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mirkat
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ROKET")
+    (synopsis "Optimal Transport-Based Kernel Regression")
+    (description
+     "Perform optimal transport on somatic point mutations and kernel regression
+hypothesis testing by integrating pathway level similarities at the gene level
+(Little et al. (2023) <doi:10.1111/biom.13769>).  The software implements
+balanced and unbalanced optimal transport and omnibus tests with C++ across a
+set of tumor samples and allows for multi-threading to decrease computational
+runtime.")
+    (license license:gpl3+)))
 
 (define-public r-roi-plugin-symphony
   (package
@@ -18766,28 +18804,26 @@ et al. (2017) <@code{arXiv:1702.04690>} based on Rosenbaum and Rubin (1983)
 (define-public r-rnpn
   (package
     (name "r-rnpn")
-    (version "1.2.9.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnpn" version))
        (sha256
-        (base32 "0dlxc0gr4bxkwkah0sfwxhqkfzg8v4mvwr37xxc7i43jbvyd7c0w"))))
+        (base32 "0cdf7iwy8371wxlfdym2ir07g29pgnliyciljkygc5jc5cqw2dfb"))))
     (properties `((upstream-name . "rnpn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml
+    (propagated-inputs (list r-yyjsonr
+                             r-xml2
+                             r-tidyr
                              r-tibble
-                             r-sp
-                             r-raster
-                             r-plyr
+                             r-rlang
                              r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-data-table
-                             r-curl))
+                             r-httr2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/usa-npn/rnpn")
     (synopsis "Interface to the National 'Phenology' Network 'API'")
@@ -25387,13 +25423,13 @@ F. Spinu (2013), An Algorithm for Computing Risk Parity Weights.
 (define-public r-riskmetric
   (package
     (name "r-riskmetric")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskmetric" version))
        (sha256
-        (base32 "00zc0jnnkx8z4mgr4h7w1xh8id4bai5l8jvh10xhylsvc1gy4ysg"))))
+        (base32 "1pfcflh2ypwdn5al23n6hga2v5fr2kbcpiqcsjgrma9w5drwcnss"))))
     (properties `((upstream-name . "riskmetric")))
     (build-system r-build-system)
     (arguments
@@ -27309,13 +27345,13 @@ published by Faridi et al.  in 2018 <doi:10.1126/sciimmunol.aar3947>.")
 (define-public r-rhub
   (package
     (name "r-rhub")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhub" version))
        (sha256
-        (base32 "05q1jv7c2l09ssb72d17hhcisvzqmcd3d1njc1j6w8lhvc5kqs47"))))
+        (base32 "0fc291gy7zpx6mcpfw5sjjmx4y7lxhzh6n61mwwmz96nn4qb2m1q"))))
     (properties `((upstream-name . "rhub")))
     (build-system r-build-system)
     (arguments
@@ -27800,6 +27836,38 @@ uses weighted Euclidean distances across the gene features to cluster subjects.
 This approach is unique in that it attempts to capture all pairwise interactions
 in an effort to cluster based on their complex biological interactions.")
     (license license:artistic2.0)))
+
+(define-public r-rhc
+  (package
+    (name "r-rhc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RHC" version))
+       (sha256
+        (base32 "1ij9mhib9f1ivxhkv0170j61l986dkyjrndq6l5qwxq1zmginrlp"))))
+    (properties `((upstream-name . "RHC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-randomforest
+                             r-permute
+                             r-lattice
+                             r-gridextra
+                             r-ggplot2
+                             r-geometry
+                             r-fd
+                             r-ade4))
+    (home-page "https://cran.r-project.org/package=RHC")
+    (synopsis "Rangeland Health and Condition")
+    (description
+     "The evaluation criteria of rangeland health, condition and landscape function
+analysis based on species diversity and functional diversity of rangeland plant
+communities.")
+    (license license:gpl2+)))
 
 (define-public r-rhawkes
   (package
@@ -28959,13 +29027,13 @@ Density Estimation\" by Y. Wang, A. Canale, D. Dunson (2016)
 (define-public r-rgeoda
   (package
     (name "r-rgeoda")
-    (version "0.0.11-1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgeoda" version))
        (sha256
-        (base32 "0p9r8l4wpcchjnbxmhnkc1x1jppsdsph6ynz9wcs2774c1vm0zmg"))))
+        (base32 "1n5sa5gawyn39hdi90nmnc79l8mdh3w9r4r973q97qbs1mf27rfz"))))
     (properties `((upstream-name . "rgeoda")))
     (build-system r-build-system)
     (arguments
@@ -31020,6 +31088,44 @@ efficiency level, (ii) compute goodness-of-fit indices when the data do not obey
 the axioms, and (iii) compute power against uniformly random behavior.")
     (license license:expat)))
 
+(define-public r-revise
+  (package
+    (name "r-revise")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "revise" version))
+       (sha256
+        (base32 "0ij682q32j6a2i2pdarpjs01b9hr2x1ndixciml9blffj2y8js99"))))
+    (properties `((upstream-name . "revise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-worcs
+                             r-stringr
+                             r-rstudioapi
+                             r-rmarkdown
+                             r-pdftools
+                             r-papaja
+                             r-officer
+                             r-knitr
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-bookdown))
+    (home-page "https://github.com/conig/revise")
+    (synopsis "Dynamic Revision Letters for 'Rmarkdown' Manuscripts")
+    (description
+     "Extracts tagged text from markdown manuscripts for inclusion in dynamically
+generated revision letters.  Provides an R markdown template based on
+@code{papaja::revision_letter_pdf()} with comment cross-referencing, a system
+for managing multiple sections of extracted text, and a way to automatically
+determine the page number of quoted sections from PDF manuscripts.")
+    (license (license:fsdg-compatible "MIT + file LICENCE"))))
+
 (define-public r-reviewr
   (package
     (name "r-reviewr")
@@ -32163,13 +32269,13 @@ information regarding the web services this package invokes can be found at
 (define-public r-restez
   (package
     (name "r-restez")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restez" version))
        (sha256
-        (base32 "1jzffv1lsxwa2dvkqx48ldwffghkg91vz99d9l3kjdxmg9gb8y9k"))))
+        (base32 "11jj5yi3nyqck4134hlkw2vbmsn6j2rk40aa7alq45cjdh5wia3y"))))
     (properties `((upstream-name . "restez")))
     (build-system r-build-system)
     (arguments
@@ -38885,13 +38991,13 @@ or settings within REDCap, such as importing or exporting data.")
 (define-public r-redcapcast
   (package
     (name "r-redcapcast")
-    (version "25.1.1")
+    (version "25.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapCAST" version))
        (sha256
-        (base32 "0xpjbzmn8vmg9wpk6q60njh0kw35f1mk0wbwyzxfxgc3c7158pm9"))))
+        (base32 "1h9ik7gfv9s7x32yhy0r6mp2k4kx91vdwlnb33vc1qk3jglcfvd2"))))
     (properties `((upstream-name . "REDCapCAST")))
     (build-system r-build-system)
     (arguments
@@ -50149,13 +50255,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "13f7ai9ackbkyw10hl1ys6ax30inmvwhjra9zga6wxyr6xdyhk5q"))))
+        (base32 "0h8c3hgnjwknzqz8lmdv44f36n1zrkgg7vr84r90dzc4i4vk0533"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (arguments

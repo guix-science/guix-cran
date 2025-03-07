@@ -8949,13 +8949,13 @@ by other packages for designed experiments.")
 (define-public r-dodgr
   (package
     (name "r-dodgr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dodgr" version))
        (sha256
-        (base32 "12vsw3yi99jalhz41fiq67fhb4jk0rrcfwb06gfkrifalp2p9jws"))))
+        (base32 "1jffvxs2f751lxl747nx7a399dbi1jwcaqiql8drb8bi1m5jnap6"))))
     (properties `((upstream-name . "dodgr")))
     (build-system r-build-system)
     (arguments
@@ -11254,13 +11254,13 @@ ecological systems.")
 (define-public r-divest
   (package
     (name "r-divest")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divest" version))
        (sha256
-        (base32 "19r95llk0znr02lin39jwhidgzfnr8bigg74gi1zb69x3xp6h5v6"))))
+        (base32 "0j0l6qjg16q4zpd5ddydka8bs99agwaqinascqn3yqnab9diw3ij"))))
     (properties `((upstream-name . "divest")))
     (build-system r-build-system)
     (arguments
@@ -13767,13 +13767,13 @@ distribution.")
 (define-public r-discretegapstatistic
   (package
     (name "r-discretegapstatistic")
-    (version "1.0.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteGapStatistic" version))
        (sha256
-        (base32 "0y6xcpsf5frm74id9mksk8gg10jjny0b4m8fhgy74avrw8yd5iv8"))))
+        (base32 "04f7v49i1swaq3cfkp26akkkkq2j3ph4b5l6119k9v5ck0vg3z9d"))))
     (properties `((upstream-name . "DiscreteGapStatistic")))
     (build-system r-build-system)
     (arguments
@@ -18656,13 +18656,13 @@ dichotomized functional response regression (dfrr) model.")
 (define-public r-dfr
   (package
     (name "r-dfr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfr" version))
        (sha256
-        (base32 "0pgwbdmkymd3790cvy02mwip7nq763yj0xpa4y54b2z3bpafynjm"))))
+        (base32 "13z44b7q416y29fa54xbf5h734nbrgl9ds4rh7zz31shjd0hr85d"))))
     (properties `((upstream-name . "dfr")))
     (build-system r-build-system)
     (arguments
@@ -29361,13 +29361,13 @@ information.")
 (define-public r-dataquier
   (package
     (name "r-dataquier")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataquieR" version))
        (sha256
-        (base32 "17g4njyx0bqqyjwk7zq0i5cnw8fzgrppclqaaf7m5na7vxxilmm6"))))
+        (base32 "111vxpmnmpywnzdr9sj08y355a1fn36h9ig5zamsb2n0lcxgvzpi"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
     (arguments

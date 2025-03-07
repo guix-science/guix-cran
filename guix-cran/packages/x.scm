@@ -2266,33 +2266,6 @@ for predicting photogrammetric uncertainty in morphometric measurements derived
 from drones\" (Bierlich et al., 2021, <doi:10.3354/meps13814>).")
     (license license:expat)))
 
-(define-public r-xbrl
-  (package
-    (name "r-xbrl")
-    (version "0.99.19.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "XBRL" version))
-       (sha256
-        (base32 "0mwpk84kp6r7f6fmlby0ka58fj50y592afxzp0wcrzmx65abp7md"))))
-    (properties `((upstream-name . "XBRL")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib libxml2 libxml2))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=XBRL")
-    (synopsis
-     "Extraction of Business Financial Information from 'XBRL' Documents")
-    (description
-     "This package provides functions to extract business financial information from
-an Extensible Business Reporting Language ('XBRL') instance file and the
-associated collection of files that defines its Discoverable Taxonomy Set
-('DTS').")
-    (license license:gpl2+)))
-
 (define-public r-xaringanthemer
   (package
     (name "r-xaringanthemer")

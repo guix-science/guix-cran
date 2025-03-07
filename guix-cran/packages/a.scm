@@ -10057,6 +10057,40 @@ feature selection and feed-forward neural networks, taking advantage of newly
 published sequences with experimental, in vitro, evidence of amyloid formation.")
     (license license:gpl3)))
 
+(define-public r-applypolygenicscore
+  (package
+    (name "r-applypolygenicscore")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ApplyPolygenicScore" version))
+       (sha256
+        (base32 "12cjmnaqlvfsdrwp37jyiabmvq71i2l8i4x9sxzn6j5prcgig3hx"))))
+    (properties `((upstream-name . "ApplyPolygenicScore")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vcfr
+                             r-reshape2
+                             r-proc
+                             r-lattice
+                             r-data-table
+                             r-boutroslab-plotting-general))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ApplyPolygenicScore")
+    (synopsis "Utilities for the Application of a Polygenic Score to a VCF")
+    (description
+     "Simple and transparent parsing of genotype/dosage data from an input Variant
+Call Format (VCF) file, matching of genotype coordinates to the component Single
+Nucleotide Polymorphisms (SNPs) of an existing polygenic score (PGS), and
+application of SNP weights to dosages for the calculation of a polygenic score
+for each individual in accordance with the additive weighted sum of dosages
+model.  Methods are designed in reference to best practices described by
+Collister, Liu, and Clifton (2022) <doi:10.3389/fgene.2022.818574>.")
+    (license license:gpl2)))
+
 (define-public r-appliedpredictivemodeling
   (package
     (name "r-appliedpredictivemodeling")
@@ -18433,13 +18467,13 @@ approach described by Burnham, K. P. and Anderson, D. R. (2002)
 (define-public r-aiccmodavg
   (package
     (name "r-aiccmodavg")
-    (version "2.3-3")
+    (version "2.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AICcmodavg" version))
        (sha256
-        (base32 "0ylzd6fz5p86fdb8yily2v8bn8xz5mm6w19ch6gpp48jzkqvama0"))))
+        (base32 "07spbfwph62jrggmj5nvg510sqa63s6i7n3k685rv7ga0f2sp638"))))
     (properties `((upstream-name . "AICcmodavg")))
     (build-system r-build-system)
     (arguments
@@ -24677,6 +24711,57 @@ of the python package agcounts <https://github.com/actigraph/agcounts>.  This
 tool allows the processing of data from any accelerometer brand, with a more
 flexible approach to handle different sampling frequencies.")
     (license license:lgpl3+)))
+
+(define-public r-actfts
+  (package
+    (name "r-actfts")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "actfts" version))
+       (sha256
+        (base32 "1pgzyrscvvij4rhngj89c9kgbns7xwj1kw1dadkj0hkdiwrmhwqm"))))
+    (properties `((upstream-name . "actfts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xts
+                             r-tseries
+                             r-reactable
+                             r-plotly
+                             r-openxlsx
+                             r-lifecycle
+                             r-forecast))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SergioFinances/actfts")
+    (synopsis "Autocorrelation Tools Featured for Time Series")
+    (description
+     "The actfts package provides tools for performing autocorrelation analysis of
+time series data.  It includes functions to compute and visualize the
+autocorrelation function (ACF) and the partial autocorrelation function (PACF).
+Additionally, it performs the Dickey-Fuller, KPSS, and Phillips-Perron unit root
+tests to assess the stationarity of time series.  Theoretical foundations are
+based on Box and Cox (1964) <doi:10.1111/j.2517-6161.1964.tb00553.x>, Box and
+Jenkins (1976) <isbn:978-0-8162-1234-2>, and Box and Pierce (1970)
+<doi:10.1080/01621459.1970.10481180>.  Statistical methods are also drawn from
+Kolmogorov (1933) <doi:10.1007/BF00993594>, Kwiatkowski et al. (1992)
+<doi:10.1016/0304-4076(92)90104-Y>, and Ljung and Box (1978)
+<doi:10.1093/biomet/65.2.297>.  The package integrates functions from forecast
+(Hyndman & Khandakar, 2008) <https://CRAN.R-project.org/package=forecast>,
+tseries (Trapletti & Hornik, 2020) <https://CRAN.R-project.org/package=tseries>,
+xts (Ryan & Ulrich, 2020) <https://CRAN.R-project.org/package=xts>, and stats (R
+Core Team, 2023)
+<https://stat.ethz.ch/R-manual/R-devel/library/stats/html/00Index.html>.
+Additionally, it provides visualization tools via plotly (Sievert, 2020)
+<https://CRAN.R-project.org/package=plotly> and reactable (Glaz, 2023)
+<https://CRAN.R-project.org/package=reactable>.  The package also incorporates
+macroeconomic datasets from the U.S. Bureau of Economic Analysis: Disposable
+Personal Income (DPI) <https://fred.stlouisfed.org/series/DPI>, Gross Domestic
+Product (GDP) <https://fred.stlouisfed.org/series/GDP>, and Personal Consumption
+Expenditures (PCEC) <https://fred.stlouisfed.org/series/PCEC>.")
+    (license license:expat)))
 
 (define-public r-actel
   (package

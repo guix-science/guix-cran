@@ -21082,3 +21082,33 @@ datasets.  Several functions are provided for extracting key elements from the
 tabular datasets.")
     (license license:expat)))
 
+(define-public r-i14y
+  (package
+    (name "r-i14y")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "I14Y" version))
+       (sha256
+        (base32 "1jdawisdhm6hap5ja5x1p3wwwjp5dxvhl2sxf663zb89cmn1hkxa"))))
+    (properties `((upstream-name . "I14Y")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-readr
+                             r-httr2
+                             r-curl
+                             r-cli))
+    (home-page "https://cran.r-project.org/package=I14Y")
+    (synopsis
+     "Search and Get Data from the I14Y Interoperability Platform of Switzerland")
+    (description
+     "Search and download Swiss data and metadata from the I14Y interoperability
+platform of Switzerland using its public APIs
+<https://www.i14y.admin.ch/api/index.html>.")
+    (license license:gpl3+)))
+

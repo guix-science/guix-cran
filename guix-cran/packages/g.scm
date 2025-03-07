@@ -24870,13 +24870,13 @@ list of citations for the methods implemented.")
 (define-public r-germinar
   (package
     (name "r-germinar")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GerminaR" version))
        (sha256
-        (base32 "0f2dbq1adbd5p30kf9bi8qqk2s8da0p65i9a0igm16ckwpam7lkk"))))
+        (base32 "1vnvpz4zlsliqmqvdqia4xrcykwlhg99ps1vrzf3567y3m4vkpli"))))
     (properties `((upstream-name . "GerminaR")))
     (build-system r-build-system)
     (arguments
@@ -28471,13 +28471,13 @@ forthcoming paper.")
 (define-public r-genmarkov
   (package
     (name "r-genmarkov")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenMarkov" version))
        (sha256
-        (base32 "1dqs8wapdpmgqnrf4xgvdmaz74gck23sbnpjxzj2g03gl8k9lq5w"))))
+        (base32 "1pzyqi2apkicm1fnw667crv92ljqa3b6vmdzykxdh3gas0f7r75j"))))
     (properties `((upstream-name . "GenMarkov")))
     (build-system r-build-system)
     (arguments

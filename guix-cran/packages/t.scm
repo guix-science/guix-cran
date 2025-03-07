@@ -1604,13 +1604,13 @@ or estimated by sampling.")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.3.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tutorial.helpers" version))
        (sha256
-        (base32 "1cm4rc3jjdd2czjw21brav9d86dxjg9s2mh05xhkhhfvindv2wmw"))))
+        (base32 "1kvgbh0h80fr84szpkadjr4bshdrn695zik4nwggfs9z7h3y0hmj"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (arguments
@@ -1624,11 +1624,11 @@ or estimated by sampling.")
                              r-rmarkdown
                              r-readr
                              r-purrr
-                             r-parsermd
                              r-mime
                              r-learnr
+                             r-jsonlite
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://ppbds.github.io/tutorial.helpers/")
     (synopsis "Helper Functions for Creating Tutorials")
     (description
@@ -15462,13 +15462,13 @@ only one other dependency, namely stringi'.")
 (define-public r-tinyarray
   (package
     (name "r-tinyarray")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyarray" version))
        (sha256
-        (base32 "188zc58yb68jyw3dw7y323slnlgl7872icrwf3zl6s7rm44dmljc"))))
+        (base32 "0ndvqz7p4fg5h79h72x7zga7266hpl1qnbnba69lary33hdi4icm"))))
     (properties `((upstream-name . "tinyarray")))
     (build-system r-build-system)
     (arguments
@@ -17638,13 +17638,13 @@ to estimate latent class analyses.")
 (define-public r-tidysdm
   (package
     (name "r-tidysdm")
-    (version "0.9.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysdm" version))
        (sha256
-        (base32 "0vpxral92mnaisz39nkib6mpllwpaw38s9qaly1djyxm8s4lrl48"))))
+        (base32 "1gdlnbg8xpyp6qqzx6yqwvrcy8b12zl2k2mq9k2kqm5pzgk66kcb"))))
     (properties `((upstream-name . "tidysdm")))
     (build-system r-build-system)
     (arguments
@@ -17657,6 +17657,7 @@ to estimate latent class analyses.")
                              r-tidymodels
                              r-tibble
                              r-terra
+                             r-stars
                              r-spatialsample
                              r-sf
                              r-rsample
@@ -17670,7 +17671,6 @@ to estimate latent class analyses.")
                              r-ggplot2
                              r-dplyr
                              r-dials
-                             r-dalextra
                              r-dalex))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EvolEcolGroup/tidysdm")
@@ -24811,13 +24811,13 @@ An alternative to ggtern', which uses the ggplot2 family of plotting functions."
 (define-public r-tern-rbmi
   (package
     (name "r-tern-rbmi")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern.rbmi" version))
        (sha256
-        (base32 "1z9jl7agfhrvbjpxb80mrlpn8xhavzlkywwsfdnn1fhb1n4yapzy"))))
+        (base32 "05rkw94xyvliii5jr1ipcl3zd37h29zngrarn4d40bf56fqkqnak"))))
     (properties `((upstream-name . "tern.rbmi")))
     (build-system r-build-system)
     (arguments
@@ -27194,13 +27194,13 @@ sap flow rates at the tree and plot scale (For more information see : Granier
 (define-public r-tdlm
   (package
     (name "r-tdlm")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDLM" version))
        (sha256
-        (base32 "1p1k60fdmgb1szbz4f8bkb2ywfa070pnxqv3b6xya74qabqgkz86"))))
+        (base32 "1r0qqyva2w9sy4bdi6h81qkq7ca397csb2kdljf92phvxr96nl7g"))))
     (properties `((upstream-name . "TDLM")))
     (build-system r-build-system)
     (arguments

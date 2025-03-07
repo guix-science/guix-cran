@@ -402,13 +402,13 @@ used, see Reiter & Raghunathan (2007) <doi:10.1198/016214507000000932>.")
 (define-public r-synthpop
   (package
     (name "r-synthpop")
-    (version "1.9-0")
+    (version "1.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synthpop" version))
        (sha256
-        (base32 "0ij574d7c1xx5qv5w79a1lrrgvk9hvd6l1cjvylfkc0s6b9rj39c"))))
+        (base32 "0zk5h4myllbmgdzkdllq5an665qwz4zimlxkw03j6bbc1arshyqg"))))
     (properties `((upstream-name . "synthpop")))
     (build-system r-build-system)
     (arguments
@@ -10878,13 +10878,13 @@ determining the p-values.")
 (define-public r-strata
   (package
     (name "r-strata")
-    (version "1.4.0")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strata" version))
        (sha256
-        (base32 "06ckihl86180ly36kcjwihy7v6zrpvjw13w4bdi3d0768n8cyk7a"))))
+        (base32 "07ddw2i1lf8gsgl9ydp6aiyrvbgzw5khz2qdra4w9w6jhrfn2xrq"))))
     (properties `((upstream-name . "strata")))
     (build-system r-build-system)
     (arguments
@@ -25552,13 +25552,13 @@ in Wang (2011)<doi:10.18637/jss.v040.i09>.")
 (define-public r-spechelpers
   (package
     (name "r-spechelpers")
-    (version "0.2.7")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpecHelpers" version))
        (sha256
-        (base32 "1v3v717ah2fkx9225860dwppdf5m6nnnaaa4iwmj30rn17nqr4jh"))))
+        (base32 "0v24xyj2w87izijcxln532f1gabyzlv3zm9b762rdk9bg2m2xqwv"))))
     (properties `((upstream-name . "SpecHelpers")))
     (build-system r-build-system)
     (arguments
@@ -33600,13 +33600,13 @@ Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
 (define-public r-snvecr
   (package
     (name "r-snvecr")
-    (version "3.10.0")
+    (version "3.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snvecR" version))
        (sha256
-        (base32 "0dvzyqfgrybbm15dkd86haywkvl7zgr9xga96ykrigb01b383ppk"))))
+        (base32 "0l841ylciid2f63h4a3imrlvv5cg46f8zfgz8l2i9q9nyfpnnhqm"))))
     (properties `((upstream-name . "snvecR")))
     (build-system r-build-system)
     (arguments
@@ -53614,27 +53614,29 @@ analysis package tidygraph and the spatial analysis package sf'.")
 (define-public r-sfm
   (package
     (name "r-sfm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SFM" version))
        (sha256
-        (base32 "1szs75bn808z17853kibjsvr39kfc5pdlfd2b826qnh0qmgh5wxk"))))
+        (base32 "1j2cis62lj2ldbj01b0mzg05099i9rm4rpjgh29b5zx53p1nfg0b"))))
     (properties `((upstream-name . "SFM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sopc r-sn r-matrixcalc r-mass))
+    (propagated-inputs (list r-sopc r-sn r-psych r-matrixcalc r-mass))
     (home-page "https://cran.r-project.org/package=SFM")
     (synopsis "Package for Analyzing Skew Factor Models")
     (description
      "Generates Skew Factor Models data and applies Sparse Online Principal Component
-(SOPC) method to estimate model parameters.  It includes capabilities for
-calculating mean squared error, relative error, and sparsity of the loading
-matrix.  Additionally, it includes robust regression methods such as adaptive
-Huber regression.The philosophy of the package is described in Guo G. (2023)
+(SOPC), Incremental Principal Component (IPC), Projected Principal Component
+(PPC), Perturbation Principal Component (PPC), Stochastic Approximation
+Principal Component (SAPC), Sparse Principal Component (SPC) and other PC
+methods to estimate model parameters.  It includes capabilities for calculating
+mean squared error, relative error, and sparsity of the loading matrix.The
+philosophy of the package is described in Guo G. (2023)
 <doi:10.1007/s00180-022-01270-z>.")
     (license license:expat)))
 
@@ -64554,13 +64556,13 @@ data are obtained from mainly Web of Science and Scopus.")
 (define-public r-scientific
   (package
     (name "r-scientific")
-    (version "2025.0")
+    (version "2025.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scientific" version))
        (sha256
-        (base32 "0l052rgkjpnv5lqj8x7kis26zfj4h2hkc012dl70mnrg63krqn2m"))))
+        (base32 "1n7g74h1gjdmbpy9rd3qqsk317l2ppjshlwpzlwwqclx76yp6cnr"))))
     (properties `((upstream-name . "scientific")))
     (build-system r-build-system)
     (arguments

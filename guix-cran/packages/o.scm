@@ -4172,13 +4172,13 @@ classification.")
 (define-public r-orcamentobr
   (package
     (name "r-orcamentobr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orcamentoBR" version))
        (sha256
-        (base32 "0kb1gqaxqrq6vj1iif90h8qdq74vd3qqxaanvax8fm99ig3sigrs"))))
+        (base32 "0hpc3paw6vd01j4066l8mk26k5ybnpqqbvqlpmp2g4yjby0762nq"))))
     (properties `((upstream-name . "orcamentoBR")))
     (build-system r-build-system)
     (arguments
@@ -7345,13 +7345,13 @@ Format, see <https://opendataformat.github.io/>.")
 (define-public r-opencv
   (package
     (name "r-opencv")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencv" version))
        (sha256
-        (base32 "087vjygs446lw10nizl14kq27n668wqky3jr6ks28mqmcvk1wgqx"))))
+        (base32 "0dm3h3hb5y2cys5a8czrwdqm13lmf9hpyzyn559f7b5nysbi8baz"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
     (arguments

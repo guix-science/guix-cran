@@ -1910,13 +1910,13 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsirm12pl" version))
        (sha256
-        (base32 "1sq54klskfdml2qyp7n0cc3zk58hk4x80izn3dnkslys1lj5adah"))))
+        (base32 "0bqlclpyask6lms8y45dspaj6slxz8f8wf17v5n086d26bbb7d66"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
     (arguments
@@ -10020,19 +10020,19 @@ Implements forms of Language Style Matching (Ireland & Pennebaker, 2010)
 (define-public r-lingglosses
   (package
     (name "r-lingglosses")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingglosses" version))
        (sha256
-        (base32 "03skh28dhqjkc6clxqrknfmkbxyxfkb3nmbdhs5dd32xc5gqa63c"))))
+        (base32 "1nlili13y7jwcfwq726hmbvklfdjbic55hs9512p7ldnsxfr6h8w"))))
     (properties `((upstream-name . "lingglosses")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rmarkdown r-knitr r-kableextra r-htmltools))
+    (propagated-inputs (list r-rmarkdown r-knitr r-kableextra r-htmltools r-gt))
     (home-page "https://CRAN.R-project.org/package=phonfieldwork")
     (synopsis
      "Interlinear Glossed Linguistic Examples and Abbreviation Lists Generation")
@@ -11546,13 +11546,13 @@ life insurance modeling, facilitating accurate financial projections.")
 (define-public r-lifemapr
   (package
     (name "r-lifemapr")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LifemapR" version))
        (sha256
-        (base32 "0f09lgpsmg45f072901v59niakx65wvmcz67zjzz4lsy35k74q9k"))))
+        (base32 "00lz5nfggfqd3ccq2srrxbdkkz9d0vivbg7ady7yz14qm9njqkix"))))
     (properties `((upstream-name . "LifemapR")))
     (build-system r-build-system)
     (arguments
@@ -11567,13 +11567,14 @@ life insurance modeling, facilitating accurate financial projections.")
                              r-jsonlite
                              r-htmltools
                              r-fastmatch
-                             r-dplyr))
+                             r-dplyr
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://lifemap-tol.github.io/LifemapR/")
     (synopsis "Data Visualisation on 'Lifemap' Tree")
     (description
      "Allow to visualise data on the NCBI phylogenetic tree as presented in Lifemap
-<http://lifemap.univ-lyon1.fr/>.  It takes as input a dataframe with at least a
+<https://lifemap.cnrs.fr/>.  It takes as input a dataframe with at least a
 \"taxid\" column containing NCBI format @code{TaxIds} and allows to draw multiple
 layers with different visualisation tools.")
     (license license:expat)))
@@ -14654,13 +14655,13 @@ single map.")
 (define-public r-leaflet-extras2
   (package
     (name "r-leaflet-extras2")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflet.extras2" version))
        (sha256
-        (base32 "0m9f0y0y4rvcxpdh05yvgw6rm3qnaxsm04rm0d5cba8rl5vj4d3i"))))
+        (base32 "102n18bdnf23l7cblkn0m0qqa479m73bdzqyk0wgrd8lybd45g8m"))))
     (properties `((upstream-name . "leaflet.extras2")))
     (build-system r-build-system)
     (arguments

@@ -1337,13 +1337,13 @@ results.")
 (define-public r-wqspt
   (package
     (name "r-wqspt")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wqspt" version))
        (sha256
-        (base32 "1xd588kw171djx7q21b2jjarhbzd4i0gx7ccv1j1wyl95yzq07ba"))))
+        (base32 "1myzac99m696bgddjnl84d6j72j4r4kz8qdzs11c6b0pjrzldqjn"))))
     (properties `((upstream-name . "wqspt")))
     (build-system r-build-system)
     (arguments
@@ -1351,26 +1351,33 @@ results.")
       #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-rlang
+                             r-reshape2
+                             r-pscl
                              r-pbapply
+                             r-nnet
                              r-mvtnorm
+                             r-mass
                              r-gwqs
                              r-ggplot2
+                             r-future-apply
+                             r-future
                              r-extradistr
-                             r-cowplot))
+                             r-cowplot
+                             r-car))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wqspt")
     (synopsis "Permutation Test for Weighted Quantile Sum Regression")
     (description
      "This package implements a permutation test method for the weighted quantile sum
-(WQS) regression, building off the @code{gWQS} package (Renzetti et al. (2021)
+(WQS) regression, building off the @code{gWQS} package (Renzetti et al.
 <https://CRAN.R-project.org/package=@code{gWQS>}).  Weighted quantile sum
 regression is a statistical technique to evaluate the effect of complex exposure
-mixtures on an outcome (Carrico et al. (2015) <doi:10.1007/s13253-014-0180-3>).
+mixtures on an outcome (Carrico et al.  2015 <doi:10.1007/s13253-014-0180-3>).
 The model features a statistical power and Type I error (i.e., false positive)
 rate trade-off, as there is a machine learning step to determine the weights
 that optimize the linear model fit.  This package provides an alternative method
 based on a permutation test that should reliably allow for both high power and
-low false positive rate when utilizing WQS regression (Day et al. (2022)
+low false positive rate when utilizing WQS regression (Day et al.  2022
 <doi:10.1289/EHP10570>).")
     (license license:gpl3)))
 
@@ -9780,13 +9787,13 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 (define-public r-wallace
   (package
     (name "r-wallace")
-    (version "2.1.3")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wallace" version))
        (sha256
-        (base32 "0zij0r5y7ra402w7x52mb9xzk2wdxq898ysyy3w32lwvbjs5lck9"))))
+        (base32 "1fkp7v3wfnr9qmhz4c2yf934c7l87mrxzvqdablpzihs02h8jxwn"))))
     (properties `((upstream-name . "wallace")))
     (build-system r-build-system)
     (arguments

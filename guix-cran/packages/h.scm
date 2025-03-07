@@ -1869,13 +1869,13 @@ problems.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.5.7")
+    (version "5.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huxtable" version))
        (sha256
-        (base32 "0piaa4zcx3xsr25yf15cv3vindsksxwwqvsjgvk47p1nvw1f0k6y"))))
+        (base32 "16bc82zxzqswgr9fz3v5knylmr0xbdhw9nvq9h3g4y37ws8yy0x6"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (arguments
@@ -1916,13 +1916,13 @@ one-liners to print data to a new document.")
 (define-public r-hutilscpp
   (package
     (name "r-hutilscpp")
-    (version "0.10.7")
+    (version "0.10.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hutilscpp" version))
        (sha256
-        (base32 "11g25lk4adwpv27hihsp67bf7x54av11719kr5andir0p3lic0w0"))))
+        (base32 "1pvlg64iimq80nz8plcw1ijyl8mk4yzdrjc4jmy1g34mw6p99pwl"))))
     (properties `((upstream-name . "hutilscpp")))
     (build-system r-build-system)
     (arguments
@@ -13455,13 +13455,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.6.7")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "102dq590np43bbw524c0m2bzbpx5bqwka1x0sd59wi0a0mg2z2jr"))))
+        (base32 "05hwnly584jikymcwkz767xcg86vymqgr0daimm5v7mxq7ah9asb"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (arguments
@@ -13770,13 +13770,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "13znj6kawy32q8syxjyxq8jslbzzj4dnyms8w6cb9sky6dh040j5"))))
+        (base32 "0wmgh0ma2a26ji5fal9mfy40gfpj770s6qyrwfni5a0m0kpczxvd"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (arguments
@@ -13959,6 +13959,38 @@ multivariate settings.  It gives functions to compute different moments of the
 number of jumps of the process on a given interval, such as mean, variance or
 autocorrelation of process jumps on time intervals separated by a lag.")
     (license license:gpl2+)))
+
+(define-public r-hatchr
+  (package
+    (name "r-hatchr")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hatchR" version))
+       (sha256
+        (base32 "1v47kd4hz5mg28bmxxdg3p82skhiv6pds688x7mq1ss76wl0ixyw"))))
+    (properties `((upstream-name . "hatchR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-lubridate
+                             r-lifecycle
+                             r-ggtext
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://bmait101.github.io/hatchR/")
+    (synopsis "Predict Fish Hatch and Emergence Timing")
+    (description
+     "Predict hatch and emergence timing for a wide range of wild fishes using the
+effective value framework (Sparks et al., (2019) <DOI:10.1139/cjfas-2017-0468>).
+@code{hatchR} offers users access to established phenological models and the
+flexibility to incorporate custom parameterizations using external datasets.")
+    (license license:gpl3)))
 
 (define-public r-hassani-silva
   (package
@@ -15469,13 +15501,13 @@ methods and structural plots of Hierarchical Archimedean Copulae (HAC).")
 (define-public r-habtools
   (package
     (name "r-habtools")
-    (version "1.0.7")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "habtools" version))
        (sha256
-        (base32 "1283ng0ypn6b9smi9jca04sl4s4xrsap76rx7w4inc7vfi2h2xvj"))))
+        (base32 "0ny6wqdhc56ybwrsljbphfcg4pc6cvdzw649b2v38n8vlq8bz1f3"))))
     (properties `((upstream-name . "habtools")))
     (build-system r-build-system)
     (arguments
@@ -15487,6 +15519,7 @@ methods and structural plots of Hierarchical Archimedean Copulae (HAC).")
                              r-raster
                              r-purrr
                              r-magrittr
+                             r-ks
                              r-geometry
                              r-dplyr
                              r-concaveman))

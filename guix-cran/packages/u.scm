@@ -581,13 +581,13 @@ non-asymptotic Type I error control at the nominal level.")
 (define-public r-usmapdata
   (package
     (name "r-usmapdata")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmapdata" version))
        (sha256
-        (base32 "0bvsx7d7k2fjffmwjwrb0l5qwfga2px1ahaqkbg3bgq0vcpzbx2i"))))
+        (base32 "0877m88v49mabi0a1k43i9vclsiilz4bpf1hgb5kvlmg79f9vmvp"))))
     (properties `((upstream-name . "usmapdata")))
     (build-system r-build-system)
     (arguments
@@ -4367,6 +4367,37 @@ English words.")
      "This package provides a set of custom R Markdown templates for documents and
 presentations with the University of Illinois at Urbana-Champaign (UIUC) color
 scheme and identity standards.")
+    (license license:expat)))
+
+(define-public r-uisapi
+  (package
+    (name "r-uisapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uisapi" version))
+       (sha256
+        (base32 "1yk9arr3hyi5n7qf1dfpkmx6sp2zmvk2rzvfcg7dn61cmjjmgjnp"))))
+    (properties `((upstream-name . "uisapi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/tidy-intelligence/r-uisapi")
+    (synopsis "Access the UNESCO Institute for Statistics API")
+    (description
+     "Retrieve data from the UNESCO Institute for Statistics (UIS) API
+<https://api.uis.unesco.org/api/public/documentation/>.  UIS provides public
+access to more than 4,000 indicators focusing on education, science and
+technology, culture, and communication.")
     (license license:expat)))
 
 (define-public r-ui

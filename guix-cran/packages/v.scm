@@ -3311,13 +3311,13 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "010bbnkhqb088jiyqn8xdza0q9lqd93n5cca8a71ir3k5fgx9sy1"))))
+        (base32 "0ylsqd4vczbfb64zpzzzbdxdxyy901idkh9x9rybkdvrlzbsdkwi"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (arguments
@@ -7436,45 +7436,6 @@ functions are written in C++ using Rcpp', developed by Eddelbuettel and Francois
      "Provide a collection of miscellaneous R functions related to the Vasicek
 distribution with the intent to make the lives of risk modelers easier.")
     (license license:gpl2+)))
-
-(define-public r-varycoef
-  (package
-    (name "r-varycoef")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "varycoef" version))
-       (sha256
-        (base32 "1dfych3qhqq4qadizxjgh4lswnm47m2g59gv14c8j349ji94i8qh"))))
-    (properties `((upstream-name . "varycoef")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spam
-                             r-smoof
-                             r-pbapply
-                             r-paramhelpers
-                             r-optimparallel
-                             r-mlrmbo
-                             r-mlr
-                             r-lhs
-                             r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jakobdambon/varycoef")
-    (synopsis "Modeling Spatially Varying Coefficients")
-    (description
-     "This package implements a maximum likelihood estimation (MLE) method for
-estimation and prediction of Gaussian process-based spatially varying
-coefficient (SVC) models (Dambon et al. (2021a)
-<doi:10.1016/j.spasta.2020.100470>).  Covariance tapering (Furrer et al. (2006)
-<doi:10.1198/106186006X132178>) can be applied such that the method scales to
-large data.  Further, it implements a joint variable selection of the fixed and
-random effects (Dambon et al. (2021b) <doi:10.1080/13658816.2022.2097684>).  The
-package and its capabilities are described in (Dambon et al. (2021c)
-<@code{arXiv:2106.02364>}).")
-    (license license:gpl2)))
 
 (define-public r-vartestnlme
   (package

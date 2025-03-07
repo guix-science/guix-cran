@@ -14625,6 +14625,42 @@ then generates a control chart to assess processes and determine if any streams
 are out of control.")
     (license license:expat)))
 
+(define-public r-nemsqar
+  (package
+    (name "r-nemsqar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nemsqar" version))
+       (sha256
+        (base32 "0f4pb1fpy4xpdsgndi36gzqn6sl7ax6nzk8rr0sgriidd2hni18x"))))
+    (properties `((upstream-name . "nemsqar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-rlang
+                             r-lubridate
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/bemts-hhs/nemsqar")
+    (synopsis
+     "National Emergency Medical Service Quality Alliance Measure Calculations")
+    (description
+     "Designed to automate the calculation of Emergency Medical Service (EMS) quality
+metrics, nemsqar implements measures defined by the National EMS Quality
+Alliance (NEMSQA).  By providing reliable, evidence-based quality assessments,
+the package supports EMS agencies, healthcare providers, and researchers in
+evaluating and improving patient outcomes.  Users can find details on all
+approved NEMSQA measures at <https://www.nemsqa.org/measures>.  Full technical
+specifications, including documentation and pseudocode used to develop nemsqar',
+are available on the NEMSQA website after creating a user profile at
+<https://www.nemsqa.org>.")
+    (license license:expat)))
+
 (define-public r-nembm
   (package
     (name "r-nembm")
