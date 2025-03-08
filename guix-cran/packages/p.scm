@@ -2392,13 +2392,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "1s10jp2z5bc5ig3m03v6i6qhqa9zfq79ncnr9jfwk26msw52zr40"))))
+        (base32 "09m904vwhlya7x8s8ix87w3qp6n8lmrxk55ddj1bmf9hvrmnygjx"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (arguments
@@ -9296,6 +9296,48 @@ of the maps helps achieve randomness in the generator.  Additionally, the
 generator is capable of producing random bits.")
     (license license:expat)))
 
+(define-public r-prmisc
+  (package
+    (name "r-prmisc")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prmisc" version))
+       (sha256
+        (base32 "1048xi7r44nb4zvjsgrq2q6kyd1xcd8qg4a670x3qlvxg6b0gav1"))))
+    (properties `((upstream-name . "prmisc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/m-Py/prmisc")
+    (synopsis
+     "Miscellaneous Printing of Numeric and Statistical Output in R Markdown and Quarto Documents")
+    (description
+     "Miscellaneous printing of numeric or statistical results in R Markdown or Quarto
+documents according to guidelines of the \"Publication Manual\" of the American
+Psychological Association (2020, ISBN: 978-1-4338-3215-4).  These guidelines are
+usually referred to as APA style (<https://apastyle.apa.org/>) and include
+specific rules on the formatting of numbers and statistical test results.  APA
+style has to be implemented when submitting scientific reports in a wide range
+of research fields, especially in the social sciences.  The default output of
+numbers in the R console or R Markdown and Quarto documents does not meet the
+APA style requirements, and reformatting results manually can be cumbersome and
+error-prone.  This package covers the automatic conversion of R objects to
+textual representations that meet the APA style requirements, which can be
+included in R Markdown or Quarto documents.  It covers some basic statistical
+tests (t-test, ANOVA, correlation, chi-squared test, Wilcoxon test) as well as
+some basic number printing manipulations (formatting p-values, removing leading
+zeros for numbers that cannot be greater than one, and others).  Other packages
+exist for formatting numbers and tests according to the APA style guidelines,
+such as papaja (<https://cran.r-project.org/package=papaja>) and apa
+(<https://cran.r-project.org/package=apa>), but they do not offer all
+convenience functionality included in prmisc'.  The vignette has an overview of
+most of the functions included in the package.")
+    (license license:expat)))
+
 (define-public r-prmethods
   (package
     (name "r-prmethods")
@@ -13193,6 +13235,36 @@ provides options for embedding audio in figures and animating figures.")
      "Data analysis for Project Risk Management via the Second Moment Method, Monte
 Carlo Simulation, Contingency Analysis, Sensitivity Analysis, Earned Value
 Management, Learning Curves, Design Structure Matrices, and more.")
+    (license license:expat)))
+
+(define-public r-pqtldata
+  (package
+    (name "r-pqtldata")
+    (version "0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pQTLdata" version))
+       (sha256
+        (base32 "1w89qjn568ivvy2snmm9vxja4sngws2p9w25lrxn312jxj361g13"))))
+    (properties `((upstream-name . "pQTLdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://jinghuazhao.github.io/pQTLdata/")
+    (synopsis "Collection of Proteome Panels and Meta-Data")
+    (description
+     "It aggregates protein panel data and metadata for protein quantitative trait
+locus (@code{pQTL}) analysis using @code{pQTLtools}
+(<https://jinghuazhao.github.io/@code{pQTLtools/>}).  The package includes data
+from affinity-based panels such as Olink (<https://olink.com/>) and
+@code{SomaScan} (<https://somalogic.com/>), as well as mass spectrometry-based
+panels from @code{CellCarta} (<https://cellcarta.com/>) and Seer
+(<https://seer.bio/>).  The metadata encompasses updated annotations and
+publication details.")
     (license license:expat)))
 
 (define-public r-pqrfe
@@ -22125,13 +22197,13 @@ regression and classification is supported.")
 (define-public r-plstests
   (package
     (name "r-plstests")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLStests" version))
        (sha256
-        (base32 "0148rgxzn67d1srm0gzl3964v79a59bs3cyn73fj53fsqpfaccfk"))))
+        (base32 "0rczyg1jqjim6lfxdkdacq16341l1h2wpi3n81sskhmhy89xjqzp"))))
     (properties `((upstream-name . "PLStests")))
     (build-system r-build-system)
     (arguments
@@ -33891,18 +33963,19 @@ spaces.")
 (define-public r-pepa
   (package
     (name "r-pepa")
-    (version "1.0")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pEPA" version))
        (sha256
-        (base32 "1a2jij7rwkcf77krwgazldbgh0hjg7dg0911x7np42sjgiqn2li5"))))
+        (base32 "193084ch6wa5as2cpqdkkk8iy36nna77d8pprp8sr3vwg186aa0f"))))
     (properties `((upstream-name . "pEPA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://CRAN.R-project.org/package=pEPA")
     (synopsis "Tests of Equal Predictive Accuracy for Panels of Forecasts")
     (description
@@ -41705,6 +41778,39 @@ by time-resolved spectroscopy via a Shiny GUI.")
 life expectancy, lifespan equality, etc.), life table and product limit
 estimators from census data.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-paramanova
+  (package
+    (name "r-paramanova")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ParamANOVA" version))
+       (sha256
+        (base32 "1g04yisxq3cl02qz233cgrgqdc5jss6jkbgpa28j3g68ladwi2gp"))))
+    (properties `((upstream-name . "ParamANOVA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rstatix
+                             r-rlang
+                             r-mlr3misc
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=ParamANOVA")
+    (synopsis "Fully Parameterizable ANOVA Tests")
+    (description
+     "Allows the user to perform ANOVA tests (in a strict sense: continuous and
+normally-distributed Y variable and 1 or more factorial/categorical X
+variable(s)), with the possibility to specify the type of sum of squares (1, 2
+or 3), the types of variables (Fixed or Random) and their relationships (crossed
+or nested) with the sole function of the package @code{(FullyParamANOVA()}).
+The resulting outputs are the same as in SAS software.  A dataset (Butterfly) to
+test the function is also joined.")
+    (license license:expat)))
 
 (define-public r-param2moment
   (package

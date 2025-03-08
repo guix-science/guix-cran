@@ -504,13 +504,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "00wmkzkr70cd8imy0vabqnx83ssfcgaw6743m3xcbqf4w4vsam19"))))
+        (base32 "1wnnf7fqa6jdfw1ml3r9l8z4ib8phzbvglrh49r691b2sk62zr21"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (arguments

@@ -3671,6 +3671,39 @@ Ailin Fan, Rui Song and Wenbin Lu, 2018) <doi:10.1214/17-AOS1570>.  The package
 is an implementation of Zishu Zhan and Jingxiao Zhang. (2022+).")
     (license license:gpl3)))
 
+(define-public r-visae
+  (package
+    (name "r-visae")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visae" version))
+       (sha256
+        (base32 "0ds8jq4dxz134hccyhh20l57si82f3srfm1y044g24p6cmxaficx"))))
+    (properties `((upstream-name . "visae")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-shinyjs
+                             r-shiny
+                             r-rlang
+                             r-ggrepel
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-ca))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=visae")
+    (synopsis "Visualization of Adverse Events")
+    (description
+     "Implementation of shiny app to visualize adverse events based on the Common
+Terminology Criteria for Adverse Events (CTCAE) using stacked correspondence
+analysis as described in Diniz et.  al (2021)<doi:10.1186/s12874-021-01368-w>.")
+    (license license:gpl2+)))
+
 (define-public r-visachartr
   (package
     (name "r-visachartr")
@@ -6369,6 +6402,51 @@ unique for counting purposes.  For ease of use, all functions in vecsets have an
 argument multiple which, when set to FALSE, reverts them to the base::sets
 (alias for all the items) tools functionality.")
     (license license:lgpl3)))
+
+(define-public r-vecmatch
+  (package
+    (name "r-vecmatch")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vecmatch" version))
+       (sha256
+        (base32 "07lj4mmyki3j1p27q7slmapgs4gbakh1ji00kgfcyjbcpkv4iwd2"))))
+    (properties `((upstream-name . "vecmatch")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-vgam
+                             r-rstatix
+                             r-rlang
+                             r-productplots
+                             r-optmatch
+                             r-nnet
+                             r-mclogit
+                             r-matching
+                             r-mass
+                             r-ggpubr
+                             r-ggpp
+                             r-ggplot2
+                             r-cli
+                             r-chk
+                             r-brglm2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Polymerase3/vecmatch")
+    (synopsis
+     "Generalized Propensity Score Estimation and Matching for Multiple Groups")
+    (description
+     "This package implements the Vector Matching algorithm to match multiple
+treatment groups based on previously estimated generalized propensity scores.
+The package includes tools for visualizing initial confounder imbalances,
+estimating treatment assignment probabilities using various methods, defining
+the common support region, performing matching across multiple groups, and
+evaluating matching quality.  For more details, see Lopez and Gutman (2017)
+<doi:10.1214/17-STS612>.")
+    (license license:gpl3+)))
 
 (define-public r-vecdep
   (package

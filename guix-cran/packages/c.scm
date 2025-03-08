@@ -958,13 +958,13 @@ validation.")
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "1.6.3")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvms" version))
        (sha256
-        (base32 "06gl3m1v23bd5wr4a9vyw56acxsswy4qmmkxhbcki7b3givqavv7"))))
+        (base32 "09wr85lygkkpfcraa63m45qrfxy7zd5niww0zmbvqym16fz72xk6"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (arguments
@@ -2166,13 +2166,13 @@ subscription.  You can find the full API documentation at
 (define-public r-curesurv
   (package
     (name "r-curesurv")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "curesurv" version))
        (sha256
-        (base32 "12c22m8slw0pj38yxphwf8j9lsjwsim4gmxgs4wqivcgycvjxbqc"))))
+        (base32 "10jw9jd8n1nvn8srcpyi27d43bz66lcnia681mdmn92rh1546p6b"))))
     (properties `((upstream-name . "curesurv")))
     (build-system r-build-system)
     (arguments
@@ -21726,13 +21726,13 @@ and thus resulting two correlated C indices.")
 (define-public r-comparator
   (package
     (name "r-comparator")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comparator" version))
        (sha256
-        (base32 "1mygip50mc3jni1zc6jhjg2mx61sjgdq5w7snqdvv1rycp3fdpb1"))))
+        (base32 "0mqp2z5mgjwkj2x4dxw0zyvyls2w68rx2ygfxfgs9ylgcw6zbklp"))))
     (properties `((upstream-name . "comparator")))
     (build-system r-build-system)
     (arguments
@@ -24552,48 +24552,6 @@ data.")
      "Calculating crude sequence ratio, adjusted sequence ratio and confidence
 intervals using data mapped to the Observational Medical Outcomes Partnership
 Common Data Model.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-cohortsurvival
-  (package
-    (name "r-cohortsurvival")
-    (version "0.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CohortSurvival" version))
-       (sha256
-        (base32 "1ys65ccpi4grnk1jxs8i5pgwpvynpni2pq8iksip6j5xbdrhpyzs"))))
-    (properties `((upstream-name . "CohortSurvival")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-survival
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-patientprofiles
-                             r-omopgenerics
-                             r-magrittr
-                             r-lifecycle
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-clock
-                             r-cli
-                             r-checkmate
-                             r-cdmconnector
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://darwin-eu-dev.github.io/CohortSurvival/")
-    (synopsis "Estimate Survival from Common Data Model Cohorts")
-    (description
-     "Estimate survival using data mapped to the Observational Medical Outcomes
-Partnership common data model.  Survival can be estimated based on user-defined
-study cohorts.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cohorts
@@ -33374,13 +33332,13 @@ polynomial regression, and a range of splines.  See Blaauw (2010)
 (define-public r-claimsproblems
   (package
     (name "r-claimsproblems")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClaimsProblems" version))
        (sha256
-        (base32 "10ylcikss9ld393cb40ddkkz7as1d5bnrna0sqwdrn1cb3p9p4w2"))))
+        (base32 "00q0xdbchkqiyriimdha373dk7634z4gqzvfjrl46qrfijwq4sr9"))))
     (properties `((upstream-name . "ClaimsProblems")))
     (build-system r-build-system)
     (arguments
@@ -33393,21 +33351,22 @@ polynomial regression, and a range of splines.  See Blaauw (2010)
      "The analysis of conflicting claims arises when an amount has to be divided among
 a set of agents with claims that exceed what is available.  A rule is a way of
 selecting a division among the claimants.  This package computes the main rules
-introduced in the literature from the old times until nowadays.  The inventory
+introduced in the literature from ancient times to the present.  The inventory
 of rules covers the proportional and the adjusted proportional rules, the
 constrained equal awards and the constrained equal losses rules, the constrained
 egalitarian, the Pinilesâ and the minimal overlap rules, the random arrival
-and the Talmud rules.  Besides, the Dominguez and Thomson and the average of
-awards rules are also included.  All of them can be found in the book of W.
-Thomson (2019), How to divide when there isn't enough.  From Aristotle, the
-Talmud, and Maimonides to the axiomatics of resource allocation', with the
-exception of the average of awards rule (MirÃ¡s Calvo et al. (2022),
-<doi:10.1007/s00355-022-01414-6>).  In addition, graphical diagrams allow the
-user to represent, among others, the set of awards, the paths of awards, and the
+and the Talmud rules.  Besides, the Dominguez and Thomson and the
+average-of-awards rules are also included.  All of them can be found in the book
+by W. Thomson (2019), How to divide when there isn't enough.  From Aristotle,
+the Talmud, and Maimonides to the axiomatics of resource allocation', except for
+the average-of-awards rule, introduced by MirÃ¡s Calvo et al. (2022),
+<doi:10.1007/s00355-022-01414-6>.  In addition, graphical diagrams allow the
+user to represent, among others, the set of awards, the paths of awards, the
 schedules of awards of a rule, and some indexes.  A good understanding of the
-similarities and the differences of the rules is useful for a better decision
-making.  Therefore this package could be helpful to students, researchers and
-managers alike.")
+similarities and differences between the rules is useful for better
+decision-making.  Therefore, this package could be helpful to students,
+researchers, and managers alike.  For a more detailed explanation of the
+package, see MirÃ¡s Calvo et al. (2023), <doi:10.1016/j.dajour.2022.100160>.")
     (license license:gpl3)))
 
 (define-public r-cladorcpp
@@ -40902,6 +40861,55 @@ interface, users can customize model diagnostics and generate the underlying R
 code to reproduce the diagnostic plots and tables outside of the shiny session.
 Model diagnostics can be included in a rmarkdown document and rendered to
 desired output format.")
+    (license license:lgpl3)))
+
+(define-public r-certara-darwinreporter
+  (package
+    (name "r-certara-darwinreporter")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Certara.DarwinReporter" version))
+       (sha256
+        (base32 "1kjn7lm0nqxg3nkf9f3fgbpp4zb5k6gibxy4qr1ksdsc25c6d7nx"))))
+    (properties `((upstream-name . "Certara.DarwinReporter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xpose
+                             r-tidyr
+                             r-sortable
+                             r-shinywidgets
+                             r-shinytree
+                             r-shinymeta
+                             r-shinyjs
+                             r-shinyjqui
+                             r-shinyace
+                             r-shiny
+                             r-scales
+                             r-plotly
+                             r-jsonlite
+                             r-ggplot2
+                             r-flextable
+                             r-dt
+                             r-dplyr
+                             r-colourpicker
+                             r-certara-xpose-nlme
+                             r-bslib))
+    (home-page "https://certara.github.io/R-DarwinReporter/")
+    (synopsis
+     "Data Visualization Utilities for 'pyDarwin' Machine Learning Pharmacometric Model Development")
+    (description
+     "Utilize the shiny interface for visualizing results from a @code{pyDarwin}
+(<https://certara.github.io/@code{pyDarwin/>}) machine learning pharmacometric
+model search.  It generates Goodness-of-Fit plots and summary tables for
+selected models, allowing users to customize diagnostic outputs within the
+interface.  The underlying R code for generating plots and tables can be
+extracted for use outside the interactive session.  Model diagnostics can also
+be incorporated into an R Markdown document and rendered in various output
+formats.")
     (license license:lgpl3)))
 
 (define-public r-certainty

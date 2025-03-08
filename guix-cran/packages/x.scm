@@ -1320,6 +1320,42 @@ and weights you determine.  Thus, it is prevented that the variables affect each
 other's coefficients unrealistically.")
     (license license:gpl3+)))
 
+(define-public r-xlr
+  (package
+    (name "r-xlr")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xlr" version))
+       (sha256
+        (base32 "1l7j0v26d3wr22dbnxw6n8qlkib7xzfk3lmbfc3d0jcvsph9gyn1"))))
+    (properties `((upstream-name . "xlr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-pillar
+                             r-openxlsx
+                             r-haven
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://nhilder.github.io/xlr/")
+    (synopsis "Create Table Summaries and Export Neat Tables to 'Excel'")
+    (description
+     "This package provides a high-level interface for creating and exporting summary
+tables to Excel'.  Built on dplyr and openxlsx', it provides tools for
+generating one-way to n-way tables, and summarizing multiple response questions
+and question blocks.  Tables are exported with native Excel formatting,
+including titles, footnotes, and basic styling options.")
+    (license license:gpl3+)))
+
 (define-public r-xllim
   (package
     (name "r-xllim")

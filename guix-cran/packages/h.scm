@@ -10384,6 +10384,42 @@ R's @code{data.frame()} and @code{as.data.frame()} with @code{stringsAsFactors}
 option set to HELLNO ( which in turn equals FALSE ) by default.")
     (license license:expat)))
 
+(define-public r-hellmer
+  (package
+    (name "r-hellmer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hellmer" version))
+       (sha256
+        (base32 "0l18d5qda6plxladlwmmjayp2wqv8wkdvyi2ja5dav9ilgi7ksv3"))))
+    (properties `((upstream-name . "hellmer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s7
+                             r-r-utils
+                             r-purrr
+                             r-future
+                             r-furrr
+                             r-ellmer
+                             r-cli
+                             r-beepr))
+    (native-inputs (list r-knitr))
+    (home-page "https://dylanpieper.github.io/hellmer/")
+    (synopsis "Batch Processing for Chat Models")
+    (description
+     "Batch processing framework for ellmer chat model interactions.  Enables
+sequential and parallel processing of chat completions.  Core capabilities
+include error handling with backoff, state persistence, progress tracking, and
+retry management.  Parallel processing is implemented via the future framework.
+Additional features include structured data extraction, tool integration,
+timeout handling, verbosity control, and sound notifications.  Includes methods
+for returning chat texts, chat objects, progress status, and structured data.")
+    (license license:expat)))
+
 (define-public r-hellcor
   (package
     (name "r-hellcor")

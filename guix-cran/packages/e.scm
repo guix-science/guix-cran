@@ -18808,13 +18808,13 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "0pmd672h96ddh955ia85dsm74f5ksa0wxl4cll1jnfnjva623f9y"))))
+        (base32 "0602ykkv3s714q73da8if4w9cxcfa2wp9vxhypww3jnrxvmrg39g"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (arguments
@@ -18829,6 +18829,7 @@ root tests are supported, and an improved unit root test is included.")
                              r-lavaan
                              r-igraph
                              r-gparotation
+                             r-glassofast
                              r-glasso
                              r-ggpubr
                              r-ggplot2
@@ -18853,7 +18854,7 @@ permutation approach are available to assess configural and metric invariance.
 Hierarchical structures can be detected using Hierarchical EGA. Time series and
 intensive longitudinal data can be analyzed using Dynamic EGA, supporting
 individual, group, and population level assessments.")
-    (license license:gpl3+)))
+    (license (license:fsdg-compatible "AGPL (>= 3.0)"))))
 
 (define-public r-ega
   (package
@@ -20900,13 +20901,13 @@ associated metadata.")
 (define-public r-edgar
   (package
     (name "r-edgar")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edgar" version))
        (sha256
-        (base32 "1lzcs78cncz4ira1nnzyip1ap1iva75kfx8ynqqv79pmj8g4nms3"))))
+        (base32 "0203xv33b9brbl2dki4d56xfwyqjdivnya4j5s4gr75j3l218xpk"))))
     (properties `((upstream-name . "edgar")))
     (build-system r-build-system)
     (arguments

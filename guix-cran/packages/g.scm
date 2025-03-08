@@ -7154,25 +7154,24 @@ well as tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "04lghmv9yv0y8p0qss36529bzc25z5ly86lvcykgn7rh2zbdlvgd"))))
+        (base32 "00r8ma0xs24y3390lk12a2snf1y7qqmabpbxkjwl6vrg1r95c82m"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-litedown))
+    (native-inputs (list r-litedown r-knitr))
     (home-page "https://www.reconverse.org/grates/")
     (synopsis "Grouped Date Classes")
     (description
      "This package provides a coherent interface and implementation for creating
-grouped date classes.  This package is part of the RECON
-(<https://www.repidemicsconsortium.org/>) toolkit for outbreak analysis.")
+grouped date classes.")
     (license license:expat)))
 
 (define-public r-grateful
@@ -16966,13 +16965,13 @@ individual-level) relations.  See Gates & Molenaar (2012)
 (define-public r-gimap
   (package
     (name "r-gimap")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimap" version))
        (sha256
-        (base32 "0w90rdnzbczpj4h0686hyvq1m2hci93gpgdcddhnc69x34ixai43"))))
+        (base32 "11lwc82dzy5j7xznccjh0aydzhvpy11k1w5njhj0hm5qxv3fha2q"))))
     (properties `((upstream-name . "gimap")))
     (build-system r-build-system)
     (arguments
@@ -21011,13 +21010,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "0qd13y9hg63qabn4z8z8qxqj34gwf763wvw7zdfq2df0ik5ipg55"))))
+        (base32 "1kk0y1bc3kb4giklk3jjcc0kj3y9ncqcnrx8ycvrbzdrnr284jmi"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (arguments

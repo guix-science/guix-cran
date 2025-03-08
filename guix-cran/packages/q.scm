@@ -212,13 +212,13 @@ measures of approximation error.")
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "1dclgb9vxk9plgl6rj3l12hwzz94skpwcywhi254zyqwb6q5v3xl"))))
+        (base32 "1dj75d3ixja0zr2ks79cvm0zhl6xbzn51k0diqkh5zpcqalhmqrr"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
     (arguments
@@ -3643,13 +3643,13 @@ hardware <https://quantum-computing.ibm.com/>.")
 (define-public r-qs2
   (package
     (name "r-qs2")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qs2" version))
        (sha256
-        (base32 "011g2q769ak57g4kzyyr89ksiar3wxgpgzcnwkk8mc1xcjlcipn2"))))
+        (base32 "06h3dm9hkr7g276vir955c0ynlzr82qnj0a1iy6gw8d0wqkis35d"))))
     (properties `((upstream-name . "qs2")))
     (build-system r-build-system)
     (arguments

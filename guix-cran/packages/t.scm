@@ -1986,29 +1986,6 @@ transformation, as well as the letter-value based estimates (Hoaglin 1985), are
 also provided.")
     (license license:gpl2)))
 
-(define-public r-tukeyc
-  (package
-    (name "r-tukeyc")
-    (version "1.3-42")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TukeyC" version))
-       (sha256
-        (base32 "1mzygb3yna1qnk0n8rvwnm32kfrjd2fqwpc4kdwadw1sl6xvp44b"))))
-    (properties `((upstream-name . "TukeyC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable r-doby))
-    (home-page "https://github.com/jcfaria/TukeyC")
-    (synopsis "Conventional Tukey Test")
-    (description
-     "Perform the conventional Tukey test from formula, lm, aov, aovlist and lmer
-objects.")
-    (license license:gpl2+)))
-
 (define-public r-tugboat
   (package
     (name "r-tugboat")
@@ -9572,6 +9549,41 @@ before applying the rank based statistical techniques.  The method and its
 necessity is described in: Babak Naderi, Sebastian MÃ¶ller (2020)
 <@code{arXiv:2004.11490>}.")
     (license license:expat)))
+
+(define-public r-transformerforecasting
+  (package
+    (name "r-transformerforecasting")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "transformerForecasting" version))
+       (sha256
+        (base32 "162izh06awcm151r7dz6jq6r9bzgy2klgkp1iwgn3shpl6cmj6gn"))))
+    (properties `((upstream-name . "transformerForecasting")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tensorflow r-reticulate r-magrittr r-keras
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=transformerForecasting")
+    (synopsis "Transformer Deep Learning Model for Time Series Forecasting")
+    (description
+     "Time series forecasting faces challenges due to the non-stationarity,
+nonlinearity, and chaotic nature of the data.  Traditional deep learning models
+like Recurrent Neural Network (RNN), Long Short-Term Memory (LSTM), and Gated
+Recurrent Unit (GRU) process data sequentially but are inefficient for long
+sequences.  To overcome the limitations of these models, we proposed a
+transformer-based deep learning architecture utilizing an attention mechanism
+for parallel processing, enhancing prediction accuracy and efficiency.  This
+paper presents user-friendly code for the implementation of the proposed
+transformer-based deep learning architecture utilizing an attention mechanism
+for parallelÂ processing.  References: Nayak et al. (2024)
+<doi:10.1007/s40808-023-01944-7> and Nayak et al. (2024)
+<doi:10.1016/j.simpa.2024.100716>.")
+    (license license:gpl3)))
 
 (define-public r-transformer
   (package
@@ -18047,13 +18059,13 @@ behaviors such as @code{if_else2()} and @code{str_detect2()}.")
 (define-public r-tidyplots
   (package
     (name "r-tidyplots")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplots" version))
        (sha256
-        (base32 "0y0z9s16g50s5rsgphp235jzvjqgq0vns8ak0b5wylwrp2fddwih"))))
+        (base32 "1kf21dv28nmhakmpnzr12wcdpidfvmqmi1zkyqvfq0ql0n3y8gkj"))))
     (properties `((upstream-name . "tidyplots")))
     (build-system r-build-system)
     (arguments
@@ -18402,13 +18414,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidyllm
   (package
     (name "r-tidyllm")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyllm" version))
        (sha256
-        (base32 "1lan1rf2rdz26fax6lnkpilavkxgkc64mj1j904jjarxlfx5lj3g"))))
+        (base32 "154vllxlmv6l4nscyl8rrla9azm86zyzazbgnfdaximyiw6jj06g"))))
     (properties `((upstream-name . "tidyllm")))
     (build-system r-build-system)
     (arguments
@@ -18483,6 +18495,33 @@ al.<https://tidymodels.github.io/model-implementation-principles/>.  Fitting is
 done via collapsed Gibbs sampling.  Also implements several novel features for
 LDA such as guided models and transfer learning based on ongoing and, as yet,
 unpublished research.")
+    (license license:expat)))
+
+(define-public r-tidyklips
+  (package
+    (name "r-tidyklips")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyklips" version))
+       (sha256
+        (base32 "1h7zdgkj9vqv82wwll7viyfj8kb31lrnvphd3l6v60mibbhm2yij"))))
+    (properties `((upstream-name . "tidyklips")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-readxl r-magrittr r-haven r-dplyr))
+    (home-page "https://cran.r-project.org/package=tidyklips")
+    (synopsis
+     "Load Korea Labor & Income Panel Study (KLIPS) Data as Data Frames")
+    (description
+     "Loading the Korea Labor Institute's KLIPS (Korea Labor & Income Panel Study)
+panel data and returning data frames.  Users must download 26 years of panel
+data from the Korea Labor Institute website and save it in a folder in an
+appropriate path.  Afterwards, users can easily convert the data into a data
+frame using this package.")
     (license license:expat)))
 
 (define-public r-tidyjson

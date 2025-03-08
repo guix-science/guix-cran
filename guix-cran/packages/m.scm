@@ -9132,13 +9132,13 @@ identification\" <doi:10.1038/s41592-021-01331-z>.")
 (define-public r-msdrought
   (package
     (name "r-msdrought")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msdrought" version))
        (sha256
-        (base32 "1h8g8i1f8hynr32c7xiz72ykqd0l4fnh8vl3dhm8agxa8l0ksjpm"))))
+        (base32 "1ba9l5ylvf6sjbrn30b003lb25wif05xbiyn6hziqv8gj8vpbcir"))))
     (properties `((upstream-name . "msdrought")))
     (build-system r-build-system)
     (arguments
@@ -9146,7 +9146,7 @@ identification\" <doi:10.1038/s41592-021-01331-z>.")
       #:tests? #f))
     (propagated-inputs (list r-xts r-signal r-quantmod r-lubridate r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Turner-SCU/msdrought")
+    (home-page "https://github.com/EdM44/msdrought/")
     (synopsis "Seasonal Mid-Summer Drought Characteristics")
     (description
      "Characterization of a mid-summer drought (MSD) with precipitation based
@@ -9321,13 +9321,13 @@ Allman, Banos, and Rhodes (2019) <@code{arXiv:1908.01424>}.")
 (define-public r-mscquartets
   (package
     (name "r-mscquartets")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCquartets" version))
        (sha256
-        (base32 "1a2ba47lwdxzv358y10ni6nv2pc037q5ybi8gl3myl6vl6cxxfll"))))
+        (base32 "0v98y2wxalg0bhcpcm46b45wwxn8z9dcah3kvzrmrxs9ndj0b2yn"))))
     (properties `((upstream-name . "MSCquartets")))
     (build-system r-build-system)
     (arguments
@@ -10945,13 +10945,13 @@ Gerber, Schmid and Furrer (2021) <DOI:10.1016/j.spasta.2020.100483>.")
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrbin" version))
        (sha256
-        (base32 "1vcdx0py9qrdprxvf7kc1j16yz34v8hl8srx6bcsz9i4fsmv7hbq"))))
+        (base32 "1yvn1c9xbf4lr69ylr0az50hvvfzj4v24d278nls28rw27rc0lza"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (arguments
@@ -36226,20 +36226,19 @@ M-estimation in the vein of Tsiatis et al. (2019) <doi:10.1201/9780429192692>.")
 (define-public r-messydates
   (package
     (name "r-messydates")
-    (version "0.4.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "messydates" version))
        (sha256
-        (base32 "1zljfs9igcm95s8dmiqn18b4dhpzgrll6zcfbwwsi35kl03b7655"))))
+        (base32 "1hcrmjh1jj256y05asyzkabzp7zlwdaw2kiwav8rdir39mrjdg7z"))))
     (properties `((upstream-name . "messydates")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-stringr r-purrr r-lubridate r-dplyr))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-stringi r-purrr r-lubridate r-dplyr))
     (home-page "https://globalgov.github.io/messydates/")
     (synopsis "Flexible Class for Messy Dates")
     (description

@@ -3404,13 +3404,13 @@ cyclical projection algorithm.")
 (define-public r-ordinalsimr
   (package
     (name "r-ordinalsimr")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalsimr" version))
        (sha256
-        (base32 "0jdyyh7554kgpl5g34wifgimj36scvc7nzxrg9j3sksiwlsiib8x"))))
+        (base32 "0n6kqzgk4q7ylz1yj69r3zbm04n055szfgca8qd9q88gg7v0lqr8"))))
     (properties `((upstream-name . "ordinalsimr")))
     (build-system r-build-system)
     (arguments
@@ -3419,7 +3419,6 @@ cyclical projection algorithm.")
     (propagated-inputs (list r-withr
                              r-tidyr
                              r-shinywidgets
-                             r-shinydashboard
                              r-shinycssloaders
                              r-shiny
                              r-rms
@@ -3432,6 +3431,7 @@ cyclical projection algorithm.")
                              r-dplyr
                              r-config
                              r-coin
+                             r-callr
                              r-bslib
                              r-assertthat))
     (native-inputs (list r-knitr))

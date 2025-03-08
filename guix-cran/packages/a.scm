@@ -8776,13 +8776,13 @@ A demonstration version of the app is available at
 (define-public r-archeofrag
   (package
     (name "r-archeofrag")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag" version))
        (sha256
-        (base32 "153w5744y9smgajwv0h76pgngry3i0wasxymwzfb6pgq175s0f4k"))))
+        (base32 "0y506979vybaswl5ssvghgxhclis5ak4qvcbgrrh2812g3w5c1b5"))))
     (properties `((upstream-name . "archeofrag")))
     (build-system r-build-system)
     (arguments
@@ -21919,13 +21919,13 @@ format is also provided.")
 (define-public r-admix
   (package
     (name "r-admix")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admix" version))
        (sha256
-        (base32 "05s72p7gbpm689sm6vvrb830m43zhsm5gg015brdcggqpvf9kj9a"))))
+        (base32 "0psramahgsd2baf8lzglxiy9mxmydhbpfk473f4q6y181wnyrl2y"))))
     (properties `((upstream-name . "admix")))
     (build-system r-build-system)
     (arguments
@@ -23615,13 +23615,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.16.0")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1rkj3ppmg840brgd9q8664g7r9h6sdr48fwszq8vidpjl6qgsx0b"))))
+        (base32 "1lfln79npf46lb1cr0bxdbkg2sgjm6w2n9rb73lq5s67lisk6g4b"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (arguments
@@ -23642,13 +23642,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.16.0")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "1cnsjq4glz2a5czdhfs5p8xf0krhay1y4hs98j6p461vfmzich6g"))))
+        (base32 "19wy46g9g5kyqz616crdk10b42asaf1xfn28p0swkbxw643gfchk"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (arguments
@@ -23670,13 +23670,13 @@ and query parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.16.0")
+    (version "0.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "1aaq0va91yxp4izmdc44pbsyz3qmi8gz1wxvac0rjwks6y53nz8k"))))
+        (base32 "1q4ac5wr5f697zdwhah4ccqxlmwkssz4jwx44fn46by258fwrggp"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (arguments
@@ -26077,19 +26077,19 @@ screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
 (define-public r-aberrance
   (package
     (name "r-aberrance")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aberrance" version))
        (sha256
-        (base32 "1qf9cj0npbwzmk9xfwvav1n26c0qxhsx6zvqx88s89sa8s85c66m"))))
+        (base32 "1v53sxl1vdw7lff385q8s1yc0895vdkrdjv0s64ly5czrxhbk6j0"))))
     (properties `((upstream-name . "aberrance")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass))
+    (propagated-inputs (list r-rcpp r-mass))
     (home-page "https://github.com/kyliegorney/aberrance")
     (synopsis "Detect Aberrant Behavior in Test Data")
     (description

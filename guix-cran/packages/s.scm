@@ -9504,44 +9504,6 @@ work by Zou et al (2022) <doi:10.1161/STROKEAHA.121.037744>.  The
 <doi:10.18637/jss.v093.i02>.")
     (license license:gpl3)))
 
-(define-public r-strmps
-  (package
-    (name "r-strmps")
-    (version "0.6.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "STRMPS" version))
-       (sha256
-        (base32 "0114m1qbs866ghpms4iijmf7dx66dazzdv7j8mcx7lizzc80ws2d"))))
-    (properties `((upstream-name . "STRMPS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shortread
-                             r-pwalign
-                             r-purrr
-                             r-iranges
-                             r-dplyr
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=STRMPS")
-    (synopsis
-     "Analysis of Short Tandem Repeat (STR) Massively Parallel Sequencing (MPS) Data")
-    (description
-     "Loading, identifying, aggregating, manipulating, and analysing short tandem
-repeat regions of massively parallel sequencing data in forensic genetics.  The
-analyses and framework implemented in this package relies on the papers of
-Vilsen et al. (2017) <doi:10.1016/j.fsigen.2017.01.017> and Vilsen et al. (2018)
-<doi:10.1016/j.fsigen.2018.04.003>.  Note: that the parallelisation in the
-package relies on @code{mclapply()} and, thus, speed-ups will only be seen on
-UNIX based systems.")
-    (license license:expat)))
-
 (define-public r-stripless
   (package
     (name "r-stripless")
@@ -11443,13 +11405,13 @@ annotated story data.  To learn more about the project visit
 (define-public r-stortingscrape
   (package
     (name "r-stortingscrape")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stortingscrape" version))
        (sha256
-        (base32 "0a3i9dfd1mp1xmwcslvrlphf0j0z1b45hpaz9ady73kr7d5zs2j8"))))
+        (base32 "0mckh0l8rdd1ijfn4py9dzg3x6j8ksgsgb2vm8q1pwby8ihcdnww"))))
     (properties `((upstream-name . "stortingscrape")))
     (build-system r-build-system)
     (arguments
@@ -47601,6 +47563,34 @@ the position, the transition effect, and more.")
 shiny session.")
     (license license:gpl2)))
 
+(define-public r-shinytimer
+  (package
+    (name "r-shinytimer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyTimer" version))
+       (sha256
+        (base32 "1765jqm3gfanqvhkgkkp96xc99j6hfcmypjkvaa7ghv5cz7961nf"))))
+    (properties `((upstream-name . "shinyTimer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-htmltools))
+    (home-page "https://cran.r-project.org/package=shinyTimer")
+    (synopsis "Customizable Timer for 'shiny' Applications")
+    (description
+     "This package provides a customizable timer widget for shiny applications.  Key
+features include countdown and count-up mode, multiple display formats
+(including simple seconds, minutes-seconds, hours-minutes-seconds, and
+minutes-seconds-centiseconds), ability to pause, resume, and reset the timer.
+shinytimer widget can be particularly useful for creating interactive and
+time-sensitive applications, tracking session times, setting time limits for
+tasks or quizzes, and more.")
+    (license license:expat)))
+
 (define-public r-shinytime
   (package
     (name "r-shinytime")
@@ -54673,6 +54663,50 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
 & Faes, Christel & Damme, Pierre & Beutels, Philippe., 2013)
 <doi:10.1007/978-1-4614-4072-7>.")
     (license license:expat)))
+
+(define-public r-serolyzer
+  (package
+    (name "r-serolyzer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SerolyzeR" version))
+       (sha256
+        (base32 "09gafg07nhcfpjnbr4vxy6wfh05cfvyd6yvv2pxv9irrjl2r6gaz"))))
+    (properties `((upstream-name . "SerolyzeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-svglite
+                             r-stringr
+                             r-stringi
+                             r-scales
+                             r-readxl
+                             r-readr
+                             r-r6
+                             r-r-utils
+                             r-png
+                             r-nplr
+                             r-lubridate
+                             r-ggrepel
+                             r-ggplot2
+                             r-fs
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mini-pw/SerolyzeR")
+    (synopsis
+     "Reading, Quality Control and Preprocessing of MBA (Multiplex Bead Assay) Data")
+    (description
+     "Speeds up the process of loading raw data from MBA (Multiplex Bead Assay)
+examinations, performs quality control checks, and automatically normalises the
+data, preparing it for more advanced, downstream tasks.  The main objective of
+the package is to create a simple environment for a user, who does not
+necessarily have experience with R language.  The package is developed within
+the project @code{PvSTATEM}', which is an international project aiming for
+malaria elimination.")
+    (license license:bsd-3)))
 
 (define-public r-serocalculator
   (package
@@ -63086,6 +63120,40 @@ scan\" JÃ¼rgen Wilbert (2025) <https://jazznbass.github.io/scan-Book/>.")
      "Compute ploidy of single cells (or nuclei) based on single-cell (or
 single-nucleus) ATAC-seq (Assay for Transposase-Accessible Chromatin using
 sequencing) data <https://github.com/fumi-github/@code{scPloidy>}.")
+    (license license:expat)))
+
+(define-public r-scpipeline
+  (package
+    (name "r-scpipeline")
+    (version "0.2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scPipeline" version))
+       (sha256
+        (base32 "0afvy5wxhm31gn9x08j2fa8w4wk8xkn0kg99f1xhl6334zw5s7va"))))
+    (properties `((upstream-name . "scPipeline")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-singler
+                             r-seurat
+                             r-rlang
+                             r-magrittr
+                             r-dplyr
+                             r-celldex
+                             r-biomart
+                             r-batchelor))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scPipeline")
+    (synopsis
+     "Wrapper for 'Seurat' and Related R Packages for End-to-End Single Cell Analysis")
+    (description
+     "Reports markers list, differentially expressed genes, associated pathways,
+cell-type annotations, does batch correction and other related single cell
+analyses all wrapped within Seurat'.")
     (license license:expat)))
 
 (define-public r-scpi

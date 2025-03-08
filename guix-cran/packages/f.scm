@@ -22082,13 +22082,13 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
 (define-public r-fastml
   (package
     (name "r-fastml")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastml" version))
        (sha256
-        (base32 "1cpgpz78ki04pdlv4rk9bv38a6larr2ff4x7wa7hf3x55aw574p5"))))
+        (base32 "0a3ia2jgadgvdpjr026qqp3qbpzka9iww71zlzcba5jnafn7v2r4"))))
     (properties `((upstream-name . "fastml")))
     (build-system r-build-system)
     (arguments
@@ -22111,6 +22111,7 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-reshape2
                              r-recipes
                              r-rcolorbrewer
+                             r-purrr
                              r-proc
                              r-probably
                              r-plsmod
@@ -22119,6 +22120,8 @@ be submitted to: <https://github.com/mskogholt/@code{fastNaiveBayes/issues>}.")
                              r-parsnip
                              r-naniar
                              r-moments
+                             r-missforest
+                             r-mice
                              r-magrittr
                              r-knitr
                              r-kableextra
@@ -25620,6 +25623,37 @@ data.table object @code{factorSPGMI}'.  The @code{stocksCRSP} and
 @code{factorsSPGMI} data are not covered by the GPL-2 license, are not provided
 as open source of any kind, and they are not to be redistributed in any form.")
     (license license:gpl2)))
+
+(define-public r-facilityepimath
+  (package
+    (name "r-facilityepimath")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "facilityepimath" version))
+       (sha256
+        (base32 "0gnx2q71jw7mpsp21q9k9arkcfpzc2i6crcr5vwjp6cv2m1zh5kd"))))
+    (properties `((upstream-name . "facilityepimath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/EpiForeSITE/facilityepimath")
+    (synopsis
+     "Analyze Mathematical Models of Healthcare Facility Transmission")
+    (description
+     "Calculate useful quantities for a user-defined differential equation model of
+infectious disease transmission among individuals in a healthcare facility.
+Input rates of transition between states of individuals with and without the
+disease-causing organism, distributions of states at facility admission,
+relative infectivity of transmissible states, and the facility length of stay
+distribution.  Calculate the model equilibrium and the basic facility
+reproduction number, as described in Toth et al. (2025)
+<doi:10.1101/2025.02.21.25322698>.")
+    (license license:expat)))
 
 (define-public r-facerec
   (package

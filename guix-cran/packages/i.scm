@@ -1875,13 +1875,13 @@ criteria.")
 (define-public r-isotracer
   (package
     (name "r-isotracer")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotracer" version))
        (sha256
-        (base32 "0ijnjm2hhhk29kllmdmb4rhmmfiavgijsiqvmsp6d77j8i0p2f7r"))))
+        (base32 "1ciph8mq48iapyc7hwzh0x89gapwfsqxishqjshkza5aqcjd1491"))))
     (properties `((upstream-name . "isotracer")))
     (build-system r-build-system)
     (arguments
@@ -7044,38 +7044,6 @@ also included.")
      "This package performs Goodness of Fit for regression models using Integrated
 Regression method.  Works for several different fitting techniques.")
     (license license:gpl2+)))
-
-(define-public r-intrees
-  (package
-    (name "r-intrees")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "inTrees" version))
-       (sha256
-        (base32 "18gbw7v4xbsxdifk32qga3h3j17w40ljs1mkk0b4fzwin9z4sh27"))))
-    (properties `((upstream-name . "inTrees")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-xgboost
-                             r-rrf
-                             r-gbm
-                             r-data-table
-                             r-arules))
-    (home-page "https://cran.r-project.org/package=inTrees")
-    (synopsis "Interpret Tree Ensembles")
-    (description
-     "For tree ensembles such as random forests, regularized random forests and
-gradient boosted trees, this package provides functions for: extracting,
-measuring and pruning rules; selecting a compact rule set; summarizing rules
-into a learner; calculating frequent variable interactions; formatting rules in
-latex code.  Reference: Interpreting tree ensembles with @code{inTrees} (Houtao
-Deng, 2019, <doi:10.1007/s41060-018-0144-8>).")
-    (license license:gpl3+)))
 
 (define-public r-intradaymodel
   (package
@@ -16190,13 +16158,13 @@ the reference sources, respectively.")
 (define-public r-ieegio
   (package
     (name "r-ieegio")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieegio" version))
        (sha256
-        (base32 "1gxd80l1g4bzbxbjp5l9wyfp1hknnjbiycahjjmxv77b3l65b08l"))))
+        (base32 "1ma8dhv43brq3lgp18hd05gjabhv1wwacas93y7xg3sdfahyhkqm"))))
     (properties `((upstream-name . "ieegio")))
     (build-system r-build-system)
     (arguments
@@ -20458,23 +20426,26 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
 (define-public r-ibawds
   (package
     (name "r-ibawds")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibawds" version))
        (sha256
-        (base32 "0hkpp21gk980n6gii7444kms3bnxyj9qcapigk1x5xya3djybj7c"))))
+        (base32 "1bldwig1psgn4z496blzbs6qwjxwhyhv2410axqk1w41a1zxsl5f"))))
     (properties `((upstream-name . "ibawds")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-scales
                              r-rstudioapi
                              r-rlang
                              r-remotes
+                             r-readr
+                             r-purrr
                              r-magrittr
                              r-ggplot2
                              r-dslabs

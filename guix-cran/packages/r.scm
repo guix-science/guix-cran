@@ -20269,13 +20269,13 @@ more details.")
 (define-public r-rmsmd
   (package
     (name "r-rmsmd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmsMD" version))
        (sha256
-        (base32 "116zkbkj5frf4b33ldiivzz6yxl6jsqg7kl1d64ac3sydf8lkxg1"))))
+        (base32 "193yxz5wz7vdaghka33mdrj3m1ynizfipc83ly4s7bxif0hwdgdv"))))
     (properties `((upstream-name . "rmsMD")))
     (build-system r-build-system)
     (arguments
@@ -44629,13 +44629,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppSimdJson" version))
        (sha256
-        (base32 "0fvmcn56d8p0wf3ax9w7l8s72zfmxkq0pf8z5lm4v6l6vj7wrfgz"))))
+        (base32 "0p1yfdsnikr6j2kcpbkv20fnskdpx6plq1yli6kis2q2cclypn17"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (arguments

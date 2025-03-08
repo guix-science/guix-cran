@@ -14692,13 +14692,13 @@ analysis is available for free download from the website.  In 2012, methods for
 (define-public r-biocro
   (package
     (name "r-biocro")
-    (version "3.1.3")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioCro" version))
        (sha256
-        (base32 "1r0q6rwn6qv8wh5j0qyf49dzfl1vy211wbnjkcjhg27jahf553fc"))))
+        (base32 "0j92xml8g8daj8c3g895rbziri897vr0ivgjhgxs09a1ggj4w2jx"))))
     (properties `((upstream-name . "BioCro")))
     (build-system r-build-system)
     (arguments
@@ -26339,35 +26339,25 @@ mediation effects are reported as analytic results.")
 (define-public r-bayesianmcpmod
   (package
     (name "r-bayesianmcpmod")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianMCPMod" version))
        (sha256
-        (base32 "0qcaknkasnrx7mxpd685p7iskz9zr97kpn52rkyjqvl6ks6jjj7d"))))
+        (base32 "07dzirqnjq7s97ww3lyxm47gw7bf351yvaiv8vr4jlzbp089w8c8"))))
     (properties `((upstream-name . "BayesianMCPMod")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-rbest r-nloptr r-ggplot2 r-dosefinding
+      #:tests? #f))
+    (propagated-inputs (list r-rbest
+                             r-nloptr
+                             r-ggplot2
+                             r-future-apply
+                             r-dosefinding
                              r-checkmate))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-knitr))
     (home-page "https://boehringer-ingelheim.github.io/BayesianMCPMod/")
     (synopsis
      "Simulate, Evaluate, and Analyze Dose Finding Trials with Bayesian MCPMod")
@@ -26884,19 +26874,20 @@ factor and leave-one-out cross-validation methods.  References: Hyndman (2017)
 (define-public r-bayesfmri
   (package
     (name "r-bayesfmri")
-    (version "0.3.11")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesfMRI" version))
        (sha256
-        (base32 "19yn8d3jbh1fpxdmqvz3yflnml4fdxb966w44yqha4wjhzfp6hym"))))
+        (base32 "1s8x0ixh7a1dj5ravz7bmx1ywy90c2ii97w45sa62v9i23bpzcgx"))))
     (properties `((upstream-name . "BayesfMRI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-viridislite
+                             r-sp
                              r-rcppeigen
                              r-rcpp
                              r-matrixstats
@@ -26905,7 +26896,8 @@ factor and leave-one-out cross-validation methods.  References: Hyndman (2017)
                              r-foreach
                              r-fmritools
                              r-excursions
-                             r-ciftitools))
+                             r-ciftitools
+                             r-car))
     (home-page "https://github.com/mandymejia/BayesfMRI")
     (synopsis "Spatial Bayesian Methods for Task Functional MRI Studies")
     (description
@@ -32086,6 +32078,32 @@ cluster, rather than across all subgroups.  This method can be applied to the
 design and analysis of multi-group clinical trials with binary outcomes.
 Reference: Nan Chen and J. Jack Lee (2019) <doi:10.1002/bimj.201700275>.")
     (license license:gpl3+)))
+
+(define-public r-bacenapi
+  (package
+    (name "r-bacenapi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BacenAPI" version))
+       (sha256
+        (base32 "0hbrclkdhvzlscw52j3kaxjrwdwkan29c2jzzh799gdhib2bk5rc"))))
+    (properties `((upstream-name . "BacenAPI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-magrittr r-jsonlite r-httr2 r-httr))
+    (home-page "https://github.com/LissandroSousa/BacenAPI")
+    (synopsis "Data Collection from the Central Bank of Brazil")
+    (description
+     "This package provides tools to facilitate the access and processing of data from
+the Central Bank of Brazil API. The package allows users to retrieve economic
+and financial data, transforming them into usable tabular formats for further
+analysis.  The data is obtained from the Central Bank of Brazil API:
+<https://api.bcb.gov.br/dados/serie/bcdata.sgs.{series_code}/dados?formato=json&@code{dataInicial={start_date}&dataFinal={end_date}>}.")
+    (license license:expat)))
 
 (define-public r-bacct
   (package
