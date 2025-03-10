@@ -5476,13 +5476,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "0qvxqy70c1nidrc9nymm6c9kvrnj8hcjnnnmyhva2yf5zanpqhvk"))))
+        (base32 "13hnkcwhkss8334jv927zlp991157rq89m31c20rss963a5dspjf"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments

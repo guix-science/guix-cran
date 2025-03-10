@@ -3631,13 +3631,13 @@ R.")
 (define-public r-exametrika
   (package
     (name "r-exametrika")
-    (version "1.2.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exametrika" version))
        (sha256
-        (base32 "199q4bhl6x1xwlrwxjvmczpd3waa39y46j98gs23vy3srx1n6inv"))))
+        (base32 "1d2xwid579dikaqz1kwlw1h5irabv47yngq5r43j1dryjzpbrjd6"))))
     (properties `((upstream-name . "exametrika")))
     (build-system r-build-system)
     (arguments
@@ -9496,32 +9496,6 @@ different experimental set ups along with different statistical criteria to
 measure the performance of these designs.  It consist of the function
 @code{equivalent_BSPD()}.")
     (license license:gpl3)))
-
-(define-public r-equatiomatic
-  (package
-    (name "r-equatiomatic")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "equatiomatic" version))
-       (sha256
-        (base32 "1zb8pnpdvn6159h43h4fr9sfp1fv9rgknv4wv1wra6ris204764b"))))
-    (properties `((upstream-name . "equatiomatic")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-knitr r-broom-mixed r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/datalorax/equatiomatic")
-    (synopsis "Transform Models into 'LaTeX' Equations")
-    (description
-     "The goal of equatiomatic is to reduce the pain associated with writing
-@code{LaTeX} formulas from fitted models.  The primary function of the package,
-@code{extract_eq()}, takes a fitted model object as its input and returns the
-corresponding @code{LaTeX} code for the model.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-equatemultiple
   (package
@@ -19129,13 +19103,13 @@ motifs of interest using regular expression searches and hidden Markov models
 (define-public r-effectplots
   (package
     (name "r-effectplots")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "effectplots" version))
        (sha256
-        (base32 "0qmiqi56sd02rqnysdr7yw7mhwmb0l8lsfvjjqbb618n456f47li"))))
+        (base32 "1ifki0dq7v196j4vs2j79x6bc9nqlmbjzcp63l2q886djjlimrqf"))))
     (properties `((upstream-name . "effectplots")))
     (build-system r-build-system)
     (arguments

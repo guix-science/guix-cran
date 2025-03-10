@@ -18234,13 +18234,13 @@ Guillas (2021) <doi:10.1137/20M1323771> and Ming, Williamson, & Guillas (2023)
 (define-public r-dgp4lcf
   (package
     (name "r-dgp4lcf")
-    (version "1.0.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DGP4LCF" version))
        (sha256
-        (base32 "1v8wh52wcxs4adp1h9xplj5vych867scjrw32pqdczmiawi3q9d5"))))
+        (base32 "0y7dcbrk9c97b7dxq61xqkxnfzxzhw5sbypknc96d2g3wf33f846"))))
     (properties `((upstream-name . "DGP4LCF")))
     (build-system r-build-system)
     (arguments

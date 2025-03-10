@@ -5475,19 +5475,19 @@ computations.")
 (define-public r-opticskxi
   (package
     (name "r-opticskxi")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opticskxi" version))
        (sha256
-        (base32 "1na5x51jpwzqnw32mnnd84yywaijjdaskfg34ln2kk7njhnfkxrv"))))
+        (base32 "01bkbrh0d0s4k41z761nqqsv9d37v4gwwah75w72dm8336kghx8l"))))
     (properties `((upstream-name . "opticskxi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-text2vec r-rlang r-magrittr r-ggplot2))
+    (propagated-inputs (list r-rlang r-matrix r-magrittr r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/thomaschln/opticskxi")
     (synopsis "OPTICS K-Xi Density-Based Clustering")
@@ -5507,7 +5507,8 @@ parameter as the OPTICS Xi method.  Combined with a framework that compares
 models with varying parameters, the OPTICS k-Xi method can identify groups in
 noisy datasets with unknown number of clusters.  Results on summarized genetic
 data of 1,200 patients are in Charlon T. (2019)
-<doi:10.13097/archive-ouverte/unige:161795>.")
+<doi:10.13097/archive-ouverte/unige:161795>.  A short video tutorial can be
+found at <https://www.youtube.com/watch?v=P2X@code{AjqI5Lc4/>}.")
     (license license:gpl3)))
 
 (define-public r-optical
@@ -10761,30 +10762,6 @@ other software can also be explored and optimized.  This package has been
 peer-reviewed by @code{rOpenSci}.  Araya-Salas et al. (2022)
 <doi:10.1101/2022.12.13.520253>.")
     (license license:gpl2+)))
-
-(define-public r-ohtadstats
-  (package
-    (name "r-ohtadstats")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ohtadstats" version))
-       (sha256
-        (base32 "0hkjs322vii1dsminlkwpwi12sc9pd88jag7p4dmy6nfw2hh2d69"))))
-    (properties `((upstream-name . "ohtadstats")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lattice))
-    (home-page "https://github.com/pfpetrowski/OhtaDStats")
-    (synopsis "Tomoka Ohta D Statistics")
-    (description
-     "Calculate's Tomoka Ohta's partitioning of linkage disequilibrium, deemed
-D-statistics, for pairs of loci.  Petrowski et al. (2019)
-<doi:10.5334/jors.250>.")
-    (license license:expat)))
 
 (define-public r-ohsome
   (package

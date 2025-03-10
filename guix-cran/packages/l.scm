@@ -13777,28 +13777,29 @@ function-based age-by-stage matrices and raw and function-based Leslie matrices.
 (define-public r-leem
   (package
     (name "r-leem")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leem" version))
        (sha256
-        (base32 "1sm9v3m95fbg3apvv3jjf47qxn8v6ipdsm1103dqk4zngmsz4xia"))))
+        (base32 "1n1jiljxfhh25w0lah36zmri16xrkskd2k4afpvdpa4dkni9z1qq"))))
     (properties `((upstream-name . "leem")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tkrplot))
+    (propagated-inputs (list r-tkrplotr r-tkrplot r-manipulate r-diagram
+                             r-crayon))
     (home-page "https://bendeivide.github.io/project/leem/")
     (synopsis "Laboratory of Teaching to Statistics and Mathematics")
     (description
-     "Educational tool for teaching of statistics and mathematics in primary and
-higher education.  The objective is to assist in teaching/learning for both
-student study planning and teacher teaching strategies.  The leem package will
-try to bring, in a simple and at the same time in-depth, knowledge of statistics
-and mathematics to everyone who wants to study these areas of knowledge.  The
-main function of the package is @code{leem()} function.")
+     "An educational package for teaching statistics and mathematics in both primary
+and higher education.  The objective is to assist in the teaching/learning
+process, both for student study planning and teacher teaching strategies.  The
+leem package aims to provide, in a simple yet in-depth manner, knowledge of
+statistics and mathematics to anyone who wants to study these areas of
+knowledge.")
     (license license:gpl2+)))
 
 (define-public r-ledger

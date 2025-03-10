@@ -11003,39 +11003,6 @@ measurement models.  Lee, Adam, Kang, & Whittaker (2023).
 of Education Sciences, U.S. Department of Education, through Grant R305D210036.")
     (license license:gpl3)))
 
-(define-public r-flowtracer
-  (package
-    (name "r-flowtracer")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flowTraceR" version))
-       (sha256
-        (base32 "1nl7yfzsh3bhqdildb77wmnapich4xn6y2j8rlmrb4w7mq9jnhba"))))
-    (properties `((upstream-name . "flowTraceR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr
-                             r-comprehenr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/OKdll/flowTraceR")
-    (synopsis
-     "Tracing Information Flow for Inter-Software Comparisons in Mass Spectrometry-Based Bottom-Up Proteomics")
-    (description
-     "Useful functions to standardize software outputs from @code{ProteomeDiscoverer},
-Spectronaut, DIA-NN and @code{MaxQuant} on precursor, modified peptide and
-proteingroup level and to trace software differences for identifications such as
-varying proteingroup denotations for common precursor.")
-    (license license:expat)))
-
 (define-public r-flowscreen
   (package
     (name "r-flowscreen")

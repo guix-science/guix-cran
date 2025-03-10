@@ -6653,13 +6653,13 @@ based on Goldsmith-Pinkham, Hull, and KolesÃ¡r (2024)
 (define-public r-multdm
   (package
     (name "r-multdm")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multDM" version))
        (sha256
-        (base32 "132kqbrg1ism2byhal50j0hr0qqlnd30db9z6vvjc977d03hf41l"))))
+        (base32 "07253nkc8kh0q2vjawmmmiz8bqhm0grnc0hlbwcg1hd27p14l3ys"))))
     (properties `((upstream-name . "multDM")))
     (build-system r-build-system)
     (arguments
@@ -11152,45 +11152,6 @@ Fisheries\" ISBN 9780367469894, published in 2021 by Chapman & Hall in their
 \"Using R series\".  There are numerous functions and data-sets that are used in
 the book's many practical examples.")
     (license license:gpl3)))
-
-(define-public r-mpwr
-  (package
-    (name "r-mpwr")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mpwR" version))
-       (sha256
-        (base32 "16j81a4minl8710fl32k05g4xcpii7r3jqzypkmvxyhrb1mdvc1q"))))
-    (properties `((upstream-name . "mpwR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-upsetr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-plotly
-                             r-magrittr
-                             r-ggplot2
-                             r-forcats
-                             r-flowtracer
-                             r-dplyr
-                             r-data-table
-                             r-comprehenr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mpwR")
-    (synopsis
-     "Standardized Comparison of Workflows in Mass Spectrometry-Based Bottom-Up Proteomics")
-    (description
-     "Useful functions to analyze proteomic workflows including number of
-identifications, data completeness, missed cleavages, quantitative and retention
-time precision etc.  Various software outputs are supported such as
-@code{ProteomeDiscoverer}', Spectronaut', DIA-NN and @code{MaxQuant}'.")
-    (license license:expat)))
 
 (define-public r-mpv
   (package
@@ -45276,13 +45237,13 @@ matching and linear regression for causal inference in observational studies.")
 (define-public r-matchit
   (package
     (name "r-matchit")
-    (version "4.7.0")
+    (version "4.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchIt" version))
        (sha256
-        (base32 "0z1si29hlnnq4ax4hg5zxxx5a5szg163bwafs68ki4wmvw4wbc6b"))))
+        (base32 "12crrfzn4xfhkhkp3d4bbkq15g302459vw1cnaj7khhi8brnzf2p"))))
     (properties `((upstream-name . "MatchIt")))
     (build-system r-build-system)
     (arguments
@@ -47752,57 +47713,6 @@ and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
      "Easily create functions to map between different sets of values, such as for
 re-labelling categorical variables.")
     (license license:gpl3)))
-
-(define-public r-mapping
-  (package
-    (name "r-mapping")
-    (version "1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mapping" version))
-       (sha256
-        (base32 "0c1kghgzkbicy35dgwbyw6085glagdnck4dkcj7z89i3mgrjm17s"))))
-    (properties `((upstream-name . "mapping")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-viridislite
-                             r-tmaptools
-                             r-tmap
-                             r-stringr
-                             r-stringi
-                             r-sf
-                             r-s2
-                             r-mapview
-                             r-leafsync
-                             r-leafpop
-                             r-leaflet
-                             r-jsonlite
-                             r-httr
-                             r-htmltools
-                             r-ggplot2
-                             r-geojsonio
-                             r-dplyr
-                             r-curl
-                             r-cartography))
-    (home-page "https://mappinguniverse.github.io/mapping/index.html")
-    (synopsis "Automatic Download, Linking, Manipulating Coordinates for Maps")
-    (description
-     "Maps are an important tool to visualise variables distribution across different
-spatial objects.  The mapping process requires to link the data with coordinates
-and then generate the correspondent map.  This package provide coordinates,
-linking and mapping functions for an automatic, flexible and easy approach of
-external functions.  The package provides an easy, flexible and automatic unit.
-Geographical coordinates are provided in the package and automatically linked
-with the input data to generate maps with internal provided functions or
-external functions.  Provide an easy, flexible and automatic approach to
-potentially download updated coordinates, to link statistical units with
-coordinates and to aggregate variables based on the spatial hierarchy of units.
-The object returned from the package can be used for thematic maps with the
-build-in functions provided in mapping or with other packages already available.")
-    (license license:gpl2+)))
 
 (define-public r-mapperalgo
   (package

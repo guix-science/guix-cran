@@ -2643,33 +2643,6 @@ Pflughaupt, Claudia Feng, Aleksandr B. Sahakyan (2024) Bioinformatics
 (submitted).")
     (license license:gpl3)))
 
-(define-public r-kmers
-  (package
-    (name "r-kmers")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kmeRs" version))
-       (sha256
-        (base32 "0wybkzf3l5adgchdxklipkmd063x5nsdqrnhjz0kghc27v7h5zdg"))))
-    (properties `((upstream-name . "kmeRs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-pwalign r-biostrings r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/urniaz/kmeRs")
-    (synopsis "K-Mers Similarity Score Matrix and HeatMap")
-    (description
-     "Similarity Score Matrix and @code{HeatMap} for nucleic and amino acid k-mers.
-Similarity score is evaluated by Point Accepted Mutation (PAM) and BLOcks
-SUbstitution Matrix (BLOSUM).  The 30, 40, 70, 120, 250 and 62, 45, 50, 62, 80,
-100 matrix versions are available for PAM and BLOSUM, respectively.  Alignment
-is evaluated by local and global alignment.")
-    (license license:gpl3)))
-
 (define-public r-kmedians
   (package
     (name "r-kmedians")

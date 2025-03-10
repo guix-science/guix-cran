@@ -4180,13 +4180,13 @@ Lopez-de-Ullibarri and Jacome (2013) <doi:10.18637/jss.v054.i11>.")
 (define-public r-survpen
   (package
     (name "r-survpen")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survPen" version))
        (sha256
-        (base32 "1gab8gyxb83srxyx2hy48l5n9d43jrqx4cgb9a9whaa8hqarznfn"))))
+        (base32 "0cmxv8ahc217bzyzcv3gljyfd69g74ckvf3476h760l3d5zvfh27"))))
     (properties `((upstream-name . "survPen")))
     (build-system r-build-system)
     (arguments
@@ -62413,13 +62413,13 @@ correlated analysis methods.")
 (define-public r-scrnastat
   (package
     (name "r-scrnastat")
-    (version "0.1.1")
+    (version "0.1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scRNAstat" version))
        (sha256
-        (base32 "0yv5np7jafmygg77bwisrha5y2rdb1va906ngzs4zc8mvxr0dvlm"))))
+        (base32 "1bdv3239gakm24686x5s92wk41fx5ipwyd6gj1zz4q8blhrwhnkr"))))
     (properties `((upstream-name . "scRNAstat")))
     (build-system r-build-system)
     (arguments

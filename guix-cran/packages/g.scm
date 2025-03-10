@@ -8209,13 +8209,13 @@ information: <doi:10.5117/CCR2023.1.003.CHAN>.")
 (define-public r-grafify
   (package
     (name "r-grafify")
-    (version "4.0.1")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grafify" version))
        (sha256
-        (base32 "0349sz0gykm69gf7n54g8snvjb8fkfx4cgfwp8bpvib4r9dbsllp"))))
+        (base32 "0sfxc66s1l7zcmn20gxbjm4dcwky40gkbqs57zg360vgkdlw4zfr"))))
     (properties `((upstream-name . "grafify")))
     (build-system r-build-system)
     (arguments
@@ -8231,6 +8231,7 @@ information: <doi:10.5117/CCR2023.1.003.CHAN>.")
                              r-hmisc
                              r-ggplot2
                              r-emmeans
+                             r-dplyr
                              r-car))
     (home-page "https://github.com/ashenoy-cmbi/grafify")
     (synopsis "Easy Graphs for Data Visualisation and Linear Models for ANOVA")
@@ -8247,8 +8248,7 @@ model (gam) using @code{mgcv()}.  Obtain estimated marginal means and perform
 post-hoc comparisons on fitted models (via @code{emmeans()}).  Also includes
 small datasets for practising code and teaching basics before users move on to
 more complex designs.  See vignettes for details on usage
-<https://grafify-vignettes.netlify.app/>.  Citation:
-<doi:10.5281/zenodo.5136508>.")
+<https://grafify.shenoylab.com/>.  Citation: <doi:10.5281/zenodo.5136508>.")
     (license license:gpl2+)))
 
 (define-public r-gradientpickerd3
@@ -25543,13 +25543,13 @@ coordinates of a new individual from Gower's distance.")
 (define-public r-geospt
   (package
     (name "r-geospt")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geospt" version))
        (sha256
-        (base32 "1fmvrsmh4nfc4g8z9ca5k4c4pm7wy218crhigp58n6i6avvf9scz"))))
+        (base32 "060952gblj078r3j246z72c3piviy6gprgsx0w60lyc51k908mz5"))))
     (properties `((upstream-name . "geospt")))
     (build-system r-build-system)
     (arguments
@@ -33401,13 +33401,13 @@ Existence in the journal Ecology and Evolution.")
 (define-public r-gaupro
   (package
     (name "r-gaupro")
-    (version "0.2.13")
+    (version "0.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GauPro" version))
        (sha256
-        (base32 "0l1sizyzrmxl9svdx1hhfg4aq00g1ss9ply3i2ll344nd9j54fvz"))))
+        (base32 "1q1bjzi14873x673am1m3zgisildajcb73r951alm9glaihszxj1"))))
     (properties `((upstream-name . "GauPro")))
     (build-system r-build-system)
     (arguments

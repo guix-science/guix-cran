@@ -10953,13 +10953,13 @@ kind are warmly welcomed.")
 (define-public r-blocklength
   (package
     (name "r-blocklength")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blocklength" version))
        (sha256
-        (base32 "1p9awm3a6yda0jf1si0xz5gni293j10i60m1za0aklmcxf9897sv"))))
+        (base32 "1dm2rnkhm22rn3lks7fl77f7m391vh8xj5bf3k4q0k6z63v5njzb"))))
     (properties `((upstream-name . "blocklength")))
     (build-system r-build-system)
     (arguments

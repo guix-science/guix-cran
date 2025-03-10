@@ -2581,35 +2581,6 @@ and analysis and 5) read the results.  Statistical analysis call other package
 function such as Kendall tests or @code{cusum()} function.")
     (license license:gpl2+)))
 
-(define-public r-tt
-  (package
-    (name "r-tt")
-    (version "0.98")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TT" version))
-       (sha256
-        (base32 "0vnj2lmhn8qk3p8m8kvamp1af71iw3l75ds0mm9c8vinw2z4fzg3"))))
-    (properties `((upstream-name . "TT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-purrr
-                             r-magrittr
-                             r-htmlwidgets
-                             r-dt
-                             r-dplyr
-                             r-data-tree))
-    (home-page "https://cran.r-project.org/package=TT")
-    (synopsis "Display Tree Structured Data using Datatable Widget (DT)")
-    (description
-     "Wrapper of datatable widget, allowing display of data.tree objects.  All
-arguments of the data.tree become columns and each node is a row.  Adds column
-with buttons allowing folding and unfolding the levels.")
-    (license license:expat)))
-
 (define-public r-tsxtreme
   (package
     (name "r-tsxtreme")
@@ -18938,32 +18909,6 @@ combinations of efficient functions to facilitate frequently-used data
 operations.")
     (license license:expat)))
 
-(define-public r-tidyformula
-  (package
-    (name "r-tidyformula")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyformula" version))
-       (sha256
-        (base32 "1sz5v8l1gpci1jzs87qgxr95nr881rz5lidlfwgfi8963kgvigvg"))))
-    (properties `((upstream-name . "tidyformula")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-purrr r-dplyr))
-    (home-page "https://cran.r-project.org/package=tidyformula")
-    (synopsis "Build Formulas Using Tidy Selection Helpers")
-    (description
-     "This package provides the function @code{tidyformula()}', which translates
-formulas containing tidyselect'-style selection helpers.  It expands these
-helpers by evaluating @code{dplyr::select()} with the relevant selection helper
-and a supplied data frame.  The package contains methods for traversing abstract
-syntax trees from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
-    (license license:expat)))
-
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
@@ -26507,35 +26452,6 @@ sports teams.  These can be useful in creating data graphics that are themed for
 particular teams.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-team
-  (package
-    (name "r-team")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TEAM" version))
-       (sha256
-        (base32 "1yj7fw935rr7fh7h2p4ra8d3ynz5c6b30fqzm1djgav1k84wcin2"))))
-    (properties `((upstream-name . "TEAM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plyr r-ks r-ggplot2))
-    (home-page "https://cran.r-project.org/package=TEAM")
-    (synopsis "Multiple Hypothesis Testing on an Aggregation Tree Method")
-    (description
-     "An implementation of the TEAM algorithm to identify local differences between
-two (e.g. case and control) independent, univariate distributions, as described
-in J Pura, C Chan, and J Xie (2019) <@code{arXiv:1906.07757>}.  The algorithm is
-based on embedding a multiple-testing procedure on a hierarchical structure to
-identify high-resolution differences between two distributions.  The
-hierarchical structure is designed to identify strong, short-range differences
-at lower layers and weaker, but long-range differences at increasing layers.
-TEAM yields consistent layer-specific and overall false discovery rate control.")
-    (license license:gpl2)))
-
 (define-public r-tealeaves
   (package
     (name "r-tealeaves")
@@ -30292,13 +30208,13 @@ detailed overview of tacmagic functions.")
 (define-public r-tabxplor
   (package
     (name "r-tabxplor")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabxplor" version))
        (sha256
-        (base32 "0navimnpj93n1gxv7cr83xj3c28rrd1zzg1rjs78rxidci4lhcxm"))))
+        (base32 "165dxpkrra6qlk62vdris136wfn7lwy4plsh9g6bjn4xd1cfwzh6"))))
     (properties `((upstream-name . "tabxplor")))
     (build-system r-build-system)
     (arguments

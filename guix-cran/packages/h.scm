@@ -5761,13 +5761,13 @@ Methods are described in Gamiz, Limnios, and Segovia-Garcia (2023)
 (define-public r-hmmr
   (package
     (name "r-hmmr")
-    (version "1.0-0")
+    (version "1.0-0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmmr" version))
        (sha256
-        (base32 "1m0jmw0i66hm5z5rycvpdmasq8zhgsz91km491n0n923mm480hmh"))))
+        (base32 "1kc7axp36gvinki40jpaaw6byzvqj65p0fhryf9wa4i95mb4nl3p"))))
     (properties `((upstream-name . "hmmr")))
     (build-system r-build-system)
     (arguments
@@ -12587,36 +12587,6 @@ writing R objects to HDF5 formats follow the specification of @code{AnnData}
 <https://anndata.readthedocs.io/en/latest/fileformat-prose.html>.")
     (license license:expat)))
 
-(define-public r-hddplot
-  (package
-    (name "r-hddplot")
-    (version "0.59-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hddplot" version))
-       (sha256
-        (base32 "1q7mz7yxb4qvprj431kxv46cf9myckkycfbi6nzbkqw8mpwg02qy"))))
-    (properties `((upstream-name . "hddplot")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-multtest r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jhmaindonald/hddplot")
-    (synopsis
-     "Use Known Groups in High-Dimensional Data to Derive Scores for Plots")
-    (description
-     "Cross-validated linear discriminant calculations determine the optimum number of
-features.  Test and training scores from successive cross-validation steps
-determine, via a principal components calculation, a low-dimensional global
-space onto which test scores are projected, in order to plot them.  Further
-functions are included that are intended for didactic use.  The package
-implements, and extends, methods described in J.H. Maindonald and C.J. Burden
-(2005) <https://journal.austms.org.au/V46/CTAC2004/Main/home.html>.")
-    (license license:gpl2+)))
-
 (define-public r-hddesign
   (package
     (name "r-hddesign")
@@ -14227,19 +14197,24 @@ easier to plot with ggplot2 and to manipulate using tidyverse tools.")
 (define-public r-harmonydata
   (package
     (name "r-harmonydata")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harmonydata" version))
        (sha256
-        (base32 "1n90zm31himxwaaan92fbar0nqvxgn41i38vshv42wa77641lr1m"))))
+        (base32 "1xdnnsmkbfvmb40fmv28qynspz3bwbha19pfc12gpm29nw081hvg"))))
     (properties `((upstream-name . "harmonydata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-uuid r-jsonlite r-httr r-base64enc))
+    (propagated-inputs (list r-uuid
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-base64enc
+                             r-assertthat))
     (home-page "<https://harmonydata.ac.uk>")
     (synopsis "R Library for 'Harmony'")
     (description

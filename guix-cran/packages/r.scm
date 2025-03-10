@@ -5543,13 +5543,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.3.18")
+    (version "9.3.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1dkglnsvs4s0rs4xlmhcdai9mnm2cin35wzn28rna8dml0jfisgg"))))
+        (base32 "1kan217m9mab4bypya9laqr92n82sznwmg50r6fbhzlsjyadx80d"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -15985,47 +15985,6 @@ package as backend.  The class allows handling of connections to e.g.
 @code{PostgreSQL}, @code{MariaDB} and SQLite.  The purpose is having an
 intuitive object allowing straightforward handling of SQL databases.")
     (license license:expat)))
-
-(define-public r-rock
-  (package
-    (name "r-rock")
-    (version "0.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rock" version))
-       (sha256
-        (base32 "04byjz2k1wnjxbj22b307ghdrp7zz2ik5cxkxa0v980isfq5dv9i"))))
-    (properties `((upstream-name . "rock")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yum
-                             r-yaml
-                             r-purrr
-                             r-markdown
-                             r-htmltools
-                             r-glue
-                             r-ggplot2
-                             r-dplyr
-                             r-diagrammersvg
-                             r-diagrammer
-                             r-data-tree))
-    (native-inputs (list r-knitr))
-    (home-page "https://rock.opens.science")
-    (synopsis "Reproducible Open Coding Kit")
-    (description
-     "The Reproducible Open Coding Kit ('ROCK', and this package, rock') was developed
-to facilitate reproducible and open coding, specifically geared towards
-qualitative research methods.  Although it is a general-purpose toolkit, three
-specific applications have been implemented, specifically an interface to the
-@code{rENA} package that implements Epistemic Network Analysis ('ENA'), means to
-process notes from Cognitive Interviews ('CIs'), and means to work with
-decentralized construct taxonomies ('DCTs').  The ROCK and this rock package are
-described in the ROCK book <https://rockbook.org> and more information, such as
-tutorials, is available at <https://rock.science>.")
-    (license license:gpl3)))
 
 (define-public r-rocftp-mms
   (package
@@ -38736,13 +38695,13 @@ based and day-time based approaches (Lasslop et al. (2010)
 (define-public r-reddprec
   (package
     (name "r-reddprec")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reddPrec" version))
        (sha256
-        (base32 "0cxssbqkbnjphankwa7hrdcf76l9ss8zjnk1981yd14nh8lhy459"))))
+        (base32 "1saliry8z6zjn2jqkwvrb545fywjysnk91lcb121c3c7gnnzis0l"))))
     (properties `((upstream-name . "reddPrec")))
     (build-system r-build-system)
     (arguments
@@ -44710,20 +44669,20 @@ contributors to both @code{QuantLib} and Quantuccia'.")
 (define-public r-rcppnloptexample
   (package
     (name "r-rcppnloptexample")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppNLoptExample" version))
        (sha256
-        (base32 "1fml6hpa12q0lgg5fg6fi9lz6mckwh345pbh95mld2qagzvmg01n"))))
+        (base32 "1x96sqjhfnxmd8ql9h0pl8l7vksm48vzy4lyx0w68jdmd9gdk9k4"))))
     (properties `((upstream-name . "RcppNLoptExample")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp r-nloptr))
-    (home-page "https://cran.r-project.org/package=RcppNLoptExample")
+    (home-page "https://github.com/eddelbuettel/rcppnloptexample")
     (synopsis "'Rcpp' Package Illustrating Header-Only Access to 'NLopt'")
     (description
      "An example package which shows use of NLopt functionality from C++ via Rcpp
@@ -56290,13 +56249,13 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
 (define-public r-r5r
   (package
     (name "r-r5r")
-    (version "2.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r5r" version))
        (sha256
-        (base32 "1kvn7341v2dfbv580bzc3zhdmnxk400mjrbrs5bar2hwkwvv4w4r"))))
+        (base32 "1yzd1qskkcjw5c9yjj88817mysqsssyrddjq4jhqq1x48sl4pps1"))))
     (properties `((upstream-name . "r5r")))
     (build-system r-build-system)
     (arguments
@@ -56319,17 +56278,17 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
      "Rapid realistic routing on multimodal transport networks (walk, bike, public
 transport and car) using R5', the Rapid Realistic Routing on Real-world and
 Reimagined networks engine <https://github.com/conveyal/r5>.  The package allows
-users to generate detailed routing analysis or calculate travel time matrices
-using seamless parallel computing on top of the R5 Java machine.  While R5 is
-developed by Conveyal, the package r5r is independently developed by a team at
-the Institute for Applied Economic Research (Ipea) with contributions from
-collaborators.  Apart from the documentation in this package, users will find
-additional information on R5 documentation at <https://docs.conveyal.com/>.
-Although we try to keep new releases of r5r in synchrony with R5, the
-development of R5 follows Conveyal's independent update process.  Hence, users
-should confirm the R5 version implied by the Conveyal user manual (see
-<https://docs.conveyal.com/changelog>) corresponds with the R5 version that r5r
-depends on.  This version of r5r depends on R5 v7.1.")
+users to generate detailed routing analysis or calculate travel time and
+monetary cost matrices using seamless parallel computing on top of the R5 Java
+machine.  While R5 is developed by Conveyal, the package r5r is independently
+developed by a team at the Institute for Applied Economic Research (Ipea) with
+contributions from collaborators.  Apart from the documentation in this package,
+users will find additional information on R5 documentation at
+<https://docs.conveyal.com/>.  Although we try to keep new releases of r5r in
+synchrony with R5, the development of R5 follows Conveyal's independent update
+process.  Hence, users should confirm the R5 version implied by the Conveyal
+user manual (see <https://docs.conveyal.com/changelog>) corresponds with the R5
+version that r5r depends on.  This version of r5r depends on R5 v7.1.")
     (license license:expat)))
 
 (define-public r-r4ss
@@ -56944,19 +56903,19 @@ using the package in question.")
 (define-public r-r2sample
   (package
     (name "r-r2sample")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2sample" version))
        (sha256
-        (base32 "1ysj3rdr0pqq6hiqpigidvvlnqmx8acad7dsg5q3alrq3zjvp7iv"))))
+        (base32 "0ymdsaalm1qhdk0l3s8p8j0qcii2bs6ci0k4yakwasxaz1dkh7m2"))))
     (properties `((upstream-name . "R2sample")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-rcpp r-ggplot2))
+    (propagated-inputs (list r-shiny r-rcpp r-microbenchmark r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=R2sample")
     (synopsis "Various Methods for the Two Sample Problem")

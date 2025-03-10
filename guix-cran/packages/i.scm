@@ -11641,13 +11641,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "0zicfym6h16m7lz8zasa4xv60lp6id1rp6rfihwfxkwd4r27ab2m"))))
+        (base32 "0jwhgwm2dbnb5hgxv5fwzrqyn2r604k26s2p687hlzm23p01cfby"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (arguments

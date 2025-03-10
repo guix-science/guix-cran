@@ -21726,13 +21726,13 @@ and thus resulting two correlated C indices.")
 (define-public r-comparator
   (package
     (name "r-comparator")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comparator" version))
        (sha256
-        (base32 "0mqp2z5mgjwkj2x4dxw0zyvyls2w68rx2ygfxfgs9ylgcw6zbklp"))))
+        (base32 "1j71f77ca60ax0yfiqvrfs6h7zckj5233lc35kqvp1cfm3bd9vyq"))))
     (properties `((upstream-name . "comparator")))
     (build-system r-build-system)
     (arguments
@@ -31495,69 +31495,6 @@ and Heatherington(2017) <doi:10.1177/0962280216684528> are included in the
 package.  The prior distributions for the Bayesian analyses default to the
 posterior predictive distributions derived from these references.")
     (license license:gpl2+)))
-
-(define-public r-clindatareview
-  (package
-    (name "r-clindatareview")
-    (version "1.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clinDataReview" version))
-       (sha256
-        (base32 "146cibny0w7g75cvzrdnd5i2fx6bilp93wqfrjgzap17h97lhj1r"))))
-    (properties `((upstream-name . "clinDataReview")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (inputs (list pandoc))
-    (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-xfun
-                             r-stringr
-                             r-rmarkdown
-                             r-plyr
-                             r-plotly
-                             r-knitr
-                             r-jsonvalidate
-                             r-jsonlite
-                             r-htmlwidgets
-                             r-htmltools
-                             r-haven
-                             r-ggplot2
-                             r-data-table
-                             r-crosstalk
-                             r-clinutils
-                             r-bookdown
-                             r-base64enc))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/openanalytics/clinDataReview")
-    (synopsis "Clinical Data Review Tool")
-    (description
-     "Creation of interactive tables, listings and figures ('TLFs') and associated
-report for exploratory analysis of data in a clinical trial, e.g. for clinical
-oversight activities.  Interactive figures include sunburst, treemap,
-scatterplot, line plot and barplot of counts data.  Interactive tables include
-table of summary statistics (as counts of adverse events, enrollment table) and
-listings.  Possibility to compare data (summary table or listing) across two
-data batches/sets.  A clinical data review report is created via study-specific
-configuration files and template R Markdown reports contained in the package.")
-    (license license:expat)))
 
 (define-public r-climwin
   (package
