@@ -17172,13 +17172,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "09nv765nlzih2xakcnk6mrmf8lrfn7bdfhf1mjr83d1jr2cfhylb"))))
+        (base32 "1ikx7ssw0dvhy473bnnv3m0nqr4np84p6bmnnfkdhs2f56y6xgqi"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (arguments
@@ -24750,13 +24750,13 @@ of Health and Human Services.")
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "002ankqwsd163ni5wwaqxgxi6dzgp3b149rdrkgnm4j329n0v2qh"))))
+        (base32 "04i5yfvk8c9d4j71afp8j6yf5byqxipxz8g3addbfwlwzi45x1b3"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (arguments
@@ -29498,6 +29498,35 @@ reference reagent.  This package will calculate measures of sensitivity, False
 positive relative abundance, diversity, and similarity based on mean average
 abundances with respect to the reference reagent.")
     (license license:gpl3)))
+
+(define-public r-microbialgrowth
+  (package
+    (name "r-microbialgrowth")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MicrobialGrowth" version))
+       (sha256
+        (base32 "0kaibgxglgimjn4dnvjz060pn48y554kwka93apji6v9md1lmddg"))))
+    (properties `((upstream-name . "MicrobialGrowth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-nlstools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MicrobialGrowth")
+    (synopsis "Estimates Growth Parameters from Models and Plots the Curve")
+    (description
+     "Fit growth curves to various known microbial growth models automatically to
+estimate growth parameters.  Growth curves can be plotted with their uncertainty
+band.  Growth models are: modified Gompertz model (Zwietering et al. (1990)
+<doi:10.1128/aem.56.6.1875-1881.1990>), Baranyi model (Baranyi and Roberts
+(1994) <doi:10.1016/0168-1605%2894%2990157-0>), Rosso model (Rosso et al. (1993)
+<doi:10.1006/jtbi.1993.1099>) and linear model (Dantigny (2005)
+<doi:10.1016/j.ijfoodmicro.2004.10.013>).")
+    (license license:gpl3+)))
 
 (define-public r-microbial
   (package
@@ -37750,13 +37779,13 @@ in practice, is described in more detail by Kremers WK (2021)
 (define-public r-medseq
   (package
     (name "r-medseq")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MEDseq" version))
        (sha256
-        (base32 "1w4jgy3fxwmk87r8kc4a6rx20salsk06qxxgx2jd3d22rvrj8crd"))))
+        (base32 "1xzk8b6cc0g3iy2jacpfs7i6a1c1nwvw98fd7dx3rzrfip2982m1"))))
     (properties `((upstream-name . "MEDseq")))
     (build-system r-build-system)
     (arguments
@@ -42841,37 +42870,6 @@ al.  2020 <doi:10.1111/2041-210X.13321> and produce clustered samples (Foster et
 al. (in press).  Additional information about the package use itself is given in
 Foster (2021) <doi:10.1111/2041-210X.13535>.")
     (license license:gpl2+)))
-
-(define-public r-mbest
-  (package
-    (name "r-mbest")
-    (version "0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mbest" version))
-       (sha256
-        (base32 "1x0f7y5hj6a35wq1xn6g7jyjn9c4zryahwlf07qrypgrcnj2m8vx"))))
-    (properties `((upstream-name . "mbest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nlme
-                             r-logging
-                             r-lme4
-                             r-foreach
-                             r-bigmemory
-                             r-abind))
-    (home-page "https://github.com/patperry/r-mbest")
-    (synopsis "Moment-Based Estimation for Hierarchical Models")
-    (description
-     "Fast moment-based hierarchical model fitting.  Implements methods from the
-papers \"Fast Moment-Based Estimation for Hierarchical Models,\" by Perry (2017)
-and \"Fitting a Deeply Nested Hierarchical Model to a Large Book Review Dataset
-Using a Moment-Based Estimator,\" by Zhang, Schmaus, and Perry (2018).")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-mbend
   (package

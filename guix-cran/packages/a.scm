@@ -8738,13 +8738,13 @@ or with a static data set.  Example is provided at
 (define-public r-archeofrag-gui
   (package
     (name "r-archeofrag-gui")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag.gui" version))
        (sha256
-        (base32 "1anfxw2zq4zr05bdncpmmqgnr6d02xvyjkq6i8ax468pm8scj1rx"))))
+        (base32 "0zsawxxyz9mfhsz4yic4jngbldbk1b2w3bs6g6qm0j83pzs3pszw"))))
     (properties `((upstream-name . "archeofrag.gui")))
     (build-system r-build-system)
     (arguments
@@ -8756,6 +8756,7 @@ or with a static data set.  Example is provided at
                              r-ggplot2
                              r-foreach
                              r-dt
+                             r-dorng
                              r-doparallel
                              r-dendextend
                              r-archeofrag))
@@ -8765,11 +8766,12 @@ or with a static data set.  Example is provided at
      "This package provides a Shiny application to access the functionalities and
 datasets of the archeofrag package for spatial analysis in archaeology from
 refitting data.  Quick and seamless exploration of archaeological refitting
-datasets.  Features include: exclusive focus on connection relationships (i.e.
-physical refits), built-in documentation and convenient workflow, plot
-generation and export, R code generation to re-execute the simulations in R and
-ensure reproducibility, support for parallel computing to speed up computation.
-A demonstration version of the app is available at
+datasets, focusing on physical refits only.  Features include: built-in
+documentation and convenient workflow, plot generation and exports, support of
+parallel computing when simulating archaeological site formation processes, R
+code generation to re-execute simulations and ensure reproducibility, code
+generation for the @code{openMOLE} model exploration software.  A demonstration
+of the app is available at
 <https://analytics.huma-num.fr/Sebastien.Plutniak/archeofrag/>.")
     (license license:gpl3)))
 
@@ -9768,13 +9770,13 @@ furthermore, symmetric and asymmetric error correction models.")
 (define-public r-apsimx
   (package
     (name "r-apsimx")
-    (version "2.8.0")
+    (version "2.8.235")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apsimx" version))
        (sha256
-        (base32 "0k14qmwq2kdwd5z6ciw18wsg1jh1xcspszha5694xbfmip71cqh1"))))
+        (base32 "1c8js3rrgncr6dfwq2qjsn49670pp4idizl1habbw95agzrawapm"))))
     (properties `((upstream-name . "apsimx")))
     (build-system r-build-system)
     (arguments
@@ -10416,6 +10418,45 @@ dataset formats.  The package will combine population datasets, add covariates,
 and create documentation to support regulatory submission and internal
 communication.")
     (license license:gpl3+)))
+
+(define-public r-apm
+  (package
+    (name "r-apm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apm" version))
+       (sha256
+        (base32 "0yqhxyjinb5f8i6pnlrm3fq5a3nzdfz0qrc0mk6r5dgfh4s5gzxg"))))
+    (properties `((upstream-name . "apm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich
+                             r-pbapply
+                             r-mass
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggh4x
+                             r-fwb
+                             r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tl2624/apm")
+    (synopsis "Averaged Prediction Models")
+    (description
+     "In panel data settings, specifies set of candidate models, fits them to data
+from pre-treatment validation periods, and selects model as average over
+candidate models, weighting each by posterior probability of being most robust
+given its differential average prediction errors in pre-treatment validation
+periods.  Subsequent estimation and inference of causal effect's bounds accounts
+for both model and sampling uncertainty, and calculates the robustness
+changepoint value at which bounds go from excluding to including 0.  The package
+also includes a range of diagnostic plots, such as those illustrating models
+differential average prediction errors and the posterior distribution of which
+model is most robust.")
+    (license license:gpl2+)))
 
 (define-public r-aplpack
   (package
@@ -15850,13 +15891,13 @@ cell receptors.")
 (define-public r-alpha-correction-bh
   (package
     (name "r-alpha-correction-bh")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alpha.correction.bh" version))
        (sha256
-        (base32 "1rwz90hlbiday3s9c90v13s7mprxmmibgk08jkvxfc5axgy8qgqs"))))
+        (base32 "1n9hnnig1mp32f0gwfk8rspccswfr5fzpcqcj2dj6a1wzb7jlv40"))))
     (properties `((upstream-name . "alpha.correction.bh")))
     (build-system r-build-system)
     (arguments
@@ -16884,13 +16925,13 @@ Dependence (PD) plots, given a fitted supervised learning model.")
 (define-public r-ale
   (package
     (name "r-ale")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ale" version))
        (sha256
-        (base32 "1s3nym0zcp80yf7vw7m0mvii2d0y9hnxjxzfzl6ff5my5p84vy9i"))))
+        (base32 "1irz78alhqhs1j8vv7y8gg5dd838hpvpp593yrbx5p0783vdzdq6"))))
     (properties `((upstream-name . "ale")))
     (build-system r-build-system)
     (arguments
@@ -16932,7 +16973,7 @@ the original ALE concept to add bootstrap-based confidence intervals and
 ALE-based statistics that can be used for statistical inference.  For more
 details, see Okoli, Chitu.  2023.  âStatistical Inference Using Machine
 Learning and Classical Techniques Based on Accumulated Local Effects (ALE).â
-@code{arXiv}. <@code{arXiv:2310.09877>}. <doi:10.48550/@code{arXiv.2310.09877>}.")
+@code{arXiv}. <doi:10.48550/@code{arXiv.2310.09877>}.")
     (license license:gpl2)))
 
 (define-public r-aldvmm
@@ -23233,13 +23274,13 @@ interactive version is available at <https://knuth.uca.es/shiny/DEA/>.")
 (define-public r-ade4tkgui
   (package
     (name "r-ade4tkgui")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ade4TkGUI" version))
        (sha256
-        (base32 "0cnvs8vaa8nyhcxlda63ndinj7sqxrdlxcdrk39gr0hnsnsbkbcg"))))
+        (base32 "167q8by775gd7ip7wv82armca3l0zg57xr30c96ql6xhvlac96kn"))))
     (properties `((upstream-name . "ade4TkGUI")))
     (build-system r-build-system)
     (arguments

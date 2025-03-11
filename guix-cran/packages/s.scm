@@ -11128,13 +11128,13 @@ data source for applications in social and life sciences.")
 (define-public r-stpphawkes
   (package
     (name "r-stpphawkes")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stpphawkes" version))
        (sha256
-        (base32 "1mfhvfjlshhigyl5bfagjiv3q8dizqf89ikyifkchylni5szblbs"))))
+        (base32 "1lk9m3i2mzlqvrk3wqg26m39ijg8v827v5y5ir0l6j23y9314rnc"))))
     (properties `((upstream-name . "stpphawkes")))
     (build-system r-build-system)
     (arguments
@@ -11146,7 +11146,7 @@ data source for applications in social and life sciences.")
                              r-rcpp
                              r-interp
                              r-extradistr))
-    (home-page "https://cran.r-project.org/package=stpphawkes")
+    (home-page "https://github.com/sandialabs/stpphawkes")
     (synopsis "Missing Data for Marked Hawkes Process")
     (description
      "Estimation of model parameters for marked Hawkes process.  Accounts for missing
@@ -28299,13 +28299,13 @@ translated from the Matlab functions in <https://github.com/jiayi-ma/VFC>.")
 (define-public r-sparsevctrs
   (package
     (name "r-sparsevctrs")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsevctrs" version))
        (sha256
-        (base32 "12izzvx4vjxxh43f4bl13a3sgdwqyffpbssadr0awyiybvm0dy04"))))
+        (base32 "1pbbq6i8033r7110jv7a9ivrxjysdsy4xkkha5a7rz26gmvah4nq"))))
     (properties `((upstream-name . "sparsevctrs")))
     (build-system r-build-system)
     (arguments
@@ -70397,6 +70397,37 @@ missing data pattern the data exhibit intermittent missing values (see the
      "This package provides a novel semi-supervised machine learning algorithm to
 predict phenotype event times using Electronic Health Record (EHR) data.")
     (license license:gpl3)))
+
+(define-public r-samesies
+  (package
+    (name "r-samesies")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "samesies" version))
+       (sha256
+        (base32 "1i5yw196xbyw6m5q4q6hpdz1dgpv7mkyhv1hxf2hb6bjj53gyid5"))))
+    (properties `((upstream-name . "samesies")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringdist
+                             r-scales
+                             r-purrr
+                             r-ggplot2
+                             r-ggbeeswarm
+                             r-dplyr
+                             r-cli))
+    (home-page "https://dylanpieper.github.io/samesies/")
+    (synopsis "Compare Similarity Across Text, Factors, or Numbers")
+    (description
+     "Compare lists of texts, factors, or numerical values to measure their
+similarity.  The motivating use case is evaluating the similarity of large
+language model responses across models, providers, or prompts.  Approximate
+string matching is implemented using stringdist'.")
+    (license license:expat)))
 
 (define-public r-same
   (package

@@ -5391,6 +5391,37 @@ query groups tags and categories.  Also allows you to directly obtain mentions
 and aggregate data for a specified query or query group.")
     (license license:expat)))
 
+(define-public r-brandr
+  (package
+    (name "r-brandr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brandr" version))
+       (sha256
+        (base32 "1ps3f1xxnk8clqjzxxmk651i5zs8chm1bwx3l6khscda47q9lqg3"))))
+    (properties `((upstream-name . "brandr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-lifecycle
+                             r-here
+                             r-ggplot2
+                             r-dplyr
+                             r-colorspace
+                             r-cli
+                             r-checkmate))
+    (home-page "https://danielvartan.github.io/brandr/")
+    (synopsis "Brand Identity Management Using brand.yml Standard")
+    (description
+     "This package provides a system to facilitate brand identity management using the
+brand.yml standard, providing functions to consistently access and apply brand
+colors, typography, and other visual elements across your R projects.")
+    (license license:expat)))
+
 (define-public r-branching
   (package
     (name "r-branching")
@@ -16423,13 +16454,13 @@ Noah Simon (2020) <@code{arXiv:2003.00116v2>}.")
 (define-public r-bigstep
   (package
     (name "r-bigstep")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigstep" version))
        (sha256
-        (base32 "1bppvib57p6m91c2v9w9lgb1k3jg8mk3w2kkbjvwgsdwy4m8fhap"))))
+        (base32 "1n0lw8jvlx1qpw6by0356lsczfrlim2asginvf3rlfa9dfl1rxmh"))))
     (properties `((upstream-name . "bigstep")))
     (build-system r-build-system)
     (arguments
@@ -23985,13 +24016,13 @@ MoriÃ±a D, Puig P, Navarro A. (2021) <doi:10.1186/s12874-021-01427-2>.")
 (define-public r-bayesxsrc
   (package
     (name "r-bayesxsrc")
-    (version "3.0-5")
+    (version "3.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesXsrc" version))
        (sha256
-        (base32 "0wv432bmq7vidbccli1lgzyj7d9nl2ykfhr654bhxnsfkbaaqdpg"))))
+        (base32 "0lmmiaaf81i12a2r6wh8qjg1v0b4cvhil86l5aphwzyrsmlv4p3p"))))
     (properties `((upstream-name . "BayesXsrc")))
     (build-system r-build-system)
     (arguments

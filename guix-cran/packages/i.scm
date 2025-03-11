@@ -6761,6 +6761,29 @@ models proposed by Asano and Hirakawa (2017)
 <doi:10.1080/10543406.2017.1293082>.")
     (license license:gpl3+)))
 
+(define-public r-intsel
+  (package
+    (name "r-intsel")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intsel" version))
+       (sha256
+        (base32 "1f4437sziqar2hzhzdqg701xcf7jls1k81ya2p25rcv243km9s3j"))))
+    (properties `((upstream-name . "intsel")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=intsel")
+    (synopsis "Interaction Selection in Logistic Regression")
+    (description
+     "Logistic regression model with data-driven screening for significant two-way
+interactions.")
+    (license license:gpl3+)))
+
 (define-public r-intsdm
   (package
     (name "r-intsdm")
@@ -8149,19 +8172,20 @@ Markos, and Thanopoulos, 2022; <doi:10.1108/ACI-07-2022-0191>).")
 (define-public r-interatrix
   (package
     (name "r-interatrix")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Interatrix" version))
        (sha256
-        (base32 "13r0algx8rhbkwjwj8s49d65p50ivsp7ki0vbs38z9whs24njmxk"))))
+        (base32 "12f5m64rcxddfgn7mlgynjy8ddwd7arqg91b1xzn00jk7px6gfa8"))))
     (properties `((upstream-name . "Interatrix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-mass))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/lbbe-software/Interatrix")
     (synopsis "Compute Chi-Square Measures with Corrections")
     (description "Chi-square tests are computed with corrections.")
@@ -14769,13 +14793,13 @@ and recoding data.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ijtiff" version))
        (sha256
-        (base32 "0mr5h2j34iznlqjiz2qf2bv5sqzpvq90c8hd25ihvmz9yfsifn6d"))))
+        (base32 "01hw5w25m8zb6wxg68895abmhh2kllap4n08i7b29kixaljbx1yg"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (arguments
@@ -14792,8 +14816,7 @@ and recoding data.")
                   libdeflate
                   bzip2
                   fftw))
-    (propagated-inputs (list r-zeallot
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-strex
                              r-rlang
                              r-readr
@@ -14801,7 +14824,6 @@ and recoding data.")
                              r-magrittr
                              r-lubridate
                              r-jsonlite
-                             r-imager
                              r-fs
                              r-dplyr
                              r-cli
@@ -20712,19 +20734,24 @@ ISBN:978-1-84821-222-0).")
 (define-public r-iar
   (package
     (name "r-iar")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iAR" version))
        (sha256
-        (base32 "0svxn81a0yq3m51594zrpy99i8p9zcfjzbxsi19yyfcm6iymzv24"))))
+        (base32 "0n38a42jpr2wg7ngs8975r8856mivy1nhwq64i34in8pwkvprgf6"))))
     (properties `((upstream-name . "iAR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-ggplot2))
+    (propagated-inputs (list r-zoo
+                             r-s7
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggplot2))
     (home-page "https://github.com/felipeelorrieta")
     (synopsis "Irregularly Observed Autoregressive Models")
     (description

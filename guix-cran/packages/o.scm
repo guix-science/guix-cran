@@ -13355,13 +13355,13 @@ combinations of input variables.")
 (define-public r-oblicubes
   (package
     (name "r-oblicubes")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oblicubes" version))
        (sha256
-        (base32 "0656dfaz19bmcaiqh988lryj5gql39q8pwnl6c9fab07wwd85w3k"))))
+        (base32 "15fig4s6zi6g4ldbvbkwdjcm5j86gis9l5999ba91mqc1x89jsyz"))))
     (properties `((upstream-name . "oblicubes")))
     (build-system r-build-system)
     (arguments

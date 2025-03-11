@@ -8652,13 +8652,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "16nj4p4wbfibdkbjbp0rrp6rzr00j75xd2ng23pacxf7z19w1c5b"))))
+        (base32 "04q0clbzqbyzqrk4xjwva2dqkldsa3xai5f3hiy3vq9dxb1w2f2b"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (arguments
@@ -8667,8 +8667,6 @@ details.")
     (propagated-inputs (list r-tidyr
                              r-sunburstr
                              r-stringr
-                             r-shinydashboard
-                             r-shiny
                              r-r6
                              r-networkd3
                              r-jsonlite
@@ -12623,13 +12621,13 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
 (define-public r-topics
   (package
     (name "r-topics")
-    (version "0.21.0")
+    (version "0.50")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topics" version))
        (sha256
-        (base32 "13s9lpsvqpzpcwwh426s331fv96vjx7bx7dsm9vx5n1mfqs7ni9w"))))
+        (base32 "1xjs9kay0p82ci497rgbmgi2mq66r1nzvyq3qqk6rwnf4mvv8dg1"))))
     (properties `((upstream-name . "topics")))
     (build-system r-build-system)
     (arguments
@@ -12650,8 +12648,8 @@ estimation\" by Tracy Ke and Minzhe Wang (2017) <@code{arXiv:1704.07016>}.")
                              r-mallet
                              r-ggwordcloud
                              r-ggplot2
-                             r-effsize
-                             r-dplyr))
+                             r-dplyr
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://r-topics.org/")
     (synopsis
@@ -30498,6 +30496,31 @@ Simpson, etc.), richness and rarefaction (Chao1, Chao2, ACE, ICE, etc.),
 turnover and similarity (Brainerd-Robinson, etc.).  It allows to easily
 visualize count data and statistical thresholds: rank vs abundance plots,
 heatmaps, Ford (1962) and Bertin (1977) diagrams, etc.")
+    (license license:gpl3+)))
+
+(define-public r-tabtibble
+  (package
+    (name "r-tabtibble")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabtibble" version))
+       (sha256
+        (base32 "08s04d5lv67zh9hbzmmiis1jw5sq9b81wb472zz898drjvh6h798"))))
+    (properties `((upstream-name . "tabtibble")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vctrs r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/humanpred/tabtibble")
+    (synopsis "Simplify Reporting Many Tables")
+    (description
+     "Simplify reporting many tables by creating tibbles of tables.  With tabtibble',
+a tibble of tables is created with captions and automatic printing using
+@code{knit_print()}'.")
     (license license:gpl3+)))
 
 (define-public r-tabshiftr

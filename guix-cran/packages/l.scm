@@ -12406,6 +12406,37 @@ Additionally, LGDtoolkit provides set of procedures handy for initial and
 periodical model validation.")
     (license license:gpl3+)))
 
+(define-public r-lgcu
+  (package
+    (name "r-lgcu")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LGCU" version))
+       (sha256
+        (base32 "08k59a0302lsvn683kn6zpdkgr4761clmahwyi1k2q7fl2gkclh3"))))
+    (properties `((upstream-name . "LGCU")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tictoc r-rcpp r-mass))
+    (home-page "https://github.com/ingharold-madrid/LGCU")
+    (synopsis
+     "Implementation of Learning Gamma CUSUM (Cumulative Sum) Control Charts")
+    (description
+     "Description: Implements Cumulative Sum (CUSUM) control charts specifically
+designed for monitoring processes following a Gamma distribution.  Provides
+functions to estimate distribution parameters, simulate control limits, and
+apply cautious learning schemes for adaptive thresholding.  It supports upward
+and downward monitoring with guaranteed performance evaluated via Monte Carlo
+simulations.  It is useful for quality control applications in industries where
+data follows a Gamma distribution.  Methods are based on Madrid-Alvarez et al.
+(2024) <doi:10.1002/qre.3464> and Madrid-Alvarez et al. (2024)
+<doi:10.1080/08982112.2024.2440368>.")
+    (license license:gpl3)))
+
 (define-public r-lgcp
   (package
     (name "r-lgcp")
@@ -17252,6 +17283,36 @@ other functions.  Currently the parameter estimates tables of a fitted object
 are supported.")
     (license license:gpl3+)))
 
+(define-public r-lavaan-mi
+  (package
+    (name "r-lavaan-mi")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lavaan.mi" version))
+       (sha256
+        (base32 "1b8m65ass9fr147wyfnbwdr0a2wg90h72k2bhwpf9gxz3khfm7i2"))))
+    (properties `((upstream-name . "lavaan.mi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lavaan))
+    (home-page "https://github.com/TDJorgensen/lavaan.mi")
+    (synopsis "Fit Structural Equation Models to Multiply Imputed Data")
+    (description
+     "The primary purpose of lavaan.mi is to extend the functionality of the R package
+lavaan', which implements structural equation modeling (SEM).  When incomplete
+data have been multiply imputed, the imputed data sets can be analyzed by lavaan
+using complete-data estimation methods, but results must be pooled across
+imputations (Rubin, 1987, <doi:10.1002/9780470316696>).  The lavaan.mi package
+automates the pooling of point and standard-error estimates, as well as a
+variety of test statistics, using a familiar interface that allows users to fit
+an SEM to multiple imputations as they would to a single data set using the
+lavaan package.")
+    (license license:gpl2+)))
+
 (define-public r-latticekrig
   (package
     (name "r-latticekrig")
@@ -18704,27 +18765,19 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "0.4.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "1gx4xkg38gh6asd6jcskjiw34c0z06q9lfhcsq7s3vvxvwg7xxkk"))))
+        (base32 "0p1ngfvk3mipyj37cwqc9haidlrd18ngzkbpnw8na96n0229mj5c"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-rlang
-                             r-reticulate
-                             r-r6
-                             r-r-utils
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-cli))
+    (propagated-inputs (list r-withr r-reticulate r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://laminr.lamin.ai")
     (synopsis "Client for 'LaminDB'")

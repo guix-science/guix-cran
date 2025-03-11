@@ -6963,20 +6963,20 @@ genes that correctly classify the maximum number of the given tissue samples
 (define-public r-proporz
   (package
     (name "r-proporz")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proporz" version))
        (sha256
-        (base32 "0yvrmrbvv9dmcl6ry42whr40dlirirrr5xdn591qim5lkwxc17y1"))))
+        (base32 "0yqp4d45p0rz7w32c61191f7p2wfn81wnmnwnxnb3ydyvn5w0q58"))))
     (properties `((upstream-name . "proporz")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/polettif/proporz")
+    (home-page "https://polettif.github.io/proporz/")
     (synopsis "Proportional Apportionment")
     (description
      "Calculate seat apportionment for legislative bodies with various methods.  The
@@ -19314,26 +19314,30 @@ SANTOS (2002) <ISBN:85-225-0395-8>.")
 (define-public r-politeness
   (package
     (name "r-politeness")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "politeness" version))
        (sha256
-        (base32 "1p3d7xyyx79cq3w5qg49fc25i7v2qhfqsr938jmrnvrx5ds42i40"))))
+        (base32 "0w8kjkwqw0dammic8pm52198ijny457p27cw9ih7w043885gyxj0"))))
     (properties `((upstream-name . "politeness")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tm
+                             r-tibble
                              r-textir
                              r-stringr
                              r-stringi
                              r-spacyr
                              r-quanteda
+                             r-magrittr
                              r-glmnet
+                             r-ggrepel
                              r-ggplot2
+                             r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=politeness")
@@ -23577,13 +23581,13 @@ graphs.")
 (define-public r-plnmodels
   (package
     (name "r-plnmodels")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLNmodels" version))
        (sha256
-        (base32 "1fqfy3pipj8w3mma8ca33ppxpvam4hnzcklpma188s06vy75h1i9"))))
+        (base32 "1y6lw6ia85d6f525skkpp1y3bq6rrac42py977qkfhhllhbvwdjj"))))
     (properties `((upstream-name . "PLNmodels")))
     (build-system r-build-system)
     (arguments
@@ -23591,6 +23595,7 @@ graphs.")
       #:tests? #f))
     (propagated-inputs (list r-torch
                              r-tidyr
+                             r-scales
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
@@ -23608,7 +23613,8 @@ graphs.")
                              r-future-apply
                              r-future
                              r-dplyr
-                             r-corrplot))
+                             r-corrplot
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://pln-team.github.io/PLNmodels/")
     (synopsis "Poisson Lognormal Models")
@@ -34372,13 +34378,13 @@ methods are provided.")
 (define-public r-pencal
   (package
     (name "r-pencal")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pencal" version))
        (sha256
-        (base32 "09pym7fbiknyw8hgxcv7sh0sfa0iqr7nfg61hlvj5gwnz8n54fb4"))))
+        (base32 "04cgqylydhmpgzvnaqcqfhpa6nw4x39vhdlhdvzwa744f7x39xhm"))))
     (properties `((upstream-name . "pencal")))
     (build-system r-build-system)
     (arguments
@@ -36618,13 +36624,13 @@ of the complexity of a time series.")
 (define-public r-pda
   (package
     (name "r-pda")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pda" version))
        (sha256
-        (base32 "0cdbjp6yrbqhkznsr282iyy76nzw9dz8z0gz48y12czjk9k6nvfd"))))
+        (base32 "04720i2cbg70jmrz4jz87qfpp651y6mzb23hlvriw8mjsh1cwk7j"))))
     (properties `((upstream-name . "pda")))
     (build-system r-build-system)
     (arguments

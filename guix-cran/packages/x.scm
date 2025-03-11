@@ -1152,13 +1152,13 @@ parent to child relationships.")
 (define-public r-xmeta
   (package
     (name "r-xmeta")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xmeta" version))
        (sha256
-        (base32 "1by3w7mn3kk4942pbjyqb6hbrsxbxywfjy96cq0cmvwzq7aamhxm"))))
+        (base32 "0g4hbhxgap055shhwp3173lc9r774vnkbc06ggjg55a1f7dh469p"))))
     (properties `((upstream-name . "xmeta")))
     (build-system r-build-system)
     (arguments

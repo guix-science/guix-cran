@@ -4065,35 +4065,29 @@ also provided.")
 (define-public r-kgraph
   (package
     (name "r-kgraph")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kgraph" version))
        (sha256
-        (base32 "1cbgmz8v6fdg77mmmqmra3w19lj6h1sjn8185jc4i0i9b3glyb6n"))))
+        (base32 "0yp5nka382km1fz07xnchxmcpwsh8zhb5gihhg1cnaxgzsvlqfl7"))))
     (properties `((upstream-name . "kgraph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-text2vec
-                             r-shiny
+    (propagated-inputs (list r-shiny
                              r-sgraph
-                             r-rsvd
                              r-reshape2
                              r-rcolorbrewer
                              r-proc
                              r-plyr
-                             r-matrix
+                             r-opticskxi
                              r-magrittr
                              r-igraph
                              r-htmltools
-                             r-dt
-                             r-dplyr
-                             r-data-table
-                             r-bslib
-                             r-amap))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/thomaschln/kgraph")
     (synopsis "Knowledge Graphs Constructions and Visualizations")

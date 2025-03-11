@@ -26266,13 +26266,13 @@ knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents."
 (define-public r-rilostat
   (package
     (name "r-rilostat")
-    (version "2.2.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rilostat" version))
        (sha256
-        (base32 "1j8pmd9xm27abyghfvifmh0mvlkn5hc11y6lhn365is1a95zy29a"))))
+        (base32 "10wkq8cv5cggb0xjn16wawgzshzmzgkch4zx2blkwhycmxc745nd"))))
     (properties `((upstream-name . "Rilostat")))
     (build-system r-build-system)
     (arguments
@@ -26288,8 +26288,9 @@ knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents."
     (home-page "https://ilostat.github.io/Rilostat/")
     (synopsis "ILO Open Data via Ilostat Bulk Download Facility")
     (description
-     "This package provides tools to download data from the ilostat database
-<https://ilostat.ilo.org> together with search and manipulation utilities.")
+     "This package provides tools to download data from the
+[ilostat](<https://ilostat.ilo.org>) database together with search and
+manipulation utilities.")
     (license license:bsd-2)))
 
 (define-public r-riingo
@@ -29828,13 +29829,13 @@ evaluating outputs and assumptions.")
 (define-public r-rfplus
   (package
     (name "r-rfplus")
-    (version "1.3-0")
+    (version "1.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RFplus" version))
        (sha256
-        (base32 "18fi60d5957fykazjv683kc15c821gqdj200ja0jyl8qkbhgfi9q"))))
+        (base32 "1pwa2798zkwmiwsxmjxa5jimkdm84fvnz3shh43adra423d4ri4b"))))
     (properties `((upstream-name . "RFplus")))
     (build-system r-build-system)
     (arguments
@@ -30490,6 +30491,53 @@ forest.")
     (description
      "This package provides functionality to interact with the @code{FieldClimate} API
 <https://api.fieldclimate.com/v2/docs/>.")
+    (license license:gpl3)))
+
+(define-public r-rfia
+  (package
+    (name "r-rfia")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rFIA" version))
+       (sha256
+        (base32 "1l926823r4ds1akj5ypkxnyln8n0c1hmaslw1vhfjp2dkqwls0r8"))))
+    (properties `((upstream-name . "rFIA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-ggplot2
+                             r-dtplyr
+                             r-dplyr
+                             r-data-table
+                             r-bit64))
+    (home-page "https://github.com/doserjef/rFIA")
+    (synopsis "Estimation of Forest Variables using the FIA Database")
+    (description
+     "The goal of @code{rFIA} is to increase the accessibility and use of the United
+States Forest Services (USFS) Forest Inventory and Analysis (FIA) Database by
+providing a user-friendly, open source toolkit to easily query and analyze FIA
+Data.  Designed to accommodate a wide range of potential user objectives,
+@code{rFIA} simplifies the estimation of forest variables from the FIA Database
+and allows all R users (experts and newcomers alike) to unlock the flexibility
+inherent to the Enhanced FIA design.  Specifically, @code{rFIA} improves
+accessibility to the spatial-temporal estimation capacity of the FIA Database by
+producing space-time indexed summaries of forest variables within user-defined
+population boundaries.  Direct integration with other popular R packages (e.g.,
+dplyr', tidyr', and sf') facilitates efficient space-time query and data
+summary, and supports common data representations and API design.  The package
+implements design-based estimation procedures outlined by Bechtold & Patterson
+(2005) <doi:10.2737/SRS-GTR-80>, and has been validated against estimates and
+sampling errors produced by FIA EVALIDator'.  Current development is focused on
+the implementation of spatially-enabled model-assisted and model-based
+estimators to improve population, change, and ratio estimates.")
     (license license:gpl3)))
 
 (define-public r-rfempimp
@@ -31726,6 +31774,49 @@ summary statistics and figures.  Methods and results pertaining to the formation
 of this package can be found in @code{McCutcheon} et al. (in review, \"Predicting
 tagging-related mortality and tag loss during mark-recapture studies\").")
     (license license:expat)))
+
+(define-public r-retistruct
+  (package
+    (name "r-retistruct")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "retistruct" version))
+       (sha256
+        (base32 "1cqflx19yvm695s3d9xslhbmdkwa82i4g3rxh82f576cgdli2nnm"))))
+    (properties `((upstream-name . "retistruct")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ttutils
+                             r-tiff
+                             r-sp
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shiny
+                             r-rtriangle
+                             r-rimagejroi
+                             r-rgl
+                             r-r6
+                             r-r-matlab
+                             r-png
+                             r-geometry
+                             r-fs
+                             r-foreign
+                             r-bslib))
+    (home-page "http://davidcsterratt.github.io/retistruct/")
+    (synopsis "Retinal Reconstruction Program")
+    (description
+     "Reconstructs retinae by morphing a flat surface with cuts (a dissected
+flat-mount retina) onto a curvilinear surface (the standard retinal shape).  It
+can estimate the position of a point on the intact adult retina to within 8
+degrees of arc (3.6% of nasotemporal axis).  The coordinates in reconstructed
+retinae can be transformed to visuotopic coordinates.  For more details see
+Sterratt, D. C., Lyngholm, D., Willshaw, D. J. and Thompson, I. D. (2013)
+<doi:10.1371/journal.pcbi.1002921>.")
+    (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
 (define-public r-retimer
   (package
@@ -38950,13 +39041,13 @@ or settings within REDCap, such as importing or exporting data.")
 (define-public r-redcapcast
   (package
     (name "r-redcapcast")
-    (version "25.3.1")
+    (version "25.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapCAST" version))
        (sha256
-        (base32 "1h9ik7gfv9s7x32yhy0r6mp2k4kx91vdwlnb33vc1qk3jglcfvd2"))))
+        (base32 "0i34lxrq164hbly5b1jpw7gpdmv860vyf7r9sic78w4vhwd25jvi"))))
     (properties `((upstream-name . "REDCapCAST")))
     (build-system r-build-system)
     (arguments
@@ -55268,13 +55359,13 @@ they should be named in a data frame.  See
 (define-public r-radiant-multivariate
   (package
     (name "r-radiant-multivariate")
-    (version "1.6.6")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.multivariate" version))
        (sha256
-        (base32 "02nviya2i45xpgnjsldpm5hvy30nh5z1nb6yk5wrps3hl044lqgi"))))
+        (base32 "173ic2cb81y5284pgm3kq7sccp033midc0p83qai7vhbmsbs4c3v"))))
     (properties `((upstream-name . "radiant.multivariate")))
     (build-system r-build-system)
     (arguments

@@ -22590,13 +22590,13 @@ sampling (Murray, Adams, and @code{MacKay} 2010).")
 (define-public r-fastglmpca
   (package
     (name "r-fastglmpca")
-    (version "0.1-103")
+    (version "0.1-107")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastglmpca" version))
        (sha256
-        (base32 "1yzk91g9aszazfm4gp70wfs21dbdi9dxlh95ylh839pivs78cvrc"))))
+        (base32 "0nj85h4fal1qsdkzly153kyam600l8hgkg43ggzc92p9acvgcz51"))))
     (properties `((upstream-name . "fastglmpca")))
     (build-system r-build-system)
     (arguments
@@ -22605,7 +22605,6 @@ sampling (Murray, Adams, and @code{MacKay} 2010).")
     (propagated-inputs (list r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
-                             r-matrixextra
                              r-matrix
                              r-distr
                              r-daarem))

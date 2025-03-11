@@ -7154,19 +7154,19 @@ well as tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "00r8ma0xs24y3390lk12a2snf1y7qqmabpbxkjwl6vrg1r95c82m"))))
+        (base32 "031rmdvqjjaayigkhzhp2w6xnbnh7dkrzlpw9k77mf6njpawj9cf"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (native-inputs (list r-litedown r-knitr))
+    (native-inputs (list r-litedown))
     (home-page "https://www.reconverse.org/grates/")
     (synopsis "Grouped Date Classes")
     (description
@@ -8209,13 +8209,13 @@ information: <doi:10.5117/CCR2023.1.003.CHAN>.")
 (define-public r-grafify
   (package
     (name "r-grafify")
-    (version "5.0.0")
+    (version "5.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grafify" version))
        (sha256
-        (base32 "0sfxc66s1l7zcmn20gxbjm4dcwky40gkbqs57zg360vgkdlw4zfr"))))
+        (base32 "18631xqbi4123i55mp7ajkc5bxfhg31784ha123ygvbyggw6sgb3"))))
     (properties `((upstream-name . "grafify")))
     (build-system r-build-system)
     (arguments
@@ -12178,6 +12178,45 @@ Diagnostic tools for GNAR(X) models can be found in Nason et al. (2023)
 diagnostic plots, for the underlying manuscript see Fischer, Oja (2015)
 <doi:10.18637/jss.v065.i09>.")
     (license license:gpl2+)))
+
+(define-public r-gmwmx2
+  (package
+    (name "r-gmwmx2")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gmwmx2" version))
+       (sha256
+        (base32 "0abl57bqaz3iv9aiyph2zi9jix1fs44gi2vfy2v5fn43nysm0qwi"))))
+    (properties `((upstream-name . "gmwmx2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wv
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-magrittr
+                             r-httr2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SMAC-Group/gmwmx2")
+    (synopsis
+     "Estimate Functional and Stochastic Parameters of Linear Models with Correlated Residuals and Missing Data")
+    (description
+     "This package implements the Generalized Method of Wavelet Moments with Exogenous
+Inputs estimator (GMWMX) presented in Voirol, L., Xu, H., Zhang, Y., Insolia,
+L., Molinari, R. and Guerrier, S. (2024) <doi:10.48550/@code{arXiv.2409.05160>}.
+ The GMWMX estimator allows to estimate functional and stochastic parameters of
+linear models with correlated residuals in presence of missing data.  The gmwmx2
+package provides functions to load and plot Global Navigation Satellite System
+(GNSS) data from the Nevada Geodetic Laboratory and functions to estimate linear
+model model with correlated residuals in presence of missing data.")
+    (license license:agpl3)))
 
 (define-public r-gmwmx
   (package
@@ -22833,13 +22872,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "12.1.0")
+    (version "12.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "063qida1lvi24p5rj2bzamfray2avv09g1vp6vslj2yl0q0b7za3"))))
+        (base32 "1xxl3wnffrjygl775xmiilrpxam88ng0m5bfl7b1zbym588jqgiq"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (arguments
@@ -29639,6 +29678,40 @@ functions to calculate haplotype specific odds ratio and the power of two stage
 design for GWAS studies.")
     (license license:gpl2+)))
 
+(define-public r-genenr
+  (package
+    (name "r-genenr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geneNR" version))
+       (sha256
+        (base32 "1imihy6afhhg667hs31ayq657if1b2gn204h4rysbmlayh9kbw4g"))))
+    (properties `((upstream-name . "geneNR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-writexl
+                             r-stringr
+                             r-rvest
+                             r-readr
+                             r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geneNR")
+    (synopsis "Automated Gene Identification for Post-GWAS Analysis")
+    (description
+     "Facilitates the post-Genome Wide Association Studies (GWAS) analysis of
+identifying candidate genes within user-defined search window, based on the
+identified Single Nucleotide Polymorphisms (SNPs) as given by Mazumder AK (2024)
+<doi:10.1038/s41598-024-66903-3>.  It supports candidate gene analysis for wheat
+and rice.  Just import your GWAS result as explained in the sample_data file and
+the function does all the manual search and retrieve candidate genes for you,
+while exporting the results into ready-to-use output.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-genenmf
   (package
     (name "r-genenmf")
@@ -30196,13 +30269,13 @@ studies, where failures are tackled by countermeasures.")
 (define-public r-genbarcode
   (package
     (name "r-genbarcode")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genBaRcode" version))
        (sha256
-        (base32 "1rgx0b3bpqfc75y5x4i714m8xbrgckvg4m9gkqxq0464386s53dd"))))
+        (base32 "1dq5jdn6mdlpld2i6ybyqhg5ikqamidxhdbvn39mwfwfiqkp6p8x"))))
     (properties `((upstream-name . "genBaRcode")))
     (build-system r-build-system)
     (arguments

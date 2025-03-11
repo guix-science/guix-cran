@@ -5603,27 +5603,19 @@ forms.  No strong dependencies guaranteed.")
 (define-public r-versioning
   (package
     (name "r-versioning")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "versioning" version))
        (sha256
-        (base32 "0r4ffd1s9warfan7ldcd6sn98qimsllf77dhxfygblr8spxcl7h5"))))
+        (base32 "1xrlwcqcaapg4m9sf28i1zzbzkfcisxa4xy5n5rsrqz884zkpig6"))))
     (properties `((upstream-name . "versioning")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-terra
-                             r-sf
-                             r-r6
-                             r-haven
-                             r-glue
-                             r-foreign
-                             r-data-table
-                             r-assertthat))
+    (propagated-inputs (list r-yaml r-r6 r-glue r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=versioning")
     (synopsis "Settings and File I/O using a Configuration YAML File")

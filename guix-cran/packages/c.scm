@@ -26824,6 +26824,45 @@ analysis of ecological count data (Harrison et al.  2020
 <doi:10.1111/1755-0998.13128>).")
     (license license:gpl3)))
 
+(define-public r-cnvreg
+  (package
+    (name "r-cnvreg")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CNVreg" version))
+       (sha256
+        (base32 "15j0i6kn74vd33xcfcf64sf7yw7paj7sbk6864x9fffnqzinnqzw"))))
+    (properties `((upstream-name . "CNVreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-matrix
+                             r-glmnet
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CNVreg")
+    (synopsis
+     "CNV-Profile Regression for Copy Number Variants Association Analysis with Penalized Regression")
+    (description
+     "This package performs copy number variants association analysis with Lasso and
+Weighted Fusion penalized regression.  Creates a \"CNV profile curve\" to
+represent an individualâs CNV events across a genomic region so to capture
+variations in CNV length and dosage.  When evaluating association, the CNV
+profile curve is directly used as a predictor in the regression model, avoiding
+the need to predefine CNV loci.  CNV profile regression estimates CNV effects at
+each genome position, making the results comparable across different studies.
+The penalization encourages sparsity in variable selection with a Lasso penalty
+and encourages effect smoothness between consecutive CNV events with a weighted
+fusion penalty, where the weight controls the level of smoothing between
+adjacent CNVs.  For more details, see Si (2024) <doi:10.1101/2024.11.23.624994>.")
+    (license license:gpl3)))
+
 (define-public r-cnum
   (package
     (name "r-cnum")
@@ -32900,6 +32939,33 @@ a neural network model instead.")
 data.  Addresses challenges associated with its classification system and
 related styles, such as color mappings and descriptive labels.")
     (license license:expat)))
+
+(define-public r-clayringsmiletus
+  (package
+    (name "r-clayringsmiletus")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clayringsmiletus" version))
+       (sha256
+        (base32 "11qzzf3myacr880izr14m0zmid5z5k30ggqxrjk43n41ifgsfxkh"))))
+    (properties `((upstream-name . "clayringsmiletus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lsteinmann/clayringsmiletus")
+    (synopsis "Clay Stacking Rings Found in Miletus (Data)")
+    (description
+     "Stacking rings are tools used to stack pottery in a Kiln.  A relatively large
+group of stacking rings was found in the area of the sanctuary of Dionysos in
+Miletus in the 1970s.  Measurements and additional info is gathered in this
+package and made available for use by other researchers.  The data along with
+its archaeological context and analysis has been published in \"ArchÃ¤ologischer
+Anzeiger\" (2020/1, <doi:10.34780/aa.v0i1.1014>).")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-clast
   (package

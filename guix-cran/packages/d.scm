@@ -5917,6 +5917,50 @@ Vichi M. (2017) \"Disjoint factor analysis with cross-loadings\"
 <doi:10.1007/s11634-016-0263-9>.")
     (license license:gpl3+)))
 
+(define-public r-drclass
+  (package
+    (name "r-drclass")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DRclass" version))
+       (sha256
+        (base32 "03wwdp9jy3q123vk6zq2cl1lhzk3grkiq861wq0g4cagf7348kil"))))
+    (properties `((upstream-name . "DRclass")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://gitlab.com/p.reichert/DRclass")
+    (synopsis
+     "Consider Ambiguity in Probabilistic Descriptions Using Density Ratio Classes")
+    (description
+     "Consider ambiguity in probabilistic descriptions by replacing a parametric
+probabilistic description of uncertainty by a non-parametric set of probability
+distributions in the form of a Density Ratio Class.  This is of particular
+interest in Bayesian inference.  The Density Ratio Class is particularly suited
+for this purpose as it is invariant under Bayesian inference, marginalization,
+and propagation through a deterministic model.  Here, invariant means that the
+result of the operation applied to a Density Ratio Class is again a Density
+Ratio Class.  In particular the invariance under Bayesian inference thus enables
+iterative learning within the same framework of Density Ratio Classes.  The use
+of imprecise probabilities in general, and Density Ratio Classes in particular,
+lead to intervals of characteristics of probability distributions, such as
+cumulative distribution functions, quantiles, and means.  The package is based
+on a sample of the distribution proportional to the upper bound of the class.
+Typically this will be a sample from the posterior in Bayesian inference.  Based
+on such a sample, the package provides functions to calculate lower and upper
+class boundaries and lower and upper bounds of cumulative distribution
+functions, and quantiles.  Rinderknecht, S.L., Albert, C., Borsuk, M.E.,
+Schuwirth, N., Kuensch, H.R. and Reichert, P. (2014) \"The effect of ambiguous
+prior knowledge on Bayesian model parameter inference and prediction.\"
+Environmental Modelling & Software.  62, 300-315, 2014.
+<doi:10.1016/j.envsoft.2014.08.020>.  Sriwastava, A. and Reichert, P. \"Robust
+Bayesian Estimation of Value Function Parameters using Imprecise Priors.\"
+Submitted. <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4973574>.")
+    (license license:gpl3)))
+
 (define-public r-drcarlate
   (package
     (name "r-drcarlate")
@@ -32571,41 +32615,6 @@ Components (LFDAKPC) and Kernel Local (Fisher) Discriminant Analysis (KLFDA).
 These discriminant analyses can be used to do ecological and evolutionary
 inference, including demography inference, species identification, and
 population/community structure inference.")
-    (license license:gpl3)))
-
-(define-public r-d4talink-light
-  (package
-    (name "r-d4talink-light")
-    (version "2.1.17")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "D4TAlink.light" version))
-       (sha256
-        (base32 "1qpsc9wqz427ym9p577xyzqfnsmfs4v20jmp9hvk2m2gbck32zwv"))))
-    (properties `((upstream-name . "D4TAlink.light")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rmarkdown
-                             r-reticulate
-                             r-openxlsx
-                             r-openssl
-                             r-officedown
-                             r-jsonlite
-                             r-getpass
-                             r-feather
-                             r-biobase))
-    (native-inputs (list r-knitr))
-    (home-page "https://bitbucket.org/SQ4/d4talink.light")
-    (synopsis "FAIR Data - Workflow Management")
-    (description
-     "Tools, methods and processes for the management of analysis workflows.  These
-lightweight solutions facilitate structuring R&D activities.  These solutions
-were developed to comply with Good Documentation Practice (GDP), with FAIR
-principles as discussed by Jacobsen et al. (2017) <doi:10.1162/dint_r_00024>,
-and with ALCOA+ principles as proposed by the U.S. FDA.")
     (license license:gpl3)))
 
 (define-public r-d4storagehub4r

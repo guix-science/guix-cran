@@ -1074,13 +1074,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "0yk81bivqvgprnqivyf4rjg41zy8vdip6nmf0riz56zg2lmlsnds"))))
+        (base32 "1spnfvpj2w6x780lvmbl5llxxpglbxh73w3jy825bd02fhzs3yd6"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (arguments
@@ -3669,13 +3669,13 @@ enhanced procedures for computing the investment performance indices of Bacon
 (define-public r-jfa
   (package
     (name "r-jfa")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jfa" version))
        (sha256
-        (base32 "19vr5146fp0gnsjp4nif2gms27f7x98awjvyi05fxklddkrl6j44"))))
+        (base32 "1amp0m0czjdgj0rqxdh5flryhczq2r9hi2iy9qm1vbf9rnr3lvfv"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
     (arguments
@@ -3706,8 +3706,9 @@ values.  Finally, the package includes methods for auditing algorithms on the
 aspect of fairness and bias.  Next to classical statistical methodology, the
 package implements Bayesian equivalents of these methods whose statistical
 underpinnings are described in Derks et al. (2021) <doi:10.1111/ijau.12240>,
-Derks et al. (2024) <doi:10.2308/AJPT-2021-086>, and Derks et al. (2022)
-<doi:10.31234/osf.io/8nf3e>.")
+Derks et al. (2024) <doi:10.2308/AJPT-2021-086>, Derks et al. (2022)
+<doi:10.31234/osf.io/8nf3e> Derks et al. (2024) <doi:10.31234/osf.io/tgq5z>, and
+Derks et al. (2025) <doi:10.31234/osf.io/b8tu2>.")
     (license license:gpl3+)))
 
 (define-public r-jewel
@@ -4508,6 +4509,34 @@ clustering and connectivity patterns.")
 <https://developer.jamendo.com/v3.0>.  Pull audio, features and other
 information for a given Jamendo user (including yourself!) or enter an artist's
 -, album's -, or track's name and retrieve the available information in seconds.")
+    (license license:expat)))
+
+(define-public r-jamba
+  (package
+    (name "r-jamba")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jamba" version))
+       (sha256
+        (base32 "0n5yxd8zxxgcy6sqkjirjsp5yciccvyh1gh35gvcs9ks3bcvag4w"))))
+    (properties `((upstream-name . "jamba")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr r-rcolorbrewer r-kernsmooth r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://jmw86069.github.io/jamba/")
+    (synopsis "Just Analysis Methods Base")
+    (description
+     "Just analysis methods ('jam') base functions focused on bioinformatics.
+Version- and gene-centric alphanumeric sort, unique name and version assignment,
+colorized console and HTML output, color ramp and palette manipulation,
+Rmarkdown cache import, styled Excel worksheet import and export, interpolated
+raster output from smooth scatter and image plots, list to delimited vector,
+efficient list tools.")
     (license license:expat)))
 
 (define-public r-jalcal

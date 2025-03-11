@@ -9497,6 +9497,32 @@ measure the performance of these designs.  It consist of the function
 @code{equivalent_BSPD()}.")
     (license license:gpl3)))
 
+(define-public r-equatiomatic
+  (package
+    (name "r-equatiomatic")
+    (version "0.3.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "equatiomatic" version))
+       (sha256
+        (base32 "189qsbgqrzp84ylb76s56fjgvfzcwb8llp7q0mdd1h3bfrvsxa14"))))
+    (properties `((upstream-name . "equatiomatic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny r-knitr r-broom-mixed r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/datalorax/equatiomatic")
+    (synopsis "Transform Models into 'LaTeX' Equations")
+    (description
+     "The goal of equatiomatic is to reduce the pain associated with writing
+@code{LaTeX} formulas from fitted models.  The primary function of the package,
+@code{extract_eq()}, takes a fitted model object as its input and returns the
+corresponding @code{LaTeX} code for the model.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
@@ -15658,13 +15684,13 @@ cocktails.")
 (define-public r-emc2
   (package
     (name "r-emc2")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMC2" version))
        (sha256
-        (base32 "0nrg7q29q0rscw1w1vd088kn6wngkwa3n2fq3xia05jpclz3h6z4"))))
+        (base32 "1l4q9qdgnvrrzixm8lhz6awdys3brgcmyvlfrzz6z1jm9ih0s4fq"))))
     (properties `((upstream-name . "EMC2")))
     (build-system r-build-system)
     (arguments
