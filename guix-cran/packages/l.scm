@@ -3505,13 +3505,13 @@ functions for estimating linear and geometric morphometric data.")
 (define-public r-lorme
   (package
     (name "r-lorme")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorMe" version))
        (sha256
-        (base32 "0jvdbz82n657rq6fnvhq45l2qvm66ivmqhf34yn9q66pq24yl1qi"))))
+        (base32 "04m9l3kcpcygyfg7aq1rfjvrb8g4vpszg7sqca2hr856kld9hhx7"))))
     (properties `((upstream-name . "LorMe")))
     (build-system r-build-system)
     (arguments
@@ -5771,13 +5771,13 @@ log-concave.  For further information see Duembgen, Rufibach and Schuhmacher
 (define-public r-logconcdead
   (package
     (name "r-logconcdead")
-    (version "1.6-10")
+    (version "1.6-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogConcDEAD" version))
        (sha256
-        (base32 "0vm89bdaldgcpb1x14jg64p9l54sn38q1msa0zbw7fmwb8ssf59g"))))
+        (base32 "1yds46ljvx5hyrsm9sxsva2w0lq65y2374x2wvirvbnw30dv1qcr"))))
     (properties `((upstream-name . "LogConcDEAD")))
     (build-system r-build-system)
     (arguments
@@ -12409,13 +12409,13 @@ periodical model validation.")
 (define-public r-lgcu
   (package
     (name "r-lgcu")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LGCU" version))
        (sha256
-        (base32 "08k59a0302lsvn683kn6zpdkgr4761clmahwyi1k2q7fl2gkclh3"))))
+        (base32 "179ns79559c3a53fixx1j1sfk7519bk46a1fyjva2fkk54jlsws5"))))
     (properties `((upstream-name . "LGCU")))
     (build-system r-build-system)
     (arguments
@@ -12426,7 +12426,7 @@ periodical model validation.")
     (synopsis
      "Implementation of Learning Gamma CUSUM (Cumulative Sum) Control Charts")
     (description
-     "Description: Implements Cumulative Sum (CUSUM) control charts specifically
+     "This package implements Cumulative Sum (CUSUM) control charts specifically
 designed for monitoring processes following a Gamma distribution.  Provides
 functions to estimate distribution parameters, simulate control limits, and
 apply cautious learning schemes for adaptive thresholding.  It supports upward

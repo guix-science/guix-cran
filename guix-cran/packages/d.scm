@@ -8140,13 +8140,13 @@ and intervals from English-language prescriptions.  Based on Karystianis et al.
 (define-public r-dosefinding
   (package
     (name "r-dosefinding")
-    (version "1.2-1")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoseFinding" version))
        (sha256
-        (base32 "0chy4xl7faflp3cf27sf2ayzkvay13vf2cgdxmihsrbxkib2f01f"))))
+        (base32 "1hg83ydq3k2wwaar4dwad8qrsgd3qixq3lgryzq2xg3p63qq70rq"))))
     (properties `((upstream-name . "DoseFinding")))
     (build-system r-build-system)
     (arguments
@@ -17340,13 +17340,13 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "0f9dqqg176bqvydq3bbnaz73655gml64faa1l3b74nwgw9bss22r"))))
+        (base32 "12iz80vx2cx0ipzdpfwyibkxg2dy0rbi4krxkkgwn7p0wzigs2vb"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (arguments
@@ -21750,13 +21750,13 @@ Liebscher (2019, submitted).")
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depCensoring" version))
        (sha256
-        (base32 "0y1qc0kibhj8pl7k41ywyvj49k28avdw55fgwa10gf9ap11bidav"))))
+        (base32 "1xd9w7cchwp615dh43qfanlyin3fpi5p9jnim1a7x5rm820sx9hy"))))
     (properties `((upstream-name . "depCensoring")))
     (build-system r-build-system)
     (arguments
@@ -21764,8 +21764,10 @@ Liebscher (2019, submitted).")
       #:tests? #f))
     (propagated-inputs (list r-survival
                              r-stringr
+                             r-splines2
                              r-rvinecopulib
                              r-rafalib
+                             r-r6
                              r-pbivnorm
                              r-openmx
                              r-numderiv
@@ -21775,6 +21777,7 @@ Liebscher (2019, submitted).")
                              r-matrixcalc
                              r-matrix
                              r-mass
+                             r-lubridate
                              r-foreach
                              r-envstats
                              r-doparallel
@@ -21791,7 +21794,7 @@ survival data.  For more details on the methods, refer to Deresa and Van
 Keilegom (2021) <doi:10.1093/biomet/asaa095>, Czado and Van Keilegom (2023)
 <doi:10.1093/biomet/asac067>, Crommen et al. (2024)
 <doi:10.1007/s11749-023-00903-9>, Deresa and Van Keilegom (2024)
-<doi:10.1080/01621459.2022.2161387> and Willems et al. (2024+)
+<doi:10.1080/01621459.2022.2161387>, Rutten et al. (2024+)
 <doi:10.48550/@code{arXiv.2403.11860>} and Ding and Van Keilegom (2024).")
     (license license:gpl3)))
 
@@ -29606,6 +29609,33 @@ and version checking of included data objects.  Data packages can be version
 controlled on @code{GitHub}', and used to share data for manuscripts,
 collaboration and reproducible research.")
     (license license:expat)))
+
+(define-public r-datapackage
+  (package
+    (name "r-datapackage")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datapackage" version))
+       (sha256
+        (base32 "0kk2klbgxd15zss7xna5frq1iqnx55pgxygz4gyahf5jz2g0ls9d"))))
+    (properties `((upstream-name . "datapackage")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml r-jsonlite r-iso8601))
+    (native-inputs (list r-simplermarkdown))
+    (home-page "https://github.com/djvanderlaan/datapackage")
+    (synopsis "Creating and Reading Data Packages")
+    (description
+     "Open, read data from and modify Data Packages.  Data Packages are an open
+standard for bundling and describing data sets (<https://datapackage.org>).
+When data is read from a Data Package care is taken to convert the data as much
+a possible to R appropriate data types.  The package can be extended with
+plugins for additional data types.")
+    (license license:gpl3)))
 
 (define-public r-datapack
   (package

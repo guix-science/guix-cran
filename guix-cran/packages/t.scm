@@ -1925,41 +1925,6 @@ prediction.")
 and Heyse (1985) <DOI:10.2307/2530666> for general parametric models.")
     (license license:gpl2)))
 
-(define-public r-tukeyregion
-  (package
-    (name "r-tukeyregion")
-    (version "0.1.6.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TukeyRegion" version))
-       (sha256
-        (base32 "02w84bha6niyval71a06ibk42crvv2259302ckdzmb61ik9sg44d"))))
-    (properties `((upstream-name . "TukeyRegion")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rglpk
-                             r-rgl
-                             r-rcpp
-                             r-mass
-                             r-ddalpha
-                             r-bh
-                             r-bfp))
-    (home-page "https://cran.r-project.org/package=TukeyRegion")
-    (synopsis "Tukey Region and Median")
-    (description
-     "Tukey regions are polytopes in the Euclidean space, viz.  upper-level sets of
-the Tukey depth function on given data.  The bordering hyperplanes of a Tukey
-region are computed as well as its vertices, facets, centroid, and volume.  In
-addition, the Tukey median set, which is the non-empty Tukey region having
-highest depth level, and its barycenter (= Tukey median) are calculated.  Tukey
-regions are visualized in dimension two and three.  For details see Liu, Mosler,
-and Mozharovskyi (2019, <doi:10.1080/10618600.2018.1546595>).  See file
-LICENSE.note for additional license information.")
-    (license license:gpl3+)))
-
 (define-public r-tukeygh77
   (package
     (name "r-tukeygh77")
@@ -18562,13 +18527,13 @@ describing the methodology can be found at
 (define-public r-tidyhydat
   (package
     (name "r-tidyhydat")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyhydat" version))
        (sha256
-        (base32 "16y5n5pi4lhn20dmxavis2nvfbzxqd21lixvr5gsaz6wb08z194n"))))
+        (base32 "03sid73jffk9cm8g7y79lggqrjg446xss97x6qqcc8x6lbrcy6c3"))))
     (properties `((upstream-name . "tidyhydat")))
     (build-system r-build-system)
     (arguments
@@ -24581,40 +24546,6 @@ archaeology: count data, compositional data and chronological data.  Learn more
 about tesselle at <https://www.tesselle.org>.")
     (license license:gpl3+)))
 
-(define-public r-tessellation
-  (package
-    (name "r-tessellation")
-    (version "2.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tessellation" version))
-       (sha256
-        (base32 "0l8ffw7szmfd51lf9x8vh673zq0zg8rrx1527hgllddk82kyhmia"))))
-    (properties `((upstream-name . "tessellation")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sets
-                             r-scales
-                             r-rvcg
-                             r-rgl
-                             r-r6
-                             r-polychrome
-                             r-hash
-                             r-english
-                             r-cxhull
-                             r-colorsgen))
-    (home-page "https://github.com/stla/tessellation")
-    (synopsis "Delaunay and VoronoÃ¯ Tessellations")
-    (description
-     "Delaunay and VoronoÃ¯ tessellations, with emphasis on the two-dimensional and
-the three-dimensional cases (the package provides functions to plot the
-tessellations for these cases).  Delaunay tessellations are computed in C with
-the help of the Qhull library <http://www.qhull.org/>.")
-    (license license:gpl3)))
-
 (define-public r-tess
   (package
     (name "r-tess")
@@ -24789,41 +24720,6 @@ Allows custom annotation, interpolating, contouring and scaling of plotting
 region.  Includes a Shiny user interface for point-and-click ternary plotting.
 An alternative to ggtern', which uses the ggplot2 family of plotting functions.")
     (license license:gpl2+)))
-
-(define-public r-tern-rbmi
-  (package
-    (name "r-tern-rbmi")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tern.rbmi" version))
-       (sha256
-        (base32 "05rkw94xyvliii5jr1ipcl3zd37h29zngrarn4d40bf56fqkqnak"))))
-    (properties `((upstream-name . "tern.rbmi")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tern
-                             r-rtables
-                             r-rbmi
-                             r-magrittr
-                             r-lifecycle
-                             r-formatters
-                             r-checkmate
-                             r-broom))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/insightsengineering/tern.rbmi")
-    (synopsis "Create Interface for 'RBMI' and 'tern'")
-    (description
-     "RBMI implements standard and reference based multiple imputation methods for
-continuous longitudinal endpoints (Gower-Page et al. (2022)
-<doi:10.21105/joss.04251>).  This package provides an interface for RBMI uses
-the tern <https://cran.r-project.org/package=tern> framework by Zhu et al.
-(2023) and tabulate results easily using rtables
-<https://cran.r-project.org/package=rtables> by Becker et al. (2023).")
-    (license license:asl2.0)))
 
 (define-public r-tern-mmrm
   (package
@@ -27573,6 +27469,31 @@ assets covering a wide variety of course and time spans.  See
 <https://twelvedata.com/> for details, to create an account, and to request an
 API key for free-but-capped access to the data.")
     (license license:gpl2+)))
+
+(define-public r-tcxr
+  (package
+    (name "r-tcxr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tcxr" version))
+       (sha256
+        (base32 "0w85gqkn1wji6hn8gxh2rk8v4sqv0bld212w66w1h8k91scgyc93"))))
+    (properties `((upstream-name . "tcxr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml))
+    (home-page "https://cran.r-project.org/package=tcxr")
+    (synopsis "Parse and Analyze TCX Files")
+    (description
+     "Framework provides functions to parse Training Center XML (TCX) files and
+extract key activity metrics such as total distance, total time, calories
+burned, maximum altitude, and power values (watts).  This package is useful for
+analyzing workout and training data from devices that export TCX format.")
+    (license license:expat)))
 
 (define-public r-tcpmor
   (package

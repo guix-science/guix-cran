@@ -75,13 +75,13 @@ municipality.")
 (define-public r-ozbabynames
   (package
     (name "r-ozbabynames")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ozbabynames" version))
        (sha256
-        (base32 "1aknsdik18jgifz9l4hd37xd67lpdl1sgg71yqzs8f8kz5xg1xmw"))))
+        (base32 "0yhqacp1shwbg29wxfnc7ckq9k2vzds21yv2fxymsp2q80g0ilpw"))))
     (properties `((upstream-name . "ozbabynames")))
     (build-system r-build-system)
     (arguments
@@ -176,6 +176,39 @@ found in the third party packages you use.")
 arrays, one using conventional bisulfite conversion, the other using
 oxy-bisulfite conversion.")
     (license license:gpl2+)))
+
+(define-public r-oxsr
+  (package
+    (name "r-oxsr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OxSR" version))
+       (sha256
+        (base32 "0fni3ki49d4dplchk6g3j4i2k9npxz4dbvzwrsjgc2q5jrhbwagk"))))
+    (properties `((upstream-name . "OxSR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-munsellinterpol
+                             r-janitor
+                             r-ggplot2
+                             r-dplyr
+                             r-colorspec))
+    (home-page "https://github.com/FGu5tav0/OxSR")
+    (synopsis "Soil Iron Oxides via Diffuse Reflectance")
+    (description
+     "Calculate the ratio of iron oxides, hematite and goethite, in soil using the
+diffuse reflectance technique.  The Kubelka-Munk theory, second derivative
+analysis, and spectral region amplitudes related to hematite and goethite
+content are used for quantification (Torrent, J., & Barron, V. (2008)
+<doi:10.2136/sssabookser5.5.c13>).  Additionally, the package calculates soil
+color in the visible spectrum using Munsell and RGB color spaces, based on color
+theory (Viscarra et al. (2006) <doi:10.1016/j.geoderma.2005.07.017>).")
+    (license license:agpl3+)))
 
 (define-public r-oxcaar
   (package
@@ -7313,13 +7346,13 @@ the JSON file.")
 (define-public r-opendataformat
   (package
     (name "r-opendataformat")
-    (version "2.1.3")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opendataformat" version))
        (sha256
-        (base32 "0nkr01qx7fsbib78c6dbxlcvavnyrqlsx743cysjkfqdk7g26fzq"))))
+        (base32 "0i14kfp48s1bjj0f2ksjgizxb4mlmqik78g0h0bs1zwdnrffhpsv"))))
     (properties `((upstream-name . "opendataformat")))
     (build-system r-build-system)
     (arguments
@@ -7329,6 +7362,7 @@ the JSON file.")
                              r-xml2
                              r-tibble
                              r-magrittr
+                             r-jsonlite
                              r-data-table
                              r-cli))
     (native-inputs (list r-knitr))

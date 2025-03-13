@@ -7479,20 +7479,20 @@ Cousineau & Laurencelle (2016) <doi:10.1037/met0000055>, Cousineau & O'Brien
 (define-public r-super
   (package
     (name "r-super")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "super" version))
        (sha256
-        (base32 "0wlrql16g3jmihk8fbsp3p7l2pz1hpqbjw9zbjrhd2h2kk2bhz83"))))
+        (base32 "1d4cmxj1bnh2r89gpdwgb5z97p4083gzmayz75j9djs5545m51y6"))))
     (properties `((upstream-name . "super")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-litedown))
-    (home-page "https://timtaylor.github.io/super/")
+    (home-page "https://timtaylor.codeberg.page/super/")
     (synopsis "Interpreted String Literals")
     (description
      "An implementation of interpreted string literals.  Based on the glue package by
@@ -10091,13 +10091,13 @@ M. et al. (2016) <DOI:10.1021/acs.est.5b04068>, Mondy, C. P., and Schuwirth, N.
 (define-public r-stream
   (package
     (name "r-stream")
-    (version "2.0-2")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stream" version))
        (sha256
-        (base32 "0qpn6rf0rp1nklarw0jkdlvpalcnvvjs26h8slnqkgrkb1rr0vhc"))))
+        (base32 "1804hgvjs9achz74sqbcbcqczk5l5rmwjx1n18cjcya6bmq0nd8a"))))
     (properties `((upstream-name . "stream")))
     (build-system r-build-system)
     (arguments
@@ -11426,6 +11426,34 @@ annotated story data.  To learn more about the project visit
 the Norwegian Parliament, through the Norwegian Parliament API at
 <https://data.stortinget.no>.")
     (license license:gpl3+)))
+
+(define-public r-stors
+  (package
+    (name "r-stors")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stors" version))
+       (sha256
+        (base32 "09jrgsf5ha9cq534jii0lllwhff5h27kil0h7yhmiy2ncihnwlp3"))))
+    (properties `((upstream-name . "stors")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-microbenchmark r-digest r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://ahmad-alqabandi.github.io/stors/")
+    (synopsis "Step Optimised Rejection Sampling")
+    (description
+     "Fast and efficient sampling from general univariate probability density
+functions.  Implements a rejection sampling approach designed to take advantage
+of modern CPU caches and minimise evaluation of the target density for most
+samples.  Many standard densities are internally implemented in C for high
+performance, with general user defined densities also supported.  A paper
+describing the methodology will be released soon.")
+    (license license:expat)))
 
 (define-public r-storr
   (package
@@ -18978,13 +19006,13 @@ software.")
 (define-public r-ssd4mosaic
   (package
     (name "r-ssd4mosaic")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssd4mosaic" version))
        (sha256
-        (base32 "1266wn3vwlajr57sdjqk5zylnm7vcss37r4qwa02iv9d98qmwmrw"))))
+        (base32 "0dw238k6wi2xg70ixi4ikb38rhpsrafqp1acifgrp1rqabim63pf"))))
     (properties `((upstream-name . "ssd4mosaic")))
     (build-system r-build-system)
     (arguments
@@ -22247,13 +22275,13 @@ compositionally-warping (Murakami et al.  2021,
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "14zp5p9518p1divavcy2ydwm1fw3n0l0a5r2nxbxn2n25gbmpdky"))))
+        (base32 "1r280m9lgln10nwbk3c2ylwkphg97g1caii4wf89gbhv51izv90j"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (arguments
@@ -24757,13 +24785,13 @@ intervention of a single legislator.")
 (define-public r-spedm
   (package
     (name "r-spedm")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spEDM" version))
        (sha256
-        (base32 "19d6kpcmfcccn0zbw0qj6d661vchnhf0xfr0dvc7ksa7bxgn4wry"))))
+        (base32 "1c6vwxxx9ffjjspvy18minmb9w5xapxz3gqw5wz8rjcgi68vzhxj"))))
     (properties `((upstream-name . "spEDM")))
     (build-system r-build-system)
     (arguments
@@ -44988,13 +45016,13 @@ an end-to-end application using this package.")
 (define-public r-silp
   (package
     (name "r-silp")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "silp" version))
        (sha256
-        (base32 "1a0ng4lmibcx1afkxxd17593h5dn6iizi6x5kgdy9660llfs1q57"))))
+        (base32 "1fwf25vqsxgqd139niy3pz9lwr7myyhgslmd251m4k7dbp4f572w"))))
     (properties `((upstream-name . "silp")))
     (build-system r-build-system)
     (arguments
@@ -45007,23 +45035,20 @@ an end-to-end application using this package.")
                              r-mass
                              r-lavaan))
     (home-page "https://github.com/TomBJJJ/silp")
-    (synopsis
-     "Conditional Process Analysis (CPA) via Structural Equation Modeling (SEM) Approach")
+    (synopsis "Conditional Process Analysis (CPA) via SEM Approach")
     (description
-     "This package provides Reliability-Adjusted Product Indicator (RAPI) method to
-estimate effects among latent variables, thus allowing for more precise
-definition and analysis of mediation and moderation models.  Our simulation
-studies reveal that while silp may exhibit instability with smaller sample sizes
-and lower reliability scores (e.g., N = 100, omega = 0.7), implementing nearest
-positive definite matrix correction and bootstrap confidence interval estimation
-can significantly ameliorate this volatility.  When these adjustments are
-applied, silp achieves estimations akin in quality to those derived from latent
-moderated structural equations (LMS).  In conclusion, the silp package is a
-valuable tool for researchers seeking to explore complex relational structures
-between variables without resorting to commercial software.  Hsiao et
-al.(2018)<doi:10.1177/0013164416679877> Kline &
-Moosbrugger(2000)<doi:10.1007/BF02296338> Cheung et
-al.(2021)<doi:10.1007/s10869-020-09717-0>.")
+     "Utilizes the Reliability-Adjusted Product Indicator (RAPI) method to estimate
+effects among latent variables, thus allowing for more precise definition and
+analysis of mediation and moderation models.  Our simulation studies reveal that
+while silp may exhibit instability with smaller sample sizes and lower
+reliability scores (e.g., N = 100, omega = 0.7), implementing nearest positive
+definite matrix correction and bootstrap confidence interval estimation can
+significantly ameliorate this volatility.  When these adjustments are applied,
+silp achieves estimations akin in quality to those derived from LMS. In
+conclusion, the silp package is a valuable tool for researchers seeking to
+explore complex relational structures between variables without resorting to
+commercial software.  Cheung et al.(2021)<doi:10.1007/s10869-020-09717-0> Hsiao
+et al.(2018)<doi:10.1177/0013164416679877>.")
     (license license:expat)))
 
 (define-public r-silm
@@ -59749,13 +59774,13 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "06z0470ggpn8l2kg6ziakb88hkq6bix8498ysxysmddacj68xkir"))))
+        (base32 "01nc36lz7sxkr2mhyl84vqa5j6n01mhs8y132hn3j7sbbz333d12"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (arguments
@@ -61504,13 +61529,13 @@ Differential Equations With R Examples, ISBN 978-0-387-75838-1, Springer, NY.")
 (define-public r-sdctable
   (package
     (name "r-sdctable")
-    (version "0.32.6")
+    (version "0.32.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdcTable" version))
        (sha256
-        (base32 "15jjc25zmxlhh6jvf1ml9q2ngf3blr6c1rarfsx993i4lbb6lg12"))))
+        (base32 "14fqf8m2k3lzbqq3ww5hv0f9m56vxwl6v3pcj446zagawaja3wvb"))))
     (properties `((upstream-name . "sdcTable")))
     (build-system r-build-system)
     (arguments

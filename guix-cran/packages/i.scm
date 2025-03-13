@@ -597,6 +597,35 @@ regressions.  Package based on @code{DiTraglia} and Garcia-Jimeno (2020)
 <doi:10.1080/07350015.2020.1753528>.")
     (license license:cc0)))
 
+(define-public r-ivdml
+  (package
+    (name "r-ivdml")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IVDML" version))
+       (sha256
+        (base32 "1sfwnfbdbng28h65x8hv4wiy11vcyigkcjb3ir5zynjfamq8ca6x"))))
+    (properties `((upstream-name . "IVDML")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost r-ranger r-mgcv))
+    (home-page "https://github.com/cyrillsch/IVDML")
+    (synopsis
+     "Double Machine Learning with Instrumental Variables and Heterogeneity")
+    (description
+     "Instrumental variable (IV) estimators for homogeneous and heterogeneous
+treatment effects with efficient machine learning instruments.  The estimators
+are based on double/debiased machine learning allowing for nonlinear and
+potentially high-dimensional control variables.  Details can be found in
+Scheidegger, Guo and BÃ¼hlmann (2025) \"Inference for heterogeneous treatment
+effects with efficient instruments and machine learning\"
+<doi:10.48550/@code{arXiv.2503.03530>}.")
+    (license license:gpl3+)))
+
 (define-public r-ivdiag
   (package
     (name "r-ivdiag")
@@ -11703,13 +11732,13 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence2" version))
        (sha256
-        (base32 "0xciyrcrsnh00g8g56zn9xxhwdi3llvw0yr54ciiz6y9wq3p5hnn"))))
+        (base32 "0m5h0jpg7c32gi29a7d8xwqgmg2z4jypiw40l7kgz6qzdp87qhgz"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
     (arguments
@@ -11725,16 +11754,14 @@ cohort.")
                              r-grates
                              r-dplyr
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-litedown))
     (home-page "https://www.reconverse.org/incidence2/")
     (synopsis "Compute, Handle and Plot Incidence of Dated Events")
     (description
      "This package provides functions and classes to compute, handle and visualise
 incidence from dated events for a defined time interval.  Dates can be provided
 in various standard formats.  The class incidence2 is used to store computed
-incidence and can be easily manipulated, subsetted, and plotted.  This package
-is part of the RECON (<https://www.repidemicsconsortium.org/>) toolkit for
-outbreak analysis (<https://www.reconverse.org>).")
+incidence and can be easily manipulated, subsetted, and plotted.")
     (license license:expat)))
 
 (define-public r-incidence
@@ -15742,13 +15769,13 @@ Instagram is a web photo sharing service.  It can be found at:
 (define-public r-ig-degree-betweenness
   (package
     (name "r-ig-degree-betweenness")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ig.degree.betweenness" version))
        (sha256
-        (base32 "0h42476jir5xih6lmd63f53p233lihv4h2gfx5rms6vxfks2dm25"))))
+        (base32 "1w78gl8ls7y4knlhm8jq3rg5xghg51ia2xqksh7q6siw4lzhamkn"))))
     (properties `((upstream-name . "ig.degree.betweenness")))
     (build-system r-build-system)
     (arguments

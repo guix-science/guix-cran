@@ -9190,13 +9190,13 @@ lost nor inappropriately cut.")
 (define-public r-hexfont
   (package
     (name "r-hexfont")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexfont" version))
        (sha256
-        (base32 "0pxn1b5w8nzj23m4js8b93cbs6sx06jb1mqicwldd91a58xpz8jx"))))
+        (base32 "1kvgfz061nn53nsyxnk008p63ycx0l1i0iyn2ha027ifan3f4v0c"))))
     (properties `((upstream-name . "hexfont")))
     (build-system r-build-system)
     (arguments
@@ -10661,13 +10661,13 @@ cause of bugs, given salient examples when incorrect behaviour occurs.")
 (define-public r-hedgedrf
   (package
     (name "r-hedgedrf")
-    (version "0.0.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hedgedrf" version))
        (sha256
-        (base32 "1ka2pp1df00j63g15arcnndzribgkkaimvhxgiia9g409pmyizpc"))))
+        (base32 "1y95qhpxasbgi42bzqnfcab6z9z22c0qlykp3y7dy926fqdc4mj1"))))
     (properties `((upstream-name . "hedgedrf")))
     (build-system r-build-system)
     (arguments
@@ -10678,11 +10678,11 @@ cause of bugs, given salient examples when incorrect behaviour occurs.")
     (synopsis "An Implementation of the Hedged Random Forest Algorithm")
     (description
      "This algorithm is described in detail in the paper \"Hedging Forecast
-Combinations With an Application to the Random Forest\" by Beck et al. (2023)
-<doi:10.48550/@code{arXiv.2308.15384>}.  The package provides a function
-@code{hedgedrf()} that can be used to train a Hedged Random Forest model on a
-dataset, and a function @code{predict.hedgedrf()} that can be used to make
-predictions with the model.")
+Combinations With an Application to the Random Forest\" by Beck et al. (2024)
+<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5032102>.  The package
+provides a function @code{hedgedrf()} that can be used to train a Hedged Random
+Forest model on a dataset, and a function @code{predict.hedgedrf()} that can be
+used to make predictions with the model.")
     (license license:gpl3)))
 
 (define-public r-heddlr

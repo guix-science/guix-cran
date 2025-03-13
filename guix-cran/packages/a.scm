@@ -10278,13 +10278,13 @@ see the bibliography in the CGAL documentation at
 (define-public r-apollo
   (package
     (name "r-apollo")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apollo" version))
        (sha256
-        (base32 "1d9dbf0i0wqvxyfvnpp3p1asppgy0sch7w0w1k86wd0vqiarqgzv"))))
+        (base32 "0mnnrwwqh7kg03216d0gffvzq81n4izng7rl9rg2qmmaliqgnvxn"))))
     (properties `((upstream-name . "apollo")))
     (build-system r-build-system)
     (arguments
@@ -10292,6 +10292,7 @@ see the bibliography in the CGAL documentation at
       #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-stringr
+                             r-rstudioapi
                              r-rsolnp
                              r-rsghb
                              r-rcppeigen

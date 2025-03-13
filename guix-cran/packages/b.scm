@@ -2709,13 +2709,13 @@ Meyer, R. and Christensen, N., Statistics and Computing (2018).
 (define-public r-bspline
   (package
     (name "r-bspline")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspline" version))
        (sha256
-        (base32 "1jkj7pjrig1xicbr2dwk13dpy0r5v0xqwn3m1z6ncpwknf3f7mly"))))
+        (base32 "17xrs7rq0hnf8i7mhv2daykp4g5xmnp826ghap9fsxak6g3n35mw"))))
     (properties `((upstream-name . "bspline")))
     (build-system r-build-system)
     (arguments
@@ -2727,16 +2727,16 @@ Meyer, R. and Christensen, N., Statistics and Computing (2018).
     (description
      "Build and use B-splines for interpolation and regression.  In case of
 regression, equality constraints as well as monotonicity and/or positivity of
-B-spline weights can be imposed.  Moreover, knot positions (not only spline
-weights) can be part of optimized parameters too.  For this end, bspline is able
-to calculate Jacobian of basis vectors as function of knot positions.  User is
-provided with functions calculating spline values at arbitrary points.  These
-functions can be differentiated and integrated to obtain B-splines calculating
-derivatives/integrals at any point.  B-splines of this package can
-simultaneously operate on a series of curves sharing the same set of knots.
-bspline is written with concern about computing performance that's why the basis
-and Jacobian calculation is implemented in C++.  The rest is implemented in R
-but without notable impact on computing speed.")
+B-spline weights can be imposed.  Moreover, knot positions can be on regular
+grid or be part of optimized parameters too (in addition to the spline weights).
+ For this end, bspline is able to calculate Jacobian of basis vectors as
+function of knot positions.  User is provided with functions calculating spline
+values at arbitrary points.  These functions can be differentiated and
+integrated to obtain B-splines calculating derivatives/integrals at any point.
+B-splines of this package can simultaneously operate on a series of curves
+sharing the same set of knots.  bspline is written with concern about computing
+performance that's why the basis and Jacobian calculation is implemented in C++.
+ The rest is implemented in R but without notable impact on computing speed.")
     (license license:gpl2)))
 
 (define-public r-bspec
@@ -21877,38 +21877,6 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
 <doi:10.48550/@code{arXiv.2308.06820>}.")
     (license license:gpl2+)))
 
-(define-public r-bdsm
-  (package
-    (name "r-bdsm")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bdsm" version))
-       (sha256
-        (base32 "0q28m70v04mha9d2d5c71lv9igyd5pcrpamw4r574ccci85h4jdq"))))
-    (properties `((upstream-name . "bdsm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-rootsolve
-                             r-rlang
-                             r-rje
-                             r-optimbase
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=bdsm")
-    (synopsis "Bayesian Dynamic Systems Modeling")
-    (description
-     "This package implements methods for building and analyzing models based on panel
-data as described in the paper by Moral-Benito (2013,
-<doi:10.1080/07350015.2013.818003>).  The package provides functions to estimate
-dynamic panel data models and analyze the results of the estimation.")
-    (license license:expat)))
-
 (define-public r-bdscale
   (package
     (name "r-bdscale")
@@ -27774,19 +27742,26 @@ meta-analysis.")
 (define-public r-bayeschange
   (package
     (name "r-bayeschange")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesChange" version))
        (sha256
-        (base32 "197ikwlw15fl2bawy6i2d911bbmbgb9ibcv0mnd3baddhwd7mpa8"))))
+        (base32 "11y050zb6br78q570w7fa9wa801szik8j35pqg4apdpcyh6x85h3"))))
     (properties `((upstream-name . "BayesChange")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcppgsl r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-tidyr
+                             r-salso
+                             r-rcppgsl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lucadanese/BayesChange")
     (synopsis "Bayesian Methods for Change Points Analysis")

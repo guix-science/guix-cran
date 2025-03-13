@@ -1730,13 +1730,13 @@ post on user wall and etc.	For more information see API Documentation
 (define-public r-rvipkg
   (package
     (name "r-rvipkg")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RVIpkg" version))
        (sha256
-        (base32 "0s3fjagbd24cgymsfsjd0940kzyvla2cybsr0387q7l93lfr3rmd"))))
+        (base32 "1g6phdcg5m768f391nf3mi5bjbimrs556rnblacxnr6v1032cxgz"))))
     (properties `((upstream-name . "RVIpkg")))
     (build-system r-build-system)
     (arguments
@@ -14466,13 +14466,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.20")
+    (version "0.9.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolog" version))
        (sha256
-        (base32 "0d6slxmi1c36zhgdll0fklvrk2dbq9sm4fr92nx7r25fdplqah5l"))))
+        (base32 "16zbgcqaada0blrh7zas06xlasxa86vphcg21z6b6kjy111q1kc4"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (arguments
@@ -26323,6 +26323,38 @@ manipulation utilities.")
 Tiingo API <https://api.tiingo.com/>.")
     (license license:expat)))
 
+(define-public r-riim
+  (package
+    (name "r-riim")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RIIM" version))
+       (sha256
+        (base32 "0ik0p855hfhmmmd5xqi6mdx1p3j87c1gc5a1zxd468p7waq3aq90"))))
+    (properties `((upstream-name . "RIIM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost r-optmatch r-mass))
+    (home-page "https://cran.r-project.org/package=RIIM")
+    (synopsis "Randomization-Based Inference Under Inexact Matching")
+    (description
+     "Randomization-based inference for average treatment effects in potentially
+inexactly matched observational studies.  It implements the inverse
+post-matching probability weighting framework proposed by the authors.  The
+post-matching probability calculation follows the approach of Pimentel and Huang
+(2024) <doi:10.1093/jrsssb/qkae033>.  The optimal full matching method is based
+on Hansen (2004) <doi:10.1198/106186006X137047>.  The variance estimator extends
+the method proposed in Fogarty (2018) <doi:10.1111/rssb.12290> from the perfect
+randomization settings to the potentially inexact matching case.  Comparisons
+are made with conventional methods, as described in Rosenbaum (2002)
+<doi:10.1007/978-1-4757-3692-2>, Fogarty (2018) <doi:10.1111/rssb.12290>, and
+Kang et al. (2016) <doi:10.1214/15-aoas894>.")
+    (license license:gpl3)))
+
 (define-public r-rigr
   (package
     (name "r-rigr")
@@ -31862,13 +31894,13 @@ technique and example data (mm1) from Tilsen, S., & Johnson, K. (2008)
 (define-public r-rethnicity
   (package
     (name "r-rethnicity")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rethnicity" version))
        (sha256
-        (base32 "1wmy0anrcz2ww028k5i7fcfa5vyl7gzb1qyymh6xdpgijk4b32rr"))))
+        (base32 "1h92yzx9hqq7np4kddy0zn5nn6l7p745km46rddyp4ax502vi6zw"))))
     (properties `((upstream-name . "rethnicity")))
     (build-system r-build-system)
     (arguments
@@ -32263,13 +32295,13 @@ techniques (<https://choco-solver.org/>).")
 (define-public r-restk
   (package
     (name "r-restk")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RESTK" version))
        (sha256
-        (base32 "0pz3gafzvaaxd4qm731ayk7kbjj4w8ylq7z696avcs01r66prrk7"))))
+        (base32 "0vvwhhch6qlp7cjz9vfrciqpz4zm9nfhfj2frspwdbhydfcqc6zs"))))
     (properties `((upstream-name . "RESTK")))
     (build-system r-build-system)
     (arguments
@@ -36423,32 +36455,6 @@ multiple predefined reinforcement learning algorithms, such as experience
 replay.  Methodological details can be found in Sutton and Barto (1998)
 <ISBN:0262039249>.")
     (license license:expat)))
-
-(define-public r-rehydrator
-  (package
-    (name "r-rehydrator")
-    (version "0.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rehydratoR" version))
-       (sha256
-        (base32 "1d94m9hv1l72l9lph2vzbq4qqbfcgyhv2qk82p9vb8l2ckavjzvv"))))
-    (properties `((upstream-name . "rehydratoR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-rtweet r-jsonlite r-dplyr))
-    (home-page "https://kevincoakley.github.io/rehydratoR/")
-    (synopsis "Downloads Tweets from a List of Tweet IDs")
-    (description
-     "Facilitates replication of Twitter-based research by handling common programming
-tasks needed when downloading tweets.  Specifically, it ensures a user does not
-exceed Twitterâs rate limits, and it saves tweets in moderately sized files.
-While a user could perform these tasks in their own code, doing so may be beyond
-the capabilities of many users.")
-    (license license:bsd-3)))
 
 (define-public r-rehh-data
   (package
@@ -42874,13 +42880,13 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
 (define-public r-rdistance
   (package
     (name "r-rdistance")
-    (version "3.0.0")
+    (version "3.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdistance" version))
        (sha256
-        (base32 "07814154yss9660js65ib5jjgyhvyawxx6af1zl1im14ynrmz0np"))))
+        (base32 "081w6ppmyhf6iwvxy4pwxv0gw21nfcncfn06jf8qmgsm7wvrz8bg"))))
     (properties `((upstream-name . "Rdistance")))
     (build-system r-build-system)
     (arguments
@@ -42892,20 +42898,19 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
     (synopsis
      "Distance-Sampling Analyses for Density and Abundance Estimation")
     (description
-     "Distance-sampling analyses estimate density and abundance of organisms in
-ecology when detection probability declines with increasing distance from the
-observers.  Distance-sampling is popular in most branches of ecology and
-especially when organisms are observed from aerial platforms (e.g., airplane or
-drone), surface vessels (e.g., boat or truck), or along walking transects.
-Rdistance analyzes data collected on both point and line transects, estimates
-overall (study area) and site-level (transect or point) density, and allows
-users to specify regression-like formula (similar to lm or glm) for covariates.
-A large suite of classical, parametric detection functions are included along
-with some uncommon parametric functions (e.g., Gamma, negative exponential) and
-non-parametric smoothed distance functions.  Custom (user-defined) detection
-functions can be implemented (see vignette).  Measurement unit integrity is
-enforced with internal unit conversion when necessary.  The help files and
-vignettes have been vetted by multiple authors and tested in workshop settings.")
+     "Distance-sampling analyses (<doi:10.1007/978-3-319-19219-2>) estimate density
+and abundance of survey targets (e.g., animals) when detection declines with
+distance.  Distance-sampling is popular ecology, especially when survey targets
+are observed from aerial platforms (e.g., airplane or drone), surface vessels
+(e.g., boat or truck), or along walking transects.  Both point and line
+transects can be analyzed.  Outputs include overall (study area) density and
+abundance, effective sampling distances, and model fit statistics.  A large
+suite of classical, parametric detection functions (e.g., half-normal, hazard
+rate) is included along with uncommon parametric functions (e.g., Gamma,
+negative exponential).  Non-parametric smoothed distance functions are included.
+ Measurement unit integrity is enforced via internal unit conversion.  The help
+files and vignettes have been vetted by multiple authors and tested in workshop
+settings.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rdist
@@ -57022,13 +57027,13 @@ of a new method and how it compares to some of the standard ones.")
 (define-public r-r2rtf
   (package
     (name "r-r2rtf")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2rtf" version))
        (sha256
-        (base32 "08c8y7rg21r35id080j29k6bacfr7vd8bw9nh0bws0fa0nxd3la0"))))
+        (base32 "01pfdkx2xnyb035zl1vjpnbyhxx1i0z0244hk98i9fmmc68vvaaj"))))
     (properties `((upstream-name . "r2rtf")))
     (build-system r-build-system)
     (arguments

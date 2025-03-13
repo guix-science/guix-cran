@@ -2216,13 +2216,13 @@ results.")
 (define-public r-wordvector
   (package
     (name "r-wordvector")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordvector" version))
        (sha256
-        (base32 "09sr2xary7aysm75bbzkc1m79cnxifqb4c5xb6ip9g20m8k7vni0"))))
+        (base32 "1d8glrjmrvjigs16cdnf6fyjmkcgarm9v6lmr4diqm0ppsh6gp1v"))))
     (properties `((upstream-name . "wordvector")))
     (build-system r-build-system)
     (arguments
@@ -7139,6 +7139,64 @@ Additionally, random tweets can be generated for testing and evaluating the
 performance of analyses, empowering users to effectively analyze and interpret
 Twitter data for research and commercial purposes.")
     (license license:gpl3)))
+
+(define-public r-weatheroz
+  (package
+    (name "r-weatheroz")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weatherOz" version))
+       (sha256
+        (base32 "0d4nf5q2cm0pg76c3did04bnrb7zh8dsvnq8kg4gzkp29mcmg5j0"))))
+    (properties `((upstream-name . "weatherOz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-terra
+                             r-stars
+                             r-sf
+                             r-magick
+                             r-lubridate
+                             r-knitr
+                             r-jsonlite
+                             r-foreign
+                             r-data-table
+                             r-curl
+                             r-crul
+                             r-crayon
+                             r-clock
+                             r-apsimx))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/weatherOz/")
+    (synopsis
+     "An API Client for Australian Weather and Climate Data Resources")
+    (description
+     "This package provides automated downloading, parsing and formatting of weather
+data for Australia through API endpoints provided by the Department of Primary
+Industries and Regional Development ('DPIRD') of Western Australia and by the
+Science and Technology Division of the Queensland Government's Department of
+Environment and Science ('DES').  As well as the Bureau of Meteorology ('BOM')
+of the Australian government precis and coastal forecasts, and downloading and
+importing radar and satellite imagery files.  DPIRD weather data are accessed
+through public APIs provided by DPIRD',
+<https://www.agric.wa.gov.au/weather-api-20>, providing access to weather
+station data from the DPIRD weather station network.  Australia-wide weather
+data are based on data from the Australian Bureau of Meteorology ('BOM') data
+and accessed through SILO (Scientific Information for Land Owners) Jeffrey et
+al. (2001) <doi:10.1016/S1364-8152(01)00008-1>.  DPIRD data are made available
+under a Creative Commons Attribution 3.0 Licence (CC BY 3.0 AU) license
+<https://creativecommons.org/licenses/by/3.0/au/deed.en>.  SILO data are
+released under a Creative Commons Attribution 4.0 International licence (CC BY
+4.0) <https://creativecommons.org/licenses/by/4.0/>.  BOM data are (c)
+Australian Government Bureau of Meteorology and released under a Creative
+Commons (CC) Attribution 3.0 licence or Public Access Licence ('PAL') as
+appropriate, see <http://www.bom.gov.au/other/copyright.shtml> for further
+details.")
+    (license license:gpl3+)))
 
 (define-public r-weathermetrics
   (package

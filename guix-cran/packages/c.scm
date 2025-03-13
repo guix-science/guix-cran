@@ -15863,13 +15863,13 @@ goodness-of-fit.")
 (define-public r-coortweet
   (package
     (name "r-coortweet")
-    (version "2.1.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CooRTweet" version))
        (sha256
-        (base32 "0ml9iqhm26adbyrpwzczmjl1lr4md335k91kjsm53jciclvmxjyi"))))
+        (base32 "1cwgbqazcbyjrxlhnna0sazx5ixxblb5r5nn39s3k99vn2c0n43m"))))
     (properties `((upstream-name . "CooRTweet")))
     (build-system r-build-system)
     (arguments
@@ -31144,6 +31144,45 @@ subset of patients/domains from the CDISC Pilot 01 study are also available as R
 datasets to demonstrate the package functionalities.")
     (license license:expat)))
 
+(define-public r-clintrialx
+  (package
+    (name "r-clintrialx")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clintrialx" version))
+       (sha256
+        (base32 "1aw1y2wbws412m4qcdc3xcg0gbpsvk67nkwl17ibrlac38ydyaai"))))
+    (properties `((upstream-name . "clintrialx")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rpostgresql
+                             r-rmarkdown
+                             r-readr
+                             r-progress
+                             r-lubridate
+                             r-httr
+                             r-dplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "http://www.indraneelchakraborty.com/clintrialx/")
+    (synopsis "Connect and Work with Clinical Trials Data Sources")
+    (description
+     "Are you spending too much time fetching and managing clinical trial data?
+Struggling with complex queries and bulk data extraction? What if you could
+simplify this process with just a few lines of code? Introducing clintrialx -
+Fetch clinical trial data from sources like @code{ClinicalTrials.gov}
+<https://clinicaltrials.gov/> and the Clinical Trials Transformation Initiative
+- Access to Aggregate Content of @code{ClinicalTrials.gov} database
+<https://aact.ctti-clinicaltrials.org/>, supporting pagination and bulk
+downloads.  Also, you can generate HTML reports based on the data obtained from
+the sources!")
+    (license license:asl2.0)))
+
 (define-public r-clintrialpredict
   (package
     (name "r-clintrialpredict")
@@ -44860,6 +44899,30 @@ different criteria are used to select the basis functions.")
 study how various assumptions about selection bias affects estimates of causal
 effects.")
     (license license:gpl2+)))
+
+(define-public r-causalreg
+  (package
+    (name "r-causalreg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causalreg" version))
+       (sha256
+        (base32 "19xij1df44lz50r4rdd8ffkbxwwap9ad903z61xxlk79cl79hcab"))))
+    (properties `((upstream-name . "causalreg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgcv))
+    (home-page "https://cran.r-project.org/package=causalreg")
+    (synopsis "Causal Generalized Linear Models")
+    (description
+     "An implementation of methods for causal discovery in a structural causal model
+where the conditional distribution of the target node is described by a
+generalized linear model conditional on its causal parents.")
+    (license license:gpl3)))
 
 (define-public r-causalqueries
   (package

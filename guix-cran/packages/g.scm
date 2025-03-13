@@ -1460,13 +1460,13 @@ concentration versus time curve.")
 (define-public r-guilds
   (package
     (name "r-guilds")
-    (version "1.4.6")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GUILDS" version))
        (sha256
-        (base32 "0rjlx13shzmamxzqng0qjl5kwzg111lq245y9z6axb3al3ly59ij"))))
+        (base32 "0n4ghjqzfdhid9fnj7qr034y9kmf969bv53yvwvz5zcjvll0mpmr"))))
     (properties `((upstream-name . "GUILDS")))
     (build-system r-build-system)
     (arguments
@@ -30593,13 +30593,13 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.8.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "1xbwx96lnxb7kk2n6gm8nacaa1zidfbg9v3kadfb5fpvlc9202a4"))))
+        (base32 "0fimkh71kzwgajhxkkgw3lz4akzv6ymc72x0b8x6b6b51majxgpw"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments
@@ -31147,13 +31147,13 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "11kd97andcvf8sa1z80f3ip4blmnl27wziqigiq41hy0q9y4ngxf"))))
+        (base32 "06i2an1mcdlh06mwfwsaqxs2p436v8ma0hya9l4a60017c5rffq7"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (arguments
@@ -31188,7 +31188,7 @@ al. (2016) <doi:10.1007/s00180-015-0621-7> and Dimitrova et al. (2023)
 <doi:10.1016/j.amc.2022.127493>.  Further extending its capabilities,
 @code{GeDS's} implementation includes Generalized Additive Models (GAM) and
 Functional Gradient Boosting (FGB), enabling versatile multivariate predictor
-modeling, as discussed in the forthcoming work of Dimitrova et al. (2024).")
+modeling, as discussed in the forthcoming work of Dimitrova et al. (2025).")
     (license license:gpl3)))
 
 (define-public r-gecko
@@ -33201,13 +33201,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "1z01gflll0qygg4sgzdz30885qc8s4wnw6ywv4mhkn5m2k4kxbcq"))))
+        (base32 "13rhnzfnd3li9cqnb8lmi0m1r9ra5cyf6d8l6i3zsrs4mwh2k0zk"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (arguments

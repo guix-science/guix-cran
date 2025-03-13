@@ -2886,13 +2886,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTLEMM" version))
        (sha256
-        (base32 "0vzn6lx1gg9sfbsvyf5zr40h2n1ccic1zpkwfmx7rxjzzdnsa4pk"))))
+        (base32 "10dn9am7qhkv5xy1jb9sx1x9l27q9632f678bq94bgid9g43xlf8"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (arguments
@@ -2900,7 +2900,7 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
       #:tests? #f))
     (propagated-inputs (list r-mvtnorm r-gtools))
     (home-page "https://github.com/py-chung/QTLEMM")
-    (synopsis "QTL Mapping and Hotspots Detection")
+    (synopsis "QTL EM Algorithm Mapping and Hotspots Detection")
     (description
      "For QTL mapping, this package comprises several functions designed to execute
 diverse tasks, such as simulating or analyzing data, calculating significance
@@ -5430,27 +5430,30 @@ association analyses.  Rohde et al. (2019) <doi:10.1101/503631>.")
 (define-public r-qgcompint
   (package
     (name "r-qgcompint")
-    (version "0.7.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgcompint" version))
        (sha256
-        (base32 "0v2b7rr6m5mx3wyclbryxlcdly1a2vj8z0ywsyq4vvj66g2aa0yk"))))
+        (base32 "12zkzlfjfpazmz1cp713nqf1wsbhnqvm63jc9s2hvpsdrwzhdd52"))))
     (properties `((upstream-name . "qgcompint")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival
+                             r-rootsolve
                              r-qgcomp
+                             r-numderiv
+                             r-mass
                              r-gridextra
                              r-ggplot2
                              r-future-apply
                              r-future
                              r-arm))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/alexpkeil1/qgcomp/")
+    (home-page "https://github.com/alexpkeil1/qgcompint/")
     (synopsis
      "Quantile G-Computation Extensions for Effect Measure Modification")
     (description

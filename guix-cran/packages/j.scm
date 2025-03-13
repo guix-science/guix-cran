@@ -231,13 +231,13 @@ it will be skipped.")
 (define-public r-junctions
   (package
     (name "r-junctions")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "junctions" version))
        (sha256
-        (base32 "1jv8vn826ii1mvpcikg5bhm2arjgr180y0rqy0qkmn4bsm3cbnqx"))))
+        (base32 "0zg1jmvm8kacn1iivpr69b8q2ssj51ryqy42k45f8p1l77d9pgnf"))))
     (properties `((upstream-name . "junctions")))
     (build-system r-build-system)
     (arguments
@@ -245,14 +245,14 @@ it will be skipped.")
       #:tests? #f))
     (propagated-inputs (list r-tibble r-rcppparallel r-rcpp r-nloptr))
     (native-inputs (list r-knitr))
-    (home-page "https//github.com/thijsjanzen/junctions")
+    (home-page "https://github.com/thijsjanzen/junctions")
     (synopsis "The Breakdown of Genomic Ancestry Blocks in Hybrid Lineages")
     (description
      "Individual based simulations of hybridizing populations, where the accumulation
 of junctions is tracked.  Furthermore, mathematical equations are provided to
 verify simulation outcomes.  Both simulations and mathematical equations are
-based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2020,
-<doi:10.1101/2020.09.10.292441>).")
+based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
+<doi:10.1111/1755-0998.13519>).")
     (license license:gpl2+)))
 
 (define-public r-jump
@@ -3089,6 +3089,36 @@ valuable resource for researchers in many different fields, particularly in the
 medical and health sciences.")
     (license license:gpl3)))
 
+(define-public r-jmbdirect
+  (package
+    (name "r-jmbdirect")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JMbdirect" version))
+       (sha256
+        (base32 "03fa4jx66k1fkyjx3brxz30yrrc9mgrhlcna8qzxd8rswplz7zfi"))))
+    (properties `((upstream-name . "JMbdirect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstanarm
+                             r-joinerml
+                             r-jmbig
+                             r-jmbayes2
+                             r-fastjm
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=JMbdirect")
+    (synopsis "Joint Model for Longitudinal and Multiple Time to Events Data")
+    (description
+     "This package provides model fitting, prediction, and plotting for joint models
+of longitudinal and multiple time-to-event data, including methods from
+Rizopoulos (2012) <doi:10.1201/b12208>.  Useful for handling complex survival
+and longitudinal data in clinical research.")
+    (license license:gpl3)))
+
 (define-public r-jmbayes2
   (package
     (name "r-jmbayes2")
@@ -3438,13 +3468,13 @@ probabilities of a general sampling design as in Fattorini (2006)
 (define-public r-jinjar
   (package
     (name "r-jinjar")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jinjar" version))
        (sha256
-        (base32 "0d65a85pain2h642h4dd7sry58jkn2rkmaavzwiixp63j0gmixn8"))))
+        (base32 "07m63qxvl62p5rs3rzyljvyfkj6ivxhxchvqk4679msmnbyfhy00"))))
     (properties `((upstream-name . "jinjar")))
     (build-system r-build-system)
     (arguments

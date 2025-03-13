@@ -30413,13 +30413,13 @@ distribution of p values as a way to detect the true signals in the data.")
 (define-public r-mhqol
   (package
     (name "r-mhqol")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MHQoL" version))
        (sha256
-        (base32 "0fdqwq7q554b9a82ard3nf33q08il31iyxdvhvaw1d4lpshpdyna"))))
+        (base32 "12agrzw3aim32bng897v54nq2gw9riqnsip4sr1x1ymy0ngkqdcd"))))
     (properties `((upstream-name . "MHQoL")))
     (build-system r-build-system)
     (arguments
@@ -34764,13 +34764,13 @@ internal data and other naive combinations of external estimators.")
 (define-public r-metainc
   (package
     (name "r-metainc")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metainc" version))
        (sha256
-        (base32 "12kli07sh2b2ynpaasqmx2vfxnvv50brfcqnrgsk9abapy8ckfag"))))
+        (base32 "1l7kvyxazrc5qywjl18cxfc6xgi18rivawckxg18akccqj6pzqys"))))
     (properties `((upstream-name . "metainc")))
     (build-system r-build-system)
     (arguments
@@ -44695,19 +44695,19 @@ and dedicated plotting function.")
 (define-public r-matrans
   (package
     (name "r-matrans")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matrans" version))
        (sha256
-        (base32 "0j9a82wccdrgd3jqhwqv8bjf2c5w55hk9cl74ylzqrgnv45xr1cd"))))
+        (base32 "065j3zbmj13klr3n745y37sfj917g43zhagj9hjbdr7cp1s7n4hk"))))
     (properties `((upstream-name . "matrans")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-quadprog r-mass r-formatr r-caret))
+    (propagated-inputs (list r-quadprog r-mass r-glmnet r-formatr r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=matrans")
     (synopsis "Model Averaging-Assisted Optimal Transfer Learning")

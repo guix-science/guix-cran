@@ -6601,13 +6601,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "0cw9w01rn32wldi7vg7hnz1j4543i8fmxiscmsbp78q1xbkagbri"))))
+        (base32 "1jrjlpspaq4b1lb4lfvcrrhsf6nhd6krmh7skvdzk899l71s8r7z"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (arguments
@@ -9028,6 +9028,32 @@ For a recent application of @code{nimbleSCR}, see Milleret et al. (2021)
 distributions transformed to the unbounded real line, for the purpose of
 increased MCMC efficiency.")
     (license license:bsd-3)))
+
+(define-public r-nimblemacros
+  (package
+    (name "r-nimblemacros")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nimbleMacros" version))
+       (sha256
+        (base32 "13zfkn9pihbbim52jnafxpivxjkr24qk6zyhnpphn5lkmxgzfzwa"))))
+    (properties `((upstream-name . "nimbleMacros")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reformulas r-nimble))
+    (native-inputs (list r-knitr))
+    (home-page "https://r-nimble.org")
+    (synopsis "Macros Generating 'nimble' Code")
+    (description
+     "Macros to generate nimble code from a concise syntax.  Included are macros for
+generating linear modeling code using a formula-based syntax and for building
+@code{for()} loops.  For more details review the nimble manual:
+<https://r-nimble.org/html_manual/cha-writing-models.html#subsec:macros>.")
+    (license (list license:bsd-3 license:gpl2+))))
 
 (define-public r-nimblehmc
   (package
@@ -15734,13 +15760,13 @@ files.")
 (define-public r-ncdfcf
   (package
     (name "r-ncdfcf")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncdfCF" version))
        (sha256
-        (base32 "1cyvlhx1dxrhqrwbwv3b8v0974qnaab8ly5pvmpzzyx3b5pyabam"))))
+        (base32 "1fi71qi5kgh13d409080jr410wmsgmyzrbbgs8xy9ysgkp2an5mp"))))
     (properties `((upstream-name . "ncdfCF")))
     (build-system r-build-system)
     (arguments

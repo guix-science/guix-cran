@@ -2470,6 +2470,31 @@ VK <https://vk.com/> is the largest European online social networking service,
 based in Russia.")
     (license license:gpl3)))
 
+(define-public r-viztest
+  (package
+    (name "r-viztest")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VizTest" version))
+       (sha256
+        (base32 "0sxp5shf7xxm247yy96x8fx15mrykaxj387icjcsrcarzlsgb6hf"))))
+    (properties `((upstream-name . "VizTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-hdinterval r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=VizTest")
+    (synopsis "Optimal Confidence Intervals for Visual Testing")
+    (description
+     "Identifies the optimal confidence level to represent the results of a set of
+pairwise tests as suggested by Armstrong and Poirier (2025)
+<doi:10.1017/pan.2024.24>.")
+    (license license:expat)))
+
 (define-public r-vizdraws
   (package
     (name "r-vizdraws")

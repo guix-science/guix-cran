@@ -12797,13 +12797,13 @@ function names.")
 (define-public r-flashmm
   (package
     (name "r-flashmm")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLASHMM" version))
        (sha256
-        (base32 "0116hjgsi2xh7p23j1716brg5n0kwdfsq3d80nl6qd9hc8296kl4"))))
+        (base32 "1y63wpra1rr89qq1xvmsl6bidwwnfb6qdj621jkv45gn5m90216z"))))
     (properties `((upstream-name . "FLASHMM")))
     (build-system r-build-system)
     (arguments

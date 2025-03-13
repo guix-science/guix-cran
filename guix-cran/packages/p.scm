@@ -1717,13 +1717,13 @@ determination of the best fit model.")
 (define-public r-pump
   (package
     (name "r-pump")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PUMP" version))
        (sha256
-        (base32 "1s1aqma0p32y9db3xf9yrfgg12i3skdgzcvw3kg9s5z1msx4gax7"))))
+        (base32 "1j5xjazfncjm0iypmw8clvqpaw3y9pvapiahpf8y6482s3bmqa91"))))
     (properties `((upstream-name . "PUMP")))
     (build-system r-build-system)
     (arguments
@@ -1741,6 +1741,7 @@ determination of the best fit model.")
                              r-magrittr
                              r-lme4
                              r-glue
+                             r-ggthemes
                              r-ggpubr
                              r-ggplot2
                              r-future
@@ -10046,6 +10047,38 @@ print some objects using an appropriate format such as Markdown or @code{LaTeX}.
 @code{help()} pages can also be rendered in knitr documents.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-prinsurf
+  (package
+    (name "r-prinsurf")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prinsurf" version))
+       (sha256
+        (base32 "16xbvckc2i7f862ghnx910q830x4vy8jr1z65ln6yjvbcg3j5v5l"))))
+    (properties `((upstream-name . "prinsurf")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rgl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=prinsurf")
+    (synopsis "Constructs Principal Surfaces")
+    (description
+     "Construct a principal surface that are two-dimensional surfaces that pass
+through the middle of a p-dimensional data set.  They minimise the distance from
+the data points, and provide a nonlinear summary of data.  The surfaces are
+nonparametric and their shape is suggested by the data.  The formation of a
+surface is found using an iterative procedure which starts with a linear
+summary, typically with a principal component plane.  Each successive iteration
+is a local average of the p-dimensional points, where an average is based on a
+projection of a point onto the nonlinear surface of the previous iteration.  For
+more information on principal surfaces, see Ganey, R. (2019,
+\"https://open.uct.ac.za/items/4e655d7d-d10c-481b-9ccc-801903aebfc8\").")
+    (license license:expat)))
+
 (define-public r-prindt
   (package
     (name "r-prindt")
@@ -14069,13 +14102,13 @@ Serafini (2019) <doi:10.1080/10618600.2019.1598871>.")
 (define-public r-ppgm
   (package
     (name "r-ppgm")
-    (version "1.0.3")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppgm" version))
        (sha256
-        (base32 "0fvir7fw1qzx1z0kjaaqsq13ljk5l0i4rdvpl75j6nnpd59yhyyh"))))
+        (base32 "1mxsmiv763p04xv07rk6ir6iflg5r3qxywsqqilryjj44f9xw8n0"))))
     (properties `((upstream-name . "ppgm")))
     (build-system r-build-system)
     (arguments
@@ -14086,10 +14119,13 @@ Serafini (2019) <doi:10.1080/10618600.2019.1598871>.")
                              r-sf
                              r-phytools
                              r-phangorn
+                             r-gifski
                              r-geiger
+                             r-foreach
                              r-fields
-                             r-ape
-                             r-animation))
+                             r-doparallel
+                             r-ape))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ppgm")
     (synopsis
      "PaleoPhyloGeographic Modeling of Climate Niches and Species Distributions")
@@ -18864,38 +18900,6 @@ package to GarcÃ­a-PortuguÃ©s and MeilÃ¡n-Vila (2024)
 (2023) <doi:10.1007/978-3-031-32729-2_4>.")
     (license license:gpl3)))
 
-(define-public r-polyhedralcubature
-  (package
-    (name "r-polyhedralcubature")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "polyhedralCubature" version))
-       (sha256
-        (base32 "1la8cj261c4vshr4yd3vgplzv1ykrkgvlwrjm49fgzh142rk59gc"))))
-    (properties `((upstream-name . "polyhedralCubature")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tessellation
-                             r-spray
-                             r-simplicialcubature
-                             r-rcdd
-                             r-qspray
-                             r-ompr
-                             r-matrix
-                             r-magrittr
-                             r-gmp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/polyhedralCubature")
-    (synopsis "Multiple Integration over Convex Polyhedra")
-    (description
-     "Evaluation of multiple integrals over convex polyhedra.  This is useful when the
-bounds of the integrals are some linear combinations of the variables.")
-    (license license:gpl3)))
-
 (define-public r-polyhaplotyper
   (package
     (name "r-polyhaplotyper")
@@ -20900,13 +20904,13 @@ using package survey'.")
 (define-public r-pnd
   (package
     (name "r-pnd")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pnd" version))
        (sha256
-        (base32 "1rad2yhnwk3dcv08bq7gfyk1daldidifmly79rnn974fqgzlzdmg"))))
+        (base32 "13sfg9ndjrp8x07kgsi2b4m03slj1kw80dy8av8g5p9xhxyv0hwk"))))
     (properties `((upstream-name . "pnd")))
     (build-system r-build-system)
     (arguments
@@ -37114,6 +37118,32 @@ significance using two-group tests and linear regression Yuan et al. (2006)
 (PCPS).")
     (license license:gpl2)))
 
+(define-public r-pcplus
+  (package
+    (name "r-pcplus")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PCpluS" version))
+       (sha256
+        (base32 "0wl4yjwzasnrfkwmbq7l0kcpb0ayzcq0rc21npvp3lcj6842inpg"))))
+    (properties `((upstream-name . "PCpluS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-changepoint))
+    (home-page "https://cran.r-project.org/package=PCpluS")
+    (synopsis "Piecewise Constant Plus Smooth Regression")
+    (description
+     "Allows for nonparametric regression where one assumes that the signal is given
+by the sum of a piecewise constant function and a smooth function.  More
+precisely, it implements the estimator P@code{CpluS} (piecewise constant plus
+smooth regression estimator) from Pein and Shah (2025)
+<doi:10.48550/@code{arXiv.2112.03878>}.")
+    (license license:gpl3)))
+
 (define-public r-pcovr
   (package
     (name "r-pcovr")
@@ -37982,13 +38012,13 @@ flexibility and reduces computational requirements.  Methods:
 (define-public r-pcatsapiclientr
   (package
     (name "r-pcatsapiclientr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcatsAPIclientR" version))
        (sha256
-        (base32 "13d7cvpjjhxzln4lg7s17wl1apz83b4y4l361j2m4f8wyqwc6b6a"))))
+        (base32 "1ci0ppql2vkcpmri0dc419by3qy56rygm77xqx444dzfyn8ksv00"))))
     (properties `((upstream-name . "pcatsAPIclientR")))
     (build-system r-build-system)
     (arguments
@@ -45400,13 +45430,13 @@ in web applications, and much more.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "1l2ybm7684hmw2jzxkl29vd9nkysn2v1k0zv2ggvzn9nz90s4cr3"))))
+        (base32 "0wx185ywnvzr7r96bcsvd5xhzy6qlkhj8ad2zcw61pfjj6kxjk33"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (arguments
@@ -45428,8 +45458,8 @@ in web applications, and much more.")
     (synopsis
      "Computation and Visualization of Package Download Counts and Percentile Ranks")
     (description
-     "Compute and visualize the cross-sectional and longitudinal number and rank
-percentile of package downloads from Posit/RStudio's CRAN mirror.")
+     "Compute and visualize package download counts and percentile ranks from
+Posit/RStudio's CRAN mirror.")
     (license license:gpl2+)))
 
 (define-public r-packager
