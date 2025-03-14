@@ -779,13 +779,13 @@ retrieving a time series based on spatial location and temporal filters.")
 (define-public r-rwsearch
   (package
     (name "r-rwsearch")
-    (version "5.2.0")
+    (version "5.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RWsearch" version))
        (sha256
-        (base32 "046z49yrsm1rsqvz3xf0fb3qy53xdzm95qs9q24pgzyz5s4rjm8f"))))
+        (base32 "1mb6kpqmpiy2zw4rklwx65aiw0khnfwvdgia7agp42nfnalihi21"))))
     (properties `((upstream-name . "RWsearch")))
     (build-system r-build-system)
     (arguments
@@ -797,7 +797,7 @@ retrieving a time series based on spatial location and temporal filters.")
                              r-networkd3
                              r-latexpdf
                              r-brew))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-litedown))
     (home-page "https://cran.r-project.org/package=RWsearch")
     (synopsis
      "Lazy Search in R Packages, Task Views, CRAN, the Web. All-in-One Download")
@@ -23345,13 +23345,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.4.1")
+    (version "3.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "1y03dmn9z721i2syhw99imcxap4hrjdh1y93jb1d4dm0nhff84ia"))))
+        (base32 "16ci4p4sakdmz0d4p059prmd08fx53sa96i2sxqgb47q0p0j6qwp"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (arguments
@@ -28490,19 +28490,19 @@ function for authorization and loading reports.")
 (define-public r-rgof
   (package
     (name "r-rgof")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rgof" version))
        (sha256
-        (base32 "02x8kiqdnph959hw5i6j3vy0nx7h16ihb1rx2vr03nm8prywx9yd"))))
+        (base32 "14xb0syhjrib06w4campjb3paw85clpq9grgv57mnhkn9bbw7dnm"))))
     (properties `((upstream-name . "Rgof")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-ggplot2))
+    (propagated-inputs (list r-rcpp r-microbenchmark r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Rgof")
     (synopsis "1d Goodness of Fit Tests")
@@ -29953,13 +29953,13 @@ the division operator \"/\".")
 (define-public r-rforestry
   (package
     (name "r-rforestry")
-    (version "0.10.0")
+    (version "0.11.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rforestry" version))
        (sha256
-        (base32 "1h5bnaakpig7b2041s43kfljywdbdq6kkvv3agld2953nn8kcbw3"))))
+        (base32 "0ypxpxayj3lsw3rlh0dj8j18ly8gda5ab8m6zhksy2rfkj226qrc"))))
     (properties `((upstream-name . "Rforestry")))
     (build-system r-build-system)
     (arguments
@@ -29969,20 +29969,18 @@ the division operator \"/\".")
                              r-rcppthread
                              r-rcpparmadillo
                              r-rcpp
-                             r-proc
                              r-onehot
                              r-glmnet))
     (home-page "https://github.com/forestry-labs/Rforestry")
     (synopsis
      "Random Forests, Linear Trees, and Gradient Boosting for Inference and Interpretability")
     (description
-     "This package provides fast implementations of Honest Random Forests, Gradient
-Boosting, and Linear Random Forests, with an emphasis on inference and
-interpretability.  Additionally contains methods for variable importance,
-out-of-bag prediction, regression monotonicity, and several methods for missing
-data imputation.  Soren R. Kunzel, Theo F. Saarinen, Edward W. Liu, Jasjeet S.
-Sekhon (2019) <@code{arXiv:1906.06463>}.")
-    (license license:gpl3+)))
+     "This package provides fast implementations of Random Forests, Gradient Boosting,
+and Linear Random Forests, with an emphasis on inference and interpretability.
+Additionally contains methods for variable importance, out-of-bag prediction,
+regression monotonicity, and several methods for missing data imputation.")
+    (license (list license:gpl3+
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-rfordummies
   (package
@@ -45255,6 +45253,30 @@ for usage in R. Also exports functions to convert colors from the HSLuv color
 space for usage in R. HSLuv is a human-friendly alternative to HSL.")
     (license license:gpl3)))
 
+(define-public r-rcppcolmetric
+  (package
+    (name "r-rcppcolmetric")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppColMetric" version))
+       (sha256
+        (base32 "0bycy4wb70vfs3q5vb8pm0nxzzvgqzwcf0fdqbl4gxxhyaw1r3i6"))))
+    (properties `((upstream-name . "RcppColMetric")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/zhuxr11/RcppColMetric")
+    (synopsis "Efficient Column-Wise Metric Computation Against Common Vector")
+    (description
+     "In data science, it is a common practice to compute a series of columns (e.g.
+features) against a common response vector.  Various metrics are provided with
+efficient computation implemented with Rcpp'.")
+    (license license:expat)))
+
 (define-public r-rcppcnpy
   (package
     (name "r-rcppcnpy")
@@ -50370,6 +50392,52 @@ models of the Anderson's Information Integration Theory by Vidotto, G.,
 Massidda, D., & Noventa, S. (2010)
 <https://www.uv.es/psicologica/articulos3FM.10/3Vidotto.pdf>.")
     (license license:gpl2+)))
+
+(define-public r-ravepipeline
+  (package
+    (name "r-ravepipeline")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ravepipeline" version))
+       (sha256
+        (base32 "0hcz304lb468swdaak4hjzphxx3idvls1w6l5wgpdhyrmbf65jra"))))
+    (properties `((upstream-name . "ravepipeline")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-uuid
+                             r-targets
+                             r-rlang
+                             r-remotes
+                             r-r6
+                             r-promises
+                             r-knitr
+                             r-jsonlite
+                             r-glue
+                             r-future
+                             r-fst
+                             r-fastmap
+                             r-digest
+                             r-cli
+                             r-callr
+                             r-base64url))
+    (home-page "https://dipterix.org/ravepipeline/")
+    (synopsis "Reproducible Pipeline Infrastructure for Neuroscience")
+    (description
+     "Defines the underlying pipeline structure for reproducible neuroscience, adopted
+by RAVE (reproducible analysis and visualization of intracranial
+electroencephalography); provides high-level class definition to build, compile,
+set, execute, and share analysis pipelines.  Both R and Python are supported,
+with Markdown and shiny dashboard templates for extending and building
+customized pipelines.  See the full documentations at <https://rave.wiki>; to
+cite us, check out our paper by Magnotti, Wang, and Beauchamp (2020,
+<doi:10.1016/j.neuroimage.2020.117341>), or run citation(\"ravepipeline\") for
+details.")
+    (license license:expat)))
 
 (define-public r-ravenr
   (package
@@ -56515,6 +56583,49 @@ book \"R for Health Care Research\".")
      "Interface for the Google Ads API'.  Google Ads is an online advertising service
 that enables advertisers to display advertising to web users (see
 <https://developers.google.com/google-ads/> for more information).")
+    (license license:expat)))
+
+(define-public r-r4goodpersonalfinances
+  (package
+    (name "r-r4goodpersonalfinances")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "R4GoodPersonalFinances" version))
+       (sha256
+        (base32 "19zwpm459q5kr3jxg1b2vcag5a1k46f9zyan8l84q3ryqmrs0s50"))))
+    (properties `((upstream-name . "R4GoodPersonalFinances")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-stringr
+                             r-shiny
+                             r-scales
+                             r-readr
+                             r-purrr
+                             r-prettycols
+                             r-glue
+                             r-ggtext
+                             r-ggrepel
+                             r-ggplot2
+                             r-fs
+                             r-dplyr
+                             r-bslib
+                             r-bsicons))
+    (home-page "https://www.r4good.academy/")
+    (synopsis "Make Better Financial Decisions")
+    (description
+     "Make informed, data-driven decisions for your personal or household finances.
+Use tools and methods that are selected carefully to align with academic
+consensus, bridging the gap between theoretical knowledge and practical
+application.  They assist you in finding optimal asset allocation, preparing for
+retirement or financial independence, calculating optimal spending, and more.
+For more details see: Haghani V., White J. (2023, ISBN:978-1-119-74791-8),
+Idzorek T., Kaplan P. (2024, ISBN:9781952927379).")
     (license license:expat)))
 
 (define-public r-r4ds-tutorials

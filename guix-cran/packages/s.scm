@@ -5177,13 +5177,13 @@ linear models.  For further details, see Hanson et al. (2022)
 (define-public r-surveytable
   (package
     (name "r-surveytable")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveytable" version))
        (sha256
-        (base32 "1l76dqg6dansl47fqc55yq70hd43cjqwqjkd1sfpg0n75jdcsbaa"))))
+        (base32 "1p0wyywa4sik94fm4385vm8yk8fnsrmza1axjawk7zsckc0ip1yg"))))
     (properties `((upstream-name . "surveytable")))
     (build-system r-build-system)
     (arguments
@@ -5192,8 +5192,8 @@ linear models.  For further details, see Hanson et al. (2022)
     (propagated-inputs (list r-survey
                              r-magrittr
                              r-lifecycle
-                             r-kableextra
                              r-huxtable
+                             r-glue
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cdcgov.github.io/surveytable/")
@@ -20145,13 +20145,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.19.1")
+    (version "1.19.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "1vhc134qvjdzxn78b71skvxsjy1pyyyswzhyyz2av16dpp17c8wi"))))
+        (base32 "1c6pxba5zrc5ksrd2ykinv3v4f9pynlk6i6p1h67lqrqizl17jyy"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (arguments
@@ -40501,13 +40501,13 @@ the 2013-2014 and 2014-2015 seasons\" <doi:10.1002/sim.9181>.")
 (define-public r-siren
   (package
     (name "r-siren")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "siren" version))
        (sha256
-        (base32 "1n6ni8yz3106qff7mjml6szjbfjcd04nr6qs6bbsv114dvy9m9s2"))))
+        (base32 "11ckc67vgniqxpj4c2ip128k3n9b3maqjmvgqr5ivl3sn5v3a6rb"))))
     (properties `((upstream-name . "siren")))
     (build-system r-build-system)
     (arguments
@@ -54209,6 +54209,51 @@ Cloud to other Seven Bridges supported platforms.  API documentation is hosted
 publicly at <https://docs.sevenbridges.com/docs/the-api>.")
     (license license:asl2.0)))
 
+(define-public r-seuratexplorer
+  (package
+    (name "r-seuratexplorer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeuratExplorer" version))
+       (sha256
+        (base32 "1fyd2k669nffq1yiqzk4xnyv5wqpii3jb8rinx0wh450my9lad11"))))
+    (properties `((upstream-name . "SeuratExplorer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shinyjqui
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shinybs
+                             r-shiny
+                             r-seuratobject
+                             r-seurat
+                             r-scales
+                             r-reshape2
+                             r-qs2
+                             r-patchwork
+                             r-htmltools
+                             r-ggplot2
+                             r-ggalluvial
+                             r-dt
+                             r-dplyr
+                             r-complexheatmap
+                             r-colourpicker
+                             r-circlize))
+    (home-page "https://cran.r-project.org/package=SeuratExplorer")
+    (synopsis
+     "An 'Shiny' App for Exploring scRNA-seq Data Processed in 'Seurat'")
+    (description
+     "This package provides a simple, one-command package which runs an interactive
+dashboard capable of common visualizations for single cell RNA-seq.
+@code{SeuratExplorer} requires a processed Seurat object, which is saved as rds
+or qs2 file.")
+    (license license:gpl3+)))
+
 (define-public r-settingssync
   (package
     (name "r-settingssync")
@@ -62470,33 +62515,6 @@ labeling them by biological names.  Once users named each cluster, they can
 evaluate the quality of them again and find the de novo marker genes also.")
     (license license:agpl3+)))
 
-(define-public r-scrnaimm
-  (package
-    (name "r-scrnaimm")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ScRNAIMM" version))
-       (sha256
-        (base32 "0r69nbmpd42j547li34psj9kbkf5wckayzs9mz0ybjpzi92wx99y"))))
-    (properties `((upstream-name . "ScRNAIMM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scdha r-nortest r-mclust r-magrittr r-dplyr))
-    (home-page "https://cran.r-project.org/package=ScRNAIMM")
-    (synopsis
-     "Performing Single-Cell RNA-Seq Imputation by Using Mean/Median Imputation")
-    (description
-     "Performing single-cell imputation in a way that preserves the biological
-variations in the data.  The package clusters the input data to do imputation
-for each cluster, and do a distribution check using the Anderson-Darling
-normality test to impute dropouts using mean or median (Yazici, B., & Yolacan,
-S. (2007) <DOI:10.1080/10629360600678310>).")
-    (license license:gpl3)))
-
 (define-public r-scrm
   (package
     (name "r-scrm")
@@ -65577,45 +65595,6 @@ randomized experiments, as described in Hedges, Pustejovsky, and Shadish (2012)
 (2023) <DOI:10.1016/j.jsp.2023.02.002>.  Includes an interactive web interface.")
     (license license:gpl3)))
 
-(define-public r-scdha
-  (package
-    (name "r-scdha")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scDHA" version))
-       (sha256
-        (base32 "1l9i5r7z4n387mrfmq43md2a0wrhvshrggb4nc3varjyq3drh3yd"))))
-    (properties `((upstream-name . "scDHA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-uwot
-                             r-torch
-                             r-rhpcblasctl
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcppannoy
-                             r-rcpp
-                             r-matrixstats
-                             r-matrix
-                             r-igraph
-                             r-foreach
-                             r-doparallel
-                             r-coro
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/duct317/scDHA")
-    (synopsis "Single-Cell Decomposition using Hierarchical Autoencoder")
-    (description
-     "This package provides a fast and accurate pipeline for single-cell analyses.
-The @code{scDHA} software package can perform clustering, dimension reduction
-and visualization, classification, and time-trajectory inference on single-cell
-data (Tran et.al. (2021) <DOI:10.1038/s41467-021-21312-2>).")
-    (license license:gpl3)))
-
 (define-public r-scdensity
   (package
     (name "r-scdensity")
@@ -65962,35 +65941,6 @@ matching the marker genes with known cell markers in tissue-specific cell
 taxonomy reference database for single-cell RNA-seq data.  See Shao X, et al
 (2020) <doi:10.1016/j.isci.2020.100882> for more details.")
     (license license:gpl3+)))
-
-(define-public r-sccan
-  (package
-    (name "r-sccan")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scCAN" version))
-       (sha256
-        (base32 "0iypyh34583wmp4hkvhhkyz72aw8y58ynmx1iml82iwvivvwjk1s"))))
-    (properties `((upstream-name . "scCAN")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scdha r-purrr r-fnn))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=scCAN")
-    (synopsis "Single-Cell Clustering using Autoencoder and Network Fusion")
-    (description
-     "This package provides a single-cell Clustering method using Autoencoder and
-Network fusion ('@code{scCAN}') Bang Tran (2022)
-<doi:10.1038/s41598-022-14218-6> for segregating the cells from the
-high-dimensional @code{scRNA-Seq} data.  The software automatically determines
-the optimal number of clusters and then partitions the cells in a way such that
-the results are robust to noise and dropouts. @code{scCAN} is fast and it
-supports Windows, Linux, and Mac OS.")
-    (license license:lgpl2.0+)))
 
 (define-public r-scbursts
   (package
@@ -66849,13 +66799,13 @@ variability in the data.")
 (define-public r-sc2sc
   (package
     (name "r-sc2sc")
-    (version "0.0.1-14")
+    (version "0.0.1-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sc2sc" version))
        (sha256
-        (base32 "1z7k2n30c7k5lz3gb4khgy16lqj6lmhadwip78k44x91i5mrnbm7"))))
+        (base32 "1l7caajbzc6w2xb0mnnlj47gljffg7w2vscvhjcfgzinag8qaz93"))))
     (properties `((upstream-name . "sc2sc")))
     (build-system r-build-system)
     (arguments
@@ -67335,6 +67285,39 @@ Barbillon et al. (2020) <doi:10.1111/rssa.12193> and Bar-Hen et al. (2020)
      "This package implements sparse Bayesian learning method for QTL mapping and
 genome-wide association studies.")
     (license license:gpl3)))
+
+(define-public r-sbim
+  (package
+    (name "r-sbim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sbim" version))
+       (sha256
+        (base32 "0h096snprc0hs4cympsxnqa2smrcrarnj05n9i18q2nwlix3g5cp"))))
+    (properties `((upstream-name . "sbim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sbim")
+    (synopsis
+     "Simulation-Based Inference using a Metamodel for Log-Likelihood Estimator")
+    (description
+     "Parameter inference methods for models defined implicitly using a random
+simulator.  Inference is carried out using simulation-based estimates of the
+log-likelihood of the data.  The inference methods implemented in this package
+are explained in Park, J. (2025) <doi:10.48550/arxiv.2311.09446>.  These methods
+are built on a simulation metamodel which assumes that the estimates of the
+log-likelihood are approximately normally distributed with the mean function
+that is locally quadratic around its maximum.  Parameter estimation and
+uncertainty quantification can be carried out using the @code{ht()} function
+(for hypothesis testing) and the @code{ci()} function (for constructing a
+confidence interval for one-dimensional parameters).")
+    (license license:gpl3+)))
 
 (define-public r-sbicgraph
   (package

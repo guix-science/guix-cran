@@ -17242,19 +17242,21 @@ outcomes not due to death.")
 (define-public r-idefix
   (package
     (name "r-idefix")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idefix" version))
        (sha256
-        (base32 "0jqjrg0qfzij5bx8r60wpjghsxnszdxgp58ynj10n7q9hc4fhsys"))))
+        (base32 "0845fh7rxmkgkw1m5nkkaqr0s4bjzczix2vhg5pb5pkbn6111q0n"))))
     (properties `((upstream-name . "idefix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tmvtnorm
+                             r-tablehtml
+                             r-shinyjs
                              r-shiny
                              r-scales
                              r-rdpack

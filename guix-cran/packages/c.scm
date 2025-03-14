@@ -5922,13 +5922,13 @@ Causal Hypotheses in Conjoint Analysis\" <@code{arXiv:2201.08343>}.")
 (define-public r-crt2power
   (package
     (name "r-crt2power")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crt2power" version))
        (sha256
-        (base32 "115davxwq7lxwl4qqxq28bb9q7ybhwrrmmyb6kwrl0vb848q5n7b"))))
+        (base32 "1q7a0bqjzzaqf5jksy0989mqvlrv67nxahg7jslwlz1cx73a5323"))))
     (properties `((upstream-name . "crt2power")))
     (build-system r-build-system)
     (arguments
@@ -5946,15 +5946,15 @@ Causal Hypotheses in Conjoint Analysis\" <@code{arXiv:2201.08343>}.")
                              r-devtools))
     (home-page "https://github.com/melodyaowen/crt2power")
     (synopsis
-     "Designing Cluster-Randomized Trials with Two Co-Primary Outcomes")
+     "Designing Cluster-Randomized Trials with Two Continuous Co-Primary Outcomes")
     (description
      "This package provides methods for powering cluster-randomized trials with two
-co-primary outcomes using five key design techniques.  Includes functions for
-calculating required sample size and statistical power.  For more details on
-methodology, see Li et al. (2020) <doi:10.1111/biom.13212>, Pocock et al. (1987)
-<doi:10.2307/2531989>, Vickerstaff et al. (2019)
-<doi:10.1186/s12874-019-0754-4>, and Yang et al. (2022)
-<doi:10.1111/biom.13692>.")
+continuous co-primary outcomes using five key design techniques.  Includes
+functions for calculating required sample size and statistical power.  For more
+details on methodology, see Owen et al. (2025) <doi:10.1002/sim.70015>, Yang et
+al. (2022) <doi:10.1111/biom.13692>, Pocock et al. (1987) <doi:10.2307/2531989>,
+Vickerstaff et al. (2019) <doi:10.1186/s12874-019-0754-4>, and Li et al. (2020)
+<doi:10.1111/biom.13212>.")
     (license license:gpl3)))
 
 (define-public r-crsuggest
@@ -10186,6 +10186,52 @@ specifically the tests featured in HorvÃ¡th, Rice and Miller (in press): CUSUM
 new RÃ©nyi-type test.")
     (license license:expat)))
 
+(define-public r-cpam
+  (package
+    (name "r-cpam")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpam" version))
+       (sha256
+        (base32 "1981zax9vyjz7g6ikhkqb2vk2iwsxigbpjr2mq3zc2i9hk537lc8"))))
+    (properties `((upstream-name . "cpam")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tximport
+                             r-tidyr
+                             r-stringr
+                             r-shinyjs
+                             r-shiny
+                             r-scam
+                             r-rlang
+                             r-rcolorbrewer
+                             r-purrr
+                             r-pbmcapply
+                             r-mvnfast
+                             r-mgcv
+                             r-matrixstats
+                             r-magrittr
+                             r-ggplot2
+                             r-edger
+                             r-dplyr
+                             r-cli
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://l-a-yates.github.io/cpam/")
+    (synopsis "Changepoint Additive Models for Time Series Omics Data")
+    (description
+     "This package provides a comprehensive framework for time series omics analysis,
+integrating changepoint detection, smooth and shape-constrained trends, and
+uncertainty quantification.  It supports gene- and transcript-level inferences,
+p-value aggregation for improved power, and both case-only and case-control
+designs.  It includes an interactive shiny interface.  The methods are described
+in Yates et al. (2024) <doi:10.1101/2024.12.22.630003>.")
+    (license license:gpl3+)))
+
 (define-public r-cpa
   (package
     (name "r-cpa")
@@ -12899,6 +12945,33 @@ stationary.  Cardinali, A. and Nason, G.P. (2013) <doi:10.18637/jss.v055.i01>.")
      "Parameter estimation, one-step ahead forecast and new location prediction
 methods for spatio-temporal data.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-cossonet
+  (package
+    (name "r-cossonet")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cossonet" version))
+       (sha256
+        (base32 "0557ssain9j7i6cgbca6bxsrsr1yjgs6bj9acbi4dj2fbp2digq4"))))
+    (properties `((upstream-name . "cossonet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-mass r-glmnet r-cosso))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cossonet")
+    (synopsis "Sparse Nonparametric Regression for High-Dimensional Data")
+    (description
+     "Estimation of sparse nonlinear functions in nonparametric regression using
+component selection and smoothing.  Designed for the analysis of
+high-dimensional data, the models support various data types, including
+exponential family models and Cox proportional hazards models.  The methodology
+is based on Lin and Zhang (2006) <doi:10.1214/009053606000000722>.")
+    (license license:gpl3)))
 
 (define-public r-cosso
   (package
@@ -28418,6 +28491,39 @@ plot.")
 (C-MAPSS) data set.")
     (license license:gpl3)))
 
+(define-public r-cmanalysis
+  (package
+    (name "r-cmanalysis")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cmAnalysis" version))
+       (sha256
+        (base32 "0zv04f4shnfmsphrsfzpl0hqgnjixkvwkbch921pq2kb6jhhqvn6"))))
+    (properties `((upstream-name . "cmAnalysis")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-pheatmap
+                             r-igraph
+                             r-ggplot2
+                             r-factoextra
+                             r-cluster
+                             r-clue))
+    (home-page "https://cran.r-project.org/package=cmAnalysis")
+    (synopsis "Process and Visualise Concept Mapping Data")
+    (description
+     "Processing and visualizing concept mapping data.  Concept maps are versatile
+tools used across disciplines to enhance understanding, teaching, brainstorming,
+and information organization.  The analysis of concept mapping data involves the
+sequential use of cluster analysis (for sorting participants and statements),
+multidimensional scaling (for positioning statements in a conceptual space), and
+visualization techniques, including point cluster maps and dendrograms.")
+    (license license:gpl3)))
+
 (define-public r-cmahalanobis
   (package
     (name "r-cmahalanobis")
@@ -31385,6 +31491,40 @@ indexes.  This package makes it possible to insert a long-format dataframe, and
 add both periods of interest (trigger-periods), and delete artifacts with
 deleter-files.")
     (license license:expat)))
+
+(define-public r-clinify
+  (package
+    (name "r-clinify")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clinify" version))
+       (sha256
+        (base32 "1jkdzr1pmvqjac8awx00xppmdwvbl7p27z2dsphqvb66kwjra7rm"))))
+    (properties `((upstream-name . "clinify")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-officer
+                             r-magrittr
+                             r-knitr
+                             r-htmltools
+                             r-flextable
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://atorus-research.github.io/clinify/")
+    (synopsis "Clinical Table Styling Tools and Utilities")
+    (description
+     "The primary motivation of this package is to take the things that are great
+about the R packages flextable <https://davidgohel.github.io/flextable/> and
+officer <https://davidgohel.github.io/officer/>, take the standard and complex
+pieces of formatting clinical tables for regulatory use, and simplify the
+tedious pieces.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-clinicalutilityrecal
   (package
@@ -36675,13 +36815,13 @@ so the C functions can be called directly from other programs.")
 (define-public r-cholera
   (package
     (name "r-cholera")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cholera" version))
        (sha256
-        (base32 "0qfy7xqkihn8jfxnhg0l5y0mii52lbfwmg663bqsjapylqc9bjcd"))))
+        (base32 "0bmzg56x0l6qqyg4v0gangl0ahnfgb1yv78sg6lshg4pqplq4qlv"))))
     (properties `((upstream-name . "cholera")))
     (build-system r-build-system)
     (arguments
@@ -36693,15 +36833,16 @@ so the C functions can be called directly from other programs.")
                              r-terra
                              r-tanaka
                              r-sp
+                             r-rlang
                              r-rcolorbrewer
                              r-pracma
                              r-kernsmooth
                              r-igraph
                              r-histdata
-                             r-ggplot2
                              r-geosphere
                              r-elevatr
-                             r-deldir))
+                             r-deldir
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lindbrook/cholera")
     (synopsis "Amend, Augment and Aid Analysis of John Snow's Cholera Map")
@@ -38485,13 +38626,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "1ig2g98q26q4aw17bnqpncg51lpnlaml0vvfnzv88gd297dw0inl"))))
+        (base32 "170fdh1x2l0zw9cb6dyw3gv2hhi9972z8wyby3lzn6gd1f52b0bj"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (arguments
@@ -41662,6 +41803,36 @@ details can be found in Ordonez et al. (2018)
      "Maximum Likelihood estimation of censored regression (Tobit) models with
 cross-sectional and panel data.")
     (license license:gpl2+)))
+
+(define-public r-censoredaids
+  (package
+    (name "r-censoredaids")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "censoredAIDS" version))
+       (sha256
+        (base32 "05a7pgy50gkyixsndwbfxy9z6zwbvx4rjfpiazdcfrriw73dv7yl"))))
+    (properties `((upstream-name . "censoredAIDS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-mnormt r-matrix))
+    (home-page "https://cran.r-project.org/package=censoredAIDS")
+    (synopsis
+     "Estimation of Censored AI/QUAI Demand System via Maximum Likelihood Estimation (MLE)")
+    (description
+     "This package provides tools for estimating censored Almost Ideal (AI) and
+Quadratic Almost Ideal (QUAI) demand systems using Maximum Likelihood Estimation
+(MLE).  It includes functions for calculating demand share equations and the
+truncated log-likelihood function for a system of equations, incorporating
+demographic variables.  The package is designed to handle censored data, where
+some observations may be zero due to non-purchase of certain goods.  It is
+particularly useful for applied researchers analyzing household consumption
+data.")
+    (license license:expat)))
 
 (define-public r-censored
   (package
@@ -48639,6 +48810,38 @@ Galitski, T. (2012) <doi:10.1371/journal.pgen.1003010>.  Tyler, A. L., Lu, W.,
 Hendrick, J. J., Philip, V. M. & Carter, G. W. (2013)
 <doi:10.1371/journal.pcbi.1003270>.")
     (license license:gpl3)))
+
+(define-public r-caop-raa-2024
+  (package
+    (name "r-caop-raa-2024")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CAOP.RAA.2024" version))
+       (sha256
+        (base32 "155jgbnfy988qh9wh62w1k6q6v7bdj2a6nqjdxq0wxg921yn9hfs"))))
+    (properties `((upstream-name . "CAOP.RAA.2024")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringi
+                             r-sf
+                             r-readr
+                             r-glue
+                             r-dplyr))
+    (home-page "https://github.com/patterninstitute/CAOP.RAA.2024")
+    (synopsis "Official Administrative Map of the Azores (CAOP 2024)")
+    (description
+     "This package provides the official administrative boundaries of the Azores
+(RegiÃ£o AutÃ³noma dos AÃ§ores (RAA)) as defined in the 2024 edition of the
+Carta Administrativa Oficial de Portugal (CAOP), published by the
+DireÃ§Ã£o-Geral do TerritÃ³rio (DGT).  The package includes convenience
+functions to import these boundaries as sf objects for spatial analysis in R.
+Source: <https://geo2.dgterritorio.gov.pt/caop/CAOP_RAA_2024-gpkg.zip>.")
+    (license license:expat)))
 
 (define-public r-canvasxpress-data
   (package

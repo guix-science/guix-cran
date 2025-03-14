@@ -5771,13 +5771,13 @@ log-concave.  For further information see Duembgen, Rufibach and Schuhmacher
 (define-public r-logconcdead
   (package
     (name "r-logconcdead")
-    (version "1.6-11")
+    (version "1.6-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogConcDEAD" version))
        (sha256
-        (base32 "1yds46ljvx5hyrsm9sxsva2w0lq65y2374x2wvirvbnw30dv1qcr"))))
+        (base32 "1s5qjifa8q38ixyzdbp9n486p3zrv77sdw620q8clzfwa5543ba2"))))
     (properties `((upstream-name . "LogConcDEAD")))
     (build-system r-build-system)
     (arguments
@@ -8397,13 +8397,13 @@ median of the distribution.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "0kr8kir2nzx2mx6ibr3mcwjlkhi46yiq8fpk6d5s7fq8zw8mpcsd"))))
+        (base32 "0jnkccp9fl9d30fwcm5c1nkfmhf8pv2wvdh7wy82fjxvxiljnd56"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
@@ -8415,7 +8415,7 @@ median of the distribution.")
     (description
      "This package provides a unified interface to interact with various Large
 Language Model (LLM) APIs such as @code{OpenAI} (see
-<https://platform.openai.com/docs/quickstart> for details), Anthropic (see
+<https://platform.openai.com/docs/overview> for details), Anthropic (see
 <https://docs.anthropic.com/en/api/getting-started> for details), Groq (see
 <https://console.groq.com/docs/api-reference> for details), Together AI (see
 <https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek} (see
@@ -9457,6 +9457,34 @@ J, Lahoz A (2019) <doi:10.1021/acs.analchem.8b03409>.")
 programmatically and conveniently integrate it into the current workflow or
 packages.")
     (license license:gpl3)))
+
+(define-public r-lionfish
+  (package
+    (name "r-lionfish")
+    (version "1.0.27")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lionfish" version))
+       (sha256
+        (base32 "1npk3rw41w49mlgi895w84g75andp6kxj98sg1yh7agxcn1qddlf"))))
+    (properties `((upstream-name . "lionfish")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tourr r-reticulate r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://mmedl94.github.io/lionfish/")
+    (synopsis "Interactive 'tourr' Using 'python'")
+    (description
+     "Extends the functionality of the tourr package by an interactive graphical user
+interface.  The interactivity allows users to effortlessly refine their tourr
+results by manual intervention, which allows for integration of expert knowledge
+and aids the interpretation of results.  For more information on tourr see
+Wickham et.  al (2011) <doi:10.18637/jss.v040.i02> or
+<https://github.com/ggobi/tourr>.")
+    (license license:expat)))
 
 (define-public r-lintools
   (package
@@ -13769,13 +13797,13 @@ colour displays.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.3.2")
+    (version "6.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "199bhkhrhhdamaj6dihskkv62ixkfkv755jd166y070npinpg2w5"))))
+        (base32 "112xhfppqmz32qag1ahrnrcx95j53h33yrs41wlhrb0pw36aii2b"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (arguments
@@ -13793,7 +13821,7 @@ colour displays.")
                              r-glmmtmb
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "http://www.sheffersonlab.com/projects.html")
+    (home-page "http://revolutionarydemography.com/projects.html")
     (synopsis
      "Historical and Ahistorical Population Projection Matrix Analysis")
     (description

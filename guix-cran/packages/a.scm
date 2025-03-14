@@ -2770,13 +2770,13 @@ include a stationary structure in the spatial covariance, which utilizes
 (define-public r-autofc
   (package
     (name "r-autofc")
-    (version "0.2.0.1001")
+    (version "0.2.0.1002")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoFC" version))
        (sha256
-        (base32 "08q3d2gcjwg36wy7lk8bkhv9i8cayckayslx30zbkypbhabh8bqm"))))
+        (base32 "1ajjc8yzyanxvm6bmfsg59pgm0s0cgp3k7hnyy7xjxwaqxasnc01"))))
     (properties `((upstream-name . "autoFC")))
     (build-system r-build-system)
     (arguments
@@ -11817,13 +11817,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.9-1")
+    (version "0.8.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "1611z6yw10d3xh9l07vymw48k6rc1nb6zry6crv75qf43gvwyi47"))))
+        (base32 "1nq8cir2i5icb7056amivdnsb2bg2cyrlb36n84m40b9kvnl99v5"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (arguments
@@ -11844,18 +11844,21 @@ function, such as the intra-cluster variance (used in k-means clustering) or the
 sum of pairwise distances within clusters.  The main function
 @code{anticlustering()} gives access to optimal and heuristic anticlustering
 methods described in Papenberg and Klau (2021; <doi:10.1037/met0000301>), Brusco
-et al. (2020; <doi:10.1111/bmsp.12186>), and Papenberg (2024;
-<doi:10.1111/bmsp.12315>).  The optimal algorithms require that an integer
-linear programming solver is installed.  This package will install
+et al. (2020; <doi:10.1111/bmsp.12186>), Papenberg (2024;
+<doi:10.1111/bmsp.12315>), and Papenberg et al. (2025;
+<doi:10.1101/2025.03.03.641320>).  The optimal algorithms require that an
+integer linear programming solver is installed.  This package will install
 @code{lpSolve} (<https://cran.r-project.org/package=@code{lpSolve>}) as a
 default solver, but it is also possible to use the package Rglpk
 (<https://cran.r-project.org/package=Rglpk>), which requires the GNU linear
-programming kit (<https://www.gnu.org/software/glpk/glpk.html>), or the package
+programming kit (<https://www.gnu.org/software/glpk/glpk.html>), the package
 Rsymphony (<https://cran.r-project.org/package=Rsymphony>), which requires the
-SYMPHONY ILP solver (<https://github.com/coin-or/SYMPHONY>).  Rglpk and
-Rsymphony have to be manually installed by the user because they are only
-\"suggested\" dependencies.  Full access to the bicriterion anticlustering method
-proposed by Brusco et al. (2020) is given via the function
+SYMPHONY ILP solver (<https://github.com/coin-or/SYMPHONY>), or the commercial
+solver Gurobi, which provides its own R package that is not available via CRAN
+(<https://www.gurobi.com/downloads/>).  Rglpk', Rsymphony', gurobi and their
+system dependencies have to be manually installed by the user because they are
+only suggested dependencies.  Full access to the bicriterion anticlustering
+method proposed by Brusco et al. (2020) is given via the function
 @code{bicriterion_anticlustering()}, while @code{kplus_anticlustering()}
 implements the full functionality of the k-plus anticlustering approach proposed
 by Papenberg (2024).  Some other functions are available to solve classical
@@ -19926,19 +19929,19 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "1qgnk39n7y46vgw44qmsg99jya4a8grdhsp7k2n8k98zvkqwkb9x"))))
+        (base32 "1x8rglljccm0h5x5145hz6d14h7zynarg2ic17brlsflbm3wfcfg"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-rlang r-cli))
+    (propagated-inputs (list r-tibble r-rlang))
     (home-page "https://timtaylor.github.io/ageutils/")
     (synopsis "Collection of Functions for Working with Age Intervals")
     (description
@@ -25893,6 +25896,32 @@ non-tradable services, thereby reducing non-classical measurement error.  The
 Quality of Life under Spatial Frictions\".  When using this programme or the
 toolkit in your work, please cite the paper.")
     (license license:expat)))
+
+(define-public r-abms
+  (package
+    (name "r-abms")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "abms" version))
+       (sha256
+        (base32 "01vhj27yv411w8rf6k38giwmmzc81knwqnlk65a12gpmcpx8r86f"))))
+    (properties `((upstream-name . "abms")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm r-mvtnorm r-gigrvg r-bayeslogit))
+    (home-page "https://github.com/SirCornflake/BMS")
+    (synopsis "Augmented Bayesian Model Selection for Regression Models")
+    (description
+     "This package provides tools to perform model selection alongside estimation
+under Linear, Logistic, Negative binomial, Quantile, and Skew-Normal regression.
+ Under the spike-and-slab method, a probability for each possible model is
+estimated with the posterior mean, credibility interval, and standard deviation
+of coefficients and parameters under the most probable model.")
+    (license license:gpl3+)))
 
 (define-public r-abmr
   (package

@@ -4471,13 +4471,13 @@ different ways (i.e., model structures).")
 (define-public r-vigicaen
   (package
     (name "r-vigicaen")
-    (version "0.15.5")
+    (version "0.15.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vigicaen" version))
        (sha256
-        (base32 "0kswaaal774j502crccsp7hzh8cjbrxcv4cykll5vjz9944wr4fd"))))
+        (base32 "1frc1qzzs2xfhlmsiqdvl9y6y77r4aa5bfb9vdjh3zhmfnjihkbj"))))
     (properties `((upstream-name . "vigicaen")))
     (build-system r-build-system)
     (arguments
@@ -4489,6 +4489,7 @@ different ways (i.e., model structures).")
                              r-purrr
                              r-lifecycle
                              r-gridextra
+                             r-glue
                              r-ggplot2
                              r-fst
                              r-dplyr

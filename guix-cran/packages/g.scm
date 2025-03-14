@@ -10400,13 +10400,13 @@ zip-up and ready to be published in Public Data Explorer'.")
 (define-public r-googlepolylines
   (package
     (name "r-googlepolylines")
-    (version "0.8.5")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googlePolylines" version))
        (sha256
-        (base32 "0vhq0cl7zs2gazds6ciwykdhz92ayqyaqhzn4zcxfsfg42gsvxk9"))))
+        (base32 "12xdkzxnbcpz8p2q36p7n5ayagmgpscbyaw23py0d35qzl6vqsa5"))))
     (properties `((upstream-name . "googlePolylines")))
     (build-system r-build-system)
     (arguments
@@ -10414,7 +10414,7 @@ zip-up and ready to be published in Public Data Explorer'.")
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=googlePolylines")
+    (home-page "https://github.com/SymbolixAU/googlePolylines")
     (synopsis "Encoding Coordinates into 'Google' Polylines")
     (description
      "Encodes simple feature ('sf') objects and coordinates, and decodes polylines
@@ -28800,6 +28800,51 @@ sets.  For more details see (Gagolewski et al.  2016
 implementation, including, amongst others, noise point detection, see the
 genieclust package.")
     (license license:gpl3+)))
+
+(define-public r-genhmm1d
+  (package
+    (name "r-genhmm1d")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GenHMM1d" version))
+       (sha256
+        (base32 "0lvwga4k3wmcdcv4bbhwj7ln7lrn6pqs0spz4zd5is6dp3j42wyb"))))
+    (properties `((upstream-name . "GenHMM1d")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam
+                             r-vares
+                             r-stabledist
+                             r-ssdtools
+                             r-sn
+                             r-skewt
+                             r-sgt
+                             r-rmutil
+                             r-reshape2
+                             r-matrixcalc
+                             r-gldex
+                             r-ggplot2
+                             r-generalizedhyperbolic
+                             r-gamlss-dist
+                             r-foreach
+                             r-extradistr
+                             r-envstats
+                             r-doparallel
+                             r-actuar))
+    (home-page "https://cran.r-project.org/package=GenHMM1d")
+    (synopsis
+     "Goodness-of-Fit for Zero-Inflated Univariate Hidden Markov Models")
+    (description
+     "Inference, goodness-of-fit tests, and predictions for continuous and discrete
+univariate Hidden Markov Models (HMM), including zero-inflated distributions.
+The goodness-of-fit test is based on a Cramer-von Mises statistic and uses
+parametric bootstrap to estimate the p-value.  The description of the
+methodology is taken from Nasri et al (2020) <doi:10.1029/2019WR025122>.")
+    (license license:gpl3)))
 
 (define-public r-genfrn
   (package

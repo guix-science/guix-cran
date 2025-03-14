@@ -4745,13 +4745,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "1ldh6bdlig3hvlmrdnjhb919x92g6wygwlb9slf4xw0fdwyqy0a6"))))
+        (base32 "1vyg0czirq0j6rxnrp1wmq9jph2pj6mjh5hli5vwm14mcid0mwzy"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (arguments
@@ -4759,7 +4759,6 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
-                             r-shiny
                              r-rlang
                              r-r6
                              r-omopgenerics

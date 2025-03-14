@@ -14036,19 +14036,20 @@ with PPLasso.  BMC Bioinformatics.  2023 Jan 23;24(1):25.")
 (define-public r-ppitables
   (package
     (name "r-ppitables")
-    (version "0.5.5")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppitables" version))
        (sha256
-        (base32 "1wrscfgdbhnb7z0n44yw3yhw5dmr5jd7g1m69nkx61n6dfzj7mi2"))))
+        (base32 "19an5nw35w4jr99fws6hi7dzm99czvif37rkgmvlyg11k93mz9v1"))))
     (properties `((upstream-name . "ppitables")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr r-tibble))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/katilingban/ppitables")
     (synopsis
      "Lookup Tables to Generate Poverty Likelihoods and Rates using the Poverty Probability Index (PPI)")
@@ -14056,8 +14057,8 @@ with PPLasso.  BMC Bioinformatics.  2023 Jan 23;24(1):25.")
      "The Poverty Probability Index (PPI) is a poverty measurement tool for
 organizations and businesses with a mission to serve the poor.  The PPI is
 statistically-sound, yet simple to use: the answers to 10 questions about a
-householdâs characteristics and asset ownership are scored to compute the
-likelihood that the household is living below the poverty line â or above by
+household's characteristics and asset ownership are scored to compute the
+likelihood that the household is living below the poverty line - or above by
 only a narrow margin.  This package contains country-specific lookup data tables
 used as reference to determine the poverty likelihood of a household based on
 their score from the country-specific PPI questionnaire.  These lookup tables
@@ -25811,6 +25812,32 @@ checks are supported.  This is useful for package authors who need to ship more
 than the 5 Megabyte of data currently allowed by the the Comprehensive R Archive
 Network (CRAN).")
     (license license:expat)))
+
+(define-public r-pkgdiff
+  (package
+    (name "r-pkgdiff")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pkgdiff" version))
+       (sha256
+        (base32 "1pzddz10zd75rd1gy5h2rzz6zl0gmlg3mkrpm399wabm2w02whba"))))
+    (properties `((upstream-name . "pkgdiff")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rvest r-crayon r-cranlogs r-common))
+    (native-inputs (list r-knitr))
+    (home-page "https://pkgdiff.r-sassy.org")
+    (synopsis "Identifies Package Differences")
+    (description
+     "Identifies differences between versions of a package.  Specifically, the
+functions help determine if there are breaking changes from one package version
+to the next.  The package also includes a stability assessment, to help you
+determine the overall stability of a package, or even an entire repository.")
+    (license license:cc0)))
 
 (define-public r-pkgdepr
   (package

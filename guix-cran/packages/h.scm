@@ -13068,18 +13068,32 @@ package.")
 (define-public r-hdar
   (package
     (name "r-hdar")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdar" version))
        (sha256
-        (base32 "1hx1jrxi8jmls5xi7mnpw06192l60i3ksrjbsmr7qz4ww8r8s31m"))))
+        (base32 "0kpvlv0n4sfm51l873cy2k47l3r6rr8jhgglj728ka3jrlm10w1w"))))
     (properties `((upstream-name . "hdar")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-stringr
                              r-r6
                              r-magrittr
@@ -13087,7 +13101,7 @@ package.")
                              r-humanize
                              r-httr2
                              r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://www.wekeo.eu/")
     (synopsis "'REST' API Client for Accessing Data on 'WEkEO HDA V2'")
     (description
@@ -13097,7 +13111,8 @@ the HDA platform.  With hdar', researchers and data scientists can integrate the
 extensive HDA datasets into their R workflows, enhancing their data analysis
 capabilities.  Comprehensive information on the API functionality and usage is
 available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
-    (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
+    (license (list (license:fsdg-compatible "EUPL (>= 1.2)")
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-hdanova
   (package
@@ -14193,6 +14208,35 @@ function to manipulate distance matrices and phylogenetic trees to make it
 easier to plot with ggplot2 and to manipulate using tidyverse tools.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-harplus
+  (package
+    (name "r-harplus")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HARplus" version))
+       (sha256
+        (base32 "0spqs30na2sk3bdbhmllzb6qvvak09n8lhlj62a8wgc8v0l8mqg2"))))
+    (properties `((upstream-name . "HARplus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-tidyr r-openxlsx r-haven))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bodysbobb/HARplus/")
+    (synopsis "Enhanced R Package for 'GEMPACK' .har and .sl4 Files")
+    (description
+     "This package provides tools for processing and analyzing .har and .sl4 files,
+making it easier for GEMPACK users and GTAP researchers to handle large economic
+datasets.  It simplifies the management of multiple experiment results, enabling
+faster and more efficient comparisons without complexity.  Users can extract,
+restructure, and merge data seamlessly, ensuring compatibility across different
+tools.  The processed data can be exported and used in R', Stata', Python',
+Julia', or any software that supports Text, CSV, or Excel formats.")
+    (license license:expat)))
 
 (define-public r-harmonydata
   (package

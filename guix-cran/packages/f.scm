@@ -2878,13 +2878,13 @@ downloadable from the Ministry of Agriculture, Forestry and Fisheries website
 (define-public r-fucom
   (package
     (name "r-fucom")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fucom" version))
        (sha256
-        (base32 "0p08fa2a6cyb65iyx3ca59lfi4wfv908bykd5xc0wz2k8fa80i2v"))))
+        (base32 "10y3xkl6852ii9pdn2nffck3zi04af50ip5yp5vbx5i9nign6n50"))))
     (properties `((upstream-name . "fucom")))
     (build-system r-build-system)
     (arguments
@@ -22590,13 +22590,13 @@ sampling (Murray, Adams, and @code{MacKay} 2010).")
 (define-public r-fastglmpca
   (package
     (name "r-fastglmpca")
-    (version "0.1-107")
+    (version "0.1-108")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastglmpca" version))
        (sha256
-        (base32 "0nj85h4fal1qsdkzly153kyam600l8hgkg43ggzc92p9acvgcz51"))))
+        (base32 "0pns1gcy831ax4l8swmm34amzi4k73mcy8yha5bqpfyx2ywajf3n"))))
     (properties `((upstream-name . "fastglmpca")))
     (build-system r-build-system)
     (arguments
@@ -22688,13 +22688,13 @@ and Mengyang Gu (2025), <doi:10.48550/@code{arXiv.2501.01324>}.")
 (define-public r-fastfmm
   (package
     (name "r-fastfmm")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastFMM" version))
        (sha256
-        (base32 "0zpfsvwnz1mp024mf2nq8jb0nxh5r1yqyp13hhbbsix6va8rblb5"))))
+        (base32 "0zmlq19mgim97zqsk78p8nkbvb967d9cnc55svnhirp65zcgaxz2"))))
     (properties `((upstream-name . "fastFMM")))
     (build-system r-build-system)
     (arguments
@@ -22721,8 +22721,10 @@ and Mengyang Gu (2025), <doi:10.48550/@code{arXiv.2501.01324>}.")
     (synopsis "Fast Functional Mixed Models using Fast Univariate Inference")
     (description
      "Implementation of the fast univariate inference approach (Cui et al. (2022)
-<doi:10.1080/10618600.2021.1950006>, Loewinger et al. (2023)
-<doi:10.1101/2023.11.06.565896>) for fitting functional mixed models.")
+<doi:10.1080/10618600.2021.1950006>, Loewinger et al. (2024)
+<doi:10.7554/@code{eLife.95802.2>}) for fitting functional mixed models.  User
+guides and Python package information can be found at
+<https://github.com/gloewing/photometry_FLMM>.")
     (license license:gpl3+)))
 
 (define-public r-fasterraster
@@ -22853,29 +22855,26 @@ computational point of view.")
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.14.6")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "0ycmyph5p2r74gdry5smwwwqxsrvj4ql0v3zcvafx71jfkcyna2p"))))
+        (base32 "1g9qnk9hm61cx29mrlgrhhaq0nyv0p8c9xsrjggx04d5n1xza5fh"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tseries
-                             r-testthat
-                             r-rcppclock
+    (propagated-inputs (list r-testthat
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-progress
                              r-matrix
-                             r-glmnet
-                             r-forecast
-                             r-fastglm))
-    (native-inputs (list r-knitr))
+                             r-glmnet))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://fastcpd.xingchi.li")
     (synopsis "Fast Change Point Detection via Sequential Gradient Descent")
     (description

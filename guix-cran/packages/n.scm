@@ -14654,13 +14654,13 @@ are out of control.")
 (define-public r-nemsqar
   (package
     (name "r-nemsqar")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nemsqar" version))
        (sha256
-        (base32 "0f4pb1fpy4xpdsgndi36gzqn6sl7ax6nzk8rr0sgriidd2hni18x"))))
+        (base32 "1qv6839r1444i3bjggmff40m9m8h4kisif4w6jq4ziqxrl0a43xi"))))
     (properties `((upstream-name . "nemsqar")))
     (build-system r-build-system)
     (arguments
@@ -14670,6 +14670,7 @@ are out of control.")
                              r-tibble
                              r-rlang
                              r-lubridate
+                             r-lifecycle
                              r-dplyr
                              r-cli))
     (home-page "https://github.com/bemts-hhs/nemsqar")
@@ -15788,13 +15789,13 @@ standard R subsetting operators and common function forms.")
 (define-public r-ncdf4-helpers
   (package
     (name "r-ncdf4-helpers")
-    (version "0.3-6")
+    (version "0.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncdf4.helpers" version))
        (sha256
-        (base32 "0qnm41rbxb6v7aqh1mdkjhcc2rhs4wg6wmrllldzd99mzz8slv1r"))))
+        (base32 "1nj1d9lpv6jkhm4gygndbvxvnzsnqsq813ilcy6jwxvk92r3awwk"))))
     (properties `((upstream-name . "ncdf4.helpers")))
     (build-system r-build-system)
     (arguments

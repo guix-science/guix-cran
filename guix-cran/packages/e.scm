@@ -5287,13 +5287,13 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "0l605vf15da32j2x55i01gy8nyr1pcmsrg2cvw9vrq3zf41k2cmb"))))
+        (base32 "0c7qrz0zkhajxg0xxg6hskl8ai0cpf5j8z6nfkfy5xi1qvab8kgl"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (arguments
@@ -5302,15 +5302,16 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
     (propagated-inputs (list r-survival
                              r-shiny
                              r-rstpm2
-                             r-rlang
                              r-purrr
                              r-plotly
                              r-numderiv
                              r-mvtnorm
                              r-matrix
+                             r-magrittr
+                             r-lrstat
                              r-flexsurv
                              r-erify
-                             r-dplyr))
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kaifenglu/eventPred")
     (synopsis "Event Prediction")

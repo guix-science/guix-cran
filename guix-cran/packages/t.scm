@@ -15110,6 +15110,49 @@ pairwise distance and similarity information to cluster vectors, matrices, or
 tensors.")
     (license license:expat)))
 
+(define-public r-tinyvast
+  (package
+    (name "r-tinyvast")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinyVAST" version))
+       (sha256
+        (base32 "1z9sf8syn14z70vbgyjh1yb77ldi2fcr0qddxmzqxd98vswzcl75"))))
+    (properties `((upstream-name . "tinyVAST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-units
+                             r-tmb
+                             r-sfnetworks
+                             r-sf
+                             r-sem
+                             r-sdmtmb
+                             r-rcppeigen
+                             r-mgcv
+                             r-matrix
+                             r-igraph
+                             r-fmesher
+                             r-corpcor
+                             r-checkmate
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://vast-lib.github.io/tinyVAST/")
+    (synopsis "Multivariate Spatio-Temporal Models using Structural Equations")
+    (description
+     "Fits a wide variety of multivariate spatio-temporal models with simultaneous and
+lagged interactions among variables (including vector autoregressive
+spatio-temporal ('VAST') dynamics) for areal, continuous, or network spatial
+domains.  It includes time-variable, space-variable, and space-time-variable
+interactions using dynamic structural equation models ('DSEM') as expressive
+interface, and the mgcv package to specify splines via the formula interface.
+See Thorson et al. (2024) <doi:10.48550/@code{arXiv.2401.10193>} for more
+details.")
+    (license license:gpl3)))
+
 (define-public r-tinytiger
   (package
     (name "r-tinytiger")
@@ -28395,13 +28438,13 @@ album covers.")
 (define-public r-taxonomizr
   (package
     (name "r-taxonomizr")
-    (version "0.10.8")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxonomizr" version))
        (sha256
-        (base32 "0dbajn22iiz893n288qa0izrv7k47lis2ipcg5jziwiyq6jbzqdv"))))
+        (base32 "06ja2pwf53y1zkmkd7mjfw4y5n18c80b0mi35qmzav4pfl19m82a"))))
     (properties `((upstream-name . "taxonomizr")))
     (build-system r-build-system)
     (arguments
@@ -29552,13 +29595,13 @@ available.")
 (define-public r-tall
   (package
     (name "r-tall")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tall" version))
        (sha256
-        (base32 "11jlczhf5x957sdz5fa4558qdz8b6ai9q21qah3nvx79hghkrfwk"))))
+        (base32 "0n9zpbsxrbyqihwn8smsfkidf7hsx1858ls8kac95kricx0fs9z9"))))
     (properties `((upstream-name . "tall")))
     (build-system r-build-system)
     (arguments
@@ -29595,6 +29638,7 @@ available.")
                              r-later
                              r-jsonlite
                              r-igraph
+                             r-ggraph
                              r-fontawesome
                              r-dt
                              r-dplyr

@@ -1051,6 +1051,39 @@ calculating conditional and unconditional expectations, and calculating marginal
 effects on conditional and unconditional expectations.")
     (license license:gpl2+)))
 
+(define-public r-mvpot
+  (package
+    (name "r-mvpot")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvPot" version))
+       (sha256
+        (base32 "0m0jza48yy77z41f4sx4p3iq42fqd7na8jp28v8q9h1mamrm9npv"))))
+    (properties `((upstream-name . "mvPot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-numbers r-mass r-gmp r-evd))
+    (home-page "https://github.com/r-fndv/mvPot")
+    (synopsis
+     "Multivariate Peaks-over-Threshold Modelling for Spatial Extreme Events")
+    (description
+     "This package provides tools for high-dimensional peaks-over-threshold inference
+and simulation of Brown-Resnick and extremal Student spatial extremal processes.
+ These include optimization routines based on censored likelihood and gradient
+scoring, and exact simulation algorithms for max-stable and multivariate Pareto
+distributions based on rejection sampling.  Fast multivariate Gaussian and
+Student distribution functions using separation-of-variable algorithm with quasi
+Monte Carlo integration are also provided.  Key references include de Fondeville
+and Davison (2018) <doi:10.1093/biomet/asy026>, Thibaud and Opitz (2015)
+<doi:10.1093/biomet/asv045>, Wadsworth and Tawn (2014)
+<doi:10.1093/biomet/ast042> and Genz and Bretz (2009)
+<doi:10.1007/978-3-642-01689-9>.")
+    (license license:gpl2)))
+
 (define-public r-mvpd
   (package
     (name "r-mvpd")
@@ -12206,13 +12239,13 @@ aprendizaje estadistico\"
 (define-public r-mpactr
   (package
     (name "r-mpactr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpactr" version))
        (sha256
-        (base32 "0hb1d2afjsl9zj6bmjh6hzzc07h0ip1lc8r40w9c9ikl1klm2x23"))))
+        (base32 "0h7rxj91dkgmc2l3bdyy6ylrr2hnjlgx951v63h3m3l5wachs430"))))
     (properties `((upstream-name . "mpactr")))
     (build-system r-build-system)
     (arguments
@@ -12221,11 +12254,13 @@ aprendizaje estadistico\"
     (propagated-inputs (list r-viridis
                              r-treemapify
                              r-readr
+                             r-rcpp
                              r-r6
                              r-ggplot2
                              r-data-table
                              r-cli))
-    (home-page "https://mums2.github.io/mpactr/")
+    (native-inputs (list r-knitr))
+    (home-page "https://www.mums2.org/mpactr/")
     (synopsis "Correction of Preprocessed MS Data")
     (description
      "An R implementation of the python program Metabolomics Peak Analysis
@@ -12239,7 +12274,7 @@ threshold in a specific group of samples, for example media blanks, (4) ions
 that are inconsistent between technical replicates, and (5) in-source fragment
 ions created during ionization before fragmentation in the tandem mass
 spectrometry workflow.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-mp
   (package
@@ -24872,13 +24907,13 @@ Duveau, T. Rebafka (2022) <@code{arXiv:2202.07963>}.")
 (define-public r-misssbm
   (package
     (name "r-misssbm")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missSBM" version))
        (sha256
-        (base32 "1gw485bn7mddj5i555clp3saxas77r9r4970ahf1y3vpk43wjj02"))))
+        (base32 "0klmcbrrf3ly82k224bv91s2gyg95h51km5369xzyaizw8j287a1"))))
     (properties `((upstream-name . "missSBM")))
     (build-system r-build-system)
     (arguments
@@ -28781,41 +28816,6 @@ analysis.")
 generic R data structures as much as possible, making R data wrangling possible
 also for sequence data.")
     (license license:gpl2)))
-
-(define-public r-microsec
-  (package
-    (name "r-microsec")
-    (version "2.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MicroSEC" version))
-       (sha256
-        (base32 "161m2l9ar8amfbcdj72gmlaajvbycj69g5rwfnml1xkw5rh6ywnd"))))
-    (properties `((upstream-name . "MicroSEC")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-rsamtools
-                             r-genomeinfodb
-                             r-dplyr
-                             r-biostrings
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MANO-B/MicroSEC/")
-    (synopsis
-     "Sequence Error Filter for Formalin-Fixed and Paraffin-Embedded Samples")
-    (description
-     "Clinical sequencing of tumor is usually performed on formalin-fixed and
-paraffin-embedded samples and have many sequencing errors.  We found that the
-majority of these errors are detected in chimeric read caused by single-strand
-DNA with micro-homology.  Our filtering pipeline focuses on the uneven
-distribution of the artifacts in each read and removes such errors in
-formalin-fixed and paraffin-embedded samples without over-eliminating the true
-mutations detected in fresh frozen samples.")
-    (license license:expat)))
 
 (define-public r-micropop
   (package
