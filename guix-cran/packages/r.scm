@@ -1319,13 +1319,13 @@ client ID easily available from the API portal
 (define-public r-rweaveextra
   (package
     (name "r-rweaveextra")
-    (version "1.1-0")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RweaveExtra" version))
        (sha256
-        (base32 "0w2ih5v1xa8v3z2xqy8mvl1f36jdrb56mpnvijgk3cbwk317dg9i"))))
+        (base32 "05jb4nwzgq8y3pdvxrh87201nwsw5frqqjvm9nlql6wx9d6m57an"))))
     (properties `((upstream-name . "RweaveExtra")))
     (build-system r-build-system)
     (arguments
@@ -1339,9 +1339,10 @@ client ID easily available from the API portal
 ignore code chunks on weaving, tangling, or both.  Chunks ignored on weaving are
 not parsed, yet are written out verbatim on tangling.  Chunks ignored on
 tangling may be evaluated as usual on weaving, but are completely left out of
-the tangled scripts.  The driver @code{RtangleExtra} also provides an option to
-specify the extension of the file name (or remove it entirely) when splitting is
-selected on tangling.")
+the tangled scripts.  The driver @code{RtangleExtra} also provides options to
+control the separation between code chunks in the tangled script, and to specify
+the extension of the file name (or remove it entirely) when splitting is
+selected.")
     (license license:gpl2+)))
 
 (define-public r-rwdataplyr
@@ -13800,20 +13801,20 @@ Rieder, H., Kohl, M., and Ruckdeschel, P. (2008),
 (define-public r-ropj
   (package
     (name "r-ropj")
-    (version "0.3-5")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ropj" version))
        (sha256
-        (base32 "0mdwk3y0h77pbpxml89h449lzj3hr8gvydbghsza5hs9f3f23a7a"))))
+        (base32 "16bidaw9slc6dv6x40ig3g5n6y2rdaccg20llr7j4mm33i0byiz1"))))
     (properties `((upstream-name . "Ropj")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/aitap/Ropj")
+    (home-page "https://cran.r-project.org/package=Ropj")
     (synopsis "Import Origin(R) Project Files")
     (description
      "Read the data from Origin(R) project files ('*.opj')
@@ -24035,13 +24036,13 @@ power of R and the visualization libraries of @code{JavaScript} in one package."
 (define-public r-rjsoncons
   (package
     (name "r-rjsoncons")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjsoncons" version))
        (sha256
-        (base32 "1icp56jimfsjjniq1sg45g89xfq56x8728dkp0c2pv7snjpxjcjl"))))
+        (base32 "0897vl39cznhha3s6jwcxwwidjf66lyy3390mkrd9m8xix8b62l9"))))
     (properties `((upstream-name . "rjsoncons")))
     (build-system r-build-system)
     (arguments
@@ -29953,13 +29954,13 @@ the division operator \"/\".")
 (define-public r-rforestry
   (package
     (name "r-rforestry")
-    (version "0.11.0.0")
+    (version "0.11.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rforestry" version))
        (sha256
-        (base32 "0ypxpxayj3lsw3rlh0dj8j18ly8gda5ab8m6zhksy2rfkj226qrc"))))
+        (base32 "180rm9vjqxabx2ngpkpmq7zpnm99b4ml2m14cqq0r195ih91nnrs"))))
     (properties `((upstream-name . "Rforestry")))
     (build-system r-build-system)
     (arguments
@@ -43797,13 +43798,13 @@ into a markdown version of the package reference manual.")
 (define-public r-rczechia
   (package
     (name "r-rczechia")
-    (version "1.12.3")
+    (version "1.12.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCzechia" version))
        (sha256
-        (base32 "160d4f8paqysm184vxqfz8zyy8jdfmxin1bmgd1v8130na0ynm7b"))))
+        (base32 "0vh6x70w7q26r5yiy7ng9ikj51fg3w3jb7v36ms92p0nlx1i5fb6"))))
     (properties `((upstream-name . "RCzechia")))
     (build-system r-build-system)
     (arguments
@@ -45191,6 +45192,32 @@ supports C++14 and Armadillo 10.8.2 or later.")
 sample fitting applications.  Also supplies additional custom coders for the
 vtreat package.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-rcppdpr
+  (package
+    (name "r-rcppdpr")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppDPR" version))
+       (sha256
+        (base32 "19igwaanqswg58dik8irs1h68ll91j663p12wrjsrc89r0mnkkzz"))))
+    (properties `((upstream-name . "RcppDPR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppgsl r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=RcppDPR")
+    (synopsis "'Rcpp' Implementation of Dirichlet Process Regression")
+    (description
+     "Rcpp reimplementation of the the Bayesian non-parametric Dirichlet Process
+Regression model for penalized regression first published in Zeng and Zhou
+(2017) <doi:10.1038/s41467-017-00470-2>.  A full Bayesian version is implemented
+with Gibbs sampling, as well as a faster but less accurate variational Bayes
+approximation.")
+    (license license:gpl3)))
 
 (define-public r-rcppcwb
   (package
@@ -47902,6 +47929,44 @@ extend - it has no external dependencies and can be easily bundled with other
 code or used standalone.  Please see <https://uscilab.github.io/cereal/> for
 more information.")
     (license license:bsd-2)))
+
+(define-public r-rcensuspkg
+  (package
+    (name "r-rcensuspkg")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcensusPkg" version))
+       (sha256
+        (base32 "0d7xdanhc1bgccrqd8srdwn0jy0133ljhc3yxymywns014wbgjha"))))
+    (properties `((upstream-name . "RcensusPkg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-sf
+                             r-rplotterpkg
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-gtable
+                             r-ggplotify
+                             r-ggplot2
+                             r-data-table))
+    (home-page "https://github.com/deandevl/RcensusPkg")
+    (synopsis "Easily Access US Census Bureau Survey and Geographic Data")
+    (description
+     "The key function @code{get_vintage_data()} returns a dataframe and is the window
+into the Census Bureau API requiring just a dataset name, vintage(year), and
+vector of variable names for survey estimates/percentages.  Other functions
+assist in searching for available datasets, geographies, group/variable concepts
+of interest.  Also provided are functions to access and layer (via standard
+piping) displayable geometries for the US, states, counties, blocks/tracts,
+roads, landmarks, places, and bodies of water.  Joining survey data with many of
+the geometry functions is built-in to produce choropleth maps.")
+    (license license:expat)))
 
 (define-public r-rcens
   (package

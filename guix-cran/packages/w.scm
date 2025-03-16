@@ -181,13 +181,13 @@ smart summaries that allows you to focus on dysfunctional cases.")
 (define-public r-wxgenr
   (package
     (name "r-wxgenr")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wxgenR" version))
        (sha256
-        (base32 "1m879478lvidcs1f844f5552kbgdxxbphk67w9pxgjx9mx8cmcxn"))))
+        (base32 "1zrzd99155gh8nm4lwbg96iqwkvh8a63l53bklwgp11q2z4l3g2w"))))
     (properties `((upstream-name . "wxgenR")))
     (build-system r-build-system)
     (arguments
@@ -200,6 +200,7 @@ smart summaries that allows you to focus on dysfunctional cases.")
                              r-lubridate
                              r-foreach
                              r-dplyr
+                             r-dorng
                              r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wxgenR")

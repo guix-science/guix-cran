@@ -3694,13 +3694,13 @@ Deep Learning\".")
 (define-public r-attachment
   (package
     (name "r-attachment")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "attachment" version))
        (sha256
-        (base32 "0ndsfw68737gbs76539fzc9h60j6x9jsd1kkw1pd69lq2zigk06v"))))
+        (base32 "02gg8ak70y7sqxmrf3y7gq107p15v6mnhbkmi3i17g7bmwkpwpkg"))))
     (properties `((upstream-name . "attachment")))
     (build-system r-build-system)
     (arguments
@@ -14951,6 +14951,36 @@ end-of-chapter exercises.  Information about the book is available at
 trawl processes and weighted trawl processes.")
     (license license:gpl3)))
 
+(define-public r-ambiorix
+  (package
+    (name "r-ambiorix")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ambiorix" version))
+       (sha256
+        (base32 "1kpbfznzxwkmn8svrhhzm2rb2zpbbgx8j4a2pbylmm7040v5hd1g"))))
+    (properties `((upstream-name . "ambiorix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yyjsonr
+                             r-webutils
+                             r-log
+                             r-httpuv
+                             r-glue
+                             r-fs
+                             r-cli
+                             r-assertthat))
+    (home-page "https://github.com/ambiorix-web/ambiorix")
+    (synopsis "Web Framework Inspired by 'Express.js'")
+    (description
+     "This package provides a web framework inspired by express.js to build any web
+service from multi-page websites to RESTful application programming interfaces.")
+    (license license:gpl3+)))
+
 (define-public r-ambient
   (package
     (name "r-ambient")
@@ -23056,20 +23086,20 @@ machine on which the data is stored.")
 (define-public r-adephylo
   (package
     (name "r-adephylo")
-    (version "1.1-16")
+    (version "1.1-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adephylo" version))
        (sha256
-        (base32 "0n6f2v287gkbdrfxq50b1lbya4znqg50lrah0v540vmydgi5vkmm"))))
+        (base32 "17fby3i2cz35vpkcig7x5f0zhrgl4ba530am4f11k1g7j2c1dvcr"))))
     (properties `((upstream-name . "adephylo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-phylobase r-ape r-adegenet r-ade4))
-    (home-page "https://cran.r-project.org/package=adephylo")
+    (home-page "https://github.com/adeverse/adephylo")
     (synopsis "Exploratory Analyses for the Phylogenetic Comparative Method")
     (description
      "Multivariate tools to analyze comparative data, i.e.  a phylogeny and some
@@ -25498,13 +25528,13 @@ for screen reader users.")
 (define-public r-accessr
   (package
     (name "r-accessr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "accessr" version))
        (sha256
-        (base32 "1n2q6sxc680zxqlmx2b3v0yh0hvlarb6f3ymzpxmfkpnn2ffq51w"))))
+        (base32 "0yvdajyvi8svcbbgagc5nqm1fd7wmv1dcnvaz1jx9yhp66dnnzbg"))))
     (properties `((upstream-name . "accessr")))
     (build-system r-build-system)
     (arguments

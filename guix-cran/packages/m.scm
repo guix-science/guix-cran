@@ -2040,13 +2040,13 @@ sampling positive stable variates not chi/sqrt(nu).")
 (define-public r-mvgam
   (package
     (name "r-mvgam")
-    (version "1.1.4")
+    (version "1.1.51")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvgam" version))
        (sha256
-        (base32 "1r4zgcr0fbrw0yafd1wkw6mfs8qgvnzvv43054x3zqsswwlyawi7"))))
+        (base32 "0ahja66nimx2xmggbvm5vfwkx2hlrx4fsh52md86f7gvipmjn3gj"))))
     (properties `((upstream-name . "mvgam")))
     (build-system r-build-system)
     (arguments
@@ -2080,7 +2080,7 @@ sampling positive stable variates not chi/sqrt(nu).")
 Users can build nonlinear State-Space models that can incorporate semiparametric
 effects in observation and process components, using a wide range of observation
 families.  Estimation is performed using Markov Chain Monte Carlo with
-Hamiltonian Monte Carlo in the software Stan'.  References: Clark & Wells (2022)
+Hamiltonian Monte Carlo in the software Stan'.  References: Clark & Wells (2023)
 <doi:10.1111/2041-210X.13974>.")
     (license license:expat)))
 
@@ -21664,13 +21664,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.19.0")
+    (version "2.20.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0kcaw4cvdxf4gfiibw9ga6368hxhsmq6xq3mmz2fh95av9n49rjw"))))
+        (base32 "15wkwq8fysgfaj3mg01xprrb16zjdbdv9gnzvy760psbl00mcy5j"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (arguments
@@ -34536,44 +34536,6 @@ analysis.  The resulting format corresponds to input data of the Shiny app
      "Create an interactive table of descriptive statistics in HTML. This table is
 typically used for exploratory analysis in a clinical study (referred to as
 Table 1').")
-    (license license:gpl3+)))
-
-(define-public r-metalite-sl
-  (package
-    (name "r-metalite-sl")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metalite.sl" version))
-       (sha256
-        (base32 "0m7xdaglkz5xwgvxn03y8b88a21ba89zhiwsh40wxkd6mkkx30j4"))))
-    (properties `((upstream-name . "metalite.sl")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-uuid
-                             r-stringr
-                             r-rlang
-                             r-reactable
-                             r-r2rtf
-                             r-plotly
-                             r-metalite-ae
-                             r-metalite
-                             r-htmltools
-                             r-glue
-                             r-forestly
-                             r-brew))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=metalite.sl")
-    (synopsis "Subject-Level Analysis Using 'metalite'")
-    (description
-     "Analyzes subject-level data in clinical trials using the metalite data
-structure.  The package simplifies the workflow to create production-ready
-tables, listings, and figures discussed in the subject-level analysis chapters
-of \"R for Clinical Study Reports and Submission\" by Zhang et al. (2022)
-<https://r4csr.org/>.")
     (license license:gpl3+)))
 
 (define-public r-metalite-ae
@@ -50914,13 +50876,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "17q84svqrcdf4219k6mh4y4zj61hwyg1876j8zz2bh3dahsnxkzs"))))
+        (base32 "105rl92073rd36y2689pk7kr4847hb2yaw3g0vgcviv8j8zx7mb0"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (arguments

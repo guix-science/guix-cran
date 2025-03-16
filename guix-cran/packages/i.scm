@@ -4083,6 +4083,53 @@ rate of green (IRG) according to methods described in Bischoff et al. (2012)
 <doi:10.1086/667590>.")
     (license license:gpl3)))
 
+(define-public r-irfcb
+  (package
+    (name "r-irfcb")
+    (version "0.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iRfcb" version))
+       (sha256
+        (base32 "0prmsr4slgwdfv7qri6h2k40504jswdnp6kghi35i2vkak35fd6k"))))
+    (properties `((upstream-name . "iRfcb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zip
+                             r-worrms
+                             r-tidyr
+                             r-stringr
+                             r-shiny
+                             r-sf
+                             r-reticulate
+                             r-readr
+                             r-r-matlab
+                             r-png
+                             r-lubridate
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://europeanifcbgroup.github.io/iRfcb/")
+    (synopsis "Tools for Managing Imaging FlowCytobot (IFCB) Data")
+    (description
+     "This package provides a comprehensive suite of tools for managing, processing,
+and analyzing data from the IFCB. I R @code{FlowCytobot} ('@code{iRfcb}')
+supports quality control, geospatial analysis, and preparation of IFCB data for
+publication in databases like <https://www.gbif.org>, <https://www.obis.org>,
+<https://emodnet.ec.europa.eu/en>, <https://shark.smhi.se/>, and
+<https://www.ecotaxa.org>.  The package integrates with the MATLAB ifcb-analysis
+tool, which is described in Sosik and Olson (2007) <doi:10.4319/lom.2007.5.204>,
+and provides features for working with raw, manually classified, and machine
+learningâclassified image datasets.  Key functionalities include image
+extraction, particle size distribution analysis, taxonomic data handling, and
+biomass concentration calculations, essential for plankton research.")
+    (license license:expat)))
+
 (define-public r-irexamples
   (package
     (name "r-irexamples")
@@ -9633,13 +9680,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlaspacetime
   (package
     (name "r-inlaspacetime")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAspacetime" version))
        (sha256
-        (base32 "02q6r0nhns8k9jh57h5xbnl7w70aq9f7v0022x41pb1m346h396m"))))
+        (base32 "157bwkbfaff09r1idcr4lqzw64aqha6s12ad61vvn4s7lal4zym6"))))
     (properties `((upstream-name . "INLAspacetime")))
     (build-system r-build-system)
     (arguments
@@ -18426,13 +18473,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "1llc7ps19pqmcwm33avbscn0izh30x164xxcn1b28pyppnzwggxf"))))
+        (base32 "1pppkxk49b6mppvl75248jg1ixrrxxkmx69b4gxhy3zwx2zs0h6x"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (arguments

@@ -14,8 +14,8 @@
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages image)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages image)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages machine-learning)
@@ -8517,13 +8517,13 @@ al. (2023) <doi:10.1002/sim.9831>.")
 (define-public r-crch
   (package
     (name "r-crch")
-    (version "1.2-1")
+    (version "1.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crch" version))
        (sha256
-        (base32 "181yczk269nw7d1pprs5662lj1423lni0id0k3pg37ifqhjjdqzn"))))
+        (base32 "1158f8gyflci2b8rq783r0y0gcfp0dlsi7wav0pvzgkhg7siwrix"))))
     (properties `((upstream-name . "crch")))
     (build-system r-build-system)
     (arguments
@@ -9493,6 +9493,33 @@ pane as a formatted HTML file.  It is also possible to get this report with a
 shiny application.  Cppcheck can spot many error types and it can also give some
 recommendations on the code.")
     (license license:gpl3)))
+
+(define-public r-cpp11tesseract
+  (package
+    (name "r-cpp11tesseract")
+    (version "5.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpp11tesseract" version))
+       (sha256
+        (base32 "0y2vacy1i19kwij0g8cc2fgnlldx1ndm0783fgywzi61xg8s7lfq"))))
+    (properties `((upstream-name . "cpp11tesseract")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-digest r-curl r-cpp11))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://pacha.dev/cpp11tesseract/")
+    (synopsis "Open Source OCR Engine")
+    (description
+     "Bindings to tesseract': tesseract (<https://github.com/tesseract-ocr/tesseract>)
+is a powerful optical character recognition (OCR) engine that supports over 100
+languages.  The engine is highly configurable in order to tune the detection
+algorithms and obtain the best possible results.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cpp11qpdf
   (package
@@ -48936,13 +48963,13 @@ and produce the resulting merge by time period and geographical region.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cansim" version))
        (sha256
-        (base32 "1gv42zxnzx3069kl5877s6jcdigl4448g1r3wb2rvql2gya3dj8a"))))
+        (base32 "1ghw68mp9ng63lqq1dac87h6rbwmx72mps5i6cwp80lhln3yf45p"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (arguments

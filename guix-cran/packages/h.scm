@@ -10387,13 +10387,13 @@ option set to HELLNO ( which in turn equals FALSE ) by default.")
 (define-public r-hellmer
   (package
     (name "r-hellmer")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hellmer" version))
        (sha256
-        (base32 "0l18d5qda6plxladlwmmjayp2wqv8wkdvyi2ja5dav9ilgi7ksv3"))))
+        (base32 "0fmq2aa3s5imlnj6rdvbnb573lysg77zhqjyzshr94f18i7i9sw9"))))
     (properties `((upstream-name . "hellmer")))
     (build-system r-build-system)
     (arguments
@@ -10402,6 +10402,7 @@ option set to HELLNO ( which in turn equals FALSE ) by default.")
     (propagated-inputs (list r-s7
                              r-r-utils
                              r-purrr
+                             r-jsonlite
                              r-future
                              r-furrr
                              r-ellmer

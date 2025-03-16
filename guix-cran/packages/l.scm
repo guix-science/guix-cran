@@ -3505,13 +3505,13 @@ functions for estimating linear and geometric morphometric data.")
 (define-public r-lorme
   (package
     (name "r-lorme")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorMe" version))
        (sha256
-        (base32 "04m9l3kcpcygyfg7aq1rfjvrb8g4vpszg7sqca2hr856kld9hhx7"))))
+        (base32 "1960a5d5sfbrnkw56mpm2vcccsi0438x7c7ikg8a5lj217fapq4a"))))
     (properties `((upstream-name . "LorMe")))
     (build-system r-build-system)
     (arguments

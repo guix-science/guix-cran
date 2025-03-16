@@ -2157,13 +2157,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "1734mn6zsnd5f4hqdmb9sz49ky6s8a1s6dhfpb9n6hiv94l3za2q"))))
+        (base32 "1wnvdssvx0b4sqvc6c40rbmincz6dl8j0c52ya455wgf09adk7iq"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (arguments
@@ -22638,25 +22638,24 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
 (define-public r-demographictable
   (package
     (name "r-demographictable")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemographicTable" version))
        (sha256
-        (base32 "0wyhgmgv94xwgsmsvk08c7kjfyppb0lmpy0nybgsaah8n1zlfgkv"))))
+        (base32 "0c2hlcjirfmymn8h8ly4z3ppkn7d86gjckf8zb4f91cmmmpr6f0w"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales r-officer r-flextable))
+    (propagated-inputs (list r-scales r-officer r-flextable r-cli))
     (home-page "https://cran.r-project.org/package=DemographicTable")
     (synopsis "Creating Demographic Table")
     (description
      "This package provides functions for creating demographic table of simple summary
-statistics and comparison(s) over one or more groups.  Returned value is printed
-via package flextable'.")
+statistics and comparison(s) over one or more groups.")
     (license license:gpl2)))
 
 (define-public r-demographic

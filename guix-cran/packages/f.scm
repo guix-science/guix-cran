@@ -9909,13 +9909,13 @@ descriptions of FNETS methodology and Owens, Cho and Barigozzi (2024+)
 (define-public r-fmx
   (package
     (name "r-fmx")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmx" version))
        (sha256
-        (base32 "02f4b9vmnp2gr47ql6smxiv7x9as6p44fi4kvg6lcn1xd386hx6z"))))
+        (base32 "1mpq38a7m8zhgviy92ybhz925hry86dypam4zi9s58rijl01lxh8"))))
     (properties `((upstream-name . "fmx")))
     (build-system r-build-system)
     (arguments

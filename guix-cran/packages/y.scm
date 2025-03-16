@@ -161,13 +161,13 @@ functionality).")
 (define-public r-ytanalytics
   (package
     (name "r-ytanalytics")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "YTAnalytics" version))
        (sha256
-        (base32 "1p3919avqxxb9w5x28mf09kfhw4md8q7rcd1v71jfasn9yqfnxcf"))))
+        (base32 "0v293xvmkn1cydn92w0mkvbfw89glq9caknqs42nbm4bsyhwxjwb"))))
     (properties `((upstream-name . "YTAnalytics")))
     (build-system r-build-system)
     (arguments

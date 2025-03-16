@@ -1928,13 +1928,13 @@ and Heyse (1985) <DOI:10.2307/2530666> for general parametric models.")
 (define-public r-tukeygh77
   (package
     (name "r-tukeygh77")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TukeyGH77" version))
        (sha256
-        (base32 "0lzjvbl29aqhq6d5yg0ngs32nwl4dx26fhfi5sa6fz8vx3mwbxcz"))))
+        (base32 "1jqlz07jxhkmn9pmc55167qx520j2ax3yl7yr39r5ibsdg7rzbmi"))))
     (properties `((upstream-name . "TukeyGH77")))
     (build-system r-build-system)
     (arguments
@@ -10898,13 +10898,13 @@ sign series for trace regression (ASSIST) algorithm.")
 (define-public r-trace
   (package
     (name "r-trace")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trace" version))
        (sha256
-        (base32 "0y54cz3glr42gcn3lbg2r69z8sbapxg4cgjgm5fa20wc49r8cm5h"))))
+        (base32 "0scbmjmqp4rr85riwv15ifdi1635gllbm6pkmp40iiwd3w11ggk0"))))
     (properties `((upstream-name . "trace")))
     (build-system r-build-system)
     (arguments

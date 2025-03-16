@@ -10698,13 +10698,13 @@ the Limit of Quantification.\" Statistics in Biopharmaceutical Research (2020):
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.20")
+    (version "1.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blogdown" version))
        (sha256
-        (base32 "1k4djijqhy2drqbw0l13cx68lxqm7x0vwqf18mwvppl1ka9q1d8b"))))
+        (base32 "00sk2mslkcnnxi4cv2l1icp81jb152lqg1yqcz420w4srf7pv28s"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (arguments

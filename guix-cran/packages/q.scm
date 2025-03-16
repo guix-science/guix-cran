@@ -1340,6 +1340,29 @@ general trees, Bioinformatics, 30, 2079â2080
 <doi:10.1093/bioinformatics/btu157> for pairs of binary trees.")
     (license license:gpl2+)))
 
+(define-public r-quartabs
+  (package
+    (name "r-quartabs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quartabs" version))
+       (sha256
+        (base32 "047zavswc048a06zaadn5afx9hh7ipysxq1fjilpx6yyzyqsmvrv"))))
+    (properties `((upstream-name . "quartabs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://sayuks.github.io/quartabs/")
+    (synopsis "Dynamically Generate Tabset Panels in 'Quarto' HTML Documents")
+    (description
+     "Dynamically generate tabset panels
+<https://quarto.org/docs/output-formats/html-basics.html#tabsets> in Quarto HTML
+documents using a data frame as input.")
+    (license license:expat)))
+
 (define-public r-quarrint
   (package
     (name "r-quarrint")
@@ -1853,13 +1876,13 @@ restaurants receive the second top grade.")
 (define-public r-quantilegh
   (package
     (name "r-quantilegh")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuantileGH" version))
        (sha256
-        (base32 "0zsdvvx567dq17b5n9rdx2qmnm0ph9qnvffmgh7n4csz0c1ca4xg"))))
+        (base32 "0alnass0sjardbr3wfx483i1pqg8zjc18sffvayhi2wasb01dzh5"))))
     (properties `((upstream-name . "QuantileGH")))
     (build-system r-build-system)
     (arguments

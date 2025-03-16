@@ -1997,13 +1997,13 @@ measurement facets (e.g., items and raters).")
 (define-public r-gtfswizard
   (package
     (name "r-gtfswizard")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GTFSwizard" version))
        (sha256
-        (base32 "01gklymwqzq32xkmbsds9vlqzhs4x9237grn96bj70kl567zjyvw"))))
+        (base32 "0v11s7c3j9kql85w6qvly3vn4vznxzax2j90va4gk2rpp4qvkdh0"))))
     (properties `((upstream-name . "GTFSwizard")))
     (build-system r-build-system)
     (arguments
@@ -2020,9 +2020,11 @@ measurement facets (e.g., items and raters).")
                              r-rlang
                              r-purrr
                              r-plotly
+                             r-magrittr
                              r-lubridate
                              r-leaflet-extras
                              r-leaflet
+                             r-igraph
                              r-hrbrthemes
                              r-hms
                              r-gtfstools
@@ -2035,7 +2037,7 @@ measurement facets (e.g., items and raters).")
                              r-data-table
                              r-crayon
                              r-checkmate))
-    (home-page "https://github.com/nelsonquesado/GTFSwizard")
+    (home-page "https://github.com/OPATP/GTFSwizard")
     (synopsis "Exploring and Manipulating 'GTFS' Files")
     (description
      "Exploring, analyzing, and manipulating General Transit Feed Specification (GTFS)
@@ -6283,13 +6285,13 @@ Ralston and Philip Rabinowitz (2001) <ISBN:9780486414546>.")
 (define-public r-greenfeedr
   (package
     (name "r-greenfeedr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenfeedr" version))
        (sha256
-        (base32 "1ai91102d63lvcdjgl5br8vigfni07pp90b9k4f391sr17nljlqf"))))
+        (base32 "05w0c5zx92qvxlapymypkcaic92a60ql4bymrgsjdl1sf4z4vs56"))))
     (properties `((upstream-name . "greenfeedr")))
     (build-system r-build-system)
     (arguments
@@ -6306,7 +6308,7 @@ Ralston and Philip Rabinowitz (2001) <ISBN:9780486414546>.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://gmbog.github.io/greenfeedr/")
+    (home-page "https://github.com/GMBog/greenfeedr")
     (synopsis "Process and Report 'GreenFeed' Data")
     (description
      "This package provides tools for downloading, processing, and reporting daily and
@@ -7177,13 +7179,13 @@ grouped date classes.")
 (define-public r-grateful
   (package
     (name "r-grateful")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grateful" version))
        (sha256
-        (base32 "02flwjchvqr7wx5rsbiq3l8pgkmg6anw30piydnw0dsp5pmxrq1b"))))
+        (base32 "1qywd3kb1pyaz3v1qy010q1ajayik62gagr65j6v89w6lra1aa39"))))
     (properties `((upstream-name . "grateful")))
     (build-system r-build-system)
     (arguments
@@ -11048,6 +11050,28 @@ applications.  The animations are activated using the Animate.css library.  See
      "This package provides a zero-inflated quasi-Poisson factor model to display
 similarity between samples visually in a low (2 or 3) dimensional space.")
     (license license:gpl2+)))
+
+(define-public r-golfr
+  (package
+    (name "r-golfr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "golfr" version))
+       (sha256
+        (base32 "0w9w7fpx3jpz12kc4cd97x06q40zd494bz8nd0566pqszicwq8bs"))))
+    (properties `((upstream-name . "golfr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=golfr")
+    (synopsis "Group Assignment Tool")
+    (description
+     "An efficient algorithm to generate group assignments for classroom settings
+while minimizing repeated pairings across multiple rounds.")
+    (license license:gpl3)))
 
 (define-public r-goldprice
   (package
@@ -18037,6 +18061,37 @@ These dimensions will then be used when you save the plot.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-ggvfields
+  (package
+    (name "r-ggvfields")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggvfields" version))
+       (sha256
+        (base32 "1wszwfqmb1vff8zibx95ai84fdyk117f9hmaz2pk3cs7j6ahlv05"))))
+    (properties `((upstream-name . "ggvfields")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-scales
+                             r-numderiv
+                             r-ggplot2
+                             r-farver
+                             r-desolve
+                             r-cli))
+    (home-page "https://github.com/dusty-turner/ggvfields")
+    (synopsis "Vector Field Visualizations with 'ggplot2'")
+    (description
+     "This package provides a ggplot2 extension for visualizing vector fields in
+two-dimensional space.  Provides flexible tools for creating vector and stream
+field layers, visualizing gradients and potential fields, and smoothing vector
+and scalar data to estimate underlying patterns.")
+    (license license:expat)))
+
 (define-public r-ggversa
   (package
     (name "r-ggversa")
@@ -23136,13 +23191,13 @@ other available packages.")
 (define-public r-ggalign
   (package
     (name "r-ggalign")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggalign" version))
        (sha256
-        (base32 "1fjgnmn294vrw9sb733vfjyv9kaf4mnq7yspm18pyhk1lzcwim98"))))
+        (base32 "0s7n436rysb9sg20gc5zf360j5r8ls95v90rh552hpih32rhkr5d"))))
     (properties `((upstream-name . "ggalign")))
     (build-system r-build-system)
     (arguments
@@ -23157,11 +23212,14 @@ other available packages.")
     (home-page "https://github.com/Yunuuuu/ggalign")
     (synopsis "'ggplot2' Extension for Consistent Axis Alignment")
     (description
-     "This package provides a ggplot2 extension offers various tools for organizing
-and arranging plots.  It is designed to consistently align a specific axis
-across multiple ggplot objects, making it especially useful for plots requiring
-data order manipulation.  A typical use case includes organizing combinations
-like a dendrogram and a heatmap.")
+     "This package provides a ggplot2 extension offers various tools the creation of
+complex, multi-plot visualizations.  Built on the familiar grammar of graphics,
+it provides intuitive tools to align and organize plots, making it ideal for
+complex visualizations.  It excels in multi-omics researchâsuch as genomics
+and microbiomesâby simplifying the visualization of intricate relationships
+between datasets, for example, linking genes to pathways.  Whether you need to
+stack plots, arrange them around a central figure, or use a circular layout,
+ggalign delivers flexibility and accuracy with minimal effort.")
     (license license:expat)))
 
 (define-public r-gg1d
@@ -30742,6 +30800,29 @@ Understanding Statistical Methods Through Elliptical Geometry
 <doi:10.1214/12-STS402>.")
     (license license:gpl2+)))
 
+(define-public r-gek
+  (package
+    (name "r-gek")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gek" version))
+       (sha256
+        (base32 "180mqakjc03g77m537v3mg0fiipw46767z5b69yg633y82din0jc"))))
+    (properties `((upstream-name . "gek")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dfoptim))
+    (home-page "https://cran.r-project.org/package=gek")
+    (synopsis "Gradient-Enhanced Kriging")
+    (description
+     "Gradient-Enhanced Kriging as an emulator for computer experiments based on
+Maximum-Likelihood estimation.")
+    (license license:gpl2+)))
+
 (define-public r-geinter
   (package
     (name "r-geinter")
@@ -31192,13 +31273,13 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "06i2an1mcdlh06mwfwsaqxs2p436v8ma0hya9l4a60017c5rffq7"))))
+        (base32 "10vhzrivi6rygvflbs1sbbgh2afd91lm552g9zsiwz2w7xq8jcxk"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (arguments

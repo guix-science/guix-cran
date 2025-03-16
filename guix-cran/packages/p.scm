@@ -5746,6 +5746,36 @@ precursor, peptide and protein level.  Computing dynamic swath window sizes
 based on MS1 or MS2 signal distributions.")
     (license license:gpl3)))
 
+(define-public r-proxreg
+  (package
+    (name "r-proxreg")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProxReg" version))
+       (sha256
+        (base32 "1kjspmqkjqnm063fj3ldilng7v0v7as4z3f8w0rzcwxz8v8w6mpn"))))
+    (properties `((upstream-name . "ProxReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-glmnet r-ebimage r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ProxReg")
+    (synopsis
+     "Linear Models for Prediction and Classification using Proximal Operators")
+    (description
+     "This package implements optimization techniques for Lasso regression,
+R.Tibshirani(1996)<doi:10.1111/j.2517-6161.1996.tb02080.x> using Fast Iterative
+Shrinkage-Thresholding Algorithm (FISTA) and Iterative Shrinkage-Thresholding
+Algorithm (ISTA) based on proximal operators,
+A.Beck(2009)<doi:10.1137/080716542>.  The package is useful for high-dimensional
+regression problems and includes cross-validation procedures to select optimal
+penalty parameters.")
+    (license license:expat)))
+
 (define-public r-proxirr
   (package
     (name "r-proxirr")
@@ -17780,13 +17810,13 @@ the package also includes utilities to manipulate standard allele count data
 (define-public r-pooledpeaks
   (package
     (name "r-pooledpeaks")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pooledpeaks" version))
        (sha256
-        (base32 "1wm7gysfz344r4r62a8rlb7qrv22zsjbaza65k8v30ivsiv8cqjn"))))
+        (base32 "1p0gvlvn37f3cy6xmb27sjgid33wdskdr9i3yq2jvvdy2nfz4kfq"))))
     (properties `((upstream-name . "pooledpeaks")))
     (build-system r-build-system)
     (arguments
@@ -41878,13 +41908,13 @@ test the function is also joined.")
 (define-public r-param2moment
   (package
     (name "r-param2moment")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "param2moment" version))
        (sha256
-        (base32 "1k5zgzi985hglk5xh0qan6f6bsayln6vq1jykrxyxlffvpbc4hg1"))))
+        (base32 "0yi4skqfma1yfx07babiryddrz8zq39xrp2wd41iaglplgdc3h1k"))))
     (properties `((upstream-name . "param2moment")))
     (build-system r-build-system)
     (arguments

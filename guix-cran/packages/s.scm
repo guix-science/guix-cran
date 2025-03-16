@@ -19109,27 +19109,27 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.7.0")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "11ql755i2laig4djl9jnqc3wh20vibpikr8q3vyjzvbk6c3l05pc"))))
+        (base32 "1v4jd1iz4nhwvsbyzvhwgc82057z5vrc52kfk8njan54m4lvhsjy"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-matrix r-mass))
+    (propagated-inputs (list r-matrix r-mass))
     (home-page "https://github.com/statisticsnorway/ssb-ssbtools")
-    (synopsis "Statistics Norway's Miscellaneous Tools")
+    (synopsis
+     "Algorithms and Tools for Tabular Statistics and Hierarchical Computations")
     (description
-     "This package provides functions used by other packages from Statistics Norway
-are gathered.  General data manipulation functions, algorithms for statistical
+     "Includes general data manipulation functions, algorithms for statistical
 disclosure control (Langsrud, 2024) <doi:10.1007/978-3-031-69651-0_6> and
-functions for hierarchical computations by sparse model matrices are included
-(Langsrud, 2023) <doi:10.32614/RJ-2023-088>.")
+functions for hierarchical computations by sparse model matrices (Langsrud,
+2023) <doi:10.32614/RJ-2023-088>.")
     (license license:expat)))
 
 (define-public r-ssanv
@@ -30817,6 +30817,48 @@ decompositions.")
 the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
     (license license:expat)))
 
+(define-public r-sourcoise
+  (package
+    (name "r-sourcoise")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sourcoise" version))
+       (sha256
+        (base32 "0ik3svf6hw0wr4pz24zjysza8sfh4ayk2s17r2hksman67mfl61k"))))
+    (properties `((upstream-name . "sourcoise")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-scales
+                             r-rprojroot
+                             r-rlang
+                             r-qs2
+                             r-purrr
+                             r-lubridate
+                             r-logger
+                             r-lobstr
+                             r-jsonlite
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-digest
+                             r-cli))
+    (native-inputs (list r-quarto))
+    (home-page "https://xtimbeau.github.io/sourcoise/")
+    (synopsis "Source a Script and Cache")
+    (description
+     "This package provides a function that behave nearly as @code{base::source()} but
+implements a caching mechanism on disk, project based.  It allows to quasi
+@code{source()} R scripts that gather data but can fail or consume to much time
+to respond even if nothing new is expected.  It comes with tools to check and
+execute on demand or when cache is invalid the script.")
+    (license license:expat)))
+
 (define-public r-soundshape
   (package
     (name "r-soundshape")
@@ -34207,6 +34249,30 @@ creates a more interesting, somewhat realistic, image.  Images of the snowflakes
 can be separately saved as svg files and used in websites as static or animated
 images.")
     (license license:gpl2+)))
+
+(define-public r-snowdata
+  (package
+    (name "r-snowdata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SnowData" version))
+       (sha256
+        (base32 "1aihm81qbkig86rifrfz9yavfgj81g37xqkybmk3skry75bb19f4"))))
+    (properties `((upstream-name . "SnowData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-terra))
+    (home-page "https://cran.r-project.org/package=SnowData")
+    (synopsis "Historical Data from John Snow's 1854 Cholera Outbreak Map")
+    (description
+     "This package provides historical datasets related to John Snow's 1854 cholera
+outbreak study in London.  Includes data on cholera cases, water pump locations,
+and the street layout, enabling analysis and visualisation of the outbreak.")
+    (license license:gpl3)))
 
 (define-public r-snowboot
   (package
@@ -61610,13 +61676,13 @@ Hundepol et al. (2012) <doi:10.1002/9781118348239> are covered in this package."
 (define-public r-sdcspatial
   (package
     (name "r-sdcspatial")
-    (version "0.5.2")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdcSpatial" version))
        (sha256
-        (base32 "0bnq63akzngvf6r9csg11cb98mhwd8ybrqrk4v2i0iiln70sf7b6"))))
+        (base32 "1sp1ax596m17b3v7vzg7w70zixz0wsk6rp0iz1ywxkhapmkdkrw1"))))
     (properties `((upstream-name . "sdcSpatial")))
     (build-system r-build-system)
     (arguments
@@ -63407,13 +63473,13 @@ et al., (2018) <doi:10.1109/TSE.2018.2794977>].")
 (define-public r-scottknott
   (package
     (name "r-scottknott")
-    (version "1.3-2")
+    (version "1.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ScottKnott" version))
        (sha256
-        (base32 "01cgzqwfabn31s3y1dk6d8z1s5qbsjim191d2yv3zq3vdc4drpma"))))
+        (base32 "011kyhf2pk0cwac6jll4r2r16z0ka158n2bs14v3zblixia3sqss"))))
     (properties `((upstream-name . "ScottKnott")))
     (build-system r-build-system)
     (arguments
