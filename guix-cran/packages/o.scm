@@ -9802,13 +9802,13 @@ Medical Outcomes Partnership (OMOP) common data model using shiny applications."
 (define-public r-omopsketch
   (package
     (name "r-omopsketch")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OmopSketch" version))
        (sha256
-        (base32 "1a247ir0qvzhnr71mpb4s2r01fkrsdj16xmwp1v0c4jwv6d703wv"))))
+        (base32 "0i095f93vapmvc7qz56n9w0ab0bhk4b1vcc7527nknycp3zzb72h"))))
     (properties `((upstream-name . "OmopSketch")))
     (build-system r-build-system)
     (arguments
@@ -9841,13 +9841,13 @@ counts and trends.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "1x1jh1b6lc7vfxybqpp59y6hmcrzalfgc52zcis13vndp2ccfvc9"))))
+        (base32 "0p8m0hmkbaavl77sx8yvr27ka9y521iy5h9k9abpj26skwg5kiwd"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (arguments
@@ -9856,6 +9856,7 @@ counts and trends.")
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-stringr
+                             r-stringi
                              r-snakecase
                              r-rlang
                              r-purrr

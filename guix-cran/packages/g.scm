@@ -1531,13 +1531,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "0zb93rvhvjns6i0705nmwi8n55v7p05p0p2n47794fk2pgjiqzv8"))))
+        (base32 "0n5gxsf310v3gclzjvfr6df46zmdv6n4jjqrf3pjazmn3x6fszjs"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -1545,6 +1545,7 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
       #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-stringr
                              r-srvyr
                              r-scales
                              r-rlang
@@ -1555,6 +1556,7 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
                              r-lifecycle
                              r-labelled
                              r-ggplot2
+                             r-forcats
                              r-dplyr
                              r-cli))
     (home-page "https://larmarange.github.io/guideR/")
@@ -9242,13 +9244,13 @@ Accession and ENTREZID <http://www.ncbi.nlm.nih.gov/gene>.")
 (define-public r-gpkg
   (package
     (name "r-gpkg")
-    (version "0.0.8")
+    (version "0.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpkg" version))
        (sha256
-        (base32 "0bx6mjvbzlli3fykrakkm8554hi4arf1ym1z9gcagybcjp4dbia1"))))
+        (base32 "0irps745qfd7ak78dk4scvnhcmm1dscida6hp460nli6i86n4jzf"))))
     (properties `((upstream-name . "gpkg")))
     (build-system r-build-system)
     (arguments
@@ -34028,13 +34030,13 @@ native functions that work on simple arrays.")
 (define-public r-garma
   (package
     (name "r-garma")
-    (version "0.9.23")
+    (version "0.9.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "garma" version))
        (sha256
-        (base32 "0rm77ig8payprd715z635h35338mc71pd0k7fk46s4jqlwaqkybd"))))
+        (base32 "0ka8zxyya9na92jv9hnpia6rq33dbjhyb8q8k5n4h3bh654zhk32"))))
     (properties `((upstream-name . "garma")))
     (build-system r-build-system)
     (arguments

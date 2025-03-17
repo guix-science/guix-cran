@@ -4175,13 +4175,13 @@ repositories, and more.  File paths are specified with function arguments, or
 (define-public r-frogger
   (package
     (name "r-frogger")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "froggeR" version))
        (sha256
-        (base32 "067knwlmgj5aadxz08qb0ipk5hpxm318cdn5p6y0xc096v3agsif"))))
+        (base32 "0zjij29b4vbby2dymwkks4n3f3pd44z18i49ivm8a9fhjhh0hshw"))))
     (properties `((upstream-name . "froggeR")))
     (build-system r-build-system)
     (arguments
@@ -4198,7 +4198,7 @@ repositories, and more.  File paths are specified with function arguments, or
                              r-glue
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://kylegrealis.github.io/froggeR/")
+    (home-page "https://azimuth-project.tech/froggeR/")
     (synopsis "Enhance 'Quarto' Project Workflows and Standards")
     (description
      "Streamlines Quarto workflows by providing tools for consistent project setup and

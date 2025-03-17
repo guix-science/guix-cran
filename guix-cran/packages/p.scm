@@ -22738,13 +22738,13 @@ the base graphics plotting tools; and manipulate irregular polygons.")
 (define-public r-plotthis
   (package
     (name "r-plotthis")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotthis" version))
        (sha256
-        (base32 "0n01xq19vqg1can0hgb692ffjailm0j15y4ganydk4vcx61fzlyd"))))
+        (base32 "06p690c3sr3smnmbpry95p0h2kcq4vgmmzc29p190kq071f5vxb3"))))
     (properties `((upstream-name . "plotthis")))
     (build-system r-build-system)
     (arguments

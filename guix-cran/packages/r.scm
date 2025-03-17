@@ -57175,13 +57175,13 @@ using the package in question.")
 (define-public r-r2sample
   (package
     (name "r-r2sample")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2sample" version))
        (sha256
-        (base32 "0ymdsaalm1qhdk0l3s8p8j0qcii2bs6ci0k4yakwasxaz1dkh7m2"))))
+        (base32 "1lqaqxkv4cwip5d5029jz8i018yiwck90kh3xjx7jx63s7xxkdbd"))))
     (properties `((upstream-name . "R2sample")))
     (build-system r-build-system)
     (arguments

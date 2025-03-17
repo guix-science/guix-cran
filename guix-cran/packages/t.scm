@@ -15286,13 +15286,13 @@ framework, and @code{LaTeX} code with the tabularray package.")
 (define-public r-tinysnapshot
   (package
     (name "r-tinysnapshot")
-    (version "0.0.8")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinysnapshot" version))
        (sha256
-        (base32 "14srcrc034rq266s1gvw2508fs4n4h1vc9jyqphdvz2hhzvmamvb"))))
+        (base32 "0r53c5z8kwg8l8b5px6gqk9cfjpx33h8x8b9dkk50ml20vfx5i1p"))))
     (properties `((upstream-name . "tinysnapshot")))
     (build-system r-build-system)
     (arguments

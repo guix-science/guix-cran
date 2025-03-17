@@ -12437,13 +12437,13 @@ periodical model validation.")
 (define-public r-lgcu
   (package
     (name "r-lgcu")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LGCU" version))
        (sha256
-        (base32 "179ns79559c3a53fixx1j1sfk7519bk46a1fyjva2fkk54jlsws5"))))
+        (base32 "14pasrdzrgd2lqfm19jv7wpii5h17kijwkcigbsimg5a4cqhp2qn"))))
     (properties `((upstream-name . "LGCU")))
     (build-system r-build-system)
     (arguments
@@ -13257,13 +13257,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.4.1")
+    (version "4.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "06yf1habycchqb31zd7jlqzj98w00380hrrxkq2nkp0v231r05xw"))))
+        (base32 "05177isjn7i2srnv4lscpfym7j8h72y78c8ack4jkpb7w821znyj"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (arguments
@@ -13278,6 +13278,7 @@ package is heavily inspired by the
                              r-latticeextra
                              r-lattice
                              r-knitr
+                             r-kableextra
                              r-ellipse
                              r-colorspace))
     (native-inputs (list r-knitr))

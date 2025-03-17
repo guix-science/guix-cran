@@ -30446,13 +30446,13 @@ more details see van Krugten et al.(2022) <doi:10.1007/s11136-021-02935-w>.")
 (define-public r-mhorseshoe
   (package
     (name "r-mhorseshoe")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mhorseshoe" version))
        (sha256
-        (base32 "064wyih65sqy66v5yr5cvvdm2crgbfkq8pzzcxvbp74vr8gxljdp"))))
+        (base32 "1zpl070v821f089hax4jg4a3w89nm1zlbn9vpcd90zmkgxm09dxq"))))
     (properties `((upstream-name . "Mhorseshoe")))
     (build-system r-build-system)
     (arguments
@@ -30988,13 +30988,13 @@ Aschard H. \"Fitting Gaussian mixture models on incomplete data.\"
 (define-public r-mgm
   (package
     (name "r-mgm")
-    (version "1.2-14")
+    (version "1.2-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgm" version))
        (sha256
-        (base32 "1j5hvf168vzanhc5ck5rxz5arjq3b0gs552kf3l1f8kqdmd8kpzw"))))
+        (base32 "010aj090jjyrxyjv85q8r370l6npjld4zl4ygrh26dqwzb1nsx20"))))
     (properties `((upstream-name . "mgm")))
     (build-system r-build-system)
     (arguments
@@ -34536,6 +34536,44 @@ analysis.  The resulting format corresponds to input data of the Shiny app
      "Create an interactive table of descriptive statistics in HTML. This table is
 typically used for exploratory analysis in a clinical study (referred to as
 Table 1').")
+    (license license:gpl3+)))
+
+(define-public r-metalite-sl
+  (package
+    (name "r-metalite-sl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metalite.sl" version))
+       (sha256
+        (base32 "0m7xdaglkz5xwgvxn03y8b88a21ba89zhiwsh40wxkd6mkkx30j4"))))
+    (properties `((upstream-name . "metalite.sl")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-stringr
+                             r-rlang
+                             r-reactable
+                             r-r2rtf
+                             r-plotly
+                             r-metalite-ae
+                             r-metalite
+                             r-htmltools
+                             r-glue
+                             r-forestly
+                             r-brew))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=metalite.sl")
+    (synopsis "Subject-Level Analysis Using 'metalite'")
+    (description
+     "Analyzes subject-level data in clinical trials using the metalite data
+structure.  The package simplifies the workflow to create production-ready
+tables, listings, and figures discussed in the subject-level analysis chapters
+of \"R for Clinical Study Reports and Submission\" by Zhang et al. (2022)
+<https://r4csr.org/>.")
     (license license:gpl3+)))
 
 (define-public r-metalite-ae

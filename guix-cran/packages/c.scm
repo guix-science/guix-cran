@@ -41622,13 +41622,13 @@ show various ways to load them.  Refer to Pham (2020)
 (define-public r-centr
   (package
     (name "r-centr")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "centr" version))
        (sha256
-        (base32 "08lvq00ss8dm95m8z3x6y9cqqbrr2cvmci79nx0fbx18l3yv1rgv"))))
+        (base32 "1f4bhgkrv5niffwxmpa6vnjiqhay4j0isbjwgbdv40q54hjqb08a"))))
     (properties `((upstream-name . "centr")))
     (build-system r-build-system)
     (arguments
@@ -41671,20 +41671,20 @@ functions.")
 (define-public r-centerline
   (package
     (name "r-centerline")
-    (version "0.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "centerline" version))
        (sha256
-        (base32 "00bpl7qz5hm69mnbi5278bx7v676ni8c3xyq3kmb7z7pzjgx3g83"))))
+        (base32 "0nvchfyx4vgf1dpg78q27zsv759zgsvxd5qyyjjzdl0jlbpl4d8r"))))
     (properties `((upstream-name . "centerline")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-wk r-sfnetworks r-sf r-geos))
-    (home-page "https://github.com/atsyplenkov/centerline")
+    (propagated-inputs (list r-wk r-sfnetworks r-sf r-geos r-checkmate))
+    (home-page "https://centerline.anatolii.nz")
     (synopsis "Extract Centerline from Closed Polygons")
     (description
      "Generates skeletons of closed 2D polygons using Voronoi diagrams.  It provides

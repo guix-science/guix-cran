@@ -18949,13 +18949,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.37")
+    (version "1.5.38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "1q83r1v6q6rrjhmml7x1im7axlh5vxna2f52igmsgb9mf8hccnmm"))))
+        (base32 "0vk1bpp0pr29sjmln4ig0vm5vpw3rv3s9zyyvll2swms27jmmilw"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -18963,6 +18963,7 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
       #:tests? #f))
     (propagated-inputs (list r-ttr
                              r-singlecasees
+                             r-retrodesign
                              r-psych
                              r-modifiedmk
                              r-metafor

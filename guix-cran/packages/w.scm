@@ -7714,13 +7714,13 @@ Dr. Prashant K Srivastava to conduct this research work.")
 (define-public r-wcluster
   (package
     (name "r-wcluster")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WCluster" version))
        (sha256
-        (base32 "0bv0q05gr1jw1ihamw7fqsvrcpr7qrwa9vry6v32qckacfr594rv"))))
+        (base32 "0llsgf485wrnlih2pbwxf8yl29nms4q9nhdj47hhly4amazvg095"))))
     (properties `((upstream-name . "WCluster")))
     (build-system r-build-system)
     (arguments

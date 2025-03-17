@@ -3813,25 +3813,26 @@ ratios to cause-specific hazard ratios using the approach from Ng et al. (2020).
 (define-public r-hr
   (package
     (name "r-hr")
-    (version "0.2.50")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hR" version))
        (sha256
-        (base32 "1zslalsb2zi6b91fb2k1m0vsbsdazls2gnnl7gv2xqvn6kdh4nf6"))))
+        (base32 "1s3yy6p5waldm5qj6s1jdyyw0y58g9dghsmrs2rsifms7l4wq0xy"))))
     (properties `((upstream-name . "hR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shiny r-rhandsontable r-knitr r-data-table))
+    (propagated-inputs (list r-knitr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=hR")
-    (synopsis "Toolkit for Data Analytics in Human Resources")
+    (synopsis "Better Data Engineering in Human Resources")
     (description
-     "Transform and analyze workforce data in meaningful ways for human resources (HR)
-analytics.  Get started with workforce planning using a simple Shiny app.")
+     "This package provides methods for data engineering in the human resources (HR)
+corporate domain.  Designed for HR analytics practitioners and
+workforce-oriented data sets.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hqreg
