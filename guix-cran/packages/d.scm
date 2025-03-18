@@ -10573,6 +10573,35 @@ CRAN packages is from the RStudio CRAN mirror', see
 <https://bioconductor.org/packages/stats/>.")
     (license license:artistic2.0)))
 
+(define-public r-dlssm
+  (package
+    (name "r-dlssm")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DLSSM" version))
+       (sha256
+        (base32 "0phmjz37kyqfxqc70f8f9pvyvh8gm7yc8j32w7kk3rbhlk0ip4dy"))))
+    (properties `((upstream-name . "DLSSM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DLSSM")
+    (synopsis "Dynamic Logistic State Space Prediction Model")
+    (description
+     "This package implements the dynamic logistic state space model for binary
+outcome data proposed by Jiang et al. (2021) <doi:10.1111/biom.13593>.  It
+provides a computationally efficient way to update the prediction whenever new
+data becomes available.  It allows for both time-varying and time-invariant
+coefficients, and use cubic smoothing splines to model varying coefficients.
+The smoothing parameters are objectively chosen by maximum likelihood.  The
+model is updated using batch data accumulated at pre-specified time intervals.")
+    (license license:gpl3)))
+
 (define-public r-dlsem
   (package
     (name "r-dlsem")
@@ -11088,13 +11117,13 @@ avoid redundancy.")
 (define-public r-diztools
   (package
     (name "r-diztools")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIZtools" version))
        (sha256
-        (base32 "0i42k7h82x9g0mha8ppk17h3srgfjgwb9ysnib80pkjnp59kmpa5"))))
+        (base32 "1im6vx879nq96c63qap1lgc9wwm1z0ycwx7cjg6jll903k3b7lri"))))
     (properties `((upstream-name . "DIZtools")))
     (build-system r-build-system)
     (arguments
@@ -22123,13 +22152,13 @@ binomial distribution.")
 (define-public r-denim
   (package
     (name "r-denim")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denim" version))
        (sha256
-        (base32 "1janjmhfz0vgrmvw0plncxlg7y1sd9578arpjkaivqgqwbkhz4r1"))))
+        (base32 "143r0pp75qcjb5r7rw30nz370qpsxpcpqxqip3bk2nais78z0ihc"))))
     (properties `((upstream-name . "denim")))
     (build-system r-build-system)
     (arguments
@@ -28802,6 +28831,37 @@ data frame.  Emphasizing the importance of normality testing, the package
 provides robust tools to validate whether data follows a normal distribution, a
 fundamental assumption in many statistical analyses and models.")
     (license license:gpl3)))
+
+(define-public r-datastudio
+  (package
+    (name "r-datastudio")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DATAstudio" version))
+       (sha256
+        (base32 "1hc0xyvq26bydj9kh365rzr0001r0r375hg0sr4hnak8ldv9q9gr"))))
+    (properties `((upstream-name . "DATAstudio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales r-ggplot2 r-data-table))
+    (home-page "https://www.maths.ed.ac.uk/~mdecarv/")
+    (synopsis "The Research Data Warehouse of Miguel de Carvalho")
+    (description
+     "Pulls together a collection of datasets from Miguel de Carvalho research
+articles.  Including, for example: - de Carvalho (2012)
+<doi:10.1016/j.jspi.2011.08.016>; - de Carvalho et al (2012)
+<doi:10.1080/03610926.2012.709905>; - de Carvalho et al (2012)
+<doi:10.1016/j.econlet.2011.09.007>); - de Carvalho and Davison (2014)
+<doi:10.1080/01621459.2013.872651>; - de Carvalho and Rua (2017)
+<doi:10.1016/j.ijforecast.2015.09.004>; - de Carvalho et al (2023)
+<doi:10.1002/sta4.560>; - de Carvalho et al (2022)
+<doi:10.1007/s13253-021-00469-9>; - Palacios et al (2024)
+<doi:10.1214/24-BA1420>.")
+    (license license:gpl3+)))
 
 (define-public r-datastreamr
   (package

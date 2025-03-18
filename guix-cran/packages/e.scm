@@ -9804,6 +9804,43 @@ for high dimensional covariance matrices.\" Li and Chen (2012)
 <@code{arXiv:1206.0917>}.")
     (license license:gpl2)))
 
+(define-public r-eqrn
+  (package
+    (name "r-eqrn")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EQRN" version))
+       (sha256
+        (base32 "1bacd2yrl3k2nmd9ld23v3m1ik8a1l2k10p0wf1ys5jrcvg6mmfx"))))
+    (properties `((upstream-name . "EQRN")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch
+                             r-magrittr
+                             r-ismev
+                             r-future
+                             r-foreach
+                             r-evd
+                             r-dofuture
+                             r-coro))
+    (home-page "https://github.com/opasche/EQRN")
+    (synopsis
+     "Extreme Quantile Regression Neural Networks for Risk Forecasting")
+    (description
+     "This framework enables forecasting and extrapolating measures of conditional
+risk (e.g. of extreme or unprecedented events), including quantiles and
+exceedance probabilities, using extreme value statistics and flexible neural
+network architectures.  It allows for capturing complex multivariate
+dependencies, including dependencies between observations, such as sequential
+dependence (time-series).  The methodology was introduced in Pasche and Engelke
+(2024) <doi:10.1214/24-AOAS1907> (also available in preprint: Pasche and Engelke
+(2022) <doi:10.48550/@code{arXiv.2208.07590>}).")
+    (license license:gpl3+)))
+
 (define-public r-eql
   (package
     (name "r-eql")
@@ -17899,13 +17936,13 @@ and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
 (define-public r-eientropy
   (package
     (name "r-eientropy")
-    (version "0.0.1.3")
+    (version "0.0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EIEntropy" version))
        (sha256
-        (base32 "13lxw10lx440301rms7fwqm875smc10gy1r5sz8yqnnvgwc56slg"))))
+        (base32 "1cd2hrik28bagrdnkp9174w3fyr7ml2x09ni0w06xnz4bv0x9icp"))))
     (properties `((upstream-name . "EIEntropy")))
     (build-system r-build-system)
     (arguments
@@ -20283,13 +20320,13 @@ Hoffelder et al.,2015, Suarez-Sharp et al., 2020).")
 (define-public r-ednajoint
   (package
     (name "r-ednajoint")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDNAjoint" version))
        (sha256
-        (base32 "18lifx83r0is8mkd871bnf1r11dj53fc3hx6vq741hbg4q5xhhdi"))))
+        (base32 "1090bnfpkkp6qlb4hzhajl4l8p96swxfqk2c0vra2ky3gdqr3nhg"))))
     (properties `((upstream-name . "eDNAjoint")))
     (build-system r-build-system)
     (arguments
@@ -24879,13 +24916,13 @@ This is a wrapper for the simdata package to make it easier to use.")
 (define-public r-easysdctable
   (package
     (name "r-easysdctable")
-    (version "1.0.7")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easySdcTable" version))
        (sha256
-        (base32 "0wvnyhjq94cqjx9dw2nc5v66a11qbi972g0shvzz7q4llkgm21if"))))
+        (base32 "0wxb4bmjwc1ivwi1ismy127w54k7wkgnr0df5lrngzrn9ysy73zb"))))
     (properties `((upstream-name . "easySdcTable")))
     (build-system r-build-system)
     (arguments
@@ -24893,7 +24930,7 @@ This is a wrapper for the simdata package to make it easier to use.")
       #:tests? #f))
     (propagated-inputs (list r-ssbtools r-shiny r-sdctable r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/statisticsnorway/easySdcTable")
+    (home-page "https://github.com/statisticsnorway/ssb-easysdctable")
     (synopsis
      "Easy Interface to the Statistical Disclosure Control Package 'sdcTable' Extended with Own Implementation of 'GaussSuppression'")
     (description

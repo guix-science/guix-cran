@@ -5663,38 +5663,6 @@ declaration, in order to support tidyverse-style quasiquotation of a function's
 arguments and body.")
     (license license:expat)))
 
-(define-public r-noegletalr
-  (package
-    (name "r-noegletalr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "noegletalR" version))
-       (sha256
-        (base32 "0kjbkisxm1kyb55sgphqsl29sfrwrwbfynfmlv70b31axyhvp6b4"))))
-    (properties `((upstream-name . "noegletalR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-httr
-                             r-dplyr))
-    (home-page "https://github.com/FrLars21/noegletalR")
-    (synopsis "Tidy Tibbles of Noegletal")
-    (description
-     "Work with data from <https://noegletal.dk> in a tidy manner.  Tidy up previously
-downloaded data or retrieve new data directly from the comfort of R. You can
-also browse an up-to-date list of available data, including thorough variable
-descriptions.")
-    (license license:expat)))
-
 (define-public r-nodiv
   (package
     (name "r-nodiv")
@@ -12405,30 +12373,21 @@ functions are build upon igraph'.")
 (define-public r-nettskjemar
   (package
     (name "r-nettskjemar")
-    (version "0.1.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nettskjemar" version))
        (sha256
-        (base32 "0cghjk9hw3m0b6xalqg0p7v60jvshcfy6z5sfl4p2z6y17pkf72b"))))
+        (base32 "1qwppiydgijls8cgakayngfn70rhs451619596mjzf1wqmxl9iz5"))))
     (properties `((upstream-name . "nettskjemar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-usethis
-                             r-tidyr
-                             r-rvest
-                             r-purrr
-                             r-pbapply
-                             r-jsonlite
-                             r-httr
-                             r-here
-                             r-dplyr))
+    (propagated-inputs (list r-jsonlite r-httr2 r-fs r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/LCBC-UiO/nettskjemar")
+    (home-page "https://github.com/CAPRO-UiO/nettskjemar")
     (synopsis "Connect to the 'nettskjema.no' API of the University of Oslo")
     (description
      "Enables users to retrieve data, meta-data, and codebooks from

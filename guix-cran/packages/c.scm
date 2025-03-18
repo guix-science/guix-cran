@@ -22768,13 +22768,13 @@ Heard & Rubin-Delanchy (2017) <@code{arXiv:1707.06897>}.")
 (define-public r-combatfamqc
   (package
     (name "r-combatfamqc")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ComBatFamQC" version))
        (sha256
-        (base32 "137m7ir8wffff5bvx2g4smsz83bq650y2va5mwxdx0kkqblmpx6z"))))
+        (base32 "0z2aik4lrsm3azl5zl0fhi23xi5knm0bl94xq1q9vy72v1r7wq35"))))
     (properties `((upstream-name . "ComBatFamQC")))
     (build-system r-build-system)
     (arguments
@@ -27173,13 +27173,13 @@ smoothing irregularly sampled signals, see Hamilton et al (2018)
 (define-public r-cnid
   (package
     (name "r-cnid")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CNID" version))
        (sha256
-        (base32 "1vz15bp50b053iama8hrh61f0z5nzylcg6wm528nl7535nz5xl8r"))))
+        (base32 "00ivs2a8r5crvxfrhci48gj1b12wa23y7zilq4kxblfll2778mm4"))))
     (properties `((upstream-name . "CNID")))
     (build-system r-build-system)
     (arguments
@@ -49507,25 +49507,27 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "0hl7wjy70zxi39kzbqys139w17gjbl4dq8fy307x3s2j33b853yf"))))
+        (base32 "1j5m730ak5dw20k8dc639k17x5hihmip7p6qi7flzbiq4s1g54p2"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-rlang
                              r-readr
                              r-purrr
                              r-mass
                              r-magrittr
                              r-laplacesdemon
+                             r-ggplot2
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr))

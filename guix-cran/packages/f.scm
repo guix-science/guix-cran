@@ -1527,6 +1527,37 @@ version from the paper by Kuhnt and Rehage (2016).  See Kuhnt, S.; Rehage, A.
 detection, JMVA 146, 325-340, <doi:10.1016/j.jmva.2015.10.016> for details.")
     (license license:gpl3)))
 
+(define-public r-funsurv
+  (package
+    (name "r-funsurv")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FunSurv" version))
+       (sha256
+        (base32 "0ds6wr21j8kc2ayhv7zs5vg70zs5inzffgvspqxgzgn6kwa9kh94"))))
+    (properties `((upstream-name . "FunSurv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reda
+                             r-mfpca
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-fundata))
+    (home-page "https://github.com/zifangkong/FunSurv")
+    (synopsis "Modeling Time-to-Event Data with Functional Predictors")
+    (description
+     "This package provides a collection of methods for modeling time-to-event data
+using both functional and scalar predictors.  It implements functional data
+analysis techniques for estimation and inference, allowing researchers to assess
+the impact of functional covariates on survival outcomes, including
+time-to-single event and recurrent event outcomes.")
+    (license license:expat)))
+
 (define-public r-funstattest
   (package
     (name "r-funstattest")
@@ -2500,13 +2531,13 @@ unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcharts" version))
        (sha256
-        (base32 "1bgd88091l69fwzi8zh9affakv4x5k7rh2233lzx4sm70pi94x08"))))
+        (base32 "1vlp05l3mpx9ija9qay8j4iqpy9qvv092lz6kfc9qacbjxcbxr1y"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (arguments
@@ -7379,13 +7410,13 @@ Regression Analysis, First Edition.  New York: Springer.")
 (define-public r-fortls
   (package
     (name "r-fortls")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FORTLS" version))
        (sha256
-        (base32 "0h5ninw5hkrkbri8yazy5wfv4yslp303iq6fyiwv7nd3wda8wln5"))))
+        (base32 "0gzcmn48prl5p59mxvx9raqpbjsi4kmkjbv2j2dbvd21zcw2pndj"))))
     (properties `((upstream-name . "FORTLS")))
     (build-system r-build-system)
     (arguments
@@ -7394,23 +7425,29 @@ Regression Analysis, First Edition.  New York: Springer.")
     (propagated-inputs (list r-vroom
                              r-voxr
                              r-tidyr
+                             r-terra
                              r-sf
                              r-scales
+                             r-rfast
                              r-reticulate
                              r-rcsf
                              r-rcppeigen
+                             r-rcpparmadillo
                              r-rcpp
                              r-raster
                              r-progress
                              r-plotly
                              r-moments
+                             r-mapview
                              r-lidr
                              r-htmlwidgets
+                             r-glue
+                             r-dplyr
                              r-distance
                              r-dbscan
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Molina-Valero/FORTLS")
+    (home-page "https://molina-valero.github.io/FORTLS/")
     (synopsis
      "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
     (description

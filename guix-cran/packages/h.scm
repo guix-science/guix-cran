@@ -10306,13 +10306,13 @@ folder at one time.")
 (define-public r-hellorust
   (package
     (name "r-hellorust")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hellorust" version))
        (sha256
-        (base32 "1dh22ip3cqz7gp2viywdrxsh9bhgmvs2jxkksic8xs9670rzf674"))))
+        (base32 "1pnwff20kgy1mg5hs47w52wcza26lpy4d3pakh43sgmdng1w9iic"))))
     (properties `((upstream-name . "hellorust")))
     (build-system r-build-system)
     (arguments

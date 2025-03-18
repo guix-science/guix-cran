@@ -338,13 +338,13 @@ application of these @code{AgNPs}.")
 (define-public r-syrup
   (package
     (name "r-syrup")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syrup" version))
        (sha256
-        (base32 "008h2fzj620fh4gkbfjs40yk2mq047512djraqkj501s80x0rvib"))))
+        (base32 "0y47snzmsr17a2q7v7yy2xbjlshhc35jcvlklx32k7qyigvwphdc"))))
     (properties `((upstream-name . "syrup")))
     (build-system r-build-system)
     (arguments
@@ -18110,13 +18110,13 @@ visualization and parameter tuning tools.")
 (define-public r-ssmousetrack
   (package
     (name "r-ssmousetrack")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssMousetrack" version))
        (sha256
-        (base32 "014b1ylynn3l3k24p4zr001ys32ajrxxdpk3jwl0lmfm7r63as58"))))
+        (base32 "1mr7lwxzbkdv3p10cbljhk6ld8y5kz51dmhqh5s9rfvc2fbvl9w1"))))
     (properties `((upstream-name . "ssMousetrack")))
     (build-system r-build-system)
     (arguments
@@ -28328,13 +28328,13 @@ translated from the Matlab functions in <https://github.com/jiayi-ma/VFC>.")
 (define-public r-sparsevctrs
   (package
     (name "r-sparsevctrs")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsevctrs" version))
        (sha256
-        (base32 "1pbbq6i8033r7110jv7a9ivrxjysdsy4xkkha5a7rz26gmvah4nq"))))
+        (base32 "0lmcz97kr7ms9zrgrppljz38nbra9w8h5b42r4ib1v4gyl5jkil8"))))
     (properties `((upstream-name . "sparsevctrs")))
     (build-system r-build-system)
     (arguments
@@ -39997,13 +39997,13 @@ functions.")
 (define-public r-sitree
   (package
     (name "r-sitree")
-    (version "0.1-14")
+    (version "0.1-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sitree" version))
        (sha256
-        (base32 "0b2dzws3n9q5ss8bna8prq0r0xg5ngqgkrwg92q51r9cv83vw1rf"))))
+        (base32 "0mxbshw99cabiz2zdabipzjlzkd6m6nk0cy2wvilrbwbwnmisasg"))))
     (properties `((upstream-name . "sitree")))
     (build-system r-build-system)
     (arguments
@@ -48756,6 +48756,31 @@ remote database of choice.")
      "The computer program is an efficient igneous norm algorithm and rock
 classification system written in R but run as shiny app.")
     (license license:gpl3)))
+
+(define-public r-shinynextui
+  (package
+    (name "r-shinynextui")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyNextUI" version))
+       (sha256
+        (base32 "17wlw6rz5sqqql4gry2mdyv1v1x7g95pwy9mir7ma602axnvqly8"))))
+    (properties `((upstream-name . "shinyNextUI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shiny-react r-shiny r-jsonlite r-htmltools))
+    (home-page "https://rinterface.github.io/shinyNextUI/")
+    (synopsis "'HeroUI' 'React' Template for 'shiny' Apps")
+    (description
+     "This package provides a set of user interface components to create outstanding
+shiny apps <https://shiny.posit.co/>, with the power of React @code{JavaScript}
+<https://react.dev/>.  Seamlessly support dark and light themes, customize CSS
+with tailwind <https://tailwindcss.com/>.")
+    (license license:expat)))
 
 (define-public r-shinymonacoeditor
   (package

@@ -9340,13 +9340,13 @@ outcomes.")
 (define-public r-oncobayes2
   (package
     (name "r-oncobayes2")
-    (version "0.9-0")
+    (version "0.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OncoBayes2" version))
        (sha256
-        (base32 "1bv93fmx714wriz956jrz4j4gzvk29ilccjxpxkyr4kvggzp1lha"))))
+        (base32 "12psiky8nbihd66v51xvsfvqf2szj5mgv9pkp2bdzn41s476s3cs"))))
     (properties `((upstream-name . "OncoBayes2")))
     (build-system r-build-system)
     (arguments

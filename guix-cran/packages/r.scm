@@ -22587,6 +22587,32 @@ on Zhu, Zeng & Kosorok (2015) <doi:10.1080/01621459.2015.1036994>, subject
 weight, variable weight, tracking subjects used in each tree, etc.")
     (license license:gpl2+)))
 
+(define-public r-rlowdb
+  (package
+    (name "r-rlowdb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rlowdb" version))
+       (sha256
+        (base32 "167mdj02x83jb38h0gm74w9nnhsaicx5zj3i0ys3fgj7vrfrjbgd"))))
+    (properties `((upstream-name . "rlowdb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang r-r6 r-purrr r-jsonlite))
+    (home-page "https://cran.r-project.org/package=rlowdb")
+    (synopsis "Lightweight JSON-Based Database")
+    (description
+     "The goal of rlowdb is to provide a lightweight, file-based JSON database.
+Inspired by @code{LowDB} in @code{JavaScript}', it generates an intuitive
+interface for storing, retrieving, updating, and querying structured data
+without requiring a full-fledged database system.  Ideal for prototyping,
+small-scale applications, and lightweight data management needs.")
+    (license license:expat)))
+
 (define-public r-rloptimal
   (package
     (name "r-rloptimal")
@@ -24577,13 +24603,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.15.5")
+    (version "0.15.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "156m29cfmicdsmz3d61fqf3vcmc8zgbm7x53xa4wdch94xnc37w5"))))
+        (base32 "0pnmgabwpa7kmj8m6ddl2kc48hligy5g1lvf1v4k3778nmjzsilh"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (arguments
@@ -27169,6 +27195,39 @@ drawn causal conclusions might be altered in response to the potential magnitude
 of departure from the no unmeasured confounding assumption.This package
 implements the methods described by Hu et al. (2022) <doi:10.1002/sim.9548>.")
     (license license:expat)))
+
+(define-public r-riaci
+  (package
+    (name "r-riaci")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rIACI" version))
+       (sha256
+        (base32 "1mixq9v8q7gzwziw7haxznhjl49ijn865wldpsyhbcfhd2rw1fkn"))))
+    (properties `((upstream-name . "rIACI")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-reticulate
+                             r-readr
+                             r-rcpp
+                             r-magrittr
+                             r-lubridate
+                             r-ecmwfr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rIACI")
+    (synopsis "Iberian Actuarial Climate Index Calculations")
+    (description
+     "Calculates the Iberian Actuarial Climate Index and its componentsâincluding
+temperature, precipitation, wind power, and sea level dataâto support climate
+change analysis and risk assessment.  See \"Zhou et al.\" (2023)
+<doi:10.26360/2023_3> for further details.")
+    (license license:gpl3)))
 
 (define-public r-ria
   (package
@@ -45108,27 +45167,27 @@ Inc.")
 (define-public r-rcppexamples
   (package
     (name "r-rcppexamples")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppExamples" version))
        (sha256
-        (base32 "0568zipgjxgmx086mlfpp5n7v8kf50gwrylvhl1bgvzb2vvr9dhj"))))
+        (base32 "0qydlrgr9lckzv10h9g8rv4scigbn1949nq1d7vgmnmi0lx9lfmr"))))
     (properties `((upstream-name . "RcppExamples")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcpp))
-    (home-page "http://dirk.eddelbuettel.com/code/rcpp.examples.html")
+    (home-page "https://github.com/eddelbuettel/rcppexamples")
     (synopsis "Examples using 'Rcpp' to Interface R and C++")
     (description
      "Examples for Seamless R and C++ integration The Rcpp package contains a C++
 library that facilitates the integration of R and C++ in various ways.  This
 package provides some usage examples.  Note that the documentation in this
 package currently does not cover all the features in the package.  The site
-<http://gallery.rcpp.org> regroups a large number of examples for Rcpp'.")
+<https://gallery.rcpp.org> regroups a large number of examples for Rcpp'.")
     (license license:gpl2+)))
 
 (define-public r-rcppensmallen

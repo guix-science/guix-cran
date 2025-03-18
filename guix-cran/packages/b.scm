@@ -2015,6 +2015,52 @@ the Augmented Lagrangian Method described by Masarotto and Varin (2012)
 <doi:10.1214/12-AOAS581>.")
     (license license:gpl2+)))
 
+(define-public r-btb
+  (package
+    (name "r-btb")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "btb" version))
+       (sha256
+        (base32 "09g8nzvqcmjvgy9mzrw3vr247ca422mvrgvyd67hlpk916gvgvqs"))))
+    (properties `((upstream-name . "btb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sf
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mapsf
+                             r-magrittr
+                             r-dplyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/InseeFr/btb")
+    (synopsis
+     "Beyond the Border - Kernel Density Estimation for Urban Geography")
+    (description
+     "The @code{kernelSmoothing()} function allows you to square and smooth geolocated
+data.  It calculates a classical kernel smoothing (conservative) or a
+geographically weighted median.  There are four major call modes of the
+function.  The first call mode is @code{kernelSmoothing(obs}, epsg, cellsize,
+bandwidth) for a classical kernel smoothing and automatic grid.  The second call
+mode is @code{kernelSmoothing(obs}, epsg, cellsize, bandwidth, quantiles) for a
+geographically weighted median and automatic grid.  The third call mode is
+@code{kernelSmoothing(obs}, epsg, cellsize, bandwidth, centroids) for a
+classical kernel smoothing and user grid.  The fourth call mode is
+@code{kernelSmoothing(obs}, epsg, cellsize, bandwidth, quantiles, centroids) for
+a geographically weighted median and user grid.  Geographically weighted summary
+statistics : a framework for localised exploratory data analysis, C.Brunsdon &
+al., in Computers, Environment and Urban Systems C.Brunsdon & al. (2002)
+<doi:10.1016/S0198-9715(01)00009-6>, Statistical Analysis of Spatial and
+Spatio-Temporal Point Patterns, Third Edition, Diggle, pp.  83-86, (2003)
+<doi:10.1080/13658816.2014.937718>.")
+    (license license:gpl2+)))
+
 (define-public r-bt
   (package
     (name "r-bt")
@@ -14460,13 +14506,13 @@ component analyses are limited to 3 or fewer dimensions.")
 (define-public r-biogrowth
   (package
     (name "r-biogrowth")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogrowth" version))
        (sha256
-        (base32 "0cybc5qcpk1mka4ilkhy0iyjx9xy618byz9qfkb5mw4l30pmnky0"))))
+        (base32 "1nrj2423nkw7y1nmgcm6yhyxkkzgmlmm52rqp8b4rr3lkdlby749"))))
     (properties `((upstream-name . "biogrowth")))
     (build-system r-build-system)
     (arguments
@@ -21876,6 +21922,42 @@ vectors (BD-SVD), which can be extended to hierarchical variable clustering
 <doi:10.1080/10618600.2024.2422985> and Bauer (202X)
 <doi:10.48550/@code{arXiv.2308.06820>}.")
     (license license:gpl2+)))
+
+(define-public r-bdsm
+  (package
+    (name "r-bdsm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bdsm" version))
+       (sha256
+        (base32 "1r8fz0v7d01c37f7g1cc4wdynzia5la8m4i5zr9yhnsprb88d6x1"))))
+    (properties `((upstream-name . "bdsm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rootsolve
+                             r-rlang
+                             r-rje
+                             r-optimbase
+                             r-magrittr
+                             r-knitr
+                             r-gridextra
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=bdsm")
+    (synopsis "Bayesian Dynamic Systems Modeling")
+    (description
+     "This package implements methods for building and analyzing models based on panel
+data as described in the paper by Moral-Benito (2013,
+<doi:10.1080/07350015.2013.818003>).  The package provides functions to estimate
+dynamic panel data models and analyze the results of the estimation.")
+    (license license:expat)))
 
 (define-public r-bdscale
   (package
@@ -32088,13 +32170,13 @@ Reference: Nan Chen and J. Jack Lee (2019) <doi:10.1002/bimj.201700275>.")
 (define-public r-bacenapi
   (package
     (name "r-bacenapi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BacenAPI" version))
        (sha256
-        (base32 "0hbrclkdhvzlscw52j3kaxjrwdwkan29c2jzzh799gdhib2bk5rc"))))
+        (base32 "0g04ybc44h5qfx8cdv8l5l1v358wcz2pivfqdan920njyq1xjihc"))))
     (properties `((upstream-name . "BacenAPI")))
     (build-system r-build-system)
     (arguments

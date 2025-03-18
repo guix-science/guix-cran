@@ -14828,13 +14828,13 @@ the database.")
 (define-public r-mongolite
   (package
     (name "r-mongolite")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mongolite" version))
        (sha256
-        (base32 "191m18j1cck7l5fd1987w7j86yrg2jfg4r69f0zqm60fy5n8iwpg"))))
+        (base32 "1pbbq80dcjqlbjhq0hax0g11h2c8gxin8hm6g4k3lbscrh09q4pr"))))
     (properties `((upstream-name . "mongolite")))
     (build-system r-build-system)
     (arguments
@@ -32762,19 +32762,19 @@ to evaluate bias, precision and compare methods.")
 (define-public r-methevolsim
   (package
     (name "r-methevolsim")
-    (version "0.1.7")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethEvolSIM" version))
        (sha256
-        (base32 "18sgbmbkhk4q2wf95j80sgbn9zcs665y2r2wmghyisnvyf5i1cqj"))))
+        (base32 "0pvz99rc402h9wvnnkjl1v8bfylvz8vkvfw7nkqs0a8lka8xk5zh"))))
     (properties `((upstream-name . "MethEvolSIM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-r6))
+    (propagated-inputs (list r-r6 r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MethEvolSIM")
     (synopsis
@@ -49976,13 +49976,13 @@ Statistical Software, <doi:10.18637/jss.v110.i03>).")
 (define-public r-makeit
   (package
     (name "r-makeit")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "makeit" version))
        (sha256
-        (base32 "1x0dwffzz1i88h9mqcigihm52fi47439jmd1v9712sf3h7hf5iiy"))))
+        (base32 "05y6qw2j0xczldqn8yyh84rj0qy933590wyrkpn3x7i4l21mxdja"))))
     (properties `((upstream-name . "makeit")))
     (build-system r-build-system)
     (arguments
@@ -49992,10 +49992,10 @@ Statistical Software, <doi:10.18637/jss.v110.i03>).")
     (home-page "https://github.com/arni-magnusson/makeit")
     (synopsis "Run R Scripts if Needed")
     (description
-     "Automation tool to run R scripts if needed, based on last modified time.
-Implemented in base R with no additional software requirements, organizational
-overhead, or structural requirements.  In short: run an R script if underlying
-files have changed, otherwise do nothing.")
+     "Automation tool to run R scripts if needed, based on last modified time.  It
+comes with no package dependencies, organizational overhead, or structural
+requirements.  In short: run an R script if underlying files have changed,
+otherwise do nothing.")
     (license license:gpl3)))
 
 (define-public r-makeflow

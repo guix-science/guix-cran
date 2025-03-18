@@ -531,28 +531,6 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
      "Make it easy to use vue in R with helper dependency functions and examples.")
     (license license:expat)))
 
-(define-public r-vudc
-  (package
-    (name "r-vudc")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vudc" version))
-       (sha256
-        (base32 "0zxz6n3ixa3xjzcinky8ymqjx9w8y8z65mz8d84dl00mxzkmkz4h"))))
-    (properties `((upstream-name . "vudc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://cran.r-project.org/package=vudc")
-    (synopsis "Visualization of Univariate Data for Comparison")
-    (description
-     "This package contains functions for visualization univariate data: ccdplot and
-qddplot.")
-    (license license:gpl2+)))
-
 (define-public r-vtype
   (package
     (name "r-vtype")

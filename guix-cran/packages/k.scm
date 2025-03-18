@@ -3265,6 +3265,37 @@ default databases (called hubs') and also allows users to provide their own
 time series values.  All data is returned as tidy tibbles.")
     (license license:expat)))
 
+(define-public r-kitesquare
+  (package
+    (name "r-kitesquare")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kitesquare" version))
+       (sha256
+        (base32 "1g5ks28qa9kw9qdpycq4d17s5n9q0h0yn0s2wkk6fk6jyja6hr95"))))
+    (properties `((upstream-name . "kitesquare")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-ggplot2
+                             r-ggh4x
+                             r-dplyr))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/HUGLeipzig/kitesquare")
+    (synopsis "Visualize Contingency Tables Using Kite-Square Plots")
+    (description
+     "Create a kite-square plot for contingency tables using ggplot2', to display
+their relevant quantities in a single figure (marginal, conditional, expected,
+observed, chi-squared).  The plot resembles a flying kite inside a square if the
+variables are independent, and deviates from this the more dependence exists.")
+    (license license:lgpl3+)))
+
 (define-public r-kitagawa
   (package
     (name "r-kitagawa")

@@ -7319,13 +7319,13 @@ expression data to test the performance of genomic analyses.")
 (define-public r-graphql
   (package
     (name "r-graphql")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "graphql" version))
        (sha256
-        (base32 "0b9j7hv45ml7xl29w7s2m63qc96rm6v746yy6ckpz25y1zv3j2aq"))))
+        (base32 "17iin9h3c0nqh9fwhskmnqzv9c1fh9aqv21ghpwv3q8iafqvkxql"))))
     (properties `((upstream-name . "graphql")))
     (build-system r-build-system)
     (arguments
@@ -8798,13 +8798,13 @@ cool things with language!")
 (define-public r-gptoolsstan
   (package
     (name "r-gptoolsstan")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gptoolsStan" version))
        (sha256
-        (base32 "1cdvfy451grnyzplivzfndmfaxhr1g81z8nr12rqr35sxnk03s2z"))))
+        (base32 "14fypsqg34gl65hay527898w58dw8c4i28hh7ri5sqlckm3j81f1"))))
     (properties `((upstream-name . "gptoolsStan")))
     (build-system r-build-system)
     (arguments
@@ -8821,7 +8821,7 @@ inference in Stan'.  First, a sparse approximation of the likelihood that is
 generally applicable and, second, an exact method for regularly spaced data
 modeled by stationary kernels using fast Fourier methods.  Utility functions are
 provided to compile and fit Stan models using the cmdstanr interface.
-References: Hoffmann and Onnela (2022) <doi:10.48550/@code{arXiv.2301.08836>}.")
+References: Hoffmann and Onnela (2025) <doi:10.18637/jss.v112.i02>.")
     (license license:expat)))
 
 (define-public r-gpseqclus

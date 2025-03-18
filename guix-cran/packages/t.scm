@@ -3679,13 +3679,13 @@ Paul and Garai (2021) <doi:10.1007/s00500-021-06087-4>.")
 (define-public r-tsla
   (package
     (name "r-tsla")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSLA" version))
        (sha256
-        (base32 "1lzaq5vjm336rvdhb40p7kdb40v1c69z3lqrj7cfcqjh5dl8wzpl"))))
+        (base32 "14dg1yv8rqqm8n58v10rvccbs8ig47b4kkib38rmvg3n4yg7jvys"))))
     (properties `((upstream-name . "TSLA")))
     (build-system r-build-system)
     (arguments
@@ -14599,13 +14599,13 @@ CR2) can be handled using the @code{tkImg} package for Tcl/Tk'.")
 (define-public r-tkcat
   (package
     (name "r-tkcat")
-    (version "1.1.11")
+    (version "1.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TKCat" version))
        (sha256
-        (base32 "1vwv7z669i7m0dq8jn24mia7y2pnbjvyprias8hnzh9gpwsv2b3w"))))
+        (base32 "1s88lkc4wxzlwbrr4qq7rsrws8hvlzbfjdfj0qgxmkqqgz7g882z"))))
     (properties `((upstream-name . "TKCat")))
     (build-system r-build-system)
     (arguments
@@ -16100,25 +16100,27 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "015app2m5rm7snajaslviz6dyvhhpv3qjmhhlwf1jwvkia1khnlm"))))
+        (base32 "1wqjn4cnd0dp6mxcwdvrza4i6axzkxj3xcqa7idy5ngsngs8jz7r"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vctrs
+                             r-tzdb
                              r-timechange
                              r-tidyselect
                              r-stringr
                              r-scales
                              r-rlang
                              r-pillar
+                             r-magrittr
                              r-lubridate
                              r-lifecycle
                              r-ggplot2

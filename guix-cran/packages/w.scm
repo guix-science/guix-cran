@@ -6763,41 +6763,6 @@ Keon-Woong Moon.  The main function @code{plot.htest()} shows the distribution
 of statistic for the object of class htest'.")
     (license license:gpl3)))
 
-(define-public r-webqueue
-  (package
-    (name "r-webqueue")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "webqueue" version))
-       (sha256
-        (base32 "0acxppc7sl3y8h9ll7dw52zgnxv4v2kzbs6323m9apddnj8ijiqz"))))
-    (properties `((upstream-name . "webqueue")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-webutils
-                             r-semaphore
-                             r-rlang
-                             r-r6
-                             r-promises
-                             r-parallelly
-                             r-later
-                             r-jsonlite
-                             r-jobqueue
-                             r-httpuv
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://cmmr.github.io/webqueue/")
-    (synopsis "Multicore HTTP Server")
-    (description
-     "Distributes HTTP requests among a pool of background R processes.  Supports
-timeouts and interrupts of requests to ensure that CPU cores are utilized
-effectively.")
-    (license license:expat)))
-
 (define-public r-webpower
   (package
     (name "r-webpower")

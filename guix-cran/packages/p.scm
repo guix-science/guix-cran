@@ -689,29 +689,28 @@ Welch's t-test.")
 (define-public r-pwr4exp
   (package
     (name "r-pwr4exp")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pwr4exp" version))
        (sha256
-        (base32 "081ci87idiqxfr0xa0mws0lzqg2rd4hq0yq6y7izr1al6nfiwffj"))))
+        (base32 "01a2b1vkz9hcm7p1gp2b5sh202gkxgwz1h6dbrv79kfdl3anvjhz"))))
     (properties `((upstream-name . "pwr4exp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-lmertest r-lme4 r-emmeans r-car))
+    (propagated-inputs (list r-numderiv r-nlme r-matrix r-mass r-emmeans))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/an-ethz/pwr4exp")
     (synopsis "Power Analysis for Research Experiments")
     (description
-     "This package provides tools for calculating statistical power and determining
-sample size for a variety of experimental designs used in agricultural and
-biological research, including completely randomized, block, and split-plot
-designs.  Supports customized designs and allows specification of main effects,
-interactions, and contrasts for accurate power analysis.")
-    (license license:expat)))
+     "This package provides tools for calculating statistical power for experiments
+analyzed using linear mixed models.  It supports standard designs, including
+randomized block, split-plot, and Latin Square designs, while offering
+flexibility to accommodate a variety of other complex study designs.")
+    (license license:gpl2+)))
 
 (define-public r-pwr2ppl
   (package
@@ -9067,13 +9066,13 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.4.5")
+    (version "1.0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "10y5k5ycmlpfh3lnbbma7cjdcsar761x34syr5cs9iviq8dqgi7g"))))
+        (base32 "1y0px3v975inq96fslp2225cas5wa0zflkpnrx70i4s986v0fps6"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (arguments
@@ -36837,13 +36836,13 @@ with alphabets group for multiple comparison group.")
 (define-public r-pcts
   (package
     (name "r-pcts")
-    (version "0.15.7")
+    (version "0.15.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcts" version))
        (sha256
-        (base32 "1cr44w561sh05qpi0jyf2ypj4dadwyqkbaqn347v533bywasip2h"))))
+        (base32 "1skikbwv0fnx0lncbwwlg8qh1asn2md3041czvkic7wwg310sa5k"))))
     (properties `((upstream-name . "pcts")))
     (build-system r-build-system)
     (arguments
@@ -45267,6 +45266,50 @@ the overlap between polygons, clean yield data, and smooth yield maps.")
 loan books in a structured way.  Provides access to standard PACTA metrics and
 additional PACTA'-related metrics for multiple loan books.  Results take the
 form of csv files and plots and are exported to user-specified project paths.")
+    (license license:expat)))
+
+(define-public r-pacta-loanbook
+  (package
+    (name "r-pacta-loanbook")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pacta.loanbook" version))
+       (sha256
+        (base32 "10jafygzsksmfgj2cx8rmyj3zfhld15dpfjsn237hs5anxjjwavp"))))
+    (properties `((upstream-name . "pacta.loanbook")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-scales
+                             r-rstudioapi
+                             r-rlang
+                             r-r2dii-plot
+                             r-r2dii-match
+                             r-r2dii-data
+                             r-r2dii-analysis
+                             r-purrr
+                             r-magrittr
+                             r-ggrepel
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://rmi-pacta.github.io/pacta.loanbook/")
+    (synopsis "Easily Install and Load PACTA for Banks Packages")
+    (description
+     "PACTA (Paris Agreement Capital Transition Assessment) for Banks is a tool that
+allows banks to calculate the climate alignment of their corporate lending
+portfolios.  This package is designed to make it easy to install and load
+multiple PACTA for Banks packages in a single step.  It also provides thorough
+documentation - the PACTA for Banks cookbook at
+<https://rmi-pacta.github.io/pacta.loanbook/articles/cookbook_overview.html> -
+on how to run a PACTA for Banks analysis.  This covers prerequisites for the
+analysis, the separate steps of running the analysis, the interpretation of
+PACTA for Banks results, and advanced use cases.")
     (license license:expat)))
 
 (define-public r-pacs
