@@ -4741,6 +4741,40 @@ number of cells.  Journal of Statistical Software 5(6) (2000).  Paper and code
 available at <DOI:10.18637/jss.v005.i06>.")
     (license license:lgpl3+)))
 
+(define-public r-multinmix
+  (package
+    (name "r-multinmix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultiNMix" version))
+       (sha256
+        (base32 "1fl144v83zss3cjkgznb20vmrszzfsw2ch93rs8x1ny85x9zxnfg"))))
+    (properties `((upstream-name . "MultiNMix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstan
+                             r-nimble
+                             r-mvtnorm
+                             r-extradistr
+                             r-coda
+                             r-clustergeneration
+                             r-abind))
+    (home-page "https://github.com/niamhmimnagh/MultiNMix")
+    (synopsis "Multi-Species N-Mixture (MNM) Models with 'nimble'")
+    (description
+     "Simulating data and fitting multi-species N-mixture models using nimble'.
+Includes features for handling zero-inflation and temporal correlation, Bayesian
+inference, model diagnostics, parameter estimation, and predictive checks.
+Designed for ecological studies with zero-altered or time-series data.  Mimnagh,
+N., Parnell, A., Prado, E., & Moral, R. A. (2022)
+<doi:10.1007/s10651-022-00542-7>.  Royle, J. A. (2004)
+<doi:10.1111/j.0006-341X.2004.00142.x>.")
+    (license license:gpl3+)))
+
 (define-public r-multinma
   (package
     (name "r-multinma")
@@ -9354,13 +9388,13 @@ Allman, Banos, and Rhodes (2019) <@code{arXiv:1908.01424>}.")
 (define-public r-mscquartets
   (package
     (name "r-mscquartets")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCquartets" version))
        (sha256
-        (base32 "0v98y2wxalg0bhcpcm46b45wwxn8z9dcah3kvzrmrxs9ndj0b2yn"))))
+        (base32 "10zlw9z84c0x5n3qmqbcm1h5ga5bi2977ypkdqba97v9hq3m2xrm"))))
     (properties `((upstream-name . "MSCquartets")))
     (build-system r-build-system)
     (arguments
@@ -26820,6 +26854,43 @@ factorial points (half replicate) and Box Behnken designs (BBD) with minimally
 changed run sequence.")
     (license license:gpl2+)))
 
+(define-public r-minimalistgodb
+  (package
+    (name "r-minimalistgodb")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minimalistGODB" version))
+       (sha256
+        (base32 "1y4mrk86pqirrv9vyda0c63dd454rj1553fqrbmn0nl2c1dr1m61"))))
+    (properties `((upstream-name . "minimalistGODB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=minimalistGODB")
+    (synopsis "Build a Minimalist Gene Ontology (GO) Database (GODB)")
+    (description
+     "Normally building a GODB is fairly complicated, involving downloading multiple
+database files and using these to build e.g. a @code{mySQL} database.  Accessing
+this database is also complicated, involving an intimate knowledge of the
+database in order to construct reliable queries.  Here we have a more modest
+goal, generating GOGOA3, which is a stripped down version of the GODB that is
+restricted to human genes as designated by the HUGO Gene Nomenclature Committee
+(HGNC) (see <https://geneontology.org/>).  This can be built in a matter of
+seconds from 2 easily downloaded files (see
+<https://current.geneontology.org/products/pages/downloads.html> and
+<https://geneontology.org/docs/download-ontology/>), and it can be queried by
+e.g. w<-which(GOGOA3[,\"HGNC\"] %in% @code{hgncList}) where GOGOA3 is a matrix
+representing the minimalist GODB and @code{hgncList} is a list of gene
+identifiers.  This database will be used in my upcoming package @code{GoMiner}
+which is based on my previous publication (see Zeeberg, B.R., Feng, W., Wang, G.
+et al. (2003)<doi:10.1186/gb-2003-4-4-r28>).  Relevant .RData files are
+available from @code{GitHub} (<https://github.com/barryzee/GO>).")
+    (license license:gpl2+)))
+
 (define-public r-minilnm
   (package
     (name "r-minilnm")
@@ -28181,13 +28252,13 @@ principal components.  The method is described in Nassiri et al. (2018)
 (define-public r-miesmuschel
   (package
     (name "r-miesmuschel")
-    (version "0.0.4-2")
+    (version "0.0.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miesmuschel" version))
        (sha256
-        (base32 "0pqp9rpk0jmbkfxi5vq8ij7s3y9ykk9kn0bsz9y4qw8z8j8grmv1"))))
+        (base32 "02119n986xgjgi5jkyfpxmsawh5q7mcvvglcbnkzq58vdbsqrgda"))))
     (properties `((upstream-name . "miesmuschel")))
     (build-system r-build-system)
     (arguments
@@ -31510,6 +31581,52 @@ Hendrik Backhaus, Albrecht Stroh and Gaby Schneider (2019+) Peak detection in
 time series.")
     (license license:gpl3)))
 
+(define-public r-mfsis
+  (package
+    (name "r-mfsis")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MFSIS" version))
+       (sha256
+        (base32 "03g7q81qa8lfmvbky744g805rxs93967j6w8v2zg53hp5wfjnxks"))))
+    (properties `((upstream-name . "MFSIS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python))
+    (propagated-inputs (list r-survival
+                             r-reticulate
+                             r-mass
+                             r-foreach
+                             r-dr
+                             r-doparallel
+                             r-crayon
+                             r-cli
+                             r-ball))
+    (home-page "https://cran.r-project.org/package=MFSIS")
+    (synopsis "Model-Free Sure Independent Screening Procedures")
+    (description
+     "An implementation of popular screening methods that are commonly employed in
+ultra-high and high dimensional data.  Through this publicly available package,
+we provide a unified framework to carry out model-free screening procedures
+including SIS (Fan and Lv (2008) <doi:10.1111/j.1467-9868.2008.00674.x>), SIRS
+(Zhu et al. (2011)<doi:10.1198/jasa.2011.tm10563>), DC-SIS (Li et al. (2012)
+<doi:10.1080/01621459.2012.695654>), MDC-SIS (Shao and Zhang (2014)
+<doi:10.1080/01621459.2014.887012>), Bcor-SIS (Pan et al. (2019)
+<doi:10.1080/01621459.2018.1462709>), PC-Screen (Liu et al. (2020)
+<doi:10.1080/01621459.2020.1783274>), WLS (Zhong et al.(2021)
+<doi:10.1080/01621459.2021.1918554>), Kfilter (Mai and Zou (2015)
+<doi:10.1214/14-AOS1303>), MVSIS (Cui et al. (2015)
+<doi:10.1080/01621459.2014.920256>), PSIS (Pan et al. (2016)
+<doi:10.1080/01621459.2014.998760>), CAS (Xie et al. (2020)
+<doi:10.1080/01621459.2019.1573734>), CI-SIS (Cheng and Wang. (2023)
+<doi:10.1016/j.cmpb.2022.107269>) and CSIS (Cheng et al. (2023)
+<doi:10.1007/s00180-023-01399-5>).")
+    (license license:gpl2+)))
+
 (define-public r-mfpp
   (package
     (name "r-mfpp")
@@ -34416,13 +34533,13 @@ iterative algorithm proposed by Matejka & Fitzmaurice (2017)
 (define-public r-metamedian
   (package
     (name "r-metamedian")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metamedian" version))
        (sha256
-        (base32 "17p8npnaddsdikii9c8zhvbwhkpwgncksipzsslrs7d4pz6wlfvf"))))
+        (base32 "0b2mbvl6m6md2zwqsky6y4gim6mivyzm7vrhb2a2dvz7x5j96glz"))))
     (properties `((upstream-name . "metamedian")))
     (build-system r-build-system)
     (arguments
@@ -34433,18 +34550,19 @@ iterative algorithm proposed by Matejka & Fitzmaurice (2017)
     (synopsis "Meta-Analysis of Medians")
     (description
      "This package implements several methods to meta-analyze studies that report the
-sample median of the outcome.  When the primary studies are one-group studies,
-the methods of @code{McGrath} et al. (2019) <doi:10.1002/sim.8013> and Ozturk
-and Balakrishnan (2020) <doi:10.1002/sim.8738> can be applied to estimate the
-pooled median.  In the two-group context, the methods of @code{McGrath} et al.
-(2020a) <doi:10.1002/bimj.201900036> can be applied to estimate the pooled
-difference of medians across groups.  Additionally, a number of methods (e.g.,
-@code{McGrath} et al. (2020b) <doi:10.1177/0962280219889080>, Cai et al. (2021)
-<doi:10.1177/09622802211047348>, and @code{McGrath} et al. (2023)
+sample median of the outcome.  The methods described by @code{McGrath} et al.
+(2019) <doi:10.1002/sim.8013>, Ozturk and Balakrishnan (2020)
+<doi:10.1002/sim.8738>, and @code{McGrath} et al. (2020a)
+<doi:10.1002/bimj.201900036> can be applied to directly meta-analyze the median
+or difference of medians between groups.  Additionally, a number of methods
+(e.g., @code{McGrath} et al. (2020b) <doi:10.1177/0962280219889080>, Cai et al.
+(2021) <doi:10.1177/09622802211047348>, and @code{McGrath} et al. (2023)
 <doi:10.1177/09622802221139233>) are implemented to estimate study-specific
 (difference of) means and their standard errors in order to estimate the pooled
-(difference of) means.  See @code{McGrath} et al. (in press)
-<doi:10.1002/jrsm.1686> for a detailed guide on using the package.")
+(difference of) means.  Methods for meta-analyzing median survival times
+(@code{McGrath} et al. (2025) <doi:10.48550/@code{arXiv.2503.03065>}) are also
+implemented.  See @code{McGrath} et al. (2024) <doi:10.1002/jrsm.1686> for a
+detailed guide on using the package.")
     (license license:gpl3+)))
 
 (define-public r-metama
@@ -39273,19 +39391,20 @@ Currently able to load GROMOS, GROMACS and AMBER formats, respectively.")
 (define-public r-mdpiexplorer
   (package
     (name "r-mdpiexplorer")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDPIexploreR" version))
        (sha256
-        (base32 "1amndzpmm739cnhk66acpv50xmklc5pcxaqvfcsfhd2d7pxyvw8g"))))
+        (base32 "0rq9jn5nzg0bnq6748wpqxw0nsy9929v1rhxlqb16yy3rxxxz25i"))))
     (properties `((upstream-name . "MDPIexploreR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-scales
                              r-rvest
                              r-magrittr
@@ -39293,7 +39412,7 @@ Currently able to load GROMOS, GROMACS and AMBER formats, respectively.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://pgomba.github.io/MDPI_explorer/")
+    (home-page "https://github.com/pgomba/MDPI_exploreR")
     (synopsis "Web Scraping and Bibliometric Analysis of MDPI Journals")
     (description
      "This package provides comprehensive tools to scrape and analyze data from the
@@ -39490,19 +39609,19 @@ customized exportable reports based on filtered mapping data.")
 (define-public r-mdma
   (package
     (name "r-mdma")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDMA" version))
        (sha256
-        (base32 "0lfn44p18jm6q1ci7m9r79jhfdd3x07489b7nadksn59xsianvaw"))))
+        (base32 "09rqkws0cvdwzj66m1bx62jwcrkq37rvgs3n69bk0qavmp25wjwp"))))
     (properties `((upstream-name . "MDMA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mass r-car))
+    (propagated-inputs (list r-performance r-mass r-lme4 r-car))
     (home-page "https://github.com/mathijsdeen/MDMA")
     (synopsis "Mathijs Deen's Miscellaneous Auxiliaries")
     (description
@@ -48059,13 +48178,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "1jsax742pv6bqr3aczcfai79w18pggn27zqd80dmrb8axzjhsz1n"))))
+        (base32 "05fmsswbbd21n8q7s62c9hcmbk8c12rjlifwf56bw8icbc7z2a9b"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (arguments

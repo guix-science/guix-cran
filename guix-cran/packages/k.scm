@@ -5037,6 +5037,34 @@ learning-based tool that estimates a multivariate power curve and predicts the
 wind power output for a specific environmental condition.")
     (license license:gpl3)))
 
+(define-public r-kernopt
+  (package
+    (name "r-kernopt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kernopt" version))
+       (sha256
+        (base32 "14cii00bx889r91nzgsg2dzcsnxiimiy2zhlr4ch5s8n88mmz31f"))))
+    (properties `((upstream-name . "kernopt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://thomasfillon.github.io/kernopt/")
+    (synopsis
+     "Estimating Count Data Distributions with Discrete Optimal Symmetric Kernel")
+    (description
+     "Implementation of Discrete Symmetric Optimal Kernel for estimating count data
+distributions, as described by T. Senga KiessÃ© and G. Durrieu (2024)
+<doi:10.1016/j.spl.2024.110078>.The nonparametric estimator using the discrete
+symmetric optimal kernel was illustrated on simulated data sets and a real-word
+data set included in the package, in comparison with two other discrete
+symmetric kernels.")
+    (license license:gpl3+)))
+
 (define-public r-kernhaz
   (package
     (name "r-kernhaz")
@@ -5729,13 +5757,13 @@ Lamont-Smith (2018), submitted J. R. Stat.  Soc.")
 (define-public r-kdglm
   (package
     (name "r-kdglm")
-    (version "1.2.0")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kDGLM" version))
        (sha256
-        (base32 "10is3f3gcax317gxkbvsv35385q9cjmxb14dfxxmq7y7aw4p6iqb"))))
+        (base32 "0w3mbsnvprsn8728f6p51y1p641nldzbgmjijrn3l8ih0qcz96bw"))))
     (properties `((upstream-name . "kDGLM")))
     (build-system r-build-system)
     (arguments

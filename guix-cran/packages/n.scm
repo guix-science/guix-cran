@@ -12373,19 +12373,19 @@ functions are build upon igraph'.")
 (define-public r-nettskjemar
   (package
     (name "r-nettskjemar")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nettskjemar" version))
        (sha256
-        (base32 "1qwppiydgijls8cgakayngfn70rhs451619596mjzf1wqmxl9iz5"))))
+        (base32 "135x4z4mm9drwbmxrd0kvj73ammfq55hnv0khnw2651cxq9wi54b"))))
     (properties `((upstream-name . "nettskjemar")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr2 r-fs r-cli))
+    (propagated-inputs (list r-jsonlite r-httr2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/CAPRO-UiO/nettskjemar")
     (synopsis "Connect to the 'nettskjema.no' API of the University of Oslo")
@@ -17432,13 +17432,13 @@ See docs for limitations.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "0a28vzzwhixhh8yxhlzdalmh2zx31l1g1c48xv50qw4g6mnxfwqk"))))
+        (base32 "1lymdjach4gyd4xd3isql0vm8r120ck57vhg91lm6c7f5kxd7mvx"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (arguments

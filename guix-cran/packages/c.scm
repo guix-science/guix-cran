@@ -5731,13 +5731,13 @@ for use in RStudio'.")
 (define-public r-crunch
   (package
     (name "r-crunch")
-    (version "1.30.4")
+    (version "1.31.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crunch" version))
        (sha256
-        (base32 "0wbj4w50mh0l2wmvl1wzii41n0jp6pkqawwj36k0g66wjgxq07yq"))))
+        (base32 "1p3wbwjcnwbw2z083im7qljyvjlp1bb1xwn6ax1jf6pd0r4n1fqs"))))
     (properties `((upstream-name . "crunch")))
     (build-system r-build-system)
     (arguments
@@ -6308,13 +6308,13 @@ the method.")
 (define-public r-crplyr
   (package
     (name "r-crplyr")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crplyr" version))
        (sha256
-        (base32 "0l0vp2h4j2i5jb9wgdaqaixi9xvhb5n35zn8mdc7hyw13hjr8wa5"))))
+        (base32 "098i4c86vjgpnip5q8ns6ra4g0q8fpwn71pq35rgnxgzq5cbz72p"))))
     (properties `((upstream-name . "crplyr")))
     (build-system r-build-system)
     (arguments
@@ -7586,13 +7586,13 @@ user input for use in downstream applications.")
 (define-public r-crm12comb
   (package
     (name "r-crm12comb")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crm12Comb" version))
        (sha256
-        (base32 "19k32zbb6dl6iiz3qfiwagh5vzn50kdha1kjd7scjn1m87rcckx7"))))
+        (base32 "0rhcm2lss3xzywgnhqfh6s4kxh51x7fk7q2gb3sc34c54zc4v1zp"))))
     (properties `((upstream-name . "crm12Comb")))
     (build-system r-build-system)
     (arguments
@@ -9814,6 +9814,36 @@ some continuous, and dichotomous transformations are performed this package
 offers an exact correction of the p-value developed by B.Liquet & D.Commenges in
 2005.  The naive method with no correction is also available.")
     (license license:gpl3+)))
+
+(define-public r-cpmbigdata
+  (package
+    (name "r-cpmbigdata")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpmBigData" version))
+       (sha256
+        (base32 "101c722dzqdd4d10ddw239kf2imkw0x7m0l08i0i42acd4g49ihb"))))
+    (properties `((upstream-name . "cpmBigData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rms
+                             r-iterators
+                             r-hmisc
+                             r-foreach
+                             r-doparallel
+                             r-benchmarkme))
+    (home-page "https://cran.r-project.org/package=cpmBigData")
+    (synopsis
+     "Fitting Semiparametric Cumulative Probability Models for Big Data")
+    (description
+     "This package provides a big data version for fitting cumulative probability
+models using the @code{orm()} function from the rms package.  See Liu et al.
+(2017) <DOI:10.1002/sim.7433> for details.")
+    (license license:gpl2+)))
 
 (define-public r-cpm
   (package
@@ -15468,13 +15498,13 @@ revision).")
 (define-public r-copula
   (package
     (name "r-copula")
-    (version "1.1-5")
+    (version "1.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copula" version))
        (sha256
-        (base32 "0429zsg14jkky7y38wspvp77n7pa8090jjz8m9gg1hc78an6y16x"))))
+        (base32 "1id35fnbnbbbk5fqzackzr8j399v1bibyig5vdgmjkich8xf8yz8"))))
     (properties `((upstream-name . "copula")))
     (build-system r-build-system)
     (arguments
@@ -18271,13 +18301,13 @@ The application uses the lavaan package (Rosseel, 2012) to run CFAs.")
 (define-public r-conleyreg
   (package
     (name "r-conleyreg")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conleyreg" version))
        (sha256
-        (base32 "1mvbzqd83vd54ig4kbi1v3h4v0j6pyj8a5ja1f3w2n7k8aszy748"))))
+        (base32 "115zzzxfrs9jm2cnx883qfjx0p81r6qjb9rx4z5wsxjiyhb46jvw"))))
     (properties `((upstream-name . "conleyreg")))
     (build-system r-build-system)
     (arguments
@@ -18296,7 +18326,7 @@ The application uses the lavaan package (Rosseel, 2012) to run CFAs.")
                              r-doparallel
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=conleyreg")
+    (home-page "https://github.com/cdueben/conleyreg")
     (synopsis "Estimations using Conley Standard Errors")
     (description
      "This package provides functions calculating Conley (1999)
@@ -24654,6 +24684,46 @@ intervals using data mapped to the Observational Medical Outcomes Partnership
 Common Data Model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-cohortsurvival
+  (package
+    (name "r-cohortsurvival")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CohortSurvival" version))
+       (sha256
+        (base32 "0fjwr7rd5nnlj2ac4qls4x3h8z0i11avwn297yv66jclvzffbllc"))))
+    (properties `((upstream-name . "CohortSurvival")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-patientprofiles
+                             r-omopgenerics
+                             r-magrittr
+                             r-dplyr
+                             r-dbi
+                             r-clock
+                             r-cli
+                             r-checkmate
+                             r-cdmconnector
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://darwin-eu-dev.github.io/CohortSurvival/")
+    (synopsis "Estimate Survival from Common Data Model Cohorts")
+    (description
+     "Estimate survival using data mapped to the Observational Medical Outcomes
+Partnership common data model.  Survival can be estimated based on user-defined
+study cohorts.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-cohorts
   (package
     (name "r-cohorts")
@@ -24723,6 +24793,36 @@ demonstrated.  A more detailed description of the design can be found in Meyer
 et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 <@code{arXiv:2202.02182>}.")
     (license license:expat)))
+
+(define-public r-cohortpathways
+  (package
+    (name "r-cohortpathways")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CohortPathways" version))
+       (sha256
+        (base32 "1njpxzvwjrwdzh197g6jn6wxq83a7l6ra34mrrivwjy6mv9mqrar"))))
+    (properties `((upstream-name . "CohortPathways")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-sqlrender
+                             r-rlang
+                             r-lifecycle
+                             r-dplyr
+                             r-databaseconnector
+                             r-checkmate))
+    (home-page "https://github.com/OHDSI/CohortPathways")
+    (synopsis "Create Pathways from Target to Event Cohorts")
+    (description
+     "Software tool designed to compute the temporal relationship defined as pathways
+between any two instantiated cohorts.  The cohorts are input as Target and event
+cohorts.")
+    (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-cohortgenerator
   (package
@@ -24838,20 +24938,19 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "04b3y7ar8wgjhzqs4dx0sdlqs2zfhcyhdpk4m6g09c4vx110vs6s"))))
+        (base32 "0qi4v2c00649y9r1lfn9xyjnvd98gb28405xckdap8k4r5cpp1v7"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-visomopresults
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-snakecase
                              r-rlang
@@ -29543,13 +29642,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermq" version))
        (sha256
-        (base32 "1yz37vcj605rwby27kjx9drp65nfk6va9s7q8fhbb9i1w26f2fz3"))))
+        (base32 "1pddz46vr69pl4ql2y6h6a42zx2fqrzp2xpsjwrm8x9za52waccz"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (arguments
@@ -40808,13 +40907,13 @@ scripts to reproduce the VPCs in R.")
 (define-public r-certara-rsnlme-modelexecutor
   (package
     (name "r-certara-rsnlme-modelexecutor")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Certara.RsNLME.ModelExecutor" version))
        (sha256
-        (base32 "100ss3qfxvzxjywhxx5bvsgbi1i5jxznsczny42729qzpyykjwfk"))))
+        (base32 "1w5rwwx9am5007ifn77xxx2dg4zgpdfyj9znzij0zhfbjij70cb6"))))
     (properties `((upstream-name . "Certara.RsNLME.ModelExecutor")))
     (build-system r-build-system)
     (arguments
@@ -41834,19 +41933,19 @@ cross-sectional and panel data.")
 (define-public r-censoredaids
   (package
     (name "r-censoredaids")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censoredAIDS" version))
        (sha256
-        (base32 "05a7pgy50gkyixsndwbfxy9z6zwbvx4rjfpiazdcfrriw73dv7yl"))))
+        (base32 "18n51j3zw586p4k7x26q0y6k83w87p43233pi36vmb2llyaq8zbq"))))
     (properties `((upstream-name . "censoredAIDS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-mvtnorm r-mnormt r-matrix))
+    (propagated-inputs (list r-mvtnorm r-mnormt r-matrixcalc r-matrix))
     (home-page "https://cran.r-project.org/package=censoredAIDS")
     (synopsis
      "Estimation of Censored AI/QUAI Demand System via Maximum Likelihood Estimation (MLE)")
@@ -41856,9 +41955,10 @@ Quadratic Almost Ideal (QUAI) demand systems using Maximum Likelihood Estimation
 (MLE).  It includes functions for calculating demand share equations and the
 truncated log-likelihood function for a system of equations, incorporating
 demographic variables.  The package is designed to handle censored data, where
-some observations may be zero due to non-purchase of certain goods.  It is
-particularly useful for applied researchers analyzing household consumption
-data.")
+some observations may be zero due to non-purchase of certain goods.  Package
+also contains a procedure to approximate demand elasticities numerically and
+estimate standard errors via Delta Method.  It is particularly useful for
+applied researchers analyzing household consumption data.")
     (license license:expat)))
 
 (define-public r-censored
@@ -49098,6 +49198,60 @@ Nearest Neighbors (MNNs) to identify similar cells between datasets.  Reference:
 Loza M. et al. (NAR Genomics and Bioinformatics, 2020)
 <doi:10.1093/nargab/lqac022>.")
     (license license:expat)))
+
+(define-public r-cane
+  (package
+    (name "r-cane")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CANE" version))
+       (sha256
+        (base32 "1vx6d2hq9r837yrqxnzjh2bhi29g24ds80apgrlz8jikl6s0nzn8"))))
+    (properties `((upstream-name . "CANE")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-emmeans r-dplyr r-agricolae))
+    (home-page "https://cran.r-project.org/package=CANE")
+    (synopsis
+     "Comprehensive Groups of Experiments Analysis for Numerous Environments")
+    (description
+     "In many cases, experiments must be repeated across multiple seasons or locations
+to ensure applicability of findings.  A single experiment conducted in one
+location and season may yield limited conclusions, as results can vary under
+different environmental conditions.  In agricultural research, treatment Ã
+location and treatment Ã season interactions play a crucial role.  Analyzing a
+series of experiments across diverse conditions allows for more generalized and
+reliable recommendations.  The CANE package facilitates the pooled analysis of
+experiments conducted over multiple years, seasons, or locations.  It is
+designed to assess treatment interactions with environmental factors (such as
+location and season) using various experimental designs.  The package supports
+pooled analysis of variance (ANOVA) for the following designs: (1)
+@code{PooledCRD()}': completely randomized design; (2) @code{PooledRBD()}':
+randomized block design; (3) @code{PooledLSD()}': Latin square design; (4)
+@code{PooledSPD()}': split plot design; and (5) @code{PooledStPD()}': strip plot
+design.  Each function provides the following outputs: (i) Individual ANOVA
+tables based on independent analysis for each location or year; (ii) Testing of
+homogeneity of error variances among distinct locations using Bartlettâs
+Chi-Square test; (iii) If Bartlettâs test is significant, Aitkenâs
+transformation, defined as the ratio of the response to the square root of the
+error mean square, is applied to the response variable; otherwise, the data is
+used as is; (iv) Combined analysis to obtain a pooled ANOVA table; (v) Multiple
+comparison tests, including Tukey's honestly significant difference (Tukey's
+HSD) test, Duncanâs multiple range test (DMRT), and the least significant
+difference (LSD) test, for treatment comparisons.  The statistical theory and
+steps of analysis of these designs are available in Dean et al.
+(2017)<doi:10.1007/978-3-319-52250-0> and RuÃ­z et al.
+(2024)<doi:10.1007/978-3-031-65575-3>.  By broadening the scope of experimental
+conclusions, CANE enables researchers to derive robust, widely applicable
+recommendations.  This package is particularly valuable in agricultural
+research, where accounting for treatment Ã location and treatment Ã season
+interactions is essential for ensuring the validity of findings across multiple
+settings.")
+    (license license:gpl3)))
 
 (define-public r-candisc
   (package

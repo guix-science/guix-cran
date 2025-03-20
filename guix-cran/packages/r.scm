@@ -2695,13 +2695,13 @@ broadly available while creating reproducible results.")
 (define-public r-rumidas
   (package
     (name "r-rumidas")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rumidas" version))
        (sha256
-        (base32 "1y2fahyffdmnybj3hi4826sc7m5q9vvrcbz4xvd9dmm1zpgjqajx"))))
+        (base32 "1ill87g55d12z31372ddjf8fgqm4g6aljj5mmhbr4kyyhihp7rj8"))))
     (properties `((upstream-name . "rumidas")))
     (build-system r-build-system)
     (arguments
@@ -3132,13 +3132,13 @@ declaration and assignment with type checking and condition checking.")
 (define-public r-rtwobitlib
   (package
     (name "r-rtwobitlib")
-    (version "0.3.6")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rtwobitlib" version))
        (sha256
-        (base32 "0mww366wpa7r4wfm6i03nh5y9z2vdsdl36ry2h8njj8w8h2wd80c"))))
+        (base32 "1cvnsl323zm96fajin1x8cvs8snl4wlh60w5xgy98yc8zv4d18kq"))))
     (properties `((upstream-name . "Rtwobitlib")))
     (build-system r-build-system)
     (arguments
@@ -4105,13 +4105,13 @@ peaks and spectra using the ggplot2 package.")
 (define-public r-rtmpt
   (package
     (name "r-rtmpt")
-    (version "2.0-2")
+    (version "2.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtmpt" version))
        (sha256
-        (base32 "0pymd2kna7b6a38v9l21pk8jb100c7n7nv92ic0wbnfyjkih1yb7"))))
+        (base32 "158jpp4hzirg2pa0rpnrnggfc9m8zl9zq1xd7g63x6nz7a6x9s0p"))))
     (properties `((upstream-name . "rtmpt")))
     (build-system r-build-system)
     (arguments
@@ -20716,6 +20716,31 @@ described in Maelstrom Research guidelines for rigorous retrospective data
 harmonization (Fortier I and al. (2017) <doi:10.1093/ije/dyw075>).")
     (license license:gpl3)))
 
+(define-public r-rmon
+  (package
+    (name "r-rmon")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmon" version))
+       (sha256
+        (base32 "15s3kb6fbyqzngsl4b4bfzcyjw03b863ygp0vy8g8l60n8m42gb7"))))
+    (properties `((upstream-name . "rmon")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-processx))
+    (home-page "https://github.com/kennedymwavu/rmon")
+    (synopsis "Monitor Changes in Source Code and Auto-Restart Your Server")
+    (description
+     "The R equivalent of nodemon'.  Watches specified directories for file changes
+and reruns a designated R script when changes are detected.  It's designed to
+automate the process of reloading your R applications during development,
+similar to nodemon for Node.js'.")
+    (license license:expat)))
+
 (define-public r-rmolt
   (package
     (name "r-rmolt")
@@ -32966,6 +32991,35 @@ for making predictions.  This function is based on Jackson (2016)
      "Electrical properties of resistor networks using matrix methods.")
     (license license:gpl2)))
 
+(define-public r-resindex
+  (package
+    (name "r-resindex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ResIndex" version))
+       (sha256
+        (base32 "0laiqqla160ajpkd46rlb8z9gw35i7gpx5c8i3yzdirb3ihbwii4"))))
+    (properties `((upstream-name . "ResIndex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=ResIndex")
+    (synopsis
+     "Generate Simple yet Effective Metric of Feature Importance for Classification Problems")
+    (description
+     "An intuitive and explainable metric of Feature Importance for Classification
+Problems.  Resolution Index measures the extent to which a Feature clusters
+different classes when data is sorted on it.  User provides a @code{DataFrame},
+column name of the Class, sample size and number of iterations used for
+calculation.  Resolution Index for each Feature is returned, which can be
+effectively used to rank Features and reduce Dimensionality of Training data.
+For more details on Feature Selection see Theng and Bhoyar (2023)
+<doi:10.1007/s10115-023-02010-5>.")
+    (license license:lgpl2.0)))
+
 (define-public r-resin
   (package
     (name "r-resin")
@@ -33520,13 +33574,13 @@ to simplify the creation of maps of the data.")
 (define-public r-rerddap
   (package
     (name "r-rerddap")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddap" version))
        (sha256
-        (base32 "0kqh0q3ighlqj1bhd64hpf62jsgk92vq4gjm7qym2cjxcnc6sfq2"))))
+        (base32 "047x8wi2gwnkg2qv2s6r8jgh1wqw74bicf0lr9qxvy477ksf9jrq"))))
     (properties `((upstream-name . "rerddap")))
     (build-system r-build-system)
     (arguments
@@ -45255,13 +45309,13 @@ vtreat package.")
 (define-public r-rcppdpr
   (package
     (name "r-rcppdpr")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppDPR" version))
        (sha256
-        (base32 "19igwaanqswg58dik8irs1h68ll91j663p12wrjsrc89r0mnkkzz"))))
+        (base32 "1mdppmqc9fsj9fczwyss5jwnmjxkg0rf4zgx3w50w0zjvhn1rjcj"))))
     (properties `((upstream-name . "RcppDPR")))
     (build-system r-build-system)
     (arguments
@@ -51338,13 +51392,13 @@ in research.  Trends in Ecology and Evolution, 37: 725-728.")
 (define-public r-rasterpic
   (package
     (name "r-rasterpic")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterpic" version))
        (sha256
-        (base32 "1q2kl95rf0c77nngf83805rqbpirzcl2xwzbpdaf8yqvcs780jfh"))))
+        (base32 "0q4a6cnpp8n60v9vmcc7nc2wrfgwgn9mbinac3af7w6k8qdqrmvn"))))
     (properties `((upstream-name . "rasterpic")))
     (build-system r-build-system)
     (arguments
@@ -57846,13 +57900,13 @@ based htmlwidgets in R packages.")
 (define-public r-r2d2ordinal
   (package
     (name "r-r2d2ordinal")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2D2ordinal" version))
        (sha256
-        (base32 "0b2vvhjmjs4h8vh6gdsmx2ia8fldnrd6b8zvfsgi7dlm6nn5akmi"))))
+        (base32 "0q0kb5yr9d7l7k3w020zvp8ad1xnz79pi96wvaf8wx18zbasshhs"))))
     (properties `((upstream-name . "R2D2ordinal")))
     (build-system r-build-system)
     (arguments

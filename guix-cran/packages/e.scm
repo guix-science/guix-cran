@@ -1353,6 +1353,31 @@ the @code{CompTox} Chemicals Dashboard Resource Hub
 @code{PubChem} <https://pubchem.ncbi.nlm.nih.gov/>, and others.")
     (license license:expat)))
 
+(define-public r-extractfaers
+  (package
+    (name "r-extractfaers")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "extractFAERS" version))
+       (sha256
+        (base32 "1ay03zr4nhk693p0prxaklzbznikvk3z7yxlk4kzvbykq781r8fq"))))
+    (properties `((upstream-name . "extractFAERS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-dplyr))
+    (home-page "https://cran.r-project.org/package=extractFAERS")
+    (synopsis "Extract Data from FAERS Database")
+    (description
+     "This package provides functions to extract and process data from the FDA Adverse
+Event Reporting System (FAERS).  It facilitates the conversion of raw FAERS data
+into structured formats for analysis.  See Yang et al. (2022)
+<doi:10.3389/fphar.2021.772768> for related information.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-extmallows
   (package
     (name "r-extmallows")
@@ -22268,6 +22293,39 @@ seamlessly with other packages.  See <doi:10.21105/joss.01866> for a summary of
 these methods and its evolution in literature.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-econid
+  (package
+    (name "r-econid")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "econid" version))
+       (sha256
+        (base32 "0ijkmicv1xkfn3zi49yjq7431c23zr9m2fnq94ypfkii00k5jgal"))))
+    (properties `((upstream-name . "econid")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-fuzzyjoin
+                             r-dplyr
+                             r-cli))
+    (home-page "https://teal-insights.github.io/r-econid/")
+    (synopsis "Economic Entity Identifier Standardization")
+    (description
+     "This package provides utility functions for standardizing economic entity
+(economy, aggregate, institution, etc.) name and id in economic datasets such as
+those published by the International Monetary Fund and World Bank.  Aims to
+facilitate consistent data analysis, reporting, and joining across datasets.
+Used as a foundational building block in the econdataverse family of packages
+(<https://www.econdataverse.org>).")
+    (license license:expat)))
+
 (define-public r-econgeo
   (package
     (name "r-econgeo")
@@ -22683,13 +22741,13 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
 (define-public r-ecoensemble
   (package
     (name "r-ecoensemble")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EcoEnsemble" version))
        (sha256
-        (base32 "0yzd38nwn4qdkqnm9hkyck1n1pscbca7payqp4gq5glwnipjg7iq"))))
+        (base32 "0ax439za50bx5wpvm8xr674pilp7nlk3ybrfaaix7li1nj7jky7k"))))
     (properties `((upstream-name . "EcoEnsemble")))
     (build-system r-build-system)
     (arguments
@@ -23730,13 +23788,13 @@ more easily understand the pronunciation of the Chinese character.")
 (define-public r-ecb
   (package
     (name "r-ecb")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecb" version))
        (sha256
-        (base32 "19ir0ywbzwyx90mgxqk9byb63afic2fvhrhy174di0pmj522vnr4"))))
+        (base32 "0i8n4khzjn8lfc29m63syfdnwalk6h02q156gq3niqvca6lakbzc"))))
     (properties `((upstream-name . "ecb")))
     (build-system r-build-system)
     (arguments
@@ -23744,13 +23802,11 @@ more easily understand the pronunciation of the Chinese character.")
       #:tests? #f))
     (propagated-inputs (list r-xml2 r-rsdmx r-httr r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://sdw.ecb.europa.eu/")
-    (synopsis
-     "Programmatic Access to the European Central Bank's Statistical Data Warehouse")
+    (home-page "https://github.com/expersso/ecb")
+    (synopsis "Programmatic Access to the European Central Bank's Data Portal")
     (description
-     "This package provides an interface to the European Central Bank's Statistical
-Data Warehouse API <https://sdw.ecb.europa.eu/>, allowing for programmatic
-retrieval of a vast quantity of statistical data.")
+     "This package provides an interface to the European Central Bank's Data Portal
+API, allowing for programmatic retrieval of a vast quantity of statistical data.")
     (license license:cc0)))
 
 (define-public r-ecar

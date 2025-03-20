@@ -9279,13 +9279,13 @@ polynomial fits to describe and analyze force curve shapes.")
 (define-public r-forceplate
   (package
     (name "r-forceplate")
-    (version "1.1-3")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forceplate" version))
        (sha256
-        (base32 "07bflqix3sw7kf23yfljl1hpiq7xh4nzhyyih4q6cxzlsrk3ys1h"))))
+        (base32 "0agr4w6qy1sdnn0aa5xpm4dy2zpcjyi6w3hcqf4yfgim0a2gb930"))))
     (properties `((upstream-name . "forceplate")))
     (build-system r-build-system)
     (arguments
@@ -10568,13 +10568,13 @@ as asymmetrical factorial designs.")
 (define-public r-fmat
   (package
     (name "r-fmat")
-    (version "2024.7")
+    (version "2025.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMAT" version))
        (sha256
-        (base32 "1cijvrp9rzznjn8lvclzvjv2kqi412n512mwnkddr617vdxy4gn5"))))
+        (base32 "021fbbvzvvczd6g3sl9qifkp574ykigzjfca7ygbrym73xbzf9mc"))))
     (properties `((upstream-name . "FMAT")))
     (build-system r-build-system)
     (arguments
@@ -10583,6 +10583,7 @@ as asymmetrical factorial designs.")
     (inputs (list python))
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-rvest
                              r-reticulate
                              r-purrr
                              r-psych
@@ -13488,6 +13489,36 @@ obtain the fixed-effects coefficients is based on Berge (2018)
 provides tools to export and view the results of several estimations with
 intuitive design to cluster the standard-errors.")
     (license license:gpl3)))
+
+(define-public r-fixes
+  (package
+    (name "r-fixes")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fixes" version))
+       (sha256
+        (base32 "1rcy64zzzf06xwbpl9c43wfhc6fws5gmf6hjs8g6k5394763bdw9"))))
+    (properties `((upstream-name . "fixes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-ggplot2
+                             r-fixest
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fixes")
+    (synopsis
+     "Tools for Creating and Visualizing Fixed-Effects Event Study Models")
+    (description
+     "This package provides functions for creating, analyzing, and visualizing event
+study models using fixed-effects regression.")
+    (license license:expat)))
 
 (define-public r-fixerapi
   (package
@@ -18689,19 +18720,20 @@ data.")
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.7.2")
+    (version "3.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "166czf41pnv3s0sw4sag2lnnnai7fzhkx5l10g3dnmv8rqhppvrk"))))
+        (base32 "1175yar9jjp1ich7w8837jdxch17xfyz94kinsidypsxc5s15qw7"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-sqlrender
+    (propagated-inputs (list r-vroom
+                             r-sqlrender
                              r-rsqlite
                              r-rlang
                              r-rjava

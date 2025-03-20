@@ -5397,13 +5397,13 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydown
   (package
     (name "r-surveydown")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveydown" version))
        (sha256
-        (base32 "13jlchvlawbvq1g5qsizrz8ac1143zb6z3ja1i3lnhaicvml496n"))))
+        (base32 "0yjqymwhfl8vp9cfqgkr1f9gsrc39fh0v88nyd7j67zmpdd7g4yb"))))
     (properties `((upstream-name . "surveydown")))
     (build-system r-build-system)
     (arguments
@@ -6522,19 +6522,19 @@ diagnostics.")
 (define-public r-surfrough
   (package
     (name "r-surfrough")
-    (version "0.0.1.0")
+    (version "0.0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurfRough" version))
        (sha256
-        (base32 "1nvia5y38y2hx3w3k89cf4hrpl44sj23444xdr4vbpifrgy6qgpf"))))
+        (base32 "0kdiqsn7hyydh4l24j7j07d4crfshfa30ajhvyrv1bwz7lm5cy7n"))))
     (properties `((upstream-name . "SurfRough")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-terra))
+    (propagated-inputs (list r-terra r-rcpp))
     (home-page "https://github.com/strevisani/SurfRough")
     (synopsis "Calculate Surface/Image Texture Indexes")
     (description
@@ -8158,13 +8158,13 @@ package to generate corrections for those regions.")
 (define-public r-sudokudesigns
   (package
     (name "r-sudokudesigns")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SudokuDesigns" version))
        (sha256
-        (base32 "1yf864gcd2jm1iwj1dyghgf26q9ag39cm1kcvkhhv87879jgvs3w"))))
+        (base32 "0wp2zmdpjq2wjivmwvj6db3fvnmipcf94xmwh4rzp13km1wcj64r"))))
     (properties `((upstream-name . "SudokuDesigns")))
     (build-system r-build-system)
     (arguments
@@ -8522,25 +8522,27 @@ authored by Stephanie Sapp, Mark J. van der Laan & John Canny (2014)
 (define-public r-subscreen
   (package
     (name "r-subscreen")
-    (version "3.0.7")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "subscreen" version))
        (sha256
-        (base32 "0vxwyx08bjha7vgv3lcgigar43f74fr3w7wna6z8viawh3bc7k96"))))
+        (base32 "1rmq96dklc1932ac20dzmgqqmlqwf57h084cinqzmhxk2pnqglkh"))))
     (properties `((upstream-name . "subscreen")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-shinywidgets
+    (propagated-inputs (list r-stringr
+                             r-shinywidgets
                              r-shinyjs
                              r-shiny
+                             r-rlang
                              r-ranger
-                             r-purrr
                              r-plyr
-                             r-jsonlite
+                             r-ggrepel
+                             r-ggplot2
                              r-dt
                              r-dplyr
                              r-data-table
@@ -8564,11 +8566,7 @@ plot, larger random deviations from the mean study effect are expected, while
 for larger subgroups only small deviations from the study mean can be expected
 to be chance findings.  So for a study with no conspicuous subgroup effects, the
 dots in the figure are expected to form a kind of funnel.  Any deviations from
-this funnel shape hint to conspicuous subgroups.  This approach was presented in
-Muysers (2020) <doi:10.1007/s43441-019-00082-6> and referenced in Ballarini
-(2020) <doi:10.1002/pst.2012>.  New to version 3 is the Automatic Screening of
-one- or MUlti-factorial Subgroups (ASMUS) for documentation of the structured
-review of subgroup findings.")
+this funnel shape hint to conspicuous subgroups.")
     (license license:gpl3)))
 
 (define-public r-subscore
@@ -9667,13 +9665,13 @@ This represents an attempt to replicate some of python's string formatting.")
 (define-public r-string2path
   (package
     (name "r-string2path")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "string2path" version))
        (sha256
-        (base32 "0zr5lv5b8712rm21va5jbga1piwih2fi64icvjrnx5zg0pd4hwha"))))
+        (base32 "13gfqc7vqfz732yndgc6bfx39r0p2rzhc0cn8sn6qip00kyzg6s2"))))
     (properties `((upstream-name . "string2path")))
     (build-system r-build-system)
     (arguments
@@ -14438,6 +14436,32 @@ Vidal-Tortosa et al. (2021) <doi:10.1016/j.jth.2021.101291>, and Tait et al.
 for methodological and empirical road safety research.")
     (license license:gpl3)))
 
+(define-public r-statrec
+  (package
+    (name "r-statrec")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StatRec" version))
+       (sha256
+        (base32 "178mhdzjl0z16jpc0m67n5kpc4azlakqgpigxmd2zflkiw4mgrvr"))))
+    (properties `((upstream-name . "StatRec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=StatRec")
+    (synopsis
+     "Statistical Method for Multi-Item Rating and Recommendation Problems")
+    (description
+     "This package implements the methodological developments found in Hermes (2025)
+<doi:10.48550/@code{arXiv.2503.02786>}, and allows for the statistical modeling
+of data consisting of multiple users that provide an ordinal rating for one or
+multiple items.")
+    (license license:gpl3)))
+
 (define-public r-statrank
   (package
     (name "r-statrank")
@@ -17361,19 +17385,25 @@ developed the original C and C++ implementation.")
 (define-public r-ssvs
   (package
     (name "r-ssvs")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSVS" version))
        (sha256
-        (base32 "002k10b3s4f84jiq7yjazmf7jz02z5l4g9ma0cyrdglbhhn3pbrd"))))
+        (base32 "17kc5hid5xhki48ps278c6j9yq1ccfbfdx9dk3svx011rfj72ax6"))))
     (properties `((upstream-name . "SSVS")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-ggplot2 r-checkmate r-boomspikeslab
+    (propagated-inputs (list r-rlang
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate
+                             r-boomspikeslab
                              r-bayestestr))
     (home-page "https://github.com/sabainter/SSVS")
     (synopsis "Functions for Stochastic Search Variable Selection (SSVS)")
@@ -29440,13 +29470,13 @@ re-compute risk scores, to simulate a semi-realistic dataset.")
 (define-public r-sparr
   (package
     (name "r-sparr")
-    (version "2.3-15")
+    (version "2.3-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparr" version))
        (sha256
-        (base32 "140gdk12dsl39k13g77iaqh0kzdi19ys3l00008fqn807mhcn2hz"))))
+        (base32 "0fx3ybgs3rp91kv92wpr84csy3zf5ylr425fm07lsd7r8q1f0fmm"))))
     (properties `((upstream-name . "sparr")))
     (build-system r-build-system)
     (arguments
@@ -29621,13 +29651,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.8.6")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparklyr" version))
        (sha256
-        (base32 "1yp3hwi1rhxx8sdhibcnjxsz1sd5jhfxn6cy9bphkwadrd19pn63"))))
+        (base32 "1bmis1nf5255pmpw5ppnl9b1vxspi20y2w17km2172n33jyqgrnl"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (arguments
@@ -37680,6 +37710,31 @@ the models implemented can be found at Aznar-Gimeno et al. (2021)
 <doi:10.3390/math9192497>.")
     (license license:gpl3)))
 
+(define-public r-slmetrics
+  (package
+    (name "r-slmetrics")
+    (version "0.3-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SLmetrics" version))
+       (sha256
+        (base32 "1djd664v7w2gj5p624irs2acfcfls0bb1k20zc87p47d2dfid9wl"))))
+    (properties `((upstream-name . "SLmetrics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-lattice))
+    (native-inputs (list r-knitr))
+    (home-page "https://serkor1.github.io/SLmetrics/")
+    (synopsis "Machine Learning Performance Evaluation on Steroids")
+    (description
+     "Performance evaluation metrics for supervised and unsupervised machine learning,
+statistical learning and artificial intelligence applications.  Core
+computations are implemented in C++ for scalability and efficiency.")
+    (license license:gpl3+)))
+
 (define-public r-slm
   (package
     (name "r-slm")
@@ -39973,13 +40028,13 @@ change.  Minimum recommended requirements: 16 GB RAM and 4 CPU dual-core.")
 (define-public r-sitreee
   (package
     (name "r-sitreee")
-    (version "0.0-8")
+    (version "0.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sitreeE" version))
        (sha256
-        (base32 "0jwxca8y0nn1aqx4c6gikgf31nb4dll543m0akd4jmqx6fc450kd"))))
+        (base32 "1b5haiji7i26798xh226qzxcpd9xb48a9na6nzpi1v897li1zdfr"))))
     (properties `((upstream-name . "sitreeE")))
     (build-system r-build-system)
     (arguments
@@ -52202,22 +52257,22 @@ Mayrhofer and Filzmoser (2023) <doi:10.1016/j.ecosta.2023.04.003>.")
 (define-public r-shapley
   (package
     (name "r-shapley")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapley" version))
        (sha256
-        (base32 "1lv5p76mf2a03ivz45nxa2gbj1qrrzh6xgi6fz6r3w9qqpazgqf1"))))
+        (base32 "1m4c6d18b8ndz9br0hc8rjxhyk58dizn557ybg5zp1k3lp5fl008"))))
     (properties `((upstream-name . "shapley")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-waffle r-h2o r-ggplot2 r-curl))
+    (propagated-inputs (list r-waffle r-pander r-h2o r-ggplot2 r-curl))
     (home-page "https://github.com/haghish/shapley")
     (synopsis
-     "Weighted Mean SHAP for Feature Selection in ML Grid and Ensemble")
+     "Weighted Mean SHAP and CI for Robust Feature Assessment in ML Grid")
     (description
      "This R package introduces Weighted Mean SHapley Additive @code{exPlanations}
 (WMSHAP), an innovative method for calculating SHAP values for a grid of
@@ -54829,13 +54884,13 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
 (define-public r-serolyzer
   (package
     (name "r-serolyzer")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SerolyzeR" version))
        (sha256
-        (base32 "09gafg07nhcfpjnbr4vxy6wfh05cfvyd6yvv2pxv9irrjl2r6gaz"))))
+        (base32 "144yp0i20475ijiig1kdim29x4q8lsjn85gdhil8s8jjljc7823n"))))
     (properties `((upstream-name . "SerolyzeR")))
     (build-system r-build-system)
     (arguments
@@ -54846,7 +54901,6 @@ Data: A Modern Statistical Perspective\" (Hens, Niel & Shkedy, Ziv & Aerts, Marc
                              r-stringi
                              r-scales
                              r-readxl
-                             r-readr
                              r-r6
                              r-r-utils
                              r-png
@@ -58146,13 +58200,13 @@ proximity values between pairs of observations.")
 (define-public r-semaphore
   (package
     (name "r-semaphore")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semaphore" version))
        (sha256
-        (base32 "1rkm0q7zvw9vz3gwy2h4yaz9mf50zxp8rgv0f3mlwwi5jabl6x01"))))
+        (base32 "0xib5lc6ajc0jhdlwnfn7q8ji85374a0hiid9qj5fmvjf8yviqgr"))))
     (properties `((upstream-name . "semaphore")))
     (build-system r-build-system)
     (arguments
@@ -58165,7 +58219,7 @@ proximity values between pairs of observations.")
      "This package implements named semaphores from the boost C++ library
 <https://www.boost.org/>.  A semaphore object is shared amongst several
 processes.  This integer value can be safely incremented or decremented by each
-processes.  Processes can also wait (blocking) for the value to become non-zero.")
+process.  Processes can also wait (blocking) for the value to become positive.")
     (license license:expat)))
 
 (define-public r-semantic-dashboard
@@ -60216,13 +60270,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "5.2.0")
+    (version "5.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "1xgv64hw03q5l1kifafhk4cvq36d8zyk4ir86hwm6wpaz87fd5c6"))))
+        (base32 "0vvpaxj0xga26ad85i1fpnfz4jj6b0mlxd55cv387zlhj9zmc9r9"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (arguments
@@ -66566,13 +66620,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.63.0")
+    (version "0.64.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scan" version))
        (sha256
-        (base32 "02rkkjhvrh1d94w3vf9y71r2lcgyw0b1zhsalkzqfa9x2v2cfk5k"))))
+        (base32 "1vmcx1sf973vxhqcsm6rpkxgmskgnvaq3xdd0lf5i6cpcg4rdfri"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (arguments
@@ -68615,13 +68669,13 @@ research.")
 (define-public r-sarima
   (package
     (name "r-sarima")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarima" version))
        (sha256
-        (base32 "0x6wndy7mdmnliabrbs9qbpm7ibf2h7s3m4d90pasna6hw11yg3d"))))
+        (base32 "0gp3sd14aj14v8arxgci1ndwsqpg2qhz8v3h07kpwnk4m36m3r8d"))))
     (properties `((upstream-name . "sarima")))
     (build-system r-build-system)
     (arguments
@@ -68646,8 +68700,9 @@ of theoretical and sample autocorrelations.  This is work in progress, see the
 documentation and vignettes for the current functionality.  Function
 @code{sarima()} fits extended multiplicative seasonal ARIMA models with trends,
 exogenous variables and arbitrary roots on the unit circle, which can be fixed
-or estimated (for the algebraic basis for this see <@code{arXiv:2208.05055>}, a
-paper on the methodology is being prepared).")
+or estimated (for the algebraic basis for this see
+<doi:10.48550/@code{arXiv.2208.05055>}, a paper on the methodology is being
+prepared).")
     (license license:gpl2+)))
 
 (define-public r-sara4r

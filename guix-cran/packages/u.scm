@@ -2174,6 +2174,29 @@ optimize this method for the high-dimensional, low-sample size setting.  This
 method is described in Helgeson, Vock, and Bair (2021) <doi:10.1111/biom.13376>.")
     (license license:gpl2+)))
 
+(define-public r-unnest
+  (package
+    (name "r-unnest")
+    (version "0.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "unnest" version))
+       (sha256
+        (base32 "0mi0lawmlwhbmlrpvfjab3m203lgwh21lpr1llpxd8g357kbkcak"))))
+    (properties `((upstream-name . "unnest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vspinu/unnest/")
+    (synopsis "Unnest Hierarchical Data Structures")
+    (description
+     "Fast flattening of hierarchical data structures (e.g. JSON, XML) into
+data.frames with a flexible spec language.")
+    (license license:gpl2+)))
+
 (define-public r-unmconf
   (package
     (name "r-unmconf")
@@ -2529,13 +2552,13 @@ hessian functions are written in C++.  For further details see Mazucheli et.  al
 (define-public r-unitizer
   (package
     (name "r-unitizer")
-    (version "1.4.21")
+    (version "1.4.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unitizer" version))
        (sha256
-        (base32 "0xr9xf5ams0j9vxgn1p0gm9yzq4g2il9q8qqlsic5v75gp3nj2g1"))))
+        (base32 "0wnvg1vn5xydd3rfm43n1c40777cfx81wvfgnw58yjff2lqz9xw3"))))
     (properties `((upstream-name . "unitizer")))
     (build-system r-build-system)
     (arguments

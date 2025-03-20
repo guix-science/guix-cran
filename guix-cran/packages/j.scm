@@ -1192,13 +1192,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.10")
+    (version "0.5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "1cpvky58jdq85sfhjpdjhmx1y8qkk98jghaqygc3ixzbwxmrrkam"))))
+        (base32 "1ng4f8nn6398ymm6g9c1b0kpiy445rax9vzbfy3gh3dig50bbm1p"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (arguments

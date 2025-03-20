@@ -6666,38 +6666,6 @@ combination of greedy local search and a genetic algorithm (see
 oceanographic data using image processing methods based on Gradient Recognition.")
     (license license:gpl3+)))
 
-(define-public r-greatr
-  (package
-    (name "r-greatr")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "greatR" version))
-       (sha256
-        (base32 "0fb065y4k7zsxb91kswssfq8zlg1p9780mx8wnzxn1pydckn4z3n"))))
-    (properties `((upstream-name . "greatR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-patchwork
-                             r-optimization
-                             r-neldermead
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-data-table
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://ruthkr.github.io/greatR/")
-    (synopsis "Gene Registration from Expression and Time-Courses in R")
-    (description
-     "This package provides a tool for registering (aligning) gene expression profiles
-between reference and query data.")
-    (license license:gpl3+)))
-
 (define-public r-grcregression
   (package
     (name "r-grcregression")
@@ -11330,31 +11298,30 @@ PavÃ­a (2015) <doi:10.18637/jss.v066.c01>.")
 (define-public r-gofigr
   (package
     (name "r-gofigr")
-    (version "0.2.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gofigR" version))
        (sha256
-        (base32 "035ghj41sxfp7dayv39abls8k63p8sgsjgvsfkhaasm3qlqajdhr"))))
+        (base32 "05ncp9a5ybxq2vadq9ihzfahiw6llbl2lrk3wmv2n5f5r853r4z8"))))
     (properties `((upstream-name . "gofigR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xfun
-                             r-textutils
-                             r-stringr
-                             r-scriptname
+    (propagated-inputs (list r-scriptname
+                             r-rsvg
                              r-rstudioapi
-                             r-rlang
                              r-readr
                              r-qrcode
                              r-magick
                              r-knitr
                              r-jsonlite
                              r-httr
+                             r-ggplotify
                              r-getpass
+                             r-cowplot
                              r-base64enc))
     (home-page "https://github.com/GoFigr/gofigR")
     (synopsis "Client for 'GoFigr.io'")
@@ -13747,6 +13714,42 @@ also known as skew-logistic distribution), encompassing basic distribution
 functions (p, q, d, r, score), maximum likelihood estimation, and structural
 change methods.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-globpso
+  (package
+    (name "r-globpso")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "globpso" version))
+       (sha256
+        (base32 "1q4f7smdfcph05jn3b2wrr64flawf3lcwksiqifhxhvf7nsn2y4a"))))
+    (properties `((upstream-name . "globpso")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=globpso")
+    (synopsis "Swarm Intelligence Optimization")
+    (description
+     "This package provides a fast and flexible general-purpose implementation of
+Particle Swarm Optimization (PSO) and Differential Evolution (DE) for solving
+global minimization problems is provided.  It is designed to handle complex
+optimization tasks with nonlinear, non-differentiable, and multi-modal objective
+functions defined by users.  There are five types of PSO variants: Particle
+Swarm Optimization (PSO, Eberhart & Kennedy, 1995)
+<doi:10.1109/MHS.1995.494215>, Quantum-behaved particle Swarm Optimization
+(QPSO, Sun et al., 2004) <doi:10.1109/CEC.2004.1330875>, Locally convergent
+rotationally invariant particle swarm optimization (@code{LcRiPSO}, Bonyadi &
+Michalewicz, 2014) <doi:10.1007/s11721-014-0095-1>, Competitive Swarm Optimizer
+(CSO, Cheng & Jin, 2015) <doi:10.1109/TCYB.2014.2322602> and Double exponential
+particle swarm optimization (D@code{ExPSO}, Stehlik et al., 2024)
+<doi:10.1016/j.asoc.2024.111913>.  For the DE algorithm, six types in Storn, R.
+& Price, K. (1997) <doi:10.1023/A:1008202821328> are included: DE/rand/1,
+DE/rand/2, DE/best/1, DE/best/2, DE/rand_to-best/1 and DE/rand_to-best/2.")
+    (license license:gpl3)))
 
 (define-public r-glober
   (package
@@ -16591,13 +16594,13 @@ using MCMC samplers for large lattices.")
 (define-public r-gips
   (package
     (name "r-gips")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gips" version))
        (sha256
-        (base32 "0mvjgzqy3sqa5p1263v042k20j6hmlgli9llgq89y17d47njmfw4"))))
+        (base32 "03cczihs5mbwzkbbkp7k73n5k86dskmaw1npsr7q4jcv7a7g77iy"))))
     (properties `((upstream-name . "gips")))
     (build-system r-build-system)
     (arguments
@@ -16614,7 +16617,9 @@ decreases the number of observations needed to fit a Gaussian model, which is of
 great use when it is smaller than the number of variables.  Even if that is not
 the case, the covariance matrix found with gips approximates the actual
 covariance with less statistical error.  The methods implemented in this package
-are described in Graczyk et al. (2022) <doi:10.1214/22-AOS2174>.")
+are described in Graczyk et al. (2022) <doi:10.1214/22-AOS2174>.  Documentation
+about gips is provided via its website at <https://przechoj.github.io/gips/> and
+the paper by Chojecki, Morgen, KoÅodziejek (2025, <doi:10.18637/jss.v112.i07>).")
     (license license:gpl3+)))
 
 (define-public r-giplot
@@ -17280,13 +17285,13 @@ queries can be accessed according the following scheme:
 (define-public r-gifski
   (package
     (name "r-gifski")
-    (version "1.32.0-1")
+    (version "1.32.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gifski" version))
        (sha256
-        (base32 "1vak4chf3cxy6dq7i7asxbs6byn6gqwl8iafrfpg12bkc71b4rhb"))))
+        (base32 "0502fx2iwznmx2d0ax79r3s882lgxlhm24gv4890cycsx3bdqd1i"))))
     (properties `((upstream-name . "gifski")))
     (build-system r-build-system)
     (arguments
@@ -22806,13 +22811,13 @@ chart but instead of squares the layout resembles a brick wall.")
 (define-public r-ggbrain
   (package
     (name "r-ggbrain")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggbrain" version))
        (sha256
-        (base32 "1nicqirp69k0ish7j3mr7zz82w2lj5jcvmn7cbx764r62s5pscvd"))))
+        (base32 "1mn469svn3ghxp7b2rywkf9kdfcrg1gp7wfby8b2b6isxkdqlwcf"))))
     (properties `((upstream-name . "ggbrain")))
     (build-system r-build-system)
     (arguments
@@ -30698,13 +30703,13 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.9.2")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "0fimkh71kzwgajhxkkgw3lz4akzv6ymc72x0b8x6b6b51majxgpw"))))
+        (base32 "1x82h5ii3scp8fji21cg6sccyk00q5w37ha000d9vxygnk4qgisn"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments
@@ -32130,13 +32135,13 @@ GDAL API.")
 (define-public r-gdalcubes
   (package
     (name "r-gdalcubes")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalcubes" version))
        (sha256
-        (base32 "1bpskiv7pc09pwmh3ghf5l6wswbwlbmwx6sjqlqx7vs8d7gk6972"))))
+        (base32 "0amy5kc8g6gg0rkwn74ldida7cgmpzpldzn02vc366ywpbdkyy86"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
     (arguments

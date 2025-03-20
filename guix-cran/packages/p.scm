@@ -9631,13 +9631,13 @@ the performance in 2007-2020.")
 (define-public r-prism
   (package
     (name "r-prism")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prism" version))
        (sha256
-        (base32 "1fgmv58igvkp11n8jgqvxd2qpccpv3s6xwzm2678ikrgc3hynj0x"))))
+        (base32 "1z082b8cyddszi822885aw3rjq41znig8wfi9c38p1n3sdkdllm6"))))
     (properties `((upstream-name . "prism")))
     (build-system r-build-system)
     (arguments
@@ -21472,6 +21472,42 @@ datasets included in the PMLB repository.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-pminternal
+  (package
+    (name "r-pminternal")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pminternal" version))
+       (sha256
+        (base32 "14rwxhq2199hz7ry8c89w29mybz2ld8qw23m27j725nhmvdv07z2"))))
+    (properties `((upstream-name . "pminternal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-purrr
+                             r-proc
+                             r-pmcalibration
+                             r-pbapply
+                             r-marginaleffects
+                             r-insight
+                             r-dcurves))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stephenrho/pminternal")
+    (synopsis "Internal Validation of Clinical Prediction Models")
+    (description
+     "Conduct internal validation of a clinical prediction model for a binary outcome.
+ Produce bias corrected performance metrics (c-statistic, Brier score,
+calibration intercept/slope) via bootstrap (simple bootstrap, bootstrap
+optimism, .632 optimism) and cross-validation (CV optimism, CV average).  Also
+includes functions to assess model stability via bootstrap resampling.  See
+Steyerberg et al. (2001) <doi:10.1016/s0895-4356(01)00341-9>; Harrell (2015)
+<doi:10.1007/978-3-319-19425-7>; Riley and Collins (2023)
+<doi:10.1002/bimj.202200302>.")
+    (license license:gpl3)))
+
 (define-public r-pmhtutorial
   (package
     (name "r-pmhtutorial")
@@ -23611,55 +23647,6 @@ exposures) that you want to apply the same statistical method to, or when you
 are creating the output for a report and you need multiple different tables or
 graphs.")
     (license license:expat)))
-
-(define-public r-plnmodels
-  (package
-    (name "r-plnmodels")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PLNmodels" version))
-       (sha256
-        (base32 "1y6lw6ia85d6f525skkpp1y3bq6rrac42py977qkfhhllhbvwdjj"))))
-    (properties `((upstream-name . "PLNmodels")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-torch
-                             r-tidyr
-                             r-scales
-                             r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r6
-                             r-purrr
-                             r-pscl
-                             r-nloptr
-                             r-matrix
-                             r-mass
-                             r-magrittr
-                             r-igraph
-                             r-gridextra
-                             r-glassofast
-                             r-ggplot2
-                             r-future-apply
-                             r-future
-                             r-dplyr
-                             r-corrplot
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://pln-team.github.io/PLNmodels/")
-    (synopsis "Poisson Lognormal Models")
-    (description
-     "The Poisson-lognormal model and variants (Chiquet, Mariadassou and Robin, 2021
-<doi:10.3389/fevo.2021.588292>) can be used for a variety of multivariate
-problems when count data are at play, including principal component analysis for
-count data, discriminant analysis, model-based clustering and network inference.
- Implements variational algorithms to fit such models accompanied with a set of
-functions for visualization and diagnostic.")
-    (license license:gpl3+)))
 
 (define-public r-pln
   (package
@@ -27825,13 +27812,13 @@ details, see Ferrara et al. (2018) <doi:10.1016/j.agrformet.2018.04.008>.")
 (define-public r-piar
   (package
     (name "r-piar")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piar" version))
        (sha256
-        (base32 "0153cyfnw7cprvm2gkk0ajishs2rhbwdlx6xd07ls8jpzm3jl5k6"))))
+        (base32 "1h9qap7qbf8ybsdf3w5yllxs2g5jfvddhjc8xs0x13jv29040m2x"))))
     (properties `((upstream-name . "piar")))
     (build-system r-build-system)
     (arguments
@@ -31618,13 +31605,13 @@ simulation of the corresponding angular distribution.")
 (define-public r-pgmm
   (package
     (name "r-pgmm")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgmm" version))
        (sha256
-        (base32 "08fz5la19fnzsk80d1nsqg0fd27z3bq3s8kzizj11r5k1fn95sy8"))))
+        (base32 "0ll1vypapl28zd9g9fdlg7iqxfskrwfxpznxxv6zscv4iqkq89ik"))))
     (properties `((upstream-name . "pgmm")))
     (build-system r-build-system)
     (arguments
@@ -35140,13 +35127,13 @@ and etc packages.")
 (define-public r-pedprobr
   (package
     (name "r-pedprobr")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedprobr" version))
        (sha256
-        (base32 "17gzrv43gz8r1y31vzmc1arkr4wvzirk64vps6d98gk0r4i5vv71"))))
+        (base32 "0zfrf0mlyz0v1dgkj4r0y19k77spkn43qbfsn4gbba1qg4aq8j75"))))
     (properties `((upstream-name . "pedprobr")))
     (build-system r-build-system)
     (arguments
@@ -35159,7 +35146,7 @@ and etc packages.")
      "An implementation of the Elston-Stewart algorithm for calculating pedigree
 likelihoods given genetic marker data (Elston and Stewart (1971)
 <doi:10.1159/000152448>).  The standard algorithm is extended to allow inbred
-founders.  pedprobr is part of the ped suite', a collection of packages for
+founders.  pedprobr is part of the pedsuite', a collection of packages for
 pedigree analysis in R. In particular, pedprobr depends on pedtools for pedigree
 manipulations and pedmut for mutation modelling.  For more information, see
 Pedigree Analysis in R (Vigeland, 2021, ISBN:9780128244302).")

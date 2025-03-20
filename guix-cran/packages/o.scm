@@ -180,13 +180,13 @@ oxy-bisulfite conversion.")
 (define-public r-oxsr
   (package
     (name "r-oxsr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OxSR" version))
        (sha256
-        (base32 "0fni3ki49d4dplchk6g3j4i2k9npxz4dbvzwrsjgc2q5jrhbwagk"))))
+        (base32 "0kgyyjly12lwjpw8vh29rj9n1sc7zs7gq381jsbmnmmn806qdaa2"))))
     (properties `((upstream-name . "OxSR")))
     (build-system r-build-system)
     (arguments
@@ -198,7 +198,7 @@ oxy-bisulfite conversion.")
                              r-ggplot2
                              r-dplyr
                              r-colorspec))
-    (home-page "https://github.com/FGu5tav0/OxSR")
+    (home-page "https://github.com/FGu5tav0/OxSR/")
     (synopsis "Soil Iron Oxides via Diffuse Reflectance")
     (description
      "Calculate the ratio of iron oxides, hematite and goethite, in soil using the
@@ -11339,13 +11339,13 @@ The method is based on Jie Ding, Yu Xiang, Lu Shen, Vahid Tarokh (2017)
 (define-public r-officedown
   (package
     (name "r-officedown")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "officedown" version))
        (sha256
-        (base32 "0mxg46jg4vb6bxxqayvf84g8bllwsf11ybkfinrsdzdlkw89s3vk"))))
+        (base32 "19fb49did42c1xi7ww569b24xcawhk6r4qil3z2ccy98khm35qg1"))))
     (properties `((upstream-name . "officedown")))
     (build-system r-build-system)
     (arguments

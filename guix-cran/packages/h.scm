@@ -15772,13 +15772,13 @@ generators for the sample size estimations.")
 (define-public r-h2otools
   (package
     (name "r-h2otools")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h2otools" version))
        (sha256
-        (base32 "105zc76yi03ib5l6366an472hnf3m0pk1mwghwn8pwi91pfybzzr"))))
+        (base32 "0q9m8yipiac1vc5xzafhzgv3sn81i6rk00rdixcxlpfrrrrfrvgl"))))
     (properties `((upstream-name . "h2otools")))
     (build-system r-build-system)
     (arguments
@@ -15788,10 +15788,10 @@ generators for the sample size estimations.")
     (home-page "https://github.com/haghish/h2otools")
     (synopsis "Machine Learning Model Evaluation for 'h2o' Package")
     (description
-     "Several functions are provided that simplify using h2o package.  Currently, a
-function for extracting the @code{AutoML} model parameter is provided, alongside
-a function for computing F-Measure statistics at any given threshold.  For more
-information about h2o package see <https://h2o.ai/>.")
+     "Enhances the H2O platform by providing tools for detailed evaluation of machine
+learning models.  It includes functions for bootstrapped performance evaluation,
+extended F-score calculations, and various other metrics, aimed at improving
+model assessment.")
     (license license:expat)))
 
 (define-public r-h2o4gpu

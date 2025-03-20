@@ -1172,24 +1172,24 @@ set of different commands.")
 (define-public r-avocado
   (package
     (name "r-avocado")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avocado" version))
        (sha256
-        (base32 "0qy9ripwydm3f70rpxwk0asc7r25hg8jcbrr4rz8bxs93q1lsz8x"))))
+        (base32 "15a61n91fbzwh4ds69rlcr0x39dj7yj5m0i259y2xk4afmijb3sl"))))
     (properties `((upstream-name . "avocado")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=avocado")
+    (home-page "https://github.com/nikdata/avocado")
     (synopsis "Weekly Hass Avocado Sales Summary")
     (description
      "This package provides a weekly summary of Hass Avocado sales for the contiguous
-US from January 2017 to November 2020.  See the package website for more
+US from January 2017 through December 20204.  See the package website for more
 information, documentation, and examples.  Data source: Haas Avocado Board
 <https://hassavocadoboard.com/category-data/>.")
     (license license:expat)))
@@ -2882,6 +2882,36 @@ sending them to the viewer app, and extracting design data, and Viewer for
 rendering 2D and 3D models.")
     (license (list (license:fsdg-compatible "Apache License")
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-autodb
+  (package
+    (name "r-autodb")
+    (version "2.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autodb" version))
+       (sha256
+        (base32 "0vkn90w3xpd1cgm7g3idjd0q1rj8nin146asysvzaixaqpm4h9s1"))))
+    (properties `((upstream-name . "autodb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang))
+    (native-inputs (list r-knitr))
+    (home-page "https://charnelmouse.github.io/autodb/")
+    (synopsis "Automatic Database Normalisation for Data Frames")
+    (description
+     "Automatic normalisation of a data frame to third normal form, with the intention
+of easing the process of data cleaning. (Usage to design your actual database
+for you is not advised.) Originally inspired by the @code{AutoNormalize} library
+for Python by Alteryx (<https://github.com/alteryx/autonormalize>), with various
+changes and improvements.  Automatic discovery of functional or approximate
+dependencies, normalisation based on those, and plotting of the resulting
+\"database\" via Graphviz', with options to exclude some attributes at discovery
+time, or remove discovered dependencies at normalisation time.")
+    (license license:bsd-3)))
 
 (define-public r-autocovariateselection
   (package
@@ -6315,13 +6345,13 @@ finance, and statistics.")
 (define-public r-arutools
   (package
     (name "r-arutools")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARUtools" version))
        (sha256
-        (base32 "1c5l6ykn7zrk9j2lgsxphs5kn113rjax5qdi65wga7cvdixrkxab"))))
+        (base32 "1irc7gklf6n9057g2rk38fa027rcl0zsaa0iyfwxy528pkvy04g6"))))
     (properties `((upstream-name . "ARUtools")))
     (build-system r-build-system)
     (arguments
@@ -25408,13 +25438,13 @@ database via @code{connect_to_db()}, set filter arguments via
 (define-public r-accumulate
   (package
     (name "r-accumulate")
-    (version "0.9.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "accumulate" version))
        (sha256
-        (base32 "0c2iiliqpyblfdz189d06ljbbp0hyadhgr7hrzm0wfcm8245njah"))))
+        (base32 "0bjqmglg6pva0z1xd0inajdwwlr4rbmszriyi7lkagwd54k1vdr8"))))
     (properties `((upstream-name . "accumulate")))
     (build-system r-build-system)
     (arguments
@@ -25427,7 +25457,8 @@ database via @code{connect_to_db()}, set filter arguments via
      "Estimate group aggregates, where one can set user-defined conditions that each
 group of records must satisfy to be suitable for aggregation.  If a group of
 records is not suitable, it is expanded using a collapsing scheme defined by the
-user.")
+user.  A paper on this package was published in the Journal of Statistical
+Software <doi:10.18637/jss.v112.i04>.")
     (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-accucor

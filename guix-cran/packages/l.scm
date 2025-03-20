@@ -2923,13 +2923,13 @@ Mukhopadhyay, S. and Wang, K. (2020, Biometrika); <@code{arXiv:1810.01724>}.")
 (define-public r-lpirfs
   (package
     (name "r-lpirfs")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpirfs" version))
        (sha256
-        (base32 "1ncg341xv8bf6jl8m6aqhd2ds8lmi4wf0gxj9fnbi5gbxpbqk50y"))))
+        (base32 "19p0hwhcapc72a4b0y7ldpwlrcd497y2rdvmiah10z8vj4msagm2"))))
     (properties `((upstream-name . "lpirfs")))
     (build-system r-build-system)
     (arguments
@@ -8397,19 +8397,19 @@ median of the distribution.")
 (define-public r-llmr
   (package
     (name "r-llmr")
-    (version "0.2.3")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LLMR" version))
        (sha256
-        (base32 "0jnkccp9fl9d30fwcm5c1nkfmhf8pv2wvdh7wy82fjxvxiljnd56"))))
+        (base32 "0xb11l1dhmb2gfjpkgscjh6637hm6m9b63i2968gnjyx235gjky0"))))
     (properties `((upstream-name . "LLMR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-purrr r-httr2))
+    (propagated-inputs (list r-rlang r-purrr r-memoise r-httr2))
     (home-page "https://github.com/asanaei/LLMR")
     (synopsis "Interface for Large Language Model APIs in R")
     (description
@@ -8421,9 +8421,8 @@ Language Model (LLM) APIs such as @code{OpenAI} (see
 <https://docs.together.ai/docs/quickstart> for details), @code{DeepSeek} (see
 <https://api-docs.deepseek.com> for details), Gemini (see
 <https://aistudio.google.com> for details), and Voyage AI (see
-<https://docs.voyageai.com/docs/introduction> for details).  Allows users to
-configure API parameters, send messages, and retrieve responses seamlessly
-within R.")
+<https://docs.voyageai.com/docs/introduction> for details).  Allows users to use
+and switch between various APIs seamlessly within R, and define LLM agents.")
     (license license:expat)))
 
 (define-public r-llm
@@ -8611,13 +8610,13 @@ computed for these predictive components.  The system is built on top of
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.18")
+    (version "1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "0lrqbdj0a3dbdl2xdn94jdc0sv3cns0bnkfd3z94c571z35xzx56"))))
+        (base32 "0w4f3bl5f6l6728lnwj15zp45wawx7f0zaczcvvdfafwzr9r93mn"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (arguments
@@ -8625,19 +8624,15 @@ computed for these predictive components.  The system is built on top of
       #:tests? #f))
     (propagated-inputs (list r-ggplot2 r-class))
     (native-inputs (list r-knitr))
-    (home-page "https://www.uva.nl/profile/a.mohammadi")
+    (home-page "https://uncovering-data-science.netlify.app")
     (synopsis "\"Eating the Liver of Data Science\"")
     (description
-     "Offers a suite of helper functions to simplify various data science techniques
-for non-experts.  This package aims to enable individuals with only a minimal
-level of coding knowledge to become acquainted with these techniques in an
-accessible manner.  Inspired by an ancient Persian idiom, we liken this process
-to \"eating the liver of data science,\" suggesting a deep and intimate engagement
-with the field of data science.  This package includes functions for tasks such
-as data partitioning for out-of-sample testing, calculating Mean Squared Error
-(MSE) to assess prediction accuracy, and data transformations (z-score and
-min-max).  In addition to these helper functions, the liver package also
-features several intriguing datasets valuable for multivariate analysis.")
+     "This package provides a suite of helper functions and a collection of datasets
+used in the book <https://uncovering-data-science.netlify.app>.  It is designed
+to make data science techniques accessible to individuals with minimal coding
+experience.  Inspired by an ancient Persian idiom, the package likens this
+learning process to \"eating the liver of data science,\" symbolizing deep and
+immersive engagement with the field.")
     (license license:gpl2+)))
 
 (define-public r-live
@@ -18794,19 +18789,25 @@ observed variables and multiple	group models.")
 (define-public r-laminr
   (package
     (name "r-laminr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "laminr" version))
        (sha256
-        (base32 "0p1ngfvk3mipyj37cwqc9haidlrd18ngzkbpnw8na96n0229mj5c"))))
+        (base32 "0s5ck39izl4gj975792ska36flap6782bn5mndvb2c8mhxd4iw2v"))))
     (properties `((upstream-name . "laminr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-reticulate r-cli))
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-reticulate
+                             r-r6
+                             r-r-utils
+                             r-purrr
+                             r-cli))
     (native-inputs (list r-quarto))
     (home-page "https://laminr.lamin.ai")
     (synopsis "Client for 'LaminDB'")
@@ -20287,13 +20288,13 @@ spectral clustering method using l1-regularization\" (2022).")
 (define-public r-l1pack
   (package
     (name "r-l1pack")
-    (version "0.50")
+    (version "0.52")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1pack" version))
        (sha256
-        (base32 "1ipyx70y83295a6shjzgzmk1zipx4xbv9pnibjh2pxl01vc7myhx"))))
+        (base32 "0mk282f9kd4rz8gkhrdl670p430ib5qbi420j717b78ca1bvv7h3"))))
     (properties `((upstream-name . "L1pack")))
     (build-system r-build-system)
     (arguments
@@ -20301,7 +20302,7 @@ spectral clustering method using l1-regularization\" (2022).")
       #:tests? #f))
     (propagated-inputs (list r-fastmatrix))
     (native-inputs (list gfortran))
-    (home-page "http://l1pack.mat.utfsm.cl/")
+    (home-page "https://github.com/faosorios/L1pack")
     (synopsis "Routines for L1 Estimation")
     (description
      "L1 estimation for linear regression using Barrodale and Roberts method

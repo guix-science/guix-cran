@@ -5685,13 +5685,13 @@ more information on the API, see
 (define-public r-trtswitch
   (package
     (name "r-trtswitch")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trtswitch" version))
        (sha256
-        (base32 "1a1wf72p51fgm843vbpsj7a2h7za6d3mknvy05jjmnh3d62z5vc3"))))
+        (base32 "1y4x2mjrxw9j0m8jcv7qswgi2828gzfbwhmgzm8zh1kn78fsqxd0"))))
     (properties `((upstream-name . "trtswitch")))
     (build-system r-build-system)
     (arguments
@@ -11013,6 +11013,38 @@ translations (for tutorial see Santos et al., 2023
 seamlessly with the tidyquant package.")
     (license license:expat)))
 
+(define-public r-tpxg
+  (package
+    (name "r-tpxg")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TPXG" version))
+       (sha256
+        (base32 "0b55iargg4yvx3vlkz4a3kpk7wlk1zd3q621fkzb98k9x2bp7zwk"))))
+    (properties `((upstream-name . "TPXG")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rfast2))
+    (home-page "https://cran.r-project.org/package=TPXG")
+    (synopsis
+     "Two Parameter Xgamma & Poisson Xgamma: Regression & Distribution Functions")
+    (description
+     "The two-parameter Xgamma and Poisson Xgamma distributions are analyzed, covering
+standard distribution and regression functions, maximum likelihood estimation,
+quantile functions, probability density and mass functions, cumulative
+distribution functions, and random number generation.  References include: \"Sen,
+S., Chandra, N. and Maiti, S. S. (2018).  On properties and applications of a
+two-parameter XGamma distribution.  Journal of Statistical Theory and
+Applications, 17(4): 674--685. <doi:10.2991/jsta.2018.17.4.9>.\" \"Wani, M. A.,
+Ahmad, P. B., Para, B. A. and Elah, N. (2023).  A new regression model for count
+data with applications to health care data.  International Journal of Data
+Science and Analytics. <doi:10.1007/s41060-023-00453-1>.\".")
+    (license license:gpl2+)))
+
 (define-public r-tpwb
   (package
     (name "r-tpwb")
@@ -13415,6 +13447,40 @@ one-mode network.  Longitudinal datasets allow for an understanding of the
 causal relationship among ties, which is not the case in cross-sectional
 datasets as ties are dependent upon each other.")
     (license license:gpl3)))
+
+(define-public r-tndata
+  (package
+    (name "r-tndata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tndata" version))
+       (sha256
+        (base32 "0yryaydbiykbaxii9gjinpxzzm5qljnvjd2jp750q9mmpkaslcdl"))))
+    (properties `((upstream-name . "tndata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-purrr
+                             r-lubridate
+                             r-logger
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-glue
+                             r-fs
+                             r-dplyr))
+    (home-page "https://github.com/aymennasri/tndata")
+    (synopsis "Fetch Datasets from the Official Tunisian Data Catalog")
+    (description
+     "Simplifies access to Tunisian government open data from
+<https://data.gov.tn/fr/>.  Queries datasets by theme, author, or keywords,
+retrieves metadata, and gets structured results ready for analysis; all through
+the official CKAN API.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-tnc
   (package
@@ -22588,13 +22654,13 @@ feature space consisting of all possible phrases.")
 (define-public r-textrecipes
   (package
     (name "r-textrecipes")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textrecipes" version))
        (sha256
-        (base32 "1y59z12pjwk0ny9pmdw8323md2313wxgn9hz47a6ki8lnfxrwig2"))))
+        (base32 "0vj0yd4ib5zabyh8w51as4ahygklcl906c3mfv4sf0flqr4w8rpy"))))
     (properties `((upstream-name . "textrecipes")))
     (build-system r-build-system)
     (arguments
@@ -22603,6 +22669,7 @@ feature space consisting of all possible phrases.")
     (propagated-inputs (list r-vctrs
                              r-tokenizers
                              r-tibble
+                             r-sparsevctrs
                              r-snowballc
                              r-rlang
                              r-recipes
@@ -23339,13 +23406,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "1.3.0")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text" version))
        (sha256
-        (base32 "1q7kpmc27jjq54xsqmvn34pf6nmmx9aps7mxvkf7b1bdlgjs5csj"))))
+        (base32 "0xp15xyxrkqihs3kzn67376c1jcskkdrnqgmx0mlhxin8mcrwdip"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (arguments

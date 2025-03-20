@@ -4078,13 +4078,13 @@ examined in Joshi, Pustejovsky, and Beretvas (2022) <DOI:10.1002/jrsm.1554>.")
 (define-public r-wildlifedi
   (package
     (name "r-wildlifedi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wildlifeDI" version))
        (sha256
-        (base32 "1jl21mnsl993fc3y9z56zb8yfz3j0hvg8f9q69ghlicx139mik0m"))))
+        (base32 "0r677xa1v1h90j9nfqdqdqff4p8npw66dgdh6crf4i6g5layqplx"))))
     (properties `((upstream-name . "wildlifeDI")))
     (build-system r-build-system)
     (arguments
@@ -8049,6 +8049,33 @@ Gallo (2006) (<doi: 10.14358/PERS.72.7.823>), agreement metrics from Willmott
 methodology from Meyer and Pebesma (2021) (<doi:10.1111/2041-210X.13650>), and
 an implementation of multi-scale assessment as described in Riemann et al'.
 (2010) (<doi:10.1016/j.rse.2010.05.010>).")
+    (license license:expat)))
+
+(define-public r-waypoint
+  (package
+    (name "r-waypoint")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Waypoint" version))
+       (sha256
+        (base32 "1dixn8pnyhgf3blkg62yzhx3679nwbcsfrl8vnsz37fnk73gqkq8"))))
+    (properties `((upstream-name . "Waypoint")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://mark-eis.github.io/Waypoint/")
+    (synopsis
+     "Convert, Validate, Format and Print Geographic Coordinates and Waypoints")
+    (description
+     "Convert, validate, format and elegantly print geographic coordinates and
+waypoints (paired latitude and longitude values) in decimal degrees, degrees and
+minutes, and degrees, minutes and seconds using high performance C++ code to
+enable rapid conversion and formatting of large coordinate and waypoint
+datasets.")
     (license license:expat)))
 
 (define-public r-wayfindr

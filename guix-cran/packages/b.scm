@@ -1954,13 +1954,13 @@ cluster certain effects and to reduce the complexity of the models.")
 (define-public r-btergm
   (package
     (name "r-btergm")
-    (version "1.10.12")
+    (version "1.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "btergm" version))
        (sha256
-        (base32 "1xcn24m6ldmi5wh44169vg13f7a7apbk45iwsl88clbnf2l9wpb8"))))
+        (base32 "017qjm2xw744264hgl5d95snzdk2pfr3dlifxwyc3qxapzh4vmpm"))))
     (properties `((upstream-name . "btergm")))
     (build-system r-build-system)
     (arguments
@@ -3906,13 +3906,13 @@ convert file to appropriate format, or to extract data from a file.  See
 (define-public r-brotli
   (package
     (name "r-brotli")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brotli" version))
        (sha256
-        (base32 "0ihrf472ynjiby4k032cnj7383wvd5fi6rm19snjxmzxx7yc6xl7"))))
+        (base32 "14qb83jgkxkwgqkpw57kx5ikbxrb84m5gp715qys1nrwk8maska4"))))
     (properties `((upstream-name . "brotli")))
     (build-system r-build-system)
     (arguments
@@ -5240,19 +5240,19 @@ GJRM package.")
 (define-public r-brazilmet
   (package
     (name "r-brazilmet")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrazilMet" version))
        (sha256
-        (base32 "0pcr665j4balmcm4sq6l19nmhpbs7ayw5dljsdxr91bn6srb33b3"))))
+        (base32 "0d948as65nayy7k0hbfbwp7abip3czls1976af2mg0j75fyfg77c"))))
     (properties `((upstream-name . "BrazilMet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr r-readxl r-dplyr))
+    (propagated-inputs (list r-tibble r-stringr r-readxl r-dplyr))
     (home-page "https://cran.r-project.org/package=BrazilMet")
     (synopsis
      "Download and Processing of Automatic Weather Stations (AWS) Data of INMET-Brazil")
@@ -18005,19 +18005,20 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.3.2")
+    (version "4.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "0dpnwxlf35lvdl00gdl3608ki1jfg9wb13i0gc8c3dcqwijw9r8b"))))
+        (base32 "1ib8kv7i31q4n6827dqjx1w1xnyhgmfbrivhs8aj5f12m3q2ysfv"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidytext
+    (propagated-inputs (list r-visnetwork
+                             r-tidytext
                              r-tidyr
                              r-stringr
                              r-stringi
@@ -26016,13 +26017,13 @@ He and Lopes (2018) <@code{arXiv:1806.05738>}.")
 (define-public r-bayeslist
   (package
     (name "r-bayeslist")
-    (version "0.0.1.4")
+    (version "0.0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayeslist" version))
        (sha256
-        (base32 "11b0dq1gc3qsv6qy5hdrf5jzbw5g8alqgp6nj5x1bramhnrc9mia"))))
+        (base32 "0nxms57r6q0i1ikdc4d2wsmxyghccs9svzy3z561xym4alkcqhac"))))
     (properties `((upstream-name . "bayeslist")))
     (build-system r-build-system)
     (arguments
@@ -28246,13 +28247,13 @@ based on the Stan platform (Carpenter et el.  2017 <doi:10.18637/jss.v076.i01>).
 (define-public r-bayenet
   (package
     (name "r-bayenet")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bayenet" version))
        (sha256
-        (base32 "0h0b6m3lpwjax5vwbmqmfqx55hx3sgbb87jby2lwn3d2v138bpks"))))
+        (base32 "0g5kndbmgzkgjaz5jxq5ibcs8r870sk7zykw6vik8vh878lb50xy"))))
     (properties `((upstream-name . "Bayenet")))
     (build-system r-build-system)
     (arguments
@@ -28267,15 +28268,14 @@ based on the Stan platform (Carpenter et el.  2017 <doi:10.18637/jss.v076.i01>).
                              r-hbmem
                              r-gsl))
     (home-page "https://cran.r-project.org/package=Bayenet")
-    (synopsis "Bayesian Quantile Elastic Net for Genetic Study")
+    (synopsis "Robust Bayesian Elastic Net")
     (description
      "As heavy-tailed error distribution and outliers in the response variable widely
 exist, models which are robust to data contamination are highly demanded.  Here,
 we develop a novel robust Bayesian variable selection method with elastic net
-penalty for quantile regression in genetic analysis.  In particular, the
-spike-and-slab priors have been incorporated to impose sparsity.  An efficient
-Gibbs sampler has been developed to facilitate computation.The core modules of
-the package have been developed in C++ and R.")
+penalty.  In particular, the spike-and-slab priors have been incorporated to
+impose sparsity.  An efficient Gibbs sampler has been developed to facilitate
+computation.The core modules of the package have been developed in C++ and R.")
     (license license:gpl2)))
 
 (define-public r-bayefdr

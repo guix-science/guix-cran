@@ -18048,13 +18048,13 @@ as described in Alfons, A., Archimbaud, A., Nordhausen, K.and Ruiz-Gazen, A.
 (define-public r-ics
   (package
     (name "r-ics")
-    (version "1.4-1")
+    (version "1.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICS" version))
        (sha256
-        (base32 "0xbah28g7k7c37r4qsq3ki67r8jn4psincpkjxg1mmfar5521z29"))))
+        (base32 "0kyvjad7vg5s842hxgjhm6igqxr4na38jic13zi43dnzi0gm6cq2"))))
     (properties `((upstream-name . "ICS")))
     (build-system r-build-system)
     (arguments

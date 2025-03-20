@@ -339,13 +339,13 @@ R scripts.")
 (define-public r-vvconverter
   (package
     (name "r-vvconverter")
-    (version "0.5.10")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvconverter" version))
        (sha256
-        (base32 "1dl0vvglj2p1i1c1a9vxgr6cr5f7bxqqnv7w1ds0gzgwv5zyhz1c"))))
+        (base32 "0brb108ygha6v12w9h0b8302qv1yd63bgwkmrwma0crabsdsx9c0"))))
     (properties `((upstream-name . "vvconverter")))
     (build-system r-build-system)
     (arguments
@@ -530,6 +530,28 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
     (description
      "Make it easy to use vue in R with helper dependency functions and examples.")
     (license license:expat)))
+
+(define-public r-vudc
+  (package
+    (name "r-vudc")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vudc" version))
+       (sha256
+        (base32 "0zxz6n3ixa3xjzcinky8ymqjx9w8y8z65mz8d84dl00mxzkmkz4h"))))
+    (properties `((upstream-name . "vudc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=vudc")
+    (synopsis "Visualization of Univariate Data for Comparison")
+    (description
+     "This package contains functions for visualization univariate data: ccdplot and
+qddplot.")
+    (license license:gpl2+)))
 
 (define-public r-vtype
   (package
@@ -2975,19 +2997,19 @@ also many practical uses under the XAI paradigm.")
 (define-public r-visualizesimon2stage
   (package
     (name "r-visualizesimon2stage")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisualizeSimon2Stage" version))
        (sha256
-        (base32 "0dkbkc1cprri9kkzsl47651n03h2hdlq34b4w6p4j3x14d102dgx"))))
+        (base32 "11jxgbb5hgz3i3mk01rv1vy0m2x103ilxzq8adjpcxsy5p3d1qfp"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2 r-geomtextpath))
+    (propagated-inputs (list r-ggplot2))
     (home-page "https://cran.r-project.org/package=VisualizeSimon2Stage")
     (synopsis "Visualize Simon's Two-Stage Design")
     (description
@@ -3736,19 +3758,25 @@ components for the web.")
 (define-public r-visa
   (package
     (name "r-visa")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visa" version))
        (sha256
-        (base32 "1mx7nbbpxs4fdp781a75qvffa42dx2n6anslbfs9bnprmvzmljqr"))))
+        (base32 "1iz8aylfkp6zhb51hk65s7rywwl1nm9ypcci06bz2mkx2j068r0l"))))
     (properties `((upstream-name . "visa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-reshape2 r-rcolorbrewer r-matrix r-ggpmisc
+    (propagated-inputs (list r-reshape2
+                             r-rcolorbrewer
+                             r-plotly
+                             r-plot3d
+                             r-matrix
+                             r-magrittr
+                             r-ggpmisc
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kang-yu/visa")
@@ -5480,13 +5508,13 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "13hnkcwhkss8334jv927zlp991157rq89m31c20rss963a5dspjf"))))
+        (base32 "17lk5pq4fn2yp3b3cm4i01zn03rqxyywikv1zw83r5q8ldwjxc62"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
     (arguments

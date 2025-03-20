@@ -3076,13 +3076,13 @@ design, i.e.  when each test is applied to each subject in the study.")
 (define-public r-dtcomb
   (package
     (name "r-dtcomb")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtComb" version))
        (sha256
-        (base32 "0zfcbwl40hxva5282qplr27idclickid0p4a8vnz5559abygl5aa"))))
+        (base32 "1fgcw7dfgs4padns3d6v50fpaa1ng0mycydslwqpjnbdiyc956vn"))))
     (properties `((upstream-name . "dtComb")))
     (build-system r-build-system)
     (arguments
@@ -27062,13 +27062,13 @@ gene networks.")
 (define-public r-dbx
   (package
     (name "r-dbx")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbx" version))
        (sha256
-        (base32 "0d5ha0syhrgfx157hkmyfdsxf57crjj28afdb2xxyindakplgp29"))))
+        (base32 "14yxxzj3xlmjxv8a54jmjra9iwfafh9s0kihwl8ksr31k1qngdrv"))))
     (properties `((upstream-name . "dbx")))
     (build-system r-build-system)
     (arguments
@@ -29085,6 +29085,34 @@ within the CAVD @code{DataSpace'(<https://dataspace.cavd.org>}), a data sharing
 and discovery tool that facilitates exploration of HIV immunological data from
 pre-clinical and clinical HIV vaccine studies.")
     (license license:gpl3)))
+
+(define-public r-datasimilarity
+  (package
+    (name "r-datasimilarity")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DataSimilarity" version))
+       (sha256
+        (base32 "1ncnxwdma0yli6ymhgh33g2ybizgmfshidhkwl1prdal2x9v0f42"))))
+    (properties `((upstream-name . "DataSimilarity")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-boot))
+    (home-page "https://cran.r-project.org/package=DataSimilarity")
+    (synopsis
+     "Quantifying Similarity of Datasets and Multivariate Two- And k-Sample Testing")
+    (description
+     "This package provides a collection of methods for quantifying the similarity of
+two or more datasets, many of which can be used for two- or k-sample testing.
+It provides newly implemented methods as well as wrapper functions for existing
+methods that enable calling many different methods in a unified framework.  The
+methods were selected from the review and comparison of Stolte et al. (2024)
+<doi:10.1214/24-SS149>.")
+    (license license:gpl3+)))
 
 (define-public r-datasetsuni
   (package
