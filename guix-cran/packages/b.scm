@@ -3721,32 +3721,6 @@ using the torch R package.  Models include linear, logistic, and multinomial
 regression as well as multilayer perceptrons.")
     (license license:expat)))
 
-(define-public r-brugs
-  (package
-    (name "r-brugs")
-    (version "0.9-2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BRugs" version))
-       (sha256
-        (base32 "002x1qliy2ziqgj56f10yw6n7n8rn60brzi1m0gayy3zb0jps9qm"))))
-    (properties `((upstream-name . "BRugs")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-coda))
-    (home-page "https://cran.r-project.org/package=BRugs")
-    (synopsis "Interface to the 'OpenBUGS' MCMC Software")
-    (description
-     "Fully-interactive R interface to the @code{OpenBUGS} software for Bayesian
-analysis using MCMC sampling.  Runs natively and stably in 32-bit R under
-Windows.  Versions running on x86Linux and on 64-bit R under Windows are in
-\"beta\" status and less efficient.")
-    (license license:gpl2)))
-
 (define-public r-brucer
   (package
     (name "r-brucer")
@@ -4034,56 +4008,6 @@ extending the facet system in ggplot2 to facilitate exploration of samples of
 data.  These methods are fully described in the paper \"brolgar: An R package to
 Browse Over Longitudinal Data Graphically and Analytically in R\", Nicholas
 Tierney, Dianne Cook, Tania Prvan (2020) <doi:10.32614/RJ-2022-023>.")
-    (license license:expat)))
-
-(define-public r-brokenstick
-  (package
-    (name "r-brokenstick")
-    (version "2.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "brokenstick" version))
-       (sha256
-        (base32 "0bq470kvv9084qaaaz5yicmxpljp23gb3dqijrmdwk1agqxn09mc"))))
-    (properties `((upstream-name . "brokenstick")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-rlang
-                             r-matrixsampling
-                             r-lme4
-                             r-dplyr
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "doi:10.18637/jss.v106.i07")
-    (synopsis "Broken Stick Model for Irregular Longitudinal Data")
-    (description
-     "Data on multiple individuals through time are often sampled at times that differ
-between persons.  Irregular observation times can severely complicate the
-statistical analysis of the data.  The broken stick model approximates each
-subjectâs trajectory by one or more connected line segments.  The times at
-which segments connect (breakpoints) are identical for all subjects and under
-control of the user.  A well-fitting broken stick model effectively transforms
-individual measurements made at irregular times into regular trajectories with
-common observation times.  Specification of the model requires three variables:
-time, measurement and subject.  The model is a special case of the linear mixed
-model, with time as a linear B-spline and subject as the grouping factor.  The
-main assumptions are: subjects are exchangeable, trajectories between
-consecutive breakpoints are straight, random effects follow a multivariate
-normal distribution, and unobserved data are missing at random.  The package
-contains functions for fitting the broken stick model to data, for predicting
-curves in new data and for plotting broken stick estimates.  The package
-supports two optimization methods, and includes options to structure the
-variance-covariance matrix of the random effects.  The analyst may use the
-software to smooth growth curves by a series of connected straight lines, to
-align irregularly observed curves to a common time grid, to create synthetic
-curves at a user-specified set of breakpoints, to estimate the time-to-time
-correlation matrix and to predict future observations.  See
-<doi:10.18637/jss.v106.i07> for additional documentation on background,
-methodology and applications.")
     (license license:expat)))
 
 (define-public r-brokenadaptiveridge
@@ -13302,13 +13226,13 @@ GPL-3).")
 (define-public r-biovizseq
   (package
     (name "r-biovizseq")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioVizSeq" version))
        (sha256
-        (base32 "1yq646n6rn4knd9fagbqx7k2myrhbh83nm1f8s87i0im2rrcz5kd"))))
+        (base32 "1mlf1lrcpd216dnjpjvdfxy6wzr9v0bs0aja1di52qq0plnhjb64"))))
     (properties `((upstream-name . "BioVizSeq")))
     (build-system r-build-system)
     (arguments
@@ -30216,13 +30140,13 @@ codes can be included for hierarchically structured sampling designs.")
 (define-public r-barcode
   (package
     (name "r-barcode")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "barcode" version))
        (sha256
-        (base32 "1kk5nwh810l5vix6qzwl28cfi8rk7vc35hv73whk1bkndv2y4qx0"))))
+        (base32 "01lj7rw00yd88wb3d5rdbpx2wwsy1h9b7wkd07pspycixq99ahg6"))))
     (properties `((upstream-name . "barcode")))
     (build-system r-build-system)
     (arguments

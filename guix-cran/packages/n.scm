@@ -6866,13 +6866,13 @@ the updating process.  See e.g. TomÃ© et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "1f4jw1mk5cvfv7pq1dvpy2ba4g8ih8chgpp2rrimy800bq810ann"))))
+        (base32 "0b6j4xrzvlb7lvdcqjg4g3zx770lssl4k1gdxkhdqb1q9w53144i"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (arguments
@@ -11809,13 +11809,13 @@ network analysis.")
 (define-public r-networksem
   (package
     (name "r-networksem")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networksem" version))
        (sha256
-        (base32 "1swbai9q8a002934przm4s2qyy6pn5sll20dp0ji7r66r7kg99s9"))))
+        (base32 "08ggqr7aswx7qw8zwy5miblisvjxmj9k6r0kbw2ji7wzyrnrd4fl"))))
     (properties `((upstream-name . "networksem")))
     (build-system r-build-system)
     (arguments
@@ -13868,47 +13868,6 @@ regression.")
 Mirhajianmoghadam (2019) <doi:10.19139/soic-2310-5070-679>) for a given data
 frame.")
     (license license:gpl3)))
-
-(define-public r-nestedmodels
-  (package
-    (name "r-nestedmodels")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nestedmodels" version))
-       (sha256
-        (base32 "09qdfzcm3xv3ilh7awsi5anyra7cwb4xyxs4z30yxc28ll6dh9mf"))))
-    (properties `((upstream-name . "nestedmodels")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rsample
-                             r-rlang
-                             r-recipes
-                             r-purrr
-                             r-parsnip
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-generics
-                             r-foreach
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ashbythorpe/nestedmodels")
-    (synopsis "Tidy Modelling for Nested Data")
-    (description
-     "This package provides a modelling framework for nested data using the tidymodels
-ecosystem.  Specify how to nest data using the recipes package, create testing
-and training splits using rsample', and fit models to this data using the
-parsnip and workflows packages.  Allows any model to be fit to nested data.")
-    (license license:expat)))
 
 (define-public r-nestedmenu
   (package

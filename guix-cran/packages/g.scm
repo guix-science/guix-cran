@@ -9760,13 +9760,13 @@ provided using conditional simulations.")
 (define-public r-gpairs
   (package
     (name "r-gpairs")
-    (version "1.3.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpairs" version))
        (sha256
-        (base32 "08m1ydrr239vnhjbl47mng3i2w9bqmd8fijrwsraq5ysvn826n27"))))
+        (base32 "0zzbii0c35sy023rg7chxwpaxkh3gpjbnrrwzk8bxjjq8hjwyf3f"))))
     (properties `((upstream-name . "gpairs")))
     (build-system r-build-system)
     (arguments
@@ -13875,13 +13875,13 @@ performance of global optimization algorithms.")
 (define-public r-globalkinhom
   (package
     (name "r-globalkinhom")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "globalKinhom" version))
        (sha256
-        (base32 "0j07vlr8df9amb90cdg09yypz41878nhrbxv5mplyyjj76d8szlq"))))
+        (base32 "0xx0lin3sck1k5zalv5faznbzszndwd5xv6dw7f2c7caskhc7cdw"))))
     (properties `((upstream-name . "globalKinhom")))
     (build-system r-build-system)
     (arguments
@@ -13889,7 +13889,7 @@ performance of global optimization algorithms.")
       #:tests? #f))
     (propagated-inputs (list r-spatstat-univar r-spatstat-random
                              r-spatstat-geom r-spatstat-explore))
-    (home-page "https://cran.r-project.org/package=globalKinhom")
+    (home-page "https://github.com/ThomasRShaw/globalKinhom")
     (synopsis
      "Inhomogeneous K- And Pair Correlation Functions Using Global Estimators")
     (description

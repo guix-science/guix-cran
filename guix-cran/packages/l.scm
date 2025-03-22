@@ -2367,13 +2367,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.12")
+    (version "0.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "1r9ry2z60ryvfc2bfnr3vmv9r7m59sv9lhcw32jnjk8ric0fpxfb"))))
+        (base32 "0clr1831mcb4lj3jqdw59l382ivxfl3a7hd8vlfarbw7nimysshg"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (arguments
@@ -2592,19 +2592,23 @@ count responses.")
 (define-public r-lqmix
   (package
     (name "r-lqmix")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lqmix" version))
        (sha256
-        (base32 "1pk156gckprp3nvqbhxbbr77njj2gcfmkd8fh8jmzb3bhkf0nlj2"))))
+        (base32 "12yhqr66yx2v23nsavdrlbg46bpirp97mj2mffjwrmw07d2jhgax"))))
     (properties `((upstream-name . "lqmix")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rdpack r-quantreg r-foreach r-doparallel
+    (propagated-inputs (list r-rdpack
+                             r-quantreg
+                             r-foreach
+                             r-dosnow
+                             r-doparallel
                              r-diagram))
     (home-page "https://cran.r-project.org/package=lqmix")
     (synopsis "Linear Quantile Mixture Models")
@@ -8606,6 +8610,32 @@ computed for these predictive components.  The system is built on top of
     (synopsis "Logistic Joinpoint Regression")
     (description "Fits and tests logistic joinpoint models.")
     (license license:gpl2+)))
+
+(define-public r-ljmp3converter
+  (package
+    (name "r-ljmp3converter")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LJmp3converter" version))
+       (sha256
+        (base32 "0zy58xf2i2j2jg5jv0fa6c8h5n0ilzlb934njilrq5g37gig02c1"))))
+    (properties `((upstream-name . "LJmp3converter")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstudioapi r-httr r-fs))
+    (home-page "https://cran.r-project.org/package=LJmp3converter")
+    (synopsis "Convert Video Files to MP3 Format using 'FFmpeg'")
+    (description
+     "Converts video files to MP3 using FFmpeg', which is dynamically downloaded to
+avoid bundling any third-party binaries.  Users must ensure compliance with the
+license terms of FFmpeg when using the package.  See
+<https://github.com/@code{BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip>}
+for details.")
+    (license license:gpl3)))
 
 (define-public r-liver
   (package

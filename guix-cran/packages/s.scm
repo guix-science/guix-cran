@@ -338,13 +338,13 @@ application of these @code{AgNPs}.")
 (define-public r-syrup
   (package
     (name "r-syrup")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syrup" version))
        (sha256
-        (base32 "0y47snzmsr17a2q7v7yy2xbjlshhc35jcvlklx32k7qyigvwphdc"))))
+        (base32 "1c4cmqhh7k5ykywjkrlz73sh0i43aqjbakg0gd0lz90vmjkin7jf"))))
     (properties `((upstream-name . "syrup")))
     (build-system r-build-system)
     (arguments
@@ -28358,13 +28358,13 @@ translated from the Matlab functions in <https://github.com/jiayi-ma/VFC>.")
 (define-public r-sparsevctrs
   (package
     (name "r-sparsevctrs")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsevctrs" version))
        (sha256
-        (base32 "0lmcz97kr7ms9zrgrppljz38nbra9w8h5b42r4ib1v4gyl5jkil8"))))
+        (base32 "1p39sx3byfq5gpjimri26iwz4gl7ryzj081hacsph1azr8f2sydq"))))
     (properties `((upstream-name . "sparsevctrs")))
     (build-system r-build-system)
     (arguments
@@ -48197,13 +48197,13 @@ Powered by the html2canvas @code{JavaScript} library.")
 (define-public r-shinyscholar
   (package
     (name "r-shinyscholar")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyscholar" version))
        (sha256
-        (base32 "0aa88yvyi5bnqn82c0j3krmg8kfhwy5h3z9rdj45s3id2naxa6db"))))
+        (base32 "1czgjqswk17zx499xjvds8d3bdz1a2822l0lxzpc7w64kqhly5cc"))))
     (properties `((upstream-name . "shinyscholar")))
     (build-system r-build-system)
     (arguments
@@ -51065,29 +51065,6 @@ installations.")
 privacy via ollama', powered by R shiny interface.  For more information on
 ollama', visit <https://ollama.com>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-shiny-info
-  (package
-    (name "r-shiny-info")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shiny.info" version))
-       (sha256
-        (base32 "162wvb02z5h1y7xgsyl6wv88zlfmbm1jlnz48f56fyybs54baw41"))))
-    (properties `((upstream-name . "shiny.info")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-glue r-git2r))
-    (home-page "https://cran.r-project.org/package=shiny.info")
-    (synopsis "'shiny' Info")
-    (description
-     "Displays simple diagnostic information of the shiny project in the user
-interface of the app.")
-    (license license:expat)))
 
 (define-public r-shiny-i18n
   (package
@@ -54502,13 +54479,13 @@ data\", Computational Statistics & Data Analysis (2022) 167, 107379.")
 (define-public r-setmethods
   (package
     (name "r-setmethods")
-    (version "4.0")
+    (version "4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SetMethods" version))
        (sha256
-        (base32 "0pzxcqbc7jnsxhv902qw2q9rcqskib11z36d5nav9wny6bj2z658"))))
+        (base32 "0w954nyczw37bwfy93mkpmc530f226mn55xjz80dqpiw7l5n1yy5"))))
     (properties `((upstream-name . "SetMethods")))
     (build-system r-build-system)
     (arguments
@@ -63475,13 +63452,13 @@ Abel Folch-Fortuny, Francisco Arteaga and Alberto Ferrer (2020).")
 (define-public r-scoutbar
   (package
     (name "r-scoutbar")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoutbaR" version))
        (sha256
-        (base32 "1aizgsbmdsmyrrxznqvqwk038vlbjwxzj6isnn11jcmb3845nd4p"))))
+        (base32 "1089svc16kysi2w45cyj7qzmi6ws3468mbyvvpv6h3c3n24hl8ll"))))
     (properties `((upstream-name . "scoutbaR")))
     (build-system r-build-system)
     (arguments

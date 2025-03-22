@@ -4178,13 +4178,13 @@ repositories.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "08dxnak06zxwaihlakhmxp2fm77nxpvh3kyxdg394342yy5dgbfq"))))
+        (base32 "1f8pzn8a0qnqs259xd6182zvvng17ygzmfxkmw8l1api4clpq96j"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (arguments
@@ -4197,11 +4197,10 @@ repositories.")
                              r-matrix
                              r-igraph
                              r-ggraph
-                             r-ggplot2
-                             r-ggm))
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://james-thorson-noaa.github.io/dsem/")
-    (synopsis "Fit Dynamic Structural Equation Models")
+    (synopsis "Dynamic Structural Equation Models")
     (description
      "Applies dynamic structural equation models to time-series data with generic and
 simplified specification for simultaneous and lagged effects.  Methods are
@@ -4601,13 +4600,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "0fjw19k6zb8ifhq065d7c3v3mcrxwc1vbbc75gx9b4iq0sz8b7nk"))))
+        (base32 "02ficr16cs3b1b9nrzpxjpgw4wx2p1yfydbpzzy721k92w1znq1k"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -6664,13 +6663,13 @@ non-parametric Bayesian method, Dirichlet-based Polya Tree.  See Ning (2018)
 (define-public r-dptm
   (package
     (name "r-dptm")
-    (version "1.6.0")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPTM" version))
        (sha256
-        (base32 "058b9sm41ns1393r0j9n932qc5bk32ddzlidzv7brrxyrz4zpd37"))))
+        (base32 "1yp3z5bqjnqlgh7sm9q0kkp4w4lirpzw5wfdhg60is270gxvikvz"))))
     (properties `((upstream-name . "DPTM")))
     (build-system r-build-system)
     (arguments
@@ -6678,6 +6677,7 @@ non-parametric Bayesian method, Dirichlet-based Polya Tree.  See Ning (2018)
       #:tests? #f))
     (propagated-inputs (list r-rcppeigen
                              r-rcpp
+                             r-r6
                              r-purrr
                              r-parabar
                              r-mass
@@ -6690,7 +6690,7 @@ non-parametric Bayesian method, Dirichlet-based Polya Tree.  See Ning (2018)
 RamÃ­rez-RondÃ¡n (2020) <doi:10.1080/07474938.2019.1624401>, and dynamic panel
 linear model suggested by Hsiao et al. (2002)
 <doi:10.1016/S0304-4076(01)00143-9>, where maximum likelihood type estimators
-are used.  Multiple threshold estimation based on Markov Chain Monte Carlo
+are used.  Multiple thresholds estimation based on Markov Chain Monte Carlo
 (MCMC) is allowed, and model selection of linear model, threshold model and
 multiple threshold model is also allowed.")
     (license license:gpl3+)))
@@ -17368,13 +17368,13 @@ clusters.")
 (define-public r-diceplot
   (package
     (name "r-diceplot")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceplot" version))
        (sha256
-        (base32 "12iz80vx2cx0ipzdpfwyibkxg2dy0rbi4krxkkgwn7p0wzigs2vb"))))
+        (base32 "1xjas48r0xpg72h1r5zrgf2yhz4qmla91ffb66mkzjg4gj3fazc0"))))
     (properties `((upstream-name . "diceplot")))
     (build-system r-build-system)
     (arguments
@@ -17382,6 +17382,7 @@ clusters.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-sf
                              r-rlang
                              r-rcolorbrewer
                              r-ggplot2
@@ -29297,31 +29298,6 @@ functions that facilitate the conversion of traditional data into the symbolic
 data format.")
     (license license:gpl2+)))
 
-(define-public r-datasailr
-  (package
-    (name "r-datasailr")
-    (version "0.8.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "datasailr" version))
-       (sha256
-        (base32 "0ym1aqrlglha36z883yf92rm0fydg1qsdgdy48z32yk41xbhp5iy"))))
-    (properties `((upstream-name . "datasailr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://datasailr.io")
-    (synopsis "Row by Row Data Processing Tool, Using 'DataSailr' Script")
-    (description
-     "This package provides a row by row data processing tool.  You can write data
-processing code in @code{DataSailr} script which is specially intended for data
-manipulation.  The package uses libsailr (C/C++ library) for its
-@code{DataSailr} code parsing and its execution.")
-    (license license:gpl3+)))
-
 (define-public r-datarobot
   (package
     (name "r-datarobot")
@@ -30198,37 +30174,6 @@ Functions in this package help us get an understanding of dataframes to
 dramatically reduces data coding time.")
     (license license:expat)))
 
-(define-public r-datafaker
-  (package
-    (name "r-datafaker")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DataFakeR" version))
-       (sha256
-        (base32 "1a25qp627n76qi4xzj62ipiy3qs2qvajcy9inzibwymryizlr0ia"))))
-    (properties `((upstream-name . "DataFakeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-tidygraph
-                             r-tibble
-                             r-r6
-                             r-purrr
-                             r-magrittr
-                             r-glue
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/openpharma/DataFakeR")
-    (synopsis "Generate Fake Data for Relational Databases")
-    (description
-     "Based on provided database description and/or database connection generate data
-sample preserving source structure.")
-    (license license:expat)))
-
 (define-public r-dataexplorer
   (package
     (name "r-dataexplorer")
@@ -30366,13 +30311,13 @@ et al. (2020) <doi:10.1016/j.neucom.2019.11.111>, Page (1954)
 (define-public r-datadictionary
   (package
     (name "r-datadictionary")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datadictionary" version))
        (sha256
-        (base32 "102ll25mi4ac1zkvvirk7k11hqpf9q9h2if1rkz93zlfms843hp7"))))
+        (base32 "1cz2rz4p9nj5xqbf7acn4gsliml9wa8y9zqjj3hvg6f6k7s6lky5"))))
     (properties `((upstream-name . "datadictionary")))
     (build-system r-build-system)
     (arguments
@@ -30382,14 +30327,12 @@ et al. (2020) <doi:10.1016/j.neucom.2019.11.111>, Page (1954)
                              r-tidyr
                              r-tibble
                              r-openxlsx
-                             r-magrittr
                              r-lubridate
                              r-labelled
                              r-haven
                              r-dplyr
-                             r-data-table
                              r-chron))
-    (home-page "https://cran.r-project.org/package=datadictionary")
+    (home-page "https://github.com/DoctorBJones/datadictionary")
     (synopsis "Create a Data Dictionary")
     (description
      "This package creates a data dictionary from any dataframe or tibble in your R

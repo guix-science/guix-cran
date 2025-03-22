@@ -514,13 +514,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.29")
+    (version "4.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1ph7iq0mz99d3czqxmv8biw06i88fdchrjcrvibsw3km6a4k6z54"))))
+        (base32 "1hm138mqagz2pqpc31kkq62c8panysbca9ad12pknr0if5qsnsci"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (arguments
@@ -5213,13 +5213,13 @@ approach).")
 (define-public r-freegroup
   (package
     (name "r-freegroup")
-    (version "1.1-9")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freegroup" version))
        (sha256
-        (base32 "09g8ms59mmb613ic3vva6wlrfig1al9akafvxi4gi7ab60vhv2il"))))
+        (base32 "0r9bcbvqpwzkfd3z8668kck89bvi4vf49j7hr6qkj5nl9i5aa8qg"))))
     (properties `((upstream-name . "freegroup")))
     (build-system r-build-system)
     (arguments
@@ -14861,6 +14861,33 @@ characteristics, wind adjustment factor), results visualization, and methods to
 estimate fire weather hazard.")
     (license license:gpl2)))
 
+(define-public r-firebase-auth-rest
+  (package
+    (name "r-firebase-auth-rest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "firebase.auth.rest" version))
+       (sha256
+        (base32 "1gdrccvh5hlrrpv57swjqvma5pw6ikmn6zyya7z22hwwmzlc97m3"))))
+    (properties `((upstream-name . "firebase.auth.rest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-httr2))
+    (home-page "https://github.com/kennedymwavu/firebase.auth.rest")
+    (synopsis "R Wrapper for 'Firebase Authentication REST API'")
+    (description
+     "This package provides a convenient and user-friendly interface to interact with
+the Firebase Authentication REST API':
+<https://firebase.google.com/docs/reference/rest/auth>.  It enables R developers
+to integrate Firebase Authentication services seamlessly into their projects,
+allowing for user authentication, account management, and other
+authentication-related tasks.")
+    (license license:expat)))
+
 (define-public r-firebase
   (package
     (name "r-firebase")
@@ -16772,6 +16799,40 @@ shortcuts for commonly-used classes such as generalised linear models and
 parametric survival models.  The methods originate from Claeskens and Hjort
 (2003) <doi:10.1198/016214503000000819> and Claeskens and Hjort (2008,
 ISBN:9780521852258).")
+    (license license:gpl3)))
+
+(define-public r-fibos
+  (package
+    (name "r-fibos")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fibos" version))
+       (sha256
+        (base32 "0dv27bfjdqhgm3cypi37jr669s2abirn8632yc05fby1a3yfg721"))))
+    (properties `((upstream-name . "fibos")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-reticulate
+                             r-readr
+                             r-glue
+                             r-fs
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=fibos")
+    (synopsis
+     "Occlusion Surface Using the Occluded Surface and Fibonacci Occluded Surface")
+    (description
+     "The Occluded Surface (OS) algorithm is a widely used approach for analyzing
+atomic packing in biomolecules as described by Pattabiraman N, Ward KB, Fleming
+PJ (1995) <doi:10.1002/jmr.300080603>.  Here, we introduce fibos', an R and
+Python package that extends the OS methodology, as presented in Soares HHM,
+Romanelli JPR, Fleming PJ, da Silveira CH (2024)
+<doi:10.1101/2024.11.01.621530>.")
     (license license:gpl3)))
 
 (define-public r-fiberld
@@ -22924,13 +22985,13 @@ computational point of view.")
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.16.0")
+    (version "0.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "1g9qnk9hm61cx29mrlgrhhaq0nyv0p8c9xsrjggx04d5n1xza5fh"))))
+        (base32 "0jzw62ml5anbd6zyf8g1ffdk3j70zyjhwlaipq14nvgmmvzzjbl6"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (arguments

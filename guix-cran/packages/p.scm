@@ -8221,13 +8221,13 @@ for different versions of same question list.")
 (define-public r-profast
   (package
     (name "r-profast")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProFAST" version))
        (sha256
-        (base32 "06643m0rr54v42sg16vp3dlfkvkjflqlmv2kv87c2n668gifxaw7"))))
+        (base32 "0gr8b78jvs9g4k84ai0yak6nvv8zqcm2nhi463qvqq7xbq032gml"))))
     (properties `((upstream-name . "ProFAST")))
     (build-system r-build-system)
     (arguments
@@ -8238,8 +8238,6 @@ for different versions of same question list.")
                              r-rcpp
                              r-precast
                              r-pbapply
-                             r-org-mm-eg-db
-                             r-org-hs-eg-db
                              r-mclust
                              r-matrix
                              r-irlba
@@ -8248,9 +8246,7 @@ for different versions of same question list.")
                              r-ggplot2
                              r-future
                              r-furrr
-                             r-dr-sc
-                             r-biomart
-                             r-annotationdbi))
+                             r-dr-sc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/feiyoung/ProFAST")
     (synopsis
@@ -9627,38 +9623,6 @@ big data sets even on desktop machines.")
 using Google Trends data.  It includes required data and tools for backtesting
 the performance in 2007-2020.")
     (license license:gpl2)))
-
-(define-public r-prism
-  (package
-    (name "r-prism")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prism" version))
-       (sha256
-        (base32 "1z082b8cyddszi822885aw3rjq41znig8wfi9c38p1n3sdkdllm6"))))
-    (properties `((upstream-name . "prism")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-stringr
-                             r-readr
-                             r-raster
-                             r-magrittr
-                             r-httr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/prism/")
-    (synopsis "Access Data from the Oregon State Prism Climate Project")
-    (description
-     "Allows users to access the Oregon State Prism climate data
-(<https://prism.nacse.org/>).  Using the web service API data can easily
-downloaded in bulk and loaded into R for spatial analysis.  Some user friendly
-visualizations are also provided.")
-    (license license:expat)))
 
 (define-public r-priorsense
   (package
@@ -23647,6 +23611,55 @@ exposures) that you want to apply the same statistical method to, or when you
 are creating the output for a report and you need multiple different tables or
 graphs.")
     (license license:expat)))
+
+(define-public r-plnmodels
+  (package
+    (name "r-plnmodels")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PLNmodels" version))
+       (sha256
+        (base32 "064xb8b0q0dh8yglz7zwx50fm8b3s86jr4byk76bqb4hk6j30909"))))
+    (properties `((upstream-name . "PLNmodels")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-torch
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-purrr
+                             r-pscl
+                             r-nloptr
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-igraph
+                             r-gridextra
+                             r-glassofast
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-corrplot
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://pln-team.github.io/PLNmodels/")
+    (synopsis "Poisson Lognormal Models")
+    (description
+     "The Poisson-lognormal model and variants (Chiquet, Mariadassou and Robin, 2021
+<doi:10.3389/fevo.2021.588292>) can be used for a variety of multivariate
+problems when count data are at play, including principal component analysis for
+count data, discriminant analysis, model-based clustering and network inference.
+ Implements variational algorithms to fit such models accompanied with a set of
+functions for visualization and diagnostic.")
+    (license license:gpl3+)))
 
 (define-public r-pln
   (package
@@ -42073,13 +42086,13 @@ automation with delayed execution (e.g. for executing functions in parallel).")
 (define-public r-parafac4microbiome
   (package
     (name "r-parafac4microbiome")
-    (version "1.0.3")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parafac4microbiome" version))
        (sha256
-        (base32 "1l60qpx5k6h7ba6g4crl5f3gclyrmn5xlvpp2jg0hbqav5qn4418"))))
+        (base32 "1cxlx6y5vyr21zgh4njrpqrrm8wkyrw8l0gkd3rj5afvgmqysx6z"))))
     (properties `((upstream-name . "parafac4microbiome")))
     (build-system r-build-system)
     (arguments
@@ -42101,7 +42114,7 @@ automation with delayed execution (e.g. for executing functions in parallel).")
                              r-cowplot
                              r-compositions))
     (native-inputs (list r-knitr))
-    (home-page "https://grvanderploeg.github.io/parafac4microbiome/")
+    (home-page "https://grvanderploeg.com/parafac4microbiome/")
     (synopsis
      "Parallel Factor Analysis Modelling of Longitudinal Microbiome Data")
     (description

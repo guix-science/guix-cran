@@ -2828,13 +2828,13 @@ of simulated/actual respondents based on an estimated model.")
 (define-public r-autoensemble
   (package
     (name "r-autoensemble")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoEnsemble" version))
        (sha256
-        (base32 "106hfhc5hp6v51drkhrv8dgxflqx8rljn6l91cy8hf6h3m0qy5x2"))))
+        (base32 "01dakamyc77zj3gffm6b995ihcbr3cskpk7yqh56pg7gsf3gsm6r"))))
     (properties `((upstream-name . "autoEnsemble")))
     (build-system r-build-system)
     (arguments
@@ -2845,12 +2845,15 @@ of simulated/actual respondents based on an estimated model.")
     (synopsis
      "Automated Stacked Ensemble Classifier for Severe Class Imbalance")
     (description
-     "An @code{AutoML} algorithm is developed to construct homogeneous or
-heterogeneous stacked ensemble models using specified base-learners.  Various
-criteria are employed to identify optimal models, enhancing diversity among them
-and resulting in more robust stacked ensembles.  The algorithm optimizes the
-model by incorporating an increasing number of top-performing models to create a
-diverse combination.  Presently, only models from h2o.ai are supported.")
+     "This package provides a stacking solution for modeling imbalanced and severely
+skewed data.  It automates the process of building homogeneous or heterogeneous
+stacked ensemble models by selecting \"best\" models according to different
+criteria.  In doing so, it strategically searches for and selects diverse,
+high-performing base-learners to construct ensemble models optimized for skewed
+data.  This package is particularly useful for addressing class imbalance in
+datasets, ensuring robust and effective model outcomes through advanced ensemble
+strategies which aim to stabilize the model, reduce its overfitting, and further
+improve its generalizability.")
     (license license:expat)))
 
 (define-public r-autodeskr
@@ -8589,13 +8592,13 @@ which can be then easily used for further analysis.")
 (define-public r-archive
   (package
     (name "r-archive")
-    (version "1.1.11")
+    (version "1.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archive" version))
        (sha256
-        (base32 "0xk6jdrclrmslz3wb0w4ppw97hmm9kykcwhn6s4z66da69gghnma"))))
+        (base32 "0f6ivl0s7v08lbgm38h8xl9li21zil02l0phc6r04yl6hxd2xfvh"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
     (arguments
@@ -9406,13 +9409,13 @@ shark and ray growth studies: strengths, weaknesses and the future\"
 (define-public r-aquality
   (package
     (name "r-aquality")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AQuality" version))
        (sha256
-        (base32 "17sd90va6wp6vyg1bjriyv0zkn1hqnrwkm2w92yc0n2kbdffq74l"))))
+        (base32 "159qj5429iq7za2fqjzn3f15bs9vcr8n43vynfhl34n6i0f44zi0"))))
     (properties `((upstream-name . "AQuality")))
     (build-system r-build-system)
     (arguments
@@ -9421,12 +9424,14 @@ shark and ray growth studies: strengths, weaknesses and the future\"
     (home-page "https://cran.r-project.org/package=AQuality")
     (synopsis "Water and Measurements Quality")
     (description
-     "The functions proposed in this package allows to graphically evaluate the
-process of measurement of the chemical components of water. @code{TSSS()} and
-ICHS functions are useful to control the quality of measurements of chemical
-components of a sample of water.  If one or more measurements include an error,
-the generated graph will indicate it with a position of the point that
-represents the sample outside the confidence interval.")
+     "The functions proposed in this package allows to evaluate the process of
+measurement of the chemical components of water numerically or graphically.
+@code{TSSS()} and ICHS functions are useful to control the quality of
+measurements of chemical components of a sample of water.  If one or more
+measurements include an error, the generated graph will indicate it with a
+position of the point that represents the sample outside the confidence
+interval.  The function CI allows to evaluate the possibility of contamination
+of a water sample after being obtained.")
     (license license:gpl2)))
 
 (define-public r-aquaenv
@@ -22940,13 +22945,13 @@ estimators on real datasets, and it implements methods to calculate p-values.")
 (define-public r-adespatial
   (package
     (name "r-adespatial")
-    (version "0.3-24")
+    (version "0.3-26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adespatial" version))
        (sha256
-        (base32 "0lrjm3hb6jn30w7kg1lcx1jk66cciyxq7gayhl2jvp6xipg10b8y"))))
+        (base32 "0bhbbm140b6mfr2032r1phhaz9zzb0clpgd3r63f5wrc59c5cnfr"))))
     (properties `((upstream-name . "adespatial")))
     (build-system r-build-system)
     (arguments
@@ -22961,7 +22966,7 @@ estimators on real datasets, and it implements methods to calculate p-values.")
                              r-adephylo
                              r-adegraphics
                              r-ade4))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/adeverse/adespatial")
     (synopsis "Multivariate Multiscale Spatial Analysis")
     (description

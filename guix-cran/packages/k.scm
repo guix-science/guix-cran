@@ -3268,13 +3268,13 @@ time series values.  All data is returned as tidy tibbles.")
 (define-public r-kitesquare
   (package
     (name "r-kitesquare")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kitesquare" version))
        (sha256
-        (base32 "1g5ks28qa9kw9qdpycq4d17s5n9q0h0yn0s2wkk6fk6jyja6hr95"))))
+        (base32 "1irrbxgzh1w4lz4qzwpysk0y6m6pw47vghh0jxnaqzqcs6851xsm"))))
     (properties `((upstream-name . "kitesquare")))
     (build-system r-build-system)
     (arguments
@@ -6646,6 +6646,36 @@ Michael Eliasziw, Neil Klar (1996) <doi:10.2307/2533154>.")
 set.  The Kantorovich distance is also known as the Monge-Kantorovich distance
 or the first Wasserstein distance.")
     (license license:gpl3)))
+
+(define-public r-kanova
+  (package
+    (name "r-kanova")
+    (version "0.3-12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kanova" version))
+       (sha256
+        (base32 "1l14bi4z78ylryqflmdk10sxfzhyxp7qb2m13nfi32kl7axyhi8h"))))
+    (properties `((upstream-name . "kanova")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-spatstat-random r-spatstat-geom
+                             r-spatstat-explore))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=kanova")
+    (synopsis "Pseudo Anova for K-Functions")
+    (description
+     "One-way and two-way analysis of variance for replicated point patterns, grouped
+by one or two classification factors, on the basis of the corresponding
+K-functions.")
+    (license license:gpl2+)))
 
 (define-public r-kanjistat
   (package

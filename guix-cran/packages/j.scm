@@ -889,29 +889,6 @@ implemented to solve different low-order regularization models for
 J@code{SparO}.")
     (license license:gpl3+)))
 
-(define-public r-jsonstrings
-  (package
-    (name "r-jsonstrings")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jsonStrings" version))
-       (sha256
-        (base32 "0936nhm6zx4la7i6fwigz0kvgf9dirz422vhrzjr45f37pyfvkxy"))))
-    (properties `((upstream-name . "jsonStrings")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-r6))
-    (home-page "https://github.com/stla/jsonStrings")
-    (synopsis "Manipulation of JSON Strings")
-    (description
-     "Fast manipulation of JSON strings.  Allows to extract or delete an element in a
-JSON string, merge two JSON strings, and more.")
-    (license license:gpl2+)))
-
 (define-public r-jsonstat
   (package
     (name "r-jsonstat")

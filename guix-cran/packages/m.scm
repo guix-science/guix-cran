@@ -87,13 +87,13 @@ decomposition of total effect.")
 (define-public r-mycran
   (package
     (name "r-mycran")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myCRAN" version))
        (sha256
-        (base32 "1b92jyk2nwlqx0sx05b1gj3ivy33rjz1394gazl0xm98jj1c1vkx"))))
+        (base32 "1i8wxvy5vjk1pajyvkq12phqasaasbqyvarja299km2bddihyrqq"))))
     (properties `((upstream-name . "myCRAN")))
     (build-system r-build-system)
     (arguments
@@ -4856,29 +4856,6 @@ Stan'.")
 ISBN:978-3-319-24520-1).  The package was developed essentially as an extension
 to igraph'.")
     (license license:gpl3)))
-
-(define-public r-multinet
-  (package
-    (name "r-multinet")
-    (version "4.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multinet" version))
-       (sha256
-        (base32 "0nwxy55ab5bb2sbcmf4kx9k6a1faxm11ax5i855nkbyv2wy3pgbj"))))
-    (properties `((upstream-name . "multinet")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-rcolorbrewer r-igraph))
-    (home-page "https://cran.r-project.org/package=multinet")
-    (synopsis "Analysis and mining of multilayer social networks")
-    (description
-     "This package provides functions for the creation/generation and analysis of
-multilayer social networks <doi:10.18637/jss.v098.i08>.")
-    (license license:asl2.0)))
 
 (define-public r-multiness
   (package
@@ -10610,6 +10587,31 @@ parallel using @code{mclapply()} or @code{future_lapply()}
 <https://cran.r-project.org/package=future.apply>.")
     (license license:gpl2+)))
 
+(define-public r-mrgdp
+  (package
+    (name "r-mrgdp")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mrgdp" version))
+       (sha256
+        (base32 "006h373g6rh5plqkhqd7srac70g7zw093b3b4qzlp1n260bxh0r8"))))
+    (properties `((upstream-name . "mrgdp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/MarcoAPerezM/mrgdp>")
+    (synopsis "Mexican Regional Gross Domestic Product")
+    (description
+     "Download Mexican economic census for several years (2004, 2009, 2014 and 2019)
+and all federal entities.  Filter the census data table by municipal data and
+build a data.frame for all federal entities and several years.")
+    (license license:gpl2)))
+
 (define-public r-mrfse
   (package
     (name "r-mrfse")
@@ -10813,6 +10815,44 @@ set on new data unknown to the model.  This work is published in Stier, Q.;
 Gehlert, T.; Thrun, M.C. Multiresolution Forecasting for Industrial
 Applications.  Processes 2021, 9, 1697. <doi:10.3390/pr9101697>.")
     (license license:gpl3)))
+
+(define-public r-mregions2
+  (package
+    (name "r-mregions2")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mregions2" version))
+       (sha256
+        (base32 "0b2wjwj62z6jqam7a1b0gjbp5dxd2n92p5hv2lmxlbai6m7l0ivp"))))
+    (properties `((upstream-name . "mregions2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-wrapr
+                             r-sf
+                             r-rdflib
+                             r-memoise
+                             r-magrittr
+                             r-isocodes
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-curl
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/mregions2")
+    (synopsis "Access Data from Marine Regions: Gazetteer & Data Products")
+    (description
+     "Explore and retrieve marine spatial data from the Marine Regions Gazetteer
+<https://marineregions.org/gazetteer.php?p=webservices> and the Marine Regions
+Data Products <https://marineregions.org/webservices.php>.")
+    (license license:expat)))
 
 (define-public r-mreg
   (package
@@ -13991,6 +14031,32 @@ squared out-of-sample error, the projected out-of-sample R-squared, and a vector
 of out-of-sample \"hat\" or \"leverage\" values, as defined in the paper.")
     (license license:expat)))
 
+(define-public r-mooplot
+  (package
+    (name "r-mooplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mooplot" version))
+       (sha256
+        (base32 "1rxqky4lh026qrdq41mpj6ks2h6vzy45bh7ssd13x1wn4ml9lb8x"))))
+    (properties `((upstream-name . "mooplot")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rdpack r-moocore r-matrixstats r-collapse))
+    (home-page "https://multi-objective.github.io/mooplot/r/")
+    (synopsis "Graphical Visualizations for Multi-Objective Optimization")
+    (description
+     "Visualization of multi-dimensional data arising in multi-objective optimization,
+including plots of the empirical attainment function (EAF), M. LÃ³pez-IbÃ¡Ã±ez,
+L. Paquete, and T. StÃ¼tzle (2010) <doi:10.1007/978-3-642-02538-9_9>, and
+symmetric Vorob'ev expectation and deviation, M. Binois, D. Ginsbourger, O.
+Roustant (2015) <doi:10.1016/j.ejor.2014.07.032>, among others.")
+    (license license:lgpl2.0+)))
+
 (define-public r-moonboot
   (package
     (name "r-moonboot")
@@ -16231,13 +16297,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.30")
+    (version "3.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "1s1ynz5x1gk5m370rf5vvpnpmmcccbzdm74jhw39yilz8qk8v6a8"))))
+        (base32 "16jkcpapmfx5vjv8zg4wwp8da5cck05id9jxpz048hwfj42119nf"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (arguments
@@ -17506,72 +17572,6 @@ replacement.")
 substitute it for testing.  Designed as a drop-in replacement for the now
 deprecated @code{testthat::with_mock()} and @code{testthat::local_mock()}'.")
     (license license:gpl3)))
-
-(define-public r-mocha
-  (package
-    (name "r-mocha")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MOCHA" version))
-       (sha256
-        (base32 "1v0pvpzc635bz63ywzpb39h7f6qrk3yvxf21i13y5abhmyjppdmi"))))
-    (properties `((upstream-name . "MOCHA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-wcorr
-                             r-tidyselect
-                             r-tidyr
-                             r-summarizedexperiment
-                             r-stringr
-                             r-scales
-                             r-s4vectors
-                             r-rlang
-                             r-raggedexperiment
-                             r-qvalue
-                             r-plyranges
-                             r-pbapply
-                             r-multiassayexperiment
-                             r-matrixstats
-                             r-magrittr
-                             r-lifecycle
-                             r-iranges
-                             r-ggridges
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggbio
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-genomeinfodb
-                             r-ensembldb
-                             r-dplyr
-                             r-data-table
-                             r-bsgenome
-                             r-biocgenerics
-                             r-assertthat
-                             r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MOCHA")
-    (synopsis "Modeling for Single-Cell Open Chromatin Analysis")
-    (description
-     "This package provides a statistical framework and analysis tool for open
-chromatin analysis designed specifically for single cell ATAC-seq (Assay for
-Transposase-Accessible Chromatin) data, after cell type/cluster identification.
-These novel modules remove unwanted technical variation, identify open
-chromatin, robustly models repeated measures in single cell data, implement
-advanced statistical frameworks to model zero-inflation for differential and
-co-accessibility analyses, and integrate with existing databases and modules for
-downstream analyses to reveal biological insights.  MOCHA provides a statistical
-foundation for complex downstream analysis to help advance the potential of
-single cell ATAC-seq for applied studies.  Methods for zero-inflated statistics
-are as described in: Ghazanfar, S., Lin, Y., Su, X. et al. (2020)
-<doi:10.1038/s41592-020-0885-x>.  Pimentel, Ronald Silva, \"Kendall's Tau and
-Spearman's Rho for Zero-Inflated Data\" (2009)
-<https://scholarworks.wmich.edu/dissertations/721/>.")
-    (license license:gpl3+)))
 
 (define-public r-mocca
   (package
@@ -20067,13 +20067,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.6-2")
+    (version "1.6-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "1xwbf4yfhq2ql4cml1w633scvgy5wh6r78kgclkdn5f31xb07mi5"))))
+        (base32 "0qlssaji78y1lbapakzp1j4q8grzgw3fmrd0215h25265bwym8yf"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (arguments
@@ -24638,58 +24638,6 @@ GarcÃ­a-FiÃ±ana (2018, Stat.  Meth.  in Med.  Res)
 data.")
     (license (license:fsdg-compatible "Unlimited"))))
 
-(define-public r-miwqs
-  (package
-    (name "r-miwqs")
-    (version "0.4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "miWQS" version))
-       (sha256
-        (base32 "0fmcc86hiz89kdynkzppp9z0srgh4gl8327szivjxadxip4zm21i"))))
-    (properties `((upstream-name . "miWQS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-truncnorm
-                             r-tmvtnorm
-                             r-tmvmixnorm
-                             r-tidyr
-                             r-survival
-                             r-rsolnp
-                             r-rlist
-                             r-purrr
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-matrixnormal
-                             r-mass
-                             r-invgamma
-                             r-hmisc
-                             r-glm2
-                             r-ggplot2
-                             r-condmvnorm
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=miWQS")
-    (synopsis "Multiple Imputation Using Weighted Quantile Sum Regression")
-    (description
-     "The @code{miWQS} package handles the uncertainty due to below the detection
-limit in a correlated component mixture problem.  Researchers want to determine
-if a set/mixture of continuous and correlated components/chemicals is associated
-with an outcome and if so, which components are important in that mixture.
-These components share a common outcome but are interval-censored between zero
-and low thresholds, or detection limits, that may be different across the
-components.  This package applies the multiple imputation (MI) procedure to the
-weighted quantile sum regression (WQS) methodology for continuous, binary, or
-count outcomes (Hargarten & Wheeler (2020) <doi:10.1016/j.envres.2020.109466>).
-The imputation models are: bootstrapping imputation (Lubin et.al (2004)
-<doi:10.1289/ehp.7199>), univariate Bayesian imputation (Hargarten & Wheeler
-(2020) <doi:10.1016/j.envres.2020.109466>), and multivariate Bayesian regression
-imputation.")
-    (license license:gpl3)))
-
 (define-public r-mittagleffler
   (package
     (name "r-mittagleffler")
@@ -25745,6 +25693,42 @@ useful wrappers of common base R functions, which extend S3 generics or provide
 default values for important parameters.")
     (license license:gpl3)))
 
+(define-public r-miscmetabar
+  (package
+    (name "r-miscmetabar")
+    (version "0.14.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MiscMetabar" version))
+       (sha256
+        (base32 "15s98akyxb48glqzkhm8wbxd3p36pwqydnzk218lhmyqx28fqin1"))))
+    (properties `((upstream-name . "MiscMetabar")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-phyloseq
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-dada2
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/adrientaudiere/MiscMetabar")
+    (synopsis "Miscellaneous Functions for Metabarcoding Analysis")
+    (description
+     "Facilitate the description, transformation, exploration, and reproducibility of
+metabarcoding analyses. @code{MiscMetabar} is mainly built on top of the
+phyloseq', dada2 and targets R packages.  It helps to build reproducible and
+robust bioinformatics pipelines in R. @code{MiscMetabar} makes ecological
+analysis of alpha and beta-diversity easier, more reproducible and more powerful
+by integrating a large number of tools.  Important features are described in
+TaudiÃ¨re A. (2023) <doi:10.21105/joss.06038>.")
+    (license license:agpl3)))
+
 (define-public r-miscmath
   (package
     (name "r-miscmath")
@@ -26323,13 +26307,13 @@ MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "1wb4lmjgzbp6gvbqnjp439lzkhm3a6n7iji3i4j33vwp23p25pj0"))))
+        (base32 "17jiabwijcbs1qnvyc2jdnzi3hynlakfl878z5726857c1xqsv42"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (arguments
@@ -30484,13 +30468,13 @@ distribution of p values as a way to detect the true signals in the data.")
 (define-public r-mhqol
   (package
     (name "r-mhqol")
-    (version "0.13.0")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MHQoL" version))
        (sha256
-        (base32 "12agrzw3aim32bng897v54nq2gw9riqnsip4sr1x1ymy0ngkqdcd"))))
+        (base32 "1802d6n71lz18r67kfzjy2g66s5snz3jqfzkdkm17a82h6wsfhaf"))))
     (properties `((upstream-name . "MHQoL")))
     (build-system r-build-system)
     (arguments
@@ -36334,13 +36318,13 @@ M-estimation in the vein of Tsiatis et al. (2019) <doi:10.1201/9780429192692>.")
 (define-public r-messydates
   (package
     (name "r-messydates")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "messydates" version))
        (sha256
-        (base32 "1hcrmjh1jj256y05asyzkabzp7zlwdaw2kiwav8rdir39mrjdg7z"))))
+        (base32 "15d22ihq6dlkwqi80r7njizk01sd2am23n441wd6dnsn3yjxhcdk"))))
     (properties `((upstream-name . "messydates")))
     (build-system r-build-system)
     (arguments
@@ -46409,33 +46393,6 @@ altitude based on geographical coordinates, or calculate z-constrained
 least-cost paths.")
     (license license:gpl3+)))
 
-(define-public r-marlod
-  (package
-    (name "r-marlod")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "marlod" version))
-       (sha256
-        (base32 "1xz8ax946mg7mhhm47hpv5s0jgvw9c3idanmgd6sch4ihz5d29yf"))))
-    (properties `((upstream-name . "marlod")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-quantreg r-miwqs r-mass r-knitr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=marlod")
-    (synopsis "Marginal Modeling for Exposure Data with Values Below the LOD")
-    (description
-     "This package provides functions of marginal mean and quantile regression models
-are used to analyze environmental exposure and biomonitoring data with repeated
-measurements and non-detects (i.e., values below the limit of detection (LOD)),
-as well as longitudinal exposure data that include non-detects and
-time-dependent covariates.")
-    (license license:gpl3)))
-
 (define-public r-markowitzr
   (package
     (name "r-markowitzr")
@@ -46924,6 +46881,34 @@ inspired by the \"comment\" window of <https://github.com/>.")
      "Miscellaneous functions and wrappers for development in other packages created,
 maintained by Jordan Mark Barbone.")
     (license license:expat)))
+
+(define-public r-marinet
+  (package
+    (name "r-marinet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MariNET" version))
+       (sha256
+        (base32 "1dvc0rha4xm7lywwhrscqwv0j2jvqy7yc6kv9wbgnsrjii7bhpg1"))))
+    (properties `((upstream-name . "MariNET")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qgraph r-lme4 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MariNET")
+    (synopsis "Build Network Based on Linear Mixed Models from EHRs")
+    (description
+     "Analyzing longitudinal clinical data from Electronic Health Records (EHRs) using
+linear mixed models (LMM) and visualizing the results as networks.  It includes
+functions for fitting LMM, normalizing adjacency matrices, and comparing
+networks.  The package is designed for researchers in clinical and biomedical
+fields who need to model longitudinal data and explore relationships between
+variables For more details see Bates et al. (2015) <doi:10.18637/jss.v067.i01>.")
+    (license license:gpl3)))
 
 (define-public r-marima
   (package
@@ -48859,19 +48844,20 @@ structural equation modeling using @code{lavaan()} or regression using
 (define-public r-manymodelr
   (package
     (name "r-manymodelr")
-    (version "0.3.7")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymodelr" version))
        (sha256
-        (base32 "0kc4y9i21qkcg0pkwlas2mm06s54s70w5ybw4215qjwiy6xax268"))))
+        (base32 "06211f763hafr5lyz0jkh9rd41xjdf78mqvjyknxqcfsb2f5lysk"))))
     (properties `((upstream-name . "manymodelr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-metrics
+    (propagated-inputs (list r-stringr
+                             r-metrics
                              r-lme4
                              r-ggplot2
                              r-e1071
@@ -48885,7 +48871,7 @@ structural equation modeling using @code{lavaan()} or regression using
 go.The goal is to provide a number of machine learning convenience functions.
 It provides the ability to build, tune and obtain predictions of several models
 in one function.  The models are built using functions from caret with easier to
-read syntax.  Kuhn(2014) <@code{arXiv:1405.6974>}.")
+read syntax.  Kuhn(2014) <doi:10.48550/@code{arXiv.1405.6974>}.")
     (license license:gpl2)))
 
 (define-public r-manydist
@@ -48945,32 +48931,30 @@ mixed data.  Methods based on van de Velden et al. (2024)
 (define-public r-manydata
   (package
     (name "r-manydata")
-    (version "0.9.3")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydata" version))
        (sha256
-        (base32 "18v7sm5i3xnffcv3p17xb5hx0dnlyarahv6b7j0208d7hsjg2pf0"))))
+        (base32 "1lbhkji803v3jf846wfpgj8mk3fs5kakdkh7n6l2l1grjkpbxmyp"))))
     (properties `((upstream-name . "manydata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-zoo
-                             r-usethis
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-remotes
                              r-purrr
-                             r-plyr
                              r-messydates
                              r-jsonlite
                              r-httr
                              r-ggplot2
+                             r-dtplyr
                              r-dplyr
                              r-cli))
-    (home-page "https://github.com/globalgov/manydata")
+    (home-page "https://manydata.ch/")
     (synopsis "Portal for Global Governance Data")
     (description
      "This is the core package for the many packages universe.  It includes functions

@@ -2733,13 +2733,13 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
 (define-public r-rum
   (package
     (name "r-rum")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rUM" version))
        (sha256
-        (base32 "1x9waiyxq5jgi6ggd078wfzgq29adawfs7jn4m5qj4wba7sddq2m"))))
+        (base32 "0frdbcslz44f2pw8f899g5mwrl5abvyd0pqfhn2pnkjb2gpqkh28"))))
     (properties `((upstream-name . "rUM")))
     (build-system r-build-system)
     (arguments
@@ -2754,6 +2754,7 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
                              r-rmarkdown
                              r-rlang
                              r-rio
+                             r-readr
                              r-quarto
                              r-here
                              r-gtsummary
@@ -5544,13 +5545,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.3.20")
+    (version "9.3.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1kan217m9mab4bypya9laqr92n82sznwmg50r6fbhzlsjyadx80d"))))
+        (base32 "16naqz653hdqc8863v5vlq5x272y5hj6hnqwslzzlfi2cwlgihqz"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -6786,13 +6787,13 @@ Modularity.")
 (define-public r-rspde
   (package
     (name "r-rspde")
-    (version "2.4.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rSPDE" version))
        (sha256
-        (base32 "116jdmdr0aqhcz5nrcj2g4dxk3brrikvin45ablj1kssngvmc6fl"))))
+        (base32 "04l1fl8f42kmq3ipcmkwfm51f1q7fmmx3wdnrmvlyqk7icpzjzqf"))))
     (properties `((upstream-name . "rSPDE")))
     (build-system r-build-system)
     (arguments
@@ -16317,6 +16318,33 @@ Unrelated Regression Models which is able to cope well with both type of
 outliers.  Giovanni Saraceno, Fatemah Alqallaf, Claudio Agostinelli (2021)
 <@code{arXiv:2107.00975>}.")
     (license license:gpl2+)))
+
+(define-public r-robustsfa
+  (package
+    (name "r-robustsfa")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robustSFA" version))
+       (sha256
+        (base32 "1llxk8ikmw1pdvjj0ys5z4pjb3fvwndmzmbw2pskl0yd973if330"))))
+    (properties `((upstream-name . "robustSFA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-truncnorm r-rcpp r-frontier r-bh))
+    (home-page "https://cran.r-project.org/package=robustSFA")
+    (synopsis "Robust Estimation of Stochastic Frontier Models with MDPDE")
+    (description
+     "This provides a robust estimator for stochastic frontier models, employing the
+Minimum Density Power Divergence Estimator (MDPDE) for enhanced robustness
+against outliers.  Additionally, it includes a function to recommend the optimal
+tuning parameter, alpha, which controls the robustness of the MDPDE. The methods
+implemented in this package are based on Song et al. (2017)
+<doi:10.1016/j.csda.2016.08.005>.")
+    (license license:gpl3)))
 
 (define-public r-robustsae
   (package
@@ -30361,30 +30389,6 @@ or sum of squares) variable importance scores, using an empirical Bayes
 approach.  See Dunne et al. (2022) <doi:10.1101/2022.04.06.487300>.")
     (license license:gpl3+)))
 
-(define-public r-rflashtext
-  (package
-    (name "r-rflashtext")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rflashtext" version))
-       (sha256
-        (base32 "12iyd6r6dyjafbpxmd4kah0kqnc6kb4p1lbz2xgxg4v912swxcsm"))))
-    (properties `((upstream-name . "rflashtext")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpp r-r6))
-    (home-page "https://github.com/AbrJA/rflashtext")
-    (synopsis "FlashText Algorithm for Finding and Replacing Words")
-    (description
-     "Implementation of the @code{FlashText} algorithm, by Singh (2017)
-<@code{arXiv:1711.00046>}.  It can be used to find and replace words in a given
-text with only one pass over the document.")
-    (license license:expat)))
-
 (define-public r-rfit
   (package
     (name "r-rfit")
@@ -34887,30 +34891,6 @@ comparing individual Trello board cards from two different points in time and
 documenting any changes made to the cards.")
     (license license:expat)))
 
-(define-public r-repec
-  (package
-    (name "r-repec")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "repec" version))
-       (sha256
-        (base32 "0alr9fbmfxmnnnn1qymy65crcycynwz435jj0vangbb4p0qhv8pm"))))
-    (properties `((upstream-name . "repec")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-jsonlite))
-    (home-page "https://github.com/chrMongeau/repec")
-    (synopsis "Access RePEc Data Through API")
-    (description
-     "Utilities for accessing @code{RePEc} (Research Papers in Economics) through a
-RESTful API. You can request a code and get detailed information at the
-following page: <https://ideas.repec.org/api.html>.")
-    (license license:expat)))
-
 (define-public r-repeatedhighdim
   (package
     (name "r-repeatedhighdim")
@@ -39007,13 +38987,13 @@ documents, e.g. using Sweave'.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapTidieR" version))
        (sha256
-        (base32 "0rppaxj1p27vmjq79va2x8g0jg5f1k84qwflw9yhxzbwxnlcv7rr"))))
+        (base32 "0sxp4q5wq2fml1knr79kgp3g669q6xbm6dg4mik2ybw6m1br2iwh"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (arguments

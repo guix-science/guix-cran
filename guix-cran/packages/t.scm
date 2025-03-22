@@ -5762,6 +5762,33 @@ Transformation Choice (Hothorn, 2018, <DOI:10.1177/1471082X17748081>).")
 experiment in their respective standard order.")
     (license license:expat)))
 
+(define-public r-trps
+  (package
+    (name "r-trps")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trps" version))
+       (sha256
+        (base32 "1r9pmwmyqzbajkjrmccvrg7nqj0ynaq5bmn1mr63yskci5j2y70c"))))
+    (properties `((upstream-name . "trps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lifecycle r-dplyr r-cli r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://benjaminhlina.github.io/trps/")
+    (synopsis "Bayesian Trophic Position Models using 'stan'")
+    (description
+     "Bayesian trophic position models using stan by leveraging brms for stable
+isotope data.  Trophic position models are derived by using equations from Post
+(2002) <doi:10.1890/0012-9658(2002)083[0703:USITET]2.0.CO;2>, Vander Zanden and
+Vadeboncoeur (2002) <doi:10.1890/0012-9658(2002)083[2152:FAIOBA]2.0.CO;2>, and
+Heuvel et al. (2024) <doi:10.1139/cjfas-2024-0028>.")
+    (license license:cc0)))
+
 (define-public r-troublemaker
   (package
     (name "r-troublemaker")
@@ -9427,13 +9454,13 @@ directed acyclic graph with diverging number of nodes\".")
 (define-public r-transfr
   (package
     (name "r-transfr")
-    (version "1.1.0")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transfR" version))
        (sha256
-        (base32 "1srlxay5waisddip6c9sxm7lpcqfi17djrzkh68rcva2vcg8db2g"))))
+        (base32 "03nvmfjh1vpp9ddd5aq7hsibxammr46sipzcxc58423d4xsgb9s8"))))
     (properties `((upstream-name . "transfR")))
     (build-system r-build-system)
     (arguments
@@ -12281,30 +12308,6 @@ and Yarats(2019), <@code{arXiv:1810.06801>}; (h) radam by Liu et al. (2019),
      "This package provides datasets in a format that can be easily consumed by torch
 dataloaders'.  Handles data downloading from multiple sources, caching and
 pre-processing so users can focus only on their model implementations.")
-    (license license:expat)))
-
-(define-public r-torchaudio
-  (package
-    (name "r-torchaudio")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "torchaudio" version))
-       (sha256
-        (base32 "1zn9z2z2yv1xjmpf5xcyxachmmbwk2g0y3nipvjgpwbqkjr7p9y6"))))
-    (properties `((upstream-name . "torchaudio")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-torch r-rlang r-glue r-fs r-av))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=torchaudio")
-    (synopsis "R Interface to 'pytorch''s 'torchaudio'")
-    (description
-     "This package provides access to datasets, models and processing facilities for
-deep learning in audio.")
     (license license:expat)))
 
 (define-public r-tor
@@ -15179,13 +15182,13 @@ tensors.")
 (define-public r-tinyvast
   (package
     (name "r-tinyvast")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyVAST" version))
        (sha256
-        (base32 "1z9sf8syn14z70vbgyjh1yb77ldi2fcr0qddxmzqxd98vswzcl75"))))
+        (base32 "0a8hx7bvw7pjglqj7yijizzfhbc0av3vc2k9820kfhyjn9bd8p93"))))
     (properties `((upstream-name . "tinyVAST")))
     (build-system r-build-system)
     (arguments
@@ -20424,19 +20427,24 @@ modeling for paired comparison and ranking data.; Maydeu-Olivares & BÃ¶ckenhol
 (define-public r-thunder
   (package
     (name "r-thunder")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thunder" version))
        (sha256
-        (base32 "0gn4kkpagh5blhp1zpgilkpa8mwfz8w05qlri5ca4wwcy7xkmn41"))))
+        (base32 "1jyya96z3q5sqqzs4w3cmph2xqxmr5l7mdmp0pnky2h9kw2lr9l7"))))
     (properties `((upstream-name . "thunder")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpp r-httr r-dplyr r-curl r-airthermo))
+    (propagated-inputs (list r-rcpp
+                             r-radiosonde
+                             r-httr
+                             r-dplyr
+                             r-curl
+                             r-airthermo))
     (native-inputs (list r-knitr))
     (home-page "https://bczernecki.github.io/thundeR/")
     (synopsis
@@ -30362,30 +30370,6 @@ variable, it shows the number of observations with that value, proportion of
 observations with that value, and cumulative proportion, in descending order of
 frequency.  Accepts data.table, tibble, or data.frame as input.  Efficient with
 big data: if you give it a data.table, @code{tab()} uses data.table syntax.")
-    (license license:expat)))
-
-(define-public r-tabulate
-  (package
-    (name "r-tabulate")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tabulate" version))
-       (sha256
-        (base32 "1x5rf8shd3jxa7k8p8ak5a6c2fmxv476is5vlrg1fsg6f964h01v"))))
-    (properties `((upstream-name . "tabulate")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-rcpp r-magrittr r-cli))
-    (home-page "https://github.com/mlverse/tabulate")
-    (synopsis "Pretty Console Output for Tables")
-    (description
-     "Generates pretty console output for tables allowing for full customization of
-cell colors, font type, borders and many others attributes.  It also supports
-multibyte characters and nested tables.")
     (license license:expat)))
 
 (define-public r-tabularmlc

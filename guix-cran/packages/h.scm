@@ -1916,13 +1916,13 @@ one-liners to print data to a new document.")
 (define-public r-hutilscpp
   (package
     (name "r-hutilscpp")
-    (version "0.10.8")
+    (version "0.10.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hutilscpp" version))
        (sha256
-        (base32 "1pvlg64iimq80nz8plcw1ijyl8mk4yzdrjc4jmy1g34mw6p99pwl"))))
+        (base32 "1l6yx6bxdccrhah7bl8a6541gqikp8ppy04akvmjz91m129rwlj7"))))
     (properties `((upstream-name . "hutilscpp")))
     (build-system r-build-system)
     (arguments
@@ -12769,13 +12769,13 @@ and Jia Li (2017) <https://jmlr.org/papers/v18/16-342.html>.")
 (define-public r-hdclassif
   (package
     (name "r-hdclassif")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDclassif" version))
        (sha256
-        (base32 "0npdnp86m71bsp4096j3yfcvr702ghhvdvxpd2m7lbnc8g3v0sdp"))))
+        (base32 "007cpvp71v6cx8jfk0lsm7y102wfckj49h649lpjdr1q3v9z4gqy"))))
     (properties `((upstream-name . "HDclassif")))
     (build-system r-build-system)
     (arguments

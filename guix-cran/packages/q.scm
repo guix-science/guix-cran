@@ -437,13 +437,13 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
 (define-public r-quincunx
   (package
     (name "r-quincunx")
-    (version "0.1.7")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quincunx" version))
        (sha256
-        (base32 "0r76rgzxqlm74brzh4kwxns3jb7hs9bfzfxdp8156cfrpjk7hxs0"))))
+        (base32 "05r9j1x209a03rg42ihwpqi1prk4lhamh3p66w2xlah7crdgs8ds"))))
     (properties `((upstream-name . "quincunx")))
     (build-system r-build-system)
     (arguments
@@ -457,10 +457,10 @@ in Dusseldorp, E., Doove, L., & Van Mechelen, I. (2016)
                              r-stringr
                              r-rvest
                              r-rlang
+                             r-readr
                              r-purrr
                              r-progress
                              r-memoise
-                             r-magrittr
                              r-lubridate
                              r-httr
                              r-glue
@@ -1039,13 +1039,13 @@ genetic information.")
 (define-public r-questionr
   (package
     (name "r-questionr")
-    (version "0.7.8")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "questionr" version))
        (sha256
-        (base32 "1abbnxnmljnn6ak55l4yrihr6fwrhzsb1rd7h8r0dijjwsgyawmg"))))
+        (base32 "1zxh7wg81qmymmcs1ram3g1901pf9igcdn0zfbmcxs9jlf1m00i1"))))
     (properties `((upstream-name . "questionr")))
     (build-system r-build-system)
     (arguments

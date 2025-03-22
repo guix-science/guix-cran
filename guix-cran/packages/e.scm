@@ -5312,13 +5312,13 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "0c7qrz0zkhajxg0xxg6hskl8ai0cpf5j8z6nfkfy5xi1qvab8kgl"))))
+        (base32 "04dxihg5qcapcggxh85mbyl3j9rpz1kg5akrgyff6c065hhjjvij"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (arguments
@@ -6412,13 +6412,13 @@ plots.  The App is called using @code{eufmdis.adapt::run_adapt()}.")
 (define-public r-eudract
   (package
     (name "r-eudract")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eudract" version))
        (sha256
-        (base32 "1x3x74ynnd752ia65b1azdi32dh8crh8k82nfcww0fqp8klnvlfh"))))
+        (base32 "1axgi26c9myi7106cqgwrq0mfyscaw3shnr4ncmnckidjb4gf741"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
     (arguments
@@ -11950,13 +11950,13 @@ data management functions is available at <https://medipe.psu.ac.th/epicalc/>'."
 (define-public r-epidatr
   (package
     (name "r-epidatr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidatr" version))
        (sha256
-        (base32 "0x7hx5cc6w62clbpkpr6nwmzhb4nwb5kb8x324ci8llza2gdi9lk"))))
+        (base32 "1vfxl6by4p7vy36xv7bc8nwsm9xksi7sbzn5r9smn1b8cyrrd2c1"))))
     (properties `((upstream-name . "epidatr")))
     (build-system r-build-system)
     (arguments
@@ -11965,6 +11965,7 @@ data management functions is available at <https://medipe.psu.ac.th/epicalc/>'."
     (propagated-inputs (list r-xml2
                              r-usethis
                              r-tibble
+                             r-rlang
                              r-readr
                              r-rappdirs
                              r-purrr
@@ -19419,13 +19420,13 @@ conditions.")
 (define-public r-efatools
   (package
     (name "r-efatools")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAtools" version))
        (sha256
-        (base32 "18jp2dyh22a1i3r0xawz851620lb1g6zbbb6h1a30ihkgbw1mcx9"))))
+        (base32 "0y75amgsp2r1n8hdw0sni6c2vrbsqjjsnv5z0igwmfykfr3cwmwf"))))
     (properties `((upstream-name . "EFAtools")))
     (build-system r-build-system)
     (arguments
@@ -19998,29 +19999,30 @@ Frequentist and Bayesian multilevel models.")
 (define-public r-eeaaq
   (package
     (name "r-eeaaq")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EEAaq" version))
        (sha256
-        (base32 "1wlhxjldzn48ib5hjahm7ih4gymi7rspl64myp286nl9mrbwqzc9"))))
+        (base32 "0hcdnvwd4rgxrdvq77rqb6jm83k4vf3hz2dw7g34jah26j5s87jy"))))
     (properties `((upstream-name . "EEAaq")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-sf
+                             r-rlang
                              r-readr
                              r-raster
                              r-lubridate
                              r-leaflet
                              r-httr
-                             r-htmlwidgets
                              r-gstat
-                             r-gifski
+                             r-ggspatial
                              r-ggpubr
                              r-ggplot2
                              r-dplyr
@@ -21749,19 +21751,20 @@ respect to reference conditions [Sturbois et al. (2023) ].")
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECOTOXr" version))
        (sha256
-        (base32 "0saxpf51wszrk42dv45lv905dia7llrvwkpasdkr15gygasfcfq2"))))
+        (base32 "0g4smd0lk5430cqn17w8hnx29gsmv8hla98lvh3nxb8kzkkgn4b0"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-units
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -21778,6 +21781,7 @@ respect to reference conditions [Sturbois et al. (2023) ].")
                              r-dplyr
                              r-dbplyr
                              r-crayon))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/pepijn-devries/ECOTOXr")
     (synopsis "Download and Extract Data from US EPA's ECOTOX Database")
     (description
@@ -23430,13 +23434,13 @@ package is to provide tools for use in courses in analytical chemistry.")
 (define-public r-echelon
   (package
     (name "r-echelon")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echelon" version))
        (sha256
-        (base32 "175dz1bc9x65vbj1d95d3jspdkywr09fqn5l5ya1qv4zxy39s1ry"))))
+        (base32 "14qpzsasjbmgfffvijxpx8mlr5kyvv6b47d2a9m15mr9wzz7rgk0"))))
     (properties `((upstream-name . "echelon")))
     (build-system r-build-system)
     (arguments

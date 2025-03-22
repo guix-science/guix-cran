@@ -223,42 +223,6 @@ An overview of the field is presented in Caicedo (2016)
 <doi:10.1016/j.copbio.2016.04.003>.")
     (license license:bsd-3)))
 
-(define-public r-cytometree
-  (package
-    (name "r-cytometree")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cytometree" version))
-       (sha256
-        (base32 "18g7av73lmnyga1kk24bf8jy599zn9n6qhr13mxsqgi0zdinicfa"))))
-    (properties `((upstream-name . "cytometree")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mclust
-                             r-igraph
-                             r-gofkernel
-                             r-ggplot2
-                             r-cowplot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cytometree")
-    (synopsis "Automated Cytometry Gating and Annotation")
-    (description
-     "Given the hypothesis of a bi-modal distribution of cells for each marker, the
-algorithm constructs a binary tree, the nodes of which are subpopulations of
-cells.  At each node, observed cells and markers are modeled by both a family of
-normal distributions and a family of bi-modal normal mixture distributions.
-Splitting is done according to a normalized difference of AIC between the two
-families.  Method is detailed in: Commenges, Alkhassim, Gottardo, Hejblum &
-Thiebaut (2018) <doi: 10.1002/cyto.a.23601>.")
-    (license (list license:lgpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-cytofan
   (package
     (name "r-cytofan")
@@ -2602,13 +2566,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "12938j5irnbdq1381d2aswch60awhx5fv2gv8wvh9wfmc67ahx3m"))))
+        (base32 "0iym9xqi133imiaw4kfn22ifk4zmq04k0hlyw2iahqv3y80mnabp"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (arguments
@@ -9600,13 +9564,13 @@ Browser group.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.4.4")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "1bi27haczkpccpxgiadgs7pgqwpviy9in6v8sma19zasp9vs0ykx"))))
+        (base32 "1ia4fb0mdhdv130ccw5r7wf3acinmg4nihh1i503z7p3c17ykfy4"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (arguments
@@ -9620,7 +9584,7 @@ Browser group.")
      "This package provides function declarations and inline function definitions that
 facilitate communication between R and the Armadillo C++ library for linear
 algebra and scientific computing.  This implementation is detailed in Vargas
-Sepulveda and Schneider Malamud (2024) <doi:10.48550/@code{arXiv.2408.11074>}.")
+Sepulveda and Schneider Malamud (2024) <doi:10.1016/j.softx.2025.102087>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cpp
@@ -13492,6 +13456,32 @@ populations using genetic data.  Pritchard JK, Stephens M, Donnelly PJ (2000)
 <DOI:10.1093/genetics/155.2.945>.
 <https://web.stanford.edu/group/pritchardlab/structure.html>.")
     (license license:gpl3+)))
+
+(define-public r-corrrf
+  (package
+    (name "r-corrrf")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corrRF" version))
+       (sha256
+        (base32 "1j2vgsrrjyk7dnzr53anycqz3lgwn3rcfmzh6llrkd2p9d2rmk38"))))
+    (properties `((upstream-name . "corrRF")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rpart r-rcpp))
+    (home-page "https://cran.r-project.org/package=corrRF")
+    (synopsis
+     "Clustered Random Forests for Optimal Prediction and Inference of Clustered Data")
+    (description
+     "This package provides a clustered random forest algorithm for fitting random
+forests for data of independent clusters, that exhibit within cluster
+dependence.  Details of the method can be found in Young and Buehlmann (2025)
+<doi:10.48550/@code{arXiv.2503.12634>}.")
+    (license license:gpl3)))
 
 (define-public r-corrr
   (package
@@ -36528,19 +36518,21 @@ finding.  Howard Y. Chang(2019) <doi:10.1038/s41587-019-0206-z>.")
 (define-public r-chromote
   (package
     (name "r-chromote")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromote" version))
        (sha256
-        (base32 "07g5vw9ijghys0zw7harz8dszgxvxk22bb6mldm18a2kn6cymsa4"))))
+        (base32 "1rwhd97g6ikrlavkn0bj6fzscyfzgbskavf3xvlh35rr71zjjilb"))))
     (properties `((upstream-name . "chromote")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-websocket
+    (propagated-inputs (list r-zip
+                             r-withr
+                             r-websocket
                              r-rlang
                              r-r6
                              r-promises
@@ -36549,7 +36541,9 @@ finding.  Howard Y. Chang(2019) <doi:10.1038/s41587-019-0206-z>.")
                              r-later
                              r-jsonlite
                              r-fastmap
-                             r-curl))
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://rstudio.github.io/chromote/")
     (synopsis "Headless Chrome Web Browser Interface")
     (description
@@ -37616,21 +37610,21 @@ for full list.")
 (define-public r-childfree
   (package
     (name "r-childfree")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "childfree" version))
        (sha256
-        (base32 "1lqwn7b0mc5v5lqqx2bhh5j110zl119whi7qwgzj0y05fdri98z2"))))
+        (base32 "14c01qjgnypcwv6hyy0hsb4cdmw9hkhw8vn4i4301b27qpd694bf"))))
     (properties `((upstream-name . "childfree")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survey r-rio r-rcurl))
+    (propagated-inputs (list r-rio r-rcurl))
     (native-inputs (list r-knitr))
-    (home-page "https://www.zacharyneal.com/childfree")
+    (home-page "https://www.zacharyneal.com/childfree-home")
     (synopsis "Access and Harmonize Childfree Demographic Data")
     (description
      "Reads demographic data from a variety of public data sources, extracting and
@@ -49202,13 +49196,13 @@ Loza M. et al. (NAR Genomics and Bioinformatics, 2020)
 (define-public r-cane
   (package
     (name "r-cane")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CANE" version))
        (sha256
-        (base32 "1vx6d2hq9r837yrqxnzjh2bhi29g24ds80apgrlz8jikl6s0nzn8"))))
+        (base32 "0fg7haaxqgq94s2vx1nyn88g51qql1v0bp3dn2a0jn258aygj35n"))))
     (properties `((upstream-name . "CANE")))
     (build-system r-build-system)
     (arguments

@@ -383,13 +383,13 @@ diagnostics in addition to other standard model tools.")
 (define-public r-ivpp
   (package
     (name "r-ivpp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IVPP" version))
        (sha256
-        (base32 "0wg55i653rih1kdmsghmkhpmifhdfpyv2p9hbf5ryy0z5zg370s0"))))
+        (base32 "1l6m55h4fkb4fxv7bvx81nh4s1z5y0hifzd3ciwa4j92q71zmdnz"))))
     (properties `((upstream-name . "IVPP")))
     (build-system r-build-system)
     (arguments
@@ -399,6 +399,8 @@ diagnostics in addition to other standard model tools.")
                              r-mvtnorm
                              r-lifecycle
                              r-graphicalvar
+                             r-future-apply
+                             r-future
                              r-dplyr
                              r-clustergeneration
                              r-bootnet))
@@ -406,11 +408,11 @@ diagnostics in addition to other standard model tools.")
     (synopsis "Invariance Partial Pruning Test")
     (description
      "An implementation of the Invariance Partial Pruning (IVPP) approach described in
-Du, X., Johnson, S. U., Epskamp, S. (in prep)to comparing idiographic and panel
-network models.  IVPP is a two-step method that first test for global network
-structural difference with invariance test and then inspect specific edge
-difference with partial pruning.")
-    (license license:expat)))
+Du, X., Johnson, S. U., Epskamp, S. (2025) The Invariance Partial Pruning
+Approach to The Network Comparison in Longitudinal Data.  IVPP is a two-step
+method that first test for global network structural difference with invariance
+test and then inspect specific edge difference with partial pruning.")
+    (license license:gpl3+)))
 
 (define-public r-ivo-table
   (package
@@ -14867,13 +14869,13 @@ and recoding data.")
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ijtiff" version))
        (sha256
-        (base32 "01hw5w25m8zb6wxg68895abmhh2kllap4n08i7b29kixaljbx1yg"))))
+        (base32 "1w51ql8l3hgyjfajpx0nn8qb7mq4w88srn182dssapgk85cmwis3"))))
     (properties `((upstream-name . "ijtiff")))
     (build-system r-build-system)
     (arguments
@@ -16168,13 +16170,13 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
 (define-public r-ieugwasr
   (package
     (name "r-ieugwasr")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieugwasr" version))
        (sha256
-        (base32 "0kicfbjv50d75si4dw9s5528l4pl8v7qhpw6y89sawgbj0fwrprr"))))
+        (base32 "0xj6i6i6fq30f4pcbc53vjrycxalv1j5lz7v6vpnn2b70f8n3lxq"))))
     (properties `((upstream-name . "ieugwasr")))
     (build-system r-build-system)
     (arguments
@@ -16185,7 +16187,7 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
     (home-page "https://github.com/MRCIEU/ieugwasr")
     (synopsis "Interface to the 'OpenGWAS' Database API")
     (description
-     "Interface to the @code{OpenGWAS} database API <https://gwas-api.mrcieu.ac.uk/>.
+     "Interface to the @code{OpenGWAS} database API <https://api.opengwas.io/api/>.
 Includes a wrapper to make generic calls to the API, plus convenience functions
 for specific queries.")
     (license license:expat)))
