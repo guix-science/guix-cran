@@ -1972,30 +1972,6 @@ gives users the ability to add to their existing word documents the tables made
 in gt using the familiar officer package and syntax from the officeverse'.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-gtheory
-  (package
-    (name "r-gtheory")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gtheory" version))
-       (sha256
-        (base32 "1xc1jl69z5csalqk3hx83s53awcl1fjq6p0x2pczhs7dsvwd6lks"))))
-    (properties `((upstream-name . "gtheory")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-lme4))
-    (home-page "http://EvaluationDashboard.com")
-    (synopsis "Apply Generalizability Theory with R")
-    (description
-     "Estimates variance components, generalizability coefficients, universe scores,
-and standard errors when observed scores contain variation from one or more
-measurement facets (e.g., items and raters).")
-    (license license:gpl3)))
-
 (define-public r-gtfswizard
   (package
     (name "r-gtfswizard")
@@ -8222,37 +8198,6 @@ small datasets for practising code and teaching basics before users move on to
 more complex designs.  See vignettes for details on usage
 <https://grafify.shenoylab.com/>.  Citation: <doi:10.5281/zenodo.5136508>.")
     (license license:gpl2+)))
-
-(define-public r-gradientpickerd3
-  (package
-    (name "r-gradientpickerd3")
-    (version "0.1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gradientPickerD3" version))
-       (sha256
-        (base32 "0b20iqfipr7migwk1fl4lvdf4ghprqivcgmchfshhr8q82hyd1q0"))))
-    (properties `((upstream-name . "gradientPickerD3")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets))
-    (home-page "https://github.com/peikert/gradientPickerD3")
-    (synopsis
-     "Interactive Color Gradient Picker Using 'htmlwidgets' and the Modified JS Script 'jquery-gradient-picker'")
-    (description
-     "Widget for an interactive selection and modification of a color gradient.
-@code{gradientPickerD3} allows addition, removement and replacement of color
-ticks.  List of numeric values will automatically translate in their
-corresponding tick position within the numeric range.  App returns a data.frame
-containing tick values, colors and the positions in percent (0.0 to 1.0) for
-each color tick in the gradient.  The original JS jquery-gradient-picker was
-implemented by Matt Crinklaw-Vogt (nick: tantaman)
-<https://github.com/tantaman/>.  Widget and JS modifications were done by CD.
-Peikert.")
-    (license license:gpl3)))
 
 (define-public r-gradient
   (package
@@ -14877,13 +14822,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.1-7")
+    (version "0.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm.hp" version))
        (sha256
-        (base32 "19kaw7az1b8as136v9drli6fszsv9xl3y9ix90mrp0n71kw8gv4w"))))
+        (base32 "1hm2v6x4dpg9bls1572qv3avmd2108lh0629szhphsczlaqp2igb"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (arguments
@@ -19899,31 +19844,6 @@ the Monolix installation, as described at the following url
 required Chart Data instead of exporting it from the Monolix gui.")
     (license license:gpl2)))
 
-(define-public r-ggplotlyextra
-  (package
-    (name "r-ggplotlyextra")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggplotlyExtra" version))
-       (sha256
-        (base32 "1m2rhylpzj934gb50lxjp47rxz0kwl9i1p3n7w1rz4qi96pr5p1c"))))
-    (properties `((upstream-name . "ggplotlyExtra")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rlang r-plotly r-ggplot2))
-    (home-page "https://cran.r-project.org/package=ggplotlyExtra")
-    (synopsis "Extra Convenience Functions for 'Plotly'")
-    (description
-     "Convenience functions for smooth conversion from ggplot to plotly where the
-conversion using @code{ggplotly()} usually gives an unexpected labels.  The
-package ease the process of making a plotly figures generated from ggplot2
-object more aesthetic in terms of labels and customizability.")
-    (license license:gpl3)))
-
 (define-public r-ggplotgui
   (package
     (name "r-ggplotgui")
@@ -21768,13 +21688,13 @@ issue.")
 (define-public r-ggfootball
   (package
     (name "r-ggfootball")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfootball" version))
        (sha256
-        (base32 "1wpwgkzki22jh2nz9jhl529cn8yk1ggs52h9cjq14gwi6205g7d6"))))
+        (base32 "18y28lai4dpkxy4x43ja3ng6zbq6mjbz3gvdxwsdwn8hm9j5z7c6"))))
     (properties `((upstream-name . "ggfootball")))
     (build-system r-build-system)
     (arguments
@@ -21785,7 +21705,6 @@ issue.")
                              r-stringi
                              r-rvest
                              r-readr
-                             r-qdapregex
                              r-jsonlite
                              r-highcharter
                              r-glue
@@ -21797,13 +21716,14 @@ issue.")
                              r-dplyr
                              r-base64enc))
     (home-page "http://aymennasri.me/ggfootball/")
-    (synopsis "Plotting Expected Goals (xG) Stats with 'Understat' Data")
+    (synopsis
+     "Plotting Football Matches Expected Goals (xG) Stats with 'Understat' Data")
     (description
-     "Scrapes shots data from Understat <https://understat.com/> and visualizes it
-using interactive plots: - A detailed shot map displaying the location, type,
-and @code{xG} value of shots taken by both teams. - An @code{xG} timeline chart
-showing the cumulative @code{xG} for each team over time, annotated with the
-details of scored goals.")
+     "Scrapes football match shots data from Understat <https://understat.com/> and
+visualizes it using interactive plots: - A detailed shot map displaying the
+location, type, and @code{xG} value of shots taken by both teams. - An @code{xG}
+timeline chart showing the cumulative @code{xG} for each team over time,
+annotated with the details of scored goals.")
     (license license:gpl3+)))
 
 (define-public r-ggfocus
@@ -23358,13 +23278,13 @@ prespecified and user-defined interventions are available.")
 (define-public r-gformula
   (package
     (name "r-gformula")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gfoRmula" version))
        (sha256
-        (base32 "09bjc5wp8rc7wmjcx8vkk7vg386j1wq5hkf6v63fpfpcsb887251"))))
+        (base32 "0ddxgk9ca6dckxp7rkpagdqmgm21f5kz9p4vsrngk3ps78v56vrw"))))
     (properties `((upstream-name . "gfoRmula")))
     (build-system r-build-system)
     (arguments
@@ -27202,19 +27122,33 @@ continuous analysis of landscape features.")
 (define-public r-geodist
   (package
     (name "r-geodist")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodist" version))
        (sha256
-        (base32 "16nldq2fph4nxy0rcy33z6vw9xar3ckvdpagbaqsa2w0023bzq7x"))))
+        (base32 "1j6c0avnhg9y8zlw5ybiv7w7fz40a2gbsn67mnirb4rr3irl7r0q"))))
     (properties `((upstream-name . "geodist")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
-    (native-inputs (list r-knitr))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/hypertidy/geodist")
     (synopsis "Fast, Dependency-Free Geodesic Distance Calculations")
     (description
@@ -36147,13 +36081,13 @@ graphic parameters.")
 (define-public r-gaawr2
   (package
     (name "r-gaawr2")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gaawr2" version))
        (sha256
-        (base32 "07qkw5i0ay5yg1ki600v56nmi71csnrhhjh98j5jvivls82957jl"))))
+        (base32 "1sg09v0nc0q0da74c2a665q6yjsyg1iv6gzdfpqzq9y6d9fvpf66"))))
     (properties `((upstream-name . "gaawr2")))
     (build-system r-build-system)
     (arguments

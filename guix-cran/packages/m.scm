@@ -1808,30 +1808,6 @@ partial coherence.  See Park, Eckley and Ombao (2014)
 <doi:10.1109/TSP.2014.2343937> for details.")
     (license license:gpl3+)))
 
-(define-public r-mvlm
-  (package
-    (name "r-mvlm")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MVLM" version))
-       (sha256
-        (base32 "1zcj405dc4jbiqw6p0fcbam8yc9d6yjpmrx5wjw5zjvig3iqb91k"))))
-    (properties `((upstream-name . "MVLM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-compquadform))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/dmcartor/MVLM")
-    (synopsis "Multivariate Linear Model with Analytic p-Values")
-    (description
-     "Allows a user to conduct multivariate multiple regression using analytic
-p-values rather than classic approximate F-tests.")
-    (license license:gpl2+)))
-
 (define-public r-mvisage
   (package
     (name "r-mvisage")
@@ -6477,19 +6453,19 @@ likelihood estimation and Bayesian inference.")
 (define-public r-multiatsm
   (package
     (name "r-multiatsm")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiATSM" version))
        (sha256
-        (base32 "0glg5kchgy5hg6r6nxmkb0bkfwsbzwbsjis7dbqhzrlmrckd0s5d"))))
+        (base32 "1q9rwhg5bbl3z3z8zhb7jwbp4v4wbj1kkilv1qjs1xc5wlg1p8rp"))))
     (properties `((upstream-name . "MultiATSM")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma r-ggplot2))
+    (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rubensmoura87/MultiATSM")
     (synopsis "Multicountry Term Structure of Interest Rates Models")
@@ -14823,13 +14799,13 @@ are treated separately from so-called complete cases.")
 (define-public r-monmlp
   (package
     (name "r-monmlp")
-    (version "1.1.5")
+    (version "1.1.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monmlp" version))
        (sha256
-        (base32 "19cx60csm8mnf6ksg64vlhi8wi1c7bmv9l55y9zmaljblr0kmzxf"))))
+        (base32 "1fr3j28w5v7nd4xpi39dlci8gkfqdalky1kqpxf5k38b75fd5xsv"))))
     (properties `((upstream-name . "monmlp")))
     (build-system r-build-system)
     (arguments
@@ -47056,32 +47032,6 @@ equivalence tests.  Calculate uncertainty estimates using the delta method,
 bootstrapping, or simulation-based inference.  Details can be found in
 Arel-Bundock, Greifer, and Heiss (2024) <doi:10.18637/jss.v111.i09>.")
     (license license:gpl3+)))
-
-(define-public r-margcond
-  (package
-    (name "r-margcond")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MargCond" version))
-       (sha256
-        (base32 "07qh1lgy8ds11cwlb4rxkl6aiph91zq29sy27b8wwxalycdgjrg8"))))
-    (properties `((upstream-name . "MargCond")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-matrix r-mass r-lme4 r-gee))
-    (home-page "https://cran.r-project.org/package=MargCond")
-    (synopsis "Joint Marginal-Conditional Model")
-    (description
-     "Fits joint marginal conditional models for multivariate longitudinal data, as in
-Proudfoot, Faig, Natarajan, and Xu (2018) <doi:10.1002/sim.7552>.  Development
-of this package was supported by the UCSD Altman Translational Research
-Institute, NIH grant UL1TR001442.  The content is solely the responsibility of
-the authors and does not necessarily represent the official views of the NIH.")
-    (license license:gpl2)))
 
 (define-public r-margaret
   (package

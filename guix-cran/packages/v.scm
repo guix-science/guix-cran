@@ -4231,13 +4231,13 @@ nonparametric pair-copulas.  See Kraus and Czado (2017)
 (define-public r-vinecopula
   (package
     (name "r-vinecopula")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VineCopula" version))
        (sha256
-        (base32 "0crr0x9zzlp0gyn4bylga0wg066fsmmkj5wsixyvnc8hjajny7xr"))))
+        (base32 "1hvwqvbph3gcvrvjxm3s3fhv3c3dxjq3rc1insic1bl7prg90292"))))
     (properties `((upstream-name . "VineCopula")))
     (build-system r-build-system)
     (arguments

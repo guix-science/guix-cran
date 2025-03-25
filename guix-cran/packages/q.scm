@@ -2634,6 +2634,41 @@ dtriangmesh functions.")
 = 0.")
     (license license:gpl2)))
 
+(define-public r-quadkeyr
+  (package
+    (name "r-quadkeyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadkeyr" version))
+       (sha256
+        (base32 "1cyp084d0kjl1p9zqlp0wq5bpqvkz5hk6ls9zvn48kwjc0dmav06"))))
+    (properties `((upstream-name . "quadkeyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stars
+                             r-shiny
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/quadkeyr/")
+    (synopsis "Generate Raster Images from QuadKey-Identified Datasets")
+    (description
+     "This package provides a set of functions of increasing complexity allows users
+to (1) convert @code{QuadKey-identified} datasets, based on Microsoft's Bing
+Maps Tile System', into Simple Features data frames, (2) transform Simple
+Features data frames into rasters, and (3) process multiple Meta ('Facebook')
+@code{QuadKey-identified} human mobility files directly into raster files.  For
+more details, see DâAndrea et al. (2024) <doi:10.21105/joss.06500>.")
+    (license license:expat)))
+
 (define-public r-quadform
   (package
     (name "r-quadform")

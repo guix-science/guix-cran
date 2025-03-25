@@ -13078,19 +13078,19 @@ in: Lorenz R., Stephan H.B., HÃ¶ner zu Siederdissen C. et al. (2011)
 (define-public r-disprofas
   (package
     (name "r-disprofas")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disprofas" version))
        (sha256
-        (base32 "16d0r94lj2bxp1dpizp5grjcbh627v5qqwj5iw8j4k345m784pcl"))))
+        (base32 "1ghb6gkngshpvynsnk127x43ng3x3gaf1civv8hjjndpkakglgja"))))
     (properties `((upstream-name . "disprofas")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-lifecycle r-ggplot2 r-boot))
+    (propagated-inputs (list r-rlang r-ggplot2 r-boot))
     (home-page "https://github.com/piusdahinden/disprofas")
     (synopsis "Non-Parametric Dissolution Profile Analysis")
     (description
@@ -14861,29 +14861,6 @@ methods and compare them, achieving good performance in convergence speed and
 result quality.The philosophy of the package is described in Guo G. (2022)
 <doi:10.1007/s00180-022-01270-z>.")
     (license license:gpl2)))
-
-(define-public r-dirmcmc
-  (package
-    (name "r-dirmcmc")
-    (version "1.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dirmcmc" version))
-       (sha256
-        (base32 "117p3jvinmha7a2phcpzq38ig05kcranp15xbxqvv0cgh3c95fjr"))))
-    (properties `((upstream-name . "dirmcmc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mcmcse))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dirmcmc")
-    (synopsis "Directional Metropolis Hastings Algorithm")
-    (description
-     "Implementation of Directional Metropolis Hastings Algorithm for MCMC.")
-    (license license:gpl3)))
 
 (define-public r-dirichletprocess
   (package
@@ -19799,13 +19776,13 @@ maintainability of your code.")
 (define-public r-devemf
   (package
     (name "r-devemf")
-    (version "4.5")
+    (version "4.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devEMF" version))
        (sha256
-        (base32 "03iwl6h6f158qc2i5b0ac9g1nnspqr958cvprjm4rgs1pcywplga"))))
+        (base32 "1rzqvhczm2qq3kpk4fsbd48776pl030xw35d8v2sgkjrvlrgic6b"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
     (arguments
@@ -28442,13 +28419,13 @@ two fields allowing to select a start time and an end time.")
 (define-public r-datetimeoffset
   (package
     (name "r-datetimeoffset")
-    (version "0.4.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetimeoffset" version))
        (sha256
-        (base32 "1vg55zg965iij2wx9i0n966b5y0fsbdrpd9n16lsqk2zcrppb6l2"))))
+        (base32 "1ciyd6l9kqm5dypj37sdyshph74ahfryh39172ljvzrf72hrkvcy"))))
     (properties `((upstream-name . "datetimeoffset")))
     (build-system r-build-system)
     (arguments

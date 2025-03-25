@@ -1504,13 +1504,13 @@ are available to assess the accuracy of oneâs method.  Please see Steorts
 (define-public r-iswr
   (package
     (name "r-iswr")
-    (version "2.0-9")
+    (version "2.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ISwR" version))
        (sha256
-        (base32 "1yc7awlmmsbddpdyz1gdfwyr2k3qmjfbblzr5bza8im7wahh75j2"))))
+        (base32 "1p7diy7mx6dyrv80163j7paj4359xh0sgvx9q6r505j1l8ysa23a"))))
     (properties `((upstream-name . "ISwR")))
     (build-system r-build-system)
     (arguments
@@ -6426,13 +6426,13 @@ package can also be used as a teaching demo for introductory Bayesian courses.")
 (define-public r-invivopkfit
   (package
     (name "r-invivopkfit")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "invivoPKfit" version))
        (sha256
-        (base32 "04d0qlkddjwkcznaw2amfqp0b6v0rxm0npn1ahm1bs0xkkkfiqg1"))))
+        (base32 "1x7fkj60jkvi5aj89qkm5qz2mcvjjc433h8zzp6sn6ligj21a80w"))))
     (properties `((upstream-name . "invivoPKfit")))
     (build-system r-build-system)
     (arguments
@@ -12062,29 +12062,6 @@ these algorithms, a number of functions based on some traditional and novel
 initialization techniques are also available in the package inaparc'.")
     (license license:gpl2+)))
 
-(define-public r-in2extremes
-  (package
-    (name "r-in2extremes")
-    (version "1.0-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "in2extRemes" version))
-       (sha256
-        (base32 "1lgsqm29zmjyf8kynyra2p3q7bs4fyd7ac4v6s3pbahzhhzdk94y"))))
-    (properties `((upstream-name . "in2extRemes")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-extremes))
-    (home-page "http://www.assessment.ucar.edu/toolkit/")
-    (synopsis "Into the extRemes Package")
-    (description
-     "Graphical User Interface (GUI) to some of the functions in the package
-@code{extRemes} version >= 2.0 are included.")
-    (license license:gpl2+)))
-
 (define-public r-imvol
   (package
     (name "r-imvol")
@@ -13241,6 +13218,46 @@ Percentage Error (PER).  By storing and visualizing the best performing models,
 it provides a comprehensive solution for precise and efficient regression
 modeling making it an invaluable tool for data scientists and researchers aiming
 to harness AI for predictive analytics.")
+    (license license:gpl3+)))
+
+(define-public r-immunogenetr
+  (package
+    (name "r-immunogenetr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "immunogenetr" version))
+       (sha256
+        (base32 "1y8y0yh2hflhhm3qlxrs4mn71xr655zknyd420514vw6gkca0bqh"))))
+    (properties `((upstream-name . "immunogenetr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/k96nb01/immunogenetr_package")
+    (synopsis "Comprehensive Toolkit for Clinical HLA Informatics")
+    (description
+     "This package provides a comprehensive toolkit for clinical Human Leukocyte
+Antigen (HLA) informatics, built on tidyverse <https://tidyverse.tidyverse.org/>
+principles and making use of genotype list string (GL string, Mack et al. (2023)
+<doi:10.1111/tan.15126>) for storing and computing HLA genotype data.  Specific
+functionalities include: coercion of HLA data in tabular format to and from GL
+string; calculation of matching and mismatching in all directions, with multiple
+output formats; automatic formatting of HLA data for searching within a GL
+string; truncation of molecular HLA data to a specific number of fields; and
+reading HLA genotypes in HML files and extracting the GL string.")
     (license license:gpl3+)))
 
 (define-public r-immunesim
@@ -20407,33 +20424,6 @@ Pedigree analysis in R (Vigeland, 2021, ISBN:9780128244302).  A Shiny app for
 visualising and comparing IBD distributions is available at
 <https://magnusdv.shinyapps.io/ibdsim2-shiny/>.")
     (license license:gpl3)))
-
-(define-public r-ibdsim
-  (package
-    (name "r-ibdsim")
-    (version "0.9-8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IBDsim" version))
-       (sha256
-        (base32 "1a0xz1khl6cz6ajcn903fcmsv8g7hfdh7684zhk0g6awsgwqdf5q"))))
-    (properties `((upstream-name . "IBDsim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-paramlink))
-    (home-page "https://cran.r-project.org/package=IBDsim")
-    (synopsis "Simulation of Chromosomal Regions Shared by Family Members")
-    (description
-     "Simulation of segments shared identical-by-descent (IBD) by pedigree members.
-Using sex specific recombination rates along the human genome (Kong et.  al
-(2010) <doi:10.1038/nature09525>), phased chromosomes are simulated for all
-pedigree members, either by unconditional gene dropping or conditional on a
-specified IBD pattern.  Additional functions provide summaries and further
-analysis of the simulated genomes.")
-    (license license:gpl2+)))
 
 (define-public r-ibd
   (package

@@ -123,13 +123,13 @@ information about the Google Trends API - pytrends', visit
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "196w9mp64nym5ljc3pwkr0k899668209p109cwyd9arlppll60mj"))))
+        (base32 "10wk393s0q87ns69z7lxilp51lf2f764h01ryxq7icx0w32nynv9"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (arguments
@@ -3232,13 +3232,13 @@ text').")
 (define-public r-psychtools
   (package
     (name "r-psychtools")
-    (version "2.4.3")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychTools" version))
        (sha256
-        (base32 "14hk7f714cjq6grrzqi6l0r5f7jp2j0sns8acprqyqw36siqck78"))))
+        (base32 "1hyb14z0swdffm5mk1qbxg5dykhlw0ymgb5id9m7r5raprcxhg0x"))))
     (properties `((upstream-name . "psychTools")))
     (build-system r-build-system)
     (arguments
@@ -11964,36 +11964,6 @@ multivariate analyses of quantitative behavioral data based on machine learning
 models.")
     (license license:gpl3)))
 
-(define-public r-predkmeans
-  (package
-    (name "r-predkmeans")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "predkmeans" version))
-       (sha256
-        (base32 "0352c50zlyzn8fczrkinayllj9jp978njjl7dazzkzypx0p20va5"))))
-    (properties `((upstream-name . "predkmeans")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mgcv r-maxlik r-e1071))
-    (home-page "https://cran.r-project.org/package=predkmeans")
-    (synopsis "Covariate Adaptive Clustering")
-    (description
-     "This package implements the predictive k-means method for clustering
-observations, using a mixture of experts model to allow covariates to influence
-cluster centers.  Motivated by air pollution epidemiology settings, where
-cluster membership needs to be predicted across space.  Includes functions for
-predicting cluster membership using spatial splines and principal component
-analysis (PCA) scores using either multinomial logistic regression or support
-vector machines (SVMs).  For method details see Keller et al. (2017)
-<doi:10.1214/16-AOAS992>.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-predint
   (package
     (name "r-predint")
@@ -14977,19 +14947,18 @@ power when passing laws in weighted voting situations.")
 (define-public r-powerhe
   (package
     (name "r-powerhe")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerHE" version))
        (sha256
-        (base32 "0q5dyifbvygmbcwcr8rk2dplibsrrn5yvlfwpk27k796524g93zw"))))
+        (base32 "1rfh7dl81c8w2rp1n3jc60pbbldsi843p3q1vgzgv41nsbmwf49w"))))
     (properties `((upstream-name . "powerHE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-skellam))
     (home-page "https://cran.r-project.org/package=powerHE")
     (synopsis "Power and Sample Size Calculations with Hierarchical Endpoints")
     (description
@@ -16124,6 +16093,30 @@ The empirical Bayes estimates are computed following the method described by
 Kang et al. (2012) <doi:10.4196/kjpp.2012.16.2.97>.")
     (license license:agpl3)))
 
+(define-public r-positron-tutorials
+  (package
+    (name "r-positron-tutorials")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "positron.tutorials" version))
+       (sha256
+        (base32 "0cfdqj331ga9s2yvkrqqynp4vfv5h7vsc4457vdy0snliqwv0z46"))))
+    (properties `((upstream-name . "positron.tutorials")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-rvest r-purrr r-mime r-dplyr))
+    (home-page "https://ppbds.github.io/positron.tutorials/")
+    (synopsis "Tutorials for Learning 'Positron' and Related Tools")
+    (description
+     "Collection of tutorials for working with Positron'.  Covers scripts, Quarto
+documents, Git', @code{GitHub}', and Quarto websites.  Makes extensive use of
+the tools in the tutorial.helpers package.")
+    (license license:expat)))
+
 (define-public r-posiadjrsquared
   (package
     (name "r-posiadjrsquared")
@@ -16746,13 +16739,13 @@ included for reference and examples.")
 (define-public r-poputils
   (package
     (name "r-poputils")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poputils" version))
        (sha256
-        (base32 "01g7zca29pfizi3gjk4jpbjrx36dbnp3qgcmfwrcp3mzz4bs0znn"))))
+        (base32 "1bjv6jzsyr5q82ww3fb99m3ic4qmcgnladsqk12l3fjvq0jhal22"))))
     (properties `((upstream-name . "poputils")))
     (build-system r-build-system)
     (arguments
@@ -32791,33 +32784,6 @@ as multi-layered tiff files.")
     (description "Allows users to stem Persian texts for text analysis.")
     (license license:gpl2+)))
 
-(define-public r-perseusr
-  (package
-    (name "r-perseusr")
-    (version "0.3.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PerseusR" version))
-       (sha256
-        (base32 "1k03flbnjndx5mm26hysk64z89858m50kjs8gyldm4s5f09iny6p"))))
-    (properties `((upstream-name . "PerseusR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml r-stringr r-plyr r-biobase))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PerseusR")
-    (synopsis "Perseus R Interop")
-    (description
-     "Enables the interoperability between the Perseus platform for omics data
-analysis (Tyanova et al.  2016) <doi:10.1038/nmeth.3901> and R. It provides the
-foundation for developing and running Perseus plugins implemented in R by
-providing all required input and output handling, including data and parameter
-parsing as described in Rudolph and Cox 2018 <doi:10.1101/447268>.")
-    (license license:expat)))
-
 (define-public r-persdx
   (package
     (name "r-persdx")
@@ -35547,13 +35513,13 @@ with asymmetric sources but it works for symmetric sources as well.")
 (define-public r-pearsonds
   (package
     (name "r-pearsonds")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PearsonDS" version))
        (sha256
-        (base32 "1s07zdqa769rx0b0nhr3jrx5siy5ywc43kgm1574gzqck3dkqpa1"))))
+        (base32 "0m41g5g056wafg3i66fdkv9q7fpd1446d8hyxhf3km88sar0bd13"))))
     (properties `((upstream-name . "PearsonDS")))
     (build-system r-build-system)
     (arguments
@@ -41623,13 +41589,13 @@ likelihood of over-retention.")
 (define-public r-paramtest
   (package
     (name "r-paramtest")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paramtest" version))
        (sha256
-        (base32 "0yn1s1qkgby8x0qn7cy1zhxzc0wyi7bm30pkvijhn5h5afjpylsy"))))
+        (base32 "03z0vhszh2wz2p2f03vw9cfpzz632c4f9fjqap0v65ng7dimzi4r"))))
     (properties `((upstream-name . "paramtest")))
     (build-system r-build-system)
     (arguments
@@ -43134,13 +43100,13 @@ Baumann-Pickering et al (2010) <doi:10.1121/1.3479549>.")
 (define-public r-pammtools
   (package
     (name "r-pammtools")
-    (version "0.5.93")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pammtools" version))
        (sha256
-        (base32 "0xihvszndsnzzh3kzn67yqqdxms5pba609lvlg68k3gfxbxk104l"))))
+        (base32 "0wzaf6ang93mkb52pg49l126037ccsfvz7j4dhba9642xkbcln5a"))))
     (properties `((upstream-name . "pammtools")))
     (build-system r-build-system)
     (arguments
@@ -43150,6 +43116,7 @@ Baumann-Pickering et al (2010) <doi:10.1121/1.3479549>.")
                              r-tidyr
                              r-tibble
                              r-survival
+                             r-scam
                              r-rlang
                              r-purrr
                              r-pec
@@ -43171,11 +43138,11 @@ analysis of survival (or time-to-event) data, based on Generalized Additive
 (Mixed) Models (GA(M)Ms).  It offers intuitive specification and robust
 estimation of complex survival models with stratified baseline hazards, random
 effects, time-varying effects, time-dependent covariates and cumulative effects
-(Bender and others (2019)), as well as support for left-truncated, competing
-risks and recurrent events data.  pammtools provides tidy workflow for survival
-analysis with PAMMs, including data simulation, transformation and other
-functions for data preprocessing and model post-processing as well as
-visualization.")
+(Bender and others (2019)), as well as support for left-truncated data as well
+as competing risks, recurrent events and multi-state settings.  pammtools
+provides tidy workflow for survival analysis with PAMMs, including data
+simulation, transformation and other functions for data preprocessing and model
+post-processing as well as visualization.")
     (license license:expat)))
 
 (define-public r-pammisc
@@ -43769,13 +43736,13 @@ missing data for all analyses.")
 (define-public r-paleodiv
   (package
     (name "r-paleodiv")
-    (version "0.4.0")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paleoDiv" version))
        (sha256
-        (base32 "1v4dmx00vh3qpbw7pwvrr3sh4v6262b5y2h5nz2kgg9n4mfakc7n"))))
+        (base32 "0hra1icvv89dxdkr3q01jqxgcpaqm9j04a7450k21qwkr7xj33cc"))))
     (properties `((upstream-name . "paleoDiv")))
     (build-system r-build-system)
     (arguments
@@ -45472,13 +45439,13 @@ joint analysis of metabolomic and epidemiological data.  Metabolomics,
 (define-public r-packhv
   (package
     (name "r-packhv")
-    (version "2.2")
+    (version "2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packHV" version))
        (sha256
-        (base32 "0bj7zhlz2283y1hfdqdn7xil4wscwri1f5hszarwjwczx4n5sv81"))))
+        (base32 "1b7wxl6shmbwdx71c4bmfgzb9f14d7xg3c90kmfscsvbq4sra5xx"))))
     (properties `((upstream-name . "packHV")))
     (build-system r-build-system)
     (arguments

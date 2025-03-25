@@ -3017,13 +3017,13 @@ smaller than the number of predictors.  For more information see Faisal and Tutz
 (define-public r-wnl
   (package
     (name "r-wnl")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wnl" version))
        (sha256
-        (base32 "0900pwasdwzxssd2z4b8giliyzkpsw6jin20rjwbfgya75jpndai"))))
+        (base32 "0k1lb31qqwnab1fgdmyi0ndghpn80mpxik3z3w35mywr8fh5aak9"))))
     (properties `((upstream-name . "wnl")))
     (build-system r-build-system)
     (arguments
@@ -4630,13 +4630,13 @@ main HTML content where CSS of the main HTML could interfere with the widget.")
 (define-public r-widals
   (package
     (name "r-widals")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "widals" version))
        (sha256
-        (base32 "1094yaaq2xb0ykvc1j3hs87j1p4h7zgf8mkn4han8iw5fmr9zncy"))))
+        (base32 "0lwc5lkk45rp3fvmf551sijmjnnwg7n5cni6bfyr1jjn9hp2j3bw"))))
     (properties `((upstream-name . "widals")))
     (build-system r-build-system)
     (arguments
@@ -7504,13 +7504,13 @@ geospatial terminology.")
 (define-public r-wdi
   (package
     (name "r-wdi")
-    (version "2.7.8")
+    (version "2.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WDI" version))
        (sha256
-        (base32 "1q7d74y3vi13zmpinky4ayn0n292rslg7fd112hxvjiqbmq6mxdc"))))
+        (base32 "1kjl0iv16fdhkdzbywn5n15kh9bj231xg8glx9md801qin9j23ra"))))
     (properties `((upstream-name . "WDI")))
     (build-system r-build-system)
     (arguments

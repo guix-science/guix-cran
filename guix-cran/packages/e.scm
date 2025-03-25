@@ -7390,6 +7390,70 @@ parameters are selected via information criteria (AIC / BIC / extended BIC) or
 cross validation.")
     (license license:gpl2+)))
 
+(define-public r-estimatebreed
+  (package
+    (name "r-estimatebreed")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EstimateBreed" version))
+       (sha256
+        (base32 "1dfh9810xj900bdwvnk8s71rncvis91s5ip2029c4sgxcb4651hd"))))
+    (properties `((upstream-name . "EstimateBreed")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-sommer
+                             r-purrr
+                             r-nasapower
+                             r-minque
+                             r-lubridate
+                             r-lmtest
+                             r-lme4
+                             r-jsonlite
+                             r-httr
+                             r-hrbrthemes
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-car
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/willyanjnr/EstimateBreed")
+    (synopsis "Estimation of Environmental Variables and Genetic Parameters")
+    (description
+     "This package performs analyzes and estimates of environmental covariates and
+genetic parameters related to selection strategies and development of superior
+genotypes.  It has two main functionalities, the first being about prediction
+models of covariates and environmental processes, while the second deals with
+the estimation of genetic parameters and selection strategies.  Designed for
+researchers and professionals in genetics and environmental sciences, the
+package combines statistical methods for modeling and data analysis.  This
+includes the plastochron estimate proposed by Porta et al. (2024)
+<doi:10.1590/1807-1929/agriambi.v28n10e278299>, Stress indices for genotype
+selection referenced by Ghazvini et al. (2024) <doi:10.1007/s10343-024-00981-1>,
+the Environmental Stress Index described by Tazzo et al. (2024)
+<https://revistas.ufg.br/vet/article/view/77035>, industrial quality indices of
+wheat genotypes (Szareski et al., 2019), <doi:10.4238/gmr18223>, Ear Indexes
+estimation (Rigotti et al., 2024), <doi:10.13083/reveng.v32i1.17394>, Selection
+index for protein and grain yield (de Pelegrin et al., 2017),
+<doi:10.4236/ajps.2017.813224>, Estimation of the ISGR - Genetic Selection Index
+for Resilience for environmental resilience (Bandeira et al., 2024)
+<https://www.cropj.com/Carvalho_18_12_2024_825_830.pdf>, estimation of Leaf Area
+Index (Meira et al., 2015)
+<https://www.fag.edu.br/upload/revista/cultivando_o_saber/55d1ef202e494.pdf>,
+Restriction of control variability (Carvalho et al., 2023)
+<doi:10.4025/actasciagron.v45i1.56156>, Risk of Disease Occurrence in Soybeans
+described by Engers et al. (2024) <doi:10.1007/s40858-024-00649-1> and
+estimation of genetic parameters for selection based on balanced experiments
+(Yadav et al., 2024) <doi:10.1155/2024/9946332>.")
+    (license license:gpl3+)))
+
 (define-public r-ester
   (package
     (name "r-ester")
@@ -17556,34 +17620,6 @@ the @code{LightGBM} use the following link:
 @code{DrWhy.AI} universe.")
     (license license:gpl2)))
 
-(define-public r-eivtools
-  (package
-    (name "r-eivtools")
-    (version "0.1-8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eivtools" version))
-       (sha256
-        (base32 "0ynmrql6dv10m7cwba5mzwlbvp6ab53nzqqvk3ihwyiqzmnnmpk4"))))
-    (properties `((upstream-name . "eivtools")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r2jags))
-    (home-page "https://cran.r-project.org/package=eivtools")
-    (synopsis "Measurement Error Modeling Tools")
-    (description
-     "This includes functions for analysis with error-prone covariates, including
-deconvolution, latent regression and errors-in-variables regression.  It
-implements methods by Rabe-Hesketh et al. (2003)
-<doi:10.1191/1471082x03st056oa>, Lockwood and @code{McCaffrey} (2014)
-<doi:10.3102/1076998613509405>, and Lockwood and @code{McCaffrey} (2017)
-<doi:10.1007/s11336-017-9556-y>, among others.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-eive
   (package
     (name "r-eive")
@@ -19696,13 +19732,13 @@ records for learning how to process records with errors.")
 (define-public r-eemr
   (package
     (name "r-eemr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eemR" version))
        (sha256
-        (base32 "1w3nwlrbxm7z4c3acx991zk5drgs67qys7kgl0qakh5vrdsrxw3v"))))
+        (base32 "0131ycka9hgpvga9jm335p60v8wq8iw12a4a1dfx5af8dm5gn0h5"))))
     (properties `((upstream-name . "eemR")))
     (build-system r-build-system)
     (arguments
@@ -20220,13 +20256,13 @@ Computer and Information Literacy Study (ICILS), and Civic Education Study
 (define-public r-edstan
   (package
     (name "r-edstan")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edstan" version))
        (sha256
-        (base32 "1gm1rxwywigyfdlcm2yj1m9qjb4s6w7chr1ck7b32x1pdxdl3ns5"))))
+        (base32 "0rmkdrzjjryi4fifgzi3cwyd4xjxc88m1lbswgs30q9b5wkdcs3q"))))
     (properties `((upstream-name . "edstan")))
     (build-system r-build-system)
     (arguments
@@ -20237,9 +20273,7 @@ Computer and Information Literacy Study (ICILS), and Civic Education Study
     (home-page "https://cran.r-project.org/package=edstan")
     (synopsis "Stan Models for Item Response Theory")
     (description
-     "This package provides convenience functions and pre-programmed Stan models
-related to item response theory.  Its purpose is to make fitting common item
-response theory models using Stan easy.")
+     "Streamlines the fitting of common Bayesian item response models using Stan.")
     (license license:bsd-3)))
 
 (define-public r-edotrans

@@ -1127,37 +1127,6 @@ clustering algorithm.  It is based on a simple novel technique using the
 descriptive statistics of peak counts of the features in a data set.")
     (license license:gpl2+)))
 
-(define-public r-kpcalg
-  (package
-    (name "r-kpcalg")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kpcalg" version))
-       (sha256
-        (base32 "1gd5bisyfwb12l9jmwhi2arlxrabc01vgv4m1qqs23vybsd6yh52"))))
-    (properties `((upstream-name . "kpcalg")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rspectra
-                             r-pcalg
-                             r-mgcv
-                             r-kernlab
-                             r-graph
-                             r-energy))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=kpcalg")
-    (synopsis "Kernel PC Algorithm for Causal Structure Detection")
-    (description
-     "Kernel PC (@code{kPC}) algorithm for causal structure learning and causal
-inference using graphical models. @code{kPC} is a version of PC algorithm that
-uses kernel based independence criteria in order to be able to deal with
-non-linear relationships and non-Gaussian noise.")
-    (license license:gpl2+)))
-
 (define-public r-kpcaig
   (package
     (name "r-kpcaig")
@@ -5850,13 +5819,13 @@ and bandwidths are supported.")
 (define-public r-kdecopula
   (package
     (name "r-kdecopula")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdecopula" version))
        (sha256
-        (base32 "0g5c12wm3byd4chd8i9mxv599gsf4ip4qghx83j3mmhsmn05zf4y"))))
+        (base32 "1dkwqrrnpcas0fg7p7cxwfzld1vrdkmr2ybxkvhxj0v1ipi4663y"))))
     (properties `((upstream-name . "kdecopula")))
     (build-system r-build-system)
     (arguments

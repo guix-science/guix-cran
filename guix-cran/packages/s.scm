@@ -4767,13 +4767,13 @@ copula and maximum penalised likelihood methods.")
 (define-public r-survivalmpl
   (package
     (name "r-survivalmpl")
-    (version "0.2-3")
+    (version "0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalMPL" version))
        (sha256
-        (base32 "1dxn9s68f545chqg1kfdys0gr419w259b1156g92mql899fm77sq"))))
+        (base32 "1rfvv42gqn5n2c6bh16s44m81dfzrhlw1frx4v3pgsh5jrhp9nrk"))))
     (properties `((upstream-name . "survivalMPL")))
     (build-system r-build-system)
     (arguments
@@ -10252,13 +10252,13 @@ methodology.")
 (define-public r-stratsel
   (package
     (name "r-stratsel")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StratSel" version))
        (sha256
-        (base32 "0hd6q8s8aiymcd33kv0gd0a4wzr86xxdzwn18jgpyk9q8pmg8gvl"))))
+        (base32 "0x4yr58hz9s3hcy4gfjfir15hb9jc027nq3195fm381wrqvbj43d"))))
     (properties `((upstream-name . "StratSel")))
     (build-system r-build-system)
     (arguments
@@ -17665,33 +17665,6 @@ maintaining the Type I error rate.  Kapur K, Bhaumik R, Tang XC, Hur K, Reda DJ,
 Bhaumik D (2014) <doi:10.1002/sim.6203>.")
     (license license:gpl2)))
 
-(define-public r-ssrat
-  (package
-    (name "r-ssrat")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SSrat" version))
-       (sha256
-        (base32 "1mmwla7yqqldv0s5hqljq2k2qljdfhq97m5128gvf3iy7n2yjzgj"))))
-    (properties `((upstream-name . "SSrat")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sna r-plyr))
-    (home-page "https://cran.r-project.org/package=SSrat")
-    (synopsis
-     "Two-Dimensional Sociometric Status Determination with Rating Scales")
-    (description
-     "This package provides a set of functions for two-dimensional sociometric status
-determination with rating scales.  For each person assessed, SSrat computes
-probability distributions of the total scores for `Sympathy (S), `Antipathy (A),
-social `Preference (P) and social `Impact (I), and applies a set of criteria for
-sociometric status categorization.")
-    (license license:gpl2)))
-
 (define-public r-ssra
   (package
     (name "r-ssra")
@@ -18647,36 +18620,37 @@ directly to the client.")
 (define-public r-ssgl
   (package
     (name "r-ssgl")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSGL" version))
        (sha256
-        (base32 "1f65sc713bzi6nq7ay9jnz92bxh7lrzj6aj77dczkafac2vgmba2"))))
+        (base32 "0lwsxni5cl817plxib2m31mx95z1hqcaynikx97akpd9y18xzwvn"))))
     (properties `((upstream-name . "SSGL")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-pracma r-mass r-grpreg))
+    (propagated-inputs (list r-matrix
+                             r-mass
+                             r-grpreg
+                             r-gigrvg
+                             r-foreach
+                             r-dorng
+                             r-doparallel
+                             r-caret
+                             r-bayeslogit))
     (home-page "https://cran.r-project.org/package=SSGL")
     (synopsis
      "Spike-and-Slab Group Lasso for Group-Regularized Generalized Linear Models")
     (description
      "Fits group-regularized generalized linear models (GLMs) using the spike-and-slab
-group lasso (SSGL) prior introduced by Bai et al. (2022)
+group lasso (SSGL) prior of Bai et al. (2022)
 <doi:10.1080/01621459.2020.1765784> and extended to GLMs by Bai (2023)
-<@code{arXiv:2007.07021>}.  This package supports fitting the SSGL model for the
-following GLMs with group sparsity: Gaussian linear regression, binary logistic
-regression, Poisson regression, negative binomial regression, and gamma
-regression.  Stand-alone functions for group-regularized negative binomial
-regression and group-regularized gamma regression are also available, with the
-option of employing the group lasso penalty of Yuan and Lin (2006)
-<doi:10.1111/j.1467-9868.2005.00532.x>, the group minimax concave penalty (MCP)
-of Breheny and Huang <doi:10.1007/s11222-013-9424-2>, or the group smoothly
-clipped absolute deviation (SCAD) penalty of Breheny and Huang (2015)
-<doi:10.1007/s11222-013-9424-2>.")
+<doi:10.48550/@code{arXiv.2007.07021>}.  This package supports fitting the SSGL
+model for the following GLMs with group sparsity: Gaussian linear regression,
+binary logistic regression, and Poisson regression.")
     (license license:gpl3)))
 
 (define-public r-ssfit
@@ -31578,6 +31552,32 @@ earth observation data for reading, as well as helpers to retrieve data set
 citation and provenance details.")
     (license license:expat)))
 
+(define-public r-sono
+  (package
+    (name "r-sono")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SONO" version))
+       (sha256
+        (base32 "0slmrknvrq9albxs08rrmrrxcakhh1ijf0fwvyjgzrnidxyv96av"))))
+    (properties `((upstream-name . "SONO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rje r-rdpack r-ggplot2 r-desctools r-data-table))
+    (home-page "https://cran.r-project.org/package=SONO")
+    (synopsis "Scores of Nominal Outlyingness (SONO)")
+    (description
+     "Computes scores of outlyingness for data sets consisting of nominal variables
+and includes various evaluation metrics for assessing performance of outlier
+identification algorithms producing scores of outlyingness.  The scores of
+nominal outlyingness are computed based on the framework of Costa and Papatsouma
+(2025) <doi:10.48550/@code{arXiv.2408.07463>}.")
+    (license license:expat)))
+
 (define-public r-sonify
   (package
     (name "r-sonify")
@@ -34493,6 +34493,31 @@ Downloaded data can optionally be cached, to avoid repeated downloads of the
 same files.")
     (license license:gpl3)))
 
+(define-public r-snazzier
+  (package
+    (name "r-snazzier")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "snazzieR" version))
+       (sha256
+        (base32 "102ipi6hiry5abv20ygsg1b4aynchcksbnjw0wwpv0pwm9s2i1ha"))))
+    (properties `((upstream-name . "snazzieR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-knitr r-kableextra r-ggplot2))
+    (home-page "https://cran.r-project.org/package=snazzieR")
+    (synopsis "Chic and Sleek Functions for Beautiful Statisticians")
+    (description
+     "Because your linear models deserve better than console output.  A sleek color
+palette and kable styling to make your regression results look sharper than they
+are.  See the package manual at
+<https://github.com/@code{JesusButForGayPeople/snazzieR/releases/download/v0.1.0/snazzieR_0.1.0.pdf>}.")
+    (license license:expat)))
+
 (define-public r-snapshot
   (package
     (name "r-snapshot")
@@ -37250,6 +37275,38 @@ guaranteed.  The methodology is described in Langsrud and Heldal (2018)
     (description "Inference techniques for Fay Herriot Model.")
     (license license:gpl2+)))
 
+(define-public r-smahp
+  (package
+    (name "r-smahp")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SMAHP" version))
+       (sha256
+        (base32 "13grpf725l4ji0bclw9i7qcxszjbzwn7v7da6d1xflfl07iv5bhr"))))
+    (properties `((upstream-name . "SMAHP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-penaft
+                             r-ncvreg
+                             r-glmnet
+                             r-fdrtool
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SMAHP")
+    (synopsis
+     "Survival Mediation Analysis of High-Dimensional Proteogenomic Data")
+    (description
+     "SMAHP (pronounced as SOO-MAP) is a novel multi-omics framework for causal
+mediation analysis of high-dimensional proteogenomic data with survival
+outcomes.  The full methodological details can be found in our recent preprint
+by Ahn S et al. (2025) <doi:10.48550/@code{arXiv.2503.08606>}.")
+    (license license:gpl3)))
+
 (define-public r-smacpod
   (package
     (name "r-smacpod")
@@ -39845,33 +39902,6 @@ discriminant analysis), logistic regression (Frequentist or Bayes), parameters
 estimation and some basic plots.")
     (license license:gpl2)))
 
-(define-public r-sizeestimation
-  (package
-    (name "r-sizeestimation")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SizeEstimation" version))
-       (sha256
-        (base32 "1rz57y76hzp880511kzm7nhxf201n0dr7ccip6slrjz784dl7s27"))))
-    (properties `((upstream-name . "SizeEstimation")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-msm r-mcmcpack))
-    (home-page "https://cran.r-project.org/package=SizeEstimation")
-    (synopsis
-     "Estimating the Sizes of Populations at Risk of HIV Infection from Multiple Data Sources Using a Bayesian Hierarchical Model")
-    (description
-     "This function develops an algorithm for presenting a Bayesian hierarchical model
-for estimating the sizes of local and national drug injected populations in
-Bangladesh.  The model incorporates multiple commonly used data sources
-including mapping data, surveys, interventions, capture-recapture data,
-estimates or guesstimates from organizations, and expert opinion.")
-    (license license:gpl3)))
-
 (define-public r-sixsigma
   (package
     (name "r-sixsigma")
@@ -42316,6 +42346,32 @@ regression model's coefficients and variance-covariance matrix.")
 not-a-pipe operator of the magrittr package.")
     (license license:gpl3)))
 
+(define-public r-simpr-interaction
+  (package
+    (name "r-simpr-interaction")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simpr.interaction" version))
+       (sha256
+        (base32 "00q9cycwrhxcp4lmmryli4m0fr1qrihr4avcnrnsaya1g337m81b"))))
+    (properties `((upstream-name . "simpr.interaction")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-interactionpower))
+    (home-page "https://github.com/statisfactions/simpr.interaction/")
+    (synopsis
+     "Calculating Parameters for Simulation-Based Regression Interaction Power Analysis")
+    (description
+     "This package provides functionality for analytically calculating parameters (via
+the @code{InteractionPoweR} package) useful for simulation of moderated multiple
+regression, based on the correlations among the predictors and outcome and the
+reliability of predictors.")
+    (license license:gpl2)))
+
 (define-public r-simpr
   (package
     (name "r-simpr")
@@ -42592,13 +42648,13 @@ in C with GNU Scientific Library (GSL) so as to facilitate the computation.")
 (define-public r-simpletex
   (package
     (name "r-simpletex")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simpletex" version))
        (sha256
-        (base32 "13hcb3k5car0q5yqb9wqccdzgrqxvjbbzn8c9rcrx23wgwpr226l"))))
+        (base32 "046w12p1349lsns4q8gi5mzjbw623m00fq8p7x6yqfb42fczf4xj"))))
     (properties `((upstream-name . "simpletex")))
     (build-system r-build-system)
     (arguments
@@ -42606,7 +42662,7 @@ in C with GNU Scientific Library (GSL) so as to facilitate the computation.")
       #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-glue r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/chuxinyuan/simpletex")
+    (home-page "https://github.com/chuxinyuan/simpletex")
     (synopsis "Mathematical Formulas and Character Recognition")
     (description
      "By calling the @code{SimpleTex} <https://simpletex.cn/> open API implements text
@@ -44260,29 +44316,6 @@ Shuttleworth-Wallace model.  These calculations main refer to Allen et al.(1998,
 ISBN:92-5-104219-5), Teh (2006, ISBN:1-58-112-998-X), and Liu et al.(2006)
 <doi:10.1016/j.agwat.2006.01.018>.")
     (license license:gpl3+)))
-
-(define-public r-simest
-  (package
-    (name "r-simest")
-    (version "0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simest" version))
-       (sha256
-        (base32 "1wp08dkbshn5parq69d7iizp4g16qzpdim37kcg09pgsc3aghwaj"))))
-    (properties `((upstream-name . "simest")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-nnls r-cobs))
-    (home-page "https://cran.r-project.org/package=simest")
-    (synopsis "Constrained Single Index Model Estimation")
-    (description
-     "Estimation of function and index vector in single index model with and without
-shape constraints including different smoothness conditions.")
-    (license license:gpl2)))
 
 (define-public r-simer
   (package
@@ -47467,6 +47500,32 @@ which outputs confusion matrix even if classes are not concerted;
 @code{Pleiad()} which is fast and flexible correlogram.")
     (license license:gpl2+)))
 
+(define-public r-ship
+  (package
+    (name "r-ship")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SHIP" version))
+       (sha256
+        (base32 "1b3p5x6k7a6fj060lzv7qkqag979vr94x4kpf72vpzw3dv42f5j4"))))
+    (properties `((upstream-name . "SHIP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://github.com/vguillemot/SHIP")
+    (synopsis "Shrinkage Covariance Incorporating Prior Knowledge")
+    (description
+     "This package implements estimation methods for shrinkage covariance matrices
+using user-specified covariance targets.  The covariance target is a structured
+matrix towards which the unbiased sample covariance is shrunk, optionally
+incorporating prior knowledge.  Shrinkage intensity is computed analytically.
+The method is described and applied to microarray gene expression data in
+Jelizarow et al. (2010) <doi:10.1093/bioinformatics/btq323>.")
+    (license license:gpl2+)))
+
 (define-public r-shinyxypad
   (package
     (name "r-shinyxypad")
@@ -48594,6 +48653,32 @@ be used throughout the entire app development process.")
      "Input widget that allows to construct complex filtering queries in Shiny'.  It's
 a wrapper for @code{JavaScript} library @code{jQuery-QueryBuilder}', check
 <https://querybuilder.js.org/>.")
+    (license license:expat)))
+
+(define-public r-shinyproxylogs
+  (package
+    (name "r-shinyproxylogs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyproxyLogs" version))
+       (sha256
+        (base32 "0hqv06ks0jfp26a5n7v7kvk7smg4979qf7bz761cq9bh03y437hb"))))
+    (properties `((upstream-name . "shinyproxyLogs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-stringr r-purrr r-dplyr))
+    (home-page "https://tsenegas.github.io/shinyproxyLogs/")
+    (synopsis "Tools for Analyzing 'ShinyProxy' Containers Logs")
+    (description
+     "This package provides functions to parse and analyze logs generated by
+@code{ShinyProxy} containers.  It extracts metadata from log file names, reads
+log contents, and computes summary statistics (such as the total number of lines
+and lines containing error messages), facilitating efficient monitoring and
+debugging of @code{ShinyProxy} deployments.")
     (license license:expat)))
 
 (define-public r-shinypredict

@@ -24806,13 +24806,13 @@ factors (Pawel and Held, 2022) <doi:10.1111/rssb.12491>.")
 (define-public r-bayesrel
   (package
     (name "r-bayesrel")
-    (version "0.7.7")
+    (version "0.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bayesrel" version))
        (sha256
-        (base32 "0c6vpkljhisdznxw1g204gyfvpy2zs8yqymdbp35zxddygfdchgd"))))
+        (base32 "0dr8gn7j1bsprz0n4q8nyz1pyi1m2dzjj6gf71w7m0fg0cxqlfhk"))))
     (properties `((upstream-name . "Bayesrel")))
     (build-system r-build-system)
     (arguments
@@ -24821,6 +24821,7 @@ factors (Pawel and Held, 2022) <doi:10.1111/rssb.12491>.")
     (propagated-inputs (list r-rdpack
                              r-rcpparmadillo
                              r-rcpp
+                             r-psych
                              r-mass
                              r-lavaan
                              r-laplacesdemon
@@ -25206,6 +25207,42 @@ and priors and for computing Bayes factors for simple one parameter models.  It
 includes functionality for computing and plotting priors, likelihoods, and model
 predictions.  Additional functionality is included for computing and plotting
 posteriors.")
+    (license license:expat)))
+
+(define-public r-bayespim
+  (package
+    (name "r-bayespim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesPIM" version))
+       (sha256
+        (base32 "1ya4bqi2mzqsalaf2qxiw9dkx07747ca6pwybmic76krjjzdl9id"))))
+    (properties `((upstream-name . "BayesPIM")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp
+                             r-mvtnorm
+                             r-mass
+                             r-ggamma
+                             r-foreach
+                             r-doparallel
+                             r-coda
+                             r-actuar))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thomasklausch2/bayespim")
+    (synopsis "Bayesian Prevalence-Incidence Mixture Model")
+    (description
+     "Models time-to-event data from interval-censored screening studies.  It accounts
+for latent prevalence at baseline and incorporates misclassification due to
+imperfect test sensitivity.  For usage details, see the package vignette
+(\"@code{BayesPIM_intro}\").  Further details can be found in T. Klausch, B. I.
+Lissenberg-Witte, and V. M. Coupe (2024), \"A Bayesian prevalence-incidence
+mixture model for screening outcomes with misclassification\",
+<doi:10.48550/@code{arXiv.2412.16065>}.")
     (license license:expat)))
 
 (define-public r-bayespiecehazselect
@@ -27313,13 +27350,13 @@ Sabo RT (2014) <doi:10.1080/10543406.2014.888441>.")
 (define-public r-bayesdfa
   (package
     (name "r-bayesdfa")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesdfa" version))
        (sha256
-        (base32 "1xmvpkg30nk4sldzy3rp12ivnj4phzdw08hmk5nh5b70mqapvkra"))))
+        (base32 "01936xvnskgf5mikwf96a0wcqgim47zqjal093rylnia8jiz7b0n"))))
     (properties `((upstream-name . "bayesdfa")))
     (build-system r-build-system)
     (arguments
@@ -27327,7 +27364,6 @@ Sabo RT (2014) <doi:10.1080/10543406.2014.888441>.")
       #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-stanheaders
-                             r-rstantools
                              r-rstan
                              r-rlang
                              r-reshape2

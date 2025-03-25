@@ -9587,34 +9587,6 @@ metabolic labelling sequencing) time courses, functions to identify pathway
 modulators and to visualize the results.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-hetop
-  (package
-    (name "r-hetop")
-    (version "0.2-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HETOP" version))
-       (sha256
-        (base32 "1fjwyqh7l296pghmc4m81q8icgbhvqvxr61zd638fr46gls3ky2p"))))
-    (properties `((upstream-name . "HETOP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r2jags))
-    (home-page "https://cran.r-project.org/package=HETOP")
-    (synopsis
-     "MLE and Bayesian Estimation of Heteroskedastic Ordered Probit (HETOP) Model")
-    (description
-     "This package provides functions for maximum likelihood and Bayesian estimation
-of the Heteroskedastic Ordered Probit (HETOP) model, using methods described in
-Lockwood, Castellano and Shear (2018) <doi:10.3102/1076998618795124> and
-Reardon, Shear, Castellano and Ho (2017) <doi:10.3102/1076998616666279>.  It
-also provides a general function to compute the triple-goal estimators of Shen
-and Louis (1998) <doi:10.1111/1467-9868.00135>.")
-    (license license:gpl2+)))
-
 (define-public r-hetools
   (package
     (name "r-hetools")

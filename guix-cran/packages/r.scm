@@ -14,7 +14,6 @@
   #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages cmake)
@@ -22,11 +21,13 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages tcl)
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages databases)
@@ -1755,13 +1756,13 @@ et al. (2020) <doi:10.1002/hbm.25045>).")
 (define-public r-rvinecopulib
   (package
     (name "r-rvinecopulib")
-    (version "0.7.1.1.2")
+    (version "0.7.2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvinecopulib" version))
        (sha256
-        (base32 "1y5nmfbvrpfrzvzh7rk2aq301h768fxaclr8c8rhgz63gd5ri4zv"))))
+        (base32 "0vnhd182933ixw3g5mn0bsn8zmwss1ppiqb7zwx2hc6pzw8yka7d"))))
     (properties `((upstream-name . "rvinecopulib")))
     (build-system r-build-system)
     (arguments
@@ -1785,7 +1786,7 @@ vine copula and bivariate copula models.  Advantages over @code{VineCopula} are
 a sleeker and more modern API, improved performances, especially in high
 dimensions, nonparametric and multi-parameter families, and the ability to model
 discrete variables.  The rvinecopulib package includes vinecopulib as
-header-only C++ library (currently version 0.7.1).  Thus users do not need to
+header-only C++ library (currently version 0.7.2).  Thus users do not need to
 install vinecopulib itself in order to use rvinecopulib'.  Since their initial
 releases, vinecopulib is licensed under the MIT License, and rvinecopulib is
 licensed under the GNU GPL version 3.")
@@ -3938,35 +3939,6 @@ parameters useful in downstream analyses, such as cardinal temperatures, maximum
 rate and optimum temperature.  See Padfield et al. (2021)
 <doi:10.1111/2041-210X.13585>.")
     (license license:gpl3)))
-
-(define-public r-rtorch
-  (package
-    (name "r-rtorch")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rTorch" version))
-       (sha256
-        (base32 "03a9vls09mgd77xm1q1h1pqw4q026rdibbjr218706h4iqphrqm7"))))
-    (properties `((upstream-name . "rTorch")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list python-pytorch))
-    (propagated-inputs (list r-rstudioapi r-reticulate r-jsonlite))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/f0nzie/rTorch")
-    (synopsis "R Bindings to 'PyTorch'")
-    (description
-     "R implementation and interface of the Machine Learning platform @code{PyTorch}
-<https://pytorch.org/> developed in Python'.  It requires a conda environment
-with torch and torchvision Python packages to provide @code{PyTorch} functions,
-methods and classes.  The key object in @code{PyTorch} is the tensor which is in
-essence a multidimensional array.  These tensors are fairly flexible in
-performing calculations in CPUs as well as GPUs to accelerate tensor operations.")
-    (license license:expat)))
 
 (define-public r-rtop
   (package
@@ -7370,13 +7342,13 @@ Simonsohn (2015) <doi:10.1177/0956797614567341>.")
 (define-public r-rsm
   (package
     (name "r-rsm")
-    (version "2.10.5")
+    (version "2.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsm" version))
        (sha256
-        (base32 "064gsbaxg9s1f8aq7lb1s9kdd0s0qca95905i8zqbwvpaim1w6q0"))))
+        (base32 "1zxz9c5q3k95hldvgq5n64p7wyiwdaw1m8i3h2yfs7v4q4rsjxnj"))))
     (properties `((upstream-name . "rsm")))
     (build-system r-build-system)
     (arguments
@@ -8785,6 +8757,34 @@ R for teaching purposes.  Keeping the original workflow is favored over
 performance.")
     (license license:gpl2)))
 
+(define-public r-rsahmi
+  (package
+    (name "r-rsahmi")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsahmi" version))
+       (sha256
+        (base32 "0msf66bgzwb8lnvnvdq668c1p5vqbkrmp91lp34fgg3xc35jyhha"))))
+    (properties `((upstream-name . "rsahmi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list kraken2))
+    (propagated-inputs (list r-shortread r-rlang r-cli r-blit))
+    (home-page "https://github.com/Yunuuuu/rsahmi")
+    (synopsis "Single-Cell Analysis of Host-Microbiome Interactions")
+    (description
+     "This package provides a computational resource designed to accurately detect
+microbial nucleic acids while filtering out contaminants and false-positive
+taxonomic assignments from standard transcriptomic sequencing of mammalian
+tissues.  For more details, see Ghaddar (2023) <doi:10.1038/s43588-023-00507-1>.
+ This implementation leverages the polars package for fast and systematic
+microbial signal recovery and denoising from host tissue genomic sequencing.")
+    (license license:expat)))
+
 (define-public r-rsagacmd
   (package
     (name "r-rsagacmd")
@@ -9242,20 +9242,20 @@ and evolutionary biology, but certainly other fields, as well.")
 (define-public r-rrphylo
   (package
     (name "r-rrphylo")
-    (version "2.8.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRphylo" version))
        (sha256
-        (base32 "0hgywjh0lac626ybfvycykhacav10pzrf6vcy3bp2nf4ihik7yhy"))))
+        (base32 "1sadp65prgdymns73lbppdria4a27r8klvkxp1rmwygrqhn1l6mv"))))
     (properties `((upstream-name . "RRphylo")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-phytools r-foreach r-emmeans r-doparallel r-ape))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=RRphylo")
     (synopsis "Phylogenetic Ridge Regression Methods for Comparative Studies")
     (description
@@ -11980,36 +11980,33 @@ phylogeny.")
 (define-public r-rphosfate
   (package
     (name "r-rphosfate")
-    (version "1.0.4")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPhosFate" version))
        (sha256
-        (base32 "1gmnnvihxg6j83w4qgrrx61fz4p9r145qxs2qcscrs1q8bzlvw9k"))))
+        (base32 "06hixl2c9q1h2f7zrig1jjabqcif98y6m59gwrr0yb4w6j1xrb2j"))))
     (properties `((upstream-name . "RPhosFate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-spatstat-geom
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-raster
-                             r-checkmate))
+    (propagated-inputs (list r-yaml r-terra r-rcpparmadillo r-rcpp r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://gisler.github.io/RPhosFate/")
     (synopsis "Soil and Chemical Substance Emission and Transport Model")
     (description
      "An enhanced version of the semi-empirical, spatially distributed emission and
-transport model @code{PhosFate} implemented in R and C++'.  It currently
-supports suspended solids (SS) and particulate phosphorus (PP).  A major feature
-is the allocation of substance loads entering surface waters to their sources of
-origin, which is a basic requirement for the identification of critical source
-areas and in consequence a cost-effective implementation of mitigation measures.
- References: Hepp et al. (2022) <doi:10.1016/j.jenvman.2022.114514>; Hepp and
-Zessner (2019) <doi:10.3390/w11102161>; Kovacs (2013)
+transport model @code{PhosFate} implemented in R and C++'.  It is based on the
+D-infinity, but also supports the D8 flow method.  The currently available
+substances are suspended solids (SS) and particulate phosphorus (PP).  A major
+feature is the allocation of substance loads entering surface waters to their
+sources of origin, which is a basic requirement for the identification of
+critical source areas and in consequence a cost-effective implementation of
+mitigation measures.  References: Hepp et al. (2022)
+<doi:10.1016/j.jenvman.2022.114514>; Hepp and Zessner (2019)
+<doi:10.3390/w11102161>; Kovacs (2013)
 <http://hdl.handle.net/20.500.12708/9468>.")
     (license license:agpl3+)))
 
@@ -12348,6 +12345,32 @@ Principal Component Pursuit; among all feasible decompositions, simply minimize
 a weighted combination of the nuclear norm and of the L1 norm.  This package
 implements this decomposition algorithm resulting with Robust PCA approach.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-rpc
+  (package
+    (name "r-rpc")
+    (version "2.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rpc" version))
+       (sha256
+        (base32 "0mrzz5zyn2kd77j8nxgq4lir70svcm7gbp0dgjkn6f8pzjx2yv16"))))
+    (properties `((upstream-name . "rpc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-matrix))
+    (home-page "https://cran.r-project.org/package=rpc")
+    (synopsis "Ridge Partial Correlation")
+    (description
+     "Computes the ridge partial correlation coefficients in a high or ultra-high
+dimensional linear regression problem.  An extended Bayesian information
+criterion is also implemented for variable selection.  Users provide the matrix
+of covariates as a usual dense matrix or a sparse matrix stored in a compressed
+sparse column format.  Detail of the method is given in the manual.")
+    (license license:gpl2+)))
 
 (define-public r-rpbk
   (package
@@ -12692,13 +12715,13 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "4.1.0")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpact" version))
        (sha256
-        (base32 "1cjdrj1sbn4xv6mrkvr0n3cx3zqh1lqg1kp0vppndz3qqwxjql4w"))))
+        (base32 "1qfjqvdall6vnpflzj334xyskp8cwsl7831bidiajaw8j8w9bky4"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (arguments
@@ -17356,13 +17379,13 @@ and Sang-Yun Oh (2020) <http://proceedings.mlr.press/v108/cisneros20a.html>.")
 (define-public r-robsa
   (package
     (name "r-robsa")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RoBSA" version))
        (sha256
-        (base32 "1hk4pdkgqjqhn7wxzzgw1f1rz4kk3gri7wispzz0m3nxk7bksw6b"))))
+        (base32 "1dgi7q9l7j6skc465ssvl3wfnxpnw7pm6vp083667lmnv6qzz3ax"))))
     (properties `((upstream-name . "RoBSA")))
     (build-system r-build-system)
     (arguments
@@ -19520,13 +19543,13 @@ package.")
 (define-public r-rnbp
   (package
     (name "r-rnbp")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnbp" version))
        (sha256
-        (base32 "0vphfxb262jryvvs48l21q3vxqicj51az0li38axg1mslshw0y4g"))))
+        (base32 "0hfy60jaaqxg8i8gzx80k0aspa69d289214mnq21mnvllxvz3d0l"))))
     (properties `((upstream-name . "rnbp")))
     (build-system r-build-system)
     (arguments
@@ -19534,12 +19557,12 @@ package.")
       #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rnbp")
+    (home-page "https://github.com/szymanskir/rnbp")
     (synopsis "Wrapper for the National Bank of Poland API")
     (description
-     "Use the <http://api.nbp.pl/> API through R. Retrieve currency exchange rates and
-gold prices data published by the National Bank of Poland in form of convenient
-R objects.")
+     "Use the <https://api.nbp.pl/> API through R. Retrieve currency exchange rates
+and gold prices data published by the National Bank of Poland in form of
+convenient R objects.")
     (license license:gpl3)))
 
 (define-public r-rnavgraphimagedata
@@ -19742,13 +19765,13 @@ a list object.")
 (define-public r-rmzqc
   (package
     (name "r-rmzqc")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmzqc" version))
        (sha256
-        (base32 "18nyw4amg8l8hby3fpfbafz730g0bsk4xp31fgfhlv2qzcbm07aw"))))
+        (base32 "0ln45f3cm9vzjxgwqlxbd5rgdgzbmi02l0vyinm7139krxgfqdzh"))))
     (properties `((upstream-name . "rmzqc")))
     (build-system r-build-system)
     (arguments
@@ -22485,13 +22508,13 @@ routines implement the algorithm described in Michael, Thronton, Xie, and Tian
 (define-public r-rlumshiny
   (package
     (name "r-rlumshiny")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RLumShiny" version))
        (sha256
-        (base32 "12dc30q41b1vha52mn9rr1m86ykp3yfsyxcxxwklavd60g76b8vd"))))
+        (base32 "0iyg1j7w2888lgv1palpc0chh7i8fli12qv3rvm5bvmwp4qhgbzj"))))
     (properties `((upstream-name . "RLumShiny")))
     (build-system r-build-system)
     (arguments
@@ -22504,6 +22527,7 @@ routines implement the algorithm described in Michael, Thronton, Xie, and Tian
                              r-rcarb
                              r-markdown
                              r-luminescence
+                             r-leaflet
                              r-knitr
                              r-googlevis
                              r-dt
@@ -25045,13 +25069,13 @@ data.table.")
 (define-public r-ritc
   (package
     (name "r-ritc")
-    (version "1.0.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ritc" version))
        (sha256
-        (base32 "03smhxjhjfkc9pxhlgg54b6v2jznpmnws8373qpvn9a9ky5bcq2l"))))
+        (base32 "0zz4l3ij4b8111954a7hlbchdzrilxwdjixbsgbmmvvgi7n3ragb"))))
     (properties `((upstream-name . "Ritc")))
     (build-system r-build-system)
     (arguments
@@ -25061,9 +25085,9 @@ data.table.")
     (home-page "https://cran.r-project.org/package=Ritc")
     (synopsis "Isothermal Titration Calorimetry (ITC) Data Analysis")
     (description
-     "This package implements the simulation and regression of integrated Isothermal
-Titration Calorimetry (ITC) data using the most commonly used one-to-one binding
-reaction model.")
+     "Selected functions for simulation and regression of integrated Isothermal
+Titration Calorimetry (ITC) data with the most commonly used one-to-one binding
+model.")
     (license license:gpl3)))
 
 (define-public r-ritalic
@@ -33155,13 +33179,13 @@ licence Sandercock et al. (2011) <doi:10.7488/ds/104>, Sandercock et al. (2011)
 (define-public r-resi
   (package
     (name "r-resi")
-    (version "1.2.4")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RESI" version))
        (sha256
-        (base32 "100w8a28bz2x9sihd9ghmiha9p5dxbwnzkrdgxg42211zmbil8cb"))))
+        (base32 "04pi6j8yzcxfzq3irdwg4zd3wmkf3mw8ra9d0kcgabpmdf48bg9q"))))
     (properties `((upstream-name . "RESI")))
     (build-system r-build-system)
     (arguments
@@ -33180,7 +33204,8 @@ licence Sandercock et al. (2011) <doi:10.7488/ds/104>, Sandercock et al. (2011)
     (synopsis "Robust Effect Size Index (RESI) Estimation")
     (description
      "Summarize model output using a robust effect size index.  The index is
-introduced in Vandekar, Tao, & Blume (2020) <doi:10.1007/s11336-020-09698-2>.")
+introduced in Vandekar, Tao, & Blume (2020, <doi:10.1007/s11336-020-09698-2>).
+Software paper available at <doi:10.18637/jss.v112.i03>.")
     (license license:gpl3)))
 
 (define-public r-resevol
@@ -34889,6 +34914,30 @@ publication is available yet (will be available in the near future), Efroni
 and list-making application. <https://trello.com/> Reports are created by
 comparing individual Trello board cards from two different points in time and
 documenting any changes made to the cards.")
+    (license license:expat)))
+
+(define-public r-repec
+  (package
+    (name "r-repec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "repec" version))
+       (sha256
+        (base32 "0alr9fbmfxmnnnn1qymy65crcycynwz435jj0vangbb4p0qhv8pm"))))
+    (properties `((upstream-name . "repec")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite))
+    (home-page "https://github.com/chrMongeau/repec")
+    (synopsis "Access RePEc Data Through API")
+    (description
+     "Utilities for accessing @code{RePEc} (Research Papers in Economics) through a
+RESTful API. You can request a code and get detailed information at the
+following page: <https://ideas.repec.org/api.html>.")
     (license license:expat)))
 
 (define-public r-repeatedhighdim
@@ -38434,6 +38483,39 @@ documentation while attempting to match R's argument semantics.  Serialisation
 must be explicitly done by the user, but both binary and text-mode serialisation
 is supported.")
     (license license:gpl2)))
+
+(define-public r-redquack
+  (package
+    (name "r-redquack")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "redquack" version))
+       (sha256
+        (base32 "0q3fvm8cb7yh4xw94n10gqvm1blk9ghj6kfmgy195250f5fzixg6"))))
+    (properties `((upstream-name . "redquack")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-readr
+                             r-httr2
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-beepr
+                             r-audio))
+    (home-page "https://cran.r-project.org/package=redquack")
+    (synopsis "Transfer 'REDCap' Data to 'DuckDB'")
+    (description
+     "This package provides a single function to transfer REDCap (Research Electronic
+Data Capture) data to a @code{DuckDB} database.  Processes data in chunks to
+handle large datasets while minimizing memory usage.  Features include resuming
+incomplete transfers, converting column types, tracking progress, logging
+operations in the database.")
+    (license license:expat)))
 
 (define-public r-redoc
   (package

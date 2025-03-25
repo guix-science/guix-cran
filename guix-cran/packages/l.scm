@@ -188,32 +188,6 @@ Langa-Weir classification system.  For details regarding the; HRS
 <https://hrsdata.isr.umich.edu/data-products/langa-weir-classification-cognitive-function-1995-2020>.")
     (license license:expat)))
 
-(define-public r-lw1949
-  (package
-    (name "r-lw1949")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LW1949" version))
-       (sha256
-        (base32 "147ymp7j98ihp1dcz3p5v9ar6h767phjdnga5q5vf1wwa2mxawg7"))))
-    (properties `((upstream-name . "LW1949")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-plotrix r-mgcv r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/JVAdams/LW1949")
-    (synopsis
-     "An Automated Approach to Evaluating Dose-Effect Experiments Following Litchfield and Wilcoxon (1949)")
-    (description
-     "The manual approach of Litchfield and Wilcoxon (1949)
-<http://jpet.aspetjournals.org/content/96/2/99.abstract> for evaluating
-dose-effect experiments is automated so that the computer can do the work.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-lvplot
   (package
     (name "r-lvplot")
@@ -1803,13 +1777,13 @@ analytical solution.")
 (define-public r-lsmeans
   (package
     (name "r-lsmeans")
-    (version "2.30-0")
+    (version "2.30-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsmeans" version))
        (sha256
-        (base32 "1z35dzfgib0fk201gzjhgmnryhl3mkz50gz8g6nfv4mj9kzc5x5f"))))
+        (base32 "1q6y0l0s8wz7jqhvia7bzhas8ipa7v9jary1n9hr1zj2j079a38v"))))
     (properties `((upstream-name . "lsmeans")))
     (build-system r-build-system)
     (arguments
@@ -6980,13 +6954,13 @@ and panel-to-key synchronization/management.")
 (define-public r-lnpar
   (package
     (name "r-lnpar")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LNPar" version))
        (sha256
-        (base32 "1pgal49pcv2g9jvn39am42d22cwm67pc2pql5wyca2c3i4jx0sz9"))))
+        (base32 "0fiaamhyb7hacww3sn0h5nqk1m69qjnnnwgh075ibbmm6qgsz8gw"))))
     (properties `((upstream-name . "LNPar")))
     (build-system r-build-system)
     (arguments
@@ -8614,13 +8588,13 @@ computed for these predictive components.  The system is built on top of
 (define-public r-ljmp3converter
   (package
     (name "r-ljmp3converter")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LJmp3converter" version))
        (sha256
-        (base32 "0zy58xf2i2j2jg5jv0fa6c8h5n0ilzlb934njilrq5g37gig02c1"))))
+        (base32 "1xyw0p1d8kfn07g64ns2vsr5ka475lxmwrd7kbnj37fc9ifdgph0"))))
     (properties `((upstream-name . "LJmp3converter")))
     (build-system r-build-system)
     (arguments
@@ -8628,14 +8602,40 @@ computed for these predictive components.  The system is built on top of
       #:tests? #f))
     (propagated-inputs (list r-rstudioapi r-httr r-fs))
     (home-page "https://cran.r-project.org/package=LJmp3converter")
-    (synopsis "Convert Video Files to MP3 Format using 'FFmpeg'")
+    (synopsis
+     "Convert Video Files to 'mp3' Format, Merge or Trim Audio Files using 'FFmpeg'")
     (description
-     "Converts video files to MP3 using FFmpeg', which is dynamically downloaded to
-avoid bundling any third-party binaries.  Users must ensure compliance with the
-license terms of FFmpeg when using the package.  See
+     "Converts video files to mp3', merges multiple audio files and trims audio files
+using FFmpeg', which is dynamically downloaded to avoid bundling any third-party
+binaries.  Users must ensure compliance with the license terms of FFmpeg when
+using the package.  See
 <https://github.com/@code{BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip>}
 for details.")
     (license license:gpl3)))
+
+(define-public r-ljexm
+  (package
+    (name "r-ljexm")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LJexm" version))
+       (sha256
+        (base32 "0w6p14zx8zjh8wwajld3aqa15sdmgrf7r7v46sgwry98i77f1yrq"))))
+    (properties `((upstream-name . "LJexm")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rstudioapi r-pdftools r-fs))
+    (home-page "https://cran.r-project.org/package=LJexm")
+    (synopsis "Extract, Convert, and Merge 'pdf' Files from 'zip' Files")
+    (description
+     "Extracts zip files, converts Word and Excel documents to pdf files using
+VBScript', and merges pdf files into a single file.  This package is only
+supported on Windows due to VBScript dependencies.")
+    (license license:gpl3+)))
 
 (define-public r-liver
   (package
@@ -16286,13 +16286,13 @@ approach is described in
 (define-public r-lccr
   (package
     (name "r-lccr")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LCCR" version))
        (sha256
-        (base32 "0rls4l6z2x52crs046x8dbbk9ij7jr0d669lmr4pkzr8kpa72jlm"))))
+        (base32 "157j386nymg58n6phnib2s0pv52g1ixfjasvaw8kaq8p6pjb3nmp"))))
     (properties `((upstream-name . "LCCR")))
     (build-system r-build-system)
     (arguments

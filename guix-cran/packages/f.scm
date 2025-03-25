@@ -445,39 +445,6 @@ distance between fuzzy numbers are included, and a function to calculate the
 value phi-wabl given a sample of trapezoidal fuzzy numbers.")
     (license license:gpl2+)))
 
-(define-public r-fuzzystatprob
-  (package
-    (name "r-fuzzystatprob")
-    (version "2.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FuzzyStatProb" version))
-       (sha256
-        (base32 "1jpqb8xczi1d4g306vrwpi02f9h59aki1pgnckvfmiclr306prpb"))))
-    (properties `((upstream-name . "FuzzyStatProb")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-multinomialci r-fuzzynumbers r-deoptim))
-    (native-inputs (list r-r-rsp))
-    (home-page "http://decsai.ugr.es/~pjvi/r-packages.html")
-    (synopsis
-     "Fuzzy Stationary Probabilities from a Sequence of Observations of an Unknown Markov Chain")
-    (description
-     "An implementation of a method for computing fuzzy numbers representing
-stationary probabilities of an unknown Markov chain, from which a sequence of
-observations along time has been obtained.  The algorithm is based on the
-proposal presented by James Buckley in his book on Fuzzy probabilities
-(Springer, 2005), chapter 6.  Package @code{FuzzyNumbers} is used to represent
-the output probabilities.")
-    (license license:lgpl3+)))
-
 (define-public r-fuzzysimres
   (package
     (name "r-fuzzysimres")
@@ -11859,13 +11826,13 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
 (define-public r-flint
   (package
     (name "r-flint")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flint" version))
        (sha256
-        (base32 "1fjf5n8jz5rrbvqbag34l1ir139kfnwwi3icf2jz1bx4732c3cj5"))))
+        (base32 "04bci3hpsf7rwinssacbd0fjzlxhdvlq5kk29y02kwpcq2s820bp"))))
     (properties `((upstream-name . "flint")))
     (build-system r-build-system)
     (arguments
@@ -11878,18 +11845,18 @@ features? See Aw, Spence and Song (2023) for the accompanying paper.")
     (description
      "An R interface to FLINT <https://flintlib.org/>, a C library for number theory.
 FLINT extends GNU MPFR <https://www.mpfr.org/> and GNU MP <https://gmplib.org/>
-with support for arithmetic in standard rings (the integers, the integers modulo
-n, the rational, p-adic, real, and complex numbers) as well as vectors,
-matrices, polynomials, and power series over rings.  FLINT implements
-midpoint-radius interval arithmetic, also known as ball arithmetic, in the real
-and complex numbers, enabling computation in arbitrary precision with rigorous
-propagation of errors; see Johansson (2017) <doi:10.1109/TC.2017.2690633>.
-Finally, FLINT provides ball arithmetic implementations of many special
-mathematical functions, with high coverage of reference works such as the NIST
-Digital Library of Mathematical Functions <https://dlmf.nist.gov/>.  The R
-interface defines S4 classes, generic functions, and methods for representation
-and basic operations as well as plain R functions mirroring and vectorizing
-entry points in the C library.")
+with support for operations on standard rings (the integers, the integers modulo
+n, finite fields, the rational, p-adic, real, and complex numbers) as well as
+matrices and polynomials over rings.  FLINT implements midpoint-radius interval
+arithmetic, also known as ball arithmetic, in the real and complex numbers,
+enabling computation in arbitrary precision with rigorous propagation of
+rounding errors; see Johansson (2017) <doi:10.1109/TC.2017.2690633>.  Finally,
+FLINT provides ball arithmetic implementations of many special mathematical
+functions, with high coverage of reference works such as the NIST Digital
+Library of Mathematical Functions <https://dlmf.nist.gov/>.  The R interface
+defines S4 classes, generic functions, and methods for representation and basic
+operations as well as plain R functions mirroring and vectorizing entry points
+in the C library.")
     (license license:gpl2+)))
 
 (define-public r-flimo
@@ -16902,13 +16869,13 @@ equations (Smalian, Newton and Huber) as well stacking factor and form.")
 (define-public r-fhmm
   (package
     (name "r-fhmm")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fHMM" version))
        (sha256
-        (base32 "08crmc9g42s2p2bczp73sdvllsrbnqg4ksyjwxpcdcdb0cqqz01y"))))
+        (base32 "1gx7fyj5asxzcjdkpjwfbn4sh017vx8731afayqxhpp4ssvvfa15"))))
     (properties `((upstream-name . "fHMM")))
     (build-system r-build-system)
     (arguments
@@ -18730,13 +18697,13 @@ importance in general can be found here:
 (define-public r-featureflag
   (package
     (name "r-featureflag")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "featureflag" version))
        (sha256
-        (base32 "1p14wbzcqfrn3f04k36039v9ac3ln1srq171g77havddrjx0g35p"))))
+        (base32 "1rc3pdaalk2kin1cbcq72rq9yvhr3wjzq1ljsdmihvsa2wb0lbs6"))))
     (properties `((upstream-name . "featureflag")))
     (build-system r-build-system)
     (arguments
@@ -23104,13 +23071,13 @@ categorical covariates.")
 (define-public r-fastbeta
   (package
     (name "r-fastbeta")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbeta" version))
        (sha256
-        (base32 "14w51gfbdc8xfaz5sy9lr8qcabpkj5zkdjc6ajz8wsp2svqskva8"))))
+        (base32 "05h171b9l6hqf3577kbvqm99c9iws7299ijp3a2la244szv8aspz"))))
     (properties `((upstream-name . "fastbeta")))
     (build-system r-build-system)
     (arguments
@@ -23622,39 +23589,6 @@ are also included.  As by-products, this package contains functions that compute
 adaptive Huber mean, covariance and regression estimators that are of
 independent interest.")
     (license license:gpl3)))
-
-(define-public r-farmselect
-  (package
-    (name "r-farmselect")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FarmSelect" version))
-       (sha256
-        (base32 "174rzv9k0hdcfdkv7bisy70rip2iy0bnj3qa54i00wqwjdglgjdn"))))
-    (properties `((upstream-name . "FarmSelect")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-ncvreg r-fbasics))
-    (native-inputs (list r-knitr))
-    (home-page "https://kbose28.github.io/FarmSelect/")
-    (synopsis "Factor Adjusted Robust Model Selection")
-    (description
-     "This package implements a consistent model selection strategy for high
-dimensional sparse regression when the covariate dependence can be reduced
-through factor models.  By separating the latent factors from idiosyncratic
-components, the problem is transformed from model selection with highly
-correlated covariates to that with weakly correlated variables.  It is
-appropriate for cases where we have many variables compared to the number of
-samples.  Moreover, it implements a robust procedure to estimate distribution
-parameters wherever possible, hence being suitable for cases when the underlying
-distribution deviates from Gaussianity.  See the paper on the @code{FarmSelect}
-method, Fan et al.(2017) <@code{arXiv:1612.08490>}, for detailed description of
-methods and further references.")
-    (license license:gpl2)))
 
 (define-public r-farff
   (package

@@ -879,6 +879,48 @@ function.")
 package by providing tools for generating expectations.")
     (license license:expat)))
 
+(define-public r-xpect
+  (package
+    (name "r-xpect")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xpect" version))
+       (sha256
+        (base32 "0gyg7gdx4ziv9py6l146sh8vy0q677jra93fwj5s6ki8jp0x1nk7"))))
+    (properties `((upstream-name . "xpect")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xgboost
+                             r-scales
+                             r-rbayesianoptimization
+                             r-purrr
+                             r-normalp
+                             r-lubridate
+                             r-glogis
+                             r-gld
+                             r-ggplot2
+                             r-generalizedhyperbolic
+                             r-future
+                             r-furrr
+                             r-evd
+                             r-edfun
+                             r-cubature
+                             r-ald))
+    (home-page "https://rpubs.com/giancarlo_vercellino/xpect")
+    (synopsis
+     "Probabilistic Time Series Forecasting with XGBoost and Conformal Inference")
+    (description
+     "This package implements a probabilistic approach to time series forecasting
+combining XGBoost regression with conformal inference methods.  The package
+provides functionality for generating predictive distributions, evaluating
+uncertainty, and optimizing hyperparameters using Bayesian, coarse-to-fine, or
+random search strategies.")
+    (license license:gpl3)))
+
 (define-public r-xoi
   (package
     (name "r-xoi")

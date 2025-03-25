@@ -5807,13 +5807,13 @@ clustering and optimal marker ordering using MSTmap (see Wu et al.,2008).")
 (define-public r-asm
   (package
     (name "r-asm")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asm" version))
        (sha256
-        (base32 "0k2kdbvh82cd1w11yj8gql4cpc6ia4n3zngvdxp7svl0k73bs6la"))))
+        (base32 "0gsv9kz2mh6ma7vxxhr0kwzxrw2rrgic9cmj2g0jrjvdrk8j5n0a"))))
     (properties `((upstream-name . "asm")))
     (build-system r-build-system)
     (arguments

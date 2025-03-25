@@ -2082,13 +2082,13 @@ out Tucker Models.")
 (define-public r-tubern
   (package
     (name "r-tubern")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tubern" version))
        (sha256
-        (base32 "0wpn4aig6r1kpncrgrqra4kr0f07rdq7z4p2k0h28f7kww6l52vv"))))
+        (base32 "1d52zlaxy2yrl2b94k1sizn31pw8bp48cn8ryhgk7169ndcw53lp"))))
     (properties `((upstream-name . "tubern")))
     (build-system r-build-system)
     (arguments
@@ -2096,7 +2096,7 @@ out Tucker Models.")
       #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/soodoku/tubern")
+    (home-page "https://github.com/gojiplus/tubern")
     (synopsis "R Client for the YouTube Analytics and Reporting API")
     (description
      "Get statistics and reports from @code{YouTube}.  To learn more about the
@@ -8819,13 +8819,13 @@ personalisation and delivers a more relevant search.")
 (define-public r-traumar
   (package
     (name "r-traumar")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traumar" version))
        (sha256
-        (base32 "1dnyw5710wb8zzp1y1cbl64xvvp48qdvxzzf7cgn0hv0vpc4p9cp"))))
+        (base32 "0rfr9v78xswnci7v3rdpfq02ssjsfhqvv8nrd09l2g1bggcpi2b4"))))
     (properties `((upstream-name . "traumar")))
     (build-system r-build-system)
     (arguments
@@ -9350,13 +9350,13 @@ strings.  Provide translations and seamlessly retrieve them at runtime.")
 (define-public r-translit-uk
   (package
     (name "r-translit-uk")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "translit.uk" version))
        (sha256
-        (base32 "1c8pp0b23kmrnlbmkcx8ws5c2bcj1p3vbrz9cxkphvvai5b0rkci"))))
+        (base32 "0dngw2f09hw2cxkxbf48yap6x1v2miigmymglrip8wplwg2xsl9i"))))
     (properties `((upstream-name . "translit.uk")))
     (build-system r-build-system)
     (arguments
@@ -15307,13 +15307,13 @@ its dependency.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "15c88jawdp45yc2mdpxv8plx6dlh62gkwjx13ra72kn0gdrvgdy8"))))
+        (base32 "0lnbln8zss5hpwzyncv17920sp8ywpad6ahwwzmb3d0jajpbc3z1"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (arguments
@@ -15952,13 +15952,13 @@ the hypothesis test.")
 (define-public r-timetools
   (package
     (name "r-timetools")
-    (version "1.15.3")
+    (version "1.15.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timetools" version))
        (sha256
-        (base32 "0bhipgygbb76m4byl58ndbjqj88rxbwrar0dmgw842f1yp867bc5"))))
+        (base32 "1jhkj6zpl6icnbn46g9l8qscq1scdlk91hd3nf7rdxmlsc48jxgr"))))
     (properties `((upstream-name . "timetools")))
     (build-system r-build-system)
     (arguments
@@ -15969,8 +15969,8 @@ the hypothesis test.")
      "Seasonal/Sequential (Instants/Durations, Even or not) Time Series")
     (description
      "Objects to manipulate sequential and seasonal time series.  Sequential time
-series based on time instants and time durations are handled.  Both can be
-regularly or unevenly spaced (overlapping durations are allowed).  Only POSIX*
+series based on time instants and time duration are handled.  Both can be
+regularly or unevenly spaced (overlapping duration are allowed).  Only POSIX*
 format are used for dates and times.  The following classes are provided :
 POSIXcti', POSIXctp', @code{TimeIntervalDataFrame}',
 @code{TimeInstantDataFrame}', @code{SubtimeDataFrame} ; methods to switch from a
@@ -17467,6 +17467,42 @@ convenient way of visualizing terra objects with ggplot2'.")
     (description
      "This package provides a tidy interface to data.table', giving users the speed of
 data.table while using tidyverse-like syntax.")
+    (license license:expat)))
+
+(define-public r-tidysynth
+  (package
+    (name "r-tidysynth")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidysynth" version))
+       (sha256
+        (base32 "109jap77c2pdvz7vw262z4y1r50wvfaabihac7az7lkx8dml2sq4"))))
+    (properties `((upstream-name . "tidysynth")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rgenoud
+                             r-optimx
+                             r-magrittr
+                             r-kernlab
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=tidysynth")
+    (synopsis "Tidy Implementation of the Synthetic Control Method")
+    (description
+     "This package provides a synthetic control offers a way of evaluating the effect
+of an intervention in comparative case studies.  The package makes a number of
+improvements when implementing the method in R. These improvements allow users
+to inspect, visualize, and tune the synthetic control more easily.  A key
+benefit of a tidy implementation is that the entire preparation process for
+building the synthetic control can be accomplished in a single pipe.")
     (license license:expat)))
 
 (define-public r-tidystringdist
@@ -24608,13 +24644,13 @@ explore nonlinear associations between cognition and demographic variables.")
 (define-public r-tesseract
   (package
     (name "r-tesseract")
-    (version "5.2.2")
+    (version "5.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tesseract" version))
        (sha256
-        (base32 "0mbsa1djfmx1c6hrxs14wdzv0kqc56dlr3yzsij2d0vnjgyjrhis"))))
+        (base32 "181fbv1qhqxljr67phkrxahbfgsxa73gzq30zq0wvi38gzbfbnv8"))))
     (properties `((upstream-name . "tesseract")))
     (build-system r-build-system)
     (arguments
@@ -29839,13 +29875,13 @@ purposes.")
 (define-public r-tailtransform
   (package
     (name "r-tailtransform")
-    (version "1.0.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tailTransform" version))
        (sha256
-        (base32 "0nflrzq5m1jwf91lavwwzl6ja4qswva1z4gpdbm3q5iscg1hbwp7"))))
+        (base32 "1brxh1d2n7cwjyaawivmavhmrpll1dxvai41d7bnhbb66prqkw2q"))))
     (properties `((upstream-name . "tailTransform")))
     (build-system r-build-system)
     (arguments
@@ -29858,7 +29894,7 @@ purposes.")
 difference-in-differences, the @code{ttrans()} function symmetrically transforms
 the positive and negative tails to aid plotting.  The package includes an
 observational study with three control groups and an unaffected outcome; see
-Rosenbaum (2020) <doi:10.1111/biom.13558>.")
+Rosenbaum (2022) <doi:10.1080/00031305.2022.2063944>.")
     (license license:gpl2)))
 
 (define-public r-tailrank

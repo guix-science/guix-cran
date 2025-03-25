@@ -10485,13 +10485,13 @@ Analytics at the NFL, Lopez (2019)
 (define-public r-nflseedr
   (package
     (name "r-nflseedr")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflseedR" version))
        (sha256
-        (base32 "0nk6264alv0d8d1wj7xqk4m57rl1w185jj5qj58d9hwiy2wmzvqz"))))
+        (base32 "1i7nx475vwabdzgmxs9rm3cam1qbsd5jv0zqsj2krmxx43hrggys"))))
     (properties `((upstream-name . "nflseedR")))
     (build-system r-build-system)
     (arguments
@@ -10503,7 +10503,7 @@ Analytics at the NFL, Lopez (2019)
                              r-purrr
                              r-progressr
                              r-nflreadr
-                             r-magrittr
+                             r-lifecycle
                              r-gsubfn
                              r-future
                              r-furrr

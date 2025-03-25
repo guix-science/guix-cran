@@ -255,6 +255,33 @@ based on Janzen (2018, <doi:10.1101/058107>) and Janzen (2022,
 <doi:10.1111/1755-0998.13519>).")
     (license license:gpl2+)))
 
+(define-public r-jumps
+  (package
+    (name "r-jumps")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jumps" version))
+       (sha256
+        (base32 "14gczjxfs7m3kn4smxl8l66c1m4iz9d710hx8gn167g0hr1kijv6"))))
+    (properties `((upstream-name . "jumps")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-nloptr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=jumps")
+    (synopsis "Hodrick-Prescott Filter with Jumps")
+    (description
+     "This package provides a set of functions to compute the Hodrick-Prescott (HP)
+filter with automatically selected jumps.  The original HP filter extracts a
+smooth trend from a time series, and our version allows for a small number of
+automatically identified jumps.  See Maranzano and Pelagatti (2024)
+<doi:10.2139/ssrn.4896170> for details.")
+    (license license:gpl3)))
+
 (define-public r-jump
   (package
     (name "r-jump")
@@ -4455,13 +4482,13 @@ deep-neural networks using tensorflow'.")
 (define-public r-jane
   (package
     (name "r-jane")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JANE" version))
        (sha256
-        (base32 "142qxlc1lxcg6v8wnzpyv2s42z96x1sz1ik08xl8f91rk3mlg7qr"))))
+        (base32 "0rqn247r422fbaza7v8zg18mlp0xnh68rnv2vpmpvaj0zbnkxm26"))))
     (properties `((upstream-name . "JANE")))
     (build-system r-build-system)
     (arguments
@@ -4484,13 +4511,13 @@ deep-neural networks using tensorflow'.")
     (home-page "https://github.com/a1arakkal/JANE")
     (synopsis "Just Another Latent Space Network Clustering Algorithm")
     (description
-     "Fit and simulate latent space network cluster models using an
-expectation-maximization algorithm.  Enables flexible modeling of unweighted
-network data, supporting both directed and undirected networks, with or without
-degree heterogeneity.  Designed to handle large networks efficiently, it allows
-users to explore network structure through latent space representations,
-identify clusters within network data, and simulate models with varying
-clustering and connectivity patterns.")
+     "Fit latent space network cluster models using an expectation-maximization
+algorithm.  Enables flexible modeling of unweighted or weighted network data
+(with or without noise edges), supporting both directed and undirected networks
+(with or without degree heterogeneity).  Designed to handle large networks
+efficiently, it allows users to explore network structure through latent space
+representations, identify clusters within network data, and simulate networks
+with varying clustering and connectivity patterns.")
     (license license:gpl3+)))
 
 (define-public r-jamendor
@@ -4521,13 +4548,13 @@ information for a given Jamendo user (including yourself!) or enter an artist's
 (define-public r-jamba
   (package
     (name "r-jamba")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jamba" version))
        (sha256
-        (base32 "0n5yxd8zxxgcy6sqkjirjsp5yciccvyh1gh35gvcs9ks3bcvag4w"))))
+        (base32 "0j4vcs63hg0yjymz9i7lhkyndq0b18xdyw8bs764zrz4pdmgad80"))))
     (properties `((upstream-name . "jamba")))
     (build-system r-build-system)
     (arguments

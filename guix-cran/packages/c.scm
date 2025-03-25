@@ -223,6 +223,42 @@ An overview of the field is presented in Caicedo (2016)
 <doi:10.1016/j.copbio.2016.04.003>.")
     (license license:bsd-3)))
 
+(define-public r-cytometree
+  (package
+    (name "r-cytometree")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cytometree" version))
+       (sha256
+        (base32 "18g7av73lmnyga1kk24bf8jy599zn9n6qhr13mxsqgi0zdinicfa"))))
+    (properties `((upstream-name . "cytometree")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-mclust
+                             r-igraph
+                             r-gofkernel
+                             r-ggplot2
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cytometree")
+    (synopsis "Automated Cytometry Gating and Annotation")
+    (description
+     "Given the hypothesis of a bi-modal distribution of cells for each marker, the
+algorithm constructs a binary tree, the nodes of which are subpopulations of
+cells.  At each node, observed cells and markers are modeled by both a family of
+normal distributions and a family of bi-modal normal mixture distributions.
+Splitting is done according to a normalized difference of AIC between the two
+families.  Method is detailed in: Commenges, Alkhassim, Gottardo, Hejblum &
+Thiebaut (2018) <doi: 10.1002/cyto.a.23601>.")
+    (license (list license:lgpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-cytofan
   (package
     (name "r-cytofan")
@@ -14727,6 +14763,46 @@ this package.  See the file AUTHORS for a list of copyright holders and
 contributors.")
     (license license:gpl2+)))
 
+(define-public r-corella
+  (package
+    (name "r-corella")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corella" version))
+       (sha256
+        (base32 "0n4m440ymfx410h0jq0xf2i37jm375lj8xrrhh6dmai7ypkrd7dg"))))
+    (properties `((upstream-name . "corella")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-uuid
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-hms
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://corella.ala.org.au")
+    (synopsis
+     "Prepare, Manipulate and Check Data to Comply with Darwin Core Standard")
+    (description
+     "Helps users standardise data to the Darwin Core Standard, a global data standard
+to store, document, and share biodiversity data like species occurrence records.
+ The package provides tools to manipulate data to conform with, and check
+validity against, the Darwin Core Standard.  Using corella allows users to
+verify that their data can be used to build Darwin Core Archives using the
+galaxias package.")
+    (license license:gpl3)))
+
 (define-public r-corelearn
   (package
     (name "r-corelearn")
@@ -22788,13 +22864,13 @@ Heard & Rubin-Delanchy (2017) <@code{arXiv:1707.06897>}.")
 (define-public r-combatfamqc
   (package
     (name "r-combatfamqc")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ComBatFamQC" version))
        (sha256
-        (base32 "0z2aik4lrsm3azl5zl0fhi23xi5knm0bl94xq1q9vy72v1r7wq35"))))
+        (base32 "1zbj4qrbc5wy71fpdvlwfalprfjaar944bkdp54p5xi34y2k7941"))))
     (properties `((upstream-name . "ComBatFamQC")))
     (build-system r-build-system)
     (arguments
@@ -24640,25 +24716,23 @@ data.")
 (define-public r-cohortsymmetry
   (package
     (name "r-cohortsymmetry")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSymmetry" version))
        (sha256
-        (base32 "15nhp05nnhnhfgxsqiac6arg00qx0zm9xqhghj9lwvja424xfja2"))))
+        (base32 "1yk41zpgx3njh47gj6qcp390fsb32fr6ns3vigqkwk8ff24c31k9"))))
     (properties `((upstream-name . "CohortSymmetry")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-visomopresults
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
                              r-patientprofiles
                              r-omopgenerics
-                             r-omock
                              r-here
                              r-drugutilisation
                              r-dplyr
@@ -26556,21 +26630,19 @@ memory-efficient computations when handling densely sampled domains.")
 (define-public r-coconots
   (package
     (name "r-coconots")
-    (version "1.1.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coconots" version))
        (sha256
-        (base32 "1mymq7rsmawnh6m3m7c39kg8mp829f7kyjnj3hll4jsw6q1sz2fi"))))
+        (base32 "1cyj6wqh7xplpkmp1x0b2pq6jc12jmgi2xjd3rbj048lxz6mj8sn"))))
     (properties `((upstream-name . "coconots")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stanheaders
-                             r-rcppparallel
-                             r-rcpp
+    (propagated-inputs (list r-rcpp
                              r-numderiv
                              r-matrixstats
                              r-juliaconnector
@@ -26582,13 +26654,12 @@ memory-efficient computations when handling densely sampled domains.")
     (description
      "Useful tools for fitting, validating, and forecasting of practical
 convolution-closed time series models for low counts are provided.  Marginal
-distributions of the data can be modeled via Poisson and Generalized Poisson
-innovations.  Regression effects can be modelled via time varying innovation
-rates.  The models are described in Jung and Tremayne (2011)
+distributions of the data can be modelled via Poisson and Generalized Poisson
+innovations.  Regression effects can be incorporated through time varying
+innovation rates.  The models are described in Jung and Tremayne (2011)
 <doi:10.1111/j.1467-9892.2010.00697.x> and the model assessment tools are
-presented in Czado et al. (2009) <doi:10.1111/j.1541-0420.2009.01191.x>,
-Gneiting and Raftery (2007) <doi:10.1198/016214506000001437> and, Tsay (1992)
-<doi:10.2307/2347612>.")
+presented in Czado et al. (2009) <doi:10.1111/j.1541-0420.2009.01191.x> and,
+Tsay (1992) <doi:10.2307/2347612>.")
     (license license:expat)))
 
 (define-public r-coclust
@@ -33179,13 +33250,13 @@ Bayesian classifier results from cld2'.  See
 (define-public r-cld2
   (package
     (name "r-cld2")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cld2" version))
        (sha256
-        (base32 "1mzsr6rmqhvvk5p38y3kwd5hmyiaxgg60ay2gvh4d8psn7fx9cyv"))))
+        (base32 "1zg40spv71pxcjbypxrjvm36ng75nazwsfq1qa1lmr29x2y53xfg"))))
     (properties `((upstream-name . "cld2")))
     (build-system r-build-system)
     (arguments
@@ -43585,13 +43656,13 @@ user interface, without any programming requirements.")
 (define-public r-cctools
   (package
     (name "r-cctools")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctools" version))
        (sha256
-        (base32 "03lp9pa9qr2hi584ivvmswxmwjw1c3a6xqladpqldjhzvzpxvcwi"))))
+        (base32 "1iqhpx5vwpnvln54b02d864zqd0b7fmkg2nkn21dp43jvk2c4z1w"))))
     (properties `((upstream-name . "cctools")))
     (build-system r-build-system)
     (arguments
@@ -43609,13 +43680,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "020x156ms7y9bl9nh846wbh2n6cfic4fqhkxbk3dzizpmz3wqaqi"))))
+        (base32 "1lqb4dzmbr7nj2xj5hmnlzd4wzsrmpis9vdbq92r47gcjshxywmz"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (arguments
@@ -45101,13 +45172,13 @@ by the gut bacteria.")
 (define-public r-causalweight
   (package
     (name "r-causalweight")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalweight" version))
        (sha256
-        (base32 "0412ald8wq2fnam4bb2dc1yrx21vk2c6vbn76lf46c5apb9sw3ij"))))
+        (base32 "0d9r38mjrxk75xmph0bg3mrms1b9qxgm69aw1cb106794142rl3c"))))
     (properties `((upstream-name . "causalweight")))
     (build-system r-build-system)
     (arguments
@@ -45115,7 +45186,6 @@ by the gut bacteria.")
       #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-superlearner
-                             r-sandwich
                              r-ranger
                              r-np
                              r-mvtnorm
@@ -46598,13 +46668,13 @@ tibbles, lists, etc..")
 (define-public r-catastro
   (package
     (name "r-catastro")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatastRo" version))
        (sha256
-        (base32 "0v2gb6hvvh5zv5w3gvk07mnya2y2gra271if8nqi1khb7l52l516"))))
+        (base32 "1d8mm2c3wn09w6add4dz9744c2qja4xj0f93w689gn5z1zi79zlx"))))
     (properties `((upstream-name . "CatastRo")))
     (build-system r-build-system)
     (arguments
@@ -48600,6 +48670,41 @@ are optimal with regard to a multi-objective target (Monteil et al.
 makes it possible to solve equations symbolically, find symbolic integrals,
 symbolic sums and other important quantities.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-capybara
+  (package
+    (name "r-capybara")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "capybara" version))
+       (sha256
+        (base32 "18c6gdf97lm5inmqh6yg1mi61ap0rsc88kzp4qf10acg26gwf94w"))))
+    (properties `((upstream-name . "capybara")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mass
+                             r-kendallknight
+                             r-ggplot2
+                             r-generics
+                             r-formula
+                             r-data-table
+                             r-cpp11armadillo
+                             r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://pacha.dev/capybara/")
+    (synopsis
+     "Fast and Memory Efficient Fitting of Linear Models with High-Dimensional Fixed Effects")
+    (description
+     "Fast and user-friendly estimation of generalized linear models with multiple
+fixed effects and cluster the standard errors.  The method to obtain the
+estimated fixed-effects coefficients is based on Stammann (2018)
+<doi:10.48550/@code{arXiv.1707.01815>} and Gaure (2013)
+<doi:10.1016/j.csda.2013.03.024>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-captr
   (package
