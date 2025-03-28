@@ -8102,13 +8102,13 @@ and Koenig, F. (2022). <doi:10.48550/@code{arXiv.2206.09639>}.")
 (define-public r-eseis
   (package
     (name "r-eseis")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eseis" version))
        (sha256
-        (base32 "0yi7wyf1hapvkpkcwiqi3k1p06nic0glrzrn59lcy0ck98krvy09"))))
+        (base32 "0ykjars3r2asf9yawvi4wsxls0sav67xijjkdbpw55lzvpg5w3j7"))))
     (properties `((upstream-name . "eseis")))
     (build-system r-build-system)
     (arguments
@@ -9213,6 +9213,33 @@ extreme values and multiple threshold tests for a generalized Pareto
 distribution, together with an automatic threshold selection algorithm.  See del
 Castillo, J, Daoudi, J and Lockhart, R (2014) <doi:10.1111/sjos.12037>.")
     (license license:gpl2+)))
+
+(define-public r-erboost
+  (package
+    (name "r-erboost")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "erboost" version))
+       (sha256
+        (base32 "19fzmkvpfb5875qh1z8p8z2s0zbj34m5igvmckqvfdgwn9ps82f0"))))
+    (properties `((upstream-name . "erboost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lattice))
+    (home-page "https://cran.r-project.org/package=erboost")
+    (synopsis "Nonparametric Multiple Expectile Regression via ER-Boost")
+    (description
+     "Expectile regression is a nice tool for estimating the conditional expectiles of
+a response variable given a set of covariates.  This package implements a
+regression tree based gradient boosting estimator for nonparametric multiple
+expectile regression, proposed by Yang, Y., Qian, W. and Zou, H. (2018)
+<doi:10.1080/00949655.2013.876024>.  The code is based on the gbm package
+originally developed by Greg Ridgeway.")
+    (license license:gpl3)))
 
 (define-public r-eratosthenes
   (package
@@ -15191,13 +15218,13 @@ clustered by fitting mixtures of normal distributions.")
 (define-public r-emmageo
   (package
     (name "r-emmageo")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMMAgeo" version))
        (sha256
-        (base32 "1wz4zw45xfqbk589cpd188j7619h2ar2czfkisil9x8ksijfixls"))))
+        (base32 "1rcdqdy16x00fnry80rr6j6081p9zbkmhxxfv4k9izncagpm3gqk"))))
     (properties `((upstream-name . "EMMAgeo")))
     (build-system r-build-system)
     (arguments
@@ -15359,33 +15386,6 @@ posterior model probabilities and Bayesian model averaging across a wide set of
 Bayesian models including linear, generalized linear, generalized linear mixed,
 generalized nonlinear, generalized nonlinear mixed, and logic regression models.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-emistatr
-  (package
-    (name "r-emistatr")
-    (version "1.2.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EmiStatR" version))
-       (sha256
-        (base32 "1cwzzkynhnpjd1slnifdmkrshfpv99ryilxj27f98kwgbnb6i81a"))))
-    (properties `((upstream-name . "EmiStatR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts r-lattice r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=EmiStatR")
-    (synopsis
-     "Emissions and Statistics in R for Wastewater and Pollutants in Combined Sewer Systems")
-    (description
-     "This package provides a fast and parallelised calculator to estimate combined
-wastewater emissions.  It supports the planning and design of urban drainage
-systems, without the requirement of extensive simulation tools.  The
-@code{EmiStatR} package implements modular R methods.  This enables to add new
-functionalities through the R framework.")
-    (license license:gpl3+)))
 
 (define-public r-emissv
   (package
@@ -17404,13 +17404,13 @@ al. (2023, <@code{arXiv:2305.02075>}).")
 (define-public r-elaborator
   (package
     (name "r-elaborator")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elaborator" version))
        (sha256
-        (base32 "0a59wp50gszyx4q2qsfq8yjkqk4kz3bnlk5r95sjgc4rj8zg8vxf"))))
+        (base32 "1m64icpmzf26pvzxmc3jfb1s9h2xlnb0fjmhzvmjd1vjpddjxh68"))))
     (properties `((upstream-name . "elaborator")))
     (build-system r-build-system)
     (arguments
@@ -23727,19 +23727,20 @@ Olano et al. (2009) <doi:10.1051/forest:2008074>.")
 (define-public r-ecerto
   (package
     (name "r-ecerto")
-    (version "0.5.14")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eCerto" version))
        (sha256
-        (base32 "1s2dz4dq0r2fhiinnlaqpg42bfzvdlh0inkyfdz0khapd67shbgq"))))
+        (base32 "1jk81b8w4bmvp7nli1rk15hw7qapgnrx9iqkzagpvaxy49sxd6nw"))))
     (properties `((upstream-name . "eCerto")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyxl
+    (propagated-inputs (list r-xml2
+                             r-tidyxl
                              r-shinywidgets
                              r-shinyjs
                              r-shiny
@@ -23754,6 +23755,7 @@ Olano et al. (2009) <doi:10.1051/forest:2008074>.")
                              r-knitr
                              r-golem
                              r-dt
+                             r-dplyr
                              r-config
                              r-bslib))
     (home-page "https://github.com/janlisec/eCerto")

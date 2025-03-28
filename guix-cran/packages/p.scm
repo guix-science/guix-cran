@@ -6413,23 +6413,21 @@ al. (2015) <DOI:10.1109/tnb.2015.2457906> and Saini et al. (2015)
 (define-public r-proteus
   (package
     (name "r-proteus")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proteus" version))
        (sha256
-        (base32 "1i8h07k5pdsywpw5g8d06xgl5gk06g5q93jimfwkbry9ykagh1cw"))))
+        (base32 "190cd25hd7s2nwscb10fk253d93j2pjy6sfar4fc6zd0sxn4b6mr"))))
     (properties `((upstream-name . "proteus")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vgam
-                             r-torch
+    (propagated-inputs (list r-torch
                              r-tictoc
                              r-stringr
-                             r-sn
                              r-scales
                              r-readr
                              r-purrr
@@ -6445,7 +6443,6 @@ al. (2015) <DOI:10.1109/tnb.2015.2457906> and Saini et al. (2015)
                              r-furrr
                              r-fancova
                              r-dplyr
-                             r-actuar
                              r-abind))
     (home-page "https://rpubs.com/giancarlo_vercellino/proteus")
     (synopsis "Multiform Seq2Seq Model for Time-Feature Analysis")
@@ -8221,13 +8218,13 @@ for different versions of same question list.")
 (define-public r-profast
   (package
     (name "r-profast")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProFAST" version))
        (sha256
-        (base32 "0gr8b78jvs9g4k84ai0yak6nvv8zqcm2nhi463qvqq7xbq032gml"))))
+        (base32 "0b4fs6lb0hzbqasyiidxxbkrgckp4ymfg6kyqnpf07hb0zr93x2c"))))
     (properties `((upstream-name . "ProFAST")))
     (build-system r-build-system)
     (arguments
@@ -9623,6 +9620,38 @@ big data sets even on desktop machines.")
 using Google Trends data.  It includes required data and tools for backtesting
 the performance in 2007-2020.")
     (license license:gpl2)))
+
+(define-public r-prism
+  (package
+    (name "r-prism")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prism" version))
+       (sha256
+        (base32 "15zi4r0kmg1p4j2jdn48vw6j1m54gan5c2w5n9gqplllbmvkmvk4"))))
+    (properties `((upstream-name . "prism")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-readr
+                             r-raster
+                             r-magrittr
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/prism/")
+    (synopsis "Access Data from the Oregon State Prism Climate Project")
+    (description
+     "Allows users to access the Oregon State Prism climate data
+(<https://prism.nacse.org/>).  Using the web service API data can easily
+downloaded in bulk and loaded into R for spatial analysis.  Some user friendly
+visualizations are also provided.")
+    (license license:expat)))
 
 (define-public r-priorsense
   (package
@@ -12739,13 +12768,13 @@ anomaly.")
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRECAST" version))
        (sha256
-        (base32 "17qk40j2by7bjc0r2wnyfca4drpzbrxp0m5r10a7494avqknjjk0"))))
+        (base32 "1p0bzf1hkcymwja6chm6wfjyql1g0ppq5r4m1d36pqqd108ic4lj"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (arguments
@@ -16269,32 +16298,6 @@ condition on variables/time series at certain quantile levels to stress test the
 risk measure estimates.")
     (license license:expat)))
 
-(define-public r-portsort
-  (package
-    (name "r-portsort")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "portsort" version))
-       (sha256
-        (base32 "0swl39dn7lzwvps18bva4l64a441gkf6lbwcwrhlf93f1ardvxji"))))
-    (properties `((upstream-name . "portsort")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zoo r-xts))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=portsort")
-    (synopsis "Factor-Based Portfolio Sorts")
-    (description
-     "Designed to aid both academic researchers and asset managers in conducting
-factor based portfolio sorts.  Provides functionality to sort assets into
-portfolios for up to three factors via a conditional or unconditional sorting
-procedure.")
-    (license license:gpl2+)))
-
 (define-public r-portrisk
   (package
     (name "r-portrisk")
@@ -16739,13 +16742,13 @@ included for reference and examples.")
 (define-public r-poputils
   (package
     (name "r-poputils")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poputils" version))
        (sha256
-        (base32 "1bjv6jzsyr5q82ww3fb99m3ic4qmcgnladsqk12l3fjvq0jhal22"))))
+        (base32 "0s4srswgr74m7yf2rdv002f4hr6v9wwbrp6ahw2icwplmlkrkg2r"))))
     (properties `((upstream-name . "poputils")))
     (build-system r-build-system)
     (arguments
@@ -22957,6 +22960,41 @@ site is completed.")
 logistic regression analysis.  Provide it with a binomial regression model
 produced by @code{glm()} and it will convert the estimates to odds ratios with a
 95% confidence interval and plot the results using ggplot2'.")
+    (license license:expat)))
+
+(define-public r-plotnormtest
+  (package
+    (name "r-plotnormtest")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PlotNormTest" version))
+       (sha256
+        (base32 "0i2b8ap0ab6j8kk3c2ik7gy79sykqvd5bhay1b9bjggbrx1pbqww"))))
+    (properties `((upstream-name . "PlotNormTest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rlang
+                             r-rdpack
+                             r-matrixextra
+                             r-matrix
+                             r-mass
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PlotNormTest")
+    (synopsis
+     "Graphical Univariate/Multivariate Assessments for Normality Assumption")
+    (description
+     "Graphical methods testing multivariate normality assumption.  Methods including
+assessing score function, and moment generating functions,independent
+transformations and linear transformations.  For more details see Tran
+(2024),\"Contributions to Multivariate Data Science: Assessment and
+Identification of Multivariate Distributions and Supervised Learning for Groups
+of Objects.\" , @code{PhD} thesis,
+<https://our.oakland.edu/items/c8942577-2562-4d2f-8677-cb8ec0bf6234>.")
     (license license:expat)))
 
 (define-public r-plotmm
@@ -35775,34 +35813,6 @@ different from the Fasano and Franceschini test (1987).  The latter is a variant
 of the Peacock test.")
     (license license:gpl2)))
 
-(define-public r-peach
-  (package
-    (name "r-peach")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PEACH" version))
-       (sha256
-        (base32 "0ciq2cci35rv39pgpp7i30jxlmr85726kh07ww22ryq3bm04ylg8"))))
-    (properties `((upstream-name . "PEACH")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-mnormt r-metap r-mass))
-    (home-page "https://cran.r-project.org/package=PEACH")
-    (synopsis
-     "Pareto Enrichment Analysis for Combining Heterogeneous Datasets")
-    (description
-     "This package provides a meta gene set analysis tool developed based on
-principles of Pareto dominance (William B T Mock (2011)
-<doi:10.1007/978-1-4020-9160-5_341>).  It is designed to combine gene set
-analysis p-values from multiple transcriptome datasets (e.g., microarray and
-RNA-Seq).  The novel Pareto method for p-value combination allows PEACH to
-properly model heterogeneity and correlation in Omics datasets.")
-    (license license:gpl2)))
-
 (define-public r-peacesciencer
   (package
     (name "r-peacesciencer")
@@ -36763,13 +36773,13 @@ regression models.  S. Kucheryavskiy (2023) <doi:10.1016/j.aca.2023.341096>.")
 (define-public r-pcutils
   (package
     (name "r-pcutils")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcutils" version))
        (sha256
-        (base32 "0ncj8gwi6axpbg02gq6jnwxp4zh0f4r94iky8b5m8hfhbkm15gxb"))))
+        (base32 "0jwvd6dvnkri1z1l3s566mws1mf943lnlh3aibc70xjfl378l1wk"))))
     (properties `((upstream-name . "pcutils")))
     (build-system r-build-system)
     (arguments
@@ -37139,6 +37149,40 @@ significance using two-group tests and linear regression Yuan et al. (2006)
      "Set of functions for analysis of Principal Coordinates of Phylogenetic Structure
 (PCPS).")
     (license license:gpl2)))
+
+(define-public r-pcpr
+  (package
+    (name "r-pcpr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pcpr" version))
+       (sha256
+        (base32 "0ixqxmci8bw37qb70qcdggzmh55rj56lxypinribj986icysp2sy"))))
+    (properties `((upstream-name . "pcpr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-rlang
+                             r-purrr
+                             r-progressr
+                             r-magrittr
+                             r-future
+                             r-furrr
+                             r-foreach
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://columbia-prime.github.io/pcpr/")
+    (synopsis "Principal Component Pursuit for Environmental Epidemiology")
+    (description
+     "Implementation of the pattern recognition technique Principal Component Pursuit
+tailored to environmental health data, as described in Gibson et al (2022)
+<doi:10.1289/EHP10479>.")
+    (license license:gpl3+)))
 
 (define-public r-pcplus
   (package
@@ -42025,19 +42069,19 @@ not split into subsets.")
 (define-public r-parallellogger
   (package
     (name "r-parallellogger")
-    (version "3.3.1")
+    (version "3.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParallelLogger" version))
        (sha256
-        (base32 "05f3ysa5vipjl43pmllyq1wypbc5ddn33ysmhcrh8h6sx3j36jc7"))))
+        (base32 "1hv9prvnh0wh084if31ll1arnp8kj8qdxakiz3dgxbhdxj67fdwn"))))
     (properties `((upstream-name . "ParallelLogger")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml2 r-snow r-jsonlite))
+    (propagated-inputs (list r-xml2 r-snow r-rstudioapi r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://ohdsi.github.io/ParallelLogger/")
     (synopsis

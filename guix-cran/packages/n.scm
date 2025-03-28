@@ -4563,13 +4563,13 @@ further details, see the paper by John R.J. Thompson (2024)
 (define-public r-nonprobsvy
   (package
     (name "r-nonprobsvy")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonprobsvy" version))
        (sha256
-        (base32 "0sckbj0src1skhdyikr1gk2aim3sbh9s8ha0pbf2yqyy8bmcga2s"))))
+        (base32 "06k9diblqb4azkgsgbn5pid7ysj140r7jsmq85kcgqa7669091nb"))))
     (properties `((upstream-name . "nonprobsvy")))
     (build-system r-build-system)
     (arguments
@@ -4583,8 +4583,8 @@ further details, see the paper by John R.J. Thompson (2024)
                              r-ncvreg
                              r-maxlik
                              r-matrix
-                             r-mathjaxr
                              r-mass
+                             r-formula-tools
                              r-foreach
                              r-doparallel))
     (home-page "https://github.com/ncn-foreigners/nonprobsvy")
@@ -4592,13 +4592,15 @@ further details, see the paper by John R.J. Thompson (2024)
     (description
      "Statistical inference with non-probability samples when auxiliary information
 from external sources such as probability samples or population totals or means
-is available.  Details can be found in: Wu et al. (2020)
-<doi:10.1080/01621459.2019.1677241>, Kim et al. (2021) <doi:10.1111/rssa.12696>,
-Wu et al. (2023)
-<https://www150.statcan.gc.ca/n1/pub/12-001-x/2022002/article/00002-eng.htm>,
-Kim et al. (2021)
-<https://www150.statcan.gc.ca/n1/pub/12-001-x/2021001/article/00004-eng.htm>,
-Kim et al. (2020) <doi:10.1111/rssb.12354>.")
+is available.  The package implements various methods such as inverse
+probability (propensity score) weighting, mass imputation and doubly robust
+approach.  Details can be found in: Chen et al. (2020)
+<doi:10.1080/01621459.2019.1677241>, Yang et al. (2020)
+<doi:10.1111/rssb.12354>, Kim et al. (2021) <doi:10.1111/rssa.12696>, Yang et
+al. (2021)
+<https://www150.statcan.gc.ca/n1/pub/12-001-x/2021001/article/00004-eng.htm> and
+Wu (2022)
+<https://www150.statcan.gc.ca/n1/pub/12-001-x/2022002/article/00002-eng.htm>.")
     (license license:expat)))
 
 (define-public r-nonprobest
@@ -6047,13 +6049,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "11.1")
+    (version "11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "074x7lpg1p7l1ygbz4nmhkwg6x531jxml9x4hcw997xam0wx5mc7"))))
+        (base32 "07313jflqi1zw8wp1lvyfddjcnlym6dbakywrm57iwyf72nb2hb7"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (arguments
@@ -11302,6 +11304,38 @@ For more advanced users it is possible to use the low-level functions and
 manipulate the arguments.  See Welvaert et al. (2011)
 <doi:10.18637/jss.v044.i10>.")
     (license license:gpl2+)))
+
+(define-public r-neuroscc
+  (package
+    (name "r-neuroscc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuroSCC" version))
+       (sha256
+        (base32 "12w2i1zgabh4hac0xwzj8b93gh21crrbxj77mvcdbnyxc8cchk77"))))
+    (properties `((upstream-name . "neuroSCC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-oro-nifti r-memisc r-dplyr r-contourer))
+    (native-inputs (list r-knitr))
+    (home-page "https://iguanamarina.github.io/neuroSCC/")
+    (synopsis
+     "Bridging Simultaneous Confidence Corridors and PET Neuroimaging")
+    (description
+     "This package provides tools for the structured processing of PET neuroimaging
+data in preparation for the estimation of Simultaneous Confidence Corridors
+(SCCs) for one-group, two-group, or single-patient vs group comparisons.  The
+package facilitates PET image loading, data restructuring, integration into a
+Functional Data Analysis framework, contour extraction, identification of
+significant results, and performance evaluation.  It bridges established
+packages (e.g., oro.nifti') with novel statistical methodologies (e.g.,
+@code{ImageSCC}') and enables reproducible analysis pipelines, including
+comparison with Statistical Parametric Mapping ('SPM').")
+    (license license:expat)))
 
 (define-public r-neuromplex
   (package

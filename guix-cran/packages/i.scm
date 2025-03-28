@@ -5846,6 +5846,33 @@ query this data.  To get started with a free API key, sign up here
 <https://www.ip2location.io/sign-up?ref=1>.")
     (license license:expat)))
 
+(define-public r-ip2location-io
+  (package
+    (name "r-ip2location-io")
+    (version "0.0.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ip2location.io" version))
+       (sha256
+        (base32 "04c7zgm5jzpy8axflh4bi3xfvb29z7whx31rkw4nyyv1f1nks5z4"))))
+    (properties `((upstream-name . "ip2location.io")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect r-jsonlite r-httr r-dplyr))
+    (home-page "https://cran.r-project.org/package=ip2location.io")
+    (synopsis "Batch IP Data Retrieval and Storage Using 'IP2Location.io'")
+    (description
+     "This package provides a system for submitting multiple IP information queries to
+IP2Location.io'âs IP Geolocation API and storing the resulting data in a
+dataframe.  You provide a vector of IP addresses and your IP2Location.io API
+key.  The package returns a dataframe with one row per IP address and a column
+for each available data field (data fields not included in your API plan will
+contain NAs).  This is the second submission of the package to CRAN.")
+    (license license:expat)))
+
 (define-public r-ip2location
   (package
     (name "r-ip2location")
@@ -6842,13 +6869,13 @@ models proposed by Asano and Hirakawa (2017)
 (define-public r-intsel
   (package
     (name "r-intsel")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intsel" version))
        (sha256
-        (base32 "1f4437sziqar2hzhzdqg701xcf7jls1k81ya2p25rcv243km9s3j"))))
+        (base32 "02m5wyhsrd4n74sabjwinyc33q50qbbca4wp8yf0myjyf4fj1vv4"))))
     (properties `((upstream-name . "intsel")))
     (build-system r-build-system)
     (arguments
@@ -10692,13 +10719,13 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "1.0.8")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "0n8048g1bmqk9fpapbrjffa40s7zp3idd03mxhv6gkxixmz3bar3"))))
+        (base32 "19awzy3q19x190023j2bw7kx7yzy89m03y28acy3gw1d9hh2wn99"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (arguments
@@ -10709,7 +10736,6 @@ package is based on methods described in Sasieni (2003) <doi:
                              r-rcpp
                              r-purrr
                              r-pbapply
-                             r-patchwork
                              r-matrix
                              r-ggraph
                              r-ggplot2
@@ -11919,31 +11945,6 @@ Warping and Incremental Dynamic Time Warping please see \"@code{IncDTW}: An R
 Package for Incremental Calculation of Dynamic Time Warping\" by Leodolter et al.
 (2021) <doi:10.18637/jss.v099.i09>.")
     (license license:gpl2+)))
-
-(define-public r-incatome
-  (package
-    (name "r-incatome")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "INCATome" version))
-       (sha256
-        (base32 "1gbmcirs49ydmk5rg2vl5gdy39dfx9psw5mijibzjszcfjar3kqs"))))
-    (properties `((upstream-name . "INCATome")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-siggenes r-multtest r-limma r-genefilter))
-    (home-page "https://cran.r-project.org/package=INCATome")
-    (synopsis
-     "Internal Control Analysis of Translatome Studies by Microarrays")
-    (description
-     "Data analysis, normalisation and differential expression for Translatome studies
-by microarrays (T Sbarrato et al.  RNA. 2017 Aug 25;
-<DOI:10.1261/rna.060525.116>).")
-    (license (license:fsdg-compatible "CC BY-NC 4.0"))))
 
 (define-public r-incase
   (package
@@ -17873,13 +17874,13 @@ smoothing.")
 (define-public r-icsshiny
   (package
     (name "r-icsshiny")
-    (version "0.5")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICSShiny" version))
        (sha256
-        (base32 "0a13vps0mkv5qs6qnl7ar0mdbkbd7i1c6kgwahmkb3id3n9bw0cl"))))
+        (base32 "0ywh9pjh4gm5cl1276hm057qj54r17wxfm65j9ibj1fnp65b38a0"))))
     (properties `((upstream-name . "ICSShiny")))
     (build-system r-build-system)
     (arguments
@@ -17898,8 +17899,8 @@ smoothing.")
      "This package performs Invariant Coordinate Selection (ICS) (Tyler, Critchley,
 Duembgen and Oja (2009) <doi:10.1111/j.1467-9868.2009.00706.x>) and especially
 ICS for multivariate outlier detection with application to quality control
-(Archimbaud, Nordhausen, Ruiz-Gazen (2016) <@code{arXiv:1612.06118>}) using a
-shiny app.")
+(Archimbaud, Nordhausen, Ruiz-Gazen (2018) <doi:10.1016/j.csda.2018.06.011>)
+using a shiny app.")
     (license license:gpl2+)))
 
 (define-public r-icss

@@ -3076,13 +3076,13 @@ design, i.e.  when each test is applied to each subject in the study.")
 (define-public r-dtcomb
   (package
     (name "r-dtcomb")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtComb" version))
        (sha256
-        (base32 "1fgcw7dfgs4padns3d6v50fpaa1ng0mycydslwqpjnbdiyc956vn"))))
+        (base32 "1sngb7aaiahpjs7yxnrir263dx40f15bhhk4mz7d1vvkpqg60nqi"))))
     (properties `((upstream-name . "dtComb")))
     (build-system r-build-system)
     (arguments
@@ -4600,13 +4600,13 @@ to create many different drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.8.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "02ficr16cs3b1b9nrzpxjpgw4wx2p1yfydbpzzy721k92w1znq1k"))))
+        (base32 "01mlwra2vyn1yw6ada5jmw1g514i7830bsax6zdgwq0hprc77042"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (arguments
@@ -4618,7 +4618,6 @@ to create many different drum patterns.")
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
-                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-codelistgenerator
@@ -6564,13 +6563,13 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
 (define-public r-dqastats
   (package
     (name "r-dqastats")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQAstats" version))
        (sha256
-        (base32 "0q87wzqf53cw0b6f0i82iv6sjxhm4mmwg4g0ihij70w8lgan462q"))))
+        (base32 "0rn7nylqgr9bafji6andcbbqfsxi282713vsvwnav815r5caxg8f"))))
     (properties `((upstream-name . "DQAstats")))
     (build-system r-build-system)
     (arguments
@@ -21886,13 +21885,13 @@ as well as a function to generate a project skeleton for such an analysis.")
 (define-public r-denstrip
   (package
     (name "r-denstrip")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denstrip" version))
        (sha256
-        (base32 "0hzxphj740q6pfa1q42knr7n12bmnawg7b2fs74msxn83dka5cmq"))))
+        (base32 "0lp4yyixiij3nji6dxv1zbbwgr7410146mbjbgjlfg4snkp9x3gg"))))
     (properties `((upstream-name . "denstrip")))
     (build-system r-build-system)
     (arguments
@@ -21905,7 +21904,8 @@ as well as a function to generate a project skeleton for such an analysis.")
     (description
      "Graphical methods for compactly illustrating probability distributions,
 including density strips, density regions, sectioned density plots and varying
-width strips.")
+width strips, using base R graphics.  Note that the ggdist package offers a
+similar set of tools for illustrating distributions, based on ggplot2'.")
     (license license:gpl2+)))
 
 (define-public r-densratio
@@ -29652,13 +29652,13 @@ collaboration and reproducible research.")
 (define-public r-datapackage
   (package
     (name "r-datapackage")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datapackage" version))
        (sha256
-        (base32 "0kk2klbgxd15zss7xna5frq1iqnx55pgxygz4gyahf5jz2g0ls9d"))))
+        (base32 "17536r9dva4m905ap45xhzkgw94zb1v1fzikss1zmbxcb83p1a64"))))
     (properties `((upstream-name . "datapackage")))
     (build-system r-build-system)
     (arguments
@@ -29822,19 +29822,19 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "1dxcx9hrw7z8iizgn3bh6mg512pbf37ncyzwh67zc4jcydlm0p3p"))))
+        (base32 "0yghx6c98d9h8rr3a3m8rpaval5wi1flchrf21bkjdvsm08pscxv"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-lattice r-ggplot2))
     (home-page "https://eljatib.com/rlibro")
     (synopsis "Datasets and Functions to Accompany Analisis De Datos Con R")
     (description
@@ -31102,6 +31102,72 @@ other packages, we recommend to install the @code{dartRverse} package, that
 supports the installation of all packages in the @code{dartRverse}'.  If you
 want to cite @code{dartR}', you find the information by typing
 citation('@code{dartR.base}') in the console.")
+    (license license:gpl3+)))
+
+(define-public r-dartr
+  (package
+    (name "r-dartr")
+    (version "2.9.9.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dartR" version))
+       (sha256
+        (base32 "095kfabhqmcdspb4vfqs9gfp70j9dfs3r64yl1i9j7vgiw5129w4"))))
+    (properties `((upstream-name . "dartR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stampp
+                             r-sp
+                             r-snprelate
+                             r-shiny
+                             r-reshape2
+                             r-raster
+                             r-purrr
+                             r-popgenreport
+                             r-plyr
+                             r-patchwork
+                             r-mass
+                             r-gsubfn
+                             r-gridextra
+                             r-ggplot2
+                             r-foreach
+                             r-fields
+                             r-dplyr
+                             r-data-table
+                             r-dartr-data
+                             r-crayon
+                             r-ape
+                             r-adegenet))
+    (native-inputs (list r-knitr))
+    (home-page "https://green-striped-gecko.github.io/dartR/")
+    (synopsis
+     "Importing and Analysing 'SNP' and 'Silicodart' Data Generated by Genome-Wide Restriction Fragment Analysis")
+    (description
+     "This package provides functions are provided that facilitate the import and
+analysis of SNP (single nucleotide polymorphism) and silicodart
+(presence/absence) data.  The main focus is on data generated by @code{DarT}
+(Diversity Arrays Technology), however, data from other sequencing platforms can
+be used once SNP or related fragment presence/absence data from any source is
+imported.  Genetic datasets are stored in a derived genlight format (package
+adegenet'), that allows for a very compact storage of data and metadata.
+Functions are available for importing and exporting of SNP and silicodart data,
+for reporting on and filtering on various criteria (e.g. @code{CallRate}',
+heterozygosity, reproducibility, maximum allele frequency).  Additional
+functions are available for visualization (e.g. Principle Coordinate Analysis)
+and creating a spatial representation using maps. @code{dartR} supports also the
+analysis of 3rd party software package such as newhybrid', structure',
+@code{NeEstimator} and blast'.  Since version 2.0.3 we also implemented
+simulation functions, that allow to forward simulate SNP dynamics under
+different population and evolutionary dynamics.  Comprehensive tutorials and
+support can be found at our github repository:
+github.com/green-striped-gecko/@code{dartR}/.  If you want to cite
+@code{dartR}', you find the information by typing citation('@code{dartR}') in
+the console.")
     (license license:gpl3+)))
 
 (define-public r-darksky

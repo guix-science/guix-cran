@@ -2042,13 +2042,13 @@ ISBN:978-0-471-18386-0).")
 (define-public r-swfscmisc
   (package
     (name "r-swfscmisc")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swfscMisc" version))
        (sha256
-        (base32 "1qc2d3ykzxqqnjdq93j9nvkb8gfkvyr2x1l657q7jh1wcj8b7754"))))
+        (base32 "1fc1wdnwvy12v07scf4dd2j1lw8wsgillvi2rcx833fpxg37gzx8"))))
     (properties `((upstream-name . "swfscMisc")))
     (build-system r-build-system)
     (arguments
@@ -2058,10 +2058,8 @@ ISBN:978-0-471-18386-0).")
                              r-tibble
                              r-spatstat-geom
                              r-sf
-                             r-runjags
                              r-rlang
                              r-modeest
-                             r-magrittr
                              r-kknn
                              r-hdinterval
                              r-ggrepel
@@ -5599,13 +5597,13 @@ Rao and Wu (1988) <doi:10.1080/01621459.1988.10478591>.")
 (define-public r-survexp-fr
   (package
     (name "r-survexp-fr")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survexp.fr" version))
        (sha256
-        (base32 "0ci65w3w06kwab98q9gb7nb7smq9r25qfibkgfilsg1i5li6p9h5"))))
+        (base32 "0rjrdbmb5mvqk9fia73hlydkkjyww14iq9d13mv52fwzhs85jx0n"))))
     (properties `((upstream-name . "survexp.fr")))
     (build-system r-build-system)
     (arguments
@@ -9665,13 +9663,13 @@ This represents an attempt to replicate some of python's string formatting.")
 (define-public r-string2path
   (package
     (name "r-string2path")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "string2path" version))
        (sha256
-        (base32 "13gfqc7vqfz732yndgc6bfx39r0p2rzhc0cn8sn6qip00kyzg6s2"))))
+        (base32 "0c0ylz5za4rnk1chvna1h0q9mqagxj2zdza9f2f3r3yji8h3wnjf"))))
     (properties `((upstream-name . "string2path")))
     (build-system r-build-system)
     (arguments
@@ -10279,13 +10277,13 @@ to create dyadic data sets.")
 (define-public r-stratpal
   (package
     (name "r-stratpal")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StratPal" version))
        (sha256
-        (base32 "0p0g9yix7rmxn3xvd86y1gyfy8c682an5k1acih4nkv75v9f928x"))))
+        (base32 "1dld0dbdd699pf8hbis06g0fwkvsk5yks8ad91kbll6ikr44c6ng"))))
     (properties `((upstream-name . "StratPal")))
     (build-system r-build-system)
     (arguments
@@ -14167,6 +14165,36 @@ supporting Gaussian outcomes was introduced by Bradley, Wikle, and Holan
 STCOS models.")
     (license license:expat)))
 
+(define-public r-stccgev
+  (package
+    (name "r-stccgev")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "STCCGEV" version))
+       (sha256
+        (base32 "17ani0x3l7asa7sv90p9xanjjbhf21a5z5ysvzq31mazqbw8jfzd"))))
+    (properties `((upstream-name . "STCCGEV")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rootsolve r-ggplot2 r-evd r-copula r-bsts))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=STCCGEV")
+    (synopsis "Conditional Copula Model for Crop Yield Forecasting")
+    (description
+     "This package provides functions to model and forecast crop yields using a
+spatial temporal conditional copula approach.  The package incorporates extreme
+weather covariates and Bayesian Structural Time Series models to analyze crop
+yield dependencies across multiple regions.  Includes tools for fitting,
+simulating, and visualizing results.  This method build upon established R
+packages, including Hofert et al'. (2025) <doi:10.32614/CRAN.package.copula>,
+Scott (2024) <doi:10.32614/CRAN.package.bsts>, and Stephenson et al'. (2024)
+<doi:10.32614/CRAN.package.evd>.")
+    (license license:expat)))
+
 (define-public r-stbl
   (package
     (name "r-stbl")
@@ -17882,13 +17910,13 @@ hinge loss, squared-hinge loss, and logistic loss.")
 (define-public r-ssnbler
   (package
     (name "r-ssnbler")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSNbler" version))
        (sha256
-        (base32 "0h5cvl32hkdw39ky00r528qsab2zqa1922adgx1fjnqwswqvqy2i"))))
+        (base32 "0jpxkqlka07pa1wj2lmwp41q4d790axl4vh3l9hb8kg48mk3a82k"))))
     (properties `((upstream-name . "SSNbler")))
     (build-system r-build-system)
     (arguments
@@ -17900,7 +17928,9 @@ hinge loss, squared-hinge loss, and logistic loss.")
                              r-rsqlite
                              r-pdist
                              r-igraph
-                             r-dplyr))
+                             r-foreach
+                             r-dplyr
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pet221/SSNbler")
     (synopsis "Assemble 'SSN' Objects")
@@ -18570,13 +18600,13 @@ prebundled Solberg dataset, or the mock haplotype dataset.")
 (define-public r-ssh
   (package
     (name "r-ssh")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssh" version))
        (sha256
-        (base32 "1gnkpb2xqh0ahqbhm1zb0wxwy3gdis32pwdgv5vf9sdcj4q35zik"))))
+        (base32 "0d6lqdpsm3si3i4kzv72i04i60clp1x92v2lkqnzhq3qiirr2drc"))))
     (properties `((upstream-name . "ssh")))
     (build-system r-build-system)
     (arguments
@@ -18953,13 +18983,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.38")
+    (version "1.5.39")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "0vk1bpp0pr29sjmln4ig0vm5vpw3rv3s9zyyvll2swms27jmmilw"))))
+        (base32 "1v9kvsl2ms0w7sh4kghblmvv9zc02ydb964xw91znzwh0lkyi6lh"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (arguments
@@ -21276,23 +21306,26 @@ modules of the package have been developed in C++.")
 (define-public r-sprex
   (package
     (name "r-sprex")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sprex" version))
        (sha256
-        (base32 "14idml4mipd4wyza7hqf49ww4dparmwaps35hxm8jg5h0w1pgh7j"))))
+        (base32 "130vyykibi9yk3b00k1wpbk00w0ah8zsdnfgwbw5wdfh837in1r8"))))
     (properties `((upstream-name . "sprex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-swfscmisc))
-    (home-page "https://cran.r-project.org/package=sprex")
-    (synopsis "Calculate Species Richness and Extrapolation Metrics")
+    (propagated-inputs (list r-swfscmisc r-ggplot2))
+    (home-page "https://github.com/EricArcher/sprex")
+    (synopsis "Species Richness and Extrapolation")
     (description
-     "Calculate species richness functions for rarefaction and extrapolation.")
+     "This package provides functions for calculating species richness for rarefaction
+and extrapolation, primarily non-parametric species richness such as jackknife,
+Chao1, and ACE. Also available are functions for plotting species richness and
+extrapolation curves, and computing standard diversity and entropy indices.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-spreval
@@ -21589,6 +21622,47 @@ Risch, Lloyd Mueller & Yongtao Guan (2014) A New Estimation Approach for
 Combining Epidemiological Data From Multiple Sources, Journal of the American
 Statistical Association, 109:505, 11-23, <doi:10.1080/01621459.2013.870904>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-spower
+  (package
+    (name "r-spower")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Spower" version))
+       (sha256
+        (base32 "029sxdhi5maa0zd9l8adxw7yflrczhhcg4nhzd5kbb11ygk0vrah"))))
+    (properties `((upstream-name . "Spower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-simdesign
+                             r-polycor
+                             r-plotly
+                             r-parallelly
+                             r-lavaan
+                             r-ggplot2
+                             r-envstats
+                             r-cocor
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/philchalmers/Spower")
+    (synopsis "Power Analyses using Monte Carlo Simulations")
+    (description
+     "This package provides a general purpose simulation-based power analysis API for
+routine and customized simulation experimental designs.  The package focuses
+exclusively on Monte Carlo simulation variants of (expected) prospective power
+analyses, criterion power analyses, compromise power analyses, sensitivity
+analyses, and prospective/post-hoc power analyses.  The default simulation
+experiment functions found within the package provide stochastic variants of the
+power analyses subroutines found in the G*Power 3 software (Faul, Erdfelder,
+Buchner, and Lang, 2009) <doi:10.3758/brm.41.4.1149>, along with various other
+power analysis examples (e.g., mediation analyses).  Supporting functions are
+also included, such as for building empirical power curve estimates, which
+utilize a similar API structure.")
+    (license license:gpl3+)))
 
 (define-public r-spouse
   (package
@@ -27386,13 +27460,13 @@ Applications in R. Springer, Cham <doi:10.1007/978-3-030-56681-4>.")
 (define-public r-spatialnp
   (package
     (name "r-spatialnp")
-    (version "1.1-5")
+    (version "1.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialNP" version))
        (sha256
-        (base32 "0cxh1f4182mfihq6m82zh2lgafrsiqvgrfxbk66zkjrrbfn8gkcl"))))
+        (base32 "1bnk5iqs1km55klx28wbfmvzj0i585x5jis8s26qbnx73nscnld5"))))
     (properties `((upstream-name . "SpatialNP")))
     (build-system r-build-system)
     (arguments
@@ -27758,13 +27832,13 @@ form of Riemann integration.")
 (define-public r-spatialbss
   (package
     (name "r-spatialbss")
-    (version "0.14-0")
+    (version "0.16-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialBSS" version))
        (sha256
-        (base32 "0z8k4wd5rlx3bmp4zmfvblkf4nrkkqqfcpv5wzncyhi2ffgnybvm"))))
+        (base32 "0gfzvlaf09jjh6kfggvw5rwj4gvjc5fdfis7xv4kv7wa74wqvq1f"))))
     (properties `((upstream-name . "SpatialBSS")))
     (build-system r-build-system)
     (arguments
@@ -30328,13 +30402,13 @@ by the mapproj package.")
 (define-public r-spacoap
   (package
     (name "r-spacoap")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaCOAP" version))
        (sha256
-        (base32 "1cj5avfsfzlb9jbyckpb2zjqkx9ny1msxcdcrcz7kr5njswyw55a"))))
+        (base32 "00i64km4c1k2xa9131cv8k112p28wshpl8c8ppmkjz288fir823f"))))
     (properties `((upstream-name . "SpaCOAP")))
     (build-system r-build-system)
     (arguments
@@ -36596,13 +36670,13 @@ Relationship Management, Wiley: New York.")
 (define-public r-smcfcs
   (package
     (name "r-smcfcs")
-    (version "1.9.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smcfcs" version))
        (sha256
-        (base32 "17316nnr3gsvra3az15zm31dkmhsmqdahm3xj0ilqi53vic649pp"))))
+        (base32 "1220fm2227pzrwxay2nlgdgan5pfx3ch54ws25yvz618xqkw2hbi"))))
     (properties `((upstream-name . "smcfcs")))
     (build-system r-build-system)
     (arguments
@@ -38426,13 +38500,13 @@ Multidimensional Scaling (MDS), T-distributed Stochastic Neighbour Embedding
 (define-public r-sleepr
   (package
     (name "r-sleepr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleepr" version))
        (sha256
-        (base32 "1ka4pl6a09d1qga5svcirc5ywmzz9pcml09053745lz3p1v8fnn3"))))
+        (base32 "0alwn86jasqc5lzqaiffczfy1c27291a5ldm8xir54lznfmazpyp"))))
     (properties `((upstream-name . "sleepr")))
     (build-system r-build-system)
     (arguments
@@ -41286,27 +41360,28 @@ purposes.")
 (define-public r-simulist
   (package
     (name "r-simulist")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simulist" version))
        (sha256
-        (base32 "1b7nynkd0id8qfp98dvzmmp3jgr8qdc49dv51a51y3350pxz7xf3"))))
+        (base32 "0ckards17v5d0064bs4izg9mbkrzq6ylxcmcrjpaxrck10m78lrw"))))
     (properties `((upstream-name . "simulist")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rlang r-randomnames r-epiparameter r-checkmate))
+    (propagated-inputs (list r-rlang r-randomnames r-epiparameter r-english
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/epiverse-trace/simulist")
     (synopsis "Simulate Disease Outbreak Line List and Contacts Data")
     (description
      "This package provides tools to simulate realistic raw case data for an epidemic
 in the form of line lists and contacts using a branching process.  Simulated
-outbreaks are parameterised with epidemiological parameters and can have age
-structured populations, age-stratified hospitalisation and death risk and
+outbreaks are parameterised with epidemiological parameters and can have
+age-structured populations, age-stratified hospitalisation and death risk and
 time-varying case fatality risk.")
     (license license:expat)))
 
@@ -42294,19 +42369,19 @@ please refer to Perera, A., and Ramanayake, A. (2019)
 (define-public r-simqi
   (package
     (name "r-simqi")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simqi" version))
        (sha256
-        (base32 "1wqqmndjqkxjf8y8vfvwmbkp2i29ain1qrhm7sjpgv4s58f6xhxc"))))
+        (base32 "0ksmd7jjxciwa9njxy4nvcrjc0y3fnm8p208cnpa6mdxbg6dchxk"))))
     (properties `((upstream-name . "simqi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble r-stevemisc))
+    (propagated-inputs (list r-tibble r-mass))
     (home-page "https://cran.r-project.org/package=simqi")
     (synopsis "Simulate Quantities of Interest from Regression Models")
     (description
@@ -42983,13 +43058,13 @@ enough for use in large-scale data analysis projects.")
 (define-public r-simple-regression
   (package
     (name "r-simple-regression")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIMPLE.REGRESSION" version))
        (sha256
-        (base32 "11pk2waln8v9j4z1ia5r05i0755bdjn98ay9kv4mbdi1yafqmdzx"))))
+        (base32 "177y5dha519hkxj2jpwlq5iab586mb5jw8x5qcfxd4r2bpk6h7k0"))))
     (properties `((upstream-name . "SIMPLE.REGRESSION")))
     (build-system r-build-system)
     (arguments
@@ -52195,13 +52270,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapr
   (package
     (name "r-shapr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapr" version))
        (sha256
-        (base32 "0i34a6i1fs9i1aic5pzm5z0l2jsgabr0v8bwhinf235ym8x8rkm7"))))
+        (base32 "1g845j5vphl5vwv8sr8za5jpb819pkng08m86wgcmxcjlbdinazd"))))
     (properties `((upstream-name . "shapr")))
     (build-system r-build-system)
     (arguments
@@ -54383,13 +54458,13 @@ them clearer and friendlier to the user.")
 (define-public r-sevenbridges2
   (package
     (name "r-sevenbridges2")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sevenbridges2" version))
        (sha256
-        (base32 "0d2pb5idndszipy7gk8pscqw62hy9ndls98dhs7nbp0j0384r4a0"))))
+        (base32 "17qqi74as72bc7qqrd4hf8ws27d7l0n9nrnpgg4rngi5j283sn6d"))))
     (properties `((upstream-name . "sevenbridges2")))
     (build-system r-build-system)
     (arguments
@@ -60301,13 +60376,13 @@ packages, using public key cryptography.")
 (define-public r-secrdesign
   (package
     (name "r-secrdesign")
-    (version "2.9.2")
+    (version "2.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secrdesign" version))
        (sha256
-        (base32 "12n0xy838r2a1ilgf4d8kxmpbhrzwnx64r14194ma8v6sdj44xqi"))))
+        (base32 "06fppvwlbbxa9dwkciq5ahyg1zvj70admnzzdrnlk4xc5mr87jxj"))))
     (properties `((upstream-name . "secrdesign")))
     (build-system r-build-system)
     (arguments
@@ -65434,25 +65509,26 @@ correspondence even between evolutionarily distant species.")
 (define-public r-scglr
   (package
     (name "r-scglr")
-    (version "3.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCGLR" version))
        (sha256
-        (base32 "10hsvcjgsycap6wkp06snp2zab1ppsp78kyncpbjnm3vp84qm0nz"))))
+        (base32 "172v5mik39ykbgb9xljr595vawgpcl4q85cqar5d6ym90phnirzj"))))
     (properties `((upstream-name . "SCGLR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-proc
+    (propagated-inputs (list r-rlang
+                             r-proc
+                             r-pls
                              r-matrix
                              r-ggplot2
                              r-formula
-                             r-expm
                              r-ade4))
-    (home-page "https://scnext.github.io/SCGLR")
+    (home-page "https://scnext.github.io/SCGLR/")
     (synopsis "Supervised Component Generalized Linear Regression")
     (description
      "An extension of the Fisher Scoring Algorithm to combine PLS regression with GLM

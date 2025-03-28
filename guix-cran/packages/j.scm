@@ -44,23 +44,22 @@
 (define-public r-jwileymisc
   (package
     (name "r-jwileymisc")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JWileymisc" version))
        (sha256
-        (base32 "0anchmlgp4nwgr59k5ryi05fcq63d5b2aqs3nmnvr3p3rma16xq7"))))
+        (base32 "131knl4bsj6d9gnmxw7ij59fqddxhv3fkag2ff0rxsdmg2hymchb"))))
     (properties `((upstream-name . "JWileymisc")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vgam
+                             r-scales
                              r-robustbase
-                             r-rms
                              r-rlang
-                             r-quantreg
                              r-psych
                              r-multcompview
                              r-mice
@@ -68,9 +67,9 @@
                              r-mass
                              r-lme4
                              r-lavaan
-                             r-ggthemes
                              r-ggpubr
                              r-ggplot2
+                             r-gamlss
                              r-fst
                              r-extraoperators
                              r-emmeans
@@ -4028,13 +4027,13 @@ reduce user dependencies.")
 (define-public r-jdcruncher
   (package
     (name "r-jdcruncher")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JDCruncheR" version))
        (sha256
-        (base32 "0qzkvqd9whlql8z34yy4dz79sgl3azb6cz0dxhpaq0p532fgraws"))))
+        (base32 "0g8j437ak62dp20k5gb0pnxak3c2jspliimfjjxrm4mfayk7sc6i"))))
     (properties `((upstream-name . "JDCruncheR")))
     (build-system r-build-system)
     (arguments

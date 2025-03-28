@@ -1011,13 +1011,13 @@ those obtained with version 0.0.1.")
 (define-public r-outlierensembles
   (package
     (name "r-outlierensembles")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outlierensembles" version))
        (sha256
-        (base32 "1yfmqaxqcaabqbqhsnlcli0km5xj4cs3lb3c6vw8idvziyi2qq5q"))))
+        (base32 "1zzs4f4928wl0cy3w7wg7kp25098lpliwcylxx4d9b42iwkficp8"))))
     (properties `((upstream-name . "outlierensembles")))
     (build-system r-build-system)
     (arguments
@@ -5018,13 +5018,13 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "0y51r8v2kzhiac3d1zkh5z0gw87hcfx7cr1xdfsnzjdxckcgvmhv"))))
+        (base32 "0n3rl7kp5gy2sfa6hyfl230xqf7k9skr7ais01klmjmjmg71dmlg"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (arguments
@@ -11047,34 +11047,6 @@ more about @code{OhdsiReportGenerator} at
 <https://ohdsi.github.io/@code{OhdsiReportGenerator/>}.")
     (license license:asl2.0)))
 
-(define-public r-ohcspackage
-  (package
-    (name "r-ohcspackage")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OHCSpackage" version))
-       (sha256
-        (base32 "0dr2yxz9amqq9mpl8skhdvs7w01zc4y3sw4wqs0iwj1pj9jb96fz"))))
-    (properties `((upstream-name . "OHCSpackage")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tibble r-readr r-openxlsx r-dplyr))
-    (home-page "https://cran.r-project.org/package=OHCSpackage")
-    (synopsis "Prepare Housing Data for Analysis")
-    (description
-     "Prepares census and core housing needs data, specifically designed for use with
-Statistics Canada data and standardized input data.  The package offers
-functions for tidying, organizing, and splitting complex data tables, making it
-easier for users to perform analyses on the data.  OHCSpackage is particularly
-useful for those working with census data that has a consistent format, number
-of rows, and number of columns.  With this package, users can save time and
-streamline their data preparation processes.")
-    (license license:gpl3)))
-
 (define-public r-ogrdbstats
   (package
     (name "r-ogrdbstats")
@@ -12265,13 +12237,13 @@ the data sets with variables \"harmonized\" across different years.")
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "1lj5rm7avmh4vak3g34dg9l7rgqyq7h068g2zvdjb2p1kvaw7qlw"))))
+        (base32 "0l9cjp0vdzdkl18i8hbyba84lgws18n1nsqd11ww35qnqkm9p2ha"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (arguments

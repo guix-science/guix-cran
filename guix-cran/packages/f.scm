@@ -808,19 +808,24 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "0h2xpy7lkxwklafdsy5bcpkaqji4r9w6wi2ghp572vgpp42499d7"))))
+        (base32 "1amda4gqgrhsvpxa60d37y8knip26mr98dybdw65wz25j2qk2lj6"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vim r-missforest r-miceranger r-fuzzysimres
+    (propagated-inputs (list r-vim
+                             r-missforest
+                             r-miceranger
+                             r-mice
+                             r-fuzzysimres
+                             r-fuzzyresampling
                              r-fuzzynumbers))
     (home-page "https://cran.r-project.org/package=FuzzyImputationTest")
     (synopsis "Imputation Procedures and Quality Tests for Fuzzy Data")
@@ -12330,6 +12335,33 @@ display the result.")
 nls', @code{nlsList} and nlme frameworks.")
     (license license:gpl2)))
 
+(define-public r-flexord
+  (package
+    (name "r-flexord")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexord" version))
+       (sha256
+        (base32 "1hl0y51hspwzhhk77g5q5gdip2912a9mw5vn7n1w29i3dwk742cb"))))
+    (properties `((upstream-name . "flexord")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-flexmix r-flexclust))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://zettlchen.github.io/flexord/")
+    (synopsis "Flexible Clustering of Ordinal and Mixed-with-Ordinal Data")
+    (description
+     "Extends the capabilities for flexible partitioning and model-based clustering
+available in the packages flexclust and flexmix to handle ordinal and
+mixed-with-ordinal data types via new distance, centroid and driver functions
+that make various assumptions regarding ordinality.  Using them within the
+flex-scheme allows for easy comparisons across methods.")
+    (license license:gpl2)))
+
 (define-public r-flexor
   (package
     (name "r-flexor")
@@ -16439,13 +16471,13 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTAutils" version))
        (sha256
-        (base32 "19m6w953m8y5h7bikdym6z4a0mimgrlv3wls1zs1fbmlvdj5rgkz"))))
+        (base32 "10sjr439hn7xzc3qmi8r74408q9fr2fpggq1220syy1k2dnh6sri"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (arguments
@@ -16480,13 +16512,13 @@ Forest Service data.")
 (define-public r-fiesta
   (package
     (name "r-fiesta")
-    (version "3.7.0")
+    (version "3.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTA" version))
        (sha256
-        (base32 "1yv0c1213pw0gpgrvwr45z1qqscs6nm1kpv5v7l88wfjm69078l8"))))
+        (base32 "13fwfsxkd7ddfrfpz11ki38hshc16x1sz7q71rbz4j9i31mxl7d5"))))
     (properties `((upstream-name . "FIESTA")))
     (build-system r-build-system)
     (arguments
@@ -16709,13 +16741,13 @@ include the machinery for secure in-browser authentication and decryption.")
 (define-public r-fica
   (package
     (name "r-fica")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fICA" version))
        (sha256
-        (base32 "0dqw3qybnpdnvhfh5inkc4011bzhsxvhpv8zzmkm3q5m6hkc6rlg"))))
+        (base32 "0ign4akn76xdkfjljjynmqdg6qramh0lbn821g7cl16lz77gjg26"))))
     (properties `((upstream-name . "fICA")))
     (build-system r-build-system)
     (arguments
@@ -16736,13 +16768,13 @@ Miettinen, Nordhausen and Taskinen (2018) <doi:10.32614/RJ-2018-046>.")
 (define-public r-fic
   (package
     (name "r-fic")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fic" version))
        (sha256
-        (base32 "18xz94w1ab17jfi61bdg9z3pm63g488v17ns2ivizkza4gg07pv8"))))
+        (base32 "15gzxcrfm1ysqvf6gpwh3vi2jnv164bl3dmb8514jaiyfdnr6np4"))))
     (properties `((upstream-name . "fic")))
     (build-system r-build-system)
     (arguments
@@ -16753,6 +16785,7 @@ Miettinen, Nordhausen and Taskinen (2018) <doi:10.32614/RJ-2018-046>.")
                              r-scales
                              r-numderiv
                              r-mvtnorm
+                             r-mgcv
                              r-ggplot2
                              r-abind))
     (native-inputs (list r-knitr))
@@ -20395,6 +20428,52 @@ following references: <https://en.wikipedia.org/wiki/Modified_Dietz_method>,
 (See Stan Development Team (2020) <https://mc-stan.org/>).")
     (license license:gpl3+)))
 
+(define-public r-fchange
+  (package
+    (name "r-fchange")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fChange" version))
+       (sha256
+        (base32 "10rv0cvpqj296g5d58h44a13nljdxlv77bpl9pfj12dafi812amz"))))
+    (properties `((upstream-name . "fChange")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vars
+                             r-tidyr
+                             r-tensora
+                             r-scales
+                             r-sandwich
+                             r-rfast
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-rainbow
+                             r-plotly
+                             r-plot3d
+                             r-mass
+                             r-ggpubr
+                             r-ggplot2
+                             r-ftsa
+                             r-fda
+                             r-fastmatrix
+                             r-dplyr))
+    (home-page "https://jrvanderdoes.github.io/fChange/")
+    (synopsis "Functional Change Point Detection and Analysis")
+    (description
+     "Analyze functional data and its change points.  Includes functionality to store
+and process data, summarize and validate assumptions, characterize and perform
+inference of change points, and provide visualizations.  Data is stored as
+discretely collected observations without requiring the selection of basis
+functions.  For more details see chapter 8 of Horvath and Rice (2024)
+<doi:10.1007/978-3-031-51609-2>.  Additional papers are forthcoming.  Focused
+works are also included in the documentation of corresponding functions.")
+    (license license:gpl3+)))
+
 (define-public r-fcfdr
   (package
     (name "r-fcfdr")
@@ -21022,13 +21101,13 @@ these icons as favicons in shiny applications and other HTML pages.")
 (define-public r-fava
   (package
     (name "r-fava")
-    (version "1.0.7")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAVA" version))
        (sha256
-        (base32 "07p0dbd33pqrfdp6vwi69yxqkc1snwn90m399zbmy7gi28vcxdy8"))))
+        (base32 "0qz5acb18yy4fi6qh950ydhrwd2ix5fhgvb704d09b56pcsawm1x"))))
     (properties `((upstream-name . "FAVA")))
     (build-system r-build-system)
     (arguments
@@ -21044,7 +21123,7 @@ Variability across vectors of relative Abundances, as well as a suite of helper
 functions which enable the visualization and statistical analysis of relative
 abundance data.  The FAVA R package accompanies the paper, âQuantifying
 compositional variability in microbial communities with FAVAâ by Morrison,
-Xue, and Rosenberg (2024) <doi:10.1101/2024.07.03.601929>.")
+Xue, and Rosenberg (2025) <doi:10.1073/pnas.2413211122>.")
     (license license:expat)))
 
 (define-public r-fauxnaif
@@ -22285,13 +22364,13 @@ provides interfaces to C code callable by another C code from other R packages."
 (define-public r-fastm
   (package
     (name "r-fastm")
-    (version "0.0-4")
+    (version "0.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastM" version))
        (sha256
-        (base32 "1n9a431w0hl4kr3pa32kcyd1d73acz4vb9vhfkckk3099mg46d9m"))))
+        (base32 "0ak22cdkjmbynigyggmv3vj8ia8kb4d2rsppld8kcgggd8p6bql4"))))
     (properties `((upstream-name . "fastM")))
     (build-system r-build-system)
     (arguments
@@ -26343,13 +26422,13 @@ storage: Amazon Web Services (AWS) Simple Storage Service (S3)
 (define-public r-f1datar
   (package
     (name "r-f1datar")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1dataR" version))
        (sha256
-        (base32 "1mzfnsbjx51fq5nn9709bybqqgxxvq6nqqn4882xdcga3rm8jyyg"))))
+        (base32 "0w11a7raw81w0bzkz155a9p6wdnz3j1s6vgasjk8cirfpxiqcr0m"))))
     (properties `((upstream-name . "f1dataR")))
     (build-system r-build-system)
     (arguments

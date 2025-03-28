@@ -1938,13 +1938,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "1yyzjsfbyldfym5k96pxi4sypn3am1lq2d0pd6rafp0ldyjffgb6"))))
+        (base32 "0x9l472m4w85w5kna74v2rsfzw6s2plw8a14rdyb6qypp108g3ln"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (arguments
@@ -5973,6 +5973,42 @@ import/export routines for exchange of data with Juice
 (<https://www.sci.muni.cz/botany/juice/>) are implemented.")
     (license license:gpl2+)))
 
+(define-public r-vegspecindex
+  (package
+    (name "r-vegspecindex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VegSpecIndex" version))
+       (sha256
+        (base32 "0s4dnh4c98masr0x706jfqawwl04cjpf2wz42dnkl99a149yislc"))))
+    (properties `((upstream-name . "VegSpecIndex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://cran.r-project.org/package=VegSpecIndex")
+    (synopsis "Vegetation and Spectral Indices for Environmental Assessment")
+    (description
+     "Earth system dynamics, such as plant dynamics, water bodies, and fire regimes,
+are widely monitored using spectral indicators obtained from multispectral
+remote sensing products.  There is a great need for spectral index catalogues
+and computing tools as a result of the quick rise of suggested spectral indices.
+ Unfortunately, the majority of these resources lack a standard Application
+Programming Interface, are out-of-date, closed-source, or are not linked to a
+catalogue.  We now introduce @code{VegSpecIndex}', a standardised list of
+spectral indices for studies of the earth system.  A thorough inventory of
+spectral indices is offered by @code{VegSpecIndex} and is connected to an R
+library.  For every spectral index, @code{VegSpecIndex} provides a comprehensive
+collection of information, such as names, formulae, and source references.  The
+user community may add more items to the catalogue, which will keep
+@code{VegSpecIndex} up to date and allow for further scientific uses.
+Additionally, the R library makes it possible to apply the catalogue to actual
+data, which makes it easier to employ remote sensing resources effectively
+across a variety of Earth system domains.")
+    (license license:gpl3)))
+
 (define-public r-vegperiod
   (package
     (name "r-vegperiod")
@@ -7539,6 +7575,45 @@ functions are written in C++ using Rcpp', developed by Eddelbuettel and Francois
 distribution with the intent to make the lives of risk modelers easier.")
     (license license:gpl2+)))
 
+(define-public r-varycoef
+  (package
+    (name "r-varycoef")
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "varycoef" version))
+       (sha256
+        (base32 "063z9gnms5pz757b6q5aqbp8z00l8fa041sdmlqgn7ajf9vikmc1"))))
+    (properties `((upstream-name . "varycoef")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spam
+                             r-smoof
+                             r-pbapply
+                             r-paramhelpers
+                             r-optimparallel
+                             r-mlrmbo
+                             r-mlr
+                             r-lhs
+                             r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jakobdambon/varycoef")
+    (synopsis "Modeling Spatially Varying Coefficients")
+    (description
+     "This package implements a maximum likelihood estimation (MLE) method for
+estimation and prediction of Gaussian process-based spatially varying
+coefficient (SVC) models (Dambon et al. (2021a)
+<doi:10.1016/j.spasta.2020.100470>).  Covariance tapering (Furrer et al. (2006)
+<doi:10.1198/106186006X132178>) can be applied such that the method scales to
+large data.  Further, it implements a joint variable selection of the fixed and
+random effects (Dambon et al. (2021b) <doi:10.1080/13658816.2022.2097684>).  The
+package and its capabilities are described in (Dambon et al. (2021c)
+<doi:10.48550/@code{arXiv.2106.02364>}).")
+    (license license:gpl2)))
+
 (define-public r-vartestnlme
   (package
     (name "r-vartestnlme")
@@ -8952,20 +9027,20 @@ downloaded from https://www.valottery.com/.")
 (define-public r-valorate
   (package
     (name "r-valorate")
-    (version "1.0-1")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "valorate" version))
        (sha256
-        (base32 "06vczszpkipsxfs7h6ld33vvxb5ci62rwg3cglwy3lcfifhbnsfi"))))
+        (base32 "0qmp5pd56sfgclj5x0fw0id0vy2i2rk3a18i1y3ifh7w6djf8ga7"))))
     (properties `((upstream-name . "valorate")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-survival))
-    (home-page "http://bioinformatica.mty.itesm.mx/valorate")
+    (home-page "https://bioinformatics.mx/index.php/bioinfo-tools/")
     (synopsis "Velocity and Accuracy of the LOg-RAnk TEst")
     (description
      "The algorithm implemented in this package was designed to quickly estimates the
@@ -8976,7 +9051,7 @@ survival groups, the estimation involves a weighted sum of distributions that
 are conditional on a co-occurrence term where mutations and events are both
 present.  The estimation of conditional distributions is quite fast allowing the
 analysis of large datasets in few minutes
-<http://bioinformatica.mty.itesm.mx/valorate>.")
+<https://bioinformatics.mx/index.php/bioinfo-tools/>.")
     (license license:gpl2+)))
 
 (define-public r-valmetrics

@@ -1083,21 +1083,21 @@ genome-wide association studies, where family history was not considered.")
 (define-public r-ltertools
   (package
     (name "r-ltertools")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltertools" version))
        (sha256
-        (base32 "16h7b921ikzzqjgbdq9x8wacmifa7dzqjz82mpyaifgw3mfncd2m"))))
+        (base32 "1731v50k3akr2kjwy79l9mkhwcc15rzp0fzjr1zmgmydxyslwi1q"))))
     (properties `((upstream-name . "ltertools")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-supportr
                              r-stringr
-                             r-rjsonio
                              r-readxl
                              r-purrr
                              r-magrittr
@@ -3081,19 +3081,19 @@ data-driven bandwidth selection.")
 (define-public r-lpda
   (package
     (name "r-lpda")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpda" version))
        (sha256
-        (base32 "0q54jid3vj5js0bhf4v4w5v3pmh4rr8dv0igcb2525fl731jsqfk"))))
+        (base32 "0hhh4hz7cmmna4rsdwagy9cm0kv6lvv3qzcjnbbs762hbxfj43n7"))))
     (properties `((upstream-name . "lpda")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rglpk))
+    (propagated-inputs (list r-rglpk r-multiway))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lpda")
     (synopsis "Linear Programming Discriminant Analysis")
@@ -3101,9 +3101,9 @@ data-driven bandwidth selection.")
      "Classification method obtained through linear programming.  It is advantageous
 with respect to the classical developments when the distribution of the
 variables involved is unknown or when the number of variables is much greater
-than the number of individuals.  LPDA method is published in Nueda, et al.
-(2022) \"LPDA: A new classification method based on linear programming\".
-<doi:10.1371/journal.pone.0270403>.")
+than the number of individuals.  Mathematical details behind the method are
+published in Nueda, et al. (2022) \"LPDA: A new classification method based on
+linear programming\". <doi:10.1371/journal.pone.0270403>.")
     (license license:gpl2+)))
 
 (define-public r-lpcm
@@ -4920,13 +4920,13 @@ Regression models.")
 (define-public r-logr
   (package
     (name "r-logr")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logr" version))
        (sha256
-        (base32 "0d1r5ka83nd9s3b62m0wd7vdhfff7x229w9w8xll180qdswq04ay"))))
+        (base32 "1469178a3as395kl239sq54v3rla63nyah96i779vbvqhaa3nblz"))))
     (properties `((upstream-name . "logr")))
     (build-system r-build-system)
     (arguments
@@ -7374,13 +7374,13 @@ Cancers.  Cancer informatics, 13, CIN-S14021.")
 (define-public r-lmperm
   (package
     (name "r-lmperm")
-    (version "2.1.0")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmPerm" version))
        (sha256
-        (base32 "1ss2hcfxqvfq4n6hypv7jp0n0apby9payxzaswaysr5368lkidn3"))))
+        (base32 "05hrja5q7ii41k4fg0am6rnj6k1s7cj4ns6fv2x54cnbfaznh5iv"))))
     (properties `((upstream-name . "lmPerm")))
     (build-system r-build-system)
     (arguments
@@ -12529,20 +12529,20 @@ Taylor, Tilman M. Davies, Barry S. Rowlingson, Peter J. Diggle (2015)
 (define-public r-lgarch
   (package
     (name "r-lgarch")
-    (version "0.6-2")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgarch" version))
        (sha256
-        (base32 "05xksc4d6dbf5ls4lf2gpk9xyi99fikr7dva88b84rfgads1yhrh"))))
+        (base32 "1j1ph2vs31jsj2rr9rza97f086ca5mgynf30lrkbl05nx46m0lmj"))))
     (properties `((upstream-name . "lgarch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo))
-    (home-page "http://www.sucarrat.net/")
+    (home-page "https://www.sucarrat.net/")
     (synopsis "Simulation and Estimation of Log-GARCH Models")
     (description
      "Simulation and estimation of univariate and multivariate log-GARCH models.  The

@@ -442,13 +442,13 @@ refer to Carollo et al. (2024) <doi:10.1002/sim.10297>.")
 (define-public r-twostepclogit
   (package
     (name "r-twostepclogit")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoStepCLogit" version))
        (sha256
-        (base32 "050y7na91izg36gkwd8yn8rx3r39dk6qlvhd3137f3jnk4v00bck"))))
+        (base32 "0hdpaigk1cdp6gw7bgdcp5x7aqn4a5xlg2nggn8xn3brgsk3pfzw"))))
     (properties `((upstream-name . "TwoStepCLogit")))
     (build-system r-build-system)
     (arguments
@@ -15609,13 +15609,13 @@ based on Cyr, et al. (2004) <doi:10.1503/cmaj.1041405> and Wikipedia
 (define-public r-tint
   (package
     (name "r-tint")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tint" version))
        (sha256
-        (base32 "1vkdgxxgcj3qk3858sp3zi7c2id3dq0zxz23xd4i8lgbqgvvh2s3"))))
+        (base32 "10c3mlbwbxdzk6k6c4krg52976mnisb7s42mdjvjv807n7mqrqby"))))
     (properties `((upstream-name . "tint")))
     (build-system r-build-system)
     (arguments
@@ -18498,13 +18498,13 @@ approach, but an uninformative prior is also available.")
 (define-public r-tidyllm
   (package
     (name "r-tidyllm")
-    (version "0.3.2")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyllm" version))
        (sha256
-        (base32 "154vllxlmv6l4nscyl8rrla9azm86zyzazbgnfdaximyiw6jj06g"))))
+        (base32 "1lhcpy8945pkcgd3kqnkc7qik35n4r7xiasrpz72lpqpwl3xr0yz"))))
     (properties `((upstream-name . "tidyllm")))
     (build-system r-build-system)
     (arguments
@@ -18530,12 +18530,12 @@ approach, but an uninformative prior is also available.")
     (synopsis "Tidy Integration of Large Language Models")
     (description
      "This package provides a tidy interface for integrating large language model
-(LLM) APIs such as Claude', Openai', Groq','Mistral and local models via Ollama
-into R workflows.  The package supports text and media-based interactions,
-interactive message history, batch request APIs, and a tidy, pipeline-oriented
-interface for streamlined integration into data workflows.  Web services are
-available at <https://www.anthropic.com>, <https://openai.com>,
-<https://groq.com>, <https://mistral.ai/> and <https://ollama.com>.")
+(LLM) APIs such as Claude', Openai', Gemini','Mistral and local models via
+Ollama into R workflows.  The package supports text and media-based
+interactions, interactive message history, batch request APIs, and a tidy,
+pipeline-oriented interface for streamlined integration into data workflows.
+Web services are available at <https://www.anthropic.com>, <https://openai.com>,
+<https://aistudio.google.com/>, <https://mistral.ai/> and <https://ollama.com>.")
     (license license:expat)))
 
 (define-public r-tidylda
@@ -21766,13 +21766,13 @@ Soto et al. (2011) <doi:10.1139/x11-045>.")
 (define-public r-tggd
   (package
     (name "r-tggd")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tggd" version))
        (sha256
-        (base32 "1izar1b3w148vp2r8gv3vpwfndib8ilxcjxgbfzbxn7q5mr73mwa"))))
+        (base32 "11zswy0ch6jcd70vigw9d06cfp5bpmp17ym7flz6w6vhkgpw37jd"))))
     (properties `((upstream-name . "tggd")))
     (build-system r-build-system)
     (arguments
@@ -26226,25 +26226,25 @@ interface that takes some work off the programmer.")
 (define-public r-telegram
   (package
     (name "r-telegram")
-    (version "0.6.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "telegram" version))
        (sha256
-        (base32 "02wwa115f0vz2d9y4nf01397hjkpc3cv2gdl47snrajrm41gji7y"))))
+        (base32 "10bfkgvmdivmdm29890b9glnqya3p7vdk9cqhkc1pi3xs8fhzgsg"))))
     (properties `((upstream-name . "telegram")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-r6 r-jsonlite r-httr r-curl))
-    (home-page "http://github.com/lbraglia/telegram")
+    (home-page "https://github.com/lbraglia/telegram")
     (synopsis "R Wrapper Around the Telegram Bot API")
     (description
-     "R wrapper around the Telegram Bot API (http://core.telegram.org/bots/api) to
-access Telegram's messaging facilities with ease (e.g. you send messages,
-images, files from R to your smartphone).")
+     "This package provides a simple wrapper around the Telegram Bot API
+(<https://core.telegram.org/bots/api>) to access Telegram's messaging facilities
+with ease (e.g. you send messages, images, files from R to your smartphone).")
     (license license:gpl3)))
 
 (define-public r-telefit
@@ -27146,20 +27146,20 @@ visualizing time-dependent ROC curves.")
 (define-public r-tdr
   (package
     (name "r-tdr")
-    (version "0.13")
+    (version "0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdr" version))
        (sha256
-        (base32 "0i0hnb3fc4d1mbbxcpzmyfh1w2rahfjabg5iyxym3yjd6377al15"))))
+        (base32 "1lnvrdlwm9f763c46svlwnz997l4ig6vk7wb5gbx798pfajdky7x"))))
     (properties `((upstream-name . "tdr")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-lattice r-ggplot2))
-    (home-page "http://github.com/oscarperpinan/tdr")
+    (home-page "https://codeberg.org/oscarperpinan/tdr/")
     (synopsis "Target Diagram")
     (description
      "Implementation of target diagrams using lattice and ggplot2 graphics.  Target
@@ -27350,6 +27350,32 @@ single-group and multigroup TDCM, summarize results of interest including item
 parameters, growth proportions, transition probabilities, transitional
 reliability, attribute correlations, model fit, and growth plots.")
     (license license:expat)))
+
+(define-public r-tdboost
+  (package
+    (name "r-tdboost")
+    (version "1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TDboost" version))
+       (sha256
+        (base32 "12rgnxrp0cn4kp834nq6n8408hab75p5x3h889d7h6vc59pvz7d1"))))
+    (properties `((upstream-name . "TDboost")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-lattice))
+    (home-page "https://cran.r-project.org/package=TDboost")
+    (synopsis "Boosted Tweedie Compound Poisson Model")
+    (description
+     "An implementation of a boosted Tweedie compound Poisson model proposed by Yang,
+Y., Qian, W. and Zou, H. (2018) <doi:10.1080/07350015.2016.1200981>.  It is
+capable of fitting a flexible nonlinear Tweedie compound Poisson model (or a
+gamma model) and capturing high-order interactions among predictors.  This
+package is based on the gbm package originally developed by Greg Ridgeway.")
+    (license license:gpl3)))
 
 (define-public r-tdbook
   (package

@@ -4486,6 +4486,33 @@ the chi-square single variance test for large samples, since no such procedure
 is implemented in standard statistical software.")
     (license license:gpl2+)))
 
+(define-public r-asympdiag
+  (package
+    (name "r-asympdiag")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "asympDiag" version))
+       (sha256
+        (base32 "1sjnr6z4mymp13yzb59jma7f614y2dvy6gsib5ka5vw4g0zbal70"))))
+    (properties `((upstream-name . "asympDiag")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/Alvaro-Kothe/asympDiag")
+    (synopsis "Diagnostic Tools for Asymptotic Theory")
+    (description
+     "Leveraging Monte Carlo simulations, this package provides tools for diagnosing
+regression models.  It implements a parametric bootstrap framework to compute
+statistics, generates diagnostic envelopes to assess goodness-of-fit, and
+evaluates type I error control for Wald tests.  By simulating data under the
+assumption that the model is true, it helps to identify model mis-specifications
+and enhances the reliability of the model inferences.")
+    (license license:expat)))
+
 (define-public r-asymmetry-measures
   (package
     (name "r-asymmetry-measures")
@@ -5086,13 +5113,13 @@ association strength between individuals using each method.")
 (define-public r-assocbin
   (package
     (name "r-assocbin")
-    (version "1.0-2")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AssocBin" version))
        (sha256
-        (base32 "0ral2sxq9y5basagx0ipk0ix2hnj9jkcc76fwjlg1v065bhci066"))))
+        (base32 "063iqmxrnir2qpa9hh8pi0mmya2i24yn4d1wxapz6wrbmfryc306"))))
     (properties `((upstream-name . "AssocBin")))
     (build-system r-build-system)
     (arguments
@@ -8726,48 +8753,6 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 <doi:10.3390/e21040394>.")
     (license license:gpl2+)))
 
-(define-public r-archeoviz
-  (package
-    (name "r-archeoviz")
-    (version "1.3.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "archeoViz" version))
-       (sha256
-        (base32 "1xx6ai74ps70ljx9pcaa5qjvqayvdjw79pk200jgjcxd3ykqiwhz"))))
-    (properties `((upstream-name . "archeoViz")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-svglite
-                             r-shinythemes
-                             r-shiny
-                             r-reshape2
-                             r-plotly
-                             r-mgcv
-                             r-knitr
-                             r-htmlwidgets
-                             r-ggplot2
-                             r-cxhull))
-    (native-inputs (list r-knitr))
-    (home-page "https://archeoviz.hypotheses.org")
-    (synopsis
-     "Visualisation, Exploration, and Web Communication of Archaeological Spatial Data")
-    (description
-     "An R Shiny application for visual and statistical exploration and web
-communication of archaeological spatial data, either remains or sites.  It
-offers interactive 3D and 2D visualisations (cross sections and maps of remains,
-timeline of the work made in a site) which can be exported in SVG and HTML
-formats.  It performs simple spatial statistics (convex hull, regression
-surfaces, 2D kernel density estimation) and allows exporting data to other
-online applications for more complex methods. @code{archeoViz} can be used
-offline locally or deployed on a server, either with interactive input of data
-or with a static data set.  Example is provided at
-<https://analytics.huma-num.fr/archeoviz/en>.")
-    (license license:gpl3)))
-
 (define-public r-archeofrag-gui
   (package
     (name "r-archeofrag-gui")
@@ -8811,13 +8796,13 @@ of the app is available at
 (define-public r-archeofrag
   (package
     (name "r-archeofrag")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeofrag" version))
        (sha256
-        (base32 "0y506979vybaswl5ssvghgxhclis5ak4qvcbgrrh2812g3w5c1b5"))))
+        (base32 "1rz46mbz27bbhpvzms8j2valykqx1s3y2ynh4x3yqfi2kllga5j0"))))
     (properties `((upstream-name . "archeofrag")))
     (build-system r-build-system)
     (arguments
@@ -10274,42 +10259,6 @@ Analysis Ready Samples services (@code{AppEEARS};
 to analysis ready earth observation data in R.")
     (license license:agpl3)))
 
-(define-public r-apollonius
-  (package
-    (name "r-apollonius")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Apollonius" version))
-       (sha256
-        (base32 "13iz0j2kc3jzzn77jawrm0fg23mqkxh7h7dasfjibmykamvw45nb"))))
-    (properties `((upstream-name . "Apollonius")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list mpfr gmp))
-    (propagated-inputs (list r-rcppeigen
-                             r-rcppcgal
-                             r-rcpp
-                             r-polychrome
-                             r-plotrix
-                             r-gyro
-                             r-colorsgen
-                             r-bh
-                             r-abind))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/stla/Apollonius")
-    (synopsis "2D Apollonius Graphs")
-    (description
-     "Computation of the Apollonius diagram of given 2D points and its dual the
-Apollonius graph, also known as the additively weighted VoronoÃ¯ diagram, and
-which is a generalization of the classical VoronoÃ¯ diagram.  For references,
-see the bibliography in the CGAL documentation at
-<https://doc.cgal.org/latest/Apollonius_graph_2/citelist.html>.")
-    (license license:gpl3)))
-
 (define-public r-apollo
   (package
     (name "r-apollo")
@@ -11395,6 +11344,33 @@ Graybill (1992, ISBN-13: 978-0824786441); Weerahandi (1995)
 <doi:10.1016/j.jspi.2008.01.001>.")
     (license license:gpl3)))
 
+(define-public r-aousdohtools
+  (package
+    (name "r-aousdohtools")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AOUSDOHtools" version))
+       (sha256
+        (base32 "18vnnp4c7ig2cr1q7kg4lrnvd2jc1dc44w8agj211sgpbplaja99"))))
+    (properties `((upstream-name . "AOUSDOHtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://github.com/zhd52/AOUSDOHtools")
+    (synopsis "Analyzing AOU SDOH Survey Data")
+    (description
+     "This package provides functions for processing and analyzing survey data from
+the All of Us Social Determinants of Health (AOUSDOH) program, including tools
+for calculating health and well-being scores, recoding variables, and
+simplifying survey data analysis.  For more details see - Koleck TA, Dreisbach
+C, Zhang C, Grayson S, Lor M, Deng Z, Conway A, Higgins PDR, Bakken S (2024)
+<doi:10.1093/jamia/ocae214>.")
+    (license license:expat)))
+
 (define-public r-aos
   (package
     (name "r-aos")
@@ -11617,13 +11593,13 @@ S4 package aod.")
 (define-public r-aoboot
   (package
     (name "r-aoboot")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AOboot" version))
        (sha256
-        (base32 "159iy0c6hc0l4kp9zdy3s87d8xplva0y2b9xpwfx056dlc5rvnkw"))))
+        (base32 "0qyjsn3fki9hz01b66266brgrpm6hrqxgbln3s38yxxghl8dz8fh"))))
     (properties `((upstream-name . "AOboot")))
     (build-system r-build-system)
     (arguments
@@ -11852,13 +11828,13 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.10")
+    (version "0.8.10-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "1nq8cir2i5icb7056amivdnsb2bg2cyrlb36n84m40b9kvnl99v5"))))
+        (base32 "015bslxal6n4v72qy9hgrx29sld4fhb32v7wp5agm1mafvkrf2ng"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
     (arguments
@@ -17966,13 +17942,13 @@ Air Quality Index (AQI) are defined at the US Environmental Projection Agency
 (define-public r-airgrteaching
   (package
     (name "r-airgrteaching")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGRteaching" version))
        (sha256
-        (base32 "1aa11731mwdjkwbk2mz7zkni40hfqpqvaxajrr7fjcy73rd37mfn"))))
+        (base32 "1p68xd2dg9r3fxljn1civ4bkgdgvxxid26x3p2vrhdx1mb3225fd"))))
     (properties `((upstream-name . "airGRteaching")))
     (build-system r-build-system)
     (arguments
@@ -23076,13 +23052,13 @@ during continuous walking activity.")
 (define-public r-adepro
   (package
     (name "r-adepro")
-    (version "4.1.2")
+    (version "4.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adepro" version))
        (sha256
-        (base32 "117piz0vxfd5qrfn1c9zb3mrivd6l0rbm0h8jfgcrnps5rkb7pmb"))))
+        (base32 "04w3qws5k1zp2564cwrjnwpy5p5a2nvgflz56a3r4lj3i3ysi9l4"))))
     (properties `((upstream-name . "adepro")))
     (build-system r-build-system)
     (arguments
@@ -23863,13 +23839,13 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 (define-public r-adas-utils
   (package
     (name "r-adas-utils")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adas.utils" version))
        (sha256
-        (base32 "0yca2ag4lvz7bggsdwdqvr7vajarx064s2kszgf2rqr1dw51s4yz"))))
+        (base32 "0gv8vrwrdyv7imldlcz05v230fipydmd3js3y3nzmgd2rka9qh1a"))))
     (properties `((upstream-name . "adas.utils")))
     (build-system r-build-system)
     (arguments

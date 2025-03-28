@@ -1827,13 +1827,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "25.2.2")
+    (version "25.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "1iiq18awgvd712mjarzrh5gsi2yglspz74a8a8cwn5yk2vpkqa5c"))))
+        (base32 "0if5cddfhj5j0bwp9j7ipja14qg562w6vlbyjpwkvqlbpg7rk005"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (arguments
@@ -4230,13 +4230,13 @@ Wikipedia are also included.")
 (define-public r-hotspots
   (package
     (name "r-hotspots")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hotspots" version))
        (sha256
-        (base32 "12v88k3yz1bsxx9p5dx8y54ccqcglwknm2jr7ybygdj2yasjr5l0"))))
+        (base32 "0xxxq4qll4frslrrgx7a06icyrpy18khwpczyh34v6wfjkn2h7v9"))))
     (properties `((upstream-name . "hotspots")))
     (build-system r-build-system)
     (arguments
@@ -6133,6 +6133,53 @@ Mortality Database (<https://www.ipss.go.jp/p-toukei/JMD/index-en.html>), and
 the Canadian Human Mortality Database (<http://www.bdlc.umontreal.ca/chmd/>).
 Arguments and data are standardized.")
     (license license:gpl2)))
+
+(define-public r-hmda
+  (package
+    (name "r-hmda")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMDA" version))
+       (sha256
+        (base32 "1xzqzgypgrakaz4spp0h84b9f2ix93wxfvkvaqw9qf4359aiwg7k"))))
+    (properties `((upstream-name . "HMDA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-splittools
+                             r-shapley
+                             r-psych
+                             r-h2otools
+                             r-h2o
+                             r-ggplot2
+                             r-dplyr
+                             r-curl
+                             r-autoensemble))
+    (home-page "http://dx.doi.org/10.13140/RG.2.2.32473.63846")
+    (synopsis
+     "Holistic Multimodel Domain Analysis for Exploratory Machine Learning")
+    (description
+     "Holistic Multimodel Domain Analysis (HMDA) is a robust and transparent framework
+designed for exploratory machine learning research, aiming to enhance the
+process of feature assessment and selection.  HMDA addresses key limitations of
+traditional machine learning methods by evaluating the consistency across
+multiple high-performing models within a fine-tuned modeling grid, thereby
+improving the interpretability and reliability of feature importance
+assessments.  Specifically, it computes Weighted Mean SHapley Additive
+@code{exPlanations} (WMSHAP), which aggregate feature contributions from
+multiple models based on weighted performance metrics.  HMDA also provides
+confidence intervals to demonstrate the stability of these feature importance
+estimates.  This framework is particularly beneficial for analyzing complex,
+multidimensional datasets common in health research, supporting reliable
+exploration of mental health outcomes such as suicidal ideation, suicide
+attempts, and other psychological conditions.  Additionally, HMDA includes
+automated procedures for feature selection based on WMSHAP ratios and performs
+dimension reduction analyses to identify underlying structures among features.
+For more details see Haghish (2025) <doi:10.13140/RG.2.2.32473.63846>.")
+    (license license:expat)))
 
 (define-public r-hmclearn
   (package
@@ -14597,13 +14644,13 @@ information on this method, refer to <doi:10.1007/s00122-022-04178-w>.")
 (define-public r-haplo-ccs
   (package
     (name "r-haplo-ccs")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "haplo.ccs" version))
        (sha256
-        (base32 "103i1fxk990drlsdhjrh9p6rp05g7gqzmlqfcdx9a1di1qrhw5qh"))))
+        (base32 "1792n5z63phax9c01wh3n89hk1qfdhhqjzj8qqwgcs9m775ngl16"))))
     (properties `((upstream-name . "haplo.ccs")))
     (build-system r-build-system)
     (arguments

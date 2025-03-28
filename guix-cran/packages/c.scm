@@ -146,13 +146,13 @@ as an additional layer.  See Liu J, Wang Y et al (2023)
 (define-public r-cytopt
   (package
     (name "r-cytopt")
-    (version "0.9.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CytOpT" version))
        (sha256
-        (base32 "008qm2kzclp0sy4ys7y0dsc894qrn7mazz9216w97rs2sn7kcrzx"))))
+        (base32 "1gvd49c856cx1lyazqbnwnqhv7wqim92g6w28819qcahmvq0hzg5"))))
     (properties `((upstream-name . "CytOpT")))
     (build-system r-build-system)
     (arguments
@@ -180,7 +180,7 @@ possible mis-alignment of a given cell population across sample (due to
 technical variability from the technology of measurements).  Supervised learning
 technique based on the Wasserstein metric that is used to estimate an optimal
 re-weighting of class proportions in a mixture model Details are presented in
-Freulon P, Bigot J and Hejblum BP (2021) <@code{arXiv:2006.09003>}.")
+Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
     (license license:gpl2+)))
 
 (define-public r-cytominer
@@ -715,30 +715,6 @@ available in GarcÃ­a-Callejas, D., Godoy, O., and Bartomeus, I. (2020)
 <doi:10.1111/2041-210X.13443>.  Furthermore, the package provides a series of
 functions to calculate dynamics for stage-structured populations across sites.")
     (license license:expat)))
-
-(define-public r-cxhull
-  (package
-    (name "r-cxhull")
-    (version "0.7.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cxhull" version))
-       (sha256
-        (base32 "0jxr1fz7cyarcq50jkkc2f3f1zwmbljpdpl56hfcilb43z2rkzkj"))))
-    (properties `((upstream-name . "cxhull")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rvcg r-rgl r-data-table))
-    (home-page "https://github.com/stla/cxhull")
-    (synopsis "Convex Hull")
-    (description
-     "Computes the convex hull in arbitrary dimension, based on the Qhull library
-(<http://www.qhull.org>).  The package provides a complete description of the
-convex hull: edges, ridges, facets, adjacencies.  Triangulation is optional.")
-    (license license:gpl3)))
 
 (define-public r-cwt
   (package
@@ -7956,13 +7932,13 @@ also be used to analyze team performances.")
 (define-public r-cricketdata
   (package
     (name "r-cricketdata")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cricketdata" version))
        (sha256
-        (base32 "07sj53c2ryvcichsa9b0ywmrslisbr4hkrnrf1crw7x1ym55hsan"))))
+        (base32 "018amdw6jdzs3xh3g95c6g5h2pvx77bb796gm5md0snypi643bmj"))))
     (properties `((upstream-name . "cricketdata")))
     (build-system r-build-system)
     (arguments
@@ -7979,7 +7955,7 @@ also be used to analyze team performances.")
                              r-rvest
                              r-readr
                              r-lubridate
-                             r-janitor
+                             r-jsonlite
                              r-dplyr
                              r-cli))
     (native-inputs (list r-r-rsp r-knitr))
@@ -8548,13 +8524,13 @@ Student-t distributions, i.e., d/p/q/r functions and distributions3 objects.")
 (define-public r-crc32c
   (package
     (name "r-crc32c")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crc32c" version))
        (sha256
-        (base32 "149bwwpgw69j4msqplrv7yym2fjs7c9v7sq8418lzz9szyj87dzg"))))
+        (base32 "0yrijmlf35rv064kywl366ax5vcag463b04mpckrfips7yv31xjl"))))
     (properties `((upstream-name . "crc32c")))
     (build-system r-build-system)
     (arguments
@@ -15484,13 +15460,13 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "0ngzyyabyfw34q7rsb80jvkrq586cdp877wi18c0zk63z1nv2rrq"))))
+        (base32 "1jcwpkdbxdv9al2m8321m3ymkxc9z6i8nim2hszzrqhyhxsrvax9"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
     (arguments
@@ -18245,13 +18221,13 @@ correctly, OAuth token caching, and refresh behaviour.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "0wps1px1jhrjzq66zi8gcr82ayhqc1bfzx2cg06lpn2sxqvds4hl"))))
+        (base32 "08ypacyv8rpalk5i6cccv8qhqbrmjqg3k55s5c2xcsg0fhgikbv4"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (arguments
@@ -18270,7 +18246,8 @@ correctly, OAuth token caching, and refresh behaviour.")
                              r-httr
                              r-glue
                              r-fs
-                             r-bit64))
+                             r-bit64
+                             r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://posit-dev.github.io/connectapi/")
     (synopsis "Utilities for Interacting with the 'Posit Connect' Server API")
@@ -25002,13 +24979,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "0qi4v2c00649y9r1lfn9xyjnvd98gb28405xckdap8k4r5cpp1v7"))))
+        (base32 "1142l7g5nyd4b9kipdf4jp87623qx0b7h4zbz9lv2fw3svzc1qy6"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (arguments
@@ -25938,13 +25915,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.4.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "02q1paijpa5bkw7bmvpqz6dp83fvvmwcvszbkra9is62k8b6hsdn"))))
+        (base32 "1a9d46p12w9pg5msh1q32vq0jdk2waaa6mdg6qhmc7cvpn98dmhl"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (arguments
@@ -25955,11 +25932,11 @@ utilities to generate this metadata with a minimum of dependencies.")
                              r-stringr
                              r-stringi
                              r-rlang
-                             r-rjsonio
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
                              r-lubridate
+                             r-jsonlite
                              r-glue
                              r-dplyr
                              r-dbi
@@ -26913,13 +26890,13 @@ files are included in the package.  See Reich et al. (2009)
 (define-public r-coap
   (package
     (name "r-coap")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COAP" version))
        (sha256
-        (base32 "1772aiy9ywvgb1k9qn41l00qhsmhxkx53mdl16ggcwq0c3gdm8ly"))))
+        (base32 "0q7b6i2ifwnxc61q40938qna787ll0frfy02b4sm86xsp8rlj6ql"))))
     (properties `((upstream-name . "COAP")))
     (build-system r-build-system)
     (arguments
@@ -37641,13 +37618,13 @@ different platforms.).")
 (define-public r-childsds
   (package
     (name "r-childsds")
-    (version "0.9.8")
+    (version "0.9.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "childsds" version))
        (sha256
-        (base32 "0c9s1aw9nk0240mcx4wpkjpxhlnbz0fsrp5231mhfzr1jr6pf4pw"))))
+        (base32 "0wmamhiax6pmljvk64ffxcklfx0fx07l4hxclscq76z2mq5n5lvf"))))
     (properties `((upstream-name . "childsds")))
     (build-system r-build-system)
     (arguments
@@ -37657,17 +37634,23 @@ different platforms.).")
                              r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-scales
+                             r-rlang
                              r-reshape2
                              r-purrrlyr
                              r-purrr
                              r-magrittr
                              r-lubridate
                              r-interp
+                             r-ggplot2
                              r-gamlss-dist
                              r-gamlss
                              r-dplyr
+                             r-desctools
+                             r-colorspace
                              r-class
                              r-boot))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=childsds")
     (synopsis "Data and Methods Around Reference Values in Pediatrics")
     (description
@@ -45172,13 +45155,13 @@ by the gut bacteria.")
 (define-public r-causalweight
   (package
     (name "r-causalweight")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalweight" version))
        (sha256
-        (base32 "0d9r38mjrxk75xmph0bg3mrms1b9qxgm69aw1cb106794142rl3c"))))
+        (base32 "1vj8wxbplc8k02qfsdvmf20pxi1zdncdm6kpqyizllny3qr0sazg"))))
     (properties `((upstream-name . "causalweight")))
     (build-system r-build-system)
     (arguments
@@ -45186,6 +45169,7 @@ by the gut bacteria.")
       #:tests? #f))
     (propagated-inputs (list r-xgboost
                              r-superlearner
+                             r-sandwich
                              r-ranger
                              r-np
                              r-mvtnorm
@@ -45198,7 +45182,7 @@ by the gut bacteria.")
                              r-checkmate))
     (home-page "https://cran.r-project.org/package=causalweight")
     (synopsis
-     "Estimation Methods for Causal Inference Based on Inverse Probability Weighting")
+     "Estimation Methods for Causal Inference Based on Inverse Probability Weighting and Doubly Robust Estimation")
     (description
      "Various estimators of causal effects based on inverse probability weighting,
 doubly robust estimation, and double machine learning.  Specifically, the
@@ -48674,13 +48658,13 @@ symbolic sums and other important quantities.")
 (define-public r-capybara
   (package
     (name "r-capybara")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "capybara" version))
        (sha256
-        (base32 "18c6gdf97lm5inmqh6yg1mi61ap0rsc88kzp4qf10acg26gwf94w"))))
+        (base32 "1n1z8zlviaxji34slascyric6rmfqksj9wznxamwcdl2d3pf8xxm"))))
     (properties `((upstream-name . "capybara")))
     (build-system r-build-system)
     (arguments
@@ -49097,13 +49081,13 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.50.5")
+    (version "1.55.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canvasXpress" version))
        (sha256
-        (base32 "04ibr6ksqcn7kngxy65gqx8cc2p1a5acpwg2m800csnn0x7yk05x"))))
+        (base32 "0rb32ak8jm0qgngwjdjj2jb724hqr2f1d055qhl91pkcjankh3jb"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (arguments
@@ -50941,13 +50925,13 @@ described in Lee, Kim, Perera, @code{McLachlan} and Bae (2015)
 (define-public r-caesar-suite
   (package
     (name "r-caesar-suite")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAESAR.Suite" version))
        (sha256
-        (base32 "10nyr5rvmv8dzcfin0djxk6z5iyp79z68qkmxkn8vizh91n0wrnz"))))
+        (base32 "1wkj0sgh66pspf5522jqg90q7c31np1ki3f8lr7jqg7kd9n8nsvk"))))
     (properties `((upstream-name . "CAESAR.Suite")))
     (build-system r-build-system)
     (arguments

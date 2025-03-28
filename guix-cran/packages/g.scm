@@ -55,45 +55,6 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
-(define-public r-gyro
-  (package
-    (name "r-gyro")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gyro" version))
-       (sha256
-        (base32 "0zgzqgfd97bxb4crijlc9byak4dl5zrhp6ynch8yda8m3rx1gz92"))))
-    (properties `((upstream-name . "gyro")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rvcg
-                             r-rstudioapi
-                             r-rgl
-                             r-rcpp
-                             r-rcdt
-                             r-purrr
-                             r-polychrome
-                             r-plotrix
-                             r-morpho
-                             r-cxhull
-                             r-colorsgen
-                             r-clipr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/gyro")
-    (synopsis "Hyperbolic Geometry")
-    (description
-     "Hyperbolic geometry in the Minkowski model and the PoincarÃ© model.  The methods
-are based on the gyrovector space theory developed by A. A. Ungar that can be
-found in the book Analytic Hyperbolic Geometry: Mathematical Foundations And
-Applications <doi:10.1142/5914>.  The package provides functions to plot
-three-dimensional hyperbolic polyhedra and to plot hyperbolic tilings of the
-PoincarÃ© disk.")
-    (license license:gpl3)))
-
 (define-public r-gym
   (package
     (name "r-gym")
@@ -4857,6 +4818,37 @@ the Cuba library (Hahn, 2005), and the source files are included in this
 package.  The maximization process is carried out using Brent's algorithm, with
 the C++ code file from John Burkardt and John Denker (Brent, 2002).")
     (license license:gpl2+)))
+
+(define-public r-groupedhyperframe
+  (package
+    (name "r-groupedhyperframe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "groupedHyperframe" version))
+       (sha256
+        (base32 "0kb56vkcdx5gcgf1xlpcwwfrx2sj0jkw6f33mnglp3qf9s3pf3dm"))))
+    (properties `((upstream-name . "groupedHyperframe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-geom
+                             r-spatstat-explore
+                             r-pracma
+                             r-nlme
+                             r-matrixstats
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=groupedHyperframe")
+    (synopsis
+     "Grouped Hyper Data Frame: An Extension of Hyper Data Frame Object")
+    (description
+     "An S3 class @code{groupedHyperframe} that inherits from hyper data frame.  Batch
+processes on point-pattern hyper column.  Aggregation of function-value-table
+hyper column(s) and numeric hyper column(s) over a nested grouping structure.")
+    (license license:gpl2)))
 
 (define-public r-groupdata2
   (package
@@ -10964,6 +10956,39 @@ applications.  The animations are activated using the Animate.css library.  See
     (description
      "This package provides a zero-inflated quasi-Poisson factor model to display
 similarity between samples visually in a low (2 or 3) dimensional space.")
+    (license license:gpl2+)))
+
+(define-public r-gominer
+  (package
+    (name "r-gominer")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GoMiner" version))
+       (sha256
+        (base32 "1bx2gwd27gjvphm48jf4pzwab5hyfyb538wdbl1zzhv27w9vwsxg"))))
+    (properties `((upstream-name . "GoMiner")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-minimalistgodb r-hgnchelper r-gplots))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GoMiner")
+    (synopsis
+     "Automate the Mapping Between a List of Genes and Gene Ontology Categories")
+    (description
+     "In gene-expression microarray studies, for example, one generally obtains a list
+of dozens or hundreds of genes that differ in expression between samples and
+then asks What does all of this mean biologically? Alternatively, gene lists can
+be derived conceptually in addition to experimentally.  For instance, one might
+want to analyze a group of genes known as housekeeping genes.  The work of the
+Gene Ontology (GO) Consortium <geneontology.org> provides a way to address that
+question.  GO organizes genes into hierarchical categories based on biological
+process, molecular function and subcellular localization.  The role of
+@code{GoMiner} is to automate the mapping between a list of genes and GO, and to
+provide a statistical summary of the results as well as a visualization.")
     (license license:gpl2+)))
 
 (define-public r-golfr
@@ -21337,6 +21362,31 @@ PNG files, external resources, or as a list column containing raster image data.
 system.")
     (license license:artistic2.0)))
 
+(define-public r-gghourglass
+  (package
+    (name "r-gghourglass")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gghourglass" version))
+       (sha256
+        (base32 "10gbc9fxdgx5nxi9ca4w99bdr2b04rzli9iw5waxf6k3yj3g4m99"))))
+    (properties `((upstream-name . "gghourglass")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-suncalc r-rlang r-lubridate r-ggplot2 r-dplyr))
+    (home-page "https://pepijn-devries.github.io/gghourglass/")
+    (synopsis "Plot Records per Time of Day")
+    (description
+     "Splits date and time of day components from continuous datetime objects, then
+plots them using grammar of graphics ('ggplot2').  Plots can also be decorated
+with solar cycle information (e.g., sunset, sunrise, etc.).  This is useful for
+data that are associated with the solar cycle.")
+    (license license:gpl3+)))
+
 (define-public r-gghoriplot
   (package
     (name "r-gghoriplot")
@@ -24821,13 +24871,13 @@ order latent variable modeling.  For a comprehensive overview of GSCA, see Hwang
 (define-public r-gernika
   (package
     (name "r-gernika")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeRnika" version))
        (sha256
-        (base32 "0d61vx33rxlmjk5kazji0a6wli6cfcardn308wzbjqpvixsqy2vl"))))
+        (base32 "15m152drikm6s0wmgzfik65rdijikn7b318vcqx2qgkc9mqfxil2"))))
     (properties `((upstream-name . "GeRnika")))
     (build-system r-build-system)
     (arguments
@@ -28034,13 +28084,13 @@ allows running the hybrid multi-group approach (Lamberti (2021)
 (define-public r-genotriplo
   (package
     (name "r-genotriplo")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenoTriplo" version))
        (sha256
-        (base32 "1ri88zwn438m33fkqgcb1a2wmmvy9x1r5q3mnax6yg42bq8iz8zv"))))
+        (base32 "1xy8wyidcv6f0bg32g5hhrdxyarrw1b0j9i7dnsd0zr3j13pdvaq"))))
     (properties `((upstream-name . "GenoTriplo")))
     (build-system r-build-system)
     (arguments
@@ -32352,13 +32402,13 @@ Pettitt, A. N., Mengersen, K., & Liquet, B. (2021) <doi:10.1002/sim.8855>.")
 (define-public r-gcookbook
   (package
     (name "r-gcookbook")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcookbook" version))
        (sha256
-        (base32 "11g1q187l4j31b6cdzdx5z3s14z3s09l7ynl36pzzn9j19l8cmrc"))))
+        (base32 "02dbzcq0khk705wiin26aqzjj36p61c5r9h9bks97bbpjl868z9k"))))
     (properties `((upstream-name . "gcookbook")))
     (build-system r-build-system)
     (arguments

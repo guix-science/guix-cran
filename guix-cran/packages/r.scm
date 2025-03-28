@@ -32,6 +32,9 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages databases)
   #:use-module (gnu packages documentation)
+  #:use-module (gnu packages version-control)
+  #:use-module (gnu packages mpi)
+  #:use-module (gnu packages base)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages tbb)
   #:use-module (guix-cran packages z)
@@ -686,19 +689,20 @@ weather alerts, hurricane alerts and historical high/low temperatures.")
 (define-public r-rwty
   (package
     (name "r-rwty")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rwty" version))
        (sha256
-        (base32 "0p0bpq5dk8vjqx8ry364xhaq3rgxa49planapggicg7by2mhaacc"))))
+        (base32 "0bfb7nvbnm7vfrh7sjxm5hzq098k56gcdn1prxrsczcxa65y2chj"))))
     (properties `((upstream-name . "rwty")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-viridis
+                             r-treedist
                              r-reshape2
                              r-plyr
                              r-phangorn
@@ -707,13 +711,14 @@ weather alerts, hurricane alerts and historical high/low temperatures.")
                              r-ggally
                              r-coda
                              r-ape))
-    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rwty")
     (synopsis "R We There Yet? Visualizing MCMC Convergence in Phylogenetics")
     (description
      "This package implements various tests, visualizations, and metrics for
 diagnosing convergence of MCMC chains in phylogenetics.  It implements and
-automates many of the functions of the AWTY package in the R environment.")
+automates many of the functions of the AWTY package in the R environment, as
+well as a host of other functions.  Warren, Geneva, and Lanfear (2017),
+<doi:10.1093/molbev/msw279>.")
     (license license:gpl2)))
 
 (define-public r-rwtss
@@ -1907,13 +1912,13 @@ Linux for haplotyping.")
 (define-public r-rvg
   (package
     (name "r-rvg")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvg" version))
        (sha256
-        (base32 "0s173s4bxi44s4j30y804vffsccir74jx2awsv0r45g1007w6mx0"))))
+        (base32 "1w01qvjx6d1av9ds5zh7xczhjz79w276s42jq138vafvvc1p34c0"))))
     (properties `((upstream-name . "rvg")))
     (build-system r-build-system)
     (arguments
@@ -1921,6 +1926,7 @@ Linux for haplotyping.")
       #:tests? #f))
     (inputs (list zlib libpng))
     (propagated-inputs (list r-xml2 r-rlang r-rcpp r-officer r-gdtools))
+    (native-inputs (list pkg-config))
     (home-page "https://ardata-fr.github.io/officeverse/")
     (synopsis "R Graphics Devices for 'Office' Vector Graphics Output")
     (description
@@ -3867,13 +3873,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "0b5kgbpyg7zgbx2pr2apvxsx80vqclviiqxljldipwcs0061ppsk"))))
+        (base32 "19sxxl30qbm0iivli92pih9lq790zc007pscidy8pk6i07qplcns"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (arguments
@@ -6007,20 +6013,20 @@ functions for accessing the national data are provided.")
 (define-public r-rstata
   (package
     (name "r-rstata")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RStata" version))
        (sha256
-        (base32 "1wx6cz4567xkfplybmbwmw25snhlaxn48yi620cv6p5xqv458yp7"))))
+        (base32 "0qqsf63mk3szr1c6rqxlxl7j4wc5l5limzdpbm1ll02j19lbr6rz"))))
     (properties `((upstream-name . "RStata")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-foreign))
-    (home-page "http://github.com/lbraglia/RStata")
+    (home-page "https://github.com/lbraglia/RStata")
     (synopsis "Bit of Glue Between R and Stata")
     (description
      "This package provides a simple R -> Stata interface allowing the user to execute
@@ -10188,13 +10194,13 @@ a recent evaluation and improvements.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.24")
+    (version "0.4.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQuantLib" version))
        (sha256
-        (base32 "1wcc93vmkzycq19cc6byp66svwcv4za27izzywszqyd9a93a99rg"))))
+        (base32 "0fv9ql8nn342ljijwhllnbg744bavxhplc04xwv19hkdns184dkv"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (arguments
@@ -13969,13 +13975,13 @@ forecast weather for 5 days with data for every 3 hours.")
 (define-public r-ropenmeteo
   (package
     (name "r-ropenmeteo")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ropenmeteo" version))
        (sha256
-        (base32 "0y07dqmcn31gjghvzwgnl8311iqc4yjc5w3s6rb0z82z1ag1s7y2"))))
+        (base32 "1haxvr6gcpzjh3p7vnr1imgrzir8r5h0xm9h8qpvdn4qmmi2qwiv"))))
     (properties `((upstream-name . "ropenmeteo")))
     (build-system r-build-system)
     (arguments
@@ -18815,24 +18821,25 @@ et al. (2017) <@code{arXiv:1702.04690>} based on Rosenbaum and Rubin (1983)
 (define-public r-rnpn
   (package
     (name "r-rnpn")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnpn" version))
        (sha256
-        (base32 "0cdf7iwy8371wxlfdym2ir07g29pgnliyciljkygc5jc5cqw2dfb"))))
+        (base32 "0ywjsr2nwk75sim578jhpckarjnlvkiaclp9z6m48hrvmb7jr80z"))))
     (properties `((upstream-name . "rnpn")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-yyjsonr
-                             r-xml2
+    (propagated-inputs (list r-xml2
                              r-tidyr
                              r-tibble
                              r-rlang
                              r-magrittr
+                             r-lifecycle
+                             r-jsonlite
                              r-httr2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -19717,13 +19724,13 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
 (define-public r-rnamf
   (package
     (name "r-rnamf")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNAmf" version))
        (sha256
-        (base32 "13c00l660f6yl5hhbv99h95q0nvzrfv0svm40bzfaz88q54pv9q1"))))
+        (base32 "1qsxkqd1j0xybb33fjbx13kkpfc3hjjb0gwzml3b92vzds9hn0s3"))))
     (properties `((upstream-name . "RNAmf")))
     (build-system r-build-system)
     (arguments
@@ -28521,31 +28528,31 @@ a lot of changes between each environment, it just becomes quite cumbersome.")
 (define-public r-rgoogleclassroom
   (package
     (name "r-rgoogleclassroom")
-    (version "0.9.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgoogleclassroom" version))
        (sha256
-        (base32 "0s4s5ipvnbwrf76ihzcjqkf3l1j008gn0ncl2a4znp9ka432gk49"))))
+        (base32 "0f6ljy1iaajyf3x9q4wcg9g3fp27l9f5wpvik5r59pmvaf705jd5"))))
     (properties `((upstream-name . "rgoogleclassroom")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rprojroot
+                             r-readr
                              r-r6
                              r-purrr
-                             r-ottrpal
                              r-openssl
                              r-magrittr
                              r-lubridate
-                             r-knitr
                              r-jsonlite
                              r-httr
                              r-dplyr
-                             r-curl
-                             r-attempt
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/datatrail-jhu/rgoogleclassroom")
@@ -30030,13 +30037,13 @@ accurate estimates across temporal scales and regions.")
 (define-public r-rfpermute
   (package
     (name "r-rfpermute")
-    (version "2.5.2")
+    (version "2.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfPermute" version))
        (sha256
-        (base32 "060v52jil5zannzinc6nvzwqd8kw0glpj3xflw606p9sxpzx11rl"))))
+        (base32 "1j2jaia1prhpqkp02p8l4cpdnnyk6fkcjysx93v4kh99wnp6n0nl"))))
     (properties `((upstream-name . "rfPermute")))
     (build-system r-build-system)
     (arguments
@@ -43149,13 +43156,13 @@ more details on the package, see the paper by You and Shung (2022)
 (define-public r-rdieharder
   (package
     (name "r-rdieharder")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RDieHarder" version))
        (sha256
-        (base32 "1q0b98h1ksvk3v1m3kp1x7jnvhpzxrsiyriq2nfkybh72x1p23gl"))))
+        (base32 "1yd43j39xspl6s9q02nc3ww2wpi1pjk04jc2raglb9xnw849a0ff"))))
     (properties `((upstream-name . "RDieHarder")))
     (build-system r-build-system)
     (arguments
@@ -43280,6 +43287,38 @@ CT visit <https://www.snomed.org/>.")
 Repertoire Dissimilarity Index.  Citation: Bolen and Rubelt, et al (2017)
 <doi:10.1186/s12859-017-1556-5>.")
     (license license:cc-by-sa4.0)))
+
+(define-public r-rdhte
+  (package
+    (name "r-rdhte")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdhte" version))
+       (sha256
+        (base32 "0h619q940l9k7li3iyhw4fkq0b9zf8s65kpd1znwm1av3xi3zhlw"))))
+    (properties `((upstream-name . "rdhte")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sandwich r-rdrobust))
+    (home-page "https://cran.r-project.org/package=rdhte")
+    (synopsis
+     "Heterogeneous Treatment Effects in Regression Discontinuity Designs")
+    (description
+     "Understanding heterogeneous causal effects based on pretreatment covariates is a
+crucial step in modern empirical work in data science.  Building on the recent
+developments in Calonico et al (2025)
+<https://rdpackages.github.io/references/Calonico-Cattaneo-Farrell-Palomba-Titiunik_2025_HTERD.pdf>,
+this package provides tools for estimation and inference of heterogeneous
+treatment effects in Regression Discontinuity (RD) Designs.  The package
+includes two main commands: rdhte to conduct estimation and robust
+bias-corrected inference for conditional RD treatment effects (given choice of
+bandwidth parameter); and rdbwhte', which implements automatic bandwidth
+selection methods.")
+    (license license:gpl2)))
 
 (define-public r-rdhs
   (package
@@ -44887,13 +44926,13 @@ settings.")
 (define-public r-rcppredis
   (package
     (name "r-rcppredis")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppRedis" version))
        (sha256
-        (base32 "1n705sqxxzd4p3zi1xplc6y15pnvqh998y4k9hr032g44lk9q7y9"))))
+        (base32 "0a3h26cbzfzlw6x3fpvcjfbaai8v41jld2dav250vw7r0vc4cj7r"))))
     (properties `((upstream-name . "RcppRedis")))
     (build-system r-build-system)
     (arguments
@@ -44934,6 +44973,37 @@ the header-only Quantuccia project (put together initially by Peter Caspers)
 offering an essential subset of @code{QuantLib} (and now maintained separately
 for the calendaring subset).  See the included file AUTHORS for a full list of
 contributors to both @code{QuantLib} and Quantuccia'.")
+    (license license:gpl2+)))
+
+(define-public r-rcppplanc
+  (package
+    (name "r-rcppplanc")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppPlanc" version))
+       (sha256
+        (base32 "1k9ai2h42xj934566ly5wy56j3jldr357iy1afyvd12aihxkd5my"))))
+    (properties `((upstream-name . "RcppPlanc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list patch hwloc hdf5 git))
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-matrix
+                             r-hdf5r-extra))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=RcppPlanc")
+    (synopsis "Parallel Low-Rank Approximation with Nonnegativity Constraints")
+    (description
+     "Rcpp bindings for PLANC', a highly parallel and extensible NMF/NTF (Non-negative
+Matrix/Tensor Factorization) library.  Wraps algorithms described in Kannan et.
+al (2018) <doi:10.1109/TKDE.2017.2767592> and Eswar et.  al (2021)
+<doi:10.1145/3432185>.  Implements algorithms described in Welch et al. (2019)
+<doi:10.1016/j.cell.2019.05.006>, Gao et al. (2021)
+<doi:10.1038/s41587-021-00867-x>, and Kriebel & Welch (2022)
+<doi:10.1038/s41467-022-28431-4>.")
     (license license:gpl2+)))
 
 (define-public r-rcppnloptexample
@@ -46904,13 +46974,13 @@ procedures as described in The Handbook of Research Synthesis and Meta-Analysis
 (define-public r-rcmdrplugin-kmggplot2
   (package
     (name "r-rcmdrplugin-kmggplot2")
-    (version "0.2-6")
+    (version "0.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.KMggplot2" version))
        (sha256
-        (base32 "0xh0lfgmr5sc15f3v5avwy1zl0gk1krlw3jb1prjyk9prp8albz9"))))
+        (base32 "16b9pfnjx3if1i7rdajxxp1b50sn7ahfh55q8i0cr8irf222a3in"))))
     (properties `((upstream-name . "RcmdrPlugin.KMggplot2")))
     (build-system r-build-system)
     (arguments
@@ -46919,6 +46989,7 @@ procedures as described in The Handbook of Research Synthesis and Meta-Analysis
     (propagated-inputs (list r-tcltk2
                              r-survival
                              r-scales
+                             r-rlang
                              r-rcolorbrewer
                              r-rcmdr
                              r-plyr
@@ -47794,19 +47865,19 @@ mcmc output generated by Oxcal software.")
 (define-public r-rchroma
   (package
     (name "r-rchroma")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rchroma" version))
        (sha256
-        (base32 "1l44wx8hff8ckxzrzjd9j55i39f8ia09hckq0ydiqqjhf5x09psd"))))
+        (base32 "07j6l1cnllvl75y8y7719wm1nmb9znjvkl2rl3hy8yr1rhkmmpkx"))))
     (properties `((upstream-name . "rchroma")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-httr2))
+    (propagated-inputs (list r-processx r-httr2 r-glue r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cynkra/rchroma")
     (synopsis "Client for 'ChromaDB'")
@@ -49788,13 +49859,13 @@ and Qunhua Li (2016).  Robust bent line regression, submitted.\".")
 (define-public r-rbedrock
   (package
     (name "r-rbedrock")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbedrock" version))
        (sha256
-        (base32 "0jyc7cikr86927ax3qhniv8injqwndzhr4bhd4yphh2sliv6ci8c"))))
+        (base32 "0ybwifhhdwxgqfn4hgv10ldzw83bx61bxnjcxp3wyik25a694zhw"))))
     (properties `((upstream-name . "rbedrock")))
     (build-system r-build-system)
     (arguments
@@ -50029,13 +50100,13 @@ distributions.")
 (define-public r-rbbnp
   (package
     (name "r-rbbnp")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbbnp" version))
        (sha256
-        (base32 "0lpzccb645lbzplwq8rvxd9jx90k3wy70ijwx8c7gdpn9kxb13jr"))))
+        (base32 "1g6lcnpz1mram45vzks57jwlxz8l76avfabrhp1m6v40llc274g5"))))
     (properties `((upstream-name . "rbbnp")))
     (build-system r-build-system)
     (arguments
@@ -52890,13 +52961,13 @@ Society), 177, 191-208. <DOI:10.1111/rssa.12009>.")
 (define-public r-rankrate
   (package
     (name "r-rankrate")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankrate" version))
        (sha256
-        (base32 "14262gwyr9n9vwj0njb9piw0algmfr2y6sswarsafvmficagbfhm"))))
+        (base32 "05gkdqz3hhg9anbk6wyanjmbilar4xrqpyjb0r6lhna1igm8nb0n"))))
     (properties `((upstream-name . "rankrate")))
     (build-system r-build-system)
     (arguments
@@ -52909,7 +52980,8 @@ Society), 177, 191-208. <DOI:10.1111/rssa.12009>.")
      "Joint Statistical Models for Preference Learning with Rankings and Ratings")
     (description
      "Statistical tools for the Mallows-Binomial model, the first joint statistical
-model for preference learning for rankings and ratings.")
+model for preference learning for rankings and ratings.  This project was
+supported by the National Science Foundation under Grant No.  2019901.")
     (license license:gpl3)))
 
 (define-public r-rankpca
@@ -58083,13 +58155,13 @@ installed from <https://github.com/@code{DiegoZardetto/ReGenesees>}.")
 (define-public r-r2bayesx
   (package
     (name "r-r2bayesx")
-    (version "1.1-5")
+    (version "1.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2BayesX" version))
        (sha256
-        (base32 "1x3hv0dfkh4ywi47qkmk6wvfz07rp5riwnxcnn32jflwcdzscqva"))))
+        (base32 "0f000jhdi5w8l74v1f54zsz12fbn8xp3allmbby1hpw54h8a1w23"))))
     (properties `((upstream-name . "R2BayesX")))
     (build-system r-build-system)
     (arguments

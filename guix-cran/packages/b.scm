@@ -2565,13 +2565,13 @@ Helske and Vihola (2021, <doi:10.32614/RJ-2021-103>) for details.")
 (define-public r-bssasymp
   (package
     (name "r-bssasymp")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BSSasymp" version))
        (sha256
-        (base32 "1nqj8w8ilyhladjzhjp1rhi3ff7ik1m76pdhgs16ph7pzdw36w6i"))))
+        (base32 "1nwf9m8sac43lfxwcggkl5ygm0r03riyqc9d7mn6z6i188j2gb3p"))))
     (properties `((upstream-name . "BSSasymp")))
     (build-system r-build-system)
     (arguments
@@ -7627,13 +7627,13 @@ on nested models--for that, see epicalc::lrtest'.")
 (define-public r-bootimpute
   (package
     (name "r-bootimpute")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootImpute" version))
        (sha256
-        (base32 "1z7vhfn43rd91bnflygyx3f9bvlzz9djncxa8abqs8ip8rz1pqj0"))))
+        (base32 "1qzhsvjs8lclxzwaca9g9n47fg2y9gpn2dgryvp529f6d1jmy44s"))))
     (properties `((upstream-name . "bootImpute")))
     (build-system r-build-system)
     (arguments
@@ -17102,13 +17102,13 @@ simulating networks with local dependence to assess the goodness-of-fit.")
 (define-public r-bigdm
   (package
     (name "r-bigdm")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigDM" version))
        (sha256
-        (base32 "183px40ah4043q2yc2811hlwx8vinqk5xxhz1wmgw4m8cig62xgw"))))
+        (base32 "1fp2x59fbdrg33z5hvvyaq2r7vdfnr34hnpirj0j969asr3k416f"))))
     (properties `((upstream-name . "bigDM")))
     (build-system r-build-system)
     (arguments
@@ -17120,6 +17120,7 @@ simulating networks with local dependence to assess the goodness-of-fit.")
                              r-rlist
                              r-rdpack
                              r-rcolorbrewer
+                             r-parallelly
                              r-matrix
                              r-mass
                              r-geos
@@ -18640,13 +18641,13 @@ information).")
 (define-public r-bglr
   (package
     (name "r-bglr")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGLR" version))
        (sha256
-        (base32 "0850mzfbdbrhaahl4gv9rgw2lsbarhz783q15m18ws2a17v918p9"))))
+        (base32 "14n7jx5a3gylkyxaq8mnqqsj2g9fdzjy7fmyk45ha79ysngm88hi"))))
     (properties `((upstream-name . "BGLR")))
     (build-system r-build-system)
     (arguments
@@ -19506,20 +19507,20 @@ these time series.")
 (define-public r-betategarch
   (package
     (name "r-betategarch")
-    (version "3.3")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betategarch" version))
        (sha256
-        (base32 "0hqvyps3lwix2fkzk18wrkhxpqhgardvib9sq1ip8gn8sn1dsi8y"))))
+        (base32 "0i9hw7pdj6yp4mdifxakaps5hb45whdqxnd62n2ix6r00k5rhnnp"))))
     (properties `((upstream-name . "betategarch")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo))
-    (home-page "http://www.sucarrat.net/")
+    (home-page "https://www.sucarrat.net/")
     (synopsis
      "Simulation, Estimation and Forecasting of Beta-Skew-t-EGARCH Models")
     (description
@@ -20858,13 +20859,13 @@ refer the reader to FÃ¼lle et al. (2024) <doi:10.18637/jss.v111.i04>.")
 (define-public r-behavr
   (package
     (name "r-behavr")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "behavr" version))
        (sha256
-        (base32 "01ny099m2zmvlalwiq3nqkgynnxn1mdspch15lkawwd40q8s9s4p"))))
+        (base32 "1a98l12annr7j45aqimkl1jmwfy5pxsz0c755cbhks5kxg1iix8p"))))
     (properties `((upstream-name . "behavr")))
     (build-system r-build-system)
     (arguments
@@ -23048,13 +23049,13 @@ adding two bicluster methods from the fabia and isa2 R packages.")
 (define-public r-bcdata
   (package
     (name "r-bcdata")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcdata" version))
        (sha256
-        (base32 "00910sriqvy66km3b43gqy1rngsaq1fywn502r6kh22xpd5jfhyj"))))
+        (base32 "107bbhsyg98jw80z1wmjn1yqw7azzwvx321y417zm1szg2hxjh4v"))))
     (properties `((upstream-name . "bcdata")))
     (build-system r-build-system)
     (arguments
@@ -24325,19 +24326,20 @@ provided, too.  For more details about the Gibbs sampler see Kelter (2019)
 (define-public r-bayessurvive
   (package
     (name "r-bayessurvive")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSurvive" version))
        (sha256
-        (base32 "1m7acw40hvjpgjzyz8fpqzvkz1dadq829klba0343g8h0hmfcd65"))))
+        (base32 "0brh6lrr6d5f6wn4wz5fclkhfh2pls01cr532xbhnvlsq8n0y4fm"))))
     (properties `((upstream-name . "BayesSurvive")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-testthat
+                             r-survival
                              r-riskregression
                              r-rcpparmadillo
                              r-rcpp
@@ -24353,7 +24355,8 @@ priors for sparse identification of omics features predictive of survival
 (Madjar et al., 2021 <doi:10.1186/s12859-021-04483-z>) and its extension to use
 a fixed graph via a Markov Random Field (MRF) prior for capturing known
 structure of omics features, e.g. disease-specific pathways from the Kyoto
-Encyclopedia of Genes and Genomes database.")
+Encyclopedia of Genes and Genomes database (Hermansen et al., 2025
+<doi:10.48550/@code{arXiv.2503.13078>}).")
     (license license:gpl3)))
 
 (define-public r-bayessurvival
@@ -24427,13 +24430,13 @@ and KomÃ¡rek (2016, Biometrics) <doi:10.1111/biom.12424>.")
 (define-public r-bayessur
   (package
     (name "r-bayessur")
-    (version "2.2-1")
+    (version "2.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSUR" version))
        (sha256
-        (base32 "0zm1591y4iwz006p6a6vjv1q0vl8jdzr5v1cfqixqvi8wd3rs1s4"))))
+        (base32 "1sby5q93sipvkmbhg4y7fxnfhmh41z49rddb15dshigy8qx06kkc"))))
     (properties `((upstream-name . "BayesSUR")))
     (build-system r-build-system)
     (arguments
@@ -29985,13 +29988,13 @@ outcomes.  For more information see Sparapani, Spanbauer and @code{McCulloch}
 (define-public r-barrks
   (package
     (name "r-barrks")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "barrks" version))
        (sha256
-        (base32 "13r8qgg6x7f3fhq64vh7sqjwxxn1qqwpw8qv5virlqvj2l2av411"))))
+        (base32 "11hl1gz9zf5m5p93i8hcmsk7ynkiw364ycncfinf60x6rkcp3g06"))))
     (properties `((upstream-name . "barrks")))
     (build-system r-build-system)
     (arguments

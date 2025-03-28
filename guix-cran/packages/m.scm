@@ -4754,13 +4754,13 @@ N., Parnell, A., Prado, E., & Moral, R. A. (2022)
 (define-public r-multinma
   (package
     (name "r-multinma")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinma" version))
        (sha256
-        (base32 "1k4a0rgbxwnbkhdksjh25cp2m26qjl0rsqhbz3d6v7s1nms4aikz"))))
+        (base32 "0y7gs7ld0sxwf7kk2vxkhal11n8x31nq15j0jhm0xmlzp7ayb9cd"))))
     (properties `((upstream-name . "multinma")))
     (build-system r-build-system)
     (arguments
@@ -6198,20 +6198,20 @@ information and a list of related publications.")
 (define-public r-multica
   (package
     (name "r-multica")
-    (version "1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiCA" version))
        (sha256
-        (base32 "1vgb13cfq10g8hxykgi3is3mrlbm76vh40cznapl7xxmw226ccrl"))))
+        (base32 "0vq5kg5skcy0yz9swbmlpwhnqwfjlp8q32pl1i5i2acilwz7hjfw"))))
     (properties `((upstream-name . "multiCA")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-multcomp r-bitops))
-    (home-page "https://cran.r-project.org/package=multiCA")
+    (home-page "https://github.com/anikoszabo/multiCA")
     (synopsis "Multinomial Cochran-Armitage Trend Test")
     (description
      "This package implements a generalization of the Cochran-Armitage trend test to
@@ -8489,13 +8489,13 @@ model(s) by leveraging all available features.")
 (define-public r-msmix
   (package
     (name "r-msmix")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSmix" version))
        (sha256
-        (base32 "10bdzgx21y8xqggj98lv17mb2dv39ay6k0l5mz3dsn44967mv7rm"))))
+        (base32 "16qp3v37ph56mjjj2m52jwy43cjxay2rw13b3g28afn705acjrih"))))
     (properties `((upstream-name . "MSmix")))
     (build-system r-build-system)
     (arguments
@@ -8508,6 +8508,7 @@ model(s) by leveraging all available features.")
                              r-rcpp
                              r-rcolorbrewer
                              r-rankcluster
+                             r-nnet
                              r-magrittr
                              r-gridextra
                              r-gmp
@@ -8528,9 +8529,9 @@ model(s) by leveraging all available features.")
 full and partial rankings with arbitrary missing positions.  Inference is
 conducted within the maximum likelihood framework via Expectation-Maximization
 algorithms.  Estimation uncertainty is tackled via diverse versions of
-bootstrapping as well as via Hessian-based standard errors calculations.  The
-most relevant reference of the methods is Crispino, Mollica, Astuti and Tardella
-(2023) <doi:10.1007/s11222-023-10266-8>.")
+bootstrapped and asymptotic confidence intervals.  The most relevant reference
+of the methods is Crispino, Mollica, Astuti and Tardella (2023)
+<doi:10.1007/s11222-023-10266-8>.")
     (license license:gpl3+)))
 
 (define-public r-msme
@@ -15866,13 +15867,13 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "0lj2n7amfqqcflmkffhgfq3al4jdh9xg0gg7qwb25jv68f8n9zvc"))))
+        (base32 "1gv6jqvgv066nwsgwp0x38hxl4lz8fsgfhnl8pvb50p8djx8dycx"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (arguments
@@ -33662,13 +33663,13 @@ treatment effect parameter which are described in Guenhan, Roever, and Friede
 (define-public r-metasnf
   (package
     (name "r-metasnf")
-    (version "2.0.0")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metasnf" version))
        (sha256
-        (base32 "1yrna04zvi20hazjwqcy7s1l0c9i7hlhxhnd1ksixwdx0704jb4a"))))
+        (base32 "1k0jm9bgdwszfwzwjqcvvksc6vxaabb2kc6sjqcn9mnrc9yygrb7"))))
     (properties `((upstream-name . "metasnf")))
     (build-system r-build-system)
     (arguments
@@ -33815,13 +33816,13 @@ sensitivity.  Journal of Mathematical Psychology, 94.
 (define-public r-metarnaseq
   (package
     (name "r-metarnaseq")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaRNASeq" version))
        (sha256
-        (base32 "1c9qxac7439wxnmr1jah37pmski5wyap1vd4nb8gvq4indbdiaz2"))))
+        (base32 "0cc4dsf5h7fa0mijmb80lmg06pfmzgks1hgihq2p6lqd7nffl0cr"))))
     (properties `((upstream-name . "metaRNASeq")))
     (build-system r-build-system)
     (arguments
@@ -38517,6 +38518,31 @@ effects distributions.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-meddra-read
+  (package
+    (name "r-meddra-read")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "meddra.read" version))
+       (sha256
+        (base32 "139cg2gb5b0b2my0nxixjjkz3landvp5644qq1phx4k3snv9aqa7"))))
+    (properties `((upstream-name . "meddra.read")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://humanpred.github.io/meddra.read/")
+    (synopsis "Load and Use 'MedDRA' Data for Clinical Trials")
+    (description
+     "@code{MedDRA} data is used for defining adverse events in clinical studies.  You
+can load and merge the data for use in categorizing the adverse events using
+this package.  The package requires the data licensed from @code{MedDRA}
+<https://www.meddra.org/>.")
+    (license license:expat)))
+
 (define-public r-meddietcalc
   (package
     (name "r-meddietcalc")
@@ -38808,13 +38834,13 @@ theorem and the central limit theorem.")
 (define-public r-measuring
   (package
     (name "r-measuring")
-    (version "0.5")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "measuRing" version))
        (sha256
-        (base32 "0yblqkv5444y75jkb6d0zs728i6vybm294h7b5622pwfjqlfhnh2"))))
+        (base32 "0rgyllvj9mwnrp8alq2kr05w2wri6n40vbpc3qns426qnqjai997"))))
     (properties `((upstream-name . "measuRing")))
     (build-system r-build-system)
     (arguments
@@ -45731,31 +45757,6 @@ decomposition trees.  R. L. Zimmerman, J. H. Nakai. (2005)
 <https://www.sawe.org/product/paper-3360/>).")
     (license license:expat)))
 
-(define-public r-massivegst
-  (package
-    (name "r-massivegst")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "massiveGST" version))
-       (sha256
-        (base32 "13qhn15gr4fvri1p843zz7y1q6701qmkxq5lysydfmdaxp5hsaxd"))))
-    (properties `((upstream-name . "massiveGST")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-writexls r-visnetwork r-msigdbr r-igraph
-                             r-formattable))
-    (native-inputs (list r-knitr))
-    (home-page "<https://github.com/stefanoMP/massiveGST>")
-    (synopsis "Competitive Gene Sets Test with the Mann-Whitney-Wilcoxon Test")
-    (description
-     "Friendly implementation of the Mann-Whitney-Wilcoxon test for competitive gene
-set enrichment analysis.")
-    (license license:gpl3+)))
-
 (define-public r-massign
   (package
     (name "r-massign")
@@ -46211,6 +46212,33 @@ important variables using MARS and then fits ANN on the extracted important
 variables.")
     (license license:gpl3)))
 
+(define-public r-mars
+  (package
+    (name "r-mars")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mars" version))
+       (sha256
+        (base32 "0q3xa5i1xkvvpa365mxyx5c9j79smpd5yffwd6fvqcd4nalgqamk"))))
+    (properties `((upstream-name . "mars")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrixcalc r-matrix r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mars")
+    (synopsis "Meta Analysis and Research Synthesis")
+    (description
+     "Includes functions for conducting univariate and multivariate meta-analysis.
+This includes the estimation of the asymptotic variance-covariance matrix of
+effect sizes.  For more details see Becker (1992) <doi:10.2307/1165128>, Cooper,
+Hedges, and Valentine (2019) <doi:10.7758/9781610448864>, and Schmid, Stijnen,
+and White (2020) <doi:10.1201/9781315119403>.")
+    (license license:expat)))
+
 (define-public r-marradistrees
   (package
     (name "r-marradistrees")
@@ -46368,6 +46396,37 @@ publication-ready figures, analyze xyz data to extract transects, get depth /
 altitude based on geographical coordinates, or calculate z-constrained
 least-cost paths.")
     (license license:gpl3+)))
+
+(define-public r-marlod
+  (package
+    (name "r-marlod")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "marlod" version))
+       (sha256
+        (base32 "1ymrsl440ci565g0fhjxqj7hzjy0hz9p5lqbm7b052iwk6pa6qbi"))))
+    (properties `((upstream-name . "marlod")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival r-quantreg r-mass r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=marlod")
+    (synopsis "Marginal Modeling for Exposure Data with Values Below the LOD")
+    (description
+     "This package provides functions of marginal mean and quantile regression models
+are used to analyze environmental exposure and biomonitoring data with repeated
+measurements and non-detects (i.e., values below the limit of detection (LOD)),
+as well as longitudinal exposure data that include non-detects and
+time-dependent covariates.  For more details see Chen IC, Bertke SJ, Curwin BD
+(2021) <doi:10.1038/s41370-021-00345-1>, Chen IC, Bertke SJ, Estill CF (2024)
+<doi:10.1038/s41370-024-00640-7>, Chen IC, Bertke SJ, Dahm MM (2024)
+<doi:10.1093/annweh/wxae068>, and Chen IC (2025)
+<doi:10.1038/s41370-025-00752-8>.")
+    (license license:gpl3)))
 
 (define-public r-markowitzr
   (package

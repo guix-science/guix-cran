@@ -5843,19 +5843,21 @@ autoregression method for estimation of quantile spectrum\",
 (define-public r-qf
   (package
     (name "r-qf")
-    (version "0.0.6")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QF" version))
        (sha256
-        (base32 "0kvhvpj28293i65wh00jyz7fsbqk5q8x5i05bsk29n2rfrf627bl"))))
+        (base32 "0afbkv82a8hj91l1ss5jgym03f7vx37awhwzaw6hbxxyp6kfirl2"))))
     (properties `((upstream-name . "QF")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list gsl))
     (propagated-inputs (list r-rcppgsl r-rcpp))
+    (native-inputs (list pkg-config))
     (home-page "https://cran.r-project.org/package=QF")
     (synopsis "Density, Cumulative and Quantile Functions of Quadratic Forms")
     (description
