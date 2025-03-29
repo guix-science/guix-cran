@@ -1938,13 +1938,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "0x9l472m4w85w5kna74v2rsfzw6s2plw8a14rdyb6qypp108g3ln"))))
+        (base32 "0aczn776y3rk29zpjkxp3waa5g4p40zf08ry2amjjv6xl4k3vszj"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (arguments
@@ -6466,13 +6466,13 @@ argument multiple which, when set to FALSE, reverts them to the base::sets
 (define-public r-vecmatch
   (package
     (name "r-vecmatch")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vecmatch" version))
        (sha256
-        (base32 "07lj4mmyki3j1p27q7slmapgs4gbakh1ji00kgfcyjbcpkv4iwd2"))))
+        (base32 "04pb367mybssjyh60ynh5lvgsvmhbfdirms4l8nqsifhq9ywwr3v"))))
     (properties `((upstream-name . "vecmatch")))
     (build-system r-build-system)
     (arguments
@@ -6494,7 +6494,6 @@ argument multiple which, when set to FALSE, reverts them to the base::sets
                              r-cli
                              r-chk
                              r-brglm2))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/Polymerase3/vecmatch")
     (synopsis
      "Generalized Propensity Score Estimation and Matching for Multiple Groups")

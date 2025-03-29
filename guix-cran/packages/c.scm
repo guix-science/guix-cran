@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
-  #:use-module (gnu packages python)
   #:use-module (gnu packages web)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
@@ -18,6 +17,7 @@
   #:use-module (gnu packages image)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
@@ -142,46 +142,6 @@ selected clusters in a 1-/2-/3-simplex space.  Velocity information can be added
 as an additional layer.  See Liu J, Wang Y et al (2023)
 <doi:10.1101/2023.12.07.570655> for more details.")
     (license license:gpl3)))
-
-(define-public r-cytopt
-  (package
-    (name "r-cytopt")
-    (version "0.9.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CytOpT" version))
-       (sha256
-        (base32 "1gvd49c856cx1lyazqbnwnqhv7wqim92g6w28819qcahmvq0hzg5"))))
-    (properties `((upstream-name . "CytOpT")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list python))
-    (propagated-inputs (list r-testthat
-                             r-reticulate
-                             r-reshape2
-                             r-patchwork
-                             r-metbrewer
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://sistm.github.io/CytOpT-R/")
-    (synopsis
-     "Optimal Transport for Gating Transfer in Cytometry Data with Domain Adaptation")
-    (description
-     "Supervised learning from a source distribution (with known segmentation into
-cell sub-populations) to fit a target distribution with unknown segmentation.
-It relies regularized optimal transport to directly estimate the different cell
-population proportions from a biological sample characterized with flow
-cytometry measurements.  It is based on the regularized Wasserstein metric to
-compare cytometry measurements from different samples, thus accounting for
-possible mis-alignment of a given cell population across sample (due to
-technical variability from the technology of measurements).  Supervised learning
-technique based on the Wasserstein metric that is used to estimate an optimal
-re-weighting of class proportions in a mixture model Details are presented in
-Freulon P, Bigot J and Hejblum BP (2023) <doi:10.1214/22-AOAS1660>.")
-    (license license:gpl2+)))
 
 (define-public r-cytominer
   (package
@@ -10817,13 +10777,13 @@ Diego.; Luo & Xu (2022) <doi:10.48550/@code{arXiv.2206.02296>}; Rava (2021)
 (define-public r-cowsay
   (package
     (name "r-cowsay")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cowsay" version))
        (sha256
-        (base32 "1l9455777dchi09bmq8nnqvixvb22xq5xw1s92s4pwms3ab41gbs"))))
+        (base32 "1z4qrzzcjix5yk95wp8dj4wg8sg306bf42603qxl0xd9m57qjaal"))))
     (properties `((upstream-name . "cowsay")))
     (build-system r-build-system)
     (arguments
@@ -21341,20 +21301,20 @@ to uncover insightful growth dynamics and make informed decisions.")
 (define-public r-compexpdes
   (package
     (name "r-compexpdes")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompExpDes" version))
        (sha256
-        (base32 "0m2a0yw07aq89ji5gif3dxp9lbn594igbqmmc2dn9dbwwj3czhyh"))))
+        (base32 "01fb3xvg4ykfgl183m1z5ydychjzls6xcsvhzsayjsf9fbc9gbk8"))))
     (properties `((upstream-name . "CompExpDes")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (home-page "https://cran.r-project.org/package=CompExpDes")
-    (synopsis "Computer Experiment Designs")
+    (synopsis "Designs for Computer Experimentations")
     (description
      "In computer experiments space-filling designs are having great impact.  Most
 popularly used space-filling designs are Uniform designs (UDs), Latin hypercube
@@ -40281,13 +40241,13 @@ displays of results are emphasized.")
 (define-public r-cftime
   (package
     (name "r-cftime")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFtime" version))
        (sha256
-        (base32 "1332h19cp4d8b2238aphyxjhs65fhx0wmqf8h23ffbcr5s5sl7xh"))))
+        (base32 "1bxhlfng3501zpfb8072hwxcm6zbrcdv98z01vgam0z0yr5aa995"))))
     (properties `((upstream-name . "CFtime")))
     (build-system r-build-system)
     (arguments
@@ -49744,13 +49704,13 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "1j5m730ak5dw20k8dc639k17x5hihmip7p6qi7flzbiq4s1g54p2"))))
+        (base32 "1b67br0hsxfgzrlqlajfk9r3yazwm4xw81sapd3wjdkmd3fnmvzq"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (arguments

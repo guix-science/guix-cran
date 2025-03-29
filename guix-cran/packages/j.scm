@@ -4369,13 +4369,13 @@ BÃ¶schen, I. (2021) <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
 (define-public r-jarbes
   (package
     (name "r-jarbes")
-    (version "2.2.3")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jarbes" version))
        (sha256
-        (base32 "16777dmig327jc1hrnhn3yr5g972wbqa3pqmsnavblkjwcxpr7mv"))))
+        (base32 "1jzvmrg9azagr36mp6vdvm2kjpxlmg4hvxqbnhag86h40csj47cd"))))
     (properties `((upstream-name . "jarbes")))
     (build-system r-build-system)
     (arguments
@@ -4575,13 +4575,13 @@ efficient list tools.")
 (define-public r-jalcal
   (package
     (name "r-jalcal")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jalcal" version))
        (sha256
-        (base32 "19smqrhvab8f2xb8pa8x6gmvr0r2lwvqisfahixs7aa8lxi708jw"))))
+        (base32 "0cay6skvpxb9whi44p6j8wmqib1s2a6lr9qchaqvsngpbfkjas55"))))
     (properties `((upstream-name . "jalcal")))
     (build-system r-build-system)
     (arguments
@@ -4589,13 +4589,17 @@ efficient list tools.")
       #:tests? #f))
     (home-page "https://github.com/jalilian/jalcal")
     (synopsis
-     "Conversion Between Jalali (Persian or Solar Hijri) and Gregorian Calendar Dates")
+     "Convert Between Jalaali (Persian or Solar Hijri) and Gregorian Calendar Dates")
     (description
-     "Jalali, also known as Persian, Solar Hijri and Hijri Shamsi calendar is the
-official calendar of Iran and Afghanistan.  It begins on Nowruz, the March
-equinox, as determined by astronomical calculation and has years of 365 or 366
-days.  Adapting the algorithms in <https://jdf.scr.ir/>, this package provides
-tools for converting the Jalali and Gregorian dates.")
+     "The Jalaali calendar, also known as the Persian or Solar Hijri calendar, is the
+official calendar of Iran and Afghanistan.  It starts on Nowruz, the spring
+equinox, and follows an astronomical system for determining leap years.  Each
+year consists of 365 or 366 days, divided into 12 months.  This package provides
+functions for converting dates between the Jalaali and Gregorian calendars.  The
+conversion calculations are based on the work of Kazimierz M. Borkowski (1996)
+(<doi:10.1007/BF00055188>), who used an analytical model of Earth's motion to
+compute equinoxes from AD 550 to 3800 and determine leap years based on Tehran
+time.")
     (license license:gpl2+)))
 
 (define-public r-jagsui

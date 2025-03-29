@@ -23727,13 +23727,13 @@ Olano et al. (2009) <doi:10.1051/forest:2008074>.")
 (define-public r-ecerto
   (package
     (name "r-ecerto")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eCerto" version))
        (sha256
-        (base32 "1jk81b8w4bmvp7nli1rk15hw7qapgnrx9iqkzagpvaxy49sxd6nw"))))
+        (base32 "0vllvvq88zwag65hcfirfh4i3vb1zmpfclqyrlky6p8d6fml2d68"))))
     (properties `((upstream-name . "eCerto")))
     (build-system r-build-system)
     (arguments
@@ -26119,13 +26119,13 @@ for the input of data, and for performing genome-wide analysis.")
 (define-public r-eaf
   (package
     (name "r-eaf")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eaf" version))
        (sha256
-        (base32 "03039hjrpkgh9kzasd0q8x4k6nnzkmhyrf39psg1zizfdfdh2y4p"))))
+        (base32 "14mfcc7lacaghfxiq3x7zmbvk2ink3xkkbiky1bfv9dgwbmic8dr"))))
     (properties `((upstream-name . "eaf")))
     (build-system r-build-system)
     (arguments

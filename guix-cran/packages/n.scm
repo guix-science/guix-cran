@@ -4290,13 +4290,13 @@ normalp package.  In Journal of Statistical Software, Vol.  12, Issue 4).")
 (define-public r-normallaplace
   (package
     (name "r-normallaplace")
-    (version "0.3-1")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NormalLaplace" version))
        (sha256
-        (base32 "1j113pfi4fynn9jwma6j6habi1xj76sydjbymr3shsagv7jz6pfg"))))
+        (base32 "13569h36ama5wv96d8mfgbcnd3k5amsnaf6idlya0q243c340xzz"))))
     (properties `((upstream-name . "NormalLaplace")))
     (build-system r-build-system)
     (arguments

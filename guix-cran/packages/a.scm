@@ -13971,13 +13971,13 @@ ribosome footprinting data.")
 (define-public r-anabel
   (package
     (name "r-anabel")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anabel" version))
        (sha256
-        (base32 "0m6jkbl3mf3kpaq9yj0qrbwcvgd1qrdakc14xcnd8awgvbqh6z01"))))
+        (base32 "13wqiif267qx46665ws31dr64h5a3av1mz1i4m5076vp8ssx55a6"))))
     (properties `((upstream-name . "anabel")))
     (build-system r-build-system)
     (arguments
@@ -14006,7 +14006,7 @@ You provide a table of sensogram, tell anabel which method to use, and it takes
 care of all fitting details.  The first two releases of anabel were created and
 implemented as in (<doi:10.1177/1177932218821383>,
 <doi:10.1093/database/baz101>).")
-    (license license:expat)))
+    (license license:gpl3)))
 
 (define-public r-amylogram
   (package
@@ -17108,19 +17108,19 @@ family of distributions available in Galarza et.al. (2017)
 (define-public r-alcyon
   (package
     (name "r-alcyon")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alcyon" version))
        (sha256
-        (base32 "02cga5p6pq7fa4v4nbcmsfafs2h054ha4azfgfbixnkb1h7k5jjh"))))
+        (base32 "1myzd9rvg6ihpwdvdb47l4q5dd0pmpwpmnikir5vr7kfrkx3ypg8"))))
     (properties `((upstream-name . "alcyon")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr r-stars r-sf r-rcpp r-cli))
+    (propagated-inputs (list r-stars r-sf r-rcpp r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/spatialnous/alcyon")
     (synopsis "Spatial Network Analysis")

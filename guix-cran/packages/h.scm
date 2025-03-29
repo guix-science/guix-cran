@@ -10295,13 +10295,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "6.4")
+    (version "6.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "1bcr9d4dbaax9kx1i7x9bmhw1p35qmpijf3c9ki0afa2rmyqgmrm"))))
+        (base32 "04mamd7g7wg87qgwbz29w9ixlsbmq6sg225f9ryadxh7dlxwyc1v"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (arguments
@@ -14448,13 +14448,13 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "happign" version))
        (sha256
-        (base32 "18450rfx6imrmmif2y0md87d3dwgds73jbadjpci2j4a6vglq53k"))))
+        (base32 "1yrv0j2xdwwadi1q1slwr9fbb72d4dfp59j064s2anyzl02q9xrm"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (arguments

@@ -666,6 +666,37 @@ described for a survival outcome in: Devaux, Helmer, Genuer & Proust-Lima (2023)
      "An anonymization algorithm to resist neighbor label attack in a dynamic network.")
     (license license:expat)))
 
+(define-public r-dynemu
+  (package
+    (name "r-dynemu")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dynemu" version))
+       (sha256
+        (base32 "16459cg2s0md1cg1l3lg4k6rspkpcv4fd7x0r23psvrfnwzry6pj"))))
+    (properties `((upstream-name . "dynemu")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-plgp r-mass r-desolve))
+    (home-page "https://cran.r-project.org/package=dynemu")
+    (synopsis "Emulation of Dynamic Simulators via One-Step-Ahead Approach")
+    (description
+     "This package performs emulation of dynamic simulators using Gaussian process via
+one-step ahead approach.  The package implements a flexible framework for
+approximating time-dependent outputs from computationally expensive dynamic
+systems.  It is specifically designed for nonlinear dynamic systems where full
+simulations may be costly.  The underlying Gaussian process model accounts for
+temporal dependency through the one-step-ahead formulation, allowing for
+accurate emulation of complex dynamics.  Hyperparameters are estimated via
+maximum likelihood.  See Heo (2025, <doi:10.48550/@code{arXiv.2503.20250>}) for
+exact method, and Mohammadi, Challenor, and Goodfellow (2019,
+<doi:10.1016/j.csda.2019.05.006>) for methodological details.")
+    (license license:expat)))
+
 (define-public r-dyndimred
   (package
     (name "r-dyndimred")

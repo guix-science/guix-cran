@@ -7057,13 +7057,13 @@ subsamples.  For more details, please refer to Wang, Stapleton, and Chen (2018)
 (define-public r-trendtm
   (package
     (name "r-trendtm")
-    (version "2.0.19")
+    (version "2.0.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrendTM" version))
        (sha256
-        (base32 "00m8ahzfldvncn9p35f7qya890chqwizal02748nlfk4wfxjbgw7"))))
+        (base32 "06v5kkw5n823hn90d978ipy0rbxm5bcaivndfi5081z4bnins651"))))
     (properties `((upstream-name . "TrendTM")))
     (build-system r-build-system)
     (arguments
@@ -7075,8 +7075,8 @@ subsamples.  For more details, please refer to Wang, Stapleton, and Chen (2018)
     (description
      "Matrix factorization for multivariate time series with both low rank and
 temporal structures.  The procedure is the one proposed by Alquier, P. and
-Marie, N. Matrix factorization for multivariate time series analysis.
-Electronic journal of statistics, 13(2), 4346-4366 (2019).")
+Marie, N. \"Matrix factorization for multivariate time series analysis.\"
+Electronic Journal of Statistics, 13(2), 4346-4366 (2019).")
     (license license:gpl3)))
 
 (define-public r-trendslr
@@ -14151,13 +14151,13 @@ handling functionality.")
 (define-public r-tm-plugin-lexisnexis
   (package
     (name "r-tm-plugin-lexisnexis")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tm.plugin.lexisnexis" version))
        (sha256
-        (base32 "0c094z83mcq8blc8w7kvy91d28qqcx6f6193p3frpviznlaq21xk"))))
+        (base32 "1f48wsjgl8ky96gfs1332hi6r1zxd6c5arwml6n4a15vbaiw1wbg"))))
     (properties `((upstream-name . "tm.plugin.lexisnexis")))
     (build-system r-build-system)
     (arguments
@@ -14208,13 +14208,13 @@ package, please subscribe to the @code{koRpus-dev} mailing list
 (define-public r-tm-plugin-factiva
   (package
     (name "r-tm-plugin-factiva")
-    (version "1.8")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tm.plugin.factiva" version))
        (sha256
-        (base32 "1gdkflz2g1vmqzv4p65w6zfynnx0fls7xyvhzg4li4kjg2xf6l75"))))
+        (base32 "0vwdb8jyp207yvh6wyss1aqphdygf10gdnvlq9c7agcpwhyir1rp"))))
     (properties `((upstream-name . "tm.plugin.factiva")))
     (build-system r-build-system)
     (arguments
@@ -14235,20 +14235,20 @@ provider-specific fields).")
 (define-public r-tm-plugin-europresse
   (package
     (name "r-tm-plugin-europresse")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tm.plugin.europresse" version))
        (sha256
-        (base32 "03qi9rkfwgjvir4cjpi9imc8zaldvan42v9lqfr5d6zhr0ajy6wx"))))
+        (base32 "0b6n9n30v3rfi7kjvvjgkjrc2v9xpj8j4hf2131hrnqyp1n2cnnn"))))
     (properties `((upstream-name . "tm.plugin.europresse")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xml r-tm r-nlp))
-    (home-page "https://r-forge.r-project.org/projects/r-temis/")
+    (home-page "https://github.com/nalimilan/R.TeMiS")
     (synopsis
      "Import Articles from 'Europresse' Using the 'tm' Text Mining Framework")
     (description
@@ -24828,13 +24828,13 @@ library written by Michael Fogleman <https://www.github.com/fogleman/hmm>.")
 (define-public r-ternvis
   (package
     (name "r-ternvis")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ternvis" version))
        (sha256
-        (base32 "057i6i3ygxrin0npc18gsg3dpdldzafyb5sr6lix5mhy6b09lkxf"))))
+        (base32 "04q1b76sd4fhsg1pgpcq66zfx7pxpjjna8zs6siyw8r3k95rpim1"))))
     (properties `((upstream-name . "ternvis")))
     (build-system r-build-system)
     (arguments

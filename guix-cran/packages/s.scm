@@ -26496,13 +26496,13 @@ and Banerjee <doi:10.1016/j.envsoft.2019.104608>.")
 (define-public r-spbal
   (package
     (name "r-spbal")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spbal" version))
        (sha256
-        (base32 "0wh0d1zfb1368bzpg0cjy0wa0ms4x6xr9y6n773prr8r8vs6fp09"))))
+        (base32 "1qb4jqq4jp6v5cvallabrc8rcaimhadi8r9zp432i7ldb0dz0lvi"))))
     (properties `((upstream-name . "spbal")))
     (build-system r-build-system)
     (arguments
@@ -26521,7 +26521,9 @@ probability) and Simple Random Sampling.  Robertson, B. L., Brown, J. A.,
 B. L., @code{McDonald}, T., Price, C. J. and Brown, J. A. (2017)
 <doi:10.1016/j.spl.2017.05.004>.  Robertson, B. L., @code{McDonald}, T., Price,
 C. J. and Brown, J. A. (2018) <doi:10.1007/s10651-018-0406-6>.  Robertson, B.
-L., van Dam-Bates, P. and Gansell, O. (2021a) <doi:10.1007/s10651-020-00481-1>.")
+L., van Dam-Bates, P. and Gansell, O. (2021a) <doi:10.1007/s10651-020-00481-1>.
+Robertson, B. L., Davies, P., Gansell, O., van Dam-Bates, P., @code{McDonald},
+T. (2025) <doi:10.1111/anzs.12435>.")
     (license license:expat)))
 
 (define-public r-spbabel
@@ -29916,13 +29918,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "01y8vhx8l17vdrw3j7zbq1y8n6db9if6sv1py7z9sbdhabrxb9a3"))))
+        (base32 "1bkcldqlnjfh29p0iwywpn95s0s31m6ic8dbws4bi5zjdi43237g"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (arguments
@@ -46795,13 +46797,13 @@ their existing packages or to start a new module project from scratch.")
 (define-public r-siamodules
   (package
     (name "r-siamodules")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIAmodules" version))
        (sha256
-        (base32 "1x6a1apscxdrqlh0dnz9slrfiz4vhxx32rp32lfg27sc1awlx6xy"))))
+        (base32 "0dvr0fxgswnkljwcp1m57lcp7rfcxipjl9zmqx206aih7x5nbps8"))))
     (properties `((upstream-name . "SIAmodules")))
     (build-system r-build-system)
     (arguments
@@ -58337,13 +58339,13 @@ proximity values between pairs of observations.")
 (define-public r-semaphore
   (package
     (name "r-semaphore")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semaphore" version))
        (sha256
-        (base32 "0xib5lc6ajc0jhdlwnfn7q8ji85374a0hiid9qj5fmvjf8yviqgr"))))
+        (base32 "074hqn3c8fqc1f22lhhm3d7qi3s8h2z2jsxzks9wlgvxy76rhcqc"))))
     (properties `((upstream-name . "semaphore")))
     (build-system r-build-system)
     (arguments
@@ -58354,9 +58356,10 @@ proximity values between pairs of observations.")
     (synopsis "Shared Memory Atomic Operations")
     (description
      "This package implements named semaphores from the boost C++ library
-<https://www.boost.org/>.  A semaphore object is shared amongst several
-processes.  This integer value can be safely incremented or decremented by each
-process.  Processes can also wait (blocking) for the value to become positive.")
+<https://www.boost.org/> for interprocess communication.  Multiple R sessions on
+the same host can block (with optional timeout) on a semaphore until it becomes
+positive, then atomically decrement it and unblock.  Any session can increment
+the semaphore.")
     (license license:expat)))
 
 (define-public r-semantic-dashboard
@@ -65277,13 +65280,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "0dr22wzmb14m5zq1acfpka9xgng5bv1idzf8fyzv23babvam1kg1"))))
+        (base32 "1qikv711w5ppvpfkgs6a7qzpja37bx2x19d92z8jq06av35v9hpk"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (arguments
@@ -72409,6 +72412,71 @@ which based on Wilcox (1979) <doi:10.1177/001316447903900302> and Kleinman
     (description
      "Select best combination of auxiliary variables with certain criterion.")
     (license license:gpl3)))
+
+(define-public r-sae4health
+  (package
+    (name "r-sae4health")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sae4health" version))
+       (sha256
+        (base32 "1gmkp8m6f6na13670443szadh6cny6jdwn4wvn803v7lr7rf4ikm"))))
+    (properties `((upstream-name . "sae4health")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridislite
+                             r-surveyprev
+                             r-survey
+                             r-summer
+                             r-sp
+                             r-sn
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shinydashboard
+                             r-shinybs
+                             r-shiny
+                             r-sf
+                             r-scales
+                             r-readr
+                             r-rcolorbrewer
+                             r-r6
+                             r-plotly
+                             r-patchwork
+                             r-markdown
+                             r-leafsync
+                             r-leaflet
+                             r-leaflegend
+                             r-htmlwidgets
+                             r-htmltools
+                             r-haven
+                             r-gridextra
+                             r-golem
+                             r-ggthemes
+                             r-ggridges
+                             r-ggplot2
+                             r-geodata
+                             r-dt
+                             r-dplyr
+                             r-config
+                             r-bookdown))
+    (home-page "https://sae4health.stat.uw.edu/")
+    (synopsis
+     "Small Area Estimation for Key Health and Demographic Indicators from Household Surveys")
+    (description
+     "Enables small area estimation (SAE) of health and demographic indicators in low-
+and middle-income countries (LMICs).  It powers an R shiny application that
+helps public health analysts, policymakers, and researchers generate subnational
+estimates and prevalence maps for 150+ binary indicators from Demographic and
+Health Surveys (DHS).  Basing its core SAE analysis workflow on the
+@code{surveyPrev} package, the app ensures methodological rigor through guided
+model selection, automated fitting, and interactive visualization.  For more
+details, visit <https://sae4health.stat.uw.edu/>.")
+    (license license:agpl3)))
 
 (define-public r-sae2
   (package

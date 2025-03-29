@@ -5663,13 +5663,13 @@ run the reverse-dependency tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prqlr" version))
        (sha256
-        (base32 "09x4cwwfzlcqd8v4m4ah1vzbh8a540a4w4c0s2ip63s9f68d7plh"))))
+        (base32 "00vg81v090ms26ww4y030a6ydh2xpj0kn1vsiz7qlwblsp5qxfb1"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (arguments
@@ -29983,13 +29983,13 @@ bimbam', plink', snptest', @code{LiMMBo}').")
 (define-public r-phenotyper
   (package
     (name "r-phenotyper")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhenotypeR" version))
        (sha256
-        (base32 "1p5b119iigkjpx98s5wq092a1k9vk5rbn86b267r554gdgbnq4xp"))))
+        (base32 "124gwba0s8mzw4q3n5pabwpjjvn8rx8l3rs348v6irff7f70ybfn"))))
     (properties `((upstream-name . "PhenotypeR")))
     (build-system r-build-system)
     (arguments
@@ -33190,21 +33190,22 @@ Disease/National Institutes of Health contract (No.  HHSN272200900059C).")
 (define-public r-permimp
   (package
     (name "r-permimp")
-    (version "1.0-2")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "permimp" version))
        (sha256
-        (base32 "1zq513bkallkkqghjilvgc5iw0pcglrdyc0r2sns4ck07a3q378j"))))
+        (base32 "00aihrsi9x5chj4bvk6lrkbgpawsw91sq4pyzm6najnzdsjsn565"))))
     (properties `((upstream-name . "permimp")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-survival r-randomforest r-party r-ipred))
+    (propagated-inputs (list r-survival r-randomforest r-pbapply r-party
+                             r-ipred))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=permimp")
+    (home-page "https://ddebeer.github.io/permimp/")
     (synopsis "Conditional Permutation Importance")
     (description
      "An add-on to the party package, with a faster implementation of the
@@ -42069,13 +42070,13 @@ not split into subsets.")
 (define-public r-parallellogger
   (package
     (name "r-parallellogger")
-    (version "3.4.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParallelLogger" version))
        (sha256
-        (base32 "1hv9prvnh0wh084if31ll1arnp8kj8qdxakiz3dgxbhdxj67fdwn"))))
+        (base32 "1hakwzj1k10d4wvd0h6qa1ndk54i70l1mlwnms38mhyvab988q1z"))))
     (properties `((upstream-name . "ParallelLogger")))
     (build-system r-build-system)
     (arguments

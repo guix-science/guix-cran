@@ -23576,13 +23576,13 @@ Theil-Sen's slope estimator.")
 (define-public r-rkriging
   (package
     (name "r-rkriging")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rkriging" version))
        (sha256
-        (base32 "05hi1b2qlsc93iq4rhczrimc9pqnfmssmxmsa0fcgqwvpn0l934q"))))
+        (base32 "0dgxsrbagxl9glw8fjxjq71im5yxphss93zya67q98a41q44akq1"))))
     (properties `((upstream-name . "rkriging")))
     (build-system r-build-system)
     (arguments

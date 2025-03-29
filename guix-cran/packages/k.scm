@@ -1130,13 +1130,13 @@ descriptive statistics of peak counts of the features in a data set.")
 (define-public r-kpcaig
   (package
     (name "r-kpcaig")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kpcaIG" version))
        (sha256
-        (base32 "1jnlldr721c2an8npv1w6q4sk6fkamff8a5c3p9kcb575wrk4kqz"))))
+        (base32 "0a5x88ifsz1ms8yr8jq8m19c3cmchskmfhmwxbyr4rsdw1wk37k2"))))
     (properties `((upstream-name . "kpcaIG")))
     (build-system r-build-system)
     (arguments

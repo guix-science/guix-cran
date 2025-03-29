@@ -9207,6 +9207,32 @@ parallelizes large portions of the calculations when compiled with
 @code{OpenMP}'.")
     (license license:gpl3)))
 
+(define-public r-msda
+  (package
+    (name "r-msda")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "msda" version))
+       (sha256
+        (base32 "0ys31nm3p2r36wfs6mfsqpfb0pa084bv7p28pwczc0jjc540w94w"))))
+    (properties `((upstream-name . "msda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-mass))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/archer-yang-lab/msda")
+    (synopsis "Multi-Class Sparse Discriminant Analysis")
+    (description
+     "Efficient procedures for computing a new Multi-Class Sparse Discriminant
+Analysis method that estimates all discriminant directions simultaneously.  It
+is an implementation of the work proposed by Mai, Q., Yang, Y., and Zou, H.
+(2019) <doi:10.5705/ss.202016.0117>.")
+    (license license:gpl2)))
+
 (define-public r-msd
   (package
     (name "r-msd")
@@ -12290,13 +12316,13 @@ aprendizaje estadistico\"
 (define-public r-mpactr
   (package
     (name "r-mpactr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpactr" version))
        (sha256
-        (base32 "0h7rxj91dkgmc2l3bdyy6ylrr2hnjlgx951v63h3m3l5wachs430"))))
+        (base32 "0riy4wvpz87yaz0p93hjaazsjnbnr2yg4973plv6bf1gp960cg8j"))))
     (properties `((upstream-name . "mpactr")))
     (build-system r-build-system)
     (arguments
@@ -29262,13 +29288,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.13.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "1b4cibxvx3wcv022khrm2p4hlpj15fwfmnyd4kh91cqdm2nahjsx"))))
+        (base32 "0z4bs1rbbvyxzssigdr9b1lkgbn7y882jy2b75kjag0pi7jjbal7"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (arguments
@@ -39483,13 +39509,13 @@ linear model in Guo and Cheng (2021) <DOI:10.1080/01621459.2021.1893177>.")
 (define-public r-mdmr
   (package
     (name "r-mdmr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MDMR" version))
        (sha256
-        (base32 "1pv57xl7pjsqxz1j8mnfmjaa36mlr749yb4c44ppdrx6khvw662x"))))
+        (base32 "1flsnja8zvpm21a688yksdbfqi34sib6yyaz08krnr89rya09zhw"))))
     (properties `((upstream-name . "MDMR")))
     (build-system r-build-system)
     (arguments
@@ -39497,7 +39523,7 @@ linear model in Guo and Cheng (2021) <DOI:10.1080/01621459.2021.1893177>.")
       #:tests? #f))
     (propagated-inputs (list r-lme4 r-compquadform r-car))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/dmcartor/mdmr")
+    (home-page "https://github.com/dmcartor/mdmr")
     (synopsis "Multivariate Distance Matrix Regression")
     (description
      "Allows users to conduct multivariate distance matrix regression using analytic
@@ -45756,6 +45782,30 @@ products of inertia, and optionally, their uncertainties) for arbitrary
 decomposition trees.  R. L. Zimmerman, J. H. Nakai. (2005)
 <https://www.sawe.org/product/paper-3360/>).")
     (license license:expat)))
+
+(define-public r-massivegst
+  (package
+    (name "r-massivegst")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "massiveGST" version))
+       (sha256
+        (base32 "0g5f8990dqv38013mxpad9r44s0gydsh5rjx4ki4xkjrl2nx3gjv"))))
+    (properties `((upstream-name . "massiveGST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-writexls r-visnetwork r-igraph r-formattable))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/stefanoMP/massiveGST>")
+    (synopsis "Competitive Gene Sets Test with the Mann-Whitney-Wilcoxon Test")
+    (description
+     "Friendly implementation of the Mann-Whitney-Wilcoxon test for competitive gene
+set enrichment analysis.")
+    (license license:gpl3+)))
 
 (define-public r-massign
   (package

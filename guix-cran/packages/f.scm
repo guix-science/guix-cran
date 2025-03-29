@@ -19807,13 +19807,13 @@ equivalents with linear computational complexity.  Markussen (2013)
 (define-public r-fdadensity
   (package
     (name "r-fdadensity")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdadensity" version))
        (sha256
-        (base32 "1i2xzchlsixgjzyfmbv547sy6mq90xrnyc2kpd11wwfgfrpj1ix3"))))
+        (base32 "0ssmzqpxrc1z2r078cynhdi4h3sg2clc5bfdzs390kn4pdf7zqwg"))))
     (properties `((upstream-name . "fdadensity")))
     (build-system r-build-system)
     (arguments

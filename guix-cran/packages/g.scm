@@ -4051,13 +4051,13 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 (define-public r-grpnet
   (package
     (name "r-grpnet")
-    (version "0.7")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpnet" version))
        (sha256
-        (base32 "17wjk2mmzcfd2xl1hsbl3cvmz8chybw6b9n1ikcy58pj46cvmag2"))))
+        (base32 "1j96blzg9gn42vysbnm1lqib0p7xffxvyv8ybvw5arf5a62k1p4w"))))
     (properties `((upstream-name . "grpnet")))
     (build-system r-build-system)
     (arguments
@@ -4068,7 +4068,7 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
     (synopsis "Group Elastic Net Regularized GLMs and GAMs")
     (description
      "Efficient algorithms for fitting generalized linear and additive models with
-group elastic net penalties as described in Helwig (2024)
+group elastic net penalties as described in Helwig (2025)
 <doi:10.1080/10618600.2024.2362232>.  Implements group LASSO, group MCP, and
 group SCAD with an optional group ridge penalty.  Computes the regularization
 path for linear regression (gaussian), multivariate regression (multigaussian),
@@ -15584,13 +15584,13 @@ package is based on the work of Friedman, Hastie, and Tibshirani (2008)
 (define-public r-glarma
   (package
     (name "r-glarma")
-    (version "1.6-0")
+    (version "1.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glarma" version))
        (sha256
-        (base32 "0n0mv4xvh5q3y383cs224x6r608ciw4822pkanvmcjsc9zl0z1ar"))))
+        (base32 "1423x5wq0wggb1fz6bh1xd9frkqs3q5jqr6ih15ld8qa55zdw6zs"))))
     (properties `((upstream-name . "glarma")))
     (build-system r-build-system)
     (arguments
@@ -21131,13 +21131,13 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.8.12")
+    (version "0.8.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggiraph" version))
        (sha256
-        (base32 "0mxmlfl2clvg3lilbypyy2nl1n5gq0zwngkm1syp90g682nlym58"))))
+        (base32 "1jghnz8mi7xfba1r8pvvxc38fddhbydvzsrzfdkz5sskbpkl37aw"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (arguments
@@ -21168,7 +21168,7 @@ ggiraph'.")
                              r-htmltools
                              r-ggplot2
                              r-cli))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list pkg-config r-knitr esbuild))
     (home-page "https://davidgohel.github.io/ggiraph/")
     (synopsis "Make 'ggplot2' Graphics Interactive")
     (description "Create interactive ggplot2 graphics using htmlwidgets'.")
@@ -31264,13 +31264,13 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "10vhzrivi6rygvflbs1sbbgh2afd91lm552g9zsiwz2w7xq8jcxk"))))
+        (base32 "1vrbr27cm5vp4k7k22k1f62ms01czdpslqlrrdxbawmfxh7v713y"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (arguments
