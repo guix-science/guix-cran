@@ -1238,6 +1238,30 @@ regression models with composite likelihood methods.  Methodological details are
 given in Hirk, Hornik, Vana (2020) <doi:10.18637/jss.v093.i04>.")
     (license license:gpl3)))
 
+(define-public r-mvopr
+  (package
+    (name "r-mvopr")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MVOPR" version))
+       (sha256
+        (base32 "10fvycxi0mjrnp3l1zrk9m43aznlcv89a01z9i4hz7n2pchm544w"))))
+    (properties `((upstream-name . "MVOPR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rrpack r-ncvreg))
+    (home-page "https://arxiv.org/abs/2503.16807")
+    (synopsis
+     "Multi-View Orthogonal Projection Regression for Multi-Modality Integration")
+    (description
+     "This package implements the MVOPR (Multi-View Orthogonal Projection Regression)
+method for robust variable selection and integration of multi-modality data.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-mvntestchar
   (package
     (name "r-mvntestchar")
@@ -11758,13 +11782,13 @@ Mantel correlograms.")
 (define-public r-mplustrees
   (package
     (name "r-mplustrees")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MplusTrees" version))
        (sha256
-        (base32 "0jbh3ixamj2ra1jfrzdfrxg7q3w2h82ymwxbsl8ac59bh06hzk46"))))
+        (base32 "17rzg9gc8v95g6pa7aparl8ci9kl6sk21fk9kkch1i3jr2abz51b"))))
     (properties `((upstream-name . "MplusTrees")))
     (build-system r-build-system)
     (arguments
@@ -26796,6 +26820,35 @@ minimax approximation.")
 family, but computationally a lot more tractible.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-minimapr
+  (package
+    (name "r-minimapr")
+    (version "0.0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minimapR" version))
+       (sha256
+        (base32 "0axaki27bdsj1m1416cr69jsfgz97j3cg83kfxrgp5mgh0l2xqz0"))))
+    (properties `((upstream-name . "minimapR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsamtools r-pafr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jake-bioinfo/minimapR")
+    (synopsis "Wrapper for 'minimap2'")
+    (description
+     "Wrapper for Minimap2'.  Minimap2 is a very valuable long read aligner for the
+Pacbio and Oxford Nanopore Technologies sequencing platforms. @code{minimapR} is
+an R wrapper for minimap2 which was developed by Heng Li <me@@liheng.org>.
+*SPECIAL NOTES 1.  Examples can only be run from @code{GitHub} installation.  2.
+ conda or mamba must be used to install @code{minimapR} on your system.  Li,
+Heng (2018) <doi:10.1093/bioinformatics/bty191> \"Minimap2: pairwise alignment
+for nucleotide sequences\".")
+    (license license:expat)))
+
 (define-public r-minimap
   (package
     (name "r-minimap")
@@ -28588,38 +28641,6 @@ fashion(Wathen, J. K., & Thall, P. F. (2017) <doi: 10.1177/1740774517692302>).")
      "This package contains functions for converting existing HTML/@code{JavaScript}
 source into equivalent shiny functions.  Bootstraps the process of making new
 shiny functions by allowing us to turn HTML snippets directly into R functions.")
-    (license license:gpl3)))
-
-(define-public r-mida
-  (package
-    (name "r-mida")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MiDA" version))
-       (sha256
-        (base32 "144gxsxqljzskxsw5k0y69ix0pxlfvyyznxkjpf2ng4l47pg11z5"))))
-    (properties `((upstream-name . "MiDA")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-sqn
-                             r-proc
-                             r-preprocesscore
-                             r-limma
-                             r-genefilter
-                             r-gbm
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=MiDA")
-    (synopsis "Microarray Data Analysis")
-    (description
-     "Set of functions designed to simplify transcriptome analysis and identification
-of marker molecules using microarrays data.  The package includes a set of
-functions that allows performing full pipeline of analysis including data
-normalization, summarisation, binary classification, FDR (False Discovery Rate)
-multiple comparison and the definition of potential biological markers.")
     (license license:gpl3)))
 
 (define-public r-micss
@@ -32861,45 +32882,6 @@ techniques used in this package are published in Gamble, Granger, & Mannion
      "Evaluate bias and precision in method comparison studies.  One provides
 measurements for each method and it takes care of the estimates.  Multiple plots
 to evaluate bias, precision and compare methods.")
-    (license license:gpl3+)))
-
-(define-public r-methevolsim
-  (package
-    (name "r-methevolsim")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MethEvolSIM" version))
-       (sha256
-        (base32 "0pvz99rc402h9wvnnkjl1v8bfylvz8vkvfw7nkqs0a8lka8xk5zh"))))
-    (properties `((upstream-name . "MethEvolSIM")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-r6 r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MethEvolSIM")
-    (synopsis
-     "Simulate DNA Methylation Dynamics on Different Genomic Structures along Genealogies")
-    (description
-     "DNA methylation is an epigenetic modification involved in genomic stability,
-gene regulation, development and disease.  DNA methylation occurs mainly through
-the addition of a methyl group to cytosines, for example to cytosines in a
-@code{CpG} dinucleotide context (@code{CpG} stands for a cytosine followed by a
-guanine).  Tissue-specific methylation patterns lead to genomic regions with
-different characteristic methylation levels.  E.g.  in vertebrates @code{CpG}
-islands (regions with high @code{CpG} content) that are associated to promoter
-regions of expressed genes tend to be unmethylated. @code{MethEvolSIM} is a
-model-based simulation software for the generation and modification of cytosine
-methylation patterns along a given tree, which can be a genealogy of cells
-within an organism, a coalescent tree of DNA sequences sampled from a
-population, or a species tree.  The simulations are based on an extension of the
-model of Grosser & Metzler (2020) <doi:10.1186/s12859-020-3438-5> and allows for
-changes of the methylation states at single cytosine positions as well as
-simultaneous changes of methylation frequencies in genomic structures like
-@code{CpG} islands.")
     (license license:gpl3+)))
 
 (define-public r-methcon5
@@ -47110,13 +47092,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.25.0")
+    (version "0.25.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "0b5z3i4dmsgnw4945mss1gsw09hmqblqa0l2mdkj9fmrf11yf7d0"))))
+        (base32 "11kb423z4096w0dpl93d0sgsq746giab25cj8c532zbra1bvbmx4"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (arguments
@@ -47127,8 +47109,10 @@ a conditional risk model.")
                              r-rcpp
                              r-insight
                              r-generics
+                             r-formula
                              r-data-table
-                             r-checkmate))
+                             r-checkmate
+                             r-backports))
     (native-inputs (list r-quarto r-knitr))
     (home-page "https://marginaleffects.com/")
     (synopsis

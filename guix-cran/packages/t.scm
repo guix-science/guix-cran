@@ -5187,6 +5187,48 @@ ts','xts', data.frame', data.table', tibble', zoo', @code{timeSeries}',
 tsibble', tis or irts'.  Also converts reliably between these classes.")
     (license license:gpl3)))
 
+(define-public r-tsaux
+  (package
+    (name "r-tsaux")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsaux" version))
+       (sha256
+        (base32 "0ib2hl4kzb42a88hdcy1pccjxc1xbdpb5gnx8hfnlc778b4a7lq0"))))
+    (properties `((upstream-name . "tsaux")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-tsoutliers
+                             r-tsmethods
+                             r-stlplus
+                             r-scoringrules
+                             r-rdpack
+                             r-lubridate
+                             r-forecast
+                             r-data-table
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tsmodels/tsaux")
+    (synopsis "Time Series Forecasting Auxiliary Functions")
+    (description
+     "This package provides a suite of auxiliary functions that enhance time series
+estimation and forecasting, including a robust anomaly detection routine based
+on Chen and Liu (1993) <doi:10.2307/2290724> (imported and wrapped from the
+tsoutliers package), utilities for managing calendar and time conversions,
+performance metrics to assess both point forecasts and distributional
+predictions, advanced simulation by allowing the generation of time series
+componentsâsuch as trend, seasonal, ARMA, irregular, and anomaliesâin a
+modular fashion based on the innovations form of the state space model and a
+number of transformation methods including Box-Cox, Logit, Softplus-Logit and
+Sigmoid.")
+    (license license:gpl2)))
+
 (define-public r-tsapp
   (package
     (name "r-tsapp")
@@ -15253,13 +15295,13 @@ available back to 2000 for most geographies.")
 (define-public r-tinythemes
   (package
     (name "r-tinythemes")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinythemes" version))
        (sha256
-        (base32 "0ps69r9jn5cmx68spq3rgqn784203g8n6lzkdh6ijlx7bzh8frm5"))))
+        (base32 "1b90dms48d1xbs36l72wf0n55h09ainijwqjs55ivnzmkyclw6dj"))))
     (properties `((upstream-name . "tinythemes")))
     (build-system r-build-system)
     (arguments
@@ -24059,45 +24101,6 @@ plenty of choices for the model types are available, which can be found in the
 univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
 <doi:10.1002/mma.9130>.")
     (license license:gpl2+)))
-
-(define-public r-testgenerator
-  (package
-    (name "r-testgenerator")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TestGenerator" version))
-       (sha256
-        (base32 "0x4rmmxmvn9wmxl9gj1fx938k3a60hn9xmsa79xnd6arfdl882fq"))))
-    (properties `((upstream-name . "TestGenerator")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-tibble
-                             r-testthat
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-openxlsx
-                             r-jsonlite
-                             r-glue
-                             r-ggplot2
-                             r-duckdb
-                             r-dplyr
-                             r-dbi
-                             r-cli
-                             r-checkmate
-                             r-cdmconnector
-                             r-arrow))
-    (home-page "https://github.com/darwin-eu/TestGenerator")
-    (synopsis "Integration Unit Tests for Pharmacoepidemiological Studies")
-    (description
-     "Push a sample population for unit testing on data mapped to the Observational
-Medical Outcomes Partnership (OMOP) Common Data Model.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-testgardener
   (package

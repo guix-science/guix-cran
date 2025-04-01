@@ -369,13 +369,13 @@ academic year.")
 (define-public r-vvcanvas
   (package
     (name "r-vvcanvas")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvcanvas" version))
        (sha256
-        (base32 "1var5p4znz8xgbvhpcz2m4z9c129nxb4yqhwjmj8sf8y6m2dsbrw"))))
+        (base32 "0yksqkpvvzz8dgq6fgfh804agarn3n5anz0qf9l9frmr9z3lhdsw"))))
     (properties `((upstream-name . "vvcanvas")))
     (build-system r-build-system)
     (arguments
@@ -385,6 +385,7 @@ academic year.")
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-mime
                              r-magrittr
                              r-jsonlite
                              r-httr
@@ -5916,13 +5917,13 @@ values, infinities, blank characters, or names attribute; or having length 1).")
 (define-public r-vein
   (package
     (name "r-vein")
-    (version "1.1.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vein" version))
        (sha256
-        (base32 "018nnldvawijw9qnh6d4l9gy0x5chb2nx0fga7bpb91p20vd7lfd"))))
+        (base32 "0iv841b3lpggfi84877cfd885pz7zkx43djl3yvsabc677pysbp7"))))
     (properties `((upstream-name . "vein")))
     (build-system r-build-system)
     (arguments
@@ -7111,13 +7112,13 @@ storyteller.  VChart examples and documentation are available here:
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.7.1")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "12w2w929cxrsl6fp2l4v4sprjrfzc07bsh1nmf5j27zaq5lb56cx"))))
+        (base32 "0i3q8zc946hibq5dp0xzz5h56gqm33245sm56vh9jh847ivkayh9"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (arguments

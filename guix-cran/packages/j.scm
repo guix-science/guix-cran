@@ -3519,13 +3519,13 @@ speech tagging.  This package provides the data files required by @code{jiebaR}.
 (define-public r-jiebar
   (package
     (name "r-jiebar")
-    (version "0.11")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jiebaR" version))
        (sha256
-        (base32 "08v64xwr9jp4vh88x7y935khh4cmj8rwsjaxfd2c67n0445qppmd"))))
+        (base32 "1drkipnqpx865w0wl3b9nzwn1yslcidfy0cmdg0kyi75b5n8jamm"))))
     (properties `((upstream-name . "jiebaR")))
     (build-system r-build-system)
     (arguments
@@ -3677,13 +3677,13 @@ derived from point cloud and makes data available for structural analysis.")
 (define-public r-jfe
   (package
     (name "r-jfe")
-    (version "2.5.8")
+    (version "2.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JFE" version))
        (sha256
-        (base32 "0gyaiwi89x4wh7vvgg4d176p51apf618ixb2yx6djalwp8zlv9kn"))))
+        (base32 "0cfxx38azpc236waxxxqfawqfzjg5cliyspf0y6226gkmslha3kp"))))
     (properties `((upstream-name . "JFE")))
     (build-system r-build-system)
     (arguments

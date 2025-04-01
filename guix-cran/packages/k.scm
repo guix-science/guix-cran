@@ -3841,30 +3841,31 @@ other drugs.  Read more at the methods detailed in Giangreco (2022)
 (define-public r-kidney-epi
   (package
     (name "r-kidney-epi")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kidney.epi" version))
        (sha256
-        (base32 "1hd6w7kxim5slmmqalf5sfjg8jcvhyzn5g4gf6h0lmaprsfszhja"))))
+        (base32 "1p4p5v349knv29zsvnas4a4lvl2pxiqkk6gi679w43mnpqhkghnb"))))
     (properties `((upstream-name . "kidney.epi")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-readxl r-purrr r-openxlsx))
     (native-inputs (list r-knitr))
-    (home-page "http://kidneyepidemiology.org/r/")
-    (synopsis "Kidney Functions: Clinical and Epidemiological")
+    (home-page "https://Scientific-Tools.Org/")
+    (synopsis
+     "Kidney-Related Functions for Clinical and Epidemiological Research")
     (description
      "This package contains kidney care oriented functions.  Current version contains
-functions for calculation of: - Kidney Donor Risk Index and Kidney Donor Profile
-Index for kidney transplant donors by Rao et al. (2009)
-<doi:10.1097/TP.0b013e3181ac620b>. - Estimated glomerular filtration rate by
-CKD-EPI, MDRD and other equations.  Citation: Bikbov B. R open source
-programming code for calculation of the Kidney Donor Profile Index and Kidney
-Donor Risk Index.  Kidney Diseases (2018) 4:269â272 <doi:10.1159/000492427>
-(the only citation for the whole package).")
+functions for calculation of: - Estimated glomerular filtration rate by CKD-EPI
+(2021 and 2009), MDRD, C@code{KiD}, FAS, EKFC, etc. - Kidney Donor Risk Index
+and Kidney Donor Profile Index for kidney transplant donors. - Citation: Bikbov
+B. kidney.epi: Kidney-Related Functions for Clinical and Epidemiological
+Research.  Scientific-Tools.Org, <https://Scientific-Tools.Org>.
+<doi:10.32614/CRAN.package.kidney.epi>.")
     (license license:lgpl2.0+)))
 
 (define-public r-kibior
@@ -4728,13 +4729,13 @@ publication.")
 (define-public r-keyatm
   (package
     (name "r-keyatm")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keyATM" version))
        (sha256
-        (base32 "1xd5ps0m6ymbdia89n2lr03pjhxhwsjwd648xpq42wkvir8an1nv"))))
+        (base32 "1xp9w3z3d9wcag8chysg8bmkyp84wz1nifyg3g0blb9fprxcl1np"))))
     (properties `((upstream-name . "keyATM")))
     (build-system r-build-system)
     (arguments

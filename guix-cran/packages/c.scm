@@ -4702,13 +4702,13 @@ without any geolibraries.")
 (define-public r-csindicators
   (package
     (name "r-csindicators")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSIndicators" version))
        (sha256
-        (base32 "062v23vm2yz0dr2s0d6p7iwccdkgywn8k9gfp4jc8kr56ff3hvvr"))))
+        (base32 "1imfhr049wn00bs6c5lmi0gpyiqifk3dv5iz054x48r0niz8hmsf"))))
     (properties `((upstream-name . "CSIndicators")))
     (build-system r-build-system)
     (arguments
@@ -7522,13 +7522,13 @@ user input for use in downstream applications.")
 (define-public r-crm12comb
   (package
     (name "r-crm12comb")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crm12Comb" version))
        (sha256
-        (base32 "0rhcm2lss3xzywgnhqfh6s4kxh51x7fk7q2gb3sc34c54zc4v1zp"))))
+        (base32 "09mxq41yvrh8r63834pkf13x62lc5c5sdfnrgxklq1w4q30hi9rq"))))
     (properties `((upstream-name . "crm12Comb")))
     (build-system r-build-system)
     (arguments
@@ -9869,13 +9869,13 @@ and outcomes.")
 (define-public r-cpglib
   (package
     (name "r-cpglib")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CPGLIB" version))
        (sha256
-        (base32 "10pv9f36cg4ahgcbl3agc6zvgh3bmv78rc2vl6xhm1jpijhxqk93"))))
+        (base32 "1pvl3nsa6iq0d9z39pjyrwmh335glqi7qwgfzqnpwvp51sl43m5q"))))
     (properties `((upstream-name . "CPGLIB")))
     (build-system r-build-system)
     (arguments
@@ -14433,13 +14433,13 @@ Cornerstone 7.1.1 on @code{camLineTV} @code{YouTube} channel
 (define-public r-corncob
   (package
     (name "r-corncob")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corncob" version))
        (sha256
-        (base32 "12ah9z9f68cw40c0hw7i53263qy0yzrpvrr4kqi7xva3d18ywn4n"))))
+        (base32 "0lnm49wxabzlwhml47bxjilhd09f5y1klj0fylw8zgz66w6njq9w"))))
     (properties `((upstream-name . "corncob")))
     (build-system r-build-system)
     (arguments
@@ -31906,13 +31906,13 @@ combined to construct new indices.")
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimMobTools" version))
        (sha256
-        (base32 "0lwhn04qxi3kiwiyyx2avgckvhsckw44swzaqkshm3yrz1v4z4wd"))))
+        (base32 "1svni8zlyy4gj7wzs1431hgc3g0kwwr4sw0ddxgrnvd350rzwxg5"))))
     (properties `((upstream-name . "ClimMobTools")))
     (build-system r-build-system)
     (arguments
@@ -36587,13 +36587,13 @@ headless Chrome web browser.")
 (define-public r-chromconverter
   (package
     (name "r-chromconverter")
-    (version "0.2.1")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromConverter" version))
        (sha256
-        (base32 "0mpakgcqmpw0s7vcndqfmd2n2imn35nh5nkps07aj0vgd7z9ib8w"))))
+        (base32 "0669xdsddalfc37gjr0wl9sdn9c7g6gk16zk7vabdlcvbdd7f3zf"))))
     (properties `((upstream-name . "chromConverter")))
     (build-system r-build-system)
     (arguments
@@ -36601,20 +36601,30 @@ headless Chrome web browser.")
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-tidyr
+                             r-tibble
                              r-stringr
                              r-reticulate
                              r-readxl
-                             r-readr
+                             r-rams
                              r-purrr
-                             r-magrittr))
-    (home-page "https://github.com/ethanbass/chromConverter")
+                             r-jsonlite
+                             r-fs
+                             r-digest
+                             r-data-table
+                             r-bitops
+                             r-bit64
+                             r-base64enc))
+    (home-page "https://ethanbass.github.io/chromConverter/")
     (synopsis "Chromatographic File Converter")
     (description
      "Reads chromatograms from binary formats into R objects.  Currently supports
-conversion of Agilent @code{ChemStation}', Agilent @code{MassHunter}', and
-@code{ThermoRaw} files as well as various text-based formats.  Utilizes file
-parsers from external libraries, such as Aston <https://github.com/bovee/aston>,
-Entab <https://github.com/bovee/entab>, and @code{ThermoRawFileParser}
+conversion of Agilent @code{ChemStation}', Agilent @code{MassHunter}', Shimadzu
+@code{LabSolutions}', @code{ThermoRaw}', and Varian Workstation files as well as
+various text-based formats.  In addition to its internal parsers,
+@code{chromConverter} contains bindings to parsers in external libraries, such
+as Aston <https://github.com/bovee/aston>, Entab
+<https://github.com/bovee/entab>, rainbow <https://rainbow-api.readthedocs.io/>,
+and @code{ThermoRawFileParser}
 <https://github.com/compomics/@code{ThermoRawFileParser>}.")
     (license license:gpl3+)))
 
@@ -42928,13 +42938,13 @@ is in no way officially related to or endorsed by Copernicus.")
 (define-public r-cdsampling
   (package
     (name "r-cdsampling")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDsampling" version))
        (sha256
-        (base32 "14rz54r5cykvpb2kz0bzb9s8mw72im71j5g119854rnjjqdlxd1i"))))
+        (base32 "047k20c6vz1bhaja7hramz6kz4wsils0kcq9s7si001y695hcbp2"))))
     (properties `((upstream-name . "CDsampling")))
     (build-system r-build-system)
     (arguments
@@ -45012,20 +45022,20 @@ in Jeong et al. (2019) <doi:10.1101/gr.245571.118> and Baggerly et al. (2003)
 (define-public r-caviarpd
   (package
     (name "r-caviarpd")
-    (version "0.3.13")
+    (version "0.3.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caviarpd" version))
        (sha256
-        (base32 "0zf9s8wnyxfzmnxrq80xbxr1lrlgqdclwjbdrs6pfmdqmyix8dp6"))))
+        (base32 "0drhhgv7pacvxcpf4kmk4b2dasjqrhzl5laibi9l5gdi724irgg4"))))
     (properties `((upstream-name . "caviarpd")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (home-page "https://github.com/dbdahl/caviarpd")
+    (home-page "https://github.com/dbdahl/caviarpd-package")
     (synopsis "Cluster Analysis via Random Partition Distributions")
     (description
      "Cluster analysis is performed using pairwise distance information and a random
@@ -46352,13 +46362,13 @@ Specifically, this package implements a fixed-effects model [Kazeem and Farrall
 (define-public r-catlearn
   (package
     (name "r-catlearn")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "catlearn" version))
        (sha256
-        (base32 "1bzzzqprgyskkf1dnb5k4pqkdn5m67a3pxbnk1cnhscagcjndvy6"))))
+        (base32 "1dnwxxazgcswi2swvsr4bzmz3hqg3lnliwc820sd71jmc4ymk9kb"))))
     (properties `((upstream-name . "catlearn")))
     (build-system r-build-system)
     (arguments
@@ -46370,7 +46380,7 @@ Specifically, this package implements a fixed-effects model [Kazeem and Farrall
                              r-foreach
                              r-dplyr
                              r-doparallel))
-    (home-page "https://cran.r-project.org/package=catlearn")
+    (home-page "https://github.com/ajwills72/catlearn")
     (synopsis "Formal Psychological Models of Categorization and Learning")
     (description
      "Formal psychological models of categorization and learning,

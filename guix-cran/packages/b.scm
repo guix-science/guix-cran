@@ -4010,6 +4010,56 @@ Browse Over Longitudinal Data Graphically and Analytically in R\", Nicholas
 Tierney, Dianne Cook, Tania Prvan (2020) <doi:10.32614/RJ-2022-023>.")
     (license license:expat)))
 
+(define-public r-brokenstick
+  (package
+    (name "r-brokenstick")
+    (version "2.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brokenstick" version))
+       (sha256
+        (base32 "1ipyxdmd1p3vs12ij6figybhgyq25pdnjknhs5bjszln4h54dqff"))))
+    (properties `((upstream-name . "brokenstick")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-matrixsampling
+                             r-lme4
+                             r-dplyr
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "doi:10.18637/jss.v106.i07")
+    (synopsis "Broken Stick Model for Irregular Longitudinal Data")
+    (description
+     "Data on multiple individuals through time are often sampled at times that differ
+between persons.  Irregular observation times can severely complicate the
+statistical analysis of the data.  The broken stick model approximates each
+subjectâs trajectory by one or more connected line segments.  The times at
+which segments connect (breakpoints) are identical for all subjects and under
+control of the user.  A well-fitting broken stick model effectively transforms
+individual measurements made at irregular times into regular trajectories with
+common observation times.  Specification of the model requires three variables:
+time, measurement and subject.  The model is a special case of the linear mixed
+model, with time as a linear B-spline and subject as the grouping factor.  The
+main assumptions are: subjects are exchangeable, trajectories between
+consecutive breakpoints are straight, random effects follow a multivariate
+normal distribution, and unobserved data are missing at random.  The package
+contains functions for fitting the broken stick model to data, for predicting
+curves in new data and for plotting broken stick estimates.  The package
+supports two optimization methods, and includes options to structure the
+variance-covariance matrix of the random effects.  The analyst may use the
+software to smooth growth curves by a series of connected straight lines, to
+align irregularly observed curves to a common time grid, to create synthetic
+curves at a user-specified set of breakpoints, to estimate the time-to-time
+correlation matrix and to predict future observations.  See
+<doi:10.18637/jss.v106.i07> for additional documentation on background,
+methodology and applications.")
+    (license license:expat)))
+
 (define-public r-brokenadaptiveridge
   (package
     (name "r-brokenadaptiveridge")
@@ -9571,13 +9621,13 @@ estimation is also included.")
 (define-public r-bmstdr
   (package
     (name "r-bmstdr")
-    (version "0.7.9")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bmstdr" version))
        (sha256
-        (base32 "0myv2mj5kp97dzvbf4sw63fzjxzpv2d82vxwiqxaqd1pllcgrzz1"))))
+        (base32 "110dkcfi8m86kznpi644z7q09agkkf9vs66294a9301hy056kh7r"))))
     (properties `((upstream-name . "bmstdr")))
     (build-system r-build-system)
     (arguments
@@ -11192,24 +11242,19 @@ data.")
 (define-public r-blit
   (package
     (name "r-blit")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blit" version))
        (sha256
-        (base32 "1w4z9ln6rscpifad03md0csdxyp07p01nivssdxh0nrsagz8hcwb"))))
+        (base32 "1v1api1qwcqpzam7si3iwasl8hbz2rqh73i3jp7nngkxgbn5x634"))))
     (properties `((upstream-name . "blit")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-withr
-                             r-sys
-                             r-rlang
-                             r-r6
-                             r-data-table
-                             r-cli))
+    (propagated-inputs (list r-rlang r-r6 r-processx r-cli))
     (home-page "https://github.com/WangLabCSU/blit")
     (synopsis "Bioinformatics Library for Integrated Tools")
     (description
@@ -13838,13 +13883,13 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 (define-public r-biorad
   (package
     (name "r-biorad")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioRad" version))
        (sha256
-        (base32 "1c7wl1wk1lh31dr7a7lwbjib4v1mfvvyi8iwfc9svj07y4wpzj58"))))
+        (base32 "15h5av72ynpcbcdn0vlyvika7q6i0jhj6mji453dhldmwp9pygga"))))
     (properties `((upstream-name . "bioRad")))
     (build-system r-build-system)
     (arguments
@@ -19107,13 +19152,13 @@ papers.")
 (define-public r-bfp
   (package
     (name "r-bfp")
-    (version "0.0-48")
+    (version "0.0-49")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfp" version))
        (sha256
-        (base32 "0m3ika7sfksv4xhbxcysh0yyfvj7bip9g1m8n2icb2zjwfafccvn"))))
+        (base32 "12qv5gjm3dqbgbqhrhh778v4anhpmy18y299kfpg4lfclv2mx843"))))
     (properties `((upstream-name . "bfp")))
     (build-system r-build-system)
     (arguments
@@ -27890,13 +27935,13 @@ et al. (2017) <doi:10.1002/cam4.1102>.")
 (define-public r-bayesboot
   (package
     (name "r-bayesboot")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesboot" version))
        (sha256
-        (base32 "0976ryd0gbw3kpmxg2qxyp1m2swnrpa86vdhvqrqxp7fcrs8cs2z"))))
+        (base32 "0r2fbrw3an3rpvgpkg6ajlk2xi1qr6fm5h71ga0n2qphhwyk479j"))))
     (properties `((upstream-name . "bayesboot")))
     (build-system r-build-system)
     (arguments
@@ -32133,13 +32178,13 @@ Reference: Nan Chen and J. Jack Lee (2019) <doi:10.1002/bimj.201700275>.")
 (define-public r-bacenapi
   (package
     (name "r-bacenapi")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BacenAPI" version))
        (sha256
-        (base32 "0g04ybc44h5qfx8cdv8l5l1v358wcz2pivfqdan920njyq1xjihc"))))
+        (base32 "1b4zkx7bnxp5gj7prrzw55z86jxvw33182mbpf19wbws44rby8bs"))))
     (properties `((upstream-name . "BacenAPI")))
     (build-system r-build-system)
     (arguments
@@ -32402,13 +32447,13 @@ fragment counts given @code{mRNA} counts.")
 (define-public r-b64
   (package
     (name "r-b64")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "b64" version))
        (sha256
-        (base32 "0alr0q2zfxni31rb3m1676kwhwwg91xaq9fsfhjgcycn7r06rjpl"))))
+        (base32 "079gcxwbsjq4dkqvg00mlpj4jmq0vp3pv8wws140qgr177sshlj7"))))
     (properties `((upstream-name . "b64")))
     (build-system r-build-system)
     (arguments

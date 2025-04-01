@@ -3107,13 +3107,13 @@ design, i.e.  when each test is applied to each subject in the study.")
 (define-public r-dtcomb
   (package
     (name "r-dtcomb")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtComb" version))
        (sha256
-        (base32 "1sngb7aaiahpjs7yxnrir263dx40f15bhhk4mz7d1vvkpqg60nqi"))))
+        (base32 "15xv3ssqvj5070wq2gkwjcva7xa18advcfbnhr2ahm7qjc2v55jr"))))
     (properties `((upstream-name . "dtComb")))
     (build-system r-build-system)
     (arguments
@@ -6482,13 +6482,13 @@ Gerhard, D. (2015) <doi:10.1371/journal.pone.0146021>.")
 (define-public r-dr-sc
   (package
     (name "r-dr-sc")
-    (version "3.4")
+    (version "3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DR.SC" version))
        (sha256
-        (base32 "076halm823dlrj95hqq3ibdb645vd2w68mixi36wdnh7ngr7ih1f"))))
+        (base32 "1ikxc5qjgg7bc34m50nffzc0jnlvxf6r0kp4vmy5s74lxgrbcqlz"))))
     (properties `((upstream-name . "DR.SC")))
     (build-system r-build-system)
     (arguments
@@ -22676,21 +22676,22 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
 (define-public r-demographictable
   (package
     (name "r-demographictable")
-    (version "0.1.11")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemographicTable" version))
        (sha256
-        (base32 "0c2hlcjirfmymn8h8ly4z3ppkn7d86gjckf8zb4f91cmmmpr6f0w"))))
+        (base32 "075l3lls92rhpnamwz1da82sw299f345vlw7lmw5p73s4phlqys8"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales r-officer r-flextable r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DemographicTable")
-    (synopsis "Creating Demographic Table")
+    (synopsis "Create Demographic Table")
     (description
      "This package provides functions for creating demographic table of simple summary
 statistics and comparison(s) over one or more groups.")
@@ -23070,6 +23071,39 @@ current algorithm is based on the Version 5 of the delta windows program that
 can be found on
 <https://www.ugr.es/~bioest/software/delta/cmd.php?seccion=downloads>.")
     (license license:gpl3)))
+
+(define-public r-delimtools
+  (package
+    (name "r-delimtools")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "delimtools" version))
+       (sha256
+        (base32 "06cn8y2i7p55ik1qf6h0lpwvyspprwwpgj5fq8hj8p4ms8byqibr"))))
+    (properties `((upstream-name . "delimtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-ggtree
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/legalLab/delimtools")
+    (synopsis "Helper Functions for Species Delimitation Analysis")
+    (description
+     "Helpers functions to process, analyse, and visualize the output of single locus
+species delimitation methods.  For full functionality, please install suggested
+software at <https://legallab.github.io/delimtools/articles/install.html>.")
+    (license license:expat)))
 
 (define-public r-delayedeffect-design
   (package
@@ -28844,13 +28878,13 @@ fundamental assumption in many statistical analyses and models.")
 (define-public r-datastudio
   (package
     (name "r-datastudio")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DATAstudio" version))
        (sha256
-        (base32 "1hc0xyvq26bydj9kh365rzr0001r0r375hg0sr4hnak8ldv9q9gr"))))
+        (base32 "125656zgjkjyvi1h1zdvvi6x8myz0yhs0h3frvvfg9kaha28iiwi"))))
     (properties `((upstream-name . "DATAstudio")))
     (build-system r-build-system)
     (arguments
@@ -28913,13 +28947,13 @@ Office.")
 (define-public r-datastreamdsws2r
   (package
     (name "r-datastreamdsws2r")
-    (version "1.9.10")
+    (version "1.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatastreamDSWS2R" version))
        (sha256
-        (base32 "0qyd4mml2j6gk4nsy59lm7317n6g975rb9k2a1h71d7kbbh5801b"))))
+        (base32 "1kl9h41c5gws0hxm3m2l9blxs6dbsqs544y5jszfvdy4q3npkbg2"))))
     (properties `((upstream-name . "DatastreamDSWS2R")))
     (build-system r-build-system)
     (arguments
@@ -28933,7 +28967,7 @@ Office.")
                              r-httr
                              r-foreach
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=DatastreamDSWS2R")
+    (home-page "https://github.com/CharlesCara/DatastreamDSWS2R")
     (synopsis "Provides a Link Between the 'LSEG Datastream' System and R")
     (description
      "This package provides a set of functions and a class to connect, extract and

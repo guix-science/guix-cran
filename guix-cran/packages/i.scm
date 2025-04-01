@@ -9565,13 +9565,13 @@ vectors, matrices, and lists.")
 (define-public r-innsight
   (package
     (name "r-innsight")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "innsight" version))
        (sha256
-        (base32 "1624wn4z1s8ai6dbc4kabxwhzgx7x7vdvjjvqf2bsyy01650kbqa"))))
+        (base32 "1z9qjdl89i69zx713jc27fb3k7x9vj6rzqwh6m7qaz4izbgc5hh1"))))
     (properties `((upstream-name . "innsight")))
     (build-system r-build-system)
     (arguments
@@ -10719,13 +10719,13 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "19awzy3q19x190023j2bw7kx7yzy89m03y28acy3gw1d9hh2wn99"))))
+        (base32 "0jiw5c1zd95fmlmhpdx4l7xjr9s3cx8fs2c27m7i7ray0m7cs8fk"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (arguments
@@ -11871,26 +11871,20 @@ outbreak analysis.")
 (define-public r-incgraph
   (package
     (name "r-incgraph")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incgraph" version))
        (sha256
-        (base32 "0zjvxk2krdlm5bcr0m80nxy46f69a1xadfjw5sjw249b28wdclml"))))
+        (base32 "0cbd00ih57b1mqmicjxzhibxbw4x4dpgs5jirnb0l5cnb6d5v9k2"))))
     (properties `((upstream-name . "incgraph")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
-                             r-testthat
-                             r-rcpp
-                             r-purrr
-                             r-orca
-                             r-dplyr
-                             r-bh))
-    (home-page "http://www.github.com/rcannood/incgraph")
+    (propagated-inputs (list r-rcpp r-orca r-dplyr r-bh))
+    (home-page "https://github.com/rcannood/incgraph")
     (synopsis "Incremental Graphlet Counting for Network Optimisation")
     (description
      "An efficient and incremental approach for calculating the differences in orbit
@@ -13219,46 +13213,6 @@ Percentage Error (PER).  By storing and visualizing the best performing models,
 it provides a comprehensive solution for precise and efficient regression
 modeling making it an invaluable tool for data scientists and researchers aiming
 to harness AI for predictive analytics.")
-    (license license:gpl3+)))
-
-(define-public r-immunogenetr
-  (package
-    (name "r-immunogenetr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "immunogenetr" version))
-       (sha256
-        (base32 "1y8y0yh2hflhhm3qlxrs4mn71xr655zknyd420514vw6gkca0bqh"))))
-    (properties `((upstream-name . "immunogenetr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xml2
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-glue
-                             r-dplyr
-                             r-cli))
-    (home-page "https://github.com/k96nb01/immunogenetr_package")
-    (synopsis "Comprehensive Toolkit for Clinical HLA Informatics")
-    (description
-     "This package provides a comprehensive toolkit for clinical Human Leukocyte
-Antigen (HLA) informatics, built on tidyverse <https://tidyverse.tidyverse.org/>
-principles and making use of genotype list string (GL string, Mack et al. (2023)
-<doi:10.1111/tan.15126>) for storing and computing HLA genotype data.  Specific
-functionalities include: coercion of HLA data in tabular format to and from GL
-string; calculation of matching and mismatching in all directions, with multiple
-output formats; automatic formatting of HLA data for searching within a GL
-string; truncation of molecular HLA data to a specific number of fields; and
-reading HLA genotypes in HML files and extracting the GL string.")
     (license license:gpl3+)))
 
 (define-public r-immunesim
@@ -15966,13 +15920,13 @@ association data, especially with large controls re-sequenced data.")
 (define-public r-iforecast
   (package
     (name "r-iforecast")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iForecast" version))
        (sha256
-        (base32 "1z2zf2hni9670f1svs10nck584rwb8pz1psxah6q4h7xnpqbfv10"))))
+        (base32 "05miwnmmsiilfym0mvk6n2jaw0dz4vpxfdvlhx2ivkhad0n8cs7l"))))
     (properties `((upstream-name . "iForecast")))
     (build-system r-build-system)
     (arguments
@@ -15982,8 +15936,7 @@ association data, especially with large controls re-sequenced data.")
     (home-page "https://cran.r-project.org/package=iForecast")
     (synopsis "Machine Learning Time Series Forecasting")
     (description
-     "Compute static, onestep and multistep time series forecasts for machine learning
-models.")
+     "Compute onestep and multistep time series forecasts for machine learning models.")
     (license license:gpl2+)))
 
 (define-public r-ifo

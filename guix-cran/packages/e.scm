@@ -537,6 +537,56 @@ tracking device.  Implements fixation and saccade detection using methods
 proposed by Salvucci and Goldberg (2000) <doi:10.1145/355017.355028>.")
     (license license:gpl3)))
 
+(define-public r-eyeris
+  (package
+    (name "r-eyeris")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eyeris" version))
+       (sha256
+        (base32 "086ibqs5rv72nrglsn0j7vnk7wv78id39lp1kg52blzkzhpwk1cm"))))
+    (properties `((upstream-name . "eyeris")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zoo
+                             r-withr
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-gsignal
+                             r-eyelinker
+                             r-dplyr
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://shawnschwartz.com/eyeris/")
+    (synopsis "Flexible, Extensible, & Reproducible Processing of Pupil Data")
+    (description
+     "Pupillometry offers a non-invasive window into the mind and has been used
+extensively as a psychophysiological readout of arousal signals linked with
+cognitive processes like attention, stress, and emotional states (see Clewett et
+al., 2020 <doi:10.1038/s41467-020-17851-9>; Kret & Sjak-Shie, 2018
+<doi:10.3758/s13428-018-1075-y>; Strauch, 2024
+<doi:10.1016/j.tins.2024.06.002>).  Yet, despite decades of pupillometry
+research, many established packages and workflows to date unfortunately lack
+design patterns based on Findability, Accessibility, Interoperability, and
+Reusability (FAIR) principles (see Wilkinson et al., 2016
+<doi:10.1038/sdata.2016.18> for more information).  eyeris', on the other hand,
+follows a design philosophy that provides users with an intuitive, modular,
+performant, and extensible pupillometry data preprocessing framework
+out-of-the-box.  eyeris introduces a Brain Imaging Data Structure (BIDS)-like
+organization for derivative (i.e., preprocessed) pupillometry data as well as an
+intuitive workflow for inspecting preprocessed pupil epochs using interactive
+output report files (Esteban et al., 2019 <doi:10.1038/s41592-018-0235-4>;
+Gorgolewski et al., 2016 <doi:10.1038/sdata.2016.44>).")
+    (license license:expat)))
+
 (define-public r-eyeread
   (package
     (name "r-eyeread")
@@ -1918,13 +1968,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "1p8g85nv29lr8ncih7mh6x43xcahh1fb7y43b7kywgg85i2w257z"))))
+        (base32 "1qnvh8ks2incns87r43qszcs3ks058zzfsd7p2ghnqhnldzkrh70"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (arguments
@@ -13538,13 +13588,13 @@ the book chapter is provided.")
 (define-public r-ensemblepenreg
   (package
     (name "r-ensemblepenreg")
-    (version "0.7")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EnsemblePenReg" version))
        (sha256
-        (base32 "00218yh0vzlb5g94asq5nz4i8blppskdzz9fl4c0v3fld3kxz2md"))))
+        (base32 "1rmqd382v98xllb60qb7jlyb3vah5y8kpa5jq4msps0cacszpvcy"))))
     (properties `((upstream-name . "EnsemblePenReg")))
     (build-system r-build-system)
     (arguments
@@ -13630,13 +13680,13 @@ forecasts and weather observations.")
 (define-public r-ensemblecv
   (package
     (name "r-ensemblecv")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EnsembleCV" version))
        (sha256
-        (base32 "1r9nmi2278lrwp5lpxhi78k10x8a5f5rh9xf1z5gfkc0bmpkhkvz"))))
+        (base32 "08z9k2z5gvbxb8gj7hqvyybvaamzv84raf30nbx5fzkwrqbqbdww"))))
     (properties `((upstream-name . "EnsembleCV")))
     (build-system r-build-system)
     (arguments
@@ -13896,13 +13946,13 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.2.10")
+    (version "1.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmSdmX" version))
        (sha256
-        (base32 "0ksgysrpamwc3bdzkbl1pycxikc7rwbq2mvqh5vcrys06vafyp1m"))))
+        (base32 "0kj6mc7japszffh7giplpaw6y3ca9dasb2cb4rp7zqql213ykvdv"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (arguments
@@ -13921,11 +13971,13 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
                              r-mgcv
                              r-maxnet
                              r-ks
+                             r-ggplot2
                              r-gbm
                              r-foreach
                              r-dt
                              r-doparallel
                              r-data-table
+                             r-cowplot
                              r-boot
                              r-aiccmodavg))
     (home-page "https://github.com/adamlilith/enmSdmX")
@@ -18981,34 +19033,6 @@ grid zones to blood glucose values, and for plotting both types of error grids
 in both mg/@code{mL} and mmol/L units.")
     (license license:expat)))
 
-(define-public r-efs
-  (package
-    (name "r-efs")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EFS" version))
-       (sha256
-        (base32 "1q8cf8dnxpv5s3lr9145y0wjhak4rz18dzah4xfs5qr4c8nlpl54"))))
-    (properties `((upstream-name . "EFS")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rocr r-randomforest r-proc r-party))
-    (home-page "https://cran.r-project.org/package=EFS")
-    (synopsis "Tool for Ensemble Feature Selection")
-    (description
-     "This package provides a function to check the importance of a feature based on a
-dependent classification variable.  An ensemble of feature selection methods is
-used to determine the normalized importance value of all features.  Combining
-these methods in one function (building the cumulative importance values)
-provides a stable feature selection tool.  This selection can also be viewed in
-a barplot using the @code{barplot_fs()} function and proved using the evaluation
-function @code{efs_eval()}.")
-    (license license:gpl2+)))
-
 (define-public r-efred
   (package
     (name "r-efred")
@@ -20695,13 +20719,13 @@ modules are intended for reuse across applications.")
 (define-public r-editbl
   (package
     (name "r-editbl")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "editbl" version))
        (sha256
-        (base32 "1754qg0ir1kb627wki2sxkpx41b84hd859n9vr65550pwhcqgncr"))))
+        (base32 "1596lps6day5xskqacg700yv303ci5w0ai9xd509p19hdcf8bq87"))))
     (properties `((upstream-name . "editbl")))
     (build-system r-build-system)
     (arguments
@@ -25861,23 +25885,23 @@ solution so that these kinds of models can be simulated simply.")
 (define-public r-earthtones
   (package
     (name "r-earthtones")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "earthtones" version))
        (sha256
-        (base32 "17biiw0ig8i8ihc2f8csp0bqryygg27ic2v1vrf81ax3qzhngy4l"))))
+        (base32 "1dhnhgafy1w97ajv55lmipw2bzj285y42fx15dyfhgyiixwazjv9"))))
     (properties `((upstream-name . "earthtones")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-ggmap))
+    (propagated-inputs (list r-terra r-sf r-maptiles))
     (home-page "https://cran.r-project.org/package=earthtones")
     (synopsis "Derive a Color Palette from a Particular Location on Earth")
     (description
-     "Downloads a satellite image via Google Maps/Earth (these are originally from a
+     "Downloads a satellite image via ESRI and maptiles (these are originally from a
 variety of aerial photography sources), translates the image into a perceptually
 uniform color space, runs one of a few different clustering algorithms on the
 colors in the image searching for a user-supplied number of colors, and returns

@@ -1054,13 +1054,13 @@ dependency as needed.")
 (define-public r-future-tests
   (package
     (name "r-future-tests")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.tests" version))
        (sha256
-        (base32 "10g1w99xqr7l0cn27642aphqcvfidgpas38f84r815yy6k1ryrlx"))))
+        (base32 "1ys7nx2i8mdah22x0av99yagh8ighbb4766z8dr1g1fwni3gxp4r"))))
     (properties `((upstream-name . "future.tests")))
     (build-system r-build-system)
     (arguments
@@ -1071,11 +1071,12 @@ dependency as needed.")
     (home-page "https://future.tests.futureverse.org")
     (synopsis "Test Suite for 'Future API' Backends")
     (description
-     "Backends implementing the Future API, as defined by the future package, should
-use the tests provided by this package to validate that they meet the minimal
-requirements of the Future API. The tests can be performed easily from within R
-or from outside of R from the command line making it straightforward to include
-them in package tests and in Continuous Integration (CI) pipelines.")
+     "Backends implementing the Future API <doi:10.32614/RJ-2021-048>, as defined by
+the future package, should use the tests provided by this package to validate
+that they meet the minimal requirements of the Future API. The tests can be
+performed easily from within R or from outside of R from the command line making
+it straightforward to include them in package tests and in Continuous
+Integration (CI) pipelines.")
     (license license:lgpl2.1+)))
 
 (define-public r-future-mirai
@@ -12834,13 +12835,13 @@ function names.")
 (define-public r-flashmm
   (package
     (name "r-flashmm")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLASHMM" version))
        (sha256
-        (base32 "1y63wpra1rr89qq1xvmsl6bidwwnfb6qdj621jkv45gn5m90216z"))))
+        (base32 "0hscl560acsc9qrcpyc53w0svqd1c0h3abximkzy6nw9sls6jyvw"))))
     (properties `((upstream-name . "FLASHMM")))
     (build-system r-build-system)
     (arguments
@@ -16134,6 +16135,42 @@ assumptions and models.  We provide a collection of methods from multiple
 disciplines under Matrix Completion, Imputation, and Inpainting.  See Davenport
 and Romberg (2016) <doi:10.1109/JSTSP.2016.2539100> for an overview of the
 topic.")
+    (license license:expat)))
+
+(define-public r-filibustr
+  (package
+    (name "r-filibustr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "filibustr" version))
+       (sha256
+        (base32 "1mdibdc8sn33qgr0pa5rzjqnms58bl681pcygq7n5v65r9b35llr"))))
+    (properties `((upstream-name . "filibustr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-lifecycle
+                             r-httr2
+                             r-haven
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/feinleib/filibustr")
+    (synopsis "Data Utilities for Congressional Research")
+    (description
+     "This package provides easy-to-understand and consistent interfaces for accessing
+data on the U.S. Congress.  The functions in filibustr streamline the process
+for importing data on Congress into R, removing the need to download and work
+from CSV files and the like.  Data sources include Voteview
+(<https://voteview.com/>), the U.S. Senate website (<https://www.senate.gov/>),
+and more.")
     (license license:expat)))
 
 (define-public r-filest
@@ -19750,13 +19787,13 @@ multivariate functional data (Cuesta-Albertos and Febrero-Bande (2010)
 (define-public r-fdamocca
   (package
     (name "r-fdamocca")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaMocca" version))
        (sha256
-        (base32 "0y54d8a38d5hjnh8iw2r4zl2d2xz72hjddhxbar91jk6zf3kzpsy"))))
+        (base32 "0bklzjiflr3wrxy3g2zn6mjkgna30smz1f3jcpznjfxkgy4jmgjq"))))
     (properties `((upstream-name . "fdaMocca")))
     (build-system r-build-system)
     (arguments
@@ -19773,10 +19810,11 @@ functional data) together with scalar covariates.  The spline coefficients and
 the covariates are modelled as a multivariate Gaussian mixture model, where the
 number of mixtures corresponds to the number of clusters.  The parameters of the
 model are estimated by maximizing the observed mixture likelihood via an EM
-algorithm (Arnqvist and SjÃ¶stedt de Luna, 2019) <@code{arXiv:1904.10265>}.  The
-clustering method is used to analyze annual lake sediment from lake KassjÃ¶n
-(Northern Sweden) which cover more than 6400 years and can be seen as historical
-records of weather and climate.")
+algorithm (Arnqvist and SjÃ¶stedt de Luna, 2019)
+<doi:10.48550/@code{arXiv.1904.10265>}.  The clustering method is used to
+analyze annual lake sediment from lake KassjÃ¶n (Northern Sweden) which cover
+more than 6400 years and can be seen as historical records of weather and
+climate.")
     (license license:gpl2+)))
 
 (define-public r-fdamixed
@@ -23991,20 +24029,20 @@ For further information on the method see Fruth, J., Roustant, O., Kuhnt, S.
 (define-public r-fangs
   (package
     (name "r-fangs")
-    (version "0.2.17")
+    (version "0.2.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fangs" version))
        (sha256
-        (base32 "0szjpldld3cq8dwwldv35rbaji307n6bi5k4kxma91rxhjz0id4v"))))
+        (base32 "176lvzx6r0ff238d99vf1jdryq6h4vqgcbnpga9ilm1zlv6myr8h"))))
     (properties `((upstream-name . "fangs")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list))
-    (home-page "https://github.com/dbdahl/fangs")
+    (home-page "https://github.com/dbdahl/fangs-package")
     (synopsis "Feature Allocation Neighborhood Greedy Search Algorithm")
     (description
      "This package provides a neighborhood-based, greedy search algorithm is performed

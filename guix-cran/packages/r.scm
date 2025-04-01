@@ -32,9 +32,6 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages databases)
   #:use-module (gnu packages documentation)
-  #:use-module (gnu packages version-control)
-  #:use-module (gnu packages mpi)
-  #:use-module (gnu packages base)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages tbb)
   #:use-module (guix-cran packages z)
@@ -10772,13 +10769,13 @@ Lindy Hop and West Coast Swing dance contests.")
 (define-public r-rprotobuf
   (package
     (name "r-rprotobuf")
-    (version "0.4.23")
+    (version "0.4.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RProtoBuf" version))
        (sha256
-        (base32 "0a26mm9rrb8iy4cdsivbkr5bbvfg15rmp2l31q4z96slm8m5hfhv"))))
+        (base32 "0s31i4rmvyslfl6zr4h0fkdk8r26jbh4r1dv15ddzglc7l0icb7j"))))
     (properties `((upstream-name . "RProtoBuf")))
     (build-system r-build-system)
     (arguments
@@ -12147,13 +12144,13 @@ the influence functions.")
 (define-public r-rpeglmen
   (package
     (name "r-rpeglmen")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPEGLMEN" version))
        (sha256
-        (base32 "0rbwxdh252vfx6qnplqqgmawpfk3naksi4wx11g1h7aj68cv8xjw"))))
+        (base32 "0870zz1grr4kk5p3lafmsff8670ad516f37p0nzlhwp3x4202awa"))))
     (properties `((upstream-name . "RPEGLMEN")))
     (build-system r-build-system)
     (arguments
@@ -12171,10 +12168,10 @@ the influence functions.")
     (description
      "This package implements the fast iterative shrinkage-thresholding algorithm
 (FISTA) algorithm to fit a Gamma distribution with an elastic net penalty as
-described in Chen, Arakvin and Martin (2018) <arxiv:1804.07780>.  An
-implementation for the case of the exponential distribution is also available,
-with details available in Chen and Martin (2018)
-<https://papers.ssrn.com/abstract_id=3085672>.")
+described in Chen, Arakvin and Martin (2018)
+<doi:10.48550/@code{arXiv.1804.07780>}.  An implementation for the case of the
+exponential distribution is also available, with details available in Chen and
+Martin (2018) <doi:10.2139/ssrn.3085672>.")
     (license license:gpl2+)))
 
 (define-public r-rpeakchrom
@@ -25048,31 +25045,6 @@ methods (<https://www.itis.gov/ws_description.html>), as well as the Solr web
 service (<https://www.itis.gov/solr_documentation.html>).")
     (license license:expat)))
 
-(define-public r-ritch
-  (package
-    (name "r-ritch")
-    (version "0.1.26")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RITCH" version))
-       (sha256
-        (base32 "0n8vd7jdw5hb4vx3nspg64m52j2n2pmjh649nr87444dkfnaf4wc"))))
-    (properties `((upstream-name . "RITCH")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpp r-nanotime r-data-table r-bit64))
-    (home-page "https://davzim.github.io/RITCH/")
-    (synopsis "R Parser for the ITCH-Protocol")
-    (description
-     "Allows to efficiently parse, filter, and write binary ITCH Files (Version 5.0)
-containing detailed financial transactions as distributed by NASDAQ to an R
-data.table.")
-    (license license:expat)))
-
 (define-public r-ritc
   (package
     (name "r-ritc")
@@ -25100,19 +25072,19 @@ model.")
 (define-public r-ritalic
   (package
     (name "r-ritalic")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ritalic" version))
        (sha256
-        (base32 "0gfv8pjlral6g76scnlqsx9grmjybyh6b1vn67raxmglfwfivnch"))))
+        (base32 "06x125x0mj29mgb7l1d9mslr228x8dg18w30c3zscllsx2bqw099"))))
     (properties `((upstream-name . "ritalic")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-jsonlite r-httr))
+    (propagated-inputs (list r-sf r-jsonlite r-httr r-ggplot2))
     (home-page "https://github.com/plant-data/ritalic")
     (synopsis "Interface to the ITALIC Database of Lichen Biodiversity")
     (description
@@ -26345,34 +26317,6 @@ in plots or for fun!")
 (<https://imagej.net>) Region of Interest (ROI) files, to plot the ROIs and to
 convert them to spatstat (<https://spatstat.org/>) spatial patterns.")
     (license license:gpl3)))
-
-(define-public r-rim
-  (package
-    (name "r-rim")
-    (version "0.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rim" version))
-       (sha256
-        (base32 "05bi61zwrmwd3nm5jvmlaq8cxwabpb3xfji45q2wggvbgj63wm9f"))))
-    (properties `((upstream-name . "rim")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list maxima))
-    (propagated-inputs (list r-rcpp r-r6 r-knitr r-globaloptions))
-    (home-page "https://rcst.github.io/rim/")
-    (synopsis "Interface to 'Maxima', Enabling Symbolic Computation")
-    (description
-     "An interface to the powerful and fairly complete computer algebra system
-Maxima'.  It can be used to start and control Maxima from within R by entering
-Maxima commands.  Results from Maxima can be parsed and evaluated in R. It
-facilitates outputting results from Maxima in @code{LaTeX} and @code{MathML}'.
-2D and 3D plots can be displayed directly.  This package also registers a
-knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents.")
-    (license license:gpl3+)))
 
 (define-public r-rilostat
   (package
@@ -30005,13 +29949,13 @@ evaluating outputs and assumptions.")
 (define-public r-rfplus
   (package
     (name "r-rfplus")
-    (version "1.4-0")
+    (version "1.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RFplus" version))
        (sha256
-        (base32 "1pwa2798zkwmiwsxmjxa5jimkdm84fvnz3shh43adra423d4ri4b"))))
+        (base32 "0hz8w84wcwn3lymh5rdv1y5g4yisij80y12k6pnavqca6ard02gn"))))
     (properties `((upstream-name . "RFplus")))
     (build-system r-build-system)
     (arguments
@@ -43061,37 +43005,45 @@ subcommunities.  Richard Reeve, et al. (2016) <@code{arXiv:1404.6520v3>}.")
 (define-public r-rdistance
   (package
     (name "r-rdistance")
-    (version "3.1.4")
+    (version "4.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdistance" version))
        (sha256
-        (base32 "081w6ppmyhf6iwvxy4pwxv0gw21nfcncfn06jf8qmgsm7wvrz8bg"))))
+        (base32 "1jdk8ldcsqphx39vplsvcmwd4dnbkd4q9gpc3b3afw6x5bmycm27"))))
     (properties `((upstream-name . "Rdistance")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-units r-crayon))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-withr
+                             r-units
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-progress
+                             r-dplyr
+                             r-crayon))
     (home-page "https://github.com/tmcd82070/Rdistance/wiki")
-    (synopsis
-     "Distance-Sampling Analyses for Density and Abundance Estimation")
+    (synopsis "Density and Abundance from Distance-Sampling Surveys")
     (description
-     "Distance-sampling analyses (<doi:10.1007/978-3-319-19219-2>) estimate density
-and abundance of survey targets (e.g., animals) when detection declines with
-distance.  Distance-sampling is popular ecology, especially when survey targets
-are observed from aerial platforms (e.g., airplane or drone), surface vessels
-(e.g., boat or truck), or along walking transects.  Both point and line
-transects can be analyzed.  Outputs include overall (study area) density and
-abundance, effective sampling distances, and model fit statistics.  A large
-suite of classical, parametric detection functions (e.g., half-normal, hazard
-rate) is included along with uncommon parametric functions (e.g., Gamma,
-negative exponential).  Non-parametric smoothed distance functions are included.
- Measurement unit integrity is enforced via internal unit conversion.  The help
-files and vignettes have been vetted by multiple authors and tested in workshop
-settings.")
+     "Distance-sampling (<doi:10.1007/978-3-319-19219-2>) estimates density and
+abundance of survey targets (e.g., animals) when detection probability declines
+with distance.  Distance-sampling is popular in ecology, especially when survey
+targets are observed from aerial platforms (e.g., airplane or drone), surface
+vessels (e.g., boat or truck), or along walking transects.  Distance-sampling
+includes line-transect studies that measure observation distances as the closest
+approach of the sample route (transect) to the target (i.e., perpendicular
+off-transect distance), and point-transect studies that measure observation
+distances from stationary observers to the target (i.e., radial distance).  The
+routines included here fit smooth (parametric) curves to histograms of
+observation distances and use those functions to compute effective sampling
+distances, density of targets in the surveyed area, and abundance of targets in
+a surrounding study area.  Curve shapes include the half-normal, hazard rate,
+and negative exponential functions.  Physical measurement units are required and
+used throughout to ensure density is reported correctly.  The help files are
+extensive and have been vetted by multiple authors.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rdist
@@ -44975,37 +44927,6 @@ for the calendaring subset).  See the included file AUTHORS for a full list of
 contributors to both @code{QuantLib} and Quantuccia'.")
     (license license:gpl2+)))
 
-(define-public r-rcppplanc
-  (package
-    (name "r-rcppplanc")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RcppPlanc" version))
-       (sha256
-        (base32 "1k9ai2h42xj934566ly5wy56j3jldr357iy1afyvd12aihxkd5my"))))
-    (properties `((upstream-name . "RcppPlanc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list patch hwloc hdf5 git))
-    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-matrix
-                             r-hdf5r-extra))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RcppPlanc")
-    (synopsis "Parallel Low-Rank Approximation with Nonnegativity Constraints")
-    (description
-     "Rcpp bindings for PLANC', a highly parallel and extensible NMF/NTF (Non-negative
-Matrix/Tensor Factorization) library.  Wraps algorithms described in Kannan et.
-al (2018) <doi:10.1109/TKDE.2017.2767592> and Eswar et.  al (2021)
-<doi:10.1145/3432185>.  Implements algorithms described in Welch et al. (2019)
-<doi:10.1016/j.cell.2019.05.006>, Gao et al. (2021)
-<doi:10.1038/s41587-021-00867-x>, and Kriebel & Welch (2022)
-<doi:10.1038/s41467-022-28431-4>.")
-    (license license:gpl2+)))
-
 (define-public r-rcppnloptexample
   (package
     (name "r-rcppnloptexample")
@@ -45467,13 +45388,13 @@ approximation.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCWB" version))
        (sha256
-        (base32 "0igkmm0qbj2gb0m18f6pjnvxdqraiypvlpz8qyc4hng2l6im5wih"))))
+        (base32 "04yhfqs3zhmjapx8q5r6p4rs5nimal50bcmniwmm5036yxypddsd"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
     (arguments
@@ -45490,14 +45411,14 @@ query engine to efficiently analyze large corpora
 (<https://cwb.sourceforge.io>). @code{RcppCWB} is licensed under the GNU GPL-3,
 in line with the GPL-3 license of the CWB
 (<https://www.r-project.org/Licenses/GPL-3>).  The CWB relies on pcre2 (BSD
-license, see <http://www.pcre.org/licence.txt>) and GLib (LGPL license, see
-<https://www.gnu.org/licenses/lgpl-3.0.en.html>).  See the file LICENSE.note for
-further information.  The package includes modified code of the rcqp package
-(GPL-2, see <https://cran.r-project.org/package=rcqp>).  The original work of
-the authors of the rcqp package is acknowledged with great respect, and they are
-listed as authors of this package.  To achieve cross-platform portability
-(including Windows), using Rcpp for wrapper code is the approach used by
-@code{RcppCWB}'.")
+license, see <https://github.com/PCRE2Project/pcre2/blob/master/LICENCE.md>) and
+GLib (LGPL license, see <https://www.gnu.org/licenses/lgpl-3.0.en.html>).  See
+the file LICENSE.note for further information.  The package includes modified
+code of the rcqp package (GPL-2, see <https://cran.r-project.org/package=rcqp>).
+ The original work of the authors of the rcqp package is acknowledged with great
+respect, and they are listed as authors of this package.  To achieve
+cross-platform portability (including Windows), using Rcpp for wrapper code is
+the approach used by @code{RcppCWB}'.")
     (license license:gpl3)))
 
 (define-public r-rcppcolors
@@ -49420,13 +49341,13 @@ possible to link behavioral labels extracted from BORIS software
 (define-public r-rblpapi
   (package
     (name "r-rblpapi")
-    (version "0.3.15")
+    (version "0.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rblpapi" version))
        (sha256
-        (base32 "02fjk0b7drsqfjxxiacvp3b9rvygbxnf1n1b9dc4n4jws2s0bnq1"))))
+        (base32 "1wsnrwbfwijg8gs897kk4pkqy0xznk4b6mv3ap2rc5mszwnm18fn"))))
     (properties `((upstream-name . "Rblpapi")))
     (build-system r-build-system)
     (arguments
@@ -52095,13 +52016,13 @@ Neyman', Rosenberger Rosenberger et al. (2001)
 (define-public r-rarestr
   (package
     (name "r-rarestr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rarestR" version))
        (sha256
-        (base32 "1hyk3c4m6v19v30728mlxlq36hkirm6isi2j1lbzkvbs6k54pc7x"))))
+        (base32 "085ws17qsjz8d7h1lljl0zajgcpx71hfahr2m23khb7yfpjd0rk5"))))
     (properties `((upstream-name . "rarestR")))
     (build-system r-build-system)
     (arguments
@@ -53229,13 +53150,13 @@ monotonically-transformed data.")
 (define-public r-rankcorr
   (package
     (name "r-rankcorr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankCorr" version))
        (sha256
-        (base32 "0if7kp3f4dz164kw4lj7s4fq9qfjxgm6vz2i9p93hnipc8cg3azb"))))
+        (base32 "1xrb4550lbzmw5n1mm2lagf32h723f9njpp622bz417gzc99m3s9"))))
     (properties `((upstream-name . "rankCorr")))
     (build-system r-build-system)
     (arguments
@@ -53247,8 +53168,8 @@ monotonically-transformed data.")
      "Total, Between-, and Within-Cluster Spearman Rank Correlations for Clustered Data")
     (description
      "Estimates the total, between-, and within-cluster Spearman rank correlations for
-continuous and ordinal clustered data.
-<https://github.com/shengxintu/@code{rankCorr>}.")
+continuous and ordinal clustered data.  See Tu et al. (2024)
+<DOI:10.1002/sim.10326> for details.")
     (license license:gpl2+)))
 
 (define-public r-rankcluster

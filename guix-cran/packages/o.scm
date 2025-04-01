@@ -1255,13 +1255,13 @@ biosphere please see Lynch and Neufeld (2015) <doi:10.1038/nrmicro3400>).")
 (define-public r-ottrpal
   (package
     (name "r-ottrpal")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ottrpal" version))
        (sha256
-        (base32 "0wjavfgn9cjk83bsrcj820nxairb5jxszryqzppwwbjf844vi17y"))))
+        (base32 "06w5aw1ir544h4fdz5dg7qs1b5nng1jsn98fxyy1k1gcxch2lspp"))))
     (properties `((upstream-name . "ottrpal")))
     (build-system r-build-system)
     (arguments
@@ -1269,7 +1269,10 @@ biosphere please see Lynch and Neufeld (2015) <doi:10.1038/nrmicro3400>).")
       #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-xml2
+                             r-webshot2
+                             r-tidyr
                              r-stringr
+                             r-spelling
                              r-rvest
                              r-rprojroot
                              r-rmarkdown
@@ -1277,15 +1280,12 @@ biosphere please see Lynch and Neufeld (2015) <doi:10.1038/nrmicro3400>).")
                              r-r-utils
                              r-purrr
                              r-openssl
-                             r-magrittr
                              r-knitr
                              r-jsonlite
                              r-httr
-                             r-glue
-                             r-fs
-                             r-dplyr
-                             r-curl
-                             r-bookdown))
+                             r-googledrive
+                             r-gitcreds
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jhudsl/ottrpal")
     (synopsis
@@ -7380,13 +7380,13 @@ Format, see <https://opendataformat.github.io/>.")
 (define-public r-opencv
   (package
     (name "r-opencv")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opencv" version))
        (sha256
-        (base32 "0dm3h3hb5y2cys5a8czrwdqm13lmf9hpyzyn559f7b5nysbi8baz"))))
+        (base32 "1ydmms5xf92qn4417007p71c8w360x9h1sw2b3hql3l7dq12f3xa"))))
     (properties `((upstream-name . "opencv")))
     (build-system r-build-system)
     (arguments

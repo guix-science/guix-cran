@@ -7406,56 +7406,6 @@ Numbers proposed by Chao, Chiu and Jost (2014)
 <doi:10.1146/annurev-ecolsys-120213-091540>.")
     (license license:expat)))
 
-(define-public r-hilldiv
-  (package
-    (name "r-hilldiv")
-    (version "1.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hilldiv" version))
-       (sha256
-        (base32 "1jp4xvrpqd575y2x0i73s0bq708bzi6gdhqgz85bia6d5kf05lq9"))))
-    (properties `((upstream-name . "hilldiv")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-scales
-                             r-rcolorbrewer
-                             r-qgraph
-                             r-ggpubr
-                             r-ggplot2
-                             r-geiger
-                             r-fsa
-                             r-data-table
-                             r-ape))
-    (home-page "https://github.com/anttonalberdi/hilldiv")
-    (synopsis "Integral Analysis of Diversity Based on Hill Numbers")
-    (description
-     "This package provides tools for analysing, comparing, visualising and
-partitioning diversity based on Hill numbers.  hilldiv is an R package that
-provides a set of functions to assist analysis of diversity for diet
-reconstruction, microbial community profiling or more general ecosystem
-characterisation analyses based on Hill numbers, using OTU/ASV tables and
-associated phylogenetic trees as inputs.  The package includes functions for
-(phylo)diversity measurement, (phylo)diversity profile plotting,
-(phylo)diversity comparison between samples and groups, (phylo)diversity
-partitioning and (dis)similarity measurement.  All of these grounded in
-abundance-based and incidence-based Hill numbers.  The statistical framework
-developed around Hill numbers encompasses many of the most broadly employed
-diversity (e.g. richness, Shannon index, Simpson index), phylogenetic diversity
-(e.g. Faith's PD, Allen's H, Rao's quadratic entropy) and dissimilarity (e.g.
-Sorensen index, Unifrac distances) metrics.  This enables the most common
-analyses of diversity to be performed while grounded in a single statistical
-framework.  The methods are described in Jost et al. (2007)
-<DOI:10.1890/06-1736.1>, Chao et al. (2010) <DOI:10.1098/rstb.2010.0272> and
-Chiu et al. (2014) <DOI:10.1890/12-0960.1>; and reviewed in the framework of
-molecularly characterised biological systems in Alberdi & Gilbert (2019)
-<DOI:10.1111/1755-0998.13014>.")
-    (license license:gpl3)))
-
 (define-public r-hildareadr
   (package
     (name "r-hildareadr")

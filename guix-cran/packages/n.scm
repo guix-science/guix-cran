@@ -15899,13 +15899,13 @@ using NCA metrics.")
 (define-public r-ncaavolleyballr
   (package
     (name "r-ncaavolleyballr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncaavolleyballr" version))
        (sha256
-        (base32 "1vhkwfk542ld9iy3f5yi10zvif0kgp201x15znj30n220363xpgq"))))
+        (base32 "04jcwkvs0l8s5znxxs25wmzazs3q5nqdy7m6dvqm8rz0hb3fvsa4"))))
     (properties `((upstream-name . "ncaavolleyballr")))
     (build-system r-build-system)
     (arguments
@@ -15923,7 +15923,7 @@ using NCA metrics.")
                              r-dplyr
                              r-curl
                              r-cli))
-    (native-inputs (list r-quarto))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/JeffreyRStevens/ncaavolleyballr")
     (synopsis "Extract Data from NCAA Women's and Men's Volleyball Website")
     (description

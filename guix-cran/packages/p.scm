@@ -3179,13 +3179,13 @@ and easy-to-read output.")
 (define-public r-psychwordvec
   (package
     (name "r-psychwordvec")
-    (version "2023.9")
+    (version "2025.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PsychWordVec" version))
        (sha256
-        (base32 "04dp4k0x2nmcfiqbyzirhr595lgishxh0qbymy210g96sghbrpf3"))))
+        (base32 "0v86jpzbji05f6iama08qr496mmdrnr0frnssqr2zhm2ll36x31q"))))
     (properties `((upstream-name . "PsychWordVec")))
     (build-system r-build-system)
     (arguments
@@ -3194,12 +3194,10 @@ and easy-to-read output.")
     (propagated-inputs (list r-word2vec
                              r-vroom
                              r-text2vec
-                             r-text
                              r-stringr
                              r-rtsne
                              r-rsparse
                              r-rgl
-                             r-reticulate
                              r-qgraph
                              r-purrr
                              r-psych
@@ -3216,17 +3214,15 @@ and easy-to-read output.")
     (description
      "An integrative toolbox of word embedding research that provides: (1) a
 collection of pre-trained static word vectors in the .RData compressed format
-<https://psychbruce.github.io/@code{WordVector_RData.pdf>}; (2) a series of
+<https://psychbruce.github.io/@code{WordVector_RData.pdf>}; (2) a group of
 functions to process, analyze, and visualize word vectors; (3) a range of tests
 to examine conceptual associations, including the Word Embedding Association
 Test <doi:10.1126/science.aal4230> and the Relative Norm Distance
-<doi:10.1073/pnas.1720347115>, with permutation test of significance; (4) a set
-of training methods to locally train (static) word vectors from text corpora,
-including Word2Vec <@code{arXiv:1301.3781>}, @code{GloVe}
-<doi:10.3115/v1/D14-1162>, and @code{FastText} <@code{arXiv:1607.04606>}; (5) a
-group of functions to download pre-trained language models (e.g., GPT', BERT')
-and extract contextualized (dynamic) word vectors (based on the R package
-text').")
+<doi:10.1073/pnas.1720347115>, with permutation test of significance; and (4) a
+set of training methods to locally train (static) word vectors from text
+corpora, including Word2Vec <doi:10.48550/@code{arXiv.1301.3781>}, @code{GloVe}
+<doi:10.3115/v1/D14-1162>, and @code{FastText}
+<doi:10.48550/@code{arXiv.1607.04606>}.")
     (license license:gpl3)))
 
 (define-public r-psychtools
@@ -4621,13 +4617,13 @@ method.  For details on this method see: Sulewski (2019)
 (define-public r-psgd
   (package
     (name "r-psgd")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSGD" version))
        (sha256
-        (base32 "0nmxcwrznibx2xzgv3zl456qf1251457f31dapyj0mxg4r8pdl8r"))))
+        (base32 "0895lkrhahijc339c38sfrr95nagg5vbava37zsw9vpm7vdmh37n"))))
     (properties `((upstream-name . "PSGD")))
     (build-system r-build-system)
     (arguments
@@ -13321,13 +13317,13 @@ fixed effects with penalized intercepts by LASSO.")
 (define-public r-pqrbayes
   (package
     (name "r-pqrbayes")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pqrBayes" version))
        (sha256
-        (base32 "0hrs4m9i9rfp5nv73smhdlwk9fibmnsbvbbg6npn2wikxczwwvza"))))
+        (base32 "16p6qfw2jqjwc3zbk716xivrnw447is59rq270hsndhsmmz7rl82"))))
     (properties `((upstream-name . "pqrBayes")))
     (build-system r-build-system)
     (arguments
@@ -13345,7 +13341,8 @@ regression models (Fan et al. (2024) <doi:10.3390/e26090794> and Ren et al.
 (2023) <doi:10.1111/biom.13670>), and regularized quantile varying coefficient
 models (Zhou et al.(2023) <doi:10.1016/j.csda.2023.107808>).  In particular,
 valid robust Bayesian inferences under both models in the presence of
-heavy-tailed errors can be validated on finite samples.  The Markov Chain Monte
+heavy-tailed errors can be validated on finite samples.  Additional models
+including robust Bayesian group LASSO are also included.  The Markov Chain Monte
 Carlo (MCMC) algorithms of the proposed and alternative models are implemented
 in C++.")
     (license license:gpl2)))
@@ -19637,13 +19634,13 @@ variables.  Also known as latent structure analysis.")
 (define-public r-polaroid
   (package
     (name "r-polaroid")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polaroid" version))
        (sha256
-        (base32 "11i1xxvj3ik8kjpm8q1ind3qkwrgyhv0sdcynwj4wld2n6i1v2v5"))))
+        (base32 "0zrcas4g2xfjcgn59ka7yv22bgvbpl00bik53xabixdzjb0irn78"))))
     (properties `((upstream-name . "polaroid")))
     (build-system r-build-system)
     (arguments
@@ -23233,13 +23230,13 @@ within \"stat_function\" in a ggplot2 object.")
 (define-public r-plotftir
   (package
     (name "r-plotftir")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PlotFTIR" version))
        (sha256
-        (base32 "00vx8qxbab7r4mh8caz9lwm05dhz845ak9l70nx460byf0zwarxv"))))
+        (base32 "0dv48861nsmgyp97lclzinrx3j25nv60574jxgzvbfw3bn1dc2lm"))))
     (properties `((upstream-name . "PlotFTIR")))
     (build-system r-build-system)
     (arguments
@@ -27297,13 +27294,13 @@ has changed in this new version.  The old version is still available at R-Forge.
 (define-public r-pikchr
   (package
     (name "r-pikchr")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pikchr" version))
        (sha256
-        (base32 "0zz3bmj2glaml0yvs6gng2kkma0337zir1hlgyrssd1clgk4bijp"))))
+        (base32 "1x2fg81fyhfj6961132ai3fs19h38svli48awli2hzyvwbrys9lx"))))
     (properties `((upstream-name . "pikchr")))
     (build-system r-build-system)
     (arguments
@@ -34714,13 +34711,13 @@ the methods proposed in Guerrier et al. (2023) <@code{arXiv:2012.10745>}.")
 (define-public r-pema
   (package
     (name "r-pema")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pema" version))
        (sha256
-        (base32 "0ymzq5s86z97sac1gq8qdh37p2aa39j4pz1n29ga3l0kmv5cxjky"))))
+        (base32 "1dhpk7f1my0ia20am0bmd4cqx1a256ziqslq6bzgq38ksjc39rni"))))
     (properties `((upstream-name . "pema")))
     (build-system r-build-system)
     (arguments
@@ -34735,6 +34732,7 @@ the methods proposed in Guerrier et al. (2023) <@code{arXiv:2012.10745>}.")
                              r-rcppeigen
                              r-rcpp
                              r-ggplot2
+                             r-cli
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cjvanlissa/pema")

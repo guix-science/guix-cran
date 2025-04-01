@@ -1343,13 +1343,13 @@ general trees, Bioinformatics, 30, 2079â2080
 (define-public r-quartabs
   (package
     (name "r-quartabs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quartabs" version))
        (sha256
-        (base32 "047zavswc048a06zaadn5afx9hh7ipysxq1fjilpx6yyzyqsmvrv"))))
+        (base32 "0qif4fm3pmsqgli7xyszfai7xaxq1n49qm5c3mqiaq47f26nvn96"))))
     (properties `((upstream-name . "quartabs")))
     (build-system r-build-system)
     (arguments

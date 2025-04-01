@@ -837,13 +837,13 @@ GWAS Catalog data by accessing the REST API
 (define-public r-gwasinspector
   (package
     (name "r-gwasinspector")
-    (version "1.7.1")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWASinspector" version))
        (sha256
-        (base32 "16q5r3fzli7vml481fl56mzhl0w8bp0bp70rlsw20a6vzhnk5xf2"))))
+        (base32 "04xfp1njikvcfmcagb4lgpv7aqj6rj0j58gxkny4cy3b1pd3wswd"))))
     (properties `((upstream-name . "GWASinspector")))
     (build-system r-build-system)
     (arguments
@@ -862,7 +862,7 @@ GWAS Catalog data by accessing the REST API
                              r-futile-logger
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "http://GWASinspector.com")
+    (home-page "https://GWASinspector.com")
     (synopsis "Comprehensive and Easy to Use Quality Control of GWAS Results")
     (description
      "When evaluating the results of a genome-wide association study (GWAS), it is
@@ -1492,13 +1492,13 @@ from Git', SQLite', and Make to provide a lab notebook for machine learning.")
 (define-public r-guider
   (package
     (name "r-guider")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "guideR" version))
        (sha256
-        (base32 "0n5gxsf310v3gclzjvfr6df46zmdv6n4jjqrf3pjazmn3x6fszjs"))))
+        (base32 "0ln887nx74fw69gi2xynkkijcwsnbpr1va9gmkh99f5j92ih35ip"))))
     (properties `((upstream-name . "guideR")))
     (build-system r-build-system)
     (arguments
@@ -17338,13 +17338,13 @@ few minutes.")
 (define-public r-gie
   (package
     (name "r-gie")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gie" version))
        (sha256
-        (base32 "0dgzmlza4mxghs3f9d81p03f91bz7v07af1d6zpfmaif3lzc2q77"))))
+        (base32 "1izi05p787b3s5myz5wpb6pl2qsm5mdc552r8sp7h53j25khji0r"))))
     (properties `((upstream-name . "gie")))
     (build-system r-build-system)
     (arguments
@@ -20442,19 +20442,20 @@ and gnuplot in one project.")
 (define-public r-ggnormalviolin
   (package
     (name "r-ggnormalviolin")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggnormalviolin" version))
        (sha256
-        (base32 "1gbv2b86nznw5bs05c4ns96b8hsxkhikhcf8syl2qbbafzy8vx6y"))))
+        (base32 "1xgn991sg5m9ggyhv5w3fgdmf2a1q02samkhv8625vy4j3av0wvz"))))
     (properties `((upstream-name . "ggnormalviolin")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-scales r-magrittr r-ggplot2 r-dplyr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/wjschne/ggnormalviolin")
     (synopsis "'ggplot2' Extension to Make Normal Violin Plots")
     (description
@@ -21056,13 +21057,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "1kk0y1bc3kb4giklk3jjcc0kj3y9ncqcnrx8ycvrbzdrnr284jmi"))))
+        (base32 "05cq7wcxvnfxv3a7yyp7kas4rd9r2dxvl57gd7g2xazgb1zn6lrm"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (arguments
@@ -21072,6 +21073,7 @@ regression curves.")
                              r-rcpp
                              r-matlab
                              r-jsonlite
+                             r-digest
                              r-data-table
                              r-bitops))
     (home-page "https://github.com/wadpac/GGIRread/")
@@ -24568,13 +24570,13 @@ Markdown HTML documents.")
 (define-public r-get
   (package
     (name "r-get")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GET" version))
        (sha256
-        (base32 "1648dg7vhvy4yljq0m0y0a4b67n81d34nygmqr1kci9f5avcgjjr"))))
+        (base32 "1bhcvdai9a43plra7k9a07hgzcz0q6r8by5h4yza8scqc1vcbga3"))))
     (properties `((upstream-name . "GET")))
     (build-system r-build-system)
     (arguments
@@ -27915,13 +27917,13 @@ behavior) and a radial component.  The methods are described in Nolan (2016)
 (define-public r-genset
   (package
     (name "r-genset")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genset" version))
        (sha256
-        (base32 "02zldi136sfnq1i8pwb3b97zd44pjdgnfadk4bqp36wm8x95phwi"))))
+        (base32 "0zm4iy5aci6dhhvscik3j0r5c4fj2wn6f075lg56rmqkcphngnz2"))))
     (properties `((upstream-name . "genset")))
     (build-system r-build-system)
     (arguments
@@ -27929,12 +27931,12 @@ behavior) and a radial component.  The methods are described in Nolan (2016)
       #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=genset")
-    (synopsis "Generates Data Sets for Class Demonstrations")
+    (synopsis "Generates Multiple Data Sets")
     (description
-     "For educational purposes to demonstrate the importance of multiple regression.
-The genset function generates a data set from an initial data set to have the
-same summary statistics (mean, median, and standard deviation) but opposing
-regression results.")
+     "Generate multiple data sets for educational purposes to demonstrate the
+importance of multiple regression.  The genset function generates a data set
+from an initial data set to have the same summary statistics (mean, median, and
+standard deviation) but opposing regression results.")
     (license license:gpl2)))
 
 (define-public r-genseir
@@ -29573,13 +29575,13 @@ reduction methods is published in <DOI: 10.1016/j.mex.2020.101093>.")
 (define-public r-generalizedhyperbolic
   (package
     (name "r-generalizedhyperbolic")
-    (version "0.8-6")
+    (version "0.8-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneralizedHyperbolic" version))
        (sha256
-        (base32 "1a9n9hb6cxp9silcpskhp67l7p1azm72y4dngj48nngcavrm8i4r"))))
+        (base32 "08z4jz9lzyc0afvxqw6m2p9h54lqk6hn1a8mva5lrddxlxf04qbv"))))
     (properties `((upstream-name . "GeneralizedHyperbolic")))
     (build-system r-build-system)
     (arguments
@@ -29775,13 +29777,13 @@ design for GWAS studies.")
 (define-public r-genenr
   (package
     (name "r-genenr")
-    (version "1.0.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geneNR" version))
        (sha256
-        (base32 "1imihy6afhhg667hs31ayq657if1b2gn204h4rysbmlayh9kbw4g"))))
+        (base32 "0y9nwfrkk6ws8wc1qmnsxm59gmbmmzda4v292d9xqzmnm13hyln3"))))
     (properties `((upstream-name . "geneNR")))
     (build-system r-build-system)
     (arguments
@@ -29789,21 +29791,25 @@ design for GWAS studies.")
       #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-writexl
+                             r-vcfr
                              r-stringr
                              r-rvest
                              r-readr
-                             r-httr))
+                             r-httr
+                             r-ggrepel
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=geneNR")
-    (synopsis "Automated Gene Identification for Post-GWAS Analysis")
+    (synopsis "Automated Gene Identification for Post-GWAS and QTL Analysis")
     (description
-     "Facilitates the post-Genome Wide Association Studies (GWAS) analysis of
-identifying candidate genes within user-defined search window, based on the
-identified Single Nucleotide Polymorphisms (SNPs) as given by Mazumder AK (2024)
-<doi:10.1038/s41598-024-66903-3>.  It supports candidate gene analysis for wheat
-and rice.  Just import your GWAS result as explained in the sample_data file and
-the function does all the manual search and retrieve candidate genes for you,
-while exporting the results into ready-to-use output.")
+     "Facilitates the post-Genome Wide Association Studies (GWAS) and Quantitative
+Trait Loci (QTL) analysis of identifying candidate genes within user-defined
+search window, based on the identified Single Nucleotide Polymorphisms (SNPs) as
+given by Mazumder AK (2024) <doi:10.1038/s41598-024-66903-3>.  It supports
+candidate gene analysis for wheat and rice.  Just import your GWAS result as
+explained in the sample_data file and the function does all the manual search
+and retrieve candidate genes for you, while exporting the results into
+ready-to-use output.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-genenmf
@@ -30687,13 +30693,13 @@ quantitative trait locus studies.")
 (define-public r-gemini-r
   (package
     (name "r-gemini-r")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gemini.R" version))
        (sha256
-        (base32 "1x82h5ii3scp8fji21cg6sccyk00q5w37ha000d9vxygnk4qgisn"))))
+        (base32 "1861j4pramgdq8pzq027qqx89gr9h5gyb2cq5fdrjv4rnkcbpfjg"))))
     (properties `((upstream-name . "gemini.R")))
     (build-system r-build-system)
     (arguments
@@ -31668,36 +31674,6 @@ procedure proposed in PeÃ±a, Smucler and Yohai (2020)
 be used in the generalized dynamic principal components as well as the number of
 components required for a given reconstruction accuracy.")
     (license license:gpl2+)))
-
-(define-public r-gdm
-  (package
-    (name "r-gdm")
-    (version "1.6.0-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gdm" version))
-       (sha256
-        (base32 "1yv60cagsw3xi4cqlbj1gw0hyqbpvimnivm02zlr5f858f3530hp"))))
-    (properties `((upstream-name . "gdm")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vegan
-                             r-reshape2
-                             r-rcpp
-                             r-pbapply
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://mfitzpatrick.al.umces.edu/gdm/")
-    (synopsis "Generalized Dissimilarity Modeling")
-    (description
-     "This package provides a toolkit with functions to fit, plot, summarize, and
-apply Generalized Dissimilarity Models.  Mokany K, Ware C, Woolley SNC, Ferrier
-S, Fitzpatrick MC (2022) <doi:10.1111/geb.13459> Ferrier S, Manion G, Elith J,
-Richardson K (2007) <doi:10.1111/j.1472-4642.2007.00341.x>.")
-    (license license:gpl3+)))
 
 (define-public r-gdldata
   (package

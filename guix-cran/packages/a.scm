@@ -1323,13 +1323,13 @@ Ye, C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
 (define-public r-avesperu
   (package
     (name "r-avesperu")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avesperu" version))
        (sha256
-        (base32 "14yfxmzmxsqqzf2yh56mqhgm1nfliclf3a48a2jj9l88zyjmg67p"))))
+        (base32 "122jcl1wn47w19rv57v9dnrvs05044zp7d77vj1zxv2fkc5na4ch"))))
     (properties `((upstream-name . "avesperu")))
     (build-system r-build-system)
     (arguments
@@ -9394,13 +9394,13 @@ shark and ray growth studies: strengths, weaknesses and the future\"
 (define-public r-aquality
   (package
     (name "r-aquality")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AQuality" version))
        (sha256
-        (base32 "159qj5429iq7za2fqjzn3f15bs9vcr8n43vynfhl34n6i0f44zi0"))))
+        (base32 "09ikijjbgh8gk5glh2w79879f2cq3a65f3injrylafzgww5677i4"))))
     (properties `((upstream-name . "AQuality")))
     (build-system r-build-system)
     (arguments
@@ -9411,9 +9411,9 @@ shark and ray growth studies: strengths, weaknesses and the future\"
     (description
      "The functions proposed in this package allows to evaluate the process of
 measurement of the chemical components of water numerically or graphically.
-@code{TSSS()} and ICHS functions are useful to control the quality of
-measurements of chemical components of a sample of water.  If one or more
-measurements include an error, the generated graph will indicate it with a
+@code{TSSS()}, ICHS and @code{datacheck()} functions are useful to control the
+quality of measurements of chemical components of a sample of water.  If one or
+more measurements include an error, the generated graph will indicate it with a
 position of the point that represents the sample outside the confidence
 interval.  The function CI allows to evaluate the possibility of contamination
 of a water sample after being obtained.")
@@ -22921,13 +22921,13 @@ estimators on real datasets, and it implements methods to calculate p-values.")
 (define-public r-adespatial
   (package
     (name "r-adespatial")
-    (version "0.3-26")
+    (version "0.3-27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adespatial" version))
        (sha256
-        (base32 "0bhbbm140b6mfr2032r1phhaz9zzb0clpgd3r63f5wrc59c5cnfr"))))
+        (base32 "10njrxva62vggy3lns9sa0x0vkpgg1hiyv074z6snp6v099qy452"))))
     (properties `((upstream-name . "adespatial")))
     (build-system r-build-system)
     (arguments
@@ -25540,13 +25540,13 @@ for screen reader users.")
 (define-public r-accessr
   (package
     (name "r-accessr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "accessr" version))
        (sha256
-        (base32 "0yvdajyvi8svcbbgagc5nqm1fd7wmv1dcnvaz1jx9yhp66dnnzbg"))))
+        (base32 "0dpr9fd3xh1c196s60cbcvq3pj4rm2f0fq5s1sk0gqd2iwzrhj5z"))))
     (properties `((upstream-name . "accessr")))
     (build-system r-build-system)
     (arguments

@@ -8616,25 +8616,27 @@ for details.")
 (define-public r-ljexm
   (package
     (name "r-ljexm")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LJexm" version))
        (sha256
-        (base32 "0w6p14zx8zjh8wwajld3aqa15sdmgrf7r7v46sgwry98i77f1yrq"))))
+        (base32 "1mxqqi39vpy4hm9dzbq423v5hyhx7hl0n00cj8pxnw0g1b4ifb57"))))
     (properties `((upstream-name . "LJexm")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rstudioapi r-pdftools r-fs))
+    (propagated-inputs (list r-webshot r-rstudioapi r-pdftools r-fs))
     (home-page "https://cran.r-project.org/package=LJexm")
     (synopsis "Extract, Convert, and Merge 'pdf' Files from 'zip' Files")
     (description
-     "Extracts zip files, converts Word and Excel documents to pdf files using
-VBScript', and merges pdf files into a single file.  This package is only
-supported on Windows due to VBScript dependencies.")
+     "Extracts zip files, converts Word', Excel', and html'/'htm files to pdf format.
+Word and Excel conversion uses VBScript', while html'/'htm conversion uses
+webshot and @code{PhantomJS}'.  Additionally, the package merges pdf files into
+a single document.  This package is only supported on Windows due to VBScript
+dependencies.")
     (license license:gpl3+)))
 
 (define-public r-liver
@@ -11027,6 +11029,31 @@ second moments (mean and standard deviation), and, optionally, correlate
 multiple vectors using a predefined correlation matrix.  Additionally, generate
 synthetic rating-scale items with a predefined Cronbach's Alpha, or create
 rating-scale items based on a predefined summated scale.")
+    (license license:expat)))
+
+(define-public r-likertez
+  (package
+    (name "r-likertez")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LikertEZ" version))
+       (sha256
+        (base32 "1pa0gaj59b6xjr4iihvzps53v0l63sv9kdk630wg6xf3i959pqyq"))))
+    (properties `((upstream-name . "LikertEZ")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=LikertEZ")
+    (synopsis "Easy Analysis and Visualization of Likert Scale Data")
+    (description
+     "This package provides functions for summarizing, visualizing, and analyzing
+Likert-scale survey data.  Includes support for computing descriptive
+statistics, Relative Importance Index (RII), reliability analysis (Cronbach's
+Alpha), and response distribution plots.")
     (license license:expat)))
 
 (define-public r-likert
@@ -13507,13 +13534,13 @@ highly technical) history of lenses please see the lens wiki
 (define-public r-lemna
   (package
     (name "r-lemna")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lemna" version))
        (sha256
-        (base32 "13ldgkzd1ggmqzipic9lw14zxq57zdzh1s83ih2mfib1n8f0pwg2"))))
+        (base32 "07bdxfd1zlw8id4fhib8hqpmlhyl9c4adva5acd907dqhznlbh0w"))))
     (properties `((upstream-name . "lemna")))
     (build-system r-build-system)
     (arguments
@@ -17947,13 +17974,13 @@ employed in this package can be obtained from BlÃ¶tner (2023)
 (define-public r-lassosir
   (package
     (name "r-lassosir")
-    (version "0.1.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LassoSIR" version))
        (sha256
-        (base32 "0ap8335ms12nsc7jvd48244zya54w05wj91qkhb0i63730r508c3"))))
+        (base32 "0y4lkzb7iw28g6bfdzh2kw09916ijmph4fikj8m2db4lmryzwhg3"))))
     (properties `((upstream-name . "LassoSIR")))
     (build-system r-build-system)
     (arguments
@@ -17964,10 +17991,10 @@ employed in this package can be obtained from BlÃ¶tner (2023)
     (synopsis "Sparsed Sliced Inverse Regression via Lasso")
     (description
      "Estimate the sufficient dimension reduction space using sparsed sliced inverse
-regression via Lasso (Lasso-SIR) introduced in Lin, Zhao, and Liu (2017)
-<arxiv:1611.06655>.  The Lasso-SIR is consistent and achieve the optimal
-convergence rate under certain sparsity conditions for the multiple index
-models.")
+regression via Lasso (Lasso-SIR) introduced in Lin, Zhao, and Liu (2019)
+<doi:10.1080/01621459.2018.1520115>.  The Lasso-SIR is consistent and achieve
+the optimal convergence rate under certain sparsity conditions for the multiple
+index models.")
     (license license:gpl3)))
 
 (define-public r-lassonet
